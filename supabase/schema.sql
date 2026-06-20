@@ -155,8 +155,9 @@ DROP POLICY IF EXISTS "profiles_update_own" ON public.profiles;
 CREATE POLICY "profiles_update_own" ON public.profiles
   FOR UPDATE USING (auth.uid() = id);
 
--- helper function
-CREATE OR REPLACE FUNCTION private.is_owner(user_uuid uuid)
+-- ---------- Helper function (PUBLIC schema) ------------------------
+
+CREATE OR REPLACE FUNCTION public.is_owner(user_uuid uuid)
 RETURNS boolean LANGUAGE sql STABLE AS $$
   SELECT auth.uid() = user_uuid;
 $$;
@@ -164,52 +165,52 @@ $$;
 -- learning_progress
 DROP POLICY IF EXISTS "learning_progress_select_own" ON public.learning_progress;
 CREATE POLICY "learning_progress_select_own" ON public.learning_progress
-  FOR SELECT USING (private.is_owner(user_id));
+  FOR SELECT USING (public.is_owner(user_id));
 DROP POLICY IF EXISTS "learning_progress_insert_own" ON public.learning_progress;
 CREATE POLICY "learning_progress_insert_own" ON public.learning_progress
-  FOR INSERT WITH CHECK (private.is_owner(user_id));
+  FOR INSERT WITH CHECK (public.is_owner(user_id));
 DROP POLICY IF EXISTS "learning_progress_update_own" ON public.learning_progress;
 CREATE POLICY "learning_progress_update_own" ON public.learning_progress
-  FOR UPDATE USING (private.is_owner(user_id));
+  FOR UPDATE USING (public.is_owner(user_id));
 DROP POLICY IF EXISTS "learning_progress_delete_own" ON public.learning_progress;
 CREATE POLICY "learning_progress_delete_own" ON public.learning_progress
-  FOR DELETE USING (private.is_owner(user_id));
+  FOR DELETE USING (public.is_owner(user_id));
 
 -- vocabulary
 DROP POLICY IF EXISTS "vocabulary_select_own" ON public.vocabulary;
 CREATE POLICY "vocabulary_select_own" ON public.vocabulary
-  FOR SELECT USING (private.is_owner(user_id));
+  FOR SELECT USING (public.is_owner(user_id));
 DROP POLICY IF EXISTS "vocabulary_insert_own" ON public.vocabulary;
 CREATE POLICY "vocabulary_insert_own" ON public.vocabulary
-  FOR INSERT WITH CHECK (private.is_owner(user_id));
+  FOR INSERT WITH CHECK (public.is_owner(user_id));
 DROP POLICY IF EXISTS "vocabulary_update_own" ON public.vocabulary;
 CREATE POLICY "vocabulary_update_own" ON public.vocabulary
-  FOR UPDATE USING (private.is_owner(user_id));
+  FOR UPDATE USING (public.is_owner(user_id));
 DROP POLICY IF EXISTS "vocabulary_delete_own" ON public.vocabulary;
 CREATE POLICY "vocabulary_delete_own" ON public.vocabulary
-  FOR DELETE USING (private.is_owner(user_id));
+  FOR DELETE USING (public.is_owner(user_id));
 
 -- exercises_history
 DROP POLICY IF EXISTS "exercises_history_select_own" ON public.exercises_history;
 CREATE POLICY "exercises_history_select_own" ON public.exercises_history
-  FOR SELECT USING (private.is_owner(user_id));
+  FOR SELECT USING (public.is_owner(user_id));
 DROP POLICY IF EXISTS "exercises_history_insert_own" ON public.exercises_history;
 CREATE POLICY "exercises_history_insert_own" ON public.exercises_history
-  FOR INSERT WITH CHECK (private.is_owner(user_id));
+  FOR INSERT WITH CHECK (public.is_owner(user_id));
 
 -- chat_conversations
 DROP POLICY IF EXISTS "chat_conversations_select_own" ON public.chat_conversations;
 CREATE POLICY "chat_conversations_select_own" ON public.chat_conversations
-  FOR SELECT USING (private.is_owner(user_id));
+  FOR SELECT USING (public.is_owner(user_id));
 DROP POLICY IF EXISTS "chat_conversations_insert_own" ON public.chat_conversations;
 CREATE POLICY "chat_conversations_insert_own" ON public.chat_conversations
-  FOR INSERT WITH CHECK (private.is_owner(user_id));
+  FOR INSERT WITH CHECK (public.is_owner(user_id));
 DROP POLICY IF EXISTS "chat_conversations_update_own" ON public.chat_conversations;
 CREATE POLICY "chat_conversations_update_own" ON public.chat_conversations
-  FOR UPDATE USING (private.is_owner(user_id));
+  FOR UPDATE USING (public.is_owner(user_id));
 DROP POLICY IF EXISTS "chat_conversations_delete_own" ON public.chat_conversations;
 CREATE POLICY "chat_conversations_delete_own" ON public.chat_conversations
-  FOR DELETE USING (private.is_owner(user_id));
+  FOR DELETE USING (public.is_owner(user_id));
 
 -- chat_messages
 DROP POLICY IF EXISTS "chat_messages_select_own" ON public.chat_messages;
@@ -218,7 +219,7 @@ CREATE POLICY "chat_messages_select_own" ON public.chat_messages
     EXISTS (
       SELECT 1 FROM public.chat_conversations c
       WHERE c.id = chat_messages.conversation_id
-        AND private.is_owner(c.user_id)
+        AND public.is_owner(c.user_id)
     )
   );
 DROP POLICY IF EXISTS "chat_messages_insert_own" ON public.chat_messages;
@@ -227,20 +228,20 @@ CREATE POLICY "chat_messages_insert_own" ON public.chat_messages
     EXISTS (
       SELECT 1 FROM public.chat_conversations c
       WHERE c.id = chat_messages.conversation_id
-        AND private.is_owner(c.user_id)
+        AND public.is_owner(c.user_id)
     )
   );
 
 -- daily_activity
 DROP POLICY IF EXISTS "daily_activity_select_own" ON public.daily_activity;
 CREATE POLICY "daily_activity_select_own" ON public.daily_activity
-  FOR SELECT USING (private.is_owner(user_id));
+  FOR SELECT USING (public.is_owner(user_id));
 DROP POLICY IF EXISTS "daily_activity_insert_own" ON public.daily_activity;
 CREATE POLICY "daily_activity_insert_own" ON public.daily_activity
-  FOR INSERT WITH CHECK (private.is_owner(user_id));
+  FOR INSERT WITH CHECK (public.is_owner(user_id));
 DROP POLICY IF EXISTS "daily_activity_update_own" ON public.daily_activity;
 CREATE POLICY "daily_activity_update_own" ON public.daily_activity
-  FOR UPDATE USING (private.is_owner(user_id));
+  FOR UPDATE USING (public.is_owner(user_id));
 
 -- ---------- Auto-create profile on signup --------------------------
 
