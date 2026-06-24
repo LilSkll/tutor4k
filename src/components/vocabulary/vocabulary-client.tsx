@@ -28,6 +28,8 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
 import { LEVELS } from "@/config/app";
+import { useUIStore } from "@/stores";
+import { translate } from "@/lib/i18n";
 import { formatDate } from "@/lib/utils";
 import type { Level, VocabularyWord } from "@/types";
 
@@ -53,6 +55,8 @@ export function VocabularyClient({
 
   const [search, setSearch] = React.useState("");
   const [dialogOpen, setDialogOpen] = React.useState(false);
+  const language = useUIStore((s) => s.interfaceLanguage);
+  const t = (key: string) => translate(key, language);
 
   const addMutation = useMutation({
     mutationFn: async (input: {
@@ -72,9 +76,9 @@ export function VocabularyClient({
     onSuccess: () => {
       qc.invalidateQueries({ queryKey: ["vocabulary"] });
       setDialogOpen(false);
-      toast.success("Palabra añadida 📚");
+      toast.success(t("vocabulary.toastAdded"));
     },
-    onError: () => toast.error("No se pudo añadir la palabra"),
+    onError: () => toast.error(t("vocabulary.toastAddFail")),
   });
 
   const deleteMutation = useMutation({
@@ -87,7 +91,7 @@ export function VocabularyClient({
     },
     onSuccess: () => {
       qc.invalidateQueries({ queryKey: ["vocabulary"] });
-      toast.success("Palabra eliminada");
+      toast.success(t("vocabulary.toastDeleted"));
     },
   });
 
@@ -106,7 +110,7 @@ export function VocabularyClient({
           <Input
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Buscar palabras…"
+            placeholder={t("vocabulary.searchPlaceholder")}
             className="pl-9"
           />
         </div>
@@ -114,7 +118,7 @@ export function VocabularyClient({
           <DialogTrigger asChild>
             <Button variant="gradient">
               <Plus className="h-4 w-4" />
-              Añadir palabra
+              {t("vocabulary.addBtn")}
             </Button>
           </DialogTrigger>
           <AddWordDialog
@@ -129,11 +133,11 @@ export function VocabularyClient({
       <div className="flex items-center gap-4 text-sm">
         <span className="flex items-center gap-1.5">
           <BookMarked className="h-4 w-4 text-primary" />
-          <strong>{words.length}</strong> palabras en total
+          <strong>{words.length}</strong> {t("vocabulary.totalWords")}
         </span>
         {search && (
           <span className="text-muted-foreground">
-            {filtered.length} resultado(s)
+            {filtered.length} {t("vocabulary.results")}
           </span>
         )}
       </div>
@@ -145,12 +149,12 @@ export function VocabularyClient({
             <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
               <BookMarked className="h-6 w-6" />
             </div>
-            <h3 className="font-semibold mb-1">Tu diccionario está vacío</h3>
+            <h3 className="font-semibold mb-1">{t("vocabulary.emptyTitle")}</h3>
             <p className="text-sm text-muted-foreground mb-4">
-              Añade tu primera palabra para empezar a construir tu vocabulario.
+              {t("vocabulary.emptyDesc")}
             </p>
             <p className="text-xs text-muted-foreground">
-              Consejo: usa el botón &quot;Añadir palabra&quot; arriba.
+              {t("vocabulary.emptyHint")}
             </p>
           </CardContent>
         </Card>
@@ -219,6 +223,8 @@ function AddWordDialog({
   const [translation, setTranslation] = React.useState("");
   const [example, setExample] = React.useState("");
   const [level, setLevel] = React.useState<Level>(defaultLevel);
+  const language = useUIStore((s) => s.interfaceLanguage);
+  const t = (key: string) => translate(key, language);
 
   const submit = () => {
     if (!word.trim() || !translation.trim()) return;
@@ -231,40 +237,40 @@ function AddWordDialog({
   return (
     <DialogContent>
       <DialogHeader>
-        <DialogTitle>Añadir palabra nueva</DialogTitle>
+        <DialogTitle>{t("vocabulary.addDialogTitle")}</DialogTitle>
       </DialogHeader>
       <div className="space-y-4">
         <div className="space-y-2">
-          <Label htmlFor="word">Palabra (español)</Label>
+          <Label htmlFor="word">{t("vocabulary.wordLabel")}</Label>
           <Input
             id="word"
             value={word}
             onChange={(e) => setWord(e.target.value)}
-            placeholder="ej. maravilloso"
+            placeholder="напр. maravilloso"
             autoFocus
           />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="trans">Traducción</Label>
+          <Label htmlFor="trans">{t("vocabulary.translationLabel")}</Label>
           <Input
             id="trans"
             value={translation}
             onChange={(e) => setTranslation(e.target.value)}
-            placeholder="ej. чудесный"
+            placeholder="напр. чудесный"
           />
         </div>
         <div className="space-y-2">
-          <Label htmlFor="ex">Ejemplo (opcional)</Label>
+          <Label htmlFor="ex">{t("vocabulary.exampleLabel")}</Label>
           <Textarea
             id="ex"
             value={example}
             onChange={(e) => setExample(e.target.value)}
-            placeholder="ej. El paisaje es maravilloso."
+            placeholder={t("vocabulary.examplePlaceholder")}
             rows={2}
           />
         </div>
         <div className="space-y-2">
-          <Label>Nivel</Label>
+          <Label>{t("common.level")}</Label>
           <Select value={level} onValueChange={(v) => setLevel(v as Level)}>
             <SelectTrigger>
               <SelectValue />
@@ -272,7 +278,7 @@ function AddWordDialog({
             <SelectContent>
               {LEVELS.map((lvl) => (
                 <SelectItem key={lvl.value} value={lvl.value}>
-                  {lvl.label} — {lvl.description.split("—")[1]?.trim() ?? ""}
+                  {lvl.label} — {lvl.description}
                 </SelectItem>
               ))}
             </SelectContent>
@@ -285,7 +291,7 @@ function AddWordDialog({
           disabled={pending || !word.trim() || !translation.trim()}
         >
           {pending && <Loader2 className="h-4 w-4 animate-spin" />}
-          Guardar palabra
+          {t("vocabulary.saveBtn")}
         </Button>
       </div>
     </DialogContent>

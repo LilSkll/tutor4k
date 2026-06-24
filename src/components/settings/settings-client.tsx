@@ -31,12 +31,15 @@ import {
 } from "@/config/app";
 import { updateProfile, signOut } from "@/server/actions/auth";
 import { useUIStore } from "@/stores";
+import { translate } from "@/lib/i18n";
 import type { Goal, InterfaceLanguage, Level, Profile } from "@/types";
 import { cn } from "@/lib/utils";
 
 export function SettingsClient({ profile }: { profile: Profile }) {
   const { theme, setTheme } = useTheme();
   const setLang = useUIStore((s) => s.setInterfaceLanguage);
+  const interfaceLanguage = useUIStore((s) => s.interfaceLanguage);
+  const t = (key: string) => translate(key, interfaceLanguage);
   const [pending, startTransition] = useTransition();
 
   const [name, setName] = React.useState(profile.name);
@@ -62,7 +65,7 @@ export function SettingsClient({ profile }: { profile: Profile }) {
         toast.error(res.error);
       } else {
         setLang(language);
-        toast.success("Perfil actualizado ✓");
+        toast.success(t("settings.toastSaved"));
       }
     });
   };
@@ -70,9 +73,9 @@ export function SettingsClient({ profile }: { profile: Profile }) {
   return (
     <div className="container max-w-2xl py-6 md:py-8 space-y-6">
       <div>
-        <h1 className="text-2xl font-bold">Ajustes</h1>
+        <h1 className="text-2xl font-bold">{t("settings.title")}</h1>
         <p className="text-sm text-muted-foreground">
-          Gestiona tu perfil y preferencias
+          {t("settings.profile")}
         </p>
       </div>
 
@@ -81,13 +84,13 @@ export function SettingsClient({ profile }: { profile: Profile }) {
         <CardHeader>
           <CardTitle className="text-base flex items-center gap-2">
             <User className="h-4 w-4 text-primary" />
-            Perfil
+            {t("settings.profile")}
           </CardTitle>
-          <CardDescription>Tu información personal</CardDescription>
+          <CardDescription>{t("settings.profileDesc")}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="name">Nombre</Label>
+            <Label htmlFor="name">{t("common.name")}</Label>
             <Input
               id="name"
               value={name}
@@ -97,16 +100,16 @@ export function SettingsClient({ profile }: { profile: Profile }) {
 
           <div className="grid sm:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label>Nivel</Label>
+              <Label>{t("common.level")}</Label>
               <Select
                 value={level || "none"}
                 onValueChange={(v) => setLevel(v === "none" ? "" : (v as Level))}
               >
                 <SelectTrigger>
-                  <SelectValue placeholder="Sin nivel" />
+                  <SelectValue placeholder={t("settings.noLevel")} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="none">Sin nivel</SelectItem>
+                  <SelectItem value="none">{t("settings.noLevel")}</SelectItem>
                   {LEVELS.map((lvl) => (
                     <SelectItem key={lvl.value} value={lvl.value}>
                       {lvl.label} — {lvl.description}
@@ -117,16 +120,16 @@ export function SettingsClient({ profile }: { profile: Profile }) {
             </div>
 
             <div className="space-y-2">
-              <Label>Objetivo</Label>
+              <Label>{t("settings.goalLabel")}</Label>
               <Select
                 value={goal || "none"}
                 onValueChange={(v) => setGoal(v === "none" ? "" : (v as Goal))}
               >
                 <SelectTrigger>
-                  <SelectValue placeholder="Sin objetivo" />
+                  <SelectValue placeholder={t("settings.noGoal")} />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="none">Sin objetivo</SelectItem>
+                  <SelectItem value="none">{t("settings.noGoal")}</SelectItem>
                   {GOALS.map((g) => (
                     <SelectItem key={g.value} value={g.value}>
                       {g.emoji} {g.label}
@@ -144,13 +147,13 @@ export function SettingsClient({ profile }: { profile: Profile }) {
         <CardHeader>
           <CardTitle className="text-base flex items-center gap-2">
             <Palette className="h-4 w-4 text-primary" />
-            Preferencias
+            {t("settings.prefsTitle")}
           </CardTitle>
-          <CardDescription>Idioma y meta diaria</CardDescription>
+          <CardDescription>{t("settings.prefsDesc")}</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="space-y-2">
-            <Label>Idioma de la interfaz</Label>
+            <Label>{t("settings.interfaceLangLabel")}</Label>
             <div className="grid grid-cols-3 gap-2">
               {INTERFACE_LANGUAGES.map((lang) => (
                 <button
@@ -172,7 +175,7 @@ export function SettingsClient({ profile }: { profile: Profile }) {
           </div>
 
           <div className="space-y-2">
-            <Label>Meta diaria (minutos)</Label>
+            <Label>{t("settings.dailyGoalLabel")}</Label>
             <div className="grid grid-cols-5 gap-2">
               {DAILY_GOAL_OPTIONS.map((min) => (
                 <button
@@ -203,16 +206,16 @@ export function SettingsClient({ profile }: { profile: Profile }) {
             ) : (
               <Sun className="h-4 w-4 text-primary" />
             )}
-            Apariencia
+            {t("settings.appearanceTitle")}
           </CardTitle>
-          <CardDescription>Tema de la aplicación</CardDescription>
+          <CardDescription>{t("settings.appearanceDesc")}</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-3 gap-2">
             {[
-              { value: "light", label: "Claro", icon: Sun },
-              { value: "dark", label: "Oscuro", icon: Moon },
-              { value: "system", label: "Sistema", icon: Palette },
+              { value: "light", labelKey: "settings.themeLight", icon: Sun },
+              { value: "dark", labelKey: "settings.themeDark", icon: Moon },
+              { value: "system", labelKey: "settings.themeSystem", icon: Palette },
             ].map((opt) => (
               <button
                 key={opt.value}
@@ -225,7 +228,7 @@ export function SettingsClient({ profile }: { profile: Profile }) {
                 )}
               >
                 <opt.icon className="h-5 w-5" />
-                <span className="text-sm font-medium">{opt.label}</span>
+                <span className="text-sm font-medium">{t(opt.labelKey)}</span>
               </button>
             ))}
           </div>
@@ -240,20 +243,19 @@ export function SettingsClient({ profile }: { profile: Profile }) {
           className="flex-1"
         >
           {pending && <Loader2 className="h-4 w-4 animate-spin" />}
-          Guardar cambios
+          {t("settings.saveBtn")}
         </Button>
         <form action={() => startTransition(() => signOut())}>
           <Button type="submit" variant="outline" disabled={pending}>
             <LogOut className="h-4 w-4" />
-            Cerrar sesión
+            {t("settings.logoutBtn")}
           </Button>
         </form>
       </div>
 
       <Separator />
       <p className="text-center text-xs text-muted-foreground pb-4">
-        SpanishTutor © {new Date().getFullYear()} · Hecho con Next.js, Supabase,
-        Groq & Gemini
+        SpanishTutor © {new Date().getFullYear()} · {t("landing.footer")}
       </p>
     </div>
   );

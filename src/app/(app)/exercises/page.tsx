@@ -17,18 +17,18 @@ export default async function ExercisesPage() {
       <div>
         <div className="flex items-center gap-2 mb-1">
           <Dumbbell className="h-6 w-6 text-primary" />
-          <h1 className="text-2xl font-bold">Ejercicios</h1>
+          <h1 className="text-2xl font-bold">Упражнения</h1>
         </div>
         <p className="text-sm text-muted-foreground">
-          Práctica generada por IA — elige el tipo y el nivel
+          Практика от ИИ — выбери тип и уровень
         </p>
       </div>
 
       <Card>
         <CardHeader>
-          <CardTitle className="text-base">Tu sesión de práctica</CardTitle>
+          <CardTitle className="text-base">Твоя тренировка</CardTitle>
           <CardDescription>
-            Los resultados se guardan automáticamente para tu progreso
+            Результаты сохраняются автоматически и влияют на твой прогресс
           </CardDescription>
         </CardHeader>
         <CardContent>

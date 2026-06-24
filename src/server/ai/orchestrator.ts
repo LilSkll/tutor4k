@@ -99,6 +99,7 @@ export async function generateAIResponse(
   options: AIGenerateOptions & {
     language?: InterfaceLanguage;
     userName?: string | null;
+    retrievedContext?: string | null;
   },
 ): Promise<AIResponse> {
   const {
@@ -109,6 +110,7 @@ export async function generateAIResponse(
     skipGuard = false,
     language = "ru",
     userName,
+    retrievedContext,
   } = options;
 
   // --- 1. Domain guard -------------------------------------------------
@@ -126,7 +128,12 @@ export async function generateAIResponse(
   }
 
   // --- 2. System prompt ------------------------------------------------
-  const systemPrompt = buildSystemPrompt({ level, language, userName });
+  const systemPrompt = buildSystemPrompt({
+    level,
+    language,
+    userName,
+    retrievedContext,
+  });
 
   const providerOptions: ProviderCallOptions = {
     messages,
@@ -191,6 +198,7 @@ export async function generateStructuredJSON<T>(
     level?: Level | null;
     temperature?: number;
     language?: InterfaceLanguage;
+    retrievedContext?: string | null;
   },
 ): Promise<T> {
   const response = await generateAIResponse({
@@ -200,6 +208,7 @@ export async function generateStructuredJSON<T>(
     maxTokens: 1500,
     skipGuard: true,
     language: opts?.language,
+    retrievedContext: opts?.retrievedContext,
   });
 
   // Extract the first JSON object from the response.

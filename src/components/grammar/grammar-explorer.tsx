@@ -73,7 +73,7 @@ export function GrammarExplorer({ initialLevel }: { initialLevel?: Level }) {
           active={activeLevel === "ALL"}
           onClick={() => setActiveLevel("ALL")}
         >
-          Todos
+          Все
         </FilterChip>
         {(["A1", "A2", "B1", "B2", "C1"] as Level[]).map((lvl) => (
           <FilterChip
@@ -147,7 +147,7 @@ export function GrammarExplorer({ initialLevel }: { initialLevel?: Level }) {
                   }
                 >
                   <Sparkles className="h-4 w-4" />
-                  {pending ? "Generando…" : "Explicar con IA"}
+                  {pending ? "Генерирую…" : "Объяснить с ИИ"}
                 </Button>
                 <Button
                   variant="outline"
@@ -155,7 +155,7 @@ export function GrammarExplorer({ initialLevel }: { initialLevel?: Level }) {
                   asChild
                 >
                   <a href={`/tutor?q=${encodeURIComponent("Explícame: " + selectedTopic.titleEs)}`}>
-                    Preguntar al tutor
+                    Спросить репетитора
                   </a>
                 </Button>
               </div>
@@ -165,7 +165,7 @@ export function GrammarExplorer({ initialLevel }: { initialLevel?: Level }) {
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm font-semibold flex items-center gap-1">
                       <Sparkles className="h-4 w-4 text-primary" />
-                      Explicación de IA
+                      Объяснение ИИ
                     </span>
                     <Button
                       variant="ghost"

@@ -2,6 +2,7 @@
 
 import { createSupabaseServerClient } from "@/lib/supabase-server";
 import { generateAIResponse } from "@/server/ai/orchestrator";
+import { retrieveContext } from "@/server/rag/retrieve";
 import type {
   AIMessage,
   ExerciseHistory,
@@ -75,12 +76,27 @@ export async function sendTutorMessage(input: {
     }
   }
 
+  // --- Retrieve relevant textbook context (RAG) -----------------------
+  let retrievedContext: string | null = null;
+  const lastUser = [...input.messages]
+    .reverse()
+    .find((m) => m.role === "user");
+  if (lastUser) {
+    try {
+      retrievedContext = await retrieveContext(lastUser.content, level);
+    } catch (err) {
+      // Non-fatal: proceed without RAG context.
+      console.warn("[tutor] retrieval failed:", (err as Error).message);
+    }
+  }
+
   // --- Generate AI response -------------------------------------------
   const response = await generateAIResponse({
     messages: input.messages,
     level,
     language,
     userName,
+    retrievedContext,
   });
 
   // --- Persist assistant reply (best-effort) --------------------------
@@ -166,12 +182,41 @@ Respond ONLY with valid JSON in this exact shape (no markdown, no commentary):
 
 Only include "options" for multiple_choice and sentence_building. Always include acceptableAnswers (can be empty array). The JSON must be valid.`;
 
+  // Retrieve textbook context for the requested topic (best-effort).
+  let exerciseContext: string | null = null;
+  try {
+    exerciseContext = await retrieveContext(
+      input.topic ?? defaultTopicForType(input.type),
+      input.level,
+      3,
+    );
+  } catch (err) {
+    console.warn("[exercises] retrieval failed:", (err as Error).message);
+  }
+
   const data = await generateStructuredJSON<GeneratedExercise>(
     [{ role: "user", content: prompt }],
-    { level: input.level, temperature: 0.7, language: input.language },
+    {
+      level: input.level,
+      temperature: 0.7,
+      language: input.language,
+      retrievedContext: exerciseContext,
+    },
   );
 
   return data;
+}
+
+/** A sensible default search term for each exercise type (when no topic given). */
+function defaultTopicForType(type: ExerciseType): string {
+  const map: Record<ExerciseType, string> = {
+    multiple_choice: "gramática español vocabulario",
+    fill_blank: "conjugación verbo español",
+    translation: "vocabulario frase español",
+    error_correction: "gramática error español",
+    sentence_building: "sintaxis oración español",
+  };
+  return map[type];
 }
 
 /**

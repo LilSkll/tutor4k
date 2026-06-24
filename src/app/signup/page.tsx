@@ -17,7 +17,7 @@ export default async function SignupPage({
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-8"
           >
             <ArrowLeft className="h-4 w-4" />
-            Volver al inicio
+            На главную
           </Link>
 
           <div className="flex items-center gap-2 mb-6">
@@ -27,9 +27,9 @@ export default async function SignupPage({
             <span className="font-bold text-xl gradient-text">SpanishTutor</span>
           </div>
 
-          <h1 className="text-2xl font-bold mb-1">Crea tu cuenta</h1>
+          <h1 className="text-2xl font-bold mb-1">Создай аккаунт</h1>
           <p className="text-sm text-muted-foreground mb-6">
-            Empieza a aprender español gratis hoy.
+            Начни учить испанский бесплатно уже сегодня.
           </p>
 
           {sp.error && (
@@ -41,9 +41,9 @@ export default async function SignupPage({
           <AuthForm mode="signup" />
 
           <p className="mt-6 text-center text-sm text-muted-foreground">
-            ¿Ya tienes cuenta?{" "}
+            Уже есть аккаунт?{" "}
             <Link href="/login" className="text-primary font-medium hover:underline">
-              Inicia sesión
+              Войти
             </Link>
           </p>
         </div>
@@ -57,11 +57,11 @@ export default async function SignupPage({
         <div className="relative text-center text-white max-w-md">
           <Sparkles className="h-16 w-16 mx-auto mb-6 opacity-90" />
           <h2 className="text-3xl font-bold mb-3">
-            Un tutor que te hace pensar
+            Репетитор, который заставляет думать
           </h2>
           <p className="text-white/90">
-            No resuelve por ti: explica, da pistas y celebra tus aciertos. Así
-            se aprende de verdad.
+            Не решает за тебя: объясняет, даёт подсказки и отмечает твои успехи.
+            Так учатся по-настоящему.
           </p>
         </div>
       </div>

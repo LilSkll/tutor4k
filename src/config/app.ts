@@ -8,11 +8,11 @@ import type {
 // ----- CEFR Levels ---------------------------------------------------
 
 export const LEVELS: { value: Level; label: string; description: string }[] = [
-  { value: "A1", label: "A1", description: "Principiante — Начальный" },
-  { value: "A2", label: "A2", description: "Básico — Элементарный" },
-  { value: "B1", label: "B1", description: "Intermedio — Средний" },
-  { value: "B2", label: "B2", description: "Avanzado — Высокий средний" },
-  { value: "C1", label: "C1", description: "Superior — Продвинутый" },
+  { value: "A1", label: "A1", description: "Начальный" },
+  { value: "A2", label: "A2", description: "Элементарный" },
+  { value: "B1", label: "B1", description: "Средний" },
+  { value: "B2", label: "B2", description: "Выше среднего" },
+  { value: "C1", label: "C1", description: "Продвинутый" },
 ];
 
 export const LEVEL_ORDER: Level[] = ["A1", "A2", "B1", "B2", "C1"];
@@ -20,12 +20,12 @@ export const LEVEL_ORDER: Level[] = ["A1", "A2", "B1", "B2", "C1"];
 // ----- Goals ---------------------------------------------------------
 
 export const GOALS: { value: Goal; label: string; emoji: string }[] = [
-  { value: "TRAVEL", label: "Para viajes", emoji: "✈️" },
-  { value: "WORK", label: "Para el trabajo", emoji: "💼" },
-  { value: "RELOCATION", label: "Para mudanza", emoji: "🏡" },
-  { value: "UNIVERSITY", label: "Para la universidad", emoji: "🎓" },
-  { value: "DELE", label: "Preparación DELE", emoji: "📜" },
-  { value: "GENERAL", label: "Estudio general", emoji: "📚" },
+  { value: "TRAVEL", label: "Для путешествий", emoji: "✈️" },
+  { value: "WORK", label: "Для работы", emoji: "💼" },
+  { value: "RELOCATION", label: "Для переезда", emoji: "🏡" },
+  { value: "UNIVERSITY", label: "Для учёбы", emoji: "🎓" },
+  { value: "DELE", label: "Подготовка к DELE", emoji: "📜" },
+  { value: "GENERAL", label: "Общее изучение", emoji: "📚" },
 ];
 
 // ----- Interface languages -------------------------------------------
@@ -50,32 +50,32 @@ export const EXERCISE_TYPES: {
 }[] = [
   {
     value: "multiple_choice",
-    label: "Multiple choice",
-    description: "Выбор правильного ответа",
+    label: "Выбор ответа",
+    description: "Выбери правильный вариант",
     icon: "☑️",
   },
   {
     value: "fill_blank",
-    label: "Fill in the blank",
-    description: "Заполни пропуск",
+    label: "Заполни пропуск",
+    description: "Вставь недостающее слово",
     icon: "✏️",
   },
   {
     value: "translation",
-    label: "Translation",
-    description: "Перевод с русского на испанский",
+    label: "Перевод",
+    description: "Переведи с русского на испанский",
     icon: "🔄",
   },
   {
     value: "error_correction",
-    label: "Error correction",
+    label: "Исправь ошибку",
     description: "Найди и исправь ошибку",
     icon: "🔍",
   },
   {
     value: "sentence_building",
-    label: "Sentence building",
-    description: "Составь предложение",
+    label: "Составь предложение",
+    description: "Собери предложение из слов",
     icon: "🧩",
   },
 ];
@@ -98,9 +98,9 @@ export const DAILY_GOAL_OPTIONS = [10, 15, 30, 45, 60];
 // ----- Daily streak constants ----------------------------------------
 
 export const STREAK_REWARDS = {
-  3: "¡Buen trabajo!",
-  7: "Una semana completa 🔥",
-  14: "Dos semanas seguidas 🌟",
-  30: "¡Un mes de constancia! 🏆",
-  100: "Centurión del español 👑",
+  3: "Хорошая работа!",
+  7: "Целая неделя 🔥",
+  14: "Две недели подряд 🌟",
+  30: "Месяц постоянства! 🏆",
+  100: "Сотня дней испанского 👑",
 } as const;

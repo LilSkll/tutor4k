@@ -25,10 +25,10 @@ export default async function GrammarPage({
       <div>
         <div className="flex items-center gap-2 mb-1">
           <BookOpen className="h-6 w-6 text-primary" />
-          <h1 className="text-2xl font-bold">Gramática</h1>
+          <h1 className="text-2xl font-bold">Грамматика</h1>
         </div>
         <p className="text-sm text-muted-foreground">
-          Referencia de temas del MCER — A1 a C1
+          Справочник по темам CEFR — от A1 до C1
         </p>
       </div>
 
@@ -37,7 +37,7 @@ export default async function GrammarPage({
 
       {/* All topics grid */}
       <div>
-        <h2 className="font-semibold mb-3">Todos los temas</h2>
+        <h2 className="font-semibold mb-3">Все темы</h2>
         <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
           {GRAMMAR_TOPICS.map((topic) => (
             <Card key={topic.slug} className="card-hover">
@@ -48,7 +48,12 @@ export default async function GrammarPage({
                     {topic.category}
                   </span>
                 </div>
-                <CardTitle className="text-base mt-2">{topic.titleEs}</CardTitle>
+                <CardTitle className="text-base mt-2">
+                  {topic.titleEs}
+                  <span className="text-muted-foreground font-normal">
+                    {" "}— {topic.title}
+                  </span>
+                </CardTitle>
                 <CardDescription className="text-xs">
                   {topic.summary}
                 </CardDescription>
@@ -61,7 +66,7 @@ export default async function GrammarPage({
                   asChild
                 >
                   <Link href={`/grammar?topic=${topic.slug}`}>
-                    Estudiar
+                    Изучить
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </Button>

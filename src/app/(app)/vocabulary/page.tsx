@@ -11,10 +11,10 @@ export default async function VocabularyPage() {
       <div>
         <div className="flex items-center gap-2 mb-1">
           <Languages className="h-6 w-6 text-primary" />
-          <h1 className="text-2xl font-bold">Mi diccionario</h1>
+          <h1 className="text-2xl font-bold">Мой словарь</h1>
         </div>
         <p className="text-sm text-muted-foreground">
-          Guarda palabras nuevas para repasar
+          Сохраняй новые слова для повторения
         </p>
       </div>
 

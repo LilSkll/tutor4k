@@ -7,14 +7,18 @@ import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Markdown } from "@/components/shared/markdown";
 import { useChatStore } from "@/stores";
+import { useUIStore } from "@/stores";
+import { translate } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import type { AIMessage, ChatMessage } from "@/types";
 
 const SUGGESTIONS = [
-  "¿Cuándo uso ser y cuándo estar?",
-  "Explícame el subjuntivo presente",
-  "Diferencia entre por y para",
-  "Conjuga el verbo 'tener' en presente",
+  "В чём разница между ser и estar?",
+  "Объясни сослагательное наклонение (subjuntivo)",
+  "Когда использовать por, а когда para?",
+  "Как спрягается глагол tener в настоящем времени?",
+  "Расскажи про артикли в испанском",
+  "Pretérito indefinido vs pretérito perfecto — в чём разница?",
 ];
 
 function makeId() {
@@ -28,6 +32,8 @@ export function TutorChat() {
   const setMessages = useChatStore((s) => s.setMessages);
   const setStreaming = useChatStore((s) => s.setStreaming);
   const clear = useChatStore((s) => s.clear);
+  const language = useUIStore((s) => s.interfaceLanguage);
+  const t = (key: string) => translate(key, language);
 
   const [input, setInput] = React.useState("");
   const [pending, setPending] = React.useState(false);
@@ -103,10 +109,10 @@ export function TutorChat() {
       setMessages([
         ...messages,
         userMsg,
-        {
-          ...placeholder,
-          content:
-            "⚠️ No se pudo conectar con el tutor. Verifica tu conexión e inténtalo de nuevo.",
+          {
+            ...placeholder,
+            content:
+              t("tutor.error"),
         },
       ]);
     } finally {
@@ -131,9 +137,9 @@ export function TutorChat() {
             <Bot className="h-4 w-4" />
           </div>
           <div>
-            <h1 className="font-semibold leading-tight">Tutor IA</h1>
+            <h1 className="font-semibold leading-tight">{t("tutor.title")}</h1>
             <p className="text-[11px] text-muted-foreground">
-              {pending ? "Pensando…" : "En línea • Solo español"}
+              {pending ? t("tutor.thinkingStatus") : t("tutor.online")}
             </p>
           </div>
         </div>
@@ -145,7 +151,7 @@ export function TutorChat() {
             className="text-muted-foreground"
           >
             <Trash2 className="h-4 w-4" />
-            <span className="hidden sm:inline">Borrar</span>
+            <span className="hidden sm:inline">{t("tutor.clear")}</span>
           </Button>
         )}
       </div>
@@ -153,7 +159,7 @@ export function TutorChat() {
       {/* Messages */}
       <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 md:px-6 py-4">
         {messages.length === 0 ? (
-          <EmptyState onPick={send} />
+          <EmptyState onPick={send} t={t} />
         ) : (
           <div className="mx-auto max-w-3xl space-y-4">
             {messages.map((msg) => (
@@ -172,7 +178,7 @@ export function TutorChat() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={onKeyDown}
-              placeholder="Pregunta algo sobre el español…"
+              placeholder={t("tutor.placeholder")}
               className="min-h-[44px] max-h-40 resize-none border-0 bg-transparent focus-visible:ring-0 px-2 py-2"
               rows={1}
               disabled={pending}
@@ -188,7 +194,7 @@ export function TutorChat() {
             </Button>
           </div>
           <p className="mt-1.5 text-center text-[10px] text-muted-foreground">
-            Enter para enviar · Shift+Enter para salto de línea
+            {t("tutor.hintSend")}
           </p>
         </div>
       </div>
@@ -258,16 +264,15 @@ function TypingDots() {
   );
 }
 
-function EmptyState({ onPick }: { onPick: (q: string) => void }) {
+function EmptyState({ onPick, t }: { onPick: (q: string) => void; t: (k: string) => string }) {
   return (
     <div className="h-full flex flex-col items-center justify-center text-center py-12">
       <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary via-orange-500 to-rose-500 text-white">
         <Sparkles className="h-7 w-7" />
       </div>
-      <h2 className="text-xl font-semibold mb-1">¡Hola! Soy tu tutor de español</h2>
+      <h2 className="text-xl font-semibold mb-1">{t("tutor.emptyTitle")}</h2>
       <p className="text-sm text-muted-foreground max-w-md mb-6">
-        Pregúntame sobre gramática, vocabulario, pronunciación o pídeme que te
-        explique una regla. Estoy aquí para ayudarte a aprender.
+        {t("tutor.emptySubtitle")}
       </p>
       <div className="grid gap-2 w-full max-w-md">
         {SUGGESTIONS.map((s) => (

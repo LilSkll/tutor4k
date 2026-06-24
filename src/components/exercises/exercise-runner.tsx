@@ -15,6 +15,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { useExerciseSessionStore } from "@/stores";
+import { useUIStore } from "@/stores";
+import { translate } from "@/lib/i18n";
 import { EXERCISE_TYPES, LEVELS } from "@/config/app";
 import { cn } from "@/lib/utils";
 import type { ExerciseType, Level } from "@/types";
@@ -54,6 +56,8 @@ export function ExerciseRunner({
   const incrementAttempted = useExerciseSessionStore((s) => s.incrementAttempted);
   const score = useExerciseSessionStore((s) => s.currentScore);
   const attempted = useExerciseSessionStore((s) => s.totalAttempted);
+  const language = useUIStore((s) => s.interfaceLanguage);
+  const t = (key: string) => translate(key, language);
 
   const generate = async () => {
     setPhase("loading");
@@ -71,7 +75,7 @@ export function ExerciseRunner({
       setExercise(data);
       setPhase("answering");
     } catch {
-      toast.error("No se pudo generar el ejercicio. Inténtalo de nuevo.");
+      toast.error(t("exercises.toastGenerateFail"));
       setPhase("config");
     }
   };
@@ -96,12 +100,12 @@ export function ExerciseRunner({
       incrementAttempted();
       if (data.correct) {
         incrementScore();
-        toast.success("¡Correcto! 🎉");
+        toast.success(t("exercises.toastCorrect"));
       } else {
-        toast.error("Repasa la explicación 👇");
+        toast.error(t("exercises.toastIncorrect"));
       }
     } catch {
-      toast.error("No se pudo comprobar la respuesta.");
+      toast.error(t("exercises.toastCheckFail"));
       setPhase("answering");
     }
   };
@@ -122,12 +126,12 @@ export function ExerciseRunner({
           <CardContent className="flex items-center justify-between py-4">
             <div className="flex items-center gap-4">
               <div className="flex items-center gap-2">
-                <span className="text-sm text-muted-foreground">Aciertos</span>
+                <span className="text-sm text-muted-foreground">{t("exercises.scoreHits")}</span>
                 <span className="text-2xl font-bold text-success">{score}</span>
               </div>
               <Separator orientation="vertical" className="h-8" />
               <div className="flex items-center gap-2">
-                <span className="text-sm text-muted-foreground">Intentos</span>
+                <span className="text-sm text-muted-foreground">{t("exercises.scoreAttempts")}</span>
                 <span className="text-2xl font-bold">{attempted}</span>
               </div>
             </div>
@@ -135,7 +139,7 @@ export function ExerciseRunner({
               <div className="text-2xl font-bold gradient-text">
                 {Math.round((score / attempted) * 100)}%
               </div>
-              <p className="text-[10px] text-muted-foreground">precisión</p>
+              <p className="text-[10px] text-muted-foreground">{t("exercises.scoreAccuracy")}</p>
             </div>
           </CardContent>
         </Card>
@@ -146,7 +150,7 @@ export function ExerciseRunner({
         <div className="space-y-6">
           {/* Type selection */}
           <div>
-            <h3 className="font-semibold mb-3">Tipo de ejercicio</h3>
+            <h3 className="font-semibold mb-3">{t("exercises.typeLabel")}</h3>
             <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
               {EXERCISE_TYPES.map((exType) => (
                 <button
@@ -173,7 +177,7 @@ export function ExerciseRunner({
 
           {/* Level selection */}
           <div>
-            <h3 className="font-semibold mb-3">Nivel</h3>
+            <h3 className="font-semibold mb-3">{t("exercises.levelLabel")}</h3>
             <div className="flex flex-wrap gap-2">
               {LEVELS.map((lvl) => (
                 <button
@@ -194,7 +198,7 @@ export function ExerciseRunner({
 
           <Button variant="gradient" size="lg" onClick={generate} className="w-full">
             <Sparkles className="h-4 w-4" />
-            Generar ejercicio
+            {t("exercises.generateBtn")}
           </Button>
         </div>
       )}
@@ -205,7 +209,7 @@ export function ExerciseRunner({
           <CardContent className="flex flex-col items-center justify-center py-16">
             <Loader2 className="h-8 w-8 animate-spin text-primary mb-3" />
             <p className="text-sm text-muted-foreground">
-              {exercise ? "Comprobando…" : "Generando ejercicio…"}
+              {exercise ? t("exercises.checking") : t("exercises.generating")}
             </p>
           </CardContent>
         </Card>
@@ -220,6 +224,7 @@ export function ExerciseRunner({
           selectedOption={selectedOption}
           setSelectedOption={setSelectedOption}
           onCheck={() => check(selectedOption ?? userAnswer)}
+          t={t}
         />
       )}
 
@@ -230,6 +235,7 @@ export function ExerciseRunner({
           userAnswer={selectedOption ?? userAnswer}
           result={result}
           onNext={next}
+          t={t}
         />
       )}
     </div>
@@ -243,6 +249,7 @@ function ExerciseCard({
   selectedOption,
   setSelectedOption,
   onCheck,
+  t,
 }: {
   exercise: GeneratedExercise;
   userAnswer: string;
@@ -250,6 +257,7 @@ function ExerciseCard({
   selectedOption: string | null;
   setSelectedOption: (v: string) => void;
   onCheck: () => void;
+  t: (key: string) => string;
 }) {
   const hasOptions =
     (exercise.type === "multiple_choice" || exercise.type === "sentence_building") &&
@@ -305,7 +313,7 @@ function ExerciseCard({
           <Input
             value={userAnswer}
             onChange={(e) => setUserAnswer(e.target.value)}
-            placeholder="Escribe tu respuesta…"
+            placeholder={t("exercises.answerPlaceholder")}
             onKeyDown={(e) => {
               if (e.key === "Enter") onCheck();
             }}
@@ -320,7 +328,7 @@ function ExerciseCard({
           disabled={hasOptions ? !selectedOption : !userAnswer.trim()}
         >
           <Check className="h-4 w-4" />
-          Comprobar
+          {t("exercises.check")}
         </Button>
       </CardContent>
     </Card>
@@ -332,11 +340,13 @@ function ResultCard({
   userAnswer,
   result,
   onNext,
+  t,
 }: {
   exercise: GeneratedExercise;
   userAnswer: string;
   result: { correct: boolean; feedback: string };
   onNext: () => void;
+  t: (key: string) => string;
 }) {
   return (
     <Card className="animate-fade-in">
@@ -356,28 +366,28 @@ function ResultCard({
           )}
           <div>
             <p className="font-semibold">
-              {result.correct ? "¡Correcto!" : "Incorrecto"}
+              {result.correct ? t("exercises.resultCorrect") : t("exercises.resultIncorrect")}
             </p>
-            <p className="text-xs opacity-90">Tu respuesta: {userAnswer}</p>
+            <p className="text-xs opacity-90">{t("exercises.yourAnswerLabel")} {userAnswer}</p>
           </div>
         </div>
 
         {!result.correct && (
           <div className="rounded-lg border bg-muted/50 p-4">
             <p className="text-xs text-muted-foreground mb-1">
-              Respuesta correcta:
+              {t("exercises.correctAnswerLabel")}
             </p>
             <p className="font-semibold text-foreground">{exercise.answer}</p>
           </div>
         )}
 
         <div className="rounded-lg border border-primary/20 bg-primary/5 p-4">
-          <p className="text-xs font-semibold text-primary mb-1">📖 Explicación</p>
+          <p className="text-xs font-semibold text-primary mb-1">{t("exercises.explanationLabel")}</p>
           <p className="text-sm text-foreground">{result.feedback}</p>
         </div>
 
         <Button variant="gradient" className="w-full" onClick={onNext}>
-          Siguiente ejercicio
+          {t("exercises.nextExerciseBtn")}
           <ArrowRight className="h-4 w-4" />
         </Button>
       </CardContent>

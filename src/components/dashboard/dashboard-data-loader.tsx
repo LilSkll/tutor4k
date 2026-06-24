@@ -82,8 +82,9 @@ export function DashboardDataLoader() {
   const recommended = levelTopics.slice(0, 3);
 
   const hour = new Date().getHours();
-  const greeting =
-    hour < 12 ? "Buenos días" : hour < 20 ? "Buenas tardes" : "Buenas noches";
+  const greetingKey =
+    hour < 12 ? "dashboard.greetingMorning" : hour < 20 ? "dashboard.greetingDay" : "dashboard.greetingEvening";
+  const greeting = t(greetingKey);
 
   return (
     <>
@@ -94,7 +95,7 @@ export function DashboardDataLoader() {
         </div>
         <CardContent className="relative p-6 md:p-8">
           <p className="text-white/80 text-sm">
-            {greeting}, {profile.name || "amigo"} 👋
+            {greeting}, {profile.name || ""} 👋
           </p>
           <h1 className="text-2xl md:text-3xl font-bold mt-1 mb-3">
             {t("dashboard.subtitle")}
@@ -132,7 +133,7 @@ export function DashboardDataLoader() {
             </div>
             <p className="text-xs text-muted-foreground mt-1">
               {LEVELS.find((l) => l.value === profile.level)?.description ??
-                "Sin nivel"}
+                t("dashboard.noLevel")}
             </p>
           </CardContent>
         </Card>
@@ -236,8 +237,8 @@ export function DashboardDataLoader() {
         {/* Vocabulary snapshot */}
         <Card>
           <CardHeader>
-            <CardTitle className="text-base">📖 Vocabulario</CardTitle>
-            <CardDescription>Palabras guardadas</CardDescription>
+            <CardTitle className="text-base">{t("dashboard.vocabTitle")}</CardTitle>
+            <CardDescription>{t("dashboard.vocabDesc")}</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="text-4xl font-bold gradient-text mb-3">
@@ -245,7 +246,7 @@ export function DashboardDataLoader() {
             </div>
             <Button variant="outline" size="sm" className="w-full" asChild>
               <Link href="/vocabulary">
-                Ver diccionario
+                {t("dashboard.vocabBtn")}
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </Button>

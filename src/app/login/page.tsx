@@ -18,7 +18,7 @@ export default async function LoginPage({
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-8"
           >
             <ArrowLeft className="h-4 w-4" />
-            Volver al inicio
+            На главную
           </Link>
 
           <div className="flex items-center gap-2 mb-6">
@@ -28,9 +28,9 @@ export default async function LoginPage({
             <span className="font-bold text-xl gradient-text">SpanishTutor</span>
           </div>
 
-          <h1 className="text-2xl font-bold mb-1">¡Bienvenido de nuevo!</h1>
+          <h1 className="text-2xl font-bold mb-1">С возвращением!</h1>
           <p className="text-sm text-muted-foreground mb-6">
-            Inicia sesión para continuar aprendiendo español.
+            Войди, чтобы продолжить учить испанский.
           </p>
 
           {sp.error && (
@@ -40,16 +40,16 @@ export default async function LoginPage({
           )}
           {sp.notice === "check-email" && (
             <div className="mb-4 rounded-lg border border-success/30 bg-success/10 px-4 py-3 text-sm text-success">
-              Cuenta creada. Revisa tu email para confirmar.
+              Аккаунт создан. Проверь почту для подтверждения.
             </div>
           )}
 
           <AuthForm mode="signin" redirect={sp.redirect} />
 
           <p className="mt-6 text-center text-sm text-muted-foreground">
-            ¿No tienes cuenta?{" "}
+            Нет аккаунта?{" "}
             <Link href="/signup" className="text-primary font-medium hover:underline">
-              Regístrate gratis
+              Зарегистрироваться
             </Link>
           </p>
         </div>
@@ -64,11 +64,11 @@ export default async function LoginPage({
         <div className="relative text-center text-white max-w-md">
           <GraduationCap className="h-16 w-16 mx-auto mb-6 opacity-90" />
           <h2 className="text-3xl font-bold mb-3">
-            Tu profesor de español, 24/7
+            Твой преподаватель испанского, 24/7
           </h2>
           <p className="text-white/90">
-            Aprende gramática, vocabulario y preparación para DELE con un tutor
-            que se adapta a tu nivel.
+            Учи грамматику, лексику и готовься к DELE с репетитором, который
+            подстраивается под твой уровень.
           </p>
         </div>
       </div>

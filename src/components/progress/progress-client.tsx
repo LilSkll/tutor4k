@@ -34,6 +34,8 @@ import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
 import type { ExerciseHistory, Level } from "@/types";
 import { LEVELS, EXERCISE_TYPES } from "@/config/app";
+import { useUIStore } from "@/stores";
+import { translate } from "@/lib/i18n";
 
 const LEVEL_COLORS: Record<Level, string> = {
   A1: "#10b981",
@@ -65,6 +67,9 @@ export function ProgressClient({
   userName: string;
 }) {
   const [exporting, setExporting] = React.useState(false);
+  const language = useUIStore((s) => s.interfaceLanguage);
+  const tr = (key: string) => translate(key, language);
+  const dateLocale = language === "ru" ? "ru-RU" : language === "es" ? "es-ES" : "en-US";
 
   // --- Compute statistics -------------------------------------------
   const totalExercises = history.length;
@@ -95,7 +100,7 @@ export function ProgressClient({
     const key = d.toISOString().slice(0, 10);
     const row = activityMap.get(key);
     return {
-      date: d.toLocaleDateString("es-ES", { day: "numeric", month: "short" }),
+      date: d.toLocaleDateString(dateLocale, { day: "numeric", month: "short" }),
       minutes: row?.minutes_studied ?? 0,
       lessons: row?.lessons_completed ?? 0,
     };
@@ -138,18 +143,25 @@ export function ProgressClient({
         }),
       });
       if (!res.ok) throw new Error("Failed");
-      const blob = await res.blob();
+      const html = await res.text();
+      // Open the print-ready HTML in a new tab; it auto-triggers print →
+      // the user picks "Save as PDF". This renders Cyrillic correctly.
+      const blob = new Blob([html], { type: "text/html;charset=utf-8" });
       const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = `progreso-español-${new Date().toISOString().slice(0, 10)}.pdf`;
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      URL.revokeObjectURL(url);
-      toast.success("PDF exportado 📄");
+      const win = window.open(url, "_blank");
+      if (!win) {
+        // Popup blocked — fall back to a download.
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = `progress-${new Date().toISOString().slice(0, 10)}.html`;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+      }
+      setTimeout(() => URL.revokeObjectURL(url), 60_000);
+      toast.success(tr("progress.toastExported"));
     } catch {
-      toast.error("No se pudo exportar el PDF");
+      toast.error(tr("progress.toastExportFail"));
     } finally {
       setExporting(false);
     }
@@ -162,9 +174,9 @@ export function ProgressClient({
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
         <div>
-          <h1 className="text-2xl font-bold">Progreso</h1>
+          <h1 className="text-2xl font-bold">{tr("progress.title")}</h1>
           <p className="text-sm text-muted-foreground">
-            Estadísticas de tu aprendizaje
+            {tr("progress.subtitle")}
           </p>
         </div>
         <Button variant="outline" onClick={exportPDF} disabled={exporting}>
@@ -173,7 +185,7 @@ export function ProgressClient({
           ) : (
             <Download className="h-4 w-4" />
           )}
-          Exportar PDF
+          {tr("progress.exportBtn")}
         </Button>
       </div>
 
@@ -183,10 +195,9 @@ export function ProgressClient({
             <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-2xl bg-primary/10 text-primary">
               <Target className="h-6 w-6" />
             </div>
-            <h3 className="font-semibold mb-1">Aún no hay datos</h3>
+            <h3 className="font-semibold mb-1">{tr("progress.noDataTitle")}</h3>
             <p className="text-sm text-muted-foreground max-w-sm">
-              Realiza ejercicios y estudia con el tutor para ver tus
-              estadísticas aquí.
+              {tr("progress.noDataDesc")}
             </p>
           </CardContent>
         </Card>
@@ -196,23 +207,23 @@ export function ProgressClient({
           <div className="grid gap-4 md:grid-cols-4">
             <StatCard
               icon={<Award className="h-5 w-5" />}
-              label="Ejercicios totales"
+              label={tr("progress.statTotal")}
               value={String(totalExercises)}
             />
             <StatCard
               icon={<Target className="h-5 w-5" />}
-              label="Precisión"
+              label={tr("progress.statAccuracy")}
               value={`${accuracy}%`}
               accent={accuracy >= 70 ? "success" : "warning"}
             />
             <StatCard
               icon={<Flame className="h-5 w-5" />}
-              label="Racha"
-              value={`${streak} días`}
+              label={tr("progress.statStreak")}
+              value={`${streak} ${tr("progress.statStreakUnit")}`}
             />
             <StatCard
               icon={<TrendingUp className="h-5 w-5" />}
-              label="Aciertos"
+              label={tr("progress.statHits")}
               value={`${correctCount}/${totalExercises}`}
             />
           </div>
@@ -220,8 +231,8 @@ export function ProgressClient({
           {/* Activity chart */}
           <Card>
             <CardHeader>
-              <CardTitle className="text-base">Actividad (últimos 30 días)</CardTitle>
-              <CardDescription>Minutos estudiados por día</CardDescription>
+              <CardTitle className="text-base">{tr("progress.activityTitle")}</CardTitle>
+              <CardDescription>{tr("progress.activityDesc")}</CardDescription>
             </CardHeader>
             <CardContent>
               <div className="h-64">
@@ -258,8 +269,8 @@ export function ProgressClient({
             {/* By level */}
             <Card>
               <CardHeader>
-                <CardTitle className="text-base">Por nivel</CardTitle>
-                <CardDescription>Aciertos vs total</CardDescription>
+                <CardTitle className="text-base">{tr("progress.byLevelTitle")}</CardTitle>
+                <CardDescription>{tr("progress.byLevelDesc")}</CardDescription>
               </CardHeader>
               <CardContent className="space-y-3">
                 {byLevel.map((l) => (
@@ -290,8 +301,8 @@ export function ProgressClient({
             {byType.length > 0 && (
               <Card>
                 <CardHeader>
-                  <CardTitle className="text-base">Por tipo de ejercicio</CardTitle>
-                  <CardDescription>Distribución de práctica</CardDescription>
+                  <CardTitle className="text-base">{tr("progress.byTypeTitle")}</CardTitle>
+                  <CardDescription>{tr("progress.byTypeDesc")}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="h-48">
@@ -347,7 +358,7 @@ export function ProgressClient({
                 <CardHeader>
                   <CardTitle className="text-base flex items-center gap-2">
                     <TrendingUp className="h-4 w-4 text-success" />
-                    Puntos fuertes
+                    {tr("progress.strengthsTitle")}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2">
@@ -363,7 +374,7 @@ export function ProgressClient({
                     ))
                   ) : (
                     <p className="text-sm text-muted-foreground">
-                      Practica más para identificar tus puntos fuertes.
+                      {tr("progress.strengthsEmpty")}
                     </p>
                   )}
                 </CardContent>
@@ -373,7 +384,7 @@ export function ProgressClient({
                 <CardHeader>
                   <CardTitle className="text-base flex items-center gap-2">
                     <TrendingDown className="h-4 w-4 text-destructive" />
-                    Puntos a mejorar
+                    {tr("progress.weaknessesTitle")}
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-2">
@@ -389,7 +400,7 @@ export function ProgressClient({
                     ))
                   ) : (
                     <p className="text-sm text-muted-foreground">
-                      ¡Bien hecho! Sigue practicando.
+                      {tr("progress.weaknessesEmpty")}
                     </p>
                   )}
                 </CardContent>

@@ -30,12 +30,12 @@ export function AuthForm({ mode, redirect }: AuthFormProps) {
     <form action={action} className="space-y-4">
       {mode === "signup" && (
         <div className="space-y-2">
-          <Label htmlFor="name">Nombre</Label>
+          <Label htmlFor="name">Имя</Label>
           <Input
             id="name"
             name="name"
             type="text"
-            placeholder="Tu nombre"
+            placeholder="Твоё имя"
             required
             autoComplete="name"
           />
@@ -48,14 +48,14 @@ export function AuthForm({ mode, redirect }: AuthFormProps) {
           id="email"
           name="email"
           type="email"
-          placeholder="tu@email.com"
+          placeholder="твой@email.com"
           required
           autoComplete="email"
         />
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="password">Contraseña</Label>
+        <Label htmlFor="password">Пароль</Label>
         <Input
           id="password"
           name="password"
@@ -74,7 +74,7 @@ export function AuthForm({ mode, redirect }: AuthFormProps) {
         disabled={pending}
       >
         {pending && <Loader2 className="h-4 w-4 animate-spin" />}
-        {mode === "signin" ? "Iniciar sesión" : "Crear cuenta"}
+        {mode === "signin" ? "Войти" : "Создать аккаунт"}
       </Button>
     </form>
   );

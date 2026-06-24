@@ -3,7 +3,7 @@ import { TutorChat } from "@/components/tutor/tutor-chat";
 
 export default function TutorPage() {
   return (
-    <Suspense fallback={<div className="p-8 text-center text-muted-foreground">Cargando…</div>}>
+    <Suspense fallback={<div className="p-8 text-center text-muted-foreground">Загрузка…</div>}>
       <TutorChat />
     </Suspense>
   );

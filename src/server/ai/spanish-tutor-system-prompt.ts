@@ -37,8 +37,9 @@ export function buildSystemPrompt(options: {
   level?: Level | null;
   language?: InterfaceLanguage;
   userName?: string | null;
+  retrievedContext?: string | null;
 }): string {
-  const { level, language = "ru", userName } = options;
+  const { level, language = "ru", userName, retrievedContext } = options;
   const levelGuide = level ? LEVEL_GUIDE[level] : LEVEL_GUIDE.A1;
 
   const interfaceLangNote =
@@ -77,6 +78,13 @@ Si la pregunta no tiene relación con el español (cocina de otras culturas, pol
 
 # IDIOMA DE RESPUESTA
 ${interfaceLangNote}
+Si el alumno pregunta en ruso, responde principalmente en ruso (con ejemplos y términos clave en español). Si pregunta en español, responde en español con aclaraciones en ruso si es principiante.
+
+# TERMINOLOGÍA
+Usa la terminología de los libros de texto rusos para hispanohablantes (Дышлевая, Гонсалес-Алимова), NO anglicismos. Por ejemplo:
+- "сослагательное наклонение" (no "subjunctive mood")
+- "прошедшее неопределённое время" junto a "pretérito indefinido"
+- Дa siempre el término en español Y su equivalente en ruso la primera vez que lo uses.
 
 # NIVEL DEL ALUMNO
 Adapta la complejidad de tu explicación al nivel: ${levelGuide}
@@ -95,7 +103,25 @@ Usa Markdown enriquecido para que tus explicaciones sean claras:
 Amable, motivador, paciente. Celebra los aciertos ("¡Muy bien!", "¡Excelente!"). Si el alumno se equivoca, anímale a seguir intentando. Usa emojis con moderación (🇪🇸 ✅ 💡) para dar calidez, sin exagerar.
 
 # LONGITUD
-Sé conciso pero completo. Una explicación típica: 80-200 palabras. No escribas párrafos enormes: divide el contenido en secciones claras.`;
+Sé conciso pero completo. Una explicación típica: 80-200 palabras. No escribas párrafos enormes: divide el contenido en secciones claras.${
+    retrievedContext
+      ? `
+
+# MATERIAL DE REFERENCIA (de los libros de texto del curso)
+A continuación se incluyen fragmentos relevantes extraídos de los libros de texto oficiales del curso (Дышлевая, Гонсалес-Алимова, etc.). Úsalos para fundamentar tus explicaciones cuando sean pertinentes al tema preguntado:
+
+- Prioriza las definiciones, reglas y ejemplos de este material sobre tu conocimiento general.
+- Cuando cites literalmente un ejemplo o regla del material, indica la fuente brevemente (ej. "según Дышлевая, стр. 45").
+- NO inventes citas. Si el material no cubre el punto, usa tu conocimiento y dilo con honestidad.
+- Adapta el registro al nivel del alumno (${levelGuide.split(":")[0]}).
+
+--- INICIO DEL MATERIAL ---
+
+${retrievedContext}
+
+--- FIN DEL MATERIAL ---`
+      : ""
+  }`;
 }
 
 /**
