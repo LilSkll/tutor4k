@@ -253,6 +253,39 @@ export function DashboardDataLoader() {
           </CardContent>
         </Card>
       </div>
+
+      {/* How progress is tracked + developer credit */}
+      <Card className="bg-muted/30">
+        <CardContent className="p-5 space-y-3">
+          <div className="flex items-center gap-2">
+            <TrendingUp className="h-4 w-4 text-primary" />
+            <h3 className="font-semibold text-sm">Как отслеживается прогресс</h3>
+          </div>
+          <ul className="text-xs text-muted-foreground space-y-1.5">
+            <li className="flex gap-2">
+              <MessageSquare className="h-3.5 w-3.5 mt-0.5 shrink-0 text-primary/70" />
+              <span>Каждый вопрос репетитору засчитывается как ~2 минуты практики и поддерживает твою серию дней (streak).</span>
+            </li>
+            <li className="flex gap-2">
+              <Target className="h-3.5 w-3.5 mt-0.5 shrink-0 text-primary/70" />
+              <span>Каждое выполненное упражнение добавляет 3 минуты, +1 к урокам и результат сохраняется в разделе «Прогресс».</span>
+            </li>
+            <li className="flex gap-2">
+              <Flame className="h-3.5 w-3.5 mt-0.5 shrink-0 text-primary/70" />
+              <span>Серия дней растёт, если ты занимаешься подряд. Пропуск дня — и серия обнуляется.</span>
+            </li>
+            <li className="flex gap-2">
+              <TrendingUp className="h-3.5 w-3.5 mt-0.5 shrink-0 text-primary/70" />
+              <span>На вкладке «Прогресс» видны статистика, сильные/слабые стороны и график активности за 30 дней.</span>
+            </li>
+          </ul>
+          <div className="pt-2 border-t text-center">
+            <p className="text-xs text-muted-foreground">
+              Разработчик — <span className="font-medium text-foreground">Драгунов Павел</span>
+            </p>
+          </div>
+        </CardContent>
+      </Card>
     </>
   );
 }

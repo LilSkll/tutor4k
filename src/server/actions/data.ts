@@ -89,7 +89,8 @@ export async function getDailyActivity(days = 30): Promise<DailyActivityRow[]> {
 }
 
 /**
- * Record a study session: upsert today's daily_activity and update streak.
+ * Record a study session: upsert today's daily_activity (accumulating
+ * minutes and lessons, not overwriting) and update the streak.
  */
 export async function recordStudySession(minutes: number, lessons = 1) {
   const supabase = await createSupabaseServerClient();
@@ -101,15 +102,26 @@ export async function recordStudySession(minutes: number, lessons = 1) {
 
   const today = new Date().toISOString().slice(0, 10);
 
-  // Upsert daily activity.
+  // Try to read today's existing row so we can accumulate (not overwrite).
+  const { data: existing } = await supabase
+    .from("daily_activity")
+    .select("lessons_completed, minutes_studied")
+    .eq("user_id", user.id)
+    .eq("activity_date", today)
+    .maybeSingle();
+
+  const prevLessons = (existing?.lessons_completed as number) ?? 0;
+  const prevMinutes = (existing?.minutes_studied as number) ?? 0;
+
+  // Upsert with accumulated totals.
   const { error: upsertError } = await supabase
     .from("daily_activity")
     .upsert(
       {
         user_id: user.id,
         activity_date: today,
-        lessons_completed: lessons,
-        minutes_studied: minutes,
+        lessons_completed: prevLessons + lessons,
+        minutes_studied: prevMinutes + minutes,
       },
       { onConflict: "user_id,activity_date" },
     );

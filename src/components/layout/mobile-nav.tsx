@@ -8,6 +8,7 @@ import {
   Dumbbell,
   Languages,
   LayoutDashboard,
+  LogOut,
   Menu,
   MessageSquare,
   TrendingUp,
@@ -18,6 +19,7 @@ import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
 import { useUIStore } from "@/stores";
 import { translate } from "@/lib/i18n";
+import { signOut } from "@/server/actions/auth";
 import { cn } from "@/lib/utils";
 
 const ICONS: Record<string, LucideIcon> = {
@@ -110,6 +112,20 @@ export function MobileNav() {
                   </Link>
                 );
               })}
+              <div className="pt-2 mt-2 border-t">
+                <form action={() => signOut()}>
+                  <button
+                    type="submit"
+                    className="w-full flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground hover:bg-destructive/10 hover:text-destructive transition-colors"
+                  >
+                    <LogOut className="h-4 w-4" />
+                    {t("nav.logout")}
+                  </button>
+                </form>
+                <p className="px-3 pt-2 text-[10px] text-muted-foreground/70">
+                  Разработчик — Драгунов Павел
+                </p>
+              </div>
             </nav>
           </div>
         </div>

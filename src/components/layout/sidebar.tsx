@@ -7,6 +7,7 @@ import {
   Dumbbell,
   Languages,
   LayoutDashboard,
+  LogOut,
   MessageSquare,
   Settings,
   TrendingUp,
@@ -15,6 +16,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { signOut } from "@/server/actions/auth";
 import { cn } from "@/lib/utils";
 
 const ICONS: Record<string, LucideIcon> = {
@@ -95,9 +97,9 @@ export function Sidebar({ userName, level, streak }: NavProps) {
         })}
       </nav>
 
-      {/* User card */}
+      {/* User card + logout */}
       {!collapsed && (
-        <div className="border-t p-3">
+        <div className="border-t p-3 space-y-1">
           <Link
             href="/settings"
             className="flex items-center gap-3 rounded-lg p-2 hover:bg-accent transition-colors"
@@ -125,6 +127,18 @@ export function Sidebar({ userName, level, streak }: NavProps) {
             </div>
             <Settings className="h-4 w-4 text-muted-foreground" />
           </Link>
+          <form action={() => signOut()}>
+            <button
+              type="submit"
+              className="w-full flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-destructive/10 hover:text-destructive transition-colors"
+            >
+              <LogOut className="h-4 w-4 shrink-0" />
+              <span>{t("nav.logout")}</span>
+            </button>
+          </form>
+          <p className="px-3 pt-1 text-[10px] text-muted-foreground/70">
+            Разработчик — Драгунов Павел
+          </p>
         </div>
       )}
     </aside>
