@@ -14,6 +14,23 @@
 // Requires poppler (pdftotext, pdfinfo) installed locally.
 // =====================================================================
 
+// Load .env.local manually (tsx doesn't read Next.js env files).
+import { readFileSync, existsSync } from "fs";
+import { resolve } from "path";
+
+for (const file of [".env.local", ".env"]) {
+  const p = resolve(process.cwd(), file);
+  if (existsSync(p)) {
+    for (const line of readFileSync(p, "utf-8").split("\n")) {
+      const m = line.match(/^([A-Z0-9_]+)=(.*)$/);
+      if (m && !process.env[m[1]]) {
+        process.env[m[1]] = m[2];
+      }
+    }
+    break;
+  }
+}
+
 import { createSupabaseAdminClient } from "../src/lib/supabase-admin";
 import { extractPdf, type PdfDocument } from "../src/server/rag/extract";
 import { chunkDocument, type KnowledgeChunk } from "../src/server/rag/chunk";
