@@ -9,6 +9,41 @@ import type { Goal, InterfaceLanguage, Level } from "@/types";
 // Authentication server actions
 // =====================================================================
 
+/**
+ * Translate raw Supabase auth errors into friendly Russian messages so the
+ * user understands what went wrong instead of seeing "email rate limit
+ * exceeded" or other technical strings.
+ */
+function friendlyAuthError(message: string): string {
+  const m = message.toLowerCase();
+  if (m.includes("rate limit") && m.includes("email")) {
+    return "Сервер отправил слишком много писем подтверждения за час. Подожди немного (15-30 минут) и попробуй снова, либо попроси администратора отключить подтверждение email.";
+  }
+  if (m.includes("rate limit")) {
+    return "Слишком много попыток за короткое время. Подожди пару минут и попробуй снова.";
+  }
+  if (m.includes("already") && m.includes("registered")) {
+    return "Аккаунт с таким email уже существует. Попробуй войти вместо регистрации.";
+  }
+  if (m.includes("already been registered")) {
+    return "Пользователь с таким email уже зарегистрирован. Войди через страницу входа.";
+  }
+  if (m.includes("invalid login") || m.includes("invalid credentials")) {
+    return "Неверный email или пароль. Проверь данные и попробуй снова.";
+  }
+  if (m.includes("email not confirmed")) {
+    return "Email ещё не подтверждён. Проверь почту (включая папку «Спам») или попроси администратора отключить подтверждение email.";
+  }
+  if (m.includes("password") && (m.includes("weak") || m.includes("short"))) {
+    return "Пароль слишком простой. Используй минимум 6 символов.";
+  }
+  if (m.includes("password should be")) {
+    return "Пароль слишком короткий. Минимум 6 символов.";
+  }
+  // Fallback — keep the original but prefix for clarity.
+  return "Ошибка: " + message;
+}
+
 export async function signInWithEmail(formData: FormData) {
   const email = String(formData.get("email") ?? "");
   const password = String(formData.get("password") ?? "");
@@ -18,7 +53,7 @@ export async function signInWithEmail(formData: FormData) {
   const { error } = await supabase.auth.signInWithPassword({ email, password });
 
   if (error) {
-    redirect(`/login?error=${encodeURIComponent(error.message)}`);
+    redirect(`/login?error=${encodeURIComponent(friendlyAuthError(error.message))}`);
   }
 
   redirect(redirectPath);
@@ -37,7 +72,7 @@ export async function signUpWithEmail(formData: FormData) {
   });
 
   if (error) {
-    redirect(`/signup?error=${encodeURIComponent(error.message)}`);
+    redirect(`/signup?error=${encodeURIComponent(friendlyAuthError(error.message))}`);
   }
 
   // Email confirmation may be required — redirect to login with notice.
