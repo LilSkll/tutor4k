@@ -13,6 +13,7 @@ export const metadata: Metadata = {
   title: "SpanishTutor — AI Spanish Learning Platform",
   description:
     "Personal AI tutor for learning Spanish: grammar, vocabulary, exercises, DELE prep and progress tracking.",
+  authors: [{ name: "Драгунов Павел" }],
   keywords: [
     "Spanish",
     "learn Spanish",

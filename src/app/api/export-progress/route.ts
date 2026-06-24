@@ -116,6 +116,7 @@ export async function POST(req: NextRequest) {
 
   <div class="footer">
     SpanishTutor · ИИ-репетитор испанского языка · Создано с Next.js, Supabase и Groq
+    <br>Разработчик — Драгунов Павел
   </div>
 
   <script>

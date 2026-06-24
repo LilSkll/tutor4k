@@ -133,14 +133,17 @@ export default function LandingPage() {
 
       {/* Footer */}
       <footer className="border-t py-8">
-        <div className="container flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-          <div className="flex items-center gap-2">
-            <div className="flex h-7 w-7 items-center justify-center rounded-md bg-gradient-to-br from-primary via-orange-500 to-rose-500 text-white font-bold text-sm">
-              Ñ
+        <div className="container flex flex-col items-center gap-3 text-sm text-muted-foreground">
+          <div className="flex flex-col md:flex-row items-center justify-between w-full gap-4">
+            <div className="flex items-center gap-2">
+              <div className="flex h-7 w-7 items-center justify-center rounded-md bg-gradient-to-br from-primary via-orange-500 to-rose-500 text-white font-bold text-sm">
+                Ñ
+              </div>
+              <span>SpanishTutor © {new Date().getFullYear()}</span>
             </div>
-            <span>SpanishTutor © {new Date().getFullYear()}</span>
+            <p>{t("landing.footer")}</p>
           </div>
-          <p>{t("landing.footer")}</p>
+          <p className="text-xs">Разработчик — Драгунов Павел</p>
         </div>
       </footer>
     </div>
