@@ -134,6 +134,9 @@ export interface AIResponse {
   refused?: boolean;
 }
 
+/** Provider label as returned by sendTutorMessage (includes cache hit). */
+export type TutorProvider = "groq" | "gemini" | "cache";
+
 export interface AIMessage {
   role: MessageRole;
   content: string;

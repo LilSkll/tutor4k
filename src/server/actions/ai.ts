@@ -3,6 +3,10 @@
 import { createSupabaseServerClient } from "@/lib/supabase-server";
 import { generateAIResponse } from "@/server/ai/orchestrator";
 import { retrieveContext } from "@/server/rag/retrieve";
+import {
+  getCachedTutorResponse,
+  setCachedTutorResponse,
+} from "@/server/rag/tutor-cache";
 import type {
   AIMessage,
   ExerciseHistory,
@@ -76,11 +80,42 @@ export async function sendTutorMessage(input: {
     }
   }
 
-  // --- Retrieve relevant textbook context (RAG) -----------------------
-  let retrievedContext: string | null = null;
+  // --- Resolve the last user question (reused for cache + RAG) -------
   const lastUser = [...input.messages]
     .reverse()
     .find((m) => m.role === "user");
+
+  // --- Shared cache: serve identical questions without hitting Groq --
+  if (lastUser) {
+    try {
+      const cached = await getCachedTutorResponse(lastUser.content, level);
+      if (cached) {
+        // Persist the cached reply into the conversation (best-effort).
+        if (user && conversationId) {
+          await supabase.from("chat_messages").insert({
+            conversation_id: conversationId,
+            role: "assistant",
+            content: cached,
+          });
+          await supabase
+            .from("chat_conversations")
+            .update({ updated_at: new Date().toISOString() })
+            .eq("id", conversationId);
+          await recordStudySession(2, 0).catch(() => {});
+        }
+        return {
+          content: cached,
+          provider: "cache",
+          conversationId: conversationId ?? "",
+        };
+      }
+    } catch {
+      // Non-fatal: fall through to the normal RAG + Groq path.
+    }
+  }
+
+  // --- Retrieve relevant textbook context (RAG) -----------------------
+  let retrievedContext: string | null = null;
   if (lastUser) {
     try {
       retrievedContext = await retrieveContext(lastUser.content, level);
@@ -98,6 +133,13 @@ export async function sendTutorMessage(input: {
     userName,
     retrievedContext,
   });
+
+  // --- Store the answer in the shared cache (best-effort) ------------
+  if (lastUser && response.refused !== true && response.content) {
+    setCachedTutorResponse(lastUser.content, level, response.content).catch(
+      () => {},
+    );
+  }
 
   // --- Persist assistant reply (best-effort) --------------------------
   if (user && conversationId) {
