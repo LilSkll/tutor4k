@@ -116,6 +116,128 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 
 > 💡 Глаголы с чередованием гласной: \`pensar → pienso\`, \`pedir → pido\`, \`dormir → duermo\`.`,
   },
+  {
+    slug: "a1-genero-numero",
+    title: "Род и число",
+    titleEs: "Género y Número",
+    level: "A1",
+    category: "Существительные",
+    summary: "Мужской/женский род, единственное/множественное число существительных.",
+    content: `## Género (род)
+
+| Окончание | Род | Пример |
+|---|---|---|
+| -o | м.р. | el libro, el perro |
+| -a | ж.р. | la casa, la gata |
+| -ción/-sión | ж.р. | la canción, la televisión |
+| -dad/-tad | ж.р. | la ciudad, la libertad |
+| согласная | разное | el lápiz / la pared |
+
+**Исключения:** \`el problema\`, \`el mapa\`, \`el día\` (м.р. несмотря на -a);
+\`la mano\`, \`la foto\` (ж.р. несмотря на -o).
+
+## Número (число)
+
+- Добавляем **-s** (для гласной): \`libro → libros\`, \`mesa → mesas\`
+- Добавляем **-es** (для согласной): \`flor → flores\`, \`mes → meses\`
+- \`el lápiz → los lápices\` (z → c перед -es)
+- \`el prógrama → los programas\` (без ударения)
+
+> ⚠️ Согласование: артикль + прилагательное + существительное должны
+> совпадать в роде и числе: \`la casa blanca\`, \`los coches rojos\`.`,
+  },
+  {
+    slug: "a1-numeros-1-100",
+    title: "Числа 1–100",
+    titleEs: "Números 1–100",
+    level: "A1",
+    category: "Лексика",
+    summary: "Количественные числительные для счёта, возраста, цен.",
+    content: `## Números cardinales
+
+| Диапазон | Пример |
+|---|---|
+| 1–10 | uno, dos, tres, cuatro, cinco, seis, siete, ocho, nueve, diez |
+| 11–15 | once, doce, trece, catorce, quince |
+| 16–19 | dieciséis, diecisiete, dieciocho, diecinueve |
+| 20–29 | veinte, veintiuno, veintidós, … veintinueve |
+| 30,40,50… | treinta, cuarenta, cincuenta, sesenta, setenta, ochenta, noventa |
+| десятки+единицы | treinta y uno, cuarenta y cinco |
+
+**Особенности:**
+- \`uno → un\` перед существительным: \`un libro\` (не \`uno libro\`)
+- \`veintiún\` перед м.р.: \`veintiún años\`
+- \`cien\` (100) vs \`ciento\` (перед числом): \`ciento uno\`
+
+> 💡 Возраст: \`Tengo veinte años.\` Цены: \`Cuesta cinco euros.\``,
+  },
+  {
+    slug: "a1-preposiciones-lugar",
+    title: "Предлоги места",
+    titleEs: "Preposiciones de Lugar",
+    level: "A1",
+    category: "Предлоги",
+    summary: "en, a, de, sobre, debajo, delante — где находится предмет.",
+    content: `## Основные предлоги места
+
+| Предлог | Значение | Пример |
+|---|---|---|
+| **en** | в/на | El libro está **en** la mesa |
+| **a** | к/в (движение) | Voy **a** Madrid |
+| **de** | из/от | Soy **de** Rusia |
+| **sobre** | над/на | La lámpara está **sobre** la mesa |
+| **debajo de** | под | El gato está **debajo de** la silla |
+| **delante de** | перед | El coche está **delante de** la casa |
+| **detrás de** | за | El jardín está **detrás de** la casa |
+| **entre** | между | Entre tú y yo |
+| **cerca de** | рядом | La tienda está **cerca de** aquí |
+| **lejos de** | далеко | Vive **lejos de** la ciudad |
+
+### Важное правило
+**Estar + место** для местонахождения: \`Estoy en casa.\`
+**Ir + a + место** для направления: \`Voy al cine.\` (\`a + el = al\`)
+
+> ⚠️ \`a + el = al\`, \`de + el = del\` — обязательное слияние.`,
+  },
+  {
+    slug: "a1-gustar",
+    title: "Глагол gustar",
+    titleEs: "Verbo Gustar",
+    level: "A1",
+    category: "Глаголы",
+    summary: "Особый глагол «нравиться» — спрягается по предмету, не по субъекту.",
+    content: `## Gustar — «нравиться» (буквально: «быть приятным»)
+
+В испанском \`gustar\` работает **наоборот**: подлежащим является то,
+что нравится, а не тот, кому нравится.
+
+### Спряжение
+
+| Мне нравится… | Форма |
+|---|---|
+| единственное | **Me gusta** el café |
+| множественное | **Me gustan** los libros |
+
+| Лицо | Единств. | Множ. |
+|---|---|---|
+| мне | me gusta | me gustan |
+| тебе | te gusta | te gustan |
+| ему/ей | le gusta | le gustan |
+| нам | nos gusta | nos gustan |
+| вам | os gusta | os gustan |
+| им | les gusta | les gustan |
+
+### Усиление
+\`Me gusta** mucho** el café.\` — Мне очень нравится кофе.
+\`No me gusta **nada** el té.\` — Мне совсем не нравится чай.
+
+### Уточнение (a + имя)
+\`A **María** le gusta el flamenco.\` — Марии нравится фламенко.
+\`A **mí** me gusta el café.\` — Мне (именно мне) нравится кофе.
+
+> 💡 Похожие глаголы: \`encantar\` (обожать), \`interesar\` (интересовать),
+> \`doler\` (болеть) — работают так же.`,
+  },
 
   // ----- A2 ---------------------------------------------------------
   {
@@ -202,6 +324,164 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
 > 💡 Indefinido = «факты прошлого»; Imperfecto = «описание фона». Сравни:
 > \`Ayer **llovió**\` (что произошло) / \`**Llovía**\` (какая была погода).`,
   },
+  {
+    slug: "a2-imperfecto",
+    title: "Pretérito Imperfecto",
+    titleEs: "Pretérito Imperfecto",
+    level: "A2",
+    category: "Прошедшие времена",
+    summary: "Описание фона в прошлом: привычки, описания, длительные действия.",
+    content: `## Pretérito Imperfecto — фон прошлого
+
+### Правильные окончания
+
+| Лицо | -AR | -ER/-IR |
+|---|---|---|
+| yo | -aba | -ía |
+| tú | -abas | -ías |
+| él/ella | -aba | -ía |
+| nosotros | -ábamos | -íamos |
+| ellos | -aban | -ían |
+
+Пример: \`hablar\` → hablaba, hablabas, hablaba, hablábamos, hablaban.
+
+### Только 3 неправильных!
+| Глагол | Основа |
+|---|---|
+| **ser** | era, eras, era, éramos, eran |
+| **ir** | iba, ibas, iba, íbamos, iban |
+| **ver** | veía, veías, veía, veíamos, veían |
+
+### Когда использовать
+1. **Привычки в прошлом:** \`Cuando era niño, jugaba al fútbol.\`
+2. **Описание:** \`Hacía sol y los pájaros cantaban.\`
+3. **Длительное действие (фон):** \`Yo leía cuando llamaste.\`
+4. **Возраст/время:** \`Tenía 10 años.\`
+
+### Сравнение с Indefinido
+\`**Estaba** en casa cuando **llegó** María.\`
+(Imperfecto — что делал / Indefinido — что произошло).`,
+  },
+  {
+    slug: "a2-por-para",
+    title: "Por vs Para",
+    titleEs: "Por y Para",
+    level: "A2",
+    category: "Предлоги",
+    summary: "Два предлога «за/для» — главная трудность испанского.",
+    content: `## POR vs PARA — оба переводятся по-разному
+
+### PARA — цель, назначение, направление
+- **Цель:** \`Estudio **para** aprender.\` (чтобы научиться)
+- **Получатель:** \`Es un regalo **para** ti.\` (для тебя)
+- **Направление:** \`Voy **para** Madrid.\` (в сторону)
+- **Срок:** \`Para mañana.\` (к завтрашнему дню)
+
+### POR — причина, путь, обмен, длительность
+- **Причина:** \`**Por** el frío, no salí.\` (из-за холода)
+- **Путь/место:** \`Paseo **por** el parque.\` (через/по)
+- **Обмен:** \`Lo compré **por** 10 euros.\` (за 10 евро)
+- **Длительность:** \`Estudié **por** dos horas.\` (в течение)
+- **Вместо:** \`Lo hago **por** ti.\` (за тебя/вместо тебя)
+
+### Мнемоника
+**PARA** = « PARA чего» (цель, направление вперёд)
+**POR** = «по причине, по пути, по цене»
+
+> ⚠️ Устойчивые: \`por favor\` (пожалуйста), \`por qué\` (почему),
+> \`para siempre\` (навсегда), \`por la mañana\` (утром).`,
+  },
+  {
+    slug: "a2-comparativos",
+    title: "Сравнительная степень",
+    titleEs: "Comparativos y Superlativos",
+    level: "A2",
+    category: "Прилагательные",
+    summary: "Сравнение: больше/меньше/самый — сравнительная и превосходная степень.",
+    content: `## Comparativos (сравнительная степень)
+
+### Обычные прилагательные
+\`más + прилагательное + (que)\` / \`menos + … + (que)\`
+
+- \`María es **más alta que** Ana.\` — Мария выше Аны.
+- \`Este coche es **menos caro que** el otro.\` — Этот авто дешевле.
+
+### Особые формы (нужно запомнить!)
+
+| Значение | Форма |
+|---|---|
+| больше/меньше | **mayor / menor** (возраст) или **más grande/más pequeño** (размер) |
+| лучше/хуже | **mejor / peor** |
+| больше (количество) | **más** |
+| старше/младше | **mayor / menor** |
+
+\`Juan es **mejor** que yo.\` — Хуан лучше меня.
+\`Mi hermano es **mayor** que yo.\` — Мой брат старше меня.
+
+## Superlativos (превосходная степень)
+
+\`el/la/los/las + más/menos + прилагательное\`
+
+- \`Es **el más alto** de la clase.\` — Он самый высокий в классе.
+- \`Es **la menos cara**.\` — Она наименее дорогая.
+
+### Особые: добавляем -ísimo
+\`bueno → buenísimo\` (очень хороший)
+\`grande → grandísimo\`
+\`rápido → rapidísimo\`
+
+> ⚠️ \`el mejor / la mejor\` (лучший), \`el peor / la peor\` (худший) —
+> особые формы превосходной.`,
+  },
+  {
+    slug: "a2-futuro-simple",
+    title: "Futuro Simple",
+    titleEs: "Futuro Simple",
+    level: "A2",
+    category: "Будущее время",
+    summary: "Простое будущее: планы, прогнозы, обещания.",
+    content: `## Futuro Simple
+
+### Образование: инфинитив + окончание
+
+К **инфинитиву** добавляем (без отбрасывания -ar/-er/-ir):
+
+| Лицо | Окончание |
+|---|---|
+| yo | -é |
+| tú | -ás |
+| él/ella | -á |
+| nosotros | -emos |
+| vosotros | -éis |
+| ellos | -án |
+
+Примеры:
+- \`hablar\` → hablar**é**, hablar**ás**, hablar**á**…
+- \`comer\` → comer**é**, comer**ás**…
+- \`vivir\` → vivir**é**, vivir**ás**…
+
+### Неправильные основы (12 глаголов)
+| Инфинитив | Основа будущего |
+|---|---|
+| tener | tendr- |
+| poner | pondr- |
+| salir | saldr- |
+| venir | vendr- |
+| hacer | har- |
+| poder | podr- |
+| saber | sabr- |
+| querer | querr- |
+| decir | dir- |
+| haber | habr- |
+
+### Использование
+1. **Прогноз:** \`Mañana **lloverá**.\`
+2. **Обещание:** \`Te **llamaré** esta noche.\`
+3. **Планы:** \`El año que viene **viajaré** a España.\`
+
+> 💡 Также: вероятность в настоящем: \`¿Qué hora es? — Serán las tres.\`
+> (Наверное, часа три).`,
+  },
 
   // ----- B1 ---------------------------------------------------------
   {
@@ -283,6 +563,158 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
 \`**No me lo digas**\`.
 
 > 💡 Ударение сохраняется на глаголе: dí-me-lo, có-me-lo.`,
+  },
+  {
+    slug: "b1-condicional",
+    title: "Condicional Simple",
+    titleEs: "Modo Condicional",
+    level: "B1",
+    category: "Наклонения",
+    summary: "Условное наклонение: вежливые просьбы, гипотезы, пожелания.",
+    content: `## Condicional Simple (условное наклонение)
+
+### Образование: инфинитив + окончание
+
+| Лицо | Окончание |
+|---|---|
+| yo | -ía |
+| tú | -ías |
+| él/ella | -ía |
+| nosotros | -íamos |
+| vosotros | -íais |
+| ellos | -ían |
+
+Примеры:
+- \`hablar\` → hablar**ía**, hablar**ías**…
+- \`comer\` → comer**ía**, comer**ías**…
+
+### Неправильные основы (те же, что в будущем)
+\`tener → tendría\`, \`poner → pondría\`, \`hacer → haría\`,
+\`poder → podría\`, \`saber → sabría\`, \`querer → querría\`, \`decir → diría\`.
+
+### Использование
+1. **Вежливость:** \`¿**Podría** ayudarme?\` (Не могли бы вы помочь?)
+2. **Пожелание:** \`**Me gustaría** viajar.\` (Я бы хотел попутешествовать.)
+3. **Гипотеза в прошлом:** \`Dijo que **vendría**.\` (Он сказал, что придёт.)
+4. **Совет:** \`Yo que tú, **estudiaría** más.\` (На твоём месте я бы…)
+
+### Si-конструкции (нереальное условие в настоящем)
+\`Si **tuviera** tiempo, **saldría** contigo.\`
+(Если бы у меня было время, я бы пошёл с тобой.)
+- \`Si + Subjuntivo imperfecto + Condicional\`
+
+> 💡 Condicional = будущее, перенесённое в воображаемое/гипотетическое.`,
+  },
+  {
+    slug: "b1-preposiciones-por-para-2",
+    title: "Местоимения SE",
+    titleEs: "Pronombre SE",
+    level: "B1",
+    category: "Местоимения",
+    summary: "Безличное se, пассивное se, взаимное se — многофункциональный местоименный глагол.",
+    content: `## Местоимение SE — самые важные функции
+
+### 1. Возвратное (reflexivo)
+\`levantarse\` → \`Me **levanto** a las 7.\` — Я встаю в 7.
+\`lavarse\` → \`Se **lava** las manos.\` — Он моет руки.
+
+### 2. Взаимное (recíproco)
+\`**Se** ven todos los días.\` — Они видят друг друга каждый день.
+\`**Nos** abrazamos.\` — Мы обнимаемся.
+
+### 3. Пассивное (pasiva refleja) — без указания исполнителя
+\`**Se** habla español.\` — Здесь говорят по-испански.
+\`**Se** venden casas.\` — Продаются дома.
+- Глагол **согласуется** с существительным: \`Se vende pan\` / \`Se venden libros\`.
+
+### 4. Безличное (impersonal)
+\`**Se** vive bien aquí.\` — Здесь хорошо живут.
+- Всегда 3 лицо единственного числа.
+
+### 5. Непреднамеренное (accidental)
+\`**Se** me rompió el vaso.\` — У меня случайно разбился стакан.
+- Формат: \`Se + [косв. местоимение] + глагол + артикль + существительное\`
+\`**Se** le olvidó la contraseña.\` — Он забыл пароль.
+
+> ⚠️ \`se\` — самое частое местоимение в испанском после \`que\`. Контекст
+> определяет значение.`,
+  },
+  {
+    slug: "b1-relativos",
+    title: "Относительные местоимения",
+    titleEs: "Pronombres Relativos",
+    level: "B1",
+    category: "Местоимения",
+    summary: "que, quien, el que, cuyo, donde — связывающие слова в сложных предложениях.",
+    content: `## Относительные местоимения (relativos)
+
+### QUE — самый универсальный
+\`El libro **que** leo.\` — Книга, которую я читаю.
+\`La mujer **que** habla.\` — Женщина, которая говорит.
+- Используется для людей и предметов, после предлога с предметами:
+\`el tema **de que** hablamos\` (но: \`la persona **de la que** hablo\`).
+
+### QUIEN — только для людей (после запятой или предлога)
+\`Mi hermano, **quien** vive en Madrid, es médico.\`
+\`Es el profesor **con quien** hablé.\`
+
+### EL QUE / LA QUE / LOS QUE / LAS QUE — уточнение
+\`El **que** estudia, aprueba.\` — Тот, кто учится, сдаёт.
+\`Las **que** vinieron.\` — Те (женщины), что пришли.
+
+### LO QUE — «то, что» (абстрактное)
+\`Esto es **lo que** quiero.\` — Это то, что я хочу.
+\`No entendí **lo que** dijiste.\`
+
+### CUYO / CUYA / CUYOS / CUYAS — «чей»
+\`El hombre **cuyo** coche es rojo.\` — Мужчина, чья машина красная.
+- **Согласуется** с тем, чему принадлежит (не с владельцем):
+\`la mujer **cuyos** hijos…\`
+
+### DONDE — «где» (место)
+\`La ciudad **donde** vivo.\` — Город, где я живу.
+
+> 💡 \`que\` = общее; \`quien\` = только люди; \`donde\` = только место;
+> \`cuyo\` = принадлежность (чей).`,
+  },
+  {
+    slug: "b1-pluscuamperfecto",
+    title: "Pretérito Pluscuamperfecto",
+    titleEs: "Pretérito Pluscuamperfecto",
+    level: "B1",
+    category: "Прошедшие времена",
+    summary: "Предпрошедшее: действие, случившееся до другого действия в прошлом.",
+    content: `## Pretérito Pluscuamperfecto — «давно-прошедшее»
+
+### Формула: HABER (в imperfecto) + participio
+
+**haber** в imperfecto: había, habías, había, habíamos, habíais, habían
+
+**Participio** (как в perfecto):
+- -AR → **-ado**: hablar → hablado
+- -ER/-IR → **-ido**: comer → comido
+
+Неправильные: \`hecho, visto, puesto, escrito, abierto, dicho, vuelto\`.
+
+### Примеры
+\`Cuando llegué, el tren ya **había salido**.\`
+(Когда я приехал, поезд уже ушёл.)
+
+\`No tenía hambre porque ya **había comido**.\`
+(Я не был голоден, потому что уже поел.)
+
+### Использование
+Действие, которое произошло **раньше** другого действия в прошлом:
+
+| Раньше (pluscuamperfecto) | Позже (indefinido/imperfecto) |
+|---|---|
+| había terminado | cuando llegaste |
+
+### Маркеры
+\`ya\` (уже), \`nunca\` (никогда), \`todavía no\` (ещё нет).
+
+> 💡 Используется в косвенной речи: \`Dijo que **había** terminado.\`
+> (Он сказал, что закончил — перфект → плюсквамперфект).`,
   },
 
   // ----- B2 ---------------------------------------------------------

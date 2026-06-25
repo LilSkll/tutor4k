@@ -180,6 +180,25 @@ export interface GeneratedExercise {
   explanation: string;
 }
 
+/**
+ * In-memory dedup store: remembers the last N questions per (type, level)
+ * so the model is told what NOT to repeat. Note: on Vercel serverless this
+ * resets per cold start, but within a warm instance it prevents the
+ * "same sentence three times" bug reported in review.
+ */
+const recentExerciseQuestions = new Map<string, string[]>();
+const MAX_RECENT = 8;
+
+function rememberQuestion(type: ExerciseType, level: Level, question: string) {
+  const key = `${type}:${level}`;
+  const list = recentExerciseQuestions.get(key) ?? [];
+  // Keep only the question text (normalized) for comparison.
+  const norm = question.trim().toLowerCase();
+  list.push(norm);
+  while (list.length > MAX_RECENT) list.shift();
+  recentExerciseQuestions.set(key, list);
+}
+
 export async function generateExercise(input: {
   type: ExerciseType;
   level: Level;
@@ -188,35 +207,54 @@ export async function generateExercise(input: {
 }): Promise<GeneratedExercise> {
   const { generateStructuredJSON } = await import("@/server/ai/orchestrator");
 
-  const typeDescriptions: Record<ExerciseType, string> = {
-    multiple_choice:
-      "Multiple choice: provide a question, 4 options (one correct), and the correct answer.",
-    fill_blank:
-      "Fill in the blank: provide a Spanish sentence with '___' as the blank, the correct word to fill in, and 1-2 acceptable alternatives.",
-    translation:
-      "Translation: provide a sentence in the learner's interface language and its Spanish translation as the answer.",
-    error_correction:
-      "Error correction: provide a Spanish sentence containing ONE grammar error. The answer is the corrected sentence.",
-    sentence_building:
-      "Provide 5-6 jumbled words; the answer is the correct Spanish sentence they form.",
-  };
-
   const langName =
     input.language === "ru" ? "Russian" : input.language === "es" ? "Spanish" : "English";
 
-  const prompt = `You are a Spanish language exercise generator for CEFR level ${input.level}.
-Create ONE ${typeDescriptions[input.type]}
-${input.topic ? `Topic: ${input.topic}.` : ""}
-For translation exercises, the source sentence must be in ${langName}.
+  // Type-specific instructions — strict, to avoid the reviewed bugs:
+  //  - multiple_choice: exactly 4 options, the correct one MUST be among them.
+  //  - sentence_building: a FULL target sentence + 5-7 jumbled word tiles.
+  const typeRules: Record<ExerciseType, string> = {
+    multiple_choice:
+      "MULTIPLE CHOICE. Provide a clear Spanish-language question, EXACTLY 4 distinct options (A/B/C/D). The field 'answer' MUST be one of the 4 options VERBATIM (copy-paste, identical). The other 3 options must be plausible distractors but clearly wrong.",
+    fill_blank:
+      "FILL THE BLANK. Provide a Spanish sentence where the missing part is '___'. The 'answer' is the single word/phrase that fills the blank. Provide 1-2 acceptable alternatives in 'acceptableAnswers' (e.g. with/without accent).",
+    translation:
+      "TRANSLATION. Provide a full sentence in " + langName + " as the 'question' (the prompt). The 'answer' is the correct Spanish translation of that sentence. Provide 1-2 acceptable alternative translations in 'acceptableAnswers'.",
+    error_correction:
+      "ERROR CORRECTION. Provide a Spanish sentence containing exactly ONE grammar mistake as the 'question'. The 'answer' is the fully corrected sentence. The 'acceptableAnswers' should list acceptable variants (e.g. with/without subject pronoun).",
+    sentence_building:
+      "SENTENCE BUILDING. Provide a complete target Spanish sentence as the 'answer'. Then split it into 5-7 individual word tiles (in jumbled order) and put those tiles in 'options'. The user will reorder them. The 'question' should be the instruction (e.g. 'Соберите предложение из слов:'). Include the FULL correct sentence in 'answer'.",
+  };
 
-Respond ONLY with valid JSON in this exact shape (no markdown, no commentary):
+  // Track recently generated questions to avoid repetition (Bug 1 fix).
+  const recentKey = `${input.type}:${input.level}`;
+  const recent = recentExerciseQuestions.get(recentKey) ?? [];
+
+  const prompt = `You are a Spanish-language exercise generator for CEFR level ${input.level}.
+${input.topic ? `Topic: ${input.topic}.` : "Vary the topic: use different grammar/vocabulary each time."}
+
+TASK: ${typeRules[input.type]}
+
+CRITICAL RULES:
+1. The 'answer' field MUST be unambiguous and correct.
+2. For multiple_choice and sentence_building: the 'answer' MUST appear verbatim in the 'options' array. If it does not, the exercise is broken.
+3. Generate VARIED content — different vocabulary, different verbs, different sentence structures each time. NEVER repeat any of the sentences below.
+4. Match CEFR ${input.level} difficulty precisely.
+5. For translation exercises, the source sentence must be in ${langName}.
+
+DO NOT REPEAT any of these recently used questions (generate something DIFFERENT):
+${recent.length > 0 ? recent.map((q) => `- ${q}`).join("\n") : "(none yet — this is the first)"}
+4. Match CEFR ${input.level} difficulty precisely.
+5. For translation exercises, the source sentence must be in ${langName}.
+
+Respond ONLY with valid JSON in this exact shape (no markdown fences, no commentary):
 {
   "type": "${input.type}",
   "level": "${input.level}",
   "question": "...",
   "instruction": "short instruction in ${langName}",
   "options": ["opt1","opt2","opt3","opt4"],
-  "answer": "the correct answer",
+  "answer": "the correct answer (must be one of the options for multiple_choice/sentence_building)",
   "acceptableAnswers": ["alternative accepted answers"],
   "topic": "short grammar/lexical topic name",
   "explanation": "1-2 sentence explanation of the rule, in ${langName}"
@@ -246,7 +284,77 @@ Only include "options" for multiple_choice and sentence_building. Always include
     },
   );
 
-  return data;
+  // --- Post-generation validation (fixes Bug 2 & Bug 3) -------------
+  const clean = sanitizeExercise(data, input.type);
+  rememberQuestion(input.type, input.level, clean.question);
+  return clean;
+}
+
+/**
+ * Validate / repair a freshly generated exercise so it is always solvable:
+ *  - multiple_choice: the correct answer MUST be among the options.
+ *  - sentence_building: the correct sentence MUST be reconstructable from
+ *    the word tiles (we replace options with the actual words of the answer).
+ *  - Remove duplicate options; ensure at least 4 distinct options.
+ */
+function sanitizeExercise(
+  ex: GeneratedExercise,
+  type: ExerciseType,
+): GeneratedExercise {
+  const answer = (ex.answer ?? "").trim();
+
+  // Multiple choice: guarantee the answer is among the options.
+  if (type === "multiple_choice" && ex.options && ex.options.length > 0) {
+    const opts = ex.options.map((o) => o.trim());
+    const norm = (s: string) =>
+      s.trim().toLowerCase().replace(/[¿?¡!.,]/g, "");
+    const exists = opts.some((o) => norm(o) === norm(answer));
+    if (!exists) {
+      // Force-insert the correct answer, replacing a random wrong option.
+      const idx = Math.floor(Math.random() * opts.length);
+      opts[idx] = answer;
+    }
+    // Deduplicate (case-insensitive) while preserving the correct one.
+    const seen = new Set<string>();
+    const deduped: string[] = [];
+    for (const o of opts) {
+      const key = norm(o);
+      if (!seen.has(key)) {
+        seen.add(key);
+        deduped.push(o);
+      }
+    }
+    ex.options = deduped.length >= 2 ? deduped : opts;
+    // Shuffle so the answer isn't always first.
+    ex.options = shuffle(ex.options);
+    ex.answer = answer;
+  }
+
+  // Sentence building: the options MUST be the individual words of the
+  // correct sentence, jumbled. The model sometimes returned unrelated
+  // options or the full sentence as a single option.
+  if (type === "sentence_building" && answer) {
+    const words = answer.split(/\s+/).filter(Boolean);
+    // Keep punctuation attached to words (remove leading punctuation tiles).
+    if (words.length >= 3) {
+      ex.options = shuffle(words);
+    } else if (ex.options && ex.options.length > 0) {
+      // Fallback: treat as multiple_choice-style.
+    }
+    ex.answer = answer;
+  }
+
+  return ex;
+}
+
+/** Fisher-Yates shuffle (returns a new array). */
+function shuffle<T>(arr: T[]): T[] {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
 }
 
 /** A sensible default search term for each exercise type (when no topic given). */

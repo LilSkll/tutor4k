@@ -218,6 +218,7 @@ export function ExerciseRunner({
       {/* Answering */}
       {phase === "answering" && exercise && (
         <ExerciseCard
+          key={`${exercise.type}-${exercise.question}`}
           exercise={exercise}
           userAnswer={userAnswer}
           setUserAnswer={setUserAnswer}
@@ -259,10 +260,37 @@ function ExerciseCard({
   onCheck: () => void;
   t: (key: string) => string;
 }) {
+  const isSentenceBuilding = exercise.type === "sentence_building";
+  const isMultipleChoice = exercise.type === "multiple_choice";
   const hasOptions =
-    (exercise.type === "multiple_choice" || exercise.type === "sentence_building") &&
+    (isMultipleChoice || isSentenceBuilding) &&
     exercise.options &&
     exercise.options.length > 0;
+
+  // --- Sentence building state -------------------------------------
+  // Track the order in which the user clicks the word tiles.
+  const [wordOrder, setWordOrder] = React.useState<number[]>([]);
+  const options = exercise.options ?? [];
+
+  // When a tile is clicked, append its index to the order.
+  const addWord = (idx: number) => {
+    if (wordOrder.includes(idx)) return;
+    const next = [...wordOrder, idx];
+    setWordOrder(next);
+    setUserAnswer(next.map((i) => options[i]).join(" "));
+  };
+  // Remove the last placed tile (undo).
+  const removeLastWord = () => {
+    const next = wordOrder.slice(0, -1);
+    setWordOrder(next);
+    setUserAnswer(next.map((i) => options[i]).join(" "));
+  };
+  // Click on a placed word removes it and everything after.
+  const removeWordAt = (pos: number) => {
+    const next = wordOrder.slice(0, pos);
+    setWordOrder(next);
+    setUserAnswer(next.map((i) => options[i]).join(" "));
+  };
 
   return (
     <Card className="animate-fade-in">
@@ -282,7 +310,63 @@ function ExerciseCard({
           <p className="text-lg font-medium">{exercise.question}</p>
         </div>
 
-        {hasOptions ? (
+        {isSentenceBuilding && hasOptions ? (
+          <div className="space-y-3">
+            {/* Build area: the sentence being assembled */}
+            <div className="min-h-[60px] rounded-lg border-2 border-dashed border-primary/30 bg-primary/5 p-3 flex flex-wrap gap-2 items-center">
+              {wordOrder.length === 0 ? (
+                <span className="text-sm text-muted-foreground italic">
+                  Нажимай на слова ниже, чтобы собрать предложение
+                </span>
+              ) : (
+                wordOrder.map((optIdx, pos) => (
+                  <button
+                    key={pos}
+                    onClick={() => removeWordAt(pos)}
+                    className="rounded-lg bg-primary text-primary-foreground px-3 py-1.5 text-sm font-medium shadow-sm hover:bg-primary/90 transition-colors"
+                  >
+                    {options[optIdx]}
+                  </button>
+                ))
+              )}
+            </div>
+            {/* Word tiles pool */}
+            <div className="flex flex-wrap gap-2">
+              {options.map((opt, i) => {
+                const used = wordOrder.includes(i);
+                return (
+                  <button
+                    key={i}
+                    onClick={() => addWord(i)}
+                    disabled={used}
+                    className={cn(
+                      "rounded-lg border-2 px-3 py-1.5 text-sm font-medium transition-all",
+                      used
+                        ? "opacity-30 border-muted bg-muted cursor-not-allowed"
+                        : "border-primary/40 bg-card hover:border-primary hover:bg-primary/10 cursor-pointer",
+                    )}
+                  >
+                    {opt}
+                  </button>
+                );
+              })}
+            </div>
+            <div className="flex items-center justify-between">
+              <button
+                onClick={removeLastWord}
+                disabled={wordOrder.length === 0}
+                className="text-xs text-muted-foreground hover:text-foreground disabled:opacity-40"
+              >
+                ← Убрать последнее
+              </button>
+              {wordOrder.length > 0 && (
+                <span className="text-xs text-muted-foreground">
+                  Собрано слов: {wordOrder.length}/{options.length}
+                </span>
+              )}
+            </div>
+          </div>
+        ) : isMultipleChoice && hasOptions ? (
           <div className="grid gap-2">
             {exercise.options!.map((opt, i) => (
               <button
@@ -325,7 +409,7 @@ function ExerciseCard({
           variant="gradient"
           className="w-full"
           onClick={onCheck}
-          disabled={hasOptions ? !selectedOption : !userAnswer.trim()}
+          disabled={isMultipleChoice ? !selectedOption : !userAnswer.trim()}
         >
           <Check className="h-4 w-4" />
           {t("exercises.check")}
