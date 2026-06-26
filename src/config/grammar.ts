@@ -238,6 +238,128 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 > 💡 Похожие глаголы: \`encantar\` (обожать), \`interesar\` (интересовать),
 > \`doler\` (болеть) — работают так же.`,
   },
+  {
+    slug: "a1-tener-expressions",
+    title: "Выражения с tener",
+    titleEs: "Expresiones con Tener",
+    level: "A1",
+    category: "Глаголы",
+    summary: "tener hambre/frío/sueño/razón — устойчивые выражения состояния.",
+    content: `## Expresiones con TENER
+
+В испанском многие состояния выражаются через **tener + существительное**,
+а не через ser/estar (как можно было бы ожидать из русского).
+
+| Испанский | Русский | НЕ говорить |
+|---|---|---|
+| tener **hambre** | быть голодным | ~~estar hambriento~~ |
+| tener **sed** | хотеть пить | ~~estar sediento~~ |
+| tener **frío** | мёрзнуть | ~~estar frío~~ (это «быть холодным») |
+| tener **calor** | ему жарко | ~~estar caliente~~ |
+| tener **sueño** | хотеть спать | ~~estar soñoliento~~ |
+| tener **miedo** | бояться | ~~estar miedoso~~ |
+| tener **suerte** | быть удачливым | — |
+| tener **razón** | быть правым | — |
+| tener **prisa** | спешить | — |
+| tener **ganas de** + inf | хотеть | — |
+| tener **necesidad de** | нуждаться | — |
+| tener **X años** | быть возраста X | — |
+
+### Примеры
+\`Tengo hambre. Vamos a comer.\` — Я голоден. Пойдём поедим.
+\`¿Tienes frío? — Sí, tengo mucho frío.\` — Тебе холодно?
+\`No tienes razón.\` — Ты не прав.
+\`Tengo ganas de viajar.\` — Мне хочется попутешествовать.
+\`Tengo veinte años.\` — Мне 20 лет.
+
+> ⚠️ Согласование: \`Tiene**mos** hambre\` (мы голодны), \`Tiene**n** sueño\` (они хотят спать).`,
+  },
+  {
+    slug: "a1-preguntas",
+    title: "Вопросительные предложения",
+    titleEs: "Oraciones Interrogativas",
+    level: "A1",
+    category: "Синтаксис",
+    summary: "¿Qué? ¿Cómo? ¿Dónde? — вопросительные слова и их использование.",
+    content: `## Вопросительные слова (palabras interrogativas)
+
+| Слово | Перевод | Пример |
+|---|---|---|
+| ¿**Qué**? | Что? Какой? | ¿Qué haces? ¿Qué es esto? |
+| ¿**Cómo**? | Как? | ¿Cómo estás? ¿Cómo te llamas? |
+| ¿**Dónde**? | Где? Куда? | ¿Dónde vives? ¿Dónde vas? |
+| ¿**Cuándo**? | Когда? | ¿Cuándo llegas? |
+| ¿**Quién**? / ¿**Quiénes**? | Кто? | ¿Quién es ella? ¿Quiénes son? |
+| ¿**Cuál**? / ¿**Cuáles**? | Какой? Который? | ¿Cuál prefieres? |
+| ¿**Por qué**? | Почему? | ¿Por qué estudias español? |
+| ¿**Para qué**? | Зачем? | ¿Para qué lo necesitas? |
+| ¿**Cuánto**? / ¿**Cuántos**? | Сколько? | ¿Cuánto cuesta? ¿Cuántos años tienes? |
+| ¿**Cuál es**? | Какой (имя/адрес)? | ¿Cuál es tu nombre? |
+
+### Qué vs Cuál — частая путаница
+- **Qué** = «что это такое» (определение): \`¿Qué es "mesa"?\`
+- **Cuál** = «который из» (выбор): \`¿Cuál prefieres, té o café?\`
+- **Qué + существительное**: \`¿Qué libro lees?\` (какую книгу)
+- **Cuál + ser**: \`¿Cuál es tu número?\` (каков твой номер)
+
+### Знаки вопроса
+В испанском **двойные** знаки: \`¿…?\` открывающий + \`…?\` закрывающий.
+\`¿Cómo te llamas?\`
+
+> 💡 В разговорной речи открывающий \`¿\` часто опускают, но в письменной обязателен.`,
+  },
+  {
+    slug: "a1-verbos-frecuentes",
+    title: "Частые глаголы",
+    titleEs: "Verbos Frecuentes",
+    level: "A1",
+    category: "Глаголы",
+    summary: "ir, tener, hacer, poder, querer, decir — самые нужные неправильные глаголы.",
+    content: `## Самые нужные неправильные глаголы (presente)
+
+### IR — идти
+| yo | tú | él/ella | nosotros | ellos |
+|---|---|---|---|---|
+| voy | vas | va | vamos | van |
+
+\`Ir a + infinitivo\` = ближайшее будущее: \`Voy a comer.\` (Я собираюсь есть).
+\`Ir a + место\` = направление: \`Voy al cine.\`
+
+### TENER — иметь
+| yo | tú | él/ella | nosotros | ellos |
+|---|---|---|---|---|
+| tengo | tienes | tiene | tenemos | tienen |
+
+### HACER — делать
+| yo | tú | él/ella | nosotros | ellos |
+|---|---|---|---|---|
+| **hago** | haces | hace | hacemos | hacen |
+
+⚠️ yo-форма неправильная: \`hago\`, не \`habo\`.
+
+### PODER — мочь
+| yo | tú | él/ella | nosotros | ellos |
+|---|---|---|---|---|
+| **puedo** | **puedes** | **puede** | podemos | **pueden** |
+
+### QUERER — хотеть
+| yo | tú | él/ella | nosotros | ellos |
+|---|---|---|---|---|
+| **quiero** | **quieres** | **quiere** | queremos | **quieren** |
+
+### DECIR — говорить/сказать
+| yo | tú | él/ella | nosotros | ellos |
+|---|---|---|---|---|
+| **digo** | **dices** | **dice** | decimos | **dicen** |
+
+### SABER — знать (факты)
+| yo | tú | él/ella | nosotros | ellos |
+|---|---|---|---|---|
+| **sé** | sabes | sabe | sabemos | saben |
+
+> 💡 Запомни: \`poder\` + infinitivo = «мочь сделать»: \`Puedo ayudarte.\`
+> \`querer\` + infinitivo = «хотеть сделать»: \`Quiero aprender español.\``,
+  },
 
   // ----- A2 ---------------------------------------------------------
   {
@@ -716,6 +838,135 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
 > 💡 Используется в косвенной речи: \`Dijo que **había** terminado.\`
 > (Он сказал, что закончил — перфект → плюсквамперфект).`,
   },
+  {
+    slug: "b1-subjuntivo-imperfecto",
+    title: "Subjuntivo Imperfecto",
+    titleEs: "Subjuntivo Imperfecto",
+    level: "B1",
+    category: "Наклонения",
+    summary: "Сослагательное в прошедшем/нереальном: гипотезы, нереальные условия.",
+    content: `## Subjuntivo Imperfecto (сослагательное в прошедшем)
+
+### Образование: инфинитив + окончания (с ударением)
+
+Для -AR: -ara, -aras, -ara, -áramos, -arais, -aran
+Для -ER/-IR: -iera, ieras, iera, -iéramos, -ierais, -ieran
+
+Пример: \`hablar → hablara\`, \`comer → comiera\`, \`vivir → viviera\`.
+
+⚠️ Те же неправильные, что и в futuro simple:
+\`tener → tuviera\`, \`poner → pusiera\`, \`hacer → hiciera\`, \`saber → supiera\`,
+\`venir → viniera\`, \`poder → pudiera\`, \`querer → quisiera\`, \`decir → dijera\`.
+
+### Когда использовать
+1. **Si-конструкция (нереальное условие):**
+   \`Si **tuviera** dinero, viajaría.\` — Если бы у меня были деньги, я бы путешествовал.
+2. **После «como si» (как если бы):**
+   \`Me habla como si **fuera** tonto.\` — Он говорит со мной так, будто я глупый.
+3. **После выражений эмоции/воли в прошедшем:**
+   \`Quería que **vinieras**.\` — Я хотел, чтобы ты пришёл.
+4. **Вежливые просьбы:**
+   \`Quisiera un café.\` — Я бы хотел кофе.
+
+### Двойная форма (-ra / -se)
+Есть устаревшая форма на -se: \`hablase, comiese\`. Встречается в литературе.
+
+> ⚠️ \`Si + imperfecto de subjuntivo + condicional\` = нереальное условие.
+> Это одна из самых частых конструкций B1-B2.`,
+  },
+  {
+    slug: "b1-pronombres-objetos",
+    title: "Безударные местоимения",
+    titleEs: "Pronombres de Objeto (OD/OI)",
+    level: "B1",
+    category: "Местоимения",
+    summary: "Прямое и косвенное дополнение: me, te, lo, le, se — когда какое.",
+    content: `## Местоимения-дополнения (OD и OI)
+
+### Прямое дополнение (Objeto Directo — что?)
+Отвечает на вопрос «что/кого?» (без предлога).
+
+| Лицо | OD |
+|---|---|
+| me | меня |
+| te | тебя |
+| lo / la | его/её (м.р./ж.р.) |
+| nos | нас |
+| os | вас |
+| los / las | их |
+
+Пример: \`**Lo** veo.\` — Я его вижу. \`**La** leo.\` — Я её читаю (книгу ж.р.).
+
+### Косвенное дополнение (Objeto Indirecto — кому?)
+Отвечает на «кому/чему?» (с предлогом a).
+
+| Лицо | OI |
+|---|---|
+| me | мне |
+| te | тебе |
+| **le** | ему/ей |
+| nos | нам |
+| os | вам |
+| **les** | им |
+
+Пример: \`**Le** doy el libro.\` — Я даю ему книгу.
+
+### Двойные местоимения (OD + OI)
+Когда в предложении оба: \`me lo, te lo, se lo, nos lo\`.
+
+⚠️ **le/les + lo/la/los/las → SE**
+\`Le + lo = **se lo**\` (НЕ ~~le lo~~).
+\`**Se lo** di.\` — Я ему это дал.
+
+### Порядок местоимений
+1. **Перед спрягаемым глаголом:** \`Te lo digo.\`
+2. **После инфинитива/герундия (слитно):** \`Voy a de**círtelo**.\` \`Estoy di**ciéndotelo**.\`
+3. **После утвердительного повелительного (слитно):** \`¡**Dímelo**!\`
+
+> 💡 Мнемоника OI перед OD: «Le lo» — невозможно. Поэтому «Se lo».`,
+  },
+  {
+    slug: "b1-adverbios",
+    title: "Наречия",
+    titleEs: "Adverbios",
+    level: "B1",
+    category: "Наречия",
+    summary: "mente-наречия, времени, места, образа действия, сомнения.",
+    content: `## Наречия (adverbios)
+
+### Образование -mente (как? каким образом?)
+**Прилагательное (ж.р.) + mente:**
+- \`rápida + mente = rápidamente\` (быстро)
+- \`fácil + mente = fácilmente\` (легко)
+- \`perfecta + mente = perfectamente\` (идеально)
+
+⚠️ Если прилагательное имеет только форму м.р.: \`feliz → felizmente\`.
+
+⚠️ Если исходное прилагательное имеет ударение, \`-mente\` тоже несёт ударение:
+\`difícil**mente**\`.
+
+### Наречия времени
+\`hoy\` (сегодня), \`ayer\` (вчера), \`mañana\` (завтра), \`ahora\` (сейчас),
+\`tarde\` (поздно), \`temprano\` (рано), \`pronto\` (скоро),
+\`siempre\` (всегда), \`nunca\` (никогда), \`ya\` (уже), \`todavía\` (ещё).
+
+### Наречия места
+\`aquí\` (здесь), \`allí\` (там), \`allá\` (вон там), \`cerca\` (близко),
+\`lejos\` (далеко), \`delante\` (впереди), \`detrás\` (позади),
+\`arriba\` (наверху), \`abajo\` (внизу), \`adentro\` (внутри), \`afuera\` (снаружи).
+
+### Наречия сомнения
+\`quizás\`, \`tal vez\`, \`acaso\`, \`posiblemente\`, \`probablemente\`.
+⚠️ Эти наречия часто **требуют subjuntivo**: \`Quizás **venga** mañana.\`.
+
+### Наречия количества
+\`mucho\` (много), \`poco\` (мало), \`muy\` (очень), \`bastante\` (достаточно),
+\`demasiado\` (слишком), \`tan\` (так), \`tanto\` (столько).
+
+### muy vs mucho
+- **muy** + прилагательное/наречие: \`muy **bueno**\`, \`muy **rápido**\`
+- **mucho** + существительное/глагол: \`mucho **trabajo**\`, \`trabajo **mucho**\``,
+  },
 
   // ----- B2 ---------------------------------------------------------
   {
@@ -803,6 +1054,182 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
 > 💡 В испанском pasiva refleja намного естественнее, чем английский пассив.
 > Не переводи буквально: \`"The door is closed"\` → \`"La puerta está cerrada"\`
 > (состояние) или \`"Se cierra la puerta"\` (действие).`,
+  },
+  {
+    slug: "b2-subjuntivo-compuestos",
+    title: "Subjuntivo Compuestos",
+    titleEs: "Subjuntivo Perfecto y Pluscuamperfecto",
+    level: "B2",
+    category: "Наклонения",
+    summary: "Сложные формы сослагательного: perfecto (habla hablado) и pluscuamperfecto.",
+    content: `## Сложные формы Subjuntivo
+
+### Subjuntivo Perfecto (прошедшее совершённое)
+Формула: **haya** + participio
+
+\`haya, hayas, haya, hayamos, hayan + hablado/comido/vivido\`
+
+Использование:
+1. **Эмоция о свершившемся:**
+   \`Me alegra que **hayas llegado**.\` — Я рад, что ты пришёл.
+2. **Сомнение о прошлом:**
+   \`Dudo que **haya** terminado.\` — Сомневаюсь, что он закончил.
+3. **После «cuando» (будущее завершённое):**
+   \`Cuando **hayas** terminado, avísame.\` — Когда закончишь, скажи.
+
+### Subjuntivo Pluscuamperfecto (предпрошедшее)
+Формула: **hubiera/hubiese** + participio
+
+\`hubiera/hubiese, hubieras, hubiera, hubiéramos, hubieran + hablado\`
+
+Использование:
+1. **Si-конструкция (нереальное условие в прошлом):**
+   \`Si **hubiera sabido**, habría ido.\` — Если бы я знал, я бы пошёл.
+2. **После «como si» (нереальное сравнение):**
+   \`Habla como si **hubiera vivido** en España.\`
+3. **В косвенной речи (после прошедшего):**
+   \`Dudaba que **hubiera** terminado.\` — Он сомневался, что я закончил.
+
+### Двойная форма -ra / -se
+\`hubiera hablado = hubiese hablado\` (равнозначны, -se более литературно).
+
+> ⚠️ Универсальное правило: **Indicativo для фактов, Subjuntivo для
+> субъективного** (эмоция, сомнение, желание, гипотеза). Перфектные
+> формы — это просто перенос того же правила в прошлое.`,
+  },
+  {
+    slug: "b2-condicionales-compuestos",
+    title: "Condicional Compuesto",
+    titleEs: "Condicional Compuesto",
+    level: "B2",
+    category: "Наклонения",
+    summary: "Сложное условное: habría + participio (я бы сделал).",
+    content: `## Condicional Compuesto
+
+### Формула: **haber** (в condicional) + participio
+
+\`habría, habrías, habría, habríamos, habríais, habrían + hablado/comido\`
+
+Неправильный participio: \`hecho, visto, dicho, puesto, escrito, abierto\`.
+
+### Когда использовать
+1. **Нереальное условие в прошлом (с si + pluscuamperfecto):**
+   \`Si **hubiera** tenido tiempo, **habría** ido.\`
+   — Если бы у меня было время, я бы пошёл.
+2. **Вежливое сожаление:**
+   \`**Habría** preferido otra cosa.\` — Я бы предпочёл другое.
+3. **Гипотеза о прошлом:**
+   \`¿Quién lo hizo? — **Habría** sido Juan.\` — Наверное, это был Хуан.
+4. **Косвенная речь (futuro → condicional compuesto):**
+   \`Dijo que lo **habría terminado** para hoy.\`
+
+### Три типа si-условий
+
+| Тип | Союз | Глагол после si | Главное предложение |
+|---|---|---|---|
+| Реальное | si | presente | futuro |
+| Нереальное (наст.) | si | imperfecto subj. | condicional simple |
+| Нереальное (прош.) | si | pluscuamperfecto subj. | condicional compuesto |
+
+Примеры:
+- \`Si llueve, me quedo.\` (реально)
+- \`Si lloviera, me quedaría.\` (нереально сейчас)
+- \`Si hubiera llovido, me habría quedado.\` (нереально в прошлом)`,
+  },
+  {
+    slug: "b2-relativos-avanzado",
+    title: "Сложные относительные",
+    titleEs: "Relativos Avanzados",
+    level: "B2",
+    category: "Синтаксис",
+    summary: "lo que, el cual, donde, como, cuando — продвинутое связывание предложений.",
+    content: `## Относительные местоимения (продвинутый уровень)
+
+### LO QUE — «то, что» (абстрактное, нейтральное)
+\`No entiendo **lo que** dices.\` — Не понимаю то, что ты говоришь.
+\`Esto es **lo que** quiero.\` — Это то, что я хочу.
+
+⚠️ \`lo que\` относится к идее/факту, не к конкретному существительному.
+
+### EL CUAL / LA CUAL / LOS CUALES / LAS CUALES
+Используется в **формальном** регистре, особенно после предлогов.
+
+\`Tengo un amigo, **con el cual** trabajo.\` — У меня есть друг, с которым я работаю.
+\`La casa, **en la cual** vivo, es antigua.\` — Дом, в котором я живу, старый.
+
+⚠️ В разговорной речи обычно \`con el que / en el que\`, \`el cual\` — формальнее.
+
+### DONDE / ADONDE — место
+- \`donde\` = «где»: \`la ciudad **donde** vivo\`
+- \`adonde\` = «куда»: \`el lugar **adonde** voy\`
+- \`en donde\` = «в котором месте»: \`el café **en donde** nos vimos\`
+
+### COMO / CUANDO / CUANTO (относительные наречия)
+- \`**como**\` = «как»: \`Hazlo **como** te dije.\`
+- \`**cuando**\` = «когда»: \`Vendré **cuando** pueda.\`
+- \`**cuanto**\` = «сколько»: \`Toma **cuanto** quieras.\`
+
+### CUYO — «чей» (владение)
+Согласуется с **владением**, не с владельцем:
+\`el hombre **cuyo** coche\` (человек, чья машина — м.р.)
+\`la mujer **cuya** casa\` (женщина, чей дом — ж.р.)
+\`los niños **cuyos** juguetes\` (дети, чьи игрушки)
+
+> 💡 Формальный регистр: \`el coche **del cual**\` вместо \`el coche **cuyo**\`,
+> но \`cuyo\` точнее и короче.`,
+  },
+  {
+    slug: "b2-conectores",
+    title: "Коннекторы и связки",
+    titleEs: "Conectores Discursivos",
+    level: "B2",
+    category: "Синтаксис",
+    summary: "además, sin embargo, por lo tanto — логические связки для связной речи.",
+    content: `## Коннекторы (conectores discursivos)
+
+### Addition (добавление)
+- **además** — кроме того, более того
+- **también** — также
+- **asimismo** — равным образом (формально)
+- **por otra parte** — с другой стороны
+- **incluso** — даже
+
+### Contrast (противопоставление)
+- **pero** — но
+- **sin embargo** — однако
+- **no obstante** — тем не менее (формально)
+- **aunque** — хотя
+- **en cambio** — зато, напротив
+- **por el contrario** — наоборот
+
+### Cause (причина)
+- **porque** — потому что
+- **como** — так как (в начале предложения)
+- **ya que** — поскольку
+- **debido a que** — из-за того что
+- **puesto que** — поскольку (формально)
+
+### Consequence (следствие)
+- **por lo tanto** — следовательно
+- **por eso** — поэтому
+- **así que** — так что
+- **por consiguiente** — следовательно (формально)
+- **entonces** — тогда, итак
+
+### Condition (условие)
+- **si** — если
+- **a menos que** — если не (⚠️ требует subjuntivo)
+- **con tal de que** — при условии что (⚠️ subjuntivo)
+- **en caso de que** — в случае если (⚠️ subjuntivo)
+- **aunque** — хотя (⚠️ subjuntivo если гипотетично)
+
+### Purpose (цель)
+- **para que** — чтобы (⚠️ subjuntivo)
+- **a fin de que** — с тем чтобы (⚠️ subjuntivo)
+- **con el objetivo de** + infinitivo — с целью
+
+> 💡 Уровень B2/C1 = умение **варьировать** коннекторы, не повторять
+> \`porque\` и \`pero\` постоянно.`,
   },
 
   // ----- C1 ---------------------------------------------------------
@@ -892,6 +1319,240 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
 > 💡 На уровне C1 главное — не «правильность», а **уместность**: тот же
 > смысл можно выразить десятком способов, и выбор зависит от контекста,
 > региона и собеседника.`,
+  },
+  {
+    slug: "c1-subjuntivo-avanzado",
+    title: "Subjuntivo: тонкие случаи",
+    titleEs: "Subjuntivo: Usos Avanzados",
+    level: "C1",
+    category: "Наклонения",
+    summary: "Сомнительные и устойчивые случаи: aunque, donde, como, relativas.",
+    content: `## Subjuntivo — продвинутые случаи (C1)
+
+### Aunque (хотя) — indicativo vs subjuntivo
+- **Indicativo** (факт известен): \`**Aunque** llueve, salgo.\` (Хотя идёт дождь — я знаю это.)
+- **Subjuntivo** (гипотетично/неизвестно): \`**Aunque llueva**, saldré.\` (Даже если пойдёт дождь — не знаю, будет ли.)
+
+### Donde (где) — indicativo vs subjuntivo
+- \`Vive **donde** todos viven.\` (там, где все живут — известное место)
+- \`Vivirá **donde pueda**.\` (там, где сможет — гипотетично) ⚠️ subjuntivo
+
+### Como (как) — indicativo vs subjuntivo
+- \`Hazlo **como** te enseñé.\` (как я показал — известный способ)
+- \`Hazlo **como quieras**.\` (как хочешь — гипотетично) ⚠️ subjuntivo
+
+### Относительные с неопределённым антецедентом
+- \`Busco a alguien que **habla** ruso.\` (я знаю, что такой человек есть) → indicativo
+- \`Busco a alguien que **hable** ruso.\` (не уверен, есть ли такой) → **subjuntivo**
+
+### Устойчивые выражения
+- \`**Sea como sea**\` — как бы то ни было
+- \`**Pase lo que pase**\` — что бы ни случилось
+- \`**Cueste lo que cueste**\` — любой ценой
+- \`**Digan lo que digan**\` — что бы ни говорили
+
+### После отрицательных эмоций/оценок
+\`No creo que **tenga** razón.\` (не думаю, что он прав)
+\`No es cierto que **haya** venido.\` (не верно, что он пришёл)
+
+> ⚠️ Главное правило C1: **Subjuntivo = неизвестность / гипотетичность /
+> субъективность**. Если факт реален и известен — Indicativo.`,
+  },
+  {
+    slug: "c1-indirecto-avanzado",
+    title: "Косвенная речь (продв.)",
+    titleEs: "Estilo Indirecto Avanzado",
+    level: "C1",
+    category: "Синтаксис",
+    summary: "Полная система трансляции времён в косвенной речи + вопросы и приказы.",
+    content: `## Estilo Indirecto — полная система (C1)
+
+### Трансляция времён (после главного глагола в прошедшем)
+
+| Прямая речь | → Косвенная речь |
+|---|---|
+| presente | imperfecto |
+| pret. perfecto | pluscuamperfecto |
+| pret. indefinido | pluscuamperfecto |
+| imperfecto | imperfecto (не меняется) |
+| futuro simple | condicional simple |
+| condicional | condicional (не меняется) |
+| presente subj. | imperfecto subj. |
+| perfecto subj. | pluscuamperfecto subj. |
+
+### Трансляция указателей
+| Прямая | Косвенная |
+|---|---|
+| hoy | aquel/ese día |
+| mañana | al día siguiente |
+| ayer | el día anterior |
+| este | aquel/ese |
+| aquí | allí / ahí |
+| ahora | entonces |
+
+### Косвенные вопросы
+\`¿Vendrás? → Me pregunta si **vendré**.\`
+\`¿Dónde vives? → Me pregunta **dónde vivo**.\` (нет инверсии, нет ¿?)
+
+⚠️ В косвенном вопросе **нет** знаков \`¿?\` и нет инверсии подлежащего.
+
+### Косвенные приказы
+\`¡Hazlo! → Me dice que **lo haga**.\` (imperativo → subjuntivo)
+\`¡No salgas! → Me dice que **no salga**.\`
+
+### После главного глагола в presente (dice)
+Времена **не меняются**: \`Dice: \"Vengo\" → Dice que **viene**.\`
+Меняются только лица/местоимения.
+
+### Сложные случаи (C1)
+- \`Dijo: \"Si supiera, iría\" → Dijo que si **supiera**, **iría**.\`
+  (Условные конструкции сохраняются)
+- \`Pensaba: \"¿Qué haré?\" → Se preguntaba **qué haría**.\`
+  (Внутренний монолог)
+
+> 💡 Главная ошибка на C1 — забыть изменить **указатели времени/места**:
+> \`ayer → el día anterior\`, \`aquí → allí\`.`,
+  },
+  {
+    slug: "c1-pronombres-avanzado",
+    title: "Местоимения (продв.)",
+    titleEs: "Pronombres Avanzados",
+    level: "C1",
+    category: "Местоимения",
+    summary: "lo + прилагательное, дублирование, leísmо, reduplicación — тонкости.",
+    content: `## Местоимения — продвинутые случаи (C1)
+
+### LO нейтральное (lo + прилагательное/наречие)
+\`**Lo** bueno de España.\` — Хорошее (то хорошее) в Испании.
+\`**Lo** importante es estudiar.\` — Важно то, что надо учиться.
+\`**Lo** más difícil.\` — Самое сложное.
+
+Формула: \`lo + прилагательное (м.р.)\` = абстрактное существительное.
+
+### Дублирование дополнений (redundancia)
+В испанском дублирование **нормально** и часто **обязательно**:
+
+\`**A María la** veo.\` — Марию я её вижу. (повтор через \`a\`)
+\`**A Juan le** di el libro.\` — Хуану я ему дал книгу.
+
+⚠️ \`a + имя\` (личное \`a\`) + местоимение-дубликат — это **норма**, не ошибка.
+
+### LEÍSMO / LAÍSMO / LOÍSMO
+Региональные отклонения от нормы:
+- **Leísmo** (часто в Испании): \`le\` вместо \`lo\` для мужского OD.
+  \`A Juan **le** veo\` (норма: \`lo veo\`) — допустимо для лиц м.р.
+- **Laísmo** (Мадрид): \`la\` вместо \`le\` для OI.
+  \`A María **la** di el libro\` (норма: \`le\`) — **считается ошибкой**.
+- **Loísmo** (редко): \`lo\` вместо \`le\` для OI — **ошибка**.
+
+### Местоимения с предлогом
+\`conmigo\` (со мной), \`contigo\` (с тобой), \`consigo\` (с собой).
+⚠️ Не ~~con mí~~ / ~~con ti~~.
+\`para mí\` (для меня), \`para ti\` — обычные, не \*paramigo.
+
+### Reduplicación (подчёркивание)
+\`**A él** lo vi ayer.\` — Именно его я видел вчера.
+\`**A ella** le regalé flores.\` — Именно ей я подарил цветы.
+
+> 💡 C1 = умение **естественно** дублировать (звучит по-испански),
+> не избегая \`a + местоимение + OD/OI\`.`,
+  },
+  {
+    slug: "c1-ser-estar-avanzado",
+    title: "Ser/Estar: тонкости",
+    titleEs: "Ser y Estar: Matices Avanzados",
+    level: "C1",
+    category: "Глаголы",
+    summary: "Изменение смысла прилагательных, устойчивые конструкции, пограничные случаи.",
+    content: `## Ser vs Estar — тонкие случаи (C1)
+
+### Прилагательные, меняющие смысл
+| Прилагательное | SER (постоянное) | ESTAR (состояние) |
+|---|---|---|
+| aburrido | скучный (характер) | ему скучно |
+| listo | умный | готов |
+| rico | богатый | вкусный |
+| verde | зелёный (цвет) | незрелый |
+| Bueno | добрый (человек) | вкусный/хороший (сейчас) |
+| malo | плохой (характер) | испорченный/больной |
+| vivo | живой (энергичный) | жив (не мёртв) |
+| seguro | надёжный | уверенный |
+| callado | молчаливый (характер) | молчит (сейчас) |
+| despierto | бдительный | не спит |
+
+### ESTAR + gerundio vs presente
+\`Estoy **comiendo**.\` — Я ем (прямо сейчас, в процессе).
+\`**Como**.\` — Я ем (вообще, обычно).
+
+⚠️ Не все глаголы хорошо звучат в gerundio:
+- ✅ \`estoy leyendo, está lloviendo\`
+- ⚠️ ~~estoy sabiendo~~ (неправильно — \`sé\`)
+- ⚠️ ~~estoy siendo~~ (редко, формально)
+
+### SER + профессия vs ESTAR + de
+\`Es **profesor**.\` — Он преподаватель (профессия).
+\`Está **de** profesor.\` — Он работает (временно) преподавателем.
+
+### Хлеб/еда
+\`El pan **es** fresco.\` — Хлеб свежий (вообще/по природе).
+\`El pan **está** fresco.\` — Хлеб свежий (сейчас, только что испечён).
+
+### Пассив
+\`**Es** escrito por Cervantes.\` — (действие, процесс —_ser pasiva_)
+\`**Está** escrito.\` — (результат — _estar + participio_)
+
+> 💡 Универсальная подсказка C1: **SER = идентичность**, **ESTAR = состояние/результат**. Если сомневаешься — спроси «это определение или текущее состояние?».`,
+  },
+  {
+    slug: "c2-ironia-registry",
+    title: "Ирония и регистр",
+    titleEs: "Ironía y Registro (C2)",
+    level: "C1",
+    category: "Стилистика",
+    summary: "Ироничное сослагательное, формальный/неформальный регистр, речевые тактики.",
+    content: `## Ирония и регистр (C1-C2)
+
+### Ироничное сослагательное (Subjuntivo irónico)
+Используется для **вежливой критики** или иронии:
+
+- \`¡**Que** sea muy feliz!\` — «Будь очень счастлив!» (иронично: ну и катайся)
+- \`¡**Como** si no lo supiera!\` — Как будто я не знаю! (я-то знаю)
+- \`¡**Haberlo** dicho antes!\` — Надо было сказать раньше! (упрёк)
+- \`¡**Ojalá** no viniera!\` — «Лучше бы не приходил» (с надеждой/иронией)
+
+### Регистр: формальный vs неформальный
+
+| Ситуация | Неформальный | Формальный |
+|---|---|---|
+| Обращение | tú | usted |
+| Приветствие | ¡Hola! / ¿Qué tal? | Buenos días |
+| Прощание | ¡Adiós! / ¡Chao! | Hasta luego |
+| Согласие | ¡Vale! / ¡Dale! | De acuerdo |
+| Просьба | ¿Puedes…? | ¿Podría…? / Le ruego… |
+| Отказ | No puedo | Me temo que no es posible |
+| Благодарность | ¡Gracias! | Le agradezco |
+
+### Речевые тактики (C1-C2)
+- **Смягчение (atenuación):** \`Un poco\`, \`quizás\`, \`tal vez\`, \`en cierto modo\`.
+  \`Está **un poco** cansado.\` (вместо \`muy\`)
+- **Уклончивость:** \`Depende\`, \`No sabría decirte\`, \`Es relativo\`.
+- **Вежливое несогласие:** \`No estoy seguro de que…\`, \`Permíteme discrepar\`.
+
+### Устойчивые формулы
+- \`A ver\` — ну-ка, дай посмотреть
+- \`Vaya por delante que\` — хочу заранее сказать, что…
+- \`Por decirlo así\` — так сказать
+- \`En cierto modo\` — в какой-то степени
+- \`No es que… sino que…\` — не то чтобы…, а скорее…
+
+### Регионализмы (языковые варианты)
+- Испания: \`vosotros\`, \`coche\`, \`zumo\`, \`movil\`
+- Лат. Америка: \`ustedes\`, \`carro\`, \`jugo\`, \`celular\`
+- Аргентина: \`vos\` (вместо \`tú\`), \`che\` (эй)
+- Мексика: \`mande\` (что?, переспрос вежливо)
+
+> 💡 C2 = способность **менять регистр** мгновенно, понимать иронию и
+> использовать сарказм через грамматику (особенно subjuntivo).`,
   },
 ];
 

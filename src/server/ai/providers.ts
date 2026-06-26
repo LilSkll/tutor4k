@@ -53,18 +53,34 @@ function classifyStatus(status: number | undefined): boolean {
   return status === 429 || status === 408 || status >= 500;
 }
 
-// ----- Groq adapter --------------------------------------------------
+// ----- Groq adapter (multi-key round-robin) ------------------------
 
 export class GroqProvider implements AIProvider {
   readonly name = "groq" as const;
 
+  private readonly apiKeys: string[];
+  private keyIndex = 0;
+
   constructor(
-    private readonly apiKey: string,
+    apiKeys: string | string[],
     private readonly model = "llama-3.3-70b-versatile",
-  ) {}
+  ) {
+    this.apiKeys = Array.isArray(apiKeys)
+      ? apiKeys.filter(Boolean)
+      : apiKeys
+        ? [apiKeys]
+        : [];
+  }
 
   isAvailable(): boolean {
-    return Boolean(this.apiKey);
+    return this.apiKeys.length > 0;
+  }
+
+  /** Pick the next key (round-robin) for load balancing. */
+  private nextKey(): string {
+    const key = this.apiKeys[this.keyIndex % this.apiKeys.length];
+    this.keyIndex++;
+    return key;
   }
 
   async complete(options: ProviderCallOptions): Promise<AIResponse> {
@@ -79,51 +95,72 @@ export class GroqProvider implements AIProvider {
       ...options.messages,
     ];
 
-    let res: Response;
-    try {
-      res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${this.apiKey}`,
-        },
-        body: JSON.stringify({
-          model: this.model,
-          messages,
-          temperature: options.temperature ?? 0.7,
-          max_tokens: options.maxTokens ?? 1024,
-        }),
-      });
-    } catch (err) {
-      throw new RetryableAIError(
-        `Groq network error: ${(err as Error).message}`,
-      );
-    }
+    // Try every key in turn. If a key hits 429 (rate limit) we rotate to
+    // the next one immediately; only after all keys fail do we throw.
+    let lastError: Error | undefined;
 
-    if (!res.ok) {
-      const text = await res.text().catch(() => "");
-      const err = new Error(`Groq ${res.status}: ${text.slice(0, 200)}`);
-      if (classifyStatus(res.status)) {
-        throw new RetryableAIError(err.message, res.status);
+    for (let attempt = 0; attempt < this.apiKeys.length; attempt++) {
+      const apiKey = this.nextKey();
+
+      let res: Response;
+      try {
+        res = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${apiKey}`,
+          },
+          body: JSON.stringify({
+            model: this.model,
+            messages,
+            temperature: options.temperature ?? 0.7,
+            max_tokens: options.maxTokens ?? 1024,
+          }),
+        });
+      } catch (err) {
+        lastError = new RetryableAIError(
+          `Groq network error: ${(err as Error).message}`,
+        );
+        continue; // try next key
       }
-      throw new FatalAIError(err.message, res.status);
+
+      if (!res.ok) {
+        const text = await res.text().catch(() => "");
+        const errMsg = `Groq ${res.status}: ${text.slice(0, 200)}`;
+
+        // Rate limit or server error → rotate to the next key.
+        if (res.status === 429 || res.status >= 500) {
+          lastError = new RetryableAIError(errMsg, res.status);
+          continue; // try the next key before giving up
+        }
+
+        // Fatal (auth, bad request) → don't try other keys, they'd fail too.
+        throw new FatalAIError(errMsg, res.status);
+      }
+
+      const data = await res.json();
+      const content: string = data?.choices?.[0]?.message?.content ?? "";
+      if (!content) {
+        lastError = new RetryableAIError("Groq returned empty content");
+        continue;
+      }
+
+      return {
+        content,
+        provider: "groq",
+        model: this.model,
+        usage: {
+          promptTokens: data?.usage?.prompt_tokens,
+          completionTokens: data?.usage?.completion_tokens,
+        },
+      };
     }
 
-    const data = await res.json();
-    const content: string = data?.choices?.[0]?.message?.content ?? "";
-    if (!content) {
-      throw new RetryableAIError("Groq returned empty content");
-    }
-
-    return {
-      content,
-      provider: "groq",
-      model: this.model,
-      usage: {
-        promptTokens: data?.usage?.prompt_tokens,
-        completionTokens: data?.usage?.completion_tokens,
-      },
-    };
+    // All keys exhausted.
+    throw (
+      lastError ??
+      new RetryableAIError("All Groq API keys exhausted")
+    );
   }
 }
 

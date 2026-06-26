@@ -36,8 +36,16 @@ const INITIAL_BACKOFF_MS = 500;
  * Groq is the primary model; Gemini is the fallback.
  */
 function buildProviderChain(): AIProvider[] {
+  // Collect ALL available Groq keys (GROQ_API_KEY, GROQ_API_KEY_2, ...) for
+  // round-robin load balancing. Three keys ≈ 3× the free-tier rate limit.
+  const groqKeys = [
+    process.env.GROQ_API_KEY,
+    process.env.GROQ_API_KEY_2,
+    process.env.GROQ_API_KEY_3,
+  ].filter(Boolean) as string[];
+
   const groq = new GroqProvider(
-    process.env.GROQ_API_KEY ?? "",
+    groqKeys,
     process.env.GROQ_MODEL || "llama-3.3-70b-versatile",
   );
   const gemini = new GeminiProvider(
