@@ -59,9 +59,10 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 |---|---|
 | yo | soy |
 | tú | eres |
-| él/ella | es |
-| nosotros | somos |
-| ellos | son |
+| él/ella/usted | es |
+| nosotros/as | somos |
+| **vosotros/as** | **sois** |
+| ellos/ustedes | son |
 
 ### ESTAR — временные состояния и местоположение
 Используется для **состояния, чувств, местонахождения**:
@@ -72,9 +73,10 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 |---|---|
 | yo | estoy |
 | tú | estás |
-| él/ella | está |
-| nosotros | estamos |
-| ellos | están |
+| él/ella/usted | está |
+| nosotros/as | estamos |
+| **vosotros/as** | **estáis** |
+| ellos/ustedes | están |
 
 ### Мнемоника DOCTOR / PLACE
 - **SER**: **D**escription, **O**ccupation, **C**haracteristic, **T**ime, **O**rigin, **R**elationship.
@@ -318,44 +320,44 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     content: `## Самые нужные неправильные глаголы (presente)
 
 ### IR — идти
-| yo | tú | él/ella | nosotros | ellos |
-|---|---|---|---|---|
-| voy | vas | va | vamos | van |
+| yo | tú | él/ella/usted | nosotros/as | **vosotros/as** | ellos/ustedes |
+|---|---|---|---|---|---|
+| voy | vas | va | vamos | **vais** | van |
 
 \`Ir a + infinitivo\` = ближайшее будущее: \`Voy a comer.\` (Я собираюсь есть).
 \`Ir a + место\` = направление: \`Voy al cine.\`
 
 ### TENER — иметь
-| yo | tú | él/ella | nosotros | ellos |
-|---|---|---|---|---|
-| tengo | tienes | tiene | tenemos | tienen |
+| yo | tú | él/ella/usted | nosotros/as | **vosotros/as** | ellos/ustedes |
+|---|---|---|---|---|---|
+| tengo | tienes | tiene | tenemos | **tenéis** | tienen |
 
 ### HACER — делать
-| yo | tú | él/ella | nosotros | ellos |
-|---|---|---|---|---|
-| **hago** | haces | hace | hacemos | hacen |
+| yo | tú | él/ella/usted | nosotros/as | **vosotros/as** | ellos/ustedes |
+|---|---|---|---|---|---|
+| **hago** | haces | hace | hacemos | **hacéis** | hacen |
 
 ⚠️ yo-форма неправильная: \`hago\`, не \`habo\`.
 
 ### PODER — мочь
-| yo | tú | él/ella | nosotros | ellos |
-|---|---|---|---|---|
-| **puedo** | **puedes** | **puede** | podemos | **pueden** |
+| yo | tú | él/ella/usted | nosotros/as | **vosotros/as** | ellos/ustedes |
+|---|---|---|---|---|---|
+| **puedo** | **puedes** | **puede** | podemos | **podéis** | **pueden** |
 
 ### QUERER — хотеть
-| yo | tú | él/ella | nosotros | ellos |
-|---|---|---|---|---|
-| **quiero** | **quieres** | **quiere** | queremos | **quieren** |
+| yo | tú | él/ella/usted | nosotros/as | **vosotros/as** | ellos/ustedes |
+|---|---|---|---|---|---|
+| **quiero** | **quieres** | **quiere** | queremos | **queréis** | **quieren** |
 
 ### DECIR — говорить/сказать
-| yo | tú | él/ella | nosotros | ellos |
-|---|---|---|---|---|
-| **digo** | **dices** | **dice** | decimos | **dicen** |
+| yo | tú | él/ella/usted | nosotros/as | **vosotros/as** | ellos/ustedes |
+|---|---|---|---|---|---|
+| **digo** | **dices** | **dice** | decimos | **decís** | **dicen** |
 
 ### SABER — знать (факты)
-| yo | tú | él/ella | nosotros | ellos |
-|---|---|---|---|---|
-| **sé** | sabes | sabe | sabemos | saben |
+| yo | tú | él/ella/usted | nosotros/as | **vosotros/as** | ellos/ustedes |
+|---|---|---|---|---|---|
+| **sé** | sabes | sabe | sabemos | **sabéis** | saben |
 
 > 💡 Запомни: \`poder\` + infinitivo = «мочь сделать»: \`Puedo ayudarte.\`
 > \`querer\` + infinitivo = «хотеть сделать»: \`Quiero aprender español.\``,
@@ -461,11 +463,12 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
 |---|---|---|
 | yo | -aba | -ía |
 | tú | -abas | -ías |
-| él/ella | -aba | -ía |
-| nosotros | -ábamos | -íamos |
-| ellos | -aban | -ían |
+| él/ella/usted | -aba | -ía |
+| nosotros/as | -ábamos | -íamos |
+| **vosotros/as** | **-abais** | **-íais** |
+| ellos/ustedes | -aban | -ían |
 
-Пример: \`hablar\` → hablaba, hablabas, hablaba, hablábamos, hablaban.
+Пример: \`hablar\` → hablaba, hablabas, hablaba, hablábamos, **hablabais**, hablaban.
 
 ### Только 3 неправильных!
 | Глагол | Основа |
@@ -622,9 +625,10 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
 |---|---|---|
 | yo | hable | coma |
 | tú | hables | comas |
-| él/ella | hable | coma |
-| nosotros | hablemos | comamos |
-| ellos | hablen | coman |
+| él/ella/usted | hable | coma |
+| nosotros/as | hablemos | comamos |
+| **vosotros/as** | **habléis** | **comáis** |
+| ellos/ustedes | hablen | coman |
 
 ### Неправильные корни
 - tener → **tenga**, estar → **esté**, hacer → **haga**
