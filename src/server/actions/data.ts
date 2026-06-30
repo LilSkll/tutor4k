@@ -91,19 +91,29 @@ export async function getDailyActivity(days = 30): Promise<DailyActivityRow[]> {
 /**
  * Record a study session: upsert today's daily_activity (accumulating
  * minutes and lessons, not overwriting) and update the streak.
+ *
+ * Uses the service-role client for WRITES when available (bypasses RLS
+ * so progress is never lost due to a stale session cookie in an API
+ * route). Falls back to the user client if the service key is absent.
  */
 export async function recordStudySession(minutes: number, lessons = 1) {
-  const supabase = await createSupabaseServerClient();
+  // Authenticate via the user's session (verifies identity).
+  const userClient = await createSupabaseServerClient();
   const {
     data: { user },
-  } = await supabase.auth.getUser();
+  } = await userClient.auth.getUser();
 
   if (!user) return { error: "Not authenticated" };
 
+  // Use the service-role client for writes if available (RLS-safe).
+  const { createSupabaseAdminClient } = await import("@/lib/supabase-admin");
+  const admin = createSupabaseAdminClient();
+  const writeClient = admin ?? userClient;
+
   const today = new Date().toISOString().slice(0, 10);
 
-  // Try to read today's existing row so we can accumulate (not overwrite).
-  const { data: existing } = await supabase
+  // Read today's existing row so we can accumulate (not overwrite).
+  const { data: existing } = await writeClient
     .from("daily_activity")
     .select("lessons_completed, minutes_studied")
     .eq("user_id", user.id)
@@ -114,7 +124,7 @@ export async function recordStudySession(minutes: number, lessons = 1) {
   const prevMinutes = (existing?.minutes_studied as number) ?? 0;
 
   // Upsert with accumulated totals.
-  const { error: upsertError } = await supabase
+  const { error: upsertError } = await writeClient
     .from("daily_activity")
     .upsert(
       {
@@ -126,10 +136,13 @@ export async function recordStudySession(minutes: number, lessons = 1) {
       { onConflict: "user_id,activity_date" },
     );
 
-  if (upsertError) return { error: upsertError.message };
+  if (upsertError) {
+    console.error("[recordStudySession] upsert error:", upsertError.message);
+    return { error: upsertError.message };
+  }
 
   // Update streak on profile.
-  const { data: profile } = await supabase
+  const { data: profile } = await writeClient
     .from("profiles")
     .select("streak, last_active_date")
     .eq("id", user.id)
@@ -145,7 +158,7 @@ export async function recordStudySession(minutes: number, lessons = 1) {
       const yesterdayKey = yesterday.toISOString().slice(0, 10);
       streak = last === yesterdayKey ? streak + 1 : 1;
 
-      await supabase
+      await writeClient
         .from("profiles")
         .update({ streak, last_active_date: today })
         .eq("id", user.id);

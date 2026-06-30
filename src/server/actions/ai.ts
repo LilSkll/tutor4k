@@ -33,6 +33,12 @@ export async function sendTutorMessage(input: {
     data: { user },
   } = await supabase.auth.getUser();
 
+  // Use the service-role client for DB writes when available (RLS-safe,
+  // so chat history + progress never get silently dropped).
+  const { createSupabaseAdminClient } = await import("@/lib/supabase-admin");
+  const admin = createSupabaseAdminClient();
+  const writeClient = admin ?? supabase;
+
   let level: Level | null = null;
   let userName: string | null = null;
   let language: InterfaceLanguage = "ru";
@@ -72,7 +78,7 @@ export async function sendTutorMessage(input: {
       .reverse()
       .find((m) => m.role === "user");
     if (lastUser && conversationId) {
-      await supabase.from("chat_messages").insert({
+      await writeClient.from("chat_messages").insert({
         conversation_id: conversationId,
         role: "user",
         content: lastUser.content,
@@ -92,7 +98,7 @@ export async function sendTutorMessage(input: {
       if (cached) {
         // Persist the cached reply into the conversation (best-effort).
         if (user && conversationId) {
-          await supabase.from("chat_messages").insert({
+          await writeClient.from("chat_messages").insert({
             conversation_id: conversationId,
             role: "assistant",
             content: cached,
@@ -143,12 +149,12 @@ export async function sendTutorMessage(input: {
 
   // --- Persist assistant reply (best-effort) --------------------------
   if (user && conversationId) {
-    await supabase.from("chat_messages").insert({
+    await writeClient.from("chat_messages").insert({
       conversation_id: conversationId,
       role: "assistant",
       content: response.content,
     });
-    await supabase
+    await writeClient
       .from("chat_conversations")
       .update({ updated_at: new Date().toISOString() })
       .eq("id", conversationId);
@@ -458,14 +464,19 @@ async function saveExerciseHistory(input: {
   correct: boolean;
   feedback: string;
 }): Promise<void> {
-  const supabase = await createSupabaseServerClient();
+  const userClient = await createSupabaseServerClient();
   const {
     data: { user },
-  } = await supabase.auth.getUser();
+  } = await userClient.auth.getUser();
 
   if (!user) return;
 
-  await supabase.from("exercises_history").insert({
+  // Use the service-role client for writes when available (RLS-safe).
+  const { createSupabaseAdminClient } = await import("@/lib/supabase-admin");
+  const admin = createSupabaseAdminClient();
+  const writeClient = admin ?? userClient;
+
+  const { error } = await writeClient.from("exercises_history").insert({
     user_id: user.id,
     exercise: input.exercise,
     exercise_type: input.type,
@@ -474,6 +485,10 @@ async function saveExerciseHistory(input: {
     correct: input.correct,
     feedback: input.feedback,
   });
+
+  if (error) {
+    console.error("[saveExerciseHistory] insert error:", error.message);
+  }
 
   await recordStudySession(3, 1).catch(() => {});
 }
