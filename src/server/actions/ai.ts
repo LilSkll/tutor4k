@@ -221,15 +221,15 @@ export async function generateExercise(input: {
   //  - sentence_building: a FULL target sentence + 5-7 jumbled word tiles.
   const typeRules: Record<ExerciseType, string> = {
     multiple_choice:
-      "MULTIPLE CHOICE. Provide a clear Spanish-language question, EXACTLY 4 distinct options (A/B/C/D). The field 'answer' MUST be one of the 4 options VERBATIM (copy-paste, identical). The other 3 options must be plausible distractors but clearly wrong.",
+      "MULTIPLE CHOICE. Provide a COMPLETE, self-contained Spanish sentence or question in the 'question' field — the student must be able to answer it WITHOUT any external context. EXACTLY 4 distinct options (A/B/C/D). The field 'answer' MUST be one of the 4 options VERBATIM. Distractors must be plausible.",
     fill_blank:
-      "FILL THE BLANK. Provide a Spanish sentence where the missing part is '___'. The 'answer' is the single word/phrase that fills the blank. Provide 1-2 acceptable alternatives in 'acceptableAnswers' (e.g. with/without accent).",
+      "FILL THE BLANK. Provide a COMPLETE Spanish sentence with '___' marking the blank. The sentence MUST give enough context to determine the answer (e.g. a time marker like 'ayer' for past tense, a subject pronoun). The 'answer' is the word/phrase that fills the blank.",
     translation:
-      "TRANSLATION. Provide a full sentence in " + langName + " as the 'question' (the prompt). The 'answer' is the correct Spanish translation of that sentence. Provide 1-2 acceptable alternative translations in 'acceptableAnswers'.",
+      "TRANSLATION. Provide a complete, natural sentence in " + langName + " as the 'question'. The sentence must be self-contained — no missing context, no references to unnamed people or events. The 'answer' is the correct Spanish translation. Provide 1-2 acceptable alternatives in 'acceptableAnswers'.",
     error_correction:
-      "ERROR CORRECTION. Provide a Spanish sentence containing exactly ONE grammar mistake as the 'question'. The 'answer' is the fully corrected sentence. The 'acceptableAnswers' should list acceptable variants (e.g. with/without subject pronoun).",
+      "ERROR CORRECTION. Provide a complete, natural Spanish sentence with exactly ONE grammar mistake. The sentence must make sense on its own. The 'answer' is the fully corrected sentence. 'acceptableAnswers' should list acceptable variants.",
     sentence_building:
-      "SENTENCE BUILDING. Provide a complete target Spanish sentence as the 'answer'. Then split it into 5-7 individual word tiles (in jumbled order) and put those tiles in 'options'. The user will reorder them. The 'question' should be the instruction (e.g. 'Соберите предложение из слов:'). Include the FULL correct sentence in 'answer'.",
+      "SENTENCE BUILDING. The 'question' field must describe the SITUATION in " + langName + " (e.g. 'Как сказать: Я хочу пить кофе?'). The 'answer' is the complete target Spanish sentence. Split it into 5-7 jumbled word tiles in 'options'.",
   };
 
   // Track recently generated questions to avoid repetition (Bug 1 fix).
@@ -241,29 +241,30 @@ ${input.topic ? `Topic: ${input.topic}.` : "Vary the topic: use different gramma
 
 TASK: ${typeRules[input.type]}
 
-CRITICAL RULES:
-1. The 'answer' field MUST be unambiguous and correct.
-2. For multiple_choice and sentence_building: the 'answer' MUST appear verbatim in the 'options' array. If it does not, the exercise is broken.
-3. Generate VARIED content — different vocabulary, different verbs, different sentence structures each time. NEVER repeat any of the sentences below.
-4. Match CEFR ${input.level} difficulty precisely.
-5. For translation exercises, the source sentence must be in ${langName}.
+CRITICAL RULES (read ALL before generating):
+1. **SELF-CONTAINED**: Every exercise MUST be answerable by a student who sees ONLY the question — no external context, no assumed story, no missing information. The student must never think "I can't answer this because I don't know the context."
+2. **CLEAR INSTRUCTION**: The 'instruction' field MUST explain WHAT the student needs to do AND what grammar rule or topic it tests, in ${langName}. Example: "Выберите правильную форму глагола ser для 'yo'" or "Заполните пропуск: прошедшее время".
+3. The 'answer' field MUST be unambiguous and correct.
+4. For multiple_choice and sentence_building: the 'answer' MUST appear verbatim in the 'options' array.
+5. For fill_blank: the sentence MUST contain a grammatical clue (time marker, subject, context) that makes the answer DETERMINABLE.
+6. Generate VARIED content — different vocabulary, verbs, sentence structures. NEVER repeat any of the sentences below.
+7. Match CEFR ${input.level} difficulty precisely.
+8. For translation exercises, the source sentence must be in ${langName}.
 
-DO NOT REPEAT any of these recently used questions (generate something DIFFERENT):
+DO NOT REPEAT any of these recently used questions:
 ${recent.length > 0 ? recent.map((q) => `- ${q}`).join("\n") : "(none yet — this is the first)"}
-4. Match CEFR ${input.level} difficulty precisely.
-5. For translation exercises, the source sentence must be in ${langName}.
 
 Respond ONLY with valid JSON in this exact shape (no markdown fences, no commentary):
 {
   "type": "${input.type}",
   "level": "${input.level}",
-  "question": "...",
-  "instruction": "short instruction in ${langName}",
+  "question": "...(self-contained, answerable without external context)...",
+  "instruction": "...(in ${langName}: what to do + what rule it tests)...",
   "options": ["opt1","opt2","opt3","opt4"],
-  "answer": "the correct answer (must be one of the options for multiple_choice/sentence_building)",
+  "answer": "the correct answer",
   "acceptableAnswers": ["alternative accepted answers"],
-  "topic": "short grammar/lexical topic name",
-  "explanation": "1-2 sentence explanation of the rule, in ${langName}"
+  "topic": "short topic name in ${langName}",
+  "explanation": "in ${langName}: explain the rule AND why the answer is correct, 1-2 sentences"
 }
 
 Only include "options" for multiple_choice and sentence_building. Always include acceptableAnswers (can be empty array). The JSON must be valid.`;

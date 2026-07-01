@@ -301,9 +301,12 @@ function ExerciseCard({
         </div>
 
         {exercise.instruction && (
-          <p className="text-sm text-muted-foreground italic">
-            💡 {exercise.instruction}
-          </p>
+          <div className="rounded-lg bg-primary/10 border border-primary/20 px-4 py-2.5">
+            <p className="text-sm text-foreground">
+              <span className="font-semibold text-primary">📋 Задание: </span>
+              {exercise.instruction}
+            </p>
+          </div>
         )}
 
         <div className="rounded-lg bg-muted/50 p-4">
