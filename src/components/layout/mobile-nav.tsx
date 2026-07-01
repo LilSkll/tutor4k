@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
   BookOpen,
+  BookPlus,
   Dumbbell,
   Languages,
   LayoutDashboard,
@@ -28,6 +29,7 @@ const ICONS: Record<string, LucideIcon> = {
   BookOpen,
   Dumbbell,
   Languages,
+  BookPlus,
   TrendingUp,
 };
 
@@ -43,6 +45,7 @@ export function MobileNav() {
     { href: "/grammar", label: t("nav.grammar"), icon: "BookOpen" },
     { href: "/exercises", label: t("nav.exercises"), icon: "Dumbbell" },
     { href: "/vocabulary", label: t("nav.vocabulary"), icon: "Languages" },
+    { href: "/vocabulary-topics", label: "Лексика", icon: "BookPlus" },
     { href: "/progress", label: t("nav.progress"), icon: "TrendingUp" },
   ];
 

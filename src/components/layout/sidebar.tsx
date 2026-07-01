@@ -4,6 +4,7 @@ import { useUIStore } from "@/stores";
 import { translate } from "@/lib/i18n";
 import {
   BookOpen,
+  BookPlus,
   Dumbbell,
   Languages,
   LayoutDashboard,
@@ -25,6 +26,7 @@ const ICONS: Record<string, LucideIcon> = {
   BookOpen,
   Dumbbell,
   Languages,
+  BookPlus,
   TrendingUp,
 };
 
@@ -46,6 +48,7 @@ export function Sidebar({ userName, level, streak }: NavProps) {
     { href: "/grammar", label: t("nav.grammar"), icon: "BookOpen" },
     { href: "/exercises", label: t("nav.exercises"), icon: "Dumbbell" },
     { href: "/vocabulary", label: t("nav.vocabulary"), icon: "Languages" },
+    { href: "/vocabulary-topics", label: "Лексика", icon: "BookPlus" },
     { href: "/progress", label: t("nav.progress"), icon: "TrendingUp" },
   ];
 
