@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SpanishTutor — Архитектура системы</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+    background: #0a0a0f;
+    color: #e0e0e0;
+    padding: 40px 20px;
+    min-height: 100vh;
+  }
+  .container { max-width: 1200px; margin: 0 auto; }
+
+  h1 {
+    text-align: center;
+    font-size: 2.4em;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ef4444, #f97316, #f43f5e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 4px;
+  }
+  .subtitle { text-align: center; color: #888; font-size: 1em; margin-bottom: 40px; letter-spacing: 0.5px; }
+
+  .layer {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .layer-header {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 16px;
+  }
+  .layer-num {
+    width: 36px; height: 36px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 1.1em; color: #fff;
+    flex-shrink: 0;
+  }
+  .layer-title { font-size: 1.25em; font-weight: 700; }
+  .layer-desc { font-size: 0.85em; color: #999; margin-top: 2px; }
+
+  .nodes { display: grid; gap: 12px; }
+  .nodes-4 { grid-template-columns: repeat(4, 1fr); }
+  .nodes-3 { grid-template-columns: repeat(3, 1fr); }
+  .nodes-2 { grid-template-columns: repeat(2, 1fr); }
+
+  .node {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 16px;
+    transition: transform 0.2s;
+  }
+  .node:hover { transform: translateY(-2px); border-color: rgba(255,255,255,0.25); }
+  .node-title { font-weight: 700; font-size: 0.95em; margin-bottom: 6px; }
+  .node-tech { font-family: "SF Mono", "Fira Code", monospace; font-size: 0.75em; color: #888; }
+  .node-desc { font-size: 0.8em; color: #aaa; margin-top: 4px; line-height: 1.4; }
+
+  .arrow-down {
+    text-align: center; margin: -8px 0 12px 0; font-size: 1.4em; color: #444;
+  }
+
+  /* Color accents per layer */
+  .l-client .layer-num { background: linear-gradient(135deg, #3b82f6, #8b5cf6); }
+  .l-server .layer-num { background: linear-gradient(135deg, #f97316, #ef4444); }
+  .l-orch .layer-num { background: linear-gradient(135deg, #ef4444, #f43f5e); }
+  .l-data .layer-num { background: linear-gradient(135deg, #10b981, #14b8a6); }
+  .l-rag .layer-num { background: linear-gradient(135deg, #f59e0b, #f97316); }
+
+  .l-client .node { border-color: rgba(59,130,246,0.2); }
+  .l-server .node { border-color: rgba(249,115,22,0.2); }
+  .l-orch .node { border-color: rgba(239,68,68,0.2); }
+  .l-data .node { border-color: rgba(16,185,129,0.2); }
+  .l-rag .node { border-color: rgba(245,158,11,0.2); }
+
+  .tag {
+    display: inline-block;
+    font-size: 0.65em; font-weight: 600;
+    padding: 2px 8px; border-radius: 20px;
+    margin-right: 4px; margin-bottom: 4px;
+    text-transform: uppercase; letter-spacing: 0.3px;
+  }
+  .tag-req { background: rgba(239,68,68,0.15); color: #f87171; }
+  .tag-auth { background: rgba(59,130,246,0.15); color: #60a5fa; }
+  .tag-cache { background: rgba(245,158,11,0.15); color: #fbbf24; }
+  .tag-rls { background: rgba(16,185,129,0.15); color: #34d399; }
+  .tag-retry { background: rgba(168,85,247,0.15); color: #c084fc; }
+
+  .flow-box {
+    background: linear-gradient(135deg, rgba(239,68,68,0.08), rgba(168,85,247,0.08));
+    border: 1px solid rgba(239,68,68,0.15);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+  }
+  .flow-step {
+    display: flex; align-items: flex-start; gap: 14px;
+    margin-bottom: 14px;
+  }
+  .flow-step:last-child { margin-bottom: 0; }
+  .flow-num {
+    width: 28px; height: 28px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 0.8em; color: #fff;
+    background: linear-gradient(135deg, #ef4444, #f97316);
+    flex-shrink: 0;
+  }
+  .flow-text { font-size: 0.85em; line-height: 1.5; color: #ccc; }
+  .flow-text strong { color: #fff; }
+
+  .stats-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px;
+    margin-bottom: 20px;
+  }
+  .stat {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+  }
+  .stat-num {
+    font-size: 1.8em; font-weight: 800;
+    background: linear-gradient(135deg, #ef4444, #f97316);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .stat-label { font-size: 0.75em; color: #888; margin-top: 4px; }
+
+  .legend {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    margin-bottom: 20px; justify-content: center;
+  }
+  .legend-item {
+    font-size: 0.7em; padding: 4px 10px; border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  @media print {
+    body { background: #fff; color: #111; padding: 10px; }
+    .layer { background: #f8f8f8; border-color: #ddd; }
+    .node { background: #fff; border-color: #ddd; }
+  }
+  @media (max-width: 768px) {
+    .nodes-4, .nodes-3, .nodes-2 { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <h1>🇪🇸 SpanishTutor</h1>
+  <p class="subtitle">Архитектура интеллектуальной платформы изучения испанского языка · Разработчик: Драгунов Павел</p>
+
+  <!-- Stats -->
+  <div class="stats-grid">
+    <div class="stat"><div class="stat-num">21</div><div class="stat-label">Маршрутов (Routes)</div></div>
+    <div class="stat"><div class="stat-num">846</div><div class="stat-label">Единиц лексики</div></div>
+    <div class="stat"><div class="stat-num">4710</div><div class="stat-label">Чанков RAG</div></div>
+    <div class="stat"><div class="stat-num">39</div><div class="stat-label">Тем грамматики</div></div>
+  </div>
+
+  <!-- Legend -->
+  <div class="legend">
+    <span class="legend-item"><span class="tag tag-req">LLM</span> Запрос к нейросети</span>
+    <span class="legend-item"><span class="tag tag-auth">AUTH</span> Аутентификация Supabase</span>
+    <span class="legend-item"><span class="tag tag-cache">CACHE</span> Кэширование</span>
+    <span class="legend-item"><span class="tag tag-rls">RLS</span> Row-Level Security</span>
+    <span class="legend-item"><span class="tag tag-retry">RETRY</span> Повтор с backoff</span>
+  </div>
+
+  <!-- LAYER 1: CLIENT -->
+  <div class="layer l-client">
+    <div class="layer-header">
+      <div class="layer-num">1</div>
+      <div>
+        <div class="layer-title">Клиентский слой (Presentation Layer)</div>
+        <div class="layer-desc">React 19 · Next.js 15 App Router · Tailwind CSS · shadcn/ui</div>
+      </div>
+    </div>
+    <div class="nodes nodes-4">
+      <div class="node">
+        <div class="node-title">📱 Страницы приложения</div>
+        <div class="node-tech">app/(app)/*</div>
+        <div class="node-desc">Dashboard, Tutor Chat, Grammar, Exercises, Vocabulary, Progress, Settings — Server Components с защищённым доступом через middleware</div>
+      </div>
+      <div class="node">
+        <div class="node-title">🧠 Zustand Store</div>
+        <div class="node-tech">stores/index.ts</div>
+        <div class="node-desc">UI (язык, тема, фильтры), Chat (сообщения, streaming), Exercise session (счёт, попытки) — persist в localStorage</div>
+      </div>
+      <div class="node">
+        <div class="node-title">🔄 TanStack Query</div>
+        <div class="node-tech">Providers.tsx</div>
+        <div class="node-desc">Кэш серверного состояния: dashboard stats, vocabulary, progress — staleTime 30s, retry 1</div>
+      </div>
+      <div class="node">
+        <div class="node-title">🌍 i18n + Markdown</div>
+        <div class="node-tech">lib/i18n.ts · react-markdown</div>
+        <div class="node-desc">RU/EN/ES словари (180+ ключей) · GFM-рендеринг таблиц, спряжений, примеров</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow-down">↓ HTTPS / Server Actions / fetch()</div>
+
+  <!-- LAYER 2: SERVER -->
+  <div class="layer l-server">
+    <div class="layer-header">
+      <div class="layer-num">2</div>
+      <div>
+        <div class="layer-title">Серверный слой (Application Layer)</div>
+        <div class="layer-desc">Next.js Server Actions · API Routes · Middleware · Vercel Edge</div>
+      </div>
+    </div>
+    <div class="nodes nodes-4">
+      <div class="node">
+        <div class="node-title">🛡️ Middleware Auth Guard</div>
+        <div class="node-tech">middleware.ts</div>
+        <div class="node-desc"><span class="tag tag-auth">AUTH</span> Проверка Supabase-сессии на каждом запросе. Незалогиненных → /login, онбординг-проверка</div>
+      </div>
+      <div class="node">
+        <div class="node-title">⚙️ Server Actions</div>
+        <div class="node-tech">server/actions/</div>
+        <div class="node-desc">signInWithEmail, completeOnboarding, updateProfile, addVocabularyWord, sendTutorMessage, generateExercise, checkExerciseAnswer</div>
+      </div>
+      <div class="node">
+        <div class="node-title">🔌 API Routes</div>
+        <div class="node-tech">app/api/</div>
+        <div class="node-desc">/api/tutor · /api/exercises/generate · /api/exercises/check · /api/vocabulary · /api/dashboard · /api/export-progress</div>
+      </div>
+      <div class="node">
+        <div class="node-title">🔐 Service-Role Writes</div>
+        <div class="node-tech">lib/supabase-admin.ts</div>
+        <div class="node-desc">Запись прогресса, истории чата и упражнений через service-role клиент (обход RLS для надёжности)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow-down">↓</div>
+
+  <!-- LAYER 3: AI ORCHESTRATOR -->
+  <div class="layer l-orch">
+    <div class="layer-header">
+      <div class="layer-num">3</div>
+      <div>
+        <div class="layer-title">AI Оркестратор (Intelligence Layer)</div>
+        <div class="layer-desc">Groq (primary, 3 ключа) · Gemini (fallback) · System Prompt · Domain Guard</div>
+      </div>
+    </div>
+    <div class="nodes nodes-3">
+      <div class="node">
+        <div class="node-title">🎯 generateAIResponse()</div>
+        <div class="node-tech">server/ai/orchestrator.ts</div>
+        <div class="node-desc">
+          <span class="tag tag-req">LLM</span>
+          Главная точка входа. Domain guard → system prompt → provider chain → нормализованный ответ
+        </div>
+      </div>
+      <div class="node">
+        <div class="node-title">🔁 Provider Chain</div>
+        <div class="node-tech">server/ai/providers.ts</div>
+        <div class="node-desc">
+          <span class="tag tag-retry">RETRY</span>
+          Groq round-robin (3 ключа × 30 req/min = 90/min). 429/5xx → rotate key → Gemini fallback. Exponential backoff + jitter
+        </div>
+      </div>
+      <div class="node">
+        <div class="node-title">🧑‍🏫 System Prompt</div>
+        <div class="node-tech">spanish-tutor-system-prompt.ts</div>
+        <div class="node-desc">Сократический метод (никогда не решает за ученика) · Domain restriction (только испанский) · RAG-контекст · 6 форм спряжения · Лексика урока для A1/A2</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow-down">↓</div>
+
+  <!-- LAYER 4: RAG -->
+  <div class="layer l-rag">
+    <div class="layer-header">
+      <div class="layer-num">4</div>
+      <div>
+        <div class="layer-title">RAG-слой (Knowledge Layer)</div>
+        <div class="layer-desc">Retrieval-Augmented Generation · pgvector · Full-Text Search · Shared Cache</div>
+      </div>
+    </div>
+    <div class="nodes nodes-3">
+      <div class="node">
+        <div class="node-title">📚 Knowledge Base</div>
+        <div class="node-tech">knowledge_chunks (4710 чанков)</div>
+        <div class="node-desc">4 учебника (Дышлевая × 2, Гонсалес-Алимова, Students Book) → pdftotext → чанки (~600 симв.) → embeddings (e5-small, 384-dim) → pgvector</div>
+      </div>
+      <div class="node">
+        <div class="node-title">🔍 retrieveContext()</div>
+        <div class="node-tech">server/rag/retrieve.ts</div>
+        <div class="node-desc">FTS (tsvector + GIN) → trigram fallback → форматирование с цитированием источников («Дышлевая, стр. 45»). Без модели в рантайме</div>
+      </div>
+      <div class="node">
+        <div class="node-title">💾 Shared Cache</div>
+        <div class="node-tech">tutor_cache · tutor-cache.ts</div>
+        <div class="node-desc">
+          <span class="tag tag-cache">CACHE</span>
+          Нормализация запроса → SHA-хэш + level → если ответ < 7 дней → отдаётся без вызова LLM. Снижает нагрузку 3-5×
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="arrow-down">↓</div>
+
+  <!-- LAYER 5: DATA -->
+  <div class="layer l-data">
+    <div class="layer-header">
+      <div class="layer-num">5</div>
+      <div>
+        <div class="layer-title">Слой данных (Persistence Layer)</div>
+        <div class="layer-desc">Supabase PostgreSQL · Row-Level Security · pgvector · pg_trgm</div>
+      </div>
+    </div>
+    <div class="nodes nodes-4">
+      <div class="node">
+        <div class="node-title">👤 profiles</div>
+        <div class="node-tech"><span class="tag tag-rls">RLS</span> auth.uid() = id</div>
+        <div class="node-desc">id, email, name, level (A1–C1), goal, interface_language, streak, daily_goal, onboarded</div>
+      </div>
+      <div class="node">
+        <div class="node-title">📊 daily_activity</div>
+        <div class="node-tech"><span class="tag tag-rls">RLS</span> is_owner(user_id)</div>
+        <div class="node-desc">Накопительные минуты и уроки по дням. Инкрементальное накопление (не перезапись)</div>
+      </div>
+      <div class="node">
+        <div class="node-title">📝 exercises_history</div>
+        <div class="node-tech"><span class="tag tag-rls">RLS</span> is_owner(user_id)</div>
+        <div class="node-desc">Каждый ответ упражнения с AI-фидбэком. Источник для анализа сильных/слабых сторон</div>
+      </div>
+      <div class="node">
+        <div class="node-title">📖 vocabulary + chat</div>
+        <div class="node-tech"><span class="tag tag-rls">RLS</span> is_owner(user_id)</div>
+        <div class="node-desc">Личный словарь пользователя + chat_conversations / chat_messages (история диалогов)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FLOW -->
+  <div class="flow-box">
+    <div style="font-size:1.1em; font-weight:700; margin-bottom:16px;">
+      🔄 Жизненный цикл запроса к репетитору (Tutor Request Lifecycle)
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">1</div>
+      <div class="flow-text"><strong>Клиент:</strong> Пользователь пишет «В чём разница ser и estar?» → fetch POST /api/tutor</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">2</div>
+      <div class="flow-text"><strong>Middleware:</strong> <span class="tag tag-auth">AUTH</span> Проверка Supabase-сессии → загрузка профиля (level, language, userName)</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">3</div>
+      <div class="flow-text"><strong>Cache Check:</strong> <span class="tag tag-cache">CACHE</span> Нормализация запроса → SHA-хэш → поиск в tutor_cache → <em>попадание?</em> → мгновенный ответ, 0 запросов к LLM</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">4</div>
+      <div class="flow-text"><strong>Domain Guard:</strong> isOffTopic()? → «Как приготовить борщ?» → отказ без вызова LLM</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">5</div>
+      <div class="flow-text"><strong>RAG Retrieval:</strong> retrieveContext("ser estar", level=A1) → FTS по 4710 чанкам → топ-5 фрагментов из Дышлевой/Гонсалес-Алимовой</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">6</div>
+      <div class="flow-text"><strong>System Prompt:</strong> buildSystemPrompt({ level: A1, retrievedContext, userName }) → промпт на русском + материал учебников + правила сократического метода</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">7</div>
+      <div class="flow-text"><strong>Provider Chain:</strong> <span class="tag tag-req">LLM</span> Groq ключ #1 → 200 OK → ответ (или 429 → ключ #2 → ключ #3 → Gemini) <span class="tag tag-retry">RETRY</span></div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">8</div>
+      <div class="flow-text"><strong>Persist:</strong> Ответ сохраняется в tutor_cache (для будущих запросов) + chat_messages + recordStudySession (+2 минуты к streak)</div>
+    </div>
+    <div class="flow-step">
+      <div class="flow-num">9</div>
+      <div class="flow-text"><strong>Клиент:</strong> Markdown-рендеринг ответа → таблицы спряжений, примеры, «📖 Лексика урока» (A1/A2)</div>
+    </div>
+  </div>
+
+  <!-- Security & Isolation -->
+  <div class="layer" style="border-color: rgba(16,185,129,0.15);">
+    <div class="layer-header">
+      <div class="layer-num" style="background: linear-gradient(135deg, #10b981, #14b8a6);">🔒</div>
+      <div>
+        <div class="layer-title">Изоляция и безопасность пользователей</div>
+        <div class="layer-desc">Row-Level Security · Supabase Auth · Service-Role для записи</div>
+      </div>
+    </div>
+    <div class="nodes nodes-3">
+      <div class="node">
+        <div class="node-title">🔐 Row-Level Security</div>
+        <div class="node-desc">Каждая таблица защищена: <code>USING (auth.uid() = user_id)</code>. Пользователь видит и пишет ТОЛЬКО свои данные. Даже при ошибке в коде БД откажет в доступе к чужим строкам.</div>
+      </div>
+      <div class="node">
+        <div class="node-title">👥 Supabase Auth</div>
+        <div class="node-desc">JWT-сессия в cookies. middleware.ts проверяет каждый запрос. UUID-идентификация. Триггер <code>handle_new_user</code> авто-создаёт профиль при регистрации.</div>
+      </div>
+      <div class="node">
+        <div class="node-title">⚙️ Service-Role Writes</div>
+        <div class="node-desc">Прогресс и история записываются через service-role клиент (обход RLS), но ID пользователя берётся из <code>getUser()</code> — идентификация проверяется, даже если cookies нестабильны.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tech stack -->
+  <div class="layer" style="border-color: rgba(168,85,247,0.15);">
+    <div class="layer-header">
+      <div class="layer-num" style="background: linear-gradient(135deg, #8b5cf6, #a855f7);">⚡</div>
+      <div>
+        <div class="layer-title">Технологический стек</div>
+      </div>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; font-size: 0.8em;">
+      <div><strong>Frontend:</strong> Next.js 15 · React 19 · TypeScript · Tailwind CSS · shadcn/ui (Radix)</div>
+      <div><strong>State:</strong> Zustand (persisted) · TanStack Query (server cache)</div>
+      <div><strong>Backend:</strong> Next.js Server Actions · API Routes · Middleware (Edge)</div>
+      <div><strong>Database:</strong> Supabase PostgreSQL · pgvector · pg_trgm · Row-Level Security</div>
+      <div><strong>AI:</strong> Groq API (llama-3.3-70b, 3 ключа round-robin) · Gemini (fallback)</div>
+      <div><strong>RAG:</strong> @huggingface/transformers (e5-small, 384-dim) · pdftotext · pgvector HNSW</div>
+      <div><strong>Auth:</strong> Supabase Auth (email/password, JWT cookies)</div>
+      <div><strong>Deploy:</strong> Vercel (serverless, Edge middleware)</div>
+    </div>
+  </div>
+
+  <p style="text-align:center; margin-top:40px; color:#555; font-size:0.8em;">
+    SpanishTutor © 2026 · Разработчик — Драгунов Павел · Next.js · Supabase · Groq · pgvector
+  </p>
+
+</div>
+</body>
+</html>
