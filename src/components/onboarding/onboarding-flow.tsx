@@ -100,7 +100,7 @@ export function OnboardingFlow({ error }: { error?: string }) {
         <Card className="border-0 shadow-xl">
           <CardHeader className="text-center pb-2">
             <img
-              src="/hippogriff-logo.svg"
+              src="/hippogriff-icon.png"
               alt="Spanish with Pavel"
               className="mx-auto mb-3 h-14 w-14 rounded-xl shadow-md"
             />

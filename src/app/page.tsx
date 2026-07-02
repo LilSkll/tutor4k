@@ -39,7 +39,7 @@ export default function LandingPage() {
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
             <img
-              src="/hippogriff-logo.svg"
+              src="/hippogriff-icon.png"
               alt="Spanish with Pavel"
               className="h-10 w-10 rounded-lg shadow-md"
             />
@@ -148,7 +148,7 @@ export default function LandingPage() {
           <div className="flex flex-col md:flex-row items-center justify-between w-full gap-4">
             <div className="flex items-center gap-2">
               <img
-                src="/hippogriff-logo.svg"
+                src="/hippogriff-icon.png"
                 alt="Spanish with Pavel"
                 className="h-7 w-7 rounded-md"
               />

@@ -62,7 +62,7 @@ export function Sidebar({ userName, level, streak }: NavProps) {
       {/* Brand */}
       <div className="flex h-16 items-center gap-2 px-4 border-b">
         <img
-          src="/hippogriff-logo.svg"
+          src="/hippogriff-icon.png"
           alt="Spanish with Pavel"
           className="h-10 w-10 shrink-0 rounded-lg"
         />

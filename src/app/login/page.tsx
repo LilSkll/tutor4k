@@ -23,7 +23,7 @@ export default async function LoginPage({
 
           <div className="flex items-center gap-2 mb-6">
             <img
-              src="/hippogriff-logo.svg"
+              src="/hippogriff-icon.png"
               alt="Spanish with Pavel"
               className="h-10 w-10 rounded-lg"
             />
