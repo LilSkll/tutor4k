@@ -55,7 +55,7 @@ export async function POST(req: NextRequest) {
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<title>Отчёт о прогрессе — SpanishTutor</title>
+<title>Отчёт о прогрессе — Spanish with Pavel</title>
 <style>
   @page { margin: 2cm; }
   * { box-sizing: border-box; }
@@ -88,7 +88,7 @@ export async function POST(req: NextRequest) {
   </div>
   <div class="brand">
     <div class="logo">Ñ</div>
-    <div class="brand-name">SpanishTutor</div>
+    <div class="brand-name">Spanish with Pavel</div>
   </div>
   <h1>Отчёт о прогрессе</h1>
   <p class="subtitle">Статистика изучения испанского языка · ${today}</p>
@@ -115,7 +115,7 @@ export async function POST(req: NextRequest) {
   </table>
 
   <div class="footer">
-    SpanishTutor · ИИ-репетитор испанского языка · Создано с Next.js, Supabase и Groq
+    Spanish with Pavel · ИИ-репетитор испанского языка · Создано с Next.js, Supabase и Groq
     <br>Разработчик — Драгунов Павел
   </div>
 

@@ -161,7 +161,20 @@
 }
 
 .markdown-body table {
-  @apply w-full border-collapse my-3 text-sm;
+  @apply border-collapse my-3 text-sm;
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .markdown-body table {
+    display: table;
+    white-space: normal;
+    width: 100%;
+  }
 }
 
 .markdown-body th,

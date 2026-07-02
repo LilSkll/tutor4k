@@ -67,7 +67,7 @@ export function Sidebar({ userName, level, streak }: NavProps) {
         {!collapsed && (
           <div className="flex flex-col">
             <span className="font-bold text-sm leading-tight gradient-text">
-              SpanishTutor
+              Spanish with Pavel
             </span>
             <span className="text-[10px] text-muted-foreground">AI-Powered</span>
           </div>
@@ -75,7 +75,7 @@ export function Sidebar({ userName, level, streak }: NavProps) {
       </div>
 
       {/* Navigation */}
-      <nav className="flex-1 space-y-1 p-3">
+      <nav className="flex-1 space-y-2 p-3">
         {navItems.map((item) => {
           const Icon = ICONS[item.icon];
           const active =
@@ -85,7 +85,7 @@ export function Sidebar({ userName, level, streak }: NavProps) {
               key={item.href}
               href={item.href}
               className={cn(
-                "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
+                "flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium transition-colors",
                 active
                   ? "bg-primary/10 text-primary"
                   : "text-muted-foreground hover:bg-accent hover:text-foreground",

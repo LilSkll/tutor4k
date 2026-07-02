@@ -56,7 +56,7 @@ export function MobileNav() {
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary via-orange-500 to-rose-500 text-white font-bold">
             Ñ
           </div>
-          <span className="font-bold gradient-text">SpanishTutor</span>
+          <span className="font-bold gradient-text">Spanish with Pavel</span>
         </div>
         <div className="flex items-center gap-1">
           <ThemeToggle />
@@ -81,7 +81,7 @@ export function MobileNav() {
           />
           <div className="relative flex h-full w-72 flex-col bg-card shadow-xl animate-slide-in">
             <div className="flex h-14 items-center justify-between border-b px-4">
-              <span className="font-bold gradient-text">SpanishTutor</span>
+              <span className="font-bold gradient-text">Spanish with Pavel</span>
               <Button
                 variant="ghost"
                 size="icon"
@@ -92,7 +92,7 @@ export function MobileNav() {
                 <X className="h-5 w-5" />
               </Button>
             </div>
-            <nav className="flex-1 space-y-1 p-3">
+            <nav className="flex-1 space-y-2 p-3">
               {navItems.map((item) => {
                 const Icon = ICONS[item.icon];
                 const active =
@@ -104,7 +104,7 @@ export function MobileNav() {
                     href={item.href}
                     onClick={() => setOpen(false)}
                     className={cn(
-                      "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
+                      "flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium transition-colors",
                       active
                         ? "bg-primary/10 text-primary"
                         : "text-muted-foreground hover:bg-accent hover:text-foreground",

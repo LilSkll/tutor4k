@@ -25,7 +25,7 @@ export default async function LoginPage({
             <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary via-orange-500 to-rose-500 text-white font-bold text-xl">
               Ñ
             </div>
-            <span className="font-bold text-xl gradient-text">SpanishTutor</span>
+            <span className="font-bold text-xl gradient-text">Spanish with Pavel</span>
           </div>
 
           <h1 className="text-2xl font-bold mb-1">С возвращением!</h1>

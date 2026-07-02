@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "SpanishTutor — AI Spanish Learning Platform",
+  title: "Spanish with Pavel — AI Spanish Learning Platform",
   description:
     "Personal AI tutor for learning Spanish: grammar, vocabulary, exercises, DELE prep and progress tracking.",
   authors: [{ name: "Драгунов Павел" }],

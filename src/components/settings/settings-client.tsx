@@ -255,7 +255,7 @@ export function SettingsClient({ profile }: { profile: Profile }) {
 
       <Separator />
       <p className="text-center text-xs text-muted-foreground pb-4">
-        SpanishTutor © {new Date().getFullYear()} · {t("landing.footer")}
+        Spanish with Pavel © {new Date().getFullYear()} · {t("landing.footer")}
         <br />
         Разработчик — Драгунов Павел
       </p>

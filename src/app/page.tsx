@@ -41,7 +41,7 @@ export default function LandingPage() {
             <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-primary via-orange-500 to-rose-500 text-white font-bold text-lg shadow-md">
               Ñ
             </div>
-            <span className="font-bold text-lg gradient-text">SpanishTutor</span>
+            <span className="font-bold text-lg gradient-text">Spanish with Pavel</span>
           </div>
           <div className="flex items-center gap-2">
             <Button variant="ghost" asChild>
@@ -139,7 +139,7 @@ export default function LandingPage() {
               <div className="flex h-7 w-7 items-center justify-center rounded-md bg-gradient-to-br from-primary via-orange-500 to-rose-500 text-white font-bold text-sm">
                 Ñ
               </div>
-              <span>SpanishTutor © {new Date().getFullYear()}</span>
+              <span>Spanish with Pavel © {new Date().getFullYear()}</span>
             </div>
             <p>{t("landing.footer")}</p>
           </div>
