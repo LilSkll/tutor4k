@@ -87,7 +87,7 @@ export function DashboardDataLoader() {
   const greeting = t(greetingKey);
 
   return (
-    <>
+    <div className="space-y-6 md:space-y-8">
       {/* Hero greeting */}
       <Card className="relative overflow-hidden border-0 bg-gradient-to-br from-primary via-orange-500 to-rose-500 text-white">
         <div className="absolute -right-10 -top-10 opacity-10">
@@ -211,7 +211,7 @@ export function DashboardDataLoader() {
               {t("dashboard.aiRecommendations")}
             </CardDescription>
           </CardHeader>
-          <CardContent className="space-y-2">
+          <CardContent className="space-y-3 pt-2">
             {recommended.map((topic) => (
               <Link
                 key={topic.slug}
@@ -286,6 +286,6 @@ export function DashboardDataLoader() {
           </div>
         </CardContent>
       </Card>
-    </>
+    </div>
   );
 }
