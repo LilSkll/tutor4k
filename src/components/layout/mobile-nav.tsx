@@ -53,9 +53,11 @@ export function MobileNav() {
     <>
       <div className="md:hidden sticky top-0 z-40 flex h-14 items-center justify-between border-b bg-background/90 backdrop-blur-md px-4">
         <div className="flex items-center gap-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary via-orange-500 to-rose-500 text-white font-bold">
-            Ñ
-          </div>
+          <img
+            src="/hippogriff-logo.svg"
+            alt="Spanish with Pavel"
+            className="h-8 w-8 rounded-lg"
+          />
           <span className="font-bold gradient-text">Spanish with Pavel</span>
         </div>
         <div className="flex items-center gap-1">

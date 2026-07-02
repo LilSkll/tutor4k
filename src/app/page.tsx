@@ -38,9 +38,11 @@ export default function LandingPage() {
       <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur-md">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
-            <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br from-primary via-orange-500 to-rose-500 text-white font-bold text-lg shadow-md">
-              Ñ
-            </div>
+            <img
+              src="/hippogriff-logo.svg"
+              alt="Spanish with Pavel"
+              className="h-10 w-10 rounded-lg shadow-md"
+            />
             <span className="font-bold text-lg gradient-text">Spanish with Pavel</span>
           </div>
           <div className="flex items-center gap-2">
@@ -81,6 +83,15 @@ export default function LandingPage() {
           <Button variant="outline" size="lg" asChild>
             <Link href="/login">{t("landing.haveAccount")}</Link>
           </Button>
+        </div>
+
+        {/* Hippogriff mascot illustration */}
+        <div className="mt-8 mb-4 flex justify-center animate-fade-in">
+          <img
+            src="/hippogriff-hero.jpg"
+            alt="Талисман приложения — гиппогриф"
+            className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-3xl shadow-2xl border-4 border-primary/20"
+          />
         </div>
 
         {/* Levels */}
@@ -136,9 +147,11 @@ export default function LandingPage() {
         <div className="container flex flex-col items-center gap-3 text-sm text-muted-foreground">
           <div className="flex flex-col md:flex-row items-center justify-between w-full gap-4">
             <div className="flex items-center gap-2">
-              <div className="flex h-7 w-7 items-center justify-center rounded-md bg-gradient-to-br from-primary via-orange-500 to-rose-500 text-white font-bold text-sm">
-                Ñ
-              </div>
+              <img
+                src="/hippogriff-logo.svg"
+                alt="Spanish with Pavel"
+                className="h-7 w-7 rounded-md"
+              />
               <span>Spanish with Pavel © {new Date().getFullYear()}</span>
             </div>
             <p>{t("landing.footer")}</p>

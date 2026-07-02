@@ -22,9 +22,11 @@ export default async function LoginPage({
           </Link>
 
           <div className="flex items-center gap-2 mb-6">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary via-orange-500 to-rose-500 text-white font-bold text-xl">
-              Ñ
-            </div>
+            <img
+              src="/hippogriff-logo.svg"
+              alt="Spanish with Pavel"
+              className="h-10 w-10 rounded-lg"
+            />
             <span className="font-bold text-xl gradient-text">Spanish with Pavel</span>
           </div>
 

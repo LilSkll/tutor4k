@@ -99,9 +99,11 @@ export function OnboardingFlow({ error }: { error?: string }) {
 
         <Card className="border-0 shadow-xl">
           <CardHeader className="text-center pb-2">
-            <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-primary via-orange-500 to-rose-500 text-white font-bold text-2xl">
-              Ñ
-            </div>
+            <img
+              src="/hippogriff-logo.svg"
+              alt="Spanish with Pavel"
+              className="mx-auto mb-3 h-14 w-14 rounded-xl shadow-md"
+            />
             <CardTitle className="text-2xl gradient-text">
               {t("onboarding.welcome")}
             </CardTitle>

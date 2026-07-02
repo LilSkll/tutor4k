@@ -61,9 +61,11 @@ export function Sidebar({ userName, level, streak }: NavProps) {
     >
       {/* Brand */}
       <div className="flex h-16 items-center gap-2 px-4 border-b">
-        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary via-orange-500 to-rose-500 text-white font-bold text-lg shadow-md">
-          Ñ
-        </div>
+        <img
+          src="/hippogriff-logo.svg"
+          alt="Spanish with Pavel"
+          className="h-10 w-10 shrink-0 rounded-lg"
+        />
         {!collapsed && (
           <div className="flex flex-col">
             <span className="font-bold text-sm leading-tight gradient-text">
