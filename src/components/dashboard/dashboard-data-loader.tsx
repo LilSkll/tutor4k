@@ -94,25 +94,36 @@ export function DashboardDataLoader() {
           <GraduationCap className="h-48 w-48" />
         </div>
         <CardContent className="relative p-6 md:p-8">
-          <p className="text-white/80 text-sm">
-            {greeting}, {profile.name || ""} 👋
-          </p>
-          <h1 className="text-2xl md:text-3xl font-bold mt-1 mb-3">
-            {t("dashboard.subtitle")}
-          </h1>
-          <div className="flex flex-wrap items-center gap-3">
-            <Button variant="secondary" size="sm" asChild>
-              <Link href="/tutor">
-                <MessageSquare className="h-4 w-4" />
-                {t("dashboard.askTutor")}
-              </Link>
-            </Button>
-            <Button variant="secondary" size="sm" asChild>
-              <Link href="/exercises">
-                <Target className="h-4 w-4" />
-                {t("dashboard.practiceNow")}
-              </Link>
-            </Button>
+          <div className="flex flex-col md:flex-row items-center gap-6">
+            <div className="flex-1 min-w-0">
+              <p className="text-white/80 text-sm">
+                {greeting}, {profile.name || ""} 👋
+              </p>
+              <h1 className="text-2xl md:text-3xl font-bold mt-1 mb-3">
+                {t("dashboard.subtitle")}
+              </h1>
+              <div className="flex flex-wrap items-center gap-3">
+                <Button variant="secondary" size="sm" asChild>
+                  <Link href="/tutor">
+                    <MessageSquare className="h-4 w-4" />
+                    {t("dashboard.askTutor")}
+                  </Link>
+                </Button>
+                <Button variant="secondary" size="sm" asChild>
+                  <Link href="/exercises">
+                    <Target className="h-4 w-4" />
+                    {t("dashboard.practiceNow")}
+                  </Link>
+                </Button>
+              </div>
+            </div>
+            <div className="shrink-0 order-first md:order-last">
+              <img
+                src="/hippogriff-hero.jpg"
+                alt="Талисман приложения"
+                className="w-28 h-28 md:w-36 md:h-36 object-cover rounded-2xl shadow-xl border-2 border-white/20"
+              />
+            </div>
           </div>
         </CardContent>
       </Card>
