@@ -1,4 +1,5 @@
 import { createSupabaseServerClient } from "@/lib/supabase-server";
+import { CHAPTERS } from "@/config/chapters";
 import type {
   ChapterProgress,
   ExerciseHistory,
@@ -205,7 +206,6 @@ export async function getCurrentChapterSlug(): Promise<string | null> {
   );
 
   // Find first chapter that is not completed.
-  const { CHAPTERS } = await import("@/config/chapters");
   for (const ch of CHAPTERS) {
     if (!completedSlugs.has(ch.slug)) return ch.slug;
   }
