@@ -92,9 +92,9 @@ export async function signOut() {
 export async function completeOnboarding(input: {
   name: string;
   level: Level | "UNKNOWN";
-  goal: Goal;
-  interfaceLanguage: InterfaceLanguage;
-  dailyGoalMinutes: number;
+  goal?: Goal;
+  interfaceLanguage?: InterfaceLanguage;
+  dailyGoalMinutes?: number;
 }) {
   const supabase = await createSupabaseServerClient();
   const {
@@ -110,9 +110,9 @@ export async function completeOnboarding(input: {
     .update({
       name: input.name,
       level,
-      goal: input.goal,
-      interface_language: input.interfaceLanguage,
-      daily_goal_minutes: input.dailyGoalMinutes,
+      goal: input.goal ?? "GENERAL",
+      interface_language: input.interfaceLanguage ?? "ru",
+      daily_goal_minutes: input.dailyGoalMinutes ?? 10,
       onboarded: true,
     })
     .eq("id", user.id);
@@ -122,7 +122,9 @@ export async function completeOnboarding(input: {
   }
 
   revalidatePath("/", "layout");
-  redirect("/dashboard");
+  // Redirect to the FIRST chapter — not the dashboard.
+  // The user should start learning immediately.
+  redirect("/chapters/chapter-1-despertar");
 }
 
 // =====================================================================

@@ -172,3 +172,39 @@ export interface DailyActivity {
   lessonsCompleted: number;
   minutesStudied: number;
 }
+
+// ----- Chapters / Learning Journey -----------------------------------
+
+export interface Chapter {
+  slug: string;
+  number: number;          // 1, 2, 3...
+  title: string;           // «Пробуждение»
+  titleEs: string;         // «El Despertar»
+  level: Level;
+  location: string;        // «Академия» (для карты путешествия)
+  icon: string;            // emoji
+  summary: string;
+  /** Slug из GRAMMAR_TOPICS для привязки грамматического материала. */
+  grammarTopic: string;
+  /** Slug из VOCAB_TOPICS (опционально). */
+  vocabTopic?: string;
+  /** Типы упражнений для этой главы. */
+  exerciseTypes: ExerciseType[];
+  /** Slug предыдущей главы (для разблокировки). */
+  prereqChapter?: string;
+  /** Ориентировочное время прохождения (минуты). */
+  estimatedMinutes: number;
+}
+
+export interface ChapterProgress {
+  id: string;
+  user_id: string;
+  chapter_slug: string;
+  status: "not_started" | "in_progress" | "completed";
+  score: number;
+  started_at: string | null;
+  completed_at: string | null;
+  words_learned: number;
+  exercises_completed: number;
+  created_at: string;
+}

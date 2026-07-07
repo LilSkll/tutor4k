@@ -1,5 +1,6 @@
 import { createSupabaseServerClient } from "@/lib/supabase-server";
 import type {
+  ChapterProgress,
   ExerciseHistory,
   LearningProgress,
   Profile,
@@ -166,4 +167,125 @@ export async function recordStudySession(minutes: number, lessons = 1) {
   }
 
   return { error: null };
+}
+
+// =====================================================================
+// Chapter progress — track which chapters the user has completed
+// =====================================================================
+
+/**
+ * Get all chapter progress records for the current user.
+ * Used by the dashboard and the journey map.
+ */
+export async function getChapterProgress(): Promise<ChapterProgress[]> {
+  const supabase = await createSupabaseServerClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return [];
+
+  const { data } = await supabase
+    .from("learning_progress")
+    .select("*")
+    .eq("user_id", user.id)
+    .not("chapter_slug", "is", null)
+    .order("created_at", { ascending: true });
+
+  return (data ?? []) as unknown as ChapterProgress[];
+}
+
+/**
+ * Get the chapter the user should continue with (first not-completed).
+ * Returns the chapter slug, or null if all are done.
+ */
+export async function getCurrentChapterSlug(): Promise<string | null> {
+  const progress = await getChapterProgress();
+  const completedSlugs = new Set(
+    progress.filter((p) => p.status === "completed").map((p) => p.chapter_slug),
+  );
+
+  // Find first chapter that is not completed.
+  const { CHAPTERS } = await import("@/config/chapters");
+  for (const ch of CHAPTERS) {
+    if (!completedSlugs.has(ch.slug)) return ch.slug;
+  }
+  return null;
+}
+
+/**
+ * Mark a chapter as started (in_progress). Idempotent — if already
+ * started or completed, does nothing.
+ */
+export async function startChapter(chapterSlug: string): Promise<void> {
+  const supabase = await createSupabaseServerClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return;
+
+  const { createSupabaseAdminClient } = await import("@/lib/supabase-admin");
+  const admin = createSupabaseAdminClient();
+  const client = admin ?? supabase;
+
+  // Check if already exists.
+  const { data: existing } = await client
+    .from("learning_progress")
+    .select("id, status")
+    .eq("user_id", user.id)
+    .eq("chapter_slug", chapterSlug)
+    .maybeSingle();
+
+  if (existing) return; // Already started or completed.
+
+  // Insert a new in_progress row.
+  await client.from("learning_progress").insert({
+    user_id: user.id,
+    chapter_slug: chapterSlug,
+    topic: chapterSlug,
+    status: "in_progress",
+    score: 0,
+    started_at: new Date().toISOString(),
+    words_learned: 0,
+    exercises_completed: 0,
+  });
+}
+
+/**
+ * Mark a chapter as completed and record the stats. Also records a
+ * study session for progress/streak.
+ */
+export async function completeChapter(
+  chapterSlug: string,
+  stats: { score: number; wordsLearned: number; exercisesCompleted: number },
+): Promise<void> {
+  const supabase = await createSupabaseServerClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return;
+
+  const { createSupabaseAdminClient } = await import("@/lib/supabase-admin");
+  const admin = createSupabaseAdminClient();
+  const client = admin ?? supabase;
+
+  // Upsert the chapter progress.
+  await client
+    .from("learning_progress")
+    .upsert(
+      {
+        user_id: user.id,
+        chapter_slug: chapterSlug,
+        topic: chapterSlug,
+        status: "completed",
+        score: stats.score,
+        started_at: new Date().toISOString(),
+        completed_at: new Date().toISOString(),
+        words_learned: stats.wordsLearned,
+        exercises_completed: stats.exercisesCompleted,
+      },
+      { onConflict: "user_id,chapter_slug" },
+    );
+
+  // Record study time.
+  await recordStudySession(8, 1).catch(() => {});
 }

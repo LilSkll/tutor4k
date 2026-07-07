@@ -39,9 +39,13 @@ export function MobileNav() {
   const language = useUIStore((s) => s.interfaceLanguage);
   const t = (key: string) => translate(key, language);
 
-  const navItems = [
-    { href: "/dashboard", label: t("nav.dashboard"), icon: "LayoutDashboard" },
-    { href: "/tutor", label: t("nav.tutor"), icon: "MessageSquare" },
+  const primaryNav = [
+    { href: "/dashboard", label: "Главная", icon: "LayoutDashboard" },
+    { href: "/chapters", label: "Главы", icon: "BookOpen" },
+    { href: "/tutor", label: "Репетитор", icon: "MessageSquare" },
+  ];
+
+  const secondaryNav = [
     { href: "/grammar", label: t("nav.grammar"), icon: "BookOpen" },
     { href: "/exercises", label: t("nav.exercises"), icon: "Dumbbell" },
     { href: "/vocabulary", label: t("nav.vocabulary"), icon: "Languages" },
@@ -95,7 +99,7 @@ export function MobileNav() {
               </Button>
             </div>
             <nav className="flex-1 space-y-2 p-3">
-              {navItems.map((item) => {
+              {primaryNav.map((item) => {
                 const Icon = ICONS[item.icon];
                 const active =
                   pathname === item.href ||
@@ -117,6 +121,31 @@ export function MobileNav() {
                   </Link>
                 );
               })}
+              <div className="pt-2 mt-2 border-t">
+                <p className="text-[10px] font-semibold text-muted-foreground/60 uppercase tracking-wider px-3 pb-1">
+                  Инструменты
+                </p>
+                {secondaryNav.map((item) => {
+                  const Icon = ICONS[item.icon];
+                  const active =
+                    pathname === item.href ||
+                    pathname.startsWith(item.href + "/");
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => setOpen(false)}
+                      className={cn(
+                        "flex items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-muted-foreground hover:bg-accent hover:text-foreground transition-colors",
+                        active && "bg-primary/10 text-primary",
+                      )}
+                    >
+                      <Icon className="h-4 w-4" />
+                      {item.label}
+                    </Link>
+                  );
+                })}
+              </div>
               <div className="pt-2 mt-2 border-t">
                 <form action={() => signOut()}>
                   <button
