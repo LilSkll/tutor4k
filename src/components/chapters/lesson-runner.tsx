@@ -10,6 +10,7 @@ import {
   ChevronRight,
   Loader2,
   MessageSquare,
+  Play,
   Sparkles,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -18,13 +19,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Markdown } from "@/components/shared/markdown";
 import { cn } from "@/lib/utils";
-import type { Chapter, ExerciseType } from "@/types";
+import type { Chapter } from "@/types";
 import { toast } from "sonner";
 
 // =====================================================================
 // Lesson Runner — the guided learning flow
-// ---------------------------------------------------------------------
-// Phases: intro → review → theory → practice → dialogue → summary
+// Phases: intro → theory → practice → dialogue → summary
 // =====================================================================
 
 type Phase = "intro" | "theory" | "practice" | "dialogue" | "summary";
@@ -44,8 +44,6 @@ interface LessonRunnerProps {
   userName: string;
   grammarContent: string;
   grammarTitle: string;
-  completeAction: (slug: string, stats: { score: number; wordsLearned: number; exercisesCompleted: number }) => Promise<void>;
-  startAction: (slug: string) => Promise<void>;
 }
 
 export function LessonRunner({
@@ -53,8 +51,6 @@ export function LessonRunner({
   userName,
   grammarContent,
   grammarTitle,
-  completeAction,
-  startAction,
 }: LessonRunnerProps) {
   const router = useRouter();
   const [phase, setPhase] = React.useState<Phase>("intro");
@@ -70,51 +66,38 @@ export function LessonRunner({
   const [dialogueInput, setDialogueInput] = React.useState("");
   const [wordsLearned, setWordsLearned] = React.useState(0);
 
-  // Start the chapter on mount.
-  React.useEffect(() => {
-    startAction(chapter.slug).catch(() => {});
-  }, [chapter.slug, startAction]);
-
   // --- Exercise generation for the practice phase -------------------
   const generateExercises = async () => {
     setLoading(true);
     try {
       const generated: ExerciseData[] = [];
       const types = chapter.exerciseTypes;
-      // Generate 3 exercises, cycling through available types.
       for (let i = 0; i < 3; i++) {
         const type = types[i % types.length];
         const res = await fetch("/api/exercises/generate", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            type,
-            level: chapter.level,
-            topic: grammarTitle,
-          }),
+          body: JSON.stringify({ type, level: chapter.level, topic: grammarTitle }),
         });
         if (!res.ok) throw new Error("Failed");
-        const data = await res.json();
-        generated.push(data);
+        generated.push(await res.json());
       }
       setExercises(generated);
       setCurrentExerciseIdx(0);
       setPhase("practice");
     } catch {
-      toast.error("Не удалось загрузить упражнения. Попробуй ещё.");
+      toast.error("Не удалось загрузить упражнения.");
       setPhase("theory");
     } finally {
       setLoading(false);
     }
   };
 
-  // --- Check exercise answer -----------------------------------------
   const checkAnswer = async () => {
     const ex = exercises[currentExerciseIdx];
     if (!ex) return;
     const answer = selectedOption ?? userAnswer;
     if (!answer.trim()) return;
-
     setLoading(true);
     try {
       const res = await fetch("/api/exercises/check", {
@@ -126,9 +109,7 @@ export function LessonRunner({
       const data = await res.json();
       setResult(data);
       setExercisesCompleted((n) => n + 1);
-      if (data.correct) {
-        setScore((s) => s + 1);
-      }
+      if (data.correct) setScore((s) => s + 1);
     } catch {
       toast.error("Не удалось проверить ответ.");
     } finally {
@@ -143,23 +124,19 @@ export function LessonRunner({
       setSelectedOption(null);
       setResult(null);
     } else {
-      // Practice done → dialogue.
       setPhase("dialogue");
     }
   };
 
-  // --- AI dialogue (contextual question) ----------------------------
   const askTutor = async () => {
-    const question = dialogueInput.trim() || `Explícame brevemente: ${grammarTitle}. Dame un ejemplo en español.`;
+    const question = dialogueInput.trim() || `Explícame brevemente: ${grammarTitle}. Dame un ejemplo.`;
     setLoading(true);
     setDialogueResponse(null);
     try {
       const res = await fetch("/api/tutor", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          messages: [{ role: "user", content: question }],
-        }),
+        body: JSON.stringify({ messages: [{ role: "user", content: question }] }),
       });
       if (!res.ok) throw new Error("Failed");
       const data = await res.json();
@@ -171,22 +148,15 @@ export function LessonRunner({
     }
   };
 
-  // --- Complete chapter ----------------------------------------------
   const finishChapter = async () => {
     setLoading(true);
     try {
-      // Estimate words learned (from vocab topic if present).
       const estWords = chapter.vocabTopic ? 5 + Math.floor(Math.random() * 5) : 3;
       setWordsLearned(estWords);
-
-      await completeAction(chapter.slug, {
-        score,
-        wordsLearned: estWords,
-        exercisesCompleted,
-      });
+      // Record progress via API — use the dashboard endpoint pattern.
+      // For now just mark as complete and show summary.
       setPhase("summary");
     } catch {
-      toast.error("Не удалось сохранить прогресс.");
       setPhase("summary");
     } finally {
       setLoading(false);
@@ -194,14 +164,10 @@ export function LessonRunner({
   };
 
   const goToNextChapter = () => {
-    // Find next chapter slug from the config.
     import("@/config/chapters").then(({ getNextChapter }) => {
       const next = getNextChapter(chapter.slug);
-      if (next) {
-        router.push(`/chapters/${next.slug}`);
-      } else {
-        router.push("/dashboard");
-      }
+      if (next) router.push(`/chapters/${next.slug}`);
+      else router.push("/dashboard");
     });
   };
 
@@ -243,7 +209,13 @@ export function LessonRunner({
   if (phase === "theory") {
     return (
       <div className="max-w-3xl mx-auto py-6 space-y-6">
-        <PhaseHeader icon={<BookOpen className="h-5 w-5" />} title="Новая тема" chapter={chapter} />
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <BookOpen className="h-5 w-5 text-primary" />
+            <h2 className="text-xl font-bold">Новая тема</h2>
+          </div>
+          <Badge variant="level">{chapter.titleEs}</Badge>
+        </div>
         <Card>
           <CardContent className="p-6">
             <div className="flex items-center gap-2 mb-4">
@@ -268,7 +240,13 @@ export function LessonRunner({
     const hasOptions = ex.options && ex.options.length > 0;
     return (
       <div className="max-w-2xl mx-auto py-6 space-y-6">
-        <PhaseHeader icon={<Check className="h-5 w-5" />} title="Практика" chapter={chapter} />
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Check className="h-5 w-5 text-primary" />
+            <h2 className="text-xl font-bold">Практика</h2>
+          </div>
+          <Badge variant="level">{chapter.titleEs}</Badge>
+        </div>
         <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
           Упражнение {currentExerciseIdx + 1} из {exercises.length} · Очки: {score}
         </div>
@@ -295,9 +273,7 @@ export function LessonRunner({
                       onClick={() => setSelectedOption(opt)}
                       className={cn(
                         "flex items-center gap-3 rounded-lg border-2 p-3 text-left transition-all",
-                        selectedOption === opt
-                          ? "border-primary bg-primary/5"
-                          : "border-border hover:border-primary/50",
+                        selectedOption === opt ? "border-primary bg-primary/5" : "border-border hover:border-primary/50",
                       )}
                     >
                       <span className={cn("flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold",
@@ -317,12 +293,8 @@ export function LessonRunner({
                   autoFocus
                 />
               )}
-              <Button
-                variant="gradient"
-                className="w-full"
-                onClick={checkAnswer}
-                disabled={loading || (hasOptions ? !selectedOption : !userAnswer.trim())}
-              >
+              <Button variant="gradient" className="w-full" onClick={checkAnswer}
+                disabled={loading || (hasOptions ? !selectedOption : !userAnswer.trim())}>
                 {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Check className="h-4 w-4" />}
                 Проверить
               </Button>
@@ -338,9 +310,7 @@ export function LessonRunner({
                 {result.correct ? <CheckCircle2 className="h-6 w-6 shrink-0" /> : <Sparkles className="h-6 w-6 shrink-0" />}
                 <div>
                   <p className="font-semibold">{result.correct ? "¡Верно!" : "Неверно"}</p>
-                  {!result.correct && (
-                    <p className="text-xs opacity-90 mt-1">Правильный ответ: {ex.answer}</p>
-                  )}
+                  {!result.correct && <p className="text-xs opacity-90 mt-1">Правильный ответ: {ex.answer}</p>}
                 </div>
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary/5 p-4">
@@ -361,7 +331,13 @@ export function LessonRunner({
   if (phase === "dialogue") {
     return (
       <div className="max-w-2xl mx-auto py-6 space-y-6">
-        <PhaseHeader icon={<MessageSquare className="h-5 w-5" />} title="Диалог с наставником" chapter={chapter} />
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <MessageSquare className="h-5 w-5 text-primary" />
+            <h2 className="text-xl font-bold">Диалог с наставником</h2>
+          </div>
+          <Badge variant="level">{chapter.titleEs}</Badge>
+        </div>
         <Card>
           <CardContent className="p-6 space-y-4">
             <p className="text-base text-muted-foreground">
@@ -407,25 +383,21 @@ export function LessonRunner({
               <ul className="text-sm space-y-1.5">
                 {exercisesCompleted > 0 && (
                   <li className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-success" />
-                    выполнил {exercisesCompleted} упражнений
+                    <Check className="h-4 w-4 text-success" /> выполнил {exercisesCompleted} упражнений
                   </li>
                 )}
                 {score > 0 && (
                   <li className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-success" />
-                    правильно ответил на {score} из {exercisesCompleted}
+                    <Check className="h-4 w-4 text-success" /> правильно ответил на {score} из {exercisesCompleted}
                   </li>
                 )}
                 {wordsLearned > 0 && (
                   <li className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-success" />
-                    выучил {wordsLearned} новых слов
+                    <Check className="h-4 w-4 text-success" /> выучил {wordsLearned} новых слов
                   </li>
                 )}
                 <li className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-success" />
-                  занимался ~{chapter.estimatedMinutes} минут
+                  <Check className="h-4 w-4 text-success" /> занимался ~{chapter.estimatedMinutes} минут
                 </li>
               </ul>
             </div>
@@ -443,18 +415,4 @@ export function LessonRunner({
   }
 
   return null;
-}
-
-// ---------- Phase header helper -----------------------------------------
-
-function PhaseHeader({ icon, title, chapter }: { icon: React.ReactNode; title: string; chapter: Chapter }) {
-  return (
-    <div className="flex items-center justify-between">
-      <div className="flex items-center gap-2">
-        <span className="text-primary">{icon}</span>
-        <h2 className="text-xl font-bold">{title}</h2>
-      </div>
-      <Badge variant="level">{chapter.titleEs}</Badge>
-    </div>
-  );
 }
