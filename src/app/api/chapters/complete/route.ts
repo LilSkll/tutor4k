@@ -1,12 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
+import { getChapter } from "@/config/chapters";
+import type { Level } from "@/types";
 
 /**
  * POST /api/chapters/complete
  * Body: { chapterSlug, score, wordsLearned, exercisesCompleted }
  *
  * Marks a chapter as completed and records a study session.
- * Uses service-role client for reliable writes (bypasses RLS).
  */
 export async function POST(req: NextRequest) {
   try {
@@ -30,15 +31,19 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
+    // Get the chapter to find its level.
+    const chapter = getChapter(body.chapterSlug);
+    const chapterLevel: Level = chapter?.level ?? "A1";
+
     // Use service-role for writes.
-    let admin = null;
+    let client = supabase;
     try {
       const { createSupabaseAdminClient } = await import("@/lib/supabase-admin");
-      admin = createSupabaseAdminClient();
+      const admin = createSupabaseAdminClient();
+      if (admin) client = admin;
     } catch {}
-    const client = admin ?? supabase;
 
-    // Upsert chapter progress.
+    // Upsert chapter progress — MUST include level (NOT NULL constraint).
     const { error: progressError } = await client
       .from("learning_progress")
       .upsert(
@@ -46,6 +51,7 @@ export async function POST(req: NextRequest) {
           user_id: user.id,
           chapter_slug: body.chapterSlug,
           topic: body.chapterSlug,
+          level: chapterLevel,
           status: "completed",
           score: body.score ?? 0,
           started_at: new Date().toISOString(),
@@ -58,9 +64,10 @@ export async function POST(req: NextRequest) {
 
     if (progressError) {
       console.error("[/api/chapters/complete] progress error:", progressError.message);
+      return NextResponse.json({ error: progressError.message }, { status: 500 });
     }
 
-    // Record study session (accumulate minutes + lessons).
+    // Record study session.
     const today = new Date().toISOString().slice(0, 10);
     const { data: existing } = await client
       .from("daily_activity")
@@ -69,15 +76,12 @@ export async function POST(req: NextRequest) {
       .eq("activity_date", today)
       .maybeSingle();
 
-    const prevLessons = (existing?.lessons_completed as number) ?? 0;
-    const prevMinutes = (existing?.minutes_studied as number) ?? 0;
-
     await client.from("daily_activity").upsert(
       {
         user_id: user.id,
         activity_date: today,
-        lessons_completed: prevLessons + 1,
-        minutes_studied: prevMinutes + 8,
+        lessons_completed: ((existing?.lessons_completed as number) ?? 0) + 1,
+        minutes_studied: ((existing?.minutes_studied as number) ?? 0) + 8,
       },
       { onConflict: "user_id,activity_date" },
     );
