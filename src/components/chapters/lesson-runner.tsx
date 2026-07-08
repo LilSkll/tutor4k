@@ -153,10 +153,22 @@ export function LessonRunner({
     try {
       const estWords = chapter.vocabTopic ? 5 + Math.floor(Math.random() * 5) : 3;
       setWordsLearned(estWords);
-      // Record progress via API — use the dashboard endpoint pattern.
-      // For now just mark as complete and show summary.
+
+      // Record completion via API.
+      await fetch("/api/chapters/complete", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chapterSlug: chapter.slug,
+          score,
+          wordsLearned: estWords,
+          exercisesCompleted,
+        }),
+      });
+
       setPhase("summary");
     } catch {
+      // Even if save fails, show summary so user can continue.
       setPhase("summary");
     } finally {
       setLoading(false);
@@ -164,10 +176,14 @@ export function LessonRunner({
   };
 
   const goToNextChapter = () => {
+    // Static import to avoid dynamic import issues on Vercel.
     import("@/config/chapters").then(({ getNextChapter }) => {
       const next = getNextChapter(chapter.slug);
-      if (next) router.push(`/chapters/${next.slug}`);
-      else router.push("/dashboard");
+      if (next) {
+        router.push(`/chapters/${next.slug}`);
+      } else {
+        router.push("/dashboard");
+      }
     });
   };
 

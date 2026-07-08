@@ -3,7 +3,7 @@ import { ArrowRight, Flame, MapPin, Play } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { getCurrentProfile, getChapterProgress } from "@/server/actions/data";
-import { CHAPTERS, toRoman, getNextChapter } from "@/config/chapters";
+import { CHAPTERS, toRoman, getNextChapter, getFirstChapterForLevel } from "@/config/chapters";
 
 export default async function DashboardPage() {
   const [profile, progress] = await Promise.all([
@@ -11,15 +11,22 @@ export default async function DashboardPage() {
     getChapterProgress(),
   ]);
 
-  // Find current chapter (first not completed).
+  // Find current chapter: first not-completed, starting from user's level.
   const completedSlugs = new Set(
     progress.filter((p) => p.status === "completed").map((p) => p.chapter_slug),
   );
 
-  let currentChapter = CHAPTERS[0];
-  for (const ch of CHAPTERS) {
-    if (!completedSlugs.has(ch.slug)) {
-      currentChapter = ch;
+  // If user has a level, start searching from the first chapter of that level.
+  // If no progress at all, start them at their level's first chapter.
+  const userLevel = profile?.level;
+  let currentChapter = userLevel ? getFirstChapterForLevel(userLevel) : CHAPTERS[0];
+
+  // But if they have completed chapters, find the first incomplete one
+  // after their starting point.
+  const startIndex = CHAPTERS.findIndex((c) => c.slug === currentChapter.slug);
+  for (let i = startIndex; i < CHAPTERS.length; i++) {
+    if (!completedSlugs.has(CHAPTERS[i].slug)) {
+      currentChapter = CHAPTERS[i];
       break;
     }
   }

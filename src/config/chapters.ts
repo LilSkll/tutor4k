@@ -1,4 +1,4 @@
-import type { Chapter } from "@/types";
+import type { Chapter, Level } from "@/types";
 
 // =====================================================================
 // Curriculum — chapters as a learning journey
@@ -276,6 +276,24 @@ export function getChapter(slug: string): Chapter | undefined {
 /** Get the first chapter (entry point). */
 export function getFirstChapter(): Chapter {
   return CHAPTERS[0];
+}
+
+/**
+ * Get the first chapter for a given CEFR level.
+ * Used during onboarding — a B2 user starts at the B2 chapter, not A1.
+ */
+export function getFirstChapterForLevel(level: Level): Chapter {
+  const ch = CHAPTERS.find((c) => c.level === level);
+  return ch ?? CHAPTERS[0];
+}
+
+/**
+ * Get the slug of the first chapter for a level (for redirects).
+ */
+export function getFirstChapterSlugForLevel(level: Level | null): string {
+  if (!level) return CHAPTERS[0].slug;
+  const ch = CHAPTERS.find((c) => c.level === level);
+  return ch?.slug ?? CHAPTERS[0].slug;
 }
 
 /** Get the next chapter after a given slug. */

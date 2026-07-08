@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
+import { getFirstChapterSlugForLevel } from "@/config/chapters";
 import type { Goal, InterfaceLanguage, Level } from "@/types";
 
 // =====================================================================
@@ -122,9 +123,10 @@ export async function completeOnboarding(input: {
   }
 
   revalidatePath("/", "layout");
-  // Redirect to the FIRST chapter — not the dashboard.
-  // The user should start learning immediately.
-  redirect("/chapters/chapter-1-despertar");
+  // Redirect to the first chapter matching the user's level.
+  // A B2 user starts at the B2 chapter, not A1.
+  const chapterSlug = getFirstChapterSlugForLevel(level);
+  redirect(`/chapters/${chapterSlug}`);
 }
 
 // =====================================================================
