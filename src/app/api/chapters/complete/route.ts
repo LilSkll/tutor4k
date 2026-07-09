@@ -5,9 +5,7 @@ import type { Level } from "@/types";
 
 /**
  * POST /api/chapters/complete
- * Body: { chapterSlug, score, wordsLearned, exercisesCompleted }
- *
- * Marks a chapter as completed and records a study session.
+ * Body: { chapterSlug, score?, wordsLearned?, exercisesCompleted? }
  */
 export async function POST(req: NextRequest) {
   try {
@@ -31,23 +29,55 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    // Get the chapter to find its level.
     const chapter = getChapter(body.chapterSlug);
     const chapterLevel: Level = chapter?.level ?? "A1";
 
-    // Use service-role for writes.
+    // Resolve service-role client for writes.
     let client = supabase;
+    let usingAdmin = false;
     try {
       const { createSupabaseAdminClient } = await import("@/lib/supabase-admin");
       const admin = createSupabaseAdminClient();
-      if (admin) client = admin;
+      if (admin) {
+        client = admin;
+        usingAdmin = true;
+      }
     } catch {}
 
-    // Upsert chapter progress — MUST include level (NOT NULL constraint).
-    const { error: progressError } = await client
+    // Step 1: Check if a row already exists for this chapter.
+    const { data: existing } = await client
       .from("learning_progress")
-      .upsert(
-        {
+      .select("id")
+      .eq("user_id", user.id)
+      .eq("chapter_slug", body.chapterSlug)
+      .maybeSingle();
+
+    let progressOk = false;
+
+    if (existing) {
+      // Update existing row.
+      const { error: updateErr } = await client
+        .from("learning_progress")
+        .update({
+          status: "completed",
+          level: chapterLevel,
+          score: body.score ?? 0,
+          completed_at: new Date().toISOString(),
+          words_learned: body.wordsLearned ?? 0,
+          exercises_completed: body.exercisesCompleted ?? 0,
+        })
+        .eq("id", existing.id);
+
+      if (updateErr) {
+        console.error("[chapter/complete] UPDATE error:", updateErr.message);
+        return NextResponse.json({ error: updateErr.message, step: "update" }, { status: 500 });
+      }
+      progressOk = true;
+    } else {
+      // Insert new row.
+      const { error: insertErr } = await client
+        .from("learning_progress")
+        .insert({
           user_id: user.id,
           chapter_slug: body.chapterSlug,
           topic: body.chapterSlug,
@@ -58,35 +88,38 @@ export async function POST(req: NextRequest) {
           completed_at: new Date().toISOString(),
           words_learned: body.wordsLearned ?? 0,
           exercises_completed: body.exercisesCompleted ?? 0,
-        },
-        { onConflict: "user_id,chapter_slug" },
-      );
+        });
 
-    if (progressError) {
-      console.error("[/api/chapters/complete] progress error:", progressError.message);
-      return NextResponse.json({ error: progressError.message }, { status: 500 });
+      if (insertErr) {
+        console.error("[chapter/complete] INSERT error:", insertErr.message);
+        return NextResponse.json({ error: insertErr.message, step: "insert" }, { status: 500 });
+      }
+      progressOk = true;
     }
 
-    // Record study session.
+    // Step 2: Record study session (minutes + lessons).
     const today = new Date().toISOString().slice(0, 10);
-    const { data: existing } = await client
+    const { data: actExisting } = await client
       .from("daily_activity")
       .select("lessons_completed, minutes_studied")
       .eq("user_id", user.id)
       .eq("activity_date", today)
       .maybeSingle();
 
+    const prevLessons = (actExisting?.lessons_completed as number) ?? 0;
+    const prevMinutes = (actExisting?.minutes_studied as number) ?? 0;
+
     await client.from("daily_activity").upsert(
       {
         user_id: user.id,
         activity_date: today,
-        lessons_completed: ((existing?.lessons_completed as number) ?? 0) + 1,
-        minutes_studied: ((existing?.minutes_studied as number) ?? 0) + 8,
+        lessons_completed: prevLessons + 1,
+        minutes_studied: prevMinutes + 8,
       },
       { onConflict: "user_id,activity_date" },
     );
 
-    // Update streak.
+    // Step 3: Update streak.
     const { data: profile } = await client
       .from("profiles")
       .select("streak, last_active_date")
@@ -110,7 +143,11 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    return NextResponse.json({ ok: true });
+    return NextResponse.json({
+      ok: true,
+      progressSaved: progressOk,
+      usingAdmin,
+    });
   } catch (err) {
     console.error("[/api/chapters/complete]", err);
     return NextResponse.json(
