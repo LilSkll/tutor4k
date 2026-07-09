@@ -18,6 +18,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Markdown } from "@/components/shared/markdown";
+import { getChapterExercises, type StaticExercise } from "@/config/chapter-exercises";
 import { cn } from "@/lib/utils";
 import type { Chapter } from "@/types";
 import { toast } from "sonner";
@@ -28,16 +29,6 @@ import { toast } from "sonner";
 // =====================================================================
 
 type Phase = "intro" | "theory" | "practice" | "dialogue" | "summary";
-
-interface ExerciseData {
-  question: string;
-  instruction?: string;
-  options?: string[];
-  answer: string;
-  acceptableAnswers?: string[];
-  explanation: string;
-  topic: string;
-}
 
 interface LessonRunnerProps {
   chapter: Chapter;
@@ -55,7 +46,7 @@ export function LessonRunner({
   const router = useRouter();
   const [phase, setPhase] = React.useState<Phase>("intro");
   const [loading, setLoading] = React.useState(false);
-  const [exercises, setExercises] = React.useState<ExerciseData[]>([]);
+  const [exercises, setExercises] = React.useState<StaticExercise[]>([]);
   const [currentExerciseIdx, setCurrentExerciseIdx] = React.useState(0);
   const [userAnswer, setUserAnswer] = React.useState("");
   const [selectedOption, setSelectedOption] = React.useState<string | null>(null);
@@ -66,55 +57,40 @@ export function LessonRunner({
   const [dialogueInput, setDialogueInput] = React.useState("");
   const [wordsLearned, setWordsLearned] = React.useState(0);
 
-  // --- Exercise generation for the practice phase -------------------
+  // --- Load static exercises (zero API calls) -----------------------
   const generateExercises = async () => {
-    setLoading(true);
-    try {
-      const generated: ExerciseData[] = [];
-      const types = chapter.exerciseTypes;
-      for (let i = 0; i < 3; i++) {
-        const type = types[i % types.length];
-        const res = await fetch("/api/exercises/generate", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ type, level: chapter.level, topic: grammarTitle }),
-        });
-        if (!res.ok) throw new Error("Failed");
-        generated.push(await res.json());
-      }
-      setExercises(generated);
+    const staticExercises = getChapterExercises(chapter.slug);
+    if (staticExercises.length > 0) {
+      setExercises(staticExercises);
       setCurrentExerciseIdx(0);
       setPhase("practice");
-    } catch {
-      toast.error("Не удалось загрузить упражнения.");
-      setPhase("theory");
-    } finally {
-      setLoading(false);
+    } else {
+      // Fallback: skip to dialogue if no exercises configured.
+      setPhase("dialogue");
     }
   };
 
-  const checkAnswer = async () => {
+  // --- Check exercise locally (zero API calls) ---------------------
+  const checkAnswer = () => {
     const ex = exercises[currentExerciseIdx];
     if (!ex) return;
-    const answer = selectedOption ?? userAnswer;
-    if (!answer.trim()) return;
-    setLoading(true);
-    try {
-      const res = await fetch("/api/exercises/check", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ exercise: ex, userAnswer: answer, level: chapter.level }),
-      });
-      if (!res.ok) throw new Error("Failed");
-      const data = await res.json();
-      setResult(data);
-      setExercisesCompleted((n) => n + 1);
-      if (data.correct) setScore((s) => s + 1);
-    } catch {
-      toast.error("Не удалось проверить ответ.");
-    } finally {
-      setLoading(false);
-    }
+    const answer = (selectedOption ?? userAnswer).trim();
+    if (!answer) return;
+
+    // Normalize for comparison.
+    const norm = (s: string) =>
+      s.trim().toLowerCase().replace(/[¿?¡!.,]/g, "").replace(/\s+/g, " ");
+
+    const userNorm = norm(answer);
+    const acceptable = [ex.answer, ...(ex.acceptableAnswers ?? [])].map(norm);
+    const isCorrect = acceptable.includes(userNorm);
+
+    setResult({
+      correct: isCorrect,
+      feedback: ex.explanation,
+    });
+    setExercisesCompleted((n) => n + 1);
+    if (isCorrect) setScore((s) => s + 1);
   };
 
   const nextExercise = () => {
@@ -242,9 +218,9 @@ export function LessonRunner({
           </CardContent>
         </Card>
         <div className="flex justify-end">
-          <Button variant="gradient" onClick={generateExercises} disabled={loading}>
-            {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <ArrowRight className="h-4 w-4" />}
-            {loading ? "Готовлю упражнения..." : "Перейти к практике"}
+          <Button variant="gradient" onClick={generateExercises}>
+            <ArrowRight className="h-4 w-4" />
+            Перейти к практике
           </Button>
         </div>
       </div>
@@ -310,8 +286,8 @@ export function LessonRunner({
                 />
               )}
               <Button variant="gradient" className="w-full" onClick={checkAnswer}
-                disabled={loading || (hasOptions ? !selectedOption : !userAnswer.trim())}>
-                {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Check className="h-4 w-4" />}
+                disabled={hasOptions ? !selectedOption : !userAnswer.trim()}>
+                <Check className="h-4 w-4" />
                 Проверить
               </Button>
             </CardContent>
