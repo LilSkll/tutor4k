@@ -21,9 +21,12 @@ interface UIState {
   interfaceLanguage: InterfaceLanguage;
   /** Quick level filter used across grammar/exercises pages. */
   selectedLevel: Level | "ALL";
+  /** Active course ID — determines which language the user is learning. */
+  activeCourseId: string;
   toggleSidebar: () => void;
   setInterfaceLanguage: (lang: InterfaceLanguage) => void;
   setSelectedLevel: (level: Level | "ALL") => void;
+  setActiveCourseId: (courseId: string) => void;
 }
 
 export const useUIStore = create<UIState>()(
@@ -32,10 +35,12 @@ export const useUIStore = create<UIState>()(
       sidebarCollapsed: false,
       interfaceLanguage: "ru",
       selectedLevel: "ALL",
+      activeCourseId: "spanish",
       toggleSidebar: () =>
         set((s) => ({ sidebarCollapsed: !s.sidebarCollapsed })),
       setInterfaceLanguage: (lang) => set({ interfaceLanguage: lang }),
       setSelectedLevel: (level) => set({ selectedLevel: level }),
+      setActiveCourseId: (courseId) => set({ activeCourseId: courseId }),
     }),
     {
       name: "spanish-tutor-ui",

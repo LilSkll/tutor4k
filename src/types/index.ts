@@ -52,6 +52,7 @@ export interface Profile {
   onboarded: boolean;
   streak: number;
   last_active_date: string | null;
+  active_course_id: string | null;
   created_at: string;
 }
 

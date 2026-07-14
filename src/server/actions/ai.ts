@@ -42,11 +42,12 @@ export async function sendTutorMessage(input: {
   let level: Level | null = null;
   let userName: string | null = null;
   let language: InterfaceLanguage = "ru";
+  let courseId: string | null = null;
 
   if (user) {
     const { data: profile } = await supabase
       .from("profiles")
-      .select("level, name, interface_language")
+      .select("level, name, interface_language, active_course_id")
       .eq("id", user.id)
       .single();
 
@@ -54,6 +55,7 @@ export async function sendTutorMessage(input: {
       level = (profile.level as Level | null) ?? null;
       userName = (profile.name as string) ?? null;
       language = (profile.interface_language as InterfaceLanguage) ?? "ru";
+      courseId = (profile.active_course_id as string) ?? "spanish";
     }
   }
 
@@ -131,13 +133,14 @@ export async function sendTutorMessage(input: {
     }
   }
 
-  // --- Generate AI response -------------------------------------------
+  // --- Generate AI response (course-aware via prompt registry) --------
   const response = await generateAIResponse({
     messages: input.messages,
     level,
     language,
     userName,
     retrievedContext,
+    courseId: courseId ?? "spanish",
   });
 
   // --- Store the answer in the shared cache (best-effort) ------------

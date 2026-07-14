@@ -139,6 +139,7 @@ export async function updateProfile(input: {
   goal?: Goal;
   interfaceLanguage?: InterfaceLanguage;
   dailyGoalMinutes?: number;
+  activeCourseId?: string;
 }) {
   const supabase = await createSupabaseServerClient();
   const {
@@ -157,6 +158,8 @@ export async function updateProfile(input: {
     updates.interface_language = input.interfaceLanguage;
   if (input.dailyGoalMinutes !== undefined)
     updates.daily_goal_minutes = input.dailyGoalMinutes;
+  if (input.activeCourseId !== undefined)
+    updates.active_course_id = input.activeCourseId;
 
   const { error } = await supabase
     .from("profiles")
