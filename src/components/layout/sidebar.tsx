@@ -6,6 +6,7 @@ import {
   BookOpen,
   BookPlus,
   Dumbbell,
+  Globe,
   Languages,
   LayoutDashboard,
   LogOut,
@@ -27,6 +28,7 @@ const ICONS: Record<string, LucideIcon> = {
   Dumbbell,
   Languages,
   BookPlus,
+  Globe,
   TrendingUp,
 };
 
@@ -46,6 +48,7 @@ export function Sidebar({ userName, level, streak }: NavProps) {
   const primaryNav = [
     { href: "/dashboard", label: "Главная", icon: "LayoutDashboard" },
     { href: "/chapters", label: "Главы", icon: "BookOpen" },
+    { href: "/courses", label: "Языки", icon: "Globe" },
     { href: "/tutor", label: "Репетитор", icon: "MessageSquare" },
   ];
 

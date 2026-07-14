@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Flame, MapPin, Play } from "lucide-react";
+import { ArrowRight, Flame, Globe, MapPin, Play } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { getCurrentProfile, getChapterProgress } from "@/server/actions/data";
@@ -103,6 +103,21 @@ export default async function DashboardPage() {
           </CardContent>
         </Card>
       </div>
+
+      {/* Language selector link */}
+      <Card className="card-hover">
+        <CardContent className="p-4">
+          <Link href="/courses" className="flex items-center justify-between">
+            <div>
+              <h3 className="font-semibold text-sm">🌍 Языки</h3>
+              <p className="text-xs text-muted-foreground">
+                Текущий: {profile?.active_course_id === "spanish" ? "🇪🇸 Испанский" : profile?.active_course_id ?? "🇪🇸 Испанский"} · переключить курс
+              </p>
+            </div>
+            <Globe className="h-4 w-4 text-muted-foreground" />
+          </Link>
+        </CardContent>
+      </Card>
 
       {/* Journey map link */}
       <Card className="card-hover">
