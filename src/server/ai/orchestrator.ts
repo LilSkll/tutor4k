@@ -108,6 +108,7 @@ export async function generateAIResponse(
     language?: InterfaceLanguage;
     userName?: string | null;
     retrievedContext?: string | null;
+    courseId?: string | null;
   },
 ): Promise<AIResponse> {
   const {
@@ -119,6 +120,7 @@ export async function generateAIResponse(
     language = "ru",
     userName,
     retrievedContext,
+    courseId,
   } = options;
 
   // --- 1. Domain guard -------------------------------------------------
@@ -135,10 +137,12 @@ export async function generateAIResponse(
     };
   }
 
-  // --- 2. System prompt ------------------------------------------------
-  const systemPrompt = buildSystemPrompt({
+  // --- 2. System prompt (via prompt registry) ------------------------
+  const { getPromptBuilder } = await import("@/server/ai/prompts/registry");
+  const promptBuilder = await getPromptBuilder(courseId ?? "spanish");
+  const systemPrompt = promptBuilder({
     level,
-    language,
+    interfaceLanguage: language,
     userName,
     retrievedContext,
   });

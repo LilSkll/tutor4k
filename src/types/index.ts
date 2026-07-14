@@ -1,5 +1,5 @@
 // =====================================================================
-// Domain types for the AI Spanish Tutor application.
+// Domain types for the multi-language learning platform.
 // =====================================================================
 
 /** CEFR proficiency levels. */
@@ -207,4 +207,101 @@ export interface ChapterProgress {
   words_learned: number;
   exercises_completed: number;
   created_at: string;
+}
+
+// ----- Multi-Course Architecture -------------------------------------
+
+/** A language course (Spanish, English, Russian, etc.). */
+export interface Course {
+  id: string;                    // "spanish", "english", etc.
+  languageCode: string;          // "es", "en", "ru"
+  title: string;                 // "Испанский язык"
+  titleNative: string;           // "Español"
+  flag: string;                  // "🇪🇸"
+  description: string;
+  promptId: string;              // links to prompts/registry
+  isActive: boolean;
+  createdAt?: string;
+}
+
+/** Story world for a course — locations, narrative theme. */
+export interface StoryWorld {
+  theme: string;                 // "Путешествие по Испании"
+  locations: string[];           // ["Академия", "Толедо", "Мадрид", ...]
+}
+
+/** Keywords for domain guard (per-course). */
+export interface CourseKeywords {
+  /** Words that indicate the query is about this language. */
+  onTopic: string[];
+  /** Words that indicate the query is NOT about this language. */
+  offTopic: string[];
+  /** Greeting patterns to let through. */
+  greetings: string[];
+}
+
+/** Level guide text per CEFR level for a specific course. */
+export type LevelGuide = Record<Level, string>;
+
+/**
+ * Full course configuration — loaded by the course registry.
+ * Contains all content getters and metadata.
+ */
+export interface CourseConfig {
+  // Metadata
+  id: string;
+  languageCode: string;
+  title: string;
+  titleNative: string;
+  flag: string;
+  description: string;
+  promptId: string;
+  storyWorld: StoryWorld;
+  keywords: CourseKeywords;
+  levelGuide: LevelGuide;
+  textbookNames: string;
+  examName?: string;
+
+  // Content getters (lazy-loaded)
+  getChapters: () => Chapter[];
+  getChapter: (slug: string) => Chapter | undefined;
+  getNextChapter: (slug: string) => Chapter | undefined;
+  getGrammar: () => GrammarTopic[];
+  getGrammarTopic: (slug: string) => GrammarTopic | undefined;
+  getVocab: () => VocabTopic[];
+  getExercises: (chapterSlug: string) => StaticExercise[];
+
+  // Prompt builder
+  buildPrompt: (options: {
+    level?: Level | null;
+    interfaceLanguage?: InterfaceLanguage;
+    userName?: string | null;
+    retrievedContext?: string | null;
+  }) => string;
+}
+
+// Re-export types that were locally defined in config files
+export interface VocabTopic {
+  slug: string;
+  level: Level;
+  topic: string;
+  topicEs: string;
+  icon: string;
+  words: VocabWord[];
+}
+
+export interface VocabWord {
+  word: string;
+  translation: string;
+  example: string;
+}
+
+export interface StaticExercise {
+  type: "multiple_choice" | "fill_blank" | "translation";
+  question: string;
+  instruction: string;
+  options?: string[];
+  answer: string;
+  acceptableAnswers?: string[];
+  explanation: string;
 }
