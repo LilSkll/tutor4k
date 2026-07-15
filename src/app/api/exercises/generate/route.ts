@@ -4,13 +4,13 @@ import {
   type GeneratedExercise,
 } from "@/server/actions/ai";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
+import { pickStaticExercise } from "@/lib/exercise-pool";
 import type { ExerciseType, InterfaceLanguage, Level } from "@/types";
 
 /**
  * POST /api/exercises/generate
  * Body: { type, level, topic? }
- * Resolves the user's interface language from their profile so generated
- * exercises honour it (previously defaulted to English/Spanish).
+ * Serves pre-authored exercises when available; AI only as fallback.
  */
 export async function POST(req: NextRequest) {
   try {
@@ -27,7 +27,6 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Resolve interface language and active course from profile.
     let language: InterfaceLanguage = "ru";
     let courseId = "spanish";
     try {
@@ -50,6 +49,29 @@ export async function POST(req: NextRequest) {
       }
     } catch {
       // Non-fatal: fall back to defaults.
+    }
+
+    const staticEx = await pickStaticExercise({
+      courseId,
+      type: body.type,
+      level: body.level,
+      topic: body.topic,
+    });
+
+    if (staticEx) {
+      const exercise: GeneratedExercise = {
+        type: staticEx.type,
+        level: staticEx.level,
+        question: staticEx.question,
+        instruction: staticEx.instruction,
+        options: staticEx.options,
+        answer: staticEx.answer,
+        acceptableAnswers: staticEx.acceptableAnswers,
+        topic: staticEx.topic,
+        explanation: staticEx.explanation,
+        staticSource: true,
+      };
+      return NextResponse.json(exercise);
     }
 
     const exercise: GeneratedExercise = await generateExercise({

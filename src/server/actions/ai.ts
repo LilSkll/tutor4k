@@ -223,6 +223,8 @@ export interface GeneratedExercise {
   acceptableAnswers?: string[];
   topic: string;
   explanation: string;
+  /** Pre-authored exercise — skip AI generation and checking. */
+  staticSource?: boolean;
 }
 
 /**
@@ -415,6 +417,23 @@ export async function checkExerciseAnswer(input: {
 
     return {
       correct: true,
+      feedback: input.exercise.explanation,
+    };
+  }
+
+  // Static exercises: use stored explanation, never call AI.
+  if (input.exercise.staticSource) {
+    await saveExerciseHistory({
+      exercise: input.exercise.question,
+      type: input.exercise.type,
+      level: input.level,
+      userAnswer: input.userAnswer,
+      correct: false,
+      feedback: input.exercise.explanation,
+    });
+
+    return {
+      correct: false,
       feedback: input.exercise.explanation,
     };
   }

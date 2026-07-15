@@ -1,4 +1,6 @@
 import type { InterfaceLanguage } from "@/types";
+import { SPANISH_GRAMMAR_CONTENT } from "@/config/grammar-content-spanish";
+import { GERMAN_GRAMMAR_CONTENT } from "@/config/grammar-content-german";
 
 export const GRAMMAR_CONTENT: Partial<
   Record<string, Partial<Record<InterfaceLanguage, string>>>
@@ -699,12 +701,11 @@ export function getStaticGrammarContent(
   slug: string,
   interfaceLanguage: InterfaceLanguage,
 ): string | null {
-  const topic = GRAMMAR_CONTENT[slug];
+  const topic =
+    GRAMMAR_CONTENT[slug] ??
+    SPANISH_GRAMMAR_CONTENT[slug] ??
+    GERMAN_GRAMMAR_CONTENT[slug];
   if (!topic) return null;
 
-  const content =
-    topic[interfaceLanguage] ??
-    (interfaceLanguage === "de" ? topic.en : undefined);
-
-  return content ?? null;
+  return topic[interfaceLanguage] ?? null;
 }
