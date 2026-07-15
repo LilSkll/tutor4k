@@ -1,7 +1,6 @@
 import { notFound } from "next/navigation";
-import { getChapter } from "@/config/chapters";
-import { getTopicBySlug } from "@/config/grammar";
 import { getCurrentProfile } from "@/server/actions/data";
+import { getCourse } from "@/config/courses";
 import { LessonRunner } from "@/components/chapters/lesson-runner";
 
 export default async function ChapterPage({
@@ -10,12 +9,17 @@ export default async function ChapterPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const chapter = getChapter(slug);
+  const profile = await getCurrentProfile();
 
+  const courseId = profile?.active_course_id ?? "spanish";
+  const course = await getCourse(courseId);
+
+  const chapter = course.getChapter(slug);
   if (!chapter) notFound();
 
-  const profile = await getCurrentProfile();
-  const grammarTopic = getTopicBySlug(chapter.grammarTopic);
+  const grammarTopic = course.getGrammarTopic(chapter.grammarTopic);
+  const exercises = course.getExercises(slug);
+  const nextChapter = course.getNextChapter(slug);
 
   return (
     <LessonRunner
@@ -23,6 +27,8 @@ export default async function ChapterPage({
       userName={profile?.name ?? ""}
       grammarContent={grammarTopic?.content ?? "Материал готовится."}
       grammarTitle={grammarTopic?.titleEs ?? chapter.title}
+      exercises={exercises}
+      nextChapterSlug={nextChapter?.slug ?? null}
     />
   );
 }

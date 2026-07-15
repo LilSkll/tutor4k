@@ -3,7 +3,8 @@ import { ArrowRight, Flame, Globe, MapPin, Play } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { getCurrentProfile, getChapterProgress } from "@/server/actions/data";
-import { CHAPTERS, toRoman, getNextChapter, getFirstChapterForLevel } from "@/config/chapters";
+import { getCourse } from "@/config/courses";
+import { toRoman } from "@/config/chapters";
 
 export default async function DashboardPage() {
   const [profile, progress] = await Promise.all([
@@ -11,18 +12,25 @@ export default async function DashboardPage() {
     getChapterProgress(),
   ]);
 
+  // Load the active course from the registry (course-aware).
+  const courseId = profile?.active_course_id ?? "spanish";
+  const course = await getCourse(courseId);
+  const CHAPTERS = course.getChapters();
+
   // Find current chapter: first not-completed, starting from user's level.
   const completedSlugs = new Set(
     progress.filter((p) => p.status === "completed").map((p) => p.chapter_slug),
   );
 
-  // If user has a level, start searching from the first chapter of that level.
-  // If no progress at all, start them at their level's first chapter.
+  // If user has a level, find the first chapter of that level.
   const userLevel = profile?.level;
-  let currentChapter = userLevel ? getFirstChapterForLevel(userLevel) : CHAPTERS[0];
+  let currentChapter = CHAPTERS[0];
+  if (userLevel) {
+    const firstForLevel = CHAPTERS.find((c) => c.level === userLevel);
+    if (firstForLevel) currentChapter = firstForLevel;
+  }
 
-  // But if they have completed chapters, find the first incomplete one
-  // after their starting point.
+  // Find the first incomplete chapter from that point.
   const startIndex = CHAPTERS.findIndex((c) => c.slug === currentChapter.slug);
   for (let i = startIndex; i < CHAPTERS.length; i++) {
     if (!completedSlugs.has(CHAPTERS[i].slug)) {
@@ -126,7 +134,7 @@ export default async function DashboardPage() {
             <div>
               <h3 className="font-semibold text-sm">🗺️ Карта путешествия</h3>
               <p className="text-xs text-muted-foreground">
-                Пройдено {totalCompleted} из {totalChapters} глав · следующая: {getNextChapter(currentChapter.slug)?.title ?? "финал"}
+                Пройдено {totalCompleted} из {totalChapters} глав · следующая: {course.getNextChapter(currentChapter.slug)?.title ?? "финал"}
               </p>
             </div>
             <ArrowRight className="h-4 w-4 text-muted-foreground" />

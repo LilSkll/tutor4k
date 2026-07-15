@@ -3,12 +3,21 @@ import { Check, Lock, MapPin } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { CHAPTERS, toRoman } from "@/config/chapters";
-import { getChapterProgress } from "@/server/actions/data";
+import { getCurrentProfile, getChapterProgress } from "@/server/actions/data";
+import { getCourse } from "@/config/courses";
+import { toRoman } from "@/config/chapters";
 import { cn } from "@/lib/utils";
 
 export default async function ChaptersMapPage() {
-  const progress = await getChapterProgress();
+  const [profile, progress] = await Promise.all([
+    getCurrentProfile(),
+    getChapterProgress(),
+  ]);
+
+  // Load the active course.
+  const courseId = profile?.active_course_id ?? "spanish";
+  const course = await getCourse(courseId);
+  const CHAPTERS = course.getChapters();
 
   // Build a status map.
   const statusMap = new Map<string, "completed" | "in_progress" | "locked">();
@@ -21,13 +30,12 @@ export default async function ChaptersMapPage() {
     }
   }
 
-  // Determine lock state: a chapter is locked if its prereq isn't completed.
   for (const ch of CHAPTERS) {
     if (statusMap.get(ch.slug) === "completed") continue;
     if (ch.prereqChapter && !completedSlugs.has(ch.prereqChapter)) {
       statusMap.set(ch.slug, "locked");
     } else if (!statusMap.has(ch.slug)) {
-      statusMap.set(ch.slug, "in_progress"); // available but not started
+      statusMap.set(ch.slug, "in_progress");
     }
   }
 
@@ -38,7 +46,7 @@ export default async function ChaptersMapPage() {
       <div>
         <h1 className="text-2xl font-bold">Карта путешествия</h1>
         <p className="text-sm text-muted-foreground">
-          Пройдено {completedCount} из {CHAPTERS.length} глав
+          {course.flag} {course.titleNative} · Пройдено {completedCount} из {CHAPTERS.length} глав
         </p>
       </div>
 
@@ -51,7 +59,6 @@ export default async function ChaptersMapPage() {
 
           return (
             <div key={chapter.slug}>
-              {/* Connector line */}
               {idx > 0 && (
                 <div className="flex justify-center py-1">
                   <div className={cn(
@@ -68,7 +75,6 @@ export default async function ChaptersMapPage() {
               )}>
                 <CardContent className="p-4">
                   <div className="flex items-center gap-4">
-                    {/* Status icon / emoji */}
                     <div className={cn(
                       "flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-2xl",
                       isCompleted && "bg-success/15",
@@ -84,7 +90,6 @@ export default async function ChaptersMapPage() {
                       )}
                     </div>
 
-                    {/* Info */}
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-2">
                         <span className="text-xs font-bold text-muted-foreground">
@@ -107,7 +112,6 @@ export default async function ChaptersMapPage() {
                       </p>
                     </div>
 
-                    {/* Action */}
                     {!isLocked && (
                       <Button
                         size="sm"

@@ -18,7 +18,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Markdown } from "@/components/shared/markdown";
-import { getChapterExercises, type StaticExercise } from "@/config/chapter-exercises";
+import type { StaticExercise } from "@/types";
 import { cn } from "@/lib/utils";
 import type { Chapter } from "@/types";
 import { toast } from "sonner";
@@ -35,6 +35,8 @@ interface LessonRunnerProps {
   userName: string;
   grammarContent: string;
   grammarTitle: string;
+  exercises: StaticExercise[];
+  nextChapterSlug: string | null;
 }
 
 export function LessonRunner({
@@ -42,6 +44,8 @@ export function LessonRunner({
   userName,
   grammarContent,
   grammarTitle,
+  exercises: presetExercises,
+  nextChapterSlug,
 }: LessonRunnerProps) {
   const router = useRouter();
   const [phase, setPhase] = React.useState<Phase>("intro");
@@ -59,13 +63,11 @@ export function LessonRunner({
 
   // --- Load static exercises (zero API calls) -----------------------
   const generateExercises = async () => {
-    const staticExercises = getChapterExercises(chapter.slug);
-    if (staticExercises.length > 0) {
-      setExercises(staticExercises);
+    if (presetExercises.length > 0) {
+      setExercises(presetExercises);
       setCurrentExerciseIdx(0);
       setPhase("practice");
     } else {
-      // Fallback: skip to dialogue if no exercises configured.
       setPhase("dialogue");
     }
   };
@@ -152,15 +154,11 @@ export function LessonRunner({
   };
 
   const goToNextChapter = () => {
-    // Static import to avoid dynamic import issues on Vercel.
-    import("@/config/chapters").then(({ getNextChapter }) => {
-      const next = getNextChapter(chapter.slug);
-      if (next) {
-        router.push(`/chapters/${next.slug}`);
-      } else {
-        router.push("/dashboard");
-      }
-    });
+    if (nextChapterSlug) {
+      router.push(`/chapters/${nextChapterSlug}`);
+    } else {
+      router.push("/dashboard");
+    }
   };
 
   // =====================================================================
