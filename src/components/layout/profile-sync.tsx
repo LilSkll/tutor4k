@@ -9,7 +9,7 @@ export function ProfileSync({ profile }: { profile: Profile | null }) {
   const setInterfaceLanguage = useUIStore((s) => s.setInterfaceLanguage);
   const setActiveCourseId = useUIStore((s) => s.setActiveCourseId);
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     if (profile?.interface_language) {
       setInterfaceLanguage(profile.interface_language);
     }

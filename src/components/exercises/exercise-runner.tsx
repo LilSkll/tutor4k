@@ -15,10 +15,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { useExerciseSessionStore } from "@/stores";
-import { useUIStore } from "@/stores";
+import { EXERCISE_TYPES, LEVELS } from "@/config/app";
+import { useInterfaceLanguage, useActiveCourseId } from "@/hooks/use-interface-language";
 import { translate } from "@/lib/i18n";
 import { getCourseTitle } from "@/config/courses";
-import { EXERCISE_TYPES, LEVELS } from "@/config/app";
 import { cn } from "@/lib/utils";
 import type { ExerciseType, InterfaceLanguage, Level } from "@/types";
 import { toast } from "sonner";
@@ -39,8 +39,8 @@ type Phase = "config" | "loading" | "answering" | "result";
 
 export function ExerciseRunner({
   userLevel,
-  interfaceLanguage: interfaceLanguageFromProfile,
-  activeCourseId: activeCourseIdFromProfile,
+  interfaceLanguage: serverLanguage,
+  activeCourseId: serverCourseId,
 }: {
   userLevel: Level | null;
   interfaceLanguage?: InterfaceLanguage;
@@ -61,10 +61,8 @@ export function ExerciseRunner({
   const incrementAttempted = useExerciseSessionStore((s) => s.incrementAttempted);
   const score = useExerciseSessionStore((s) => s.currentScore);
   const attempted = useExerciseSessionStore((s) => s.totalAttempted);
-  const storeLanguage = useUIStore((s) => s.interfaceLanguage);
-  const storeCourseId = useUIStore((s) => s.activeCourseId);
-  const language = interfaceLanguageFromProfile ?? storeLanguage;
-  const activeCourseId = activeCourseIdFromProfile ?? storeCourseId;
+  const language = useInterfaceLanguage(serverLanguage);
+  const activeCourseId = useActiveCourseId(serverCourseId);
   const targetLanguage = getCourseTitle(activeCourseId);
   const t = (key: string, vars?: Record<string, string | number>) =>
     translate(key, language, vars);

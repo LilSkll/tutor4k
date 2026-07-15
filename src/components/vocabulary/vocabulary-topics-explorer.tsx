@@ -12,14 +12,14 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { useUIStore } from "@/stores";
+import { useInterfaceLanguage, useActiveCourseId } from "@/hooks/use-interface-language";
 import { translate } from "@/lib/i18n";
 import {
   getVocabTopicSubtitle,
   getVocabTopicTitle,
   getWordGloss,
 } from "@/lib/vocab-display";
-import type { InterfaceLanguage, VocabTopic, VocabWord } from "@/types";
+import type { VocabTopic, VocabWord } from "@/types";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 
@@ -41,17 +41,13 @@ function groupTopicsByLevel(topics: VocabTopic[]): Record<string, VocabTopic[]> 
 
 export function VocabularyTopicsExplorer({
   topics,
-  interfaceLanguage: interfaceLanguageFromProfile,
-  courseId: courseIdFromProfile,
+  courseId: courseIdProp,
 }: {
   topics: VocabTopic[];
-  interfaceLanguage?: InterfaceLanguage;
   courseId?: string;
 }) {
-  const storeLanguage = useUIStore((s) => s.interfaceLanguage);
-  const storeCourseId = useUIStore((s) => s.activeCourseId);
-  const language = interfaceLanguageFromProfile ?? storeLanguage;
-  const courseId = courseIdFromProfile ?? storeCourseId;
+  const language = useInterfaceLanguage();
+  const courseId = useActiveCourseId(courseIdProp);
   const t = (key: string, vars?: Record<string, string | number>) =>
     translate(key, language, vars);
 
@@ -185,7 +181,7 @@ export function VocabularyTopicsExplorer({
 
           <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
             {filtered.map((topic) => {
-              const title = getVocabTopicTitle(topic, language);
+              const title = getVocabTopicTitle(topic, language, courseId);
               const subtitle = getVocabTopicSubtitle(topic, language, courseId);
               return (
               <Card
@@ -225,7 +221,7 @@ export function VocabularyTopicsExplorer({
           {(() => {
             const topic = topics.find((item) => item.slug === openTopic);
             if (!topic) return null;
-            const title = getVocabTopicTitle(topic, language);
+            const title = getVocabTopicTitle(topic, language, courseId);
             const subtitle = getVocabTopicSubtitle(topic, language, courseId);
             return (
               <>

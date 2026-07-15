@@ -1,5 +1,6 @@
 import type { InterfaceLanguage, VocabTopic, VocabWord } from "@/types";
 import { ENGLISH_VOCAB_GLOSS } from "@/config/courses/english/vocabulary/glosses";
+import { SPANISH_TOPIC_TITLES_EN } from "@/config/courses/spanish/vocabulary/topic-titles";
 
 function hasCyrillic(text: string): boolean {
   return /[\u0400-\u04FF]/.test(text);
@@ -13,6 +14,7 @@ function isLatinScript(text: string): boolean {
 export function getVocabTopicTitle(
   topic: VocabTopic,
   interfaceLanguage: InterfaceLanguage,
+  courseId?: string,
 ): string {
   switch (interfaceLanguage) {
     case "ru":
@@ -21,6 +23,9 @@ export function getVocabTopicTitle(
       return topic.topicEs;
     case "en":
     case "de":
+      if (courseId === "spanish") {
+        return SPANISH_TOPIC_TITLES_EN[topic.slug] ?? topic.topicEs;
+      }
       return (
         topic.topicEn ??
         (isLatinScript(topic.topicEs) ? topic.topicEs : topic.topic)
@@ -36,7 +41,7 @@ export function getVocabTopicSubtitle(
   interfaceLanguage: InterfaceLanguage,
   courseId?: string,
 ): string | null {
-  const primary = getVocabTopicTitle(topic, interfaceLanguage);
+  const primary = getVocabTopicTitle(topic, interfaceLanguage, courseId);
 
   if (interfaceLanguage === "ru") {
     return topic.topicEs !== primary ? topic.topicEs : null;

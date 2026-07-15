@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import { useTransition } from "react";
+import { useRouter } from "next/navigation";
 import { Loader2, LogOut, Moon, Palette, Sun, User } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
@@ -36,6 +37,7 @@ import type { Goal, InterfaceLanguage, Level, Profile } from "@/types";
 import { cn } from "@/lib/utils";
 
 export function SettingsClient({ profile }: { profile: Profile }) {
+  const router = useRouter();
   const { theme, setTheme } = useTheme();
   const setLang = useUIStore((s) => s.setInterfaceLanguage);
   const interfaceLanguage = useUIStore((s) => s.interfaceLanguage);
@@ -66,6 +68,7 @@ export function SettingsClient({ profile }: { profile: Profile }) {
       } else {
         setLang(language);
         toast.success(t("settings.toastSaved"));
+        router.refresh();
       }
     });
   };
@@ -159,7 +162,10 @@ export function SettingsClient({ profile }: { profile: Profile }) {
                 <button
                   key={lang.value}
                   type="button"
-                  onClick={() => setLanguage(lang.value)}
+                  onClick={() => {
+                    setLanguage(lang.value);
+                    setLang(lang.value);
+                  }}
                   className={cn(
                     "flex flex-col items-center gap-1 rounded-xl border-2 p-3 transition-all",
                     language === lang.value
