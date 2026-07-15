@@ -4,6 +4,8 @@
 
 /** CEFR proficiency levels. */
 export type Level = "A1" | "A2" | "B1" | "B2" | "C1";
+/** Extended CEFR level including C2 for advanced vocabulary entries. */
+export type VocabLevel = Level | "C2";
 
 /** Onboarding "I don't know my level" placeholder. */
 export type LevelOrUnknown = Level | "UNKNOWN";
@@ -288,13 +290,39 @@ export interface VocabTopic {
   topic: string;
   topicEs: string;
   icon: string;
+  /** Linked course chapter slug (multi-course vocabulary). */
+  chapterSlug?: string;
   words: VocabWord[];
 }
+
+export type PartOfSpeech =
+  | "noun"
+  | "verb"
+  | "adjective"
+  | "adverb"
+  | "phrase"
+  | "preposition"
+  | "conjunction"
+  | "pronoun"
+  | "determiner"
+  | "modal";
+
+export type WordFrequency = "core" | "common" | "uncommon" | "advanced";
 
 export interface VocabWord {
   word: string;
   translation: string;
+  /** Primary example sentence (backward compatible). */
   example: string;
+  transcription?: string;
+  partOfSpeech?: PartOfSpeech;
+  examples?: string[];
+  commonMistakes?: string[];
+  synonyms?: string[];
+  frequency?: WordFrequency;
+  level?: VocabLevel;
+  tags?: string[];
+  chapterSlug?: string;
 }
 
 export interface StaticExercise {

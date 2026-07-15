@@ -9,6 +9,7 @@ import {
   defaultTopicForType,
 } from "@/server/ai/prompts/exercise";
 import { retrieveContext } from "@/server/rag/retrieve";
+import { retrieveVocabularyContext } from "@/server/rag/vocabulary-context";
 import {
   getCachedTutorResponse,
   setCachedTutorResponse,
@@ -136,18 +137,27 @@ export async function sendTutorMessage(input: {
     }
   }
 
-  // --- Retrieve relevant textbook context (RAG) -----------------------
+  // --- Retrieve relevant textbook + course vocabulary context -----------
   let retrievedContext: string | null = null;
   if (lastUser) {
     try {
-      retrievedContext = await retrieveContext(
+      const course = await getCourse(courseId ?? "spanish");
+      const textbookContext = await retrieveContext(
         lastUser.content,
         level,
         5,
         courseId ?? "spanish",
       );
+      const vocabContext = retrieveVocabularyContext(
+        lastUser.content,
+        course.getVocab(),
+        level,
+      );
+      retrievedContext = [textbookContext, vocabContext]
+        .filter(Boolean)
+        .join("\n\n");
+      if (!retrievedContext) retrievedContext = null;
     } catch (err) {
-      // Non-fatal: proceed without RAG context.
       console.warn("[tutor] retrieval failed:", (err as Error).message);
     }
   }
@@ -262,12 +272,18 @@ export async function generateExercise(input: {
 
   let exerciseContext: string | null = null;
   try {
-    exerciseContext = await retrieveContext(
+    const ragContext = await retrieveContext(
       input.topic ?? defaultTopicForType(input.type, courseId),
       input.level,
       3,
       courseId,
     );
+    const vocabContext = retrieveVocabularyContext(
+      input.topic ?? defaultTopicForType(input.type, courseId),
+      course.getVocab(),
+      input.level,
+    );
+    exerciseContext = [ragContext, vocabContext].filter(Boolean).join("\n\n") || null;
   } catch (err) {
     console.warn("[exercises] retrieval failed:", (err as Error).message);
   }

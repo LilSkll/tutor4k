@@ -231,13 +231,37 @@ export function VocabularyTopicsExplorer({ topics }: { topics: VocabTopic[] }) {
                           <span className="font-medium text-foreground">
                             {word.word}
                           </span>
-                          <span className="text-sm text-muted-foreground">
-                            — {word.translation}
-                          </span>
+                          {word.transcription && (
+                            <span className="text-xs text-muted-foreground">{word.transcription}</span>
+                          )}
+                          {word.partOfSpeech && (
+                            <Badge variant="outline" className="text-[10px]">{word.partOfSpeech}</Badge>
+                          )}
+                          {word.level && (
+                            <Badge variant="level" className="text-[10px]">{word.level}</Badge>
+                          )}
                         </div>
-                        <p className="text-xs italic text-muted-foreground mt-1 border-l-2 border-primary/20 pl-2">
-                          {word.example}
-                        </p>
+                        <p className="text-sm text-muted-foreground mt-0.5">{word.translation}</p>
+                        {(word.examples ?? [word.example]).map((ex, j) => (
+                          <p key={j} className="text-xs italic text-muted-foreground mt-1 border-l-2 border-primary/20 pl-2">
+                            {ex}
+                          </p>
+                        ))}
+                        {word.synonyms && word.synonyms.length > 0 && (
+                          <p className="text-[11px] text-muted-foreground mt-1">
+                            Synonyms: {word.synonyms.join(", ")}
+                          </p>
+                        )}
+                        {word.commonMistakes && word.commonMistakes.length > 0 && (
+                          <p className="text-[11px] text-destructive/80 mt-1">
+                            {word.commonMistakes[0]}
+                          </p>
+                        )}
+                        {word.tags && word.tags.length > 0 && (
+                          <p className="text-[10px] text-muted-foreground/70 mt-1">
+                            {word.tags.join(" · ")} · {word.frequency}
+                          </p>
+                        )}
                       </div>
                       <Button
                         size="sm"
