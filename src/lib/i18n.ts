@@ -309,6 +309,9 @@ const ru: Dictionary = {
   "grammar.aiPrompt": "Объясни грамматическую тему «{title}» на языке интерфейса пользователя, с практическими примерами и таблицей только на {targetLanguage}. Контекст: {summary}.",
   "grammar.askTutorPrefix": "Объясни: ",
   "grammar.referenceLocalizedHint": "Полный справочный текст доступен на русском. Нажми «Объяснить с ИИ» — получишь объяснение на выбранном языке интерфейса с примерами на изучаемом языке.",
+  "grammar.referenceSection": "Справочник: таблицы и примеры",
+  "grammar.regenerateAI": "Обновить объяснение ИИ",
+  "grammar.loadingArticle": "Загружаю статью…",
 
   // Navigation (extended)
   "nav.chapters": "Главы",
@@ -545,6 +548,9 @@ const en: Dictionary = {
   "grammar.aiPrompt": "Explain the grammar topic \"{title}\" clearly in the user's interface language. Use practical examples and tables only in {targetLanguage}. Context: {summary}.",
   "grammar.askTutorPrefix": "Explain: ",
   "grammar.referenceLocalizedHint": "The full reference article is available in Russian. Click \"Explain with AI\" for a detailed explanation in your interface language with examples in the target language.",
+  "grammar.referenceSection": "Reference: tables & examples",
+  "grammar.regenerateAI": "Regenerate AI explanation",
+  "grammar.loadingArticle": "Loading article…",
 
   "nav.chapters": "Chapters",
   "nav.courses": "Languages",
@@ -885,6 +891,9 @@ const es: Dictionary = {
   "grammar.aiPrompt": "Explica el tema gramatical \"{title}\" claramente en el idioma de interfaz del usuario. Usa ejemplos y tablas solo en {targetLanguage}. Contexto: {summary}.",
   "grammar.askTutorPrefix": "Explícame: ",
   "grammar.referenceLocalizedHint": "El artículo completo está disponible en ruso. Pulsa «Explicar con IA» para una explicación en tu idioma de interfaz con ejemplos en el idioma que estudias.",
+  "grammar.referenceSection": "Referencia: tablas y ejemplos",
+  "grammar.regenerateAI": "Regenerar explicación IA",
+  "grammar.loadingArticle": "Cargando artículo…",
 
   "nav.chapters": "Capítulos",
   "nav.courses": "Idiomas",

@@ -52,11 +52,16 @@ export function getGrammarSummary(
   return getGrammarTopicTitle(topic, interfaceLanguage);
 }
 
-/** Reference markdown — Russian source until localized content is added. */
+/** Reference markdown article for the topic (Russian source). */
 export function getGrammarContent(
   topic: GrammarTopic,
+  _interfaceLanguage: InterfaceLanguage,
+): string {
+  return topic.content;
+}
+
+export function usesNativeGrammarContent(
   interfaceLanguage: InterfaceLanguage,
-): string | null {
-  if (interfaceLanguage === "ru") return topic.content;
-  return null;
+): boolean {
+  return interfaceLanguage === "ru";
 }

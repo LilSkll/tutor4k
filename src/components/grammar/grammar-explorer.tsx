@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import { Sparkles, X } from "lucide-react";
+import { RefreshCw, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -12,13 +12,12 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Markdown } from "@/components/shared/markdown";
-import { useTransition } from "react";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import {
   getGrammarCategory,
-  getGrammarContent,
   getGrammarSummary,
   getGrammarTopicTitle,
+  usesNativeGrammarContent,
 } from "@/lib/grammar-display";
 import { translate } from "@/lib/i18n";
 import type { GrammarTopic, Level } from "@/types";
@@ -35,11 +34,11 @@ const LEVEL_COLORS: Record<Level, string> = {
 export function GrammarExplorer({
   initialLevel,
   topics,
-  targetLanguage,
+  courseId,
 }: {
   initialLevel?: Level;
   topics: GrammarTopic[];
-  targetLanguage: string;
+  courseId: string;
 }) {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -50,8 +49,11 @@ export function GrammarExplorer({
   const [activeLevel, setActiveLevel] = React.useState<Level | "ALL">(
     initialLevel ?? "ALL",
   );
-  const [aiExplanation, setAiExplanation] = React.useState<string | null>(null);
-  const [pending, startTransition] = useTransition();
+  const [articleContent, setArticleContent] = React.useState<string | null>(
+    null,
+  );
+  const [loading, setLoading] = React.useState(false);
+  const [loadError, setLoadError] = React.useState<string | null>(null);
 
   const topicSlug = searchParams.get("topic");
   const selectedTopic = topics.find((topic) => topic.slug === topicSlug);
@@ -61,32 +63,51 @@ export function GrammarExplorer({
       ? topics
       : topics.filter((topic) => topic.level === activeLevel);
 
-  const explainWithAI = (topicTitle: string, topicSummary: string) => {
-    startTransition(async () => {
-      try {
-        const res = await fetch("/api/tutor", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            messages: [
-              {
-                role: "user",
-                content: t("grammar.aiPrompt", {
-                  title: topicTitle,
-                  summary: topicSummary,
-                  targetLanguage,
-                }),
-              },
-            ],
-          }),
-        });
-        const data = await res.json();
-        setAiExplanation(data.content);
-      } catch {
-        setAiExplanation(t("grammar.toastExplainFail"));
+  const loadArticle = React.useCallback(
+    async (topic: GrammarTopic, refresh = false) => {
+      if (usesNativeGrammarContent(language)) {
+        setArticleContent(topic.content);
+        setLoadError(null);
+        setLoading(false);
+        return;
       }
-    });
-  };
+
+      setLoading(true);
+      setLoadError(null);
+      if (!refresh) setArticleContent(null);
+
+      try {
+        const params = new URLSearchParams({
+          slug: topic.slug,
+          courseId,
+          interfaceLanguage: language,
+          level: topic.level,
+        });
+        if (refresh) params.set("refresh", "1");
+
+        const res = await fetch(`/api/grammar/content?${params.toString()}`);
+        if (!res.ok) throw new Error("fetch failed");
+        const data = (await res.json()) as { content?: string };
+        setArticleContent(data.content ?? null);
+      } catch {
+        setLoadError(translate("grammar.toastExplainFail", language));
+        setArticleContent(null);
+      } finally {
+        setLoading(false);
+      }
+    },
+    [language, courseId],
+  );
+
+  React.useEffect(() => {
+    if (!selectedTopic) {
+      setArticleContent(null);
+      setLoadError(null);
+      setLoading(false);
+      return;
+    }
+    void loadArticle(selectedTopic);
+  }, [selectedTopic, loadArticle]);
 
   if (topics.length === 0) {
     return (
@@ -119,26 +140,27 @@ export function GrammarExplorer({
           const title = getGrammarTopicTitle(topic, language);
           const summary = getGrammarSummary(topic, language);
           return (
-          <button
-            key={topic.slug}
-            onClick={() =>
-              router.push(`/grammar?topic=${topic.slug}&level=${activeLevel}`)
-            }
-            className={cn(
-              "text-left rounded-xl border p-4 transition-all hover:shadow-md hover:-translate-y-0.5 bg-gradient-to-br",
-              LEVEL_COLORS[topic.level],
-            )}
-          >
-            <div className="flex items-center justify-between mb-1">
-              <Badge variant="level">{topic.level}</Badge>
-              <span className="text-[10px] opacity-70">
-                {getGrammarCategory(topic, language)}
-              </span>
-            </div>
-            <h3 className="font-semibold text-foreground">{title}</h3>
-            <p className="text-xs text-muted-foreground mt-1">{summary}</p>
-          </button>
-        );})}
+            <button
+              key={topic.slug}
+              onClick={() =>
+                router.push(`/grammar?topic=${topic.slug}&level=${activeLevel}`)
+              }
+              className={cn(
+                "text-left rounded-xl border p-4 transition-all hover:shadow-md hover:-translate-y-0.5 bg-gradient-to-br",
+                LEVEL_COLORS[topic.level],
+              )}
+            >
+              <div className="flex items-center justify-between mb-1">
+                <Badge variant="level">{topic.level}</Badge>
+                <span className="text-[10px] opacity-70">
+                  {getGrammarCategory(topic, language)}
+                </span>
+              </div>
+              <h3 className="font-semibold text-foreground">{title}</h3>
+              <p className="text-xs text-muted-foreground mt-1">{summary}</p>
+            </button>
+          );
+        })}
       </div>
 
       <Dialog
@@ -152,76 +174,64 @@ export function GrammarExplorer({
         }}
       >
         <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto">
-          {selectedTopic && (() => {
-            const title = getGrammarTopicTitle(selectedTopic, language);
-            const content = getGrammarContent(selectedTopic, language);
-            return (
-            <>
-              <DialogHeader>
-                <div className="flex items-center gap-2">
-                  <Badge variant="level">{selectedTopic.level}</Badge>
-                  <span className="text-xs text-muted-foreground">
-                    {getGrammarCategory(selectedTopic, language)}
-                  </span>
-                </div>
-                <DialogTitle className="text-xl">{title}</DialogTitle>
-                <p className="text-sm text-muted-foreground">
-                  {getGrammarSummary(selectedTopic, language)}
-                </p>
-              </DialogHeader>
+          {selectedTopic &&
+            (() => {
+              const title = getGrammarTopicTitle(selectedTopic, language);
+              return (
+                <>
+                  <DialogHeader>
+                    <div className="flex items-center gap-2">
+                      <Badge variant="level">{selectedTopic.level}</Badge>
+                      <span className="text-xs text-muted-foreground">
+                        {getGrammarCategory(selectedTopic, language)}
+                      </span>
+                    </div>
+                    <DialogTitle className="text-xl">{title}</DialogTitle>
+                    <p className="text-sm text-muted-foreground">
+                      {getGrammarSummary(selectedTopic, language)}
+                    </p>
+                  </DialogHeader>
 
-              {content ? (
-                <Markdown content={content} />
-              ) : (
-                <div className="rounded-lg border border-dashed bg-muted/40 p-4 text-sm text-muted-foreground">
-                  {t("grammar.referenceLocalizedHint")}
-                </div>
-              )}
+                  <div className="min-h-[120px]">
+                    {loading ? (
+                      <p className="text-sm text-muted-foreground flex items-center gap-2">
+                        <Sparkles className="h-4 w-4 animate-pulse text-primary" />
+                        {t("grammar.loadingArticle")}
+                      </p>
+                    ) : loadError ? (
+                      <p className="text-sm text-destructive">{loadError}</p>
+                    ) : articleContent ? (
+                      <Markdown content={articleContent} />
+                    ) : null}
+                  </div>
 
-              <div className="flex gap-2 pt-2">
-                <Button
-                  variant="gradient"
-                  size="sm"
-                  disabled={pending}
-                  onClick={() =>
-                    explainWithAI(title, getGrammarSummary(selectedTopic, language))
-                  }
-                >
-                  <Sparkles className="h-4 w-4" />
-                  {pending ? t("grammar.aiGenerating") : t("grammar.explainWithAI")}
-                </Button>
-                <Button variant="outline" size="sm" asChild>
-                  <a
-                    href={`/tutor?q=${encodeURIComponent(
-                      t("grammar.askTutorPrefix") + title,
-                    )}`}
-                  >
-                    {t("grammar.askTutor")}
-                  </a>
-                </Button>
-              </div>
-
-              {aiExplanation && (
-                <div className="mt-4 rounded-lg border border-primary/20 bg-primary/5 p-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-semibold flex items-center gap-1">
-                      <Sparkles className="h-4 w-4 text-primary" />
-                      {t("grammar.aiExplanation")}
-                    </span>
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      className="h-6 w-6"
-                      onClick={() => setAiExplanation(null)}
-                    >
-                      <X className="h-3 w-3" />
+                  <div className="flex gap-2 pt-2">
+                    {!usesNativeGrammarContent(language) && (
+                      <Button
+                        variant="outline"
+                        size="sm"
+                        disabled={loading}
+                        onClick={() => loadArticle(selectedTopic, true)}
+                      >
+                        <RefreshCw
+                          className={cn("h-4 w-4", loading && "animate-spin")}
+                        />
+                        {t("grammar.regenerateAI")}
+                      </Button>
+                    )}
+                    <Button variant="outline" size="sm" asChild>
+                      <a
+                        href={`/tutor?q=${encodeURIComponent(
+                          t("grammar.askTutorPrefix") + title,
+                        )}`}
+                      >
+                        {t("grammar.askTutor")}
+                      </a>
                     </Button>
                   </div>
-                  <Markdown content={aiExplanation} />
-                </div>
-              )}
-            </>
-          );})()}
+                </>
+              );
+            })()}
         </DialogContent>
       </Dialog>
     </>

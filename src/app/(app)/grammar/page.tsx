@@ -19,7 +19,7 @@ export default async function GrammarPage({
   return (
     <GrammarPageClient
       topics={grammarTopics}
-      targetLanguage={course.titleNative}
+      courseId={courseId}
       serverLanguage={profile?.interface_language ?? "ru"}
       initialLevel={params.level as Level | undefined}
     />

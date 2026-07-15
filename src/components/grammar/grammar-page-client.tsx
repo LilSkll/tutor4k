@@ -23,12 +23,12 @@ import type { GrammarTopic, InterfaceLanguage, Level } from "@/types";
 
 export function GrammarPageClient({
   topics,
-  targetLanguage,
+  courseId,
   serverLanguage,
   initialLevel,
 }: {
   topics: GrammarTopic[];
-  targetLanguage: string;
+  courseId: string;
   serverLanguage?: InterfaceLanguage;
   initialLevel?: Level;
 }) {
@@ -49,7 +49,7 @@ export function GrammarPageClient({
       <GrammarExplorer
         initialLevel={initialLevel}
         topics={topics}
-        targetLanguage={targetLanguage}
+        courseId={courseId}
       />
 
       {topics.length > 0 ? (
