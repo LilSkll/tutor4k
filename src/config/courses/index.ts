@@ -62,3 +62,15 @@ export async function getCourse(
 export function getAvailableCourseIds(): string[] {
   return Object.keys(LOADERS);
 }
+
+/** Native language names for client-side UI (matches CourseConfig.titleNative). */
+export const COURSE_TITLES: Record<string, string> = {
+  spanish: "Español",
+  english: "English",
+  russian: "Русский",
+};
+
+export function getCourseTitle(courseId: string | null | undefined): string {
+  const id = courseId || DEFAULT_COURSE_ID;
+  return COURSE_TITLES[id] ?? COURSE_TITLES[DEFAULT_COURSE_ID];
+}

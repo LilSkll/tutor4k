@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { getCurrentProfile, getChapterProgress } from "@/server/actions/data";
 import { getCourse } from "@/config/courses";
 import { toRoman } from "@/config/chapters";
+import { translate } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 
 export default async function ChaptersMapPage() {
@@ -14,12 +15,14 @@ export default async function ChaptersMapPage() {
     getChapterProgress(),
   ]);
 
-  // Load the active course.
+  const lang = profile?.interface_language ?? "ru";
+  const t = (key: string, vars?: Record<string, string | number>) =>
+    translate(key, lang, vars);
+
   const courseId = profile?.active_course_id ?? "spanish";
   const course = await getCourse(courseId);
   const CHAPTERS = course.getChapters();
 
-  // Build a status map.
   const statusMap = new Map<string, "completed" | "in_progress" | "locked">();
   const completedSlugs = new Set<string>();
 
@@ -44,9 +47,14 @@ export default async function ChaptersMapPage() {
   return (
     <div className="container max-w-2xl py-6 md:py-8 space-y-6">
       <div>
-        <h1 className="text-2xl font-bold">Карта путешествия</h1>
+        <h1 className="text-2xl font-bold">{t("chapters.title")}</h1>
         <p className="text-sm text-muted-foreground">
-          {course.flag} {course.titleNative} · Пройдено {completedCount} из {CHAPTERS.length} глав
+          {t("chapters.subtitle", {
+            flag: course.flag,
+            course: course.titleNative,
+            completed: completedCount,
+            total: CHAPTERS.length,
+          })}
         </p>
       </div>
 
@@ -98,7 +106,7 @@ export default async function ChaptersMapPage() {
                         <Badge variant="level" className="shrink-0">{chapter.level}</Badge>
                         {isCurrent && (
                           <span className="text-[10px] font-semibold text-primary uppercase tracking-wide">
-                            Текущая
+                            {t("chapters.current")}
                           </span>
                         )}
                       </div>
@@ -108,7 +116,7 @@ export default async function ChaptersMapPage() {
                       <p className="text-xs text-muted-foreground italic mb-1">{chapter.titleEs}</p>
                       <p className="text-xs text-muted-foreground flex items-center gap-1">
                         <MapPin className="h-3 w-3" />
-                        {chapter.location} · ~{chapter.estimatedMinutes} мин
+                        {chapter.location} · {t("lesson.minutes", { minutes: chapter.estimatedMinutes })}
                       </p>
                     </div>
 
@@ -119,7 +127,7 @@ export default async function ChaptersMapPage() {
                         asChild
                       >
                         <Link href={`/chapters/${chapter.slug}`}>
-                          {isCompleted ? "Повторить" : "Открыть"}
+                          {isCompleted ? t("chapters.retry") : t("chapters.open")}
                         </Link>
                       </Button>
                     )}

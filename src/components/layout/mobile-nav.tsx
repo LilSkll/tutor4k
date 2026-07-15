@@ -39,20 +39,21 @@ export function MobileNav() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const language = useUIStore((s) => s.interfaceLanguage);
-  const t = (key: string) => translate(key, language);
+  const t = (key: string, vars?: Record<string, string | number>) =>
+    translate(key, language, vars);
 
   const primaryNav = [
-    { href: "/dashboard", label: "Главная", icon: "LayoutDashboard" },
-    { href: "/chapters", label: "Главы", icon: "BookOpen" },
-    { href: "/courses", label: "Языки", icon: "Globe" },
-    { href: "/tutor", label: "Репетитор", icon: "MessageSquare" },
+    { href: "/dashboard", label: t("nav.home"), icon: "LayoutDashboard" },
+    { href: "/chapters", label: t("nav.chapters"), icon: "BookOpen" },
+    { href: "/courses", label: t("nav.courses"), icon: "Globe" },
+    { href: "/tutor", label: t("nav.tutorShort"), icon: "MessageSquare" },
   ];
 
   const secondaryNav = [
     { href: "/grammar", label: t("nav.grammar"), icon: "BookOpen" },
     { href: "/exercises", label: t("nav.exercises"), icon: "Dumbbell" },
     { href: "/vocabulary", label: t("nav.vocabulary"), icon: "Languages" },
-    { href: "/vocabulary-topics", label: "Лексика", icon: "BookPlus" },
+    { href: "/vocabulary-topics", label: t("nav.lexicon"), icon: "BookPlus" },
     { href: "/progress", label: t("nav.progress"), icon: "TrendingUp" },
   ];
 
@@ -126,7 +127,7 @@ export function MobileNav() {
               })}
               <div className="pt-2 mt-2 border-t">
                 <p className="text-[10px] font-semibold text-muted-foreground/60 uppercase tracking-wider px-3 pb-1">
-                  Инструменты
+                  {t("nav.tools")}
                 </p>
                 {secondaryNav.map((item) => {
                   const Icon = ICONS[item.icon];
@@ -160,7 +161,7 @@ export function MobileNav() {
                   </button>
                 </form>
                 <p className="px-3 pt-2 text-[10px] text-muted-foreground/70">
-                  Разработчик — Драгунов Павел
+                  {t("dashboard.developer")}
                 </p>
               </div>
             </nav>

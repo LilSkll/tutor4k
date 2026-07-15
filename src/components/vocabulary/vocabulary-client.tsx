@@ -30,6 +30,7 @@ import { toast } from "sonner";
 import { LEVELS } from "@/config/app";
 import { useUIStore } from "@/stores";
 import { translate } from "@/lib/i18n";
+import { getCourseTitle } from "@/config/courses";
 import { formatDate } from "@/lib/utils";
 import type { Level, VocabularyWord } from "@/types";
 
@@ -56,7 +57,10 @@ export function VocabularyClient({
   const [search, setSearch] = React.useState("");
   const [dialogOpen, setDialogOpen] = React.useState(false);
   const language = useUIStore((s) => s.interfaceLanguage);
-  const t = (key: string) => translate(key, language);
+  const activeCourseId = useUIStore((s) => s.activeCourseId);
+  const targetLanguage = getCourseTitle(activeCourseId);
+  const t = (key: string, vars?: Record<string, string | number>) =>
+    translate(key, language, { targetLanguage, ...vars });
 
   const addMutation = useMutation({
     mutationFn: async (input: {
@@ -224,7 +228,10 @@ function AddWordDialog({
   const [example, setExample] = React.useState("");
   const [level, setLevel] = React.useState<Level>(defaultLevel);
   const language = useUIStore((s) => s.interfaceLanguage);
-  const t = (key: string) => translate(key, language);
+  const activeCourseId = useUIStore((s) => s.activeCourseId);
+  const targetLanguage = getCourseTitle(activeCourseId);
+  const t = (key: string, vars?: Record<string, string | number>) =>
+    translate(key, language, { targetLanguage, ...vars });
 
   const submit = () => {
     if (!word.trim() || !translation.trim()) return;
@@ -246,7 +253,7 @@ function AddWordDialog({
             id="word"
             value={word}
             onChange={(e) => setWord(e.target.value)}
-            placeholder="напр. maravilloso"
+            placeholder={t("vocabulary.wordPlaceholder")}
             autoFocus
           />
         </div>
@@ -256,7 +263,7 @@ function AddWordDialog({
             id="trans"
             value={translation}
             onChange={(e) => setTranslation(e.target.value)}
-            placeholder="напр. чудесный"
+            placeholder={t("vocabulary.translationPlaceholder")}
           />
         </div>
         <div className="space-y-2">

@@ -9,17 +9,18 @@ import { Markdown } from "@/components/shared/markdown";
 import { useChatStore } from "@/stores";
 import { useUIStore } from "@/stores";
 import { translate } from "@/lib/i18n";
+import { getCourseTitle } from "@/config/courses";
 import { cn } from "@/lib/utils";
 import type { AIMessage, ChatMessage } from "@/types";
 
-const SUGGESTIONS = [
-  "В чём разница между ser и estar?",
-  "Объясни сослагательное наклонение (subjuntivo)",
-  "Когда использовать por, а когда para?",
-  "Как спрягается глагол tener в настоящем времени?",
-  "Расскажи про артикли в испанском",
-  "Pretérito indefinido vs pretérito perfecto — в чём разница?",
-];
+const SUGGESTION_KEYS = [
+  "tutor.suggestion1",
+  "tutor.suggestion2",
+  "tutor.suggestion3",
+  "tutor.suggestion4",
+  "tutor.suggestion5",
+  "tutor.suggestion6",
+] as const;
 
 function makeId() {
   return Math.random().toString(36).slice(2) + Date.now().toString(36);
@@ -33,7 +34,10 @@ export function TutorChat() {
   const setStreaming = useChatStore((s) => s.setStreaming);
   const clear = useChatStore((s) => s.clear);
   const language = useUIStore((s) => s.interfaceLanguage);
-  const t = (key: string) => translate(key, language);
+  const activeCourseId = useUIStore((s) => s.activeCourseId);
+  const targetLanguage = getCourseTitle(activeCourseId);
+  const t = (key: string, vars?: Record<string, string | number>) =>
+    translate(key, language, { targetLanguage, ...vars });
 
   const [input, setInput] = React.useState("");
   const [pending, setPending] = React.useState(false);
@@ -139,7 +143,9 @@ export function TutorChat() {
           <div>
             <h1 className="font-semibold leading-tight">{t("tutor.title")}</h1>
             <p className="text-[11px] text-muted-foreground">
-              {pending ? t("tutor.thinkingStatus") : t("tutor.online")}
+              {pending
+                ? t("tutor.thinkingStatus")
+                : t("tutor.onlineDynamic", { targetLanguage })}
             </p>
           </div>
         </div>
@@ -159,7 +165,7 @@ export function TutorChat() {
       {/* Messages */}
       <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 md:px-6 py-4">
         {messages.length === 0 ? (
-          <EmptyState onPick={send} t={t} />
+          <EmptyState onPick={send} t={t} targetLanguage={targetLanguage} />
         ) : (
           <div className="mx-auto max-w-3xl space-y-4">
             {messages.map((msg) => (
@@ -178,7 +184,7 @@ export function TutorChat() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={onKeyDown}
-              placeholder={t("tutor.placeholder")}
+              placeholder={t("tutor.placeholderDynamic")}
               className="min-h-[44px] max-h-40 resize-none border-0 bg-transparent focus-visible:ring-0 px-2 py-2"
               rows={1}
               disabled={pending}
@@ -264,18 +270,32 @@ function TypingDots() {
   );
 }
 
-function EmptyState({ onPick, t }: { onPick: (q: string) => void; t: (k: string) => string }) {
+function EmptyState({
+  onPick,
+  t,
+  targetLanguage,
+}: {
+  onPick: (q: string) => void;
+  t: (k: string, vars?: Record<string, string | number>) => string;
+  targetLanguage: string;
+}) {
+  const suggestions = SUGGESTION_KEYS.map((key) =>
+    t(key, { targetLanguage }),
+  );
+
   return (
     <div className="h-full flex flex-col items-center justify-center text-center py-12">
       <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary via-orange-500 to-rose-500 text-white">
         <Sparkles className="h-7 w-7" />
       </div>
-      <h2 className="text-xl font-semibold mb-1">{t("tutor.emptyTitle")}</h2>
+      <h2 className="text-xl font-semibold mb-1">
+        {t("tutor.emptyTitleDynamic", { targetLanguage })}
+      </h2>
       <p className="text-sm text-muted-foreground max-w-md mb-6">
-        {t("tutor.emptySubtitle")}
+        {t("tutor.emptySubtitleDynamic")}
       </p>
       <div className="grid gap-2 w-full max-w-md">
-        {SUGGESTIONS.map((s) => (
+        {suggestions.map((s) => (
           <button
             key={s}
             onClick={() => onPick(s)}

@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { BookPlus, ChevronDown, Plus, Check, Search } from "lucide-react";
+import { Plus, Check, Search } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -13,13 +13,8 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { useUIStore } from "@/stores";
-import { LEVELS } from "@/config/app";
-import {
-  VOCAB_TOPICS,
-  groupVocabByLevel,
-  type VocabTopic,
-  type VocabWord,
-} from "@/config/vocabulary-topics";
+import { translate } from "@/lib/i18n";
+import type { VocabTopic, VocabWord } from "@/types";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 
@@ -31,25 +26,37 @@ const LEVEL_COLORS: Record<string, string> = {
   C1: "from-rose-500/15 to-orange-500/15 text-rose-600 dark:text-rose-400",
 };
 
-export function VocabularyTopicsExplorer() {
+function groupTopicsByLevel(topics: VocabTopic[]): Record<string, VocabTopic[]> {
+  const grouped: Record<string, VocabTopic[]> = {};
+  for (const topic of topics) {
+    (grouped[topic.level] ||= []).push(topic);
+  }
+  return grouped;
+}
+
+export function VocabularyTopicsExplorer({ topics }: { topics: VocabTopic[] }) {
+  const language = useUIStore((s) => s.interfaceLanguage);
+  const t = (key: string, vars?: Record<string, string | number>) =>
+    translate(key, language, vars);
+
   const [activeLevel, setActiveLevel] = React.useState<string>("ALL");
   const [openTopic, setOpenTopic] = React.useState<string | null>(null);
   const [search, setSearch] = React.useState("");
   const addedWords = React.useRef<Set<string>>(new Set());
 
-  const grouped = groupVocabByLevel();
+  const grouped = groupTopicsByLevel(topics);
   const levels = ["ALL", ...Object.keys(grouped)];
 
   const filtered =
     activeLevel === "ALL"
-      ? VOCAB_TOPICS
-      : VOCAB_TOPICS.filter((t) => t.level === activeLevel);
+      ? topics
+      : topics.filter((topic) => topic.level === activeLevel);
 
   const searchResults = React.useMemo(() => {
     if (!search.trim()) return null;
     const q = search.toLowerCase();
     const results: { topic: VocabTopic; word: VocabWord }[] = [];
-    for (const topic of VOCAB_TOPICS) {
+    for (const topic of topics) {
       for (const word of topic.words) {
         if (
           word.word.toLowerCase().includes(q) ||
@@ -60,7 +67,7 @@ export function VocabularyTopicsExplorer() {
       }
     }
     return results.slice(0, 30);
-  }, [search]);
+  }, [search, topics]);
 
   const handleAddWord = async (word: VocabWord, level: string) => {
     const key = `${word.word}-${level}`;
@@ -78,10 +85,10 @@ export function VocabularyTopicsExplorer() {
         }),
       });
       if (res.ok) {
-        toast.success(`«${word.word}» добавлено в словарь 📚`);
+        toast.success(t("vocabTopics.toastAdded", { word: word.word }));
       }
     } catch {
-      toast.error("Не удалось добавить слово");
+      toast.error(t("vocabTopics.toastAddFail"));
       addedWords.current.delete(key);
     }
   };
@@ -89,24 +96,28 @@ export function VocabularyTopicsExplorer() {
   const isAdded = (word: VocabWord, level: string) =>
     addedWords.current.has(`${word.word}-${level}`);
 
+  if (topics.length === 0) {
+    return (
+      <p className="text-sm text-muted-foreground">{t("vocabTopics.empty")}</p>
+    );
+  }
+
   return (
     <div className="space-y-6">
-      {/* Search */}
       <div className="relative">
         <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
         <Input
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          placeholder="Поиск слов на всех уровнях…"
+          placeholder={t("vocabTopics.searchPlaceholder")}
           className="pl-9"
         />
       </div>
 
-      {/* Search results */}
       {searchResults ? (
         <div className="space-y-2">
           <p className="text-sm text-muted-foreground">
-            Найдено: {searchResults.length}
+            {t("vocabTopics.found", { count: searchResults.length })}
           </p>
           {searchResults.map(({ topic, word }, i) => (
             <div
@@ -138,7 +149,6 @@ export function VocabularyTopicsExplorer() {
         </div>
       ) : (
         <>
-          {/* Level filter */}
           <div className="flex flex-wrap gap-2">
             {levels.map((lvl) => (
               <button
@@ -151,12 +161,11 @@ export function VocabularyTopicsExplorer() {
                     : "border-border hover:border-primary/50 text-muted-foreground",
                 )}
               >
-                {lvl === "ALL" ? "Все уровни" : lvl}
+                {lvl === "ALL" ? t("vocabTopics.allLevels") : lvl}
               </button>
             ))}
           </div>
 
-          {/* Topics grid */}
           <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
             {filtered.map((topic) => (
               <Card
@@ -177,7 +186,7 @@ export function VocabularyTopicsExplorer() {
                     {topic.topicEs}
                   </p>
                   <p className="text-xs text-muted-foreground">
-                    {topic.words.length} слов
+                    {t("vocabTopics.wordCount", { count: topic.words.length })}
                   </p>
                 </CardContent>
               </Card>
@@ -186,14 +195,13 @@ export function VocabularyTopicsExplorer() {
         </>
       )}
 
-      {/* Topic detail dialog */}
       <Dialog
         open={!!openTopic}
         onOpenChange={(open) => { if (!open) setOpenTopic(null); }}
       >
         <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto">
           {(() => {
-            const topic = VOCAB_TOPICS.find((t) => t.slug === openTopic);
+            const topic = topics.find((item) => item.slug === openTopic);
             if (!topic) return null;
             return (
               <>
@@ -241,12 +249,12 @@ export function VocabularyTopicsExplorer() {
                         {isAdded(word, topic.level) ? (
                           <>
                             <Check className="h-3.5 w-3.5" />
-                            <span className="hidden sm:inline">Добавлено</span>
+                            <span className="hidden sm:inline">{t("vocabTopics.added")}</span>
                           </>
                         ) : (
                           <>
                             <Plus className="h-3.5 w-3.5" />
-                            <span className="hidden sm:inline">В словарь</span>
+                            <span className="hidden sm:inline">{t("vocabTopics.addToDict")}</span>
                           </>
                         )}
                       </Button>

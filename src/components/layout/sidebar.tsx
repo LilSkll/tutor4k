@@ -42,22 +42,21 @@ export function Sidebar({ userName, level, streak }: NavProps) {
   const pathname = usePathname();
   const language = useUIStore((s) => s.interfaceLanguage);
   const collapsed = useUIStore((s) => s.sidebarCollapsed);
-  const t = (key: string) => translate(key, language);
+  const t = (key: string, vars?: Record<string, string | number>) =>
+    translate(key, language, vars);
 
-  // Primary nav — always visible.
   const primaryNav = [
-    { href: "/dashboard", label: "Главная", icon: "LayoutDashboard" },
-    { href: "/chapters", label: "Главы", icon: "BookOpen" },
-    { href: "/courses", label: "Языки", icon: "Globe" },
-    { href: "/tutor", label: "Репетитор", icon: "MessageSquare" },
+    { href: "/dashboard", label: t("nav.home"), icon: "LayoutDashboard" },
+    { href: "/chapters", label: t("nav.chapters"), icon: "BookOpen" },
+    { href: "/courses", label: t("nav.courses"), icon: "Globe" },
+    { href: "/tutor", label: t("nav.tutorShort"), icon: "MessageSquare" },
   ];
 
-  // Secondary nav — reference tools.
   const secondaryNav = [
     { href: "/grammar", label: t("nav.grammar"), icon: "BookOpen" },
     { href: "/exercises", label: t("nav.exercises"), icon: "Dumbbell" },
     { href: "/vocabulary", label: t("nav.vocabulary"), icon: "Languages" },
-    { href: "/vocabulary-topics", label: "Лексика", icon: "BookPlus" },
+    { href: "/vocabulary-topics", label: t("nav.lexicon"), icon: "BookPlus" },
     { href: "/progress", label: t("nav.progress"), icon: "TrendingUp" },
   ];
 
@@ -114,7 +113,7 @@ export function Sidebar({ userName, level, streak }: NavProps) {
         {!collapsed && (
           <div className="pt-4 mt-4 border-t space-y-2">
             <p className="text-[10px] font-semibold text-muted-foreground/60 uppercase tracking-wider px-3">
-              Инструменты
+              {t("nav.tools")}
             </p>
             {secondaryNav.map((item) => {
               const Icon = ICONS[item.icon];
@@ -178,7 +177,7 @@ export function Sidebar({ userName, level, streak }: NavProps) {
             </button>
           </form>
           <p className="px-3 pt-1 text-[10px] text-muted-foreground/70">
-            Разработчик — Драгунов Павел
+            {t("dashboard.developer")}
           </p>
         </div>
       )}

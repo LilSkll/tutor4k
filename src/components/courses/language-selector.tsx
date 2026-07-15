@@ -6,6 +6,7 @@ import { Check, Globe, Loader2 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useUIStore } from "@/stores";
+import { translate } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 
@@ -29,13 +30,15 @@ export function LanguageSelector({
 }) {
   const router = useRouter();
   const setActiveCourseId = useUIStore((s) => s.setActiveCourseId);
+  const language = useUIStore((s) => s.interfaceLanguage);
+  const t = (key: string, vars?: Record<string, string | number>) =>
+    translate(key, language, vars);
   const [switching, setSwitching] = React.useState<string | null>(null);
 
   const handleSelect = async (courseId: string) => {
     if (courseId === activeCourseId) return;
     setSwitching(courseId);
     try {
-      // Update profile on server.
       const res = await fetch("/api/profile", {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
@@ -43,12 +46,11 @@ export function LanguageSelector({
       });
       if (!res.ok) throw new Error("Failed");
 
-      // Update local store.
       setActiveCourseId(courseId);
-      toast.success("Курс изменён");
+      toast.success(t("courses.toastSuccess"));
       router.refresh();
     } catch {
-      toast.error("Не удалось сменить курс");
+      toast.error(t("courses.toastFail"));
     } finally {
       setSwitching(null);
     }
@@ -58,7 +60,7 @@ export function LanguageSelector({
     <div className="space-y-4">
       <div className="flex items-center gap-2">
         <Globe className="h-5 w-5 text-primary" />
-        <h2 className="text-xl font-bold">Выбор языка</h2>
+        <h2 className="text-xl font-bold">{t("courses.title")}</h2>
       </div>
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {courses.map((course) => (
@@ -76,7 +78,7 @@ export function LanguageSelector({
                 {course.isActive ? (
                   <Badge variant="success">
                     <Check className="h-3 w-3 mr-1" />
-                    Активный
+                    {t("courses.active")}
                   </Badge>
                 ) : switching === course.id ? (
                   <Loader2 className="h-4 w-4 animate-spin text-primary" />
@@ -87,7 +89,7 @@ export function LanguageSelector({
               <p className="text-xs text-muted-foreground mt-1">{course.description}</p>
               {course.completedChapters > 0 && (
                 <p className="text-xs text-primary mt-2">
-                  Пройдено глав: {course.completedChapters}
+                  {t("courses.completedChapters", { count: course.completedChapters })}
                 </p>
               )}
             </CardContent>

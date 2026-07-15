@@ -5,6 +5,7 @@ import { Sidebar } from "@/components/layout/sidebar";
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { SidebarToggle } from "@/components/layout/sidebar-toggle";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
+import { ProfileSync } from "@/components/layout/profile-sync";
 import type { Profile } from "@/types";
 
 /**
@@ -20,6 +21,7 @@ export function AppShell({
 }) {
   return (
     <div className="flex h-screen overflow-hidden bg-background">
+      <ProfileSync profile={profile} />
       <Sidebar
         userName={profile?.name ?? undefined}
         level={profile?.level ?? undefined}

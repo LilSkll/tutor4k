@@ -10,7 +10,6 @@ import {
   ChevronRight,
   Loader2,
   MessageSquare,
-  Play,
   Sparkles,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -18,15 +17,11 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Markdown } from "@/components/shared/markdown";
+import { useUIStore } from "@/stores";
+import { translate } from "@/lib/i18n";
 import type { StaticExercise } from "@/types";
 import { cn } from "@/lib/utils";
 import type { Chapter } from "@/types";
-import { toast } from "sonner";
-
-// =====================================================================
-// Lesson Runner — the guided learning flow
-// Phases: intro → theory → practice → dialogue → summary
-// =====================================================================
 
 type Phase = "intro" | "theory" | "practice" | "dialogue" | "summary";
 
@@ -37,6 +32,7 @@ interface LessonRunnerProps {
   grammarTitle: string;
   exercises: StaticExercise[];
   nextChapterSlug: string | null;
+  targetLanguage: string;
 }
 
 export function LessonRunner({
@@ -46,8 +42,13 @@ export function LessonRunner({
   grammarTitle,
   exercises: presetExercises,
   nextChapterSlug,
+  targetLanguage,
 }: LessonRunnerProps) {
   const router = useRouter();
+  const language = useUIStore((s) => s.interfaceLanguage);
+  const t = (key: string, vars?: Record<string, string | number>) =>
+    translate(key, language, { targetLanguage, ...vars });
+
   const [phase, setPhase] = React.useState<Phase>("intro");
   const [loading, setLoading] = React.useState(false);
   const [exercises, setExercises] = React.useState<StaticExercise[]>([]);
@@ -61,7 +62,6 @@ export function LessonRunner({
   const [dialogueInput, setDialogueInput] = React.useState("");
   const [wordsLearned, setWordsLearned] = React.useState(0);
 
-  // --- Load static exercises (zero API calls) -----------------------
   const generateExercises = async () => {
     if (presetExercises.length > 0) {
       setExercises(presetExercises);
@@ -72,14 +72,12 @@ export function LessonRunner({
     }
   };
 
-  // --- Check exercise locally (zero API calls) ---------------------
   const checkAnswer = () => {
     const ex = exercises[currentExerciseIdx];
     if (!ex) return;
     const answer = (selectedOption ?? userAnswer).trim();
     if (!answer) return;
 
-    // Normalize for comparison.
     const norm = (s: string) =>
       s.trim().toLowerCase().replace(/[¿?¡!.,]/g, "").replace(/\s+/g, " ");
 
@@ -107,7 +105,9 @@ export function LessonRunner({
   };
 
   const askTutor = async () => {
-    const question = dialogueInput.trim() || `Explícame brevemente: ${grammarTitle}. Dame un ejemplo.`;
+    const question =
+      dialogueInput.trim() ||
+      t("lesson.defaultQuestion", { topic: grammarTitle });
     setLoading(true);
     setDialogueResponse(null);
     try {
@@ -120,7 +120,7 @@ export function LessonRunner({
       const data = await res.json();
       setDialogueResponse(data.content);
     } catch {
-      setDialogueResponse("⚠️ Не удалось связаться с репетитором.");
+      setDialogueResponse(t("lesson.tutorError"));
     } finally {
       setLoading(false);
     }
@@ -132,7 +132,6 @@ export function LessonRunner({
       const estWords = chapter.vocabTopic ? 5 + Math.floor(Math.random() * 5) : 3;
       setWordsLearned(estWords);
 
-      // Record completion via API.
       await fetch("/api/chapters/complete", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -146,7 +145,6 @@ export function LessonRunner({
 
       setPhase("summary");
     } catch {
-      // Even if save fails, show summary so user can continue.
       setPhase("summary");
     } finally {
       setLoading(false);
@@ -161,9 +159,9 @@ export function LessonRunner({
     }
   };
 
-  // =====================================================================
-  // RENDER
-  // =====================================================================
+  const introGreeting = userName
+    ? t("lesson.greetingNamed", { name: userName })
+    : t("lesson.greeting");
 
   if (phase === "intro") {
     return (
@@ -172,23 +170,27 @@ export function LessonRunner({
           <div className="bg-gradient-to-br from-primary via-orange-500 to-rose-500 p-8 text-white text-center">
             <div className="text-6xl mb-4">{chapter.icon}</div>
             <Badge className="bg-white/20 text-white border-0 mb-2">
-              Глава {chapter.number} · {chapter.level}
+              {t("lesson.chapterBadge", {
+                number: chapter.number,
+                level: chapter.level,
+              })}
             </Badge>
             <h1 className="text-3xl font-bold mb-1">{chapter.title}</h1>
             <p className="text-white/80 italic">{chapter.titleEs}</p>
             <p className="text-white/70 text-sm mt-3">{chapter.summary}</p>
             <div className="mt-4 inline-flex items-center gap-2 text-sm text-white/80">
               <Sparkles className="h-4 w-4" />
-              📍 {chapter.location} · ~{chapter.estimatedMinutes} мин
+              📍 {chapter.location} · {t("lesson.minutes", { minutes: chapter.estimatedMinutes })}
             </div>
           </div>
           <CardContent className="p-6 text-center">
             <p className="text-base text-muted-foreground mb-6">
-              <span className="text-2xl">🦅</span> Привет{userName ? `, ${userName}` : ""}! Я твой наставник. Сегодня мы изучим тему «{grammarTitle}». Готов начать?
+              <span className="text-2xl">🦅</span> {introGreeting}{" "}
+              {t("lesson.introMessage", { topic: grammarTitle })}
             </p>
             <Button variant="gradient" size="lg" onClick={() => setPhase("theory")}>
               <BookOpen className="h-4 w-4" />
-              Начать обучение
+              {t("lesson.startBtn")}
             </Button>
           </CardContent>
         </Card>
@@ -202,7 +204,7 @@ export function LessonRunner({
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <BookOpen className="h-5 w-5 text-primary" />
-            <h2 className="text-xl font-bold">Новая тема</h2>
+            <h2 className="text-xl font-bold">{t("lesson.newTopic")}</h2>
           </div>
           <Badge variant="level">{chapter.titleEs}</Badge>
         </div>
@@ -218,7 +220,7 @@ export function LessonRunner({
         <div className="flex justify-end">
           <Button variant="gradient" onClick={generateExercises}>
             <ArrowRight className="h-4 w-4" />
-            Перейти к практике
+            {t("lesson.goToPractice")}
           </Button>
         </div>
       </div>
@@ -233,12 +235,16 @@ export function LessonRunner({
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Check className="h-5 w-5 text-primary" />
-            <h2 className="text-xl font-bold">Практика</h2>
+            <h2 className="text-xl font-bold">{t("lesson.practice")}</h2>
           </div>
           <Badge variant="level">{chapter.titleEs}</Badge>
         </div>
         <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-          Упражнение {currentExerciseIdx + 1} из {exercises.length} · Очки: {score}
+          {t("lesson.exerciseOf", {
+            current: currentExerciseIdx + 1,
+            total: exercises.length,
+            score,
+          })}
         </div>
 
         {!result ? (
@@ -247,7 +253,7 @@ export function LessonRunner({
               {ex.instruction && (
                 <div className="rounded-lg bg-primary/10 border border-primary/20 px-4 py-2.5">
                   <p className="text-sm text-foreground">
-                    <span className="font-semibold text-primary">📋 Задание: </span>
+                    <span className="font-semibold text-primary">{t("lesson.taskLabel")}</span>
                     {ex.instruction}
                   </p>
                 </div>
@@ -278,7 +284,7 @@ export function LessonRunner({
                 <Input
                   value={userAnswer}
                   onChange={(e) => setUserAnswer(e.target.value)}
-                  placeholder="Напиши свой ответ..."
+                  placeholder={t("lesson.answerPlaceholder")}
                   onKeyDown={(e) => { if (e.key === "Enter") checkAnswer(); }}
                   autoFocus
                 />
@@ -286,7 +292,7 @@ export function LessonRunner({
               <Button variant="gradient" className="w-full" onClick={checkAnswer}
                 disabled={hasOptions ? !selectedOption : !userAnswer.trim()}>
                 <Check className="h-4 w-4" />
-                Проверить
+                {t("lesson.check")}
               </Button>
             </CardContent>
           </Card>
@@ -299,16 +305,22 @@ export function LessonRunner({
               )}>
                 {result.correct ? <CheckCircle2 className="h-6 w-6 shrink-0" /> : <Sparkles className="h-6 w-6 shrink-0" />}
                 <div>
-                  <p className="font-semibold">{result.correct ? "¡Верно!" : "Неверно"}</p>
-                  {!result.correct && <p className="text-xs opacity-90 mt-1">Правильный ответ: {ex.answer}</p>}
+                  <p className="font-semibold">{result.correct ? t("lesson.correct") : t("lesson.incorrect")}</p>
+                  {!result.correct && (
+                    <p className="text-xs opacity-90 mt-1">
+                      {t("lesson.correctAnswer", { answer: ex.answer })}
+                    </p>
+                  )}
                 </div>
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary/5 p-4">
-                <p className="text-xs font-semibold text-primary mb-1">📖 Объяснение</p>
+                <p className="text-xs font-semibold text-primary mb-1">{t("lesson.explanation")}</p>
                 <p className="text-sm">{result.feedback}</p>
               </div>
               <Button variant="gradient" className="w-full" onClick={nextExercise}>
-                {currentExerciseIdx + 1 < exercises.length ? "Следующее упражнение" : "Перейти к диалогу"}
+                {currentExerciseIdx + 1 < exercises.length
+                  ? t("lesson.nextExercise")
+                  : t("lesson.goToDialogue")}
                 <ChevronRight className="h-4 w-4" />
               </Button>
             </CardContent>
@@ -324,24 +336,25 @@ export function LessonRunner({
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <MessageSquare className="h-5 w-5 text-primary" />
-            <h2 className="text-xl font-bold">Диалог с наставником</h2>
+            <h2 className="text-xl font-bold">{t("lesson.dialogueTitle")}</h2>
           </div>
           <Badge variant="level">{chapter.titleEs}</Badge>
         </div>
         <Card>
           <CardContent className="p-6 space-y-4">
             <p className="text-base text-muted-foreground">
-              <span className="text-2xl">🦅</span> Задай мне вопрос по теме «{grammarTitle}» — или нажми кнопку, и я дам пример.
+              <span className="text-2xl">🦅</span>{" "}
+              {t("lesson.dialoguePrompt", { topic: grammarTitle })}
             </p>
             <Input
               value={dialogueInput}
               onChange={(e) => setDialogueInput(e.target.value)}
-              placeholder="Например: «В чём разница между ser и estar?»"
+              placeholder={t("lesson.dialoguePlaceholder")}
               onKeyDown={(e) => { if (e.key === "Enter") askTutor(); }}
             />
             <Button variant="gradient" className="w-full" onClick={askTutor} disabled={loading}>
               {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <MessageSquare className="h-4 w-4" />}
-              {loading ? "Думаю..." : "Спросить репетитора"}
+              {loading ? t("lesson.thinking") : t("lesson.askTutor")}
             </Button>
             {dialogueResponse && (
               <div className="rounded-lg border bg-card p-4">
@@ -350,7 +363,7 @@ export function LessonRunner({
             )}
             <Button variant="outline" className="w-full" onClick={finishChapter} disabled={loading}>
               <Check className="h-4 w-4" />
-              Завершить главу
+              {t("lesson.finishChapter")}
             </Button>
           </CardContent>
         </Card>
@@ -364,39 +377,48 @@ export function LessonRunner({
         <Card className="border-0 shadow-lg overflow-hidden">
           <div className="bg-gradient-to-br from-primary via-orange-500 to-rose-500 p-8 text-white text-center">
             <div className="text-6xl mb-4">🎉</div>
-            <h1 className="text-3xl font-bold mb-2">Глава {chapter.number} пройдена!</h1>
+            <h1 className="text-3xl font-bold mb-2">
+              {t("lesson.chapterComplete", { number: chapter.number })}
+            </h1>
             <p className="text-white/80">{chapter.title} — {chapter.titleEs}</p>
           </div>
           <CardContent className="p-6 space-y-4">
             <div className="rounded-lg bg-muted/30 p-4 space-y-2">
-              <p className="font-semibold text-sm mb-2">Сегодня ты:</p>
+              <p className="font-semibold text-sm mb-2">{t("lesson.todayYou")}</p>
               <ul className="text-sm space-y-1.5">
                 {exercisesCompleted > 0 && (
                   <li className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-success" /> выполнил {exercisesCompleted} упражнений
+                    <Check className="h-4 w-4 text-success" />{" "}
+                    {t("lesson.didExercises", { count: exercisesCompleted })}
                   </li>
                 )}
                 {score > 0 && (
                   <li className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-success" /> правильно ответил на {score} из {exercisesCompleted}
+                    <Check className="h-4 w-4 text-success" />{" "}
+                    {t("lesson.correctScore", { score, total: exercisesCompleted })}
                   </li>
                 )}
                 {wordsLearned > 0 && (
                   <li className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-success" /> выучил {wordsLearned} новых слов
+                    <Check className="h-4 w-4 text-success" />{" "}
+                    {t("lesson.learnedWords", { count: wordsLearned })}
                   </li>
                 )}
                 <li className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-success" /> занимался ~{chapter.estimatedMinutes} минут
+                  <Check className="h-4 w-4 text-success" />{" "}
+                  {t("lesson.studiedMinutes", { minutes: chapter.estimatedMinutes })}
                 </li>
               </ul>
             </div>
             <p className="text-base text-muted-foreground text-center">
-              <span className="text-2xl">🦅</span> «Отличная работа, {userName || "друг"}! Ты продвинулся вперёд.»
+              <span className="text-2xl">🦅</span>{" "}
+              {t("lesson.mentorQuote", {
+                name: userName || t("lesson.friend"),
+              })}
             </p>
             <Button variant="gradient" size="lg" className="w-full" onClick={goToNextChapter}>
               <ArrowRight className="h-4 w-4" />
-              Открыть следующую главу
+              {t("lesson.openNext")}
             </Button>
           </CardContent>
         </Card>

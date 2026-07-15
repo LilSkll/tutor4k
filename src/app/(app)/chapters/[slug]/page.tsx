@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { getCurrentProfile } from "@/server/actions/data";
 import { getCourse } from "@/config/courses";
 import { LessonRunner } from "@/components/chapters/lesson-runner";
+import { translate } from "@/lib/i18n";
 
 export default async function ChapterPage({
   params,
@@ -20,15 +21,18 @@ export default async function ChapterPage({
   const grammarTopic = course.getGrammarTopic(chapter.grammarTopic);
   const exercises = course.getExercises(slug);
   const nextChapter = course.getNextChapter(slug);
+  const lang = profile?.interface_language ?? "ru";
+  const materialPreparing = translate("chapters.materialPreparing", lang);
 
   return (
     <LessonRunner
       chapter={chapter}
       userName={profile?.name ?? ""}
-      grammarContent={grammarTopic?.content ?? "Материал готовится."}
+      grammarContent={grammarTopic?.content ?? materialPreparing}
       grammarTitle={grammarTopic?.titleEs ?? chapter.title}
       exercises={exercises}
       nextChapterSlug={nextChapter?.slug ?? null}
+      targetLanguage={course.titleNative}
     />
   );
 }

@@ -13,8 +13,9 @@ import {
 } from "@/components/ui/dialog";
 import { Markdown } from "@/components/shared/markdown";
 import { useTransition } from "react";
-import { GRAMMAR_TOPICS } from "@/config/grammar";
-import type { Level } from "@/types";
+import { useUIStore } from "@/stores";
+import { translate } from "@/lib/i18n";
+import type { GrammarTopic, Level } from "@/types";
 import { cn } from "@/lib/utils";
 
 const LEVEL_COLORS: Record<Level, string> = {
@@ -25,9 +26,21 @@ const LEVEL_COLORS: Record<Level, string> = {
   C1: "from-rose-500/15 to-orange-500/15 text-rose-600 dark:text-rose-400",
 };
 
-export function GrammarExplorer({ initialLevel }: { initialLevel?: Level }) {
+export function GrammarExplorer({
+  initialLevel,
+  topics,
+  targetLanguage,
+}: {
+  initialLevel?: Level;
+  topics: GrammarTopic[];
+  targetLanguage: string;
+}) {
   const searchParams = useSearchParams();
   const router = useRouter();
+  const language = useUIStore((s) => s.interfaceLanguage);
+  const t = (key: string, vars?: Record<string, string | number>) =>
+    translate(key, language, vars);
+
   const [activeLevel, setActiveLevel] = React.useState<Level | "ALL">(
     initialLevel ?? "ALL",
   );
@@ -35,12 +48,12 @@ export function GrammarExplorer({ initialLevel }: { initialLevel?: Level }) {
   const [pending, startTransition] = useTransition();
 
   const topicSlug = searchParams.get("topic");
-  const selectedTopic = GRAMMAR_TOPICS.find((t) => t.slug === topicSlug);
+  const selectedTopic = topics.find((topic) => topic.slug === topicSlug);
 
   const filtered =
     activeLevel === "ALL"
-      ? GRAMMAR_TOPICS
-      : GRAMMAR_TOPICS.filter((t) => t.level === activeLevel);
+      ? topics
+      : topics.filter((topic) => topic.level === activeLevel);
 
   const explainWithAI = (topicTitle: string, topicSummary: string) => {
     startTransition(async () => {
@@ -52,7 +65,11 @@ export function GrammarExplorer({ initialLevel }: { initialLevel?: Level }) {
             messages: [
               {
                 role: "user",
-                content: `Explícame el tema gramatical "${topicTitle}" de forma clara, con ejemplos prácticos y una tabla si aplica. Contexto: ${topicSummary}.`,
+                content: t("grammar.aiPrompt", {
+                  title: topicTitle,
+                  summary: topicSummary,
+                  targetLanguage,
+                }),
               },
             ],
           }),
@@ -60,20 +77,25 @@ export function GrammarExplorer({ initialLevel }: { initialLevel?: Level }) {
         const data = await res.json();
         setAiExplanation(data.content);
       } catch {
-        setAiExplanation("No se pudo generar la explicación. Inténtalo de nuevo.");
+        setAiExplanation(t("grammar.toastExplainFail"));
       }
     });
   };
 
+  if (topics.length === 0) {
+    return (
+      <p className="text-sm text-muted-foreground">{t("grammar.emptyTopics")}</p>
+    );
+  }
+
   return (
     <>
-      {/* Level filter chips */}
       <div className="flex flex-wrap gap-2">
         <FilterChip
           active={activeLevel === "ALL"}
           onClick={() => setActiveLevel("ALL")}
         >
-          Все
+          {t("grammar.allChip")}
         </FilterChip>
         {(["A1", "A2", "B1", "B2", "C1"] as Level[]).map((lvl) => (
           <FilterChip
@@ -86,7 +108,6 @@ export function GrammarExplorer({ initialLevel }: { initialLevel?: Level }) {
         ))}
       </div>
 
-      {/* Topics list */}
       <div className="grid gap-3 md:grid-cols-2">
         {filtered.map((topic) => (
           <button
@@ -109,7 +130,6 @@ export function GrammarExplorer({ initialLevel }: { initialLevel?: Level }) {
         ))}
       </div>
 
-      {/* Topic detail dialog */}
       <Dialog
         open={!!selectedTopic}
         onOpenChange={(open) => {
@@ -147,15 +167,15 @@ export function GrammarExplorer({ initialLevel }: { initialLevel?: Level }) {
                   }
                 >
                   <Sparkles className="h-4 w-4" />
-                  {pending ? "Генерирую…" : "Объяснить с ИИ"}
+                  {pending ? t("grammar.aiGenerating") : t("grammar.explainWithAI")}
                 </Button>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  asChild
-                >
-                  <a href={`/tutor?q=${encodeURIComponent("Explícame: " + selectedTopic.titleEs)}`}>
-                    Спросить репетитора
+                <Button variant="outline" size="sm" asChild>
+                  <a
+                    href={`/tutor?q=${encodeURIComponent(
+                      t("grammar.askTutorPrefix") + selectedTopic.titleEs,
+                    )}`}
+                  >
+                    {t("grammar.askTutor")}
                   </a>
                 </Button>
               </div>
@@ -165,7 +185,7 @@ export function GrammarExplorer({ initialLevel }: { initialLevel?: Level }) {
                   <div className="flex items-center justify-between mb-2">
                     <span className="text-sm font-semibold flex items-center gap-1">
                       <Sparkles className="h-4 w-4 text-primary" />
-                      Объяснение ИИ
+                      {t("grammar.aiExplanation")}
                     </span>
                     <Button
                       variant="ghost"
