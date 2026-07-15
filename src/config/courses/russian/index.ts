@@ -5,7 +5,7 @@ import type { CourseConfig } from "@/types";
 // =====================================================================
 
 export async function loadRussianCourse(): Promise<CourseConfig> {
-  const { buildUniversalPrompt } = await import("@/server/ai/prompts/universal");
+  const { buildRussianPrompt } = await import("@/server/ai/prompts/russian");
 
   return {
     id: "russian",
@@ -51,19 +51,6 @@ export async function loadRussianCourse(): Promise<CourseConfig> {
     getVocab: () => [],
     getExercises: () => [],
 
-    buildPrompt: (options) =>
-      buildUniversalPrompt({
-        ...options,
-        targetLanguageName: "Russian",
-        targetLanguageCode: "ru",
-        examName: "ТРКИ",
-        levelGuide: {
-          A1: "A1: алфавит, базовая лексика.",
-          A2: "A2: падежи, прошедшее время.",
-          B1: "B1: виды глагола, сложные предложения.",
-          B2: "B2: причастия, деепричастия.",
-          C1: "C1: идиомы, литературный язык.",
-        },
-      }),
+    buildPrompt: buildRussianPrompt,
   };
 }

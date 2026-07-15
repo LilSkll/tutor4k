@@ -9,7 +9,7 @@ export async function loadEnglishCourse(): Promise<CourseConfig> {
   const { ENGLISH_GRAMMAR, getEngGrammarTopic } = await import("./grammar");
   const { ENGLISH_VOCAB } = await import("./vocabulary");
   const { ENGLISH_EXERCISES } = await import("./exercises");
-  const { buildUniversalPrompt } = await import("@/server/ai/prompts/universal");
+  const { buildEnglishPrompt } = await import("@/server/ai/prompts/english");
 
   return {
     id: "english",
@@ -68,20 +68,6 @@ export async function loadEnglishCourse(): Promise<CourseConfig> {
     getVocab: () => ENGLISH_VOCAB,
     getExercises: (slug: string) => ENGLISH_EXERCISES[slug] ?? [],
 
-    buildPrompt: (options) =>
-      buildUniversalPrompt({
-        ...options,
-        targetLanguageName: "English",
-        targetLanguageCode: "en",
-        textbookNames: "Life (National Geographic)",
-        examName: "IELTS",
-        levelGuide: {
-          A1: "A1: beginner — be, present simple, there is/are, can.",
-          A2: "A2: elementary — past simple, comparatives, present perfect.",
-          B1: "B1: intermediate — conditionals, narrative tenses.",
-          B2: "B2: upper-intermediate — passive, reported speech.",
-          C1: "C1: advanced — inversion, discourse, IELTS.",
-        },
-      }),
+    buildPrompt: buildEnglishPrompt,
   };
 }

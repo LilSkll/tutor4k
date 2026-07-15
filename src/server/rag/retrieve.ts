@@ -11,6 +11,7 @@ import type { Level } from "@/types";
 // =====================================================================
 
 export interface RetrievedChunk {
+  id?: string;
   source: string;
   sourceTitle: string;
   page: number;
@@ -34,8 +35,9 @@ export async function retrieveContext(
   query: string,
   level?: Level | null,
   topK = 5,
+  courseId?: string | null,
 ): Promise<string> {
-  const chunks = await retrieveChunks(query, level, topK);
+  const chunks = await retrieveChunks(query, level, topK, courseId);
   if (chunks.length === 0) return "";
   return formatContext(chunks);
 }
@@ -45,17 +47,18 @@ export async function retrieveChunks(
   query: string,
   level?: Level | null,
   topK = 5,
+  courseId?: string | null,
 ): Promise<RetrievedChunk[]> {
   const supabase = await createSupabaseServerClient();
   const cleaned = cleanQuery(query);
   if (!cleaned) return [];
 
-  // 1) Full-text search.
+  // 1) Full-text search (optionally scoped to course).
   const { data: ftsRows, error: ftsErr } = await supabase.rpc(
     "match_knowledge",
     {
       query_text: cleaned,
-      match_count: topK,
+      match_count: topK * 2,
       filter_level: level ?? null,
     },
   );
@@ -65,9 +68,15 @@ export async function retrieveChunks(
   }
 
   if (ftsRows && ftsRows.length > 0) {
-    return (ftsRows as RetrievedChunk[])
+    let rows = (ftsRows as RetrievedChunk[])
       .filter((r) => r.rank >= MIN_RANK)
       .map(normalizeRow);
+
+    if (courseId) {
+      rows = await filterByCourseId(supabase, rows, courseId, topK);
+    }
+
+    return rows.slice(0, topK);
   }
 
   // 2) Trigram fuzzy fallback (no level filter — broader recall).
@@ -81,7 +90,27 @@ export async function retrieveChunks(
     return [];
   }
 
-  return ((fuzzyRows ?? []) as RetrievedChunk[]).map(normalizeRow);
+  return ((fuzzyRows ?? []) as RetrievedChunk[]).map(normalizeRow).slice(0, topK);
+}
+
+/** Keep only chunks belonging to the active course (post-filter via IDs). */
+async function filterByCourseId(
+  supabase: Awaited<ReturnType<typeof createSupabaseServerClient>>,
+  rows: RetrievedChunk[],
+  courseId: string,
+  topK: number,
+): Promise<RetrievedChunk[]> {
+  const ids = rows.map((r) => r.id).filter(Boolean) as string[];
+  if (ids.length === 0) return rows.slice(0, topK);
+
+  const { data } = await supabase
+    .from("knowledge_chunks")
+    .select("id")
+    .eq("course_id", courseId)
+    .in("id", ids);
+
+  const allowed = new Set((data ?? []).map((r: { id: string }) => r.id));
+  return rows.filter((r) => r.id && allowed.has(r.id)).slice(0, topK);
 }
 
 /** Format retrieved chunks into a single string for the prompt. */
@@ -104,6 +133,7 @@ function formatContext(chunks: RetrievedChunk[]): string {
 /** Cast a DB row (which may have extra fields) to our clean shape. */
 function normalizeRow(row: RetrievedChunk): RetrievedChunk {
   return {
+    id: row.id,
     source: row.source ?? "",
     sourceTitle: row.sourceTitle ?? row.source ?? "",
     page: row.page ?? 0,

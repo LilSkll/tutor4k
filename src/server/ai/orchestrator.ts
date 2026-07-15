@@ -6,38 +6,28 @@ import type {
   Level,
 } from "@/types";
 import {
-  buildSystemPrompt,
-  isOffTopic,
-  OFF_TOPIC_REFUSALS,
-} from "@/server/ai/spanish-tutor-system-prompt";
-import {
   FatalAIError,
   GeminiProvider,
   GroqProvider,
   type AIProvider,
   type ProviderCallOptions,
 } from "@/server/ai/providers";
+import { getCourse } from "@/config/courses";
+import { isOffTopicForCourse } from "@/server/ai/prompts/domain-guard";
+import { getOffTopicRefusal } from "@/server/ai/prompts/refusals";
 
 // =====================================================================
 // AI Orchestrator
 // ---------------------------------------------------------------------
-// Responsibilities:
-//   1. Domain guard — refuse off-topic questions before any model call.
-//   2. Provider chain — try Groq first, fall back to Gemini.
-//   3. Retry — exponential backoff for transient errors.
-//   4. Normalized output — every code path returns a single AIResponse.
+// 1. Domain guard — course-specific keywords from CourseConfig.
+// 2. System prompt — CourseConfig.buildPrompt() per active course.
+// 3. Provider chain — Groq first, Gemini fallback.
 // =====================================================================
 
 const MAX_RETRIES = 2;
 const INITIAL_BACKOFF_MS = 500;
 
-/**
- * Build the provider chain from environment variables.
- * Groq is the primary model; Gemini is the fallback.
- */
 function buildProviderChain(): AIProvider[] {
-  // Collect ALL available Groq keys (GROQ_API_KEY, GROQ_API_KEY_2, ...) for
-  // round-robin load balancing. Three keys ≈ 3× the free-tier rate limit.
   const groqKeys = [
     process.env.GROQ_API_KEY,
     process.env.GROQ_API_KEY_2,
@@ -55,15 +45,10 @@ function buildProviderChain(): AIProvider[] {
   return [groq, gemini].filter((p) => p.isAvailable());
 }
 
-/** Sleep helper for backoff. */
 function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
-/**
- * Run a single provider with retry on transient errors.
- * Fatal errors propagate immediately.
- */
 async function callWithRetry(
   provider: AIProvider,
   options: ProviderCallOptions,
@@ -75,18 +60,11 @@ async function callWithRetry(
       return await provider.complete(options);
     } catch (err) {
       lastError = err as Error;
-
-      if (err instanceof FatalAIError) {
-        // Don't retry auth / bad-request errors.
-        throw err;
-      }
-
+      if (err instanceof FatalAIError) throw err;
       if (attempt < MAX_RETRIES) {
         const backoff = INITIAL_BACKOFF_MS * 2 ** attempt;
-        // Add small jitter (±20%).
         const jitter = backoff * (0.8 + Math.random() * 0.4);
         await sleep(jitter);
-        continue;
       }
     }
   }
@@ -94,15 +72,24 @@ async function callWithRetry(
   throw lastError ?? new Error(`Provider ${provider.name} failed`);
 }
 
-/**
- * Main entry point: generate a tutor response.
- *
- * Flow:
- *   1. (unless skipGuard) refuse off-topic questions.
- *   2. Inject the Spanish-tutor system prompt.
- *   3. Try providers in order; retry transient errors; fall back.
- *   4. On total failure, return a graceful offline message.
- */
+async function buildSystemPromptForCourse(
+  courseId: string,
+  options: {
+    level?: Level | null;
+    interfaceLanguage?: InterfaceLanguage;
+    userName?: string | null;
+    retrievedContext?: string | null;
+  },
+): Promise<string> {
+  const course = await getCourse(courseId);
+  return course.buildPrompt({
+    level: options.level,
+    interfaceLanguage: options.interfaceLanguage,
+    userName: options.userName,
+    retrievedContext: options.retrievedContext,
+  });
+}
+
 export async function generateAIResponse(
   options: AIGenerateOptions & {
     language?: InterfaceLanguage;
@@ -120,27 +107,29 @@ export async function generateAIResponse(
     language = "ru",
     userName,
     retrievedContext,
-    courseId,
+    courseId = "spanish",
   } = options;
 
-  // --- 1. Domain guard -------------------------------------------------
+  const course = await getCourse(courseId);
+
   const lastUserMessage = [...messages]
     .reverse()
     .find((m) => m.role === "user");
 
-  if (!skipGuard && lastUserMessage && isOffTopic(lastUserMessage.content)) {
+  if (
+    !skipGuard &&
+    lastUserMessage &&
+    isOffTopicForCourse(lastUserMessage.content, course.keywords)
+  ) {
     return {
-      content: OFF_TOPIC_REFUSALS[language],
+      content: getOffTopicRefusal(course.titleNative, language),
       provider: "groq",
       model: "guard",
       refused: true,
     };
   }
 
-  // --- 2. System prompt (via prompt registry) ------------------------
-  const { getPromptBuilder } = await import("@/server/ai/prompts/registry");
-  const promptBuilder = await getPromptBuilder(courseId ?? "spanish");
-  const systemPrompt = promptBuilder({
+  const systemPrompt = await buildSystemPromptForCourse(courseId ?? "spanish", {
     level,
     interfaceLanguage: language,
     userName,
@@ -154,7 +143,6 @@ export async function generateAIResponse(
     systemPrompt,
   };
 
-  // --- 3. Provider chain with fallback ---------------------------------
   const chain = buildProviderChain();
 
   if (chain.length === 0) {
@@ -174,15 +162,12 @@ export async function generateAIResponse(
 
   for (const provider of chain) {
     try {
-      const response = await callWithRetry(provider, providerOptions);
-      return response;
+      return await callWithRetry(provider, providerOptions);
     } catch (err) {
       errors.push(`${provider.name}: ${(err as Error).message}`);
-      // Continue to next provider.
     }
   }
 
-  // --- 4. All providers failed ----------------------------------------
   const fallbackMessage =
     language === "ru"
       ? "😔 Извините, я не смог обработать ваш запрос. Попробуйте ещё раз через минуту."
@@ -199,11 +184,6 @@ export async function generateAIResponse(
   };
 }
 
-/**
- * Low-level structured generation: ask the model to return JSON only.
- * Used by the exercises service. Always uses skipGuard because the
- * caller controls the prompt.
- */
 export async function generateStructuredJSON<T>(
   messages: AIMessage[],
   opts?: {
@@ -211,6 +191,7 @@ export async function generateStructuredJSON<T>(
     temperature?: number;
     language?: InterfaceLanguage;
     retrievedContext?: string | null;
+    courseId?: string | null;
   },
 ): Promise<T> {
   const response = await generateAIResponse({
@@ -221,9 +202,9 @@ export async function generateStructuredJSON<T>(
     skipGuard: true,
     language: opts?.language,
     retrievedContext: opts?.retrievedContext,
+    courseId: opts?.courseId ?? "spanish",
   });
 
-  // Extract the first JSON object from the response.
   const jsonMatch = response.content.match(/\{[\s\S]*\}/);
   if (!jsonMatch) {
     throw new Error("Model did not return valid JSON");

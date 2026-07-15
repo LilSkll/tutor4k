@@ -26,8 +26,9 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Resolve interface language from the user's profile.
+    // Resolve interface language and active course from profile.
     let language: InterfaceLanguage = "ru";
+    let courseId = "spanish";
     try {
       const supabase = await createSupabaseServerClient();
       const {
@@ -36,15 +37,18 @@ export async function POST(req: NextRequest) {
       if (user) {
         const { data: profile } = await supabase
           .from("profiles")
-          .select("interface_language")
+          .select("interface_language, active_course_id")
           .eq("id", user.id)
           .maybeSingle();
         if (profile?.interface_language) {
           language = profile.interface_language as InterfaceLanguage;
         }
+        if (profile?.active_course_id) {
+          courseId = profile.active_course_id as string;
+        }
       }
     } catch {
-      // Non-fatal: fall back to Russian.
+      // Non-fatal: fall back to defaults.
     }
 
     const result = await checkExerciseAnswer({
@@ -52,6 +56,7 @@ export async function POST(req: NextRequest) {
       userAnswer: body.userAnswer,
       level: body.level,
       language,
+      courseId,
     });
 
     return NextResponse.json(result);

@@ -64,11 +64,12 @@ export function isCacheable(query: string): boolean {
 export async function getCachedTutorResponse(
   query: string,
   level: Level | null,
+  courseId?: string | null,
 ): Promise<string | null> {
   if (!isCacheable(query)) return null;
 
   const norm = normalizeQuery(query);
-  const queryHash = hash(norm + "|" + (level ?? "any"));
+  const queryHash = hash(norm + "|" + (level ?? "any") + "|" + (courseId ?? "spanish"));
 
   try {
     const supabase = await createSupabaseServerClient();
@@ -100,13 +101,14 @@ export async function setCachedTutorResponse(
   query: string,
   level: Level | null,
   response: string,
+  courseId?: string | null,
 ): Promise<void> {
   if (!isCacheable(query) || !response.trim()) return;
   // Don't cache refusal / error messages.
   if (response.startsWith("⚠️") || response.startsWith("😔")) return;
 
   const norm = normalizeQuery(query);
-  const queryHash = hash(norm + "|" + (level ?? "any"));
+  const queryHash = hash(norm + "|" + (level ?? "any") + "|" + (courseId ?? "spanish"));
 
   try {
     const supabase = await createSupabaseServerClient();
