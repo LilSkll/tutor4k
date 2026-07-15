@@ -7,6 +7,11 @@ import { getCurrentProfile, getChapterProgress } from "@/server/actions/data";
 import { getCourse } from "@/config/courses";
 import { toRoman } from "@/config/chapters";
 import { translate } from "@/lib/i18n";
+import {
+  countCompletedForCourse,
+  getChapterLocation,
+  getChapterTitle,
+} from "@/lib/chapter-display";
 import { cn } from "@/lib/utils";
 
 export default async function ChaptersMapPage() {
@@ -22,12 +27,13 @@ export default async function ChaptersMapPage() {
   const courseId = profile?.active_course_id ?? "spanish";
   const course = await getCourse(courseId);
   const CHAPTERS = course.getChapters();
+  const courseSlugs = CHAPTERS.map((c) => c.slug);
 
   const statusMap = new Map<string, "completed" | "in_progress" | "locked">();
   const completedSlugs = new Set<string>();
 
   for (const p of progress) {
-    if (p.chapter_slug) {
+    if (p.chapter_slug && courseSlugs.includes(p.chapter_slug)) {
       statusMap.set(p.chapter_slug, p.status as "completed" | "in_progress");
       if (p.status === "completed") completedSlugs.add(p.chapter_slug);
     }
@@ -42,12 +48,12 @@ export default async function ChaptersMapPage() {
     }
   }
 
-  const completedCount = completedSlugs.size;
+  const completedCount = countCompletedForCourse(completedSlugs, courseSlugs);
 
   return (
-    <div className="container max-w-2xl py-6 md:py-8 space-y-6">
+    <div className="page-container max-w-2xl space-y-6">
       <div>
-        <h1 className="text-2xl font-bold">{t("chapters.title")}</h1>
+        <h1 className="page-title">{t("chapters.title")}</h1>
         <p className="text-sm text-muted-foreground">
           {t("chapters.subtitle", {
             flag: course.flag,
@@ -64,31 +70,38 @@ export default async function ChaptersMapPage() {
           const isCompleted = status === "completed";
           const isCurrent = status === "in_progress";
           const isLocked = status === "locked";
+          const title = getChapterTitle(chapter, lang);
 
           return (
             <div key={chapter.slug}>
               {idx > 0 && (
                 <div className="flex justify-center py-1">
-                  <div className={cn(
-                    "w-0.5 h-6 rounded-full",
-                    isLocked ? "bg-muted" : "bg-primary/30",
-                  )} />
+                  <div
+                    className={cn(
+                      "w-0.5 h-6 rounded-full",
+                      isLocked ? "bg-muted" : "bg-primary/30",
+                    )}
+                  />
                 </div>
               )}
 
-              <Card className={cn(
-                "transition-all overflow-hidden",
-                isLocked && "opacity-50",
-                isCurrent && "ring-2 ring-primary/40 shadow-md",
-              )}>
+              <Card
+                className={cn(
+                  "transition-all overflow-hidden",
+                  isLocked && "opacity-50",
+                  isCurrent && "ring-2 ring-primary/40 shadow-md",
+                )}
+              >
                 <CardContent className="p-4">
                   <div className="flex items-center gap-4">
-                    <div className={cn(
-                      "flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-2xl",
-                      isCompleted && "bg-success/15",
-                      isCurrent && "bg-primary/10",
-                      isLocked && "bg-muted",
-                    )}>
+                    <div
+                      className={cn(
+                        "flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-2xl",
+                        isCompleted && "bg-success/15",
+                        isCurrent && "bg-primary/10",
+                        isLocked && "bg-muted",
+                      )}
+                    >
                       {isCompleted ? (
                         <Check className="h-6 w-6 text-success" />
                       ) : isLocked ? (
@@ -103,20 +116,34 @@ export default async function ChaptersMapPage() {
                         <span className="text-xs font-bold text-muted-foreground">
                           {toRoman(chapter.number)}
                         </span>
-                        <Badge variant="level" className="shrink-0">{chapter.level}</Badge>
+                        <Badge variant="level" className="shrink-0">
+                          {chapter.level}
+                        </Badge>
                         {isCurrent && (
                           <span className="text-[10px] font-semibold text-primary uppercase tracking-wide">
                             {t("chapters.current")}
                           </span>
                         )}
                       </div>
-                      <h3 className={cn("font-semibold", isLocked && "text-muted-foreground")}>
-                        {chapter.title}
+                      <h3
+                        className={cn(
+                          "font-semibold",
+                          isLocked && "text-muted-foreground",
+                        )}
+                      >
+                        {title}
                       </h3>
-                      <p className="text-xs text-muted-foreground italic mb-1">{chapter.titleEs}</p>
+                      {chapter.titleEs !== title && (
+                        <p className="text-xs text-muted-foreground italic mb-1">
+                          {chapter.titleEs}
+                        </p>
+                      )}
                       <p className="text-xs text-muted-foreground flex items-center gap-1">
                         <MapPin className="h-3 w-3" />
-                        {chapter.location} · {t("lesson.minutes", { minutes: chapter.estimatedMinutes })}
+                        {getChapterLocation(chapter, lang)} ·{" "}
+                        {t("lesson.minutes", {
+                          minutes: chapter.estimatedMinutes,
+                        })}
                       </p>
                     </div>
 
@@ -127,7 +154,9 @@ export default async function ChaptersMapPage() {
                         asChild
                       >
                         <Link href={`/chapters/${chapter.slug}`}>
-                          {isCompleted ? t("chapters.retry") : t("chapters.open")}
+                          {isCompleted
+                            ? t("chapters.retry")
+                            : t("chapters.open")}
                         </Link>
                       </Button>
                     )}

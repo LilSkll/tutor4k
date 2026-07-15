@@ -20,6 +20,11 @@ import { Markdown } from "@/components/shared/markdown";
 import { useLocalizedGrammarArticle } from "@/hooks/use-localized-grammar-article";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { getGrammarTopicTitle } from "@/lib/grammar-display";
+import {
+  getChapterLocation,
+  getChapterSummary,
+  getChapterTitle,
+} from "@/lib/chapter-display";
 import { translate } from "@/lib/i18n";
 import type { GrammarTopic, StaticExercise } from "@/types";
 import { cn } from "@/lib/utils";
@@ -57,7 +62,11 @@ export function LessonRunner({
 
   const grammarTitle = grammarTopic
     ? getGrammarTopicTitle(grammarTopic, language)
-    : chapter.titleEs;
+    : getChapterTitle(chapter, language);
+
+  const chapterDisplayTitle = getChapterTitle(chapter, language);
+  const chapterDisplaySummary = getChapterSummary(chapter, language);
+  const chapterDisplayLocation = getChapterLocation(chapter, language);
 
   const {
     content: grammarContent,
@@ -195,12 +204,12 @@ export function LessonRunner({
                 level: chapter.level,
               })}
             </Badge>
-            <h1 className="text-3xl font-bold mb-1">{chapter.title}</h1>
+            <h1 className="text-3xl font-bold mb-1">{chapterDisplayTitle}</h1>
             <p className="text-white/80 italic">{chapter.titleEs}</p>
-            <p className="text-white/70 text-sm mt-3">{chapter.summary}</p>
+            <p className="text-white/70 text-sm mt-3">{chapterDisplaySummary}</p>
             <div className="mt-4 inline-flex items-center gap-2 text-sm text-white/80">
               <Sparkles className="h-4 w-4" />
-              📍 {chapter.location} · {t("lesson.minutes", { minutes: chapter.estimatedMinutes })}
+              📍 {chapterDisplayLocation} · {t("lesson.minutes", { minutes: chapter.estimatedMinutes })}
             </div>
           </div>
           <CardContent className="p-6 text-center">
@@ -226,7 +235,7 @@ export function LessonRunner({
             <BookOpen className="h-5 w-5 text-primary" />
             <h2 className="text-xl font-bold">{t("lesson.newTopic")}</h2>
           </div>
-          <Badge variant="level">{chapter.titleEs}</Badge>
+          <Badge variant="level">{chapterDisplayTitle}</Badge>
         </div>
         <Card>
           <CardContent className="p-6">
@@ -266,7 +275,7 @@ export function LessonRunner({
             <Check className="h-5 w-5 text-primary" />
             <h2 className="text-xl font-bold">{t("lesson.practice")}</h2>
           </div>
-          <Badge variant="level">{chapter.titleEs}</Badge>
+          <Badge variant="level">{chapterDisplayTitle}</Badge>
         </div>
         <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
           {t("lesson.exerciseOf", {
@@ -367,7 +376,7 @@ export function LessonRunner({
             <MessageSquare className="h-5 w-5 text-primary" />
             <h2 className="text-xl font-bold">{t("lesson.dialogueTitle")}</h2>
           </div>
-          <Badge variant="level">{chapter.titleEs}</Badge>
+          <Badge variant="level">{chapterDisplayTitle}</Badge>
         </div>
         <Card>
           <CardContent className="p-6 space-y-4">
@@ -409,7 +418,9 @@ export function LessonRunner({
             <h1 className="text-3xl font-bold mb-2">
               {t("lesson.chapterComplete", { number: chapter.number })}
             </h1>
-            <p className="text-white/80">{chapter.title} — {chapter.titleEs}</p>
+            <p className="text-white/80">
+              {chapterDisplayTitle} — {chapter.titleEs}
+            </p>
           </div>
           <CardContent className="p-6 space-y-4">
             <div className="rounded-lg bg-muted/30 p-4 space-y-2">

@@ -21,6 +21,12 @@ import { getCourse } from "@/config/courses";
 import { toRoman } from "@/config/chapters";
 import { translate } from "@/lib/i18n";
 import { getWordGloss } from "@/lib/vocab-display";
+import {
+  countCompletedForCourse,
+  getChapterLocation,
+  getChapterSummary,
+  getChapterTitle,
+} from "@/lib/chapter-display";
 
 export default async function DashboardPage() {
   const [profile, progress] = await Promise.all([
@@ -37,8 +43,12 @@ export default async function DashboardPage() {
   const CHAPTERS = course.getChapters();
   const vocabTopics = course.getVocab();
 
+  const courseChapterSlugs = CHAPTERS.map((c) => c.slug);
   const completedSlugs = new Set(
-    progress.filter((p) => p.status === "completed").map((p) => p.chapter_slug),
+    progress
+      .filter((p) => p.status === "completed")
+      .map((p) => p.chapter_slug)
+      .filter(Boolean),
   );
 
   const userLevel = profile?.level;
@@ -57,10 +67,15 @@ export default async function DashboardPage() {
   }
 
   const nextChapter = course.getNextChapter(currentChapter.slug);
-  const totalCompleted = completedSlugs.size;
+  const totalCompleted = countCompletedForCourse(
+    completedSlugs,
+    courseChapterSlugs,
+  );
   const totalChapters = CHAPTERS.length;
   const courseProgressPct =
-    totalChapters > 0 ? Math.round((totalCompleted / totalChapters) * 100) : 0;
+    totalChapters > 0
+      ? Math.min(100, Math.round((totalCompleted / totalChapters) * 100))
+      : 0;
   const streak = profile?.streak ?? 0;
   const dailyGoal = profile?.daily_goal_minutes ?? 15;
   const courseLabel = `${course.flag} ${course.titleNative}`;
@@ -119,18 +134,18 @@ export default async function DashboardPage() {
                   })}
                 </p>
                 <h3 className="text-xl sm:text-2xl font-bold truncate">
-                  {currentChapter.title}
+                  {getChapterTitle(currentChapter, lang)}
                 </h3>
                 <p className="text-white/75 text-sm italic truncate">
                   {currentChapter.titleEs}
                 </p>
                 <p className="text-white/70 text-sm mt-2 line-clamp-2">
-                  {currentChapter.summary}
+                  {getChapterSummary(currentChapter, lang)}
                 </p>
                 <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-white/70 mt-3">
                   <span className="flex items-center gap-1">
                     <MapPin className="h-3.5 w-3.5" />
-                    {currentChapter.location}
+                    {getChapterLocation(currentChapter, lang)}
                   </span>
                   <span>
                     {t("lesson.minutes", {
@@ -278,7 +293,7 @@ export default async function DashboardPage() {
                 <span className="text-3xl">{nextChapter.icon}</span>
                 <div className="flex-1 min-w-0">
                   <p className="font-semibold truncate group-hover:text-primary transition-colors">
-                    {nextChapter.title}
+                    {getChapterTitle(nextChapter, lang)}
                   </p>
                   <p className="text-xs text-muted-foreground truncate">
                     {nextChapter.titleEs} · {nextChapter.level}
@@ -323,7 +338,9 @@ export default async function DashboardPage() {
               {t("dashboard.journeyDesc", {
                 completed: totalCompleted,
                 total: totalChapters,
-                next: nextChapter?.title ?? t("dashboard.final"),
+                next: nextChapter
+                  ? getChapterTitle(nextChapter, lang)
+                  : t("dashboard.final"),
               })}
             </p>
           </div>

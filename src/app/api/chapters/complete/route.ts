@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
-import { getChapter } from "@/config/chapters";
+import { getCourse } from "@/config/courses";
+import { inferCourseIdFromChapterSlug } from "@/lib/chapter-display";
 import type { Level } from "@/types";
 
 /**
@@ -29,10 +30,35 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const chapter = getChapter(body.chapterSlug);
-    const chapterLevel: Level = chapter?.level ?? "A1";
+    // Resolve active course so progress belongs to the right language.
+    let courseId = inferCourseIdFromChapterSlug(body.chapterSlug);
+    try {
+      const { data: profile } = await supabase
+        .from("profiles")
+        .select("active_course_id")
+        .eq("id", user.id)
+        .maybeSingle();
+      if (profile?.active_course_id) {
+        courseId = profile.active_course_id as string;
+      }
+    } catch {
+      // keep inferred courseId
+    }
 
-    // Resolve service-role client for writes.
+    const course = await getCourse(courseId);
+    const chapter = course.getChapter(body.chapterSlug);
+    // Fallback: slug may belong to another course (e.g. switched mid-lesson).
+    const chapterLevel: Level =
+      chapter?.level ??
+      (await getCourse(inferCourseIdFromChapterSlug(body.chapterSlug))).getChapter(
+        body.chapterSlug,
+      )?.level ??
+      "A1";
+
+    if (!chapter) {
+      courseId = inferCourseIdFromChapterSlug(body.chapterSlug);
+    }
+
     let client = supabase;
     let usingAdmin = false;
     try {
@@ -44,7 +70,6 @@ export async function POST(req: NextRequest) {
       }
     } catch {}
 
-    // Step 1: Check if a row already exists for this chapter.
     const { data: existing } = await client
       .from("learning_progress")
       .select("id")
@@ -55,7 +80,6 @@ export async function POST(req: NextRequest) {
     let progressOk = false;
 
     if (existing) {
-      // Update existing row.
       const { error: updateErr } = await client
         .from("learning_progress")
         .update({
@@ -65,6 +89,7 @@ export async function POST(req: NextRequest) {
           completed_at: new Date().toISOString(),
           words_learned: body.wordsLearned ?? 0,
           exercises_completed: body.exercisesCompleted ?? 0,
+          course_id: courseId,
         })
         .eq("id", existing.id);
 
@@ -74,7 +99,6 @@ export async function POST(req: NextRequest) {
       }
       progressOk = true;
     } else {
-      // Insert new row.
       const { error: insertErr } = await client
         .from("learning_progress")
         .insert({
@@ -88,6 +112,7 @@ export async function POST(req: NextRequest) {
           completed_at: new Date().toISOString(),
           words_learned: body.wordsLearned ?? 0,
           exercises_completed: body.exercisesCompleted ?? 0,
+          course_id: courseId,
         });
 
       if (insertErr) {
@@ -97,7 +122,6 @@ export async function POST(req: NextRequest) {
       progressOk = true;
     }
 
-    // Step 2: Record study session (minutes + lessons).
     const today = new Date().toISOString().slice(0, 10);
     const { data: actExisting } = await client
       .from("daily_activity")
@@ -119,7 +143,6 @@ export async function POST(req: NextRequest) {
       { onConflict: "user_id,activity_date" },
     );
 
-    // Step 3: Update streak.
     const { data: profile } = await client
       .from("profiles")
       .select("streak, last_active_date")
@@ -147,6 +170,7 @@ export async function POST(req: NextRequest) {
       ok: true,
       progressSaved: progressOk,
       usingAdmin,
+      courseId,
     });
   } catch (err) {
     console.error("[/api/chapters/complete]", err);

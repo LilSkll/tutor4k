@@ -1,6 +1,10 @@
 import { NextResponse } from "next/server";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
 import { getAvailableCourseIds, getCourse } from "@/config/courses";
+import {
+  countCompletedForCourse,
+  inferCourseIdFromChapterSlug,
+} from "@/lib/chapter-display";
 
 /**
  * GET /api/courses
@@ -16,13 +20,13 @@ export async function GET() {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
-  // Get all course IDs from the registry.
   const courseIds = getAvailableCourseIds();
-
-  // Load course configs.
+  const chapterSlugsByCourse: Record<string, string[]> = {};
   const courses = [];
+
   for (const id of courseIds) {
     const config = await getCourse(id);
+    chapterSlugsByCourse[id] = config.getChapters().map((c) => c.slug);
     courses.push({
       id: config.id,
       languageCode: config.languageCode,
@@ -33,20 +37,28 @@ export async function GET() {
     });
   }
 
-  // Get user's progress per course (count completed chapters).
   const { data: progressRows } = await supabase
     .from("learning_progress")
-    .select("course_id, status")
+    .select("course_id, chapter_slug, status")
     .eq("user_id", user.id)
     .eq("status", "completed");
 
-  const progressMap: Record<string, number> = {};
+  const completedByCourse: Record<string, Set<string>> = {};
+  for (const id of courseIds) completedByCourse[id] = new Set();
+
   for (const row of progressRows ?? []) {
-    const cid = (row as { course_id: string }).course_id;
-    progressMap[cid] = (progressMap[cid] ?? 0) + 1;
+    const slug = (row as { chapter_slug?: string }).chapter_slug;
+    if (!slug) continue;
+    const storedCourse = (row as { course_id?: string | null }).course_id;
+    const courseId =
+      storedCourse && chapterSlugsByCourse[storedCourse]?.includes(slug)
+        ? storedCourse
+        : inferCourseIdFromChapterSlug(slug);
+    if (chapterSlugsByCourse[courseId]?.includes(slug)) {
+      completedByCourse[courseId]?.add(slug);
+    }
   }
 
-  // Get active course from profile.
   const { data: profile } = await supabase
     .from("profiles")
     .select("active_course_id")
@@ -58,7 +70,10 @@ export async function GET() {
   return NextResponse.json({
     courses: courses.map((c) => ({
       ...c,
-      completedChapters: progressMap[c.id] ?? 0,
+      completedChapters: countCompletedForCourse(
+        completedByCourse[c.id] ?? [],
+        chapterSlugsByCourse[c.id] ?? [],
+      ),
       isActive: c.id === activeCourseId,
     })),
     activeCourseId,

@@ -1,6 +1,10 @@
 import { createSupabaseServerClient } from "@/lib/supabase-server";
 import { getAvailableCourseIds, getCourse } from "@/config/courses";
 import { LanguageSelector } from "@/components/courses/language-selector";
+import {
+  countCompletedForCourse,
+  inferCourseIdFromChapterSlug,
+} from "@/lib/chapter-display";
 
 export default async function CoursesPage() {
   const supabase = await createSupabaseServerClient();
@@ -10,6 +14,8 @@ export default async function CoursesPage() {
 
   const courseIds = getAvailableCourseIds();
   const courses = [];
+  const chapterSlugsByCourse: Record<string, string[]> = {};
+
   for (const id of courseIds) {
     const config = await getCourse(id);
     const chapters = config.getChapters();
@@ -20,6 +26,8 @@ export default async function CoursesPage() {
       levels.length > 0
         ? `${levels[0]}–${levels[levels.length - 1]}`
         : "A1–C1";
+
+    chapterSlugsByCourse[id] = chapters.map((c) => c.slug);
 
     courses.push({
       id: config.id,
@@ -40,14 +48,26 @@ export default async function CoursesPage() {
   if (user) {
     const { data: progressRows } = await supabase
       .from("learning_progress")
-      .select("course_id, status")
+      .select("course_id, chapter_slug, status")
       .eq("user_id", user.id)
       .eq("status", "completed");
 
-    const progressMap: Record<string, number> = {};
+    const completedByCourse: Record<string, Set<string>> = {};
+    for (const id of courseIds) completedByCourse[id] = new Set();
+
     for (const row of progressRows ?? []) {
-      const cid = (row as { course_id: string }).course_id;
-      progressMap[cid] = (progressMap[cid] ?? 0) + 1;
+      const slug = (row as { chapter_slug?: string }).chapter_slug;
+      if (!slug) continue;
+      const storedCourse = (row as { course_id?: string | null }).course_id;
+      const courseId =
+        storedCourse && chapterSlugsByCourse[storedCourse]?.includes(slug)
+          ? storedCourse
+          : inferCourseIdFromChapterSlug(slug);
+
+      // Only count if the chapter belongs to that course's curriculum.
+      if (chapterSlugsByCourse[courseId]?.includes(slug)) {
+        completedByCourse[courseId]?.add(slug);
+      }
     }
 
     const { data: profile } = await supabase
@@ -59,7 +79,10 @@ export default async function CoursesPage() {
     const activeCourseId = (profile?.active_course_id as string) ?? "spanish";
 
     courses.forEach((c) => {
-      c.completedChapters = progressMap[c.id] ?? 0;
+      c.completedChapters = countCompletedForCourse(
+        completedByCourse[c.id] ?? [],
+        chapterSlugsByCourse[c.id] ?? [],
+      );
       c.isActive = c.id === activeCourseId;
     });
   }
