@@ -85,9 +85,9 @@ export function ProgressClient({
   }));
 
   // By type
-  const byType = EXERCISE_TYPES.map((t, i) => ({
-    name: t.label,
-    value: history.filter((h) => h.exercise_type === t.value).length,
+  const byType = EXERCISE_TYPES.map((exType, i) => ({
+    name: tr(exType.labelKey),
+    value: history.filter((h) => h.exercise_type === exType.value).length,
     color: TYPE_COLORS[i],
   })).filter((t) => t.value > 0);
 

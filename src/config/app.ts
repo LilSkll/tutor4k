@@ -45,38 +45,38 @@ export const INTERFACE_LANGUAGES: {
 
 export const EXERCISE_TYPES: {
   value: ExerciseType;
-  label: string;
-  description: string;
+  labelKey: string;
+  descriptionKey: string;
   icon: string;
 }[] = [
   {
     value: "multiple_choice",
-    label: "Выбор ответа",
-    description: "Выбери правильный вариант",
+    labelKey: "exercises.type.multiple_choice.label",
+    descriptionKey: "exercises.type.multiple_choice.desc",
     icon: "☑️",
   },
   {
     value: "fill_blank",
-    label: "Заполни пропуск",
-    description: "Вставь недостающее слово",
+    labelKey: "exercises.type.fill_blank.label",
+    descriptionKey: "exercises.type.fill_blank.desc",
     icon: "✏️",
   },
   {
     value: "translation",
-    label: "Перевод",
-    description: "Переведи с русского на испанский",
+    labelKey: "exercises.type.translation.label",
+    descriptionKey: "exercises.type.translation.desc",
     icon: "🔄",
   },
   {
     value: "error_correction",
-    label: "Исправь ошибку",
-    description: "Найди и исправь ошибку",
+    labelKey: "exercises.type.error_correction.label",
+    descriptionKey: "exercises.type.error_correction.desc",
     icon: "🔍",
   },
   {
     value: "sentence_building",
-    label: "Составь предложение",
-    description: "Собери предложение из слов",
+    labelKey: "exercises.type.sentence_building.label",
+    descriptionKey: "exercises.type.sentence_building.desc",
     icon: "🧩",
   },
 ];

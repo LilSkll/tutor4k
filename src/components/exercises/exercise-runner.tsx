@@ -17,6 +17,7 @@ import { Separator } from "@/components/ui/separator";
 import { useExerciseSessionStore } from "@/stores";
 import { useUIStore } from "@/stores";
 import { translate } from "@/lib/i18n";
+import { getCourseTitle } from "@/config/courses";
 import { EXERCISE_TYPES, LEVELS } from "@/config/app";
 import { cn } from "@/lib/utils";
 import type { ExerciseType, Level } from "@/types";
@@ -57,7 +58,10 @@ export function ExerciseRunner({
   const score = useExerciseSessionStore((s) => s.currentScore);
   const attempted = useExerciseSessionStore((s) => s.totalAttempted);
   const language = useUIStore((s) => s.interfaceLanguage);
-  const t = (key: string) => translate(key, language);
+  const activeCourseId = useUIStore((s) => s.activeCourseId);
+  const targetLanguage = getCourseTitle(activeCourseId);
+  const t = (key: string, vars?: Record<string, string | number>) =>
+    translate(key, language, vars);
 
   const generate = async () => {
     setPhase("loading");
@@ -165,9 +169,9 @@ export function ExerciseRunner({
                 >
                   <span className="text-xl">{exType.icon}</span>
                   <div>
-                    <p className="text-sm font-medium">{exType.label}</p>
+                    <p className="text-sm font-medium">{t(exType.labelKey)}</p>
                     <p className="text-xs text-muted-foreground">
-                      {exType.description}
+                      {t(exType.descriptionKey, { targetLanguage })}
                     </p>
                   </div>
                 </button>
@@ -258,7 +262,7 @@ function ExerciseCard({
   selectedOption: string | null;
   setSelectedOption: (v: string) => void;
   onCheck: () => void;
-  t: (key: string) => string;
+  t: (key: string, vars?: Record<string, string | number>) => string;
 }) {
   const isSentenceBuilding = exercise.type === "sentence_building";
   const isMultipleChoice = exercise.type === "multiple_choice";
@@ -303,7 +307,7 @@ function ExerciseCard({
         {exercise.instruction && (
           <div className="rounded-lg bg-primary/10 border border-primary/20 px-4 py-2.5">
             <p className="text-sm text-foreground">
-              <span className="font-semibold text-primary">📋 Задание: </span>
+              <span className="font-semibold text-primary">{t("exercises.taskLabel")} </span>
               {exercise.instruction}
             </p>
           </div>
@@ -319,7 +323,7 @@ function ExerciseCard({
             <div className="min-h-[60px] rounded-lg border-2 border-dashed border-primary/30 bg-primary/5 p-3 flex flex-wrap gap-2 items-center">
               {wordOrder.length === 0 ? (
                 <span className="text-sm text-muted-foreground italic">
-                  Нажимай на слова ниже, чтобы собрать предложение
+                  {t("exercises.sentenceBuildingHint")}
                 </span>
               ) : (
                 wordOrder.map((optIdx, pos) => (
@@ -360,11 +364,14 @@ function ExerciseCard({
                 disabled={wordOrder.length === 0}
                 className="text-xs text-muted-foreground hover:text-foreground disabled:opacity-40"
               >
-                ← Убрать последнее
+                {t("exercises.removeLastWord")}
               </button>
               {wordOrder.length > 0 && (
                 <span className="text-xs text-muted-foreground">
-                  Собрано слов: {wordOrder.length}/{options.length}
+                  {t("exercises.wordsPlaced", {
+                    count: wordOrder.length,
+                    total: options.length,
+                  })}
                 </span>
               )}
             </div>
@@ -433,7 +440,7 @@ function ResultCard({
   userAnswer: string;
   result: { correct: boolean; feedback: string };
   onNext: () => void;
-  t: (key: string) => string;
+  t: (key: string, vars?: Record<string, string | number>) => string;
 }) {
   return (
     <Card className="animate-fade-in">
