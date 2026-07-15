@@ -1,0 +1,128 @@
+import type { VocabTopic } from "@/types";
+
+// =====================================================================
+// English Course — Vocabulary Topics
+// =====================================================================
+
+export const ENGLISH_VOCAB: VocabTopic[] = [
+  {
+    slug: "eng-a1-personal-info",
+    level: "A1", topic: "Личная информация", topicEs: "Información Personal", icon: "👤",
+    words: [
+      { word: "name", translation: "имя", example: "What is your name?" },
+      { word: "surname", translation: "фамилия", example: "My surname is Smith." },
+      { word: "age", translation: "возраст", example: "What is your age?" },
+      { word: "job", translation: "работа", example: "My job is teacher." },
+      { word: "student", translation: "студент", example: "I am a student." },
+      { word: "from", translation: "из (откуда)", example: "I am from Russia." },
+      { word: "live", translation: "жить", example: "I live in London." },
+      { word: "phone number", translation: "номер телефона", example: "My phone number is..." },
+      { word: "email", translation: "эл. почта", example: "What is your email?" },
+      { word: "address", translation: "адрес", example: "My address is 10 Main Street." },
+    ],
+  },
+  {
+    slug: "eng-a1-everyday-objects",
+    level: "A1", topic: "Повседневные вещи", topicEs: "Objetos Cotidianos", icon: "🎒",
+    words: [
+      { word: "book", translation: "книга", example: "This is a good book." },
+      { word: "pen", translation: "ручка", example: "Can I borrow a pen?" },
+      { word: "chair", translation: "стул", example: "Sit on the chair." },
+      { word: "table", translation: "стол", example: "The book is on the table." },
+      { word: "bag", translation: "сумка", example: "My bag is heavy." },
+      { word: "phone", translation: "телефон", example: "Where is my phone?" },
+      { word: "key", translation: "ключ", example: "I lost my keys." },
+      { word: "umbrella", translation: "зонт", example: "Take an umbrella." },
+      { word: "computer", translation: "компьютер", example: "I use a computer at work." },
+      { word: "watch", translation: "часы", example: "My watch is broken." },
+    ],
+  },
+  {
+    slug: "eng-a1-places-town",
+    level: "A1", topic: "Места в городе", topicEs: "Lugares de la Ciudad", icon: "🏙️",
+    words: [
+      { word: "bank", translation: "банк", example: "Is there a bank near here?" },
+      { word: "school", translation: "школа", example: "The school is next to the park." },
+      { word: "hospital", translation: "больница", example: "Go to the hospital." },
+      { word: "shop", translation: "магазин", example: "The shop opens at 9." },
+      { word: "restaurant", translation: "ресторан", example: "We went to a restaurant." },
+      { word: "park", translation: "парк", example: "The park is beautiful." },
+      { word: "station", translation: "станция", example: "Where is the station?" },
+      { word: "library", translation: "библиотека", example: "I study at the library." },
+      { word: "street", translation: "улица", example: "Walk down this street." },
+      { word: "cinema", translation: "кино", example: "Let's go to the cinema." },
+    ],
+  },
+  {
+    slug: "eng-a2-travel",
+    level: "A2", topic: "Путешествия", topicEs: "Viajes", icon: "✈️",
+    words: [
+      { word: "airport", translation: "аэропорт", example: "We arrived at the airport." },
+      { word: "ticket", translation: "билет", example: "I bought a ticket." },
+      { word: "passport", translation: "паспорт", example: "Show your passport." },
+      { word: "luggage", translation: "багаж", example: "My luggage is lost." },
+      { word: "hotel", translation: "отель", example: "We stayed at a hotel." },
+      { word: "journey", translation: "поездка", example: "It was a long journey." },
+      { word: "map", translation: "карта", example: "Look at the map." },
+      { word: "foreign", translation: "иностранный", example: "I visited a foreign country." },
+      { word: "destination", translation: "направление", example: "What is your destination?" },
+      { word: "depart", translation: "отправляться", example: "The train departs at 5." },
+    ],
+  },
+  {
+    slug: "eng-a2-shopping",
+    level: "A2", topic: "Покупки", topicEs: "Compras", icon: "🛒",
+    words: [
+      { word: "price", translation: "цена", example: "What is the price?" },
+      { word: "expensive", translation: "дорогой", example: "This is too expensive." },
+      { word: "cheap", translation: "дешёвый", example: "It's very cheap." },
+      { word: "pay", translation: "платить", example: "I paid by card." },
+      { word: "receipt", translation: "чек", example: "Keep the receipt." },
+      { word: "size", translation: "размер", example: "What size do you need?" },
+      { word: "try on", translation: "примерять", example: "Can I try it on?" },
+      { word: "sale", translation: "распродажа", example: "There's a sale today." },
+    ],
+  },
+  {
+    slug: "eng-a2-technology",
+    level: "A2", topic: "Технологии", topicEs: "Tecnología", icon: "📱",
+    words: [
+      { word: "internet", translation: "интернет", example: "I use the internet every day." },
+      { word: "website", translation: "сайт", example: "Visit our website." },
+      { word: "download", translation: "скачивать", example: "Download the app." },
+      { word: "device", translation: "устройство", example: "This is a useful device." },
+      { word: "screen", translation: "экран", example: "The screen is broken." },
+      { word: "password", translation: "пароль", example: "Enter your password." },
+      { word: "message", translation: "сообщение", example: "I got a message." },
+      { word: "battery", translation: "батарея", example: "The battery is low." },
+    ],
+  },
+  {
+    slug: "eng-b1-personality",
+    level: "B1", topic: "Характер", topicEs: "Personalidad", icon: "💭",
+    words: [
+      { word: "reliable", translation: "надёжный", example: "She is very reliable." },
+      { word: "generous", translation: "щедрый", example: "He is generous with his time." },
+      { word: "confident", translation: "уверенный", example: "Be confident in yourself." },
+      { word: "shy", translation: "застенчивый", example: "He was shy as a child." },
+      { word: "ambitious", translation: "амбициозный", example: "She is very ambitious." },
+      { word: "honest", translation: "честный", example: "Tell me the honest truth." },
+      { word: "stubborn", translation: "упрямый", example: "He is too stubborn." },
+      { word: "patient", translation: "терпеливый", example: "Be patient with children." },
+    ],
+  },
+  {
+    slug: "eng-b1-feelings",
+    level: "B1", topic: "Чувства", topicEs: "Sentimientos", icon: "😊",
+    words: [
+      { word: "excited", translation: "взволнованный", example: "I'm excited about the trip." },
+      { word: "anxious", translation: "тревожный", example: "She felt anxious before the exam." },
+      { word: "relieved", translation: "облегчённый", example: "He was relieved to hear the news." },
+      { word: "disappointed", translation: "разочарованный", example: "I was disappointed with the result." },
+      { word: "grateful", translation: "благодарный", example: "I'm grateful for your help." },
+      { word: "confused", translation: "смущённый", example: "She was confused by the question." },
+      { word: "proud", translation: "гордый", example: "I'm proud of you." },
+      { word: "lonely", translation: "одинокий", example: "He felt lonely after moving." },
+    ],
+  },
+];

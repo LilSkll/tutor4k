@@ -1,13 +1,14 @@
 import type { CourseConfig, InterfaceLanguage, Level } from "@/types";
 
 // =====================================================================
-// English Course Configuration (STUB)
-// ---------------------------------------------------------------------
-// Placeholder — ready for content. Fill in chapters, grammar, vocabulary,
-// exercises, and a course-specific prompt to activate.
+// English Course Configuration — FULLY POPULATED
 // =====================================================================
 
 export async function loadEnglishCourse(): Promise<CourseConfig> {
+  const { ENGLISH_CHAPTERS, getEngChapter, getEngNextChapter } = await import("./chapters");
+  const { ENGLISH_GRAMMAR, getEngGrammarTopic } = await import("./grammar");
+  const { ENGLISH_VOCAB } = await import("./vocabulary");
+  const { ENGLISH_EXERCISES } = await import("./exercises");
   const { buildUniversalPrompt } = await import("@/server/ai/prompts/universal");
 
   return {
@@ -18,57 +19,68 @@ export async function loadEnglishCourse(): Promise<CourseConfig> {
     flag: "🇬🇧",
     description: "Learn English with AI tutor",
     promptId: "english",
-    textbookNames: "",
+    textbookNames: "Life (National Geographic)",
     examName: "IELTS",
 
     storyWorld: {
       theme: "Journey through the English-speaking world",
-      locations: ["London", "Oxford", "Cambridge", "New York", "Sydney"],
+      locations: [
+        "London", "Oxford", "Cambridge", "York", "Edinburgh",
+        "Manchester", "Dublin", "Cardiff", "Liverpool",
+        "New York", "Boston", "San Francisco", "Chicago",
+        "Toronto", "Sydney", "IELTS Castle",
+      ],
     },
 
     keywords: {
       onTopic: [
         "english", "english grammar", "english vocabulary",
         "inglés", "английский", "ingilizce",
-        "present perfect", "past simple", "conditional",
-        "phrasal verb", "ielts", "toefl",
+        "present simple", "past simple", "present perfect",
+        "past continuous", "conditional", "passive voice",
+        "reported speech", "phrasal verb", "modal verbs",
+        "ielts", "toefl", "will", "would", "should", "must",
+        "have been", "has been", "comparative", "superlative",
       ],
       offTopic: [
         "испанский", "español", "spanish",
         "немецкий", "deutsch", "german",
+        "борщ", "рецепт", "готовить",
+        "футбол", "политик", "программирован",
       ],
-      greetings: ["hello", "hi", "hey", "привет", "hola"],
+      greetings: ["hello", "hi", "hey", "привет", "hola", "good morning", "good evening"],
     },
 
     levelGuide: {
-      A1: "A1: beginner — present simple, basic vocabulary, short sentences.",
-      A2: "A2: elementary — past simple, continuous, everyday topics.",
-      B1: "B1: intermediate — present perfect, conditionals, discussions.",
-      B2: "B2: upper-intermediate — passive voice, reported speech, nuance.",
-      C1: "C1: advanced — idioms, academic register, fine distinctions.",
+      A1: "A1: beginner — be, present simple, there is/are, can.",
+      A2: "A2: elementary — past simple, comparatives, present perfect.",
+      B1: "B1: intermediate — conditionals, narrative tenses, perfect continuous.",
+      B2: "B2: upper-intermediate — passive, reported speech, relative clauses.",
+      C1: "C1: advanced — inversion, discourse, mixed conditionals, IELTS.",
     },
 
-    // Empty content — ready to be filled.
-    getChapters: () => [],
-    getChapter: () => undefined,
-    getNextChapter: () => undefined,
-    getGrammar: () => [],
-    getGrammarTopic: () => undefined,
-    getVocab: () => [],
-    getExercises: () => [],
+    // Content getters
+    getChapters: () => ENGLISH_CHAPTERS,
+    getChapter: getEngChapter,
+    getNextChapter: getEngNextChapter,
+    getGrammar: () => ENGLISH_GRAMMAR,
+    getGrammarTopic: getEngGrammarTopic,
+    getVocab: () => ENGLISH_VOCAB,
+    getExercises: (slug: string) => ENGLISH_EXERCISES[slug] ?? [],
 
     buildPrompt: (options) =>
       buildUniversalPrompt({
         ...options,
         targetLanguageName: "English",
         targetLanguageCode: "en",
+        textbookNames: "Life (National Geographic)",
         examName: "IELTS",
         levelGuide: {
-          A1: "A1: beginner — present simple, basic vocabulary.",
-          A2: "A2: elementary — past simple, everyday topics.",
-          B1: "B1: intermediate — present perfect, conditionals.",
+          A1: "A1: beginner — be, present simple, there is/are, can.",
+          A2: "A2: elementary — past simple, comparatives, present perfect.",
+          B1: "B1: intermediate — conditionals, narrative tenses.",
           B2: "B2: upper-intermediate — passive, reported speech.",
-          C1: "C1: advanced — idioms, academic register.",
+          C1: "C1: advanced — inversion, discourse, IELTS.",
         },
       }),
   };
