@@ -306,8 +306,9 @@ const ru: Dictionary = {
   "grammar.askTutor": "Спросить репетитора",
   "grammar.aiExplanation": "Объяснение ИИ",
   "grammar.emptyTopics": "Грамматические темы для этого курса пока не добавлены.",
-  "grammar.aiPrompt": "Объясни грамматическую тему «{title}» на {targetLanguage} понятно, с практическими примерами и таблицей, если уместно. Контекст: {summary}.",
+  "grammar.aiPrompt": "Объясни грамматическую тему «{title}» на языке интерфейса пользователя, с практическими примерами и таблицей только на {targetLanguage}. Контекст: {summary}.",
   "grammar.askTutorPrefix": "Объясни: ",
+  "grammar.referenceLocalizedHint": "Полный справочный текст доступен на русском. Нажми «Объяснить с ИИ» — получишь объяснение на выбранном языке интерфейса с примерами на изучаемом языке.",
 
   // Navigation (extended)
   "nav.chapters": "Главы",
@@ -541,8 +542,9 @@ const en: Dictionary = {
   "grammar.askTutor": "Ask the tutor",
   "grammar.aiExplanation": "AI explanation",
   "grammar.emptyTopics": "No grammar topics have been added for this course yet.",
-  "grammar.aiPrompt": "Explain the grammar topic \"{title}\" in {targetLanguage} clearly, with practical examples and a table if applicable. Context: {summary}.",
+  "grammar.aiPrompt": "Explain the grammar topic \"{title}\" clearly in the user's interface language. Use practical examples and tables only in {targetLanguage}. Context: {summary}.",
   "grammar.askTutorPrefix": "Explain: ",
+  "grammar.referenceLocalizedHint": "The full reference article is available in Russian. Click \"Explain with AI\" for a detailed explanation in your interface language with examples in the target language.",
 
   "nav.chapters": "Chapters",
   "nav.courses": "Languages",
@@ -880,8 +882,9 @@ const es: Dictionary = {
   "grammar.askTutor": "Preguntar al tutor",
   "grammar.aiExplanation": "Explicación IA",
   "grammar.emptyTopics": "Aún no hay temas de gramática para este curso.",
-  "grammar.aiPrompt": "Explica el tema gramatical \"{title}\" en {targetLanguage} de forma clara, con ejemplos prácticos y una tabla si aplica. Contexto: {summary}.",
+  "grammar.aiPrompt": "Explica el tema gramatical \"{title}\" claramente en el idioma de interfaz del usuario. Usa ejemplos y tablas solo en {targetLanguage}. Contexto: {summary}.",
   "grammar.askTutorPrefix": "Explícame: ",
+  "grammar.referenceLocalizedHint": "El artículo completo está disponible en ruso. Pulsa «Explicar con IA» para una explicación en tu idioma de interfaz con ejemplos en el idioma que estudias.",
 
   "nav.chapters": "Capítulos",
   "nav.courses": "Idiomas",

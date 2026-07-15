@@ -13,7 +13,13 @@ import {
 } from "@/components/ui/dialog";
 import { Markdown } from "@/components/shared/markdown";
 import { useTransition } from "react";
-import { useUIStore } from "@/stores";
+import { useInterfaceLanguage } from "@/hooks/use-interface-language";
+import {
+  getGrammarCategory,
+  getGrammarContent,
+  getGrammarSummary,
+  getGrammarTopicTitle,
+} from "@/lib/grammar-display";
 import { translate } from "@/lib/i18n";
 import type { GrammarTopic, Level } from "@/types";
 import { cn } from "@/lib/utils";
@@ -37,7 +43,7 @@ export function GrammarExplorer({
 }) {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const language = useUIStore((s) => s.interfaceLanguage);
+  const language = useInterfaceLanguage();
   const t = (key: string, vars?: Record<string, string | number>) =>
     translate(key, language, vars);
 
@@ -109,7 +115,10 @@ export function GrammarExplorer({
       </div>
 
       <div className="grid gap-3 md:grid-cols-2">
-        {filtered.map((topic) => (
+        {filtered.map((topic) => {
+          const title = getGrammarTopicTitle(topic, language);
+          const summary = getGrammarSummary(topic, language);
+          return (
           <button
             key={topic.slug}
             onClick={() =>
@@ -122,12 +131,14 @@ export function GrammarExplorer({
           >
             <div className="flex items-center justify-between mb-1">
               <Badge variant="level">{topic.level}</Badge>
-              <span className="text-[10px] opacity-70">{topic.category}</span>
+              <span className="text-[10px] opacity-70">
+                {getGrammarCategory(topic, language)}
+              </span>
             </div>
-            <h3 className="font-semibold text-foreground">{topic.titleEs}</h3>
-            <p className="text-xs text-muted-foreground mt-1">{topic.summary}</p>
+            <h3 className="font-semibold text-foreground">{title}</h3>
+            <p className="text-xs text-muted-foreground mt-1">{summary}</p>
           </button>
-        ))}
+        );})}
       </div>
 
       <Dialog
@@ -141,21 +152,31 @@ export function GrammarExplorer({
         }}
       >
         <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto">
-          {selectedTopic && (
+          {selectedTopic && (() => {
+            const title = getGrammarTopicTitle(selectedTopic, language);
+            const content = getGrammarContent(selectedTopic, language);
+            return (
             <>
               <DialogHeader>
                 <div className="flex items-center gap-2">
                   <Badge variant="level">{selectedTopic.level}</Badge>
                   <span className="text-xs text-muted-foreground">
-                    {selectedTopic.category}
+                    {getGrammarCategory(selectedTopic, language)}
                   </span>
                 </div>
-                <DialogTitle className="text-xl">
-                  {selectedTopic.titleEs}
-                </DialogTitle>
+                <DialogTitle className="text-xl">{title}</DialogTitle>
+                <p className="text-sm text-muted-foreground">
+                  {getGrammarSummary(selectedTopic, language)}
+                </p>
               </DialogHeader>
 
-              <Markdown content={selectedTopic.content} />
+              {content ? (
+                <Markdown content={content} />
+              ) : (
+                <div className="rounded-lg border border-dashed bg-muted/40 p-4 text-sm text-muted-foreground">
+                  {t("grammar.referenceLocalizedHint")}
+                </div>
+              )}
 
               <div className="flex gap-2 pt-2">
                 <Button
@@ -163,7 +184,7 @@ export function GrammarExplorer({
                   size="sm"
                   disabled={pending}
                   onClick={() =>
-                    explainWithAI(selectedTopic.titleEs, selectedTopic.summary)
+                    explainWithAI(title, getGrammarSummary(selectedTopic, language))
                   }
                 >
                   <Sparkles className="h-4 w-4" />
@@ -172,7 +193,7 @@ export function GrammarExplorer({
                 <Button variant="outline" size="sm" asChild>
                   <a
                     href={`/tutor?q=${encodeURIComponent(
-                      t("grammar.askTutorPrefix") + selectedTopic.titleEs,
+                      t("grammar.askTutorPrefix") + title,
                     )}`}
                   >
                     {t("grammar.askTutor")}
@@ -200,7 +221,7 @@ export function GrammarExplorer({
                 </div>
               )}
             </>
-          )}
+          );})()}
         </DialogContent>
       </Dialog>
     </>
