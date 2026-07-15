@@ -1,8 +1,9 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import { useSearchParams } from "next/navigation";
-import { Send, Sparkles, Trash2, User, Bot } from "lucide-react";
+import { Send, Trash2, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Markdown } from "@/components/shared/markdown";
@@ -44,7 +45,6 @@ export function TutorChat() {
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const textareaRef = React.useRef<HTMLTextAreaElement>(null);
 
-  // Seed an initial question from query string (?q=...).
   React.useEffect(() => {
     const q = searchParams.get("q");
     if (q && messages.length === 0) {
@@ -53,7 +53,6 @@ export function TutorChat() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
-  // Auto-scroll on new messages.
   React.useEffect(() => {
     scrollRef.current?.scrollTo({
       top: scrollRef.current.scrollHeight,
@@ -61,7 +60,6 @@ export function TutorChat() {
     });
   }, [messages, pending]);
 
-  // Auto-resize textarea.
   React.useEffect(() => {
     const ta = textareaRef.current;
     if (!ta) return;
@@ -105,18 +103,18 @@ export function TutorChat() {
       });
       const data = await res.json();
 
-      // Replace placeholder content.
-      setMessages(
-        [...messages, userMsg, { ...placeholder, content: data.content }],
-      );
+      setMessages([
+        ...messages,
+        userMsg,
+        { ...placeholder, content: data.content },
+      ]);
     } catch {
       setMessages([
         ...messages,
         userMsg,
-          {
-            ...placeholder,
-            content:
-              t("tutor.error"),
+        {
+          ...placeholder,
+          content: t("tutor.error"),
         },
       ]);
     } finally {
@@ -133,16 +131,29 @@ export function TutorChat() {
   };
 
   return (
-    <div className="flex flex-col h-[calc(100vh-3.5rem)] md:h-[calc(100vh-7rem)]">
-      {/* Header */}
-      <div className="flex items-center justify-between px-4 md:px-6 py-3 border-b bg-background/80 backdrop-blur">
-        <div className="flex items-center gap-2">
-          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-primary via-orange-500 to-rose-500 text-white">
-            <Bot className="h-4 w-4" />
+    <div className="flex flex-col h-[calc(100dvh-3.5rem-3.75rem-env(safe-area-inset-bottom,0px))] md:h-[calc(100dvh-3.5rem)]">
+      <div className="flex items-center justify-between px-4 md:px-6 py-3 border-b border-border/60 bg-background/80 backdrop-blur-xl">
+        <div className="flex items-center gap-3 min-w-0">
+          <div className="relative shrink-0">
+            <Image
+              src="/hippogriff-icon.png"
+              alt=""
+              width={40}
+              height={40}
+              className="h-10 w-10 rounded-xl shadow-soft"
+            />
+            <span
+              className={cn(
+                "absolute -bottom-0.5 -right-0.5 h-2.5 w-2.5 rounded-full border-2 border-background",
+                pending ? "bg-warning animate-pulse-soft" : "bg-success",
+              )}
+            />
           </div>
-          <div>
-            <h1 className="font-semibold leading-tight">{t("tutor.title")}</h1>
-            <p className="text-[11px] text-muted-foreground">
+          <div className="min-w-0">
+            <h1 className="font-semibold leading-tight truncate">
+              {t("tutor.title")}
+            </h1>
+            <p className="text-[11px] text-muted-foreground truncate">
               {pending
                 ? t("tutor.thinkingStatus")
                 : t("tutor.onlineDynamic", { targetLanguage })}
@@ -154,7 +165,7 @@ export function TutorChat() {
             variant="ghost"
             size="sm"
             onClick={clear}
-            className="text-muted-foreground"
+            className="text-muted-foreground shrink-0"
           >
             <Trash2 className="h-4 w-4" />
             <span className="hidden sm:inline">{t("tutor.clear")}</span>
@@ -162,12 +173,11 @@ export function TutorChat() {
         )}
       </div>
 
-      {/* Messages */}
-      <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 md:px-6 py-4">
+      <div ref={scrollRef} className="flex-1 overflow-y-auto px-3 sm:px-4 md:px-6 py-4">
         {messages.length === 0 ? (
           <EmptyState onPick={send} t={t} targetLanguage={targetLanguage} />
         ) : (
-          <div className="mx-auto max-w-3xl space-y-4">
+          <div className="mx-auto max-w-3xl space-y-5">
             {messages.map((msg) => (
               <MessageBubble key={msg.id} message={msg} pending={pending} />
             ))}
@@ -175,31 +185,31 @@ export function TutorChat() {
         )}
       </div>
 
-      {/* Composer */}
-      <div className="border-t bg-background/80 backdrop-blur px-4 md:px-6 py-3">
+      <div className="border-t border-border/60 bg-background/90 backdrop-blur-xl px-3 sm:px-4 md:px-6 py-3">
         <div className="mx-auto max-w-3xl">
-          <div className="flex items-end gap-2 rounded-2xl border bg-card p-2 shadow-sm focus-within:ring-2 focus-within:ring-ring">
+          <div className="flex items-end gap-2 rounded-2xl border border-border/70 bg-card p-2 shadow-soft focus-within:ring-2 focus-within:ring-ring/60 focus-within:border-primary/30 transition-shadow">
             <Textarea
               ref={textareaRef}
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={onKeyDown}
               placeholder={t("tutor.placeholderDynamic")}
-              className="min-h-[44px] max-h-40 resize-none border-0 bg-transparent focus-visible:ring-0 px-2 py-2"
+              className="min-h-[48px] max-h-40 resize-none border-0 bg-transparent focus-visible:ring-0 px-3 py-3 text-base sm:text-sm"
               rows={1}
               disabled={pending}
             />
             <Button
               variant="gradient"
               size="icon"
-              className="h-10 w-10 shrink-0 rounded-xl"
+              className="h-11 w-11 shrink-0 rounded-xl"
               onClick={() => send(input)}
               disabled={!input.trim() || pending}
+              aria-label={t("common.send")}
             >
               <Send className="h-4 w-4" />
             </Button>
           </div>
-          <p className="mt-1.5 text-center text-[10px] text-muted-foreground">
+          <p className="mt-2 text-center text-[10px] text-muted-foreground">
             {t("tutor.hintSend")}
           </p>
         </div>
@@ -222,32 +232,37 @@ function MessageBubble({
   return (
     <div
       className={cn(
-        "flex gap-3 animate-fade-in",
+        "flex gap-2.5 sm:gap-3 animate-slide-up",
         isUser ? "flex-row-reverse" : "flex-row",
       )}
     >
+      {isUser ? (
+        <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-secondary text-secondary-foreground">
+          <User className="h-4 w-4" />
+        </div>
+      ) : (
+        <Image
+          src="/hippogriff-icon.png"
+          alt=""
+          width={36}
+          height={36}
+          className="h-9 w-9 shrink-0 rounded-xl shadow-soft"
+        />
+      )}
       <div
         className={cn(
-          "flex h-8 w-8 shrink-0 items-center justify-center rounded-full",
+          "rounded-2xl px-4 py-3 max-w-[88%] sm:max-w-[85%] shadow-soft",
           isUser
-            ? "bg-secondary text-secondary-foreground"
-            : "bg-gradient-to-br from-primary via-orange-500 to-rose-500 text-white",
-        )}
-      >
-        {isUser ? <User className="h-4 w-4" /> : <Bot className="h-4 w-4" />}
-      </div>
-      <div
-        className={cn(
-          "rounded-2xl px-4 py-2.5 max-w-[85%]",
-          isUser
-            ? "bg-primary text-primary-foreground rounded-tr-sm"
-            : "bg-card border rounded-tl-sm",
+            ? "bg-gradient-to-br from-primary via-orange-500 to-rose-500 text-white rounded-tr-md"
+            : "bg-card rounded-tl-md",
         )}
       >
         {isPendingAssistant ? (
           <TypingDots />
         ) : isUser ? (
-          <p className="text-sm whitespace-pre-wrap">{message.content}</p>
+          <p className="text-sm whitespace-pre-wrap leading-relaxed">
+            {message.content}
+          </p>
         ) : (
           <Markdown content={message.content} />
         )}
@@ -258,11 +273,11 @@ function MessageBubble({
 
 function TypingDots() {
   return (
-    <div className="flex items-center gap-1 py-1">
+    <div className="flex items-center gap-1.5 py-1.5 px-0.5" aria-label="Typing">
       {[0, 1, 2].map((i) => (
         <span
           key={i}
-          className="h-2 w-2 rounded-full bg-muted-foreground/60 animate-bounce"
+          className="h-2 w-2 rounded-full bg-muted-foreground/50 animate-bounce"
           style={{ animationDelay: `${i * 0.15}s` }}
         />
       ))}
@@ -284,24 +299,33 @@ function EmptyState({
   );
 
   return (
-    <div className="h-full flex flex-col items-center justify-center text-center py-12">
-      <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-br from-primary via-orange-500 to-rose-500 text-white">
-        <Sparkles className="h-7 w-7" />
+    <div className="h-full flex flex-col items-center justify-center text-center py-8 px-2 animate-fade-in">
+      <div className="relative mb-5">
+        <div className="absolute inset-0 rounded-full bg-primary/15 blur-2xl" />
+        <Image
+          src="/hippogriff-icon.png"
+          alt=""
+          width={80}
+          height={80}
+          className="relative h-20 w-20 rounded-2xl shadow-elevated"
+        />
       </div>
-      <h2 className="text-xl font-semibold mb-1">
+      <h2 className="text-xl font-semibold mb-1.5 tracking-tight">
         {t("tutor.emptyTitleDynamic", { targetLanguage })}
       </h2>
-      <p className="text-sm text-muted-foreground max-w-md mb-6">
+      <p className="text-sm text-muted-foreground max-w-md mb-7 leading-relaxed">
         {t("tutor.emptySubtitleDynamic")}
       </p>
       <div className="grid gap-2 w-full max-w-md">
         {suggestions.map((s) => (
           <button
             key={s}
+            type="button"
             onClick={() => onPick(s)}
-            className="text-left rounded-lg border bg-card px-4 py-2.5 text-sm hover:border-primary/50 hover:bg-accent transition-colors"
+            className="text-left rounded-2xl bg-card shadow-soft px-4 py-3.5 text-sm hover:shadow-elevated hover:-translate-y-0.5 active:scale-[0.99] transition-all"
           >
-            💬 {s}
+            <span className="text-muted-foreground mr-2">✦</span>
+            {s}
           </button>
         ))}
       </div>

@@ -8,11 +8,19 @@ export default async function CoursesPage() {
     data: { user },
   } = await supabase.auth.getUser();
 
-  // Get all courses from registry.
   const courseIds = getAvailableCourseIds();
   const courses = [];
   for (const id of courseIds) {
     const config = await getCourse(id);
+    const chapters = config.getChapters();
+    const grammar = config.getGrammar();
+    const vocab = config.getVocab();
+    const levels = [...new Set(chapters.map((c) => c.level))];
+    const difficulty =
+      levels.length > 0
+        ? `${levels[0]}–${levels[levels.length - 1]}`
+        : "A1–C1";
+
     courses.push({
       id: config.id,
       languageCode: config.languageCode,
@@ -21,11 +29,14 @@ export default async function CoursesPage() {
       flag: config.flag,
       description: config.description,
       completedChapters: 0,
+      totalChapters: chapters.length,
+      grammarCount: grammar.length,
+      vocabCount: vocab.reduce((sum, topic) => sum + topic.words.length, 0),
+      difficulty,
       isActive: false,
     });
   }
 
-  // Get user's progress per course.
   if (user) {
     const { data: progressRows } = await supabase
       .from("learning_progress")
@@ -56,7 +67,7 @@ export default async function CoursesPage() {
   const activeCourseId = courses.find((c) => c.isActive)?.id ?? "spanish";
 
   return (
-    <div className="container max-w-4xl py-6 md:py-8">
+    <div className="page-container max-w-4xl">
       <LanguageSelector courses={courses} activeCourseId={activeCourseId} />
     </div>
   );

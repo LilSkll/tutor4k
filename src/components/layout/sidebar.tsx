@@ -1,36 +1,14 @@
 "use client";
 
-import { useUIStore } from "@/stores";
-import { translate } from "@/lib/i18n";
-import {
-  BookOpen,
-  BookPlus,
-  Dumbbell,
-  Globe,
-  Languages,
-  LayoutDashboard,
-  LogOut,
-  MessageSquare,
-  Settings,
-  TrendingUp,
-  Flame,
-  type LucideIcon,
-} from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Flame, LogOut } from "lucide-react";
+import { useUIStore } from "@/stores";
+import { translate } from "@/lib/i18n";
+import { NAV_SECTIONS, isNavActive } from "@/lib/nav";
 import { signOut } from "@/server/actions/auth";
 import { cn } from "@/lib/utils";
-
-const ICONS: Record<string, LucideIcon> = {
-  LayoutDashboard,
-  MessageSquare,
-  BookOpen,
-  Dumbbell,
-  Languages,
-  BookPlus,
-  Globe,
-  TrendingUp,
-};
 
 interface NavProps {
   userName?: string;
@@ -45,142 +23,129 @@ export function Sidebar({ userName, level, streak }: NavProps) {
   const t = (key: string, vars?: Record<string, string | number>) =>
     translate(key, language, vars);
 
-  const primaryNav = [
-    { href: "/dashboard", label: t("nav.home"), icon: "LayoutDashboard" },
-    { href: "/chapters", label: t("nav.chapters"), icon: "BookOpen" },
-    { href: "/courses", label: t("nav.courses"), icon: "Globe" },
-    { href: "/tutor", label: t("nav.tutorShort"), icon: "MessageSquare" },
-  ];
-
-  const secondaryNav = [
-    { href: "/grammar", label: t("nav.grammar"), icon: "BookOpen" },
-    { href: "/exercises", label: t("nav.exercises"), icon: "Dumbbell" },
-    { href: "/vocabulary", label: t("nav.vocabulary"), icon: "Languages" },
-    { href: "/vocabulary-topics", label: t("nav.lexicon"), icon: "BookPlus" },
-    { href: "/progress", label: t("nav.progress"), icon: "TrendingUp" },
-  ];
-
   return (
     <aside
       className={cn(
-        "hidden md:flex flex-col border-r bg-card/50 backdrop-blur-sm transition-all duration-300",
-        collapsed ? "w-[72px]" : "w-64",
+        "hidden md:flex flex-col border-r border-border/60 bg-card/80 backdrop-blur-xl transition-[width] duration-300",
+        collapsed ? "w-[76px]" : "w-[260px]",
       )}
     >
-      {/* Brand */}
-      <div className="flex h-16 items-center gap-2 px-4 border-b">
-        <img
+      <div
+        className={cn(
+          "flex h-16 items-center gap-3 border-b border-border/60",
+          collapsed ? "justify-center px-2" : "px-5",
+        )}
+      >
+        <Image
           src="/hippogriff-icon.png"
           alt="Spanish with Pavel"
-          className="h-10 w-10 shrink-0 rounded-lg"
+          width={40}
+          height={40}
+          className="h-10 w-10 shrink-0 rounded-xl shadow-soft"
         />
         {!collapsed && (
-          <div className="flex flex-col">
-            <span className="font-bold text-sm leading-tight gradient-text">
+          <div className="min-w-0">
+            <p className="font-bold text-sm leading-tight gradient-text truncate">
               Spanish with Pavel
-            </span>
-            <span className="text-[10px] text-muted-foreground">AI-Powered</span>
+            </p>
+            <p className="text-[11px] text-muted-foreground">
+              {t("nav.brandTagline")}
+            </p>
           </div>
         )}
       </div>
 
-      {/* Primary Navigation */}
-      <nav className="flex-1 space-y-2 p-3">
-        {primaryNav.map((item) => {
-          const Icon = ICONS[item.icon];
-          const active =
-            pathname === item.href || pathname.startsWith(item.href + "/");
-          return (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={cn(
-                "flex items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium transition-colors",
-                active
-                  ? "bg-primary/10 text-primary"
-                  : "text-muted-foreground hover:bg-accent hover:text-foreground",
-                collapsed && "justify-center px-2",
-              )}
-              title={collapsed ? item.label : undefined}
-            >
-              <Icon className="h-4 w-4 shrink-0" />
-              {!collapsed && <span>{item.label}</span>}
-            </Link>
-          );
-        })}
-
-        {/* Divider + secondary nav */}
-        {!collapsed && (
-          <div className="pt-4 mt-4 border-t space-y-2">
-            <p className="text-[10px] font-semibold text-muted-foreground/60 uppercase tracking-wider px-3">
-              {t("nav.tools")}
-            </p>
-            {secondaryNav.map((item) => {
-              const Icon = ICONS[item.icon];
-              const active =
-                pathname === item.href || pathname.startsWith(item.href + "/");
-              return (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={cn(
-                    "flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-accent hover:text-foreground transition-colors",
-                  )}
-                  title={collapsed ? item.label : undefined}
-                >
-                  <Icon className="h-4 w-4 shrink-0" />
-                  <span>{item.label}</span>
-                </Link>
-              );
-            })}
+      <nav className="flex-1 overflow-y-auto px-3 py-4 space-y-5">
+        {NAV_SECTIONS.map((section) => (
+          <div key={section.id}>
+            {!collapsed && (
+              <p className="meta-label px-3 mb-2">{t(section.labelKey)}</p>
+            )}
+            <div className="space-y-1">
+              {section.items.map((item) => {
+                const Icon = item.icon;
+                const active = isNavActive(pathname, item.href);
+                const label = t(item.labelKey);
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    title={collapsed ? label : undefined}
+                    className={cn(
+                      "nav-item",
+                      active ? "nav-item-active" : "nav-item-idle",
+                      collapsed && "justify-center px-0",
+                    )}
+                  >
+                    <Icon
+                      className={cn(
+                        "h-[18px] w-[18px] shrink-0",
+                        active && "text-primary",
+                      )}
+                    />
+                    {!collapsed && <span className="truncate">{label}</span>}
+                  </Link>
+                );
+              })}
+            </div>
           </div>
-        )}
+        ))}
       </nav>
 
-      {/* User card + logout */}
-      {!collapsed && (
-        <div className="border-t p-3 space-y-1">
+      <div className="border-t border-border/60 p-3 space-y-1">
+        {!collapsed ? (
+          <>
+            <Link
+              href="/settings"
+              className="flex items-center gap-3 rounded-xl p-2.5 hover:bg-accent transition-colors"
+            >
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary via-orange-500 to-rose-500 text-white text-sm font-bold shadow-brand">
+                {(userName?.[0] ?? "?").toUpperCase()}
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-sm font-semibold truncate">
+                  {userName ?? "—"}
+                </p>
+                <div className="flex items-center gap-2 text-[11px] text-muted-foreground">
+                  {level && (
+                    <span className="rounded-md bg-primary/10 px-1.5 py-0.5 text-primary font-semibold">
+                      {level}
+                    </span>
+                  )}
+                  {(streak ?? 0) > 0 && (
+                    <span className="flex items-center gap-0.5 font-medium">
+                      <Flame className="h-3 w-3 text-orange-500" />
+                      {streak}
+                    </span>
+                  )}
+                </div>
+              </div>
+            </Link>
+            <form action={() => signOut()}>
+              <button
+                type="submit"
+                className="nav-item nav-item-idle w-full hover:bg-destructive/10 hover:text-destructive"
+              >
+                <LogOut className="h-[18px] w-[18px] shrink-0" />
+                <span>{t("nav.logout")}</span>
+              </button>
+            </form>
+            <p className="px-3 pt-1 text-[10px] text-muted-foreground/70">
+              {t("dashboard.developer")}
+            </p>
+          </>
+        ) : (
           <Link
             href="/settings"
-            className="flex items-center gap-3 rounded-lg p-2 hover:bg-accent transition-colors"
+            className="flex justify-center rounded-xl p-2 hover:bg-accent transition-colors"
+            title={userName}
           >
-            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary font-semibold">
+            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-primary via-orange-500 to-rose-500 text-white text-xs font-bold">
               {(userName?.[0] ?? "?").toUpperCase()}
             </div>
-            <div className="flex-1 min-w-0">
-              <p className="text-sm font-medium truncate">
-                {userName ?? "—"}
-              </p>
-              <div className="flex items-center gap-2 text-[11px] text-muted-foreground">
-                {level && (
-                  <span className="rounded bg-primary/10 px-1.5 py-0.5 text-primary font-semibold">
-                    {level}
-                  </span>
-                )}
-                {streak !== undefined && streak > 0 && (
-                  <span className="flex items-center gap-0.5">
-                    <Flame className="h-3 w-3 text-orange-500" />
-                    {streak}
-                  </span>
-                )}
-              </div>
-            </div>
-            <Settings className="h-4 w-4 text-muted-foreground" />
           </Link>
-          <form action={() => signOut()}>
-            <button
-              type="submit"
-              className="w-full flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground hover:bg-destructive/10 hover:text-destructive transition-colors"
-            >
-              <LogOut className="h-4 w-4 shrink-0" />
-              <span>{t("nav.logout")}</span>
-            </button>
-          </form>
-          <p className="px-3 pt-1 text-[10px] text-muted-foreground/70">
-            {t("dashboard.developer")}
-          </p>
-        </div>
-      )}
+        )}
+      </div>
     </aside>
   );
 }
