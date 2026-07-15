@@ -17,9 +17,11 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Markdown } from "@/components/shared/markdown";
-import { useUIStore } from "@/stores";
+import { useLocalizedGrammarArticle } from "@/hooks/use-localized-grammar-article";
+import { useInterfaceLanguage } from "@/hooks/use-interface-language";
+import { getGrammarTopicTitle } from "@/lib/grammar-display";
 import { translate } from "@/lib/i18n";
-import type { StaticExercise } from "@/types";
+import type { GrammarTopic, StaticExercise } from "@/types";
 import { cn } from "@/lib/utils";
 import type { Chapter } from "@/types";
 
@@ -27,9 +29,11 @@ type Phase = "intro" | "theory" | "practice" | "dialogue" | "summary";
 
 interface LessonRunnerProps {
   chapter: Chapter;
+  courseId: string;
   userName: string;
-  grammarContent: string;
-  grammarTitle: string;
+  grammarTopicSlug: string;
+  grammarNativeContent: string;
+  grammarTopic?: GrammarTopic | null;
   exercises: StaticExercise[];
   nextChapterSlug: string | null;
   targetLanguage: string;
@@ -37,17 +41,33 @@ interface LessonRunnerProps {
 
 export function LessonRunner({
   chapter,
+  courseId,
   userName,
-  grammarContent,
-  grammarTitle,
+  grammarTopicSlug,
+  grammarNativeContent,
+  grammarTopic,
   exercises: presetExercises,
   nextChapterSlug,
   targetLanguage,
 }: LessonRunnerProps) {
   const router = useRouter();
-  const language = useUIStore((s) => s.interfaceLanguage);
+  const language = useInterfaceLanguage();
   const t = (key: string, vars?: Record<string, string | number>) =>
     translate(key, language, { targetLanguage, ...vars });
+
+  const grammarTitle = grammarTopic
+    ? getGrammarTopicTitle(grammarTopic, language)
+    : chapter.titleEs;
+
+  const {
+    content: grammarContent,
+    loading: grammarLoading,
+    error: grammarError,
+  } = useLocalizedGrammarArticle(
+    grammarTopicSlug,
+    courseId,
+    grammarNativeContent,
+  );
 
   const [phase, setPhase] = React.useState<Phase>("intro");
   const [loading, setLoading] = React.useState(false);
@@ -214,7 +234,16 @@ export function LessonRunner({
               <Badge variant="level">{chapter.level}</Badge>
               <span className="text-sm text-muted-foreground">{grammarTitle}</span>
             </div>
-            <Markdown content={grammarContent} />
+            {grammarLoading ? (
+              <p className="text-sm text-muted-foreground flex items-center gap-2">
+                <Sparkles className="h-4 w-4 animate-pulse text-primary" />
+                {t("grammar.loadingArticle")}
+              </p>
+            ) : grammarError ? (
+              <p className="text-sm text-destructive">{grammarError}</p>
+            ) : grammarContent ? (
+              <Markdown content={grammarContent} />
+            ) : null}
           </CardContent>
         </Card>
         <div className="flex justify-end">

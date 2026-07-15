@@ -1,4 +1,5 @@
 import { getCourse } from "@/config/courses";
+import { getStaticGrammarContent } from "@/config/grammar-content-localizations";
 import { getInterfaceLanguageName } from "@/server/ai/prompts/interface-language";
 import { generateAIResponse } from "@/server/ai/orchestrator";
 import {
@@ -47,7 +48,7 @@ export async function getLocalizedGrammarArticle(input: {
   interfaceLanguage: InterfaceLanguage;
   level?: Level | null;
   refresh?: boolean;
-}): Promise<{ content: string; source: "native" | "cache" | "ai" }> {
+}): Promise<{ content: string; source: "native" | "static" | "cache" | "ai" }> {
   const course = await getCourse(input.courseId);
   const topic = course.getGrammarTopic(input.slug);
 
@@ -57,6 +58,14 @@ export async function getLocalizedGrammarArticle(input: {
 
   if (input.interfaceLanguage === "ru") {
     return { content: topic.content, source: "native" };
+  }
+
+  const staticContent = getStaticGrammarContent(
+    input.slug,
+    input.interfaceLanguage,
+  );
+  if (staticContent) {
+    return { content: staticContent, source: "static" };
   }
 
   const cacheQuery = grammarCacheQuery(

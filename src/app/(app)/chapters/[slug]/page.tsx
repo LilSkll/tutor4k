@@ -27,9 +27,11 @@ export default async function ChapterPage({
   return (
     <LessonRunner
       chapter={chapter}
+      courseId={courseId}
       userName={profile?.name ?? ""}
-      grammarContent={grammarTopic?.content ?? materialPreparing}
-      grammarTitle={grammarTopic?.titleEs ?? chapter.title}
+      grammarTopicSlug={chapter.grammarTopic}
+      grammarNativeContent={grammarTopic?.content ?? materialPreparing}
+      grammarTopic={grammarTopic ?? null}
       exercises={exercises}
       nextChapterSlug={nextChapter?.slug ?? null}
       targetLanguage={course.titleNative}

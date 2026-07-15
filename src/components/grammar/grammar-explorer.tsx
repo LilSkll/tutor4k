@@ -12,6 +12,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Markdown } from "@/components/shared/markdown";
+import { useLocalizedGrammarArticle } from "@/hooks/use-localized-grammar-article";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import {
   getGrammarCategory,
@@ -49,65 +50,26 @@ export function GrammarExplorer({
   const [activeLevel, setActiveLevel] = React.useState<Level | "ALL">(
     initialLevel ?? "ALL",
   );
-  const [articleContent, setArticleContent] = React.useState<string | null>(
-    null,
-  );
-  const [loading, setLoading] = React.useState(false);
-  const [loadError, setLoadError] = React.useState<string | null>(null);
 
   const topicSlug = searchParams.get("topic");
   const selectedTopic = topics.find((topic) => topic.slug === topicSlug);
+
+  const {
+    content: articleContent,
+    loading,
+    error: loadError,
+    isStatic,
+    reload,
+  } = useLocalizedGrammarArticle(
+    selectedTopic?.slug,
+    courseId,
+    selectedTopic?.content,
+  );
 
   const filtered =
     activeLevel === "ALL"
       ? topics
       : topics.filter((topic) => topic.level === activeLevel);
-
-  const loadArticle = React.useCallback(
-    async (topic: GrammarTopic, refresh = false) => {
-      if (usesNativeGrammarContent(language)) {
-        setArticleContent(topic.content);
-        setLoadError(null);
-        setLoading(false);
-        return;
-      }
-
-      setLoading(true);
-      setLoadError(null);
-      if (!refresh) setArticleContent(null);
-
-      try {
-        const params = new URLSearchParams({
-          slug: topic.slug,
-          courseId,
-          interfaceLanguage: language,
-          level: topic.level,
-        });
-        if (refresh) params.set("refresh", "1");
-
-        const res = await fetch(`/api/grammar/content?${params.toString()}`);
-        if (!res.ok) throw new Error("fetch failed");
-        const data = (await res.json()) as { content?: string };
-        setArticleContent(data.content ?? null);
-      } catch {
-        setLoadError(translate("grammar.toastExplainFail", language));
-        setArticleContent(null);
-      } finally {
-        setLoading(false);
-      }
-    },
-    [language, courseId],
-  );
-
-  React.useEffect(() => {
-    if (!selectedTopic) {
-      setArticleContent(null);
-      setLoadError(null);
-      setLoading(false);
-      return;
-    }
-    void loadArticle(selectedTopic);
-  }, [selectedTopic, loadArticle]);
 
   if (topics.length === 0) {
     return (
@@ -206,12 +168,12 @@ export function GrammarExplorer({
                   </div>
 
                   <div className="flex gap-2 pt-2">
-                    {!usesNativeGrammarContent(language) && (
+                    {!usesNativeGrammarContent(language) && !isStatic && (
                       <Button
                         variant="outline"
                         size="sm"
                         disabled={loading}
-                        onClick={() => loadArticle(selectedTopic, true)}
+                        onClick={() => reload()}
                       >
                         <RefreshCw
                           className={cn("h-4 w-4", loading && "animate-spin")}
