@@ -27,7 +27,11 @@ export default async function VocabularyTopicsPage() {
         </p>
       </div>
 
-      <VocabularyTopicsExplorer topics={vocabTopics} />
+      <VocabularyTopicsExplorer
+        topics={vocabTopics}
+        interfaceLanguage={lang}
+        courseId={courseId}
+      />
     </div>
   );
 }

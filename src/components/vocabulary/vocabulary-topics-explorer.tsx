@@ -14,7 +14,12 @@ import {
 } from "@/components/ui/dialog";
 import { useUIStore } from "@/stores";
 import { translate } from "@/lib/i18n";
-import type { VocabTopic, VocabWord } from "@/types";
+import {
+  getVocabTopicSubtitle,
+  getVocabTopicTitle,
+  getWordGloss,
+} from "@/lib/vocab-display";
+import type { InterfaceLanguage, VocabTopic, VocabWord } from "@/types";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 
@@ -34,8 +39,19 @@ function groupTopicsByLevel(topics: VocabTopic[]): Record<string, VocabTopic[]> 
   return grouped;
 }
 
-export function VocabularyTopicsExplorer({ topics }: { topics: VocabTopic[] }) {
-  const language = useUIStore((s) => s.interfaceLanguage);
+export function VocabularyTopicsExplorer({
+  topics,
+  interfaceLanguage: interfaceLanguageFromProfile,
+  courseId: courseIdFromProfile,
+}: {
+  topics: VocabTopic[];
+  interfaceLanguage?: InterfaceLanguage;
+  courseId?: string;
+}) {
+  const storeLanguage = useUIStore((s) => s.interfaceLanguage);
+  const storeCourseId = useUIStore((s) => s.activeCourseId);
+  const language = interfaceLanguageFromProfile ?? storeLanguage;
+  const courseId = courseIdFromProfile ?? storeCourseId;
   const t = (key: string, vars?: Record<string, string | number>) =>
     translate(key, language, vars);
 
@@ -58,16 +74,17 @@ export function VocabularyTopicsExplorer({ topics }: { topics: VocabTopic[] }) {
     const results: { topic: VocabTopic; word: VocabWord }[] = [];
     for (const topic of topics) {
       for (const word of topic.words) {
+        const gloss = getWordGloss(word, language, courseId);
         if (
           word.word.toLowerCase().includes(q) ||
-          word.translation.toLowerCase().includes(q)
+          gloss.toLowerCase().includes(q)
         ) {
           results.push({ topic, word });
         }
       }
     }
     return results.slice(0, 30);
-  }, [search, topics]);
+  }, [search, topics, language, courseId]);
 
   const handleAddWord = async (word: VocabWord, level: string) => {
     const key = `${word.word}-${level}`;
@@ -79,7 +96,7 @@ export function VocabularyTopicsExplorer({ topics }: { topics: VocabTopic[] }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           word: word.word,
-          translation: word.translation,
+          translation: getWordGloss(word, language, courseId),
           example: word.example,
           level,
         }),
@@ -129,7 +146,7 @@ export function VocabularyTopicsExplorer({ topics }: { topics: VocabTopic[] }) {
                   <span className="font-medium">{word.word}</span>
                   <Badge variant="level" className="shrink-0">{topic.level}</Badge>
                 </div>
-                <p className="text-sm text-muted-foreground">{word.translation}</p>
+                <p className="text-sm text-muted-foreground">{getWordGloss(word, language, courseId)}</p>
                 <p className="text-xs italic text-muted-foreground mt-0.5">{word.example}</p>
               </div>
               <Button
@@ -167,7 +184,10 @@ export function VocabularyTopicsExplorer({ topics }: { topics: VocabTopic[] }) {
           </div>
 
           <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
-            {filtered.map((topic) => (
+            {filtered.map((topic) => {
+              const title = getVocabTopicTitle(topic, language);
+              const subtitle = getVocabTopicSubtitle(topic, language, courseId);
+              return (
               <Card
                 key={topic.slug}
                 className={cn(
@@ -181,16 +201,18 @@ export function VocabularyTopicsExplorer({ topics }: { topics: VocabTopic[] }) {
                     <span className="text-3xl">{topic.icon}</span>
                     <Badge variant="level">{topic.level}</Badge>
                   </div>
-                  <h3 className="font-semibold text-foreground">{topic.topic}</h3>
-                  <p className="text-xs text-muted-foreground italic mb-2">
-                    {topic.topicEs}
-                  </p>
+                  <h3 className="font-semibold text-foreground">{title}</h3>
+                  {subtitle && (
+                    <p className="text-xs text-muted-foreground italic mb-2">
+                      {subtitle}
+                    </p>
+                  )}
                   <p className="text-xs text-muted-foreground">
                     {t("vocabTopics.wordCount", { count: topic.words.length })}
                   </p>
                 </CardContent>
               </Card>
-            ))}
+            );})}
           </div>
         </>
       )}
@@ -203,6 +225,8 @@ export function VocabularyTopicsExplorer({ topics }: { topics: VocabTopic[] }) {
           {(() => {
             const topic = topics.find((item) => item.slug === openTopic);
             if (!topic) return null;
+            const title = getVocabTopicTitle(topic, language);
+            const subtitle = getVocabTopicSubtitle(topic, language, courseId);
             return (
               <>
                 <DialogHeader>
@@ -210,11 +234,13 @@ export function VocabularyTopicsExplorer({ topics }: { topics: VocabTopic[] }) {
                     <span className="text-3xl">{topic.icon}</span>
                     <div>
                       <DialogTitle className="text-xl">
-                        {topic.topic}
+                        {title}
                       </DialogTitle>
-                      <p className="text-sm text-muted-foreground italic">
-                        {topic.topicEs}
-                      </p>
+                      {subtitle && (
+                        <p className="text-sm text-muted-foreground italic">
+                          {subtitle}
+                        </p>
+                      )}
                     </div>
                     <Badge variant="level" className="ml-auto">{topic.level}</Badge>
                   </div>
@@ -241,7 +267,7 @@ export function VocabularyTopicsExplorer({ topics }: { topics: VocabTopic[] }) {
                             <Badge variant="level" className="text-[10px]">{word.level}</Badge>
                           )}
                         </div>
-                        <p className="text-sm text-muted-foreground mt-0.5">{word.translation}</p>
+                        <p className="text-sm text-muted-foreground mt-0.5">{getWordGloss(word, language, courseId)}</p>
                         {(word.examples ?? [word.example]).map((ex, j) => (
                           <p key={j} className="text-xs italic text-muted-foreground mt-1 border-l-2 border-primary/20 pl-2">
                             {ex}
@@ -249,7 +275,7 @@ export function VocabularyTopicsExplorer({ topics }: { topics: VocabTopic[] }) {
                         ))}
                         {word.synonyms && word.synonyms.length > 0 && (
                           <p className="text-[11px] text-muted-foreground mt-1">
-                            Synonyms: {word.synonyms.join(", ")}
+                            {t("vocabTopics.synonyms")}: {word.synonyms.join(", ")}
                           </p>
                         )}
                         {word.commonMistakes && word.commonMistakes.length > 0 && (

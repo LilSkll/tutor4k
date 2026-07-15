@@ -296,6 +296,8 @@ export interface VocabTopic {
   level: Level;
   topic: string;
   topicEs: string;
+  /** English UI title (English course topics). */
+  topicEn?: string;
   icon: string;
   /** Linked course chapter slug (multi-course vocabulary). */
   chapterSlug?: string;
@@ -319,6 +321,8 @@ export type WordFrequency = "core" | "common" | "uncommon" | "advanced";
 export interface VocabWord {
   word: string;
   translation: string;
+  /** Optional glosses per interface language. */
+  translations?: Partial<Record<InterfaceLanguage, string>>;
   /** Primary example sentence (backward compatible). */
   example: string;
   transcription?: string;

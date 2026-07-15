@@ -397,6 +397,7 @@ const ru: Dictionary = {
   "vocabTopics.toastAdded": "«{word}» добавлено в словарь 📚",
   "vocabTopics.toastAddFail": "Не удалось добавить слово",
   "vocabTopics.empty": "Лексические темы для этого курса пока не добавлены.",
+  "vocabTopics.synonyms": "Синонимы",
 
   // Tutor (extended)
   "tutor.onlineDynamic": "В сети · {targetLanguage}",
@@ -625,6 +626,7 @@ const en: Dictionary = {
   "vocabTopics.toastAdded": "\"{word}\" added to dictionary 📚",
   "vocabTopics.toastAddFail": "Could not add word",
   "vocabTopics.empty": "No vocabulary topics have been added for this course yet.",
+  "vocabTopics.synonyms": "Synonyms",
 
   "tutor.thinkingStatus": "Thinking…",
   "tutor.online": "Online",
@@ -963,6 +965,7 @@ const es: Dictionary = {
   "vocabTopics.toastAdded": "«{word}» añadido al diccionario 📚",
   "vocabTopics.toastAddFail": "No se pudo añadir la palabra",
   "vocabTopics.empty": "Aún no hay temas de vocabulario para este curso.",
+  "vocabTopics.synonyms": "Sinónimos",
 
   "tutor.thinkingStatus": "Pensando…",
   "tutor.online": "En línea",
