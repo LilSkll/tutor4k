@@ -20,7 +20,7 @@ import { translate } from "@/lib/i18n";
 import { getCourseTitle } from "@/config/courses";
 import { EXERCISE_TYPES, LEVELS } from "@/config/app";
 import { cn } from "@/lib/utils";
-import type { ExerciseType, Level } from "@/types";
+import type { ExerciseType, InterfaceLanguage, Level } from "@/types";
 import { toast } from "sonner";
 
 interface GeneratedExercise {
@@ -39,8 +39,12 @@ type Phase = "config" | "loading" | "answering" | "result";
 
 export function ExerciseRunner({
   userLevel,
+  interfaceLanguage: interfaceLanguageFromProfile,
+  activeCourseId: activeCourseIdFromProfile,
 }: {
   userLevel: Level | null;
+  interfaceLanguage?: InterfaceLanguage;
+  activeCourseId?: string | null;
 }) {
   const [type, setType] = React.useState<ExerciseType>("multiple_choice");
   const [level, setLevel] = React.useState<Level>(userLevel ?? "A1");
@@ -57,8 +61,10 @@ export function ExerciseRunner({
   const incrementAttempted = useExerciseSessionStore((s) => s.incrementAttempted);
   const score = useExerciseSessionStore((s) => s.currentScore);
   const attempted = useExerciseSessionStore((s) => s.totalAttempted);
-  const language = useUIStore((s) => s.interfaceLanguage);
-  const activeCourseId = useUIStore((s) => s.activeCourseId);
+  const storeLanguage = useUIStore((s) => s.interfaceLanguage);
+  const storeCourseId = useUIStore((s) => s.activeCourseId);
+  const language = interfaceLanguageFromProfile ?? storeLanguage;
+  const activeCourseId = activeCourseIdFromProfile ?? storeCourseId;
   const targetLanguage = getCourseTitle(activeCourseId);
   const t = (key: string, vars?: Record<string, string | number>) =>
     translate(key, language, vars);

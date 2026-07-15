@@ -33,7 +33,11 @@ export default async function ExercisesPage() {
           <CardDescription>{t("exercises.sessionDesc")}</CardDescription>
         </CardHeader>
         <CardContent>
-          <ExerciseRunner userLevel={profile?.level ?? null} />
+          <ExerciseRunner
+            userLevel={profile?.level ?? null}
+            interfaceLanguage={lang}
+            activeCourseId={profile?.active_course_id}
+          />
         </CardContent>
       </Card>
     </div>
