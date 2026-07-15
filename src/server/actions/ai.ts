@@ -111,6 +111,7 @@ export async function sendTutorMessage(input: {
         lastUser.content,
         level,
         courseId ?? "spanish",
+        language,
       );
       if (cached) {
         // Persist the cached reply into the conversation (best-effort).
@@ -166,7 +167,7 @@ export async function sendTutorMessage(input: {
   const response = await generateAIResponse({
     messages: input.messages,
     level,
-    language,
+    interfaceLanguage: language,
     userName,
     retrievedContext,
     courseId: courseId ?? "spanish",
@@ -179,6 +180,7 @@ export async function sendTutorMessage(input: {
       level,
       response.content,
       courseId ?? "spanish",
+      language,
     ).catch(
       () => {},
     );
@@ -293,7 +295,7 @@ export async function generateExercise(input: {
     {
       level: input.level,
       temperature: 0.7,
-      language: input.language,
+      interfaceLanguage: input.language,
       retrievedContext: exerciseContext,
       courseId,
     },
@@ -430,7 +432,7 @@ export async function checkExerciseAnswer(input: {
     temperature: 0.1,
     maxTokens: 150,
     skipGuard: true,
-    language: input.language,
+    interfaceLanguage: input.language,
     courseId,
   });
 

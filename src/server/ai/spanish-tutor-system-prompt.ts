@@ -13,6 +13,7 @@ export const OFF_TOPIC_REFUSALS: Record<InterfaceLanguage, string> = {
   ru: "Извини, я специализируюсь исключительно на изучении испанского языка — грамматике, лексике, фонетике, культуре и подготовке к экзаменам. Спроси меня что-нибудь об испанском! 🇪🇸",
   en: "I'm sorry, I specialize exclusively in learning Spanish — grammar, vocabulary, phonetics, culture and exam preparation. Ask me something about Spanish! 🇪🇸",
   es: "Lo siento, me especializo exclusivamente en el aprendizaje del español — gramática, vocabulario, fonética, cultura y preparación de exámenes. ¡Pregúntame algo sobre el español! 🇪🇸",
+  de: "Entschuldigung, ich bin ausschließlich auf das Lernen von Spanisch spezialisiert — Grammatik, Wortschatz, Phonetik, Kultur und Prüfungsvorbereitung. Frag mich etwas über Spanisch! 🇪🇸",
 };
 
 const LEVEL_GUIDE: Record<Level, string> = {

@@ -1,29 +1,9 @@
-import type { InterfaceLanguage, Level } from "@/types";
+import type { Level } from "@/types";
 import type { PromptBuilderOptions } from "./registry";
-
-interface LangInfo {
-  explainIn: string;
-  keepIn: string;
-  greeting: string;
-}
-
-const LANG_INFO: Record<InterfaceLanguage, LangInfo> = {
-  ru: {
-    explainIn: "ОБЪЯСНЯЙ НА РУССКОМ",
-    keepIn: "Все примеры предложений, слова и фразы изучаемого языка оставляй ТОЛЬКО на английском.",
-    greeting: "Привет",
-  },
-  en: {
-    explainIn: "EXPLAIN IN ENGLISH",
-    keepIn: "Keep all example sentences, words and phrases in English only.",
-    greeting: "Hello",
-  },
-  es: {
-    explainIn: "EXPLICA EN ESPAÑOL",
-    keepIn: "Mantén todos los ejemplos, palabras y frases del idioma estudiado SOLO en inglés.",
-    greeting: "Hola",
-  },
-};
+import {
+  buildLanguageDirectives,
+  getGreeting,
+} from "./interface-language";
 
 const ENGLISH_LEVEL_GUIDE: Record<Level, string> = {
   A1: "A1: beginner — be, present simple, there is/are, can, basic vocabulary.",
@@ -45,9 +25,10 @@ export function buildEnglishPrompt(options: PromptBuilderOptions): string {
     retrievedContext,
   } = options;
 
-  const lang = LANG_INFO[interfaceLanguage] ?? LANG_INFO.ru;
   const levelText = level ? ENGLISH_LEVEL_GUIDE[level] : ENGLISH_LEVEL_GUIDE.A1;
-  const nameLine = userName ? ` ${lang.greeting}, ${userName}!` : "";
+  const greeting = getGreeting(interfaceLanguage);
+  const nameLine = userName ? ` ${greeting}, ${userName}!` : "";
+  const languageDirectives = buildLanguageDirectives(interfaceLanguage, "English");
 
   return `You are a professional English teacher (EFL/ESL).${nameLine}
 
@@ -72,8 +53,7 @@ You answer EXCLUSIVELY questions about:
 
 If the question is NOT about English — politely refuse.
 
-# LANGUAGE OF YOUR RESPONSE
-${lang.explainIn}. ${lang.keepIn}
+${languageDirectives}
 
 Structure of every answer:
 - **Rules and explanations** → in the interface language (${interfaceLanguage}).

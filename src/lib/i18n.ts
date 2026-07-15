@@ -1046,7 +1046,7 @@ const es: Dictionary = {
   "dashboard.vocabBtn": "Abrir diccionario",
 };
 
-const dictionaries: Record<InterfaceLanguage, Dictionary> = { ru, en, es };
+const dictionaries: Record<InterfaceLanguage, Dictionary> = { ru, en, es, de: en };
 
 /** Translate a dot-key in the given interface language. Supports `{var}` interpolation. */
 export function translate(
@@ -1054,7 +1054,11 @@ export function translate(
   lang: InterfaceLanguage,
   vars?: Record<string, string | number>,
 ): string {
-  let text = dictionaries[lang]?.[key] ?? dictionaries.ru[key] ?? key;
+  let text =
+    dictionaries[lang]?.[key] ??
+    (lang === "de" ? dictionaries.en[key] : undefined) ??
+    dictionaries.ru[key] ??
+    key;
   if (vars) {
     for (const [name, value] of Object.entries(vars)) {
       text = text.replace(new RegExp(`\\{${name}\\}`, "g"), String(value));
@@ -1064,5 +1068,5 @@ export function translate(
 }
 
 export function getDictionary(lang: InterfaceLanguage): Dictionary {
-  return dictionaries[lang] ?? ru;
+  return dictionaries[lang] ?? (lang === "de" ? en : ru);
 }

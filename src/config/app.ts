@@ -38,6 +38,7 @@ export const INTERFACE_LANGUAGES: {
   { value: "ru", label: "Русский", flag: "🇷🇺" },
   { value: "en", label: "English", flag: "🇬🇧" },
   { value: "es", label: "Español", flag: "🇪🇸" },
+  { value: "de", label: "Deutsch", flag: "🇩🇪" },
 ];
 
 // ----- Exercise types ------------------------------------------------

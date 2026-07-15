@@ -1,9 +1,9 @@
 import type { CourseConfig, ExerciseType, InterfaceLanguage, Level } from "@/types";
+import { getInterfaceLanguageName } from "./interface-language";
 
 function interfaceLangName(lang?: InterfaceLanguage): string {
-  if (lang === "ru") return "Russian";
-  if (lang === "es") return "Spanish";
-  return "English";
+  if (!lang) return "English";
+  return getInterfaceLanguageName(lang);
 }
 
 /** Default RAG search terms per exercise type, keyed by course. */

@@ -1,5 +1,5 @@
 import { createSupabaseServerClient } from "@/lib/supabase-server";
-import type { Level } from "@/types";
+import type { InterfaceLanguage, Level } from "@/types";
 
 // =====================================================================
 // Shared tutor-response cache
@@ -65,11 +65,20 @@ export async function getCachedTutorResponse(
   query: string,
   level: Level | null,
   courseId?: string | null,
+  interfaceLanguage?: InterfaceLanguage | null,
 ): Promise<string | null> {
   if (!isCacheable(query)) return null;
 
   const norm = normalizeQuery(query);
-  const queryHash = hash(norm + "|" + (level ?? "any") + "|" + (courseId ?? "spanish"));
+  const queryHash = hash(
+    norm +
+      "|" +
+      (level ?? "any") +
+      "|" +
+      (courseId ?? "spanish") +
+      "|" +
+      (interfaceLanguage ?? "ru"),
+  );
 
   try {
     const supabase = await createSupabaseServerClient();
@@ -102,13 +111,22 @@ export async function setCachedTutorResponse(
   level: Level | null,
   response: string,
   courseId?: string | null,
+  interfaceLanguage?: InterfaceLanguage | null,
 ): Promise<void> {
   if (!isCacheable(query) || !response.trim()) return;
   // Don't cache refusal / error messages.
   if (response.startsWith("⚠️") || response.startsWith("😔")) return;
 
   const norm = normalizeQuery(query);
-  const queryHash = hash(norm + "|" + (level ?? "any") + "|" + (courseId ?? "spanish"));
+  const queryHash = hash(
+    norm +
+      "|" +
+      (level ?? "any") +
+      "|" +
+      (courseId ?? "spanish") +
+      "|" +
+      (interfaceLanguage ?? "ru"),
+  );
 
   try {
     const supabase = await createSupabaseServerClient();

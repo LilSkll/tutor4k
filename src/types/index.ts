@@ -20,7 +20,7 @@ export type Goal =
   | "GENERAL";
 
 /** Interface language for the app. */
-export type InterfaceLanguage = "ru" | "en" | "es";
+export type InterfaceLanguage = "ru" | "en" | "es" | "de";
 
 /** Conversation message role. */
 export type MessageRole = "user" | "assistant" | "system";
@@ -153,6 +153,13 @@ export interface AIGenerateOptions {
   maxTokens?: number;
   /** Skip the domain guard (used internally for structured output). */
   skipGuard?: boolean;
+  /** Language for explanations, feedback, and hints. */
+  interfaceLanguage?: InterfaceLanguage;
+  /** @deprecated Use interfaceLanguage. Kept for backward compatibility. */
+  language?: InterfaceLanguage;
+  userName?: string | null;
+  retrievedContext?: string | null;
+  courseId?: string | null;
 }
 
 // ----- Grammar reference ---------------------------------------------

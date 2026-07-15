@@ -91,12 +91,7 @@ async function buildSystemPromptForCourse(
 }
 
 export async function generateAIResponse(
-  options: AIGenerateOptions & {
-    language?: InterfaceLanguage;
-    userName?: string | null;
-    retrievedContext?: string | null;
-    courseId?: string | null;
-  },
+  options: AIGenerateOptions,
 ): Promise<AIResponse> {
   const {
     messages,
@@ -104,11 +99,15 @@ export async function generateAIResponse(
     temperature,
     maxTokens,
     skipGuard = false,
-    language = "ru",
+    interfaceLanguage,
+    language,
     userName,
     retrievedContext,
     courseId = "spanish",
   } = options;
+
+  const resolvedLanguage: InterfaceLanguage =
+    interfaceLanguage ?? language ?? "ru";
 
   const course = await getCourse(courseId);
 
@@ -122,7 +121,7 @@ export async function generateAIResponse(
     isOffTopicForCourse(lastUserMessage.content, course.keywords)
   ) {
     return {
-      content: getOffTopicRefusal(course.titleNative, language),
+      content: getOffTopicRefusal(course.titleNative, resolvedLanguage),
       provider: "groq",
       model: "guard",
       refused: true,
@@ -131,7 +130,7 @@ export async function generateAIResponse(
 
   const systemPrompt = await buildSystemPromptForCourse(courseId ?? "spanish", {
     level,
-    interfaceLanguage: language,
+    interfaceLanguage: resolvedLanguage,
     userName,
     retrievedContext,
   });
@@ -148,11 +147,13 @@ export async function generateAIResponse(
   if (chain.length === 0) {
     return {
       content:
-        language === "ru"
+        resolvedLanguage === "ru"
           ? "⚠️ ИИ-сервис не настроен. Укажите GROQ_API_KEY или GEMINI_API_KEY в переменных окружения."
-          : language === "es"
+          : resolvedLanguage === "es"
             ? "⚠️ El servicio de IA no está configurado. Define GROQ_API_KEY o GEMINI_API_KEY en las variables de entorno."
-            : "⚠️ AI service is not configured. Set GROQ_API_KEY or GEMINI_API_KEY in the environment variables.",
+            : resolvedLanguage === "de"
+              ? "⚠️ KI-Dienst ist nicht konfiguriert. Setze GROQ_API_KEY oder GEMINI_API_KEY in den Umgebungsvariablen."
+              : "⚠️ AI service is not configured. Set GROQ_API_KEY or GEMINI_API_KEY in the environment variables.",
       provider: "groq",
       model: "none",
     };
@@ -169,11 +170,13 @@ export async function generateAIResponse(
   }
 
   const fallbackMessage =
-    language === "ru"
+    resolvedLanguage === "ru"
       ? "😔 Извините, я не смог обработать ваш запрос. Попробуйте ещё раз через минуту."
-      : language === "es"
+      : resolvedLanguage === "es"
         ? "😔 Lo siento, no pude procesar tu solicitud. Inténtalo de nuevo en un minuto."
-        : "😔 Sorry, I couldn't process your request. Please try again in a minute.";
+        : resolvedLanguage === "de"
+          ? "😔 Entschuldigung, ich konnte deine Anfrage nicht verarbeiten. Bitte versuche es in einer Minute erneut."
+          : "😔 Sorry, I couldn't process your request. Please try again in a minute.";
 
   console.error("[orchestrator] All providers failed:", errors);
 
@@ -189,6 +192,8 @@ export async function generateStructuredJSON<T>(
   opts?: {
     level?: Level | null;
     temperature?: number;
+    interfaceLanguage?: InterfaceLanguage;
+    /** @deprecated Use interfaceLanguage. */
     language?: InterfaceLanguage;
     retrievedContext?: string | null;
     courseId?: string | null;
@@ -200,7 +205,7 @@ export async function generateStructuredJSON<T>(
     temperature: opts?.temperature ?? 0.5,
     maxTokens: 1500,
     skipGuard: true,
-    language: opts?.language,
+    interfaceLanguage: opts?.interfaceLanguage ?? opts?.language,
     retrievedContext: opts?.retrievedContext,
     courseId: opts?.courseId ?? "spanish",
   });
