@@ -23,9 +23,17 @@ DO $$ BEGIN
   );
 EXCEPTION WHEN duplicate_table THEN NULL; END $$;
 
--- Insert Spanish course (idempotent)
+-- Insert courses (idempotent)
 INSERT INTO public.courses (id, language_code, title, title_native, description, flag, prompt_id)
 VALUES ('spanish', 'es', 'Испанский язык', 'Español', 'Изучай испанский язык с ИИ-репетитором', '🇪🇸', 'spanish')
+ON CONFLICT (id) DO NOTHING;
+
+INSERT INTO public.courses (id, language_code, title, title_native, description, flag, prompt_id)
+VALUES ('english', 'en', 'Английский язык', 'English', 'Learn English with AI tutor', '🇬🇧', 'english')
+ON CONFLICT (id) DO NOTHING;
+
+INSERT INTO public.courses (id, language_code, title, title_native, description, flag, prompt_id)
+VALUES ('russian', 'ru', 'Русский язык', 'Русский', 'Изучай русский язык с ИИ', '🇷🇺', 'russian')
 ON CONFLICT (id) DO NOTHING;
 
 -- RLS: all authenticated users can read courses

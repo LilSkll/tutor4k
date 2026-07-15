@@ -18,6 +18,10 @@ export const DEFAULT_COURSE_ID = "spanish";
 const LOADERS: Record<string, () => Promise<CourseConfig>> = {
   spanish: () =>
     import("./spanish").then((m) => m.loadSpanishCourse()),
+  english: () =>
+    import("./english").then((m) => m.loadEnglishCourse()),
+  russian: () =>
+    import("./russian").then((m) => m.loadRussianCourse()),
 };
 
 // In-memory cache (survives within a warm serverless instance).

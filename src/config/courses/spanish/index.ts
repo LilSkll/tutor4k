@@ -18,9 +18,7 @@ export async function loadSpanishCourse(): Promise<CourseConfig> {
   const { GRAMMAR_TOPICS, getTopicBySlug } = await import("@/config/grammar");
   const { VOCAB_TOPICS } = await import("@/config/vocabulary-topics");
   const { getChapterExercises } = await import("@/config/chapter-exercises");
-  const { buildSystemPrompt, isOffTopic, OFF_TOPIC_REFUSALS } = await import(
-    "@/server/ai/spanish-tutor-system-prompt"
-  );
+  const { buildUniversalPrompt } = await import("@/server/ai/prompts/universal");
 
   return {
     id: "spanish",
@@ -87,13 +85,24 @@ export async function loadSpanishCourse(): Promise<CourseConfig> {
     getVocab: () => VOCAB_TOPICS,
     getExercises: getChapterExercises,
 
-    // Prompt builder — delegates to existing system prompt.
+    // Prompt builder — uses universal prompt with Spanish-specific params.
     buildPrompt: (options) =>
-      buildSystemPrompt({
+      buildUniversalPrompt({
         level: options.level,
-        language: options.interfaceLanguage ?? "ru",
+        interfaceLanguage: options.interfaceLanguage ?? "ru",
         userName: options.userName,
         retrievedContext: options.retrievedContext,
+        targetLanguageName: "Spanish",
+        targetLanguageCode: "es",
+        textbookNames: "Дышлевая, Гонсалес-Алимова",
+        examName: "DELE",
+        levelGuide: {
+          A1: "A1 (Principiante): vocabulario básico, presente simple, artículos, ser/estar. Frases cortas.",
+          A2: "A2 (Básico): pasado perfecto e indefinido, vocabulario cotidiano.",
+          B1: "B1 (Intermedio): subjuntivo presente, imperativo, conversación fluida.",
+          B2: "B2 (Avanzado): estilo indirecto, voz pasiva, matices.",
+          C1: "C1 (Superior): perífrasis verbales, registros estilísticos, matices finos.",
+        },
       }),
   };
 }

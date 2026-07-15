@@ -21,11 +21,17 @@ export type PromptBuilder = (options: PromptBuilderOptions) => string;
 // Lazy loaders — each prompt module is only loaded when needed.
 const PROMPT_LOADERS: Record<string, () => Promise<PromptBuilder>> = {
   spanish: () =>
-    import("@/server/ai/spanish-tutor-system-prompt").then(
-      (m) => m.buildSystemPrompt,
-    ),
-  // Future: english, russian, german, french...
-  // english: () => import("./english").then(m => m.buildEnglishPrompt),
+    import("@/server/ai/prompts/universal").then((m) => (options) =>
+      m.buildUniversalPrompt({
+        ...options,
+        targetLanguageName: "Spanish",
+        targetLanguageCode: "es",
+        textbookNames: "Дышлевая, Гонсалес-Алимова",
+        examName: "DELE",
+      })),
+  // Future courses:
+  // english: () => import("@/config/courses/english/prompt").then(m => m.buildEnglishPrompt),
+  // russian: () => import("@/config/courses/russian/prompt").then(m => m.buildRussianPrompt),
 };
 
 const cache = new Map<string, PromptBuilder>();
