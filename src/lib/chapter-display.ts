@@ -342,6 +342,42 @@ export function getChapterLocation(
   return chapter.location;
 }
 
+/**
+ * Turn a chapter summary into short "today you learned" bullets.
+ * Uses existing summary text only — no invented skills.
+ */
+export function getChapterAchievementBullets(
+  chapter: Chapter,
+  interfaceLanguage: InterfaceLanguage,
+  grammarTitle?: string | null,
+): string[] {
+  const bullets: string[] = [];
+  if (grammarTitle?.trim()) {
+    bullets.push(grammarTitle.trim());
+  }
+
+  const summary = getChapterSummary(chapter, interfaceLanguage);
+  // Drop leading labels like "First steps:" then split on commas / semicolons.
+  const body = summary.replace(/^[^:]+:\s*/u, "").trim();
+  const parts = body
+    .split(/[,;•·|/]/u)
+    .map((p) => p.trim())
+    .filter((p) => p.length > 2 && p.length < 80);
+
+  for (const part of parts) {
+    if (!bullets.some((b) => b.toLowerCase() === part.toLowerCase())) {
+      bullets.push(part);
+    }
+    if (bullets.length >= 5) break;
+  }
+
+  if (bullets.length === 0 && summary.trim()) {
+    bullets.push(summary.trim());
+  }
+
+  return bullets.slice(0, 5);
+}
+
 /** Count completed progress rows that belong to a given course's chapters. */
 export function countCompletedForCourse(
   completedSlugs: Iterable<string>,

@@ -496,13 +496,13 @@ recentMistakes: ${ctx.recentMistakes.map((m) => `«${m}»`).join("; ") || "none"
 exercisesCompleted: ${ctx.exercisesCompleted} (correctRate: ${rate})
 
 # TEACHING RULES FROM THIS CONTEXT
-- Lead with recommendedNextTopic when the student asks what to do next or wants practice.
-- Already-studied grammar: connect to the chapter where it appeared; keep review light.
-- Future chapter topics: short simplified preview only + recommend the proper chapter.
-- Prefer introduced vocabulary; gloss new words once in the interface language.
-- Weak topics: more scaffolding, shorter examples, easier words — without saying "difficulty level".
-- Strong topics: slightly harder examples and a quick check question.
-- Motivate sparsely and specifically (progress, confidence, remaining chapters) — never empty praise.`;
+- Speak like a teacher who remembers this student: connect new points to completedRecently / studiedGrammar when relevant.
+- When they ask "what next?" or want practice: follow recommendedNextTopic (weak topics before random new material).
+- Already-studied grammar: brief recall + link to the chapter; do not re-teach from zero unless they are stuck.
+- Future / advanced topics (beyond currentChapter / currentLevel): minimum preview only + name upcomingChapter if relevant + return to current work. Never break course order.
+- Prefer studiedVocabulary; gloss new words once in the interface language, reinforce in one target-language example.
+- weakGrammar / recentMistakes → more of that pattern with simpler sentences. Success streak → slightly richer examples.
+- Motivate sparsely with real progress facts only — never invent history or empty praise.`;
 }
 
 function buildExerciseTopicHint(ctx: {

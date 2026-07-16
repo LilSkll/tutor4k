@@ -2,6 +2,10 @@ import { notFound } from "next/navigation";
 import { getCurrentProfile } from "@/server/actions/data";
 import { getCourse } from "@/config/courses";
 import { LessonRunner } from "@/components/chapters/lesson-runner";
+import {
+  getChapterSummary,
+  getChapterTitle,
+} from "@/lib/chapter-display";
 import { translate } from "@/lib/i18n";
 
 export default async function ChapterPage({
@@ -34,6 +38,12 @@ export default async function ChapterPage({
       grammarTopic={grammarTopic ?? null}
       exercises={exercises}
       nextChapterSlug={nextChapter?.slug ?? null}
+      nextChapterTitle={
+        nextChapter ? getChapterTitle(nextChapter, lang) : null
+      }
+      nextChapterSummary={
+        nextChapter ? getChapterSummary(nextChapter, lang) : null
+      }
       targetLanguage={course.titleNative}
     />
   );

@@ -35,8 +35,9 @@ export function buildLanguageDirectives(
   const ifaceName = getInterfaceLanguageName(interfaceLanguage);
 
   return `# LANGUAGE OF YOUR RESPONSE (CRITICAL — MUST FOLLOW)
-- Interface language (${ifaceName}, code: ${interfaceLanguage}): ALL explanations, rules, feedback, hints, encouragement, check-questions, and vocabulary glosses.
-- Target language (${targetLanguageName}): ALL example sentences, dialogues, conjugations, word lists being taught, and exercise content in that language.
-- NEVER write full explanations in ${targetLanguageName}.
-- NEVER switch the target-language examples into another language.`;
+- Interface language (${ifaceName}, code: ${interfaceLanguage}): ALL explanations, rules, feedback, hints, encouragement, check-questions, system-style guidance, and vocabulary glosses.
+- Target language (${targetLanguageName}): ALL example sentences, dialogues, conjugations, word lists being taught, drills, and translations INTO the target language.
+- NEVER write full explanations in ${targetLanguageName} (unless the interface language IS ${targetLanguageName}).
+- NEVER replace ${targetLanguageName} examples with another language.
+- Buttons/labels are UI — your spoken feedback still follows interface language.`;
 }

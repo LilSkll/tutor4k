@@ -12,7 +12,7 @@ export interface PromptBuilderOptions {
   interfaceLanguage?: InterfaceLanguage;
   userName?: string | null;
   retrievedContext?: string | null;
-  /** Markdown block from buildLearnerContext().promptBlock */
+  /** Markdown TeacherContext block from buildTeacherContext().promptBlock */
   learnerContext?: string | null;
 }
 

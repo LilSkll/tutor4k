@@ -21,6 +21,7 @@ import { useLocalizedGrammarArticle } from "@/hooks/use-localized-grammar-articl
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { getGrammarTopicTitle } from "@/lib/grammar-display";
 import {
+  getChapterAchievementBullets,
   getChapterLocation,
   getChapterSummary,
   getChapterTitle,
@@ -41,6 +42,8 @@ interface LessonRunnerProps {
   grammarTopic?: GrammarTopic | null;
   exercises: StaticExercise[];
   nextChapterSlug: string | null;
+  nextChapterTitle?: string | null;
+  nextChapterSummary?: string | null;
   targetLanguage: string;
 }
 
@@ -53,6 +56,8 @@ export function LessonRunner({
   grammarTopic,
   exercises: presetExercises,
   nextChapterSlug,
+  nextChapterTitle = null,
+  nextChapterSummary = null,
   targetLanguage,
 }: LessonRunnerProps) {
   const router = useRouter();
@@ -410,6 +415,12 @@ export function LessonRunner({
   }
 
   if (phase === "summary") {
+    const achievements = getChapterAchievementBullets(
+      chapter,
+      language,
+      grammarTitle,
+    );
+
     return (
       <div className="max-w-2xl mx-auto py-6">
         <Card className="border-0 shadow-lg overflow-hidden">
@@ -424,39 +435,79 @@ export function LessonRunner({
           </div>
           <CardContent className="p-6 space-y-4">
             <div className="rounded-lg bg-muted/30 p-4 space-y-2">
-              <p className="font-semibold text-sm mb-2">{t("lesson.todayYou")}</p>
+              <p className="font-semibold text-sm mb-2">
+                {t("lesson.todayYouLearned")}
+              </p>
               <ul className="text-sm space-y-1.5">
-                {exercisesCompleted > 0 && (
-                  <li className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-success" />{" "}
-                    {t("lesson.didExercises", { count: exercisesCompleted })}
+                {achievements.map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <Check className="h-4 w-4 text-success shrink-0 mt-0.5" />
+                    <span>{item}</span>
                   </li>
-                )}
-                {score > 0 && (
-                  <li className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-success" />{" "}
-                    {t("lesson.correctScore", { score, total: exercisesCompleted })}
-                  </li>
-                )}
-                {wordsLearned > 0 && (
-                  <li className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-success" />{" "}
-                    {t("lesson.learnedWords", { count: wordsLearned })}
-                  </li>
-                )}
-                <li className="flex items-center gap-2">
-                  <Check className="h-4 w-4 text-success" />{" "}
-                  {t("lesson.studiedMinutes", { minutes: chapter.estimatedMinutes })}
-                </li>
+                ))}
               </ul>
             </div>
+
+            {(exercisesCompleted > 0 || score > 0 || wordsLearned > 0) && (
+              <div className="rounded-lg border border-border/60 p-4 space-y-2">
+                <p className="font-semibold text-sm mb-1">
+                  {t("lesson.statsHeading")}
+                </p>
+                <ul className="text-sm space-y-1.5 text-muted-foreground">
+                  {exercisesCompleted > 0 && (
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-success" />{" "}
+                      {t("lesson.didExercises", { count: exercisesCompleted })}
+                    </li>
+                  )}
+                  {score > 0 && (
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-success" />{" "}
+                      {t("lesson.correctScore", {
+                        score,
+                        total: exercisesCompleted,
+                      })}
+                    </li>
+                  )}
+                  {wordsLearned > 0 && (
+                    <li className="flex items-center gap-2">
+                      <Check className="h-4 w-4 text-success" />{" "}
+                      {t("lesson.learnedWords", { count: wordsLearned })}
+                    </li>
+                  )}
+                  <li className="flex items-center gap-2">
+                    <Check className="h-4 w-4 text-success" />{" "}
+                    {t("lesson.studiedMinutes", {
+                      minutes: chapter.estimatedMinutes,
+                    })}
+                  </li>
+                </ul>
+              </div>
+            )}
+
+            {nextChapterTitle && (
+              <p className="text-sm text-muted-foreground leading-relaxed text-center px-1">
+                {nextChapterSummary
+                  ? t("lesson.nextMatters", {
+                      title: nextChapterTitle,
+                      reason: nextChapterSummary,
+                    })
+                  : t("lesson.nextMattersShort", { title: nextChapterTitle })}
+              </p>
+            )}
+
             <p className="text-base text-muted-foreground text-center">
               <span className="text-2xl">🦅</span>{" "}
               {t("lesson.mentorQuote", {
                 name: userName || t("lesson.friend"),
               })}
             </p>
-            <Button variant="gradient" size="lg" className="w-full" onClick={goToNextChapter}>
+            <Button
+              variant="gradient"
+              size="lg"
+              className="w-full"
+              onClick={goToNextChapter}
+            >
               <ArrowRight className="h-4 w-4" />
               {t("lesson.openNext")}
             </Button>
