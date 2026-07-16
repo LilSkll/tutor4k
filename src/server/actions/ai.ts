@@ -13,6 +13,7 @@ import { retrieveVocabularyContext } from "@/server/rag/vocabulary-context";
 import {
   getCachedTutorResponse,
   setCachedTutorResponse,
+  shouldUseSharedTutorCache,
 } from "@/server/rag/tutor-cache";
 import type {
   AIMessage,
@@ -70,7 +71,6 @@ export async function sendTutorMessage(input: {
 
   // TeacherContext — real curriculum memory for every reply.
   let learnerPromptBlock: string | null | undefined = undefined;
-  let progressFingerprint: string | null = null;
   try {
     const { buildTeacherContext } = await import(
       "@/server/ai/learner-context"
@@ -81,7 +81,6 @@ export async function sendTutorMessage(input: {
       level,
     });
     learnerPromptBlock = teacher.promptBlock;
-    progressFingerprint = teacher.fingerprint;
   } catch (err) {
     console.warn("[tutor] TeacherContext failed:", (err as Error).message);
     learnerPromptBlock = null;
@@ -125,18 +124,18 @@ export async function sendTutorMessage(input: {
     .reverse()
     .find((m) => m.role === "user");
 
-  // --- Shared cache: progress fingerprint keeps personalization honest --
-  if (lastUser) {
+  // --- Shared cross-user cache (FAQ) — save LLM tokens -----------------
+  // Same normalized question + course + level + interface language →
+  // answer from DB for any user. Skip multi-turn dialogues.
+  if (lastUser && shouldUseSharedTutorCache(input.messages)) {
     try {
       const cached = await getCachedTutorResponse(
         lastUser.content,
         level,
         resolvedCourseId,
         language,
-        progressFingerprint,
       );
       if (cached) {
-        // Persist the cached reply into the conversation (best-effort).
         if (user && conversationId) {
           await writeClient.from("chat_messages").insert({
             conversation_id: conversationId,
@@ -157,6 +156,45 @@ export async function sendTutorMessage(input: {
       }
     } catch {
       // Non-fatal: fall through to the normal RAG + Groq path.
+    }
+  }
+
+  // --- Fast domain refuse (no RAG / no LLM) + seed shared cache --------
+  if (lastUser) {
+    try {
+      const course = await getCourse(resolvedCourseId);
+      const { isOffTopicForCourse } = await import(
+        "@/server/ai/prompts/domain-guard"
+      );
+      const { getOffTopicRefusal } = await import(
+        "@/server/ai/prompts/refusals"
+      );
+      if (isOffTopicForCourse(lastUser.content, course.keywords)) {
+        const refusal = getOffTopicRefusal(course.titleNative, language);
+        if (shouldUseSharedTutorCache(input.messages)) {
+          setCachedTutorResponse(
+            lastUser.content,
+            level,
+            refusal,
+            resolvedCourseId,
+            language,
+          ).catch(() => {});
+        }
+        if (user && conversationId) {
+          await writeClient.from("chat_messages").insert({
+            conversation_id: conversationId,
+            role: "assistant",
+            content: refusal,
+          });
+        }
+        return {
+          content: refusal,
+          provider: "guard",
+          conversationId: conversationId ?? "",
+        };
+      }
+    } catch {
+      // Non-fatal — orchestrator guard still applies.
     }
   }
 
@@ -196,18 +234,20 @@ export async function sendTutorMessage(input: {
     courseId: resolvedCourseId,
   });
 
-  // --- Store the answer in the shared cache (best-effort) ------------
-  if (lastUser && response.refused !== true && response.content) {
+  // --- Store in shared cache for other users (best-effort) ------------
+  // Cache refusals too — repeated off-topic questions skip the orchestrator path.
+  if (
+    lastUser &&
+    response.content &&
+    shouldUseSharedTutorCache(input.messages)
+  ) {
     setCachedTutorResponse(
       lastUser.content,
       level,
       response.content,
       resolvedCourseId,
       language,
-      progressFingerprint,
-    ).catch(
-      () => {},
-    );
+    ).catch(() => {});
   }
 
   // --- Persist assistant reply (best-effort) --------------------------

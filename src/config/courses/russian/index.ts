@@ -27,10 +27,13 @@ export async function loadRussianCourse(): Promise<CourseConfig> {
       onTopic: [
         "russian", "русский", "русский язык", "грамматика",
         "падежи", "виды глагола", "trki", "трки",
+        "культур", "culture", "традиц", "tradition",
+        "литератур", "poetry", "поэз", "пушкин", "pushkin",
       ],
       offTopic: [
-        "испанский", "español", "english",
+        "испанский", "español", "english grammar",
         "немецкий", "deutsch",
+        "программирован", "javascript", "выборы", "биткоин",
       ],
       greetings: ["привет", "здравствуйте", "hello", "hi"],
     },

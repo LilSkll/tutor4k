@@ -6,10 +6,10 @@ export function getOffTopicRefusal(
   interfaceLanguage: InterfaceLanguage,
 ): string {
   const messages: Record<InterfaceLanguage, string> = {
-    ru: `Извини, я специализируюсь исключительно на изучении ${targetLanguageName} — грамматике, лексике, фонетике, культуре и подготовке к экзаменам. Спроси меня что-нибудь о ${targetLanguageName}!`,
-    en: `I'm sorry, I specialize exclusively in learning ${targetLanguageName} — grammar, vocabulary, phonetics, culture and exam preparation. Ask me something about ${targetLanguageName}!`,
-    es: `Lo siento, me especializo exclusivamente en el aprendizaje de ${targetLanguageName} — gramática, vocabulario, fonética, cultura y preparación de exámenes. ¡Pregúntame algo sobre ${targetLanguageName}!`,
-    de: `Entschuldigung, ich bin ausschließlich auf das Lernen von ${targetLanguageName} spezialisiert — Grammatik, Wortschatz, Phonetik, Kultur und Prüfungsvorbereitung. Frag mich etwas über ${targetLanguageName}!`,
+    ru: `Я помогаю только с изучением ${targetLanguageName}: грамматика, лексика, произношение, упражнения, а также культура, традиции, литература и поэзия, связанные с этим языком. Другие темы (рецепты, код, политика, новости, спорт и т.п.) — вне моей роли. Спроси что-нибудь о ${targetLanguageName}!`,
+    en: `I only help with learning ${targetLanguageName}: grammar, vocabulary, pronunciation, exercises, plus culture, traditions, literature and poetry related to this language. Other topics (recipes, coding, politics, news, sports, etc.) are outside my role. Ask me something about ${targetLanguageName}!`,
+    es: `Solo ayudo con el aprendizaje de ${targetLanguageName}: gramática, vocabulario, pronunciación, ejercicios, y también cultura, tradiciones, literatura y poesía relacionadas con este idioma. Otros temas (recetas, código, política, noticias, deporte, etc.) quedan fuera de mi rol. ¡Pregúntame algo sobre ${targetLanguageName}!`,
+    de: `Ich helfe nur beim Lernen von ${targetLanguageName}: Grammatik, Wortschatz, Aussprache, Übungen sowie Kultur, Traditionen, Literatur und Poesie dieser Sprache. Andere Themen (Rezepte, Code, Politik, Nachrichten, Sport usw.) liegen außerhalb meiner Rolle. Frag mich etwas über ${targetLanguageName}!`,
   };
   return messages[interfaceLanguage] ?? messages.en;
 }
