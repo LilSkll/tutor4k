@@ -43,7 +43,8 @@ export function useStudentLearningProfile(courseId?: string | null) {
     loading,
     error,
     reload,
-    recommendations: profile?.lastRecommendations ?? [],
+    recommendations: profile?.recommendations ?? [],
+    recommendationStrings: profile?.lastRecommendations ?? [],
     weaknesses: profile?.weaknesses ?? [],
     strengths: profile?.strengths ?? [],
   };

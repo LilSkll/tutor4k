@@ -27,11 +27,22 @@ import {
   getChapterTitle,
 } from "@/lib/chapter-display";
 import { translate } from "@/lib/i18n";
+import { getLessonAdaptationAction } from "@/server/actions/learning-profile";
 import type { GrammarTopic, StaticExercise } from "@/types";
+import type { LessonAdaptation } from "@/types/learning-profile";
 import { cn } from "@/lib/utils";
 import type { Chapter } from "@/types";
 
-type Phase = "intro" | "theory" | "practice" | "dialogue" | "summary";
+type Phase =
+  | "intro"
+  | "revision"
+  | "theory"
+  | "practice"
+  | "reinforce"
+  | "dialogue"
+  | "summary";
+
+type PracticeKind = "revision" | "main" | "reinforce";
 
 interface LessonRunnerProps {
   chapter: Chapter;
@@ -45,6 +56,16 @@ interface LessonRunnerProps {
   nextChapterTitle?: string | null;
   nextChapterSummary?: string | null;
   targetLanguage: string;
+}
+
+/** Soft truncate for mastered chapters — keep intro + first section. */
+function shortenTheoryMarkdown(content: string): string {
+  const byHeading = content.split(/\n(?=##\s)/);
+  if (byHeading.length > 1) {
+    return byHeading.slice(0, 2).join("\n").trim();
+  }
+  if (content.length <= 900) return content;
+  return `${content.slice(0, 900).trim()}…`;
 }
 
 export function LessonRunner({
@@ -95,11 +116,86 @@ export function LessonRunner({
   const [dialogueResponse, setDialogueResponse] = React.useState<string | null>(null);
   const [dialogueInput, setDialogueInput] = React.useState("");
   const [wordsLearned, setWordsLearned] = React.useState(0);
+  const [adaptation, setAdaptation] = React.useState<LessonAdaptation | null>(
+    null,
+  );
+  const [revisionExercises, setRevisionExercises] = React.useState<
+    StaticExercise[]
+  >([]);
+  const [practiceKind, setPracticeKind] =
+    React.useState<PracticeKind>("main");
 
-  const generateExercises = async () => {
-    if (presetExercises.length > 0) {
-      setExercises(presetExercises);
+  React.useEffect(() => {
+    let cancelled = false;
+    void (async () => {
+      try {
+        const data = await getLessonAdaptationAction({
+          courseId,
+          grammarTopic: grammarTopicSlug,
+          vocabTopic: chapter.vocabTopic ?? null,
+        });
+        if (cancelled) return;
+        setAdaptation(data.adaptation);
+        setRevisionExercises(data.revisionExercises);
+      } catch {
+        // Non-fatal — lesson uses standard flow.
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [courseId, grammarTopicSlug, chapter.vocabTopic]);
+
+  const mainPracticeSet = React.useMemo(() => {
+    if (presetExercises.length === 0) return [];
+    // Mastered → more practice (repeat bank once if short).
+    if (
+      adaptation?.practiceEmphasis &&
+      adaptation.mode === "mastered_short" &&
+      presetExercises.length < 5
+    ) {
+      return [...presetExercises, ...presetExercises.slice(0, 2)];
+    }
+    return presetExercises;
+  }, [presetExercises, adaptation]);
+
+  const reinforceSet = React.useMemo(() => {
+    if (adaptation?.mode !== "supportive") return [];
+    return presetExercises.slice(0, Math.min(2, presetExercises.length));
+  }, [adaptation, presetExercises]);
+
+  const theoryMarkdown = React.useMemo(() => {
+    if (!grammarContent) return null;
+    if (adaptation?.shortTheory) return shortenTheoryMarkdown(grammarContent);
+    return grammarContent;
+  }, [grammarContent, adaptation?.shortTheory]);
+
+  const beginMainLesson = () => {
+    setPhase("theory");
+  };
+
+  const startLesson = () => {
+    if (adaptation?.needsRevision && revisionExercises.length > 0) {
+      setExercises(revisionExercises.slice(0, 3));
       setCurrentExerciseIdx(0);
+      setUserAnswer("");
+      setSelectedOption(null);
+      setResult(null);
+      setPracticeKind("revision");
+      setPhase("revision");
+      return;
+    }
+    beginMainLesson();
+  };
+
+  const generateExercises = () => {
+    if (mainPracticeSet.length > 0) {
+      setExercises(mainPracticeSet);
+      setCurrentExerciseIdx(0);
+      setUserAnswer("");
+      setSelectedOption(null);
+      setResult(null);
+      setPracticeKind("main");
       setPhase("practice");
     } else {
       setPhase("dialogue");
@@ -127,6 +223,24 @@ export function LessonRunner({
     if (isCorrect) setScore((s) => s + 1);
   };
 
+  const afterPracticeBlock = () => {
+    if (practiceKind === "revision") {
+      beginMainLesson();
+      return;
+    }
+    if (practiceKind === "main" && reinforceSet.length > 0) {
+      setExercises(reinforceSet);
+      setCurrentExerciseIdx(0);
+      setUserAnswer("");
+      setSelectedOption(null);
+      setResult(null);
+      setPracticeKind("reinforce");
+      setPhase("reinforce");
+      return;
+    }
+    setPhase("dialogue");
+  };
+
   const nextExercise = () => {
     if (currentExerciseIdx + 1 < exercises.length) {
       setCurrentExerciseIdx((i) => i + 1);
@@ -134,7 +248,7 @@ export function LessonRunner({
       setSelectedOption(null);
       setResult(null);
     } else {
-      setPhase("dialogue");
+      afterPracticeBlock();
     }
   };
 
@@ -197,91 +311,48 @@ export function LessonRunner({
     ? t("lesson.greetingNamed", { name: userName })
     : t("lesson.greeting");
 
-  if (phase === "intro") {
-    return (
-      <div className="max-w-2xl mx-auto py-6 space-y-6">
-        <Card className="border-0 shadow-lg overflow-hidden">
-          <div className="bg-gradient-to-br from-primary via-orange-500 to-rose-500 p-8 text-white text-center">
-            <div className="text-6xl mb-4">{chapter.icon}</div>
-            <Badge className="bg-white/20 text-white border-0 mb-2">
-              {t("lesson.chapterBadge", {
-                number: chapter.number,
-                level: chapter.level,
-              })}
-            </Badge>
-            <h1 className="text-3xl font-bold mb-1">{chapterDisplayTitle}</h1>
-            <p className="text-white/80 italic">{chapter.titleEs}</p>
-            <p className="text-white/70 text-sm mt-3">{chapterDisplaySummary}</p>
-            <div className="mt-4 inline-flex items-center gap-2 text-sm text-white/80">
-              <Sparkles className="h-4 w-4" />
-              📍 {chapterDisplayLocation} · {t("lesson.minutes", { minutes: chapter.estimatedMinutes })}
-            </div>
-          </div>
-          <CardContent className="p-6 text-center">
-            <p className="text-base text-muted-foreground mb-6">
-              <span className="text-2xl">🦅</span> {introGreeting}{" "}
-              {t("lesson.introMessage", { topic: grammarTitle })}
-            </p>
-            <Button variant="gradient" size="lg" onClick={() => setPhase("theory")}>
-              <BookOpen className="h-4 w-4" />
-              {t("lesson.startBtn")}
-            </Button>
-          </CardContent>
-        </Card>
-      </div>
-    );
-  }
+  const introBody =
+    adaptation?.mode === "mastered_short"
+      ? t("lesson.introMastered", { topic: grammarTitle })
+      : adaptation?.mode === "supportive"
+        ? t("lesson.introSupportive", { topic: grammarTitle })
+        : t("lesson.introMessage", { topic: grammarTitle });
 
-  if (phase === "theory") {
-    return (
-      <div className="max-w-3xl mx-auto py-6 space-y-6">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <BookOpen className="h-5 w-5 text-primary" />
-            <h2 className="text-xl font-bold">{t("lesson.newTopic")}</h2>
-          </div>
-          <Badge variant="level">{chapterDisplayTitle}</Badge>
-        </div>
-        <Card>
-          <CardContent className="p-6">
-            <div className="flex items-center gap-2 mb-4">
-              <Badge variant="level">{chapter.level}</Badge>
-              <span className="text-sm text-muted-foreground">{grammarTitle}</span>
-            </div>
-            {grammarLoading ? (
-              <p className="text-sm text-muted-foreground flex items-center gap-2">
-                <Sparkles className="h-4 w-4 animate-pulse text-primary" />
-                {t("grammar.loadingArticle")}
-              </p>
-            ) : grammarError ? (
-              <p className="text-sm text-destructive">{grammarError}</p>
-            ) : grammarContent ? (
-              <Markdown content={grammarContent} />
-            ) : null}
-          </CardContent>
-        </Card>
-        <div className="flex justify-end">
-          <Button variant="gradient" onClick={generateExercises}>
-            <ArrowRight className="h-4 w-4" />
-            {t("lesson.goToPractice")}
-          </Button>
-        </div>
-      </div>
-    );
-  }
-
-  if (phase === "practice" && exercises.length > 0) {
+  const renderPractice = (kind: PracticeKind) => {
+    if (exercises.length === 0) return null;
     const ex = exercises[currentExerciseIdx];
     const hasOptions = ex.options && ex.options.length > 0;
+    const titleKey =
+      kind === "revision"
+        ? "lesson.revisionTitle"
+        : kind === "reinforce"
+          ? "lesson.reinforceTitle"
+          : "lesson.practice";
+    const nextLabel =
+      currentExerciseIdx + 1 < exercises.length
+        ? t("lesson.nextExercise")
+        : kind === "revision"
+          ? t("lesson.goToTheory")
+          : kind === "reinforce"
+            ? t("lesson.goToDialogue")
+            : reinforceSet.length > 0 && kind === "main"
+              ? t("lesson.goToReinforce")
+              : t("lesson.goToDialogue");
+
     return (
       <div className="max-w-2xl mx-auto py-6 space-y-6">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Check className="h-5 w-5 text-primary" />
-            <h2 className="text-xl font-bold">{t("lesson.practice")}</h2>
+            <h2 className="text-xl font-bold">{t(titleKey)}</h2>
           </div>
           <Badge variant="level">{chapterDisplayTitle}</Badge>
         </div>
+        {kind === "revision" && (
+          <p className="text-sm text-muted-foreground text-center">
+            {t("lesson.revisionIntro")}
+          </p>
+        )}
         <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
           {t("lesson.exerciseOf", {
             current: currentExerciseIdx + 1,
@@ -361,14 +432,109 @@ export function LessonRunner({
                 <p className="text-sm">{result.feedback}</p>
               </div>
               <Button variant="gradient" className="w-full" onClick={nextExercise}>
-                {currentExerciseIdx + 1 < exercises.length
-                  ? t("lesson.nextExercise")
-                  : t("lesson.goToDialogue")}
+                {nextLabel}
                 <ChevronRight className="h-4 w-4" />
               </Button>
             </CardContent>
           </Card>
         )}
+      </div>
+    );
+  };
+
+  if (phase === "intro") {
+    return (
+      <div className="max-w-2xl mx-auto py-6 space-y-6">
+        <Card className="border-0 shadow-lg overflow-hidden">
+          <div className="bg-gradient-to-br from-primary via-orange-500 to-rose-500 p-8 text-white text-center">
+            <div className="text-6xl mb-4">{chapter.icon}</div>
+            <Badge className="bg-white/20 text-white border-0 mb-2">
+              {t("lesson.chapterBadge", {
+                number: chapter.number,
+                level: chapter.level,
+              })}
+            </Badge>
+            <h1 className="text-3xl font-bold mb-1">{chapterDisplayTitle}</h1>
+            <p className="text-white/80 italic">{chapter.titleEs}</p>
+            <p className="text-white/70 text-sm mt-3">{chapterDisplaySummary}</p>
+            <div className="mt-4 inline-flex items-center gap-2 text-sm text-white/80">
+              <Sparkles className="h-4 w-4" />
+              📍 {chapterDisplayLocation} · {t("lesson.minutes", { minutes: chapter.estimatedMinutes })}
+            </div>
+          </div>
+          <CardContent className="p-6 text-center">
+            <p className="text-base text-muted-foreground mb-6">
+              <span className="text-2xl">🦅</span> {introGreeting} {introBody}
+            </p>
+            {adaptation?.needsRevision && revisionExercises.length > 0 && (
+              <p className="text-sm text-muted-foreground mb-4">
+                {t("lesson.revisionHint")}
+              </p>
+            )}
+            <Button variant="gradient" size="lg" onClick={startLesson}>
+              <BookOpen className="h-4 w-4" />
+              {adaptation?.needsRevision && revisionExercises.length > 0
+                ? t("lesson.startWithRevision")
+                : t("lesson.startBtn")}
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
+  if (phase === "revision") return renderPractice("revision");
+  if (phase === "practice") return renderPractice("main");
+  if (phase === "reinforce") return renderPractice("reinforce");
+
+  if (phase === "theory") {
+    return (
+      <div className="max-w-3xl mx-auto py-6 space-y-6">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <BookOpen className="h-5 w-5 text-primary" />
+            <h2 className="text-xl font-bold">
+              {adaptation?.shortTheory
+                ? t("lesson.quickReview")
+                : t("lesson.newTopic")}
+            </h2>
+          </div>
+          <Badge variant="level">{chapterDisplayTitle}</Badge>
+        </div>
+        {adaptation?.shortTheory && (
+          <p className="text-sm text-muted-foreground">
+            {t("lesson.shortTheoryNote")}
+          </p>
+        )}
+        <Card>
+          <CardContent className="p-6">
+            <div className="flex items-center gap-2 mb-4">
+              <Badge variant="level">{chapter.level}</Badge>
+              <span className="text-sm text-muted-foreground">{grammarTitle}</span>
+            </div>
+            {grammarLoading ? (
+              <p className="text-sm text-muted-foreground flex items-center gap-2">
+                <Sparkles className="h-4 w-4 animate-pulse text-primary" />
+                {t("grammar.loadingArticle")}
+              </p>
+            ) : grammarError ? (
+              <p className="text-sm text-destructive">{grammarError}</p>
+            ) : theoryMarkdown ? (
+              <Markdown content={theoryMarkdown} />
+            ) : null}
+          </CardContent>
+        </Card>
+        <div className="flex justify-end gap-2">
+          {adaptation?.mode === "mastered_short" && mainPracticeSet.length > 0 && (
+            <Button variant="outline" onClick={generateExercises}>
+              {t("lesson.skipToPractice")}
+            </Button>
+          )}
+          <Button variant="gradient" onClick={generateExercises}>
+            <ArrowRight className="h-4 w-4" />
+            {t("lesson.goToPractice")}
+          </Button>
+        </div>
       </div>
     );
   }

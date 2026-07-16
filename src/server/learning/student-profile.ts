@@ -1,5 +1,12 @@
 import { createSupabaseServerClient } from "@/lib/supabase-server";
 import { createSupabaseAdminClient } from "@/lib/supabase-admin";
+import {
+  applyForgettingToProfile,
+  buildStructuredRecommendations,
+  recommendationsToLegacyStrings,
+  skillCertainty,
+  evidenceCount,
+} from "@/server/learning/adaptive";
 import type {
   ProfileUpdateSignal,
   SkillEvidence,
@@ -46,6 +53,7 @@ export function emptyCourseProfile(): StudentCourseProfile {
       likesExercises: true,
       needsRepetition: false,
     },
+    recommendations: [],
     lastRecommendations: [],
     updatedAt: new Date().toISOString(),
   };
@@ -132,7 +140,8 @@ export function applyProfileSignal(
     weaknesses: [...course.weaknesses],
     strengths: [...course.strengths],
     preferences: { ...course.preferences },
-    lastRecommendations: [...course.lastRecommendations],
+    recommendations: [...(course.recommendations ?? [])],
+    lastRecommendations: [...(course.lastRecommendations ?? [])],
     updatedAt: new Date().toISOString(),
   };
 
@@ -211,45 +220,47 @@ export function applyProfileSignal(
   }
 
   if (signal.recommendations?.length) {
-    next.lastRecommendations = signal.recommendations.slice(0, MAX_RECS);
+    // Legacy string override ignored for structure — rebuild from evidence below.
+    void signal.recommendations;
   }
 
   if (signal.skillHints) {
     next.skills = { ...next.skills, ...signal.skillHints };
   }
 
-  // Refresh recommendations from weakest skills when empty or after updates.
-  next.lastRecommendations = buildRecommendations(next);
+  // Structured recommendations from cognitive model.
+  next.recommendations = buildStructuredRecommendations(next, MAX_RECS);
+  next.lastRecommendations = recommendationsToLegacyStrings(
+    next.recommendations,
+  );
 
   return next;
 }
 
+/** @deprecated Prefer buildStructuredRecommendations */
 export function buildRecommendations(course: StudentCourseProfile): string[] {
-  const grammarRanked = Object.entries(course.grammar).sort(
-    (a, b) => a[1].confidence - b[1].confidence,
+  return recommendationsToLegacyStrings(
+    buildStructuredRecommendations(course, MAX_RECS),
   );
-  const vocabRanked = Object.entries(course.vocabulary).sort(
-    (a, b) => a[1].confidence - b[1].confidence,
-  );
+}
 
-  const recs: string[] = [];
-  for (const [slug, ev] of grammarRanked.slice(0, 2)) {
-    if (ev.confidence < 70) {
-      recs.push(`review grammar: ${slug} (${ev.confidence}%)`);
-    }
-  }
-  for (const [slug, ev] of vocabRanked.slice(0, 1)) {
-    if (ev.confidence < 75) {
-      recs.push(`practice vocabulary: ${slug} (${ev.confidence}%)`);
-    }
-  }
-  for (const w of course.weaknesses.slice(0, 2)) {
-    recs.push(`address: ${w}`);
-  }
-  if (recs.length === 0 && course.strengths[0]) {
-    recs.push(`keep consolidating: ${course.strengths[0]}`);
-  }
-  return recs.slice(0, MAX_RECS);
+function normalizeCourse(raw: unknown): StudentCourseProfile {
+  const base = emptyCourseProfile();
+  if (!raw || typeof raw !== "object") return base;
+  const c = raw as Partial<StudentCourseProfile>;
+  return {
+    ...base,
+    ...c,
+    grammar: c.grammar ?? {},
+    vocabulary: c.vocabulary ?? {},
+    skills: { ...base.skills, ...(c.skills ?? {}) },
+    weaknesses: c.weaknesses ?? [],
+    strengths: c.strengths ?? [],
+    preferences: { ...base.preferences, ...(c.preferences ?? {}) },
+    recommendations: Array.isArray(c.recommendations) ? c.recommendations : [],
+    lastRecommendations: c.lastRecommendations ?? [],
+    updatedAt: c.updatedAt ?? base.updatedAt,
+  };
 }
 
 function normalizeStore(raw: unknown): StudentLearningProfileStore {
@@ -258,7 +269,11 @@ function normalizeStore(raw: unknown): StudentLearningProfileStore {
   if (obj.version !== 1 || !obj.courses || typeof obj.courses !== "object") {
     return emptyStore();
   }
-  return { version: 1, courses: { ...obj.courses } };
+  const courses: Record<string, StudentCourseProfile> = {};
+  for (const [id, course] of Object.entries(obj.courses)) {
+    courses[id] = normalizeCourse(course);
+  }
+  return { version: 1, courses };
 }
 
 /**
@@ -291,7 +306,14 @@ export async function getCourseLearningProfile(
   userId?: string,
 ): Promise<StudentCourseProfile> {
   const store = await getLearningProfileStore(userId);
-  return store.courses[courseId] ?? emptyCourseProfile();
+  const raw = store.courses[courseId] ?? emptyCourseProfile();
+  // Soft forgetting on read — cognitive model ages without practice.
+  const faded = applyForgettingToProfile(normalizeCourse(raw));
+  faded.recommendations = buildStructuredRecommendations(faded, MAX_RECS);
+  faded.lastRecommendations = recommendationsToLegacyStrings(
+    faded.recommendations,
+  );
+  return faded;
 }
 
 /**
@@ -352,24 +374,37 @@ export function formatLearningProfilePromptBlock(
     if (rows.length === 0) return "none yet";
     return rows
       .map(([k, v]) => {
+        const n = evidenceCount(v);
+        const cert = skillCertainty(v);
         const mistakes =
           v.commonMistakes.length > 0
             ? ` [mistakes: ${v.commonMistakes.slice(0, 2).join("; ")}]`
             : "";
-        return `${k}: ${v.confidence}% (✓${v.correctAnswers}/✗${v.wrongAnswers}${mistakes})`;
+        return `${k}: confidence=${v.confidence}% evidence=${n} certainty=${cert.toFixed(2)}${mistakes}`;
       })
       .join("; ");
   };
 
   const prefs = profile.preferences;
   const prefLine = [
-    prefs.likesExplanations ? "explanations" : null,
+    prefs.likesExplanations ? "explanations-first" : null,
     prefs.likesExamples ? "examples" : null,
-    prefs.likesExercises ? "exercises" : null,
-    prefs.needsRepetition ? "needs repetition" : null,
+    prefs.likesExercises ? "exercises-first" : null,
+    prefs.needsRepetition ? "needs-repetition" : null,
   ]
     .filter(Boolean)
     .join(", ");
+
+  const structured =
+    (profile.recommendations?.length
+      ? profile.recommendations
+      : buildStructuredRecommendations(profile, 5)
+    )
+      .map(
+        (r) =>
+          `{type:${r.type}, topic:${r.topic}, priority:${r.priority}, reason:${r.reason}, confidence:${r.confidence ?? "?"}, certainty:${r.certainty ?? "?"}}`,
+      )
+      .join("\n  ") || "none";
 
   return `# STUDENT LEARNING PROFILE (persistent evidence — course: ${courseId})
 grammar: ${fmtMap(profile.grammar)}
@@ -378,16 +413,21 @@ skills: listening=${profile.skills.listening ?? "?"} reading=${profile.skills.re
 weaknesses: ${profile.weaknesses.join("; ") || "none"}
 strengths: ${profile.strengths.join("; ") || "none"}
 preferences: ${prefLine || "balanced"}
-lastRecommendations: ${profile.lastRecommendations.join("; ") || "none"}
+structuredRecommendations:
+  ${structured}
 updatedAt: ${profile.updatedAt}
 
-# HOW TO USE THIS PROFILE
-- Speak as a teacher who tracks these scores over time (never invent numbers).
-- If a grammar topic is < 40%: more scaffolding and examples with that pattern.
-- If vocabulary topic is ≥ 85%: avoid unnecessary drilling of the same words.
-- Follow preferences: explanations-first vs exercises-first.
-- Personal recommendations should come from lastRecommendations / weakest topics.
-- Never dump raw JSON or percentage tables unless the student asks for progress.`;
+# HOW TO USE THIS PROFILE (sound like you know this student for months)
+- Speak in the interface language for explanations, hints, encouragement, and recommendations.
+- Keep grammar examples / vocabulary / dialogues in the target language of the course.
+- Use structuredRecommendations as the source for personal advice — turn them into natural sentences (do not dump JSON).
+- If certainty < 0.4: use cautious wording ("It seems this still needs practice") — never "You are bad at X".
+- If certainty ≥ 0.7 and confidence < 40: more scaffolding and examples with that pattern.
+- If confidence ≥ 85: avoid unnecessary drilling; stretch slightly instead.
+- Strengths: acknowledge briefly; Weaknesses: soft review moments, not lectures.
+- Preferences: explanations-first → short rule then try; exercises-first → practice then confirm.
+- Periodically revisit stale/forgetting topics from recommendations.
+- Never invent scores or history not listed above.`;
 }
 
 /** Infer CEFR band from overall grammar confidence (soft). */

@@ -13,6 +13,7 @@ import {
   formatLearningProfilePromptBlock,
   getCourseLearningProfile,
 } from "@/server/learning/student-profile";
+import { rankChapterSlugsByProfile } from "@/server/learning/adaptive";
 import type {
   Chapter,
   CourseConfig,
@@ -563,9 +564,18 @@ function buildExerciseTopicHint(ctx: {
   weakGrammar: string[];
   weakVocabulary: string[];
   mistakes: string[];
+  learningProfile?: StudentCourseProfile | null;
 }): string {
   const parts: string[] = [];
-  // Priority: mistaken/weak → current → prior vocab → light future signal
+
+  // Profile-first: lowest confidence / mistakes / stale before anything else.
+  const recs = ctx.learningProfile?.recommendations ?? [];
+  for (const r of recs.slice(0, 3)) {
+    parts.push(
+      `priority:${r.reason} ${r.type}=${r.topic} (p=${r.priority})`,
+    );
+  }
+
   if (ctx.mistakes[0]) parts.push(`review mistakes: ${ctx.mistakes[0]}`);
   if (ctx.weakGrammar[0]) parts.push(`weak grammar: ${ctx.weakGrammar[0]}`);
   if (ctx.current) {
@@ -741,6 +751,7 @@ export async function buildTeacherContext(input: {
     weakGrammar: profile.weakGrammar,
     weakVocabulary: profile.weakVocabulary,
     mistakes: profile.recentMistakes,
+    learningProfile,
   });
 
   const base: Omit<TeacherContext, "sessionOpening"> = {
@@ -791,25 +802,55 @@ export async function buildLearnerContext(input: {
 }
 
 /**
- * Prefer chapters linked to weak topics / recent mistakes, then reviewed, then current.
+ * Prefer chapters linked to Student Learning Profile priorities,
+ * then weak topics / recent mistakes, then reviewed, then current.
  */
-export function rankChapterSlugsForExercises(teacher: TeacherContext): string[] {
+export function rankChapterSlugsForExercises(
+  teacher: TeacherContext,
+  allChapters?: Chapter[],
+): string[] {
+  const fallback: string[] = [];
+  const pushFb = (slug: string | null | undefined) => {
+    if (slug && !fallback.includes(slug)) fallback.push(slug);
+  };
+
+  const known = [
+    ...(teacher.currentChapterObj ? [teacher.currentChapterObj] : []),
+    ...teacher.recentCompleted,
+    ...(allChapters ?? []),
+  ];
+
+  for (const title of teacher.weakChapters) {
+    const match = known.find((c) => chapterTitle(c) === title);
+    pushFb(match?.slug);
+  }
+  for (const ch of teacher.recentCompleted) pushFb(ch.slug);
+  pushFb(teacher.currentChapterSlug);
+
+  if (teacher.learningProfile && allChapters && allChapters.length > 0) {
+    return rankChapterSlugsByProfile(
+      allChapters,
+      teacher.learningProfile,
+      fallback,
+    );
+  }
+
+  // Without full chapter list: map structured recommendations onto known chapters.
   const ranked: string[] = [];
   const push = (slug: string | null | undefined) => {
     if (slug && !ranked.includes(slug)) ranked.push(slug);
   };
 
-  // Weak chapter titles → slugs via recentCompleted + current
-  const all = [
-    ...(teacher.currentChapterObj ? [teacher.currentChapterObj] : []),
-    ...teacher.recentCompleted,
-  ];
-  for (const title of teacher.weakChapters) {
-    const match = all.find((c) => chapterTitle(c) === title);
+  for (const rec of teacher.learningProfile?.recommendations ?? []) {
+    const match = known.find(
+      (c) =>
+        c.grammarTopic === rec.topic ||
+        c.vocabTopic === rec.topic ||
+        c.grammarTopic.includes(rec.topic) ||
+        (c.vocabTopic?.includes(rec.topic) ?? false),
+    );
     push(match?.slug);
   }
-
-  for (const ch of teacher.recentCompleted) push(ch.slug);
-  push(teacher.currentChapterSlug);
+  for (const slug of fallback) push(slug);
   return ranked;
 }

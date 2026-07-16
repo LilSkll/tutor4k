@@ -9,12 +9,30 @@ export type SkillBand = Level;
 
 /** Evidence-backed skill node (grammar topic, vocab topic, etc.). */
 export interface SkillEvidence {
-  /** 0–100 confidence. */
+  /** 0–100 confidence (after forgetting curve when loaded). */
   confidence: number;
   lastPracticed: string | null;
   correctAnswers: number;
   wrongAnswers: number;
   commonMistakes: string[];
+}
+
+/** Structured recommendation — AI turns this into natural interface-language text. */
+export type LearningRecommendationReason =
+  | "low_confidence"
+  | "recent_mistakes"
+  | "stale_topic"
+  | "forgetting"
+  | "consolidate_strength"
+  | "new_topic";
+
+export interface LearningRecommendation {
+  type: "grammar" | "vocabulary";
+  topic: string;
+  priority: number;
+  reason: LearningRecommendationReason;
+  confidence?: number;
+  certainty?: number;
 }
 
 export interface StudentCourseProfile {
@@ -34,7 +52,12 @@ export interface StudentCourseProfile {
     likesExercises: boolean;
     needsRepetition: boolean;
   };
-  /** Human-readable recommendation lines (interface-language agnostic keys later). */
+  /** Structured recommendations (source of truth). */
+  recommendations: LearningRecommendation[];
+  /**
+   * @deprecated Derived display strings for older prompt paths.
+   * Prefer `recommendations`.
+   */
   lastRecommendations: string[];
   updatedAt: string;
 }
@@ -47,25 +70,34 @@ export interface StudentLearningProfileStore {
 
 export type ProfileUpdateSignal = {
   courseId: string;
-  /** Grammar topic slug, e.g. a1-presente */
   grammarTopic?: string | null;
-  /** Vocabulary topic slug */
   vocabTopic?: string | null;
   correct?: boolean;
-  /** Short mistake note when incorrect */
   mistakeNote?: string | null;
-  /** Soft preference hints from interaction style */
   prefersExplanations?: boolean;
   prefersExamples?: boolean;
   prefersExercises?: boolean;
   needsRepetition?: boolean;
-  /** Add strength / weakness labels */
   addStrength?: string | null;
   addWeakness?: string | null;
-  /** Replace recommendation list (optional) */
   recommendations?: string[] | null;
-  /** Soft exposure from tutor chat (tiny +1), not a scored attempt */
   exposureOnly?: boolean;
-  /** CEFR band hints for skills */
   skillHints?: Partial<StudentCourseProfile["skills"]> | null;
 };
+
+/** How a lesson should adapt for this student. */
+export type LessonFlowMode =
+  | "mastered_short" // short theory, more practice
+  | "standard"
+  | "supportive"; // full theory first, then practice, then reinforce
+
+export interface LessonAdaptation {
+  mode: LessonFlowMode;
+  chapterConfidence: number | null;
+  chapterCertainty: number;
+  needsRevision: boolean;
+  revisionTopics: LearningRecommendation[];
+  theoryFirst: boolean;
+  practiceEmphasis: boolean;
+  shortTheory: boolean;
+}

@@ -58,6 +58,7 @@ export async function POST(req: NextRequest) {
     let preferredChapterSlugs: string[] | undefined;
     let topic = body.topic;
     try {
+      const { getCourse } = await import("@/config/courses");
       const { buildTeacherContext, rankChapterSlugsForExercises } =
         await import("@/server/ai/learner-context");
       const teacher = await buildTeacherContext({
@@ -65,8 +66,18 @@ export async function POST(req: NextRequest) {
         interfaceLanguage: language,
         level,
       });
-      preferredChapterSlugs = rankChapterSlugsForExercises(teacher);
-      if (!topic) topic = teacher.exerciseTopicHint;
+      const course = await getCourse(courseId);
+      preferredChapterSlugs = rankChapterSlugsForExercises(
+        teacher,
+        course.getChapters(),
+      );
+      // Prefer structured profile recommendation over static chapter title.
+      if (!topic) {
+        const top = teacher.learningProfile?.recommendations?.[0];
+        topic = top
+          ? `${top.type}:${top.topic}`
+          : teacher.exerciseTopicHint;
+      }
     } catch {
       // Non-fatal: pool still works without curriculum ranking.
     }
@@ -75,7 +86,7 @@ export async function POST(req: NextRequest) {
       courseId,
       type: body.type,
       level: body.level,
-      topic: body.topic,
+      topic: body.topic, // keep explicit caller topic for filtering titles
       preferredChapterSlugs,
     });
 
