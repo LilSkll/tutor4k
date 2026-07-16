@@ -25,6 +25,8 @@ interface CourseItem {
   vocabCount: number;
   difficulty: string;
   isActive: boolean;
+  /** False for stub courses with no curriculum yet. */
+  contentReady: boolean;
 }
 
 export function LanguageSelector({
@@ -42,6 +44,11 @@ export function LanguageSelector({
   const [switching, setSwitching] = React.useState<string | null>(null);
 
   const handleSelect = async (courseId: string) => {
+    const course = courses.find((c) => c.id === courseId);
+    if (course && !course.contentReady) {
+      toast.error(t("courses.comingSoonToast"));
+      return;
+    }
     if (courseId === activeCourseId) {
       router.push("/dashboard");
       return;
@@ -161,7 +168,7 @@ export function LanguageSelector({
                   variant={course.isActive ? "gradient" : "outline"}
                   className="w-full"
                   size="lg"
-                  disabled={busy}
+                  disabled={busy || !course.contentReady}
                   onClick={() => handleSelect(course.id)}
                 >
                   {busy ? (
@@ -169,9 +176,11 @@ export function LanguageSelector({
                   ) : (
                     <ArrowRight className="h-4 w-4" />
                   )}
-                  {course.isActive
-                    ? t("courses.continue")
-                    : t("courses.select")}
+                  {!course.contentReady
+                    ? t("courses.comingSoon")
+                    : course.isActive
+                      ? t("courses.continue")
+                      : t("courses.select")}
                 </Button>
               </CardContent>
             </Card>

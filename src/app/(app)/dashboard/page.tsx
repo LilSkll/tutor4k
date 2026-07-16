@@ -17,7 +17,7 @@ import { ProgressRing } from "@/components/shared/progress-ring";
 import { StatCard } from "@/components/shared/stat-card";
 import { MascotTip } from "@/components/shared/mascot-tip";
 import { getCurrentProfile, getChapterProgress } from "@/server/actions/data";
-import { getCourse } from "@/config/courses";
+import { DEFAULT_COURSE_ID, getCourse } from "@/config/courses";
 import { toRoman } from "@/config/chapters";
 import { translate } from "@/lib/i18n";
 import { getWordGloss } from "@/lib/vocab-display";
@@ -27,6 +27,7 @@ import {
   getChapterSummary,
   getChapterTitle,
 } from "@/lib/chapter-display";
+import { createSupabaseServerClient } from "@/lib/supabase-server";
 
 export default async function DashboardPage() {
   const [profile, progress] = await Promise.all([
@@ -38,10 +39,81 @@ export default async function DashboardPage() {
   const t = (key: string, vars?: Record<string, string | number>) =>
     translate(key, lang, vars);
 
-  const courseId = profile?.active_course_id ?? "spanish";
-  const course = await getCourse(courseId);
-  const CHAPTERS = course.getChapters();
+  let courseId = profile?.active_course_id ?? DEFAULT_COURSE_ID;
+  let course = await getCourse(courseId);
+  let CHAPTERS = course.getChapters();
+
+  // Stub courses (e.g. russian) crash if we dereference CHAPTERS[0].
+  // Auto-heal stuck profiles back to a ready course.
+  if (CHAPTERS.length === 0 && courseId !== DEFAULT_COURSE_ID) {
+    try {
+      const supabase = await createSupabaseServerClient();
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+      if (user) {
+        let client = supabase;
+        try {
+          const { createSupabaseAdminClient } = await import(
+            "@/lib/supabase-admin"
+          );
+          const admin = createSupabaseAdminClient();
+          if (admin) client = admin;
+        } catch {
+          // keep user-scoped client
+        }
+        await client
+          .from("profiles")
+          .update({ active_course_id: DEFAULT_COURSE_ID })
+          .eq("id", user.id);
+      }
+    } catch (err) {
+      console.warn(
+        "[dashboard] failed to heal stub course:",
+        (err as Error).message,
+      );
+    }
+    courseId = DEFAULT_COURSE_ID;
+    course = await getCourse(courseId);
+    CHAPTERS = course.getChapters();
+  }
+
   const vocabTopics = course.getVocab();
+  const courseLabel = `${course.flag} ${course.titleNative}`;
+
+  const greeting = profile?.name
+    ? t("dashboard.greetingNamed", { name: profile.name })
+    : t("dashboard.greeting");
+
+  if (CHAPTERS.length === 0) {
+    return (
+      <div className="page-container space-y-6 md:space-y-8 animate-fade-in">
+        <div className="flex flex-col gap-1">
+          <p className="meta-label">{courseLabel}</p>
+          <h1 className="page-title">{greeting}</h1>
+          <p className="text-sm text-muted-foreground">
+            {t("dashboard.hubSubtitle")}
+          </p>
+        </div>
+        <Card className="shadow-elevated">
+          <CardContent className="p-6 sm:p-8 space-y-4 text-center">
+            <p className="text-base text-muted-foreground">
+              {t("dashboard.courseNotReady", { course: course.titleNative })}
+            </p>
+            <Button variant="gradient" size="lg" asChild>
+              <Link href="/courses">
+                <Globe className="h-4 w-4" />
+                {t("dashboard.chooseAnotherLanguage")}
+              </Link>
+            </Button>
+          </CardContent>
+        </Card>
+        <p className="text-center text-xs text-muted-foreground/60 pb-2">
+          {t("dashboard.developer")}
+        </p>
+      </div>
+    );
+  }
 
   const courseChapterSlugs = CHAPTERS.map((c) => c.slug);
   const completedSlugs = new Set(
@@ -52,14 +124,14 @@ export default async function DashboardPage() {
   );
 
   const userLevel = profile?.level;
-  let currentChapter = CHAPTERS[0];
+  let currentChapter = CHAPTERS[0]!;
   if (userLevel) {
     const firstForLevel = CHAPTERS.find((c) => c.level === userLevel);
     if (firstForLevel) currentChapter = firstForLevel;
   }
 
   const startIndex = CHAPTERS.findIndex((c) => c.slug === currentChapter.slug);
-  for (let i = startIndex; i < CHAPTERS.length; i++) {
+  for (let i = Math.max(0, startIndex); i < CHAPTERS.length; i++) {
     if (!completedSlugs.has(CHAPTERS[i].slug)) {
       currentChapter = CHAPTERS[i];
       break;
@@ -78,7 +150,6 @@ export default async function DashboardPage() {
       : 0;
   const streak = profile?.streak ?? 0;
   const dailyGoal = profile?.daily_goal_minutes ?? 15;
-  const courseLabel = `${course.flag} ${course.titleNative}`;
 
   // Stable "word of the day" from course vocab (no AI).
   const dayIndex = Math.floor(Date.now() / 86_400_000);
@@ -90,10 +161,6 @@ export default async function DashboardPage() {
   const gloss = wordOfDay
     ? getWordGloss(wordOfDay, lang, courseId) || wordOfDay.translation || ""
     : "";
-
-  const greeting = profile?.name
-    ? t("dashboard.greetingNamed", { name: profile.name })
-    : t("dashboard.greeting");
 
   const motivation =
     streak > 0

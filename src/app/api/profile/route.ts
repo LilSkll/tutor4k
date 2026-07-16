@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
+import { getCourse, isCourseContentReady } from "@/config/courses";
 
 /**
  * PATCH /api/profile
@@ -27,8 +28,16 @@ export async function PATCH(req: NextRequest) {
     }
 
     const updates: Record<string, unknown> = {};
-    if (body.activeCourseId !== undefined)
+    if (body.activeCourseId !== undefined) {
+      const course = await getCourse(body.activeCourseId);
+      if (!isCourseContentReady(course)) {
+        return NextResponse.json(
+          { error: "Course content is not ready yet" },
+          { status: 400 },
+        );
+      }
       updates.active_course_id = body.activeCourseId;
+    }
     if (body.name !== undefined) updates.name = body.name;
     if (body.interfaceLanguage !== undefined)
       updates.interface_language = body.interfaceLanguage;

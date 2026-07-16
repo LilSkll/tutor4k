@@ -74,3 +74,8 @@ export function getCourseTitle(courseId: string | null | undefined): string {
   const id = courseId || DEFAULT_COURSE_ID;
   return COURSE_TITLES[id] ?? COURSE_TITLES[DEFAULT_COURSE_ID];
 }
+
+/** True when the course has at least one chapter (not a stub). */
+export function isCourseContentReady(course: CourseConfig): boolean {
+  return course.getChapters().length > 0;
+}

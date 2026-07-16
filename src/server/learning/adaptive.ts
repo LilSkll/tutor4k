@@ -46,11 +46,21 @@ export function skillCertainty(ev: SkillEvidence): number {
 }
 
 export function withForgetting(ev: SkillEvidence): SkillEvidence {
+  if (!ev || typeof ev !== "object") {
+    return {
+      confidence: 40,
+      lastPracticed: null,
+      correctAnswers: 0,
+      wrongAnswers: 0,
+      commonMistakes: [],
+    };
+  }
   const days = daysSincePracticed(ev.lastPracticed);
   const penalty = forgettingPenalty(days);
   return {
     ...ev,
-    confidence: Math.max(0, Math.min(100, ev.confidence - penalty)),
+    confidence: Math.max(0, Math.min(100, (ev.confidence ?? 40) - penalty)),
+    commonMistakes: Array.isArray(ev.commonMistakes) ? ev.commonMistakes : [],
   };
 }
 

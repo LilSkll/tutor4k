@@ -42,6 +42,7 @@ export default async function CoursesPage() {
       vocabCount: vocab.reduce((sum, topic) => sum + topic.words.length, 0),
       difficulty,
       isActive: false,
+      contentReady: chapters.length > 0,
     });
   }
 

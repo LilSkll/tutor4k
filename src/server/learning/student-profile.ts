@@ -35,6 +35,36 @@ function emptyEvidence(): SkillEvidence {
   };
 }
 
+function normalizeEvidence(raw: unknown): SkillEvidence | null {
+  if (!raw || typeof raw !== "object") return null;
+  const e = raw as Partial<SkillEvidence>;
+  const confidence = Number(e.confidence);
+  return {
+    confidence: Number.isFinite(confidence)
+      ? Math.max(0, Math.min(100, confidence))
+      : 40,
+    lastPracticed:
+      typeof e.lastPracticed === "string" ? e.lastPracticed : null,
+    correctAnswers: Math.max(0, Number(e.correctAnswers) || 0),
+    wrongAnswers: Math.max(0, Number(e.wrongAnswers) || 0),
+    commonMistakes: Array.isArray(e.commonMistakes)
+      ? e.commonMistakes.filter((m): m is string => typeof m === "string")
+      : [],
+  };
+}
+
+function normalizeEvidenceMap(
+  raw: unknown,
+): Record<string, SkillEvidence> {
+  if (!raw || typeof raw !== "object") return {};
+  const out: Record<string, SkillEvidence> = {};
+  for (const [key, value] of Object.entries(raw)) {
+    const ev = normalizeEvidence(value);
+    if (ev) out[key] = ev;
+  }
+  return out;
+}
+
 export function emptyCourseProfile(): StudentCourseProfile {
   return {
     grammar: {},
@@ -250,16 +280,18 @@ function normalizeCourse(raw: unknown): StudentCourseProfile {
   const c = raw as Partial<StudentCourseProfile>;
   return {
     ...base,
-    ...c,
-    grammar: c.grammar ?? {},
-    vocabulary: c.vocabulary ?? {},
+    grammar: normalizeEvidenceMap(c.grammar),
+    vocabulary: normalizeEvidenceMap(c.vocabulary),
     skills: { ...base.skills, ...(c.skills ?? {}) },
-    weaknesses: c.weaknesses ?? [],
-    strengths: c.strengths ?? [],
+    weaknesses: Array.isArray(c.weaknesses) ? c.weaknesses : [],
+    strengths: Array.isArray(c.strengths) ? c.strengths : [],
     preferences: { ...base.preferences, ...(c.preferences ?? {}) },
     recommendations: Array.isArray(c.recommendations) ? c.recommendations : [],
-    lastRecommendations: c.lastRecommendations ?? [],
-    updatedAt: c.updatedAt ?? base.updatedAt,
+    lastRecommendations: Array.isArray(c.lastRecommendations)
+      ? c.lastRecommendations
+      : [],
+    updatedAt:
+      typeof c.updatedAt === "string" ? c.updatedAt : base.updatedAt,
   };
 }
 
@@ -292,13 +324,29 @@ export async function getLearningProfileStore(
     uid = user.id;
   }
 
-  const { data } = await supabase
+  const { data, error } = await supabase
     .from("profiles")
     .select("learning_profile")
     .eq("id", uid)
     .maybeSingle();
 
-  return normalizeStore(data?.learning_profile);
+  if (error) {
+    console.warn(
+      "[learning-profile] load failed:",
+      error.message,
+    );
+    return emptyStore();
+  }
+
+  try {
+    return normalizeStore(data?.learning_profile);
+  } catch (err) {
+    console.warn(
+      "[learning-profile] normalize failed:",
+      (err as Error).message,
+    );
+    return emptyStore();
+  }
 }
 
 export async function getCourseLearningProfile(
