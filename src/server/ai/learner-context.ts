@@ -4,6 +4,11 @@ import {
   getChapterProgress,
   getExerciseHistory,
 } from "@/server/actions/data";
+import {
+  buildTeachingStrategyBlock,
+  resolveTeachingStrategy,
+  type TeachingStrategy,
+} from "@/server/ai/prompts/teacher";
 import type {
   Chapter,
   CourseConfig,
@@ -38,6 +43,8 @@ export type TeacherContext = {
   exercisesCompleted: number;
   /** 0–1 when enough samples; otherwise null. */
   exercisesCorrectRate: number | null;
+  /** Internal mode for this reply — not UI, not DB. */
+  teachingStrategy: TeachingStrategy;
   /** Compact fingerprint for tutor-cache keys. */
   fingerprint: string;
   /** Markdown block injected into system prompts. */
@@ -468,13 +475,41 @@ function formatTeacherPromptBlock(ctx: {
   upcomingTitle: string | null;
   exercisesCompleted: number;
   exercisesCorrectRate: number | null;
+  teachingStrategy: TeachingStrategy;
 }): string {
   const rate =
     ctx.exercisesCorrectRate !== null
       ? `${Math.round(ctx.exercisesCorrectRate * 100)}%`
       : "n/a";
 
-  return `# TEACHER CONTEXT (internal — use these facts; never invent progress)
+  const strategyBlock = buildTeachingStrategyBlock(
+    ctx.teachingStrategy,
+    ctx.targetLanguage,
+  );
+
+  const voiceHints: string[] = [];
+  if (ctx.weakGrammar[0]) {
+    voiceHints.push(
+      `If relevant, naturally mention struggle with «${ctx.weakGrammar[0]}» (e.g. "I noticed this still needs practice").`,
+    );
+  }
+  if (ctx.studiedVocabTopics[0]) {
+    voiceHints.push(
+      `Prefer reusing vocabulary from «${ctx.studiedVocabTopics.slice(-2).join(", ")}».`,
+    );
+  }
+  if (ctx.completedChapterTitles[0] && ctx.currentChapter) {
+    voiceHints.push(
+      `Connect today's work to «${ctx.completedChapterTitles[0]}» when it helps continuity.`,
+    );
+  }
+  if (ctx.upcomingTitle) {
+    voiceHints.push(
+      `You may preview that «${ctx.upcomingTitle}» comes later — do not fully teach it.`,
+    );
+  }
+
+  return `# TEACHER CONTEXT (internal facts — never invent; never dump raw labels to the student)
 activeCourse: ${ctx.activeCourse}
 targetLanguage: ${ctx.targetLanguage}
 interfaceLanguage: ${ctx.interfaceLanguage}
@@ -494,15 +529,17 @@ upcomingChapter: ${ctx.upcomingTitle ?? "none"}
 recommendedNextTopic: ${ctx.recommendedNextTopic}
 recentMistakes: ${ctx.recentMistakes.map((m) => `«${m}»`).join("; ") || "none"}
 exercisesCompleted: ${ctx.exercisesCompleted} (correctRate: ${rate})
+teachingStrategy: ${ctx.teachingStrategy}
 
-# TEACHING RULES FROM THIS CONTEXT
-- Speak like a teacher who remembers this student: connect new points to completedRecently / studiedGrammar when relevant.
-- When they ask "what next?" or want practice: follow recommendedNextTopic (weak topics before random new material).
-- Already-studied grammar: brief recall + link to the chapter; do not re-teach from zero unless they are stuck.
-- Future / advanced topics (beyond currentChapter / currentLevel): minimum preview only + name upcomingChapter if relevant + return to current work. Never break course order.
-- Prefer studiedVocabulary; gloss new words once in the interface language, reinforce in one target-language example.
-- weakGrammar / recentMistakes → more of that pattern with simpler sentences. Success streak → slightly richer examples.
-- Motivate sparsely with real progress facts only — never invent history or empty praise.`;
+${strategyBlock}
+
+# HOW TO SOUND LIKE YOU KNOW THIS STUDENT
+${voiceHints.length > 0 ? voiceHints.map((h) => `- ${h}`).join("\n") : "- Little history yet — teach warmly from the current chapter; do not invent past struggles."}
+- When they ask what to study next: follow recommendedNextTopic in natural teacher language.
+- Already-studied grammar: light recall + chapter link — not a full reboot unless they are stuck.
+- Future topics: minimal preview + chapter name + return to current work.
+- Weak areas → Recovery/Review behaviour. Strong run → Challenge. Mid success → Assessment questions.
+- Motivate only with real facts above — never empty praise.`;
 }
 
 function buildExerciseTopicHint(ctx: {
@@ -630,6 +667,18 @@ export async function buildTeacherContext(input: {
     profile.recentMistakes.length,
   ].join("|");
 
+  const teachingStrategy = resolveTeachingStrategy({
+    weakGrammar: profile.weakGrammar,
+    weakVocabulary: profile.weakVocabulary,
+    recentMistakes: profile.recentMistakes,
+    weakExerciseTypes: profile.weakExerciseTypes,
+    masteredGrammar: profile.masteredGrammar,
+    strongChapters: profile.strongChapters,
+    exercisesCorrectRate: profile.exercisesCorrectRate,
+    completedChapters: completedCount,
+    currentChapter: currentTitle,
+  });
+
   const promptBlock = formatTeacherPromptBlock({
     activeCourse: input.courseId,
     targetLanguage: course.titleNative,
@@ -652,6 +701,7 @@ export async function buildTeacherContext(input: {
     upcomingTitle: upcomingChapter ? chapterTitle(upcomingChapter) : null,
     exercisesCompleted: profile.exercisesCompleted,
     exercisesCorrectRate: profile.exercisesCorrectRate,
+    teachingStrategy,
   });
 
   const exerciseTopicHint = buildExerciseTopicHint({
@@ -683,6 +733,7 @@ export async function buildTeacherContext(input: {
     recentMistakes: profile.recentMistakes,
     exercisesCompleted: profile.exercisesCompleted,
     exercisesCorrectRate: profile.exercisesCorrectRate,
+    teachingStrategy,
     fingerprint,
     promptBlock,
     exerciseTopicHint,

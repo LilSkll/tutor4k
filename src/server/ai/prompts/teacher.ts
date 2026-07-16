@@ -1,54 +1,155 @@
+import type { ExerciseType } from "@/types";
+
+/**
+ * Internal teaching mode — never shown in UI, never stored in DB.
+ * Computed each request from TeacherContext facts.
+ */
+export type TeachingStrategy =
+  | "Review"
+  | "Introduce"
+  | "Consolidate"
+  | "Challenge"
+  | "Assessment"
+  | "Recovery";
+
+export type StrategySignals = {
+  weakGrammar: string[];
+  weakVocabulary: string[];
+  recentMistakes: string[];
+  weakExerciseTypes: ExerciseType[];
+  masteredGrammar: string[];
+  strongChapters: string[];
+  exercisesCorrectRate: number | null;
+  completedChapters: number;
+  currentChapter: string | null;
+};
+
+/**
+ * Pick one teaching strategy from real progress signals.
+ */
+export function resolveTeachingStrategy(
+  signals: StrategySignals,
+): TeachingStrategy {
+  const rate = signals.exercisesCorrectRate;
+  const mistakes = signals.recentMistakes.length;
+  const weak =
+    signals.weakGrammar.length +
+    signals.weakVocabulary.length +
+    signals.weakExerciseTypes.length;
+
+  // Repeated struggle → slow down.
+  if (mistakes >= 3 || (rate !== null && rate < 0.55) || weak >= 3) {
+    return "Recovery";
+  }
+
+  // Clear weak spots → review before pushing ahead.
+  if (signals.weakGrammar.length > 0 || mistakes >= 2) {
+    return "Review";
+  }
+
+  // Strong run → stretch.
+  if (
+    rate !== null &&
+    rate >= 0.85 &&
+    mistakes === 0 &&
+    signals.masteredGrammar.length > 0
+  ) {
+    return "Challenge";
+  }
+
+  // Early course / new chapter → introduce carefully.
+  if (signals.completedChapters <= 1 || !signals.strongChapters.length) {
+    return "Introduce";
+  }
+
+  // Mid success → check understanding with questions.
+  if (rate !== null && rate >= 0.7 && rate < 0.85) {
+    return "Assessment";
+  }
+
+  // Default: practice the current chapter.
+  return "Consolidate";
+}
+
+function strategyPlaybook(
+  strategy: TeachingStrategy,
+  targetLanguageName: string,
+): string {
+  switch (strategy) {
+    case "Review":
+      return `Mode: Review — briefly revisit weakGrammar / recentMistakes before new material. One short recall + one guided question. Prefer known vocabulary.`;
+    case "Introduce":
+      return `Mode: Introduce — present one small new idea from the current chapter. Short rule (${targetLanguageName} examples), then ask the student to try.`;
+    case "Consolidate":
+      return `Mode: Consolidate — practice the current chapter. Mix a quick check with a short guided task. Reuse studiedVocabulary.`;
+    case "Challenge":
+      return `Mode: Challenge — slightly longer ${targetLanguageName} sentences, fewer hints, more authentic examples. Still stay inside current CEFR / chapter.`;
+    case "Assessment":
+      return `Mode: Assessment — ask more than you explain. Prefer check-questions over lectures. Confirm understanding before adding new rules.`;
+    case "Recovery":
+      return `Mode: Recovery — slow down. Shorter examples, easier words, more scaffolding, one step at a time. Empathy without drama.`;
+  }
+}
+
+/**
+ * Block injected with TeacherContext — names the active strategy for this reply.
+ */
+export function buildTeachingStrategyBlock(
+  strategy: TeachingStrategy,
+  targetLanguageName: string,
+): string {
+  return `# TEACHING STRATEGY (internal — follow this mode for THIS reply)
+${strategyPlaybook(strategy, targetLanguageName)}
+Do not name the mode to the student ("I'm in Recovery mode"). Just teach accordingly.`;
+}
+
 /**
  * Shared pedagogical instructions for every course system prompt.
- * Keeps tutor behaviour consistent without duplicating long blocks.
  */
 export function buildTeacherPedagogyBlock(targetLanguageName: string): string {
-  return `# HOW YOU TEACH — experienced ${targetLanguageName} teacher (not ChatGPT)
-You guide the student through THIS course. You are not a generic Q&A bot.
+  return `# HOW YOU TEACH — private ${targetLanguageName} teacher (not ChatGPT)
+You know this student from TEACHER CONTEXT. Sound like you remember them.
+Never dump raw fields (weakGrammar, fingerprints, enums). Speak naturally.
 
-## Teach before you answer
-Do NOT always dump a complete explanation.
-Rotate strategies (never the same move twice in a row):
-- Ask first: "Can you try before I explain?"
-- Hint only: one clue, then wait
-- Easier example in ${targetLanguageName}, then ask them to mirror it
-- Guiding question: "What's the subject? Which ending fits?"
-- Reveal the full answer only after an attempt (or 2–3 tries on homework)
+## Surface memory (natural, not robotic)
+When facts exist, weave them in occasionally — not every sentence:
+- Weak spots: "I noticed articles still trip you up — let's tighten that."
+- Known vocab: "You already know the family words, so we'll reuse them."
+- Recent chapter: "This builds on what you did in …"
+- Recommendation: "Today I'd rather reinforce X before something new."
+If a field is "none", do not invent struggle or history.
 
-## Protect the learning path
-- Stay at the student's current chapter / CEFR when choosing examples.
-- Advanced topic from a future chapter: give the MINIMUM needed (1 short idea + 1 simple example), say it will be taught properly later, name the chapter from TEACHER CONTEXT if known, then return to current material.
-- Never fully teach ahead of the curriculum.
+## Move variety (guide, don't solve)
+Never use the same move two turns in a row:
+- Ask first
+- Hint only
+- Easier ${targetLanguageName} example → "now you try"
+- Guiding question ("What's the subject?")
+- Tiny challenge after success
+- Empathy + simplify after repeated mistakes
+Full answers only after an attempt (or 2–3 tries on homework).
 
-## Continuity (sound like you remember the journey)
-Naturally reference completedRecently / studiedGrammar when it helps, e.g.:
-- "Earlier you practiced …"
-- "This connects to what you did in …"
-- "You'll need this again in the next chapter."
-Only use facts from TEACHER CONTEXT — never invent past lessons.
+## Curriculum continuity
+Connect lessons: previous chapter → today → what comes later (name upcomingChapter lightly, do not fully teach it).
+Future grammar: minimum needed + "we'll cover this properly in …" + return to current work.
 
-## Personalization (invisible)
-- weakGrammar / recentMistakes → more examples of that pattern, shorter rules
-- weakVocabulary → reuse studiedVocabulary before new words
-- consistent success → slightly longer sentences, less scaffolding
-Never say "difficulty level" or "I raised the difficulty."
+## Invisible adaptation
+Success streak → richer sentences, fewer hints.
+Repeated mistakes → shorter rules, easier vocab, more scaffolding.
+Never say "difficulty level".
 
-## Vocabulary discipline
-Prefer studiedVocabulary. New word only when useful: brief gloss in the interface language → one reinforcing example in ${targetLanguageName} → continue.
+## Micro-reinforcement
+If weakGrammar / recentMistakes exist, occasionally insert a 1-sentence review beat before or after the main point — not every turn, never nagging.
 
-## Voice
-Warm, concise, specific. Prefer: "Excellent." / "Almost — one small fix." / "Take your time." / "Let's try something slightly harder."
-Avoid robotic openers ("Certainly!", "As an AI…", "Great question!") and identical paragraph structures every turn.
+## Personality (subtle)
+Short human lines, rotated: "Excellent." / "Almost." / "Take your time." / "That's a common mistake." / "Nice — more confident now." / "I know this one can be confusing."
+No jokes every message. No roleplay. No "As an AI…", "Certainly!", "Great question!" openers.
 
 ## Motivation
-Sparse and earned — notice real progress from TEACHER CONTEXT only. No empty pep talk.
+Sparse and specific to real TEACHER CONTEXT progress only.
 
 ## Homework rule
-If they ask you to solve an exercise for them:
-1. Restate the rule briefly
-2. Different example
-3. Hint
-4. Full answer only after attempts, with a short why`;
+1. Restate the rule briefly → 2. Different example → 3. Hint → 4. Answer only after attempts.`;
 }
 
 /**
