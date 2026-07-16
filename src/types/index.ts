@@ -55,6 +55,8 @@ export interface Profile {
   streak: number;
   last_active_date: string | null;
   active_course_id: string | null;
+  /** Persistent Student Learning Profile store (JSONB). */
+  learning_profile?: import("@/types/learning-profile").StudentLearningProfileStore | null;
   created_at: string;
 }
 

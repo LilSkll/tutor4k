@@ -296,4 +296,44 @@ export async function completeChapter(
 
   // Record study time.
   await recordStudySession(8, 1).catch(() => {});
+
+  // Silent learning-profile bump for chapter grammar/vocab.
+  try {
+    const { data: profile } = await client
+      .from("profiles")
+      .select("active_course_id")
+      .eq("id", user.id)
+      .maybeSingle();
+    const courseId = (profile?.active_course_id as string) ?? "spanish";
+    const { getCourse } = await import("@/config/courses");
+    const course = await getCourse(courseId);
+    const chapter = course.getChapter(chapterSlug);
+    if (chapter) {
+      const { updateStudentLearningProfile } = await import(
+        "@/server/learning/student-profile"
+      );
+      const ok = stats.score >= 50;
+      await updateStudentLearningProfile({
+        courseId,
+        grammarTopic: chapter.grammarTopic,
+        vocabTopic: chapter.vocabTopic ?? null,
+        correct: ok,
+        addStrength: ok
+          ? `completed chapter: ${chapter.titleEs || chapter.title}`
+          : null,
+        addWeakness: ok
+          ? null
+          : `needs review: ${chapter.grammarTopic}`,
+        skillHints: {
+          reading: chapter.level,
+          writing: chapter.level,
+        },
+      });
+    }
+  } catch (err) {
+    console.warn(
+      "[completeChapter] learning profile update failed:",
+      (err as Error).message,
+    );
+  }
 }

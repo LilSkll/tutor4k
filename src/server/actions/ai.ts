@@ -71,6 +71,8 @@ export async function sendTutorMessage(input: {
 
   // TeacherContext — real curriculum memory for every reply.
   let learnerPromptBlock: string | null | undefined = undefined;
+  let profileGrammarTopic: string | null = null;
+  let profileVocabTopic: string | null = null;
   try {
     const { buildTeacherContext } = await import(
       "@/server/ai/learner-context"
@@ -81,6 +83,8 @@ export async function sendTutorMessage(input: {
       level,
     });
     learnerPromptBlock = teacher.promptBlock;
+    profileGrammarTopic = teacher.currentChapterObj?.grammarTopic ?? null;
+    profileVocabTopic = teacher.currentChapterObj?.vocabTopic ?? null;
   } catch (err) {
     console.warn("[tutor] TeacherContext failed:", (err as Error).message);
     learnerPromptBlock = null;
@@ -264,6 +268,32 @@ export async function sendTutorMessage(input: {
 
     // Count study time: ~2 min per exchange.
     await recordStudySession(2, 0).catch(() => {});
+  }
+
+  // --- Silent Student Learning Profile update (never shown to user) ---
+  if (
+    user &&
+    lastUser &&
+    response.refused !== true &&
+    !response.content.startsWith("⚠️") &&
+    !response.content.startsWith("😔")
+  ) {
+    try {
+      const { recordTutorTurnInProfile } = await import(
+        "@/server/learning/student-profile"
+      );
+      await recordTutorTurnInProfile({
+        courseId: resolvedCourseId,
+        userMessage: lastUser.content,
+        grammarTopic: profileGrammarTopic,
+        vocabTopic: profileVocabTopic,
+      });
+    } catch (err) {
+      console.warn(
+        "[tutor] learning profile update failed:",
+        (err as Error).message,
+      );
+    }
   }
 
   return {
@@ -540,12 +570,17 @@ export async function checkExerciseAnswer(input: {
 
   // Fast path: exact / normalized match.
   if (acceptable.includes(userNorm)) {
-    // Persist history.
     await saveExerciseHistory({
       exercise: input.exercise.question,
       type: input.exercise.type,
       level: input.level,
       userAnswer: input.userAnswer,
+      correct: true,
+      feedback: input.exercise.explanation,
+    });
+    await recordExerciseProfileUpdate({
+      courseId,
+      topic: input.exercise.topic,
       correct: true,
       feedback: input.exercise.explanation,
     });
@@ -563,6 +598,12 @@ export async function checkExerciseAnswer(input: {
       type: input.exercise.type,
       level: input.level,
       userAnswer: input.userAnswer,
+      correct: false,
+      feedback: input.exercise.explanation,
+    });
+    await recordExerciseProfileUpdate({
+      courseId,
+      topic: input.exercise.topic,
       correct: false,
       feedback: input.exercise.explanation,
     });
@@ -604,8 +645,46 @@ export async function checkExerciseAnswer(input: {
     correct: isCorrect,
     feedback,
   });
+  await recordExerciseProfileUpdate({
+    courseId,
+    topic: input.exercise.topic,
+    correct: isCorrect,
+    feedback,
+  });
 
   return { correct: isCorrect, feedback };
+}
+
+/** Silent learning-profile update after an exercise attempt. */
+async function recordExerciseProfileUpdate(input: {
+  courseId: string;
+  topic?: string;
+  correct: boolean;
+  feedback: string;
+}): Promise<void> {
+  try {
+    const {
+      resolveTopicsForCourse,
+      updateStudentLearningProfile,
+    } = await import("@/server/learning/student-profile");
+    const topics = await resolveTopicsForCourse(input.courseId, input.topic);
+    await updateStudentLearningProfile({
+      courseId: input.courseId,
+      grammarTopic: topics.grammarTopic,
+      vocabTopic: topics.vocabTopic,
+      correct: input.correct,
+      mistakeNote: input.correct
+        ? null
+        : input.feedback.slice(0, 80) || "exercise mistake",
+      prefersExercises: true,
+      needsRepetition: !input.correct,
+    });
+  } catch (err) {
+    console.warn(
+      "[exercises] learning profile update failed:",
+      (err as Error).message,
+    );
+  }
 }
 
 async function saveExerciseHistory(input: {

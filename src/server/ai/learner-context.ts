@@ -9,6 +9,10 @@ import {
   resolveTeachingStrategy,
   type TeachingStrategy,
 } from "@/server/ai/prompts/teacher";
+import {
+  formatLearningProfilePromptBlock,
+  getCourseLearningProfile,
+} from "@/server/learning/student-profile";
 import type {
   Chapter,
   CourseConfig,
@@ -17,6 +21,7 @@ import type {
   InterfaceLanguage,
   Level,
 } from "@/types";
+import type { StudentCourseProfile } from "@/types/learning-profile";
 
 /**
  * Internal teacher memory — never shown raw to the user.
@@ -45,6 +50,8 @@ export type TeacherContext = {
   exercisesCorrectRate: number | null;
   /** Internal mode for this reply — not UI, not DB. */
   teachingStrategy: TeachingStrategy;
+  /** Persistent cognitive model for this course (evidence + confidence). */
+  learningProfile: StudentCourseProfile | null;
   /** Compact fingerprint for tutor-cache keys. */
   fingerprint: string;
   /** Markdown block injected into system prompts. */
@@ -476,6 +483,7 @@ function formatTeacherPromptBlock(ctx: {
   exercisesCompleted: number;
   exercisesCorrectRate: number | null;
   teachingStrategy: TeachingStrategy;
+  learningProfileBlock?: string | null;
 }): string {
   const rate =
     ctx.exercisesCorrectRate !== null
@@ -539,7 +547,13 @@ ${voiceHints.length > 0 ? voiceHints.map((h) => `- ${h}`).join("\n") : "- Little
 - Already-studied grammar: light recall + chapter link — not a full reboot unless they are stuck.
 - Future topics: minimal preview + chapter name + return to current work.
 - Weak areas → Recovery/Review behaviour. Strong run → Challenge. Mid success → Assessment questions.
-- Motivate only with real facts above — never empty praise.`;
+- Motivate only with real facts above — never empty praise.
+${
+  ctx.learningProfileBlock
+    ? `
+${ctx.learningProfileBlock}`
+    : ""
+}`;
 }
 
 function buildExerciseTopicHint(ctx: {
@@ -679,6 +693,21 @@ export async function buildTeacherContext(input: {
     currentChapter: currentTitle,
   });
 
+  let learningProfile: StudentCourseProfile | null = null;
+  let learningProfileBlock: string | null = null;
+  try {
+    learningProfile = await getCourseLearningProfile(input.courseId);
+    learningProfileBlock = formatLearningProfilePromptBlock(
+      input.courseId,
+      learningProfile,
+    );
+  } catch (err) {
+    console.warn(
+      "[teacher-context] learning profile load failed:",
+      (err as Error).message,
+    );
+  }
+
   const promptBlock = formatTeacherPromptBlock({
     activeCourse: input.courseId,
     targetLanguage: course.titleNative,
@@ -702,6 +731,7 @@ export async function buildTeacherContext(input: {
     exercisesCompleted: profile.exercisesCompleted,
     exercisesCorrectRate: profile.exercisesCorrectRate,
     teachingStrategy,
+    learningProfileBlock,
   });
 
   const exerciseTopicHint = buildExerciseTopicHint({
@@ -734,6 +764,7 @@ export async function buildTeacherContext(input: {
     exercisesCompleted: profile.exercisesCompleted,
     exercisesCorrectRate: profile.exercisesCorrectRate,
     teachingStrategy,
+    learningProfile,
     fingerprint,
     promptBlock,
     exerciseTopicHint,
