@@ -124,9 +124,48 @@ export async function sendTutorMessage(input: {
     .reverse()
     .find((m) => m.role === "user");
 
+  // --- Domain guard FIRST (before cache) -----------------------------
+  // Prevents a bad cached answer (e.g. ChatGPT explanation) from leaking.
+  if (lastUser) {
+    try {
+      const course = await getCourse(resolvedCourseId);
+      const { isOffTopicForCourse } = await import(
+        "@/server/ai/prompts/domain-guard"
+      );
+      const { getOffTopicRefusal } = await import(
+        "@/server/ai/prompts/refusals"
+      );
+      if (isOffTopicForCourse(lastUser.content, course.keywords)) {
+        const refusal = getOffTopicRefusal(course.titleNative, language);
+        if (shouldUseSharedTutorCache(input.messages)) {
+          // Overwrite any previous mistaken cache entry for this question.
+          setCachedTutorResponse(
+            lastUser.content,
+            level,
+            refusal,
+            resolvedCourseId,
+            language,
+          ).catch(() => {});
+        }
+        if (user && conversationId) {
+          await writeClient.from("chat_messages").insert({
+            conversation_id: conversationId,
+            role: "assistant",
+            content: refusal,
+          });
+        }
+        return {
+          content: refusal,
+          provider: "guard",
+          conversationId: conversationId ?? "",
+        };
+      }
+    } catch {
+      // Non-fatal — orchestrator guard still applies.
+    }
+  }
+
   // --- Shared cross-user cache (FAQ) — save LLM tokens -----------------
-  // Same normalized question + course + level + interface language →
-  // answer from DB for any user. Skip multi-turn dialogues.
   if (lastUser && shouldUseSharedTutorCache(input.messages)) {
     try {
       const cached = await getCachedTutorResponse(
@@ -156,45 +195,6 @@ export async function sendTutorMessage(input: {
       }
     } catch {
       // Non-fatal: fall through to the normal RAG + Groq path.
-    }
-  }
-
-  // --- Fast domain refuse (no RAG / no LLM) + seed shared cache --------
-  if (lastUser) {
-    try {
-      const course = await getCourse(resolvedCourseId);
-      const { isOffTopicForCourse } = await import(
-        "@/server/ai/prompts/domain-guard"
-      );
-      const { getOffTopicRefusal } = await import(
-        "@/server/ai/prompts/refusals"
-      );
-      if (isOffTopicForCourse(lastUser.content, course.keywords)) {
-        const refusal = getOffTopicRefusal(course.titleNative, language);
-        if (shouldUseSharedTutorCache(input.messages)) {
-          setCachedTutorResponse(
-            lastUser.content,
-            level,
-            refusal,
-            resolvedCourseId,
-            language,
-          ).catch(() => {});
-        }
-        if (user && conversationId) {
-          await writeClient.from("chat_messages").insert({
-            conversation_id: conversationId,
-            role: "assistant",
-            content: refusal,
-          });
-        }
-        return {
-          content: refusal,
-          provider: "guard",
-          conversationId: conversationId ?? "",
-        };
-      }
-    } catch {
-      // Non-fatal — orchestrator guard still applies.
     }
   }
 
