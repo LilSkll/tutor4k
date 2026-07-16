@@ -2,29 +2,30 @@ import type { CourseConfig, ExerciseType, InterfaceLanguage, Level } from "@/typ
 import { getInterfaceLanguageName } from "./interface-language";
 
 function interfaceLangName(lang?: InterfaceLanguage): string {
-  if (!lang) return "English";
+  if (!lang) return getInterfaceLanguageName("en");
   return getInterfaceLanguageName(lang);
 }
 
-/** Default RAG search terms per exercise type, keyed by course. */
+/** Default RAG search terms per exercise type, keyed by course target name. */
 export function defaultTopicForType(
   type: ExerciseType,
   courseId: string,
 ): string {
-  const target = courseId === "english" ? "english" : courseId === "russian" ? "russian" : "spanish";
+  // Keep search terms in English for FTS stability; courseId scopes retrieval.
+  void courseId;
   const map: Record<ExerciseType, string> = {
-    multiple_choice: `${target} grammar vocabulary`,
-    fill_blank: `${target} verb conjugation grammar`,
-    translation: `${target} vocabulary sentence`,
-    error_correction: `${target} grammar error`,
-    sentence_building: `${target} syntax sentence`,
+    multiple_choice: `grammar vocabulary`,
+    fill_blank: `verb conjugation grammar`,
+    translation: `vocabulary sentence`,
+    error_correction: `grammar error`,
+    sentence_building: `syntax sentence`,
   };
   return map[type];
 }
 
 /**
  * Build the user prompt for AI exercise generation.
- * Target language examples come from the active course only.
+ * Follows curriculum order when curriculumHint is provided.
  */
 export function buildExerciseGenerationPrompt(input: {
   type: ExerciseType;
@@ -33,8 +34,18 @@ export function buildExerciseGenerationPrompt(input: {
   topic?: string;
   language?: InterfaceLanguage;
   recentQuestions: string[];
+  /** Curriculum hint: current + reviewed material. */
+  curriculumHint?: string;
 }): string {
-  const { type, level, course, topic, language, recentQuestions } = input;
+  const {
+    type,
+    level,
+    course,
+    topic,
+    language,
+    recentQuestions,
+    curriculumHint,
+  } = input;
   const target = course.titleNative;
   const targetCode = course.languageCode;
   const langName = interfaceLangName(language);
@@ -47,20 +58,36 @@ export function buildExerciseGenerationPrompt(input: {
     sentence_building: `SENTENCE BUILDING. The 'question' describes the situation in ${langName}. The 'answer' is the complete ${target} sentence. Split into 5-7 jumbled word tiles in 'options'. All tiles must be ${target} words.`,
   };
 
-  return `You are a ${target} language exercise generator for CEFR level ${level}.
+  const curriculumBlock = curriculumHint
+    ? `
+CURRICULUM ORDER (structured lesson — never random):
+1. Previously mistaken / weak topics (if hint mentions "review mistakes" or "weak grammar")
+2. Current chapter themes
+3. Current grammar focus
+4. Previously learned vocabulary ("known vocab")
+5. At most ONE simple new vocabulary item ("light new vocab") if useful
+Hint: ${curriculumHint}
+Prefer known vocabulary; match CEFR ${level}.`
+    : topic
+      ? `Topic focus: ${topic}.`
+      : "Vary grammar/vocabulary within the student's CEFR level.";
+
+  return `You are a ${target} language teacher writing ONE exercise for CEFR ${level}.
 Course: ${course.id}. Target language: ${target} (${targetCode}).
-${topic ? `Topic: ${topic}.` : "Vary the topic: use different grammar/vocabulary each time."}
+Interface language for instructions/explanations: ${langName}.
+
+${curriculumBlock}
 
 TASK: ${typeRules[type]}
 
 CRITICAL RULES:
-1. **TARGET LANGUAGE ONLY**: All example sentences, options, and answers MUST be in ${target}. NEVER use Spanish if the course is English, and vice versa.
-2. **SELF-CONTAINED**: Every exercise must be answerable without external context.
-3. **CLEAR INSTRUCTION**: The 'instruction' field in ${langName} — explain what to do AND which grammar rule is tested.
-4. The 'answer' field MUST be unambiguous and correct.
+1. **TARGET LANGUAGE ONLY for learner-facing ${target} content**: questions (when in ${target}), options, answers, blanks — MUST be in ${target}. Never mix in another target language.
+2. **SELF-CONTAINED**: answerable without external context.
+3. **CLEAR INSTRUCTION**: 'instruction' in ${langName} — what to do AND which rule is tested.
+4. 'answer' MUST be unambiguous and correct.
 5. For multiple_choice and sentence_building: 'answer' MUST appear verbatim in 'options'.
-6. Match CEFR ${level} difficulty.
-7. For translation: source sentence in ${langName}, answer in ${target}.
+6. Match CEFR ${level} difficulty; prefer known vocabulary from the curriculum hint.
+7. For translation: source in ${langName}, answer in ${target}.
 8. Generate VARIED content — never repeat sentences below.
 
 DO NOT REPEAT any of these recently used questions:

@@ -4,8 +4,7 @@ import type { InterfaceLanguage, Level } from "@/types";
 // Prompt Registry
 // ---------------------------------------------------------------------
 // Maps courseId → dedicated prompt builder.
-// Spanish / English / Russian prompts are fully separated.
-// The orchestrator also resolves prompts via CourseConfig.buildPrompt().
+// Options are shared across CourseConfig.buildPrompt and this registry.
 // =====================================================================
 
 export interface PromptBuilderOptions {
@@ -13,6 +12,8 @@ export interface PromptBuilderOptions {
   interfaceLanguage?: InterfaceLanguage;
   userName?: string | null;
   retrievedContext?: string | null;
+  /** Markdown block from buildLearnerContext().promptBlock */
+  learnerContext?: string | null;
 }
 
 export type PromptBuilder = (options: PromptBuilderOptions) => string;
@@ -32,7 +33,9 @@ const cache = new Map<string, PromptBuilder>();
  * Get the prompt builder for a course.
  * Each course has its own builder — Spanish prompt is NEVER used for English.
  */
-export async function getPromptBuilder(courseId: string): Promise<PromptBuilder> {
+export async function getPromptBuilder(
+  courseId: string,
+): Promise<PromptBuilder> {
   if (cache.has(courseId)) return cache.get(courseId)!;
 
   const loader = PROMPT_LOADERS[courseId];

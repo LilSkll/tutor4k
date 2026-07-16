@@ -1,11 +1,15 @@
 import type { InterfaceLanguage, Level } from "@/types";
 
 // =====================================================================
-// Spanish Tutor — System Prompt
+// DEPRECATED — do not use in new code
 // ---------------------------------------------------------------------
-// This prompt defines the persona, behaviour and hard constraints of the
-// AI Spanish Tutor. It is injected as the first `system` message in every
-// orchestrator call.
+// Active prompts: src/server/ai/prompts/registry.ts (+ spanish/english/russian,
+// universal, teacher, interface-language, domain-guard).
+// Kept only for historical reference / docs links.
+// =====================================================================
+
+// =====================================================================
+// Spanish Tutor — System Prompt (legacy)
 // =====================================================================
 
 /** Off-topic refusal message, multilingual. */

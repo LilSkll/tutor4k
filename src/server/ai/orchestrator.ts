@@ -79,6 +79,7 @@ async function buildSystemPromptForCourse(
     interfaceLanguage?: InterfaceLanguage;
     userName?: string | null;
     retrievedContext?: string | null;
+    learnerContext?: string | null;
   },
 ): Promise<string> {
   const course = await getCourse(courseId);
@@ -87,6 +88,7 @@ async function buildSystemPromptForCourse(
     interfaceLanguage: options.interfaceLanguage,
     userName: options.userName,
     retrievedContext: options.retrievedContext,
+    learnerContext: options.learnerContext,
   });
 }
 
@@ -103,6 +105,7 @@ export async function generateAIResponse(
     language,
     userName,
     retrievedContext,
+    learnerContext,
     courseId = "spanish",
   } = options;
 
@@ -110,6 +113,28 @@ export async function generateAIResponse(
     interfaceLanguage ?? language ?? "ru";
 
   const course = await getCourse(courseId);
+
+  // Build TeacherContext before every personalized reply (unless caller supplied one).
+  let resolvedLearnerContext = learnerContext ?? null;
+  if (learnerContext === undefined) {
+    try {
+      const { buildTeacherContext } = await import(
+        "@/server/ai/learner-context"
+      );
+      const teacher = await buildTeacherContext({
+        courseId: courseId ?? "spanish",
+        interfaceLanguage: resolvedLanguage,
+        level: level ?? null,
+      });
+      resolvedLearnerContext = teacher.promptBlock;
+    } catch (err) {
+      console.warn(
+        "[orchestrator] TeacherContext failed:",
+        (err as Error).message,
+      );
+      resolvedLearnerContext = null;
+    }
+  }
 
   const lastUserMessage = [...messages]
     .reverse()
@@ -133,6 +158,7 @@ export async function generateAIResponse(
     interfaceLanguage: resolvedLanguage,
     userName,
     retrievedContext,
+    learnerContext: resolvedLearnerContext,
   });
 
   const providerOptions: ProviderCallOptions = {
@@ -196,6 +222,7 @@ export async function generateStructuredJSON<T>(
     /** @deprecated Use interfaceLanguage. */
     language?: InterfaceLanguage;
     retrievedContext?: string | null;
+    learnerContext?: string | null;
     courseId?: string | null;
   },
 ): Promise<T> {
@@ -207,6 +234,7 @@ export async function generateStructuredJSON<T>(
     skipGuard: true,
     interfaceLanguage: opts?.interfaceLanguage ?? opts?.language,
     retrievedContext: opts?.retrievedContext,
+    learnerContext: opts?.learnerContext,
     courseId: opts?.courseId ?? "spanish",
   });
 

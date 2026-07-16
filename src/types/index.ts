@@ -160,6 +160,8 @@ export interface AIGenerateOptions {
   userName?: string | null;
   retrievedContext?: string | null;
   courseId?: string | null;
+  /** Markdown TeacherContext block from buildTeacherContext(). */
+  learnerContext?: string | null;
 }
 
 // ----- Grammar reference ---------------------------------------------
@@ -287,6 +289,7 @@ export interface CourseConfig {
     interfaceLanguage?: InterfaceLanguage;
     userName?: string | null;
     retrievedContext?: string | null;
+    learnerContext?: string | null;
   }) => string;
 }
 

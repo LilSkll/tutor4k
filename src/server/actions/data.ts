@@ -1,5 +1,4 @@
 import { createSupabaseServerClient } from "@/lib/supabase-server";
-import { CHAPTERS } from "@/config/chapters";
 import type {
   ChapterProgress,
   ExerciseHistory,
@@ -196,17 +195,26 @@ export async function getChapterProgress(): Promise<ChapterProgress[]> {
 }
 
 /**
- * Get the chapter the user should continue with (first not-completed).
- * Returns the chapter slug, or null if all are done.
+ * Get the chapter the user should continue with for a course
+ * (first not-completed in that course's curriculum).
  */
-export async function getCurrentChapterSlug(): Promise<string | null> {
+export async function getCurrentChapterSlug(
+  courseId?: string | null,
+): Promise<string | null> {
+  const { getCourse } = await import("@/config/courses");
+  const course = await getCourse(courseId ?? "spanish");
+  const chapters = course.getChapters();
+  const courseSlugs = new Set(chapters.map((c) => c.slug));
+
   const progress = await getChapterProgress();
   const completedSlugs = new Set(
-    progress.filter((p) => p.status === "completed").map((p) => p.chapter_slug),
+    progress
+      .filter((p) => p.status === "completed" && p.chapter_slug)
+      .map((p) => p.chapter_slug as string)
+      .filter((slug) => courseSlugs.has(slug)),
   );
 
-  // Find first chapter that is not completed.
-  for (const ch of CHAPTERS) {
+  for (const ch of chapters) {
     if (!completedSlugs.has(ch.slug)) return ch.slug;
   }
   return null;

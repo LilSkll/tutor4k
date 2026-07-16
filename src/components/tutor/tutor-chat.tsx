@@ -42,8 +42,33 @@ export function TutorChat() {
 
   const [input, setInput] = React.useState("");
   const [pending, setPending] = React.useState(false);
+  const [openingLoading, setOpeningLoading] = React.useState(false);
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const textareaRef = React.useRef<HTMLTextAreaElement>(null);
+  const openingFetched = React.useRef(false);
+
+  const loadSessionOpening = React.useCallback(async () => {
+    if (searchParams.get("q")) return;
+    setOpeningLoading(true);
+    try {
+      const res = await fetch("/api/tutor");
+      if (!res.ok) return;
+      const data = (await res.json()) as { opening?: string };
+      if (!data.opening?.trim()) return;
+      if (useChatStore.getState().messages.length > 0) return;
+
+      addMessage({
+        id: makeId(),
+        role: "assistant",
+        content: data.opening.trim(),
+        createdAt: new Date().toISOString(),
+      });
+    } catch {
+      // Non-fatal: fall back to empty-state suggestions.
+    } finally {
+      setOpeningLoading(false);
+    }
+  }, [addMessage, searchParams]);
 
   React.useEffect(() => {
     const q = searchParams.get("q");
@@ -53,12 +78,19 @@ export function TutorChat() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
+  // Personalized teacher greeting when the chat is empty (real progress only).
+  React.useEffect(() => {
+    if (messages.length > 0 || openingFetched.current) return;
+    openingFetched.current = true;
+    void loadSessionOpening();
+  }, [messages.length, loadSessionOpening]);
+
   React.useEffect(() => {
     scrollRef.current?.scrollTo({
       top: scrollRef.current.scrollHeight,
       behavior: "smooth",
     });
-  }, [messages, pending]);
+  }, [messages, pending, openingLoading]);
 
   React.useEffect(() => {
     const ta = textareaRef.current;
@@ -164,7 +196,10 @@ export function TutorChat() {
           <Button
             variant="ghost"
             size="sm"
-            onClick={clear}
+            onClick={() => {
+              clear();
+              openingFetched.current = false;
+            }}
             className="text-muted-foreground shrink-0"
           >
             <Trash2 className="h-4 w-4" />
@@ -175,7 +210,13 @@ export function TutorChat() {
 
       <div ref={scrollRef} className="flex-1 overflow-y-auto px-3 sm:px-4 md:px-6 py-4">
         {messages.length === 0 ? (
-          <EmptyState onPick={send} t={t} targetLanguage={targetLanguage} />
+          openingLoading ? (
+            <div className="h-full flex items-center justify-center">
+              <TypingDots />
+            </div>
+          ) : (
+            <EmptyState onPick={send} t={t} targetLanguage={targetLanguage} />
+          )
         ) : (
           <div className="mx-auto max-w-3xl space-y-5">
             {messages.map((msg) => (

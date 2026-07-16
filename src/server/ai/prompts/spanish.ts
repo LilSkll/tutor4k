@@ -16,6 +16,7 @@ export function buildSpanishPrompt(options: PromptBuilderOptions): string {
     interfaceLanguage: options.interfaceLanguage ?? "ru",
     userName: options.userName,
     retrievedContext: options.retrievedContext,
+    learnerContext: options.learnerContext,
     targetLanguageName: "Spanish",
     targetLanguageCode: "es",
     textbookNames: "Дышлевая, Гонсалес-Алимова",

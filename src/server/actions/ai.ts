@@ -66,6 +66,27 @@ export async function sendTutorMessage(input: {
     }
   }
 
+  const resolvedCourseId = courseId ?? "spanish";
+
+  // TeacherContext — real curriculum memory for every reply.
+  let learnerPromptBlock: string | null | undefined = undefined;
+  let progressFingerprint: string | null = null;
+  try {
+    const { buildTeacherContext } = await import(
+      "@/server/ai/learner-context"
+    );
+    const teacher = await buildTeacherContext({
+      courseId: resolvedCourseId,
+      interfaceLanguage: language,
+      level,
+    });
+    learnerPromptBlock = teacher.promptBlock;
+    progressFingerprint = teacher.fingerprint;
+  } catch (err) {
+    console.warn("[tutor] TeacherContext failed:", (err as Error).message);
+    learnerPromptBlock = null;
+  }
+
   // --- Persist conversation (best-effort) ------------------------------
   let conversationId = input.conversationId;
 
@@ -73,13 +94,13 @@ export async function sendTutorMessage(input: {
     if (!conversationId) {
       const title =
         input.messages.find((m) => m.role === "user")?.content.slice(0, 50) ??
-        "Conversación";
+        "Chat";
       const { data: conv } = await supabase
         .from("chat_conversations")
         .insert({
           user_id: user.id,
           title,
-          course_id: courseId ?? "spanish",
+          course_id: resolvedCourseId,
         })
         .select("id")
         .single();
@@ -87,14 +108,14 @@ export async function sendTutorMessage(input: {
     }
 
     // Persist the last user message.
-    const lastUser = [...input.messages]
+    const lastUserMsg = [...input.messages]
       .reverse()
       .find((m) => m.role === "user");
-    if (lastUser && conversationId) {
+    if (lastUserMsg && conversationId) {
       await writeClient.from("chat_messages").insert({
         conversation_id: conversationId,
         role: "user",
-        content: lastUser.content,
+        content: lastUserMsg.content,
       });
     }
   }
@@ -104,14 +125,15 @@ export async function sendTutorMessage(input: {
     .reverse()
     .find((m) => m.role === "user");
 
-  // --- Shared cache: serve identical questions without hitting Groq --
+  // --- Shared cache: progress fingerprint keeps personalization honest --
   if (lastUser) {
     try {
       const cached = await getCachedTutorResponse(
         lastUser.content,
         level,
-        courseId ?? "spanish",
+        resolvedCourseId,
         language,
+        progressFingerprint,
       );
       if (cached) {
         // Persist the cached reply into the conversation (best-effort).
@@ -142,12 +164,12 @@ export async function sendTutorMessage(input: {
   let retrievedContext: string | null = null;
   if (lastUser) {
     try {
-      const course = await getCourse(courseId ?? "spanish");
+      const course = await getCourse(resolvedCourseId);
       const textbookContext = await retrieveContext(
         lastUser.content,
         level,
         5,
-        courseId ?? "spanish",
+        resolvedCourseId,
       );
       const vocabContext = retrieveVocabularyContext(
         lastUser.content,
@@ -170,7 +192,8 @@ export async function sendTutorMessage(input: {
     interfaceLanguage: language,
     userName,
     retrievedContext,
-    courseId: courseId ?? "spanish",
+    learnerContext: learnerPromptBlock,
+    courseId: resolvedCourseId,
   });
 
   // --- Store the answer in the shared cache (best-effort) ------------
@@ -179,8 +202,9 @@ export async function sendTutorMessage(input: {
       lastUser.content,
       level,
       response.content,
-      courseId ?? "spanish",
+      resolvedCourseId,
       language,
+      progressFingerprint,
     ).catch(
       () => {},
     );
@@ -206,6 +230,53 @@ export async function sendTutorMessage(input: {
     content: response.content,
     provider: response.provider,
     conversationId: conversationId ?? "",
+  };
+}
+
+/**
+ * Personalized session opening for a new tutor chat (empty thread).
+ * Built from TeacherContext only — no invented memory.
+ */
+export async function getTutorSessionOpening(): Promise<{
+  opening: string;
+  recommendedNextTopic: string;
+  currentChapter: string | null;
+  fingerprint: string;
+}> {
+  const supabase = await createSupabaseServerClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  let level: Level | null = null;
+  let language: InterfaceLanguage = "ru";
+  let courseId = "spanish";
+
+  if (user) {
+    const { data: profile } = await supabase
+      .from("profiles")
+      .select("level, interface_language, active_course_id")
+      .eq("id", user.id)
+      .maybeSingle();
+    if (profile) {
+      level = (profile.level as Level | null) ?? null;
+      language = (profile.interface_language as InterfaceLanguage) ?? "ru";
+      courseId = (profile.active_course_id as string) ?? "spanish";
+    }
+  }
+
+  const { buildTeacherContext } = await import("@/server/ai/learner-context");
+  const teacher = await buildTeacherContext({
+    courseId,
+    interfaceLanguage: language,
+    level,
+  });
+
+  return {
+    opening: teacher.sessionOpening,
+    recommendedNextTopic: teacher.recommendedNextTopic,
+    currentChapter: teacher.currentChapter,
+    fingerprint: teacher.fingerprint,
   };
 }
 
@@ -262,6 +333,26 @@ export async function generateExercise(input: {
   const courseId = input.courseId ?? "spanish";
   const course = await getCourse(courseId);
 
+  let curriculumHint: string | undefined;
+  let learnerPromptBlock: string | null | undefined = undefined;
+  let resolvedTopic = input.topic;
+
+  try {
+    const { buildTeacherContext } = await import(
+      "@/server/ai/learner-context"
+    );
+    const teacher = await buildTeacherContext({
+      courseId,
+      interfaceLanguage: input.language ?? "ru",
+      level: input.level,
+    });
+    curriculumHint = teacher.exerciseTopicHint;
+    learnerPromptBlock = teacher.promptBlock;
+    if (!resolvedTopic) resolvedTopic = teacher.exerciseTopicHint;
+  } catch (err) {
+    console.warn("[exercises] TeacherContext failed:", (err as Error).message);
+  }
+
   const recentKey = `${courseId}:${input.type}:${input.level}`;
   const recent = recentExerciseQuestions.get(recentKey) ?? [];
 
@@ -269,21 +360,24 @@ export async function generateExercise(input: {
     type: input.type,
     level: input.level,
     course,
-    topic: input.topic,
+    topic: resolvedTopic,
     language: input.language,
     recentQuestions: recent,
+    curriculumHint,
   });
 
   let exerciseContext: string | null = null;
   try {
+    const ragQuery =
+      resolvedTopic ?? defaultTopicForType(input.type, courseId);
     const ragContext = await retrieveContext(
-      input.topic ?? defaultTopicForType(input.type, courseId),
+      ragQuery,
       input.level,
       3,
       courseId,
     );
     const vocabContext = retrieveVocabularyContext(
-      input.topic ?? defaultTopicForType(input.type, courseId),
+      ragQuery,
       course.getVocab(),
       input.level,
     );
@@ -299,6 +393,7 @@ export async function generateExercise(input: {
       temperature: 0.7,
       interfaceLanguage: input.language,
       retrievedContext: exerciseContext,
+      learnerContext: learnerPromptBlock,
       courseId,
     },
   );

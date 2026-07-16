@@ -119,7 +119,7 @@ function formatContext(chunks: RetrievedChunk[]): string {
   let used = 0;
 
   for (const chunk of chunks) {
-    const header = `📚 ${chunk.sourceTitle}${chunk.page ? `, стр. ${chunk.page}` : ""}${chunk.section ? ` (${chunk.section})` : ""}:`;
+    const header = `📚 ${chunk.sourceTitle}${chunk.page ? `, p. ${chunk.page}` : ""}${chunk.section ? ` (${chunk.section})` : ""}:`;
     const body = truncateToSentence(chunk.content, 500);
     const block = `${header}\n${body}`;
     if (used + block.length > MAX_CONTEXT_CHARS) break;

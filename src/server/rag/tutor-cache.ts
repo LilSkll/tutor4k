@@ -66,6 +66,7 @@ export async function getCachedTutorResponse(
   level: Level | null,
   courseId?: string | null,
   interfaceLanguage?: InterfaceLanguage | null,
+  progressFingerprint?: string | null,
 ): Promise<string | null> {
   if (!isCacheable(query)) return null;
 
@@ -77,7 +78,9 @@ export async function getCachedTutorResponse(
       "|" +
       (courseId ?? "spanish") +
       "|" +
-      (interfaceLanguage ?? "ru"),
+      (interfaceLanguage ?? "ru") +
+      "|" +
+      (progressFingerprint ?? "noprog"),
   );
 
   try {
@@ -112,6 +115,7 @@ export async function setCachedTutorResponse(
   response: string,
   courseId?: string | null,
   interfaceLanguage?: InterfaceLanguage | null,
+  progressFingerprint?: string | null,
 ): Promise<void> {
   if (!isCacheable(query) || !response.trim()) return;
   // Don't cache refusal / error messages.
@@ -125,7 +129,9 @@ export async function setCachedTutorResponse(
       "|" +
       (courseId ?? "spanish") +
       "|" +
-      (interfaceLanguage ?? "ru"),
+      (interfaceLanguage ?? "ru") +
+      "|" +
+      (progressFingerprint ?? "noprog"),
   );
 
   try {

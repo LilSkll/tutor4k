@@ -29,6 +29,7 @@ export async function POST(req: NextRequest) {
 
     let language: InterfaceLanguage = "ru";
     let courseId = "spanish";
+    let level: Level = body.level;
     try {
       const supabase = await createSupabaseServerClient();
       const {
@@ -37,7 +38,7 @@ export async function POST(req: NextRequest) {
       if (user) {
         const { data: profile } = await supabase
           .from("profiles")
-          .select("interface_language, active_course_id")
+          .select("interface_language, active_course_id, level")
           .eq("id", user.id)
           .maybeSingle();
         if (profile?.interface_language) {
@@ -46,9 +47,28 @@ export async function POST(req: NextRequest) {
         if (profile?.active_course_id) {
           courseId = profile.active_course_id as string;
         }
+        if (profile?.level) {
+          level = profile.level as Level;
+        }
       }
     } catch {
       // Non-fatal: fall back to defaults.
+    }
+
+    let preferredChapterSlugs: string[] | undefined;
+    let topic = body.topic;
+    try {
+      const { buildTeacherContext, rankChapterSlugsForExercises } =
+        await import("@/server/ai/learner-context");
+      const teacher = await buildTeacherContext({
+        courseId,
+        interfaceLanguage: language,
+        level,
+      });
+      preferredChapterSlugs = rankChapterSlugsForExercises(teacher);
+      if (!topic) topic = teacher.exerciseTopicHint;
+    } catch {
+      // Non-fatal: pool still works without curriculum ranking.
     }
 
     const staticEx = await pickStaticExercise({
@@ -56,6 +76,7 @@ export async function POST(req: NextRequest) {
       type: body.type,
       level: body.level,
       topic: body.topic,
+      preferredChapterSlugs,
     });
 
     if (staticEx) {
@@ -77,7 +98,7 @@ export async function POST(req: NextRequest) {
     const exercise: GeneratedExercise = await generateExercise({
       type: body.type,
       level: body.level,
-      topic: body.topic,
+      topic,
       language,
       courseId,
     });

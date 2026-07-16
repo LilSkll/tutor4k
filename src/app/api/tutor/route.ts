@@ -1,6 +1,26 @@
 import { NextRequest, NextResponse } from "next/server";
-import { sendTutorMessage } from "@/server/actions/ai";
+import {
+  getTutorSessionOpening,
+  sendTutorMessage,
+} from "@/server/actions/ai";
 import type { AIMessage } from "@/types";
+
+/**
+ * GET /api/tutor
+ * Personalized session opening from TeacherContext (empty chat).
+ */
+export async function GET() {
+  try {
+    const opening = await getTutorSessionOpening();
+    return NextResponse.json(opening);
+  } catch (err) {
+    console.error("[/api/tutor GET]", err);
+    return NextResponse.json(
+      { error: (err as Error).message || "Internal error" },
+      { status: 500 },
+    );
+  }
+}
 
 /**
  * POST /api/tutor

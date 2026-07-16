@@ -5,6 +5,7 @@ export type PooledExercise = StaticExercise & {
   level: Level;
   topic: string;
   courseId: string;
+  chapterSlug: string;
   /** When true, wrong answers use stored explanation — no AI check. */
   staticSource: true;
 };
@@ -38,6 +39,7 @@ export async function getExercisePool(
         level: chapter.level,
         topic: chapter.titleEs || chapter.title,
         courseId,
+        chapterSlug: chapter.slug,
         staticSource: true,
       });
     }
@@ -46,12 +48,15 @@ export async function getExercisePool(
   return pool;
 }
 
-/** Pick a random static exercise matching course, type, and level. */
+/**
+ * Prefers preferredChapterSlugs order (reviewed → current chapter).
+ */
 export async function pickStaticExercise(input: {
   courseId: string;
   type: ExerciseType;
   level: Level;
   topic?: string;
+  preferredChapterSlugs?: string[];
 }): Promise<PooledExercise | null> {
   const pool = await getExercisePool(input.courseId);
   const key = poolKey(input.courseId, input.type, input.level);
@@ -61,6 +66,22 @@ export async function pickStaticExercise(input: {
     (ex) => ex.type === input.type && ex.level === input.level,
   );
 
+  if (input.preferredChapterSlugs && input.preferredChapterSlugs.length > 0) {
+    const preferred = new Set(input.preferredChapterSlugs);
+    const fromCurriculum = candidates.filter((ex) =>
+      preferred.has(ex.chapterSlug),
+    );
+    if (fromCurriculum.length > 0) candidates = fromCurriculum;
+
+    // Stable preference: current chapter first among preferred.
+    const order = input.preferredChapterSlugs;
+    candidates = [...candidates].sort((a, b) => {
+      const ai = order.indexOf(a.chapterSlug);
+      const bi = order.indexOf(b.chapterSlug);
+      return (ai === -1 ? 999 : ai) - (bi === -1 ? 999 : bi);
+    });
+  }
+
   if (input.topic) {
     const topicLower = input.topic.toLowerCase();
     const topicMatches = candidates.filter((ex) =>
@@ -69,12 +90,12 @@ export async function pickStaticExercise(input: {
     if (topicMatches.length > 0) candidates = topicMatches;
   }
 
-  candidates = candidates.filter(
+  const fresh = candidates.filter(
     (ex) => !recent.has(ex.question.trim().toLowerCase()),
   );
+  if (fresh.length > 0) candidates = fresh;
 
   if (candidates.length === 0) {
-    // Relax dedup if we've exhausted the pool.
     candidates = pool.filter(
       (ex) => ex.type === input.type && ex.level === input.level,
     );
@@ -82,7 +103,10 @@ export async function pickStaticExercise(input: {
 
   if (candidates.length === 0) return null;
 
-  const picked = candidates[Math.floor(Math.random() * candidates.length)];
+  // Among equally preferred (same chapter), pick randomly.
+  const topSlug = candidates[0].chapterSlug;
+  const topBand = candidates.filter((ex) => ex.chapterSlug === topSlug);
+  const picked = topBand[Math.floor(Math.random() * topBand.length)];
   rememberPick(key, picked.question);
   return picked;
 }

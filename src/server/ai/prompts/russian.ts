@@ -16,6 +16,7 @@ export function buildRussianPrompt(options: PromptBuilderOptions): string {
     interfaceLanguage: options.interfaceLanguage ?? "ru",
     userName: options.userName,
     retrievedContext: options.retrievedContext,
+    learnerContext: options.learnerContext,
     targetLanguageName: "Russian",
     targetLanguageCode: "ru",
     examName: "ТРКИ",
