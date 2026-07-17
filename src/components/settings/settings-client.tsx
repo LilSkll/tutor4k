@@ -3,7 +3,17 @@
 import * as React from "react";
 import { useTransition } from "react";
 import { useRouter } from "next/navigation";
-import { Loader2, LogOut, Moon, Palette, Sun, User } from "lucide-react";
+import {
+  Download,
+  Loader2,
+  LogOut,
+  Moon,
+  Palette,
+  Shield,
+  Sun,
+  Trash2,
+  User,
+} from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -15,6 +25,14 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
 import {
   Select,
   SelectContent,
@@ -30,6 +48,8 @@ import {
   INTERFACE_LANGUAGES,
   LEVELS,
 } from "@/config/app";
+import { LEGAL_OPERATOR } from "@/config/legal";
+import { LegalFooterLinks } from "@/components/legal/legal-footer-links";
 import { updateProfile, signOut } from "@/server/actions/auth";
 import { useUIStore } from "@/stores";
 import { translate } from "@/lib/i18n";
@@ -53,6 +73,9 @@ export function SettingsClient({ profile }: { profile: Profile }) {
   const [dailyGoal, setDailyGoal] = React.useState(
     profile.daily_goal_minutes ?? 15,
   );
+  const [deleteOpen, setDeleteOpen] = React.useState(false);
+  const [deletePassword, setDeletePassword] = React.useState("");
+  const [exporting, setExporting] = React.useState(false);
 
   const save = () => {
     startTransition(async () => {
@@ -72,6 +95,55 @@ export function SettingsClient({ profile }: { profile: Profile }) {
       }
     });
   };
+
+  const exportData = async () => {
+    setExporting(true);
+    try {
+      const res = await fetch("/api/export-data");
+      if (!res.ok) throw new Error("Export failed");
+      const blob = await res.blob();
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `spanish-with-pavel-export-${new Date().toISOString().slice(0, 10)}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+      toast.success(t("settings.exportStarted"));
+    } catch {
+      toast.error(t("settings.exportFailed"));
+    } finally {
+      setExporting(false);
+    }
+  };
+
+  const confirmDelete = async () => {
+    if (!deletePassword.trim()) return;
+    startTransition(async () => {
+      try {
+        const res = await fetch("/api/account", {
+          method: "DELETE",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ password: deletePassword }),
+        });
+        const data = (await res.json()) as { error?: string };
+        if (!res.ok) {
+          toast.error(data.error ?? t("settings.deleteFailed"));
+          return;
+        }
+        toast.success(t("settings.deleteSuccess"));
+        setDeleteOpen(false);
+        router.push("/");
+        router.refresh();
+      } catch {
+        toast.error(t("settings.deleteFailed"));
+      }
+    });
+  };
+
+  const operatorName =
+    interfaceLanguage === "en"
+      ? LEGAL_OPERATOR.operatorNameEn
+      : LEGAL_OPERATOR.operatorNameRu;
 
   return (
     <div className="container max-w-2xl py-6 md:py-8 space-y-6">
@@ -241,6 +313,94 @@ export function SettingsClient({ profile }: { profile: Profile }) {
         </CardContent>
       </Card>
 
+      {/* Privacy & data */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="text-base flex items-center gap-2">
+            <Shield className="h-4 w-4 text-primary" />
+            {t("settings.legalTitle")}
+          </CardTitle>
+          <CardDescription>{t("settings.legalDesc")}</CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <LegalFooterLinks locale={interfaceLanguage} vertical className="items-start" />
+          <div className="rounded-lg border p-4 space-y-1 text-sm">
+            <p className="font-medium">{t("settings.operatorContact")}</p>
+            <p className="text-muted-foreground">{operatorName}</p>
+            <a
+              href={`mailto:${LEGAL_OPERATOR.contactEmail}`}
+              className="text-primary hover:underline"
+            >
+              {LEGAL_OPERATOR.contactEmail}
+            </a>
+          </div>
+          <Button
+            variant="outline"
+            className="w-full justify-start"
+            onClick={() => void exportData()}
+            disabled={exporting || pending}
+          >
+            {exporting ? (
+              <Loader2 className="h-4 w-4 animate-spin" />
+            ) : (
+              <Download className="h-4 w-4" />
+            )}
+            <span className="ml-2 text-left">
+              <span className="block font-medium">{t("settings.exportData")}</span>
+              <span className="block text-xs text-muted-foreground font-normal">
+                {t("settings.exportDataDesc")}
+              </span>
+            </span>
+          </Button>
+          <Button
+            variant="outline"
+            className="w-full justify-start border-destructive/40 text-destructive hover:bg-destructive/10 hover:text-destructive"
+            onClick={() => setDeleteOpen(true)}
+            disabled={pending}
+          >
+            <Trash2 className="h-4 w-4" />
+            <span className="ml-2 text-left">
+              <span className="block font-medium">{t("settings.deleteAccount")}</span>
+              <span className="block text-xs opacity-80 font-normal">
+                {t("settings.deleteAccountDesc")}
+              </span>
+            </span>
+          </Button>
+        </CardContent>
+      </Card>
+
+      <Dialog open={deleteOpen} onOpenChange={setDeleteOpen}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>{t("settings.deleteConfirmTitle")}</DialogTitle>
+            <DialogDescription>{t("settings.deleteConfirmBody")}</DialogDescription>
+          </DialogHeader>
+          <div className="space-y-2">
+            <Label htmlFor="delete-password">{t("settings.deletePassword")}</Label>
+            <Input
+              id="delete-password"
+              type="password"
+              value={deletePassword}
+              onChange={(e) => setDeletePassword(e.target.value)}
+              autoComplete="current-password"
+            />
+          </div>
+          <DialogFooter className="gap-2 sm:gap-0">
+            <Button variant="outline" onClick={() => setDeleteOpen(false)}>
+              {t("settings.deleteCancel")}
+            </Button>
+            <Button
+              variant="destructive"
+              onClick={() => void confirmDelete()}
+              disabled={pending || !deletePassword.trim()}
+            >
+              {pending && <Loader2 className="h-4 w-4 animate-spin" />}
+              {t("settings.deleteConfirm")}
+            </Button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
+
       <div className="flex items-center gap-2">
         <Button
           variant="gradient"
@@ -260,10 +420,11 @@ export function SettingsClient({ profile }: { profile: Profile }) {
       </div>
 
       <Separator />
+      <LegalFooterLinks locale={interfaceLanguage} className="pb-2" />
       <p className="text-center text-xs text-muted-foreground pb-4">
         Spanish with Pavel © {new Date().getFullYear()} · {t("landing.footer")}
         <br />
-        Разработчик — Драгунов Павел
+        {operatorName}
       </p>
     </div>
   );

@@ -48,6 +48,17 @@ export default async function SignupPage({
               Войти
             </Link>
           </p>
+          <p className="mt-4 text-center text-xs text-muted-foreground">
+            Регистрируясь, вы принимаете{" "}
+            <Link href="/terms" className="text-primary hover:underline">
+              Соглашение
+            </Link>{" "}
+            и{" "}
+            <Link href="/privacy" className="text-primary hover:underline">
+              Политику конфиденциальности
+            </Link>
+            .
+          </p>
         </div>
       </div>
 

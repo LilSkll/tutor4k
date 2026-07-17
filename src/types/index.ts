@@ -57,6 +57,10 @@ export interface Profile {
   active_course_id: string | null;
   /** Persistent Student Learning Profile store (JSONB). */
   learning_profile?: import("@/types/learning-profile").StudentLearningProfileStore | null;
+  terms_accepted_at?: string | null;
+  privacy_accepted_at?: string | null;
+  marketing_consent?: boolean;
+  marketing_consent_at?: string | null;
   created_at: string;
 }
 

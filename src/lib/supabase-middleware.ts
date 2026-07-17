@@ -34,13 +34,15 @@ export async function updateSession(request: NextRequest) {
 
   const { pathname } = request.nextUrl;
 
-  // Public routes: landing, auth, onboarding.
+  // Public routes: landing, auth, legal, onboarding.
   const isPublicRoute =
     pathname === "/" ||
     pathname.startsWith("/login") ||
     pathname.startsWith("/signup") ||
     pathname.startsWith("/auth") ||
-    pathname.startsWith("/onboarding");
+    pathname.startsWith("/onboarding") ||
+    pathname === "/privacy" ||
+    pathname === "/terms";
 
   // If not signed in and trying to reach a protected page -> login.
   if (!user && !isPublicRoute) {
@@ -51,7 +53,11 @@ export async function updateSession(request: NextRequest) {
   }
 
   // If signed in and trying to reach the landing page -> dashboard.
-  if (user && (pathname === "/" || pathname.startsWith("/login") || pathname.startsWith("/signup"))) {
+  // Legal pages stay accessible when logged in.
+  if (
+    user &&
+    (pathname === "/" || pathname.startsWith("/login") || pathname.startsWith("/signup"))
+  ) {
     const url = request.nextUrl.clone();
     url.pathname = "/dashboard";
     return NextResponse.redirect(url);

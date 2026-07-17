@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ThemeProvider } from "next-themes";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
+import { CookieBanner } from "@/components/legal/cookie-banner";
 
 /**
  * Top-level client providers:
@@ -37,6 +38,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
       <QueryClientProvider client={queryClient}>
         <TooltipProvider delayDuration={200}>
           {children}
+          <CookieBanner />
           <Toaster richColors position="top-right" />
         </TooltipProvider>
       </QueryClientProvider>

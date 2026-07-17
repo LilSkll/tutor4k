@@ -64,16 +64,47 @@ export async function signUpWithEmail(formData: FormData) {
   const email = String(formData.get("email") ?? "");
   const password = String(formData.get("password") ?? "");
   const name = String(formData.get("name") ?? "");
+  const acceptTerms = formData.get("acceptTerms") === "on";
+  const acceptPrivacy = formData.get("acceptPrivacy") === "on";
+  const marketingConsent = formData.get("marketingConsent") === "on";
 
+  if (!acceptTerms || !acceptPrivacy) {
+    redirect(
+      `/signup?error=${encodeURIComponent("Необходимо принять Пользовательское соглашение и Политику конфиденциальности.")}`,
+    );
+  }
+
+  const now = new Date().toISOString();
   const supabase = await createSupabaseServerClient();
-  const { error } = await supabase.auth.signUp({
+  const { data, error } = await supabase.auth.signUp({
     email,
     password,
-    options: { data: { name } },
+    options: {
+      data: {
+        name,
+        terms_accepted_at: now,
+        privacy_accepted_at: now,
+        marketing_consent: marketingConsent,
+        marketing_consent_at: marketingConsent ? now : null,
+      },
+    },
   });
 
   if (error) {
     redirect(`/signup?error=${encodeURIComponent(friendlyAuthError(error.message))}`);
+  }
+
+  // If session is returned (email confirmation disabled), persist consent on profile.
+  if (data.user) {
+    await supabase
+      .from("profiles")
+      .update({
+        terms_accepted_at: now,
+        privacy_accepted_at: now,
+        marketing_consent: marketingConsent,
+        marketing_consent_at: marketingConsent ? now : null,
+      })
+      .eq("id", data.user.id);
   }
 
   // Email confirmation may be required — redirect to login with notice.

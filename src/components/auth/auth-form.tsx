@@ -1,19 +1,60 @@
 "use client";
 
+import * as React from "react";
 import { useTransition } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { signInWithEmail, signUpWithEmail } from "@/server/actions/auth";
 import { Loader2 } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface AuthFormProps {
   mode: "signin" | "signup";
   redirect?: string;
 }
 
+function ConsentCheckbox({
+  id,
+  name,
+  required,
+  checked,
+  onChange,
+  children,
+}: {
+  id: string;
+  name: string;
+  required?: boolean;
+  checked?: boolean;
+  onChange?: (v: boolean) => void;
+  children: React.ReactNode;
+}) {
+  return (
+    <label
+      htmlFor={id}
+      className="flex items-start gap-3 cursor-pointer text-sm text-muted-foreground leading-snug"
+    >
+      <input
+        id={id}
+        name={name}
+        type="checkbox"
+        required={required}
+        checked={checked}
+        onChange={(e) => onChange?.(e.target.checked)}
+        className={cn(
+          "mt-0.5 h-4 w-4 shrink-0 rounded border border-input accent-primary",
+        )}
+      />
+      <span>{children}</span>
+    </label>
+  );
+}
+
 export function AuthForm({ mode, redirect }: AuthFormProps) {
   const [pending, startTransition] = useTransition();
+  const [acceptTerms, setAcceptTerms] = React.useState(false);
+  const [acceptPrivacy, setAcceptPrivacy] = React.useState(false);
 
   const action = (formData: FormData) => {
     startTransition(() => {
@@ -67,11 +108,46 @@ export function AuthForm({ mode, redirect }: AuthFormProps) {
         />
       </div>
 
+      {mode === "signup" && (
+        <div className="space-y-3 rounded-lg border bg-muted/30 p-4">
+          <ConsentCheckbox
+            id="acceptTerms"
+            name="acceptTerms"
+            required
+            checked={acceptTerms}
+            onChange={setAcceptTerms}
+          >
+            Я принимаю{" "}
+            <Link href="/terms" className="text-primary hover:underline" target="_blank">
+              Пользовательское соглашение
+            </Link>
+          </ConsentCheckbox>
+          <ConsentCheckbox
+            id="acceptPrivacy"
+            name="acceptPrivacy"
+            required
+            checked={acceptPrivacy}
+            onChange={setAcceptPrivacy}
+          >
+            Я принимаю{" "}
+            <Link href="/privacy" className="text-primary hover:underline" target="_blank">
+              Политику конфиденциальности
+            </Link>
+          </ConsentCheckbox>
+          <ConsentCheckbox id="marketingConsent" name="marketingConsent">
+            Хочу получать новости о продукте и обучении (необязательно)
+          </ConsentCheckbox>
+        </div>
+      )}
+
       <Button
         type="submit"
         variant="gradient"
         className="w-full"
-        disabled={pending}
+        disabled={
+          pending ||
+          (mode === "signup" && (!acceptTerms || !acceptPrivacy))
+        }
       >
         {pending && <Loader2 className="h-4 w-4 animate-spin" />}
         {mode === "signin" ? "Войти" : "Создать аккаунт"}

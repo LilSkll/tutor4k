@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { useUIStore } from "@/stores";
 import { translate } from "@/lib/i18n";
+import { LegalFooterLinks } from "@/components/legal/legal-footer-links";
 
 const FEATURE_KEYS = [
   { icon: Brain, titleKey: "feature.ai.title", descKey: "feature.ai.desc" },
@@ -156,6 +157,7 @@ export default function LandingPage() {
             </div>
             <p>{t("landing.footer")}</p>
           </div>
+          <LegalFooterLinks locale={language} />
           <p className="text-xs">Разработчик — Драгунов Павел</p>
         </div>
       </footer>
