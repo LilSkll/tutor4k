@@ -9,7 +9,7 @@ export const LEGAL_OPERATOR = {
   operatorNameRu: process.env.NEXT_PUBLIC_OPERATOR_NAME ?? "Павел Драгунов",
   operatorNameEn: process.env.NEXT_PUBLIC_OPERATOR_NAME_EN ?? "Pavel Dragunov",
   contactEmail:
-    process.env.NEXT_PUBLIC_OPERATOR_EMAIL ?? "legal@spanishwithpavel.com",
+    process.env.NEXT_PUBLIC_OPERATOR_EMAIL ?? "SpanishWithPavel@yandex.ru",
   website: process.env.NEXT_PUBLIC_SITE_URL ?? "https://spanishwithpavel.com",
   /** Jurisdiction for Russian users */
   countryRu: "Российская Федерация",

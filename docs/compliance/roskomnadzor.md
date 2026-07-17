@@ -11,7 +11,7 @@
 | Пользовательское соглашение | `/terms` (RU + EN) |
 | Согласие при регистрации | Чекбоксы Terms + Privacy на `/signup` |
 | Cookie-уведомление | Баннер (только essential cookies) |
-| Контакты оператора | `legal@spanishwithpavel.com`, блок в Settings |
+| Контакты оператора | `SpanishWithPavel@yandex.ru`, блок в Settings |
 | Экспорт данных | Settings → «Скачать мои данные» → `/api/export-data` |
 | Удаление аккаунта | Settings → «Удалить аккаунт» → `/api/account` |
 | Миграция БД | `supabase/legal-consent-migration.sql` |
@@ -45,7 +45,7 @@
 
 1. Зарегистрируйтесь на [pd.rkn.gov.ru](https://pd.rkn.gov.ru) (личный кабинет оператора ПДн).
 2. Подготовьте сведения:
-   - **Оператор:** ФИО / наименование ИП, ИНН (если есть), адрес, email `legal@spanishwithpavel.com`
+   - **Оператор:** ФИО / наименование ИП, ИНН (если есть), адрес, email `SpanishWithPavel@yandex.ru`
    - **Цель обработки:** предоставление онлайн-сервиса изучения языков
    - **Категории субъектов:** пользователи сервиса (ученики)
    - **Категории ПДн:** ФИО (имя), email, учебный прогресс, тексты диалогов с AI
@@ -80,7 +80,7 @@
 ```env
 NEXT_PUBLIC_OPERATOR_NAME=Павел Драгунов
 NEXT_PUBLIC_OPERATOR_NAME_EN=Pavel Dragunov
-NEXT_PUBLIC_OPERATOR_EMAIL=legal@spanishwithpavel.com
+NEXT_PUBLIC_OPERATOR_EMAIL=SpanishWithPavel@yandex.ru
 NEXT_PUBLIC_SITE_URL=https://spanishwithpavel.com
 ```
 
