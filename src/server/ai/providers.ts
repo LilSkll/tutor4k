@@ -16,7 +16,7 @@ export interface ProviderCallOptions {
 }
 
 export interface AIProvider {
-  readonly name: "groq" | "gemini";
+  readonly name: "groq" | "deepseek" | "gemini";
   /** Returns true if this provider is configured (has API key). */
   isAvailable(): boolean;
   /** Send the completion request. Throws on transport / API error. */
@@ -161,6 +161,83 @@ export class GroqProvider implements AIProvider {
       lastError ??
       new RetryableAIError("All Groq API keys exhausted")
     );
+  }
+}
+
+// ----- DeepSeek adapter (OpenAI-compatible) -------------------------
+
+export class DeepSeekProvider implements AIProvider {
+  readonly name = "deepseek" as const;
+
+  constructor(
+    private readonly apiKey: string,
+    private readonly model = "deepseek-v4-flash",
+  ) {}
+
+  isAvailable(): boolean {
+    return Boolean(this.apiKey);
+  }
+
+  async complete(options: ProviderCallOptions): Promise<AIResponse> {
+    if (!this.isAvailable()) {
+      throw new FatalAIError("DeepSeek API key not configured");
+    }
+
+    const messages = [
+      ...(options.systemPrompt
+        ? [{ role: "system", content: options.systemPrompt }]
+        : []),
+      ...options.messages,
+    ];
+
+    let res: Response;
+    try {
+      res = await fetch("https://api.deepseek.com/chat/completions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${this.apiKey}`,
+        },
+        body: JSON.stringify({
+          model: this.model,
+          messages,
+          temperature: options.temperature ?? 0.7,
+          max_tokens: options.maxTokens ?? 1024,
+          // Tutor replies need `content`, not chain-of-thought.
+          // Thinking is on by default for v4-flash and can exhaust max_tokens.
+          thinking: { type: "disabled" },
+        }),
+      });
+    } catch (err) {
+      throw new RetryableAIError(
+        `DeepSeek network error: ${(err as Error).message}`,
+      );
+    }
+
+    if (!res.ok) {
+      const text = await res.text().catch(() => "");
+      const errMsg = `DeepSeek ${res.status}: ${text.slice(0, 200)}`;
+      if (classifyStatus(res.status)) {
+        throw new RetryableAIError(errMsg, res.status);
+      }
+      throw new FatalAIError(errMsg, res.status);
+    }
+
+    const data = await res.json();
+    const content: string = data?.choices?.[0]?.message?.content ?? "";
+    if (!content) {
+      throw new RetryableAIError("DeepSeek returned empty content");
+    }
+
+    return {
+      content,
+      provider: "deepseek",
+      model: this.model,
+      usage: {
+        promptTokens: data?.usage?.prompt_tokens,
+        completionTokens: data?.usage?.completion_tokens,
+      },
+    };
   }
 }
 

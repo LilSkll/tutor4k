@@ -7,6 +7,7 @@ import type {
 } from "@/types";
 import {
   FatalAIError,
+  DeepSeekProvider,
   GeminiProvider,
   GroqProvider,
   type AIProvider,
@@ -34,15 +35,20 @@ function buildProviderChain(): AIProvider[] {
     process.env.GROQ_API_KEY_3,
   ].filter(Boolean) as string[];
 
+  // Groq (free/fast) → DeepSeek (paid reliable) → Gemini (optional).
   const groq = new GroqProvider(
     groqKeys,
     process.env.GROQ_MODEL || "llama-3.3-70b-versatile",
+  );
+  const deepseek = new DeepSeekProvider(
+    process.env.DEEPSEEK_API_KEY ?? "",
+    process.env.DEEPSEEK_MODEL || "deepseek-v4-flash",
   );
   const gemini = new GeminiProvider(
     process.env.GEMINI_API_KEY ?? "",
     process.env.GEMINI_MODEL || "gemini-1.5-flash",
   );
-  return [groq, gemini].filter((p) => p.isAvailable());
+  return [groq, deepseek, gemini].filter((p) => p.isAvailable());
 }
 
 function sleep(ms: number): Promise<void> {
@@ -179,12 +185,12 @@ export async function generateAIResponse(
     return {
       content:
         resolvedLanguage === "ru"
-          ? "⚠️ ИИ-сервис не настроен. Укажите GROQ_API_KEY или GEMINI_API_KEY в переменных окружения."
+          ? "⚠️ ИИ-сервис не настроен. Укажите GROQ_API_KEY или DEEPSEEK_API_KEY в переменных окружения."
           : resolvedLanguage === "es"
-            ? "⚠️ El servicio de IA no está configurado. Define GROQ_API_KEY o GEMINI_API_KEY en las variables de entorno."
+            ? "⚠️ El servicio de IA no está configurado. Define GROQ_API_KEY o DEEPSEEK_API_KEY en las variables de entorno."
             : resolvedLanguage === "de"
-              ? "⚠️ KI-Dienst ist nicht konfiguriert. Setze GROQ_API_KEY oder GEMINI_API_KEY in den Umgebungsvariablen."
-              : "⚠️ AI service is not configured. Set GROQ_API_KEY or GEMINI_API_KEY in the environment variables.",
+              ? "⚠️ KI-Dienst ist nicht konfiguriert. Setze GROQ_API_KEY oder DEEPSEEK_API_KEY in den Umgebungsvariablen."
+              : "⚠️ AI service is not configured. Set GROQ_API_KEY or DEEPSEEK_API_KEY in the environment variables.",
       provider: "groq",
       model: "none",
     };
