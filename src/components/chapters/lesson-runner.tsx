@@ -27,6 +27,8 @@ import {
   getChapterTitle,
 } from "@/lib/chapter-display";
 import { translate } from "@/lib/i18n";
+import { SESSION_EXERCISES } from "@/lib/exercise-bank";
+import { formatBankTutorFeedback } from "@/lib/tutor-feedback";
 import { getLessonAdaptationAction } from "@/server/actions/learning-profile";
 import type { GrammarTopic, StaticExercise } from "@/types";
 import type { LessonAdaptation } from "@/types/learning-profile";
@@ -124,6 +126,8 @@ export function LessonRunner({
   >([]);
   const [practiceKind, setPracticeKind] =
     React.useState<PracticeKind>("main");
+  /** Cursor into the chapter bank for successive rounds of SESSION_EXERCISES. */
+  const [bankCursor, setBankCursor] = React.useState(0);
 
   React.useEffect(() => {
     let cancelled = false;
@@ -146,13 +150,12 @@ export function LessonRunner({
     };
   }, [courseId, grammarTopicSlug, chapter.vocabTopic]);
 
-  const mainPracticeSet = React.useMemo(() => {
+  const chapterBank = React.useMemo(() => {
     if (presetExercises.length === 0) return [];
-    // Mastered → more practice (repeat bank once if short).
     if (
       adaptation?.practiceEmphasis &&
       adaptation.mode === "mastered_short" &&
-      presetExercises.length < 5
+      presetExercises.length < SESSION_EXERCISES
     ) {
       return [...presetExercises, ...presetExercises.slice(0, 2)];
     }
@@ -161,8 +164,10 @@ export function LessonRunner({
 
   const reinforceSet = React.useMemo(() => {
     if (adaptation?.mode !== "supportive") return [];
-    return presetExercises.slice(0, Math.min(2, presetExercises.length));
-  }, [adaptation, presetExercises]);
+    return chapterBank.slice(0, Math.min(2, chapterBank.length));
+  }, [adaptation, chapterBank]);
+
+  const bankRemaining = Math.max(0, chapterBank.length - bankCursor);
 
   const theoryMarkdown = React.useMemo(() => {
     if (!grammarContent) return null;
@@ -188,36 +193,92 @@ export function LessonRunner({
     beginMainLesson();
   };
 
+  const startBankRound = (fromCursor: number, kind: PracticeKind) => {
+    const batch = chapterBank.slice(fromCursor, fromCursor + SESSION_EXERCISES);
+    if (batch.length === 0) {
+      setPhase("dialogue");
+      return;
+    }
+    setBankCursor(fromCursor + batch.length);
+    setExercises(batch);
+    setCurrentExerciseIdx(0);
+    setUserAnswer("");
+    setSelectedOption(null);
+    setResult(null);
+    setPracticeKind(kind);
+    setPhase(kind === "reinforce" ? "reinforce" : "practice");
+  };
+
   const generateExercises = () => {
-    if (mainPracticeSet.length > 0) {
-      setExercises(mainPracticeSet);
-      setCurrentExerciseIdx(0);
-      setUserAnswer("");
-      setSelectedOption(null);
-      setResult(null);
-      setPracticeKind("main");
-      setPhase("practice");
+    if (chapterBank.length > 0) {
+      startBankRound(0, "main");
     } else {
       setPhase("dialogue");
     }
   };
 
-  const checkAnswer = () => {
+  const continueBankPractice = () => {
+    startBankRound(bankCursor, "main");
+  };
+
+  const checkAnswer = async () => {
     const ex = exercises[currentExerciseIdx];
     if (!ex) return;
     const answer = (selectedOption ?? userAnswer).trim();
     if (!answer) return;
 
+    setLoading(true);
+    try {
+      const res = await fetch("/api/exercises/check", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          exercise: {
+            type: ex.type,
+            level: chapter.level,
+            question: ex.question,
+            instruction: ex.instruction,
+            options: ex.options,
+            answer: ex.answer,
+            acceptableAnswers: ex.acceptableAnswers,
+            topic: chapter.titleEs || chapter.title,
+            explanation: ex.explanation,
+            staticSource: true,
+            exerciseId: ex.id,
+            chapterSlug: chapter.slug,
+          },
+          userAnswer: answer,
+          level: chapter.level,
+        }),
+      });
+      if (res.ok) {
+        const data = (await res.json()) as {
+          correct: boolean;
+          feedback: string;
+        };
+        setResult(data);
+        setExercisesCompleted((n) => n + 1);
+        if (data.correct) setScore((s) => s + 1);
+        return;
+      }
+    } catch {
+      // Fall through to local check.
+    } finally {
+      setLoading(false);
+    }
+
     const norm = (s: string) =>
       s.trim().toLowerCase().replace(/[¿?¡!.,]/g, "").replace(/\s+/g, " ");
-
     const userNorm = norm(answer);
     const acceptable = [ex.answer, ...(ex.acceptableAnswers ?? [])].map(norm);
     const isCorrect = acceptable.includes(userNorm);
-
     setResult({
       correct: isCorrect,
-      feedback: ex.explanation,
+      feedback: formatBankTutorFeedback({
+        language,
+        correct: isCorrect,
+        explanation: ex.explanation,
+      }),
     });
     setExercisesCompleted((n) => n + 1);
     if (isCorrect) setScore((s) => s + 1);
@@ -525,7 +586,7 @@ export function LessonRunner({
           </CardContent>
         </Card>
         <div className="flex justify-end gap-2">
-          {adaptation?.mode === "mastered_short" && mainPracticeSet.length > 0 && (
+          {adaptation?.mode === "mastered_short" && chapterBank.length > 0 && (
             <Button variant="outline" onClick={generateExercises}>
               {t("lesson.skipToPractice")}
             </Button>
@@ -569,6 +630,18 @@ export function LessonRunner({
               <div className="rounded-lg border bg-card p-4">
                 <Markdown content={dialogueResponse} />
               </div>
+            )}
+            {bankRemaining > 0 && (
+              <Button
+                variant="secondary"
+                className="w-full"
+                onClick={continueBankPractice}
+              >
+                <Sparkles className="h-4 w-4" />
+                {t("lesson.moreFromBank", {
+                  count: Math.min(SESSION_EXERCISES, bankRemaining),
+                })}
+              </Button>
             )}
             <Button variant="outline" className="w-full" onClick={finishChapter} disabled={loading}>
               <Check className="h-4 w-4" />

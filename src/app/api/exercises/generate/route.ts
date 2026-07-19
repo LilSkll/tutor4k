@@ -1,15 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
 import type { GeneratedExercise } from "@/server/actions/ai";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
-import { pickStaticExercise } from "@/lib/exercise-pool";
+import { pickStaticExercises } from "@/lib/exercise-pool";
+import { SESSION_EXERCISES } from "@/lib/exercise-bank";
 import type { ExerciseType, InterfaceLanguage, Level } from "@/types";
 
 /**
  * POST /api/exercises/generate
- * Body: { type, level, topic? }
+ * Body: { type, level, topic?, count?, excludeIds? }
  *
- * Serves from the permanent adaptive exercise bank only.
- * AI does not generate practice items — it teaches after answers.
+ * Serves a session batch from the permanent adaptive exercise bank only.
+ * Default count = SESSION_EXERCISES (5). AI does not generate practice items.
  */
 export async function POST(req: NextRequest) {
   try {
@@ -17,6 +18,8 @@ export async function POST(req: NextRequest) {
       type: ExerciseType;
       level: Level;
       topic?: string;
+      count?: number;
+      excludeIds?: string[];
     };
 
     if (!body.type || !body.level) {
@@ -54,9 +57,6 @@ export async function POST(req: NextRequest) {
       // Non-fatal: fall back to defaults.
     }
 
-    // Localize instruction labels are applied client-side via i18n;
-    // bank stores target-language content + interface-language instructions
-    // already authored per course. language reserved for future instruction overlay.
     void language;
 
     let preferredChapterSlugs: string[] | undefined;
@@ -78,15 +78,22 @@ export async function POST(req: NextRequest) {
       // Non-fatal: pool still works without curriculum ranking.
     }
 
-    const staticEx = await pickStaticExercise({
+    const count =
+      typeof body.count === "number" && body.count > 0
+        ? body.count
+        : SESSION_EXERCISES;
+
+    const picked = await pickStaticExercises({
       courseId,
       type: body.type,
       level: body.level,
       topic: body.topic,
       preferredChapterSlugs,
+      excludeIds: body.excludeIds,
+      count,
     });
 
-    if (!staticEx) {
+    if (picked.length === 0) {
       return NextResponse.json(
         {
           error:
@@ -96,7 +103,7 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const exercise: GeneratedExercise = {
+    const exercises: GeneratedExercise[] = picked.map((staticEx) => ({
       type: staticEx.type,
       level: staticEx.level,
       question: staticEx.question,
@@ -109,8 +116,13 @@ export async function POST(req: NextRequest) {
       staticSource: true,
       exerciseId: staticEx.id,
       chapterSlug: staticEx.chapterSlug,
-    };
-    return NextResponse.json(exercise);
+    }));
+
+    return NextResponse.json({
+      exercises,
+      sessionSize: SESSION_EXERCISES,
+      count: exercises.length,
+    });
   } catch (err) {
     console.error("[/api/exercises/generate]", err);
     return NextResponse.json(

@@ -573,6 +573,14 @@ export async function checkExerciseAnswer(input: {
 
   // Fast path: exact / normalized match.
   if (acceptable.includes(userNorm)) {
+    const feedback = input.exercise.staticSource
+      ? (await import("@/lib/tutor-feedback")).formatBankTutorFeedback({
+          language: input.language,
+          correct: true,
+          explanation: input.exercise.explanation,
+        })
+      : input.exercise.explanation;
+
     await saveExerciseHistory({
       exercise: input.exercise.question,
       exerciseId: input.exercise.exerciseId,
@@ -581,13 +589,13 @@ export async function checkExerciseAnswer(input: {
       level: input.level,
       userAnswer: input.userAnswer,
       correct: true,
-      feedback: input.exercise.explanation,
+      feedback,
     });
     await recordExerciseProfileUpdate({
       courseId,
       topic: input.exercise.topic,
       correct: true,
-      feedback: input.exercise.explanation,
+      feedback,
     });
     if (input.exercise.exerciseId) {
       const { recordExerciseAttempt } = await import(
@@ -602,12 +610,20 @@ export async function checkExerciseAnswer(input: {
 
     return {
       correct: true,
-      feedback: input.exercise.explanation,
+      feedback,
     };
   }
 
-  // Static bank exercises: use stored explanation, never call AI for grading.
+  // Static bank exercises: use stored explanation framed as tutor feedback.
   if (input.exercise.staticSource) {
+    const feedback = (
+      await import("@/lib/tutor-feedback")
+    ).formatBankTutorFeedback({
+      language: input.language,
+      correct: false,
+      explanation: input.exercise.explanation,
+    });
+
     await saveExerciseHistory({
       exercise: input.exercise.question,
       exerciseId: input.exercise.exerciseId,
@@ -616,13 +632,13 @@ export async function checkExerciseAnswer(input: {
       level: input.level,
       userAnswer: input.userAnswer,
       correct: false,
-      feedback: input.exercise.explanation,
+      feedback,
     });
     await recordExerciseProfileUpdate({
       courseId,
       topic: input.exercise.topic,
       correct: false,
-      feedback: input.exercise.explanation,
+      feedback,
     });
     if (input.exercise.exerciseId) {
       const { recordExerciseAttempt } = await import(
@@ -637,7 +653,7 @@ export async function checkExerciseAnswer(input: {
 
     return {
       correct: false,
-      feedback: input.exercise.explanation,
+      feedback,
     };
   }
 

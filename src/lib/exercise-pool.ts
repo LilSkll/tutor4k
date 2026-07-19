@@ -46,21 +46,30 @@ export async function getExercisePool(
   return pool;
 }
 
-/**
- * Adaptive pick from the permanent bank using Learning Profile + progress.
- * Never calls AI.
- */
-export async function pickStaticExercise(input: {
+type PickInput = {
   courseId: string;
   type: ExerciseType;
   level: Level;
   topic?: string;
   preferredChapterSlugs?: string[];
-}): Promise<PooledExercise | null> {
+  /** Skip ids already used in this session (continue rounds). */
+  excludeIds?: string[];
+};
+
+async function loadRankedCandidates(
+  input: PickInput,
+): Promise<RankedBankItem[]> {
   const pool = await getExercisePool(input.courseId);
   let candidates = filterPoolByTypeLevel(pool, input.type, input.level);
 
-  if (candidates.length === 0) return null;
+  if (candidates.length === 0) return [];
+
+  if (input.excludeIds && input.excludeIds.length > 0) {
+    const exclude = new Set(input.excludeIds);
+    const fresh = candidates.filter((ex) => !exclude.has(ex.id));
+    // If everything in-session was seen, allow repeats rather than empty.
+    if (fresh.length > 0) candidates = fresh;
+  }
 
   if (input.preferredChapterSlugs && input.preferredChapterSlugs.length > 0) {
     const preferred = new Set(input.preferredChapterSlugs);
@@ -91,7 +100,7 @@ export async function pickStaticExercise(input: {
     // Non-fatal — score without profile.
   }
 
-  const ranked: RankedBankItem[] = candidates.map((exercise) => ({
+  return candidates.map((exercise) => ({
     exercise,
     score: scoreBankExercise({
       exercise,
@@ -100,11 +109,43 @@ export async function pickStaticExercise(input: {
       preferredChapterSlugs: input.preferredChapterSlugs,
     }),
   }));
+}
 
+/**
+ * Adaptive pick from the permanent bank using Learning Profile + progress.
+ * Never calls AI.
+ */
+export async function pickStaticExercise(
+  input: PickInput,
+): Promise<PooledExercise | null> {
+  const ranked = await loadRankedCandidates(input);
+  if (ranked.length === 0) return null;
   const picked = pickAdaptiveFromCandidates(ranked);
-  const chosen = picked ?? candidates[0];
+  const chosen = picked ?? ranked[0]?.exercise;
   if (!chosen) return null;
   return { ...chosen, staticSource: true as const };
+}
+
+/**
+ * Pick a session batch (default 5) without replacement within the batch.
+ * Never calls AI — bank only.
+ */
+export async function pickStaticExercises(
+  input: PickInput & { count: number },
+): Promise<PooledExercise[]> {
+  const count = Math.max(1, Math.min(20, input.count));
+  let ranked = await loadRankedCandidates(input);
+  const results: PooledExercise[] = [];
+
+  for (let i = 0; i < count && ranked.length > 0; i++) {
+    const picked = pickAdaptiveFromCandidates(ranked);
+    const chosen = picked ?? ranked[0]?.exercise;
+    if (!chosen) break;
+    results.push({ ...chosen, staticSource: true as const });
+    ranked = ranked.filter((r) => r.exercise.id !== chosen.id);
+  }
+
+  return results;
 }
 
 /** Local answer check for static exercises (no AI). */

@@ -6,6 +6,7 @@ import {
   Check,
   CheckCircle2,
   Loader2,
+  RotateCcw,
   Sparkles,
   XCircle,
 } from "lucide-react";
@@ -16,6 +17,8 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { useExerciseSessionStore } from "@/stores";
 import { EXERCISE_TYPES, LEVELS } from "@/config/app";
+import { SESSION_EXERCISES } from "@/lib/exercise-bank";
+import { formatSessionTutorSummary } from "@/lib/tutor-feedback";
 import { useInterfaceLanguage, useActiveCourseId } from "@/hooks/use-interface-language";
 import { translate } from "@/lib/i18n";
 import { getCourseTitle } from "@/config/courses";
@@ -38,7 +41,14 @@ interface GeneratedExercise {
   chapterSlug?: string;
 }
 
-type Phase = "config" | "loading" | "answering" | "result";
+type AttemptRecord = {
+  exercise: GeneratedExercise;
+  userAnswer: string;
+  correct: boolean;
+  feedback: string;
+};
+
+type Phase = "config" | "loading" | "answering" | "result" | "summary";
 
 export function ExerciseRunner({
   userLevel,
@@ -51,7 +61,11 @@ export function ExerciseRunner({
 }) {
   const [type, setType] = React.useState<ExerciseType>("multiple_choice");
   const [level, setLevel] = React.useState<Level>(userLevel ?? "A1");
-  const [exercise, setExercise] = React.useState<GeneratedExercise | null>(null);
+  const [queue, setQueue] = React.useState<GeneratedExercise[]>([]);
+  const [queueIdx, setQueueIdx] = React.useState(0);
+  const [seenIds, setSeenIds] = React.useState<string[]>([]);
+  const [roundAttempts, setRoundAttempts] = React.useState<AttemptRecord[]>([]);
+  const [sessionSummary, setSessionSummary] = React.useState<string | null>(null);
   const [phase, setPhase] = React.useState<Phase>("config");
   const [userAnswer, setUserAnswer] = React.useState("");
   const [selectedOption, setSelectedOption] = React.useState<string | null>(null);
@@ -70,25 +84,49 @@ export function ExerciseRunner({
   const t = (key: string, vars?: Record<string, string | number>) =>
     translate(key, language, vars);
 
-  const generate = async () => {
+  const exercise = queue[queueIdx] ?? null;
+
+  const startRound = async (excludeIds: string[]) => {
     setPhase("loading");
     setUserAnswer("");
     setSelectedOption(null);
     setResult(null);
+    setRoundAttempts([]);
+    setSessionSummary(null);
     try {
       const res = await fetch("/api/exercises/generate", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type, level }),
+        body: JSON.stringify({
+          type,
+          level,
+          count: SESSION_EXERCISES,
+          excludeIds,
+        }),
       });
       if (!res.ok) throw new Error("Failed");
-      const data = (await res.json()) as GeneratedExercise;
-      setExercise(data);
+      const data = (await res.json()) as { exercises: GeneratedExercise[] };
+      if (!data.exercises?.length) throw new Error("Empty");
+      setQueue(data.exercises);
+      setQueueIdx(0);
+      const newIds = data.exercises
+        .map((ex) => ex.exerciseId)
+        .filter((id): id is string => Boolean(id));
+      setSeenIds((prev) => [...prev, ...newIds]);
       setPhase("answering");
     } catch {
       toast.error(t("exercises.toastGenerateFail"));
       setPhase("config");
     }
+  };
+
+  const generate = () => {
+    setSeenIds([]);
+    void startRound([]);
+  };
+
+  const continueRound = () => {
+    void startRound(seenIds);
   };
 
   const check = async (answer: string) => {
@@ -107,6 +145,15 @@ export function ExerciseRunner({
       if (!res.ok) throw new Error("Failed");
       const data = (await res.json()) as { correct: boolean; feedback: string };
       setResult(data);
+      setRoundAttempts((prev) => [
+        ...prev,
+        {
+          exercise,
+          userAnswer: answer,
+          correct: data.correct,
+          feedback: data.feedback,
+        },
+      ]);
       setPhase("result");
       incrementAttempted();
       if (data.correct) {
@@ -122,16 +169,48 @@ export function ExerciseRunner({
   };
 
   const next = () => {
-    setExercise(null);
+    const nextIdx = queueIdx + 1;
+    if (nextIdx < queue.length) {
+      setQueueIdx(nextIdx);
+      setResult(null);
+      setUserAnswer("");
+      setSelectedOption(null);
+      setPhase("answering");
+      return;
+    }
+
+    const correctCount = roundAttempts.filter((a) => a.correct).length;
+    const mistakes = roundAttempts
+      .filter((a) => !a.correct)
+      .map((a) => ({
+        question: a.exercise.question,
+        userAnswer: a.userAnswer,
+        correctAnswer: a.exercise.answer,
+        explanation: a.exercise.explanation,
+      }));
+    setSessionSummary(
+      formatSessionTutorSummary({
+        language,
+        correctCount,
+        total: roundAttempts.length || queue.length,
+        mistakes,
+      }),
+    );
+    setPhase("summary");
+  };
+
+  const backToConfig = () => {
+    setQueue([]);
+    setQueueIdx(0);
+    setSeenIds([]);
+    setRoundAttempts([]);
+    setSessionSummary(null);
     setResult(null);
-    setUserAnswer("");
-    setSelectedOption(null);
-    generate();
+    setPhase("config");
   };
 
   return (
     <div className="space-y-6">
-      {/* Session score */}
       {attempted > 0 && (
         <Card className="bg-gradient-to-r from-primary/5 to-orange-500/5 border-primary/20">
           <CardContent className="flex items-center justify-between py-4">
@@ -156,10 +235,8 @@ export function ExerciseRunner({
         </Card>
       )}
 
-      {/* Configuration */}
       {phase === "config" && (
         <div className="space-y-6">
-          {/* Type selection */}
           <div>
             <h3 className="font-semibold mb-3">{t("exercises.typeLabel")}</h3>
             <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
@@ -186,7 +263,6 @@ export function ExerciseRunner({
             </div>
           </div>
 
-          {/* Level selection */}
           <div>
             <h3 className="font-semibold mb-3">{t("exercises.levelLabel")}</h3>
             <div className="flex flex-wrap gap-2">
@@ -207,14 +283,17 @@ export function ExerciseRunner({
             </div>
           </div>
 
+          <p className="text-sm text-muted-foreground">
+            {t("exercises.sessionHint", { count: SESSION_EXERCISES })}
+          </p>
+
           <Button variant="gradient" size="lg" onClick={generate} className="w-full">
             <Sparkles className="h-4 w-4" />
-            {t("exercises.generateBtn")}
+            {t("exercises.startRoundBtn", { count: SESSION_EXERCISES })}
           </Button>
         </div>
       )}
 
-      {/* Loading */}
       {phase === "loading" && (
         <Card>
           <CardContent className="flex flex-col items-center justify-center py-16">
@@ -226,29 +305,76 @@ export function ExerciseRunner({
         </Card>
       )}
 
-      {/* Answering */}
       {phase === "answering" && exercise && (
-        <ExerciseCard
-          key={`${exercise.type}-${exercise.question}`}
-          exercise={exercise}
-          userAnswer={userAnswer}
-          setUserAnswer={setUserAnswer}
-          selectedOption={selectedOption}
-          setSelectedOption={setSelectedOption}
-          onCheck={() => check(selectedOption ?? userAnswer)}
-          t={t}
-        />
+        <>
+          <div className="flex items-center justify-between text-sm text-muted-foreground">
+            <span>
+              {t("exercises.roundProgress", {
+                current: queueIdx + 1,
+                total: queue.length,
+              })}
+            </span>
+            <Badge variant="level">{level}</Badge>
+          </div>
+          <ExerciseCard
+            key={`${exercise.exerciseId ?? exercise.question}-${queueIdx}`}
+            exercise={exercise}
+            userAnswer={userAnswer}
+            setUserAnswer={setUserAnswer}
+            selectedOption={selectedOption}
+            setSelectedOption={setSelectedOption}
+            onCheck={() => check(selectedOption ?? userAnswer)}
+            t={t}
+          />
+        </>
       )}
 
-      {/* Result */}
       {phase === "result" && exercise && result && (
         <ResultCard
           exercise={exercise}
           userAnswer={selectedOption ?? userAnswer}
           result={result}
           onNext={next}
+          isLast={queueIdx + 1 >= queue.length}
           t={t}
         />
+      )}
+
+      {phase === "summary" && sessionSummary && (
+        <Card className="animate-fade-in">
+          <CardContent className="p-6 space-y-4">
+            <div className="flex items-center gap-3">
+              <CheckCircle2 className="h-6 w-6 text-success shrink-0" />
+              <div>
+                <p className="font-semibold">{t("exercises.roundDoneTitle")}</p>
+                <p className="text-xs text-muted-foreground">
+                  {t("exercises.roundDoneDesc", {
+                    correct: roundAttempts.filter((a) => a.correct).length,
+                    total: roundAttempts.length,
+                  })}
+                </p>
+              </div>
+            </div>
+
+            <div className="rounded-lg border border-primary/20 bg-primary/5 p-4 whitespace-pre-wrap">
+              <p className="text-xs font-semibold text-primary mb-2">
+                {t("exercises.tutorSummaryLabel")}
+              </p>
+              <p className="text-sm text-foreground">{sessionSummary}</p>
+            </div>
+
+            <div className="grid gap-2 sm:grid-cols-2">
+              <Button variant="gradient" onClick={continueRound}>
+                {t("exercises.continueRoundBtn", { count: SESSION_EXERCISES })}
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+              <Button variant="outline" onClick={backToConfig}>
+                <RotateCcw className="h-4 w-4" />
+                {t("exercises.changeSettingsBtn")}
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
       )}
     </div>
   );
@@ -278,25 +404,20 @@ function ExerciseCard({
     exercise.options &&
     exercise.options.length > 0;
 
-  // --- Sentence building state -------------------------------------
-  // Track the order in which the user clicks the word tiles.
   const [wordOrder, setWordOrder] = React.useState<number[]>([]);
   const options = exercise.options ?? [];
 
-  // When a tile is clicked, append its index to the order.
   const addWord = (idx: number) => {
     if (wordOrder.includes(idx)) return;
     const next = [...wordOrder, idx];
     setWordOrder(next);
     setUserAnswer(next.map((i) => options[i]).join(" "));
   };
-  // Remove the last placed tile (undo).
   const removeLastWord = () => {
     const next = wordOrder.slice(0, -1);
     setWordOrder(next);
     setUserAnswer(next.map((i) => options[i]).join(" "));
   };
-  // Click on a placed word removes it and everything after.
   const removeWordAt = (pos: number) => {
     const next = wordOrder.slice(0, pos);
     setWordOrder(next);
@@ -326,7 +447,6 @@ function ExerciseCard({
 
         {isSentenceBuilding && hasOptions ? (
           <div className="space-y-3">
-            {/* Build area: the sentence being assembled */}
             <div className="min-h-[60px] rounded-lg border-2 border-dashed border-primary/30 bg-primary/5 p-3 flex flex-wrap gap-2 items-center">
               {wordOrder.length === 0 ? (
                 <span className="text-sm text-muted-foreground italic">
@@ -344,7 +464,6 @@ function ExerciseCard({
                 ))
               )}
             </div>
-            {/* Word tiles pool */}
             <div className="flex flex-wrap gap-2">
               {options.map((opt, i) => {
                 const used = wordOrder.includes(i);
@@ -441,12 +560,14 @@ function ResultCard({
   userAnswer,
   result,
   onNext,
+  isLast,
   t,
 }: {
   exercise: GeneratedExercise;
   userAnswer: string;
   result: { correct: boolean; feedback: string };
   onNext: () => void;
+  isLast: boolean;
   t: (key: string, vars?: Record<string, string | number>) => string;
 }) {
   return (
@@ -488,7 +609,7 @@ function ResultCard({
         </div>
 
         <Button variant="gradient" className="w-full" onClick={onNext}>
-          {t("exercises.nextExerciseBtn")}
+          {isLast ? t("exercises.seeRoundSummaryBtn") : t("exercises.nextExerciseBtn")}
           <ArrowRight className="h-4 w-4" />
         </Button>
       </CardContent>

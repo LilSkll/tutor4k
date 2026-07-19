@@ -3,6 +3,9 @@ import type { ExerciseType, StaticExercise } from "@/types";
 /** Target depth for the permanent adaptive bank (per type, per chapter). */
 export const TARGET_EXERCISES_PER_TYPE = 20;
 
+/** How many bank items one practice round serves (per type / lesson block). */
+export const SESSION_EXERCISES = 5;
+
 export const ALL_EXERCISE_TYPES: ExerciseType[] = [
   "multiple_choice",
   "fill_blank",

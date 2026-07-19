@@ -104,17 +104,26 @@ export function pickAdaptiveFromCandidates(
   return pick.exercise;
 }
 
+const LEVEL_NEIGHBORS: Record<Level, Level[]> = {
+  A1: ["A1", "A2"],
+  A2: ["A2", "A1", "B1"],
+  B1: ["B1", "A2", "B2"],
+  B2: ["B2", "B1", "C1"],
+  C1: ["C1", "B2"],
+};
+
 export function filterPoolByTypeLevel(
   pool: RankedBankItem["exercise"][],
   type: ExerciseType,
   level: Level,
 ): RankedBankItem["exercise"][] {
-  let candidates = pool.filter((ex) => ex.type === type);
-  const atLevel = candidates.filter((ex) => ex.level === level);
-  if (atLevel.length > 0) candidates = atLevel;
-  // Soft fallback: neighboring levels if bank thin at exact CEFR.
-  if (candidates.length === 0) {
-    candidates = pool.filter((ex) => ex.type === type);
-  }
-  return candidates;
+  const byType = pool.filter((ex) => ex.type === type);
+  const atLevel = byType.filter((ex) => ex.level === level);
+  if (atLevel.length > 0) return atLevel;
+
+  const neighbors = new Set(LEVEL_NEIGHBORS[level] ?? [level]);
+  const near = byType.filter((ex) => neighbors.has(ex.level));
+  if (near.length > 0) return near;
+
+  return byType;
 }
