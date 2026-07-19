@@ -45,6 +45,11 @@ export default async function LoginPage({
               Аккаунт создан. Проверь почту для подтверждения.
             </div>
           )}
+          {sp.notice === "password-updated" && (
+            <div className="mb-4 rounded-lg border border-success/30 bg-success/10 px-4 py-3 text-sm text-success">
+              Пароль обновлён. Войди с новым паролем.
+            </div>
+          )}
 
           <AuthForm mode="signin" redirect={sp.redirect} />
 

@@ -41,8 +41,31 @@ function friendlyAuthError(message: string): string {
   if (m.includes("password should be")) {
     return "Пароль слишком короткий. Минимум 6 символов.";
   }
+  if (m.includes("same password") || m.includes("different from the old")) {
+    return "Новый пароль должен отличаться от текущего.";
+  }
+  if (m.includes("expired") || m.includes("otp") || m.includes("token")) {
+    return "Ссылка для сброса устарела или уже использована. Запроси новую.";
+  }
   // Fallback — keep the original but prefix for clarity.
   return "Ошибка: " + message;
+}
+
+async function appOrigin(): Promise<string> {
+  const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
+  if (fromEnv) return fromEnv;
+  try {
+    const { headers } = await import("next/headers");
+    const h = await headers();
+    const host = h.get("x-forwarded-host") ?? h.get("host");
+    if (host) {
+      const proto = h.get("x-forwarded-proto") ?? "https";
+      return `${proto}://${host}`;
+    }
+  } catch {
+    // ignore
+  }
+  return "http://localhost:3000";
 }
 
 export async function signInWithEmail(formData: FormData) {
@@ -109,6 +132,68 @@ export async function signUpWithEmail(formData: FormData) {
 
   // Email confirmation may be required — redirect to login with notice.
   redirect("/login?notice=check-email");
+}
+
+/** Send a password-reset email (Supabase Auth). */
+export async function requestPasswordReset(formData: FormData) {
+  const email = String(formData.get("email") ?? "").trim();
+  if (!email) {
+    redirect(
+      `/forgot-password?error=${encodeURIComponent("Укажи email.")}`,
+    );
+  }
+
+  const supabase = await createSupabaseServerClient();
+  const origin = await appOrigin();
+  const { error } = await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: `${origin}/auth/callback?next=/auth/reset-password`,
+  });
+
+  if (error) {
+    redirect(
+      `/forgot-password?error=${encodeURIComponent(friendlyAuthError(error.message))}`,
+    );
+  }
+
+  // Always show success (don't leak whether the email exists).
+  redirect("/forgot-password?notice=sent");
+}
+
+/** Set a new password after the user opens the recovery link. */
+export async function updatePassword(formData: FormData) {
+  const password = String(formData.get("password") ?? "");
+  const confirm = String(formData.get("confirm") ?? "");
+
+  if (password.length < 6) {
+    redirect(
+      `/auth/reset-password?error=${encodeURIComponent("Пароль слишком короткий. Минимум 6 символов.")}`,
+    );
+  }
+  if (password !== confirm) {
+    redirect(
+      `/auth/reset-password?error=${encodeURIComponent("Пароли не совпадают.")}`,
+    );
+  }
+
+  const supabase = await createSupabaseServerClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!user) {
+    redirect(
+      `/forgot-password?error=${encodeURIComponent("Ссылка устарела. Запроси сброс пароля ещё раз.")}`,
+    );
+  }
+
+  const { error } = await supabase.auth.updateUser({ password });
+  if (error) {
+    redirect(
+      `/auth/reset-password?error=${encodeURIComponent(friendlyAuthError(error.message))}`,
+    );
+  }
+
+  redirect("/login?notice=password-updated");
 }
 
 export async function signOut() {

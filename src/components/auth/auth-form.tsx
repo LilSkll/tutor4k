@@ -96,7 +96,17 @@ export function AuthForm({ mode, redirect }: AuthFormProps) {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="password">Пароль</Label>
+        <div className="flex items-center justify-between gap-2">
+          <Label htmlFor="password">Пароль</Label>
+          {mode === "signin" && (
+            <Link
+              href="/forgot-password"
+              className="text-xs text-primary font-medium hover:underline"
+            >
+              Забыли пароль?
+            </Link>
+          )}
+        </div>
         <Input
           id="password"
           name="password"

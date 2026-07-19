@@ -39,6 +39,7 @@ export async function updateSession(request: NextRequest) {
     pathname === "/" ||
     pathname.startsWith("/login") ||
     pathname.startsWith("/signup") ||
+    pathname.startsWith("/forgot-password") ||
     pathname.startsWith("/auth") ||
     pathname.startsWith("/onboarding") ||
     pathname === "/privacy" ||
@@ -52,11 +53,20 @@ export async function updateSession(request: NextRequest) {
     return NextResponse.redirect(url);
   }
 
+  // Recovery session must reach /auth/reset-password — do not bounce to dashboard.
+  const isAuthRecovery =
+    pathname.startsWith("/auth/reset-password") ||
+    pathname.startsWith("/auth/callback");
+
   // If signed in and trying to reach the landing page -> dashboard.
   // Legal pages stay accessible when logged in.
   if (
     user &&
-    (pathname === "/" || pathname.startsWith("/login") || pathname.startsWith("/signup"))
+    !isAuthRecovery &&
+    (pathname === "/" ||
+      pathname.startsWith("/login") ||
+      pathname.startsWith("/signup") ||
+      pathname.startsWith("/forgot-password"))
   ) {
     const url = request.nextUrl.clone();
     url.pathname = "/dashboard";
