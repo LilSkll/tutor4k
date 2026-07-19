@@ -53,6 +53,8 @@ export async function loadSpanishCourse(): Promise<CourseConfig> {
         "pretérito", "preterite", "imperfecto", "gerundio",
         "infinitivo", "artículo", "preposición", "adverbio",
         "sustantivo", "noun", "adjetivo", "adjective",
+        "imperativo", "imperative", "indicativo", "indicative",
+        "condicional", "повелительн", "сослагат", "изъявительн",
         // Culture / authors / arts
         "cultura", "culture", "культур", "tradición", "традиц",
         "flamenco", "cervantes", "lorca", "gaudi", "гауди",

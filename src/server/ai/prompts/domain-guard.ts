@@ -14,12 +14,29 @@ import type { CourseKeywords } from "@/types";
 
 /** Language-learning intent. */
 const LEARNING_SIGNALS: string[] = [
-  // Ask / translate / meaning
+  // Ask / explain / translate / meaning
+  "объясни",
+  "обьясни",
+  "расскажи",
+  "разбери",
+  "поясни",
+  "explain",
+  "explica",
+  "explícame",
+  "tell me about",
+  "what is",
+  "what's",
+  "что такое",
+  "что это",
   "как сказать",
   "как будет",
   "как перевести",
   "как пишется",
   "как произнос",
+  "как образу",
+  "как спряг",
+  "как использ",
+  "когда использ",
   "что значит",
   "что означает",
   "перевед",
@@ -29,6 +46,8 @@ const LEARNING_SIGNALS: string[] = [
   "how do you say",
   "how to say",
   "how to use",
+  "how to form",
+  "how to conjugate",
   "how to pronounce",
   "what does",
   "what is the difference",
@@ -53,7 +72,7 @@ const LEARNING_SIGNALS: string[] = [
   "in spanish",
   "en español",
   "en inglés",
-  // Grammar / practice
+  // Grammar / practice / moods & tenses
   "граммат",
   "grammar",
   "gramática",
@@ -85,8 +104,18 @@ const LEARNING_SIGNALS: string[] = [
   "modal",
   "сослагат",
   "subjunct",
+  "subjuntiv",
+  "imperativ",
   "imperfect",
+  "indicativ",
+  "изъявительн",
+  "повелительн",
+  "условн наклон",
+  "condicional",
+  "pretérit",
   "preterit",
+  "indefinid",
+  "perfecto",
   "present simple",
   "past simple",
   "present perfect",
@@ -94,7 +123,9 @@ const LEARNING_SIGNALS: string[] = [
   "future",
   "condition",
   "gerund",
+  "gerundio",
   "infinitiv",
+  "infinitivo",
   "participle",
   "plural",
   "множеств",
@@ -125,8 +156,45 @@ const LEARNING_SIGNALS: string[] = [
   "правило",
   "rule for",
   "исключен",
+  "наклонен",
+  "mood",
 ];
 
+/**
+ * Standalone grammar labels learners often paste from the course UI
+ * (e.g. "Imperativo", "Subjuntivo") — treat as on-topic.
+ */
+const GRAMMAR_TERM_LABELS: string[] = [
+  "imperativo",
+  "imperative",
+  "subjuntivo",
+  "subjunctive",
+  "indicativo",
+  "indicative",
+  "condicional",
+  "conditional",
+  "gerundio",
+  "gerund",
+  "infinitivo",
+  "infinitive",
+  "pretérito",
+  "preterito",
+  "preterite",
+  "indefinido",
+  "imperfecto",
+  "imperfect",
+  "perfecto",
+  "pluscuamperfecto",
+  "presente",
+  "futuro",
+  "ser",
+  "estar",
+  "por",
+  "para",
+  "артикли",
+  "articles",
+  "artículos",
+];
 /** Course / app / curriculum. */
 const COURSE_SIGNALS: string[] = [
   "курс",
@@ -287,8 +355,31 @@ function isAllowedTopic(q: string, keywords: CourseKeywords): boolean {
     includesAny(q, LEARNING_SIGNALS) ||
     includesAny(q, COURSE_SIGNALS) ||
     includesAny(q, CULTURE_SIGNALS) ||
-    includesAny(q, keywords.onTopic ?? [])
+    includesAny(q, keywords.onTopic ?? []) ||
+    isGrammarTermQuery(q)
   );
+}
+
+/** "Imperativo", "Объясни: Subjuntivo", "ser/estar" pasted from the course. */
+function isGrammarTermQuery(q: string): boolean {
+  const cleaned = q
+    .replace(/^[\s:.\-–—]+|[\s:.\-–—]+$/g, "")
+    .replace(/^(объясни|обьясни|расскажи|разбери|поясни|explain|explica|what is|what's|что такое|что это)\s*[:.\-–—]?\s*/i, "")
+    .trim();
+  if (!cleaned) return false;
+  // Single short label or "ser/estar" style
+  if (cleaned.length <= 40 && includesAny(cleaned, GRAMMAR_TERM_LABELS)) {
+    return true;
+  }
+  if (
+    cleaned.length <= 48 &&
+    GRAMMAR_TERM_LABELS.some(
+      (term) => cleaned === term || cleaned.startsWith(`${term} `),
+    )
+  ) {
+    return true;
+  }
+  return false;
 }
 
 /**
