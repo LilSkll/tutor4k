@@ -15,10 +15,62 @@ import type { Goal, InterfaceLanguage, Level } from "@/types";
  * user understands what went wrong instead of seeing "email rate limit
  * exceeded" or other technical strings.
  */
-function friendlyAuthError(message: string): string {
+function extractAuthErrorMessage(error: unknown): string {
+  if (!error) return "";
+  if (typeof error === "string") return error;
+
+  const e = error as {
+    message?: unknown;
+    code?: unknown;
+    status?: unknown;
+    name?: unknown;
+  };
+
+  if (typeof e.message === "string" && e.message.trim() && e.message !== "{}") {
+    return e.message;
+  }
+  // Some Auth errors put a nested object in `message`.
+  if (e.message && typeof e.message === "object") {
+    try {
+      const nested = JSON.stringify(e.message);
+      if (nested && nested !== "{}") return nested;
+    } catch {
+      // ignore
+    }
+  }
+  if (typeof e.code === "string" && e.code) {
+    return e.status ? `${e.code} (${e.status})` : e.code;
+  }
+  try {
+    const raw = JSON.stringify(error);
+    if (raw && raw !== "{}") return raw;
+  } catch {
+    // ignore
+  }
+  return "";
+}
+
+function friendlyAuthError(errorOrMessage: unknown): string {
+  const message = extractAuthErrorMessage(errorOrMessage);
   const m = message.toLowerCase();
+
+  if (!m) {
+    return "Не удалось отправить письмо. Проверьте в Supabase: Custom SMTP и Redirect URLs (должен быть …/auth/callback).";
+  }
+  if (
+    m.includes("not authorized") ||
+    m.includes("email address not authorized")
+  ) {
+    return "Supabase пока шлёт письма только участникам команды. Подключите Custom SMTP — тогда сброс заработает для учеников.";
+  }
+  if (m.includes("redirect") && (m.includes("allow") || m.includes("not"))) {
+    return "Redirect URL не разрешён. В Supabase → Authentication → URL Configuration добавьте: https://ваш-домен/auth/callback";
+  }
+  if (m.includes("smtp") || m.includes("error sending") || m.includes("mail")) {
+    return "Ошибка почтового сервера (SMTP). Проверьте логин, пароль приложения и порт в Custom SMTP.";
+  }
   if (m.includes("rate limit") && m.includes("email")) {
-    return "Сервер отправил слишком много писем подтверждения за час. Подожди немного (15-30 минут) и попробуй снова, либо попроси администратора отключить подтверждение email.";
+    return "Сервер отправил слишком много писем за час. Подожди 15–30 минут и попробуй снова.";
   }
   if (m.includes("rate limit")) {
     return "Слишком много попыток за короткое время. Подожди пару минут и попробуй снова.";
@@ -33,7 +85,7 @@ function friendlyAuthError(message: string): string {
     return "Неверный email или пароль. Проверь данные и попробуй снова.";
   }
   if (m.includes("email not confirmed")) {
-    return "Email ещё не подтверждён. Проверь почту (включая папку «Спам») или попроси администратора отключить подтверждение email.";
+    return "Email ещё не подтверждён. Проверь почту (включая папку «Спам»).";
   }
   if (m.includes("password") && (m.includes("weak") || m.includes("short"))) {
     return "Пароль слишком простой. Используй минимум 6 символов.";
@@ -47,7 +99,6 @@ function friendlyAuthError(message: string): string {
   if (m.includes("expired") || m.includes("otp") || m.includes("token")) {
     return "Ссылка для сброса устарела или уже использована. Запроси новую.";
   }
-  // Fallback — keep the original but prefix for clarity.
   return "Ошибка: " + message;
 }
 
@@ -77,7 +128,7 @@ export async function signInWithEmail(formData: FormData) {
   const { error } = await supabase.auth.signInWithPassword({ email, password });
 
   if (error) {
-    redirect(`/login?error=${encodeURIComponent(friendlyAuthError(error.message))}`);
+    redirect(`/login?error=${encodeURIComponent(friendlyAuthError(error))}`);
   }
 
   redirect(redirectPath);
@@ -114,7 +165,7 @@ export async function signUpWithEmail(formData: FormData) {
   });
 
   if (error) {
-    redirect(`/signup?error=${encodeURIComponent(friendlyAuthError(error.message))}`);
+    redirect(`/signup?error=${encodeURIComponent(friendlyAuthError(error))}`);
   }
 
   // If session is returned (email confirmation disabled), persist consent on profile.
@@ -145,13 +196,22 @@ export async function requestPasswordReset(formData: FormData) {
 
   const supabase = await createSupabaseServerClient();
   const origin = await appOrigin();
+  // Keep redirectTo free of query params — Supabase allowlist matches path exactly
+  // unless you add a wildcard. Callback always sends recovery sessions to reset form.
   const { error } = await supabase.auth.resetPasswordForEmail(email, {
-    redirectTo: `${origin}/auth/callback?next=/auth/reset-password`,
+    redirectTo: `${origin}/auth/callback`,
   });
 
   if (error) {
+    console.error("[auth] resetPasswordForEmail failed:", {
+      origin,
+      emailDomain: email.split("@")[1] ?? "?",
+      message: extractAuthErrorMessage(error),
+      code: (error as { code?: string }).code,
+      status: (error as { status?: number }).status,
+    });
     redirect(
-      `/forgot-password?error=${encodeURIComponent(friendlyAuthError(error.message))}`,
+      `/forgot-password?error=${encodeURIComponent(friendlyAuthError(error))}`,
     );
   }
 
@@ -189,7 +249,7 @@ export async function updatePassword(formData: FormData) {
   const { error } = await supabase.auth.updateUser({ password });
   if (error) {
     redirect(
-      `/auth/reset-password?error=${encodeURIComponent(friendlyAuthError(error.message))}`,
+      `/auth/reset-password?error=${encodeURIComponent(friendlyAuthError(error))}`,
     );
   }
 
