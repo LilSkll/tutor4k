@@ -33,6 +33,9 @@ interface GeneratedExercise {
   acceptableAnswers?: string[];
   topic: string;
   explanation: string;
+  staticSource?: boolean;
+  exerciseId?: string;
+  chapterSlug?: string;
 }
 
 type Phase = "config" | "loading" | "answering" | "result";

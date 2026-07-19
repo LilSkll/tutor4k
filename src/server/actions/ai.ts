@@ -364,8 +364,11 @@ export interface GeneratedExercise {
   acceptableAnswers?: string[];
   topic: string;
   explanation: string;
-  /** Pre-authored exercise — skip AI generation and checking. */
+  /** Pre-authored bank item — skip AI generation and checking. */
   staticSource?: boolean;
+  /** Stable bank id for adaptive progress tracking. */
+  exerciseId?: string;
+  chapterSlug?: string;
 }
 
 /**
@@ -572,6 +575,8 @@ export async function checkExerciseAnswer(input: {
   if (acceptable.includes(userNorm)) {
     await saveExerciseHistory({
       exercise: input.exercise.question,
+      exerciseId: input.exercise.exerciseId,
+      courseId,
       type: input.exercise.type,
       level: input.level,
       userAnswer: input.userAnswer,
@@ -584,6 +589,16 @@ export async function checkExerciseAnswer(input: {
       correct: true,
       feedback: input.exercise.explanation,
     });
+    if (input.exercise.exerciseId) {
+      const { recordExerciseAttempt } = await import(
+        "@/server/learning/exercise-progress"
+      );
+      await recordExerciseAttempt({
+        courseId,
+        exerciseId: input.exercise.exerciseId,
+        correct: true,
+      });
+    }
 
     return {
       correct: true,
@@ -591,10 +606,12 @@ export async function checkExerciseAnswer(input: {
     };
   }
 
-  // Static exercises: use stored explanation, never call AI.
+  // Static bank exercises: use stored explanation, never call AI for grading.
   if (input.exercise.staticSource) {
     await saveExerciseHistory({
       exercise: input.exercise.question,
+      exerciseId: input.exercise.exerciseId,
+      courseId,
       type: input.exercise.type,
       level: input.level,
       userAnswer: input.userAnswer,
@@ -607,6 +624,16 @@ export async function checkExerciseAnswer(input: {
       correct: false,
       feedback: input.exercise.explanation,
     });
+    if (input.exercise.exerciseId) {
+      const { recordExerciseAttempt } = await import(
+        "@/server/learning/exercise-progress"
+      );
+      await recordExerciseAttempt({
+        courseId,
+        exerciseId: input.exercise.exerciseId,
+        correct: false,
+      });
+    }
 
     return {
       correct: false,
@@ -639,6 +666,8 @@ export async function checkExerciseAnswer(input: {
 
   await saveExerciseHistory({
     exercise: input.exercise.question,
+    exerciseId: input.exercise.exerciseId,
+    courseId,
     type: input.exercise.type,
     level: input.level,
     userAnswer: input.userAnswer,
@@ -651,6 +680,16 @@ export async function checkExerciseAnswer(input: {
     correct: isCorrect,
     feedback,
   });
+  if (input.exercise.exerciseId) {
+    const { recordExerciseAttempt } = await import(
+      "@/server/learning/exercise-progress"
+    );
+    await recordExerciseAttempt({
+      courseId,
+      exerciseId: input.exercise.exerciseId,
+      correct: isCorrect,
+    });
+  }
 
   return { correct: isCorrect, feedback };
 }
@@ -689,6 +728,8 @@ async function recordExerciseProfileUpdate(input: {
 
 async function saveExerciseHistory(input: {
   exercise: string;
+  exerciseId?: string;
+  courseId?: string;
   type: ExerciseType;
   level: Level;
   userAnswer: string;
@@ -707,7 +748,7 @@ async function saveExerciseHistory(input: {
   const admin = createSupabaseAdminClient();
   const writeClient = admin ?? userClient;
 
-  const { error } = await writeClient.from("exercises_history").insert({
+  const row: Record<string, unknown> = {
     user_id: user.id,
     exercise: input.exercise,
     exercise_type: input.type,
@@ -715,7 +756,11 @@ async function saveExerciseHistory(input: {
     user_answer: input.userAnswer,
     correct: input.correct,
     feedback: input.feedback,
-  });
+  };
+  if (input.exerciseId) row.exercise_id = input.exerciseId;
+  if (input.courseId) row.course_id = input.courseId;
+
+  const { error } = await writeClient.from("exercises_history").insert(row);
 
   if (error) {
     console.error("[saveExerciseHistory] insert error:", error.message);

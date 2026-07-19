@@ -1,0 +1,120 @@
+import {
+  daysSincePracticed,
+  getTopicPracticeScore,
+} from "@/server/learning/adaptive";
+import type {
+  ExerciseProgress,
+  ExerciseType,
+  Level,
+  StaticExercise,
+} from "@/types";
+import type { StudentCourseProfile } from "@/types/learning-profile";
+
+export type RankedBankItem = {
+  exercise: StaticExercise & {
+    level: Level;
+    topic: string;
+    courseId: string;
+    chapterSlug: string;
+    grammarTopic?: string;
+    vocabTopic?: string;
+  };
+  score: number;
+};
+
+/**
+ * Score a bank item for adaptive selection (higher = more urgent).
+ * Uses Learning Profile + per-exercise progress — no AI.
+ */
+export function scoreBankExercise(input: {
+  exercise: RankedBankItem["exercise"];
+  profile: StudentCourseProfile | null;
+  progress: ExerciseProgress | null;
+  preferredChapterSlugs?: string[];
+}): number {
+  const { exercise, profile, progress } = input;
+
+  // Mastered items deprioritized hard.
+  if (progress?.mastered) return -1;
+
+  let score = 0.35; // baseline for unseen / new
+
+  if (progress) {
+    const failRate =
+      progress.timesSeen > 0
+        ? progress.timesWrong / progress.timesSeen
+        : 0;
+    score += failRate * 0.4;
+    // Unseen / rarely seen preferred over overplayed.
+    if (progress.timesSeen === 0) score += 0.25;
+    else if (progress.timesSeen === 1) score += 0.12;
+    else if (progress.timesSeen >= 5 && failRate < 0.2) score -= 0.2;
+
+    const days = daysSincePracticed(progress.lastSeen);
+    if (days >= 14) score += 0.18;
+    else if (days >= 7) score += 0.1;
+  } else {
+    score += 0.28; // never practiced
+  }
+
+  if (profile) {
+    const topicScore = getTopicPracticeScore(
+      profile,
+      exercise.grammarTopic ?? null,
+      exercise.vocabTopic ?? null,
+    );
+    score += topicScore * 0.35;
+
+    // Soft boost when chapter grammar slug appears in weaknesses.
+    const g = exercise.grammarTopic?.toLowerCase() ?? "";
+    if (
+      g &&
+      profile.weaknesses.some((w) => w.toLowerCase().includes(g))
+    ) {
+      score += 0.12;
+    }
+  }
+
+  if (input.preferredChapterSlugs?.length) {
+    const idx = input.preferredChapterSlugs.indexOf(exercise.chapterSlug);
+    if (idx === 0) score += 0.15;
+    else if (idx > 0 && idx < 3) score += 0.08;
+    else if (idx === -1) score -= 0.05;
+  }
+
+  return score;
+}
+
+/**
+ * Pick one adaptive exercise from candidates (deterministic shuffle by score).
+ */
+export function pickAdaptiveFromCandidates(
+  ranked: RankedBankItem[],
+): RankedBankItem["exercise"] | null {
+  const viable = ranked
+    .filter((r) => r.score >= 0)
+    .sort((a, b) => b.score - a.score);
+
+  if (viable.length === 0) return null;
+
+  // Soft random among top band to avoid identical loops.
+  const top = viable[0].score;
+  const band = viable.filter((r) => top - r.score <= 0.08).slice(0, 8);
+  const pick = band[Math.floor(Math.random() * band.length)] ?? viable[0];
+  return pick.exercise;
+}
+
+export function filterPoolByTypeLevel(
+  pool: RankedBankItem["exercise"][],
+  type: ExerciseType,
+  level: Level,
+): RankedBankItem["exercise"][] {
+  let candidates = pool.filter((ex) => ex.type === type);
+  const atLevel = candidates.filter((ex) => ex.level === level);
+  if (atLevel.length > 0) candidates = atLevel;
+  // Soft fallback: neighboring levels if bank thin at exact CEFR.
+  if (candidates.length === 0) {
+    candidates = pool.filter((ex) => ex.type === type);
+  }
+  return candidates;
+}

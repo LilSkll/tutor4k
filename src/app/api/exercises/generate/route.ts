@@ -1,8 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import {
-  generateExercise,
-  type GeneratedExercise,
-} from "@/server/actions/ai";
+import type { GeneratedExercise } from "@/server/actions/ai";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
 import { pickStaticExercise } from "@/lib/exercise-pool";
 import type { ExerciseType, InterfaceLanguage, Level } from "@/types";
@@ -10,7 +7,9 @@ import type { ExerciseType, InterfaceLanguage, Level } from "@/types";
 /**
  * POST /api/exercises/generate
  * Body: { type, level, topic? }
- * Serves pre-authored exercises when available; AI only as fallback.
+ *
+ * Serves from the permanent adaptive exercise bank only.
+ * AI does not generate practice items — it teaches after answers.
  */
 export async function POST(req: NextRequest) {
   try {
@@ -55,8 +54,12 @@ export async function POST(req: NextRequest) {
       // Non-fatal: fall back to defaults.
     }
 
+    // Localize instruction labels are applied client-side via i18n;
+    // bank stores target-language content + interface-language instructions
+    // already authored per course. language reserved for future instruction overlay.
+    void language;
+
     let preferredChapterSlugs: string[] | undefined;
-    let topic = body.topic;
     try {
       const { getCourse } = await import("@/config/courses");
       const { buildTeacherContext, rankChapterSlugsForExercises } =
@@ -71,13 +74,6 @@ export async function POST(req: NextRequest) {
         teacher,
         course.getChapters(),
       );
-      // Prefer structured profile recommendation over static chapter title.
-      if (!topic) {
-        const top = teacher.learningProfile?.recommendations?.[0];
-        topic = top
-          ? `${top.type}:${top.topic}`
-          : teacher.exerciseTopicHint;
-      }
     } catch {
       // Non-fatal: pool still works without curriculum ranking.
     }
@@ -86,34 +82,34 @@ export async function POST(req: NextRequest) {
       courseId,
       type: body.type,
       level: body.level,
-      topic: body.topic, // keep explicit caller topic for filtering titles
+      topic: body.topic,
       preferredChapterSlugs,
     });
 
-    if (staticEx) {
-      const exercise: GeneratedExercise = {
-        type: staticEx.type,
-        level: staticEx.level,
-        question: staticEx.question,
-        instruction: staticEx.instruction,
-        options: staticEx.options,
-        answer: staticEx.answer,
-        acceptableAnswers: staticEx.acceptableAnswers,
-        topic: staticEx.topic,
-        explanation: staticEx.explanation,
-        staticSource: true,
-      };
-      return NextResponse.json(exercise);
+    if (!staticEx) {
+      return NextResponse.json(
+        {
+          error:
+            "No exercises available in the bank for this type and level yet.",
+        },
+        { status: 404 },
+      );
     }
 
-    const exercise: GeneratedExercise = await generateExercise({
-      type: body.type,
-      level: body.level,
-      topic,
-      language,
-      courseId,
-    });
-
+    const exercise: GeneratedExercise = {
+      type: staticEx.type,
+      level: staticEx.level,
+      question: staticEx.question,
+      instruction: staticEx.instruction,
+      options: staticEx.options,
+      answer: staticEx.answer,
+      acceptableAnswers: staticEx.acceptableAnswers,
+      topic: staticEx.topic,
+      explanation: staticEx.explanation,
+      staticSource: true,
+      exerciseId: staticEx.id,
+      chapterSlug: staticEx.chapterSlug,
+    };
     return NextResponse.json(exercise);
   } catch (err) {
     console.error("[/api/exercises/generate]", err);

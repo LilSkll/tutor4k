@@ -8,7 +8,7 @@ export async function loadEnglishCourse(): Promise<CourseConfig> {
   const { ENGLISH_CHAPTERS, getEngChapter, getEngNextChapter } = await import("./chapters");
   const { ENGLISH_GRAMMAR, getEngGrammarTopic } = await import("./grammar");
   const { ENGLISH_VOCAB } = await import("./vocabulary");
-  const { ENGLISH_EXERCISES } = await import("./exercises");
+  const { getEnglishExercises } = await import("./exercises");
   const { buildEnglishPrompt } = await import("@/server/ai/prompts/english");
 
   return {
@@ -80,7 +80,7 @@ export async function loadEnglishCourse(): Promise<CourseConfig> {
     getGrammar: () => ENGLISH_GRAMMAR,
     getGrammarTopic: getEngGrammarTopic,
     getVocab: () => ENGLISH_VOCAB,
-    getExercises: (slug: string) => ENGLISH_EXERCISES[slug] ?? [],
+    getExercises: (slug: string) => getEnglishExercises(slug),
 
     buildPrompt: buildEnglishPrompt,
   };

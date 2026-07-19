@@ -1,10 +1,15 @@
 import type { StaticExercise } from "@/types";
+import { withExerciseIds } from "@/lib/exercise-bank";
+import { expandEnglishChapterBank } from "@/config/exercise-banks/english-expand";
 
 // =====================================================================
-// English Course — Static Exercises (zero AI calls)
+// English Course — Permanent adaptive exercise bank (curated seed)
+// Expanded to ~20/type via exercise-banks packs. Zero AI generation.
 // =====================================================================
 
-export const ENGLISH_EXERCISES: Record<string, StaticExercise[]> = {
+type Draft = Omit<StaticExercise, "id"> & { id?: string };
+
+export const ENGLISH_EXERCISES: Record<string, Draft[]> = {
   "eng-ch1-first-steps": [
     { type: "multiple_choice", question: "I ___ a teacher.", instruction: "Choose the correct form of be", options: ["am", "is", "are", "be"], answer: "am", explanation: "I → am. I am a teacher." },
     { type: "multiple_choice", question: "She ___ from London.", instruction: "Choose the correct form", options: ["am", "is", "are", "be"], answer: "is", explanation: "She (3rd person singular) → is." },
@@ -118,3 +123,10 @@ export const ENGLISH_EXERCISES: Record<string, StaticExercise[]> = {
     { type: "multiple_choice", question: "In academic writing, contractions are usually ___", instruction: "Register", options: ["encouraged", "avoided", "required", "preferred"], answer: "avoided", explanation: "Formal register avoids contractions." },
   ],
 };
+
+/** Chapter exercises with stable ids + expanded permanent bank packs. */
+export function getEnglishExercises(chapterSlug: string): StaticExercise[] {
+  const curated = ENGLISH_EXERCISES[chapterSlug] ?? [];
+  const expanded = expandEnglishChapterBank(chapterSlug, curated);
+  return withExerciseIds("english", chapterSlug, expanded);
+}

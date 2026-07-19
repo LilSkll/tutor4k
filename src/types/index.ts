@@ -91,6 +91,9 @@ export interface ExerciseHistory {
   id: string;
   user_id: string;
   exercise: string;
+  /** Stable bank id when served from the permanent exercise bank. */
+  exercise_id?: string | null;
+  course_id?: string | null;
   exercise_type: ExerciseType;
   level: Level;
   user_answer: string;
@@ -346,11 +349,26 @@ export interface VocabWord {
 }
 
 export interface StaticExercise {
-  type: "multiple_choice" | "fill_blank" | "translation";
+  /** Stable id — required for adaptive tracking (timesSeen / mastered). */
+  id: string;
+  type: ExerciseType;
   question: string;
   instruction: string;
   options?: string[];
   answer: string;
   acceptableAnswers?: string[];
   explanation: string;
+  /** Optional grammar/vocab topic slug for Learning Profile updates. */
+  grammarTopic?: string;
+  vocabTopic?: string;
+}
+
+/** Per-user progress against a permanent bank item. */
+export interface ExerciseProgress {
+  exerciseId: string;
+  timesSeen: number;
+  timesCorrect: number;
+  timesWrong: number;
+  lastSeen: string | null;
+  mastered: boolean;
 }

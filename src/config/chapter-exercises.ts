@@ -1,21 +1,22 @@
 // =====================================================================
-// Pre-generated exercises per chapter
+// Pre-authored exercises per chapter (permanent adaptive bank)
 // ---------------------------------------------------------------------
-// Static exercises — zero AI calls. All users get the same set per
-// chapter, checked locally without hitting /api/exercises/*.
+// Static exercises — zero AI generation. Adaptive Intelligence picks
+// items; AI only explains mistakes after answers.
+// Drafts may omit `id` — getChapterExercises assigns stable ids.
+// Target depth: ~20 of each type per chapter (grow over time).
 // =====================================================================
 
-export interface StaticExercise {
-  type: "multiple_choice" | "fill_blank" | "translation";
-  question: string;
-  instruction: string;
-  options?: string[];
-  answer: string;
-  acceptableAnswers?: string[];
-  explanation: string;
-}
+import type { StaticExercise } from "@/types";
+import { withExerciseIds } from "@/lib/exercise-bank";
+import { expandSpanishChapterBank } from "@/config/exercise-banks/spanish-expand";
 
-export const CHAPTER_EXERCISES: Record<string, StaticExercise[]> = {
+/** Draft bank item before id assignment. */
+export type ExerciseDraft = Omit<StaticExercise, "id"> & { id?: string };
+
+export type { StaticExercise };
+
+export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
   // ===== Chapter 1: ser/estar ======================================
   "chapter-1-despertar": [
     {
@@ -762,7 +763,9 @@ export const CHAPTER_EXERCISES: Record<string, StaticExercise[]> = {
   ],
 };
 
-/** Get exercises for a chapter slug. Returns empty array if not found. */
+/** Get exercises for a chapter slug (ids assigned, bank expanded). */
 export function getChapterExercises(chapterSlug: string): StaticExercise[] {
-  return CHAPTER_EXERCISES[chapterSlug] ?? [];
+  const curated = CHAPTER_EXERCISES[chapterSlug] ?? [];
+  const expanded = expandSpanishChapterBank(chapterSlug, curated);
+  return withExerciseIds("spanish", chapterSlug, expanded);
 }
