@@ -31,9 +31,10 @@ export function getGrammarTopicTitle(
       return topic.titleEs;
     case "en":
     case "de":
-      return hasCyrillic(topic.titleEs)
-        ? topic.titleEs
-        : topic.titleEs || topic.title;
+      // Prefer native title; only fall back to titleEs when title is Russian.
+      return hasCyrillic(topic.title)
+        ? topic.titleEs || topic.title
+        : topic.title || topic.titleEs;
     default:
       return topic.title;
   }

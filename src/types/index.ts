@@ -136,7 +136,7 @@ export interface Exercise {
 /** Provider-agnostic response returned by the orchestrator. */
 export interface AIResponse {
   content: string;
-  provider: "groq" | "gemini";
+  provider: "groq" | "gemini" | "static-grammar";
   model: string;
   usage?: {
     promptTokens?: number;
@@ -147,7 +147,12 @@ export interface AIResponse {
 }
 
 /** Provider label as returned by sendTutorMessage (includes cache hit). */
-export type TutorProvider = "groq" | "gemini" | "cache" | "guard";
+export type TutorProvider =
+  | "groq"
+  | "gemini"
+  | "cache"
+  | "guard"
+  | "static-grammar";
 
 export interface AIMessage {
   role: MessageRole;

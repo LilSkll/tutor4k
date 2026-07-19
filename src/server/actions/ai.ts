@@ -224,6 +224,7 @@ export async function sendTutorMessage(input: {
   // --- Retrieve relevant textbook + course vocabulary context -----------
   let retrievedContext: string | null = null;
   let grammarGrounding: string | null = null;
+  const explainQuery = Boolean(lastUser && skipFaqCache);
   if (lastUser) {
     try {
       const course = await getCourse(resolvedCourseId);
@@ -235,37 +236,64 @@ export async function sendTutorMessage(input: {
         query: lastUser.content,
         interfaceLanguage: language,
       });
-      const textbookContext = await retrieveContext(
-        lastUser.content,
-        level,
-        5,
-        resolvedCourseId,
-      );
-      const vocabContext = retrieveVocabularyContext(
-        lastUser.content,
-        course.getVocab(),
-        level,
-      );
-      retrievedContext = [grammarGrounding, textbookContext, vocabContext]
-        .filter(Boolean)
-        .join("\n\n");
-      if (!retrievedContext) retrievedContext = null;
+
+      // Grammar explains: prefer the static article only (smaller prompt,
+      // reliable when providers rate-limit). Skip heavy textbook RAG.
+      if (explainQuery && grammarGrounding) {
+        retrievedContext = grammarGrounding;
+      } else {
+        const textbookContext = await retrieveContext(
+          lastUser.content,
+          level,
+          5,
+          resolvedCourseId,
+        );
+        const vocabContext = retrieveVocabularyContext(
+          lastUser.content,
+          course.getVocab(),
+          level,
+        );
+        retrievedContext = [grammarGrounding, textbookContext, vocabContext]
+          .filter(Boolean)
+          .join("\n\n");
+        if (!retrievedContext) retrievedContext = null;
+      }
     } catch (err) {
       console.warn("[tutor] retrieval failed:", (err as Error).message);
     }
   }
 
   // --- Generate AI response (course-aware via prompt registry) --------
-  const response = await generateAIResponse({
+  let response = await generateAIResponse({
     messages: input.messages,
     level,
     interfaceLanguage: language,
     userName,
     retrievedContext,
-    learnerContext: learnerPromptBlock,
+    // Leaner context on explain turns → fewer token / provider failures.
+    learnerContext: explainQuery ? null : learnerPromptBlock,
     courseId: resolvedCourseId,
   });
 
+  // Provider outage: still answer Explain: … from the static rule bank.
+  if (
+    lastUser &&
+    grammarGrounding &&
+    (response.content.startsWith("😔") || response.content.startsWith("⚠️"))
+  ) {
+    const { formatStaticGrammarTutorReply } = await import(
+      "@/server/ai/grammar-grounding"
+    );
+    response = {
+      ...response,
+      content: formatStaticGrammarTutorReply({
+        groundingBlock: grammarGrounding,
+        interfaceLanguage: language,
+      }),
+      provider: "static-grammar",
+      model: "course-bank",
+    };
+  }
   // --- Store in shared cache for other users (best-effort) ------------
   // Do NOT cache grammar-explain / grounded answers (conjugations stay fresh).
   if (

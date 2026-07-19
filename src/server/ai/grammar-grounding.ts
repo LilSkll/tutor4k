@@ -1,5 +1,6 @@
 import type { CourseConfig, GrammarTopic, InterfaceLanguage } from "@/types";
 import { getStaticGrammarContent } from "@/config/grammar-content-localizations";
+import { getGrammarTopicTitle } from "@/lib/grammar-display";
 
 /**
  * Match a learner question to an official course grammar article and
@@ -42,8 +43,10 @@ export function resolveGrammarGrounding(input: {
           ? "German"
           : "English";
 
+  const topicTitle = getGrammarTopicTitle(best.topic, lang);
+
   return `# OFFICIAL COURSE GRAMMAR (COPY FORMS EXACTLY — DO NOT INVENT)
-Topic: ${best.topic.titleEs || best.topic.title} (${best.topic.slug})
+Topic: ${topicTitle} (${best.topic.slug})
 Student interface language: ${iface} (${lang}).
 Teach and explain ONLY in ${iface}. Do NOT insert glosses from other interface languages (no Russian if interface is English, etc.).
 When you draw conjugation tables, use ONLY the forms from this article.
@@ -76,9 +79,39 @@ export function isGrammarExplainQuery(query: string): boolean {
     return true;
   }
   // Bare mood / tense labels pasted from the course UI.
-  return /^(imperativo|subjuntivo|indicativo|condicional|pret[eé]rito|imperfecto|gerundio|infinitivo|ser\s*\/?\s*estar|por\s*\/?\s*para|narrative tenses|present simple|past simple|present perfect|passive voice)(\s|$)/i.test(
+  return /^(imperativo|subjuntivo|indicativo|condicional|pret[eé]rito|imperfecto|gerundio|infinitivo|ser\s*\/?\s*estar|por\s*\/?\s*para|narrative tenses|present simple|past simple|present perfect|passive voice|second.*conditional|third.*conditional)(\s|$)/i.test(
     q,
   );
+}
+
+/**
+ * Build a tutor-facing reply from a static grammar article when the LLM
+ * providers are unavailable — keeps Explain: … working offline of Groq/Gemini.
+ */
+export function formatStaticGrammarTutorReply(input: {
+  groundingBlock: string;
+  interfaceLanguage?: InterfaceLanguage;
+}): string {
+  const lang = input.interfaceLanguage ?? "ru";
+  // Strip the internal meta header; keep the article body.
+  const body = input.groundingBlock
+    .replace(/^# OFFICIAL COURSE GRAMMAR[\s\S]*?\n\n/, "")
+    .trim();
+
+  const intros: Record<InterfaceLanguage, string> = {
+    ru: "Вот правило по теме — разберём по шагам:\n\n",
+    en: "Here’s the rule for this topic — step by step:\n\n",
+    es: "Aquí tienes la regla del tema — paso a paso:\n\n",
+    de: "Hier ist die Regel zu diesem Thema — Schritt für Schritt:\n\n",
+  };
+  const outros: Record<InterfaceLanguage, string> = {
+    ru: "\n\nЕсли хочешь, составь своё предложение по этому правилу — проверю.",
+    en: "\n\nIf you want, write your own example with this rule — I’ll check it.",
+    es: "\n\nSi quieres, escribe tu propio ejemplo con esta regla — lo reviso.",
+    de: "\n\nWenn du magst, schreib ein eigenes Beispiel zu dieser Regel — ich prüfe es.",
+  };
+
+  return `${intros[lang] ?? intros.en}${body}${outros[lang] ?? outros.en}`;
 }
 
 function normalize(s: string): string {
@@ -86,6 +119,7 @@ function normalize(s: string): string {
     .toLowerCase()
     .normalize("NFD")
     .replace(/\p{M}/gu, "")
+    .replace(/&/g, " ")
     .replace(/[¿?¡!.,:;]/g, " ")
     .replace(/\s+/g, " ")
     .trim();
@@ -134,10 +168,22 @@ function scoreTopic(topic: GrammarTopic, q: string): number {
     if (list.some((a) => q.includes(a)) || q.includes(key)) score += 6;
   }
 
-  // English course slug tokens: "eng b1 narrative" → narrative
+  // English course slug tokens
   if (slug.includes("narrative") && q.includes("narrative")) score += 10;
   if (slug.includes("present perfect") && q.includes("present perfect"))
     score += 10;
+  if (
+    slug.includes("conditionals") &&
+    (q.includes("conditional") || q.includes("conditionals"))
+  ) {
+    score += 10;
+  }
+  if (
+    slug.includes("b2 conditionals") &&
+    (q.includes("second") || q.includes("third"))
+  ) {
+    score += 6;
+  }
 
   return score;
 }
