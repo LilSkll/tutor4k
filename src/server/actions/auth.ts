@@ -58,10 +58,20 @@ function friendlyAuthError(errorOrMessage: unknown): string {
     return "Не удалось отправить письмо. Проверьте в Supabase: Custom SMTP и Redirect URLs (должен быть …/auth/callback).";
   }
   if (
+    m.includes("authretryablefetcherror") ||
+    m.includes('"status":500') ||
+    m.includes('"status": 500') ||
+    (typeof errorOrMessage === "object" &&
+      errorOrMessage !== null &&
+      (errorOrMessage as { status?: number; name?: string }).status === 500)
+  ) {
+    return "Сервер почты не смог отправить письмо (ошибка 500). В Supabase → Authentication → Emails → SMTP Settings проверьте Custom SMTP: хост, порт (465 или 587) и пароль приложения. Если SMTP только что включали — временно выключите его и попробуйте снова, либо исправьте настройки.";
+  }
+  if (
     m.includes("not authorized") ||
     m.includes("email address not authorized")
   ) {
-    return "Supabase пока шлёт письма только участникам команды. Подключите Custom SMTP — тогда сброс заработает для учеников.";
+    return "Supabase пока шлёт письма только участникам команды. Подключите рабочий Custom SMTP — тогда сброс заработает для учеников.";
   }
   if (m.includes("redirect") && (m.includes("allow") || m.includes("not"))) {
     return "Redirect URL не разрешён. В Supabase → Authentication → URL Configuration добавьте: https://ваш-домен/auth/callback";
