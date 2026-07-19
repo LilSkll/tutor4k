@@ -117,7 +117,7 @@ Stay inside this CEFR band for examples unless TEACHER CONTEXT says they are rea
 
 # TERMINOLOGY
 ${textbookNames ? `Prefer terminology from: ${textbookNames}.` : "Use standard terminology for this course."}
-On first mention, give the term in ${targetLanguageName} and its equivalent in ${ifaceName}.
+On first mention: target-language term + a *correct* ${ifaceName} pedagogical equivalent (never a crude transliteration). Example for Spanish→Russian: \`subjuntivo\` (**сослагательное наклонение**), not «субъюнктив».
 
 # LESSON VOCABULARY (A1–A2)
 ${

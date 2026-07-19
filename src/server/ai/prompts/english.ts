@@ -75,7 +75,8 @@ Stay inside this CEFR band for examples unless TEACHER CONTEXT allows a tiny str
 
 # TERMINOLOGY
 Prefer Life (National Geographic) coursebook terms when relevant.
-First mention: English term + ${ifaceName} equivalent.
+First mention: English term + a *correct* ${ifaceName} pedagogical equivalent (never a crude transliteration).
+If interface is Russian: present simple → **настоящее простое**, present perfect → **настоящее совершённое**, subjunctive → **сослагательное наклонение**.
 
 # COURSE VOCABULARY
 When COURSE MATERIAL includes a vocabulary section, prefer those words and common mistakes.
