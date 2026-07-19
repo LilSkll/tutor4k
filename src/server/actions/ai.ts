@@ -177,7 +177,19 @@ export async function sendTutorMessage(input: {
   }
 
   // --- Shared cross-user cache (FAQ) — save LLM tokens -----------------
-  if (lastUser && shouldUseSharedTutorCache(input.messages)) {
+  // Skip for grammar explains: stale wrong conjugations must not stick.
+  let skipFaqCache = false;
+  if (lastUser) {
+    try {
+      const { isGrammarExplainQuery } = await import(
+        "@/server/ai/grammar-grounding"
+      );
+      skipFaqCache = isGrammarExplainQuery(lastUser.content);
+    } catch {
+      skipFaqCache = false;
+    }
+  }
+  if (lastUser && shouldUseSharedTutorCache(input.messages) && !skipFaqCache) {
     try {
       const cached = await getCachedTutorResponse(
         lastUser.content,
@@ -211,9 +223,18 @@ export async function sendTutorMessage(input: {
 
   // --- Retrieve relevant textbook + course vocabulary context -----------
   let retrievedContext: string | null = null;
+  let grammarGrounding: string | null = null;
   if (lastUser) {
     try {
       const course = await getCourse(resolvedCourseId);
+      const { resolveGrammarGrounding } = await import(
+        "@/server/ai/grammar-grounding"
+      );
+      grammarGrounding = resolveGrammarGrounding({
+        course,
+        query: lastUser.content,
+        interfaceLanguage: language,
+      });
       const textbookContext = await retrieveContext(
         lastUser.content,
         level,
@@ -225,7 +246,7 @@ export async function sendTutorMessage(input: {
         course.getVocab(),
         level,
       );
-      retrievedContext = [textbookContext, vocabContext]
+      retrievedContext = [grammarGrounding, textbookContext, vocabContext]
         .filter(Boolean)
         .join("\n\n");
       if (!retrievedContext) retrievedContext = null;
@@ -246,11 +267,13 @@ export async function sendTutorMessage(input: {
   });
 
   // --- Store in shared cache for other users (best-effort) ------------
-  // Cache refusals too — repeated off-topic questions skip the orchestrator path.
+  // Do NOT cache grammar-explain / grounded answers (conjugations stay fresh).
   if (
     lastUser &&
     response.content &&
-    shouldUseSharedTutorCache(input.messages)
+    shouldUseSharedTutorCache(input.messages) &&
+    !skipFaqCache &&
+    !grammarGrounding
   ) {
     setCachedTutorResponse(
       lastUser.content,

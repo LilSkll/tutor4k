@@ -36,9 +36,39 @@ export interface PromptOptions {
 
 function grammarRulesSection(code: string, name: string): string {
   if (code === "es") {
-    return `# GRAMMAR FORMS (${name}) — ALWAYS 6 FORMS
-When showing verb conjugation, include ALL 6 forms:
-yo, tú, él/ella/usted, nosotros/as, vosotros/as, ellos/ustedes.`;
+    return `# GRAMMAR FORMS (${name}) — ACCURACY CRITICAL
+When showing verb conjugations, use ALL 6 persons:
+yo · tú · él/ella/usted · nosotros/as · vosotros/as · ellos/ustedes.
+Never skip vosotros/as.
+
+## NEVER MIX MOODS
+Every table MUST be labeled with mood + tense (e.g. «Imperativo afirmativo», «Presente de subjuntivo»).
+Copy endings from OFFICIAL COURSE GRAMMAR when present. If unsure — do not invent.
+
+## LOCKED REFERENCE — hablar (regular -ar)
+
+### Presente de indicativo
+| yo | tú | él/usted | nosotros | vosotros | ellos/ustedes |
+| hablo | hablas | habla | hablamos | habláis | hablan |
+
+### Presente de subjuntivo
+| yo | tú | él/usted | nosotros | vosotros | ellos/ustedes |
+| hable | hables | hable | hablemos | habléis | hablen |
+
+### Imperativo afirmativo (commands — YES)
+| tú | usted | nosotros | vosotros | ustedes |
+| habla | hable | hablemos | **hablad** | hablen |
+
+### Imperativo negativo (commands — NO) = subjuntivo forms
+| tú | usted | nosotros | vosotros | ustedes |
+| no hables | no hable | no hablemos | **no habléis** | no hablen |
+
+Critical contrasts:
+- vosotros **indicativo** → habláis
+- vosotros **subjuntivo / imperativo negativo** → habléis
+- vosotros **imperativo afirmativo** → **hablad** (NOT habléis, NOT habláis)
+
+Same pattern for -er/-ir affirmative vosotros: comed, vivid (NOT comáis / viváis in affirmative imperative).`;
   }
   if (code === "ru") {
     return `# GRAMMAR FORMS (${name})
@@ -46,7 +76,7 @@ When conjugating verbs, use standard persons: я, ты, он/она, мы, вы,
 Indicate aspect (perfective / imperfective) when relevant.`;
   }
   return `# GRAMMAR FORMS (${name})
-Use standard grammar tables appropriate for ${name}.`;
+Use standard grammar tables appropriate for ${name}. Label every table with tense/mood. Never invent irregular forms — prefer COURSE MATERIAL.`;
 }
 
 function toneEmoji(code: string): string {
