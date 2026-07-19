@@ -3,6 +3,10 @@ import {
   GRAMMAR_CATEGORY,
   GRAMMAR_TOPIC,
 } from "@/config/grammar-localizations";
+import {
+  getDeCategory,
+  getDeTopicFields,
+} from "@/config/grammar-localizations-de";
 
 function hasCyrillic(text: string): boolean {
   return /[\u0400-\u04FF]/.test(text);
@@ -12,6 +16,11 @@ export function getGrammarTopicTitle(
   topic: GrammarTopic,
   interfaceLanguage: InterfaceLanguage,
 ): string {
+  if (interfaceLanguage === "de") {
+    const de = getDeTopicFields(topic.slug)?.title;
+    if (de) return de;
+  }
+
   const loc = GRAMMAR_TOPIC[topic.slug]?.[interfaceLanguage]?.title;
   if (loc) return loc;
 
@@ -22,7 +31,9 @@ export function getGrammarTopicTitle(
       return topic.titleEs;
     case "en":
     case "de":
-      return hasCyrillic(topic.titleEs) ? topic.titleEs : topic.titleEs || topic.title;
+      return hasCyrillic(topic.titleEs)
+        ? topic.titleEs
+        : topic.titleEs || topic.title;
     default:
       return topic.title;
   }
@@ -32,6 +43,12 @@ export function getGrammarCategory(
   topic: GrammarTopic,
   interfaceLanguage: InterfaceLanguage,
 ): string {
+  if (interfaceLanguage === "de") {
+    const de =
+      getDeTopicFields(topic.slug)?.category ?? getDeCategory(topic.category);
+    if (de) return de;
+  }
+
   const loc = GRAMMAR_TOPIC[topic.slug]?.[interfaceLanguage]?.category;
   if (loc) return loc;
 
@@ -46,6 +63,11 @@ export function getGrammarSummary(
   topic: GrammarTopic,
   interfaceLanguage: InterfaceLanguage,
 ): string {
+  if (interfaceLanguage === "de") {
+    const de = getDeTopicFields(topic.slug)?.summary;
+    if (de) return de;
+  }
+
   const loc = GRAMMAR_TOPIC[topic.slug]?.[interfaceLanguage]?.summary;
   if (loc) return loc;
   if (interfaceLanguage === "ru") return topic.summary;

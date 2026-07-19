@@ -701,11 +701,17 @@ export function getStaticGrammarContent(
   slug: string,
   interfaceLanguage: InterfaceLanguage,
 ): string | null {
-  const topic =
-    GRAMMAR_CONTENT[slug] ??
-    SPANISH_GRAMMAR_CONTENT[slug] ??
-    GERMAN_GRAMMAR_CONTENT[slug];
-  if (!topic) return null;
-
-  return topic[interfaceLanguage] ?? null;
+  // Prefer the map that actually has this interface language.
+  // Important: SPANISH/EN maps often have en+es only; DE lives in
+  // GERMAN_GRAMMAR_CONTENT — do not short-circuit on a map that lacks `de`.
+  const sources = [
+    GRAMMAR_CONTENT[slug],
+    SPANISH_GRAMMAR_CONTENT[slug],
+    GERMAN_GRAMMAR_CONTENT[slug],
+  ];
+  for (const topic of sources) {
+    const content = topic?.[interfaceLanguage];
+    if (content && content.trim().length > 0) return content;
+  }
+  return null;
 }
