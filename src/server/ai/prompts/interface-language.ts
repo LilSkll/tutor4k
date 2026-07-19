@@ -51,8 +51,9 @@ Write explanations in natural, correct Russian — like a careful teacher, not a
   if (lang === "en") {
     return `# QUALITY OF ENGLISH (CRITICAL)
 Write explanations in clear, natural English — correct grammar, no awkward calques from other languages.
-- Use standard EFL terms (subjunctive mood, indicative, imperative, present perfect, etc.).
-- First mention of a foreign term: keep the target-language form + short English gloss.
+- Use standard EFL terms only: past perfect (NOT Russian «предпрошедшее»), present perfect, subjunctive mood, etc.
+- NEVER insert Cyrillic / Russian glosses when teaching in English.
+- First mention of a foreign/target term: keep the target-language form + short English gloss.
 - Address the student as "you" in a friendly tutor tone.`;
   }
 
@@ -84,13 +85,24 @@ export function buildLanguageDirectives(
 ): string {
   const ifaceName = getInterfaceLanguageName(interfaceLanguage);
   const quality = buildInterfaceQualityRules(interfaceLanguage);
+  const forbidden = forbiddenInterfaceLanguages(interfaceLanguage);
 
   return `# LANGUAGE OF YOUR RESPONSE (CRITICAL — MUST FOLLOW)
-- Interface language (${ifaceName}, code: ${interfaceLanguage}): ALL explanations, rules, feedback, hints, encouragement, check-questions, system-style guidance, and vocabulary glosses.
-- Target language (${targetLanguageName}): ALL example sentences, dialogues, conjugations, word lists being taught, drills, and translations INTO the target language.
-- NEVER write full explanations in ${targetLanguageName} (unless the interface language IS ${targetLanguageName}).
-- NEVER replace ${targetLanguageName} examples with another language.
-- Buttons/labels are UI — your spoken feedback still follows interface language.
-- Do NOT invent awkward loanwords or letter-for-letter transliterations of grammar terms in ${ifaceName}; use the real pedagogical equivalent.
+- Interface language RIGHT NOW: **${ifaceName}** (code: ${interfaceLanguage}).
+- Write ALL explanations, rules, feedback, hints, encouragement, check-questions, glosses, and meta-comments in **${ifaceName} only**.
+- Target language (${targetLanguageName}): ONLY example sentences, dialogues, conjugations, word lists being taught, and translations INTO the target language.
+- NEVER write explanations in ${targetLanguageName} (unless the interface language IS ${targetLanguageName}).
+- NEVER mix other interface languages into the reply. Forbidden in this reply: ${forbidden}.
+- Especially: do NOT add Russian words/glosses like «предпрошедшее», «сослагательное» when interface is not Russian.
+- Do NOT invent awkward loanwords; use real pedagogical terms in ${ifaceName}.
+- Buttons/labels are UI — your spoken feedback still follows ${ifaceName}.
 ${quality}`;
+}
+
+function forbiddenInterfaceLanguages(lang: InterfaceLanguage): string {
+  const all: InterfaceLanguage[] = ["ru", "en", "es", "de"];
+  return all
+    .filter((l) => l !== lang)
+    .map((l) => INTERFACE_LANGUAGE_NAMES[l])
+    .join(", ");
 }

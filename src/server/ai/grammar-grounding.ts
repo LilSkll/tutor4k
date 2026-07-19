@@ -1,4 +1,5 @@
 import type { CourseConfig, GrammarTopic, InterfaceLanguage } from "@/types";
+import { getStaticGrammarContent } from "@/config/grammar-content-localizations";
 
 /**
  * Match a learner question to an official course grammar article and
@@ -27,18 +28,41 @@ export function resolveGrammarGrounding(input: {
   // Require a clear hit (title / slug / key term), not a weak partial.
   if (!best || best.score < 6) return null;
 
-  const content = pickContent(best.topic, input.interfaceLanguage);
+  const lang = input.interfaceLanguage ?? "ru";
+  const content = pickContent(best.topic, lang);
   if (!content.trim()) return null;
 
   const clipped = content.length > 3500 ? `${content.slice(0, 3500).trim()}…` : content;
+  const iface =
+    lang === "ru"
+      ? "Russian"
+      : lang === "es"
+        ? "Spanish"
+        : lang === "de"
+          ? "German"
+          : "English";
 
   return `# OFFICIAL COURSE GRAMMAR (COPY FORMS EXACTLY — DO NOT INVENT)
 Topic: ${best.topic.titleEs || best.topic.title} (${best.topic.slug})
+Student interface language: ${iface} (${lang}).
+Teach and explain ONLY in ${iface}. Do NOT insert glosses from other interface languages (no Russian if interface is English, etc.).
 When you draw conjugation tables, use ONLY the forms from this article.
 Never mix moods (e.g. do not put subjuntivo endings in an imperativo afirmativo table).
 vosotros affirmative imperative of -ar verbs ends in **-ad** (hablad), NOT habléis / habláis.
 
 ${clipped}`;
+}
+
+/** Prefer localized static article; fall back to native topic.content (RU). */
+function pickContent(
+  topic: GrammarTopic,
+  lang: InterfaceLanguage,
+): string {
+  const localized = getStaticGrammarContent(topic.slug, lang);
+  if (localized?.trim()) return localized;
+  if (lang === "ru" && topic.content?.trim()) return topic.content;
+  // Last resort: native content may be Russian — caller still forbids mixing languages in the reply.
+  return topic.content || "";
 }
 
 /** True when the user is asking to explain a grammar label — skip FAQ cache. */
@@ -52,7 +76,7 @@ export function isGrammarExplainQuery(query: string): boolean {
     return true;
   }
   // Bare mood / tense labels pasted from the course UI.
-  return /^(imperativo|subjuntivo|indicativo|condicional|pret[eé]rito|imperfecto|gerundio|infinitivo|ser\s*\/?\s*estar|por\s*\/?\s*para)(\s|$)/i.test(
+  return /^(imperativo|subjuntivo|indicativo|condicional|pret[eé]rito|imperfecto|gerundio|infinitivo|ser\s*\/?\s*estar|por\s*\/?\s*para|narrative tenses|present simple|past simple|present perfect|passive voice)(\s|$)/i.test(
     q,
   );
 }
@@ -96,21 +120,24 @@ function scoreTopic(topic: GrammarTopic, q: string): number {
     condicional: ["условн", "conditional"],
     "ser estar": ["ser/estar", "ser y estar"],
     "por para": ["por/para", "por y para"],
+    narrative: ["narrative tenses", "повествовательн"],
   };
   for (const [key, list] of Object.entries(aliases)) {
-    if (!slug.includes(key) && !titleEs.includes(key)) continue;
-    if (list.some((a) => q.includes(a))) score += 6;
+    if (
+      !slug.includes(key) &&
+      !titleEs.includes(key) &&
+      !title.includes(key) &&
+      !slug.includes(key.replace(/\s+/g, " "))
+    ) {
+      continue;
+    }
+    if (list.some((a) => q.includes(a)) || q.includes(key)) score += 6;
   }
 
-  return score;
-}
+  // English course slug tokens: "eng b1 narrative" → narrative
+  if (slug.includes("narrative") && q.includes("narrative")) score += 10;
+  if (slug.includes("present perfect") && q.includes("present perfect"))
+    score += 10;
 
-function pickContent(
-  topic: GrammarTopic,
-  lang?: InterfaceLanguage,
-): string {
-  // Prefer target-language article (forms are authoritative there),
-  // fall back to whatever is on the topic.
-  if (lang === "es" && topic.content) return topic.content;
-  return topic.content || "";
+  return score;
 }
