@@ -139,11 +139,16 @@ export async function generateAIResponse(
   const lastUserMessage = [...messages]
     .reverse()
     .find((m) => m.role === "user");
+  const lastAssistantMessage = [...messages]
+    .reverse()
+    .find((m) => m.role === "assistant");
 
   if (
     !skipGuard &&
     lastUserMessage &&
-    isOffTopicForCourse(lastUserMessage.content, course.keywords)
+    isOffTopicForCourse(lastUserMessage.content, course.keywords, {
+      priorAssistantContent: lastAssistantMessage?.content ?? null,
+    })
   ) {
     return {
       content: getOffTopicRefusal(course.titleNative, resolvedLanguage),

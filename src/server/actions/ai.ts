@@ -139,7 +139,14 @@ export async function sendTutorMessage(input: {
       const { getOffTopicRefusal } = await import(
         "@/server/ai/prompts/refusals"
       );
-      if (isOffTopicForCourse(lastUser.content, course.keywords)) {
+      const lastAssistant = [...input.messages]
+        .reverse()
+        .find((m) => m.role === "assistant");
+      if (
+        isOffTopicForCourse(lastUser.content, course.keywords, {
+          priorAssistantContent: lastAssistant?.content ?? null,
+        })
+      ) {
         const refusal = getOffTopicRefusal(course.titleNative, language);
         if (shouldUseSharedTutorCache(input.messages)) {
           // Overwrite any previous mistaken cache entry for this question.

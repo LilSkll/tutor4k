@@ -298,10 +298,15 @@ function isAllowedTopic(q: string, keywords: CourseKeywords): boolean {
  * ALLOWLIST: everything is refused unless it clearly matches learning,
  * course, culture/authors/cuisine of the target-language world, or
  * course-specific onTopic keywords.
+ *
+ * Exception: when the tutor just gave an exercise / check question,
+ * the student's next message is treated as an answer (never refused
+ * unless HARD_OFF_TOPIC).
  */
 export function isOffTopicForCourse(
   question: string,
   keywords: CourseKeywords,
+  context?: { priorAssistantContent?: string | null },
 ): boolean {
   const q = question.toLowerCase().trim();
 
@@ -309,6 +314,23 @@ export function isOffTopicForCourse(
 
   // Hard block always wins.
   if (includesAny(q, HARD_OFF_TOPIC)) return true;
+
+  // Student answering the tutor's drill / blank / check question.
+  if (
+    context?.priorAssistantContent &&
+    isTutorExerciseTurn(context.priorAssistantContent)
+  ) {
+    return false;
+  }
+
+  // Short follow-up after a teaching reply (likely an answer or clarification).
+  if (
+    context?.priorAssistantContent &&
+    isAllowedTopic(context.priorAssistantContent.toLowerCase(), keywords)
+  ) {
+    const words = q.split(/\s+/).filter(Boolean).length;
+    if (words > 0 && words <= 20) return false;
+  }
 
   // Explicit course offTopic keywords (e.g. other languages on English course).
   if (includesAny(q, keywords.offTopic ?? [])) return true;
@@ -320,4 +342,58 @@ export function isOffTopicForCourse(
 
   // Default: refuse everything else.
   return true;
+}
+
+/** Signals that the assistant just posed a practice item or check question. */
+const EXERCISE_TURN_SIGNALS: string[] = [
+  "___",
+  "упражнен",
+  "exercise",
+  "ejercicio",
+  "выбери",
+  "choose the",
+  "elige",
+  "заполни",
+  "fill in",
+  "fill the blank",
+  "completa",
+  "переведи",
+  "translate",
+  "traduce",
+  "исправь",
+  "correct the",
+  "corrige",
+  "составь",
+  "build the sentence",
+  "пропуск",
+  "blank",
+  "правильн форм",
+  "correct form",
+  "forma correcta",
+  "твой ответ",
+  "your answer",
+  "tu respuesta",
+  "напиши",
+  "write the",
+  "спряг",
+  "conjugat",
+  "проверь себя",
+  "check yourself",
+  "мини-задани",
+  "mini-task",
+  "попробуй",
+  "try this",
+];
+
+function isTutorExerciseTurn(assistantContent: string): boolean {
+  const t = assistantContent.toLowerCase();
+  if (/_{2,}/.test(assistantContent)) return true;
+  if (includesAny(t, EXERCISE_TURN_SIGNALS)) return true;
+  if (
+    assistantContent.includes("?") &&
+    (includesAny(t, LEARNING_SIGNALS) || includesAny(t, COURSE_SIGNALS))
+  ) {
+    return true;
+  }
+  return false;
 }
