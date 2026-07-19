@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { useSearchParams, useRouter } from "next/navigation";
-import { RefreshCw, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -18,7 +18,6 @@ import {
   getGrammarCategory,
   getGrammarSummary,
   getGrammarTopicTitle,
-  usesNativeGrammarContent,
 } from "@/lib/grammar-display";
 import { translate } from "@/lib/i18n";
 import type { GrammarTopic, Level } from "@/types";
@@ -58,8 +57,6 @@ export function GrammarExplorer({
     content: articleContent,
     loading,
     error: loadError,
-    isStatic,
-    reload,
   } = useLocalizedGrammarArticle(
     selectedTopic?.slug,
     courseId,
@@ -168,19 +165,6 @@ export function GrammarExplorer({
                   </div>
 
                   <div className="flex gap-2 pt-2">
-                    {!usesNativeGrammarContent(language) && !isStatic && (
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        disabled={loading}
-                        onClick={() => reload()}
-                      >
-                        <RefreshCw
-                          className={cn("h-4 w-4", loading && "animate-spin")}
-                        />
-                        {t("grammar.regenerateAI")}
-                      </Button>
-                    )}
                     <Button variant="outline" size="sm" asChild>
                       <a
                         href={`/tutor?q=${encodeURIComponent(

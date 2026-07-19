@@ -3,9 +3,9 @@ import type { GrammarTopic } from "@/types";
 // =====================================================================
 // Grammar reference data
 // ---------------------------------------------------------------------
-// Curated topics grouped by CEFR level (A1 → C1). Each topic includes a
-// markdown reference that doubles as a teaching primer. Users can also ask
-// the AI tutor to expand on any topic ("Explain with AI" button).
+// Curated STATIC topics grouped by CEFR level (A1 → C1). Articles shown
+// in the Grammar UI are never AI-generated. Users may open the tutor
+// ("Ask tutor") for explanations — that path uses the orchestrator.
 // =====================================================================
 
 export const GRAMMAR_TOPICS: GrammarTopic[] = [
@@ -427,15 +427,15 @@ hoy, esta semana, este año, ya, todavía no, nunca, alguna vez.
 
 ### Самые частые неправильные
 
-| Инфинитив | yo | él/ella | ellos |
-|---|---|---|---|
-| ser / ir | fui | fue | fueron |
-| tener | tuve | tuvo | tuvieron |
-| estar | estuve | estuvo | estuvieron |
-| hacer | hice | hizo | hicieron |
-| venir | vine | vino | vinieron |
-| decir | dije | dijo | dijeron |
-| ver | vi | vio | vieron |
+| Инфинитив | yo | tú | él/ella | nosotros | vosotros | ellos |
+|---|---|---|---|---|---|---|
+| ser / ir | fui | fuiste | fue | fuimos | **fuisteis** | fueron |
+| tener | tuve | tuviste | tuvo | tuvimos | **tuvisteis** | tuvieron |
+| estar | estuve | estuviste | estuvo | estuvimos | **estuvisteis** | estuvieron |
+| hacer | hice | hiciste | hizo | hicimos | **hicisteis** | hicieron |
+| venir | vine | viniste | vino | vinimos | **vinisteis** | vinieron |
+| decir | dije | dijiste | dijo | dijimos | **dijisteis** | dijeron |
+| ver | vi | viste | vio | vimos | **visteis** | vieron |
 
 ### Использование
 Действие **завершено** в конкретный момент прошлого:
@@ -473,9 +473,9 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
 ### Только 3 неправильных!
 | Глагол | Основа |
 |---|---|
-| **ser** | era, eras, era, éramos, eran |
-| **ir** | iba, ibas, iba, íbamos, iban |
-| **ver** | veía, veías, veía, veíamos, veían |
+| **ser** | era, eras, era, éramos, **erais**, eran |
+| **ir** | iba, ibas, iba, íbamos, **ibais**, iban |
+| **ver** | veía, veías, veía, veíamos, **veíais**, veían |
 
 ### Когда использовать
 1. **Привычки в прошлом:** \`Cuando era niño, jugaba al fútbol.\`
@@ -663,11 +663,12 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
 | tú | -a (habla) | -e (come) | ten, pon, ven, sal, haz |
 | usted | -e (hable) | -a (coma) | sea, vaya |
 | nosotros | -emos | -amos | vamos, demos |
-| vosotros | -ad (hablad) | -ed (comed) |  |
+| vosotros | -ad (hablad) | -ed (comed) / **-id (vivid)** |  |
 | ustedes | -en (hablen) | -an (coman) |  |
 
 ### Отрицательная форма (negativo) = Subjuntivo
 \`No **hables**\`, \`No **comas**\`, \`No **vengas**\`.
+Vosotros: \`No **habléis**\`, \`No **comáis**\`, \`No **viváis**\`.
 
 ### Особые формы tú (утвердительно)
 | Инфинитив | tú |
@@ -1065,13 +1066,13 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Subjuntivo Perfecto y Pluscuamperfecto",
     level: "B2",
     category: "Наклонения",
-    summary: "Сложные формы сослагательного: perfecto (habla hablado) и pluscuamperfecto.",
+    summary: "Сложные формы сослагательного: perfecto (haya hablado) и pluscuamperfecto.",
     content: `## Сложные формы Subjuntivo
 
 ### Subjuntivo Perfecto (прошедшее совершённое)
 Формула: **haya** + participio
 
-\`haya, hayas, haya, hayamos, hayan + hablado/comido/vivido\`
+\`haya, hayas, haya, hayamos, hayáis, hayan + hablado/comido/vivido\`
 
 Использование:
 1. **Эмоция о свершившемся:**
@@ -1084,7 +1085,7 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
 ### Subjuntivo Pluscuamperfecto (предпрошедшее)
 Формула: **hubiera/hubiese** + participio
 
-\`hubiera/hubiese, hubieras, hubiera, hubiéramos, hubieran + hablado\`
+\`hubiera/hubiese, hubieras, hubiera, hubiéramos, hubierais/hubieseis, hubieran + hablado\`
 
 Использование:
 1. **Si-конструкция (нереальное условие в прошлом):**

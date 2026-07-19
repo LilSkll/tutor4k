@@ -652,15 +652,15 @@ Example: \`hablar\` → hablé, hablaste, habló, hablamos, hablasteis, hablaron
 
 ### Most common irregular verbs
 
-| Infinitive | yo | él/ella | ellos |
-|---|---|---|---|
-| ser / ir | fui | fue | fueron |
-| tener | tuve | tuvo | tuvieron |
-| estar | estuve | estuvo | estuvieron |
-| hacer | hice | hizo | hicieron |
-| venir | vine | vino | vinieron |
-| decir | dije | dijo | dijeron |
-| ver | vi | vio | vieron |
+| Infinitive | yo | tú | él/ella | nosotros | vosotros | ellos |
+|---|---|---|---|---|---|---|
+| ser / ir | fui | fuiste | fue | fuimos | **fuisteis** | fueron |
+| tener | tuve | tuviste | tuvo | tuvimos | **tuvisteis** | tuvieron |
+| estar | estuve | estuviste | estuvo | estuvimos | **estuvisteis** | estuvieron |
+| hacer | hice | hiciste | hizo | hicimos | **hicisteis** | hicieron |
+| venir | vine | viniste | vino | vinimos | **vinisteis** | vinieron |
+| decir | dije | dijiste | dijo | dijimos | **dijisteis** | dijeron |
+| ver | vi | viste | vio | vimos | **visteis** | vieron |
 
 ### Usage
 Action **completed** at a specific moment in the past:
@@ -689,15 +689,15 @@ Ejemplo: \`hablar\` → hablé, hablaste, habló, hablamos, hablasteis, hablaron
 
 ### Irregulares más frecuentes
 
-| Infinitivo | yo | él/ella | ellos |
-|---|---|---|---|
-| ser / ir | fui | fue | fueron |
-| tener | tuve | tuvo | tuvieron |
-| estar | estuve | estuvo | estuvieron |
-| hacer | hice | hizo | hicieron |
-| venir | vine | vino | vinieron |
-| decir | dije | dijo | dijeron |
-| ver | vi | vio | vieron |
+| Infinitivo | yo | tú | él/ella | nosotros | vosotros | ellos |
+|---|---|---|---|---|---|---|
+| ser / ir | fui | fuiste | fue | fuimos | **fuisteis** | fueron |
+| tener | tuve | tuviste | tuvo | tuvimos | **tuvisteis** | tuvieron |
+| estar | estuve | estuviste | estuvo | estuvimos | **estuvisteis** | estuvieron |
+| hacer | hice | hiciste | hizo | hicimos | **hicisteis** | hicieron |
+| venir | vine | viniste | vino | vinimos | **vinisteis** | vinieron |
+| decir | dije | dijiste | dijo | dijimos | **dijisteis** | dijeron |
+| ver | vi | viste | vio | vimos | **visteis** | vieron |
 
 ### Uso
 Acción **terminada** en un momento concreto del pasado:
@@ -730,9 +730,9 @@ Example: \`hablar\` → hablaba, hablabas, hablaba, hablábamos, **hablabais**, 
 ### Only 3 irregular verbs!
 | Verb | Stem |
 |---|---|
-| **ser** | era, eras, era, éramos, eran |
-| **ir** | iba, ibas, iba, íbamos, iban |
-| **ver** | veía, veías, veía, veíamos, veían |
+| **ser** | era, eras, era, éramos, **erais**, eran |
+| **ir** | iba, ibas, iba, íbamos, **ibais**, iban |
+| **ver** | veía, veías, veía, veíamos, **veíais**, veían |
 
 ### When to use
 1. **Past habits:** \`Cuando era niño, jugaba al fútbol.\`
@@ -761,9 +761,9 @@ Ejemplo: \`hablar\` → hablaba, hablabas, hablaba, hablábamos, **hablabais**, 
 ### ¡Solo 3 irregulares!
 | Verbo | Formas |
 |---|---|
-| **ser** | era, eras, era, éramos, eran |
-| **ir** | iba, ibas, iba, íbamos, iban |
-| **ver** | veía, veías, veía, veíamos, veían |
+| **ser** | era, eras, era, éramos, **erais**, eran |
+| **ir** | iba, ibas, iba, íbamos, **ibais**, iban |
+| **ver** | veía, veías, veía, veíamos, **veíais**, veían |
 
 ### Cuándo usarlo
 1. **Hábitos en el pasado:** \`Cuando era niño, jugaba al fútbol.\`
@@ -1044,11 +1044,12 @@ Se toma la forma **yo** del presente y se cambia la terminación: -AR ↔ -ER/-I
 | tú | -a (habla) | -e (come) | ten, pon, ven, sal, haz |
 | usted | -e (hable) | -a (coma) | sea, vaya |
 | nosotros | -emos | -amos | vamos, demos |
-| vosotros | -ad (hablad) | -ed (comed) |  |
+| vosotros | -ad (hablad) | -ed (comed) / **-id (vivid)** |  |
 | ustedes | -en (hablen) | -an (coman) |  |
 
 ### Negative form (negativo) = Subjuntivo
 \`No **hables**\`, \`No **comas**\`, \`No **vengas**\`.
+Vosotros: \`No **habléis**\`, \`No **comáis**\`, \`No **viváis**\`.
 
 ### Special tú forms (affirmative)
 | Infinitive | tú |
@@ -1079,11 +1080,12 @@ In negative — pronouns go **before**:
 | tú | -a (habla) | -e (come) | ten, pon, ven, sal, haz |
 | usted | -e (hable) | -a (coma) | sea, vaya |
 | nosotros | -emos | -amos | vamos, demos |
-| vosotros | -ad (hablad) | -ed (comed) |  |
+| vosotros | -ad (hablad) | -ed (comed) / **-id (vivid)** |  |
 | ustedes | -en (hablen) | -an (coman) |  |
 
 ### Forma negativa = Subjuntivo
 \`No **hables**\`, \`No **comas**\`, \`No **vengas**\`.
+Vosotros: \`No **habléis**\`, \`No **comáis**\`, \`No **viváis**\`.
 
 ### Formas especiales tú (afirmativo)
 | Infinitivo | tú |
@@ -1708,7 +1710,7 @@ Concordancia con el sujeto:
 ### Subjuntivo Perfecto (completed past)
 Formula: **haya** + participio
 
-\`haya, hayas, haya, hayamos, hayan + hablado/comido/vivido\`
+\`haya, hayas, haya, hayamos, hayáis, hayan + hablado/comido/vivido\`
 
 Usage:
 1. **Emotion about something completed:**
@@ -1721,7 +1723,7 @@ Usage:
 ### Subjuntivo Pluscuamperfecto (past-before-past)
 Formula: **hubiera/hubiese** + participio
 
-\`hubiera/hubiese, hubieras, hubiera, hubiéramos, hubieran + hablado\`
+\`hubiera/hubiese, hubieras, hubiera, hubiéramos, hubierais/hubieseis, hubieran + hablado\`
 
 Usage:
 1. **Si-construction (unreal condition in past):**
@@ -1741,7 +1743,7 @@ Usage:
 ### Subjuntivo Perfecto (pasado completado)
 Fórmula: **haya** + participio
 
-\`haya, hayas, haya, hayamos, hayan + hablado/comido/vivido\`
+\`haya, hayas, haya, hayamos, hayáis, hayan + hablado/comido/vivido\`
 
 Uso:
 1. **Emoción sobre algo completado:**
@@ -1754,7 +1756,7 @@ Uso:
 ### Subjuntivo Pluscuamperfecto (pasado anterior)
 Fórmula: **hubiera/hubiese** + participio
 
-\`hubiera/hubiese, hubieras, hubiera, hubiéramos, hubieran + hablado\`
+\`hubiera/hubiese, hubieras, hubiera, hubiéramos, hubierais/hubieseis, hubieran + hablado\`
 
 Uso:
 1. **Construcción con si (condición irreal en pasado):**

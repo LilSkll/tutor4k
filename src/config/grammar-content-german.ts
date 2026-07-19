@@ -724,15 +724,15 @@ Beispiel: \`hablar\` → hablé, hablaste, habló, hablamos, hablasteis, hablaro
 
 ### Häufigste unregelmäßige Verben
 
-| Infinitiv | yo | él/ella | ellos |
-|---|---|---|---|
-| ser / ir | fui | fue | fueron |
-| tener | tuve | tuvo | tuvieron |
-| estar | estuve | estuvo | estuvieron |
-| hacer | hice | hizo | hicieron |
-| venir | vine | vino | vinieron |
-| decir | dije | dijo | dijeron |
-| ver | vi | vio | vieron |
+| Infinitiv | yo | tú | él/ella | nosotros | vosotros | ellos |
+|---|---|---|---|---|---|---|
+| ser / ir | fui | fuiste | fue | fuimos | **fuisteis** | fueron |
+| tener | tuve | tuviste | tuvo | tuvimos | **tuvisteis** | tuvieron |
+| estar | estuve | estuviste | estuvo | estuvimos | **estuvisteis** | estuvieron |
+| hacer | hice | hiciste | hizo | hicimos | **hicisteis** | hicieron |
+| venir | vine | viniste | vino | vinimos | **vinisteis** | vinieron |
+| decir | dije | dijiste | dijo | dijimos | **dijisteis** | dijeron |
+| ver | vi | viste | vio | vimos | **visteis** | vieron |
 
 ### Verwendung
 Handlung **abgeschlossen** zu einem bestimmten Zeitpunkt in der Vergangenheit:
@@ -765,9 +765,9 @@ Beispiel: \`hablar\` → hablaba, hablabas, hablaba, hablábamos, **hablabais**,
 ### Nur 3 unregelmäßige Verben!
 | Verb | Formen |
 |---|---|
-| **ser** | era, eras, era, éramos, eran |
-| **ir** | iba, ibas, iba, íbamos, iban |
-| **ver** | veía, veías, veía, veíamos, veían |
+| **ser** | era, eras, era, éramos, **erais**, eran |
+| **ir** | iba, ibas, iba, íbamos, **ibais**, iban |
+| **ver** | veía, veías, veía, veíamos, **veíais**, veían |
 
 ### Wann verwenden
 1. **Gewohnheiten in der Vergangenheit:** \`Cuando era niño, jugaba al fútbol.\`
@@ -925,11 +925,12 @@ Die **yo**-Form des Presente nehmen, Endung wechseln: -AR ↔ -ER/-IR.
 | tú | -a (habla) | -e (come) | ten, pon, ven, sal, haz |
 | usted | -e (hable) | -a (coma) | sea, vaya |
 | nosotros | -emos | -amos | vamos, demos |
-| vosotros | -ad (hablad) | -ed (comed) |  |
+| vosotros | -ad (hablad) | -ed (comed) / **-id (vivid)** |  |
 | ustedes | -en (hablen) | -an (coman) |  |
 
 ### Verneinungsform (negativo) = Subjuntivo
 \`No **hables**\`, \`No **comas**\`, \`No **vengas**\`.
+Vosotros: \`No **habléis**\`, \`No **comáis**\`, \`No **viváis**\`.
 
 ### Besondere tú-Formen (bejahend)
 | Infinitiv | tú |
@@ -1270,7 +1271,7 @@ Kongruenz mit dem Subjekt:
 ### Subjuntivo Perfecto (abgeschlossene Vergangenheit)
 Formel: **haya** + Partizip
 
-\`haya, hayas, haya, hayamos, hayan + hablado/comido/vivido\`
+\`haya, hayas, haya, hayamos, hayáis, hayan + hablado/comido/vivido\`
 
 Verwendung:
 1. **Emotion über etwas Abgeschlossenes:**
@@ -1283,7 +1284,7 @@ Verwendung:
 ### Subjuntivo Pluscuamperfecto (Vergangenheit vor Vergangenheit)
 Formel: **hubiera/hubiese** + Partizip
 
-\`hubiera/hubiese, hubieras, hubiera, hubiéramos, hubieran + hablado\`
+\`hubiera/hubiese, hubieras, hubiera, hubiéramos, hubierais/hubieseis, hubieran + hablado\`
 
 Verwendung:
 1. **Si-Konstruktion (irreale Bedingung in der Vergangenheit):**
