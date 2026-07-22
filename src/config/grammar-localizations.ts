@@ -117,11 +117,11 @@ export const GRAMMAR_TOPIC: Record<
   "a1-ser-estar": {
     "en": {
       "title": "Ser / Estar",
-      "summary": "Two verbs for 'to be': permanent traits vs temporary states."
+      "summary": "Greetings and introductions, plus ser vs estar."
     },
     "es": {
       "title": "Ser y Estar",
-      "summary": "Dos verbos «ser» y «estar»: características permanentes vs estados temporales."
+      "summary": "Saludos y presentaciones, más ser frente a estar."
     }
   },
   "a1-presente": {
@@ -146,12 +146,12 @@ export const GRAMMAR_TOPIC: Record<
   },
   "a1-numeros-1-100": {
     "en": {
-      "title": "Numbers 1–100",
-      "summary": "Cardinal numbers for counting, age, and prices."
+      "title": "Numbers, Days & Time",
+      "summary": "Numbers 1–100, days of the week, months, and telling the time."
     },
     "es": {
-      "title": "Números 1–100",
-      "summary": "Números cardinales para contar, edad y precios."
+      "title": "Números, días y la hora",
+      "summary": "Números 1–100, días de la semana, meses y la hora."
     }
   },
   "a1-preposiciones-lugar": {
@@ -247,11 +247,11 @@ export const GRAMMAR_TOPIC: Record<
   "a2-comparativos": {
     "en": {
       "title": "Comparatives and Superlatives",
-      "summary": "Comparing: more/less/most — comparative and superlative forms."
+      "summary": "más/menos, tan…como, and el más… — comparative and superlative."
     },
     "es": {
       "title": "Comparativos y Superlativos",
-      "summary": "Comparación: más/menos/el más — grado comparativo y superlativo."
+      "summary": "más/menos, tan…como y el más… — grado comparativo y superlativo."
     }
   },
   "a2-futuro-simple": {

@@ -7,6 +7,7 @@ import {
   BookOpen,
   Check,
   CheckCircle2,
+  ChevronLeft,
   ChevronRight,
   Loader2,
   MessageSquare,
@@ -119,6 +120,7 @@ export function LessonRunner({
     React.useState<PracticeKind>("main");
   /** Cursor into the chapter bank for successive rounds of SESSION_EXERCISES. */
   const [bankCursor, setBankCursor] = React.useState(0);
+  const [theoryPageIdx, setTheoryPageIdx] = React.useState(0);
 
   React.useEffect(() => {
     let cancelled = false;
@@ -160,13 +162,27 @@ export function LessonRunner({
 
   const bankRemaining = Math.max(0, chapterBank.length - bankCursor);
 
-  const theoryMarkdown = React.useMemo(() => {
-    // Always show the full grammar article in the journey — shortTheory
-    // was cutting tables/examples and made practice feel mismatched.
-    return grammarContent;
+  const theoryPages = React.useMemo(() => {
+    const md = (grammarContent ?? "").trim();
+    if (!md) return [];
+    const parts = md
+      .split(/(?=^##\s)/m)
+      .map((p) => p.trim())
+      .filter(Boolean);
+    return parts.length > 0 ? parts : [md];
+  }, [grammarContent]);
+
+  const theoryMarkdown = theoryPages[theoryPageIdx] ?? theoryPages[0] ?? "";
+  const theoryPageCount = theoryPages.length;
+  const isLastTheoryPage =
+    theoryPageCount === 0 || theoryPageIdx >= theoryPageCount - 1;
+
+  React.useEffect(() => {
+    setTheoryPageIdx(0);
   }, [grammarContent]);
 
   const beginMainLesson = () => {
+    setTheoryPageIdx(0);
     setPhase("theory");
   };
 
@@ -542,12 +558,22 @@ export function LessonRunner({
   if (phase === "theory") {
     return (
       <div className="max-w-3xl mx-auto py-6 space-y-6">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <BookOpen className="h-5 w-5 text-primary" />
-            <h2 className="text-xl font-bold">{t("lesson.newTopic")}</h2>
+        <div className="flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2 min-w-0">
+            <BookOpen className="h-5 w-5 shrink-0 text-primary" />
+            <h2 className="text-xl font-bold truncate">{t("lesson.newTopic")}</h2>
           </div>
-          <Badge variant="level">{chapterDisplayTitle}</Badge>
+          <div className="flex items-center gap-2 shrink-0">
+            {theoryPageCount > 1 && (
+              <span className="text-xs text-muted-foreground tabular-nums">
+                {t("lesson.theoryPage", {
+                  current: theoryPageIdx + 1,
+                  total: theoryPageCount,
+                })}
+              </span>
+            )}
+            <Badge variant="level">{chapterDisplayTitle}</Badge>
+          </div>
         </div>
         <Card>
           <CardContent className="p-6">
@@ -567,16 +593,65 @@ export function LessonRunner({
             ) : null}
           </CardContent>
         </Card>
-        <div className="flex justify-end gap-2">
-          {adaptation?.mode === "mastered_short" && chapterBank.length > 0 && (
-            <Button variant="outline" onClick={generateExercises}>
-              {t("lesson.skipToPractice")}
-            </Button>
-          )}
-          <Button variant="gradient" onClick={generateExercises}>
-            <ArrowRight className="h-4 w-4" />
-            {t("lesson.goToPractice")}
-          </Button>
+        {theoryPageCount > 1 && (
+          <div className="flex items-center justify-center gap-1.5">
+            {theoryPages.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                aria-label={t("lesson.theoryPage", {
+                  current: i + 1,
+                  total: theoryPageCount,
+                })}
+                onClick={() => setTheoryPageIdx(i)}
+                className={cn(
+                  "h-2 rounded-full transition-all",
+                  i === theoryPageIdx
+                    ? "w-6 bg-primary"
+                    : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50",
+                )}
+              />
+            ))}
+          </div>
+        )}
+        <div className="flex flex-wrap justify-between gap-2">
+          <div className="flex gap-2">
+            {theoryPageCount > 1 && (
+              <Button
+                variant="outline"
+                disabled={theoryPageIdx === 0}
+                onClick={() => setTheoryPageIdx((i) => Math.max(0, i - 1))}
+              >
+                <ChevronLeft className="h-4 w-4" />
+                {t("common.back")}
+              </Button>
+            )}
+          </div>
+          <div className="flex flex-wrap gap-2 ml-auto">
+            {adaptation?.mode === "mastered_short" && chapterBank.length > 0 && (
+              <Button variant="outline" onClick={generateExercises}>
+                {t("lesson.skipToPractice")}
+              </Button>
+            )}
+            {!isLastTheoryPage ? (
+              <Button
+                variant="gradient"
+                onClick={() =>
+                  setTheoryPageIdx((i) =>
+                    Math.min(theoryPageCount - 1, i + 1),
+                  )
+                }
+              >
+                {t("lesson.nextRule")}
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            ) : (
+              <Button variant="gradient" onClick={generateExercises}>
+                <ArrowRight className="h-4 w-4" />
+                {t("lesson.goToPractice")}
+              </Button>
+            )}
+          </div>
         </div>
       </div>
     );

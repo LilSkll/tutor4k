@@ -496,7 +496,24 @@ Kombination von Zeiten in Bedingung und Ergebnis:
   },
 
   "a1-ser-estar": {
-    de: `## Ser vs Estar — beide bedeuten „sein"
+    de: `## Begrüßungen und Vorstellungen
+
+| Spanisch | Deutsch |
+|---|---|
+| **Hola** | Hallo |
+| **Buenos días** | Guten Morgen |
+| **Buenas tardes** | Guten Tag / Abend |
+| **Buenas noches** | Gute Nacht |
+| **Adiós / Hasta luego** | Tschüss / Bis später |
+| **¿Cómo te llamas?** | Wie heißt du? |
+| **Me llamo…** | Ich heiße… |
+| **Mucho gusto** | Freut mich |
+| **¿Cómo estás?** | Wie geht's? |
+| **Bien, gracias** | Gut, danke |
+
+> 💡 Nach der Begrüßung oft: \`Hola, ¿cómo te llamas?\`
+
+## Ser vs Estar — beide bedeuten „sein"
 
 ### SER — dauerhafte Eigenschaften
 Verwendet für **Identität, Beruf, Herkunft, Beschreibung**:
@@ -588,7 +605,7 @@ Verwendet für **Zustand, Gefühle, Ort**:
   },
 
   "a1-numeros-1-100": {
-    de: `## Kardinalzahlen (Números cardinales)
+    de: `## Zahlen 1–100
 
 | Bereich | Beispiel |
 |---|---|
@@ -604,7 +621,53 @@ Verwendet für **Zustand, Gefühle, Ort**:
 - \`veintiún\` vor m.: \`veintiún años\`
 - \`cien\` (100) vs \`ciento\` (vor einer Zahl): \`ciento uno\`
 
-> 💡 Alter: \`Tengo veinte años.\` Preise: \`Cuesta cinco euros.\``,
+> 💡 Alter: \`Tengo veinte años.\` Preise: \`Cuesta cinco euros.\`
+
+## Wochentage
+
+lunes, martes, miércoles, jueves, viernes, sábado, domingo
+
+- Meist **klein geschrieben**: \`el lunes\`
+- **el lunes** = am Montag (einmal)
+- **los lunes** = montags (Gewohnheit)
+- Nicht \`en lunes\`, sondern \`el lunes\` / \`los lunes\`.
+
+## Monate
+
+enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre, octubre, noviembre, diciembre
+
+- **en enero** = im Januar
+- Datum: \`el 5 de mayo\`
+
+## Uhrzeit (la hora)
+
+Frage: **¿Qué hora es?**
+
+### Artikel vor der Stunde
+| Uhrzeit | Form |
+|---|---|
+| 1:00 | **Es la una** |
+| 2:00–12:00 | **Son las dos** |
+
+❌ Falsch: \`Es una\`, \`Son dos\`  
+✅ Richtig: \`Es **la** una\`, \`Son **las** tres\`
+
+### Minuten
+| Ausdruck | Beispiel |
+|---|---|
+| y … | Son las tres **y diez** |
+| y cuarto | Son las cuatro **y cuarto** |
+| y media | Son las cinco **y media** |
+| menos cuarto | Son las seis **menos cuarto** |
+
+### Um wie viel Uhr? → **a + la/las**
+- \`a la una\` / \`a las tres\`
+- \`La clase es **a las** nueve.\`
+
+### Tageszeit
+- **de la mañana** / **de la tarde** / **de la noche**
+
+> 💡 Merke: **Es la una** / **Son las…** — immer mit Artikel.`,
   },
 
   "a1-preposiciones-lugar": {
@@ -907,6 +970,13 @@ Beispiel: \`hablar\` → hablaba, hablabas, hablaba, hablábamos, **hablabais**,
 
 - \`María es **más alta que** Ana.\`
 - \`Este coche es **menos caro que** el otro.\`
+
+### Gleichheit — tan / tanto
+| Muster | Verwendung | Beispiel |
+|---|---|---|
+| **tan + Adjektiv + como** | gleiche Eigenschaft | Es **tan alta como** su hermana |
+| **tanto/a(s) + Nomen + como** | gleiche Menge | Tiene **tantos libros como** yo |
+| **igual de + Adjektiv + que** | auch „genauso“ | Es **igual de inteligente que** tú |
 
 ### Besondere Formen (auswendig lernen!)
 

@@ -46,8 +46,25 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Ser y Estar",
     level: "A1",
     category: "Глаголы",
-    summary: "Два глагола «быть»: постоянные характеристики vs состояния.",
-    content: `## Ser vs Estar — оба значат «быть»
+    summary: "Два глагола «быть»: постоянные характеристики vs состояния; приветствия и знакомство.",
+    content: `## Saludos y presentaciones
+
+| Español | Русский |
+|---|---|
+| **Hola** | Привет |
+| **Buenos días** | Доброе утро |
+| **Buenas tardes** | Добрый день / вечер |
+| **Buenas noches** | Доброй ночи |
+| **Adiós / Hasta luego** | Пока / До скорого |
+| **¿Cómo te llamas?** | Как тебя зовут? |
+| **Me llamo…** | Меня зовут… |
+| **Mucho gusto** | Очень приятно |
+| **¿Cómo estás?** | Как дела? |
+| **Bien, gracias** | Хорошо, спасибо |
+
+> 💡 После приветствия часто спрашивают имя: \`Hola, ¿cómo te llamas?\`
+
+## Ser vs Estar — оба значат «быть»
 
 ### SER — постоянные характеристики
 Используется для **идентичности, профессии, происхождения, описания**:
@@ -150,12 +167,12 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
   },
   {
     slug: "a1-numeros-1-100",
-    title: "Числа 1–100",
-    titleEs: "Números 1–100",
+    title: "Числа, дни и время",
+    titleEs: "Números, días y la hora",
     level: "A1",
     category: "Лексика",
-    summary: "Количественные числительные для счёта, возраста, цен.",
-    content: `## Números cardinales
+    summary: "Числа 1–100, дни недели, месяцы и как говорить о времени на часах.",
+    content: `## Números 1–100
 
 | Диапазон | Пример |
 |---|---|
@@ -171,7 +188,85 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 - \`veintiún\` перед м.р.: \`veintiún años\`
 - \`cien\` (100) vs \`ciento\` (перед числом): \`ciento uno\`
 
-> 💡 Возраст: \`Tengo veinte años.\` Цены: \`Cuesta cinco euros.\``,
+> 💡 Возраст: \`Tengo veinte años.\` Цены: \`Cuesta cinco euros.\`
+
+## Días de la semana
+
+| Español | Русский |
+|---|---|
+| **lunes** | понедельник |
+| **martes** | вторник |
+| **miércoles** | среда |
+| **jueves** | четверг |
+| **viernes** | пятница |
+| **sábado** | суббота |
+| **domingo** | воскресенье |
+
+**Как говорить о днях:**
+- Дни недели обычно **с маленькой буквы**: \`el lunes\`
+- **el lunes** = в понедельник (конкретно)
+- **los lunes** = по понедельникам (регулярно)
+- \`Hoy es viernes.\` — Сегодня пятница.
+- \`Nos vemos el martes.\` — Увидимся во вторник.
+
+> 💡 В испанском нет отдельного слова «на» для дней: не \`en lunes\`, а \`el lunes\` / \`los lunes\`.
+
+## Meses del año
+
+| Español | Русский |
+|---|---|
+| **enero** | январь |
+| **febrero** | февраль |
+| **marzo** | март |
+| **abril** | апрель |
+| **mayo** | май |
+| **junio** | июнь |
+| **julio** | июль |
+| **agosto** | август |
+| **septiembre** | сентябрь |
+| **octubre** | октябрь |
+| **noviembre** | ноябрь |
+| **diciembre** | декабрь |
+
+**Как говорить о месяцах:**
+- Месяцы тоже обычно **с маленькой буквы**
+- **en enero** = в январе
+- Дата: \`el 5 de mayo\` — 5 мая
+- \`Mi cumpleaños es en marzo.\` — Мой день рождения в марте.
+
+## La hora — время на часах
+
+Вопрос: **¿Qué hora es?** / **¿Tienes hora?**
+
+### Главное правило — артикль перед часами
+| Время | Форма | Почему |
+|---|---|---|
+| 1:00 | **Es la una** | единственное число → **la** |
+| 2:00–12:00 | **Son las dos** | множественное → **las** |
+
+❌ Неправильно: \`Es una\`, \`Son dos\`  
+✅ Правильно: \`Es **la** una\`, \`Son **las** tres\`
+
+### Минуты
+| Выражение | Пример | Значение |
+|---|---|---|
+| y … | Son las tres **y diez** | 3:10 |
+| y cuarto | Son las cuatro **y cuarto** | 4:15 |
+| y media | Son las cinco **y media** | 5:30 |
+| menos cuarto | Son las seis **menos cuarto** | 5:45 |
+
+### В какое время? → **a + la/las**
+- \`a la una\` — в час
+- \`a las tres\` — в три
+- \`La clase es **a las** nueve.\` — Урок в девять.
+
+### Часть суток
+- **de la mañana** — утром (примерно до 12)
+- **de la tarde** — днём/вечером (после полудня)
+- **de la noche** — ночью
+- \`Son las ocho de la mañana.\`
+
+> 💡 Запомни пару: **Es la una** / **Son las…** и всегда ставь артикль \`la\` / \`las\`.`,
   },
   {
     slug: "a1-preposiciones-lugar",
@@ -522,7 +617,7 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Comparativos y Superlativos",
     level: "A2",
     category: "Прилагательные",
-    summary: "Сравнение: больше/меньше/самый — сравнительная и превосходная степень.",
+    summary: "Сравнение: más/menos, tan…como, el más… — сравнительная и превосходная степень.",
     content: `## Comparativos (сравнительная степень)
 
 ### Обычные прилагательные
@@ -530,6 +625,16 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
 
 - \`María es **más alta que** Ana.\` — Мария выше Аны.
 - \`Este coche es **menos caro que** el otro.\` — Этот авто дешевле.
+
+### Равенство — tan / tanto
+| Конструкция | Когда | Пример |
+|---|---|---|
+| **tan + прилагательное + como** | одинаковое качество | Es **tan alta como** su hermana |
+| **tanto/a(s) + существительное + como** | одинаковое количество | Tiene **tantos libros como** yo |
+| **igual de + прилагательное + que** | тоже «такой же» | Es **igual de inteligente que** tú |
+
+- \`No es **tan** difícil **como** pensaba.\` — Не так сложно, как я думал.
+- \`Hay **tanta** gente **como** ayer.\` — Столько же людей, сколько вчера.
 
 ### Особые формы (нужно запомнить!)
 
