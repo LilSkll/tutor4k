@@ -11,6 +11,7 @@ import {
   countCompletedForCourse,
   getChapterLocation,
   getChapterTitle,
+  hasCompletedPrereqChain,
 } from "@/lib/chapter-display";
 import { cn } from "@/lib/utils";
 
@@ -28,6 +29,7 @@ export default async function ChaptersMapPage() {
   const course = await getCourse(courseId);
   const CHAPTERS = course.getChapters();
   const courseSlugs = CHAPTERS.map((c) => c.slug);
+  const chaptersBySlug = new Map(CHAPTERS.map((c) => [c.slug, c]));
 
   const statusMap = new Map<string, "completed" | "in_progress" | "locked">();
   const completedSlugs = new Set<string>();
@@ -41,7 +43,7 @@ export default async function ChaptersMapPage() {
 
   for (const ch of CHAPTERS) {
     if (statusMap.get(ch.slug) === "completed") continue;
-    if (ch.prereqChapter && !completedSlugs.has(ch.prereqChapter)) {
+    if (!hasCompletedPrereqChain(ch, chaptersBySlug, completedSlugs)) {
       statusMap.set(ch.slug, "locked");
     } else if (!statusMap.has(ch.slug)) {
       statusMap.set(ch.slug, "in_progress");

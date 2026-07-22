@@ -1,6 +1,7 @@
 import type { StaticExercise } from "@/types";
 import { withExerciseIds } from "@/lib/exercise-bank";
 import { expandEnglishChapterBank } from "@/config/exercise-banks/english-expand";
+import { getEngChapter } from "./chapters";
 
 // =====================================================================
 // English Course — Permanent adaptive exercise bank (curated seed)
@@ -170,5 +171,11 @@ export const ENGLISH_EXERCISES: Record<string, Draft[]> = {
 export function getEnglishExercises(chapterSlug: string): StaticExercise[] {
   const curated = ENGLISH_EXERCISES[chapterSlug] ?? [];
   const expanded = expandEnglishChapterBank(chapterSlug, curated);
-  return withExerciseIds("english", chapterSlug, expanded);
+  const chapter = getEngChapter(chapterSlug);
+  const allowed = chapter?.exerciseTypes;
+  const filtered =
+    allowed && allowed.length > 0
+      ? expanded.filter((ex) => allowed.includes(ex.type))
+      : expanded;
+  return withExerciseIds("english", chapterSlug, filtered);
 }

@@ -225,20 +225,37 @@ function chapterFromSeeds(g, topic, seeds) {
     const filled = q.replace("___", s.ans).replace(` (${n}).`, ".");
     const wrong = options.find((o) => o !== s.ans) || "WRONG";
     const broken = q.replace("___", wrong).replace(` (${n}).`, ".");
+    const fullEn = s.en || filled;
+    const trAcc = (s.acc || [])
+      .filter((a) => typeof a === "string" && a.trim().length > 0)
+      .filter((a) => a.trim().toLowerCase() !== s.ans.trim().toLowerCase() || a.includes(" "));
+    // Never accept the blank token alone as a full translation/correction.
+    const safeTrAcc = [
+      ...new Set([
+        fullEn,
+        fullEn.toLowerCase(),
+        fullEn.replace(/[.?!,]/g, ""),
+        ...trAcc.filter((a) => a.trim().split(/\s+/).length >= 2 || a.length > s.ans.length + 2),
+      ]),
+    ];
     trA.push(
       tr(
         s.ru || `Write in English using “${s.ans}” (#${n}).`,
-        s.en || filled,
+        fullEn,
         "Translate to English",
         s.explanation || `${topic}: “${s.ans}”.`,
         g,
-        s.acc || [s.ans, (s.en || filled).toLowerCase()],
+        safeTrAcc,
       ),
     );
     ecA.push(
-      ec(broken, filled, "Correct the mistake", `Use “${s.ans}”, not “${wrong}”.`, g, [s.ans]),
+      ec(broken, filled, "Correct the mistake", `Use “${s.ans}”, not “${wrong}”.`, g, [
+        filled,
+        filled.toLowerCase(),
+      ]),
     );
-    const tokens = filled.replace(/[.?!,]/g, "").split(/\s+/).filter(Boolean).slice(0, 6);
+    // Keep the full sentence — truncating at 6 tokens produced broken answers ("… than a").
+    const tokens = filled.replace(/[.?!,]/g, "").split(/\s+/).filter(Boolean);
     const toks = tokens.length >= 3 ? tokens : ["Please", "use", s.ans, "here"];
     sbA.push(
       sb(toks, toks.join(" "), "Build the sentence", `${topic}: word order.`, g, [

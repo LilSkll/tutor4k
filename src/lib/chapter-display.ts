@@ -476,6 +476,26 @@ export function countCompletedForCourse(
   return n;
 }
 
+/**
+ * True when every ancestor in the prereq chain is completed.
+ * Prevents skipping inserted mid-journey chapters (e.g. eng-ch17…22).
+ */
+export function hasCompletedPrereqChain(
+  chapter: { slug: string; prereqChapter?: string },
+  chaptersBySlug: Map<string, { slug: string; prereqChapter?: string }>,
+  completedSlugs: Set<string>,
+): boolean {
+  let slug = chapter.prereqChapter;
+  const seen = new Set<string>();
+  while (slug) {
+    if (seen.has(slug)) break;
+    seen.add(slug);
+    if (!completedSlugs.has(slug)) return false;
+    slug = chaptersBySlug.get(slug)?.prereqChapter;
+  }
+  return true;
+}
+
 /** Infer course id from chapter slug when DB course_id is missing. */
 export function inferCourseIdFromChapterSlug(slug: string): string {
   if (slug.startsWith("eng-")) return "english";

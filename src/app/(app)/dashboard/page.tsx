@@ -26,6 +26,7 @@ import {
   getChapterLocation,
   getChapterSummary,
   getChapterTitle,
+  hasCompletedPrereqChain,
 } from "@/lib/chapter-display";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
 
@@ -116,6 +117,7 @@ export default async function DashboardPage() {
   }
 
   const courseChapterSlugs = CHAPTERS.map((c) => c.slug);
+  const chaptersBySlug = new Map(CHAPTERS.map((c) => [c.slug, c]));
   const completedSlugs = new Set(
     progress
       .filter((p) => p.status === "completed")
@@ -132,10 +134,25 @@ export default async function DashboardPage() {
 
   const startIndex = CHAPTERS.findIndex((c) => c.slug === currentChapter.slug);
   for (let i = Math.max(0, startIndex); i < CHAPTERS.length; i++) {
-    if (!completedSlugs.has(CHAPTERS[i].slug)) {
-      currentChapter = CHAPTERS[i];
+    const ch = CHAPTERS[i]!;
+    if (completedSlugs.has(ch.slug)) continue;
+    if (hasCompletedPrereqChain(ch, chaptersBySlug, completedSlugs)) {
+      currentChapter = ch;
       break;
     }
+  }
+
+  // If level jump left us on a locked chapter, fall back to earliest unlocked.
+  if (
+    !completedSlugs.has(currentChapter.slug) &&
+    !hasCompletedPrereqChain(currentChapter, chaptersBySlug, completedSlugs)
+  ) {
+    currentChapter =
+      CHAPTERS.find(
+        (ch) =>
+          !completedSlugs.has(ch.slug) &&
+          hasCompletedPrereqChain(ch, chaptersBySlug, completedSlugs),
+      ) ?? CHAPTERS[0]!;
   }
 
   const nextChapter = course.getNextChapter(currentChapter.slug);

@@ -204,9 +204,11 @@ export async function getCurrentChapterSlug(
   courseId?: string | null,
 ): Promise<string | null> {
   const { getCourse } = await import("@/config/courses");
+  const { hasCompletedPrereqChain } = await import("@/lib/chapter-display");
   const course = await getCourse(courseId ?? "spanish");
   const chapters = course.getChapters();
   const courseSlugs = new Set(chapters.map((c) => c.slug));
+  const chaptersBySlug = new Map(chapters.map((c) => [c.slug, c]));
 
   const progress = await getChapterProgress();
   const completedSlugs = new Set(
@@ -217,7 +219,10 @@ export async function getCurrentChapterSlug(
   );
 
   for (const ch of chapters) {
-    if (!completedSlugs.has(ch.slug)) return ch.slug;
+    if (completedSlugs.has(ch.slug)) continue;
+    if (hasCompletedPrereqChain(ch, chaptersBySlug, completedSlugs)) {
+      return ch.slug;
+    }
   }
   return null;
 }

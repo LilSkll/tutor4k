@@ -204,6 +204,14 @@ export const DE_GRAMMAR_TOPIC: Record<string, GrammarLocaleFields> = {
     title: "Can / Can't",
     summary: "Modalverb can: Fähigkeit und Möglichkeit.",
   },
+  "eng-a1-questions": {
+    title: "W-Fragen",
+    summary: "What, who, where, when, why, how.",
+  },
+  "eng-a1-prepositions": {
+    title: "Ortspräpositionen",
+    summary: "in, on, at, under, between, next to.",
+  },
   "eng-a2-past-simple": {
     title: "Past Simple",
     summary: "Simple Past: regelmäßige und unregelmäßige Verben.",
@@ -216,9 +224,21 @@ export const DE_GRAMMAR_TOPIC: Record<string, GrammarLocaleFields> = {
     title: "Present Perfect",
     summary: "Vergangenheit mit Gegenwartsbezug: Erfahrung und Ergebnis.",
   },
+  "eng-a2-going-to": {
+    title: "Going to",
+    summary: "be going to für Pläne und Absichten.",
+  },
+  "eng-a2-quantifiers": {
+    title: "Some / Any / Much / Many",
+    summary: "Quantoren bei zählbaren und unzählbaren Nomen.",
+  },
   "eng-b1-future-conditional": {
     title: "Zukunft & First Conditional",
-    summary: "will/won't, First Conditional, should/must.",
+    summary: "will/won't und First Conditional.",
+  },
+  "eng-b1-modals": {
+    title: "Should / Must / Have to",
+    summary: "Rat und Pflicht: should, must, have to.",
   },
   "eng-b1-narrative": {
     title: "Erzählzeiten",
