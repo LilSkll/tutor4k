@@ -25,8 +25,9 @@ export async function loadEnglishCourse(): Promise<CourseConfig> {
     storyWorld: {
       theme: "Journey through the English-speaking world",
       locations: [
-        "London", "Oxford", "Cambridge", "York", "Edinburgh",
-        "Manchester", "Dublin", "Cardiff", "Liverpool",
+        "London", "Oxford", "Bath", "Cambridge", "Brighton", "Bristol",
+        "York", "Edinburgh", "Glasgow", "Manchester", "Leeds",
+        "Dublin", "Belfast", "Cardiff", "Liverpool",
         "New York", "Boston", "San Francisco", "Chicago",
         "Toronto", "Sydney", "IELTS Castle",
       ],
@@ -66,9 +67,9 @@ export async function loadEnglishCourse(): Promise<CourseConfig> {
     },
 
     levelGuide: {
-      A1: "A1: beginner — be, present simple, there is/are, can.",
-      A2: "A2: elementary — past simple, comparatives, present perfect.",
-      B1: "B1: intermediate — conditionals, narrative tenses, perfect continuous.",
+      A1: "A1: beginner — be, present simple, questions, there is/are, can, prepositions.",
+      A2: "A2: elementary — past simple, comparatives, going to, present perfect, quantifiers.",
+      B1: "B1: intermediate — will/1st conditional, modals, narrative tenses, perfect continuous.",
       B2: "B2: upper-intermediate — passive, reported speech, relative clauses.",
       C1: "C1: advanced — inversion, discourse, mixed conditionals, IELTS.",
     },

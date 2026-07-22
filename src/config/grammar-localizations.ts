@@ -524,6 +524,26 @@ export const GRAMMAR_TOPIC: Record<
       "summary": "Verbo modal can: habilidad y posibilidad."
     }
   },
+  "eng-a1-questions": {
+    "en": {
+      "title": "Wh- Questions",
+      "summary": "What, who, where, when, why, how."
+    },
+    "es": {
+      "title": "Preguntas Wh-",
+      "summary": "What, who, where, when, why, how."
+    }
+  },
+  "eng-a1-prepositions": {
+    "en": {
+      "title": "Prepositions of Place",
+      "summary": "in, on, at, under, between, next to."
+    },
+    "es": {
+      "title": "Preposiciones de Lugar",
+      "summary": "in, on, at, under, between, next to."
+    }
+  },
   "eng-a2-past-simple": {
     "en": {
       "title": "Past Simple",
@@ -554,14 +574,44 @@ export const GRAMMAR_TOPIC: Record<
       "summary": "Pasado conectado al presente: experiencia y resultados."
     }
   },
+  "eng-a2-going-to": {
+    "en": {
+      "title": "Going to",
+      "summary": "be going to for plans and intentions."
+    },
+    "es": {
+      "title": "Going to",
+      "summary": "be going to para planes e intenciones."
+    }
+  },
+  "eng-a2-quantifiers": {
+    "en": {
+      "title": "Some / Any / Much / Many",
+      "summary": "Quantifiers with countable and uncountable nouns."
+    },
+    "es": {
+      "title": "Some / Any / Much / Many",
+      "summary": "Cuantificadores con contables e incontables."
+    }
+  },
   "eng-b1-future-conditional": {
     "en": {
       "title": "Future & First Conditional",
-      "summary": "will/won't, first conditional, should/must."
+      "summary": "will/won't and the first conditional."
     },
     "es": {
       "title": "Futuro y Primer Condicional",
-      "summary": "will/won't, primer condicional, should/must."
+      "summary": "will/won't y el primer condicional."
+    }
+  },
+  "eng-b1-modals": {
+    "en": {
+      "title": "Should / Must / Have to",
+      "summary": "Advice and obligation: should, must, have to."
+    },
+    "es": {
+      "title": "Should / Must / Have to",
+      "summary": "Consejo y obligación: should, must, have to."
     }
   },
   "eng-b1-narrative": {
