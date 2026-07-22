@@ -117,11 +117,11 @@ export const GRAMMAR_TOPIC: Record<
   "a1-ser-estar": {
     "en": {
       "title": "Ser / Estar",
-      "summary": "Two verbs for 'to be': permanent traits vs temporary states."
+      "summary": "Greetings and introductions, plus ser vs estar."
     },
     "es": {
       "title": "Ser y Estar",
-      "summary": "Dos verbos «ser» y «estar»: características permanentes vs estados temporales."
+      "summary": "Saludos y presentaciones, más ser frente a estar."
     }
   },
   "a1-presente": {
@@ -146,12 +146,12 @@ export const GRAMMAR_TOPIC: Record<
   },
   "a1-numeros-1-100": {
     "en": {
-      "title": "Numbers 1–100",
-      "summary": "Cardinal numbers for counting, age, and prices."
+      "title": "Numbers, Days & Time",
+      "summary": "Numbers 1–100, days of the week, months, and telling the time."
     },
     "es": {
-      "title": "Números 1–100",
-      "summary": "Números cardinales para contar, edad y precios."
+      "title": "Números, días y la hora",
+      "summary": "Números 1–100, días de la semana, meses y la hora."
     }
   },
   "a1-preposiciones-lugar": {
@@ -247,11 +247,11 @@ export const GRAMMAR_TOPIC: Record<
   "a2-comparativos": {
     "en": {
       "title": "Comparatives and Superlatives",
-      "summary": "Comparing: more/less/most — comparative and superlative forms."
+      "summary": "más/menos, tan…como, and el más… — comparative and superlative."
     },
     "es": {
       "title": "Comparativos y Superlativos",
-      "summary": "Comparación: más/menos/el más — grado comparativo y superlativo."
+      "summary": "más/menos, tan…como y el más… — grado comparativo y superlativo."
     }
   },
   "a2-futuro-simple": {
@@ -524,6 +524,26 @@ export const GRAMMAR_TOPIC: Record<
       "summary": "Verbo modal can: habilidad y posibilidad."
     }
   },
+  "eng-a1-questions": {
+    "en": {
+      "title": "Wh- Questions",
+      "summary": "What, who, where, when, why, how."
+    },
+    "es": {
+      "title": "Preguntas Wh-",
+      "summary": "What, who, where, when, why, how."
+    }
+  },
+  "eng-a1-prepositions": {
+    "en": {
+      "title": "Prepositions of Place",
+      "summary": "in, on, at, under, between, next to."
+    },
+    "es": {
+      "title": "Preposiciones de Lugar",
+      "summary": "in, on, at, under, between, next to."
+    }
+  },
   "eng-a2-past-simple": {
     "en": {
       "title": "Past Simple",
@@ -554,14 +574,44 @@ export const GRAMMAR_TOPIC: Record<
       "summary": "Pasado conectado al presente: experiencia y resultados."
     }
   },
+  "eng-a2-going-to": {
+    "en": {
+      "title": "Going to",
+      "summary": "be going to for plans and intentions."
+    },
+    "es": {
+      "title": "Going to",
+      "summary": "be going to para planes e intenciones."
+    }
+  },
+  "eng-a2-quantifiers": {
+    "en": {
+      "title": "Some / Any / Much / Many",
+      "summary": "Quantifiers with countable and uncountable nouns."
+    },
+    "es": {
+      "title": "Some / Any / Much / Many",
+      "summary": "Cuantificadores con contables e incontables."
+    }
+  },
   "eng-b1-future-conditional": {
     "en": {
       "title": "Future & First Conditional",
-      "summary": "will/won't, first conditional, should/must."
+      "summary": "will/won't and the first conditional."
     },
     "es": {
       "title": "Futuro y Primer Condicional",
-      "summary": "will/won't, primer condicional, should/must."
+      "summary": "will/won't y el primer condicional."
+    }
+  },
+  "eng-b1-modals": {
+    "en": {
+      "title": "Should / Must / Have to",
+      "summary": "Advice and obligation: should, must, have to."
+    },
+    "es": {
+      "title": "Should / Must / Have to",
+      "summary": "Consejo y obligación: should, must, have to."
     }
   },
   "eng-b1-narrative": {

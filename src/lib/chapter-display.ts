@@ -391,18 +391,413 @@ export const SPANISH_CHAPTER_LOCALE: Record<
   },
 };
 
+/**
+ * Interface-language overrides for English journey chapters.
+ * Source Chapter.title / summary / location stay English.
+ */
+export const ENGLISH_CHAPTER_LOCALE: Record<
+  string,
+  Partial<Record<"ru" | "es" | "de", ChapterLocale>>
+> = {
+  "eng-ch1-first-steps": {
+    ru: {
+      title: "Первые шаги",
+      summary: "be (am/is/are), приветствия, личная информация.",
+      location: "Лондон",
+    },
+    es: {
+      title: "Los Primeros Pasos",
+      summary: "be (am/is/are), saludos, información personal.",
+      location: "Londres",
+    },
+    de: {
+      title: "Erste Schritte",
+      summary: "be (am/is/are), Begrüßungen, persönliche Angaben.",
+      location: "London",
+    },
+  },
+  "eng-ch2-routines": {
+    ru: {
+      title: "Ежедневная рутина",
+      summary: "Present simple, наречия частоты, повседневные дела.",
+      location: "Оксфорд",
+    },
+    es: {
+      title: "La Rutina Diaria",
+      summary: "Present simple, adverbios de frecuencia, actividades diarias.",
+      location: "Oxford",
+    },
+    de: {
+      title: "Alltagsroutinen",
+      summary: "Present Simple, Häufigkeitsadverbien, Alltagstätigkeiten.",
+      location: "Oxford",
+    },
+  },
+  "eng-ch17-questions": {
+    ru: {
+      title: "Спроси гида",
+      summary: "Wh-вопросы: what, who, where, when, why, how.",
+      location: "Бат",
+    },
+    es: {
+      title: "Pregunta al Guía",
+      summary: "Preguntas Wh-: what, who, where, when, why, how.",
+      location: "Bath",
+    },
+    de: {
+      title: "Frag den Guide",
+      summary: "W-Fragen: what, who, where, when, why, how.",
+      location: "Bath",
+    },
+  },
+  "eng-ch3-around-town": {
+    ru: {
+      title: "По городу",
+      summary: "there is / there are, some/any и места в городе.",
+      location: "Кембридж",
+    },
+    es: {
+      title: "Por la Ciudad",
+      summary: "there is / there are, some/any y lugares de la ciudad.",
+      location: "Cambridge",
+    },
+    de: {
+      title: "In der Stadt",
+      summary: "there is / there are, some/any und Orte in der Stadt.",
+      location: "Cambridge",
+    },
+  },
+  "eng-ch18-can": {
+    ru: {
+      title: "Я могу это сделать",
+      summary: "can / can't — умение, разрешение и просьбы.",
+      location: "Брайтон",
+    },
+    es: {
+      title: "Puedo Hacerlo",
+      summary: "can / can't — habilidad, permiso y peticiones.",
+      location: "Brighton",
+    },
+    de: {
+      title: "Ich kann das",
+      summary: "can / can't — Fähigkeit, Erlaubnis und Bitten.",
+      location: "Brighton",
+    },
+  },
+  "eng-ch19-prepositions": {
+    ru: {
+      title: "Найди путь",
+      summary: "Предлоги места: in, on, at, under, between, next to.",
+      location: "Бристоль",
+    },
+    es: {
+      title: "Encuentra el Camino",
+      summary: "Preposiciones de lugar: in, on, at, under, between, next to.",
+      location: "Bristol",
+    },
+    de: {
+      title: "Finde den Weg",
+      summary: "Ortspräpositionen: in, on, at, under, between, next to.",
+      location: "Bristol",
+    },
+  },
+  "eng-ch4-past-stories": {
+    ru: {
+      title: "Истории прошлого",
+      summary: "Past simple (правильные и неправильные), вопросы, глаголы путешествий.",
+      location: "Йорк",
+    },
+    es: {
+      title: "Historias del Pasado",
+      summary: "Past simple (regulares e irregulares), preguntas, verbos de viaje.",
+      location: "York",
+    },
+    de: {
+      title: "Geschichten der Vergangenheit",
+      summary: "Past Simple (regelmäßig & unregelmäßig), Fragen, Reiseverben.",
+      location: "York",
+    },
+  },
+  "eng-ch5-choices": {
+    ru: {
+      title: "Правильный выбор",
+      summary: "Сравнительная и превосходная степень.",
+      location: "Эдинбург",
+    },
+    es: {
+      title: "La Elección Correcta",
+      summary: "Comparativos y superlativos.",
+      location: "Edimburgo",
+    },
+    de: {
+      title: "Die richtige Wahl",
+      summary: "Komparativ und Superlativ.",
+      location: "Edinburgh",
+    },
+  },
+  "eng-ch20-going-to": {
+    ru: {
+      title: "Планы вперёд",
+      summary: "be going to — намерения и ближайшее будущее.",
+      location: "Глазго",
+    },
+    es: {
+      title: "Planes por Delante",
+      summary: "be going to — intenciones y planes cercanos.",
+      location: "Glasgow",
+    },
+    de: {
+      title: "Pläne voraus",
+      summary: "be going to — Absichten und nahe Zukunft.",
+      location: "Glasgow",
+    },
+  },
+  "eng-ch6-experiences": {
+    ru: {
+      title: "Глобальный опыт",
+      summary: "Present perfect, ever/never, жизненный опыт.",
+      location: "Манчестер",
+    },
+    es: {
+      title: "Experiencias Globales",
+      summary: "Present perfect, ever/never, experiencias de vida.",
+      location: "Manchester",
+    },
+    de: {
+      title: "Globale Erfahrungen",
+      summary: "Present Perfect, ever/never, Lebenserfahrung.",
+      location: "Manchester",
+    },
+  },
+  "eng-ch21-quantifiers": {
+    ru: {
+      title: "Сколько?",
+      summary: "some, any, much, many, a lot of — исчисляемые и неисчисляемые.",
+      location: "Лидс",
+    },
+    es: {
+      title: "¿Cuánto?",
+      summary: "some, any, much, many, a lot of — contables e incontables.",
+      location: "Leeds",
+    },
+    de: {
+      title: "Wie viel?",
+      summary: "some, any, much, many, a lot of — zählbar und unzählbar.",
+      location: "Leeds",
+    },
+  },
+  "eng-ch7-future-plans": {
+    ru: {
+      title: "Строим планы",
+      summary: "will / won't и первый условный.",
+      location: "Дублин",
+    },
+    es: {
+      title: "Haciendo Planes",
+      summary: "will / won't y el primer condicional.",
+      location: "Dublín",
+    },
+    de: {
+      title: "Pläne schmieden",
+      summary: "will / won't und First Conditional.",
+      location: "Dublin",
+    },
+  },
+  "eng-ch22-modals": {
+    ru: {
+      title: "Правила дороги",
+      summary: "should, must, have to — совет и обязанность.",
+      location: "Белфаст",
+    },
+    es: {
+      title: "Las Reglas del Camino",
+      summary: "should, must, have to — consejo y obligación.",
+      location: "Belfast",
+    },
+    de: {
+      title: "Regeln der Straße",
+      summary: "should, must, have to — Rat und Pflicht.",
+      location: "Belfast",
+    },
+  },
+  "eng-ch8-storytelling": {
+    ru: {
+      title: "Расскажи историю",
+      summary: "Past continuous, used to, past perfect — повествовательные времена.",
+      location: "Кардифф",
+    },
+    es: {
+      title: "Cuéntame una Historia",
+      summary: "Past continuous, used to, past perfect — tiempos narrativos.",
+      location: "Cardiff",
+    },
+    de: {
+      title: "Erzähl mir eine Geschichte",
+      summary: "Past Continuous, used to, Past Perfect — Erzählzeiten.",
+      location: "Cardiff",
+    },
+  },
+  "eng-ch9-real-world": {
+    ru: {
+      title: "Реальный мир",
+      summary: "Present perfect continuous, for/since, изменения в жизни.",
+      location: "Ливерпуль",
+    },
+    es: {
+      title: "El Mundo Real",
+      summary: "Present perfect continuous, for/since, cambios de vida.",
+      location: "Liverpool",
+    },
+    de: {
+      title: "Die echte Welt",
+      summary: "Present Perfect Continuous, for/since, Lebensveränderungen.",
+      location: "Liverpool",
+    },
+  },
+  "eng-ch10-what-if": {
+    ru: {
+      title: "А что если?",
+      summary: "Второй и третий условный, wish/if only, гипотезы.",
+      location: "Нью-Йорк",
+    },
+    es: {
+      title: "¿Y si...?",
+      summary: "Segundo y tercer condicional, wish/if only, hipótesis.",
+      location: "Nueva York",
+    },
+    de: {
+      title: "Was wäre wenn?",
+      summary: "Zweiter und dritter Conditional, wish/if only, Hypothesen.",
+      location: "New York",
+    },
+  },
+  "eng-ch11-passive": {
+    ru: {
+      title: "Страдательный залог",
+      summary: "Passive (все времена), have something done, процессы.",
+      location: "Бостон",
+    },
+    es: {
+      title: "La Voz Pasiva",
+      summary: "Passive (todos los tiempos), have something done, procesos.",
+      location: "Boston",
+    },
+    de: {
+      title: "Das Passiv",
+      summary: "Passiv (alle Zeiten), have something done, Prozesse.",
+      location: "Boston",
+    },
+  },
+  "eng-ch12-beyond-borders": {
+    ru: {
+      title: "За границами",
+      summary: "Косвенная речь, относительные придаточные, квантификаторы.",
+      location: "Сан-Франциско",
+    },
+    es: {
+      title: "Más Allá de las Fronteras",
+      summary: "Estilo indirecto, oraciones de relativo, cuantificadores.",
+      location: "San Francisco",
+    },
+    de: {
+      title: "Über Grenzen hinaus",
+      summary: "Indirekte Rede, Relativsätze, Quantoren.",
+      location: "San Francisco",
+    },
+  },
+  "eng-ch13-advanced-structures": {
+    ru: {
+      title: "Продвинутые структуры",
+      summary: "Инверсия, эмфаза, cleft-предложения.",
+      location: "Чикаго",
+    },
+    es: {
+      title: "Estructuras Avanzadas",
+      summary: "Inversión, estructuras enfáticas, cleft sentences.",
+      location: "Chicago",
+    },
+    de: {
+      title: "Fortgeschrittene Strukturen",
+      summary: "Inversion, emphatische Strukturen, Cleft-Sätze.",
+      location: "Chicago",
+    },
+  },
+  "eng-ch14-art-language": {
+    ru: {
+      title: "Искусство языка",
+      summary: "Substitution, ellipsis, fronting, усилительные наречия.",
+      location: "Торонто",
+    },
+    es: {
+      title: "El Arte del Idioma",
+      summary: "Sustitución, elipsis, fronting, adverbios intensificadores.",
+      location: "Toronto",
+    },
+    de: {
+      title: "Die Kunst der Sprache",
+      summary: "Substitution, Ellipsis, Fronting, verstärkende Adverbien.",
+      location: "Toronto",
+    },
+  },
+  "eng-ch15-mastery": {
+    ru: {
+      title: "Мастерство",
+      summary: "Смешанные условные, продвинутый пассив, регистр, литература.",
+      location: "Сидней",
+    },
+    es: {
+      title: "Maestría",
+      summary: "Condicionales mixtos, pasivas avanzadas, registro, literatura.",
+      location: "Sídney",
+    },
+    de: {
+      title: "Meisterschaft",
+      summary: "Gemischte Conditionals, fortgeschrittenes Passiv, Register, Literatur.",
+      location: "Sydney",
+    },
+  },
+  "eng-ch16-ielts": {
+    ru: {
+      title: "Финальный вызов",
+      summary: "Полный обзор + подготовка к IELTS.",
+      location: "Замок IELTS",
+    },
+    es: {
+      title: "El Desafío Final",
+      summary: "Repaso integral + preparación IELTS.",
+      location: "Castillo IELTS",
+    },
+    de: {
+      title: "Die finale Herausforderung",
+      summary: "Gesamtwiederholung + IELTS-Vorbereitung.",
+      location: "IELTS-Burg",
+    },
+  },
+};
+
+function getChapterLocale(
+  slug: string,
+  interfaceLanguage: InterfaceLanguage,
+): ChapterLocale | undefined {
+  const spanish = SPANISH_CHAPTER_LOCALE[slug]?.[
+    interfaceLanguage as "en" | "es" | "de"
+  ];
+  if (spanish) return spanish;
+  return ENGLISH_CHAPTER_LOCALE[slug]?.[
+    interfaceLanguage as "ru" | "es" | "de"
+  ];
+}
+
 export function getChapterTitle(
   chapter: Chapter,
   interfaceLanguage: InterfaceLanguage,
 ): string {
-  if (interfaceLanguage === "ru") return chapter.title;
-
-  const loc = SPANISH_CHAPTER_LOCALE[chapter.slug]?.[interfaceLanguage];
+  const loc = getChapterLocale(chapter.slug, interfaceLanguage);
   if (loc?.title) return loc.title;
 
   if (interfaceLanguage === "es") return chapter.titleEs || chapter.title;
 
-  // English-course chapters already store English in `title`.
+  // Spanish source titles are Russian; English source titles are English.
   return chapter.title;
 }
 
@@ -410,10 +805,8 @@ export function getChapterSummary(
   chapter: Chapter,
   interfaceLanguage: InterfaceLanguage,
 ): string {
-  if (interfaceLanguage === "ru") return chapter.summary;
-  const loc = SPANISH_CHAPTER_LOCALE[chapter.slug]?.[interfaceLanguage];
+  const loc = getChapterLocale(chapter.slug, interfaceLanguage);
   if (loc?.summary) return loc.summary;
-  // For English course (or missing locale), source summary may already be English.
   return chapter.summary;
 }
 
@@ -421,8 +814,7 @@ export function getChapterLocation(
   chapter: Chapter,
   interfaceLanguage: InterfaceLanguage,
 ): string {
-  if (interfaceLanguage === "ru") return chapter.location;
-  const loc = SPANISH_CHAPTER_LOCALE[chapter.slug]?.[interfaceLanguage];
+  const loc = getChapterLocale(chapter.slug, interfaceLanguage);
   if (loc?.location) return loc.location;
   return chapter.location;
 }
@@ -474,6 +866,26 @@ export function countCompletedForCourse(
     if (courseSet.has(slug)) n += 1;
   }
   return n;
+}
+
+/**
+ * True when every ancestor in the prereq chain is completed.
+ * Prevents skipping inserted mid-journey chapters (e.g. eng-ch17…22).
+ */
+export function hasCompletedPrereqChain(
+  chapter: { slug: string; prereqChapter?: string },
+  chaptersBySlug: Map<string, { slug: string; prereqChapter?: string }>,
+  completedSlugs: Set<string>,
+): boolean {
+  let slug = chapter.prereqChapter;
+  const seen = new Set<string>();
+  while (slug) {
+    if (seen.has(slug)) break;
+    seen.add(slug);
+    if (!completedSlugs.has(slug)) return false;
+    slug = chaptersBySlug.get(slug)?.prereqChapter;
+  }
+  return true;
 }
 
 /** Infer course id from chapter slug when DB course_id is missing. */

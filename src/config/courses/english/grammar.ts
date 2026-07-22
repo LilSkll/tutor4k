@@ -117,6 +117,60 @@ export const ENGLISH_GRAMMAR: GrammarTopic[] = [
 
 > 💡 После can — **всегда инфинитив без to**: \`can swim\` (не ~~can to swim~~).`,
   },
+  {
+    slug: "eng-a1-questions",
+    title: "Вопросительные слова",
+    titleEs: "Wh- Questions",
+    level: "A1",
+    category: "Синтаксис",
+    summary: "What, who, where, when, why, how — вопросы на английском.",
+    content: `## Wh- Questions — специальные вопросы
+
+| Слово | Значение | Пример |
+|---|---|---|
+| **What** | что / какой | What is your name? |
+| **Who** | кто | Who is she? |
+| **Where** | где / куда | Where do you live? |
+| **When** | когда | When is the class? |
+| **Why** | почему | Why are you late? |
+| **How** | как | How are you? |
+| **How old** | сколько лет | How old are you? |
+| **How many** | сколько (исчисл.) | How many books? |
+
+### Порядок слов
+\`Wh- + вспомогательный + подлежащее + глагол\`
+- \`Where **do** you live?\`
+- \`What **is** your job?\` (с be вспомогательный не нужен отдельно)
+
+> 💡 В ответе на Why часто используют **because**.`,
+  },
+  {
+    slug: "eng-a1-prepositions",
+    title: "Предлоги места",
+    titleEs: "Preposiciones de Lugar",
+    level: "A1",
+    category: "Предлоги",
+    summary: "in, on, at, under, between, next to — где находится предмет.",
+    content: `## Prepositions of Place
+
+| Предлог | Использование | Пример |
+|---|---|---|
+| **in** | внутри | in the box, in London |
+| **on** | на поверхности | on the table, on the wall |
+| **at** | точная точка | at the door, at school |
+| **under** | под | under the bed |
+| **between** | между | between A and B |
+| **next to** | рядом | next to the bank |
+| **behind** | за | behind the house |
+| **in front of** | перед | in front of the car |
+
+### in / on / at с местами
+- **at** home, at work, at the station
+- **in** a city/country: in Spain
+- **on** a street: on Oxford Street
+
+> 💡 \`at\` часто для «в учреждении / на точке», \`in\` — «внутри пространства».`,
+  },
 
   // ===== A2 ==========================================================
   {
@@ -206,6 +260,56 @@ export const ENGLISH_GRAMMAR: GrammarTopic[] = [
 
 > ⚠️ С конкретным временем прошлого → Past Simple: \`I went yesterday\` (не ~~have gone yesterday~~).`,
   },
+  {
+    slug: "eng-a2-going-to",
+    title: "Going to",
+    titleEs: "Going to",
+    level: "A2",
+    category: "Времена",
+    summary: "be going to — намерения и планы в ближайшем будущем.",
+    content: `## be going to — планы и намерения
+
+### Формула: **am/is/are + going to + V**
+
+| Лицо | Пример |
+|---|---|
+| I | I **am going to** travel |
+| He/She | She **is going to** study |
+| We/They | They **are going to** leave |
+
+### Использование
+1. **Намерение:** \`I'm going to learn Spanish\`
+2. **Предсказание по признакам:** \`Look at the clouds — it's going to rain\`
+
+### Вопросы и отрицания
+- \`Are you going to come?\`
+- \`She isn't going to stay\`
+
+> 💡 После going to — **базовая форма глагола** (не -ing и не -s).`,
+  },
+  {
+    slug: "eng-a2-quantifiers",
+    title: "Some / Any / Much / Many",
+    titleEs: "Cuantificadores",
+    level: "A2",
+    category: "Определители",
+    summary: "some, any, much, many, a lot of с исчисляемыми и неисчисляемыми.",
+    content: `## Quantifiers — сколько?
+
+| Слово | С чем | Пример |
+|---|---|---|
+| **some** | + / просьбы | some water, some apples |
+| **any** | − / ? | any milk? / I don't have any |
+| **many** | исчисляемые | many books |
+| **much** | неисчисляемые | much time |
+| **a lot of** | оба типа | a lot of friends / money |
+
+### Исчисляемые vs неисчисляемые
+- Countable: apple**s**, book**s** → many / a few
+- Uncountable: water, rice, money → much / a little
+
+> 💡 В утверждениях чаще \`a lot of\`, чем \`much\` в разговорной речи.`,
+  },
 
   // ===== B1 ==========================================================
   {
@@ -214,7 +318,7 @@ export const ENGLISH_GRAMMAR: GrammarTopic[] = [
     titleEs: "Futuro y Primer Condicional",
     level: "B1",
     category: "Времена / Условия",
-    summary: "will/won't, first conditional, should/must.",
+    summary: "will/won't and the first conditional for real future situations.",
     content: `## Future (will) & First Conditional
 
 ### will / won't
@@ -225,12 +329,29 @@ export const ENGLISH_GRAMMAR: GrammarTopic[] = [
 \`If it rains, I will stay home.\`
 \`If you study, you will pass.\`
 
-### should / must
-- **should** = совет: \`You should rest\`
-- **must** = должен (обязательно): \`You must wear a seatbelt\`
-- **mustn't** = запрещено: \`You mustn't smoke here\`
-
 > 💡 First Conditional — **реальное условие**. Will ТОЛЬКО в главной части, не в if.`,
+  },
+  {
+    slug: "eng-b1-modals",
+    title: "Should / Must / Have to",
+    titleEs: "Modales de Obligación",
+    level: "B1",
+    category: "Модальные",
+    summary: "should, must, have to — совет, обязанность и запрет.",
+    content: `## Modals — should / must / have to
+
+| Модальный | Значение | Пример |
+|---|---|---|
+| **should** | совет | You should rest |
+| **must** | сильная обязанность / вывод | You must wear a seatbelt |
+| **have to** | внешняя обязанность | I have to work tomorrow |
+| **mustn't** | запрет | You mustn't smoke here |
+| **don't have to** | нет необходимости | You don't have to come |
+
+### После модального
+Всегда **базовая форма**: \`should go\`, \`must study\` (не ~~must to study~~).
+
+> 💡 \`must\` чаще из правил/говорящего; \`have to\` — из обстоятельств.`,
   },
   {
     slug: "eng-b1-narrative",

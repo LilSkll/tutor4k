@@ -225,20 +225,37 @@ function chapterFromSeeds(g, topic, seeds) {
     const filled = q.replace("___", s.ans).replace(` (${n}).`, ".");
     const wrong = options.find((o) => o !== s.ans) || "WRONG";
     const broken = q.replace("___", wrong).replace(` (${n}).`, ".");
+    const fullEn = s.en || filled;
+    const trAcc = (s.acc || [])
+      .filter((a) => typeof a === "string" && a.trim().length > 0)
+      .filter((a) => a.trim().toLowerCase() !== s.ans.trim().toLowerCase() || a.includes(" "));
+    // Never accept the blank token alone as a full translation/correction.
+    const safeTrAcc = [
+      ...new Set([
+        fullEn,
+        fullEn.toLowerCase(),
+        fullEn.replace(/[.?!,]/g, ""),
+        ...trAcc.filter((a) => a.trim().split(/\s+/).length >= 2 || a.length > s.ans.length + 2),
+      ]),
+    ];
     trA.push(
       tr(
         s.ru || `Write in English using “${s.ans}” (#${n}).`,
-        s.en || filled,
+        fullEn,
         "Translate to English",
         s.explanation || `${topic}: “${s.ans}”.`,
         g,
-        s.acc || [s.ans, (s.en || filled).toLowerCase()],
+        safeTrAcc,
       ),
     );
     ecA.push(
-      ec(broken, filled, "Correct the mistake", `Use “${s.ans}”, not “${wrong}”.`, g, [s.ans]),
+      ec(broken, filled, "Correct the mistake", `Use “${s.ans}”, not “${wrong}”.`, g, [
+        filled,
+        filled.toLowerCase(),
+      ]),
     );
-    const tokens = filled.replace(/[.?!,]/g, "").split(/\s+/).filter(Boolean).slice(0, 6);
+    // Keep the full sentence — truncating at 6 tokens produced broken answers ("… than a").
+    const tokens = filled.replace(/[.?!,]/g, "").split(/\s+/).filter(Boolean);
     const toks = tokens.length >= 3 ? tokens : ["Please", "use", s.ans, "here"];
     sbA.push(
       sb(toks, toks.join(" "), "Build the sentence", `${topic}: word order.`, g, [
@@ -274,6 +291,33 @@ EN["eng-ch2-routines"] = chapterFromSeeds("eng-a1-present-simple", "present simp
 
 const MORE = [
   {
+    slug: "eng-ch17-questions",
+    g: "eng-a1-questions",
+    topic: "wh- questions",
+    seeds: [
+      { q: "___ is your name?", ans: "What", options: ["What", "Where", "When", "Why"], explanation: "What asks for information.", ru: "Как тебя зовут?", en: "What is your name?" },
+      { q: "___ do you live?", ans: "Where", options: ["What", "Where", "When", "Who"], explanation: "Where = place.", ru: "Где ты живёшь?", en: "Where do you live?" },
+      { q: "___ are you late?", ans: "Why", options: ["What", "Where", "Why", "Who"], explanation: "Why = reason.", ru: "Почему ты опоздал?", en: "Why are you late?" },
+      { q: "___ is she?", ans: "Who", options: ["Who", "What", "Where", "When"], explanation: "Who = people.", ru: "Кто она?", en: "Who is she?" },
+      { q: "___ old are you?", ans: "How", options: ["How", "What", "When", "Where"], explanation: "How old…?", ru: "Сколько тебе лет?", en: "How old are you?" },
+      { q: "___ is the class?", ans: "When", options: ["When", "What", "Who", "Why"], explanation: "When = time.", ru: "Когда занятие?", en: "When is the class?" },
+      { q: "___ many books do you have?", ans: "How", options: ["How", "What", "Which", "Where"], explanation: "How many + countable.", ru: "Сколько у тебя книг?", en: "How many books do you have?" },
+      { q: "___ do you work?", ans: "Where", options: ["Where", "What", "Who", "Why"], explanation: "Where do you…?", ru: "Где ты работаешь?", en: "Where do you work?" },
+      { q: "___ is your favourite colour?", ans: "What", options: ["What", "Who", "Where", "When"], explanation: "What is…?", ru: "Какой твой любимый цвет?", en: "What is your favourite colour?" },
+      { q: "___ called you?", ans: "Who", options: ["Who", "What", "Where", "When"], explanation: "Who as subject.", ru: "Кто тебе звонил?", en: "Who called you?" },
+      { q: "___ are you from?", ans: "Where", options: ["Where", "What", "When", "Why"], explanation: "Where are you from?", ru: "Откуда ты?", en: "Where are you from?" },
+      { q: "___ is your birthday?", ans: "When", options: ["When", "What", "Where", "Who"], explanation: "When = date/time.", ru: "Когда у тебя день рождения?", en: "When is your birthday?" },
+      { q: "___ do you study English?", ans: "Why", options: ["Why", "Who", "What", "Where"], explanation: "Why do you…?", ru: "Почему ты учишь английский?", en: "Why do you study English?" },
+      { q: "___ much is this?", ans: "How", options: ["How", "What", "When", "Where"], explanation: "How much = price.", ru: "Сколько это стоит?", en: "How much is this?" },
+      { q: "___ time is it?", ans: "What", options: ["What", "When", "How", "Where"], explanation: "What time…?", ru: "Который час?", en: "What time is it?" },
+      { q: "___ is the nearest station?", ans: "Where", options: ["Where", "What", "When", "Who"], explanation: "Where is…?", ru: "Где ближайшая станция?", en: "Where is the nearest station?" },
+      { q: "___ do you get to work?", ans: "How", options: ["How", "What", "Who", "When"], explanation: "How = manner.", ru: "Как ты добираешься на работу?", en: "How do you get to work?" },
+      { q: "___ wrote this book?", ans: "Who", options: ["Who", "What", "Where", "When"], explanation: "Who = author.", ru: "Кто написал эту книгу?", en: "Who wrote this book?" },
+      { q: "___ does the film start?", ans: "When", options: ["When", "What", "Where", "Why"], explanation: "When does…?", ru: "Когда начинается фильм?", en: "When does the film start?" },
+      { q: "___ is the weather like?", ans: "What", options: ["What", "How", "Where", "When"], explanation: "What … like?", ru: "Какая погода?", en: "What is the weather like?" },
+    ],
+  },
+  {
     slug: "eng-ch3-around-town",
     g: "eng-a1-there-is-are",
     topic: "there is/are",
@@ -300,6 +344,60 @@ const MORE = [
       { q: "Are there ___ shops open now?", ans: "any", options: ["some", "any", "a", "the"], explanation: "Question → any.", ru: "Есть открытые магазины?", en: "Are there any shops open now?" },
     ],
   },
+  {
+    slug: "eng-ch18-can",
+    g: "eng-a1-can",
+    topic: "can/can't",
+    seeds: [
+      { q: "Can you ___ me?", ans: "help", options: ["help", "helps", "helping", "helped"], explanation: "can + base verb.", ru: "Можешь мне помочь?", en: "Can you help me?" },
+      { q: "I ___ swim.", ans: "can", options: ["can", "cans", "can to", "am can"], explanation: "can never takes -s.", ru: "Я умею плавать.", en: "I can swim." },
+      { q: "She ___ drive.", ans: "can't", options: ["can't", "doesn't can", "isn't can", "can nots"], explanation: "can't = cannot.", ru: "Она не умеет водить.", en: "She can't drive." },
+      { q: "___ he speak French?", ans: "Can", options: ["Can", "Does", "Is", "Do"], explanation: "Can + subject…?", ru: "Он говорит по-французски?", en: "Can he speak French?" },
+      { q: "They can ___ English.", ans: "speak", options: ["speak", "speaks", "speaking", "spoke"], explanation: "can + base.", ru: "Они умеют говорить по-английски.", en: "They can speak English." },
+      { q: "You ___ go now.", ans: "can", options: ["can", "cans", "must to", "are can"], explanation: "permission: can.", ru: "Можешь идти.", en: "You can go now." },
+      { q: "We ___ come tomorrow.", ans: "can't", options: ["can't", "doesn't can", "aren't can", "no can"], explanation: "can't = not able.", ru: "Мы не можем прийти завтра.", en: "We can't come tomorrow." },
+      { q: "___ I open the window?", ans: "Can", options: ["Can", "Do", "Am", "Does"], explanation: "request: Can I…?", ru: "Можно открыть окно?", en: "Can I open the window?" },
+      { q: "He can ___ the piano.", ans: "play", options: ["play", "plays", "playing", "played"], explanation: "can + base.", ru: "Он умеет играть на пианино.", en: "He can play the piano." },
+      { q: "Birds ___ fly.", ans: "can", options: ["can", "cans", "are can", "do can"], explanation: "ability.", ru: "Птицы умеют летать.", en: "Birds can fly." },
+      { q: "I ___ hear you.", ans: "can't", options: ["can't", "don't can", "am not can", "no"], explanation: "can't hear.", ru: "Я тебя не слышу.", en: "I can't hear you." },
+      { q: "___ you cook?", ans: "Can", options: ["Can", "Do", "Are", "Does"], explanation: "Can you…?", ru: "Ты умеешь готовить?", en: "Can you cook?" },
+      { q: "She can ___ very well.", ans: "sing", options: ["sing", "sings", "singing", "sang"], explanation: "can + base.", ru: "Она хорошо поёт.", en: "She can sing very well." },
+      { q: "Children ___ swim here.", ans: "can", options: ["can", "cans", "must", "are"], explanation: "permission.", ru: "Дети могут здесь плавать.", en: "Children can swim here." },
+      { q: "He ___ come today.", ans: "can't", options: ["can't", "doesn't can", "isn't", "no can"], explanation: "can't come.", ru: "Он не может прийти сегодня.", en: "He can't come today." },
+      { q: "___ we help?", ans: "Can", options: ["Can", "Do", "Are", "Does"], explanation: "Can we…?", ru: "Мы можем помочь?", en: "Can we help?" },
+      { q: "My dog can ___ a ball.", ans: "catch", options: ["catch", "catches", "catching", "caught"], explanation: "can + base.", ru: "Моя собака умеет ловить мяч.", en: "My dog can catch a ball." },
+      { q: "You ___ park here.", ans: "can't", options: ["can't", "don't can", "no", "aren't"], explanation: "prohibition with can't.", ru: "Здесь нельзя парковаться.", en: "You can't park here." },
+      { q: "I can ___ Spanish a little.", ans: "speak", options: ["speak", "speaks", "speaking", "spoke"], explanation: "can + base.", ru: "Я немного говорю по-испански.", en: "I can speak Spanish a little." },
+      { q: "___ she ride a bike?", ans: "Can", options: ["Can", "Does", "Is", "Do"], explanation: "Can she…?", ru: "Она умеет ездить на велосипеде?", en: "Can she ride a bike?" },
+    ],
+  },
+  {
+    slug: "eng-ch19-prepositions",
+    g: "eng-a1-prepositions",
+    topic: "prepositions of place",
+    seeds: [
+      { q: "The book is ___ the table.", ans: "on", options: ["on", "in", "at", "under"], explanation: "on = surface.", ru: "Книга на столе.", en: "The book is on the table." },
+      { q: "She is ___ home.", ans: "at", options: ["at", "in", "on", "to"], explanation: "at home.", ru: "Она дома.", en: "She is at home." },
+      { q: "We live ___ London.", ans: "in", options: ["in", "on", "at", "to"], explanation: "in + city.", ru: "Мы живём в Лондоне.", en: "We live in London." },
+      { q: "The cat is ___ the bed.", ans: "under", options: ["under", "on", "in", "at"], explanation: "under = below.", ru: "Кот под кроватью.", en: "The cat is under the bed." },
+      { q: "The café is ___ to the bank.", ans: "next", options: ["next", "near", "beside", "close"], explanation: "next to.", ru: "Кафе рядом с банком.", en: "The café is next to the bank." },
+      { q: "He works ___ the hospital.", ans: "at", options: ["at", "on", "to", "by"], explanation: "at + workplace.", ru: "Он работает в больнице.", en: "He works at the hospital." },
+      { q: "There is a picture ___ the wall.", ans: "on", options: ["on", "in", "at", "under"], explanation: "on the wall.", ru: "На стене картина.", en: "There is a picture on the wall." },
+      { q: "The keys are ___ my bag.", ans: "in", options: ["in", "on", "at", "under"], explanation: "in = inside.", ru: "Ключи в сумке.", en: "The keys are in my bag." },
+      { q: "Meet me ___ the station.", ans: "at", options: ["at", "in", "on", "to"], explanation: "at the station.", ru: "Встретимся на станции.", en: "Meet me at the station." },
+      { q: "The shop is ___ the cinema and the park.", ans: "between", options: ["between", "next", "under", "behind"], explanation: "between A and B.", ru: "Магазин между кино и парком.", en: "The shop is between the cinema and the park." },
+      { q: "The car is ___ the house.", ans: "in front of", options: ["in front of", "on", "at", "under"], explanation: "in front of.", ru: "Машина перед домом.", en: "The car is in front of the house." },
+      { q: "She stands ___ the door.", ans: "at", options: ["at", "on", "in", "to"], explanation: "at the door.", ru: "Она стоит у двери.", en: "She stands at the door." },
+      { q: "They live ___ Oxford Street.", ans: "on", options: ["on", "in", "at", "to"], explanation: "on + street.", ru: "Они живут на Оксфорд-стрит.", en: "They live on Oxford Street." },
+      { q: "The dog is ___ the sofa.", ans: "under", options: ["under", "at", "to", "between"], explanation: "under.", ru: "Собака под диваном.", en: "The dog is under the sofa." },
+      { q: "Put the milk ___ the fridge.", ans: "in", options: ["in", "on", "at", "to"], explanation: "in the fridge.", ru: "Поставь молоко в холодильник.", en: "Put the milk in the fridge." },
+      { q: "He is waiting ___ the bus stop.", ans: "at", options: ["at", "on", "in", "to"], explanation: "at the bus stop.", ru: "Он ждёт на остановке.", en: "He is waiting at the bus stop." },
+      { q: "The garden is ___ the house.", ans: "behind", options: ["behind", "on", "at", "in"], explanation: "behind = at the back.", ru: "Сад за домом.", en: "The garden is behind the house." },
+      { q: "My office is ___ the second floor.", ans: "on", options: ["on", "in", "at", "to"], explanation: "on the floor.", ru: "Мой офис на втором этаже.", en: "My office is on the second floor." },
+      { q: "There is a park ___ the school.", ans: "next to", options: ["next to", "on", "at", "under"], explanation: "next to = beside.", ru: "Рядом со школой парк.", en: "There is a park next to the school." },
+      { q: "She studies ___ the library.", ans: "at", options: ["at", "on", "to", "under"], explanation: "at the library.", ru: "Она учится в библиотеке.", en: "She studies at the library." },
+    ],
+  },
 ];
 
 for (const ch of MORE) {
@@ -322,6 +420,13 @@ const REST = [
     ["This book is ___ interesting.", "more", ["more", "most", "much", "many"], "long adj → more.", "Эта книга интереснее.", "This book is more interesting."],
     ["I am older ___ my sister.", "than", ["then", "than", "that", "as"], "comparative + than.", "Я старше сестры.", "I am older than my sister."],
   ]],
+  ["eng-ch20-going-to", "eng-a2-going-to", "going to", [
+    ["I am going to ___ a book.", "read", ["read", "reading", "reads", "readed"], "going to + base.", "Я собираюсь читать книгу.", "I am going to read a book."],
+    ["She ___ going to visit us.", "is", ["am", "is", "are", "be"], "She → is going to.", "Она собирается нас навестить.", "She is going to visit us."],
+    ["___ you going to come?", "Are", ["Am", "Is", "Are", "Do"], "Are you going to…?", "Ты собираешься прийти?", "Are you going to come?"],
+    ["They are going to ___ early.", "leave", ["leave", "leaves", "leaving", "left"], "going to + base.", "Они собираются уехать рано.", "They are going to leave early."],
+    ["Look at the clouds — it is ___ to rain.", "going", ["go", "going", "gone", "goes"], "evidence → going to.", "Смотри на тучи — будет дождь.", "Look at the clouds — it is going to rain."],
+  ]],
   ["eng-ch6-experiences", "eng-a2-present-perfect", "present perfect", [
     ["I ___ been to Paris.", "have", ["have", "has", "had", "am"], "I → have.", "Я был в Париже.", "I have been to Paris."],
     ["She ___ never eaten sushi.", "has", ["have", "has", "had", "is"], "She → has.", "Она никогда не ела суши.", "She has never eaten sushi."],
@@ -329,12 +434,26 @@ const REST = [
     ["They have ___ to Italy twice.", "been", ["been", "gone", "went", "go"], "been = visited and returned.", "Они были в Италии дважды.", "They have been to Italy twice."],
     ["He has already ___ home.", "gone", ["gone", "been", "went", "go"], "gone = left for a place.", "Он уже ушёл домой.", "He has already gone home."],
   ]],
-  ["eng-ch7-future-plans", "eng-b1-future-conditional", "future", [
+  ["eng-ch21-quantifiers", "eng-a2-quantifiers", "quantifiers", [
+    ["I don't have ___ milk.", "any", ["some", "any", "many", "much"], "negative → any.", "У меня нет молока.", "I don't have any milk."],
+    ["How ___ books do you have?", "many", ["much", "many", "some", "any"], "countable → many.", "Сколько у тебя книг?", "How many books do you have?"],
+    ["There isn't ___ sugar left.", "any", ["some", "any", "many", "a"], "negative → any.", "Сахара не осталось.", "There isn't any sugar left."],
+    ["We have ___ time.", "some", ["some", "any", "many", "a"], "affirmative → some.", "У нас есть время.", "We have some time."],
+    ["How ___ money do you need?", "much", ["much", "many", "some", "any"], "uncountable → much.", "Сколько тебе нужно денег?", "How much money do you need?"],
+  ]],
+  ["eng-ch7-future-plans", "eng-b1-future-conditional", "future & first conditional", [
     ["I ___ call you tomorrow.", "will", ["will", "would", "am", "do"], "will + base verb.", "Я позвоню тебе завтра.", "I will call you tomorrow."],
-    ["She is ___ to visit us.", "going", ["go", "going", "gone", "goes"], "be going to.", "Она собирается нас навестить.", "She is going to visit us."],
-    ["It ___ rain later.", "might", ["might", "must", "can", "should"], "might = possibility.", "Возможно, позже будет дождь.", "It might rain later."],
-    ["We ___ be late.", "won't", ["won't", "will", "wouldn't", "don't"], "will not → won't.", "Мы не опоздаем. / Мы не будем… wait: We won't be late.", "We won't be late."],
+    ["If it rains, we ___ stay home.", "will", ["will", "would", "would have", "had"], "1st: If + present, will.", "Если будет дождь, мы останемся дома.", "If it rains, we will stay home."],
+    ["He ___ come to the party.", "won't", ["won't", "will", "wouldn't", "don't"], "will not → won't.", "Он не придёт на вечеринку.", "He won't come to the party."],
+    ["If you study, you ___ pass.", "will", ["will", "would", "are", "can"], "1st conditional.", "Если будешь учиться, сдашь.", "If you study, you will pass."],
     ["___ I open the window?", "Shall", ["Shall", "Will", "Do", "Am"], "Shall I…? offers.", "Мне открыть окно?", "Shall I open the window?"],
+  ]],
+  ["eng-ch22-modals", "eng-b1-modals", "modals", [
+    ["You ___ rest.", "should", ["should", "must to", "can to", "are"], "should = advice.", "Тебе следует отдохнуть.", "You should rest."],
+    ["You ___ wear a seatbelt.", "must", ["must", "should to", "can", "may to"], "must = obligation.", "Нужно пристегнуться.", "You must wear a seatbelt."],
+    ["I ___ to work tomorrow.", "have", ["have", "must", "should", "can"], "have to.", "Мне надо работать завтра.", "I have to work tomorrow."],
+    ["You ___ smoke here.", "mustn't", ["mustn't", "don't have to", "should", "can"], "mustn't = prohibition.", "Здесь нельзя курить.", "You mustn't smoke here."],
+    ["You don't ___ to come.", "have", ["have", "must", "should", "can"], "don't have to = not necessary.", "Тебе не обязательно приходить.", "You don't have to come."],
   ]],
   ["eng-ch8-storytelling", "eng-b1-narrative", "narrative tenses", [
     ["I ___ reading when she called.", "was", ["was", "were", "am", "did"], "past continuous: was + -ing.", "Я читал, когда она позвонила.", "I was reading when she called."],

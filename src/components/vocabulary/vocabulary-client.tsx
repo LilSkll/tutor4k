@@ -285,7 +285,7 @@ function AddWordDialog({
             <SelectContent>
               {LEVELS.map((lvl) => (
                 <SelectItem key={lvl.value} value={lvl.value}>
-                  {lvl.label} — {lvl.description}
+                  {lvl.value} — {t(lvl.descriptionKey)}
                 </SelectItem>
               ))}
             </SelectContent>

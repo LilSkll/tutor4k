@@ -171,6 +171,68 @@ En inglés, el verbo «ser/estar» tiene **tres formas** en presente:
 > 💡 Después de can — **siempre infinitivo sin to**: \`can swim\` (no ~~can to swim~~).`,
   },
 
+  "eng-a1-questions": {
+    en: `## Wh- Questions
+
+| Word | Meaning | Example |
+|---|---|---|
+| **What** | what / which | What is your name? |
+| **Who** | who | Who is she? |
+| **Where** | where | Where do you live? |
+| **When** | when | When is the class? |
+| **Why** | why | Why are you late? |
+| **How** | how | How are you? |
+
+### Word order
+\`Wh- + auxiliary + subject + verb\`
+- \`Where **do** you live?\`
+- \`What **is** your job?\`
+
+> 💡 Answers to Why often use **because**.`,
+    es: `## Preguntas Wh-
+
+| Palabra | Significado | Ejemplo |
+|---|---|---|
+| **What** | qué / cuál | What is your name? |
+| **Who** | quién | Who is she? |
+| **Where** | dónde | Where do you live? |
+| **When** | cuándo | When is the class? |
+| **Why** | por qué | Why are you late? |
+| **How** | cómo | How are you? |
+
+### Orden
+\`Wh- + auxiliar + sujeto + verbo\`
+
+> 💡 Las respuestas a Why suelen usar **because**.`,
+  },
+
+  "eng-a1-prepositions": {
+    en: `## Prepositions of Place
+
+| Preposition | Use | Example |
+|---|---|---|
+| **in** | inside | in the box, in London |
+| **on** | on a surface | on the table |
+| **at** | exact point | at the door, at school |
+| **under** | below | under the bed |
+| **between** | between two | between A and B |
+| **next to** | beside | next to the bank |
+
+> 💡 \`at\` home / work; \`in\` a city; \`on\` a street.`,
+    es: `## Preposiciones de lugar
+
+| Preposición | Uso | Ejemplo |
+|---|---|---|
+| **in** | dentro | in the box, in London |
+| **on** | sobre una superficie | on the table |
+| **at** | punto exacto | at the door, at school |
+| **under** | debajo | under the bed |
+| **between** | entre dos | between A and B |
+| **next to** | al lado | next to the bank |
+
+> 💡 \`at\` home / work; \`in\` ciudad; \`on\` calle.`,
+  },
+
   "eng-a2-past-simple": {
     en: `## Past Simple — completed actions in the past
 
@@ -306,6 +368,58 @@ En inglés, el verbo «ser/estar» tiene **tres formas** en presente:
 > ⚠️ Con un momento concreto del pasado → Past Simple: \`I went yesterday\` (no ~~have gone yesterday~~).`,
   },
 
+  "eng-a2-going-to": {
+    en: `## be going to — plans and intentions
+
+### Formula: **am/is/are + going to + V**
+
+| Person | Example |
+|---|---|
+| I | I **am going to** travel |
+| He/She | She **is going to** study |
+| We/They | They **are going to** leave |
+
+### Uses
+1. **Intention:** \`I'm going to learn Spanish\`
+2. **Evidence-based prediction:** \`Look at the clouds — it's going to rain\`
+
+> 💡 After going to — **base verb** (not -ing / not -s).`,
+    es: `## be going to — planes e intenciones
+
+### Fórmula: **am/is/are + going to + V**
+
+### Usos
+1. **Intención:** \`I'm going to learn Spanish\`
+2. **Predicción con evidencia:** \`It's going to rain\`
+
+> 💡 Después de going to — **verbo base**.`,
+  },
+
+  "eng-a2-quantifiers": {
+    en: `## Quantifiers — some / any / much / many
+
+| Word | With | Example |
+|---|---|---|
+| **some** | + / offers | some water |
+| **any** | − / ? | any milk? |
+| **many** | countable | many books |
+| **much** | uncountable | much time |
+| **a lot of** | both | a lot of friends |
+
+> 💡 In everyday speech, \`a lot of\` is more common than \`much\` in affirmative sentences.`,
+    es: `## Cuantificadores — some / any / much / many
+
+| Palabra | Con | Ejemplo |
+|---|---|---|
+| **some** | + / ofrecimientos | some water |
+| **any** | − / ? | any milk? |
+| **many** | contables | many books |
+| **much** | incontables | much time |
+| **a lot of** | ambos | a lot of friends |
+
+> 💡 En el habla cotidiana, \`a lot of\` es más frecuente que \`much\` en afirmativas.`,
+  },
+
   "eng-b1-future-conditional": {
     en: `## Future (will) & First Conditional
 
@@ -316,11 +430,6 @@ Contractions: \`I'll\`, \`won't\`
 ### First Conditional: **If + present, will + V**
 \`If it rains, I will stay home.\`
 \`If you study, you will pass.\`
-
-### should / must
-- **should** = advice: \`You should rest\`
-- **must** = obligation (necessary): \`You must wear a seatbelt\`
-- **mustn't** = prohibited: \`You mustn't smoke here\`
 
 > 💡 First Conditional — **a real condition**. Will ONLY in the main clause, not in if.`,
     es: `## Futuro (will) y Primer Condicional
@@ -333,12 +442,32 @@ Contracciones: \`I'll\`, \`won't\`
 \`If it rains, I will stay home.\`
 \`If you study, you will pass.\`
 
-### should / must
-- **should** = consejo: \`You should rest\`
-- **must** = obligación (necesario): \`You must wear a seatbelt\`
-- **mustn't** = prohibido: \`You mustn't smoke here\`
-
 > 💡 Primer Condicional — **condición real**. Will SOLO en la oración principal, no en if.`,
+  },
+
+  "eng-b1-modals": {
+    en: `## Modals — should / must / have to
+
+| Modal | Meaning | Example |
+|---|---|---|
+| **should** | advice | You should rest |
+| **must** | strong obligation | You must wear a seatbelt |
+| **have to** | external obligation | I have to work tomorrow |
+| **mustn't** | prohibition | You mustn't smoke here |
+| **don't have to** | no necessity | You don't have to come |
+
+> 💡 After a modal — **base verb**: \`should go\` (not ~~should to go~~).`,
+    es: `## Modales — should / must / have to
+
+| Modal | Significado | Ejemplo |
+|---|---|---|
+| **should** | consejo | You should rest |
+| **must** | obligación fuerte | You must wear a seatbelt |
+| **have to** | obligación externa | I have to work tomorrow |
+| **mustn't** | prohibición | You mustn't smoke here |
+| **don't have to** | no es necesario | You don't have to come |
+
+> 💡 Después del modal — **verbo base**.`,
   },
 
   "eng-b1-narrative": {

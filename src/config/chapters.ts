@@ -134,7 +134,7 @@ export const CHAPTERS: Chapter[] = [
     titleEs: "Las Preguntas del Hipogrifo",
     level: "A1",
     location: "Двор академии",
-    icon: "❓",
+    icon: "💬",
     summary: "Вопросительные слова: qué, quién, dónde, cuándo, cómo, por qué.",
     grammarTopic: "a1-preguntas",
     vocabTopic: "a1-verbos-basicos",

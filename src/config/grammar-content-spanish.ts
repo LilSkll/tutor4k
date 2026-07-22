@@ -51,7 +51,24 @@ export const SPANISH_GRAMMAR_CONTENT: Partial<
   },
 
   "a1-ser-estar": {
-    en: `## Ser vs Estar — both mean "to be"
+    en: `## Greetings and introductions
+
+| Spanish | English |
+|---|---|
+| **Hola** | Hello |
+| **Buenos días** | Good morning |
+| **Buenas tardes** | Good afternoon/evening |
+| **Buenas noches** | Good night |
+| **Adiós / Hasta luego** | Bye / See you later |
+| **¿Cómo te llamas?** | What's your name? |
+| **Me llamo…** | My name is… |
+| **Mucho gusto** | Nice to meet you |
+| **¿Cómo estás?** | How are you? |
+| **Bien, gracias** | Fine, thanks |
+
+> 💡 After a greeting people often ask the name: \`Hola, ¿cómo te llamas?\`
+
+## Ser vs Estar — both mean "to be"
 
 ### SER — permanent characteristics
 Used for **identity, profession, origin, description**:
@@ -87,7 +104,24 @@ Used for **state, feelings, location**:
 - **ESTAR**: **P**osition, **L**ocation, **A**ction (gerundio), **C**ondition, **E**motion.
 
 > ⚠️ Adjectives change meaning: \`es aburrido\` (a boring person) vs \`está aburrido\` (he/she is bored).`,
-    es: `## Ser vs Estar — ambos significan «ser/estar»
+    es: `## Saludos y presentaciones
+
+| Español | Significado |
+|---|---|
+| **Hola** | Hola |
+| **Buenos días** | Buenos días |
+| **Buenas tardes** | Buenas tardes |
+| **Buenas noches** | Buenas noches |
+| **Adiós / Hasta luego** | Adiós / Hasta luego |
+| **¿Cómo te llamas?** | ¿Cómo te llamas? |
+| **Me llamo…** | Me llamo… |
+| **Mucho gusto** | Mucho gusto |
+| **¿Cómo estás?** | ¿Cómo estás? |
+| **Bien, gracias** | Bien, gracias |
+
+> 💡 Después del saludo: \`Hola, ¿cómo te llamas?\`
+
+## Ser vs Estar — ambos significan «ser/estar»
 
 ### SER — características permanentes
 Se usa para **identidad, profesión, origen, descripción**:
@@ -226,7 +260,7 @@ Se usa para **estado, sentimientos, lugar**:
   },
 
   "a1-numeros-1-100": {
-    en: `## Cardinal numbers (Números cardinales)
+    en: `## Numbers 1–100
 
 | Range | Example |
 |---|---|
@@ -242,8 +276,67 @@ Se usa para **estado, sentimientos, lugar**:
 - \`veintiún\` before m.: \`veintiún años\`
 - \`cien\` (100) vs \`ciento\` (before a number): \`ciento uno\`
 
-> 💡 Age: \`Tengo veinte años.\` Prices: \`Cuesta cinco euros.\``,
-    es: `## Números cardinales
+> 💡 Age: \`Tengo veinte años.\` Prices: \`Cuesta cinco euros.\`
+
+## Days of the week
+
+| Spanish | English |
+|---|---|
+| **lunes** | Monday |
+| **martes** | Tuesday |
+| **miércoles** | Wednesday |
+| **jueves** | Thursday |
+| **viernes** | Friday |
+| **sábado** | Saturday |
+| **domingo** | Sunday |
+
+**How to talk about days:**
+- Days are usually **lowercase**: \`el lunes\`
+- **el lunes** = on Monday (one time)
+- **los lunes** = on Mondays (habit)
+- \`Hoy es viernes.\` — Today is Friday.
+
+> 💡 Not \`en lunes\` — use \`el lunes\` / \`los lunes\`.
+
+## Months of the year
+
+enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre, octubre, noviembre, diciembre
+
+- **en enero** = in January
+- Date: \`el 5 de mayo\` — May 5th
+- Months are usually lowercase.
+
+## Telling the time (la hora)
+
+Question: **¿Qué hora es?**
+
+### The article before the hour
+| Time | Form |
+|---|---|
+| 1:00 | **Es la una** |
+| 2:00–12:00 | **Son las dos** |
+
+❌ Wrong: \`Es una\`, \`Son dos\`  
+✅ Right: \`Es **la** una\`, \`Son **las** tres\`
+
+### Minutes
+| Phrase | Example | Meaning |
+|---|---|---|
+| y … | Son las tres **y diez** | 3:10 |
+| y cuarto | Son las cuatro **y cuarto** | 4:15 |
+| y media | Son las cinco **y media** | 5:30 |
+| menos cuarto | Son las seis **menos cuarto** | 5:45 |
+
+### At what time? → **a + la/las**
+- \`a la una\` / \`a las tres\`
+- \`La clase es **a las** nueve.\`
+
+### Part of the day
+- **de la mañana** / **de la tarde** / **de la noche**
+- \`Son las ocho de la mañana.\`
+
+> 💡 Remember: **Es la una** / **Son las…** — always use the article.`,
+    es: `## Números 1–100
 
 | Rango | Ejemplo |
 |---|---|
@@ -255,11 +348,60 @@ Se usa para **estado, sentimientos, lugar**:
 | decenas + unidades | treinta y uno, cuarenta y cinco |
 
 **Particularidades:**
-- \`uno → un\` delante de sustantivo: \`un libro\` (no \`uno libro\`)
+- \`uno → un\` delante de sustantivo: \`un libro\`
 - \`veintiún\` delante de m.: \`veintiún años\`
 - \`cien\` (100) vs \`ciento\` (delante de número): \`ciento uno\`
 
-> 💡 Edad: \`Tengo veinte años.\` Precios: \`Cuesta cinco euros.\``,
+> 💡 Edad: \`Tengo veinte años.\` Precios: \`Cuesta cinco euros.\`
+
+## Días de la semana
+
+lunes, martes, miércoles, jueves, viernes, sábado, domingo
+
+- Normalmente **en minúscula**: \`el lunes\`
+- **el lunes** = ese día concreto
+- **los lunes** = todos los lunes (hábito)
+- \`Hoy es viernes.\`
+
+> 💡 No se dice \`en lunes\`, sino \`el lunes\` / \`los lunes\`.
+
+## Meses del año
+
+enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre, octubre, noviembre, diciembre
+
+- **en enero**
+- Fecha: \`el 5 de mayo\`
+- Los meses suelen ir en minúscula.
+
+## La hora
+
+Pregunta: **¿Qué hora es?**
+
+### El artículo delante de la hora
+| Hora | Forma |
+|---|---|
+| 1:00 | **Es la una** |
+| 2:00–12:00 | **Son las dos** |
+
+❌ Incorrecto: \`Es una\`, \`Son dos\`  
+✅ Correcto: \`Es **la** una\`, \`Son **las** tres\`
+
+### Minutos
+| Expresión | Ejemplo |
+|---|---|
+| y … | Son las tres **y diez** |
+| y cuarto | Son las cuatro **y cuarto** |
+| y media | Son las cinco **y media** |
+| menos cuarto | Son las seis **menos cuarto** |
+
+### ¿A qué hora? → **a + la/las**
+- \`a la una\` / \`a las tres\`
+- \`La clase es **a las** nueve.\`
+
+### Parte del día
+- **de la mañana** / **de la tarde** / **de la noche**
+
+> 💡 Recuerda: **Es la una** / **Son las…** — siempre con artículo.`,
   },
 
   "a1-preposiciones-lugar": {
@@ -828,6 +970,13 @@ Ejemplo: \`hablar\` → hablaba, hablabas, hablaba, hablábamos, **hablabais**, 
 - \`María es **más alta que** Ana.\`
 - \`Este coche es **menos caro que** el otro.\`
 
+### Equality — tan / tanto
+| Pattern | Use | Example |
+|---|---|---|
+| **tan + adjective + como** | same quality | Es **tan alta como** su hermana |
+| **tanto/a(s) + noun + como** | same quantity | Tiene **tantos libros como** yo |
+| **igual de + adjective + que** | also "as … as" | Es **igual de inteligente que** tú |
+
 ### Special forms (must memorize!)
 
 | Meaning | Form |
@@ -860,6 +1009,13 @@ Ejemplo: \`hablar\` → hablaba, hablabas, hablaba, hablábamos, **hablabais**, 
 
 - \`María es **más alta que** Ana.\`
 - \`Este coche es **menos caro que** el otro.\`
+
+### Igualdad — tan / tanto
+| Estructura | Uso | Ejemplo |
+|---|---|---|
+| **tan + adjetivo + como** | misma cualidad | Es **tan alta como** su hermana |
+| **tanto/a(s) + sustantivo + como** | misma cantidad | Tiene **tantos libros como** yo |
+| **igual de + adjetivo + que** | también «igual de» | Es **igual de inteligente que** tú |
 
 ### Formas especiales (¡memorizar!)
 

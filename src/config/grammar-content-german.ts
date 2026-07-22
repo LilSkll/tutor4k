@@ -92,6 +92,50 @@ Im Englischen hat das Verb „to be" im Präsens **drei Formen**:
 > 💡 Nach can — **immer der Infinitiv ohne to**: \`can swim\` (nicht ~~can to swim~~).`,
   },
 
+  "eng-a1-questions": {
+    de: `## Wh- Questions — W-Fragen
+
+| Wort | Bedeutung | Beispiel |
+|---|---|---|
+| **What** | was / welcher | What is your name? |
+| **Who** | wer | Who is she? |
+| **Where** | wo / wohin | Where do you live? |
+| **When** | wann | When is the class? |
+| **Why** | warum | Why are you late? |
+| **How** | wie | How are you? |
+| **How old** | wie alt | How old are you? |
+| **How many** | wie viele (zählbar) | How many books? |
+
+### Wortstellung
+\`W-Wort + Hilfsverb + Subjekt + Verb\`
+- \`Where **do** you live?\`
+- \`What **is** your job?\` (bei be kein extra do/does)
+
+> 💡 Auf Why antwortet man oft mit **because**.`,
+  },
+
+  "eng-a1-prepositions": {
+    de: `## Ortspräpositionen
+
+| Präposition | Verwendung | Beispiel |
+|---|---|---|
+| **in** | innen | in the box, in London |
+| **on** | auf einer Fläche | on the table, on the wall |
+| **at** | genauer Punkt | at the door, at school |
+| **under** | unter | under the bed |
+| **between** | zwischen | between A and B |
+| **next to** | neben | next to the bank |
+| **behind** | hinter | behind the house |
+| **in front of** | vor | in front of the car |
+
+### in / on / at bei Orten
+- **at** home, at work, at the station
+- **in** Stadt/Land: in Spain
+- **on** Straße: on Oxford Street
+
+> 💡 \`at\` oft für Institution/Punkt, \`in\` für Raum/Innenraum.`,
+  },
+
   "eng-a2-past-simple": {
     de: `## Past Simple — abgeschlossene Handlungen in der Vergangenheit
 
@@ -164,6 +208,46 @@ Im Englischen hat das Verb „to be" im Präsens **drei Formen**:
 > ⚠️ Mit einem konkreten Zeitpunkt in der Vergangenheit → Past Simple: \`I went yesterday\` (nicht ~~have gone yesterday~~).`,
   },
 
+  "eng-a2-going-to": {
+    de: `## be going to — Pläne und Absichten
+
+### Formel: **am/is/are + going to + V**
+
+| Person | Beispiel |
+|---|---|
+| I | I **am going to** travel |
+| He/She | She **is going to** study |
+| We/They | They **are going to** leave |
+
+### Verwendung
+1. **Absicht:** \`I'm going to learn Spanish\`
+2. **Vorhersage mit Anzeichen:** \`Look at the clouds — it's going to rain\`
+
+### Fragen und Verneinungen
+- \`Are you going to come?\`
+- \`She isn't going to stay\`
+
+> 💡 Nach going to — **Grundform des Verbs** (nicht -ing und nicht -s).`,
+  },
+
+  "eng-a2-quantifiers": {
+    de: `## Quantifiers — how much / how many?
+
+| Wort | Womit | Beispiel |
+|---|---|---|
+| **some** | + / Bitten | some water, some apples |
+| **any** | − / ? | any milk? / I don't have any |
+| **many** | zählbar | many books |
+| **much** | unzählbar | much time |
+| **a lot of** | beides | a lot of friends / money |
+
+### Zählbar vs. unzählbar
+- Countable: apple**s**, book**s** → many / a few
+- Uncountable: water, rice, money → much / a little
+
+> 💡 In positiven Sätzen ist \`a lot of\` im Alltag häufiger als \`much\`.`,
+  },
+
   "eng-b1-future-conditional": {
     de: `## Futur (will) und First Conditional
 
@@ -175,12 +259,24 @@ Kontraktionen: \`I'll\`, \`won't\`
 \`If it rains, I will stay home.\`
 \`If you study, you will pass.\`
 
-### should / must
-- **should** = Ratschlag: \`You should rest\`
-- **must** = Pflicht (notwendig): \`You must wear a seatbelt\`
-- **mustn't** = verboten: \`You mustn't smoke here\`
-
 > 💡 First Conditional — **eine reale Bedingung**. Will NUR im Hauptsatz, nicht im if-Satz.`,
+  },
+
+  "eng-b1-modals": {
+    de: `## Modalverben — should / must / have to
+
+| Modal | Bedeutung | Beispiel |
+|---|---|---|
+| **should** | Ratschlag | You should rest |
+| **must** | starke Pflicht | You must wear a seatbelt |
+| **have to** | äußere Pflicht | I have to work tomorrow |
+| **mustn't** | Verbot | You mustn't smoke here |
+| **don't have to** | keine Notwendigkeit | You don't have to come |
+
+### Nach dem Modal
+Immer **Grundform**: \`should go\`, \`must study\` (nicht ~~must to study~~).
+
+> 💡 \`must\` oft vom Sprecher/Regel; \`have to\` von Umständen.`,
   },
 
   "eng-b1-narrative": {
@@ -400,7 +496,24 @@ Kombination von Zeiten in Bedingung und Ergebnis:
   },
 
   "a1-ser-estar": {
-    de: `## Ser vs Estar — beide bedeuten „sein"
+    de: `## Begrüßungen und Vorstellungen
+
+| Spanisch | Deutsch |
+|---|---|
+| **Hola** | Hallo |
+| **Buenos días** | Guten Morgen |
+| **Buenas tardes** | Guten Tag / Abend |
+| **Buenas noches** | Gute Nacht |
+| **Adiós / Hasta luego** | Tschüss / Bis später |
+| **¿Cómo te llamas?** | Wie heißt du? |
+| **Me llamo…** | Ich heiße… |
+| **Mucho gusto** | Freut mich |
+| **¿Cómo estás?** | Wie geht's? |
+| **Bien, gracias** | Gut, danke |
+
+> 💡 Nach der Begrüßung oft: \`Hola, ¿cómo te llamas?\`
+
+## Ser vs Estar — beide bedeuten „sein"
 
 ### SER — dauerhafte Eigenschaften
 Verwendet für **Identität, Beruf, Herkunft, Beschreibung**:
@@ -492,7 +605,7 @@ Verwendet für **Zustand, Gefühle, Ort**:
   },
 
   "a1-numeros-1-100": {
-    de: `## Kardinalzahlen (Números cardinales)
+    de: `## Zahlen 1–100
 
 | Bereich | Beispiel |
 |---|---|
@@ -508,7 +621,53 @@ Verwendet für **Zustand, Gefühle, Ort**:
 - \`veintiún\` vor m.: \`veintiún años\`
 - \`cien\` (100) vs \`ciento\` (vor einer Zahl): \`ciento uno\`
 
-> 💡 Alter: \`Tengo veinte años.\` Preise: \`Cuesta cinco euros.\``,
+> 💡 Alter: \`Tengo veinte años.\` Preise: \`Cuesta cinco euros.\`
+
+## Wochentage
+
+lunes, martes, miércoles, jueves, viernes, sábado, domingo
+
+- Meist **klein geschrieben**: \`el lunes\`
+- **el lunes** = am Montag (einmal)
+- **los lunes** = montags (Gewohnheit)
+- Nicht \`en lunes\`, sondern \`el lunes\` / \`los lunes\`.
+
+## Monate
+
+enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre, octubre, noviembre, diciembre
+
+- **en enero** = im Januar
+- Datum: \`el 5 de mayo\`
+
+## Uhrzeit (la hora)
+
+Frage: **¿Qué hora es?**
+
+### Artikel vor der Stunde
+| Uhrzeit | Form |
+|---|---|
+| 1:00 | **Es la una** |
+| 2:00–12:00 | **Son las dos** |
+
+❌ Falsch: \`Es una\`, \`Son dos\`  
+✅ Richtig: \`Es **la** una\`, \`Son **las** tres\`
+
+### Minuten
+| Ausdruck | Beispiel |
+|---|---|
+| y … | Son las tres **y diez** |
+| y cuarto | Son las cuatro **y cuarto** |
+| y media | Son las cinco **y media** |
+| menos cuarto | Son las seis **menos cuarto** |
+
+### Um wie viel Uhr? → **a + la/las**
+- \`a la una\` / \`a las tres\`
+- \`La clase es **a las** nueve.\`
+
+### Tageszeit
+- **de la mañana** / **de la tarde** / **de la noche**
+
+> 💡 Merke: **Es la una** / **Son las…** — immer mit Artikel.`,
   },
 
   "a1-preposiciones-lugar": {
@@ -811,6 +970,13 @@ Beispiel: \`hablar\` → hablaba, hablabas, hablaba, hablábamos, **hablabais**,
 
 - \`María es **más alta que** Ana.\`
 - \`Este coche es **menos caro que** el otro.\`
+
+### Gleichheit — tan / tanto
+| Muster | Verwendung | Beispiel |
+|---|---|---|
+| **tan + Adjektiv + como** | gleiche Eigenschaft | Es **tan alta como** su hermana |
+| **tanto/a(s) + Nomen + como** | gleiche Menge | Tiene **tantos libros como** yo |
+| **igual de + Adjektiv + que** | auch „genauso“ | Es **igual de inteligente que** tú |
 
 ### Besondere Formen (auswendig lernen!)
 
