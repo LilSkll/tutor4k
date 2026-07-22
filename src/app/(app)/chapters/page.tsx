@@ -98,18 +98,31 @@ export default async function ChaptersMapPage() {
                   <div className="flex items-center gap-4">
                     <div
                       className={cn(
-                        "flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-2xl",
+                        "relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-2xl",
                         isCompleted && "bg-success/15",
                         isCurrent && "bg-primary/10",
                         isLocked && "bg-muted",
                       )}
                     >
-                      {isCompleted ? (
-                        <Check className="h-6 w-6 text-success" />
-                      ) : isLocked ? (
-                        <Lock className="h-5 w-5 text-muted-foreground" />
-                      ) : (
-                        chapter.icon
+                      <span
+                        className={cn(
+                          "leading-none",
+                          isLocked && "opacity-45 grayscale",
+                          isCompleted && "opacity-70",
+                        )}
+                        aria-hidden
+                      >
+                        {chapter.icon}
+                      </span>
+                      {isCompleted && (
+                        <span className="absolute -bottom-0.5 -right-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-background shadow-sm ring-1 ring-border">
+                          <Check className="h-3 w-3 text-success" />
+                        </span>
+                      )}
+                      {isLocked && (
+                        <span className="absolute -bottom-0.5 -right-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-background shadow-sm ring-1 ring-border">
+                          <Lock className="h-3 w-3 text-muted-foreground" />
+                        </span>
                       )}
                     </div>
 
