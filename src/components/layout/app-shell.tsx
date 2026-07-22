@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { Suspense } from "react";
 import { usePathname } from "next/navigation";
 import { Sidebar } from "@/components/layout/sidebar";
 import { MobileNav } from "@/components/layout/mobile-nav";
@@ -8,6 +9,7 @@ import { MobileTabBar } from "@/components/layout/mobile-tab-bar";
 import { SidebarToggle } from "@/components/layout/sidebar-toggle";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
 import { ProfileSync } from "@/components/layout/profile-sync";
+import { NavigationProgress } from "@/components/layout/navigation-progress";
 import { cn } from "@/lib/utils";
 import type { Profile } from "@/types";
 
@@ -27,6 +29,9 @@ export function AppShell({
 
   return (
     <div className="flex h-[100dvh] overflow-hidden bg-background">
+      <Suspense fallback={null}>
+        <NavigationProgress />
+      </Suspense>
       <ProfileSync profile={profile} />
       <Sidebar
         userName={profile?.name ?? undefined}
@@ -41,7 +46,7 @@ export function AppShell({
           streak={profile?.streak ?? 0}
         />
 
-        <div className="hidden md:flex h-14 items-center justify-between border-b border-border/60 px-4 bg-background/80 backdrop-blur-xl">
+        <div className="hidden md:flex h-14 items-center justify-between border-b border-border/60 px-4 bg-background/80 backdrop-blur-md md:backdrop-blur-xl">
           <SidebarToggle />
           <div className="flex items-center gap-2">
             <ThemeToggle />

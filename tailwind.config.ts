@@ -101,6 +101,10 @@ const config: Config = {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.55" },
         },
+        "nav-progress": {
+          "0%": { transform: "translateX(-100%)" },
+          "100%": { transform: "translateX(100%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -110,6 +114,7 @@ const config: Config = {
         "slide-up": "slide-up 0.35s ease-out",
         shimmer: "shimmer 1.5s infinite",
         "pulse-soft": "pulse-soft 1.4s ease-in-out infinite",
+        "nav-progress": "nav-progress 0.8s ease-out infinite",
       },
     },
   },

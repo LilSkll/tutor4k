@@ -1,3 +1,4 @@
+import { cache } from "react";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
 import type {
   ChapterProgress,
@@ -10,7 +11,8 @@ import type {
 // Read-only data access helpers (used by Server Components)
 // =====================================================================
 
-export async function getCurrentProfile(): Promise<Profile | null> {
+/** Deduped per request — layout + page share one profile fetch. */
+export const getCurrentProfile = cache(async (): Promise<Profile | null> => {
   const supabase = await createSupabaseServerClient();
   const {
     data: { user },
@@ -25,7 +27,7 @@ export async function getCurrentProfile(): Promise<Profile | null> {
     .single();
 
   return (data as unknown as Profile) ?? null;
-}
+});
 
 export async function getLearningProgress(): Promise<LearningProgress[]> {
   const supabase = await createSupabaseServerClient();

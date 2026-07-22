@@ -30,7 +30,7 @@ export function MobileNav({
 
   return (
     <>
-      <div className="md:hidden sticky top-0 z-40 flex h-14 items-center justify-between border-b border-border/60 bg-background/90 backdrop-blur-xl px-4 safe-pt">
+      <div className="md:hidden sticky top-0 z-40 flex h-14 items-center justify-between border-b border-border/60 bg-background/95 backdrop-blur-md px-4 safe-pt">
         <div className="flex items-center gap-2.5 min-w-0">
           <Image
             src="/hippogriff-icon.png"

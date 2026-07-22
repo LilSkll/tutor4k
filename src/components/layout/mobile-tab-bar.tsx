@@ -14,7 +14,7 @@ export function MobileTabBar() {
 
   return (
     <nav
-      className="md:hidden fixed bottom-0 inset-x-0 z-40 border-t border-border/60 bg-background/90 backdrop-blur-xl safe-pb"
+      className="md:hidden fixed bottom-0 inset-x-0 z-40 border-t border-border/60 bg-background/95 backdrop-blur-md safe-pb"
       aria-label="Primary"
     >
       <div className="grid grid-cols-5 h-[3.75rem] px-1">
