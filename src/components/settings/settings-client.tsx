@@ -187,7 +187,7 @@ export function SettingsClient({ profile }: { profile: Profile }) {
                   <SelectItem value="none">{t("settings.noLevel")}</SelectItem>
                   {LEVELS.map((lvl) => (
                     <SelectItem key={lvl.value} value={lvl.value}>
-                      {lvl.label} — {lvl.description}
+                      {lvl.value} — {t(lvl.descriptionKey)}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -207,7 +207,7 @@ export function SettingsClient({ profile }: { profile: Profile }) {
                   <SelectItem value="none">{t("settings.noGoal")}</SelectItem>
                   {GOALS.map((g) => (
                     <SelectItem key={g.value} value={g.value}>
-                      {g.emoji} {g.label}
+                      {g.emoji} {t(g.labelKey)}
                     </SelectItem>
                   ))}
                 </SelectContent>

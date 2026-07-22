@@ -7,25 +7,25 @@ import type {
 
 // ----- CEFR Levels ---------------------------------------------------
 
-export const LEVELS: { value: Level; label: string; description: string }[] = [
-  { value: "A1", label: "A1", description: "Начальный" },
-  { value: "A2", label: "A2", description: "Элементарный" },
-  { value: "B1", label: "B1", description: "Средний" },
-  { value: "B2", label: "B2", description: "Выше среднего" },
-  { value: "C1", label: "C1", description: "Продвинутый" },
+export const LEVELS: { value: Level; descriptionKey: string }[] = [
+  { value: "A1", descriptionKey: "level.desc.A1" },
+  { value: "A2", descriptionKey: "level.desc.A2" },
+  { value: "B1", descriptionKey: "level.desc.B1" },
+  { value: "B2", descriptionKey: "level.desc.B2" },
+  { value: "C1", descriptionKey: "level.desc.C1" },
 ];
 
 export const LEVEL_ORDER: Level[] = ["A1", "A2", "B1", "B2", "C1"];
 
 // ----- Goals ---------------------------------------------------------
 
-export const GOALS: { value: Goal; label: string; emoji: string }[] = [
-  { value: "TRAVEL", label: "Для путешествий", emoji: "✈️" },
-  { value: "WORK", label: "Для работы", emoji: "💼" },
-  { value: "RELOCATION", label: "Для переезда", emoji: "🏡" },
-  { value: "UNIVERSITY", label: "Для учёбы", emoji: "🎓" },
-  { value: "DELE", label: "Подготовка к DELE", emoji: "📜" },
-  { value: "GENERAL", label: "Общее изучение", emoji: "📚" },
+export const GOALS: { value: Goal; labelKey: string; emoji: string }[] = [
+  { value: "TRAVEL", labelKey: "goal.TRAVEL", emoji: "✈️" },
+  { value: "WORK", labelKey: "goal.WORK", emoji: "💼" },
+  { value: "RELOCATION", labelKey: "goal.RELOCATION", emoji: "🏡" },
+  { value: "UNIVERSITY", labelKey: "goal.UNIVERSITY", emoji: "🎓" },
+  { value: "DELE", labelKey: "goal.DELE", emoji: "📜" },
+  { value: "GENERAL", labelKey: "goal.GENERAL", emoji: "📚" },
 ];
 
 // ----- Interface languages -------------------------------------------
@@ -99,9 +99,9 @@ export const DAILY_GOAL_OPTIONS = [10, 15, 30, 45, 60];
 // ----- Daily streak constants ----------------------------------------
 
 export const STREAK_REWARDS = {
-  3: "Хорошая работа!",
-  7: "Целая неделя 🔥",
-  14: "Две недели подряд 🌟",
-  30: "Месяц постоянства! 🏆",
-  100: "Сотня дней испанского 👑",
+  3: "streak.reward.3",
+  7: "streak.reward.7",
+  14: "streak.reward.14",
+  30: "streak.reward.30",
+  100: "streak.reward.100",
 } as const;

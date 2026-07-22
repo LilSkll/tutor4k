@@ -81,9 +81,18 @@ export function DashboardDataLoader() {
     : GRAMMAR_TOPICS.slice(0, 3);
   const recommended = levelTopics.slice(0, 3);
 
+  const levelMeta = LEVELS.find((l) => l.value === profile.level);
+  const levelDescription = levelMeta
+    ? t(levelMeta.descriptionKey)
+    : t("dashboard.noLevel");
+
   const hour = new Date().getHours();
   const greetingKey =
-    hour < 12 ? "dashboard.greetingMorning" : hour < 20 ? "dashboard.greetingDay" : "dashboard.greetingEvening";
+    hour < 12
+      ? "dashboard.greetingMorning"
+      : hour < 20
+        ? "dashboard.greetingDay"
+        : "dashboard.greetingEvening";
   const greeting = t(greetingKey);
 
   return (
@@ -143,8 +152,7 @@ export function DashboardDataLoader() {
               {profile.level ?? "—"}
             </div>
             <p className="text-xs text-muted-foreground mt-1">
-              {LEVELS.find((l) => l.value === profile.level)?.description ??
-                t("dashboard.noLevel")}
+              {levelDescription}
             </p>
           </CardContent>
         </Card>
@@ -182,7 +190,7 @@ export function DashboardDataLoader() {
             </div>
             {streakReward && (
               <p className="text-xs text-orange-500 font-medium mt-1">
-                {streakReward}
+                {t(streakReward)}
               </p>
             )}
           </CardContent>

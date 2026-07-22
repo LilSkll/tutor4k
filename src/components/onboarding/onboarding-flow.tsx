@@ -7,10 +7,11 @@ import { Input } from "@/components/ui/input";
 import {
   Card,
   CardContent,
-  CardHeader,
 } from "@/components/ui/card";
 import { completeOnboarding } from "@/server/actions/auth";
 import { LEVELS } from "@/config/app";
+import { useUIStore } from "@/stores";
+import { translate } from "@/lib/i18n";
 import type { Level, LevelOrUnknown } from "@/types";
 import { cn } from "@/lib/utils";
 
@@ -21,6 +22,8 @@ export function OnboardingFlow({ error }: { error?: string }) {
   const [step, setStep] = useState(0);
   const [name, setName] = useState("");
   const [level, setLevel] = useState<LevelOrUnknown>("A1");
+  const language = useUIStore((s) => s.interfaceLanguage);
+  const t = (key: string) => translate(key, language);
 
   const canContinue = () => {
     if (step === 0) return name.trim().length > 0;
@@ -59,12 +62,12 @@ export function OnboardingFlow({ error }: { error?: string }) {
               <div className="bg-gradient-to-br from-primary via-orange-500 to-rose-500 p-8 text-center rounded-t-xl">
                 <img
                   src="/hippogriff-icon.png"
-                  alt="Spanish with Pavel"
+                  alt=""
                   className="mx-auto mb-4 h-16 w-16 rounded-2xl shadow-lg"
                 />
-                <h2 className="text-2xl font-bold text-white">¡Bienvenido!</h2>
+                <h2 className="text-2xl font-bold text-white">{t("onboarding.welcome")}</h2>
                 <p className="text-white/80 text-sm mt-1">
-                  Я твой персональный преподаватель испанского.
+                  {t("onboarding.subtitle")}
                 </p>
               </div>
               <CardContent className="p-6 space-y-4">
@@ -75,12 +78,12 @@ export function OnboardingFlow({ error }: { error?: string }) {
                 )}
                 <div>
                   <label className="text-sm font-medium mb-2 block">
-                    Как тебя зовут?
+                    {t("onboarding.name")}
                   </label>
                   <Input
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    placeholder="Твоё имя"
+                    placeholder={t("onboarding.namePlaceholder")}
                     autoFocus
                     onKeyDown={(e) => {
                       if (e.key === "Enter" && canContinue()) setStep(1);
@@ -94,7 +97,7 @@ export function OnboardingFlow({ error }: { error?: string }) {
                   onClick={() => setStep(1)}
                   disabled={!canContinue()}
                 >
-                  Продолжить
+                  {t("common.continue")}
                   <ArrowRight className="h-4 w-4" />
                 </Button>
               </CardContent>
@@ -106,10 +109,10 @@ export function OnboardingFlow({ error }: { error?: string }) {
             <>
               <div className="bg-gradient-to-br from-primary via-orange-500 to-rose-500 p-6 text-center rounded-t-xl">
                 <h2 className="text-xl font-bold text-white">
-                  Твой уровень испанского?
+                  {t("onboarding.level")}
                 </h2>
                 <p className="text-white/70 text-sm mt-1">
-                  Если не знаешь — выбери A1, поможем определиться!
+                  {t("onboarding.levelHint")}
                 </p>
               </div>
               <CardContent className="p-6 space-y-4">
@@ -126,8 +129,8 @@ export function OnboardingFlow({ error }: { error?: string }) {
                           : "border-border hover:border-primary/50",
                       )}
                     >
-                      <span className="font-bold text-2xl text-primary">{lvl.label}</span>
-                      <span className="text-xs text-muted-foreground mt-1">{lvl.description}</span>
+                      <span className="font-bold text-2xl text-primary">{lvl.value}</span>
+                      <span className="text-xs text-muted-foreground mt-1">{t(lvl.descriptionKey)}</span>
                     </button>
                   ))}
                 </div>
@@ -141,7 +144,7 @@ export function OnboardingFlow({ error }: { error?: string }) {
                       : "border-border hover:border-primary/50",
                   )}
                 >
-                  🤷 Не знаю мой уровень
+                  {t("onboarding.levelUnknownBtn")}
                 </button>
 
                 <div className="flex gap-2 pt-2">
@@ -151,7 +154,7 @@ export function OnboardingFlow({ error }: { error?: string }) {
                     onClick={() => setStep(0)}
                     disabled={pending}
                   >
-                    Назад
+                    {t("common.back")}
                   </Button>
                   <Button
                     variant="gradient"
@@ -160,12 +163,12 @@ export function OnboardingFlow({ error }: { error?: string }) {
                     disabled={pending}
                   >
                     {pending ? <Loader2 className="h-4 w-4 animate-spin" /> : null}
-                    Начать обучение!
+                    {t("onboarding.finish")}
                     <ArrowRight className="h-4 w-4" />
                   </Button>
                 </div>
                 <p className="text-center text-xs text-muted-foreground">
-                  Меню и настройки откроются после первого урока
+                  {t("onboarding.unlockHint")}
                 </p>
               </CardContent>
             </>

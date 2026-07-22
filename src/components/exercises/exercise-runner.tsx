@@ -277,7 +277,7 @@ export function ExerciseRunner({
                       : "border-border hover:border-primary/50",
                   )}
                 >
-                  {lvl.label}
+                  {lvl.value}
                 </button>
               ))}
             </div>
