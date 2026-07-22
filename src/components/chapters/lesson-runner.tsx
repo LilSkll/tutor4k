@@ -61,15 +61,6 @@ interface LessonRunnerProps {
 }
 
 /** Soft truncate for mastered chapters — keep intro + first section. */
-function shortenTheoryMarkdown(content: string): string {
-  const byHeading = content.split(/\n(?=##\s)/);
-  if (byHeading.length > 1) {
-    return byHeading.slice(0, 2).join("\n").trim();
-  }
-  if (content.length <= 900) return content;
-  return `${content.slice(0, 900).trim()}…`;
-}
-
 export function LessonRunner({
   chapter,
   courseId,
@@ -170,10 +161,10 @@ export function LessonRunner({
   const bankRemaining = Math.max(0, chapterBank.length - bankCursor);
 
   const theoryMarkdown = React.useMemo(() => {
-    if (!grammarContent) return null;
-    if (adaptation?.shortTheory) return shortenTheoryMarkdown(grammarContent);
+    // Always show the full grammar article in the journey — shortTheory
+    // was cutting tables/examples and made practice feel mismatched.
     return grammarContent;
-  }, [grammarContent, adaptation?.shortTheory]);
+  }, [grammarContent]);
 
   const beginMainLesson = () => {
     setPhase("theory");
@@ -554,19 +545,10 @@ export function LessonRunner({
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <BookOpen className="h-5 w-5 text-primary" />
-            <h2 className="text-xl font-bold">
-              {adaptation?.shortTheory
-                ? t("lesson.quickReview")
-                : t("lesson.newTopic")}
-            </h2>
+            <h2 className="text-xl font-bold">{t("lesson.newTopic")}</h2>
           </div>
           <Badge variant="level">{chapterDisplayTitle}</Badge>
         </div>
-        {adaptation?.shortTheory && (
-          <p className="text-sm text-muted-foreground">
-            {t("lesson.shortTheoryNote")}
-          </p>
-        )}
         <Card>
           <CardContent className="p-6">
             <div className="flex items-center gap-2 mb-4">

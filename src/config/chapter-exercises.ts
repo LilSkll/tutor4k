@@ -245,7 +245,7 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       instruction: "Выберите форму gustar для ед.ч.",
       options: ["gusta", "gustan", "gusto", "gustas"],
       answer: "gusta",
-      explanation: "El咖啡 (ед.ч.) → gusta. Me gusta el café = мне нравится кофе.",
+      explanation: "El café (ед.ч.) → gusta. Me gusta el café = мне нравится кофе.",
     },
     {
       type: "fill_blank",
@@ -278,6 +278,186 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       answer: "cabeza",
       acceptableAnswers: ["Cabeza"],
       explanation: "La cabeza = голова. Me duele la cabeza = у меня болит голова.",
+    },
+  ],
+
+  // ===== Chapter 18: género y número ==============================
+  "chapter-18-genero-numero": [
+    {
+      type: "multiple_choice",
+      question: "___ casa es grande. (артикль)",
+      instruction: "Выберите артикль для casa",
+      options: ["La", "El", "Los", "Unos"],
+      answer: "La",
+      explanation: "Casa — женский род → la casa.",
+    },
+    {
+      type: "fill_blank",
+      question: "Los ___ (libro, мн.ч.)",
+      instruction: "Поставьте существительное во множественное число",
+      answer: "libros",
+      acceptableAnswers: ["Libros"],
+      explanation: "libro → libros (−o → −os).",
+    },
+    {
+      type: "error_correction",
+      question: "El mesa es roja.",
+      instruction: "Исправьте род артикля",
+      answer: "La mesa es roja.",
+      acceptableAnswers: ["la mesa es roja"],
+      explanation: "Mesa — женский род → la mesa.",
+    },
+    {
+      type: "translation",
+      question: "Белые дома",
+      instruction: "Согласуйте род и число",
+      answer: "Las casas blancas",
+      acceptableAnswers: ["las casas blancas"],
+      explanation: "casa (ж.р. мн.) → las casas blancas.",
+    },
+  ],
+
+  // ===== Chapter 19: preposiciones de lugar =======================
+  "chapter-19-preposiciones": [
+    {
+      type: "multiple_choice",
+      question: "El libro está ___ la mesa.",
+      instruction: "Выберите предлог места",
+      options: ["en", "a", "de", "por"],
+      answer: "en",
+      explanation: "en = в/на (местонахождение).",
+    },
+    {
+      type: "fill_blank",
+      question: "Voy ___ Madrid.",
+      instruction: "Предлог направления",
+      answer: "a",
+      acceptableAnswers: ["A"],
+      explanation: "a + город = направление: voy a Madrid.",
+    },
+    {
+      type: "multiple_choice",
+      question: "El gato está ___ el sofá.",
+      instruction: "«под»",
+      options: ["debajo de", "encima de", "delante de", "entre"],
+      answer: "debajo de",
+      explanation: "debajo de = под.",
+    },
+    {
+      type: "translation",
+      question: "Ключи на столе.",
+      instruction: "Используйте en",
+      answer: "Las llaves están en la mesa",
+      acceptableAnswers: ["las llaves están en la mesa", "Las llaves estan en la mesa"],
+      explanation: "estar en = находиться на/в.",
+    },
+  ],
+
+  // ===== Chapter 20: preguntas ====================================
+  "chapter-20-preguntas": [
+    {
+      type: "multiple_choice",
+      question: "___ te llamas?",
+      instruction: "Как тебя зовут?",
+      options: ["Cómo", "Qué", "Quién", "Dónde"],
+      answer: "Cómo",
+      explanation: "¿Cómo te llamas? = Как тебя зовут?",
+    },
+    {
+      type: "fill_blank",
+      question: "¿___ vives? (где)",
+      instruction: "Вопросительное слово",
+      answer: "Dónde",
+      acceptableAnswers: ["dónde", "Donde", "donde"],
+      explanation: "¿Dónde? = где?",
+    },
+    {
+      type: "multiple_choice",
+      question: "¿___ es tu profesor?",
+      instruction: "Кто?",
+      options: ["Quién", "Qué", "Cuándo", "Cuál"],
+      answer: "Quién",
+      explanation: "¿Quién? = кто?",
+    },
+    {
+      type: "translation",
+      question: "Почему ты изучаешь испанский?",
+      instruction: "Используйте ¿por qué?",
+      answer: "¿Por qué estudias español?",
+      acceptableAnswers: ["por qué estudias español", "¿Por que estudias español?"],
+      explanation: "¿Por qué? = почему?",
+    },
+  ],
+
+  // ===== Chapter 21: comparativos =================================
+  "chapter-21-comparativos": [
+    {
+      type: "multiple_choice",
+      question: "Madrid es ___ grande ___ Toledo.",
+      instruction: "Сравнение «больше чем»",
+      options: ["más / que", "más / de", "tan / que", "muy / que"],
+      answer: "más / que",
+      explanation: "más + прилагательное + que.",
+    },
+    {
+      type: "fill_blank",
+      question: "Ana es ___ alta ___ María. (такая же)",
+      instruction: "Равная степень",
+      answer: "tan",
+      acceptableAnswers: ["Tan"],
+      explanation: "tan + adj + como = такая же… как.",
+    },
+    {
+      type: "translation",
+      question: "Это самый большой город.",
+      instruction: "Превосходная степень",
+      answer: "Es la ciudad más grande",
+      acceptableAnswers: ["es la ciudad más grande", "Es el ciudad más grande"],
+      explanation: "el/la más + adj.",
+    },
+    {
+      type: "error_correction",
+      question: "Juan es más alto de Pedro.",
+      instruction: "Исправьте предлог сравнения",
+      answer: "Juan es más alto que Pedro.",
+      acceptableAnswers: ["juan es más alto que pedro"],
+      explanation: "Сравнение с que, не de (кроме чисел).",
+    },
+  ],
+
+  // ===== Chapter 22: futuro simple ================================
+  "chapter-22-futuro": [
+    {
+      type: "fill_blank",
+      question: "Mañana ___ (hablar) con ella. (yo)",
+      instruction: "Futuro simple",
+      answer: "hablaré",
+      acceptableAnswers: ["Hablare", "hablaré"],
+      explanation: "yo → infinitivo + é: hablaré.",
+    },
+    {
+      type: "multiple_choice",
+      question: "Ellos ___ mañana.",
+      instruction: "venir в будущем",
+      options: ["vendrán", "vienen", "vinieron", "venían"],
+      answer: "vendrán",
+      explanation: "venir → vendrán (неправильный корень).",
+    },
+    {
+      type: "translation",
+      question: "Мы поедем в Испанию.",
+      instruction: "Futuro de ir",
+      answer: "Iremos a España",
+      acceptableAnswers: ["iremos a españa", "Nosotros iremos a España"],
+      explanation: "ir → iremos.",
+    },
+    {
+      type: "multiple_choice",
+      question: "¿Qué ___ tú el próximo año?",
+      instruction: "hacer в будущем",
+      options: ["harás", "haces", "hiciste", "hacías"],
+      answer: "harás",
+      explanation: "hacer → harás.",
     },
   ],
 

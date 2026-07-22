@@ -304,6 +304,91 @@ export const SPANISH_CHAPTER_LOCALE: Record<
       location: "Burg DELE",
     },
   },
+  "chapter-18-genero-numero": {
+    en: {
+      title: "Gender and Number",
+      summary: "Masculine/feminine and singular/plural agreement.",
+      location: "Manuscript Hall",
+    },
+    es: {
+      title: "Género y Número",
+      summary: "Género masculino/femenino y singular/plural.",
+      location: "Sala de manuscritos",
+    },
+    de: {
+      title: "Genus und Numerus",
+      summary: "Maskulin/Feminin und Singular/Plural.",
+      location: "Manuskriptsaal",
+    },
+  },
+  "chapter-19-preposiciones": {
+    en: {
+      title: "City Map",
+      summary: "Place prepositions: en, a, de, entre, detrás…",
+      location: "Toledo Square",
+    },
+    es: {
+      title: "El Mapa de la Ciudad",
+      summary: "Preposiciones de lugar: en, a, de, entre, detrás…",
+      location: "Plaza de Toledo",
+    },
+    de: {
+      title: "Stadtplan",
+      summary: "Lokalpräpositionen: en, a, de, entre, detrás…",
+      location: "Plaza de Toledo",
+    },
+  },
+  "chapter-20-preguntas": {
+    en: {
+      title: "Hippogriff Questions",
+      summary: "Question words: qué, quién, dónde, cuándo, cómo, por qué.",
+      location: "Academy Courtyard",
+    },
+    es: {
+      title: "Las Preguntas del Hipogrifo",
+      summary: "Palabras interrogativas: qué, quién, dónde, cuándo, cómo, por qué.",
+      location: "Patio de la academia",
+    },
+    de: {
+      title: "Fragen des Hippogreifen",
+      summary: "Fragewörter: qué, quién, dónde, cuándo, cómo, por qué.",
+      location: "Akademiehof",
+    },
+  },
+  "chapter-21-comparativos": {
+    en: {
+      title: "Square Contest",
+      summary: "Comparatives and superlatives: más… que, el más…",
+      location: "Plaza Mayor",
+    },
+    es: {
+      title: "El Torneo de la Plaza",
+      summary: "Comparativos y superlativos: más… que, el más…",
+      location: "Plaza Mayor",
+    },
+    de: {
+      title: "Wettkampf auf dem Platz",
+      summary: "Komparativ und Superlativ: más… que, el más…",
+      location: "Plaza Mayor",
+    },
+  },
+  "chapter-22-futuro": {
+    en: {
+      title: "The Prophecy",
+      summary: "Simple future — plans and predictions.",
+      location: "Observatory",
+    },
+    es: {
+      title: "La Profecía",
+      summary: "Futuro simple — planes y predicciones.",
+      location: "Observatorio",
+    },
+    de: {
+      title: "Die Prophezeiung",
+      summary: "Futuro simple — Pläne und Vorhersagen.",
+      location: "Observatorium",
+    },
+  },
 };
 
 export function getChapterTitle(
