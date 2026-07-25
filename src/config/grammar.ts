@@ -763,19 +763,25 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
 
 ### Утвердительная форма (afirmativo)
 
-| Лицо | -AR | -ER/-IR | Несколько частых |
-|---|---|---|---|
-| tú | -a (habla) | -e (come) | ten, pon, ven, sal, haz |
-| usted | -e (hable) | -a (coma) | sea, vaya |
-| nosotros | -emos | -amos | vamos, demos |
-| vosotros | -ad (hablad) | -ed (comed) / **-id (vivid)** |  |
-| ustedes | -en (hablen) | -an (coman) |  |
+Повелительное для **tú / usted / nosotros / vosotros / ustedes** совпадает с **presente de subjuntivo** (кроме утвердительных **tú** и **vosotros**).
+
+| Лицо | -AR | -ER | -IR | Частые особые |
+|---|---|---|---|---|
+| **tú** | habl**a** | com**e** | viv**e** | ten, pon, ven, sal, haz, di, sé, ve |
+| **usted** | habl**e** | com**a** | viv**a** | sea, vaya, dé |
+| **nosotros** | habl**emos** | com**amos** | viv**amos** | vamos, demos |
+| **vosotros** | habl**ad** | com**ed** | viv**id** | — |
+| **ustedes** | habl**en** | com**an** | viv**an** | sean, vayan |
+
+> ⚠️ **nosotros**: у -AR → **-emos** (\`hablemos\`), у -ER/-IR → **-amos** (\`comamos\`, \`vivamos\`). Это **не** как в presente de indicativo (\`hablamos\` / \`comemos\`).
 
 ### Отрицательная форма (negativo) = Subjuntivo
-\`No **hables**\`, \`No **comas**\`, \`No **vengas**\`.
-Vosotros: \`No **habléis**\`, \`No **comáis**\`, \`No **viváis**\`.
+Всегда формы subjuntivo + \`no\` перед глаголом:
+- \`No **hables**\`, \`No **comas**\`, \`No **vivas**\`
+- \`No **hablemos**\`, \`No **comamos**\`
+- Vosotros: \`No **habléis**\`, \`No **comáis**\`, \`No **viváis**\`
 
-### Особые формы tú (утвердительно)
+### Особые формы tú (только утвердительно)
 | Инфинитив | tú |
 |---|---|
 | tener | ten |
@@ -786,6 +792,8 @@ Vosotros: \`No **habléis**\`, \`No **comáis**\`, \`No **viváis**\`.
 | decir | di |
 | ser | sé |
 | ir | ve |
+
+> 💡 В отрицании особые формы не используются: \`ten\` → \`no **tengas**\`, \`ve\` → \`no **vayas**\`, \`sal\` → \`no **salgas**\`.
 
 ### С местоимениями
 В утвердительной форме местоимения **присоединяются** к глаголу:

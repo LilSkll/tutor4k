@@ -1086,19 +1086,25 @@ Die **yo**-Form des Presente nehmen, Endung wechseln: -AR ↔ -ER/-IR.
 
 ### Bejahungsform (afirmativo)
 
-| Person | -AR | -ER/-IR | Häufige Unregelmäßige |
-|---|---|---|---|
-| tú | -a (habla) | -e (come) | ten, pon, ven, sal, haz |
-| usted | -e (hable) | -a (coma) | sea, vaya |
-| nosotros | -emos | -amos | vamos, demos |
-| vosotros | -ad (hablad) | -ed (comed) / **-id (vivid)** |  |
-| ustedes | -en (hablen) | -an (coman) |  |
+Der Imperativ für **tú / usted / nosotros / vosotros / ustedes** entspricht dem **Presente de Subjuntivo** (außer bejahendem **tú** und **vosotros**).
+
+| Person | -AR | -ER | -IR | Häufige Unregelmäßige |
+|---|---|---|---|---|
+| **tú** | habl**a** | com**e** | viv**e** | ten, pon, ven, sal, haz, di, sé, ve |
+| **usted** | habl**e** | com**a** | viv**a** | sea, vaya, dé |
+| **nosotros** | habl**emos** | com**amos** | viv**amos** | vamos, demos |
+| **vosotros** | habl**ad** | com**ed** | viv**id** | — |
+| **ustedes** | habl**en** | com**an** | viv**an** | sean, vayan |
+
+> ⚠️ **nosotros**: -AR → **-emos** (\`hablemos\`), -ER/-IR → **-amos** (\`comamos\`, \`vivamos\`). Nicht wie im Presente de Indicativo (\`hablamos\` / \`comemos\`).
 
 ### Verneinungsform (negativo) = Subjuntivo
-\`No **hables**\`, \`No **comas**\`, \`No **vengas**\`.
-Vosotros: \`No **habléis**\`, \`No **comáis**\`, \`No **viváis**\`.
+Immer Subjuntivo + \`no\` vor dem Verb:
+- \`No **hables**\`, \`No **comas**\`, \`No **vivas**\`
+- \`No **hablemos**\`, \`No **comamos**\`
+- Vosotros: \`No **habléis**\`, \`No **comáis**\`, \`No **viváis**\`
 
-### Besondere tú-Formen (bejahend)
+### Besondere tú-Formen (nur bejahend)
 | Infinitiv | tú |
 |---|---|
 | tener | ten |
@@ -1109,6 +1115,8 @@ Vosotros: \`No **habléis**\`, \`No **comáis**\`, \`No **viváis**\`.
 | decir | di |
 | ser | sé |
 | ir | ve |
+
+> 💡 In der Verneinung entfallen die Kurzformen: \`ten\` → \`no **tengas**\`, \`ve\` → \`no **vayas**\`.
 
 ### Mit Pronomen
 In der bejahenden Form **hängen** Pronomen an das Verb:

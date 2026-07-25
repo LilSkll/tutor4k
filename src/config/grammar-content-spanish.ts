@@ -1195,19 +1195,25 @@ Se toma la forma **yo** del presente y se cambia la terminación: -AR ↔ -ER/-I
 
 ### Affirmative form (afirmativo)
 
-| Person | -AR | -ER/-IR | Common irregulars |
-|---|---|---|---|
-| tú | -a (habla) | -e (come) | ten, pon, ven, sal, haz |
-| usted | -e (hable) | -a (coma) | sea, vaya |
-| nosotros | -emos | -amos | vamos, demos |
-| vosotros | -ad (hablad) | -ed (comed) / **-id (vivid)** |  |
-| ustedes | -en (hablen) | -an (coman) |  |
+Imperative for **tú / usted / nosotros / vosotros / ustedes** matches **present subjunctive** (except affirmative **tú** and **vosotros**).
+
+| Person | -AR | -ER | -IR | Common irregulars |
+|---|---|---|---|---|
+| **tú** | habl**a** | com**e** | viv**e** | ten, pon, ven, sal, haz, di, sé, ve |
+| **usted** | habl**e** | com**a** | viv**a** | sea, vaya, dé |
+| **nosotros** | habl**emos** | com**amos** | viv**amos** | vamos, demos |
+| **vosotros** | habl**ad** | com**ed** | viv**id** | — |
+| **ustedes** | habl**en** | com**an** | viv**an** | sean, vayan |
+
+> ⚠️ **nosotros**: -AR → **-emos** (\`hablemos\`), -ER/-IR → **-amos** (\`comamos\`, \`vivamos\`). Not like present indicative (\`hablamos\` / \`comemos\`).
 
 ### Negative form (negativo) = Subjuntivo
-\`No **hables**\`, \`No **comas**\`, \`No **vengas**\`.
-Vosotros: \`No **habléis**\`, \`No **comáis**\`, \`No **viváis**\`.
+Always subjunctive + \`no\` before the verb:
+- \`No **hables**\`, \`No **comas**\`, \`No **vivas**\`
+- \`No **hablemos**\`, \`No **comamos**\`
+- Vosotros: \`No **habléis**\`, \`No **comáis**\`, \`No **viváis**\`
 
-### Special tú forms (affirmative)
+### Special tú forms (affirmative only)
 | Infinitive | tú |
 |---|---|
 | tener | ten |
@@ -1218,6 +1224,8 @@ Vosotros: \`No **habléis**\`, \`No **comáis**\`, \`No **viváis**\`.
 | decir | di |
 | ser | sé |
 | ir | ve |
+
+> 💡 Negatives drop the short forms: \`ten\` → \`no **tengas**\`, \`ve\` → \`no **vayas**\`.
 
 ### With pronouns
 In affirmative form, pronouns **attach** to the verb:
@@ -1231,19 +1239,25 @@ In negative — pronouns go **before**:
 
 ### Forma afirmativa
 
-| Persona | -AR | -ER/-IR | Irregulares frecuentes |
-|---|---|---|---|
-| tú | -a (habla) | -e (come) | ten, pon, ven, sal, haz |
-| usted | -e (hable) | -a (coma) | sea, vaya |
-| nosotros | -emos | -amos | vamos, demos |
-| vosotros | -ad (hablad) | -ed (comed) / **-id (vivid)** |  |
-| ustedes | -en (hablen) | -an (coman) |  |
+El imperativo de **tú / usted / nosotros / vosotros / ustedes** coincide con el **presente de subjuntivo** (excepto **tú** y **vosotros** afirmativos).
+
+| Persona | -AR | -ER | -IR | Irregulares frecuentes |
+|---|---|---|---|---|
+| **tú** | habl**a** | com**e** | viv**e** | ten, pon, ven, sal, haz, di, sé, ve |
+| **usted** | habl**e** | com**a** | viv**a** | sea, vaya, dé |
+| **nosotros** | habl**emos** | com**amos** | viv**amos** | vamos, demos |
+| **vosotros** | habl**ad** | com**ed** | viv**id** | — |
+| **ustedes** | habl**en** | com**an** | viv**an** | sean, vayan |
+
+> ⚠️ **nosotros**: -AR → **-emos** (\`hablemos\`), -ER/-IR → **-amos** (\`comamos\`, \`vivamos\`). No es como el presente de indicativo (\`hablamos\` / \`comemos\`).
 
 ### Forma negativa = Subjuntivo
-\`No **hables**\`, \`No **comas**\`, \`No **vengas**\`.
-Vosotros: \`No **habléis**\`, \`No **comáis**\`, \`No **viváis**\`.
+Siempre subjuntivo + \`no\` delante del verbo:
+- \`No **hables**\`, \`No **comas**\`, \`No **vivas**\`
+- \`No **hablemos**\`, \`No **comamos**\`
+- Vosotros: \`No **habléis**\`, \`No **comáis**\`, \`No **viváis**\`
 
-### Formas especiales tú (afirmativo)
+### Formas especiales tú (solo afirmativo)
 | Infinitivo | tú |
 |---|---|
 | tener | ten |
@@ -1254,6 +1268,8 @@ Vosotros: \`No **habléis**\`, \`No **comáis**\`, \`No **viváis**\`.
 | decir | di |
 | ser | sé |
 | ir | ve |
+
+> 💡 En negativo no se usan: \`ten\` → \`no **tengas**\`, \`ve\` → \`no **vayas**\`.
 
 ### Con pronombres
 En afirmativo, los pronombres **se unen** al verbo:
