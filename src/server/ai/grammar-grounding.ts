@@ -49,9 +49,14 @@ export function resolveGrammarGrounding(input: {
 Topic: ${topicTitle} (${best.topic.slug})
 Student interface language: ${iface} (${lang}).
 Teach and explain ONLY in ${iface}. Do NOT insert glosses from other interface languages (no Russian if interface is English, etc.).
+Never insert Chinese/Japanese/Korean characters into explanations.
 When you draw conjugation tables, use ONLY the forms from this article.
 Never mix moods (e.g. do not put subjuntivo endings in an imperativo afirmativo table).
-vosotros affirmative imperative of -ar verbs ends in **-ad** (hablad), NOT habléis / habláis.
+HARD LOCK — vosotros:
+- Imperativo **afirmativo**: habl**ad**, com**ed**, viv**id** (NEVER habléis / habláis / comáis / viváis).
+- Imperativo **negativo**: no habl**éis**, no com**áis**, no viv**áis**.
+- Presente indicativo: habl**áis** / com**éis** / viv**ís**.
+When stating the answer key, list ONLY correct forms. If the student made mistakes, do not praise as fully correct.
 
 ${clipped}`;
 }
@@ -186,4 +191,24 @@ function scoreTopic(topic: GrammarTopic, q: string): number {
   }
 
   return score;
+}
+
+/** Compact lock injected whenever the turn mentions Imperativo / commands. */
+export function spanishImperativoQuickLock(): string {
+  return `# SPANISH IMPERATIVO — HARD LOCK (copy exactly)
+AFIRMATIVO: tú habla/come/vive · usted hable/coma/viva · nosotros hablemos/comamos/vivamos · vosotros **hablad/comed/vivid** · ustedes hablen/coman/vivan
+NEGATIVO (= subjuntivo): no hables/comas/vivas · no hable/coma/viva · no hablemos/comamos/vivamos · no **habléis/comáis/viváis** · no hablen/coman/vivan
+NEVER list habléis/habláis/comáis as affirmative vosotros. NEVER list hables as usted Imperativo (that is tú subjuntivo / negativo).
+Feedback: if the student has mistakes, do not open with full praise — correct clearly, then show the clean paradigm.`;
+}
+
+export function queryMentionsImperativo(query: string): boolean {
+  const q = normalize(query);
+  return (
+    q.includes("imperativ") ||
+    q.includes("повелительн") ||
+    /\b(hablad|comed|vivid|hableis|hablais|comais)\b/.test(q) ||
+    (q.includes("vosotros") &&
+      (q.includes("habl") || q.includes("com") || q.includes("viv")))
+  );
 }

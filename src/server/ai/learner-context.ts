@@ -522,7 +522,7 @@ function formatTeacherPromptBlock(ctx: {
 activeCourse: ${ctx.activeCourse}
 targetLanguage: ${ctx.targetLanguage}
 interfaceLanguage: ${ctx.interfaceLanguage}
-CRITICAL: Speak to the student only in interfaceLanguage (${ctx.interfaceLanguage}). Never mix other UI languages into explanations.
+CRITICAL: Speak to the student only in interfaceLanguage (${ctx.interfaceLanguage}). Never mix other UI languages into explanations. Never insert Chinese/Japanese/Korean characters.
 currentLevel: ${ctx.currentLevel ?? "unknown"}
 currentChapter: ${ctx.currentChapter ?? "none"}
 completedChapters: ${ctx.completedChapters}/${ctx.totalChapters}

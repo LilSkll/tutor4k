@@ -228,9 +228,11 @@ export async function sendTutorMessage(input: {
   if (lastUser) {
     try {
       const course = await getCourse(resolvedCourseId);
-      const { resolveGrammarGrounding } = await import(
-        "@/server/ai/grammar-grounding"
-      );
+      const {
+        resolveGrammarGrounding,
+        queryMentionsImperativo,
+        spanishImperativoQuickLock,
+      } = await import("@/server/ai/grammar-grounding");
       grammarGrounding = resolveGrammarGrounding({
         course,
         query: lastUser.content,
@@ -257,6 +259,18 @@ export async function sendTutorMessage(input: {
           .filter(Boolean)
           .join("\n\n");
         if (!retrievedContext) retrievedContext = null;
+      }
+
+      // Extra Imperativo lock even on exercise turns (vosotros slips are common).
+      if (
+        resolvedCourseId === "spanish" &&
+        (queryMentionsImperativo(lastUser.content) ||
+          grammarGrounding?.toLowerCase().includes("imperativ"))
+      ) {
+        const lock = spanishImperativoQuickLock();
+        retrievedContext = retrievedContext
+          ? `${lock}\n\n${retrievedContext}`
+          : lock;
       }
     } catch (err) {
       console.warn("[tutor] retrieval failed:", (err as Error).message);
@@ -292,6 +306,20 @@ export async function sendTutorMessage(input: {
       }),
       provider: "static-grammar",
       model: "course-bank",
+    };
+  }
+
+  // Final safety net: CJK leaks + common Imperativo conjugation slips.
+  {
+    const { scrubScriptLeaks } = await import("@/server/ai/scrub-script-leaks");
+    const { scrubSpanishImperativoLeaks } = await import(
+      "@/server/ai/scrub-conjugation-leaks"
+    );
+    response = {
+      ...response,
+      content: scrubSpanishImperativoLeaks(
+        scrubScriptLeaks(response.content, language),
+      ),
     };
   }
   // --- Store in shared cache for other users (best-effort) ------------

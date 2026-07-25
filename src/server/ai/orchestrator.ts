@@ -16,6 +16,8 @@ import {
 import { getCourse } from "@/config/courses";
 import { isOffTopicForCourse } from "@/server/ai/prompts/domain-guard";
 import { getOffTopicRefusal } from "@/server/ai/prompts/refusals";
+import { scrubSpanishImperativoLeaks } from "@/server/ai/scrub-conjugation-leaks";
+import { scrubScriptLeaks } from "@/server/ai/scrub-script-leaks";
 
 // =====================================================================
 // AI Orchestrator
@@ -200,7 +202,13 @@ export async function generateAIResponse(
 
   for (const provider of chain) {
     try {
-      return await callWithRetry(provider, providerOptions);
+      const result = await callWithRetry(provider, providerOptions);
+      return {
+        ...result,
+        content: scrubSpanishImperativoLeaks(
+          scrubScriptLeaks(result.content, resolvedLanguage),
+        ),
+      };
     } catch (err) {
       errors.push(`${provider.name}: ${(err as Error).message}`);
     }
