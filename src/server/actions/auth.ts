@@ -309,9 +309,19 @@ export async function completeOnboarding(input: {
   }
 
   revalidatePath("/", "layout");
-  // Redirect to the first chapter matching the user's level.
-  // A B2 user starts at the B2 chapter, not A1.
-  const chapterSlug = getFirstChapterSlugForLevel(level);
+  // First unlocked chapter for the active course (never skip the prereq chain).
+  const { data: profileRow } = await supabase
+    .from("profiles")
+    .select("active_course_id")
+    .eq("id", user.id)
+    .maybeSingle();
+  const courseId = (profileRow?.active_course_id as string) ?? "spanish";
+  const { getCurrentChapterSlug } = await import("@/server/actions/data");
+  const { getCourse } = await import("@/config/courses");
+  const unlockedSlug = await getCurrentChapterSlug(courseId);
+  const course = await getCourse(courseId);
+  const chapterSlug =
+    unlockedSlug ?? course.getChapters()[0]?.slug ?? getFirstChapterSlugForLevel(level);
   redirect(`/chapters/${chapterSlug}`);
 }
 

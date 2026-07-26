@@ -1,5 +1,6 @@
 import type { ExerciseType, Level, StaticExercise } from "@/types";
 import { getCourse } from "@/config/courses";
+import { normalizeAnswer } from "@/lib/normalize-answer";
 import { getCourseLearningProfile } from "@/server/learning/student-profile";
 import { getExerciseProgressMap } from "@/server/learning/exercise-progress";
 import {
@@ -156,14 +157,11 @@ export function checkStaticExerciseAnswer(
   >,
   userAnswer: string,
 ): { correct: boolean; feedback: string } {
-  const norm = (s: string) =>
-    s.trim().toLowerCase().replace(/[¿?¡!.,]/g, "").replace(/\s+/g, " ");
-
-  const userNorm = norm(userAnswer);
+  const userNorm = normalizeAnswer(userAnswer);
   const acceptable = [
     exercise.answer,
     ...(exercise.acceptableAnswers ?? []),
-  ].map(norm);
+  ].map(normalizeAnswer);
 
   const correct = acceptable.includes(userNorm);
   return {

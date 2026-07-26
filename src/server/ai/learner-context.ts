@@ -1,5 +1,8 @@
 import { getCourse } from "@/config/courses";
-import { countCompletedForCourse } from "@/lib/chapter-display";
+import {
+  countCompletedForCourse,
+  hasCompletedPrereqChain,
+} from "@/lib/chapter-display";
 import {
   getChapterProgress,
   getExerciseHistory,
@@ -83,20 +86,31 @@ function resolveCurrentChapter(
 ): Chapter | null {
   if (chapters.length === 0) return null;
 
-  let start = 0;
+  const chaptersBySlug = new Map(chapters.map((c) => [c.slug, c]));
+  const unlockedIncomplete = chapters.filter(
+    (ch) =>
+      !completed.has(ch.slug) &&
+      hasCompletedPrereqChain(ch, chaptersBySlug, completed),
+  );
+
+  if (unlockedIncomplete.length === 0) {
+    return chapters[chapters.length - 1] ?? null;
+  }
+
+  // Soft preference: first unlocked chapter at/after the profile CEFR band.
   if (level) {
-    const firstForLevel = chapters.findIndex((c) => c.level === level);
-    if (firstForLevel >= 0) start = firstForLevel;
+    const preferred = unlockedIncomplete.find((c) => c.level === level);
+    if (preferred) return preferred;
+    const bandIdx = chapters.findIndex((c) => c.level === level);
+    if (bandIdx >= 0) {
+      const afterBand = unlockedIncomplete.find(
+        (c) => chapters.findIndex((x) => x.slug === c.slug) >= bandIdx,
+      );
+      if (afterBand) return afterBand;
+    }
   }
 
-  for (let i = start; i < chapters.length; i++) {
-    if (!completed.has(chapters[i].slug)) return chapters[i];
-  }
-
-  for (const ch of chapters) {
-    if (!completed.has(ch.slug)) return ch;
-  }
-  return chapters[chapters.length - 1] ?? null;
+  return unlockedIncomplete[0] ?? null;
 }
 
 function hashSeed(s: string): number {

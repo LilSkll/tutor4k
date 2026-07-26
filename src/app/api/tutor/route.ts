@@ -24,12 +24,15 @@ export async function GET() {
 
 /**
  * POST /api/tutor
- * Body: { messages: AIMessage[] }
+ * Body: { messages: AIMessage[], conversationId?: string | null }
  * Returns: { content, provider, conversationId }
  */
 export async function POST(req: NextRequest) {
   try {
-    const body = (await req.json()) as { messages?: AIMessage[] };
+    const body = (await req.json()) as {
+      messages?: AIMessage[];
+      conversationId?: string | null;
+    };
     const messages = body.messages;
 
     if (!Array.isArray(messages) || messages.length === 0) {
@@ -39,7 +42,10 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const result = await sendTutorMessage({ messages });
+    const result = await sendTutorMessage({
+      messages,
+      conversationId: body.conversationId ?? null,
+    });
     return NextResponse.json(result);
   } catch (err) {
     console.error("[/api/tutor]", err);

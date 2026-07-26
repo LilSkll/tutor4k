@@ -31,13 +31,20 @@ export default async function ChaptersMapPage() {
   const courseSlugs = CHAPTERS.map((c) => c.slug);
   const chaptersBySlug = new Map(CHAPTERS.map((c) => [c.slug, c]));
 
-  const statusMap = new Map<string, "completed" | "in_progress" | "locked">();
+  const statusMap = new Map<
+    string,
+    "completed" | "in_progress" | "available" | "locked"
+  >();
   const completedSlugs = new Set<string>();
 
   for (const p of progress) {
     if (p.chapter_slug && courseSlugs.includes(p.chapter_slug)) {
-      statusMap.set(p.chapter_slug, p.status as "completed" | "in_progress");
-      if (p.status === "completed") completedSlugs.add(p.chapter_slug);
+      if (p.status === "completed") {
+        statusMap.set(p.chapter_slug, "completed");
+        completedSlugs.add(p.chapter_slug);
+      } else if (p.status === "in_progress") {
+        statusMap.set(p.chapter_slug, "in_progress");
+      }
     }
   }
 
@@ -46,8 +53,22 @@ export default async function ChaptersMapPage() {
     if (!hasCompletedPrereqChain(ch, chaptersBySlug, completedSlugs)) {
       statusMap.set(ch.slug, "locked");
     } else if (!statusMap.has(ch.slug)) {
-      statusMap.set(ch.slug, "in_progress");
+      statusMap.set(ch.slug, "available");
     }
+  }
+
+  // Exactly one "current": first unlocked incomplete in curriculum order.
+  let currentSlug: string | null = null;
+  for (const ch of CHAPTERS) {
+    const st = statusMap.get(ch.slug);
+    if (st === "completed" || st === "locked") continue;
+    currentSlug = ch.slug;
+    break;
+  }
+  for (const ch of CHAPTERS) {
+    const st = statusMap.get(ch.slug);
+    if (st === "completed" || st === "locked") continue;
+    statusMap.set(ch.slug, ch.slug === currentSlug ? "in_progress" : "available");
   }
 
   const completedCount = countCompletedForCourse(completedSlugs, courseSlugs);

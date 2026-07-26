@@ -87,16 +87,18 @@ export function VocabularyClient({
 
   const deleteMutation = useMutation({
     mutationFn: async (id: string) => {
-      await fetch("/api/vocabulary", {
+      const res = await fetch("/api/vocabulary", {
         method: "DELETE",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ id }),
       });
+      if (!res.ok) throw new Error("Failed");
     },
     onSuccess: () => {
       qc.invalidateQueries({ queryKey: ["vocabulary"] });
       toast.success(t("vocabulary.toastDeleted"));
     },
+    onError: () => toast.error(t("vocabulary.toastDeleteFail")),
   });
 
   const filtered = words.filter(

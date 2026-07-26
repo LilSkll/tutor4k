@@ -203,11 +203,13 @@ export async function generateAIResponse(
   for (const provider of chain) {
     try {
       const result = await callWithRetry(provider, providerOptions);
+      let content = scrubScriptLeaks(result.content, resolvedLanguage);
+      if (courseId === "spanish") {
+        content = scrubSpanishImperativoLeaks(content);
+      }
       return {
         ...result,
-        content: scrubSpanishImperativoLeaks(
-          scrubScriptLeaks(result.content, resolvedLanguage),
-        ),
+        content,
       };
     } catch (err) {
       errors.push(`${provider.name}: ${(err as Error).message}`);

@@ -156,6 +156,20 @@ export default async function DashboardPage() {
   }
 
   const nextChapter = course.getNextChapter(currentChapter.slug);
+  const nextUnlocked =
+    nextChapter &&
+    hasCompletedPrereqChain(nextChapter, chaptersBySlug, completedSlugs)
+      ? nextChapter
+      : null;
+  // Show upcoming as preview only when it unlocks after finishing current.
+  const upcomingPreview =
+    nextChapter &&
+    !nextUnlocked &&
+    nextChapter.prereqChapter === currentChapter.slug
+      ? nextChapter
+      : null;
+  const upcomingChapter = nextUnlocked ?? upcomingPreview;
+  const upcomingLinked = Boolean(nextUnlocked);
   const totalCompleted = countCompletedForCourse(
     completedSlugs,
     courseChapterSlugs,
@@ -369,22 +383,36 @@ export default async function DashboardPage() {
         <Card className="card-hover">
           <CardContent className="p-4 sm:p-5 space-y-3">
             <p className="meta-label">{t("dashboard.upcoming")}</p>
-            {nextChapter ? (
-              <Link
-                href={`/chapters/${nextChapter.slug}`}
-                className="flex items-center gap-3 group"
-              >
-                <span className="text-3xl">{nextChapter.icon}</span>
-                <div className="flex-1 min-w-0">
-                  <p className="font-semibold truncate group-hover:text-primary transition-colors">
-                    {getChapterTitle(nextChapter, lang)}
-                  </p>
-                  <p className="text-xs text-muted-foreground truncate">
-                    {nextChapter.titleEs} · {nextChapter.level}
-                  </p>
+            {upcomingChapter ? (
+              upcomingLinked ? (
+                <Link
+                  href={`/chapters/${upcomingChapter.slug}`}
+                  className="flex items-center gap-3 group"
+                >
+                  <span className="text-3xl">{upcomingChapter.icon}</span>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-semibold truncate group-hover:text-primary transition-colors">
+                      {getChapterTitle(upcomingChapter, lang)}
+                    </p>
+                    <p className="text-xs text-muted-foreground truncate">
+                      {upcomingChapter.titleEs} · {upcomingChapter.level}
+                    </p>
+                  </div>
+                  <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                </Link>
+              ) : (
+                <div className="flex items-center gap-3 opacity-70">
+                  <span className="text-3xl">{upcomingChapter.icon}</span>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-semibold truncate">
+                      {getChapterTitle(upcomingChapter, lang)}
+                    </p>
+                    <p className="text-xs text-muted-foreground truncate">
+                      {upcomingChapter.titleEs} · {upcomingChapter.level}
+                    </p>
+                  </div>
                 </div>
-                <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-              </Link>
+              )
             ) : (
               <p className="text-sm text-muted-foreground">
                 {t("dashboard.final")}
@@ -422,8 +450,8 @@ export default async function DashboardPage() {
               {t("dashboard.journeyDesc", {
                 completed: totalCompleted,
                 total: totalChapters,
-                next: nextChapter
-                  ? getChapterTitle(nextChapter, lang)
+                next: upcomingChapter
+                  ? getChapterTitle(upcomingChapter, lang)
                   : t("dashboard.final"),
               })}
             </p>

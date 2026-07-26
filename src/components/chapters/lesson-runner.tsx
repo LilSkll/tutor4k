@@ -29,6 +29,7 @@ import {
 } from "@/lib/chapter-display";
 import { translate } from "@/lib/i18n";
 import { SESSION_EXERCISES } from "@/lib/exercise-bank";
+import { normalizeAnswer, scorePercent } from "@/lib/normalize-answer";
 import { formatBankTutorFeedback } from "@/lib/tutor-feedback";
 import { getLessonAdaptationAction } from "@/server/actions/learning-profile";
 import type { GrammarTopic, StaticExercise } from "@/types";
@@ -121,6 +122,7 @@ export function LessonRunner({
   /** Cursor into the chapter bank for successive rounds of SESSION_EXERCISES. */
   const [bankCursor, setBankCursor] = React.useState(0);
   const [theoryPageIdx, setTheoryPageIdx] = React.useState(0);
+  const [finishError, setFinishError] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     let cancelled = false;
@@ -230,7 +232,7 @@ export function LessonRunner({
 
   const checkAnswer = async () => {
     const ex = exercises[currentExerciseIdx];
-    if (!ex) return;
+    if (!ex || loading || result) return;
     const answer = (selectedOption ?? userAnswer).trim();
     if (!answer) return;
 
@@ -274,10 +276,10 @@ export function LessonRunner({
       setLoading(false);
     }
 
-    const norm = (s: string) =>
-      s.trim().toLowerCase().replace(/[¿?¡!.,]/g, "").replace(/\s+/g, " ");
-    const userNorm = norm(answer);
-    const acceptable = [ex.answer, ...(ex.acceptableAnswers ?? [])].map(norm);
+    const userNorm = normalizeAnswer(answer);
+    const acceptable = [ex.answer, ...(ex.acceptableAnswers ?? [])].map(
+      normalizeAnswer,
+    );
     const isCorrect = acceptable.includes(userNorm);
     setResult({
       correct: isCorrect,
@@ -333,8 +335,8 @@ export function LessonRunner({
         body: JSON.stringify({ messages: [{ role: "user", content: question }] }),
       });
       if (!res.ok) throw new Error("Failed");
-      const data = await res.json();
-      setDialogueResponse(data.content);
+      const data = (await res.json()) as { content?: string };
+      setDialogueResponse(data.content?.trim() || t("lesson.tutorError"));
     } catch {
       setDialogueResponse(t("lesson.tutorError"));
     } finally {
@@ -343,25 +345,37 @@ export function LessonRunner({
   };
 
   const finishChapter = async () => {
+    if (loading) return;
     setLoading(true);
+    setFinishError(null);
     try {
       const estWords = chapter.vocabTopic ? 5 + Math.floor(Math.random() * 5) : 3;
       setWordsLearned(estWords);
+      const percent = scorePercent(score, exercisesCompleted);
 
-      await fetch("/api/chapters/complete", {
+      const res = await fetch("/api/chapters/complete", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           chapterSlug: chapter.slug,
-          score,
+          score: percent,
           wordsLearned: estWords,
           exercisesCompleted,
         }),
       });
 
+      if (!res.ok) {
+        const body = (await res.json().catch(() => null)) as {
+          error?: string;
+        } | null;
+        setFinishError(body?.error || t("lesson.finishError"));
+        return;
+      }
+
       setPhase("summary");
+      router.refresh();
     } catch {
-      setPhase("summary");
+      setFinishError(t("lesson.finishError"));
     } finally {
       setLoading(false);
     }
@@ -472,8 +486,8 @@ export function LessonRunner({
                 />
               )}
               <Button variant="gradient" className="w-full" onClick={checkAnswer}
-                disabled={hasOptions ? !selectedOption : !userAnswer.trim()}>
-                <Check className="h-4 w-4" />
+                disabled={loading || (hasOptions ? !selectedOption : !userAnswer.trim())}>
+                {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Check className="h-4 w-4" />}
                 {t("lesson.check")}
               </Button>
             </CardContent>
@@ -700,9 +714,12 @@ export function LessonRunner({
                 })}
               </Button>
             )}
+            {finishError && (
+              <p className="text-sm text-destructive text-center">{finishError}</p>
+            )}
             <Button variant="outline" className="w-full" onClick={finishChapter} disabled={loading}>
-              <Check className="h-4 w-4" />
-              {t("lesson.finishChapter")}
+              {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Check className="h-4 w-4" />}
+              {finishError ? t("lesson.retryFinish") : t("lesson.finishChapter")}
             </Button>
           </CardContent>
         </Card>

@@ -33,6 +33,8 @@ export function TutorChat() {
   const addMessage = useChatStore((s) => s.addMessage);
   const setMessages = useChatStore((s) => s.setMessages);
   const setStreaming = useChatStore((s) => s.setStreaming);
+  const conversationId = useChatStore((s) => s.conversationId);
+  const setConversationId = useChatStore((s) => s.setConversationId);
   const clear = useChatStore((s) => s.clear);
   const language = useUIStore((s) => s.interfaceLanguage);
   const activeCourseId = useUIStore((s) => s.activeCourseId);
@@ -131,14 +133,30 @@ export function TutorChat() {
       const res = await fetch("/api/tutor", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: history }),
+        body: JSON.stringify({
+          messages: history,
+          conversationId,
+        }),
       });
-      const data = await res.json();
+      const data = (await res.json().catch(() => ({}))) as {
+        content?: string;
+        conversationId?: string;
+        error?: string;
+      };
+
+      if (data.conversationId) {
+        setConversationId(data.conversationId);
+      }
+
+      const content =
+        res.ok && data.content?.trim()
+          ? data.content
+          : t("tutor.error");
 
       setMessages([
         ...messages,
         userMsg,
-        { ...placeholder, content: data.content },
+        { ...placeholder, content },
       ]);
     } catch {
       setMessages([

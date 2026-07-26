@@ -22,6 +22,7 @@ import type {
   InterfaceLanguage,
   Level,
 } from "@/types";
+import { normalizeAnswer } from "@/lib/normalize-answer";
 import { recordStudySession } from "@/server/actions/data";
 
 // =====================================================================
@@ -309,17 +310,19 @@ export async function sendTutorMessage(input: {
     };
   }
 
-  // Final safety net: CJK leaks + common Imperativo conjugation slips.
+  // Final safety net: CJK leaks + common Imperativo conjugation slips (Spanish only).
   {
     const { scrubScriptLeaks } = await import("@/server/ai/scrub-script-leaks");
-    const { scrubSpanishImperativoLeaks } = await import(
-      "@/server/ai/scrub-conjugation-leaks"
-    );
+    let content = scrubScriptLeaks(response.content, language);
+    if (resolvedCourseId === "spanish") {
+      const { scrubSpanishImperativoLeaks } = await import(
+        "@/server/ai/scrub-conjugation-leaks"
+      );
+      content = scrubSpanishImperativoLeaks(content);
+    }
     response = {
       ...response,
-      content: scrubSpanishImperativoLeaks(
-        scrubScriptLeaks(response.content, language),
-      ),
+      content,
     };
   }
   // --- Store in shared cache for other users (best-effort) ------------
@@ -578,9 +581,7 @@ function sanitizeExercise(
   // Multiple choice: guarantee the answer is among the options.
   if (type === "multiple_choice" && ex.options && ex.options.length > 0) {
     const opts = ex.options.map((o) => o.trim());
-    const norm = (s: string) =>
-      s.trim().toLowerCase().replace(/[¿?¡!.,]/g, "");
-    const exists = opts.some((o) => norm(o) === norm(answer));
+    const exists = opts.some((o) => normalizeAnswer(o) === normalizeAnswer(answer));
     if (!exists) {
       // Force-insert the correct answer, replacing a random wrong option.
       const idx = Math.floor(Math.random() * opts.length);
@@ -590,7 +591,7 @@ function sanitizeExercise(
     const seen = new Set<string>();
     const deduped: string[] = [];
     for (const o of opts) {
-      const key = norm(o);
+      const key = normalizeAnswer(o);
       if (!seen.has(key)) {
         seen.add(key);
         deduped.push(o);
@@ -648,14 +649,11 @@ export async function checkExerciseAnswer(input: {
   const courseId = input.courseId ?? "spanish";
   const course = await getCourse(courseId);
 
-  const normalized = (s: string) =>
-    s.trim().toLowerCase().replace(/[¿?¡!.,]/g, "").replace(/\s+/g, " ");
-
-  const userNorm = normalized(input.userAnswer);
+  const userNorm = normalizeAnswer(input.userAnswer);
   const acceptable = [
     input.exercise.answer,
     ...(input.exercise.acceptableAnswers ?? []),
-  ].map(normalized);
+  ].map(normalizeAnswer);
 
   // Fast path: exact / normalized match.
   if (acceptable.includes(userNorm)) {

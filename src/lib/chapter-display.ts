@@ -880,7 +880,7 @@ export function hasCompletedPrereqChain(
   let slug = chapter.prereqChapter;
   const seen = new Set<string>();
   while (slug) {
-    if (seen.has(slug)) break;
+    if (seen.has(slug)) return false;
     seen.add(slug);
     if (!completedSlugs.has(slug)) return false;
     slug = chaptersBySlug.get(slug)?.prereqChapter;
