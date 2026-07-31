@@ -6,6 +6,8 @@
 export type Level = "A1" | "A2" | "B1" | "B2" | "C1";
 /** Extended CEFR level including C2 for advanced vocabulary entries. */
 export type VocabLevel = Level | "C2";
+/** Grammar reference level — includes C2 for advanced style/register topics. */
+export type GrammarLevel = Level | "C2";
 
 /** Onboarding "I don't know my level" placeholder. */
 export type LevelOrUnknown = Level | "UNKNOWN";
@@ -185,11 +187,13 @@ export interface GrammarTopic {
   slug: string;
   title: string;
   titleEs: string;
-  level: Level;
+  level: GrammarLevel;
   category: string;
   summary: string;
   /** Markdown reference content. */
   content: string;
+  /** Exam tag (e.g. "DELE") — topic shows up in the exam filter group. */
+  exam?: string;
 }
 
 // ----- Streak / daily stats ------------------------------------------

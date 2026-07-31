@@ -20,15 +20,16 @@ import {
   getGrammarTopicTitle,
 } from "@/lib/grammar-display";
 import { translate } from "@/lib/i18n";
-import type { GrammarTopic, Level } from "@/types";
+import type { GrammarLevel, GrammarTopic } from "@/types";
 import { cn } from "@/lib/utils";
 
-const LEVEL_COLORS: Record<Level, string> = {
+const LEVEL_COLORS: Record<GrammarLevel, string> = {
   A1: "from-green-500/15 to-emerald-500/15 text-green-600 dark:text-green-400",
   A2: "from-teal-500/15 to-cyan-500/15 text-teal-600 dark:text-teal-400",
   B1: "from-blue-500/15 to-indigo-500/15 text-blue-600 dark:text-blue-400",
   B2: "from-violet-500/15 to-purple-500/15 text-violet-600 dark:text-violet-400",
   C1: "from-rose-500/15 to-orange-500/15 text-rose-600 dark:text-rose-400",
+  C2: "from-amber-500/15 to-yellow-500/15 text-amber-600 dark:text-amber-400",
 };
 
 export function GrammarExplorer({
@@ -36,7 +37,7 @@ export function GrammarExplorer({
   topics,
   courseId,
 }: {
-  initialLevel?: Level;
+  initialLevel?: GrammarLevel;
   topics: GrammarTopic[];
   courseId: string;
 }) {
@@ -46,8 +47,14 @@ export function GrammarExplorer({
   const t = (key: string, vars?: Record<string, string | number>) =>
     translate(key, language, vars);
 
-  const [activeLevel, setActiveLevel] = React.useState<Level | "ALL">(
-    initialLevel ?? "ALL",
+  const [activeLevel, setActiveLevel] = React.useState<
+    GrammarLevel | "ALL" | "EXAM"
+  >(initialLevel ?? "ALL");
+
+  // Exam group (e.g. DELE) — shown as its own filter chip when present.
+  const examName = React.useMemo(
+    () => topics.find((topic) => topic.exam)?.exam ?? null,
+    [topics],
   );
 
   const topicSlug = searchParams.get("topic");
@@ -66,7 +73,9 @@ export function GrammarExplorer({
   const filtered =
     activeLevel === "ALL"
       ? topics
-      : topics.filter((topic) => topic.level === activeLevel);
+      : activeLevel === "EXAM"
+        ? topics.filter((topic) => Boolean(topic.exam))
+        : topics.filter((topic) => topic.level === activeLevel);
 
   if (topics.length === 0) {
     return (
@@ -83,7 +92,7 @@ export function GrammarExplorer({
         >
           {t("grammar.allChip")}
         </FilterChip>
-        {(["A1", "A2", "B1", "B2", "C1"] as Level[]).map((lvl) => (
+        {(["A1", "A2", "B1", "B2", "C1", "C2"] as GrammarLevel[]).map((lvl) => (
           <FilterChip
             key={lvl}
             active={activeLevel === lvl}
@@ -92,6 +101,14 @@ export function GrammarExplorer({
             {lvl}
           </FilterChip>
         ))}
+        {examName && (
+          <FilterChip
+            active={activeLevel === "EXAM"}
+            onClick={() => setActiveLevel("EXAM")}
+          >
+            🎓 {examName}
+          </FilterChip>
+        )}
       </div>
 
       <div className="grid gap-3 md:grid-cols-2">

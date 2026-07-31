@@ -46,6 +46,7 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Ser y Estar",
     level: "A1",
     category: "Глаголы",
+    exam: "DELE",
     summary: "Два глагола «быть»: постоянные характеристики vs состояния; приветствия и знакомство.",
     content: `## Saludos y presentaciones
 
@@ -504,6 +505,7 @@ hoy, esta semana, este año, ya, todavía no, nunca, alguna vez.
     titleEs: "Pretérito Indefinido",
     level: "A2",
     category: "Прошедшие времена",
+    exam: "DELE",
     summary: "Завершённое в прошлом: «сделал(а)» в конкретный момент.",
     content: `## Pretérito Indefinido (простое прошедшее)
 
@@ -549,6 +551,7 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Pretérito Imperfecto",
     level: "A2",
     category: "Прошедшие времена",
+    exam: "DELE",
     summary: "Описание фона в прошлом: привычки, описания, длительные действия.",
     content: `## Pretérito Imperfecto — фон прошлого
 
@@ -588,6 +591,7 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Por y Para",
     level: "A2",
     category: "Предлоги",
+    exam: "DELE",
     summary: "Два предлога «за/для» — главная трудность испанского.",
     content: `## POR vs PARA — оба переводятся по-разному
 
@@ -720,6 +724,7 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Modo Subjuntivo (Presente)",
     level: "B1",
     category: "Наклонения",
+    exam: "DELE",
     summary: "Сослагательное наклонение для желаний, сомнений, эмоций.",
     content: `## Modo Subjuntivo — Presente
 
@@ -758,6 +763,7 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Modo Imperativo",
     level: "B1",
     category: "Наклонения",
+    exam: "DELE",
     summary: "Повелительное наклонение: приказы, просьбы, советы.",
     content: `## Imperativo
 
@@ -1093,6 +1099,7 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Estilo Indirecto (Reported Speech)",
     level: "B2",
     category: "Синтаксис",
+    exam: "DELE",
     summary: "Косвенная речь: передача чужих слов и мыслей.",
     content: `## Estilo Indirecto (косвенная речь)
 
@@ -1302,6 +1309,7 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Conectores Discursivos",
     level: "B2",
     category: "Синтаксис",
+    exam: "DELE",
     summary: "además, sin embargo, por lo tanto — логические связки для связной речи.",
     content: `## Коннекторы (conectores discursivos)
 
@@ -1624,8 +1632,8 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
   {
     slug: "c2-ironia-registry",
     title: "Ирония и регистр",
-    titleEs: "Ironía y Registro (C2)",
-    level: "C1",
+    titleEs: "Ironía y Registro",
+    level: "C2",
     category: "Стилистика",
     summary: "Ироничное сослагательное, формальный/неформальный регистр, речевые тактики.",
     content: `## Ирония и регистр (C1-C2)
@@ -1671,6 +1679,302 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
 
 > 💡 C2 = способность **менять регистр** мгновенно, понимать иронию и
 > использовать сарказм через грамматику (особенно subjuntivo).`,
+  },
+  {
+    slug: "c2-oraciones-hendidas",
+    title: "Эмфаза: выделительные конструкции",
+    titleEs: "Oraciones Hendidas y Énfasis",
+    level: "C2",
+    category: "Синтаксис",
+    summary: "Oraciones hendidas: «Fue Juan quien…», «Lo que necesito es…» — фокус и выделение.",
+    content: `## Выделительные конструкции (oraciones hendidas)
+
+Носители «раскалывают» предложение, чтобы **выделить** нужный элемент.
+
+### SER + QUE / QUIEN / DONDE / CUANDO
+
+| Выделяем | Конструкция | Пример |
+|---|---|---|
+| Лицо | \`Fue X quien…\` | \`**Fue Juan quien** rompió el vaso.\` — Это Хуан разбил стакан. |
+| Место | \`Es en X donde…\` | \`**Es en Madrid donde** vive.\` — Именно в Мадриде он живёт. |
+| Время | \`Fue X cuando…\` | \`**Fue ayer cuando** lo supe.\` — Именно вчера я это узнал. |
+| Причина | \`Es por X por lo que…\` | \`**Es por eso por lo que** me fui.\` — Именно поэтому я ушёл. |
+
+> ⚠️ Предлог **повторяется**: \`Es **con** ella **con** quien quiero hablar.\` (не \`*Es con ella que…\` — калька с французского, в культурной норме избегается)
+
+### LO QUE — выделение действия/объекта
+- \`**Lo que** necesito **es** dormir.\` — Что мне нужно — так это выспаться.
+- \`**Lo que** me molesta **es** el ruido.\` — Что меня раздражает — так это шум.
+
+### Согласование времени SER
+\`**Fue** ayer **cuando**…\` / \`**Es** ahora **cuando**…\` — ser согласуется со временем события.
+
+### Разговорная эмфаза
+- \`¡Vaya coche que se ha comprado!\` — Ну и машину он купил!
+- \`De tonto no tiene un pelo.\` — Дураком его точно не назовёшь.
+- Дублирование: \`Saber, sé; pero no te lo diré.\` — Знать-то знаю, но не скажу.
+
+> 💡 На DELE C2 выделительные конструкции — маркер свободного письма и речи.`,
+  },
+  {
+    slug: "c2-conjetura-rumor",
+    title: "Догадка и слухи: futuro y condicional",
+    titleEs: "Futuro de Conjetura y Condicional de Rumor",
+    level: "C2",
+    category: "Глаголы",
+    summary: "«Serán las diez» — наверное, десять. «Habría mil personas» — по сообщениям, около тысячи.",
+    content: `## Futuro de conjetura и condicional de rumor
+
+Будущее и условное время в испанском выражают не только время — они кодируют **степень уверенности**.
+
+### Futuro de conjetura — догадка о настоящем
+| Факт | Догадка |
+|---|---|
+| \`Son las diez.\` — Сейчас десять. | \`**Serán** las diez.\` — Наверное, часов десять. |
+| \`Está en casa.\` | \`**Estará** en casa.\` — Должно быть, он дома. |
+| \`Tiene 40 años.\` | \`**Tendrá** unos 40 años.\` — Ему лет сорок. |
+
+Futuro perfecto — догадка о недавнем прошлом:
+- \`**Habrá salido** ya.\` — Наверное, он уже ушёл.
+
+### Condicional de conjetura — догадка о прошлом
+- \`**Serían** las dos cuando llegó.\` — Было, наверное, часа два, когда он пришёл.
+- \`**Tendría** veinte años entonces.\` — Ему тогда было лет двадцать.
+
+### Condicional de rumor — язык прессы
+Передаёт **неподтверждённую информацию** (журналистский стиль):
+- \`El presidente **habría aceptado** el acuerdo.\` — Президент, по сообщениям, принял соглашение.
+- \`**Habría** unas mil personas en la plaza.\` — На площади было около тысячи человек (по оценкам).
+
+### Синонимичные модальные конструкции
+| Уверенность | Конструкция | Пример |
+|---|---|---|
+| ~90% | \`deber de + inf\` | \`**Debe de** estar en casa.\` |
+| ~50% | \`poder + inf\` | \`**Puede** estar en casa.\` |
+| догадка | futuro/condicional | \`**Estará** en casa.\` |
+
+> ⚠️ \`deber de + inf\` = вероятность; \`deber + inf\` = долженствование: \`Debes estudiar\` — ты должен учиться.
+
+> 💡 Услышал futuro там, где логично настоящее? Это не про будущее — это «наверное».`,
+  },
+  {
+    slug: "c2-estilo-culto",
+    title: "Книжный стиль: абсолютные конструкции",
+    titleEs: "Estilo Culto: Construcciones Absolutas",
+    level: "C2",
+    category: "Стилистика",
+    summary: "Participio absoluto («Terminada la reunión…»), gerundio absoluto, номинализация — письменный регистр.",
+    content: `## Книжный стиль: абсолютные конструкции и номинализация
+
+Приёмы **письменного / формального** испанского: пресса, эссе, DELE C2.
+
+### Participio absoluto
+Причастие + существительное заменяют целое придаточное:
+- \`**Terminada la reunión**, todos se fueron.\` = Cuando terminó la reunión…
+- \`**Dicho esto**, pasemos al siguiente punto.\` — Сказав это, перейдём к следующему пункту.
+- \`**Una vez firmado el contrato**, no hay vuelta atrás.\` — После подписания контракта пути назад нет.
+
+> ⚠️ Причастие **согласуется**: \`Terminad**a** la reunión\`, \`Firmad**os** los documentos\`.
+
+### Gerundio absoluto
+Со своим собственным субъектом:
+- \`**Estando yo en Madrid**, ocurrió todo.\` — Пока я был в Мадриде, всё и произошло.
+- \`**Siendo esto así**, no hay más que hablar.\` — Раз так, говорить больше не о чем.
+
+### Номинализация — сущность вместо глагола
+| Разговорно | Книжно |
+|---|---|
+| \`Cuando llegó el tren…\` | \`**A la llegada del** tren…\` |
+| \`Antes de que salgamos…\` | \`**Antes de nuestra salida**…\` |
+| \`Porque aumentaron los precios…\` | \`**Debido al aumento de** los precios…\` |
+
+### Культурные коннекторы
+- \`No obstante\` — тем не менее (формальнее, чем \`sin embargo\`)
+- \`Asimismo\` — равным образом
+- \`Por consiguiente\` — следовательно
+- \`En aras de\` — ради, во имя
+- \`Si bien\` — хотя (книжное \`aunque\`)
+- \`Cabe señalar que…\` — следует отметить, что…
+
+### Пассивная и безличная окраска
+- \`Se procederá a la evaluación de…\` — будет проведена оценка…
+- \`Queda prohibido fumar.\` — курение запрещено (queda + participio)
+- \`Resulta imprescindible…\` — представляется необходимым…
+
+> 💡 C2 — это умение **переключать регистр**: одно и то же сказать в баре и в министерстве.`,
+  },
+  // ----- DELE — экзаменационные темы ---------------------------------
+  {
+    slug: "dele-contraste-pasados",
+    title: "DELE: контраст прошедших времён",
+    titleEs: "DELE: Contraste de Pasados",
+    level: "B1",
+    category: "Подготовка к DELE",
+    exam: "DELE",
+    summary: "Indefinido vs Imperfecto vs Perfecto vs Pluscuamperfecto — ловушка №1 на DELE.",
+    content: `## Контраст прошедших времён — ловушка №1 на DELE
+
+В заданиях DELE (Comprensión de lectura, tarea de huecos) чаще всего проверяют выбор между четырьмя прошедшими.
+
+### Шпаргалка выбора
+
+| Вопрос к действию | Время | Пример |
+|---|---|---|
+| Что произошло? (событие, толчок сюжета) | **Indefinido** | \`Ayer **vi** a Marta.\` |
+| Что было вокруг? (фон, привычка, описание) | **Imperfecto** | \`**Hacía** frío y **llovía**.\` |
+| Связано с настоящим / период не закрыт | **Perfecto** | \`**He visto** a Marta esta mañana.\` |
+| Раньше другого прошлого | **Pluscuamperfecto** | \`Cuando llegué, ya **se había ido**.\` |
+
+### Маркеры-подсказки (учить наизусть)
+- **Indefinido:** \`ayer\`, \`anoche\`, \`el año pasado\`, \`en 2010\`, \`de repente\`, \`entonces\`
+- **Imperfecto:** \`antes\`, \`siempre\`, \`cada día\`, \`de niño\`, \`mientras\`, \`todos los veranos\`
+- **Perfecto:** \`hoy\`, \`esta semana\`, \`este año\`, \`ya\`, \`todavía no\`, \`alguna vez\`, \`nunca (en mi vida)\`
+- **Pluscuamperfecto:** \`ya… cuando\`, \`antes de que\`, \`nunca hasta entonces\`
+
+### Классическая экзаменационная связка
+\`**Estaba** duchándome **cuando** **sonó** el teléfono.\`
+Фон (imperfecto) + событие (indefinido) — эту пару DELE спрашивает почти всегда.
+
+### Смена смысла от времени
+| Imperfecto | Indefinido |
+|---|---|
+| \`**Conocía** a Juan.\` — был знаком | \`**Conocí** a Juan.\` — познакомился |
+| \`**Sabía** la verdad.\` — знал | \`**Supe** la verdad.\` — узнал |
+| \`**Quería** salir.\` — хотел | \`**Quise** salir.\` — попытался |
+| \`No **quería** ir.\` — не хотел | \`No **quiso** ir.\` — отказался |
+
+> 💡 Испания vs Лат. Америка: в Испании \`esta mañana **he visto**\`, в большинстве стран Америки — \`esta mañana **vi**\`. DELE принимает обе нормы, но будь последователен.`,
+  },
+  {
+    slug: "dele-carta-formal",
+    title: "DELE: формальное и неформальное письмо",
+    titleEs: "DELE: Carta Formal e Informal",
+    level: "B1",
+    category: "Подготовка к DELE",
+    exam: "DELE",
+    summary: "Формулы письма для Expresión escrita: обращения, вежливые просьбы, прощания.",
+    content: `## Письмо на DELE (Expresión e interacción escritas)
+
+В письменной части почти всегда есть письмо/e-mail. Оценивают **регистр** — формулы должны соответствовать адресату.
+
+### Формальное письмо
+
+| Блок | Формулы |
+|---|---|
+| Обращение | \`Estimado señor / Estimada señora:\` · \`Muy señores míos:\` · \`A quien corresponda:\` |
+| Причина письма | \`Le escribo para + inf…\` · \`Me dirijo a usted con motivo de…\` · \`Me pongo en contacto con ustedes para…\` |
+| Просьба | \`Le agradecería que + subjuntivo imperfecto\` (\`…que me **enviara** más información\`) · \`¿Podría + inf…?\` · \`Le ruego (que) + subj\` |
+| Жалоба | \`Me veo obligado/a a expresar mi malestar por…\` · \`Quisiera presentar una reclamación…\` |
+| Завершение | \`A la espera de su respuesta, …\` · \`Sin otro particular, …\` · \`Le agradezco de antemano su atención.\` |
+| Прощание | \`Atentamente,\` · \`Un cordial saludo,\` · \`Reciba un cordial saludo,\` |
+
+> ⚠️ Всё письмо — на **usted/ustedes**. Один «tú» в формальном письме = снижение балла за adecuación.
+
+### Неформальное письмо
+
+| Блок | Формулы |
+|---|---|
+| Обращение | \`¡Hola, Ana!\` · \`Querido Pablo:\` |
+| Начало | \`¿Qué tal estás? Espero que todo te vaya bien.\` · \`¡Cuánto tiempo sin saber de ti!\` |
+| Тело | \`Te escribo porque…\` · \`¿Sabes qué? Resulta que…\` · \`Por cierto, …\` |
+| Завершение | \`Bueno, te dejo, que…\` · \`Escríbeme pronto.\` · \`Dale recuerdos a tu familia.\` |
+| Прощание | \`Un abrazo,\` · \`Un beso,\` · \`Hasta pronto,\` |
+
+### Грамматика вежливости (поднимает балл)
+- Condicional: \`**Querría** saber si…\` / \`**Me gustaría** + inf\`
+- Imperfecto de cortesía: \`**Quería** pedirle un favor.\`
+- \`Le agradecería que me **informara**…\` — condicional + subjuntivo imperfecto = высший пилотаж B2.
+
+> 💡 Выучи скелет письма наизусть — на экзамене останется только вставить содержание.`,
+  },
+  {
+    slug: "dele-conectores-redaccion",
+    title: "DELE: коннекторы для эссе",
+    titleEs: "DELE: Conectores para la Redacción",
+    level: "B2",
+    category: "Подготовка к DELE",
+    exam: "DELE",
+    summary: "Скелет redacción: en primer lugar, no obstante, en definitiva + мнение с indicativo/subjuntivo.",
+    content: `## Коннекторы для redacción (Expresión escrita B2–C1)
+
+Оценка за **coherencia** напрямую зависит от связок. Вот рабочий скелет эссе.
+
+### Структура текста
+
+| Функция | Коннекторы |
+|---|---|
+| Начало | \`En primer lugar\` · \`Para empezar\` · \`Hoy en día\` · \`Es un hecho que…\` |
+| Добавление | \`Además\` · \`Asimismo\` · \`Cabe añadir que\` · \`No solo…, sino también…\` |
+| Противопоставление | \`Sin embargo\` · \`No obstante\` · \`Ahora bien\` · \`Por el contrario\` · \`A pesar de que\` |
+| Две стороны | \`Por un lado…, por otro (lado)…\` · \`En cuanto a…\` · \`Respecto a…\` |
+| Причина | \`Debido a\` · \`Puesto que\` · \`Dado que\` · \`Ya que\` |
+| Следствие | \`Por lo tanto\` · \`Por consiguiente\` · \`De ahí que + subj\` · \`Así pues\` |
+| Пример | \`Por ejemplo\` · \`Como muestra\` · \`Un claro ejemplo de ello es…\` |
+| Вывод | \`En definitiva\` · \`En conclusión\` · \`Para concluir\` · \`En resumen\` |
+
+### Выражение мнения: indicativo или subjuntivo?
+
+| Конструкция | Наклонение | Пример |
+|---|---|---|
+| \`Creo que / Pienso que\` | **indicativo** | \`Creo que **es** útil.\` |
+| \`No creo que / Dudo que\` | **subjuntivo** | \`No creo que **sea** útil.\` |
+| \`Es evidente / cierto que\` | **indicativo** | \`Es evidente que **funciona**.\` |
+| \`Es importante / necesario que\` | **subjuntivo** | \`Es importante que se **regule**.\` |
+| \`(No) me parece que\` | ind. / **subj.** | \`No me parece que **tenga** sentido.\` |
+
+### Ловушки, за которые снимают баллы
+- \`De ahí que\` — **всегда subjuntivo**: \`De ahí que **sea** necesario actuar.\`
+- \`A pesar de **que** + verbo\`, но \`a pesar de + inf/sust\`.
+- Не повторяй \`pero\` — чередуй \`sin embargo / no obstante / ahora bien\`.
+
+> 💡 Формула абзаца B2: коннектор → тезис → аргумент → пример. Четыре абзаца — и структура готова.`,
+  },
+  {
+    slug: "dele-expresion-oral",
+    title: "DELE: устная часть",
+    titleEs: "DELE: Expresión Oral",
+    level: "B2",
+    category: "Подготовка к DELE",
+    exam: "DELE",
+    summary: "Описание фото, гипотезы (futuro de conjetura), мнение, согласие/несогласие, слова-заполнители.",
+    content: `## Устная часть DELE (Expresión e interacción orales)
+
+### Описание фотографии (tarea clásica)
+Локация на фото:
+- \`En primer plano se ve…\` — на переднем плане видно…
+- \`Al fondo hay…\` — на заднем плане…
+- \`A la derecha / izquierda aparece…\`
+
+Гипотезы — экзаменатор ждёт **futuro de conjetura**:
+- \`**Será** su madre.\` — Наверное, это его мать.
+- \`**Tendrán** unos treinta años.\` — Им лет тридцать.
+- \`**Estarán** celebrando algo.\` — Похоже, они что-то празднуют.
+- \`Parece que + indicativo\` / \`Puede que + **subjuntivo**\` (\`Puede que **sean** amigos.\`)
+
+### Мнение и оценка
+- \`Desde mi punto de vista…\` · \`A mi modo de ver…\` · \`En mi opinión…\`
+- \`Lo que más me llama la atención es…\` — больше всего привлекает внимание…
+- \`Me da la impresión de que…\`
+
+### Согласие / несогласие (interacción)
+| Согласие | Несогласие |
+|---|---|
+| \`Estoy totalmente de acuerdo contigo.\` | \`No estoy del todo de acuerdo.\` |
+| \`Tienes toda la razón.\` | \`Yo lo veo de otra manera.\` |
+| \`Yo pienso lo mismo.\` | \`Entiendo tu postura, pero…\` |
+| \`Sin duda.\` / \`Desde luego.\` | \`No creo que **sea** así.\` (+subj!) |
+
+### Слова-заполнители (ganar tiempo)
+\`Bueno…\` · \`Pues…\` · \`A ver…\` · \`Es que…\` · \`O sea…\` · \`¿Cómo te diría?\` · \`En fin…\`
+
+Звучат естественно и дают секунды на раздумье — экзаменаторы оценивают это как **fluidez**.
+
+### Стратегии компенсации (если забыл слово)
+- \`Es una cosa que sirve para…\` — это штука, которой…
+- \`No recuerdo la palabra exacta, pero…\`
+- \`Es algo parecido a…\` — это что-то вроде…
+
+> 💡 За минуту подготовки набросай 3 коннектора + 2 гипотезы с futuro — этого хватит на структурный монолог.`,
   },
 ];
 

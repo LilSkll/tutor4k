@@ -593,6 +593,134 @@ Present → Past, will → would, can → could.
 
 > 🏆 Уровень C1 = не просто правильно, а **уместно и выразительно**.`,
   },
+  // ===== C2 ==========================================================
+  {
+    slug: "eng-c2-cleft-emphasis",
+    title: "Cleft sentences и эмфаза",
+    titleEs: "Cleft Sentences & Emphasis",
+    level: "C2",
+    category: "Синтаксис",
+    summary: "It was John who…, What I need is…, эмфатическое do — выделение и фокус.",
+    content: `## Cleft sentences — «расколотые» предложения
+
+Носители перестраивают фразу, чтобы **выделить** главное.
+
+### It-cleft
+| Нейтрально | С фокусом |
+|---|---|
+| \`John broke the vase.\` | \`**It was John who** broke the vase.\` — Это Джон разбил вазу. |
+| \`I met her in Paris.\` | \`**It was in Paris that** I met her.\` — Именно в Париже я её встретил. |
+| \`She called yesterday.\` | \`**It was yesterday that** she called.\` |
+
+### Wh-cleft (pseudo-cleft)
+- \`**What I need is** a holiday.\` — Что мне нужно — так это отпуск.
+- \`**What annoys me is** his tone.\` — Что меня раздражает — так это его тон.
+- \`**What she did was** (to) resign.\` — Она взяла и уволилась.
+- \`**All I want is** peace and quiet.\` — Всё, чего я хочу, — тишина и покой.
+
+### The thing / The reason / The place
+- \`**The thing that** matters most **is** honesty.\`
+- \`**The reason why** I left **was** the noise.\`
+
+### Эмфатическое DO
+- \`I **do** like your idea!\` — Мне правда нравится твоя идея!
+- \`She **does** work hard.\` — Она действительно много работает.
+- \`**Do** come in!\` — Ну заходи же!
+
+### Fronting — вынос вперёд
+- \`**This** I cannot accept.\` — Вот этого я принять не могу.
+- \`**Strange as it may seem**, he refused.\` — Как ни странно, он отказался.
+
+> 💡 На CPE/IELTS 8+ cleft-структуры — обязательный признак свободного письма.`,
+  },
+  {
+    slug: "eng-c2-ellipsis-substitution",
+    title: "Эллипсис и замещение",
+    titleEs: "Ellipsis & Substitution",
+    level: "C2",
+    category: "Синтаксис",
+    summary: "So do I, I hope so, if not — как носители не повторяют слова.",
+    content: `## Ellipsis & substitution — экономия по-английски
+
+Носители **не повторяют** сказанное — заменяют или опускают.
+
+### SO / NOT вместо целого придаточного
+- \`Is it going to rain? — I **hope not**.\` (= I hope it isn't going to rain)
+- \`Will she come? — I **think so**.\` / \`I'm **afraid not**.\`
+- \`If **so**, call me. If **not**, don't bother.\` — Если да… если нет…
+
+### SO / NEITHER — «я тоже»
+| Утверждение | Согласие |
+|---|---|
+| \`I love jazz.\` | \`**So do I.**\` — Я тоже. |
+| \`She has been to Peru.\` | \`**So have I.**\` |
+| \`I can't swim.\` | \`**Neither can I.** / **Me neither.**\` |
+
+> ⚠️ Инверсия обязательна: \`So **do I**\`, не \`*So I do\` (это значит «и правда»).
+
+### DO вместо глагольной группы
+- \`He runs faster than I **do**.\` (= than I run)
+- \`— Clean your room! — I already **have** (done).\`
+- \`She might come, and if she **does**, tell her to wait.\`
+
+### ONE / ONES вместо существительного
+- \`Which cake? — The chocolate **one**.\`
+- \`These shoes are worn out. I need new **ones**.\`
+
+### Эллипсис после and / but / or
+- \`She can sing and (she can) dance.\`
+- \`He wanted to leave but (he) couldn't (leave).\`
+
+### Разговорный эллипсис (начало фразы)
+- \`(Have you) Seen my keys?\` — Ключи мои не видел?
+- \`(It) Sounds good.\` / \`(I) Told you so.\`
+
+> 💡 Понимание эллипсиса — ключ к аудированию на природной скорости.`,
+  },
+  {
+    slug: "eng-c2-hedging-nuance",
+    title: "Хеджирование и сдержанность",
+    titleEs: "Hedging & Understatement",
+    level: "C2",
+    category: "Стилистика",
+    summary: "It could be argued…, not entirely convinced, британский understatement и вежливая критика.",
+    content: `## Hedging — искусство не говорить прямо
+
+C2 — это умение **смягчать**, **дистанцироваться** и читать сдержанность между строк.
+
+### Академическое хеджирование
+| Прямо | Осторожно |
+|---|---|
+| \`This proves…\` | \`This **would seem to suggest**…\` |
+| \`Everyone knows…\` | \`**It is widely believed that**…\` |
+| \`I think…\` | \`**It could be argued that**…\` |
+| \`The results show…\` | \`The results **appear to** show…\` |
+
+Смягчители: \`arguably\`, \`to some extent\`, \`in a sense\`, \`more or less\`, \`broadly speaking\`.
+
+### Британский understatement
+| Сказано | Значение |
+|---|---|
+| \`Not bad.\` | Отлично! |
+| \`I'm **not entirely** convinced.\` | Я совершенно не согласен. |
+| \`It's **a bit** expensive.\` | Это безумно дорого. |
+| \`**With respect**, …\` | Сейчас я вас разнесу. |
+| \`**Interesting** idea…\` | Идея так себе. |
+
+### Вежливая критика и несогласие
+- \`I **see what you mean, but**…\` — Понимаю, но…
+- \`**I'm not sure I'd** go that far.\` — Я бы так далеко не заходил.
+- \`**You might want to** reconsider.\` — Стоит пересмотреть (= пересмотри).
+- \`**Correct me if I'm wrong, but**…\`
+
+### Дистанцирование через грамматику
+- Past tense: \`I **was wondering** if you could help.\` — вежливее, чем \`I wonder\`.
+- Continuous: \`I'**m hoping** you can join us.\`
+- Passive: \`**It has been decided** that…\` — решение без ответственного.
+- Modal past: \`That **would have been** unwise.\` — мягкий упрёк.
+
+> 💡 Носитель C2 слышит разницу между \`It's not bad\` и \`It's not **bad**!\` — интонация меняет полюс оценки.`,
+  },
 ];
 
 export function getEngGrammarTopic(slug: string): GrammarTopic | undefined {

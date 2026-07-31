@@ -19,7 +19,7 @@ import {
 } from "@/lib/grammar-display";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { translate } from "@/lib/i18n";
-import type { GrammarTopic, InterfaceLanguage, Level } from "@/types";
+import type { GrammarLevel, GrammarTopic, InterfaceLanguage } from "@/types";
 
 export function GrammarPageClient({
   topics,
@@ -30,7 +30,7 @@ export function GrammarPageClient({
   topics: GrammarTopic[];
   courseId: string;
   serverLanguage?: InterfaceLanguage;
-  initialLevel?: Level;
+  initialLevel?: GrammarLevel;
 }) {
   const language = useInterfaceLanguage(serverLanguage);
   const t = (key: string, vars?: Record<string, string | number>) =>

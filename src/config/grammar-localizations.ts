@@ -62,6 +62,10 @@ export const GRAMMAR_CATEGORY: Record<
     "en": "Style",
     "es": "Estilo"
   },
+  "Подготовка к DELE": {
+    "en": "DELE Preparation",
+    "es": "Preparación DELE"
+  },
   "Времена": {
     "en": "Tenses",
     "es": "Tiempos"
@@ -476,12 +480,82 @@ export const GRAMMAR_TOPIC: Record<
   },
   "c2-ironia-registry": {
     "en": {
-      "title": "Irony and Register (C2)",
+      "title": "Irony and Register",
       "summary": "Ironic subjunctive, formal/informal register, rhetorical tactics."
     },
     "es": {
-      "title": "Ironía y Registro (C2)",
+      "title": "Ironía y Registro",
       "summary": "Subjuntivo irónico, registro formal/informal, tácticas retóricas."
+    }
+  },
+  "dele-contraste-pasados": {
+    "en": {
+      "title": "DELE: Past Tense Contrast",
+      "summary": "Indefinido vs Imperfecto vs Perfecto vs Pluscuamperfecto — the #1 DELE trap."
+    },
+    "es": {
+      "title": "DELE: Contraste de Pasados",
+      "summary": "Indefinido vs Imperfecto vs Perfecto vs Pluscuamperfecto — la trampa n.º 1 del DELE."
+    }
+  },
+  "dele-carta-formal": {
+    "en": {
+      "title": "DELE: Formal and Informal Letters",
+      "summary": "Letter formulas for Expresión escrita: openings, polite requests, closings."
+    },
+    "es": {
+      "title": "DELE: Carta Formal e Informal",
+      "summary": "Fórmulas de carta para Expresión escrita: saludos, peticiones corteses, despedidas."
+    }
+  },
+  "dele-conectores-redaccion": {
+    "en": {
+      "title": "DELE: Essay Connectors",
+      "summary": "Essay skeleton: en primer lugar, no obstante, en definitiva + opinions with indicativo/subjuntivo."
+    },
+    "es": {
+      "title": "DELE: Conectores para la Redacción",
+      "summary": "Esqueleto de la redacción: en primer lugar, no obstante, en definitiva + opinión con indicativo/subjuntivo."
+    }
+  },
+  "dele-expresion-oral": {
+    "en": {
+      "title": "DELE: Speaking Exam",
+      "summary": "Describing photos, hypotheses (futuro de conjetura), opinions, agreeing/disagreeing, fillers."
+    },
+    "es": {
+      "title": "DELE: Expresión Oral",
+      "summary": "Describir fotos, hipótesis (futuro de conjetura), opinión, acuerdo/desacuerdo, muletillas."
+    }
+  },
+  "c2-oraciones-hendidas": {
+    "en": {
+      "title": "Cleft Sentences and Emphasis",
+      "summary": "Oraciones hendidas: «Fue Juan quien…», «Lo que necesito es…» — focus and emphasis."
+    },
+    "es": {
+      "title": "Oraciones Hendidas y Énfasis",
+      "summary": "Oraciones hendidas: «Fue Juan quien…», «Lo que necesito es…» — foco y énfasis."
+    }
+  },
+  "c2-conjetura-rumor": {
+    "en": {
+      "title": "Conjecture and Hearsay: futuro & condicional",
+      "summary": "«Serán las diez» — probably ten. «Habría mil personas» — reportedly about a thousand."
+    },
+    "es": {
+      "title": "Futuro de Conjetura y Condicional de Rumor",
+      "summary": "«Serán las diez» — probabilidad. «Habría mil personas» — información no confirmada."
+    }
+  },
+  "c2-estilo-culto": {
+    "en": {
+      "title": "Formal Style: Absolute Constructions",
+      "summary": "Participio absoluto («Terminada la reunión…»), gerundio absoluto, nominalization — written register."
+    },
+    "es": {
+      "title": "Estilo Culto: Construcciones Absolutas",
+      "summary": "Participio absoluto («Terminada la reunión…»), gerundio absoluto, nominalización — registro escrito."
     }
   },
   "eng-a1-be": {
@@ -702,6 +776,36 @@ export const GRAMMAR_TOPIC: Record<
     "es": {
       "title": "Repaso Integral + IELTS",
       "summary": "Repaso integral de todos los temas + habilidades IELTS."
+    }
+  },
+  "eng-c2-cleft-emphasis": {
+    "en": {
+      "title": "Cleft Sentences and Emphasis",
+      "summary": "It was John who…, What I need is…, emphatic do — focus and highlighting."
+    },
+    "es": {
+      "title": "Cleft Sentences y Énfasis",
+      "summary": "It was John who…, What I need is…, do enfático — foco y realce."
+    }
+  },
+  "eng-c2-ellipsis-substitution": {
+    "en": {
+      "title": "Ellipsis and Substitution",
+      "summary": "So do I, I hope so, if not — how native speakers avoid repetition."
+    },
+    "es": {
+      "title": "Elipsis y Sustitución",
+      "summary": "So do I, I hope so, if not — cómo los nativos evitan repetir palabras."
+    }
+  },
+  "eng-c2-hedging-nuance": {
+    "en": {
+      "title": "Hedging and Understatement",
+      "summary": "It could be argued…, not entirely convinced, British understatement and polite criticism."
+    },
+    "es": {
+      "title": "Hedging y Understatement",
+      "summary": "It could be argued…, not entirely convinced, understatement británico y crítica cortés."
     }
   }
 };

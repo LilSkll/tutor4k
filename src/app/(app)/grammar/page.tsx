@@ -1,7 +1,7 @@
 import { getCourse } from "@/config/courses";
 import { getCurrentProfile } from "@/server/actions/data";
 import { GrammarPageClient } from "@/components/grammar/grammar-page-client";
-import type { Level } from "@/types";
+import type { GrammarLevel } from "@/types";
 
 export const dynamic = "force-dynamic";
 
@@ -21,7 +21,7 @@ export default async function GrammarPage({
       topics={grammarTopics}
       courseId={courseId}
       serverLanguage={profile?.interface_language ?? "ru"}
-      initialLevel={params.level as Level | undefined}
+      initialLevel={params.level as GrammarLevel | undefined}
     />
   );
 }
