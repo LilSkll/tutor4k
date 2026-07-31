@@ -1874,4 +1874,362 @@ Verwendet für **höfliche Kritik** oder Ironie:
 > 💡 C2 = Fähigkeit, **sofort den Register zu wechseln**, Ironie zu verstehen und
 > Sarkasmus durch Grammatik zu verwenden (besonders Subjuntivo).`,
   },
+  "c2-oraciones-hendidas": {
+    de: `## Spaltsätze (oraciones hendidas)
+
+Muttersprachler „spalten" den Satz, um ein Element **hervorzuheben**.
+
+### SER + QUE / QUIEN / DONDE / CUANDO
+
+| Fokus auf | Struktur | Beispiel |
+|---|---|---|
+| Person | \`Fue X quien…\` | \`**Fue Juan quien** rompió el vaso.\` — Es war Juan, der das Glas zerbrach. |
+| Ort | \`Es en X donde…\` | \`**Es en Madrid donde** vive.\` — Gerade in Madrid wohnt er. |
+| Zeit | \`Fue X cuando…\` | \`**Fue ayer cuando** lo supe.\` — Gerade gestern habe ich es erfahren. |
+| Grund | \`Es por X por lo que…\` | \`**Es por eso por lo que** me fui.\` — Genau deshalb bin ich gegangen. |
+
+> ⚠️ Die Präposition wird **wiederholt**: \`Es **con** ella **con** quien quiero hablar.\` (nicht \`*Es con ella que…\` — Gallizismus, in der Bildungssprache vermieden)
+
+### LO QUE — Hervorhebung von Handlung/Objekt
+- \`**Lo que** necesito **es** dormir.\` — Was ich brauche, ist Schlaf.
+- \`**Lo que** me molesta **es** el ruido.\` — Was mich stört, ist der Lärm.
+
+### Zeitkongruenz von SER
+\`**Fue** ayer **cuando**…\` / \`**Es** ahora **cuando**…\` — ser richtet sich nach der Zeit des Ereignisses.
+
+### Umgangssprachliche Emphase
+- \`¡Vaya coche que se ha comprado!\` — Was für ein Auto er sich gekauft hat!
+- \`De tonto no tiene un pelo.\` — Dumm ist er ganz sicher nicht.
+- Verdopplung: \`Saber, sé; pero no te lo diré.\` — Wissen tue ich es, aber ich sage es dir nicht.
+
+> 💡 Im DELE C2 sind Spaltsätze ein Marker für flüssiges Schreiben und Sprechen.`,
+  },
+  "c2-conjetura-rumor": {
+    de: `## Futuro de conjetura und condicional de rumor
+
+Futur und Konditional drücken im Spanischen nicht nur Zeit aus — sie kodieren den **Grad der Gewissheit**.
+
+### Futuro de conjetura — Vermutung über die Gegenwart
+| Fakt | Vermutung |
+|---|---|
+| \`Son las diez.\` — Es ist zehn. | \`**Serán** las diez.\` — Es wird wohl gegen zehn sein. |
+| \`Está en casa.\` | \`**Estará** en casa.\` — Er ist wahrscheinlich zu Hause. |
+| \`Tiene 40 años.\` | \`**Tendrá** unos 40 años.\` — Er wird um die 40 sein. |
+
+Futuro perfecto — Vermutung über die jüngste Vergangenheit:
+- \`**Habrá salido** ya.\` — Er ist wohl schon gegangen.
+
+### Condicional de conjetura — Vermutung über die Vergangenheit
+- \`**Serían** las dos cuando llegó.\` — Es war wohl gegen zwei, als er kam.
+- \`**Tendría** veinte años entonces.\` — Er war damals wohl um die zwanzig.
+
+### Condicional de rumor — die Sprache der Presse
+Vermittelt **unbestätigte Informationen** (journalistischer Stil):
+- \`El presidente **habría aceptado** el acuerdo.\` — Der Präsident soll das Abkommen angenommen haben.
+- \`**Habría** unas mil personas en la plaza.\` — Auf dem Platz sollen etwa tausend Menschen gewesen sein.
+
+### Synonyme Modalkonstruktionen
+| Gewissheit | Struktur | Beispiel |
+|---|---|---|
+| ~90% | \`deber de + inf\` | \`**Debe de** estar en casa.\` |
+| ~50% | \`poder + inf\` | \`**Puede** estar en casa.\` |
+| Vermutung | futuro/condicional | \`**Estará** en casa.\` |
+
+> ⚠️ \`deber de + inf\` = Wahrscheinlichkeit; \`deber + inf\` = Pflicht: \`Debes estudiar\` — du musst lernen.
+
+> 💡 Hörst du ein Futur, wo die Gegenwart logisch wäre? Es geht nicht um die Zukunft — es bedeutet „wahrscheinlich".`,
+  },
+  "c2-estilo-culto": {
+    de: `## Gehobener Stil: absolute Konstruktionen und Nominalisierung
+
+Mittel des **schriftlichen / formellen** Spanisch: Presse, Essays, DELE C2.
+
+### Participio absoluto
+Partizip + Substantiv ersetzen einen ganzen Nebensatz:
+- \`**Terminada la reunión**, todos se fueron.\` = Cuando terminó la reunión…
+- \`**Dicho esto**, pasemos al siguiente punto.\` — Nachdem dies gesagt ist, kommen wir zum nächsten Punkt.
+- \`**Una vez firmado el contrato**, no hay vuelta atrás.\` — Sobald der Vertrag unterschrieben ist, gibt es kein Zurück.
+
+> ⚠️ Das Partizip **kongruiert**: \`Terminad**a** la reunión\`, \`Firmad**os** los documentos\`.
+
+### Gerundio absoluto
+Mit eigenem Subjekt:
+- \`**Estando yo en Madrid**, ocurrió todo.\` — Während ich in Madrid war, geschah alles.
+- \`**Siendo esto así**, no hay más que hablar.\` — Wenn das so ist, gibt es nichts mehr zu sagen.
+
+### Nominalisierung — Substantiv statt Verb
+| Umgangssprachlich | Gehoben |
+|---|---|
+| \`Cuando llegó el tren…\` | \`**A la llegada del** tren…\` |
+| \`Antes de que salgamos…\` | \`**Antes de nuestra salida**…\` |
+| \`Porque aumentaron los precios…\` | \`**Debido al aumento de** los precios…\` |
+
+### Gehobene Konnektoren
+- \`No obstante\` — dennoch (formeller als \`sin embargo\`)
+- \`Asimismo\` — ebenso
+- \`Por consiguiente\` — folglich
+- \`En aras de\` — um … willen
+- \`Si bien\` — obgleich (gehobenes \`aunque\`)
+- \`Cabe señalar que…\` — es ist anzumerken, dass…
+
+### Passive und unpersönliche Färbung
+- \`Se procederá a la evaluación de…\` — es wird eine Bewertung durchgeführt…
+- \`Queda prohibido fumar.\` — Rauchen ist verboten (queda + participio)
+- \`Resulta imprescindible…\` — es erweist sich als unerlässlich…
+
+> 💡 C2 heißt, das **Register wechseln** zu können: dasselbe in der Bar und im Ministerium sagen.`,
+  },
+  "dele-contraste-pasados": {
+    de: `## Kontrast der Vergangenheitszeiten — Falle Nr. 1 im DELE
+
+DELE-Aufgaben (Comprensión de lectura, Lückentexte) prüfen am häufigsten die Wahl zwischen den vier Vergangenheitszeiten.
+
+### Spickzettel zur Entscheidung
+
+| Frage zur Handlung | Zeit | Beispiel |
+|---|---|---|
+| Was geschah? (Ereignis, Handlungsschritt) | **Indefinido** | \`Ayer **vi** a Marta.\` |
+| Was war drumherum? (Hintergrund, Gewohnheit) | **Imperfecto** | \`**Hacía** frío y **llovía**.\` |
+| Mit der Gegenwart verbunden / Zeitraum offen | **Perfecto** | \`**He visto** a Marta esta mañana.\` |
+| Früher als ein anderes Vergangenes | **Pluscuamperfecto** | \`Cuando llegué, ya **se había ido**.\` |
+
+### Signalwörter (auswendig lernen)
+- **Indefinido:** \`ayer\`, \`anoche\`, \`el año pasado\`, \`en 2010\`, \`de repente\`, \`entonces\`
+- **Imperfecto:** \`antes\`, \`siempre\`, \`cada día\`, \`de niño\`, \`mientras\`, \`todos los veranos\`
+- **Perfecto:** \`hoy\`, \`esta semana\`, \`este año\`, \`ya\`, \`todavía no\`, \`alguna vez\`, \`nunca (en mi vida)\`
+- **Pluscuamperfecto:** \`ya… cuando\`, \`antes de que\`, \`nunca hasta entonces\`
+
+### Die klassische Prüfungskombination
+\`**Estaba** duchándome **cuando** **sonó** el teléfono.\`
+Hintergrund (imperfecto) + Ereignis (indefinido) — dieses Paar fragt der DELE fast immer ab.
+
+### Die Zeit ändert die Bedeutung
+| Imperfecto | Indefinido |
+|---|---|
+| \`**Conocía** a Juan.\` — kannte ihn | \`**Conocí** a Juan.\` — lernte ihn kennen |
+| \`**Sabía** la verdad.\` — wusste | \`**Supe** la verdad.\` — erfuhr |
+| \`**Quería** salir.\` — wollte | \`**Quise** salir.\` — versuchte |
+| \`No **quería** ir.\` — wollte nicht | \`No **quiso** ir.\` — weigerte sich |
+
+> 💡 Spanien vs. Lateinamerika: in Spanien \`esta mañana **he visto**\`, in den meisten Ländern Amerikas \`esta mañana **vi**\`. Der DELE akzeptiert beide Normen — bleib nur konsequent.`,
+  },
+  "dele-carta-formal": {
+    de: `## Der Brief im DELE (Expresión e interacción escritas)
+
+Im schriftlichen Teil gibt es fast immer einen Brief/eine E-Mail. Bewertet wird das **Register** — die Formeln müssen zum Adressaten passen.
+
+### Formeller Brief
+
+| Block | Formeln |
+|---|---|
+| Anrede | \`Estimado señor / Estimada señora:\` · \`Muy señores míos:\` · \`A quien corresponda:\` |
+| Anlass | \`Le escribo para + inf…\` · \`Me dirijo a usted con motivo de…\` · \`Me pongo en contacto con ustedes para…\` |
+| Bitte | \`Le agradecería que + subjuntivo imperfecto\` (\`…que me **enviara** más información\`) · \`¿Podría + inf…?\` · \`Le ruego (que) + subj\` |
+| Beschwerde | \`Me veo obligado/a a expresar mi malestar por…\` · \`Quisiera presentar una reclamación…\` |
+| Abschluss | \`A la espera de su respuesta, …\` · \`Sin otro particular, …\` · \`Le agradezco de antemano su atención.\` |
+| Grußformel | \`Atentamente,\` · \`Un cordial saludo,\` · \`Reciba un cordial saludo,\` |
+
+> ⚠️ Der ganze Brief steht in **usted/ustedes**. Ein einziges „tú" im formellen Brief = Punktabzug bei der adecuación.
+
+### Informeller Brief
+
+| Block | Formeln |
+|---|---|
+| Anrede | \`¡Hola, Ana!\` · \`Querido Pablo:\` |
+| Einstieg | \`¿Qué tal estás? Espero que todo te vaya bien.\` · \`¡Cuánto tiempo sin saber de ti!\` |
+| Hauptteil | \`Te escribo porque…\` · \`¿Sabes qué? Resulta que…\` · \`Por cierto, …\` |
+| Abschluss | \`Bueno, te dejo, que…\` · \`Escríbeme pronto.\` · \`Dale recuerdos a tu familia.\` |
+| Grußformel | \`Un abrazo,\` · \`Un beso,\` · \`Hasta pronto,\` |
+
+### Grammatik der Höflichkeit (bringt Punkte)
+- Konditional: \`**Querría** saber si…\` / \`**Me gustaría** + inf\`
+- Imperfecto de cortesía: \`**Quería** pedirle un favor.\`
+- \`Le agradecería que me **informara**…\` — Konditional + Subjuntivo Imperfecto = B2-Königsklasse.
+
+> 💡 Lerne das Briefgerüst auswendig — in der Prüfung musst du nur noch den Inhalt einsetzen.`,
+  },
+  "dele-conectores-redaccion": {
+    de: `## Konnektoren für die redacción (Expresión escrita B2–C1)
+
+Die Note für **coherencia** hängt direkt von den Verknüpfungen ab. Hier ein funktionierendes Aufsatzgerüst.
+
+### Textstruktur
+
+| Funktion | Konnektoren |
+|---|---|
+| Einstieg | \`En primer lugar\` · \`Para empezar\` · \`Hoy en día\` · \`Es un hecho que…\` |
+| Ergänzung | \`Además\` · \`Asimismo\` · \`Cabe añadir que\` · \`No solo…, sino también…\` |
+| Gegensatz | \`Sin embargo\` · \`No obstante\` · \`Ahora bien\` · \`Por el contrario\` · \`A pesar de que\` |
+| Zwei Seiten | \`Por un lado…, por otro (lado)…\` · \`En cuanto a…\` · \`Respecto a…\` |
+| Grund | \`Debido a\` · \`Puesto que\` · \`Dado que\` · \`Ya que\` |
+| Folge | \`Por lo tanto\` · \`Por consiguiente\` · \`De ahí que + subj\` · \`Así pues\` |
+| Beispiel | \`Por ejemplo\` · \`Como muestra\` · \`Un claro ejemplo de ello es…\` |
+| Fazit | \`En definitiva\` · \`En conclusión\` · \`Para concluir\` · \`En resumen\` |
+
+### Meinung äußern: indicativo oder subjuntivo?
+
+| Struktur | Modus | Beispiel |
+|---|---|---|
+| \`Creo que / Pienso que\` | **indicativo** | \`Creo que **es** útil.\` |
+| \`No creo que / Dudo que\` | **subjuntivo** | \`No creo que **sea** útil.\` |
+| \`Es evidente / cierto que\` | **indicativo** | \`Es evidente que **funciona**.\` |
+| \`Es importante / necesario que\` | **subjuntivo** | \`Es importante que se **regule**.\` |
+| \`(No) me parece que\` | ind. / **subj.** | \`No me parece que **tenga** sentido.\` |
+
+### Fallen, die Punkte kosten
+- \`De ahí que\` — **immer Subjuntivo**: \`De ahí que **sea** necesario actuar.\`
+- \`A pesar de **que** + verbo\`, aber \`a pesar de + inf/sust\`.
+- Wiederhole nicht \`pero\` — wechsle mit \`sin embargo / no obstante / ahora bien\`.
+
+> 💡 B2-Absatzformel: Konnektor → These → Argument → Beispiel. Vier Absätze — und die Struktur steht.`,
+  },
+  "dele-expresion-oral": {
+    de: `## Der mündliche Teil des DELE (Expresión e interacción orales)
+
+### Fotobeschreibung (die klassische Aufgabe)
+Verortung im Bild:
+- \`En primer plano se ve…\` — im Vordergrund sieht man…
+- \`Al fondo hay…\` — im Hintergrund gibt es…
+- \`A la derecha / izquierda aparece…\`
+
+Hypothesen — der Prüfer erwartet das **futuro de conjetura**:
+- \`**Será** su madre.\` — Das ist wohl seine Mutter.
+- \`**Tendrán** unos treinta años.\` — Sie sind wohl um die dreißig.
+- \`**Estarán** celebrando algo.\` — Sie feiern anscheinend etwas.
+- \`Parece que + indicativo\` / \`Puede que + **subjuntivo**\` (\`Puede que **sean** amigos.\`)
+
+### Meinung und Bewertung
+- \`Desde mi punto de vista…\` · \`A mi modo de ver…\` · \`En mi opinión…\`
+- \`Lo que más me llama la atención es…\` — was mir am meisten auffällt, ist…
+- \`Me da la impresión de que…\`
+
+### Zustimmung / Widerspruch (interacción)
+| Zustimmung | Widerspruch |
+|---|---|
+| \`Estoy totalmente de acuerdo contigo.\` | \`No estoy del todo de acuerdo.\` |
+| \`Tienes toda la razón.\` | \`Yo lo veo de otra manera.\` |
+| \`Yo pienso lo mismo.\` | \`Entiendo tu postura, pero…\` |
+| \`Sin duda.\` / \`Desde luego.\` | \`No creo que **sea** así.\` (+subj!) |
+
+### Füllwörter (Zeit gewinnen)
+\`Bueno…\` · \`Pues…\` · \`A ver…\` · \`Es que…\` · \`O sea…\` · \`¿Cómo te diría?\` · \`En fin…\`
+
+Sie klingen natürlich und verschaffen Sekunden zum Nachdenken — Prüfer werten das als **fluidez**.
+
+### Kompensationsstrategien (wenn ein Wort fehlt)
+- \`Es una cosa que sirve para…\` — das ist ein Ding, mit dem man…
+- \`No recuerdo la palabra exacta, pero…\`
+- \`Es algo parecido a…\` — es ist so etwas wie…
+
+> 💡 Notiere in der Vorbereitungsminute 3 Konnektoren + 2 Hypothesen mit Futur — das reicht für einen strukturierten Monolog.`,
+  },
+  "eng-c2-cleft-emphasis": {
+    de: `## Cleft sentences — „gespaltene" Sätze
+
+Muttersprachler bauen den Satz um, um das Wichtige **hervorzuheben**.
+
+### It-cleft
+| Neutral | Mit Fokus |
+|---|---|
+| \`John broke the vase.\` | \`**It was John who** broke the vase.\` — Es war John, der die Vase zerbrach. |
+| \`I met her in Paris.\` | \`**It was in Paris that** I met her.\` — Gerade in Paris traf ich sie. |
+| \`She called yesterday.\` | \`**It was yesterday that** she called.\` |
+
+### Wh-cleft (pseudo-cleft)
+- \`**What I need is** a holiday.\` — Was ich brauche, ist Urlaub.
+- \`**What annoys me is** his tone.\` — Was mich ärgert, ist sein Ton.
+- \`**What she did was** (to) resign.\` — Was sie tat: Sie kündigte.
+- \`**All I want is** peace and quiet.\` — Alles, was ich will, ist Ruhe.
+
+### The thing / The reason / The place
+- \`**The thing that** matters most **is** honesty.\`
+- \`**The reason why** I left **was** the noise.\`
+
+### Emphatisches DO
+- \`I **do** like your idea!\` — Deine Idee gefällt mir wirklich!
+- \`She **does** work hard.\` — Sie arbeitet tatsächlich hart.
+- \`**Do** come in!\` — Komm doch rein!
+
+### Fronting — Voranstellung
+- \`**This** I cannot accept.\` — Das kann ich nicht akzeptieren.
+- \`**Strange as it may seem**, he refused.\` — So seltsam es klingt: Er lehnte ab.
+
+> 💡 Bei CPE / IELTS 8+ sind Cleft-Strukturen ein Pflichtmerkmal flüssigen Schreibens.`,
+  },
+  "eng-c2-ellipsis-substitution": {
+    de: `## Ellipsis & substitution — englische Sprachökonomie
+
+Muttersprachler **wiederholen nicht**, was gesagt wurde — sie ersetzen oder lassen weg.
+
+### SO / NOT statt eines ganzen Nebensatzes
+- \`Is it going to rain? — I **hope not**.\` (= I hope it isn't going to rain)
+- \`Will she come? — I **think so**.\` / \`I'm **afraid not**.\`
+- \`If **so**, call me. If **not**, don't bother.\` — Wenn ja… wenn nicht…
+
+### SO / NEITHER — „ich auch"
+| Aussage | Zustimmung |
+|---|---|
+| \`I love jazz.\` | \`**So do I.**\` — Ich auch. |
+| \`She has been to Peru.\` | \`**So have I.**\` |
+| \`I can't swim.\` | \`**Neither can I.** / **Me neither.**\` |
+
+> ⚠️ Inversion ist Pflicht: \`So **do I**\`, nicht \`*So I do\` (das bedeutet „in der Tat").
+
+### DO statt der Verbgruppe
+- \`He runs faster than I **do**.\` (= than I run)
+- \`— Clean your room! — I already **have** (done).\`
+- \`She might come, and if she **does**, tell her to wait.\`
+
+### ONE / ONES statt des Substantivs
+- \`Which cake? — The chocolate **one**.\`
+- \`These shoes are worn out. I need new **ones**.\`
+
+### Ellipse nach and / but / or
+- \`She can sing and (she can) dance.\`
+- \`He wanted to leave but (he) couldn't (leave).\`
+
+### Umgangssprachliche Ellipse (Satzanfang)
+- \`(Have you) Seen my keys?\` — Meine Schlüssel gesehen?
+- \`(It) Sounds good.\` / \`(I) Told you so.\`
+
+> 💡 Ellipsen zu verstehen ist der Schlüssel zum Hörverstehen bei natürlichem Tempo.`,
+  },
+  "eng-c2-hedging-nuance": {
+    de: `## Hedging — die Kunst, nicht direkt zu sprechen
+
+C2 heißt: **abschwächen**, **sich distanzieren** und Zurückhaltung zwischen den Zeilen lesen können.
+
+### Akademisches Hedging
+| Direkt | Vorsichtig |
+|---|---|
+| \`This proves…\` | \`This **would seem to suggest**…\` |
+| \`Everyone knows…\` | \`**It is widely believed that**…\` |
+| \`I think…\` | \`**It could be argued that**…\` |
+| \`The results show…\` | \`The results **appear to** show…\` |
+
+Abschwächer: \`arguably\`, \`to some extent\`, \`in a sense\`, \`more or less\`, \`broadly speaking\`.
+
+### Britisches Understatement
+| Gesagt | Gemeint |
+|---|---|
+| \`Not bad.\` | Ausgezeichnet! |
+| \`I'm **not entirely** convinced.\` | Ich bin völlig anderer Meinung. |
+| \`It's **a bit** expensive.\` | Es ist wahnsinnig teuer. |
+| \`**With respect**, …\` | Jetzt zerlege ich Ihr Argument. |
+| \`**Interesting** idea…\` | Die Idee ist eher mäßig. |
+
+### Höfliche Kritik und Widerspruch
+- \`I **see what you mean, but**…\` — Ich verstehe, aber…
+- \`**I'm not sure I'd** go that far.\` — So weit würde ich nicht gehen.
+- \`**You might want to** reconsider.\` — Das solltest du überdenken.
+- \`**Correct me if I'm wrong, but**…\`
+
+### Distanzierung durch Grammatik
+- Past tense: \`I **was wondering** if you could help.\` — höflicher als \`I wonder\`.
+- Continuous: \`I'**m hoping** you can join us.\`
+- Passiv: \`**It has been decided** that…\` — Entscheidung ohne Verantwortlichen.
+- Modal past: \`That **would have been** unwise.\` — sanfter Vorwurf.
+
+> 💡 Ein C2-Sprecher hört den Unterschied zwischen \`It's not bad\` und \`It's not **bad**!\` — die Intonation kippt die Bewertung.`,
+  },
 };

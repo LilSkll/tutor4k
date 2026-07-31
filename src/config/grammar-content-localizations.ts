@@ -824,6 +824,218 @@ Combinación de tiempos en condición y resultado:
 
 > 🏆 Nivel C1 = no solo correcto, sino **apropiado y expresivo**.`,
   },
+  "eng-c2-cleft-emphasis": {
+    en: `## Cleft sentences — "split" sentences
+
+Native speakers restructure the sentence to **highlight** what matters.
+
+### It-cleft
+| Neutral | Focused |
+|---|---|
+| \`John broke the vase.\` | \`**It was John who** broke the vase.\` |
+| \`I met her in Paris.\` | \`**It was in Paris that** I met her.\` |
+| \`She called yesterday.\` | \`**It was yesterday that** she called.\` |
+
+### Wh-cleft (pseudo-cleft)
+- \`**What I need is** a holiday.\`
+- \`**What annoys me is** his tone.\`
+- \`**What she did was** (to) resign.\`
+- \`**All I want is** peace and quiet.\`
+
+### The thing / The reason / The place
+- \`**The thing that** matters most **is** honesty.\`
+- \`**The reason why** I left **was** the noise.\`
+
+### Emphatic DO
+- \`I **do** like your idea!\`
+- \`She **does** work hard.\`
+- \`**Do** come in!\`
+
+### Fronting
+- \`**This** I cannot accept.\`
+- \`**Strange as it may seem**, he refused.\`
+
+> 💡 On CPE / IELTS 8+, cleft structures are an essential marker of fluent writing.`,
+    es: `## Cleft sentences — oraciones «hendidas»
+
+Los nativos reestructuran la frase para **destacar** lo importante.
+
+### It-cleft
+| Neutro | Con foco |
+|---|---|
+| \`John broke the vase.\` | \`**It was John who** broke the vase.\` — Fue John quien rompió el jarrón. |
+| \`I met her in Paris.\` | \`**It was in Paris that** I met her.\` — Fue en París donde la conocí. |
+| \`She called yesterday.\` | \`**It was yesterday that** she called.\` |
+
+### Wh-cleft (pseudo-cleft)
+- \`**What I need is** a holiday.\` — Lo que necesito son vacaciones.
+- \`**What annoys me is** his tone.\` — Lo que me molesta es su tono.
+- \`**What she did was** (to) resign.\` — Lo que hizo fue dimitir.
+- \`**All I want is** peace and quiet.\` — Todo lo que quiero es paz y tranquilidad.
+
+### The thing / The reason / The place
+- \`**The thing that** matters most **is** honesty.\`
+- \`**The reason why** I left **was** the noise.\`
+
+### DO enfático
+- \`I **do** like your idea!\` — ¡De verdad me gusta tu idea!
+- \`She **does** work hard.\` — Realmente trabaja mucho.
+- \`**Do** come in!\` — ¡Pasa, por favor!
+
+### Fronting — anteposición
+- \`**This** I cannot accept.\` — Esto sí que no puedo aceptarlo.
+- \`**Strange as it may seem**, he refused.\` — Por extraño que parezca, se negó.
+
+> 💡 En CPE / IELTS 8+, las estructuras cleft son un marcador imprescindible de escritura fluida.`,
+  },
+  "eng-c2-ellipsis-substitution": {
+    en: `## Ellipsis & substitution — English economy
+
+Native speakers **don't repeat** what's been said — they substitute or omit it.
+
+### SO / NOT instead of a whole clause
+- \`Is it going to rain? — I **hope not**.\` (= I hope it isn't going to rain)
+- \`Will she come? — I **think so**.\` / \`I'm **afraid not**.\`
+- \`If **so**, call me. If **not**, don't bother.\`
+
+### SO / NEITHER — "me too"
+| Statement | Agreement |
+|---|---|
+| \`I love jazz.\` | \`**So do I.**\` |
+| \`She has been to Peru.\` | \`**So have I.**\` |
+| \`I can't swim.\` | \`**Neither can I.** / **Me neither.**\` |
+
+> ⚠️ Inversion is required: \`So **do I**\`, not \`*So I do\` (that means "indeed I do").
+
+### DO instead of a verb phrase
+- \`He runs faster than I **do**.\` (= than I run)
+- \`— Clean your room! — I already **have** (done).\`
+- \`She might come, and if she **does**, tell her to wait.\`
+
+### ONE / ONES instead of a noun
+- \`Which cake? — The chocolate **one**.\`
+- \`These shoes are worn out. I need new **ones**.\`
+
+### Ellipsis after and / but / or
+- \`She can sing and (she can) dance.\`
+- \`He wanted to leave but (he) couldn't (leave).\`
+
+### Conversational ellipsis (sentence openings)
+- \`(Have you) Seen my keys?\`
+- \`(It) Sounds good.\` / \`(I) Told you so.\`
+
+> 💡 Understanding ellipsis is the key to listening at natural speed.`,
+    es: `## Ellipsis & substitution — la economía del inglés
+
+Los nativos **no repiten** lo dicho: lo sustituyen o lo omiten.
+
+### SO / NOT en lugar de toda la subordinada
+- \`Is it going to rain? — I **hope not**.\` (= espero que no)
+- \`Will she come? — I **think so**.\` / \`I'm **afraid not**.\`
+- \`If **so**, call me. If **not**, don't bother.\` — Si es así… si no…
+
+### SO / NEITHER — «yo también»
+| Afirmación | Acuerdo |
+|---|---|
+| \`I love jazz.\` | \`**So do I.**\` — Yo también. |
+| \`She has been to Peru.\` | \`**So have I.**\` |
+| \`I can't swim.\` | \`**Neither can I.** / **Me neither.**\` |
+
+> ⚠️ La inversión es obligatoria: \`So **do I**\`, no \`*So I do\` (eso significa «y de verdad que sí»).
+
+### DO en lugar del grupo verbal
+- \`He runs faster than I **do**.\` (= than I run)
+- \`— Clean your room! — I already **have** (done).\`
+- \`She might come, and if she **does**, tell her to wait.\`
+
+### ONE / ONES en lugar del sustantivo
+- \`Which cake? — The chocolate **one**.\`
+- \`These shoes are worn out. I need new **ones**.\`
+
+### Elipsis tras and / but / or
+- \`She can sing and (she can) dance.\`
+- \`He wanted to leave but (he) couldn't (leave).\`
+
+### Elipsis coloquial (inicio de frase)
+- \`(Have you) Seen my keys?\` — ¿Has visto mis llaves?
+- \`(It) Sounds good.\` / \`(I) Told you so.\`
+
+> 💡 Entender la elipsis es la clave para comprender el inglés a velocidad natural.`,
+  },
+  "eng-c2-hedging-nuance": {
+    en: `## Hedging — the art of not saying things directly
+
+C2 means being able to **soften**, **distance yourself**, and read understatement between the lines.
+
+### Academic hedging
+| Direct | Cautious |
+|---|---|
+| \`This proves…\` | \`This **would seem to suggest**…\` |
+| \`Everyone knows…\` | \`**It is widely believed that**…\` |
+| \`I think…\` | \`**It could be argued that**…\` |
+| \`The results show…\` | \`The results **appear to** show…\` |
+
+Softeners: \`arguably\`, \`to some extent\`, \`in a sense\`, \`more or less\`, \`broadly speaking\`.
+
+### British understatement
+| What's said | What's meant |
+|---|---|
+| \`Not bad.\` | Excellent! |
+| \`I'm **not entirely** convinced.\` | I completely disagree. |
+| \`It's **a bit** expensive.\` | It's insanely expensive. |
+| \`**With respect**, …\` | I'm about to tear your argument apart. |
+| \`**Interesting** idea…\` | Not a great idea. |
+
+### Polite criticism and disagreement
+- \`I **see what you mean, but**…\`
+- \`**I'm not sure I'd** go that far.\`
+- \`**You might want to** reconsider.\` (= reconsider it)
+- \`**Correct me if I'm wrong, but**…\`
+
+### Distancing through grammar
+- Past tense: \`I **was wondering** if you could help.\` — more polite than \`I wonder\`.
+- Continuous: \`I'**m hoping** you can join us.\`
+- Passive: \`**It has been decided** that…\` — a decision with no one responsible.
+- Modal past: \`That **would have been** unwise.\` — a gentle reproach.
+
+> 💡 A C2 speaker hears the difference between \`It's not bad\` and \`It's not **bad**!\` — intonation flips the meaning.`,
+    es: `## Hedging — el arte de no hablar directamente
+
+C2 significa saber **suavizar**, **distanciarse** y leer la contención entre líneas.
+
+### Hedging académico
+| Directo | Cauteloso |
+|---|---|
+| \`This proves…\` | \`This **would seem to suggest**…\` |
+| \`Everyone knows…\` | \`**It is widely believed that**…\` |
+| \`I think…\` | \`**It could be argued that**…\` |
+| \`The results show…\` | \`The results **appear to** show…\` |
+
+Suavizadores: \`arguably\`, \`to some extent\`, \`in a sense\`, \`more or less\`, \`broadly speaking\`.
+
+### El understatement británico
+| Lo que se dice | Lo que significa |
+|---|---|
+| \`Not bad.\` | ¡Excelente! |
+| \`I'm **not entirely** convinced.\` | No estoy nada de acuerdo. |
+| \`It's **a bit** expensive.\` | Es carísimo. |
+| \`**With respect**, …\` | Ahora voy a desmontar tu argumento. |
+| \`**Interesting** idea…\` | La idea no es muy buena. |
+
+### Crítica y desacuerdo corteses
+- \`I **see what you mean, but**…\` — Entiendo, pero…
+- \`**I'm not sure I'd** go that far.\` — Yo no iría tan lejos.
+- \`**You might want to** reconsider.\` — Deberías reconsiderarlo.
+- \`**Correct me if I'm wrong, but**…\`
+
+### Distanciamiento gramatical
+- Past tense: \`I **was wondering** if you could help.\` — más cortés que \`I wonder\`.
+- Continuous: \`I'**m hoping** you can join us.\`
+- Pasiva: \`**It has been decided** that…\` — decisión sin responsable.
+- Modal past: \`That **would have been** unwise.\` — reproche suave.
+
+> 💡 Un hablante C2 oye la diferencia entre \`It's not bad\` y \`It's not **bad**!\` — la entonación invierte la valoración.`,
+  },
 };
 
 export function getStaticGrammarContent(

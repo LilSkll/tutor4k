@@ -94,6 +94,10 @@ export const GRAMMAR_CATEGORY: Record<
     "en": "Discourse",
     "es": "Discurso"
   },
+  "Определители": {
+    "en": "Determiners",
+    "es": "Determinantes"
+  },
   "Условия / Залог": {
     "en": "Conditionals / Voice",
     "es": "Condicionales / Voz"

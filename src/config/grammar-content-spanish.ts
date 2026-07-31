@@ -2714,4 +2714,485 @@ Se usa para **crítica cortés** o ironía:
 > 💡 C2 = capacidad de **cambiar de registro** al instante, entender la ironía y
 > usar el sarcasmo a través de la gramática (especialmente subjuntivo).`,
   },
+  "c2-oraciones-hendidas": {
+    en: `## Cleft sentences (oraciones hendidas)
+
+Native speakers "split" the sentence to **emphasize** a specific element.
+
+### SER + QUE / QUIEN / DONDE / CUANDO
+
+| Focus on | Structure | Example |
+|---|---|---|
+| Person | \`Fue X quien…\` | \`**Fue Juan quien** rompió el vaso.\` — It was Juan who broke the glass. |
+| Place | \`Es en X donde…\` | \`**Es en Madrid donde** vive.\` — It's in Madrid that he lives. |
+| Time | \`Fue X cuando…\` | \`**Fue ayer cuando** lo supe.\` — It was yesterday that I found out. |
+| Reason | \`Es por X por lo que…\` | \`**Es por eso por lo que** me fui.\` — That's exactly why I left. |
+
+> ⚠️ The preposition is **repeated**: \`Es **con** ella **con** quien quiero hablar.\` (not \`*Es con ella que…\` — a French calque, avoided in the educated norm)
+
+### LO QUE — emphasizing an action/object
+- \`**Lo que** necesito **es** dormir.\` — What I need is sleep.
+- \`**Lo que** me molesta **es** el ruido.\` — What bothers me is the noise.
+
+### Tense agreement of SER
+\`**Fue** ayer **cuando**…\` / \`**Es** ahora **cuando**…\` — ser agrees with the time of the event.
+
+### Colloquial emphasis
+- \`¡Vaya coche que se ha comprado!\` — What a car he's bought!
+- \`De tonto no tiene un pelo.\` — He's anything but a fool.
+- Doubling: \`Saber, sé; pero no te lo diré.\` — Know it I do, but I won't tell you.
+
+> 💡 On DELE C2, cleft structures are a marker of fluent writing and speech.`,
+    es: `## Oraciones hendidas
+
+Los nativos «parten» la frase para **destacar** el elemento que les interesa.
+
+### SER + QUE / QUIEN / DONDE / CUANDO
+
+| Se destaca | Estructura | Ejemplo |
+|---|---|---|
+| Persona | \`Fue X quien…\` | \`**Fue Juan quien** rompió el vaso.\` |
+| Lugar | \`Es en X donde…\` | \`**Es en Madrid donde** vive.\` |
+| Tiempo | \`Fue X cuando…\` | \`**Fue ayer cuando** lo supe.\` |
+| Causa | \`Es por X por lo que…\` | \`**Es por eso por lo que** me fui.\` |
+
+> ⚠️ La preposición **se repite**: \`Es **con** ella **con** quien quiero hablar.\` (no \`*Es con ella que…\` — calco del francés, evitado en la norma culta)
+
+### LO QUE — destacar la acción o el objeto
+- \`**Lo que** necesito **es** dormir.\`
+- \`**Lo que** me molesta **es** el ruido.\`
+
+### Concordancia temporal de SER
+\`**Fue** ayer **cuando**…\` / \`**Es** ahora **cuando**…\` — ser concuerda con el tiempo del evento.
+
+### Énfasis coloquial
+- \`¡Vaya coche que se ha comprado!\`
+- \`De tonto no tiene un pelo.\`
+- Duplicación: \`Saber, sé; pero no te lo diré.\`
+
+> 💡 En el DELE C2, las oraciones hendidas son un marcador de escritura y habla fluidas.`,
+  },
+  "c2-conjetura-rumor": {
+    en: `## Futuro de conjetura and condicional de rumor
+
+In Spanish, the future and conditional express more than time — they encode **degree of certainty**.
+
+### Futuro de conjetura — guessing about the present
+| Fact | Guess |
+|---|---|
+| \`Son las diez.\` — It's ten. | \`**Serán** las diez.\` — It must be around ten. |
+| \`Está en casa.\` | \`**Estará** en casa.\` — He's probably at home. |
+| \`Tiene 40 años.\` | \`**Tendrá** unos 40 años.\` — He must be about 40. |
+
+Futuro perfecto — guessing about the recent past:
+- \`**Habrá salido** ya.\` — He's probably left already.
+
+### Condicional de conjetura — guessing about the past
+- \`**Serían** las dos cuando llegó.\` — It was probably around two when he arrived.
+- \`**Tendría** veinte años entonces.\` — He must have been about twenty then.
+
+### Condicional de rumor — the language of the press
+Conveys **unconfirmed information** (journalistic style):
+- \`El presidente **habría aceptado** el acuerdo.\` — The president has reportedly accepted the deal.
+- \`**Habría** unas mil personas en la plaza.\` — There were reportedly about a thousand people in the square.
+
+### Synonymous modal constructions
+| Certainty | Structure | Example |
+|---|---|---|
+| ~90% | \`deber de + inf\` | \`**Debe de** estar en casa.\` |
+| ~50% | \`poder + inf\` | \`**Puede** estar en casa.\` |
+| conjecture | futuro/condicional | \`**Estará** en casa.\` |
+
+> ⚠️ \`deber de + inf\` = probability; \`deber + inf\` = obligation: \`Debes estudiar\` — you must study.
+
+> 💡 Hear a future tense where the present would be logical? It's not about the future — it means "probably".`,
+    es: `## Futuro de conjetura y condicional de rumor
+
+El futuro y el condicional no solo expresan tiempo: codifican el **grado de certeza**.
+
+### Futuro de conjetura — suposición sobre el presente
+| Hecho | Suposición |
+|---|---|
+| \`Son las diez.\` | \`**Serán** las diez.\` — probablemente |
+| \`Está en casa.\` | \`**Estará** en casa.\` |
+| \`Tiene 40 años.\` | \`**Tendrá** unos 40 años.\` |
+
+Futuro perfecto — suposición sobre el pasado reciente:
+- \`**Habrá salido** ya.\`
+
+### Condicional de conjetura — suposición sobre el pasado
+- \`**Serían** las dos cuando llegó.\`
+- \`**Tendría** veinte años entonces.\`
+
+### Condicional de rumor — el lenguaje de la prensa
+Transmite **información no confirmada** (estilo periodístico):
+- \`El presidente **habría aceptado** el acuerdo.\`
+- \`**Habría** unas mil personas en la plaza.\`
+
+### Construcciones modales sinónimas
+| Certeza | Estructura | Ejemplo |
+|---|---|---|
+| ~90% | \`deber de + inf\` | \`**Debe de** estar en casa.\` |
+| ~50% | \`poder + inf\` | \`**Puede** estar en casa.\` |
+| conjetura | futuro/condicional | \`**Estará** en casa.\` |
+
+> ⚠️ \`deber de + inf\` = probabilidad; \`deber + inf\` = obligación: \`Debes estudiar\`.
+
+> 💡 ¿Oyes un futuro donde lo lógico sería el presente? No habla del futuro: significa «probablemente».`,
+  },
+  "c2-estilo-culto": {
+    en: `## Formal style: absolute constructions and nominalization
+
+Devices of **written / formal** Spanish: press, essays, DELE C2.
+
+### Participio absoluto
+A participle + noun replaces a whole subordinate clause:
+- \`**Terminada la reunión**, todos se fueron.\` = Cuando terminó la reunión…
+- \`**Dicho esto**, pasemos al siguiente punto.\` — That said, let's move to the next point.
+- \`**Una vez firmado el contrato**, no hay vuelta atrás.\` — Once the contract is signed, there's no going back.
+
+> ⚠️ The participle **agrees**: \`Terminad**a** la reunión\`, \`Firmad**os** los documentos\`.
+
+### Gerundio absoluto
+With its own subject:
+- \`**Estando yo en Madrid**, ocurrió todo.\` — While I was in Madrid, it all happened.
+- \`**Siendo esto así**, no hay más que hablar.\` — That being so, there's nothing more to say.
+
+### Nominalization — noun instead of verb
+| Colloquial | Formal |
+|---|---|
+| \`Cuando llegó el tren…\` | \`**A la llegada del** tren…\` |
+| \`Antes de que salgamos…\` | \`**Antes de nuestra salida**…\` |
+| \`Porque aumentaron los precios…\` | \`**Debido al aumento de** los precios…\` |
+
+### Formal connectors
+- \`No obstante\` — nevertheless (more formal than \`sin embargo\`)
+- \`Asimismo\` — likewise
+- \`Por consiguiente\` — consequently
+- \`En aras de\` — for the sake of
+- \`Si bien\` — although (formal \`aunque\`)
+- \`Cabe señalar que…\` — it should be noted that…
+
+### Passive and impersonal coloring
+- \`Se procederá a la evaluación de…\` — an evaluation will be carried out…
+- \`Queda prohibido fumar.\` — smoking is prohibited (queda + participio)
+- \`Resulta imprescindible…\` — it proves essential…
+
+> 💡 C2 means **switching registers**: saying the same thing in a bar and in a ministry.`,
+    es: `## Estilo culto: construcciones absolutas y nominalización
+
+Recursos del español **escrito / formal**: prensa, ensayos, DELE C2.
+
+### Participio absoluto
+Un participio + sustantivo sustituye a toda una subordinada:
+- \`**Terminada la reunión**, todos se fueron.\` = Cuando terminó la reunión…
+- \`**Dicho esto**, pasemos al siguiente punto.\`
+- \`**Una vez firmado el contrato**, no hay vuelta atrás.\`
+
+> ⚠️ El participio **concuerda**: \`Terminad**a** la reunión\`, \`Firmad**os** los documentos\`.
+
+### Gerundio absoluto
+Con sujeto propio:
+- \`**Estando yo en Madrid**, ocurrió todo.\`
+- \`**Siendo esto así**, no hay más que hablar.\`
+
+### Nominalización — sustantivo en lugar de verbo
+| Coloquial | Culto |
+|---|---|
+| \`Cuando llegó el tren…\` | \`**A la llegada del** tren…\` |
+| \`Antes de que salgamos…\` | \`**Antes de nuestra salida**…\` |
+| \`Porque aumentaron los precios…\` | \`**Debido al aumento de** los precios…\` |
+
+### Conectores cultos
+- \`No obstante\` — más formal que \`sin embargo\`
+- \`Asimismo\` · \`Por consiguiente\` · \`En aras de\` · \`Si bien\`
+- \`Cabe señalar que…\`
+
+### Matiz pasivo e impersonal
+- \`Se procederá a la evaluación de…\`
+- \`Queda prohibido fumar.\` (queda + participio)
+- \`Resulta imprescindible…\`
+
+> 💡 C2 es saber **cambiar de registro**: decir lo mismo en un bar y en un ministerio.`,
+  },
+  "dele-contraste-pasados": {
+    en: `## Contrasting past tenses — trap #1 on the DELE
+
+DELE tasks (Comprensión de lectura, gap-fill) most often test the choice between the four past tenses.
+
+### Decision cheat sheet
+
+| Question about the action | Tense | Example |
+|---|---|---|
+| What happened? (event, plot driver) | **Indefinido** | \`Ayer **vi** a Marta.\` |
+| What was the background? (habit, description) | **Imperfecto** | \`**Hacía** frío y **llovía**.\` |
+| Linked to the present / period not closed | **Perfecto** | \`**He visto** a Marta esta mañana.\` |
+| Earlier than another past event | **Pluscuamperfecto** | \`Cuando llegué, ya **se había ido**.\` |
+
+### Marker words (learn by heart)
+- **Indefinido:** \`ayer\`, \`anoche\`, \`el año pasado\`, \`en 2010\`, \`de repente\`, \`entonces\`
+- **Imperfecto:** \`antes\`, \`siempre\`, \`cada día\`, \`de niño\`, \`mientras\`, \`todos los veranos\`
+- **Perfecto:** \`hoy\`, \`esta semana\`, \`este año\`, \`ya\`, \`todavía no\`, \`alguna vez\`, \`nunca (en mi vida)\`
+- **Pluscuamperfecto:** \`ya… cuando\`, \`antes de que\`, \`nunca hasta entonces\`
+
+### The classic exam pair
+\`**Estaba** duchándome **cuando** **sonó** el teléfono.\`
+Background (imperfecto) + event (indefinido) — DELE asks about this pair almost every time.
+
+### Meaning changes with the tense
+| Imperfecto | Indefinido |
+|---|---|
+| \`**Conocía** a Juan.\` — knew him | \`**Conocí** a Juan.\` — met him |
+| \`**Sabía** la verdad.\` — knew | \`**Supe** la verdad.\` — found out |
+| \`**Quería** salir.\` — wanted | \`**Quise** salir.\` — tried |
+| \`No **quería** ir.\` — didn't want | \`No **quiso** ir.\` — refused |
+
+> 💡 Spain vs Latin America: in Spain \`esta mañana **he visto**\`, in most of the Americas \`esta mañana **vi**\`. DELE accepts both norms — just be consistent.`,
+    es: `## Contraste de pasados — la trampa n.º 1 del DELE
+
+Las tareas del DELE (Comprensión de lectura, huecos) evalúan sobre todo la elección entre los cuatro pasados.
+
+### Chuleta de decisión
+
+| Pregunta sobre la acción | Tiempo | Ejemplo |
+|---|---|---|
+| ¿Qué pasó? (evento, avance de la trama) | **Indefinido** | \`Ayer **vi** a Marta.\` |
+| ¿Cómo era el fondo? (hábito, descripción) | **Imperfecto** | \`**Hacía** frío y **llovía**.\` |
+| Conectado con el presente / periodo abierto | **Perfecto** | \`**He visto** a Marta esta mañana.\` |
+| Anterior a otro pasado | **Pluscuamperfecto** | \`Cuando llegué, ya **se había ido**.\` |
+
+### Marcadores (para memorizar)
+- **Indefinido:** \`ayer\`, \`anoche\`, \`el año pasado\`, \`en 2010\`, \`de repente\`, \`entonces\`
+- **Imperfecto:** \`antes\`, \`siempre\`, \`cada día\`, \`de niño\`, \`mientras\`, \`todos los veranos\`
+- **Perfecto:** \`hoy\`, \`esta semana\`, \`este año\`, \`ya\`, \`todavía no\`, \`alguna vez\`, \`nunca (en mi vida)\`
+- **Pluscuamperfecto:** \`ya… cuando\`, \`antes de que\`, \`nunca hasta entonces\`
+
+### La combinación clásica del examen
+\`**Estaba** duchándome **cuando** **sonó** el teléfono.\`
+Fondo (imperfecto) + evento (indefinido): el DELE lo pregunta casi siempre.
+
+### El tiempo cambia el significado
+| Imperfecto | Indefinido |
+|---|---|
+| \`**Conocía** a Juan.\` — lo conocía de antes | \`**Conocí** a Juan.\` — lo conocí entonces |
+| \`**Sabía** la verdad.\` — la sabía | \`**Supe** la verdad.\` — me enteré |
+| \`**Quería** salir.\` — quería | \`**Quise** salir.\` — lo intenté |
+| \`No **quería** ir.\` — no quería | \`No **quiso** ir.\` — se negó |
+
+> 💡 España vs. América: en España \`esta mañana **he visto**\`; en gran parte de América \`esta mañana **vi**\`. El DELE acepta ambas normas: sé coherente.`,
+  },
+  "dele-carta-formal": {
+    en: `## Writing letters on the DELE (Expresión e interacción escritas)
+
+The writing paper almost always includes a letter/e-mail. What's graded is the **register** — formulas must match the addressee.
+
+### Formal letter
+
+| Block | Formulas |
+|---|---|
+| Greeting | \`Estimado señor / Estimada señora:\` · \`Muy señores míos:\` · \`A quien corresponda:\` |
+| Reason for writing | \`Le escribo para + inf…\` · \`Me dirijo a usted con motivo de…\` · \`Me pongo en contacto con ustedes para…\` |
+| Request | \`Le agradecería que + subjuntivo imperfecto\` (\`…que me **enviara** más información\`) · \`¿Podría + inf…?\` · \`Le ruego (que) + subj\` |
+| Complaint | \`Me veo obligado/a a expresar mi malestar por…\` · \`Quisiera presentar una reclamación…\` |
+| Closing line | \`A la espera de su respuesta, …\` · \`Sin otro particular, …\` · \`Le agradezco de antemano su atención.\` |
+| Sign-off | \`Atentamente,\` · \`Un cordial saludo,\` · \`Reciba un cordial saludo,\` |
+
+> ⚠️ The whole letter uses **usted/ustedes**. A single "tú" in a formal letter = losing points for adecuación.
+
+### Informal letter
+
+| Block | Formulas |
+|---|---|
+| Greeting | \`¡Hola, Ana!\` · \`Querido Pablo:\` |
+| Opening | \`¿Qué tal estás? Espero que todo te vaya bien.\` · \`¡Cuánto tiempo sin saber de ti!\` |
+| Body | \`Te escribo porque…\` · \`¿Sabes qué? Resulta que…\` · \`Por cierto, …\` |
+| Closing | \`Bueno, te dejo, que…\` · \`Escríbeme pronto.\` · \`Dale recuerdos a tu familia.\` |
+| Sign-off | \`Un abrazo,\` · \`Un beso,\` · \`Hasta pronto,\` |
+
+### Grammar of politeness (raises your score)
+- Conditional: \`**Querría** saber si…\` / \`**Me gustaría** + inf\`
+- Imperfecto de cortesía: \`**Quería** pedirle un favor.\`
+- \`Le agradecería que me **informara**…\` — conditional + imperfect subjunctive = top-level B2.
+
+> 💡 Learn the letter skeleton by heart — in the exam you'll only need to fill in the content.`,
+    es: `## La carta en el DELE (Expresión e interacción escritas)
+
+En la parte escrita casi siempre hay una carta o e-mail. Se evalúa el **registro**: las fórmulas deben corresponder al destinatario.
+
+### Carta formal
+
+| Bloque | Fórmulas |
+|---|---|
+| Saludo | \`Estimado señor / Estimada señora:\` · \`Muy señores míos:\` · \`A quien corresponda:\` |
+| Motivo | \`Le escribo para + inf…\` · \`Me dirijo a usted con motivo de…\` · \`Me pongo en contacto con ustedes para…\` |
+| Petición | \`Le agradecería que + subjuntivo imperfecto\` (\`…que me **enviara** más información\`) · \`¿Podría + inf…?\` · \`Le ruego (que) + subj\` |
+| Queja | \`Me veo obligado/a a expresar mi malestar por…\` · \`Quisiera presentar una reclamación…\` |
+| Cierre | \`A la espera de su respuesta, …\` · \`Sin otro particular, …\` · \`Le agradezco de antemano su atención.\` |
+| Despedida | \`Atentamente,\` · \`Un cordial saludo,\` · \`Reciba un cordial saludo,\` |
+
+> ⚠️ Toda la carta va en **usted/ustedes**. Un solo «tú» en una carta formal = menos puntos de adecuación.
+
+### Carta informal
+
+| Bloque | Fórmulas |
+|---|---|
+| Saludo | \`¡Hola, Ana!\` · \`Querido Pablo:\` |
+| Inicio | \`¿Qué tal estás? Espero que todo te vaya bien.\` · \`¡Cuánto tiempo sin saber de ti!\` |
+| Cuerpo | \`Te escribo porque…\` · \`¿Sabes qué? Resulta que…\` · \`Por cierto, …\` |
+| Cierre | \`Bueno, te dejo, que…\` · \`Escríbeme pronto.\` · \`Dale recuerdos a tu familia.\` |
+| Despedida | \`Un abrazo,\` · \`Un beso,\` · \`Hasta pronto,\` |
+
+### Gramática de la cortesía (sube nota)
+- Condicional: \`**Querría** saber si…\` / \`**Me gustaría** + inf\`
+- Imperfecto de cortesía: \`**Quería** pedirle un favor.\`
+- \`Le agradecería que me **informara**…\` — condicional + subjuntivo imperfecto = nivel B2 alto.
+
+> 💡 Memoriza el esqueleto de la carta: en el examen solo tendrás que rellenar el contenido.`,
+  },
+  "dele-conectores-redaccion": {
+    en: `## Connectors for the redacción (Expresión escrita B2–C1)
+
+Your **coherencia** score depends directly on linking devices. Here is a working essay skeleton.
+
+### Text structure
+
+| Function | Connectors |
+|---|---|
+| Opening | \`En primer lugar\` · \`Para empezar\` · \`Hoy en día\` · \`Es un hecho que…\` |
+| Addition | \`Además\` · \`Asimismo\` · \`Cabe añadir que\` · \`No solo…, sino también…\` |
+| Contrast | \`Sin embargo\` · \`No obstante\` · \`Ahora bien\` · \`Por el contrario\` · \`A pesar de que\` |
+| Two sides | \`Por un lado…, por otro (lado)…\` · \`En cuanto a…\` · \`Respecto a…\` |
+| Cause | \`Debido a\` · \`Puesto que\` · \`Dado que\` · \`Ya que\` |
+| Consequence | \`Por lo tanto\` · \`Por consiguiente\` · \`De ahí que + subj\` · \`Así pues\` |
+| Example | \`Por ejemplo\` · \`Como muestra\` · \`Un claro ejemplo de ello es…\` |
+| Conclusion | \`En definitiva\` · \`En conclusión\` · \`Para concluir\` · \`En resumen\` |
+
+### Expressing opinion: indicativo or subjuntivo?
+
+| Structure | Mood | Example |
+|---|---|---|
+| \`Creo que / Pienso que\` | **indicativo** | \`Creo que **es** útil.\` |
+| \`No creo que / Dudo que\` | **subjuntivo** | \`No creo que **sea** útil.\` |
+| \`Es evidente / cierto que\` | **indicativo** | \`Es evidente que **funciona**.\` |
+| \`Es importante / necesario que\` | **subjuntivo** | \`Es importante que se **regule**.\` |
+| \`(No) me parece que\` | ind. / **subj.** | \`No me parece que **tenga** sentido.\` |
+
+### Point-losing traps
+- \`De ahí que\` — **always subjunctive**: \`De ahí que **sea** necesario actuar.\`
+- \`A pesar de **que** + verbo\`, but \`a pesar de + inf/sust\`.
+- Don't repeat \`pero\` — alternate \`sin embargo / no obstante / ahora bien\`.
+
+> 💡 B2 paragraph formula: connector → thesis → argument → example. Four paragraphs and the structure is done.`,
+    es: `## Conectores para la redacción (Expresión escrita B2–C1)
+
+La nota de **coherencia** depende directamente de los conectores. Aquí tienes un esqueleto de redacción.
+
+### Estructura del texto
+
+| Función | Conectores |
+|---|---|
+| Inicio | \`En primer lugar\` · \`Para empezar\` · \`Hoy en día\` · \`Es un hecho que…\` |
+| Adición | \`Además\` · \`Asimismo\` · \`Cabe añadir que\` · \`No solo…, sino también…\` |
+| Contraste | \`Sin embargo\` · \`No obstante\` · \`Ahora bien\` · \`Por el contrario\` · \`A pesar de que\` |
+| Dos caras | \`Por un lado…, por otro (lado)…\` · \`En cuanto a…\` · \`Respecto a…\` |
+| Causa | \`Debido a\` · \`Puesto que\` · \`Dado que\` · \`Ya que\` |
+| Consecuencia | \`Por lo tanto\` · \`Por consiguiente\` · \`De ahí que + subj\` · \`Así pues\` |
+| Ejemplo | \`Por ejemplo\` · \`Como muestra\` · \`Un claro ejemplo de ello es…\` |
+| Conclusión | \`En definitiva\` · \`En conclusión\` · \`Para concluir\` · \`En resumen\` |
+
+### Opinión: ¿indicativo o subjuntivo?
+
+| Estructura | Modo | Ejemplo |
+|---|---|---|
+| \`Creo que / Pienso que\` | **indicativo** | \`Creo que **es** útil.\` |
+| \`No creo que / Dudo que\` | **subjuntivo** | \`No creo que **sea** útil.\` |
+| \`Es evidente / cierto que\` | **indicativo** | \`Es evidente que **funciona**.\` |
+| \`Es importante / necesario que\` | **subjuntivo** | \`Es importante que se **regule**.\` |
+| \`(No) me parece que\` | ind. / **subj.** | \`No me parece que **tenga** sentido.\` |
+
+### Trampas que restan puntos
+- \`De ahí que\` — **siempre subjuntivo**: \`De ahí que **sea** necesario actuar.\`
+- \`A pesar de **que** + verbo\`, pero \`a pesar de + inf/sust\`.
+- No repitas \`pero\`: alterna \`sin embargo / no obstante / ahora bien\`.
+
+> 💡 Fórmula del párrafo B2: conector → tesis → argumento → ejemplo. Cuatro párrafos y la estructura está lista.`,
+  },
+  "dele-expresion-oral": {
+    en: `## The DELE speaking paper (Expresión e interacción orales)
+
+### Describing a photo (the classic task)
+Locating things in the picture:
+- \`En primer plano se ve…\` — in the foreground you can see…
+- \`Al fondo hay…\` — in the background there is…
+- \`A la derecha / izquierda aparece…\`
+
+Hypotheses — the examiner expects the **futuro de conjetura**:
+- \`**Será** su madre.\` — She must be his mother.
+- \`**Tendrán** unos treinta años.\` — They must be about thirty.
+- \`**Estarán** celebrando algo.\` — They're probably celebrating something.
+- \`Parece que + indicativo\` / \`Puede que + **subjuntivo**\` (\`Puede que **sean** amigos.\`)
+
+### Opinion and evaluation
+- \`Desde mi punto de vista…\` · \`A mi modo de ver…\` · \`En mi opinión…\`
+- \`Lo que más me llama la atención es…\` — what strikes me most is…
+- \`Me da la impresión de que…\`
+
+### Agreeing / disagreeing (interacción)
+| Agreement | Disagreement |
+|---|---|
+| \`Estoy totalmente de acuerdo contigo.\` | \`No estoy del todo de acuerdo.\` |
+| \`Tienes toda la razón.\` | \`Yo lo veo de otra manera.\` |
+| \`Yo pienso lo mismo.\` | \`Entiendo tu postura, pero…\` |
+| \`Sin duda.\` / \`Desde luego.\` | \`No creo que **sea** así.\` (+subj!) |
+
+### Filler words (to buy time)
+\`Bueno…\` · \`Pues…\` · \`A ver…\` · \`Es que…\` · \`O sea…\` · \`¿Cómo te diría?\` · \`En fin…\`
+
+They sound natural and give you seconds to think — examiners score this as **fluidez**.
+
+### Compensation strategies (if you forget a word)
+- \`Es una cosa que sirve para…\` — it's a thing you use for…
+- \`No recuerdo la palabra exacta, pero…\`
+- \`Es algo parecido a…\` — it's something like…
+
+> 💡 In your minute of prep, jot down 3 connectors + 2 hypotheses with the future tense — enough for a structured monologue.`,
+    es: `## La parte oral del DELE (Expresión e interacción orales)
+
+### Descripción de una foto (tarea clásica)
+Situar elementos:
+- \`En primer plano se ve…\`
+- \`Al fondo hay…\`
+- \`A la derecha / izquierda aparece…\`
+
+Hipótesis — el examinador espera el **futuro de conjetura**:
+- \`**Será** su madre.\`
+- \`**Tendrán** unos treinta años.\`
+- \`**Estarán** celebrando algo.\`
+- \`Parece que + indicativo\` / \`Puede que + **subjuntivo**\` (\`Puede que **sean** amigos.\`)
+
+### Opinión y valoración
+- \`Desde mi punto de vista…\` · \`A mi modo de ver…\` · \`En mi opinión…\`
+- \`Lo que más me llama la atención es…\`
+- \`Me da la impresión de que…\`
+
+### Acuerdo / desacuerdo (interacción)
+| Acuerdo | Desacuerdo |
+|---|---|
+| \`Estoy totalmente de acuerdo contigo.\` | \`No estoy del todo de acuerdo.\` |
+| \`Tienes toda la razón.\` | \`Yo lo veo de otra manera.\` |
+| \`Yo pienso lo mismo.\` | \`Entiendo tu postura, pero…\` |
+| \`Sin duda.\` / \`Desde luego.\` | \`No creo que **sea** así.\` (¡+subj!) |
+
+### Muletillas (para ganar tiempo)
+\`Bueno…\` · \`Pues…\` · \`A ver…\` · \`Es que…\` · \`O sea…\` · \`¿Cómo te diría?\` · \`En fin…\`
+
+Suenan naturales y dan segundos para pensar: los examinadores lo valoran como **fluidez**.
+
+### Estrategias de compensación (si olvidas una palabra)
+- \`Es una cosa que sirve para…\`
+- \`No recuerdo la palabra exacta, pero…\`
+- \`Es algo parecido a…\`
+
+> 💡 En el minuto de preparación apunta 3 conectores + 2 hipótesis con futuro: suficiente para un monólogo estructurado.`,
+  },
 };

@@ -15,7 +15,11 @@ export function resolveGrammarGrounding(input: {
   const topics = input.course.getGrammar?.() ?? [];
   if (topics.length === 0) return null;
 
-  const q = normalize(input.query);
+  // Strip the "Explain:" UI prefix so exact-title matches score highest.
+  const q = normalize(input.query).replace(
+    /^(объясни|обьясни|расскажи|разбери|поясни|explain|explica(?:me)?|erklar(?:e)?)\s+/,
+    "",
+  );
   if (q.length < 2) return null;
 
   let best: { topic: GrammarTopic; score: number } | null = null;
@@ -77,14 +81,14 @@ function pickContent(
 export function isGrammarExplainQuery(query: string): boolean {
   const q = normalize(query);
   if (
-    /^(объясни|обьясни|расскажи|разбери|поясни|explain|explica|what is|what's|что такое|что это)(\s|$)/i.test(
+    /^(объясни|обьясни|расскажи|разбери|поясни|explain|explica(me)?|erkl[aä]r(e)?|what is|what's|что такое|что это)(\s|$)/i.test(
       q,
     )
   ) {
     return true;
   }
   // Bare mood / tense labels pasted from the course UI.
-  return /^(imperativo|subjuntivo|indicativo|condicional|pret[eé]rito|imperfecto|gerundio|infinitivo|ser\s*\/?\s*estar|por\s*\/?\s*para|narrative tenses|present simple|past simple|present perfect|passive voice|second.*conditional|third.*conditional)(\s|$)/i.test(
+  return /^(imperativo|subjuntivo|indicativo|condicional|pret[eé]rito|imperfecto|gerundio|infinitivo|ser\s*\/?\s*estar|por\s*\/?\s*para|narrative tenses|present simple|past simple|present perfect|passive voice|second.*conditional|third.*conditional|dele\b|oraciones hendidas|cleft|ellipsis|hedging)(\s|$)/i.test(
     q,
   );
 }
@@ -139,6 +143,22 @@ function scoreTopic(topic: GrammarTopic, q: string): number {
 
   if (titleEs && (q.includes(titleEs) || titleEs.includes(q))) score += 10;
   if (title && (q.includes(title) || title.includes(q))) score += 8;
+  // Exact title paste (the "Explain: <title>" button) beats sibling topics.
+  if (q === title || q === titleEs) score += 15;
+
+  // Localized UI titles ("Explain: <EN/ES/DE title>" from the grammar page).
+  for (const l of ["en", "es", "de"] as const) {
+    const localized = normalize(getGrammarTopicTitle(topic, l));
+    if (!localized || localized === title || localized === titleEs) continue;
+    if (q === localized) {
+      score += 25;
+      break;
+    }
+    if (q.includes(localized) || (q.length >= 6 && localized.includes(q))) {
+      score += 10;
+      break;
+    }
+  }
 
   const slugToken = slug.replace(/^(a1|a2|b1|b2|c1)\s+/, "");
   if (slugToken.length >= 4 && q.includes(slugToken)) score += 9;
@@ -151,6 +171,9 @@ function scoreTopic(topic: GrammarTopic, q: string): number {
 
   if (category && q.includes(category)) score += 1;
 
+  // Exam-tagged topics (DELE, …) win when the exam is named in the query.
+  if (topic.exam && q.includes(topic.exam.toLowerCase())) score += 8;
+
   // Strong aliases for common learner wording.
   const aliases: Record<string, string[]> = {
     imperativo: ["повелительн", "imperative", "команд"],
@@ -160,6 +183,17 @@ function scoreTopic(topic: GrammarTopic, q: string): number {
     "ser estar": ["ser/estar", "ser y estar"],
     "por para": ["por/para", "por y para"],
     narrative: ["narrative tenses", "повествовательн"],
+    // New C2 / DELE topics — common learner wording in all interface languages.
+    hendidas: ["выделительн", "расколот", "cleft", "spaltsatz", "hendida"],
+    conjetura: ["догадк", "слух", "rumor", "vermutung", "conjecture", "hearsay", "probablemente"],
+    culto: ["книжн", "абсолютн", "absolute construction", "nominalizacion", "номинализац"],
+    contraste: ["контраст прошедш", "past tense contrast", "kontrast der vergangenheit"],
+    carta: ["формальное письмо", "неформальное письмо", "formal letter", "informal letter", "formeller brief", "carta formal"],
+    conectores: ["коннектор", "connector", "linking words", "связк", "konnektor"],
+    oral: ["устная част", "speaking exam", "монолог", "описание фото", "describir una foto"],
+    cleft: ["выделительн", "расколот", "hendidas", "emphatic do", "эмфаза", "emphase"],
+    ellipsis: ["эллипсис", "замещени", "substitution", "sustitucion", "elipsis", "so do i", "me neither", "ellipse"],
+    hedging: ["хеджирован", "understatement", "смягчени", "сдержанност", "vague language"],
   };
   for (const [key, list] of Object.entries(aliases)) {
     if (

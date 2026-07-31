@@ -26,6 +26,8 @@ export const DE_GRAMMAR_CATEGORY: Record<string, string> = {
   Дискурс: "Diskurs",
   "Условия / Залог": "Konditionale / Genus Verbi",
   "Подготовка к экзамену": "Prüfungsvorbereitung",
+  "Подготовка к DELE": "DELE-Vorbereitung",
+  Определители: "Bestimmungswörter",
 };
 
 export const DE_GRAMMAR_TOPIC: Record<string, GrammarLocaleFields> = {
@@ -275,6 +277,55 @@ export const DE_GRAMMAR_TOPIC: Record<string, GrammarLocaleFields> = {
   "eng-c1-review": {
     title: "Gesamtrepetition + IELTS",
     summary: "Vollständige Wiederholung aller Themen plus IELTS-Fähigkeiten.",
+  },
+  "c2-oraciones-hendidas": {
+    title: "Emphase: Spaltsätze",
+    summary:
+      "Oraciones hendidas: «Fue Juan quien…», «Lo que necesito es…» — Fokus und Hervorhebung.",
+  },
+  "c2-conjetura-rumor": {
+    title: "Vermutung und Gerüchte: futuro y condicional",
+    summary:
+      "«Serán las diez» — wohl zehn Uhr. «Habría mil personas» — Berichten zufolge etwa tausend.",
+  },
+  "c2-estilo-culto": {
+    title: "Gehobener Stil: absolute Konstruktionen",
+    summary:
+      "Participio absoluto («Terminada la reunión…»), gerundio absoluto, Nominalisierung — Schriftregister.",
+  },
+  "dele-contraste-pasados": {
+    title: "DELE: Kontrast der Vergangenheitszeiten",
+    summary:
+      "Indefinido vs. Imperfecto vs. Perfecto vs. Pluscuamperfecto — Falle Nr. 1 im DELE.",
+  },
+  "dele-carta-formal": {
+    title: "DELE: formeller und informeller Brief",
+    summary:
+      "Briefformeln für die Expresión escrita: Anreden, höfliche Bitten, Grußformeln.",
+  },
+  "dele-conectores-redaccion": {
+    title: "DELE: Konnektoren für den Aufsatz",
+    summary:
+      "Aufsatzgerüst: en primer lugar, no obstante, en definitiva + Meinung mit indicativo/subjuntivo.",
+  },
+  "dele-expresion-oral": {
+    title: "DELE: mündlicher Teil",
+    summary:
+      "Fotobeschreibung, Hypothesen (futuro de conjetura), Meinung, Zustimmung/Widerspruch, Füllwörter.",
+  },
+  "eng-c2-cleft-emphasis": {
+    title: "Cleft Sentences und Emphase",
+    summary:
+      "It was John who…, What I need is…, emphatisches do — Hervorhebung und Fokus.",
+  },
+  "eng-c2-ellipsis-substitution": {
+    title: "Ellipse und Substitution",
+    summary: "So do I, I hope so, if not — wie Muttersprachler Wiederholungen vermeiden.",
+  },
+  "eng-c2-hedging-nuance": {
+    title: "Hedging und Understatement",
+    summary:
+      "It could be argued…, not entirely convinced, britisches Understatement und höfliche Kritik.",
   },
 };
 
