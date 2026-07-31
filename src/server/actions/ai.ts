@@ -19,6 +19,7 @@ import type {
   AIMessage,
   ExerciseHistory,
   ExerciseType,
+  GrammarLevel,
   InterfaceLanguage,
   Level,
 } from "@/types";
@@ -445,7 +446,7 @@ export async function getTutorSessionOpening(): Promise<{
 
 export interface GeneratedExercise {
   type: ExerciseType;
-  level: Level;
+  level: GrammarLevel;
   question: string;
   instruction?: string;
   options?: string[];
@@ -649,6 +650,20 @@ export async function checkExerciseAnswer(input: {
   const courseId = input.courseId ?? "spanish";
   const course = await getCourse(courseId);
 
+  // Bank explanations are single-language; serve them in the interface language.
+  let bankExplanation = input.exercise.explanation;
+  if (input.exercise.staticSource && bankExplanation) {
+    const { localizeExerciseExplanation } = await import(
+      "@/server/ai/localize-explanation"
+    );
+    bankExplanation = await localizeExerciseExplanation({
+      explanation: bankExplanation,
+      interfaceLanguage: input.language ?? "ru",
+      exerciseId: input.exercise.exerciseId,
+      courseId,
+    });
+  }
+
   const userNorm = normalizeAnswer(input.userAnswer);
   const acceptable = [
     input.exercise.answer,
@@ -661,7 +676,7 @@ export async function checkExerciseAnswer(input: {
       ? (await import("@/lib/tutor-feedback")).formatBankTutorFeedback({
           language: input.language,
           correct: true,
-          explanation: input.exercise.explanation,
+          explanation: bankExplanation,
         })
       : input.exercise.explanation;
 
@@ -705,7 +720,7 @@ export async function checkExerciseAnswer(input: {
     ).formatBankTutorFeedback({
       language: input.language,
       correct: false,
-      explanation: input.exercise.explanation,
+      explanation: bankExplanation,
     });
 
     await saveExerciseHistory({

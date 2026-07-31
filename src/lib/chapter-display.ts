@@ -389,6 +389,142 @@ export const SPANISH_CHAPTER_LOCALE: Record<
       location: "Observatorium",
     },
   },
+  "chapter-23-cronicas": {
+    en: {
+      title: "The Wanderer's Chronicles",
+      summary: "DELE: contrasting past tenses — indefinido, imperfecto, perfecto, pluscuamperfecto.",
+      location: "Seville Archive",
+    },
+    es: {
+      title: "Las Crónicas del Viajero",
+      summary: "DELE: contraste de pasados — indefinido, imperfecto, perfecto, pluscuamperfecto.",
+      location: "Archivo de Sevilla",
+    },
+    de: {
+      title: "Die Chroniken des Wanderers",
+      summary: "DELE: Kontrast der Vergangenheitszeiten — indefinido, imperfecto, perfecto, pluscuamperfecto.",
+      location: "Archiv von Sevilla",
+    },
+  },
+  "chapter-24-carta": {
+    en: {
+      title: "A Letter to the Hippogriff",
+      summary: "DELE: formal and informal letters — greetings, requests, sign-offs.",
+      location: "Seville Post House",
+    },
+    es: {
+      title: "La Carta al Hipogrifo",
+      summary: "DELE: carta formal e informal — saludos, peticiones, despedidas.",
+      location: "Casa de Correos de Sevilla",
+    },
+    de: {
+      title: "Ein Brief an den Hippogreif",
+      summary: "DELE: formeller und informeller Brief — Anreden, Bitten, Grußformeln.",
+      location: "Posthaus von Sevilla",
+    },
+  },
+  "chapter-25-conectores": {
+    en: {
+      title: "The Bridge of Arguments",
+      summary: "DELE: essay connectors — text structure, opinions with indicativo/subjuntivo.",
+      location: "University of Salamanca",
+    },
+    es: {
+      title: "El Puente de los Argumentos",
+      summary: "DELE: conectores para la redacción — estructura, opinión con indicativo/subjuntivo.",
+      location: "Universidad de Salamanca",
+    },
+    de: {
+      title: "Die Brücke der Argumente",
+      summary: "DELE: Konnektoren für den Aufsatz — Textstruktur, Meinung mit indicativo/subjuntivo.",
+      location: "Universität Salamanca",
+    },
+  },
+  "chapter-26-voz-plaza": {
+    en: {
+      title: "The Voice of the Square",
+      summary: "DELE: the speaking paper — describing photos, hypotheses, agreeing and disagreeing.",
+      location: "Plaza de España",
+    },
+    es: {
+      title: "La Voz de la Plaza",
+      summary: "DELE: expresión oral — describir fotos, hipótesis, acuerdo y desacuerdo.",
+      location: "Plaza de España",
+    },
+    de: {
+      title: "Die Stimme des Platzes",
+      summary: "DELE: mündlicher Teil — Fotobeschreibung, Hypothesen, Zustimmung und Widerspruch.",
+      location: "Plaza de España",
+    },
+  },
+  "chapter-27-hendidas": {
+    en: {
+      title: "The Labyrinth of Mirrors",
+      summary: "Cleft sentences: «Fue Juan quien…», «Lo que necesito es…».",
+      location: "The Alhambra",
+    },
+    es: {
+      title: "El Laberinto de los Espejos",
+      summary: "Oraciones hendidas: «Fue Juan quien…», «Lo que necesito es…».",
+      location: "La Alhambra",
+    },
+    de: {
+      title: "Das Spiegellabyrinth",
+      summary: "Spaltsätze: «Fue Juan quien…», «Lo que necesito es…».",
+      location: "Die Alhambra",
+    },
+  },
+  "chapter-28-conjetura": {
+    en: {
+      title: "The Whisper of Rumors",
+      summary: "Futuro de conjetura and condicional de rumor: guesses and unconfirmed reports.",
+      location: "Newspaper Office, Madrid",
+    },
+    es: {
+      title: "El Susurro de los Rumores",
+      summary: "Futuro de conjetura y condicional de rumor: suposiciones e información no confirmada.",
+      location: "Redacción del periódico, Madrid",
+    },
+    de: {
+      title: "Das Flüstern der Gerüchte",
+      summary: "Futuro de conjetura und condicional de rumor: Vermutungen und unbestätigte Meldungen.",
+      location: "Zeitungsredaktion, Madrid",
+    },
+  },
+  "chapter-29-culto": {
+    en: {
+      title: "The Academic's Quill",
+      summary: "Formal style: participio absoluto, nominalization, formal connectors.",
+      location: "The Royal Academy",
+    },
+    es: {
+      title: "La Pluma del Académico",
+      summary: "Estilo culto: participio absoluto, nominalización, conectores cultos.",
+      location: "La Real Academia",
+    },
+    de: {
+      title: "Die Feder des Akademikers",
+      summary: "Gehobener Stil: participio absoluto, Nominalisierung, gehobene Konnektoren.",
+      location: "Die Königliche Akademie",
+    },
+  },
+  "chapter-30-ironia": {
+    en: {
+      title: "The Masks of Irony",
+      summary: "Irony, sarcasm and register switching: from the bar to the ministry.",
+      location: "Cervantes Theatre",
+    },
+    es: {
+      title: "Las Máscaras de la Ironía",
+      summary: "Ironía, sarcasmo y cambio de registro: del bar al ministerio.",
+      location: "Teatro Cervantes",
+    },
+    de: {
+      title: "Die Masken der Ironie",
+      summary: "Ironie, Sarkasmus und Registerwechsel: von der Bar bis ins Ministerium.",
+      location: "Cervantes-Theater",
+    },
+  },
 };
 
 /**
@@ -771,6 +907,57 @@ export const ENGLISH_CHAPTER_LOCALE: Record<
       title: "Die finale Herausforderung",
       summary: "Gesamtwiederholung + IELTS-Vorbereitung.",
       location: "IELTS-Burg",
+    },
+  },
+  "eng-ch23-spotlight": {
+    ru: {
+      title: "В свете прожекторов",
+      summary: "Cleft sentences, эмфатическое do, fronting — выделение как у носителей.",
+      location: "Бродвей, Нью-Йорк",
+    },
+    es: {
+      title: "En el Centro de Atención",
+      summary: "Cleft sentences, do enfático, fronting — el énfasis como un nativo.",
+      location: "Broadway, Nueva York",
+    },
+    de: {
+      title: "Im Rampenlicht",
+      summary: "Cleft sentences, emphatisches do, fronting — Betonung wie ein Muttersprachler.",
+      location: "Broadway, New York",
+    },
+  },
+  "eng-ch24-unspoken": {
+    ru: {
+      title: "Несказанные слова",
+      summary: "Эллипсис и замещение: so do I, I hope so, if not.",
+      location: "Дублин",
+    },
+    es: {
+      title: "Las Palabras No Dichas",
+      summary: "Elipsis y sustitución: so do I, I hope so, if not.",
+      location: "Dublín",
+    },
+    de: {
+      title: "Die unausgesprochenen Worte",
+      summary: "Ellipse und Substitution: so do I, I hope so, if not.",
+      location: "Dublin",
+    },
+  },
+  "eng-ch25-between-lines": {
+    ru: {
+      title: "Между строк",
+      summary: "Хеджирование, британский understatement, вежливое несогласие.",
+      location: "Вестминстер, Лондон",
+    },
+    es: {
+      title: "Entre Líneas",
+      summary: "Hedging, understatement británico, desacuerdo cortés.",
+      location: "Westminster, Londres",
+    },
+    de: {
+      title: "Zwischen den Zeilen",
+      summary: "Hedging, britisches Understatement, höflicher Widerspruch.",
+      location: "Westminster, London",
     },
   },
 };

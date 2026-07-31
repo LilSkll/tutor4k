@@ -165,6 +165,36 @@ export const ENGLISH_EXERCISES: Record<string, Draft[]> = {
     { type: "fill_blank", question: "She should ___ studied harder for the test.", instruction: "Modal perfect regret", answer: "have", acceptableAnswers: ["Have"], explanation: "should have + V3 = regret about past." },
     { type: "multiple_choice", question: "In academic writing, contractions are usually ___", instruction: "Register", options: ["encouraged", "avoided", "required", "preferred"], answer: "avoided", explanation: "Formal register avoids contractions." },
   ],
+
+  // ===== C2: cleft sentences & emphasis ================================
+  "eng-ch23-spotlight": [
+    { type: "multiple_choice", question: "___ was John who broke the vase.", instruction: "It-cleft structure", options: ["It", "That", "There", "What"], answer: "It", explanation: "It-cleft: It was John who… highlights the person." },
+    { type: "multiple_choice", question: "___ I need is a holiday.", instruction: "Wh-cleft (pseudo-cleft)", options: ["What", "That", "Which", "It"], answer: "What", explanation: "Wh-cleft: What I need is… emphasizes the object." },
+    { type: "multiple_choice", question: "It was in Paris ___ I met her.", instruction: "It-cleft for place", options: ["that", "who", "what", "which"], answer: "that", explanation: "It was + place + that… (not who — who is for people)." },
+    { type: "multiple_choice", question: "I ___ like your idea — honestly!", instruction: "Emphatic auxiliary", options: ["do", "am", "would", "will"], answer: "do", explanation: "Emphatic do stresses the verb: I do like it." },
+    { type: "fill_blank", question: "The reason ___ I left was the noise.", instruction: "The reason … I left", answer: "why", acceptableAnswers: ["Why", "that"], explanation: "The reason why/that I left was… — cleft with reason." },
+    { type: "sentence_building", question: "What / she did / was / resign", instruction: "Build the wh-cleft sentence", options: ["What", "she did", "was", "resign"], answer: "What she did was resign", acceptableAnswers: ["what she did was resign"], explanation: "Wh-cleft with action: What she did was (to) resign." },
+  ],
+
+  // ===== C2: ellipsis & substitution ===================================
+  "eng-ch24-unspoken": [
+    { type: "multiple_choice", question: "Will it rain? — I hope ___.", instruction: "Substitution with so/not", options: ["not", "no", "isn't", "don't"], answer: "not", explanation: "I hope not = I hope it won't rain. (I hope so = positive.)" },
+    { type: "multiple_choice", question: "I love jazz. — So ___ I.", instruction: "Agreement with inversion", options: ["do", "am", "have", "like"], answer: "do", explanation: "So do I — auxiliary matches the tense (love → do)." },
+    { type: "multiple_choice", question: "I can't swim. — ___ can I.", instruction: "Negative agreement", options: ["Neither", "So", "Either", "Nor do"], answer: "Neither", explanation: "Negative agreement: Neither can I / Me neither." },
+    { type: "multiple_choice", question: "She runs faster than I ___.", instruction: "Substitute the verb phrase", options: ["do", "run fast", "am", "does"], answer: "do", explanation: "do replaces the verb phrase: than I do (= than I run)." },
+    { type: "fill_blank", question: "Which cake would you like? — The chocolate ___.", instruction: "Substitute the noun", answer: "one", acceptableAnswers: ["One"], explanation: "one/ones replaces a countable noun: the chocolate one." },
+    { type: "error_correction", question: "She has been to Peru. — So I have.", instruction: "Fix the word order", answer: "So have I.", acceptableAnswers: ["So have I"], explanation: "Inversion is required: So have I (So I have = 'indeed I have')." },
+  ],
+
+  // ===== C2: hedging & understatement ==================================
+  "eng-ch25-between-lines": [
+    { type: "multiple_choice", question: "It could be ___ that the policy failed.", instruction: "Academic hedging", options: ["argued", "argue", "arguing", "argues"], answer: "argued", explanation: "It could be argued that… — classic hedged claim." },
+    { type: "multiple_choice", question: "The results ___ to suggest a link.", instruction: "Cautious reporting verb", options: ["appear", "prove", "insist", "confirm"], answer: "appear", explanation: "appear/seem to suggest — hedged; prove/confirm are too strong." },
+    { type: "multiple_choice", question: "A British speaker says «Not bad» about your work. They probably mean…", instruction: "Understatement", options: ["it's very good", "it's terrible", "it's average", "they didn't see it"], answer: "it's very good", explanation: "British understatement: Not bad ≈ excellent." },
+    { type: "multiple_choice", question: "I ___ wondering if you could help me.", instruction: "Distancing through tense", options: ["was", "am", "will be", "have been"], answer: "was", explanation: "Past tense distances politely: I was wondering…" },
+    { type: "fill_blank", question: "I see what you mean, ___ I'm not sure I'd go that far.", instruction: "Polite disagreement", answer: "but", acceptableAnswers: ["But"], explanation: "I see what you mean, but… — softened disagreement." },
+    { type: "translation", question: "Можно сказать, что результаты неубедительны.", instruction: "Translate with a hedge (arguably / it could be argued)", answer: "Arguably, the results are inconclusive", acceptableAnswers: ["It could be argued that the results are inconclusive", "arguably, the results are inconclusive"], explanation: "Arguably / It could be argued that… — academic hedging." },
+  ],
 };
 
 /** Chapter exercises with stable ids + expanded permanent bank packs. */

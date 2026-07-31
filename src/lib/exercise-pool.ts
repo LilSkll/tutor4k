@@ -1,5 +1,12 @@
-import type { ExerciseType, Level, StaticExercise } from "@/types";
+import type {
+  ExerciseType,
+  GrammarLevel,
+  InterfaceLanguage,
+  Level,
+  StaticExercise,
+} from "@/types";
 import { getCourse } from "@/config/courses";
+import { isExerciseUsableForLanguage } from "@/lib/exercise-localize";
 import { normalizeAnswer } from "@/lib/normalize-answer";
 import { getCourseLearningProfile } from "@/server/learning/student-profile";
 import { getExerciseProgressMap } from "@/server/learning/exercise-progress";
@@ -11,7 +18,7 @@ import {
 } from "@/server/learning/adaptive-exercise";
 
 export type PooledExercise = StaticExercise & {
-  level: Level;
+  level: GrammarLevel;
   topic: string;
   courseId: string;
   chapterSlug: string;
@@ -55,6 +62,8 @@ type PickInput = {
   preferredChapterSlugs?: string[];
   /** Skip ids already used in this session (continue rounds). */
   excludeIds?: string[];
+  /** Drop items unusable in this interface language (e.g. RU prompts). */
+  interfaceLanguage?: InterfaceLanguage;
 };
 
 async function loadRankedCandidates(
@@ -62,6 +71,13 @@ async function loadRankedCandidates(
 ): Promise<RankedBankItem[]> {
   const pool = await getExercisePool(input.courseId);
   let candidates = filterPoolByTypeLevel(pool, input.type, input.level);
+
+  if (input.interfaceLanguage && input.interfaceLanguage !== "ru") {
+    const usable = candidates.filter((ex) =>
+      isExerciseUsableForLanguage(ex, input.interfaceLanguage!),
+    );
+    if (usable.length > 0) candidates = usable;
+  }
 
   if (candidates.length === 0) return [];
 

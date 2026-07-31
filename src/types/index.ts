@@ -211,7 +211,8 @@ export interface Chapter {
   number: number;          // 1, 2, 3...
   title: string;           // «Пробуждение»
   titleEs: string;         // «El Despertar»
-  level: Level;
+  /** Chapter CEFR band; C2 chapters exist even though user Level caps at C1. */
+  level: GrammarLevel;
   location: string;        // «Академия» (для карты путешествия)
   icon: string;            // emoji
   summary: string;

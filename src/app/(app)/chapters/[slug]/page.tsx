@@ -11,6 +11,7 @@ import {
   hasCompletedPrereqChain,
 } from "@/lib/chapter-display";
 import { translate } from "@/lib/i18n";
+import { prepareExercisesForInterface } from "@/lib/exercise-localize";
 
 export default async function ChapterPage({
   params,
@@ -47,9 +48,10 @@ export default async function ChapterPage({
   }
 
   const grammarTopic = course.getGrammarTopic(chapter.grammarTopic);
-  const exercises = course.getExercises(slug);
   const nextChapter = course.getNextChapter(slug);
   const lang = profile?.interface_language ?? "ru";
+  // Instructions in the interface language; drop RU-only items on non-RU UI.
+  const exercises = prepareExercisesForInterface(course.getExercises(slug), lang);
   const materialPreparing = translate("chapters.materialPreparing", lang);
 
   return (

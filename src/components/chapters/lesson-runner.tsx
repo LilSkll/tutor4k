@@ -30,6 +30,7 @@ import {
 import { translate } from "@/lib/i18n";
 import { SESSION_EXERCISES } from "@/lib/exercise-bank";
 import { normalizeAnswer, scorePercent } from "@/lib/normalize-answer";
+import { prepareExercisesForInterface } from "@/lib/exercise-localize";
 import { formatBankTutorFeedback } from "@/lib/tutor-feedback";
 import { getLessonAdaptationAction } from "@/server/actions/learning-profile";
 import type { GrammarTopic, StaticExercise } from "@/types";
@@ -135,7 +136,9 @@ export function LessonRunner({
         });
         if (cancelled) return;
         setAdaptation(data.adaptation);
-        setRevisionExercises(data.revisionExercises);
+        setRevisionExercises(
+          prepareExercisesForInterface(data.revisionExercises, language),
+        );
       } catch {
         // Non-fatal — lesson uses standard flow.
       }
@@ -143,7 +146,7 @@ export function LessonRunner({
     return () => {
       cancelled = true;
     };
-  }, [courseId, grammarTopicSlug, chapter.vocabTopic]);
+  }, [courseId, grammarTopicSlug, chapter.vocabTopic, language]);
 
   const chapterBank = React.useMemo(() => {
     if (presetExercises.length === 0) return [];

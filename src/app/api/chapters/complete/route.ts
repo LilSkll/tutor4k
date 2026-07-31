@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
 import { getCourse } from "@/config/courses";
 import { inferCourseIdFromChapterSlug } from "@/lib/chapter-display";
-import type { Level } from "@/types";
+import type { GrammarLevel } from "@/types";
 
 /**
  * POST /api/chapters/complete
@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
     const course = await getCourse(courseId);
     const chapter = course.getChapter(body.chapterSlug);
     // Fallback: slug may belong to another course (e.g. switched mid-lesson).
-    const chapterLevel: Level =
+    const chapterLevel: GrammarLevel =
       chapter?.level ??
       (await getCourse(inferCourseIdFromChapterSlug(body.chapterSlug))).getChapter(
         body.chapterSlug,

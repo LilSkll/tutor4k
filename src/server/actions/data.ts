@@ -332,8 +332,9 @@ export async function completeChapter(
           ? null
           : `needs review: ${chapter.grammarTopic}`,
         skillHints: {
-          reading: chapter.level,
-          writing: chapter.level,
+          // Skill levels cap at C1 (user Level scale); C2 chapters count as C1.
+          reading: chapter.level === "C2" ? "C1" : chapter.level,
+          writing: chapter.level === "C2" ? "C1" : chapter.level,
         },
       });
     }

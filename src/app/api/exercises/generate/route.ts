@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import type { GeneratedExercise } from "@/server/actions/ai";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
 import { pickStaticExercises } from "@/lib/exercise-pool";
+import { localizeExerciseInstruction } from "@/lib/exercise-localize";
 import { SESSION_EXERCISES } from "@/lib/exercise-bank";
 import type { ExerciseType, InterfaceLanguage, Level } from "@/types";
 
@@ -57,8 +58,6 @@ export async function POST(req: NextRequest) {
       // Non-fatal: fall back to defaults.
     }
 
-    void language;
-
     let preferredChapterSlugs: string[] | undefined;
     try {
       const { getCourse } = await import("@/config/courses");
@@ -91,6 +90,7 @@ export async function POST(req: NextRequest) {
       preferredChapterSlugs,
       excludeIds: body.excludeIds,
       count,
+      interfaceLanguage: language,
     });
 
     if (picked.length === 0) {
@@ -107,7 +107,7 @@ export async function POST(req: NextRequest) {
       type: staticEx.type,
       level: staticEx.level,
       question: staticEx.question,
-      instruction: staticEx.instruction,
+      instruction: localizeExerciseInstruction(staticEx, language),
       options: staticEx.options,
       answer: staticEx.answer,
       acceptableAnswers: staticEx.acceptableAnswers,
