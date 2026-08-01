@@ -42,7 +42,7 @@ const NAV = [
     href: "/teacher/assignments",
     labelKey: "teacher.nav.assignments",
     icon: ClipboardList,
-    ready: false,
+    ready: true,
   },
   {
     href: "/teacher/analytics",

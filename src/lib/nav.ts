@@ -2,6 +2,7 @@ import type { LucideIcon } from "lucide-react";
 import {
   BookOpen,
   BookPlus,
+  ClipboardList,
   Dumbbell,
   Globe,
   Languages,
@@ -44,6 +45,7 @@ export const NAV_SECTIONS: NavSection[] = [
       { href: "/vocabulary", labelKey: "nav.vocabulary", icon: Languages },
       { href: "/vocabulary-topics", labelKey: "nav.lexicon", icon: BookPlus },
       { href: "/exercises", labelKey: "nav.exercises", icon: Dumbbell },
+      { href: "/homework", labelKey: "nav.homework", icon: ClipboardList },
     ],
   },
   {

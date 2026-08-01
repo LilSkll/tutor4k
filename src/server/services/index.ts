@@ -12,6 +12,7 @@ export {
 } from "./progress";
 
 export { TeacherAiService } from "./teacher-ai";
+export { AssignmentService } from "./assignments";
 
 export class ServiceNotImplementedError extends Error {
   constructor(service: string, method: string) {
@@ -24,23 +25,13 @@ function notImplemented(service: string, method: string): never {
   throw new ServiceNotImplementedError(service, method);
 }
 
-/** Normalised mistake journal (`student_mistakes`) — Stage 5+. */
+/** Normalised mistake journal (`student_mistakes`) — later stages. */
 export const MistakesService = {
   listForCourse(userId: string, courseId: string): Promise<never> {
     return notImplemented("MistakesService", `listForCourse(${userId},${courseId})`);
   },
   recordMistake(input: unknown): Promise<never> {
     return notImplemented("MistakesService", `recordMistake(${typeof input})`);
-  },
-} as const;
-
-/** Homework assignments (`teacher_assignments`). */
-export const AssignmentService = {
-  listForTeacher(teacherId: string): Promise<never> {
-    return notImplemented("AssignmentService", `listForTeacher(${teacherId})`);
-  },
-  create(input: unknown): Promise<never> {
-    return notImplemented("AssignmentService", `create(${typeof input})`);
   },
 } as const;
 

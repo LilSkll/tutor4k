@@ -2,9 +2,10 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowLeft, Loader2 } from "lucide-react";
+import { ArrowLeft, ClipboardList, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { translate } from "@/lib/i18n";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { getCourseTitle } from "@/config/courses";
@@ -142,6 +143,17 @@ export function TeacherStudentCardClient({
       </section>
 
       <TeacherAiAnalysisPanel studentId={studentId} courseId={courseId} />
+
+      <div>
+        <Button asChild size="sm" variant="outline">
+          <Link
+            href={`/teacher/assignments?studentId=${encodeURIComponent(studentId)}&courseId=${encodeURIComponent(courseId)}`}
+          >
+            <ClipboardList className="h-4 w-4" />
+            {t("teacher.card.assignHomework")}
+          </Link>
+        </Button>
+      </div>
 
       <section className="space-y-2">
         <h3 className="font-semibold">{t("teacher.card.profile")}</h3>
