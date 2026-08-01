@@ -2,25 +2,36 @@ import { NextRequest, NextResponse } from "next/server";
 import type { GeneratedExercise } from "@/server/actions/ai";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
 import { pickStaticExercises } from "@/lib/exercise-pool";
-import { localizeExerciseInstruction } from "@/lib/exercise-localize";
+import {
+  isExerciseUsableForLanguage,
+  localizeExerciseInstruction,
+} from "@/lib/exercise-localize";
 import { SESSION_EXERCISES } from "@/lib/exercise-bank";
-import type { ExerciseType, InterfaceLanguage, Level } from "@/types";
+import type {
+  ExerciseType,
+  GrammarLevel,
+  InterfaceLanguage,
+  Level,
+} from "@/types";
 
 /**
  * POST /api/exercises/generate
- * Body: { type, level, topic?, count?, excludeIds? }
+ * Body: { type, level, topic?, count?, excludeIds?, exam? }
  *
- * Serves a session batch from the permanent adaptive exercise bank only.
- * Default count = SESSION_EXERCISES (5). AI does not generate practice items.
+ * Serves a session batch from the permanent adaptive exercise bank.
+ * Default count = SESSION_EXERCISES (5). Regular practice never calls AI;
+ * DELE exam mode falls back to AI generation when the DELE bank cannot
+ * fill the session (level/type gap or interface-language filtering).
  */
 export async function POST(req: NextRequest) {
   try {
     const body = (await req.json()) as {
       type: ExerciseType;
-      level: Level;
+      level: GrammarLevel;
       topic?: string;
       count?: number;
       excludeIds?: string[];
+      exam?: "DELE";
     };
 
     if (!body.type || !body.level) {
@@ -32,7 +43,8 @@ export async function POST(req: NextRequest) {
 
     let language: InterfaceLanguage = "ru";
     let courseId = "spanish";
-    let level: Level = body.level;
+    // Teacher-context level tops out at C1; the requested C2 still drives the pick.
+    let level: Level = body.level === "C2" ? "C1" : body.level;
     try {
       const supabase = await createSupabaseServerClient();
       const {
@@ -82,6 +94,27 @@ export async function POST(req: NextRequest) {
         ? body.count
         : SESSION_EXERCISES;
 
+    if (body.exam === "DELE" && courseId === "spanish") {
+      const exercises = await pickDeleSession({
+        type: body.type,
+        level: body.level,
+        count,
+        excludeIds: body.excludeIds ?? [],
+        language,
+      });
+      if (exercises.length === 0) {
+        return NextResponse.json(
+          { error: "Could not build a DELE session." },
+          { status: 404 },
+        );
+      }
+      return NextResponse.json({
+        exercises,
+        sessionSize: SESSION_EXERCISES,
+        count: exercises.length,
+      });
+    }
+
     const picked = await pickStaticExercises({
       courseId,
       type: body.type,
@@ -130,4 +163,101 @@ export async function POST(req: NextRequest) {
       { status: 500 },
     );
   }
+}
+
+/** Fisher-Yates shuffle (returns a new array). */
+function shuffle<T>(arr: T[]): T[] {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+const DELE_TOPIC_HINTS: Record<string, string> = {
+  A1: "saludos y presentaciones, descripción personal, presente de indicativo",
+  A2: "rutina diaria, pretérito perfecto, planes con ir a + infinitivo",
+  B1: "carta o e-mail formal e informal, contraste indefinido/imperfecto, peticiones corteses",
+  B2: "redacción argumentativa con conectores (sin embargo, por lo tanto), opinión con subjuntivo",
+  C1: "registro formal y administrativo, perífrasis verbales, léxico culto",
+  C2: "oraciones hendidas, futuro y condicional de conjetura, registro culto e ironía",
+};
+
+/**
+ * DELE session: ready-made bank items first, AI-generated exam-style
+ * items to fill any shortfall.
+ */
+async function pickDeleSession(input: {
+  type: ExerciseType;
+  level: GrammarLevel;
+  count: number;
+  excludeIds: string[];
+  language: InterfaceLanguage;
+}): Promise<GeneratedExercise[]> {
+  const { getDeleExercises } = await import("@/config/dele-exercises");
+
+  let candidates = getDeleExercises(input.type, input.level);
+  if (input.language !== "ru") {
+    candidates = candidates.filter((ex) =>
+      isExerciseUsableForLanguage(ex, input.language),
+    );
+  }
+  const exclude = new Set(input.excludeIds);
+  const fresh = candidates.filter((ex) => !exclude.has(ex.id));
+  const pickFrom = fresh.length > 0 ? fresh : candidates;
+
+  const exercises: GeneratedExercise[] = shuffle(pickFrom)
+    .slice(0, input.count)
+    .map((ex) => ({
+      type: ex.type,
+      level: ex.level,
+      question: ex.question,
+      instruction: localizeExerciseInstruction(ex, input.language),
+      options: ex.options,
+      answer: ex.answer,
+      acceptableAnswers: ex.acceptableAnswers,
+      topic: ex.deleTopic,
+      explanation: ex.explanation,
+      staticSource: true,
+      exerciseId: ex.id,
+    }));
+
+  const shortfall = input.count - exercises.length;
+  if (shortfall > 0) {
+    // AI fills the gap with exam-style items (bank too small for this
+    // type/level or filtered out on a non-RU interface).
+    const { generateExercise } = await import("@/server/actions/ai");
+    const aiLevel: Level = input.level === "C2" ? "C1" : input.level;
+    const hint = DELE_TOPIC_HINTS[input.level] ?? DELE_TOPIC_HINTS.B2;
+    const topic = `Preparación al examen DELE ${input.level}: ${hint}. Formato de examen oficial.`;
+
+    const results = await Promise.allSettled(
+      Array.from({ length: shortfall }, () =>
+        generateExercise({
+          type: input.type,
+          level: aiLevel,
+          topic,
+          language: input.language,
+          courseId: "spanish",
+        }),
+      ),
+    );
+    const seenQuestions = new Set(
+      exercises.map((ex) => ex.question.trim().toLowerCase()),
+    );
+    for (const r of results) {
+      if (r.status !== "fulfilled") continue;
+      const q = r.value.question?.trim().toLowerCase();
+      if (!q || seenQuestions.has(q)) continue;
+      seenQuestions.add(q);
+      exercises.push({
+        ...r.value,
+        level: input.level,
+        topic: r.value.topic || `DELE ${input.level}`,
+      });
+    }
+  }
+
+  return exercises;
 }

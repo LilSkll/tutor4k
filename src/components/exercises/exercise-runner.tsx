@@ -16,19 +16,24 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { useExerciseSessionStore } from "@/stores";
-import { EXERCISE_TYPES, LEVELS } from "@/config/app";
+import { EXERCISE_TYPES, PRACTICE_LEVELS } from "@/config/app";
 import { SESSION_EXERCISES } from "@/lib/exercise-bank";
 import { formatSessionTutorSummary } from "@/lib/tutor-feedback";
 import { useInterfaceLanguage, useActiveCourseId } from "@/hooks/use-interface-language";
 import { translate } from "@/lib/i18n";
 import { getCourseTitle } from "@/config/courses";
 import { cn } from "@/lib/utils";
-import type { ExerciseType, InterfaceLanguage, Level } from "@/types";
+import type {
+  ExerciseType,
+  GrammarLevel,
+  InterfaceLanguage,
+  Level,
+} from "@/types";
 import { toast } from "sonner";
 
 interface GeneratedExercise {
   type: ExerciseType;
-  level: Level;
+  level: GrammarLevel;
   question: string;
   instruction?: string;
   options?: string[];
@@ -60,7 +65,8 @@ export function ExerciseRunner({
   activeCourseId?: string | null;
 }) {
   const [type, setType] = React.useState<ExerciseType>("multiple_choice");
-  const [level, setLevel] = React.useState<Level>(userLevel ?? "A1");
+  const [level, setLevel] = React.useState<GrammarLevel>(userLevel ?? "A1");
+  const [deleMode, setDeleMode] = React.useState(false);
   const [queue, setQueue] = React.useState<GeneratedExercise[]>([]);
   const [queueIdx, setQueueIdx] = React.useState(0);
   const [seenIds, setSeenIds] = React.useState<string[]>([]);
@@ -102,6 +108,9 @@ export function ExerciseRunner({
           level,
           count: SESSION_EXERCISES,
           excludeIds,
+          ...(deleMode && activeCourseId === "spanish"
+            ? { exam: "DELE" as const }
+            : {}),
         }),
       });
       if (!res.ok) throw new Error("Failed");
@@ -266,7 +275,7 @@ export function ExerciseRunner({
           <div>
             <h3 className="font-semibold mb-3">{t("exercises.levelLabel")}</h3>
             <div className="flex flex-wrap gap-2">
-              {LEVELS.map((lvl) => (
+              {PRACTICE_LEVELS.map((lvl) => (
                 <button
                   key={lvl.value}
                   onClick={() => setLevel(lvl.value)}
@@ -280,7 +289,25 @@ export function ExerciseRunner({
                   {lvl.value}
                 </button>
               ))}
+              {activeCourseId === "spanish" && (
+                <button
+                  onClick={() => setDeleMode((v) => !v)}
+                  className={cn(
+                    "rounded-full px-4 py-1.5 text-sm font-semibold border transition-all",
+                    deleMode
+                      ? "bg-amber-500 text-white border-amber-500"
+                      : "border-amber-400/60 text-amber-600 hover:border-amber-500",
+                  )}
+                >
+                  🎓 DELE
+                </button>
+              )}
             </div>
+            {deleMode && activeCourseId === "spanish" && (
+              <p className="mt-2 text-xs text-muted-foreground">
+                {t("exercises.deleHint")}
+              </p>
+            )}
           </div>
 
           <p className="text-sm text-muted-foreground">

@@ -6,7 +6,6 @@ import type {
   ExerciseProgress,
   ExerciseType,
   GrammarLevel,
-  Level,
   StaticExercise,
 } from "@/types";
 import type { StudentCourseProfile } from "@/types/learning-profile";
@@ -117,7 +116,7 @@ const LEVEL_NEIGHBORS: Record<GrammarLevel, GrammarLevel[]> = {
 export function filterPoolByTypeLevel(
   pool: RankedBankItem["exercise"][],
   type: ExerciseType,
-  level: Level,
+  level: GrammarLevel,
 ): RankedBankItem["exercise"][] {
   const byType = pool.filter((ex) => ex.type === type);
   const atLevel = byType.filter((ex) => ex.level === level);

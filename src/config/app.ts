@@ -1,6 +1,7 @@
 import type {
   ExerciseType,
   Goal,
+  GrammarLevel,
   InterfaceLanguage,
   Level,
 } from "@/types";
@@ -16,6 +17,12 @@ export const LEVELS: { value: Level; descriptionKey: string }[] = [
 ];
 
 export const LEVEL_ORDER: Level[] = ["A1", "A2", "B1", "B2", "C1"];
+
+/** Practice levels include C2 — the bank has C2 chapter material. */
+export const PRACTICE_LEVELS: {
+  value: GrammarLevel;
+  descriptionKey: string;
+}[] = [...LEVELS, { value: "C2", descriptionKey: "level.desc.C2" }];
 
 // ----- Goals ---------------------------------------------------------
 

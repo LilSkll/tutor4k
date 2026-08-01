@@ -2,7 +2,6 @@ import type {
   ExerciseType,
   GrammarLevel,
   InterfaceLanguage,
-  Level,
   StaticExercise,
 } from "@/types";
 import { getCourse } from "@/config/courses";
@@ -57,7 +56,7 @@ export async function getExercisePool(
 type PickInput = {
   courseId: string;
   type: ExerciseType;
-  level: Level;
+  level: GrammarLevel;
   topic?: string;
   preferredChapterSlugs?: string[];
   /** Skip ids already used in this session (continue rounds). */

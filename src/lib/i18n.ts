@@ -45,6 +45,7 @@ const ru: Dictionary = {
   "level.desc.B1": "Средний",
   "level.desc.B2": "Выше среднего",
   "level.desc.C1": "Продвинутый",
+  "level.desc.C2": "Мастерство",
 
   "goal.TRAVEL": "Для путешествий",
   "goal.WORK": "Для работы",
@@ -250,6 +251,7 @@ const ru: Dictionary = {
   "exercises.toastCheckFail": "Не удалось проверить ответ.",
   "exercises.subtitleDynamic": "Практика из банка — выбери тип и уровень",
   "exercises.sessionHint": "Один раунд = {count} заданий выбранного типа с выбранного уровня. Потом можно продолжить — снова из банка.",
+  "exercises.deleHint": "Режим DELE: задания в формате экзамена — из банка DELE-упражнений выбранного уровня; если готовых не хватает, ИИ сгенерирует недостающие в экзаменационном стиле.",
   "exercises.startRoundBtn": "Начать раунд ({count})",
   "exercises.roundProgress": "Задание {current} из {total}",
   "exercises.roundDoneTitle": "Раунд завершён",
@@ -564,6 +566,7 @@ const en: Dictionary = {
   "level.desc.B1": "Intermediate",
   "level.desc.B2": "Upper-intermediate",
   "level.desc.C1": "Advanced",
+  "level.desc.C2": "Mastery",
 
   "goal.TRAVEL": "For travel",
   "goal.WORK": "For work",
@@ -884,6 +887,7 @@ const en: Dictionary = {
   "exercises.toastCheckFail": "Could not check answer.",
   "exercises.subtitleDynamic": "Bank practice — choose type and level",
   "exercises.sessionHint": "One round = {count} exercises of the selected type at the selected level. You can continue afterward — still from the bank.",
+  "exercises.deleHint": "DELE mode: exam-style tasks from the DELE exercise bank at the selected level; if the bank runs short, the AI generates the missing items in exam format.",
   "exercises.startRoundBtn": "Start round ({count})",
   "exercises.roundProgress": "Exercise {current} of {total}",
   "exercises.roundDoneTitle": "Round complete",
@@ -1017,6 +1021,7 @@ const es: Dictionary = {
   "level.desc.B1": "Intermedio",
   "level.desc.B2": "Intermedio alto",
   "level.desc.C1": "Avanzado",
+  "level.desc.C2": "Maestría",
 
   "goal.TRAVEL": "Para viajar",
   "goal.WORK": "Para el trabajo",
@@ -1337,6 +1342,7 @@ const es: Dictionary = {
   "exercises.toastCheckFail": "No se pudo comprobar la respuesta.",
   "exercises.subtitleDynamic": "Práctica del banco — elige tipo y nivel",
   "exercises.sessionHint": "Una ronda = {count} ejercicios del tipo y nivel elegidos. Luego puedes continuar — también del banco.",
+  "exercises.deleHint": "Modo DELE: tareas con formato de examen del banco de ejercicios DELE del nivel elegido; si el banco se queda corto, la IA genera los que falten en estilo de examen.",
   "exercises.startRoundBtn": "Empezar ronda ({count})",
   "exercises.roundProgress": "Ejercicio {current} de {total}",
   "exercises.roundDoneTitle": "Ronda terminada",
