@@ -4,7 +4,8 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
 import { getFirstChapterSlugForLevel } from "@/config/chapters";
-import type { Goal, InterfaceLanguage, Level } from "@/types";
+import { resolvePostLoginPath } from "@/lib/roles";
+import type { Goal, InterfaceLanguage, Level, UserRole } from "@/types";
 
 // =====================================================================
 // Authentication server actions
@@ -132,16 +133,29 @@ async function appOrigin(): Promise<string> {
 export async function signInWithEmail(formData: FormData) {
   const email = String(formData.get("email") ?? "");
   const password = String(formData.get("password") ?? "");
-  const redirectPath = String(formData.get("redirect") ?? "/dashboard");
+  const redirectPath = String(formData.get("redirect") ?? "");
 
   const supabase = await createSupabaseServerClient();
-  const { error } = await supabase.auth.signInWithPassword({ email, password });
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
 
   if (error) {
     redirect(`/login?error=${encodeURIComponent(friendlyAuthError(error))}`);
   }
 
-  redirect(redirectPath);
+  let role: UserRole = "student";
+  if (data.user) {
+    const { data: profile } = await supabase
+      .from("profiles")
+      .select("role")
+      .eq("id", data.user.id)
+      .maybeSingle();
+    role = (profile?.role as UserRole | undefined) ?? "student";
+  }
+
+  redirect(resolvePostLoginPath(role, redirectPath || null));
 }
 
 export async function signUpWithEmail(formData: FormData) {

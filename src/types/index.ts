@@ -24,6 +24,9 @@ export type Goal =
 /** Interface language for the app. */
 export type InterfaceLanguage = "ru" | "en" | "es" | "de";
 
+/** Platform role — Student Journey vs Teacher Studio (see docs/adr). */
+export type UserRole = "student" | "teacher" | "school_admin";
+
 /** Conversation message role. */
 export type MessageRole = "user" | "assistant" | "system";
 
@@ -57,6 +60,8 @@ export interface Profile {
   streak: number;
   last_active_date: string | null;
   active_course_id: string | null;
+  /** student | teacher | school_admin — missing/null treated as student. */
+  role?: UserRole | null;
   /** Persistent Student Learning Profile store (JSONB). */
   learning_profile?: import("@/types/learning-profile").StudentLearningProfileStore | null;
   terms_accepted_at?: string | null;

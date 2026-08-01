@@ -1,8 +1,32 @@
 import { createServerClient, type CookieOptions } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
+import {
+  canAccessTeacherStudio,
+  homePathForRole,
+} from "@/lib/roles";
+import type { UserRole } from "@/types";
+
+async function fetchUserRole(
+  supabase: ReturnType<typeof createServerClient>,
+  userId: string,
+): Promise<UserRole> {
+  try {
+    const { data } = await supabase
+      .from("profiles")
+      .select("role")
+      .eq("id", userId)
+      .maybeSingle();
+    const role = (data as { role?: UserRole } | null)?.role;
+    return role ?? "student";
+  } catch {
+    // Column missing before migration → treat as student.
+    return "student";
+  }
+}
 
 /**
  * Refresh the Supabase auth session on every request and protect app routes.
+ * Role gates: Teacher Studio (`/teacher`) vs Student Journey.
  */
 export async function updateSession(request: NextRequest) {
   let supabaseResponse = NextResponse.next({ request });
@@ -34,7 +58,6 @@ export async function updateSession(request: NextRequest) {
 
   const { pathname } = request.nextUrl;
 
-  // Public routes: landing, auth, legal, onboarding.
   const isPublicRoute =
     pathname === "/" ||
     pathname.startsWith("/login") ||
@@ -45,7 +68,9 @@ export async function updateSession(request: NextRequest) {
     pathname === "/privacy" ||
     pathname === "/terms";
 
-  // If not signed in and trying to reach a protected page -> login.
+  // Onboarding is public for auth gate, but Teacher Studio roles skip it.
+  const isOnboarding = pathname.startsWith("/onboarding");
+
   if (!user && !isPublicRoute) {
     const url = request.nextUrl.clone();
     url.pathname = "/login";
@@ -53,13 +78,10 @@ export async function updateSession(request: NextRequest) {
     return NextResponse.redirect(url);
   }
 
-  // Recovery session must reach /auth/reset-password — do not bounce to dashboard.
   const isAuthRecovery =
     pathname.startsWith("/auth/reset-password") ||
     pathname.startsWith("/auth/callback");
 
-  // If signed in and trying to reach the landing page -> dashboard.
-  // Legal pages stay accessible when logged in.
   if (
     user &&
     !isAuthRecovery &&
@@ -68,9 +90,43 @@ export async function updateSession(request: NextRequest) {
       pathname.startsWith("/signup") ||
       pathname.startsWith("/forgot-password"))
   ) {
+    const role = await fetchUserRole(supabase, user.id);
     const url = request.nextUrl.clone();
-    url.pathname = "/dashboard";
+    url.pathname = homePathForRole(role);
     return NextResponse.redirect(url);
+  }
+
+  if (user) {
+    const isTeacherPath =
+      pathname === "/teacher" || pathname.startsWith("/teacher/");
+    const isStudentAppPath =
+      !isPublicRoute &&
+      !isTeacherPath &&
+      !pathname.startsWith("/api") &&
+      pathname !== "/privacy" &&
+      pathname !== "/terms";
+
+    if (isTeacherPath || isStudentAppPath || isOnboarding) {
+      const role = await fetchUserRole(supabase, user.id);
+
+      if (isOnboarding && canAccessTeacherStudio(role)) {
+        const url = request.nextUrl.clone();
+        url.pathname = "/teacher/dashboard";
+        return NextResponse.redirect(url);
+      }
+
+      if (isTeacherPath && !canAccessTeacherStudio(role)) {
+        const url = request.nextUrl.clone();
+        url.pathname = "/dashboard";
+        return NextResponse.redirect(url);
+      }
+
+      if (isStudentAppPath && canAccessTeacherStudio(role)) {
+        const url = request.nextUrl.clone();
+        url.pathname = "/teacher/dashboard";
+        return NextResponse.redirect(url);
+      }
+    }
   }
 
   return supabaseResponse;

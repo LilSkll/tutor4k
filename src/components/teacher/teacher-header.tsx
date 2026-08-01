@@ -1,0 +1,19 @@
+"use client";
+
+import { ThemeToggle } from "@/components/shared/theme-toggle";
+import { translate } from "@/lib/i18n";
+import { useInterfaceLanguage } from "@/hooks/use-interface-language";
+
+export function TeacherHeader({ title }: { title?: string }) {
+  const language = useInterfaceLanguage();
+  const t = (key: string) => translate(key, language);
+
+  return (
+    <header className="flex h-14 items-center justify-between border-b border-border/60 px-4 bg-background/80 backdrop-blur-md">
+      <h1 className="text-sm font-semibold tracking-tight">
+        {title ?? t("teacher.studioTitle")}
+      </h1>
+      <ThemeToggle />
+    </header>
+  );
+}
