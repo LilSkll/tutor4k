@@ -387,6 +387,14 @@ const ru: Dictionary = {
   "chapters.current": "Текущая",
   "chapters.retry": "Повторить",
   "chapters.open": "Открыть",
+  "chapters.resetBtn": "Начать путь заново",
+  "chapters.resetConfirmTitle": "Сбросить прогресс путешествия?",
+  "chapters.resetConfirmBody":
+    "Весь прогресс по главам курса «{course}» будет удалён, и путешествие начнётся с первой главы. Словарь, история чата и профиль обучения сохранятся. Это действие нельзя отменить.",
+  "chapters.resetCancel": "Отмена",
+  "chapters.resetConfirm": "Сбросить прогресс",
+  "chapters.resetSuccess": "Прогресс сброшен — путешествие начинается заново!",
+  "chapters.resetFail": "Не удалось сбросить прогресс. Попробуйте ещё раз.",
   "chapters.materialPreparing": "Материал готовится.",
 
   // Courses
@@ -695,6 +703,14 @@ const en: Dictionary = {
   "chapters.current": "Current",
   "chapters.retry": "Review",
   "chapters.open": "Open",
+  "chapters.resetBtn": "Restart the journey",
+  "chapters.resetConfirmTitle": "Reset journey progress?",
+  "chapters.resetConfirmBody":
+    "All chapter progress for the “{course}” course will be deleted and the journey will start again from chapter one. Your vocabulary, chat history and learning profile are kept. This cannot be undone.",
+  "chapters.resetCancel": "Cancel",
+  "chapters.resetConfirm": "Reset progress",
+  "chapters.resetSuccess": "Progress reset — the journey begins anew!",
+  "chapters.resetFail": "Could not reset progress. Please try again.",
   "chapters.materialPreparing": "Material is being prepared.",
 
   "courses.title": "Choose language",
@@ -1140,6 +1156,14 @@ const es: Dictionary = {
   "chapters.current": "Actual",
   "chapters.retry": "Repasar",
   "chapters.open": "Abrir",
+  "chapters.resetBtn": "Reiniciar el viaje",
+  "chapters.resetConfirmTitle": "¿Reiniciar el progreso del viaje?",
+  "chapters.resetConfirmBody":
+    "Se eliminará todo el progreso de los capítulos del curso «{course}» y el viaje comenzará de nuevo desde el primer capítulo. Tu vocabulario, historial de chat y perfil de aprendizaje se conservarán. Esta acción no se puede deshacer.",
+  "chapters.resetCancel": "Cancelar",
+  "chapters.resetConfirm": "Reiniciar progreso",
+  "chapters.resetSuccess": "Progreso reiniciado: ¡el viaje comienza de nuevo!",
+  "chapters.resetFail": "No se pudo reiniciar el progreso. Inténtalo de nuevo.",
   "chapters.materialPreparing": "El material se está preparando.",
 
   "courses.title": "Elegir idioma",

@@ -3014,6 +3014,36 @@ The writing paper almost always includes a letter/e-mail. What's graded is the *
 - Imperfecto de cortesía: \`**Quería** pedirle un favor.\`
 - \`Le agradecería que me **informara**…\` — conditional + imperfect subjunctive = top-level B2.
 
+### How many words to write (by DELE level)
+
+| Level | Task | Length |
+|---|---|---|
+| A2 | Personal letter / e-mail | **60–70 words** |
+| B1 | Letter or e-mail (Tarea 1) | **100–120 words** |
+| B2 | Formal letter (Tarea 1) | **150–180 words** |
+| C1 | Letter / task-based text | **220–250 words** |
+
+> ⚠️ Falling far short = not all task points covered. Going far over = more mistakes and padding. Stay within ±10% of the range.
+
+### Formal letter skeleton (5 blocks)
+
+1. **Saludo** — \`Estimado señor:\` (1 line)
+2. **Motivo** — why you write: \`Me dirijo a usted con motivo de…\` (~20% of the text)
+3. **Desarrollo** — the substance: facts, details, arguments (1–2 paragraphs, ~50%)
+4. **Petición / propuesta** — what you request or propose: \`Le agradecería que…\` (~20%)
+5. **Despedida** — \`A la espera de su respuesta, … Atentamente,\` + name (1–2 lines)
+
+### What the examiners grade
+
+| Criterion | What they check |
+|---|---|
+| **Adecuación** | **All task points** covered; register matches the addressee; letter format respected |
+| **Coherencia** | Logical paragraphs, connectors, no repetition or jumps in thought |
+| **Corrección** | Grammar: tenses, agreement, spelling, punctuation |
+| **Alcance** | Variety of vocabulary and structures — don't repeat \`pedir\` five times |
+
+> 💡 Before handing in: tick off every task point against your draft. A missed point is the most common way to lose marks, even with perfect grammar.
+
 > 💡 Learn the letter skeleton by heart — in the exam you'll only need to fill in the content.`,
     es: `## La carta en el DELE (Expresión e interacción escritas)
 
@@ -3046,6 +3076,36 @@ En la parte escrita casi siempre hay una carta o e-mail. Se evalúa el **registr
 - Condicional: \`**Querría** saber si…\` / \`**Me gustaría** + inf\`
 - Imperfecto de cortesía: \`**Quería** pedirle un favor.\`
 - \`Le agradecería que me **informara**…\` — condicional + subjuntivo imperfecto = nivel B2 alto.
+
+### Cuántas palabras escribir (por nivel DELE)
+
+| Nivel | Tarea | Extensión |
+|---|---|---|
+| A2 | Carta personal / e-mail | **60–70 palabras** |
+| B1 | Carta o e-mail (Tarea 1) | **100–120 palabras** |
+| B2 | Carta formal (Tarea 1) | **150–180 palabras** |
+| C1 | Carta / texto según la tarea | **220–250 palabras** |
+
+> ⚠️ Quedarse muy corto = no se cubren todos los puntos de la tarea. Pasarse mucho = más errores y relleno. Mantente dentro del ±10% del rango.
+
+### Esqueleto de la carta formal (5 bloques)
+
+1. **Saludo** — \`Estimado señor:\` (1 línea)
+2. **Motivo** — por qué escribes: \`Me dirijo a usted con motivo de…\` (~20% del texto)
+3. **Desarrollo** — lo esencial: hechos, detalles, argumentos (1–2 párrafos, ~50%)
+4. **Petición / propuesta** — qué pides o propones: \`Le agradecería que…\` (~20%)
+5. **Despedida** — \`A la espera de su respuesta, … Atentamente,\` + nombre (1–2 líneas)
+
+### Qué evalúan los examinadores
+
+| Criterio | Qué comprueban |
+|---|---|
+| **Adecuación** | Se cubren **todos los puntos** de la tarea; el registro corresponde al destinatario; se respeta el formato |
+| **Coherencia** | Párrafos lógicos, conectores, sin repeticiones ni saltos de ideas |
+| **Corrección** | Gramática: tiempos, concordancia, ortografía, puntuación |
+| **Alcance** | Variedad de léxico y estructuras — no repitas \`pedir\` cinco veces |
+
+> 💡 Antes de entregar: marca cada punto de la tarea en tu borrador. Un punto sin cubrir es la causa más frecuente de perder nota, incluso con gramática perfecta.
 
 > 💡 Memoriza el esqueleto de la carta: en el examen solo tendrás que rellenar el contenido.`,
   },
@@ -3082,6 +3142,33 @@ Your **coherencia** score depends directly on linking devices. Here is a working
 - \`A pesar de **que** + verbo\`, but \`a pesar de + inf/sust\`.
 - Don't repeat \`pero\` — alternate \`sin embargo / no obstante / ahora bien\`.
 
+### Essay length and timing
+
+| Level | Length | Suggested timing (per text) |
+|---|---|---|
+| B1 | **130–150 words** | 5 min plan → 20 min writing → 5 min review |
+| B2 | **150–180 words** | 5 min plan → 25 min writing → 5 min review |
+| C1 | **220–250 words** | 10 min plan → 30 min writing → 5 min review |
+
+### Four-paragraph essay skeleton (word budget for B2)
+
+1. **Introducción** (~25–30 words) — present the topic: \`Hoy en día…\` + thesis.
+2. **Argumento 1 / a favor** (~50–60 words) — \`En primer lugar…\` → thesis → argument → example.
+3. **Argumento 2 / en contra** (~50–60 words) — \`Sin embargo…\` / \`Por otro lado…\` → counter-argument → example.
+4. **Conclusión** (~25–30 words) — \`En definitiva…\` + your own position (\`Es fundamental que + subj…\`).
+
+### What the examiners expect
+
+| Criterion | What they look at |
+|---|---|
+| **Adecuación** | The text answers **all** the task questions; the genre is respected (essay ≠ letter) |
+| **Coherencia** | Clear paragraphs, varied connectors, logical progression of ideas |
+| **Corrección** | Subjunctive where needed; tense agreement; spelling with accent marks |
+| **Alcance** | Rich topic vocabulary, complex structures (\`de ahí que\`, pasiva refleja) |
+
+- Examiners recognise memorised "universal" paragraphs and **penalise** them — learn the skeleton, not a ready-made text.
+- Count words at the end: 3–4 words per draft line × number of lines is a quick estimate.
+
 > 💡 B2 paragraph formula: connector → thesis → argument → example. Four paragraphs and the structure is done.`,
     es: `## Conectores para la redacción (Expresión escrita B2–C1)
 
@@ -3114,6 +3201,33 @@ La nota de **coherencia** depende directamente de los conectores. Aquí tienes u
 - \`De ahí que\` — **siempre subjuntivo**: \`De ahí que **sea** necesario actuar.\`
 - \`A pesar de **que** + verbo\`, pero \`a pesar de + inf/sust\`.
 - No repitas \`pero\`: alterna \`sin embargo / no obstante / ahora bien\`.
+
+### Extensión de la redacción y tiempo
+
+| Nivel | Extensión | Tiempo recomendado (por texto) |
+|---|---|---|
+| B1 | **130–150 palabras** | 5 min de plan → 20 min de texto → 5 min de revisión |
+| B2 | **150–180 palabras** | 5 min de plan → 25 min de texto → 5 min de revisión |
+| C1 | **220–250 palabras** | 10 min de plan → 30 min de texto → 5 min de revisión |
+
+### Esqueleto de redacción en 4 párrafos (presupuesto de palabras para B2)
+
+1. **Introducción** (~25–30 palabras) — presenta el tema: \`Hoy en día…\` + tesis.
+2. **Argumento 1 / a favor** (~50–60 palabras) — \`En primer lugar…\` → tesis → argumento → ejemplo.
+3. **Argumento 2 / en contra** (~50–60 palabras) — \`Sin embargo…\` / \`Por otro lado…\` → contraargumento → ejemplo.
+4. **Conclusión** (~25–30 palabras) — \`En definitiva…\` + postura propia (\`Es fundamental que + subj…\`).
+
+### Qué esperan los examinadores
+
+| Criterio | En qué se fijan |
+|---|---|
+| **Adecuación** | El texto responde a **todas** las preguntas de la tarea; se respeta el género (redacción ≠ carta) |
+| **Coherencia** | Párrafos claros, conectores variados, progresión lógica de ideas |
+| **Corrección** | Subjuntivo donde toca; concordancia de tiempos; ortografía con tildes |
+| **Alcance** | Léxico rico del tema, estructuras complejas (\`de ahí que\`, pasiva refleja) |
+
+- Los examinadores reconocen los párrafos «universales» memorizados y los **penalizan**: aprende el esqueleto, no un texto hecho.
+- Cuenta las palabras al final: 3–4 palabras por línea del borrador × número de líneas es una estimación rápida.
 
 > 💡 Fórmula del párrafo B2: conector → tesis → argumento → ejemplo. Cuatro párrafos y la estructura está lista.`,
   },

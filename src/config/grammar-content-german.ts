@@ -2046,6 +2046,36 @@ Im schriftlichen Teil gibt es fast immer einen Brief/eine E-Mail. Bewertet wird 
 - Imperfecto de cortesía: \`**Quería** pedirle un favor.\`
 - \`Le agradecería que me **informara**…\` — Konditional + Subjuntivo Imperfecto = B2-Königsklasse.
 
+### Wie viele Wörter schreiben (nach DELE-Niveau)
+
+| Niveau | Aufgabe | Umfang |
+|---|---|---|
+| A2 | Persönlicher Brief / E-Mail | **60–70 Wörter** |
+| B1 | Brief oder E-Mail (Tarea 1) | **100–120 Wörter** |
+| B2 | Formeller Brief (Tarea 1) | **150–180 Wörter** |
+| C1 | Brief / Text laut Aufgabe | **220–250 Wörter** |
+
+> ⚠️ Deutlich zu kurz = nicht alle Aufgabenpunkte abgedeckt. Deutlich zu lang = mehr Fehler und Füllstoff. Bleib innerhalb von ±10 % des Rahmens.
+
+### Gerüst des formellen Briefs (5 Blöcke)
+
+1. **Saludo** — \`Estimado señor:\` (1 Zeile)
+2. **Motivo** — warum du schreibst: \`Me dirijo a usted con motivo de…\` (~20 % des Textes)
+3. **Desarrollo** — das Wesentliche: Fakten, Details, Argumente (1–2 Absätze, ~50 %)
+4. **Petición / propuesta** — was du bittest oder vorschlägst: \`Le agradecería que…\` (~20 %)
+5. **Despedida** — \`A la espera de su respuesta, … Atentamente,\` + Name (1–2 Zeilen)
+
+### Was die Prüfer bewerten
+
+| Kriterium | Was geprüft wird |
+|---|---|
+| **Adecuación** | **Alle Aufgabenpunkte** abgedeckt; Register passt zum Adressaten; Briefformat eingehalten |
+| **Coherencia** | Logische Absätze, Konnektoren, keine Wiederholungen oder Gedankensprünge |
+| **Corrección** | Grammatik: Zeiten, Kongruenz, Rechtschreibung, Zeichensetzung |
+| **Alcance** | Vielfalt an Wortschatz und Strukturen — wiederhole \`pedir\` nicht fünfmal |
+
+> 💡 Vor der Abgabe: Hake jeden Aufgabenpunkt in deinem Entwurf ab. Ein fehlender Punkt ist der häufigste Grund für Punktverlust — selbst bei perfekter Grammatik.
+
 > 💡 Lerne das Briefgerüst auswendig — in der Prüfung musst du nur noch den Inhalt einsetzen.`,
   },
   "dele-conectores-redaccion": {
@@ -2080,6 +2110,33 @@ Die Note für **coherencia** hängt direkt von den Verknüpfungen ab. Hier ein f
 - \`De ahí que\` — **immer Subjuntivo**: \`De ahí que **sea** necesario actuar.\`
 - \`A pesar de **que** + verbo\`, aber \`a pesar de + inf/sust\`.
 - Wiederhole nicht \`pero\` — wechsle mit \`sin embargo / no obstante / ahora bien\`.
+
+### Umfang der redacción und Zeitplan
+
+| Niveau | Umfang | Empfohlener Zeitplan (pro Text) |
+|---|---|---|
+| B1 | **130–150 Wörter** | 5 Min. Plan → 20 Min. Text → 5 Min. Kontrolle |
+| B2 | **150–180 Wörter** | 5 Min. Plan → 25 Min. Text → 5 Min. Kontrolle |
+| C1 | **220–250 Wörter** | 10 Min. Plan → 30 Min. Text → 5 Min. Kontrolle |
+
+### Aufsatzgerüst in 4 Absätzen (Wortbudget für B2)
+
+1. **Introducción** (~25–30 Wörter) — Thema vorstellen: \`Hoy en día…\` + These.
+2. **Argumento 1 / a favor** (~50–60 Wörter) — \`En primer lugar…\` → These → Argument → Beispiel.
+3. **Argumento 2 / en contra** (~50–60 Wörter) — \`Sin embargo…\` / \`Por otro lado…\` → Gegenargument → Beispiel.
+4. **Conclusión** (~25–30 Wörter) — \`En definitiva…\` + eigene Position (\`Es fundamental que + subj…\`).
+
+### Was die Prüfer erwarten
+
+| Kriterium | Worauf sie achten |
+|---|---|
+| **Adecuación** | Der Text beantwortet **alle** Fragen der Aufgabe; die Textsorte stimmt (Aufsatz ≠ Brief) |
+| **Coherencia** | Klare Absätze, abwechslungsreiche Konnektoren, logischer Gedankengang |
+| **Corrección** | Subjuntivo, wo nötig; Zeitenfolge; Rechtschreibung mit Akzenten |
+| **Alcance** | Reicher Themenwortschatz, komplexe Strukturen (\`de ahí que\`, pasiva refleja) |
+
+- Auswendig gelernte „Universal-Absätze" erkennen die Prüfer und **werten sie ab** — lerne das Gerüst, nicht den fertigen Text.
+- Zähle am Ende die Wörter: 3–4 Wörter pro Entwurfszeile × Zeilenzahl ist eine schnelle Schätzung.
 
 > 💡 B2-Absatzformel: Konnektor → These → Argument → Beispiel. Vier Absätze — und die Struktur steht.`,
   },

@@ -28,6 +28,7 @@ import {
   getChapterTitle,
 } from "@/lib/chapter-display";
 import { translate } from "@/lib/i18n";
+import { getChapterStory } from "@/config/chapter-stories";
 import { SESSION_EXERCISES } from "@/lib/exercise-bank";
 import { normalizeAnswer, scorePercent } from "@/lib/normalize-answer";
 import { prepareExercisesForInterface } from "@/lib/exercise-localize";
@@ -396,6 +397,8 @@ export function LessonRunner({
     ? t("lesson.greetingNamed", { name: userName })
     : t("lesson.greeting");
 
+  const chapterStory = getChapterStory(chapter.slug, language);
+
   const introBody =
     adaptation?.mode === "mastered_short"
       ? t("lesson.introMastered", { topic: grammarTitle })
@@ -548,6 +551,14 @@ export function LessonRunner({
             </div>
           </div>
           <CardContent className="p-6 text-center">
+            {chapterStory && (
+              <div className="mb-6 rounded-xl border border-primary/15 bg-primary/5 px-5 py-4 text-left">
+                <p className="text-sm leading-relaxed text-foreground/85 italic">
+                  <span className="mr-1.5 not-italic">📜</span>
+                  {chapterStory}
+                </p>
+              </div>
+            )}
             <p className="text-base text-muted-foreground mb-6">
               <span className="text-2xl">🦅</span> {introGreeting} {introBody}
             </p>

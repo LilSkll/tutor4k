@@ -13,6 +13,7 @@ import {
   getChapterTitle,
   hasCompletedPrereqChain,
 } from "@/lib/chapter-display";
+import { ResetProgressButton } from "@/components/chapters/reset-progress-button";
 import { cn } from "@/lib/utils";
 
 export default async function ChaptersMapPage() {
@@ -72,19 +73,29 @@ export default async function ChaptersMapPage() {
   }
 
   const completedCount = countCompletedForCourse(completedSlugs, courseSlugs);
+  const hasAnyProgress =
+    completedCount > 0 ||
+    progress.some(
+      (p) => p.chapter_slug && courseSlugs.includes(p.chapter_slug),
+    );
 
   return (
     <div className="page-container max-w-2xl space-y-6">
-      <div>
-        <h1 className="page-title">{t("chapters.title")}</h1>
-        <p className="text-sm text-muted-foreground">
-          {t("chapters.subtitle", {
-            flag: course.flag,
-            course: course.titleNative,
-            completed: completedCount,
-            total: CHAPTERS.length,
-          })}
-        </p>
+      <div className="flex flex-wrap items-start justify-between gap-2">
+        <div>
+          <h1 className="page-title">{t("chapters.title")}</h1>
+          <p className="text-sm text-muted-foreground">
+            {t("chapters.subtitle", {
+              flag: course.flag,
+              course: course.titleNative,
+              completed: completedCount,
+              total: CHAPTERS.length,
+            })}
+          </p>
+        </div>
+        {hasAnyProgress && (
+          <ResetProgressButton courseTitle={course.titleNative} />
+        )}
       </div>
 
       <div className="space-y-3">
