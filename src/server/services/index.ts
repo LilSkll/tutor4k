@@ -11,6 +11,8 @@ export {
   type RecentMistake,
 } from "./progress";
 
+export { TeacherAiService } from "./teacher-ai";
+
 export class ServiceNotImplementedError extends Error {
   constructor(service: string, method: string) {
     super(`[${service}] ${method} is not implemented yet.`);
@@ -29,22 +31,6 @@ export const MistakesService = {
   },
   recordMistake(input: unknown): Promise<never> {
     return notImplemented("MistakesService", `recordMistake(${typeof input})`);
-  },
-} as const;
-
-/** Cached teacher-facing AI reports (`teacher_ai_reports`). */
-export const TeacherAiService = {
-  getLatestReport(studentId: string, courseId: string): Promise<never> {
-    return notImplemented(
-      "TeacherAiService",
-      `getLatestReport(${studentId},${courseId})`,
-    );
-  },
-  refreshIfStale(studentId: string, courseId: string): Promise<never> {
-    return notImplemented(
-      "TeacherAiService",
-      `refreshIfStale(${studentId},${courseId})`,
-    );
   },
 } as const;
 

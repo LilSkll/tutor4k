@@ -234,6 +234,70 @@ export async function generateAIResponse(
   };
 }
 
+/**
+ * Call the provider chain with an explicit system prompt (Teacher Studio coach, etc.).
+ * Does not attach the student tutor course prompt or domain guard.
+ */
+export async function generateWithSystemPrompt(options: {
+  systemPrompt: string;
+  messages: AIMessage[];
+  temperature?: number;
+  maxTokens?: number;
+  interfaceLanguage?: InterfaceLanguage;
+}): Promise<AIResponse> {
+  const resolvedLanguage: InterfaceLanguage =
+    options.interfaceLanguage ?? "en";
+  const providerOptions: ProviderCallOptions = {
+    messages: options.messages,
+    temperature: options.temperature ?? 0.4,
+    maxTokens: options.maxTokens ?? 1200,
+    systemPrompt: options.systemPrompt,
+  };
+
+  const chain = buildProviderChain();
+  if (chain.length === 0) {
+    return {
+      content:
+        resolvedLanguage === "ru"
+          ? "⚠️ ИИ-сервис не настроен."
+          : resolvedLanguage === "es"
+            ? "⚠️ El servicio de IA no está configurado."
+            : resolvedLanguage === "de"
+              ? "⚠️ KI-Dienst ist nicht konfiguriert."
+              : "⚠️ AI service is not configured.",
+      provider: "groq",
+      model: "none",
+    };
+  }
+
+  const errors: string[] = [];
+  for (const provider of chain) {
+    try {
+      const result = await callWithRetry(provider, providerOptions);
+      return {
+        ...result,
+        content: scrubScriptLeaks(result.content, resolvedLanguage),
+      };
+    } catch (err) {
+      errors.push(`${provider.name}: ${(err as Error).message}`);
+    }
+  }
+
+  console.error("[orchestrator] custom system prompt failed:", errors);
+  return {
+    content:
+      resolvedLanguage === "ru"
+        ? "Не удалось сгенерировать анализ. Попробуйте позже."
+        : resolvedLanguage === "es"
+          ? "No se pudo generar el análisis. Inténtalo más tarde."
+          : resolvedLanguage === "de"
+            ? "Analyse konnte nicht erstellt werden. Bitte später erneut versuchen."
+            : "Could not generate the analysis. Please try again later.",
+    provider: chain[0]!.name,
+    model: "unavailable",
+  };
+}
+
 export async function generateStructuredJSON<T>(
   messages: AIMessage[],
   opts?: {

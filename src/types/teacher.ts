@@ -34,6 +34,22 @@ export type TeacherStudentRow = {
   deleted_at: string | null;
 };
 
+/** Cached AI analysis for a student×course (Stage 6). */
+export type TeacherAiReportDTO = {
+  id: string;
+  studentId: string;
+  courseId: string;
+  locale: string;
+  generatedAt: string;
+  summary: string;
+  recommendations: string[];
+  weakTopics: string[];
+  nextSteps: string[];
+  sourceFingerprint: string;
+  cached: boolean;
+  stale: boolean;
+};
+
 /** Student card payload (Stage 5) — shared API/client shape. */
 export type TeacherStudentCardDTO = {
   link: TeacherStudentRow;

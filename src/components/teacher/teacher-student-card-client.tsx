@@ -9,6 +9,7 @@ import { translate } from "@/lib/i18n";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { getCourseTitle } from "@/config/courses";
 import type { TeacherStudentCardDTO } from "@/types/teacher";
+import { TeacherAiAnalysisPanel } from "@/components/teacher/teacher-ai-analysis-panel";
 
 const REASON_KEYS: Record<string, string> = {
   low_confidence: "teacher.card.reason.lowConfidence",
@@ -139,6 +140,8 @@ export function TeacherStudentCardClient({
           }
         />
       </section>
+
+      <TeacherAiAnalysisPanel studentId={studentId} courseId={courseId} />
 
       <section className="space-y-2">
         <h3 className="font-semibold">{t("teacher.card.profile")}</h3>
