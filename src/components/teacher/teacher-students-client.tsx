@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { Loader2, UserMinus } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
@@ -8,10 +9,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { translate } from "@/lib/i18n";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
+import { getCourseTitle } from "@/config/courses";
 
 type Row = {
   link: {
     id: string;
+    student_id: string;
     course_id: string;
     role: string;
     accepted_at: string | null;
@@ -107,9 +110,7 @@ export function TeacherStudentsClient() {
           >
             {c === "all"
               ? t("teacher.students.allCourses")
-              : c === "spanish"
-                ? "Español"
-                : "English"}
+              : getCourseTitle(c)}
           </button>
         ))}
       </div>
@@ -128,7 +129,10 @@ export function TeacherStudentsClient() {
             {rows.map(({ link, student }) => (
               <Card key={link.id}>
                 <CardContent className="p-4 flex items-center justify-between gap-3">
-                  <div className="min-w-0">
+                  <Link
+                    href={`/teacher/students/${encodeURIComponent(link.student_id)}?courseId=${encodeURIComponent(link.course_id)}`}
+                    className="min-w-0 flex-1 hover:opacity-90"
+                  >
                     <p className="font-semibold truncate">
                       {student?.name || student?.email || link.id}
                     </p>
@@ -136,13 +140,18 @@ export function TeacherStudentsClient() {
                       {student?.email}
                     </p>
                     <div className="flex gap-2 mt-1 flex-wrap">
-                      <Badge variant="level">{link.course_id}</Badge>
+                      <Badge variant="level">
+                        {getCourseTitle(link.course_id)}
+                      </Badge>
                       {student?.level && (
                         <Badge variant="level">{student.level}</Badge>
                       )}
                       <Badge variant="secondary">{link.role}</Badge>
                     </div>
-                  </div>
+                    <p className="text-xs text-primary mt-1">
+                      {t("teacher.students.openCard")}
+                    </p>
+                  </Link>
                   <Button
                     size="sm"
                     variant="ghost"

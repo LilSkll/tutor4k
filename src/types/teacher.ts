@@ -33,3 +33,68 @@ export type TeacherStudentRow = {
   created_at: string;
   deleted_at: string | null;
 };
+
+/** Student card payload (Stage 5) — shared API/client shape. */
+export type TeacherStudentCardDTO = {
+  link: TeacherStudentRow;
+  student: {
+    id: string;
+    name: string;
+    email: string;
+    level: string | null;
+    goal: string | null;
+    streak: number;
+    lastActiveDate: string | null;
+    createdAt: string | null;
+    dailyGoalMinutes: number | null;
+  };
+  progress: {
+    completedChapters: number;
+    totalChapters: number;
+    completionPercent: number;
+    averageScore: number | null;
+  };
+  chapters: Array<{
+    chapterSlug: string;
+    title: string;
+    status: "not_started" | "in_progress" | "completed";
+    score: number;
+    completedAt: string | null;
+    startedAt: string | null;
+  }>;
+  weekActivity: Array<{
+    date: string;
+    minutesStudied: number;
+    lessonsCompleted: number;
+  }>;
+  activityHistory: Array<{
+    date: string;
+    minutesStudied: number;
+    lessonsCompleted: number;
+  }>;
+  recentExercises: Array<{
+    id: string;
+    exercise: string;
+    exerciseType: string;
+    level: string | null;
+    correct: boolean;
+    userAnswer: string;
+    feedback: string;
+    createdAt: string;
+  }>;
+  recentMistakes: Array<{
+    id: string;
+    exercise: string;
+    exerciseType: string;
+    feedback: string;
+    createdAt: string;
+  }>;
+  difficultTopics: Array<{
+    type: "grammar" | "vocabulary";
+    topic: string;
+    priority: number;
+    reason: string;
+    confidence?: number;
+    certainty?: number;
+  }>;
+};

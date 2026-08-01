@@ -365,6 +365,38 @@ export async function getCourseLearningProfile(
 }
 
 /**
+ * Teacher Studio: load another student's course learning profile via service role.
+ * Caller must already have verified teacher↔student authz.
+ */
+export async function getCourseLearningProfileAdmin(
+  userId: string,
+  courseId: string,
+  limit = MAX_RECS,
+): Promise<StudentCourseProfile> {
+  const admin = createSupabaseAdminClient();
+  if (!admin) return emptyCourseProfile();
+
+  const { data, error } = await admin
+    .from("profiles")
+    .select("learning_profile")
+    .eq("id", userId)
+    .maybeSingle();
+  if (error) {
+    console.warn("[learning-profile] admin load failed:", error.message);
+    return emptyCourseProfile();
+  }
+
+  const store = normalizeStore(data?.learning_profile);
+  const raw = store.courses[courseId] ?? emptyCourseProfile();
+  const faded = applyForgettingToProfile(normalizeCourse(raw));
+  faded.recommendations = buildStructuredRecommendations(faded, limit);
+  faded.lastRecommendations = recommendationsToLegacyStrings(
+    faded.recommendations,
+  );
+  return faded;
+}
+
+/**
  * Persist store (service-role preferred).
  */
 export async function saveLearningProfileStore(

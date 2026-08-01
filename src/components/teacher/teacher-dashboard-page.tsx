@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { Badge } from "@/components/ui/badge";
@@ -23,7 +24,7 @@ type WeekDay = {
 };
 
 type Row = {
-  link: { id: string; course_id: string; role: string };
+  link: { id: string; student_id: string; course_id: string; role: string };
   student: {
     id: string;
     name: string;
@@ -137,7 +138,12 @@ export function TeacherDashboardPage({ teacherName }: { teacherName: string }) {
               >
                 <div className="flex flex-wrap items-start justify-between gap-2">
                   <div>
-                    <p className="font-semibold">{name}</p>
+                    <Link
+                      href={`/teacher/students/${encodeURIComponent(row.link.student_id)}?courseId=${encodeURIComponent(row.link.course_id)}`}
+                      className="font-semibold hover:text-primary"
+                    >
+                      {name}
+                    </Link>
                     <p className="text-xs text-muted-foreground">
                       {row.student?.email}
                       {row.student?.level ? ` · ${row.student.level}` : ""}

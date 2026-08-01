@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { requireTeacherStudioAccess } from "@/server/teacher/authz";
 import { ChangePasswordCard } from "@/components/auth/change-password-card";
+import { TeacherLanguageCard } from "@/components/teacher/teacher-language-card";
 import { translate } from "@/lib/i18n";
 
 export default async function TeacherSettingsPage() {
@@ -17,6 +18,7 @@ export default async function TeacherSettingsPage() {
           {translate("teacher.settings.subtitle", lang)}
         </p>
       </div>
+      <TeacherLanguageCard />
       <Suspense fallback={null}>
         <ChangePasswordCard returnTo="/teacher/settings" />
       </Suspense>
