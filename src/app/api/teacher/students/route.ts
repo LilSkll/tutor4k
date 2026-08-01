@@ -32,7 +32,14 @@ export async function DELETE(req: NextRequest) {
     return NextResponse.json({ ok: true });
   } catch (err) {
     const msg = (err as Error).message;
-    const status = msg === "UNAUTHORIZED" ? 401 : msg === "FORBIDDEN" ? 403 : 500;
+    const status =
+      msg === "UNAUTHORIZED"
+        ? 401
+        : msg === "FORBIDDEN"
+          ? 403
+          : msg === "NOT_FOUND"
+            ? 404
+            : 500;
     return NextResponse.json({ error: msg }, { status });
   }
 }

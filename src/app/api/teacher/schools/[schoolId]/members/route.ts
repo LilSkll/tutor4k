@@ -48,7 +48,9 @@ export async function POST(
         ? 401
         : msg === "FORBIDDEN"
           ? 403
-          : msg === "USER_NOT_FOUND" || msg === "NOT_A_TEACHER"
+          : msg === "USER_NOT_FOUND" ||
+              msg === "NOT_A_TEACHER" ||
+              msg === "INVALID_ROLE"
             ? 400
             : 500;
     return NextResponse.json({ error: msg }, { status });

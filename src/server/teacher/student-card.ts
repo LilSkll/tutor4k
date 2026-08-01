@@ -118,7 +118,11 @@ async function getActivityHistory(
   const byDate = new Map<string, WeekActivityDay>();
   for (const row of data ?? []) {
     const cid = row.course_id as string | null;
-    if (cid && cid !== courseId) continue;
+    if (cid == null) {
+      if (courseId !== "spanish") continue;
+    } else if (cid !== courseId) {
+      continue;
+    }
     const date = row.activity_date as string;
     const prev = byDate.get(date) ?? {
       date,

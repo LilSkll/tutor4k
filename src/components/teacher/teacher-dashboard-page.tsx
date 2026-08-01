@@ -56,33 +56,33 @@ export function TeacherDashboardPage({ teacherName }: { teacherName: string }) {
   const [rows, setRows] = React.useState<Row[]>([]);
   const [loading, setLoading] = React.useState(true);
 
-  const load = React.useCallback(
-    async () => {
-      setLoading(true);
+  React.useEffect(() => {
+    const ac = new AbortController();
+    setLoading(true);
+    const q =
+      courseId === "all"
+        ? ""
+        : `?courseId=${encodeURIComponent(courseId)}`;
+    void (async () => {
       try {
-        const q =
-          courseId === "all"
-            ? ""
-            : `?courseId=${encodeURIComponent(courseId)}`;
-        const res = await fetch(`/api/teacher/dashboard${q}`);
+        const res = await fetch(`/api/teacher/dashboard${q}`, {
+          signal: ac.signal,
+        });
         const data = (await res.json()) as {
           students?: Row[];
           error?: string;
         };
         if (!res.ok) throw new Error(data.error || "fail");
-        setRows(data.students ?? []);
-      } catch {
+        if (!ac.signal.aborted) setRows(data.students ?? []);
+      } catch (err) {
+        if ((err as Error).name === "AbortError") return;
         toast.error(t("teacher.dashboard.loadFail"));
       } finally {
-        setLoading(false);
+        if (!ac.signal.aborted) setLoading(false);
       }
-    },
-    [courseId, t],
-  );
-
-  React.useEffect(() => {
-    void load();
-  }, [load]);
+    })();
+    return () => ac.abort();
+  }, [courseId, t]);
 
   return (
     <div className="mx-auto max-w-4xl space-y-6">

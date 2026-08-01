@@ -123,13 +123,16 @@ export async function listInvites(teacherId: string): Promise<TeacherInviteRow[]
 
 export async function closeInvite(teacherId: string, inviteId: string): Promise<void> {
   const admin = await getAdmin();
-  const { error } = await admin
+  const { data, error } = await admin
     .from("teacher_invites")
     .update({ status: "closed", deleted_at: new Date().toISOString() })
     .eq("id", inviteId)
     .eq("teacher_id", teacherId)
-    .is("deleted_at", null);
+    .is("deleted_at", null)
+    .select("id")
+    .maybeSingle();
   if (error) throw new Error(error.message);
+  if (!data) throw new Error("NOT_FOUND");
 }
 
 export async function listTeacherStudents(teacherId: string, courseId?: string) {
@@ -167,7 +170,7 @@ export async function revokeTeacherStudent(
   linkId: string,
 ): Promise<void> {
   const admin = await getAdmin();
-  const { error } = await admin
+  const { data, error } = await admin
     .from("teacher_students")
     .update({
       status: "revoked",
@@ -175,8 +178,11 @@ export async function revokeTeacherStudent(
     })
     .eq("id", linkId)
     .eq("teacher_id", teacherId)
-    .is("deleted_at", null);
+    .is("deleted_at", null)
+    .select("id")
+    .maybeSingle();
   if (error) throw new Error(error.message);
+  if (!data) throw new Error("NOT_FOUND");
 }
 
 async function findOpenInvite(opts: {
@@ -235,6 +241,30 @@ export async function acceptInvite(input: {
 
   const admin = await getAdmin();
 
+  // Atomic claim of one invite use (optimistic lock on uses_count).
+  const { data: claimed, error: claimErr } = await admin
+    .from("teacher_invites")
+    .update({ uses_count: invite.uses_count + 1 })
+    .eq("id", invite.id)
+    .eq("status", "open")
+    .eq("uses_count", invite.uses_count)
+    .is("deleted_at", null)
+    .select("id, uses_count, max_uses")
+    .maybeSingle();
+  if (claimErr) throw new Error(claimErr.message);
+  if (!claimed) {
+    throw new Error("Invite has no remaining uses");
+  }
+  if (
+    claimed.max_uses != null &&
+    (claimed.uses_count as number) >= (claimed.max_uses as number)
+  ) {
+    await admin
+      .from("teacher_invites")
+      .update({ status: "closed" })
+      .eq("id", invite.id);
+  }
+
   // Soft-delete any previous live link for same triple, then insert active.
   await admin
     .from("teacher_students")
@@ -260,19 +290,16 @@ export async function acceptInvite(input: {
     })
     .select("*")
     .single();
-  if (error) throw new Error(error.message);
-
-  await admin
-    .from("teacher_invites")
-    .update({ uses_count: invite.uses_count + 1 })
-    .eq("id", invite.id);
-
-  // Close if max uses reached.
-  if (invite.max_uses != null && invite.uses_count + 1 >= invite.max_uses) {
+  if (error) {
+    // Roll back the claimed use so the invite stays usable.
     await admin
       .from("teacher_invites")
-      .update({ status: "closed" })
+      .update({
+        uses_count: invite.uses_count,
+        status: "open",
+      })
       .eq("id", invite.id);
+    throw new Error(error.message);
   }
 
   const { data: teacher } = await admin

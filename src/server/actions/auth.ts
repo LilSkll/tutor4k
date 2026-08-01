@@ -207,7 +207,7 @@ export async function signUpWithEmail(formData: FormData) {
   // Persist role + consent if session is returned (email confirmation disabled).
   // Trigger also sets role from metadata when signup-role-trigger.sql is applied.
   if (data.user) {
-    await supabase
+    const { error: profileErr } = await supabase
       .from("profiles")
       .update({
         role,
@@ -218,6 +218,16 @@ export async function signUpWithEmail(formData: FormData) {
         marketing_consent_at: marketingConsent ? now : null,
       })
       .eq("id", data.user.id);
+    if (profileErr) {
+      console.error("signup profile update failed", profileErr.message);
+      if (data.session) {
+        redirect(
+          `/signup?error=${encodeURIComponent(
+            "Аккаунт создан, но роль не сохранилась. Войдите и напишите в поддержку.",
+          )}`,
+        );
+      }
+    }
   }
 
   if (data.session && data.user) {
@@ -295,6 +305,19 @@ export async function updatePassword(formData: FormData) {
     );
   }
 
+  // Block logged-in users who open /auth/reset-password without a recovery flow.
+  const { hasRecoveryCookie, clearRecoveryCookie, sessionLooksLikeRecovery } =
+    await import("@/lib/auth-recovery");
+  const { data: sessionData } = await supabase.auth.getSession();
+  const allowed =
+    (await hasRecoveryCookie()) ||
+    sessionLooksLikeRecovery(sessionData.session);
+  if (!allowed) {
+    redirect(
+      `/login?error=${encodeURIComponent("Смена пароля только по ссылке из письма или через Настройки.")}`,
+    );
+  }
+
   const { error } = await supabase.auth.updateUser({ password });
   if (error) {
     redirect(
@@ -302,6 +325,7 @@ export async function updatePassword(formData: FormData) {
     );
   }
 
+  await clearRecoveryCookie();
   // End recovery session so role-based home redirects don't skip the login screen.
   await supabase.auth.signOut();
   redirect("/login?notice=password-updated");

@@ -78,15 +78,31 @@ export async function updateSession(request: NextRequest) {
     return NextResponse.redirect(url);
   }
 
-  // Keep recovery flows on the new-password page (teachers must not bounce to Studio).
-  const isAuthRecovery =
-    pathname.startsWith("/auth/reset-password") ||
+  // Keep PKCE/callback/recovery exchange on auth routes; reset-password only
+  // when the short-lived recovery cookie is present (set by /auth/recovery).
+  const hasRecoveryCookie =
+    request.cookies.get("swp_pwd_recovery")?.value === "1";
+  const isAuthRecoveryExchange =
     pathname.startsWith("/auth/callback") ||
     pathname.startsWith("/auth/recovery");
+  const isAuthResetAllowed =
+    pathname.startsWith("/auth/reset-password") && hasRecoveryCookie;
 
   if (
     user &&
-    !isAuthRecovery &&
+    pathname.startsWith("/auth/reset-password") &&
+    !hasRecoveryCookie
+  ) {
+    const role = await fetchUserRole(supabase, user.id);
+    const url = request.nextUrl.clone();
+    url.pathname = homePathForRole(role);
+    return NextResponse.redirect(url);
+  }
+
+  if (
+    user &&
+    !isAuthRecoveryExchange &&
+    !isAuthResetAllowed &&
     (pathname === "/" ||
       pathname.startsWith("/login") ||
       pathname.startsWith("/signup") ||

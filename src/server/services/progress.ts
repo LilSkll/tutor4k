@@ -84,8 +84,9 @@ export const ProgressService = {
     const rows = (data ?? []).filter((r) => {
       const slug = r.chapter_slug as string | null;
       if (!slug || !slugSet.has(slug)) return false;
-      if (r.course_id && r.course_id !== courseId) return false;
-      return true;
+      const cid = r.course_id as string | null;
+      if (cid == null) return courseId === "spanish";
+      return cid === courseId;
     });
 
     const completed = rows.filter((r) => r.status === "completed");
@@ -139,7 +140,12 @@ export const ProgressService = {
 
     for (const row of data ?? []) {
       const cid = row.course_id as string | null;
-      if (cid && cid !== courseId) continue;
+      // Legacy rows without course_id count only toward spanish.
+      if (cid == null) {
+        if (courseId !== "spanish") continue;
+      } else if (cid !== courseId) {
+        continue;
+      }
       const day = byDate.get(row.activity_date as string);
       if (!day) continue;
       day.minutesStudied += Number(row.minutes_studied) || 0;
@@ -181,7 +187,8 @@ export const ProgressService = {
     return (data ?? [])
       .filter((r) => {
         const cid = r.course_id as string | null;
-        return !cid || cid === courseId;
+        if (cid == null) return courseId === "spanish";
+        return cid === courseId;
       })
       .slice(0, limit)
       .map((r) => ({

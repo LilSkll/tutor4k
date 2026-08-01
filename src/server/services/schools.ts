@@ -127,12 +127,8 @@ export const SchoolService = {
     });
     if (mErr) throw new Error(mErr.message);
 
-    // Elevate profile to school_admin so Studio role badge matches hierarchy.
-    await admin
-      .from("profiles")
-      .update({ role: "school_admin" })
-      .eq("id", input.userId)
-      .in("role", ["teacher", "school_admin"]);
+    // Keep profiles.role as teacher; ownership is school_members.member_role.
+    // (Avoid permanently elevating every school creator to school_admin.)
 
     return {
       id: school.id,
@@ -254,8 +250,31 @@ export const SchoolService = {
 
     const { data, error } = await q;
     if (error) throw new Error(error.message);
-    const groups = data ?? [];
+    let groups = data ?? [];
     if (groups.length === 0) return [];
+
+    // Hide groups tied to soft-deleted schools.
+    const schoolIds = [
+      ...new Set(
+        groups
+          .map((g) => g.school_id as string | null)
+          .filter((id): id is string => Boolean(id)),
+      ),
+    ];
+    if (schoolIds.length > 0) {
+      const { data: schools, error: schErr } = await admin
+        .from("schools")
+        .select("id")
+        .in("id", schoolIds)
+        .is("deleted_at", null);
+      if (schErr) throw new Error(schErr.message);
+      const live = new Set((schools ?? []).map((s) => s.id as string));
+      groups = groups.filter((g) => {
+        const sid = g.school_id as string | null;
+        return !sid || live.has(sid);
+      });
+      if (groups.length === 0) return [];
+    }
 
     const ids = groups.map((g) => g.id as string);
     const { data: links } = await admin

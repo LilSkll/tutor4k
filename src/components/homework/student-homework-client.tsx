@@ -142,7 +142,7 @@ export function StudentHomeworkClient() {
                     {slugs.map((slug) => (
                       <li key={slug}>
                         <Link
-                          href={`/chapters/${slug}`}
+                          href={`/chapters/${encodeURIComponent(slug)}?courseId=${encodeURIComponent(a.courseId)}`}
                           className="text-primary hover:underline"
                         >
                           {slug}

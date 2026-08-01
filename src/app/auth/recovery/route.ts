@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
+import { setRecoveryCookie } from "@/lib/auth-recovery";
 
 /**
  * Dedicated password-recovery redirect target.
@@ -19,6 +20,12 @@ export async function GET(request: Request) {
   const supabase = await createSupabaseServerClient();
   const resetUrl = `${origin}/auth/reset-password`;
 
+  const redirectReset = () => {
+    const res = NextResponse.redirect(resetUrl);
+    setRecoveryCookie(res);
+    return res;
+  };
+
   if (code) {
     const { error } = await supabase.auth.exchangeCodeForSession(code);
     if (error) {
@@ -28,7 +35,7 @@ export async function GET(request: Request) {
         )}`,
       );
     }
-    return NextResponse.redirect(resetUrl);
+    return redirectReset();
   }
 
   if (tokenHash && type) {
@@ -43,10 +50,9 @@ export async function GET(request: Request) {
         )}`,
       );
     }
-    return NextResponse.redirect(resetUrl);
+    return redirectReset();
   }
 
-  // Implicit / hash-based links sometimes hit this path without query params;
-  // the reset page client can still pick up the session from the hash.
-  return NextResponse.redirect(resetUrl);
+  // Implicit / hash-based links — reset page may hydrate session from hash.
+  return redirectReset();
 }

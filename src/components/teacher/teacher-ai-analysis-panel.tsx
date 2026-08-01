@@ -26,7 +26,10 @@ export function TeacherAiAnalysisPanel({
   const [loading, setLoading] = React.useState(true);
   const [refreshing, setRefreshing] = React.useState(false);
 
+  const loadGen = React.useRef(0);
+
   const loadCached = React.useCallback(async () => {
+    const gen = ++loadGen.current;
     setLoading(true);
     try {
       const res = await fetch(
@@ -37,11 +40,13 @@ export function TeacherAiAnalysisPanel({
         error?: string;
       };
       if (!res.ok) throw new Error(data.error || "fail");
+      if (gen !== loadGen.current) return;
       setReport(data.report ?? null);
     } catch {
+      if (gen !== loadGen.current) return;
       toast.error(t("teacher.ai.loadFail"));
     } finally {
-      setLoading(false);
+      if (gen === loadGen.current) setLoading(false);
     }
   }, [studentId, courseId, language, t]);
 

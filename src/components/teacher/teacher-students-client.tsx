@@ -49,9 +49,11 @@ export function TeacherStudentsClient() {
   const [rows, setRows] = React.useState<Row[]>([]);
   const [groups, setGroups] = React.useState<GroupOpt[]>([]);
   const [initialLoading, setInitialLoading] = React.useState(true);
+  const loadGen = React.useRef(0);
 
   const load = React.useCallback(
     async (opts?: { quiet?: boolean }) => {
+      const gen = ++loadGen.current;
       if (!opts?.quiet) setInitialLoading(true);
       try {
         const q =
@@ -70,12 +72,14 @@ export function TeacherStudentsClient() {
           groups?: Array<{ id: string; name: string; courseId: string }>;
         };
         if (!res.ok) throw new Error(data.error || "fail");
+        if (gen !== loadGen.current) return;
         setRows(data.students ?? []);
         setGroups(gData.groups ?? []);
       } catch {
+        if (gen !== loadGen.current) return;
         toast.error(translate("teacher.students.loadFail", language));
       } finally {
-        setInitialLoading(false);
+        if (gen === loadGen.current) setInitialLoading(false);
       }
     },
     [courseId, language],

@@ -236,8 +236,25 @@ async function saveReport(input: {
     .insert(payload)
     .select("*")
     .single();
-  if (error) throw new Error(error.message);
-  return data as ReportRow;
+  if (!error && data) return data as ReportRow;
+
+  // Concurrent insert race on unique live index → update the winner row.
+  const raced = await loadLiveReport(
+    input.studentId,
+    input.courseId,
+    input.locale,
+  );
+  if (raced) {
+    const { data: updated, error: uErr } = await admin
+      .from("teacher_ai_reports")
+      .update(payload)
+      .eq("id", raced.id)
+      .select("*")
+      .single();
+    if (uErr) throw new Error(uErr.message);
+    return updated as ReportRow;
+  }
+  throw new Error(error?.message ?? "Could not save AI report");
 }
 
 async function generateFresh(input: {
@@ -248,7 +265,15 @@ async function generateFresh(input: {
   evidence?: ReturnType<typeof buildEvidence>;
   fingerprint?: string;
 }): Promise<TeacherAiReportDTO> {
-  await assertCanViewStudent(input.teacherId, input.studentId, input.courseId);
+  // Authz already enforced by refreshIfStale / getLatestReport callers when
+  // evidence is precomputed; still check when building from scratch.
+  if (!input.evidence) {
+    await assertCanViewStudent(
+      input.teacherId,
+      input.studentId,
+      input.courseId,
+    );
+  }
   const evidence =
     input.evidence ??
     buildEvidence(

@@ -15,16 +15,24 @@ import { prepareExercisesForInterface } from "@/lib/exercise-localize";
 
 export default async function ChapterPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<{ courseId?: string }>;
 }) {
   const { slug } = await params;
+  const sp = await searchParams;
   const [profile, progress] = await Promise.all([
     getCurrentProfile(),
     getChapterProgress(),
   ]);
 
-  const courseId = profile?.active_course_id ?? "spanish";
+  // Homework links may pass ?courseId= so the chapter resolves for that course
+  // even when the student's active course differs.
+  const courseId =
+    sp.courseId === "english" || sp.courseId === "spanish"
+      ? sp.courseId
+      : (profile?.active_course_id ?? "spanish");
   const course = await getCourse(courseId);
 
   const chapter = course.getChapter(slug);

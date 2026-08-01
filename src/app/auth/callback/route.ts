@@ -1,9 +1,16 @@
 import { NextResponse } from "next/server";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
+import {
+  sessionLooksLikeRecovery,
+  setRecoveryCookie,
+} from "@/lib/auth-recovery";
+import { homePathForRole } from "@/lib/roles";
+import type { UserRole } from "@/types";
 
 /**
  * Supabase Auth redirect target (email confirm / password recovery).
  * Supports PKCE `?code=` and older `?token_hash=&type=` links.
+ * Recovery always wins over ?next= (teachers must reach the new-password form).
  */
 export async function GET(request: Request) {
   const url = new URL(request.url);
@@ -13,53 +20,48 @@ export async function GET(request: Request) {
   const type = searchParams.get("type");
   const nextParam = searchParams.get("next");
 
-  // Password recovery → set-new-password form. Explicit ?next= still wins.
-  // Prefer /auth/recovery as redirectTo from reset emails; this callback
-  // still routes recovery sessions correctly for older links.
-  let destination =
-    nextParam?.startsWith("/")
-      ? nextParam
-      : type === "recovery"
-        ? "/auth/reset-password"
-        : "/dashboard";
-
   const supabase = await createSupabaseServerClient();
+
+  const redirectTo = (path: string, markRecovery = false) => {
+    const res = NextResponse.redirect(`${origin}${path}`);
+    if (markRecovery) setRecoveryCookie(res);
+    return res;
+  };
 
   if (code) {
     const { error } = await supabase.auth.exchangeCodeForSession(code);
-    if (!error) {
-      if (!nextParam) {
-        const { data } = await supabase.auth.getSession();
-        const amr = (data.session as { amr?: { method?: string }[] } | null)
-          ?.amr;
-        const isRecovery = Array.isArray(amr)
-          ? amr.some((a) => a?.method === "recovery")
-          : false;
-        if (isRecovery || type === "recovery") {
-          destination = "/auth/reset-password";
-        } else {
-          // Role-aware home (teacher → Studio, student → dashboard).
-          const {
-            data: { user },
-          } = await supabase.auth.getUser();
-          if (user) {
-            const { data: profile } = await supabase
-              .from("profiles")
-              .select("role")
-              .eq("id", user.id)
-              .maybeSingle();
-            const role = (profile as { role?: string } | null)?.role;
-            if (role === "teacher" || role === "school_admin") {
-              destination = "/teacher/dashboard";
-            }
-          }
-        }
-      }
-      return NextResponse.redirect(`${origin}${destination}`);
+    if (error) {
+      return redirectTo(
+        `/login?error=${encodeURIComponent("Не удалось подтвердить ссылку. Запроси сброс пароля ещё раз.")}`,
+      );
     }
-    return NextResponse.redirect(
-      `${origin}/login?error=${encodeURIComponent("Не удалось подтвердить ссылку. Запроси сброс пароля ещё раз.")}`,
-    );
+
+    const { data } = await supabase.auth.getSession();
+    const isRecovery =
+      type === "recovery" || sessionLooksLikeRecovery(data.session);
+
+    if (isRecovery) {
+      return redirectTo("/auth/reset-password", true);
+    }
+
+    if (nextParam?.startsWith("/") && !nextParam.startsWith("//")) {
+      return redirectTo(nextParam);
+    }
+
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    let role: UserRole = "student";
+    if (user) {
+      const { data: profile } = await supabase
+        .from("profiles")
+        .select("role")
+        .eq("id", user.id)
+        .maybeSingle();
+      role = ((profile as { role?: UserRole } | null)?.role ??
+        "student") as UserRole;
+    }
+    return redirectTo(homePathForRole(role));
   }
 
   if (tokenHash && type) {
@@ -67,16 +69,21 @@ export async function GET(request: Request) {
       type: type as "recovery" | "signup" | "invite" | "magiclink" | "email",
       token_hash: tokenHash,
     });
-    if (!error) {
-      if (type === "recovery") destination = "/auth/reset-password";
-      return NextResponse.redirect(`${origin}${destination}`);
+    if (error) {
+      return redirectTo(
+        `/login?error=${encodeURIComponent("Ссылка устарела или уже использована.")}`,
+      );
     }
-    return NextResponse.redirect(
-      `${origin}/login?error=${encodeURIComponent("Ссылка устарела или уже использована.")}`,
-    );
+    if (type === "recovery") {
+      return redirectTo("/auth/reset-password", true);
+    }
+    if (nextParam?.startsWith("/") && !nextParam.startsWith("//")) {
+      return redirectTo(nextParam);
+    }
+    return redirectTo("/dashboard");
   }
 
-  return NextResponse.redirect(
-    `${origin}/login?error=${encodeURIComponent("Некорректная ссылка восстановления.")}`,
+  return redirectTo(
+    `/login?error=${encodeURIComponent("Некорректная ссылка восстановления.")}`,
   );
 }

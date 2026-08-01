@@ -18,11 +18,13 @@ export function RecoveryHashSession() {
     if (!access_token || !refresh_token) return;
     if (type && type !== "recovery") return;
 
+    // Allow /auth/reset-password past middleware without going through /auth/recovery.
+    document.cookie = "swp_pwd_recovery=1; Path=/; Max-Age=900; SameSite=Lax";
+
     const supabase = createSupabaseBrowserClient();
     void supabase.auth
       .setSession({ access_token, refresh_token })
       .then(() => {
-        // Clean hash so refresh doesn't re-apply.
         window.history.replaceState(
           null,
           "",

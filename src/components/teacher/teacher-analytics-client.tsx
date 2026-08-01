@@ -31,31 +31,34 @@ export function TeacherAnalyticsClient() {
   const [data, setData] = React.useState<TeacherAnalyticsDTO | null>(null);
   const [loading, setLoading] = React.useState(true);
 
-  const load = React.useCallback(async () => {
-    setLoading(true);
-    try {
-      const q =
-        courseId === "all"
-          ? ""
-          : `?courseId=${encodeURIComponent(courseId)}`;
-      const res = await fetch(`/api/teacher/analytics${q}`);
-      const json = (await res.json()) as {
-        analytics?: TeacherAnalyticsDTO;
-        error?: string;
-      };
-      if (!res.ok) throw new Error(json.error || "fail");
-      setData(json.analytics ?? null);
-    } catch {
-      toast.error(t("teacher.analytics.loadFail"));
-      setData(null);
-    } finally {
-      setLoading(false);
-    }
-  }, [courseId, t]);
-
   React.useEffect(() => {
-    void load();
-  }, [load]);
+    const ac = new AbortController();
+    setLoading(true);
+    const q =
+      courseId === "all"
+        ? ""
+        : `?courseId=${encodeURIComponent(courseId)}`;
+    void (async () => {
+      try {
+        const res = await fetch(`/api/teacher/analytics${q}`, {
+          signal: ac.signal,
+        });
+        const json = (await res.json()) as {
+          analytics?: TeacherAnalyticsDTO;
+          error?: string;
+        };
+        if (!res.ok) throw new Error(json.error || "fail");
+        if (!ac.signal.aborted) setData(json.analytics ?? null);
+      } catch (err) {
+        if ((err as Error).name === "AbortError") return;
+        toast.error(t("teacher.analytics.loadFail"));
+        if (!ac.signal.aborted) setData(null);
+      } finally {
+        if (!ac.signal.aborted) setLoading(false);
+      }
+    })();
+    return () => ac.abort();
+  }, [courseId, t]);
 
   const weekChart =
     data?.weekActivity.map((d) => ({

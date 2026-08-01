@@ -230,7 +230,8 @@ export const AssignmentService = {
 
   async cancel(teacherId: string, assignmentId: string): Promise<void> {
     const admin = requireAdmin();
-    const { error } = await admin
+    // Only open assignments; keep completed rows visible in history.
+    const { data, error } = await admin
       .from("teacher_assignments")
       .update({
         status: "cancelled",
@@ -238,8 +239,12 @@ export const AssignmentService = {
       })
       .eq("id", assignmentId)
       .eq("teacher_id", teacherId)
-      .is("deleted_at", null);
+      .eq("status", "assigned")
+      .is("deleted_at", null)
+      .select("id")
+      .maybeSingle();
     if (error) throw new Error(error.message);
+    if (!data) throw new Error("NOT_FOUND");
   },
 
   async markCompleted(studentId: string, assignmentId: string): Promise<void> {
@@ -290,15 +295,16 @@ export const AssignmentService = {
     userId: string,
     ids?: string[],
   ): Promise<void> {
+    // Empty/omitted ids = no-op (avoid marking everything unread by accident).
+    if (!ids?.length) return;
     const admin = requireAdmin();
-    let q = admin
+    const { error } = await admin
       .from("notifications")
       .update({ read_at: new Date().toISOString() })
       .eq("user_id", userId)
       .is("deleted_at", null)
-      .is("read_at", null);
-    if (ids?.length) q = q.in("id", ids);
-    const { error } = await q;
+      .is("read_at", null)
+      .in("id", ids);
     if (error) throw new Error(error.message);
   },
 } as const;

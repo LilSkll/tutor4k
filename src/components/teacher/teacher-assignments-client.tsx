@@ -66,7 +66,10 @@ export function TeacherAssignmentsClient() {
     if (prefillStudent) setStudentId(prefillStudent);
   }, [prefillStudent, prefillCourse]);
 
+  const loadGen = React.useRef(0);
+
   const load = React.useCallback(async () => {
+    const gen = ++loadGen.current;
     setLoading(true);
     try {
       const [aRes, sRes, cRes] = await Promise.all([
@@ -86,6 +89,7 @@ export function TeacherAssignmentsClient() {
       };
       const cData = (await cRes.json()) as { chapters?: ChapterOpt[] };
       if (!aRes.ok) throw new Error(aData.error || "fail");
+      if (gen !== loadGen.current) return;
       setAssignments(aData.assignments ?? []);
       setStudents(
         (sData.students ?? [])
@@ -99,9 +103,10 @@ export function TeacherAssignmentsClient() {
       );
       setChapters(cData.chapters ?? []);
     } catch {
+      if (gen !== loadGen.current) return;
       toast.error(t("teacher.assignments.loadFail"));
     } finally {
-      setLoading(false);
+      if (gen === loadGen.current) setLoading(false);
     }
   }, [courseId, t]);
 
