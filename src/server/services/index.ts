@@ -13,6 +13,7 @@ export {
 
 export { TeacherAiService } from "./teacher-ai";
 export { AssignmentService } from "./assignments";
+export { SchoolService } from "./schools";
 
 export class ServiceNotImplementedError extends Error {
   constructor(service: string, method: string) {

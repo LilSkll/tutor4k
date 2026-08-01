@@ -12,6 +12,7 @@ import {
   BarChart3,
   Link2,
   Settings,
+  Building2,
 } from "lucide-react";
 import { translate } from "@/lib/i18n";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
@@ -36,6 +37,12 @@ const NAV = [
     href: "/teacher/invites",
     labelKey: "teacher.nav.invites",
     icon: Link2,
+    ready: true,
+  },
+  {
+    href: "/teacher/school",
+    labelKey: "teacher.nav.school",
+    icon: Building2,
     ready: true,
   },
   {

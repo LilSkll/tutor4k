@@ -16,6 +16,7 @@ type Row = {
     id: string;
     student_id: string;
     course_id: string;
+    group_id: string | null;
     role: string;
     accepted_at: string | null;
   };
@@ -26,6 +27,12 @@ type Row = {
     level: string | null;
     last_active_date: string | null;
   } | null;
+};
+
+type GroupOpt = {
+  id: string;
+  name: string;
+  courseId: string;
 };
 
 export function TeacherStudentsClient() {
@@ -40,6 +47,7 @@ export function TeacherStudentsClient() {
     "all",
   );
   const [rows, setRows] = React.useState<Row[]>([]);
+  const [groups, setGroups] = React.useState<GroupOpt[]>([]);
   const [initialLoading, setInitialLoading] = React.useState(true);
 
   const load = React.useCallback(
@@ -50,13 +58,20 @@ export function TeacherStudentsClient() {
           courseId === "all"
             ? ""
             : `?courseId=${encodeURIComponent(courseId)}`;
-        const res = await fetch(`/api/teacher/students${q}`);
+        const [res, gRes] = await Promise.all([
+          fetch(`/api/teacher/students${q}`),
+          fetch("/api/teacher/groups"),
+        ]);
         const data = (await res.json()) as {
           students?: Row[];
           error?: string;
         };
+        const gData = (await gRes.json()) as {
+          groups?: Array<{ id: string; name: string; courseId: string }>;
+        };
         if (!res.ok) throw new Error(data.error || "fail");
         setRows(data.students ?? []);
+        setGroups(gData.groups ?? []);
       } catch {
         toast.error(translate("teacher.students.loadFail", language));
       } finally {
@@ -82,6 +97,24 @@ export function TeacherStudentsClient() {
       await load({ quiet: true });
     } catch {
       toast.error(t("teacher.students.revokeFail"));
+    }
+  };
+
+  const setGroup = async (linkId: string, groupId: string) => {
+    try {
+      const res = await fetch(
+        `/api/teacher/links/${encodeURIComponent(linkId)}/group`,
+        {
+          method: "PATCH",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ groupId: groupId || null }),
+        },
+      );
+      if (!res.ok) throw new Error("fail");
+      toast.success(t("teacher.students.groupUpdated"));
+      await load({ quiet: true });
+    } catch {
+      toast.error(t("teacher.students.groupFail"));
     }
   };
 
@@ -152,14 +185,33 @@ export function TeacherStudentsClient() {
                       {t("teacher.students.openCard")}
                     </p>
                   </Link>
-                  <Button
-                    size="sm"
-                    variant="ghost"
-                    onClick={() => revoke(link.id)}
-                  >
-                    <UserMinus className="h-4 w-4" />
-                    {t("teacher.students.revoke")}
-                  </Button>
+                  <div className="flex flex-col items-end gap-2 shrink-0">
+                    <select
+                      className="rounded-md border border-input bg-background px-2 py-1 text-xs max-w-[10rem]"
+                      value={link.group_id ?? ""}
+                      onChange={(e) => void setGroup(link.id, e.target.value)}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <option value="">
+                        {t("teacher.students.noGroup")}
+                      </option>
+                      {groups
+                        .filter((g) => g.courseId === link.course_id)
+                        .map((g) => (
+                          <option key={g.id} value={g.id}>
+                            {g.name}
+                          </option>
+                        ))}
+                    </select>
+                    <Button
+                      size="sm"
+                      variant="ghost"
+                      onClick={() => revoke(link.id)}
+                    >
+                      <UserMinus className="h-4 w-4" />
+                      {t("teacher.students.revoke")}
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             ))}
