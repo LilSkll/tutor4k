@@ -1,14 +1,19 @@
 /**
- * Domain service stubs — Stage 2.
- * Teacher Studio and Student Journey both call these later;
+ * Domain services — Teacher Studio and Student Journey both call these;
  * Teacher UI must never import Student Dashboard internals.
- *
- * Methods throw until Stage 4+ implements them.
  */
+
+export {
+  ProgressService,
+  type CourseProgressSummary,
+  type WeekActivityDay,
+  type StreakSummary,
+  type RecentMistake,
+} from "./progress";
 
 export class ServiceNotImplementedError extends Error {
   constructor(service: string, method: string) {
-    super(`[${service}] ${method} is not implemented yet (Stage 2 stub).`);
+    super(`[${service}] ${method} is not implemented yet.`);
     this.name = "ServiceNotImplementedError";
   }
 }
@@ -17,23 +22,7 @@ function notImplemented(service: string, method: string): never {
   throw new ServiceNotImplementedError(service, method);
 }
 
-/** Course progress aggregates (completion %, chapters, activity). */
-export const ProgressService = {
-  getCourseProgress(userId: string, courseId: string): Promise<never> {
-    return notImplemented("ProgressService", `getCourseProgress(${userId},${courseId})`);
-  },
-  getWeekActivity(userId: string, courseId: string): Promise<never> {
-    return notImplemented("ProgressService", `getWeekActivity(${userId},${courseId})`);
-  },
-  getStreakSummary(userId: string, courseId?: string): Promise<never> {
-    return notImplemented(
-      "ProgressService",
-      `getStreakSummary(${userId},${courseId ?? ""})`,
-    );
-  },
-} as const;
-
-/** Normalised mistake journal (`student_mistakes`). */
+/** Normalised mistake journal (`student_mistakes`) — Stage 5+. */
 export const MistakesService = {
   listForCourse(userId: string, courseId: string): Promise<never> {
     return notImplemented("MistakesService", `listForCourse(${userId},${courseId})`);

@@ -11,6 +11,7 @@ import {
   ClipboardList,
   BarChart3,
   Link2,
+  Settings,
 } from "lucide-react";
 import { translate } from "@/lib/i18n";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
@@ -48,6 +49,12 @@ const NAV = [
     labelKey: "teacher.nav.analytics",
     icon: BarChart3,
     ready: false,
+  },
+  {
+    href: "/teacher/settings",
+    labelKey: "teacher.nav.settings",
+    icon: Settings,
+    ready: true,
   },
 ] as const;
 

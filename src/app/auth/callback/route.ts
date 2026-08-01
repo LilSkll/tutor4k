@@ -14,6 +14,8 @@ export async function GET(request: Request) {
   const nextParam = searchParams.get("next");
 
   // Password recovery → set-new-password form. Explicit ?next= still wins.
+  // Prefer /auth/recovery as redirectTo from reset emails; this callback
+  // still routes recovery sessions correctly for older links.
   let destination =
     nextParam?.startsWith("/")
       ? nextParam
@@ -35,6 +37,22 @@ export async function GET(request: Request) {
           : false;
         if (isRecovery || type === "recovery") {
           destination = "/auth/reset-password";
+        } else {
+          // Role-aware home (teacher → Studio, student → dashboard).
+          const {
+            data: { user },
+          } = await supabase.auth.getUser();
+          if (user) {
+            const { data: profile } = await supabase
+              .from("profiles")
+              .select("role")
+              .eq("id", user.id)
+              .maybeSingle();
+            const role = (profile as { role?: string } | null)?.role;
+            if (role === "teacher" || role === "school_admin") {
+              destination = "/teacher/dashboard";
+            }
+          }
         }
       }
       return NextResponse.redirect(`${origin}${destination}`);

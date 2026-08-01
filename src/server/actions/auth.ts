@@ -244,10 +244,11 @@ export async function requestPasswordReset(formData: FormData) {
 
   const supabase = await createSupabaseServerClient();
   const origin = await appOrigin();
-  // Keep redirectTo free of query params — Supabase allowlist matches path exactly
-  // unless you add a wildcard. Callback always sends recovery sessions to reset form.
+  // Dedicated recovery endpoint — always opens the new-password form
+  // (teachers must not be redirected to Teacher Studio first).
+  // Add `{origin}/auth/recovery` to Supabase Redirect URLs allowlist.
   const { error } = await supabase.auth.resetPasswordForEmail(email, {
-    redirectTo: `${origin}/auth/callback`,
+    redirectTo: `${origin}/auth/recovery`,
   });
 
   if (error) {
@@ -301,7 +302,68 @@ export async function updatePassword(formData: FormData) {
     );
   }
 
+  // End recovery session so role-based home redirects don't skip the login screen.
+  await supabase.auth.signOut();
   redirect("/login?notice=password-updated");
+}
+
+/**
+ * Change password while signed in (Settings / Teacher Studio).
+ * Verifies the current password first.
+ */
+export async function changePasswordLoggedIn(formData: FormData) {
+  const currentPassword = String(formData.get("currentPassword") ?? "");
+  const password = String(formData.get("password") ?? "");
+  const confirm = String(formData.get("confirm") ?? "");
+  const returnTo = String(formData.get("returnTo") ?? "/settings");
+
+  const safeReturn =
+    returnTo.startsWith("/") && !returnTo.startsWith("//")
+      ? returnTo
+      : "/settings";
+
+  if (password.length < 6) {
+    redirect(
+      `${safeReturn}?pwdError=${encodeURIComponent("Пароль слишком короткий. Минимум 6 символов.")}`,
+    );
+  }
+  if (password !== confirm) {
+    redirect(
+      `${safeReturn}?pwdError=${encodeURIComponent("Пароли не совпадают.")}`,
+    );
+  }
+  if (!currentPassword) {
+    redirect(
+      `${safeReturn}?pwdError=${encodeURIComponent("Введите текущий пароль.")}`,
+    );
+  }
+
+  const supabase = await createSupabaseServerClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user?.email) {
+    redirect("/login");
+  }
+
+  const { error: reauthError } = await supabase.auth.signInWithPassword({
+    email: user.email,
+    password: currentPassword,
+  });
+  if (reauthError) {
+    redirect(
+      `${safeReturn}?pwdError=${encodeURIComponent("Текущий пароль неверный.")}`,
+    );
+  }
+
+  const { error } = await supabase.auth.updateUser({ password });
+  if (error) {
+    redirect(
+      `${safeReturn}?pwdError=${encodeURIComponent(friendlyAuthError(error))}`,
+    );
+  }
+
+  redirect(`${safeReturn}?pwdNotice=${encodeURIComponent("password-changed")}`);
 }
 
 export async function signOut() {

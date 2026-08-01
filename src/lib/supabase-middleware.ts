@@ -78,9 +78,11 @@ export async function updateSession(request: NextRequest) {
     return NextResponse.redirect(url);
   }
 
+  // Keep recovery flows on the new-password page (teachers must not bounce to Studio).
   const isAuthRecovery =
     pathname.startsWith("/auth/reset-password") ||
-    pathname.startsWith("/auth/callback");
+    pathname.startsWith("/auth/callback") ||
+    pathname.startsWith("/auth/recovery");
 
   if (
     user &&

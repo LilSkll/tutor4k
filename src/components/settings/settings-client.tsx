@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { useTransition } from "react";
+import { Suspense, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import {
   Download,
@@ -51,6 +51,7 @@ import {
 import { LEGAL_OPERATOR } from "@/config/legal";
 import { LegalFooterLinks } from "@/components/legal/legal-footer-links";
 import { LinkTeacherCard } from "@/components/invite/link-teacher-card";
+import { ChangePasswordCard } from "@/components/auth/change-password-card";
 import { updateProfile, signOut } from "@/server/actions/auth";
 import { isStudentRole } from "@/lib/roles";
 import { useUIStore } from "@/stores";
@@ -220,6 +221,10 @@ export function SettingsClient({ profile }: { profile: Profile }) {
       </Card>
 
       {isStudentRole(profile.role) && <LinkTeacherCard />}
+
+      <Suspense fallback={null}>
+        <ChangePasswordCard returnTo="/settings" />
+      </Suspense>
 
       {/* Preferences */}
       <Card>

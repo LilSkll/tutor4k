@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { ArrowLeft, LockKeyhole } from "lucide-react";
-import { redirect } from "next/navigation";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
 import { ResetPasswordForm } from "@/components/auth/reset-password-form";
+import { RecoveryHashSession } from "@/components/auth/recovery-hash-session";
 
 export default async function ResetPasswordPage({
   searchParams,
@@ -15,14 +15,11 @@ export default async function ResetPasswordPage({
     data: { user },
   } = await supabase.auth.getUser();
 
-  if (!user) {
-    redirect(
-      `/forgot-password?error=${encodeURIComponent("Сначала открой ссылку из письма для сброса пароля.")}`,
-    );
-  }
+  // Allow render without server user — hash session may hydrate on client.
 
   return (
     <div className="min-h-screen grid lg:grid-cols-2">
+      <RecoveryHashSession />
       <div className="flex flex-col justify-center px-6 py-12 lg:px-12">
         <div className="mx-auto w-full max-w-sm">
           <Link
@@ -39,13 +36,23 @@ export default async function ResetPasswordPage({
               alt="Spanish with Pavel"
               className="h-10 w-10 rounded-lg"
             />
-            <span className="font-bold text-xl gradient-text">Spanish with Pavel</span>
+            <span className="font-bold text-xl gradient-text">
+              Spanish with Pavel
+            </span>
           </div>
 
           <h1 className="text-2xl font-bold mb-1">Новый пароль</h1>
           <p className="text-sm text-muted-foreground mb-6">
             Придумай пароль не короче 6 символов.
           </p>
+
+          {!user && (
+            <div className="mb-4 rounded-lg border border-amber-500/30 bg-amber-500/10 px-4 py-3 text-sm text-amber-900 dark:text-amber-100">
+              Если форма не сохраняет пароль — открой ссылку из письма ещё раз
+              (она должна привести на эту страницу). Не закрывай вкладку до
+              сохранения.
+            </div>
+          )}
 
           {sp.error && (
             <div className="mb-4 rounded-lg border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive">
@@ -62,8 +69,8 @@ export default async function ResetPasswordPage({
           <LockKeyhole className="h-16 w-16 mx-auto mb-6 opacity-90" />
           <h2 className="text-3xl font-bold mb-3">Почти готово</h2>
           <p className="text-white/90">
-            После сохранения войди с новым паролем — прогресс обучения
-            сохранится.
+            После сохранения войди с новым паролем. Для преподавателей откроется
+            Teacher Studio, для учеников — обучение.
           </p>
         </div>
       </div>
