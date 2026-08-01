@@ -13,52 +13,68 @@ export class ServiceNotImplementedError extends Error {
   }
 }
 
+function notImplemented(service: string, method: string): never {
+  throw new ServiceNotImplementedError(service, method);
+}
+
 /** Course progress aggregates (completion %, chapters, activity). */
 export const ProgressService = {
-  async getCourseProgress(_userId: string, _courseId: string): Promise<never> {
-    throw new ServiceNotImplementedError("ProgressService", "getCourseProgress");
+  getCourseProgress(userId: string, courseId: string): Promise<never> {
+    return notImplemented("ProgressService", `getCourseProgress(${userId},${courseId})`);
   },
-  async getWeekActivity(_userId: string, _courseId: string): Promise<never> {
-    throw new ServiceNotImplementedError("ProgressService", "getWeekActivity");
+  getWeekActivity(userId: string, courseId: string): Promise<never> {
+    return notImplemented("ProgressService", `getWeekActivity(${userId},${courseId})`);
   },
-  async getStreakSummary(_userId: string, _courseId?: string): Promise<never> {
-    throw new ServiceNotImplementedError("ProgressService", "getStreakSummary");
+  getStreakSummary(userId: string, courseId?: string): Promise<never> {
+    return notImplemented(
+      "ProgressService",
+      `getStreakSummary(${userId},${courseId ?? ""})`,
+    );
   },
 } as const;
 
 /** Normalised mistake journal (`student_mistakes`). */
 export const MistakesService = {
-  async listForCourse(_userId: string, _courseId: string): Promise<never> {
-    throw new ServiceNotImplementedError("MistakesService", "listForCourse");
+  listForCourse(userId: string, courseId: string): Promise<never> {
+    return notImplemented("MistakesService", `listForCourse(${userId},${courseId})`);
   },
-  async recordMistake(_input: unknown): Promise<never> {
-    throw new ServiceNotImplementedError("MistakesService", "recordMistake");
+  recordMistake(input: unknown): Promise<never> {
+    return notImplemented("MistakesService", `recordMistake(${typeof input})`);
   },
 } as const;
 
 /** Cached teacher-facing AI reports (`teacher_ai_reports`). */
 export const TeacherAiService = {
-  async getLatestReport(_studentId: string, _courseId: string): Promise<never> {
-    throw new ServiceNotImplementedError("TeacherAiService", "getLatestReport");
+  getLatestReport(studentId: string, courseId: string): Promise<never> {
+    return notImplemented(
+      "TeacherAiService",
+      `getLatestReport(${studentId},${courseId})`,
+    );
   },
-  async refreshIfStale(_studentId: string, _courseId: string): Promise<never> {
-    throw new ServiceNotImplementedError("TeacherAiService", "refreshIfStale");
+  refreshIfStale(studentId: string, courseId: string): Promise<never> {
+    return notImplemented(
+      "TeacherAiService",
+      `refreshIfStale(${studentId},${courseId})`,
+    );
   },
 } as const;
 
 /** Homework assignments (`teacher_assignments`). */
 export const AssignmentService = {
-  async listForTeacher(_teacherId: string): Promise<never> {
-    throw new ServiceNotImplementedError("AssignmentService", "listForTeacher");
+  listForTeacher(teacherId: string): Promise<never> {
+    return notImplemented("AssignmentService", `listForTeacher(${teacherId})`);
   },
-  async create(_input: unknown): Promise<never> {
-    throw new ServiceNotImplementedError("AssignmentService", "create");
+  create(input: unknown): Promise<never> {
+    return notImplemented("AssignmentService", `create(${typeof input})`);
   },
 } as const;
 
 /** Private teacher notes (`teacher_notes`). */
 export const TeacherNotesService = {
-  async list(_teacherId: string, _studentId: string, _courseId: string): Promise<never> {
-    throw new ServiceNotImplementedError("TeacherNotesService", "list");
+  list(teacherId: string, studentId: string, courseId: string): Promise<never> {
+    return notImplemented(
+      "TeacherNotesService",
+      `list(${teacherId},${studentId},${courseId})`,
+    );
   },
 } as const;
