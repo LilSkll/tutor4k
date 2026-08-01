@@ -33,7 +33,7 @@ const privacyRu: LegalDocument = {
         "Учебный прогресс: пройденные главы, баллы, выполненные упражнения, словарь пользователя.",
         "Диалоги с AI-репетитором: тексты сообщений и история бесед.",
         "Модель обучения (Learning Profile): агрегированные оценки по грамматике и лексике на основе ваших ответов.",
-        "Технические данные: cookies сессии, IP-адрес и данные браузера — для безопасности и работы сайта.",
+        "Технические данные: cookies сессии, IP-адрес и данные браузера — для безопасности и работы сайта. Агрегированная веб-аналитика Vercel (без cookies) — для понимания посещаемости и производительности страниц.",
       ],
     },
     {
@@ -95,7 +95,8 @@ const privacyRu: LegalDocument = {
       id: "cookies",
       title: "8. Файлы cookie",
       paragraphs: [
-        "Мы используем строго необходимые cookies для входа в аккаунт (сессия Supabase). Аналитические и рекламные cookies не применяются без вашего отдельного согласия.",
+        "Мы используем строго необходимые cookies для входа в аккаунт (сессия Supabase). Рекламные cookies не применяются.",
+        "Для статистики посещений и производительности страниц мы используем Vercel Web Analytics и Speed Insights. Эти сервисы не ставят cookies и собирают только агрегированные, обезличенные данные (просмотры страниц, устройство, страна, Core Web Vitals). Чувствительные параметры URL (токены, email) перед отправкой удаляются. Рекламные и сторонние трекеры не используются.",
         "Вы можете управлять cookies в настройках браузера; отключение сессионных cookies сделает вход невозможным.",
       ],
     },
@@ -150,7 +151,7 @@ const privacyEn: LegalDocument = {
         "Learning progress: chapters, scores, exercises, personal vocabulary.",
         "AI tutor conversations: message content and chat history.",
         "Learning Profile: aggregated skill confidence based on your answers (not raw chat logs for unrelated purposes).",
-        "Technical data: session cookies, IP address, browser data — for security and operation.",
+        "Technical data: session cookies, IP address, browser data — for security and operation. Aggregated Vercel Web Analytics (cookieless) — for page traffic and performance.",
       ],
     },
     {
@@ -215,7 +216,8 @@ const privacyEn: LegalDocument = {
       id: "cookies",
       title: "8. Cookies",
       paragraphs: [
-        "We use essential session cookies for login. We do not use advertising cookies. Optional analytics, if added later, will require consent.",
+        "We use essential session cookies for login (Supabase session). We do not use advertising cookies.",
+        "For visit statistics and page performance we use Vercel Web Analytics and Speed Insights. These services set no cookies and collect only aggregated, anonymised data (page views, device, country, Core Web Vitals). Sensitive URL parameters (tokens, email) are stripped before sending. We do not use advertising or third-party trackers.",
       ],
     },
     {

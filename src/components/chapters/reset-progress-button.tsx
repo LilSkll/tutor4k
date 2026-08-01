@@ -14,6 +14,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { translate } from "@/lib/i18n";
+import { trackEvent } from "@/lib/analytics";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 
 /** "Start the journey over" — wipes chapter progress for the active course. */
@@ -31,6 +32,7 @@ export function ResetProgressButton({ courseTitle }: { courseTitle: string }) {
     try {
       const res = await fetch("/api/chapters/reset", { method: "POST" });
       if (!res.ok) throw new Error("reset failed");
+      trackEvent("journey_reset", { course: courseTitle });
       toast.success(t("chapters.resetSuccess"));
       setOpen(false);
       router.refresh();

@@ -33,6 +33,7 @@ import { SESSION_EXERCISES } from "@/lib/exercise-bank";
 import { normalizeAnswer, scorePercent } from "@/lib/normalize-answer";
 import { prepareExercisesForInterface } from "@/lib/exercise-localize";
 import { formatBankTutorFeedback } from "@/lib/tutor-feedback";
+import { trackEvent } from "@/lib/analytics";
 import { getLessonAdaptationAction } from "@/server/actions/learning-profile";
 import type { GrammarTopic, StaticExercise } from "@/types";
 import type { LessonAdaptation } from "@/types/learning-profile";
@@ -375,6 +376,13 @@ export function LessonRunner({
         setFinishError(body?.error || t("lesson.finishError"));
         return;
       }
+
+      trackEvent("chapter_complete", {
+        chapter: chapter.slug,
+        level: chapter.level,
+        course: courseId,
+        score: percent,
+      });
 
       setPhase("summary");
       router.refresh();

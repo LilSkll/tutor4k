@@ -324,7 +324,7 @@ const ru: Dictionary = {
 
   // Legal & privacy
   "legal.cookieTitle": "Мы используем cookies",
-  "legal.cookieBody": "Строго необходимые cookies нужны для входа в аккаунт. Аналитика и реклама не используются без отдельного согласия. Подробнее в",
+  "legal.cookieBody": "Строго необходимые cookies нужны для входа в аккаунт. Посещаемость и скорость страниц считаем через Vercel Analytics без cookies (агрегированно, без рекламы). Подробнее в",
   "legal.cookiePolicyLink": "Политике конфиденциальности",
   "legal.cookieAccept": "Понятно",
   "settings.legalTitle": "Конфиденциальность и данные",
@@ -956,7 +956,7 @@ const en: Dictionary = {
   "settings.toastSaved": "Profile updated ✓",
 
   "legal.cookieTitle": "We use cookies",
-  "legal.cookieBody": "Essential cookies are required to keep you signed in. We do not use analytics or advertising cookies without separate consent. Read our",
+  "legal.cookieBody": "Essential cookies are required to keep you signed in. Page views and performance are measured with cookieless Vercel Analytics (aggregated, no ads). Read our",
   "legal.cookiePolicyLink": "Privacy Policy",
   "legal.cookieAccept": "Got it",
   "settings.legalTitle": "Privacy & data",
@@ -1411,7 +1411,7 @@ const es: Dictionary = {
   "settings.toastSaved": "Perfil actualizado ✓",
 
   "legal.cookieTitle": "Usamos cookies",
-  "legal.cookieBody": "Las cookies esenciales son necesarias para iniciar sesión. No usamos analítica ni publicidad sin consentimiento. Consulta la",
+  "legal.cookieBody": "Las cookies esenciales son necesarias para iniciar sesión. Las visitas y el rendimiento se miden con Vercel Analytics sin cookies (datos agregados, sin publicidad). Consulta la",
   "legal.cookiePolicyLink": "Política de privacidad",
   "legal.cookieAccept": "Entendido",
   "settings.legalTitle": "Privacidad y datos",

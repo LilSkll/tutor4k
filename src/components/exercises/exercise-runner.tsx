@@ -22,6 +22,7 @@ import { formatSessionTutorSummary } from "@/lib/tutor-feedback";
 import { useInterfaceLanguage, useActiveCourseId } from "@/hooks/use-interface-language";
 import { translate } from "@/lib/i18n";
 import { getCourseTitle } from "@/config/courses";
+import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 import type {
   ExerciseType,
@@ -122,6 +123,13 @@ export function ExerciseRunner({
         .map((ex) => ex.exerciseId)
         .filter((id): id is string => Boolean(id));
       setSeenIds((prev) => [...prev, ...newIds]);
+      if (deleMode && activeCourseId === "spanish") {
+        trackEvent("dele_round_start", {
+          type,
+          level,
+          count: data.exercises.length,
+        });
+      }
       setPhase("answering");
     } catch {
       toast.error(t("exercises.toastGenerateFail"));
