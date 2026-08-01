@@ -50,7 +50,9 @@ import {
 } from "@/config/app";
 import { LEGAL_OPERATOR } from "@/config/legal";
 import { LegalFooterLinks } from "@/components/legal/legal-footer-links";
+import { LinkTeacherCard } from "@/components/invite/link-teacher-card";
 import { updateProfile, signOut } from "@/server/actions/auth";
+import { isStudentRole } from "@/lib/roles";
 import { useUIStore } from "@/stores";
 import { translate } from "@/lib/i18n";
 import type { Goal, InterfaceLanguage, Level, Profile } from "@/types";
@@ -216,6 +218,8 @@ export function SettingsClient({ profile }: { profile: Profile }) {
           </div>
         </CardContent>
       </Card>
+
+      {isStudentRole(profile.role) && <LinkTeacherCard />}
 
       {/* Preferences */}
       <Card>

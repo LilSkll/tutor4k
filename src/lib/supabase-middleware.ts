@@ -99,9 +99,11 @@ export async function updateSession(request: NextRequest) {
   if (user) {
     const isTeacherPath =
       pathname === "/teacher" || pathname.startsWith("/teacher/");
+    const isInvitePath = pathname.startsWith("/invite");
     const isStudentAppPath =
       !isPublicRoute &&
       !isTeacherPath &&
+      !isInvitePath &&
       !pathname.startsWith("/api") &&
       pathname !== "/privacy" &&
       pathname !== "/terms";

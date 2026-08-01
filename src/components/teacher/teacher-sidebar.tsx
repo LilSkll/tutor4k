@@ -29,13 +29,13 @@ const NAV = [
     href: "/teacher/students",
     labelKey: "teacher.nav.students",
     icon: Users,
-    ready: false,
+    ready: true,
   },
   {
     href: "/teacher/invites",
     labelKey: "teacher.nav.invites",
     icon: Link2,
-    ready: false,
+    ready: true,
   },
   {
     href: "/teacher/assignments",
