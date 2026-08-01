@@ -165,10 +165,21 @@ export async function signUpWithEmail(formData: FormData) {
   const acceptTerms = formData.get("acceptTerms") === "on";
   const acceptPrivacy = formData.get("acceptPrivacy") === "on";
   const marketingConsent = formData.get("marketingConsent") === "on";
+  const rawRole = String(formData.get("role") ?? "student").toLowerCase();
+  const role: UserRole = rawRole === "teacher" ? "teacher" : "student";
+  const teacherConfirm = formData.get("teacherConfirm") === "on";
 
   if (!acceptTerms || !acceptPrivacy) {
     redirect(
       `/signup?error=${encodeURIComponent("Необходимо принять Пользовательское соглашение и Политику конфиденциальности.")}`,
+    );
+  }
+
+  if (role === "teacher" && !teacherConfirm) {
+    redirect(
+      `/signup?error=${encodeURIComponent(
+        "Чтобы зарегистрироваться как преподаватель, подтвердите, что понимаете назначение Teacher Studio.",
+      )}`,
     );
   }
 
@@ -180,6 +191,7 @@ export async function signUpWithEmail(formData: FormData) {
     options: {
       data: {
         name,
+        role,
         terms_accepted_at: now,
         privacy_accepted_at: now,
         marketing_consent: marketingConsent,
@@ -192,11 +204,14 @@ export async function signUpWithEmail(formData: FormData) {
     redirect(`/signup?error=${encodeURIComponent(friendlyAuthError(error))}`);
   }
 
-  // If session is returned (email confirmation disabled), persist consent on profile.
+  // Persist role + consent if session is returned (email confirmation disabled).
+  // Trigger also sets role from metadata when signup-role-trigger.sql is applied.
   if (data.user) {
     await supabase
       .from("profiles")
       .update({
+        role,
+        ...(role === "teacher" ? { onboarded: true } : {}),
         terms_accepted_at: now,
         privacy_accepted_at: now,
         marketing_consent: marketingConsent,
@@ -205,8 +220,17 @@ export async function signUpWithEmail(formData: FormData) {
       .eq("id", data.user.id);
   }
 
-  // Email confirmation may be required — redirect to login with notice.
-  redirect("/login?notice=check-email");
+  if (data.session && data.user) {
+    redirect(resolvePostLoginPath(role, null));
+  }
+
+  redirect(
+    `/login?notice=${encodeURIComponent(
+      role === "teacher"
+        ? "check-email-teacher"
+        : "check-email",
+    )}`,
+  );
 }
 
 /** Send a password-reset email (Supabase Auth). */

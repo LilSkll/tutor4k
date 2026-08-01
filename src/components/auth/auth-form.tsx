@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { signInWithEmail, signUpWithEmail } from "@/server/actions/auth";
-import { Loader2 } from "lucide-react";
+import { AlertTriangle, GraduationCap, Loader2, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface AuthFormProps {
@@ -55,6 +55,8 @@ export function AuthForm({ mode, redirect }: AuthFormProps) {
   const [pending, startTransition] = useTransition();
   const [acceptTerms, setAcceptTerms] = React.useState(false);
   const [acceptPrivacy, setAcceptPrivacy] = React.useState(false);
+  const [role, setRole] = React.useState<"student" | "teacher">("student");
+  const [teacherConfirm, setTeacherConfirm] = React.useState(false);
 
   const action = (formData: FormData) => {
     startTransition(() => {
@@ -62,13 +64,93 @@ export function AuthForm({ mode, redirect }: AuthFormProps) {
         if (redirect) formData.append("redirect", redirect);
         signInWithEmail(formData);
       } else {
+        formData.set("role", role);
         signUpWithEmail(formData);
       }
     });
   };
 
+  const canSubmitSignup =
+    acceptTerms &&
+    acceptPrivacy &&
+    (role === "student" || teacherConfirm);
+
   return (
     <form action={action} className="space-y-4">
+      {mode === "signup" && (
+        <div className="space-y-2">
+          <Label>Тип аккаунта</Label>
+          <div className="grid grid-cols-2 gap-2">
+            <button
+              type="button"
+              onClick={() => {
+                setRole("student");
+                setTeacherConfirm(false);
+              }}
+              className={cn(
+                "rounded-xl border-2 p-3 text-left transition-all",
+                role === "student"
+                  ? "border-primary bg-primary/5"
+                  : "border-border hover:border-primary/40",
+              )}
+            >
+              <GraduationCap className="h-5 w-5 text-primary mb-1.5" />
+              <p className="text-sm font-semibold">Ученик</p>
+              <p className="text-[11px] text-muted-foreground leading-snug mt-0.5">
+                Учить язык: главы, упражнения, ИИ-репетитор
+              </p>
+            </button>
+            <button
+              type="button"
+              onClick={() => setRole("teacher")}
+              className={cn(
+                "rounded-xl border-2 p-3 text-left transition-all",
+                role === "teacher"
+                  ? "border-amber-500 bg-amber-500/5"
+                  : "border-border hover:border-amber-500/40",
+              )}
+            >
+              <Users className="h-5 w-5 text-amber-600 mb-1.5" />
+              <p className="text-sm font-semibold">Преподаватель</p>
+              <p className="text-[11px] text-muted-foreground leading-snug mt-0.5">
+                Teacher Studio: ученики и приглашения
+              </p>
+            </button>
+          </div>
+          <input type="hidden" name="role" value={role} />
+
+          {role === "teacher" && (
+            <div className="rounded-xl border border-amber-500/40 bg-amber-500/10 p-3 space-y-3">
+              <div className="flex gap-2 text-amber-900 dark:text-amber-100">
+                <AlertTriangle className="h-5 w-5 shrink-0 mt-0.5" />
+                <div className="space-y-1 text-xs leading-relaxed">
+                  <p className="font-semibold text-sm">Важно для учеников</p>
+                  <p>
+                    Аккаунт преподавателя — это <strong>не</strong> способ учить
+                    испанский. В Teacher Studio нет глав, упражнений и прогресса
+                    ученика. Если вы хотите учиться — выберите «Ученик».
+                  </p>
+                  <p>
+                    Регистрируйтесь как преподаватель, только если вы ведёте
+                    занятия и будете приглашать своих учеников.
+                  </p>
+                </div>
+              </div>
+              <ConsentCheckbox
+                id="teacherConfirm"
+                name="teacherConfirm"
+                required
+                checked={teacherConfirm}
+                onChange={setTeacherConfirm}
+              >
+                Я преподаватель и понимаю, что это кабинет для работы с учениками,
+                а не учебный аккаунт
+              </ConsentCheckbox>
+            </div>
+          )}
+        </div>
+      )}
+
       {mode === "signup" && (
         <div className="space-y-2">
           <Label htmlFor="name">Имя</Label>
@@ -154,13 +236,14 @@ export function AuthForm({ mode, redirect }: AuthFormProps) {
         type="submit"
         variant="gradient"
         className="w-full"
-        disabled={
-          pending ||
-          (mode === "signup" && (!acceptTerms || !acceptPrivacy))
-        }
+        disabled={pending || (mode === "signup" && !canSubmitSignup)}
       >
         {pending && <Loader2 className="h-4 w-4 animate-spin" />}
-        {mode === "signin" ? "Войти" : "Создать аккаунт"}
+        {mode === "signin"
+          ? "Войти"
+          : role === "teacher"
+            ? "Создать аккаунт преподавателя"
+            : "Создать аккаунт ученика"}
       </Button>
     </form>
   );

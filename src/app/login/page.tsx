@@ -45,6 +45,15 @@ export default async function LoginPage({
               Аккаунт создан. Проверь почту для подтверждения.
             </div>
           )}
+          {sp.notice === "check-email-teacher" && (
+            <div className="mb-4 rounded-lg border border-success/30 bg-success/10 px-4 py-3 text-sm text-success space-y-1">
+              <p className="font-medium">Аккаунт преподавателя создан.</p>
+              <p>
+                Проверь почту для подтверждения. После входа откроется Teacher
+                Studio — не Student Journey.
+              </p>
+            </div>
+          )}
           {sp.notice === "password-updated" && (
             <div className="mb-4 rounded-lg border border-success/30 bg-success/10 px-4 py-3 text-sm text-success">
               Пароль обновлён. Войди с новым паролем.

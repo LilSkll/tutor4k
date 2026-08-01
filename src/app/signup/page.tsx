@@ -31,7 +31,7 @@ export default async function SignupPage({
 
           <h1 className="text-2xl font-bold mb-1">Создай аккаунт</h1>
           <p className="text-sm text-muted-foreground mb-6">
-            Начни учить испанский бесплатно уже сегодня.
+            Выбери роль: ученик (учёба) или преподаватель (Teacher Studio).
           </p>
 
           {sp.error && (
