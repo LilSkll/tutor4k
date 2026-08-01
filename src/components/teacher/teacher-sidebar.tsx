@@ -48,7 +48,7 @@ const NAV = [
     href: "/teacher/analytics",
     labelKey: "teacher.nav.analytics",
     icon: BarChart3,
-    ready: false,
+    ready: true,
   },
   {
     href: "/teacher/settings",

@@ -34,6 +34,33 @@ export type TeacherStudentRow = {
   deleted_at: string | null;
 };
 
+/** Cohort analytics for Teacher Studio (Stage 8). */
+export type TeacherAnalyticsDTO = {
+  courseId: string | "all";
+  stats: {
+    studentCount: number;
+    activeThisWeek: number;
+    avgCompletionPercent: number;
+    avgScore: number | null;
+    avgStreak: number;
+    totalWeekMinutes: number;
+    assignmentsAssigned: number;
+    assignmentsCompleted: number;
+    openMistakes: number;
+  };
+  weekActivity: Array<{ date: string; minutes: number; lessons: number }>;
+  studentProgress: Array<{
+    studentId: string;
+    name: string;
+    completionPercent: number;
+    averageScore: number | null;
+    streak: number;
+    weekMinutes: number;
+  }>;
+  weakTopics: Array<{ topic: string; type: string; count: number }>;
+  mistakeTypes: Array<{ type: string; count: number }>;
+};
+
 /** Cached AI analysis for a student×course (Stage 6). */
 export type TeacherAiReportDTO = {
   id: string;
