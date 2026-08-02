@@ -1,8 +1,10 @@
 import { getCourse } from "@/config/courses";
 import {
   countCompletedForCourse,
+  getChapterTitle,
   hasCompletedPrereqChain,
 } from "@/lib/chapter-display";
+import { getGrammarTopicTitle } from "@/lib/grammar-display";
 import {
   getChapterProgress,
   getExerciseHistory,
@@ -75,8 +77,17 @@ export type TeacherContext = {
 /** @deprecated Prefer TeacherContext — same object. */
 export type LearnerContext = TeacherContext;
 
-function chapterTitle(ch: Chapter): string {
-  return ch.titleEs || ch.title;
+function chapterTitle(ch: Chapter, lang: InterfaceLanguage): string {
+  return getChapterTitle(ch, lang);
+}
+
+function grammarLabel(
+  course: CourseConfig,
+  ch: Chapter,
+  lang: InterfaceLanguage,
+): string {
+  const g = course.getGrammarTopic(ch.grammarTopic);
+  return g ? getGrammarTopicTitle(g, lang) : ch.grammarTopic;
 }
 
 function resolveCurrentChapter(
@@ -132,6 +143,7 @@ function analyzeWeaknesses(input: {
   completedOrdered: Chapter[];
   progressRows: { chapter_slug: string; score: number; status: string }[];
   history: ExerciseHistory[];
+  interfaceLanguage: InterfaceLanguage;
 }): {
   masteredGrammar: string[];
   weakGrammar: string[];
@@ -143,7 +155,8 @@ function analyzeWeaknesses(input: {
   exercisesCompleted: number;
   exercisesCorrectRate: number | null;
 } {
-  const { course, completedOrdered, progressRows, history } = input;
+  const { course, completedOrdered, progressRows, history, interfaceLanguage } =
+    input;
 
   const scoreBySlug = new Map(
     progressRows
@@ -156,7 +169,7 @@ function analyzeWeaknesses(input: {
   for (const ch of completedOrdered) {
     const score = scoreBySlug.get(ch.slug);
     if (score === undefined) continue;
-    const title = chapterTitle(ch);
+    const title = chapterTitle(ch, interfaceLanguage);
     if (score >= 85) strongChapters.push(title);
     else if (score < 70) weakChapters.push(title);
   }
@@ -189,7 +202,7 @@ function analyzeWeaknesses(input: {
 
   for (const ch of completedOrdered) {
     const g = course.getGrammarTopic(ch.grammarTopic);
-    const gLabel = g ? g.titleEs || g.title : ch.grammarTopic;
+    const gLabel = grammarLabel(course, ch, interfaceLanguage);
     const needles = [
       ch.grammarTopic,
       g?.title,
@@ -236,10 +249,7 @@ function analyzeWeaknesses(input: {
   // Chapters finished easily → mastered grammar; repeated mistake hits → weak.
   const masteredGrammar = completedOrdered
     .filter((ch) => (scoreBySlug.get(ch.slug) ?? 0) >= 85)
-    .map((ch) => {
-      const g = course.getGrammarTopic(ch.grammarTopic);
-      return g ? g.titleEs || g.title : ch.grammarTopic;
-    })
+    .map((ch) => grammarLabel(course, ch, interfaceLanguage))
     .filter(Boolean)
     .slice(-6);
 
@@ -251,8 +261,7 @@ function analyzeWeaknesses(input: {
   // Also treat low-score chapter grammar as weak even without text match.
   for (const ch of completedOrdered) {
     if ((scoreBySlug.get(ch.slug) ?? 100) >= 70) continue;
-    const g = course.getGrammarTopic(ch.grammarTopic);
-    const label = g ? g.titleEs || g.title : ch.grammarTopic;
+    const label = grammarLabel(course, ch, interfaceLanguage);
     if (label && !weakGrammar.includes(label)) weakGrammar.push(label);
   }
 
@@ -287,29 +296,99 @@ function recommendNextTopic(input: {
   weakGrammar: string[];
   weakVocabulary: string[];
   recentCompleted: Chapter[];
+  interfaceLanguage: InterfaceLanguage;
 }): string {
-  const { course, current, upcoming, weakGrammar, weakVocabulary, recentCompleted } =
-    input;
+  const {
+    course,
+    current,
+    upcoming,
+    weakGrammar,
+    weakVocabulary,
+    recentCompleted,
+    interfaceLanguage: lang,
+  } = input;
+
+  const ch = (c: Chapter) => chapterTitle(c, lang);
+  const g = (c: Chapter) => grammarLabel(course, c, lang);
+
+  const packs: Record<
+    InterfaceLanguage,
+    {
+      weakGrammar: (t: string) => string;
+      weakVocab: (t: string) => string;
+      reviewThenContinue: (title: string, grammar: string) => string;
+      continueChapter: (title: string, grammar: string) => string;
+      prepare: (title: string) => string;
+      generic: (courseName: string) => string;
+    }
+  > = {
+    ru: {
+      weakGrammar: (t) => `повторить слабую тему — ${t}`,
+      weakVocab: (t) => `укрепить лексику — ${t}`,
+      reviewThenContinue: (title, grammar) =>
+        `кратко повторить «${title}» (${grammar}), затем продолжить`,
+      continueChapter: (title, grammar) =>
+        `продолжить главу «${title}» — ${grammar}`,
+      prepare: (title) => `подготовиться к «${title}»`,
+      generic: (courseName) =>
+        `продолжить практику ${courseName} на твоём уровне`,
+    },
+    en: {
+      weakGrammar: (t) => `review weak grammar: ${t}`,
+      weakVocab: (t) => `reinforce vocabulary: ${t}`,
+      reviewThenContinue: (title, grammar) =>
+        `brief review of «${title}» (${grammar}), then continue`,
+      continueChapter: (title, grammar) =>
+        `continue chapter «${title}» — ${grammar}`,
+      prepare: (title) => `prepare for «${title}»`,
+      generic: (courseName) =>
+        `continue ${courseName} practice at your level`,
+    },
+    es: {
+      weakGrammar: (t) => `repasar el punto débil — ${t}`,
+      weakVocab: (t) => `reforzar el vocabulario — ${t}`,
+      reviewThenContinue: (title, grammar) =>
+        `repaso breve de «${title}» (${grammar}) y seguir`,
+      continueChapter: (title, grammar) =>
+        `continuar el capítulo «${title}» — ${grammar}`,
+      prepare: (title) => `prepararse para «${title}»`,
+      generic: (courseName) =>
+        `seguir practicando ${courseName} a tu nivel`,
+    },
+    de: {
+      weakGrammar: (t) => `schwaches Thema wiederholen — ${t}`,
+      weakVocab: (t) => `Wortschatz festigen — ${t}`,
+      reviewThenContinue: (title, grammar) =>
+        `kurze Wiederholung von «${title}» (${grammar}), dann weiter`,
+      continueChapter: (title, grammar) =>
+        `Kapitel «${title}» fortsetzen — ${grammar}`,
+      prepare: (title) => `auf «${title}» vorbereiten`,
+      generic: (courseName) =>
+        `${courseName}-Übung auf deinem Niveau fortsetzen`,
+    },
+  };
+
+  const t = packs[lang] ?? packs.en;
 
   if (weakGrammar.length > 0) {
-    return `Review weak grammar: ${weakGrammar[0]}`;
+    return t.weakGrammar(weakGrammar[0]!);
   }
   if (weakVocabulary.length > 0) {
-    return `Reinforce vocabulary: ${weakVocabulary[0]}`;
+    return t.weakVocab(weakVocabulary[0]!);
+  }
+  // Prefer the live chapter over re-stating a finished one (templates already
+  // mention the last completed title when that path is chosen).
+  if (current) {
+    return t.continueChapter(ch(current), g(current));
   }
   if (recentCompleted[0]) {
     const last = recentCompleted[0];
-    const g = course.getGrammarTopic(last.grammarTopic);
-    return `Brief review of «${chapterTitle(last)}» (${g ? g.titleEs || g.title : last.grammarTopic}), then continue`;
-  }
-  if (current) {
-    const g = course.getGrammarTopic(current.grammarTopic);
-    return `Continue current chapter «${chapterTitle(current)}» — ${g ? g.titleEs || g.title : current.grammarTopic}`;
+    return t.reviewThenContinue(ch(last), g(last));
   }
   if (upcoming) {
-    return `Prepare for «${chapterTitle(upcoming)}»`;
+    return t.prepare(ch(upcoming));
   }
-  return `Continue ${course.titleNative} practice at your level`;
+  return t.generic(course.titleNative);
 }
 
 /**
@@ -580,8 +659,10 @@ function buildExerciseTopicHint(ctx: {
   weakVocabulary: string[];
   mistakes: string[];
   learningProfile?: StudentCourseProfile | null;
+  interfaceLanguage: InterfaceLanguage;
 }): string {
   const parts: string[] = [];
+  const lang = ctx.interfaceLanguage;
 
   // Profile-first: lowest confidence / mistakes / stale before anything else.
   const recs = ctx.learningProfile?.recommendations ?? [];
@@ -594,11 +675,8 @@ function buildExerciseTopicHint(ctx: {
   if (ctx.mistakes[0]) parts.push(`review mistakes: ${ctx.mistakes[0]}`);
   if (ctx.weakGrammar[0]) parts.push(`weak grammar: ${ctx.weakGrammar[0]}`);
   if (ctx.current) {
-    const g = ctx.course.getGrammarTopic(ctx.current.grammarTopic);
-    parts.push(
-      g ? `current: ${g.titleEs || g.title}` : `current: ${ctx.current.grammarTopic}`,
-    );
-    parts.push(chapterTitle(ctx.current));
+    parts.push(`current: ${grammarLabel(ctx.course, ctx.current, lang)}`);
+    parts.push(chapterTitle(ctx.current, lang));
   }
   for (const ch of ctx.recent.slice(0, 2)) {
     if (ch.vocabTopic) parts.push(`known vocab: ${ch.vocabTopic}`);
@@ -678,15 +756,17 @@ export async function buildTeacherContext(input: {
       status: p.status,
     })),
     history,
+    interfaceLanguage: input.interfaceLanguage,
   });
 
   const completedCount = countCompletedForCourse(completedSlugs, courseSlugs);
+  const lang = input.interfaceLanguage;
   const currentTitle = currentChapterObj
-    ? chapterTitle(currentChapterObj)
+    ? chapterTitle(currentChapterObj, lang)
     : null;
   const completedChapterTitles = [...completedOrdered]
     .reverse()
-    .map(chapterTitle);
+    .map((c) => chapterTitle(c, lang));
 
   const recommendedNextTopic = recommendNextTopic({
     course,
@@ -695,6 +775,7 @@ export async function buildTeacherContext(input: {
     weakGrammar: profile.weakGrammar,
     weakVocabulary: profile.weakVocabulary,
     recentCompleted,
+    interfaceLanguage: lang,
   });
 
   const fingerprint = [
@@ -752,7 +833,9 @@ export async function buildTeacherContext(input: {
     recentMistakes: profile.recentMistakes,
     studiedGrammar,
     studiedVocabTopics,
-    upcomingTitle: upcomingChapter ? chapterTitle(upcomingChapter) : null,
+    upcomingTitle: upcomingChapter
+      ? chapterTitle(upcomingChapter, lang)
+      : null,
     exercisesCompleted: profile.exercisesCompleted,
     exercisesCorrectRate: profile.exercisesCorrectRate,
     teachingStrategy,
@@ -767,6 +850,7 @@ export async function buildTeacherContext(input: {
     weakVocabulary: profile.weakVocabulary,
     mistakes: profile.recentMistakes,
     learningProfile,
+    interfaceLanguage: lang,
   });
 
   const base: Omit<TeacherContext, "sessionOpening"> = {
@@ -836,7 +920,9 @@ export function rankChapterSlugsForExercises(
   ];
 
   for (const title of teacher.weakChapters) {
-    const match = known.find((c) => chapterTitle(c) === title);
+    const match = known.find(
+      (c) => chapterTitle(c, teacher.interfaceLanguage) === title,
+    );
     pushFb(match?.slug);
   }
   for (const ch of teacher.recentCompleted) pushFb(ch.slug);
