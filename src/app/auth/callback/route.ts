@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
+import { createServerClient, type CookieOptions } from "@supabase/ssr";
 import { cookies } from "next/headers";
-import { createSupabaseServerClient } from "@/lib/supabase-server";
 import {
   sessionLooksLikeRecovery,
   setRecoveryCookie,
@@ -14,10 +14,17 @@ import {
 import { resolvePostLoginPath } from "@/lib/roles";
 import type { UserRole } from "@/types";
 
+type CookieToSet = {
+  name: string;
+  value: string;
+  options?: CookieOptions;
+};
+
 /**
  * Supabase Auth redirect target (email confirm / password recovery / OAuth).
- * Supports PKCE `?code=` and older `?token_hash=&type=` links.
- * Recovery always wins over ?next= (teachers must reach the new-password form).
+ * Session cookies from exchangeCodeForSession MUST be copied onto the
+ * redirect response — otherwise Google/Apple login looks successful but
+ * the next request has no session.
  */
 export async function GET(request: Request) {
   const url = new URL(request.url);
@@ -26,24 +33,60 @@ export async function GET(request: Request) {
   const tokenHash = searchParams.get("token_hash");
   const type = searchParams.get("type");
   const nextParam = searchParams.get("next");
+  const oauthError = searchParams.get("error");
+  const oauthErrorDesc = searchParams.get("error_description");
+
   const jar = await cookies();
   const oauthIntent = decodeOAuthIntent(jar.get(OAUTH_INTENT_COOKIE)?.value);
 
-  const supabase = await createSupabaseServerClient();
+  const pendingCookies: CookieToSet[] = [];
+
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll() {
+          return jar.getAll();
+        },
+        setAll(cookiesToSet: CookieToSet[]) {
+          pendingCookies.push(...cookiesToSet);
+          try {
+            cookiesToSet.forEach(({ name, value, options }) =>
+              jar.set(name, value, options),
+            );
+          } catch {
+            // Route Handler redirect response will carry cookies below.
+          }
+        },
+      },
+    },
+  );
 
   const redirectTo = (path: string, markRecovery = false) => {
     const res = NextResponse.redirect(`${origin}${path}`);
+    for (const { name, value, options } of pendingCookies) {
+      res.cookies.set(name, value, options);
+    }
     if (markRecovery) setRecoveryCookie(res);
     clearOAuthIntentCookie(res);
     return res;
   };
 
+  if (oauthError) {
+    const msg =
+      oauthErrorDesc?.replace(/\+/g, " ") ||
+      "Вход через провайдера отменён или отклонён.";
+    return redirectTo(`/login?error=${encodeURIComponent(msg)}`);
+  }
+
   if (code) {
     const { error } = await supabase.auth.exchangeCodeForSession(code);
     if (error) {
+      console.error("[auth/callback] exchangeCodeForSession:", error.message);
       return redirectTo(
         `/login?error=${encodeURIComponent(
-          "Не удалось войти. Попробуйте ещё раз или используйте email.",
+          "Не удалось завершить вход. Попробуйте ещё раз (или войдите по email).",
         )}`,
       );
     }
@@ -62,7 +105,6 @@ export async function GET(request: Request) {
 
     let role: UserRole = "student";
     if (user) {
-      // Apply signup choices from Google/Apple flow (role + legal consent).
       if (oauthIntent?.mode === "signup") {
         const now = new Date().toISOString();
         const signupRole = resolveOAuthSignupRole(oauthIntent);
