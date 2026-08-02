@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { signInWithEmail, signUpWithEmail } from "@/server/actions/auth";
+import { OAuthButtons } from "@/components/auth/oauth-buttons";
 import { AlertTriangle, GraduationCap, Loader2, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -55,6 +56,7 @@ export function AuthForm({ mode, redirect }: AuthFormProps) {
   const [pending, startTransition] = useTransition();
   const [acceptTerms, setAcceptTerms] = React.useState(false);
   const [acceptPrivacy, setAcceptPrivacy] = React.useState(false);
+  const [marketingConsent, setMarketingConsent] = React.useState(false);
   const [role, setRole] = React.useState<"student" | "teacher">("student");
   const [teacherConfirm, setTeacherConfirm] = React.useState(false);
 
@@ -226,7 +228,12 @@ export function AuthForm({ mode, redirect }: AuthFormProps) {
               Политику конфиденциальности
             </Link>
           </ConsentCheckbox>
-          <ConsentCheckbox id="marketingConsent" name="marketingConsent">
+          <ConsentCheckbox
+            id="marketingConsent"
+            name="marketingConsent"
+            checked={marketingConsent}
+            onChange={setMarketingConsent}
+          >
             Хочу получать новости о продукте и обучении (необязательно)
           </ConsentCheckbox>
         </div>
@@ -245,6 +252,17 @@ export function AuthForm({ mode, redirect }: AuthFormProps) {
             ? "Создать аккаунт преподавателя"
             : "Создать аккаунт ученика"}
       </Button>
+
+      <OAuthButtons
+        mode={mode}
+        role={role}
+        teacherConfirm={teacherConfirm}
+        acceptTerms={mode === "signin" ? true : acceptTerms}
+        acceptPrivacy={mode === "signin" ? true : acceptPrivacy}
+        marketingConsent={marketingConsent}
+        redirect={redirect}
+        disabled={pending}
+      />
     </form>
   );
 }
