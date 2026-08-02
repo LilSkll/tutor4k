@@ -100,6 +100,7 @@ export async function GET(request: Request) {
       return redirectTo("/auth/reset-password", true);
     }
 
+    // Do not send password-recovery sessions through MFA before they set a password.
     const {
       data: { user },
     } = await supabase.auth.getUser();

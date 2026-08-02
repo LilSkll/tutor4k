@@ -115,19 +115,23 @@ function friendlyAuthError(errorOrMessage: unknown): string {
 }
 
 async function appOrigin(): Promise<string> {
-  const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
-  if (fromEnv) return fromEnv;
+  // Prefer the host the user is actually on, so reset links land on the same
+  // deployment (vercel.app vs custom domain) and cookies match.
   try {
     const { headers } = await import("next/headers");
     const h = await headers();
-    const host = h.get("x-forwarded-host") ?? h.get("host");
+    const hostHeader = h.get("x-forwarded-host") ?? h.get("host");
+    const host = hostHeader?.split(",")[0]?.trim();
     if (host) {
-      const proto = h.get("x-forwarded-proto") ?? "https";
+      const protoHeader = h.get("x-forwarded-proto") ?? "https";
+      const proto = protoHeader.split(",")[0]?.trim() || "https";
       return `${proto}://${host}`;
     }
   } catch {
     // ignore
   }
+  const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
+  if (fromEnv) return fromEnv;
   return "http://localhost:3000";
 }
 

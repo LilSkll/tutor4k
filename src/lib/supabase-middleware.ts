@@ -5,6 +5,11 @@ import {
   homePathForRole,
 } from "@/lib/roles";
 import { sessionNeedsMfa } from "@/lib/auth-mfa";
+import {
+  RECOVERY_COOKIE,
+  sessionLooksLikeRecovery,
+  setRecoveryCookie,
+} from "@/lib/auth-recovery";
 import type { UserRole } from "@/types";
 
 async function fetchUserRole(
@@ -60,16 +65,26 @@ export async function updateSession(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   const isMfaPage = pathname.startsWith("/auth/mfa");
+  const isRecoveryFlow =
+    pathname.startsWith("/auth/recovery") ||
+    pathname.startsWith("/auth/reset-password");
+  const isAuthCallback = pathname.startsWith("/auth/callback");
 
-  // After first factor, force TOTP until aal2 — before other logged-in redirects.
-  if (user && (await sessionNeedsMfa(supabase))) {
-    if (!isMfaPage && !pathname.startsWith("/auth/callback")) {
-      const url = request.nextUrl.clone();
-      url.pathname = "/auth/mfa";
-      url.search = "";
-      return NextResponse.redirect(url);
-    }
-  } else if (user && isMfaPage) {
+  // Password recovery must finish before MFA / role home redirects.
+  if (
+    user &&
+    (await sessionNeedsMfa(supabase)) &&
+    !isMfaPage &&
+    !isAuthCallback &&
+    !isRecoveryFlow
+  ) {
+    const url = request.nextUrl.clone();
+    url.pathname = "/auth/mfa";
+    url.search = "";
+    return NextResponse.redirect(url);
+  }
+
+  if (user && isMfaPage && !(await sessionNeedsMfa(supabase))) {
     const role = await fetchUserRole(supabase, user.id);
     const url = request.nextUrl.clone();
     url.pathname = homePathForRole(role);
@@ -96,25 +111,38 @@ export async function updateSession(request: NextRequest) {
     return NextResponse.redirect(url);
   }
 
-  // Keep PKCE/callback/recovery exchange on auth routes; reset-password only
-  // when the short-lived recovery cookie is present (set by /auth/recovery).
   const hasRecoveryCookie =
-    request.cookies.get("swp_pwd_recovery")?.value === "1";
+    request.cookies.get(RECOVERY_COOKIE)?.value === "1";
   const isAuthRecoveryExchange =
     pathname.startsWith("/auth/callback") ||
     pathname.startsWith("/auth/recovery");
+
+  let recoverySession = false;
+  if (user && pathname.startsWith("/auth/reset-password")) {
+    const {
+      data: { session },
+    } = await supabase.auth.getSession();
+    recoverySession = sessionLooksLikeRecovery(session);
+  }
+
   const isAuthResetAllowed =
-    pathname.startsWith("/auth/reset-password") && hasRecoveryCookie;
+    pathname.startsWith("/auth/reset-password") &&
+    (hasRecoveryCookie || recoverySession);
 
   if (
     user &&
     pathname.startsWith("/auth/reset-password") &&
-    !hasRecoveryCookie
+    !isAuthResetAllowed
   ) {
     const role = await fetchUserRole(supabase, user.id);
     const url = request.nextUrl.clone();
     url.pathname = homePathForRole(role);
     return NextResponse.redirect(url);
+  }
+
+  // Ensure recovery cookie is present when AMR says recovery (hash / lost cookie).
+  if (user && recoverySession && !hasRecoveryCookie) {
+    setRecoveryCookie(supabaseResponse);
   }
 
   if (
