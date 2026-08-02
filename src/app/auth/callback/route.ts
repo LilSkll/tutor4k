@@ -12,6 +12,7 @@ import {
   resolveOAuthSignupRole,
 } from "@/lib/oauth-intent";
 import { resolvePostLoginPath } from "@/lib/roles";
+import { sessionNeedsMfa } from "@/lib/auth-mfa";
 import type { UserRole } from "@/types";
 
 type CookieToSet = {
@@ -137,6 +138,10 @@ export async function GET(request: Request) {
       (nextParam?.startsWith("/") && !nextParam.startsWith("//")
         ? nextParam
         : null);
+
+    if (await sessionNeedsMfa(supabase)) {
+      return redirectTo("/auth/mfa");
+    }
 
     return redirectTo(resolvePostLoginPath(role, preferredNext));
   }

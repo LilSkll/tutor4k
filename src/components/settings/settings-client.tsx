@@ -52,6 +52,7 @@ import { LEGAL_OPERATOR } from "@/config/legal";
 import { LegalFooterLinks } from "@/components/legal/legal-footer-links";
 import { LinkTeacherCard } from "@/components/invite/link-teacher-card";
 import { ChangePasswordCard } from "@/components/auth/change-password-card";
+import { MfaSettingsCard } from "@/components/auth/mfa-settings-card";
 import { updateProfile, signOut } from "@/server/actions/auth";
 import { isStudentRole } from "@/lib/roles";
 import { useUIStore } from "@/stores";
@@ -225,6 +226,8 @@ export function SettingsClient({ profile }: { profile: Profile }) {
       <Suspense fallback={null}>
         <ChangePasswordCard returnTo="/settings" />
       </Suspense>
+
+      <MfaSettingsCard />
 
       {/* Preferences */}
       <Card>

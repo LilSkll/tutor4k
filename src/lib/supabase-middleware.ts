@@ -4,6 +4,7 @@ import {
   canAccessTeacherStudio,
   homePathForRole,
 } from "@/lib/roles";
+import { sessionNeedsMfa } from "@/lib/auth-mfa";
 import type { UserRole } from "@/types";
 
 async function fetchUserRole(
@@ -57,6 +58,23 @@ export async function updateSession(request: NextRequest) {
   } = await supabase.auth.getUser();
 
   const { pathname } = request.nextUrl;
+
+  const isMfaPage = pathname.startsWith("/auth/mfa");
+
+  // After first factor, force TOTP until aal2 — before other logged-in redirects.
+  if (user && (await sessionNeedsMfa(supabase))) {
+    if (!isMfaPage && !pathname.startsWith("/auth/callback")) {
+      const url = request.nextUrl.clone();
+      url.pathname = "/auth/mfa";
+      url.search = "";
+      return NextResponse.redirect(url);
+    }
+  } else if (user && isMfaPage) {
+    const role = await fetchUserRole(supabase, user.id);
+    const url = request.nextUrl.clone();
+    url.pathname = homePathForRole(role);
+    return NextResponse.redirect(url);
+  }
 
   const isPublicRoute =
     pathname === "/" ||

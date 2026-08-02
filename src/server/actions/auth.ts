@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
 import { getFirstChapterSlugForLevel } from "@/config/chapters";
 import { resolvePostLoginPath } from "@/lib/roles";
+import { sessionNeedsMfa } from "@/lib/auth-mfa";
 import type { Goal, InterfaceLanguage, Level, UserRole } from "@/types";
 
 // =====================================================================
@@ -153,6 +154,10 @@ export async function signInWithEmail(formData: FormData) {
       .eq("id", data.user.id)
       .maybeSingle();
     role = (profile?.role as UserRole | undefined) ?? "student";
+  }
+
+  if (await sessionNeedsMfa(supabase)) {
+    redirect("/auth/mfa");
   }
 
   redirect(resolvePostLoginPath(role, redirectPath || null));
