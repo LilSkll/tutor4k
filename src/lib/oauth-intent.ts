@@ -1,7 +1,7 @@
 import type { NextResponse } from "next/server";
 import type { UserRole } from "@/types";
 
-/** Short-lived cookie: role + consent chosen before Google/Apple redirect. */
+/** Short-lived cookie: role + consent chosen before Google OAuth redirect. */
 export const OAUTH_INTENT_COOKIE = "swp_oauth_intent";
 const MAX_AGE_SEC = 10 * 60;
 

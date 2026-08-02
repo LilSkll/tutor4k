@@ -23,7 +23,7 @@ type CookieToSet = {
 /**
  * Supabase Auth redirect target (email confirm / password recovery / OAuth).
  * Session cookies from exchangeCodeForSession MUST be copied onto the
- * redirect response — otherwise Google/Apple login looks successful but
+ * redirect response — otherwise Google login looks successful but
  * the next request has no session.
  */
 export async function GET(request: Request) {

@@ -5,7 +5,7 @@ import {
 } from "@/lib/oauth-intent";
 
 /**
- * Stores signup/login choices before redirecting to Google/Apple.
+ * Stores signup/login choices before redirecting to Google OAuth.
  * Consumed once by /auth/callback after PKCE exchange.
  */
 export async function POST(req: NextRequest) {

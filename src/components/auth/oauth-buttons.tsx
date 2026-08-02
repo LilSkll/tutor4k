@@ -5,8 +5,6 @@ import { createSupabaseBrowserClient } from "@/lib/supabase-browser";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 
-type Provider = "google" | "apple";
-
 function GoogleIcon({ className }: { className?: string }) {
   return (
     <svg className={className} viewBox="0 0 24 24" aria-hidden>
@@ -30,14 +28,6 @@ function GoogleIcon({ className }: { className?: string }) {
   );
 }
 
-function AppleIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-      <path d="M16.7 12.6c0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3-1.6-1.3-.1-2.5.8-3.1.8-.6 0-1.6-.7-2.7-.7-1.4 0-2.7.8-3.4 2.1-1.5 2.5-.4 6.3 1 8.4.7 1 1.5 2.2 2.6 2.1 1-.1 1.4-.7 2.7-.7s1.6.7 2.7.7c1.1 0 1.8-1 2.5-2 .8-1.1 1.1-2.2 1.1-2.3-.1 0-2.1-.8-2.2-3.6zM14.4 6.3c.6-.7 1-1.7.9-2.7-1 .1-2.1.6-2.7 1.4-.6.7-1.1 1.7-.9 2.7 1 0 2-.6 2.7-1.4z" />
-    </svg>
-  );
-}
-
 export function OAuthButtons({
   mode,
   role,
@@ -57,7 +47,7 @@ export function OAuthButtons({
   redirect?: string;
   disabled?: boolean;
 }) {
-  const [busy, setBusy] = React.useState<Provider | null>(null);
+  const [busy, setBusy] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
 
   const signupBlocked =
@@ -66,7 +56,7 @@ export function OAuthButtons({
       !acceptPrivacy ||
       (role === "teacher" && !teacherConfirm));
 
-  const startOAuth = async (provider: Provider) => {
+  const startGoogle = async () => {
     setError(null);
     if (signupBlocked) {
       setError(
@@ -77,7 +67,7 @@ export function OAuthButtons({
       return;
     }
 
-    setBusy(provider);
+    setBusy(true);
     try {
       const intentRes = await fetch("/api/auth/oauth-intent", {
         method: "POST",
@@ -113,25 +103,22 @@ export function OAuthButtons({
       const redirectTo = `${origin}/auth/callback`;
       const supabase = createSupabaseBrowserClient();
       const { data, error: oauthError } = await supabase.auth.signInWithOAuth({
-        provider,
+        provider: "google",
         options: {
           redirectTo,
           skipBrowserRedirect: true,
-          queryParams:
-            provider === "google"
-              ? { access_type: "online", prompt: "select_account" }
-              : undefined,
+          queryParams: { access_type: "online", prompt: "select_account" },
         },
       });
       if (oauthError || !data.url) {
         throw new Error(
           oauthError?.message ||
-            "Провайдер входа недоступен. Проверьте настройки в Supabase.",
+            "Вход через Google недоступен. Проверьте настройки в Supabase.",
         );
       }
       window.location.assign(data.url);
     } catch (err) {
-      setBusy(null);
+      setBusy(false);
       setError((err as Error).message || "Ошибка входа");
     }
   };
@@ -155,30 +142,15 @@ export function OAuthButtons({
         type="button"
         variant="outline"
         className="w-full"
-        disabled={disabled || busy !== null || signupBlocked}
-        onClick={() => void startOAuth("google")}
+        disabled={disabled || busy || signupBlocked}
+        onClick={() => void startGoogle()}
       >
-        {busy === "google" ? (
+        {busy ? (
           <Loader2 className="h-4 w-4 animate-spin" />
         ) : (
           <GoogleIcon className="h-4 w-4" />
         )}
         Продолжить с Google
-      </Button>
-
-      <Button
-        type="button"
-        variant="outline"
-        className="w-full"
-        disabled={disabled || busy !== null || signupBlocked}
-        onClick={() => void startOAuth("apple")}
-      >
-        {busy === "apple" ? (
-          <Loader2 className="h-4 w-4 animate-spin" />
-        ) : (
-          <AppleIcon className="h-4 w-4" />
-        )}
-        Продолжить с Apple
       </Button>
     </div>
   );
