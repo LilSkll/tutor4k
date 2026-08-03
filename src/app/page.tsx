@@ -17,6 +17,7 @@ import { Card } from "@/components/ui/card";
 import { useUIStore } from "@/stores";
 import { translate } from "@/lib/i18n";
 import { LegalFooterLinks } from "@/components/legal/legal-footer-links";
+import { ConfirmEmailHashRedirect } from "@/components/auth/confirm-email-hash-redirect";
 
 const FEATURE_KEYS = [
   { icon: Brain, titleKey: "feature.ai.title", descKey: "feature.ai.desc" },
@@ -35,6 +36,7 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5">
+      <ConfirmEmailHashRedirect />
       {/* Header */}
       <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur-md">
         <div className="container flex h-16 items-center justify-between">

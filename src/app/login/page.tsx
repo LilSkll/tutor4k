@@ -41,16 +41,20 @@ export default async function LoginPage({
             </div>
           )}
           {sp.notice === "check-email" && (
-            <div className="mb-4 rounded-lg border border-success/30 bg-success/10 px-4 py-3 text-sm text-success">
-              Аккаунт создан. Проверь почту для подтверждения.
+            <div className="mb-4 rounded-lg border border-success/30 bg-success/10 px-4 py-3 text-sm text-success space-y-1">
+              <p className="font-medium">Аккаунт создан — проверь почту.</p>
+              <p>
+                В письме нажми ссылку подтверждения: откроется кабинет сразу,
+                заново входить не нужно.
+              </p>
             </div>
           )}
           {sp.notice === "check-email-teacher" && (
             <div className="mb-4 rounded-lg border border-success/30 bg-success/10 px-4 py-3 text-sm text-success space-y-1">
               <p className="font-medium">Аккаунт преподавателя создан.</p>
               <p>
-                Проверь почту для подтверждения. После входа откроется Teacher
-                Studio — не Student Journey.
+                Проверь почту и нажми ссылку подтверждения — откроется Teacher
+                Studio. Заново входить не нужно.
               </p>
             </div>
           )}

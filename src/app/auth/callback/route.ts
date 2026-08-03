@@ -74,6 +74,13 @@ export async function GET(request: Request) {
     return res;
   };
 
+  const withConfirmed = (path: string) => {
+    if (type !== "signup" && type !== "email") return path;
+    const u = new URL(path, origin);
+    u.searchParams.set("confirmed", "1");
+    return `${u.pathname}${u.search}`;
+  };
+
   if (oauthError) {
     const msg =
       oauthErrorDesc?.replace(/\+/g, " ") ||
@@ -100,7 +107,6 @@ export async function GET(request: Request) {
       return redirectTo("/auth/reset-password", true);
     }
 
-    // Do not send password-recovery sessions through MFA before they set a password.
     const {
       data: { user },
     } = await supabase.auth.getUser();
@@ -144,7 +150,9 @@ export async function GET(request: Request) {
       return redirectTo("/auth/mfa");
     }
 
-    return redirectTo(resolvePostLoginPath(role, preferredNext));
+    return redirectTo(
+      withConfirmed(resolvePostLoginPath(role, preferredNext)),
+    );
   }
 
   if (tokenHash && type) {
@@ -160,10 +168,29 @@ export async function GET(request: Request) {
     if (type === "recovery") {
       return redirectTo("/auth/reset-password", true);
     }
-    if (nextParam?.startsWith("/") && !nextParam.startsWith("//")) {
-      return redirectTo(nextParam);
+
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    let role: UserRole = "student";
+    if (user) {
+      const { data: profile } = await supabase
+        .from("profiles")
+        .select("role")
+        .eq("id", user.id)
+        .maybeSingle();
+      role = ((profile as { role?: UserRole } | null)?.role ??
+        "student") as UserRole;
     }
-    return redirectTo("/dashboard");
+
+    const preferredNext =
+      nextParam?.startsWith("/") && !nextParam.startsWith("//")
+        ? nextParam
+        : null;
+
+    return redirectTo(
+      withConfirmed(resolvePostLoginPath(role, preferredNext)),
+    );
   }
 
   return redirectTo(

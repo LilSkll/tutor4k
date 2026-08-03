@@ -29,6 +29,8 @@ import {
   hasCompletedPrereqChain,
 } from "@/lib/chapter-display";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
+import { Suspense } from "react";
+import { EmailConfirmedBanner } from "@/components/auth/email-confirmed-banner";
 
 export default async function DashboardPage() {
   const [profile, progress] = await Promise.all([
@@ -200,6 +202,9 @@ export default async function DashboardPage() {
 
   return (
     <div className="page-container space-y-6 md:space-y-8 animate-fade-in">
+      <Suspense fallback={null}>
+        <EmailConfirmedBanner />
+      </Suspense>
       {/* Header */}
       <div className="flex flex-col gap-1">
         <p className="meta-label">{courseLabel}</p>

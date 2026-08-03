@@ -8,6 +8,8 @@ import { Badge } from "@/components/ui/badge";
 import { translate } from "@/lib/i18n";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { getCourseTitle } from "@/config/courses";
+import { EmailConfirmedBanner } from "@/components/auth/email-confirmed-banner";
+import { Suspense } from "react";
 
 type Mistake = {
   id: string;
@@ -86,6 +88,9 @@ export function TeacherDashboardPage({ teacherName }: { teacherName: string }) {
 
   return (
     <div className="mx-auto max-w-4xl space-y-6">
+      <Suspense fallback={null}>
+        <EmailConfirmedBanner message="Почта подтверждена — вы уже в Teacher Studio." />
+      </Suspense>
       <div>
         <h2 className="text-2xl font-bold tracking-tight">
           {t("teacher.dashboard.greeting", { name: teacherName || "—" })}

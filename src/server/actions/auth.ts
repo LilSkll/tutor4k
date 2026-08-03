@@ -194,10 +194,16 @@ export async function signUpWithEmail(formData: FormData) {
 
   const now = new Date().toISOString();
   const supabase = await createSupabaseServerClient();
+  const origin = await appOrigin();
+  // Confirmation link must hit /auth/callback so we exchange the code and
+  // land in the app — not the marketing Site URL ("/") with no instructions.
+  const postConfirmPath =
+    role === "teacher" ? "/teacher/dashboard" : "/dashboard";
   const { data, error } = await supabase.auth.signUp({
     email,
     password,
     options: {
+      emailRedirectTo: `${origin}/auth/callback?next=${encodeURIComponent(postConfirmPath)}`,
       data: {
         name,
         role,
