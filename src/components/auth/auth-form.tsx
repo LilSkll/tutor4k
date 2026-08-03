@@ -10,6 +10,8 @@ import { signInWithEmail, signUpWithEmail } from "@/server/actions/auth";
 import { OAuthButtons } from "@/components/auth/oauth-buttons";
 import { AlertTriangle, GraduationCap, Loader2, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { translate } from "@/lib/i18n";
+import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 
 interface AuthFormProps {
   mode: "signin" | "signup";
@@ -53,6 +55,8 @@ function ConsentCheckbox({
 }
 
 export function AuthForm({ mode, redirect }: AuthFormProps) {
+  const language = useInterfaceLanguage();
+  const t = (key: string) => translate(key, language);
   const [pending, startTransition] = useTransition();
   const [acceptTerms, setAcceptTerms] = React.useState(false);
   const [acceptPrivacy, setAcceptPrivacy] = React.useState(false);
@@ -81,7 +85,7 @@ export function AuthForm({ mode, redirect }: AuthFormProps) {
     <form action={action} className="space-y-4">
       {mode === "signup" && (
         <div className="space-y-2">
-          <Label>Тип аккаунта</Label>
+          <Label>{t("auth.accountType")}</Label>
           <div className="grid grid-cols-2 gap-2">
             <button
               type="button"
@@ -97,9 +101,9 @@ export function AuthForm({ mode, redirect }: AuthFormProps) {
               )}
             >
               <GraduationCap className="h-5 w-5 text-primary mb-1.5" />
-              <p className="text-sm font-semibold">Ученик</p>
+              <p className="text-sm font-semibold">{t("auth.roleStudent")}</p>
               <p className="text-[11px] text-muted-foreground leading-snug mt-0.5">
-                Учить язык: главы, упражнения, ИИ-репетитор
+                {t("auth.roleStudentDesc")}
               </p>
             </button>
             <button
@@ -113,9 +117,9 @@ export function AuthForm({ mode, redirect }: AuthFormProps) {
               )}
             >
               <Users className="h-5 w-5 text-amber-600 mb-1.5" />
-              <p className="text-sm font-semibold">Преподаватель</p>
+              <p className="text-sm font-semibold">{t("auth.roleTeacher")}</p>
               <p className="text-[11px] text-muted-foreground leading-snug mt-0.5">
-                Teacher Studio: ученики и приглашения
+                {t("auth.roleTeacherDesc")}
               </p>
             </button>
           </div>
@@ -126,16 +130,11 @@ export function AuthForm({ mode, redirect }: AuthFormProps) {
               <div className="flex gap-2 text-amber-900 dark:text-amber-100">
                 <AlertTriangle className="h-5 w-5 shrink-0 mt-0.5" />
                 <div className="space-y-1 text-xs leading-relaxed">
-                  <p className="font-semibold text-sm">Важно для учеников</p>
-                  <p>
-                    Аккаунт преподавателя — это <strong>не</strong> способ учить
-                    испанский. В Teacher Studio нет глав, упражнений и прогресса
-                    ученика. Если вы хотите учиться — выберите «Ученик».
+                  <p className="font-semibold text-sm">
+                    {t("auth.teacherWarningTitle")}
                   </p>
-                  <p>
-                    Регистрируйтесь как преподаватель, только если вы ведёте
-                    занятия и будете приглашать своих учеников.
-                  </p>
+                  <p>{t("auth.teacherWarning1")}</p>
+                  <p>{t("auth.teacherWarning2")}</p>
                 </div>
               </div>
               <ConsentCheckbox
@@ -145,8 +144,7 @@ export function AuthForm({ mode, redirect }: AuthFormProps) {
                 checked={teacherConfirm}
                 onChange={setTeacherConfirm}
               >
-                Я преподаватель и понимаю, что это кабинет для работы с учениками,
-                а не учебный аккаунт
+                {t("auth.teacherConfirm")}
               </ConsentCheckbox>
             </div>
           )}
@@ -155,12 +153,12 @@ export function AuthForm({ mode, redirect }: AuthFormProps) {
 
       {mode === "signup" && (
         <div className="space-y-2">
-          <Label htmlFor="name">Имя</Label>
+          <Label htmlFor="name">{t("auth.name")}</Label>
           <Input
             id="name"
             name="name"
             type="text"
-            placeholder="Твоё имя"
+            placeholder={t("auth.namePlaceholder")}
             required
             autoComplete="name"
           />
@@ -168,12 +166,12 @@ export function AuthForm({ mode, redirect }: AuthFormProps) {
       )}
 
       <div className="space-y-2">
-        <Label htmlFor="email">Email</Label>
+        <Label htmlFor="email">{t("auth.email")}</Label>
         <Input
           id="email"
           name="email"
           type="email"
-          placeholder="твой@email.com"
+          placeholder={t("auth.emailPlaceholder")}
           required
           autoComplete="email"
         />
@@ -181,13 +179,13 @@ export function AuthForm({ mode, redirect }: AuthFormProps) {
 
       <div className="space-y-2">
         <div className="flex items-center justify-between gap-2">
-          <Label htmlFor="password">Пароль</Label>
+          <Label htmlFor="password">{t("auth.password")}</Label>
           {mode === "signin" && (
             <Link
               href="/forgot-password"
               className="text-xs text-primary font-medium hover:underline"
             >
-              Забыли пароль?
+              {t("auth.forgotPassword")}
             </Link>
           )}
         </div>
@@ -195,7 +193,7 @@ export function AuthForm({ mode, redirect }: AuthFormProps) {
           id="password"
           name="password"
           type="password"
-          placeholder="••••••••"
+          placeholder={t("auth.passwordPlaceholder")}
           required
           minLength={6}
           autoComplete={mode === "signin" ? "current-password" : "new-password"}
@@ -211,9 +209,13 @@ export function AuthForm({ mode, redirect }: AuthFormProps) {
             checked={acceptTerms}
             onChange={setAcceptTerms}
           >
-            Я принимаю{" "}
-            <Link href="/terms" className="text-primary hover:underline" target="_blank">
-              Пользовательское соглашение
+            {t("auth.acceptTerms")}{" "}
+            <Link
+              href="/terms"
+              className="text-primary hover:underline"
+              target="_blank"
+            >
+              {t("auth.termsLink")}
             </Link>
           </ConsentCheckbox>
           <ConsentCheckbox
@@ -223,9 +225,13 @@ export function AuthForm({ mode, redirect }: AuthFormProps) {
             checked={acceptPrivacy}
             onChange={setAcceptPrivacy}
           >
-            Я принимаю{" "}
-            <Link href="/privacy" className="text-primary hover:underline" target="_blank">
-              Политику конфиденциальности
+            {t("auth.acceptPrivacy")}{" "}
+            <Link
+              href="/privacy"
+              className="text-primary hover:underline"
+              target="_blank"
+            >
+              {t("auth.privacyLink")}
             </Link>
           </ConsentCheckbox>
           <ConsentCheckbox
@@ -234,7 +240,7 @@ export function AuthForm({ mode, redirect }: AuthFormProps) {
             checked={marketingConsent}
             onChange={setMarketingConsent}
           >
-            Хочу получать новости о продукте и обучении (необязательно)
+            {t("auth.marketingConsent")}
           </ConsentCheckbox>
         </div>
       )}
@@ -243,14 +249,15 @@ export function AuthForm({ mode, redirect }: AuthFormProps) {
         type="submit"
         variant="gradient"
         className="w-full"
-        disabled={pending || (mode === "signup" && !canSubmitSignup)}
+        pending={pending}
+        disabled={mode === "signup" && !canSubmitSignup}
       >
         {pending && <Loader2 className="h-4 w-4 animate-spin" />}
         {mode === "signin"
-          ? "Войти"
+          ? t("auth.signIn")
           : role === "teacher"
-            ? "Создать аккаунт преподавателя"
-            : "Создать аккаунт ученика"}
+            ? t("auth.createTeacher")
+            : t("auth.createStudent")}
       </Button>
 
       <OAuthButtons

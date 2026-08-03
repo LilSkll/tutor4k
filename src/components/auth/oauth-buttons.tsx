@@ -4,6 +4,8 @@ import * as React from "react";
 import { createSupabaseBrowserClient } from "@/lib/supabase-browser";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
+import { translate } from "@/lib/i18n";
+import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 
 function GoogleIcon({ className }: { className?: string }) {
   return (
@@ -47,6 +49,8 @@ export function OAuthButtons({
   redirect?: string;
   disabled?: boolean;
 }) {
+  const language = useInterfaceLanguage();
+  const t = (key: string) => translate(key, language);
   const [busy, setBusy] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
 
@@ -61,8 +65,8 @@ export function OAuthButtons({
     if (signupBlocked) {
       setError(
         role === "teacher" && !teacherConfirm
-          ? "Подтвердите, что регистрируетесь как преподаватель."
-          : "Примите Пользовательское соглашение и Политику конфиденциальности.",
+          ? t("auth.oauthNeedTeacher")
+          : t("auth.oauthNeedConsent"),
       );
       return;
     }
@@ -87,16 +91,12 @@ export function OAuthButtons({
           error?: string;
         };
         if (data.error === "consent_required") {
-          throw new Error(
-            "Примите Пользовательское соглашение и Политику конфиденциальности.",
-          );
+          throw new Error(t("auth.oauthNeedConsent"));
         }
         if (data.error === "teacher_confirm_required") {
-          throw new Error(
-            "Подтвердите, что регистрируетесь как преподаватель.",
-          );
+          throw new Error(t("auth.oauthNeedTeacher"));
         }
-        throw new Error("Не удалось начать вход. Попробуйте ещё раз.");
+        throw new Error(t("auth.oauthStartFail"));
       }
 
       const origin = window.location.origin;
@@ -111,15 +111,12 @@ export function OAuthButtons({
         },
       });
       if (oauthError || !data.url) {
-        throw new Error(
-          oauthError?.message ||
-            "Вход через Google недоступен. Проверьте настройки в Supabase.",
-        );
+        throw new Error(t("auth.oauthGoogleUnavailable"));
       }
       window.location.assign(data.url);
     } catch (err) {
       setBusy(false);
-      setError((err as Error).message || "Ошибка входа");
+      setError((err as Error).message || t("auth.oauthGenericError"));
     }
   };
 
@@ -130,7 +127,9 @@ export function OAuthButtons({
           <span className="w-full border-t" />
         </div>
         <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-background px-2 text-muted-foreground">или</span>
+          <span className="bg-background px-2 text-muted-foreground">
+            {t("auth.or")}
+          </span>
         </div>
       </div>
 
@@ -143,6 +142,7 @@ export function OAuthButtons({
         variant="outline"
         className="w-full"
         disabled={disabled || busy || signupBlocked}
+        pending={busy}
         onClick={() => void startGoogle()}
       >
         {busy ? (
@@ -150,7 +150,7 @@ export function OAuthButtons({
         ) : (
           <GoogleIcon className="h-4 w-4" />
         )}
-        Продолжить с Google
+        {t("auth.continueGoogle")}
       </Button>
     </div>
   );
