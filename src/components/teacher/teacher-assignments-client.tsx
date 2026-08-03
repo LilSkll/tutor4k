@@ -12,6 +12,7 @@ import { translate } from "@/lib/i18n";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { getCourseTitle } from "@/config/courses";
 import type { TeacherAssignmentDTO } from "@/types/assignments";
+import { EmptyState } from "@/components/shared/empty-state";
 
 type StudentOpt = {
   id: string;
@@ -358,9 +359,11 @@ export function TeacherAssignmentsClient() {
             <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
           </div>
         ) : assignments.length === 0 ? (
-          <p className="text-sm text-muted-foreground">
-            {t("teacher.assignments.empty")}
-          </p>
+          <EmptyState
+            title={t("teacher.assignments.emptyTitle")}
+            description={t("teacher.assignments.empty")}
+            className="py-8"
+          />
         ) : (
           <ul className="space-y-3">
             {assignments.map((a) => (

@@ -10,6 +10,7 @@ import { Badge } from "@/components/ui/badge";
 import { translate } from "@/lib/i18n";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { getCourseTitle } from "@/config/courses";
+import { EmptyState } from "@/components/shared/empty-state";
 
 type Row = {
   link: {
@@ -158,9 +159,12 @@ export function TeacherStudentsClient() {
             <Loader2 className="h-6 w-6 animate-spin text-primary" />
           </div>
         ) : rows.length === 0 ? (
-          <p className="text-sm text-muted-foreground text-center py-8">
-            {t("teacher.students.empty")}
-          </p>
+          <EmptyState
+            title={t("teacher.students.emptyTitle")}
+            description={t("teacher.students.empty")}
+            actionLabel={t("teacher.dashboard.emptyAction")}
+            actionHref="/teacher/invites"
+          />
         ) : (
           <div className="space-y-3">
             {rows.map(({ link, student }) => (

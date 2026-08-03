@@ -10,6 +10,7 @@ import { translate } from "@/lib/i18n";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { getCourseTitle } from "@/config/courses";
 import { resolveHomeworkChapterTitle } from "@/lib/homework-chapter-title";
+import { EmptyState } from "@/components/shared/empty-state";
 import type {
   NotificationDTO,
   TeacherAssignmentDTO,
@@ -105,9 +106,12 @@ export function StudentHomeworkClient() {
           <div className="h-28 rounded-xl bg-muted/60 animate-pulse" />
         </div>
       ) : assignments.length === 0 ? (
-        <p className="text-sm text-muted-foreground text-center py-10">
-          {t("homework.empty")}
-        </p>
+        <EmptyState
+          title={t("homework.emptyTitle")}
+          description={t("homework.empty")}
+          actionLabel={t("homework.emptyAction")}
+          actionHref="/chapters"
+        />
       ) : (
         <ul className="space-y-3">
           {assignments.map((a) => {

@@ -1,11 +1,4 @@
 import { Dumbbell } from "lucide-react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { ExerciseRunner } from "@/components/exercises/exercise-runner";
 import { BackLink } from "@/components/shared/back-link";
 import { getCurrentProfile } from "@/server/actions/data";
@@ -27,21 +20,17 @@ export default async function ExercisesPage() {
         <p className="text-sm text-muted-foreground">
           {t("exercises.subtitleDynamic")}
         </p>
+        <p className="text-xs text-muted-foreground mt-2">
+          {t("exercises.sessionDesc")}
+        </p>
       </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle className="text-base">{t("exercises.sessionTitle")}</CardTitle>
-          <CardDescription>{t("exercises.sessionDesc")}</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <ExerciseRunner
-            userLevel={profile?.level ?? null}
-            interfaceLanguage={lang}
-            activeCourseId={profile?.active_course_id}
-          />
-        </CardContent>
-      </Card>
+      {/* No outer Card — ExerciseRunner already uses Cards per phase */}
+      <ExerciseRunner
+        userLevel={profile?.level ?? null}
+        interfaceLanguage={lang}
+        activeCourseId={profile?.active_course_id}
+      />
     </div>
   );
 }

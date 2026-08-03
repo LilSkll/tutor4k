@@ -2,13 +2,13 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { Badge } from "@/components/ui/badge";
 import { translate } from "@/lib/i18n";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { getCourseTitle } from "@/config/courses";
 import { EmailConfirmedBanner } from "@/components/auth/email-confirmed-banner";
+import { EmptyState } from "@/components/shared/empty-state";
 import { Suspense } from "react";
 
 type Mistake = {
@@ -120,16 +120,19 @@ export function TeacherDashboardPage({ teacherName }: { teacherName: string }) {
       </div>
 
       {loading ? (
-        <div className="flex items-center justify-center py-16 text-muted-foreground">
-          <Loader2 className="h-5 w-5 animate-spin" />
+        <div className="space-y-3" aria-busy="true">
+          <div className="h-28 rounded-xl bg-muted/60 animate-pulse" />
+          <div className="h-28 rounded-xl bg-muted/60 animate-pulse" />
+          <div className="h-28 rounded-xl bg-muted/60 animate-pulse" />
         </div>
       ) : rows.length === 0 ? (
-        <div className="rounded-xl border border-dashed border-border bg-muted/30 p-8 text-center space-y-2">
-          <p className="font-medium">{t("teacher.dashboard.emptyTitle")}</p>
-          <p className="text-sm text-muted-foreground">
-            {t("teacher.dashboard.emptyBody")}
-          </p>
-        </div>
+        <EmptyState
+          title={t("teacher.dashboard.emptyTitle")}
+          description={t("teacher.dashboard.emptyBody")}
+          actionLabel={t("teacher.dashboard.emptyAction")}
+          actionHref="/teacher/invites"
+          className="rounded-xl border border-dashed border-border bg-muted/20"
+        />
       ) : (
         <ul className="space-y-4">
           {rows.map((row) => {

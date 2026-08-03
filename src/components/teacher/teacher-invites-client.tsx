@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge";
 import { translate } from "@/lib/i18n";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import type { TeacherInviteRow } from "@/types/teacher";
+import { EmptyState } from "@/components/shared/empty-state";
 
 export function TeacherInvitesClient() {
   const language = useInterfaceLanguage();
@@ -154,11 +155,13 @@ export function TeacherInvitesClient() {
             <Loader2 className="h-6 w-6 animate-spin text-primary" />
           </div>
         ) : invites.length === 0 ? (
-          <p className="text-sm text-muted-foreground text-center py-8">
-            {t("teacher.invites.empty")}
-          </p>
-        ) : (
-          <div className="space-y-3">
+          <EmptyState
+            title={t("teacher.invites.emptyTitle")}
+            description={t("teacher.invites.empty")}
+            withMascot={false}
+            icon={<Link2 className="h-7 w-7" />}
+          />
+        ) : (          <div className="space-y-3">
             {invites.map((inv) => (
               <Card key={inv.id}>
                 <CardContent className="p-4 flex flex-wrap items-center gap-3 justify-between">
