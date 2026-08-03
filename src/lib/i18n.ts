@@ -245,6 +245,12 @@ const ru: Dictionary = {
   "auth.newPassword": "Новый пароль",
   "auth.confirmNewPassword": "Повтори пароль",
   "auth.savePassword": "Сохранить пароль",
+  "auth.resetTitle": "Новый пароль",
+  "auth.resetSubtitle": "Придумай пароль не короче 6 символов.",
+  "auth.resetNoSession": "Если форма не сохраняет пароль — открой ссылку из письма ещё раз (она должна привести на эту страницу). Не закрывай вкладку до сохранения.",
+  "auth.resetHero": "Почти готово",
+  "auth.resetHeroDesc": "После сохранения войди с новым паролем. Для преподавателей откроется Teacher Studio, для учеников — обучение.",
+  "auth.backToLoginShort": "На страницу входа",
 
   // --- Tutor ---
   "tutor.thinkingStatus": "Думаю…",
@@ -958,6 +964,12 @@ const en: Dictionary = {
   "auth.newPassword": "New password",
   "auth.confirmNewPassword": "Confirm password",
   "auth.savePassword": "Save password",
+  "auth.resetTitle": "New password",
+  "auth.resetSubtitle": "Choose a password of at least 6 characters.",
+  "auth.resetNoSession": "If the form doesn’t save — open the email link again (it should land on this page). Keep the tab open until you save.",
+  "auth.resetHero": "Almost done",
+  "auth.resetHeroDesc": "After saving, sign in with the new password. Teachers go to Teacher Studio; students continue learning.",
+  "auth.backToLoginShort": "Back to sign in",
 
   "dashboard.hello": "Hello",
   "dashboard.subtitle": "Ready to continue learning Spanish?",
@@ -1721,6 +1733,12 @@ const es: Dictionary = {
   "auth.newPassword": "Nueva contraseña",
   "auth.confirmNewPassword": "Repite la contraseña",
   "auth.savePassword": "Guardar contraseña",
+  "auth.resetTitle": "Nueva contraseña",
+  "auth.resetSubtitle": "Elige una contraseña de al menos 6 caracteres.",
+  "auth.resetNoSession": "Si el formulario no guarda — abre de nuevo el enlace del correo (debe llevar a esta página). No cierres la pestaña hasta guardar.",
+  "auth.resetHero": "Casi listo",
+  "auth.resetHeroDesc": "Tras guardar, entra con la nueva contraseña. Los profesores van a Teacher Studio; los alumnos siguen aprendiendo.",
+  "auth.backToLoginShort": "Volver al inicio de sesión",
 
   "dashboard.hello": "Hola",
   "dashboard.subtitle": "¿Listo para seguir aprendiendo español?",
