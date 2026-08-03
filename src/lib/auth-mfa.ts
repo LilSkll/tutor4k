@@ -1,15 +1,12 @@
 import type { SupabaseClient } from "@supabase/supabase-js";
 
-/** True when the user must enter a TOTP code to reach aal2. */
+/**
+ * TOTP MFA was removed from product settings (confused with one-time email
+ * verification; enrollment UI caused settings flicker). Always false so login
+ * / middleware never force /auth/mfa. Keep the helper so call sites compile.
+ */
 export async function sessionNeedsMfa(
-  supabase: SupabaseClient,
+  _supabase: SupabaseClient,
 ): Promise<boolean> {
-  try {
-    const { data, error } =
-      await supabase.auth.mfa.getAuthenticatorAssuranceLevel();
-    if (error || !data) return false;
-    return data.currentLevel === "aal1" && data.nextLevel === "aal2";
-  } catch {
-    return false;
-  }
+  return false;
 }

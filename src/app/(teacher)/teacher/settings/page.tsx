@@ -1,7 +1,6 @@
 import { Suspense } from "react";
 import { requireTeacherStudioAccess } from "@/server/teacher/authz";
 import { ChangePasswordCard } from "@/components/auth/change-password-card";
-import { MfaSettingsCard } from "@/components/auth/mfa-settings-card";
 import { TeacherLanguageCard } from "@/components/teacher/teacher-language-card";
 import { translate } from "@/lib/i18n";
 
@@ -23,7 +22,6 @@ export default async function TeacherSettingsPage() {
       <Suspense fallback={null}>
         <ChangePasswordCard returnTo="/teacher/settings" />
       </Suspense>
-      <MfaSettingsCard />
     </div>
   );
 }
