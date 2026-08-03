@@ -1,69 +1,15 @@
 "use client";
 
-import * as React from "react";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import {
-  LayoutDashboard,
-  LogOut,
-  Users,
-  ClipboardList,
-  BarChart3,
-  Link2,
-  Settings,
-  Building2,
-} from "lucide-react";
+import { LogOut } from "lucide-react";
 import { translate } from "@/lib/i18n";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { signOut } from "@/server/actions/auth";
+import { TEACHER_NAV, isTeacherNavActive } from "@/lib/teacher-nav";
 import { cn } from "@/lib/utils";
 import type { UserRole } from "@/types";
-
-const NAV = [
-  {
-    href: "/teacher/dashboard",
-    labelKey: "teacher.nav.dashboard",
-    icon: LayoutDashboard,
-    ready: true,
-  },
-  {
-    href: "/teacher/students",
-    labelKey: "teacher.nav.students",
-    icon: Users,
-    ready: true,
-  },
-  {
-    href: "/teacher/invites",
-    labelKey: "teacher.nav.invites",
-    icon: Link2,
-    ready: true,
-  },
-  {
-    href: "/teacher/school",
-    labelKey: "teacher.nav.school",
-    icon: Building2,
-    ready: true,
-  },
-  {
-    href: "/teacher/assignments",
-    labelKey: "teacher.nav.assignments",
-    icon: ClipboardList,
-    ready: true,
-  },
-  {
-    href: "/teacher/analytics",
-    labelKey: "teacher.nav.analytics",
-    icon: BarChart3,
-    ready: true,
-  },
-  {
-    href: "/teacher/settings",
-    labelKey: "teacher.nav.settings",
-    icon: Settings,
-    ready: true,
-  },
-] as const;
 
 export function TeacherSidebar({
   userName,
@@ -97,28 +43,15 @@ export function TeacherSidebar({
       </div>
 
       <nav className="flex-1 overflow-y-auto px-3 py-4 space-y-1">
-        {NAV.map((item) => {
+        {TEACHER_NAV.map((item) => {
           const Icon = item.icon;
-          const active =
-            pathname === item.href || pathname.startsWith(`${item.href}/`);
-          if (!item.ready) {
-            return (
-              <div
-                key={item.href}
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm text-muted-foreground/50 cursor-not-allowed"
-                title={t("teacher.nav.comingSoon")}
-              >
-                <Icon className="h-4 w-4 shrink-0" />
-                <span className="truncate">{t(item.labelKey)}</span>
-              </div>
-            );
-          }
+          const active = isTeacherNavActive(pathname, item.href);
           return (
             <Link
               key={item.href}
               href={item.href}
               className={cn(
-                "flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors",
+                "flex items-center gap-3 rounded-lg px-3 py-2 text-sm transition-colors duration-150",
                 active
                   ? "bg-primary/10 text-primary font-medium"
                   : "text-muted-foreground hover:bg-muted hover:text-foreground",
@@ -143,7 +76,7 @@ export function TeacherSidebar({
         <form action={signOut}>
           <button
             type="submit"
-            className="flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
+            className="flex w-full items-center gap-2 rounded-lg px-2 py-1.5 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
           >
             <LogOut className="h-4 w-4" />
             {t("nav.logout")}

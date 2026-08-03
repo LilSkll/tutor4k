@@ -90,7 +90,7 @@ export function SettingsClient({ profile }: { profile: Profile }) {
         dailyGoalMinutes: dailyGoal,
       });
       if (res.error) {
-        toast.error(res.error);
+        toast.error(t("settings.saveFailed"));
       } else {
         setLang(language);
         toast.success(t("settings.toastSaved"));
@@ -130,7 +130,7 @@ export function SettingsClient({ profile }: { profile: Profile }) {
         });
         const data = (await res.json()) as { error?: string };
         if (!res.ok) {
-          toast.error(data.error ?? t("settings.deleteFailed"));
+          toast.error(t("settings.deleteFailed"));
           return;
         }
         toast.success(t("settings.deleteSuccess"));
@@ -414,7 +414,7 @@ export function SettingsClient({ profile }: { profile: Profile }) {
         <Button
           variant="gradient"
           onClick={save}
-          disabled={pending}
+          pending={pending}
           className="flex-1"
         >
           {pending && <Loader2 className="h-4 w-4 animate-spin" />}

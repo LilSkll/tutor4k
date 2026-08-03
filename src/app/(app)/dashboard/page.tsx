@@ -90,7 +90,7 @@ export default async function DashboardPage() {
 
   if (CHAPTERS.length === 0) {
     return (
-      <div className="page-container space-y-6 md:space-y-8 animate-fade-in">
+      <div className="page-container space-y-6 md:space-y-8">
         <div className="flex flex-col gap-1">
           <p className="meta-label">{courseLabel}</p>
           <h1 className="page-title">{greeting}</h1>
@@ -201,7 +201,7 @@ export default async function DashboardPage() {
       : t("dashboard.motivationStart");
 
   return (
-    <div className="page-container space-y-6 md:space-y-8 animate-fade-in">
+    <div className="page-container space-y-6 md:space-y-8">
       <Suspense fallback={null}>
         <EmailConfirmedBanner />
       </Suspense>

@@ -2,13 +2,14 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Check, Loader2 } from "lucide-react";
+import { Check } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { translate } from "@/lib/i18n";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { getCourseTitle } from "@/config/courses";
+import { resolveHomeworkChapterTitle } from "@/lib/homework-chapter-title";
 import type {
   NotificationDTO,
   TeacherAssignmentDTO,
@@ -99,8 +100,9 @@ export function StudentHomeworkClient() {
       </div>
 
       {loading ? (
-        <div className="flex justify-center py-16">
-          <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
+        <div className="space-y-3 py-2" aria-busy="true">
+          <div className="h-28 rounded-xl bg-muted/60 animate-pulse" />
+          <div className="h-28 rounded-xl bg-muted/60 animate-pulse" />
         </div>
       ) : assignments.length === 0 ? (
         <p className="text-sm text-muted-foreground text-center py-10">
@@ -145,7 +147,11 @@ export function StudentHomeworkClient() {
                           href={`/chapters/${encodeURIComponent(slug)}?courseId=${encodeURIComponent(a.courseId)}`}
                           className="text-primary hover:underline"
                         >
-                          {slug}
+                          {resolveHomeworkChapterTitle(
+                            a.courseId,
+                            slug,
+                            language,
+                          )}
                         </Link>
                       </li>
                     ))}

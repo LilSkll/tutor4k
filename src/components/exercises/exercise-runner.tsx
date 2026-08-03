@@ -342,11 +342,19 @@ export function ExerciseRunner({
 
       {phase === "loading" && (
         <Card>
-          <CardContent className="flex flex-col items-center justify-center py-16">
-            <Loader2 className="h-8 w-8 animate-spin text-primary mb-3" />
-            <p className="text-sm text-muted-foreground">
-              {exercise ? t("exercises.checking") : t("exercises.generating")}
-            </p>
+          <CardContent className="space-y-4 py-8" aria-busy="true">
+            <div className="flex items-center gap-3 text-sm text-muted-foreground">
+              <Loader2 className="h-4 w-4 animate-spin text-primary shrink-0" />
+              <span>
+                {exercise ? t("exercises.checking") : t("exercises.generating")}
+              </span>
+            </div>
+            <div className="h-10 w-full rounded-lg bg-muted/60 animate-pulse" />
+            <div className="h-24 w-full rounded-xl bg-muted/60 animate-pulse" />
+            <div className="grid gap-2 sm:grid-cols-2">
+              <div className="h-11 rounded-xl bg-muted/50 animate-pulse" />
+              <div className="h-11 rounded-xl bg-muted/50 animate-pulse" />
+            </div>
           </CardContent>
         </Card>
       )}

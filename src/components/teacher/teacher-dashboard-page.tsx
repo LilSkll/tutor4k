@@ -89,7 +89,7 @@ export function TeacherDashboardPage({ teacherName }: { teacherName: string }) {
   return (
     <div className="mx-auto max-w-4xl space-y-6">
       <Suspense fallback={null}>
-        <EmailConfirmedBanner message="Почта подтверждена — вы уже в Teacher Studio." />
+        <EmailConfirmedBanner teacher />
       </Suspense>
       <div>
         <h2 className="text-2xl font-bold tracking-tight">

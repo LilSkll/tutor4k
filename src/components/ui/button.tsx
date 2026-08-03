@@ -39,15 +39,25 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
+  /** Shows busy styling without fighting disabled opacity alone. */
+  pending?: boolean;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  (
+    { className, variant, size, asChild = false, pending = false, disabled, ...props },
+    ref,
+  ) => {
     const Comp = asChild ? Slot : "button";
     return (
       <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
+        disabled={disabled || pending}
+        aria-busy={pending || undefined}
+        className={cn(
+          buttonVariants({ variant, size, className }),
+          pending && "opacity-80",
+        )}
         {...props}
       />
     );
