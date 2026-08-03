@@ -10,7 +10,7 @@ export default async function TeacherSettingsPage() {
   const lang = profile.interface_language ?? "ru";
 
   return (
-    <div className="mx-auto max-w-lg space-y-6">
+    <div className="mx-auto max-w-lg min-w-0 space-y-6">
       <div>
         <h2 className="text-2xl font-bold tracking-tight">
           {translate("teacher.settings.title", lang)}

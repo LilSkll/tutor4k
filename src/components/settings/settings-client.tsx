@@ -150,7 +150,7 @@ export function SettingsClient({ profile }: { profile: Profile }) {
       : LEGAL_OPERATOR.operatorNameRu;
 
   return (
-    <div className="container max-w-2xl py-6 md:py-8 space-y-6">
+    <div className="container max-w-2xl min-w-0 py-6 md:py-8 space-y-6">
       <div>
         <h1 className="text-2xl font-bold">{t("settings.title")}</h1>
         <p className="text-sm text-muted-foreground">

@@ -129,26 +129,34 @@ export function MfaSettingsCard() {
   };
 
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle className="text-base flex items-center gap-2">
-          <Shield className="h-4 w-4 text-primary" />
-          {t("mfa.settingsTitle")}
+    <Card className="min-w-0 overflow-hidden">
+      <CardHeader className="min-w-0">
+        <CardTitle className="text-base flex items-center gap-2 min-w-0">
+          <Shield className="h-4 w-4 shrink-0 text-primary" />
+          <span className="truncate">{t("mfa.settingsTitle")}</span>
         </CardTitle>
-        <CardDescription>{t("mfa.settingsDesc")}</CardDescription>
+        <CardDescription className="text-pretty break-words">
+          {t("mfa.settingsDesc")}
+        </CardDescription>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent className="min-w-0 space-y-4">
         {loading ? (
           <div className="flex justify-center py-4 text-muted-foreground">
             <Loader2 className="h-5 w-5 animate-spin" />
           </div>
         ) : enrolling && qr ? (
           <form onSubmit={(e) => void confirmEnroll(e)} className="space-y-4">
-            <p className="text-sm text-muted-foreground">{t("mfa.scanHint")}</p>
+            <p className="text-sm text-muted-foreground text-pretty break-words">
+              {t("mfa.scanHint")}
+            </p>
             {/* qr_code is an SVG data URL from Supabase */}
-            <div className="flex justify-center rounded-xl border bg-white p-3">
+            <div className="flex justify-center rounded-xl border bg-white p-3 overflow-hidden">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={qr} alt="MFA QR" className="h-48 w-48" />
+              <img
+                src={qr}
+                alt="MFA QR"
+                className="h-40 w-40 sm:h-48 sm:w-48 max-w-full"
+              />
             </div>
             {secret && (
               <p className="text-xs text-muted-foreground break-all">
@@ -172,11 +180,11 @@ export function MfaSettingsCard() {
                 className="text-center text-lg tracking-[0.3em] font-mono"
               />
             </div>
-            <div className="flex gap-2">
+            <div className="flex flex-col gap-2 sm:flex-row">
               <Button
                 type="button"
                 variant="outline"
-                className="flex-1"
+                className="sm:flex-1"
                 disabled={pending}
                 onClick={() => {
                   setEnrolling(false);
@@ -190,7 +198,7 @@ export function MfaSettingsCard() {
               <Button
                 type="submit"
                 variant="gradient"
-                className="flex-1"
+                className="sm:flex-1"
                 disabled={pending || code.length < 6}
               >
                 {pending && <Loader2 className="h-4 w-4 animate-spin" />}
@@ -200,19 +208,22 @@ export function MfaSettingsCard() {
           </form>
         ) : verified.length > 0 ? (
           <div className="space-y-3">
-            <p className="text-sm text-emerald-700 dark:text-emerald-300">
+            <p className="text-sm text-emerald-700 dark:text-emerald-300 text-pretty break-words">
               {t("mfa.statusOn")}
             </p>
             {verified.map((f) => (
               <div
                 key={f.id}
-                className="flex items-center justify-between gap-2 rounded-lg border px-3 py-2 text-sm"
+                className="flex flex-wrap items-center justify-between gap-2 rounded-lg border px-3 py-2 text-sm min-w-0"
               >
-                <span>{f.friendly_name || "Authenticator"}</span>
+                <span className="min-w-0 truncate">
+                  {f.friendly_name || "Authenticator"}
+                </span>
                 <Button
                   type="button"
                   variant="ghost"
                   size="sm"
+                  className="shrink-0"
                   disabled={pending}
                   onClick={() => void disable(f.id)}
                 >
@@ -224,7 +235,9 @@ export function MfaSettingsCard() {
           </div>
         ) : (
           <div className="space-y-3">
-            <p className="text-sm text-muted-foreground">{t("mfa.statusOff")}</p>
+            <p className="text-sm text-muted-foreground text-pretty break-words">
+              {t("mfa.statusOff")}
+            </p>
             <Button
               type="button"
               variant="outline"
