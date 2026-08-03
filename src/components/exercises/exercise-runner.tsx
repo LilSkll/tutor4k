@@ -24,6 +24,7 @@ import { translate } from "@/lib/i18n";
 import { getCourseTitle } from "@/config/courses";
 import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
+import { QuestionWithGloss } from "@/components/exercises/question-with-gloss";
 import type {
   ExerciseType,
   GrammarLevel,
@@ -36,6 +37,7 @@ interface GeneratedExercise {
   type: ExerciseType;
   level: GrammarLevel;
   question: string;
+  questionTranslations?: Partial<Record<InterfaceLanguage, string>>;
   instruction?: string;
   options?: string[];
   answer: string;
@@ -228,6 +230,15 @@ export function ExerciseRunner({
 
   return (
     <div className="space-y-6">
+      {phase !== "config" && (
+        <button
+          type="button"
+          onClick={backToConfig}
+          className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+        >
+          ← {t("common.back")}
+        </button>
+      )}
       {attempted > 0 && (
         <Card className="bg-gradient-to-r from-primary/5 to-orange-500/5 border-primary/20">
           <CardContent className="flex items-center justify-between py-4">
@@ -477,7 +488,7 @@ function ExerciseCard({
         )}
 
         <div className="rounded-lg bg-muted/50 p-4">
-          <p className="text-lg font-medium">{exercise.question}</p>
+          <QuestionWithGloss exercise={exercise} />
         </div>
 
         {isSentenceBuilding && hasOptions ? (

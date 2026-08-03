@@ -37,6 +37,8 @@ import { trackEvent } from "@/lib/analytics";
 import { getLessonAdaptationAction } from "@/server/actions/learning-profile";
 import type { GrammarTopic, StaticExercise } from "@/types";
 import type { LessonAdaptation } from "@/types/learning-profile";
+import { BackLink } from "@/components/shared/back-link";
+import { QuestionWithGloss } from "@/components/exercises/question-with-gloss";
 import { cn } from "@/lib/utils";
 import type { Chapter } from "@/types";
 
@@ -437,6 +439,9 @@ export function LessonRunner({
 
     return (
       <div className="max-w-2xl mx-auto py-6 space-y-6">
+        <BackLink
+          href={`/chapters?courseId=${encodeURIComponent(courseId)}`}
+        />
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Check className="h-5 w-5 text-primary" />
@@ -469,7 +474,7 @@ export function LessonRunner({
                 </div>
               )}
               <div className="rounded-lg bg-muted/50 p-4">
-                <p className="text-lg font-medium">{ex.question}</p>
+                <QuestionWithGloss exercise={ex} interfaceLanguage={language} />
               </div>
               {hasOptions ? (
                 <div className="grid gap-2">
@@ -541,6 +546,9 @@ export function LessonRunner({
   if (phase === "intro") {
     return (
       <div className="max-w-2xl mx-auto py-6 space-y-6">
+        <BackLink
+          href={`/chapters?courseId=${encodeURIComponent(courseId)}`}
+        />
         <Card className="border-0 shadow-lg overflow-hidden">
           <div className="bg-gradient-to-br from-primary via-orange-500 to-rose-500 p-8 text-white text-center">
             <div className="text-6xl mb-4">{chapter.icon}</div>
@@ -594,6 +602,9 @@ export function LessonRunner({
   if (phase === "theory") {
     return (
       <div className="max-w-3xl mx-auto py-6 space-y-6">
+        <BackLink
+          href={`/chapters?courseId=${encodeURIComponent(courseId)}`}
+        />
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-2 min-w-0">
             <BookOpen className="h-5 w-5 shrink-0 text-primary" />
@@ -696,6 +707,9 @@ export function LessonRunner({
   if (phase === "dialogue") {
     return (
       <div className="max-w-2xl mx-auto py-6 space-y-6">
+        <BackLink
+          href={`/chapters?courseId=${encodeURIComponent(courseId)}`}
+        />
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <MessageSquare className="h-5 w-5 text-primary" />
@@ -757,7 +771,10 @@ export function LessonRunner({
     );
 
     return (
-      <div className="max-w-2xl mx-auto py-6">
+      <div className="max-w-2xl mx-auto py-6 space-y-6">
+        <BackLink
+          href={`/chapters?courseId=${encodeURIComponent(courseId)}`}
+        />
         <Card className="border-0 shadow-lg overflow-hidden">
           <div className="bg-gradient-to-br from-primary via-orange-500 to-rose-500 p-8 text-white text-center">
             <div className="text-6xl mb-4">🎉</div>

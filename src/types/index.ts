@@ -124,6 +124,11 @@ export interface Exercise {
   type: ExerciseType;
   level: Level;
   question: string;
+  /**
+   * Interface-language gloss of the question (shown in parentheses).
+   * Keyed by UI language, not target language.
+   */
+  questionTranslations?: Partial<Record<InterfaceLanguage, string>>;
   /** Translation hint / instruction (for translation exercises). */
   instruction?: string;
   /** Options for multiple choice / sentence building. */
@@ -369,6 +374,11 @@ export interface StaticExercise {
   id: string;
   type: ExerciseType;
   question: string;
+  /**
+   * Interface-language gloss of the question (shown in parentheses).
+   * Prefer populated maps in bank data; curated fallback via exercise-glosses.
+   */
+  questionTranslations?: Partial<Record<InterfaceLanguage, string>>;
   instruction: string;
   options?: string[];
   answer: string;

@@ -1,4 +1,5 @@
 import type { ExerciseType, InterfaceLanguage, StaticExercise } from "@/types";
+import { lookupCuratedQuestionGloss } from "@/config/exercise-glosses";
 
 // =====================================================================
 // Interface-language handling for the static exercise bank.
@@ -18,6 +19,58 @@ export function hasCyrillicText(s: string | undefined | null): boolean {
 /** Best-effort source language of an authored bank string. */
 export function detectSourceLanguage(s: string): "ru" | "en" {
   return hasCyrillicText(s) ? "ru" : "en";
+}
+
+/**
+ * Interface-language gloss for the exercise prompt (shown in parentheses).
+ * Prefer inline questionTranslations; fall back to curated map by question text.
+ * Skips when gloss equals the visible question or would spoil a same-language prompt.
+ */
+export function getQuestionGloss(
+  exercise: Pick<
+    StaticExercise,
+    "question" | "type" | "questionTranslations"
+  >,
+  interfaceLanguage: InterfaceLanguage,
+): string | null {
+  const q = exercise.question?.trim() ?? "";
+  if (!q) return null;
+
+  const fromItem = exercise.questionTranslations?.[interfaceLanguage]?.trim();
+  const fromMap = lookupCuratedQuestionGloss(q, interfaceLanguage);
+  const gloss = (fromItem || fromMap || "").trim();
+  if (!gloss) return null;
+
+  // Don't repeat the same string the learner already sees.
+  if (normalizeForCompare(gloss) === normalizeForCompare(q)) return null;
+
+  // Translation prompts already written in the UI language need no gloss.
+  if (
+    exercise.type === "translation" &&
+    detectSourceLanguage(q) === interfaceLanguage
+  ) {
+    return null;
+  }
+
+  return gloss;
+}
+
+function normalizeForCompare(s: string): string {
+  return s.replace(/\s+/g, " ").trim().toLowerCase();
+}
+
+/** Render "question (gloss)" when a gloss exists. */
+export function formatQuestionWithGloss(
+  exercise: Pick<
+    StaticExercise,
+    "question" | "type" | "questionTranslations"
+  >,
+  interfaceLanguage: InterfaceLanguage,
+): { question: string; gloss: string | null } {
+  return {
+    question: exercise.question,
+    gloss: getQuestionGloss(exercise, interfaceLanguage),
+  };
 }
 
 const GENERIC_INSTRUCTION: Record<

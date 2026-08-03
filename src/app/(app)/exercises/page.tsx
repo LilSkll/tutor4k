@@ -7,6 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { ExerciseRunner } from "@/components/exercises/exercise-runner";
+import { BackLink } from "@/components/shared/back-link";
 import { getCurrentProfile } from "@/server/actions/data";
 import { translate } from "@/lib/i18n";
 
@@ -17,6 +18,7 @@ export default async function ExercisesPage() {
 
   return (
     <div className="container max-w-3xl py-6 md:py-8 space-y-6">
+      <BackLink href="/dashboard" />
       <div>
         <div className="flex items-center gap-2 mb-1">
           <Dumbbell className="h-6 w-6 text-primary" />

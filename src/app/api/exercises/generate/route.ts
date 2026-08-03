@@ -140,6 +140,7 @@ export async function POST(req: NextRequest) {
       type: staticEx.type,
       level: staticEx.level,
       question: staticEx.question,
+      questionTranslations: staticEx.questionTranslations,
       instruction: localizeExerciseInstruction(staticEx, language),
       options: staticEx.options,
       answer: staticEx.answer,
