@@ -39,6 +39,7 @@ export function OAuthButtons({
   marketingConsent,
   redirect,
   disabled,
+  allowSocialOAuth = true,
 }: {
   mode: "signin" | "signup";
   role: "student" | "teacher";
@@ -48,11 +49,21 @@ export function OAuthButtons({
   marketingConsent: boolean;
   redirect?: string;
   disabled?: boolean;
+  /** When false (e.g. RU geo), hide Google entirely. */
+  allowSocialOAuth?: boolean;
 }) {
   const language = useInterfaceLanguage();
   const t = (key: string) => translate(key, language);
   const [busy, setBusy] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
+
+  if (!allowSocialOAuth) {
+    return (
+      <p className="text-xs text-muted-foreground text-center leading-relaxed pt-1">
+        {t("auth.oauthRuUnavailable")}
+      </p>
+    );
+  }
 
   const signupBlocked =
     mode === "signup" &&
@@ -95,6 +106,9 @@ export function OAuthButtons({
         }
         if (data.error === "teacher_confirm_required") {
           throw new Error(t("auth.oauthNeedTeacher"));
+        }
+        if (data.error === "social_oauth_unavailable") {
+          throw new Error(t("auth.oauthRuUnavailable"));
         }
         throw new Error(t("auth.oauthStartFail"));
       }

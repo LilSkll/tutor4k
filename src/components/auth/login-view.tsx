@@ -10,10 +10,12 @@ export function LoginView({
   error,
   notice,
   redirect,
+  allowSocialOAuth = true,
 }: {
   error?: string;
   notice?: string;
   redirect?: string;
+  allowSocialOAuth?: boolean;
 }) {
   const language = useInterfaceLanguage();
   const t = (key: string) => translate(key, language);
@@ -70,7 +72,11 @@ export function LoginView({
             </div>
           )}
 
-          <AuthForm mode="signin" redirect={redirect} />
+          <AuthForm
+            mode="signin"
+            redirect={redirect}
+            allowSocialOAuth={allowSocialOAuth}
+          />
 
           <p className="mt-6 text-center text-sm text-muted-foreground">
             {t("auth.noAccount")}{" "}

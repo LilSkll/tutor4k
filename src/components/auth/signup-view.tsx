@@ -6,7 +6,13 @@ import { AuthForm } from "@/components/auth/auth-form";
 import { translate } from "@/lib/i18n";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 
-export function SignupView({ error }: { error?: string }) {
+export function SignupView({
+  error,
+  allowSocialOAuth = true,
+}: {
+  error?: string;
+  allowSocialOAuth?: boolean;
+}) {
   const language = useInterfaceLanguage();
   const t = (key: string) => translate(key, language);
 
@@ -45,7 +51,7 @@ export function SignupView({ error }: { error?: string }) {
             </div>
           )}
 
-          <AuthForm mode="signup" />
+          <AuthForm mode="signup" allowSocialOAuth={allowSocialOAuth} />
 
           <p className="mt-6 text-center text-sm text-muted-foreground">
             {t("auth.haveAccount")}{" "}

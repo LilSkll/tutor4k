@@ -16,6 +16,7 @@ import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 interface AuthFormProps {
   mode: "signin" | "signup";
   redirect?: string;
+  allowSocialOAuth?: boolean;
 }
 
 function ConsentCheckbox({
@@ -54,7 +55,11 @@ function ConsentCheckbox({
   );
 }
 
-export function AuthForm({ mode, redirect }: AuthFormProps) {
+export function AuthForm({
+  mode,
+  redirect,
+  allowSocialOAuth = true,
+}: AuthFormProps) {
   const language = useInterfaceLanguage();
   const t = (key: string) => translate(key, language);
   const [pending, startTransition] = useTransition();
@@ -269,6 +274,7 @@ export function AuthForm({ mode, redirect }: AuthFormProps) {
         marketingConsent={marketingConsent}
         redirect={redirect}
         disabled={pending}
+        allowSocialOAuth={allowSocialOAuth}
       />
     </form>
   );
