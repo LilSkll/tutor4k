@@ -2,16 +2,25 @@
 
 import * as React from "react";
 import { useTransition } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { signInWithEmail, signUpWithEmail } from "@/server/actions/auth";
-import { OAuthButtons } from "@/components/auth/oauth-buttons";
 import { AlertTriangle, GraduationCap, Loader2, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { translate } from "@/lib/i18n/auth";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
+
+const OAuthButtons = dynamic(
+  () =>
+    import("@/components/auth/oauth-buttons").then((m) => m.OAuthButtons),
+  {
+    ssr: false,
+    loading: () => <div className="h-11 animate-pulse rounded-md bg-muted/40" />,
+  },
+);
 
 interface AuthFormProps {
   mode: "signin" | "signup";
@@ -265,17 +274,23 @@ export function AuthForm({
             : t("auth.createStudent")}
       </Button>
 
-      <OAuthButtons
-        mode={mode}
-        role={role}
-        teacherConfirm={teacherConfirm}
-        acceptTerms={mode === "signin" ? true : acceptTerms}
-        acceptPrivacy={mode === "signin" ? true : acceptPrivacy}
-        marketingConsent={marketingConsent}
-        redirect={redirect}
-        disabled={pending}
-        allowSocialOAuth={allowSocialOAuth}
-      />
+      {allowSocialOAuth ? (
+        <OAuthButtons
+          mode={mode}
+          role={role}
+          teacherConfirm={teacherConfirm}
+          acceptTerms={mode === "signin" ? true : acceptTerms}
+          acceptPrivacy={mode === "signin" ? true : acceptPrivacy}
+          marketingConsent={marketingConsent}
+          redirect={redirect}
+          disabled={pending}
+          allowSocialOAuth
+        />
+      ) : (
+        <p className="text-center text-xs text-muted-foreground">
+          {t("auth.oauthRuUnavailable")}
+        </p>
+      )}
     </form>
   );
 }

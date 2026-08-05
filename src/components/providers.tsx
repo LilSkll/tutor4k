@@ -1,11 +1,17 @@
 "use client";
 
 import * as React from "react";
+import dynamic from "next/dynamic";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ThemeProvider } from "next-themes";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
-import { CookieBanner } from "@/components/legal/cookie-banner";
+
+const CookieBanner = dynamic(
+  () =>
+    import("@/components/legal/cookie-banner").then((m) => m.CookieBanner),
+  { ssr: false },
+);
 
 /**
  * Top-level client providers:
@@ -13,6 +19,7 @@ import { CookieBanner } from "@/components/legal/cookie-banner";
  *  - next-themes (light/dark)
  *  - Radix tooltip provider
  *  - Sonner toast container
+ *  - Cookie banner (lazy — not on critical path)
  */
 export function Providers({ children }: { children: React.ReactNode }) {
   const [queryClient] = React.useState(
