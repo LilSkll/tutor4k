@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, GraduationCap } from "lucide-react";
 import { AuthForm } from "@/components/auth/auth-form";
 import { BrandIcon } from "@/components/shared/brand-icon";
-import { translate } from "@/lib/i18n";
+import { translate } from "@/lib/i18n/auth";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 
 export function LoginView({

@@ -3,7 +3,7 @@
 import { useSearchParams } from "next/navigation";
 import { X } from "lucide-react";
 import * as React from "react";
-import { translate } from "@/lib/i18n";
+import { translate } from "@/lib/i18n/auth";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 
 /** One-shot banner after email confirmation lands in the app. */

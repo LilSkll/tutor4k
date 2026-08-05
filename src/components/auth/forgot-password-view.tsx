@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, KeyRound } from "lucide-react";
 import { ForgotPasswordForm } from "@/components/auth/forgot-password-form";
 import { BrandIcon } from "@/components/shared/brand-icon";
-import { translate } from "@/lib/i18n";
+import { translate } from "@/lib/i18n/auth";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 
 export function ForgotPasswordView({

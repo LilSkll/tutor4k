@@ -6,7 +6,7 @@ import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { COOKIE_CONSENT_KEY } from "@/config/legal";
 import { useUIStore } from "@/stores";
-import { translate } from "@/lib/i18n";
+import { translate } from "@/lib/i18n/auth";
 
 export function CookieBanner() {
   const language = useUIStore((s) => s.interfaceLanguage);

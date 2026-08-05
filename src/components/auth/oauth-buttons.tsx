@@ -4,7 +4,7 @@ import * as React from "react";
 import { createSupabaseBrowserClient } from "@/lib/supabase-browser";
 import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
-import { translate } from "@/lib/i18n";
+import { translate } from "@/lib/i18n/auth";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 
 function GoogleIcon({ className }: { className?: string }) {

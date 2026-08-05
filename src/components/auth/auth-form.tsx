@@ -10,7 +10,7 @@ import { signInWithEmail, signUpWithEmail } from "@/server/actions/auth";
 import { OAuthButtons } from "@/components/auth/oauth-buttons";
 import { AlertTriangle, GraduationCap, Loader2, Users } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { translate } from "@/lib/i18n";
+import { translate } from "@/lib/i18n/auth";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 
 interface AuthFormProps {

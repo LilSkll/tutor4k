@@ -5,7 +5,7 @@ import { ArrowLeft, LockKeyhole } from "lucide-react";
 import { ResetPasswordForm } from "@/components/auth/reset-password-form";
 import { RecoveryHashSession } from "@/components/auth/recovery-hash-session";
 import { BrandIcon } from "@/components/shared/brand-icon";
-import { translate } from "@/lib/i18n";
+import { translate } from "@/lib/i18n/auth";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 
 export function ResetPasswordView({
