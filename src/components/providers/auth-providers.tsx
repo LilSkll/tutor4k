@@ -1,13 +1,7 @@
 "use client";
 
-import dynamic from "next/dynamic";
 import { ThemeProvider } from "next-themes";
-
-const CookieBanner = dynamic(
-  () =>
-    import("@/components/legal/cookie-banner").then((m) => m.CookieBanner),
-  { ssr: false },
-);
+import { IdleCookieBanner } from "@/components/legal/idle-cookie-banner";
 
 /**
  * Minimal providers for login/signup/legal/marketing.
@@ -22,7 +16,7 @@ export function AuthProviders({ children }: { children: React.ReactNode }) {
       disableTransitionOnChange
     >
       {children}
-      <CookieBanner />
+      <IdleCookieBanner />
     </ThemeProvider>
   );
 }
