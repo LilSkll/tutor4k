@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { LogOut, Menu, MoreHorizontal, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
-import { translate } from "@/lib/i18n";
+import { translate } from "@/lib/i18n/with-teacher";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { signOut } from "@/server/actions/auth";
 import {

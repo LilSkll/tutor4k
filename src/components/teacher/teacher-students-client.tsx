@@ -7,7 +7,7 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { translate } from "@/lib/i18n";
+import { translate } from "@/lib/i18n/with-teacher";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { getCourseTitle } from "@/config/courses";
 import { EmptyState } from "@/components/shared/empty-state";

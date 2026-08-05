@@ -109,11 +109,20 @@ export async function POST(req: NextRequest) {
           { status: 404 },
         );
       }
-      return NextResponse.json({
-        exercises,
-        sessionSize: SESSION_EXERCISES,
-        count: exercises.length,
-      });
+      return NextResponse.json(
+        {
+          exercises,
+          sessionSize: SESSION_EXERCISES,
+          count: exercises.length,
+        },
+        {
+          headers: {
+            // Static bank payload for this type/level; browser may reuse briefly.
+            "Cache-Control":
+              "private, max-age=120, stale-while-revalidate=600",
+          },
+        },
+      );
     }
 
     const picked = await pickStaticExercises({
@@ -156,11 +165,19 @@ export async function POST(req: NextRequest) {
       };
     });
 
-    return NextResponse.json({
-      exercises,
-      sessionSize: SESSION_EXERCISES,
-      count: exercises.length,
-    });
+    return NextResponse.json(
+      {
+        exercises,
+        sessionSize: SESSION_EXERCISES,
+        count: exercises.length,
+      },
+      {
+        headers: {
+          "Cache-Control":
+            "private, max-age=120, stale-while-revalidate=600",
+        },
+      },
+    );
   } catch (err) {
     console.error("[/api/exercises/generate]", err);
     return NextResponse.json(

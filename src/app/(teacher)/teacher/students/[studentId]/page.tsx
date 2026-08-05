@@ -2,7 +2,7 @@ import Link from "next/link";
 import { requireTeacherStudioAccess } from "@/server/teacher/authz";
 import { listTeacherStudents } from "@/server/teacher/links";
 import { TeacherStudentCardClient } from "@/components/teacher/teacher-student-card-client";
-import { translate } from "@/lib/i18n";
+import { translate } from "@/lib/i18n/with-teacher";
 
 export default async function TeacherStudentCardPage({
   params,

@@ -1,18 +1,7 @@
 "use client";
 
 import * as React from "react";
-import {
-  Bar,
-  BarChart,
-  CartesianGrid,
-  Cell,
-  Pie,
-  PieChart,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from "recharts";
+import dynamic from "next/dynamic";
 import {
   Award,
   Download,
@@ -22,6 +11,30 @@ import {
   TrendingDown,
   TrendingUp,
 } from "lucide-react";
+
+const ActivityBarChart = dynamic(
+  () =>
+    import("@/components/progress/progress-charts").then(
+      (m) => m.ActivityBarChart,
+    ),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="h-full animate-pulse rounded-md bg-muted/40" aria-hidden />
+    ),
+  },
+);
+
+const TypePieChart = dynamic(
+  () =>
+    import("@/components/progress/progress-charts").then((m) => m.TypePieChart),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="h-full animate-pulse rounded-md bg-muted/40" aria-hidden />
+    ),
+  },
+);
 import {
   Card,
   CardContent,
@@ -236,31 +249,7 @@ export function ProgressClient({
             </CardHeader>
             <CardContent>
               <div className="h-64">
-                <ResponsiveContainer width="100%" height="100%">
-                  <BarChart data={chartData}>
-                    <CartesianGrid strokeDasharray="3 3" className="stroke-muted" />
-                    <XAxis
-                      dataKey="date"
-                      tick={{ fontSize: 10 }}
-                      interval={4}
-                      className="fill-muted-foreground"
-                    />
-                    <YAxis tick={{ fontSize: 11 }} className="fill-muted-foreground" />
-                    <Tooltip
-                      contentStyle={{
-                        backgroundColor: "hsl(var(--popover))",
-                        border: "1px solid hsl(var(--border))",
-                        borderRadius: "8px",
-                        fontSize: "12px",
-                      }}
-                    />
-                    <Bar
-                      dataKey="minutes"
-                      fill="hsl(var(--primary))"
-                      radius={[4, 4, 0, 0]}
-                    />
-                  </BarChart>
-                </ResponsiveContainer>
+                <ActivityBarChart data={chartData} />
               </div>
             </CardContent>
           </Card>
@@ -306,31 +295,7 @@ export function ProgressClient({
                 </CardHeader>
                 <CardContent>
                   <div className="h-48">
-                    <ResponsiveContainer width="100%" height="100%">
-                      <PieChart>
-                        <Pie
-                          data={byType}
-                          dataKey="value"
-                          nameKey="name"
-                          cx="50%"
-                          cy="50%"
-                          outerRadius={70}
-                          innerRadius={40}
-                        >
-                          {byType.map((entry, i) => (
-                            <Cell key={i} fill={entry.color} />
-                          ))}
-                        </Pie>
-                        <Tooltip
-                          contentStyle={{
-                            backgroundColor: "hsl(var(--popover))",
-                            border: "1px solid hsl(var(--border))",
-                            borderRadius: "8px",
-                            fontSize: "12px",
-                          }}
-                        />
-                      </PieChart>
-                    </ResponsiveContainer>
+                    <TypePieChart data={byType} />
                   </div>
                   <div className="flex flex-wrap gap-2 justify-center mt-2">
                     {byType.map((t) => (

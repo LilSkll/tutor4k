@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
-import { translate } from "@/lib/i18n";
+import { translate } from "@/lib/i18n/with-teacher";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { getCourseTitle } from "@/config/courses";
 import type { TeacherAssignmentDTO } from "@/types/assignments";

@@ -12,7 +12,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { translate } from "@/lib/i18n";
+import { translate } from "@/lib/i18n/with-teacher";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { getCourseTitle } from "@/config/courses";
 import type { TeacherAnalyticsDTO } from "@/types/teacher";

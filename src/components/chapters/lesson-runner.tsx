@@ -20,13 +20,6 @@ import { Input } from "@/components/ui/input";
 import { Markdown } from "@/components/shared/markdown";
 import { useLocalizedGrammarArticle } from "@/hooks/use-localized-grammar-article";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
-import { getGrammarTopicTitle } from "@/lib/grammar-display";
-import {
-  getChapterAchievementBullets,
-  getChapterLocation,
-  getChapterSummary,
-  getChapterTitle,
-} from "@/lib/chapter-display";
 import { translate } from "@/lib/i18n";
 import { SESSION_EXERCISES } from "@/lib/exercise-bank";
 import { normalizeAnswer, scorePercent } from "@/lib/normalize-answer";
@@ -34,7 +27,6 @@ import { formatBankTutorFeedback } from "@/lib/tutor-feedback";
 import { trackEvent } from "@/lib/analytics";
 import { getLessonAdaptationAction } from "@/server/actions/learning-profile";
 import type { StaticExercise } from "@/types";
-import type { GrammarTopicMeta } from "@/lib/grammar-topic-meta";
 import type { LessonAdaptation } from "@/types/learning-profile";
 import { BackLink } from "@/components/shared/back-link";
 import { QuestionWithGloss } from "@/components/exercises/question-with-gloss";
@@ -57,9 +49,14 @@ interface LessonRunnerProps {
   courseId: string;
   userName: string;
   grammarTopicSlug: string;
-  grammarTopic?: GrammarTopicMeta | null;
+  /** Localized grammar topic title (server-prepared). */
+  grammarTitle: string | null;
   /** Localized story from the server (avoids shipping the full stories bank). */
   chapterStory: string | null;
+  chapterDisplayTitle: string;
+  chapterDisplaySummary: string;
+  chapterDisplayLocation: string;
+  achievementBullets: string[];
   exercises: StaticExercise[];
   nextChapterSlug: string | null;
   nextChapterTitle?: string | null;
@@ -73,8 +70,12 @@ export function LessonRunner({
   courseId,
   userName,
   grammarTopicSlug,
-  grammarTopic,
+  grammarTitle,
   chapterStory,
+  chapterDisplayTitle,
+  chapterDisplaySummary,
+  chapterDisplayLocation,
+  achievementBullets,
   exercises: presetExercises,
   nextChapterSlug,
   nextChapterTitle = null,
@@ -86,13 +87,7 @@ export function LessonRunner({
   const t = (key: string, vars?: Record<string, string | number>) =>
     translate(key, language, { targetLanguage, ...vars });
 
-  const grammarTitle = grammarTopic
-    ? getGrammarTopicTitle(grammarTopic, language)
-    : getChapterTitle(chapter, language);
-
-  const chapterDisplayTitle = getChapterTitle(chapter, language);
-  const chapterDisplaySummary = getChapterSummary(chapter, language);
-  const chapterDisplayLocation = getChapterLocation(chapter, language);
+  const displayGrammarTitle = grammarTitle ?? chapterDisplayTitle;
 
   const {
     content: grammarContent,
@@ -326,7 +321,7 @@ export function LessonRunner({
   const askTutor = async () => {
     const question =
       dialogueInput.trim() ||
-      t("lesson.defaultQuestion", { topic: grammarTitle });
+      t("lesson.defaultQuestion", { topic: displayGrammarTitle });
     setLoading(true);
     setDialogueResponse(null);
     try {
@@ -403,10 +398,10 @@ export function LessonRunner({
 
   const introBody =
     adaptation?.mode === "mastered_short"
-      ? t("lesson.introMastered", { topic: grammarTitle })
+      ? t("lesson.introMastered", { topic: displayGrammarTitle })
       : adaptation?.mode === "supportive"
-        ? t("lesson.introSupportive", { topic: grammarTitle })
-        : t("lesson.introMessage", { topic: grammarTitle });
+        ? t("lesson.introSupportive", { topic: displayGrammarTitle })
+        : t("lesson.introMessage", { topic: displayGrammarTitle });
 
   const renderPractice = (kind: PracticeKind) => {
     if (exercises.length === 0) return null;
@@ -618,7 +613,7 @@ export function LessonRunner({
           <CardContent className="p-6">
             <div className="flex items-center gap-2 mb-4">
               <Badge variant="level">{chapter.level}</Badge>
-              <span className="text-sm text-muted-foreground">{grammarTitle}</span>
+              <span className="text-sm text-muted-foreground">{displayGrammarTitle}</span>
             </div>
             {grammarLoading ? (
               <p className="text-sm text-muted-foreground flex items-center gap-2">
@@ -713,7 +708,7 @@ export function LessonRunner({
           <CardContent className="p-6 space-y-4">
             <p className="text-base text-muted-foreground">
               <span className="text-2xl">🦅</span>{" "}
-              {t("lesson.dialoguePrompt", { topic: grammarTitle })}
+              {t("lesson.dialoguePrompt", { topic: displayGrammarTitle })}
             </p>
             <Input
               value={dialogueInput}
@@ -756,11 +751,7 @@ export function LessonRunner({
   }
 
   if (phase === "summary") {
-    const achievements = getChapterAchievementBullets(
-      chapter,
-      language,
-      grammarTitle,
-    );
+    const achievements = achievementBullets;
 
     return (
       <div className="max-w-2xl mx-auto py-6 space-y-6">

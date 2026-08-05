@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { requireTeacherStudioAccess } from "@/server/teacher/authz";
 import { ChangePasswordCard } from "@/components/auth/change-password-card";
 import { TeacherLanguageCard } from "@/components/teacher/teacher-language-card";
-import { translate } from "@/lib/i18n";
+import { translate } from "@/lib/i18n/with-teacher";
 
 export default async function TeacherSettingsPage() {
   const profile = await requireTeacherStudioAccess();

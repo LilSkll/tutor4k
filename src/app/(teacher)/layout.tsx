@@ -1,6 +1,6 @@
 import { requireTeacherStudioAccess } from "@/server/teacher/authz";
 import { TeacherShell } from "@/components/teacher/teacher-shell";
-import { translate } from "@/lib/i18n";
+import { translate } from "@/lib/i18n/with-teacher";
 
 export default async function TeacherLayout({
   children,

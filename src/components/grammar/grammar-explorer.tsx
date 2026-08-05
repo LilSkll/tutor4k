@@ -14,14 +14,9 @@ import {
 import { Markdown } from "@/components/shared/markdown";
 import { useLocalizedGrammarArticle } from "@/hooks/use-localized-grammar-article";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
-import {
-  getGrammarCategory,
-  getGrammarSummary,
-  getGrammarTopicTitle,
-} from "@/lib/grammar-display";
 import { translate } from "@/lib/i18n";
 import type { GrammarLevel } from "@/types";
-import type { GrammarTopicMeta } from "@/lib/grammar-topic-meta";
+import type { LocalizedGrammarTopicMeta } from "@/lib/grammar-topic-meta";
 import { cn } from "@/lib/utils";
 
 const LEVEL_COLORS: Record<GrammarLevel, string> = {
@@ -39,7 +34,7 @@ export function GrammarExplorer({
   courseId,
 }: {
   initialLevel?: GrammarLevel;
-  topics: GrammarTopicMeta[];
+  topics: LocalizedGrammarTopicMeta[];
   courseId: string;
 }) {
   const searchParams = useSearchParams();
@@ -110,8 +105,8 @@ export function GrammarExplorer({
 
       <div className="grid gap-3 md:grid-cols-2">
         {filtered.map((topic) => {
-          const title = getGrammarTopicTitle(topic, language);
-          const summary = getGrammarSummary(topic, language);
+          const title = topic.localizedTitle;
+          const summary = topic.localizedSummary;
           return (
             <button
               key={topic.slug}
@@ -126,7 +121,7 @@ export function GrammarExplorer({
               <div className="flex items-center justify-between mb-1">
                 <Badge variant="level">{topic.level}</Badge>
                 <span className="text-[10px] opacity-70">
-                  {getGrammarCategory(topic, language)}
+                  {topic.localizedCategory}
                 </span>
               </div>
               <h3 className="font-semibold text-foreground">{title}</h3>
@@ -149,19 +144,19 @@ export function GrammarExplorer({
         <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto">
           {selectedTopic &&
             (() => {
-              const title = getGrammarTopicTitle(selectedTopic, language);
+              const title = selectedTopic.localizedTitle;
               return (
                 <>
                   <DialogHeader>
                     <div className="flex items-center gap-2">
                       <Badge variant="level">{selectedTopic.level}</Badge>
                       <span className="text-xs text-muted-foreground">
-                        {getGrammarCategory(selectedTopic, language)}
+                        {selectedTopic.localizedCategory}
                       </span>
                     </div>
                     <DialogTitle className="text-xl">{title}</DialogTitle>
                     <p className="text-sm text-muted-foreground">
-                      {getGrammarSummary(selectedTopic, language)}
+                      {selectedTopic.localizedSummary}
                     </p>
                   </DialogHeader>
 

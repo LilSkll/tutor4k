@@ -1,6 +1,7 @@
 import { getCourse } from "@/config/courses";
 import { getCurrentProfile } from "@/server/actions/data";
 import { GrammarPageClient } from "@/components/grammar/grammar-page-client";
+import { localizeGrammarTopicMetaList } from "@/lib/grammar-topic-localize";
 import { toGrammarTopicMetaList } from "@/lib/grammar-topic-meta";
 import type { GrammarLevel } from "@/types";
 
@@ -15,14 +16,18 @@ export default async function GrammarPage({
   const profile = await getCurrentProfile();
   const courseId = profile?.active_course_id ?? "spanish";
   const course = await getCourse(courseId);
-  // List payload: metadata only — article markdown loads on open via API.
-  const grammarTopics = toGrammarTopicMetaList(course.getGrammar());
+  const lang = profile?.interface_language ?? "ru";
+  // List payload: metadata + localized labels — article markdown loads on open.
+  const grammarTopics = localizeGrammarTopicMetaList(
+    toGrammarTopicMetaList(course.getGrammar()),
+    lang,
+  );
 
   return (
     <GrammarPageClient
       topics={grammarTopics}
       courseId={courseId}
-      serverLanguage={profile?.interface_language ?? "ru"}
+      serverLanguage={lang}
       initialLevel={params.level as GrammarLevel | undefined}
     />
   );

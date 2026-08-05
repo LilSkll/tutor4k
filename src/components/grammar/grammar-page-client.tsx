@@ -12,15 +12,10 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { GrammarExplorer } from "@/components/grammar/grammar-explorer";
-import {
-  getGrammarCategory,
-  getGrammarSummary,
-  getGrammarTopicTitle,
-} from "@/lib/grammar-display";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { translate } from "@/lib/i18n";
 import type { GrammarLevel, InterfaceLanguage } from "@/types";
-import type { GrammarTopicMeta } from "@/lib/grammar-topic-meta";
+import type { LocalizedGrammarTopicMeta } from "@/lib/grammar-topic-meta";
 
 export function GrammarPageClient({
   topics,
@@ -28,7 +23,7 @@ export function GrammarPageClient({
   serverLanguage,
   initialLevel,
 }: {
-  topics: GrammarTopicMeta[];
+  topics: LocalizedGrammarTopicMeta[];
   courseId: string;
   serverLanguage?: InterfaceLanguage;
   initialLevel?: GrammarLevel;
@@ -58,7 +53,7 @@ export function GrammarPageClient({
           <h2 className="font-semibold mb-3">{t("grammar.allTopicsTitle")}</h2>
           <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3">
             {topics.map((topic) => {
-              const title = getGrammarTopicTitle(topic, language);
+              const title = topic.localizedTitle;
               const subtitle =
                 language !== "ru" && topic.titleEs !== title
                   ? topic.titleEs
@@ -69,19 +64,20 @@ export function GrammarPageClient({
                     <div className="flex items-center justify-between">
                       <Badge variant="level">{topic.level}</Badge>
                       <span className="text-xs text-muted-foreground">
-                        {getGrammarCategory(topic, language)}
+                        {topic.localizedCategory}
                       </span>
                     </div>
                     <CardTitle className="text-base mt-2">
                       {title}
                       {subtitle && (
                         <span className="text-muted-foreground font-normal">
-                          {" "}— {subtitle}
+                          {" "}
+                          — {subtitle}
                         </span>
                       )}
                     </CardTitle>
                     <CardDescription className="text-xs">
-                      {getGrammarSummary(topic, language)}
+                      {topic.localizedSummary}
                     </CardDescription>
                   </CardHeader>
                   <CardContent>
@@ -102,9 +98,7 @@ export function GrammarPageClient({
             })}
           </div>
         </div>
-      ) : (
-        <p className="text-sm text-muted-foreground">{t("grammar.emptyTopics")}</p>
-      )}
+      ) : null}
     </div>
   );
 }

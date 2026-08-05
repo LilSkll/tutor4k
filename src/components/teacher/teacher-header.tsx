@@ -1,7 +1,7 @@
 "use client";
 
 import { ThemeToggle } from "@/components/shared/theme-toggle";
-import { translate } from "@/lib/i18n";
+import { translate } from "@/lib/i18n/with-teacher";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 
 export function TeacherHeader(_props: { title?: string }) {

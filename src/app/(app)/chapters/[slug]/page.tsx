@@ -6,6 +6,8 @@ import {
 import { getCourse } from "@/config/courses";
 import { LessonRunner } from "@/components/chapters/lesson-runner";
 import {
+  getChapterAchievementBullets,
+  getChapterLocation,
   getChapterSummary,
   getChapterTitle,
   hasCompletedPrereqChain,
@@ -13,6 +15,7 @@ import {
 import { prepareExercisesForInterface } from "@/lib/exercise-localize";
 import { attachQuestionGlossesToMany } from "@/lib/exercise-gloss-attach";
 import { getChapterStory } from "@/config/chapter-stories";
+import { localizeGrammarTopicMeta } from "@/lib/grammar-topic-localize";
 import { toGrammarTopicMeta } from "@/lib/grammar-topic-meta";
 
 export default async function ChapterPage({
@@ -63,7 +66,20 @@ export default async function ChapterPage({
   const exercises = attachQuestionGlossesToMany(
     prepareExercisesForInterface(course.getExercises(slug), lang),
   );
-  const chapterStory = getChapterStory(slug, lang);
+  const chapterStory = await getChapterStory(slug, lang);
+  const grammarMeta = grammarTopic ? toGrammarTopicMeta(grammarTopic) : null;
+  const grammarLocalized = grammarMeta
+    ? localizeGrammarTopicMeta(grammarMeta, lang)
+    : null;
+  const chapterDisplayTitle = getChapterTitle(chapter, lang);
+  const chapterDisplaySummary = getChapterSummary(chapter, lang);
+  const chapterDisplayLocation = getChapterLocation(chapter, lang);
+  const grammarTitle = grammarLocalized?.localizedTitle ?? null;
+  const achievementBullets = getChapterAchievementBullets(
+    chapter,
+    lang,
+    grammarTitle,
+  );
 
   return (
     <LessonRunner
@@ -71,8 +87,12 @@ export default async function ChapterPage({
       courseId={courseId}
       userName={profile?.name ?? ""}
       grammarTopicSlug={chapter.grammarTopic}
-      grammarTopic={grammarTopic ? toGrammarTopicMeta(grammarTopic) : null}
+      grammarTitle={grammarTitle}
       chapterStory={chapterStory}
+      chapterDisplayTitle={chapterDisplayTitle}
+      chapterDisplaySummary={chapterDisplaySummary}
+      chapterDisplayLocation={chapterDisplayLocation}
+      achievementBullets={achievementBullets}
       exercises={exercises}
       nextChapterSlug={nextChapter?.slug ?? null}
       nextChapterTitle={

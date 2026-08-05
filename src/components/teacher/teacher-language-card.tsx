@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 import { INTERFACE_LANGUAGES } from "@/config/app";
 import { updateProfile } from "@/server/actions/auth";
 import { useUIStore } from "@/stores";
-import { translate } from "@/lib/i18n";
+import { translate } from "@/lib/i18n/with-teacher";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import type { InterfaceLanguage } from "@/types";
 import { cn } from "@/lib/utils";

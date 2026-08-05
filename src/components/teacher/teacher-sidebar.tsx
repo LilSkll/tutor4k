@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { LogOut } from "lucide-react";
-import { translate } from "@/lib/i18n";
+import { translate } from "@/lib/i18n/with-teacher";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { signOut } from "@/server/actions/auth";
 import { TEACHER_NAV, isTeacherNavActive } from "@/lib/teacher-nav";
