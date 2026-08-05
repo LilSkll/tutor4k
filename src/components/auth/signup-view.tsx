@@ -1,20 +1,20 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowLeft, Sparkles } from "lucide-react";
 import { AuthForm } from "@/components/auth/auth-form";
 import { BrandIcon } from "@/components/shared/brand-icon";
 import { translate } from "@/lib/i18n/auth";
-import { useInterfaceLanguage } from "@/hooks/use-interface-language";
+import type { InterfaceLanguage } from "@/types";
 
+/** Server-rendered signup chrome; only AuthForm hydrates on the client. */
 export function SignupView({
+  language,
   error,
   allowSocialOAuth = true,
 }: {
+  language: InterfaceLanguage;
   error?: string;
   allowSocialOAuth?: boolean;
 }) {
-  const language = useInterfaceLanguage();
   const t = (key: string) => translate(key, language);
 
   return (

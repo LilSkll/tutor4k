@@ -3,6 +3,7 @@ import {
   getRequestCountryCode,
   isSocialOAuthAllowedForCountry,
 } from "@/lib/geo";
+import { getRequestInterfaceLanguage } from "@/lib/request-language";
 
 export default async function SignupPage({
   searchParams,
@@ -10,10 +11,17 @@ export default async function SignupPage({
   searchParams: Promise<{ error?: string }>;
 }) {
   const sp = await searchParams;
-  const country = await getRequestCountryCode();
+  const [country, language] = await Promise.all([
+    getRequestCountryCode(),
+    getRequestInterfaceLanguage(),
+  ]);
   const allowSocialOAuth = isSocialOAuthAllowedForCountry(country);
 
   return (
-    <SignupView error={sp.error} allowSocialOAuth={allowSocialOAuth} />
+    <SignupView
+      language={language}
+      error={sp.error}
+      allowSocialOAuth={allowSocialOAuth}
+    />
   );
 }
