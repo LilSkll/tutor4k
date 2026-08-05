@@ -61,7 +61,7 @@ export function OnboardingFlow({ error }: { error?: string }) {
             <>
               <div className="bg-gradient-to-br from-primary via-orange-500 to-rose-500 p-8 text-center rounded-t-xl">
                 <img
-                  src="/hippogriff-icon.png"
+                  src="/hippogriff-icon.webp"
                   alt=""
                   className="mx-auto mb-4 h-16 w-16 rounded-2xl shadow-lg"
                 />

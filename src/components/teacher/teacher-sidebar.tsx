@@ -26,7 +26,7 @@ export function TeacherSidebar({
     <aside className="hidden md:flex w-[240px] flex-col border-r border-border/60 bg-card/80 backdrop-blur-xl">
       <div className="flex h-16 items-center gap-3 border-b border-border/60 px-5">
         <Image
-          src="/hippogriff-icon.png"
+          src="/hippogriff-icon.webp"
           alt="Spanish with Pavel"
           width={40}
           height={40}

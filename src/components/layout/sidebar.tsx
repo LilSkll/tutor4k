@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Flame, LogOut } from "lucide-react";
@@ -8,6 +7,7 @@ import { useUIStore } from "@/stores";
 import { translate } from "@/lib/i18n";
 import { NAV_SECTIONS, isNavActive } from "@/lib/nav";
 import { signOut } from "@/server/actions/auth";
+import { BrandIcon } from "@/components/shared/brand-icon";
 import { cn } from "@/lib/utils";
 
 interface NavProps {
@@ -36,11 +36,8 @@ export function Sidebar({ userName, level, streak }: NavProps) {
           collapsed ? "justify-center px-2" : "px-5",
         )}
       >
-        <Image
-          src="/hippogriff-icon.png"
-          alt="Spanish with Pavel"
-          width={40}
-          height={40}
+        <BrandIcon
+          size={40}
           className="h-10 w-10 shrink-0 rounded-xl shadow-soft"
         />
         {!collapsed && (

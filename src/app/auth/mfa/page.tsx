@@ -15,7 +15,7 @@ export default function MfaChallengePage() {
         </Link>
         <div className="flex items-center gap-2 mb-6">
           <img
-            src="/hippogriff-icon.png"
+            src="/hippogriff-icon.webp"
             alt="Spanish with Pavel"
             className="h-10 w-10 rounded-lg"
           />

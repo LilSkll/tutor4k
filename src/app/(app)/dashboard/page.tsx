@@ -363,7 +363,7 @@ export default async function DashboardPage() {
               <p className="meta-label mb-2">{t("dashboard.wordOfDay")}</p>
               <div className="flex items-start gap-3">
                 <Image
-                  src="/hippogriff-icon.png"
+                  src="/hippogriff-icon.webp"
                   alt=""
                   width={40}
                   height={40}

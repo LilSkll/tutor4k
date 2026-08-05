@@ -14,10 +14,12 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { BrandIcon } from "@/components/shared/brand-icon";
 import { useUIStore } from "@/stores";
 import { translate } from "@/lib/i18n";
 import { LegalFooterLinks } from "@/components/legal/legal-footer-links";
 import { ConfirmEmailHashRedirect } from "@/components/auth/confirm-email-hash-redirect";
+import Image from "next/image";
 
 const FEATURE_KEYS = [
   { icon: Brain, titleKey: "feature.ai.title", descKey: "feature.ai.desc" },
@@ -41,11 +43,7 @@ export default function LandingPage() {
       <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur-md">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
-            <img
-              src="/hippogriff-icon.png"
-              alt="Spanish with Pavel"
-              className="h-10 w-10 rounded-lg shadow-md"
-            />
+            <BrandIcon size={40} priority className="h-10 w-10 shadow-md" />
             <span className="font-bold text-lg gradient-text">Spanish with Pavel</span>
           </div>
           <div className="flex items-center gap-2">
@@ -90,9 +88,13 @@ export default function LandingPage() {
 
         {/* Hippogriff mascot illustration */}
         <div className="mt-8 mb-4 flex justify-center animate-fade-in">
-          <img
-            src="/hippogriff-hero.jpg"
+          <Image
+            src="/hippogriff-hero-768.webp"
             alt="Талисман приложения — гиппогриф"
+            width={320}
+            height={320}
+            priority
+            sizes="(max-width: 768px) 256px, 320px"
             className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-3xl shadow-2xl border-4 border-primary/20"
           />
         </div>
@@ -150,11 +152,7 @@ export default function LandingPage() {
         <div className="container flex flex-col items-center gap-3 text-sm text-muted-foreground">
           <div className="flex flex-col md:flex-row items-center justify-between w-full gap-4">
             <div className="flex items-center gap-2">
-              <img
-                src="/hippogriff-icon.png"
-                alt="Spanish with Pavel"
-                className="h-7 w-7 rounded-md"
-              />
+              <BrandIcon size={28} className="h-7 w-7 rounded-md" />
               <span>Spanish with Pavel © {new Date().getFullYear()}</span>
             </div>
             <p>{t("landing.footer")}</p>

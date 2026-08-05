@@ -186,7 +186,7 @@ export function TutorChat() {
         <div className="flex items-center gap-3 min-w-0">
           <div className="relative shrink-0">
             <Image
-              src="/hippogriff-icon.png"
+              src="/hippogriff-icon.webp"
               alt=""
               width={40}
               height={40}
@@ -301,7 +301,7 @@ function MessageBubble({
         </div>
       ) : (
         <Image
-          src="/hippogriff-icon.png"
+          src="/hippogriff-icon.webp"
           alt=""
           width={36}
           height={36}
@@ -362,7 +362,7 @@ function EmptyState({
       <div className="relative mb-5">
         <div className="absolute inset-0 rounded-full bg-primary/15 blur-2xl" />
         <Image
-          src="/hippogriff-icon.png"
+          src="/hippogriff-icon.webp"
           alt=""
           width={80}
           height={80}

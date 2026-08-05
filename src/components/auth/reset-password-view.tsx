@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowLeft, LockKeyhole } from "lucide-react";
 import { ResetPasswordForm } from "@/components/auth/reset-password-form";
 import { RecoveryHashSession } from "@/components/auth/recovery-hash-session";
+import { BrandIcon } from "@/components/shared/brand-icon";
 import { translate } from "@/lib/i18n";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 
@@ -31,12 +32,7 @@ export function ResetPasswordView({
           </Link>
 
           <div className="flex items-center gap-2 mb-6">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/hippogriff-icon.png"
-              alt="Spanish with Pavel"
-              className="h-10 w-10 rounded-lg"
-            />
+            <BrandIcon size={40} priority className="h-10 w-10" />
             <span className="font-bold text-xl gradient-text">
               Spanish with Pavel
             </span>
