@@ -1,7 +1,10 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
-/** Brand mark — WebP at display size to keep LCP cheap on auth/marketing. */
+/**
+ * Brand mark served as a pre-sized static WebP.
+ * `unoptimized` avoids an extra Vercel image-optimizer hop on LCP paths.
+ */
 export function BrandIcon({
   size = 40,
   priority = false,
@@ -20,6 +23,7 @@ export function BrandIcon({
       width={size}
       height={size}
       priority={priority}
+      unoptimized
       className={cn("rounded-lg", className)}
     />
   );

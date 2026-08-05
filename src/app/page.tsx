@@ -94,6 +94,7 @@ export default function LandingPage() {
             width={320}
             height={320}
             priority
+            unoptimized
             sizes="(max-width: 768px) 256px, 320px"
             className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-3xl shadow-2xl border-4 border-primary/20"
           />
