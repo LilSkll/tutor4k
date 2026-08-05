@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Loader2 } from "lucide-react";
 import { translate } from "@/lib/i18n/auth";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
+import type { InterfaceLanguage } from "@/types";
 
 function GoogleIcon({ className }: { className?: string }) {
   return (
@@ -40,6 +41,7 @@ export function OAuthButtons({
   redirect,
   disabled,
   allowSocialOAuth = true,
+  language: languageProp,
 }: {
   mode: "signin" | "signup";
   role: "student" | "teacher";
@@ -51,8 +53,11 @@ export function OAuthButtons({
   disabled?: boolean;
   /** When false (e.g. RU geo), hide Google entirely. */
   allowSocialOAuth?: boolean;
+  /** Prefer server/parent language to avoid Zustand on auth TTI path. */
+  language?: InterfaceLanguage;
 }) {
-  const language = useInterfaceLanguage();
+  const storeLanguage = useInterfaceLanguage(languageProp);
+  const language = languageProp ?? storeLanguage;
   const t = (key: string) => translate(key, language);
   const [busy, setBusy] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);

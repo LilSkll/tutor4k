@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { ArrowLeft, Sparkles } from "lucide-react";
-import { AuthForm } from "@/components/auth/auth-form";
+import { AuthFormNative } from "@/components/auth/auth-form-native";
 import { BrandIcon } from "@/components/shared/brand-icon";
 import { translate } from "@/lib/i18n/auth";
 import type { InterfaceLanguage } from "@/types";
 
-/** Server-rendered signup chrome; only AuthForm hydrates on the client. */
+/** Server-rendered signup; fields/submit work before client JS. */
 export function SignupView({
   language,
   error,
@@ -47,7 +47,11 @@ export function SignupView({
             </div>
           )}
 
-          <AuthForm mode="signup" allowSocialOAuth={allowSocialOAuth} />
+          <AuthFormNative
+            mode="signup"
+            language={language}
+            allowSocialOAuth={allowSocialOAuth}
+          />
 
           <p className="mt-6 text-center text-sm text-muted-foreground">
             {t("auth.haveAccount")}{" "}

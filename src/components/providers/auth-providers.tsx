@@ -1,22 +1,14 @@
-"use client";
-
-import { ThemeProvider } from "next-themes";
 import { IdleCookieBanner } from "@/components/legal/idle-cookie-banner";
 
 /**
- * Minimal providers for login/signup/legal/marketing.
- * No React Query, Tooltip, or Sonner — cuts auth hydration work.
+ * Auth/marketing shell — no ThemeProvider / React Query / tooltips.
+ * Dark mode via `.auth-shell` + prefers-color-scheme (see globals.css).
  */
 export function AuthProviders({ children }: { children: React.ReactNode }) {
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
-    >
+    <div className="auth-shell min-h-dvh bg-background text-foreground">
       {children}
       <IdleCookieBanner />
-    </ThemeProvider>
+    </div>
   );
 }

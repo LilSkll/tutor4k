@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { ArrowLeft, GraduationCap } from "lucide-react";
-import { AuthForm } from "@/components/auth/auth-form";
+import { AuthFormNative } from "@/components/auth/auth-form-native";
 import { BrandIcon } from "@/components/shared/brand-icon";
 import { translate } from "@/lib/i18n/auth";
 import type { InterfaceLanguage } from "@/types";
 
-/** Server-rendered login chrome; only AuthForm hydrates on the client. */
+/** Server-rendered login; email/password work before client JS. */
 export function LoginView({
   language,
   error,
@@ -68,8 +68,9 @@ export function LoginView({
             </div>
           )}
 
-          <AuthForm
+          <AuthFormNative
             mode="signin"
+            language={language}
             redirect={redirect}
             allowSocialOAuth={allowSocialOAuth}
           />
