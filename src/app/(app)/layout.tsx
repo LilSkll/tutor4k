@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { getCurrentProfile } from "@/server/actions/data";
 import { assertStudentJourneyAccess } from "@/server/teacher/authz";
 import { AppShell } from "@/components/layout/app-shell";
+import { inter } from "@/lib/fonts";
 
 export default async function AppLayout({
   children,
@@ -16,5 +17,9 @@ export default async function AppLayout({
 
   if (!profile.onboarded) redirect("/onboarding");
 
-  return <AppShell profile={profile}>{children}</AppShell>;
+  return (
+    <div className={`${inter.variable} font-sans`}>
+      <AppShell profile={profile}>{children}</AppShell>
+    </div>
+  );
 }

@@ -1,6 +1,7 @@
 import { requireTeacherStudioAccess } from "@/server/teacher/authz";
 import { TeacherShell } from "@/components/teacher/teacher-shell";
 import { translate } from "@/lib/i18n/with-teacher";
+import { inter } from "@/lib/fonts";
 
 export default async function TeacherLayout({
   children,
@@ -12,8 +13,10 @@ export default async function TeacherLayout({
   const title = translate("teacher.studioTitle", lang);
 
   return (
-    <TeacherShell profile={profile} headerTitle={title}>
-      {children}
-    </TeacherShell>
+    <div className={`${inter.variable} font-sans`}>
+      <TeacherShell profile={profile} headerTitle={title}>
+        {children}
+      </TeacherShell>
+    </div>
   );
 }
