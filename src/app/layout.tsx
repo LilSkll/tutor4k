@@ -1,6 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { Providers } from "@/components/providers";
 import { VercelAnalytics } from "@/components/analytics/vercel-analytics";
 
 export const metadata: Metadata = {
@@ -35,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <body className="font-sans antialiased">
-        <Providers>{children}</Providers>
+        {children}
         <VercelAnalytics />
       </body>
     </html>
