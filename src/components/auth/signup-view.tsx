@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { ArrowLeft, Sparkles } from "lucide-react";
 import { AuthFormNative } from "@/components/auth/auth-form-native";
+import { IconArrowLeft, IconSparkles } from "@/components/auth/auth-icons";
 import { BrandIcon } from "@/components/shared/brand-icon";
 import { translate } from "@/lib/i18n/auth";
 import type { InterfaceLanguage } from "@/types";
@@ -25,7 +25,7 @@ export function SignupView({
             href="/"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-8"
           >
-            <ArrowLeft className="h-4 w-4" />
+            <IconArrowLeft className="h-4 w-4" />
             {t("auth.backHome")}
           </Link>
 
@@ -86,7 +86,7 @@ export function SignupView({
           </div>
         </div>
         <div className="relative text-center text-white max-w-md">
-          <Sparkles className="h-16 w-16 mx-auto mb-6 opacity-90" />
+          <IconSparkles className="h-16 w-16 mx-auto mb-6 opacity-90" />
           <h2 className="text-3xl font-bold mb-3">{t("auth.heroSide.signup")}</h2>
           <p className="text-white/90">{t("auth.heroSide.signupDesc")}</p>
         </div>

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { signInWithEmail, signUpWithEmail } from "@/server/actions/auth";
 import { translate } from "@/lib/i18n/auth";
 import type { InterfaceLanguage } from "@/types";
-import { OAuthIsland } from "@/components/auth/oauth-island";
+import { OAuthDeferred } from "@/components/auth/oauth-deferred";
 import { cn } from "@/lib/utils";
 
 const fieldClass =
@@ -243,11 +243,12 @@ export function AuthFormNative({
         </button>
       </form>
 
-      <OAuthIsland
+      <OAuthDeferred
         mode={mode}
         redirect={redirect}
         allowSocialOAuth={allowSocialOAuth}
         language={language}
+        oauthUnavailableMessage={t("auth.oauthRuUnavailable")}
       />
     </div>
   );

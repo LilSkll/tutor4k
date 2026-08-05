@@ -9,7 +9,8 @@ import { IdleCookieBanner } from "@/components/legal/idle-cookie-banner";
 
 /**
  * Full app shell providers (student + teacher).
- * Auth / marketing use AuthProviders instead — no React Query / Tooltip / Toaster tax.
+ * Auth / marketing use AuthProviders instead — no React Query / Tooltip / Toaster /
+ * cookie-banner tax on the public TTI path.
  */
 export function AppProviders({ children }: { children: React.ReactNode }) {
   const [queryClient] = React.useState(

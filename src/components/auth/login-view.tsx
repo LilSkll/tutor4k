@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { ArrowLeft, GraduationCap } from "lucide-react";
 import { AuthFormNative } from "@/components/auth/auth-form-native";
+import { IconArrowLeft, IconGraduationCap } from "@/components/auth/auth-icons";
 import { BrandIcon } from "@/components/shared/brand-icon";
 import { translate } from "@/lib/i18n/auth";
 import type { InterfaceLanguage } from "@/types";
@@ -29,7 +29,7 @@ export function LoginView({
             href="/"
             className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground mb-8"
           >
-            <ArrowLeft className="h-4 w-4" />
+            <IconArrowLeft className="h-4 w-4" />
             {t("auth.backHome")}
           </Link>
 
@@ -97,7 +97,7 @@ export function LoginView({
           </div>
         </div>
         <div className="relative text-center text-white max-w-md">
-          <GraduationCap className="h-16 w-16 mx-auto mb-6 opacity-90" />
+          <IconGraduationCap className="h-16 w-16 mx-auto mb-6 opacity-90" />
           <h2 className="text-3xl font-bold mb-3">{t("auth.heroSide.login")}</h2>
           <p className="text-white/90">{t("auth.heroSide.loginDesc")}</p>
         </div>

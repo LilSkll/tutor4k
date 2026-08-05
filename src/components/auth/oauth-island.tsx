@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import dynamic from "next/dynamic";
-import { translate } from "@/lib/i18n/auth";
 import type { InterfaceLanguage } from "@/types";
 
 const OAuthButtons = dynamic(
@@ -49,19 +48,21 @@ function readFormSnapshot(): FormSnapshot {
 /**
  * Deferred OAuth client island — not on the email/password TTI path.
  * Loads after idle so progressive RSC form stays interactive first.
+ * Strings come from the server so auth i18n dicts stay out of this chunk.
  */
 export function OAuthIsland({
   mode,
   redirect,
   allowSocialOAuth,
   language,
+  oauthUnavailableMessage,
 }: {
   mode: "signin" | "signup";
   redirect?: string;
   allowSocialOAuth: boolean;
   language: InterfaceLanguage;
+  oauthUnavailableMessage: string;
 }) {
-  const t = (key: string) => translate(key, language);
   const [snap, setSnap] = React.useState<FormSnapshot>({
     role: "student",
     teacherConfirm: false,
@@ -121,7 +122,7 @@ export function OAuthIsland({
   if (!allowSocialOAuth) {
     return (
       <p className="text-center text-xs text-muted-foreground">
-        {t("auth.oauthRuUnavailable")}
+        {oauthUnavailableMessage}
       </p>
     );
   }
