@@ -12,7 +12,9 @@ import type {
   LessonAdaptation,
   StudentCourseProfile,
 } from "@/types/learning-profile";
-import type { StaticExercise } from "@/types";
+import type { StaticExercise, InterfaceLanguage } from "@/types";
+import { attachQuestionGlossesToMany } from "@/lib/exercise-gloss-attach";
+import { prepareExercisesForInterface } from "@/lib/exercise-localize";
 
 /**
  * Read the persistent Student Learning Profile for the active (or given) course.
@@ -109,6 +111,38 @@ export async function getLessonAdaptationAction(input: {
       ...adaptation,
       needsRevision: revisionExercises.length > 0,
     },
-    revisionExercises,
+    revisionExercises: await localizeRevisionExercises(
+      revisionExercises,
+      input.courseId,
+    ),
   };
+}
+
+async function localizeRevisionExercises(
+  exercises: StaticExercise[],
+  courseId: string,
+): Promise<StaticExercise[]> {
+  let language: InterfaceLanguage = "ru";
+  try {
+    const supabase = await createSupabaseServerClient();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    if (user) {
+      const { data: profile } = await supabase
+        .from("profiles")
+        .select("interface_language")
+        .eq("id", user.id)
+        .maybeSingle();
+      if (profile?.interface_language) {
+        language = profile.interface_language as InterfaceLanguage;
+      }
+    }
+  } catch {
+    // fall through with ru
+  }
+  void courseId;
+  return attachQuestionGlossesToMany(
+    prepareExercisesForInterface(exercises, language),
+  );
 }

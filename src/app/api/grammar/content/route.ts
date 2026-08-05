@@ -37,7 +37,14 @@ export async function GET(req: NextRequest) {
       refresh,
     });
 
-    return NextResponse.json(result);
+    return NextResponse.json(result, {
+      headers: {
+        // Static article bodies are stable; allow browsers/CDN to reuse.
+        "Cache-Control": refresh
+          ? "no-store"
+          : "public, s-maxage=3600, stale-while-revalidate=86400",
+      },
+    });
   } catch (err) {
     console.error("[/api/grammar/content]", err);
     return NextResponse.json(

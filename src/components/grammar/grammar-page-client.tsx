@@ -19,7 +19,8 @@ import {
 } from "@/lib/grammar-display";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { translate } from "@/lib/i18n";
-import type { GrammarLevel, GrammarTopic, InterfaceLanguage } from "@/types";
+import type { GrammarLevel, InterfaceLanguage } from "@/types";
+import type { GrammarTopicMeta } from "@/lib/grammar-topic-meta";
 
 export function GrammarPageClient({
   topics,
@@ -27,7 +28,7 @@ export function GrammarPageClient({
   serverLanguage,
   initialLevel,
 }: {
-  topics: GrammarTopic[];
+  topics: GrammarTopicMeta[];
   courseId: string;
   serverLanguage?: InterfaceLanguage;
   initialLevel?: GrammarLevel;

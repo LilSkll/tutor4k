@@ -10,8 +10,10 @@ import {
   getChapterTitle,
   hasCompletedPrereqChain,
 } from "@/lib/chapter-display";
-import { translate } from "@/lib/i18n";
 import { prepareExercisesForInterface } from "@/lib/exercise-localize";
+import { attachQuestionGlossesToMany } from "@/lib/exercise-gloss-attach";
+import { getChapterStory } from "@/config/chapter-stories";
+import { toGrammarTopicMeta } from "@/lib/grammar-topic-meta";
 
 export default async function ChapterPage({
   params,
@@ -58,9 +60,10 @@ export default async function ChapterPage({
   const grammarTopic = course.getGrammarTopic(chapter.grammarTopic);
   const nextChapter = course.getNextChapter(slug);
   const lang = profile?.interface_language ?? "ru";
-  // Instructions in the interface language; drop RU-only items on non-RU UI.
-  const exercises = prepareExercisesForInterface(course.getExercises(slug), lang);
-  const materialPreparing = translate("chapters.materialPreparing", lang);
+  const exercises = attachQuestionGlossesToMany(
+    prepareExercisesForInterface(course.getExercises(slug), lang),
+  );
+  const chapterStory = getChapterStory(slug, lang);
 
   return (
     <LessonRunner
@@ -68,8 +71,8 @@ export default async function ChapterPage({
       courseId={courseId}
       userName={profile?.name ?? ""}
       grammarTopicSlug={chapter.grammarTopic}
-      grammarNativeContent={grammarTopic?.content ?? materialPreparing}
-      grammarTopic={grammarTopic ?? null}
+      grammarTopic={grammarTopic ? toGrammarTopicMeta(grammarTopic) : null}
+      chapterStory={chapterStory}
       exercises={exercises}
       nextChapterSlug={nextChapter?.slug ?? null}
       nextChapterTitle={

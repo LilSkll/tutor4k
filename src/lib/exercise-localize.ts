@@ -1,5 +1,4 @@
 import type { ExerciseType, InterfaceLanguage, StaticExercise } from "@/types";
-import { lookupCuratedQuestionGloss } from "@/config/exercise-glosses";
 
 // =====================================================================
 // Interface-language handling for the static exercise bank.
@@ -8,6 +7,9 @@ import { lookupCuratedQuestionGloss } from "@/config/exercise-glosses";
 // language differs, we (a) swap the instruction for a localized generic
 // one and (b) drop items that are unusable in that language (e.g.
 // "translate from Russian" when the UI is not Russian).
+//
+// Curated question gloss JSON stays server-side (exercise-gloss-attach).
+// Client gloss UI reads exercise.questionTranslations only.
 // =====================================================================
 
 const CYRILLIC = /[\u0400-\u04FF]/;
@@ -23,8 +25,7 @@ export function detectSourceLanguage(s: string): "ru" | "en" {
 
 /**
  * Interface-language gloss for the exercise prompt (shown in parentheses).
- * Prefer inline questionTranslations; fall back to curated map by question text.
- * Skips when gloss equals the visible question or would spoil a same-language prompt.
+ * Uses inline questionTranslations only (populated on the server).
  */
 export function getQuestionGloss(
   exercise: Pick<
@@ -36,15 +37,12 @@ export function getQuestionGloss(
   const q = exercise.question?.trim() ?? "";
   if (!q) return null;
 
-  const fromItem = exercise.questionTranslations?.[interfaceLanguage]?.trim();
-  const fromMap = lookupCuratedQuestionGloss(q, interfaceLanguage);
-  const gloss = (fromItem || fromMap || "").trim();
+  const gloss =
+    exercise.questionTranslations?.[interfaceLanguage]?.trim() ?? "";
   if (!gloss) return null;
 
-  // Don't repeat the same string the learner already sees.
   if (normalizeForCompare(gloss) === normalizeForCompare(q)) return null;
 
-  // Translation prompts already written in the UI language need no gloss.
   if (
     exercise.type === "translation" &&
     detectSourceLanguage(q) === interfaceLanguage

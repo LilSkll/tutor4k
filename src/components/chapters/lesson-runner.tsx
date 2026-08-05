@@ -28,14 +28,13 @@ import {
   getChapterTitle,
 } from "@/lib/chapter-display";
 import { translate } from "@/lib/i18n";
-import { getChapterStory } from "@/config/chapter-stories";
 import { SESSION_EXERCISES } from "@/lib/exercise-bank";
 import { normalizeAnswer, scorePercent } from "@/lib/normalize-answer";
-import { prepareExercisesForInterface } from "@/lib/exercise-localize";
 import { formatBankTutorFeedback } from "@/lib/tutor-feedback";
 import { trackEvent } from "@/lib/analytics";
 import { getLessonAdaptationAction } from "@/server/actions/learning-profile";
-import type { GrammarTopic, StaticExercise } from "@/types";
+import type { StaticExercise } from "@/types";
+import type { GrammarTopicMeta } from "@/lib/grammar-topic-meta";
 import type { LessonAdaptation } from "@/types/learning-profile";
 import { BackLink } from "@/components/shared/back-link";
 import { QuestionWithGloss } from "@/components/exercises/question-with-gloss";
@@ -58,8 +57,9 @@ interface LessonRunnerProps {
   courseId: string;
   userName: string;
   grammarTopicSlug: string;
-  grammarNativeContent: string;
-  grammarTopic?: GrammarTopic | null;
+  grammarTopic?: GrammarTopicMeta | null;
+  /** Localized story from the server (avoids shipping the full stories bank). */
+  chapterStory: string | null;
   exercises: StaticExercise[];
   nextChapterSlug: string | null;
   nextChapterTitle?: string | null;
@@ -73,8 +73,8 @@ export function LessonRunner({
   courseId,
   userName,
   grammarTopicSlug,
-  grammarNativeContent,
   grammarTopic,
+  chapterStory,
   exercises: presetExercises,
   nextChapterSlug,
   nextChapterTitle = null,
@@ -98,11 +98,7 @@ export function LessonRunner({
     content: grammarContent,
     loading: grammarLoading,
     error: grammarError,
-  } = useLocalizedGrammarArticle(
-    grammarTopicSlug,
-    courseId,
-    grammarNativeContent,
-  );
+  } = useLocalizedGrammarArticle(grammarTopicSlug, courseId);
 
   const [phase, setPhase] = React.useState<Phase>("intro");
   const [loading, setLoading] = React.useState(false);
@@ -140,9 +136,7 @@ export function LessonRunner({
         });
         if (cancelled) return;
         setAdaptation(data.adaptation);
-        setRevisionExercises(
-          prepareExercisesForInterface(data.revisionExercises, language),
-        );
+        setRevisionExercises(data.revisionExercises);
       } catch {
         // Non-fatal — lesson uses standard flow.
       }
@@ -406,8 +400,6 @@ export function LessonRunner({
   const introGreeting = userName
     ? t("lesson.greetingNamed", { name: userName })
     : t("lesson.greeting");
-
-  const chapterStory = getChapterStory(chapter.slug, language);
 
   const introBody =
     adaptation?.mode === "mastered_short"

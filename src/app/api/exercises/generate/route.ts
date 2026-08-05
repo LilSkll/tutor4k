@@ -6,6 +6,7 @@ import {
   isExerciseUsableForLanguage,
   localizeExerciseInstruction,
 } from "@/lib/exercise-localize";
+import { attachQuestionGlosses } from "@/lib/exercise-gloss-attach";
 import { SESSION_EXERCISES } from "@/lib/exercise-bank";
 import type {
   ExerciseType,
@@ -136,21 +137,24 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const exercises: GeneratedExercise[] = picked.map((staticEx) => ({
-      type: staticEx.type,
-      level: staticEx.level,
-      question: staticEx.question,
-      questionTranslations: staticEx.questionTranslations,
-      instruction: localizeExerciseInstruction(staticEx, language),
-      options: staticEx.options,
-      answer: staticEx.answer,
-      acceptableAnswers: staticEx.acceptableAnswers,
-      topic: staticEx.topic,
-      explanation: staticEx.explanation,
-      staticSource: true,
-      exerciseId: staticEx.id,
-      chapterSlug: staticEx.chapterSlug,
-    }));
+    const exercises: GeneratedExercise[] = picked.map((staticEx) => {
+      const withGloss = attachQuestionGlosses(staticEx);
+      return {
+        type: withGloss.type,
+        level: withGloss.level,
+        question: withGloss.question,
+        questionTranslations: withGloss.questionTranslations,
+        instruction: localizeExerciseInstruction(withGloss, language),
+        options: withGloss.options,
+        answer: withGloss.answer,
+        acceptableAnswers: withGloss.acceptableAnswers,
+        topic: withGloss.topic,
+        explanation: withGloss.explanation,
+        staticSource: true,
+        exerciseId: withGloss.id,
+        chapterSlug: withGloss.chapterSlug,
+      };
+    });
 
     return NextResponse.json({
       exercises,

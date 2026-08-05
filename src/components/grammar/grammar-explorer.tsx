@@ -20,7 +20,8 @@ import {
   getGrammarTopicTitle,
 } from "@/lib/grammar-display";
 import { translate } from "@/lib/i18n";
-import type { GrammarLevel, GrammarTopic } from "@/types";
+import type { GrammarLevel } from "@/types";
+import type { GrammarTopicMeta } from "@/lib/grammar-topic-meta";
 import { cn } from "@/lib/utils";
 
 const LEVEL_COLORS: Record<GrammarLevel, string> = {
@@ -38,7 +39,7 @@ export function GrammarExplorer({
   courseId,
 }: {
   initialLevel?: GrammarLevel;
-  topics: GrammarTopic[];
+  topics: GrammarTopicMeta[];
   courseId: string;
 }) {
   const searchParams = useSearchParams();
@@ -64,11 +65,7 @@ export function GrammarExplorer({
     content: articleContent,
     loading,
     error: loadError,
-  } = useLocalizedGrammarArticle(
-    selectedTopic?.slug,
-    courseId,
-    selectedTopic?.content,
-  );
+  } = useLocalizedGrammarArticle(selectedTopic?.slug, courseId);
 
   const filtered =
     activeLevel === "ALL"
