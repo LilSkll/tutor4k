@@ -1,11 +1,11 @@
 import type { InterfaceLanguage } from "@/types";
-import { createTranslate } from "./i18n/core";
-import { STUDENT_DICTS } from "./i18n/student-dicts";
-import type { Dictionary } from "./i18n/types";
+import { createTranslate } from "./core";
+import { STUDENT_DICTS } from "./student-dicts";
+import type { Dictionary } from "./types";
 
 /**
  * Student / auth / landing dictionary.
- * Teacher Studio strings live in `i18n/with-teacher` so students do not download them.
+ * Teacher Studio strings live in `./with-teacher` so students do not download them.
  */
 export const translate = createTranslate(STUDENT_DICTS);
 

@@ -1,12 +1,12 @@
 "use client";
 
 import * as React from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { LogOut, Menu, MoreHorizontal, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
+import { BrandIcon } from "@/components/shared/brand-icon";
 import { translate } from "@/lib/i18n/with-teacher";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { signOut } from "@/server/actions/auth";
@@ -46,13 +46,7 @@ export function TeacherMobileNav({
       {/* Top bar */}
       <div className="md:hidden sticky top-0 z-40 flex h-14 items-center justify-between border-b border-border/60 bg-background/95 backdrop-blur-md px-4 safe-pt">
         <div className="flex items-center gap-2.5 min-w-0">
-          <Image
-            src="/hippogriff-icon.webp"
-            alt="Spanish with Pavel"
-            width={32}
-            height={32}
-            className="h-8 w-8 rounded-lg shrink-0"
-          />
+          <BrandIcon size={32} className="h-8 w-8 rounded-lg shrink-0" />
           <div className="min-w-0">
             <p className="font-bold gradient-text truncate text-sm leading-tight">
               Spanish with Pavel

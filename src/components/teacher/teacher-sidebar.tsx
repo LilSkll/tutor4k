@@ -1,13 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { LogOut } from "lucide-react";
 import { translate } from "@/lib/i18n/with-teacher";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { signOut } from "@/server/actions/auth";
 import { TEACHER_NAV, isTeacherNavActive } from "@/lib/teacher-nav";
+import { BrandIcon } from "@/components/shared/brand-icon";
 import { cn } from "@/lib/utils";
 import type { UserRole } from "@/types";
 
@@ -25,11 +25,8 @@ export function TeacherSidebar({
   return (
     <aside className="hidden md:flex w-[240px] flex-col border-r border-border/60 bg-card/80 backdrop-blur-xl">
       <div className="flex h-16 items-center gap-3 border-b border-border/60 px-5">
-        <Image
-          src="/hippogriff-icon.webp"
-          alt="Spanish with Pavel"
-          width={40}
-          height={40}
+        <BrandIcon
+          size={40}
           className="h-10 w-10 shrink-0 rounded-xl shadow-soft"
         />
         <div className="min-w-0">
