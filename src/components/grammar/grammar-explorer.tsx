@@ -1,23 +1,22 @@
 "use client";
 
 import * as React from "react";
+import dynamic from "next/dynamic";
 import { useSearchParams, useRouter } from "next/navigation";
-import { Sparkles } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import { Markdown } from "@/components/shared/markdown";
-import { useLocalizedGrammarArticle } from "@/hooks/use-localized-grammar-article";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { translate } from "@/lib/i18n";
-import type { GrammarLevel } from "@/types";
+import type { GrammarLevel, InterfaceLanguage } from "@/types";
 import type { LocalizedGrammarTopicMeta } from "@/lib/grammar-topic-meta";
 import { cn } from "@/lib/utils";
+
+const GrammarTopicDialog = dynamic(
+  () =>
+    import("@/components/grammar/grammar-topic-dialog").then(
+      (m) => m.GrammarTopicDialog,
+    ),
+  { ssr: false },
+);
 
 const LEVEL_COLORS: Record<GrammarLevel, string> = {
   A1: "from-green-500/15 to-emerald-500/15 text-green-600 dark:text-green-400",
@@ -32,14 +31,16 @@ export function GrammarExplorer({
   initialLevel,
   topics,
   courseId,
+  serverLanguage,
 }: {
   initialLevel?: GrammarLevel;
   topics: LocalizedGrammarTopicMeta[];
   courseId: string;
+  serverLanguage?: InterfaceLanguage;
 }) {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const language = useInterfaceLanguage();
+  const language = useInterfaceLanguage(serverLanguage);
   const t = (key: string, vars?: Record<string, string | number>) =>
     translate(key, language, vars);
 
@@ -47,7 +48,6 @@ export function GrammarExplorer({
     GrammarLevel | "ALL" | "EXAM"
   >(initialLevel ?? "ALL");
 
-  // Exam group (e.g. DELE) — shown as its own filter chip when present.
   const examName = React.useMemo(
     () => topics.find((topic) => topic.exam)?.exam ?? null,
     [topics],
@@ -55,12 +55,6 @@ export function GrammarExplorer({
 
   const topicSlug = searchParams.get("topic");
   const selectedTopic = topics.find((topic) => topic.slug === topicSlug);
-
-  const {
-    content: articleContent,
-    loading,
-    error: loadError,
-  } = useLocalizedGrammarArticle(selectedTopic?.slug, courseId);
 
   const filtered =
     activeLevel === "ALL"
@@ -98,7 +92,7 @@ export function GrammarExplorer({
             active={activeLevel === "EXAM"}
             onClick={() => setActiveLevel("EXAM")}
           >
-            🎓 {examName}
+            {examName}
           </FilterChip>
         )}
       </div>
@@ -110,6 +104,7 @@ export function GrammarExplorer({
           return (
             <button
               key={topic.slug}
+              type="button"
               onClick={() =>
                 router.push(`/grammar?topic=${topic.slug}&level=${activeLevel}`)
               }
@@ -131,64 +126,20 @@ export function GrammarExplorer({
         })}
       </div>
 
-      <Dialog
-        open={!!selectedTopic}
-        onOpenChange={(open) => {
-          if (!open) {
-            const params = new URLSearchParams(searchParams.toString());
-            params.delete("topic");
-            router.push(`/grammar?${params.toString()}`);
-          }
-        }}
-      >
-        <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto">
-          {selectedTopic &&
-            (() => {
-              const title = selectedTopic.localizedTitle;
-              return (
-                <>
-                  <DialogHeader>
-                    <div className="flex items-center gap-2">
-                      <Badge variant="level">{selectedTopic.level}</Badge>
-                      <span className="text-xs text-muted-foreground">
-                        {selectedTopic.localizedCategory}
-                      </span>
-                    </div>
-                    <DialogTitle className="text-xl">{title}</DialogTitle>
-                    <p className="text-sm text-muted-foreground">
-                      {selectedTopic.localizedSummary}
-                    </p>
-                  </DialogHeader>
-
-                  <div className="min-h-[120px]">
-                    {loading ? (
-                      <p className="text-sm text-muted-foreground flex items-center gap-2">
-                        <Sparkles className="h-4 w-4 animate-pulse text-primary" />
-                        {t("grammar.loadingArticle")}
-                      </p>
-                    ) : loadError ? (
-                      <p className="text-sm text-destructive">{loadError}</p>
-                    ) : articleContent ? (
-                      <Markdown content={articleContent} />
-                    ) : null}
-                  </div>
-
-                  <div className="flex gap-2 pt-2">
-                    <Button variant="outline" size="sm" asChild>
-                      <a
-                        href={`/tutor?q=${encodeURIComponent(
-                          t("grammar.askTutorPrefix") + title,
-                        )}`}
-                      >
-                        {t("grammar.askTutor")}
-                      </a>
-                    </Button>
-                  </div>
-                </>
-              );
-            })()}
-        </DialogContent>
-      </Dialog>
+      {selectedTopic ? (
+        <GrammarTopicDialog
+          topic={selectedTopic}
+          courseId={courseId}
+          open
+          onOpenChange={(open) => {
+            if (!open) {
+              const params = new URLSearchParams(searchParams.toString());
+              params.delete("topic");
+              router.push(`/grammar?${params.toString()}`);
+            }
+          }}
+        />
+      ) : null}
     </>
   );
 }
@@ -204,6 +155,7 @@ function FilterChip({
 }) {
   return (
     <button
+      type="button"
       onClick={onClick}
       className={cn(
         "rounded-full px-4 py-1.5 text-sm font-medium transition-all border",
