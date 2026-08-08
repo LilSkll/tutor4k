@@ -6,6 +6,7 @@ import { Check, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { Textarea } from "@/components/ui/textarea";
 import { translate } from "@/lib/i18n";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { getCourseTitle } from "@/config/courses";
@@ -212,7 +213,8 @@ export function StudentHomeworkClient() {
                           href={`/grammar?topic=${encodeURIComponent(writing.grammarTopicSlug)}`}
                           className="text-primary hover:underline"
                         >
-                          {writing.grammarTopicSlug}
+                          {writing.grammarTopicTitle ||
+                            writing.grammarTopicSlug}
                         </Link>
                       </p>
                     )}
@@ -221,14 +223,14 @@ export function StudentHomeworkClient() {
                         <p className="text-xs font-medium text-muted-foreground mb-1">
                           {t("homework.writingYourAnswer")}
                         </p>
-                        <p className="text-sm whitespace-pre-wrap">
+                        <p className="text-sm whitespace-pre-wrap leading-relaxed">
                           {a.submission.body}
                         </p>
                       </div>
                     ) : a.status === "assigned" ? (
                       <div className="space-y-2">
-                        <textarea
-                          className="w-full min-h-[140px] rounded-md border border-input bg-background px-3 py-2 text-sm"
+                        <Textarea
+                          className="min-h-[140px]"
                           placeholder={t("homework.writingPlaceholder")}
                           value={drafts[a.id] ?? ""}
                           onChange={(e) =>
@@ -239,18 +241,28 @@ export function StudentHomeworkClient() {
                           }
                           maxLength={20000}
                         />
-                        <Button
-                          size="sm"
-                          disabled={submittingId === a.id}
-                          onClick={() => void submitWriting(a.id)}
-                        >
-                          {submittingId === a.id ? (
-                            <Loader2 className="h-4 w-4 animate-spin" />
-                          ) : (
-                            <Check className="h-4 w-4" />
-                          )}
-                          {t("homework.writingSubmit")}
-                        </Button>
+                        <div className="flex flex-wrap items-center justify-between gap-2">
+                          <p className="text-xs text-muted-foreground">
+                            {t("homework.writingCharCount", {
+                              n: (drafts[a.id] ?? "").length,
+                            })}
+                          </p>
+                          <Button
+                            size="sm"
+                            disabled={
+                              submittingId === a.id ||
+                              (drafts[a.id] ?? "").trim().length < 20
+                            }
+                            onClick={() => void submitWriting(a.id)}
+                          >
+                            {submittingId === a.id ? (
+                              <Loader2 className="h-4 w-4 animate-spin" />
+                            ) : (
+                              <Check className="h-4 w-4" />
+                            )}
+                            {t("homework.writingSubmit")}
+                          </Button>
+                        </div>
                       </div>
                     ) : null}
                   </div>

@@ -106,9 +106,14 @@ function validatePayload(
       typeof p.grammarTopicSlug === "string" && p.grammarTopicSlug.trim()
         ? p.grammarTopicSlug.trim().slice(0, 120)
         : undefined;
+    const grammarTopicTitle =
+      typeof p.grammarTopicTitle === "string" && p.grammarTopicTitle.trim()
+        ? p.grammarTopicTitle.trim().slice(0, 200)
+        : undefined;
     return {
       prompt: prompt.slice(0, 4000),
       grammarTopicSlug,
+      grammarTopicTitle,
       note: typeof p.note === "string" ? p.note.slice(0, 500) : undefined,
     };
   }

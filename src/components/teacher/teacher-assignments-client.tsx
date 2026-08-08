@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
+import { Textarea } from "@/components/ui/textarea";
 import { translate } from "@/lib/i18n/with-teacher";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { getCourseTitle } from "@/config/courses";
@@ -169,6 +170,10 @@ export function TeacherAssignmentsClient() {
             ? {
                 prompt: writingPrompt.trim(),
                 grammarTopicSlug: grammarTopicSlug || undefined,
+                grammarTopicTitle: grammarTopicSlug
+                  ? grammarTopics.find((g) => g.slug === grammarTopicSlug)
+                      ?.title
+                  : undefined,
                 note: note || undefined,
               }
             : {
@@ -235,6 +240,7 @@ export function TeacherAssignmentsClient() {
           a.id === id ? { ...a, submission: data.submission ?? a.submission } : a,
         ),
       );
+      toast.success(t("teacher.assignments.aiAssistReady"));
     } catch {
       toast.error(t("teacher.assignments.aiAssistFail"));
     } finally {
@@ -360,13 +366,18 @@ export function TeacherAssignmentsClient() {
           <div className="space-y-3">
             <div className="space-y-1">
               <Label>{t("teacher.assignments.writingPrompt")}</Label>
-              <textarea
-                className="w-full min-h-[100px] rounded-md border border-input bg-background px-3 py-2 text-sm"
+              <Textarea
+                className="min-h-[100px]"
                 value={writingPrompt}
                 onChange={(e) => setWritingPrompt(e.target.value)}
                 placeholder={t("teacher.assignments.writingPromptPlaceholder")}
                 maxLength={4000}
               />
+              <p className="text-xs text-muted-foreground">
+                {t("teacher.assignments.charCount", {
+                  n: writingPrompt.length,
+                })}
+              </p>
             </div>
             <div className="space-y-1">
               <Label>{t("teacher.assignments.grammarTopic")}</Label>
@@ -521,61 +532,49 @@ export function TeacherAssignmentsClient() {
                 </div>
 
                 {a.kind === "writing" && (
-                  <div className="rounded-lg border border-border bg-muted/30 p-3 space-y-2">
+                  <div className="rounded-lg border border-border bg-muted/30 p-3 space-y-3">
                     {a.submission ? (
                       <>
-                        <p className="text-xs font-medium text-muted-foreground">
-                          {t("teacher.assignments.submissionLabel")}
-                        </p>
-                        <p className="text-sm whitespace-pre-wrap">
-                          {a.submission.body}
-                        </p>
+                        <div>
+                          <p className="text-xs font-medium text-muted-foreground mb-1">
+                            {t("teacher.assignments.submissionLabel")}
+                          </p>
+                          <p className="text-sm whitespace-pre-wrap leading-relaxed">
+                            {a.submission.body}
+                          </p>
+                        </div>
                         <p className="text-xs text-muted-foreground">
                           {t("teacher.assignments.aiAssistHint")}
                         </p>
                         {a.submission.aiAnalysis ? (
-                          <div className="rounded-md border border-border bg-background p-3 text-sm whitespace-pre-wrap">
+                          <div className="rounded-md border border-border bg-background p-3 text-sm whitespace-pre-wrap leading-relaxed">
                             <p className="text-xs font-medium mb-2 flex items-center gap-1">
                               <Sparkles className="h-3.5 w-3.5 text-primary" />
                               {t("teacher.assignments.aiAssist")}
                             </p>
                             {a.submission.aiAnalysis}
                           </div>
-                        ) : (
-                          <Button
-                            size="sm"
-                            variant="outline"
-                            disabled={analyzingId === a.id}
-                            onClick={() => void runAi(a.id)}
-                          >
-                            {analyzingId === a.id ? (
-                              <>
-                                <Loader2 className="h-4 w-4 animate-spin" />
-                                {t("teacher.assignments.aiAssistBusy")}
-                              </>
-                            ) : (
-                              <>
-                                <Sparkles className="h-4 w-4" />
-                                {t("teacher.assignments.aiAssistRun")}
-                              </>
-                            )}
-                          </Button>
-                        )}
-                        {a.submission.aiAnalysis && (
-                          <Button
-                            size="sm"
-                            variant="ghost"
-                            disabled={analyzingId === a.id}
-                            onClick={() => void runAi(a.id)}
-                          >
-                            {analyzingId === a.id ? (
+                        ) : null}
+                        <Button
+                          size="sm"
+                          variant={a.submission.aiAnalysis ? "ghost" : "outline"}
+                          disabled={analyzingId === a.id}
+                          onClick={() => void runAi(a.id)}
+                        >
+                          {analyzingId === a.id ? (
+                            <>
                               <Loader2 className="h-4 w-4 animate-spin" />
-                            ) : (
+                              {t("teacher.assignments.aiAssistBusy")}
+                            </>
+                          ) : (
+                            <>
                               <Sparkles className="h-4 w-4" />
-                            )}
-                            {t("teacher.assignments.aiAssistRun")}
-                          </Button>
-                        )}
+                              {a.submission.aiAnalysis
+                                ? t("teacher.assignments.aiAssistAgain")
+                                : t("teacher.assignments.aiAssistRun")}
+                            </>
+                          )}
+                        </Button>
                       </>
                     ) : (
                       <p className="text-sm text-muted-foreground">

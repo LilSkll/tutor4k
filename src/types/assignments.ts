@@ -23,6 +23,8 @@ export type WritingAssignmentPayload = {
   prompt: string;
   /** Optional grammar library slug, e.g. dele-carta-formal. */
   grammarTopicSlug?: string;
+  /** Display title for the grammar topic (stored at create time). */
+  grammarTopicTitle?: string;
   note?: string;
 };
 
