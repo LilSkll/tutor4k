@@ -17,6 +17,7 @@ import type {
   TeacherAssignmentDTO,
   WritingAssignmentPayload,
 } from "@/types/assignments";
+import { countWords } from "@/lib/writing-words";
 
 function kindBadge(kind: TeacherAssignmentDTO["kind"], t: (k: string) => string) {
   if (kind === "chapter") return t("homework.kindChapter");
@@ -90,6 +91,22 @@ export function StudentHomeworkClient() {
 
   const submitWriting = async (id: string) => {
     const body = (drafts[id] ?? "").trim();
+    const assignment = assignments.find((a) => a.id === id);
+    const writing =
+      assignment?.kind === "writing"
+        ? (assignment.payload as WritingAssignmentPayload)
+        : null;
+    const minW =
+      typeof writing?.minWords === "number" && writing.minWords > 0
+        ? writing.minWords
+        : null;
+    const words = countWords(body);
+    if (minW !== null && words < minW) {
+      toast.error(
+        t("homework.writingMinWords", { min: minW, n: words }),
+      );
+      return;
+    }
     if (body.length < 20) {
       toast.error(t("homework.writingTooShort"));
       return;
@@ -101,7 +118,20 @@ export function StudentHomeworkClient() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ body }),
       });
-      if (!res.ok) throw new Error("fail");
+      const data = (await res.json().catch(() => ({}))) as { error?: string };
+      if (!res.ok) {
+        if (data.error === "TOO_FEW_WORDS") {
+          toast.error(
+            t("homework.writingMinWords", {
+              min: minW ?? 0,
+              n: words,
+            }),
+          );
+        } else {
+          throw new Error("fail");
+        }
+        return;
+      }
       toast.success(t("homework.writingSubmitted"));
       window.dispatchEvent(new Event("homework:changed"));
       setDrafts((prev) => {
@@ -247,28 +277,57 @@ export function StudentHomeworkClient() {
                           }
                           maxLength={20000}
                         />
-                        <div className="flex flex-wrap items-center justify-between gap-2">
-                          <p className="text-xs text-muted-foreground">
-                            {t("homework.writingCharCount", {
-                              n: (drafts[a.id] ?? "").length,
-                            })}
-                          </p>
-                          <Button
-                            size="sm"
-                            disabled={
-                              submittingId === a.id ||
-                              (drafts[a.id] ?? "").trim().length < 20
-                            }
-                            onClick={() => void submitWriting(a.id)}
-                          >
-                            {submittingId === a.id ? (
-                              <Loader2 className="h-4 w-4 animate-spin" />
-                            ) : (
-                              <Check className="h-4 w-4" />
-                            )}
-                            {t("homework.writingSubmit")}
-                          </Button>
-                        </div>
+                        {(() => {
+                          const draft = drafts[a.id] ?? "";
+                          const words = countWords(draft);
+                          const minW =
+                            typeof writing.minWords === "number" &&
+                            writing.minWords > 0
+                              ? writing.minWords
+                              : null;
+                          const canSubmit =
+                            draft.trim().length >= 20 &&
+                            (minW === null || words >= minW);
+                          return (
+                            <div className="flex flex-wrap items-center justify-between gap-2">
+                              <p
+                                className={`text-xs ${
+                                  minW !== null && words < minW
+                                    ? "text-destructive"
+                                    : "text-muted-foreground"
+                                }`}
+                              >
+                                {minW !== null
+                                  ? words >= minW
+                                    ? t("homework.writingMinWordsMet", {
+                                        n: words,
+                                        min: minW,
+                                      })
+                                    : t("homework.writingMinWords", {
+                                        n: words,
+                                        min: minW,
+                                      })
+                                  : t("homework.writingWordCount", {
+                                      n: words,
+                                    })}
+                              </p>
+                              <Button
+                                size="sm"
+                                disabled={
+                                  submittingId === a.id || !canSubmit
+                                }
+                                onClick={() => void submitWriting(a.id)}
+                              >
+                                {submittingId === a.id ? (
+                                  <Loader2 className="h-4 w-4 animate-spin" />
+                                ) : (
+                                  <Check className="h-4 w-4" />
+                                )}
+                                {t("homework.writingSubmit")}
+                              </Button>
+                            </div>
+                          );
+                        })()}
                       </div>
                     ) : null}
                   </div>

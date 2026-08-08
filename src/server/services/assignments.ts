@@ -19,6 +19,7 @@ import type {
   TeacherAssignmentStatus,
   WritingAssignmentPayload,
 } from "@/types/assignments";
+import { countWords } from "@/lib/writing-words";
 
 type AssignmentRow = {
   id: string;
@@ -110,10 +111,19 @@ function validatePayload(
       typeof p.grammarTopicTitle === "string" && p.grammarTopicTitle.trim()
         ? p.grammarTopicTitle.trim().slice(0, 200)
         : undefined;
+    let minWords: number | undefined;
+    if (p.minWords != null && p.minWords !== ("" as unknown as number)) {
+      const n = Math.floor(Number(p.minWords));
+      if (!Number.isFinite(n) || n < 1 || n > 5000) {
+        throw new Error("INVALID_PAYLOAD");
+      }
+      minWords = n;
+    }
     return {
       prompt: prompt.slice(0, 4000),
       grammarTopicSlug,
       grammarTopicTitle,
+      minWords,
       note: typeof p.note === "string" ? p.note.slice(0, 500) : undefined,
     };
   }
@@ -382,6 +392,15 @@ export const AssignmentService = {
       .maybeSingle();
     if (aErr) throw new Error(aErr.message);
     if (!assignment) throw new Error("NOT_FOUND");
+
+    const payload = (assignment.payload ?? {}) as WritingAssignmentPayload;
+    const minWords =
+      typeof payload.minWords === "number" && payload.minWords > 0
+        ? payload.minWords
+        : null;
+    if (minWords !== null && countWords(text) < minWords) {
+      throw new Error("TOO_FEW_WORDS");
+    }
 
     const now = new Date().toISOString();
     const { data: submission, error: sErr } = await admin

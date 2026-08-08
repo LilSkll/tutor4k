@@ -18,6 +18,7 @@ import type {
   WritingAssignmentPayload,
 } from "@/types/assignments";
 import { EmptyState } from "@/components/shared/empty-state";
+import { suggestedMinWordsForGrammarSlug } from "@/lib/writing-words";
 
 type StudentOpt = {
   id: string;
@@ -80,6 +81,7 @@ export function TeacherAssignmentsClient() {
   const [count, setCount] = React.useState(5);
   const [writingPrompt, setWritingPrompt] = React.useState("");
   const [grammarTopicSlug, setGrammarTopicSlug] = React.useState("");
+  const [minWords, setMinWords] = React.useState<number | "">("");
   const [dueAt, setDueAt] = React.useState("");
   const [note, setNote] = React.useState("");
 
@@ -144,6 +146,7 @@ export function TeacherAssignmentsClient() {
     void load();
     setSelectedSlugs([]);
     setGrammarTopicSlug("");
+    setMinWords("");
   }, [load]);
 
   const toggleSlug = (slug: string) => {
@@ -174,6 +177,10 @@ export function TeacherAssignmentsClient() {
                   ? grammarTopics.find((g) => g.slug === grammarTopicSlug)
                       ?.title
                   : undefined,
+                minWords:
+                  typeof minWords === "number" && minWords > 0
+                    ? minWords
+                    : undefined,
                 note: note || undefined,
               }
             : {
@@ -200,6 +207,7 @@ export function TeacherAssignmentsClient() {
       setSelectedSlugs([]);
       setWritingPrompt("");
       setGrammarTopicSlug("");
+      setMinWords("");
       await load();
     } catch {
       toast.error(t("teacher.assignments.createFail"));
@@ -258,9 +266,13 @@ export function TeacherAssignmentsClient() {
       const p = a.payload as WritingAssignmentPayload;
       const topic = p.grammarTopicSlug
         ? grammarTopics.find((g) => g.slug === p.grammarTopicSlug)?.title ||
+          p.grammarTopicTitle ||
           p.grammarTopicSlug
         : null;
-      return topic ? `${p.prompt} · ${topic}` : p.prompt;
+      const parts = [p.prompt];
+      if (topic) parts.push(topic);
+      if (p.minWords) parts.push(`≥${p.minWords} words`);
+      return parts.join(" · ");
     }
     const p = a.payload as {
       type?: string;
@@ -384,7 +396,14 @@ export function TeacherAssignmentsClient() {
               <select
                 className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
                 value={grammarTopicSlug}
-                onChange={(e) => setGrammarTopicSlug(e.target.value)}
+                onChange={(e) => {
+                  const slug = e.target.value;
+                  setGrammarTopicSlug(slug);
+                  const suggested = suggestedMinWordsForGrammarSlug(slug);
+                  if (suggested && (minWords === "" || minWords === 0)) {
+                    setMinWords(suggested);
+                  }
+                }}
               >
                 <option value="">{t("teacher.assignments.grammarNone")}</option>
                 {grammarTopics.length === 0 ? (
@@ -400,6 +419,27 @@ export function TeacherAssignmentsClient() {
                   ))
                 )}
               </select>
+            </div>
+            <div className="space-y-1">
+              <Label>{t("teacher.assignments.minWords")}</Label>
+              <Input
+                type="number"
+                min={1}
+                max={5000}
+                value={minWords}
+                onChange={(e) => {
+                  const v = e.target.value;
+                  if (v === "") {
+                    setMinWords("");
+                    return;
+                  }
+                  setMinWords(Math.min(5000, Math.max(1, Number(v) || 1)));
+                }}
+                placeholder="80"
+              />
+              <p className="text-xs text-muted-foreground">
+                {t("teacher.assignments.minWordsHint")}
+              </p>
             </div>
           </div>
         ) : (

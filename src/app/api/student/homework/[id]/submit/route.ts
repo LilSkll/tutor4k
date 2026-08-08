@@ -48,7 +48,7 @@ export async function POST(
           ? 403
           : msg === "NOT_FOUND"
             ? 404
-            : msg === "INVALID_BODY"
+            : msg === "INVALID_BODY" || msg === "TOO_FEW_WORDS"
               ? 400
               : 500;
     return NextResponse.json({ error: msg }, { status });

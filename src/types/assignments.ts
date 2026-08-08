@@ -25,6 +25,8 @@ export type WritingAssignmentPayload = {
   grammarTopicSlug?: string;
   /** Display title for the grammar topic (stored at create time). */
   grammarTopicTitle?: string;
+  /** Minimum words required to submit (teacher-set). */
+  minWords?: number;
   note?: string;
 };
 
