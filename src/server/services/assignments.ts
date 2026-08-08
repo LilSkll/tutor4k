@@ -1,6 +1,14 @@
 import { createSupabaseAdminClient } from "@/lib/supabase-admin";
 import { assertCanViewStudent } from "@/server/teacher/links";
+import { getCourse } from "@/config/courses";
+import { generateWithSystemPrompt } from "@/server/ai/orchestrator";
+import {
+  buildWritingAssistSystemPrompt,
+  buildWritingAssistUserPrompt,
+} from "@/server/ai/prompts/writing-assist";
+import type { InterfaceLanguage } from "@/types";
 import type {
+  AssignmentSubmissionDTO,
   ChapterAssignmentPayload,
   ExerciseSetAssignmentPayload,
   NotificationDTO,
@@ -9,6 +17,7 @@ import type {
   TeacherAssignmentPayload,
   TeacherAssignmentSource,
   TeacherAssignmentStatus,
+  WritingAssignmentPayload,
 } from "@/types/assignments";
 
 type AssignmentRow = {
@@ -26,12 +35,29 @@ type AssignmentRow = {
   completed_at: string | null;
 };
 
+type SubmissionRow = {
+  assignment_id: string;
+  body: string;
+  submitted_at: string;
+  ai_analysis: string | null;
+  ai_analyzed_at: string | null;
+};
+
 function requireAdmin() {
   const admin = createSupabaseAdminClient();
   if (!admin) {
     throw new Error("Service role is required for AssignmentService.");
   }
   return admin;
+}
+
+function submissionToDto(row: SubmissionRow): AssignmentSubmissionDTO {
+  return {
+    body: row.body,
+    submittedAt: row.submitted_at,
+    aiAnalysis: row.ai_analysis,
+    aiAnalyzedAt: row.ai_analyzed_at,
+  };
 }
 
 function rowToDto(
@@ -70,6 +96,22 @@ function validatePayload(
       note: typeof p.note === "string" ? p.note.slice(0, 500) : undefined,
     };
   }
+  if (kind === "writing") {
+    const p = payload as WritingAssignmentPayload;
+    const prompt = typeof p.prompt === "string" ? p.prompt.trim() : "";
+    if (prompt.length < 8 || prompt.length > 4000) {
+      throw new Error("INVALID_PAYLOAD");
+    }
+    const grammarTopicSlug =
+      typeof p.grammarTopicSlug === "string" && p.grammarTopicSlug.trim()
+        ? p.grammarTopicSlug.trim().slice(0, 120)
+        : undefined;
+    return {
+      prompt: prompt.slice(0, 4000),
+      grammarTopicSlug,
+      note: typeof p.note === "string" ? p.note.slice(0, 500) : undefined,
+    };
+  }
   const p = payload as ExerciseSetAssignmentPayload;
   const count = Math.min(Math.max(Number(p.count) || 5, 1), 30);
   return {
@@ -79,6 +121,23 @@ function validatePayload(
     exam: Boolean(p.exam),
     note: typeof p.note === "string" ? p.note.slice(0, 500) : undefined,
   };
+}
+
+async function loadSubmissionsMap(
+  assignmentIds: string[],
+): Promise<Map<string, AssignmentSubmissionDTO>> {
+  const map = new Map<string, AssignmentSubmissionDTO>();
+  if (assignmentIds.length === 0) return map;
+  const admin = requireAdmin();
+  const { data, error } = await admin
+    .from("assignment_submissions")
+    .select("assignment_id, body, submitted_at, ai_analysis, ai_analyzed_at")
+    .in("assignment_id", assignmentIds);
+  if (error) throw new Error(error.message);
+  for (const row of (data ?? []) as SubmissionRow[]) {
+    map.set(row.assignment_id, submissionToDto(row));
+  }
+  return map;
 }
 
 async function notifyStudent(input: {
@@ -135,11 +194,14 @@ export const AssignmentService = {
       (profiles ?? []).map((p) => [p.id as string, p]),
     );
 
+    const submissions = await loadSubmissionsMap(rows.map((r) => r.id));
+
     return rows.map((row) => {
       const p = row.student_id ? byId.get(row.student_id) : null;
       return rowToDto(row, {
         studentName: (p?.name as string) || null,
         studentEmail: (p?.email as string) || null,
+        submission: submissions.get(row.id) ?? null,
       });
     });
   },
@@ -166,9 +228,12 @@ export const AssignmentService = {
       (profiles ?? []).map((p) => [p.id as string, p]),
     );
 
+    const submissions = await loadSubmissionsMap(rows.map((r) => r.id));
+
     return rows.map((row) =>
       rowToDto(row, {
         teacherName: (byId.get(row.teacher_id)?.name as string) || null,
+        submission: submissions.get(row.id) ?? null,
       }),
     );
   },
@@ -183,11 +248,8 @@ export const AssignmentService = {
     dueAt?: string | null;
     source?: TeacherAssignmentSource;
   }): Promise<TeacherAssignmentDTO> {
-    // AI-sourced homework must be confirmed by teacher → source stays teacher
-    // unless explicitly set after confirm flow (Stage 7: only teacher creates).
     const source: TeacherAssignmentSource = input.source ?? "teacher";
     if (source === "ai") {
-      // Reserved: never auto-create AI homework without teacher confirm.
       throw new Error("AI_ASSIGN_REQUIRES_CONFIRM");
     }
 
@@ -225,12 +287,11 @@ export const AssignmentService = {
       dueAt: row.due_at,
     });
 
-    return rowToDto(row);
+    return rowToDto(row, { submission: null });
   },
 
   async cancel(teacherId: string, assignmentId: string): Promise<void> {
     const admin = requireAdmin();
-    // Only open assignments; keep completed rows visible in history.
     const { data, error } = await admin
       .from("teacher_assignments")
       .update({
@@ -249,6 +310,21 @@ export const AssignmentService = {
 
   async markCompleted(studentId: string, assignmentId: string): Promise<void> {
     const admin = requireAdmin();
+    const { data: row, error: fetchErr } = await admin
+      .from("teacher_assignments")
+      .select("id, kind")
+      .eq("id", assignmentId)
+      .eq("student_id", studentId)
+      .eq("status", "assigned")
+      .is("deleted_at", null)
+      .maybeSingle();
+    if (fetchErr) throw new Error(fetchErr.message);
+    if (!row) throw new Error("NOT_FOUND");
+    if ((row.kind as TeacherAssignmentKind) === "writing") {
+      // Writing must be submitted via submitWriting (captures the body).
+      throw new Error("WRITING_REQUIRES_SUBMIT");
+    }
+
     const { data, error } = await admin
       .from("teacher_assignments")
       .update({
@@ -263,6 +339,158 @@ export const AssignmentService = {
       .maybeSingle();
     if (error) throw new Error(error.message);
     if (!data) throw new Error("NOT_FOUND");
+  },
+
+  /** Save writing answer and mark assignment completed. No AI here. */
+  async submitWriting(
+    studentId: string,
+    assignmentId: string,
+    body: string,
+  ): Promise<AssignmentSubmissionDTO> {
+    const text = body.trim();
+    if (text.length < 20 || text.length > 20000) {
+      throw new Error("INVALID_BODY");
+    }
+
+    const admin = requireAdmin();
+    const { data: assignment, error: aErr } = await admin
+      .from("teacher_assignments")
+      .select("*")
+      .eq("id", assignmentId)
+      .eq("student_id", studentId)
+      .eq("kind", "writing")
+      .eq("status", "assigned")
+      .is("deleted_at", null)
+      .maybeSingle();
+    if (aErr) throw new Error(aErr.message);
+    if (!assignment) throw new Error("NOT_FOUND");
+
+    const now = new Date().toISOString();
+    const { data: submission, error: sErr } = await admin
+      .from("assignment_submissions")
+      .upsert(
+        {
+          assignment_id: assignmentId,
+          student_id: studentId,
+          body: text,
+          submitted_at: now,
+          updated_at: now,
+          ai_analysis: null,
+          ai_analyzed_at: null,
+        },
+        { onConflict: "assignment_id" },
+      )
+      .select("assignment_id, body, submitted_at, ai_analysis, ai_analyzed_at")
+      .single();
+    if (sErr) throw new Error(sErr.message);
+
+    const { error: uErr } = await admin
+      .from("teacher_assignments")
+      .update({
+        status: "completed",
+        completed_at: now,
+      })
+      .eq("id", assignmentId)
+      .eq("student_id", studentId)
+      .eq("status", "assigned");
+    if (uErr) throw new Error(uErr.message);
+
+    return submissionToDto(submission as SubmissionRow);
+  },
+
+  /**
+   * On-demand AI helper for the teacher. Never called on student submit.
+   */
+  async analyzeWriting(input: {
+    teacherId: string;
+    assignmentId: string;
+    locale: InterfaceLanguage;
+  }): Promise<AssignmentSubmissionDTO> {
+    const admin = requireAdmin();
+    const { data: assignment, error: aErr } = await admin
+      .from("teacher_assignments")
+      .select("*")
+      .eq("id", input.assignmentId)
+      .eq("teacher_id", input.teacherId)
+      .eq("kind", "writing")
+      .is("deleted_at", null)
+      .maybeSingle();
+    if (aErr) throw new Error(aErr.message);
+    if (!assignment) throw new Error("NOT_FOUND");
+    if (!assignment.student_id) throw new Error("NOT_FOUND");
+
+    await assertCanViewStudent(
+      input.teacherId,
+      assignment.student_id as string,
+      assignment.course_id as string,
+    );
+
+    const { data: submission, error: sErr } = await admin
+      .from("assignment_submissions")
+      .select("assignment_id, body, submitted_at, ai_analysis, ai_analyzed_at")
+      .eq("assignment_id", input.assignmentId)
+      .maybeSingle();
+    if (sErr) throw new Error(sErr.message);
+    if (!submission) throw new Error("NO_SUBMISSION");
+
+    const payload = (assignment.payload ?? {}) as WritingAssignmentPayload;
+    const course = await getCourse(assignment.course_id as string);
+    let grammarTopicTitle: string | null = null;
+    let grammarHints: string | null = null;
+    if (payload.grammarTopicSlug) {
+      const topic = course.getGrammarTopic?.(payload.grammarTopicSlug);
+      if (topic) {
+        grammarTopicTitle = `${topic.title} (${topic.level})`;
+        grammarHints =
+          typeof topic.content === "string"
+            ? topic.content.slice(0, 2500)
+            : null;
+        if (!grammarHints && topic.summary) {
+          grammarHints = topic.summary;
+        }
+      }
+    }
+
+    const systemPrompt = buildWritingAssistSystemPrompt({
+      interfaceLanguage: input.locale,
+      courseTitle: course.titleNative || course.title || assignment.course_id,
+    });
+    const userPrompt = buildWritingAssistUserPrompt({
+      prompt: payload.prompt || "",
+      grammarTopicTitle,
+      grammarHints,
+      studentText: (submission as SubmissionRow).body,
+    });
+
+    const ai = await generateWithSystemPrompt({
+      systemPrompt,
+      messages: [{ role: "user", content: userPrompt }],
+      temperature: 0.35,
+      maxTokens: 1600,
+      interfaceLanguage: input.locale,
+    });
+
+    if (ai.model === "none" || ai.model === "unavailable") {
+      throw new Error("AI_UNAVAILABLE");
+    }
+
+    const analysis = ai.content.trim();
+    if (!analysis) throw new Error("AI_EMPTY");
+
+    const now = new Date().toISOString();
+    const { data: updated, error: uErr } = await admin
+      .from("assignment_submissions")
+      .update({
+        ai_analysis: analysis,
+        ai_analyzed_at: now,
+        updated_at: now,
+      })
+      .eq("assignment_id", input.assignmentId)
+      .select("assignment_id, body, submitted_at, ai_analysis, ai_analyzed_at")
+      .single();
+    if (uErr) throw new Error(uErr.message);
+
+    return submissionToDto(updated as SubmissionRow);
   },
 
   async listNotifications(
@@ -295,7 +523,6 @@ export const AssignmentService = {
     userId: string,
     ids?: string[],
   ): Promise<void> {
-    // Empty/omitted ids = no-op (avoid marking everything unread by accident).
     if (!ids?.length) return;
     const admin = requireAdmin();
     const { error } = await admin

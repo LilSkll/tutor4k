@@ -40,7 +40,11 @@ export async function POST(req: NextRequest) {
     if (body.courseId !== "spanish" && body.courseId !== "english") {
       return NextResponse.json({ error: "courseId required" }, { status: 400 });
     }
-    if (body.kind !== "chapter" && body.kind !== "exercise_set") {
+    if (
+      body.kind !== "chapter" &&
+      body.kind !== "exercise_set" &&
+      body.kind !== "writing"
+    ) {
       return NextResponse.json({ error: "kind required" }, { status: 400 });
     }
     if (!body.payload || typeof body.payload !== "object") {

@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Check } from "lucide-react";
+import { Check, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -14,7 +14,14 @@ import { EmptyState } from "@/components/shared/empty-state";
 import type {
   NotificationDTO,
   TeacherAssignmentDTO,
+  WritingAssignmentPayload,
 } from "@/types/assignments";
+
+function kindBadge(kind: TeacherAssignmentDTO["kind"], t: (k: string) => string) {
+  if (kind === "chapter") return t("homework.kindChapter");
+  if (kind === "writing") return t("homework.kindWriting");
+  return t("homework.kindExercises");
+}
 
 export function StudentHomeworkClient() {
   const language = useInterfaceLanguage();
@@ -31,6 +38,8 @@ export function StudentHomeworkClient() {
     [],
   );
   const [loading, setLoading] = React.useState(true);
+  const [drafts, setDrafts] = React.useState<Record<string, string>>({});
+  const [submittingId, setSubmittingId] = React.useState<string | null>(null);
 
   const load = React.useCallback(async () => {
     setLoading(true);
@@ -77,13 +86,32 @@ export function StudentHomeworkClient() {
     }
   };
 
-  const describe = (a: TeacherAssignmentDTO) => {
-    if (a.kind === "chapter") {
-      const slugs =
-        "chapterSlugs" in a.payload ? a.payload.chapterSlugs : [];
-      return slugs;
+  const submitWriting = async (id: string) => {
+    const body = (drafts[id] ?? "").trim();
+    if (body.length < 20) {
+      toast.error(t("homework.writingTooShort"));
+      return;
     }
-    return [] as string[];
+    setSubmittingId(id);
+    try {
+      const res = await fetch(`/api/student/homework/${id}/submit`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ body }),
+      });
+      if (!res.ok) throw new Error("fail");
+      toast.success(t("homework.writingSubmitted"));
+      setDrafts((prev) => {
+        const next = { ...prev };
+        delete next[id];
+        return next;
+      });
+      await load();
+    } catch {
+      toast.error(t("homework.writingSubmitFail"));
+    } finally {
+      setSubmittingId(null);
+    }
   };
 
   const unreadCount = notifications.filter((n) => !n.readAt).length;
@@ -115,11 +143,19 @@ export function StudentHomeworkClient() {
       ) : (
         <ul className="space-y-3">
           {assignments.map((a) => {
-            const slugs = describe(a);
             const note =
               "note" in a.payload && typeof a.payload.note === "string"
                 ? a.payload.note
                 : null;
+            const writing =
+              a.kind === "writing"
+                ? (a.payload as WritingAssignmentPayload)
+                : null;
+            const chapterSlugs =
+              a.kind === "chapter" && "chapterSlugs" in a.payload
+                ? a.payload.chapterSlugs
+                : [];
+
             return (
               <li
                 key={a.id}
@@ -127,11 +163,7 @@ export function StudentHomeworkClient() {
               >
                 <div className="flex flex-wrap items-center gap-2">
                   <Badge variant="secondary">{getCourseTitle(a.courseId)}</Badge>
-                  <Badge variant="level">
-                    {a.kind === "chapter"
-                      ? t("homework.kindChapter")
-                      : t("homework.kindExercises")}
-                  </Badge>
+                  <Badge variant="level">{kindBadge(a.kind, t)}</Badge>
                   <Badge
                     variant={a.status === "completed" ? "success" : "outline"}
                   >
@@ -143,9 +175,10 @@ export function StudentHomeworkClient() {
                     name: a.teacherName || "—",
                   })}
                 </p>
+
                 {a.kind === "chapter" ? (
                   <ul className="text-sm space-y-1">
-                    {slugs.map((slug) => (
+                    {chapterSlugs.map((slug) => (
                       <li key={slug}>
                         <Link
                           href={`/chapters/${encodeURIComponent(slug)}?courseId=${encodeURIComponent(a.courseId)}`}
@@ -160,6 +193,67 @@ export function StudentHomeworkClient() {
                       </li>
                     ))}
                   </ul>
+                ) : a.kind === "writing" && writing ? (
+                  <div className="space-y-3">
+                    <div>
+                      <p className="text-xs font-medium text-muted-foreground mb-1">
+                        {t("homework.writingPrompt")}
+                      </p>
+                      <p className="text-sm whitespace-pre-wrap">
+                        {writing.prompt}
+                      </p>
+                    </div>
+                    {writing.grammarTopicSlug && (
+                      <p className="text-sm">
+                        <span className="text-muted-foreground">
+                          {t("homework.grammarLink")}:{" "}
+                        </span>
+                        <Link
+                          href={`/grammar?topic=${encodeURIComponent(writing.grammarTopicSlug)}`}
+                          className="text-primary hover:underline"
+                        >
+                          {writing.grammarTopicSlug}
+                        </Link>
+                      </p>
+                    )}
+                    {a.submission ? (
+                      <div className="rounded-lg border border-border bg-muted/30 p-3">
+                        <p className="text-xs font-medium text-muted-foreground mb-1">
+                          {t("homework.writingYourAnswer")}
+                        </p>
+                        <p className="text-sm whitespace-pre-wrap">
+                          {a.submission.body}
+                        </p>
+                      </div>
+                    ) : a.status === "assigned" ? (
+                      <div className="space-y-2">
+                        <textarea
+                          className="w-full min-h-[140px] rounded-md border border-input bg-background px-3 py-2 text-sm"
+                          placeholder={t("homework.writingPlaceholder")}
+                          value={drafts[a.id] ?? ""}
+                          onChange={(e) =>
+                            setDrafts((prev) => ({
+                              ...prev,
+                              [a.id]: e.target.value,
+                            }))
+                          }
+                          maxLength={20000}
+                        />
+                        <Button
+                          size="sm"
+                          disabled={submittingId === a.id}
+                          onClick={() => void submitWriting(a.id)}
+                        >
+                          {submittingId === a.id ? (
+                            <Loader2 className="h-4 w-4 animate-spin" />
+                          ) : (
+                            <Check className="h-4 w-4" />
+                          )}
+                          {t("homework.writingSubmit")}
+                        </Button>
+                      </div>
+                    ) : null}
+                  </div>
                 ) : (
                   <p className="text-sm text-muted-foreground">
                     {t("homework.exerciseHint", {
@@ -168,11 +262,15 @@ export function StudentHomeworkClient() {
                       count:
                         ("count" in a.payload && a.payload.count) || 5,
                     })}{" "}
-                    <Link href="/exercises" className="text-primary hover:underline">
+                    <Link
+                      href="/exercises"
+                      className="text-primary hover:underline"
+                    >
                       {t("homework.openExercises")}
                     </Link>
                   </p>
                 )}
+
                 {note && (
                   <p className="text-sm text-muted-foreground">{note}</p>
                 )}
@@ -183,7 +281,7 @@ export function StudentHomeworkClient() {
                     })}
                   </p>
                 )}
-                {a.status === "assigned" && (
+                {a.status === "assigned" && a.kind !== "writing" && (
                   <Button size="sm" onClick={() => void complete(a.id)}>
                     <Check className="h-4 w-4" />
                     {t("homework.markDone")}

@@ -21,15 +21,24 @@ async function requireStudent() {
   return user;
 }
 
+/** Submit writing homework body and complete the assignment (no AI). */
 export async function POST(
-  _req: NextRequest,
+  req: NextRequest,
   ctx: { params: Promise<{ id: string }> },
 ) {
   try {
     const user = await requireStudent();
     const { id } = await ctx.params;
-    await AssignmentService.markCompleted(user.id, id);
-    return NextResponse.json({ ok: true });
+    const body = (await req.json()) as { body?: string };
+    if (typeof body.body !== "string") {
+      return NextResponse.json({ error: "body required" }, { status: 400 });
+    }
+    const submission = await AssignmentService.submitWriting(
+      user.id,
+      id,
+      body.body,
+    );
+    return NextResponse.json({ submission });
   } catch (err) {
     const msg = (err as Error).message;
     const status =
@@ -39,7 +48,7 @@ export async function POST(
           ? 403
           : msg === "NOT_FOUND"
             ? 404
-            : msg === "WRITING_REQUIRES_SUBMIT"
+            : msg === "INVALID_BODY"
               ? 400
               : 500;
     return NextResponse.json({ error: msg }, { status });
