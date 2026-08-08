@@ -243,6 +243,19 @@ export const AssignmentService = {
     );
   },
 
+  /** Open teacher homework for nav badge (assigned only). */
+  async countOpenForStudent(studentId: string): Promise<number> {
+    const admin = requireAdmin();
+    const { count, error } = await admin
+      .from("teacher_assignments")
+      .select("id", { count: "exact", head: true })
+      .eq("student_id", studentId)
+      .eq("status", "assigned")
+      .is("deleted_at", null);
+    if (error) throw new Error(error.message);
+    return count ?? 0;
+  },
+
   async create(input: {
     teacherId: string;
     teacherName: string;

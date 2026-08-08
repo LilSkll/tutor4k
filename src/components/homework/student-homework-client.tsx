@@ -81,6 +81,7 @@ export function StudentHomeworkClient() {
       });
       if (!res.ok) throw new Error("fail");
       toast.success(t("homework.completed"));
+      window.dispatchEvent(new Event("homework:changed"));
       await load();
     } catch {
       toast.error(t("homework.completeFail"));
@@ -102,6 +103,7 @@ export function StudentHomeworkClient() {
       });
       if (!res.ok) throw new Error("fail");
       toast.success(t("homework.writingSubmitted"));
+      window.dispatchEvent(new Event("homework:changed"));
       setDrafts((prev) => {
         const next = { ...prev };
         delete next[id];
@@ -116,6 +118,7 @@ export function StudentHomeworkClient() {
   };
 
   const unreadCount = notifications.filter((n) => !n.readAt).length;
+  const openAssigned = assignments.filter((a) => a.status === "assigned").length;
 
   return (
     <div className="container max-w-2xl py-6 md:py-8 space-y-6">
@@ -123,6 +126,9 @@ export function StudentHomeworkClient() {
         <h1 className="text-2xl font-bold">{t("homework.title")}</h1>
         <p className="text-sm text-muted-foreground mt-1">
           {t("homework.subtitle")}
+          {openAssigned > 0
+            ? ` · ${t("homework.openAssigned", { count: openAssigned })}`
+            : ""}
           {unreadCount > 0
             ? ` · ${t("homework.unread", { count: unreadCount })}`
             : ""}

@@ -8,6 +8,8 @@ import { translate } from "@/lib/i18n";
 import { NAV_SECTIONS, isNavActive } from "@/lib/nav";
 import { signOut } from "@/server/actions/auth";
 import { BrandIcon } from "@/components/shared/brand-icon";
+import { NavCountBadge } from "@/components/layout/nav-count-badge";
+import { useOpenHomeworkCount } from "@/hooks/use-open-homework-count";
 import { cn } from "@/lib/utils";
 
 interface NavProps {
@@ -20,6 +22,7 @@ export function Sidebar({ userName, level, streak }: NavProps) {
   const pathname = usePathname();
   const language = useUIStore((s) => s.interfaceLanguage);
   const collapsed = useUIStore((s) => s.sidebarCollapsed);
+  const openHomework = useOpenHomeworkCount();
   const t = (key: string, vars?: Record<string, string | number>) =>
     translate(key, language, vars);
 
@@ -63,6 +66,8 @@ export function Sidebar({ userName, level, streak }: NavProps) {
                 const Icon = item.icon;
                 const active = isNavActive(pathname, item.href);
                 const label = t(item.labelKey);
+                const showHwBadge =
+                  item.href === "/homework" && openHomework > 0;
                 return (
                   <Link
                     key={item.href}
@@ -74,13 +79,28 @@ export function Sidebar({ userName, level, streak }: NavProps) {
                       collapsed && "justify-center px-0",
                     )}
                   >
-                    <Icon
-                      className={cn(
-                        "h-[18px] w-[18px] shrink-0",
-                        active && "text-primary",
+                    <span className="relative shrink-0">
+                      <Icon
+                        className={cn(
+                          "h-[18px] w-[18px]",
+                          active && "text-primary",
+                        )}
+                      />
+                      {collapsed && showHwBadge && (
+                        <NavCountBadge
+                          count={openHomework}
+                          className="absolute -right-2 -top-2 h-4 min-w-[1rem] px-1"
+                        />
                       )}
-                    />
-                    {!collapsed && <span className="truncate">{label}</span>}
+                    </span>
+                    {!collapsed && (
+                      <>
+                        <span className="truncate flex-1">{label}</span>
+                        {showHwBadge && (
+                          <NavCountBadge count={openHomework} />
+                        )}
+                      </>
+                    )}
                   </Link>
                 );
               })}

@@ -11,6 +11,8 @@ import { useUIStore } from "@/stores";
 import { translate } from "@/lib/i18n";
 import { NAV_SECTIONS, isNavActive } from "@/lib/nav";
 import { signOut } from "@/server/actions/auth";
+import { NavCountBadge } from "@/components/layout/nav-count-badge";
+import { useOpenHomeworkCount } from "@/hooks/use-open-homework-count";
 import { cn } from "@/lib/utils";
 
 export function MobileNav({
@@ -25,6 +27,7 @@ export function MobileNav({
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
   const language = useUIStore((s) => s.interfaceLanguage);
+  const openHomework = useOpenHomeworkCount();
   const t = (key: string, vars?: Record<string, string | number>) =>
     translate(key, language, vars);
 
@@ -48,11 +51,17 @@ export function MobileNav({
           <Button
             variant="ghost"
             size="icon"
-            className="h-11 w-11"
+            className="relative h-11 w-11"
             onClick={() => setOpen(true)}
             aria-label={t("nav.more")}
           >
             <Menu className="h-5 w-5" />
+            {openHomework > 0 && (
+              <NavCountBadge
+                count={openHomework}
+                className="absolute right-1 top-1 h-4 min-w-[1rem] px-1"
+              />
+            )}
           </Button>
         </div>
       </div>
@@ -124,6 +133,8 @@ export function MobileNav({
                     {section.items.map((item) => {
                       const Icon = item.icon;
                       const active = isNavActive(pathname, item.href);
+                      const showHwBadge =
+                        item.href === "/homework" && openHomework > 0;
                       return (
                         <Link
                           key={item.href}
@@ -135,7 +146,10 @@ export function MobileNav({
                           )}
                         >
                           <Icon className="h-5 w-5 shrink-0" />
-                          <span>{t(item.labelKey)}</span>
+                          <span className="flex-1">{t(item.labelKey)}</span>
+                          {showHwBadge && (
+                            <NavCountBadge count={openHomework} />
+                          )}
                         </Link>
                       );
                     })}
