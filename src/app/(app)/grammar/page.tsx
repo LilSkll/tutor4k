@@ -6,7 +6,7 @@ import { GrammarExplorer } from "@/components/grammar/grammar-explorer";
 import { localizeGrammarTopicMetaList } from "@/lib/grammar-topic-localize";
 import { toGrammarTopicMetaList } from "@/lib/grammar-topic-meta";
 import { translate } from "@/lib/i18n";
-import type { GrammarLevel, InterfaceLanguage } from "@/types";
+import type { InterfaceLanguage } from "@/types";
 
 const getCachedGrammarTopics = unstable_cache(
   async (courseId: string, lang: InterfaceLanguage) => {
@@ -44,7 +44,7 @@ export default async function GrammarPage({
       </div>
 
       <GrammarExplorer
-        initialLevel={params.level as GrammarLevel | undefined}
+        initialLevel={params.level}
         topics={grammarTopics}
         courseId={courseId}
         serverLanguage={lang}

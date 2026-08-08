@@ -33,7 +33,7 @@ export function GrammarExplorer({
   courseId,
   serverLanguage,
 }: {
-  initialLevel?: GrammarLevel;
+  initialLevel?: string;
   topics: LocalizedGrammarTopicMeta[];
   courseId: string;
   serverLanguage?: InterfaceLanguage;
@@ -44,24 +44,27 @@ export function GrammarExplorer({
   const t = (key: string, vars?: Record<string, string | number>) =>
     translate(key, language, vars);
 
-  const [activeLevel, setActiveLevel] = React.useState<
-    GrammarLevel | "ALL" | "EXAM"
-  >(initialLevel ?? "ALL");
-
-  const examName = React.useMemo(
-    () => topics.find((topic) => topic.exam)?.exam ?? null,
-    [topics],
+  const [activeFilter, setActiveFilter] = React.useState<string>(
+    initialLevel ?? "ALL",
   );
+
+  const examNames = React.useMemo(() => {
+    const set = new Set<string>();
+    for (const topic of topics) {
+      if (topic.exam) set.add(topic.exam);
+    }
+    return [...set].sort();
+  }, [topics]);
 
   const topicSlug = searchParams.get("topic");
   const selectedTopic = topics.find((topic) => topic.slug === topicSlug);
 
   const filtered =
-    activeLevel === "ALL"
+    activeFilter === "ALL"
       ? topics
-      : activeLevel === "EXAM"
-        ? topics.filter((topic) => Boolean(topic.exam))
-        : topics.filter((topic) => topic.level === activeLevel);
+      : activeFilter.startsWith("exam:")
+        ? topics.filter((topic) => topic.exam === activeFilter.slice(5))
+        : topics.filter((topic) => topic.level === activeFilter);
 
   if (topics.length === 0) {
     return (
@@ -73,28 +76,29 @@ export function GrammarExplorer({
     <>
       <div className="flex flex-wrap gap-2">
         <FilterChip
-          active={activeLevel === "ALL"}
-          onClick={() => setActiveLevel("ALL")}
+          active={activeFilter === "ALL"}
+          onClick={() => setActiveFilter("ALL")}
         >
           {t("grammar.allChip")}
         </FilterChip>
         {(["A1", "A2", "B1", "B2", "C1", "C2"] as GrammarLevel[]).map((lvl) => (
           <FilterChip
             key={lvl}
-            active={activeLevel === lvl}
-            onClick={() => setActiveLevel(lvl)}
+            active={activeFilter === lvl}
+            onClick={() => setActiveFilter(lvl)}
           >
             {lvl}
           </FilterChip>
         ))}
-        {examName && (
+        {examNames.map((name) => (
           <FilterChip
-            active={activeLevel === "EXAM"}
-            onClick={() => setActiveLevel("EXAM")}
+            key={name}
+            active={activeFilter === `exam:${name}`}
+            onClick={() => setActiveFilter(`exam:${name}`)}
           >
-            {examName}
+            {name}
           </FilterChip>
-        )}
+        ))}
       </div>
 
       <div className="grid gap-3 md:grid-cols-2">
@@ -106,7 +110,9 @@ export function GrammarExplorer({
               key={topic.slug}
               type="button"
               onClick={() =>
-                router.push(`/grammar?topic=${topic.slug}&level=${activeLevel}`)
+                router.push(
+                  `/grammar?topic=${topic.slug}&level=${encodeURIComponent(activeFilter)}`,
+                )
               }
               className={cn(
                 "text-left rounded-xl border p-4 transition-all hover:shadow-md hover:-translate-y-0.5 bg-gradient-to-br",
@@ -114,7 +120,14 @@ export function GrammarExplorer({
               )}
             >
               <div className="flex items-center justify-between mb-1">
-                <Badge variant="level">{topic.level}</Badge>
+                <div className="flex items-center gap-1.5">
+                  <Badge variant="level">{topic.level}</Badge>
+                  {topic.exam ? (
+                    <Badge variant="secondary" className="text-[10px]">
+                      {topic.exam}
+                    </Badge>
+                  ) : null}
+                </div>
                 <span className="text-[10px] opacity-70">
                   {topic.localizedCategory}
                 </span>

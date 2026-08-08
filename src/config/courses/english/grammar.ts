@@ -1,12 +1,15 @@
 import type { GrammarTopic } from "@/types";
+import { ENGLISH_GRAMMAR_EXAM_WRITING } from "./grammar-exam-writing";
+import { ENGLISH_GRAMMAR_EXTRA } from "./grammar-extra";
 
 // =====================================================================
 // English Course — Grammar Topics
 // Original explanations in the style of Spanish with Pavel.
 // Sequence based on the Life textbook methodology.
+// Extra core topics + IELTS/Cambridge writing track appended below.
 // =====================================================================
 
-export const ENGLISH_GRAMMAR: GrammarTopic[] = [
+const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
   // ===== A1 ==========================================================
   {
     slug: "eng-a1-be",
@@ -721,6 +724,12 @@ C2 — это умение **смягчать**, **дистанцировать�
 
 > 💡 Носитель C2 слышит разницу между \`It's not bad\` и \`It's not **bad**!\` — интонация меняет полюс оценки.`,
   },
+];
+
+export const ENGLISH_GRAMMAR: GrammarTopic[] = [
+  ...ENGLISH_GRAMMAR_CORE,
+  ...ENGLISH_GRAMMAR_EXTRA,
+  ...ENGLISH_GRAMMAR_EXAM_WRITING,
 ];
 
 export function getEngGrammarTopic(slug: string): GrammarTopic | undefined {
