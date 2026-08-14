@@ -252,11 +252,29 @@ export async function startChapter(chapterSlug: string): Promise<void> {
 
   if (existing) return; // Already started or completed.
 
+  // Resolve CEFR band for NOT NULL level column (C2 chapters → C1 until enum migrates).
+  let dbLevel: string = "A1";
+  try {
+    const { data: profile } = await client
+      .from("profiles")
+      .select("active_course_id")
+      .eq("id", user.id)
+      .maybeSingle();
+    const courseId = (profile?.active_course_id as string) ?? "spanish";
+    const { getCourse } = await import("@/config/courses");
+    const { toUserLevel } = await import("@/lib/user-level");
+    const chapter = (await getCourse(courseId)).getChapter(chapterSlug);
+    dbLevel = toUserLevel(chapter?.level);
+  } catch {
+    // keep A1
+  }
+
   // Insert a new in_progress row.
   await client.from("learning_progress").insert({
     user_id: user.id,
     chapter_slug: chapterSlug,
     topic: chapterSlug,
+    level: dbLevel,
     status: "in_progress",
     score: 0,
     started_at: new Date().toISOString(),

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
 import { getCourse } from "@/config/courses";
 import { inferCourseIdFromChapterSlug } from "@/lib/chapter-display";
+import { toUserLevel } from "@/lib/user-level";
 import type { GrammarLevel } from "@/types";
 
 /**
@@ -54,6 +55,8 @@ export async function POST(req: NextRequest) {
         body.chapterSlug,
       )?.level ??
       "A1";
+    // DB user_level historically A1–C1; clamp C2 so progress saves before migration.
+    const dbLevel = toUserLevel(chapterLevel);
 
     if (!chapter) {
       courseId = inferCourseIdFromChapterSlug(body.chapterSlug);
@@ -84,7 +87,7 @@ export async function POST(req: NextRequest) {
         .from("learning_progress")
         .update({
           status: "completed",
-          level: chapterLevel,
+          level: dbLevel,
           score: body.score ?? 0,
           completed_at: new Date().toISOString(),
           words_learned: body.wordsLearned ?? 0,
@@ -105,7 +108,7 @@ export async function POST(req: NextRequest) {
           user_id: user.id,
           chapter_slug: body.chapterSlug,
           topic: body.chapterSlug,
-          level: chapterLevel,
+          level: dbLevel,
           status: "completed",
           score: body.score ?? 0,
           started_at: new Date().toISOString(),

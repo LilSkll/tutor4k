@@ -863,11 +863,12 @@ async function saveExerciseHistory(input: {
   const admin = createSupabaseAdminClient();
   const writeClient = admin ?? userClient;
 
+  const { toUserLevel } = await import("@/lib/user-level");
   const row: Record<string, unknown> = {
     user_id: user.id,
     exercise: input.exercise,
     exercise_type: input.type,
-    level: input.level,
+    level: toUserLevel(input.level),
     user_answer: input.userAnswer,
     correct: input.correct,
     feedback: input.feedback,

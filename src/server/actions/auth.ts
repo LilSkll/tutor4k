@@ -76,7 +76,7 @@ function friendlyAuthError(errorOrMessage: unknown): string {
     return "Supabase пока шлёт письма только участникам команды. Подключите рабочий Custom SMTP — тогда сброс заработает для учеников.";
   }
   if (m.includes("redirect") && (m.includes("allow") || m.includes("not"))) {
-    return "Redirect URL не разрешён. В Supabase → Authentication → URL Configuration добавьте: https://ваш-домен/auth/callback";
+    return "Redirect URL не разрешён. В Supabase → Authentication → URL Configuration добавьте оба домена: …/auth/callback и …/auth/recovery (и для .com, и для vercel.app).";
   }
   if (m.includes("smtp") || m.includes("error sending") || m.includes("mail")) {
     return "Ошибка почтового сервера (SMTP). Проверьте логин, пароль приложения и порт в Custom SMTP.";
@@ -117,6 +117,19 @@ function friendlyAuthError(errorOrMessage: unknown): string {
 async function appOrigin(): Promise<string> {
   // Prefer the host the user is actually on, so reset links land on the same
   // deployment (vercel.app vs custom domain) and cookies match.
+  // Optional override for email links when one domain is unreachable:
+  // NEXT_PUBLIC_AUTH_EMAIL_ORIGIN=https://spanish-tutor-psi.vercel.app
+  const emailOverride = process.env.NEXT_PUBLIC_AUTH_EMAIL_ORIGIN?.replace(
+    /\/$/,
+    "",
+  );
+  if (emailOverride) return emailOverride;
+
+  const allowed = (process.env.NEXT_PUBLIC_AUTH_ORIGINS ?? "")
+    .split(",")
+    .map((s) => s.trim().replace(/\/$/, ""))
+    .filter(Boolean);
+
   try {
     const { headers } = await import("next/headers");
     const h = await headers();
@@ -125,11 +138,16 @@ async function appOrigin(): Promise<string> {
     if (host) {
       const protoHeader = h.get("x-forwarded-proto") ?? "https";
       const proto = protoHeader.split(",")[0]?.trim() || "https";
-      return `${proto}://${host}`;
+      const origin = `${proto}://${host}`;
+      // If an allowlist is configured, only trust listed hosts for auth emails.
+      if (allowed.length === 0 || allowed.includes(origin)) {
+        return origin;
+      }
     }
   } catch {
     // ignore
   }
+  if (allowed[0]) return allowed[0];
   const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
   if (fromEnv) return fromEnv;
   return "http://localhost:3000";

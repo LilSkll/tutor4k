@@ -19,7 +19,8 @@ export async function POST(req: NextRequest) {
       level: GrammarLevel;
     };
     // AI feedback context tops out at C1; C2 items are checked as C1.
-    const checkLevel: Level = body.level === "C2" ? "C1" : body.level;
+    const { toUserLevel } = await import("@/lib/user-level");
+    const checkLevel: Level = toUserLevel(body.level);
 
     if (!body.exercise || typeof body.userAnswer !== "string") {
       return NextResponse.json(
