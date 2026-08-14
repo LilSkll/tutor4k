@@ -30,6 +30,10 @@ import type { StaticExercise } from "@/types";
 import type { LessonAdaptation } from "@/types/learning-profile";
 import { BackLink } from "@/components/shared/back-link";
 import { QuestionWithGloss } from "@/components/exercises/question-with-gloss";
+import {
+  GrammarRuleHints,
+  grammarRulesFromMarkdown,
+} from "@/components/chapters/grammar-rule-hints";
 import { cn } from "@/lib/utils";
 import type { Chapter } from "@/types";
 
@@ -169,6 +173,15 @@ export function LessonRunner({
       .filter(Boolean);
     return parts.length > 0 ? parts : [md];
   }, [grammarContent]);
+
+  const grammarRules = React.useMemo(
+    () =>
+      grammarRulesFromMarkdown(
+        grammarContent ?? "",
+        t("lesson.ruleUntitled"),
+      ),
+    [grammarContent, language],
+  );
 
   const theoryMarkdown = theoryPages[theoryPageIdx] ?? theoryPages[0] ?? "";
   const theoryPageCount = theoryPages.length;
@@ -491,6 +504,14 @@ export function LessonRunner({
                   autoFocus
                 />
               )}
+              {kind !== "revision" && grammarRules.length > 0 ? (
+                <GrammarRuleHints
+                  rules={grammarRules}
+                  label={t("lesson.ruleHints")}
+                  lead={t("lesson.ruleHintsLead")}
+                  untitledLabel={t("lesson.ruleUntitled")}
+                />
+              ) : null}
               <Button variant="gradient" className="w-full" onClick={checkAnswer}
                 disabled={loading || (hasOptions ? !selectedOption : !userAnswer.trim())}>
                 {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Check className="h-4 w-4" />}
