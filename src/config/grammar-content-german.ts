@@ -471,32 +471,85 @@ Kombination von Zeiten in Bedingung und Ergebnis:
   },
 
   "a1-articulos": {
-    de: `## Bestimmte Artikel (Artículos definidos)
+    de: `> **Weg:** ser / estar und das Präsens (hablo, soy) kennt ihr schon. Hier — die kurzen Wörter **vor** dem Substantiv.
 
-| Genus / Zahl | Artikel | Beispiel |
+## Was ein Artikel ist
+
+Der Artikel ist ein kurzes Wort **vor** dem Substantiv. Er beantwortet drei Fragen: Ist die Sache **bekannt** oder **irgendeine**? **Eine** oder **viele**? Ist das Wort **maskulin** oder **feminin**?
+
+Im Wörterbuch: **m.** = masculino = maskulin, **f.** = femenino = feminin. Singular = eine Sache, Plural = viele.
+
+## Eine bekannte, konkrete Sache
+
+Wenn die Sache **vertraut / konkret** ist (dieses Buch, die Sonne, der Park nebenan):
+
+| | Eine Sache | Viele Sachen |
 |---|---|---|
-| m. Singular | **el** | el libro |
-| f. Singular | **la** | la casa |
-| m./f. + a/ha | **el** | el agua |
-| Plural | **los / las** | los libros, las casas |
+| maskulin | **el** libro | **los** libros |
+| feminin | **la** casa | **las** casas |
 
-## Unbestimmte Artikel (Artículos indefinidos)
+Beispiele: \`el sol\`, \`la casa de Ana\`, \`los libros de la mesa\`.
 
-| Zahl | Maskulin | Feminin |
+## Eine unbekannte oder „irgendeine“ Sache
+
+Wenn die Sache noch nicht genannt wurde oder irgendeine / eine von vielen ist:
+
+| | Eine Sache | Viele Sachen |
 |---|---|---|
-| Singular | **un** | **una** |
-| Plural | **unos** | **unas** |
+| maskulin | **un** libro | **unos** libros |
+| feminin | **una** casa | **unas** casas |
 
-### Wichtige Regeln
-- **El** wird für etwas Bestimmtes und Bekanntes verwendet: \`el sol\`.
-- **Un/una** für etwas Unbestimmtes: \`un libro interesante\`.
-- Vor femininen Substantiven mit betontem **a-/ha-** am Anfang steht **el**: \`el agua\`, \`el águila\` (aber im Plural: \`las aguas\`).
+Beispiele: \`un libro interesante\`, \`una casa nueva\`.
 
-> 💡 Merke: Das Genus im Spanischen ist nicht immer logisch — \`el problema\` (m.), \`la mano\` (f.).`,
+## Ausnahme: el agua — nicht la abuela
+
+Das ist **nicht** „jedes Wort auf a“. Und es geht **nicht** um den Akzentstrich ´.
+
+**El** (oder **un**) steht vor einem **femininen** Wort nur, wenn **alle** Bedingungen gelten:
+
+1. das Wort ist feminin;
+2. wir sprechen von **einer** Sache;
+3. es beginnt mit **a** oder **ha**;
+4. die Betonung liegt auf **diesem ersten a** (wie **Á-gua**). Es muss kein ´ stehen — entscheidend ist der Klang.
+
+Dann: \`el agua\`, \`el águila\`, \`el hacha\`, \`el aula\`, \`el hambre\`.
+
+Das Wort bleibt **feminin**: \`el agua fría\` (nicht *frío*). Im Plural fällt die Ausnahme weg: \`las aguas\`, \`las águilas\`, \`las aulas\`.
+
+**Gehört nicht dazu** (erstes a unbetont):
+
+| Wort | Wo die Betonung liegt | Wie man sagt |
+|---|---|---|
+| abuela | a-**BUE**-la | **la** abuela, **las** abuelas |
+| amiga | a-**MI**-ga | **la** amiga |
+| harina | ha-**RI**-na | **la** harina |
+| habitación | auf **-ció-** | **la** habitación |
+
+> ⚠️ Häufiger Fehler: *el abuela*. Richtig: **la abuela**.
+> Steht ein anderes Wort zwischen Artikel und Substantiv, wieder **la**: \`la misma agua\`, \`la amplia aula\`.
+
+## Weitere Ausnahmen
+
+- Beruf nach **ser** oft ohne Artikel: \`Soy profesora.\`
+- Sprache: \`Hablo español.\` Aber \`El español es fácil.\`
+- Wochentag: \`el lunes\` (am Montag), \`los lunes\` (montags).
+- **a + el = al**, **de + el = del**. Mit **la** keine Verschmelzung: a la, de la. Vor agua: \`al agua\`, \`del agua\`.
+- Manche Wörter auf **-ma** sind maskulin: \`el problema\`, \`el tema\`. \`la mano\`, \`la foto\` sind feminin, obwohl sie auf -o enden.
+
+## In 4 Schritten wählen
+
+1. Eine Sache oder viele?
+2. Maskulin oder feminin? (das Genus ändert sich **nicht** durch el agua)
+3. Bekannte konkrete Sache (**el / la / los / las**) oder „irgendeine“ (**un / una / unos / unas**)?
+4. Feminin + eine Sache + betontes **a / ha** am Anfang → **el** / **un**. Im Plural immer **las** / **unas**.`,
   },
 
   "a1-ser-estar": {
-    de: `## Begrüßungen und Vorstellungen
+    de: `> **Weg:** das ist das **erste** Grammatikthema. Von null: wer spricht (ich / du) und zwei Verben für „sein“.
+
+## Begrüßungen und Vorstellungen
+
+Fragen schreibt man mit **zwei** Zeichen: \`¿…?\`
 
 | Spanisch | Deutsch |
 |---|---|
@@ -508,104 +561,159 @@ Kombination von Zeiten in Bedingung und Ergebnis:
 | **¿Cómo te llamas?** | Wie heißt du? |
 | **Me llamo…** | Ich heiße… |
 | **Mucho gusto** | Freut mich |
-| **¿Cómo estás?** | Wie geht's? |
+| **¿Cómo estás?** | Wie geht’s? (jetzt) |
 | **Bien, gracias** | Gut, danke |
 
 > 💡 Nach der Begrüßung oft: \`Hola, ¿cómo te llamas?\`
 
-## Ser vs Estar — beide bedeuten „sein"
+## Wer spricht — ich, du, er…
 
-### SER — dauerhafte Eigenschaften
-Verwendet für **Identität, Beruf, Herkunft, Beschreibung**:
-- \`Yo soy profesor.\`
-- \`Ella es de México.\`
-- \`El cielo es azul.\`
+Das Verb **ändert sich nach der Person**. Diese Tabelle braucht ihr den ganzen Kurs.
 
-| Person | SER |
+| Deutsch | Pronomen | Wann |
+|---|---|---|
+| ich | **yo** | Sprecher |
+| du | **tú** | eine Person, per du |
+| er / sie / Sie (eine Person) | **él / ella / usted** | eine Verbform für alle drei |
+| wir | **nosotros / nosotras** | -as, wenn nur Frauen |
+| ihr (Spanien) | **vosotros / vosotras** | in Lateinamerika fast unüblich |
+| sie / Sie (mehrere) | **ellos / ellas / ustedes** | in Lateinamerika *ustedes* = „ihr“ |
+
+## Zwei Verben für „sein“: ser und estar
+
+### SER — wer / was jemand **ist**
+Identität, Beruf, Herkunft, Beschreibung, Uhrzeit, Beziehung:
+
+- \`Yo **soy** profesor.\`
+- \`Ella **es** de México.\`
+- \`El cielo **es** azul.\` (überhaupt)
+- \`**Son** las tres.\` (Uhrzeit auch mit ser)
+
+| Wer | SER |
 |---|---|
-| yo | soy |
-| tú | eres |
-| él/ella/usted | es |
-| nosotros/as | somos |
-| **vosotros/as** | **sois** |
-| ellos/ustedes | son |
+| yo | **soy** |
+| tú | **eres** |
+| él / ella / usted | **es** |
+| nosotros | **somos** |
+| vosotros | **sois** |
+| ellos / ustedes | **son** |
 
-### ESTAR — vorübergehende Zustände und Ort
-Verwendet für **Zustand, Gefühle, Ort**:
-- \`Estoy cansado.\`
-- \`El libro está en la mesa.\`
+### ESTAR — wie / wo **jetzt**
+Zustand, Gefühl, Ort:
 
-| Person | ESTAR |
+- \`**Estoy** cansado.\`
+- \`El libro **está** en la mesa.\`
+
+| Wer | ESTAR |
 |---|---|
-| yo | estoy |
-| tú | estás |
-| él/ella/usted | está |
-| nosotros/as | estamos |
-| **vosotros/as** | **estáis** |
-| ellos/ustedes | están |
+| yo | **estoy** |
+| tú | **estás** |
+| él / ella / usted | **está** |
+| nosotros | **estamos** |
+| vosotros | **estáis** |
+| ellos / ustedes | **están** |
 
-### Eselsbrücke DOCTOR / PLACE
-- **SER**: **D**escription, **O**ccupation, **C**haracteristic, **T**ime, **O**rigin, **R**elationship.
-- **ESTAR**: **P**osition, **L**ocation, **A**ction (Gerundio), **C**ondition, **E**motion.
+## So wählt ihr
 
-> ⚠️ Adjektive ändern die Bedeutung: \`es aburrido\` (eine langweilige Person) vs \`está aburrido\` (er/sie ist gelangweilt).`,
+1. **Wer / was / woher / wie spät** → **ser**.
+2. **Wo / wie fühlt man sich / vorübergehend** → **estar**.
+
+Ohne englische Eselsbrücken:
+- **ser**: Beschreibung, Beruf, Charakter, Zeit, Herkunft, Beziehung;
+- **estar**: Haltung, Ort, -ando/-iendo, Zustand, Emotion.
+
+> ⚠️ \`es aburrido\` (langweilige Person) vs \`está aburrido\` (gerade gelangweilt).
+> \`estar frío\` gilt für Dinge; „mir ist kalt“ ist *tener* (\`tengo frío\`).`,
   },
 
   "a1-presente": {
-    de: `## Presente de Indicativo
+    de: `> **Weg:** soy / estoy kennt ihr schon. Hier — jede Handlung in der Gegenwart: hablo, como, vivo.
 
-### Regelmäßige Verben (3 Konjugationen)
+## Was Presente ist
 
-| Person | -AR (hablar) | -ER (comer) | -IR (vivir) |
+**Presente** = Gegenwart. Die Wörterbuchform ist der **Infinitiv** (noch nicht ich/du): hablar, comer, vivir.
+
+Die Endung zeigt die Familie:
+- **-ar** — die größte (\`hablar\` — sprechen);
+- **-er** (\`comer\` — essen);
+- **-ir** (\`vivir\` — leben).
+
+-ar / -er / -ir ab und Endung **nach der Person**.
+
+## Regelmäßige Verben
+
+„Regelmäßig“ = Tabellenendungen, Stamm bleibt ganz.
+
+| Wer | -AR hablar | -ER comer | -IR vivir |
 |---|---|---|---|
-| yo | hablo | como | vivo |
-| tú | hablas | comes | vives |
-| él/ella | habla | come | vive |
-| nosotros | hablamos | comemos | vivimos |
-| vosotros | habláis | coméis | vivís |
-| ellos | hablan | comen | viven |
+| yo | habl**o** | com**o** | viv**o** |
+| tú | habl**as** | com**es** | viv**es** |
+| él / ella / usted | habl**a** | com**e** | viv**e** |
+| nosotros | habl**amos** | com**emos** | viv**imos** |
+| vosotros | habl**áis** | com**éis** | viv**ís** |
+| ellos / ustedes | habl**an** | com**en** | viv**en** |
 
-### Unregelmäßige Verben (am häufigsten)
-- **ser**: soy, eres, es, somos, sois, son
-- **estar**: estoy, estás, está, estamos, estáis, están
-- **ir**: voy, vas, va, vamos, vais, van
-- **tener**: tengo, tienes, tiene, tenemos, tenéis, tienen
-- **hacer**: hago, haces, hace, hacemos, hacéis, hacen
+> yo endet fast immer auf **-o**. In Lateinamerika ersetzt ustedes das vosotros.
 
-### Verwendung
-- Handlung in der Gegenwart: \`Trabajo en Madrid.\`
-- Allgemeine Fakten: \`El agua hierve a 100°C.\`
-- Nahe Zukunft: \`Mañana voy al cine.\`
+## Wann so
 
-> 💡 Verben mit Vokalwechsel: \`pensar → pienso\`, \`pedir → pido\`, \`dormir → duermo\`.`,
+- Jetzt / gewöhnlich: \`Trabajo en Madrid.\`
+- Fakten: \`El agua hierve a 100°C.\`
+- Nahe Zukunft: \`Mañana **voy** al cine.\`
+
+## Die ersten unregelmäßigen
+
+**ser** und **estar** kennt ihr.
+
+| Verb | yo | tú | él | nosotros | vosotros | ellos |
+|---|---|---|---|---|---|---|
+| **ser** | soy | eres | es | somos | sois | son |
+| **estar** | estoy | estás | está | estamos | estáis | están |
+| **ir** | voy | vas | va | vamos | vais | van |
+| **tener** | tengo | tienes | tiene | tenemos | tenéis | tienen |
+| **hacer** | hago | haces | hace | hacemos | hacéis | hacen |
+
+Manche wechseln den Vokal **nur** in der betonten Silbe (nicht nosotros / vosotros):
+\`pensar → pienso\`, \`pedir → pido\`, \`dormir → duermo\`. Liste — Häufige Verben.`,
   },
 
   "a1-genero-numero": {
-    de: `## Genus (Género)
+    de: `> **Weg:** el / la / un / una kennt ihr. Hier — **warum** la casa, aber el problema, und warum nicht *el abuela*.
 
-| Endung | Genus | Beispiel |
+## Maskulin und feminin
+
+Jedes spanische Substantiv hat ein Genus. Es stimmt **nicht** immer mit dem natürlichen Geschlecht überein und ist **nicht** immer logisch.
+
+Im Wörterbuch: **m.** = masculino = maskulin, **f.** = femenino = feminin.
+
+| Meist so | Genus | Beispiele |
 |---|---|---|
-| -o | m. | el libro, el perro |
-| -a | f. | la casa, la gata |
-| -ción/-sión | f. | la canción, la televisión |
-| -dad/-tad | f. | la ciudad, la libertad |
-| Konsonant | variiert | el lápiz / la pared |
+| endet auf **-o** | maskulin | el libro, el perro |
+| endet auf **-a** | feminin | la casa, la gata |
+| **-ción / -sión** | feminin | la canción, la televisión |
+| **-dad / -tad** | feminin | la ciudad, la libertad |
+| endet auf Konsonant | Wörterbuch prüfen | el lápiz / la pared |
 
-**Ausnahmen:** \`el problema\`, \`el mapa\`, \`el día\` (m. trotz -a);
-\`la mano\`, \`la foto\` (f. trotz -o).
+**Ausnahmen bei der Endung:**
+- auf **-a**, aber maskulin: \`el problema\`, \`el mapa\`, \`el día\`, \`el tema\`, \`el idioma\`;
+- auf **-o**, aber feminin: \`la mano\`, \`la foto\`, \`la radio\`, \`la moto\`.
 
-## Zahl (Número)
+Der Artikel **el** bei \`el agua\` macht das Wort **nicht** maskulin — siehe **Artikel**. Richtig: \`el agua fría\`; im Plural \`las aguas\`. Nicht verwechseln mit \`**la** abuela\` (Betonung auf **-bue-**, nicht auf dem ersten a).
 
-- **-s** hinzufügen (nach Vokal): \`libro → libros\`, \`mesa → mesas\`
-- **-es** hinzufügen (nach Konsonant): \`flor → flores\`, \`mes → meses\`
+## Eine oder viele
+
+- Nach Vokal **-s**: \`libro → libros\`, \`mesa → mesas\`
+- Nach Konsonant **-es**: \`flor → flores\`, \`mes → meses\`
 - \`el lápiz → los lápices\` (z → c vor -es)
-- \`el prógrama → los programas\` (ohne Akzent)
+- Der Schriftakzent kann entfallen: \`el programa → los programas\`
 
-> ⚠️ Kongruenz: Artikel + Adjektiv + Substantiv müssen in Genus und Zahl übereinstimmen: \`la casa blanca\`, \`los coches rojos\`.`,
+> ⚠️ Artikel, Adjektiv und Substantiv müssen in Genus und Zahl übereinstimmen: \`la casa blanca\`, \`los coches rojos\`, \`el agua fría\`.`,
   },
 
   "a1-numeros-1-100": {
-    de: `## Zahlen 1–100
+    de: `> **Weg:** el / la und das Genus kennt ihr. Hier — Zahlen, Wochentag und **Uhrzeit** (la una / las dos).
+
+## Zahlen 1–100
 
 | Bereich | Beispiel |
 |---|---|
@@ -671,7 +779,9 @@ Frage: **¿Qué hora es?**
   },
 
   "a1-preposiciones-lugar": {
-    de: `## Wichtigste Ortspräpositionen
+    de: `> **Weg:** estar für den Ort und a + el = al kennt ihr. Hier — die Präpositionskarte: in, auf, unter, zu.
+
+## Wichtigste Ortspräpositionen
 
 | Präposition | Bedeutung | Beispiel |
 |---|---|---|
@@ -694,7 +804,9 @@ Frage: **¿Qué hora es?**
   },
 
   "a1-gustar": {
-    de: `## Gustar — „mögen" (wörtlich: „gefallen")
+    de: `> **Weg:** Präsens (gusta / gustan) und el / los kennt ihr. Hier — **der Kaffee gefällt MIR**, nicht „ich gefalle dem Kaffee“.
+
+## Gustar — „mögen" (wörtlich: „gefallen")
 
 Im Spanischen funktioniert \`gustar\` **umgekehrt**: das Subjekt ist das, was gefällt, nicht die Person.
 
@@ -726,7 +838,9 @@ Im Spanischen funktioniert \`gustar\` **umgekehrt**: das Subjekt ist das, was ge
   },
 
   "a1-tener-expressions": {
-    de: `## Wendungen mit TENER
+    de: `> **Weg:** ser / estar sind getrennt. Hier — ein drittes Muster: **tener + Nomen** (Hunger / Kälte / 20 Jahre).
+
+## Wendungen mit TENER
 
 Im Spanischen werden viele Zustände mit **tener + Substantiv** ausgedrückt, nicht mit ser/estar.
 
@@ -756,7 +870,9 @@ Im Spanischen werden viele Zustände mit **tener + Substantiv** ausgedrückt, ni
   },
 
   "a1-preguntas": {
-    de: `## Fragewörter (Palabras interrogativas)
+    de: `> **Weg:** ¿Cómo estás? und ¿Cómo te llamas? kennt ihr. Hier — die übrigen Fragewörter und das **¿** in der Schrift.
+
+## Fragewörter (Palabras interrogativas)
 
 | Wort | Bedeutung | Beispiel |
 |---|---|---|
@@ -785,7 +901,9 @@ Im Spanischen gibt es **doppelte** Zeichen: \`¿…?\` öffnend + \`…?\` schli
   },
 
   "a1-verbos-frecuentes": {
-    de: `## Wichtigste unregelmäßige Verben (Presente)
+    de: `> **Weg:** die regelmäßigen Präsensendungen kennt ihr. Hier — eine **Liste** der wichtigsten unregelmäßigen Verben.
+
+## Wichtigste unregelmäßige Verben (Presente)
 
 ### IR — gehen
 | yo | tú | él/ella/usted | nosotros/as | **vosotros/as** | ellos/ustedes |
@@ -832,7 +950,9 @@ Im Spanischen gibt es **doppelte** Zeichen: \`¿…?\` öffnend + \`…?\` schli
   },
 
   "a2-preterito-perfecto": {
-    de: `## Pretérito Perfecto (spanisches Passé composé)
+    de: `> **Weg:** das Präsens (hablo) konjugiert ihr schon. Neu — **zusammengesetzte Vergangenheit**: haber + «gemachte» Form.
+
+## Pretérito Perfecto (spanisches Passé composé)
 
 ### Formel: **HABER** + **Partizip**
 
@@ -866,7 +986,9 @@ hoy, esta semana, este año, ya, todavía no, nunca, alguna vez.
   },
 
   "a2-preterito-indefinido": {
-    de: `## Pretérito Indefinido (einfache Vergangenheit)
+    de: `> **Weg:** Perfecto (he comido), wenn der Zeitraum noch «jetzt» ist. Hier — **gestern / 2018**: eigene Endung, ohne haber.
+
+## Pretérito Indefinido (einfache Vergangenheit)
 
 ### Regelmäßige Verben
 
@@ -906,7 +1028,9 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
   },
 
   "a2-imperfecto": {
-    de: `## Pretérito Imperfecto — Hintergrund der Vergangenheit
+    de: `> **Weg:** Indefinido (ayer fui) ist das Ereignis. Hier — die **Kulisse**: Gewohnheit / was um einen herum war.
+
+## Pretérito Imperfecto — Hintergrund der Vergangenheit
 
 ### Regelmäßige Endungen
 
@@ -940,7 +1064,9 @@ Beispiel: \`hablar\` → hablaba, hablabas, hablaba, hablábamos, **hablabais**,
   },
 
   "a2-por-para": {
-    de: `## POR vs PARA — beide übersetzen sich unterschiedlich
+    de: `> **Weg:** a / de / en stehen. Hier — zwei Präpositionen, die beide in „für / durch / um“ rutschen.
+
+## POR vs PARA — beide übersetzen sich unterschiedlich
 
 ### PARA — Zweck, Ziel, Frist
 - **Zweck:** \`Estudio **para** aprender.\`
@@ -963,7 +1089,9 @@ Beispiel: \`hablar\` → hablaba, hablabas, hablaba, hablábamos, **hablabais**,
   },
 
   "a2-comparativos": {
-    de: `## Komparativ (Comparativos)
+    de: `> **Weg:** Adjektive kongruieren wie bei Genus (blanca / rojos). Hier — **Vergleiche**.
+
+## Komparativ (Comparativos)
 
 ### Regelmäßige Adjektive
 \`más + Adjektiv + (que)\` / \`menos + … + (que)\`
@@ -1006,7 +1134,9 @@ Beispiel: \`hablar\` → hablaba, hablabas, hablaba, hablábamos, **hablabais**,
   },
 
   "a2-futuro-simple": {
-    de: `## Futuro Simple
+    de: `> **Weg:** die nahe Zukunft kennt ihr: ir a + Infinitiv (\`voy a comer\`). Hier — **einfaches Futur** in einem Wort.
+
+## Futuro Simple
 
 ### Bildung: Infinitiv + Endung
 
@@ -1049,7 +1179,9 @@ Beispiele:
   },
 
   "b1-subjuntivo": {
-    de: `## Modo Subjuntivo — Presente
+    de: `> **Weg:** Zeiten benennen **Fakten**. Neu — **Modus**: „ich will / ich bezweifle / schön, dass“, nicht „so ist es“.
+
+## Modo Subjuntivo — Presente
 
 ### Bildung
 Die **yo**-Form des Presente nehmen, Endung wechseln: -AR ↔ -ER/-IR.
@@ -1082,7 +1214,9 @@ Die **yo**-Form des Presente nehmen, Endung wechseln: -AR ↔ -ER/-IR.
   },
 
   "b1-imperativo": {
-    de: `## Imperativo
+    de: `> **Weg:** Subjuntivo-Formen (hable, comas) kennt ihr. Der Imperativ **nimmt sie**; nur tú / vosotros bejaht sind extra.
+
+## Imperativo
 
 ### Bejahungsform (afirmativo)
 
@@ -1129,7 +1263,9 @@ In der verneinenden Form stehen sie **davor**:
   },
 
   "b1-condicional": {
-    de: `## Condicional Simple
+    de: `> **Weg:** Futur (hablaré, tendré) kennt ihr. Condicional = **dieselben Stämme** + -ía: hablaría, tendría.
+
+## Condicional Simple
 
 ### Bildung: Infinitiv + Endung
 
@@ -1164,7 +1300,9 @@ Beispiele:
   },
 
   "b1-preposiciones-por-para-2": {
-    de: `## Das Pronomen SE — wichtigste Funktionen
+    de: `> **Weg:** me / te von gustar kennt ihr. Hier — **se** als eigenes Werkzeug, nicht jedes Mal „sich“.
+
+## Das Pronomen SE — wichtigste Funktionen
 
 ### 1. Reflexiv (reflexivo)
 \`levantarse\` → \`Me **levanto** a las 7.\`
@@ -1192,7 +1330,9 @@ Beispiele:
   },
 
   "b1-relativos": {
-    de: `## Relativpronomen (Pronombres relativos)
+    de: `> **Weg:** komplexe Sätze ohne neue Zeitform. Brückenwörter: que, quien, donde.
+
+## Relativpronomen (Pronombres relativos)
 
 ### QUE — das universellste
 \`El libro **que** leo.\`
@@ -1224,7 +1364,9 @@ Beispiele:
   },
 
   "b1-pluscuamperfecto": {
-    de: `## Pretérito Pluscuamperfecto — „Vergangenheit vor der Vergangenheit"
+    de: `> **Weg:** haber + Partizip aus dem Perfecto (he comido). Hier steht haber im **Imperfekt**: había comido.
+
+## Pretérito Pluscuamperfecto — „Vergangenheit vor der Vergangenheit"
 
 ### Formel: HABER (im Imperfecto) + Partizip
 
@@ -1254,7 +1396,9 @@ Handlung, die **vor** einer anderen Handlung in der Vergangenheit stattfand:
   },
 
   "b1-subjuntivo-imperfecto": {
-    de: `## Subjuntivo Imperfecto
+    de: `> **Weg:** Präsens-Subjuntivo (quiera que vengas) kennt ihr. Hauptsatz in der Vergangenheit oder irreal → **hablara / tuviera**.
+
+## Subjuntivo Imperfecto
 
 ### Bildung: Infinitiv + Endungen (mit Betonung)
 
@@ -1284,7 +1428,9 @@ Es gibt eine ältere -se-Form: \`hablase, comiese\`. In der Literatur zu finden.
   },
 
   "b1-pronombres-objetos": {
-    de: `## Objektpronomen (OD und OI)
+    de: `> **Weg:** me / te / le von gustar. Dieselben Kurzformen, jetzt **statt** „das Buch / ihm“: lo veo, le doy.
+
+## Objektpronomen (OD und OI)
 
 ### Direktes Objekt (Objeto Directo — was?)
 Antwortet auf „was/wen?" (ohne Präposition).
@@ -1330,7 +1476,9 @@ Wenn beide erscheinen: \`me lo, te lo, se lo, nos lo\`.
   },
 
   "b1-adverbios": {
-    de: `## Adverbien (Adverbios)
+    de: `> **Weg:** Adjektive (rápida, fácil) kongruieren. Adverb = „wie?“: oft **feminine Form + mente**.
+
+## Adverbien (Adverbios)
 
 ### Bildung -mente (wie? auf welche Weise?)
 **Adjektiv (f.) + mente:**
@@ -1364,7 +1512,9 @@ Wenn beide erscheinen: \`me lo, te lo, se lo, nos lo\`.
   },
 
   "b2-estilo-indirecto": {
-    de: `## Indirekte Rede (Estilo Indirecto)
+    de: `> **Weg:** die Kernzeiten und der Subjuntivo sitzen. Hier — **wie sie verrutschen**, wenn ihr Rede wiedergebt.
+
+## Indirekte Rede (Estilo Indirecto)
 
 ### Direkt → Indirekt (gleicher Zeitrahmen)
 > Direkt: \`Ana dice: "Hoy **llego** tarde."\`
@@ -1402,7 +1552,9 @@ Beispiel:
   },
 
   "b2-voz-pasiva": {
-    de: `## Passiv (Voz Pasiva)
+    de: `> **Weg:** se venden aus dem SE-Thema. Hier — wann noch **ser + Partizip**, und wann se natürlicher ist.
+
+## Passiv (Voz Pasiva)
 
 ### 1. Passiv mit SER (klassisch)
 **SER** + Partizip (+ **por** + Handelnder)
@@ -1440,7 +1592,9 @@ Kongruenz mit dem Subjekt:
   },
 
   "b2-subjuntivo-compuestos": {
-    de: `## Zusammengesetzte Subjuntivo-Formen
+    de: `> **Weg:** die Subjuntivo-Regel ist nicht neu — nur die **Zeit**. Wunsch über die Vergangenheit: haya hablado; irreal: hubiera hablado.
+
+## Zusammengesetzte Subjuntivo-Formen
 
 ### Subjuntivo Perfecto (abgeschlossene Vergangenheit)
 Formel: **haya** + Partizip
@@ -1476,7 +1630,9 @@ Verwendung:
   },
 
   "b2-condicionales-compuestos": {
-    de: `## Condicional Compuesto
+    de: `> **Weg:** si tuviera, saldría kennt ihr. Hier der Vergangenheitsschwanz: **habría** + Partizip und die drei si-Typen.
+
+## Condicional Compuesto
 
 ### Formel: **haber** (im Condicional) + Partizip
 
@@ -1509,7 +1665,9 @@ Beispiele:
   },
 
   "b2-relativos-avanzado": {
-    de: `## Relativpronomen (Fortgeschritten)
+    de: `> **Weg:** que / quien / cuyo stehen. Hier — Register: el cual, lo que, adonde.
+
+## Relativpronomen (Fortgeschritten)
 
 ### LO QUE — „was/das, was" (abstrakt, neutral)
 \`No entiendo **lo que** dices.\`
@@ -1546,7 +1704,9 @@ Stimmt mit **dem Besitz** überein, nicht mit dem Besitzer:
   },
 
   "b2-conectores": {
-    de: `## Diskurskonnektoren (Conectores discursivos)
+    de: `> **Weg:** porque / pero reichen bis B1. Ab B2 **variiert** man Konnektoren; manche ziehen schon Subjuntivo.
+
+## Diskurskonnektoren (Conectores discursivos)
 
 ### Addition
 - **además** — außerdem, des Weiteren
@@ -1593,7 +1753,9 @@ Stimmt mit **dem Besitz** überein, nicht mit dem Besitzer:
   },
 
   "c1-perifrasis-verbales": {
-    de: `## Verbalperiphrasen (Perífrasis Verbales)
+    de: `> **Weg:** ir a + inf und estar + -ando seit A1–A2. Hier — ein **Katalog** dieser Klebeverben und deber / deber de.
+
+## Verbalperiphrasen (Perífrasis Verbales)
 
 Struktur: **Hilfsverb + (Bindewort) + Infinitiv/Gerundium/Partizip**.
 
@@ -1632,7 +1794,9 @@ Struktur: **Hilfsverb + (Bindewort) + Infinitiv/Gerundium/Partizip**.
   },
 
   "c1-matices-estilisticos": {
-    de: `## Stilistische Nuancen (C1)
+    de: `> **Weg:** die Formen kennt ihr. C1 = **welcher Schalter**: Fakt / Hypothese / Höflichkeit.
+
+## Stilistische Nuancen (C1)
 
 ### 1. Konditionale und Hypothesen
 - **Real**: \`Si llueve, me quedo.\` (Indikativ + Futuro)
@@ -1670,7 +1834,9 @@ Struktur: **Hilfsverb + (Bindewort) + Infinitiv/Gerundium/Partizip**.
   },
 
   "c1-subjuntivo-avanzado": {
-    de: `## Subjuntivo — fortgeschrittene Verwendungen (C1)
+    de: `> **Weg:** Subjuntivo setzt ihr. Hier nur **Grenzfälle**, ohne Formen-Tabellen.
+
+## Subjuntivo — fortgeschrittene Verwendungen (C1)
 
 ### Aunque (obwohl) — Indikativ vs Subjuntivo
 - **Indikativ** (bekannter Fakt): \`**Aunque** llueve, salgo.\`
@@ -1702,7 +1868,9 @@ Struktur: **Hilfsverb + (Bindewort) + Infinitiv/Gerundium/Partizip**.
   },
 
   "c1-indirecto-avanzado": {
-    de: `## Indirekte Rede — vollständiges System (C1)
+    de: `> **Weg:** das B2-Schema «dijo que + Verschiebung». Unten — das volle Netz inkl. Subjuntivo und innerer Monolog.
+
+## Indirekte Rede — vollständiges System (C1)
 
 ### Zeitübersetzung (nach Hauptverb in der Vergangenheit)
 
@@ -1750,7 +1918,9 @@ Nur Personen/Pronomen werden angepasst.
   },
 
   "c1-pronombres-avanzado": {
-    de: `## Pronomen — fortgeschrittene Fälle (C1)
+    de: `> **Weg:** lo / le / se lo gehören zum Alltag. Hier — abstraktes **lo**, Pflicht-Verdopplung a + Pronomen, leísmo / laísmo.
+
+## Pronomen — fortgeschrittene Fälle (C1)
 
 ### Neutrales LO (lo + Adjektiv/Adverb)
 \`**Lo** bueno de España.\`
@@ -1789,7 +1959,9 @@ Regionale Abweichungen von der Norm:
   },
 
   "c1-ser-estar-avanzado": {
-    de: `## Ser vs Estar — feine Unterschiede (C1)
+    de: `> **Weg:** ser / estar aus A1. Hier nur Paare, bei denen die **Bedeutung kippt**, wenn das falsche Verb steht.
+
+## Ser vs Estar — feine Unterschiede (C1)
 
 ### Adjektive, die die Bedeutung ändern
 | Adjektiv | SER (dauerhaft) | ESTAR (Zustand) |
@@ -1830,7 +2002,9 @@ Regionale Abweichungen von der Norm:
   },
 
   "c2-ironia-registry": {
-    de: `## Ironie und Register (C1-C2)
+    de: `> **Weg:** Modi und Register ab C1. Hier — **wie der Satz klingt** (Ironie, Distanz), nicht wie er konjugiert.
+
+## Ironie und Register (C1-C2)
 
 ### Ironischer Subjuntivo
 Verwendet für **höfliche Kritik** oder Ironie:
@@ -1875,7 +2049,9 @@ Verwendet für **höfliche Kritik** oder Ironie:
 > Sarkasmus durch Grammatik zu verwenden (besonders Subjuntivo).`,
   },
   "c2-oraciones-hendidas": {
-    de: `## Spaltsätze (oraciones hendidas)
+    de: `> **Weg:** que / lo que verbindet ihr seit B1. Hier — **Informationsfokus**, keine neue Zeitgrammatik.
+
+## Spaltsätze (oraciones hendidas)
 
 Muttersprachler „spalten" den Satz, um ein Element **hervorzuheben**.
 
@@ -1905,7 +2081,9 @@ Muttersprachler „spalten" den Satz, um ein Element **hervorzuheben**.
 > 💡 Im DELE C2 sind Spaltsätze ein Marker für flüssiges Schreiben und Sprechen.`,
   },
   "c2-conjetura-rumor": {
-    de: `## Futuro de conjetura und condicional de rumor
+    de: `> **Weg:** Futur und Condicional als Plan / «ich würde» kennt ihr. Hier dieselben Formen = **Vermutung und Gerücht**.
+
+## Futuro de conjetura und condicional de rumor
 
 Futur und Konditional drücken im Spanischen nicht nur Zeit aus — sie kodieren den **Grad der Gewissheit**.
 
@@ -1940,7 +2118,9 @@ Vermittelt **unbestätigte Informationen** (journalistischer Stil):
 > 💡 Hörst du ein Futur, wo die Gegenwart logisch wäre? Es geht nicht um die Zukunft — es bedeutet „wahrscheinlich".`,
   },
   "c2-estilo-culto": {
-    de: `## Gehobener Stil: absolute Konstruktionen und Nominalisierung
+    de: `> **Weg:** Partizip und Gerundium aus den Zeiten. Hier — **buchsprachliche** Syntax: Nebensätze stauchen.
+
+## Gehobener Stil: absolute Konstruktionen und Nominalisierung
 
 Mittel des **schriftlichen / formellen** Spanisch: Presse, Essays, DELE C2.
 
@@ -1980,7 +2160,9 @@ Mit eigenem Subjekt:
 > 💡 C2 heißt, das **Register wechseln** zu können: dasselbe in der Bar und im Ministerium sagen.`,
   },
   "dele-contraste-pasados": {
-    de: `## Kontrast der Vergangenheitszeiten — Falle Nr. 1 im DELE
+    de: `> **Weg:** die vier Vergangenheiten kennt ihr einzeln. Hier — **wie DELE wählt**, ohne Konjugation.
+
+## Kontrast der Vergangenheitszeiten — Falle Nr. 1 im DELE
 
 DELE-Aufgaben (Comprensión de lectura, Lückentexte) prüfen am häufigsten die Wahl zwischen den vier Vergangenheitszeiten.
 
@@ -2014,7 +2196,9 @@ Hintergrund (imperfecto) + Ereignis (indefinido) — dieses Paar fragt der DELE 
 > 💡 Spanien vs. Lateinamerika: in Spanien \`esta mañana **he visto**\`, in den meisten Ländern Amerikas \`esta mañana **vi**\`. Der DELE akzeptiert beide Normen — bleib nur konsequent.`,
   },
   "dele-carta-formal": {
-    de: `## Der Brief im DELE (Expresión e interacción escritas)
+    de: `> **Weg:** Condicional (podría, quisiera) und usted kennt ihr. Hier — **fertige Formeln** für den Prüfungsbrief.
+
+## Der Brief im DELE (Expresión e interacción escritas)
 
 Im schriftlichen Teil gibt es fast immer einen Brief/eine E-Mail. Bewertet wird das **Register** — die Formeln müssen zum Adressaten passen.
 
@@ -2079,7 +2263,9 @@ Im schriftlichen Teil gibt es fast immer einen Brief/eine E-Mail. Bewertet wird 
 > 💡 Lerne das Briefgerüst auswendig — in der Prüfung musst du nur noch den Inhalt einsetzen.`,
   },
   "dele-conectores-redaccion": {
-    de: `## Konnektoren für die redacción (Expresión escrita B2–C1)
+    de: `> **Weg:** B2-Konnektoren (sin embargo, por lo tanto). Hier — das **Aufsatzskelett** und wo Meinung Subjuntivo braucht.
+
+## Konnektoren für die redacción (Expresión escrita B2–C1)
 
 Die Note für **coherencia** hängt direkt von den Verknüpfungen ab. Hier ein funktionierendes Aufsatzgerüst.
 
@@ -2141,7 +2327,9 @@ Die Note für **coherencia** hängt direkt von den Verknüpfungen ab. Hier ein f
 > 💡 B2-Absatzformel: Konnektor → These → Argument → Beispiel. Vier Absätze — und die Struktur steht.`,
   },
   "dele-expresion-oral": {
-    de: `## Der mündliche Teil des DELE (Expresión e interacción orales)
+    de: `> **Weg:** Vermutungsfutur, Meinung mit Subjuntivo, Konnektoren. Hier — **wie das in der mündlichen Prüfung klingt**.
+
+## Der mündliche Teil des DELE (Expresión e interacción orales)
 
 ### Fotobeschreibung (die klassische Aufgabe)
 Verortung im Bild:

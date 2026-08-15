@@ -3,9 +3,13 @@ import type { GrammarTopic } from "@/types";
 // =====================================================================
 // Grammar reference data
 // ---------------------------------------------------------------------
-// Curated STATIC topics grouped by CEFR level (A1 → C1). Articles shown
-// in the Grammar UI are never AI-generated. Users may open the tutor
-// ("Ask tutor") for explanations — that path uses the orchestrator.
+// Curated STATIC topics grouped by CEFR level (A1 → C2).
+// Pedagogy (visible as «Путь» in each article):
+//   A1  — decode jargon, persons (я/ты), full exceptions.
+//   A2  — assume Presente + el/la; teach past/future in full.
+//   B1  — assume past tenses; teach mood (subjuntivo) in full, then shorter.
+//   B2+ — short bridge + contrast/traps; no beginner padding.
+// Articles in the Grammar UI are never AI-generated. "Ask tutor" uses the orchestrator.
 // =====================================================================
 
 export const GRAMMAR_TOPICS: GrammarTopic[] = [
@@ -16,29 +20,78 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Artículos",
     level: "A1",
     category: "Determinantes",
-    summary: "Определённый и неопределённый артикли; мужской и женский род.",
-    content: `## Artículos definidos (определённые)
+    summary: "el/la/los/las и un/una: известное vs какое-то; исключение el agua (не la abuela).",
+    content: `> **Путь:** ser / estar и настоящее (hablo, soy) уже были. Здесь — короткие слова **перед** предметом.
 
-| Род / Число | Артикль | Пример |
+## Что такое артикль
+
+Артикль — короткое слово **перед** предметом. Оно отвечает сразу на три вопроса: это **известная** вещь или **какая-то**? **Одна** или **много**? Слово **мужского** или **женского** рода?
+
+В словарях: **m.** = masculino = мужской, **f.** = femenino = женский. Singular = одна вещь, plural = много.
+
+## Известная конкретная вещь
+
+Если предмет **знакомый / конкретный** (эта книга, солнце, парк рядом):
+
+| | Одна вещь | Много вещей |
 |---|---|---|
-| m. singular | **el** | el libro |
-| f. singular | **la** | la casa |
-| m./f. + a/ha | **el** | el agua |
-| plural | **los / las** | los libros, las casas |
+| мужской род | **el** libro | **los** libros |
+| женский род | **la** casa | **las** casas |
 
-## Artículos indefinidos (неопределённые)
+Пример: \`el sol\`, \`la casa de Ana\`, \`los libros de la mesa\`.
 
-| Число | Мужской | Женский |
+## Неизвестная или «какая-то» вещь
+
+Если предмет ещё не назван, любой или «один из»:
+
+| | Одна вещь | Много вещей |
 |---|---|---|
-| Singular | **un** | **una** |
-| Plural | **unos** | **unas** |
+| мужской род | **un** libro | **unos** libros |
+| женский род | **una** casa | **unas** casas |
 
-### Ключевые правила
-- **El** используется для конкретного, известного предмета: \`el sol\`.
-- **Un/una** — для неопределённого: \`un libro interesante\`.
-- Перед существительными женского рода, начинающимися на **a-/ha-** ударное, ставится **el**: \`el agua\`, \`el águila\` (но во мн. ч.: \`las aguas\`).
+Пример: \`un libro interesante\`, \`una casa nueva\`.
 
-> 💡 Запомни: род в испанском не всегда логичен — \`el problema\` (м.р.), \`la mano\` (ж.р.).`,
+## Исключение: el agua — не la abuela
+
+Это **не** правило «любое слово на букву a». И **не** про знак ударения ´.
+
+Ставим **el** (или **un**) перед **женским** словом, только если **все** условия сразу:
+
+1. слово женского рода;
+2. говорим про **одну** вещь;
+3. слово начинается на **a** или **ha**;
+4. сила голоса падает на **эту первую a** (как **Á-gua**). Знака ´ может не быть — важен звук, не написание.
+
+Тогда: \`el agua\`, \`el águila\`, \`el hacha\`, \`el aula\`, \`el hambre\`.
+
+Слово **остаётся женским**: \`el agua fría\` (не *frío*). Во множественном исключение снимается — снова по роду: \`las aguas\`, \`las águilas\`, \`las aulas\`.
+
+**Сюда не входит** (первая a безударная):
+
+| Слово | Где сила голоса | Как говорят |
+|---|---|---|
+| abuela | a-**BUE**-la | **la** abuela, **las** abuelas |
+| amiga | a-**MI**-ga | **la** amiga |
+| harina | ha-**RI**-na | **la** harina |
+| habitación | на **-ció-** | **la** habitación |
+
+> ⚠️ Частая ошибка: *el abuela*. Правильно **la abuela**.
+> Если между артиклем и словом стоит другое слово, снова **la**: \`la misma agua\`, \`la amplia aula\`.
+
+## Другие исключения
+
+- Профессия после **ser** часто без артикля: \`Soy profesora.\`
+- Язык: \`Hablo español.\` Но \`El español es fácil.\`
+- День недели: \`el lunes\` (в понедельник), \`los lunes\` (по понедельникам).
+- **a + el = al**, **de + el = del**. С **la** не сливаются: a la, de la. Перед agua: \`al agua\`, \`del agua\`.
+- Некоторые слова на **-ma** мужские: \`el problema\`, \`el tema\`. \`la mano\`, \`la foto\` — женские, хотя на -o.
+
+## Как выбрать за 4 шага
+
+1. Одна вещь или много?
+2. Мужской род или женский? (род слова **не** меняется из‑за el agua)
+3. Конкретная известная вещь (**el / la / los / las**) или «какая-то» (**un / una / unos / unas**)?
+4. Если женский + одна вещь + начало на ударное **a / ha** → **el** / **un**. Во множественном всегда **las** / **unas**.`,
   },
   {
     slug: "a1-ser-estar",
@@ -47,8 +100,12 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     level: "A1",
     category: "Глаголы",
     exam: "DELE",
-    summary: "Два глагола «быть»: постоянные характеристики vs состояния; приветствия и знакомство.",
-    content: `## Saludos y presentaciones
+    summary: "Первая тема: приветствия и два «быть» — кто ты vs как ты сейчас.",
+    content: `> **Путь:** это **первая** грамматика курса. Ниже с нуля: кто говорит (я / ты) и два глагола «быть».
+
+## Приветствия и знакомство
+
+В испанском вопрос пишут с **двумя** знаками: \`¿…?\`
 
 | Español | Русский |
 |---|---|
@@ -60,47 +117,71 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 | **¿Cómo te llamas?** | Как тебя зовут? |
 | **Me llamo…** | Меня зовут… |
 | **Mucho gusto** | Очень приятно |
-| **¿Cómo estás?** | Как дела? |
+| **¿Cómo estás?** | Как дела? (состояние сейчас) |
 | **Bien, gracias** | Хорошо, спасибо |
 
 > 💡 После приветствия часто спрашивают имя: \`Hola, ¿cómo te llamas?\`
 
-## Ser vs Estar — оба значат «быть»
+## Кто говорит — я, ты, он…
 
-### SER — постоянные характеристики
-Используется для **идентичности, профессии, происхождения, описания**:
-- \`Yo soy profesor.\` — Я преподаватель.
-- \`Ella es de México.\` — Она из Мексики.
-- \`El cielo es azul.\` — Небо синее.
+Глагол **меняется по лицу**. Запомните эту таблицу — она нужна во всём курсе.
 
-| Лицо | SER |
+| По-русски | Местоимение | Когда |
+|---|---|---|
+| я | **yo** | говорящий |
+| ты | **tú** | один человек, на «ты» |
+| он / она / вы (вежливо, один) | **él / ella / usted** | одна форма глагола на троих |
+| мы | **nosotros / nosotras** | -as, если все женщины |
+| вы (мн., Испания) | **vosotros / vosotras** | в Лат. Америке почти не используют |
+| они / вы (мн. вежливо) | **ellos / ellas / ustedes** | в Лат. Америке *ustedes* = «вы» многим |
+
+## Два глагола «быть»: ser и estar
+
+В русском одно «есть / являюсь». В испанском **два** разных глагола.
+
+### SER — кто / какой **по сути**
+Личность, профессия, происхождение, описание, время, отношения:
+
+- \`Yo **soy** profesor.\` — Я преподаватель.
+- \`Ella **es** de México.\` — Она из Мексики.
+- \`El cielo **es** azul.\` — Небо синее (вообще).
+- \`**Son** las tres.\` — Три часа. (время — тоже ser)
+
+| Кто | SER |
 |---|---|
-| yo | soy |
-| tú | eres |
-| él/ella/usted | es |
-| nosotros/as | somos |
-| **vosotros/as** | **sois** |
-| ellos/ustedes | son |
+| yo | **soy** |
+| tú | **eres** |
+| él / ella / usted | **es** |
+| nosotros | **somos** |
+| vosotros | **sois** |
+| ellos / ustedes | **son** |
 
-### ESTAR — временные состояния и местоположение
-Используется для **состояния, чувств, местонахождения**:
-- \`Estoy cansado.\` — Я устал.
-- \`El libro está en la mesa.\` — Книга на столе.
+### ESTAR — как / где **сейчас**
+Состояние, чувства, место:
 
-| Лицо | ESTAR |
+- \`**Estoy** cansado.\` — Я устал (сейчас).
+- \`El libro **está** en la mesa.\` — Книга на столе.
+
+| Кто | ESTAR |
 |---|---|
-| yo | estoy |
-| tú | estás |
-| él/ella/usted | está |
-| nosotros/as | estamos |
-| **vosotros/as** | **estáis** |
-| ellos/ustedes | están |
+| yo | **estoy** |
+| tú | **estás** |
+| él / ella / usted | **está** |
+| nosotros | **estamos** |
+| vosotros | **estáis** |
+| ellos / ustedes | **están** |
 
-### Мнемоника DOCTOR / PLACE
-- **SER**: **D**escription, **O**ccupation, **C**haracteristic, **T**ime, **O**rigin, **R**elationship.
-- **ESTAR**: **P**osition, **L**ocation, **A**ction (gerundio), **C**ondition, **E**motion.
+## Как выбрать
 
-> ⚠️ Прилагательные меняют смысл: \`es aburrido\` (скучный человек) vs \`está aburrido\` (ему скучно).`,
+1. Говорим **кто это / какой всегда / откуда / который час** → **ser**.
+2. Говорим **где / как себя чувствует / временное** → **estar**.
+
+Подсказка (не зубрить английские буквы):
+- **ser**: описание, профессия, характер, время, происхождение, отношения;
+- **estar**: поза, место, действие на -ando/-iendo, состояние, эмоция.
+
+> ⚠️ Одно прилагательное — два смысла: \`es aburrido\` (скучный человек) vs \`está aburrido\` (ему сейчас скучно).
+> \`estar frío\` про предмет («холодный»); про человека «мне холодно» — тема *tener* (\`tengo frío\`).`,
   },
   {
     slug: "a1-presente",
@@ -108,33 +189,55 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Presente de Indicativo",
     level: "A1",
     category: "Глаголы",
-    summary: "Настоящее время: правильные и неправильные глаголы.",
-    content: `## Presente de Indicativo
+    summary: "Настоящее: три типа глаголов (-ar / -er / -ir) и зачем менять окончание.",
+    content: `> **Путь:** soy / estoy уже знакомы. Здесь — как строить **любое** действие в настоящем: hablo, como, vivo.
 
-### Правильные глаголы (3 спряжения)
+## Что такое Presente
 
-| Лицо | -AR (hablar) | -ER (comer) | -IR (vivir) |
+**Presente** = настоящее. Словарная форма глагола — **инфинитив** (ещё не «я/ты»): hablar, comer, vivir.
+
+Окончание инфинитива говорит, к какой семье относится глагол:
+- **-ar** — самая большая семья (\`hablar\` — говорить);
+- **-er** (\`comer\` — есть);
+- **-ir** (\`vivir\` — жить).
+
+Отбрасываем -ar / -er / -ir и ставим окончание **по лицу** (я / ты / он…).
+
+## Правильные глаголы
+
+«Правильный» = окончания как в таблице, корень не ломается.
+
+| Кто | -AR hablar | -ER comer | -IR vivir |
 |---|---|---|---|
-| yo | hablo | como | vivo |
-| tú | hablas | comes | vives |
-| él/ella | habla | come | vive |
-| nosotros | hablamos | comemos | vivimos |
-| vosotros | habláis | coméis | vivís |
-| ellos | hablan | comen | viven |
+| yo | habl**o** | com**o** | viv**o** |
+| tú | habl**as** | com**es** | viv**es** |
+| él / ella / usted | habl**a** | com**e** | viv**e** |
+| nosotros | habl**amos** | com**emos** | viv**imos** |
+| vosotros | habl**áis** | com**éis** | viv**ís** |
+| ellos / ustedes | habl**an** | com**en** | viv**en** |
 
-### Неправильные глаголы (самые частые)
-- **ser**: soy, eres, es, somos, sois, son
-- **estar**: estoy, estás, está, estamos, estáis, están
-- **ir**: voy, vas, va, vamos, vais, van
-- **tener**: tengo, tienes, tiene, tenemos, tenéis, tienen
-- **hacer**: hago, haces, hace, hacemos, hacéis, hacen
+> yo почти всегда заканчивается на **-o**. vosotros в Лат. Америке заменяют на ustedes (форма как ellos).
 
-### Использование
-- Действие в настоящем: \`Trabajo en Madrid.\`
-- Общеизвестные факты: \`El agua hierve a 100°C.\`
-- Ближайшее будущее: \`Mañana voy al cine.\`
+## Когда так говорят
 
-> 💡 Глаголы с чередованием гласной: \`pensar → pienso\`, \`pedir → pido\`, \`dormir → duermo\`.`,
+- Сейчас / обычно: \`Trabajo en Madrid.\`
+- Факт: \`El agua hierve a 100°C.\`
+- Близкое будущее: \`Mañana **voy** al cine.\` (идти — неправильный, см. ниже)
+
+## Самые нужные неправильные
+
+«Неправильный» = корень или окончание не как в таблице. Их учат списком; **ser** и **estar** вы уже знаете.
+
+| Глагол | yo | tú | él | nosotros | vosotros | ellos |
+|---|---|---|---|---|---|---|
+| **ser** быть (суть) | soy | eres | es | somos | sois | son |
+| **estar** быть (сейчас) | estoy | estás | está | estamos | estáis | están |
+| **ir** идти | voy | vas | va | vamos | vais | van |
+| **tener** иметь | tengo | tienes | tiene | tenemos | tenéis | tienen |
+| **hacer** делать | hago | haces | hace | hacemos | hacéis | hacen |
+
+Часть глаголов меняет гласную **только** в ударном слоге (не у nosotros / vosotros):
+\`pensar → pienso\`, \`pedir → pido\`, \`dormir → duermo\`. Полный список — в теме «Частые глаголы».`,
   },
   {
     slug: "a1-genero-numero",
@@ -142,29 +245,37 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Género y Número",
     level: "A1",
     category: "Существительные",
-    summary: "Мужской/женский род, единственное/множественное число существительных.",
-    content: `## Género (род)
+    summary: "Мужской/женский род и «один / много»; исключения problema, mano, agua vs abuela.",
+    content: `> **Путь:** el / la / un / una уже знакомы. Здесь — **почему** la casa, но el problema, и почему не *el abuela*.
 
-| Окончание | Род | Пример |
+## Мужской и женский род
+
+У каждого существительного в испанском есть род. Он **не** всегда совпадает с полом в жизни и **не** всегда логичен.
+
+В словарях: **m.** = masculino = мужской, **f.** = femenino = женский.
+
+| Обычно так | Род | Примеры |
 |---|---|---|
-| -o | м.р. | el libro, el perro |
-| -a | ж.р. | la casa, la gata |
-| -ción/-sión | ж.р. | la canción, la televisión |
-| -dad/-tad | ж.р. | la ciudad, la libertad |
-| согласная | разное | el lápiz / la pared |
+| слово на **-o** | мужской | el libro, el perro |
+| слово на **-a** | женский | la casa, la gata |
+| **-ción / -sión** | женский | la canción, la televisión |
+| **-dad / -tad** | женский | la ciudad, la libertad |
+| на согласную | смотри словарь | el lápiz / la pared |
 
-**Исключения:** \`el problema\`, \`el mapa\`, \`el día\` (м.р. несмотря на -a);
-\`la mano\`, \`la foto\` (ж.р. несмотря на -o).
+**Исключения по окончанию:**
+- на **-a**, но мужские: \`el problema\`, \`el mapa\`, \`el día\`, \`el tema\`, \`el idioma\`;
+- на **-o**, но женские: \`la mano\`, \`la foto\`, \`la radio\`, \`la moto\`.
 
-## Número (число)
+Артикль **el** перед \`el agua\` **не** делает слово мужским — см. тему «Артикли». Правильно \`el agua fría\`, во множественном \`las aguas\`. Не путать с \`**la** abuela\` (ударение на **-bue-**, не на первой a).
 
-- Добавляем **-s** (для гласной): \`libro → libros\`, \`mesa → mesas\`
-- Добавляем **-es** (для согласной): \`flor → flores\`, \`mes → meses\`
+## Один или много
+
+- После гласной добавляем **-s**: \`libro → libros\`, \`mesa → mesas\`
+- После согласной — **-es**: \`flor → flores\`, \`mes → meses\`
 - \`el lápiz → los lápices\` (z → c перед -es)
-- \`el prógrama → los programas\` (без ударения)
+- Ударение в письме может исчезнуть: \`el programa → los programas\`
 
-> ⚠️ Согласование: артикль + прилагательное + существительное должны
-> совпадать в роде и числе: \`la casa blanca\`, \`los coches rojos\`.`,
+> ⚠️ Артикль, прилагательное и существительное совпадают по роду и количеству: \`la casa blanca\`, \`los coches rojos\`, \`el agua fría\`.`,
   },
   {
     slug: "a1-numeros-1-100",
@@ -172,8 +283,10 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Números, días y la hora",
     level: "A1",
     category: "Лексика",
-    summary: "Числа 1–100, дни недели, месяцы и как говорить о времени на часах.",
-    content: `## Números 1–100
+    summary: "Числа 1–100, дни, месяцы и час: el lunes vs los lunes, es la una.",
+    content: `> **Путь:** el / la и род уже были. Здесь — сколько, какой день и **который час** (особый артикль: la una / las dos).
+
+## Числа 1–100
 
 | Диапазон | Пример |
 |---|---|
@@ -185,9 +298,9 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 | десятки+единицы | treinta y uno, cuarenta y cinco |
 
 **Особенности:**
-- \`uno → un\` перед существительным: \`un libro\` (не \`uno libro\`)
-- \`veintiún\` перед м.р.: \`veintiún años\`
-- \`cien\` (100) vs \`ciento\` (перед числом): \`ciento uno\`
+- \`uno → un\` перед предметом: \`un libro\` (не \`uno libro\`)
+- \`veintiún\` перед мужским родом: \`veintiún años\`
+- \`cien\` (ровно 100) vs \`ciento\` (перед другим числом): \`ciento uno\`
 
 > 💡 Возраст: \`Tengo veinte años.\` Цены: \`Cuesta cinco euros.\`
 
@@ -242,8 +355,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 ### Главное правило — артикль перед часами
 | Время | Форма | Почему |
 |---|---|---|
-| 1:00 | **Es la una** | единственное число → **la** |
-| 2:00–12:00 | **Son las dos** | множественное → **las** |
+| 1:00 | **Es la una** | одна вещь → **la** (как в артиклях) |
+| 2:00–12:00 | **Son las dos** | много → **las** |
 
 ❌ Неправильно: \`Es una\`, \`Son dos\`  
 ✅ Правильно: \`Es **la** una\`, \`Son **las** tres\`
@@ -275,8 +388,10 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Preposiciones de Lugar",
     level: "A1",
     category: "Предлоги",
-    summary: "en, a, de, sobre, debajo, delante — где находится предмет.",
-    content: `## Основные предлоги места
+    summary: "Где и куда: en vs a, и слияния al / del (уже из артиклей).",
+    content: `> **Путь:** estar для места и a + el = al вы уже видели. Здесь — карта предлогов: в, на, под, к.
+
+## Основные предлоги места
 
 | Предлог | Значение | Пример |
 |---|---|---|
@@ -292,10 +407,13 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 | **lejos de** | далеко | Vive **lejos de** la ciudad |
 
 ### Важное правило
-**Estar + место** для местонахождения: \`Estoy en casa.\`
-**Ir + a + место** для направления: \`Voy al cine.\` (\`a + el = al\`)
+**Estar + место** — где находится: \`Estoy en casa.\` (\`estar\`, не ser)
+**Ir + a + место** — куда идёт: \`Voy al cine.\`
 
-> ⚠️ \`a + el = al\`, \`de + el = del\` — обязательное слияние.`,
+Слияние (как в артиклях): **a + el = al**, **de + el = del**. С **la** не сливаются: a la, de la.
+
+> ⚠️ \`en\` = в / на (внутри или на поверхности, без движения). \`a\` = к / в при движении.
+> \`Soy de Rusia\` (происхождение — ser + de), не *estoy de Rusia*.`,
   },
   {
     slug: "a1-gustar",
@@ -303,38 +421,40 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Verbo Gustar",
     level: "A1",
     category: "Глаголы",
-    summary: "Особый глагол «нравиться» — спрягается по предмету, не по субъекту.",
-    content: `## Gustar — «нравиться» (буквально: «быть приятным»)
+    summary: "«Нравиться» наоборот: me gusta el café — нравится кофе, не «я нравлюсь».",
+    content: `> **Путь:** настоящее (gusta / gustan) и el / los уже знакомы. Здесь — **порядок как в русском «мне нравится это»**, не «я нравлюсь кофе».
 
-В испанском \`gustar\` работает **наоборот**: подлежащим является то,
-что нравится, а не тот, кому нравится.
+## Gustar — «быть приятным»
 
-### Спряжение
+В русском: *я люблю кофе* (я — подлежащее).
+В испанском буквально: *кофе приятен мне*. Меняется **gusta / gustan** по тому, **что** нравится, а me / te / le — кому.
 
-| Мне нравится… | Форма |
+### Одна вещь или много
+
+| Что нравится | Форма |
 |---|---|
-| единственное | **Me gusta** el café |
-| множественное | **Me gustan** los libros |
+| одна вещь / инфинитив | **Me gusta** el café / **me gusta** viajar |
+| много вещей | **Me gustan** los libros |
 
-| Лицо | Единств. | Множ. |
+| Кому | Одна | Много |
 |---|---|---|
 | мне | me gusta | me gustan |
 | тебе | te gusta | te gustan |
-| ему/ей | le gusta | le gustan |
+| ему / ей / вам (usted) | le gusta | le gustan |
 | нам | nos gusta | nos gustan |
-| вам | os gusta | os gustan |
-| им | les gusta | les gustan |
+| вам (vosotros) | os gusta | os gustan |
+| им / вам (ustedes) | les gusta | les gustan |
 
 ### Усиление
-\`Me gusta** mucho** el café.\` — Мне очень нравится кофе.
-\`No me gusta **nada** el té.\` — Мне совсем не нравится чай.
+\`Me gusta **mucho** el café.\` — очень нравится.
+\`No me gusta **nada** el té.\` — совсем не нравится.
 
-### Уточнение (a + имя)
-\`A **María** le gusta el flamenco.\` — Марии нравится фламенко.
-\`A **mí** me gusta el café.\` — Мне (именно мне) нравится кофе.
+### Кому именно (a + имя)
+\`A **María** le gusta el flamenco.\`
+\`A **mí** me gusta el café.\` — именно мне (ударение).
 
-> 💡 Похожие глаголы: \`encantar\` (обожать), \`interesar\` (интересовать),
-> \`doler\` (болеть) — работают так же.`,
+> 💡 Так же работают \`encantar\` (обожать), \`interesar\`, \`doler\` (болеть): \`Me duele la cabeza\` / \`Me duelen los pies\`.
+> Частая ошибка: *yo gusto el café*. Правильно **me gusta el café**.`,
   },
   {
     slug: "a1-tener-expressions",
@@ -342,35 +462,37 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Expresiones con Tener",
     level: "A1",
     category: "Глаголы",
-    summary: "tener hambre/frío/sueño/razón — устойчивые выражения состояния.",
-    content: `## Expresiones con TENER
+    summary: "Состояния через tener: голоден, холодно, лет — не estar.",
+    content: `> **Путь:** ser / estar уже разделены. Здесь — третья схема: **tener + слово** (у меня есть голод / холод / 20 лет).
 
-В испанском многие состояния выражаются через **tener + существительное**,
-а не через ser/estar (как можно было бы ожидать из русского).
+## Выражения с tener
 
-| Испанский | Русский | НЕ говорить |
+**Tener** = иметь. Формы настоящего: tengo, tienes, tiene, tenemos, tenéis, tienen.
+
+Многие состояния по-русски — «я голодный / мне холодно». По-испански чаще **не estar**, а **tener**.
+
+| Испанский | Русский | Не путать с |
 |---|---|---|
-| tener **hambre** | быть голодным | ~~estar hambriento~~ |
-| tener **sed** | хотеть пить | ~~estar sediento~~ |
-| tener **frío** | мёрзнуть | ~~estar frío~~ (это «быть холодным») |
-| tener **calor** | ему жарко | ~~estar caliente~~ |
-| tener **sueño** | хотеть спать | ~~estar soñoliento~~ |
-| tener **miedo** | бояться | ~~estar miedoso~~ |
-| tener **suerte** | быть удачливым | — |
-| tener **razón** | быть правым | — |
-| tener **prisa** | спешить | — |
-| tener **ganas de** + inf | хотеть | — |
-| tener **necesidad de** | нуждаться | — |
-| tener **X años** | быть возраста X | — |
+| tener **hambre** | голоден | не *estoy hambriento* в быту |
+| tener **sed** | хочется пить | |
+| tener **frío** | мне холодно | \`estar frío\` = предмет холодный |
+| tener **calor** | мне жарко | \`estar caliente\` про предмет |
+| tener **sueño** | хочется спать | |
+| tener **miedo** | боюсь | |
+| tener **suerte** | повезло | |
+| tener **razón** | прав | |
+| tener **prisa** | спешу | |
+| tener **ganas de** + инфинитив | хочется сделать | |
+| tener **X años** | мне X лет | не *soy 20 años* |
 
 ### Примеры
-\`Tengo hambre. Vamos a comer.\` — Я голоден. Пойдём поедим.
-\`¿Tienes frío? — Sí, tengo mucho frío.\` — Тебе холодно?
-\`No tienes razón.\` — Ты не прав.
-\`Tengo ganas de viajar.\` — Мне хочется попутешествовать.
-\`Tengo veinte años.\` — Мне 20 лет.
+\`Tengo hambre. Vamos a comer.\`
+\`¿Tienes frío? — Sí, tengo mucho frío.\`
+\`No tienes razón.\`
+\`Tengo ganas de viajar.\`
+\`Tengo veinte años.\`
 
-> ⚠️ Согласование: \`Tiene**mos** hambre\` (мы голодны), \`Tiene**n** sueño\` (они хотят спать).`,
+> ⚠️ Меняется **tener**, не «голод»: \`Tenemos hambre\`, \`Tienen sueño\`.`,
   },
   {
     slug: "a1-preguntas",
@@ -378,8 +500,10 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Oraciones Interrogativas",
     level: "A1",
     category: "Синтаксис",
-    summary: "¿Qué? ¿Cómo? ¿Dónde? — вопросительные слова и их использование.",
-    content: `## Вопросительные слова (palabras interrogativas)
+    summary: "Вопросы с ¿…?: qué vs cuál, quién, por qué.",
+    content: `> **Путь:** ¿Cómo estás? и ¿Cómo te llamas? уже были. Здесь — остальные вопросительные слова и **¿** в письме.
+
+## Вопросительные слова
 
 | Слово | Перевод | Пример |
 |---|---|---|
@@ -412,8 +536,10 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Verbos Frecuentes",
     level: "A1",
     category: "Глаголы",
-    summary: "ir, tener, hacer, poder, querer, decir — самые нужные неправильные глаголы.",
-    content: `## Самые нужные неправильные глаголы (presente)
+    summary: "Неправильные, которые нужны каждый день: ir, tener, hacer, poder, querer.",
+    content: `> **Путь:** правильные окончания настоящего уже есть. Здесь — **список** самых частых «ломающихся» глаголов, без новой теории.
+
+## Самые нужные неправильные (настоящее)
 
 ### IR — идти
 | yo | tú | él/ella/usted | nosotros/as | **vosotros/as** | ellos/ustedes |
@@ -466,18 +592,32 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Pretérito Perfecto Compuesto",
     level: "A2",
     category: "Прошедшие времена",
-    summary: "Завершённое в настоящем: «что-то сделал(а)» с привязкой к сейчас.",
-    content: `## Pretérito Perfecto (passé composé español)
+    summary: "Прошедшее, связанное с сейчас: he comido. Не ayer — там Indefinido.",
+    content: `> **Путь:** Presente (hablo) вы уже спрягаете. Новое — **составное прошедшее**: haber + «сделанный» глагол.
 
-### Формула: **HABER** + **participio**
+## Pretérito Perfecto — «уже сделал, и это про сейчас»
 
-**haber**: he, has, ha, hemos, habéis, han
+Русскому «я поел / я уже был в Испании» часто соответствует эта форма.
 
-**Participio** правильных глаголов:
+### Формула: **haber** + **participio**
+
+**haber** (только как вспомогательный, не «иметь»): he, has, ha, hemos, habéis, han
+
+**Participio** — форма «сделанный / съеденный»:
 - -AR → **-ado**: hablar → hablado
-- -ER/-IR → **-ido**: comer → comido, vivir → vivido
+- -ER / -IR → **-ido**: comer → comido, vivir → vivido
 
-### Неправильные participios
+| Кто | Пример |
+|---|---|
+| yo | **he** comido |
+| tú | **has** comido |
+| él / ella / usted | **ha** comido |
+| nosotros | **hemos** comido |
+| vosotros | **habéis** comido |
+| ellos / ustedes | **han** comido |
+
+### Неправильные participios (список)
+
 | Инфинитив | Participio |
 |---|---|
 | hacer | **hecho** |
@@ -488,16 +628,15 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 | decir | **dicho** |
 | volver | **vuelto** |
 
-### Когда использовать
-- Время не истекло (сегодня, на этой неделе, в этом году):
-  \`Hoy he comido paella.\`
-- Жизненный опыт: \`¿Has estado en España?\`
-- Связь с настоящим: \`He perdido las llaves\` (и до сих пор не нашёл).
+### Когда так, а когда нет
+- Период **ещё не закрыт** (сегодня, на этой неделе, в этом году): \`Hoy **he** comido paella.\`
+- Опыт жизни: \`¿**Has** estado en España?\`
+- Результат до сих пор важен: \`**He** perdido las llaves\` (и всё ещё нет ключей).
 
-### Маркеры времени
-hoy, esta semana, este año, ya, todavía no, nunca, alguna vez.
+Маркеры: hoy, esta semana, este año, ya, todavía no, nunca, alguna vez.
 
-> ⚠️ С маркерами **ayer, el año pasado, en 2020** используется Pretérito Indefinido.`,
+> ⚠️ **ayer, el año pasado, en 2020** — период закрыт → не Perfecto, а **Indefinido** (следующая тема): \`Ayer comí paella.\`
+> В части Испании Perfecto любят сильнее; в Лат. Америке часто сразу Indefinido. Для экзамена учите оба.`,
   },
   {
     slug: "a2-preterito-indefinido",
@@ -506,44 +645,46 @@ hoy, esta semana, este año, ya, todavía no, nunca, alguna vez.
     level: "A2",
     category: "Прошедшие времена",
     exam: "DELE",
-    summary: "Завершённое в прошлом: «сделал(а)» в конкретный момент.",
-    content: `## Pretérito Indefinido (простое прошедшее)
+    summary: "Закрытый факт прошлого: ayer fui. Не путать с «фоном» Imperfecto.",
+    content: `> **Путь:** Perfecto (he comido) — если период ещё «сейчас». Здесь — **вчера / в 2018**: своё окончание, без haber.
 
-### Правильные глаголы
+## Pretérito Indefinido — факт в закрытом прошлом
 
-| Лицо | -AR | -ER/-IR |
+### Правильные окончания
+
+| Кто | -AR hablar | -ER / -IR comer, vivir |
 |---|---|---|
-| yo | -é | -í |
-| tú | -aste | -iste |
-| él/ella | -ó | -ió |
-| nosotros | -amos | -imos |
-| vosotros | -asteis | -isteis |
-| ellos | -aron | -ieron |
+| yo | habl**é** | com**í** |
+| tú | habl**aste** | com**iste** |
+| él / ella / usted | habl**ó** | com**ió** |
+| nosotros | habl**amos** | com**imos** |
+| vosotros | habl**asteis** | com**isteis** |
+| ellos / ustedes | habl**aron** | com**ieron** |
 
-Пример: \`hablar\` → hablé, hablaste, habló, hablamos, hablasteis, hablaron.
+⚠️ У -AR формы yo / él с ударением: habl**é**, habl**ó** — иначе это настоящее (hablo, habla).
+У -AR **hablamos** совпадает с настоящим — смотрите маркер (ayer vs ahora).
 
 ### Самые частые неправильные
 
-| Инфинитив | yo | tú | él/ella | nosotros | vosotros | ellos |
+| Инфинитив | yo | tú | él | nosotros | vosotros | ellos |
 |---|---|---|---|---|---|---|
-| ser / ir | fui | fuiste | fue | fuimos | **fuisteis** | fueron |
-| tener | tuve | tuviste | tuvo | tuvimos | **tuvisteis** | tuvieron |
-| estar | estuve | estuviste | estuvo | estuvimos | **estuvisteis** | estuvieron |
-| hacer | hice | hiciste | hizo | hicimos | **hicisteis** | hicieron |
-| venir | vine | viniste | vino | vinimos | **vinisteis** | vinieron |
-| decir | dije | dijiste | dijo | dijimos | **dijisteis** | dijeron |
-| ver | vi | viste | vio | vimos | **visteis** | vieron |
+| ser / ir | fui | fuiste | fue | fuimos | fuisteis | fueron |
+| tener | tuve | tuviste | tuvo | tuvimos | tuvisteis | tuvieron |
+| estar | estuve | estuviste | estuvo | estuvimos | estuvisteis | estuvieron |
+| hacer | hice | hiciste | hizo | hicimos | hicisteis | hicieron |
+| venir | vine | viniste | vino | vinimos | vinisteis | vinieron |
+| decir | dije | dijiste | dijo | dijimos | dijisteis | dijeron |
+| ver | vi | viste | vio | vimos | visteis | vieron |
 
-### Использование
-Действие **завершено** в конкретный момент прошлого:
-\`Ayer fui al cine.\`
-\`En 2018 viví en Barcelona.\`
+**ser** и **ir** в прошлом **одинаковые**: \`fui\` = «я был» или «я пошёл» — по контексту.
 
-### Маркеры
-ayer, anteayer, el lunes pasado, hace dos años, en 1999.
+### Когда
+Действие **закончилось** в названный момент: \`Ayer fui al cine.\` \`En 2018 viví en Barcelona.\`
 
-> 💡 Indefinido = «факты прошлого»; Imperfecto = «описание фона». Сравни:
-> \`Ayer **llovió**\` (что произошло) / \`**Llovía**\` (какая была погода).`,
+Маркеры: ayer, anteayer, el lunes pasado, hace dos años, en 1999.
+
+> 💡 Indefinido = **что случилось** (толчок сюжета). Imperfecto (следующая тема) = **какой был фон**.
+> \`Ayer **llovió**\` (свершилось) vs \`**Llovía**\` (стояла такая погода). Полный контраст — тема DELE «прошедшие».`,
   },
   {
     slug: "a2-imperfecto",
@@ -552,38 +693,41 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     level: "A2",
     category: "Прошедшие времена",
     exam: "DELE",
-    summary: "Описание фона в прошлом: привычки, описания, длительные действия.",
-    content: `## Pretérito Imperfecto — фон прошлого
+    summary: "Фон прошлого: привычки, погода, «когда я был ребёнком».",
+    content: `> **Путь:** Indefinido (ayer fui) — событие. Здесь — **декорации**: как было обычно / в тот момент вокруг.
+
+## Pretérito Imperfecto — фон прошлого
+
+Окончания спокойные: почти всегда **-aba** или **-ía**. Ударение на той же гласной во всех лицах кроме nosotros.
 
 ### Правильные окончания
 
-| Лицо | -AR | -ER/-IR |
+| Кто | -AR | -ER / -IR |
 |---|---|---|
 | yo | -aba | -ía |
 | tú | -abas | -ías |
-| él/ella/usted | -aba | -ía |
-| nosotros/as | -ábamos | -íamos |
-| **vosotros/as** | **-abais** | **-íais** |
-| ellos/ustedes | -aban | -ían |
+| él / ella / usted | -aba | -ía |
+| nosotros | -ábamos | -íamos |
+| vosotros | -abais | -íais |
+| ellos / ustedes | -aban | -ían |
 
-Пример: \`hablar\` → hablaba, hablabas, hablaba, hablábamos, **hablabais**, hablaban.
+\`hablar\` → hablaba… **hablabais**… hablaban.
 
-### Только 3 неправильных!
-| Глагол | Основа |
+### Только 3 неправильных
+
+| Глагол | Формы |
 |---|---|
-| **ser** | era, eras, era, éramos, **erais**, eran |
-| **ir** | iba, ibas, iba, íbamos, **ibais**, iban |
-| **ver** | veía, veías, veía, veíamos, **veíais**, veían |
+| **ser** | era, eras, era, éramos, erais, eran |
+| **ir** | iba, ibas, iba, íbamos, ibais, iban |
+| **ver** | veía, veías, veía, veíamos, veíais, veían |
 
-### Когда использовать
-1. **Привычки в прошлом:** \`Cuando era niño, jugaba al fútbol.\`
-2. **Описание:** \`Hacía sol y los pájaros cantaban.\`
-3. **Длительное действие (фон):** \`Yo leía cuando llamaste.\`
-4. **Возраст/время:** \`Tenía 10 años.\`
+### Когда
+1. Привычка: \`Cuando era niño, **jugaba** al fútbol.\`
+2. Описание: \`Hacía sol y los pájaros **cantaban**.\`
+3. Фон + событие: \`Yo **leía** cuando **llamaste**.\` (читал — imperfecto, позвонил — indefinido)
+4. Возраст / час в прошлом: \`**Tenía** 10 años.\` \`**Eran** las tres.\`
 
-### Сравнение с Indefinido
-\`**Estaba** en casa cuando **llegó** María.\`
-(Imperfecto — что делал / Indefinido — что произошло).`,
+\`**Estaba** en casa cuando **llegó** María.\` — был дома (фон) / пришла (факт).`,
   },
   {
     slug: "a2-por-para",
@@ -592,8 +736,10 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     level: "A2",
     category: "Предлоги",
     exam: "DELE",
-    summary: "Два предлога «за/для» — главная трудность испанского.",
-    content: `## POR vs PARA — оба переводятся по-разному
+    summary: "para = цель / для кого; por = причина / путь / цена / утром.",
+    content: `> **Путь:** a / de / en уже стоят на местах. Здесь — два предлога, которые оба лезут в перевод «для / за / по».
+
+## POR vs PARA
 
 ### PARA — цель, назначение, направление
 - **Цель:** \`Estudio **para** aprender.\` (чтобы научиться)
@@ -621,8 +767,10 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Comparativos y Superlativos",
     level: "A2",
     category: "Прилагательные",
-    summary: "Сравнение: más/menos, tan…como, el más… — сравнительная и превосходная степень.",
-    content: `## Comparativos (сравнительная степень)
+    summary: "más / menos / tan…como и el más…; mejor, peor, mayor.",
+    content: `> **Путь:** прилагательные согласуются как в «Роде и числе» (blanca / rojos). Здесь — **сравнения**.
+
+## Сравнение (comparativos)
 
 ### Обычные прилагательные
 \`más + прилагательное + (que)\` / \`menos + … + (que)\`
@@ -673,8 +821,10 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Futuro Simple",
     level: "A2",
     category: "Будущее время",
-    summary: "Простое будущее: планы, прогнозы, обещания.",
-    content: `## Futuro Simple
+    summary: "Будущее от инфинитива: hablaré. Те же кривые основы, что потом в condicional.",
+    content: `> **Путь:** ближайшее «собираюсь» уже есть: ir a + инфинитив (\`voy a comer\`). Здесь — **простое будущее** одним словом.
+
+## Futuro Simple
 
 ### Образование: инфинитив + окончание
 
@@ -725,37 +875,46 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     level: "B1",
     category: "Наклонения",
     exam: "DELE",
-    summary: "Сослагательное наклонение для желаний, сомнений, эмоций.",
-    content: `## Modo Subjuntivo — Presente
+    summary: "Не факт, а желание/сомнение: quiero que vengas. Indicativo — когда уверен.",
+    content: `> **Путь:** времена (настоящее, прошедшие, будущее) называют **факты**. Новое — **наклонение**: «хочу / сомневаюсь / жаль, что», а не «так есть».
 
-### Образование
-Берём форму **yo** presente, меняем окончание: -AR ↔ -ER/-IR.
+## Subjuntivo — не другое время, а другой «режим»
 
-| Лицо | -AR (hablar → hablo) | -ER (comer → como) |
+**Indicativo** (hablo, fui, iré) = реальность.
+**Subjuntivo** (hable, vaya) = отношение к тому, что для говорящего ещё не факт.
+
+Почти всегда вторая часть с **que**: \`Quiero **que** vengas.\`
+Нет другого лица / нет que → часто инфинитив: \`Quiero venir.\`
+
+## Как образуется (настоящий subjuntivo)
+
+Форма **yo** из Presente + смена гласной: -ar → **e**, -er/-ir → **a**.
+
+| Кто | hablar (hablo) | comer (como) |
 |---|---|---|
 | yo | hable | coma |
 | tú | hables | comas |
-| él/ella/usted | hable | coma |
-| nosotros/as | hablemos | comamos |
-| **vosotros/as** | **habléis** | **comáis** |
-| ellos/ustedes | hablen | coman |
+| él / ella / usted | hable | coma |
+| nosotros | hablemos | comamos |
+| vosotros | habléis | comáis |
+| ellos / ustedes | hablen | coman |
 
-### Неправильные корни
+Корень как в yo настоящего:
 - tener → **tenga**, estar → **esté**, hacer → **haga**
 - ser → **sea**, ir → **vaya**, saber → **sepa**
-- Глаголы с чередованием: pensar → **piense**, pedir → **pida**
+- pensar → **piense**, pedir → **pida**
 
-### Когда использовать Subjuntivo
-1. **Желание**: \`Quiero que **vengas**.\`
-2. **Эмоция**: \`Me alegra que **estés** aquí.\`
-3. **Сомнение**: \`Dudo que **sepa** la respuesta.\`
-4. **Неопределённость**: \`Busco a alguien que **hable** ruso.\`
-5. **После определённых союзов**: para que, antes de que, aunque (гипотетично).
+## Когда ставить
 
-### WEIRDO — мнемоника
-**W**ish, **E**motion, **Impersonal expressions**, **R**ecommendation, **D**oubt, **O**jalá.
+1. Желание: \`Quiero que **vengas**.\`
+2. Эмоция: \`Me alegra que **estés** aquí.\`
+3. Сомнение: \`Dudo que **sepa** la respuesta.\`
+4. Неизвестный человек/вещь: \`Busco a alguien que **hable** ruso.\`
+5. Цель / «до»: para que, antes de que; aunque — если гипотеза.
 
-> ⚠️ \`Creo que...\` → Indicativo (уверенность). \`No creo que...\` → Subjuntivo (сомнение).`,
+> ⚠️ \`Creo que **viene**.\` — уверен → обычное настоящее.
+> \`No creo que **venga**.\` — не верю → subjuntivo.
+> Дальше те же кнопки в прошлом (imperfecto de subjuntivo) и в сложных формах (haya hablado).`,
   },
   {
     slug: "b1-imperativo",
@@ -764,8 +923,10 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     level: "B1",
     category: "Наклонения",
     exam: "DELE",
-    summary: "Повелительное наклонение: приказы, просьбы, советы.",
-    content: `## Imperativo
+    summary: "Приказы и просьбы: habla / no hables. Отрицание = тот же subjuntivo.",
+    content: `> **Путь:** формы subjuntivo (hable, comas) только что были. Повелительное **берёт их** почти целиком — отдельно только утвердительные tú и vosotros.
+
+## Imperativo
 
 ### Утвердительная форма (afirmativo)
 
@@ -816,8 +977,10 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Modo Condicional",
     level: "B1",
     category: "Наклонения",
-    summary: "Условное наклонение: вежливые просьбы, гипотезы, пожелания.",
-    content: `## Condicional Simple (условное наклонение)
+    summary: "«Я бы»: podría, me gustaría. Те же основы, что в Futuro (tendr-, har-).",
+    content: `> **Путь:** Futuro (hablaré, tendré) вы уже собираете. Condicional — **те же основы** + -ía: hablaría, tendría.
+
+## Condicional Simple («я бы / не могли бы вы»)
 
 ### Образование: инфинитив + окончание
 
@@ -857,8 +1020,10 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Pronombre SE",
     level: "B1",
     category: "Местоимения",
-    summary: "Безличное se, пассивное se, взаимное se — многофункциональный местоименный глагол.",
-    content: `## Местоимение SE — самые важные функции
+    summary: "Одно se: возвратное, взаимное, «здесь говорят», случайно разбилось.",
+    content: `> **Путь:** me / te из gustar уже знакомы. Здесь — **se** как отдельный инструмент, не как «себя» в каждом случае.
+
+## Местоимение SE — пять функций, один вид
 
 ### 1. Возвратное (reflexivo)
 \`levantarse\` → \`Me **levanto** a las 7.\` — Я встаю в 7.
@@ -891,8 +1056,10 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Pronombres Relativos",
     level: "B1",
     category: "Местоимения",
-    summary: "que, quien, el que, cuyo, donde — связывающие слова в сложных предложениях.",
-    content: `## Относительные местоимения (relativos)
+    summary: "Связка двух фраз: que почти всегда; quien — люди; cuyo — чей.",
+    content: `> **Путь:** сложные предложения без новой глагольной формы. Слова-мостики: que, quien, donde.
+
+## Относительные местоимения
 
 ### QUE — самый универсальный
 \`El libro **que** leo.\` — Книга, которую я читаю.
@@ -929,8 +1096,10 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Pretérito Pluscuamperfecto",
     level: "B1",
     category: "Прошедшие времена",
-    summary: "Предпрошедшее: действие, случившееся до другого действия в прошлом.",
-    content: `## Pretérito Pluscuamperfecto — «давно-прошедшее»
+    summary: "Раньше другого прошлого: había salido, когда ты пришёл.",
+    content: `> **Путь:** haber + participio вы знаете из Perfecto (he comido). Здесь haber стоит в **imperfecto**: había comido.
+
+## Pluscuamperfecto — «уже случилось до того момента»
 
 ### Формула: HABER (в imperfecto) + participio
 
@@ -968,8 +1137,10 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Subjuntivo Imperfecto",
     level: "B1",
     category: "Наклонения",
-    summary: "Сослагательное в прошедшем/нереальном: гипотезы, нереальные условия.",
-    content: `## Subjuntivo Imperfecto (сослагательное в прошедшем)
+    summary: "«Если бы»: si tuviera… Вы хотите в прошлом: quería que vinieras.",
+    content: `> **Путь:** настоящий subjuntivo (quiera que vengas) уже есть. Если главная фраза в прошлом или условие нереальное — **hablara / tuviera**.
+
+## Subjuntivo Imperfecto
 
 ### Образование: инфинитив + окончания (с ударением)
 
@@ -1004,8 +1175,10 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Pronombres de Objeto (OD/OI)",
     level: "B1",
     category: "Местоимения",
-    summary: "Прямое и косвенное дополнение: me, te, lo, le, se — когда какое.",
-    content: `## Местоимения-дополнения (OD и OI)
+    summary: "lo/la = что; le = кому; вместе se lo, не le lo.",
+    content: `> **Путь:** me / te / le из gustar. Здесь те же короткие слова, но **вместо** «книгу / ему»: lo veo, le doy.
+
+## Местоимения-дополнения: что? и кому?
 
 ### Прямое дополнение (Objeto Directo — что?)
 Отвечает на вопрос «что/кого?» (без предлога).
@@ -1055,8 +1228,10 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Adverbios",
     level: "B1",
     category: "Наречия",
-    summary: "mente-наречия, времени, места, образа действия, сомнения.",
-    content: `## Наречия (adverbios)
+    summary: "rápidamente, muy vs mucho; quizás + subjuntivo.",
+    content: `> **Путь:** прилагательные (rápida, fácil) вы согласовываете. Наречие — «как?»: часто **женская форма + mente**.
+
+## Наречия
 
 ### Образование -mente (как? каким образом?)
 **Прилагательное (ж.р.) + mente:**
@@ -1100,8 +1275,10 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     level: "B2",
     category: "Синтаксис",
     exam: "DELE",
-    summary: "Косвенная речь: передача чужих слов и мыслей.",
-    content: `## Estilo Indirecto (косвенная речь)
+    summary: "Чужие слова: dijo que vendría. Сдвиг времён только после прошедшего.",
+    content: `> **Путь:** все основные времена и subjuntivo уже в багаже. Здесь — **как они сдвигаются**, когда пересказываете.
+
+## Косвенная речь
 
 ### Прямая → Косвенная (одновременность)
 > Directo: \`Ana dice: "Hoy **llego** tarde."\`
@@ -1143,8 +1320,10 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Voz Pasiva y Pasiva Refleja",
     level: "B2",
     category: "Синтаксис",
-    summary: "Пассивный залог и его естественная альтернатива — pasiva refleja.",
-    content: `## Voz Pasiva
+    summary: "Пассив: fue escrito vs живое se habla. Состояние: está cerrada.",
+    content: `> **Путь:** se venden из темы SE. Здесь — когда ещё **ser + participio**, а когда лучше se.
+
+## Пассив и se
 
 ### 1. Voz pasiva con SER (классическая)
 **SER** + participio (+ **por** + агент)
@@ -1186,8 +1365,10 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Subjuntivo Perfecto y Pluscuamperfecto",
     level: "B2",
     category: "Наклонения",
-    summary: "Сложные формы сослагательного: perfecto (haya hablado) и pluscuamperfecto.",
-    content: `## Сложные формы Subjuntivo
+    summary: "Те же кнопки subjuntivo, но haya / hubiera + participio.",
+    content: `> **Путь:** правило subjuntivo не новое — только **время**. Настоящее желание о прошлом: haya hablado; нереальное прошлое: hubiera hablado.
+
+## Сложные формы Subjuntivo
 
 ### Subjuntivo Perfecto (прошедшее совершённое)
 Формула: **haya** + participio
@@ -1228,8 +1409,10 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Condicional Compuesto",
     level: "B2",
     category: "Наклонения",
-    summary: "Сложное условное: habría + participio (я бы сделал).",
-    content: `## Condicional Compuesto
+    summary: "Три si: llueve / lloviera / hubiera llovido + соответствующий хвост.",
+    content: `> **Путь:** si tuviera, saldría уже было. Здесь хвост в прошлом: **habría** + participio, и сводная таблица трёх si.
+
+## Condicional Compuesto
 
 ### Формула: **haber** (в condicional) + participio
 
@@ -1267,8 +1450,10 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Relativos Avanzados",
     level: "B2",
     category: "Синтаксис",
-    summary: "lo que, el cual, donde, como, cuando — продвинутое связывание предложений.",
-    content: `## Относительные местоимения (продвинутый уровень)
+    summary: "Формальные el cual, lo que, cuyo — без новой глагольной системы.",
+    content: `> **Путь:** que / quien / cuyo уже стоят. Здесь — регистр: el cual, lo que, adonde.
+
+## Относительные (уровень письма B2)
 
 ### LO QUE — «то, что» (абстрактное, нейтральное)
 \`No entiendo **lo que** dices.\` — Не понимаю то, что ты говоришь.
@@ -1310,8 +1495,10 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     level: "B2",
     category: "Синтаксис",
     exam: "DELE",
-    summary: "además, sin embargo, por lo tanto — логические связки для связной речи.",
-    content: `## Коннекторы (conectores discursivos)
+    summary: "Связки для текста: sin embargo, por lo tanto; союзы + subjuntivo.",
+    content: `> **Путь:** porque / pero хватает до B1. На письме B2+ **варьируют** связки; часть из них уже тянет subjuntivo (para que, a menos que).
+
+## Связки текста
 
 ### Addition (добавление)
 - **además** — кроме того, более того
@@ -1365,8 +1552,10 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Perífrasis Verbales",
     level: "C1",
     category: "Глаголы",
-    summary: "Сложные глагольные конструкции: необходимости, начала, конца.",
-    content: `## Perífrasis Verbales
+    summary: "Готовые связки глаголов: acabar de, llevar + gerundio, deber de.",
+    content: `> **Путь:** ir a + inf и estar + -ando вы знаете с A1–A2. Здесь — **каталог** таких склеек и ловушка deber / deber de.
+
+## Perífrasis — глагол + инфинитив / -ando / -ado
 
 Конструкция: **вспомогательный глагол + (связка) + инфинитив/gerundio/participio**.
 
@@ -1409,8 +1598,10 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Matrices Estilísticos y Registers",
     level: "C1",
     category: "Стилистика",
-    summary: "Тонкие смысловые оттенки: регистр, вежливость, модальность.",
-    content: `## Matices Estilísticos (C1)
+    summary: "Не «правильно», а уместно: регистр, aunque llueve vs llueva.",
+    content: `> **Путь:** формы все известны. C1 = **какой переключатель** в этой ситуации: факт / гипотеза / вежливость.
+
+## Оттенки и регистр
 
 ### 1. Condicionales и гипотезы
 - **Real**: \`Si llueve, me quedo.\` (Indicativo + Futuro)
@@ -1452,8 +1643,10 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Subjuntivo: Usos Avanzados",
     level: "C1",
     category: "Наклонения",
-    summary: "Сомнительные и устойчивые случаи: aunque, donde, como, relativas.",
-    content: `## Subjuntivo — продвинутые случаи (C1)
+    summary: "aunque / donde / como: факт → indicativo, гипотеза → subjuntivo.",
+    content: `> **Путь:** subjuntivo вы ставите. Здесь только **спорные точки**, без повторения образования форм.
+
+## Subjuntivo: тонкие случаи
 
 ### Aunque (хотя) — indicativo vs subjuntivo
 - **Indicativo** (факт известен): \`**Aunque** llueve, salgo.\` (Хотя идёт дождь — я знаю это.)
@@ -1490,8 +1683,10 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Estilo Indirecto Avanzado",
     level: "C1",
     category: "Синтаксис",
-    summary: "Полная система трансляции времён в косвенной речи + вопросы и приказы.",
-    content: `## Estilo Indirecto — полная система (C1)
+    summary: "Полная таблица сдвига времён + указатели hoy → aquel día.",
+    content: `> **Путь:** схема «dijo que + сдвиг» с B2. Ниже — полная сетка, включая subjuntivo и внутренний монолог.
+
+## Косвенная речь: полная сетка
 
 ### Трансляция времён (после главного глагола в прошедшем)
 
@@ -1545,8 +1740,10 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Pronombres Avanzados",
     level: "C1",
     category: "Местоимения",
-    summary: "lo + прилагательное, дублирование, leísmо, reduplicación — тонкости.",
-    content: `## Местоимения — продвинутые случаи (C1)
+    summary: "lo bueno; дублирование a María la veo; leísmo vs норма.",
+    content: `> **Путь:** lo / le / se lo уже в обиходе. Здесь — **lo** абстрактное, обязательный повтор a + местоимение, региональные leísmo / laísmo.
+
+## Местоимения: тонкости
 
 ### LO нейтральное (lo + прилагательное/наречие)
 \`**Lo** bueno de España.\` — Хорошее (то хорошее) в Испании.
@@ -1589,8 +1786,10 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Ser y Estar: Matices Avanzados",
     level: "C1",
     category: "Глаголы",
-    summary: "Изменение смысла прилагательных, устойчивые конструкции, пограничные случаи.",
-    content: `## Ser vs Estar — тонкие случаи (C1)
+    summary: "es listo vs está listo и другие пары — без повторения таблиц soy / estoy.",
+    content: `> **Путь:** базовый ser / estar с A1. Здесь только пары, где **смысл ломается**, если выбрать не тот глагол.
+
+## Ser vs Estar — тонкие случаи
 
 ### Прилагательные, меняющие смысл
 | Прилагательное | SER (постоянное) | ESTAR (состояние) |
@@ -1635,8 +1834,10 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Ironía y Registro",
     level: "C2",
     category: "Стилистика",
-    summary: "Ироничное сослагательное, формальный/неформальный регистр, речевые тактики.",
-    content: `## Ирония и регистр (C1-C2)
+    summary: "Ирония, регистр, тактики — формы известны, важна уместность.",
+    content: `> **Путь:** наклонения и регистр с C1. Здесь — **как звучит** фраза (ирония, дистанция), а не как спрягается.
+
+## Ирония и регистр
 
 ### Ироничное сослагательное (Subjuntivo irónico)
 Используется для **вежливой критики** или иронии:
@@ -1686,8 +1887,10 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Oraciones Hendidas y Énfasis",
     level: "C2",
     category: "Синтаксис",
-    summary: "Oraciones hendidas: «Fue Juan quien…», «Lo que necesito es…» — фокус и выделение.",
-    content: `## Выделительные конструкции (oraciones hendidas)
+    summary: "Фокус: fue Juan quien… / lo que necesito es… — для письменного и устного C2.",
+    content: `> **Путь:** que / lo que вы связываете с B1. Здесь — **выделение** информации, не новая грамматика времён.
+
+## Выделительные конструкции
 
 Носители «раскалывают» предложение, чтобы **выделить** нужный элемент.
 
@@ -1722,8 +1925,10 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
     titleEs: "Futuro de Conjetura y Condicional de Rumor",
     level: "C2",
     category: "Глаголы",
-    summary: "«Serán las diez» — наверное, десять. «Habría mil personas» — по сообщениям, около тысячи.",
-    content: `## Futuro de conjetura и condicional de rumor
+    summary: "Serán las diez ≈ наверное десять; habría mil ≈ по слухам. Не про будущее-план.",
+    content: `> **Путь:** Futuro и Condicional как план / «я бы» уже были. Здесь те же формы = **догадка и слух**.
+
+## Догадка и слух
 
 Будущее и условное время в испанском выражают не только время — они кодируют **степень уверенности**.
 
@@ -1763,8 +1968,10 @@ Futuro perfecto — догадка о недавнем прошлом:
     titleEs: "Estilo Culto: Construcciones Absolutas",
     level: "C2",
     category: "Стилистика",
-    summary: "Participio absoluto («Terminada la reunión…»), gerundio absoluto, номинализация — письменный регистр.",
-    content: `## Книжный стиль: абсолютные конструкции и номинализация
+    summary: "Письменный регистр: terminada la reunión…, номинализация — не для чата.",
+    content: `> **Путь:** participio и gerundio из времён. Здесь — **книжный** синтаксис: сжатие придаточных.
+
+## Книжный стиль
 
 Приёмы **письменного / формального** испанского: пресса, эссе, DELE C2.
 
@@ -1811,8 +2018,10 @@ Futuro perfecto — догадка о недавнем прошлом:
     level: "B1",
     category: "Подготовка к DELE",
     exam: "DELE",
-    summary: "Indefinido vs Imperfecto vs Perfecto vs Pluscuamperfecto — ловушка №1 на DELE.",
-    content: `## Контраст прошедших времён — ловушка №1 на DELE
+    summary: "Сводка A2–B1: Indefinido / Imperfecto / Perfecto / Pluscuamperfecto на экзамене.",
+    content: `> **Путь:** четыре прошедших уже разобраны по темам. Здесь — **как выбирают на DELE**, без повторения спряжения.
+
+## Контраст прошедших — ловушка №1 на DELE
 
 В заданиях DELE (Comprensión de lectura, tarea de huecos) чаще всего проверяют выбор между четырьмя прошедшими.
 
@@ -1852,8 +2061,10 @@ Futuro perfecto — догадка о недавнем прошлом:
     level: "B1",
     category: "Подготовка к DELE",
     exam: "DELE",
-    summary: "Формулы письма для Expresión escrita: обращения, вежливые просьбы, прощания.",
-    content: `## Письмо на DELE (Expresión e interacción escritas)
+    summary: "DELE письмо: обращения, вежливые просьбы, прощания — применение condicional и регистра.",
+    content: `> **Путь:** condicional (podría, quisiera) и формальное usted уже были. Здесь — **готовые формулы** экзаменационного письма.
+
+## Письмо на DELE
 
 В письменной части почти всегда есть письмо/e-mail. Оценивают **регистр** — формулы должны соответствовать адресату.
 
@@ -1924,8 +2135,10 @@ Futuro perfecto — догадка о недавнем прошлом:
     level: "B2",
     category: "Подготовка к DELE",
     exam: "DELE",
-    summary: "Скелет redacción: en primer lugar, no obstante, en definitiva + мнение с indicativo/subjuntivo.",
-    content: `## Коннекторы для redacción (Expresión escrita B2–C1)
+    summary: "DELE сочинение: скелет абзацев + мнение (indicativo / subjuntivo).",
+    content: `> **Путь:** связки B2 (sin embargo, por lo tanto). Здесь — **скелет работы** и где в мнении нужен subjuntivo.
+
+## Связки для сочинения DELE
 
 Оценка за **coherencia** напрямую зависит от связок. Вот рабочий скелет эссе.
 
@@ -1993,8 +2206,10 @@ Futuro perfecto — догадка о недавнем прошлом:
     level: "B2",
     category: "Подготовка к DELE",
     exam: "DELE",
-    summary: "Описание фото, гипотезы (futuro de conjetura), мнение, согласие/несогласие, слова-заполнители.",
-    content: `## Устная часть DELE (Expresión e interacción orales)
+    summary: "DELE устно: фото, гипотезы, мнение, согласие — живая речь, не новые таблицы.",
+    content: `> **Путь:** futuro de conjetura, мнение с subjuntivo, связки. Здесь — **как это звучит в устной части**.
+
+## Устная часть DELE
 
 ### Описание фотографии (tarea clásica)
 Локация на фото:

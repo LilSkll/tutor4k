@@ -110,10 +110,10 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       type: "multiple_choice",
       question: "___ libro está en la mesa.",
-      instruction: "Выберите определённый артикль (м.р., ед.ч.)",
+      instruction: "Выберите артикль для известной конкретной вещи мужского рода (одна книга)",
       options: ["El", "La", "Un", "Una"],
       answer: "El",
-      explanation: "Libro — м.р., ед.ч., конкретный → el libro.",
+      explanation: "Libro — мужской род, одна известная книга → el libro.",
     },
     {
       type: "fill_blank",
@@ -126,26 +126,27 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       type: "multiple_choice",
       question: "Vivo en ___ casa bonita.",
-      instruction: "Выберите неопределённый артикль (ж.р., ед.ч.)",
+      instruction: "Выберите артикль для «какой-то» дома женского рода (один дом)",
       options: ["un", "una", "el", "la"],
       answer: "una",
-      explanation: "Casa — ж.р., ед.ч., неопределённая → una casa.",
+      explanation: "Casa — женский род, один ещё не конкретный дом → una casa.",
     },
     {
       type: "translation",
       question: "Девочки играют в парке.",
-      instruction: "Переведите (мн.ч., ж.р.)",
+      instruction: "Переведите: несколько девочек (женский род, много)",
       answer: "Las niñas juegan en el parque",
       acceptableAnswers: ["las niñas juegan en el parque", "Las niñas juegan en el parque"],
-      explanation: "Las niñas (ж.р., мн.ч.) + el parque (м.р.)",
+      explanation: "Las niñas — женский род, много; el parque — мужской род, один известный парк.",
     },
     {
       type: "multiple_choice",
       question: "Bebo ___ agua fría.",
-      instruction: "Какой артикль перед agua?",
+      instruction: "Какой артикль перед agua? (не путать с abuela)",
       options: ["la", "el", "un", "las"],
       answer: "el",
-      explanation: "Слова ж.р. на ударное a-/ha- → el: el agua, el águila.",
+      explanation:
+        "Agua — женского рода, но одна вещь и ударение на первой a (Á-gua) → el agua. Во множественном: las aguas. Не путать: la abuela (ударение на -bue-).",
     },
   ],
 
@@ -293,7 +294,7 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     },
     {
       type: "fill_blank",
-      question: "Los ___ (libro, мн.ч.)",
+      question: "Los ___ (libro, много книг)",
       instruction: "Поставьте существительное во множественное число",
       answer: "libros",
       acceptableAnswers: ["Libros"],

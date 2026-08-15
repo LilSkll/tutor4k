@@ -34,20 +34,21 @@ export const DE_GRAMMAR_TOPIC: Record<string, GrammarLocaleFields> = {
   "a1-articulos": {
     title: "Artikel",
     summary:
-      "Bestimmte und unbestimmte Artikel; maskulines und feminines Genus.",
+      "el/la/los/las und un/una: bekannt vs irgendein; Ausnahme el agua (nicht la abuela).",
   },
   "a1-ser-estar": {
     title: "Ser / Estar",
     summary:
-      "Begrüßungen und Vorstellungen sowie ser vs. estar.",
+      "Erstes Thema: Begrüßung und zwei Verben für „sein“ — wer du bist vs. wie du dich fühlst.",
   },
   "a1-presente": {
     title: "Präsens (Indikativ)",
-    summary: "Präsens: regelmäßige und unregelmäßige Verben.",
+    summary: "Präsens: drei Verb-Familien (-ar / -er / -ir) und warum die Endung wechselt.",
   },
   "a1-genero-numero": {
     title: "Genus und Numerus",
-    summary: "Maskulinum/Femininum und Singular/Plural der Substantive.",
+    summary:
+      "Maskulin/feminin und eins/viele; Ausnahmen problema, mano, agua vs abuela.",
   },
   "a1-numeros-1-100": {
     title: "Zahlen, Tage und Uhrzeit",

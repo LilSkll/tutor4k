@@ -115,41 +115,41 @@ export const GRAMMAR_TOPIC: Record<
   "a1-articulos": {
     "en": {
       "title": "Articles",
-      "summary": "Definite and indefinite articles; masculine and feminine gender."
+      "summary": "el/la/los/las vs un/una: known vs some; exception el agua (not la abuela)."
     },
     "es": {
       "title": "Artículos",
-      "summary": "Artículos definidos e indefinidos; género masculino y femenino."
+      "summary": "el/la/los/las y un/una: conocido vs alguno; excepción el agua (no la abuela)."
     }
   },
   "a1-ser-estar": {
     "en": {
       "title": "Ser / Estar",
-      "summary": "Greetings and introductions, plus ser vs estar."
+      "summary": "First topic: greetings and two verbs for “to be” — who you are vs how you are now."
     },
     "es": {
       "title": "Ser y Estar",
-      "summary": "Saludos y presentaciones, más ser frente a estar."
+      "summary": "Primer tema: saludos y dos verbos «ser / estar» — quién eres vs cómo estás ahora."
     }
   },
   "a1-presente": {
     "en": {
       "title": "Present Indicative",
-      "summary": "Present tense: regular and irregular verbs."
+      "summary": "Present: three verb families (-ar / -er / -ir) and why the ending changes."
     },
     "es": {
       "title": "Presente de Indicativo",
-      "summary": "Presente de indicativo: verbos regulares e irregulares."
+      "summary": "Presente: tres familias (-ar / -er / -ir) y por qué cambia la terminación."
     }
   },
   "a1-genero-numero": {
     "en": {
       "title": "Gender and Number",
-      "summary": "Masculine/feminine gender and singular/plural nouns."
+      "summary": "Masculine/feminine and one vs many; exceptions problema, mano, agua vs abuela."
     },
     "es": {
       "title": "Género y Número",
-      "summary": "Género masculino/femenino y número singular/plural de sustantivos."
+      "summary": "Masculino/femenino y uno/muchos; excepciones problema, mano, agua vs abuela."
     }
   },
   "a1-numeros-1-100": {

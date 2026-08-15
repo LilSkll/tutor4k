@@ -26,7 +26,12 @@ export function grammarRulesFromMarkdown(
     .split(/(?=^##\s)/m)
     .map((p) => p.trim())
     .filter(Boolean);
-  const pages = parts.length > 0 ? parts : [md];
+  const preamble = parts.filter((p) => !/^##\s/m.test(p)).join("\n\n");
+  const headed = parts.filter((p) => /^##\s/m.test(p));
+  const pages = headed.length > 0 ? headed : parts.length > 0 ? parts : [md];
+  if (preamble && headed.length > 0) {
+    pages[0] = `${preamble}\n\n${pages[0]}`;
+  }
   return pages.map((content, index) => {
     const heading = content.match(/^##\s+(.+)$/m)?.[1] ?? "";
     const title =
