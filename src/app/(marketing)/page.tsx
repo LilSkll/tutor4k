@@ -1,6 +1,5 @@
-"use client";
-
 import Link from "next/link";
+import Image from "next/image";
 import {
   ArrowRight,
   BookOpen,
@@ -12,14 +11,22 @@ import {
   Sparkles,
   Trophy,
 } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { BrandIcon } from "@/components/shared/brand-icon";
-import { useUIStore } from "@/stores";
 import { translate } from "@/lib/i18n";
+import { getRequestInterfaceLanguage } from "@/lib/request-language";
 import { LegalFooterLinks } from "@/components/legal/legal-footer-links";
 import { ConfirmEmailHashRedirect } from "@/components/auth/confirm-email-hash-redirect";
-import Image from "next/image";
+
+const btnGhost =
+  "inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium h-11 px-4 hover:bg-accent hover:text-accent-foreground";
+const btnGradient =
+  "inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium h-11 px-4 bg-primary text-primary-foreground hover:bg-primary/90";
+const btnGradientLg =
+  "inline-flex items-center justify-center gap-2 rounded-xl text-base font-medium h-12 px-8 bg-primary text-primary-foreground hover:bg-primary/90";
+const btnOutlineLg =
+  "inline-flex items-center justify-center gap-2 rounded-xl text-base font-medium h-12 px-8 border border-input bg-background hover:bg-accent";
+const btnSecondaryLg =
+  "inline-flex items-center justify-center gap-2 rounded-xl text-base font-medium h-12 px-8 bg-secondary text-secondary-foreground hover:bg-secondary/80";
 
 const FEATURE_KEYS = [
   { icon: Brain, titleKey: "feature.ai.title", descKey: "feature.ai.desc" },
@@ -28,79 +35,71 @@ const FEATURE_KEYS = [
   { icon: GraduationCap, titleKey: "feature.exercises.title", descKey: "feature.exercises.desc" },
   { icon: Flame, titleKey: "feature.streak.title", descKey: "feature.streak.desc" },
   { icon: Languages, titleKey: "feature.vocab.title", descKey: "feature.vocab.desc" },
-];
+] as const;
 
-const LEVELS = ["A1", "A2", "B1", "B2", "C1"];
+const LEVELS = ["A1", "A2", "B1", "B2", "C1"] as const;
 
-export default function LandingPage() {
-  const language = useUIStore((s) => s.interfaceLanguage);
+export default async function LandingPage() {
+  const language = await getRequestInterfaceLanguage();
   const t = (key: string) => translate(key, language);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-primary/5">
+    <div className="min-h-screen bg-background">
       <ConfirmEmailHashRedirect />
-      {/* Header */}
       <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur-md">
         <div className="container flex h-16 items-center justify-between">
           <div className="flex items-center gap-2">
-            <BrandIcon size={40} priority className="h-10 w-10 shadow-md" />
+            <BrandIcon size={40} priority className="h-10 w-10" />
             <span className="font-bold text-lg gradient-text">Spanish with Pavel</span>
           </div>
           <div className="flex items-center gap-2">
-            <Button variant="ghost" asChild>
-              <Link href="/login">{t("landing.signIn")}</Link>
-            </Button>
-            <Button variant="gradient" asChild>
-              <Link href="/signup">
-                {t("landing.getStarted")}
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-            </Button>
+            <Link href="/login" className={btnGhost}>
+              {t("landing.signIn")}
+            </Link>
+            <Link href="/signup" className={btnGradient}>
+              {t("landing.getStarted")}
+              <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </header>
 
-      {/* Hero */}
       <section className="container py-16 md:py-24 text-center">
-        <div className="inline-flex items-center gap-2 rounded-full border bg-card px-4 py-1.5 text-sm text-muted-foreground mb-6 animate-fade-in">
+        <div className="inline-flex items-center gap-2 rounded-full border bg-card px-4 py-1.5 text-sm text-muted-foreground mb-6">
           <Sparkles className="h-4 w-4 text-primary" />
           {t("landing.badge")}
         </div>
-        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6 animate-fade-in">
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
           {t("landing.heroTitle1")}
           <br />
           <span className="gradient-text">{t("landing.heroTitle2")}</span>
         </h1>
-        <p className="mx-auto max-w-2xl text-lg text-muted-foreground mb-8 animate-fade-in">
+        <p className="mx-auto max-w-2xl text-lg text-muted-foreground mb-8">
           {t("landing.heroSubtitle")}
         </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-12 animate-fade-in">
-          <Button variant="gradient" size="lg" asChild>
-            <Link href="/signup">
-              {t("landing.createAccount")}
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </Button>
-          <Button variant="outline" size="lg" asChild>
-            <Link href="/login">{t("landing.haveAccount")}</Link>
-          </Button>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-12">
+          <Link href="/signup" className={btnGradientLg}>
+            {t("landing.createAccount")}
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+          <Link href="/login" className={btnOutlineLg}>
+            {t("landing.haveAccount")}
+          </Link>
         </div>
 
-        {/* Hippogriff mascot illustration */}
-        <div className="mt-8 mb-4 flex justify-center animate-fade-in">
+        <div className="mt-8 mb-4 flex justify-center">
           <Image
             src="/hippogriff-hero-768.webp"
             alt="Талисман приложения — гиппогриф"
-            width={320}
-            height={320}
+            width={256}
+            height={256}
             priority
             unoptimized
-            sizes="(max-width: 768px) 256px, 320px"
-            className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-3xl shadow-2xl border-4 border-primary/20"
+            sizes="256px"
+            className="w-64 h-64 md:w-72 md:h-72 object-cover rounded-3xl border-4 border-primary/20"
           />
         </div>
 
-        {/* Levels */}
         <div className="flex flex-wrap items-center justify-center gap-2">
           <span className="text-sm text-muted-foreground">{t("landing.levelsLabel")}</span>
           {LEVELS.map((lvl) => (
@@ -114,41 +113,34 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Features */}
       <section className="container py-12 md:py-16">
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {FEATURE_KEYS.map((feat) => (
-            <Card key={feat.titleKey} className="p-6 card-hover">
+            <div key={feat.titleKey} className="rounded-xl border bg-card p-6">
               <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-primary/10 text-primary">
                 <feat.icon className="h-5 w-5" />
               </div>
               <h3 className="font-semibold text-lg mb-1">{t(feat.titleKey)}</h3>
               <p className="text-sm text-muted-foreground">{t(feat.descKey)}</p>
-            </Card>
+            </div>
           ))}
         </div>
       </section>
 
-      {/* CTA */}
       <section className="container py-16">
-        <Card className="relative overflow-hidden border-0 bg-gradient-to-br from-primary via-orange-500 to-rose-500 p-10 text-center text-white">
+        <div className="relative overflow-hidden rounded-xl bg-primary p-10 text-center text-primary-foreground">
           <Trophy className="absolute -right-8 -top-8 h-40 w-40 opacity-10" />
-          <h2 className="text-3xl font-bold mb-3">
-            {t("landing.ctaTitle")}
-          </h2>
-          <p className="mx-auto max-w-xl text-white/90 mb-6">
+          <h2 className="text-3xl font-bold mb-3">{t("landing.ctaTitle")}</h2>
+          <p className="mx-auto max-w-xl text-primary-foreground/90 mb-6">
             {t("landing.ctaSubtitle")}
           </p>
-          <Button size="lg" variant="secondary" asChild>
-            <Link href="/signup">
-              {t("landing.createAccount")}
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </Button>
-        </Card>
+          <Link href="/signup" className={btnSecondaryLg}>
+            {t("landing.createAccount")}
+            <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
       </section>
 
-      {/* Footer */}
       <footer className="border-t py-8">
         <div className="container flex flex-col items-center gap-3 text-sm text-muted-foreground">
           <div className="flex flex-col md:flex-row items-center justify-between w-full gap-4">

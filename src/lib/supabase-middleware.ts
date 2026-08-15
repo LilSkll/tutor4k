@@ -30,11 +30,42 @@ async function fetchUserRole(
   }
 }
 
+function hasSupabaseAuthCookie(request: NextRequest): boolean {
+  return request.cookies.getAll().some((cookie) => {
+    const name = cookie.name;
+    return name.includes("-auth-token") || name.startsWith("sb-");
+  });
+}
+
 /**
- * Refresh the Supabase auth session on every request and protect app routes.
- * Role gates: Teacher Studio (`/teacher`) vs Student Journey.
+ * Refresh the Supabase auth session when needed and protect app routes.
+ * Logged-out traffic skips getUser() so TTFB is not blocked on Auth.
  */
 export async function updateSession(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+
+  const isPublicRoute =
+    pathname === "/" ||
+    pathname.startsWith("/login") ||
+    pathname.startsWith("/signup") ||
+    pathname.startsWith("/forgot-password") ||
+    pathname.startsWith("/auth") ||
+    pathname.startsWith("/onboarding") ||
+    pathname === "/privacy" ||
+    pathname === "/terms";
+
+  const loggedOut = !hasSupabaseAuthCookie(request);
+
+  if (loggedOut) {
+    if (isPublicRoute) {
+      return NextResponse.next({ request });
+    }
+    const url = request.nextUrl.clone();
+    url.pathname = "/login";
+    url.searchParams.set("redirect", pathname);
+    return NextResponse.redirect(url);
+  }
+
   let supabaseResponse = NextResponse.next({ request });
 
   const supabase = createServerClient(
@@ -62,8 +93,6 @@ export async function updateSession(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const { pathname } = request.nextUrl;
-
   const isMfaPage = pathname.startsWith("/auth/mfa");
   const isRecoveryFlow =
     pathname.startsWith("/auth/recovery") ||
@@ -90,16 +119,6 @@ export async function updateSession(request: NextRequest) {
     url.pathname = homePathForRole(role);
     return NextResponse.redirect(url);
   }
-
-  const isPublicRoute =
-    pathname === "/" ||
-    pathname.startsWith("/login") ||
-    pathname.startsWith("/signup") ||
-    pathname.startsWith("/forgot-password") ||
-    pathname.startsWith("/auth") ||
-    pathname.startsWith("/onboarding") ||
-    pathname === "/privacy" ||
-    pathname === "/terms";
 
   // Onboarding is public for auth gate, but Teacher Studio roles skip it.
   const isOnboarding = pathname.startsWith("/onboarding");
