@@ -21,7 +21,7 @@ If the thing is **familiar / specific** (this book, the sun, the park nearby):
 | masculine | **el** libro | **los** libros |
 | feminine | **la** casa | **las** casas |
 
-Examples: \`el sol\`, \`la casa de Ana\`, \`los libros de la mesa\`.
+Examples: \`el sol\`, \`la casa de Ana\`, \`los libros en la mesa\`.
 
 ## An unknown or “some” thing
 
@@ -92,7 +92,7 @@ Si la cosa es **conocida / concreta** (este libro, el sol, el parque de al lado)
 | masculino | **el** libro | **los** libros |
 | femenino | **la** casa | **las** casas |
 
-Ejemplos: \`el sol\`, \`la casa de Ana\`, \`los libros de la mesa\`.
+Ejemplos: \`el sol\`, \`la casa de Ana\`, \`los libros en la mesa\`.
 
 ## Algo desconocido o «alguno»
 
@@ -628,7 +628,7 @@ Pregunta: **¿Qué hora es?**
 | **en** | in/on | El libro está **en** la mesa |
 | **a** | to/in (movement) | Voy **a** Madrid |
 | **de** | from/of | Soy **de** Rusia |
-| **sobre** | on/over | La lámpara está **sobre** la mesa |
+| **sobre** | on (on top of) | La lámpara está **sobre** la mesa |
 | **debajo de** | under | El gato está **debajo de** la silla |
 | **delante de** | in front of | El coche está **delante de** la casa |
 | **detrás de** | behind | El jardín está **detrás de** la casa |
@@ -1172,14 +1172,14 @@ Ejemplo: \`hablar\` → hablaba, hablabas, hablaba, hablábamos, **hablabais**, 
 ### PARA — purpose, destination, deadline
 - **Purpose:** \`Estudio **para** aprender.\`
 - **Recipient:** \`Es un regalo **para** ti.\`
-- **Direction:** \`Voy **para** Madrid.\`
+- **Direction / destination:** \`El avión sale **para** Madrid.\` (heading for; “I go to the city” is usually \`Voy **a** Madrid\`)
 - **Deadline:** \`Para mañana.\`
 
 ### POR — cause, route, exchange, duration
 - **Cause:** \`**Por** el frío, no salí.\`
 - **Route/place:** \`Paseo **por** el parque.\`
 - **Exchange:** \`Lo compré **por** 10 euros.\`
-- **Duration:** \`Estudié **por** dos horas.\`
+- **Duration:** \`Estudié **durante** dos horas.\`
 - **On behalf of:** \`Lo hago **por** ti.\`
 
 ### Mnemonic
@@ -1194,14 +1194,14 @@ Ejemplo: \`hablar\` → hablaba, hablabas, hablaba, hablábamos, **hablabais**, 
 ### PARA — finalidad, destino, plazo
 - **Finalidad:** \`Estudio **para** aprender.\`
 - **Destinatario:** \`Es un regalo **para** ti.\`
-- **Dirección:** \`Voy **para** Madrid.\`
+- **Dirección / destino:** \`El avión sale **para** Madrid.\` (rumbo; «voy a la ciudad» suele ser \`Voy **a** Madrid\`)
 - **Plazo:** \`Para mañana.\`
 
 ### POR — causa, camino, intercambio, duración
 - **Causa:** \`**Por** el frío, no salí.\`
 - **Camino/lugar:** \`Paseo **por** el parque.\`
 - **Intercambio:** \`Lo compré **por** 10 euros.\`
-- **Duración:** \`Estudié **por** dos horas.\`
+- **Duración:** \`Estudié **durante** dos horas.\`
 - **En lugar de:** \`Lo hago **por** ti.\`
 
 ### Mnemotecnia
@@ -1683,8 +1683,8 @@ Ejemplos:
 ### QUE — the most universal
 \`El libro **que** leo.\`
 \`La mujer **que** habla.\`
-- Used for people and things; after preposition with things:
-\`el tema **de que** hablamos\` (but: \`la persona **de la que** hablo\`).
+- Used for people and things. After a preposition use **el/la que**, not bare *de que*:
+\`el tema **del que** hablamos\`, \`la persona **de la que** hablo\`.
 
 ### QUIEN — only for people (after comma or preposition)
 \`Mi hermano, **quien** vive en Madrid, es médico.\`
@@ -1714,8 +1714,8 @@ Ejemplos:
 ### QUE — el más universal
 \`El libro **que** leo.\`
 \`La mujer **que** habla.\`
-- Para personas y cosas; tras preposición con cosas:
-\`el tema **de que** hablamos\` (pero: \`la persona **de la que** hablo\`).
+- Para personas y cosas. Tras preposición: **el/la que**, no *de que* suelto:
+\`el tema **del que** hablamos\`, \`la persona **de la que** hablo\`.
 
 ### QUIEN — solo personas (tras coma o preposición)
 \`Mi hermano, **quien** vive en Madrid, es médico.\`
@@ -1806,16 +1806,20 @@ Acción que ocurrió **antes** que otra acción en el pasado:
 
 ## Subjuntivo Imperfecto
 
-### Formation: infinitive + endings (with stress)
+### Formation
 
-For -AR: -ara, -aras, -ara, -áramos, -arais, -aran
-For -ER/-IR: -iera, -ieras, -iera, -iéramos, -ierais, -ieran
+Not from the infinitive and **not** like the future (\`tendré\`, \`haré\`, \`diré\`).
 
-Example: \`hablar → hablara\`, \`comer → comiera\`, \`vivir → viviera\`.
+Take the **ellos** form of pretérito indefinido, drop **-ron**, add **-ra** (or **-se**):
 
-⚠️ Same irregulars as futuro simple:
-\`tener → tuviera\`, \`poner → pusiera\`, \`hacer → hiciera\`, \`saber → supiera\`,
-\`venir → viniera\`, \`poder → pudiera\`, \`querer → quisiera\`, \`decir → dijera\`.
+| ellos indefinido | → imperfect subjunctive |
+|---|---|
+| habla**ron** | habla**ra**, habla**ras**… |
+| tuvie**ron** | tuvie**ra**… |
+| dije**ron** | dije**ra**… |
+
+Regular: \`hablar → hablara\`, \`comer → comiera\`.
+Irregulars share **indefinido** stems, not future stems: \`tener → tuviera\` (not *tendriera), \`decir → dijera\`, \`hacer → hiciera\`.
 
 ### When to use
 1. **Si-construction (unreal condition):**
@@ -1828,23 +1832,27 @@ Example: \`hablar → hablara\`, \`comer → comiera\`, \`vivir → viviera\`.
    \`Quisiera un café.\`
 
 ### Double form (-ra / -se)
-There is an older -se form: \`hablase, comiese\`. Found in literature.
+\`hablara = hablase\`. Not “obsolete”: **-se** is more common in writing.
 
 > ⚠️ \`Si + imperfecto de subjuntivo + condicional\` = unreal condition. One of the most common B1-B2 constructions.`,
     es: `> **Recorrido:** el subjuntivo presente (quiera que vengas) ya está. Oración principal en pasado o irreal → **hablara / tuviera**.
 
 ## Subjuntivo Imperfecto
 
-### Formación: infinitivo + terminaciones (con tilde)
+### Formación
 
-Para -AR: -ara, -aras, -ara, -áramos, -arais, -aran
-Para -ER/-IR: -iera, -ieras, -iera, -iéramos, -ierais, -ieran
+No sale del infinitivo ni del **futuro** (\`tendré\`, \`haré\`, \`diré\`).
 
-Ejemplo: \`hablar → hablara\`, \`comer → comiera\`, \`vivir → viviera\`.
+Se toma la forma de **ellos** del pretérito indefinido, se quita **-ron** y se añade **-ra** (o **-se**):
 
-⚠️ Los mismos irregulares que en futuro simple:
-\`tener → tuviera\`, \`poner → pusiera\`, \`hacer → hiciera\`, \`saber → supiera\`,
-\`venir → viniera\`, \`poder → pudiera\`, \`querer → quisiera\`, \`decir → dijera\`.
+| ellos indefinido | → imperfecto de subjuntivo |
+|---|---|
+| habla**ron** | habla**ra**, habla**ras**… |
+| tuvie**ron** | tuvie**ra**… |
+| dije**ron** | dije**ra**… |
+
+Regulares: \`hablar → hablara\`, \`comer → comiera\`.
+Irregulares = raíces del **indefinido**, no del futuro: \`tener → tuviera\` (no *tendriera), \`decir → dijera\`, \`hacer → hiciera\`.
 
 ### Cuándo usarlo
 1. **Construcción con si (condición irreal):**
@@ -1857,7 +1865,7 @@ Ejemplo: \`hablar → hablara\`, \`comer → comiera\`, \`vivir → viviera\`.
    \`Quisiera un café.\`
 
 ### Doble forma (-ra / -se)
-Existe la forma en -se: \`hablase, comiese\`. Aparece en la literatura.
+\`hablara = hablase\`. No es «anticuada»: **-se** es más frecuente en el registro escrito.
 
 > ⚠️ \`Si + imperfecto de subjuntivo + condicional\` = condición irreal. Una de las construcciones más frecuentes de B1-B2.`,
   },
@@ -1968,8 +1976,7 @@ Cuando aparecen ambos: \`me lo, te lo, se lo, nos lo\`.
 
 ⚠️ If the adjective has only m. form: \`feliz → felizmente\`.
 
-⚠️ If the source adjective has stress, \`-mente\` also carries stress:
-\`difícil**mente**\`.
+⚠️ The written accent **stays on the adjective**; -mente does not get one: \`fácil → fácilmente\`, \`difícil → difícilmente\`.
 
 ### Adverbs of time
 \`hoy\`, \`ayer\`, \`mañana\`, \`ahora\`, \`tarde\`, \`temprano\`, \`pronto\`,
@@ -2001,8 +2008,7 @@ Cuando aparecen ambos: \`me lo, te lo, se lo, nos lo\`.
 
 ⚠️ Si el adjetivo solo tiene forma m.: \`feliz → felizmente\`.
 
-⚠️ Si el adjetivo lleva tilde, \`-mente\` también la lleva:
-\`difícil**mente**\`.
+⚠️ La tilde **se queda en el adjetivo**; -mente no lleva acento propio: \`fácil → fácilmente\`, \`difícil → difícilmente\`.
 
 ### Adverbios de tiempo
 \`hoy\`, \`ayer\`, \`mañana\`, \`ahora\`, \`tarde\`, \`temprano\`, \`pronto\`,
@@ -2917,13 +2923,14 @@ Desviaciones regionales de la norma:
 \`Es **profesor**.\` — He is a teacher (profession).
 \`Está **de** profesor.\` — He is working (temporarily) as a teacher.
 
-### Bread/food
-\`El pan **es** fresco.\` — The bread is fresh (in general/by nature).
-\`El pan **está** fresco.\` — The bread is fresh (now, just baked).
+### Made of vs state
+\`El vaso **es** de cristal.\`
+\`El vaso **está** lleno.\`
+Freshness of food is usually **estar**: \`El pan **está** fresco.\`
 
 ### Passive
-\`**Es** escrito por Cervantes.\` — (action, process — ser pasiva)
-\`**Está** escrito.\` — (result — estar + participio)
+\`Don Quijote **fue** escrito por Cervantes.\` — past action (ser + participle).
+\`El libro **está** escrito en español.\` — result / state.
 
 > 💡 Universal C1 hint: **SER = identity**, **ESTAR = state/result**. When in doubt — ask "is this a definition or a current state?".`,
     es: `> **Recorrido:** ser / estar básico de A1. Aquí solo pares donde el **sentido se rompe** si eliges el verbo equivocado.
@@ -2957,13 +2964,14 @@ Desviaciones regionales de la norma:
 \`Es **profesor**.\` — Es profesor (profesión).
 \`Está **de** profesor.\` — Está trabajando (temporalmente) de profesor.
 
-### Pan/comida
-\`El pan **es** fresco.\` — El pan es fresco (en general/por naturaleza).
-\`El pan **está** fresco.\` — El pan está fresco (ahora, recién hecho).
+### De qué está hecho vs estado
+\`El vaso **es** de cristal.\`
+\`El vaso **está** lleno.\`
+La frescura de la comida suele ir con **estar**: \`El pan **está** fresco.\`
 
 ### Pasiva
-\`**Es** escrito por Cervantes.\` — (acción, proceso — ser pasiva)
-\`**Está** escrito.\` — (resultado — estar + participio)
+\`Don Quijote **fue** escrito por Cervantes.\` — acción en el pasado.
+\`El libro **está** escrito en español.\` — resultado / estado.
 
 > 💡 Pista universal de C1: **SER = identidad**, **ESTAR = estado/resultado**. Si dudas — pregúntate «¿es definición o estado actual?».`,
   },

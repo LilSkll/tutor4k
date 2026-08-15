@@ -1,9 +1,9 @@
 {
-  "¿Cómo ___ tú? (ser/estar)": {
-    "ru": "Как ___ ты? (ser/estar)",
-    "en": "How ___ you? (ser/estar)",
-    "es": "¿Cómo ___ tú? (ser/estar)",
-    "de": "Wie ___ du? (ser/estar)"
+  "¿Cómo ___ tú? (descripción, no estado)": {
+    "ru": "Какой ___ ты? (описание, не самочувствие)",
+    "en": "What ___ you like? (description, not how you feel)",
+    "es": "¿Cómo ___ tú? (descripción, no estado)",
+    "de": "Wie ___ du so? (Beschreibung, nicht Befinden)"
   },
   "Yo ___ estudiante. (ser)": {
     "ru": "Я ___ студент. (ser)",

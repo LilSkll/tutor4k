@@ -21,11 +21,12 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
   "chapter-1-despertar": [
     {
       type: "multiple_choice",
-      question: "¿Cómo ___ tú? (ser/estar)",
-      instruction: "Выберите правильный глагол для знакомства",
+      question: "¿Cómo ___ tú? (descripción, no estado)",
+      instruction: "ser (какой ты) или estar (как дела сейчас)?",
       options: ["eres", "estás", "soy", "es"],
       answer: "eres",
-      explanation: "Для знакомства «Кто ты?» используется ser: ¿Cómo eres? / ¿Cómo estás? — для состояния.",
+      explanation:
+        "¿Cómo eres? — какой ты характером / внешне (ser). ¿Cómo estás? — как ты себя чувствуешь сейчас (estar). Для имени: ¿Cómo te llamas?",
     },
     {
       type: "fill_blank",
@@ -118,10 +119,11 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       type: "fill_blank",
       question: "Compro ___ pan en la panadería.",
-      instruction: "Вставьте артикль (неопределённый не используется с неисчисляемыми)",
-      answer: "",
-      acceptableAnswers: ["el", ""],
-      explanation: "С неисчисляемыми (pan) обычно используется el или нулевой артикль: compro pan.",
+      instruction: "Хлеб как продукт часто без артикля (или el, если конкретный)",
+      answer: "el",
+      acceptableAnswers: ["el", "El", ""],
+      explanation:
+        "Compro pan — хлеб вообще (нулевой артикль). Compro el pan — этот / обычный хлеб. *Un pan* — одна буханка, не «хлеб как вещество».",
     },
     {
       type: "multiple_choice",

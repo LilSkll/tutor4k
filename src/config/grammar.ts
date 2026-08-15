@@ -38,7 +38,7 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 | мужской род | **el** libro | **los** libros |
 | женский род | **la** casa | **las** casas |
 
-Пример: \`el sol\`, \`la casa de Ana\`, \`los libros de la mesa\`.
+Пример: \`el sol\`, \`la casa de Ana\`, \`los libros en la mesa\`.
 
 ## Неизвестная или «какая-то» вещь
 
@@ -398,7 +398,7 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 | **en** | в/на | El libro está **en** la mesa |
 | **a** | к/в (движение) | Voy **a** Madrid |
 | **de** | из/от | Soy **de** Rusia |
-| **sobre** | над/на | La lámpara está **sobre** la mesa |
+| **sobre** | на (сверху) | La lámpara está **sobre** la mesa |
 | **debajo de** | под | El gato está **debajo de** la silla |
 | **delante de** | перед | El coche está **delante de** la casa |
 | **detrás de** | за | El jardín está **detrás de** la casa |
@@ -519,7 +519,7 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 | ¿**Cuál es**? | Какой (имя/адрес)? | ¿Cuál es tu nombre? |
 
 ### Qué vs Cuál — частая путаница
-- **Qué** = «что это такое» (определение): \`¿Qué es "mesa"?\`
+- **Qué** = «что это такое» (определение): \`¿Qué es esto?\`
 - **Cuál** = «который из» (выбор): \`¿Cuál prefieres, té o café?\`
 - **Qué + существительное**: \`¿Qué libro lees?\` (какую книгу)
 - **Cuál + ser**: \`¿Cuál es tu número?\` (каков твой номер)
@@ -744,14 +744,14 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 ### PARA — цель, назначение, направление
 - **Цель:** \`Estudio **para** aprender.\` (чтобы научиться)
 - **Получатель:** \`Es un regalo **para** ti.\` (для тебя)
-- **Направление:** \`Voy **para** Madrid.\` (в сторону)
+- **Направление / пункт назначения:** \`El avión sale **para** Madrid.\` (куда следует; «иду в город» обычно \`Voy **a** Madrid\`)
 - **Срок:** \`Para mañana.\` (к завтрашнему дню)
 
 ### POR — причина, путь, обмен, длительность
 - **Причина:** \`**Por** el frío, no salí.\` (из-за холода)
 - **Путь/место:** \`Paseo **por** el parque.\` (через/по)
 - **Обмен:** \`Lo compré **por** 10 euros.\` (за 10 евро)
-- **Длительность:** \`Estudié **por** dos horas.\` (в течение)
+- **Длительность:** \`Estudié **durante** dos horas.\` (в течение; не калька *por dos horas*)
 - **Вместо:** \`Lo hago **por** ti.\` (за тебя/вместо тебя)
 
 ### Мнемоника
@@ -1064,8 +1064,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 ### QUE — самый универсальный
 \`El libro **que** leo.\` — Книга, которую я читаю.
 \`La mujer **que** habla.\` — Женщина, которая говорит.
-- Используется для людей и предметов, после предлога с предметами:
-\`el tema **de que** hablamos\` (но: \`la persona **de la que** hablo\`).
+- Для людей и предметов. После предлога — **el/la que**, не голое *de que*:
+\`el tema **del que** hablamos\`, \`la persona **de la que** hablo\`.
 
 ### QUIEN — только для людей (после запятой или предлога)
 \`Mi hermano, **quien** vive en Madrid, es médico.\`
@@ -1142,16 +1142,22 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 
 ## Subjuntivo Imperfecto
 
-### Образование: инфинитив + окончания (с ударением)
+### Как образуется
 
-Для -AR: -ara, -aras, -ara, -áramos, -arais, -aran
-Для -ER/-IR: -iera, ieras, iera, -iéramos, -ierais, -ieran
+Не от инфинитива и **не** как futuro (\`tendré\`, \`haré\`, \`diré\`).
 
-Пример: \`hablar → hablara\`, \`comer → comiera\`, \`vivir → viviera\`.
+Берём форму **ellos** pretérito indefinido, отбрасываем **-ron**, добавляем **-ra** (или **-se**):
 
-⚠️ Те же неправильные, что и в futuro simple:
-\`tener → tuviera\`, \`poner → pusiera\`, \`hacer → hiciera\`, \`saber → supiera\`,
-\`venir → viniera\`, \`poder → pudiera\`, \`querer → quisiera\`, \`decir → dijera\`.
+| ellos в indefinido | → imperfecto de subjuntivo |
+|---|---|
+| habla**ron** | habla**ra**, habla**ras**, habla**ra**… |
+| comie**ron** | comie**ra**… |
+| tuvie**ron** | tuvie**ra**… |
+| dije**ron** | dije**ra**… |
+| hicie**ron** | hicie**ra**… |
+
+Правильные: \`hablar → hablara\`, \`comer → comiera\`, \`vivir → viviera\`.
+Неправильные — **корни indefinido**, не основы будущего: \`tener → tuviera\` (не *tendriera), \`decir → dijera\` (не *direra), \`hacer → hiciera\`, \`poner → pusiera\`, \`saber → supiera\`.
 
 ### Когда использовать
 1. **Si-конструкция (нереальное условие):**
@@ -1164,7 +1170,7 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
    \`Quisiera un café.\` — Я бы хотел кофе.
 
 ### Двойная форма (-ra / -se)
-Есть устаревшая форма на -se: \`hablase, comiese\`. Встречается в литературе.
+\`hablara = hablase\`, \`comiera = comiese\`. Это не «устаревшее»: **-se** чаще в письменном регистре.
 
 > ⚠️ \`Si + imperfecto de subjuntivo + condicional\` = нереальное условие.
 > Это одна из самых частых конструкций B1-B2.`,
@@ -1241,8 +1247,7 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 
 ⚠️ Если прилагательное имеет только форму м.р.: \`feliz → felizmente\`.
 
-⚠️ Если исходное прилагательное имеет ударение, \`-mente\` тоже несёт ударение:
-\`difícil**mente**\`.
+Письменное ударение **остаётся у прилагательного**, -mente его не получает: \`fácil → fácilmente\`, \`difícil → difícilmente\`.
 
 ### Наречия времени
 \`hoy\` (сегодня), \`ayer\` (вчера), \`mañana\` (завтра), \`ahora\` (сейчас),
@@ -1798,7 +1803,7 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 | listo | умный | готов |
 | rico | богатый | вкусный |
 | verde | зелёный (цвет) | незрелый |
-| Bueno | добрый (человек) | вкусный/хороший (сейчас) |
+| bueno | добрый (человек) | вкусный/хороший (сейчас) |
 | malo | плохой (характер) | испорченный/больной |
 | vivo | живой (энергичный) | жив (не мёртв) |
 | seguro | надёжный | уверенный |
@@ -1818,13 +1823,14 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 \`Es **profesor**.\` — Он преподаватель (профессия).
 \`Está **de** profesor.\` — Он работает (временно) преподавателем.
 
-### Хлеб/еда
-\`El pan **es** fresco.\` — Хлеб свежий (вообще/по природе).
-\`El pan **está** fresco.\` — Хлеб свежий (сейчас, только что испечён).
+### Из чего сделан vs состояние
+\`El vaso **es** de cristal.\` — стакан из стекла.
+\`El vaso **está** lleno.\` — стакан полный (сейчас).
+Про еду свежесть обычно **estar**: \`El pan **está** fresco.\`
 
 ### Пассив
-\`**Es** escrito por Cervantes.\` — (действие, процесс —_ser pasiva_)
-\`**Está** escrito.\` — (результат — _estar + participio_)
+\`Don Quijote **fue** escrito por Cervantes.\` — действие в прошлом (ser + participio).
+\`El libro **está** escrito en español.\` — результат / состояние.
 
 > 💡 Универсальная подсказка C1: **SER = идентичность**, **ESTAR = состояние/результат**. Если сомневаешься — спроси «это определение или текущее состояние?».`,
   },

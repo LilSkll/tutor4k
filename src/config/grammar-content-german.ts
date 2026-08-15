@@ -488,7 +488,7 @@ Wenn die Sache **vertraut / konkret** ist (dieses Buch, die Sonne, der Park nebe
 | maskulin | **el** libro | **los** libros |
 | feminin | **la** casa | **las** casas |
 
-Beispiele: \`el sol\`, \`la casa de Ana\`, \`los libros de la mesa\`.
+Beispiele: \`el sol\`, \`la casa de Ana\`, \`los libros en la mesa\`.
 
 ## Eine unbekannte oder „irgendeine“ Sache
 
@@ -788,7 +788,7 @@ Frage: **¿Qué hora es?**
 | **en** | in/auf | El libro está **en** la mesa |
 | **a** | nach/zu (Bewegung) | Voy **a** Madrid |
 | **de** | von/aus | Soy **de** Rusia |
-| **sobre** | auf/über | La lámpara está **sobre** la mesa |
+| **sobre** | auf | La lámpara está **sobre** la mesa |
 | **debajo de** | unter | El gato está **debajo de** la silla |
 | **delante de** | vor | El coche está **delante de** la casa |
 | **detrás de** | hinter | El jardín está **detrás de** la casa |
@@ -1071,14 +1071,14 @@ Beispiel: \`hablar\` → hablaba, hablabas, hablaba, hablábamos, **hablabais**,
 ### PARA — Zweck, Ziel, Frist
 - **Zweck:** \`Estudio **para** aprender.\`
 - **Empfänger:** \`Es un regalo **para** ti.\`
-- **Richtung:** \`Voy **para** Madrid.\`
+- **Richtung / Zielort:** \`El avión sale **para** Madrid.\` (wohin der Flug geht; in die Stadt sagt man meist \`Voy **a** Madrid\`)
 - **Frist:** \`Para mañana.\`
 
 ### POR — Ursache, Weg, Tausch, Dauer
 - **Ursache:** \`**Por** el frío, no salí.\`
 - **Weg/Ort:** \`Paseo **por** el parque.\`
 - **Tausch/Preis:** \`Lo compré **por** 10 euros.\`
-- **Dauer:** \`Estudié **por** dos horas.\`
+- **Dauer:** \`Estudié **durante** dos horas.\`
 - **An Stelle von:** \`Lo hago **por** ti.\`
 
 ### Eselsbrücke
@@ -1337,8 +1337,8 @@ Beispiele:
 ### QUE — das universellste
 \`El libro **que** leo.\`
 \`La mujer **que** habla.\`
-- Für Personen und Dinge; nach Präposition mit Dingen:
-\`el tema **de que** hablamos\` (aber: \`la persona **de la que** hablo\`).
+- Für Personen und Dinge. Nach Präposition: **el/la que**, nicht nacktes *de que*:
+\`el tema **del que** hablamos\`, \`la persona **de la que** hablo\`.
 
 ### QUIEN — nur für Personen (nach Komma oder Präposition)
 \`Mi hermano, **quien** vive en Madrid, es médico.\`
@@ -1400,16 +1400,20 @@ Handlung, die **vor** einer anderen Handlung in der Vergangenheit stattfand:
 
 ## Subjuntivo Imperfecto
 
-### Bildung: Infinitiv + Endungen (mit Betonung)
+### Bildung
 
-Für -AR: -ara, -aras, -ara, -áramos, -arais, -aran
-Für -ER/-IR: -iera, -ieras, -iera, -iéramos, -ierais, -ieran
+Nicht vom Infinitiv und **nicht** wie das Futur (\`tendré\`, \`haré\`, \`diré\`).
 
-Beispiel: \`hablar → hablara\`, \`comer → comiera\`, \`vivir → viviera\`.
+Man nimmt **ellos** im pretérito indefinido, streicht **-ron**, hängt **-ra** (oder **-se**) an:
 
-⚠️ Gleiche Unregelmäßige wie im Futuro Simple:
-\`tener → tuviera\`, \`poner → pusiera\`, \`hacer → hiciera\`, \`saber → supiera\`,
-\`venir → viniera\`, \`poder → pudiera\`, \`querer → quisiera\`, \`decir → dijera\`.
+| ellos indefinido | → Imperfekt Subjuntivo |
+|---|---|
+| habla**ron** | habla**ra**, habla**ras**… |
+| tuvie**ron** | tuvie**ra**… |
+| dije**ron** | dije**ra**… |
+
+Regelmäßig: \`hablar → hablara\`, \`comer → comiera\`.
+Unregelmäßig = **Indefinido**-Stämme, nicht Futur: \`tener → tuviera\` (nicht *tendriera), \`decir → dijera\`, \`hacer → hiciera\`.
 
 ### Wann verwenden
 1. **Si-Konstruktion (irreale Bedingung):**
@@ -1422,7 +1426,7 @@ Beispiel: \`hablar → hablara\`, \`comer → comiera\`, \`vivir → viviera\`.
    \`Quisiera un café.\`
 
 ### Doppelte Form (-ra / -se)
-Es gibt eine ältere -se-Form: \`hablase, comiese\`. In der Literatur zu finden.
+\`hablara = hablase\`. Nicht „veraltet“: **-se** ist im schriftlichen Register häufiger.
 
 > ⚠️ \`Si + Subjuntivo Imperfecto + Condicional\` = irreale Bedingung. Eine der häufigsten B1-B2-Konstruktionen.`,
   },
@@ -1488,8 +1492,7 @@ Wenn beide erscheinen: \`me lo, te lo, se lo, nos lo\`.
 
 ⚠️ Wenn das Adjektiv nur eine m.-Form hat: \`feliz → felizmente\`.
 
-⚠️ Wenn das Adjektiv betont ist, trägt auch \`-mente\` die Betonung:
-\`difícil**mente**\`.
+⚠️ Die schriftliche Betonung **bleibt am Adjektiv**; -mente bekommt keinen Akzent: \`fácil → fácilmente\`, \`difícil → difícilmente\`.
 
 ### Zeitadverbien
 \`hoy\`, \`ayer\`, \`mañana\`, \`ahora\`, \`tarde\`, \`temprano\`, \`pronto\`,
@@ -1990,13 +1993,14 @@ Regionale Abweichungen von der Norm:
 \`Es **profesor**.\` — Er ist Lehrer (Beruf).
 \`Está **de** profesor.\` — Er arbeitet (vorübergehend) als Lehrer.
 
-### Brot/Essen
-\`El pan **es** fresco.\` — Das Brot ist frisch (im Allgemeinen/von Natur aus).
-\`El pan **está** fresco.\` — Das Brot ist frisch (jetzt, gerade gebacken).
+### Woraus vs Zustand
+\`El vaso **es** de cristal.\`
+\`El vaso **está** lleno.\`
+Frische bei Essen meist **estar**: \`El pan **está** fresco.\`
 
 ### Passiv
-\`**Es** escrito por Cervantes.\` — (Handlung, Prozess — ser-Passiv)
-\`**Está** escrito.\` — (Ergebnis — estar + Partizip)
+\`Don Quijote **fue** escrito por Cervantes.\` — Handlung in der Vergangenheit.
+\`El libro **está** escrito en español.\` — Ergebnis / Zustand.
 
 > 💡 Universeller C1-Hinweis: **SER = Identität**, **ESTAR = Zustand/Ergebnis**. Im Zweifel — frage: „Ist das eine Definition oder ein aktueller Zustand?"`,
   },
