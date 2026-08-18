@@ -93,13 +93,13 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
   },
   "a1-articulos": {
     here: t(
-      "A1: el/la vs un/una; el agua (ударная a), не *el abuela.",
-      "A1: el/la vs un/una; el agua (stressed a), not *el abuela.",
-      "A1: el/la vs un/una; el agua (a tónica), no *el abuela.",
-      "A1: el/la vs un/una; el agua (betontes a), nicht *el abuela.",
+      "A1: el/la vs un/una; el agua (ударная a), не *el abuela. Нулевой артикль с профессиями после ser — кратко.",
+      "A1: el/la vs un/una; el agua (stressed a), not *el abuela. Zero article with jobs after ser — briefly here.",
+      "A1: el/la vs un/una; el agua (a tónica), no *el abuela. Artículo cero con profesiones tras ser — breve.",
+      "A1: el/la vs un/una; el agua (betontes a), nicht *el abuela. Nullartikel bei Berufen nach ser — kurz.",
     ),
     later: t(
-      "Род слова подробно — «Род и число». Нулевой артикль с профессиями после ser — здесь кратко.",
+      "Род слова подробно — «Род и число».",
       "Noun gender in full — “Gender and number”.",
       "El género en detalle — «Género y número».",
       "Genus ausführlich — «Genus und Numerus».",
@@ -896,10 +896,10 @@ export function renderGrammarLevelFrame(
         `| \`${pair.left}\` | \`${pair.right}\` | ${pair.diff[lang]} |`,
     )
     .join("\n");
-  return `> **${L.here[lang]}:** ${frame.here[lang]}
-> **${L.later[lang]}:** ${frame.later[lang]}
+  return `## ${L.pairs[lang]}
 
-## ${L.pairs[lang]}
+> **${L.here[lang]}:** ${frame.here[lang]}
+> **${L.later[lang]}:** ${frame.later[lang]}
 
 | | | ${PAIR_HEAD[lang]} |
 |---|---|---|
@@ -907,7 +907,7 @@ ${rows}
 `;
 }
 
-/** Prepend CEFR boundary + minimal pairs when a frame exists for the slug. */
+/** Append CEFR boundary + pairs after the article so «Путь» and ## rules stay first. */
 export function withGrammarLevelFrame(
   slug: string,
   lang: InterfaceLanguage,
@@ -915,6 +915,6 @@ export function withGrammarLevelFrame(
 ): string {
   const block = renderGrammarLevelFrame(slug, lang);
   if (!block) return body;
-  if (body.includes("<!--level-frame-->")) return body;
-  return `<!--level-frame-->\n${block}\n${body}`;
+  if (body.includes(`## ${L.pairs[lang]}`)) return body;
+  return `${body.trim()}\n\n${block}`;
 }

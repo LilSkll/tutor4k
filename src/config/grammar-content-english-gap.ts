@@ -124,26 +124,38 @@ Kein Artikel danach: nicht \`*the my book\`.
 
 ## Can / can't
 
-The form does **not** change: \`I can\`, \`she can\`, \`they can\`. After can — **bare infinitive**: \`can go\`, not \`*can to go\`.
+### One form
+**Rule:** \`I can\`, \`she can\`, \`they can\` — the form does not change.
+
+### Verb without to
+**Rule:** \`can go\`, not *can to go*.
+
+### Three jobs
+**Rule:** ability / permission / request.
 
 | Use | Example |
 |---|---|
 | Ability | \`I can swim.\` · \`She can't drive.\` |
-| Permission | \`Can I open the window?\` · \`You can't park here.\` |
+| Permission | \`Can I open the window?\` |
 | Request | \`Can you help me?\` |
 
-Questions: \`Can you…?\` · Short answers: \`Yes, I can.\` / \`No, I can't.\`
-
-> 💡 Politer later (B1): \`Could you…?\` Same idea, softer.`,
+> 💡 Politer later: \`Could you…?\``,
     es: `> **Recorrido:** A1. La misma forma \`can\` — tres usos: habilidad, permiso, petición.
 
 ## Can / can't
 
-No cambia: \`I can\`, \`she can\`. Después — infinitivo **sin to**: \`can go\`.
+### Una forma
+**Regla:** \`I can\`, \`she can\` — no cambia.
+
+### Verbo sin to
+**Regla:** \`can go\`, no *can to go*.
+
+### Tres usos
+**Regla:** habilidad / permiso / petición.
 
 | Uso | Ejemplo |
 |---|---|
-| Habilidad | \`I can swim.\` · \`She can't drive.\` |
+| Habilidad | \`I can swim.\` |
 | Permiso | \`Can I open the window?\` |
 | Petición | \`Can you help me?\` |
 
@@ -152,11 +164,18 @@ No cambia: \`I can\`, \`she can\`. Después — infinitivo **sin to**: \`can go\
 
 ## Can / can't
 
-Unverändert: \`I can\`, \`she can\`. Danach **Infinitiv ohne to**: \`can go\`.
+### Eine Form
+**Regel:** \`I can\`, \`she can\` — unverändert.
+
+### Verb ohne to
+**Regel:** \`can go\`, nicht *can to go*.
+
+### Drei Jobs
+**Regel:** Können / Erlaubnis / Bitte.
 
 | Gebrauch | Beispiel |
 |---|---|
-| Fähigkeit | \`I can swim.\` · \`She can't drive.\` |
+| Fähigkeit | \`I can swim.\` |
 | Erlaubnis | \`Can I open the window?\` |
 | Bitte | \`Can you help me?\` |
 
@@ -168,22 +187,31 @@ Unverändert: \`I can\`, \`she can\`. Danach **Infinitiv ohne to**: \`can go\`.
 
 ## Countable vs uncountable
 
+### Can you count it?
+**Rule:** apple**s** are countable. water / advice are uncountable (usually no -s).
+
 | Countable | Uncountable |
 |---|---|
 | an apple / apples | water, rice, advice, information |
 | many apples, a few ideas | much water, a little time |
 | How many…? | How much…? |
 
-\`some\` in + ; \`any\` more often in − / ?
+### many / much / a few / a little
+**Rule:** many / a few — countable. much / a little — uncountable.
+
+### some / any
+**Rule:** \`some\` in + ; \`any\` more often in − / ?
+
 \`There are **some** apples.\` · \`There isn't **any** milk.\`
+\`information\`, \`advice\`, \`furniture\`, \`news\` — usually **no** -s.
 
-Words usually **without -s**: \`information\`, \`advice\`, \`furniture\`, \`news\` (singular).
-\`Can you give me **some advice**?\` not \`*advices\`.
-
-> 💡 \`a lot of\` works with both: \`a lot of books\`, \`a lot of time\`.`,
+> 💡 \`a lot of\` works with both.`,
     es: `> **Recorrido:** A2. Ya tienes a/an. Ahora: ¿se puede contar?
 
 ## Countable vs uncountable
+
+### ¿Se puede contar?
+**Regla:** apple**s** — contable. water / advice — incontable (normalmente sin -s).
 
 | Contable | Incontable |
 |---|---|
@@ -191,13 +219,19 @@ Words usually **without -s**: \`information\`, \`advice\`, \`furniture\`, \`news
 | many / a few | much / a little |
 | How many…? | How much…? |
 
-\`some\` en + ; \`any\` en −/?  
-\`information\`, \`advice\`, \`furniture\` — normalmente **sin** -s.
+### many / much / a few / a little
+**Regla:** many / a few — contable. much / a little — incontable.
+
+### some / any
+**Regla:** \`some\` en + ; \`any\` más en − / ?
 
 > 💡 \`a lot of\` vale para ambos.`,
     de: `> **Weg:** A2. a/an kennt ihr. Jetzt: kann man es zählen?
 
 ## Countable vs uncountable
+
+### Kann man es zählen?
+**Regel:** apple**s** — zählbar. water / advice — unzählbar (meist ohne -s).
 
 | Zählbar | Unzählbar |
 |---|---|
@@ -205,8 +239,11 @@ Words usually **without -s**: \`information\`, \`advice\`, \`furniture\`, \`news
 | many / a few | much / a little |
 | How many…? | How much…? |
 
-\`some\` in + ; \`any\` oft in −/?  
-\`information\`, \`advice\` — meist **ohne** -s.
+### many / much / a few / a little
+**Regel:** many / a few — zählbar. much / a little — unzählbar.
+
+### some / any
+**Regel:** \`some\` in + ; \`any\` oft in − / ?
 
 > 💡 \`a lot of\` geht bei beiden.`,
   },
@@ -288,41 +325,56 @@ Wenn **wann** steht (yesterday) → Past Simple.`,
 
 ## Conditionals 0–2
 
-| Type | Form | Use | Example |
-|---|---|---|---|
-| Zero | If + Present, Present | laws, habits | \`If you heat ice, it melts.\` |
-| 1st | If + Present, will | real future | \`If it rains, I will stay home.\` |
-| 2nd | If + Past, would | unreal now | \`If I had time, I would travel.\` |
+### Zero: If + Present, Present
+**Rule:** laws and habits: \`If you heat ice, it **melts**.\`
 
-\`If I **were** you…\` is fixed (not \`*If I was you\` in careful English).
+### 1st: If + Present, will
+**Rule:** real future. **will** only in the main clause, not after if.
 
-> 💡 **will** stays in the main clause, not after \`if\`: not \`*If it will rain\`.`,
+\`If it rains, I **will** stay home.\`
+
+### 2nd: If + Past, would
+**Rule:** unreal now: \`If I had money, I **would** travel.\`
+
+\`If I **were** you…\` is fixed.
+
+> 💡 not \`*If it will rain\`.`,
     es: `> **Recorrido:** B1. 0 y 1.º son reales. 2.º es imaginario **ahora**. El 3.º (B2) es el pasado irreal.
 
 ## Conditionals 0–2
 
-| Tipo | Forma | Uso |
-|---|---|---|
-| Zero | If + Present, Present | leyes, hábitos |
-| 1st | If + Present, will | futuro real |
-| 2nd | If + Past, would | hipótesis ahora |
+### Zero: If + Present, Present
+**Regla:** leyes y hábitos: \`If you heat ice, it **melts**.\`
+
+### 1st: If + Present, will
+**Regla:** futuro real. **will** solo en la principal, no tras if.
+
+\`If it rains, I **will** stay home.\`
+
+### 2nd: If + Past, would
+**Regla:** hipótesis ahora: \`If I had money, I **would** travel.\`
 
 \`If I **were** you…\` es fijo.
 
-> 💡 **will** no va tras \`if\`.`,
+> 💡 no \`*If it will rain\`.`,
     de: `> **Weg:** B1. 0 und 1. sind real. 2. ist irreal **jetzt**. 3. (B2) ist irreal **vergangen**.
 
 ## Conditionals 0–2
 
-| Typ | Form | Gebrauch |
-|---|---|---|
-| Zero | If + Present, Present | Gesetze, Gewohnheiten |
-| 1st | If + Present, will | reale Zukunft |
-| 2nd | If + Past, would | irreal jetzt |
+### Zero: If + Present, Present
+**Regel:** Gesetze und Gewohnheiten: \`If you heat ice, it **melts**.\`
+
+### 1st: If + Present, will
+**Regel:** reale Zukunft. **will** nur im Hauptsatz, nicht nach if.
+
+\`If it rains, I **will** stay home.\`
+
+### 2nd: If + Past, would
+**Regel:** irreal jetzt: \`If I had money, I **would** travel.\`
 
 \`If I **were** you…\` ist fest.
 
-> 💡 **will** nicht nach \`if\`.`,
+> 💡 nicht \`*If it will rain\`.`,
   },
 
   "eng-b1-reported-speech": {
@@ -330,31 +382,40 @@ Wenn **wann** steht (yesterday) → Past Simple.`,
 
 ## Reported speech (base)
 
-- \`She said (that) she **was** tired.\` (am → was)
-- \`He told **me** to wait.\` (\`tell\` needs a person)
-- Questions: \`She asked where I lived.\` (no do/does)
+### Tense backshift
+**Rule:** \`She said she **was** tired.\` Present → Past after a past reporting verb.
 
-No backshift if it is still true: \`She said the Earth **is** round.\`
+### say vs tell / requests
+**Rule:** \`told me to wait\`. Questions: \`She asked where I lived.\` (no do/does)
 
-> 💡 \`say\` + (that). \`tell\` + person + (that) / infinitive.`,
+### When not to backshift
+**Rule:** if it is still true, present can stay: \`She said the Earth **is** round.\`
+
+> 💡 \`say\` + (that). \`tell\` + person.`,
     es: `> **Recorrido:** B1. Palabras de otro. Retroceso de tiempos tras verbo **pasado**.
 
 ## Reported speech (base)
 
-- \`She said she **was** tired.\`
-- \`He told me to wait.\`
-- Preguntas: \`She asked where I lived.\`
+### Retroceso de tiempos
+**Regla:** \`She said she **was** tired.\` Presente → pasado.
 
-Sin retroceso si sigue siendo verdad: \`the Earth **is** round\`.`,
+### say vs tell / peticiones
+**Regla:** \`told me to wait\`. Preguntas: \`She asked where I lived.\`
+
+### Cuándo no hay retroceso
+**Regla:** si sigue siendo verdad: \`She said the Earth **is** round.\``,
     de: `> **Weg:** B1. Fremde Worte. Zeitverschiebung nach **past** reporting verb.
 
 ## Reported speech (base)
 
-- \`She said she **was** tired.\`
-- \`He told me to wait.\`
-- Fragen: \`She asked where I lived.\`
+### Zeitverschiebung
+**Regel:** \`She said she **was** tired.\` Present → Past.
 
-Keine Verschiebung, wenn es noch gilt: \`the Earth **is** round\`.`,
+### say vs tell / Bitten
+**Regel:** \`told me to wait\`. Fragen: \`She asked where I lived.\`
+
+### Wann nicht verschieben
+**Regel:** wenn es noch gilt: \`She said the Earth **is** round.\``,
   },
 
   "eng-b1-relative-clauses": {

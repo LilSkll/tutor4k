@@ -6,7 +6,8 @@ export const GERMAN_GRAMMAR_CONTENT: Partial<
   "eng-a1-be": {
     de: `## Das Verb **be** — die Grundlage des Englischen
 
-Im Englischen hat das Verb „to be" im Präsens **drei Formen**:
+### I am / he is / they are
+**Regel:** I → **am**, he/she/it → **is**, you/we/they → **are**.
 
 | Subjekt | Form | Beispiel |
 |---|---|---|
@@ -15,39 +16,39 @@ Im Englischen hat das Verb „to be" im Präsens **drei Formen**:
 | You/We/They | **are** | They **are** happy |
 
 ### Kontraktionen
-\`I am → I'm\`, \`He is → He's\`, \`They are → They're\`
+**Regel:** \`I am → I'm\`, \`He is → He's\`, \`They are → They're\`.
 
 ### Verneinung
-\`I'm not\`, \`He isn't / He's not\`, \`They aren't / They're not\`
+**Regel:** \`I'm not\`; \`isn't\` / \`aren't\` (oder \`he's not\` / \`they're not\`).
 
 ### Fragen
-\`Am I...? Is he...? Are they...?\`
+**Regel:** **be** steht vorn: \`Am I...?\` \`Is he...?\` \`Are they...?\`
 
-> 💡 Merke dir: **I am, He/She/It is, You/We/They are** — das ist die Grundlage der gesamten englischen Grammatik.`,
+> 💡 **I am, He/She/It is, You/We/They are** — Grundlage der englischen Grammatik.`,
   },
 
   "eng-a1-present-simple": {
     de: `## Present Simple — Routinen und Fakten
 
-### Bildung
-- I/You/We/They + **Verb**: \`I work\`, \`They live\`
-- He/She/It + **Verb + -s**: \`He works\`, \`She lives\`
+### I/you/we/they + Verb; he/she/it + -s
+**Regel:** \`I work\` / \`They live\`. Bei he/she/it — **workS / liveS**.
 
-### Die Endung -s (für he/she/it)
+### Die Endung -s (he/she/it)
+**Regel:** Konsonant → **-s**; -o/-s/-sh/-ch/-x → **-es**; Konsonant + y → **-ies**.
+
 | Verbendung | + | Beispiel |
 |---|---|---|
 | Konsonant | **-s** | work → work**s** |
 | -o, -s, -sh, -ch, -x | **-es** | go → go**es**, watch → watch**es** |
 | Konsonant + y | **-ies** | study → stud**ies** |
 
-### Verneinung und Fragen — mit **do/does**
-- \`I don't work\`, \`He doesn't work\`
-- \`Do you work?\`, \`Does he work?\`
+### Verneinung und Fragen — do / does
+**Regel:** \`I don't work\`, \`He doesn't work\`. Frage: \`Do you...?\` / \`Does he...?\` — Verb ohne -s.
 
 ### Zeitangaben
-\`always\`, \`usually\`, \`often\`, \`sometimes\`, \`never\`, \`every day\`
+**Regel:** oft mit \`always\`, \`usually\`, \`often\`, \`every day\`.
 
-> 💡 **He/she/it** — immer mit **-s** oder **-es**. Das ist die häufigste Regel im Englischen.`,
+> 💡 **He/she/it** — immer **-s** oder **-es**.`,
   },
 
   "eng-a1-there-is-are": {
@@ -76,20 +77,26 @@ Im Englischen hat das Verb „to be" im Präsens **drei Formen**:
   "eng-a1-can": {
     de: `## Can / Can't — Fähigkeit und Möglichkeit
 
-\`can\` ändert sich nicht nach der Person: **I can, He can, They can**.
+### Eine Form für alle
+**Regel:** \`can\` ändert sich **nicht**: I/he/they **can**.
 
 | Form | Beispiel |
 |---|---|
 | + | I **can** swim |
-| - | I **can't** (= cannot) swim |
+| − | I **can't** (= cannot) swim |
 | ? | **Can** you swim? |
 
-### Verwendung
+### Nach can — Verb ohne to
+**Regel:** \`can swim\`, nicht *can to swim*.
+
+### Drei Bedeutungen
+**Regel:** Können / Bitte / Erlaubnis — dieselbe Form \`can\`.
+
 1. **Fähigkeit:** \`I can speak English\`
 2. **Bitte:** \`Can you help me?\`
 3. **Erlaubnis:** \`You can go now\`
 
-> 💡 Nach can — **immer der Infinitiv ohne to**: \`can swim\` (nicht ~~can to swim~~).`,
+> 💡 Höflicher später: \`Could you…?\``,
   },
 
   "eng-a1-questions": {
@@ -475,13 +482,13 @@ Kombination von Zeiten in Bedingung und Ergebnis:
 
 ## Was ein Artikel ist
 
-Der Artikel ist ein kurzes Wort **vor** dem Substantiv. Er beantwortet drei Fragen: Ist die Sache **bekannt** oder **irgendeine**? **Eine** oder **viele**? Ist das Wort **maskulin** oder **feminin**?
+**Regel:** der Artikel ist das kurze Wort **vor** dem Substantiv: bekannt oder irgendein, eins oder viele, maskulin oder feminin.
 
 Im Wörterbuch: **m.** = masculino = maskulin, **f.** = femenino = feminin. Singular = eine Sache, Plural = viele.
 
 ## Eine bekannte, konkrete Sache
 
-Wenn die Sache **vertraut / konkret** ist (dieses Buch, die Sonne, der Park nebenan):
+**Regel:** vertraute / konkrete Sache → **el / la / los / las**.
 
 | | Eine Sache | Viele Sachen |
 |---|---|---|
@@ -492,7 +499,7 @@ Beispiele: \`el sol\`, \`la casa de Ana\`, \`los libros en la mesa\`.
 
 ## Eine unbekannte oder „irgendeine“ Sache
 
-Wenn die Sache noch nicht genannt wurde oder irgendeine / eine von vielen ist:
+**Regel:** noch nicht genannt, irgendeine oder „eine von“ → **un / una / unos / unas**.
 
 | | Eine Sache | Viele Sachen |
 |---|---|---|
@@ -503,7 +510,7 @@ Beispiele: \`un libro interesante\`, \`una casa nueva\`.
 
 ## Ausnahme: el agua — nicht la abuela
 
-Das ist **nicht** „jedes Wort auf a“. Und es geht **nicht** um den Akzentstrich ´.
+**Regel:** **el agua**, aber **la abuela**. Betontes erstes **a** — nicht jedes Wort auf a.
 
 **El** (oder **un**) steht vor einem **femininen** Wort nur, wenn **alle** Bedingungen gelten:
 
@@ -530,13 +537,35 @@ Das Wort bleibt **feminin**: \`el agua fría\` (nicht *frío*). Im Plural fällt
 
 ## Weitere Ausnahmen
 
-- Beruf nach **ser** oft ohne Artikel: \`Soy profesora.\`
-- Sprache: \`Hablo español.\` Aber \`El español es fácil.\`
-- Wochentag: \`el lunes\` (am Montag), \`los lunes\` (montags).
-- **a + el = al**, **de + el = del**. Mit **la** keine Verschmelzung: a la, de la. Vor agua: \`al agua\`, \`del agua\`.
-- Manche Wörter auf **-ma** sind maskulin: \`el problema\`, \`el tema\`. \`la mano\`, \`la foto\` sind feminin, obwohl sie auf -o enden.
+### Beruf nach ser — ohne Artikel
+
+**Regel:** nach *ser* steht der Beruf meist **ohne** Artikel. Eine konkrete Person braucht den Artikel.
+
+- \`Soy profesora.\` — ich bin Lehrerin (Rolle).
+- \`La profesora es Ana.\` — diese Lehrerin ist Ana.
+
+### Sprache: hablo español
+
+**Regel:** „ich spreche eine Sprache“ — ohne Artikel. Die Sprache als Thema mit **el**.
+
+- \`Hablo español.\`
+- \`El español es fácil.\`
+
+### Wochentage: el lunes / los lunes
+
+**Regel:** ein Tag = **el lunes**. Gewohnheit = **los lunes** (montags).
+
+### a + el = al, de + el = del
+
+**Regel:** **a + el → al**, **de + el → del**. Mit **la** keine Verschmelzung: *a la*, *de la*. Vor agua: \`al agua\`, \`del agua\`.
+
+### el problema, la mano
+
+**Regel:** das Genus steht in «Genus und Numerus». Hier nur der Artikel: \`el problema\`, \`el tema\`, aber \`la mano\`, \`la foto\`.
 
 ## In 4 Schritten wählen
+
+**Regel:** Zahl → Genus → bekannt/irgendein → erst dann *el agua*.
 
 1. Eine Sache oder viele?
 2. Maskulin oder feminin? (das Genus ändert sich **nicht** durch el agua)
@@ -580,6 +609,8 @@ Das Verb **ändert sich nach der Person**. Diese Tabelle braucht ihr den ganzen 
 | sie / Sie (mehrere) | **ellos / ellas / ustedes** | in Lateinamerika *ustedes* = „ihr“ |
 
 ## Zwei Verben für „sein“: ser und estar
+
+Im Russischen ein „sein“. Im Spanischen **zwei**.
 
 ### SER — wer / was jemand **ist**
 Identität, Beruf, Herkunft, Beschreibung, Uhrzeit, Beziehung:

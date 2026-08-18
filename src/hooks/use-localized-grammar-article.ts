@@ -37,6 +37,7 @@ export function useLocalizedGrammarArticle(
           slug,
           courseId,
           interfaceLanguage: language,
+          v: "3",
         });
         if (refresh) params.set("refresh", "1");
 

@@ -8,13 +8,13 @@ export const SPANISH_GRAMMAR_CONTENT: Partial<
 
 ## What an article is
 
-An article is a short word **before** a noun. It answers three questions at once: is this thing **known** or **some / any**? **one** or **many**? Is the word **masculine** or **feminine**?
+**Rule:** an article is the short word **before** a noun: known or some, one or many, masculine or feminine.
 
 In dictionaries: **m.** = masculino = masculine, **f.** = femenino = feminine. Singular = one, plural = many.
 
 ## A specific, known thing
 
-If the thing is **familiar / specific** (this book, the sun, the park nearby):
+**Rule:** familiar / specific thing → **el / la / los / las**.
 
 | | One | Many |
 |---|---|---|
@@ -25,7 +25,7 @@ Examples: \`el sol\`, \`la casa de Ana\`, \`los libros en la mesa\`.
 
 ## An unknown or “some” thing
 
-If the thing has not been named yet, or it is any / one of many:
+**Rule:** not named yet, any, or “one of” → **un / una / unos / unas**.
 
 | | One | Many |
 |---|---|---|
@@ -36,7 +36,7 @@ Examples: \`un libro interesante\`, \`una casa nueva\`.
 
 ## Exception: el agua — not la abuela
 
-This is **not** “any word starting with a”. And it is **not** about the accent mark ´.
+**Rule:** **el agua**, but **la abuela**. Stressed first **a** — not every word starting with a.
 
 Use **el** (or **un**) before a **feminine** word only if **all** of these are true:
 
@@ -63,13 +63,35 @@ The word **stays feminine**: \`el agua fría\` (not *frío*). In the plural the 
 
 ## Other exceptions
 
-- Profession after **ser** often has no article: \`Soy profesora.\`
-- Language: \`Hablo español.\` But \`El español es fácil.\`
-- Days: \`el lunes\` (on Monday), \`los lunes\` (on Mondays).
-- **a + el = al**, **de + el = del**. No merge with **la**: a la, de la. Before agua: \`al agua\`, \`del agua\`.
-- Some **-ma** words are masculine: \`el problema\`, \`el tema\`. \`la mano\`, \`la foto\` are feminine even though they end in -o.
+### Profession after ser — no article
+
+**Rule:** after *ser*, a job usually has **no** article. A specific person takes an article.
+
+- \`Soy profesora.\` — I am a teacher (role).
+- \`La profesora es Ana.\` — that teacher is Ana.
+
+### Language: hablo español
+
+**Rule:** “I speak a language” — no article. The language as a topic takes **el**.
+
+- \`Hablo español.\`
+- \`El español es fácil.\`
+
+### Days: el lunes / los lunes
+
+**Rule:** one day = **el lunes**. Habit = **los lunes** (on Mondays).
+
+### a + el = al, de + el = del
+
+**Rule:** **a + el → al**, **de + el → del**. No merge with **la**: *a la*, *de la*. Before agua: \`al agua\`, \`del agua\`.
+
+### el problema, la mano
+
+**Rule:** full gender is in “Gender and number”. Here only the article: \`el problema\`, \`el tema\`, but \`la mano\`, \`la foto\`.
 
 ## Four steps to choose
+
+**Rule:** number → gender → known/some → only then the *el agua* check.
 
 1. One thing or many?
 2. Masculine or feminine? (gender does **not** change because of el agua)
@@ -79,13 +101,13 @@ The word **stays feminine**: \`el agua fría\` (not *frío*). In the plural the 
 
 ## Qué es un artículo
 
-El artículo es una palabrita **delante** del sustantivo. Responde a tres cosas a la vez: ¿es algo **conocido** o **alguno / cualquiera**? ¿**uno** o **muchos**? ¿La palabra es **masculina** o **femenina**?
+**Regla:** el artículo es la palabrita **delante** del sustantivo: conocido o alguno, uno o muchos, masculino o femenino.
 
 En el diccionario: **m.** = masculino, **f.** = femenino. Singular = uno, plural = muchos.
 
 ## Algo concreto y conocido
 
-Si la cosa es **conocida / concreta** (este libro, el sol, el parque de al lado):
+**Regla:** cosa conocida / concreta → **el / la / los / las**.
 
 | | Uno | Muchos |
 |---|---|---|
@@ -96,7 +118,7 @@ Ejemplos: \`el sol\`, \`la casa de Ana\`, \`los libros en la mesa\`.
 
 ## Algo desconocido o «alguno»
 
-Si aún no se ha nombrado, o es cualquiera / uno de varios:
+**Regla:** aún no se ha nombrado, cualquiera o «uno de» → **un / una / unos / unas**.
 
 | | Uno | Muchos |
 |---|---|---|
@@ -107,7 +129,7 @@ Ejemplos: \`un libro interesante\`, \`una casa nueva\`.
 
 ## Excepción: el agua — no la abuela
 
-**No** es «cualquier palabra que empiece por a». Y **no** se trata de la tilde ´.
+**Regla:** **el agua**, pero **la abuela**. La primera **a** tónica — no cualquier palabra en a.
 
 Se pone **el** (o **un**) delante de una palabra **femenina** solo si se cumplen **todas** las condiciones:
 
@@ -134,13 +156,35 @@ La palabra **sigue siendo femenina**: \`el agua fría\` (no *frío*). En plural 
 
 ## Otras excepciones
 
-- Profesión con **ser** a menudo sin artículo: \`Soy profesora.\`
-- Idioma: \`Hablo español.\` Pero \`El español es fácil.\`
-- Días: \`el lunes\` (el lunes de esta semana), \`los lunes\` (los lunes en general).
-- **a + el = al**, **de + el = del**. Con **la** no se junta: a la, de la. Delante de agua: \`al agua\`, \`del agua\`.
-- Algunas palabras en **-ma** son masculinas: \`el problema\`, \`el tema\`. \`la mano\`, \`la foto\` son femeninas aunque terminen en -o.
+### Profesión con ser — sin artículo
+
+**Regla:** tras *ser* la profesión suele ir **sin** artículo. Una persona concreta lleva artículo.
+
+- \`Soy profesora.\` — soy profesora (rol).
+- \`La profesora es Ana.\` — esa profesora es Ana.
+
+### Idioma: hablo español
+
+**Regla:** «hablo un idioma» — sin artículo. El idioma como tema lleva **el**.
+
+- \`Hablo español.\`
+- \`El español es fácil.\`
+
+### Días: el lunes / los lunes
+
+**Regla:** un día = **el lunes**. Costumbre = **los lunes**.
+
+### a + el = al, de + el = del
+
+**Regla:** **a + el → al**, **de + el → del**. Con **la** no se junta: *a la*, *de la*. Delante de agua: \`al agua\`, \`del agua\`.
+
+### el problema, la mano
+
+**Regla:** el género entero está en «Género y número». Aquí solo el artículo: \`el problema\`, \`el tema\`, pero \`la mano\`, \`la foto\`.
 
 ## Cómo elegir en 4 pasos
+
+**Regla:** número → género → conocido/alguno → solo entonces *el agua*.
 
 1. ¿Uno o muchos?
 2. ¿Masculino o femenino? (el género **no** cambia por el agua)
@@ -262,6 +306,8 @@ El verbo **cambia según la persona**. Esta tabla se usa en todo el curso.
 | ellos / ellas / ustedes | **ellos / ellas / ustedes** | en América *ustedes* = «vosotros» |
 
 ## Dos verbos: ser y estar
+
+En ruso hay un «ser». En español hay **dos**.
 
 ### SER — quién / cómo **es**
 Identidad, profesión, origen, descripción, hora, relación:

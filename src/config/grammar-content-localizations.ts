@@ -9,7 +9,8 @@ export const GRAMMAR_CONTENT: Partial<
   "eng-a1-be": {
     en: `## The verb **be** — the foundation of English
 
-In English, the verb "to be" has **three forms** in the present:
+### I am / he is / they are
+**Rule:** I → **am**, he/she/it → **is**, you/we/they → **are**.
 
 | Subject | Form | Example |
 |---|---|---|
@@ -18,18 +19,19 @@ In English, the verb "to be" has **three forms** in the present:
 | You/We/They | **are** | They **are** happy |
 
 ### Contractions
-\`I am → I'm\`, \`He is → He's\`, \`They are → They're\`
+**Rule:** \`I am → I'm\`, \`He is → He's\`, \`They are → They're\`.
 
 ### Negative forms
-\`I'm not\`, \`He isn't / He's not\`, \`They aren't / They're not\`
+**Rule:** \`I'm not\`; \`isn't\` / \`aren't\` (or \`he's not\` / \`they're not\`).
 
 ### Questions
-\`Am I...? Is he...? Are they...?\`
+**Rule:** **be** comes first: \`Am I...?\` \`Is he...?\` \`Are they...?\`
 
-> 💡 Remember: **I am, He/She/It is, You/We/They are** — this is the foundation of all English grammar.`,
+> 💡 **I am, He/She/It is, You/We/They are** — the foundation of all English grammar.`,
     es: `## El verbo **be** — la base del inglés
 
-En inglés, el verbo «ser/estar» tiene **tres formas** en presente:
+### I am / he is / they are
+**Regla:** I → **am**, he/she/it → **is**, you/we/they → **are**.
 
 | Sujeto | Forma | Ejemplo |
 |---|---|---|
@@ -38,60 +40,60 @@ En inglés, el verbo «ser/estar» tiene **tres formas** en presente:
 | You/We/They | **are** | They **are** happy |
 
 ### Contracciones (contractions)
-\`I am → I'm\`, \`He is → He's\`, \`They are → They're\`
+**Regla:** \`I am → I'm\`, \`He is → He's\`, \`They are → They're\`.
 
 ### Negación
-\`I'm not\`, \`He isn't / He's not\`, \`They aren't / They're not\`
+**Regla:** \`I'm not\`; \`isn't\` / \`aren't\` (o \`he's not\` / \`they're not\`).
 
 ### Preguntas
-\`Am I...? Is he...? Are they...?\`
+**Regla:** **be** va primero: \`Am I...?\` \`Is he...?\` \`Are they...?\`
 
-> 💡 Recuerda: **I am, He/She/It is, You/We/They are** — es la base de toda la gramática inglesa.`,
+> 💡 **I am, He/She/It is, You/We/They are** — la base de toda la gramática inglesa.`,
   },
 
   "eng-a1-present-simple": {
     en: `## Present Simple — routines and facts
 
-### Formation
-- I/You/We/They + **verb**: \`I work\`, \`They live\`
-- He/She/It + **verb + -s**: \`He works\`, \`She lives\`
+### I/you/we/they + verb; he/she/it + -s
+**Rule:** \`I work\` / \`They live\`. For he/she/it — **workS / liveS**.
 
-### The -s ending (for he/she/it)
+### The -s ending (he/she/it)
+**Rule:** consonant → **-s**; -o/-s/-sh/-ch/-x → **-es**; consonant + y → **-ies**.
+
 | Verb ending | + | Example |
 |---|---|---|
 | consonant | **-s** | work → work**s** |
 | -o, -s, -sh, -ch, -x | **-es** | go → go**es**, watch → watch**es** |
 | consonant + y | **-ies** | study → stud**ies** |
 
-### Negative and questions — with **do/does**
-- \`I don't work\`, \`He doesn't work\`
-- \`Do you work?\`, \`Does he work?\`
+### Negative and questions — do / does
+**Rule:** \`I don't work\`, \`He doesn't work\`. Question: \`Do you...?\` / \`Does he...?\` — verb without -s.
 
 ### Time markers
-\`always\`, \`usually\`, \`often\`, \`sometimes\`, \`never\`, \`every day\`
+**Rule:** typically with \`always\`, \`usually\`, \`often\`, \`every day\`.
 
-> 💡 **He/she/it** — always with **-s** or **-es**. This is the most common rule in English.`,
+> 💡 **He/she/it** — always **-s** or **-es**. The most common English rule.`,
     es: `## Present Simple — rutinas y hechos
 
-### Formación
-- I/You/We/They + **verbo**: \`I work\`, \`They live\`
-- He/She/It + **verbo + -s**: \`He works\`, \`She lives\`
+### I/you/we/they + verbo; he/she/it + -s
+**Regla:** \`I work\` / \`They live\`. Con he/she/it — **workS / liveS**.
 
-### La terminación -s (para he/she/it)
+### La terminación -s (he/she/it)
+**Regla:** consonante → **-s**; -o/-s/-sh/-ch/-x → **-es**; consonante + y → **-ies**.
+
 | Terminación del verbo | + | Ejemplo |
 |---|---|---|
 | consonante | **-s** | work → work**s** |
 | -o, -s, -sh, -ch, -x | **-es** | go → go**es**, watch → watch**es** |
 | consonante + y | **-ies** | study → stud**ies** |
 
-### Negación y preguntas — con **do/does**
-- \`I don't work\`, \`He doesn't work\`
-- \`Do you work?\`, \`Does he work?\`
+### Negación y preguntas — do / does
+**Regla:** \`I don't work\`, \`He doesn't work\`. Pregunta: \`Do you...?\` / \`Does he...?\` — verbo sin -s.
 
 ### Marcadores temporales
-\`always\`, \`usually\`, \`often\`, \`sometimes\`, \`never\`, \`every day\`
+**Regla:** suele ir con \`always\`, \`usually\`, \`often\`, \`every day\`.
 
-> 💡 **He/she/it** — siempre con **-s** o **-es**. Es la regla más frecuente en inglés.`,
+> 💡 **He/she/it** — siempre **-s** o **-es**.`,
   },
 
   "eng-a1-there-is-are": {
@@ -140,36 +142,48 @@ En inglés, el verbo «ser/estar» tiene **tres formas** en presente:
   "eng-a1-can": {
     en: `## Can / Can't — ability and possibility
 
-\`can\` does not change by person: **I can, He can, They can**.
+### One form for everyone
+**Rule:** \`can\` does **not** change: I/he/they **can**.
 
 | Form | Example |
 |---|---|
 | + | I **can** swim |
-| - | I **can't** (= cannot) swim |
+| − | I **can't** (= cannot) swim |
 | ? | **Can** you swim? |
 
-### Uses
+### After can — verb without to
+**Rule:** \`can swim\`, not *can to swim*.
+
+### Three meanings
+**Rule:** ability / request / permission — the same form \`can\`.
+
 1. **Ability:** \`I can speak English\`
 2. **Request:** \`Can you help me?\`
-3. **Permission:** \`You can go now\`
+3. **Permission:** \`You can go now\` / \`Can I open the window?\`
 
-> 💡 After can — **always the infinitive without to**: \`can swim\` (not ~~can to swim~~).`,
+> 💡 Politer later: \`Could you…?\``,
     es: `## Can / Can't — poder, saber hacer
 
-\`can\` no cambia según la persona: **I can, He can, They can**.
+### Una forma para todos
+**Regla:** \`can\` **no** cambia: I/he/they **can**.
 
 | Forma | Ejemplo |
 |---|---|
 | + | I **can** swim |
-| - | I **can't** (= cannot) swim |
+| − | I **can't** (= cannot) swim |
 | ? | **Can** you swim? |
 
-### Usos
-1. **Capacidad:** \`I can speak English\`
+### Después de can — verbo sin to
+**Regla:** \`can swim\`, no *can to swim*.
+
+### Tres sentidos
+**Regla:** habilidad / petición / permiso — la misma forma \`can\`.
+
+1. **Habilidad:** \`I can speak English\`
 2. **Petición:** \`Can you help me?\`
 3. **Permiso:** \`You can go now\`
 
-> 💡 Después de can — **siempre infinitivo sin to**: \`can swim\` (no ~~can to swim~~).`,
+> 💡 Más cortés luego: \`Could you…?\``,
   },
 
   "eng-a1-questions": {

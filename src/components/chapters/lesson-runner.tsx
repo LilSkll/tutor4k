@@ -30,10 +30,11 @@ import type { StaticExercise } from "@/types";
 import type { LessonAdaptation } from "@/types/learning-profile";
 import { BackLink } from "@/components/shared/back-link";
 import { QuestionWithGloss } from "@/components/exercises/question-with-gloss";
+import { GrammarRuleHints } from "@/components/chapters/grammar-rule-hints";
 import {
-  GrammarRuleHints,
   grammarRulesFromMarkdown,
-} from "@/components/chapters/grammar-rule-hints";
+  grammarTheoryPagesFromMarkdown,
+} from "@/lib/grammar-markdown";
 import { cn } from "@/lib/utils";
 import type { Chapter } from "@/types";
 
@@ -164,16 +165,6 @@ export function LessonRunner({
 
   const bankRemaining = Math.max(0, chapterBank.length - bankCursor);
 
-  const theoryPages = React.useMemo(() => {
-    const md = (grammarContent ?? "").trim();
-    if (!md) return [];
-    const parts = md
-      .split(/(?=^##\s)/m)
-      .map((p) => p.trim())
-      .filter(Boolean);
-    return parts.length > 0 ? parts : [md];
-  }, [grammarContent]);
-
   const grammarRules = React.useMemo(
     () =>
       grammarRulesFromMarkdown(
@@ -181,6 +172,11 @@ export function LessonRunner({
         t("lesson.ruleUntitled"),
       ),
     [grammarContent, language],
+  );
+
+  const theoryPages = React.useMemo(
+    () => grammarTheoryPagesFromMarkdown(grammarContent ?? ""),
+    [grammarContent],
   );
 
   const theoryMarkdown = theoryPages[theoryPageIdx] ?? theoryPages[0] ?? "";

@@ -9,44 +9,17 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Markdown } from "@/components/shared/markdown";
+import {
+  grammarRulesFromMarkdown,
+  type GrammarRulePage,
+} from "@/lib/grammar-markdown";
 
-export type GrammarRulePage = {
-  title: string;
-  content: string;
-};
-
-/** Split a grammar article into clickable rule pages (`##` headings). */
-export function grammarRulesFromMarkdown(
-  markdown: string,
-  untitledLabel: string,
-): GrammarRulePage[] {
-  const md = markdown.trim();
-  if (!md) return [];
-  const parts = md
-    .split(/(?=^##\s)/m)
-    .map((p) => p.trim())
-    .filter(Boolean);
-  const preamble = parts.filter((p) => !/^##\s/m.test(p)).join("\n\n");
-  const headed = parts.filter((p) => /^##\s/m.test(p));
-  const pages = headed.length > 0 ? headed : parts.length > 0 ? parts : [md];
-  if (preamble && headed.length > 0) {
-    pages[0] = `${preamble}\n\n${pages[0]}`;
-  }
-  return pages.map((content, index) => {
-    const heading = content.match(/^##\s+(.+)$/m)?.[1] ?? "";
-    const title =
-      heading
-        .replace(/\*\*/g, "")
-        .replace(/`/g, "")
-        .trim() || `${untitledLabel} ${index + 1}`;
-    const body = content.replace(/^##\s+.+\n?/, "").trim() || content;
-    return { title, content: body };
-  });
-}
+export type { GrammarRulePage };
+export { grammarRulesFromMarkdown };
 
 /**
  * Clickable grammar-rule chips for chapter practice.
- * Opens the same theory section in a dialog so students do not go back.
+ * Opens one precise rule — not the whole article — so students stay in the exercise.
  */
 export function GrammarRuleHints({
   rules,
@@ -65,7 +38,7 @@ export function GrammarRuleHints({
   if (rules.length === 0) return null;
 
   return (
-    <div className="rounded-lg border border-primary/20 bg-primary/5 px-3 py-2.5 space-y-2">
+    <div className="rounded-lg border border-primary/20 bg-primary/5 px-3 py-2.5 space-y-2 [contain:layout]">
       <div className="flex items-start gap-2">
         <BookOpen
           className="mt-0.5 h-4 w-4 shrink-0 text-primary"
@@ -78,7 +51,7 @@ export function GrammarRuleHints({
           </p>
         </div>
       </div>
-      <div className="flex flex-wrap gap-1.5">
+      <div className="flex max-h-[4.75rem] flex-wrap gap-1.5 overflow-y-auto [scrollbar-width:thin]">
         {rules.map((rule, index) => (
           <button
             key={`${rule.title}-${index}`}
@@ -100,7 +73,7 @@ export function GrammarRuleHints({
       >
         <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto">
           <DialogHeader>
-            <DialogTitle className="text-lg pr-6">
+            <DialogTitle className="text-lg pr-6 text-pretty">
               {openRule?.title ?? label}
             </DialogTitle>
           </DialogHeader>

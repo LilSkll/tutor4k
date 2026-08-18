@@ -20,7 +20,8 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
     summary: "Глагол «быть» в настоящем: am, is, are.",
     content: `## Глагол **be** — основа английского
 
-В английском глагол «быть» имеет **три формы** в настоящем:
+### I am / he is / they are
+**Правило:** I → **am**, he/she/it → **is**, you/we/they → **are**.
 
 | Подлежащее | Форма | Пример |
 |---|---|---|
@@ -28,16 +29,16 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
 | He/She/It | **is** | She **is** from London |
 | You/We/They | **are** | They **are** happy |
 
-### Сокращения (contractions)
-\`I am → I'm\`, \`He is → He's\`, \`They are → They're\`
+### Сокращения
+**Правило:** \`I am → I'm\`, \`He is → He's\`, \`They are → They're\`.
 
 ### Отрицание
-\`I'm not\`, \`He isn't / He's not\`, \`They aren't / They're not\`
+**Правило:** \`I'm not\`; \`isn't\` / \`aren't\` (или \`he's not\` / \`they're not\`).
 
 ### Вопросы
-\`Am I...? Is he...? Are they...?\`
+**Правило:** глагол **be** идёт первым: \`Am I...?\` \`Is he...?\` \`Are they...?\`
 
-> 💡 Запомни: **I am, He/She/It is, You/We/They are** — это база всей английской грамматики.`,
+> 💡 **I am, He/She/It is, You/We/They are** — база всей английской грамматики.`,
   },
   {
     slug: "eng-a1-present-simple",
@@ -48,23 +49,23 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
     summary: "Настоящее простое: рутины, факты, регулярные действия.",
     content: `## Present Simple — рутины и факты
 
-### Образование
-- I/You/We/They + **глагол**: \`I work\`, \`They live\`
-- He/She/It + **глагол + -s**: \`He works\`, \`She lives\`
+### I/you/we/they + глагол; he/she/it + -s
+**Правило:** \`I work\` / \`They live\`. Для he/she/it — **workS / liveS**.
 
-### Окончание -s (для he/she/it)
+### Окончание -s (he/she/it)
+**Правило:** согласная → **-s**; -o/-s/-sh/-ch/-x → **-es**; согласная + y → **-ies**.
+
 | Окончание глагола | + | Пример |
 |---|---|---|
 | согласная | **-s** | work → work**s** |
 | -o, -s, -sh, -ch, -x | **-es** | go → go**es**, watch → watch**es** |
 | согласная + y | **-ies** | study → stud**ies** |
 
-### Отрицание и вопрос — через **do/does**
-- \`I don't work\`, \`He doesn't work\`
-- \`Do you work?\`, \`Does he work?\`
+### Отрицание и вопрос — do / does
+**Правило:** \`I don't work\`, \`He doesn't work\`. Вопрос: \`Do you...?\` / \`Does he...?\` — глагол без -s.
 
-### Маркеры времени
-\`always\`, \`usually\`, \`often\`, \`sometimes\`, \`never\`, \`every day\`
+### Маркеры
+**Правило:** typically with \`always\`, \`usually\`, \`often\`, \`every day\`.
 
 > 💡 **He/she/it** — всегда с **-s** или **-es**. Это самое частое правило в английском.`,
   },
@@ -105,20 +106,26 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
     summary: "Модальный глагол can: способность, возможность.",
     content: `## Can / Can't — мочь, уметь
 
-\`can\` не меняется по лицам: **I can, He can, They can**.
+### Форма одна на всех
+**Правило:** \`can\` **не** меняется: I/he/they **can**.
 
 | Форма | Пример |
 |---|---|
 | + | I **can** swim |
-| - | I **can't** (= cannot) swim |
+| − | I **can't** (= cannot) swim |
 | ? | **Can** you swim? |
 
-### Использование
-1. **Способность:** \`I can speak English\`
-2. **Просьба:** \`Can you help me?\`
-3. **Разрешение:** \`You can go now\`
+### После can — глагол без to
+**Правило:** \`can swim\`, не *can to swim*.
 
-> 💡 После can — **всегда инфинитив без to**: \`can swim\` (не ~~can to swim~~).`,
+### Три смысла
+**Правило:** умение / просьба / разрешение — одна форма \`can\`.
+
+1. **Умение:** \`I can speak English\`
+2. **Просьба:** \`Can you help me?\`
+3. **Разрешение:** \`You can go now\` / \`Can I open the window?\`
+
+> 💡 Вежливее позже: \`Could you…?\``,
   },
   {
     slug: "eng-a1-questions",

@@ -53,11 +53,18 @@ export const ENGLISH_GRAMMAR_EXTRA: GrammarTopic[] = [
     summary: "Умею / не умею, можно / нельзя: can, can't, Can I…?",
     content: `## Can
 
+### Форма одна
+**Правило:** \`I can\`, \`she can\`, \`they can\` — форма не меняется.
+
+### Глагол без to
+**Правило:** \`can go\`, не *can to go*.
+
+### Три смысла
+**Правило:** умение / разрешение / просьба.
+
 - Ability: \`I can swim.\` · \`She can't drive.\`
 - Permission: \`Can I open the window?\`
-- Request: \`Can you help me?\`
-
-Форма без to: \`can go\`, не \`*can to go\`.`,
+- Request: \`Can you help me?\``,
   },
   {
     slug: "eng-a2-countable",
@@ -68,13 +75,22 @@ export const ENGLISH_GRAMMAR_EXTRA: GrammarTopic[] = [
     summary: "much/many, some/any, a few/a little с countables.",
     content: `## Countable vs uncountable
 
+### Можно посчитать vs нельзя
+**Правило:** apple**s** — countable. water / advice — uncountable (обычно без -s).
+
 | Countable | Uncountable |
 |---|---|
 | apple / apples | water, rice, advice |
 | many apples | much water |
 | a few ideas | a little time |
 
-\`some\` в + ; \`any\` чаще в −/?  
+### many / much / a few / a little
+**Правило:** many / a few — countable. much / a little — uncountable.
+
+### some / any
+**Правило:** \`some\` в + ; \`any\` чаще в − / ?
+
+\`There are **some** apples.\` · \`There isn't **any** milk.\`
 \`Information\`, \`advice\`, \`furniture\` — обычно **без** -s.`,
   },
   {
@@ -103,11 +119,16 @@ export const ENGLISH_GRAMMAR_EXTRA: GrammarTopic[] = [
     summary: "If + present; if + present → will; if + past → would.",
     content: `## Conditionals
 
-| Type | Form | Use |
-|---|---|---|
-| Zero | If + Present, Present | законы, привычки |
-| 1st | If + Present, will | реальные будущие |
-| 2nd | If + Past, would | гипотеза сейчас |
+### Zero: If + Present, Present
+**Правило:** законы и привычки: \`If you heat ice, it **melts**.\`
+
+### 1st: If + Present, will
+**Правило:** реальное будущее. **will** только в главной части, не в if.
+
+\`If it rains, I **will** stay home.\`
+
+### 2nd: If + Past, would
+**Правило:** гипотеза сейчас: \`If I had money, I **would** travel.\`
 
 \`If I **were** you…\` — устойчиво.`,
   },
@@ -120,11 +141,14 @@ export const ENGLISH_GRAMMAR_EXTRA: GrammarTopic[] = [
     summary: "Say/tell + сдвиг времён; questions и requests.",
     content: `## Reported speech
 
-- \`She said (that) she **was** tired.\` (Present → Past)
-- \`He told me to wait.\`
-- Questions: \`She asked where I lived.\`
+### Сдвиг времён
+**Правило:** \`She said she **was** tired.\` Present → Past.
 
-Сдвиг не всегда нужен, если факт всё ещё истинен: \`She said the Earth **is** round.\``,
+### say vs tell / просьба
+**Правило:** \`told me to wait\`. Questions: \`She asked where I lived.\`
+
+### Когда сдвиг не нужен
+**Правило:** факт всё ещё истинен — настоящее можно оставить: \`She said the Earth **is** round.\``,
   },
   {
     slug: "eng-b1-relative-clauses",
