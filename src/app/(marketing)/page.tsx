@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import nextDynamic from "next/dynamic";
 import {
   ArrowRight,
   BookOpen,
@@ -15,14 +14,7 @@ import {
 import { BrandIcon } from "@/components/shared/brand-icon";
 import { translate } from "@/lib/i18n";
 import { LegalFooterLinks } from "@/components/legal/legal-footer-links";
-
-const ConfirmEmailHashRedirect = nextDynamic(
-  () =>
-    import("@/components/auth/confirm-email-hash-redirect").then(
-      (m) => m.ConfirmEmailHashRedirect,
-    ),
-  { ssr: false },
-);
+import { ConfirmEmailHashRedirect } from "@/components/auth/confirm-email-hash-redirect";
 
 /** CDN cache — do not read headers()/cookies() here (that forces SSR and ~1s TTFB). */
 export const dynamic = "force-static";
