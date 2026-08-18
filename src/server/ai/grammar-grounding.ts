@@ -1,6 +1,7 @@
 import type { CourseConfig, GrammarTopic, InterfaceLanguage } from "@/types";
 import { getStaticGrammarContent } from "@/config/grammar-content-localizations";
 import { getGrammarTopicTitle } from "@/lib/grammar-display";
+import { withGrammarLevelFrame } from "@/config/grammar-level-frames";
 
 /**
  * Match a learner question to an official course grammar article and
@@ -71,10 +72,11 @@ function pickContent(
   lang: InterfaceLanguage,
 ): string {
   const localized = getStaticGrammarContent(topic.slug, lang);
-  if (localized?.trim()) return localized;
-  if (lang === "ru" && topic.content?.trim()) return topic.content;
-  // Last resort: native content may be Russian — caller still forbids mixing languages in the reply.
-  return topic.content || "";
+  const body =
+    localized?.trim() ||
+    (lang === "ru" ? topic.content : topic.content) ||
+    "";
+  return withGrammarLevelFrame(topic.slug, lang, body);
 }
 
 /** True when the user is asking to explain a grammar label — skip FAQ cache. */

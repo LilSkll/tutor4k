@@ -1177,7 +1177,7 @@ Beispiele:
 2. **Versprechen:** \`Te **llamaré** esta noche.\`
 3. **Pläne:** \`El año que viene **viajaré** a España.\`
 
-> 💡 Auch: Wahrscheinlichkeit in der Gegenwart: \`¿Qué hora es? — Serán las tres.\``,
+> 💡 „Wahrscheinlich ist es drei“ (\`Serán las tres\`) ist **C2-Vermutung**, nicht dieses Zukunfts-Plan.`,
   },
 
   "b1-subjuntivo": {

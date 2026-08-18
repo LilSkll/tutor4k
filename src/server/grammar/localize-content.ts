@@ -1,5 +1,6 @@
 import { getCourse } from "@/config/courses";
 import { getStaticGrammarContent } from "@/config/grammar-content-localizations";
+import { withGrammarLevelFrame } from "@/config/grammar-level-frames";
 import type { InterfaceLanguage, Level } from "@/types";
 
 export async function getLocalizedGrammarArticle(input: {
@@ -18,19 +19,16 @@ export async function getLocalizedGrammarArticle(input: {
     throw new Error("Grammar topic not found");
   }
 
-  if (input.interfaceLanguage === "ru") {
-    return { content: topic.content, source: "native" };
-  }
+  const lang = input.interfaceLanguage;
+  const staticContent =
+    lang === "ru" ? null : getStaticGrammarContent(topic.slug, lang);
+  const body = staticContent?.trim() ? staticContent : topic.content;
+  const source = staticContent?.trim()
+    ? ("static" as const)
+    : ("native" as const);
 
-  const staticContent = getStaticGrammarContent(
-    input.slug,
-    input.interfaceLanguage,
-  );
-  if (staticContent) {
-    return { content: staticContent, source: "static" };
-  }
-
-  // Extra English / IELTS topics are still RU-only. Serve the source article
-  // instead of a 500 so the explorer stays usable until those banks are filled.
-  return { content: topic.content, source: "native" };
+  return {
+    content: withGrammarLevelFrame(topic.slug, lang, body),
+    source,
+  };
 }

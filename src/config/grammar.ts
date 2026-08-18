@@ -867,8 +867,7 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 2. **Обещание:** \`Te **llamaré** esta noche.\`
 3. **Планы:** \`El año que viene **viajaré** a España.\`
 
-> 💡 Также: вероятность в настоящем: \`¿Qué hora es? — Serán las tres.\`
-> (Наверное, часа три).`,
+> 💡 «Наверное, сейчас три» (\`Serán las tres\`) — это уже **C2 догадка**, не это будущее-план.`,
   },
 
   // ----- B1 ---------------------------------------------------------
@@ -1605,32 +1604,23 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
   },
   {
     slug: "c1-matices-estilisticos",
-    title: "Matrices Estilísticos",
-    titleEs: "Matrices Estilísticos y Registers",
+    title: "Matices Estilísticos",
+    titleEs: "Matices Estilísticos y Registros",
     level: "C1",
     category: "Стилистика",
-    summary: "Не «правильно», а уместно: регистр, aunque llueve vs llueva.",
-    content: `> **Путь:** формы все известны. C1 = **какой переключатель** в этой ситуации: факт / гипотеза / вежливость.
+    summary: "Не «правильно», а уместно: регистр, вежливость, tú / usted.",
+    content: `> **Путь:** формы все известны. C1 = **какой переключатель** в этой ситуации: вежливость и регистр.
 
 ## Оттенки и регистр
 
-### 1. Condicionales и гипотезы
-- **Real**: \`Si llueve, me quedo.\` (Indicativo + Futuro)
-- **Irreal presente**: \`Si tuviera tiempo, saldría.\` (Subj. imperfecto + Condicional)
-- **Irreal pasado**: \`Si hubiera sabido, habría ido.\` (Subj. pluscuamp. + Cond. compuesto)
+Формы времён и subjuntivo здесь **не повторяем**: три si — тема B2; aunque llueve / llueva — «Subjuntivo: тонкие случаи».
 
-### 2. Subjuntivo в тонких оттенках
-- \`Aunque **llueva**\` (даже если — гипотетично) vs \`Aunque **llueve**\` (хотя — факт).
-- \`Como **llegues** tarde...\` (угроза/предупреждение).
-- \`Por mucho que **estudie**\` = как бы ни учился.
-
-### 3. Вежливость и дистанция
+### Вежливость и дистанция
 - **Condicional de cortesía**: \`¿Podría...?\`, \`Quisiera...\`, \`Me gustaría...\`
 - **Imperfecto** для смягчения: \`Quería pedirte un favor.\`
-- **Subjuntivo** в просьбах: \`¿Puedes **abrir** la ventana?\` →
-  \`¿Podrías **abrir**?\` → \`¿Te importaría **abrir**?\`
+- Просьба по дистанции: \`¿Puedes **abrir**?\` → \`¿Podrías **abrir**?\` → \`¿Te importaría **abrir**?\`
 
-### 4. Регистр: formal vs informal
+### Регистр: formal vs informal
 | Informal | Formal |
 |---|---|
 | tú | usted |
@@ -1638,9 +1628,9 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 | Vale | De acuerdo / Correcto |
 | ¡Hola! | Buenos días |
 
-### 5. Лексические нюансы
+### Лексические нюансы
 - **Soler** вместо «обычно»: \`Suelo levantarme temprano.\`
-- **Llevar + gerundio** для длительности: \`Llevo viviendo aquí 5 años.\`
+- **Llevar + gerundio** для длительности: \`Llevo viviendo aquí 5 años.\` (подробнее — perífrasis)
 - **Acabar por + inf** = в конце концов: \`Acabó por aceptar.\`
 - **Venir a + inf** = примерно: \`Viene a costar 20 euros.\`
 

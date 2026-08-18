@@ -1344,7 +1344,7 @@ Examples:
 2. **Promise:** \`Te **llamaré** esta noche.\`
 3. **Plans:** \`El año que viene **viajaré** a España.\`
 
-> 💡 Also: probability in the present: \`¿Qué hora es? — Serán las tres.\``,
+> 💡 Also: “probably three o’clock” (\`Serán las tres\`) is **C2 conjecture**, not this future-as-plan.`,
     es: `> **Recorrido:** el futuro próximo ya existe: ir a + infinitivo (\`voy a comer\`). Aquí — **futuro simple** en una sola palabra.
 
 ## Futuro Simple
@@ -1386,7 +1386,7 @@ Ejemplos:
 2. **Promesa:** \`Te **llamaré** esta noche.\`
 3. **Planes:** \`El año que viene **viajaré** a España.\`
 
-> 💡 También: probabilidad en el presente: \`¿Qué hora es? — Serán las tres.\``,
+> 💡 También: «probablemente son las tres» (\`Serán las tres\`) es **conjetura C2**, no este futuro-plan.`,
   },
 
   "b1-subjuntivo": {
