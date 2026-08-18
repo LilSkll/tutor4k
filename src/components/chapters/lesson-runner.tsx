@@ -328,9 +328,8 @@ export function LessonRunner({
   };
 
   const askTutor = async () => {
-    const question =
-      dialogueInput.trim() ||
-      t("lesson.defaultQuestion", { topic: displayGrammarTitle });
+    const question = dialogueInput.trim();
+    if (!question || loading) return;
     setLoading(true);
     setDialogueResponse(null);
     try {
@@ -733,7 +732,7 @@ export function LessonRunner({
               placeholder={t("lesson.dialoguePlaceholder")}
               onKeyDown={(e) => { if (e.key === "Enter") askTutor(); }}
             />
-            <Button variant="gradient" className="w-full" onClick={askTutor} disabled={loading}>
+            <Button variant="gradient" className="w-full" onClick={askTutor} disabled={loading || !dialogueInput.trim()}>
               {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <MessageSquare className="h-4 w-4" />}
               {loading ? t("lesson.thinking") : t("lesson.askTutor")}
             </Button>

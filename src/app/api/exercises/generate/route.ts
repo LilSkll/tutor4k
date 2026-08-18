@@ -20,9 +20,8 @@ import type {
  * Body: { type, level, topic?, count?, excludeIds?, exam? }
  *
  * Serves a session batch from the permanent adaptive exercise bank.
- * Default count = SESSION_EXERCISES (5). Regular practice never calls AI;
- * DELE exam mode falls back to AI generation when the DELE bank cannot
- * fill the session (level/type gap or interface-language filtering).
+ * Default count = SESSION_EXERCISES (5). Regular practice and DELE never
+ * call AI here — only the authored bank.
  */
 export async function POST(req: NextRequest) {
   try {
@@ -197,18 +196,8 @@ function shuffle<T>(arr: T[]): T[] {
   return a;
 }
 
-const DELE_TOPIC_HINTS: Record<string, string> = {
-  A1: "saludos y presentaciones, descripción personal, presente de indicativo",
-  A2: "rutina diaria, pretérito perfecto, planes con ir a + infinitivo",
-  B1: "carta o e-mail formal e informal, contraste indefinido/imperfecto, peticiones corteses",
-  B2: "redacción argumentativa con conectores (sin embargo, por lo tanto), opinión con subjuntivo",
-  C1: "registro formal y administrativo, perífrasis verbales, léxico culto",
-  C2: "oraciones hendidas, futuro y condicional de conjetura, registro culto e ironía",
-};
-
 /**
- * DELE session: ready-made bank items first, AI-generated exam-style
- * items to fill any shortfall.
+ * DELE session from the authored bank only — no model fill.
  */
 async function pickDeleSession(input: {
   type: ExerciseType;
@@ -244,42 +233,6 @@ async function pickDeleSession(input: {
       staticSource: true,
       exerciseId: ex.id,
     }));
-
-  const shortfall = input.count - exercises.length;
-  if (shortfall > 0) {
-    // AI fills the gap with exam-style items (bank too small for this
-    // type/level or filtered out on a non-RU interface).
-    const { generateExercise } = await import("@/server/actions/ai");
-    const aiLevel: Level = input.level === "C2" ? "C1" : input.level;
-    const hint = DELE_TOPIC_HINTS[input.level] ?? DELE_TOPIC_HINTS.B2;
-    const topic = `Preparación al examen DELE ${input.level}: ${hint}. Formato de examen oficial.`;
-
-    const results = await Promise.allSettled(
-      Array.from({ length: shortfall }, () =>
-        generateExercise({
-          type: input.type,
-          level: aiLevel,
-          topic,
-          language: input.language,
-          courseId: "spanish",
-        }),
-      ),
-    );
-    const seenQuestions = new Set(
-      exercises.map((ex) => ex.question.trim().toLowerCase()),
-    );
-    for (const r of results) {
-      if (r.status !== "fulfilled") continue;
-      const q = r.value.question?.trim().toLowerCase();
-      if (!q || seenQuestions.has(q)) continue;
-      seenQuestions.add(q);
-      exercises.push({
-        ...r.value,
-        level: input.level,
-        topic: r.value.topic || `DELE ${input.level}`,
-      });
-    }
-  }
 
   return exercises;
 }

@@ -633,8 +633,7 @@ function shuffle<T>(arr: T[]): T[] {
 
 /**
  * Check a learner's answer against the correct one.
- * Uses the model for tolerance (accents, capitalization, word order)
- * but falls back to a strict comparison.
+ * Static bank items never call a model. AI check is only for generated items.
  */
 export async function checkExerciseAnswer(input: {
   exercise: GeneratedExercise;
@@ -646,23 +645,8 @@ export async function checkExerciseAnswer(input: {
   correct: boolean;
   feedback: string;
 }> {
-  const { generateAIResponse } = await import("@/server/ai/orchestrator");
   const courseId = input.courseId ?? "spanish";
-  const course = await getCourse(courseId);
-
-  // Bank explanations are single-language; serve them in the interface language.
-  let bankExplanation = input.exercise.explanation;
-  if (input.exercise.staticSource && bankExplanation) {
-    const { localizeExerciseExplanation } = await import(
-      "@/server/ai/localize-explanation"
-    );
-    bankExplanation = await localizeExerciseExplanation({
-      explanation: bankExplanation,
-      interfaceLanguage: input.language ?? "ru",
-      exerciseId: input.exercise.exerciseId,
-      courseId,
-    });
-  }
+  const bankExplanation = input.exercise.explanation;
 
   const userNorm = normalizeAnswer(input.userAnswer);
   const acceptable = [
@@ -755,6 +739,9 @@ export async function checkExerciseAnswer(input: {
       feedback,
     };
   }
+
+  const { generateAIResponse } = await import("@/server/ai/orchestrator");
+  const course = await getCourse(courseId);
 
   const prompt = buildExerciseCheckPrompt({
     exercise: input.exercise,

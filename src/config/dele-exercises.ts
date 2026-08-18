@@ -4,9 +4,8 @@ import type { GrammarLevel, StaticExercise } from "@/types";
 // DELE exam exercise bank (Spanish course)
 // ---------------------------------------------------------------------
 // Ready-made exam-style items following the same schema as the chapter
-// bank. Served by /api/exercises/generate when exam mode is on; when the
-// bank cannot fill a session (type/level gap, non-RU filtering), the AI
-// generates the remaining DELE-style items.
+// bank. Served by /api/exercises/generate when exam mode is on.
+// Sessions are bank-only — no AI fill.
 // =====================================================================
 
 export type DeleExercise = StaticExercise & {
