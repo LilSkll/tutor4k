@@ -18,7 +18,7 @@ export async function GET(req: NextRequest) {
     const level = searchParams.get("level") as Level | null;
     const refresh = searchParams.get("refresh") === "1";
 
-    if (!slug) {
+    if (!slug || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug) || slug.length > 80) {
       return NextResponse.json({ error: "slug is required" }, { status: 400 });
     }
 

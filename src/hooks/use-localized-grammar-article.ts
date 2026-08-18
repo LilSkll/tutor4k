@@ -19,7 +19,7 @@ export function useLocalizedGrammarArticle(
   const [isStatic, setIsStatic] = React.useState(false);
 
   const load = React.useCallback(
-    async (refresh = false) => {
+    async (refresh = false, signal?: AbortSignal) => {
       if (!slug) {
         setContent(null);
         setError(null);
@@ -42,29 +42,36 @@ export function useLocalizedGrammarArticle(
         if (refresh) params.set("refresh", "1");
 
         const res = await fetch(`/api/grammar/content?${params.toString()}`, {
-          // Prefer CDN-friendly caching for static articles.
           cache: refresh ? "no-store" : "force-cache",
+          signal,
         });
+        if (signal?.aborted) return;
         if (!res.ok) throw new Error("fetch failed");
         const data = (await res.json()) as {
           content?: string;
           source?: string;
         };
+        if (signal?.aborted) return;
         setContent(data.content ?? null);
         setIsStatic(data.source === "native" || data.source === "static");
-      } catch {
+      } catch (err) {
+        if (signal?.aborted || (err as { name?: string }).name === "AbortError") {
+          return;
+        }
         setError(translate("grammar.toastExplainFail", language));
         setContent(null);
         setIsStatic(false);
       } finally {
-        setLoading(false);
+        if (!signal?.aborted) setLoading(false);
       }
     },
     [slug, courseId, language],
   );
 
   React.useEffect(() => {
-    void load();
+    const ac = new AbortController();
+    void load(false, ac.signal);
+    return () => ac.abort();
   }, [load]);
 
   return { content, loading, error, isStatic, reload: () => load(true) };

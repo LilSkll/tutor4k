@@ -111,6 +111,7 @@ export function LessonRunner({
   const [exercisesCompleted, setExercisesCompleted] = React.useState(0);
   const [dialogueResponse, setDialogueResponse] = React.useState<string | null>(null);
   const [dialogueInput, setDialogueInput] = React.useState("");
+  const askInFlight = React.useRef(false);
   const [wordsLearned, setWordsLearned] = React.useState(0);
   const [adaptation, setAdaptation] = React.useState<LessonAdaptation | null>(
     null,
@@ -331,13 +332,17 @@ export function LessonRunner({
     const question =
       dialogueInput.trim() ||
       t("lesson.defaultQuestion", { topic: displayGrammarTitle });
-    if (loading) return;
+    if (loading || askInFlight.current) return;
+    askInFlight.current = true;
     setLoading(true);
     setDialogueResponse(null);
+    const ac = new AbortController();
+    const timer = window.setTimeout(() => ac.abort(), 25_000);
     try {
       const res = await fetch("/api/tutor", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        signal: ac.signal,
         body: JSON.stringify({
           messages: [{ role: "user", content: question }],
           interfaceLanguage: language,
@@ -351,6 +356,8 @@ export function LessonRunner({
     } catch {
       setDialogueResponse(t("lesson.tutorError"));
     } finally {
+      window.clearTimeout(timer);
+      askInFlight.current = false;
       setLoading(false);
     }
   };

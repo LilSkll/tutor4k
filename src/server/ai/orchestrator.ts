@@ -116,6 +116,7 @@ export async function generateAIResponse(
     retrievedContext,
     learnerContext,
     courseId = "spanish",
+    groundedToLesson = false,
   } = options;
 
   const resolvedLanguage: InterfaceLanguage =
@@ -157,6 +158,7 @@ export async function generateAIResponse(
     lastUserMessage &&
     isOffTopicForCourse(lastUserMessage.content, course.keywords, {
       priorAssistantContent: lastAssistantMessage?.content ?? null,
+      groundedToLesson,
     })
   ) {
     return {

@@ -33,13 +33,18 @@ export async function GET() {
  */
 export async function POST(req: NextRequest) {
   try {
-    const body = (await req.json()) as {
+    let body: {
       messages?: AIMessage[];
       conversationId?: string | null;
       interfaceLanguage?: InterfaceLanguage | null;
       courseId?: string | null;
       grammarTopicSlug?: string | null;
     };
+    try {
+      body = (await req.json()) as typeof body;
+    } catch {
+      return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
+    }
     const messages = body.messages;
 
     if (!Array.isArray(messages) || messages.length === 0) {

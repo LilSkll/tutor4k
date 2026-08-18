@@ -189,6 +189,8 @@ export interface AIGenerateOptions {
   courseId?: string | null;
   /** Markdown TeacherContext block from buildTeacherContext(). */
   learnerContext?: string | null;
+  /** Lesson question about the current chapter — allow unless hard-blocked. */
+  groundedToLesson?: boolean;
 }
 
 // ----- Grammar reference ---------------------------------------------

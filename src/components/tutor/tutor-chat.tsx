@@ -129,10 +129,13 @@ export function TutorChat() {
     setPending(true);
     setStreaming(true);
 
+    const ac = new AbortController();
+    const timer = window.setTimeout(() => ac.abort(), 25_000);
     try {
       const res = await fetch("/api/tutor", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        signal: ac.signal,
         body: JSON.stringify({
           messages: history,
           conversationId,
@@ -170,6 +173,7 @@ export function TutorChat() {
         },
       ]);
     } finally {
+      window.clearTimeout(timer);
       setPending(false);
       setStreaming(false);
     }

@@ -35,6 +35,12 @@ export function GrammarRuleHints({
   const [openIndex, setOpenIndex] = React.useState<number | null>(null);
   const openRule = openIndex !== null ? rules[openIndex] : undefined;
 
+  React.useEffect(() => {
+    if (openIndex !== null && openIndex >= rules.length) {
+      setOpenIndex(null);
+    }
+  }, [openIndex, rules.length]);
+
   if (rules.length === 0) return null;
 
   return (

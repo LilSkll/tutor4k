@@ -289,13 +289,19 @@ async function generateFresh(input: {
   });
   const userPrompt = buildTeacherCoachUserPrompt(evidenceToMarkdown(evidence));
 
-  const ai = await generateWithSystemPrompt({
-    systemPrompt,
-    messages: [{ role: "user", content: userPrompt }],
-    temperature: 0.35,
-    maxTokens: 1100,
-    interfaceLanguage: input.locale,
-  });
+  let ai;
+  try {
+    ai = await generateWithSystemPrompt({
+      systemPrompt,
+      messages: [{ role: "user", content: userPrompt }],
+      temperature: 0.35,
+      maxTokens: 1100,
+      interfaceLanguage: input.locale,
+    });
+  } catch (err) {
+    console.warn("[teacher-ai] coach failed:", (err as Error).message);
+    throw new Error("AI_UNAVAILABLE");
+  }
 
   if (ai.model === "none" || ai.model === "unavailable") {
     throw new Error(ai.content || "AI_UNAVAILABLE");
