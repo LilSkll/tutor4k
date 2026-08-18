@@ -1,6 +1,6 @@
 import { getCourse } from "@/config/courses";
 import { getStaticGrammarContent } from "@/config/grammar-content-localizations";
-import type { GrammarTopic, InterfaceLanguage, Level } from "@/types";
+import type { InterfaceLanguage, Level } from "@/types";
 
 export async function getLocalizedGrammarArticle(input: {
   slug: string;
@@ -30,7 +30,7 @@ export async function getLocalizedGrammarArticle(input: {
     return { content: staticContent, source: "static" };
   }
 
-  throw new Error(
-    `No static grammar article for ${input.slug} (${input.interfaceLanguage})`,
-  );
+  // Extra English / IELTS topics are still RU-only. Serve the source article
+  // instead of a 500 so the explorer stays usable until those banks are filled.
+  return { content: topic.content, source: "native" };
 }
