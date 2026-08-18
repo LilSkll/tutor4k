@@ -32,7 +32,17 @@ import { createSupabaseServerClient } from "@/lib/supabase-server";
 import { Suspense } from "react";
 import { EmailConfirmedBanner } from "@/components/auth/email-confirmed-banner";
 
-export default async function DashboardPage() {
+export default async function DashboardPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ confirmed?: string | string[] }>;
+}) {
+  const params = await searchParams;
+  const confirmedRaw = params.confirmed;
+  const showConfirmed =
+    confirmedRaw === "1" ||
+    (Array.isArray(confirmedRaw) && confirmedRaw.includes("1"));
+
   const [profile, progress] = await Promise.all([
     getCurrentProfile(),
     getChapterProgress(),
@@ -202,9 +212,11 @@ export default async function DashboardPage() {
 
   return (
     <div className="page-container space-y-6 md:space-y-8">
-      <Suspense fallback={null}>
-        <EmailConfirmedBanner />
-      </Suspense>
+      {showConfirmed ? (
+        <Suspense fallback={null}>
+          <EmailConfirmedBanner initialVisible />
+        </Suspense>
+      ) : null}
       {/* Header */}
       <div className="flex flex-col gap-1">
         <p className="meta-label">{courseLabel}</p>

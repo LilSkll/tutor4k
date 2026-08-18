@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import nextDynamic from "next/dynamic";
 import {
   ArrowRight,
   BookOpen,
@@ -13,9 +14,19 @@ import {
 } from "lucide-react";
 import { BrandIcon } from "@/components/shared/brand-icon";
 import { translate } from "@/lib/i18n";
-import { getRequestInterfaceLanguage } from "@/lib/request-language";
 import { LegalFooterLinks } from "@/components/legal/legal-footer-links";
-import { ConfirmEmailHashRedirect } from "@/components/auth/confirm-email-hash-redirect";
+
+const ConfirmEmailHashRedirect = nextDynamic(
+  () =>
+    import("@/components/auth/confirm-email-hash-redirect").then(
+      (m) => m.ConfirmEmailHashRedirect,
+    ),
+  { ssr: false },
+);
+
+/** CDN cache — do not read headers()/cookies() here (that forces SSR and ~1s TTFB). */
+export const dynamic = "force-static";
+export const revalidate = 86400;
 
 const btnGhost =
   "inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium h-11 px-4 hover:bg-accent hover:text-accent-foreground";
@@ -39,8 +50,8 @@ const FEATURE_KEYS = [
 
 const LEVELS = ["A1", "A2", "B1", "B2", "C1"] as const;
 
-export default async function LandingPage() {
-  const language = await getRequestInterfaceLanguage();
+export default function LandingPage() {
+  const language = "ru" as const;
   const t = (key: string) => translate(key, language);
 
   return (
@@ -87,16 +98,16 @@ export default async function LandingPage() {
           </Link>
         </div>
 
-        <div className="mt-8 mb-4 flex justify-center">
+        <div className="relative mx-auto mt-8 mb-4 h-64 w-64 shrink-0 overflow-hidden rounded-3xl border-4 border-primary/20 md:h-72 md:w-72">
           <Image
             src="/hippogriff-hero-768.webp"
             alt="Талисман приложения — гиппогриф"
-            width={256}
-            height={256}
+            fill
             priority
+            fetchPriority="high"
             unoptimized
-            sizes="256px"
-            className="w-64 h-64 md:w-72 md:h-72 object-cover rounded-3xl border-4 border-primary/20"
+            sizes="(max-width: 768px) 256px, 288px"
+            className="object-cover"
           />
         </div>
 

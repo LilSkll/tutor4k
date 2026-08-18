@@ -8,7 +8,7 @@ export const inter = Inter({
   subsets: ["latin", "cyrillic"],
   variable: "--font-sans",
   display: "swap",
-  // Nested (app)/(teacher) layouts — avoid root preload of a font auth pages never use.
-  preload: false,
+  // Only imported from (app)/(teacher) layouts — preload there, not on marketing.
+  preload: true,
   adjustFontFallback: true,
 });
