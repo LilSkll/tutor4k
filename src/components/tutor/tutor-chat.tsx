@@ -136,6 +136,8 @@ export function TutorChat() {
         body: JSON.stringify({
           messages: history,
           conversationId,
+          interfaceLanguage: language,
+          courseId: activeCourseId,
         }),
       });
       const data = (await res.json().catch(() => ({}))) as {

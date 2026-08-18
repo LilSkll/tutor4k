@@ -23,7 +23,7 @@ export function buildTeacherCoachSystemPrompt(opts: {
 Course: ${opts.courseTitle} (target language: ${opts.targetLanguage}).
 
 RULES:
-- Write entirely in ${langName}.
+- Write entirely in ${langName}. Every JSON string (summary, weak_topics, recommendations, next_steps) must be in ${langName} — not English unless the interface is English.
 - Address the teacher (formal peer), never the student.
 - Base every claim ONLY on the evidence JSON provided. Do not invent chapters, scores, or mistakes.
 - Be concrete: name grammar/vocab topics, chapter themes, exercise patterns.
@@ -39,7 +39,7 @@ OUTPUT: return ONLY valid JSON (no markdown fences) with this shape:
 }
 
 weak_topics / recommendations / next_steps: 2–5 short items each.
-summary example style: "The student handles Pretérito Perfecto confidently but still confuses Imperfecto. Review chapters covering past narration and assign description drills."`;
+summary example style: write the summary in ${langName}, naming grammar topics as they appear in this course.`;
 }
 
 export function buildTeacherCoachUserPrompt(evidenceMarkdown: string): string {

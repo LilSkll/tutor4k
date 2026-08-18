@@ -397,7 +397,11 @@ function isGrammarTermQuery(q: string): boolean {
 export function isOffTopicForCourse(
   question: string,
   keywords: CourseKeywords,
-  context?: { priorAssistantContent?: string | null },
+  context?: {
+    priorAssistantContent?: string | null;
+    /** Lesson asked about the current chapter topic — allow unless hard-blocked. */
+    groundedToLesson?: boolean;
+  },
 ): boolean {
   const q = question.toLowerCase().trim();
 
@@ -405,6 +409,8 @@ export function isOffTopicForCourse(
 
   // Hard block always wins.
   if (includesAny(q, HARD_OFF_TOPIC)) return true;
+
+  if (context?.groundedToLesson) return false;
 
   // Student answering the tutor's drill / blank / check question.
   if (

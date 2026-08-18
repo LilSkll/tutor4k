@@ -328,15 +328,22 @@ export function LessonRunner({
   };
 
   const askTutor = async () => {
-    const question = dialogueInput.trim();
-    if (!question || loading) return;
+    const question =
+      dialogueInput.trim() ||
+      t("lesson.defaultQuestion", { topic: displayGrammarTitle });
+    if (loading) return;
     setLoading(true);
     setDialogueResponse(null);
     try {
       const res = await fetch("/api/tutor", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: [{ role: "user", content: question }] }),
+        body: JSON.stringify({
+          messages: [{ role: "user", content: question }],
+          interfaceLanguage: language,
+          courseId,
+          grammarTopicSlug: grammarTopicSlug,
+        }),
       });
       if (!res.ok) throw new Error("Failed");
       const data = (await res.json()) as { content?: string };
@@ -732,7 +739,7 @@ export function LessonRunner({
               placeholder={t("lesson.dialoguePlaceholder")}
               onKeyDown={(e) => { if (e.key === "Enter") askTutor(); }}
             />
-            <Button variant="gradient" className="w-full" onClick={askTutor} disabled={loading || !dialogueInput.trim()}>
+            <Button variant="gradient" className="w-full" onClick={askTutor} disabled={loading}>
               {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <MessageSquare className="h-4 w-4" />}
               {loading ? t("lesson.thinking") : t("lesson.askTutor")}
             </Button>

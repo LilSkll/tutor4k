@@ -18,6 +18,7 @@ import { isOffTopicForCourse } from "@/server/ai/prompts/domain-guard";
 import { getOffTopicRefusal } from "@/server/ai/prompts/refusals";
 import { scrubSpanishImperativoLeaks } from "@/server/ai/scrub-conjugation-leaks";
 import { scrubScriptLeaks } from "@/server/ai/scrub-script-leaks";
+import { getInterfaceLanguageName } from "@/server/ai/prompts/interface-language";
 
 // =====================================================================
 // AI Orchestrator
@@ -247,11 +248,12 @@ export async function generateWithSystemPrompt(options: {
 }): Promise<AIResponse> {
   const resolvedLanguage: InterfaceLanguage =
     options.interfaceLanguage ?? "en";
+  const languageLock = `\n\nLANGUAGE LOCK: Write the entire reply in ${getInterfaceLanguageName(resolvedLanguage)}. Do not switch language.`;
   const providerOptions: ProviderCallOptions = {
     messages: options.messages,
     temperature: options.temperature ?? 0.4,
     maxTokens: options.maxTokens ?? 1200,
-    systemPrompt: options.systemPrompt,
+    systemPrompt: `${options.systemPrompt}${languageLock}`,
   };
 
   const chain = buildProviderChain();

@@ -38,6 +38,28 @@ export function resolveGrammarGrounding(input: {
   const content = pickContent(best.topic, lang);
   if (!content.trim()) return null;
 
+  return formatOfficialGrounding(best.topic, lang, content);
+}
+
+/** Force grounding to a chapter's grammar slug (lesson «ask about this topic»). */
+export function groundingForSlug(input: {
+  course: CourseConfig;
+  slug: string;
+  interfaceLanguage?: InterfaceLanguage;
+}): string | null {
+  const topic = input.course.getGrammarTopic(input.slug);
+  if (!topic) return null;
+  const lang = input.interfaceLanguage ?? "ru";
+  const content = pickContent(topic, lang);
+  if (!content.trim()) return null;
+  return formatOfficialGrounding(topic, lang, content);
+}
+
+function formatOfficialGrounding(
+  topic: GrammarTopic,
+  lang: InterfaceLanguage,
+  content: string,
+): string {
   const clipped = content.length > 3500 ? `${content.slice(0, 3500).trim()}…` : content;
   const iface =
     lang === "ru"
@@ -48,10 +70,10 @@ export function resolveGrammarGrounding(input: {
           ? "German"
           : "English";
 
-  const topicTitle = getGrammarTopicTitle(best.topic, lang);
+  const topicTitle = getGrammarTopicTitle(topic, lang);
 
   return `# OFFICIAL COURSE GRAMMAR (COPY FORMS EXACTLY — DO NOT INVENT)
-Topic: ${topicTitle} (${best.topic.slug})
+Topic: ${topicTitle} (${topic.slug})
 Student interface language: ${iface} (${lang}).
 Teach and explain ONLY in ${iface}. Do NOT insert glosses from other interface languages (no Russian if interface is English, etc.).
 Never insert Chinese/Japanese/Korean characters into explanations.

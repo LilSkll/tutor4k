@@ -26,6 +26,16 @@ import type {
 import { normalizeAnswer } from "@/lib/normalize-answer";
 import { recordStudySession } from "@/server/actions/data";
 
+function asInterfaceLanguage(raw: unknown): InterfaceLanguage | null {
+  if (raw === "ru" || raw === "en" || raw === "es" || raw === "de") return raw;
+  return null;
+}
+
+function asCourseId(raw: unknown): string | null {
+  if (raw === "spanish" || raw === "english") return raw;
+  return null;
+}
+
 // =====================================================================
 // AI Tutor chat — server action (streamed back to client in one payload)
 // =====================================================================
@@ -33,6 +43,12 @@ import { recordStudySession } from "@/server/actions/data";
 export async function sendTutorMessage(input: {
   messages: AIMessage[];
   conversationId?: string | null;
+  /** Live UI language — prefer over a stale profile row. */
+  interfaceLanguage?: InterfaceLanguage | null;
+  /** Active course from the client (lesson / tutor page). */
+  courseId?: string | null;
+  /** Chapter grammar slug: ground the reply in that article. */
+  grammarTopicSlug?: string | null;
 }): Promise<{
   content: string;
   provider: string;
@@ -69,7 +85,12 @@ export async function sendTutorMessage(input: {
     }
   }
 
-  const resolvedCourseId = courseId ?? "spanish";
+  const fromUi = asInterfaceLanguage(input.interfaceLanguage);
+  if (fromUi) language = fromUi;
+
+  const fromClientCourse = asCourseId(input.courseId);
+  const resolvedCourseId = fromClientCourse ?? courseId ?? "spanish";
+  const lessonSlug = input.grammarTopicSlug?.trim() || null;
 
   // TeacherContext — real curriculum memory for every reply.
   let learnerPromptBlock: string | null | undefined = undefined;
@@ -147,6 +168,7 @@ export async function sendTutorMessage(input: {
       if (
         isOffTopicForCourse(lastUser.content, course.keywords, {
           priorAssistantContent: lastAssistant?.content ?? null,
+          groundedToLesson: Boolean(lessonSlug),
         })
       ) {
         const refusal = getOffTopicRefusal(course.titleNative, language);
@@ -186,7 +208,7 @@ export async function sendTutorMessage(input: {
       const { isGrammarExplainQuery } = await import(
         "@/server/ai/grammar-grounding"
       );
-      skipFaqCache = isGrammarExplainQuery(lastUser.content);
+      skipFaqCache = isGrammarExplainQuery(lastUser.content) || Boolean(lessonSlug);
     } catch {
       skipFaqCache = false;
     }
@@ -232,14 +254,21 @@ export async function sendTutorMessage(input: {
       const course = await getCourse(resolvedCourseId);
       const {
         resolveGrammarGrounding,
+        groundingForSlug,
         queryMentionsImperativo,
         spanishImperativoQuickLock,
       } = await import("@/server/ai/grammar-grounding");
-      grammarGrounding = resolveGrammarGrounding({
-        course,
-        query: lastUser.content,
-        interfaceLanguage: language,
-      });
+      grammarGrounding = lessonSlug
+        ? groundingForSlug({
+            course,
+            slug: lessonSlug,
+            interfaceLanguage: language,
+          })
+        : resolveGrammarGrounding({
+            course,
+            query: lastUser.content,
+            interfaceLanguage: language,
+          });
 
       // Grammar explains: prefer the static article only (smaller prompt,
       // reliable when providers rate-limit). Skip heavy textbook RAG.

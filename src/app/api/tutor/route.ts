@@ -3,7 +3,12 @@ import {
   getTutorSessionOpening,
   sendTutorMessage,
 } from "@/server/actions/ai";
-import type { AIMessage } from "@/types";
+import type { AIMessage, InterfaceLanguage } from "@/types";
+
+function asInterfaceLanguage(raw: unknown): InterfaceLanguage | null {
+  if (raw === "ru" || raw === "en" || raw === "es" || raw === "de") return raw;
+  return null;
+}
 
 /**
  * GET /api/tutor
@@ -24,14 +29,16 @@ export async function GET() {
 
 /**
  * POST /api/tutor
- * Body: { messages: AIMessage[], conversationId?: string | null }
- * Returns: { content, provider, conversationId }
+ * Body: { messages, conversationId?, interfaceLanguage?, courseId?, grammarTopicSlug? }
  */
 export async function POST(req: NextRequest) {
   try {
     const body = (await req.json()) as {
       messages?: AIMessage[];
       conversationId?: string | null;
+      interfaceLanguage?: InterfaceLanguage | null;
+      courseId?: string | null;
+      grammarTopicSlug?: string | null;
     };
     const messages = body.messages;
 
@@ -45,6 +52,9 @@ export async function POST(req: NextRequest) {
     const result = await sendTutorMessage({
       messages,
       conversationId: body.conversationId ?? null,
+      interfaceLanguage: asInterfaceLanguage(body.interfaceLanguage),
+      courseId: body.courseId ?? null,
+      grammarTopicSlug: body.grammarTopicSlug ?? null,
     });
     return NextResponse.json(result);
   } catch (err) {
