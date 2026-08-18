@@ -9,7 +9,9 @@ export const ENGLISH_GRAMMAR_EXTRA: GrammarTopic[] = [
     level: "A1",
     category: "Артикли",
     summary: "Когда ставить a/an, the и когда артикль не нужен.",
-    content: `## Articles — база
+    content: `> **Путь:** A1. Сначала выбери **a / an / the / ничего** перед существительным.
+
+## Articles — база
 
 ### a / an
 - \`a\` перед согласным звуком: \`a book\`, \`a university\` (/j/)
@@ -74,21 +76,6 @@ export const ENGLISH_GRAMMAR_EXTRA: GrammarTopic[] = [
 
 \`some\` в + ; \`any\` чаще в −/?  
 \`Information\`, \`advice\`, \`furniture\` — обычно **без** -s.`,
-  },
-  {
-    slug: "eng-a2-comparatives",
-    title: "Сравнительная и превосходная степень",
-    titleEs: "Comparatives & superlatives",
-    level: "A2",
-    category: "Прилагательные",
-    summary: "taller than, the tallest, more interesting, irregular forms.",
-    content: `## Comparatives / Superlatives
-
-- Short: \`tall → taller → the tallest\`
-- Long: \`interesting → more / the most interesting\`
-- Irregular: \`good/better/best\`, \`bad/worse/worst\`, \`far/further/furthest\`
-
-\`than\` в сравнении: \`She is taller **than** me.\``,
   },
   {
     slug: "eng-a2-present-perfect-intro",
@@ -187,22 +174,5 @@ Defining (без запятых): \`The teacher **who** helped me…\`
 | can't | почти уверен(а), что нет |
 
 Past: \`must have left\`, \`might have forgotten\`, \`can't have seen\`.`,
-  },
-  {
-    slug: "eng-c1-inversion",
-    title: "Инверсия для эмфазы",
-    titleEs: "Inversion for emphasis",
-    level: "C1",
-    category: "Стилистика",
-    summary: "Never have I…, Not only… but also — exam writing spice.",
-    content: `## Inversion
-
-- \`Never **have I** seen such chaos.\`
-- \`Not only **did she** win, but she also…\`
-- \`Rarely **do we** get snow here.\`
-
-После negative adverbial → вспомогательный глагол перед подлежащим.
-
-> 💡 В IELTS/Cambridge — доза инверсии повышает lexical/grammatical range, но не в каждом абзаце.`,
   },
 ];

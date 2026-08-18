@@ -105,6 +105,34 @@ export const GRAMMAR_CATEGORY: Record<
   "Подготовка к экзамену": {
     "en": "Exam preparation",
     "es": "Preparación de examen"
+  },
+  "Артикли": {
+    "en": "Articles",
+    "es": "Artículos"
+  },
+  "Условные": {
+    "en": "Conditionals",
+    "es": "Condicionales"
+  },
+  "Речь": {
+    "en": "Speech",
+    "es": "Discurso"
+  },
+  "Сложное предложение": {
+    "en": "Complex sentences",
+    "es": "Oración compleja"
+  },
+  "Письмо / IELTS": {
+    "en": "Writing / IELTS",
+    "es": "Escritura / IELTS"
+  },
+  "Письмо / Cambridge": {
+    "en": "Writing / Cambridge",
+    "es": "Escritura / Cambridge"
+  },
+  "Стиль / Exam": {
+    "en": "Style / Exam",
+    "es": "Estilo / Examen"
   }
 };
 
@@ -811,5 +839,81 @@ export const GRAMMAR_TOPIC: Record<
       "title": "Hedging y Understatement",
       "summary": "It could be argued…, not entirely convinced, understatement británico y crítica cortés."
     }
+  },
+  "eng-a1-articles-basics": {
+    "en": { "title": "Articles a/an/the", "summary": "a/an vs the vs zero article; choose by sound, not spelling." },
+    "es": { "title": "Artículos a/an/the", "summary": "a/an vs the vs sin artículo; se elige por el sonido, no por la letra." }
+  },
+  "eng-a1-possessives": {
+    "en": { "title": "Possessives my/your and 's", "summary": "my/your/his… and Saxon genitive: Anna's bag. its ≠ it's." },
+    "es": { "title": "Posesivos my/your y 's", "summary": "my/your/his… y genitivo sajón: Anna's bag. its ≠ it's." }
+  },
+  "eng-a1-can-ability": {
+    "en": { "title": "Can / can't — ability and permission", "summary": "I can swim; Can I…?; Can you help? Bare infinitive after can." },
+    "es": { "title": "Can / can't — habilidad y permiso", "summary": "I can swim; Can I…?; Can you help? Infinitivo sin to." }
+  },
+  "eng-a2-countable": {
+    "en": { "title": "Countable and uncountable", "summary": "many/much, a few/a little, some/any; advice and information have no -s." },
+    "es": { "title": "Contables e incontables", "summary": "many/much, a few/a little, some/any; advice e information sin -s." }
+  },
+  "eng-a2-present-perfect-intro": {
+    "en": { "title": "Present Perfect: just/already/yet", "summary": "have + V3 for experience now; yesterday still takes Past Simple." },
+    "es": { "title": "Present Perfect: just/already/yet", "summary": "have + V3 para experiencia con ahora; yesterday sigue en Past Simple." }
+  },
+  "eng-b1-conditionals-review": {
+    "en": { "title": "Conditionals 0 / 1st / 2nd", "summary": "If + present; if + present → will; if + past → would. If I were you." },
+    "es": { "title": "Condicionales 0 / 1.º / 2.º", "summary": "If + presente; if + presente → will; if + pasado → would. If I were you." }
+  },
+  "eng-b1-reported-speech": {
+    "en": { "title": "Reported speech (basics)", "summary": "say/tell and backshift; questions without do; no shift if still true." },
+    "es": { "title": "Estilo indirecto (base)", "summary": "say/tell y retroceso de tiempos; preguntas sin do; sin cambio si sigue siendo verdad." }
+  },
+  "eng-b1-relative-clauses": {
+    "en": { "title": "Relative clauses who/which/that", "summary": "Defining clauses, no commas; whose; object that can be dropped." },
+    "es": { "title": "Oraciones de relativo who/which/that", "summary": "Defining sin comas; whose; that objeto se puede omitir." }
+  },
+  "eng-b2-passive-advanced": {
+    "en": { "title": "Passive across tenses", "summary": "be + V3 in more tenses; have/get something done for services." },
+    "es": { "title": "Pasiva en todos los tiempos", "summary": "be + V3 en más tiempos; have/get something done para servicios." }
+  },
+  "eng-b2-modals-deduction": {
+    "en": { "title": "Modals of deduction", "summary": "must/might/can't for how sure you are; must have left in the past." },
+    "es": { "title": "Modales de deducción", "summary": "must/might/can't para el grado de certeza; must have left en el pasado." }
+  },
+  "eng-ielts-letter-informal": {
+    "en": { "title": "IELTS GT: informal letter", "summary": "Friend letter: 4 blocks, ~150 words, all three bullets, informal register." },
+    "es": { "title": "IELTS GT: carta informal", "summary": "Carta a un amigo: 4 bloques, ~150 palabras, tres bullets, registro informal." }
+  },
+  "eng-ielts-letter-formal": {
+    "en": { "title": "IELTS GT: formal letter", "summary": "Complaint/enquiry: Yours faithfully vs sincerely, 5 blocks, ~150 words." },
+    "es": { "title": "IELTS GT: carta formal", "summary": "Queja/consulta: Yours faithfully vs sincerely, 5 bloques, ~150 palabras." }
+  },
+  "eng-ielts-essay-structure": {
+    "en": { "title": "IELTS Academic: essay structure", "summary": "Task 2: 4 paragraphs, 250+ words, match the question type, no new ideas in the conclusion." },
+    "es": { "title": "IELTS Academic: estructura del essay", "summary": "Task 2: 4 párrafos, 250+ palabras, responder al tipo de pregunta, sin ideas nuevas en la conclusión." }
+  },
+  "eng-ielts-essay-cohesion": {
+    "en": { "title": "IELTS: cohesion", "summary": "Linkers by function, referencing, one idea per paragraph — not a stack of Moreover." },
+    "es": { "title": "IELTS: cohesión", "summary": "Linkers por función, referencing, una idea por párrafo — no una pila de Moreover." }
+  },
+  "eng-ielts-task1-report": {
+    "en": { "title": "IELTS Academic Task 1: graphs", "summary": "Paraphrase, overview, key features; trend language; ~150 words; no speculation." },
+    "es": { "title": "IELTS Academic Task 1: gráficos", "summary": "Paráfrasis, overview, rasgos clave; lenguaje de tendencias; ~150 palabras; sin especular." }
+  },
+  "eng-cambridge-letter-email": {
+    "en": { "title": "Cambridge B2 First: letter and email", "summary": "Informal / formal / semi-formal tone, layout, and CA criteria." },
+    "es": { "title": "Cambridge B2 First: carta y email", "summary": "Tono informal / formal / semi-formal, layout y criterio CA." }
+  },
+  "eng-cambridge-essay-article": {
+    "en": { "title": "Cambridge: essay vs article", "summary": "Different genres: thesis vs hook; notes must all appear; B2/C1 word counts." },
+    "es": { "title": "Cambridge: essay vs article", "summary": "Géneros distintos: tesis vs gancho; todos los notes; volúmenes B2/C1." }
+  },
+  "eng-ielts-opinion-language": {
+    "en": { "title": "Opinion and argumentation language", "summary": "Claim strength, hedging, concession + counter; Band 7+ argument chain." },
+    "es": { "title": "Lenguaje de opinión y argumentación", "summary": "Fuerza del claim, hedging, concesión + contra; cadena Band 7+." }
+  },
+  "eng-cbe-register-shift": {
+    "en": { "title": "Register: chat to formal", "summary": "Informal / neutral / formal columns; WhatsApp test; greeting must match sign-off." },
+    "es": { "title": "Registro: del chat a lo formal", "summary": "Columnas informal / neutral / formal; test WhatsApp; saludo y cierre deben coincidir." }
   }
 };

@@ -334,6 +334,8 @@ Drop -ar / -er / -ir and add an ending **by person**.
 | vosotros | habl**áis** | com**éis** | viv**ís** |
 | ellos / ustedes | habl**an** | com**en** | viv**en** |
 
+Say them whole: \`habláis\`, \`coméis\`, \`vivís\`.
+
 > yo almost always ends in **-o**. In Latin America vosotros is replaced by ustedes (ellos form).
 
 ## When people use it
@@ -381,6 +383,8 @@ Se quita -ar / -er / -ir y se pone la terminación **según quién habla**.
 | nosotros | habl**amos** | com**emos** | viv**imos** |
 | vosotros | habl**áis** | com**éis** | viv**ís** |
 | ellos / ustedes | habl**an** | com**en** | viv**en** |
+
+Enteros: \`habláis\`, \`coméis\`, \`vivís\`.
 
 > yo casi siempre acaba en **-o**. En América vosotros se sustituye por ustedes.
 
@@ -1469,6 +1473,8 @@ Imperative for **tú / usted / nosotros / vosotros / ustedes** matches **present
 | **vosotros** | habl**ad** | com**ed** | viv**id** | — |
 | **ustedes** | habl**en** | com**an** | viv**an** | sean, vayan |
 
+Whole forms: \`hablad\`, \`comed\`, \`vivid\`. Negative vosotros: \`no habléis\`, \`no comáis\`, \`no viváis\`.
+
 > ⚠️ **nosotros**: -AR → **-emos** (\`hablemos\`), -ER/-IR → **-amos** (\`comamos\`, \`vivamos\`). Not like present indicative (\`hablamos\` / \`comemos\`).
 
 ### Negative form (negativo) = Subjuntivo
@@ -1514,6 +1520,8 @@ El imperativo de **tú / usted / nosotros / vosotros / ustedes** coincide con el
 | **nosotros** | habl**emos** | com**amos** | viv**amos** | vamos, demos |
 | **vosotros** | habl**ad** | com**ed** | viv**id** | — |
 | **ustedes** | habl**en** | com**an** | viv**an** | sean, vayan |
+
+Enteros: \`hablad\`, \`comed\`, \`vivid\`. Negación vosotros: \`no habléis\`, \`no comáis\`, \`no viváis\`.
 
 > ⚠️ **nosotros**: -AR → **-emos** (\`hablemos\`), -ER/-IR → **-amos** (\`comamos\`, \`vivamos\`). No es como el presente de indicativo (\`hablamos\` / \`comemos\`).
 

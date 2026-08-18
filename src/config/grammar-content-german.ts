@@ -653,6 +653,8 @@ Die Endung zeigt die Familie:
 | vosotros | habl**áis** | com**éis** | viv**ís** |
 | ellos / ustedes | habl**an** | com**en** | viv**en** |
 
+Ganz: \`habláis\`, \`coméis\`, \`vivís\`.
+
 > yo endet fast immer auf **-o**. In Lateinamerika ersetzt ustedes das vosotros.
 
 ## Wann so
@@ -1229,6 +1231,8 @@ Der Imperativ für **tú / usted / nosotros / vosotros / ustedes** entspricht de
 | **nosotros** | habl**emos** | com**amos** | viv**amos** | vamos, demos |
 | **vosotros** | habl**ad** | com**ed** | viv**id** | — |
 | **ustedes** | habl**en** | com**an** | viv**an** | sean, vayan |
+
+Ganz: \`hablad\`, \`comed\`, \`vivid\`. Verneinung vosotros: \`no habléis\`, \`no comáis\`, \`no viváis\`.
 
 > ⚠️ **nosotros**: -AR → **-emos** (\`hablemos\`), -ER/-IR → **-amos** (\`comamos\`, \`vivamos\`). Nicht wie im Presente de Indicativo (\`hablamos\` / \`comemos\`).
 

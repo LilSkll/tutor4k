@@ -80,11 +80,11 @@ export const ENGLISH_GRAMMAR_EXAM_WRITING: GrammarTopic[] = [
     slug: "eng-ielts-letter-formal",
     title: "IELTS GT: формальное письмо",
     titleEs: "IELTS GT: Formal letter",
-    level: "B1",
+    level: "B2",
     category: "Письмо / IELTS",
     exam: "IELTS",
     summary:
-      "GT Task 1 formal: жалоба, запрос, заявка — usted-эквивалент, Yours faithfully/sincerely, 5 блоков.",
+      "GT Task 1 formal (B2): жалоба, запрос, заявка — Yours faithfully/sincerely, 5 блоков.",
     content: `## IELTS General Training — Formal letter (Task 1)
 
 Пишете **незнакомому** человеку или в организацию: жалоба, запрос информации, заявка, извинение от компании и т.п. Три bullet points обязательны.

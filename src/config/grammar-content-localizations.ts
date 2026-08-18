@@ -1,6 +1,7 @@
 import type { InterfaceLanguage } from "@/types";
 import { SPANISH_GRAMMAR_CONTENT } from "@/config/grammar-content-spanish";
 import { GERMAN_GRAMMAR_CONTENT } from "@/config/grammar-content-german";
+import { ENGLISH_GAP_GRAMMAR_CONTENT } from "@/config/grammar-content-english-gap";
 
 export const GRAMMAR_CONTENT: Partial<
   Record<string, Partial<Record<InterfaceLanguage, string>>>
@@ -1047,6 +1048,7 @@ export function getStaticGrammarContent(
   // GERMAN_GRAMMAR_CONTENT — do not short-circuit on a map that lacks `de`.
   const sources = [
     GRAMMAR_CONTENT[slug],
+    ENGLISH_GAP_GRAMMAR_CONTENT[slug],
     SPANISH_GRAMMAR_CONTENT[slug],
     GERMAN_GRAMMAR_CONTENT[slug],
   ];

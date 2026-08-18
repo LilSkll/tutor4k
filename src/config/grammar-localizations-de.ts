@@ -28,6 +28,13 @@ export const DE_GRAMMAR_CATEGORY: Record<string, string> = {
   "Подготовка к экзамену": "Prüfungsvorbereitung",
   "Подготовка к DELE": "DELE-Vorbereitung",
   Определители: "Bestimmungswörter",
+  Артикли: "Artikel",
+  Условные: "Konditionale",
+  Речь: "Rede",
+  "Сложное предложение": "Komplexe Sätze",
+  "Письмо / IELTS": "Schreiben / IELTS",
+  "Письмо / Cambridge": "Schreiben / Cambridge",
+  "Стиль / Exam": "Stil / Prüfung",
 };
 
 export const DE_GRAMMAR_TOPIC: Record<string, GrammarLocaleFields> = {
@@ -327,6 +334,82 @@ export const DE_GRAMMAR_TOPIC: Record<string, GrammarLocaleFields> = {
     title: "Hedging und Understatement",
     summary:
       "It could be argued…, not entirely convinced, britisches Understatement und höfliche Kritik.",
+  },
+  "eng-a1-articles-basics": {
+    title: "Artikel a/an/the",
+    summary: "a/an vs the vs Nullartikel; nach dem Laut wählen, nicht nach dem Buchstaben.",
+  },
+  "eng-a1-possessives": {
+    title: "Possessiva my/your und 's",
+    summary: "my/your/his… und sächsischer Genitiv. its ≠ it's.",
+  },
+  "eng-a1-can-ability": {
+    title: "Can / can't — Können und Erlaubnis",
+    summary: "I can swim; Can I…?; Can you help? Infinitiv ohne to.",
+  },
+  "eng-a2-countable": {
+    title: "Zählbar und unzählbar",
+    summary: "many/much, a few/a little, some/any; advice und information ohne -s.",
+  },
+  "eng-a2-present-perfect-intro": {
+    title: "Present Perfect: just/already/yet",
+    summary: "have + V3 für Erfahrung mit Jetzt; yesterday bleibt Past Simple.",
+  },
+  "eng-b1-conditionals-review": {
+    title: "Konditionale 0 / 1 / 2",
+    summary: "If + present; if + present → will; if + past → would. If I were you.",
+  },
+  "eng-b1-reported-speech": {
+    title: "Indirekte Rede (Basis)",
+    summary: "say/tell und Zeitverschiebung; Fragen ohne do.",
+  },
+  "eng-b1-relative-clauses": {
+    title: "Relativsätze who/which/that",
+    summary: "Defining ohne Kommas; whose; that als Objekt kann weg.",
+  },
+  "eng-b2-passive-advanced": {
+    title: "Passiv in allen Zeiten",
+    summary: "be + V3; have/get something done für Dienstleistungen.",
+  },
+  "eng-b2-modals-deduction": {
+    title: "Modalverben der Schlussfolgerung",
+    summary: "must/might/can't für Sicherheit; must have left in der Vergangenheit.",
+  },
+  "eng-ielts-letter-informal": {
+    title: "IELTS GT: informeller Brief",
+    summary: "Freundschaftsbrief: 4 Blöcke, ~150 Wörter, drei Bullets, informelles Register.",
+  },
+  "eng-ielts-letter-formal": {
+    title: "IELTS GT: formeller Brief",
+    summary: "Beschwerde/Anfrage: Yours faithfully vs sincerely, 5 Blöcke, ~150 Wörter.",
+  },
+  "eng-ielts-essay-structure": {
+    title: "IELTS Academic: Essay-Struktur",
+    summary: "Task 2: 4 Absätze, 250+ Wörter, Fragetyp treffen, keine neuen Ideen im Schluss.",
+  },
+  "eng-ielts-essay-cohesion": {
+    title: "IELTS: Kohäsion",
+    summary: "Linker nach Funktion, Referencing, eine Idee pro Absatz.",
+  },
+  "eng-ielts-task1-report": {
+    title: "IELTS Academic Task 1: Grafiken",
+    summary: "Paraphrase, Overview, Kernmerkmale; Trendsprache; ~150 Wörter; nicht spekulieren.",
+  },
+  "eng-cambridge-letter-email": {
+    title: "Cambridge B2 First: Brief und E-Mail",
+    summary: "Informell / formell / semi-formell, Layout und CA-Kriterium.",
+  },
+  "eng-cambridge-essay-article": {
+    title: "Cambridge: Essay vs Article",
+    summary: "Verschiedene Genres: These vs Hook; alle Notes; Wortzahlen B2/C1.",
+  },
+  "eng-ielts-opinion-language": {
+    title: "Meinungs- und Argumentationssprache",
+    summary: "Stärke der Behauptung, Hedging, Konzession + Gegenangriff.",
+  },
+  "eng-cbe-register-shift": {
+    title: "Register: vom Chat zum Formalen",
+    summary: "Informell / neutral / formell; WhatsApp-Test; Anrede und Schluss müssen zusammenpassen.",
   },
 };
 

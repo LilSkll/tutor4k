@@ -216,6 +216,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 | vosotros | habl**áis** | com**éis** | viv**ís** |
 | ellos / ustedes | habl**an** | com**en** | viv**en** |
 
+Целиком: \`habláis\`, \`coméis\`, \`vivís\`.
+
 > yo почти всегда заканчивается на **-o**. vosotros в Лат. Америке заменяют на ustedes (форма как ellos).
 
 ## Когда так говорят
@@ -661,6 +663,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 | vosotros | habl**asteis** | com**isteis** |
 | ellos / ustedes | habl**aron** | com**ieron** |
 
+Целиком: \`hablasteis\`, \`comisteis\`, \`vivisteis\`.
+
 ⚠️ У -AR формы yo / él с ударением: habl**é**, habl**ó** — иначе это настоящее (hablo, habla).
 У -AR **hablamos** совпадает с настоящим — смотрите маркер (ayer vs ahora).
 
@@ -939,6 +943,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 | **nosotros** | habl**emos** | com**amos** | viv**amos** | vamos, demos |
 | **vosotros** | habl**ad** | com**ed** | viv**id** | — |
 | **ustedes** | habl**en** | com**an** | viv**an** | sean, vayan |
+
+Целиком: \`hablad\`, \`comed\`, \`vivid\`. Отрицание vosotros: \`no habléis\`, \`no comáis\`, \`no viváis\`.
 
 > ⚠️ **nosotros**: у -AR → **-emos** (\`hablemos\`), у -ER/-IR → **-amos** (\`comamos\`, \`vivamos\`). Это **не** как в presente de indicativo (\`hablamos\` / \`comemos\`).
 
