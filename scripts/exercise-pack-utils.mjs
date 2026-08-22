@@ -66,13 +66,13 @@ export function sb(tokens, answer, instruction, explanation, g, acceptableAnswer
   };
 }
 
-export function pack(mcA, fbA, trA, ecA, sbA) {
+export function pack(mcA, fbA, trA, ecA, sbA, perType = 20) {
   return {
-    multiple_choice: mcA.slice(0, 20),
-    fill_blank: fbA.slice(0, 20),
-    translation: trA.slice(0, 20),
-    error_correction: ecA.slice(0, 20),
-    sentence_building: sbA.slice(0, 20),
+    multiple_choice: mcA.slice(0, perType),
+    fill_blank: fbA.slice(0, perType),
+    translation: trA.slice(0, perType),
+    error_correction: ecA.slice(0, perType),
+    sentence_building: sbA.slice(0, perType),
   };
 }
 
@@ -159,7 +159,7 @@ export function exerciseToSeed(ex, lang = "spanish") {
   return null;
 }
 
-export function chapterFromSeeds(g, topic, seeds, lang = "spanish") {
+export function chapterFromSeeds(g, topic, seeds, lang = "spanish", perType = 20) {
   const mcA = [];
   const fbA = [];
   const trA = [];
@@ -169,7 +169,7 @@ export function chapterFromSeeds(g, topic, seeds, lang = "spanish") {
   const sbSeeds = seeds.filter((s) => Array.isArray(s.tokens) && s.tokens.length >= 3);
   const sbPool = sbSeeds.length > 0 ? sbSeeds : seeds;
 
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < perType; i++) {
     const s = seeds[i % seeds.length];
     const sbSeed = sbPool[i % sbPool.length];
     const n = i + 1;
@@ -271,5 +271,5 @@ export function chapterFromSeeds(g, topic, seeds, lang = "spanish") {
     );
   }
 
-  return pack(mcA, fbA, trA, ecA, sbA);
+  return pack(mcA, fbA, trA, ecA, sbA, perType);
 }

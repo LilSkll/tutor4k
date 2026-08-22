@@ -1,4 +1,8 @@
 import type { StaticExercise } from "@/types";
+import {
+  ENGLISH_C2_THICK_CHAPTERS,
+  ENGLISH_C2_TR_EC_TARGET,
+} from "@/lib/exercise-bank";
 import { expandChapterBank } from "@/config/exercise-banks/helpers";
 import englishPacks from "@/config/exercise-banks/data/english-packs.json";
 
@@ -18,5 +22,8 @@ export function expandEnglishChapterBank(
   chapterSlug: string,
   curated: Draft[],
 ): Draft[] {
-  return expandChapterBank(curated, PACKS[chapterSlug] ?? {});
+  const typeTargets = ENGLISH_C2_THICK_CHAPTERS.has(chapterSlug)
+    ? { translation: ENGLISH_C2_TR_EC_TARGET, error_correction: ENGLISH_C2_TR_EC_TARGET }
+    : undefined;
+  return expandChapterBank(curated, PACKS[chapterSlug] ?? {}, typeTargets);
 }

@@ -87,6 +87,39 @@ const FORCE_REGENERATE = new Set([
 ]);
 const root = path.join(__dirname, "..");
 
+const DEFAULT_TARGET = 20;
+const ENGLISH_C2_TR_EC_TARGET = 30;
+const ENGLISH_C2_THICK = new Set([
+  "eng-ch23-spotlight",
+  "eng-ch24-unspoken",
+  "eng-ch25-between-lines",
+]);
+
+function targetForType(slug, type) {
+  if (
+    ENGLISH_C2_THICK.has(slug) &&
+    (type === "translation" || type === "error_correction")
+  ) {
+    return ENGLISH_C2_TR_EC_TARGET;
+  }
+  return DEFAULT_TARGET;
+}
+
+function draftToPackItem(ex, grammarTopic) {
+  return {
+    type: ex.type,
+    question: ex.question,
+    ...(ex.options ? { options: ex.options } : {}),
+    answer: ex.answer,
+    ...(ex.acceptableAnswers?.length
+      ? { acceptableAnswers: ex.acceptableAnswers }
+      : {}),
+    instruction: ex.instruction,
+    explanation: ex.explanation,
+    grammarTopic: ex.grammarTopic ?? grammarTopic,
+  };
+}
+
 async function loadModules() {
   const { CHAPTERS } = await import("../src/config/chapters.ts");
   const { CHAPTER_EXERCISES } = await import("../src/config/chapter-exercises.ts");
@@ -142,14 +175,7 @@ function curatedForEnglish(
   ];
 }
 
-function buildPackFromCurated(curated, grammarTopic, topicLabel, lang) {
-  const seeds = curated
-    .map((ex) => exerciseToSeed(ex, lang))
-    .filter(Boolean);
-
-  if (seeds.length === 0) return null;
-
-  // Prefer type-diverse seeds: cycle MC, FB, TR, EC, SB first.
+function buildPackFromCurated(curated, grammarTopic, topicLabel, lang, slug) {
   const byType = {
     multiple_choice: [],
     fill_blank: [],
@@ -157,35 +183,74 @@ function buildPackFromCurated(curated, grammarTopic, topicLabel, lang) {
     error_correction: [],
     sentence_building: [],
   };
+  const seen = new Set();
+
   for (const ex of curated) {
-    const seed = exerciseToSeed(ex, lang);
-    if (seed && byType[ex.type]) byType[ex.type].push(seed);
+    if (!byType[ex.type]) continue;
+    const key = `${ex.type}|${ex.question.trim().toLowerCase()}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    byType[ex.type].push(draftToPackItem(ex, grammarTopic));
   }
 
-  const ordered = [
-    ...byType.multiple_choice,
-    ...byType.fill_blank,
-    ...byType.translation,
-    ...byType.error_correction,
-    ...byType.sentence_building,
-  ];
+  const maxTarget = Math.max(
+    DEFAULT_TARGET,
+    ...Object.keys(byType).map((t) => targetForType(slug, t)),
+    ...Object.values(byType).map((arr) => arr.length),
+  );
 
-  const pool = ordered.length >= 5 ? ordered : seeds;
-  return chapterFromSeeds(grammarTopic ?? "review", topicLabel, pool, lang);
+  const seeds = curated
+    .map((ex) => exerciseToSeed(ex, lang))
+    .filter(Boolean);
+  if (seeds.length === 0 && Object.values(byType).every((a) => a.length === 0)) {
+    return null;
+  }
+
+  const templated =
+    seeds.length > 0
+      ? chapterFromSeeds(
+          grammarTopic ?? "review",
+          topicLabel,
+          seeds,
+          lang,
+          maxTarget,
+        )
+      : null;
+
+  for (const type of Object.keys(byType)) {
+    const target = targetForType(slug, type);
+    if (byType[type].length >= target) {
+      byType[type] = byType[type].slice(0, target);
+      continue;
+    }
+    for (const ex of templated?.[type] ?? []) {
+      if (byType[type].length >= target) break;
+      const key = `${ex.type}|${ex.question.trim().toLowerCase()}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      byType[type].push(ex);
+    }
+  }
+
+  return byType;
 }
 
-function mergePack(existing, generated, force = false) {
+function mergePack(existing, generated, slug, force = false) {
+  if (!generated) return existing;
   if (!existing || force) return generated;
 
   const types = Object.keys(generated);
-  const thin = types.some((t) => (existing[t]?.length ?? 0) < 20);
+  const thin = types.some(
+    (t) => (existing[t]?.length ?? 0) < targetForType(slug, t),
+  );
   if (thin) return generated;
 
   const out = { ...existing };
   for (const type of types) {
+    const target = targetForType(slug, type);
     const have = existing[type]?.length ?? 0;
-    if (have >= 20) continue;
-    const need = 20 - have;
+    if (have >= target) continue;
+    const need = target - have;
     const seen = new Set(
       (existing[type] ?? []).map(
         (e) => `${e.type}|${e.question.trim().toLowerCase()}`,
@@ -246,6 +311,7 @@ async function main() {
       ch.grammarTopic,
       ch.titleEs || ch.title,
       "spanish",
+      ch.slug,
     );
     if (!generated) continue;
 
@@ -253,6 +319,7 @@ async function main() {
     spanishPacks[ch.slug] = mergePack(
       spanishPacks[ch.slug],
       generated,
+      ch.slug,
       !SPANISH_KEEP.has(ch.slug) || FORCE_REGENERATE.has(ch.slug),
     );
     const after = JSON.stringify(spanishPacks[ch.slug] ?? {});
@@ -273,6 +340,7 @@ async function main() {
       ch.grammarTopic,
       ch.titleEs || ch.title,
       "english",
+      ch.slug,
     );
     if (!generated) continue;
 
@@ -280,6 +348,7 @@ async function main() {
     englishPacks[ch.slug] = mergePack(
       englishPacks[ch.slug],
       generated,
+      ch.slug,
       !ENGLISH_KEEP.has(ch.slug) || FORCE_REGENERATE.has(ch.slug),
     );
     const after = JSON.stringify(englishPacks[ch.slug] ?? {});

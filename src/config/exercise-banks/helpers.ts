@@ -10,7 +10,10 @@ type Draft = Omit<StaticExercise, "id"> & { id?: string };
 export function expandChapterBank(
   curated: Draft[],
   packs: Partial<Record<ExerciseType, Draft[]>>,
+  typeTargets?: Partial<Record<ExerciseType, number>>,
 ): Draft[] {
+  const targetFor = (type: ExerciseType) =>
+    typeTargets?.[type] ?? TARGET_EXERCISES_PER_TYPE;
   const seen = new Set(
     curated.map((e) => `${e.type}|${e.question.trim().toLowerCase()}`),
   );
@@ -29,7 +32,7 @@ export function expandChapterBank(
   for (const type of Object.keys(byType) as ExerciseType[]) {
     const pack = packs[type] ?? [];
     for (const ex of pack) {
-      if (byType[type].length >= TARGET_EXERCISES_PER_TYPE) break;
+      if (byType[type].length >= targetFor(type)) break;
       const key = `${ex.type}|${ex.question.trim().toLowerCase()}`;
       if (seen.has(key)) continue;
       seen.add(key);

@@ -2437,6 +2437,152 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "It was with great joy that she accepted",
       "instruction": "Manner cleft",
       "explanation": "It was with great joy that…"
+    },
+    {
+      "type": "translation",
+      "question": "Именно из-за тебя мы опоздали.",
+      "answer": "It was because of you that we were late",
+      "instruction": "Reason cleft",
+      "explanation": "It was because of you that…"
+    },
+    {
+      "type": "translation",
+      "question": "То, что удивило всех, — его молчание.",
+      "answer": "What surprised everyone was his silence",
+      "instruction": "Wh-cleft event",
+      "explanation": "What surprised everyone was…"
+    },
+    {
+      "type": "translation",
+      "question": "Я правда не хочу туда ехать.",
+      "answer": "I do not want to go there",
+      "instruction": "Emphatic do negative",
+      "explanation": "I do not want…",
+      "acceptableAnswers": [
+        "I don't want to go there"
+      ]
+    },
+    {
+      "type": "translation",
+      "question": "Именно в этот момент всё изменилось.",
+      "answer": "It was at that moment that everything changed",
+      "instruction": "It-cleft moment",
+      "explanation": "It was at that moment that…"
+    },
+    {
+      "type": "translation",
+      "question": "То, что нужно команде, — ясность.",
+      "answer": "What the team needs is clarity",
+      "instruction": "Wh-cleft need",
+      "explanation": "What the team needs is…"
+    },
+    {
+      "type": "translation",
+      "question": "Именно они предложили решение.",
+      "answer": "It was they who proposed the solution",
+      "instruction": "It-cleft plural",
+      "explanation": "It was they who…",
+      "acceptableAnswers": [
+        "It was them who proposed the solution"
+      ]
+    },
+    {
+      "type": "translation",
+      "question": "То, чего мы добились, — прогресс.",
+      "answer": "What we achieved was progress",
+      "instruction": "Wh-cleft achievement",
+      "explanation": "What we achieved was…"
+    },
+    {
+      "type": "translation",
+      "question": "Я действительно ценю вашу помощь.",
+      "answer": "I do appreciate your help",
+      "instruction": "Emphatic do",
+      "explanation": "I do appreciate…"
+    },
+    {
+      "type": "translation",
+      "question": "Именно поэтому я отказался.",
+      "answer": "It was for that reason that I refused",
+      "instruction": "Reason cleft formal",
+      "explanation": "It was for that reason that…"
+    },
+    {
+      "type": "translation",
+      "question": "Именно здесь началась история.",
+      "answer": "It was here that the story began",
+      "instruction": "Place cleft",
+      "explanation": "It was here that…"
+    },
+    {
+      "type": "error_correction",
+      "question": "It was the manager which approved it.",
+      "answer": "It was the manager who approved it.",
+      "instruction": "It-cleft person",
+      "explanation": "Person → who."
+    },
+    {
+      "type": "error_correction",
+      "question": "What I need are a holiday.",
+      "answer": "What I need is a holiday.",
+      "instruction": "Wh-cleft agreement",
+      "explanation": "What I need is… (singular)."
+    },
+    {
+      "type": "error_correction",
+      "question": "I do likes your idea.",
+      "answer": "I do like your idea.",
+      "instruction": "Emphatic do",
+      "explanation": "do + base verb."
+    },
+    {
+      "type": "error_correction",
+      "question": "It was yesterday when we met.",
+      "answer": "It was yesterday that we met.",
+      "instruction": "It-cleft time",
+      "explanation": "It was yesterday that…"
+    },
+    {
+      "type": "error_correction",
+      "question": "What matters are honesty and trust.",
+      "answer": "What matters is honesty and trust.",
+      "instruction": "Wh-cleft list",
+      "explanation": "What matters is… (singular)."
+    },
+    {
+      "type": "error_correction",
+      "question": "Never I have seen such talent.",
+      "answer": "Never have I seen such talent.",
+      "instruction": "Negative inversion",
+      "explanation": "Never have I… — inversion."
+    },
+    {
+      "type": "error_correction",
+      "question": "Only then I understood.",
+      "answer": "Only then did I understand.",
+      "instruction": "Only inversion",
+      "explanation": "Only then did I…"
+    },
+    {
+      "type": "error_correction",
+      "question": "What she did was to resigned immediately.",
+      "answer": "What she did was resign immediately.",
+      "instruction": "Wh-cleft infinitive",
+      "explanation": "was resign — no «to resigned»."
+    },
+    {
+      "type": "error_correction",
+      "question": "I do not agrees with you.",
+      "answer": "I do not agree with you.",
+      "instruction": "Emphatic do",
+      "explanation": "do + base verb (agree)."
+    },
+    {
+      "type": "error_correction",
+      "question": "It was John who which called.",
+      "answer": "It was John who called.",
+      "instruction": "Double relative",
+      "explanation": "who — one relative pronoun."
     }
   ],
   "eng-ch24-unspoken": [
@@ -2813,6 +2959,216 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "Pass the salt, please. Here you are",
       "instruction": "Dialogue ellipsis",
       "explanation": "Short dialogue"
+    },
+    {
+      "type": "translation",
+      "question": "Ты тоже был там? — Да, был.",
+      "answer": "Were you there too? — Yes, I was",
+      "instruction": "Short answer ellipsis",
+      "explanation": "Yes, I was."
+    },
+    {
+      "type": "translation",
+      "question": "Она может помочь, а я — нет.",
+      "answer": "She can help, but I can't",
+      "instruction": "Modal ellipsis",
+      "explanation": "I can't = I can't help."
+    },
+    {
+      "type": "translation",
+      "question": "Кто хочет чай? — Я.",
+      "answer": "Who wants tea? — I do",
+      "instruction": "Do substitution",
+      "explanation": "I do = I want tea."
+    },
+    {
+      "type": "translation",
+      "question": "Ты видел фильм? — Нет, не видел.",
+      "answer": "Have you seen the film? — No, I haven't",
+      "instruction": "Perfect ellipsis",
+      "explanation": "No, I haven't."
+    },
+    {
+      "type": "translation",
+      "question": "Он работает больше, чем я.",
+      "answer": "He works more than I do",
+      "instruction": "Do substitution",
+      "explanation": "than I do."
+    },
+    {
+      "type": "translation",
+      "question": "Передай соль, пожалуйста. — Вот.",
+      "answer": "Pass the salt, please. — Here you are",
+      "instruction": "Dialogue ellipsis",
+      "explanation": "Short polite exchange."
+    },
+    {
+      "type": "translation",
+      "question": "Ты придёшь? — Боюсь, что нет.",
+      "answer": "Are you coming? — I'm afraid not",
+      "instruction": "Afraid not",
+      "explanation": "I'm afraid not."
+    },
+    {
+      "type": "translation",
+      "question": "Можешь помочь? — Буду рад.",
+      "answer": "Can you help? — I'd be glad to",
+      "instruction": "Glad to ellipsis",
+      "explanation": "I'd be glad to help."
+    },
+    {
+      "type": "translation",
+      "question": "Она говорит по-французски. — И её брат тоже.",
+      "answer": "She speaks French. — So does her brother",
+      "instruction": "So does",
+      "explanation": "So does her brother."
+    },
+    {
+      "type": "translation",
+      "question": "Я тоже не люблю это.",
+      "answer": "I don't like it either. — Neither do I",
+      "instruction": "Neither do I",
+      "explanation": "Neither do I."
+    },
+    {
+      "type": "error_correction",
+      "question": "I love jazz. So I do.",
+      "answer": "I love jazz. So do I.",
+      "instruction": "So do I inversion",
+      "explanation": "So do I — not So I do."
+    },
+    {
+      "type": "error_correction",
+      "question": "I hope no, it will rain.",
+      "answer": "I hope not — it will rain.",
+      "instruction": "Hope not",
+      "explanation": "I hope not — not I hope no."
+    },
+    {
+      "type": "error_correction",
+      "question": "Neither I can swim.",
+      "answer": "Neither can I swim.",
+      "instruction": "Neither inversion",
+      "explanation": "Neither can I — inversion."
+    },
+    {
+      "type": "error_correction",
+      "question": "She runs faster than me do.",
+      "answer": "She runs faster than I do.",
+      "instruction": "Than I do",
+      "explanation": "than I do — formal subject."
+    },
+    {
+      "type": "error_correction",
+      "question": "Would you like tea? I'd love.",
+      "answer": "Would you like tea? I'd love some.",
+      "instruction": "Ellipsis some",
+      "explanation": "I'd love some = some tea."
+    },
+    {
+      "type": "error_correction",
+      "question": "Did anyone call? Yes, someone called.",
+      "answer": "Did anyone call? Yes, someone did.",
+      "instruction": "Auxiliary substitution",
+      "explanation": "someone did — not called."
+    },
+    {
+      "type": "error_correction",
+      "question": "I can't today, but I can tomorrow come.",
+      "answer": "I can't today, but I can tomorrow.",
+      "instruction": "Time ellipsis",
+      "explanation": "I can tomorrow."
+    },
+    {
+      "type": "error_correction",
+      "question": "He said he would come, and he came.",
+      "answer": "He said he would come, and he did.",
+      "instruction": "Do substitution past",
+      "explanation": "he did = he came."
+    },
+    {
+      "type": "error_correction",
+      "question": "Which wine? The red wine one.",
+      "answer": "Which wine? The red one.",
+      "instruction": "One substitution",
+      "explanation": "The red one."
+    },
+    {
+      "type": "error_correction",
+      "question": "Have you finished? Not yet I have.",
+      "answer": "Have you finished? Not yet.",
+      "instruction": "Not yet ellipsis",
+      "explanation": "Not yet."
+    },
+    {
+      "type": "error_correction",
+      "question": "She can help, but I can't help.",
+      "answer": "She can help, but I can't.",
+      "instruction": "Modal ellipsis",
+      "explanation": "I can't — ellipsis of help."
+    },
+    {
+      "type": "error_correction",
+      "question": "Do you want coffee? I do want.",
+      "answer": "Do you want coffee? I do.",
+      "instruction": "Do substitution",
+      "explanation": "I do = I want coffee."
+    },
+    {
+      "type": "error_correction",
+      "question": "Will it work? I expect yes.",
+      "answer": "Will it work? I expect so.",
+      "instruction": "Expect so",
+      "explanation": "I expect so — not yes."
+    },
+    {
+      "type": "error_correction",
+      "question": "I'd rather not to go.",
+      "answer": "I'd rather not go.",
+      "instruction": "Rather not",
+      "explanation": "I'd rather not + base."
+    },
+    {
+      "type": "error_correction",
+      "question": "So do I can swim.",
+      "answer": "So can I swim.",
+      "instruction": "So + modal",
+      "explanation": "So can I — modal matches."
+    },
+    {
+      "type": "error_correction",
+      "question": "Take the blue, not the red one one.",
+      "answer": "Take the blue one, not the red.",
+      "instruction": "One substitution",
+      "explanation": "the blue one."
+    },
+    {
+      "type": "error_correction",
+      "question": "Are you tired? Yes, I am tired.",
+      "answer": "Are you tired? Yes, I am.",
+      "instruction": "Short answer",
+      "explanation": "Yes, I am — ellipsis."
+    },
+    {
+      "type": "error_correction",
+      "question": "She speaks better than he speaks.",
+      "answer": "She speaks better than he does.",
+      "instruction": "Verb substitution",
+      "explanation": "than he does."
+    },
+    {
+      "type": "error_correction",
+      "question": "I don't think so not.",
+      "answer": "I don't think so.",
+      "instruction": "Negative so",
+      "explanation": "I don't think so."
+    },
+    {
+      "type": "error_correction",
+      "question": "I would go if I would could.",
+      "answer": "I would go if I could.",
+      "instruction": "Conditional ellipsis",
+      "explanation": "if I could."
     }
   ],
   "eng-ch25-between-lines": [
@@ -3195,6 +3551,279 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "The situation is rather more complex",
       "instruction": "Rather",
       "explanation": "rather more complex"
+    },
+    {
+      "type": "translation",
+      "question": "Результаты, по-видимому, указывают на связь.",
+      "answer": "The results appear to suggest a link",
+      "instruction": "Hedged reporting",
+      "explanation": "appear to suggest — cautious."
+    },
+    {
+      "type": "translation",
+      "question": "Можно сказать, что политика не сработала.",
+      "answer": "Arguably, the policy has failed",
+      "instruction": "Arguably hedge",
+      "explanation": "Arguably…"
+    },
+    {
+      "type": "translation",
+      "question": "Я не совсем уверен, что согласен.",
+      "answer": "I'm not entirely sure I agree",
+      "instruction": "Soft disagreement",
+      "explanation": "I'm not entirely sure I agree."
+    },
+    {
+      "type": "translation",
+      "question": "Есть риск, что план не увенчается успехом.",
+      "answer": "There is a risk that the plan may not succeed",
+      "instruction": "Formal hedge",
+      "explanation": "There is a risk that…"
+    },
+    {
+      "type": "translation",
+      "question": "Это не идеально, мягко говоря.",
+      "answer": "It's not ideal, to put it mildly",
+      "instruction": "British understatement",
+      "explanation": "not ideal, to put it mildly."
+    },
+    {
+      "type": "translation",
+      "question": "Данные, возможно, подлежат разной интерпретации.",
+      "answer": "The data may be open to interpretation",
+      "instruction": "Hedging certainty",
+      "explanation": "may be open to interpretation."
+    },
+    {
+      "type": "translation",
+      "question": "Вам, возможно, стоит пересмотреть подход.",
+      "answer": "You might want to consider revising your approach",
+      "instruction": "Soft suggestion",
+      "explanation": "might want to consider…"
+    },
+    {
+      "type": "translation",
+      "question": "Это, по-видимому, жизнеспособное решение.",
+      "answer": "This would appear to be a viable solution",
+      "instruction": "Academic hedge",
+      "explanation": "would appear to be…"
+    },
+    {
+      "type": "translation",
+      "question": "Я понимаю вашу точку зрения, но не до конца.",
+      "answer": "I see your point, but I'm not fully convinced",
+      "instruction": "Polite limit",
+      "explanation": "I see your point, but…"
+    },
+    {
+      "type": "translation",
+      "question": "Широко принято, что это так.",
+      "answer": "It is widely accepted that this is the case",
+      "instruction": "Hedging generalisation",
+      "explanation": "It is widely accepted that…"
+    },
+    {
+      "type": "translation",
+      "question": "Строго говоря, это неточно.",
+      "answer": "Strictly speaking, that isn't accurate",
+      "instruction": "Strictly speaking",
+      "explanation": "Strictly speaking…"
+    },
+    {
+      "type": "translation",
+      "question": "В некоторой степени я согласен.",
+      "answer": "To a certain extent, I agree",
+      "instruction": "To a certain extent",
+      "explanation": "To a certain extent…"
+    },
+    {
+      "type": "translation",
+      "question": "Цифры несколько неубедительны.",
+      "answer": "The figures are somewhat inconclusive",
+      "instruction": "Somewhat hedge",
+      "explanation": "somewhat inconclusive."
+    },
+    {
+      "type": "translation",
+      "question": "Я бы не пошёл так далеко.",
+      "answer": "I wouldn't go quite that far",
+      "instruction": "Polite disagreement",
+      "explanation": "wouldn't go quite that far."
+    },
+    {
+      "type": "translation",
+      "question": "Вполне возможно, что мы ошибались.",
+      "answer": "It may well be that we were wrong",
+      "instruction": "May well be",
+      "explanation": "It may well be that…"
+    },
+    {
+      "type": "translation",
+      "question": "Отчёт менее чем однозначен.",
+      "answer": "The report is less than definitive",
+      "instruction": "Understatement",
+      "explanation": "less than definitive."
+    },
+    {
+      "type": "translation",
+      "question": "Можно привести аргументы за обе стороны.",
+      "answer": "One could make a case for either side",
+      "instruction": "Make a case",
+      "explanation": "One could make a case…"
+    },
+    {
+      "type": "translation",
+      "question": "Ситуация несколько сложнее.",
+      "answer": "The situation is rather more complex",
+      "instruction": "Rather hedge",
+      "explanation": "rather more complex."
+    },
+    {
+      "type": "translation",
+      "question": "Есть некоторые основания полагать иное.",
+      "answer": "There is some reason to believe otherwise",
+      "instruction": "Some reason",
+      "explanation": "some reason to believe…"
+    },
+    {
+      "type": "translation",
+      "question": "Я бы не стал называть это провалом.",
+      "answer": "I would hesitate to call it a failure",
+      "instruction": "Hesitate hedge",
+      "explanation": "would hesitate to call…"
+    },
+    {
+      "type": "translation",
+      "question": "Похоже, расходы выросли.",
+      "answer": "It would seem that costs have risen",
+      "instruction": "Soft claim",
+      "explanation": "It would seem that…"
+    },
+    {
+      "type": "translation",
+      "question": "Есть некоторые доказательства в пользу этого.",
+      "answer": "There is some evidence to support this view",
+      "instruction": "Evidence hedge",
+      "explanation": "some evidence to support…"
+    },
+    {
+      "type": "translation",
+      "question": "Можно правдоподобно утверждать обратное.",
+      "answer": "One might plausibly argue otherwise",
+      "instruction": "Might argue",
+      "explanation": "One might plausibly argue…"
+    },
+    {
+      "type": "translation",
+      "question": "Исход отнюдь не предрешён.",
+      "answer": "The outcome is by no means certain",
+      "instruction": "By no means",
+      "explanation": "by no means certain."
+    },
+    {
+      "type": "translation",
+      "question": "Нельзя считать это необоснованным предположением.",
+      "answer": "It is not unreasonable to assume as much",
+      "instruction": "Not unreasonable",
+      "explanation": "not unreasonable to assume…"
+    },
+    {
+      "type": "translation",
+      "question": "В известной степени я разделяю эту точку зрения.",
+      "answer": "To a certain extent, I share that view",
+      "instruction": "To a certain extent",
+      "explanation": "To a certain extent…"
+    },
+    {
+      "type": "translation",
+      "question": "Автор, возможно, не доносит всей правды.",
+      "answer": "The author may not be telling the whole truth",
+      "instruction": "Hedging accusation",
+      "explanation": "may not be telling the whole truth."
+    },
+    {
+      "type": "translation",
+      "question": "Эксперимент, возможно, пострадал от ограничений дизайна.",
+      "answer": "The experiment may have been affected by design limitations",
+      "instruction": "Hedging cause",
+      "explanation": "may have been affected…"
+    },
+    {
+      "type": "translation",
+      "question": "Он, возможно, не совсем подходит для этой роли.",
+      "answer": "He may not be fully suited to the role",
+      "instruction": "Hedging criticism",
+      "explanation": "may not be fully suited…"
+    },
+    {
+      "type": "error_correction",
+      "question": "It could be argue that costs rose.",
+      "answer": "It could be argued that costs rose.",
+      "instruction": "Passive hedge",
+      "explanation": "could be argued."
+    },
+    {
+      "type": "error_correction",
+      "question": "The data tend to proves a pattern.",
+      "answer": "The data tend to suggest a pattern.",
+      "instruction": "Hedging verb",
+      "explanation": "suggest — not prove."
+    },
+    {
+      "type": "error_correction",
+      "question": "I am wonder if you could help.",
+      "answer": "I was wondering if you could help.",
+      "instruction": "Distancing tense",
+      "explanation": "I was wondering."
+    },
+    {
+      "type": "error_correction",
+      "question": "The policy has definitely failed.",
+      "answer": "The policy may have failed.",
+      "instruction": "Hedge strong claim",
+      "explanation": "may have failed."
+    },
+    {
+      "type": "error_correction",
+      "question": "This proves the theory.",
+      "answer": "This would seem to support the theory.",
+      "instruction": "Academic hedge",
+      "explanation": "would seem to support."
+    },
+    {
+      "type": "error_correction",
+      "question": "Everyone knows this is true.",
+      "answer": "It is widely accepted that this is the case.",
+      "instruction": "Hedging generalisation",
+      "explanation": "It is widely accepted…"
+    },
+    {
+      "type": "error_correction",
+      "question": "You must change your approach.",
+      "answer": "You might want to consider changing your approach.",
+      "instruction": "Soft suggestion",
+      "explanation": "might want to consider…"
+    },
+    {
+      "type": "error_correction",
+      "question": "It's a disaster.",
+      "answer": "It's not ideal, to put it mildly.",
+      "instruction": "Understatement",
+      "explanation": "not ideal, to put it mildly."
+    },
+    {
+      "type": "error_correction",
+      "question": "The plan will fail.",
+      "answer": "There is a risk that the plan may not succeed.",
+      "instruction": "Formal hedge",
+      "explanation": "There is a risk that…"
+    },
+    {
+      "type": "error_correction",
+      "question": "I disagree with you completely.",
+      "answer": "I see what you mean, but I'm not sure I'd go that far.",
+      "instruction": "Polite disagreement",
+      "explanation": "I see what you mean, but…"
     }
   ]
 } as const;

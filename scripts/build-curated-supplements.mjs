@@ -4,9 +4,6 @@
  * Writes TS modules imported alongside chapter-exercises + curriculum + packs.
  *
  * Run: npx tsx scripts/build-curated-supplements.mjs
- *
- * NOTE: After running, update eng-ch23-spotlight exerciseTypes in chapters.ts
- * to include translation and error_correction (currently missing those types).
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -832,6 +829,105 @@ const ENGLISH_TOP_UPS = {
   ],
 };
 
+/** Thicker C2 English TR/EC pool (30/type on /exercises). */
+const C2_ENGLISH_THICK = {
+  "eng-ch23-spotlight": [
+    tr("Именно из-за тебя мы опоздали.", "It was because of you that we were late", "Reason cleft", "It was because of you that…"),
+    tr("То, что удивило всех, — его молчание.", "What surprised everyone was his silence", "Wh-cleft event", "What surprised everyone was…"),
+    tr("Я правда не хочу туда ехать.", "I do not want to go there", "Emphatic do negative", "I do not want…", ["I don't want to go there"]),
+    tr("Именно в этот момент всё изменилось.", "It was at that moment that everything changed", "It-cleft moment", "It was at that moment that…"),
+    tr("То, что нужно команде, — ясность.", "What the team needs is clarity", "Wh-cleft need", "What the team needs is…"),
+    tr("Именно они предложили решение.", "It was they who proposed the solution", "It-cleft plural", "It was they who…", ["It was them who proposed the solution"]),
+    tr("То, чего мы добились, — прогресс.", "What we achieved was progress", "Wh-cleft achievement", "What we achieved was…"),
+    tr("Я действительно ценю вашу помощь.", "I do appreciate your help", "Emphatic do", "I do appreciate…"),
+    tr("Именно поэтому я отказался.", "It was for that reason that I refused", "Reason cleft formal", "It was for that reason that…"),
+    tr("Именно здесь началась история.", "It was here that the story began", "Place cleft", "It was here that…"),
+    ec("It was the manager which approved it.", "It was the manager who approved it.", "It-cleft person", "Person → who."),
+    ec("What I need are a holiday.", "What I need is a holiday.", "Wh-cleft agreement", "What I need is… (singular)."),
+    ec("I do likes your idea.", "I do like your idea.", "Emphatic do", "do + base verb."),
+    ec("It was yesterday when we met.", "It was yesterday that we met.", "It-cleft time", "It was yesterday that…"),
+    ec("What matters are honesty and trust.", "What matters is honesty and trust.", "Wh-cleft list", "What matters is… (singular)."),
+    ec("Never I have seen such talent.", "Never have I seen such talent.", "Negative inversion", "Never have I… — inversion."),
+    ec("Only then I understood.", "Only then did I understand.", "Only inversion", "Only then did I…"),
+    ec("What she did was to resigned immediately.", "What she did was resign immediately.", "Wh-cleft infinitive", "was resign — no «to resigned»."),
+    ec("I do not agrees with you.", "I do not agree with you.", "Emphatic do", "do + base verb (agree)."),
+    ec("It was John who which called.", "It was John who called.", "Double relative", "who — one relative pronoun."),
+  ],
+  "eng-ch24-unspoken": [
+    tr("Ты тоже был там? — Да, был.", "Were you there too? — Yes, I was", "Short answer ellipsis", "Yes, I was."),
+    tr("Она может помочь, а я — нет.", "She can help, but I can't", "Modal ellipsis", "I can't = I can't help."),
+    tr("Кто хочет чай? — Я.", "Who wants tea? — I do", "Do substitution", "I do = I want tea."),
+    tr("Ты видел фильм? — Нет, не видел.", "Have you seen the film? — No, I haven't", "Perfect ellipsis", "No, I haven't."),
+    tr("Он работает больше, чем я.", "He works more than I do", "Do substitution", "than I do."),
+    tr("Передай соль, пожалуйста. — Вот.", "Pass the salt, please. — Here you are", "Dialogue ellipsis", "Short polite exchange."),
+    tr("Ты придёшь? — Боюсь, что нет.", "Are you coming? — I'm afraid not", "Afraid not", "I'm afraid not."),
+    tr("Можешь помочь? — Буду рад.", "Can you help? — I'd be glad to", "Glad to ellipsis", "I'd be glad to help."),
+    tr("Она говорит по-французски. — И её брат тоже.", "She speaks French. — So does her brother", "So does", "So does her brother."),
+    tr("Я тоже не люблю это.", "I don't like it either. — Neither do I", "Neither do I", "Neither do I."),
+    ec("I love jazz. So I do.", "I love jazz. So do I.", "So do I inversion", "So do I — not So I do."),
+    ec("I hope no, it will rain.", "I hope not — it will rain.", "Hope not", "I hope not — not I hope no."),
+    ec("Neither I can swim.", "Neither can I swim.", "Neither inversion", "Neither can I — inversion."),
+    ec("She runs faster than me do.", "She runs faster than I do.", "Than I do", "than I do — formal subject."),
+    ec("Would you like tea? I'd love.", "Would you like tea? I'd love some.", "Ellipsis some", "I'd love some = some tea."),
+    ec("Did anyone call? Yes, someone called.", "Did anyone call? Yes, someone did.", "Auxiliary substitution", "someone did — not called."),
+    ec("I can't today, but I can tomorrow come.", "I can't today, but I can tomorrow.", "Time ellipsis", "I can tomorrow."),
+    ec("He said he would come, and he came.", "He said he would come, and he did.", "Do substitution past", "he did = he came."),
+    ec("Which wine? The red wine one.", "Which wine? The red one.", "One substitution", "The red one."),
+    ec("Have you finished? Not yet I have.", "Have you finished? Not yet.", "Not yet ellipsis", "Not yet."),
+    ec("She can help, but I can't help.", "She can help, but I can't.", "Modal ellipsis", "I can't — ellipsis of help."),
+    ec("Do you want coffee? I do want.", "Do you want coffee? I do.", "Do substitution", "I do = I want coffee."),
+    ec("Will it work? I expect yes.", "Will it work? I expect so.", "Expect so", "I expect so — not yes."),
+    ec("I'd rather not to go.", "I'd rather not go.", "Rather not", "I'd rather not + base."),
+    ec("So do I can swim.", "So can I swim.", "So + modal", "So can I — modal matches."),
+    ec("Take the blue, not the red one one.", "Take the blue one, not the red.", "One substitution", "the blue one."),
+    ec("Are you tired? Yes, I am tired.", "Are you tired? Yes, I am.", "Short answer", "Yes, I am — ellipsis."),
+    ec("She speaks better than he speaks.", "She speaks better than he does.", "Verb substitution", "than he does."),
+    ec("I don't think so not.", "I don't think so.", "Negative so", "I don't think so."),
+    ec("I would go if I would could.", "I would go if I could.", "Conditional ellipsis", "if I could."),
+  ],
+  "eng-ch25-between-lines": [
+    tr("Результаты, по-видимому, указывают на связь.", "The results appear to suggest a link", "Hedged reporting", "appear to suggest — cautious."),
+    tr("Можно сказать, что политика не сработала.", "Arguably, the policy has failed", "Arguably hedge", "Arguably…"),
+    tr("Я не совсем уверен, что согласен.", "I'm not entirely sure I agree", "Soft disagreement", "I'm not entirely sure I agree."),
+    tr("Есть риск, что план не увенчается успехом.", "There is a risk that the plan may not succeed", "Formal hedge", "There is a risk that…"),
+    tr("Это не идеально, мягко говоря.", "It's not ideal, to put it mildly", "British understatement", "not ideal, to put it mildly."),
+    tr("Данные, возможно, подлежат разной интерпретации.", "The data may be open to interpretation", "Hedging certainty", "may be open to interpretation."),
+    tr("Вам, возможно, стоит пересмотреть подход.", "You might want to consider revising your approach", "Soft suggestion", "might want to consider…"),
+    tr("Это, по-видимому, жизнеспособное решение.", "This would appear to be a viable solution", "Academic hedge", "would appear to be…"),
+    tr("Я понимаю вашу точку зрения, но не до конца.", "I see your point, but I'm not fully convinced", "Polite limit", "I see your point, but…"),
+    tr("Широко принято, что это так.", "It is widely accepted that this is the case", "Hedging generalisation", "It is widely accepted that…"),
+    tr("Строго говоря, это неточно.", "Strictly speaking, that isn't accurate", "Strictly speaking", "Strictly speaking…"),
+    tr("В некоторой степени я согласен.", "To a certain extent, I agree", "To a certain extent", "To a certain extent…"),
+    tr("Цифры несколько неубедительны.", "The figures are somewhat inconclusive", "Somewhat hedge", "somewhat inconclusive."),
+    tr("Я бы не пошёл так далеко.", "I wouldn't go quite that far", "Polite disagreement", "wouldn't go quite that far."),
+    tr("Вполне возможно, что мы ошибались.", "It may well be that we were wrong", "May well be", "It may well be that…"),
+    tr("Отчёт менее чем однозначен.", "The report is less than definitive", "Understatement", "less than definitive."),
+    tr("Можно привести аргументы за обе стороны.", "One could make a case for either side", "Make a case", "One could make a case…"),
+    tr("Ситуация несколько сложнее.", "The situation is rather more complex", "Rather hedge", "rather more complex."),
+    tr("Есть некоторые основания полагать иное.", "There is some reason to believe otherwise", "Some reason", "some reason to believe…"),
+    tr("Я бы не стал называть это провалом.", "I would hesitate to call it a failure", "Hesitate hedge", "would hesitate to call…"),
+    tr("Похоже, расходы выросли.", "It would seem that costs have risen", "Soft claim", "It would seem that…"),
+    tr("Есть некоторые доказательства в пользу этого.", "There is some evidence to support this view", "Evidence hedge", "some evidence to support…"),
+    tr("Можно правдоподобно утверждать обратное.", "One might plausibly argue otherwise", "Might argue", "One might plausibly argue…"),
+    tr("Исход отнюдь не предрешён.", "The outcome is by no means certain", "By no means", "by no means certain."),
+    tr("Нельзя считать это необоснованным предположением.", "It is not unreasonable to assume as much", "Not unreasonable", "not unreasonable to assume…"),
+    tr("В известной степени я разделяю эту точку зрения.", "To a certain extent, I share that view", "To a certain extent", "To a certain extent…"),
+    tr("Автор, возможно, не доносит всей правды.", "The author may not be telling the whole truth", "Hedging accusation", "may not be telling the whole truth."),
+    tr("Эксперимент, возможно, пострадал от ограничений дизайна.", "The experiment may have been affected by design limitations", "Hedging cause", "may have been affected…"),
+    tr("Он, возможно, не совсем подходит для этой роли.", "He may not be fully suited to the role", "Hedging criticism", "may not be fully suited…"),
+    ec("It could be argue that costs rose.", "It could be argued that costs rose.", "Passive hedge", "could be argued."),
+    ec("The data tend to proves a pattern.", "The data tend to suggest a pattern.", "Hedging verb", "suggest — not prove."),
+    ec("I am wonder if you could help.", "I was wondering if you could help.", "Distancing tense", "I was wondering."),
+    ec("The policy has definitely failed.", "The policy may have failed.", "Hedge strong claim", "may have failed."),
+    ec("This proves the theory.", "This would seem to support the theory.", "Academic hedge", "would seem to support."),
+    ec("Everyone knows this is true.", "It is widely accepted that this is the case.", "Hedging generalisation", "It is widely accepted…"),
+    ec("You must change your approach.", "You might want to consider changing your approach.", "Soft suggestion", "might want to consider…"),
+    ec("It's a disaster.", "It's not ideal, to put it mildly.", "Understatement", "not ideal, to put it mildly."),
+    ec("The plan will fail.", "There is a risk that the plan may not succeed.", "Formal hedge", "There is a risk that…"),
+    ec("I disagree with you completely.", "I see what you mean, but I'm not sure I'd go that far.", "Polite disagreement", "I see what you mean, but…"),
+  ],
+};
+
 // ─── Write output ──────────────────────────────────────────────────────
 
 function writeModule(exportName, fileName, data) {
@@ -848,8 +944,9 @@ function countExercises(data) {
 }
 
 function main() {
-  const spanish = mergeSupplements(SPANISH_CURATED_SUPPLEMENTS, SPANISH_TOP_UPS);
-  const english = mergeSupplements(ENGLISH_CURATED_SUPPLEMENTS, ENGLISH_TOP_UPS);
+  let spanish = mergeSupplements(SPANISH_CURATED_SUPPLEMENTS, SPANISH_TOP_UPS);
+  let english = mergeSupplements(ENGLISH_CURATED_SUPPLEMENTS, ENGLISH_TOP_UPS);
+  english = mergeSupplements(english, C2_ENGLISH_THICK);
   writeModule("SPANISH_CURATED_SUPPLEMENTS", "spanish-curated-supplements", spanish);
   writeModule("ENGLISH_CURATED_SUPPLEMENTS", "english-curated-supplements", english);
 

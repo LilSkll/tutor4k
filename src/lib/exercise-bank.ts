@@ -3,6 +3,15 @@ import type { ExerciseType, GrammarLevel, StaticExercise } from "@/types";
 /** Target depth for the permanent adaptive bank (per type, per chapter). */
 export const TARGET_EXERCISES_PER_TYPE = 20;
 
+/** Thicker TR/EC pool for C2 English chapters on /exercises. */
+export const ENGLISH_C2_TR_EC_TARGET = 30;
+
+export const ENGLISH_C2_THICK_CHAPTERS = new Set([
+  "eng-ch23-spotlight",
+  "eng-ch24-unspoken",
+  "eng-ch25-between-lines",
+]);
+
 /** How many bank items one practice round serves (per type / lesson block). */
 export const SESSION_EXERCISES = 5;
 
