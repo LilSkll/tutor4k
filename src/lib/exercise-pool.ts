@@ -9,6 +9,7 @@ import { isExerciseUsableForLanguage } from "@/lib/exercise-localize";
 import { answersMatch } from "@/lib/normalize-answer";
 import { getCourseLearningProfile } from "@/server/learning/student-profile";
 import { getExerciseProgressMap } from "@/server/learning/exercise-progress";
+import { prepareExerciseForSession } from "@/lib/exercise-options";
 import {
   filterPoolByLevel,
   filterPoolByTypeLevel,
@@ -144,7 +145,7 @@ export async function pickStaticExercise(
   const picked = pickAdaptiveFromCandidates(ranked);
   const chosen = picked ?? ranked[0]?.exercise;
   if (!chosen) return null;
-  return { ...chosen, staticSource: true as const };
+  return prepareExerciseForSession({ ...chosen, staticSource: true as const });
 }
 
 /**
@@ -162,7 +163,9 @@ export async function pickStaticExercises(
     const picked = pickAdaptiveFromCandidates(ranked);
     const chosen = picked ?? ranked[0]?.exercise;
     if (!chosen) break;
-    results.push({ ...chosen, staticSource: true as const });
+    results.push(
+      prepareExerciseForSession({ ...chosen, staticSource: true as const }),
+    );
     ranked = ranked.filter((r) => r.exercise.id !== chosen.id);
   }
 

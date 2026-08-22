@@ -25,6 +25,7 @@ export function QuestionWithGloss({
   const hookLang = useInterfaceLanguage();
   const lang = interfaceLanguage ?? hookLang;
   const { question, gloss } = formatQuestionWithGloss(exercise, lang);
+  if (!question && !gloss) return null;
 
   return (
     <p className={cn("text-lg font-medium", className)}>

@@ -483,12 +483,14 @@ export function LessonRunner({
                       </p>
                     </div>
                   )}
-                  <div className="rounded-lg bg-muted/50 p-4">
-                    <QuestionWithGloss
-                      exercise={ex}
-                      interfaceLanguage={language}
-                    />
-                  </div>
+                  {ex.type !== "sentence_building" ? (
+                    <div className="rounded-lg bg-muted/50 p-4">
+                      <QuestionWithGloss
+                        exercise={ex}
+                        interfaceLanguage={language}
+                      />
+                    </div>
+                  ) : null}
                   {hasOptions ? (
                     <div className="grid gap-2">
                       {ex.options!.map((opt, i) => (

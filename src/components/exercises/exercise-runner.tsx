@@ -755,9 +755,11 @@ function ExerciseCard({
           </div>
         ) : null}
 
-        <div className="rounded-lg bg-muted/50 p-4">
-          <QuestionWithGloss exercise={exercise} interfaceLanguage={interfaceLanguage} />
-        </div>
+        {exercise.type !== "sentence_building" ? (
+          <div className="rounded-lg bg-muted/50 p-4">
+            <QuestionWithGloss exercise={exercise} interfaceLanguage={interfaceLanguage} />
+          </div>
+        ) : null}
 
         {isFreeText && !hasOptions ? (
           <ExerciseFreeTextBlock

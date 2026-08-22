@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import type { GeneratedExercise } from "@/server/actions/ai";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
+import { prepareExerciseForSession } from "@/lib/exercise-options";
 import { pickStaticExercises } from "@/lib/exercise-pool";
 import {
   isExerciseUsableForLanguage,
@@ -223,19 +224,22 @@ async function pickDeleSession(input: {
 
   const exercises: GeneratedExercise[] = shuffle(pickFrom)
     .slice(0, input.count)
-    .map((ex) => ({
-      type: ex.type,
-      level: ex.level,
-      question: ex.question,
-      instruction: localizeExerciseInstruction(ex, input.language),
-      options: ex.options,
-      answer: ex.answer,
-      acceptableAnswers: ex.acceptableAnswers,
-      topic: ex.deleTopic,
-      explanation: ex.explanation,
-      staticSource: true,
-      exerciseId: ex.id,
-    }));
+    .map((ex) => {
+      const prepared = prepareExerciseForSession(ex);
+      return {
+        type: prepared.type,
+        level: prepared.level,
+        question: prepared.question,
+        instruction: localizeExerciseInstruction(prepared, input.language),
+        options: prepared.options,
+        answer: prepared.answer,
+        acceptableAnswers: prepared.acceptableAnswers,
+        topic: ex.deleTopic,
+        explanation: prepared.explanation,
+        staticSource: true,
+        exerciseId: prepared.id,
+      };
+    });
 
   return exercises;
 }

@@ -79,6 +79,11 @@ export function formatQuestionWithGloss(
   >,
   interfaceLanguage: InterfaceLanguage,
 ): { question: string; gloss: string | null } {
+  // Slash-separated token prompts leak the correct word order for tile exercises.
+  if (exercise.type === "sentence_building") {
+    return { question: "", gloss: null };
+  }
+
   return {
     question: exercise.question,
     gloss: getQuestionGloss(exercise, interfaceLanguage),
