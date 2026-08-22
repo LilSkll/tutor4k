@@ -132,7 +132,7 @@ const GENERIC_INSTRUCTION: Record<
  * localized generic instruction for the exercise type.
  */
 export function localizeExerciseInstruction(
-  exercise: Pick<StaticExercise, "type" | "instruction">,
+  exercise: Pick<StaticExercise, "type"> & { instruction?: string },
   interfaceLanguage: InterfaceLanguage,
 ): string {
   const instruction = exercise.instruction?.trim() ?? "";
