@@ -143,7 +143,9 @@ export function ExerciseRunner({
 
   const startRound = React.useCallback(
     async (excludeIds: string[], override?: Partial<RoundConfig>) => {
-      const roundType = override?.type ?? exerciseTypeParam;
+      const roundType =
+        override?.type ??
+        (homeworkAssignmentId != null ? exerciseTypeParam : type);
       const roundLevel = override?.level ?? level;
       const roundCount = override?.count ?? sessionSize;
       const roundDele = override?.exam ?? deleMode;
@@ -188,21 +190,38 @@ export function ExerciseRunner({
         }
         setPhase("answering");
       } catch {
-        toast.error(t("exercises.toastGenerateFail"));
+        toast.error(translate("exercises.toastGenerateFail", language));
         setPhase("config");
       }
     },
     [
+      homeworkAssignmentId,
       exerciseTypeParam,
+      type,
       level,
       sessionSize,
       deleMode,
       activeCourseId,
-      t,
+      language,
     ],
   );
 
+  const startRoundRef = React.useRef(startRound);
+  startRoundRef.current = startRound;
+
+  const hasHomeworkQuery =
+    Boolean(homeworkParams.assignmentId) ||
+    Boolean(homeworkParams.type) ||
+    Boolean(homeworkParams.level) ||
+    homeworkParams.exam;
+
   React.useEffect(() => {
+    if (!hasHomeworkQuery) {
+      setHomeworkAssignmentId(null);
+      homeworkAutoStarted.current = false;
+      return;
+    }
+
     const resolvedType = resolveTypeParam(homeworkParams.type);
     const resolvedLevel = resolveLevelParam(homeworkParams.level, defaultLevel);
     const count = homeworkParams.count ?? SESSION_EXERCISES;
@@ -215,21 +234,14 @@ export function ExerciseRunner({
     if (homeworkParams.exam) setDeleMode(true);
 
     if (homeworkAutoStarted.current) return;
-    if (
-      !homeworkParams.assignmentId &&
-      !homeworkParams.type &&
-      !homeworkParams.level
-    ) {
-      return;
-    }
     homeworkAutoStarted.current = true;
-    void startRound([], {
+    void startRoundRef.current([], {
       type: resolvedType,
       level: resolvedLevel,
       count,
       exam: homeworkParams.exam,
     });
-  }, [homeworkParams, defaultLevel, startRound]);
+  }, [hasHomeworkQuery, homeworkParams, defaultLevel]);
 
   const generate = () => {
     setSeenIds([]);
