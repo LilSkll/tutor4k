@@ -59,7 +59,7 @@ function attachLead(block: string, lead: string): string {
 
 function detachPathFromPairs(block: string): { pairs: string; path: string } {
   const split = block.split(
-    /(?=^>\s*\*\*(?:Путь|Path|Recorrido|Weg):\*\*)/m,
+    /(?=^>\s*\*\*(?:Перед этой темой|Before this topic|Antes de este tema|Vor diesem Thema|Путь|Path|Recorrido|Weg):\*\*)/m,
   );
   if (split.length < 2) return { pairs: block, path: "" };
   return { pairs: split[0].trim(), path: split.slice(1).join("\n\n").trim() };
@@ -91,7 +91,7 @@ export function grammarTheoryPagesFromMarkdown(markdown: string): string[] {
 /**
  * Clickable rule chips: every `##` and `###` with a body.
  * Empty `##` wrappers (only grouping `###`) are skipped.
- * CEFR pair tables stay last; «Путь» stays with the first real rule.
+ * CEFR pair tables stay last; intro note stays with the first real rule.
  */
 export function grammarRulesFromMarkdown(
   markdown: string,

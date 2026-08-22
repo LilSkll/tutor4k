@@ -8,7 +8,7 @@ export const ENGLISH_GAP_GRAMMAR_CONTENT: Partial<
   Record<string, Partial<Record<InterfaceLanguage, string>>>
 > = {
   "eng-a1-articles-basics": {
-    en: `> **Path:** A1. First decide **a / an / the / nothing** before a noun.
+    en: `> **Before this topic:** A1. First decide **a / an / the / nothing** before a noun.
 
 ## Articles — the base
 
@@ -27,7 +27,7 @@ Speaker and listener know which one: \`the sun\`, \`the book on the table\`, \`t
 - Institutions as activities: \`She goes to school.\` / \`He's in hospital.\` (BrE)
 
 > 💡 \`an hour\` but \`a house\` — sound, not spelling.`,
-    es: `> **Recorrido:** A1. Primero elige **a / an / the / nada** delante del nombre.
+    es: `> **Antes de este tema:** A1. Primero elige **a / an / the / nada** delante del nombre.
 
 ## Articles — la base
 
@@ -46,7 +46,7 @@ Hablante y oyente saben de cuál: \`the sun\`, \`the book on the table\`.
 - Institución como actividad: \`She goes to school.\`
 
 > 💡 \`an hour\` pero \`a house\` — el sonido, no la ortografía.`,
-    de: `> **Weg:** A1. Zuerst **a / an / the / nichts** vor dem Nomen.
+    de: `> **Vor diesem Thema:** A1. Zuerst **a / an / the / nichts** vor dem Nomen.
 
 ## Articles — die Basis
 
@@ -68,7 +68,7 @@ Sprecher und Hörer wissen, welche: \`the sun\`, \`the book on the table\`.
   },
 
   "eng-a1-possessives": {
-    en: `> **Path:** A1. Whose thing is it?
+    en: `> **Before this topic:** A1. Whose thing is it?
 
 ## Possessives
 
@@ -85,7 +85,7 @@ No article after them: not \`*the my book\`.
 ### Trap
 \`its\` (of it) ≠ \`it's\` (= it is / it has).
 \`The cat licked **its** paw.\` · \`**It's** raining.\``,
-    es: `> **Recorrido:** A1. ¿De quién es?
+    es: `> **Antes de este tema:** A1. ¿De quién es?
 
 ## Possessives
 
@@ -101,7 +101,7 @@ Sin artículo detrás: no \`*the my book\`.
 
 ### Trampa
 \`its\` (de ello) ≠ \`it's\` (= it is).`,
-    de: `> **Weg:** A1. Wessen Sache?
+    de: `> **Vor diesem Thema:** A1. Wessen Sache?
 
 ## Possessives
 
@@ -120,7 +120,7 @@ Kein Artikel danach: nicht \`*the my book\`.
   },
 
   "eng-a1-can-ability": {
-    en: `> **Path:** A1. Same form \`can\` — three jobs: ability, permission, request.
+    en: `> **Before this topic:** A1. Same form \`can\` — three jobs: ability, permission, request.
 
 ## Can / can't
 
@@ -140,7 +140,7 @@ Kein Artikel danach: nicht \`*the my book\`.
 | Request | \`Can you help me?\` |
 
 > 💡 Politer later: \`Could you…?\``,
-    es: `> **Recorrido:** A1. La misma forma \`can\` — tres usos: habilidad, permiso, petición.
+    es: `> **Antes de este tema:** A1. La misma forma \`can\` — tres usos: habilidad, permiso, petición.
 
 ## Can / can't
 
@@ -160,7 +160,7 @@ Kein Artikel danach: nicht \`*the my book\`.
 | Petición | \`Can you help me?\` |
 
 > 💡 Más cortés luego: \`Could you…?\``,
-    de: `> **Weg:** A1. Dieselbe Form \`can\` — drei Jobs: Können, Erlaubnis, Bitte.
+    de: `> **Vor diesem Thema:** A1. Dieselbe Form \`can\` — drei Jobs: Können, Erlaubnis, Bitte.
 
 ## Can / can't
 
@@ -183,7 +183,7 @@ Kein Artikel danach: nicht \`*the my book\`.
   },
 
   "eng-a2-countable": {
-    en: `> **Path:** A2. You already have a/an. Now: can you count it?
+    en: `> **Before this topic:** A2. You already have a/an. Now: can you count it?
 
 ## Countable vs uncountable
 
@@ -206,7 +206,7 @@ Kein Artikel danach: nicht \`*the my book\`.
 \`information\`, \`advice\`, \`furniture\`, \`news\` — usually **no** -s.
 
 > 💡 \`a lot of\` works with both.`,
-    es: `> **Recorrido:** A2. Ya tienes a/an. Ahora: ¿se puede contar?
+    es: `> **Antes de este tema:** A2. Ya tienes a/an. Ahora: ¿se puede contar?
 
 ## Countable vs uncountable
 
@@ -226,7 +226,7 @@ Kein Artikel danach: nicht \`*the my book\`.
 **Regla:** \`some\` en + ; \`any\` más en − / ?
 
 > 💡 \`a lot of\` vale para ambos.`,
-    de: `> **Weg:** A2. a/an kennt ihr. Jetzt: kann man es zählen?
+    de: `> **Vor diesem Thema:** A2. a/an kennt ihr. Jetzt: kann man es zählen?
 
 ## Countable vs uncountable
 
@@ -249,7 +249,7 @@ Kein Artikel danach: nicht \`*the my book\`.
   },
 
   "eng-a2-comparatives": {
-    en: `> **Path:** A2. Compare two things, then the extreme.
+    en: `> **Before this topic:** A2. Compare two things, then the extreme.
 
 ## Comparatives / Superlatives
 
@@ -260,7 +260,7 @@ Kein Artikel danach: nicht \`*the my book\`.
 Equal: \`as tall as\` · \`This bag is **as** heavy **as** that one.\`
 
 > 💡 Spelling: big → bigger; happy → happier.`,
-    es: `> **Recorrido:** A2. Comparar dos cosas, luego el extremo.
+    es: `> **Antes de este tema:** A2. Comparar dos cosas, luego el extremo.
 
 ## Comparatives / Superlatives
 
@@ -269,7 +269,7 @@ Equal: \`as tall as\` · \`This bag is **as** heavy **as** that one.\`
 - Irregular: \`good/better/best\`, \`bad/worse/worst\`
 
 Igualdad: \`as tall as\`.`,
-    de: `> **Weg:** A2. Zwei Dinge vergleichen, dann das Extrem.
+    de: `> **Vor diesem Thema:** A2. Zwei Dinge vergleichen, dann das Extrem.
 
 ## Comparatives / Superlatives
 
@@ -281,7 +281,7 @@ Gleichheit: \`as tall as\`.`,
   },
 
   "eng-a2-present-perfect-intro": {
-    en: `> **Path:** A2. Past Simple = finished time (\`yesterday\`). Here: a past event **with a now**.
+    en: `> **Before this topic:** A2. Past Simple = finished time (\`yesterday\`). Here: a past event **with a now**.
 
 ## Present Perfect (intro)
 
@@ -296,7 +296,7 @@ Gleichheit: \`as tall as\`.`,
 Do **not** mix with a finished time: \`I went yesterday\` (not \`*I have gone yesterday\`).
 
 > 💡 If you name **when** (yesterday, in 2019) → Past Simple.`,
-    es: `> **Recorrido:** A2. Past Simple = tiempo cerrado (\`yesterday\`). Aquí: pasado **con ahora**.
+    es: `> **Antes de este tema:** A2. Past Simple = tiempo cerrado (\`yesterday\`). Aquí: pasado **con ahora**.
 
 ## Present Perfect (intro)
 
@@ -307,7 +307,7 @@ Do **not** mix with a finished time: \`I went yesterday\` (not \`*I have gone ye
 - \`ever / never\`
 
 Si dices **cuándo** (yesterday) → Past Simple.`,
-    de: `> **Weg:** A2. Past Simple = abgeschlossene Zeit. Hier: Vergangenheit **mit Jetzt**.
+    de: `> **Vor diesem Thema:** A2. Past Simple = abgeschlossene Zeit. Hier: Vergangenheit **mit Jetzt**.
 
 ## Present Perfect (intro)
 
@@ -321,7 +321,7 @@ Wenn **wann** steht (yesterday) → Past Simple.`,
   },
 
   "eng-b1-conditionals-review": {
-    en: `> **Path:** B1. Zero and 1st are real. 2nd is imaginary **now**. 3rd (B2) is imaginary **past**.
+    en: `> **Before this topic:** B1. Zero and 1st are real. 2nd is imaginary **now**. 3rd (B2) is imaginary **past**.
 
 ## Conditionals 0–2
 
@@ -339,7 +339,7 @@ Wenn **wann** steht (yesterday) → Past Simple.`,
 \`If I **were** you…\` is fixed.
 
 > 💡 not \`*If it will rain\`.`,
-    es: `> **Recorrido:** B1. 0 y 1.º son reales. 2.º es imaginario **ahora**. El 3.º (B2) es el pasado irreal.
+    es: `> **Antes de este tema:** B1. 0 y 1.º son reales. 2.º es imaginario **ahora**. El 3.º (B2) es el pasado irreal.
 
 ## Conditionals 0–2
 
@@ -357,7 +357,7 @@ Wenn **wann** steht (yesterday) → Past Simple.`,
 \`If I **were** you…\` es fijo.
 
 > 💡 no \`*If it will rain\`.`,
-    de: `> **Weg:** B1. 0 und 1. sind real. 2. ist irreal **jetzt**. 3. (B2) ist irreal **vergangen**.
+    de: `> **Vor diesem Thema:** B1. 0 und 1. sind real. 2. ist irreal **jetzt**. 3. (B2) ist irreal **vergangen**.
 
 ## Conditionals 0–2
 
@@ -378,7 +378,7 @@ Wenn **wann** steht (yesterday) → Past Simple.`,
   },
 
   "eng-b1-reported-speech": {
-    en: `> **Path:** B1. Someone else's words. Backshift after a **past** reporting verb.
+    en: `> **Before this topic:** B1. Someone else's words. Backshift after a **past** reporting verb.
 
 ## Reported speech (base)
 
@@ -392,7 +392,7 @@ Wenn **wann** steht (yesterday) → Past Simple.`,
 **Rule:** if it is still true, present can stay: \`She said the Earth **is** round.\`
 
 > 💡 \`say\` + (that). \`tell\` + person.`,
-    es: `> **Recorrido:** B1. Palabras de otro. Retroceso de tiempos tras verbo **pasado**.
+    es: `> **Antes de este tema:** B1. Palabras de otro. Retroceso de tiempos tras verbo **pasado**.
 
 ## Reported speech (base)
 
@@ -404,7 +404,7 @@ Wenn **wann** steht (yesterday) → Past Simple.`,
 
 ### Cuándo no hay retroceso
 **Regla:** si sigue siendo verdad: \`She said the Earth **is** round.\``,
-    de: `> **Weg:** B1. Fremde Worte. Zeitverschiebung nach **past** reporting verb.
+    de: `> **Vor diesem Thema:** B1. Fremde Worte. Zeitverschiebung nach **past** reporting verb.
 
 ## Reported speech (base)
 
@@ -419,7 +419,7 @@ Wenn **wann** steht (yesterday) → Past Simple.`,
   },
 
   "eng-b1-relative-clauses": {
-    en: `> **Path:** B1. Stick two facts about the same thing. Defining clauses (no commas) are A2–B1; extra info with commas is B2.
+    en: `> **Before this topic:** B1. Stick two facts about the same thing. Defining clauses (no commas) are A2–B1; extra info with commas is B2.
 
 ## Relative clauses
 
@@ -430,7 +430,7 @@ Wenn **wann** steht (yesterday) → Past Simple.`,
 You can drop the object pronoun: \`The film (that) I saw was great.\`
 
 > 💡 No comma in defining clauses. With commas you cannot use \`that\`.`,
-    es: `> **Recorrido:** B1. Unir dos hechos. Defining (sin comas) = B1; extra con comas = B2.
+    es: `> **Antes de este tema:** B1. Unir dos hechos. Defining (sin comas) = B1; extra con comas = B2.
 
 ## Relative clauses
 
@@ -441,7 +441,7 @@ You can drop the object pronoun: \`The film (that) I saw was great.\`
 Se puede omitir el pronombre objeto: \`The film (that) I saw…\`
 
 > 💡 Sin comas en defining. Con comas no se usa \`that\`.`,
-    de: `> **Weg:** B1. Zwei Fakten verbinden. Defining (ohne Kommas) = B1; Extra mit Kommas = B2.
+    de: `> **Vor diesem Thema:** B1. Zwei Fakten verbinden. Defining (ohne Kommas) = B1; Extra mit Kommas = B2.
 
 ## Relative clauses
 
@@ -455,7 +455,7 @@ Objektpronomen kann weg: \`The film (that) I saw…\`
   },
 
   "eng-b2-passive-advanced": {
-    en: `> **Path:** B2. You know Present/Past passive. Here: more tenses + services you didn't do yourself.
+    en: `> **Before this topic:** B2. You know Present/Past passive. Here: more tenses + services you didn't do yourself.
 
 ## Passive (advanced)
 
@@ -474,7 +474,7 @@ Formula: **be + V3**
 \`She **got** the car **fixed**.\`
 
 > 💡 Name the doer with \`by\` only if it matters: \`written **by** Orwell\`.`,
-    es: `> **Recorrido:** B2. Ya está el pasivo simple. Aquí: más tiempos + servicios.
+    es: `> **Antes de este tema:** B2. Ya está el pasivo simple. Aquí: más tiempos + servicios.
 
 ## Passive (advanced)
 
@@ -486,7 +486,7 @@ Formula: **be + V3**
 
 ### have something done
 \`I **had** my hair **cut**.\` — un servicio, no lo hice yo.`,
-    de: `> **Weg:** B2. Einfaches Passiv kennt ihr. Hier: mehr Zeiten + Dienstleistungen.
+    de: `> **Vor diesem Thema:** B2. Einfaches Passiv kennt ihr. Hier: mehr Zeiten + Dienstleistungen.
 
 ## Passive (advanced)
 
@@ -501,7 +501,7 @@ Formula: **be + V3**
   },
 
   "eng-b2-modals-deduction": {
-    en: `> **Path:** B2. Not obligation (\`must\` = have to). Here: **how sure** you are.
+    en: `> **Before this topic:** B2. Not obligation (\`must\` = have to). Here: **how sure** you are.
 
 ## Modals of deduction
 
@@ -512,7 +512,7 @@ Formula: **be + V3**
 | can't | almost sure no | \`That **can't be** true.\` | \`He **can't have seen** us.\` |
 
 > 💡 \`must\` here ≠ obligation. Obligation: \`You must wear a seatbelt.\` Deduction: \`The lights are on — she must be in.\``,
-    es: `> **Recorrido:** B2. No es obligación. Aquí: **qué tan seguro** estás.
+    es: `> **Antes de este tema:** B2. No es obligación. Aquí: **qué tan seguro** estás.
 
 ## Modals of deduction
 
@@ -523,7 +523,7 @@ Formula: **be + V3**
 | can't | casi seguro que no | \`can't be true\` | \`can't have seen\` |
 
 > 💡 Deducción ≠ obligación.`,
-    de: `> **Weg:** B2. Nicht Pflicht. Hier: **wie sicher** bist du.
+    de: `> **Vor diesem Thema:** B2. Nicht Pflicht. Hier: **wie sicher** bist du.
 
 ## Modals of deduction
 
@@ -537,7 +537,7 @@ Formula: **be + V3**
   },
 
   "eng-c1-inversion": {
-    en: `> **Path:** C1. Same grammar as emphasis: negative adverbial → auxiliary before the subject.
+    en: `> **Before this topic:** C1. Same grammar as emphasis: negative adverbial → auxiliary before the subject.
 
 ## Inversion for emphasis
 
@@ -549,7 +549,7 @@ Formula: **be + V3**
 After a negative / restrictive phrase at the front: **aux + subject + verb**.
 
 > 💡 In IELTS/Cambridge a little inversion raises range — not in every paragraph.`,
-    es: `> **Recorrido:** C1. Adverbio negativo al frente → auxiliar antes del sujeto.
+    es: `> **Antes de este tema:** C1. Adverbio negativo al frente → auxiliar antes del sujeto.
 
 ## Inversion
 
@@ -558,7 +558,7 @@ After a negative / restrictive phrase at the front: **aux + subject + verb**.
 - \`Rarely **do we** get snow here.\`
 
 > 💡 Una dosis en el examen sube el rango; no en cada párrafo.`,
-    de: `> **Weg:** C1. Negatives Adverb vorn → Hilfsverb vor dem Subjekt.
+    de: `> **Vor diesem Thema:** C1. Negatives Adverb vorn → Hilfsverb vor dem Subjekt.
 
 ## Inversion
 
@@ -570,7 +570,7 @@ After a negative / restrictive phrase at the front: **aux + subject + verb**.
   },
 
   "eng-ielts-letter-informal": {
-    en: `> **Path:** B1 writing. Friend / relative. Three bullets must all be covered.
+    en: `> **Before this topic:** B1 writing. Friend / relative. Three bullets must all be covered.
 
 ## IELTS GT — Informal letter (Task 1)
 
@@ -595,7 +595,7 @@ OK: \`Hi\`, contractions, \`Guess what?\`
 Too formal: \`Dear Sir or Madam\`, \`I am writing to inform you that…\`, \`Yours faithfully\`
 
 > 💡 Tick the three bullets before you submit.`,
-    es: `> **Recorrido:** B1 escritura. Amigo / familiar. Los tres bullets son obligatorios.
+    es: `> **Antes de este tema:** B1 escritura. Amigo / familiar. Los tres bullets son obligatorios.
 
 ## IELTS GT — Informal letter (Task 1)
 
@@ -612,7 +612,7 @@ Bien: contractions, \`Guess what?\`
 Demasiado formal: \`Dear Sir or Madam\`, \`Yours faithfully\`
 
 > 💡 Tres ticks antes de entregar.`,
-    de: `> **Weg:** B1 Schreiben. Freund / Familie. Alle drei Bullets müssen drin sein.
+    de: `> **Vor diesem Thema:** B1 Schreiben. Freund / Familie. Alle drei Bullets müssen drin sein.
 
 ## IELTS GT — Informal letter (Task 1)
 
@@ -632,7 +632,7 @@ Zu formell: \`Dear Sir or Madam\`, \`Yours faithfully\`
   },
 
   "eng-ielts-letter-formal": {
-    en: `> **Path:** B2 writing. Unknown person / organisation. Formal from greeting to sign-off.
+    en: `> **Before this topic:** B2 writing. Unknown person / organisation. Formal from greeting to sign-off.
 
 ## IELTS GT — Formal letter (Task 1)
 
@@ -659,7 +659,7 @@ You write to a **stranger** or an organisation: complaint, enquiry, application.
 Forbidden: \`Hi\`, \`Love,\`, slang, \`!!!\`
 
 > 💡 First decide: *Do I know their name?* — that fixes **both** greeting and sign-off.`,
-    es: `> **Recorrido:** B2 escritura. Desconocido / organización. Formal de punta a punta.
+    es: `> **Antes de este tema:** B2 escritura. Desconocido / organización. Formal de punta a punta.
 
 ## IELTS GT — Formal letter (Task 1)
 
@@ -677,7 +677,7 @@ Cierre: \`I look forward to hearing from you.\`
 Prohibido: \`Hi\`, \`Love,\`, slang.
 
 > 💡 ¿Conozco el nombre? Eso decide saludo **y** despedida.`,
-    de: `> **Weg:** B2 Schreiben. Unbekannt / Organisation. Durchgehend formell.
+    de: `> **Vor diesem Thema:** B2 Schreiben. Unbekannt / Organisation. Durchgehend formell.
 
 ## IELTS GT — Formal letter (Task 1)
 
@@ -697,7 +697,7 @@ Verboten: \`Hi\`, \`Love,\`, Slang.
   },
 
   "eng-ielts-essay-structure": {
-    en: `> **Path:** B2. Task 2 is scored on **answering the exact question type**, not on pretty English alone.
+    en: `> **Before this topic:** B2. Task 2 is scored on **answering the exact question type**, not on pretty English alone.
 
 ## IELTS Academic Writing Task 2
 
@@ -719,7 +719,7 @@ Minimum **250 words**. About 40 minutes.
 4. Conclusion — restated position; **no new ideas**
 
 > 💡 On the plan, label the type in one word: *opinion / both / A-D / P-S / 2Q*.`,
-    es: `> **Recorrido:** B2. Task 2 se puntúa por **responder al tipo exacto**, no solo por el estilo.
+    es: `> **Antes de este tema:** B2. Task 2 se puntúa por **responder al tipo exacto**, no solo por el estilo.
 
 ## IELTS Academic Task 2
 
@@ -732,7 +732,7 @@ Opinion → posición clara. Discussion → ambas vistas **y** tu opinión. Prob
 Intro (paráfrasis + tesis) → Body 1 → Body 2 → Conclusion **sin ideas nuevas**.
 
 > 💡 Etiqueta el tipo en una palabra antes de escribir.`,
-    de: `> **Weg:** B2. Task 2 bewertet die **genaue Fragetyp-Antwort**, nicht nur schönen Stil.
+    de: `> **Vor diesem Thema:** B2. Task 2 bewertet die **genaue Fragetyp-Antwort**, nicht nur schönen Stil.
 
 ## IELTS Academic Task 2
 
@@ -748,7 +748,7 @@ Intro (Paraphrase + These) → Body 1 → Body 2 → Schluss **ohne neue Ideen**
   },
 
   "eng-ielts-essay-cohesion": {
-    en: `> **Path:** B2. Coherence is not how many times you write \`However\`.
+    en: `> **Before this topic:** B2. Coherence is not how many times you write \`However\`.
 
 ## Coherence & Cohesion
 
@@ -772,7 +772,7 @@ Topic sentence → reason → example → mini-result.
 \`This approach…\` / \`These measures…\` instead of repeating \`people\` five times.
 
 > 💡 Two precise linkers + strong topic sentences beat a Christmas tree of \`Moreover\`.`,
-    es: `> **Recorrido:** B2. La cohesión no es cuántas veces escribes \`However\`.
+    es: `> **Antes de este tema:** B2. La cohesión no es cuántas veces escribes \`However\`.
 
 ## Coherence & Cohesion
 
@@ -783,7 +783,7 @@ Párrafo: idea → razón → ejemplo → mini-resultado.
 Referencing: \`This approach…\` en vez de repetir \`people\`.
 
 > 💡 Dos linkers precisos ganan a una guirnalda de \`Moreover\`.`,
-    de: `> **Weg:** B2. Kohäsion ist nicht, wie oft \`However\` steht.
+    de: `> **Vor diesem Thema:** B2. Kohäsion ist nicht, wie oft \`However\` steht.
 
 ## Coherence & Cohesion
 
@@ -797,7 +797,7 @@ Referencing: \`This approach…\` statt fünfmal \`people\`.
   },
 
   "eng-ielts-task1-report": {
-    en: `> **Path:** B2 Academic. Describe data. No opinion. No “why in real life”.
+    en: `> **Before this topic:** B2 Academic. Describe data. No opinion. No “why in real life”.
 
 ## IELTS Academic Task 1 — Report
 
@@ -818,7 +818,7 @@ Rise: \`rose / increased / climbed\` · Fall: \`fell / declined\` · \`remained 
 Causes outside the chart · future guesses unless asked · listing every number · \`I think this is interesting\`
 
 > 💡 Write the overview first; then pick only numbers that prove it.`,
-    es: `> **Recorrido:** B2 Academic. Describir datos. Sin opinión.
+    es: `> **Antes de este tema:** B2 Academic. Describir datos. Sin opinión.
 
 ## IELTS Academic Task 1
 
@@ -831,7 +831,7 @@ Lenguaje: \`rose / fell / remained stable / peaked at / fluctuated\`.
 Prohibido: causas fuera del gráfico, opinión, listar todos los números.
 
 > 💡 Primero el overview; luego solo las cifras que lo prueban.`,
-    de: `> **Weg:** B2 Academic. Daten beschreiben. Keine Meinung.
+    de: `> **Vor diesem Thema:** B2 Academic. Daten beschreiben. Keine Meinung.
 
 ## IELTS Academic Task 1
 
@@ -847,7 +847,7 @@ Verboten: Ursachen außerhalb der Grafik, Meinung, alle Zahlen auflisten.
   },
 
   "eng-cambridge-letter-email": {
-    en: `> **Path:** B2 First. Tone must match the reader — that is Communicative Achievement.
+    en: `> **Before this topic:** B2 First. Tone must match the reader — that is Communicative Achievement.
 
 ## Cambridge B2 First — Letter / Email
 
@@ -866,7 +866,7 @@ Purpose in sentence one.
 \`Dear Mr Brown,\` · \`Best regards,\` + full name · no \`Love,\`
 
 > 💡 Say aloud: *Who is reading this?* Friend-text vs manager-text.`,
-    es: `> **Recorrido:** B2 First. El tono debe coincidir con el lector (Communicative Achievement).
+    es: `> **Antes de este tema:** B2 First. El tono debe coincidir con el lector (Communicative Achievement).
 
 ## Cambridge B2 First — Letter / Email
 
@@ -877,7 +877,7 @@ Formal: \`Dear Sir or Madam,\` / \`Dear Mr Smith,\` · faithfully / sincerely + 
 Semi-formal: \`Dear Mr Brown,\` · \`Best regards,\`
 
 > 💡 ¿Quién lee esto? El tono entero sigue de ahí.`,
-    de: `> **Weg:** B2 First. Der Ton muss zum Leser passen (Communicative Achievement).
+    de: `> **Vor diesem Thema:** B2 First. Der Ton muss zum Leser passen (Communicative Achievement).
 
 ## Cambridge B2 First — Letter / Email
 
@@ -891,7 +891,7 @@ Semi-formell: \`Dear Mr Brown,\` · \`Best regards,\`
   },
 
   "eng-cambridge-essay-article": {
-    en: `> **Path:** C1 (also used at B2 First). Essay ≠ article. Wrong genre hits Communicative Achievement.
+    en: `> **Before this topic:** C1 (also used at B2 First). Essay ≠ article. Wrong genre hits Communicative Achievement.
 
 ## Essay vs Article
 
@@ -912,7 +912,7 @@ Title → hook → 2–3 paragraphs on the notes → close with advice or a ques
 Word counts: B2 First ≈ 140–190; C1 Advanced ≈ 220–260.
 
 > 💡 Label the draft *ESSAY* or *ARTICLE* and check every sentence against it.`,
-    es: `> **Recorrido:** C1 (también B2 First). Essay ≠ article. El género equivocado golpea Communicative Achievement.
+    es: `> **Antes de este tema:** C1 (también B2 First). Essay ≠ article. El género equivocado golpea Communicative Achievement.
 
 ## Essay vs Article
 
@@ -922,7 +922,7 @@ Article: **título**, gancho, \`Have you ever…?\`, cierre con consejo.
 B2 ≈ 140–190 palabras; C1 ≈ 220–260.
 
 > 💡 Etiqueta el borrador: *ESSAY* o *ARTICLE*.`,
-    de: `> **Weg:** C1 (auch B2 First). Essay ≠ Article. Falsches Genre trifft Communicative Achievement.
+    de: `> **Vor diesem Thema:** C1 (auch B2 First). Essay ≠ Article. Falsches Genre trifft Communicative Achievement.
 
 ## Essay vs Article
 
@@ -935,7 +935,7 @@ B2 ≈ 140–190 Wörter; C1 ≈ 220–260.
   },
 
   "eng-ielts-opinion-language": {
-    en: `> **Path:** C1. Band 7+ is control of **how strong** the claim is, plus a full argument chain.
+    en: `> **Before this topic:** C1. Band 7+ is control of **how strong** the claim is, plus a full argument chain.
 
 ## Opinion & argumentation
 
@@ -953,7 +953,7 @@ Concession + counter: \`While it is true that…, it does not follow that…\` �
 Swap: good → \`beneficial\`; bad → \`detrimental\`; a lot of people → \`a significant proportion of the public\`.
 
 > 💡 One \`detrimental to…\` beats three \`very very bad\`.`,
-    es: `> **Recorrido:** C1. Band 7+ = controlar **qué tan fuerte** es la afirmación + cadena completa.
+    es: `> **Antes de este tema:** C1. Band 7+ = controlar **qué tan fuerte** es la afirmación + cadena completa.
 
 ## Opinion & argumentation
 
@@ -965,7 +965,7 @@ Cadena: tesis → explicación → ejemplo → vuelta al claim.
 Concesión: \`While it is true that…, it does not follow that…\`
 
 > 💡 Un \`detrimental to…\` gana a tres \`very bad\`.`,
-    de: `> **Weg:** C1. Band 7+ = die **Stärke** der Behauptung steuern + ganze Kette.
+    de: `> **Vor diesem Thema:** C1. Band 7+ = die **Stärke** der Behauptung steuern + ganze Kette.
 
 ## Opinion & argumentation
 
@@ -980,7 +980,7 @@ Konzession: \`While it is true that…, it does not follow that…\`
   },
 
   "eng-cbe-register-shift": {
-    en: `> **Path:** B2. Register is a rule, not taste. Wrong tone cuts Communicative Achievement / letter TA.
+    en: `> **Before this topic:** B2. Register is a rule, not taste. Wrong tone cuts Communicative Achievement / letter TA.
 
 ## Register shifting
 
@@ -997,7 +997,7 @@ Same idea: \`I want to know…\` → \`I would like to enquire about…\`
 WhatsApp test: if it could go to a friend unchanged, rewrite for a formal letter.
 
 > 💡 Read only the first and last lines. If they belong to different worlds, fix greeting or close.`,
-    es: `> **Recorrido:** B2. El registro es una regla. El tono equivocado corta Communicative Achievement.
+    es: `> **Antes de este tema:** B2. El registro es una regla. El tono equivocado corta Communicative Achievement.
 
 ## Register
 
@@ -1008,7 +1008,7 @@ Formal: \`Dear Sir or Madam,\` · \`I would appreciate it if…\` · \`Yours fai
 Test WhatsApp: si podría ir a un amigo tal cual, reescribe la carta formal.
 
 > 💡 Lee solo la primera y la última línea. Si son mundos distintos, cámbialas.`,
-    de: `> **Weg:** B2. Register ist eine Regel. Falscher Ton trifft Communicative Achievement.
+    de: `> **Vor diesem Thema:** B2. Register ist eine Regel. Falscher Ton trifft Communicative Achievement.
 
 ## Register
 

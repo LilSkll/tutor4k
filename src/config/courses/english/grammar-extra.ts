@@ -9,7 +9,7 @@ export const ENGLISH_GRAMMAR_EXTRA: GrammarTopic[] = [
     level: "A1",
     category: "Артикли",
     summary: "Когда ставить a/an, the и когда артикль не нужен.",
-    content: `> **Путь:** A1. Сначала выбери **a / an / the / ничего** перед существительным.
+    content: `> **Перед этой темой:** A1. Сначала выбери **a / an / the / ничего** перед существительным.
 
 ## Articles — база
 

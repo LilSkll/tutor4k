@@ -4,7 +4,7 @@ import type { GrammarTopic } from "@/types";
 // Grammar reference data
 // ---------------------------------------------------------------------
 // Curated STATIC topics grouped by CEFR level (A1 → C2).
-// Pedagogy (visible as «Путь» in each article):
+// Pedagogy (visible as «Перед этой темой» in each article):
 //   A1  — decode jargon, persons (я/ты), full exceptions.
 //   A2  — assume Presente + el/la; teach past/future in full.
 //   B1  — assume past tenses; teach mood (subjuntivo) in full, then shorter.
@@ -20,8 +20,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Artículos",
     level: "A1",
     category: "Determinantes",
-    summary: "el/la/los/las и un/una: известное vs какое-то; исключение el agua (не la abuela).",
-    content: `> **Путь:** ser / estar и настоящее (hablo, soy) уже были. Здесь — короткие слова **перед** предметом.
+    summary: "Артикли el, la, un, una: конкретная вещь или «какая-то»; особый случай — el agua (не la abuela).",
+    content: `> **Перед этой темой:** вы уже знаете **ser/estar** и **настоящее время** (hablo, soy). **В этой теме:** артикли перед существительным — **el, la, un, una** — и когда какой ставить.
 
 ## Что такое артикль
 
@@ -122,8 +122,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     level: "A1",
     category: "Глаголы",
     exam: "DELE",
-    summary: "Первая тема: приветствия и два «быть» — кто ты vs как ты сейчас.",
-    content: `> **Путь:** это **первая** грамматика курса. Ниже с нуля: кто говорит (я / ты) и два глагола «быть».
+    summary: "Первая тема: приветствия и два глагола «быть» — ser (кто ты) и estar (как ты сейчас).",
+    content: `> **Перед этой темой:** это **первая** грамматическая тема курса. **В этой теме:** с нуля — местоимения (yo, tú) и два глагола «быть»: **ser** и **estar**.
 
 ## Приветствия и знакомство
 
@@ -213,8 +213,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Presente de Indicativo",
     level: "A1",
     category: "Глаголы",
-    summary: "Настоящее: три типа глаголов (-ar / -er / -ir) и зачем менять окончание.",
-    content: `> **Путь:** soy / estoy уже знакомы. Здесь — как строить **любое** действие в настоящем: hablo, como, vivo.
+    summary: "Настоящее время: три группы глаголов (-ar / -er / -ir) и как меняется окончание.",
+    content: `> **Перед этой темой:** вы уже знаете **soy** и **estoy**. **В этой теме:** как строить любое действие в настоящем времени — hablo, como, vivo.
 
 ## Что такое Presente
 
@@ -271,8 +271,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Género y Número",
     level: "A1",
     category: "Существительные",
-    summary: "Мужской/женский род и «один / много»; исключения problema, mano, agua vs abuela.",
-    content: `> **Путь:** el / la / un / una уже знакомы. Здесь — **почему** la casa, но el problema, и почему не *el abuela*.
+    summary: "Род и число существительных: мужской/женский, один/много; исключения problema, mano, agua.",
+    content: `> **Перед этой темой:** вы уже знаете **el, la, un, una**. **В этой теме:** почему la casa, но el problema — и почему нельзя сказать *el abuela*.
 
 ## Мужской и женский род
 
@@ -309,8 +309,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Números, días y la hora",
     level: "A1",
     category: "Лексика",
-    summary: "Числа 1–100, дни, месяцы и час: el lunes vs los lunes, es la una.",
-    content: `> **Путь:** el / la и род уже были. Здесь — сколько, какой день и **который час** (особый артикль: la una / las dos).
+    summary: "Числа 1–100, дни недели, месяцы и как сказать время: es la una, son las dos.",
+    content: `> **Перед этой темой:** вы уже знаете **el, la** и род существительных. **В этой теме:** числа, дни недели и как сказать время (**la una**, **las dos**).
 
 ## Числа 1–100
 
@@ -414,8 +414,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Preposiciones de Lugar",
     level: "A1",
     category: "Предлоги",
-    summary: "Где и куда: en vs a, и слияния al / del (уже из артиклей).",
-    content: `> **Путь:** estar для места и a + el = al вы уже видели. Здесь — карта предлогов: в, на, под, к.
+    summary: "Предлоги места: en, a, de, sobre, debajo, delante — где что находится.",
+    content: `> **Перед этой темой:** вы уже видели **estar** для места и слияние **a + el = al**. **В этой теме:** карта предлогов — en, a, de, sobre, debajo.
 
 ## Основные предлоги места
 
@@ -447,8 +447,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Verbo Gustar",
     level: "A1",
     category: "Глаголы",
-    summary: "«Нравиться» наоборот: me gusta el café — нравится кофе, не «я нравлюсь».",
-    content: `> **Путь:** настоящее (gusta / gustan) и el / los уже знакомы. Здесь — **порядок как в русском «мне нравится это»**, не «я нравлюсь кофе».
+    summary: "Глагол gustar: «мне нравится кофе» = me gusta el café, а не «я нравлюсь кофе».",
+    content: `> **Перед этой темой:** вы уже знаете настоящее время и артикли. **В этой теме:** глагол **gustar** — в испанском «мне нравится» строится иначе, чем в русском.
 
 ## Gustar — «быть приятным»
 
@@ -488,8 +488,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Expresiones con Tener",
     level: "A1",
     category: "Глаголы",
-    summary: "Состояния через tener: голоден, холодно, лет — не estar.",
-    content: `> **Путь:** ser / estar уже разделены. Здесь — третья схема: **tener + слово** (у меня есть голод / холод / 20 лет).
+    summary: "Выражения с tener: tener hambre, frío, sueño, razón — «у меня голод», не через estar.",
+    content: `> **Перед этой темой:** вы уже различаете **ser** и **estar**. **В этой теме:** частые состояния через **tener** — hambre, frío, sueño, razón.
 
 ## Выражения с tener
 
@@ -526,8 +526,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Oraciones Interrogativas",
     level: "A1",
     category: "Синтаксис",
-    summary: "Вопросы с ¿…?: qué vs cuál, quién, por qué.",
-    content: `> **Путь:** ¿Cómo estás? и ¿Cómo te llamas? уже были. Здесь — остальные вопросительные слова и **¿** в письме.
+    summary: "Вопросительные слова: qué, quién, dónde, cuándo, cómo, por qué и знаки ¿…?",
+    content: `> **Перед этой темой:** вы уже знаете вопросы вроде ¿Cómo estás? и ¿Cómo te llamas?. **В этой теме:** остальные вопросительные слова и как писать **¿?**.
 
 ## Вопросительные слова
 
@@ -562,8 +562,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Verbos Frecuentes",
     level: "A1",
     category: "Глаголы",
-    summary: "Неправильные, которые нужны каждый день: ir, tener, hacer, poder, querer.",
-    content: `> **Путь:** правильные окончания настоящего уже есть. Здесь — **список** самых частых «ломающихся» глаголов, без новой теории.
+    summary: "Частые неправильные глаголы: ir, tener, hacer, poder, querer, decir.",
+    content: `> **Перед этой темой:** вы уже знаете правила настоящего времени. **В этой теме:** самые нужные неправильные глаголы — ir, tener, hacer, poder, querer — без новой теории.
 
 ## Самые нужные неправильные (настоящее)
 
@@ -618,8 +618,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Pretérito Perfecto Compuesto",
     level: "A2",
     category: "Прошедшие времена",
-    summary: "Прошедшее, связанное с сейчас: he comido. Не ayer — там Indefinido.",
-    content: `> **Путь:** Presente (hablo) вы уже спрягаете. Новое — **составное прошедшее**: haber + «сделанный» глагол.
+    summary: "Pretérito Perfecto — прошлое, связанное с «сейчас»: he comido, has ido.",
+    content: `> **Перед этой темой:** вы спрягаете настоящее время (hablo, como). **В этой теме:** **Pretérito Perfecto** — действие в прошлом, которое связано с настоящим: he comido, has ido.
 
 ## Pretérito Perfecto — «уже сделал, и это про сейчас»
 
@@ -671,8 +671,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     level: "A2",
     category: "Прошедшие времена",
     exam: "DELE",
-    summary: "Закрытый факт прошлого: ayer fui. Не путать с «фоном» Imperfecto.",
-    content: `> **Путь:** Perfecto (he comido) — если период ещё «сейчас». Здесь — **вчера / в 2018**: своё окончание, без haber.
+    summary: "Pretérito Indefinido — законченный факт в прошлом: ayer fui, en 2018 viajé.",
+    content: `> **Перед этой темой:** **Perfecto** (he comido) — когда период ещё «открыт». **В этой теме:** **Indefinido** — законченный факт: ayer fui, en 2018 viajé.
 
 ## Pretérito Indefinido — факт в закрытом прошлом
 
@@ -721,8 +721,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     level: "A2",
     category: "Прошедшие времена",
     exam: "DELE",
-    summary: "Фон прошлого: привычки, погода, «когда я был ребёнком».",
-    content: `> **Путь:** Indefinido (ayer fui) — событие. Здесь — **декорации**: как было обычно / в тот момент вокруг.
+    summary: "Pretérito Imperfecto — фон прошлого: привычки, описания, «когда я был ребёнком».",
+    content: `> **Перед этой темой:** **Indefinido** (ayer fui) — отдельное событие. **В этой теме:** **Imperfecto** — фон прошлого: привычки, описания, «когда я был ребёнком».
 
 ## Pretérito Imperfecto — фон прошлого
 
@@ -764,8 +764,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     level: "A2",
     category: "Предлоги",
     exam: "DELE",
-    summary: "para = цель / для кого; por = причина / путь / цена / утром.",
-    content: `> **Путь:** a / de / en уже стоят на местах. Здесь — два предлога, которые оба лезут в перевод «для / за / по».
+    summary: "Para — цель и «для кого»; por — причина, маршрут, цена, время суток.",
+    content: `> **Перед этой темой:** вы уже используете **a, de, en**. **В этой теме:** два частых предлога **para** и **por** — цель, причина, цена, маршрут.
 
 ## POR vs PARA
 
@@ -795,8 +795,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Comparativos y Superlativos",
     level: "A2",
     category: "Прилагательные",
-    summary: "más / menos / tan…como и el más…; mejor, peor, mayor.",
-    content: `> **Путь:** прилагательные согласуются как в «Роде и числе» (blanca / rojos). Здесь — **сравнения**.
+    summary: "Сравнения: más… que, menos… que, tan… como, el más…; mejor, peor, mayor.",
+    content: `> **Перед этой темой:** прилагательные согласуются с родом (blanca, rojos). **В этой теме:** сравнения — más… que, tan… como, el más…
 
 ## Сравнение (comparativos)
 
@@ -849,8 +849,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Futuro Simple",
     level: "A2",
     category: "Будущее время",
-    summary: "Будущее от инфинитива: hablaré. Те же кривые основы, что потом в condicional.",
-    content: `> **Путь:** ближайшее «собираюсь» уже есть: ir a + инфинитив (\`voy a comer\`). Здесь — **простое будущее** одним словом.
+    summary: "Futuro simple — будущее одним словом: hablaré, tendré (не только ir a + infinitivo).",
+    content: `> **Перед этой темой:** «скоро сделаю» через **ir a + infinitivo** (voy a comer). **В этой теме:** **Futuro simple** одним словом — hablaré, tendré.
 
 ## Futuro Simple
 
@@ -902,8 +902,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     level: "B1",
     category: "Наклонения",
     exam: "DELE",
-    summary: "Не факт, а желание/сомнение: quiero que vengas. Indicativo — когда уверен.",
-    content: `> **Путь:** времена (настоящее, прошедшие, будущее) называют **факты**. Новое — **наклонение**: «хочу / сомневаюсь / жаль, что», а не «так есть».
+    summary: "Presente de Subjuntivo — желание, сомнение, эмоция: quiero que vengas.",
+    content: `> **Перед этой темой:** основные времена описывают **факты**. **В этой теме:** **subjuntivo** — когда говорим о желании, сомнении или эмоции (quiero que vengas).
 
 ## Subjuntivo — не другое время, а другой «режим»
 
@@ -950,8 +950,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     level: "B1",
     category: "Наклонения",
     exam: "DELE",
-    summary: "Приказы и просьбы: habla / no hables. Отрицание = тот же subjuntivo.",
-    content: `> **Путь:** формы subjuntivo (hable, comas) только что были. Повелительное **берёт их** почти целиком — отдельно только утвердительные tú и vosotros.
+    summary: "Imperativo — приказы и просьбы: habla, no hables, venga.",
+    content: `> **Перед этой темой:** вы уже знаете формы **subjuntivo** (hable, comas). **В этой теме:** **Imperativo** — приказы и просьбы: habla, no hables.
 
 ## Imperativo
 
@@ -1006,8 +1006,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Modo Condicional",
     level: "B1",
     category: "Наклонения",
-    summary: "«Я бы»: podría, me gustaría. Те же основы, что в Futuro (tendr-, har-).",
-    content: `> **Путь:** Futuro (hablaré, tendré) вы уже собираете. Condicional — **те же основы** + -ía: hablaría, tendría.
+    summary: "Condicional — «я бы» и вежливые просьбы: hablaría, podría, me gustaría.",
+    content: `> **Перед этой темой:** вы уже строите **Futuro** (hablaré, tendré). **В этой теме:** **Condicional** — «я бы» и вежливые просьбы: hablaría, podría.
 
 ## Condicional Simple («я бы / не могли бы вы»)
 
@@ -1049,8 +1049,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Pronombre SE",
     level: "B1",
     category: "Местоимения",
-    summary: "Одно se: возвратное, взаимное, «здесь говорят», случайно разбилось.",
-    content: `> **Путь:** me / te из gustar уже знакомы. Здесь — **se** как отдельный инструмент, не как «себя» в каждом случае.
+    summary: "Местоимение se — пять значений: возвратное, взаимное, безличное, пассивное, «случайно».",
+    content: `> **Перед этой темой:** вы уже знаете **me / te** из gustar. **В этой теме:** местоимение **se** — возвратное, взаимное, безличное и другие значения.
 
 ## Местоимение SE — пять функций, один вид
 
@@ -1085,8 +1085,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Pronombres Relativos",
     level: "B1",
     category: "Местоимения",
-    summary: "Связка двух фраз: que почти всегда; quien — люди; cuyo — чей.",
-    content: `> **Путь:** сложные предложения без новой глагольной формы. Слова-мостики: que, quien, donde.
+    summary: "Относительные местоимения: que, quien, lo que, cuyo, donde — связка двух фраз.",
+    content: `> **Перед этой темой:** вы уже строите сложные предложения. **В этой теме:** слова-связки **que, quien, donde, cuyo** — чтобы соединить две фразы.
 
 ## Относительные местоимения
 
@@ -1125,8 +1125,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Pretérito Pluscuamperfecto",
     level: "B1",
     category: "Прошедшие времена",
-    summary: "Раньше другого прошлого: había salido, когда ты пришёл.",
-    content: `> **Путь:** haber + participio вы знаете из Perfecto (he comido). Здесь haber стоит в **imperfecto**: había comido.
+    summary: "Pluscuamperfecto — «уже было до того»: había comido, cuando llegaste.",
+    content: `> **Перед этой темой:** вы знаете **haber + participio** из Perfecto (he comido). **В этой теме:** **Pluscuamperfecto** — haber в Imperfecto: había comido.
 
 ## Pluscuamperfecto — «уже случилось до того момента»
 
@@ -1166,8 +1166,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Subjuntivo Imperfecto",
     level: "B1",
     category: "Наклонения",
-    summary: "«Если бы»: si tuviera… Вы хотите в прошлом: quería que vinieras.",
-    content: `> **Путь:** настоящий subjuntivo (quiera que vengas) уже есть. Если главная фраза в прошлом или условие нереальное — **hablara / tuviera**.
+    summary: "Imperfecto de Subjuntivo — «если бы» и желания в прошлом: si tuviera, quería que vinieras.",
+    content: `> **Перед этой темой:** вы уже используете **subjuntivo** настоящего (quiera que vengas). **В этой теме:** **Imperfecto de Subjuntivo** — si tuviera, quería que vinieras.
 
 ## Subjuntivo Imperfecto
 
@@ -1210,8 +1210,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Pronombres de Objeto (OD/OI)",
     level: "B1",
     category: "Местоимения",
-    summary: "lo/la = что; le = кому; вместе se lo, не le lo.",
-    content: `> **Путь:** me / te / le из gustar. Здесь те же короткие слова, но **вместо** «книгу / ему»: lo veo, le doy.
+    summary: "Прямое и косвенное дополнение: lo/la = «это», le = «ему/ей», se lo (не le lo).",
+    content: `> **Перед этой темой:** вы знаете **me / te / le** из gustar. **В этой теме:** **lo, la, le** — прямое и косвенное дополнение: lo veo, le doy, se lo digo.
 
 ## Местоимения-дополнения: что? и кому?
 
@@ -1263,8 +1263,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Adverbios",
     level: "B1",
     category: "Наречия",
-    summary: "rápidamente, muy vs mucho; quizás + subjuntivo.",
-    content: `> **Путь:** прилагательные (rápida, fácil) вы согласовываете. Наречие — «как?»: часто **женская форма + mente**.
+    summary: "Наречия: rápidamente (-mente), muy vs mucho; quizás + subjuntivo.",
+    content: `> **Перед этой темой:** вы согласовываете прилагательные (rápida, fácil). **В этой теме:** наречия — «как?» — часто **-mente**: rápidamente, fácilmente.
 
 ## Наречия
 
@@ -1309,8 +1309,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     level: "B2",
     category: "Синтаксис",
     exam: "DELE",
-    summary: "Чужие слова: dijo que vendría. Сдвиг времён только после прошедшего.",
-    content: `> **Путь:** все основные времена и subjuntivo уже в багаже. Здесь — **как они сдвигаются**, когда пересказываете.
+    summary: "Estilo indirecto — передача чужих слов: dijo que vendría; сдвиг времён после прошедшего.",
+    content: `> **Перед этой темой:** вы знаете основные времена и subjuntivo. **В этой теме:** **estilo indirecto** — как пересказать чужие слова: dijo que vendría.
 
 ## Косвенная речь
 
@@ -1354,8 +1354,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Voz Pasiva y Pasiva Refleja",
     level: "B2",
     category: "Синтаксис",
-    summary: "Пассив: fue escrito vs живое se habla. Состояние: está cerrada.",
-    content: `> **Путь:** se venden из темы SE. Здесь — когда ещё **ser + participio**, а когда лучше se.
+    summary: "Voz pasiva — fue escrito; pasiva refleja — se habla español; estado — está cerrada.",
+    content: `> **Перед этой темой:** вы знаете **se** (se venden, se habla). **В этой теме:** **voz pasiva** — ser + participio и когда лучше pasiva refleja.
 
 ## Пассив и se
 
@@ -1399,8 +1399,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Subjuntivo Perfecto y Pluscuamperfecto",
     level: "B2",
     category: "Наклонения",
-    summary: "Те же кнопки subjuntivo, но haya / hubiera + participio.",
-    content: `> **Путь:** правило subjuntivo не новое — только **время**. Настоящее желание о прошлом: haya hablado; нереальное прошлое: hubiera hablado.
+    summary: "Subjuntivo compuesto — haya hablado, hubiera hablado (то же правило, другое время).",
+    content: `> **Перед этой темой:** правило **subjuntivo** вы уже знаете. **В этой теме:** составные формы — **haya hablado**, **hubiera hablado**.
 
 ## Сложные формы Subjuntivo
 
@@ -1443,8 +1443,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Condicional Compuesto",
     level: "B2",
     category: "Наклонения",
-    summary: "Три si: llueve / lloviera / hubiera llovido + соответствующий хвост.",
-    content: `> **Путь:** si tuviera, saldría уже было. Здесь хвост в прошлом: **habría** + participio, и сводная таблица трёх si.
+    summary: "Condicional compuesto — habría ido; три типа si: real, irreal, irreal в прошлом.",
+    content: `> **Перед этой темой:** вы знаете **si tuviera, saldría**. **В этой теме:** хвост в прошлом — **habría** + participio — и сводка трёх типов **si**.
 
 ## Condicional Compuesto
 
@@ -1484,8 +1484,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Relativos Avanzados",
     level: "B2",
     category: "Синтаксис",
-    summary: "Формальные el cual, lo que, cuyo — без новой глагольной системы.",
-    content: `> **Путь:** que / quien / cuyo уже стоят. Здесь — регистр: el cual, lo que, adonde.
+    summary: "Продвинутые относительные: el cual, lo que, adonde — для формального регистра.",
+    content: `> **Перед этой темой:** вы используете **que, quien, cuyo**. **В этой теме:** более формальные формы — **el cual, lo que, adonde**.
 
 ## Относительные (уровень письма B2)
 
@@ -1529,8 +1529,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     level: "B2",
     category: "Синтаксис",
     exam: "DELE",
-    summary: "Связки для текста: sin embargo, por lo tanto; союзы + subjuntivo.",
-    content: `> **Путь:** porque / pero хватает до B1. На письме B2+ **варьируют** связки; часть из них уже тянет subjuntivo (para que, a menos que).
+    summary: "Связки для текста B2+: sin embargo, por lo tanto; часть требует subjuntivo.",
+    content: `> **Перед этой темой:** porque и pero хватает до B1. **В этой теме:** связки для письменной речи — sin embargo, por lo tanto, para que…
 
 ## Связки текста
 
@@ -1586,8 +1586,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Perífrasis Verbales",
     level: "C1",
     category: "Глаголы",
-    summary: "Готовые связки глаголов: acabar de, llevar + gerundio, deber de.",
-    content: `> **Путь:** ir a + inf и estar + -ando вы знаете с A1–A2. Здесь — **каталог** таких склеек и ловушка deber / deber de.
+    summary: "Перифразы: acabar de, llevar + gerundio, deber de — готовые глагольные связки.",
+    content: `> **Перед этой темой:** вы знаете **ir a + inf** и **estar + -ando** с A1–A2. **В этой теме:** каталог перифраз — acabar de, llevar + gerundio, deber vs deber de.
 
 ## Perífrasis — глагол + инфинитив / -ando / -ado
 
@@ -1632,8 +1632,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Matices Estilísticos y Registros",
     level: "C1",
     category: "Стилистика",
-    summary: "Не «правильно», а уместно: регистр, вежливость, tú / usted.",
-    content: `> **Путь:** формы все известны. C1 = **какой переключатель** в этой ситуации: вежливость и регистр.
+    summary: "Регистр и вежливость: tú / usted, формулы просьбы — не новая грамматика, а уместность.",
+    content: `> **Перед этой темой:** все основные формы вам знакомы. **В этой теме:** **регистр и вежливость** — когда tú, когда usted, как смягчить просьбу.
 
 ## Оттенки и регистр
 
@@ -1668,8 +1668,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Subjuntivo: Usos Avanzados",
     level: "C1",
     category: "Наклонения",
-    summary: "aunque / donde / como: факт → indicativo, гипотеза → subjuntivo.",
-    content: `> **Путь:** subjuntivo вы ставите. Здесь только **спорные точки**, без повторения образования форм.
+    summary: "Спорные случаи subjuntivo: aunque, donde, como — факт или гипотеза.",
+    content: `> **Перед этой темой:** вы уже ставите **subjuntivo** в типичных случаях. **В этой теме:** спорные точки — aunque, donde, como: indicativo или subjuntivo?
 
 ## Subjuntivo: тонкие случаи
 
@@ -1708,8 +1708,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Estilo Indirecto Avanzado",
     level: "C1",
     category: "Синтаксис",
-    summary: "Полная таблица сдвига времён + указатели hoy → aquel día.",
-    content: `> **Путь:** схема «dijo que + сдвиг» с B2. Ниже — полная сетка, включая subjuntivo и внутренний монолог.
+    summary: "Полная сетка estilo indirecto: все сдвиги времён, subjuntivo, указатели hoy → aquel día.",
+    content: `> **Перед этой темой:** вы знаете схему **dijo que + сдвиг** с B2. **В этой теме:** полная таблица — все времена, subjuntivo, указатели времени и места.
 
 ## Косвенная речь: полная сетка
 
@@ -1765,8 +1765,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Pronombres Avanzados",
     level: "C1",
     category: "Местоимения",
-    summary: "lo bueno; дублирование a María la veo; leísmo vs норма.",
-    content: `> **Путь:** lo / le / se lo уже в обиходе. Здесь — **lo** абстрактное, обязательный повтор a + местоимение, региональные leísmo / laísmo.
+    summary: "Продвинутые местоимения: lo bueno, a María la veo, leísmo / laísmo.",
+    content: `> **Перед этой темой:** **lo, le, se lo** уже в повседневной речи. **В этой теме:** абстрактное **lo**, обязательное удвоение **a + местоимение**, leísmo / laísmo.
 
 ## Местоимения: тонкости
 
@@ -1811,8 +1811,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Ser y Estar: Matices Avanzados",
     level: "C1",
     category: "Глаголы",
-    summary: "es listo vs está listo и другие пары — без повторения таблиц soy / estoy.",
-    content: `> **Путь:** базовый ser / estar с A1. Здесь только пары, где **смысл ломается**, если выбрать не тот глагол.
+    summary: "Ser vs estar в сложных парах: es listo vs está listo — смысл меняется.",
+    content: `> **Перед этой темой:** базовый **ser / estar** вы знаете с A1. **В этой теме:** пары, где выбор глагола **меняет смысл** — es listo vs está listo.
 
 ## Ser vs Estar — тонкие случаи
 
@@ -1860,8 +1860,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Ironía y Registro",
     level: "C2",
     category: "Стилистика",
-    summary: "Ирония, регистр, тактики — формы известны, важна уместность.",
-    content: `> **Путь:** наклонения и регистр с C1. Здесь — **как звучит** фраза (ирония, дистанция), а не как спрягается.
+    summary: "Ирония, сарказм и смена регистра — формы известны, важна уместность.",
+    content: `> **Перед этой темой:** наклонения и регистр с C1. **В этой теме:** **как звучит** фраза — ирония, дистанция, смена регистра.
 
 ## Ирония и регистр
 
@@ -1913,8 +1913,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Oraciones Hendidas y Énfasis",
     level: "C2",
     category: "Синтаксис",
-    summary: "Фокус: fue Juan quien… / lo que necesito es… — для письменного и устного C2.",
-    content: `> **Путь:** que / lo que вы связываете с B1. Здесь — **выделение** информации, не новая грамматика времён.
+    summary: "Oraciones hendidas — fue Juan quien…, lo que necesito es… — выделение важного.",
+    content: `> **Перед этой темой:** **que / lo que** вы связываете с B1. **В этой теме:** **oraciones hendidas** — fue Juan quien…, lo que necesito es… — чтобы выделить главное.
 
 ## Выделительные конструкции
 
@@ -1951,8 +1951,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Futuro de Conjetura y Condicional de Rumor",
     level: "C2",
     category: "Глаголы",
-    summary: "Serán las diez ≈ наверное десять; habría mil ≈ по слухам. Не про будущее-план.",
-    content: `> **Путь:** Futuro и Condicional как план / «я бы» уже были. Здесь те же формы = **догадка и слух**.
+    summary: "Futuro de conjetura — Serán las diez (≈ наверное десять); condicional de rumor — habría mil.",
+    content: `> **Перед этой темой:** **Futuro** и **Condicional** как план и «я бы» вы знаете. **В этой теме:** те же формы для **догадки и слухов** — Serán las diez, habría mil personas.
 
 ## Догадка и слух
 
@@ -1994,8 +1994,8 @@ Futuro perfecto — догадка о недавнем прошлом:
     titleEs: "Estilo Culto: Construcciones Absolutas",
     level: "C2",
     category: "Стилистика",
-    summary: "Письменный регистр: terminada la reunión…, номинализация — не для чата.",
-    content: `> **Путь:** participio и gerundio из времён. Здесь — **книжный** синтаксис: сжатие придаточных.
+    summary: "Книжный стиль: participio absoluto (Terminada la reunión…), номинализация.",
+    content: `> **Перед этой темой:** **participio** и **gerundio** из времён. **В этой теме:** **письменный регистр** — participio absoluto, сжатие придаточных.
 
 ## Книжный стиль
 
@@ -2044,8 +2044,8 @@ Futuro perfecto — догадка о недавнем прошлом:
     level: "B1",
     category: "Подготовка к DELE",
     exam: "DELE",
-    summary: "Сводка A2–B1: Indefinido / Imperfecto / Perfecto / Pluscuamperfecto на экзамене.",
-    content: `> **Путь:** четыре прошедших уже разобраны по темам. Здесь — **как выбирают на DELE**, без повторения спряжения.
+    summary: "DELE: как выбрать Indefinido, Imperfecto, Perfecto или Pluscuamperfecto.",
+    content: `> **Перед этой темой:** четыре прошедших разобраны по отдельным темам. **В этой теме:** **DELE** — как выбрать нужное прошедшее, без повторения спряжения.
 
 ## Контраст прошедших — ловушка №1 на DELE
 
@@ -2087,8 +2087,8 @@ Futuro perfecto — догадка о недавнем прошлом:
     level: "B1",
     category: "Подготовка к DELE",
     exam: "DELE",
-    summary: "DELE письмо: обращения, вежливые просьбы, прощания — применение condicional и регистра.",
-    content: `> **Путь:** condicional (podría, quisiera) и формальное usted уже были. Здесь — **готовые формулы** экзаменационного письма.
+    summary: "DELE письмо: обращения, вежливые просьбы, прощания — готовые формулы.",
+    content: `> **Перед этой темой:** **condicional** (podría, quisiera) и формальное **usted** вы знаете. **В этой теме:** **DELE письмо** — готовые формулы обращений и просьб.
 
 ## Письмо на DELE
 
@@ -2161,8 +2161,8 @@ Futuro perfecto — догадка о недавнем прошлом:
     level: "B2",
     category: "Подготовка к DELE",
     exam: "DELE",
-    summary: "DELE сочинение: скелет абзацев + мнение (indicativo / subjuntivo).",
-    content: `> **Путь:** связки B2 (sin embargo, por lo tanto). Здесь — **скелет работы** и где в мнении нужен subjuntivo.
+    summary: "DELE сочинение: скелет абзацев (en primer lugar…) + мнение с subjuntivo.",
+    content: `> **Перед этой темой:** связки B2 (sin embargo, por lo tanto). **В этой теме:** **DELE сочинение** — структура текста и где в мнении нужен subjuntivo.
 
 ## Связки для сочинения DELE
 
@@ -2232,8 +2232,8 @@ Futuro perfecto — догадка о недавнем прошлом:
     level: "B2",
     category: "Подготовка к DELE",
     exam: "DELE",
-    summary: "DELE устно: фото, гипотезы, мнение, согласие — живая речь, не новые таблицы.",
-    content: `> **Путь:** futuro de conjetura, мнение с subjuntivo, связки. Здесь — **как это звучит в устной части**.
+    summary: "DELE устная часть: описание фото, гипотезы, мнение, согласие — живая речь.",
+    content: `> **Перед этой темой:** futuro de conjetura, мнение с subjuntivo и связки. **В этой теме:** **DELE устно** — как это звучит на экзамене: фото, гипотезы, согласие.
 
 ## Устная часть DELE
 

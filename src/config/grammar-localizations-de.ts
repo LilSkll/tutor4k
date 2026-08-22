@@ -41,12 +41,12 @@ export const DE_GRAMMAR_TOPIC: Record<string, GrammarLocaleFields> = {
   "a1-articulos": {
     title: "Artikel",
     summary:
-      "el/la/los/las und un/una: bekannt vs irgendein; Ausnahme el agua (nicht la abuela).",
+      "Definite and indefinite articles (el/la vs un/una); special case: el agua.",
   },
   "a1-ser-estar": {
     title: "Ser / Estar",
     summary:
-      "Erstes Thema: Begrüßung und zwei Verben für „sein“ — wer du bist vs. wie du dich fühlst.",
+      "First topic: greetings and two verbs for “to be” — ser (who you are) and estar (how you are now).",
   },
   "a1-presente": {
     title: "Präsens (Indikativ)",
@@ -55,7 +55,7 @@ export const DE_GRAMMAR_TOPIC: Record<string, GrammarLocaleFields> = {
   "a1-genero-numero": {
     title: "Genus und Numerus",
     summary:
-      "Maskulin/feminin und eins/viele; Ausnahmen problema, mano, agua vs abuela.",
+      "Noun gender and number; exceptions like problema, mano, and el agua.",
   },
   "a1-numeros-1-100": {
     title: "Zahlen, Tage und Uhrzeit",
@@ -68,7 +68,7 @@ export const DE_GRAMMAR_TOPIC: Record<string, GrammarLocaleFields> = {
   "a1-gustar": {
     title: "Verb Gustar",
     summary:
-      "Das besondere Verb „gefallen“ — konjugiert nach dem Gefallenen, nicht nach der Person.",
+      "Verb gustar: “I like coffee” = me gusta el café — the thing liked is the subject.",
   },
   "a1-tener-expressions": {
     title: "Ausdrücke mit Tener",
@@ -93,7 +93,7 @@ export const DE_GRAMMAR_TOPIC: Record<string, GrammarLocaleFields> = {
   "a2-imperfecto": {
     title: "Pretérito Imperfecto",
     summary:
-      "Hintergrund in der Vergangenheit: Gewohnheiten, Beschreibungen, andauernde Handlungen.",
+      "Pretérito Imperfecto — habits, descriptions, and ongoing background in the past.",
   },
   "a2-por-para": {
     title: "Por vs Para",
@@ -134,7 +134,7 @@ export const DE_GRAMMAR_TOPIC: Record<string, GrammarLocaleFields> = {
   "b1-subjuntivo-imperfecto": {
     title: "Imperfecto de Subjuntivo",
     summary:
-      "Konjunktiv in Vergangenheit/Irrealis: Hypothesen und irreale Bedingungen.",
+      "Imperfect subjunctive — unreal conditions and past wishes: si tuviera…",
   },
   "b1-pronombres-objetos": {
     title: "Objektpronomen",
@@ -289,37 +289,37 @@ export const DE_GRAMMAR_TOPIC: Record<string, GrammarLocaleFields> = {
   "c2-oraciones-hendidas": {
     title: "Emphase: Spaltsätze",
     summary:
-      "Oraciones hendidas: «Fue Juan quien…», «Lo que necesito es…» — Fokus und Hervorhebung.",
+      "Cleft sentences — fue Juan quien…, lo que necesito es… — for emphasis.",
   },
   "c2-conjetura-rumor": {
     title: "Vermutung und Gerüchte: futuro y condicional",
     summary:
-      "«Serán las diez» — wohl zehn Uhr. «Habría mil personas» — Berichten zufolge etwa tausend.",
+      "Futuro de conjetura and condicional de rumor — probably / reportedly, not plans.",
   },
   "c2-estilo-culto": {
     title: "Gehobener Stil: absolute Konstruktionen",
     summary:
-      "Participio absoluto («Terminada la reunión…»), gerundio absoluto, Nominalisierung — Schriftregister.",
+      "Literary style — absolute participle, nominalization; not for everyday chat.",
   },
   "dele-contraste-pasados": {
     title: "DELE: Kontrast der Vergangenheitszeiten",
     summary:
-      "Indefinido vs. Imperfecto vs. Perfecto vs. Pluscuamperfecto — Falle Nr. 1 im DELE.",
+      "DELE past-tense contrast — Indefinido vs Imperfecto vs Perfecto vs Pluscuamperfecto.",
   },
   "dele-carta-formal": {
     title: "DELE: formeller und informeller Brief",
     summary:
-      "Briefformeln für die Expresión escrita: Anreden, höfliche Bitten, Grußformeln.",
+      "DELE formal letter — openings, polite requests, closings; condicional and register.",
   },
   "dele-conectores-redaccion": {
     title: "DELE: Konnektoren für den Aufsatz",
     summary:
-      "Aufsatzgerüst: en primer lugar, no obstante, en definitiva + Meinung mit indicativo/subjuntivo.",
+      "DELE essay — en primer lugar, no obstante, en definitiva; opinion with subjunctive.",
   },
   "dele-expresion-oral": {
     title: "DELE: mündlicher Teil",
     summary:
-      "Fotobeschreibung, Hypothesen (futuro de conjetura), Meinung, Zustimmung/Widerspruch, Füllwörter.",
+      "DELE speaking — describing photos, hypotheses, opinions, agreeing/disagreeing.",
   },
   "eng-c2-cleft-emphasis": {
     title: "Cleft Sentences und Emphase",

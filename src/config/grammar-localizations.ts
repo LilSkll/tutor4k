@@ -143,451 +143,451 @@ export const GRAMMAR_TOPIC: Record<
   "a1-articulos": {
     "en": {
       "title": "Articles",
-      "summary": "el/la/los/las vs un/una: known vs some; exception el agua (not la abuela)."
+      "summary": "Definite and indefinite articles (el/la vs un/una); special case: el agua."
     },
     "es": {
       "title": "Artículos",
-      "summary": "el/la/los/las y un/una: conocido vs alguno; excepción el agua (no la abuela)."
+      "summary": "Artículos definidos e indefinidos (el/la vs un/una); caso especial: el agua."
     }
   },
   "a1-ser-estar": {
     "en": {
       "title": "Ser / Estar",
-      "summary": "First topic: greetings and two verbs for “to be” — who you are vs how you are now."
+      "summary": "First topic: greetings and two verbs for “to be” — ser (who you are) and estar (how you are now)."
     },
     "es": {
       "title": "Ser y Estar",
-      "summary": "Primer tema: saludos y dos verbos «ser / estar» — quién eres vs cómo estás ahora."
+      "summary": "Primer tema: saludos y dos verbos «ser / estar» — quién eres (ser) y cómo estás ahora (estar)."
     }
   },
   "a1-presente": {
     "en": {
       "title": "Present Indicative",
-      "summary": "Present: three verb families (-ar / -er / -ir) and why the ending changes."
+      "summary": "Present tense: three verb groups (-ar / -er / -ir) and how the ending changes."
     },
     "es": {
       "title": "Presente de Indicativo",
-      "summary": "Presente: tres familias (-ar / -er / -ir) y por qué cambia la terminación."
+      "summary": "Presente de indicativo: tres grupos de verbos (-ar / -er / -ir) y cómo cambia la terminación."
     }
   },
   "a1-genero-numero": {
     "en": {
       "title": "Gender and Number",
-      "summary": "Masculine/feminine and one vs many; exceptions problema, mano, agua vs abuela."
+      "summary": "Noun gender and number; exceptions like problema, mano, and el agua."
     },
     "es": {
       "title": "Género y Número",
-      "summary": "Masculino/femenino y uno/muchos; excepciones problema, mano, agua vs abuela."
+      "summary": "Género y número del sustantivo; excepciones como problema, mano y el agua."
     }
   },
   "a1-numeros-1-100": {
     "en": {
       "title": "Numbers, Days & Time",
-      "summary": "Numbers 1–100, days of the week, months, and telling the time."
+      "summary": "Numbers 1–100, days, months, and telling the time (es la una / son las dos)."
     },
     "es": {
       "title": "Números, días y la hora",
-      "summary": "Números 1–100, días de la semana, meses y la hora."
+      "summary": "Números 1–100, días, meses y la hora (es la una / son las dos)."
     }
   },
   "a1-preposiciones-lugar": {
     "en": {
       "title": "Prepositions of Place",
-      "summary": "en, a, de, sobre, debajo, delante — where something is located."
+      "summary": "Prepositions of place: en, a, de, sobre, debajo, delante — where something is."
     },
     "es": {
       "title": "Preposiciones de Lugar",
-      "summary": "en, a, de, sobre, debajo, delante — dónde se encuentra algo."
+      "summary": "Preposiciones de lugar: en, a, de, sobre, debajo, delante — dónde está algo."
     }
   },
   "a1-gustar": {
     "en": {
       "title": "Verb Gustar",
-      "summary": "The special verb 'to like' — conjugated by the thing liked, not the subject."
+      "summary": "Verb gustar: “I like coffee” = me gusta el café — the thing liked is the subject."
     },
     "es": {
       "title": "Verbo Gustar",
-      "summary": "El verbo «gustar» — se conjuga según la cosa, no según la persona."
+      "summary": "Verbo gustar: «me gusta el café» — la cosa que gusta es el sujeto, no la persona."
     }
   },
   "a1-tener-expressions": {
     "en": {
       "title": "Expressions with Tener",
-      "summary": "tener hambre/frío/sueño/razón — common state expressions."
+      "summary": "Expressions with tener: hunger, cold, sleepiness, being right — not with estar."
     },
     "es": {
       "title": "Expresiones con Tener",
-      "summary": "tener hambre/frío/sueño/razón — expresiones de estado frecuentes."
+      "summary": "Expresiones con tener: hambre, frío, sueño, razón — no con estar."
     }
   },
   "a1-preguntas": {
     "en": {
       "title": "Question Sentences",
-      "summary": "¿Qué? ¿Cómo? ¿Dónde? — question words and how to use them."
+      "summary": "Question words — qué, quién, dónde, cuándo, cómo, por qué — and ¿…? in writing."
     },
     "es": {
       "title": "Oraciones Interrogativas",
-      "summary": "¿Qué? ¿Cómo? ¿Dónde? — palabras interrogativas y su uso."
+      "summary": "Palabras interrogativas — qué, quién, dónde, cuándo, cómo, por qué — y ¿…? escrito."
     }
   },
   "a1-verbos-frecuentes": {
     "en": {
       "title": "Common Verbs",
-      "summary": "ir, tener, hacer, poder, querer, decir — essential irregular verbs."
+      "summary": "Essential irregular verbs in the present: ir, tener, hacer, poder, querer, decir."
     },
     "es": {
       "title": "Verbos Frecuentes",
-      "summary": "ir, tener, hacer, poder, querer, decir — verbos irregulares esenciales."
+      "summary": "Verbos irregulares esenciales en presente: ir, tener, hacer, poder, querer, decir."
     }
   },
   "a2-preterito-perfecto": {
     "en": {
       "title": "Present Perfect (Pretérito Perfecto)",
-      "summary": "Completed action linked to the present."
+      "summary": "Pretérito Perfecto — past actions still connected to the present: he comido."
     },
     "es": {
       "title": "Pretérito Perfecto Compuesto",
-      "summary": "Acción completada con conexión al presente."
+      "summary": "Pretérito Perfecto — pasado aún ligado al presente: he comido, has ido."
     }
   },
   "a2-preterito-indefinido": {
     "en": {
       "title": "Preterite (Indefinido)",
-      "summary": "Completed action at a specific point in the past."
+      "summary": "Pretérito Indefinido — a completed action at a specific past moment: ayer fui."
     },
     "es": {
       "title": "Pretérito Indefinido",
-      "summary": "Acción completada en un momento concreto del pasado."
+      "summary": "Pretérito Indefinido — acción completada en un momento concreto: ayer fui."
     }
   },
   "a2-imperfecto": {
     "en": {
       "title": "Imperfect Past",
-      "summary": "Background in the past: habits, descriptions, ongoing actions."
+      "summary": "Pretérito Imperfecto — habits, descriptions, and ongoing background in the past."
     },
     "es": {
       "title": "Pretérito Imperfecto",
-      "summary": "Fondo en el pasado: hábitos, descripciones, acciones continuas."
+      "summary": "Pretérito Imperfecto — hábitos, descripciones y fondo continuo en el pasado."
     }
   },
   "a2-por-para": {
     "en": {
       "title": "Por vs Para",
-      "summary": "Two prepositions for 'for/by' — a key difficulty in Spanish."
+      "summary": "Para = purpose / for whom; por = reason, route, price, time of day."
     },
     "es": {
       "title": "Por y Para",
-      "summary": "Dos preposiciones «por/para» — una de las grandes dificultades del español."
+      "summary": "Para = finalidad / para quién; por = causa, ruta, precio, momento del día."
     }
   },
   "a2-comparativos": {
     "en": {
       "title": "Comparatives and Superlatives",
-      "summary": "más/menos, tan…como, and el más… — comparative and superlative."
+      "summary": "Comparatives and superlatives: más/menos, tan…como, el más…; mejor, peor."
     },
     "es": {
       "title": "Comparativos y Superlativos",
-      "summary": "más/menos, tan…como y el más… — grado comparativo y superlativo."
+      "summary": "Comparativos y superlativos: más/menos, tan…como, el más…; mejor, peor."
     }
   },
   "a2-futuro-simple": {
     "en": {
       "title": "Simple Future",
-      "summary": "Simple future: plans, predictions, promises."
+      "summary": "Simple future tense: hablaré, tendré — not only ir a + infinitive."
     },
     "es": {
       "title": "Futuro Simple",
-      "summary": "Futuro simple: planes, predicciones, promesas."
+      "summary": "Futuro simple: hablaré, tendré — no solo ir a + infinitivo."
     }
   },
   "b1-subjuntivo": {
     "en": {
       "title": "Subjunctive (Present)",
-      "summary": "Subjunctive mood for wishes, doubts, and emotions."
+      "summary": "Present subjunctive — for wishes, doubt, and emotions: quiero que vengas."
     },
     "es": {
       "title": "Modo Subjuntivo (Presente)",
-      "summary": "Subjuntivo para deseos, dudas y emociones."
+      "summary": "Subjuntivo presente — deseos, dudas y emociones: quiero que vengas."
     }
   },
   "b1-imperativo": {
     "en": {
       "title": "Imperative",
-      "summary": "Commands, requests, and advice."
+      "summary": "Imperative — commands and requests: habla / no hables."
     },
     "es": {
       "title": "Modo Imperativo",
-      "summary": "Órdenes, peticiones y consejos."
+      "summary": "Imperativo — órdenes y peticiones: habla / no hables."
     }
   },
   "b1-condicional": {
     "en": {
       "title": "Simple Conditional",
-      "summary": "Polite requests, hypotheses, and wishes."
+      "summary": "Conditional — polite requests and hypotheticals: podría, me gustaría."
     },
     "es": {
       "title": "Modo Condicional",
-      "summary": "Peticiones corteses, hipótesis y deseos."
+      "summary": "Condicional — peticiones corteses e hipótesis: podría, me gustaría."
     }
   },
   "b1-preposiciones-por-para-2": {
     "en": {
       "title": "Pronoun SE",
-      "summary": "Impersonal se, passive se, reciprocal se — multiple uses."
+      "summary": "Pronoun se — reflexive, reciprocal, impersonal, passive, and accidental uses."
     },
     "es": {
       "title": "Pronombre SE",
-      "summary": "Se impersonal, se pasivo, se recíproco — usos múltiples."
+      "summary": "Pronombre se — reflexivo, recíproco, impersonal, pasivo y uso accidental."
     }
   },
   "b1-relativos": {
     "en": {
       "title": "Relative Pronouns",
-      "summary": "que, quien, el que, cuyo, donde — linking complex sentences."
+      "summary": "Relative pronouns — que, quien, lo que, cuyo, donde — to link clauses."
     },
     "es": {
       "title": "Pronombres Relativos",
-      "summary": "que, quien, el que, cuyo, donde — conectores en oraciones complejas."
+      "summary": "Pronombres relativos — que, quien, lo que, cuyo, donde — para unir oraciones."
     }
   },
   "b1-pluscuamperfecto": {
     "en": {
       "title": "Past Perfect (Pluscuamperfecto)",
-      "summary": "An action that happened before another past action."
+      "summary": "Pluperfect — an action before another past action: había comido when you arrived."
     },
     "es": {
       "title": "Pretérito Pluscuamperfecto",
-      "summary": "Acción anterior a otra acción en el pasado."
+      "summary": "Pluscuamperfecto — acción anterior a otra en el pasado: había comido cuando llegaste."
     }
   },
   "b1-subjuntivo-imperfecto": {
     "en": {
       "title": "Imperfect Subjunctive",
-      "summary": "Subjunctive in past/unreal contexts: hypotheses and unreal conditions."
+      "summary": "Imperfect subjunctive — unreal conditions and past wishes: si tuviera…"
     },
     "es": {
       "title": "Subjuntivo Imperfecto",
-      "summary": "Subjuntivo en pasado/irreal: hipótesis y condiciones irreales."
+      "summary": "Subjuntivo imperfecto — condiciones irreales y deseos en pasado: si tuviera…"
     }
   },
   "b1-pronombres-objetos": {
     "en": {
       "title": "Object Pronouns",
-      "summary": "Direct and indirect objects: me, te, lo, le, se — when to use which."
+      "summary": "Object pronouns — lo/la (it/them), le (to him/her), se lo (not le lo)."
     },
     "es": {
       "title": "Pronombres de Objeto (OD/OI)",
-      "summary": "Complemento directo e indirecto: me, te, lo, le, se."
+      "summary": "Pronombres de objeto — lo/la, le, se lo (no le lo)."
     }
   },
   "b1-adverbios": {
     "en": {
       "title": "Adverbs",
-      "summary": "Adverbs in -mente, time, place, manner, and doubt."
+      "summary": "Adverbs — often -mente; muy vs mucho; quizás with subjunctive."
     },
     "es": {
       "title": "Adverbios",
-      "summary": "Adverbios en -mente, tiempo, lugar, modo y duda."
+      "summary": "Adverbios — a menudo -mente; muy vs mucho; quizás con subjuntivo."
     }
   },
   "b2-estilo-indirecto": {
     "en": {
       "title": "Reported Speech",
-      "summary": "Indirect speech: reporting others' words and thoughts."
+      "summary": "Reported speech — dijo que vendría; tense backshift after a past reporting verb."
     },
     "es": {
       "title": "Estilo Indirecto",
-      "summary": "Estilo indirecto: transmitir palabras y pensamientos ajenos."
+      "summary": "Estilo indirecto — dijo que vendría; cambio de tiempos tras verbo en pasado."
     }
   },
   "b2-voz-pasiva": {
     "en": {
       "title": "Passive Voice",
-      "summary": "Passive voice and its natural alternative — pasiva refleja."
+      "summary": "Passive voice — fue escrito vs natural se habla; states with estar."
     },
     "es": {
       "title": "Voz Pasiva y Pasiva Refleja",
-      "summary": "Voz pasiva y su alternativa natural — pasiva refleja."
+      "summary": "Voz pasiva — fue escrito vs se habla; estados con estar."
     }
   },
   "b2-subjuntivo-compuestos": {
     "en": {
       "title": "Compound Subjunctive",
-      "summary": "Perfect and pluperfect subjunctive forms."
+      "summary": "Compound subjunctive — haya hablado, hubiera hablado; same rule, different time."
     },
     "es": {
       "title": "Subjuntivo Perfecto y Pluscuamperfecto",
-      "summary": "Formas compuestas del subjuntivo: perfecto y pluscuamperfecto."
+      "summary": "Subjuntivo compuesto — haya hablado, hubiera hablado; misma regla, otro tiempo."
     }
   },
   "b2-condicionales-compuestos": {
     "en": {
       "title": "Compound Conditional",
-      "summary": "Conditional perfect: habría + past participle."
+      "summary": "Conditional perfect — habría ido; three si types with matching verb forms."
     },
     "es": {
       "title": "Condicional Compuesto",
-      "summary": "Condicional compuesto: habría + participio."
+      "summary": "Condicional compuesto — habría ido; tres tipos de si con sus formas."
     }
   },
   "b2-relativos-avanzado": {
     "en": {
       "title": "Advanced Relatives",
-      "summary": "lo que, el cual, donde, como, cuando — advanced sentence linking."
+      "summary": "Advanced relatives — el cual, lo que, adonde — for formal register."
     },
     "es": {
       "title": "Relativos Avanzados",
-      "summary": "lo que, el cual, donde, como, cuando — conexión avanzada."
+      "summary": "Relativos avanzados — el cual, lo que, adonde — registro formal."
     }
   },
   "b2-conectores": {
     "en": {
       "title": "Discourse Connectors",
-      "summary": "además, sin embargo, por lo tanto — logical connectors."
+      "summary": "Discourse connectors — sin embargo, por lo tanto; some trigger subjunctive."
     },
     "es": {
       "title": "Conectores Discursivos",
-      "summary": "además, sin embargo, por lo tanto — conectores lógicos."
+      "summary": "Conectores discursivos — sin embargo, por lo tanto; algunos piden subjuntivo."
     }
   },
   "c1-perifrasis-verbales": {
     "en": {
       "title": "Verbal Periphrases",
-      "summary": "Complex verb constructions: necessity, beginning, ending."
+      "summary": "Verbal periphrases — acabar de, llevar + gerundio; trap: deber vs deber de."
     },
     "es": {
       "title": "Perífrasis Verbales",
-      "summary": "Construcciones verbales complejas: necesidad, inicio, fin."
+      "summary": "Perífrasis verbales — acabar de, llevar + gerundio; trampa: deber vs deber de."
     }
   },
   "c1-matices-estilisticos": {
     "en": {
       "title": "Stylistic Nuances",
-      "summary": "Subtle meaning: register, politeness, modality."
+      "summary": "Style and register — politeness, tú vs usted; choosing the right tone."
     },
     "es": {
       "title": "Matices Estilísticos y Registros",
-      "summary": "Matices de significado: registro, cortesía, modalidad."
+      "summary": "Matices de estilo — cortesía, tú vs usted; elegir el tono adecuado."
     }
   },
   "c1-subjuntivo-avanzado": {
     "en": {
       "title": "Advanced Subjunctive",
-      "summary": "Doubtful and fixed cases: aunque, donde, como, relatives."
+      "summary": "Advanced subjunctive — aunque, donde, como: fact → indicative, hypothesis → subjunctive."
     },
     "es": {
       "title": "Subjuntivo: Usos Avanzados",
-      "summary": "Casos dudosos y fijos: aunque, donde, como, relativas."
+      "summary": "Subjuntivo avanzado — aunque, donde, como: hecho → indicativo, hipótesis → subjuntivo."
     }
   },
   "c1-indirecto-avanzado": {
     "en": {
       "title": "Advanced Reported Speech",
-      "summary": "Full tense backshift system + questions and commands."
+      "summary": "Full reported-speech grid — all backshifts, subjunctive, hoy → aquel día."
     },
     "es": {
       "title": "Estilo Indirecto Avanzado",
-      "summary": "Sistema completo de tiempos + preguntas y órdenes."
+      "summary": "Estilo indirecto completo — todos los cambios, subjuntivo, hoy → aquel día."
     }
   },
   "c1-pronombres-avanzado": {
     "en": {
       "title": "Advanced Pronouns",
-      "summary": "lo + adjective, doubling, leísmo, reduplication — fine points."
+      "summary": "Advanced pronouns — lo bueno, a María la veo; leísmo vs standard usage."
     },
     "es": {
       "title": "Pronombres Avanzados",
-      "summary": "lo + adjetivo, duplicación, leísmo, reduplicación — matices."
+      "summary": "Pronombres avanzados — lo bueno, a María la veo; leísmo vs norma."
     }
   },
   "c1-ser-estar-avanzado": {
     "en": {
       "title": "Ser/Estar: Advanced",
-      "summary": "Adjective meaning shifts, fixed phrases, borderline cases."
+      "summary": "Advanced ser vs estar — pairs where the wrong verb changes the meaning."
     },
     "es": {
       "title": "Ser y Estar: Matices Avanzados",
-      "summary": "Cambios de significado, frases fijas, casos límite."
+      "summary": "Ser vs estar avanzado — pares donde el verbo equivocado cambia el sentido."
     }
   },
   "c2-ironia-registry": {
     "en": {
       "title": "Irony and Register",
-      "summary": "Ironic subjunctive, formal/informal register, rhetorical tactics."
+      "summary": "Irony, sarcasm, and register — forms are known; appropriateness matters."
     },
     "es": {
       "title": "Ironía y Registro",
-      "summary": "Subjuntivo irónico, registro formal/informal, tácticas retóricas."
+      "summary": "Ironía, sarcasmo y registro — las formas se conocen; importa la adecuación."
     }
   },
   "dele-contraste-pasados": {
     "en": {
       "title": "DELE: Past Tense Contrast",
-      "summary": "Indefinido vs Imperfecto vs Perfecto vs Pluscuamperfecto — the #1 DELE trap."
+      "summary": "DELE past-tense contrast — Indefinido vs Imperfecto vs Perfecto vs Pluscuamperfecto."
     },
     "es": {
       "title": "DELE: Contraste de Pasados",
-      "summary": "Indefinido vs Imperfecto vs Perfecto vs Pluscuamperfecto — la trampa n.º 1 del DELE."
+      "summary": "Contraste de pasados DELE — Indefinido vs Imperfecto vs Perfecto vs Pluscuamperfecto."
     }
   },
   "dele-carta-formal": {
     "en": {
       "title": "DELE: Formal and Informal Letters",
-      "summary": "Letter formulas for Expresión escrita: openings, polite requests, closings."
+      "summary": "DELE formal letter — openings, polite requests, closings; condicional and register."
     },
     "es": {
       "title": "DELE: Carta Formal e Informal",
-      "summary": "Fórmulas de carta para Expresión escrita: saludos, peticiones corteses, despedidas."
+      "summary": "Carta formal DELE — saludos, peticiones corteses, despedidas; condicional y registro."
     }
   },
   "dele-conectores-redaccion": {
     "en": {
       "title": "DELE: Essay Connectors",
-      "summary": "Essay skeleton: en primer lugar, no obstante, en definitiva + opinions with indicativo/subjuntivo."
+      "summary": "DELE essay — en primer lugar, no obstante, en definitiva; opinion with subjunctive."
     },
     "es": {
       "title": "DELE: Conectores para la Redacción",
-      "summary": "Esqueleto de la redacción: en primer lugar, no obstante, en definitiva + opinión con indicativo/subjuntivo."
+      "summary": "Redacción DELE — en primer lugar, no obstante, en definitiva; opinión con subjuntivo."
     }
   },
   "dele-expresion-oral": {
     "en": {
       "title": "DELE: Speaking Exam",
-      "summary": "Describing photos, hypotheses (futuro de conjetura), opinions, agreeing/disagreeing, fillers."
+      "summary": "DELE speaking — describing photos, hypotheses, opinions, agreeing/disagreeing."
     },
     "es": {
       "title": "DELE: Expresión Oral",
-      "summary": "Describir fotos, hipótesis (futuro de conjetura), opinión, acuerdo/desacuerdo, muletillas."
+      "summary": "Expresión oral DELE — describir fotos, hipótesis, opinión, acuerdo/desacuerdo."
     }
   },
   "c2-oraciones-hendidas": {
     "en": {
       "title": "Cleft Sentences and Emphasis",
-      "summary": "Oraciones hendidas: «Fue Juan quien…», «Lo que necesito es…» — focus and emphasis."
+      "summary": "Cleft sentences — fue Juan quien…, lo que necesito es… — for emphasis."
     },
     "es": {
       "title": "Oraciones Hendidas y Énfasis",
-      "summary": "Oraciones hendidas: «Fue Juan quien…», «Lo que necesito es…» — foco y énfasis."
+      "summary": "Oraciones hendidas — fue Juan quien…, lo que necesito es… — para enfatizar."
     }
   },
   "c2-conjetura-rumor": {
     "en": {
       "title": "Conjecture and Hearsay: futuro & condicional",
-      "summary": "«Serán las diez» — probably ten. «Habría mil personas» — reportedly about a thousand."
+      "summary": "Futuro de conjetura and condicional de rumor — probably / reportedly, not plans."
     },
     "es": {
       "title": "Futuro de Conjetura y Condicional de Rumor",
-      "summary": "«Serán las diez» — probabilidad. «Habría mil personas» — información no confirmada."
+      "summary": "Futuro de conjetura y condicional de rumor — probabilidad / rumor, no planes."
     }
   },
   "c2-estilo-culto": {
     "en": {
       "title": "Formal Style: Absolute Constructions",
-      "summary": "Participio absoluto («Terminada la reunión…»), gerundio absoluto, nominalization — written register."
+      "summary": "Literary style — absolute participle, nominalization; not for everyday chat."
     },
     "es": {
       "title": "Estilo Culto: Construcciones Absolutas",
-      "summary": "Participio absoluto («Terminada la reunión…»), gerundio absoluto, nominalización — registro escrito."
+      "summary": "Estilo culto — participio absoluto, nominalización; no para chat cotidiano."
     }
   },
   "eng-a1-be": {
