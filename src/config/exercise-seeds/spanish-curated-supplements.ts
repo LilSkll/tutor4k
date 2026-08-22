@@ -10552,13 +10552,13 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
     },
     {
       "type": "sentence_building",
-      "question": "No / creo / que / haya / lluvido",
+      "question": "No / creo / que / haya / llovido",
       "options": [
         "No",
         "creo",
         "que",
         "haya",
-        "lluvido"
+        "llovido"
       ],
       "answer": "No creo que haya llovido",
       "instruction": "Subj. compuesto",

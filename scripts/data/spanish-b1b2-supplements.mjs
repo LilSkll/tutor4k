@@ -231,7 +231,7 @@ export const SPANISH_B1B2_SUPPLEMENTS = {
     sb(["Me", "alegra", "que", "hayas", "venido"], "Me alegra que hayas venido", "Subj. compuesto", "Hayas venido…"),
     sb(["Ojalá", "hubiera", "estudiado", "más"], "Ojalá hubiera estudiado más", "Pluscuam. subj.", "Hubiera estudiado…"),
     sb(["Si", "hubiera", "sabido", "habría", "venido"], "Si hubiera sabido habría venido", "Cond. compuesto", "Hubiera sabido… habría venido."),
-    sb(["No", "creo", "que", "haya", "lluvido"], "No creo que haya llovido", "Subj. compuesto", "Haya llovido…"),
+    sb(["No", "creo", "que", "haya", "llovido"], "No creo que haya llovido", "Subj. compuesto", "Haya llovido…"),
     sb(["Es", "probable", "que", "hayan", "salido"], "Es probable que hayan salido", "Subj. compuesto", "Hayán salido…"),
     sb(["Quería", "que", "hubieras", "llamado"], "Quería que hubieras llamado", "Pluscuam. subj.", "Hubieras llamado…"),
     sb(["Para", "cuando", "llegues", "ya", "habré", "terminado"], "Para cuando llegues ya habré terminado", "Futuro compuesto", "Habré terminado…"),
