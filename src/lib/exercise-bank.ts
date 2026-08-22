@@ -16,6 +16,7 @@ export const ENGLISH_C2_THICK_CHAPTERS = new Set([
 export const SPANISH_C2_TR_EC_TARGET = 30;
 
 export const SPANISH_C2_THICK_CHAPTERS = new Set([
+  "chapter-27-hendidas",
   "chapter-28-conjetura",
   "chapter-29-culto",
   "chapter-30-ironia",

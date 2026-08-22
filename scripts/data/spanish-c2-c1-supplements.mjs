@@ -264,7 +264,7 @@ export const SPANISH_C1_SB_SUPPLEMENTS = {
   ],
   "chapter-17-dele": [
     sb(["En", "mi", "opinión", "el", "texto", "es", "claro"], "En mi opinión el texto es claro", "Opinión DELE", "En mi opinión…"),
-    sb(["Por", "un", "lado", "es", "útil", "por", "otro", "caro"], "Por un lado es útil por otro caro", "Conectores DELE", "Por un lado… por otro…"),
+    sb(["Por", "un", "lado", "es", "útil", "por", "otro", "es", "caro"], "Por un lado es útil por otro es caro", "Conectores DELE", "Por un lado… por otro es…"),
     sb(["En", "conclusión", "recomiendo", "leer", "el", "artículo"], "En conclusión, recomiendo leer el artículo", "Conclusión", "En conclusión…"),
     sb(["Según", "el", "autor", "la", "teoría", "es", "válida"], "Según el autor la teoría es válida", "Referencia", "Según el autor…"),
     sb(["No", "obstante", "hay", "excepciones", "importantes"], "No obstante hay excepciones importantes", "Conector formal", "No obstante…"),

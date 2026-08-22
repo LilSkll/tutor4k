@@ -81,12 +81,13 @@ export function exerciseToSeed(ex, lang = "spanish") {
   const grammarTopic = ex.grammarTopic ?? "review";
   const explanation = ex.explanation ?? "";
   const instruction = ex.instruction ?? "";
+  const ans = ex.answer?.trim() ? ex.answer.trim() : "—";
 
   if (ex.type === "multiple_choice") {
     return {
       q: ex.question,
-      ans: ex.answer,
-      options: ex.options ?? [ex.answer],
+      ans,
+      options: ex.options ?? [ans],
       explanation,
       ru: instruction,
       es: ex.answer,
@@ -96,11 +97,11 @@ export function exerciseToSeed(ex, lang = "spanish") {
   }
 
   if (ex.type === "fill_blank") {
-    const filled = ex.question.replace(/___+/g, ex.answer);
+    const filled = ex.question.replace(/___+/g, ans);
     return {
       q: ex.question,
-      ans: ex.answer,
-      options: [ex.answer, ...(ex.acceptableAnswers ?? [])].slice(0, 4),
+      ans,
+      options: [ans, ...(ex.acceptableAnswers ?? [])].slice(0, 4),
       explanation,
       ru: instruction,
       es: filled,

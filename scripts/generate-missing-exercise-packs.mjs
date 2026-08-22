@@ -119,6 +119,25 @@ const FORCE_REGENERATE = new Set([
   "chapter-28-conjetura",
   "chapter-29-culto",
   "chapter-30-ironia",
+  "eng-ch27-possessives",
+  "eng-ch32-relative-clauses",
+  "eng-ch35-ielts-informal",
+  "eng-ch37-cambridge-letter",
+  "eng-ch39-ielts-essay",
+  "eng-ch40-ielts-cohesion",
+  "eng-ch4-past-stories",
+  "eng-ch5-choices",
+  "eng-ch6-experiences",
+  "eng-ch7-future-plans",
+  "eng-ch8-storytelling",
+  "eng-ch9-real-world",
+  "eng-ch10-what-if",
+  "eng-ch11-passive",
+  "eng-ch12-beyond-borders",
+  "eng-ch20-going-to",
+  "eng-ch21-quantifiers",
+  "eng-ch22-modals",
+  "eng-ch26-articles",
 ]);
 const root = path.join(__dirname, "..");
 
@@ -131,6 +150,7 @@ const ENGLISH_C2_THICK = new Set([
 ]);
 
 const SPANISH_C2_THICK = new Set([
+  "chapter-27-hendidas",
   "chapter-28-conjetura",
   "chapter-29-culto",
   "chapter-30-ironia",

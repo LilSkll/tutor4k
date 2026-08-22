@@ -162,6 +162,14 @@ export function LessonRunner({
     return presetExercises;
   }, [presetExercises, adaptation]);
 
+  const exerciseCountByType = React.useMemo(() => {
+    const counts: Partial<Record<import("@/types").ExerciseType, number>> = {};
+    for (const ex of presetExercises) {
+      counts[ex.type] = (counts[ex.type] ?? 0) + 1;
+    }
+    return counts;
+  }, [presetExercises]);
+
   const reinforceSet = React.useMemo(() => {
     if (adaptation?.mode !== "supportive") return [];
     return chapterBank.slice(0, Math.min(2, chapterBank.length));
@@ -631,6 +639,7 @@ export function LessonRunner({
               <div className="mb-6 text-left">
                 <ChapterExerciseTypeGuide
                   exerciseTypes={chapter.exerciseTypes}
+                  exerciseCountByType={exerciseCountByType}
                   language={language}
                 />
               </div>
@@ -699,6 +708,7 @@ export function LessonRunner({
               <div className="mt-6 pt-6 border-t border-border">
                 <ChapterExerciseTypeGuide
                   exerciseTypes={chapter.exerciseTypes}
+                  exerciseCountByType={exerciseCountByType}
                   language={language}
                 />
               </div>

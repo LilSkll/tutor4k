@@ -13,15 +13,19 @@ const TYPE_ORDER: ExerciseType[] = [
 
 export function ChapterExerciseTypeGuide({
   exerciseTypes,
+  exerciseCountByType,
   language,
 }: {
   exerciseTypes: ExerciseType[];
+  /** Actual counts from the chapter bank (after type filter). */
+  exerciseCountByType?: Partial<Record<ExerciseType, number>>;
   language: InterfaceLanguage;
 }) {
   const ordered = TYPE_ORDER.filter((t) => exerciseTypes.includes(t));
   if (ordered.length === 0) return null;
 
-  const t = (key: string) => translate(key, language);
+  const t = (key: string, params?: Record<string, string | number>) =>
+    translate(key, language, params);
 
   return (
     <div className="rounded-xl border border-primary/20 bg-primary/5 px-4 py-4 space-y-3">
@@ -30,15 +34,23 @@ export function ChapterExerciseTypeGuide({
         {t("lesson.exerciseTypesLead")}
       </p>
       <ul className="space-y-2.5">
-        {ordered.map((type) => (
-          <li key={type} className="text-sm">
-            <span className="font-medium text-foreground">
-              {t(`lesson.exerciseTypeName.${type}`)}
-            </span>
-            <span className="text-muted-foreground"> — </span>
-            <span className="text-muted-foreground">{t(`lesson.exerciseTypeGuide.${type}`)}</span>
-          </li>
-        ))}
+        {ordered.map((type) => {
+          const count = exerciseCountByType?.[type];
+          return (
+            <li key={type} className="text-sm">
+              <span className="font-medium text-foreground">
+                {t(`lesson.exerciseTypeName.${type}`)}
+                {typeof count === "number" && count > 0 ? (
+                  <span className="ml-1.5 text-xs font-normal text-muted-foreground">
+                    ({t("lesson.exerciseTypeCount", { count })})
+                  </span>
+                ) : null}
+              </span>
+              <span className="text-muted-foreground"> — </span>
+              <span className="text-muted-foreground">{t(`lesson.exerciseTypeGuide.${type}`)}</span>
+            </li>
+          );
+        })}
       </ul>
     </div>
   );

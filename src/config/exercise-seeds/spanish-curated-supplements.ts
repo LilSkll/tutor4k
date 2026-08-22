@@ -247,6 +247,147 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Ella lee un libro cada noche.",
       "instruction": "Contradicción temporal",
       "explanation": "Cada noche — no mañanas."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Me / ducho / por / la / mañana",
+      "options": [
+        "Me",
+        "ducho",
+        "por",
+        "la",
+        "mañana"
+      ],
+      "answer": "Me ducho por la mañana",
+      "instruction": "Rutina",
+      "explanation": "Me ducho por la mañana."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Trabajo / ocho / horas / al / día",
+      "options": [
+        "Trabajo",
+        "ocho",
+        "horas",
+        "al",
+        "día"
+      ],
+      "answer": "Trabajo ocho horas al día",
+      "instruction": "Presente",
+      "explanation": "Trabajo ocho horas…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿A / qué / hora / cenáis?",
+      "options": [
+        "¿A",
+        "qué",
+        "hora",
+        "cenáis?"
+      ],
+      "answer": "¿A qué hora cenáis?",
+      "instruction": "Pregunta rutina",
+      "explanation": "¿A qué hora cenáis?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Siempre / estudio / después / de / cenar",
+      "options": [
+        "Siempre",
+        "estudio",
+        "después",
+        "de",
+        "cenar"
+      ],
+      "answer": "Siempre estudio después de cenar",
+      "instruction": "Hábito",
+      "explanation": "Siempre estudio…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Mi / padre / lee / el / periódico",
+      "options": [
+        "Mi",
+        "padre",
+        "lee",
+        "el",
+        "periódico"
+      ],
+      "answer": "Mi padre lee el periódico",
+      "instruction": "Presente él",
+      "explanation": "Lee el periódico."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Los / domingos / dormimos / hasta / tarde",
+      "options": [
+        "Los",
+        "domingos",
+        "dormimos",
+        "hasta",
+        "tarde"
+      ],
+      "answer": "Los domingos dormimos hasta tarde",
+      "instruction": "Rutina",
+      "explanation": "Los domingos dormimos…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Qué / haces / los / fines / de / semana?",
+      "options": [
+        "¿Qué",
+        "haces",
+        "los",
+        "fines",
+        "de",
+        "semana?"
+      ],
+      "answer": "¿Qué haces los fines de semana?",
+      "instruction": "Pregunta",
+      "explanation": "¿Qué haces…?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Voy / al / gimnasio / tres / veces / por / semana",
+      "options": [
+        "Voy",
+        "al",
+        "gimnasio",
+        "tres",
+        "veces",
+        "por",
+        "semana"
+      ],
+      "answer": "Voy al gimnasio tres veces por semana",
+      "instruction": "Frecuencia",
+      "explanation": "Tres veces por semana."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Ella / cocina / muy / bien",
+      "options": [
+        "Ella",
+        "cocina",
+        "muy",
+        "bien"
+      ],
+      "answer": "Ella cocina muy bien",
+      "instruction": "Presente ella",
+      "explanation": "Cocina muy bien."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Nos / levantamos / temprano / entre / semana",
+      "options": [
+        "Nos",
+        "levantamos",
+        "temprano",
+        "entre",
+        "semana"
+      ],
+      "answer": "Nos levantamos temprano entre semana",
+      "instruction": "Reflexivo",
+      "explanation": "Nos levantamos temprano."
     }
   ],
   "chapter-3-biblioteca": [
@@ -498,6 +639,136 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "¿Hay Wi-Fi aquí?",
       "instruction": "Redundancia",
       "explanation": "Un solo «aquí»."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Hay / muchos / libros / aquí",
+      "options": [
+        "Hay",
+        "muchos",
+        "libros",
+        "aquí"
+      ],
+      "answer": "Hay muchos libros aquí",
+      "instruction": "Hay + plural",
+      "explanation": "Hay muchos libros…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Busco / una / silla / libre",
+      "options": [
+        "Busco",
+        "una",
+        "silla",
+        "libre"
+      ],
+      "answer": "Busco una silla libre",
+      "instruction": "Buscar + una",
+      "explanation": "Busco una silla…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Tienes / un / bolígrafo?",
+      "options": [
+        "¿Tienes",
+        "un",
+        "bolígrafo?"
+      ],
+      "answer": "¿Tienes un bolígrafo?",
+      "instruction": "Tener — pregunta",
+      "explanation": "¿Tienes un bolígrafo?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "El / estudiante / lee / un / libro",
+      "options": [
+        "El",
+        "estudiante",
+        "lee",
+        "un",
+        "libro"
+      ],
+      "answer": "El estudiante lee un libro",
+      "instruction": "El + sustantivo",
+      "explanation": "El estudiante lee…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Hay / pocas / mesas / libres",
+      "options": [
+        "Hay",
+        "pocas",
+        "mesas",
+        "libres"
+      ],
+      "answer": "Hay pocas mesas libres",
+      "instruction": "Hay + pocas",
+      "explanation": "Hay pocas mesas…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Necesito / una / mesa / grande",
+      "options": [
+        "Necesito",
+        "una",
+        "mesa",
+        "grande"
+      ],
+      "answer": "Necesito una mesa grande",
+      "instruction": "Necesitar + una",
+      "explanation": "Necesito una mesa…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Hay / algún / diccionario?",
+      "options": [
+        "¿Hay",
+        "algún",
+        "diccionario?"
+      ],
+      "answer": "¿Hay algún diccionario?",
+      "instruction": "Algún",
+      "explanation": "¿Hay algún diccionario?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "La / profesora / explica / la / lección",
+      "options": [
+        "La",
+        "profesora",
+        "explica",
+        "la",
+        "lección"
+      ],
+      "answer": "La profesora explica la lección",
+      "instruction": "La + femenino",
+      "explanation": "La profesora explica…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Hay / un / profesor / nuevo",
+      "options": [
+        "Hay",
+        "un",
+        "profesor",
+        "nuevo"
+      ],
+      "answer": "Hay un profesor nuevo",
+      "instruction": "Hay + un",
+      "explanation": "Hay un profesor nuevo."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Quiero / prestar / un / libro",
+      "options": [
+        "Quiero",
+        "prestar",
+        "un",
+        "libro"
+      ],
+      "answer": "Quiero prestar un libro",
+      "instruction": "Querer + inf",
+      "explanation": "Quiero prestar…"
     }
   ],
   "chapter-4-numeros-tiempo": [
@@ -866,6 +1137,20 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Son las nueve en punto",
       "instruction": "Соберите en punto",
       "explanation": "Son las nueve en punto."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Son / las / cuatro / y / diez",
+      "options": [
+        "Son",
+        "las",
+        "cuatro",
+        "y",
+        "diez"
+      ],
+      "answer": "Son las cuatro y diez",
+      "instruction": "Hora",
+      "explanation": "Son las cuatro y diez."
     }
   ],
   "chapter-5-mercado": [
@@ -1137,6 +1422,139 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "No tengo coche pero tengo bicicleta.",
       "instruction": "Artículo sobrante",
       "explanation": "Sin «el» extra."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Compro / fruta / en / el / mercado",
+      "options": [
+        "Compro",
+        "fruta",
+        "en",
+        "el",
+        "mercado"
+      ],
+      "answer": "Compro fruta en el mercado",
+      "instruction": "Comprar",
+      "explanation": "Compro fruta…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Cuánto / cuestan / las / naranjas?",
+      "options": [
+        "¿Cuánto",
+        "cuestan",
+        "las",
+        "naranjas?"
+      ],
+      "answer": "¿Cuánto cuestan las naranjas?",
+      "instruction": "Precio plural",
+      "explanation": "¿Cuánto cuestan…?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Necesito / medio / kilo / de / queso",
+      "options": [
+        "Necesito",
+        "medio",
+        "kilo",
+        "de",
+        "queso"
+      ],
+      "answer": "Necesito medio kilo de queso",
+      "instruction": "Cantidad",
+      "explanation": "Medio kilo de…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "El / vendedor / es / muy / amable",
+      "options": [
+        "El",
+        "vendedor",
+        "es",
+        "muy",
+        "amable"
+      ],
+      "answer": "El vendedor es muy amable",
+      "instruction": "Ser",
+      "explanation": "Es muy amable."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Pago / con / tarjeta / hoy",
+      "options": [
+        "Pago",
+        "con",
+        "tarjeta",
+        "hoy"
+      ],
+      "answer": "Pago con tarjeta hoy",
+      "instruction": "Pagar",
+      "explanation": "Pago con tarjeta."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Hay / oferta / en / el / pescado",
+      "options": [
+        "Hay",
+        "oferta",
+        "en",
+        "el",
+        "pescado"
+      ],
+      "answer": "Hay oferta en el pescado",
+      "instruction": "Hay oferta",
+      "explanation": "Hay oferta en…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Quiero / dos / litros / de / leche",
+      "options": [
+        "Quiero",
+        "dos",
+        "litros",
+        "de",
+        "leche"
+      ],
+      "answer": "Quiero dos litros de leche",
+      "instruction": "Cantidad",
+      "explanation": "Dos litros de leche."
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Vende / pan / integral?",
+      "options": [
+        "¿Vende",
+        "pan",
+        "integral?"
+      ],
+      "answer": "¿Vende pan integral?",
+      "instruction": "Pregunta",
+      "explanation": "¿Vende pan integral?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Los / precios / son / altos",
+      "options": [
+        "Los",
+        "precios",
+        "son",
+        "altos"
+      ],
+      "answer": "Los precios son altos",
+      "instruction": "Ser + adj",
+      "explanation": "Los precios son altos."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Compramos / verduras / frescas",
+      "options": [
+        "Compramos",
+        "verduras",
+        "frescas"
+      ],
+      "answer": "Compramos verduras frescas",
+      "instruction": "Nosotros",
+      "explanation": "Compramos verduras…"
     }
   ],
   "chapter-6-cuerpo": [
@@ -1396,6 +1814,146 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "acceptableAnswers": [
         "Me gusta mi trabajo nuevo."
       ]
+    },
+    {
+      "type": "sentence_building",
+      "question": "A / mí / me / gusta / el / café",
+      "options": [
+        "A",
+        "mí",
+        "me",
+        "gusta",
+        "el",
+        "café"
+      ],
+      "answer": "A mí me gusta el café",
+      "instruction": "Gustar",
+      "explanation": "Me gusta el café."
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Te / gustan / las / películas / de / acción?",
+      "options": [
+        "¿Te",
+        "gustan",
+        "las",
+        "películas",
+        "de",
+        "acción?"
+      ],
+      "answer": "¿Te gustan las películas de acción?",
+      "instruction": "Gustar plural",
+      "explanation": "¿Te gustan las películas…?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "No / nos / gusta / el / frío",
+      "options": [
+        "No",
+        "nos",
+        "gusta",
+        "el",
+        "frío"
+      ],
+      "answer": "No nos gusta el frío",
+      "instruction": "Gustar negativo",
+      "explanation": "No nos gusta el frío."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Le / encanta / bailar / salsa",
+      "options": [
+        "Le",
+        "encanta",
+        "bailar",
+        "salsa"
+      ],
+      "answer": "Le encanta bailar salsa",
+      "instruction": "Encantar",
+      "explanation": "Le encanta bailar…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Me / interesa / la / historia",
+      "options": [
+        "Me",
+        "interesa",
+        "la",
+        "historia"
+      ],
+      "answer": "Me interesa la historia",
+      "instruction": "Interesar",
+      "explanation": "Me interesa la historia."
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Os / gusta / viajar?",
+      "options": [
+        "¿Os",
+        "gusta",
+        "viajar?"
+      ],
+      "answer": "¿Os gusta viajar?",
+      "instruction": "Gustar vosotros",
+      "explanation": "¿Os gusta viajar?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "A / ella / le / gusta / nadar",
+      "options": [
+        "A",
+        "ella",
+        "le",
+        "gusta",
+        "nadar"
+      ],
+      "answer": "A ella le gusta nadar",
+      "instruction": "Gustar + inf",
+      "explanation": "Le gusta nadar."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Nos / gustan / los / domingos / tranquilos",
+      "options": [
+        "Nos",
+        "gustan",
+        "los",
+        "domingos",
+        "tranquilos"
+      ],
+      "answer": "Nos gustan los domingos tranquilos",
+      "instruction": "Gustan plural",
+      "explanation": "Nos gustan los domingos…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Qué / te / gusta / hacer?",
+      "options": [
+        "¿Qué",
+        "te",
+        "gusta",
+        "hacer?"
+      ],
+      "answer": "¿Qué te gusta hacer?",
+      "instruction": "Pregunta",
+      "explanation": "¿Qué te gusta hacer?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Me / gusta / más / el / té / que / el / café",
+      "options": [
+        "Me",
+        "gusta",
+        "más",
+        "el",
+        "té",
+        "que",
+        "el",
+        "café"
+      ],
+      "answer": "Me gusta más el té que el café",
+      "instruction": "Comparación",
+      "explanation": "Me gusta más el té…"
     }
   ],
   "chapter-7-pasado-perfecto": [
@@ -4170,6 +4728,76 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "El libro está en la mesa",
       "instruction": "Preposición en",
       "explanation": "en la mesa — на столе"
+    },
+    {
+      "type": "error_correction",
+      "question": "El libro está en la mesa el.",
+      "answer": "El libro está en la mesa.",
+      "instruction": "Artículo sobrante",
+      "explanation": "Sin «el» al final."
+    },
+    {
+      "type": "error_correction",
+      "question": "El gato está debajo de la cama el suelo.",
+      "answer": "El gato está debajo de la cama.",
+      "instruction": "Redundancia",
+      "explanation": "Debajo de la cama — suficiente."
+    },
+    {
+      "type": "error_correction",
+      "question": "Vivo entre dos parques grande.",
+      "answer": "Vivo entre dos parques.",
+      "instruction": "Concordancia",
+      "explanation": "Parques — plural."
+    },
+    {
+      "type": "error_correction",
+      "question": "Está delante del espejo el.",
+      "answer": "Está delante del espejo.",
+      "instruction": "Artículo sobrante",
+      "explanation": "Sin «el» extra."
+    },
+    {
+      "type": "error_correction",
+      "question": "Vamos hacia el río al mar.",
+      "answer": "Vamos hacia el río.",
+      "instruction": "Contradicción",
+      "explanation": "Hacia el río — no al mar."
+    },
+    {
+      "type": "error_correction",
+      "question": "Caminan por la calle en la calle.",
+      "answer": "Caminan por la calle.",
+      "instruction": "Redundancia",
+      "explanation": "Por la calle — suficiente."
+    },
+    {
+      "type": "error_correction",
+      "question": "Hay un café en la esquina de la esquina.",
+      "answer": "Hay un café en la esquina.",
+      "instruction": "Redundancia",
+      "explanation": "En la esquina — suficiente."
+    },
+    {
+      "type": "error_correction",
+      "question": "El cuadro cuelga de la pared en la pared.",
+      "answer": "El cuadro cuelga de la pared.",
+      "instruction": "Redundancia",
+      "explanation": "De la pared — suficiente."
+    },
+    {
+      "type": "error_correction",
+      "question": "La tienda está al lado del banco lejos.",
+      "answer": "La tienda está al lado del banco.",
+      "instruction": "Contradicción",
+      "explanation": "Al lado — no lejos."
+    },
+    {
+      "type": "error_correction",
+      "question": "El coche está detrás de la casa delante.",
+      "answer": "El coche está detrás de la casa.",
+      "instruction": "Contradicción",
+      "explanation": "Detrás — no delante."
     }
   ],
   "chapter-20-preguntas": [
@@ -4416,6 +5044,139 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "¿Para qué estás aquí?",
       "instruction": "Para qué",
       "explanation": "¿Para qué estás aquí?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿De / dónde / viene / tu / familia?",
+      "options": [
+        "¿De",
+        "dónde",
+        "viene",
+        "tu",
+        "familia?"
+      ],
+      "answer": "¿De dónde viene tu familia?",
+      "instruction": "Origen",
+      "explanation": "¿De dónde viene…?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿A / qué / te / dedicas?",
+      "options": [
+        "¿A",
+        "qué",
+        "te",
+        "dedicas?"
+      ],
+      "answer": "¿A qué te dedicas?",
+      "instruction": "Profesión",
+      "explanation": "¿A qué te dedicas?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Cuántos / hermanos / tienes?",
+      "options": [
+        "¿Cuántos",
+        "hermanos",
+        "tienes?"
+      ],
+      "answer": "¿Cuántos hermanos tienes?",
+      "instruction": "Familia",
+      "explanation": "¿Cuántos hermanos…?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Qué / hora / es / ahora?",
+      "options": [
+        "¿Qué",
+        "hora",
+        "es",
+        "ahora?"
+      ],
+      "answer": "¿Qué hora es ahora?",
+      "instruction": "Hora",
+      "explanation": "¿Qué hora es…?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Por / qué / estudias / español?",
+      "options": [
+        "¿Por",
+        "qué",
+        "estudias",
+        "español?"
+      ],
+      "answer": "¿Por qué estudias español?",
+      "instruction": "Razón",
+      "explanation": "¿Por qué estudias…?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Con / quién / vives?",
+      "options": [
+        "¿Con",
+        "quién",
+        "vives?"
+      ],
+      "answer": "¿Con quién vives?",
+      "instruction": "Compañía",
+      "explanation": "¿Con quién vives?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Cuál / es / tu / color / favorito?",
+      "options": [
+        "¿Cuál",
+        "es",
+        "tu",
+        "color",
+        "favorito?"
+      ],
+      "answer": "¿Cuál es tu color favorito?",
+      "instruction": "Cuál",
+      "explanation": "¿Cuál es tu color…?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Cuánto / tiempo / llevas / aquí?",
+      "options": [
+        "¿Cuánto",
+        "tiempo",
+        "llevas",
+        "aquí?"
+      ],
+      "answer": "¿Cuánto tiempo llevas aquí?",
+      "instruction": "Duración",
+      "explanation": "¿Cuánto tiempo llevas…?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Qué / tipo / de / música / prefieres?",
+      "options": [
+        "¿Qué",
+        "tipo",
+        "de",
+        "música",
+        "prefieres?"
+      ],
+      "answer": "¿Qué tipo de música prefieres?",
+      "instruction": "Preferencia",
+      "explanation": "¿Qué tipo de música…?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Adónde / vamos / este / fin / de / semana?",
+      "options": [
+        "¿Adónde",
+        "vamos",
+        "este",
+        "fin",
+        "de",
+        "semana?"
+      ],
+      "answer": "¿Adónde vamos este fin de semana?",
+      "instruction": "Adónde",
+      "explanation": "¿Adónde vamos…?"
     }
   ],
   "chapter-21-comparativos": [
@@ -5344,6 +6105,18 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Debo llamar a mi madre",
       "instruction": "Соберите deber",
       "explanation": "Debo llamar…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Puedo / ayudarte / ahora",
+      "options": [
+        "Puedo",
+        "ayudarte",
+        "ahora"
+      ],
+      "answer": "Puedo ayudarte ahora",
+      "instruction": "Poder",
+      "explanation": "Puedo ayudarte ahora."
     }
   ],
   "chapter-27-hendidas": [
@@ -5555,6 +6328,286 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Lo que necesitamos es tiempo",
       "instruction": "Lo que necesitamos",
       "explanation": "Lo que necesitamos es…"
+    },
+    {
+      "type": "translation",
+      "question": "Именно Мария позвонила.",
+      "answer": "Fue María quien llamó",
+      "instruction": "Hendida — persona",
+      "explanation": "Fue X quien…"
+    },
+    {
+      "type": "translation",
+      "question": "Именно сегодня мы решили действовать.",
+      "answer": "Es hoy cuando decidimos actuar",
+      "instruction": "Hendida — tiempo",
+      "explanation": "Es hoy cuando…"
+    },
+    {
+      "type": "translation",
+      "question": "То, что я хочу, — это мир.",
+      "answer": "Lo que quiero es paz",
+      "instruction": "Lo que… es…",
+      "explanation": "Lo que quiero es…"
+    },
+    {
+      "type": "translation",
+      "question": "Именно в 2020 году всё началось.",
+      "answer": "Fue en 2020 cuando empezó todo",
+      "instruction": "Hendida — año",
+      "explanation": "Fue en 2020 cuando…"
+    },
+    {
+      "type": "translation",
+      "question": "То, что меня беспокоит, — это цена.",
+      "answer": "Lo que me preocupa es el precio",
+      "instruction": "Lo que + verbo",
+      "explanation": "Lo que me preocupa es…"
+    },
+    {
+      "type": "translation",
+      "question": "Именно директор одобрил план.",
+      "answer": "Fue el director quien aprobó el plan",
+      "instruction": "Hendida — cargo",
+      "explanation": "Fue el director quien…"
+    },
+    {
+      "type": "translation",
+      "question": "Именно здесь началась история.",
+      "answer": "Es aquí donde nació la historia",
+      "instruction": "Hendida — lugar",
+      "explanation": "Es aquí donde…"
+    },
+    {
+      "type": "translation",
+      "question": "То, что она сделала, — уволилась.",
+      "answer": "Lo que hizo fue renunciar",
+      "instruction": "Lo que hizo fue…",
+      "explanation": "Acción destacada."
+    },
+    {
+      "type": "translation",
+      "question": "Именно из-за дождя мы отменили.",
+      "answer": "Fue por la lluvia por lo que cancelamos",
+      "instruction": "Por lo que",
+      "explanation": "Fue por X por lo que…"
+    },
+    {
+      "type": "translation",
+      "question": "Именно с тобой я хочу поговорить.",
+      "answer": "Es contigo con quien quiero hablar",
+      "instruction": "Preposición repetida",
+      "explanation": "Es CON X CON quien…"
+    },
+    {
+      "type": "translation",
+      "question": "То, что важно, — честность.",
+      "answer": "Lo que importa es la honestidad",
+      "instruction": "Lo que importa",
+      "explanation": "Lo que importa es…"
+    },
+    {
+      "type": "translation",
+      "question": "Именно вчера я всё узнал.",
+      "answer": "Fue anoche cuando lo supe todo",
+      "instruction": "Hendida — tiempo",
+      "explanation": "Fue anoche cuando…"
+    },
+    {
+      "type": "translation",
+      "question": "Именно она права.",
+      "answer": "Es ella quien tiene la razón",
+      "instruction": "Hendida — sujeto",
+      "explanation": "Es ella quien…"
+    },
+    {
+      "type": "translation",
+      "question": "То, что нам нужно, — время.",
+      "answer": "Lo que necesitamos es tiempo",
+      "instruction": "Lo que necesitamos",
+      "explanation": "Lo que necesitamos es…"
+    },
+    {
+      "type": "translation",
+      "question": "Именно Juan разбил вазу.",
+      "answer": "Fue Juan quien rompió el vaso",
+      "instruction": "Hendida — persona",
+      "explanation": "Fue Juan quien…"
+    },
+    {
+      "type": "translation",
+      "question": "Именно в Мадриде живёт моя сестра.",
+      "answer": "Es en Madrid donde vive mi hermana",
+      "instruction": "Hendida — lugar",
+      "explanation": "Es en Madrid donde…"
+    },
+    {
+      "type": "translation",
+      "question": "То, что меня раздражает, — шум.",
+      "answer": "Lo que me molesta es el ruido",
+      "instruction": "Lo que… es…",
+      "explanation": "Lo que me molesta es…"
+    },
+    {
+      "type": "translation",
+      "question": "Именно вчера это произошло.",
+      "answer": "Fue ayer cuando ocurrió",
+      "instruction": "Hendida — tiempo",
+      "explanation": "Fue ayer cuando…"
+    },
+    {
+      "type": "translation",
+      "question": "То, что удивило всех, — его молчание.",
+      "answer": "Lo que sorprendió a todos fue su silencio",
+      "instruction": "Wh-cleft",
+      "explanation": "Lo que sorprendió… fue…"
+    },
+    {
+      "type": "translation",
+      "question": "Именно из-за тебя мы опоздали.",
+      "answer": "Fue por ti por lo que llegamos tarde",
+      "instruction": "Razón cleft",
+      "explanation": "Fue por ti por lo que…"
+    },
+    {
+      "type": "error_correction",
+      "question": "Fue Maria quien llamó ayer.",
+      "answer": "Fue María quien llamó ayer.",
+      "instruction": "Tilde — María",
+      "explanation": "María con tilde."
+    },
+    {
+      "type": "error_correction",
+      "question": "Es hoy cuando decidimos actuar ya.",
+      "answer": "Es hoy cuando decidimos actuar.",
+      "instruction": "Redundancia",
+      "explanation": "Sin «ya» redundante."
+    },
+    {
+      "type": "error_correction",
+      "question": "Lo que quiero es la paz y tranquilidad.",
+      "answer": "Lo que quiero es paz.",
+      "instruction": "Pleonasmo",
+      "explanation": "Paz = tranquilidad."
+    },
+    {
+      "type": "error_correction",
+      "question": "Fue en 2020 quien empezó todo.",
+      "answer": "Fue en 2020 cuando empezó todo.",
+      "instruction": "Lugar vs tiempo",
+      "explanation": "Cuando, no quien."
+    },
+    {
+      "type": "error_correction",
+      "question": "Lo que me preocupa es el precio caro.",
+      "answer": "Lo que me preocupa es el precio.",
+      "instruction": "Pleonasmo",
+      "explanation": "Precio — sin «caro»."
+    },
+    {
+      "type": "error_correction",
+      "question": "Fue el director que aprobó el plan.",
+      "answer": "Fue el director quien aprobó el plan.",
+      "instruction": "Persona → quien",
+      "explanation": "Persona → quien, no que."
+    },
+    {
+      "type": "error_correction",
+      "question": "Es aquí quien nació la historia.",
+      "answer": "Es aquí donde nació la historia.",
+      "instruction": "Lugar → donde",
+      "explanation": "Lugar → donde."
+    },
+    {
+      "type": "error_correction",
+      "question": "Lo que hizo fue renunciar inmediatamente ya.",
+      "answer": "Lo que hizo fue renunciar.",
+      "instruction": "Redundancia",
+      "explanation": "Sin «inmediatamente ya»."
+    },
+    {
+      "type": "error_correction",
+      "question": "Fue por la lluvia que cancelamos.",
+      "answer": "Fue por la lluvia por lo que cancelamos.",
+      "instruction": "Por lo que",
+      "explanation": "Fue por X por lo que…"
+    },
+    {
+      "type": "error_correction",
+      "question": "Es contigo que quiero hablar.",
+      "answer": "Es contigo con quien quiero hablar.",
+      "instruction": "Preposición repetida",
+      "explanation": "Es CON X CON quien…"
+    },
+    {
+      "type": "error_correction",
+      "question": "Lo que importa son la honestidad.",
+      "answer": "Lo que importa es la honestidad.",
+      "instruction": "Concordancia",
+      "explanation": "Lo que importa es… (singular)."
+    },
+    {
+      "type": "error_correction",
+      "question": "Fue anoche quien lo supe todo.",
+      "answer": "Fue anoche cuando lo supe todo.",
+      "instruction": "Tiempo → cuando",
+      "explanation": "Tiempo → cuando."
+    },
+    {
+      "type": "error_correction",
+      "question": "Es ella que tiene la razón.",
+      "answer": "Es ella quien tiene la razón.",
+      "instruction": "Persona → quien",
+      "explanation": "Es ella quien…"
+    },
+    {
+      "type": "error_correction",
+      "question": "Lo que necesitamos es tiempo extra.",
+      "answer": "Lo que necesitamos es tiempo.",
+      "instruction": "Redundancia",
+      "explanation": "Tiempo — sin «extra»."
+    },
+    {
+      "type": "error_correction",
+      "question": "Fue Juan que rompió el vaso.",
+      "answer": "Fue Juan quien rompió el vaso.",
+      "instruction": "Persona → quien",
+      "explanation": "Fue Juan quien…"
+    },
+    {
+      "type": "error_correction",
+      "question": "Es en Madrid quien vive mi hermana.",
+      "answer": "Es en Madrid donde vive mi hermana.",
+      "instruction": "Lugar → donde",
+      "explanation": "Es en Madrid donde…"
+    },
+    {
+      "type": "error_correction",
+      "question": "Lo que me molesta es el ruido fuerte.",
+      "answer": "Lo que me molesta es el ruido.",
+      "instruction": "Pleonasmo",
+      "explanation": "Ruido ya implica fuerte."
+    },
+    {
+      "type": "error_correction",
+      "question": "Fue ayer quien ocurrió.",
+      "answer": "Fue ayer cuando ocurrió.",
+      "instruction": "Tiempo → cuando",
+      "explanation": "Fue ayer cuando…"
+    },
+    {
+      "type": "error_correction",
+      "question": "Lo que sorprendió a todos fue su silencio total.",
+      "answer": "Lo que sorprendió a todos fue su silencio.",
+      "instruction": "Pleonasmo",
+      "explanation": "Silencio — suficiente."
+    },
+    {
+      "type": "error_correction",
+      "question": "Fue por ti que llegamos tarde.",
+      "answer": "Fue por ti por lo que llegamos tarde.",
+      "instruction": "Por lo que",
+      "explanation": "Fue por ti por lo que…"
     }
   ],
   "chapter-28-conjetura": [
@@ -6002,6 +7055,146 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Habrá sido un malentendido",
       "instruction": "Futuro perfecto ser",
       "explanation": "Habrá sido un malentendido."
+    },
+    {
+      "type": "error_correction",
+      "question": "Serán las tres cuando llegue seguro.",
+      "answer": "Serán las tres cuando llegue.",
+      "instruction": "Redundancia",
+      "explanation": "Sin «seguro» redundante."
+    },
+    {
+      "type": "error_correction",
+      "question": "Debe de estar en la oficina ahora mismo ya.",
+      "answer": "Debe de estar en la oficina.",
+      "instruction": "Redundancia temporal",
+      "explanation": "Sin «ahora mismo ya»."
+    },
+    {
+      "type": "error_correction",
+      "question": "Habrá salido hace rato ayer.",
+      "answer": "Habrá salido hace rato.",
+      "instruction": "Tiempo contradictorio",
+      "explanation": "Hace rato — no ayer."
+    },
+    {
+      "type": "error_correction",
+      "question": "Tendrá unos treinta años años.",
+      "answer": "Tendrá unos treinta años.",
+      "instruction": "Redundancia",
+      "explanation": "Un solo «años»."
+    },
+    {
+      "type": "error_correction",
+      "question": "Lo habrían despedido ayer mañana.",
+      "answer": "Lo habrían despedido ayer.",
+      "instruction": "Tiempo imposible",
+      "explanation": "Ayer — sin mañana."
+    },
+    {
+      "type": "error_correction",
+      "question": "Sería imposible sin ayuda de nadie.",
+      "answer": "Sería imposible sin ayuda.",
+      "instruction": "Redundancia",
+      "explanation": "Sin «de nadie»."
+    },
+    {
+      "type": "error_correction",
+      "question": "Estarán de vacaciones ahora mismo seguro.",
+      "answer": "Estarán de vacaciones ahora.",
+      "instruction": "Redundancia",
+      "explanation": "Un marcador temporal."
+    },
+    {
+      "type": "error_correction",
+      "question": "Habrá llovido toda la noche ayer.",
+      "answer": "Habrá llovido toda la noche.",
+      "instruction": "Contradicción",
+      "explanation": "Toda la noche — no ayer extra."
+    },
+    {
+      "type": "error_correction",
+      "question": "Deben de conocerse desde niños pequeños niños.",
+      "answer": "Deben de conocerse desde niños.",
+      "instruction": "Redundancia",
+      "explanation": "Desde niños — suficiente."
+    },
+    {
+      "type": "error_correction",
+      "question": "Serán las ocho ya ya.",
+      "answer": "Serán las ocho ya.",
+      "instruction": "Redundancia",
+      "explanation": "Un solo «ya»."
+    },
+    {
+      "type": "error_correction",
+      "question": "No vendrá seguro seguro.",
+      "answer": "No vendrá seguro.",
+      "instruction": "Redundancia",
+      "explanation": "Un solo «seguro»."
+    },
+    {
+      "type": "error_correction",
+      "question": "Habría costado mucho dinero caro.",
+      "answer": "Habría costado mucho dinero.",
+      "instruction": "Pleonasmo",
+      "explanation": "Mucho dinero — sin caro."
+    },
+    {
+      "type": "error_correction",
+      "question": "Estará enfermo por eso no vino porque.",
+      "answer": "Estará enfermo, por eso no vino.",
+      "instruction": "Puntuación",
+      "explanation": "Coma tras enfermo."
+    },
+    {
+      "type": "error_correction",
+      "question": "Tendrán problemas con el jefe seguro.",
+      "answer": "Tendrán problemas con el jefe.",
+      "instruction": "Redundancia",
+      "explanation": "Sin «seguro» al final."
+    },
+    {
+      "type": "error_correction",
+      "question": "Será verdad lo que dice seguro.",
+      "answer": "Será verdad lo que dice.",
+      "instruction": "Redundancia",
+      "explanation": "Será — ya implica conjetura."
+    },
+    {
+      "type": "error_correction",
+      "question": "Habrá sido un malentendido grande grande.",
+      "answer": "Habrá sido un malentendido.",
+      "instruction": "Redundancia",
+      "explanation": "Malentendido — suficiente."
+    },
+    {
+      "type": "error_correction",
+      "question": "Lloverá esta tarde seguro seguro.",
+      "answer": "Lloverá esta tarde seguro.",
+      "instruction": "Redundancia",
+      "explanation": "Un solo «seguro»."
+    },
+    {
+      "type": "error_correction",
+      "question": "Lo sabrá mañana seguro ya.",
+      "answer": "Lo sabrá mañana seguro.",
+      "instruction": "Redundancia temporal",
+      "explanation": "Mañana seguro — suficiente."
+    },
+    {
+      "type": "error_correction",
+      "question": "El presidente habría aceptado ayer mañana.",
+      "answer": "El presidente habría aceptado.",
+      "instruction": "Tiempo imposible",
+      "explanation": "Sin ayer mañana."
+    },
+    {
+      "type": "error_correction",
+      "question": "Deben de estar en casa porque la luz.",
+      "answer": "Deben de estar en casa — la luz está encendida.",
+      "instruction": "Oración incompleta",
+      "explanation": "Completar la causa."
     }
   ],
   "chapter-29-culto": [
@@ -6494,6 +7687,146 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Ante el incremento de los costes, cerraron.",
       "instruction": "Artículo",
       "explanation": "Los costes — artículo definido."
+    },
+    {
+      "type": "translation",
+      "question": "Когда собрание закончилось, все ушли.",
+      "answer": "Terminada la reunión, todos se fueron",
+      "instruction": "Participio absoluto",
+      "explanation": "Terminada la reunión…"
+    },
+    {
+      "type": "translation",
+      "question": "Подписав документы, пути назад нет.",
+      "answer": "Firmados los documentos, no hay vuelta atrás",
+      "instruction": "Participio plural",
+      "explanation": "Firmados los documentos…"
+    },
+    {
+      "type": "translation",
+      "question": "Курение в здании запрещено.",
+      "answer": "Queda prohibido fumar en el edificio",
+      "instruction": "Queda + participio",
+      "explanation": "Queda prohibido fumar…"
+    },
+    {
+      "type": "translation",
+      "question": "Из-за роста цен выросла инфляция.",
+      "answer": "Debido al aumento de precios, subió la inflación",
+      "instruction": "Nominalización",
+      "explanation": "Debido al aumento de…"
+    },
+    {
+      "type": "translation",
+      "question": "Тем не менее мы одобрим.",
+      "answer": "No obstante, lo aprobaremos",
+      "instruction": "Conector culto",
+      "explanation": "No obstante — formal."
+    },
+    {
+      "type": "translation",
+      "question": "Закончив работу, мы ушли.",
+      "answer": "Acabado el trabajo, nos fuimos",
+      "instruction": "Participio masculino",
+      "explanation": "Acabado el trabajo…"
+    },
+    {
+      "type": "translation",
+      "question": "Сессия завершена — они удалились.",
+      "answer": "Concluida la sesión, se retiraron",
+      "instruction": "Registro formal",
+      "explanation": "Concluida la sesión…"
+    },
+    {
+      "type": "translation",
+      "question": "Сделав уроки, можно выйти.",
+      "answer": "Hechos los deberes, puede salir",
+      "instruction": "Concordancia plural",
+      "explanation": "Hechos los deberes…"
+    },
+    {
+      "type": "translation",
+      "question": "Когда наступил момент, мы действовали.",
+      "answer": "Llegado el momento, actuaremos",
+      "instruction": "Participio absoluto",
+      "explanation": "Llegado el momento…"
+    },
+    {
+      "type": "translation",
+      "question": "В связи со сложившейся ситуацией мы должны действовать.",
+      "answer": "Ante la situación actual, debemos actuar",
+      "instruction": "Registro culto",
+      "explanation": "Ante la situación…"
+    },
+    {
+      "type": "translation",
+      "question": "Из-за дождя мы отменили пикник.",
+      "answer": "A causa de la lluvia, cancelamos el picnic",
+      "instruction": "Nominalización",
+      "explanation": "A causa de la lluvia…"
+    },
+    {
+      "type": "translation",
+      "question": "Подписав бумаги, мы вышли.",
+      "answer": "Una vez firmados los papeles, salimos",
+      "instruction": "Una vez + participio",
+      "explanation": "Una vez firmados…"
+    },
+    {
+      "type": "translation",
+      "question": "По тому факту, что он не пришёл, мы забеспокоились.",
+      "answer": "Por el hecho de que no vino, nos preocupamos",
+      "instruction": "Estilo culto",
+      "explanation": "Por el hecho de que…"
+    },
+    {
+      "type": "translation",
+      "question": "Вход без разрешения запрещён.",
+      "answer": "Queda vedada la entrada sin permiso",
+      "instruction": "Queda vedado",
+      "explanation": "Queda vedada la entrada…"
+    },
+    {
+      "type": "translation",
+      "question": "Из-за роста расходов они закрылись.",
+      "answer": "Ante el incremento de los costes, cerraron",
+      "instruction": "Nominalización",
+      "explanation": "Ante el incremento de…"
+    },
+    {
+      "type": "translation",
+      "question": "После ужина мы прогулялись.",
+      "answer": "Acabada la cena, dimos un paseo",
+      "instruction": "Participio femenino",
+      "explanation": "Acabada la cena…"
+    },
+    {
+      "type": "translation",
+      "question": "Результат неудовлетворительный; тем не менее продолжаем.",
+      "answer": "El resultado es insatisfactorio; no obstante, proseguimos",
+      "instruction": "Registro académico",
+      "explanation": "No obstante proseguimos."
+    },
+    {
+      "type": "translation",
+      "question": "В молодости он много путешествовал.",
+      "answer": "De joven, viajó por toda Europa",
+      "instruction": "Estilo culto",
+      "explanation": "De joven — período."
+    },
+    {
+      "type": "translation",
+      "question": "На основании договорённости мы действуем.",
+      "answer": "En virtud de lo acordado, procedemos",
+      "instruction": "Fórmula culta",
+      "explanation": "En virtud de lo acordado…"
+    },
+    {
+      "type": "translation",
+      "question": "Перед лицом кризиса приняли меры.",
+      "answer": "Ante la crisis, se adoptaron medidas",
+      "instruction": "Registro formal",
+      "explanation": "Ante la crisis…"
     }
   ],
   "chapter-30-ironia": [
@@ -7407,7 +8740,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
     },
     {
       "type": "sentence_building",
-      "question": "Por / un / lado / es / útil / por / otro / caro",
+      "question": "Por / un / lado / es / útil / por / otro / es / caro",
       "options": [
         "Por",
         "un",
@@ -7416,11 +8749,12 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "útil",
         "por",
         "otro",
+        "es",
         "caro"
       ],
-      "answer": "Por un lado es útil por otro caro",
+      "answer": "Por un lado es útil por otro es caro",
       "instruction": "Conectores DELE",
-      "explanation": "Por un lado… por otro…"
+      "explanation": "Por un lado… por otro es…"
     },
     {
       "type": "sentence_building",
@@ -8686,6 +10020,109 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Es un día soleado",
       "instruction": "Ser — descripción",
       "explanation": "Es un día soleado."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Yo / soy / estudiante",
+      "options": [
+        "Yo",
+        "soy",
+        "estudiante"
+      ],
+      "answer": "Yo soy estudiante",
+      "instruction": "Ser — identidad",
+      "explanation": "Soy estudiante."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Ella / está / cansada",
+      "options": [
+        "Ella",
+        "está",
+        "cansada"
+      ],
+      "answer": "Ella está cansada",
+      "instruction": "Estar — estado",
+      "explanation": "Está cansada."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Nosotros / somos / amigos",
+      "options": [
+        "Nosotros",
+        "somos",
+        "amigos"
+      ],
+      "answer": "Nosotros somos amigos",
+      "instruction": "Ser — relación",
+      "explanation": "Somos amigos."
+    },
+    {
+      "type": "sentence_building",
+      "question": "El / profesor / es / muy / amable",
+      "options": [
+        "El",
+        "profesor",
+        "es",
+        "muy",
+        "amable"
+      ],
+      "answer": "El profesor es muy amable",
+      "instruction": "Ser — rasgo",
+      "explanation": "Es muy amable."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Hoy / estoy / muy / contento",
+      "options": [
+        "Hoy",
+        "estoy",
+        "muy",
+        "contento"
+      ],
+      "answer": "Hoy estoy muy contento",
+      "instruction": "Estar — emoción",
+      "explanation": "Estoy contento."
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Eres / de / España?",
+      "options": [
+        "¿Eres",
+        "de",
+        "España?"
+      ],
+      "answer": "¿Eres de España?",
+      "instruction": "Ser — origen",
+      "explanation": "¿Eres de España?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Mi / hermana / es / médica",
+      "options": [
+        "Mi",
+        "hermana",
+        "es",
+        "médica"
+      ],
+      "answer": "Mi hermana es médica",
+      "instruction": "Ser — profesión",
+      "explanation": "Es médica."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Los / niños / están / en / el / parque",
+      "options": [
+        "Los",
+        "niños",
+        "están",
+        "en",
+        "el",
+        "parque"
+      ],
+      "answer": "Los niños están en el parque",
+      "instruction": "Estar — lugar",
+      "explanation": "Están en el parque."
     }
   ],
   "chapter-32-pronombre-se": [
@@ -11246,7 +12683,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
     },
     {
       "type": "sentence_building",
-      "question": "Por / un / lado / es / útil / por / otro / caro",
+      "question": "Por / un / lado / es / útil / por / otro / es / caro",
       "options": [
         "Por",
         "un",
@@ -11255,11 +12692,12 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "útil",
         "por",
         "otro",
+        "es",
         "caro"
       ],
-      "answer": "Por un lado es útil por otro caro",
+      "answer": "Por un lado es útil por otro es caro",
       "instruction": "Por un lado…",
-      "explanation": "Por un lado… por otro…"
+      "explanation": "Por un lado… por otro es…"
     },
     {
       "type": "sentence_building",
@@ -11444,7 +12882,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
     },
     {
       "type": "sentence_building",
-      "question": "Por / un / lado / es / barato / por / otro / lento",
+      "question": "Por / un / lado / es / barato / por / otro / es / lento",
       "options": [
         "Por",
         "un",
@@ -11453,11 +12891,12 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "barato",
         "por",
         "otro",
+        "es",
         "lento"
       ],
-      "answer": "Por un lado es barato por otro lento",
+      "answer": "Por un lado es barato por otro es lento",
       "instruction": "Contraste",
-      "explanation": "Por un lado… por otro…"
+      "explanation": "Por un lado… por otro es…"
     },
     {
       "type": "sentence_building",
