@@ -13,6 +13,10 @@ import {
   SPANISH_C2_SUPPLEMENTS,
   SPANISH_C2_THICK,
 } from "./data/spanish-c2-c1-supplements.mjs";
+import {
+  SPANISH_A1B1B2_SUPPLEMENTS,
+} from "./data/spanish-a1b1b2-supplements.mjs";
+import { SPANISH_B1B2_SUPPLEMENTS } from "./data/spanish-b1b2-supplements.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
@@ -73,6 +77,15 @@ const SPANISH_CURATED_SUPPLEMENTS = {
     sb(["Me", "lavo", "los", "dientes", "dos", "veces", "al", "día"], "Me lavo los dientes dos veces al día", "Соберите гигиену", "Reflexivo: me lavo."),
     sb(["Mi", "hermano", "trabaja", "en", "un", "hospital"], "Mi hermano trabaja en un hospital", "Соберите фразу о работе", "Trabaja en un hospital."),
     sb(["Cenamos", "a", "las", "ocho", "en", "familia"], "Cenamos a las ocho en familia", "Соберите ужин", "Cenamos a las ocho."),
+    ec("Yo me levanto a las siete de la mañana cada días.", "Me levanto a las siete de la mañana cada día.", "Presente — cada día", "Cada día — singular (no días)."),
+    ec("Ella lee un libro cada noches.", "Ella lee un libro cada noche.", "Presente — cada noche", "Cada noche — singular."),
+    ec("Nosotros desayunamos juntos cada mañana hoy.", "Desayunamos juntos cada mañana.", "Redundancia", "Cada mañana — sin «hoy»."),
+    ec("¿Cocinas la cena esta noche ayer?", "¿Cocinas la cena esta noche?", "Tiempo contradictorio", "Esta noche — no ayer."),
+    ec("Me lavo los diente dos veces al día.", "Me lavo los dientes dos veces al día.", "Plural — dientes", "Los dientes — plural."),
+    ec("Mi hermano trabaja en un hospital desde ayer siempre.", "Mi hermano trabaja en un hospital.", "Redundancia temporal", "Sin «desde ayer siempre»."),
+    ec("Estudian en la universidad ellos ellos.", "Estudian en la universidad.", "Pronombre redundante", "Ellos — no repetir."),
+    ec("Yo estudio español todos los día.", "Estudio español todos los días.", "Plural — días", "Todos los días — plural."),
+    ec("Ella lee un libro cada noche en las mañanas.", "Ella lee un libro cada noche.", "Contradicción temporal", "Cada noche — no mañanas."),
   ],
 
   "chapter-3-biblioteca": [
@@ -94,11 +107,53 @@ const SPANISH_CURATED_SUPPLEMENTS = {
     sb(["Busco", "un", "diccionario", "de", "español"], "Busco un diccionario de español", "Соберите buscar", "Busco un diccionario…"),
     sb(["¿Dónde", "está", "el", "baño?"], "¿Dónde está el baño?", "Соберите el baño", "El baño — мужской род."),
     sb(["¿Hay", "Wi-Fi", "aquí?"], "¿Hay Wi-Fi aquí?", "Соберите вопрос hay", "¿Hay… aquí?"),
+    ec("Hay un libro en la biblioteca el.", "Hay un libro en la biblioteca.", "Artículo incorrecto", "Sin «el» al final."),
+    ec("¿Dónde está el periódico de la?", "¿Dónde está el periódico?", "Artículo sobrante", "El periódico — sin «de la»."),
+    ec("Necesito un bolígrafo azules.", "Necesito un bolígrafo azul.", "Concordancia", "Azul — invariable con bolígrafo."),
+    ec("Hay una revista en la mesa el.", "Hay una revista en la mesa.", "Artículo incorrecto", "Sin «el» extra."),
+    ec("Es un artículo interesantes.", "Es un artículo interesante.", "Concordancia", "Artículo — masculino singular."),
+    ec("No hay silla en la habitación.", "No hay sillas en la habitación.", "Plural", "Sillas — plural en la habitación."),
+    ec("Busco un diccionario de españoles.", "Busco un diccionario de español.", "Nombre de idioma", "De español — sin -es."),
+    ec("¿Dónde está el baño de la?", "¿Dónde está el baño?", "Artículo sobrante", "El baño — sin «de la»."),
+    ec("¿Hay Wi-Fi aquí en el aquí?", "¿Hay Wi-Fi aquí?", "Redundancia", "Un solo «aquí»."),
   ],
 
   "chapter-4-numeros-tiempo": [
+    tr("Сейчас три часа.", "Son las tres", "La hora", "Son las tres — для часов кроме 1:00."),
+    tr("Полдень.", "Es mediodía", "Mediodía", "Es mediodía — без las."),
+    tr("Сейчас половина пятого.", "Son las cinco y media", "Y media", "Son las cinco y media."),
+    tr("Сейчас без пятнадцати шесть.", "Son las seis menos cuarto", "Menos cuarto", "Son las seis menos cuarto."),
+    tr("Какой сегодня день?", "¿Qué día es hoy?", "Día de la semana", "¿Qué día es hoy?"),
+    tr("Сегодня понедельник.", "Hoy es lunes", "Días", "Hoy es lunes."),
+    tr("Мой день рождения 15 марта.", "Mi cumpleaños es el quince de marzo", "Fecha", "El quince de marzo."),
+    tr("Сейчас десять утра.", "Son las diez de la mañana", "Mañana", "Son las diez de la mañana."),
+    ec("Son las tres y cuarto de la tarde de la mañana.", "Son las tres y cuarto de la tarde.", "Redundancia", "Una sola parte del día."),
+    ec("Es medianoche a las doce.", "Es medianoche.", "Redundancia", "Medianoche = las doce de la noche."),
+    ec("Son las una y media.", "Es la una y media.", "Concordancia — una", "Es la una — singular."),
+    ec("Hoy es lunes martes.", "Hoy es lunes.", "Día contradictorio", "Un solo día."),
+    ec("Son las seis menos cuarto y media.", "Son las seis menos cuarto.", "Tiempo imposible", "Menos cuarto — sin «y media»."),
+    ec("Mi cumpleaños es en quince marzo.", "Mi cumpleaños es el quince de marzo.", "Fecha — de", "El quince de marzo — con «de»."),
+    ec("Son las diez de la mañana de la noche.", "Son las diez de la mañana.", "Contradicción", "Mañana — no noche."),
+    ec("Es mediodía a las doce de la noche.", "Es mediodía.", "Contradicción", "Mediodía — no medianoche."),
+    ec("¿Qué hora es? Son las tres y cuarto y media.", "¿Qué hora es? Son las tres y cuarto.", "Tiempo imposible", "Y cuarto — sin «y media»."),
     sb(["Son", "las", "tres", "y", "cuarto"], "Son las tres y cuarto", "Соберите время", "Son las tres y cuarto = 3:15."),
-    sb(["Es", "media", "noche"], "Es medianoche", "Соберите полночь", "Es medianoche — без las."),
+    sb(["Es", "medianoche"], "Es medianoche", "Соберите полночь", "Es medianoche — без las."),
+    sb(["Son", "las", "cinco", "y", "media"], "Son las cinco y media", "Соберите y media", "Son las cinco y media."),
+    sb(["Son", "las", "seis", "menos", "cuarto"], "Son las seis menos cuarto", "Соберите menos cuarto", "Son las seis menos cuarto."),
+    sb(["Es", "la", "una", "y", "media"], "Es la una y media", "Соберите la una", "Es la una y media — singular."),
+    sb(["Son", "las", "doce", "del", "mediodía"], "Son las doce del mediodía", "Соберите mediodía", "Doce del mediodía."),
+    sb(["Hoy", "es", "lunes"], "Hoy es lunes", "Соберите día", "Hoy es lunes."),
+    sb(["¿Qué", "día", "es", "hoy?"], "¿Qué día es hoy?", "Соберите pregunta", "¿Qué día es hoy?"),
+    sb(["Mi", "cumpleaños", "es", "el", "quince", "de", "marzo"], "Mi cumpleaños es el quince de marzo", "Соберите fecha", "El quince de marzo."),
+    sb(["Son", "las", "diez", "de", "la", "mañana"], "Son las diez de la mañana", "Соберите mañana", "Son las diez de la mañana."),
+    sb(["Son", "las", "ocho", "de", "la", "noche"], "Son las ocho de la noche", "Соберите noche", "Son las ocho de la noche."),
+    sb(["Es", "mediodía", "en", "punto"], "Es mediodía en punto", "Соберите mediodía", "Es mediodía en punto."),
+    sb(["Son", "las", "dos", "y", "veinte"], "Son las dos y veinte", "Соберите minutos", "Son las dos y veinte."),
+    sb(["Son", "las", "siete", "menos", "diez"], "Son las siete menos diez", "Соберите menos diez", "Son las siete menos diez."),
+    sb(["¿Qué", "hora", "es?"], "¿Qué hora es?", "Соберите pregunta hora", "¿Qué hora es?"),
+    sb(["Son", "las", "once", "y", "cinco"], "Son las once y cinco", "Соберите hora", "Son las once y cinco."),
+    sb(["Es", "el", "veinte", "de", "abril"], "Es el veinte de abril", "Соберите fecha", "Es el veinte de abril."),
+    sb(["Son", "las", "nueve", "en", "punto"], "Son las nueve en punto", "Соберите en punto", "Son las nueve en punto."),
   ],
 
   "chapter-5-mercado": [
@@ -121,6 +176,15 @@ const SPANISH_CURATED_SUPPLEMENTS = {
     sb(["Tiene", "tres", "hermanas", "mayores"], "Tiene tres hermanas mayores", "Соберите familia", "Tiene tres hermanas."),
     sb(["No", "tengo", "coche", "pero", "tengo", "bicicleta"], "No tengo coche pero tengo bicicleta", "Соберите no tener", "No tengo coche."),
     sb(["¿Cuánto", "cuesta?", "No", "tengo", "suficiente", "dinero"], "¿Cuánto cuesta? No tengo suficiente dinero", "Соберите на рынке", "No tengo suficiente dinero."),
+    ec("Yo tengo dos manzana en la bolsa.", "Tengo dos manzanas en la bolsa.", "Plural — manzanas", "Dos manzanas — plural."),
+    ec("Ella tiene poco dinero hoy mañana.", "Ella tiene poco dinero hoy.", "Redundancia temporal", "Hoy — sin mañana."),
+    ec("Tenemos mucho trabajos esta semana.", "Tenemos mucho trabajo esta semana.", "Incontable", "Trabajo — incontable."),
+    ec("¿Tienes tiempo para ayudarme tú?", "¿Tienes tiempo para ayudarme?", "Pronombre redundante", "Sin «tú» después del verbo."),
+    ec("Tengo dolor de cabezas.", "Tengo dolor de cabeza.", "Expresión fija", "Dolor de cabeza — singular."),
+    ec("Tienen una casa grande en el pueblo el.", "Tienen una casa grande en el pueblo.", "Artículo sobrante", "Sin «el» al final."),
+    ec("Yo tengo que comprar pan y leche hoy ayer.", "Tengo que comprar pan y leche hoy.", "Tiempo contradictorio", "Hoy — no ayer."),
+    ec("Tiene tres hermana mayores.", "Tiene tres hermanas mayores.", "Plural — hermanas", "Tres hermanas — plural."),
+    ec("No tengo coche pero tengo bicicleta el.", "No tengo coche pero tengo bicicleta.", "Artículo sobrante", "Sin «el» extra."),
   ],
 
   "chapter-6-cuerpo": [
@@ -142,6 +206,15 @@ const SPANISH_CURATED_SUPPLEMENTS = {
     sb(["Le", "gusta", "leer", "por", "las", "tardes"], "Le gusta leer por las tardes", "Соберите leer", "Le gusta leer…"),
     sb(["No", "nos", "gusta", "levantarnos", "temprano"], "No nos gusta levantarnos temprano", "Соберите reflexivo", "Levantarnos — infinitivo reflexivo."),
     sb(["¿Te", "gusta", "tu", "trabajo", "nuevo?"], "¿Te gusta tu trabajo nuevo?", "Соберите trabajo", "¿Te gusta tu trabajo?"),
+    ec("Me gusta nadar en verano en invierno.", "Me gusta nadar en verano.", "Contradicción estacional", "Verano — no invierno."),
+    ec("Le gustan la flores rojas.", "Le gustan las flores rojas.", "Artículo plural", "Las flores — plural."),
+    ec("Nos gusta esta músicas latina.", "Nos gusta esta música latina.", "Concordancia", "Música — singular."),
+    ec("¿Te gusta esta película tu?", "¿Te gusta esta película?", "Pronombre redundante", "Sin «tu» extra."),
+    ec("No le gusta el frío del invierno del verano.", "No le gusta el frío del invierno.", "Contradicción", "Invierno — no verano."),
+    ec("Me gustan los plato españoles.", "Me gustan los platos españoles.", "Plural — platos", "Los platos — plural."),
+    ec("Le gusta leer por las mañanas por las tardes.", "Le gusta leer por las tardes.", "Redundancia", "Una parte del día."),
+    ec("No nos gusta levantarnos temprano tarde.", "No nos gusta levantarnos temprano.", "Contradicción", "Temprano — no tarde."),
+    ec("Me gusta tu trabajo nuevo viejo.", "¿Te gusta tu trabajo nuevo?", "Contradicción", "Nuevo — no viejo.", ["Me gusta mi trabajo nuevo."]),
   ],
 
   "chapter-7-pasado-perfecto": [
@@ -351,6 +424,15 @@ const SPANISH_CURATED_SUPPLEMENTS = {
     sb(["¿Cuándo", "empieza", "la", "película?"], "¿Cuándo empieza la película?", "Соберите cuándo", "¿Cuándo empieza…?"),
     sb(["¿Con", "quién", "vas", "al", "cine?"], "¿Con quién vas al cine?", "Соберите con quién", "¿Con quién vas…?"),
     sb(["¿Cuánto", "cuesta", "este", "bolso?"], "¿Cuánto cuesta este bolso?", "Соберите precio", "¿Cuánto cuesta?"),
+    ec("¿Cómo te llamas tú yo?", "¿Cómo te llamas?", "Pronombre redundante", "Sin «tú yo» extra."),
+    ec("¿Cuántos años tienes años?", "¿Cuántos años tienes?", "Redundancia", "Un solo «años»."),
+    ec("¿De dónde eres de?", "¿De dónde eres?", "Preposición sobrante", "Sin «de» al final."),
+    ec("¿Qué haces este fin de semana ayer?", "¿Qué haces este fin de semana?", "Tiempo contradictorio", "Fin de semana — no ayer."),
+    ec("¿Por qué llegaste tarde temprano?", "¿Por qué llegaste tarde?", "Contradicción", "Tarde — no temprano."),
+    ec("¿Cuándo empieza la película ayer?", "¿Cuándo empieza la película?", "Tiempo futuro", "Empieza — no ayer."),
+    ec("¿Con quién vas al cine solo?", "¿Con quién vas al cine?", "Contradicción", "Con quién — no solo."),
+    ec("¿Cuánto cuesta este bolso caro gratis?", "¿Cuánto cuesta este bolso?", "Contradicción", "Cuesta — no gratis."),
+    ec("¿Cómo te llamas? Me llamo es Juan.", "¿Cómo te llamas? Me llamo Juan.", "Redundancia", "Me llamo Juan — sin «es»."),
   ],
 
   "chapter-21-comparativos": [
@@ -379,8 +461,43 @@ const SPANISH_CURATED_SUPPLEMENTS = {
   ],
 
   "chapter-31-verbos-frecuentes": [
+    tr("Я не могу сегодня.", "No puedo hoy", "Poder", "No puedo hoy."),
+    tr("Я хочу учить испанский.", "Quiero aprender español", "Querer + inf", "Quiero aprender español."),
+    tr("Мне нужно идти.", "Tengo que irme", "Tener que", "Tengo que irme."),
+    tr("Ты должен отдохнуть.", "Debes descansar", "Deber", "Debes descansar."),
+    tr("Можно войти?", "¿Puedo entrar?", "Poder — permiso", "¿Puedo entrar?"),
+    tr("Она знает ответ.", "Ella sabe la respuesta", "Saber", "Sabe la respuesta."),
+    tr("Мы идём в магазин.", "Vamos al supermercado", "Ir", "Vamos al supermercado."),
+    tr("Он говорит по-испански.", "Habla español", "Hablar", "Habla español."),
+    tr("Я думаю, что да.", "Creo que sí", "Creer / pensar", "Creo que sí."),
+    ec("Yo no puedo ir hoy pero quiero ir mañana ayer.", "No puedo ir hoy pero quiero ir mañana.", "Tiempo contradictorio", "Mañana — no ayer."),
+    ec("Quiero aprender español aprendo.", "Quiero aprender español.", "Infinitivo", "Quiero + infinitivo — no conjugado."),
+    ec("Tengo que irme ir.", "Tengo que irme.", "Redundancia", "Irme — sin «ir» extra."),
+    ec("Debes descansar descansas.", "Debes descansar.", "Deber + inf", "Debes + infinitivo."),
+    ec("¿Puedo entrar entro?", "¿Puedo entrar?", "Redundancia", "Puedo entrar — sin «entro»."),
+    ec("Ella sabe la respuestas.", "Ella sabe la respuesta.", "Concordancia", "La respuesta — singular."),
+    ec("Vamos al supermercado voy.", "Vamos al supermercado.", "Redundancia", "Vamos — sin «voy»."),
+    ec("Habla español hablo.", "Habla español.", "Redundancia", "Habla — sin «hablo»."),
+    ec("Creo que sí no.", "Creo que sí.", "Contradicción", "Que sí — no «no»."),
+    ec("No puedo ir hoy pero quiero ir mañana hoy.", "No puedo ir hoy pero quiero ir mañana.", "Contradicción temporal", "Hoy y mañana — no ambos."),
     sb(["No", "puedo", "ir", "hoy", "pero", "quiero", "ir", "mañana"], "No puedo ir hoy pero quiero ir mañana", "Соберите poder / querer", "No puedo… pero quiero…"),
     sb(["Voy", "al", "supermercado", "ahora", "mismo"], "Voy al supermercado ahora mismo", "Соберите ir", "Voy al supermercado."),
+    sb(["Quiero", "aprender", "español", "este", "año"], "Quiero aprender español este año", "Соберите querer", "Quiero aprender español…"),
+    sb(["Tengo", "que", "irme", "ya"], "Tengo que irme ya", "Соберите tener que", "Tengo que irme ya."),
+    sb(["Debes", "descansar", "más"], "Debes descansar más", "Соберите deber", "Debes descansar más."),
+    sb(["¿Puedo", "entrar", "un", "momento?"], "¿Puedo entrar un momento?", "Соберите poder", "¿Puedo entrar…?"),
+    sb(["Ella", "sabe", "la", "respuesta"], "Ella sabe la respuesta", "Соберите saber", "Sabe la respuesta."),
+    sb(["Habla", "español", "muy", "bien"], "Habla español muy bien", "Соберите hablar", "Habla español muy bien."),
+    sb(["Creo", "que", "sí"], "Creo que sí", "Соберите creer", "Creo que sí."),
+    sb(["Vamos", "a", "caminar", "al", "parque"], "Vamos a caminar al parque", "Собerите ir a + inf", "Vamos a caminar…"),
+    sb(["No", "debes", "fumar", "aquí"], "No debes fumar aquí", "Соберите deber negativo", "No debes fumar…"),
+    sb(["Puedo", "ayudarte", "mañana"], "Puedo ayudarte mañana", "Соберите poder + inf", "Puedo ayudarte…"),
+    sb(["Quiero", "un", "café", "por", "favor"], "Quiero un café, por favor", "Соберите querer + sust", "Quiero un café…"),
+    sb(["Tengo", "que", "estudiar", "esta", "noche"], "Tengo que estudiar esta noche", "Соберите tener que", "Tengo que estudiar…"),
+    sb(["Sé", "dónde", "está", "el", "banco"], "Sé dónde está el banco", "Соберите saber", "Sé dónde está…"),
+    sb(["Vamos", "al", "cine", "esta", "noche"], "Vamos al cine esta noche", "Соберите ir", "Vamos al cine…"),
+    sb(["No", "puedo", "hablar", "ahora"], "No puedo hablar ahora", "Соберите negación", "No puedo hablar ahora."),
+    sb(["Debo", "llamar", "a", "mi", "madre"], "Debo llamar a mi madre", "Соберите deber", "Debo llamar…"),
   ],
 };
 
@@ -953,6 +1070,8 @@ function main() {
   spanish = mergeSupplements(spanish, SPANISH_C2_SUPPLEMENTS);
   spanish = mergeSupplements(spanish, SPANISH_C2_THICK);
   spanish = mergeSupplements(spanish, SPANISH_C1_SB_SUPPLEMENTS);
+  spanish = mergeSupplements(spanish, SPANISH_A1B1B2_SUPPLEMENTS);
+  spanish = mergeSupplements(spanish, SPANISH_B1B2_SUPPLEMENTS);
   let english = mergeSupplements(ENGLISH_CURATED_SUPPLEMENTS, ENGLISH_TOP_UPS);
   english = mergeSupplements(english, C2_ENGLISH_THICK);
   writeModule("SPANISH_CURATED_SUPPLEMENTS", "spanish-curated-supplements", spanish);
