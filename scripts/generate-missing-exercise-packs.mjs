@@ -75,6 +75,7 @@ const FORCE_REGENERATE = new Set([
   "chapter-5-mercado",
   "chapter-6-cuerpo",
   "chapter-7-pasado-perfecto",
+  "chapter-8-pasado-indefinido",
   "chapter-9-imperfecto",
   "chapter-10-por-para",
   "chapter-11-subjuntivo",

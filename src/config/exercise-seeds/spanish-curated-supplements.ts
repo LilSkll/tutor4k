@@ -2208,6 +2208,92 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "¿Has visitado el museo?",
       "instruction": "Perfecto — visitar",
       "explanation": "¿Has visitado el museo?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Esta / semana / he / leído / dos / novelas",
+      "options": [
+        "Esta",
+        "semana",
+        "he",
+        "leído",
+        "dos",
+        "novelas"
+      ],
+      "answer": "Esta semana he leído dos novelas",
+      "instruction": "Perfecto — periodo abierto",
+      "explanation": "Esta semana he leído — на этой неделе прочитал."
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Has / oído / las / noticias / de / hoy?",
+      "options": [
+        "¿Has",
+        "oído",
+        "las",
+        "noticias",
+        "de",
+        "hoy?"
+      ],
+      "answer": "¿Has oído las noticias de hoy?",
+      "instruction": "Perfecto — pregunta",
+      "explanation": "¿Has oído? — ты слышал?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Nunca / he / probado / el / ceviche",
+      "options": [
+        "Nunca",
+        "he",
+        "probado",
+        "el",
+        "ceviche"
+      ],
+      "answer": "Nunca he probado el ceviche",
+      "instruction": "Perfecto — nunca",
+      "explanation": "Nunca he probado — никогда не пробовал."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Hemos / cambiado / de / opinión",
+      "options": [
+        "Hemos",
+        "cambiado",
+        "de",
+        "opinión"
+      ],
+      "answer": "Hemos cambiado de opinión",
+      "instruction": "Perfecto — nosotros",
+      "explanation": "Hemos cambiado — мы изменили мнение."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Ha / empezado / a / llover / hace / poco",
+      "options": [
+        "Ha",
+        "empezado",
+        "a",
+        "llover",
+        "hace",
+        "poco"
+      ],
+      "answer": "Ha empezado a llover hace poco",
+      "instruction": "Perfecto — reciente",
+      "explanation": "Ha empezado a llover — недавно начался дождь."
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Han / resuelto / ya / el / problema?",
+      "options": [
+        "¿Han",
+        "resuelto",
+        "ya",
+        "el",
+        "problema?"
+      ],
+      "answer": "¿Han resuelto ya el problema?",
+      "instruction": "Perfecto — ellos",
+      "explanation": "¿Han resuelto ya? — они уже решили?"
     }
   ],
   "chapter-8-pasado-indefinido": [
@@ -2457,6 +2543,155 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Ella escribió una carta",
       "instruction": "Pretérito",
       "explanation": "escribió — pretérito"
+    },
+    {
+      "type": "translation",
+      "question": "Он закрыл дверь и ушёл.",
+      "answer": "Cerró la puerta y se fue",
+      "instruction": "Pretérito indefinido — последовательность",
+      "explanation": "Cerró y se fue — два завершённых действия в прошлом."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Ayer / comí / paella / en / Valencia",
+      "options": [
+        "Ayer",
+        "comí",
+        "paella",
+        "en",
+        "Valencia"
+      ],
+      "answer": "Ayer comí paella en Valencia",
+      "instruction": "Pretérito indefinido — ayer",
+      "explanation": "Comí — pretérito de comer (yo)."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Ella / escribió / una / carta / larga",
+      "options": [
+        "Ella",
+        "escribió",
+        "una",
+        "carta",
+        "larga"
+      ],
+      "answer": "Ella escribió una carta larga",
+      "instruction": "Pretérito indefinido — ella",
+      "explanation": "Escribió — pretérito de escribir."
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Viste / la / película / anoche?",
+      "options": [
+        "¿Viste",
+        "la",
+        "película",
+        "anoche?"
+      ],
+      "answer": "¿Viste la película anoche?",
+      "instruction": "Pretérito indefinido — tú",
+      "explanation": "¿Viste…? — pretérito de ver (tú)."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Nosotros / viajamos / a / Madrid / el / año / pasado",
+      "options": [
+        "Nosotros",
+        "viajamos",
+        "a",
+        "Madrid",
+        "el",
+        "año",
+        "pasado"
+      ],
+      "answer": "Nosotros viajamos a Madrid el año pasado",
+      "instruction": "Pretérito indefinido — nosotros",
+      "explanation": "Viajamos — pretérito de viajar."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Él / no / llegó / a / tiempo",
+      "options": [
+        "Él",
+        "no",
+        "llegó",
+        "a",
+        "tiempo"
+      ],
+      "answer": "Él no llegó a tiempo",
+      "instruction": "Pretérito indefinido negativo",
+      "explanation": "No llegó — pretérito de llegar."
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Qué / hiciste / el / fin / de / semana?",
+      "options": [
+        "¿Qué",
+        "hiciste",
+        "el",
+        "fin",
+        "de",
+        "semana?"
+      ],
+      "answer": "¿Qué hiciste el fin de semana?",
+      "instruction": "Pretérito indefinido — hacer",
+      "explanation": "Hiciste — pretérito irregular de hacer."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Ellos / compraron / regalos / para / Navidad",
+      "options": [
+        "Ellos",
+        "compraron",
+        "regalos",
+        "para",
+        "Navidad"
+      ],
+      "answer": "Ellos compraron regalos para Navidad",
+      "instruction": "Pretérito indefinido — ellos",
+      "explanation": "Compraron — pretérito de comprar."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Yo / dormí / ocho / horas / anoche",
+      "options": [
+        "Yo",
+        "dormí",
+        "ocho",
+        "horas",
+        "anoche"
+      ],
+      "answer": "Yo dormí ocho horas anoche",
+      "instruction": "Pretérito indefinido — dormir",
+      "explanation": "Dormí — pretérito de dormir (yo)."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Usted / habló / con / el / director",
+      "options": [
+        "Usted",
+        "habló",
+        "con",
+        "el",
+        "director"
+      ],
+      "answer": "Usted habló con el director",
+      "instruction": "Pretérito indefinido — usted",
+      "explanation": "Habló — pretérito de hablar (usted)."
+    },
+    {
+      "type": "sentence_building",
+      "question": "La / tempestad / destruyó / varios / árboles",
+      "options": [
+        "La",
+        "tempestad",
+        "destruyó",
+        "varios",
+        "árboles"
+      ],
+      "answer": "La tempestad destruyó varios árboles",
+      "instruction": "Pretérito indefinido — 3ª persona",
+      "explanation": "Destruyó — pretérito de destruir."
     }
   ],
   "chapter-9-imperfecto": [
@@ -2738,6 +2973,82 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Los domingos dormíamos hasta tarde",
       "instruction": "Imperfecto — rutina",
       "explanation": "Los domingos dormíamos…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "De / pequeño / tenía / miedo / a / la / oscuridad",
+      "options": [
+        "De",
+        "pequeño",
+        "tenía",
+        "miedo",
+        "a",
+        "la",
+        "oscuridad"
+      ],
+      "answer": "De pequeño tenía miedo a la oscuridad",
+      "instruction": "Imperfecto — infancia",
+      "explanation": "De pequeño tenía miedo — в детстве боялся."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Mientras / cenábamos / sonó / el / timbre",
+      "options": [
+        "Mientras",
+        "cenábamos",
+        "sonó",
+        "el",
+        "timbre"
+      ],
+      "answer": "Mientras cenábamos sonó el timbre",
+      "instruction": "Imperfecto + indefinido",
+      "explanation": "Mientras cenábamos… sonó — фон + событие."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Siempre / nos / reíamos / de / sus / chistes",
+      "options": [
+        "Siempre",
+        "nos",
+        "reíamos",
+        "de",
+        "sus",
+        "chistes"
+      ],
+      "answer": "Siempre nos reíamos de sus chistes",
+      "instruction": "Imperfecto — hábito",
+      "explanation": "Siempre nos reíamos — всегда смеялись."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Eran / las / ocho / y / aún / dormía",
+      "options": [
+        "Eran",
+        "las",
+        "ocho",
+        "y",
+        "aún",
+        "dormía"
+      ],
+      "answer": "Eran las ocho y aún dormía",
+      "instruction": "Imperfecto — hora + acción",
+      "explanation": "Eran las ocho y dormía — было восемь и он спал."
+    },
+    {
+      "type": "sentence_building",
+      "question": "No / conocía / a / nadie / en / la / fiesta",
+      "options": [
+        "No",
+        "conocía",
+        "a",
+        "nadie",
+        "en",
+        "la",
+        "fiesta"
+      ],
+      "answer": "No conocía a nadie en la fiesta",
+      "instruction": "Imperfecto — estado pasado",
+      "explanation": "No conocía a nadie — никого не знал."
     }
   ],
   "chapter-10-por-para": [
@@ -2945,6 +3256,130 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Lo hice por amor a mi familia",
       "instruction": "Соберите por — motivo",
       "explanation": "Por amor a…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Lo / hago / por / ti",
+      "options": [
+        "Lo",
+        "hago",
+        "por",
+        "ti"
+      ],
+      "answer": "Lo hago por ti",
+      "instruction": "Por — ради кого-то",
+      "explanation": "Por ti — ради тебя / для тебя (мотив)."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Este / regalo / es / para / mi / madre",
+      "options": [
+        "Este",
+        "regalo",
+        "es",
+        "para",
+        "mi",
+        "madre"
+      ],
+      "answer": "Este regalo es para mi madre",
+      "instruction": "Para — получатель",
+      "explanation": "Para mi madre — для моей мамы."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Caminamos / por / la / calle / principal",
+      "options": [
+        "Caminamos",
+        "por",
+        "la",
+        "calle",
+        "principal"
+      ],
+      "answer": "Caminamos por la calle principal",
+      "instruction": "Por — место / маршрут",
+      "explanation": "Por la calle — по улице."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Estudio / para / aprobar / el / examen",
+      "options": [
+        "Estudio",
+        "para",
+        "aprobar",
+        "el",
+        "examen"
+      ],
+      "answer": "Estudio para aprobar el examen",
+      "instruction": "Para — цель",
+      "explanation": "Para aprobar — чтобы сдать экзамен."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Gracias / por / venir / hoy",
+      "options": [
+        "Gracias",
+        "por",
+        "venir",
+        "hoy"
+      ],
+      "answer": "Gracias por venir hoy",
+      "instruction": "Por — благодарность",
+      "explanation": "Gracias por venir — спасибо что пришли."
+    },
+    {
+      "type": "sentence_building",
+      "question": "El / tren / pasa / por / Valencia",
+      "options": [
+        "El",
+        "tren",
+        "pasa",
+        "por",
+        "Valencia"
+      ],
+      "answer": "El tren pasa por Valencia",
+      "instruction": "Por — через / мимо",
+      "explanation": "Pasa por Valencia — проходит через Валенсию."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Para / mí / esto / es / importante",
+      "options": [
+        "Para",
+        "mí",
+        "esto",
+        "es",
+        "importante"
+      ],
+      "answer": "Para mí esto es importante",
+      "instruction": "Para — точка зрения",
+      "explanation": "Para mí — для меня / по моему мнению."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Trabajo / por / las / mañanas",
+      "options": [
+        "Trabajo",
+        "por",
+        "las",
+        "mañanas"
+      ],
+      "answer": "Trabajo por las mañanas",
+      "instruction": "Por — время суток",
+      "explanation": "Por las mañanas — по утрам."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Es / un / mensaje / para / usted",
+      "options": [
+        "Es",
+        "un",
+        "mensaje",
+        "para",
+        "usted"
+      ],
+      "answer": "Es un mensaje para usted",
+      "instruction": "Para — адресат formal",
+      "explanation": "Para usted — для вас (usted)."
     }
   ],
   "chapter-11-subjuntivo": [
@@ -3199,6 +3634,107 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Temo que llegue tarde",
       "instruction": "Subjuntivo — temer",
       "explanation": "Temo que llegue tarde."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Busco / alguien / que / hable / francés",
+      "options": [
+        "Busco",
+        "alguien",
+        "que",
+        "hable",
+        "francés"
+      ],
+      "answer": "Busco alguien que hable francés",
+      "instruction": "Subjuntivo — antecedente indefinido",
+      "explanation": "Alguien que hable — subjuntivo после неопределённого."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Antes / de / que / salgas / cierra / la / ventana",
+      "options": [
+        "Antes",
+        "de",
+        "que",
+        "salgas",
+        "cierra",
+        "la",
+        "ventana"
+      ],
+      "answer": "Antes de que salgas cierra la ventana",
+      "instruction": "Subjuntivo — antes de que",
+      "explanation": "Antes de que salgas — subjuntivo."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Es / posible / que / lleguen / tarde",
+      "options": [
+        "Es",
+        "posible",
+        "que",
+        "lleguen",
+        "tarde"
+      ],
+      "answer": "Es posible que lleguen tarde",
+      "instruction": "Subjuntivo — posible",
+      "explanation": "Es posible que + subjuntivo."
+    },
+    {
+      "type": "sentence_building",
+      "question": "A / menos / que / llueva / saldremos",
+      "options": [
+        "A",
+        "menos",
+        "que",
+        "llueva",
+        "saldremos"
+      ],
+      "answer": "A menos que llueva saldremos",
+      "instruction": "Subjuntivo — a menos que",
+      "explanation": "A menos que llueva — если не пойдёт дождь."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Me / sorprende / que / no / venga",
+      "options": [
+        "Me",
+        "sorprende",
+        "que",
+        "no",
+        "venga"
+      ],
+      "answer": "Me sorprende que no venga",
+      "instruction": "Subjuntivo — emoción",
+      "explanation": "Me sorprende que — удивляет что."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Con / tal / de / que / estudies / aprobarás",
+      "options": [
+        "Con",
+        "tal",
+        "de",
+        "que",
+        "estudies",
+        "aprobarás"
+      ],
+      "answer": "Con tal de que estudies aprobarás",
+      "instruction": "Subjuntivo — condición",
+      "explanation": "Con tal de que estudies — при условии что учишься."
+    },
+    {
+      "type": "sentence_building",
+      "question": "No / permito / que / fumen / aquí",
+      "options": [
+        "No",
+        "permito",
+        "que",
+        "fumen",
+        "aquí"
+      ],
+      "answer": "No permito que fumen aquí",
+      "instruction": "Subjuntivo — prohibición",
+      "explanation": "No permito que fumen — не разрешаю курить."
     }
   ],
   "chapter-12-imperativo": [
@@ -3440,6 +3976,130 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Siéntate aquí, por favor",
       "instruction": "Imperativo reflexivo",
       "explanation": "Siéntate aquí…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Pase / usted / por / favor",
+      "options": [
+        "Pase",
+        "usted",
+        "por",
+        "favor"
+      ],
+      "answer": "Pase usted por favor",
+      "instruction": "Imperativo usted — вежливая просьба",
+      "explanation": "Pase usted — формальное приглашение пройти."
+    },
+    {
+      "type": "sentence_building",
+      "question": "No / comas / tan / rápido",
+      "options": [
+        "No",
+        "comas",
+        "tan",
+        "rápido"
+      ],
+      "answer": "No comas tan rápido",
+      "instruction": "Imperativo tú negativo",
+      "explanation": "No comas — отрицательный imperativo для tú."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Déjame / en / paz",
+      "options": [
+        "Déjame",
+        "en",
+        "paz"
+      ],
+      "answer": "Déjame en paz",
+      "instruction": "Imperativo tú",
+      "explanation": "Déjame en paz — оставь меня в покое."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Sentémonos / aquí",
+      "options": [
+        "Sentémonos",
+        "aquí"
+      ],
+      "answer": "Sentémonos aquí",
+      "instruction": "Imperativo nosotros",
+      "explanation": "Sentémonos — давайте сядем (nosotros)."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Llame / usted / mañana",
+      "options": [
+        "Llame",
+        "usted",
+        "mañana"
+      ],
+      "answer": "Llame usted mañana",
+      "instruction": "Imperativo usted",
+      "explanation": "Llame usted — позвоните (usted)."
+    },
+    {
+      "type": "sentence_building",
+      "question": "No / se / preocupe / usted",
+      "options": [
+        "No",
+        "se",
+        "preocupe",
+        "usted"
+      ],
+      "answer": "No se preocupe usted",
+      "instruction": "Imperativo usted negativo",
+      "explanation": "No se preocupe — не беспокойтесь (usted)."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Prueba / este / plato",
+      "options": [
+        "Prueba",
+        "este",
+        "plato"
+      ],
+      "answer": "Prueba este plato",
+      "instruction": "Imperativo tú",
+      "explanation": "Prueba — попробуй (tú)."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Vayamos / a / la / playa",
+      "options": [
+        "Vayamos",
+        "a",
+        "la",
+        "playa"
+      ],
+      "answer": "Vayamos a la playa",
+      "instruction": "Imperativo nosotros — ir",
+      "explanation": "Vayamos — subjuntivo nosotros как призыв."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Tome / asiento / usted",
+      "options": [
+        "Tome",
+        "asiento",
+        "usted"
+      ],
+      "answer": "Tome asiento usted",
+      "instruction": "Imperativo usted",
+      "explanation": "Tome asiento — присядьте (usted)."
+    },
+    {
+      "type": "sentence_building",
+      "question": "No / te / levantes / todavía",
+      "options": [
+        "No",
+        "te",
+        "levantes",
+        "todavía"
+      ],
+      "answer": "No te levantes todavía",
+      "instruction": "Imperativo tú negativo reflexivo",
+      "explanation": "No te levantes — не вставай ещё."
     }
   ],
   "chapter-13-condicional": [
@@ -3717,6 +4377,92 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "No lo haría nunca",
       "instruction": "Condicional negativo",
       "explanation": "No lo haría nunca."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Con / más / tiempo / lo / terminaría / hoy",
+      "options": [
+        "Con",
+        "más",
+        "tiempo",
+        "lo",
+        "terminaría",
+        "hoy"
+      ],
+      "answer": "Con más tiempo lo terminaría hoy",
+      "instruction": "Condicional — hipótesis",
+      "explanation": "Terminaría — condicional simple."
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Te / importaría / abrir / la / ventana?",
+      "options": [
+        "¿Te",
+        "importaría",
+        "abrir",
+        "la",
+        "ventana?"
+      ],
+      "answer": "¿Te importaría abrir la ventana?",
+      "instruction": "Condicional — cortesía",
+      "explanation": "¿Te importaría? — вежливая просьба."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Preferiría / quedarme / en / casa",
+      "options": [
+        "Preferiría",
+        "quedarme",
+        "en",
+        "casa"
+      ],
+      "answer": "Preferiría quedarme en casa",
+      "instruction": "Condicional — preferencia",
+      "explanation": "Preferiría quedarme — предпочёл бы остаться."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Serían / las / ocho / cuando / llamó",
+      "options": [
+        "Serían",
+        "las",
+        "ocho",
+        "cuando",
+        "llamó"
+      ],
+      "answer": "Serían las ocho cuando llamó",
+      "instruction": "Condicional — probabilidad pasada",
+      "explanation": "Serían las ocho — вероятно было восемь."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Me / encantaría / viajar / a / Japón",
+      "options": [
+        "Me",
+        "encantaría",
+        "viajar",
+        "a",
+        "Japón"
+      ],
+      "answer": "Me encantaría viajar a Japón",
+      "instruction": "Condicional — deseo",
+      "explanation": "Me encantaría — мне бы очень хотелось."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Lo / haría / de / otra / manera / si / pudiera",
+      "options": [
+        "Lo",
+        "haría",
+        "de",
+        "otra",
+        "manera",
+        "si",
+        "pudiera"
+      ],
+      "answer": "Lo haría de otra manera si pudiera",
+      "instruction": "Condicional + subjuntivo",
+      "explanation": "Haría… si pudiera — второе условие."
     }
   ],
   "chapter-14-estilo-indirecto": [
@@ -3985,6 +4731,107 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Admitió que se había equivocado",
       "instruction": "Admitir + indirecto",
       "explanation": "Se había equivocado."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Me / contó / que / vivía / en / Barcelona",
+      "options": [
+        "Me",
+        "contó",
+        "que",
+        "vivía",
+        "en",
+        "Barcelona"
+      ],
+      "answer": "Me contó que vivía en Barcelona",
+      "instruction": "Estilo indirecto — presente → imperfecto",
+      "explanation": "Vivía — imperfecto en indirecto."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Preguntó / cuándo / empezaba / la / clase",
+      "options": [
+        "Preguntó",
+        "cuándo",
+        "empezaba",
+        "la",
+        "clase"
+      ],
+      "answer": "Preguntó cuándo empezaba la clase",
+      "instruction": "Estilo indirecto — pregunta temporal",
+      "explanation": "Preguntó cuándo empezaba — косвенный вопрос."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Aseguró / que / habría / terminado / pronto",
+      "options": [
+        "Aseguró",
+        "que",
+        "habría",
+        "terminado",
+        "pronto"
+      ],
+      "answer": "Aseguró que habría terminado pronto",
+      "instruction": "Estilo indirecto — futuro → condicional",
+      "explanation": "Habría terminado — condicional compuesto."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Me / avisó / que / no / vendría / mañana",
+      "options": [
+        "Me",
+        "avisó",
+        "que",
+        "no",
+        "vendría",
+        "mañana"
+      ],
+      "answer": "Me avisó que no vendría mañana",
+      "instruction": "Estilo indirecto — negación",
+      "explanation": "No vendría — condicional en indirecto."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Indicó / que / debía / esperar / aquí",
+      "options": [
+        "Indicó",
+        "que",
+        "debía",
+        "esperar",
+        "aquí"
+      ],
+      "answer": "Indicó que debía esperar aquí",
+      "instruction": "Estilo indirecto — deber",
+      "explanation": "Debía esperar — imperfecto de deber."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Confesó / que / no / había / entendido / nada",
+      "options": [
+        "Confesó",
+        "que",
+        "no",
+        "había",
+        "entendido",
+        "nada"
+      ],
+      "answer": "Confesó que no había entendido nada",
+      "instruction": "Estilo indirecto — pluscuamperfecto",
+      "explanation": "Había entendido — pluscuamperfecto."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Repitió / que / quería / irse / ya",
+      "options": [
+        "Repitió",
+        "que",
+        "quería",
+        "irse",
+        "ya"
+      ],
+      "answer": "Repitió que quería irse ya",
+      "instruction": "Estilo indirecto — repetición",
+      "explanation": "Quería irse — imperfecto en indirecto."
     }
   ],
   "chapter-15-voz-pasiva": [
@@ -4255,6 +5102,109 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "El cuadro fue robado anoche",
       "instruction": "Pasiva — robar",
       "explanation": "Fue robado anoche."
+    },
+    {
+      "type": "sentence_building",
+      "question": "El / edificio / fue / demolido / el / mes / pasado",
+      "options": [
+        "El",
+        "edificio",
+        "fue",
+        "demolido",
+        "el",
+        "mes",
+        "pasado"
+      ],
+      "answer": "El edificio fue demolido el mes pasado",
+      "instruction": "Voz pasiva — pretérito",
+      "explanation": "Fue demolido — pasiva con ser."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Los / resultados / serán / publicados / mañana",
+      "options": [
+        "Los",
+        "resultados",
+        "serán",
+        "publicados",
+        "mañana"
+      ],
+      "answer": "Los resultados serán publicados mañana",
+      "instruction": "Voz pasiva — futuro",
+      "explanation": "Serán publicados — futuro pasivo."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Fue / elegido / presidente / del / club",
+      "options": [
+        "Fue",
+        "elegido",
+        "presidente",
+        "del",
+        "club"
+      ],
+      "answer": "Fue elegido presidente del club",
+      "instruction": "Voz pasiva — cargo",
+      "explanation": "Fue elegido — был избран."
+    },
+    {
+      "type": "sentence_building",
+      "question": "La / puerta / fue / abierta / con / cuidado",
+      "options": [
+        "La",
+        "puerta",
+        "fue",
+        "abierta",
+        "con",
+        "cuidado"
+      ],
+      "answer": "La puerta fue abierta con cuidado",
+      "instruction": "Voz pasiva — modo",
+      "explanation": "Fue abierta con cuidado."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Se / venden / entradas / en / la / taquilla",
+      "options": [
+        "Se",
+        "venden",
+        "entradas",
+        "en",
+        "la",
+        "taquilla"
+      ],
+      "answer": "Se venden entradas en la taquilla",
+      "instruction": "Pasiva refleja",
+      "explanation": "Se venden entradas — безличная пассивная."
+    },
+    {
+      "type": "sentence_building",
+      "question": "El / informe / ha / sido / revisado / por / expertos",
+      "options": [
+        "El",
+        "informe",
+        "ha",
+        "sido",
+        "revisado",
+        "por",
+        "expertos"
+      ],
+      "answer": "El informe ha sido revisado por expertos",
+      "instruction": "Voz pasiva — perfecto",
+      "explanation": "Ha sido revisado — perfecto pasivo."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Fueron / detenidos / tres / sospechosos",
+      "options": [
+        "Fueron",
+        "detenidos",
+        "tres",
+        "sospechosos"
+      ],
+      "answer": "Fueron detenidos tres sospechosos",
+      "instruction": "Voz pasiva — plural",
+      "explanation": "Fueron detenidos — plural pasivo."
     }
   ],
   "chapter-18-genero-numero": [
@@ -5462,6 +6412,98 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Es el día más largo del año",
       "instruction": "Superlativo",
       "explanation": "El día más largo…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Juan / es / tan / simpático / como / Pedro",
+      "options": [
+        "Juan",
+        "es",
+        "tan",
+        "simpático",
+        "como",
+        "Pedro"
+      ],
+      "answer": "Juan es tan simpático como Pedro",
+      "instruction": "Tan… como — равенство",
+      "explanation": "Tan simpático como — такой же симпатичный как."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Esta / camisa / es / más / cara / que / aquella",
+      "options": [
+        "Esta",
+        "camisa",
+        "es",
+        "más",
+        "cara",
+        "que",
+        "aquella"
+      ],
+      "answer": "Esta camisa es más cara que aquella",
+      "instruction": "Comparativo — más… que",
+      "explanation": "Más cara que — дороже чем."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Es / el / peor / día / de / mi / vida",
+      "options": [
+        "Es",
+        "el",
+        "peor",
+        "día",
+        "de",
+        "mi",
+        "vida"
+      ],
+      "answer": "Es el peor día de mi vida",
+      "instruction": "Superlativo irregular",
+      "explanation": "El peor — превосходная степень (peor)."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Corre / tan / deprisa / como / un / atleta",
+      "options": [
+        "Corre",
+        "tan",
+        "deprisa",
+        "como",
+        "un",
+        "atleta"
+      ],
+      "answer": "Corre tan deprisa como un atleta",
+      "instruction": "Comparativo adverbio",
+      "explanation": "Tan deprisa como — так же быстро как."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Hay / más / gente / que / ayer",
+      "options": [
+        "Hay",
+        "más",
+        "gente",
+        "que",
+        "ayer"
+      ],
+      "answer": "Hay más gente que ayer",
+      "instruction": "Comparativo — cantidad",
+      "explanation": "Más gente que ayer — больше людей чем вчера."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Es / menos / difícil / de / lo / que / parece",
+      "options": [
+        "Es",
+        "menos",
+        "difícil",
+        "de",
+        "lo",
+        "que",
+        "parece"
+      ],
+      "answer": "Es menos difícil de lo que parece",
+      "instruction": "Comparativo oración",
+      "explanation": "Menos difícil de lo que parece."
     }
   ],
   "chapter-22-futuro": [
@@ -5727,6 +6769,92 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Saldré de viaje mañana",
       "instruction": "Futuro — salir",
       "explanation": "Saldré de viaje…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Estaré / en / casa / sobre / las / siete",
+      "options": [
+        "Estaré",
+        "en",
+        "casa",
+        "sobre",
+        "las",
+        "siete"
+      ],
+      "answer": "Estaré en casa sobre las siete",
+      "instruction": "Futuro simple — hora",
+      "explanation": "Estaré en casa — буду дома."
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Qué / harás / el / próximo / verano?",
+      "options": [
+        "¿Qué",
+        "harás",
+        "el",
+        "próximo",
+        "verano?"
+      ],
+      "answer": "¿Qué harás el próximo verano?",
+      "instruction": "Futuro — pregunta",
+      "explanation": "¿Qué harás? — что будешь делать?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Probablemente / lloverá / mañana / por / la / tarde",
+      "options": [
+        "Probablemente",
+        "lloverá",
+        "mañana",
+        "por",
+        "la",
+        "tarde"
+      ],
+      "answer": "Probablemente lloverá mañana por la tarde",
+      "instruction": "Futuro — probabilidad",
+      "explanation": "Lloverá — будет идти дождь."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Terminarán / el / proyecto / en / mayo",
+      "options": [
+        "Terminarán",
+        "el",
+        "proyecto",
+        "en",
+        "mayo"
+      ],
+      "answer": "Terminarán el proyecto en mayo",
+      "instruction": "Futuro — ellos",
+      "explanation": "Terminarán — они закончат."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Te / enviaré / un / mensaje / más / tarde",
+      "options": [
+        "Te",
+        "enviaré",
+        "un",
+        "mensaje",
+        "más",
+        "tarde"
+      ],
+      "answer": "Te enviaré un mensaje más tarde",
+      "instruction": "Futuro — promesa",
+      "explanation": "Te enviaré — я отправлю тебе."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Serán / ellos / los / ganadores",
+      "options": [
+        "Serán",
+        "ellos",
+        "los",
+        "ganadores"
+      ],
+      "answer": "Serán ellos los ganadores",
+      "instruction": "Futuro de probabilidad",
+      "explanation": "Serán ellos — наверное они."
     }
   ],
   "chapter-31-verbos-frecuentes": [
@@ -10333,6 +11461,76 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Se trabaja mucho en diciembre",
       "instruction": "Se impersonal",
       "explanation": "Se trabaja mucho…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Se / alquila / piso / céntrico",
+      "options": [
+        "Se",
+        "alquila",
+        "piso",
+        "céntrico"
+      ],
+      "answer": "Se alquila piso céntrico",
+      "instruction": "Se — anuncio impersonal",
+      "explanation": "Se alquila — сдаётся (объявление)."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Se / nos / cayó / el / vaso",
+      "options": [
+        "Se",
+        "nos",
+        "cayó",
+        "el",
+        "vaso"
+      ],
+      "answer": "Se nos cayó el vaso",
+      "instruction": "Se — accidental",
+      "explanation": "Se nos cayó — у нас упал."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Se / viven / momentos / difíciles",
+      "options": [
+        "Se",
+        "viven",
+        "momentos",
+        "difíciles"
+      ],
+      "answer": "Se viven momentos difíciles",
+      "instruction": "Se — impersonal plural",
+      "explanation": "Se viven momentos — переживаются моменты."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Se / abrieron / las / puertas / a / las / nueve",
+      "options": [
+        "Se",
+        "abrieron",
+        "las",
+        "puertas",
+        "a",
+        "las",
+        "nueve"
+      ],
+      "answer": "Se abrieron las puertas a las nueve",
+      "instruction": "Se — pasiva refleja plural",
+      "explanation": "Se abrieron las puertas — двери открылись."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Se / me / antoja / un / café",
+      "options": [
+        "Se",
+        "me",
+        "antoja",
+        "un",
+        "café"
+      ],
+      "answer": "Se me antoja un café",
+      "instruction": "Se — antojo",
+      "explanation": "Se me antoja — мне хочется."
     }
   ],
   "chapter-33-relativos": [
@@ -10572,6 +11770,67 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Quiero un trabajo en el que pueda viajar",
       "instruction": "En el que + subj.",
       "explanation": "En el que pueda viajar."
+    },
+    {
+      "type": "sentence_building",
+      "question": "El / chico / al / que / conocí / es / italiano",
+      "options": [
+        "El",
+        "chico",
+        "al",
+        "que",
+        "conocí",
+        "es",
+        "italiano"
+      ],
+      "answer": "El chico al que conocí es italiano",
+      "instruction": "Relativo — a + el que",
+      "explanation": "Al que conocí — которого я познал."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Busco / una / casa / cuyo / jardín / sea / grande",
+      "options": [
+        "Busco",
+        "una",
+        "casa",
+        "cuyo",
+        "jardín",
+        "sea",
+        "grande"
+      ],
+      "answer": "Busco una casa cuyo jardín sea grande",
+      "instruction": "Relativo — cuyo + subj.",
+      "explanation": "Cuyo jardín sea grande — чей сад большой."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Fue / entonces / cuando / todo / cambió",
+      "options": [
+        "Fue",
+        "entonces",
+        "cuando",
+        "todo",
+        "cambió"
+      ],
+      "answer": "Fue entonces cuando todo cambió",
+      "instruction": "Relativo temporal — cuando",
+      "explanation": "Fue entonces cuando — именно тогда когда."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Hay / pocas / cosas / que / me / molesten",
+      "options": [
+        "Hay",
+        "pocas",
+        "cosas",
+        "que",
+        "me",
+        "molesten"
+      ],
+      "answer": "Hay pocas cosas que me molesten",
+      "instruction": "Relativo + subjuntivo",
+      "explanation": "Cosas que me molesten — subjuntivo."
     }
   ],
   "chapter-34-pluscuamperfecto": [
@@ -10796,6 +12055,77 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Antes de mudarnos habíamos visitado la zona",
       "instruction": "Pluscuamperfecto",
       "explanation": "Habíamos visitado…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Ya / había / salido / cuando / llamaste",
+      "options": [
+        "Ya",
+        "había",
+        "salido",
+        "cuando",
+        "llamaste"
+      ],
+      "answer": "Ya había salido cuando llamaste",
+      "instruction": "Pluscuamperfecto — anterioridad",
+      "explanation": "Había salido cuando llamaste — уже ушёл."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Nunca / había / probado / algo / tan / rico",
+      "options": [
+        "Nunca",
+        "había",
+        "probado",
+        "algo",
+        "tan",
+        "rico"
+      ],
+      "answer": "Nunca había probado algo tan rico",
+      "instruction": "Pluscuamperfecto — experiencia",
+      "explanation": "Nunca había probado — никогда не пробовал."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Habían / terminado / antes / de / cenar",
+      "options": [
+        "Habían",
+        "terminado",
+        "antes",
+        "de",
+        "cenar"
+      ],
+      "answer": "Habían terminado antes de cenar",
+      "instruction": "Pluscuamperfecto — ellos",
+      "explanation": "Habían terminado — они закончили."
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Habías / visitado / Roma / antes?",
+      "options": [
+        "¿Habías",
+        "visitado",
+        "Roma",
+        "antes?"
+      ],
+      "answer": "¿Habías visitado Roma antes?",
+      "instruction": "Pluscuamperfecto — pregunta",
+      "explanation": "¿Habías visitado? — ты бывал?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Me / dijo / que / ya / había / pagado",
+      "options": [
+        "Me",
+        "dijo",
+        "que",
+        "ya",
+        "había",
+        "pagado"
+      ],
+      "answer": "Me dijo que ya había pagado",
+      "instruction": "Pluscuamperfecto — indirecto",
+      "explanation": "Había pagado en estilo indirecto."
     }
   ],
   "chapter-35-subjuntivo-imperfecto": [
@@ -11014,6 +12344,77 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "No creía que fuera posible",
       "instruction": "Imperf. subj.",
       "explanation": "No creía que fuera posible."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Era / necesario / que / llegáramos / temprano",
+      "options": [
+        "Era",
+        "necesario",
+        "que",
+        "llegáramos",
+        "temprano"
+      ],
+      "answer": "Era necesario que llegáramos temprano",
+      "instruction": "Imperf. subj. — necesidad pasada",
+      "explanation": "Era necesario que llegáramos."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Si / pudiera / te / lo / explicaría",
+      "options": [
+        "Si",
+        "pudiera",
+        "te",
+        "lo",
+        "explicaría"
+      ],
+      "answer": "Si pudiera te lo explicaría",
+      "instruction": "Imperf. subj. + condicional",
+      "explanation": "Si pudiera… explicaría — второе условие."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Me / gustaría / que / vinieras / con / nosotros",
+      "options": [
+        "Me",
+        "gustaría",
+        "que",
+        "vinieras",
+        "con",
+        "nosotros"
+      ],
+      "answer": "Me gustaría que vinieras con nosotros",
+      "instruction": "Imperf. subj. — deseo",
+      "explanation": "Me gustaría que vinieras."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Pedía / que / no / hiciéramos / ruido",
+      "options": [
+        "Pedía",
+        "que",
+        "no",
+        "hiciéramos",
+        "ruido"
+      ],
+      "answer": "Pedía que no hiciéramos ruido",
+      "instruction": "Imperf. subj. — petición",
+      "explanation": "Pedía que no hiciéramos ruido."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Ojalá / tuviéramos / más / tiempo / libre",
+      "options": [
+        "Ojalá",
+        "tuviéramos",
+        "más",
+        "tiempo",
+        "libre"
+      ],
+      "answer": "Ojalá tuviéramos más tiempo libre",
+      "instruction": "Imperf. subj. — ojalá nosotros",
+      "explanation": "Ojalá tuviéramos — если бы у нас было."
     }
   ],
   "chapter-36-pronombres-objetos": [
@@ -11224,6 +12625,75 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "La conozco desde niños",
       "instruction": "La — CD fem.",
       "explanation": "La conozco…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Se / lo / explicaré / mañana",
+      "options": [
+        "Se",
+        "lo",
+        "explicaré",
+        "mañana"
+      ],
+      "answer": "Se lo explicaré mañana",
+      "instruction": "Pronombres CD/CI — se lo",
+      "explanation": "Se lo explicaré — le→se ante lo."
+    },
+    {
+      "type": "sentence_building",
+      "question": "No / te / lo / recomiendo",
+      "options": [
+        "No",
+        "te",
+        "lo",
+        "recomiendo"
+      ],
+      "answer": "No te lo recomiendo",
+      "instruction": "Pronombres — te lo",
+      "explanation": "No te lo recomiendo — не рекомендую тебе это."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Dímelo / cuando / sepas / algo",
+      "options": [
+        "Dímelo",
+        "cuando",
+        "sepas",
+        "algo"
+      ],
+      "answer": "Dímelo cuando sepas algo",
+      "instruction": "Enclisis — dímelo",
+      "explanation": "Dímelo — скажи мне это (imperativo)."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Se / las / compré / en / la / tienda",
+      "options": [
+        "Se",
+        "las",
+        "compré",
+        "en",
+        "la",
+        "tienda"
+      ],
+      "answer": "Se las compré en la tienda",
+      "instruction": "Pronombres — se las",
+      "explanation": "Se las compré — купил их ей/им."
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Me / la / puedes / prestar / un / rato?",
+      "options": [
+        "¿Me",
+        "la",
+        "puedes",
+        "prestar",
+        "un",
+        "rato?"
+      ],
+      "answer": "¿Me la puedes prestar un rato?",
+      "instruction": "Pronombres — me la",
+      "explanation": "¿Me la puedes prestar? — можешь одолжить мне её?"
     }
   ],
   "chapter-37-adverbios": [
@@ -11418,6 +12888,60 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Siempre llega puntual",
       "instruction": "Siempre — frecuencia",
       "explanation": "Siempre llega puntual."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Habla / demasiado / alto / en / clase",
+      "options": [
+        "Habla",
+        "demasiado",
+        "alto",
+        "en",
+        "clase"
+      ],
+      "answer": "Habla demasiado alto en clase",
+      "instruction": "Adverbio — demasiado",
+      "explanation": "Demasiado alto — слишком громко."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Llegué / justo / a / tiempo",
+      "options": [
+        "Llegué",
+        "justo",
+        "a",
+        "tiempo"
+      ],
+      "answer": "Llegué justo a tiempo",
+      "instruction": "Adverbio — justo",
+      "explanation": "Justo a tiempo — как раз вовремя."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Casi / siempre / desayuno / en / casa",
+      "options": [
+        "Casi",
+        "siempre",
+        "desayuno",
+        "en",
+        "casa"
+      ],
+      "answer": "Casi siempre desayuno en casa",
+      "instruction": "Adverbio — casi siempre",
+      "explanation": "Casi siempre — почти всегда."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Lo / resolvió / fácilmente / ayer",
+      "options": [
+        "Lo",
+        "resolvió",
+        "fácilmente",
+        "ayer"
+      ],
+      "answer": "Lo resolvió fácilmente ayer",
+      "instruction": "Adverbio -mente",
+      "explanation": "Fácilmente — легко (-mente)."
     }
   ],
   "chapter-23-cronicas": [
@@ -11733,6 +13257,23 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Mientras estudiaba escuchaba música",
       "instruction": "Imperfecto simultáneo",
       "explanation": "Mientras estudiaba…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Anoche / llovió / pero / esta / mañana / ha / hecho / sol",
+      "options": [
+        "Anoche",
+        "llovió",
+        "pero",
+        "esta",
+        "mañana",
+        "ha",
+        "hecho",
+        "sol"
+      ],
+      "answer": "Anoche llovió pero esta mañana ha hecho sol",
+      "instruction": "Contraste temporal — indefinido vs perfecto",
+      "explanation": "Anoche llovió (indef.) vs ha hecho sol (perfecto)."
     }
   ],
   "chapter-24-carta": [
@@ -11914,6 +13455,161 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Le agradezco de antemano su atención",
       "instruction": "Cortesía",
       "explanation": "Le agradezco de antemano…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Agradezco / de / antemano / su / pronta / respuesta",
+      "options": [
+        "Agradezco",
+        "de",
+        "antemano",
+        "su",
+        "pronta",
+        "respuesta"
+      ],
+      "answer": "Agradezco de antemano su pronta respuesta",
+      "instruction": "Carta formal DELE — благодарность",
+      "explanation": "Agradezco de antemano — заранее благодарю."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Le / ruego / me / confirme / la / recepción",
+      "options": [
+        "Le",
+        "ruego",
+        "me",
+        "confirme",
+        "la",
+        "recepción"
+      ],
+      "answer": "Le ruego me confirme la recepción",
+      "instruction": "Carta formal — просьба",
+      "explanation": "Le ruego me confirme — прошу подтвердить получение."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Adjunto / encontrará / los / documentos / solicitados",
+      "options": [
+        "Adjunto",
+        "encontrará",
+        "los",
+        "documentos",
+        "solicitados"
+      ],
+      "answer": "Adjunto encontrará los documentos solicitados",
+      "instruction": "Carta formal — вложение",
+      "explanation": "Adjunto encontrará — прилагаю документы."
+    },
+    {
+      "type": "sentence_building",
+      "question": "En / respuesta / a / su / carta / del / día / diez",
+      "options": [
+        "En",
+        "respuesta",
+        "a",
+        "su",
+        "carta",
+        "del",
+        "día",
+        "diez"
+      ],
+      "answer": "En respuesta a su carta del día diez",
+      "instruction": "Carta formal — отсылка",
+      "explanation": "En respuesta a su carta — в ответ на ваше письмо."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Le / informo / que / he / recibido / su / solicitud",
+      "options": [
+        "Le",
+        "informo",
+        "que",
+        "he",
+        "recibido",
+        "su",
+        "solicitud"
+      ],
+      "answer": "Le informo que he recibido su solicitud",
+      "instruction": "Carta formal — уведомление",
+      "explanation": "Le informo que — сообщаю что."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Espero / sus / noticias / a / la / mayor / brevedad",
+      "options": [
+        "Espero",
+        "sus",
+        "noticias",
+        "a",
+        "la",
+        "mayor",
+        "brevedad"
+      ],
+      "answer": "Espero sus noticias a la mayor brevedad",
+      "instruction": "Carta formal — ожидание ответа",
+      "explanation": "A la mayor brevedad — как можно скорее."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Distinguído / señor / le / escribo / para / reclamar",
+      "options": [
+        "Distinguído",
+        "señor",
+        "le",
+        "escribo",
+        "para",
+        "reclamar"
+      ],
+      "answer": "Distinguído señor le escribo para reclamar",
+      "instruction": "Carta formal DELE — жалоба",
+      "explanation": "Distinguído señor — уважаемый господин."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Sin / más / por / el / momento / le / saludo / cordialmente",
+      "options": [
+        "Sin",
+        "más",
+        "por",
+        "el",
+        "momento",
+        "le",
+        "saludo",
+        "cordialmente"
+      ],
+      "answer": "Sin más por el momento le saludo cordialmente",
+      "instruction": "Carta formal — закрытие",
+      "explanation": "Sin más por el momento — на этом пока всё."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Me / permito / solicitarle / una / cita",
+      "options": [
+        "Me",
+        "permito",
+        "solicitarle",
+        "una",
+        "cita"
+      ],
+      "answer": "Me permito solicitarle una cita",
+      "instruction": "Carta formal — запрос встречи",
+      "explanation": "Me permito solicitarle — позволяю себе просить."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Quedo / a / la / espera / de / sus / instrucciones",
+      "options": [
+        "Quedo",
+        "a",
+        "la",
+        "espera",
+        "de",
+        "sus",
+        "instrucciones"
+      ],
+      "answer": "Quedo a la espera de sus instrucciones",
+      "instruction": "Carta formal — ожидание указаний",
+      "explanation": "Quedo a la espera de — жду ваших указаний."
     }
   ],
   "chapter-38-subjuntivo-compuestos": [
@@ -12131,6 +13827,79 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Me sorprende que hayan aceptado",
       "instruction": "Subj. compuesto",
       "explanation": "Hayán aceptado…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Es / raro / que / no / haya / contestado",
+      "options": [
+        "Es",
+        "raro",
+        "que",
+        "no",
+        "haya",
+        "contestado"
+      ],
+      "answer": "Es raro que no haya contestado",
+      "instruction": "Subj. compuesto — extrañeza",
+      "explanation": "No haya contestado — subjuntivo compuesto."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Me / alegra / que / hayas / aprobado",
+      "options": [
+        "Me",
+        "alegra",
+        "que",
+        "hayas",
+        "aprobado"
+      ],
+      "answer": "Me alegra que hayas aprobado",
+      "instruction": "Subj. compuesto — alegría",
+      "explanation": "Hayas aprobado — ты сдал (subj. comp.)."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Dudo / que / haya / sido / cierto",
+      "options": [
+        "Dudo",
+        "que",
+        "haya",
+        "sido",
+        "cierto"
+      ],
+      "answer": "Dudo que haya sido cierto",
+      "instruction": "Subj. compuesto — duda",
+      "explanation": "Haya sido cierto — subjuntivo compuesto de ser."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Para / cuando / llegue / ya / habrán / salido",
+      "options": [
+        "Para",
+        "cuando",
+        "llegue",
+        "ya",
+        "habrán",
+        "salido"
+      ],
+      "answer": "Para cuando llegue ya habrán salido",
+      "instruction": "Subj. + futuro compuesto",
+      "explanation": "Habrán salido — futuro compuesto."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Lamento / que / no / hayas / podido / venir",
+      "options": [
+        "Lamento",
+        "que",
+        "no",
+        "hayas",
+        "podido",
+        "venir"
+      ],
+      "answer": "Lamento que no hayas podido venir",
+      "instruction": "Subj. compuesto — lamento",
+      "explanation": "No hayas podido venir — subj. compuesto."
     }
   ],
   "chapter-39-condicionales-compuestos": [
@@ -12351,6 +14120,78 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Si estudias aprobarás",
       "instruction": "Primera condicional",
       "explanation": "Si estudias aprobarás."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Si / hubiera / tenido / tiempo / habría / ido",
+      "options": [
+        "Si",
+        "hubiera",
+        "tenido",
+        "tiempo",
+        "habría",
+        "ido"
+      ],
+      "answer": "Si hubiera tenido tiempo habría ido",
+      "instruction": "Tercera condicional",
+      "explanation": "Hubiera tenido… habría ido."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Habrías / entendido / si / hubieras / escuchado",
+      "options": [
+        "Habrías",
+        "entendido",
+        "si",
+        "hubieras",
+        "escuchado"
+      ],
+      "answer": "Habrías entendido si hubieras escuchado",
+      "instruction": "Cond. compuesto mixto",
+      "explanation": "Habrías entendido si hubieras escuchado."
+    },
+    {
+      "type": "sentence_building",
+      "question": "No / habríamos / fallado / con / más / práctica",
+      "options": [
+        "No",
+        "habríamos",
+        "fallado",
+        "con",
+        "más",
+        "práctica"
+      ],
+      "answer": "No habríamos fallado con más práctica",
+      "instruction": "Cond. compuesto — nosotros",
+      "explanation": "No habríamos fallado — мы бы не провалились."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Si / llueve / mañana / no / iremos",
+      "options": [
+        "Si",
+        "llueve",
+        "mañana",
+        "no",
+        "iremos"
+      ],
+      "answer": "Si llueve mañana no iremos",
+      "instruction": "Primera condicional",
+      "explanation": "Si llueve… no iremos — реальное условие."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Si / estuvieras / aquí / te / ayudaría",
+      "options": [
+        "Si",
+        "estuvieras",
+        "aquí",
+        "te",
+        "ayudaría"
+      ],
+      "answer": "Si estuvieras aquí te ayudaría",
+      "instruction": "Segunda condicional",
+      "explanation": "Si estuvieras… te ayudaría — нереальное."
     }
   ],
   "chapter-40-relativos-avanzado": [
@@ -12593,6 +14434,72 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Lo cual es inaceptable debe cambiar",
       "instruction": "Lo cual — oración",
       "explanation": "Lo cual es inaceptable…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "El / tema / del / cual / hablamos / es / delicado",
+      "options": [
+        "El",
+        "tema",
+        "del",
+        "cual",
+        "hablamos",
+        "es",
+        "delicado"
+      ],
+      "answer": "El tema del cual hablamos es delicado",
+      "instruction": "Relativo formal — del cual",
+      "explanation": "Del cual hablamos — о котором говорим."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Aquello / de / lo / que / se / queja / es / injusto",
+      "options": [
+        "Aquello",
+        "de",
+        "lo",
+        "que",
+        "se",
+        "queja",
+        "es",
+        "injusto"
+      ],
+      "answer": "Aquello de lo que se queja es injusto",
+      "instruction": "Relativo — lo que neutro",
+      "explanation": "De lo que se queja — на что жалуется."
+    },
+    {
+      "type": "sentence_building",
+      "question": "La / ciudad / en / cuyo / centro / vivimos / es / bonita",
+      "options": [
+        "La",
+        "ciudad",
+        "en",
+        "cuyo",
+        "centro",
+        "vivimos",
+        "es",
+        "bonita"
+      ],
+      "answer": "La ciudad en cuyo centro vivimos es bonita",
+      "instruction": "Relativo — cuyo",
+      "explanation": "En cuyo centro vivimos — в чьём центре живём."
+    },
+    {
+      "type": "sentence_building",
+      "question": "En / lo / relativo / al / presupuesto / hay / dudas",
+      "options": [
+        "En",
+        "lo",
+        "relativo",
+        "al",
+        "presupuesto",
+        "hay",
+        "dudas"
+      ],
+      "answer": "En lo relativo al presupuesto hay dudas",
+      "instruction": "Relativo — lo relativo a",
+      "explanation": "En lo relativo al presupuesto — относительно бюджета."
     }
   ],
   "chapter-41-conectores-discursivos": [
@@ -12820,6 +14727,51 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "En consecuencia el proyecto se retrasó",
       "instruction": "En consecuencia",
       "explanation": "En consecuencia…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "No / obstante / conviene / ser / prudentes",
+      "options": [
+        "No",
+        "obstante",
+        "conviene",
+        "ser",
+        "prudentes"
+      ],
+      "answer": "No obstante conviene ser prudentes",
+      "instruction": "Conector — no obstante",
+      "explanation": "No obstante — тем не менее."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Por / una / parte / gana / por / otra / pierde",
+      "options": [
+        "Por",
+        "una",
+        "parte",
+        "gana",
+        "por",
+        "otra",
+        "pierde"
+      ],
+      "answer": "Por una parte gana por otra pierde",
+      "instruction": "Conector — por una parte",
+      "explanation": "Por una parte… por otra — с одной стороны… с другой."
+    },
+    {
+      "type": "sentence_building",
+      "question": "En / última / instancia / depende / de / nosotros",
+      "options": [
+        "En",
+        "última",
+        "instancia",
+        "depende",
+        "de",
+        "nosotros"
+      ],
+      "answer": "En última instancia depende de nosotros",
+      "instruction": "Conector — en última instancia",
+      "explanation": "En última instancia — в конечном итоге."
     }
   ],
   "chapter-25-conectores": [
@@ -13017,6 +14969,124 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Es decir debemos cambiar de estrategia",
       "instruction": "Es decir",
       "explanation": "Es decir…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "En / contraste / con / lo / anterior / propongo / otra / vía",
+      "options": [
+        "En",
+        "contraste",
+        "con",
+        "lo",
+        "anterior",
+        "propongo",
+        "otra",
+        "vía"
+      ],
+      "answer": "En contraste con lo anterior propongo otra vía",
+      "instruction": "DELE conector — контраст",
+      "explanation": "En contraste con — в контрасте с."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Por / consiguiente / debemos / tomar / medidas",
+      "options": [
+        "Por",
+        "consiguiente",
+        "debemos",
+        "tomar",
+        "medidas"
+      ],
+      "answer": "Por consiguiente debemos tomar medidas",
+      "instruction": "DELE conector — следствие",
+      "explanation": "Por consiguiente — следовательно."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Asimismo / conviene / analizar / los / riesgos",
+      "options": [
+        "Asimismo",
+        "conviene",
+        "analizar",
+        "los",
+        "riesgos"
+      ],
+      "answer": "Asimismo conviene analizar los riesgos",
+      "instruction": "DELE conector — добавление",
+      "explanation": "Asimismo — равным образом."
+    },
+    {
+      "type": "sentence_building",
+      "question": "De / hecho / los / resultados / superan / expectativas",
+      "options": [
+        "De",
+        "hecho",
+        "los",
+        "resultados",
+        "superan",
+        "expectativas"
+      ],
+      "answer": "De hecho los resultados superan expectativas",
+      "instruction": "DELE conector — уточнение",
+      "explanation": "De hecho — de hecho / на самом деле."
+    },
+    {
+      "type": "sentence_building",
+      "question": "En / definitiva / apoyo / la / propuesta",
+      "options": [
+        "En",
+        "definitiva",
+        "apoyo",
+        "la",
+        "propuesta"
+      ],
+      "answer": "En definitiva apoyo la propuesta",
+      "instruction": "DELE conector — итог",
+      "explanation": "En definitiva — в конечном счёте."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Por / el / contrario / prefiero / esperar",
+      "options": [
+        "Por",
+        "el",
+        "contrario",
+        "prefiero",
+        "esperar"
+      ],
+      "answer": "Por el contrario prefiero esperar",
+      "instruction": "DELE conector — противопоставление",
+      "explanation": "Por el contrario — напротив."
+    },
+    {
+      "type": "sentence_building",
+      "question": "A / continuación / presento / mis / argumentos",
+      "options": [
+        "A",
+        "continuación",
+        "presento",
+        "mis",
+        "argumentos"
+      ],
+      "answer": "A continuación presento mis argumentos",
+      "instruction": "DELE conector — переход",
+      "explanation": "A continuación — далее / затем."
+    },
+    {
+      "type": "sentence_building",
+      "question": "En / cuanto / a / los / costes / hay / dudas",
+      "options": [
+        "En",
+        "cuanto",
+        "a",
+        "los",
+        "costes",
+        "hay",
+        "dudas"
+      ],
+      "answer": "En cuanto a los costes hay dudas",
+      "instruction": "DELE conector — тема",
+      "explanation": "En cuanto a — что касается."
     }
   ],
   "chapter-26-voz-plaza": [
@@ -13203,6 +15273,177 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Para concluir diría que es positivo",
       "instruction": "Cierre oral",
       "explanation": "Para concluir diría…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "A / la / izquierda / hay / un / edificio / antiguo",
+      "options": [
+        "A",
+        "la",
+        "izquierda",
+        "hay",
+        "un",
+        "edificio",
+        "antiguo"
+      ],
+      "answer": "A la izquierda hay un edificio antiguo",
+      "instruction": "DELE oral — описание фото",
+      "explanation": "A la izquierda hay — слева находится."
+    },
+    {
+      "type": "sentence_building",
+      "question": "En / el / centro / de / la / imagen / aparece / una / fuente",
+      "options": [
+        "En",
+        "el",
+        "centro",
+        "de",
+        "la",
+        "imagen",
+        "aparece",
+        "una",
+        "fuente"
+      ],
+      "answer": "En el centro de la imagen aparece una fuente",
+      "instruction": "DELE oral — локализация",
+      "explanation": "En el centro de la imagen — в центре изображения."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Al / parecer / la / gente / está / paseando / tranquilamente",
+      "options": [
+        "Al",
+        "parecer",
+        "la",
+        "gente",
+        "está",
+        "paseando",
+        "tranquilamente"
+      ],
+      "answer": "Al parecer la gente está paseando tranquilamente",
+      "instruction": "DELE oral — наблюдение",
+      "explanation": "Al parecer — по-видимому."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Me / da / la / impresión / de / que / es / un / día / soleado",
+      "options": [
+        "Me",
+        "da",
+        "la",
+        "impresión",
+        "de",
+        "que",
+        "es",
+        "un",
+        "día",
+        "soleado"
+      ],
+      "answer": "Me da la impresión de que es un día soleado",
+      "instruction": "DELE oral — впечатление",
+      "explanation": "Me da la impresión de que — у меня впечатление что."
+    },
+    {
+      "type": "sentence_building",
+      "question": "En / segundo / lugar / comentaría / la / atmósfera / del / lugar",
+      "options": [
+        "En",
+        "segundo",
+        "lugar",
+        "comentaría",
+        "la",
+        "atmósfera",
+        "del",
+        "lugar"
+      ],
+      "answer": "En segundo lugar comentaría la atmósfera del lugar",
+      "instruction": "DELE oral — структура",
+      "explanation": "En segundo lugar — во-вторых (устная структура)."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Se / distingue / un / mercado / con / muchos / puestos",
+      "options": [
+        "Se",
+        "distingue",
+        "un",
+        "mercado",
+        "con",
+        "muchos",
+        "puestos"
+      ],
+      "answer": "Se distingue un mercado con muchos puestos",
+      "instruction": "DELE oral — описание",
+      "explanation": "Se distingue — различается/виден."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Tal / vez / los / niños / estén / jugando / en / la / plaza",
+      "options": [
+        "Tal",
+        "vez",
+        "los",
+        "niños",
+        "estén",
+        "jugando",
+        "en",
+        "la",
+        "plaza"
+      ],
+      "answer": "Tal vez los niños estén jugando en la plaza",
+      "instruction": "DELE oral — гипотеза",
+      "explanation": "Tal vez + subjuntivo — возможно."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Desde / mi / punto / de / vista / el / ambiente / es / acogedor",
+      "options": [
+        "Desde",
+        "mi",
+        "punto",
+        "de",
+        "vista",
+        "el",
+        "ambiente",
+        "es",
+        "acogedor"
+      ],
+      "answer": "Desde mi punto de vista el ambiente es acogedor",
+      "instruction": "DELE oral — мнение",
+      "explanation": "Desde mi punto de vista — с моей точки зрения."
+    },
+    {
+      "type": "sentence_building",
+      "question": "En / la / parte / superior / se / aprecia / un / cielo / despejado",
+      "options": [
+        "En",
+        "la",
+        "parte",
+        "superior",
+        "se",
+        "aprecia",
+        "un",
+        "cielo",
+        "despejado"
+      ],
+      "answer": "En la parte superior se aprecia un cielo despejado",
+      "instruction": "DELE oral — небо",
+      "explanation": "Se aprecia — можно заметить."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Para / terminar / diría / que / transmite / calma",
+      "options": [
+        "Para",
+        "terminar",
+        "diría",
+        "que",
+        "transmite",
+        "calma"
+      ],
+      "answer": "Para terminar diría que transmite calma",
+      "instruction": "DELE oral — заключение",
+      "explanation": "Para terminar diría — в заключение сказал бы."
     }
   ]
 } as const;

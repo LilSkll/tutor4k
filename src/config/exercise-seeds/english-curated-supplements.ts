@@ -369,6 +369,131 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "We had a great weekend in Edinburgh",
       "instruction": "Past simple — have",
       "explanation": "have → had."
+    },
+    {
+      "type": "sentence_building",
+      "question": "I / bought / a / new / jacket / last / week",
+      "options": [
+        "I",
+        "bought",
+        "a",
+        "new",
+        "jacket",
+        "last",
+        "week"
+      ],
+      "answer": "I bought a new jacket last week",
+      "instruction": "Past simple — buy",
+      "explanation": "buy → bought (irregular)."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Did / they / finish / the / project?",
+      "options": [
+        "Did",
+        "they",
+        "finish",
+        "the",
+        "project?"
+      ],
+      "answer": "Did they finish the project?",
+      "instruction": "Past simple question",
+      "explanation": "Did + subject + base verb."
+    },
+    {
+      "type": "sentence_building",
+      "question": "She / sang / at / the / concert / on / Saturday",
+      "options": [
+        "She",
+        "sang",
+        "at",
+        "the",
+        "concert",
+        "on",
+        "Saturday"
+      ],
+      "answer": "She sang at the concert on Saturday",
+      "instruction": "Past simple — sing",
+      "explanation": "sing → sang (irregular)."
+    },
+    {
+      "type": "sentence_building",
+      "question": "We / didn't / see / him / at / the / party",
+      "options": [
+        "We",
+        "didn't",
+        "see",
+        "him",
+        "at",
+        "the",
+        "party"
+      ],
+      "answer": "We didn't see him at the party",
+      "instruction": "Past simple negative",
+      "explanation": "didn't + base verb."
+    },
+    {
+      "type": "sentence_building",
+      "question": "He / drove / to / Manchester / yesterday",
+      "options": [
+        "He",
+        "drove",
+        "to",
+        "Manchester",
+        "yesterday"
+      ],
+      "answer": "He drove to Manchester yesterday",
+      "instruction": "Past simple — drive",
+      "explanation": "drive → drove (irregular)."
+    },
+    {
+      "type": "sentence_building",
+      "question": "They / found / a / nice / café / near / the / station",
+      "options": [
+        "They",
+        "found",
+        "a",
+        "nice",
+        "café",
+        "near",
+        "the",
+        "station"
+      ],
+      "answer": "They found a nice café near the station",
+      "instruction": "Past simple — find",
+      "explanation": "find → found (irregular)."
+    },
+    {
+      "type": "sentence_building",
+      "question": "I / spoke / to / the / manager / this / morning",
+      "options": [
+        "I",
+        "spoke",
+        "to",
+        "the",
+        "manager",
+        "this",
+        "morning"
+      ],
+      "answer": "I spoke to the manager this morning",
+      "instruction": "Past simple — speak",
+      "explanation": "speak → spoke (irregular)."
+    },
+    {
+      "type": "sentence_building",
+      "question": "She / left / early / because / she / felt / tired",
+      "options": [
+        "She",
+        "left",
+        "early",
+        "because",
+        "she",
+        "felt",
+        "tired"
+      ],
+      "answer": "She left early because she felt tired",
+      "instruction": "Past simple — leave",
+      "explanation": "leave → left; feel → felt."
     }
   ],
   "eng-ch5-choices": [
@@ -808,6 +933,89 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "This phone is cheaper than mine.",
       "instruction": "Double comparative",
       "explanation": "cheaper — not more cheaper."
+    },
+    {
+      "type": "sentence_building",
+      "question": "This / hotel / is / the / most / comfortable / in / town",
+      "options": [
+        "This",
+        "hotel",
+        "is",
+        "the",
+        "most",
+        "comfortable",
+        "in",
+        "town"
+      ],
+      "answer": "This hotel is the most comfortable in town",
+      "instruction": "Superlative — most",
+      "explanation": "the most comfortable — длинное прилагательное."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Your / idea / is / as / good / as / mine",
+      "options": [
+        "Your",
+        "idea",
+        "is",
+        "as",
+        "good",
+        "as",
+        "mine"
+      ],
+      "answer": "Your idea is as good as mine",
+      "instruction": "As…as — равенство",
+      "explanation": "as good as mine — такой же хороший."
+    },
+    {
+      "type": "sentence_building",
+      "question": "She / runs / more / slowly / than / her / sister",
+      "options": [
+        "She",
+        "runs",
+        "more",
+        "slowly",
+        "than",
+        "her",
+        "sister"
+      ],
+      "answer": "She runs more slowly than her sister",
+      "instruction": "Comparative adverb",
+      "explanation": "more slowly than — наречие сравнения."
+    },
+    {
+      "type": "sentence_building",
+      "question": "It / was / the / happiest / day / of / my / life",
+      "options": [
+        "It",
+        "was",
+        "the",
+        "happiest",
+        "day",
+        "of",
+        "my",
+        "life"
+      ],
+      "answer": "It was the happiest day of my life",
+      "instruction": "Superlative — -est",
+      "explanation": "happiest — happy → happiest."
+    },
+    {
+      "type": "sentence_building",
+      "question": "My / room / is / not / as / big / as / yours",
+      "options": [
+        "My",
+        "room",
+        "is",
+        "not",
+        "as",
+        "big",
+        "as",
+        "yours"
+      ],
+      "answer": "My room is not as big as yours",
+      "instruction": "Negative as…as",
+      "explanation": "not as big as yours."
     }
   ],
   "eng-ch6-experiences": [
@@ -1168,6 +1376,122 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "I haven't eaten today",
       "instruction": "Present perfect",
       "explanation": "haven't eaten today."
+    },
+    {
+      "type": "sentence_building",
+      "question": "She / has / gone / to / the / shop",
+      "options": [
+        "She",
+        "has",
+        "gone",
+        "to",
+        "the",
+        "shop"
+      ],
+      "answer": "She has gone to the shop",
+      "instruction": "Present perfect — go",
+      "explanation": "has gone = ушла и ещё там."
+    },
+    {
+      "type": "sentence_building",
+      "question": "We / have / known / each / other / for / years",
+      "options": [
+        "We",
+        "have",
+        "known",
+        "each",
+        "other",
+        "for",
+        "years"
+      ],
+      "answer": "We have known each other for years",
+      "instruction": "Present perfect + for",
+      "explanation": "have known… for years."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Has / he / ever / eaten / Indian / food?",
+      "options": [
+        "Has",
+        "he",
+        "ever",
+        "eaten",
+        "Indian",
+        "food?"
+      ],
+      "answer": "Has he ever eaten Indian food?",
+      "instruction": "Present perfect question",
+      "explanation": "Has he ever + V3?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "They / have / never / visited / Scotland",
+      "options": [
+        "They",
+        "have",
+        "never",
+        "visited",
+        "Scotland"
+      ],
+      "answer": "They have never visited Scotland",
+      "instruction": "Present perfect + never",
+      "explanation": "have never visited…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "I / have / just / finished / my / coffee",
+      "options": [
+        "I",
+        "have",
+        "just",
+        "finished",
+        "my",
+        "coffee"
+      ],
+      "answer": "I have just finished my coffee",
+      "instruction": "Present perfect + just",
+      "explanation": "have just finished…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "She / hasn't / called / yet",
+      "options": [
+        "She",
+        "hasn't",
+        "called",
+        "yet"
+      ],
+      "answer": "She hasn't called yet",
+      "instruction": "Present perfect negative",
+      "explanation": "hasn't called yet."
+    },
+    {
+      "type": "sentence_building",
+      "question": "We / have / done / this / before",
+      "options": [
+        "We",
+        "have",
+        "done",
+        "this",
+        "before"
+      ],
+      "answer": "We have done this before",
+      "instruction": "Present perfect — do",
+      "explanation": "do → done (V3)."
+    },
+    {
+      "type": "sentence_building",
+      "question": "He / has / broken / his / phone",
+      "options": [
+        "He",
+        "has",
+        "broken",
+        "his",
+        "phone"
+      ],
+      "answer": "He has broken his phone",
+      "instruction": "Present perfect — break",
+      "explanation": "break → broken (V3)."
     }
   ],
   "eng-ch7-future-plans": [
@@ -1531,6 +1855,122 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "In a year I will speak English fluently",
       "instruction": "Will — future state",
       "explanation": "will speak English fluently."
+    },
+    {
+      "type": "sentence_building",
+      "question": "He / will / do / his / best",
+      "options": [
+        "He",
+        "will",
+        "do",
+        "his",
+        "best"
+      ],
+      "answer": "He will do his best",
+      "instruction": "Will — determination",
+      "explanation": "will do his best."
+    },
+    {
+      "type": "sentence_building",
+      "question": "We / will / see / each / other / soon",
+      "options": [
+        "We",
+        "will",
+        "see",
+        "each",
+        "other",
+        "soon"
+      ],
+      "answer": "We will see each other soon",
+      "instruction": "Will — future meeting",
+      "explanation": "will see each other soon."
+    },
+    {
+      "type": "sentence_building",
+      "question": "It / will / change / everything",
+      "options": [
+        "It",
+        "will",
+        "change",
+        "everything"
+      ],
+      "answer": "It will change everything",
+      "instruction": "Will — consequence",
+      "explanation": "will change everything."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Will / she / accept / the / offer?",
+      "options": [
+        "Will",
+        "she",
+        "accept",
+        "the",
+        "offer?"
+      ],
+      "answer": "Will she accept the offer?",
+      "instruction": "Will question",
+      "explanation": "Will she accept…?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "They / will / not / be / ready / in / time",
+      "options": [
+        "They",
+        "will",
+        "not",
+        "be",
+        "ready",
+        "in",
+        "time"
+      ],
+      "answer": "They will not be ready in time",
+      "instruction": "Will negative",
+      "explanation": "will not be ready…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "I / will / send / you / the / details",
+      "options": [
+        "I",
+        "will",
+        "send",
+        "you",
+        "the",
+        "details"
+      ],
+      "answer": "I will send you the details",
+      "instruction": "Will — promise",
+      "explanation": "will send you the details."
+    },
+    {
+      "type": "sentence_building",
+      "question": "The / weather / will / improve / tomorrow",
+      "options": [
+        "The",
+        "weather",
+        "will",
+        "improve",
+        "tomorrow"
+      ],
+      "answer": "The weather will improve tomorrow",
+      "instruction": "Will — prediction",
+      "explanation": "will improve tomorrow."
+    },
+    {
+      "type": "sentence_building",
+      "question": "We / will / meet / at / the / station",
+      "options": [
+        "We",
+        "will",
+        "meet",
+        "at",
+        "the",
+        "station"
+      ],
+      "answer": "We will meet at the station",
+      "instruction": "Will — arrangement",
+      "explanation": "will meet at the station."
     }
   ],
   "eng-ch8-storytelling": [
@@ -1937,6 +2377,120 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "By the time I got there they had left",
       "instruction": "Past perfect",
       "explanation": "had left by then."
+    },
+    {
+      "type": "sentence_building",
+      "question": "I / had / never / seen / such / a / thing",
+      "options": [
+        "I",
+        "had",
+        "never",
+        "seen",
+        "such",
+        "a",
+        "thing"
+      ],
+      "answer": "I had never seen such a thing",
+      "instruction": "Past perfect — see",
+      "explanation": "see → seen (V3); had never seen."
+    },
+    {
+      "type": "sentence_building",
+      "question": "He / was / working / when / I / saw / him",
+      "options": [
+        "He",
+        "was",
+        "working",
+        "when",
+        "I",
+        "saw",
+        "him"
+      ],
+      "answer": "He was working when I saw him",
+      "instruction": "Past continuous",
+      "explanation": "was working when I saw him."
+    },
+    {
+      "type": "sentence_building",
+      "question": "When / I / woke / up / it / was / raining",
+      "options": [
+        "When",
+        "I",
+        "woke",
+        "up",
+        "it",
+        "was",
+        "raining"
+      ],
+      "answer": "When I woke up it was raining",
+      "instruction": "Past continuous — background",
+      "explanation": "was raining — фоновое действие."
+    },
+    {
+      "type": "sentence_building",
+      "question": "They / were / talking / while / I / was / cooking",
+      "options": [
+        "They",
+        "were",
+        "talking",
+        "while",
+        "I",
+        "was",
+        "cooking"
+      ],
+      "answer": "They were talking while I was cooking",
+      "instruction": "While + past continuous",
+      "explanation": "While… were talking… was cooking."
+    },
+    {
+      "type": "sentence_building",
+      "question": "She / had / already / left / when / I / called",
+      "options": [
+        "She",
+        "had",
+        "already",
+        "left",
+        "when",
+        "I",
+        "called"
+      ],
+      "answer": "She had already left when I called",
+      "instruction": "Past perfect",
+      "explanation": "had already left when I called."
+    },
+    {
+      "type": "sentence_building",
+      "question": "We / used / to / go / fishing / every / summer",
+      "options": [
+        "We",
+        "used",
+        "to",
+        "go",
+        "fishing",
+        "every",
+        "summer"
+      ],
+      "answer": "We used to go fishing every summer",
+      "instruction": "Used to — habit",
+      "explanation": "used to go fishing — привычка в прошлом."
+    },
+    {
+      "type": "sentence_building",
+      "question": "By / the / time / we / arrived / the / show / had / started",
+      "options": [
+        "By",
+        "the",
+        "time",
+        "we",
+        "arrived",
+        "the",
+        "show",
+        "had",
+        "started"
+      ],
+      "answer": "By the time we arrived the show had started",
+      "instruction": "Past perfect + by the time",
+      "explanation": "had started — до нашего прихода."
     }
   ],
   "eng-ch9-real-world": [
@@ -2315,6 +2869,132 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "They have been renovating the house for three months",
       "instruction": "PPC + for",
       "explanation": "have been renovating for three months."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Have / you / been / here / long?",
+      "options": [
+        "Have",
+        "you",
+        "been",
+        "here",
+        "long?"
+      ],
+      "answer": "Have you been here long?",
+      "instruction": "PPC question",
+      "explanation": "Have you been here long?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "She / has / been / on / the / phone / all / day",
+      "options": [
+        "She",
+        "has",
+        "been",
+        "on",
+        "the",
+        "phone",
+        "all",
+        "day"
+      ],
+      "answer": "She has been on the phone all day",
+      "instruction": "PPC — state",
+      "explanation": "has been on the phone all day."
+    },
+    {
+      "type": "sentence_building",
+      "question": "How / long / have / you / been / waiting?",
+      "options": [
+        "How",
+        "long",
+        "have",
+        "you",
+        "been",
+        "waiting?"
+      ],
+      "answer": "How long have you been waiting?",
+      "instruction": "PPC question",
+      "explanation": "How long have you been waiting?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "They / have / been / arguing / all / morning",
+      "options": [
+        "They",
+        "have",
+        "been",
+        "arguing",
+        "all",
+        "morning"
+      ],
+      "answer": "They have been arguing all morning",
+      "instruction": "PPC — duration",
+      "explanation": "have been arguing all morning."
+    },
+    {
+      "type": "sentence_building",
+      "question": "I / have / been / thinking / about / it / lately",
+      "options": [
+        "I",
+        "have",
+        "been",
+        "thinking",
+        "about",
+        "it",
+        "lately"
+      ],
+      "answer": "I have been thinking about it lately",
+      "instruction": "PPC — recent activity",
+      "explanation": "have been thinking about it lately."
+    },
+    {
+      "type": "sentence_building",
+      "question": "He / has / been / training / for / the / marathon",
+      "options": [
+        "He",
+        "has",
+        "been",
+        "training",
+        "for",
+        "the",
+        "marathon"
+      ],
+      "answer": "He has been training for the marathon",
+      "instruction": "PPC + for",
+      "explanation": "has been training for the marathon."
+    },
+    {
+      "type": "sentence_building",
+      "question": "We / have / been / looking / for / a / flat / for / months",
+      "options": [
+        "We",
+        "have",
+        "been",
+        "looking",
+        "for",
+        "a",
+        "flat",
+        "for",
+        "months"
+      ],
+      "answer": "We have been looking for a flat for months",
+      "instruction": "PPC + for",
+      "explanation": "have been looking… for months."
+    },
+    {
+      "type": "sentence_building",
+      "question": "She / has / been / feeling / unwell / recently",
+      "options": [
+        "She",
+        "has",
+        "been",
+        "feeling",
+        "unwell",
+        "recently"
+      ],
+      "answer": "She has been feeling unwell recently",
+      "instruction": "PPC — state",
+      "explanation": "has been feeling unwell recently."
     }
   ],
   "eng-ch10-what-if": [
@@ -2733,6 +3413,144 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "If they had arrived earlier they would have caught the train",
       "instruction": "Third conditional",
       "explanation": "would have caught the train."
+    },
+    {
+      "type": "sentence_building",
+      "question": "If / you / mix / red / and / blue / you / get / purple",
+      "options": [
+        "If",
+        "you",
+        "mix",
+        "red",
+        "and",
+        "blue",
+        "you",
+        "get",
+        "purple"
+      ],
+      "answer": "If you mix red and blue you get purple",
+      "instruction": "Zero conditional",
+      "explanation": "If + present, present — общая истина."
+    },
+    {
+      "type": "sentence_building",
+      "question": "If / I / were / taller / I / would / reach / the / shelf",
+      "options": [
+        "If",
+        "I",
+        "were",
+        "taller",
+        "I",
+        "would",
+        "reach",
+        "the",
+        "shelf"
+      ],
+      "answer": "If I were taller I would reach the shelf",
+      "instruction": "Second conditional",
+      "explanation": "If I were taller… would reach."
+    },
+    {
+      "type": "sentence_building",
+      "question": "If / we / leave / now / we / will / catch / the / train",
+      "options": [
+        "If",
+        "we",
+        "leave",
+        "now",
+        "we",
+        "will",
+        "catch",
+        "the",
+        "train"
+      ],
+      "answer": "If we leave now we will catch the train",
+      "instruction": "First conditional",
+      "explanation": "If + present, will + base."
+    },
+    {
+      "type": "sentence_building",
+      "question": "If / he / had / listened / he / would / have / understood",
+      "options": [
+        "If",
+        "he",
+        "had",
+        "listened",
+        "he",
+        "would",
+        "have",
+        "understood"
+      ],
+      "answer": "If he had listened he would have understood",
+      "instruction": "Third conditional",
+      "explanation": "If he had listened… would have understood."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Unless / you / hurry / you / will / miss / the / bus",
+      "options": [
+        "Unless",
+        "you",
+        "hurry",
+        "you",
+        "will",
+        "miss",
+        "the",
+        "bus"
+      ],
+      "answer": "Unless you hurry you will miss the bus",
+      "instruction": "Unless — first conditional",
+      "explanation": "Unless = if not; will miss."
+    },
+    {
+      "type": "sentence_building",
+      "question": "If / I / had / known / I / wouldn't / have / come",
+      "options": [
+        "If",
+        "I",
+        "had",
+        "known",
+        "I",
+        "wouldn't",
+        "have",
+        "come"
+      ],
+      "answer": "If I had known I wouldn't have come",
+      "instruction": "Third conditional",
+      "explanation": "wouldn't have come — сожаление."
+    },
+    {
+      "type": "sentence_building",
+      "question": "If / she / were / here / she / would / help / us",
+      "options": [
+        "If",
+        "she",
+        "were",
+        "here",
+        "she",
+        "would",
+        "help",
+        "us"
+      ],
+      "answer": "If she were here she would help us",
+      "instruction": "Second conditional",
+      "explanation": "If she were here… would help."
+    },
+    {
+      "type": "sentence_building",
+      "question": "If / it / snows / the / schools / will / close",
+      "options": [
+        "If",
+        "it",
+        "snows",
+        "the",
+        "schools",
+        "will",
+        "close"
+      ],
+      "answer": "If it snows the schools will close",
+      "instruction": "First conditional",
+      "explanation": "If it snows… will close."
     }
   ],
   "eng-ch11-passive": [
@@ -3099,6 +3917,125 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "The painting was stolen",
       "instruction": "Past passive",
       "explanation": "was stolen."
+    },
+    {
+      "type": "sentence_building",
+      "question": "The / work / will / be / finished / tomorrow",
+      "options": [
+        "The",
+        "work",
+        "will",
+        "be",
+        "finished",
+        "tomorrow"
+      ],
+      "answer": "The work will be finished tomorrow",
+      "instruction": "Future passive",
+      "explanation": "will be finished tomorrow."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Coffee / is / grown / in / Brazil",
+      "options": [
+        "Coffee",
+        "is",
+        "grown",
+        "in",
+        "Brazil"
+      ],
+      "answer": "Coffee is grown in Brazil",
+      "instruction": "Present passive",
+      "explanation": "is grown in Brazil."
+    },
+    {
+      "type": "sentence_building",
+      "question": "The / email / was / sent / this / morning",
+      "options": [
+        "The",
+        "email",
+        "was",
+        "sent",
+        "this",
+        "morning"
+      ],
+      "answer": "The email was sent this morning",
+      "instruction": "Past passive",
+      "explanation": "was sent this morning."
+    },
+    {
+      "type": "sentence_building",
+      "question": "English / is / taught / in / many / schools",
+      "options": [
+        "English",
+        "is",
+        "taught",
+        "in",
+        "many",
+        "schools"
+      ],
+      "answer": "English is taught in many schools",
+      "instruction": "Present passive habit",
+      "explanation": "is taught in many schools."
+    },
+    {
+      "type": "sentence_building",
+      "question": "The / window / was / broken / by / the / storm",
+      "options": [
+        "The",
+        "window",
+        "was",
+        "broken",
+        "by",
+        "the",
+        "storm"
+      ],
+      "answer": "The window was broken by the storm",
+      "instruction": "Past passive + agent",
+      "explanation": "was broken by the storm."
+    },
+    {
+      "type": "sentence_building",
+      "question": "The / cake / was / eaten / by / the / children",
+      "options": [
+        "The",
+        "cake",
+        "was",
+        "eaten",
+        "by",
+        "the",
+        "children"
+      ],
+      "answer": "The cake was eaten by the children",
+      "instruction": "Past passive + agent",
+      "explanation": "was eaten by the children."
+    },
+    {
+      "type": "sentence_building",
+      "question": "The / report / has / been / published",
+      "options": [
+        "The",
+        "report",
+        "has",
+        "been",
+        "published"
+      ],
+      "answer": "The report has been published",
+      "instruction": "Present perfect passive",
+      "explanation": "has been published."
+    },
+    {
+      "type": "sentence_building",
+      "question": "The / road / is / being / repaired",
+      "options": [
+        "The",
+        "road",
+        "is",
+        "being",
+        "repaired"
+      ],
+      "answer": "The road is being repaired",
+      "instruction": "Present continuous passive",
+      "explanation": "is being repaired."
     }
   ],
   "eng-ch12-beyond-borders": [
@@ -3498,6 +4435,128 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "They explained that they would arrive at six",
       "instruction": "Reported future",
       "explanation": "would arrive at six."
+    },
+    {
+      "type": "sentence_building",
+      "question": "He / said / that / he / had / to / go",
+      "options": [
+        "He",
+        "said",
+        "that",
+        "he",
+        "had",
+        "to",
+        "go"
+      ],
+      "answer": "He said that he had to go",
+      "instruction": "Reported speech — must",
+      "explanation": "must → had to."
+    },
+    {
+      "type": "sentence_building",
+      "question": "She / asked / if / I / liked / coffee",
+      "options": [
+        "She",
+        "asked",
+        "if",
+        "I",
+        "liked",
+        "coffee"
+      ],
+      "answer": "She asked if I liked coffee",
+      "instruction": "Reported yes/no question",
+      "explanation": "Do you like → if I liked."
+    },
+    {
+      "type": "sentence_building",
+      "question": "He / said / that / he / had / never / been / there",
+      "options": [
+        "He",
+        "said",
+        "that",
+        "he",
+        "had",
+        "never",
+        "been",
+        "there"
+      ],
+      "answer": "He said that he had never been there",
+      "instruction": "Reported perfect",
+      "explanation": "have never been → had never been."
+    },
+    {
+      "type": "sentence_building",
+      "question": "She / asked / me / where / I / lived",
+      "options": [
+        "She",
+        "asked",
+        "me",
+        "where",
+        "I",
+        "lived"
+      ],
+      "answer": "She asked me where I lived",
+      "instruction": "Reported wh-question",
+      "explanation": "Where do you live → where I lived."
+    },
+    {
+      "type": "sentence_building",
+      "question": "They / said / that / they / would / help",
+      "options": [
+        "They",
+        "said",
+        "that",
+        "they",
+        "would",
+        "help"
+      ],
+      "answer": "They said that they would help",
+      "instruction": "Reported speech — will",
+      "explanation": "will → would."
+    },
+    {
+      "type": "sentence_building",
+      "question": "He / told / her / to / wait",
+      "options": [
+        "He",
+        "told",
+        "her",
+        "to",
+        "wait"
+      ],
+      "answer": "He told her to wait",
+      "instruction": "Reported imperative",
+      "explanation": "told her to wait — приказ."
+    },
+    {
+      "type": "sentence_building",
+      "question": "She / asked / why / I / was / late",
+      "options": [
+        "She",
+        "asked",
+        "why",
+        "I",
+        "was",
+        "late"
+      ],
+      "answer": "She asked why I was late",
+      "instruction": "Reported wh-question",
+      "explanation": "Why are you → why I was."
+    },
+    {
+      "type": "sentence_building",
+      "question": "They / explained / that / they / were / tired",
+      "options": [
+        "They",
+        "explained",
+        "that",
+        "they",
+        "were",
+        "tired"
+      ],
+      "answer": "They explained that they were tired",
+      "instruction": "Reported speech",
+      "explanation": "explained that they were tired."
     }
   ],
   "eng-ch16-ielts": [
@@ -4337,6 +5396,130 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "I'm going to start a new job",
       "instruction": "Going to — intention",
       "explanation": "going to start a new job."
+    },
+    {
+      "type": "sentence_building",
+      "question": "We / aren't / going / to / give / up",
+      "options": [
+        "We",
+        "aren't",
+        "going",
+        "to",
+        "give",
+        "up"
+      ],
+      "answer": "We aren't going to give up",
+      "instruction": "Going to negative",
+      "explanation": "aren't going to give up."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Look / the / car / is / going / to / turn",
+      "options": [
+        "Look",
+        "the",
+        "car",
+        "is",
+        "going",
+        "to",
+        "turn"
+      ],
+      "answer": "Look the car is going to turn",
+      "instruction": "Going to — imminent",
+      "explanation": "is going to turn — вот-вот произойдёт."
+    },
+    {
+      "type": "sentence_building",
+      "question": "I / am / going / to / visit / my / grandparents",
+      "options": [
+        "I",
+        "am",
+        "going",
+        "to",
+        "visit",
+        "my",
+        "grandparents"
+      ],
+      "answer": "I am going to visit my grandparents",
+      "instruction": "Going to — plan",
+      "explanation": "am going to visit my grandparents."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Are / you / going / to / watch / the / match?",
+      "options": [
+        "Are",
+        "you",
+        "going",
+        "to",
+        "watch",
+        "the",
+        "match?"
+      ],
+      "answer": "Are you going to watch the match?",
+      "instruction": "Going to question",
+      "explanation": "Are you going to watch…?"
+    },
+    {
+      "type": "sentence_building",
+      "question": "She / is / going / to / study / medicine",
+      "options": [
+        "She",
+        "is",
+        "going",
+        "to",
+        "study",
+        "medicine"
+      ],
+      "answer": "She is going to study medicine",
+      "instruction": "Going to — intention",
+      "explanation": "is going to study medicine."
+    },
+    {
+      "type": "sentence_building",
+      "question": "They / are / going / to / paint / the / kitchen",
+      "options": [
+        "They",
+        "are",
+        "going",
+        "to",
+        "paint",
+        "the",
+        "kitchen"
+      ],
+      "answer": "They are going to paint the kitchen",
+      "instruction": "Going to — plan",
+      "explanation": "going to paint the kitchen."
+    },
+    {
+      "type": "sentence_building",
+      "question": "He / isn't / going / to / wait / any / longer",
+      "options": [
+        "He",
+        "isn't",
+        "going",
+        "to",
+        "wait",
+        "any",
+        "longer"
+      ],
+      "answer": "He isn't going to wait any longer",
+      "instruction": "Going to negative",
+      "explanation": "isn't going to wait any longer."
+    },
+    {
+      "type": "sentence_building",
+      "question": "We're / going / to / celebrate / tonight",
+      "options": [
+        "We're",
+        "going",
+        "to",
+        "celebrate",
+        "tonight"
+      ],
+      "answer": "We're going to celebrate tonight",
+      "instruction": "Going to — plan",
+      "explanation": "going to celebrate tonight."
     }
   ],
   "eng-ch21-quantifiers": [
@@ -4699,6 +5882,115 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "There is a little water in the glass",
       "instruction": "A little — uncountable",
       "explanation": "a little water in the glass."
+    },
+    {
+      "type": "sentence_building",
+      "question": "We / have / enough / space",
+      "options": [
+        "We",
+        "have",
+        "enough",
+        "space"
+      ],
+      "answer": "We have enough space",
+      "instruction": "Enough — uncountable",
+      "explanation": "enough + uncountable noun."
+    },
+    {
+      "type": "sentence_building",
+      "question": "A / few / students / were / late",
+      "options": [
+        "A",
+        "few",
+        "students",
+        "were",
+        "late"
+      ],
+      "answer": "A few students were late",
+      "instruction": "A few — countable",
+      "explanation": "a few students — исчисляемое."
+    },
+    {
+      "type": "sentence_building",
+      "question": "There / are / several / options",
+      "options": [
+        "There",
+        "are",
+        "several",
+        "options"
+      ],
+      "answer": "There are several options",
+      "instruction": "Several — countable",
+      "explanation": "several options — несколько."
+    },
+    {
+      "type": "sentence_building",
+      "question": "I / don't / have / any / questions",
+      "options": [
+        "I",
+        "don't",
+        "have",
+        "any",
+        "questions"
+      ],
+      "answer": "I don't have any questions",
+      "instruction": "Any — negative",
+      "explanation": "any questions в отрицании."
+    },
+    {
+      "type": "sentence_building",
+      "question": "She / ate / too / much / chocolate",
+      "options": [
+        "She",
+        "ate",
+        "too",
+        "much",
+        "chocolate"
+      ],
+      "answer": "She ate too much chocolate",
+      "instruction": "Too much — uncountable",
+      "explanation": "too much chocolate."
+    },
+    {
+      "type": "sentence_building",
+      "question": "We / need / more / time",
+      "options": [
+        "We",
+        "need",
+        "more",
+        "time"
+      ],
+      "answer": "We need more time",
+      "instruction": "More — uncountable",
+      "explanation": "more time — неисчисляемое."
+    },
+    {
+      "type": "sentence_building",
+      "question": "There / aren't / many / tickets / left",
+      "options": [
+        "There",
+        "aren't",
+        "many",
+        "tickets",
+        "left"
+      ],
+      "answer": "There aren't many tickets left",
+      "instruction": "Many — countable",
+      "explanation": "aren't many tickets left."
+    },
+    {
+      "type": "sentence_building",
+      "question": "He / has / plenty / of / experience",
+      "options": [
+        "He",
+        "has",
+        "plenty",
+        "of",
+        "experience"
+      ],
+      "answer": "He has plenty of experience",
+      "instruction": "Plenty of",
+      "explanation": "plenty of experience."
     }
   ],
   "eng-ch22-modals": [
@@ -5065,6 +6357,113 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "You should have called",
       "instruction": "Should have — regret",
       "explanation": "should have called."
+    },
+    {
+      "type": "sentence_building",
+      "question": "You / might / be / right",
+      "options": [
+        "You",
+        "might",
+        "be",
+        "right"
+      ],
+      "answer": "You might be right",
+      "instruction": "Might — possibility",
+      "explanation": "might be right — возможность."
+    },
+    {
+      "type": "sentence_building",
+      "question": "You / ought / to / apologize",
+      "options": [
+        "You",
+        "ought",
+        "to",
+        "apologize"
+      ],
+      "answer": "You ought to apologize",
+      "instruction": "Ought to — advice",
+      "explanation": "ought to + base verb."
+    },
+    {
+      "type": "sentence_building",
+      "question": "I / could / swim / when / I / was / five",
+      "options": [
+        "I",
+        "could",
+        "swim",
+        "when",
+        "I",
+        "was",
+        "five"
+      ],
+      "answer": "I could swim when I was five",
+      "instruction": "Could — past ability",
+      "explanation": "could swim — умел в прошлом."
+    },
+    {
+      "type": "sentence_building",
+      "question": "You / needn't / worry",
+      "options": [
+        "You",
+        "needn't",
+        "worry"
+      ],
+      "answer": "You needn't worry",
+      "instruction": "Needn't — no necessity",
+      "explanation": "needn't worry — не обязательно."
+    },
+    {
+      "type": "sentence_building",
+      "question": "She / may / leave / early",
+      "options": [
+        "She",
+        "may",
+        "leave",
+        "early"
+      ],
+      "answer": "She may leave early",
+      "instruction": "May — possibility",
+      "explanation": "may leave early — возможно."
+    },
+    {
+      "type": "sentence_building",
+      "question": "We / mustn't / be / late",
+      "options": [
+        "We",
+        "mustn't",
+        "be",
+        "late"
+      ],
+      "answer": "We mustn't be late",
+      "instruction": "Mustn't — prohibition",
+      "explanation": "mustn't be late — запрет."
+    },
+    {
+      "type": "sentence_building",
+      "question": "He / might / have / forgotten",
+      "options": [
+        "He",
+        "might",
+        "have",
+        "forgotten"
+      ],
+      "answer": "He might have forgotten",
+      "instruction": "Might have — past possibility",
+      "explanation": "might have + V3."
+    },
+    {
+      "type": "sentence_building",
+      "question": "You / shouldn't / eat / so / fast",
+      "options": [
+        "You",
+        "shouldn't",
+        "eat",
+        "so",
+        "fast"
+      ],
+      "answer": "You shouldn't eat so fast",
+      "instruction": "Shouldn't — advice",
+      "explanation": "shouldn't eat so fast."
     }
   ],
   "eng-ch23-spotlight": [
@@ -7248,6 +8647,60 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "Is that coat hers?",
       "instruction": "Hers — её",
       "explanation": "Hers = her coat."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Is / this / his / pen?",
+      "options": [
+        "Is",
+        "this",
+        "his",
+        "pen?"
+      ],
+      "answer": "Is this his pen?",
+      "instruction": "Притяжательные — his",
+      "explanation": "his + pen."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Our / neighbours / are / very / friendly",
+      "options": [
+        "Our",
+        "neighbours",
+        "are",
+        "very",
+        "friendly"
+      ],
+      "answer": "Our neighbours are very friendly",
+      "instruction": "Притяжательные — our",
+      "explanation": "our neighbours — наши соседи."
+    },
+    {
+      "type": "sentence_building",
+      "question": "The / dog / wagged / its / tail",
+      "options": [
+        "The",
+        "dog",
+        "wagged",
+        "its",
+        "tail"
+      ],
+      "answer": "The dog wagged its tail",
+      "instruction": "Притяжательные — its",
+      "explanation": "its — для животных и вещей."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Whose / turn / is / it?",
+      "options": [
+        "Whose",
+        "turn",
+        "is",
+        "it?"
+      ],
+      "answer": "Whose turn is it?",
+      "instruction": "Whose — чей?",
+      "explanation": "Whose turn is it? — чья очередь?"
     }
   ],
   "eng-ch32-relative-clauses": [
@@ -7506,6 +8959,70 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "This is the café where we first met",
       "instruction": "Where — место",
       "explanation": "The café where…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "The / man / whose / car / was / stolen / called / the / police",
+      "options": [
+        "The",
+        "man",
+        "whose",
+        "car",
+        "was",
+        "stolen",
+        "called",
+        "the",
+        "police"
+      ],
+      "answer": "The man whose car was stolen called the police",
+      "instruction": "Relative — whose",
+      "explanation": "Whose car — чья машина."
+    },
+    {
+      "type": "sentence_building",
+      "question": "I / know / someone / who / speaks / Japanese",
+      "options": [
+        "I",
+        "know",
+        "someone",
+        "who",
+        "speaks",
+        "Japanese"
+      ],
+      "answer": "I know someone who speaks Japanese",
+      "instruction": "Relative — who",
+      "explanation": "Someone who speaks — определяющее."
+    },
+    {
+      "type": "sentence_building",
+      "question": "The / day / when / we / met / was / sunny",
+      "options": [
+        "The",
+        "day",
+        "when",
+        "we",
+        "met",
+        "was",
+        "sunny"
+      ],
+      "answer": "The day when we met was sunny",
+      "instruction": "Relative — when",
+      "explanation": "The day when we met…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "That's / the / reason / why / I / called",
+      "options": [
+        "That's",
+        "the",
+        "reason",
+        "why",
+        "I",
+        "called"
+      ],
+      "answer": "That's the reason why I called",
+      "instruction": "Relative — why",
+      "explanation": "The reason why I called."
     }
   ],
   "eng-ch35-ielts-informal": [
@@ -7730,6 +9247,61 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "Hope to hear from you soon",
       "instruction": "Ожидание ответа",
       "explanation": "Hope to hear from you soon."
+    },
+    {
+      "type": "sentence_building",
+      "question": "I / hope / you're / doing / well",
+      "options": [
+        "I",
+        "hope",
+        "you're",
+        "doing",
+        "well"
+      ],
+      "answer": "I hope you're doing well",
+      "instruction": "Неформальное начало",
+      "explanation": "I hope you're doing well — дружеское."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Write / back / soon",
+      "options": [
+        "Write",
+        "back",
+        "soon"
+      ],
+      "answer": "Write back soon",
+      "instruction": "Просьба ответить",
+      "explanation": "Write back soon — напиши скорее."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Thanks / for / your / last / letter",
+      "options": [
+        "Thanks",
+        "for",
+        "your",
+        "last",
+        "letter"
+      ],
+      "answer": "Thanks for your last letter",
+      "instruction": "Благодарность",
+      "explanation": "Thanks for your last letter."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Let / me / know / what / you / think",
+      "options": [
+        "Let",
+        "me",
+        "know",
+        "what",
+        "you",
+        "think"
+      ],
+      "answer": "Let me know what you think",
+      "instruction": "Просьба о мнении",
+      "explanation": "Let me know what you think."
     }
   ],
   "eng-ch37-cambridge-letter": [
@@ -7966,6 +9538,70 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "Please find attached the document you requested",
       "instruction": "Вложение",
       "explanation": "Please find attached — стандарт email."
+    },
+    {
+      "type": "sentence_building",
+      "question": "I / am / writing / to / apply / for / the / position",
+      "options": [
+        "I",
+        "am",
+        "writing",
+        "to",
+        "apply",
+        "for",
+        "the",
+        "position"
+      ],
+      "answer": "I am writing to apply for the position",
+      "instruction": "Цель письма — заявка",
+      "explanation": "I am writing to apply for…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "I / would / like / to / request / further / details",
+      "options": [
+        "I",
+        "would",
+        "like",
+        "to",
+        "request",
+        "further",
+        "details"
+      ],
+      "answer": "I would like to request further details",
+      "instruction": "Вежливая просьба",
+      "explanation": "Would like to request…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Please / let / me / know / at / your / earliest / convenience",
+      "options": [
+        "Please",
+        "let",
+        "me",
+        "know",
+        "at",
+        "your",
+        "earliest",
+        "convenience"
+      ],
+      "answer": "Please let me know at your earliest convenience",
+      "instruction": "Формальная просьба",
+      "explanation": "At your earliest convenience."
+    },
+    {
+      "type": "sentence_building",
+      "question": "I / remain / at / your / disposal",
+      "options": [
+        "I",
+        "remain",
+        "at",
+        "your",
+        "disposal"
+      ],
+      "answer": "I remain at your disposal",
+      "instruction": "Заключительная формула",
+      "explanation": "I remain at your disposal — в вашем распоряжении."
     }
   ],
   "eng-ch39-ielts-essay": [
@@ -8220,6 +9856,65 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "Ultimately the decision rests with policymakers",
       "instruction": "Финальный акцент",
       "explanation": "Ultimately — окончательный вывод."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Another / key / factor / is / public / health",
+      "options": [
+        "Another",
+        "key",
+        "factor",
+        "is",
+        "public",
+        "health"
+      ],
+      "answer": "Another key factor is public health",
+      "instruction": "Дополнительный аргумент",
+      "explanation": "Another key factor is…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "This / raises / important / questions / about / fairness",
+      "options": [
+        "This",
+        "raises",
+        "important",
+        "questions",
+        "about",
+        "fairness"
+      ],
+      "answer": "This raises important questions about fairness",
+      "instruction": "Переход к проблеме",
+      "explanation": "This raises important questions…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "The / evidence / suggests / a / clear / trend",
+      "options": [
+        "The",
+        "evidence",
+        "suggests",
+        "a",
+        "clear",
+        "trend"
+      ],
+      "answer": "The evidence suggests a clear trend",
+      "instruction": "Ссылка на данные",
+      "explanation": "The evidence suggests…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "A / balanced / approach / is / needed",
+      "options": [
+        "A",
+        "balanced",
+        "approach",
+        "is",
+        "needed"
+      ],
+      "answer": "A balanced approach is needed",
+      "instruction": "Рекомендация",
+      "explanation": "A balanced approach is needed."
     }
   ],
   "eng-ch40-ielts-cohesion": [
@@ -8457,6 +10152,65 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "In spite of this progress challenges remain",
       "instruction": "In spite of this",
       "explanation": "In spite of this — несмотря на прогресс."
+    },
+    {
+      "type": "sentence_building",
+      "question": "In / contrast / urban / areas / grew / faster",
+      "options": [
+        "In",
+        "contrast",
+        "urban",
+        "areas",
+        "grew",
+        "faster"
+      ],
+      "answer": "In contrast urban areas grew faster",
+      "instruction": "In contrast — противопоставление",
+      "explanation": "In contrast — формальный контраст."
+    },
+    {
+      "type": "sentence_building",
+      "question": "As / a / consequence / costs / rose",
+      "options": [
+        "As",
+        "a",
+        "consequence",
+        "costs",
+        "rose"
+      ],
+      "answer": "As a consequence costs rose",
+      "instruction": "As a consequence — следствие",
+      "explanation": "As a consequence — результат."
+    },
+    {
+      "type": "sentence_building",
+      "question": "To / illustrate / consider / the / case / of / Finland",
+      "options": [
+        "To",
+        "illustrate",
+        "consider",
+        "the",
+        "case",
+        "of",
+        "Finland"
+      ],
+      "answer": "To illustrate consider the case of Finland",
+      "instruction": "To illustrate — пример",
+      "explanation": "To illustrate — переход к примеру."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Despite / this / the / policy / continued",
+      "options": [
+        "Despite",
+        "this",
+        "the",
+        "policy",
+        "continued"
+      ],
+      "answer": "Despite this the policy continued",
+      "instruction": "Despite this — уступка",
+      "explanation": "Despite this — несмотря на вышесказанное."
     }
   ],
   "eng-ch41-cambridge-essay": [
