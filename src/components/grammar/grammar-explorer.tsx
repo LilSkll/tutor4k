@@ -8,6 +8,7 @@ import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { translate } from "@/lib/i18n";
 import type { GrammarLevel, InterfaceLanguage } from "@/types";
 import type { LocalizedGrammarTopicMeta } from "@/lib/grammar-topic-meta";
+import { SPANISH_GRAMMAR_CURRICULUM_ORDER } from "@/config/grammar-curriculum-order";
 import { cn } from "@/lib/utils";
 
 const GrammarTopicDialog = dynamic(
@@ -17,6 +18,23 @@ const GrammarTopicDialog = dynamic(
     ),
   { ssr: false },
 );
+
+const SPANISH_CURRICULUM_RANK = new Map<string, number>(
+  SPANISH_GRAMMAR_CURRICULUM_ORDER.map((slug, index) => [slug, index]),
+);
+
+function sortByCurriculum(
+  list: LocalizedGrammarTopicMeta[],
+  courseId: string,
+): LocalizedGrammarTopicMeta[] {
+  if (courseId !== "spanish") return list;
+  return [...list].sort((a, b) => {
+    const ra = SPANISH_CURRICULUM_RANK.get(a.slug) ?? 9999;
+    const rb = SPANISH_CURRICULUM_RANK.get(b.slug) ?? 9999;
+    if (ra !== rb) return ra - rb;
+    return a.slug.localeCompare(b.slug);
+  });
+}
 
 const LEVEL_COLORS: Record<GrammarLevel, string> = {
   A1: "from-green-500/15 to-emerald-500/15 text-green-600 dark:text-green-400",
@@ -59,12 +77,15 @@ export function GrammarExplorer({
   const topicSlug = searchParams.get("topic");
   const selectedTopic = topics.find((topic) => topic.slug === topicSlug);
 
-  const filtered =
-    activeFilter === "ALL"
-      ? topics
-      : activeFilter.startsWith("exam:")
-        ? topics.filter((topic) => topic.exam === activeFilter.slice(5))
-        : topics.filter((topic) => topic.level === activeFilter);
+  const filtered = React.useMemo(() => {
+    const base =
+      activeFilter === "ALL"
+        ? topics
+        : activeFilter.startsWith("exam:")
+          ? topics.filter((topic) => topic.exam === activeFilter.slice(5))
+          : topics.filter((topic) => topic.level === activeFilter);
+    return sortByCurriculum(base, courseId);
+  }, [activeFilter, topics, courseId]);
 
   if (topics.length === 0) {
     return (

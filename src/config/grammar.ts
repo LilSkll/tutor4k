@@ -20,7 +20,6 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Ser y Estar",
     level: "A1",
     category: "Глаголы",
-    exam: "DELE",
     summary: "Первая тема: приветствия и два глагола «быть» — ser (кто ты) и estar (как ты сейчас).",
     content: `> **Перед этой темой:** это **первая** грамматическая тема курса. **В этой теме:** с нуля — местоимения (yo, tú) и два глагола «быть»: **ser** и **estar**.
 
@@ -681,7 +680,6 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Pretérito Indefinido",
     level: "A2",
     category: "Прошедшие времена",
-    exam: "DELE",
     summary: "Pretérito Indefinido — законченный факт в прошлом: ayer fui, en 2018 viajé.",
     content: `> **Перед этой темой:** **Perfecto** (he comido) — когда период ещё «открыт». **В этой теме:** **Indefinido** — законченный факт: ayer fui, en 2018 viajé.
 
@@ -732,7 +730,6 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Pretérito Imperfecto",
     level: "A2",
     category: "Прошедшие времена",
-    exam: "DELE",
     summary: "Pretérito Imperfecto — фон прошлого: привычки, описания, «когда я был ребёнком».",
     content: `> **Перед этой темой:** **Indefinido** (ayer fui) — отдельное событие. **В этой теме:** **Imperfecto** — фон прошлого: привычки, описания, «когда я был ребёнком».
 
@@ -776,7 +773,6 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Por y Para",
     level: "A2",
     category: "Предлоги",
-    exam: "DELE",
     summary: "Para — цель и «для кого»; por — причина, маршрут, цена, время суток.",
     content: `> **Перед этой темой:** вы уже используете **a, de, en**. **В этой теме:** два частых предлога **para** и **por** — цель, причина, цена, маршрут.
 
@@ -917,7 +913,6 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Modo Subjuntivo (Presente)",
     level: "B1",
     category: "Наклонения",
-    exam: "DELE",
     summary: "Presente de Subjuntivo — желание, сомнение, эмоция: quiero que vengas.",
     content: `> **Перед этой темой:** основные времена описывают **факты**. **В этой теме:** **subjuntivo** — когда говорим о желании, сомнении или эмоции (quiero que vengas).
 
@@ -966,7 +961,6 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Modo Imperativo",
     level: "B1",
     category: "Наклонения",
-    exam: "DELE",
     summary: "Imperativo — приказы и просьбы: habla, no hables, venga.",
     content: `> **Перед этой темой:** вы уже знаете формы **subjuntivo** (hable, comas). **В этой теме:** **Imperativo** — приказы и просьбы: habla, no hables.
 
@@ -1452,7 +1446,6 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Estilo Indirecto (Reported Speech)",
     level: "B2",
     category: "Синтаксис",
-    exam: "DELE",
     summary: "Estilo indirecto — передача чужих слов: dijo que vendría; сдвиг времён после прошедшего.",
     content: `> **Перед этой темой:** вы прошли **DELE-письмо** (condicional, формальный регистр). **В этой теме:** **estilo indirecto** — как пересказать чужие слова: dijo que vendría.
 
@@ -1677,7 +1670,6 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     titleEs: "Conectores Discursivos",
     level: "B2",
     category: "Синтаксис",
-    exam: "DELE",
     summary: "Связки для текста B2+: sin embargo, por lo tanto; часть требует subjuntivo.",
     content: `> **Перед этой темой:** porque и pero хватает до B1. **В этой теме:** связки для письменной речи — sin embargo, por lo tanto, para que…
 
