@@ -85,11 +85,11 @@ const TOPICS = {
     ruSummary:
       "Предлоги места: en, a, de, sobre, debajo, delante — где что находится.",
     ruIntro:
-      "> **Перед этой темой:** вы уже видели **estar** для места и слияние **a + el = al**. **В этой теме:** карта предлогов — en, a, de, sobre, debajo.",
+      "> **Перед этой темой:** вы уже знаете **числа, дни недели и время**. **В этой теме:** предлоги места — en, a, de, sobre, debajo — и **estar** для «где?».",
     enIntro:
-      "> **Before this topic:** you have seen **estar** for location and **a + el = al**. **In this topic:** prepositions of place — en, a, de, sobre, debajo.",
+      "> **Before this topic:** you already know **numbers, days, and telling the time**. **In this topic:** prepositions of place — en, a, de, sobre, debajo — and **estar** for location.",
     esIntro:
-      "> **Antes de este tema:** ya viste **estar** para el lugar y **a + el = al**. **En este tema:** preposiciones de lugar — en, a, de, sobre, debajo.",
+      "> **Antes de este tema:** ya conoces **números, días y la hora**. **En este tema:** preposiciones de lugar — en, a, de, sobre, debajo — y **estar** para «¿dónde?».",
     enSummary:
       "Prepositions of place: en, a, de, sobre, debajo, delante — where something is.",
     esSummary:
@@ -99,11 +99,11 @@ const TOPICS = {
     ruSummary:
       "Глагол gustar: «мне нравится кофе» = me gusta el café, а не «я нравлюсь кофе».",
     ruIntro:
-      "> **Перед этой темой:** вы уже знаете настоящее время и артикли. **В этой теме:** глагол **gustar** — в испанском «мне нравится» строится иначе, чем в русском.",
+      "> **Перед этой темой:** вы уже знаете **tener hambre / frío / sueño** и другие выражения с **tener**. **В этой теме:** глагол **gustar** — «мне нравится» строится иначе, чем в русском.",
     enIntro:
-      "> **Before this topic:** you already know the present tense and articles. **In this topic:** the verb **gustar** — in Spanish “I like coffee” is *me gusta el café*, not “I like” as the subject.",
+      "> **Before this topic:** you already know **tener hambre / frío / sueño** and other **tener** expressions. **In this topic:** **gustar** — “I like” works differently from English.",
     esIntro:
-      "> **Antes de este tema:** ya conoces el presente y los artículos. **En este tema:** el verbo **gustar** — «me gusta el café», no «yo gusto el café».",
+      "> **Antes de este tema:** ya conoces **tener hambre / frío / sueño** y otras expresiones con **tener**. **En este tema:** **gustar** — «me gusta el café», no «yo gusto el café».",
     enSummary:
       "Verb gustar: “I like coffee” = me gusta el café — the thing liked is the subject.",
     esSummary:
@@ -113,11 +113,11 @@ const TOPICS = {
     ruSummary:
       "Выражения с tener: tener hambre, frío, sueño, razón — «у меня голод», не через estar.",
     ruIntro:
-      "> **Перед этой темой:** вы уже различаете **ser** и **estar**. **В этой теме:** частые состояния через **tener** — hambre, frío, sueño, razón.",
+      "> **Перед этой темой:** вы уже знаете **предлоги места** (en, a, de) и **ser / estar**. **В этой теме:** состояния через **tener** — hambre, frío, sueño, razón.",
     enIntro:
-      "> **Before this topic:** you already distinguish **ser** and **estar**. **In this topic:** common states with **tener** — hambre, frío, sueño, razón.",
+      "> **Before this topic:** you already know **prepositions of place** (en, a, de) and **ser / estar**. **In this topic:** states with **tener** — hambre, frío, sueño, razón.",
     esIntro:
-      "> **Antes de este tema:** ya distingues **ser** y **estar**. **En este tema:** estados frecuentes con **tener** — hambre, frío, sueño, razón.",
+      "> **Antes de este tema:** ya conoces **preposiciones de lugar** (en, a, de) y **ser / estar**. **En este tema:** estados con **tener** — hambre, frío, sueño, razón.",
     enSummary:
       "Expressions with tener: hunger, cold, sleepiness, being right — not with estar.",
     esSummary:
@@ -127,11 +127,11 @@ const TOPICS = {
     ruSummary:
       "Вопросительные слова: qué, quién, dónde, cuándo, cómo, por qué и знаки ¿…?",
     ruIntro:
-      "> **Перед этой темой:** вы уже знаете вопросы вроде ¿Cómo estás? и ¿Cómo te llamas?. **В этой теме:** остальные вопросительные слова и как писать **¿?**.",
+      "> **Перед этой темой:** вы уже знаете **gustar** (me gusta…) и базовые вопросы из темы ser/estar (¿Cómo estás?). **В этой теме:** остальные вопросительные слова и **¿?** в письме.",
     enIntro:
-      "> **Before this topic:** you already know questions like ¿Cómo estás? and ¿Cómo te llamas?. **In this topic:** other question words (qué, dónde, cuándo…) and **¿?** in writing.",
+      "> **Before this topic:** you already know **gustar** (me gusta…) and basic questions from ser/estar (¿Cómo estás?). **In this topic:** other question words and **¿?** in writing.",
     esIntro:
-      "> **Antes de este tema:** ya conoces ¿Cómo estás? y ¿Cómo te llamas?. **En este tema:** otras interrogativas (qué, dónde, cuándo…) y **¿?** en la escritura.",
+      "> **Antes de este tema:** ya conoces **gustar** (me gusta…) y preguntas básicas de ser/estar (¿Cómo estás?). **En este tema:** otras interrogativas y **¿?** en la escritura.",
     enSummary:
       "Question words — qué, quién, dónde, cuándo, cómo, por qué — and ¿…? in writing.",
     esSummary:
@@ -141,11 +141,11 @@ const TOPICS = {
     ruSummary:
       "Частые неправильные глаголы: ir, tener, hacer, poder, querer, decir.",
     ruIntro:
-      "> **Перед этой темой:** вы уже знаете правила настоящего времени. **В этой теме:** самые нужные неправильные глаголы — ir, tener, hacer, poder, querer — без новой теории.",
+      "> **Перед этой темой:** вы прошли **вопросы** (qué, dónde, ¿…?). **В этой теме:** частые неправильные глаголы — ir, tener, hacer, poder, querer, decir.",
     enIntro:
-      "> **Before this topic:** you already know regular present endings. **In this topic:** the most useful irregular verbs — ir, tener, hacer, poder, querer — no new theory.",
+      "> **Before this topic:** you have covered **questions** (qué, dónde, ¿…?). **In this topic:** frequent irregular verbs — ir, tener, hacer, poder, querer, decir.",
     esIntro:
-      "> **Antes de este tema:** ya conoces las terminaciones regulares del presente. **En este tema:** los verbos irregulares más útiles — ir, tener, hacer, poder, querer — sin teoría nueva.",
+      "> **Antes de este tema:** ya viste las **preguntas** (qué, dónde, ¿…?). **En este tema:** verbos irregulares frecuentes — ir, tener, hacer, poder, querer, decir.",
     enSummary:
       "Essential irregular verbs in the present: ir, tener, hacer, poder, querer, decir.",
     esSummary:
@@ -155,11 +155,11 @@ const TOPICS = {
     ruSummary:
       "Pretérito Perfecto — прошлое, связанное с «сейчас»: he comido, has ido.",
     ruIntro:
-      "> **Перед этой темой:** вы спрягаете настоящее время (hablo, como). **В этой теме:** **Pretérito Perfecto** — действие в прошлом, которое связано с настоящим: he comido, has ido.",
+      "> **Перед этой темой:** вы завершили **A1** (включая **частые глаголы**). **В этой теме:** **Pretérito Perfecto** — прошлое, связанное с настоящим: he comido, has ido.",
     enIntro:
-      "> **Before this topic:** you conjugate the present tense (hablo, como). **In this topic:** **Pretérito Perfecto** — a past action linked to now: he comido, has ido.",
+      "> **Before this topic:** you have finished **A1** (including **frequent verbs**). **In this topic:** **Pretérito Perfecto** — past linked to now: he comido, has ido.",
     esIntro:
-      "> **Antes de este tema:** ya conjugas el presente (hablo, como). **En este tema:** **Pretérito Perfecto** — pasado ligado al presente: he comido, has ido.",
+      "> **Antes de este tema:** ya terminaste **A1** (incluidos **verbos frecuentes**). **En este tema:** **Pretérito Perfecto** — pasado ligado al presente: he comido, has ido.",
     enSummary:
       "Pretérito Perfecto — past actions still connected to the present: he comido.",
     esSummary:
@@ -277,15 +277,15 @@ const TOPICS = {
     esSummary:
       "Condicional — peticiones corteses e hipótesis: podría, me gustaría.",
   },
-  "b1-preposiciones-por-para-2": {
+  "b1-pronombre-se": {
     ruSummary:
       "Местоимение se — пять значений: возвратное, взаимное, безличное, пассивное, «случайно».",
     ruIntro:
-      "> **Перед этой темой:** вы уже знаете **me / te** из gustar. **В этой теме:** местоимение **se** — возвратное, взаимное, безличное и другие значения.",
+      "> **Перед этой темой:** вы знаете **Condicional** (hablaría, podría). **В этой теме:** местоимение **se** — перед главой «Voz pasiva»; por/para уже были в A2.",
     enIntro:
-      "> **Before this topic:** you already know **me / te** from gustar. **In this topic:** the pronoun **se** — reflexive, reciprocal, impersonal, and more.",
+      "> **Before this topic:** you know the **Condicional** (hablaría, podría). **In this topic:** the pronoun **se** — before the “Passive voice” chapter; por/para was covered in A2.",
     esIntro:
-      "> **Antes de este tema:** ya conoces **me / te** del verbo gustar. **En este tema:** el pronombre **se** — reflexivo, recíproco, impersonal y más.",
+      "> **Antes de este tema:** ya conoces el **Condicional** (hablaría, podría). **En este tema:** el pronombre **se** — antes del capítulo «Voz pasiva»; por/para ya viste en A2.",
     enSummary:
       "Pronoun se — reflexive, reciprocal, impersonal, passive, and accidental uses.",
     esSummary:
@@ -365,11 +365,11 @@ const TOPICS = {
     ruSummary:
       "Estilo indirecto — передача чужих слов: dijo que vendría; сдвиг времён после прошедшего.",
     ruIntro:
-      "> **Перед этой темой:** вы знаете основные времена и subjuntivo. **В этой теме:** **estilo indirecto** — как пересказать чужие слова: dijo que vendría.",
+      "> **Перед этой темой:** вы прошли **DELE-письмо** (condicional, формальный регистр). **В этой теме:** **estilo indirecto** — как пересказать чужие слова: dijo que vendría.",
     enIntro:
-      "> **Before this topic:** you know the main tenses and subjunctive. **In this topic:** **reported speech** — how to relay someone else’s words: dijo que vendría.",
+      "> **Before this topic:** you have covered **DELE letter writing** (condicional, formal register). **In this topic:** **reported speech** — how to relay someone else’s words: dijo que vendría.",
     esIntro:
-      "> **Antes de este tema:** ya conoces los tiempos principales y el subjuntivo. **En este tema:** **estilo indirecto** — transmitir palabras ajenas: dijo que vendría.",
+      "> **Antes de este tema:** ya viste la **carta DELE** (condicional, registro formal). **En este tema:** **estilo indirecto** — transmitir palabras ajenas: dijo que vendría.",
     enSummary:
       "Reported speech — dijo que vendría; tense backshift after a past reporting verb.",
     esSummary:
@@ -379,11 +379,11 @@ const TOPICS = {
     ruSummary:
       "Voz pasiva — fue escrito; pasiva refleja — se habla español; estado — está cerrada.",
     ruIntro:
-      "> **Перед этой темой:** вы знаете **se** (se venden, se habla). **В этой теме:** **voz pasiva** — ser + participio и когда лучше pasiva refleja.",
+      "> **Перед этой темой:** вы прошли **estilo indirecto** и главу **Местоимение se**. **В этой теме:** **voz pasiva** — ser + participio и **se** pasiva (se habla, se venden).",
     enIntro:
-      "> **Before this topic:** you know **se** (se venden, se habla). **In this topic:** **passive voice** — ser + participle and when reflexive se is more natural.",
+      "> **Before this topic:** you have covered **reported speech** and the **SE pronoun** chapter. **In this topic:** **passive voice** — ser + participle and **se** passive (se habla, se venden).",
     esIntro:
-      "> **Antes de este tema:** ya conoces **se** (se venden, se habla). **En este tema:** **voz pasiva** — ser + participio y cuándo conviene la pasiva refleja.",
+      "> **Antes de este tema:** ya viste **estilo indirecto** y el capítulo del **pronombre se**. **En este tema:** **voz pasiva** — ser + participio y **se** pasiva (se habla, se venden).",
     enSummary:
       "Passive voice — fue escrito vs natural se habla; states with estar.",
     esSummary:
@@ -587,17 +587,17 @@ const TOPICS = {
   },
   "dele-contraste-pasados": {
     ruSummary:
-      "DELE: как выбрать Indefinido, Imperfecto, Perfecto или Pluscuamperfecto.",
+      "DELE: как выбрать Perfecto, Indefinido или Imperfecto; Pluscuamperfecto — в главе «Два слоя прошлого».",
     ruIntro:
-      "> **Перед этой темой:** четыре прошедших разобраны по отдельным темам. **В этой теме:** **DELE** — как выбрать нужное прошедшее, без повторения спряжения.",
+      "> **Перед этой темой:** в **A2** и **B1** вы прошли все прошедшие, включая **Pluscuamperfecto**. **В этой теме:** **DELE-сводка** — как выбрать прошедшее на экзамене.",
     enIntro:
-      "> **Before this topic:** the four past tenses were taught one by one. **In this topic:** **DELE** — how to pick the right past tense, no conjugation recap.",
+      "> **Before this topic:** in **A2** and **B1** you covered all past tenses, including **Pluscuamperfecto**. **In this topic:** **DELE overview** — picking the right past tense.",
     esIntro:
-      "> **Antes de este tema:** los cuatro pasados ya se estudiaron por separado. **En este tema:** **DELE** — cómo elegir el pasado correcto, sin repetir conjugaciones.",
+      "> **Antes de este tema:** en **A2** y **B1** ya viste todos los pasados, incluido **Pluscamperfecto**. **En este tema:** **resumen DELE** — elegir el pasado en el examen.",
     enSummary:
-      "DELE past-tense contrast — Indefinido vs Imperfecto vs Perfecto vs Pluscuamperfecto.",
+      "DELE past-tense contrast — Perfecto vs Indefinido vs Imperfecto; Pluscuamperfecto in chapter journey.",
     esSummary:
-      "Contraste de pasados DELE — Indefinido vs Imperfecto vs Perfecto vs Pluscuamperfecto.",
+      "Contraste DELE — Perfecto vs Indefinido vs Imperfecto; Pluscuamperfecto en el recorrido.",
   },
   "dele-carta-formal": {
     ruSummary:
@@ -617,11 +617,11 @@ const TOPICS = {
     ruSummary:
       "DELE сочинение: скелет абзацев (en primer lugar…) + мнение с subjuntivo.",
     ruIntro:
-      "> **Перед этой темой:** связки B2 (sin embargo, por lo tanto). **В этой теме:** **DELE сочинение** — структура текста и где в мнении нужен subjuntivo.",
+      "> **Перед этой темой:** вы прошли **voz pasiva** и главу **Коннекторы**. **В этой теме:** **DELE-сочинение** — структура текста и связки (en primer lugar, sin embargo…).",
     enIntro:
-      "> **Before this topic:** B2 linkers (sin embargo, por lo tanto). **In this topic:** **DELE essay** — paragraph skeleton and where opinion needs subjunctive.",
+      "> **Before this topic:** you have covered **passive voice** and the **Connectors** chapter. **In this topic:** **DELE essay** — text structure and linkers (en primer lugar, sin embargo…).",
     esIntro:
-      "> **Antes de este tema:** conectores B2 (sin embargo, por lo tanto). **En este tema:** **redacción DELE** — estructura del texto y dónde la opinión pide subjuntivo.",
+      "> **Antes de este tema:** ya viste **voz pasiva** y el capítulo **Conectores**. **En este tema:** **redacción DELE** — estructura y conectores (en primer lugar, sin embargo…).",
     enSummary:
       "DELE essay — en primer lugar, no obstante, en definitiva; opinion with subjunctive.",
     esSummary:
@@ -631,11 +631,11 @@ const TOPICS = {
     ruSummary:
       "DELE устная часть: описание фото, гипотезы, мнение, согласие — живая речь.",
     ruIntro:
-      "> **Перед этой темой:** futuro de conjetura, мнение с subjuntivo и связки. **В этой теме:** **DELE устно** — как это звучит на экзамене: фото, гипотезы, согласие.",
+      "> **Перед этой темой:** вы прошли **DELE-сочинение**. **В этой теме:** **DELE устно** — фото, мнение, согласие; гипотезы (Serán las diez…) разберём подробнее в C2 «Conjetura».",
     enIntro:
-      "> **Before this topic:** conjecture future, opinion with subjunctive, and linkers. **In this topic:** **DELE speaking** — how it sounds in the exam: photos, hypotheses, agreeing.",
+      "> **Before this topic:** you have covered **DELE essay writing**. **In this topic:** **DELE speaking** — photos, opinions, agreeing; full conjecture theory (Serán las diez…) comes in C2 “Conjetura”.",
     esIntro:
-      "> **Antes de este tema:** futuro de conjetura, opinión con subjuntivo y conectores. **En este tema:** **expresión oral DELE** — cómo suena en el examen: fotos, hipótesis, acuerdo.",
+      "> **Antes de este tema:** ya viste la **redacción DELE**. **En este tema:** **expresión oral DELE** — fotos, opinión, acuerdo; conjetura (Serán las diez…) en detalle en C2 «Conjetura».",
     enSummary:
       "DELE speaking — describing photos, hypotheses, opinions, agreeing/disagreeing.",
     esSummary:
@@ -647,7 +647,7 @@ function patchGrammarTs(content) {
   let updated = content;
   for (const [slug, t] of Object.entries(TOPICS)) {
     const re = new RegExp(
-      `(slug: "${slug}"[\\s\\S]*?summary: ")([^"]*)("[\\s\\S]*?content: \`)(> \\*\\*(?:Перед этой темой|Путь):\\*\\* [^\n]+)`,
+      `(slug: "${slug}"[\\s\\S]*?summary: ")([^"]*)("[\\s\\S]*?content: \`)(> \\*\\*(?:Перед этой темой|Путь):\\*\\*[^\\n]+)`,
     );
     const next = updated.replace(re, `$1${t.ruSummary}$3${t.ruIntro}`);
     if (next === updated) console.warn(`grammar.ts: skip intro ${slug}`);
@@ -660,10 +660,10 @@ function patchSpanishContent(content) {
   let updated = content;
   for (const [slug, t] of Object.entries(TOPICS)) {
     const enRe = new RegExp(
-      `("${slug}": \\{\\s*en: \`)(> \\*\\*(?:Before this topic|Path):\\*\\* [^\n]+)`,
+      `("${slug}": \\{\\s*en: \`)(> \\*\\*(?:Before this topic|Path):\\*\\*[^\\n]+)`,
     );
     const esRe = new RegExp(
-      `("${slug}": \\{[\\s\\S]*?es: \`)(> \\*\\*(?:Antes de este tema|Recorrido):\\*\\* [^\n]+)`,
+      `("${slug}": \\{[\\s\\S]*?es: \`)(> \\*\\*(?:Antes de este tema|Recorrido):\\*\\*[^\\n]+)`,
     );
     const enNext = updated.replace(enRe, `$1${t.enIntro}`);
     if (enNext === updated) console.warn(`grammar-content-spanish.ts: skip en ${slug}`);

@@ -1334,7 +1334,7 @@ Beispiele:
 > 💡 Condicional = Futur, der ins Imaginäre/Hypothetische verschoben wird.`,
   },
 
-  "b1-preposiciones-por-para-2": {
+  "b1-pronombre-se": {
     de: `> **Vor diesem Thema:** me / te von gustar kennt ihr. Hier — **se** als eigenes Werkzeug, nicht jedes Mal „sich“.
 
 ## Das Pronomen SE — wichtigste Funktionen

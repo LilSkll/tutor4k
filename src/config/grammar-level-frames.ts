@@ -404,7 +404,7 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       p("Si puedo, voy.", "Si pudiera, iría.", "реал A2/B1 vs ирреал B1/B2", "real vs unreal", "real vs irreal", "real vs. irreal"),
     ],
   },
-  "b1-preposiciones-por-para-2": {
+  "b1-pronombre-se": {
     here: t(
       "одно se — возвратное, взаимное, impersonál «здесь говорят», accidental se me cayó.",
       "one se — reflexive, reciprocal, impersonal “people say”, accidental se me cayó.",

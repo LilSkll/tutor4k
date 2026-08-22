@@ -119,7 +119,7 @@ export const DE_GRAMMAR_TOPIC: Record<string, GrammarLocaleFields> = {
     title: "Condicional Simple",
     summary: "Höfliche Bitten, Hypothesen und Wünsche.",
   },
-  "b1-preposiciones-por-para-2": {
+  "b1-pronombre-se": {
     title: "Pronomen SE",
     summary: "Unpersönliches se, Passiv-se, reziprokes se — mehrere Verwendungen.",
   },
@@ -304,7 +304,7 @@ export const DE_GRAMMAR_TOPIC: Record<string, GrammarLocaleFields> = {
   "dele-contraste-pasados": {
     title: "DELE: Kontrast der Vergangenheitszeiten",
     summary:
-      "DELE past-tense contrast — Indefinido vs Imperfecto vs Perfecto vs Pluscuamperfecto.",
+      "DELE past-tense contrast — Perfecto vs Indefinido vs Imperfecto; Pluscuamperfecto in chapter journey.",
   },
   "dele-carta-formal": {
     title: "DELE: formeller und informeller Brief",

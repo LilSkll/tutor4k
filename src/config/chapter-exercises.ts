@@ -12,6 +12,7 @@ import { withExerciseIds } from "@/lib/exercise-bank";
 import { matchesChapterGrammar } from "@/lib/chapter-grammar-match";
 import { CHAPTERS } from "@/config/chapters";
 import { expandSpanishChapterBank } from "@/config/exercise-banks/spanish-expand";
+import { CURRICULUM_CHAPTER_EXERCISES } from "@/config/chapter-exercises-curriculum";
 
 /** Draft bank item before id assignment. */
 export type ExerciseDraft = Omit<StaticExercise, "id"> & { id?: string };
@@ -1536,12 +1537,20 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
 export function getChapterExercises(chapterSlug: string): StaticExercise[] {
   const chapter = CHAPTERS.find((c) => c.slug === chapterSlug);
   const grammarTopic = chapter?.grammarTopic ?? null;
-  const curated = CHAPTER_EXERCISES[chapterSlug] ?? [];
+  const curated = [
+    ...(CHAPTER_EXERCISES[chapterSlug] ?? []),
+    ...(CURRICULUM_CHAPTER_EXERCISES[chapterSlug] ?? []),
+  ];
   const expanded = expandSpanishChapterBank(chapterSlug, curated);
   const aligned = grammarTopic
     ? expanded.filter((ex) => matchesChapterGrammar(grammarTopic, ex.grammarTopic))
     : expanded;
-  const tagged = aligned.map((ex) => ({
+  const allowed = chapter?.exerciseTypes;
+  const typeFiltered =
+    allowed && allowed.length > 0
+      ? aligned.filter((ex) => allowed.includes(ex.type))
+      : aligned;
+  const tagged = typeFiltered.map((ex) => ({
     ...ex,
     grammarTopic: ex.grammarTopic ?? grammarTopic ?? undefined,
   }));

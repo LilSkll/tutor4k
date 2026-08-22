@@ -16,6 +16,9 @@ export async function loadSpanishCourse(): Promise<CourseConfig> {
     import("@/config/chapters"),
   ]);
   const { GRAMMAR_TOPICS, getTopicBySlug } = await import("@/config/grammar");
+  const { sortGrammarTopicsByCurriculum } = await import(
+    "@/lib/grammar-curriculum-sort"
+  );
   const { VOCAB_TOPICS } = await import("@/config/vocabulary-topics");
   const { getChapterExercises } = await import("@/config/chapter-exercises");
   const { buildSpanishPrompt } = await import("@/server/ai/prompts/spanish");
@@ -92,7 +95,7 @@ export async function loadSpanishCourse(): Promise<CourseConfig> {
     getChapters: () => CHAPTERS,
     getChapter,
     getNextChapter,
-    getGrammar: () => GRAMMAR_TOPICS,
+    getGrammar: () => sortGrammarTopicsByCurriculum(GRAMMAR_TOPICS),
     getGrammarTopic: getTopicBySlug,
     getVocab: () => VOCAB_TOPICS,
     getExercises: getChapterExercises,

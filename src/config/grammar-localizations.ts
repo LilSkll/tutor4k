@@ -330,7 +330,7 @@ export const GRAMMAR_TOPIC: Record<
       "summary": "Condicional — peticiones corteses e hipótesis: podría, me gustaría."
     }
   },
-  "b1-preposiciones-por-para-2": {
+  "b1-pronombre-se": {
     "en": {
       "title": "Pronoun SE",
       "summary": "Pronoun se — reflexive, reciprocal, impersonal, passive, and accidental uses."
@@ -523,11 +523,11 @@ export const GRAMMAR_TOPIC: Record<
   "dele-contraste-pasados": {
     "en": {
       "title": "DELE: Past Tense Contrast",
-      "summary": "DELE past-tense contrast — Indefinido vs Imperfecto vs Perfecto vs Pluscuamperfecto."
+      "summary": "DELE past-tense contrast — Perfecto vs Indefinido vs Imperfecto; Pluscuamperfecto in chapter journey."
     },
     "es": {
       "title": "DELE: Contraste de Pasados",
-      "summary": "Contraste de pasados DELE — Indefinido vs Imperfecto vs Perfecto vs Pluscuamperfecto."
+      "summary": "Contraste DELE — Perfecto vs Indefinido vs Imperfecto; Pluscuamperfecto en el recorrido."
     }
   },
   "dele-carta-formal": {

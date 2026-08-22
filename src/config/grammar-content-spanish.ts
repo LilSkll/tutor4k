@@ -669,7 +669,7 @@ Pregunta: **¿Qué hora es?**
   },
 
   "a1-preposiciones-lugar": {
-    en: `> **Before this topic:** you have seen **estar** for location and **a + el = al**. **In this topic:** prepositions of place — en, a, de, sobre, debajo.
+    en: `> **Before this topic:** you already know **numbers, days, and telling the time**. **In this topic:** prepositions of place — en, a, de, sobre, debajo — and **estar** for location.
 
 ## Main prepositions of place
 
@@ -691,7 +691,7 @@ Pregunta: **¿Qué hora es?**
 **Ir + a + place** for direction: \`Voy al cine.\` (\`a + el = al\`)
 
 > ⚠️ \`a + el = al\`, \`de + el = del\` — mandatory contraction.`,
-    es: `> **Antes de este tema:** ya viste **estar** para el lugar y **a + el = al**. **En este tema:** preposiciones de lugar — en, a, de, sobre, debajo.
+    es: `> **Antes de este tema:** ya conoces **números, días y la hora**. **En este tema:** preposiciones de lugar — en, a, de, sobre, debajo — y **estar** para «¿dónde?».
 
 ## Preposiciones de lugar principales
 
@@ -716,7 +716,7 @@ Pregunta: **¿Qué hora es?**
   },
 
   "a1-gustar": {
-    en: `> **Before this topic:** you already know the present tense and articles. **In this topic:** the verb **gustar** — in Spanish “I like coffee” is *me gusta el café*, not “I like” as the subject.
+    en: `> **Before this topic:** you already know **tener hambre / frío / sueño** and other **tener** expressions. **In this topic:** **gustar** — “I like” works differently from English.
 
 ## Gustar — "to like" (literally: "to be pleasing")
 
@@ -747,7 +747,7 @@ In Spanish, \`gustar\` works **the other way around**: the subject is what is li
 \`A **mí** me gusta el café.\`
 
 > 💡 Similar verbs: \`encantar\` (to love), \`interesar\` (to interest), \`doler\` (to hurt) — work the same way.`,
-    es: `> **Antes de este tema:** ya conoces el presente y los artículos. **En este tema:** el verbo **gustar** — «me gusta el café», no «yo gusto el café».
+    es: `> **Antes de este tema:** ya conoces **tener hambre / frío / sueño** y otras expresiones con **tener**. **En este tema:** **gustar** — «me gusta el café», no «yo gusto el café».
 
 ## Gustar — «gustar» (literalmente: «ser agradable»)
 
@@ -781,7 +781,7 @@ En español, \`gustar\` funciona **al revés**: el sujeto es lo que gusta, no la
   },
 
   "a1-tener-expressions": {
-    en: `> **Before this topic:** you already distinguish **ser** and **estar**. **In this topic:** common states with **tener** — hambre, frío, sueño, razón.
+    en: `> **Before this topic:** you already know **prepositions of place** (en, a, de) and **ser / estar**. **In this topic:** states with **tener** — hambre, frío, sueño, razón.
 
 ## Expressions with TENER
 
@@ -810,7 +810,7 @@ In Spanish, many states are expressed with **tener + noun**, not with ser/estar.
 \`Tengo veinte años.\`
 
 > ⚠️ Agreement: \`Tiene**mos** hambre\`, \`Tiene**n** sueño\`.`,
-    es: `> **Antes de este tema:** ya distingues **ser** y **estar**. **En este tema:** estados frecuentes con **tener** — hambre, frío, sueño, razón.
+    es: `> **Antes de este tema:** ya conoces **preposiciones de lugar** (en, a, de) y **ser / estar**. **En este tema:** estados con **tener** — hambre, frío, sueño, razón.
 
 ## Expresiones con TENER
 
@@ -842,7 +842,7 @@ En español, muchos estados se expresan con **tener + sustantivo**, no con ser/e
   },
 
   "a1-preguntas": {
-    en: `> **Before this topic:** you already know questions like ¿Cómo estás? and ¿Cómo te llamas?. **In this topic:** other question words (qué, dónde, cuándo…) and **¿?** in writing.
+    en: `> **Before this topic:** you already know **gustar** (me gusta…) and basic questions from ser/estar (¿Cómo estás?). **In this topic:** other question words and **¿?** in writing.
 
 ## Question words (Palabras interrogativas)
 
@@ -870,7 +870,7 @@ Spanish uses **double** marks: \`¿…?\` opening + \`…?\` closing.
 \`¿Cómo te llamas?\`
 
 > 💡 In speech the opening \`¿\` is often omitted, but in writing it is required.`,
-    es: `> **Antes de este tema:** ya conoces ¿Cómo estás? y ¿Cómo te llamas?. **En este tema:** otras interrogativas (qué, dónde, cuándo…) y **¿?** en la escritura.
+    es: `> **Antes de este tema:** ya conoces **gustar** (me gusta…) y preguntas básicas de ser/estar (¿Cómo estás?). **En este tema:** otras interrogativas y **¿?** en la escritura.
 
 ## Palabras interrogativas
 
@@ -901,7 +901,7 @@ En español hay **doble** signo: \`¿…?\` de apertura + \`…?\` de cierre.
   },
 
   "a1-verbos-frecuentes": {
-    en: `> **Before this topic:** you already know regular present endings. **In this topic:** the most useful irregular verbs — ir, tener, hacer, poder, querer — no new theory.
+    en: `> **Before this topic:** you have covered **questions** (qué, dónde, ¿…?). **In this topic:** frequent irregular verbs — ir, tener, hacer, poder, querer, decir.
 
 ## Most essential irregular verbs (presente)
 
@@ -947,7 +947,7 @@ En español hay **doble** signo: \`¿…?\` de apertura + \`…?\` de cierre.
 
 > 💡 \`poder\` + infinitive = "can do": \`Puedo ayudarte.\`
 > \`querer\` + infinitive = "want to do": \`Quiero aprender español.\``,
-    es: `> **Antes de este tema:** ya conoces las terminaciones regulares del presente. **En este tema:** los verbos irregulares más útiles — ir, tener, hacer, poder, querer — sin teoría nueva.
+    es: `> **Antes de este tema:** ya viste las **preguntas** (qué, dónde, ¿…?). **En este tema:** verbos irregulares frecuentes — ir, tener, hacer, poder, querer, decir.
 
 ## Verbos irregulares más necesarios (presente)
 
@@ -996,7 +996,7 @@ En español hay **doble** signo: \`¿…?\` de apertura + \`…?\` de cierre.
   },
 
   "a2-preterito-perfecto": {
-    en: `> **Before this topic:** you conjugate the present tense (hablo, como). **In this topic:** **Pretérito Perfecto** — a past action linked to now: he comido, has ido.
+    en: `> **Before this topic:** you have finished **A1** (including **frequent verbs**). **In this topic:** **Pretérito Perfecto** — past linked to now: he comido, has ido.
 
 ## Pretérito Perfecto (Spanish passé composé)
 
@@ -1029,7 +1029,7 @@ En español hay **doble** signo: \`¿…?\` de apertura + \`…?\` de cierre.
 hoy, esta semana, este año, ya, todavía no, nunca, alguna vez.
 
 > ⚠️ With **ayer, el año pasado, en 2020** use Pretérito Indefinido.`,
-    es: `> **Antes de este tema:** ya conjugas el presente (hablo, como). **En este tema:** **Pretérito Perfecto** — pasado ligado al presente: he comido, has ido.
+    es: `> **Antes de este tema:** ya terminaste **A1** (incluidos **verbos frecuentes**). **En este tema:** **Pretérito Perfecto** — pasado ligado al presente: he comido, has ido.
 
 ## Pretérito Perfecto
 
@@ -1672,8 +1672,8 @@ Ejemplos:
 > 💡 Condicional = futuro trasladado a lo imaginario/hipotético.`,
   },
 
-  "b1-preposiciones-por-para-2": {
-    en: `> **Before this topic:** you already know **me / te** from gustar. **In this topic:** the pronoun **se** — reflexive, reciprocal, impersonal, and more.
+  "b1-pronombre-se": {
+    en: `> **Before this topic:** you know the **Condicional** (hablaría, podría). **In this topic:** the pronoun **se** — before the “Passive voice” chapter; por/para was covered in A2.
 
 ## The pronoun SE — most important functions
 
@@ -1700,7 +1700,7 @@ Ejemplos:
 \`**Se** le olvidó la contraseña.\`
 
 > ⚠️ \`se\` is the most common pronoun in Spanish after \`que\`. Context determines the meaning.`,
-    es: `> **Antes de este tema:** ya conoces **me / te** del verbo gustar. **En este tema:** el pronombre **se** — reflexivo, recíproco, impersonal y más.
+    es: `> **Antes de este tema:** ya conoces el **Condicional** (hablaría, podría). **En este tema:** el pronombre **se** — antes del capítulo «Voz pasiva»; por/para ya viste en A2.
 
 ## El pronombre SE — funciones principales
 
@@ -2085,7 +2085,7 @@ Cuando aparecen ambos: \`me lo, te lo, se lo, nos lo\`.
   },
 
   "b2-estilo-indirecto": {
-    en: `> **Before this topic:** you know the main tenses and subjunctive. **In this topic:** **reported speech** — how to relay someone else’s words: dijo que vendría.
+    en: `> **Before this topic:** you have covered **DELE letter writing** (condicional, formal register). **In this topic:** **reported speech** — how to relay someone else’s words: dijo que vendría.
 
 ## Estilo Indirecto (Reported Speech)
 
@@ -2122,7 +2122,7 @@ Example:
 
 > ⚠️ Imperative → Subjuntivo:
 > \`Dijo: "Hazlo"\` → \`Dijo que **lo hiciera**.\``,
-    es: `> **Antes de este tema:** ya conoces los tiempos principales y el subjuntivo. **En este tema:** **estilo indirecto** — transmitir palabras ajenas: dijo que vendría.
+    es: `> **Antes de este tema:** ya viste la **carta DELE** (condicional, registro formal). **En este tema:** **estilo indirecto** — transmitir palabras ajenas: dijo que vendría.
 
 ## Estilo Indirecto
 
@@ -2162,7 +2162,7 @@ Ejemplo:
   },
 
   "b2-voz-pasiva": {
-    en: `> **Before this topic:** you know **se** (se venden, se habla). **In this topic:** **passive voice** — ser + participle and when reflexive se is more natural.
+    en: `> **Before this topic:** you have covered **reported speech** and the **SE pronoun** chapter. **In this topic:** **passive voice** — ser + participle and **se** passive (se habla, se venden).
 
 ## Voz Pasiva
 
@@ -2199,7 +2199,7 @@ Agreement with subject:
 > 💡 In Spanish pasiva refleja is much more natural than English passive.
 > Don't translate literally: \`"The door is closed"\` → \`"La puerta está cerrada"\`
 > (state) or \`"Se cierra la puerta"\` (action).`,
-    es: `> **Antes de este tema:** ya conoces **se** (se venden, se habla). **En este tema:** **voz pasiva** — ser + participio y cuándo conviene la pasiva refleja.
+    es: `> **Antes de este tema:** ya viste **estilo indirecto** y el capítulo del **pronombre se**. **En este tema:** **voz pasiva** — ser + participio y **se** pasiva (se habla, se venden).
 
 ## Voz Pasiva
 
@@ -3336,7 +3336,7 @@ Con sujeto propio:
 > 💡 C2 es saber **cambiar de registro**: decir lo mismo en un bar y en un ministerio.`,
   },
   "dele-contraste-pasados": {
-    en: `> **Before this topic:** the four past tenses were taught one by one. **In this topic:** **DELE** — how to pick the right past tense, no conjugation recap.
+    en: `> **Before this topic:** in **A2** and **B1** you covered all past tenses, including **Pluscuamperfecto**. **In this topic:** **DELE overview** — picking the right past tense.
 
 ## Contrasting past tenses — trap #1 on the DELE
 
@@ -3370,7 +3370,7 @@ Background (imperfecto) + event (indefinido) — DELE asks about this pair almos
 | \`No **quería** ir.\` — didn't want | \`No **quiso** ir.\` — refused |
 
 > 💡 Spain vs Latin America: in Spain \`esta mañana **he visto**\`, in most of the Americas \`esta mañana **vi**\`. DELE accepts both norms — just be consistent.`,
-    es: `> **Antes de este tema:** los cuatro pasados ya se estudiaron por separado. **En este tema:** **DELE** — cómo elegir el pasado correcto, sin repetir conjugaciones.
+    es: `> **Antes de este tema:** en **A2** y **B1** ya viste todos los pasados, incluido **Pluscamperfecto**. **En este tema:** **resumen DELE** — elegir el pasado en el examen.
 
 ## Contraste de pasados — la trampa n.º 1 del DELE
 
@@ -3538,7 +3538,7 @@ En la parte escrita casi siempre hay una carta o e-mail. Se evalúa el **registr
 > 💡 Memoriza el esqueleto de la carta: en el examen solo tendrás que rellenar el contenido.`,
   },
   "dele-conectores-redaccion": {
-    en: `> **Before this topic:** B2 linkers (sin embargo, por lo tanto). **In this topic:** **DELE essay** — paragraph skeleton and where opinion needs subjunctive.
+    en: `> **Before this topic:** you have covered **passive voice** and the **Connectors** chapter. **In this topic:** **DELE essay** — text structure and linkers (en primer lugar, sin embargo…).
 
 ## Connectors for the redacción (Expresión escrita B2–C1)
 
@@ -3600,7 +3600,7 @@ Your **coherencia** score depends directly on linking devices. Here is a working
 - Count words at the end: 3–4 words per draft line × number of lines is a quick estimate.
 
 > 💡 B2 paragraph formula: connector → thesis → argument → example. Four paragraphs and the structure is done.`,
-    es: `> **Antes de este tema:** conectores B2 (sin embargo, por lo tanto). **En este tema:** **redacción DELE** — estructura del texto y dónde la opinión pide subjuntivo.
+    es: `> **Antes de este tema:** ya viste **voz pasiva** y el capítulo **Conectores**. **En este tema:** **redacción DELE** — estructura y conectores (en primer lugar, sin embargo…).
 
 ## Conectores para la redacción (Expresión escrita B2–C1)
 
@@ -3664,7 +3664,7 @@ La nota de **coherencia** depende directamente de los conectores. Aquí tienes u
 > 💡 Fórmula del párrafo B2: conector → tesis → argumento → ejemplo. Cuatro párrafos y la estructura está lista.`,
   },
   "dele-expresion-oral": {
-    en: `> **Before this topic:** conjecture future, opinion with subjunctive, and linkers. **In this topic:** **DELE speaking** — how it sounds in the exam: photos, hypotheses, agreeing.
+    en: `> **Before this topic:** you have covered **DELE essay writing**. **In this topic:** **DELE speaking** — photos, opinions, agreeing; full conjecture theory (Serán las diez…) comes in C2 “Conjetura”.
 
 ## The DELE speaking paper (Expresión e interacción orales)
 
@@ -3704,7 +3704,7 @@ They sound natural and give you seconds to think — examiners score this as **f
 - \`Es algo parecido a…\` — it's something like…
 
 > 💡 In your minute of prep, jot down 3 connectors + 2 hypotheses with the future tense — enough for a structured monologue.`,
-    es: `> **Antes de este tema:** futuro de conjetura, opinión con subjuntivo y conectores. **En este tema:** **expresión oral DELE** — cómo suena en el examen: fotos, hipótesis, acuerdo.
+    es: `> **Antes de este tema:** ya viste la **redacción DELE**. **En este tema:** **expresión oral DELE** — fotos, opinión, acuerdo; conjetura (Serán las diez…) en detalle en C2 «Conjetura».
 
 ## La parte oral del DELE (Expresión e interacción orales)
 
