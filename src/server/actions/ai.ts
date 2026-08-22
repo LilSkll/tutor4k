@@ -25,39 +25,13 @@ import type {
 } from "@/types";
 import { normalizeAnswer } from "@/lib/normalize-answer";
 import { recordStudySession } from "@/server/actions/data";
-
-function asInterfaceLanguage(raw: unknown): InterfaceLanguage | null {
-  if (raw === "ru" || raw === "en" || raw === "es" || raw === "de") return raw;
-  return null;
-}
-
-function asCourseId(raw: unknown): string | null {
-  if (raw === "spanish" || raw === "english" || raw === "russian") return raw;
-  return null;
-}
-
-function asGrammarSlug(raw: unknown): string | null {
-  if (typeof raw !== "string") return null;
-  const s = raw.trim().slice(0, 80);
-  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(s)) return null;
-  return s;
-}
-
-function sanitizeTutorMessages(raw: AIMessage[]): AIMessage[] {
-  return raw
-    .filter(
-      (m) =>
-        m &&
-        (m.role === "user" || m.role === "assistant") &&
-        typeof m.content === "string",
-    )
-    .slice(-24)
-    .map((m) => ({
-      role: m.role,
-      content: m.content.slice(0, 4000),
-    }))
-    .filter((m) => m.content.trim().length > 0);
-}
+import {
+  asCourseId,
+  asInterfaceLanguage,
+  resolveLessonSlug,
+  sanitizeTutorMessages,
+  shouldUseStaticGrammarFallback,
+} from "@/server/ai/tutor-request";
 
 // =====================================================================
 // AI Tutor chat — server action (streamed back to client in one payload)
@@ -115,13 +89,13 @@ export async function sendTutorMessage(input: {
   const resolvedCourseId = fromClientCourse ?? courseId ?? "spanish";
   const messages = sanitizeTutorMessages(input.messages);
 
-  const candidateSlug = asGrammarSlug(input.grammarTopicSlug);
   let lessonSlug: string | null = null;
   try {
     const course = await getCourse(resolvedCourseId);
-    if (candidateSlug && course.getGrammarTopic(candidateSlug)) {
-      lessonSlug = candidateSlug;
-    }
+    lessonSlug = resolveLessonSlug(
+      input.grammarTopicSlug,
+      course.getGrammarTopic,
+    );
   } catch {
     lessonSlug = null;
   }
@@ -401,8 +375,7 @@ export async function sendTutorMessage(input: {
   // Provider outage: still answer Explain: … from the static rule bank.
   if (
     lastUser &&
-    grammarGrounding &&
-    (response.content.startsWith("😔") || response.content.startsWith("⚠️"))
+    shouldUseStaticGrammarFallback(response.content, grammarGrounding)
   ) {
     try {
       const { formatStaticGrammarTutorReply } = await import(
@@ -411,7 +384,7 @@ export async function sendTutorMessage(input: {
       response = {
         ...response,
         content: formatStaticGrammarTutorReply({
-          groundingBlock: grammarGrounding,
+          groundingBlock: grammarGrounding!,
           interfaceLanguage: language,
         }),
         provider: "static-grammar",

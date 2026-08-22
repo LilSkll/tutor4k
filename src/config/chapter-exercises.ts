@@ -9,6 +9,8 @@
 
 import type { StaticExercise } from "@/types";
 import { withExerciseIds } from "@/lib/exercise-bank";
+import { matchesChapterGrammar } from "@/lib/chapter-grammar-match";
+import { CHAPTERS } from "@/config/chapters";
 import { expandSpanishChapterBank } from "@/config/exercise-banks/spanish-expand";
 
 /** Draft bank item before id assignment. */
@@ -60,9 +62,31 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       answer: "estamos",
       explanation: "Чувства/эмоции → estar. Nosotros → estamos.",
     },
+    {
+      type: "sentence_building",
+      question: "¿Cómo / te / llamas?",
+      options: ["¿Cómo", "te", "llamas?"],
+      answer: "¿Cómo te llamas?",
+      instruction: "Соберите вопрос «Как тебя зовут?»",
+      explanation: "¿Cómo te llamas? — первое знакомство в испанском.",
+    },
+    {
+      type: "sentence_building",
+      question: "Me / llamo / Ana / y / soy / de / España",
+      options: ["Me", "llamo", "Ana", "y", "soy", "de", "España"],
+      answer: "Me llamo Ana y soy de España",
+      instruction: "Соберите фразу представления",
+      explanation: "Me llamo… + soy de… — имя и происхождение.",
+    },
+    {
+      type: "fill_blank",
+      question: "Mucho ___. (приятно познакомиться)",
+      instruction: "Заполните устойчивую фразу",
+      answer: "gusto",
+      acceptableAnswers: ["Gusto"],
+      explanation: "Mucho gusto — очень приятно (после знакомства).",
+    },
   ],
-
-  // ===== Chapter 2: presente =======================================
   "chapter-2-primer-dialogo": [
     {
       type: "fill_blank",
@@ -103,6 +127,22 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       options: ["haces", "hago", "hace", "hacéis"],
       answer: "haces",
       explanation: "Tú → haces. Hacer неправильный: yo hago, tú haces, él hace.",
+    },
+    {
+      type: "sentence_building",
+      question: "Yo / hablo / español / todos / los / días",
+      options: ["Yo", "hablo", "español", "todos", "los", "días"],
+      answer: "Yo hablo español todos los días",
+      instruction: "Соберите фразу о ежедневной практике",
+      explanation: "Presente: yo hablo. todos los días = каждый день.",
+    },
+    {
+      type: "sentence_building",
+      question: "¿Qué / haces / los / fines / de / semana?",
+      options: ["¿Qué", "haces", "los", "fines", "de", "semana?"],
+      answer: "¿Qué haces los fines de semana?",
+      instruction: "Соберите вопрос о выходных",
+      explanation: "¿Qué haces…? — Что ты делаешь…? fines de semana = выходные.",
     },
   ],
 
@@ -150,6 +190,22 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       explanation:
         "Agua — женского рода, но одна вещь и ударение на первой a (Á-gua) → el agua. Во множественном: las aguas. Не путать: la abuela (ударение на -bue-).",
     },
+    {
+      type: "sentence_building",
+      question: "Un / libro / interesante / en / la / mesa",
+      options: ["Un", "libro", "interesante", "en", "la", "mesa"],
+      answer: "Un libro interesante en la mesa",
+      instruction: "Соберите фразу с артиклем un",
+      explanation: "un libro — какая-то одна книга; en la mesa — на столе.",
+    },
+    {
+      type: "sentence_building",
+      question: "El / agua / está / fría",
+      options: ["El", "agua", "está", "fría"],
+      answer: "El agua está fría",
+      instruction: "Соберите фразу с el agua",
+      explanation: "el agua (не la) + estar для состояния: está fría.",
+    },
   ],
 
   // ===== Chapter 4: números/tiempo =================================
@@ -193,6 +249,14 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       answer: "siete",
       acceptableAnswers: ["Siete"],
       explanation: "7 → siete.",
+    },
+    {
+      type: "sentence_building",
+      question: "Son / las / tres / de / la / tarde",
+      options: ["Son", "las", "tres", "de", "la", "tarde"],
+      answer: "Son las tres de la tarde",
+      instruction: "Соберите фразу о времени",
+      explanation: "Son las + часы; de la tarde = дня (после полудня).",
     },
   ],
 
@@ -282,6 +346,14 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       acceptableAnswers: ["Cabeza"],
       explanation: "La cabeza = голова. Me duele la cabeza = у меня болит голова.",
     },
+    {
+      type: "sentence_building",
+      question: "Me / gusta / el / café / pero / no / me / gusta / el / té",
+      options: ["Me", "gusta", "el", "café", "pero", "no", "me", "gusta", "el", "té"],
+      answer: "Me gusta el café pero no me gusta el té",
+      instruction: "Соберите фразу с gustar",
+      explanation: "Me gusta + ед.ч.; me gustan + мн.ч. Pero = но.",
+    },
   ],
 
   // ===== Chapter 18: género y número ==============================
@@ -317,6 +389,14 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       answer: "Las casas blancas",
       acceptableAnswers: ["las casas blancas"],
       explanation: "casa (ж.р. мн.) → las casas blancas.",
+    },
+    {
+      type: "sentence_building",
+      question: "Las / casas / son / blancas",
+      options: ["Las", "casas", "son", "blancas"],
+      answer: "Las casas son blancas",
+      instruction: "Соберите фразу о множественном числе",
+      explanation: "casas (ж.р., мн.) → las casas son blancas.",
     },
   ],
 
@@ -390,6 +470,22 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       acceptableAnswers: ["por qué estudias español", "¿Por que estudias español?"],
       explanation: "¿Por qué? = почему?",
     },
+    {
+      type: "sentence_building",
+      question: "¿Dónde / vives / tú?",
+      options: ["¿Dónde", "vives", "tú?"],
+      answer: "¿Dónde vives tú?",
+      instruction: "Соберите вопрос «Где ты живёшь?»",
+      explanation: "¿Dónde vives? — вопрос о месте жительства.",
+    },
+    {
+      type: "sentence_building",
+      question: "¿Cuántos / años / tienes?",
+      options: ["¿Cuántos", "años", "tienes?"],
+      answer: "¿Cuántos años tienes?",
+      instruction: "Соберите вопрос о возрасте",
+      explanation: "¿Cuántos años tienes? = Сколько тебе лет?",
+    },
   ],
 
   // ===== Chapter 21: comparativos =================================
@@ -426,6 +522,14 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       acceptableAnswers: ["juan es más alto que pedro"],
       explanation: "Сравнение с que, не de (кроме чисел).",
     },
+    {
+      type: "sentence_building",
+      question: "Madrid / es / más / grande / que / Toledo",
+      options: ["Madrid", "es", "más", "grande", "que", "Toledo"],
+      answer: "Madrid es más grande que Toledo",
+      instruction: "Соберите сравнительную фразу",
+      explanation: "más + прилагательное + que.",
+    },
   ],
 
   // ===== Chapter 22: futuro simple ================================
@@ -461,6 +565,14 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       options: ["harás", "haces", "hiciste", "hacías"],
       answer: "harás",
       explanation: "hacer → harás.",
+    },
+    {
+      type: "sentence_building",
+      question: "Mañana / hablaré / con / mi / profesor",
+      options: ["Mañana", "hablaré", "con", "mi", "profesor"],
+      answer: "Mañana hablaré con mi profesor",
+      instruction: "Соберите фразу в futuro simple",
+      explanation: "Mañana + futuro: hablaré.",
     },
   ],
 
@@ -499,6 +611,14 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       explanation: "Ya + haber + participio. Ya he comido.",
     },
     {
+      type: "sentence_building",
+      question: "Hoy / he / comido / en / un / restaurante",
+      options: ["Hoy", "he", "comido", "en", "un", "restaurante"],
+      answer: "Hoy he comido en un restaurante",
+      instruction: "Соберите фразу в pretérito perfecto",
+      explanation: "he + participio: hoy he comido = сегодня я поел.",
+    },
+    {
       type: "multiple_choice",
       question: "Hoy hemos ___ mucho.",
       instruction: "Выберите participio для trabajar",
@@ -507,8 +627,6 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       explanation: "Trabajar → trabajado. Hemos trabajado = мы поработали.",
     },
   ],
-
-  // ===== Chapter 8: pretérito indefinido ==========================
   "chapter-8-pasado-indefinido": [
     {
       type: "fill_blank",
@@ -549,6 +667,14 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       options: ["fueron", "iban", "van", "han ido"],
       answer: "fueron",
       explanation: "«Два года назад» = конкретный момент → indefinido: fueron.",
+    },
+    {
+      type: "sentence_building",
+      question: "Ayer / compré / un / libro / interesante",
+      options: ["Ayer", "compré", "un", "libro", "interesante"],
+      answer: "Ayer compré un libro interesante",
+      instruction: "Соберите фразу о вчерашней покупке",
+      explanation: "Ayer + pretérito indefinido: compré.",
     },
   ],
 
@@ -594,6 +720,14 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       answer: "era",
       explanation: "Описание характеристики в прошлом → imperfecto: era.",
     },
+    {
+      type: "sentence_building",
+      question: "Cuando / era / niño / jugaba / al / fútbol",
+      options: ["Cuando", "era", "niño", "jugaba", "al", "fútbol"],
+      answer: "Cuando era niño jugaba al fútbol",
+      instruction: "Соберите фразу о детстве",
+      explanation: "Cuando era niño + imperfecto jugaba — привычка в прошлом.",
+    },
   ],
 
   // ===== Chapter 10: por/para ======================================
@@ -637,6 +771,14 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       answer: "Por",
       acceptableAnswers: ["por"],
       explanation: "Por favor = пожалуйста. Устойчивое выражение.",
+    },
+    {
+      type: "sentence_building",
+      question: "Estudio / español / para / viajar",
+      options: ["Estudio", "español", "para", "viajar"],
+      answer: "Estudio español para viajar",
+      instruction: "Соберите фразу с para (цель)",
+      explanation: "para + infinitivo = чтобы / для того чтобы.",
     },
   ],
 
@@ -1392,7 +1534,16 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
 
 /** Get exercises for a chapter slug (ids assigned, bank expanded). */
 export function getChapterExercises(chapterSlug: string): StaticExercise[] {
+  const chapter = CHAPTERS.find((c) => c.slug === chapterSlug);
+  const grammarTopic = chapter?.grammarTopic ?? null;
   const curated = CHAPTER_EXERCISES[chapterSlug] ?? [];
   const expanded = expandSpanishChapterBank(chapterSlug, curated);
-  return withExerciseIds("spanish", chapterSlug, expanded);
+  const aligned = grammarTopic
+    ? expanded.filter((ex) => matchesChapterGrammar(grammarTopic, ex.grammarTopic))
+    : expanded;
+  const tagged = aligned.map((ex) => ({
+    ...ex,
+    grammarTopic: ex.grammarTopic ?? grammarTopic ?? undefined,
+  }));
+  return withExerciseIds("spanish", chapterSlug, tagged);
 }

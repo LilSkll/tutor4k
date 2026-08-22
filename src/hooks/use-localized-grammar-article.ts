@@ -3,6 +3,7 @@
 import * as React from "react";
 import { translate } from "@/lib/i18n";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
+import { isAbortError } from "@/lib/tutor-fetch";
 
 /**
  * Lazy-load a grammar article when the user opens a topic.
@@ -55,7 +56,7 @@ export function useLocalizedGrammarArticle(
         setContent(data.content ?? null);
         setIsStatic(data.source === "native" || data.source === "static");
       } catch (err) {
-        if (signal?.aborted || (err as { name?: string }).name === "AbortError") {
+        if (isAbortError(err, signal)) {
           return;
         }
         setError(translate("grammar.toastExplainFail", language));

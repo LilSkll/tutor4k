@@ -1,4 +1,4 @@
-import type { ExerciseType, StaticExercise } from "@/types";
+import type { ExerciseType, GrammarLevel, StaticExercise } from "@/types";
 
 /** Target depth for the permanent adaptive bank (per type, per chapter). */
 export const TARGET_EXERCISES_PER_TYPE = 20;
@@ -64,4 +64,41 @@ export function bankCoverageSummary(exercises: StaticExercise[]): {
     byType,
     missingTowardTarget,
   };
+}
+
+/** A1–A2: phrase + translation drills appear in the first practice rounds. */
+const EARLY_LEVEL_TYPE_PRIORITY: ExerciseType[] = [
+  "sentence_building",
+  "translation",
+  "fill_blank",
+  "multiple_choice",
+  "error_correction",
+];
+
+export function orderEarlyLevelPractice(
+  exercises: StaticExercise[],
+  level: GrammarLevel,
+): StaticExercise[] {
+  if (level !== "A1" && level !== "A2" && level !== "B1" && level !== "B2") {
+    return exercises;
+  }
+
+  const buckets = Object.fromEntries(
+    ALL_EXERCISE_TYPES.map((t) => [t, [] as StaticExercise[]]),
+  ) as Record<ExerciseType, StaticExercise[]>;
+
+  for (const ex of exercises) buckets[ex.type].push(ex);
+
+  const ordered: StaticExercise[] = [];
+  let round = 0;
+  const maxLen = Math.max(...ALL_EXERCISE_TYPES.map((t) => buckets[t].length));
+  while (round < maxLen) {
+    for (const type of EARLY_LEVEL_TYPE_PRIORITY) {
+      const item = buckets[type][round];
+      if (item) ordered.push(item);
+    }
+    round += 1;
+  }
+
+  return ordered.length > 0 ? ordered : exercises;
 }

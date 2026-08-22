@@ -1,5 +1,7 @@
 import type { InterfaceLanguage, StaticExercise } from "@/types";
 import { lookupCuratedQuestionGloss } from "@/config/exercise-glosses";
+import { inferQuestionGloss } from "@/lib/exercise-gloss-infer";
+import { hasCyrillicText } from "@/lib/exercise-localize";
 
 const GLOSS_LANGS: InterfaceLanguage[] = ["ru", "en", "es", "de"];
 
@@ -18,6 +20,16 @@ export function attachQuestionGlosses<T extends StaticExercise>(
     const gloss = lookupCuratedQuestionGloss(exercise.question, lang);
     if (gloss) questionTranslations[lang] = gloss;
   }
+
+  const q = exercise.question?.trim() ?? "";
+  if (q && !hasCyrillicText(q)) {
+    for (const lang of GLOSS_LANGS) {
+      if (questionTranslations[lang]?.trim()) continue;
+      const inferred = inferQuestionGloss(exercise, lang);
+      if (inferred) questionTranslations[lang] = inferred;
+    }
+  }
+
   return { ...exercise, questionTranslations };
 }
 

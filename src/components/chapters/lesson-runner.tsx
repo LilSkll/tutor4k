@@ -36,6 +36,7 @@ import {
   grammarTheoryPagesFromMarkdown,
 } from "@/lib/grammar-markdown";
 import { cn } from "@/lib/utils";
+import { runExclusive, startTutorAbort } from "@/lib/tutor-fetch";
 import type { Chapter } from "@/types";
 
 type Phase =
@@ -332,34 +333,33 @@ export function LessonRunner({
     const question =
       dialogueInput.trim() ||
       t("lesson.defaultQuestion", { topic: displayGrammarTitle });
-    if (loading || askInFlight.current) return;
-    askInFlight.current = true;
-    setLoading(true);
-    setDialogueResponse(null);
-    const ac = new AbortController();
-    const timer = window.setTimeout(() => ac.abort(), 25_000);
-    try {
-      const res = await fetch("/api/tutor", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        signal: ac.signal,
-        body: JSON.stringify({
-          messages: [{ role: "user", content: question }],
-          interfaceLanguage: language,
-          courseId,
-          grammarTopicSlug: grammarTopicSlug,
-        }),
-      });
-      if (!res.ok) throw new Error("Failed");
-      const data = (await res.json()) as { content?: string };
-      setDialogueResponse(data.content?.trim() || t("lesson.tutorError"));
-    } catch {
-      setDialogueResponse(t("lesson.tutorError"));
-    } finally {
-      window.clearTimeout(timer);
-      askInFlight.current = false;
-      setLoading(false);
-    }
+    if (loading) return;
+    await runExclusive(askInFlight, async () => {
+      const abort = startTutorAbort();
+      setLoading(true);
+      setDialogueResponse(null);
+      try {
+        const res = await fetch("/api/tutor", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          signal: abort.signal,
+          body: JSON.stringify({
+            messages: [{ role: "user", content: question }],
+            interfaceLanguage: language,
+            courseId,
+            grammarTopicSlug: grammarTopicSlug,
+          }),
+        });
+        if (!res.ok) throw new Error("Failed");
+        const data = (await res.json()) as { content?: string };
+        setDialogueResponse(data.content?.trim() || t("lesson.tutorError"));
+      } catch {
+        setDialogueResponse(t("lesson.tutorError"));
+      } finally {
+        abort.clear();
+        setLoading(false);
+      }
+    });
   };
 
   const finishChapter = async () => {
@@ -519,6 +519,7 @@ export function LessonRunner({
                   label={t("lesson.ruleHints")}
                   lead={t("lesson.ruleHintsLead")}
                   untitledLabel={t("lesson.ruleUntitled")}
+                  level={chapter.level}
                 />
               ) : null}
               <Button variant="gradient" className="w-full" onClick={checkAnswer}

@@ -3,12 +3,13 @@ import {
   getTutorSessionOpening,
   sendTutorMessage,
 } from "@/server/actions/ai";
+import { asInterfaceLanguage } from "@/server/ai/tutor-request";
 import type { AIMessage, InterfaceLanguage } from "@/types";
 
-function asInterfaceLanguage(raw: unknown): InterfaceLanguage | null {
-  if (raw === "ru" || raw === "en" || raw === "es" || raw === "de") return raw;
-  return null;
-}
+/**
+ * GET /api/tutor
+ * Personalized session opening from TeacherContext (empty chat).
+ */
 
 /**
  * GET /api/tutor

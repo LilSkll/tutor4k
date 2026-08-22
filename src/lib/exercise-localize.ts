@@ -1,4 +1,5 @@
 import type { ExerciseType, InterfaceLanguage, StaticExercise } from "@/types";
+import { lookupTranslationPrompt } from "@/config/exercise-translation-prompts";
 
 // =====================================================================
 // Interface-language handling for the static exercise bank.
@@ -42,6 +43,15 @@ export function getQuestionGloss(
   if (!gloss) return null;
 
   if (normalizeForCompare(gloss) === normalizeForCompare(q)) return null;
+
+  // Spanish prompt → always show meaning in the learner's language when available.
+  if (
+    exercise.type !== "translation" &&
+    !hasCyrillicText(q) &&
+    interfaceLanguage !== "es"
+  ) {
+    return gloss;
+  }
 
   if (
     exercise.type === "translation" &&
@@ -133,16 +143,46 @@ export function localizeExerciseInstruction(
 
 /**
  * True when an exercise makes sense for the given interface language.
- * Items whose prompt (or expected answer) is Russian require a Russian
- * speaker — hide them from non-Russian interfaces.
+ * Translation items with a localized prompt stay available for en/es/de.
  */
 export function isExerciseUsableForLanguage(
-  exercise: Pick<StaticExercise, "question" | "answer">,
+  exercise: Pick<
+    StaticExercise,
+    "question" | "answer" | "type" | "questionTranslations"
+  >,
   interfaceLanguage: InterfaceLanguage,
 ): boolean {
   if (interfaceLanguage === "ru") return true;
+  if (hasCyrillicText(exercise.answer)) return false;
+
+  if (exercise.type === "translation") {
+    if (!hasCyrillicText(exercise.question)) return true;
+    const localized =
+      exercise.questionTranslations?.[interfaceLanguage]?.trim() ??
+      lookupTranslationPrompt(exercise.question, interfaceLanguage);
+    return Boolean(localized);
+  }
+
+  return !hasCyrillicText(exercise.question);
+}
+
+/** Swap RU translation prompts for the learner's interface language. */
+export function localizeTranslationQuestion(
+  exercise: Pick<
+    StaticExercise,
+    "question" | "type" | "questionTranslations"
+  >,
+  interfaceLanguage: InterfaceLanguage,
+): string {
+  if (exercise.type !== "translation" || interfaceLanguage === "ru") {
+    return exercise.question;
+  }
+  const inline = exercise.questionTranslations?.[interfaceLanguage]?.trim();
+  if (inline) return inline;
+  if (!hasCyrillicText(exercise.question)) return exercise.question;
   return (
-    !hasCyrillicText(exercise.question) && !hasCyrillicText(exercise.answer)
+    lookupTranslationPrompt(exercise.question, interfaceLanguage) ??
+    exercise.question
   );
 }
 
@@ -155,6 +195,7 @@ export function prepareExercisesForInterface<T extends StaticExercise>(
     .filter((ex) => isExerciseUsableForLanguage(ex, interfaceLanguage))
     .map((ex) => ({
       ...ex,
+      question: localizeTranslationQuestion(ex, interfaceLanguage),
       instruction: localizeExerciseInstruction(ex, interfaceLanguage),
     }));
 }

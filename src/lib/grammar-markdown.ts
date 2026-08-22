@@ -1,3 +1,5 @@
+import type { GrammarLevel } from "@/types";
+
 export type GrammarRulePage = {
   title: string;
   content: string;
@@ -141,4 +143,44 @@ export function grammarRulesFromMarkdown(
         : [md];
 
   return toPages(pages, untitledLabel);
+}
+
+/** Shorter rule text in practice chips for A1–A2. */
+export function simplifyRuleContentForLevel(
+  content: string,
+  level?: GrammarLevel | null,
+): string {
+  if (!level || (level !== "A1" && level !== "A2")) return content;
+
+  const body = content.replace(
+    /\|[^\n]+\|\n\|[-|: ]+\|\n(\|[^\n]+\|\n?)*/g,
+    "",
+  );
+  const blocks = body.split(/\n\n+/).filter((p) => p.trim());
+  const kept: string[] = [];
+
+  for (const block of blocks) {
+    if (kept.length >= 2) break;
+    if (/^>\s/.test(block.trim())) {
+      kept.push(block.trim());
+      continue;
+    }
+    if (/^[-*]\s/m.test(block)) {
+      const items = block
+        .split(/\n/)
+        .filter((l) => /^[-*]\s/.test(l))
+        .slice(0, 4);
+      if (items.length) kept.push(items.join("\n"));
+      continue;
+    }
+    if (!/^#/.test(block)) {
+      kept.push(block.trim().split("\n")[0] ?? block.trim());
+    }
+  }
+
+  const out = kept.join("\n\n").trim();
+  if (!out) {
+    return content.slice(0, 420).trim() + (content.length > 420 ? "…" : "");
+  }
+  return out.length > 520 ? `${out.slice(0, 520).trim()}…` : out;
 }

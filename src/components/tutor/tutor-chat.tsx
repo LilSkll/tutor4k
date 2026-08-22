@@ -12,6 +12,7 @@ import { useUIStore } from "@/stores";
 import { translate } from "@/lib/i18n";
 import { getCourseTitle } from "@/config/courses";
 import { cn } from "@/lib/utils";
+import { runExclusive, startTutorAbort } from "@/lib/tutor-fetch";
 import type { AIMessage, ChatMessage } from "@/types";
 
 const SUGGESTION_KEYS = [
@@ -48,6 +49,7 @@ export function TutorChat() {
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const textareaRef = React.useRef<HTMLTextAreaElement>(null);
   const openingFetched = React.useRef(false);
+  const sendInFlight = React.useRef(false);
 
   const loadSessionOpening = React.useCallback(async () => {
     if (searchParams.get("q")) return;
@@ -123,60 +125,61 @@ export function TutorChat() {
       content: m.content,
     }));
 
-    addMessage(userMsg);
-    addMessage(placeholder);
-    setInput("");
-    setPending(true);
-    setStreaming(true);
+    await runExclusive(sendInFlight, async () => {
+      const abort = startTutorAbort();
+      addMessage(userMsg);
+      addMessage(placeholder);
+      setInput("");
+      setPending(true);
+      setStreaming(true);
 
-    const ac = new AbortController();
-    const timer = window.setTimeout(() => ac.abort(), 25_000);
-    try {
-      const res = await fetch("/api/tutor", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        signal: ac.signal,
-        body: JSON.stringify({
-          messages: history,
-          conversationId,
-          interfaceLanguage: language,
-          courseId: activeCourseId,
-        }),
-      });
-      const data = (await res.json().catch(() => ({}))) as {
-        content?: string;
-        conversationId?: string;
-        error?: string;
-      };
+      try {
+        const res = await fetch("/api/tutor", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          signal: abort.signal,
+          body: JSON.stringify({
+            messages: history,
+            conversationId,
+            interfaceLanguage: language,
+            courseId: activeCourseId,
+          }),
+        });
+        const data = (await res.json().catch(() => ({}))) as {
+          content?: string;
+          conversationId?: string;
+          error?: string;
+        };
 
-      if (data.conversationId) {
-        setConversationId(data.conversationId);
+        if (data.conversationId) {
+          setConversationId(data.conversationId);
+        }
+
+        const reply =
+          res.ok && data.content?.trim()
+            ? data.content
+            : t("tutor.error");
+
+        setMessages([
+          ...messages,
+          userMsg,
+          { ...placeholder, content: reply },
+        ]);
+      } catch {
+        setMessages([
+          ...messages,
+          userMsg,
+          {
+            ...placeholder,
+            content: t("tutor.error"),
+          },
+        ]);
+      } finally {
+        abort.clear();
+        setPending(false);
+        setStreaming(false);
       }
-
-      const content =
-        res.ok && data.content?.trim()
-          ? data.content
-          : t("tutor.error");
-
-      setMessages([
-        ...messages,
-        userMsg,
-        { ...placeholder, content },
-      ]);
-    } catch {
-      setMessages([
-        ...messages,
-        userMsg,
-        {
-          ...placeholder,
-          content: t("tutor.error"),
-        },
-      ]);
-    } finally {
-      window.clearTimeout(timer);
-      setPending(false);
-      setStreaming(false);
-    }
+    });
   };
 
   const onKeyDown = (e: React.KeyboardEvent) => {

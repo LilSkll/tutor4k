@@ -11,8 +11,10 @@ import {
 import { Markdown } from "@/components/shared/markdown";
 import {
   grammarRulesFromMarkdown,
+  simplifyRuleContentForLevel,
   type GrammarRulePage,
 } from "@/lib/grammar-markdown";
+import type { GrammarLevel } from "@/types";
 
 export type { GrammarRulePage };
 export { grammarRulesFromMarkdown };
@@ -26,11 +28,14 @@ export function GrammarRuleHints({
   label,
   lead,
   untitledLabel,
+  level,
 }: {
   rules: GrammarRulePage[];
   label: string;
   lead: string;
   untitledLabel: string;
+  /** A1–A2: shorter rule body in the dialog. */
+  level?: GrammarLevel | null;
 }) {
   const [openIndex, setOpenIndex] = React.useState<number | null>(null);
   const openRule = openIndex !== null ? rules[openIndex] : undefined;
@@ -83,7 +88,11 @@ export function GrammarRuleHints({
               {openRule?.title ?? label}
             </DialogTitle>
           </DialogHeader>
-          {openRule ? <Markdown content={openRule.content} /> : null}
+          {openRule ? (
+            <Markdown
+              content={simplifyRuleContentForLevel(openRule.content, level)}
+            />
+          ) : null}
         </DialogContent>
       </Dialog>
     </div>

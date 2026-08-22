@@ -13,6 +13,7 @@ import {
   hasCompletedPrereqChain,
 } from "@/lib/chapter-display";
 import { prepareExercisesForInterface } from "@/lib/exercise-localize";
+import { orderEarlyLevelPractice } from "@/lib/exercise-bank";
 import { attachQuestionGlossesToMany } from "@/lib/exercise-gloss-attach";
 import { getChapterStory } from "@/config/chapter-stories";
 import { localizeGrammarTopicMeta } from "@/lib/grammar-topic-localize";
@@ -64,7 +65,10 @@ export default async function ChapterPage({
   const nextChapter = course.getNextChapter(slug);
   const lang = profile?.interface_language ?? "ru";
   const exercises = attachQuestionGlossesToMany(
-    prepareExercisesForInterface(course.getExercises(slug), lang),
+    orderEarlyLevelPractice(
+      prepareExercisesForInterface(course.getExercises(slug), lang),
+      chapter.level,
+    ),
   );
   const chapterStory = await getChapterStory(slug, lang);
   const grammarMeta = grammarTopic ? toGrammarTopicMeta(grammarTopic) : null;
