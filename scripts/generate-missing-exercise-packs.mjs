@@ -84,6 +84,10 @@ const FORCE_REGENERATE = new Set([
   "eng-ch23-spotlight",
   "eng-ch24-unspoken",
   "eng-ch25-between-lines",
+  "chapter-27-hendidas",
+  "chapter-28-conjetura",
+  "chapter-29-culto",
+  "chapter-30-ironia",
 ]);
 const root = path.join(__dirname, "..");
 
@@ -95,9 +99,21 @@ const ENGLISH_C2_THICK = new Set([
   "eng-ch25-between-lines",
 ]);
 
+const SPANISH_C2_THICK = new Set([
+  "chapter-28-conjetura",
+  "chapter-29-culto",
+  "chapter-30-ironia",
+]);
+
 function targetForType(slug, type) {
   if (
     ENGLISH_C2_THICK.has(slug) &&
+    (type === "translation" || type === "error_correction")
+  ) {
+    return ENGLISH_C2_TR_EC_TARGET;
+  }
+  if (
+    SPANISH_C2_THICK.has(slug) &&
     (type === "translation" || type === "error_correction")
   ) {
     return ENGLISH_C2_TR_EC_TARGET;

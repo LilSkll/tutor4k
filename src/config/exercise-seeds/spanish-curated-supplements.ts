@@ -2580,5 +2580,3160 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "instruction": "Соберите ir",
       "explanation": "Voy al supermercado."
     }
+  ],
+  "chapter-27-hendidas": [
+    {
+      "type": "sentence_building",
+      "question": "Fue / María / quien / llamó / ayer",
+      "options": [
+        "Fue",
+        "María",
+        "quien",
+        "llamó",
+        "ayer"
+      ],
+      "answer": "Fue María quien llamó ayer",
+      "instruction": "Hendida — persona",
+      "explanation": "Fue X quien…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Es / hoy / cuando / decidimos / actuar",
+      "options": [
+        "Es",
+        "hoy",
+        "cuando",
+        "decidimos",
+        "actuar"
+      ],
+      "answer": "Es hoy cuando decidimos actuar",
+      "instruction": "Hendida — tiempo",
+      "explanation": "Es hoy cuando…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Lo / que / quiero / es / paz",
+      "options": [
+        "Lo",
+        "que",
+        "quiero",
+        "es",
+        "paz"
+      ],
+      "answer": "Lo que quiero es paz",
+      "instruction": "Lo que… es…",
+      "explanation": "Lo que quiero es…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Fue / en / 2020 / cuando / empezó / todo",
+      "options": [
+        "Fue",
+        "en",
+        "2020",
+        "cuando",
+        "empezó",
+        "todo"
+      ],
+      "answer": "Fue en 2020 cuando empezó todo",
+      "instruction": "Hendida — año",
+      "explanation": "Fue en 2020 cuando…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Lo / que / me / preocupa / es / el / precio",
+      "options": [
+        "Lo",
+        "que",
+        "me",
+        "preocupa",
+        "es",
+        "el",
+        "precio"
+      ],
+      "answer": "Lo que me preocupa es el precio",
+      "instruction": "Lo que + verbo",
+      "explanation": "Lo que me preocupa es…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Fue / el / director / quien / aprobó / el / plan",
+      "options": [
+        "Fue",
+        "el",
+        "director",
+        "quien",
+        "aprobó",
+        "el",
+        "plan"
+      ],
+      "answer": "Fue el director quien aprobó el plan",
+      "instruction": "Hendida — cargo",
+      "explanation": "Fue el director quien…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Es / aquí / donde / nació / la / historia",
+      "options": [
+        "Es",
+        "aquí",
+        "donde",
+        "nació",
+        "la",
+        "historia"
+      ],
+      "answer": "Es aquí donde nació la historia",
+      "instruction": "Hendida — lugar",
+      "explanation": "Es aquí donde…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Lo / que / hizo / fue / renunciar",
+      "options": [
+        "Lo",
+        "que",
+        "hizo",
+        "fue",
+        "renunciar"
+      ],
+      "answer": "Lo que hizo fue renunciar",
+      "instruction": "Lo que hizo fue…",
+      "explanation": "Acción destacada."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Fue / por / la / lluvia / por / lo / que / cancelamos",
+      "options": [
+        "Fue",
+        "por",
+        "la",
+        "lluvia",
+        "por",
+        "lo",
+        "que",
+        "cancelamos"
+      ],
+      "answer": "Fue por la lluvia por lo que cancelamos",
+      "instruction": "Por lo que",
+      "explanation": "Fue por X por lo que…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Es / contigo / con / quien / quiero / hablar",
+      "options": [
+        "Es",
+        "contigo",
+        "con",
+        "quien",
+        "quiero",
+        "hablar"
+      ],
+      "answer": "Es contigo con quien quiero hablar",
+      "instruction": "Preposición repetida",
+      "explanation": "Es CON X CON quien…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Lo / que / importa / es / la / honestidad",
+      "options": [
+        "Lo",
+        "que",
+        "importa",
+        "es",
+        "la",
+        "honestidad"
+      ],
+      "answer": "Lo que importa es la honestidad",
+      "instruction": "Lo que importa",
+      "explanation": "Lo que importa es…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Fue / anoche / cuando / lo / supe / todo",
+      "options": [
+        "Fue",
+        "anoche",
+        "cuando",
+        "lo",
+        "supe",
+        "todo"
+      ],
+      "answer": "Fue anoche cuando lo supe todo",
+      "instruction": "Hendida — noche",
+      "explanation": "Fue anoche cuando…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Es / ella / quien / tiene / la / razón",
+      "options": [
+        "Es",
+        "ella",
+        "quien",
+        "tiene",
+        "la",
+        "razón"
+      ],
+      "answer": "Es ella quien tiene la razón",
+      "instruction": "Hendida — sujeto",
+      "explanation": "Es ella quien…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Lo / que / necesitamos / es / tiempo",
+      "options": [
+        "Lo",
+        "que",
+        "necesitamos",
+        "es",
+        "tiempo"
+      ],
+      "answer": "Lo que necesitamos es tiempo",
+      "instruction": "Lo que necesitamos",
+      "explanation": "Lo que necesitamos es…"
+    }
+  ],
+  "chapter-28-conjetura": [
+    {
+      "type": "translation",
+      "question": "Наверное, сейчас два часа.",
+      "answer": "Serán las dos ahora",
+      "instruction": "Futuro de conjetura",
+      "explanation": "Serán las dos…"
+    },
+    {
+      "type": "translation",
+      "question": "Президент, по сообщениям, согласился.",
+      "answer": "El presidente habría aceptado",
+      "instruction": "Condicional de rumor",
+      "explanation": "Habría aceptado — rumor."
+    },
+    {
+      "type": "translation",
+      "question": "Ему, наверное, лет сорок.",
+      "answer": "Tendrá unos cuarenta años",
+      "instruction": "Futuro de conjetura",
+      "explanation": "Tendrá unos cuarenta años."
+    },
+    {
+      "type": "translation",
+      "question": "Она, наверное, уже ушла.",
+      "answer": "Habrá salido ya",
+      "instruction": "Futuro perfecto de conjetura",
+      "explanation": "Habrá salido ya."
+    },
+    {
+      "type": "translation",
+      "question": "Было, наверное, часа два, когда он пришёл.",
+      "answer": "Serían las dos cuando llegó",
+      "instruction": "Condicional de conjetura pasada",
+      "explanation": "Serían las dos…"
+    },
+    {
+      "type": "translation",
+      "question": "Они, должно быть, дома — свет горит.",
+      "answer": "Deben de estar en casa",
+      "instruction": "Deber de + inf",
+      "explanation": "Deben de estar en casa."
+    },
+    {
+      "type": "translation",
+      "question": "Наверное, будет дождь.",
+      "answer": "Lloverá esta tarde",
+      "instruction": "Futuro de conjetura",
+      "explanation": "Lloverá — догадка о будущем."
+    },
+    {
+      "type": "translation",
+      "question": "Его, по слухам, уволили.",
+      "answer": "Lo habrían despedido",
+      "instruction": "Condicional de rumor",
+      "explanation": "Habrían despedido — plural rumor."
+    },
+    {
+      "type": "translation",
+      "question": "Наверное, у него мало денег.",
+      "answer": "Tendrá poco dinero",
+      "instruction": "Futuro de conjetura",
+      "explanation": "Tendrá poco dinero."
+    },
+    {
+      "type": "translation",
+      "question": "Она, наверное, уже знает.",
+      "answer": "Lo sabrá ya",
+      "instruction": "Futuro de conjetura",
+      "explanation": "Lo sabrá ya."
+    },
+    {
+      "type": "translation",
+      "question": "Было, наверное, холодно.",
+      "answer": "Haría frío",
+      "instruction": "Condicional de conjetura",
+      "explanation": "Haría frío — прошлое."
+    },
+    {
+      "type": "translation",
+      "question": "Они, должно быть, опоздают.",
+      "answer": "Llegarán tarde",
+      "instruction": "Futuro de conjetura",
+      "explanation": "Llegarán tarde."
+    },
+    {
+      "type": "translation",
+      "question": "Наверное, это правда.",
+      "answer": "Será verdad",
+      "instruction": "Futuro de conjetura",
+      "explanation": "Será verdad."
+    },
+    {
+      "type": "translation",
+      "question": "Он, похоже, уже спит.",
+      "answer": "Estará durmiendo ya",
+      "instruction": "Futuro progresivo de conjetura",
+      "explanation": "Estará durmiendo."
+    },
+    {
+      "type": "translation",
+      "question": "Их, говорят, было человек сто.",
+      "answer": "Habría unas cien personas",
+      "instruction": "Condicional de cantidad",
+      "explanation": "Habría unas cien personas."
+    },
+    {
+      "type": "translation",
+      "question": "Наверное, она забыла.",
+      "answer": "Se habrá olvidado",
+      "instruction": "Futuro perfecto reflexivo",
+      "explanation": "Se habrá olvidado."
+    },
+    {
+      "type": "translation",
+      "question": "Договор, по слухам, подписан.",
+      "answer": "El acuerdo habría sido firmado",
+      "instruction": "Pasiva de rumor",
+      "explanation": "Habría sido firmado."
+    },
+    {
+      "type": "translation",
+      "question": "Наверное, мы опоздаем.",
+      "answer": "Llegaremos tarde",
+      "instruction": "Futuro de conjetura",
+      "explanation": "Llegaremos tarde."
+    },
+    {
+      "type": "translation",
+      "question": "Ему, наверное, не нравится.",
+      "answer": "No le gustará",
+      "instruction": "Futuro de conjetura negativa",
+      "explanation": "No le gustará."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Serán / las / tres / cuando / llegue",
+      "options": [
+        "Serán",
+        "las",
+        "tres",
+        "cuando",
+        "llegue"
+      ],
+      "answer": "Serán las tres cuando llegue",
+      "instruction": "Conjetura + tiempo",
+      "explanation": "Serán las tres…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Debe / de / estar / en / la / oficina",
+      "options": [
+        "Debe",
+        "de",
+        "estar",
+        "en",
+        "la",
+        "oficina"
+      ],
+      "answer": "Debe de estar en la oficina",
+      "instruction": "Deber de",
+      "explanation": "Debe de estar…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Habrá / salido / hace / rato",
+      "options": [
+        "Habrá",
+        "salido",
+        "hace",
+        "rato"
+      ],
+      "answer": "Habrá salido hace rato",
+      "instruction": "Futuro perfecto conjetura",
+      "explanation": "Habrá salido…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Tendrá / unos / treinta / años",
+      "options": [
+        "Tendrá",
+        "unos",
+        "treinta",
+        "años"
+      ],
+      "answer": "Tendrá unos treinta años",
+      "instruction": "Edad conjetura",
+      "explanation": "Tendrá unos treinta años."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Lo / habrían / despedido / ayer",
+      "options": [
+        "Lo",
+        "habrían",
+        "despedido",
+        "ayer"
+      ],
+      "answer": "Lo habrían despedido ayer",
+      "instruction": "Rumor pasado",
+      "explanation": "Habrían despedido — rumor."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Sería / imposible / sin / ayuda",
+      "options": [
+        "Sería",
+        "imposible",
+        "sin",
+        "ayuda"
+      ],
+      "answer": "Sería imposible sin ayuda",
+      "instruction": "Condicional conjetura",
+      "explanation": "Sería imposible…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Estarán / de / vacaciones / ahora",
+      "options": [
+        "Estarán",
+        "de",
+        "vacaciones",
+        "ahora"
+      ],
+      "answer": "Estarán de vacaciones ahora",
+      "instruction": "Estar conjetura",
+      "explanation": "Estarán de vacaciones."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Habrá / llovido / toda / la / noche",
+      "options": [
+        "Habrá",
+        "llovido",
+        "toda",
+        "la",
+        "noche"
+      ],
+      "answer": "Habrá llovido toda la noche",
+      "instruction": "Futuro perfecto",
+      "explanation": "Habrá llovido…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Deben / de / conocerse / desde / niños",
+      "options": [
+        "Deben",
+        "de",
+        "conocerse",
+        "desde",
+        "niños"
+      ],
+      "answer": "Deben de conocerse desde niños",
+      "instruction": "Deber de reflexivo",
+      "explanation": "Deben de conocerse…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Serán / las / ocho / ya",
+      "options": [
+        "Serán",
+        "las",
+        "ocho",
+        "ya"
+      ],
+      "answer": "Serán las ocho ya",
+      "instruction": "Hora conjetura",
+      "explanation": "Serán las ocho ya."
+    },
+    {
+      "type": "sentence_building",
+      "question": "No / vendrá / seguro",
+      "options": [
+        "No",
+        "vendrá",
+        "seguro"
+      ],
+      "answer": "No vendrá seguro",
+      "instruction": "Negativa conjetura",
+      "explanation": "No vendrá — догадка."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Habría / costado / mucho / dinero",
+      "options": [
+        "Habría",
+        "costado",
+        "mucho",
+        "dinero"
+      ],
+      "answer": "Habría costado mucho dinero",
+      "instruction": "Condicional pasado",
+      "explanation": "Habría costado…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Estará / enfermo / por / eso / no / vino",
+      "options": [
+        "Estará",
+        "enfermo",
+        "por",
+        "eso",
+        "no",
+        "vino"
+      ],
+      "answer": "Estará enfermo por eso no vino",
+      "instruction": "Causa conjetura",
+      "explanation": "Estará enfermo…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Tendrán / problemas / con / el / jefe",
+      "options": [
+        "Tendrán",
+        "problemas",
+        "con",
+        "el",
+        "jefe"
+      ],
+      "answer": "Tendrán problemas con el jefe",
+      "instruction": "Futuro conjetura plural",
+      "explanation": "Tendrán problemas…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Será / verdad / lo / que / dice",
+      "options": [
+        "Será",
+        "verdad",
+        "lo",
+        "que",
+        "dice"
+      ],
+      "answer": "Será verdad lo que dice",
+      "instruction": "Lo que + conjetura",
+      "explanation": "Será verdad lo que dice."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Habrá / sido / un / malentendido",
+      "options": [
+        "Habrá",
+        "sido",
+        "un",
+        "malentendido"
+      ],
+      "answer": "Habrá sido un malentendido",
+      "instruction": "Futuro perfecto ser",
+      "explanation": "Habrá sido un malentendido."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Lloverá / esta / tarde / seguro",
+      "options": [
+        "Lloverá",
+        "esta",
+        "tarde",
+        "seguro"
+      ],
+      "answer": "Lloverá esta tarde seguro",
+      "instruction": "Futuro conjetura clima",
+      "explanation": "Lloverá esta tarde."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Lo / sabrá / mañana / seguro",
+      "options": [
+        "Lo",
+        "sabrá",
+        "mañana",
+        "seguro"
+      ],
+      "answer": "Lo sabrá mañana seguro",
+      "instruction": "Saber conjetura",
+      "explanation": "Lo sabrá mañana."
+    },
+    {
+      "type": "translation",
+      "question": "Говорят, их было сотня.",
+      "answer": "Habría unas cien personas",
+      "instruction": "Rumor cantidad",
+      "explanation": "Habría unas cien personas."
+    },
+    {
+      "type": "translation",
+      "question": "Наверное, он уже знает правду.",
+      "answer": "Lo sabrá ya",
+      "instruction": "Futuro conjetura",
+      "explanation": "Lo sabrá ya."
+    },
+    {
+      "type": "translation",
+      "question": "Должно быть, они знакомы с детства.",
+      "answer": "Deben de conocerse desde niños",
+      "instruction": "Deber de",
+      "explanation": "Deben de conocerse…"
+    },
+    {
+      "type": "translation",
+      "question": "Было, наверное, невозможно без помощи.",
+      "answer": "Sería imposible sin ayuda",
+      "instruction": "Condicional",
+      "explanation": "Sería imposible…"
+    },
+    {
+      "type": "translation",
+      "question": "Наверное, он болен — поэтому не пришёл.",
+      "answer": "Estará enfermo por eso no vino",
+      "instruction": "Causa conjetura",
+      "explanation": "Estará enfermo…"
+    },
+    {
+      "type": "translation",
+      "question": "Договор, по слухам, уже подписан.",
+      "answer": "El acuerdo habría sido firmado",
+      "instruction": "Rumor pasiva",
+      "explanation": "Habría sido firmado."
+    },
+    {
+      "type": "translation",
+      "question": "Наверное, шёл дождь всю ночь.",
+      "answer": "Habrá llovido toda la noche",
+      "instruction": "Futuro perfecto",
+      "explanation": "Habrá llovido…"
+    },
+    {
+      "type": "translation",
+      "question": "Им, наверное, не понравится.",
+      "answer": "No les gustará",
+      "instruction": "Futuro negativo",
+      "explanation": "No les gustará."
+    },
+    {
+      "type": "translation",
+      "question": "Наверное, это правда.",
+      "answer": "Será verdad lo que dice",
+      "instruction": "Lo que + conjetura",
+      "explanation": "Será verdad lo que dice."
+    },
+    {
+      "type": "translation",
+      "question": "Было, наверное, недоразумение.",
+      "answer": "Habrá sido un malentendido",
+      "instruction": "Futuro perfecto ser",
+      "explanation": "Habrá sido un malentendido."
+    }
+  ],
+  "chapter-29-culto": [
+    {
+      "type": "error_correction",
+      "question": "Terminado la reunión, todos se fueron.",
+      "answer": "Terminada la reunión, todos se fueron.",
+      "instruction": "Participio absoluto",
+      "explanation": "La reunión (f.) → Terminada."
+    },
+    {
+      "type": "error_correction",
+      "question": "Firmado los documentos, no hay vuelta atrás.",
+      "answer": "Firmados los documentos, no hay vuelta atrás.",
+      "instruction": "Concordancia plural",
+      "explanation": "Los documentos → Firmados."
+    },
+    {
+      "type": "error_correction",
+      "question": "Queda prohibida fumar aquí.",
+      "answer": "Queda prohibido fumar aquí.",
+      "instruction": "Queda + participio",
+      "explanation": "Queda prohibido + infinitivo."
+    },
+    {
+      "type": "error_correction",
+      "question": "Debido a que aumentaron los precios, subió la inflación.",
+      "answer": "Debido al aumento de los precios, aumentó la inflación.",
+      "instruction": "Estilo culto",
+      "explanation": "Nominalización: debido al aumento de…"
+    },
+    {
+      "type": "error_correction",
+      "question": "El proyecto es caro pero lo aprobaremos.",
+      "answer": "El proyecto es caro; no obstante, lo aprobaremos.",
+      "instruction": "Conector formal",
+      "explanation": "No obstante — punto y coma."
+    },
+    {
+      "type": "error_correction",
+      "question": "Una vez firmado los papeles, salimos.",
+      "answer": "Una vez firmados los papeles, salimos.",
+      "instruction": "Concordancia",
+      "explanation": "Los papeles → firmados."
+    },
+    {
+      "type": "error_correction",
+      "question": "Acabado el trabajo, nos fuimos.",
+      "answer": "Acabado el trabajo, nos fuimos.",
+      "instruction": "Participio masculino",
+      "explanation": "El trabajo (m.) → Acabado."
+    },
+    {
+      "type": "error_correction",
+      "question": "Porque llovió, cancelamos el picnic.",
+      "answer": "A causa de la lluvia, cancelamos el picnic.",
+      "instruction": "Estilo culto",
+      "explanation": "A causa de la lluvia — nominal."
+    },
+    {
+      "type": "error_correction",
+      "question": "Cuando terminó, se marcharon.",
+      "answer": "Concluida la sesión, se marcharon.",
+      "instruction": "Participio absoluto",
+      "explanation": "Concluida la sesión…"
+    },
+    {
+      "type": "error_correction",
+      "question": "El informe es malo pero lo enviaremos.",
+      "answer": "El informe es deficiente; no obstante, procederemos a su envío.",
+      "instruction": "Registro formal",
+      "explanation": "Registro elevado."
+    },
+    {
+      "type": "error_correction",
+      "question": "Hecho los deberes, puede salir.",
+      "answer": "Hechos los deberes, puede salir.",
+      "instruction": "Concordancia plural",
+      "explanation": "Los deberes → Hechos."
+    },
+    {
+      "type": "error_correction",
+      "question": "Llegado el momento, actuaremos.",
+      "answer": "Llegado el momento, actuaremos.",
+      "instruction": "Participio absoluto",
+      "explanation": "Llegado el momento…"
+    },
+    {
+      "type": "error_correction",
+      "question": "Por eso de que no vino, nos preocupamos.",
+      "answer": "Por el hecho de que no vino, nos preocupamos.",
+      "instruction": "Estilo culto",
+      "explanation": "Por el hecho de que…"
+    },
+    {
+      "type": "error_correction",
+      "question": "Terminando la reunión, salieron.",
+      "answer": "Terminada la reunión, salieron.",
+      "instruction": "Participio vs gerundio",
+      "explanation": "Participio absoluto, no gerundio."
+    },
+    {
+      "type": "error_correction",
+      "question": "Queda vedado entrar sin permiso.",
+      "answer": "Queda vedada la entrada sin permiso.",
+      "instruction": "Queda vedado",
+      "explanation": "Queda vedada la entrada…"
+    },
+    {
+      "type": "error_correction",
+      "question": "Siendo joven, viajó mucho.",
+      "answer": "De joven, viajó mucho.",
+      "instruction": "Estilo culto",
+      "explanation": "De joven — más natural en culto."
+    },
+    {
+      "type": "error_correction",
+      "question": "Porque subieron los costes, cerraron.",
+      "answer": "Ante el incremento de los costes, cerraron.",
+      "instruction": "Nominalización",
+      "explanation": "Ante el incremento de…"
+    },
+    {
+      "type": "error_correction",
+      "question": "El resultado es malo pero seguimos.",
+      "answer": "El resultado es insatisfactorio; no obstante, proseguimos.",
+      "instruction": "Registro académico",
+      "explanation": "Proseguimos — culto."
+    },
+    {
+      "type": "error_correction",
+      "question": "Acabada la cena, dimos un paseo.",
+      "answer": "Acabada la cena, dimos un paseo.",
+      "instruction": "Ya correcto — variante",
+      "explanation": "Acabada la cena (f.) ✓"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Terminada / la / reunión / todos / se / marcharon",
+      "options": [
+        "Terminada",
+        "la",
+        "reunión",
+        "todos",
+        "se",
+        "marcharon"
+      ],
+      "answer": "Terminada la reunión todos se marcharon",
+      "instruction": "Participio absoluto",
+      "explanation": "Terminada la reunión…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Firmados / los / documentos / no / hay / vuelta / atrás",
+      "options": [
+        "Firmados",
+        "los",
+        "documentos",
+        "no",
+        "hay",
+        "vuelta",
+        "atrás"
+      ],
+      "answer": "Firmados los documentos no hay vuelta atrás",
+      "instruction": "Plural participio",
+      "explanation": "Firmados los documentos…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Queda / prohibido / fumar / en / el / edificio",
+      "options": [
+        "Queda",
+        "prohibido",
+        "fumar",
+        "en",
+        "el",
+        "edificio"
+      ],
+      "answer": "Queda prohibido fumar en el edificio",
+      "instruction": "Queda + participio",
+      "explanation": "Queda prohibido fumar…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Debido / al / aumento / de / precios / subió / la / inflación",
+      "options": [
+        "Debido",
+        "al",
+        "aumento",
+        "de",
+        "precios",
+        "subió",
+        "la",
+        "inflación"
+      ],
+      "answer": "Debido al aumento de precios subió la inflación",
+      "instruction": "Nominalización",
+      "explanation": "Debido al aumento de…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "No / obstante / lo / aprobaremos",
+      "options": [
+        "No",
+        "obstante",
+        "lo",
+        "aprobaremos"
+      ],
+      "answer": "No obstante lo aprobaremos",
+      "instruction": "Conector culto",
+      "explanation": "No obstante — formal."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Acabado / el / trabajo / nos / fuimos",
+      "options": [
+        "Acabado",
+        "el",
+        "trabajo",
+        "nos",
+        "fuimos"
+      ],
+      "answer": "Acabado el trabajo nos fuimos",
+      "instruction": "Participio masculino",
+      "explanation": "Acabado el trabajo…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Concluida / la / sesión / se / retiraron",
+      "options": [
+        "Concluida",
+        "la",
+        "sesión",
+        "se",
+        "retiraron"
+      ],
+      "answer": "Concluida la sesión se retiraron",
+      "instruction": "Registro formal",
+      "explanation": "Concluida la sesión…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Hechos / los / deberes / puede / salir",
+      "options": [
+        "Hechos",
+        "los",
+        "deberes",
+        "puede",
+        "salir"
+      ],
+      "answer": "Hechos los deberes puede salir",
+      "instruction": "Concordancia",
+      "explanation": "Hechos los deberes…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Llegado / el / momento / actuaremos",
+      "options": [
+        "Llegado",
+        "el",
+        "momento",
+        "actuaremos"
+      ],
+      "answer": "Llegado el momento actuaremos",
+      "instruction": "Participio absoluto",
+      "explanation": "Llegado el momento…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Ante / la / situación / actual / debemos / actuar",
+      "options": [
+        "Ante",
+        "la",
+        "situación",
+        "actual",
+        "debemos",
+        "actuar"
+      ],
+      "answer": "Ante la situación actual debemos actuar",
+      "instruction": "Registro culto",
+      "explanation": "Ante la situación…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "A / causa / de / la / lluvia / cancelamos / el / picnic",
+      "options": [
+        "A",
+        "causa",
+        "de",
+        "la",
+        "lluvia",
+        "cancelamos",
+        "el",
+        "picnic"
+      ],
+      "answer": "A causa de la lluvia cancelamos el picnic",
+      "instruction": "Nominalización",
+      "explanation": "A causa de la lluvia…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Una / vez / firmados / los / papeles / salimos",
+      "options": [
+        "Una",
+        "vez",
+        "firmados",
+        "los",
+        "papeles",
+        "salimos"
+      ],
+      "answer": "Una vez firmados los papeles salimos",
+      "instruction": "Una vez + participio",
+      "explanation": "Una vez firmados…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Por / el / hecho / de / que / no / vino / nos / preocupamos",
+      "options": [
+        "Por",
+        "el",
+        "hecho",
+        "de",
+        "que",
+        "no",
+        "vino",
+        "nos",
+        "preocupamos"
+      ],
+      "answer": "Por el hecho de que no vino nos preocupamos",
+      "instruction": "Estilo culto",
+      "explanation": "Por el hecho de que…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Queda / vedada / la / entrada / sin / permiso",
+      "options": [
+        "Queda",
+        "vedada",
+        "la",
+        "entrada",
+        "sin",
+        "permiso"
+      ],
+      "answer": "Queda vedada la entrada sin permiso",
+      "instruction": "Queda vedado",
+      "explanation": "Queda vedada la entrada…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Ante / el / incremento / de / costes / cerraron",
+      "options": [
+        "Ante",
+        "el",
+        "incremento",
+        "de",
+        "costes",
+        "cerraron"
+      ],
+      "answer": "Ante el incremento de costes cerraron",
+      "instruction": "Nominalización",
+      "explanation": "Ante el incremento de…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Acabada / la / cena / dimos / un / paseo",
+      "options": [
+        "Acabada",
+        "la",
+        "cena",
+        "dimos",
+        "un",
+        "paseo"
+      ],
+      "answer": "Acabada la cena dimos un paseo",
+      "instruction": "Participio femenino",
+      "explanation": "Acabada la cena…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "El / resultado / es / insatisfactorio / no / obstante / proseguimos",
+      "options": [
+        "El",
+        "resultado",
+        "es",
+        "insatisfactorio",
+        "no",
+        "obstante",
+        "proseguimos"
+      ],
+      "answer": "El resultado es insatisfactorio no obstante proseguimos",
+      "instruction": "Registro académico",
+      "explanation": "No obstante proseguimos."
+    },
+    {
+      "type": "sentence_building",
+      "question": "De / joven / viajó / por / toda / Europa",
+      "options": [
+        "De",
+        "joven",
+        "viajó",
+        "por",
+        "toda",
+        "Europa"
+      ],
+      "answer": "De joven viajó por toda Europa",
+      "instruction": "Estilo culto",
+      "explanation": "De joven — período."
+    },
+    {
+      "type": "sentence_building",
+      "question": "En / virtud / de / lo / acordado / procedemos",
+      "options": [
+        "En",
+        "virtud",
+        "de",
+        "lo",
+        "acordado",
+        "procedemos"
+      ],
+      "answer": "En virtud de lo acordado procedemos",
+      "instruction": "Fórmula culta",
+      "explanation": "En virtud de lo acordado…"
+    },
+    {
+      "type": "error_correction",
+      "question": "En virtud de lo acordado, procedemos ya.",
+      "answer": "En virtud de lo acordado, procedemos.",
+      "instruction": "Estilo culto",
+      "explanation": "Procedemos — sin «ya» redundante."
+    },
+    {
+      "type": "error_correction",
+      "question": "Ante la situación actual debemos actuar ya.",
+      "answer": "Ante la situación actual, debemos actuar.",
+      "instruction": "Puntuación",
+      "explanation": "Coma tras situación actual."
+    },
+    {
+      "type": "error_correction",
+      "question": "Por el hecho de que no vino nos preocupamos mucho.",
+      "answer": "Por el hecho de que no vino, nos preocupamos.",
+      "instruction": "Puntuación",
+      "explanation": "Coma tras subordinada."
+    },
+    {
+      "type": "error_correction",
+      "question": "El resultado es insatisfactorio no obstante proseguimos.",
+      "answer": "El resultado es insatisfactorio; no obstante, proseguimos.",
+      "instruction": "Conector",
+      "explanation": "Punto y coma + no obstante."
+    },
+    {
+      "type": "error_correction",
+      "question": "De joven viajó por toda Europa mucho.",
+      "answer": "De joven, viajó por toda Europa.",
+      "instruction": "Estilo culto",
+      "explanation": "De joven — sin «mucho» redundante."
+    },
+    {
+      "type": "error_correction",
+      "question": "Queda vedada la entrada sin permiso alguno.",
+      "answer": "Queda vedada la entrada sin permiso.",
+      "instruction": "Redundancia",
+      "explanation": "Sin «alguno» redundante."
+    },
+    {
+      "type": "error_correction",
+      "question": "A causa de la lluvia cancelamos el picnic ayer.",
+      "answer": "A causa de la lluvia, cancelamos el picnic.",
+      "instruction": "Puntuación",
+      "explanation": "Coma tras causa."
+    },
+    {
+      "type": "error_correction",
+      "question": "Una vez firmados los papeles salimos rápido.",
+      "answer": "Una vez firmados los papeles, salimos.",
+      "instruction": "Puntuación",
+      "explanation": "Coma tras participio."
+    },
+    {
+      "type": "error_correction",
+      "question": "Concluida la sesión se retiraron todos.",
+      "answer": "Concluida la sesión, se retiraron.",
+      "instruction": "Puntuación",
+      "explanation": "Coma tras participio absoluto."
+    },
+    {
+      "type": "error_correction",
+      "question": "Ante el incremento de costes cerraron la tienda ayer.",
+      "answer": "Ante el incremento de los costes, cerraron.",
+      "instruction": "Artículo",
+      "explanation": "Los costes — artículo definido."
+    }
+  ],
+  "chapter-30-ironia": [
+    {
+      "type": "translation",
+      "question": "Как ни странно, он согласился.",
+      "answer": "Por extraño que parezca, aceptó",
+      "instruction": "Por + adj + subj.",
+      "explanation": "Por extraño que parezca…"
+    },
+    {
+      "type": "translation",
+      "question": "Не могли бы вы передать соль?",
+      "answer": "¿Sería tan amable de pasarme la sal?",
+      "instruction": "Registro formal",
+      "explanation": "Sería tan amable de…"
+    },
+    {
+      "type": "translation",
+      "question": "Это ты так думаешь?",
+      "answer": "Que te crees tú eso",
+      "instruction": "Ironía",
+      "explanation": "Que te crees tú eso — incredulidad."
+    },
+    {
+      "type": "translation",
+      "question": "Вовсе нет!",
+      "answer": "¡Qué va!",
+      "instruction": "Registro coloquial",
+      "explanation": "¡Qué va! — negación enérgica."
+    },
+    {
+      "type": "translation",
+      "question": "Не может быть!",
+      "answer": "¡No me digas!",
+      "instruction": "Sorpresa irónica",
+      "explanation": "¡No me digas! — sorpresa/ironía."
+    },
+    {
+      "type": "translation",
+      "question": "Дай воды, пожалуйста (формально).",
+      "answer": "¿Sería posible que me diera un poco de agua?",
+      "instruction": "Registro elevado",
+      "explanation": "Condicional cortesía."
+    },
+    {
+      "type": "translation",
+      "question": "Как бы ни было сложно, мы справимся.",
+      "answer": "Por difícil que sea, lo lograremos",
+      "instruction": "Por + adj + subj.",
+      "explanation": "Por difícil que sea…"
+    },
+    {
+      "type": "translation",
+      "question": "Несмотря ни на что, он пришёл.",
+      "answer": "Por mucho que protestara, vino",
+      "instruction": "Por mucho que + subj.",
+      "explanation": "Por mucho que protestara…"
+    },
+    {
+      "type": "translation",
+      "question": "Ты, должно быть, шутишь.",
+      "answer": "Debes de estar de broma",
+      "instruction": "Ironía coloquial",
+      "explanation": "Debes de estar de broma."
+    },
+    {
+      "type": "translation",
+      "question": "Отлично поработали (иронично).",
+      "answer": "Menudo trabajo hemos hecho",
+      "instruction": "Ironía",
+      "explanation": "Menudo trabajo — ironía."
+    },
+    {
+      "type": "translation",
+      "question": "Конечно, это идеальный план (ирония).",
+      "answer": "Claro, es el plan perfecto",
+      "instruction": "Ironía",
+      "explanation": "Claro — ironía con claro."
+    },
+    {
+      "type": "translation",
+      "question": "Ну да, конечно (иронично).",
+      "answer": "Sí, claro, por supuesto",
+      "instruction": "Ironía",
+      "explanation": "Sí, claro — tono irónico."
+    },
+    {
+      "type": "translation",
+      "question": "Какая неожиданность (ирония).",
+      "answer": "Qué sorpresa más grande",
+      "instruction": "Ironía",
+      "explanation": "Qué sorpresa — ironía."
+    },
+    {
+      "type": "translation",
+      "question": "Без комментариев.",
+      "answer": "No comment",
+      "instruction": "Pragmática",
+      "explanation": "No comment — evasión."
+    },
+    {
+      "type": "translation",
+      "question": "Ты гений (иронично).",
+      "answer": "Eres un genio",
+      "instruction": "Ironía",
+      "explanation": "Eres un genio — contexto irónico."
+    },
+    {
+      "type": "translation",
+      "question": "Молодец, опять опоздал (ирония).",
+      "answer": "Bravo, otra vez llegas tarde",
+      "instruction": "Ironía",
+      "explanation": "Bravo — ironía."
+    },
+    {
+      "type": "translation",
+      "question": "Ничего себе новости.",
+      "answer": "Menuda noticia",
+      "instruction": "Ironía",
+      "explanation": "Menuda noticia — ironía."
+    },
+    {
+      "type": "translation",
+      "question": "Как всегда, всё идеально (ирония).",
+      "answer": "Como siempre, todo perfecto",
+      "instruction": "Ironía",
+      "explanation": "Como siempre — ironía."
+    },
+    {
+      "type": "translation",
+      "question": "Спасибо за помощь (иронично — не помог).",
+      "answer": "Gracias por la ayuda",
+      "instruction": "Ironía situacional",
+      "explanation": "Gracias — ironía contextual."
+    },
+    {
+      "type": "error_correction",
+      "question": "¿Me pasas el agua? (en una reunión oficial)",
+      "answer": "¿Sería tan amable de pasarme el agua?",
+      "instruction": "Registro",
+      "explanation": "Reunión oficial → condicional cortés."
+    },
+    {
+      "type": "error_correction",
+      "question": "¡Qué va que no!",
+      "answer": "¡Qué va!",
+      "instruction": "Coloquial",
+      "explanation": "¡Qué va! — sin «que no» redundante."
+    },
+    {
+      "type": "error_correction",
+      "question": "Por extraño que parece, aceptó.",
+      "answer": "Por extraño que parezca, aceptó.",
+      "instruction": "Subjuntivo",
+      "explanation": "Por extraño que parezca — subjuntivo."
+    },
+    {
+      "type": "error_correction",
+      "question": "Debes estar de broma.",
+      "answer": "Debes de estar de broma.",
+      "instruction": "Deber de",
+      "explanation": "Debes de estar — probabilidad."
+    },
+    {
+      "type": "error_correction",
+      "question": "Dame agua por favor.",
+      "answer": "¿Sería posible que me diera un poco de agua?",
+      "instruction": "Formal",
+      "explanation": "Condicional + cortesía."
+    },
+    {
+      "type": "error_correction",
+      "question": "Por difícil que es, lo lograremos.",
+      "answer": "Por difícil que sea, lo lograremos.",
+      "instruction": "Subjuntivo",
+      "explanation": "Por difícil que sea — subjuntivo."
+    },
+    {
+      "type": "error_correction",
+      "question": "Por mucho que protesta, vino.",
+      "answer": "Por mucho que protestara, vino.",
+      "instruction": "Subjuntivo imperfecto",
+      "explanation": "Por mucho que protestara — subj."
+    },
+    {
+      "type": "error_correction",
+      "question": "Que te crees tu eso.",
+      "answer": "Que te crees tú eso.",
+      "instruction": "Ortografía",
+      "explanation": "Tú con tilde."
+    },
+    {
+      "type": "error_correction",
+      "question": "Menudo trabajo hemos hecho!",
+      "answer": "Menudo trabajo hemos hecho.",
+      "instruction": "Puntuación",
+      "explanation": "Sin «!» excesivo en culto."
+    },
+    {
+      "type": "error_correction",
+      "question": "Claro que si es perfecto.",
+      "answer": "Claro, es el plan perfecto.",
+      "instruction": "Ironía escrita",
+      "explanation": "Comas para ironía."
+    },
+    {
+      "type": "error_correction",
+      "question": "Bravo otra vez llegas tarde.",
+      "answer": "Bravo, otra vez llegas tarde.",
+      "instruction": "Puntuación",
+      "explanation": "Coma tras interjección."
+    },
+    {
+      "type": "error_correction",
+      "question": "Como siempre todo perfecto!",
+      "answer": "Como siempre, todo perfecto.",
+      "instruction": "Ironía",
+      "explanation": "Coma + tono."
+    },
+    {
+      "type": "error_correction",
+      "question": "Gracias por la ayuda! (no ayudó)",
+      "answer": "Gracias por la ayuda.",
+      "instruction": "Pragmática",
+      "explanation": "Contexto define ironía."
+    },
+    {
+      "type": "error_correction",
+      "question": "No me digas que no.",
+      "answer": "¡No me digas!",
+      "instruction": "Expresión fija",
+      "explanation": "¡No me digas! — expresión fija."
+    },
+    {
+      "type": "error_correction",
+      "question": "En Argentina se usa tu.",
+      "answer": "En Argentina se usa vos.",
+      "instruction": "Voseo",
+      "explanation": "Vos — regionalismo."
+    },
+    {
+      "type": "error_correction",
+      "question": "Sería amable de pasarme la sal.",
+      "answer": "¿Sería tan amable de pasarme la sal?",
+      "instruction": "Cortesía",
+      "explanation": "¿Sería tan amable de…?"
+    },
+    {
+      "type": "error_correction",
+      "question": "Por extraño que parezca se negó.",
+      "answer": "Por extraño que parezca, se negó.",
+      "instruction": "Puntuación",
+      "explanation": "Coma tras parezca."
+    },
+    {
+      "type": "error_correction",
+      "question": "Qué sorpresa mas grande.",
+      "answer": "Qué sorpresa más grande.",
+      "instruction": "Ortografía",
+      "explanation": "Más con tilde."
+    },
+    {
+      "type": "error_correction",
+      "question": "Debes de estar broma.",
+      "answer": "Debes de estar de broma.",
+      "instruction": "Preposición",
+      "explanation": "Estar de broma — «de»."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Por / extraño / que / parezca / aceptó",
+      "options": [
+        "Por",
+        "extraño",
+        "que",
+        "parezca",
+        "aceptó"
+      ],
+      "answer": "Por extraño que parezca, aceptó",
+      "instruction": "Por + subj.",
+      "explanation": "Por extraño que parezca…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Sería / tan / amable / de / pasarme / la / sal?",
+      "options": [
+        "¿Sería",
+        "tan",
+        "amable",
+        "de",
+        "pasarme",
+        "la",
+        "sal?"
+      ],
+      "answer": "¿Sería tan amable de pasarme la sal?",
+      "instruction": "Registro formal",
+      "explanation": "Condicional cortés."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Por / difícil / que / sea / lo / lograremos",
+      "options": [
+        "Por",
+        "difícil",
+        "que",
+        "sea",
+        "lo",
+        "lograremos"
+      ],
+      "answer": "Por difícil que sea, lo lograremos",
+      "instruction": "Por + subj.",
+      "explanation": "Por difícil que sea…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Por / mucho / que / protestara / vino",
+      "options": [
+        "Por",
+        "mucho",
+        "que",
+        "protestara",
+        "vino"
+      ],
+      "answer": "Por mucho que protestara, vino",
+      "instruction": "Por mucho que",
+      "explanation": "Por mucho que protestara…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Debes / de / estar / de / broma",
+      "options": [
+        "Debes",
+        "de",
+        "estar",
+        "de",
+        "broma"
+      ],
+      "answer": "Debes de estar de broma",
+      "instruction": "Ironía",
+      "explanation": "Debes de estar de broma."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Menudo / trabajo / hemos / hecho",
+      "options": [
+        "Menudo",
+        "trabajo",
+        "hemos",
+        "hecho"
+      ],
+      "answer": "Menudo trabajo hemos hecho",
+      "instruction": "Ironía",
+      "explanation": "Menudo trabajo — ironía."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Claro / es / el / plan / perfecto",
+      "options": [
+        "Claro",
+        "es",
+        "el",
+        "plan",
+        "perfecto"
+      ],
+      "answer": "Claro, es el plan perfecto",
+      "instruction": "Ironía",
+      "explanation": "Claro — tono irónico."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Qué / sorpresa / más / grande",
+      "options": [
+        "Qué",
+        "sorpresa",
+        "más",
+        "grande"
+      ],
+      "answer": "Qué sorpresa más grande",
+      "instruction": "Ironía",
+      "explanation": "Qué sorpresa más grande."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Como / siempre / todo / perfecto",
+      "options": [
+        "Como",
+        "siempre",
+        "todo",
+        "perfecto"
+      ],
+      "answer": "Como siempre, todo perfecto",
+      "instruction": "Ironía",
+      "explanation": "Como siempre — ironía."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Bravo / otra / vez / llegas / tarde",
+      "options": [
+        "Bravo",
+        "otra",
+        "vez",
+        "llegas",
+        "tarde"
+      ],
+      "answer": "Bravo, otra vez llegas tarde",
+      "instruction": "Ironía",
+      "explanation": "Bravo — ironía."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Que / te / crees / tú / eso",
+      "options": [
+        "Que",
+        "te",
+        "crees",
+        "tú",
+        "eso"
+      ],
+      "answer": "Que te crees tú eso",
+      "instruction": "Incredulidad",
+      "explanation": "Que te crees tú eso."
+    },
+    {
+      "type": "sentence_building",
+      "question": "En / Argentina / se / usa / vos",
+      "options": [
+        "En",
+        "Argentina",
+        "se",
+        "usa",
+        "vos"
+      ],
+      "answer": "En Argentina se usa vos",
+      "instruction": "Voseo",
+      "explanation": "Vos — regionalismo."
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Sería / posible / que / me / diera / agua?",
+      "options": [
+        "¿Sería",
+        "posible",
+        "que",
+        "me",
+        "diera",
+        "agua?"
+      ],
+      "answer": "¿Sería posible que me diera agua?",
+      "instruction": "Cortesía formal",
+      "explanation": "Condicional + subjuntivo."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Por / extraño / que / parezca / se / negó",
+      "options": [
+        "Por",
+        "extraño",
+        "que",
+        "parezca",
+        "se",
+        "negó"
+      ],
+      "answer": "Por extraño que parezca, se negó",
+      "instruction": "Subjuntivo",
+      "explanation": "Por extraño que parezca…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "No / me / digas / que / no / sabías",
+      "options": [
+        "No",
+        "me",
+        "digas",
+        "que",
+        "no",
+        "sabías"
+      ],
+      "answer": "No me digas que no sabías",
+      "instruction": "Sorpresa irónica",
+      "explanation": "No me digas…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Qué / va / no / es / cierto",
+      "options": [
+        "Qué",
+        "va",
+        "no",
+        "es",
+        "cierto"
+      ],
+      "answer": "Qué va, no es cierto",
+      "instruction": "Negación coloquial",
+      "explanation": "Qué va — coloquial."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Gracias / por / la / ayuda / tan / útil",
+      "options": [
+        "Gracias",
+        "por",
+        "la",
+        "ayuda",
+        "tan",
+        "útil"
+      ],
+      "answer": "Gracias por la ayuda tan útil",
+      "instruction": "Ironía situacional",
+      "explanation": "Tan útil — ironía."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Sí / claro / por / supuesto / que / sí",
+      "options": [
+        "Sí",
+        "claro",
+        "por",
+        "supuesto",
+        "que",
+        "sí"
+      ],
+      "answer": "Sí, claro, por supuesto que sí",
+      "instruction": "Ironía",
+      "explanation": "Sí, claro — ironía."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Eres / un / genio / de / verdad",
+      "options": [
+        "Eres",
+        "un",
+        "genio",
+        "de",
+        "verdad"
+      ],
+      "answer": "Eres un genio de verdad",
+      "instruction": "Ironía",
+      "explanation": "De verdad — ironía."
+    },
+    {
+      "type": "translation",
+      "question": "Без комментариев.",
+      "answer": "Sin comentarios",
+      "instruction": "Pragmática",
+      "explanation": "Sin comentarios — evasión."
+    },
+    {
+      "type": "translation",
+      "question": "Ну конечно, всё по плану (ирония).",
+      "answer": "Claro, todo según el plan",
+      "instruction": "Ironía",
+      "explanation": "Claro — ironía."
+    },
+    {
+      "type": "translation",
+      "question": "Какая неожиданность (иронично).",
+      "answer": "Vaya sorpresa",
+      "instruction": "Ironía",
+      "explanation": "Vaya sorpresa — ironía."
+    },
+    {
+      "type": "translation",
+      "question": "Ты, наверное, шутишь.",
+      "answer": "Debes de estar de broma",
+      "instruction": "Ironía",
+      "explanation": "Debes de estar de broma."
+    },
+    {
+      "type": "translation",
+      "question": "Спасибо, очень помог (ирония).",
+      "answer": "Gracias, muy útil",
+      "instruction": "Ironía situacional",
+      "explanation": "Muy útil — ironía."
+    },
+    {
+      "type": "translation",
+      "question": "Гений, просто гений (ирония).",
+      "answer": "Un genio, nada menos",
+      "instruction": "Ironía",
+      "explanation": "Nada menos — ironía."
+    },
+    {
+      "type": "translation",
+      "question": "Как всегда, без сюрпризов (ирония).",
+      "answer": "Como siempre, sin sorpresas",
+      "instruction": "Ironía",
+      "explanation": "Como siempre — ironía."
+    },
+    {
+      "type": "translation",
+      "question": "Отличная новость (иронично).",
+      "answer": "Qué buena noticia",
+      "instruction": "Ironía",
+      "explanation": "Qué buena noticia — ironía."
+    },
+    {
+      "type": "translation",
+      "question": "Ну да, логично (ирония).",
+      "answer": "Sí, claro, muy lógico",
+      "instruction": "Ironía",
+      "explanation": "Muy lógico — ironía."
+    },
+    {
+      "type": "translation",
+      "question": "Блестящая идея (иронично).",
+      "answer": "Brillante idea",
+      "instruction": "Ironía",
+      "explanation": "Brillante idea — ironía."
+    },
+    {
+      "type": "error_correction",
+      "question": "Vaya sorpresa mas grande.",
+      "answer": "Vaya sorpresa más grande.",
+      "instruction": "Ortografía",
+      "explanation": "Más con tilde."
+    },
+    {
+      "type": "error_correction",
+      "question": "Sin comentarios!",
+      "answer": "Sin comentarios.",
+      "instruction": "Puntuación",
+      "explanation": "Sin exclamación en culto."
+    },
+    {
+      "type": "error_correction",
+      "question": "Claro todo según el plan.",
+      "answer": "Claro, todo según el plan.",
+      "instruction": "Puntuación",
+      "explanation": "Coma tras claro."
+    },
+    {
+      "type": "error_correction",
+      "question": "Gracias muy util.",
+      "answer": "Gracias, muy útil.",
+      "instruction": "Ortografía",
+      "explanation": "Útil con tilde + coma."
+    },
+    {
+      "type": "error_correction",
+      "question": "Un genio nada menos!",
+      "answer": "Un genio, nada menos.",
+      "instruction": "Puntuación",
+      "explanation": "Coma + punto."
+    },
+    {
+      "type": "error_correction",
+      "question": "Como siempre sin sorpresas.",
+      "answer": "Como siempre, sin sorpresas.",
+      "instruction": "Puntuación",
+      "explanation": "Coma tras como siempre."
+    },
+    {
+      "type": "error_correction",
+      "question": "Que buena noticia!",
+      "answer": "Qué buena noticia.",
+      "instruction": "Interrogación",
+      "explanation": "Qué con tilde."
+    },
+    {
+      "type": "error_correction",
+      "question": "Si claro muy logico.",
+      "answer": "Sí, claro, muy lógico.",
+      "instruction": "Ortografía",
+      "explanation": "Sí, lógico con tilde."
+    },
+    {
+      "type": "error_correction",
+      "question": "Brillante idea!",
+      "answer": "Brillante idea.",
+      "instruction": "Ironía escrita",
+      "explanation": "Punto, no exclamación."
+    },
+    {
+      "type": "error_correction",
+      "question": "Debes de estar broma otra vez.",
+      "answer": "Debes de estar de broma otra vez.",
+      "instruction": "Preposición",
+      "explanation": "Estar de broma."
+    }
+  ],
+  "chapter-16-perifrasis": [
+    {
+      "type": "sentence_building",
+      "question": "Voy / a / estudiar / medicina",
+      "options": [
+        "Voy",
+        "a",
+        "estudiar",
+        "medicina"
+      ],
+      "answer": "Voy a estudiar medicina",
+      "instruction": "Perífrasis ir a",
+      "explanation": "Voy a + infinitivo."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Estoy / escribiendo / un / informe",
+      "options": [
+        "Estoy",
+        "escribiendo",
+        "un",
+        "informe"
+      ],
+      "answer": "Estoy escribiendo un informe",
+      "instruction": "Perífrasis estar + ger",
+      "explanation": "Estoy escribiendo…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Acabo / de / llegar / a / casa",
+      "options": [
+        "Acabo",
+        "de",
+        "llegar",
+        "a",
+        "casa"
+      ],
+      "answer": "Acabo de llegar a casa",
+      "instruction": "Acabar de",
+      "explanation": "Acabo de + infinitivo."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Sigo / trabajando / en / el / proyecto",
+      "options": [
+        "Sigo",
+        "trabajando",
+        "en",
+        "el",
+        "proyecto"
+      ],
+      "answer": "Sigo trabajando en el proyecto",
+      "instruction": "Seguir + ger",
+      "explanation": "Sigo trabajando…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Vuelvo / a / insistir / en / la / propuesta",
+      "options": [
+        "Vuelvo",
+        "a",
+        "insistir",
+        "en",
+        "la",
+        "propuesta"
+      ],
+      "answer": "Vuelvo a insistir en la propuesta",
+      "instruction": "Volver a",
+      "explanation": "Vuelvo a + infinitivo."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Anda / buscando / trabajo / desde / mayo",
+      "options": [
+        "Anda",
+        "buscando",
+        "trabajo",
+        "desde",
+        "mayo"
+      ],
+      "answer": "Anda buscando trabajo desde mayo",
+      "instruction": "Andar + ger",
+      "explanation": "Anda buscando…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Llevo / tres / años / viviendo / aquí",
+      "options": [
+        "Llevo",
+        "tres",
+        "años",
+        "viviendo",
+        "aquí"
+      ],
+      "answer": "Llevo tres años viviendo aquí",
+      "instruction": "Llevar + ger",
+      "explanation": "Llevo + tiempo + gerundio."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Estoy / por / terminar / el / libro",
+      "options": [
+        "Estoy",
+        "por",
+        "terminar",
+        "el",
+        "libro"
+      ],
+      "answer": "Estoy por terminar el libro",
+      "instruction": "Estar por",
+      "explanation": "Estar por + inf — «собираюсь»."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Va / cayendo / nieve / poco / a / poco",
+      "options": [
+        "Va",
+        "cayendo",
+        "nieve",
+        "poco",
+        "a",
+        "poco"
+      ],
+      "answer": "Va cayendo nieve poco a poco",
+      "instruction": "Ir + ger",
+      "explanation": "Va cayendo — proceso gradual."
+    },
+    {
+      "type": "sentence_building",
+      "question": "He / de / salir / ahora / mismo",
+      "options": [
+        "He",
+        "de",
+        "salir",
+        "ahora",
+        "mismo"
+      ],
+      "answer": "He de salir ahora mismo",
+      "instruction": "Haber de",
+      "explanation": "He de + inf — obligación."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Suelo / desayunar / a / las / ocho",
+      "options": [
+        "Suelo",
+        "desayunar",
+        "a",
+        "las",
+        "ocho"
+      ],
+      "answer": "Suelo desayunar a las ocho",
+      "instruction": "Soler + inf",
+      "explanation": "Suelo desayunar…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Estoy / a / punto / de / llorar",
+      "options": [
+        "Estoy",
+        "a",
+        "punto",
+        "de",
+        "llorar"
+      ],
+      "answer": "Estoy a punto de llorar",
+      "instruction": "Estar a punto de",
+      "explanation": "A punto de + inf."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Tarde / o / temprano / lo / entenderás",
+      "options": [
+        "Tarde",
+        "o",
+        "temprano",
+        "lo",
+        "entenderás"
+      ],
+      "answer": "Tarde o temprano lo entenderás",
+      "instruction": "Expresión temporal",
+      "explanation": "Tarde o temprano…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Sigo / sin / entender / la / regla",
+      "options": [
+        "Sigo",
+        "sin",
+        "entender",
+        "la",
+        "regla"
+      ],
+      "answer": "Sigo sin entender la regla",
+      "instruction": "Seguir sin + inf",
+      "explanation": "Sigo sin entender…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Voy / camino / de / convertirme / en / médico",
+      "options": [
+        "Voy",
+        "camino",
+        "de",
+        "convertirme",
+        "en",
+        "médico"
+      ],
+      "answer": "Voy camino de convertirme en médico",
+      "instruction": "Ir camino de",
+      "explanation": "Ir camino de…"
+    }
+  ],
+  "chapter-17-dele": [
+    {
+      "type": "sentence_building",
+      "question": "En / mi / opinión / el / texto / es / claro",
+      "options": [
+        "En",
+        "mi",
+        "opinión",
+        "el",
+        "texto",
+        "es",
+        "claro"
+      ],
+      "answer": "En mi opinión el texto es claro",
+      "instruction": "Opinión DELE",
+      "explanation": "En mi opinión…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Por / un / lado / es / útil / por / otro / caro",
+      "options": [
+        "Por",
+        "un",
+        "lado",
+        "es",
+        "útil",
+        "por",
+        "otro",
+        "caro"
+      ],
+      "answer": "Por un lado es útil por otro caro",
+      "instruction": "Conectores DELE",
+      "explanation": "Por un lado… por otro…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "En / conclusión / recomiendo / leer / el / artículo",
+      "options": [
+        "En",
+        "conclusión",
+        "recomiendo",
+        "leer",
+        "el",
+        "artículo"
+      ],
+      "answer": "En conclusión, recomiendo leer el artículo",
+      "instruction": "Conclusión",
+      "explanation": "En conclusión…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Según / el / autor / la / teoría / es / válida",
+      "options": [
+        "Según",
+        "el",
+        "autor",
+        "la",
+        "teoría",
+        "es",
+        "válida"
+      ],
+      "answer": "Según el autor la teoría es válida",
+      "instruction": "Referencia",
+      "explanation": "Según el autor…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "No / obstante / hay / excepciones / importantes",
+      "options": [
+        "No",
+        "obstante",
+        "hay",
+        "excepciones",
+        "importantes"
+      ],
+      "answer": "No obstante hay excepciones importantes",
+      "instruction": "Conector formal",
+      "explanation": "No obstante…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "En / primer / lugar / analizamos / los / datos",
+      "options": [
+        "En",
+        "primer",
+        "lugar",
+        "analizamos",
+        "los",
+        "datos"
+      ],
+      "answer": "En primer lugar analizamos los datos",
+      "instruction": "Organización",
+      "explanation": "En primer lugar…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Además / debemos / considerar / el / contexto",
+      "options": [
+        "Además",
+        "debemos",
+        "considerar",
+        "el",
+        "contexto"
+      ],
+      "answer": "Además debemos considerar el contexto",
+      "instruction": "Además",
+      "explanation": "Además — adición."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Sin / embargo / el / resultado / fue / distinto",
+      "options": [
+        "Sin",
+        "embargo",
+        "el",
+        "resultado",
+        "fue",
+        "distinto"
+      ],
+      "answer": "Sin embargo el resultado fue distinto",
+      "instruction": "Contraste",
+      "explanation": "Sin embargo…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Por / tanto / llegamos / a / una / conclusión",
+      "options": [
+        "Por",
+        "tanto",
+        "llegamos",
+        "a",
+        "una",
+        "conclusión"
+      ],
+      "answer": "Por tanto llegamos a una conclusión",
+      "instruction": "Consecuencia",
+      "explanation": "Por tanto…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Es / decir / el / problema / es / complejo",
+      "options": [
+        "Es",
+        "decir",
+        "el",
+        "problema",
+        "es",
+        "complejo"
+      ],
+      "answer": "Es decir el problema es complejo",
+      "instruction": "Reformulación",
+      "explanation": "Es decir…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "En / resumen / las / ventajas / superan / las / desventajas",
+      "options": [
+        "En",
+        "resumen",
+        "las",
+        "ventajas",
+        "superan",
+        "las",
+        "desventajas"
+      ],
+      "answer": "En resumen las ventajas superan las desventajas",
+      "instruction": "Resumen",
+      "explanation": "En resumen…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "A / modo / de / conclusión / propongo / actuar",
+      "options": [
+        "A",
+        "modo",
+        "de",
+        "conclusión",
+        "propongo",
+        "actuar"
+      ],
+      "answer": "A modo de conclusión propongo actuar",
+      "instruction": "Cierre formal",
+      "explanation": "A modo de conclusión…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Cabe / destacar / que / el / informe / es / preciso",
+      "options": [
+        "Cabe",
+        "destacar",
+        "que",
+        "el",
+        "informe",
+        "es",
+        "preciso"
+      ],
+      "answer": "Cabe destacar que el informe es preciso",
+      "instruction": "Fórmula culta",
+      "explanation": "Cabe destacar que…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "En / línea / con / lo / anterior / insistimos",
+      "options": [
+        "En",
+        "línea",
+        "con",
+        "lo",
+        "anterior",
+        "insistimos"
+      ],
+      "answer": "En línea con lo anterior insistimos",
+      "instruction": "Cohesión",
+      "explanation": "En línea con lo anterior…"
+    }
+  ],
+  "chapter-42-subjuntivo-avanzado": [
+    {
+      "type": "sentence_building",
+      "question": "Aunque / llueva / saldremos / igual",
+      "options": [
+        "Aunque",
+        "llueva",
+        "saldremos",
+        "igual"
+      ],
+      "answer": "Aunque llueva saldremos igual",
+      "instruction": "Aunque + subj.",
+      "explanation": "Aunque llueva — hipótesis."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Hazlo / como / te / digo",
+      "options": [
+        "Hazlo",
+        "como",
+        "te",
+        "digo"
+      ],
+      "answer": "Hazlo como te digo",
+      "instruction": "Como + indic.",
+      "explanation": "Como te digo — indicativo."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Donde / quiera / que / vayas / te / seguiré",
+      "options": [
+        "Donde",
+        "quiera",
+        "que",
+        "vayas",
+        "te",
+        "seguiré"
+      ],
+      "answer": "Donde quiera que vayas te seguiré",
+      "instruction": "Dondequiera que",
+      "explanation": "Donde quiera que + subj."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Para / que / entres / necesitas / invitación",
+      "options": [
+        "Para",
+        "que",
+        "entres",
+        "necesitas",
+        "invitación"
+      ],
+      "answer": "Para que entres necesitas invitación",
+      "instruction": "Para que + subj.",
+      "explanation": "Para que entres…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Sin / que / nadie / lo / sepa / partió",
+      "options": [
+        "Sin",
+        "que",
+        "nadie",
+        "lo",
+        "sepa",
+        "partió"
+      ],
+      "answer": "Sin que nadie lo sepa partió",
+      "instruction": "Sin que + subj.",
+      "explanation": "Sin que nadie lo sepa…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Antes / de / que / llegue / prepara / todo",
+      "options": [
+        "Antes",
+        "de",
+        "que",
+        "llegue",
+        "prepara",
+        "todo"
+      ],
+      "answer": "Antes de que llegue prepara todo",
+      "instruction": "Antes de que",
+      "explanation": "Antes de que + subj."
+    },
+    {
+      "type": "sentence_building",
+      "question": "A / menos / que / llame / no / vendré",
+      "options": [
+        "A",
+        "menos",
+        "que",
+        "llame",
+        "no",
+        "vendré"
+      ],
+      "answer": "A menos que llame no vendré",
+      "instruction": "A menos que",
+      "explanation": "A menos que + subj."
+    },
+    {
+      "type": "sentence_building",
+      "question": "En / caso / de / que / falle / avísame",
+      "options": [
+        "En",
+        "caso",
+        "de",
+        "que",
+        "falle",
+        "avísame"
+      ],
+      "answer": "En caso de que falle avísame",
+      "instruction": "En caso de que",
+      "explanation": "En caso de que + subj."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Con / tal / de / que / estudies / aprobarás",
+      "options": [
+        "Con",
+        "tal",
+        "de",
+        "que",
+        "estudies",
+        "aprobarás"
+      ],
+      "answer": "Con tal de que estudies aprobarás",
+      "instruction": "Con tal de que",
+      "explanation": "Con tal de que + subj."
+    },
+    {
+      "type": "sentence_building",
+      "question": "No / creo / que / venga / hoy",
+      "options": [
+        "No",
+        "creo",
+        "que",
+        "venga",
+        "hoy"
+      ],
+      "answer": "No creo que venga hoy",
+      "instruction": "Verbo de duda",
+      "explanation": "No creo que + subj."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Es / posible / que / llueva / mañana",
+      "options": [
+        "Es",
+        "posible",
+        "que",
+        "llueva",
+        "mañana"
+      ],
+      "answer": "Es posible que llueva mañana",
+      "instruction": "Es posible que",
+      "explanation": "Es posible que + subj."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Ojalá / hubieras / venido / ayer",
+      "options": [
+        "Ojalá",
+        "hubieras",
+        "venido",
+        "ayer"
+      ],
+      "answer": "Ojalá hubieras venido ayer",
+      "instruction": "Ojalá + plusc.",
+      "explanation": "Ojalá hubieras venido…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Quisiera / que / me / ayudaras",
+      "options": [
+        "Quisiera",
+        "que",
+        "me",
+        "ayudaras"
+      ],
+      "answer": "Quisiera que me ayudaras",
+      "instruction": "Quisiera que",
+      "explanation": "Quisiera que + imperf. subj."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Basta / con / que / digas / la / verdad",
+      "options": [
+        "Basta",
+        "con",
+        "que",
+        "digas",
+        "la",
+        "verdad"
+      ],
+      "answer": "Basta con que digas la verdad",
+      "instruction": "Basta con que",
+      "explanation": "Basta con que + subj."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Tal / vez / prefiera / quedarse / en / casa",
+      "options": [
+        "Tal",
+        "vez",
+        "prefiera",
+        "quedarse",
+        "en",
+        "casa"
+      ],
+      "answer": "Tal vez prefiera quedarse en casa",
+      "instruction": "Tal vez + subj.",
+      "explanation": "Tal vez + subjuntivo."
+    }
+  ],
+  "chapter-43-indirecto-avanzado": [
+    {
+      "type": "sentence_building",
+      "question": "Dijo / que / vendría / al / día / siguiente",
+      "options": [
+        "Dijo",
+        "que",
+        "vendría",
+        "al",
+        "día",
+        "siguiente"
+      ],
+      "answer": "Dijo que vendría al día siguiente",
+      "instruction": "Estilo indirecto",
+      "explanation": "Vendría — condicional."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Preguntó / si / podía / ayudarle",
+      "options": [
+        "Preguntó",
+        "si",
+        "podía",
+        "ayudarle"
+      ],
+      "answer": "Preguntó si podía ayudarle",
+      "instruction": "Pregunta indirecta",
+      "explanation": "Preguntó si…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Comentó / que / había / llegado / tarde",
+      "options": [
+        "Comentó",
+        "que",
+        "había",
+        "llegado",
+        "tarde"
+      ],
+      "answer": "Comentó que había llegado tarde",
+      "instruction": "Plusc. indirecto",
+      "explanation": "Había llegado — pluscuamperfecto."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Aseguró / que / no / sabía / nada",
+      "options": [
+        "Aseguró",
+        "que",
+        "no",
+        "sabía",
+        "nada"
+      ],
+      "answer": "Aseguró que no sabía nada",
+      "instruction": "Negación indirecta",
+      "explanation": "No sabía nada."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Explicó / que / se / iba / a / las / cinco",
+      "options": [
+        "Explicó",
+        "que",
+        "se",
+        "iba",
+        "a",
+        "las",
+        "cinco"
+      ],
+      "answer": "Explicó que se iba a las cinco",
+      "instruction": "Hora indirecta",
+      "explanation": "Se iba a las cinco."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Mencionó / que / lo / habían / llamado",
+      "options": [
+        "Mencionó",
+        "que",
+        "lo",
+        "habían",
+        "llamado"
+      ],
+      "answer": "Mencionó que lo habían llamado",
+      "instruction": "Pasiva indirecta",
+      "explanation": "Lo habían llamado."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Reconoció / que / se / había / equivocado",
+      "options": [
+        "Reconoció",
+        "que",
+        "se",
+        "había",
+        "equivocado"
+      ],
+      "answer": "Reconoció que se había equivocado",
+      "instruction": "Reconocer + indirecto",
+      "explanation": "Se había equivocado."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Negó / haber / robado / nada",
+      "options": [
+        "Negó",
+        "haber",
+        "robado",
+        "nada"
+      ],
+      "answer": "Negó haber robado nada",
+      "instruction": "Negó + infinitivo",
+      "explanation": "Negó haber robado…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Prometió / que / lo / haría / pronto",
+      "options": [
+        "Prometió",
+        "que",
+        "lo",
+        "haría",
+        "pronto"
+      ],
+      "answer": "Prometió que lo haría pronto",
+      "instruction": "Promesa indirecta",
+      "explanation": "Lo haría — condicional."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Admitió / que / no / había / estudiado",
+      "options": [
+        "Admitió",
+        "que",
+        "no",
+        "había",
+        "estudiado"
+      ],
+      "answer": "Admitió que no había estudiado",
+      "instruction": "Admitir + indirecto",
+      "explanation": "No había estudiado."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Sugirió / que / esperáramos / un / poco",
+      "options": [
+        "Sugirió",
+        "que",
+        "esperáramos",
+        "un",
+        "poco"
+      ],
+      "answer": "Sugirió que esperáramos un poco",
+      "instruction": "Sugerir + subj.",
+      "explanation": "Esperáramos — subjuntivo."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Insistió / en / que / fuéramos / todos",
+      "options": [
+        "Insistió",
+        "en",
+        "que",
+        "fuéramos",
+        "todos"
+      ],
+      "answer": "Insistió en que fuéramos todos",
+      "instruction": "Insistir en que",
+      "explanation": "Fuéramos — subjuntivo."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Confesó / que / llevaba / días / mintiendo",
+      "options": [
+        "Confesó",
+        "que",
+        "llevaba",
+        "días",
+        "mintiendo"
+      ],
+      "answer": "Confesó que llevaba días mintiendo",
+      "instruction": "Confesar + indirecto",
+      "explanation": "Llevaba días mintiendo."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Informó / de / que / el / proyecto / continuaba",
+      "options": [
+        "Informó",
+        "de",
+        "que",
+        "el",
+        "proyecto",
+        "continuaba"
+      ],
+      "answer": "Informó de que el proyecto continuaba",
+      "instruction": "Informar de que",
+      "explanation": "Informó de que…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Declaró / que / nunca / había / visto / tal / cosa",
+      "options": [
+        "Declaró",
+        "que",
+        "nunca",
+        "había",
+        "visto",
+        "tal",
+        "cosa"
+      ],
+      "answer": "Declaró que nunca había visto tal cosa",
+      "instruction": "Declarar + indirecto",
+      "explanation": "Nunca había visto…"
+    }
+  ],
+  "chapter-44-pronombres-avanzado": [
+    {
+      "type": "sentence_building",
+      "question": "Se / lo / dí / a / María / ayer",
+      "options": [
+        "Se",
+        "lo",
+        "dí",
+        "a",
+        "María",
+        "ayer"
+      ],
+      "answer": "Se lo di a María ayer",
+      "instruction": "Pronombres CD/CI",
+      "explanation": "Se lo di — le→se ante lo."
+    },
+    {
+      "type": "sentence_building",
+      "question": "No / me / lo / creo / para / nada",
+      "options": [
+        "No",
+        "me",
+        "lo",
+        "creo",
+        "para",
+        "nada"
+      ],
+      "answer": "No me lo creo para nada",
+      "instruction": "Pronombre CD/CI",
+      "explanation": "Me lo creo — CD+CI."
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Te / lo / han / contado / ya?",
+      "options": [
+        "¿Te",
+        "lo",
+        "han",
+        "contado",
+        "ya?"
+      ],
+      "answer": "¿Te lo han contado ya?",
+      "instruction": "Pregunta pronombres",
+      "explanation": "Te lo han contado."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Se / las / envié / por / correo",
+      "options": [
+        "Se",
+        "las",
+        "envié",
+        "por",
+        "correo"
+      ],
+      "answer": "Se las envié por correo",
+      "instruction": "Plurales CI/CD",
+      "explanation": "Se las envié — les→se."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Me / gustaría / que / me / lo / explicaras",
+      "options": [
+        "Me",
+        "gustaría",
+        "que",
+        "me",
+        "lo",
+        "explicaras"
+      ],
+      "answer": "Me gustaría que me lo explicaras",
+      "instruction": "Doble pronombre",
+      "explanation": "Me lo explicaras."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Se / lo / dije / a / él / personalmente",
+      "options": [
+        "Se",
+        "lo",
+        "dije",
+        "a",
+        "él",
+        "personalmente"
+      ],
+      "answer": "Se lo dije a él personalmente",
+      "instruction": "Leísmo evitado",
+      "explanation": "Se lo dije — no «le lo»."
+    },
+    {
+      "type": "sentence_building",
+      "question": "No / se / lo / digas / a / nadie",
+      "options": [
+        "No",
+        "se",
+        "lo",
+        "digas",
+        "a",
+        "nadie"
+      ],
+      "answer": "No se lo digas a nadie",
+      "instruction": "Imperativo + pronombres",
+      "explanation": "Se lo digas — imperativo."
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Me / lo / prestas / un / momento?",
+      "options": [
+        "¿Me",
+        "lo",
+        "prestas",
+        "un",
+        "momento?"
+      ],
+      "answer": "¿Me lo prestas un momento?",
+      "instruction": "Pronombres en pregunta",
+      "explanation": "Me lo prestas."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Se / los / compré / en / la / tienda",
+      "options": [
+        "Se",
+        "los",
+        "compré",
+        "en",
+        "la",
+        "tienda"
+      ],
+      "answer": "Se los compré en la tienda",
+      "instruction": "Plurales",
+      "explanation": "Se los compré."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Quiero / dárselo / antes / de / marcharme",
+      "options": [
+        "Quiero",
+        "dárselo",
+        "antes",
+        "de",
+        "marcharme"
+      ],
+      "answer": "Quiero dárselo antes de marcharme",
+      "instruction": "Enclisis",
+      "explanation": "Dárselo — enclítico."
+    },
+    {
+      "type": "sentence_building",
+      "question": "No / puedo / decírtelo / ahora",
+      "options": [
+        "No",
+        "puedo",
+        "decírtelo",
+        "ahora"
+      ],
+      "answer": "No puedo decírtelo ahora",
+      "instruction": "Enclisis negativa",
+      "explanation": "Decírtelo — enclítico."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Se / la / dedico / a / mi / madre",
+      "options": [
+        "Se",
+        "la",
+        "dedico",
+        "a",
+        "mi",
+        "madre"
+      ],
+      "answer": "Se la dedico a mi madre",
+      "instruction": "Pronombre femenino",
+      "explanation": "Se la dedico."
+    },
+    {
+      "type": "sentence_building",
+      "question": "¿Os / lo / explico / otra / vez?",
+      "options": [
+        "¿Os",
+        "lo",
+        "explico",
+        "otra",
+        "vez?"
+      ],
+      "answer": "¿Os lo explico otra vez?",
+      "instruction": "Voseo plural",
+      "explanation": "Os lo explico."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Me / lo / imaginaba / desde / el / principio",
+      "options": [
+        "Me",
+        "lo",
+        "imaginaba",
+        "desde",
+        "el",
+        "principio"
+      ],
+      "answer": "Me lo imaginaba desde el principio",
+      "instruction": "Imperfecto + pronombres",
+      "explanation": "Me lo imaginaba."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Dádmelo / cuando / puedas",
+      "options": [
+        "Dádmelo",
+        "cuando",
+        "puedas"
+      ],
+      "answer": "Dádmelo cuando puedas",
+      "instruction": "Imperativo plural",
+      "explanation": "Dádmelo — vosotros."
+    }
+  ],
+  "chapter-45-ser-estar-matices": [
+    {
+      "type": "sentence_building",
+      "question": "Es / listo / pero / hoy / no / está / muy / lúcido",
+      "options": [
+        "Es",
+        "listo",
+        "pero",
+        "hoy",
+        "no",
+        "está",
+        "muy",
+        "lúcido"
+      ],
+      "answer": "Es listo pero hoy no está muy lúcido",
+      "instruction": "Ser vs estar listo",
+      "explanation": "Es listo (inteligente) vs está lúcido."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Es / aburrido / el / profesor / está / aburrido / en / clase",
+      "options": [
+        "Es",
+        "aburrido",
+        "el",
+        "profesor",
+        "está",
+        "aburrido",
+        "en",
+        "clase"
+      ],
+      "answer": "Es aburrido el profesor está aburrido en clase",
+      "instruction": "Ser vs estar aburrido",
+      "explanation": "Es aburrido (causa) vs está aburrido (estado)."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Es / verde / la / camiseta / está / verde / de / envidia",
+      "options": [
+        "Es",
+        "verde",
+        "la",
+        "camiseta",
+        "está",
+        "verde",
+        "de",
+        "envidia"
+      ],
+      "answer": "Es verde la camiseta está verde de envidia",
+      "instruction": "Ser vs estar verde",
+      "explanation": "Color vs metáfora."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Es / mala / persona / pero / hoy / está / de / buen / humor",
+      "options": [
+        "Es",
+        "mala",
+        "persona",
+        "pero",
+        "hoy",
+        "está",
+        "de",
+        "buen",
+        "humor"
+      ],
+      "answer": "Es mala persona pero hoy está de buen humor",
+      "instruction": "Ser vs estar malo",
+      "explanation": "Personalidad vs estado."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Es / pesado / el / saco / está / pesado / hoy",
+      "options": [
+        "Es",
+        "pesado",
+        "el",
+        "saco",
+        "está",
+        "pesado",
+        "hoy"
+      ],
+      "answer": "Es pesado el saco está pesado hoy",
+      "instruction": "Ser vs estar pesado",
+      "explanation": "Cualidad vs peso actual."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Es / vivo / el / niño / está / muy / vivo / hoy",
+      "options": [
+        "Es",
+        "vivo",
+        "el",
+        "niño",
+        "está",
+        "muy",
+        "vivo",
+        "hoy"
+      ],
+      "answer": "Es vivo el niño está muy vivo hoy",
+      "instruction": "Ser vs estar vivo",
+      "explanation": "Inteligencia vs energía."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Es / raro / el / caso / está / raro / el / ambiente",
+      "options": [
+        "Es",
+        "raro",
+        "el",
+        "caso",
+        "está",
+        "raro",
+        "el",
+        "ambiente"
+      ],
+      "answer": "Es raro el caso está raro el ambiente",
+      "instruction": "Ser vs estar raro",
+      "explanation": "Cualidad vs ambiente."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Es / palido / de / natural / está / pálido / hoy",
+      "options": [
+        "Es",
+        "palido",
+        "de",
+        "natural",
+        "está",
+        "pálido",
+        "hoy"
+      ],
+      "answer": "Es pálido de natural está pálido hoy",
+      "instruction": "Ser vs estar pálido",
+      "explanation": "Rasgo vs estado."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Es / guapo / pero / está / feo / con / ese / corte",
+      "options": [
+        "Es",
+        "guapo",
+        "pero",
+        "está",
+        "feo",
+        "con",
+        "ese",
+        "corte"
+      ],
+      "answer": "Es guapo pero está feo con ese corte",
+      "instruction": "Ser vs estar guapo",
+      "explanation": "Atractivo vs apariencia."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Es / joven / pero / está / mayor / que / su / edad",
+      "options": [
+        "Es",
+        "joven",
+        "pero",
+        "está",
+        "mayor",
+        "que",
+        "su",
+        "edad"
+      ],
+      "answer": "Es joven pero está mayor que su edad",
+      "instruction": "Ser vs estar joven",
+      "explanation": "Edad vs apariencia."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Es / optimista / pero / hoy / está / deprimido",
+      "options": [
+        "Es",
+        "optimista",
+        "pero",
+        "hoy",
+        "está",
+        "deprimido"
+      ],
+      "answer": "Es optimista pero hoy está deprimido",
+      "instruction": "Ser vs estar",
+      "explanation": "Rasgo vs estado emocional."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Es / seguro / el / plan / no / estoy / seguro",
+      "options": [
+        "Es",
+        "seguro",
+        "el",
+        "plan",
+        "no",
+        "estoy",
+        "seguro"
+      ],
+      "answer": "Es seguro el plan no estoy seguro",
+      "instruction": "Ser vs estar seguro",
+      "explanation": "Plan seguro vs duda."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Es / cansado / el / discurso / estoy / cansado",
+      "options": [
+        "Es",
+        "cansado",
+        "el",
+        "discurso",
+        "estoy",
+        "cansado"
+      ],
+      "answer": "Es cansado el discurso estoy cansado",
+      "instruction": "Ser vs estar cansado",
+      "explanation": "Aburrido vs fatiga."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Es / malo / el / vino / está / mal / conservado",
+      "options": [
+        "Es",
+        "malo",
+        "el",
+        "vino",
+        "está",
+        "mal",
+        "conservado"
+      ],
+      "answer": "Es malo el vino está mal conservado",
+      "instruction": "Ser vs estar malo",
+      "explanation": "Calidad vs conservación."
+    },
+    {
+      "type": "sentence_building",
+      "question": "Es / profesor / pero / está / de / baja",
+      "options": [
+        "Es",
+        "profesor",
+        "pero",
+        "está",
+        "de",
+        "baja"
+      ],
+      "answer": "Es profesor pero está de baja",
+      "instruction": "Ser vs estar profesor",
+      "explanation": "Profesión vs situación laboral."
+    }
   ]
 } as const;

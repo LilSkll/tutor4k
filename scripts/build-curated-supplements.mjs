@@ -8,6 +8,11 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import {
+  SPANISH_C1_SB_SUPPLEMENTS,
+  SPANISH_C2_SUPPLEMENTS,
+  SPANISH_C2_THICK,
+} from "./data/spanish-c2-c1-supplements.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
@@ -945,6 +950,9 @@ function countExercises(data) {
 
 function main() {
   let spanish = mergeSupplements(SPANISH_CURATED_SUPPLEMENTS, SPANISH_TOP_UPS);
+  spanish = mergeSupplements(spanish, SPANISH_C2_SUPPLEMENTS);
+  spanish = mergeSupplements(spanish, SPANISH_C2_THICK);
+  spanish = mergeSupplements(spanish, SPANISH_C1_SB_SUPPLEMENTS);
   let english = mergeSupplements(ENGLISH_CURATED_SUPPLEMENTS, ENGLISH_TOP_UPS);
   english = mergeSupplements(english, C2_ENGLISH_THICK);
   writeModule("SPANISH_CURATED_SUPPLEMENTS", "spanish-curated-supplements", spanish);

@@ -12,6 +12,15 @@ export const ENGLISH_C2_THICK_CHAPTERS = new Set([
   "eng-ch25-between-lines",
 ]);
 
+/** Thicker pool for Spanish C2 chapters on /exercises. */
+export const SPANISH_C2_TR_EC_TARGET = 30;
+
+export const SPANISH_C2_THICK_CHAPTERS = new Set([
+  "chapter-28-conjetura",
+  "chapter-29-culto",
+  "chapter-30-ironia",
+]);
+
 /** How many bank items one practice round serves (per type / lesson block). */
 export const SESSION_EXERCISES = 5;
 

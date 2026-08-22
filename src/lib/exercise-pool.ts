@@ -29,10 +29,10 @@ export type PooledExercise = StaticExercise & {
   staticSource: true;
 };
 
-/** Aggregate all chapter-bound static exercises for a course. */
-export async function getExercisePool(
-  courseId: string,
-): Promise<PooledExercise[]> {
+/** In-memory pool cache — rebuilt once per warm server instance per course. */
+const poolCache = new Map<string, Promise<PooledExercise[]>>();
+
+async function buildExercisePool(courseId: string): Promise<PooledExercise[]> {
   const course = await getCourse(courseId);
   const pool: PooledExercise[] = [];
 
@@ -53,6 +53,18 @@ export async function getExercisePool(
   }
 
   return pool;
+}
+
+/** Aggregate all chapter-bound static exercises for a course. */
+export async function getExercisePool(
+  courseId: string,
+): Promise<PooledExercise[]> {
+  let pending = poolCache.get(courseId);
+  if (!pending) {
+    pending = buildExercisePool(courseId);
+    poolCache.set(courseId, pending);
+  }
+  return pending;
 }
 
 type PickInput = {
