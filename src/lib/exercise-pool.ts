@@ -71,11 +71,19 @@ type PickInput = {
 
 async function loadRankedCandidates(
   input: PickInput,
+  opts?: { relaxLevel?: boolean },
 ): Promise<RankedBankItem[]> {
   const pool = await getExercisePool(input.courseId);
   let candidates = input.mixed
     ? filterPoolByLevel(pool, input.level)
     : filterPoolByTypeLevel(pool, input.type, input.level);
+
+  if (opts?.relaxLevel) {
+    const byType = input.mixed
+      ? pool
+      : pool.filter((ex) => ex.type === input.type);
+    if (byType.length > candidates.length) candidates = byType;
+  }
 
   if (input.interfaceLanguage && input.interfaceLanguage !== "ru") {
     const usable = candidates.filter((ex) =>
@@ -157,6 +165,9 @@ export async function pickStaticExercises(
 ): Promise<PooledExercise[]> {
   const count = Math.max(1, Math.min(20, input.count));
   let ranked = await loadRankedCandidates(input);
+  if (ranked.length < count) {
+    ranked = await loadRankedCandidates(input, { relaxLevel: true });
+  }
   const results: PooledExercise[] = [];
 
   for (let i = 0; i < count && ranked.length > 0; i++) {
