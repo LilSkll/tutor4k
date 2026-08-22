@@ -8,7 +8,9 @@ import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { translate } from "@/lib/i18n";
 import type { GrammarLevel, InterfaceLanguage } from "@/types";
 import type { LocalizedGrammarTopicMeta } from "@/lib/grammar-topic-meta";
+import { ENGLISH_GRAMMAR_CURRICULUM_ORDER } from "@/config/english-curriculum-order";
 import { SPANISH_GRAMMAR_CURRICULUM_ORDER } from "@/config/grammar-curriculum-order";
+import { sortGrammarForCourse } from "@/lib/grammar-curriculum-sort";
 import { cn } from "@/lib/utils";
 
 const GrammarTopicDialog = dynamic(
@@ -19,18 +21,24 @@ const GrammarTopicDialog = dynamic(
   { ssr: false },
 );
 
-const SPANISH_CURRICULUM_RANK = new Map<string, number>(
-  SPANISH_GRAMMAR_CURRICULUM_ORDER.map((slug, index) => [slug, index]),
-);
+const CURRICULUM_RANK_BY_COURSE: Record<string, Map<string, number>> = {
+  spanish: new Map(
+    SPANISH_GRAMMAR_CURRICULUM_ORDER.map((slug, index) => [slug, index]),
+  ),
+  english: new Map(
+    ENGLISH_GRAMMAR_CURRICULUM_ORDER.map((slug, index) => [slug, index]),
+  ),
+};
 
 function sortByCurriculum(
   list: LocalizedGrammarTopicMeta[],
   courseId: string,
 ): LocalizedGrammarTopicMeta[] {
-  if (courseId !== "spanish") return list;
+  const rank = CURRICULUM_RANK_BY_COURSE[courseId];
+  if (!rank) return list;
   return [...list].sort((a, b) => {
-    const ra = SPANISH_CURRICULUM_RANK.get(a.slug) ?? 9999;
-    const rb = SPANISH_CURRICULUM_RANK.get(b.slug) ?? 9999;
+    const ra = rank.get(a.slug) ?? 9999;
+    const rb = rank.get(b.slug) ?? 9999;
     if (ra !== rb) return ra - rb;
     return a.slug.localeCompare(b.slug);
   });

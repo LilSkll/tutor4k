@@ -7,6 +7,9 @@ import type { CourseConfig, InterfaceLanguage, Level } from "@/types";
 export async function loadEnglishCourse(): Promise<CourseConfig> {
   const { ENGLISH_CHAPTERS, getEngChapter, getEngNextChapter } = await import("./chapters");
   const { ENGLISH_GRAMMAR, getEngGrammarTopic } = await import("./grammar");
+  const { sortEnglishGrammarByCurriculum } = await import(
+    "@/lib/grammar-curriculum-sort"
+  );
   const { ENGLISH_VOCAB } = await import("./vocabulary");
   const { getEnglishExercises } = await import("./exercises");
   const { buildEnglishPrompt } = await import("@/server/ai/prompts/english");
@@ -78,7 +81,7 @@ export async function loadEnglishCourse(): Promise<CourseConfig> {
     getChapters: () => ENGLISH_CHAPTERS,
     getChapter: getEngChapter,
     getNextChapter: getEngNextChapter,
-    getGrammar: () => ENGLISH_GRAMMAR,
+    getGrammar: () => sortEnglishGrammarByCurriculum(ENGLISH_GRAMMAR),
     getGrammarTopic: getEngGrammarTopic,
     getVocab: () => ENGLISH_VOCAB,
     getExercises: (slug: string) => getEnglishExercises(slug),

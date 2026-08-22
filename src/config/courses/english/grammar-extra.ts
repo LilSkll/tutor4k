@@ -9,7 +9,7 @@ export const ENGLISH_GRAMMAR_EXTRA: GrammarTopic[] = [
     level: "A1",
     category: "Артикли",
     summary: "Когда ставить a/an, the и когда артикль не нужен.",
-    content: `> **Перед этой темой:** A1. Сначала выбери **a / an / the / ничего** перед существительным.
+    content: `> **Перед этой темой:** вы знаете **be (am/is/are)**. **В этой теме:** **a / an / the** и zero article — первый выбор перед существительным.
 
 ## Articles — база
 
@@ -32,7 +32,9 @@ export const ENGLISH_GRAMMAR_EXTRA: GrammarTopic[] = [
     level: "A1",
     category: "Местоимения",
     summary: "my/your/his… и Saxon genitive: Anna's bag.",
-    content: `## Possessives
+    content: `> **Перед этой темой:** вы знаете **артикли**. **В этой теме:** **my/your/his** и **'s** — чьё это?
+
+## Possessives
 
 ### Determiner
 \`my, your, his, her, its, our, their\` + существительное: \`her phone\`
@@ -51,7 +53,9 @@ export const ENGLISH_GRAMMAR_EXTRA: GrammarTopic[] = [
     level: "A1",
     category: "Модальные",
     summary: "Умею / не умею, можно / нельзя: can, can't, Can I…?",
-    content: `## Can
+    content: `> **Перед этой темой:** вы прошли главу **can**. **В этой теме:** справочник — умение, разрешение, просьба (та же форма, три смысла).
+
+## Can
 
 ### Форма одна
 **Правило:** \`I can\`, \`she can\`, \`they can\` — форма не меняется.
@@ -73,7 +77,9 @@ export const ENGLISH_GRAMMAR_EXTRA: GrammarTopic[] = [
     level: "A2",
     category: "Существительные",
     summary: "much/many, some/any, a few/a little с countables.",
-    content: `## Countable vs uncountable
+    content: `> **Перед этой темой:** вы знаете **comparatives**. **В этой теме:** **countable vs uncountable** — many/much, a few/a little.
+
+## Countable vs uncountable
 
 ### Можно посчитать vs нельзя
 **Правило:** apple**s** — countable. water / advice — uncountable (обычно без -s).
@@ -100,7 +106,9 @@ export const ENGLISH_GRAMMAR_EXTRA: GrammarTopic[] = [
     level: "A2",
     category: "Времена",
     summary: "Have you ever…? just, already, yet — связь с настоящим.",
-    content: `## Present Perfect (intro)
+    content: `> **Перед этой темой:** вы знаете **countable/uncountable**. **В этой теме:** вводный **Present Perfect** — have/has + V3, ever/never, just/already/yet.
+
+## Present Perfect (intro)
 
 \`have/has + V3\`
 
@@ -117,7 +125,9 @@ export const ENGLISH_GRAMMAR_EXTRA: GrammarTopic[] = [
     level: "B1",
     category: "Условные",
     summary: "If + present; if + present → will; if + past → would.",
-    content: `## Conditionals
+    content: `> **Перед этой темой:** вы знаете **will / 1st conditional**. **В этой теме:** **zero, 1st, 2nd** — законы, реальное и гипотетическое будущее.
+
+## Conditionals
 
 ### Zero: If + Present, Present
 **Правило:** законы и привычки: \`If you heat ice, it **melts**.\`
@@ -139,7 +149,9 @@ export const ENGLISH_GRAMMAR_EXTRA: GrammarTopic[] = [
     level: "B1",
     category: "Речь",
     summary: "Say/tell + сдвиг времён; questions и requests.",
-    content: `## Reported speech
+    content: `> **Перед этой темой:** вы знаете **Present Perfect Continuous**. **В этой теме:** **reported speech** — say/tell, сдвиг времён, вопросы и просьбы.
+
+## Reported speech
 
 ### Сдвиг времён
 **Правило:** \`She said she **was** tired.\` Present → Past.
@@ -157,7 +169,9 @@ export const ENGLISH_GRAMMAR_EXTRA: GrammarTopic[] = [
     level: "B1",
     category: "Сложное предложение",
     summary: "Defining clauses: the man who…, the book which…",
-    content: `## Relative clauses
+    content: `> **Перед этой темой:** вы знаете **reported speech**. **В этой теме:** **who / which / that / whose** — определяющие придаточные.
+
+## Relative clauses
 
 - People: \`who / that\`
 - Things: \`which / that\`
@@ -173,7 +187,9 @@ Defining (без запятых): \`The teacher **who** helped me…\`
     level: "B2",
     category: "Залог",
     summary: "be + V3 во временах; каузатив have/get something done.",
-    content: `## Passive
+    content: `> **Перед этой темой:** вы знаете **passive (база)**. **В этой теме:** пассив во **всех временах** + **have something done**.
+
+## Passive
 
 \`The report **was written** yesterday.\`  
 \`A new law **has been passed**.\`  
@@ -189,7 +205,9 @@ Defining (без запятых): \`The teacher **who** helped me…\`
     level: "B2",
     category: "Модальные",
     summary: "Логические выводы о настоящем и прошлом.",
-    content: `## Deduction
+    content: `> **Перед этой темой:** вы прошли **B2 reported clauses**. **В этой теме:** **must/might/can't** — логический вывод о настоящем и прошлом.
+
+## Deduction
 
 | Modal | Meaning |
 |---|---|

@@ -113,18 +113,25 @@ const LEVEL_NEIGHBORS: Record<GrammarLevel, GrammarLevel[]> = {
   C2: ["C2", "C1"],
 };
 
+export function filterPoolByLevel(
+  pool: RankedBankItem["exercise"][],
+  level: GrammarLevel,
+): RankedBankItem["exercise"][] {
+  const atLevel = pool.filter((ex) => ex.level === level);
+  if (atLevel.length > 0) return atLevel;
+
+  const neighbors = new Set(LEVEL_NEIGHBORS[level] ?? [level]);
+  const near = pool.filter((ex) => neighbors.has(ex.level));
+  if (near.length > 0) return near;
+
+  return pool;
+}
+
 export function filterPoolByTypeLevel(
   pool: RankedBankItem["exercise"][],
   type: ExerciseType,
   level: GrammarLevel,
 ): RankedBankItem["exercise"][] {
   const byType = pool.filter((ex) => ex.type === type);
-  const atLevel = byType.filter((ex) => ex.level === level);
-  if (atLevel.length > 0) return atLevel;
-
-  const neighbors = new Set(LEVEL_NEIGHBORS[level] ?? [level]);
-  const near = byType.filter((ex) => neighbors.has(ex.level));
-  if (near.length > 0) return near;
-
-  return byType;
+  return filterPoolByLevel(byType, level);
 }

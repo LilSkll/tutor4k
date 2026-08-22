@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { Dumbbell } from "lucide-react";
 import { ExerciseRunner } from "@/components/exercises/exercise-runner";
 import { BackLink } from "@/components/shared/back-link";
@@ -25,12 +26,13 @@ export default async function ExercisesPage() {
         </p>
       </div>
 
-      {/* No outer Card — ExerciseRunner already uses Cards per phase */}
-      <ExerciseRunner
-        userLevel={profile?.level ?? null}
-        interfaceLanguage={lang}
-        activeCourseId={profile?.active_course_id}
-      />
+      <Suspense fallback={null}>
+        <ExerciseRunner
+          userLevel={profile?.level ?? null}
+          interfaceLanguage={lang}
+          activeCourseId={profile?.active_course_id}
+        />
+      </Suspense>
     </div>
   );
 }

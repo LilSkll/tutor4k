@@ -10,6 +10,7 @@ import { normalizeAnswer } from "@/lib/normalize-answer";
 import { getCourseLearningProfile } from "@/server/learning/student-profile";
 import { getExerciseProgressMap } from "@/server/learning/exercise-progress";
 import {
+  filterPoolByLevel,
   filterPoolByTypeLevel,
   pickAdaptiveFromCandidates,
   scoreBankExercise,
@@ -57,6 +58,8 @@ type PickInput = {
   courseId: string;
   type: ExerciseType;
   level: GrammarLevel;
+  /** When true, pick any exercise type at the given level. */
+  mixed?: boolean;
   topic?: string;
   preferredChapterSlugs?: string[];
   /** Skip ids already used in this session (continue rounds). */
@@ -69,7 +72,9 @@ async function loadRankedCandidates(
   input: PickInput,
 ): Promise<RankedBankItem[]> {
   const pool = await getExercisePool(input.courseId);
-  let candidates = filterPoolByTypeLevel(pool, input.type, input.level);
+  let candidates = input.mixed
+    ? filterPoolByLevel(pool, input.level)
+    : filterPoolByTypeLevel(pool, input.type, input.level);
 
   if (input.interfaceLanguage && input.interfaceLanguage !== "ru") {
     const usable = candidates.filter((ex) =>

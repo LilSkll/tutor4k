@@ -38,6 +38,10 @@ export function getQuestionGloss(
   const q = exercise.question?.trim() ?? "";
   if (!q) return null;
 
+  // Never show gloss for error correction — curated/inferred glosses often
+  // contain the corrected sentence and leak the answer.
+  if (exercise.type === "error_correction") return null;
+
   const gloss =
     exercise.questionTranslations?.[interfaceLanguage]?.trim() ?? "";
   if (!gloss) return null;

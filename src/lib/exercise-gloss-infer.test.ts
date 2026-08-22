@@ -58,4 +58,19 @@ describe("question gloss attach", () => {
     const gloss = inferQuestionGloss(ex, "en");
     expect(gloss).toBeTruthy();
   });
+
+  it("does not attach gloss for error_correction (answer leak)", () => {
+    const errEx: StaticExercise = {
+      id: "err",
+      type: "error_correction",
+      question: "I have much friends.",
+      answer: "I have many friends.",
+      instruction: "x",
+      explanation: "x",
+    };
+    const withGloss = attachQuestionGlosses(errEx);
+    expect(withGloss.questionTranslations?.ru).toBeUndefined();
+    expect(formatQuestionWithGloss(withGloss, "ru").gloss).toBeNull();
+    expect(reconstructSpanishSentence(errEx)).toBeNull();
+  });
 });

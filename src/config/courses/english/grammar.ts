@@ -18,7 +18,9 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
     level: "A1",
     category: "Глаголы",
     summary: "Глагол «быть» в настоящем: am, is, are.",
-    content: `## Глагол **be** — основа английского
+    content: `> **Перед этой темой:** это **первая** грамматическая тема курса. **В этой теме:** глагол **be** — am, is, are.
+
+## Глагол **be** — основа английского
 
 ### I am / he is / they are
 **Правило:** I → **am**, he/she/it → **is**, you/we/they → **are**.
@@ -47,7 +49,9 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
     level: "A1",
     category: "Времена",
     summary: "Настоящее простое: рутины, факты, регулярные действия.",
-    content: `## Present Simple — рутины и факты
+    content: `> **Перед этой темой:** вы знаете **be** и **артикли / притяжательные**. **В этой теме:** **Present Simple** — рутины и факты.
+
+## Present Simple — рутины и факты
 
 ### I/you/we/they + глагол; he/she/it + -s
 **Правило:** \`I work\` / \`They live\`. Для he/she/it — **workS / liveS**.
@@ -76,7 +80,9 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
     level: "A1",
     category: "Конструкции",
     summary: "Конструкция «есть/находится»: there is (ед.ч.), there are (мн.ч.).",
-    content: `## There is / There are — «там есть»
+    content: `> **Перед этой темой:** вы знаете **вопросы** и **Present Simple**. **В этой теме:** **there is / there are** — «есть / имеется».
+
+## There is / There are — «там есть»
 
 | Единственное | Множественное |
 |---|---|
@@ -104,7 +110,9 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
     level: "A1",
     category: "Модальные",
     summary: "Модальный глагол can: способность, возможность.",
-    content: `## Can / Can't — мочь, уметь
+    content: `> **Перед этой темой:** вы знаете **there is/are**. **В этой теме:** **can / can't** — умение, разрешение, просьба.
+
+## Can / Can't — мочь, уметь
 
 ### Форма одна на всех
 **Правило:** \`can\` **не** меняется: I/he/they **can**.
@@ -134,7 +142,9 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
     level: "A1",
     category: "Синтаксис",
     summary: "What, who, where, when, why, how — вопросы на английском.",
-    content: `## Wh- Questions — специальные вопросы
+    content: `> **Перед этой темой:** вы умеете **Present Simple**. **В этой теме:** вопросительные слова и порядок слов в вопросе.
+
+## Wh- Questions — специальные вопросы
 
 | Слово | Значение | Пример |
 |---|---|---|
@@ -161,7 +171,9 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
     level: "A1",
     category: "Предлоги",
     summary: "in, on, at, under, between, next to — где находится предмет.",
-    content: `## Prepositions of Place
+    content: `> **Перед этой темой:** вы знаете **can**. **В этой теме:** предлоги места — in, on, at, under, next to.
+
+## Prepositions of Place
 
 | Предлог | Использование | Пример |
 |---|---|---|
@@ -190,7 +202,9 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
     level: "A2",
     category: "Времена",
     summary: "Прошедшее простое: регулярные и неправильные глаголы.",
-    content: `## Past Simple — завершённые действия в прошлом
+    content: `> **Перед этой темой:** вы завершили **A1**. **В этой теме:** **Past Simple** — законченные действия в прошлом.
+
+## Past Simple — завершённые действия в прошлом
 
 ### Правильные глаголы → +**-ed**
 \`work → worked\`, \`play → played\`, \`study → studied\`
@@ -217,7 +231,9 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
     level: "A2",
     category: "Прилагательные",
     summary: "Сравнительная и превосходная степень прилагательных.",
-    content: `## Comparatives & Superlatives
+    content: `> **Перед этой темой:** вы знаете **Past Simple**. **В этой теме:** сравнения — more… than, the most…, better/worse.
+
+## Comparatives & Superlatives
 
 ### Правила
 | Длина | Сравнительная | Превосходная |
@@ -247,7 +263,9 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
     level: "A2",
     category: "Времена",
     summary: "Прошедшее с связью с настоящим: опыт, результаты.",
-    content: `## Present Perfect — опыт и результат
+    content: `> **Перед этой темой:** вы знаете **going to** и форму **have + V3**. **В этой теме:** **Present Perfect** — опыт и результат «к настоящему».
+
+## Present Perfect — опыт и результат
 
 ### Формула: **have/has** + **V3** (past participle)
 
@@ -277,7 +295,9 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
     level: "A2",
     category: "Времена",
     summary: "be going to — намерения и планы в ближайшем будущем.",
-    content: `## be going to — планы и намерения
+    content: `> **Перед этой темой:** вы прошли **countable/uncountable** и вводный **Present Perfect**. **В этой теме:** **be going to** — ближайшие планы.
+
+## be going to — планы и намерения
 
 ### Формула: **am/is/are + going to + V**
 
@@ -304,7 +324,9 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
     level: "A2",
     category: "Определители",
     summary: "some, any, much, many, a lot of с исчисляемыми и неисчисляемыми.",
-    content: `## Quantifiers — сколько?
+    content: `> **Перед этой темой:** вы знаете **Present Perfect**. **В этой теме:** **some/any, much/many, a lot of** — с исчисляемыми и неисчисляемыми.
+
+## Quantifiers — сколько?
 
 | Слово | С чем | Пример |
 |---|---|---|
@@ -329,7 +351,9 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
     level: "B1",
     category: "Времена / Условия",
     summary: "will/won't and the first conditional for real future situations.",
-    content: `## Future (will) & First Conditional
+    content: `> **Перед этой темой:** вы завершили **A2**. **В этой теме:** **will** и **первый тип условных** (If + Present, will…).
+
+## Future (will) & First Conditional
 
 ### will / won't
 \`I will help you\`, \`He won't come\`
@@ -348,7 +372,9 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
     level: "B1",
     category: "Модальные",
     summary: "should, must, have to — совет, обязанность и запрет.",
-    content: `## Modals — should / must / have to
+    content: `> **Перед этой темой:** вы знаете **zero / 1st / 2nd conditionals**. **В этой теме:** **should, must, have to** — совет и обязанность.
+
+## Modals — should / must / have to
 
 | Модальный | Значение | Пример |
 |---|---|---|
@@ -370,7 +396,9 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
     level: "B1",
     category: "Времена",
     summary: "Past continuous, used to, past perfect — рассказы о прошлом.",
-    content: `## Narrative Tenses — времена для рассказов
+    content: `> **Перед этой темой:** вы знаете **модальные**. **В этой теме:** **Past Continuous, used to, Past Perfect** — рассказ о прошлом.
+
+## Narrative Tenses — времена для рассказов
 
 ### Past Continuous: **was/were + V-ing**
 \`I was reading when she called.\`
@@ -400,7 +428,9 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
     level: "B1",
     category: "Времена",
     summary: "have/has been + V-ing: длительность действия.",
-    content: `## Present Perfect Continuous
+    content: `> **Перед этой темой:** вы знаете **narrative tenses**. **В этой теме:** **Present Perfect Continuous** — for/since, «сколько уже…».
+
+## Present Perfect Continuous
 
 ### Формула: **have/has been** + **V-ing**
 
@@ -426,7 +456,9 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
     level: "B2",
     category: "Условия",
     summary: "Нереальные условия: настоящее (2nd) и прошлое (3rd).",
-    content: `## Second & Third Conditionals
+    content: `> **Перед этой темой:** вы прошли **reported speech** и **relative clauses**. **В этой теме:** **2nd/3rd conditional**, wish / if only.
+
+## Second & Third Conditionals
 
 ### 2nd Conditional: нереальное настоящее
 **If + Past Simple, would + V**
@@ -449,7 +481,9 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
     level: "B2",
     category: "Залог",
     summary: "Пассивный залог во всех временах, have something done.",
-    content: `## Passive Voice — пассивный залог
+    content: `> **Перед этой темой:** вы знаете **условные**. **В этой теме:** **Passive voice** — be + V3 во всех временах.
+
+## Passive Voice — пассивный залог
 
 ### Формула: **be + V3 (past participle)**
 
@@ -476,7 +510,9 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
     level: "B2",
     category: "Синтаксис",
     summary: "Косвенная речь и относительные местоимения.",
-    content: `## Reported Speech & Relative Clauses
+    content: `> **Перед этой темой:** вы прошли **passive advanced**. **В этой теме:** **reported speech + relative clauses** на уровне B2.
+
+## Reported Speech & Relative Clauses
 
 ### Reported Speech — сдвиг времён
 \`He said: "I am tired" → He said he **was** tired.\`
@@ -505,7 +541,9 @@ Present → Past, will → would, can → could.
     level: "C1",
     category: "Синтаксис",
     summary: "Инверсия для усиления, cleft sentences, emphatic do/does.",
-    content: `## Inversion & Emphatic Structures (C1)
+    content: `> **Перед этой темой:** вы прошли блок **IELTS writing**. **В этой теме:** **инверсия** — Never have I…, Not only…
+
+## Inversion & Emphatic Structures (C1)
 
 ### Negative Adverbial Inversion
 **Never / Rarely / Hardly + auxiliary + subject + verb**
@@ -529,7 +567,9 @@ Present → Past, will → would, can → could.
     level: "C1",
     category: "Дискурс",
     summary: "Продвинутые средства связности речи.",
-    content: `## Discourse Devices (C1)
+    content: `> **Перед этой темой:** вы знаете **инверсию**. **В этой теме:** **discourse markers**, substitution, ellipsis.
+
+## Discourse Devices (C1)
 
 ### Substitution
 Замена повторов: \`one/ones\`, \`do/did\`, \`so\`
@@ -555,7 +595,9 @@ Present → Past, will → would, can → could.
     level: "C1",
     category: "Условия / Залог",
     summary: "Смешанные условные предложения и продвинутый пассив.",
-    content: `## Mixed Conditionals & Advanced Passives (C1)
+    content: `> **Перед этой темой:** вы знаете **discourse**. **В этой теме:** **mixed conditionals** — прошлое ↔ настоящее.
+
+## Mixed Conditionals & Advanced Passives (C1)
 
 ### Mixed Conditionals
 Сочетание времён условия и результата:
@@ -582,7 +624,9 @@ Present → Past, will → would, can → could.
     level: "C1",
     category: "Подготовка к экзамену",
     summary: "Комплексное повторение всех тем + навыки IELTS.",
-    content: `## Comprehensive Review & IELTS Preparation
+    content: `> **Перед этой темой:** вы прошли **C1 structures**. **В этой теме:** **сводка IELTS** — повтор ключевых структур.
+
+## Comprehensive Review & IELTS Preparation
 
 ### Ключевые темы для повторения:
 1. **Все типы conditionals** (0, 1, 2, 3, mixed)
@@ -611,7 +655,9 @@ Present → Past, will → would, can → could.
     level: "C2",
     category: "Синтаксис",
     summary: "It was John who…, What I need is…, эмфатическое do — выделение и фокус.",
-    content: `## Cleft sentences — «расколотые» предложения
+    content: `> **Перед этой темой:** вы прошли **IELTS review**. **В этой теме:** **cleft sentences** — It was John who…, What I need is…
+
+## Cleft sentences — «расколотые» предложения
 
 Носители перестраивают фразу, чтобы **выделить** главное.
 
@@ -650,7 +696,9 @@ Present → Past, will → would, can → could.
     level: "C2",
     category: "Синтаксис",
     summary: "So do I, I hope so, if not — как носители не повторяют слова.",
-    content: `## Ellipsis & substitution — экономия по-английски
+    content: `> **Перед этой темой:** вы знаете **cleft emphasis**. **В этой теме:** **ellipsis & substitution** — So do I, I hope so.
+
+## Ellipsis & substitution — экономия по-английски
 
 Носители **не повторяют** сказанное — заменяют или опускают.
 
@@ -694,7 +742,9 @@ Present → Past, will → would, can → could.
     level: "C2",
     category: "Стилистика",
     summary: "It could be argued…, not entirely convinced, британский understatement и вежливая критика.",
-    content: `## Hedging — искусство не говорить прямо
+    content: `> **Перед этой темой:** вы знаете **ellipsis**. **В этой теме:** **hedging** — arguably, I was wondering if…, British understatement.
+
+## Hedging — искусство не говорить прямо
 
 C2 — это умение **смягчать**, **дистанцироваться** и читать сдержанность между строк.
 

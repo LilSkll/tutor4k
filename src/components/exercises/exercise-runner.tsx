@@ -1,6 +1,8 @@
 "use client";
 
 import * as React from "react";
+import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 import {
   ArrowRight,
   Check,
@@ -18,6 +20,7 @@ import { Separator } from "@/components/ui/separator";
 import { useExerciseSessionStore } from "@/stores";
 import { EXERCISE_TYPES, PRACTICE_LEVELS } from "@/config/app";
 import { SESSION_EXERCISES } from "@/lib/exercise-bank";
+import { parseHomeworkExerciseSearchParams } from "@/lib/homework-exercise-link";
 import { formatSessionTutorSummary } from "@/lib/tutor-feedback";
 import { useInterfaceLanguage, useActiveCourseId } from "@/hooks/use-interface-language";
 import { translate } from "@/lib/i18n";
@@ -58,6 +61,23 @@ type AttemptRecord = {
 
 type Phase = "config" | "loading" | "answering" | "result" | "summary";
 
+type ExerciseTypeParam = ExerciseType | "mixed";
+
+const VALID_LEVELS = new Set<GrammarLevel>(PRACTICE_LEVELS.map((l) => l.value));
+
+function resolveLevelParam(raw: string | null, fallback: GrammarLevel): GrammarLevel {
+  if (raw && VALID_LEVELS.has(raw as GrammarLevel)) return raw as GrammarLevel;
+  return fallback;
+}
+
+function resolveTypeParam(raw: string | null): ExerciseTypeParam {
+  if (raw === "mixed") return "mixed";
+  if (raw && EXERCISE_TYPES.some((t) => t.value === raw)) {
+    return raw as ExerciseType;
+  }
+  return "multiple_choice";
+}
+
 export function ExerciseRunner({
   userLevel,
   interfaceLanguage: serverLanguage,
@@ -67,8 +87,24 @@ export function ExerciseRunner({
   interfaceLanguage?: InterfaceLanguage;
   activeCourseId?: string | null;
 }) {
+  const searchParams = useSearchParams();
+  const homeworkParams = React.useMemo(
+    () => parseHomeworkExerciseSearchParams(searchParams),
+    [searchParams],
+  );
+
+  const defaultLevel = userLevel ?? "A1";
   const [type, setType] = React.useState<ExerciseType>("multiple_choice");
-  const [level, setLevel] = React.useState<GrammarLevel>(userLevel ?? "A1");
+  const [exerciseTypeParam, setExerciseTypeParam] =
+    React.useState<ExerciseTypeParam>("multiple_choice");
+  const [level, setLevel] = React.useState<GrammarLevel>(defaultLevel);
+  const [sessionSize, setSessionSize] = React.useState(SESSION_EXERCISES);
+  const [homeworkAssignmentId, setHomeworkAssignmentId] = React.useState<
+    string | null
+  >(null);
+  const [homeworkCompleted, setHomeworkCompleted] = React.useState(false);
+  const [markingHomework, setMarkingHomework] = React.useState(false);
+  const homeworkAutoStarted = React.useRef(false);
   const [deleMode, setDeleMode] = React.useState(false);
   const [queue, setQueue] = React.useState<GeneratedExercise[]>([]);
   const [queueIdx, setQueueIdx] = React.useState(0);
@@ -94,54 +130,128 @@ export function ExerciseRunner({
     translate(key, language, vars);
 
   const exercise = queue[queueIdx] ?? null;
+  const isHomeworkMode = Boolean(homeworkAssignmentId);
+  const generateType: ExerciseTypeParam = exerciseTypeParam;
 
-  const startRound = async (excludeIds: string[]) => {
-    setPhase("loading");
-    setUserAnswer("");
-    setSelectedOption(null);
-    setResult(null);
-    setRoundAttempts([]);
-    setSessionSummary(null);
-    try {
-      const res = await fetch("/api/exercises/generate", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          type,
-          level,
-          count: SESSION_EXERCISES,
-          excludeIds,
-          ...(deleMode && activeCourseId === "spanish"
-            ? { exam: "DELE" as const }
-            : {}),
-        }),
-      });
-      if (!res.ok) throw new Error("Failed");
-      const data = (await res.json()) as { exercises: GeneratedExercise[] };
-      if (!data.exercises?.length) throw new Error("Empty");
-      setQueue(data.exercises);
-      setQueueIdx(0);
-      const newIds = data.exercises
-        .map((ex) => ex.exerciseId)
-        .filter((id): id is string => Boolean(id));
-      setSeenIds((prev) => [...prev, ...newIds]);
-      if (deleMode && activeCourseId === "spanish") {
-        trackEvent("dele_round_start", {
-          type,
-          level,
-          count: data.exercises.length,
-        });
-      }
-      setPhase("answering");
-    } catch {
-      toast.error(t("exercises.toastGenerateFail"));
-      setPhase("config");
-    }
+  type RoundConfig = {
+    type: ExerciseTypeParam;
+    level: GrammarLevel;
+    count: number;
+    exam?: boolean;
   };
+
+  const startRound = React.useCallback(
+    async (excludeIds: string[], override?: Partial<RoundConfig>) => {
+      const roundType = override?.type ?? exerciseTypeParam;
+      const roundLevel = override?.level ?? level;
+      const roundCount = override?.count ?? sessionSize;
+      const roundDele = override?.exam ?? deleMode;
+
+      setPhase("loading");
+      setUserAnswer("");
+      setSelectedOption(null);
+      setResult(null);
+      setRoundAttempts([]);
+      setSessionSummary(null);
+      try {
+        const res = await fetch("/api/exercises/generate", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            type: roundType,
+            level: roundLevel,
+            count: roundCount,
+            excludeIds,
+            ...(roundDele &&
+            activeCourseId === "spanish" &&
+            roundType !== "mixed"
+              ? { exam: "DELE" as const }
+              : {}),
+          }),
+        });
+        if (!res.ok) throw new Error("Failed");
+        const data = (await res.json()) as { exercises: GeneratedExercise[] };
+        if (!data.exercises?.length) throw new Error("Empty");
+        setQueue(data.exercises);
+        setQueueIdx(0);
+        const newIds = data.exercises
+          .map((ex) => ex.exerciseId)
+          .filter((id): id is string => Boolean(id));
+        setSeenIds((prev) => [...prev, ...newIds]);
+        if (roundDele && activeCourseId === "spanish") {
+          trackEvent("dele_round_start", {
+            type: roundType === "mixed" ? "mixed" : roundType,
+            level: roundLevel,
+            count: data.exercises.length,
+          });
+        }
+        setPhase("answering");
+      } catch {
+        toast.error(t("exercises.toastGenerateFail"));
+        setPhase("config");
+      }
+    },
+    [
+      exerciseTypeParam,
+      level,
+      sessionSize,
+      deleMode,
+      activeCourseId,
+      t,
+    ],
+  );
+
+  React.useEffect(() => {
+    const resolvedType = resolveTypeParam(homeworkParams.type);
+    const resolvedLevel = resolveLevelParam(homeworkParams.level, defaultLevel);
+    const count = homeworkParams.count ?? SESSION_EXERCISES;
+
+    setExerciseTypeParam(resolvedType);
+    if (resolvedType !== "mixed") setType(resolvedType);
+    setLevel(resolvedLevel);
+    setSessionSize(count);
+    setHomeworkAssignmentId(homeworkParams.assignmentId);
+    if (homeworkParams.exam) setDeleMode(true);
+
+    if (homeworkAutoStarted.current) return;
+    if (
+      !homeworkParams.assignmentId &&
+      !homeworkParams.type &&
+      !homeworkParams.level
+    ) {
+      return;
+    }
+    homeworkAutoStarted.current = true;
+    void startRound([], {
+      type: resolvedType,
+      level: resolvedLevel,
+      count,
+      exam: homeworkParams.exam,
+    });
+  }, [homeworkParams, defaultLevel, startRound]);
 
   const generate = () => {
     setSeenIds([]);
     void startRound([]);
+  };
+
+  const markHomeworkComplete = async () => {
+    if (!homeworkAssignmentId || markingHomework || homeworkCompleted) return;
+    setMarkingHomework(true);
+    try {
+      const res = await fetch(
+        `/api/student/homework/${homeworkAssignmentId}/complete`,
+        { method: "POST" },
+      );
+      if (!res.ok) throw new Error("fail");
+      setHomeworkCompleted(true);
+      window.dispatchEvent(new Event("homework:changed"));
+      toast.success(t("homework.completed"));
+    } catch {
+      toast.error(t("homework.completeFail"));
+    } finally {
+      setMarkingHomework(false);
+    }
   };
 
   const continueRound = () => {
@@ -225,12 +335,43 @@ export function ExerciseRunner({
     setRoundAttempts([]);
     setSessionSummary(null);
     setResult(null);
+    if (isHomeworkMode) {
+      void startRound([]);
+      return;
+    }
     setPhase("config");
   };
 
+  const homeworkTypeLabel =
+    generateType === "mixed"
+      ? t("exercises.type.mixed.label")
+      : t(`exercises.type.${generateType}.label`);
+
   return (
     <div className="space-y-6">
-      {phase !== "config" && (
+      {isHomeworkMode && (
+        <Card className="border-primary/30 bg-primary/5">
+          <CardContent className="py-4 space-y-2">
+            <p className="text-sm font-semibold text-primary">
+              {t("exercises.homeworkBannerTitle")}
+            </p>
+            <p className="text-sm text-muted-foreground">
+              {t("exercises.homeworkBannerDesc", {
+                count: sessionSize,
+                level,
+                type: homeworkTypeLabel,
+              })}
+            </p>
+            <Link
+              href="/homework"
+              className="text-xs text-primary hover:underline"
+            >
+              {t("exercises.homeworkBackLink")}
+            </Link>
+          </CardContent>
+        </Card>
+      )}
+      {phase !== "config" && !isHomeworkMode && (
         <button
           type="button"
           onClick={backToConfig}
@@ -263,7 +404,20 @@ export function ExerciseRunner({
         </Card>
       )}
 
-      {phase === "config" && (
+      {phase === "config" && isHomeworkMode && (
+        <Card>
+          <CardContent className="py-6 space-y-3 text-center">
+            <p className="text-sm text-muted-foreground">
+              {t("exercises.homeworkLoadFail")}
+            </p>
+            <Button variant="gradient" onClick={generate}>
+              {t("exercises.homeworkRetryBtn")}
+            </Button>
+          </CardContent>
+        </Card>
+      )}
+
+      {phase === "config" && !isHomeworkMode && (
         <div className="space-y-6">
           <div>
             <h3 className="font-semibold mb-3">{t("exercises.typeLabel")}</h3>
@@ -330,12 +484,12 @@ export function ExerciseRunner({
           </div>
 
           <p className="text-sm text-muted-foreground">
-            {t("exercises.sessionHint", { count: SESSION_EXERCISES })}
+            {t("exercises.sessionHint", { count: sessionSize })}
           </p>
 
           <Button variant="gradient" size="lg" onClick={generate} className="w-full">
             <Sparkles className="h-4 w-4" />
-            {t("exercises.startRoundBtn", { count: SESSION_EXERCISES })}
+            {t("exercises.startRoundBtn", { count: sessionSize })}
           </Button>
         </div>
       )}
@@ -419,14 +573,34 @@ export function ExerciseRunner({
 
             <div className="grid gap-2 sm:grid-cols-2">
               <Button variant="gradient" onClick={continueRound}>
-                {t("exercises.continueRoundBtn", { count: SESSION_EXERCISES })}
+                {t("exercises.continueRoundBtn", { count: sessionSize })}
                 <ArrowRight className="h-4 w-4" />
               </Button>
-              <Button variant="outline" onClick={backToConfig}>
-                <RotateCcw className="h-4 w-4" />
-                {t("exercises.changeSettingsBtn")}
-              </Button>
+              {isHomeworkMode && !homeworkCompleted ? (
+                <Button
+                  variant="outline"
+                  onClick={() => void markHomeworkComplete()}
+                  disabled={markingHomework}
+                >
+                  {markingHomework ? (
+                    <Loader2 className="h-4 w-4 animate-spin" />
+                  ) : (
+                    <Check className="h-4 w-4" />
+                  )}
+                  {t("homework.markDone")}
+                </Button>
+              ) : (
+                <Button variant="outline" onClick={backToConfig}>
+                  <RotateCcw className="h-4 w-4" />
+                  {isHomeworkMode
+                    ? t("exercises.homeworkRetryBtn")
+                    : t("exercises.changeSettingsBtn")}
+                </Button>
+              )}
             </div>
+            {isHomeworkMode && homeworkCompleted && (
+              <p className="text-sm text-success">{t("homework.completed")}</p>
+            )}
           </CardContent>
         </Card>
       )}

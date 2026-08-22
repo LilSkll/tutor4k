@@ -15,7 +15,9 @@ export const ENGLISH_GRAMMAR_EXAM_WRITING: GrammarTopic[] = [
     exam: "IELTS",
     summary:
       "GT Writing Task 1: дружеское письмо — регистр, 4 блока, объём ~150 слов, все bullet points.",
-    content: `## IELTS General Training — Informal letter (Task 1)
+    content: `> **Перед этой темой:** вы знаете **modals of deduction**. **В этой теме:** **IELTS GT Task 1** — неформальное письмо другу (~150 слов, 3 bullets).
+
+## IELTS General Training — Informal letter (Task 1)
 
 Пишете **другу / родственнику / знакомому**. На экзамене дают ситуацию + **три bullet points**. Каждый пункт должен быть раскрыт — иначе падает **Task Achievement**.
 
@@ -85,7 +87,9 @@ export const ENGLISH_GRAMMAR_EXAM_WRITING: GrammarTopic[] = [
     exam: "IELTS",
     summary:
       "GT Task 1 formal (B2): жалоба, запрос, заявка — Yours faithfully/sincerely, 5 блоков.",
-    content: `## IELTS General Training — Formal letter (Task 1)
+    content: `> **Перед этой темой:** вы знаете **informal letter**. **В этой теме:** **формальное письмо** — Yours faithfully/sincerely, purpose в первом абзаце.
+
+## IELTS General Training — Formal letter (Task 1)
 
 Пишете **незнакомому** человеку или в организацию: жалоба, запрос информации, заявка, извинение от компании и т.п. Три bullet points обязательны.
 
@@ -173,7 +177,9 @@ export const ENGLISH_GRAMMAR_EXAM_WRITING: GrammarTopic[] = [
     exam: "IELTS",
     summary:
       "Task 2: 4 абзаца, типы вопросов, paraphrase + thesis, объём 250+, что снимает баллы за TA.",
-    content: `## IELTS Academic Writing Task 2 — Essay
+    content: `> **Перед этой темой:** вы знаете **Task 1 report**. **В этой теме:** **Task 2** — 4 абзаца, тип вопроса, thesis, ≥250 слов.
+
+## IELTS Academic Writing Task 2 — Essay
 
 Второе задание академического / GT модуля. Оценка за Task Response зависит от **ответа на точный тип вопроса**, а не от «красивого текста вообще».
 
@@ -245,7 +251,9 @@ export const ENGLISH_GRAMMAR_EXAM_WRITING: GrammarTopic[] = [
     exam: "IELTS",
     summary:
       "Coherence & Cohesion: линкеры по функции, referencing, единство абзаца, антипаттерны Band 5–6.",
-    content: `## Coherence & Cohesion (IELTS Writing Task 1 & 2)
+    content: `> **Перед этой темой:** вы знаете **essay structure**. **В этой теме:** **cohesion** — линкеры по функции, referencing, единство абзаца.
+
+## Coherence & Cohesion (IELTS Writing Task 1 & 2)
 
 Этот критерий оценивает **не количество** слов \`However\`, а читаемость: абзацы, прогрессия идей, ссылки назад без повторов.
 
@@ -308,7 +316,9 @@ export const ENGLISH_GRAMMAR_EXAM_WRITING: GrammarTopic[] = [
     exam: "IELTS",
     summary:
       "Academic Task 1: paraphrase, overview, key features; язык трендов; ~150 слов; без спекуляций.",
-    content: `## IELTS Academic Writing Task 1 — Report
+    content: `> **Перед этой темой:** вы знаете **Cambridge letter/email**. **В этой теме:** **IELTS Academic Task 1** — overview + тренды, без мнения.
+
+## IELTS Academic Writing Task 1 — Report
 
 Описываете данные: линейный/столбчатый график, pie, table, map, process. **Не** пишете мнение и **не** объясняете «почему в жизни так вышло».
 
@@ -380,7 +390,9 @@ export const ENGLISH_GRAMMAR_EXAM_WRITING: GrammarTopic[] = [
     exam: "Cambridge",
     summary:
       "B2 First Writing: formal/informal letter & email — тон, layout, целевая аудитория, критерии CA.",
-    content: `## Cambridge B2 First — Letter / Email
+    content: `> **Перед этой темой:** вы знаете **IELTS formal letter**. **В этой теме:** **Cambridge B2** — letter/email, три регистра под адресата.
+
+## Cambridge B2 First — Letter / Email
 
 В Writing Part 2 часто выбирают **letter** или **email**. Оценка идёт по четырём шкалам Cambridge; для письма критичен **Communicative Achievement** — тон должен совпасть с адресатом.
 
@@ -506,7 +518,9 @@ export const ENGLISH_GRAMMAR_EXAM_WRITING: GrammarTopic[] = [
     exam: "Cambridge",
     summary:
       "B2 First / C1 Advanced: различия essay vs article — тон, структура, notes, критерии Content и CA.",
-    content: `## Cambridge Writing — Essay vs Article
+    content: `> **Перед этой темой:** вы знаете **cohesion**. **В этой теме:** **essay vs article** — тон, заголовок, notes Cambridge.
+
+## Cambridge Writing — Essay vs Article
 
 В B2 First и C1 Advanced эссе и article — **разные жанры**. Перепутать тон = удар по Communicative Achievement, даже если идеи умные.
 
@@ -613,7 +627,9 @@ export const ENGLISH_GRAMMAR_EXAM_WRITING: GrammarTopic[] = [
     exam: "IELTS",
     summary:
       "Task 2: сила утверждения, hedging, уступка+контратака, академические фразы; что отличает Band 7+.",
-    content: `## Opinion & argumentation language (IELTS Task 2 / Academic essays)
+    content: `> **Перед этой темой:** вы знаете **essay vs article**. **В этой теме:** **язык мнения** — сила утверждения, hedge, уступка + контратака.
+
+## Opinion & argumentation language (IELTS Task 2 / Academic essays)
 
 Экзаменатор смотрит не только *что* вы думаете, но *насколько точно* вы это формулируете. Band 7+ = контроль силы утверждения + развитие довода.
 
@@ -691,7 +707,9 @@ export const ENGLISH_GRAMMAR_EXAM_WRITING: GrammarTopic[] = [
     exam: "Cambridge",
     summary:
       "Три уровня регистра для exam writing: informal / neutral / formal — таблицы замен, тест WhatsApp, типичные штрафы.",
-    content: `## Register shifting (письмо на IELTS / Cambridge / классные ДЗ)
+    content: `> **Перед этой темой:** вы знаете **opinion language**. **В этой теме:** **register shift** — informal / neutral / formal от greeting до sign-off.
+
+## Register shifting (письмо на IELTS / Cambridge / классные ДЗ)
 
 **Register** — степень официальности. На письме это правило, не «вкус»: неверный регистр режет Communicative Achievement (Cambridge) и Task Achievement / тон (IELTS letters).
 

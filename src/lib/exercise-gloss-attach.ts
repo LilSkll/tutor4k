@@ -12,6 +12,10 @@ const GLOSS_LANGS: InterfaceLanguage[] = ["ru", "en", "es", "de"];
 export function attachQuestionGlosses<T extends StaticExercise>(
   exercise: T,
 ): T {
+  if (exercise.type === "error_correction") {
+    return { ...exercise, questionTranslations: {} };
+  }
+
   const questionTranslations: Partial<Record<InterfaceLanguage, string>> = {
     ...(exercise.questionTranslations ?? {}),
   };

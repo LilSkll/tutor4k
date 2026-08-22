@@ -24,7 +24,7 @@ export function reconstructSpanishSentence(
   }
 
   if (exercise.type === "error_correction") {
-    return exercise.answer?.trim() ?? null;
+    return null;
   }
 
   if (exercise.type === "fill_blank" && q.includes("___")) {

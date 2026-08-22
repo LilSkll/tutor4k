@@ -12,7 +12,9 @@ import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { getCourseTitle } from "@/config/courses";
 import { resolveHomeworkChapterTitle } from "@/lib/homework-chapter-title";
 import { EmptyState } from "@/components/shared/empty-state";
+import { buildHomeworkExerciseUrl } from "@/lib/homework-exercise-link";
 import type {
+  ExerciseSetAssignmentPayload,
   NotificationDTO,
   TeacherAssignmentDTO,
   WritingAssignmentPayload,
@@ -332,20 +334,47 @@ export function StudentHomeworkClient() {
                     ) : null}
                   </div>
                 ) : (
-                  <p className="text-sm text-muted-foreground">
-                    {t("homework.exerciseHint", {
-                      level:
-                        ("level" in a.payload && a.payload.level) || "—",
-                      count:
-                        ("count" in a.payload && a.payload.count) || 5,
-                    })}{" "}
-                    <Link
-                      href="/exercises"
-                      className="text-primary hover:underline"
-                    >
-                      {t("homework.openExercises")}
-                    </Link>
-                  </p>
+                  <div className="space-y-2">
+                    {(() => {
+                      const payload = a.payload as ExerciseSetAssignmentPayload;
+                      const rawType = payload.type || "mixed";
+                      const typeLabel =
+                        rawType === "mixed"
+                          ? t("exercises.type.mixed.label")
+                          : t(`exercises.type.${rawType}.label`);
+                      return (
+                        <p className="text-sm text-muted-foreground">
+                          {t("homework.exerciseHint", {
+                            level: payload.level || "—",
+                            count: payload.count || 5,
+                            type: typeLabel,
+                          })}
+                        </p>
+                      );
+                    })()}
+                    {a.status === "assigned" ? (
+                      <Button size="sm" asChild>
+                        <Link
+                          href={buildHomeworkExerciseUrl(
+                            a.id,
+                            a.payload as ExerciseSetAssignmentPayload,
+                          )}
+                        >
+                          {t("homework.startExercises")}
+                        </Link>
+                      </Button>
+                    ) : (
+                      <Link
+                        href={buildHomeworkExerciseUrl(
+                          a.id,
+                          a.payload as ExerciseSetAssignmentPayload,
+                        )}
+                        className="text-sm text-primary hover:underline"
+                      >
+                        {t("homework.openExercises")}
+                      </Link>
+                    )}
+                  </div>
                 )}
 
                 {note && (

@@ -1,6 +1,7 @@
 import type { StaticExercise } from "@/types";
 import { withExerciseIds } from "@/lib/exercise-bank";
 import { expandEnglishChapterBank } from "@/config/exercise-banks/english-expand";
+import { ENGLISH_CURRICULUM_CHAPTER_EXERCISES } from "./chapter-exercises-curriculum";
 import { getEngChapter } from "./chapters";
 
 // =====================================================================
@@ -199,7 +200,10 @@ export const ENGLISH_EXERCISES: Record<string, Draft[]> = {
 
 /** Chapter exercises with stable ids + expanded permanent bank packs. */
 export function getEnglishExercises(chapterSlug: string): StaticExercise[] {
-  const curated = ENGLISH_EXERCISES[chapterSlug] ?? [];
+  const curated = [
+    ...(ENGLISH_EXERCISES[chapterSlug] ?? []),
+    ...(ENGLISH_CURRICULUM_CHAPTER_EXERCISES[chapterSlug] ?? []),
+  ];
   const expanded = expandEnglishChapterBank(chapterSlug, curated);
   const chapter = getEngChapter(chapterSlug);
   const allowed = chapter?.exerciseTypes;

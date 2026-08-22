@@ -26,7 +26,7 @@ import type {
 export async function POST(req: NextRequest) {
   try {
     const body = (await req.json()) as {
-      type: ExerciseType;
+      type: ExerciseType | "mixed";
       level: GrammarLevel;
       topic?: string;
       count?: number;
@@ -34,7 +34,9 @@ export async function POST(req: NextRequest) {
       exam?: "DELE";
     };
 
-    if (!body.type || !body.level) {
+    const isMixed = body.type === "mixed";
+
+    if ((!body.type && !isMixed) || !body.level) {
       return NextResponse.json(
         { error: "type and level are required" },
         { status: 400 },
@@ -94,9 +96,9 @@ export async function POST(req: NextRequest) {
         ? body.count
         : SESSION_EXERCISES;
 
-    if (body.exam === "DELE" && courseId === "spanish") {
+    if (body.exam === "DELE" && courseId === "spanish" && !isMixed) {
       const exercises = await pickDeleSession({
-        type: body.type,
+        type: body.type as ExerciseType,
         level: body.level,
         count,
         excludeIds: body.excludeIds ?? [],
@@ -126,7 +128,8 @@ export async function POST(req: NextRequest) {
 
     const picked = await pickStaticExercises({
       courseId,
-      type: body.type,
+      type: isMixed ? "multiple_choice" : (body.type as ExerciseType),
+      mixed: isMixed,
       level: body.level,
       topic: body.topic,
       preferredChapterSlugs,

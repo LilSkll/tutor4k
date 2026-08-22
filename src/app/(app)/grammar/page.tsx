@@ -5,23 +5,20 @@ import { getCurrentProfile } from "@/server/actions/data";
 import { GrammarExplorer } from "@/components/grammar/grammar-explorer";
 import { localizeGrammarTopicMetaList } from "@/lib/grammar-topic-localize";
 import { toGrammarTopicMetaList } from "@/lib/grammar-topic-meta";
-import { sortGrammarTopicsByCurriculum } from "@/lib/grammar-curriculum-sort";
+import { sortGrammarForCourse } from "@/lib/grammar-curriculum-sort";
 import { translate } from "@/lib/i18n";
 import type { InterfaceLanguage } from "@/types";
 
 const getCachedGrammarTopics = unstable_cache(
   async (courseId: string, lang: InterfaceLanguage) => {
     const course = await getCourse(courseId);
-    const topics =
-      courseId === "spanish"
-        ? sortGrammarTopicsByCurriculum(course.getGrammar())
-        : course.getGrammar();
+    const topics = sortGrammarForCourse(courseId, course.getGrammar());
     return localizeGrammarTopicMetaList(
       toGrammarTopicMetaList(topics),
       lang,
     );
   },
-  ["grammar-topic-meta-v2"],
+  ["grammar-topic-meta-v3"],
   { revalidate: 3600 },
 );
 
