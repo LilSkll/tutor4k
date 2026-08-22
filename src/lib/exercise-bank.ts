@@ -3,8 +3,11 @@ import type { ExerciseType, GrammarLevel, StaticExercise } from "@/types";
 /** Target depth for the permanent adaptive bank (per type, per chapter). */
 export const TARGET_EXERCISES_PER_TYPE = 20;
 
+/** Thicker TR/EC pool for advanced / exam chapters on /exercises. */
+export const THICK_TR_EC_TARGET = 30;
+
 /** Thicker TR/EC pool for C2 English chapters on /exercises. */
-export const ENGLISH_C2_TR_EC_TARGET = 30;
+export const ENGLISH_C2_TR_EC_TARGET = THICK_TR_EC_TARGET;
 
 export const ENGLISH_C2_THICK_CHAPTERS = new Set([
   "eng-ch23-spotlight",
@@ -13,13 +16,38 @@ export const ENGLISH_C2_THICK_CHAPTERS = new Set([
 ]);
 
 /** Thicker pool for Spanish C2 chapters on /exercises. */
-export const SPANISH_C2_TR_EC_TARGET = 30;
+export const SPANISH_C2_TR_EC_TARGET = THICK_TR_EC_TARGET;
+
+export const SPANISH_C1_THICK_CHAPTERS = new Set([
+  "chapter-16-perifrasis",
+  "chapter-17-dele",
+  "chapter-42-subjuntivo-avanzado",
+  "chapter-43-indirecto-avanzado",
+  "chapter-44-pronombres-avanzado",
+  "chapter-45-ser-estar-matices",
+]);
 
 export const SPANISH_C2_THICK_CHAPTERS = new Set([
   "chapter-27-hendidas",
   "chapter-28-conjetura",
   "chapter-29-culto",
   "chapter-30-ironia",
+]);
+
+export const ENGLISH_C1_EXAM_THICK_CHAPTERS = new Set([
+  "eng-ch13-advanced-structures",
+  "eng-ch14-art-language",
+  "eng-ch15-mastery",
+  "eng-ch16-ielts",
+  "eng-ch35-ielts-informal",
+  "eng-ch36-ielts-formal",
+  "eng-ch37-cambridge-letter",
+  "eng-ch38-ielts-task1",
+  "eng-ch39-ielts-essay",
+  "eng-ch40-ielts-cohesion",
+  "eng-ch41-cambridge-essay",
+  "eng-ch42-ielts-opinion",
+  "eng-ch43-register-shift",
 ]);
 
 /** How many bank items one practice round serves (per type / lesson block). */

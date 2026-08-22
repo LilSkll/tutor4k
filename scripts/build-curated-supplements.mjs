@@ -23,6 +23,8 @@ import { ENGLISH_SB_SUPPLEMENTS } from "./data/english-sb-supplements.mjs";
 import { ENGLISH_GAP_SUPPLEMENTS } from "./data/english-gap-supplements.mjs";
 import { SPANISH_SB_TOPUP } from "./data/spanish-sb-topup.mjs";
 import { ENGLISH_SB_TOPUP } from "./data/english-sb-topup.mjs";
+import { SPANISH_C1_TR_EC_TOPUP } from "./data/spanish-c1-tr-ec-topup.mjs";
+import { ENGLISH_C1_EXAM_TR_EC_TOPUP } from "./data/english-c1-exam-tr-ec-topup.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
@@ -1081,11 +1083,13 @@ function main() {
   spanish = mergeSupplements(spanish, SPANISH_C2_GAP_SUPPLEMENTS);
   spanish = mergeSupplements(spanish, SPANISH_A1_SB_SUPPLEMENTS);
   spanish = mergeSupplements(spanish, SPANISH_SB_TOPUP);
+  spanish = mergeSupplements(spanish, SPANISH_C1_TR_EC_TOPUP);
   let english = mergeSupplements(ENGLISH_CURATED_SUPPLEMENTS, ENGLISH_TOP_UPS);
   english = mergeSupplements(english, ENGLISH_SB_SUPPLEMENTS);
   english = mergeSupplements(english, ENGLISH_GAP_SUPPLEMENTS);
   english = mergeSupplements(english, C2_ENGLISH_THICK);
   english = mergeSupplements(english, ENGLISH_SB_TOPUP);
+  english = mergeSupplements(english, ENGLISH_C1_EXAM_TR_EC_TOPUP);
   writeModule("SPANISH_CURATED_SUPPLEMENTS", "spanish-curated-supplements", spanish);
   writeModule("ENGLISH_CURATED_SUPPLEMENTS", "english-curated-supplements", english);
 

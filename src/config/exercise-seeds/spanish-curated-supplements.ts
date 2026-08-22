@@ -9847,6 +9847,146 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Voy camino de convertirme en médico",
       "instruction": "Ir camino de",
       "explanation": "Ir camino de…"
+    },
+    {
+      "type": "translation",
+      "question": "Я только что приехал с вокзала.",
+      "answer": "Acabo de llegar de la estación",
+      "instruction": "Perífrasis acabar de",
+      "explanation": "Acabo de + inf — только что."
+    },
+    {
+      "type": "translation",
+      "question": "Я живу здесь уже пять лет.",
+      "answer": "Llevo cinco años viviendo aquí",
+      "instruction": "Perífrasis llevar + ger",
+      "explanation": "Llevo + tiempo + gerundio."
+    },
+    {
+      "type": "translation",
+      "question": "Завтра я собираюсь подать заявление.",
+      "answer": "Mañana voy a presentar la solicitud",
+      "instruction": "Perífrasis ir a",
+      "explanation": "Voy a + infinitivo — план."
+    },
+    {
+      "type": "translation",
+      "question": "Обычно я встаю в семь.",
+      "answer": "Suelo levantarme a las siete",
+      "instruction": "Perífrasis soler",
+      "explanation": "Suelo + inf — привычка."
+    },
+    {
+      "type": "translation",
+      "question": "Он снова начал жаловаться на работу.",
+      "answer": "Volvió a quejarse del trabajo",
+      "instruction": "Perífrasis volver a",
+      "explanation": "Volver a + inf — снова."
+    },
+    {
+      "type": "translation",
+      "question": "Она продолжает искать квартиру.",
+      "answer": "Sigue buscando piso",
+      "instruction": "Perífrasis seguir + ger",
+      "explanation": "Seguir + gerundio — продолжать."
+    },
+    {
+      "type": "translation",
+      "question": "Он ходит и ищет работу с января.",
+      "answer": "Anda buscando trabajo desde enero",
+      "instruction": "Perífrasis andar + ger",
+      "explanation": "Andar + ger — длительный поиск."
+    },
+    {
+      "type": "translation",
+      "question": "Ситуация постепенно улучшается.",
+      "answer": "La situación va mejorando poco a poco",
+      "instruction": "Perífrasis ir + ger",
+      "explanation": "Ir + ger — постепенный процесс."
+    },
+    {
+      "type": "translation",
+      "question": "Я вот-вот закончу отчёт.",
+      "answer": "Estoy a punto de terminar el informe",
+      "instruction": "Perífrasis estar a punto de",
+      "explanation": "Estar a punto de + inf."
+    },
+    {
+      "type": "translation",
+      "question": "По закону я обязан явиться в суд.",
+      "answer": "He de comparecer ante el tribunal",
+      "instruction": "Perífrasis haber de",
+      "explanation": "He de + inf — обязанность."
+    },
+    {
+      "type": "error_correction",
+      "question": "Acabo de llegar de la estación hace cinco minutos.",
+      "answer": "Acabo de llegar de la estación.",
+      "instruction": "Acabar de — redundancia",
+      "explanation": "Acabo de ya implica inmediatez; «hace cinco minutos» sobra."
+    },
+    {
+      "type": "error_correction",
+      "question": "Llevo cinco años a vivir aquí.",
+      "answer": "Llevo cinco años viviendo aquí.",
+      "instruction": "Llevar + ger",
+      "explanation": "Llevar + tiempo + gerundio, no «a + inf»."
+    },
+    {
+      "type": "error_correction",
+      "question": "Mañana voy presentar la solicitud.",
+      "answer": "Mañana voy a presentar la solicitud.",
+      "instruction": "Ir a + inf",
+      "explanation": "Falta la preposición «a»: voy a presentar."
+    },
+    {
+      "type": "error_correction",
+      "question": "Suelo levantarme a las siete de la mañana todos los días siempre.",
+      "answer": "Suelo levantarme a las siete.",
+      "instruction": "Soler — concisión",
+      "explanation": "Suelo ya expresa habitualidad; «todos los días siempre» es redundante."
+    },
+    {
+      "type": "error_correction",
+      "question": "Volvió quejarse otra vez del jefe.",
+      "answer": "Volvió a quejarse del jefe.",
+      "instruction": "Volver a",
+      "explanation": "Volver a + infinitivo — falta «a»."
+    },
+    {
+      "type": "error_correction",
+      "question": "Sigue a buscar piso desde hace meses.",
+      "answer": "Sigue buscando piso desde hace meses.",
+      "instruction": "Seguir + ger",
+      "explanation": "Seguir + gerundio, no «a + inf»."
+    },
+    {
+      "type": "error_correction",
+      "question": "Anda a buscar trabajo desde enero sin parar.",
+      "answer": "Anda buscando trabajo desde enero.",
+      "instruction": "Andar + ger",
+      "explanation": "Andar + gerundio; «a buscar» es incorrecto aquí."
+    },
+    {
+      "type": "error_correction",
+      "question": "La situación va a mejorar poco a poco.",
+      "answer": "La situación va mejorando poco a poco.",
+      "instruction": "Ir + ger vs ir a",
+      "explanation": "Proceso gradual → ir + gerundio, no ir a + inf."
+    },
+    {
+      "type": "error_correction",
+      "question": "Estoy por terminar el informe ya mismo.",
+      "answer": "Estoy a punto de terminar el informe.",
+      "instruction": "Estar por vs a punto de",
+      "explanation": "«Вот-вот» → estar a punto de; estar por = «собираться» en otro matiz."
+    },
+    {
+      "type": "error_correction",
+      "question": "Tengo de comparecer ante el tribunal mañana.",
+      "answer": "He de comparecer ante el tribunal mañana.",
+      "instruction": "Haber de",
+      "explanation": "Obligación → he de, no «tengo de»."
     }
   ],
   "chapter-17-dele": [
@@ -10064,6 +10204,146 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "En línea con lo anterior insistimos",
       "instruction": "Cohesión",
       "explanation": "En línea con lo anterior…"
+    },
+    {
+      "type": "translation",
+      "question": "С моей точки зрения, предложенное решение уместно.",
+      "answer": "Desde mi punto de vista, la solución propuesta es pertinente",
+      "instruction": "Registro formal DELE",
+      "explanation": "Desde mi punto de vista — fórmula académica."
+    },
+    {
+      "type": "translation",
+      "question": "Прошу подтвердить получение данного письма.",
+      "answer": "Le ruego me confirme la recepción de la presente carta",
+      "instruction": "Carta formal DELE",
+      "explanation": "Le ruego me confirme — registro elevado."
+    },
+    {
+      "type": "translation",
+      "question": "С одной стороны, это экономит время; с другой — повышает риски.",
+      "answer": "Por un lado, ahorra tiempo; por otro, incrementa los riesgos",
+      "instruction": "Conectores DELE",
+      "explanation": "Por un lado… por otro — contraste estructurado."
+    },
+    {
+      "type": "translation",
+      "question": "Следует отметить, что данные неполные.",
+      "answer": "Cabe señalar que los datos son incompletos",
+      "instruction": "Fórmula culta DELE",
+      "explanation": "Cabe señalar que — registro académico."
+    },
+    {
+      "type": "translation",
+      "question": "В заключение я бы рекомендовал пересмотреть стратегию.",
+      "answer": "En conclusión, recomendaría revisar la estrategia",
+      "instruction": "Cierre argumentativo",
+      "explanation": "En conclusión + condicional — recomendación prudente."
+    },
+    {
+      "type": "translation",
+      "question": "Не могли бы вы уточнить сроки выполнения?",
+      "answer": "¿Sería tan amable de concretar los plazos de ejecución?",
+      "instruction": "Cortesía formal",
+      "explanation": "¿Sería tan amable de…? — usted cortés."
+    },
+    {
+      "type": "translation",
+      "question": "Таким образом, мы приходим к следующему выводу.",
+      "answer": "Por consiguiente, llegamos a la siguiente conclusión",
+      "instruction": "Conector consecutivo",
+      "explanation": "Por consiguiente — consecuencia formal."
+    },
+    {
+      "type": "translation",
+      "question": "В ответ на ваш запрос сообщаю следующее.",
+      "answer": "En respuesta a su solicitud, le comunico lo siguiente",
+      "instruction": "Correspondencia formal",
+      "explanation": "En respuesta a su solicitud — fórmula epistolar."
+    },
+    {
+      "type": "translation",
+      "question": "Несмотря на это, результаты остаются alentadores.",
+      "answer": "No obstante, los resultados siguen siendo alentadores",
+      "instruction": "Conector adversativo",
+      "explanation": "No obstante — adversativo culto."
+    },
+    {
+      "type": "translation",
+      "question": "То есть проблема носит скорее структурный характер.",
+      "answer": "Es decir, el problema es de carácter estructural",
+      "instruction": "Reformulación DELE",
+      "explanation": "Es decir — aclaración en ensayo."
+    },
+    {
+      "type": "error_correction",
+      "question": "Desde mi punto de vista la solución propuesta es pertinente y buena.",
+      "answer": "Desde mi punto de vista, la solución propuesta es pertinente.",
+      "instruction": "Registro formal — puntuación",
+      "explanation": "Coma tras la fórmula introductoria; «y buena» resta precisión."
+    },
+    {
+      "type": "error_correction",
+      "question": "Le ruego confirmarme la recepción de la presente carta.",
+      "answer": "Le ruego me confirme la recepción de la presente carta.",
+      "instruction": "Subjuntivo en carta formal",
+      "explanation": "Le ruego + subjuntivo (me confirme), no infinitivo."
+    },
+    {
+      "type": "error_correction",
+      "question": "Por un lado ahorra tiempo por otro incrementa los riesgos.",
+      "answer": "Por un lado, ahorra tiempo; por otro, incrementa los riesgos.",
+      "instruction": "Conectores — puntuación",
+      "explanation": "Comas y punto y coma en estructura paralela."
+    },
+    {
+      "type": "error_correction",
+      "question": "Cabe señalar que los datos son incompletos y malos.",
+      "answer": "Cabe señalar que los datos son incompletos.",
+      "instruction": "Registro académico",
+      "explanation": "Evitar adjetivos vagos («malos»); ser preciso."
+    },
+    {
+      "type": "error_correction",
+      "question": "En conclusión recomiendo revisar la estrategia ya.",
+      "answer": "En conclusión, recomendaría revisar la estrategia.",
+      "instruction": "Condicional de recomendación",
+      "explanation": "Recomendaría — matiz prudente; coma tras «En conclusión»."
+    },
+    {
+      "type": "error_correction",
+      "question": "¿Sería amable de concretar los plazos?",
+      "answer": "¿Sería tan amable de concretar los plazos?",
+      "instruction": "Cortesía formal",
+      "explanation": "Fórmula completa: ¿Sería tan amable de…?"
+    },
+    {
+      "type": "error_correction",
+      "question": "Por consiguiente llegamos a la conclusión siguiente.",
+      "answer": "Por consiguiente, llegamos a la siguiente conclusión.",
+      "instruction": "Orden del adjetivo",
+      "explanation": "La siguiente conclusión — orden natural en español culto."
+    },
+    {
+      "type": "error_correction",
+      "question": "En respuesta a su solicitud le comunico lo siguiente ya.",
+      "answer": "En respuesta a su solicitud, le comunico lo siguiente.",
+      "instruction": "Estilo epistolar",
+      "explanation": "Coma tras la fórmula; «ya» es coloquial e innecesario."
+    },
+    {
+      "type": "error_correction",
+      "question": "No obstante los resultados siguen alentadores.",
+      "answer": "No obstante, los resultados siguen siendo alentadores.",
+      "instruction": "Puntuación + ser",
+      "explanation": "Coma tras «No obstante»; seguir siendo — construcción completa."
+    },
+    {
+      "type": "error_correction",
+      "question": "Es decir el problema es estructural.",
+      "answer": "Es decir, el problema es de carácter estructural.",
+      "instruction": "Reformulación formal",
+      "explanation": "Coma tras «Es decir»; de carácter estructural — registro elevado."
     }
   ],
   "chapter-42-subjuntivo-avanzado": [
@@ -10280,6 +10560,146 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Tal vez prefiera quedarse en casa",
       "instruction": "Tal vez + subj.",
       "explanation": "Tal vez + subjuntivo."
+    },
+    {
+      "type": "translation",
+      "question": "Даже если пойдёт дождь, мы всё равно выйдем.",
+      "answer": "Aunque llueva, saldremos igual",
+      "instruction": "Aunque + subjuntivo",
+      "explanation": "Aunque + subj. — hipótesis futura."
+    },
+    {
+      "type": "translation",
+      "question": "Хотя он и устал, продолжал работать.",
+      "answer": "Aunque estaba cansado, siguió trabajando",
+      "instruction": "Aunque + indicativo",
+      "explanation": "Aunque + indic. — hecho conocido."
+    },
+    {
+      "type": "translation",
+      "question": "Сделай, как я тебе говорю.",
+      "answer": "Hazlo como te digo",
+      "instruction": "Como + indicativo",
+      "explanation": "Como te digo — modo de hacer (indicativo)."
+    },
+    {
+      "type": "translation",
+      "question": "Как ни странно, он согласился.",
+      "answer": "Por extraño que parezca, aceptó",
+      "instruction": "Concesiva + subjuntivo",
+      "explanation": "Por + adj. + que + subj. — concesión."
+    },
+    {
+      "type": "translation",
+      "question": "Куда бы ты ни пошёл, я пойду за тобой.",
+      "answer": "Dondequiera que vayas, te seguiré",
+      "instruction": "Dondequiera que + subj.",
+      "explanation": "Dondequiera que + subj. — lugar indeterminado."
+    },
+    {
+      "type": "translation",
+      "question": "Я не думаю, что он придёт сегодня.",
+      "answer": "No creo que venga hoy",
+      "instruction": "Verbo de duda + subj.",
+      "explanation": "No creo que + subjuntivo presente."
+    },
+    {
+      "type": "translation",
+      "question": "Возможно, завтра будет дождь.",
+      "answer": "Es posible que llueva mañana",
+      "instruction": "Es posible que + subj.",
+      "explanation": "Es posible que + subjuntivo."
+    },
+    {
+      "type": "translation",
+      "question": "Пусть никто об этом не узнает.",
+      "answer": "Que nadie lo sepa",
+      "instruction": "Oración enérgica",
+      "explanation": "Que + subj. — deseo/orden general."
+    },
+    {
+      "type": "translation",
+      "question": "Если только он не позвонит, я не приду.",
+      "answer": "A menos que llame, no vendré",
+      "instruction": "A menos que + subj.",
+      "explanation": "A menos que + subjuntivo."
+    },
+    {
+      "type": "translation",
+      "question": "Жаль, что ты не смог прийти вчера.",
+      "answer": "Lamento que no pudieras venir ayer",
+      "instruction": "Lamentar + subj. imperfecto",
+      "explanation": "Lamento que + imperf. subj. — pasado."
+    },
+    {
+      "type": "error_correction",
+      "question": "Aunque llueve, saldremos igual.",
+      "answer": "Aunque llueva, saldremos igual.",
+      "instruction": "Aunque — hipótesis",
+      "explanation": "Hipótesis futura → subjuntivo (llueva)."
+    },
+    {
+      "type": "error_correction",
+      "question": "Aunque estaba cansado, siguió a trabajar.",
+      "answer": "Aunque estaba cansado, siguió trabajando.",
+      "instruction": "Seguir + ger",
+      "explanation": "Seguir + gerundio, no «a + inf»."
+    },
+    {
+      "type": "error_correction",
+      "question": "Hazlo como te dice.",
+      "answer": "Hazlo como te digo.",
+      "instruction": "Como + indicativo",
+      "explanation": "Instrucción actual → como te digo (presente)."
+    },
+    {
+      "type": "error_correction",
+      "question": "Por extraño que parece, aceptó.",
+      "answer": "Por extraño que parezca, aceptó.",
+      "instruction": "Por + adj. + subj.",
+      "explanation": "Por extraño que parezca — subjuntivo obligatorio."
+    },
+    {
+      "type": "error_correction",
+      "question": "Donde quiera que vas, te seguiré.",
+      "answer": "Dondequiera que vayas, te seguiré.",
+      "instruction": "Dondequiera que + subj.",
+      "explanation": "Dondequiera que + subjuntivo (vayas)."
+    },
+    {
+      "type": "error_correction",
+      "question": "No creo que viene hoy.",
+      "answer": "No creo que venga hoy.",
+      "instruction": "Duda + subjuntivo",
+      "explanation": "Tras no creo que → subjuntivo (venga)."
+    },
+    {
+      "type": "error_correction",
+      "question": "Es posible que llueve mañana.",
+      "answer": "Es posible que llueva mañana.",
+      "instruction": "Es posible que + subj.",
+      "explanation": "Es posible que + subjuntivo (llueva)."
+    },
+    {
+      "type": "error_correction",
+      "question": "Que nadie lo sabe.",
+      "answer": "Que nadie lo sepa.",
+      "instruction": "Deseo/orden",
+      "explanation": "Que nadie lo sepa — subjuntivo enórgico."
+    },
+    {
+      "type": "error_correction",
+      "question": "A menos que llama, no vendré.",
+      "answer": "A menos que llame, no vendré.",
+      "instruction": "A menos que + subj.",
+      "explanation": "A menos que + subjuntivo (llame)."
+    },
+    {
+      "type": "error_correction",
+      "question": "Lamento que no pudiste venir ayer.",
+      "answer": "Lamento que no pudieras venir ayer.",
+      "instruction": "Lamento + subj. pasado",
+      "explanation": "Lamento que + imperf. subj. (pudieras)."
     }
   ],
   "chapter-43-indirecto-avanzado": [
@@ -10496,6 +10916,146 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Declaró que nunca había visto tal cosa",
       "instruction": "Declarar + indirecto",
       "explanation": "Nunca había visto…"
+    },
+    {
+      "type": "translation",
+      "question": "Он сказал, что приедет на следующий день.",
+      "answer": "Dijo que vendría al día siguiente",
+      "instruction": "Estilo indirecto — futuro",
+      "explanation": "Presente/futuro directo → condicional (vendría)."
+    },
+    {
+      "type": "translation",
+      "question": "Она спросила, могу ли я ей помочь.",
+      "answer": "Preguntó si podía ayudarla",
+      "instruction": "Pregunta indirecta",
+      "explanation": "Preguntó si + imperf. — concordancia."
+    },
+    {
+      "type": "translation",
+      "question": "Он отметил, что опоздал.",
+      "answer": "Comentó que había llegado tarde",
+      "instruction": "Pluscuamperfecto indirecto",
+      "explanation": "Pret. perfecto → pluscuamperfecto (había llegado)."
+    },
+    {
+      "type": "translation",
+      "question": "Она пообещала, что сделает это скоро.",
+      "answer": "Prometió que lo haría pronto",
+      "instruction": "Promesa en indirecto",
+      "explanation": "Futuro directo → condicional (haría)."
+    },
+    {
+      "type": "translation",
+      "question": "Он отрицал, что что-либо украл.",
+      "answer": "Negó haber robado nada",
+      "instruction": "Negar + infinitivo",
+      "explanation": "Negó haber robado — infinitivo compuesto."
+    },
+    {
+      "type": "translation",
+      "question": "Она призналась, что не училась.",
+      "answer": "Admitió que no había estudiado",
+      "instruction": "Admitir + concordancia",
+      "explanation": "Pret. perfecto → pluscuamperfecto."
+    },
+    {
+      "type": "translation",
+      "question": "Он предложил подождать немного.",
+      "answer": "Sugirió que esperáramos un poco",
+      "instruction": "Sugerir + subjuntivo",
+      "explanation": "Sugirió que + imperf. subj. (esperáramos)."
+    },
+    {
+      "type": "translation",
+      "question": "Она настаивала, чтобы мы все пришли.",
+      "answer": "Insistió en que fuéramos todos",
+      "instruction": "Insistir en que + subj.",
+      "explanation": "Insistió en que + imperf. subj."
+    },
+    {
+      "type": "translation",
+      "question": "Он объяснил, что уходит в пять.",
+      "answer": "Explicó que se iba a las cinco",
+      "instruction": "Presente → imperfecto",
+      "explanation": "Presente directo → imperfecto (se iba)."
+    },
+    {
+      "type": "translation",
+      "question": "Она сообщила, что проект продолжается.",
+      "answer": "Informó de que el proyecto continuaba",
+      "instruction": "Informar de que",
+      "explanation": "Informó de que + imperfecto."
+    },
+    {
+      "type": "error_correction",
+      "question": "Dijo que vendrá al día siguiente.",
+      "answer": "Dijo que vendría al día siguiente.",
+      "instruction": "Concordancia temporal",
+      "explanation": "Verbo introductor en pasado → condicional (vendría)."
+    },
+    {
+      "type": "error_correction",
+      "question": "Preguntó si puedo ayudarla.",
+      "answer": "Preguntó si podía ayudarla.",
+      "instruction": "Pregunta indirecta",
+      "explanation": "Podía — imperfecto tras preguntó (pasado)."
+    },
+    {
+      "type": "error_correction",
+      "question": "Comentó que ha llegado tarde.",
+      "answer": "Comentó que había llegado tarde.",
+      "instruction": "Pluscuamperfecto",
+      "explanation": "Ha llegado → había llegado en estilo indirecto."
+    },
+    {
+      "type": "error_correction",
+      "question": "Prometió que lo hará pronto.",
+      "answer": "Prometió que lo haría pronto.",
+      "instruction": "Futuro → condicional",
+      "explanation": "Prometió (pasado) → haría, no hará."
+    },
+    {
+      "type": "error_correction",
+      "question": "Negó que ha robado nada.",
+      "answer": "Negó haber robado nada.",
+      "instruction": "Negar + infinitivo",
+      "explanation": "Negó haber robado — no «que ha robado»."
+    },
+    {
+      "type": "error_correction",
+      "question": "Admitió que no estudió.",
+      "answer": "Admitió que no había estudiado.",
+      "instruction": "Concordancia pasada",
+      "explanation": "Estudió → había estudiado en indirecto."
+    },
+    {
+      "type": "error_correction",
+      "question": "Sugirió que esperamos un poco.",
+      "answer": "Sugirió que esperáramos un poco.",
+      "instruction": "Sugerir + subjuntivo",
+      "explanation": "Sugirió que + imperf. subj. (esperáramos)."
+    },
+    {
+      "type": "error_correction",
+      "question": "Insistió en que vamos todos.",
+      "answer": "Insistió en que fuéramos todos.",
+      "instruction": "Insistir en que + subj.",
+      "explanation": "Insistió en que + imperf. subj. (fuéramos)."
+    },
+    {
+      "type": "error_correction",
+      "question": "Explicó que se va a las cinco.",
+      "answer": "Explicó que se iba a las cinco.",
+      "instruction": "Presente → imperfecto",
+      "explanation": "Se va → se iba tras explicó."
+    },
+    {
+      "type": "error_correction",
+      "question": "Informó que el proyecto continua.",
+      "answer": "Informó de que el proyecto continuaba.",
+      "instruction": "Informar de que",
+      "explanation": "Informó de que + imperfecto (continuaba)."
     }
   ],
   "chapter-44-pronombres-avanzado": [
@@ -10713,6 +11273,146 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Dádmelo cuando puedas",
       "instruction": "Imperativo plural",
       "explanation": "Dádmelo — vosotros."
+    },
+    {
+      "type": "translation",
+      "question": "Хорошо то, что мы договорились.",
+      "answer": "Lo bueno es que llegamos a un acuerdo",
+      "instruction": "Neutro lo + adj.",
+      "explanation": "Lo bueno es que — construcción con neutro."
+    },
+    {
+      "type": "translation",
+      "question": "Я дал это ей вчера.",
+      "answer": "Se lo di ayer",
+      "instruction": "Pronombres CD/CI",
+      "explanation": "Se lo di — le→se ante lo/la/los/las."
+    },
+    {
+      "type": "translation",
+      "question": "Не верю этому ни на секунду.",
+      "answer": "No me lo creo ni un segundo",
+      "instruction": "Doble pronombre",
+      "explanation": "No me lo creo — CI + CD."
+    },
+    {
+      "type": "translation",
+      "question": "Рассказали ли тебе уже?",
+      "answer": "¿Te lo han contado ya?",
+      "instruction": "Pregunta con pronombres",
+      "explanation": "Te lo han contado — orden CI+CD."
+    },
+    {
+      "type": "translation",
+      "question": "Не говори это никому.",
+      "answer": "No se lo digas a nadie",
+      "instruction": "Imperativo + pronombres",
+      "explanation": "No se lo digas — imperativo tú."
+    },
+    {
+      "type": "translation",
+      "question": "Я хочу отдать это ему до отъезда.",
+      "answer": "Quiero dárselo antes de marcharme",
+      "instruction": "Enclisis",
+      "explanation": "Dárselo — enclítico tras infinitivo."
+    },
+    {
+      "type": "translation",
+      "question": "Не могу сказать тебе это сейчас.",
+      "answer": "No puedo decírtelo ahora",
+      "instruction": "Enclisis negativa",
+      "explanation": "Decírtelo — pronombres enclíticos."
+    },
+    {
+      "type": "translation",
+      "question": "Я отправил их ей по почте.",
+      "answer": "Se las envié por correo",
+      "instruction": "Plurales CI/CD",
+      "explanation": "Se las envié — les→se + las."
+    },
+    {
+      "type": "translation",
+      "question": "Плохо то, что опоздали.",
+      "answer": "Lo malo es que llegamos tarde",
+      "instruction": "Lo + adj. neutro",
+      "explanation": "Lo malo es que — evaluación neutra."
+    },
+    {
+      "type": "translation",
+      "question": "Объясни мне это ещё раз.",
+      "answer": "Explícamelo otra vez",
+      "instruction": "Imperativo + enclisis",
+      "explanation": "Explícamelo — imperativo con enclíticos."
+    },
+    {
+      "type": "error_correction",
+      "question": "Le lo di ayer a María.",
+      "answer": "Se lo di ayer a María.",
+      "instruction": "Leísmo — le + lo",
+      "explanation": "Ante lo/la/los/las → se, no «le lo»."
+    },
+    {
+      "type": "error_correction",
+      "question": "No me creo lo ni un segundo.",
+      "answer": "No me lo creo ni un segundo.",
+      "instruction": "Pronombre CD",
+      "explanation": "Falta CD «lo»: no me lo creo."
+    },
+    {
+      "type": "error_correction",
+      "question": "¿Te han contado lo ya?",
+      "answer": "¿Te lo han contado ya?",
+      "instruction": "Orden de pronombres",
+      "explanation": "Te lo han contado — CI antes de CD."
+    },
+    {
+      "type": "error_correction",
+      "question": "No le digas lo a nadie.",
+      "answer": "No se lo digas a nadie.",
+      "instruction": "Imperativo + se",
+      "explanation": "Se lo digas — le→se ante lo."
+    },
+    {
+      "type": "error_correction",
+      "question": "Quiero dársela antes de marcharme.",
+      "answer": "Quiero dárselo antes de marcharme.",
+      "instruction": "Concordancia de género",
+      "explanation": "El objeto es «lo» (esto), no «la»."
+    },
+    {
+      "type": "error_correction",
+      "question": "No puedo decirte lo ahora.",
+      "answer": "No puedo decírtelo ahora.",
+      "instruction": "Enclisis obligatoria",
+      "explanation": "Tras infinitivo/conjugado → decírtelo enclítico."
+    },
+    {
+      "type": "error_correction",
+      "question": "Se lo envié por correo a ella.",
+      "answer": "Se las envié por correo.",
+      "instruction": "Laísmo / plural",
+      "explanation": "Varios objetos femeninos → se las envié."
+    },
+    {
+      "type": "error_correction",
+      "question": "Lo bueno es que llegamos a un acuerdo bueno.",
+      "answer": "Lo bueno es que llegamos a un acuerdo.",
+      "instruction": "Redundancia",
+      "explanation": "Lo bueno ya evalúa; «bueno» final es redundante."
+    },
+    {
+      "type": "error_correction",
+      "question": "Explícame lo otra vez.",
+      "answer": "Explícamelo otra vez.",
+      "instruction": "Enclisis en imperativo",
+      "explanation": "Explícamelo — enclítico, no «Explícame lo»."
+    },
+    {
+      "type": "error_correction",
+      "question": "La di a María el libro.",
+      "answer": "Se lo di a María.",
+      "instruction": "Laísmo",
+      "explanation": "CD masculino (lo) → se lo di, no «la di»."
     }
   ],
   "chapter-45-ser-estar-matices": [
@@ -10961,6 +11661,146 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Es profesor pero está de baja",
       "instruction": "Ser vs estar profesor",
       "explanation": "Profesión vs situación laboral."
+    },
+    {
+      "type": "translation",
+      "question": "Он умный, но сегодня не в форме.",
+      "answer": "Es listo, pero hoy no está muy lúcido",
+      "instruction": "Ser vs estar listo",
+      "explanation": "Es listo (rasgo) vs está lúcido (estado)."
+    },
+    {
+      "type": "translation",
+      "question": "Лекция скучная, а студенты скучают.",
+      "answer": "La clase es aburrida y los alumnos están aburridos",
+      "instruction": "Ser vs estar aburrido",
+      "explanation": "Es aburrida (causa) vs están aburridos (estado)."
+    },
+    {
+      "type": "translation",
+      "question": "Футболка зелёная, а он зелен от зависти.",
+      "answer": "La camiseta es verde y él está verde de envidia",
+      "instruction": "Ser vs estar verde",
+      "explanation": "Color (es) vs metáfora (está)."
+    },
+    {
+      "type": "translation",
+      "question": "Он плохой человек, но сегодня в хорошем настроении.",
+      "answer": "Es mala persona, pero hoy está de buen humor",
+      "instruction": "Ser vs estar malo",
+      "explanation": "Rasgo moral vs estado anímico."
+    },
+    {
+      "type": "translation",
+      "question": "Мешок тяжёлый, но сегодня кажется ещё тяжелее.",
+      "answer": "El saco es pesado, pero hoy está más pesado",
+      "instruction": "Ser vs estar pesado",
+      "explanation": "Cualidad habitual vs sensación actual."
+    },
+    {
+      "type": "translation",
+      "question": "Мальчик сообразительный и сегодня очень живой.",
+      "answer": "El niño es vivo y hoy está muy animado",
+      "instruction": "Ser vs estar vivo",
+      "explanation": "Es vivo (inteligente) vs está animado (energía)."
+    },
+    {
+      "type": "translation",
+      "question": "Случай странный, а атмосфера тоже странная.",
+      "answer": "El caso es raro y el ambiente está raro",
+      "instruction": "Ser vs estar raro",
+      "explanation": "Cualidad objetiva vs ambiente."
+    },
+    {
+      "type": "translation",
+      "question": "Он бледный от природы, но сегодня особенно бледен.",
+      "answer": "Es pálido de natural, pero hoy está muy pálido",
+      "instruction": "Ser vs estar pálido",
+      "explanation": "Rasgo vs estado momentáneo."
+    },
+    {
+      "type": "translation",
+      "question": "Он симпатичный, но с этой стрижкой выглядит не очень.",
+      "answer": "Es guapo, pero con ese corte está feo",
+      "instruction": "Ser vs estar guapo",
+      "explanation": "Atractivo innato vs apariencia actual."
+    },
+    {
+      "type": "translation",
+      "question": "План надёжный, но я не уверен.",
+      "answer": "El plan es seguro, pero no estoy seguro",
+      "instruction": "Ser vs estar seguro",
+      "explanation": "Seguro (fiable) vs estar seguro (convicción)."
+    },
+    {
+      "type": "error_correction",
+      "question": "Está listo, pero hoy no es muy lúcido.",
+      "answer": "Es listo, pero hoy no está muy lúcido.",
+      "instruction": "Ser vs estar listo",
+      "explanation": "Inteligencia (es listo) vs estado (está lúcido)."
+    },
+    {
+      "type": "error_correction",
+      "question": "La clase está aburrida y los alumnos son aburridos.",
+      "answer": "La clase es aburrida y los alumnos están aburridos.",
+      "instruction": "Ser vs estar aburrido",
+      "explanation": "La clase es aburrida (causa); alumnos están aburridos."
+    },
+    {
+      "type": "error_correction",
+      "question": "La camiseta está verde y él es verde de envidia.",
+      "answer": "La camiseta es verde y él está verde de envidia.",
+      "instruction": "Ser vs estar verde",
+      "explanation": "Color → es; metáfora → está."
+    },
+    {
+      "type": "error_correction",
+      "question": "Es mala persona, pero hoy es de buen humor.",
+      "answer": "Es mala persona, pero hoy está de buen humor.",
+      "instruction": "Estar de buen humor",
+      "explanation": "Estado anímico → está de buen humor."
+    },
+    {
+      "type": "error_correction",
+      "question": "El saco está pesado de natural.",
+      "answer": "El saco es pesado.",
+      "instruction": "Ser vs estar pesado",
+      "explanation": "Peso/cualidad habitual → es pesado."
+    },
+    {
+      "type": "error_correction",
+      "question": "El niño está vivo y hoy es muy animado.",
+      "answer": "El niño es vivo y hoy está muy animado.",
+      "instruction": "Ser vs estar vivo",
+      "explanation": "Es vivo (listo); está animado (energía)."
+    },
+    {
+      "type": "error_correction",
+      "question": "El caso está raro y el ambiente es raro.",
+      "answer": "El caso es raro y el ambiente está raro.",
+      "instruction": "Ser vs estar raro",
+      "explanation": "Caso es raro; ambiente está raro."
+    },
+    {
+      "type": "error_correction",
+      "question": "Está pálido de natural.",
+      "answer": "Es pálido de natural.",
+      "instruction": "Rasgo permanente",
+      "explanation": "De natural → es pálido (rasgo)."
+    },
+    {
+      "type": "error_correction",
+      "question": "Está guapo, pero con ese corte es feo.",
+      "answer": "Es guapo, pero con ese corte está feo.",
+      "instruction": "Ser vs estar guapo",
+      "explanation": "Es guapo (rasgo); está feo (apariencia actual)."
+    },
+    {
+      "type": "error_correction",
+      "question": "El plan está seguro, pero no soy seguro.",
+      "answer": "El plan es seguro, pero no estoy seguro.",
+      "instruction": "Ser vs estar seguro",
+      "explanation": "Plan es seguro; convicción → estoy seguro."
     }
   ],
   "chapter-1-despertar": [

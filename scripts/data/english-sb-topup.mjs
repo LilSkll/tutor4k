@@ -182,4 +182,11 @@ export const ENGLISH_SB_TOPUP = {
     sb(["To", "illustrate", "consider", "the", "case", "of", "Finland"], "To illustrate consider the case of Finland", "To illustrate — пример", "To illustrate — переход к примеру."),
     sb(["Despite", "this", "the", "policy", "continued"], "Despite this the policy continued", "Despite this — уступка", "Despite this — несмотря на вышесказанное."),
   ],
+
+  "eng-ch16-ielts": [
+    sb(["Overall", "the", "benefits", "outweigh", "the", "drawbacks"], "Overall the benefits outweigh the drawbacks", "IELTS conclusion", "Overall — итоговая оценка в эссе."),
+    sb(["It", "is", "widely", "believed", "that", "education", "matters"], "It is widely believed that education matters", "Hedged generalisation", "It is widely believed that…"),
+    sb(["In", "my", "view", "governments", "should", "invest", "more"], "In my view governments should invest more", "Opinion phrase", "In my view — личная позиция Task 2."),
+    sb(["To", "sum", "up", "both", "sides", "have", "merit"], "To sum up both sides have merit", "Balanced conclusion", "To sum up — заключение дискуссионного эссе."),
+  ],
 };

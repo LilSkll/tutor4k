@@ -110,6 +110,7 @@ const FORCE_REGENERATE = new Set([
   "eng-ch13-advanced-structures",
   "eng-ch14-art-language",
   "eng-ch15-mastery",
+  "eng-ch16-ielts",
   "eng-ch41-cambridge-essay",
   "eng-ch42-ielts-opinion",
   "eng-ch43-register-shift",
@@ -123,7 +124,9 @@ const FORCE_REGENERATE = new Set([
   "eng-ch27-possessives",
   "eng-ch32-relative-clauses",
   "eng-ch35-ielts-informal",
+  "eng-ch36-ielts-formal",
   "eng-ch37-cambridge-letter",
+  "eng-ch38-ielts-task1",
   "eng-ch39-ielts-essay",
   "eng-ch40-ielts-cohesion",
   "eng-ch4-past-stories",
@@ -143,11 +146,28 @@ const FORCE_REGENERATE = new Set([
 const root = path.join(__dirname, "..");
 
 const DEFAULT_TARGET = 20;
-const ENGLISH_C2_TR_EC_TARGET = 30;
+const THICK_TR_EC_TARGET = 30;
+
 const ENGLISH_C2_THICK = new Set([
   "eng-ch23-spotlight",
   "eng-ch24-unspoken",
   "eng-ch25-between-lines",
+]);
+
+const ENGLISH_C1_EXAM_THICK = new Set([
+  "eng-ch13-advanced-structures",
+  "eng-ch14-art-language",
+  "eng-ch15-mastery",
+  "eng-ch16-ielts",
+  "eng-ch35-ielts-informal",
+  "eng-ch36-ielts-formal",
+  "eng-ch37-cambridge-letter",
+  "eng-ch38-ielts-task1",
+  "eng-ch39-ielts-essay",
+  "eng-ch40-ielts-cohesion",
+  "eng-ch41-cambridge-essay",
+  "eng-ch42-ielts-opinion",
+  "eng-ch43-register-shift",
 ]);
 
 const SPANISH_C2_THICK = new Set([
@@ -157,18 +177,30 @@ const SPANISH_C2_THICK = new Set([
   "chapter-30-ironia",
 ]);
 
+const SPANISH_C1_THICK = new Set([
+  "chapter-16-perifrasis",
+  "chapter-17-dele",
+  "chapter-42-subjuntivo-avanzado",
+  "chapter-43-indirecto-avanzado",
+  "chapter-44-pronombres-avanzado",
+  "chapter-45-ser-estar-matices",
+]);
+
+function isThickTrEcChapter(slug) {
+  return (
+    ENGLISH_C2_THICK.has(slug) ||
+    ENGLISH_C1_EXAM_THICK.has(slug) ||
+    SPANISH_C2_THICK.has(slug) ||
+    SPANISH_C1_THICK.has(slug)
+  );
+}
+
 function targetForType(slug, type) {
   if (
-    ENGLISH_C2_THICK.has(slug) &&
+    isThickTrEcChapter(slug) &&
     (type === "translation" || type === "error_correction")
   ) {
-    return ENGLISH_C2_TR_EC_TARGET;
-  }
-  if (
-    SPANISH_C2_THICK.has(slug) &&
-    (type === "translation" || type === "error_correction")
-  ) {
-    return ENGLISH_C2_TR_EC_TARGET;
+    return THICK_TR_EC_TARGET;
   }
   return DEFAULT_TARGET;
 }

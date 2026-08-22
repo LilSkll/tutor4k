@@ -5014,6 +5014,209 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "Furthermore, this supports the thesis",
       "instruction": "Build connector sentence",
       "explanation": "Furthermore — formal addition"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Overall / the / benefits / outweigh / the / drawbacks",
+      "options": [
+        "Overall",
+        "the",
+        "benefits",
+        "outweigh",
+        "the",
+        "drawbacks"
+      ],
+      "answer": "Overall the benefits outweigh the drawbacks",
+      "instruction": "IELTS conclusion",
+      "explanation": "Overall — итоговая оценка в эссе."
+    },
+    {
+      "type": "sentence_building",
+      "question": "It / is / widely / believed / that / education / matters",
+      "options": [
+        "It",
+        "is",
+        "widely",
+        "believed",
+        "that",
+        "education",
+        "matters"
+      ],
+      "answer": "It is widely believed that education matters",
+      "instruction": "Hedged generalisation",
+      "explanation": "It is widely believed that…"
+    },
+    {
+      "type": "sentence_building",
+      "question": "In / my / view / governments / should / invest / more",
+      "options": [
+        "In",
+        "my",
+        "view",
+        "governments",
+        "should",
+        "invest",
+        "more"
+      ],
+      "answer": "In my view governments should invest more",
+      "instruction": "Opinion phrase",
+      "explanation": "In my view — личная позиция Task 2."
+    },
+    {
+      "type": "sentence_building",
+      "question": "To / sum / up / both / sides / have / merit",
+      "options": [
+        "To",
+        "sum",
+        "up",
+        "both",
+        "sides",
+        "have",
+        "merit"
+      ],
+      "answer": "To sum up both sides have merit",
+      "instruction": "Balanced conclusion",
+      "explanation": "To sum up — заключение дискуссионного эссе."
+    },
+    {
+      "type": "translation",
+      "question": "По всей видимости, он уже ушёл.",
+      "answer": "He must have left already",
+      "instruction": "Modal perfect — must have",
+      "explanation": "must have left — уверенность о прошлом."
+    },
+    {
+      "type": "translation",
+      "question": "Маловероятно, что они согласятся.",
+      "answer": "It is unlikely that they will agree",
+      "instruction": "It is unlikely that",
+      "explanation": "It is unlikely that + clause — формально."
+    },
+    {
+      "type": "translation",
+      "question": "С другой стороны, риски значительны.",
+      "answer": "On the other hand, the risks are significant",
+      "instruction": "Discourse marker",
+      "explanation": "On the other hand — контраст."
+    },
+    {
+      "type": "translation",
+      "question": "В частности, молодёжь пострадала больше всего.",
+      "answer": "In particular, young people suffered most",
+      "instruction": "Discourse marker — in particular",
+      "explanation": "In particular — конкретизация."
+    },
+    {
+      "type": "translation",
+      "question": "В заключение следует отметить прогресс.",
+      "answer": "In conclusion, it should be noted that progress has been made",
+      "instruction": "Formal conclusion",
+      "explanation": "it should be noted that — академический стиль."
+    },
+    {
+      "type": "translation",
+      "question": "Несмотря на это, тенденция сохраняется.",
+      "answer": "Despite this, the trend continues",
+      "instruction": "Despite + pronoun",
+      "explanation": "Despite this — несмотря на это."
+    },
+    {
+      "type": "translation",
+      "question": "Следует подчеркнуть важность образования.",
+      "answer": "It is important to emphasise the role of education",
+      "instruction": "Impersonal formal",
+      "explanation": "It is important to emphasise — безличная конструкция."
+    },
+    {
+      "type": "translation",
+      "question": "По сравнению с прошлым годом продажи выросли.",
+      "answer": "Compared with last year, sales have risen",
+      "instruction": "Comparison phrase",
+      "explanation": "Compared with — формальное сравнение."
+    },
+    {
+      "type": "translation",
+      "question": "Это может привести к серьёзным последствиям.",
+      "answer": "This could lead to serious consequences",
+      "instruction": "Could lead to",
+      "explanation": "could lead to — возможное следствие."
+    },
+    {
+      "type": "translation",
+      "question": "В целом, доказательства убедительны.",
+      "answer": "Overall, the evidence is compelling",
+      "instruction": "Summary marker",
+      "explanation": "Overall — обобщение; evidence — singular."
+    },
+    {
+      "type": "error_correction",
+      "question": "He must left already.",
+      "answer": "He must have left already.",
+      "instruction": "Modal perfect",
+      "explanation": "must have left — не must left."
+    },
+    {
+      "type": "error_correction",
+      "question": "It is unlikely they will agree.",
+      "answer": "It is unlikely that they will agree.",
+      "instruction": "It is unlikely that",
+      "explanation": "that после unlikely — формально."
+    },
+    {
+      "type": "error_correction",
+      "question": "On other hand, the risks are significant.",
+      "answer": "On the other hand, the risks are significant.",
+      "instruction": "Fixed phrase",
+      "explanation": "On the other hand — с артиклем the."
+    },
+    {
+      "type": "error_correction",
+      "question": "In particular young people suffered most.",
+      "answer": "In particular, young people suffered most.",
+      "instruction": "Punctuation — discourse marker",
+      "explanation": "Запятая после In particular."
+    },
+    {
+      "type": "error_correction",
+      "question": "In conclusion it should noted that progress has been made.",
+      "answer": "In conclusion, it should be noted that progress has been made.",
+      "instruction": "Passive + be",
+      "explanation": "it should be noted — нужен be."
+    },
+    {
+      "type": "error_correction",
+      "question": "Despite this the trend continue.",
+      "answer": "Despite this, the trend continues.",
+      "instruction": "Subject-verb agreement",
+      "explanation": "the trend continues — 3rd person -s."
+    },
+    {
+      "type": "error_correction",
+      "question": "It is important emphasise the role of education.",
+      "answer": "It is important to emphasise the role of education.",
+      "instruction": "Infinitive after adjective",
+      "explanation": "important to emphasise — нужен to."
+    },
+    {
+      "type": "error_correction",
+      "question": "Compared with last year, sales has risen.",
+      "answer": "Compared with last year, sales have risen.",
+      "instruction": "Subject-verb agreement",
+      "explanation": "sales → have (plural)."
+    },
+    {
+      "type": "error_correction",
+      "question": "This could leads to serious consequences.",
+      "answer": "This could lead to serious consequences.",
+      "instruction": "Modal + base verb",
+      "explanation": "could + base verb (lead)."
+    },
+    {
+      "type": "error_correction",
+      "question": "Overall, the evidence are compelling.",
+      "answer": "Overall, the evidence is compelling.",
+      "instruction": "Uncountable noun",
+      "explanation": "evidence — неисчисляемое, is."
     }
   ],
   "eng-ch20-going-to": [
@@ -9302,6 +9505,146 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "Let me know what you think",
       "instruction": "Просьба о мнении",
       "explanation": "Let me know what you think."
+    },
+    {
+      "type": "translation",
+      "question": "Привет! Как дела?",
+      "answer": "Hi! How are you doing?",
+      "instruction": "Informal greeting",
+      "explanation": "Hi + How are you doing? — IELTS GT."
+    },
+    {
+      "type": "translation",
+      "question": "Было здорово получить твоё письмо.",
+      "answer": "It was great to hear from you",
+      "instruction": "Opening phrase",
+      "explanation": "It was great to hear from you — стандарт."
+    },
+    {
+      "type": "translation",
+      "question": "Извини, что давно не писал.",
+      "answer": "Sorry I haven't written for ages",
+      "instruction": "Apology for delay",
+      "explanation": "haven't written for ages — неформально."
+    },
+    {
+      "type": "translation",
+      "question": "Ты не поверишь, что случилось!",
+      "answer": "You'll never guess what happened!",
+      "instruction": "Informal hook",
+      "explanation": "You'll never guess — интрига."
+    },
+    {
+      "type": "translation",
+      "question": "Кстати, как твоя новая работа?",
+      "answer": "By the way, how's your new job?",
+      "instruction": "By the way",
+      "explanation": "By the way — дополнительный вопрос."
+    },
+    {
+      "type": "translation",
+      "question": "Передай привет своей семье.",
+      "answer": "Give my love to your family",
+      "instruction": "Passing greetings",
+      "explanation": "Give my love to — неформально."
+    },
+    {
+      "type": "translation",
+      "question": "Не могу дождаться нашей встречи!",
+      "answer": "I can't wait to see you again!",
+      "instruction": "Enthusiasm",
+      "explanation": "Can't wait to — разговорное."
+    },
+    {
+      "type": "translation",
+      "question": "Напиши, когда будет время.",
+      "answer": "Drop me a line when you get a chance",
+      "instruction": "Informal request",
+      "explanation": "Drop me a line — идиома."
+    },
+    {
+      "type": "translation",
+      "question": "Береги себя и скоро поговорим!",
+      "answer": "Take care and talk soon!",
+      "instruction": "Informal closing",
+      "explanation": "Take care — дружеское прощание."
+    },
+    {
+      "type": "translation",
+      "question": "Надеюсь, у тебя всё хорошо.",
+      "answer": "I hope you're doing well",
+      "instruction": "Informal opening",
+      "explanation": "I hope you're doing well — дружеское."
+    },
+    {
+      "type": "error_correction",
+      "question": "Dear Sarah, How are you doing?",
+      "answer": "Hi Sarah, How are you doing?",
+      "instruction": "Informal greeting — no Dear",
+      "explanation": "Hi Sarah — не Dear для друга."
+    },
+    {
+      "type": "error_correction",
+      "question": "It was great hear from you.",
+      "answer": "It was great to hear from you.",
+      "instruction": "Infinitive — great to",
+      "explanation": "great to hear — нужен to."
+    },
+    {
+      "type": "error_correction",
+      "question": "Sorry I haven't wrote for ages.",
+      "answer": "Sorry I haven't written for ages.",
+      "instruction": "Present perfect — V3",
+      "explanation": "haven't written — V3."
+    },
+    {
+      "type": "error_correction",
+      "question": "You'll never guess what happen!",
+      "answer": "You'll never guess what happened!",
+      "instruction": "Past tense",
+      "explanation": "what happened — прошедшее время."
+    },
+    {
+      "type": "error_correction",
+      "question": "By the way how is your new job?",
+      "answer": "By the way, how's your new job?",
+      "instruction": "Punctuation + contraction",
+      "explanation": "Запятая; how's — неформально."
+    },
+    {
+      "type": "error_correction",
+      "question": "Give my love for your family.",
+      "answer": "Give my love to your family.",
+      "instruction": "Preposition — give love",
+      "explanation": "Give my love to — не for."
+    },
+    {
+      "type": "error_correction",
+      "question": "I can't wait seeing you again!",
+      "answer": "I can't wait to see you again!",
+      "instruction": "Can't wait to",
+      "explanation": "can't wait to see — инфинитив."
+    },
+    {
+      "type": "error_correction",
+      "question": "Drop me a line when you get chance.",
+      "answer": "Drop me a line when you get a chance.",
+      "instruction": "Article — a chance",
+      "explanation": "get a chance — с артиклем."
+    },
+    {
+      "type": "error_correction",
+      "question": "Take care and talks soon.",
+      "answer": "Take care and talk soon!",
+      "instruction": "Imperative — base verb",
+      "explanation": "talk — не talks."
+    },
+    {
+      "type": "error_correction",
+      "question": "I hope you doing well.",
+      "answer": "I hope you're doing well.",
+      "instruction": "Missing verb — contraction",
+      "explanation": "you're doing — нужен are."
     }
   ],
   "eng-ch37-cambridge-letter": [
@@ -9602,6 +9945,146 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "I remain at your disposal",
       "instruction": "Заключительная формула",
       "explanation": "I remain at your disposal — в вашем распоряжении."
+    },
+    {
+      "type": "translation",
+      "question": "Уважаемый господин Томпсон,",
+      "answer": "Dear Mr Thompson,",
+      "instruction": "Formal salutation",
+      "explanation": "Dear Mr Thompson — Cambridge B2."
+    },
+    {
+      "type": "translation",
+      "question": "Пишу в ответ на ваше объявление.",
+      "answer": "I am writing in response to your advertisement",
+      "instruction": "Purpose — response",
+      "explanation": "in response to — формальная цель."
+    },
+    {
+      "type": "translation",
+      "question": "Буду рад предоставить дополнительную информацию.",
+      "answer": "I would be happy to provide further information",
+      "instruction": "Offer of help",
+      "explanation": "I would be happy to provide — B2 email."
+    },
+    {
+      "type": "translation",
+      "question": "Не могли бы вы сообщить о стоимости?",
+      "answer": "Could you please let me know the cost?",
+      "instruction": "Polite inquiry",
+      "explanation": "Could you please let me know — вежливый вопрос."
+    },
+    {
+      "type": "translation",
+      "question": "Заранее благодарю за помощь.",
+      "answer": "Thank you in advance for your help",
+      "instruction": "Advance thanks",
+      "explanation": "Thank you in advance — Cambridge формула."
+    },
+    {
+      "type": "translation",
+      "question": "Прошу прощения за задержку с ответом.",
+      "answer": "I apologise for the delay in replying",
+      "instruction": "Apology — delay",
+      "explanation": "I apologise for the delay — формально."
+    },
+    {
+      "type": "translation",
+      "question": "С нетерпением жду возможности обсудить это.",
+      "answer": "I look forward to the opportunity to discuss this",
+      "instruction": "Forward-looking close",
+      "explanation": "look forward to the opportunity — B2."
+    },
+    {
+      "type": "translation",
+      "question": "Пожалуйста, не стесняйтесь связаться со мной.",
+      "answer": "Please do not hesitate to contact me",
+      "instruction": "Open invitation",
+      "explanation": "do not hesitate to contact — деловое."
+    },
+    {
+      "type": "translation",
+      "question": "С наилучшими пожеланиями.",
+      "answer": "Best regards",
+      "instruction": "Semi-formal closing",
+      "explanation": "Best regards — Cambridge email."
+    },
+    {
+      "type": "translation",
+      "question": "Пишу, чтобы выразить заинтересованность в курсе.",
+      "answer": "I am writing to express my interest in the course",
+      "instruction": "Expression of interest",
+      "explanation": "to express my interest — цель письма."
+    },
+    {
+      "type": "error_correction",
+      "question": "Dear Mr. Thompson,",
+      "answer": "Dear Mr Thompson,",
+      "instruction": "British punctuation — no full stop",
+      "explanation": "Mr Thompson — без точки после Mr (BrE)."
+    },
+    {
+      "type": "error_correction",
+      "question": "I am writing in response of your advertisement.",
+      "answer": "I am writing in response to your advertisement.",
+      "instruction": "Preposition — response",
+      "explanation": "in response to — не of."
+    },
+    {
+      "type": "error_correction",
+      "question": "I would be happy provide further information.",
+      "answer": "I would be happy to provide further information.",
+      "instruction": "Happy to + infinitive",
+      "explanation": "happy to provide — нужен to."
+    },
+    {
+      "type": "error_correction",
+      "question": "Could you please let me knowing the cost?",
+      "answer": "Could you please let me know the cost?",
+      "instruction": "Let + base verb",
+      "explanation": "let me know — не knowing."
+    },
+    {
+      "type": "error_correction",
+      "question": "Thank you in advance of your help.",
+      "answer": "Thank you in advance for your help.",
+      "instruction": "Preposition — in advance",
+      "explanation": "in advance for — не of."
+    },
+    {
+      "type": "error_correction",
+      "question": "I apologise about the delay in replying.",
+      "answer": "I apologise for the delay in replying.",
+      "instruction": "Preposition — apologise",
+      "explanation": "apologise for — не about."
+    },
+    {
+      "type": "error_correction",
+      "question": "I look forward to discuss this.",
+      "answer": "I look forward to discussing this.",
+      "instruction": "Look forward to + -ing",
+      "explanation": "look forward to discussing — gerund после to."
+    },
+    {
+      "type": "error_correction",
+      "question": "Please not hesitate to contact me.",
+      "answer": "Please do not hesitate to contact me.",
+      "instruction": "Do not — missing do",
+      "explanation": "do not hesitate — нужен do."
+    },
+    {
+      "type": "error_correction",
+      "question": "Best regard,",
+      "answer": "Best regards,",
+      "instruction": "Closing — plural",
+      "explanation": "Best regards — plural."
+    },
+    {
+      "type": "error_correction",
+      "question": "I am writing for express my interest in the course.",
+      "answer": "I am writing to express my interest in the course.",
+      "instruction": "Purpose infinitive",
+      "explanation": "writing to express — не for express."
     }
   ],
   "eng-ch39-ielts-essay": [
@@ -9915,6 +10398,146 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "A balanced approach is needed",
       "instruction": "Рекомендация",
       "explanation": "A balanced approach is needed."
+    },
+    {
+      "type": "translation",
+      "question": "В последние годы технологии изменили повседневную жизнь.",
+      "answer": "In recent years, technology has transformed daily life",
+      "instruction": "Essay introduction",
+      "explanation": "In recent years — вводная IELTS Task 2."
+    },
+    {
+      "type": "translation",
+      "question": "Существуют разные мнения по этому вопросу.",
+      "answer": "There are differing opinions on this issue",
+      "instruction": "Presenting debate",
+      "explanation": "differing opinions — нейтральное введение."
+    },
+    {
+      "type": "translation",
+      "question": "С одной стороны, это приносит экономическую выгоду.",
+      "answer": "On the one hand, it brings economic benefits",
+      "instruction": "Balanced structure",
+      "explanation": "On the one hand — первая сторона."
+    },
+    {
+      "type": "translation",
+      "question": "С другой стороны, есть и недостатки.",
+      "answer": "On the other hand, there are also drawbacks",
+      "instruction": "Balanced structure",
+      "explanation": "On the other hand — вторая сторона."
+    },
+    {
+      "type": "translation",
+      "question": "Главным аргументом в пользу этого является…",
+      "answer": "The main argument in favour of this is that…",
+      "instruction": "Argument phrase",
+      "explanation": "The main argument in favour of — структура."
+    },
+    {
+      "type": "translation",
+      "question": "Однако некоторые утверждают, что риски слишком велики.",
+      "answer": "However, some argue that the risks are too great",
+      "instruction": "Counter-argument",
+      "explanation": "However, some argue — контраргумент."
+    },
+    {
+      "type": "translation",
+      "question": "Например, многие семьи сталкиваются с трудностями.",
+      "answer": "For example, many families face difficulties",
+      "instruction": "Example marker",
+      "explanation": "For example — иллюстрация."
+    },
+    {
+      "type": "translation",
+      "question": "Подводя итог, я считаю, что преимущества перевешивают.",
+      "answer": "To conclude, I believe the benefits outweigh the drawbacks",
+      "instruction": "Conclusion + opinion",
+      "explanation": "To conclude, I believe — заключение с позицией."
+    },
+    {
+      "type": "translation",
+      "question": "В заключение следует отметить важность баланса.",
+      "answer": "In conclusion, it is important to note the need for balance",
+      "instruction": "Formal conclusion",
+      "explanation": "In conclusion — итоговый абзац."
+    },
+    {
+      "type": "translation",
+      "question": "Таким образом, правительство должно принять меры.",
+      "answer": "Thus, the government should take action",
+      "instruction": "Result + recommendation",
+      "explanation": "Thus — следствие и рекомендация."
+    },
+    {
+      "type": "error_correction",
+      "question": "In recent years, technology have transformed daily life.",
+      "answer": "In recent years, technology has transformed daily life.",
+      "instruction": "Subject-verb agreement",
+      "explanation": "technology has — singular."
+    },
+    {
+      "type": "error_correction",
+      "question": "There is differing opinions on this issue.",
+      "answer": "There are differing opinions on this issue.",
+      "instruction": "There are + plural",
+      "explanation": "There are opinions — plural."
+    },
+    {
+      "type": "error_correction",
+      "question": "On the one hand, it bring economic benefits.",
+      "answer": "On the one hand, it brings economic benefits.",
+      "instruction": "Third person -s",
+      "explanation": "it brings — 3rd person."
+    },
+    {
+      "type": "error_correction",
+      "question": "On the other hand, there is also drawbacks.",
+      "answer": "On the other hand, there are also drawbacks.",
+      "instruction": "There are + plural",
+      "explanation": "there are drawbacks — plural."
+    },
+    {
+      "type": "error_correction",
+      "question": "The main argument in favour of this is the costs is too high.",
+      "answer": "The main argument in favour of this is that the costs are too high.",
+      "instruction": "That-clause + agreement",
+      "explanation": "is that; the costs are — plural."
+    },
+    {
+      "type": "error_correction",
+      "question": "However some argue that the risks is too great.",
+      "answer": "However, some argue that the risks are too great.",
+      "instruction": "Agreement + punctuation",
+      "explanation": "risks are; запятая после However."
+    },
+    {
+      "type": "error_correction",
+      "question": "For example, many families faces difficulties.",
+      "answer": "For example, many families face difficulties.",
+      "instruction": "Subject-verb agreement",
+      "explanation": "families face — plural."
+    },
+    {
+      "type": "error_correction",
+      "question": "To conclude, I believe the benefits outweigh the drawback.",
+      "answer": "To conclude, I believe the benefits outweigh the drawbacks.",
+      "instruction": "Plural form",
+      "explanation": "drawbacks — plural."
+    },
+    {
+      "type": "error_correction",
+      "question": "In conclusion, it is important note the need for balance.",
+      "answer": "In conclusion, it is important to note the need for balance.",
+      "instruction": "Infinitive after adjective",
+      "explanation": "important to note — нужен to."
+    },
+    {
+      "type": "error_correction",
+      "question": "Thus, the government should takes action.",
+      "answer": "Thus, the government should take action.",
+      "instruction": "Modal + base verb",
+      "explanation": "should take — без -s."
     }
   ],
   "eng-ch40-ielts-cohesion": [
@@ -10211,6 +10834,146 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "Despite this the policy continued",
       "instruction": "Despite this — уступка",
       "explanation": "Despite this — несмотря на вышесказанное."
+    },
+    {
+      "type": "translation",
+      "question": "Тем не менее, аргумент остаётся слабым.",
+      "answer": "Nevertheless, the argument remains weak",
+      "instruction": "Contrast connector",
+      "explanation": "Nevertheless — формальный контраст."
+    },
+    {
+      "type": "translation",
+      "question": "Более того, исследование это подтверждает.",
+      "answer": "Moreover, the research confirms this",
+      "instruction": "Addition connector",
+      "explanation": "Moreover — добавление информации."
+    },
+    {
+      "type": "translation",
+      "question": "С другой стороны, есть и противники.",
+      "answer": "On the other hand, there are opponents",
+      "instruction": "Balanced argument",
+      "explanation": "On the other hand — другая сторона."
+    },
+    {
+      "type": "translation",
+      "question": "Это, в свою очередь, повлияло на цены.",
+      "answer": "This, in turn, affected prices",
+      "instruction": "In turn",
+      "explanation": "in turn — следствие в цепочке."
+    },
+    {
+      "type": "translation",
+      "question": "Как упоминалось ранее, ситуация улучшилась.",
+      "answer": "As mentioned earlier, the situation has improved",
+      "instruction": "Referencing — as mentioned",
+      "explanation": "As mentioned earlier — отсылка назад."
+    },
+    {
+      "type": "translation",
+      "question": "В связи с этим необходимы меры.",
+      "answer": "In this regard, measures are necessary",
+      "instruction": "In this regard",
+      "explanation": "In this regard — по этому вопросу."
+    },
+    {
+      "type": "translation",
+      "question": "Аналогичным образом, другие страны последовали примеру.",
+      "answer": "Similarly, other countries followed suit",
+      "instruction": "Similarity marker",
+      "explanation": "Similarly — параллель; followed suit — идиома."
+    },
+    {
+      "type": "translation",
+      "question": "Напротив, эксперты предупреждают об опасности.",
+      "answer": "Conversely, experts warn of the danger",
+      "instruction": "Opposite connector",
+      "explanation": "Conversely — противоположное."
+    },
+    {
+      "type": "translation",
+      "question": "Следовательно, политику нужно пересмотреть.",
+      "answer": "Consequently, the policy needs to be revised",
+      "instruction": "Result connector",
+      "explanation": "Consequently — следствие."
+    },
+    {
+      "type": "translation",
+      "question": "Что касается образования, прогресс очевиден.",
+      "answer": "With regard to education, progress is evident",
+      "instruction": "Topic shift",
+      "explanation": "With regard to — что касается."
+    },
+    {
+      "type": "error_correction",
+      "question": "Nevertheless the argument remains weak.",
+      "answer": "Nevertheless, the argument remains weak.",
+      "instruction": "Punctuation — connector",
+      "explanation": "Запятая после Nevertheless."
+    },
+    {
+      "type": "error_correction",
+      "question": "Moreover the research confirm this.",
+      "answer": "Moreover, the research confirms this.",
+      "instruction": "Agreement + punctuation",
+      "explanation": "research confirms; запятая после Moreover."
+    },
+    {
+      "type": "error_correction",
+      "question": "On the other hand there is opponents.",
+      "answer": "On the other hand, there are opponents.",
+      "instruction": "There are + plural",
+      "explanation": "there are opponents — множественное число."
+    },
+    {
+      "type": "error_correction",
+      "question": "This in turn affected prices.",
+      "answer": "This, in turn, affected prices.",
+      "instruction": "Punctuation — in turn",
+      "explanation": "in turn в запятых."
+    },
+    {
+      "type": "error_correction",
+      "question": "As mention earlier, the situation has improved.",
+      "answer": "As mentioned earlier, the situation has improved.",
+      "instruction": "Past participle",
+      "explanation": "As mentioned — не mention."
+    },
+    {
+      "type": "error_correction",
+      "question": "In this regard measures is necessary.",
+      "answer": "In this regard, measures are necessary.",
+      "instruction": "Subject-verb agreement",
+      "explanation": "measures are — plural."
+    },
+    {
+      "type": "error_correction",
+      "question": "Similar other countries followed suit.",
+      "answer": "Similarly, other countries followed suit.",
+      "instruction": "Adverb form",
+      "explanation": "Similarly — наречие, не Similar."
+    },
+    {
+      "type": "error_correction",
+      "question": "Conversely experts warns of the danger.",
+      "answer": "Conversely, experts warn of the danger.",
+      "instruction": "Subject-verb agreement",
+      "explanation": "experts warn — plural."
+    },
+    {
+      "type": "error_correction",
+      "question": "Consequently the policy need to be revised.",
+      "answer": "Consequently, the policy needs to be revised.",
+      "instruction": "Third person -s",
+      "explanation": "policy needs — 3rd person."
+    },
+    {
+      "type": "error_correction",
+      "question": "With regard education, progress is evident.",
+      "answer": "With regard to education, progress is evident.",
+      "instruction": "Fixed phrase",
+      "explanation": "With regard to — нужен to."
     }
   ],
   "eng-ch41-cambridge-essay": [
@@ -10474,6 +11237,146 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "Readers are invited to consider their own response",
       "instruction": "Обращение к читателю",
       "explanation": "Readers are invited to… — Cambridge article."
+    },
+    {
+      "type": "translation",
+      "question": "Цель этой статьи — рассмотреть проблему.",
+      "answer": "The purpose of this article is to examine the issue",
+      "instruction": "Article register — purpose",
+      "explanation": "The purpose of this article — регистр статьи."
+    },
+    {
+      "type": "translation",
+      "question": "Автор утверждает, что реформа необходима.",
+      "answer": "The author argues that reform is necessary",
+      "instruction": "Article — reporting verb",
+      "explanation": "The author argues — аналитический стиль."
+    },
+    {
+      "type": "translation",
+      "question": "Согласно недавним данным, спрос вырос.",
+      "answer": "According to recent data, demand has increased",
+      "instruction": "Article — data reference",
+      "explanation": "According to recent data — объективный тон."
+    },
+    {
+      "type": "translation",
+      "question": "Данный анализ показывает положительную тенденцию.",
+      "answer": "This analysis shows a positive trend",
+      "instruction": "Essay vs article — this analysis",
+      "explanation": "This analysis — академическая отсылка."
+    },
+    {
+      "type": "translation",
+      "question": "В отличие от эссе, статья требует объективности.",
+      "answer": "Unlike an essay, an article requires objectivity",
+      "instruction": "Register contrast",
+      "explanation": "Unlike an essay — сравнение форматов."
+    },
+    {
+      "type": "translation",
+      "question": "Читатель может заметить, что аргумент убедителен.",
+      "answer": "The reader may notice that the argument is persuasive",
+      "instruction": "Article — reader address",
+      "explanation": "The reader may notice — стиль статьи."
+    },
+    {
+      "type": "translation",
+      "question": "Как показывает таблица, цифры выросли.",
+      "answer": "As the table shows, the figures have risen",
+      "instruction": "Article — visual reference",
+      "explanation": "As the table shows — ссылка на данные."
+    },
+    {
+      "type": "translation",
+      "question": "В данном разделе рассматриваются основные факторы.",
+      "answer": "This section examines the main factors",
+      "instruction": "Section reference",
+      "explanation": "This section examines — структура статьи."
+    },
+    {
+      "type": "translation",
+      "question": "Подводя итог, можно сказать, что выводы обоснованы.",
+      "answer": "To sum up, it can be said that the conclusions are well founded",
+      "instruction": "Article conclusion",
+      "explanation": "To sum up — нейтральное заключение статьи."
+    },
+    {
+      "type": "translation",
+      "question": "Комментатор отмечает рост интереса к теме.",
+      "answer": "The commentator notes a growing interest in the topic",
+      "instruction": "Third-person reporting",
+      "explanation": "The commentator notes — отстранённый тон."
+    },
+    {
+      "type": "error_correction",
+      "question": "The purpose of this essay is examine the issue.",
+      "answer": "The purpose of this article is to examine the issue.",
+      "instruction": "Article register + infinitive",
+      "explanation": "article (не essay); is to examine."
+    },
+    {
+      "type": "error_correction",
+      "question": "The author argue that reform is necessary.",
+      "answer": "The author argues that reform is necessary.",
+      "instruction": "Third person -s",
+      "explanation": "The author argues — 3rd person."
+    },
+    {
+      "type": "error_correction",
+      "question": "According recent data, demand has increased.",
+      "answer": "According to recent data, demand has increased.",
+      "instruction": "According to",
+      "explanation": "According to — нужен to."
+    },
+    {
+      "type": "error_correction",
+      "question": "This analyse shows a positive trend.",
+      "answer": "This analysis shows a positive trend.",
+      "instruction": "Noun form",
+      "explanation": "analysis (noun) — не analyse."
+    },
+    {
+      "type": "error_correction",
+      "question": "Unlike an essay, an article require objectivity.",
+      "answer": "Unlike an essay, an article requires objectivity.",
+      "instruction": "Third person -s",
+      "explanation": "requires — 3rd person."
+    },
+    {
+      "type": "error_correction",
+      "question": "The reader may noticed that the argument is persuasive.",
+      "answer": "The reader may notice that the argument is persuasive.",
+      "instruction": "Modal + base",
+      "explanation": "may notice — не may noticed."
+    },
+    {
+      "type": "error_correction",
+      "question": "As the table show, the figures have risen.",
+      "answer": "As the table shows, the figures have risen.",
+      "instruction": "Third person -s",
+      "explanation": "the table shows — singular."
+    },
+    {
+      "type": "error_correction",
+      "question": "This section examine the main factors.",
+      "answer": "This section examines the main factors.",
+      "instruction": "Third person -s",
+      "explanation": "examines — 3rd person."
+    },
+    {
+      "type": "error_correction",
+      "question": "To sum up, it can said that the conclusions are well founded.",
+      "answer": "To sum up, it can be said that the conclusions are well founded.",
+      "instruction": "Passive — be",
+      "explanation": "it can be said — нужен be."
+    },
+    {
+      "type": "error_correction",
+      "question": "The commentator note a growing interest in the topic.",
+      "answer": "The commentator notes a growing interest in the topic.",
+      "instruction": "Third person -s",
+      "explanation": "notes — 3rd person."
     }
   ],
   "eng-ch42-ielts-opinion": [
@@ -10736,6 +11639,146 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "To what extent this is true remains debatable",
       "instruction": "To what extent",
       "explanation": "To what extent — IELTS discursive prompt."
+    },
+    {
+      "type": "translation",
+      "question": "Я твёрдо убеждён, что образование должно быть бесплатным.",
+      "answer": "I firmly believe that education should be free",
+      "instruction": "Strong opinion",
+      "explanation": "I firmly believe — уверенная позиция."
+    },
+    {
+      "type": "translation",
+      "question": "По моему мнению, преимущества перевешивают недостатки.",
+      "answer": "In my opinion, the advantages outweigh the disadvantages",
+      "instruction": "Opinion phrase",
+      "explanation": "In my opinion — стандарт IELTS."
+    },
+    {
+      "type": "translation",
+      "question": "Можно утверждать, что технологии изменили общество.",
+      "answer": "It can be argued that technology has changed society",
+      "instruction": "Hedged opinion",
+      "explanation": "It can be argued — смягчённая позиция."
+    },
+    {
+      "type": "translation",
+      "question": "Я склонен считать, что это справедливое решение.",
+      "answer": "I am inclined to believe that this is a fair decision",
+      "instruction": "Tentative opinion",
+      "explanation": "I am inclined to believe — осторожная формулировка."
+    },
+    {
+      "type": "translation",
+      "question": "Безусловно, существуют и другие точки зрения.",
+      "answer": "Admittedly, there are other points of view",
+      "instruction": "Acknowledging counter-argument",
+      "explanation": "Admittedly — признание контраргумента."
+    },
+    {
+      "type": "translation",
+      "question": "Я полностью согласен с тем, что нужны реформы.",
+      "answer": "I entirely agree that reforms are needed",
+      "instruction": "Agreement phrase",
+      "explanation": "I entirely agree — полное согласие."
+    },
+    {
+      "type": "translation",
+      "question": "Кажется, что общественное мнение меняется.",
+      "answer": "It appears that public opinion is changing",
+      "instruction": "Hedging — it appears",
+      "explanation": "It appears that — осторожное утверждение."
+    },
+    {
+      "type": "translation",
+      "question": "Я убеждён, что это лучший подход.",
+      "answer": "I am convinced that this is the best approach",
+      "instruction": "Conviction phrase",
+      "explanation": "I am convinced that — уверенность."
+    },
+    {
+      "type": "translation",
+      "question": "С моей точки зрения, политика неэффективна.",
+      "answer": "From my point of view, the policy is ineffective",
+      "instruction": "Viewpoint phrase",
+      "explanation": "From my point of view — личная перспектива."
+    },
+    {
+      "type": "translation",
+      "question": "Вероятно, ситуация улучшится в будущем.",
+      "answer": "It is likely that the situation will improve in the future",
+      "instruction": "Probability hedge",
+      "explanation": "It is likely that — вероятностная оценка."
+    },
+    {
+      "type": "error_correction",
+      "question": "I firmly believe education should be free.",
+      "answer": "I firmly believe that education should be free.",
+      "instruction": "That-clause",
+      "explanation": "believe that — нужен that."
+    },
+    {
+      "type": "error_correction",
+      "question": "In my opinion, the advantages outweigh the disadvantage.",
+      "answer": "In my opinion, the advantages outweigh the disadvantages.",
+      "instruction": "Plural form",
+      "explanation": "disadvantages — plural."
+    },
+    {
+      "type": "error_correction",
+      "question": "It can argued that technology has changed society.",
+      "answer": "It can be argued that technology has changed society.",
+      "instruction": "Passive — be",
+      "explanation": "It can be argued — нужен be."
+    },
+    {
+      "type": "error_correction",
+      "question": "I am inclined believing that this is a fair decision.",
+      "answer": "I am inclined to believe that this is a fair decision.",
+      "instruction": "Inclined to + infinitive",
+      "explanation": "inclined to believe — не believing."
+    },
+    {
+      "type": "error_correction",
+      "question": "Admittedly, there is other points of view.",
+      "answer": "Admittedly, there are other points of view.",
+      "instruction": "There are + plural",
+      "explanation": "there are — plural with points."
+    },
+    {
+      "type": "error_correction",
+      "question": "I entirely agree reforms are needed.",
+      "answer": "I entirely agree that reforms are needed.",
+      "instruction": "That-clause",
+      "explanation": "agree that — нужен that."
+    },
+    {
+      "type": "error_correction",
+      "question": "It appears public opinion is changing.",
+      "answer": "It appears that public opinion is changing.",
+      "instruction": "That-clause",
+      "explanation": "It appears that — нужен that."
+    },
+    {
+      "type": "error_correction",
+      "question": "I am convinced this is the best approach.",
+      "answer": "I am convinced that this is the best approach.",
+      "instruction": "That-clause",
+      "explanation": "convinced that — нужен that."
+    },
+    {
+      "type": "error_correction",
+      "question": "From my point of view, the policy are ineffective.",
+      "answer": "From my point of view, the policy is ineffective.",
+      "instruction": "Subject-verb agreement",
+      "explanation": "the policy is — singular."
+    },
+    {
+      "type": "error_correction",
+      "question": "It is likely the situation will improve in the future.",
+      "answer": "It is likely that the situation will improve in the future.",
+      "instruction": "That-clause",
+      "explanation": "It is likely that — нужен that."
     }
   ],
   "eng-ch43-register-shift": [
@@ -10993,6 +12036,146 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "Should you require further information please contact us",
       "instruction": "Формальное предложение",
       "explanation": "Should you require — инверсия, формально."
+    },
+    {
+      "type": "translation",
+      "question": "Не могли бы вы мне помочь?",
+      "answer": "Could you help me, please?",
+      "instruction": "Formal request",
+      "explanation": "Could you — вежливая формальная просьба."
+    },
+    {
+      "type": "translation",
+      "question": "Буду признателен за ваш ответ.",
+      "answer": "I would be grateful for your reply",
+      "instruction": "Formal closing request",
+      "explanation": "I would be grateful — формальный тон."
+    },
+    {
+      "type": "translation",
+      "question": "Прошу прощения за неудобства.",
+      "answer": "I apologise for any inconvenience caused",
+      "instruction": "Formal apology",
+      "explanation": "I apologise for any inconvenience — деловой стиль."
+    },
+    {
+      "type": "translation",
+      "question": "Дай знать, когда будешь свободен.",
+      "answer": "Let me know when you're free",
+      "instruction": "Informal request",
+      "explanation": "Let me know — разговорный регистр."
+    },
+    {
+      "type": "translation",
+      "question": "Пишу, чтобы сообщить о задержке.",
+      "answer": "I am writing to inform you of a delay",
+      "instruction": "Formal purpose",
+      "explanation": "I am writing to inform — формальное письмо."
+    },
+    {
+      "type": "translation",
+      "question": "Классно было с тобой пообщаться!",
+      "answer": "It was great chatting with you!",
+      "instruction": "Informal positive",
+      "explanation": "great chatting — неформальный тон."
+    },
+    {
+      "type": "translation",
+      "question": "Прошу рассмотреть мою жалобу.",
+      "answer": "I would like you to consider my complaint",
+      "instruction": "Formal complaint",
+      "explanation": "I would like you to consider — формально."
+    },
+    {
+      "type": "translation",
+      "question": "Спишемся на днях!",
+      "answer": "Let's catch up soon!",
+      "instruction": "Informal closing",
+      "explanation": "Let's catch up — дружеский стиль."
+    },
+    {
+      "type": "translation",
+      "question": "С нетерпением жду вашего ответа.",
+      "answer": "I look forward to hearing from you",
+      "instruction": "Formal closing",
+      "explanation": "I look forward to hearing — деловое письмо."
+    },
+    {
+      "type": "translation",
+      "question": "Что нового?",
+      "answer": "What's new?",
+      "instruction": "Informal greeting",
+      "explanation": "What's new? — разговорное приветствие."
+    },
+    {
+      "type": "error_correction",
+      "question": "Could you to help me, please?",
+      "answer": "Could you help me, please?",
+      "instruction": "Modal + base verb",
+      "explanation": "Could you help — без to."
+    },
+    {
+      "type": "error_correction",
+      "question": "I would be grateful of your reply.",
+      "answer": "I would be grateful for your reply.",
+      "instruction": "Preposition — grateful",
+      "explanation": "grateful for — не of."
+    },
+    {
+      "type": "error_correction",
+      "question": "I apologise about any inconvenience caused.",
+      "answer": "I apologise for any inconvenience caused.",
+      "instruction": "Preposition — apologise",
+      "explanation": "apologise for — не about."
+    },
+    {
+      "type": "error_correction",
+      "question": "Let me to know when you're free.",
+      "answer": "Let me know when you're free.",
+      "instruction": "Let + base verb",
+      "explanation": "Let me know — без to."
+    },
+    {
+      "type": "error_correction",
+      "question": "I am writing for inform you of a delay.",
+      "answer": "I am writing to inform you of a delay.",
+      "instruction": "Purpose infinitive",
+      "explanation": "writing to inform — не for inform."
+    },
+    {
+      "type": "error_correction",
+      "question": "It was great to chat with you!",
+      "answer": "It was great chatting with you!",
+      "instruction": "Informal gerund",
+      "explanation": "chatting — неформальнее to chat."
+    },
+    {
+      "type": "error_correction",
+      "question": "I would like you considering my complaint.",
+      "answer": "I would like you to consider my complaint.",
+      "instruction": "Would like + to",
+      "explanation": "would like you to consider."
+    },
+    {
+      "type": "error_correction",
+      "question": "Let's catching up soon!",
+      "answer": "Let's catch up soon!",
+      "instruction": "Let's + base verb",
+      "explanation": "Let's catch up — base verb."
+    },
+    {
+      "type": "error_correction",
+      "question": "I look forward to hear from you.",
+      "answer": "I look forward to hearing from you.",
+      "instruction": "Look forward to + -ing",
+      "explanation": "to hearing — gerund после look forward to."
+    },
+    {
+      "type": "error_correction",
+      "question": "What is new?",
+      "answer": "What's new?",
+      "instruction": "Informal contraction",
+      "explanation": "What's new? — разговорная форма."
     }
   ],
   "eng-ch13-advanced-structures": [
@@ -11248,6 +12431,146 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "No sooner had he arrived than the phone rang",
       "instruction": "No sooner… than",
       "explanation": "No sooner had he — инверсия + than."
+    },
+    {
+      "type": "translation",
+      "question": "Никогда я не видел такой красоты.",
+      "answer": "Never have I seen such beauty",
+      "instruction": "Inversion — Never",
+      "explanation": "Never have I — инверсия после отрицания."
+    },
+    {
+      "type": "translation",
+      "question": "Именно Джон решил эту проблему.",
+      "answer": "It was John who solved this problem",
+      "instruction": "Cleft — It was… who",
+      "explanation": "It-cleft для акцента на подлежащем."
+    },
+    {
+      "type": "translation",
+      "question": "То, что мне нужно, — это длинный отпуск.",
+      "answer": "What I need is a long holiday",
+      "instruction": "Pseudo-cleft — What",
+      "explanation": "What I need is — псевдоразделительное предложение."
+    },
+    {
+      "type": "translation",
+      "question": "Редко мы становимся свидетелями такой преданности.",
+      "answer": "Rarely do we witness such dedication",
+      "instruction": "Inversion — Rarely",
+      "explanation": "Rarely do we — инверсия с вспомогательным глаголом."
+    },
+    {
+      "type": "translation",
+      "question": "Только тогда я понял правду.",
+      "answer": "Only then did I understand the truth",
+      "instruction": "Inversion — Only then",
+      "explanation": "Only then did I — инверсия после only."
+    },
+    {
+      "type": "translation",
+      "question": "Ни при каких обстоятельствах не открывай эту дверь.",
+      "answer": "Under no circumstances should you open that door",
+      "instruction": "Inversion — Under no circumstances",
+      "explanation": "Under no circumstances should you — формальная инверсия."
+    },
+    {
+      "type": "translation",
+      "question": "Именно свободу люди ценят больше всего.",
+      "answer": "It is freedom that people value most",
+      "instruction": "Cleft — It is… that",
+      "explanation": "It is freedom that — акцент на дополнении."
+    },
+    {
+      "type": "translation",
+      "question": "Едва он приехал, как зазвонил телефон.",
+      "answer": "No sooner had he arrived than the phone rang",
+      "instruction": "No sooner… than",
+      "explanation": "No sooner had he — инверсия + than (не when)."
+    },
+    {
+      "type": "translation",
+      "question": "Так устала была она, что сразу заснула.",
+      "answer": "So tired was she that she fell asleep immediately",
+      "instruction": "So… inversion",
+      "explanation": "So tired was she — инверсия после so + прилагательное."
+    },
+    {
+      "type": "translation",
+      "question": "Не только она выиграла, но и побила рекорд.",
+      "answer": "Not only did she win but she also broke the record",
+      "instruction": "Not only… inversion",
+      "explanation": "Not only did she — инверсия в первой части."
+    },
+    {
+      "type": "error_correction",
+      "question": "Never I have seen such beauty.",
+      "answer": "Never have I seen such beauty.",
+      "instruction": "Inversion — Never",
+      "explanation": "Never have I — вспомогательный глагол перед подлежащим."
+    },
+    {
+      "type": "error_correction",
+      "question": "It was John who solved this problem solved it.",
+      "answer": "It was John who solved this problem.",
+      "instruction": "Cleft — redundancy",
+      "explanation": "Убрать повтор solved it."
+    },
+    {
+      "type": "error_correction",
+      "question": "What I need is a long holiday is rest.",
+      "answer": "What I need is a long holiday.",
+      "instruction": "Pseudo-cleft — redundancy",
+      "explanation": "Одно дополнение после is — не два."
+    },
+    {
+      "type": "error_correction",
+      "question": "Rarely we do witness such dedication.",
+      "answer": "Rarely do we witness such dedication.",
+      "instruction": "Inversion — word order",
+      "explanation": "Rarely do we — do перед подлежащим."
+    },
+    {
+      "type": "error_correction",
+      "question": "Only then I did understand the truth.",
+      "answer": "Only then did I understand the truth.",
+      "instruction": "Inversion — Only then",
+      "explanation": "Only then did I — инверсия."
+    },
+    {
+      "type": "error_correction",
+      "question": "Under no circumstances you should open that door.",
+      "answer": "Under no circumstances should you open that door.",
+      "instruction": "Inversion — modal",
+      "explanation": "should you — модальный перед подлежащим."
+    },
+    {
+      "type": "error_correction",
+      "question": "It is freedom what people value most.",
+      "answer": "It is freedom that people value most.",
+      "instruction": "Cleft — that not what",
+      "explanation": "It is… that — не what."
+    },
+    {
+      "type": "error_correction",
+      "question": "No sooner he had arrived when the phone rang.",
+      "answer": "No sooner had he arrived than the phone rang.",
+      "instruction": "No sooner… than",
+      "explanation": "had he + than (не when)."
+    },
+    {
+      "type": "error_correction",
+      "question": "So tired she was that she fell asleep immediately.",
+      "answer": "So tired was she that she fell asleep immediately.",
+      "instruction": "So… inversion",
+      "explanation": "So tired was she — инверсия."
+    },
+    {
+      "type": "error_correction",
+      "question": "Not only she did win but she also broke the record.",
+      "answer": "Not only did she win but she also broke the record.",
+      "instruction": "Not only… inversion",
+      "explanation": "Not only did she — инверсия."
     }
   ],
   "eng-ch14-art-language": [
@@ -11503,6 +12826,146 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "She turned away swallowing the lump in her throat",
       "instruction": "Physical emotion",
       "explanation": "Lump in her throat — физическое проявление."
+    },
+    {
+      "type": "translation",
+      "question": "Мне красный, пожалуйста.",
+      "answer": "I'll have the red one, please",
+      "instruction": "Substitution — one",
+      "explanation": "one заменяет существительное (the red one)."
+    },
+    {
+      "type": "translation",
+      "question": "Я думаю, что да.",
+      "answer": "I think so",
+      "instruction": "Substitution — so",
+      "explanation": "so заменяет целое предложение."
+    },
+    {
+      "type": "translation",
+      "question": "Ты придёшь? — Надеюсь.",
+      "answer": "Will you come? — I hope so",
+      "instruction": "Substitution — hope so",
+      "explanation": "I hope so — so = that you will come."
+    },
+    {
+      "type": "translation",
+      "question": "Она устала, а он — нет.",
+      "answer": "She was tired but he wasn't",
+      "instruction": "Ellipsis — wasn't",
+      "explanation": "wasn't = wasn't tired — эллипсис глагола."
+    },
+    {
+      "type": "translation",
+      "question": "Очень красиво, не правда ли?",
+      "answer": "Beautiful, isn't it?",
+      "instruction": "Fronting — adjective",
+      "explanation": "Прилагательное в начале + tag question."
+    },
+    {
+      "type": "translation",
+      "question": "Такова была её реакция.",
+      "answer": "Such was her reaction",
+      "instruction": "Fronting — Such",
+      "explanation": "Such was her reaction — литературный порядок слов."
+    },
+    {
+      "type": "translation",
+      "question": "На столе лежала книга.",
+      "answer": "On the table lay a book",
+      "instruction": "Fronting — prepositional phrase",
+      "explanation": "On the table lay — инверсия после обстоятельства."
+    },
+    {
+      "type": "translation",
+      "question": "Никогда я не забуду тот день.",
+      "answer": "Never will I forget that day",
+      "instruction": "Fronting — Never",
+      "explanation": "Never will I — инверсия после never."
+    },
+    {
+      "type": "translation",
+      "question": "Он может помочь, если захочет.",
+      "answer": "He can help if he wants to",
+      "instruction": "Ellipsis — wants to",
+      "explanation": "wants to = wants to help — эллипсис."
+    },
+    {
+      "type": "translation",
+      "question": "Абсолютно потрясающий фильм!",
+      "answer": "An absolutely stunning film!",
+      "instruction": "Intensifier — absolutely",
+      "explanation": "absolutely + прилагательное — усиление."
+    },
+    {
+      "type": "error_correction",
+      "question": "I'll have the red it, please.",
+      "answer": "I'll have the red one, please.",
+      "instruction": "Substitution — one",
+      "explanation": "one — не it для замены существительного."
+    },
+    {
+      "type": "error_correction",
+      "question": "I think it so.",
+      "answer": "I think so.",
+      "instruction": "Substitution — so",
+      "explanation": "I think so — so без it."
+    },
+    {
+      "type": "error_correction",
+      "question": "Will you come? — I hope it.",
+      "answer": "Will you come? — I hope so.",
+      "instruction": "Substitution — hope so",
+      "explanation": "I hope so — so заменяет предложение."
+    },
+    {
+      "type": "error_correction",
+      "question": "She was tired but he didn't.",
+      "answer": "She was tired but he wasn't.",
+      "instruction": "Ellipsis — wasn't",
+      "explanation": "wasn't = wasn't tired."
+    },
+    {
+      "type": "error_correction",
+      "question": "Beautiful, isn't it it?",
+      "answer": "Beautiful, isn't it?",
+      "instruction": "Tag question — redundancy",
+      "explanation": "Убрать лишнее it."
+    },
+    {
+      "type": "error_correction",
+      "question": "Such her reaction was.",
+      "answer": "Such was her reaction.",
+      "instruction": "Fronting — Such",
+      "explanation": "Such was her reaction — правильный порядок."
+    },
+    {
+      "type": "error_correction",
+      "question": "Never I will forget that day.",
+      "answer": "Never will I forget that day.",
+      "instruction": "Fronting — Never",
+      "explanation": "Never will I — инверсия."
+    },
+    {
+      "type": "error_correction",
+      "question": "He can help if he wants.",
+      "answer": "He can help if he wants to.",
+      "instruction": "Ellipsis — to",
+      "explanation": "wants to — нужен to после wants."
+    },
+    {
+      "type": "error_correction",
+      "question": "A absolutely stunning film!",
+      "answer": "An absolutely stunning film!",
+      "instruction": "Article before vowel",
+      "explanation": "an — перед гласной (absolutely)."
+    },
+    {
+      "type": "error_correction",
+      "question": "On the table a book lay.",
+      "answer": "On the table lay a book.",
+      "instruction": "Fronting — verb position",
+      "explanation": "On the table lay a book — глагол после обстоятельства."
     }
   ],
   "eng-ch15-mastery": [
@@ -11769,6 +13232,430 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "Be that as it may we must proceed cautiously",
       "instruction": "Fixed phrase",
       "explanation": "Be that as it may — формальный переход."
+    },
+    {
+      "type": "translation",
+      "question": "Если бы я учил медицину, я был бы врачом сейчас.",
+      "answer": "If I had studied medicine, I would be a doctor now",
+      "instruction": "Mixed conditional — past→present",
+      "explanation": "Past condition → present result (would be)."
+    },
+    {
+      "type": "translation",
+      "question": "Если бы я был выше, я бы попал в команду.",
+      "answer": "If I were taller, I would have joined the team",
+      "instruction": "Mixed conditional — present→past",
+      "explanation": "Present condition → past result (would have joined)."
+    },
+    {
+      "type": "translation",
+      "question": "Предложение отклонили до нашего прихода.",
+      "answer": "The proposal had been rejected before we arrived",
+      "instruction": "Past perfect passive",
+      "explanation": "had been rejected — до другого прошлого."
+    },
+    {
+      "type": "translation",
+      "question": "Говорят, что проект провалится.",
+      "answer": "The project is said to fail",
+      "instruction": "Reporting passive",
+      "explanation": "is said to + infinitive."
+    },
+    {
+      "type": "translation",
+      "question": "Ему следовало позвонить раньше.",
+      "answer": "He should have called earlier",
+      "instruction": "Should have + V3",
+      "explanation": "should have called — упущенное в прошлом."
+    },
+    {
+      "type": "translation",
+      "question": "Если бы не её помощь, мы бы провалились.",
+      "answer": "Were it not for her help, we would have failed",
+      "instruction": "Were it not for",
+      "explanation": "Were it not for — формальная альтернатива if it weren't."
+    },
+    {
+      "type": "translation",
+      "question": "Документ, по-видимому, был подделан.",
+      "answer": "The document appears to have been forged",
+      "instruction": "Appear to have been",
+      "explanation": "appears to have been — перфектный инфинитив."
+    },
+    {
+      "type": "translation",
+      "question": "К тому времени дом уже был построен.",
+      "answer": "By then the house had already been built",
+      "instruction": "Past perfect passive",
+      "explanation": "had already been built — к моменту в прошлом."
+    },
+    {
+      "type": "translation",
+      "question": "Ей не следовало так говорить.",
+      "answer": "She shouldn't have spoken like that",
+      "instruction": "Shouldn't have + V3",
+      "explanation": "shouldn't have spoken — критика прошлого."
+    },
+    {
+      "type": "translation",
+      "question": "Если бы я знал, я бы пришёл.",
+      "answer": "Had I known, I would have come",
+      "instruction": "Inversion — Had I",
+      "explanation": "Had I known — без if, C1."
+    },
+    {
+      "type": "error_correction",
+      "question": "If I had studied medicine, I would have been a doctor now.",
+      "answer": "If I had studied medicine, I would be a doctor now.",
+      "instruction": "Mixed conditional — result tense",
+      "explanation": "would be (сейчас) — не would have been."
+    },
+    {
+      "type": "error_correction",
+      "question": "If I was taller, I would have joined the team.",
+      "answer": "If I were taller, I would have joined the team.",
+      "instruction": "Subjunctive — were",
+      "explanation": "If I were — формальный subjunctive."
+    },
+    {
+      "type": "error_correction",
+      "question": "The proposal was rejected before we had arrived.",
+      "answer": "The proposal had been rejected before we arrived.",
+      "instruction": "Past perfect passive",
+      "explanation": "had been rejected — до we arrived."
+    },
+    {
+      "type": "error_correction",
+      "question": "The project is said to failing.",
+      "answer": "The project is said to fail.",
+      "instruction": "Reporting passive — infinitive",
+      "explanation": "is said to fail — базовый инфинитив."
+    },
+    {
+      "type": "error_correction",
+      "question": "He should have call earlier.",
+      "answer": "He should have called earlier.",
+      "instruction": "Should have + V3",
+      "explanation": "should have called — V3."
+    },
+    {
+      "type": "error_correction",
+      "question": "If it wasn't for her help, we would have failed.",
+      "answer": "Were it not for her help, we would have failed.",
+      "instruction": "Were it not for",
+      "explanation": "Were it not for — формальная конструкция."
+    },
+    {
+      "type": "error_correction",
+      "question": "The document appears to been forged.",
+      "answer": "The document appears to have been forged.",
+      "instruction": "Appear to have been",
+      "explanation": "to have been — перфектный инфинитив."
+    },
+    {
+      "type": "error_correction",
+      "question": "By then the house was already built.",
+      "answer": "By then the house had already been built.",
+      "instruction": "Past perfect passive",
+      "explanation": "had been built — к моменту by then."
+    },
+    {
+      "type": "error_correction",
+      "question": "She shouldn't have spoke like that.",
+      "answer": "She shouldn't have spoken like that.",
+      "instruction": "Shouldn't have + V3",
+      "explanation": "spoken — V3 от speak."
+    },
+    {
+      "type": "error_correction",
+      "question": "Had I know, I would have come.",
+      "answer": "Had I known, I would have come.",
+      "instruction": "Inversion — Had I",
+      "explanation": "Had I known — V3."
+    }
+  ],
+  "eng-ch36-ielts-formal": [
+    {
+      "type": "translation",
+      "question": "Пишу, чтобы пожаловаться на обслуживание.",
+      "answer": "I am writing to complain about the service",
+      "instruction": "Formal complaint opening",
+      "explanation": "I am writing to complain — IELTS GT formal."
+    },
+    {
+      "type": "translation",
+      "question": "Я крайне разочарован качеством продукта.",
+      "answer": "I am extremely disappointed with the quality of the product",
+      "instruction": "Formal dissatisfaction",
+      "explanation": "I am extremely disappointed with — формально."
+    },
+    {
+      "type": "translation",
+      "question": "Прошу вернуть полную стоимость.",
+      "answer": "I would like to request a full refund",
+      "instruction": "Formal demand",
+      "explanation": "I would like to request — вежливая просьба."
+    },
+    {
+      "type": "translation",
+      "question": "Надеюсь, вы решите этот вопрос оперативно.",
+      "answer": "I trust you will resolve this matter promptly",
+      "instruction": "Formal expectation",
+      "explanation": "I trust you will — деловой тон."
+    },
+    {
+      "type": "translation",
+      "question": "Приложена копия чека.",
+      "answer": "Enclosed is a copy of the receipt",
+      "instruction": "Formal enclosure",
+      "explanation": "Enclosed is — формальная формула."
+    },
+    {
+      "type": "translation",
+      "question": "Буду благодарен за ваше содействие.",
+      "answer": "I would appreciate your assistance in this matter",
+      "instruction": "Formal appreciation",
+      "explanation": "I would appreciate — формально."
+    },
+    {
+      "type": "translation",
+      "question": "Обращаюсь к вам по поводу бронирования.",
+      "answer": "I am contacting you regarding my reservation",
+      "instruction": "Formal purpose",
+      "explanation": "I am contacting you regarding — деловое."
+    },
+    {
+      "type": "translation",
+      "question": "С сожалением сообщаю, что вынужден отменить заказ.",
+      "answer": "I regret to inform you that I must cancel my order",
+      "instruction": "Formal regret",
+      "explanation": "I regret to inform you — формальное."
+    },
+    {
+      "type": "translation",
+      "question": "Прошу подтвердить получение этого письма.",
+      "answer": "I would be grateful if you could confirm receipt of this letter",
+      "instruction": "Formal confirmation request",
+      "explanation": "I would be grateful if you could — IELTS GT."
+    },
+    {
+      "type": "translation",
+      "question": "С уважением.",
+      "answer": "Yours faithfully",
+      "instruction": "Formal closing — unknown recipient",
+      "explanation": "Yours faithfully — если не знаем имя."
+    },
+    {
+      "type": "error_correction",
+      "question": "I am writing for complain about the service.",
+      "answer": "I am writing to complain about the service.",
+      "instruction": "Purpose infinitive",
+      "explanation": "writing to complain — не for complain."
+    },
+    {
+      "type": "error_correction",
+      "question": "I am extremely disappointed of the quality.",
+      "answer": "I am extremely disappointed with the quality of the product.",
+      "instruction": "Preposition — disappointed",
+      "explanation": "disappointed with — не of."
+    },
+    {
+      "type": "error_correction",
+      "question": "I would like request a full refund.",
+      "answer": "I would like to request a full refund.",
+      "instruction": "Would like to",
+      "explanation": "would like to request — нужен to."
+    },
+    {
+      "type": "error_correction",
+      "question": "I trust you will resolve this matter prompt.",
+      "answer": "I trust you will resolve this matter promptly.",
+      "instruction": "Adverb form",
+      "explanation": "promptly — наречие, не prompt."
+    },
+    {
+      "type": "error_correction",
+      "question": "Enclosed are a copy of the receipt.",
+      "answer": "Enclosed is a copy of the receipt.",
+      "instruction": "Subject-verb agreement",
+      "explanation": "Enclosed is — singular with a copy."
+    },
+    {
+      "type": "error_correction",
+      "question": "I would appreciate your assist in this matter.",
+      "answer": "I would appreciate your assistance in this matter.",
+      "instruction": "Noun form",
+      "explanation": "assistance (noun) — не assist."
+    },
+    {
+      "type": "error_correction",
+      "question": "I am contacting you about of my reservation.",
+      "answer": "I am contacting you regarding my reservation.",
+      "instruction": "Regarding — no of",
+      "explanation": "regarding — не about of."
+    },
+    {
+      "type": "error_correction",
+      "question": "I regret informing you that I must cancel my order.",
+      "answer": "I regret to inform you that I must cancel my order.",
+      "instruction": "Regret to + infinitive",
+      "explanation": "regret to inform — не regret informing."
+    },
+    {
+      "type": "error_correction",
+      "question": "I would be grateful if you could confirm the receipt of this letter.",
+      "answer": "I would be grateful if you could confirm receipt of this letter.",
+      "instruction": "Receipt — no the",
+      "explanation": "confirm receipt — без the (формула)."
+    },
+    {
+      "type": "error_correction",
+      "question": "Yours faithful,",
+      "answer": "Yours faithfully,",
+      "instruction": "Formal closing spelling",
+      "explanation": "Yours faithfully — с -ly."
+    }
+  ],
+  "eng-ch38-ielts-task1": [
+    {
+      "type": "translation",
+      "question": "График показывает изменения за период с 2000 по 2020 год.",
+      "answer": "The chart shows changes over the period from 2000 to 2020",
+      "instruction": "Task 1 — chart introduction",
+      "explanation": "The chart shows — вводная без opinion."
+    },
+    {
+      "type": "translation",
+      "question": "В целом, наблюдается рост продаж.",
+      "answer": "Overall, there was an increase in sales",
+      "instruction": "Task 1 — overview",
+      "explanation": "Overall — обобщение; no opinion."
+    },
+    {
+      "type": "translation",
+      "question": "Цифры выросли с 20% до 45%.",
+      "answer": "The figures rose from 20% to 45%",
+      "instruction": "Trend language — rise",
+      "explanation": "rose from… to… — описание тренда."
+    },
+    {
+      "type": "translation",
+      "question": "К 2015 году уровень достиг пика.",
+      "answer": "By 2015, the level had peaked",
+      "instruction": "Past perfect — peak",
+      "explanation": "had peaked — к моменту in the past."
+    },
+    {
+      "type": "translation",
+      "question": "Самый резкий рост произошёл в 2018 году.",
+      "answer": "The most dramatic increase occurred in 2018",
+      "instruction": "Superlative trend",
+      "explanation": "The most dramatic increase — сравнение."
+    },
+    {
+      "type": "translation",
+      "question": "В то время как экспорт вырос, импорт снизился.",
+      "answer": "While exports increased, imports decreased",
+      "instruction": "Contrast — while",
+      "explanation": "While — контраст двух трендов."
+    },
+    {
+      "type": "translation",
+      "question": "Доля упала примерно на 10 процентных пунктов.",
+      "answer": "The proportion fell by approximately 10 percentage points",
+      "instruction": "Precise change",
+      "explanation": "fell by… percentage points — точное описание."
+    },
+    {
+      "type": "translation",
+      "question": "Оба показателя оставались стабильными до 2010 года.",
+      "answer": "Both figures remained stable until 2010",
+      "instruction": "Stability language",
+      "explanation": "remained stable — без изменений."
+    },
+    {
+      "type": "translation",
+      "question": "После этого наблюдался постепенный спад.",
+      "answer": "After this, there was a gradual decline",
+      "instruction": "Decline language",
+      "explanation": "a gradual decline — описание снижения."
+    },
+    {
+      "type": "translation",
+      "question": "В 2020 году показатель был в два раза выше, чем в 2000.",
+      "answer": "In 2020, the figure was twice as high as in 2000",
+      "instruction": "Comparison — twice as high",
+      "explanation": "twice as high as — сравнение."
+    },
+    {
+      "type": "error_correction",
+      "question": "The chart shows changes during the period from 2000 to 2020.",
+      "answer": "The chart shows changes over the period from 2000 to 2020.",
+      "instruction": "Preposition — period",
+      "explanation": "over the period — не during."
+    },
+    {
+      "type": "error_correction",
+      "question": "Overall, sales increased dramatically and this is terrible.",
+      "answer": "Overall, there was an increase in sales.",
+      "instruction": "No opinion in Task 1",
+      "explanation": "Task 1 — без мнения (terrible)."
+    },
+    {
+      "type": "error_correction",
+      "question": "The figures rose from 20% until 45%.",
+      "answer": "The figures rose from 20% to 45%.",
+      "instruction": "From… to",
+      "explanation": "from… to — не until."
+    },
+    {
+      "type": "error_correction",
+      "question": "By 2015, the level has peaked.",
+      "answer": "By 2015, the level had peaked.",
+      "instruction": "Past perfect by date",
+      "explanation": "had peaked — past perfect к 2015."
+    },
+    {
+      "type": "error_correction",
+      "question": "The more dramatic increase occurred in 2018.",
+      "answer": "The most dramatic increase occurred in 2018.",
+      "instruction": "Superlative — most",
+      "explanation": "The most dramatic — superlative."
+    },
+    {
+      "type": "error_correction",
+      "question": "While exports increased, imports decreased dramatic.",
+      "answer": "While exports increased, imports decreased dramatically.",
+      "instruction": "Adverb form",
+      "explanation": "decreased dramatically — наречие."
+    },
+    {
+      "type": "error_correction",
+      "question": "The proportion fell by approximately 10 percents.",
+      "answer": "The proportion fell by approximately 10 percentage points.",
+      "instruction": "Percentage points",
+      "explanation": "percentage points — не percents."
+    },
+    {
+      "type": "error_correction",
+      "question": "Both figures remained stable since 2010.",
+      "answer": "Both figures remained stable until 2010.",
+      "instruction": "Until vs since",
+      "explanation": "until 2010 — до этого момента."
+    },
+    {
+      "type": "error_correction",
+      "question": "After this, there was a gradually decline.",
+      "answer": "After this, there was a gradual decline.",
+      "instruction": "Adjective before noun",
+      "explanation": "gradual decline — прилагательное, не наречие."
+    },
+    {
+      "type": "error_correction",
+      "question": "In 2020, the figure was two times higher than 2000.",
+      "answer": "In 2020, the figure was twice as high as in 2000.",
+      "instruction": "Comparison structure",
+      "explanation": "twice as high as in 2000 — полная форма."
     }
   ]
 } as const;
