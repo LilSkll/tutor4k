@@ -13,7 +13,6 @@ import {
   XCircle,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
@@ -28,6 +27,8 @@ import { getCourseTitle } from "@/config/courses";
 import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 import { QuestionWithGloss } from "@/components/exercises/question-with-gloss";
+import { ExerciseFreeTextBlock } from "@/components/exercises/exercise-free-text-block";
+import { localizeExerciseInstruction } from "@/lib/exercise-localize";
 import type {
   ExerciseType,
   GrammarLevel,
@@ -527,6 +528,8 @@ export function ExerciseRunner({
           <ExerciseCard
             key={`${exercise.exerciseId ?? exercise.question}-${queueIdx}`}
             exercise={exercise}
+            courseId={activeCourseId}
+            interfaceLanguage={language}
             userAnswer={userAnswer}
             setUserAnswer={setUserAnswer}
             selectedOption={selectedOption}
@@ -610,6 +613,8 @@ export function ExerciseRunner({
 
 function ExerciseCard({
   exercise,
+  courseId,
+  interfaceLanguage,
   userAnswer,
   setUserAnswer,
   selectedOption,
@@ -618,6 +623,8 @@ function ExerciseCard({
   t,
 }: {
   exercise: GeneratedExercise;
+  courseId: string;
+  interfaceLanguage: InterfaceLanguage;
   userAnswer: string;
   setUserAnswer: (v: string) => void;
   selectedOption: string | null;
@@ -627,6 +634,10 @@ function ExerciseCard({
 }) {
   const isSentenceBuilding = exercise.type === "sentence_building";
   const isMultipleChoice = exercise.type === "multiple_choice";
+  const isFreeText =
+    exercise.type === "fill_blank" ||
+    exercise.type === "translation" ||
+    exercise.type === "error_correction";
   const hasOptions =
     (isMultipleChoice || isSentenceBuilding) &&
     exercise.options &&
@@ -660,20 +671,32 @@ function ExerciseCard({
           <span className="text-xs text-muted-foreground">{exercise.topic}</span>
         </div>
 
-        {exercise.instruction && (
+        {(!isFreeText || isMultipleChoice || isSentenceBuilding) &&
+        (exercise.instruction || isMultipleChoice || isSentenceBuilding) ? (
           <div className="rounded-lg bg-primary/10 border border-primary/20 px-4 py-2.5">
             <p className="text-sm text-foreground">
               <span className="font-semibold text-primary">{t("exercises.taskLabel")} </span>
-              {exercise.instruction}
+              {localizeExerciseInstruction(exercise, interfaceLanguage)}
             </p>
           </div>
-        )}
+        ) : null}
 
         <div className="rounded-lg bg-muted/50 p-4">
-          <QuestionWithGloss exercise={exercise} />
+          <QuestionWithGloss exercise={exercise} interfaceLanguage={interfaceLanguage} />
         </div>
 
-        {isSentenceBuilding && hasOptions ? (
+        {isFreeText && !hasOptions ? (
+          <ExerciseFreeTextBlock
+            exercise={exercise}
+            courseId={courseId}
+            interfaceLanguage={interfaceLanguage}
+            value={userAnswer}
+            onChange={setUserAnswer}
+            onSubmit={onCheck}
+            taskLabel={t("exercises.taskLabel")}
+            autoFocus
+          />
+        ) : isSentenceBuilding && hasOptions ? (
           <div className="space-y-3">
             <div className="min-h-[60px] rounded-lg border-2 border-dashed border-primary/30 bg-primary/5 p-3 flex flex-wrap gap-2 items-center">
               {wordOrder.length === 0 ? (
@@ -757,17 +780,7 @@ function ExerciseCard({
               </button>
             ))}
           </div>
-        ) : (
-          <Input
-            value={userAnswer}
-            onChange={(e) => setUserAnswer(e.target.value)}
-            placeholder={t("exercises.answerPlaceholder")}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") onCheck();
-            }}
-            autoFocus
-          />
-        )}
+        ) : null}
 
         <Button
           variant="gradient"

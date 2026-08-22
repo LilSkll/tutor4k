@@ -85,6 +85,13 @@ export function formatQuestionWithGloss(
   };
 }
 
+const ERROR_CORRECTION_FULL: Record<InterfaceLanguage, string> = {
+  ru: "Перепишите предложение целиком, исправив грамматическую ошибку",
+  en: "Rewrite the full sentence and fix the grammar mistake",
+  es: "Reescribe la frase completa corrigiendo el error gramatical",
+  de: "Schreibe den ganzen Satz neu und korrigiere den Grammatikfehler",
+};
+
 const GENERIC_INSTRUCTION: Record<
   InterfaceLanguage,
   Record<ExerciseType, string>
@@ -130,15 +137,23 @@ export function localizeExerciseInstruction(
 ): string {
   const instruction = exercise.instruction?.trim() ?? "";
   if (!instruction) {
+    if (exercise.type === "error_correction") {
+      return (
+        ERROR_CORRECTION_FULL[interfaceLanguage] ?? ERROR_CORRECTION_FULL.en
+      );
+    }
     return (
       GENERIC_INSTRUCTION[interfaceLanguage]?.[exercise.type] ??
       GENERIC_INSTRUCTION.en[exercise.type]
     );
   }
   const source = detectSourceLanguage(instruction);
-  // DE has no authored bank instructions; en-authored text is only kept
-  // for the en interface, ru-authored only for ru.
   if (source === interfaceLanguage) return instruction;
+  if (exercise.type === "error_correction") {
+    return (
+      ERROR_CORRECTION_FULL[interfaceLanguage] ?? ERROR_CORRECTION_FULL.en
+    );
+  }
   return (
     GENERIC_INSTRUCTION[interfaceLanguage]?.[exercise.type] ??
     GENERIC_INSTRUCTION.en[exercise.type]

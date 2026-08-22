@@ -22,7 +22,7 @@ import { useLocalizedGrammarArticle } from "@/hooks/use-localized-grammar-articl
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { translate } from "@/lib/i18n";
 import { SESSION_EXERCISES } from "@/lib/exercise-bank";
-import { normalizeAnswer, scorePercent } from "@/lib/normalize-answer";
+import { answersMatch, scorePercent } from "@/lib/normalize-answer";
 import { formatBankTutorFeedback } from "@/lib/tutor-feedback";
 import { trackEvent } from "@/lib/analytics";
 import { getLessonAdaptationAction } from "@/server/actions/learning-profile";
@@ -30,6 +30,8 @@ import type { StaticExercise } from "@/types";
 import type { LessonAdaptation } from "@/types/learning-profile";
 import { BackLink } from "@/components/shared/back-link";
 import { QuestionWithGloss } from "@/components/exercises/question-with-gloss";
+import { ExerciseFreeTextBlock } from "@/components/exercises/exercise-free-text-block";
+import { localizeExerciseInstruction } from "@/lib/exercise-localize";
 import { GrammarRuleHints } from "@/components/chapters/grammar-rule-hints";
 import {
   grammarRulesFromMarkdown,
@@ -283,11 +285,10 @@ export function LessonRunner({
       setLoading(false);
     }
 
-    const userNorm = normalizeAnswer(answer);
-    const acceptable = [ex.answer, ...(ex.acceptableAnswers ?? [])].map(
-      normalizeAnswer,
-    );
-    const isCorrect = acceptable.includes(userNorm);
+    const isCorrect = answersMatch(answer, [
+      ex.answer,
+      ...(ex.acceptableAnswers ?? []),
+    ]);
     setResult({
       correct: isCorrect,
       feedback: formatBankTutorFeedback({
@@ -474,44 +475,84 @@ export function LessonRunner({
         {!result ? (
           <Card>
             <CardContent className="p-6 space-y-4">
-              {ex.instruction && (
-                <div className="rounded-lg bg-primary/10 border border-primary/20 px-4 py-2.5">
-                  <p className="text-sm text-foreground">
-                    <span className="font-semibold text-primary">{t("lesson.taskLabel")}</span>
-                    {ex.instruction}
-                  </p>
-                </div>
-              )}
-              <div className="rounded-lg bg-muted/50 p-4">
-                <QuestionWithGloss exercise={ex} interfaceLanguage={language} />
-              </div>
-              {hasOptions ? (
-                <div className="grid gap-2">
-                  {ex.options!.map((opt, i) => (
-                    <button
-                      key={i}
-                      onClick={() => setSelectedOption(opt)}
-                      className={cn(
-                        "flex items-center gap-3 rounded-lg border-2 p-3 text-left transition-all",
-                        selectedOption === opt ? "border-primary bg-primary/5" : "border-border hover:border-primary/50",
-                      )}
-                    >
-                      <span className={cn("flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold",
-                        selectedOption === opt ? "bg-primary text-primary-foreground" : "bg-muted")}>
-                        {String.fromCharCode(65 + i)}
-                      </span>
-                      <span className="text-sm">{opt}</span>
-                    </button>
-                  ))}
-                </div>
+              {!hasOptions &&
+              (ex.type === "fill_blank" ||
+                ex.type === "translation" ||
+                ex.type === "error_correction") ? (
+                <>
+                  <div className="rounded-lg bg-muted/50 p-4">
+                    <QuestionWithGloss
+                      exercise={ex}
+                      interfaceLanguage={language}
+                    />
+                  </div>
+                  <ExerciseFreeTextBlock
+                    exercise={ex}
+                    courseId={courseId}
+                    interfaceLanguage={language}
+                    value={userAnswer}
+                    onChange={setUserAnswer}
+                    onSubmit={checkAnswer}
+                    taskLabel={t("lesson.taskLabel")}
+                  />
+                </>
               ) : (
-                <Input
-                  value={userAnswer}
-                  onChange={(e) => setUserAnswer(e.target.value)}
-                  placeholder={t("lesson.answerPlaceholder")}
-                  onKeyDown={(e) => { if (e.key === "Enter") checkAnswer(); }}
-                  autoFocus
-                />
+                <>
+                  {(ex.instruction || hasOptions) && (
+                    <div className="rounded-lg bg-primary/10 border border-primary/20 px-4 py-2.5">
+                      <p className="text-sm text-foreground">
+                        <span className="font-semibold text-primary">
+                          {t("lesson.taskLabel")}
+                        </span>
+                        {localizeExerciseInstruction(ex, language)}
+                      </p>
+                    </div>
+                  )}
+                  <div className="rounded-lg bg-muted/50 p-4">
+                    <QuestionWithGloss
+                      exercise={ex}
+                      interfaceLanguage={language}
+                    />
+                  </div>
+                  {hasOptions ? (
+                    <div className="grid gap-2">
+                      {ex.options!.map((opt, i) => (
+                        <button
+                          key={i}
+                          onClick={() => setSelectedOption(opt)}
+                          className={cn(
+                            "flex items-center gap-3 rounded-lg border-2 p-3 text-left transition-all",
+                            selectedOption === opt
+                              ? "border-primary bg-primary/5"
+                              : "border-border hover:border-primary/50",
+                          )}
+                        >
+                          <span
+                            className={cn(
+                              "flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-bold",
+                              selectedOption === opt
+                                ? "bg-primary text-primary-foreground"
+                                : "bg-muted",
+                            )}
+                          >
+                            {String.fromCharCode(65 + i)}
+                          </span>
+                          <span className="text-sm">{opt}</span>
+                        </button>
+                      ))}
+                    </div>
+                  ) : (
+                    <Input
+                      value={userAnswer}
+                      onChange={(e) => setUserAnswer(e.target.value)}
+                      placeholder={t("lesson.answerPlaceholder")}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter") checkAnswer();
+                      }}
+                      autoFocus
+                    />
+                  )}
+                </>
               )}
               {kind !== "revision" && grammarRules.length > 0 ? (
                 <GrammarRuleHints

@@ -23,7 +23,7 @@ import type {
   InterfaceLanguage,
   Level,
 } from "@/types";
-import { normalizeAnswer } from "@/lib/normalize-answer";
+import { answersMatch, normalizeAnswer } from "@/lib/normalize-answer";
 import { recordStudySession } from "@/server/actions/data";
 import {
   asCourseId,
@@ -744,14 +744,12 @@ export async function checkExerciseAnswer(input: {
   const courseId = input.courseId ?? "spanish";
   const bankExplanation = input.exercise.explanation;
 
-  const userNorm = normalizeAnswer(input.userAnswer);
-  const acceptable = [
-    input.exercise.answer,
-    ...(input.exercise.acceptableAnswers ?? []),
-  ].map(normalizeAnswer);
-
-  // Fast path: exact / normalized match.
-  if (acceptable.includes(userNorm)) {
+  if (
+    answersMatch(input.userAnswer, [
+      input.exercise.answer,
+      ...(input.exercise.acceptableAnswers ?? []),
+    ])
+  ) {
     const feedback = input.exercise.staticSource
       ? (await import("@/lib/tutor-feedback")).formatBankTutorFeedback({
           language: input.language,
