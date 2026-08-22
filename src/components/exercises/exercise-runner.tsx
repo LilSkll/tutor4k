@@ -28,6 +28,7 @@ import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 import { QuestionWithGloss } from "@/components/exercises/question-with-gloss";
 import { ExerciseFreeTextBlock } from "@/components/exercises/exercise-free-text-block";
+import { gradeStaticExerciseLocally } from "@/lib/exercise-check-client";
 import { localizeExerciseInstruction } from "@/lib/exercise-localize";
 import type {
   ExerciseType,
@@ -106,6 +107,7 @@ export function ExerciseRunner({
   const [homeworkCompleted, setHomeworkCompleted] = React.useState(false);
   const [markingHomework, setMarkingHomework] = React.useState(false);
   const homeworkAutoStarted = React.useRef(false);
+  const checkInFlight = React.useRef(false);
   const [deleMode, setDeleMode] = React.useState(false);
   const [queue, setQueue] = React.useState<GeneratedExercise[]>([]);
   const [queueIdx, setQueueIdx] = React.useState(0);
@@ -215,8 +217,19 @@ export function ExerciseRunner({
     Boolean(homeworkParams.level) ||
     homeworkParams.exam;
 
+  const homeworkQueryKey = React.useMemo(() => {
+    if (!hasHomeworkQuery) return "";
+    return [
+      homeworkParams.assignmentId ?? "",
+      homeworkParams.type ?? "",
+      homeworkParams.level ?? "",
+      String(homeworkParams.count ?? ""),
+      homeworkParams.exam ? "1" : "0",
+    ].join("|");
+  }, [hasHomeworkQuery, homeworkParams]);
+
   React.useEffect(() => {
-    if (!hasHomeworkQuery) {
+    if (!homeworkQueryKey) {
       setHomeworkAssignmentId(null);
       homeworkAutoStarted.current = false;
       return;
@@ -241,7 +254,7 @@ export function ExerciseRunner({
       count,
       exam: homeworkParams.exam,
     });
-  }, [hasHomeworkQuery, homeworkParams, defaultLevel]);
+  }, [homeworkQueryKey, homeworkParams, defaultLevel]);
 
   const generate = () => {
     setSeenIds([]);
@@ -271,10 +284,66 @@ export function ExerciseRunner({
     void startRound(seenIds);
   };
 
+  const persistCheck = (answer: string, ex: GeneratedExercise) => {
+    void fetch("/api/exercises/check", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        exercise: ex,
+        userAnswer: answer,
+        level,
+      }),
+    }).catch(() => {
+      // Progress sync is best-effort; local grade already shown.
+    });
+  };
+
+  const applyCheckResult = (
+    ex: GeneratedExercise,
+    answer: string,
+    data: { correct: boolean; feedback: string },
+  ) => {
+    setResult(data);
+    setRoundAttempts((prev) => [
+      ...prev,
+      {
+        exercise: ex,
+        userAnswer: answer,
+        correct: data.correct,
+        feedback: data.feedback,
+      },
+    ]);
+    setPhase("result");
+    incrementAttempted();
+    if (data.correct) {
+      incrementScore();
+      toast.success(t("exercises.toastCorrect"));
+    } else {
+      toast.error(t("exercises.toastIncorrect"));
+    }
+  };
+
   const check = async (answer: string) => {
-    if (!exercise || !answer.trim()) return;
-    setPhase("loading");
+    if (!exercise || !answer.trim() || phase === "loading" || phase === "result") {
+      return;
+    }
+    if (checkInFlight.current) return;
+    checkInFlight.current = true;
+
     try {
+      const isStatic = exercise.staticSource !== false;
+
+      if (isStatic) {
+        applyCheckResult(
+          exercise,
+          answer,
+          gradeStaticExerciseLocally(exercise, answer, language),
+        );
+        persistCheck(answer, exercise);
+        return;
+      }
+
+      setPhase("loading");
       const res = await fetch("/api/exercises/check", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -286,27 +355,20 @@ export function ExerciseRunner({
       });
       if (!res.ok) throw new Error("Failed");
       const data = (await res.json()) as { correct: boolean; feedback: string };
-      setResult(data);
-      setRoundAttempts((prev) => [
-        ...prev,
-        {
-          exercise,
-          userAnswer: answer,
-          correct: data.correct,
-          feedback: data.feedback,
-        },
-      ]);
-      setPhase("result");
-      incrementAttempted();
-      if (data.correct) {
-        incrementScore();
-        toast.success(t("exercises.toastCorrect"));
-      } else {
-        toast.error(t("exercises.toastIncorrect"));
-      }
+      applyCheckResult(exercise, answer, data);
     } catch {
+      if (exercise.staticSource !== false) {
+        applyCheckResult(
+          exercise,
+          answer,
+          gradeStaticExerciseLocally(exercise, answer, language),
+        );
+        return;
+      }
       toast.error(t("exercises.toastCheckFail"));
       setPhase("answering");
+    } finally {
+      checkInFlight.current = false;
     }
   };
 

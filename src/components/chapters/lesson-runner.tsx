@@ -22,8 +22,8 @@ import { useLocalizedGrammarArticle } from "@/hooks/use-localized-grammar-articl
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { translate } from "@/lib/i18n";
 import { SESSION_EXERCISES } from "@/lib/exercise-bank";
-import { answersMatch, scorePercent } from "@/lib/normalize-answer";
-import { formatBankTutorFeedback } from "@/lib/tutor-feedback";
+import { gradeStaticExerciseLocally } from "@/lib/exercise-check-client";
+import { scorePercent } from "@/lib/normalize-answer";
 import { trackEvent } from "@/lib/analytics";
 import { getLessonAdaptationAction } from "@/server/actions/learning-profile";
 import type { StaticExercise } from "@/types";
@@ -245,60 +245,35 @@ export function LessonRunner({
     const answer = (selectedOption ?? userAnswer).trim();
     if (!answer) return;
 
-    setLoading(true);
-    try {
-      const res = await fetch("/api/exercises/check", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          exercise: {
-            type: ex.type,
-            level: chapter.level,
-            question: ex.question,
-            instruction: ex.instruction,
-            options: ex.options,
-            answer: ex.answer,
-            acceptableAnswers: ex.acceptableAnswers,
-            topic: chapter.titleEs || chapter.title,
-            explanation: ex.explanation,
-            staticSource: true,
-            exerciseId: ex.id,
-            chapterSlug: chapter.slug,
-          },
-          userAnswer: answer,
-          level: chapter.level,
-        }),
-      });
-      if (res.ok) {
-        const data = (await res.json()) as {
-          correct: boolean;
-          feedback: string;
-        };
-        setResult(data);
-        setExercisesCompleted((n) => n + 1);
-        if (data.correct) setScore((s) => s + 1);
-        return;
-      }
-    } catch {
-      // Fall through to local check.
-    } finally {
-      setLoading(false);
-    }
-
-    const isCorrect = answersMatch(answer, [
-      ex.answer,
-      ...(ex.acceptableAnswers ?? []),
-    ]);
-    setResult({
-      correct: isCorrect,
-      feedback: formatBankTutorFeedback({
-        language,
-        correct: isCorrect,
-        explanation: ex.explanation,
-      }),
-    });
+    const local = gradeStaticExerciseLocally(ex, answer, language);
+    setResult(local);
     setExercisesCompleted((n) => n + 1);
-    if (isCorrect) setScore((s) => s + 1);
+    if (local.correct) setScore((s) => s + 1);
+
+    void fetch("/api/exercises/check", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        exercise: {
+          type: ex.type,
+          level: chapter.level,
+          question: ex.question,
+          instruction: ex.instruction,
+          options: ex.options,
+          answer: ex.answer,
+          acceptableAnswers: ex.acceptableAnswers,
+          topic: chapter.titleEs || chapter.title,
+          explanation: ex.explanation,
+          staticSource: true,
+          exerciseId: ex.id,
+          chapterSlug: chapter.slug,
+        },
+        userAnswer: answer,
+        level: chapter.level,
+      }),
+    }).catch(() => {
+      // Local grade already shown; server sync is best-effort.
+    });
   };
 
   const afterPracticeBlock = () => {
