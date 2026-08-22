@@ -11,6 +11,17 @@ Practice items are **static** and **reusable**. AI teaches (explains mistakes, u
 
 Stable ids: `{courseId}:{chapterSlug}:{type}:{nn}` via `withExerciseIds()`.
 
+### Expanding thin chapters
+
+Chapters 23+ (Spanish) and eng-ch26+ (English) start with ~6 curated items. Run:
+
+```bash
+npx tsx scripts/generate-missing-exercise-packs.mjs
+npx tsx scripts/audit-exercise-coverage.mjs
+```
+
+Hand-authored packs from `regenerate-spanish-packs.mjs` / `regenerate-english-packs.mjs` (chapters 1–22) are preserved.
+
 ## Adaptive selection
 
 `pickStaticExercise` → Learning Profile + `exercise_progress` (timesSeen / correct / wrong / lastSeen / mastered).
