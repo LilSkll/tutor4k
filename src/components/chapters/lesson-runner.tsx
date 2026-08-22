@@ -31,10 +31,10 @@ import type { LessonAdaptation } from "@/types/learning-profile";
 import { BackLink } from "@/components/shared/back-link";
 import { QuestionWithGloss } from "@/components/exercises/question-with-gloss";
 import { ExerciseFreeTextBlock } from "@/components/exercises/exercise-free-text-block";
+import { SentenceBuildingBlock } from "@/components/exercises/sentence-building-block";
 import { localizeExerciseInstruction } from "@/lib/exercise-localize";
-import { GrammarRuleHints } from "@/components/chapters/grammar-rule-hints";
+import { ChapterExerciseTypeGuide } from "@/components/chapters/chapter-exercise-type-guide";
 import {
-  grammarRulesFromMarkdown,
   grammarTheoryPagesFromMarkdown,
 } from "@/lib/grammar-markdown";
 import { cn } from "@/lib/utils";
@@ -168,15 +168,6 @@ export function LessonRunner({
   }, [adaptation, chapterBank]);
 
   const bankRemaining = Math.max(0, chapterBank.length - bankCursor);
-
-  const grammarRules = React.useMemo(
-    () =>
-      grammarRulesFromMarkdown(
-        grammarContent ?? "",
-        t("lesson.ruleUntitled"),
-      ),
-    [grammarContent, language],
-  );
 
   const theoryPages = React.useMemo(
     () => grammarTheoryPagesFromMarkdown(grammarContent ?? ""),
@@ -404,7 +395,12 @@ export function LessonRunner({
   const renderPractice = (kind: PracticeKind) => {
     if (exercises.length === 0) return null;
     const ex = exercises[currentExerciseIdx];
-    const hasOptions = ex.options && ex.options.length > 0;
+    const isSentenceBuilding = ex.type === "sentence_building";
+    const isMultipleChoice = ex.type === "multiple_choice";
+    const hasMcOptions =
+      isMultipleChoice && ex.options && ex.options.length > 0;
+    const hasSbOptions =
+      isSentenceBuilding && ex.options && ex.options.length > 0;
     const titleKey =
       kind === "revision"
         ? "lesson.revisionTitle"
@@ -450,7 +446,8 @@ export function LessonRunner({
         {!result ? (
           <Card>
             <CardContent className="p-6 space-y-4">
-              {!hasOptions &&
+              {!hasMcOptions &&
+              !hasSbOptions &&
               (ex.type === "fill_blank" ||
                 ex.type === "translation" ||
                 ex.type === "error_correction") ? (
@@ -473,7 +470,7 @@ export function LessonRunner({
                 </>
               ) : (
                 <>
-                  {(ex.instruction || hasOptions) && (
+                  {(ex.instruction || hasMcOptions || hasSbOptions) && (
                     <div className="rounded-lg bg-primary/10 border border-primary/20 px-4 py-2.5">
                       <p className="text-sm text-foreground">
                         <span className="font-semibold text-primary">
@@ -491,7 +488,21 @@ export function LessonRunner({
                       />
                     </div>
                   ) : null}
-                  {hasOptions ? (
+                  {hasSbOptions ? (
+                    <SentenceBuildingBlock
+                      key={ex.id ?? currentExerciseIdx}
+                      options={ex.options!}
+                      onAnswerChange={setUserAnswer}
+                      hint={t("exercises.sentenceBuildingHint")}
+                      removeLastLabel={t("exercises.removeLastWord")}
+                      wordsPlacedLabel={t("exercises.wordsPlaced", {
+                        count: userAnswer.trim()
+                          ? userAnswer.trim().split(/\s+/).length
+                          : 0,
+                        total: ex.options!.length,
+                      })}
+                    />
+                  ) : hasMcOptions ? (
                     <div className="grid gap-2">
                       {ex.options!.map((opt, i) => (
                         <button
@@ -531,17 +542,19 @@ export function LessonRunner({
                   )}
                 </>
               )}
-              {kind !== "revision" && grammarRules.length > 0 ? (
-                <GrammarRuleHints
-                  rules={grammarRules}
-                  label={t("lesson.ruleHints")}
-                  lead={t("lesson.ruleHintsLead")}
-                  untitledLabel={t("lesson.ruleUntitled")}
-                  level={chapter.level}
-                />
-              ) : null}
-              <Button variant="gradient" className="w-full" onClick={checkAnswer}
-                disabled={loading || (hasOptions ? !selectedOption : !userAnswer.trim())}>
+              <Button
+                variant="gradient"
+                className="w-full"
+                onClick={checkAnswer}
+                disabled={
+                  loading ||
+                  (hasMcOptions
+                    ? !selectedOption
+                    : hasSbOptions
+                      ? !userAnswer.trim()
+                      : !userAnswer.trim())
+                }
+              >
                 {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Check className="h-4 w-4" />}
                 {t("lesson.check")}
               </Button>
@@ -614,6 +627,14 @@ export function LessonRunner({
             <p className="text-base text-muted-foreground mb-6">
               <span className="text-2xl">🦅</span> {introGreeting} {introBody}
             </p>
+            {chapter.exerciseTypes?.length ? (
+              <div className="mb-6 text-left">
+                <ChapterExerciseTypeGuide
+                  exerciseTypes={chapter.exerciseTypes}
+                  language={language}
+                />
+              </div>
+            ) : null}
             {adaptation?.needsRevision && revisionExercises.length > 0 && (
               <p className="text-sm text-muted-foreground mb-4">
                 {t("lesson.revisionHint")}
@@ -673,6 +694,14 @@ export function LessonRunner({
               <p className="text-sm text-destructive">{grammarError}</p>
             ) : theoryMarkdown ? (
               <Markdown content={theoryMarkdown} />
+            ) : null}
+            {isLastTheoryPage && chapter.exerciseTypes?.length ? (
+              <div className="mt-6 pt-6 border-t border-border">
+                <ChapterExerciseTypeGuide
+                  exerciseTypes={chapter.exerciseTypes}
+                  language={language}
+                />
+              </div>
             ) : null}
           </CardContent>
         </Card>

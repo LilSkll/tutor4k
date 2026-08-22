@@ -13,6 +13,7 @@ import { matchesChapterGrammar } from "@/lib/chapter-grammar-match";
 import { CHAPTERS } from "@/config/chapters";
 import { expandSpanishChapterBank } from "@/config/exercise-banks/spanish-expand";
 import { CURRICULUM_CHAPTER_EXERCISES } from "@/config/chapter-exercises-curriculum";
+import { SPANISH_CURATED_SUPPLEMENTS } from "@/config/exercise-seeds/spanish-curated-supplements";
 
 /** Draft bank item before id assignment. */
 export type ExerciseDraft = Omit<StaticExercise, "id"> & { id?: string };
@@ -1043,6 +1044,51 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       answer: "estudiando",
       explanation: "Llevar + gerundio = длительность. Llevo estudiando dos horas.",
     },
+    {
+      type: "sentence_building",
+      question: "Acabo / de / terminar / la / redacción",
+      instruction: "Составьте перифразу acabar de",
+      options: ["Acabo", "de", "terminar", "la", "redacción"],
+      answer: "Acabo de terminar la redacción",
+      explanation: "Acabar de + infinitivo = только что закончил.",
+      grammarTopic: "c1-perifrasis-verbales",
+    },
+    {
+      type: "sentence_building",
+      question: "Llevo / tres / horas / estudiando / sin / parar",
+      instruction: "Составьте перифразу llevar + gerundio",
+      options: ["Llevo", "tres", "horas", "estudiando", "sin", "parar"],
+      answer: "Llevo tres horas estudiando sin parar",
+      explanation: "Llevar + gerundio — длительность действия.",
+      grammarTopic: "c1-perifrasis-verbales",
+    },
+    {
+      type: "sentence_building",
+      question: "Voy / a / empezar / a / leer / ahora",
+      instruction: "Составьте ir a + infinitivo",
+      options: ["Voy", "a", "empezar", "a", "leer", "ahora"],
+      answer: "Voy a empezar a leer ahora",
+      explanation: "Ir a + infinitivo — ближайшее будущее.",
+      grammarTopic: "c1-perifrasis-verbales",
+    },
+    {
+      type: "sentence_building",
+      question: "Debe / de / haber / un / error / en / el / texto",
+      instruction: "Составьте перифразу deber de (догадка)",
+      options: ["Debe", "de", "haber", "un", "error", "en", "el", "texto"],
+      answer: "Debe de haber un error en el texto",
+      explanation: "Deber de — вероятность, догадка.",
+      grammarTopic: "c1-perifrasis-verbales",
+    },
+    {
+      type: "sentence_building",
+      question: "Sigo / pensando / en / la / misma / idea",
+      instruction: "Составьте seguir + gerundio",
+      options: ["Sigo", "pensando", "en", "la", "misma", "idea"],
+      answer: "Sigo pensando en la misma idea",
+      explanation: "Seguir + gerundio — продолжать делать.",
+      grammarTopic: "c1-perifrasis-verbales",
+    },
   ],
 
   "chapter-17-dele": [
@@ -1094,6 +1140,7 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       answer: "Sea como sea iré",
       acceptableAnswers: ["Sea como sea, iré", "sea como sea ire"],
       explanation: "Sea como sea — «как бы то ни было».",
+      grammarTopic: "c1-matices-estilisticos",
     },
     {
       type: "sentence_building",
@@ -1106,6 +1153,52 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
         "por mucho que intente no lo conseguire",
       ],
       explanation: "Por mucho que + subjuntivo — «сколько бы ни…».",
+      grammarTopic: "c1-matices-estilisticos",
+    },
+    {
+      type: "sentence_building",
+      question: "Le / ruego / que / me / envíe / la / documentación",
+      instruction: "Составьте формальную просьбу (usted)",
+      options: ["Le", "ruego", "que", "me", "envíe", "la", "documentación"],
+      answer: "Le ruego que me envíe la documentación",
+      explanation: "Le ruego que + subjuntivo — очень вежливая просьба.",
+      grammarTopic: "c1-matices-estilisticos",
+    },
+    {
+      type: "sentence_building",
+      question: "¿Podría / indicarme / dónde / está / la / sala?",
+      instruction: "Составьте вежливый вопрос с condicional",
+      options: ["¿Podría", "indicarme", "dónde", "está", "la", "sala?"],
+      answer: "¿Podría indicarme dónde está la sala?",
+      explanation: "¿Podría…? — вежливость через condicional.",
+      grammarTopic: "c1-matices-estilisticos",
+    },
+    {
+      type: "sentence_building",
+      question: "No / obstante / debemos / continuar / con / el / plan",
+      instruction: "Составьте формальный связующий оборот",
+      options: ["No", "obstante", "debemos", "continuar", "con", "el", "plan"],
+      answer: "No obstante, debemos continuar con el plan",
+      explanation: "No obstante — «несмотря на это» (формальный регистр).",
+      grammarTopic: "c1-matices-estilisticos",
+    },
+    {
+      type: "sentence_building",
+      question: "A / fin / de / cuentas / lo / importante / es / aprender",
+      instruction: "Составьте устойчивое вводное выражение",
+      options: ["A", "fin", "de", "cuentas", "lo", "importante", "es", "aprender"],
+      answer: "A fin de cuentas, lo importante es aprender",
+      explanation: "A fin de cuentas — «в конечном счёте».",
+      grammarTopic: "c1-matices-estilisticos",
+    },
+    {
+      type: "sentence_building",
+      question: "Me / gustaría / que / lo / revisáramos / juntos",
+      instruction: "Составьте мягкое предложение с subjuntivo",
+      options: ["Me", "gustaría", "que", "lo", "revisáramos", "juntos"],
+      answer: "Me gustaría que lo revisáramos juntos",
+      explanation: "Me gustaría que + imperfecto de subjuntivo — мягкое предложение.",
+      grammarTopic: "c1-matices-estilisticos",
     },
   ],
 
@@ -1651,6 +1744,9 @@ export function getChapterExercises(chapterSlug: string): StaticExercise[] {
   const curated = [
     ...(CHAPTER_EXERCISES[chapterSlug] ?? []),
     ...(CURRICULUM_CHAPTER_EXERCISES[chapterSlug] ?? []),
+    ...((SPANISH_CURATED_SUPPLEMENTS as unknown as Record<string, ExerciseDraft[]>)[
+      chapterSlug
+    ] ?? []),
   ];
   const expanded = expandSpanishChapterBank(chapterSlug, curated);
   const aligned = grammarTopic

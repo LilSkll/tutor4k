@@ -166,8 +166,12 @@ export function chapterFromSeeds(g, topic, seeds, lang = "spanish") {
   const ecA = [];
   const sbA = [];
 
+  const sbSeeds = seeds.filter((s) => Array.isArray(s.tokens) && s.tokens.length >= 3);
+  const sbPool = sbSeeds.length > 0 ? sbSeeds : seeds;
+
   for (let i = 0; i < 20; i++) {
     const s = seeds[i % seeds.length];
+    const sbSeed = sbPool[i % sbPool.length];
     const n = i + 1;
     const baseQ =
       i < seeds.length
@@ -247,22 +251,22 @@ export function chapterFromSeeds(g, topic, seeds, lang = "spanish") {
     );
 
     const tokens =
-      s.tokens ??
-      (s.answer || filled)
+      sbSeed.tokens ??
+      (sbSeed.answer || filled)
         .replace(/[¿?¡!.]/g, "")
         .split(/\s+/ )
         .filter(Boolean);
-    const toks = tokens.length >= 3 ? tokens : ["Por", "favor", "usa", s.ans];
-    const sbAnswer = s.answer || toks.join(" ");
+    const toks = tokens.length >= 3 ? tokens : ["Por", "favor", "usa", sbSeed.ans];
+    const sbAnswer = sbSeed.answer || toks.join(" ");
 
     sbA.push(
       sb(
         toks,
         sbAnswer,
         lang === "english" ? "Build the sentence" : "Составьте предложение",
-        `${topic}: порядок слов.`,
+        sbSeed.explanation || `${topic}: порядок слов.`,
         g,
-        [sbAnswer.toLowerCase(), ...(s.acc ?? [])],
+        [sbAnswer.toLowerCase(), ...(sbSeed.acc ?? [])],
       ),
     );
   }

@@ -2,6 +2,7 @@ import type { StaticExercise } from "@/types";
 import { withExerciseIds } from "@/lib/exercise-bank";
 import { expandEnglishChapterBank } from "@/config/exercise-banks/english-expand";
 import { ENGLISH_CURRICULUM_CHAPTER_EXERCISES } from "./chapter-exercises-curriculum";
+import { ENGLISH_CURATED_SUPPLEMENTS } from "@/config/exercise-seeds/english-curated-supplements";
 import { getEngChapter } from "./chapters";
 
 // =====================================================================
@@ -144,6 +145,11 @@ export const ENGLISH_EXERCISES: Record<string, Draft[]> = {
     { type: "translation", question: "Я действительно верю тебе!", instruction: "Emphatic do", answer: "I do believe you!", acceptableAnswers: ["I do believe you"], explanation: "do/does/did for emphasis." },
     { type: "fill_blank", question: "Hardly ___ I arrived when it started raining.", instruction: "Inversion after Hardly", answer: "had", acceptableAnswers: ["Had"], explanation: "Hardly had + subject + past participle..." },
     { type: "multiple_choice", question: "What I need ___ a vacation.", instruction: "Cleft: What I need is...", options: ["is", "are", "was", "be"], answer: "is", explanation: "What I need is + noun." },
+    { type: "sentence_building", question: "Never / have / I / seen / such / beauty", instruction: "Build the negative inversion sentence", options: ["Never", "have", "I", "seen", "such", "beauty"], answer: "Never have I seen such beauty", explanation: "Never + inversion: Never have I seen…" },
+    { type: "sentence_building", question: "It / was / John / who / broke / the / window", instruction: "Build the it-cleft sentence", options: ["It", "was", "John", "who", "broke", "the", "window"], answer: "It was John who broke the window", explanation: "It-cleft highlights the person: It was John who…" },
+    { type: "sentence_building", question: "What / I / need / is / a / long / vacation", instruction: "Build the wh-cleft sentence", options: ["What", "I", "need", "is", "a", "long", "vacation"], answer: "What I need is a long vacation", explanation: "Wh-cleft: What I need is + noun phrase." },
+    { type: "sentence_building", question: "Hardly / had / I / arrived / when / it / started / raining", instruction: "Build the Hardly…when sentence", options: ["Hardly", "had", "I", "arrived", "when", "it", "started", "raining"], answer: "Hardly had I arrived when it started raining", explanation: "Hardly had + subject + V3 + when…" },
+    { type: "sentence_building", question: "I / do / believe / you / completely", instruction: "Build the emphatic sentence", options: ["I", "do", "believe", "you", "completely"], answer: "I do believe you completely", explanation: "Emphatic do: I do believe you." },
   ],
   "eng-ch14-art-language": [
     { type: "fill_blank", question: "I'll have the red ___, please.", instruction: "Substitution with one", answer: "one", acceptableAnswers: ["One"], explanation: "one replaces a countable noun." },
@@ -151,6 +157,11 @@ export const ENGLISH_EXERCISES: Record<string, Draft[]> = {
     { type: "translation", question: "Я думаю, что да.", instruction: "Use 'so' for substitution", answer: "I think so", acceptableAnswers: ["I think so."], explanation: "I think so = I think that is true." },
     { type: "fill_blank", question: "She was ___ exhausted to continue.", instruction: "Intensifying adverb", answer: "absolutely", acceptableAnswers: ["Absolutely"], explanation: "absolutely + adjective for emphasis." },
     { type: "multiple_choice", question: "Such ___ his anger that he left.", instruction: "Fronting with Such", options: ["was", "is", "were", "be"], answer: "was", explanation: "Such was + noun phrase..." },
+    { type: "sentence_building", question: "I / think / so / but / I'm / not / sure", instruction: "Build the substitution sentence", options: ["I", "think", "so", "but", "I'm", "not", "sure"], answer: "I think so but I'm not sure", explanation: "I think so — substitution with so." },
+    { type: "sentence_building", question: "Such / was / his / anger / that / he / left", instruction: "Build the fronted Such sentence", options: ["Such", "was", "his", "anger", "that", "he", "left"], answer: "Such was his anger that he left", explanation: "Such was + noun phrase + that…" },
+    { type: "sentence_building", question: "She / was / absolutely / exhausted / to / continue", instruction: "Build the intensified sentence", options: ["She", "was", "absolutely", "exhausted", "to", "continue"], answer: "She was absolutely exhausted to continue", explanation: "absolutely + adjective for emphasis." },
+    { type: "sentence_building", question: "This / is / the / book / I / told / you / about", instruction: "Build the relative clause sentence", options: ["This", "is", "the", "book", "I", "told", "you", "about"], answer: "This is the book I told you about", explanation: "Relative clause with preposition stranding." },
+    { type: "sentence_building", question: "I'll / have / the / red / one / please", instruction: "Build the substitution sentence", options: ["I'll", "have", "the", "red", "one", "please"], answer: "I'll have the red one, please", explanation: "one replaces a countable noun." },
   ],
   "eng-ch15-mastery": [
     { type: "fill_blank", question: "If I had studied medicine, I ___ a doctor now.", instruction: "Mixed conditional", answer: "would be", acceptableAnswers: ["Would be"], explanation: "Past condition → present result." },
@@ -158,6 +169,11 @@ export const ENGLISH_EXERCISES: Record<string, Draft[]> = {
     { type: "translation", question: "Эта машина нуждается в мойке.", instruction: "Need + V-ing", answer: "This car needs cleaning", acceptableAnswers: ["The car needs cleaning"], explanation: "need + V-ing = need to be done." },
     { type: "fill_blank", question: "I wish you ___ stop doing that.", instruction: "wish + would", answer: "would", acceptableAnswers: ["Would"], explanation: "wish + would for annoyance about habits." },
     { type: "multiple_choice", question: "If I were taller, I ___ joined the basketball team.", instruction: "Mixed conditional", options: ["would", "would have", "will have", "had"], answer: "would have", explanation: "Present condition → past result." },
+    { type: "sentence_building", question: "If / I / had / studied / medicine / I / would / be / a / doctor / now", instruction: "Build the mixed conditional", options: ["If", "I", "had", "studied", "medicine", "I", "would", "be", "a", "doctor", "now"], answer: "If I had studied medicine, I would be a doctor now", explanation: "Past condition → present result." },
+    { type: "sentence_building", question: "It / is / said / that / he / left / the / country", instruction: "Build the advanced passive", options: ["It", "is", "said", "that", "he", "left", "the", "country"], answer: "It is said that he left the country", explanation: "It is said that + clause." },
+    { type: "sentence_building", question: "I / wish / you / would / stop / doing / that", instruction: "Build the wish sentence", options: ["I", "wish", "you", "would", "stop", "doing", "that"], answer: "I wish you would stop doing that", explanation: "wish + would for annoying habits." },
+    { type: "sentence_building", question: "This / car / needs / cleaning / before / the / trip", instruction: "Build the need + V-ing sentence", options: ["This", "car", "needs", "cleaning", "before", "the", "trip"], answer: "This car needs cleaning before the trip", explanation: "need + V-ing = need to be done." },
+    { type: "sentence_building", question: "If / I / were / taller / I / would / have / joined / the / team", instruction: "Build the mixed conditional (past result)", options: ["If", "I", "were", "taller", "I", "would", "have", "joined", "the", "team"], answer: "If I were taller, I would have joined the team", explanation: "Present condition → past result." },
   ],
   "eng-ch16-ielts": [
     { type: "multiple_choice", question: "Which connector shows contrast?", instruction: "Discourse markers", options: ["furthermore", "nevertheless", "therefore", "moreover"], answer: "nevertheless", explanation: "nevertheless = however, shows contrast." },
@@ -185,6 +201,11 @@ export const ENGLISH_EXERCISES: Record<string, Draft[]> = {
     { type: "multiple_choice", question: "She runs faster than I ___.", instruction: "Substitute the verb phrase", options: ["do", "run fast", "am", "does"], answer: "do", explanation: "do replaces the verb phrase: than I do (= than I run)." },
     { type: "fill_blank", question: "Which cake would you like? — The chocolate ___.", instruction: "Substitute the noun", answer: "one", acceptableAnswers: ["One"], explanation: "one/ones replaces a countable noun: the chocolate one." },
     { type: "error_correction", question: "She has been to Peru. — So I have.", instruction: "Fix the word order", answer: "So have I.", acceptableAnswers: ["So have I"], explanation: "Inversion is required: So have I (So I have = 'indeed I have')." },
+    { type: "sentence_building", question: "I / love / jazz / So / do / I", instruction: "Build the agreement sentence", options: ["I", "love", "jazz", "So", "do", "I"], answer: "I love jazz. So do I", explanation: "So + auxiliary + subject — agreement with inversion." },
+    { type: "sentence_building", question: "I / hope / not / it / will / rain", instruction: "Build the negative substitution", options: ["I", "hope", "not", "it", "will", "rain"], answer: "I hope not — it will rain", acceptableAnswers: ["I hope not"], explanation: "I hope not — negative substitution." },
+    { type: "sentence_building", question: "Neither / can / I / swim / very / well", instruction: "Build the negative agreement", options: ["Neither", "can", "I", "swim", "very", "well"], answer: "Neither can I swim very well", explanation: "Neither + auxiliary + subject — negative agreement." },
+    { type: "sentence_building", question: "She / runs / faster / than / I / do", instruction: "Build the verb substitution sentence", options: ["She", "runs", "faster", "than", "I", "do"], answer: "She runs faster than I do", explanation: "do replaces the repeated verb phrase." },
+    { type: "sentence_building", question: "The / chocolate / one / please / not / the / vanilla", instruction: "Build the one substitution sentence", options: ["The", "chocolate", "one", "please", "not", "the", "vanilla"], answer: "The chocolate one, please — not the vanilla", explanation: "one replaces a countable noun." },
   ],
 
   // ===== C2: hedging & understatement ==================================
@@ -195,6 +216,11 @@ export const ENGLISH_EXERCISES: Record<string, Draft[]> = {
     { type: "multiple_choice", question: "I ___ wondering if you could help me.", instruction: "Distancing through tense", options: ["was", "am", "will be", "have been"], answer: "was", explanation: "Past tense distances politely: I was wondering…" },
     { type: "fill_blank", question: "I see what you mean, ___ I'm not sure I'd go that far.", instruction: "Polite disagreement", answer: "but", acceptableAnswers: ["But"], explanation: "I see what you mean, but… — softened disagreement." },
     { type: "translation", question: "Можно сказать, что результаты неубедительны.", instruction: "Translate with a hedge (arguably / it could be argued)", answer: "Arguably, the results are inconclusive", acceptableAnswers: ["It could be argued that the results are inconclusive", "arguably, the results are inconclusive"], explanation: "Arguably / It could be argued that… — academic hedging." },
+    { type: "sentence_building", question: "It / could / be / argued / that / the / results / are / inconclusive", instruction: "Build the hedged claim", options: ["It", "could", "be", "argued", "that", "the", "results", "are", "inconclusive"], answer: "It could be argued that the results are inconclusive", explanation: "It could be argued that… — academic hedge." },
+    { type: "sentence_building", question: "The / results / appear / to / suggest / a / link", instruction: "Build the cautious reporting sentence", options: ["The", "results", "appear", "to", "suggest", "a", "link"], answer: "The results appear to suggest a link", explanation: "appear to suggest — hedged reporting verb." },
+    { type: "sentence_building", question: "I / was / wondering / if / you / could / help / me", instruction: "Build the distancing request", options: ["I", "was", "wondering", "if", "you", "could", "help", "me"], answer: "I was wondering if you could help me", explanation: "I was wondering… — polite distancing." },
+    { type: "sentence_building", question: "I / see / what / you / mean / but / I'm / not / sure", instruction: "Build the polite disagreement", options: ["I", "see", "what", "you", "mean", "but", "I'm", "not", "sure"], answer: "I see what you mean, but I'm not sure", explanation: "I see what you mean, but… — softened disagreement." },
+    { type: "sentence_building", question: "Arguably / the / policy / has / failed / to / deliver", instruction: "Build the Arguably sentence", options: ["Arguably", "the", "policy", "has", "failed", "to", "deliver"], answer: "Arguably, the policy has failed to deliver", explanation: "Arguably — hedging adverb at the start." },
   ],
 };
 
@@ -203,6 +229,9 @@ export function getEnglishExercises(chapterSlug: string): StaticExercise[] {
   const curated = [
     ...(ENGLISH_EXERCISES[chapterSlug] ?? []),
     ...(ENGLISH_CURRICULUM_CHAPTER_EXERCISES[chapterSlug] ?? []),
+    ...((ENGLISH_CURATED_SUPPLEMENTS as unknown as Record<string, Draft[]>)[
+      chapterSlug
+    ] ?? []),
   ];
   const expanded = expandEnglishChapterBank(chapterSlug, curated);
   const chapter = getEngChapter(chapterSlug);

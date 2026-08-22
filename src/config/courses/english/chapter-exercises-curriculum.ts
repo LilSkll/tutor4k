@@ -1275,6 +1275,51 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
       ],
       "explanation": "Articles often use you/we for engagement.",
       "grammarTopic": "cambridge-essay-article"
+    },
+    {
+      "type": "sentence_building",
+      "question": "In / conclusion / both / approaches / have / their / merits",
+      "instruction": "Build the essay conclusion",
+      "options": ["In", "conclusion", "both", "approaches", "have", "their", "merits"],
+      "answer": "In conclusion, both approaches have their merits",
+      "explanation": "In conclusion — formal essay closing.",
+      "grammarTopic": "cambridge-essay-article"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Have / you / ever / wondered / why / travel / matters",
+      "instruction": "Build the article hook",
+      "options": ["Have", "you", "ever", "wondered", "why", "travel", "matters"],
+      "answer": "Have you ever wondered why travel matters?",
+      "explanation": "Have you ever wondered… — engaging article opening.",
+      "grammarTopic": "cambridge-essay-article"
+    },
+    {
+      "type": "sentence_building",
+      "question": "This / article / will / explore / three / key / points",
+      "instruction": "Build the article preview",
+      "options": ["This", "article", "will", "explore", "three", "key", "points"],
+      "answer": "This article will explore three key points",
+      "explanation": "Article preview sentence for readers.",
+      "grammarTopic": "cambridge-essay-article"
+    },
+    {
+      "type": "sentence_building",
+      "question": "What / makes / a / good / essay / is / a / clear / thesis",
+      "instruction": "Build the wh-cleft thesis sentence",
+      "options": ["What", "makes", "a", "good", "essay", "is", "a", "clear", "thesis"],
+      "answer": "What makes a good essay is a clear thesis",
+      "explanation": "What makes… is… — emphasis on the key element.",
+      "grammarTopic": "cambridge-essay-article"
+    },
+    {
+      "type": "sentence_building",
+      "question": "So / why / not / give / it / a / try / this / weekend",
+      "instruction": "Build the article closing call",
+      "options": ["So", "why", "not", "give", "it", "a", "try", "this", "weekend?"],
+      "answer": "So why not give it a try this weekend?",
+      "explanation": "Direct address to readers — article style.",
+      "grammarTopic": "cambridge-essay-article"
     }
   ],
 
@@ -1354,6 +1399,51 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
       ],
       "explanation": "Arguably/Clearly — оценочная связка.",
       "grammarTopic": "ielts-opinion-language"
+    },
+    {
+      "type": "sentence_building",
+      "question": "I / would / argue / that / education / should / be / free",
+      "instruction": "Build the academic opinion sentence",
+      "options": ["I", "would", "argue", "that", "education", "should", "be", "free"],
+      "answer": "I would argue that education should be free",
+      "explanation": "I would argue that… — formal opinion.",
+      "grammarTopic": "ielts-opinion-language"
+    },
+    {
+      "type": "sentence_building",
+      "question": "To / some / extent / I / agree / with / this / view",
+      "instruction": "Build the partial agreement sentence",
+      "options": ["To", "some", "extent", "I", "agree", "with", "this", "view"],
+      "answer": "To some extent, I agree with this view",
+      "explanation": "To some extent — partial agreement.",
+      "grammarTopic": "ielts-opinion-language"
+    },
+    {
+      "type": "sentence_building",
+      "question": "While / I / accept / some / benefits / I / largely / disagree",
+      "instruction": "Build the contrast opinion sentence",
+      "options": ["While", "I", "accept", "some", "benefits", "I", "largely", "disagree"],
+      "answer": "While I accept some benefits, I largely disagree",
+      "explanation": "While… — contrast before stating your position.",
+      "grammarTopic": "ielts-opinion-language"
+    },
+    {
+      "type": "sentence_building",
+      "question": "It / seems / to / me / that / the / policy / is / unfair",
+      "instruction": "Build the soft opinion sentence",
+      "options": ["It", "seems", "to", "me", "that", "the", "policy", "is", "unfair"],
+      "answer": "It seems to me that the policy is unfair",
+      "explanation": "It seems to me that… — softened opinion.",
+      "grammarTopic": "ielts-opinion-language"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Arguably / this / trend / is / unlikely / to / reverse",
+      "instruction": "Build the hedged assertion",
+      "options": ["Arguably", "this", "trend", "is", "unlikely", "to", "reverse"],
+      "answer": "Arguably, this trend is unlikely to reverse",
+      "explanation": "Arguably — hedged academic claim.",
+      "grammarTopic": "ielts-opinion-language"
     }
   ],
 
@@ -1432,6 +1522,51 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
         "Yours sincerely"
       ],
       "explanation": "Hi + Yours faithfully — register clash.",
+      "grammarTopic": "register-shift"
+    },
+    {
+      "type": "sentence_building",
+      "question": "I / would / be / grateful / if / you / could / send / it / soon",
+      "instruction": "Build the formal request",
+      "options": ["I", "would", "be", "grateful", "if", "you", "could", "send", "it", "soon"],
+      "answer": "I would be grateful if you could send it soon",
+      "explanation": "I would be grateful if… — formal upshift.",
+      "grammarTopic": "register-shift"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Would / you / be / able / to / call / me / back",
+      "instruction": "Build the formal question",
+      "options": ["Would", "you", "be", "able", "to", "call", "me", "back?"],
+      "answer": "Would you be able to call me back?",
+      "explanation": "Would you be able to… — polite formal request.",
+      "grammarTopic": "register-shift"
+    },
+    {
+      "type": "sentence_building",
+      "question": "I / look / forward / to / hearing / from / you",
+      "instruction": "Build the formal closing phrase",
+      "options": ["I", "look", "forward", "to", "hearing", "from", "you"],
+      "answer": "I look forward to hearing from you",
+      "explanation": "Standard formal email closing phrase.",
+      "grammarTopic": "register-shift"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Just / wanted / to / ask / about / the / deadline",
+      "instruction": "Build the informal enquiry",
+      "options": ["Just", "wanted", "to", "ask", "about", "the", "deadline"],
+      "answer": "Just wanted to ask about the deadline",
+      "explanation": "Just wanted to ask… — informal register.",
+      "grammarTopic": "register-shift"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Thank / you / very / much / for / your / assistance",
+      "instruction": "Build the formal thanks",
+      "options": ["Thank", "you", "very", "much", "for", "your", "assistance"],
+      "answer": "Thank you very much for your assistance",
+      "explanation": "Thanks → Thank you very much for your assistance.",
       "grammarTopic": "register-shift"
     }
   ],

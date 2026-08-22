@@ -942,6 +942,51 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       ],
       "explanation": "Donde hay — indicativo (общая истина).",
       "grammarTopic": "subjuntivo-avanzado"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Busco / un / sitio / donde / haya / silencio",
+      "instruction": "Составьте предложение с subjuntivo (antecedente no definido)",
+      "options": ["Busco", "un", "sitio", "donde", "haya", "silencio"],
+      "answer": "Busco un sitio donde haya silencio",
+      "explanation": "Busco un sitio donde haya… — место ещё не найдено → subjuntivo.",
+      "grammarTopic": "subjuntivo-avanzado"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Por / extraño / que / parezca / aceptó",
+      "instruction": "Составьте конструкцию por + adj + que + subj.",
+      "options": ["Por", "extraño", "que", "parezca", "aceptó"],
+      "answer": "Por extraño que parezca, aceptó",
+      "explanation": "Por extraño que parezca — уступительная конструкция с subjuntivo.",
+      "grammarTopic": "subjuntivo-avanzado"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Aunque / llueva / mañana / saldremos / igual",
+      "instruction": "Составьте гипотетическое уступление",
+      "options": ["Aunque", "llueva", "mañana", "saldremos", "igual"],
+      "answer": "Aunque llueva mañana, saldremos igual",
+      "explanation": "Aunque + subjuntivo — гипотетическое «даже если».",
+      "grammarTopic": "subjuntivo-avanzado"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Hazlo / como / te / lo / expliqué",
+      "instruction": "Составьте предложение: como + indicativo (способ)",
+      "options": ["Hazlo", "como", "te", "lo", "expliqué"],
+      "answer": "Hazlo como te lo expliqué",
+      "explanation": "Como te lo expliqué — indicativo: «как я объяснил».",
+      "grammarTopic": "subjuntivo-avanzado"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Donde / haya / voluntad / hay / camino",
+      "instruction": "Составьте пословицу с subjuntivo",
+      "options": ["Donde", "haya", "voluntad", "hay", "camino"],
+      "answer": "Donde haya voluntad, hay camino",
+      "explanation": "Donde haya… — общая истина с subjuntivo в придаточном.",
+      "grammarTopic": "subjuntivo-avanzado"
     }
   ],
 
@@ -1016,6 +1061,51 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
         "Aquel"
       ],
       "explanation": "Hoy → aquel día en estilo indirecto.",
+      "grammarTopic": "indirecto-avanzado"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Dijo / que / vendría / al / día / siguiente",
+      "instruction": "Составьте estilo indirecto со сдвигом времени",
+      "options": ["Dijo", "que", "vendría", "al", "día", "siguiente"],
+      "answer": "Dijo que vendría al día siguiente",
+      "explanation": "Mañana → al día siguiente; futuro → condicional.",
+      "grammarTopic": "indirecto-avanzado"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Me / pidió / que / no / lo / contara / a / nadie",
+      "instruction": "Составьте косвенную речь с subjuntivo",
+      "options": ["Me", "pidió", "que", "no", "lo", "contara", "a", "nadie"],
+      "answer": "Me pidió que no lo contara a nadie",
+      "explanation": "Pedir que + imperfecto de subjuntivo en estilo indirecto.",
+      "grammarTopic": "indirecto-avanzado"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Afirmó / que / ya / había / terminado / el / trabajo",
+      "instruction": "Составьте pluscuamperfecto en indirecto",
+      "options": ["Afirmó", "que", "ya", "había", "terminado", "el", "trabajo"],
+      "answer": "Afirmó que ya había terminado el trabajo",
+      "explanation": "Pretérito perfecto → pluscuamperfecto en estilo indirecto.",
+      "grammarTopic": "indirecto-avanzado"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Le / dijo / que / aquel / día / no / podía / venir",
+      "instruction": "Составьте сдвиг указателя hoy → aquel día",
+      "options": ["Le", "dijo", "que", "aquel", "día", "no", "podía", "venir"],
+      "answer": "Le dijo que aquel día no podía venir",
+      "explanation": "Hoy → aquel día; presente → imperfecto.",
+      "grammarTopic": "indirecto-avanzado"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Quería / saber / si / ya / habíamos / reservado",
+      "instruction": "Составьте вопрос в estilo indirecto",
+      "options": ["Quería", "saber", "si", "ya", "habíamos", "reservado"],
+      "answer": "Quería saber si ya habíamos reservado",
+      "explanation": "¿Ya habéis reservado? → si + pluscuamperfecto.",
       "grammarTopic": "indirecto-avanzado"
     }
   ],
@@ -1093,6 +1183,51 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       ],
       "explanation": "Lo importante es…",
       "grammarTopic": "pronombres-avanzado"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Lo / difícil / es / empezar / a / tiempo",
+      "instruction": "Составьте конструкцию lo + adjetivo",
+      "options": ["Lo", "difícil", "es", "empezar", "a", "tiempo"],
+      "answer": "Lo difícil es empezar a tiempo",
+      "explanation": "Lo difícil es… — «самое сложное — …».",
+      "grammarTopic": "pronombres-avanzado"
+    },
+    {
+      "type": "sentence_building",
+      "question": "A / María / la / vi / en / la / conferencia",
+      "instruction": "Составьте предложение с ударением на OD",
+      "options": ["A", "María", "la", "vi", "en", "la", "conferencia"],
+      "answer": "A María la vi en la conferencia",
+      "explanation": "A María la vi — местоимение перед глаголом, a + имя.",
+      "grammarTopic": "pronombres-avanzado"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Lo / que / más / me / gusta / es / viajar",
+      "instruction": "Составьте конструкцию lo que… es…",
+      "options": ["Lo", "que", "más", "me", "gusta", "es", "viajar"],
+      "answer": "Lo que más me gusta es viajar",
+      "explanation": "Lo que más me gusta es… — «то, что мне больше всего нравится — …».",
+      "grammarTopic": "pronombres-avanzado"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Lo / bueno / de / todo / es / que / aprendimos",
+      "instruction": "Составьте lo bueno de todo es que…",
+      "options": ["Lo", "bueno", "de", "todo", "es", "que", "aprendimos"],
+      "answer": "Lo bueno de todo es que aprendimos",
+      "explanation": "Lo bueno de todo es que… — «хорошая сторона всего в том, что…».",
+      "grammarTopic": "pronombres-avanzado"
+    },
+    {
+      "type": "sentence_building",
+      "question": "No / se / lo / dije / porque / no / estaba",
+      "instruction": "Составьте предложение с двойным местоимением",
+      "options": ["No", "se", "lo", "dije", "porque", "no", "estaba"],
+      "answer": "No se lo dije porque no estaba",
+      "explanation": "Se lo dije — IO (se) + OD (lo) перед глаголом.",
+      "grammarTopic": "pronombres-avanzado"
     }
   ],
 
@@ -1167,6 +1302,51 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
         "Es"
       ],
       "explanation": "Оценка события в целом → ser.",
+      "grammarTopic": "ser-estar-avanzado"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Juan / es / listo / pero / hoy / no / está / listo",
+      "instruction": "Составьте пару ser/estar con listo",
+      "options": ["Juan", "es", "listo", "pero", "hoy", "no", "está", "listo"],
+      "answer": "Juan es listo pero hoy no está listo",
+      "explanation": "Es listo (умный) vs está listo (готов) — разные значения.",
+      "grammarTopic": "ser-estar-avanzado"
+    },
+    {
+      "type": "sentence_building",
+      "question": "La / sopa / está / fría / pero / el / plato / es / frío",
+      "instruction": "Составьте контраст ser/estar с frío",
+      "options": ["La", "sopa", "está", "fría", "pero", "el", "plato", "es", "frío"],
+      "answer": "La sopa está fría pero el plato es frío",
+      "explanation": "Está fría (температура) vs es frío (материал/на ощупь).",
+      "grammarTopic": "ser-estar-avanzado"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Es / aburrido / el / libro / pero / estoy / aburrido / ya",
+      "instruction": "Составьте пару es/está aburrido",
+      "options": ["Es", "aburrido", "el", "libro", "pero", "estoy", "aburrido", "ya"],
+      "answer": "Es aburrido el libro pero estoy aburrido ya",
+      "explanation": "Es aburrido (скучный) vs estoy aburrido (мне скучно).",
+      "grammarTopic": "ser-estar-avanzado"
+    },
+    {
+      "type": "sentence_building",
+      "question": "El / examen / es / difícil / y / estoy / muy / nervioso",
+      "instruction": "Составьте ser (характеристика) + estar (состояние)",
+      "options": ["El", "examen", "es", "difícil", "y", "estoy", "muy", "nervioso"],
+      "answer": "El examen es difícil y estoy muy nervioso",
+      "explanation": "Es difícil (сложный) + estoy nervioso (волнуюсь).",
+      "grammarTopic": "ser-estar-avanzado"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Mi / abuela / es / viva / y / todavía / está / viva",
+      "instruction": "Составьте пару ser/estar con vivo",
+      "options": ["Mi", "abuela", "es", "viva", "y", "todavía", "está", "viva"],
+      "answer": "Mi abuela es viva y todavía está viva",
+      "explanation": "Es viva (живой характер) vs está viva (жива, не умерла).",
       "grammarTopic": "ser-estar-avanzado"
     }
   ],

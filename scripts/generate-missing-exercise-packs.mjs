@@ -63,10 +63,27 @@ const ENGLISH_KEEP = new Set([
   "eng-ch10-what-if",
   "eng-ch11-passive",
   "eng-ch12-beyond-borders",
+  "eng-ch16-ielts",
+]);
+
+/** Rebuild packs from fresh seeds (new curated sentence_building, grammar topic fix). */
+const FORCE_REGENERATE = new Set([
+  "chapter-4-numeros-tiempo",
+  "chapter-16-perifrasis",
+  "chapter-17-dele",
+  "chapter-42-subjuntivo-avanzado",
+  "chapter-43-indirecto-avanzado",
+  "chapter-44-pronombres-avanzado",
+  "chapter-45-ser-estar-matices",
   "eng-ch13-advanced-structures",
   "eng-ch14-art-language",
   "eng-ch15-mastery",
-  "eng-ch16-ielts",
+  "eng-ch41-cambridge-essay",
+  "eng-ch42-ielts-opinion",
+  "eng-ch43-register-shift",
+  "eng-ch23-spotlight",
+  "eng-ch24-unspoken",
+  "eng-ch25-between-lines",
 ]);
 const root = path.join(__dirname, "..");
 
@@ -75,6 +92,12 @@ async function loadModules() {
   const { CHAPTER_EXERCISES } = await import("../src/config/chapter-exercises.ts");
   const { CURRICULUM_CHAPTER_EXERCISES } = await import(
     "../src/config/chapter-exercises-curriculum.ts"
+  );
+  const { SPANISH_CURATED_SUPPLEMENTS } = await import(
+    "../src/config/exercise-seeds/spanish-curated-supplements.ts"
+  );
+  const { ENGLISH_CURATED_SUPPLEMENTS } = await import(
+    "../src/config/exercise-seeds/english-curated-supplements.ts"
   );
   const { ENGLISH_CHAPTERS } = await import("../src/config/courses/english/chapters.ts");
   const { ENGLISH_EXERCISES } = await import("../src/config/courses/english/exercises.ts");
@@ -85,23 +108,37 @@ async function loadModules() {
     CHAPTERS,
     CHAPTER_EXERCISES,
     CURRICULUM_CHAPTER_EXERCISES,
+    SPANISH_CURATED_SUPPLEMENTS,
     ENGLISH_CHAPTERS,
     ENGLISH_EXERCISES,
     ENGLISH_CURRICULUM_CHAPTER_EXERCISES,
+    ENGLISH_CURATED_SUPPLEMENTS,
   };
 }
 
-function curatedForSpanish(slug, CHAPTER_EXERCISES, CURRICULUM_CHAPTER_EXERCISES) {
+function curatedForSpanish(
+  slug,
+  CHAPTER_EXERCISES,
+  CURRICULUM_CHAPTER_EXERCISES,
+  SPANISH_CURATED_SUPPLEMENTS,
+) {
   return [
     ...(CHAPTER_EXERCISES[slug] ?? []),
     ...(CURRICULUM_CHAPTER_EXERCISES[slug] ?? []),
+    ...(SPANISH_CURATED_SUPPLEMENTS[slug] ?? []),
   ];
 }
 
-function curatedForEnglish(slug, ENGLISH_EXERCISES, ENGLISH_CURRICULUM_CHAPTER_EXERCISES) {
+function curatedForEnglish(
+  slug,
+  ENGLISH_EXERCISES,
+  ENGLISH_CURRICULUM_CHAPTER_EXERCISES,
+  ENGLISH_CURATED_SUPPLEMENTS,
+) {
   return [
     ...(ENGLISH_EXERCISES[slug] ?? []),
     ...(ENGLISH_CURRICULUM_CHAPTER_EXERCISES[slug] ?? []),
+    ...(ENGLISH_CURATED_SUPPLEMENTS[slug] ?? []),
   ];
 }
 
@@ -176,6 +213,8 @@ async function main() {
     ENGLISH_EXERCISES,
     ENGLISH_CURRICULUM_CHAPTER_EXERCISES,
     CURRICULUM_CHAPTER_EXERCISES,
+    SPANISH_CURATED_SUPPLEMENTS,
+    ENGLISH_CURATED_SUPPLEMENTS,
   } = await loadModules();
 
   const spanishPath = path.join(
@@ -198,6 +237,7 @@ async function main() {
       ch.slug,
       CHAPTER_EXERCISES,
       CURRICULUM_CHAPTER_EXERCISES,
+      SPANISH_CURATED_SUPPLEMENTS,
     );
     if (curated.length === 0) continue;
 
@@ -213,7 +253,7 @@ async function main() {
     spanishPacks[ch.slug] = mergePack(
       spanishPacks[ch.slug],
       generated,
-      !SPANISH_KEEP.has(ch.slug),
+      !SPANISH_KEEP.has(ch.slug) || FORCE_REGENERATE.has(ch.slug),
     );
     const after = JSON.stringify(spanishPacks[ch.slug] ?? {});
     if (before !== after) spanishAdded++;
@@ -224,6 +264,7 @@ async function main() {
       ch.slug,
       ENGLISH_EXERCISES,
       ENGLISH_CURRICULUM_CHAPTER_EXERCISES,
+      ENGLISH_CURATED_SUPPLEMENTS,
     );
     if (curated.length === 0) continue;
 
@@ -239,7 +280,7 @@ async function main() {
     englishPacks[ch.slug] = mergePack(
       englishPacks[ch.slug],
       generated,
-      !ENGLISH_KEEP.has(ch.slug),
+      !ENGLISH_KEEP.has(ch.slug) || FORCE_REGENERATE.has(ch.slug),
     );
     const after = JSON.stringify(englishPacks[ch.slug] ?? {});
     if (before !== after) englishAdded++;
