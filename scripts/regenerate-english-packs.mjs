@@ -213,15 +213,17 @@ function chapterFromSeeds(g, topic, seeds) {
     mcA.push(
       mc(q, options, s.ans, "Choose the correct answer", s.explanation || `${topic}: “${s.ans}”.`, g),
     );
-    fbA.push(
-      fb(
-        q.includes("___") ? q : `Complete (${topic}) #${n}: ___`,
-        s.ans,
-        "Fill in the blank",
-        s.explanation || `${topic}: “${s.ans}”.`,
-        g,
-      ),
-    );
+    if (q.includes("___")) {
+      fbA.push(
+        fb(
+          q,
+          s.ans,
+          "Fill in the blank",
+          s.explanation || `${topic}: “${s.ans}”.`,
+          g,
+        ),
+      );
+    }
     const filled = q.replace("___", s.ans).replace(` (${n}).`, ".");
     const wrong = options.find((o) => o !== s.ans) || "WRONG";
     const broken = q.replace("___", wrong).replace(` (${n}).`, ".");
