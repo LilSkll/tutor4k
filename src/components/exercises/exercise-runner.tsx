@@ -109,6 +109,7 @@ export function ExerciseRunner({
   const homeworkAutoStarted = React.useRef(false);
   const checkInFlight = React.useRef(false);
   const [deleMode, setDeleMode] = React.useState(false);
+  const [challengeMode, setChallengeMode] = React.useState(false);
   const [queue, setQueue] = React.useState<GeneratedExercise[]>([]);
   const [queueIdx, setQueueIdx] = React.useState(0);
   const [seenIds, setSeenIds] = React.useState<string[]>([]);
@@ -167,6 +168,7 @@ export function ExerciseRunner({
             level: roundLevel,
             count: roundCount,
             excludeIds,
+            challengeMode,
             ...(roundDele &&
             activeCourseId === "spanish" &&
             roundType !== "mixed"
@@ -174,7 +176,12 @@ export function ExerciseRunner({
               : {}),
           }),
         });
-        if (!res.ok) throw new Error("Failed");
+        if (!res.ok) {
+          const body = (await res.json().catch(() => null)) as {
+            error?: string;
+          } | null;
+          throw new Error(body?.error || "Failed");
+        }
         const data = (await res.json()) as { exercises: GeneratedExercise[] };
         if (!data.exercises?.length) throw new Error("Empty");
         setQueue(data.exercises);
@@ -191,8 +198,12 @@ export function ExerciseRunner({
           });
         }
         setPhase("answering");
-      } catch {
-        toast.error(translate("exercises.toastGenerateFail", language));
+      } catch (err) {
+        const msg =
+          err instanceof Error && err.message && err.message !== "Failed"
+            ? err.message
+            : translate("exercises.toastGenerateFail", language);
+        toast.error(msg);
         setPhase("config");
       }
     },
@@ -203,6 +214,7 @@ export function ExerciseRunner({
       level,
       sessionSize,
       deleMode,
+      challengeMode,
       activeCourseId,
       language,
     ],
@@ -550,12 +562,28 @@ export function ExerciseRunner({
                   🎓 DELE
                 </button>
               )}
+              <button
+                onClick={() => setChallengeMode((v) => !v)}
+                className={cn(
+                  "rounded-full px-4 py-1.5 text-sm font-semibold border transition-all",
+                  challengeMode
+                    ? "bg-primary text-primary-foreground border-primary"
+                    : "border-border hover:border-primary/50",
+                )}
+              >
+                {t("exercises.challengeMode")}
+              </button>
             </div>
             {deleMode && activeCourseId === "spanish" && (
               <p className="mt-2 text-xs text-muted-foreground">
                 {t("exercises.deleHint")}
               </p>
             )}
+            <p className="mt-2 text-xs text-muted-foreground">
+              {challengeMode
+                ? t("exercises.challengeHint")
+                : t("exercises.lockedHint")}
+            </p>
           </div>
 
           <p className="text-sm text-muted-foreground">

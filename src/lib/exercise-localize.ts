@@ -1,6 +1,7 @@
 import type { ExerciseType, InterfaceLanguage, StaticExercise } from "@/types";
 import { lookupTranslationPrompt } from "@/config/exercise-translation-prompts";
 import { isGrammarCategoryInstruction } from "@/lib/exercise-quality";
+import { localizeBankExplanation } from "@/lib/tutor-feedback";
 
 // =====================================================================
 // Interface-language handling for the static exercise bank.
@@ -23,26 +24,6 @@ export function hasCyrillicText(s: string | undefined | null): boolean {
 /** Best-effort source language of an authored bank string. */
 export function detectSourceLanguage(s: string): "ru" | "en" {
   return hasCyrillicText(s) ? "ru" : "en";
-}
-
-/**
- * Direct quote → reported speech rewrite (estilo indirecto), wrongly stored
- * as error_correction in some packs. Not a grammar-error hunt.
- */
-export function isReportedSpeechRewrite(
-  exercise: Pick<StaticExercise, "type" | "question" | "answer">,
-): boolean {
-  if (exercise.type !== "error_correction") return false;
-  const q = exercise.question?.trim() ?? "";
-  const a = exercise.answer?.trim() ?? "";
-  if (!q || !a) return false;
-  const hasQuote =
-    /:\s*[«"“']/.test(q) || /[«"“][^»"”']+[»"”']/.test(q);
-  if (!hasQuote) return false;
-  return (
-    /\bque\b/i.test(a) ||
-    /\b(dónde|como|cómo|qué|quién|cuándo|si)\b/i.test(a)
-  );
 }
 
 /**
@@ -125,6 +106,76 @@ const REPORTED_SPEECH_FULL: Record<InterfaceLanguage, string> = {
   de: "Schreibe die direkte Rede in die indirekte Rede um",
 };
 
+/** Semantic instruction keys — keep pedagogy across UI languages. */
+const INSTRUCTION_BY_KEY: Record<
+  string,
+  Record<InterfaceLanguage, string>
+> = {
+  reported_speech: REPORTED_SPEECH_FULL,
+  por_para: {
+    ru: "Выберите por или para",
+    en: "Choose por or para",
+    es: "Elige por o para",
+    de: "Wähle por oder para",
+  },
+  ser_estar: {
+    ru: "Выберите ser или estar",
+    en: "Choose ser or estar",
+    es: "Elige ser o estar",
+    de: "Wähle ser oder estar",
+  },
+  pret_imp: {
+    ru: "Выберите pretérito или imperfecto",
+    en: "Choose pretérito or imperfecto",
+    es: "Elige pretérito o imperfecto",
+    de: "Wähle Pretérito oder Imperfecto",
+  },
+  subjunctive_trigger: {
+    ru: "Поставьте глагол в нужное наклонение",
+    en: "Put the verb in the correct mood",
+    es: "Pon el verbo en el modo correcto",
+    de: "Setze das Verb in den richtigen Modus",
+  },
+  translate_to_es: {
+    ru: "Переведите на испанский",
+    en: "Translate into Spanish",
+    es: "Traduce al español",
+    de: "Übersetze ins Spanische",
+  },
+  build_sentence: {
+    ru: "Составьте предложение по образцу",
+    en: "Build a sentence on the model",
+    es: "Forma una frase siguiendo el modelo",
+    de: "Bilde einen Satz nach dem Muster",
+  },
+  fill_conjugation: {
+    ru: "Поставьте глагол в правильную форму",
+    en: "Put the verb in the correct form",
+    es: "Pon el verbo en la forma correcta",
+    de: "Setze das Verb in die richtige Form",
+  },
+};
+
+/** Map common RU authored instructions → instructionKey. */
+function inferInstructionKey(instruction: string): string | null {
+  const s = instruction.toLowerCase();
+  if (/косвенн|estilo indirecto|reported speech|прямую речь/.test(s)) {
+    return "reported_speech";
+  }
+  if (/\bpor\b.*\bpara\b|\bpara\b.*\bpor\b/.test(s)) return "por_para";
+  if (/\bser\b.*\bestar\b|\bestar\b.*\bser\b/.test(s)) return "ser_estar";
+  if (/pretérito|preterito|imperfecto|indefinido/.test(s) && /или|or|o |\/|vs/.test(s)) {
+    return "pret_imp";
+  }
+  if (/составьте|build|forma una|bilde/.test(s)) return "build_sentence";
+  if (/перевед|traduc|übersetz/.test(s)) return "translate_to_es";
+  if (/поставьте глагол|conjugate|conjug|forma correcta|правильную форму/.test(s)) {
+    return "fill_conjugation";
+  }
+  if (/сослагательн|subjuntiv|наклонен/.test(s)) return "subjunctive_trigger";
+  return null;
+}
+
 const GENERIC_INSTRUCTION: Record<
   InterfaceLanguage,
   Record<ExerciseType, string>
@@ -160,6 +211,31 @@ const GENERIC_INSTRUCTION: Record<
 };
 
 /**
+ * Direct quote → reported speech rewrite (estilo indirecto), wrongly stored
+ * as error_correction in some packs. Not a grammar-error hunt.
+ */
+export function isReportedSpeechRewrite(
+  exercise: Pick<
+    StaticExercise,
+    "type" | "question" | "answer" | "rewriteMode"
+  >,
+): boolean {
+  if (exercise.rewriteMode === "reported_speech") return true;
+  if (exercise.rewriteMode === "grammar_fix") return false;
+  if (exercise.type !== "error_correction") return false;
+  const q = exercise.question?.trim() ?? "";
+  const a = exercise.answer?.trim() ?? "";
+  if (!q || !a) return false;
+  const hasQuote =
+    /:\s*[«"“']/.test(q) || /[«"“][^»"”']+[»"”']/.test(q);
+  if (!hasQuote) return false;
+  return (
+    /\bque\b/i.test(a) ||
+    /\b(dónde|como|cómo|qué|quién|cuándo|si)\b/i.test(a)
+  );
+}
+
+/**
  * Instruction shown above the exercise. Keeps the authored instruction when
  * it is already in the interface language; otherwise falls back to a
  * localized generic instruction for the exercise type.
@@ -168,14 +244,28 @@ const GENERIC_INSTRUCTION: Record<
  * spoil the answer — always replace those with a generic prompt.
  */
 export function localizeExerciseInstruction(
-  exercise: Pick<StaticExercise, "type" | "question" | "answer"> & {
+  exercise: Pick<
+    StaticExercise,
+    "type" | "question" | "answer" | "rewriteMode"
+  > & {
     instruction?: string;
+    instructionKey?: string;
   },
   interfaceLanguage: InterfaceLanguage,
 ): string {
   if (isReportedSpeechRewrite(exercise)) {
     return (
       REPORTED_SPEECH_FULL[interfaceLanguage] ?? REPORTED_SPEECH_FULL.en
+    );
+  }
+
+  const key =
+    exercise.instructionKey?.trim() ||
+    inferInstructionKey(exercise.instruction?.trim() ?? "");
+  if (key && INSTRUCTION_BY_KEY[key]) {
+    return (
+      INSTRUCTION_BY_KEY[key][interfaceLanguage] ??
+      INSTRUCTION_BY_KEY[key].en
     );
   }
 
@@ -256,5 +346,6 @@ export function prepareExercisesForInterface<T extends StaticExercise>(
       ...ex,
       question: localizeTranslationQuestion(ex, interfaceLanguage),
       instruction: localizeExerciseInstruction(ex, interfaceLanguage),
+      explanation: localizeBankExplanation(ex.explanation, interfaceLanguage),
     }));
 }

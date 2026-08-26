@@ -75,6 +75,11 @@ type PickInput = {
   mixed?: boolean;
   topic?: string;
   preferredChapterSlugs?: string[];
+  /**
+   * Hard filter: only these chapter banks (journey-unlocked).
+   * When set, level relaxation stays inside this set.
+   */
+  allowedChapterSlugs?: string[];
   /** Skip ids already used in this session (continue rounds). */
   excludeIds?: string[];
   /** Drop items unusable in this interface language (e.g. RU prompts). */
@@ -86,14 +91,23 @@ async function loadRankedCandidates(
   opts?: { relaxLevel?: boolean },
 ): Promise<RankedBankItem[]> {
   const pool = await getExercisePool(input.courseId);
+  const allowed =
+    input.allowedChapterSlugs && input.allowedChapterSlugs.length > 0
+      ? new Set(input.allowedChapterSlugs)
+      : null;
+
+  const inAllowed = (ex: { chapterSlug: string }) =>
+    !allowed || allowed.has(ex.chapterSlug);
+
   let candidates = input.mixed
     ? filterPoolByLevel(pool, input.level)
     : filterPoolByTypeLevel(pool, input.type, input.level);
+  candidates = candidates.filter(inAllowed);
 
   if (opts?.relaxLevel) {
-    const byType = input.mixed
-      ? pool
-      : pool.filter((ex) => ex.type === input.type);
+    const byType = (input.mixed ? pool : pool.filter((ex) => ex.type === input.type)).filter(
+      inAllowed,
+    );
     if (byType.length > candidates.length) candidates = byType;
   }
 

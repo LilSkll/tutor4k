@@ -166,20 +166,21 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
   },
   "a1-gustar": {
     here: t(
-      "me/te/le + gusta/gustan. Нравится вещь, не «я нравлюсь».",
-      "me/te/le + gusta/gustan. The thing is liked — you are not the verb subject.",
-      "me/te/le + gusta/gustan. Gusta la cosa, no «yo».",
-      "me/te/le + gusta/gustan. Die Sache gefällt — du bist nicht das Subjekt.",
+      "Сначала me/te/le (кому), потом gusta/gustan (что нравится). Не «yo gusto».",
+      "First me/te/le (to whom), then gusta/gustan (what is liked). Not “yo gusto”.",
+      "Primero me/te/le (a quién), luego gusta/gustan. No «yo gusto».",
+      "Zuerst me/te/le (wem), dann gusta/gustan. Nicht „yo gusto“.",
     ),
     later: t(
-      "se и объектные lo/la. Не путать me gusta с me lo da.",
-      "se and object lo/la. Don’t mix me gusta with me lo da.",
-      "se y lo/la. No mezclar me gusta con me lo da.",
-      "se und lo/la. Nicht mit me lo da mischen.",
+      "Полные OD/OI (lo/la/le, se lo) — B1. Здесь только клитики с gustar.",
+      "Full OD/OI (lo/la/le, se lo) is B1. Here only gustar clitics.",
+      "OD/OI completo (lo/la/le, se lo) es B1. Aquí solo clíticos con gustar.",
+      "Volles OD/OI (lo/la/le, se lo) ist B1. Hier nur Gustar-Klitika.",
     ),
     pairs: [
       p("Me gusta el café.", "Me gustan los libros.", "одна вещь vs несколько", "one thing vs several", "una cosa vs varias", "eine Sache vs. mehrere"),
       p("Me gusta nadar.", "Me gusta que vengas.", "инфинитив (A1) vs que… (B1)", "infinitive (A1) vs que… (B1)", "infinitivo (A1) vs que… (B1)", "Infinitiv (A1) vs. que… (B1)"),
+      p("Me gusta.", "Yo gusto.", "правильно vs типичная ошибка", "correct vs common error", "correcto vs error típico", "richtig vs. typischer Fehler"),
     ],
   },
   "a1-tener-expressions": {

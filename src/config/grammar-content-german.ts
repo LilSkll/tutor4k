@@ -839,6 +839,18 @@ Frage: **¿Qué hora es?**
   "a1-gustar": {
     de: `> **Vor diesem Thema:** Präsens (gusta / gustan) und el / los kennt ihr. Hier — **der Kaffee gefällt MIR**, nicht „ich gefalle dem Kaffee“.
 
+## Mini: Klitika me / te / le
+
+Bei **gustar** kommen erstmals kurze „wem“-Formen vor:
+
+| Wem | Form | Beispiel |
+|---|---|---|
+| mir | **me** | **Me** gusta el café |
+| dir | **te** | **Te** gusta viajar |
+| ihm/ihr/Ihnen | **le** | **Le** gusta el flamenco |
+
+Das ist noch nicht das volle OD/OI-System (lo veo, le doy). Hier: **me/te/le** stehen **vor** gusta/gustan.
+
 ## Gustar — „mögen" (wörtlich: „gefallen")
 
 Im Spanischen funktioniert \`gustar\` **umgekehrt**: das Subjekt ist das, was gefällt, nicht die Person.

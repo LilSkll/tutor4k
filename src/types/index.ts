@@ -384,6 +384,16 @@ export interface StaticExercise {
    */
   questionTranslations?: Partial<Record<InterfaceLanguage, string>>;
   instruction: string;
+  /**
+   * Stable key for a localized instruction (por/para, reported speech, etc.).
+   * Preferred over authored RU instruction when localizing for non-RU UI.
+   */
+  instructionKey?: string;
+  /**
+   * When type is error_correction: grammar fix vs rewrite (estilo indirecto).
+   * If omitted, heuristics may still detect reported-speech rewrites.
+   */
+  rewriteMode?: "grammar_fix" | "reported_speech";
   options?: string[];
   answer: string;
   acceptableAnswers?: string[];

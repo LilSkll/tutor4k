@@ -9,6 +9,7 @@ import {
 } from "@/lib/exercise-localize";
 import { attachQuestionGlosses } from "@/lib/exercise-gloss-attach";
 import { SESSION_EXERCISES } from "@/lib/exercise-bank";
+import { localizeBankExplanation } from "@/lib/tutor-feedback";
 import type {
   ExerciseType,
   GrammarLevel,
@@ -18,11 +19,12 @@ import type {
 
 /**
  * POST /api/exercises/generate
- * Body: { type, level, topic?, count?, excludeIds?, exam? }
+ * Body: { type, level, topic?, count?, excludeIds?, exam?, challengeMode? }
  *
  * Serves a session batch from the permanent adaptive exercise bank.
  * Default count = SESSION_EXERCISES (5). Regular practice and DELE never
  * call AI here — only the authored bank.
+ * Without challengeMode, only unlocked journey chapters are served.
  */
 export async function POST(req: NextRequest) {
   try {
@@ -33,9 +35,12 @@ export async function POST(req: NextRequest) {
       count?: number;
       excludeIds?: string[];
       exam?: "DELE";
+      /** When true, allow any CEFR / chapter (opt-in stretch practice). */
+      challengeMode?: boolean;
     };
 
     const isMixed = body.type === "mixed";
+    const challengeMode = body.challengeMode === true;
 
     if ((!body.type && !isMixed) || !body.level) {
       return NextResponse.json(
@@ -74,20 +79,51 @@ export async function POST(req: NextRequest) {
     }
 
     let preferredChapterSlugs: string[] | undefined;
+    let allowedChapterSlugs: string[] | undefined;
     try {
       const { getCourse } = await import("@/config/courses");
       const { buildTeacherContext, rankChapterSlugsForExercises } =
         await import("@/server/ai/learner-context");
+      const {
+        getChapterProgress,
+        getCurrentChapterSlug,
+      } = await import("@/server/actions/data");
       const teacher = await buildTeacherContext({
         courseId,
         interfaceLanguage: language,
         level,
       });
       const course = await getCourse(courseId);
-      preferredChapterSlugs = rankChapterSlugsForExercises(
-        teacher,
-        course.getChapters(),
-      );
+      const chapters = course.getChapters();
+      preferredChapterSlugs = rankChapterSlugsForExercises(teacher, chapters);
+
+      if (!challengeMode && body.exam !== "DELE") {
+        const progress = await getChapterProgress();
+        const courseSlugSet = new Set(chapters.map((c) => c.slug));
+        const unlocked = new Set<string>();
+        for (const row of progress) {
+          if (
+            row.chapter_slug &&
+            courseSlugSet.has(row.chapter_slug) &&
+            (row.status === "completed" || row.status === "in_progress")
+          ) {
+            unlocked.add(row.chapter_slug);
+          }
+        }
+        const current = await getCurrentChapterSlug(courseId);
+        if (current) unlocked.add(current);
+        // First chapter always available for brand-new learners.
+        if (unlocked.size === 0 && chapters[0]?.slug) {
+          unlocked.add(chapters[0].slug);
+        }
+        allowedChapterSlugs = [...unlocked];
+        preferredChapterSlugs = preferredChapterSlugs.filter((s) =>
+          unlocked.has(s),
+        );
+        if (preferredChapterSlugs.length === 0) {
+          preferredChapterSlugs = allowedChapterSlugs;
+        }
+      }
     } catch {
       // Non-fatal: pool still works without curriculum ranking.
     }
@@ -134,6 +170,7 @@ export async function POST(req: NextRequest) {
       level: body.level,
       topic: body.topic,
       preferredChapterSlugs,
+      allowedChapterSlugs,
       excludeIds: body.excludeIds,
       count,
       interfaceLanguage: language,
@@ -142,8 +179,9 @@ export async function POST(req: NextRequest) {
     if (picked.length === 0) {
       return NextResponse.json(
         {
-          error:
-            "No exercises available in the bank for this type and level yet.",
+          error: challengeMode
+            ? "No exercises available in the bank for this type and level yet."
+            : "No unlocked exercises for this type yet. Complete more chapters or turn on Challenge.",
         },
         { status: 404 },
       );
@@ -161,7 +199,7 @@ export async function POST(req: NextRequest) {
         answer: withGloss.answer,
         acceptableAnswers: withGloss.acceptableAnswers,
         topic: withGloss.topic,
-        explanation: withGloss.explanation,
+        explanation: localizeBankExplanation(withGloss.explanation, language),
         staticSource: true,
         exerciseId: withGloss.id,
         chapterSlug: withGloss.chapterSlug,
@@ -173,6 +211,8 @@ export async function POST(req: NextRequest) {
         exercises,
         sessionSize: SESSION_EXERCISES,
         count: exercises.length,
+        challengeMode,
+        unlockedOnly: !challengeMode,
       },
       {
         headers: {

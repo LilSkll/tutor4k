@@ -86,34 +86,34 @@ export const SPANISH_CHAPTER_LOCALE: Record<
   "chapter-5-mercado": {
     en: {
       title: "Toledo Market",
-      summary: "Verb tener, expressions with tener, shopping, colors.",
+      summary: "Expressions with tener (hambre, frío, sueño) and body-related states.",
       location: "Toledo",
     },
     es: {
       title: "El Mercado de Toledo",
-      summary: "Verbo tener, expresiones con tener, compras, colores.",
+      summary: "Expresiones con tener (hambre, frío, sueño) y estados del cuerpo.",
       location: "Toledo",
     },
     de: {
       title: "Markt von Toledo",
-      summary: "Verb tener, Wendungen mit tener, Einkaufen, Farben.",
+      summary: "Wendungen mit tener (hambre, frío, sueño) und Körperzustände.",
       location: "Toledo",
     },
   },
   "chapter-6-cuerpo": {
     en: {
       title: "The Healer",
-      summary: "Body and health, verb gustar, describing people.",
+      summary: "Verb gustar with food and likes — me gusta el café.",
       location: "Toledo Pharmacy",
     },
     es: {
       title: "El Curandero",
-      summary: "Cuerpo y salud, verbo gustar, describir personas.",
+      summary: "Verbo gustar con comida y gustos — me gusta el café.",
       location: "Farmacia de Toledo",
     },
     de: {
       title: "Der Heiler",
-      summary: "Körper und Gesundheit, Verb gustar, Personen beschreiben.",
+      summary: "Verb gustar mit Essen und Vorlieben — me gusta el café.",
       location: "Apotheke Toledo",
     },
   },

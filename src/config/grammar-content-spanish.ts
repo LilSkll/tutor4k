@@ -718,6 +718,18 @@ Pregunta: **¿Qué hora es?**
   "a1-gustar": {
     en: `> **Before this topic:** you already know **tener hambre / frío / sueño** and other **tener** expressions. **In this topic:** **gustar** — “I like” works differently from English.
 
+## Mini: me / te / le clitics
+
+With **gustar** you meet short “to whom” forms for the first time:
+
+| To whom | Form | Example |
+|---|---|---|
+| to me | **me** | **Me** gusta el café |
+| to you | **te** | **Te** gusta viajar |
+| to him/her/you (usted) | **le** | **Le** gusta el flamenco |
+
+This is not the full OD/OI system yet (lo veo, le doy) — that comes later. Here: **me/te/le** go **before** gusta/gustan and name who likes it.
+
 ## Gustar — "to like" (literally: "to be pleasing")
 
 In Spanish, \`gustar\` works **the other way around**: the subject is what is liked, not the person who likes it.
@@ -748,6 +760,18 @@ In Spanish, \`gustar\` works **the other way around**: the subject is what is li
 
 > 💡 Similar verbs: \`encantar\` (to love), \`interesar\` (to interest), \`doler\` (to hurt) — work the same way.`,
     es: `> **Antes de este tema:** ya conoces **tener hambre / frío / sueño** y otras expresiones con **tener**. **En este tema:** **gustar** — «me gusta el café», no «yo gusto el café».
+
+## Mini: clíticos me / te / le
+
+Con **gustar** aparecen por primera vez las formas cortas de «a quién»:
+
+| A quién | Forma | Ejemplo |
+|---|---|---|
+| a mí | **me** | **Me** gusta el café |
+| a ti | **te** | **Te** gusta viajar |
+| a él/ella/usted | **le** | **Le** gusta el flamenco |
+
+Aún no es el sistema completo de OD/OI (lo veo, le doy). Aquí: **me/te/le** van **antes** de gusta/gustan.
 
 ## Gustar — «gustar» (literalmente: «ser agradable»)
 

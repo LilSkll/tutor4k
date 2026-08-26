@@ -56,6 +56,26 @@ export async function POST(req: NextRequest) {
         body.chapterSlug,
       )?.level ??
       "A1";
+
+    // Soft server gate: if the chapter has a practice bank, require a full round.
+    try {
+      const { getChapterExercises } = await import("@/config/chapter-exercises");
+      const { SESSION_EXERCISES } = await import("@/lib/exercise-bank");
+      const bankSize = getChapterExercises(body.chapterSlug).length;
+      const minPractice =
+        bankSize === 0 ? 0 : Math.min(SESSION_EXERCISES, bankSize);
+      if ((body.exercisesCompleted ?? 0) < minPractice) {
+        return NextResponse.json(
+          {
+            error: `Complete at least ${minPractice} exercises before finishing this chapter.`,
+          },
+          { status: 400 },
+        );
+      }
+    } catch {
+      // Non-fatal if bank lookup fails — client gate still applies.
+    }
+
     // DB user_level historically A1–C1; clamp C2 so progress saves before migration.
     const dbLevel = toUserLevel(chapterLevel);
 

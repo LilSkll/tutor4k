@@ -64,6 +64,31 @@ describe("translation localization", () => {
     expect(isReportedSpeechRewrite(item)).toBe(true);
     expect(localizeExerciseInstruction(item, "ru")).toMatch(/косвенную/i);
   });
+
+  it("honors rewriteMode over heuristics", async () => {
+    const { isReportedSpeechRewrite, localizeExerciseInstruction } =
+      await import("@/lib/exercise-localize");
+    expect(
+      isReportedSpeechRewrite({
+        type: "error_correction",
+        question: "Yo soy estudiante",
+        answer: "Yo soy estudiante",
+        rewriteMode: "reported_speech",
+      }),
+    ).toBe(true);
+    expect(
+      localizeExerciseInstruction(
+        {
+          type: "multiple_choice",
+          question: "Voy ___ casa",
+          answer: "a",
+          instruction: "Выберите por или para",
+          instructionKey: "por_para",
+        },
+        "en",
+      ),
+    ).toMatch(/por or para/i);
+  });
 });
 
 describe("orderEarlyLevelPractice", () => {

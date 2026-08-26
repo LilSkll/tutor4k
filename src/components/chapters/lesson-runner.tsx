@@ -119,7 +119,6 @@ export function LessonRunner({
   const [dialogueResponse, setDialogueResponse] = React.useState<string | null>(null);
   const [dialogueInput, setDialogueInput] = React.useState("");
   const askInFlight = React.useRef(false);
-  const [wordsLearned, setWordsLearned] = React.useState(0);
   const [adaptation, setAdaptation] = React.useState<LessonAdaptation | null>(
     null,
   );
@@ -131,6 +130,10 @@ export function LessonRunner({
   /** Cursor into the chapter bank for successive rounds of SESSION_EXERCISES. */
   const [bankCursor, setBankCursor] = React.useState(0);
   const [theoryPageIdx, setTheoryPageIdx] = React.useState(0);
+  /** Wrong answers in this lesson — feed reinforce, not the first bank items. */
+  const [failedExerciseIds, setFailedExerciseIds] = React.useState<string[]>(
+    [],
+  );
   const [finishError, setFinishError] = React.useState<string | null>(null);
   const [rewards, setRewards] = React.useState<ChapterCompleteRewards | null>(
     null,
@@ -182,15 +185,33 @@ export function LessonRunner({
 
   const reinforceSet = React.useMemo(() => {
     if (adaptation?.mode !== "supportive") return [];
-    return chapterBank.slice(0, Math.min(2, chapterBank.length));
-  }, [adaptation, chapterBank]);
+    const byId = new Map(chapterBank.map((ex) => [ex.id, ex]));
+    const failed = failedExerciseIds
+      .map((id) => byId.get(id))
+      .filter((ex): ex is StaticExercise => Boolean(ex));
+    const failedIds = new Set(failed.map((ex) => ex.id));
+    const unseen = chapterBank.filter((ex) => !failedIds.has(ex.id));
+    const pick = [...failed, ...unseen].slice(0, Math.min(2, chapterBank.length));
+    return pick;
+  }, [adaptation, chapterBank, failedExerciseIds]);
 
   const bankRemaining = Math.max(0, chapterBank.length - bankCursor);
 
-  const theoryPages = React.useMemo(
-    () => grammarTheoryPagesFromMarkdown(grammarContent ?? ""),
-    [grammarContent],
-  );
+  /** Require a full session round when the bank can supply one. */
+  const minPracticeToFinish =
+    chapterBank.length === 0
+      ? 0
+      : Math.min(SESSION_EXERCISES, chapterBank.length);
+
+  const practiceGateMet = exercisesCompleted >= minPracticeToFinish;
+
+  const theoryPages = React.useMemo(() => {
+    const pages = grammarTheoryPagesFromMarkdown(grammarContent ?? "");
+    if (adaptation?.shortTheory && pages.length > 1) {
+      return pages.slice(0, 1);
+    }
+    return pages;
+  }, [grammarContent, adaptation?.shortTheory]);
 
   const theoryMarkdown = theoryPages[theoryPageIdx] ?? theoryPages[0] ?? "";
   const theoryPageCount = theoryPages.length;
@@ -257,7 +278,13 @@ export function LessonRunner({
     const local = gradeStaticExerciseLocally(ex, answer, language);
     setResult(local);
     setExercisesCompleted((n) => n + 1);
-    if (local.correct) setScore((s) => s + 1);
+    if (local.correct) {
+      setScore((s) => s + 1);
+    } else if (ex.id) {
+      setFailedExerciseIds((ids) =>
+        ids.includes(ex.id) ? ids : [...ids, ex.id],
+      );
+    }
 
     void fetch("/api/exercises/check", {
       method: "POST",
@@ -349,11 +376,15 @@ export function LessonRunner({
 
   const finishChapter = async () => {
     if (loading) return;
+    if (!practiceGateMet) {
+      setFinishError(
+        t("lesson.finishNeedPractice", { count: minPracticeToFinish }),
+      );
+      return;
+    }
     setLoading(true);
     setFinishError(null);
     try {
-      const estWords = chapter.vocabTopic ? 5 + Math.floor(Math.random() * 5) : 3;
-      setWordsLearned(estWords);
       const percent = scorePercent(score, exercisesCompleted);
 
       const res = await fetch("/api/chapters/complete", {
@@ -362,7 +393,7 @@ export function LessonRunner({
         body: JSON.stringify({
           chapterSlug: chapter.slug,
           score: percent,
-          wordsLearned: estWords,
+          wordsLearned: 0,
           exercisesCompleted,
         }),
       });
@@ -725,7 +756,14 @@ export function LessonRunner({
             ) : grammarError ? (
               <p className="text-sm text-destructive">{grammarError}</p>
             ) : theoryMarkdown ? (
-              <Markdown content={theoryMarkdown} />
+              <>
+                {adaptation?.shortTheory && (
+                  <p className="text-sm text-muted-foreground mb-4 rounded-lg border border-primary/15 bg-primary/5 px-3 py-2">
+                    {t("lesson.shortTheoryNote")}
+                  </p>
+                )}
+                <Markdown content={theoryMarkdown} />
+              </>
             ) : null}
             {isLastTheoryPage && chapter.exerciseTypes?.length ? (
               <div className="mt-6 pt-6 border-t border-border">
@@ -773,7 +811,9 @@ export function LessonRunner({
             )}
           </div>
           <div className="flex flex-wrap gap-2 ml-auto">
-            {adaptation?.mode === "mastered_short" && chapterBank.length > 0 && (
+            {(adaptation?.shortTheory ||
+              adaptation?.mode === "mastered_short") &&
+              chapterBank.length > 0 && (
               <Button variant="outline" onClick={generateExercises}>
                 {t("lesson.skipToPractice")}
               </Button>
@@ -827,6 +867,18 @@ export function LessonRunner({
               placeholder={t("lesson.dialoguePlaceholder")}
               onKeyDown={(e) => { if (e.key === "Enter") askTutor(); }}
             />
+            <Button
+              variant="secondary"
+              className="w-full"
+              disabled={loading}
+              onClick={() => {
+                setDialogueInput(
+                  t("lesson.defaultQuestion", { topic: displayGrammarTitle }),
+                );
+              }}
+            >
+              {t("lesson.dialogueSuggested")}
+            </Button>
             <Button variant="gradient" className="w-full" onClick={askTutor} disabled={loading}>
               {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <MessageSquare className="h-4 w-4" />}
               {loading ? t("lesson.thinking") : t("lesson.askTutor")}
@@ -838,7 +890,7 @@ export function LessonRunner({
             )}
             {bankRemaining > 0 && (
               <Button
-                variant="secondary"
+                variant={practiceGateMet ? "secondary" : "gradient"}
                 className="w-full"
                 onClick={continueBankPractice}
               >
@@ -851,7 +903,17 @@ export function LessonRunner({
             {finishError && (
               <p className="text-sm text-destructive text-center">{finishError}</p>
             )}
-            <Button variant="outline" className="w-full" onClick={finishChapter} disabled={loading}>
+            {!practiceGateMet && minPracticeToFinish > 0 && (
+              <p className="text-sm text-muted-foreground text-center">
+                {t("lesson.finishNeedPractice", { count: minPracticeToFinish })}
+              </p>
+            )}
+            <Button
+              variant="outline"
+              className="w-full"
+              onClick={finishChapter}
+              disabled={loading || !practiceGateMet}
+            >
               {loading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Check className="h-4 w-4" />}
               {finishError ? t("lesson.retryFinish") : t("lesson.finishChapter")}
             </Button>
@@ -941,7 +1003,7 @@ export function LessonRunner({
               </ul>
             </div>
 
-            {(exercisesCompleted > 0 || score > 0 || wordsLearned > 0) && (
+            {(exercisesCompleted > 0 || score > 0) && (
               <div className="rounded-lg border border-border/60 p-4 space-y-2">
                 <p className="font-semibold text-sm mb-1">
                   {t("lesson.statsHeading")}
@@ -960,12 +1022,6 @@ export function LessonRunner({
                         score,
                         total: exercisesCompleted,
                       })}
-                    </li>
-                  )}
-                  {wordsLearned > 0 && (
-                    <li className="flex items-center gap-2">
-                      <Check className="h-4 w-4 text-success" />{" "}
-                      {t("lesson.learnedWords", { count: wordsLearned })}
                     </li>
                   )}
                   <li className="flex items-center gap-2">
