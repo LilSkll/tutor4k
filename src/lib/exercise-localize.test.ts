@@ -65,6 +65,29 @@ describe("translation localization", () => {
     expect(localizeExerciseInstruction(item, "ru")).toMatch(/косвенную/i);
   });
 
+  it("detects English reported speech and reported questions", async () => {
+    const { isReportedSpeechRewrite, localizeExerciseInstruction } =
+      await import("@/lib/exercise-localize");
+    const said = {
+      type: "error_correction" as const,
+      question: 'She said: "I am tired."',
+      answer: "She said (that) she was tired.",
+      instruction: "Tense backshift",
+    };
+    expect(isReportedSpeechRewrite(said)).toBe(true);
+    expect(localizeExerciseInstruction(said, "en")).toMatch(/reported speech/i);
+    expect(localizeExerciseInstruction(said, "ru")).toMatch(/косвенную/i);
+
+    const asked = {
+      type: "error_correction" as const,
+      question: 'They asked: "Where is the station?"',
+      answer: "They asked where the station was.",
+      instruction: "Reported question",
+    };
+    expect(isReportedSpeechRewrite(asked)).toBe(true);
+    expect(localizeExerciseInstruction(asked, "ru")).toMatch(/косвенную/i);
+  });
+
   it("honors rewriteMode and instructionKey", async () => {
     const { isReportedSpeechRewrite, localizeExerciseInstruction } =
       await import("@/lib/exercise-localize");

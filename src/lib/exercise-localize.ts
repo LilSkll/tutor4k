@@ -171,7 +171,7 @@ const INSTRUCTION_BY_KEY: Record<
 /** Map common RU authored instructions → instructionKey. */
 function inferInstructionKey(instruction: string): string | null {
   const s = instruction.toLowerCase();
-  if (/косвенн|estilo indirecto|reported speech|прямую речь/.test(s)) {
+  if (/косвенн|estilo indirecto|reported speech|reported question|прямую речь|backshift/.test(s)) {
     return "reported_speech";
   }
   if (/\bpor\b.*\bpara\b|\bpara\b.*\bpor\b/.test(s)) return "por_para";
@@ -234,8 +234,8 @@ const GENERIC_INSTRUCTION: Record<
 };
 
 /**
- * Direct quote → reported speech rewrite (estilo indirecto), wrongly stored
- * as error_correction in some packs. Not a grammar-error hunt.
+ * Direct quote → reported speech rewrite, wrongly stored as error_correction
+ * in some packs. Not a grammar-error hunt.
  */
 export function isReportedSpeechRewrite(
   exercise: Pick<
@@ -252,9 +252,21 @@ export function isReportedSpeechRewrite(
   const hasQuote =
     /:\s*[«"“']/.test(q) || /[«"“][^»"”']+[»"”']/.test(q);
   if (!hasQuote) return false;
-  return (
+  // Spanish reported speech
+  if (
     /\bque\b/i.test(a) ||
     /\b(dónde|como|cómo|qué|quién|cuándo|si)\b/i.test(a)
+  ) {
+    return true;
+  }
+  // English reported speech / reported questions
+  return (
+    /\b(said|told|asked|replied|answered|explained)\b/i.test(a) &&
+    (/\bthat\b/i.test(a) ||
+      /\b(if|whether|where|what|who|when|why|how)\b/i.test(a) ||
+      /\b(she|he|they|I|we|you)\b.+\b(was|were|had|would|could|might)\b/i.test(
+        a,
+      ))
   );
 }
 

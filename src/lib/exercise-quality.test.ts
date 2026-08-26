@@ -92,6 +92,12 @@ describe("isGrammarCategoryInstruction", () => {
     expect(isGrammarCategoryInstruction("Взаимное se")).toBe(true);
     expect(isGrammarCategoryInstruction("Se reflexivo")).toBe(true);
     expect(isGrammarCategoryInstruction("Perfecto — ya")).toBe(true);
+    expect(isGrammarCategoryInstruction("Tense backshift")).toBe(true);
+    expect(isGrammarCategoryInstruction("Zero article")).toBe(true);
+    expect(isGrammarCategoryInstruction("Past simple — go")).toBe(true);
+    expect(isGrammarCategoryInstruction("Choose the correct article")).toBe(
+      false,
+    );
     expect(isGrammarCategoryInstruction("Заполните пропуск")).toBe(false);
     expect(isGrammarCategoryInstruction("Вставьте пропущенное слово")).toBe(
       false,

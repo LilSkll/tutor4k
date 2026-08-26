@@ -960,6 +960,314 @@ export const ENGLISH_CHAPTER_LOCALE: Record<
       location: "Westminster, London",
     },
   },
+
+  "eng-ch26-articles": {
+    ru: {
+      title: "Врата артиклей",
+      summary: "a/an/the и нулевой артикль — первые ворота после Лондона.",
+      location: "Британский музей, Лондон",
+    },
+    es: {
+      title: "La Puerta de los Artículos",
+      summary: "a/an/the y artículo cero — la primera puerta tras Londres.",
+      location: "Museo Británico, Londres",
+    },
+    de: {
+      title: "Das Artikeltor",
+      summary: "a/an/the und Nullartikel — das erste Tor nach London.",
+      location: "British Museum, London",
+    },
+  },
+  "eng-ch27-possessives": {
+    ru: {
+      title: "Чьё это?",
+      summary: "my/your/his и саксонский генитив: Anna's bag.",
+      location: "Ковент-Гарден, Лондон",
+    },
+    es: {
+      title: "¿Qué es Tuyo?",
+      summary: "my/your/his y genitivo sajón: Anna's bag.",
+      location: "Covent Garden, Londres",
+    },
+    de: {
+      title: "Wessen ist das?",
+      summary: "my/your/his und sächsischer Genitiv: Anna's bag.",
+      location: "Covent Garden, London",
+    },
+  },
+  "eng-ch28-countable": {
+    ru: {
+      title: "Счётное или нет?",
+      summary: "Исчисляемые и неисчисляемые; much/many, a few/a little.",
+      location: "Рынок Эдинбурга",
+    },
+    es: {
+      title: "¿Contable o No?",
+      summary: "Contables e incontables; much/many, a few/a little.",
+      location: "Mercado de Edimburgo",
+    },
+    de: {
+      title: "Zählbar oder nicht?",
+      summary: "Zählbar und unzählbar; much/many, a few/a little.",
+      location: "Edinburgh Market",
+    },
+  },
+  "eng-ch29-pp-intro": {
+    ru: {
+      title: "Ты когда-нибудь…?",
+      summary: "Present perfect: have/has + V3, ever/never, just/already/yet.",
+      location: "Собор Глазго",
+    },
+    es: {
+      title: "¿Alguna Vez Has…?",
+      summary: "Present perfect: have/has + V3, ever/never, just/already/yet.",
+      location: "Catedral de Glasgow",
+    },
+    de: {
+      title: "Hast du jemals…?",
+      summary: "Present Perfect: have/has + V3, ever/never, just/already/yet.",
+      location: "Glasgow Cathedral",
+    },
+  },
+  "eng-ch30-conditionals-review": {
+    ru: {
+      title: "Если и когда",
+      summary: "Нулевой, первый и второй условный — реальное и гипотетическое.",
+      location: "Дублинский замок",
+    },
+    es: {
+      title: "Si y Cuándo",
+      summary: "Condicionales 0, 1 y 2 — real e hipotético.",
+      location: "Castillo de Dublín",
+    },
+    de: {
+      title: "Wenn und falls",
+      summary: "Konditionalsätze 0, 1 und 2 — real und hypothetisch.",
+      location: "Dublin Castle",
+    },
+  },
+  "eng-ch31-reported-speech": {
+    ru: {
+      title: "Что они сказали",
+      summary: "Косвенная речь: say/tell, сдвиг времён, вопросы и просьбы.",
+      location: "Доки Ливерпуля",
+    },
+    es: {
+      title: "Lo Que Dijeron",
+      summary: "Estilo indirecto: say/tell, backshift, preguntas y peticiones.",
+      location: "Muelles de Liverpool",
+    },
+    de: {
+      title: "Was sie sagten",
+      summary: "Indirekte Rede: say/tell, Tempusverschiebung, Fragen und Bitten.",
+      location: "Liverpool Docks",
+    },
+  },
+  "eng-ch32-relative-clauses": {
+    ru: {
+      title: "Кто, который, что",
+      summary: "Определительные относительные придаточные: who, which, that, whose.",
+      location: "Кардифф-Бей",
+    },
+    es: {
+      title: "Quién, Cuál, Que",
+      summary: "Oraciones de relativo definitorias: who, which, that, whose.",
+      location: "Bahía de Cardiff",
+    },
+    de: {
+      title: "Wer, welcher, that",
+      summary: "Bestimmende Relativsätze: who, which, that, whose.",
+      location: "Cardiff Bay",
+    },
+  },
+  "eng-ch33-passive-advanced": {
+    ru: {
+      title: "Сделано и готово",
+      summary: "Пассив во всех временах; have/get something done.",
+      location: "Гавань Бостона",
+    },
+    es: {
+      title: "Hecho y Terminado",
+      summary: "Pasiva en todos los tiempos; have/get something done.",
+      location: "Puerto de Boston",
+    },
+    de: {
+      title: "Erledigt und fertig",
+      summary: "Passiv in allen Zeiten; have/get something done.",
+      location: "Boston Harbour",
+    },
+  },
+  "eng-ch34-modals-deduction": {
+    ru: {
+      title: "Должно быть правда",
+      summary: "Модальные выводы: must/might/can't; must have / might have / can't have.",
+      location: "Сиднейская гавань",
+    },
+    es: {
+      title: "Debe Ser Verdad",
+      summary: "Modales de deducción: must/might/can't; must have / might have / can't have.",
+      location: "Puerto de Sídney",
+    },
+    de: {
+      title: "Muss wahr sein",
+      summary: "Modalverben der Schlussfolgerung: must/might/can't; must/might/can't have.",
+      location: "Sydney Harbour",
+    },
+  },
+  "eng-ch35-ielts-informal": {
+    ru: {
+      title: "Письмо другу",
+      summary: "IELTS GT неформальное письмо: приветствие, пункты, сокращения, концовка.",
+      location: "Почта Мельбурна",
+    },
+    es: {
+      title: "Escribe a un Amigo",
+      summary: "Carta informal IELTS GT: saludo, viñetas, contracciones, cierre.",
+      location: "Correo de Melbourne",
+    },
+    de: {
+      title: "Schreib an einen Freund",
+      summary: "IELTS GT informeller Brief: Anrede, Stichpunkte, Kurzformen, Schluss.",
+      location: "Melbourne Post Office",
+    },
+  },
+  "eng-ch36-ielts-formal": {
+    ru: {
+      title: "Формальная жалоба",
+      summary: "IELTS GT формальное письмо: цель, пункты, Yours faithfully/sincerely.",
+      location: "Сити-центр Окленда",
+    },
+    es: {
+      title: "Una Queja Formal",
+      summary: "Carta formal IELTS GT: propósito, viñetas, Yours faithfully/sincerely.",
+      location: "Centro cívico de Auckland",
+    },
+    de: {
+      title: "Formelle Beschwerde",
+      summary: "IELTS GT formeller Brief: Zweck, Stichpunkte, Yours faithfully/sincerely.",
+      location: "Auckland Civic Centre",
+    },
+  },
+  "eng-ch37-cambridge-letter": {
+    ru: {
+      title: "Письмо Cambridge",
+      summary: "Cambridge B2 письмо/email: полуформальный тон, структура, покрытие пунктов.",
+      location: "Посольство в Веллингтоне",
+    },
+    es: {
+      title: "Correo Cambridge",
+      summary: "Carta/email Cambridge B2: tono semiformal, estructura, viñetas.",
+      location: "Embajada en Wellington",
+    },
+    de: {
+      title: "Cambridge-E-Mail",
+      summary: "Cambridge B2 Brief/E-Mail: halbformeller Ton, Aufbau, Stichpunkte.",
+      location: "Wellington Embassy",
+    },
+  },
+  "eng-ch38-ielts-task1": {
+    ru: {
+      title: "Отчёт по данным",
+      summary: "IELTS Academic Task 1: overview, тренды, сравнения, без мнения.",
+      location: "Дата-центр Ванкувера",
+    },
+    es: {
+      title: "El Informe de Datos",
+      summary: "IELTS Academic Task 1: overview, tendencias, comparaciones, sin opinión.",
+      location: "Centro de datos de Vancouver",
+    },
+    de: {
+      title: "Der Datenbericht",
+      summary: "IELTS Academic Task 1: Overview, Trends, Vergleiche, ohne Meinung.",
+      location: "Vancouver Data Centre",
+    },
+  },
+  "eng-ch39-ielts-essay": {
+    ru: {
+      title: "Архитектура эссе",
+      summary: "Структура IELTS Task 2: введение, тело, заключение, тезис.",
+      location: "Университетский зал Торонто",
+    },
+    es: {
+      title: "Arquitectura del Ensayo",
+      summary: "Estructura IELTS Task 2: intro, cuerpo, conclusión, tesis.",
+      location: "Aula de la Universidad de Toronto",
+    },
+    de: {
+      title: "Essay-Architektur",
+      summary: "IELTS Task-2-Struktur: Intro, Hauptteil, Schluss, These.",
+      location: "Toronto University Hall",
+    },
+  },
+  "eng-ch40-ielts-cohesion": {
+    ru: {
+      title: "Связи между идеями",
+      summary: "Когезия: however, furthermore, on the other hand, referencing.",
+      location: "Библиотека Монреаля",
+    },
+    es: {
+      title: "Enlaces entre Ideas",
+      summary: "Cohesión: however, furthermore, on the other hand, referencing.",
+      location: "Biblioteca de Montreal",
+    },
+    de: {
+      title: "Verbindungen zwischen Ideen",
+      summary: "Kohäsion: however, furthermore, on the other hand, referencing.",
+      location: "Montreal Library",
+    },
+  },
+  "eng-ch41-cambridge-essay": {
+    ru: {
+      title: "Эссе или статья?",
+      summary: "Cambridge C1 essay vs article: аудитория, заголовок, регистр, формат.",
+      location: "Парламент Оттавы",
+    },
+    es: {
+      title: "¿Ensayo o Artículo?",
+      summary: "Cambridge C1 essay vs article: audiencia, título, registro, formato.",
+      location: "Parlamento de Ottawa",
+    },
+    de: {
+      title: "Essay oder Artikel?",
+      summary: "Cambridge C1 Essay vs Artikel: Publikum, Titel, Register, Format.",
+      location: "Ottawa Parliament",
+    },
+  },
+  "eng-ch42-ielts-opinion": {
+    ru: {
+      title: "Выскажи мнение",
+      summary: "Язык мнения: I believe, it seems, arguably, to what extent.",
+      location: "Экзаменационный зал Сингапура",
+    },
+    es: {
+      title: "Expresa tu Opinión",
+      summary: "Lenguaje de opinión: I believe, it seems, arguably, to what extent.",
+      location: "Sala de examen de Singapur",
+    },
+    de: {
+      title: "Äußere deine Meinung",
+      summary: "Meinungssprache: I believe, it seems, arguably, to what extent.",
+      location: "Singapore Exam Hall",
+    },
+  },
+  "eng-ch43-register-shift": {
+    ru: {
+      title: "Смена регистра",
+      summary: "Сдвиг регистра: formal ↔ informal, ловушки экзамена, единый тон.",
+      location: "Замок IELTS",
+    },
+    es: {
+      title: "Cambia el Registro",
+      summary: "Cambio de registro: formal ↔ informal, trampas del examen, tono coherente.",
+      location: "Castillo IELTS",
+    },
+    de: {
+      title: "Registerwechsel",
+      summary: "Registerwechsel: formal ↔ informal, Prüfungsfallen, einheitlicher Ton.",
+      location: "IELTS-Burg",
+    },
+  },
+
 };
 
 function getChapterLocale(

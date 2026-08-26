@@ -262,7 +262,7 @@ const ru: Dictionary = {
   "exercises.errorCorrectionPlaceholder": "Перепиши предложение без ошибки…",
   "exercises.errorCorrectionLead": "В предложении выше — одна грамматическая ошибка. Перепишите его целиком.",
   "exercises.reportedSpeechPlaceholder": "Перепиши в косвенной речи…",
-  "exercises.reportedSpeechLead": "В кавычках ошибки нет — перескажите эти слова косвенной речью (estilo indirecto), со сдвигом времён если нужно.",
+  "exercises.reportedSpeechLead": "В кавычках ошибки нет — перескажите эти слова косвенной речью, со сдвигом времён если нужно.",
   "exercises.accentOptionalHint": "Можно без ñ и знаков ударения — система поймёт.",
   "exercises.resultCorrect": "Верно!",
   "exercises.resultIncorrect": "Неверно",

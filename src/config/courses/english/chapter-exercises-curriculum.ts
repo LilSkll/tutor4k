@@ -47,7 +47,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "translation",
       "question": "Мне нравится музыка.",
-      "instruction": "Zero article",
+      "instruction": "Translate without an article if needed",
       "answer": "I like music",
       "acceptableAnswers": [
         "i like music"
@@ -58,7 +58,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "error_correction",
       "question": "I saw a elephant at the zoo.",
-      "instruction": "Исправьте артикль",
+      "instruction": "Fix the article",
       "answer": "I saw an elephant at the zoo.",
       "acceptableAnswers": [
         "I saw an elephant at the zoo"
@@ -83,6 +83,52 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
       ],
       "explanation": "Go to school (учиться) — без артикля.",
       "grammarTopic": "articles-basics"
+    },
+    {
+      "type": "fill_blank",
+      "question": "He bought ___ apple and ___ orange.",
+      "instruction": "Fill in the correct articles",
+      "answer": "an / an",
+      "acceptableAnswers": ["an/an", "an, an", "An / an"],
+      "explanation": "Apple and orange start with vowel sounds → an.",
+      "grammarTopic": "articles-basics"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "I play ___ piano every evening.",
+      "instruction": "Choose the correct article",
+      "options": ["the", "a", "an", "no article"],
+      "answer": "the",
+      "explanation": "Musical instruments usually take the.",
+      "grammarTopic": "articles-basics"
+    },
+    {
+      "type": "error_correction",
+      "question": "She is an university student.",
+      "instruction": "Fix the article",
+      "answer": "She is a university student.",
+      "acceptableAnswers": ["She is a university student"],
+      "explanation": "University starts with /juː/ → a, not an.",
+      "grammarTopic": "articles-basics"
+    },
+    {
+      "type": "sentence_building",
+      "question": "The / moon / looks / bright / tonight",
+      "instruction": "Build the sentence",
+      "options": ["The", "moon", "looks", "bright", "tonight"],
+      "answer": "The moon looks bright tonight",
+      "acceptableAnswers": ["The moon looks bright tonight."],
+      "explanation": "Unique objects take the.",
+      "grammarTopic": "articles-basics"
+    },
+    {
+      "type": "translation",
+      "question": "Он врач.",
+      "instruction": "Translate the sentence",
+      "answer": "He is a doctor",
+      "acceptableAnswers": ["He's a doctor", "He is a doctor."],
+      "explanation": "Jobs take a/an.",
+      "grammarTopic": "articles-basics"
     }
   ],
 
@@ -104,7 +150,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "fill_blank",
       "question": "That's ___ (Tom) car.",
-      "instruction": "Saxon genitive",
+      "instruction": "Add the possessive form",
       "answer": "Tom's",
       "acceptableAnswers": [
         "tom's"
@@ -129,7 +175,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "translation",
       "question": "Это дом моих родителей.",
-      "instruction": "Parents' (мн.ч.)",
+      "instruction": "Choose the plural possessive",
       "answer": "This is my parents' house",
       "acceptableAnswers": [
         "this is my parents' house",
@@ -149,14 +195,14 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
         "?"
       ],
       "answer": "Is this your bag?",
-      "instruction": "Соберите вопрос",
+      "instruction": "Build the question",
       "explanation": "Is this your bag? — притяжательное + существительное.",
       "grammarTopic": "possessives"
     },
     {
       "type": "fill_blank",
       "question": "A ___ work never finishes on time.",
-      "instruction": "Day's / days'",
+      "instruction": "Choose the correct possessive",
       "answer": "day's",
       "acceptableAnswers": [
         "Day's"
@@ -187,9 +233,12 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
       "instruction": "Choose the correct quantifier",
       "answer": "much",
       "acceptableAnswers": [
-        "Much"
+        "Much",
+        "any",
+        "Any",
+        "a lot of"
       ],
-      "explanation": "Milk — uncountable → much.",
+      "explanation": "Milk — uncountable → much (also any / a lot of in negatives).",
       "grammarTopic": "countable"
     },
     {
@@ -209,7 +258,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "translation",
       "question": "У меня мало времени.",
-      "instruction": "A little + uncountable",
+      "instruction": "Choose the correct quantifier",
       "answer": "I have a little time",
       "acceptableAnswers": [
         "i have a little time",
@@ -221,7 +270,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "error_correction",
       "question": "I need some informations.",
-      "instruction": "Исправьте существительное",
+      "instruction": "Fix the noun form",
       "answer": "I need some information.",
       "acceptableAnswers": [
         "I need some information"
@@ -285,7 +334,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "translation",
       "question": "Он только что ушёл.",
-      "instruction": "Just + present perfect",
+      "instruction": "Choose the present perfect form",
       "answer": "He has just left",
       "acceptableAnswers": [
         "he has just left",
@@ -297,7 +346,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "error_correction",
       "question": "I have seen him yesterday.",
-      "instruction": "PP vs Past Simple",
+      "instruction": "Choose present perfect or past simple",
       "answer": "I saw him yesterday.",
       "acceptableAnswers": [
         "I saw him yesterday"
@@ -308,7 +357,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "fill_blank",
       "question": "They haven't arrived ___.",
-      "instruction": "Yet в отрицании",
+      "instruction": "Complete with the correct adverb",
       "answer": "yet",
       "acceptableAnswers": [
         "Yet"
@@ -322,7 +371,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "multiple_choice",
       "question": "If you heat water to 100°C, it ___.",
-      "instruction": "Zero conditional",
+      "instruction": "Choose the zero-conditional form",
       "options": [
         "boils",
         "will boil",
@@ -336,7 +385,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "fill_blank",
       "question": "If it rains, I ___ stay home.",
-      "instruction": "1st conditional",
+      "instruction": "Choose the first-conditional form",
       "answer": "will",
       "acceptableAnswers": [
         "Will",
@@ -348,7 +397,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "multiple_choice",
       "question": "If I ___ rich, I would travel.",
-      "instruction": "2nd conditional",
+      "instruction": "Choose the second-conditional form",
       "options": [
         "were",
         "am",
@@ -362,7 +411,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "translation",
       "question": "Если ты позвонишь, я приду.",
-      "instruction": "1st conditional",
+      "instruction": "Choose the first-conditional form",
       "answer": "If you call, I will come",
       "acceptableAnswers": [
         "if you call, i will come",
@@ -374,7 +423,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "error_correction",
       "question": "If it will rain, I will stay home.",
-      "instruction": "Will в if-клаузе",
+      "instruction": "Fix the conditional clause",
       "answer": "If it rains, I will stay home.",
       "acceptableAnswers": [
         "If it rains, I will stay home",
@@ -386,7 +435,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "fill_blank",
       "question": "If I ___ you, I'd accept the offer.",
-      "instruction": "If I were you",
+      "instruction": "Complete the second conditional",
       "answer": "were",
       "acceptableAnswers": [
         "Were"
@@ -400,7 +449,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "multiple_choice",
       "question": "She said she ___ tired.",
-      "instruction": "Tense backshift",
+      "instruction": "Rewrite as reported speech",
       "options": [
         "was",
         "is",
@@ -414,7 +463,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "fill_blank",
       "question": "He told me ___ wait.",
-      "instruction": "Tell + to-infinitive",
+      "instruction": "Rewrite the command as reported speech",
       "answer": "to",
       "acceptableAnswers": [
         "To"
@@ -425,7 +474,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "multiple_choice",
       "question": "«I'm happy» → She said she ___ happy.",
-      "instruction": "Backshift",
+      "instruction": "Rewrite as reported speech",
       "options": [
         "was",
         "is",
@@ -439,7 +488,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "translation",
       "question": "Она спросила, где я живу.",
-      "instruction": "Reported question",
+      "instruction": "Rewrite as a reported question",
       "answer": "She asked where I lived",
       "acceptableAnswers": [
         "she asked where i lived",
@@ -463,7 +512,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "fill_blank",
       "question": "She said the Earth ___ round.",
-      "instruction": "No backshift (fact)",
+      "instruction": "Rewrite as reported speech",
       "answer": "is",
       "acceptableAnswers": [
         "Is",
@@ -506,7 +555,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "multiple_choice",
       "question": "The man ___ car was stolen called the police.",
-      "instruction": "Whose",
+      "instruction": "Choose the correct relative pronoun",
       "options": [
         "whose",
         "who's",
@@ -520,7 +569,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "translation",
       "question": "Это дом, где я вырос.",
-      "instruction": "Where relative",
+      "instruction": "Choose the correct relative",
       "answer": "This is the house where I grew up",
       "acceptableAnswers": [
         "this is the house where i grew up"
@@ -541,7 +590,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
         "kind"
       ],
       "answer": "The teacher who teaches English is kind",
-      "instruction": "Соберите с who",
+      "instruction": "Build the relative clause",
       "explanation": "Defining clause без запятых.",
       "grammarTopic": "relative-clauses"
     },
@@ -564,7 +613,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "multiple_choice",
       "question": "The report ___ yesterday.",
-      "instruction": "Past passive",
+      "instruction": "Choose the past passive form",
       "options": [
         "was written",
         "wrote",
@@ -578,7 +627,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "fill_blank",
       "question": "A new bridge ___ (build) at the moment.",
-      "instruction": "Present continuous passive",
+      "instruction": "Choose the present continuous passive",
       "answer": "is being built",
       "acceptableAnswers": [
         "Is being built"
@@ -589,7 +638,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "multiple_choice",
       "question": "I need to ___ my hair cut.",
-      "instruction": "Have something done",
+      "instruction": "Choose the causative form",
       "options": [
         "have",
         "get",
@@ -603,7 +652,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "translation",
       "question": "Закон был принят в прошлом году.",
-      "instruction": "Past passive",
+      "instruction": "Choose the past passive form",
       "answer": "The law was passed last year",
       "acceptableAnswers": [
         "the law was passed last year"
@@ -614,7 +663,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "error_correction",
       "question": "The letter has been send.",
-      "instruction": "Participio",
+      "instruction": "Rewrite with the correct past participle",
       "answer": "The letter has been sent.",
       "acceptableAnswers": [
         "The letter has been sent"
@@ -625,7 +674,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "fill_blank",
       "question": "He had his wallet ___.",
-      "instruction": "Have + object + V3",
+      "instruction": "Complete the causative passive",
       "answer": "stolen",
       "acceptableAnswers": [
         "Stolen"
@@ -639,7 +688,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "multiple_choice",
       "question": "She ___ be at home — her car is in the driveway.",
-      "instruction": "Must (deduction)",
+      "instruction": "Choose the modal of deduction",
       "options": [
         "must",
         "might",
@@ -664,7 +713,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "multiple_choice",
       "question": "She ___ have forgotten — she never misses meetings.",
-      "instruction": "Can't have (past)",
+      "instruction": "Choose the past modal of deduction",
       "options": [
         "can't",
         "must",
@@ -678,7 +727,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "translation",
       "question": "Он, возможно, опоздал.",
-      "instruction": "Might have",
+      "instruction": "Translate using a past modal of possibility",
       "answer": "He might have been late",
       "acceptableAnswers": [
         "he might have been late",
@@ -707,6 +756,43 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
         "Can't"
       ],
       "explanation": "Can't have left — не могли уйти (улики).",
+      "grammarTopic": "modals-deduction"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "That ___ be true — I saw it with my own eyes.",
+      "instruction": "Choose the modal of deduction",
+      "options": ["must", "can't", "might", "shouldn't"],
+      "answer": "must",
+      "explanation": "Strong positive deduction → must.",
+      "grammarTopic": "modals-deduction"
+    },
+    {
+      "type": "error_correction",
+      "question": "He must to be in the office — the light is on.",
+      "instruction": "Fix the modal form",
+      "answer": "He must be in the office — the light is on.",
+      "acceptableAnswers": ["He must be in the office — the light is on"],
+      "explanation": "Modals take bare infinitive: must be, not must to be.",
+      "grammarTopic": "modals-deduction"
+    },
+    {
+      "type": "sentence_building",
+      "question": "She / can't / have / forgotten / the / meeting",
+      "instruction": "Build the sentence",
+      "options": ["She", "can't", "have", "forgotten", "the", "meeting"],
+      "answer": "She can't have forgotten the meeting",
+      "acceptableAnswers": ["She can't have forgotten the meeting."],
+      "explanation": "can't have + V3 for strong negative past deduction.",
+      "grammarTopic": "modals-deduction"
+    },
+    {
+      "type": "translation",
+      "question": "Это не может быть правдой.",
+      "instruction": "Translate the sentence",
+      "answer": "That can't be true",
+      "acceptableAnswers": ["It can't be true", "That cannot be true", "That can't be true."],
+      "explanation": "Strong negative deduction → can't.",
       "grammarTopic": "modals-deduction"
     }
   ],

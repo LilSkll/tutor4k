@@ -308,7 +308,7 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
 | We/They | They **are going to** leave |
 
 ### Использование
-1. **Намерение:** \`I'm going to learn Spanish\`
+1. **Намерение:** \`I'm going to learn English\`
 2. **Предсказание по признакам:** \`Look at the clouds — it's going to rain\`
 
 ### Вопросы и отрицания

@@ -62,6 +62,7 @@ export function isUsableErrorCorrection(ex: {
   if (COMPLETA_STUB.test(q) || COMPLETA_STUB.test(a)) return false;
   if (hasFakeXToken(q) || hasFakeXToken(a)) return false;
   if (isTokenDump(q)) return false;
+  if (/\?\?/.test(q) || /\?\?/.test(a)) return false;
   if (stripNoise(q) === stripNoise(a)) return false;
   if (q.includes("→")) {
     const qAfter = q.split("→").pop()?.trim() ?? "";
@@ -108,6 +109,45 @@ export function isGrammarCategoryInstruction(instruction: string): boolean {
       inst,
     ) &&
     inst.length <= 48
+  ) {
+    return true;
+  }
+  // English curriculum/pack grammar tags (spoil the construction).
+  if (
+    inst.length <= 56 &&
+    /^(Zero article|Backshift|No backshift|Tense backshift|Reported question|Tell \+|Saxon genitive|Past simple|Present (simple|perfect|continuous)|Countable|Uncountable|Quantifier|Relative|Passive|Modal|Conditional|Register|Opening|Sign-off|Overview|Thesis|Trend|Comparison|Cohesion|Informal|Formal|Semi-formal|Have something done|Participio|Its vs|Day's|Parents'|Just \+|PP vs|Yet |Ever |Already |Who |Whose|Where relative|Must |Might |Can't )/i.test(
+      inst,
+    )
+  ) {
+    return true;
+  }
+  // Short "Label — detail" tags: "Past simple — go", "Countable noun"
+  if (inst.length <= 48 && /^[A-Za-z][\w'’+\s/]{0,30}\s+[—–-]\s+\S/.test(inst)) {
+    return true;
+  }
+  if (
+    inst.length <= 40 &&
+    /^(Countable|Uncountable|Zero article|Articles?|Possessives?|Quantifiers?|Modals?|Passives?|Conditionals?)\b/i.test(
+      inst,
+    ) &&
+    !/\b(choose|fill|complete|translate|rewrite|build|find)\b/i.test(inst)
+  ) {
+    return true;
+  }
+  // Remaining short English curriculum tags (IELTS labels, grammar names)
+  // that are not real learner prompts. Keep Cyrillic/Spanish prompts alone —
+  // they are handled above or by language-specific rules.
+  if (
+    inst.length <= 42 &&
+    !/[.?!¿¡]/.test(inst) &&
+    !CYRILLIC.test(inst) &&
+    !/^(Choose|Fill|Complete|Translate|Rewrite|Find|Build|Fix|Add|Put|Elige|Completa|Traduce|Reescribe|Ordena|Wähle|Fülle|Übersetze|Finde|Bilde)\b/i.test(
+      inst,
+    ) &&
+    !/\b(choose|fill|complete|translate|rewrite|find|build|fix|add|put|correct|select|write|use)\b/i.test(
+      inst,
+    ) &&
+    /^[A-Za-z]/.test(inst)
   ) {
     return true;
   }
@@ -265,11 +305,15 @@ export function isUsableSentenceBuilding(ex: {
   const a = (ex.answer ?? "").trim();
   const options = ex.options ?? [];
   if (!a || CYRILLIC.test(a)) return false;
-  if (isPlaceholderToken(a) || /[—–]/.test(a)) return false;
+  if (isPlaceholderToken(a)) return false;
   if (INDEX_MARK.test(a) || HASH_N.test(a)) return false;
   if (hasFakeXToken(a)) return false;
-  if (options.length < 3) return false;
+  if (/\?\?/.test(a) || /→/.test(a) || /→/.test(ex.question ?? "")) return false;
+  // Meta labels, not learner sentences
+  if (/^(which|what) is (uncountable|countable|correct)\b/i.test(a)) return false;
+  // Lone em-dash tiles (zero-article junk), not prose dashes inside answers
   if (options.some((o) => isPlaceholderToken(String(o)))) return false;
+  if (options.length < 3) return false;
   return true;
 }
 
