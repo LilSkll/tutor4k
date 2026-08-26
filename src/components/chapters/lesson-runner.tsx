@@ -33,6 +33,7 @@ import { QuestionWithGloss } from "@/components/exercises/question-with-gloss";
 import { ExerciseFreeTextBlock } from "@/components/exercises/exercise-free-text-block";
 import { SentenceBuildingBlock } from "@/components/exercises/sentence-building-block";
 import { localizeExerciseInstruction } from "@/lib/exercise-localize";
+import { getChapterTargetTitle } from "@/lib/chapter-display";
 import { ChapterExerciseTypeGuide } from "@/components/chapters/chapter-exercise-type-guide";
 import { CompletionCertificateCard } from "@/components/journey/completion-certificate-card";
 import { EasterEggReveal } from "@/components/journey/easter-egg-reveal";
@@ -100,6 +101,7 @@ export function LessonRunner({
     translate(key, language, { targetLanguage, ...vars });
 
   const displayGrammarTitle = grammarTitle ?? chapterDisplayTitle;
+  const targetTitle = getChapterTargetTitle(chapter, courseId);
 
   const {
     content: grammarContent,
@@ -298,7 +300,7 @@ export function LessonRunner({
           options: ex.options,
           answer: ex.answer,
           acceptableAnswers: ex.acceptableAnswers,
-          topic: chapter.titleEs || chapter.title,
+          topic: targetTitle,
           explanation: ex.explanation,
           staticSource: true,
           exerciseId: ex.id,
@@ -670,7 +672,9 @@ export function LessonRunner({
               })}
             </Badge>
             <h1 className="text-3xl font-bold mb-1">{chapterDisplayTitle}</h1>
-            <p className="text-white/80 italic">{chapter.titleEs}</p>
+            {targetTitle !== chapterDisplayTitle && (
+              <p className="text-white/80 italic">{targetTitle}</p>
+            )}
             <p className="text-white/70 text-sm mt-3">{chapterDisplaySummary}</p>
             <div className="mt-4 inline-flex items-center gap-2 text-sm text-white/80">
               <Sparkles className="h-4 w-4" />
@@ -938,7 +942,9 @@ export function LessonRunner({
               {t("lesson.chapterComplete", { number: chapter.number })}
             </h1>
             <p className="text-white/80">
-              {chapterDisplayTitle} — {chapter.titleEs}
+              {targetTitle !== chapterDisplayTitle
+                ? `${chapterDisplayTitle} — ${targetTitle}`
+                : chapterDisplayTitle}
             </p>
           </div>
           <CardContent className="p-6 space-y-4">
@@ -948,7 +954,7 @@ export function LessonRunner({
               userName={summaryName || userName}
               achievement={t("journey.chapterLine", {
                 number: chapter.number,
-                title: chapter.titleEs || chapterDisplayTitle,
+                title: targetTitle || chapterDisplayTitle,
               })}
               level={chapter.level}
               courseId={courseId}

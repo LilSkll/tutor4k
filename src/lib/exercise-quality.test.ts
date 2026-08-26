@@ -5,6 +5,7 @@ import {
   isUsableErrorCorrection,
   isUsableFillBlank,
   isUsableMultipleChoice,
+  isUsableSentenceBuilding,
   isUsableTranslation,
   stripExerciseIndexMarks,
 } from "@/lib/exercise-quality";
@@ -155,6 +156,48 @@ describe("isUsableMultipleChoice", () => {
         options: ["soy", "estoy", "es", "somos"],
       }),
     ).toBe(true);
+  });
+
+  it("rejects em-dash placeholders and junk option twins", () => {
+    expect(
+      isUsableMultipleChoice({
+        question: "I need ___ umbrella.",
+        answer: "an",
+        options: ["an", "a", "the", "—"],
+      }),
+    ).toBe(false);
+    expect(
+      isUsableMultipleChoice({
+        question: "How ___ books do you have?",
+        answer: "many",
+        options: ["many", "Many", "many?"],
+      }),
+    ).toBe(false);
+    expect(
+      isUsableMultipleChoice({
+        question: "How much apples do you want?",
+        answer: "How",
+        options: ["How", "How many apples do you want?", "How?"],
+      }),
+    ).toBe(false);
+  });
+});
+
+describe("isUsableFillBlank / sentence_building placeholders", () => {
+  it("rejects em-dash answers", () => {
+    expect(
+      isUsableFillBlank({
+        question: "We go to ___ school every day.",
+        answer: "—",
+      }),
+    ).toBe(false);
+    expect(
+      isUsableSentenceBuilding({
+        question: "We / go / to / — / school",
+        answer: "We go to — school every day",
+        options: ["We", "go", "to", "—", "school"],
+      }),
+    ).toBe(false);
   });
 });
 

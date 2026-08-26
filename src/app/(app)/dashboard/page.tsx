@@ -25,6 +25,7 @@ import {
   countCompletedForCourse,
   getChapterLocation,
   getChapterSummary,
+  getChapterTargetTitle,
   getChapterTitle,
   hasCompletedPrereqChain,
 } from "@/lib/chapter-display";
@@ -251,9 +252,12 @@ export default async function DashboardPage({
                 <h3 className="text-xl sm:text-2xl font-bold truncate">
                   {getChapterTitle(currentChapter, lang)}
                 </h3>
-                <p className="text-white/75 text-sm italic truncate">
-                  {currentChapter.titleEs}
-                </p>
+                {getChapterTargetTitle(currentChapter, courseId) !==
+                  getChapterTitle(currentChapter, lang) && (
+                  <p className="text-white/75 text-sm italic truncate">
+                    {getChapterTargetTitle(currentChapter, courseId)}
+                  </p>
+                )}
                 <p className="text-white/70 text-sm mt-2 line-clamp-2">
                   {getChapterSummary(currentChapter, lang)}
                 </p>
@@ -412,7 +416,8 @@ export default async function DashboardPage({
                       {getChapterTitle(upcomingChapter, lang)}
                     </p>
                     <p className="text-xs text-muted-foreground truncate">
-                      {upcomingChapter.titleEs} · {upcomingChapter.level}
+                      {getChapterTargetTitle(upcomingChapter, courseId)} ·{" "}
+                      {upcomingChapter.level}
                     </p>
                   </div>
                   <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
@@ -425,7 +430,8 @@ export default async function DashboardPage({
                       {getChapterTitle(upcomingChapter, lang)}
                     </p>
                     <p className="text-xs text-muted-foreground truncate">
-                      {upcomingChapter.titleEs} · {upcomingChapter.level}
+                      {getChapterTargetTitle(upcomingChapter, courseId)} ·{" "}
+                      {upcomingChapter.level}
                     </p>
                   </div>
                 </div>

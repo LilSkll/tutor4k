@@ -279,9 +279,9 @@ const ru: Dictionary = {
   "exercises.deleHint": "Режим DELE: задания в формате экзамена — из банка DELE-упражнений выбранного уровня; если готовых не хватает, ИИ сгенерирует недостающие в экзаменационном стиле.",
   "exercises.challengeMode": "Challenge",
   "exercises.challengeHint":
-    "По умолчанию — только открытые главы. Challenge открывает любой уровень.",
+    "Challenge: любой уровень и главы вне пути. Выбор CEFR всегда даёт задания этого уровня.",
   "exercises.lockedHint":
-    "Практика ограничена пройденными и текущей главой. Включи Challenge для любого уровня.",
+    "Без Challenge сначала берём открытые главы выбранного уровня; если их ещё нет — весь этот CEFR.",
   "exercises.startRoundBtn": "Начать раунд ({count})",
   "exercises.roundProgress": "Задание {current} из {total}",
   "exercises.roundDoneTitle": "Раунд завершён",
@@ -1211,9 +1211,9 @@ const en: Dictionary = {
   "exercises.deleHint": "DELE mode: exam-style tasks from the DELE exercise bank at the selected level; if the bank runs short, the AI generates the missing items in exam format.",
   "exercises.challengeMode": "Challenge",
   "exercises.challengeHint":
-    "By default — unlocked chapters only. Challenge opens any level.",
+    "Challenge: any level and off-path chapters. The CEFR picker always serves that band.",
   "exercises.lockedHint":
-    "Practice is limited to completed and current chapters. Turn on Challenge for any level.",
+    "Without Challenge we prefer unlocked chapters at the selected level; if none yet — the full CEFR band.",
   "exercises.startRoundBtn": "Start round ({count})",
   "exercises.roundProgress": "Exercise {current} of {total}",
   "exercises.roundDoneTitle": "Round complete",
@@ -1875,9 +1875,9 @@ const es: Dictionary = {
   "exercises.deleHint": "Modo DELE: tareas con formato de examen del banco de ejercicios DELE del nivel elegido; si el banco se queda corto, la IA genera los que falten en estilo de examen.",
   "exercises.challengeMode": "Challenge",
   "exercises.challengeHint":
-    "Por defecto — solo capítulos abiertos. Challenge abre cualquier nivel.",
+    "Challenge: cualquier nivel y capítulos fuera de la ruta. El CEFR elegido siempre da ese nivel.",
   "exercises.lockedHint":
-    "La práctica se limita a capítulos completados y el actual. Activa Challenge para cualquier nivel.",
+    "Sin Challenge priorizamos capítulos abiertos del nivel elegido; si no hay — toda esa banda CEFR.",
   "exercises.startRoundBtn": "Empezar ronda ({count})",
   "exercises.roundProgress": "Ejercicio {current} de {total}",
   "exercises.roundDoneTitle": "Ronda terminada",

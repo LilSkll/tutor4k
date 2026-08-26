@@ -5,6 +5,7 @@ import type {
   StaticExercise,
 } from "@/types";
 import { getCourse } from "@/config/courses";
+import { getChapterTargetTitle } from "@/lib/chapter-display";
 import { isExerciseUsableForLanguage } from "@/lib/exercise-localize";
 import { answersMatch } from "@/lib/normalize-answer";
 import { getCourseLearningProfile } from "@/server/learning/student-profile";
@@ -42,7 +43,7 @@ async function buildExercisePool(courseId: string): Promise<PooledExercise[]> {
       pool.push({
         ...ex,
         level: chapter.level,
-        topic: chapter.titleEs || chapter.title,
+        topic: getChapterTargetTitle(chapter, courseId),
         courseId,
         chapterSlug: chapter.slug,
         grammarTopic: chapter.grammarTopic,
@@ -105,10 +106,10 @@ async function loadRankedCandidates(
   candidates = candidates.filter(inAllowed);
 
   if (opts?.relaxLevel) {
-    const byType = (input.mixed ? pool : pool.filter((ex) => ex.type === input.type)).filter(
-      inAllowed,
-    );
-    if (byType.length > candidates.length) candidates = byType;
+    // Relax exercise *type* only — never the requested CEFR band.
+    // (Crossing levels made A1 journey users get A1 when they picked C1.)
+    const sameLevel = filterPoolByLevel(pool, input.level).filter(inAllowed);
+    if (sameLevel.length > candidates.length) candidates = sameLevel;
   }
 
   if (input.interfaceLanguage && input.interfaceLanguage !== "ru") {

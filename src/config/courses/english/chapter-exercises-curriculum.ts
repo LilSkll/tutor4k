@@ -8,12 +8,12 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "multiple_choice",
       "question": "I need ___ umbrella.",
-      "instruction": "Выберите a или an",
+      "instruction": "Choose the correct article",
       "options": [
         "a",
         "an",
         "the",
-        "—"
+        "no article"
       ],
       "answer": "an",
       "explanation": "Umbrella начинается с гласного звука /ʌ/ → an.",
@@ -22,7 +22,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "fill_blank",
       "question": "She is ___ doctor.",
-      "instruction": "Профессия без the",
+      "instruction": "Choose the article for a job title",
       "answer": "a",
       "acceptableAnswers": [
         "A"
@@ -33,12 +33,12 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "multiple_choice",
       "question": "___ sun rises in the east.",
-      "instruction": "Уникальный объект",
+      "instruction": "Choose the correct article",
       "options": [
         "A",
         "An",
         "The",
-        "—"
+        "no article"
       ],
       "answer": "The",
       "explanation": "The sun — единственный в мире объект.",
@@ -67,12 +67,19 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
       "grammarTopic": "articles-basics"
     },
     {
-      "type": "fill_blank",
-      "question": "We go to ___ school every day.",
-      "instruction": "Zero article (institution)",
-      "answer": "",
+      "type": "multiple_choice",
+      "question": "We go to ___ school every day. (place of study)",
+      "instruction": "Choose whether an article is needed",
+      "options": [
+        "no article",
+        "a",
+        "an",
+        "the"
+      ],
+      "answer": "no article",
       "acceptableAnswers": [
-        "—"
+        "∅",
+        ""
       ],
       "explanation": "Go to school (учиться) — без артикля.",
       "grammarTopic": "articles-basics"
@@ -83,7 +90,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "multiple_choice",
       "question": "This is ___ phone.",
-      "instruction": "Притяжательное (she)",
+      "instruction": "Choose the possessive form",
       "options": [
         "her",
         "she",
@@ -108,7 +115,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "multiple_choice",
       "question": "The dog wagged ___ tail.",
-      "instruction": "Its vs it's",
+      "instruction": "Choose its or it's",
       "options": [
         "its",
         "it's",
@@ -163,7 +170,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "multiple_choice",
       "question": "How ___ apples do you need?",
-      "instruction": "Many / much",
+      "instruction": "Choose the correct quantifier",
       "options": [
         "many",
         "much",
@@ -177,7 +184,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "fill_blank",
       "question": "There isn't ___ milk left.",
-      "instruction": "Much / many",
+      "instruction": "Choose the correct quantifier",
       "answer": "much",
       "acceptableAnswers": [
         "Much"
@@ -188,7 +195,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "multiple_choice",
       "question": "Which is uncountable?",
-      "instruction": "Выберите несчётное",
+      "instruction": "Choose the uncountable noun",
       "options": [
         "advice",
         "apple",
@@ -225,7 +232,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "fill_blank",
       "question": "She bought a ___ eggs.",
-      "instruction": "Few / little",
+      "instruction": "Choose the correct quantifier",
       "answer": "few",
       "acceptableAnswers": [
         "Few"
@@ -239,7 +246,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "multiple_choice",
       "question": "I ___ never been to Scotland.",
-      "instruction": "Have / has",
+      "instruction": "Choose the correct form of have",
       "options": [
         "have",
         "has",
@@ -253,7 +260,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "fill_blank",
       "question": "She has ___ finished her homework.",
-      "instruction": "Already / yet",
+      "instruction": "Choose the correct time adverb",
       "answer": "already",
       "acceptableAnswers": [
         "Already"
@@ -264,7 +271,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "multiple_choice",
       "question": "Have you ___ tried haggis?",
-      "instruction": "Ever / never",
+      "instruction": "Choose the correct adverb",
       "options": [
         "ever",
         "never",
@@ -444,7 +451,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "error_correction",
       "question": "He said me that he was busy.",
-      "instruction": "Say vs tell",
+      "instruction": "Choose say or tell",
       "answer": "He told me that he was busy.",
       "acceptableAnswers": [
         "He told me that he was busy",
@@ -471,7 +478,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "multiple_choice",
       "question": "The woman ___ helped me is a doctor.",
-      "instruction": "Who / which",
+      "instruction": "Choose the correct relative pronoun",
       "options": [
         "who",
         "which",
@@ -485,7 +492,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "fill_blank",
       "question": "The book ___ I read was exciting.",
-      "instruction": "That / which (object)",
+      "instruction": "Choose the correct relative pronoun",
       "answer": "that",
       "acceptableAnswers": [
         "That",
@@ -541,7 +548,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "fill_blank",
       "question": "That's the restaurant ___ we met.",
-      "instruction": "Where / which",
+      "instruction": "Choose the correct relative",
       "answer": "where",
       "acceptableAnswers": [
         "Where",
@@ -646,7 +653,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "fill_blank",
       "question": "He ___ be tired — he just ran a marathon.",
-      "instruction": "Must / can't",
+      "instruction": "Choose the modal of deduction",
       "answer": "must",
       "acceptableAnswers": [
         "Must"
@@ -683,7 +690,7 @@ export const ENGLISH_CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[
     {
       "type": "error_correction",
       "question": "She mustn't be at home — I saw her leave.",
-      "instruction": "Can't vs mustn't",
+      "instruction": "Choose the correct modal",
       "answer": "She can't be at home — I saw her leave.",
       "acceptableAnswers": [
         "She can't be at home — I saw her leave."

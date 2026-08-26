@@ -1,4 +1,5 @@
 import type { VocabTopic, VocabWord } from "@/types";
+import { ENGLISH_CHAPTERS } from "../chapters";
 import { ENGLISH_VOCAB_A1_A2 } from "./topics-a1-a2";
 import { ENGLISH_VOCAB_B1_C2 } from "./topics-b1-c2";
 import { ENGLISH_VOCAB_EXPAND } from "./topics-expand";
@@ -20,7 +21,8 @@ export function getEnglishVocabTopics(): VocabTopic[] {
 }
 
 export function getEnglishVocabByChapter(chapterSlug: string): VocabWord[] {
-  return wordsByChapter(ENGLISH_VOCAB, chapterSlug);
+  const chapter = ENGLISH_CHAPTERS.find((c) => c.slug === chapterSlug);
+  return wordsByChapter(ENGLISH_VOCAB, chapterSlug, chapter?.vocabTopic);
 }
 
 export function getEnglishVocabBySlug(topicSlug: string): VocabTopic | undefined {

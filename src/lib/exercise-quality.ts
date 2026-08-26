@@ -164,6 +164,7 @@ export function isUsableFillBlank(ex: {
   const a = (ex.answer ?? "").trim();
   const inst = (ex.instruction ?? "").trim();
   if (!q || !a) return false;
+  if (isPlaceholderToken(a)) return false;
   if (!/___+/.test(q)) return false;
   if (COMPLETA_STUB.test(q)) return false;
   if (INDEX_MARK.test(q) || HASH_N.test(q)) return false;
@@ -175,6 +176,52 @@ export function isUsableFillBlank(ex: {
   if (instructionSpoilsAnswer(inst, a)) return false;
   if (isGrammarCategoryInstruction(inst)) return false;
   return true;
+}
+
+/** Em dash / empty placeholders that teach nothing. */
+function isPlaceholderToken(s: string): boolean {
+  const t = s.trim();
+  return (
+    t === "" ||
+    t === "—" ||
+    t === "–" ||
+    t === "-" ||
+    t === "—?" ||
+    t === "–?"
+  );
+}
+
+/** Junk distractors: Answer?, case-only twin of answer, duplicate noise. */
+function hasJunkMcOptions(answer: string, options: string[]): boolean {
+  const a = answer.trim();
+  const aLower = a.toLowerCase();
+  let distinctLower = 0;
+  const seen = new Set<string>();
+  for (const raw of options) {
+    const o = raw.trim();
+    if (isPlaceholderToken(o)) return true;
+    if (o === `${a}?` || o === `${aLower}?`) return true;
+    const low = o.toLowerCase();
+    if (!seen.has(low)) {
+      seen.add(low);
+      distinctLower += 1;
+    }
+  }
+  // ["many","Many","many?"] collapses to one real choice
+  if (distinctLower < 2) return true;
+  return false;
+}
+
+/**
+ * Pack generators sometimes turn error stems into MC with the first word
+ * as the "answer" (e.g. "How much apples…?" → answer "How").
+ */
+function isFirstWordFakeMc(question: string, answer: string): boolean {
+  if (/___+/.test(question)) return false;
+  const a = answer.trim();
+  if (!a || /\s/.test(a)) return false;
+  const first = question.trim().split(/\s+/)[0]?.replace(/[¿?¡!.,;:'"]/g, "") ?? "";
+  return first.toLowerCase() === a.toLowerCase() && question.trim().split(/\s+/).length >= 4;
 }
 
 /** True when MC is a real target-language stem with options. */
@@ -189,6 +236,7 @@ export function isUsableMultipleChoice(ex: {
   const inst = (ex.instruction ?? "").trim();
   const options = ex.options ?? [];
   if (!q || !a) return false;
+  if (isPlaceholderToken(a)) return false;
   if (INDEX_MARK.test(q) || HASH_N.test(q)) return false;
   if (COMPLETA_STUB.test(q)) return false;
   if (CYRILLIC.test(q) && !/«/.test(q)) {
@@ -199,6 +247,8 @@ export function isUsableMultipleChoice(ex: {
   if (isTokenDump(q)) return false;
   if (options.length < 2) return false;
   if (hasFakeXToken(a) || options.some((o) => hasFakeXToken(o))) return false;
+  if (hasJunkMcOptions(a, options)) return false;
+  if (isFirstWordFakeMc(q, a)) return false;
   // Need a blank, a question, or a quoted phrase to analyse — not a full spoiled sentence
   if (!/___+/.test(q) && !/[?？]/.test(q) && !/«/.test(q)) return false;
   if (instructionSpoilsAnswer(inst, a) && a.length <= 4) return false;
@@ -215,9 +265,11 @@ export function isUsableSentenceBuilding(ex: {
   const a = (ex.answer ?? "").trim();
   const options = ex.options ?? [];
   if (!a || CYRILLIC.test(a)) return false;
+  if (isPlaceholderToken(a) || /[—–]/.test(a)) return false;
   if (INDEX_MARK.test(a) || HASH_N.test(a)) return false;
   if (hasFakeXToken(a)) return false;
   if (options.length < 3) return false;
+  if (options.some((o) => isPlaceholderToken(String(o)))) return false;
   return true;
 }
 

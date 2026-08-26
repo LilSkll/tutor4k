@@ -100,7 +100,7 @@ const ERROR_CORRECTION_FULL: Record<InterfaceLanguage, string> = {
 };
 
 const REPORTED_SPEECH_FULL: Record<InterfaceLanguage, string> = {
-  ru: "Перепишите прямую речь в косвенную (estilo indirecto)",
+  ru: "Перепишите прямую речь в косвенную",
   en: "Rewrite the direct quote as reported speech",
   es: "Pasa el estilo directo al estilo indirecto",
   de: "Schreibe die direkte Rede in die indirekte Rede um",
@@ -142,6 +142,18 @@ const INSTRUCTION_BY_KEY: Record<
     es: "Traduce al español",
     de: "Übersetze ins Spanische",
   },
+  translate_to_en: {
+    ru: "Переведите на английский",
+    en: "Translate into English",
+    es: "Traduce al inglés",
+    de: "Übersetze ins Englische",
+  },
+  translate: {
+    ru: "Переведите предложение",
+    en: "Translate the sentence",
+    es: "Traduce la frase",
+    de: "Übersetze den Satz",
+  },
   build_sentence: {
     ru: "Составьте предложение по образцу",
     en: "Build a sentence on the model",
@@ -168,7 +180,18 @@ function inferInstructionKey(instruction: string): string | null {
     return "pret_imp";
   }
   if (/составьте|build|forma una|bilde/.test(s)) return "build_sentence";
-  if (/перевед|traduc|übersetz/.test(s)) return "translate_to_es";
+  // Language-specific translate — never assume Spanish for every "переведите".
+  if (
+    /на испанск|into spanish|al español|ins spanische|to spanish/.test(s)
+  ) {
+    return "translate_to_es";
+  }
+  if (
+    /на английск|into english|al inglés|ins englische|to english/.test(s)
+  ) {
+    return "translate_to_en";
+  }
+  if (/перевед|traduc|übersetz|translate/.test(s)) return "translate";
   if (/поставьте глагол|conjugate|conjug|forma correcta|правильную форму/.test(s)) {
     return "fill_conjugation";
   }

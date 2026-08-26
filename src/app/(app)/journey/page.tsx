@@ -1,6 +1,7 @@
 import { getCurrentProfile, getChapterProgress } from "@/server/actions/data";
 import { getCourse } from "@/config/courses";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
+import { getChapterTargetTitle } from "@/lib/chapter-display";
 import {
   emptyCourseFinds,
   getEggById,
@@ -57,7 +58,7 @@ export default async function JourneyPage() {
       title: cert.title === cert.slug ? ch.title : cert.title,
       titleNative:
         cert.titleNative === cert.slug
-          ? ch.titleEs || ch.title
+          ? getChapterTargetTitle(ch, courseId)
           : cert.titleNative,
     };
   });
@@ -66,7 +67,7 @@ export default async function JourneyPage() {
     slug: ch.slug,
     number: ch.number,
     title: ch.title,
-    titleNative: ch.titleEs || ch.title,
+    titleNative: getChapterTargetTitle(ch, courseId),
     level: ch.level,
     completed: completed.has(ch.slug),
     hasCertificate: certBySlug.has(ch.slug) || slice.chapterBadges.includes(ch.slug),

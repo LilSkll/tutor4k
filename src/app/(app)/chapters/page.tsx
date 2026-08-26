@@ -10,6 +10,7 @@ import { translate } from "@/lib/i18n";
 import {
   countCompletedForCourse,
   getChapterLocation,
+  getChapterTargetTitle,
   getChapterTitle,
   hasCompletedPrereqChain,
 } from "@/lib/chapter-display";
@@ -180,9 +181,9 @@ export default async function ChaptersMapPage() {
                       >
                         {title}
                       </h3>
-                      {chapter.titleEs !== title && (
+                      {getChapterTargetTitle(chapter, courseId) !== title && (
                         <p className="text-xs text-muted-foreground italic mb-1">
-                          {chapter.titleEs}
+                          {getChapterTargetTitle(chapter, courseId)}
                         </p>
                       )}
                       <p className="text-xs text-muted-foreground flex items-center gap-1">

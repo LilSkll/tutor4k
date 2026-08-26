@@ -43,22 +43,19 @@ export function getVocabTopicSubtitle(
 ): string | null {
   const primary = getVocabTopicTitle(topic, interfaceLanguage, courseId);
 
-  if (interfaceLanguage === "ru") {
-    return topic.topicEs !== primary ? topic.topicEs : null;
+  // English course: target subtitle is always English (never Spanish topicEs leftovers).
+  if (courseId === "english") {
+    const enTitle =
+      topic.topicEn?.trim() ||
+      (isLatinScript(topic.topicEs) && !looksSpanishTopicTitle(topic.topicEs)
+        ? topic.topicEs
+        : "") ||
+      (isLatinScript(topic.topic) ? topic.topic : "");
+    return enTitle && enTitle !== primary ? enTitle : null;
   }
 
-  if (courseId === "english") {
-    if (interfaceLanguage === "es") {
-      const enTitle =
-        topic.topicEn ??
-        (isLatinScript(topic.topicEs) ? topic.topicEs : null);
-      return enTitle && enTitle !== primary ? enTitle : null;
-    }
-    if (interfaceLanguage === "en" || interfaceLanguage === "de") {
-      return topic.topicEs !== primary && isLatinScript(topic.topicEs)
-        ? topic.topicEs
-        : null;
-    }
+  if (interfaceLanguage === "ru") {
+    return topic.topicEs !== primary ? topic.topicEs : null;
   }
 
   if (interfaceLanguage === "es") {
@@ -70,6 +67,12 @@ export function getVocabTopicSubtitle(
   }
 
   return null;
+}
+
+function looksSpanishTopicTitle(s: string): boolean {
+  return /\b(Información|Familia|Hogar|Objetos|Rutina|Ciudad|Viajes|Trabajo|Compras|Salud|Cuerpo|Emociones|Personalidad)\b/i.test(
+    s,
+  );
 }
 
 /** Word gloss in the user's interface language. */

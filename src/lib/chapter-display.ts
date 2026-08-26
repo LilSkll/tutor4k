@@ -988,6 +988,38 @@ export function getChapterTitle(
   return chapter.title;
 }
 
+/**
+ * Title in the course target language (shown as italic subtitle).
+ * Spanish course → titleEs; English course → English title (never Spanish leftovers).
+ */
+export function getChapterTargetTitle(
+  chapter: Chapter,
+  courseId?: string | null,
+): string {
+  const id =
+    courseId ??
+    (chapter.slug.startsWith("eng-")
+      ? "english"
+      : chapter.slug.startsWith("ru-") || chapter.slug.startsWith("rus-")
+        ? "russian"
+        : "spanish");
+  if (id === "english") {
+    // Prefer non-Spanish titleEs if data was fixed; else canonical English title.
+    const te = chapter.titleEs?.trim() ?? "";
+    if (te && !looksLikeSpanishChapterTitle(te)) return te;
+    return chapter.title;
+  }
+  return chapter.titleEs || chapter.title;
+}
+
+function looksLikeSpanishChapterTitle(s: string): boolean {
+  // Heuristic for leftover Spanish titles on English chapters.
+  return (
+    /\b(Los|Las|El|La|Un|Una|Por|Para|Qué|Quién|Si|Más|Del|De|En)\b/.test(s) ||
+    /[¿¡]/.test(s)
+  );
+}
+
 export function getChapterSummary(
   chapter: Chapter,
   interfaceLanguage: InterfaceLanguage,

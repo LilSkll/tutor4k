@@ -65,7 +65,7 @@ describe("translation localization", () => {
     expect(localizeExerciseInstruction(item, "ru")).toMatch(/косвенную/i);
   });
 
-  it("honors rewriteMode over heuristics", async () => {
+  it("honors rewriteMode and instructionKey", async () => {
     const { isReportedSpeechRewrite, localizeExerciseInstruction } =
       await import("@/lib/exercise-localize");
     expect(
@@ -88,6 +88,27 @@ describe("translation localization", () => {
         "en",
       ),
     ).toMatch(/por or para/i);
+  });
+
+  it("does not remap English-course translate instructions to Spanish", async () => {
+    const { localizeExerciseInstruction } = await import(
+      "@/lib/exercise-localize"
+    );
+    const eng = {
+      type: "translation" as const,
+      question: "Я студент.",
+      answer: "I am a student",
+      instruction: "Translate to English",
+    };
+    expect(localizeExerciseInstruction(eng, "ru")).toMatch(/английск/i);
+    // Already localized once (as in lesson UI after prepareExercisesForInterface)
+    const secondPass = {
+      ...eng,
+      instruction: localizeExerciseInstruction(eng, "ru"),
+    };
+    expect(localizeExerciseInstruction(secondPass, "ru")).not.toMatch(
+      /испанск/i,
+    );
   });
 });
 

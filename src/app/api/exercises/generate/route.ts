@@ -24,7 +24,8 @@ import type {
  * Serves a session batch from the permanent adaptive exercise bank.
  * Default count = SESSION_EXERCISES (5). Regular practice and DELE never
  * call AI here — only the authored bank.
- * Without challengeMode, only unlocked journey chapters are served.
+ * Without challengeMode, prefer unlocked chapters *at the selected CEFR*;
+ * if none are unlocked yet, serve the full selected band (never silent A1 fallback).
  */
 export async function POST(req: NextRequest) {
   try {
@@ -116,9 +117,22 @@ export async function POST(req: NextRequest) {
         if (unlocked.size === 0 && chapters[0]?.slug) {
           unlocked.add(chapters[0].slug);
         }
-        allowedChapterSlugs = [...unlocked];
+
+        // Level picker is authoritative: only restrict to unlocked chapters
+        // that match the requested CEFR. If none are unlocked at that band,
+        // serve the full band (explicit stretch) — never fall back to A1.
+        const requestedBand = body.level;
+        const atRequestedLevel = chapters.filter((c) => c.level === requestedBand);
+        const unlockedAtLevel = atRequestedLevel
+          .map((c) => c.slug)
+          .filter((slug) => unlocked.has(slug));
+        allowedChapterSlugs =
+          unlockedAtLevel.length > 0
+            ? unlockedAtLevel
+            : atRequestedLevel.map((c) => c.slug);
+
         preferredChapterSlugs = preferredChapterSlugs.filter((s) =>
-          unlocked.has(s),
+          (allowedChapterSlugs ?? []).includes(s),
         );
         if (preferredChapterSlugs.length === 0) {
           preferredChapterSlugs = allowedChapterSlugs;

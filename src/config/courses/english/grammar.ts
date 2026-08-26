@@ -14,7 +14,7 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
   {
     slug: "eng-a1-be",
     title: "Глагол be (am/is/are)",
-    titleEs: "Verbo be (am/is/are)",
+    titleEs: "Verb be (am/is/are)",
     level: "A1",
     category: "Глаголы",
     summary: "Глагол «быть» в настоящем: am, is, are.",
@@ -45,7 +45,7 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
   {
     slug: "eng-a1-present-simple",
     title: "Present Simple",
-    titleEs: "Presente Simple",
+    titleEs: "Present Simple",
     level: "A1",
     category: "Времена",
     summary: "Настоящее простое: рутины, факты, регулярные действия.",
@@ -167,7 +167,7 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
   {
     slug: "eng-a1-prepositions",
     title: "Предлоги места",
-    titleEs: "Preposiciones de Lugar",
+    titleEs: "Prepositions of Place",
     level: "A1",
     category: "Предлоги",
     summary: "in, on, at, under, between, next to — где находится предмет.",
@@ -198,7 +198,7 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
   {
     slug: "eng-a2-past-simple",
     title: "Past Simple",
-    titleEs: "Pasado Simple",
+    titleEs: "Past Simple",
     level: "A2",
     category: "Времена",
     summary: "Прошедшее простое: регулярные и неправильные глаголы.",
@@ -227,7 +227,7 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
   {
     slug: "eng-a2-comparatives",
     title: "Comparatives & Superlatives",
-    titleEs: "Comparativos y Superlativos",
+    titleEs: "Comparatives & Superlatives",
     level: "A2",
     category: "Прилагательные",
     summary: "Сравнительная и превосходная степень прилагательных.",
@@ -259,7 +259,7 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
   {
     slug: "eng-a2-present-perfect",
     title: "Present Perfect",
-    titleEs: "Pretérito Perfecto",
+    titleEs: "Present Perfect",
     level: "A2",
     category: "Времена",
     summary: "Прошедшее с связью с настоящим: опыт, результаты.",
@@ -320,7 +320,7 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
   {
     slug: "eng-a2-quantifiers",
     title: "Some / Any / Much / Many",
-    titleEs: "Cuantificadores",
+    titleEs: "Quantifiers",
     level: "A2",
     category: "Определители",
     summary: "some, any, much, many, a lot of с исчисляемыми и неисчисляемыми.",
@@ -347,7 +347,7 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
   {
     slug: "eng-b1-future-conditional",
     title: "Future & First Conditional",
-    titleEs: "Futuro y Primer Condicional",
+    titleEs: "Future & First Conditional",
     level: "B1",
     category: "Времена / Условия",
     summary: "will/won't and the first conditional for real future situations.",
@@ -368,7 +368,7 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
   {
     slug: "eng-b1-modals",
     title: "Should / Must / Have to",
-    titleEs: "Modales de Obligación",
+    titleEs: "Modals of Obligation",
     level: "B1",
     category: "Модальные",
     summary: "should, must, have to — совет, обязанность и запрет.",
@@ -392,7 +392,7 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
   {
     slug: "eng-b1-narrative",
     title: "Narrative Tenses",
-    titleEs: "Tiempos Narrativos",
+    titleEs: "Narrative Tenses",
     level: "B1",
     category: "Времена",
     summary: "Past continuous, used to, past perfect — рассказы о прошлом.",
@@ -452,7 +452,7 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
   {
     slug: "eng-b2-conditionals",
     title: "Second & Third Conditionals",
-    titleEs: "Segundo y Tercer Condicional",
+    titleEs: "Second & Third Conditional",
     level: "B2",
     category: "Условия",
     summary: "Нереальные условия: настоящее (2nd) и прошлое (3rd).",
@@ -477,7 +477,7 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
   {
     slug: "eng-b2-passive",
     title: "Passive Voice",
-    titleEs: "Voz Pasiva",
+    titleEs: "Passive Voice",
     level: "B2",
     category: "Залог",
     summary: "Пассивный залог во всех временах, have something done.",
@@ -506,7 +506,7 @@ const ENGLISH_GRAMMAR_CORE: GrammarTopic[] = [
   {
     slug: "eng-b2-reported-clauses",
     title: "Reported Speech & Relative Clauses",
-    titleEs: "Estilo Indirecto y Oraciones de Relativo",
+    titleEs: "Reported Speech & Relative Clauses",
     level: "B2",
     category: "Синтаксис",
     summary: "Косвенная речь и относительные местоимения.",
@@ -537,7 +537,7 @@ Present → Past, will → would, can → could.
   {
     slug: "eng-c1-inversion",
     title: "Inversion & Emphatic Structures",
-    titleEs: "Inversión y Estructuras Énfáticas",
+    titleEs: "Inversion & Emphatic Structures",
     level: "C1",
     category: "Синтаксис",
     summary: "Инверсия для усиления, cleft sentences, emphatic do/does.",
@@ -563,7 +563,7 @@ Present → Past, will → would, can → could.
   {
     slug: "eng-c1-discourse",
     title: "Discourse: Substitution, Ellipsis, Fronting",
-    titleEs: "Discurso: Sustitución, Elipsis, Fronting",
+    titleEs: "Discourse: Substitution, Ellipsis, Fronting",
     level: "C1",
     category: "Дискурс",
     summary: "Продвинутые средства связности речи.",
@@ -591,7 +591,7 @@ Present → Past, will → would, can → could.
   {
     slug: "eng-c1-mixed-conditionals",
     title: "Mixed Conditionals & Advanced Passives",
-    titleEs: "Condicionales Mixtos y Pasivas Avanzadas",
+    titleEs: "Mixed Conditionals & Advanced Passives",
     level: "C1",
     category: "Условия / Залог",
     summary: "Смешанные условные предложения и продвинутый пассив.",
@@ -620,7 +620,7 @@ Present → Past, will → would, can → could.
   {
     slug: "eng-c1-review",
     title: "Comprehensive Review + IELTS Skills",
-    titleEs: "Repaso Integral + IELTS",
+    titleEs: "Full Review + IELTS",
     level: "C1",
     category: "Подготовка к экзамену",
     summary: "Комплексное повторение всех тем + навыки IELTS.",
