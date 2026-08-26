@@ -720,7 +720,7 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 
 Маркеры: ayer, anteayer, el lunes pasado, hace dos años, en 1999.
 
-> 💡 Indefinido = **что случилось** (толчок сюжета). Imperfecto (следующая тема) = **какой был фон**.
+> 💡 Indefinido = **что случилось** (разовое событие). Imperfecto (следующая тема) = **какой был фон**.
 > \`Ayer **llovió**\` (свершилось) vs \`**Llovía**\` (стояла такая погода). Полный контраст — тема DELE «прошедшие».`,
   },
 
@@ -788,7 +788,7 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 - **Причина:** \`**Por** el frío, no salí.\` (из-за холода)
 - **Путь/место:** \`Paseo **por** el parque.\` (через/по)
 - **Обмен:** \`Lo compré **por** 10 euros.\` (за 10 евро)
-- **Длительность:** \`Estudié **durante** dos horas.\` (в течение; не калька *por dos horas*)
+- **Длительность:** \`Estudié **durante** dos horas.\` (в течение; не *por dos horas* — так обычно не говорят)
 - **Вместо:** \`Lo hago **por** ti.\` (за тебя/вместо тебя)
 
 ### Мнемоника
@@ -1339,7 +1339,7 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 
 | Вопрос к действию | Время | Пример |
 |---|---|---|
-| Что произошло? (событие, толчок сюжета) | **Indefinido** | \`Ayer **vi** a Marta.\` |
+| Что произошло? (событие, что сдвинуло сюжет) | **Indefinido** | \`Ayer **vi** a Marta.\` |
 | Что было вокруг? (фон, привычка, описание) | **Imperfecto** | \`**Hacía** frío y **llovía**.\` |
 | Связано с настоящим / период не закрыт | **Perfecto** | \`**He visto** a Marta esta mañana.\` |
 | Раньше другого прошлого | **Pluscuamperfecto** | \`Cuando llegué, ya **se había ido**.\` |
@@ -1498,7 +1498,7 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 ## Пассив и se
 
 ### 1. Voz pasiva con SER (классическая)
-**SER** + participio (+ **por** + агент)
+**SER** + participio (+ **por** + кто сделал)
 
 \`El libro **fue escrito** por Cervantes.\`
 \`La carta **es enviada** por la empresa.\`
@@ -1523,8 +1523,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 \`Se **vende** pan\` (ед.) / \`Se **venden** libros\` (мн.).
 
 ### Когда что использовать
-- **SER pasiva**: акцент на **процессе** или **агенте** (por...).
-- **Pasiva refleja**: акцент на **действии/результате**, агент неважен — это
+- **SER pasiva**: акцент на **процессе** или на **том, кто сделал** (por…).
+- **Pasiva refleja**: акцент на **действии/результате**, кто сделал — неважно; это
   наиболее частая и естественная форма в разговорной речи.
 
 > 💡 В испанском pasiva refleja намного естественнее, чем английский пассив.

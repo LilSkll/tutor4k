@@ -29,10 +29,10 @@ const L = {
     de: "Später im Kurs",
   },
   pairs: {
-    ru: "Минимальные пары",
-    en: "Minimal pairs",
-    es: "Pares mínimos",
-    de: "Minimalpaare",
+    ru: "Сравни примеры",
+    en: "Compare the examples",
+    es: "Compara los ejemplos",
+    de: "Beispiele vergleichen",
   },
 } as const;
 
@@ -68,9 +68,9 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "es listo vs está listo — «Ser/Estar: Feinheiten».",
     ),
     pairs: [
-      p("Soy profesor.", "Estoy cansado.", "кто ты по сути", "who you are", "quién eres", "wer du bist"),
-      p("Soy de Moscú.", "Estoy en Madrid.", "происхождение", "origin", "origen", "Herkunft"),
-      p("Es la una.", "Son las tres.", "1 час vs остальные — всегда ser", "1 o’clock vs the rest — always ser", "la una vs las demás — siempre ser", "1 Uhr vs. der Rest — immer ser"),
+      p("Soy profesor.", "Estoy cansado.", "кто ты / профессия", "who you are / job", "quién eres / profesión", "wer du bist / Beruf"),
+      p("Soy de Moscú.", "Estoy en Madrid.", "откуда ты vs где ты сейчас", "where you’re from vs where you are now", "de dónde eres vs dónde estás", "woher vs. wo du jetzt bist"),
+      p("Es la una.", "Son las tres.", "«час» всегда через ser", "clock time always uses ser", "la hora siempre con ser", "Uhrzeit immer mit ser"),
     ],
   },
   "a1-presente": {
@@ -87,8 +87,8 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "Vergangenheit; B1: Subjuntivo (hablo ≠ hable).",
     ),
     pairs: [
-      p("Hablo español.", "Hable español.", "indicativo vs subjuntivo (B1)", "indicative vs subjunctive (B1)", "indicativo vs subjuntivo (B1)", "Indikativ vs. Subjuntivo (B1)"),
-      p("Habláis vosotros.", "Hablan ustedes.", "Испания vs Америка", "Spain vs Latin America", "España vs América", "Spanien vs. Lateinamerika"),
+      p("Hablo español.", "Hable español.", "говорю (факт) vs чтобы говорил (B1)", "I speak (fact) vs that I speak (B1)", "hablo (hecho) vs hable (B1)", "ich spreche (Fakt) vs. hable (B1)"),
+      p("Habláis vosotros.", "Hablan ustedes.", "вы в Испании vs вы в Америке", "you (Spain) vs you (Latin America)", "vosotros (España) vs ustedes (América)", "vosotros (Spanien) vs. ustedes (Lateinamerika)"),
     ],
   },
   "a1-articulos": {
@@ -105,9 +105,9 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "Genus ausführlich — «Genus und Numerus».",
     ),
     pairs: [
-      p("el agua fría", "la abuela", "ударная a / без ударения", "stressed a / unstressed", "a tónica / sin acento", "betontes a vs. nicht"),
-      p("el libro", "un libro", "конкретная вещь / «какая-то»", "specific thing / “some”", "cosa conocida / «alguna»", "bekannt / irgendein"),
-      p("Soy profesora.", "La profesora es Ana.", "профессия после ser vs конкретный человек", "job after ser vs a specific person", "profesión tras ser vs persona concreta", "Beruf nach ser vs. konkrete Person"),
+      p("el agua fría", "la abuela", "agua с ударным a → el; abuela → la", "agua with stressed a → el; abuela → la", "agua con a tónica → el; abuela → la", "agua mit betontem a → el; abuela → la"),
+      p("el libro", "un libro", "этот / известный vs какой-то", "this/known vs some", "este/conocido vs alguno", "dieser/bekannt vs. irgendein"),
+      p("Soy profesora.", "La profesora es Ana.", "профессия без артикля vs конкретный человек", "job with no article vs a specific person", "profesión sin artículo vs persona concreta", "Beruf ohne Artikel vs. konkrete Person"),
     ],
   },
   "a1-genero-numero": {
@@ -124,8 +124,8 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "el agua steht schon bei den Artikeln.",
     ),
     pairs: [
-      p("el problema", "la mano", "-a мужской / -o женский", "-a masculine / -o feminine", "-a masculino / -o femenino", "-a maskulin / -o feminin"),
-      p("casas blancas", "libros rojos", "прилагательное копирует род и число", "adjective copies gender and number", "el adjetivo copia género y número", "Adjektiv kopiert Genus und Numerus"),
+      p("el problema", "la mano", "на -a, но мужской / на -o, но женский", "ends in -a but masculine / -o but feminine", "termina en -a pero es masculino / -o pero femenino", "endet auf -a, aber maskulin / -o, aber feminin"),
+      p("casas blancas", "libros rojos", "прилагательное повторяет род и число", "the adjective matches gender and number", "el adjetivo copia género y número", "das Adjektiv übernimmt Genus und Numerus"),
     ],
   },
   "a1-numeros-1-100": {
@@ -142,8 +142,8 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "Ordinalia (primero) und volle Daten → A2.",
     ),
     pairs: [
-      p("el lunes", "los lunes", "в понедельник vs по понедельникам", "on Monday vs on Mondays", "el lunes vs los lunes", "am Montag vs. montags"),
-      p("Es la una.", "Son las dos.", "1 час vs остальные", "1 o’clock vs the rest", "la una vs las demás", "1 Uhr vs. der Rest"),
+      p("el lunes", "los lunes", "в этот понедельник vs по понедельникам", "this Monday vs on Mondays", "este lunes vs los lunes", "diesen Montag vs. montags"),
+      p("Es la una.", "Son las dos.", "один час — es; дальше — son", "one o’clock — es; after that — son", "la una — es; después — son", "1 Uhr — es; danach — son"),
     ],
   },
   "a1-preposiciones-lugar": {
@@ -160,8 +160,8 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "por vs para ist A2.",
     ),
     pairs: [
-      p("Estoy en Madrid.", "Voy a Madrid.", "где vs куда", "where vs where to", "dónde vs adónde", "wo vs. wohin"),
-      p("Voy al parque.", "Vengo del parque.", "a+el / de+el", "a+el / de+el", "a+el / de+el", "a+el / de+el"),
+      p("Estoy en Madrid.", "Voy a Madrid.", "где нахожусь vs куда иду", "where I am vs where I’m going", "dónde estoy vs adónde voy", "wo ich bin vs. wohin ich gehe"),
+      p("Voy al parque.", "Vengo del parque.", "в парк (a+el) / из парка (de+el)", "to the park (a+el) / from the park (de+el)", "al parque / del parque", "in den Park / aus dem Park"),
     ],
   },
   "a1-gustar": {
@@ -178,8 +178,8 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "se und lo/la. Nicht mit me lo da mischen.",
     ),
     pairs: [
-      p("Me gusta el café.", "Me gustan los libros.", "ед. vs мн. у вещи", "singular vs plural of the thing", "singular vs plural de la cosa", "Sg. vs. Pl. der Sache"),
-      p("Me gusta nadar.", "Me gusta que vengas.", "инфинитив A1 vs que+subj B1", "infinitive A1 vs que+subj B1", "infinitivo A1 vs que+subj B1", "Infinitiv A1 vs. que+Subj. B1"),
+      p("Me gusta el café.", "Me gustan los libros.", "одна вещь vs несколько", "one thing vs several", "una cosa vs varias", "eine Sache vs. mehrere"),
+      p("Me gusta nadar.", "Me gusta que vengas.", "инфинитив (A1) vs que… (B1)", "infinitive (A1) vs que… (B1)", "infinitivo (A1) vs que… (B1)", "Infinitiv (A1) vs. que… (B1)"),
     ],
   },
   "a1-tener-expressions": {
@@ -196,9 +196,9 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "estar + Adjektiv steht schon bei ser/estar.",
     ),
     pairs: [
-      p("Tengo hambre.", "Estoy hambriento.", "норма vs калька/редко", "normal vs rare calque", "normal vs calco", "normal vs. Kalke"),
+      p("Tengo hambre.", "Estoy hambriento.", "так говорят vs редко / дословно", "natural vs rare / word-for-word", "lo natural vs raro / calcado", "natürlich vs. selten / wörtlich"),
       p("Tengo 20 años.", "Soy 20.", "возраст — tener, не ser", "age uses tener, not ser", "edad con tener, no ser", "Alter mit tener, nicht ser"),
-      p("Tengo frío.", "Estoy frío.", "мне холодно vs я холодный (характер/тело)", "I feel cold vs I am a cold person/object", "tengo frío vs estoy frío", "mir ist kalt vs. ich bin kalt"),
+      p("Tengo frío.", "Estoy frío.", "мне холодно vs я холодный (о человеке/предмете)", "I feel cold vs I am a cold person/object", "tengo frío vs estoy frío", "mir ist kalt vs. ich bin kalt"),
     ],
   },
   "a1-preguntas": {
@@ -215,8 +215,8 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "Name: ¿Cómo te llamas?, nicht ¿Cómo eres?",
     ),
     pairs: [
-      p("¿Cómo te llamas?", "¿Cómo eres?", "имя vs описание", "name vs description", "nombre vs descripción", "Name vs. Beschreibung"),
-      p("¿Qué libro?", "¿Cuál de los dos?", "открытый выбор vs из известного набора", "open vs from a known set", "abierto vs conjunto conocido", "offen vs. bekannte Menge"),
+      p("¿Cómo te llamas?", "¿Cómo eres?", "как зовут vs какой ты", "what’s your name vs what are you like", "cómo te llamas vs cómo eres", "wie heißt du vs. wie bist du"),
+      p("¿Qué libro?", "¿Cuál de los dos?", "что вообще vs какой из известных", "what in general vs which of these", "qué en general vs cuál de estos", "was allgemein vs. welches von diesen"),
     ],
   },
   "a1-verbos-frecuentes": {
@@ -233,7 +233,7 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "Ihre Vergangenheit (fui, tuve, hice) ist A2 Indefinido.",
     ),
     pairs: [
-      p("Voy al cine.", "Fui al cine.", "сейчас vs вчера (A2)", "now vs yesterday (A2)", "ahora vs ayer (A2)", "jetzt vs. gestern (A2)"),
+      p("Voy al cine.", "Fui al cine.", "сейчас / обычно vs вчера", "now / usually vs yesterday", "ahora / habitual vs ayer", "jetzt / gewöhnlich vs. gestern"),
       p("Puedo ir.", "Quiero ir.", "могу vs хочу", "can vs want", "puedo vs quiero", "kann vs. will"),
     ],
   },
@@ -253,8 +253,8 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "ayer / en 2018 → Indefinido. Der Vier-Zeiten-Kontrast ist das DELE-Thema.",
     ),
     pairs: [
-      p("He comido hoy.", "Comí ayer.", "период открыт vs закрыт", "open vs closed time", "periodo abierto vs cerrado", "offener vs. geschlossener Zeitraum"),
-      p("Ya he llegado.", "Llegué a las 3.", "результат сейчас vs час-факт", "result now vs clock-time fact", "resultado ahora vs hora-hecho", "Ergebnis jetzt vs. Uhrzeit-Fakt"),
+      p("He comido hoy.", "Comí ayer.", "ещё связано с сейчас vs уже закончилось вчера", "still linked to now vs finished yesterday", "aún ligado al ahora vs ayer cerrado", "noch mit dem Jetzt verbunden vs. gestern abgeschlossen"),
+      p("Ya he llegado.", "Llegué a las 3.", "уже пришёл (важно сейчас) vs пришёл в 3 (факт)", "I’m here now vs I arrived at 3 (a fact)", "ya estoy aquí vs llegué a las 3", "ich bin jetzt da vs. ich kam um 3"),
     ],
   },
   "a2-preterito-indefinido": {
@@ -271,8 +271,8 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "Hintergrund / Gewohnheit → Imperfecto.",
     ),
     pairs: [
-      p("Ayer llovió.", "Llovía mucho.", "свершилось vs стояла погода", "it happened vs the weather was", "ocurrió vs el tiempo de fondo", "passierte vs. Wetter-Hintergrund"),
-      p("Fui profesor.", "Fui a Madrid.", "ser vs ir — форма одна", "ser vs ir — same form", "ser vs ir — misma forma", "ser vs. ir — dieselbe Form"),
+      p("Ayer llovió.", "Llovía mucho.", "разовый факт vs фон / как было", "one-off fact vs background / how it was", "hecho puntual vs fondo", "einmaliges Ereignis vs. Hintergrund"),
+      p("Fui profesor.", "Fui a Madrid.", "fui = «был» и «пошёл» — одна форма", "fui = “I was” and “I went” — same form", "fui = «fui» de ser y de ir", "fui = «ich war» und «ich ging»"),
     ],
   },
   "a2-imperfecto": {
@@ -289,8 +289,8 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "Paare conocía/conocí in der Prüfung — DELE-Thema.",
     ),
     pairs: [
-      p("Leía cuando llamaste.", "Llamaste mientras leía.", "фон imperfecto + толчок indefinido", "background imperfecto + event indefinido", "fondo imperfecto + evento indefinido", "Hintergrund Imperfecto + Ereignis Indefinido"),
-      p("Era las tres.", "→ Eran las tres.", "час в прошлом — ser во мн.", "past clock time uses ser plural", "hora en pasado: ser plural", "Uhrzeit in der Vergangenheit: ser Plural"),
+      p("Leía cuando llamaste.", "Llamaste mientras leía.", "фон / процесс + разовое событие", "background / ongoing + one-off event", "fondo / proceso + evento puntual", "Hintergrund / Verlauf + einmaliges Ereignis"),
+      p("Era las tres.", "→ Eran las tres.", "в прошлом тоже: era → eran las…", "in the past too: era → eran las…", "en pasado también: era → eran las…", "auch in der Vergangenheit: era → eran las…"),
     ],
   },
   "a2-por-para": {
@@ -307,9 +307,9 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "Voy a Madrid (nicht *para). Dauer: durante.",
     ),
     pairs: [
-      p("Estudio para aprender.", "Estudio por la mañana.", "цель vs часть дня", "goal vs time of day", "fin vs momento del día", "Ziel vs. Tageszeit"),
-      p("El avión sale para Madrid.", "Voy a Madrid.", "маршрут транспорта vs «иду»", "vehicle destination vs “I go”", "destino del vehículo vs ir", "Fahrzeugziel vs. «ich gehe»"),
-      p("Estudié durante dos horas.", "Lo hice por ti.", "длительность vs «ради тебя»", "duration vs “for your sake”", "duración vs por ti", "Dauer vs. «für dich»"),
+      p("Estudio para aprender.", "Estudio por la mañana.", "цель / для чего vs время суток", "purpose vs time of day", "fin / para qué vs momento del día", "Ziel / wozu vs. Tageszeit"),
+      p("El avión sale para Madrid.", "Voy a Madrid.", "самолёт «на Мадрид» vs я еду в Мадрид", "plane “to Madrid” vs I go to Madrid", "el avión sale para Madrid vs voy a Madrid", "Flugzeug «nach Madrid» vs. ich fahre nach Madrid"),
+      p("Estudié durante dos horas.", "Lo hice por ti.", "сколько длилось (durante) vs ради кого (por)", "how long (durante) vs for whose sake (por)", "durante cuánto vs por ti", "wie lange (durante) vs. für dich (por)"),
     ],
   },
   "a2-comparativos": {
@@ -326,8 +326,8 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "cuanto más… tanto más — C1.",
     ),
     pairs: [
-      p("más alta que", "tan alta como", "неравенство vs равенство", "unequal vs equal", "desigual vs igual", "ungleich vs. gleich"),
-      p("mayor que yo", "más grande que la mesa", "возраст vs размер", "age vs size", "edad vs tamaño", "Alter vs. Größe"),
+      p("más alta que", "tan alta como", "больше / меньше vs такой же", "more/less vs the same as", "más/menos vs tan…como", "mehr/weniger vs. genauso"),
+      p("mayor que yo", "más grande que la mesa", "старше (возраст) vs больше размером", "older (age) vs bigger in size", "mayor (edad) vs más grande (tamaño)", "älter vs. größer"),
     ],
   },
   "a2-futuro-simple": {
@@ -344,8 +344,8 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "Serán las diez ≈ «wahrscheinlich» ist C2, nicht A2.",
     ),
     pairs: [
-      p("Voy a comer.", "Comeré más tarde.", "ближайшее намерение vs простое будущее", "near intention vs simple future", "intención cercana vs futuro simple", "nahe Absicht vs. einfaches Futur"),
-      p("Mañana lloverá.", "Serán las diez.", "прогноз-план vs догадка (C2)", "forecast vs guess (C2)", "pronóstico vs conjetura (C2)", "Prognose vs. Vermutung (C2)"),
+      p("Voy a comer.", "Comeré más tarde.", "вот-вот / план рядом vs будущее вообще", "about to / near plan vs future in general", "intención cercana vs futuro en general", "nahe Absicht vs. Zukunft allgemein"),
+      p("Mañana lloverá.", "Serán las diez.", "прогноз погоды vs «наверное сейчас…» (C2)", "weather forecast vs “it’s probably…” (C2)", "pronóstico vs «probablemente…» (C2)", "Wetterprognose vs. «wahrscheinlich…» (C2)"),
     ],
   },
 
@@ -364,8 +364,8 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "Imperfekt Subjuntivo (tuviera) ist das nächste Thema.",
     ),
     pairs: [
-      p("Sé que vienes.", "Quiero que vengas.", "факт → indicativo / желание → subjuntivo", "fact → indicative / wish → subjunctive", "hecho → indicativo / deseo → subjuntivo", "Fakt → Indikativ / Wunsch → Subjuntivo"),
-      p("Creo que es fácil.", "No creo que sea fácil.", "утверждение vs отрицание+subj", "assertion vs negated+subj", "afirmación vs negación+subj", "Behauptung vs. Verneinung+Subj."),
+      p("Sé que vienes.", "Quiero que vengas.", "факт (изъявительное) / желание (сослагательное)", "fact (indicative) / wish (subjunctive)", "hecho (indicativo) / deseo (subjuntivo)", "Fakt (Indikativ) / Wunsch (Subjuntivo)"),
+      p("Creo que es fácil.", "No creo que sea fácil.", "«думаю, что…» vs «не думаю, что…» (меняется форма)", "“I think that…” vs “I don’t think that…” (form changes)", "creo que… vs no creo que…", "ich glaube, dass… vs. ich glaube nicht, dass…"),
     ],
   },
   "b1-imperativo": {
@@ -376,14 +376,14 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "habla / no hables. Vosotros bejaht = `hablad`. Verneint = Subjuntivo.",
     ),
     later: t(
-      "Не путать hablad (приказ) с habláis (настоящее) и habléis (subj / негатив).",
-      "Don’t mix hablad (command) with habláis (present) and habléis (subj / negative).",
-      "No mezclar hablad / habláis / habléis.",
-      "Nicht hablad / habláis / habléis mischen.",
+      "Не путать hablad (приказ) с habláis (настоящее) и habléis (запрет / сослагательное).",
+      "Don’t mix hablad (command) with habláis (present) and habléis (don’t / subjunctive).",
+      "No mezclar hablad (orden) con habláis (presente) y habléis (prohibición).",
+      "Nicht hablad (Befehl) mit habláis (Präsens) und habléis (Verbot) mischen.",
     ),
     pairs: [
-      p("¡Habla!", "¡No hables!", "утверждение ≠ отрицание", "affirmative ≠ negative", "afirmativo ≠ negativo", "bejaht ≠ verneint"),
-      p("¡Hablad!", "¡No habléis!", "vosotros + vs −", "vosotros + vs −", "vosotros + vs −", "vosotros + vs −"),
+      p("¡Habla!", "¡No hables!", "положительный приказ ≠ запрет", "positive command ≠ prohibition", "orden afirmativa ≠ prohibición", "positiver Befehl ≠ Verbot"),
+      p("¡Hablad!", "¡No habléis!", "vosotros: делайте! vs не делайте!", "vosotros: do it! vs don’t do it!", "vosotros: ¡haced! vs ¡no hagáis!", "vosotros: tut es! vs. tut es nicht!"),
     ],
   },
   "b1-condicional": {
@@ -394,32 +394,32 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "«ich würde»: podría, me gustaría. Dieselben Stämme wie Futuro.",
     ),
     later: t(
-      "Три si (реал / ирреал / прошлое) целиком — B2 Condicional compuesto.",
-      "The three si-clauses in full are B2 compound conditionals.",
-      "Los tres si completos son B2.",
-      "Die drei si-Sätze vollständig sind B2.",
+      "Три типа «если» (реально / если бы / в прошлом) целиком — B2 Condicional compuesto.",
+      "The three if-types (real / if only / past) in full are B2 compound conditionals.",
+      "Los tres «si» (real / hipotético / pasado) completos son B2.",
+      "Die drei «si»-Typen (real / irreal / Vergangenheit) vollständig sind B2.",
     ),
     pairs: [
-      p("Te llamaré.", "Te llamaría.", "будущее vs вежливое «я бы»", "future vs polite “I would”", "futuro vs cortesía", "Futur vs. höfliches «ich würde»"),
-      p("Si puedo, voy.", "Si pudiera, iría.", "реал A2/B1 vs ирреал B1/B2", "real vs unreal", "real vs irreal", "real vs. irreal"),
+      p("Te llamaré.", "Te llamaría.", "сделаю vs сделал бы / вежливо", "I will vs I would / polite", "haré vs haría / cortesía", "ich werde vs. ich würde / höflich"),
+      p("Si puedo, voy.", "Si pudiera, iría.", "если реально могу vs если бы мог", "if I really can vs if I could", "si puedo de verdad vs si pudiera", "wenn ich wirklich kann vs. wenn ich könnte"),
     ],
   },
   "b1-pronombre-se": {
     here: t(
-      "одно se — возвратное, взаимное, impersonál «здесь говорят», accidental se me cayó.",
-      "one se — reflexive, reciprocal, impersonal “people say”, accidental se me cayó.",
-      "un se — reflexivo, recíproco, impersonal, accidental.",
-      "ein se — reflexiv, reziprok, unpersönlich, accidental.",
+      "одно se: «моет себя», «друг друга», «здесь говорят», «у меня выпал» (se me cayó).",
+      "one se: “washes himself”, “each other”, “people say here”, “it fell on me” (se me cayó).",
+      "un se: «se lava», «uno a otro», «aquí se habla», «se me cayó».",
+      "ein se: «wäscht sich», «einander», «hier spricht man», «es ist mir runtergefallen».",
     ),
     later: t(
-      "Пассив se habla как стиль vs fue escrito — B2 voz pasiva.",
-      "Passive se habla vs fue escrito is B2 voice.",
-      "Pasiva se habla vs fue escrito es B2.",
-      "Passiv se habla vs fue escrito ist B2.",
+      "se habla как обычная речь vs fue escrito — тема пассива B2.",
+      "se habla as everyday style vs fue escrito — B2 passive voice.",
+      "se habla (estilo natural) vs fue escrito — pasiva B2.",
+      "se habla (Alltag) vs fue escrito — Passiv B2.",
     ),
     pairs: [
-      p("Se lava.", "Se hablan español e inglés aquí.", "возвратное vs «здесь говорят»", "reflexive vs impersonal", "reflexivo vs impersonal", "reflexiv vs. unpersönlich"),
-      p("Se me cayó el vaso.", "Caí el vaso.", "случайно vs «я уронил» (агенс)", "accidental vs I dropped it", "accidental vs yo lo tiré", "unabsichtlich vs. ich habe es fallen lassen"),
+      p("Se lava.", "Se habla español aquí.", "моет себя vs «здесь говорят»", "washes himself vs “people speak Spanish here”", "se lava vs «aquí se habla»", "wäscht sich vs. «hier spricht man»"),
+      p("Se me cayó el vaso.", "Yo tiré el vaso.", "само выпало vs я уронил специально", "it fell by accident vs I dropped it on purpose", "se cayó solo vs yo lo tiré", "es ist mir runtergefallen vs. ich habe es absichtlich fallen lassen"),
     ],
   },
   "b1-relativos": {
@@ -436,8 +436,8 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "Formelles el cual, lo que — B2.",
     ),
     pairs: [
-      p("el libro que leí", "el hombre quien / que vino", "вещь vs человек (que всё равно часто)", "thing vs person (que still common)", "cosa vs persona", "Ding vs. Person"),
-      p("el tema del que hablamos", "el tema de que hablamos", "del que / de la que, не *de que после tema", "del que — not bare *de que after tema", "del que, no *de que", "del que, nicht *de que"),
+      p("el libro que leí", "el hombre quien / que vino", "про вещь vs про человека (часто всё равно que)", "about a thing vs a person (que is still common)", "cosa vs persona (que sigue siendo frecuente)", "Ding vs. Person (que bleibt häufig)"),
+      p("el tema del que hablamos", "el tema de que hablamos", "правильно: del que / de la que — не голое de que", "use del que / de la que — not bare de que", "del que / de la que, no *de que", "del que / de la que, nicht bloßes de que"),
     ],
   },
   "b1-pluscuamperfecto": {
@@ -471,8 +471,8 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "hubiera + Partizip ist B2.",
     ),
     pairs: [
-      p("Quiero que vengas.", "Quería que vinieras.", "настоящее желание vs желание в прошлом", "present wish vs wish in the past", "deseo ahora vs deseo en el pasado", "Wunsch jetzt vs. Wunsch in der Vergangenheit"),
-      p("Si tengo tiempo, voy.", "Si tuviera tiempo, iría.", "реал vs если бы", "real vs if I had", "real vs irreal", "real vs. irreal"),
+      p("Quiero que vengas.", "Quería que vinieras.", "хочу, чтобы… сейчас vs хотел, чтобы… тогда", "I want you to… now vs I wanted you to… then", "quiero que… ahora vs quería que… entonces", "ich will, dass… jetzt vs. ich wollte, dass… damals"),
+      p("Si tengo tiempo, voy.", "Si tuviera tiempo, iría.", "если реально vs если бы", "if it’s real vs if only", "si es real vs si fuera", "wenn es real ist vs. wenn es so wäre"),
     ],
   },
   "b1-pronombres-objetos": {
@@ -489,8 +489,8 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "leísmo und Verdopplung — C1.",
     ),
     pairs: [
-      p("Lo veo.", "Le hablo.", "что vs кому", "what vs to whom", "qué vs a quién", "was vs. wem"),
-      p("Se lo doy.", "Le lo doy.", "норма vs ошибка", "correct vs error", "norma vs error", "Norm vs. Fehler"),
+      p("Lo veo.", "Le hablo.", "что вижу vs кому говорю", "what I see vs who I speak to", "qué veo vs a quién hablo", "was ich sehe vs. mit wem ich spreche"),
+      p("Se lo doy.", "Le lo doy.", "правильно se lo vs ошибка le lo", "correct se lo vs wrong le lo", "se lo correcto vs *le lo", "richtig se lo vs. falsch le lo"),
     ],
   },
   "b1-adverbios": {
@@ -507,8 +507,8 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "quizás + Subjuntivo verweist auf das Subjuntivo-Thema.",
     ),
     pairs: [
-      p("muy rápido", "corre mucho", "muy + adj/adv vs mucho + глагол/сущ", "muy + adj vs mucho + verb/noun", "muy + adj vs mucho + verbo", "muy + Adj. vs. mucho + Verb"),
-      p("fácilmente", "facilmente", "ударение сохраняется", "the accent stays", "el acento se mantiene", "Akzent bleibt"),
+      p("muy rápido", "corre mucho", "muy + признак vs mucho + глагол/существительное", "muy + adjective vs mucho + verb/noun", "muy + adjetivo vs mucho + verbo/nombre", "muy + Adjektiv vs. mucho + Verb/Nomen"),
+      p("fácilmente", "facilmente", "ударение остаётся: fácilmente", "the stress stays: fácilmente", "el acento se mantiene: fácilmente", "der Akzent bleibt: fácilmente"),
     ],
   },
   "dele-contraste-pasados": {
@@ -525,8 +525,8 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "Tabellen stehen in A2–B1. Hier nur der Prüfungsspitzenzettel.",
     ),
     pairs: [
-      p("Conocía a Juan.", "Conocí a Juan.", "был знаком vs познакомился", "already knew vs met", "ya conocía vs conocí", "kannte schon vs. lernte kennen"),
-      p("He visto esta mañana.", "Vi ayer.", "Испания perfecto vs закрытый ayer", "Spain perfecto vs closed ayer", "perfecto vs ayer", "Perfecto vs. ayer"),
+      p("Conocía a Juan.", "Conocí a Juan.", "уже знал vs познакомился тогда", "already knew vs met then", "ya conocía vs conocí entonces", "kannte schon vs. lernte damals kennen"),
+      p("He visto esta mañana.", "Vi ayer.", "в Испании «сегодня утром» vs вчера (закрытый день)", "Spain: this morning vs yesterday (closed day)", "España: esta mañana vs ayer", "Spanien: heute Morgen vs. gestern"),
     ],
   },
   "dele-carta-formal": {
@@ -543,8 +543,8 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "Der Aufsatz mit Konnektoren ist das andere DELE-B2-Thema.",
     ),
     pairs: [
-      p("Estimado señor:", "¡Hola, Ana!", "formal vs informal", "formal vs informal", "formal vs informal", "formell vs. informell"),
-      p("Le agradecería que enviara…", "¿Puedes mandarme…?", "вежливость B1+ vs друг", "polite B1+ vs friend", "cortesía vs amigo", "Höflichkeit vs. Freund"),
+      p("Estimado señor:", "¡Hola, Ana!", "официально vs по-свойски", "formal vs casual", "formal vs informal", "formell vs. locker"),
+      p("Le agradecería que enviara…", "¿Puedes mandarme…?", "вежливо коллеге vs другу", "polite to a colleague vs to a friend", "cortés con un colega vs con un amigo", "höflich zum Kollegen vs. zum Freund"),
     ],
   },
 
@@ -563,7 +563,7 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "Tabelle hoy→aquel día — C1.",
     ),
     pairs: [
-      p("Dice que viene.", "Dijo que venía / vendría.", "без сдвига vs со сдвигом", "no shift vs shift", "sin retroceso vs con retroceso", "ohne vs. mit Verschiebung"),
+      p("Dice que viene.", "Dijo que venía / vendría.", "говорит «придёт» vs сказал «придёт/пришёл бы»", "says “he’s coming” vs said it with a tense shift", "dice «viene» vs dijo con cambio de tiempo", "sagt «er kommt» vs. sagte mit Zeitverschiebung"),
     ],
   },
   "b2-voz-pasiva": {
@@ -580,8 +580,8 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "Nicht *es escrito: fue escrito.",
     ),
     pairs: [
-      p("Fue escrito por Cervantes.", "Está escrito en español.", "событие vs состояние", "event vs state", "evento vs estado", "Ereignis vs. Zustand"),
-      p("Se habla español.", "El español es hablado por millones.", "норма речи vs тяжёлый пассив", "natural vs heavy passive", "natural vs pasiva pesada", "natürlich vs. schweres Passiv"),
+      p("Fue escrito por Cervantes.", "Está escrito en español.", "что сделали (fue escrito) vs в каком виде сейчас (está escrito)", "what was done vs how it is now", "qué se hizo vs cómo está ahora", "was getan wurde vs. wie es jetzt ist"),
+      p("Se habla español.", "El español es hablado por millones.", "так обычно говорят vs тяжёлый книжный пассив", "how people usually say it vs heavy written passive", "lo natural vs pasiva culta pesada", "so sagt man vs. schweres schriftliches Passiv"),
     ],
   },
   "b2-subjuntivo-compuestos": {
@@ -598,7 +598,7 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "Bildung nicht wiederholen — B1-Themen.",
     ),
     pairs: [
-      p("Quiero que vengas.", "Me alegro de que hayas venido.", "ещё не / уже случилось", "not yet / already done", "aún no / ya ocurrió", "noch nicht / schon passiert"),
+      p("Quiero que vengas.", "Me alegro de que hayas venido.", "ещё не случилось vs уже случилось", "not yet happened vs already happened", "aún no ocurrió vs ya ocurrió", "noch nicht passiert vs. schon passiert"),
     ],
   },
   "b2-condicionales-compuestos": {
@@ -615,8 +615,8 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "Gemischte (dann→jetzt) sind C1-Nuance.",
     ),
     pairs: [
-      p("Si llueve, me quedo.", "Si lloviera, me quedaría.", "реал vs ирреал сейчас", "real vs unreal now", "real vs irreal ahora", "real vs. irreal jetzt"),
-      p("Si hubiera llovido, me habría quedado.", "Si lloviera, me habría quedado.", "оба прошлого vs смешанный", "both past vs mixed", "ambos pasado vs mixto", "beide Vergangenheit vs. gemischt"),
+      p("Si llueve, me quedo.", "Si lloviera, me quedaría.", "если реально vs если бы сейчас", "if it’s real vs if it were now", "si es real vs si fuera ahora", "wenn es real ist vs. wenn es jetzt so wäre"),
+      p("Si hubiera llovido, me habría quedado.", "Si lloviera, me habría quedado.", "оба в прошлом vs смешанное условие", "both in the past vs a mixed condition", "ambos en el pasado vs mixto", "beide in der Vergangenheit vs. gemischt"),
     ],
   },
   "b2-relativos-avanzado": {
@@ -633,7 +633,7 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "Grundlegendes que / quien — B1-Thema.",
     ),
     pairs: [
-      p("lo que necesito", "el que necesito", "целая идея vs конкретный (м.р.)", "whole idea vs a specific masculine noun", "idea vs sustantivo m.", "ganze Idee vs. mask. Nomen"),
+      p("lo que necesito", "el que necesito", "«то, что…» (идея) vs «тот, который…»", "“what / that which…” vs “the one who/which…”", "lo que (idea) vs el que (concreto)", "lo que (Idee) vs. el que (konkret)"),
     ],
   },
   "b2-conectores": {
@@ -650,8 +650,8 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "Das DELE-Gerüst ist das andere DELE-Thema.",
     ),
     pairs: [
-      p("pero", "sin embargo", "устный vs письменный", "spoken vs written", "oral vs escrito", "mündlich vs. schriftlich"),
-      p("para que + subj", "para + inf", "смена подлежащего vs то же лицо", "subject change vs same subject", "cambio de sujeto vs mismo", "Subjektwechsel vs. dasselbe"),
+      p("pero", "sin embargo", "в речи vs в письме", "in speech vs in writing", "en la habla vs por escrito", "mündlich vs. schriftlich"),
+      p("Estudia para que aprenda.", "Estudia para aprender.", "другое лицо → para que… / то же лицо → para + инфинитив", "different person → para que… / same person → para + infinitive", "otra persona → para que… / la misma → para + inf", "andere Person → para que… / dieselbe → para + Inf."),
     ],
   },
   "dele-conectores-redaccion": {
@@ -668,8 +668,8 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "sin embargo nicht neu lernen — nur im Prüfungsabsatz platzieren.",
     ),
     pairs: [
-      p("Creo que es útil.", "No creo que sea útil.", "indicativo vs subjuntivo в мнении", "indicative vs subjunctive in opinion", "indicativo vs subjuntivo", "Indikativ vs. Subjuntivo in der Meinung"),
-      p("De ahí que sea…", "Por lo tanto es…", "всегда subj vs indicativo", "always subj vs indicative", "siempre subj vs indicativo", "immer Subj. vs. Indikativ"),
+      p("Creo que es útil.", "No creo que sea útil.", "«думаю, что…» vs «не думаю, что…»", "“I think that…” vs “I don’t think that…”", "creo que… vs no creo que…", "ich glaube, dass… vs. ich glaube nicht, dass…"),
+      p("De ahí que sea…", "Por lo tanto es…", "De ahí que… почти всегда сослагательное", "De ahí que… almost always takes subjunctive", "De ahí que… casi siempre subjuntivo", "De ahí que… fast immer Subjuntivo"),
     ],
   },
   "dele-expresion-oral": {
@@ -686,8 +686,8 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "Die volle Theorie ist C2; hier nur Monolog-Phrasen.",
     ),
     pairs: [
-      p("Es su madre.", "Será su madre.", "факт vs гипотеза на фото", "fact vs photo guess", "hecho vs hipótesis", "Fakt vs. Foto-Hypothese"),
-      p("Estoy de acuerdo.", "No creo que sea así.", "согласие vs несогласие+subj", "agree vs disagree+subj", "acuerdo vs desacuerdo+subj", "Zustimmung vs. Widerspruch+Subj."),
+      p("Es su madre.", "Será su madre.", "уверен vs «наверное…» по фото", "sure vs “probably…” about the photo", "seguro vs «probablemente…» en la foto", "sicher vs. «wahrscheinlich…» zum Foto"),
+      p("Estoy de acuerdo.", "No creo que sea así.", "согласен vs не согласен (меняется форма)", "I agree vs I disagree (form changes)", "de acuerdo vs no estoy de acuerdo", "einverstanden vs. nicht einverstanden"),
     ],
   },
 
@@ -706,8 +706,8 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "ir a + inf ist schon A2.",
     ),
     pairs: [
-      p("Acabo de llegar.", "Llevo dos horas esperando.", "только что vs длительность до сейчас", "just vs duration up to now", "justo vs duración", "gerade vs. Dauer bis jetzt"),
-      p("Debe estudiar.", "Debe de ser tarde.", "должен vs вероятно", "must (duty) vs probably", "obligación vs probabilidad", "Pflicht vs. Wahrscheinlichkeit"),
+      p("Acabo de llegar.", "Llevo dos horas esperando.", "только что vs уже столько жду", "just now vs I’ve been waiting this long", "acabo de vs llevo… esperando", "gerade eben vs. ich warte schon so lange"),
+      p("Debe estudiar.", "Debe de ser tarde.", "должен (обязанность) vs наверное", "must (duty) vs probably", "debe (obligación) vs debe de (probabilidad)", "muss (Pflicht) vs. wahrscheinlich"),
     ],
   },
   "c1-matices-estilisticos": {
@@ -724,8 +724,8 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "aunque llueve/llueva — Subjuntivo fein. Drei si — B2.",
     ),
     pairs: [
-      p("¿Puedes abrir?", "¿Te importaría abrir?", "прямо vs дистанция", "direct vs distant", "directo vs distancia", "direkt vs. Distanz"),
-      p("¿Qué tal?", "¿Cómo está usted?", "informal vs formal", "informal vs formal", "informal vs formal", "informell vs. formell"),
+      p("¿Puedes abrir?", "¿Te importaría abrir?", "прямо vs мягче / вежливее", "direct vs softer / more polite", "directo vs más cortés", "direkt vs. höflicher"),
+      p("¿Qué tal?", "¿Cómo está usted?", "на «ты» vs на «вы»", "tú vs usted", "tú vs usted", "du vs. Sie"),
     ],
   },
   "c1-subjuntivo-avanzado": {
@@ -742,8 +742,8 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "Die Bildung ist B1. Keine Tabellen nochmal.",
     ),
     pairs: [
-      p("Aunque llueve, salgo.", "Aunque llueva, saldré.", "факт vs даже если", "fact vs even if", "hecho vs aunque hipotético", "Fakt vs. selbst wenn"),
-      p("Busco a alguien que habla ruso.", "Busco a alguien que hable ruso.", "знаю что есть vs не уверен", "I know they exist vs not sure", "sé que existe vs no estoy seguro", "ich weiß, dass es sie gibt vs. unsicher"),
+      p("Aunque llueve, salgo.", "Aunque llueva, saldré.", "хотя идёт дождь (факт) vs даже если пойдёт", "although it’s raining (fact) vs even if it rains", "aunque llueve (hecho) vs aunque llueva", "obwohl es regnet vs. selbst wenn es regnet"),
+      p("Busco a alguien que habla ruso.", "Busco a alguien que hable ruso.", "знаю, что такой есть vs ищу кого угодно", "I know such a person exists vs I’m looking for anyone", "sé que existe vs busco a cualquiera", "ich weiß, dass es so jemanden gibt vs. ich suche irgendwen"),
     ],
   },
   "c1-indirecto-avanzado": {
@@ -760,7 +760,7 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "Das einfache dijo que ist B2.",
     ),
     pairs: [
-      p("Hoy vengo.", "Dijo que aquel día venía.", "указатель времени сдвигается", "time word shifts", "el deíctico cambia", "Zeitwort verschiebt sich"),
+      p("Hoy vengo.", "Dijo que aquel día venía.", "«сегодня» при пересказе → «в тот день»", "“today” becomes “that day” when retelling", "«hoy» al contar → «aquel día»", "«heute» beim Erzählen → «an jenem Tag»"),
     ],
   },
   "c1-pronombres-avanzado": {
@@ -849,8 +849,8 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "hablaré morgen ist A2.",
     ),
     pairs: [
-      p("Mañana serán las diez cuando llegue.", "Serán las diez (ahora).", "будущее-факт vs догадка о сейчас", "future fact vs guess about now", "futuro vs conjetura", "Zukunft vs. Vermutung jetzt"),
-      p("Habrá mil personas.", "Habría mil personas.", "предположение vs слух/дистанция", "guess vs rumor/distance", "suposición vs rumor", "Vermutung vs. Gerücht"),
+      p("Mañana serán las diez cuando llegue.", "Serán las diez (ahora).", "завтра к десяти vs «сейчас, наверное, десять»", "tomorrow by ten vs “it’s probably ten now”", "mañana a las diez vs «ahora serán las diez»", "morgen um zehn vs. «es sind wohl zehn»"),
+      p("Habrá mil personas.", "Habría mil personas.", "полагаю vs «говорят / якобы»", "I guess vs “they say / allegedly”", "supongo vs «se dice / habría…»", "ich vermute vs. «man sagt / angeblich»"),
     ],
   },
   "c2-estilo-culto": {
@@ -867,7 +867,7 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "Normale Nebensätze sind B1.",
     ),
     pairs: [
-      p("Cuando terminó la reunión, nos fuimos.", "Terminada la reunión, nos fuimos.", "разговор vs культ", "spoken vs cultivated", "oral vs culto", "mündlich vs. gebildet"),
+      p("Cuando terminó la reunión, nos fuimos.", "Terminada la reunión, nos fuimos.", "как в речи vs коротко «по-книжному»", "as in speech vs short “bookish” style", "como se habla vs estilo culto breve", "wie man spricht vs. knapper Bildungston"),
     ],
   },
 };
@@ -878,10 +878,10 @@ export const GRAMMAR_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
 };
 
 const PAIR_HEAD: I18n = {
-  ru: "Разница",
-  en: "Difference",
-  es: "Diferencia",
-  de: "Unterschied",
+  ru: "В чём разница",
+  en: "What's the difference",
+  es: "En qué se diferencian",
+  de: "Worin liegt der Unterschied",
 };
 
 export function renderGrammarLevelFrame(

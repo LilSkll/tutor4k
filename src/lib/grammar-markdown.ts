@@ -6,6 +6,11 @@ export type GrammarRulePage = {
 };
 
 const PAIR_TITLES = new Set([
+  "Сравни примеры",
+  "Compare the examples",
+  "Compara los ejemplos",
+  "Beispiele vergleichen",
+  // legacy titles (already-rendered content)
   "Минимальные пары",
   "Minimal pairs",
   "Pares mínimos",

@@ -47,7 +47,7 @@ export const ENGLISH_LEVEL_FRAMES: Record<
   "eng-a1-questions": {
     here: t("A1: Wh- + do/does/is.", "A1: Wh- + do/does/is.", "A1: Wh- + do/does/is.", "A1: Wh- + do/does/is."),
     later: t("Косвенные вопросы (I asked where…) — B1 reported.", "Indirect questions — B1 reported speech.", "Preguntas indirectas — B1.", "Indirekte Fragen — B1."),
-    pairs: [p("Where do you live?", "Where you live?", "нужен do vs калька", "need do vs calque", "hace falta do", "do ist nötig")],
+    pairs: [p("Where do you live?", "Where you live?", "нужен do vs дословный перевод без do", "you need do vs word-for-word without do", "hace falta do vs calco sin do", "do ist nötig vs. wörtlich ohne do")],
   },
   "eng-a1-prepositions": {
     here: t("A1: in / on / at места.", "A1: in / on / at for place.", "A1: in / on / at de lugar.", "A1: in / on / at für Ort."),
@@ -142,7 +142,7 @@ export const ENGLISH_LEVEL_FRAMES: Record<
   "eng-b2-conditionals": {
     here: t("B2: 2nd и 3rd. If I were / If I had studied.", "B2: 2nd and 3rd. If I were / If I had studied.", "B2: 2.º y 3.º.", "B2: 2. und 3."),
     later: t("Mixed — C1. Zero/1st — B1.", "Mixed is C1. Zero/1st are B1.", "Mixtos — C1. 0/1 — B1.", "Gemischte — C1. 0/1 — B1."),
-    pairs: [p("If I had money, I would travel.", "If I had studied, I would have passed.", "ирреал сейчас vs прошлое", "unreal now vs past", "irreal ahora vs pasado", "irreal jetzt vs. Vergangenheit")],
+    pairs: [p("If I had money, I would travel.", "If I had studied, I would have passed.", "если бы сейчас vs если бы в прошлом", "if only now vs if only in the past", "si fuera ahora vs si hubiera sido", "wenn es jetzt so wäre vs. wenn es früher so gewesen wäre")],
   },
   "eng-b2-passive": {
     here: t("B2: be + V3 по временам; by.", "B2: be + V3 across tenses; by.", "B2: be + V3; by.", "B2: be + V3; by."),
