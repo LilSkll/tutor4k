@@ -397,10 +397,10 @@ const ru: Dictionary = {
   "chapters.open": "Открыть",
   "chapters.resetBtn": "Начать путь заново",
   "chapters.resetConfirmTitle": "Сбросить прогресс путешествия?",
-  "chapters.resetConfirmBody": "Весь прогресс по главам курса «{course}» будет удалён, и путешествие начнётся с первой главы. Словарь, история чата и профиль обучения сохранятся. Это действие нельзя отменить.",
+  "chapters.resetConfirmBody": "Весь прогресс по главам курса «{course}» будет удалён, и путешествие начнётся с первой главы. Словарь, история чата, профиль обучения и грамоты (глав / уровней / курса) в паспорте сохранятся. Это действие нельзя отменить.",
   "chapters.resetCancel": "Отмена",
   "chapters.resetConfirm": "Сбросить прогресс",
-  "chapters.resetSuccess": "Прогресс сброшен — путешествие начинается заново!",
+  "chapters.resetSuccess": "Прогресс сброшен — путешествие начинается заново! Грамоты в паспорте на месте.",
   "chapters.resetFail": "Не удалось сбросить прогресс. Попробуйте ещё раз.",
   "auth.emailConfirmed": "Почта подтверждена — вы уже в системе. Можно заниматься.",
   "auth.emailConfirmedTeacher": "Почта подтверждена — вы уже в Teacher Studio.",
@@ -670,6 +670,10 @@ const ru: Dictionary = {
   "journey.courseCertAchievement": "Полный курс",
   "journey.levelCertAchievement": "Уровень {level}",
   "journey.certificatesHeading": "Грамоты",
+  "journey.certsSurviveReset":
+    "Грамоты и находки остаются в паспорте даже после «Начать путь заново».",
+  "journey.chapterCertsLead": "Грамоты глав: {count}",
+  "journey.chapterCertPick": "Выбери главу",
 };
 
 const en: Dictionary = {
@@ -898,10 +902,10 @@ const en: Dictionary = {
   "chapters.open": "Open",
   "chapters.resetBtn": "Restart the journey",
   "chapters.resetConfirmTitle": "Reset journey progress?",
-  "chapters.resetConfirmBody": "All chapter progress for the “{course}” course will be deleted and the journey will start again from chapter one. Your vocabulary, chat history and learning profile are kept. This cannot be undone.",
+  "chapters.resetConfirmBody": "All chapter progress for the “{course}” course will be deleted and the journey will start again from chapter one. Your vocabulary, chat history, learning profile, and certificates (chapter / level / course) in the passport are kept. This cannot be undone.",
   "chapters.resetCancel": "Cancel",
   "chapters.resetConfirm": "Reset progress",
-  "chapters.resetSuccess": "Progress reset — the journey begins anew!",
+  "chapters.resetSuccess": "Progress reset — the journey begins anew! Your certificates stay in the passport.",
   "chapters.resetFail": "Could not reset progress. Please try again.",
   "auth.emailConfirmed": "Email confirmed — you’re signed in. You can start studying.",
   "auth.emailConfirmedTeacher": "Email confirmed — you’re in Teacher Studio.",
@@ -1318,6 +1322,10 @@ const en: Dictionary = {
   "journey.courseCertAchievement": "Full course",
   "journey.levelCertAchievement": "Level {level}",
   "journey.certificatesHeading": "Certificates",
+  "journey.certsSurviveReset":
+    "Certificates and finds stay in your passport even after “Restart the journey”.",
+  "journey.chapterCertsLead": "Chapter certificates: {count}",
+  "journey.chapterCertPick": "Choose a chapter",
 };
 
 const es: Dictionary = {
@@ -1546,10 +1554,10 @@ const es: Dictionary = {
   "chapters.open": "Abrir",
   "chapters.resetBtn": "Reiniciar el viaje",
   "chapters.resetConfirmTitle": "¿Reiniciar el progreso del viaje?",
-  "chapters.resetConfirmBody": "Se eliminará todo el progreso de los capítulos del curso «{course}» y el viaje comenzará de nuevo desde el primer capítulo. Tu vocabulario, historial de chat y perfil de aprendizaje se conservarán. Esta acción no se puede deshacer.",
+  "chapters.resetConfirmBody": "Se eliminará todo el progreso de los capítulos del curso «{course}» y el viaje comenzará de nuevo desde el primer capítulo. Tu vocabulario, historial de chat, perfil de aprendizaje y certificados (capítulo / nivel / curso) en el pasaporte se conservarán. Esta acción no se puede deshacer.",
   "chapters.resetCancel": "Cancelar",
   "chapters.resetConfirm": "Reiniciar progreso",
-  "chapters.resetSuccess": "Progreso reiniciado: ¡el viaje comienza de nuevo!",
+  "chapters.resetSuccess": "Progreso reiniciado: ¡el viaje comienza de nuevo! Tus certificados siguen en el pasaporte.",
   "chapters.resetFail": "No se pudo reiniciar el progreso. Inténtalo de nuevo.",
   "auth.emailConfirmed": "Correo confirmado — ya estás dentro. Puedes empezar a estudiar.",
   "auth.emailConfirmedTeacher": "Correo confirmado — ya estás en Teacher Studio.",
@@ -1966,6 +1974,10 @@ const es: Dictionary = {
   "journey.courseCertAchievement": "Curso completo",
   "journey.levelCertAchievement": "Nivel {level}",
   "journey.certificatesHeading": "Certificados",
+  "journey.certsSurviveReset":
+    "Los certificados y hallazgos permanecen en el pasaporte aunque reinicies el viaje.",
+  "journey.chapterCertsLead": "Certificados de capítulos: {count}",
+  "journey.chapterCertPick": "Elige un capítulo",
 };
 
 const de: Dictionary = {

@@ -287,6 +287,15 @@ export function getEggById(id: string): EasterEggDef | undefined {
   return EASTER_EGGS.find((e) => e.id === id);
 }
 
+export type ChapterCertRecord = {
+  slug: string;
+  level: GrammarLevel;
+  number: number;
+  title: string;
+  titleNative: string;
+  at: string;
+};
+
 export type JourneyCourseFinds = {
   eggs: Array<{
     id: string;
@@ -294,7 +303,10 @@ export type JourneyCourseFinds = {
     chapterSlug: string;
     at: string;
   }>;
+  /** @deprecated Prefer chapterCerts — kept for older saved profiles. */
   chapterBadges: string[];
+  /** Chapter completion certificates — persist across journey progress reset. */
+  chapterCerts: ChapterCertRecord[];
   levelCerts: GrammarLevel[];
   courseCertAt?: string | null;
 };
@@ -305,7 +317,37 @@ export function emptyCourseFinds(): JourneyCourseFinds {
   return {
     eggs: [],
     chapterBadges: [],
+    chapterCerts: [],
     levelCerts: [],
     courseCertAt: null,
+  };
+}
+
+/** Merge legacy chapterBadges into chapterCerts when reading a store slice. */
+export function normalizeCourseFinds(raw: JourneyCourseFinds | undefined | null): JourneyCourseFinds {
+  const base = emptyCourseFinds();
+  if (!raw || typeof raw !== "object") return base;
+  const chapterCerts = Array.isArray(raw.chapterCerts) ? [...raw.chapterCerts] : [];
+  const badges = Array.isArray(raw.chapterBadges) ? [...raw.chapterBadges] : [];
+  const known = new Set(chapterCerts.map((c) => c.slug));
+  for (const slug of badges) {
+    if (!known.has(slug)) {
+      chapterCerts.push({
+        slug,
+        level: "A1",
+        number: 0,
+        title: slug,
+        titleNative: slug,
+        at: new Date(0).toISOString(),
+      });
+      known.add(slug);
+    }
+  }
+  return {
+    eggs: Array.isArray(raw.eggs) ? [...raw.eggs] : [],
+    chapterBadges: badges,
+    chapterCerts,
+    levelCerts: Array.isArray(raw.levelCerts) ? [...raw.levelCerts] : [],
+    courseCertAt: raw.courseCertAt ?? null,
   };
 }

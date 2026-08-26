@@ -5,7 +5,9 @@ import { getCourse } from "@/config/courses";
 /**
  * POST /api/chapters/reset
  * Deletes the current user's journey progress for the ACTIVE course only.
- * Vocabulary, chat history and the learning profile are not touched.
+ * Vocabulary, chat history, learning profile, and journey_finds (chapter /
+ * level / course certificates + easter eggs) are NOT touched — students can
+ * restart the path and keep earned certificates in /journey.
  */
 export async function POST() {
   try {

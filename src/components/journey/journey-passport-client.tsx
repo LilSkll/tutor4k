@@ -1,5 +1,6 @@
 "use client";
 
+import * as React from "react";
 import Link from "next/link";
 import { Stamp, Sparkles } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,6 +10,7 @@ import { cn } from "@/lib/utils";
 import { CompletionCertificateCard } from "@/components/journey/completion-certificate-card";
 import {
   localizeEggText,
+  type ChapterCertRecord,
   type EasterEggDef,
 } from "@/config/journey/easter-eggs";
 import type { GrammarLevel } from "@/types";
@@ -21,7 +23,10 @@ export type PassportChapter = {
   title: string;
   titleNative: string;
   level: GrammarLevel;
+  /** Current run progress (cleared on journey reset). */
   completed: boolean;
+  /** Earned chapter certificate — survives journey reset. */
+  hasCertificate: boolean;
   hasSpecialStamp: boolean;
 };
 
@@ -32,6 +37,7 @@ export function JourneyPassportClient({
   userName,
   chapters,
   foundEggs,
+  chapterCerts,
   levelCerts,
   courseCertAt,
 }: {
@@ -41,6 +47,7 @@ export function JourneyPassportClient({
   userName: string;
   chapters: PassportChapter[];
   foundEggs: EasterEggDef[];
+  chapterCerts: ChapterCertRecord[];
   levelCerts: GrammarLevel[];
   courseCertAt: string | null;
 }) {
@@ -48,10 +55,40 @@ export function JourneyPassportClient({
   const t = (key: string, vars?: Record<string, string | number>) =>
     translate(key, language, vars);
 
+  const sortedChapterCerts = React.useMemo(
+    () =>
+      [...chapterCerts].sort((a, b) => {
+        if (a.number && b.number) return a.number - b.number;
+        return a.slug.localeCompare(b.slug);
+      }),
+    [chapterCerts],
+  );
+
+  const [selectedChapterSlug, setSelectedChapterSlug] = React.useState(
+    sortedChapterCerts[0]?.slug ?? "",
+  );
+
+  React.useEffect(() => {
+    if (
+      sortedChapterCerts.length > 0 &&
+      !sortedChapterCerts.some((c) => c.slug === selectedChapterSlug)
+    ) {
+      setSelectedChapterSlug(sortedChapterCerts[0].slug);
+    }
+  }, [sortedChapterCerts, selectedChapterSlug]);
+
+  const selectedChapterCert =
+    sortedChapterCerts.find((c) => c.slug === selectedChapterSlug) ??
+    sortedChapterCerts[0] ??
+    null;
+
   const byLevel = JOURNEY_LEVELS.map((level) => ({
     level,
     items: chapters.filter((c) => c.level === level),
   })).filter((g) => g.items.length > 0);
+
+  const hasAnyCert =
+    sortedChapterCerts.length > 0 || levelCerts.length > 0 || Boolean(courseCertAt);
 
   return (
     <div className="mx-auto max-w-3xl space-y-6 py-6">
@@ -62,6 +99,9 @@ export function JourneyPassportClient({
         </h1>
         <p className="mt-2 text-muted-foreground">
           {t("journey.passportLead", { course: courseTitle })}
+        </p>
+        <p className="mt-1 text-xs text-muted-foreground">
+          {t("journey.certsSurviveReset")}
         </p>
       </div>
 
@@ -74,7 +114,7 @@ export function JourneyPassportClient({
         </CardHeader>
         <CardContent className="space-y-5">
           {byLevel.map(({ level, items }) => {
-            const done = items.filter((i) => i.completed).length;
+            const stamped = items.filter((i) => i.hasCertificate || i.completed).length;
             const levelDone = levelCerts.includes(level);
             return (
               <div key={level}>
@@ -88,28 +128,34 @@ export function JourneyPassportClient({
                     ) : null}
                   </p>
                   <p className="text-xs text-muted-foreground">
-                    {done}/{items.length}
+                    {stamped}/{items.length}
                   </p>
                 </div>
                 <div className="flex flex-wrap gap-2">
-                  {items.map((ch) => (
-                    <Link
-                      key={ch.slug}
-                      href={`/chapters/${ch.slug}?courseId=${encodeURIComponent(courseId)}`}
-                      title={ch.titleNative || ch.title}
-                      className={cn(
-                        "relative flex h-11 w-11 items-center justify-center rounded-full border text-xs font-semibold transition",
-                        ch.completed
-                          ? "border-amber-700/50 bg-amber-100/80 text-amber-950 shadow-sm"
-                          : "border-dashed border-border/70 bg-muted/30 text-muted-foreground/50",
-                      )}
-                    >
-                      {ch.completed ? "✓" : "·"}
-                      {ch.hasSpecialStamp ? (
-                        <span className="absolute -right-0.5 -top-0.5 text-[10px]">✦</span>
-                      ) : null}
-                    </Link>
-                  ))}
+                  {items.map((ch) => {
+                    const earned = ch.hasCertificate || ch.completed;
+                    return (
+                      <Link
+                        key={ch.slug}
+                        href={`/chapters/${ch.slug}?courseId=${encodeURIComponent(courseId)}`}
+                        title={ch.titleNative || ch.title}
+                        className={cn(
+                          "relative flex h-11 w-11 items-center justify-center rounded-full border text-xs font-semibold transition",
+                          earned
+                            ? "border-amber-700/50 bg-amber-100/80 text-amber-950 shadow-sm"
+                            : "border-dashed border-border/70 bg-muted/30 text-muted-foreground/50",
+                          ch.hasCertificate && !ch.completed
+                            ? "ring-1 ring-emerald-500/40"
+                            : null,
+                        )}
+                      >
+                        {earned ? "✓" : "·"}
+                        {ch.hasSpecialStamp ? (
+                          <span className="absolute -right-0.5 -top-0.5 text-[10px]">✦</span>
+                        ) : null}
+                      </Link>
+                    );
+                  })}
                 </div>
               </div>
             );
@@ -117,9 +163,62 @@ export function JourneyPassportClient({
         </CardContent>
       </Card>
 
-      {(levelCerts.length > 0 || courseCertAt) && (
+      {hasAnyCert ? (
         <div className="space-y-4">
           <h2 className="text-lg font-semibold">{t("journey.certificatesHeading")}</h2>
+
+          {sortedChapterCerts.length > 0 && selectedChapterCert ? (
+            <div className="space-y-3">
+              <p className="text-sm text-muted-foreground">
+                {t("journey.chapterCertsLead", { count: sortedChapterCerts.length })}
+              </p>
+              <label className="block space-y-1.5">
+                <span className="text-xs font-medium text-muted-foreground">
+                  {t("journey.chapterCertPick")}
+                </span>
+                <select
+                  className="flex h-10 w-full rounded-md border border-input bg-background px-3 text-sm"
+                  value={selectedChapterCert.slug}
+                  onChange={(e) => setSelectedChapterSlug(e.target.value)}
+                >
+                  {sortedChapterCerts.map((c) => (
+                    <option key={c.slug} value={c.slug}>
+                      {c.number
+                        ? t("journey.chapterLine", {
+                            number: c.number,
+                            title: c.titleNative || c.title,
+                          })
+                        : c.titleNative || c.title}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <CompletionCertificateCard
+                key={selectedChapterCert.slug}
+                userName={userName}
+                achievement={
+                  selectedChapterCert.number
+                    ? t("journey.chapterLine", {
+                        number: selectedChapterCert.number,
+                        title:
+                          selectedChapterCert.titleNative ||
+                          selectedChapterCert.title,
+                      })
+                    : selectedChapterCert.titleNative || selectedChapterCert.title
+                }
+                level={selectedChapterCert.level}
+                courseId={courseId}
+                downloadStem={`chapter-${selectedChapterCert.number || selectedChapterCert.slug}`}
+                completedAt={
+                  selectedChapterCert.at &&
+                  selectedChapterCert.at !== new Date(0).toISOString()
+                    ? new Date(selectedChapterCert.at)
+                    : new Date()
+                }
+              />
+            </div>
+          ) : null}
+
           {levelCerts.map((lvl) => (
             <CompletionCertificateCard
               key={lvl}
@@ -141,7 +240,7 @@ export function JourneyPassportClient({
             />
           ) : null}
         </div>
-      )}
+      ) : null}
 
       {foundEggs.length > 0 ? (
         <Card>

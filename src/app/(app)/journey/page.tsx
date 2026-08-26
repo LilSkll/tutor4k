@@ -4,6 +4,7 @@ import { createSupabaseServerClient } from "@/lib/supabase-server";
 import {
   emptyCourseFinds,
   getEggById,
+  normalizeCourseFinds,
   type JourneyFindsStore,
 } from "@/config/journey/easter-eggs";
 import { JourneyPassportClient } from "@/components/journey/journey-passport-client";
@@ -41,8 +42,25 @@ export default async function JourneyPage() {
     // column may be missing until migration
   }
 
-  const slice = findsStore[courseId] ?? emptyCourseFinds();
+  const slice = normalizeCourseFinds(findsStore[courseId] ?? emptyCourseFinds());
   const eggChapterSlugs = new Set(slice.eggs.map((e) => e.chapterSlug));
+  const certBySlug = new Map(slice.chapterCerts.map((c) => [c.slug, c]));
+
+  // Enrich legacy badge-only rows with live chapter metadata when possible.
+  const chapterCerts = slice.chapterCerts.map((cert) => {
+    const ch = chapters.find((c) => c.slug === cert.slug);
+    if (!ch) return cert;
+    return {
+      ...cert,
+      number: cert.number || ch.number,
+      level: cert.number ? cert.level : ch.level,
+      title: cert.title === cert.slug ? ch.title : cert.title,
+      titleNative:
+        cert.titleNative === cert.slug
+          ? ch.titleEs || ch.title
+          : cert.titleNative,
+    };
+  });
 
   const passportChapters = chapters.map((ch) => ({
     slug: ch.slug,
@@ -51,6 +69,7 @@ export default async function JourneyPage() {
     titleNative: ch.titleEs || ch.title,
     level: ch.level,
     completed: completed.has(ch.slug),
+    hasCertificate: certBySlug.has(ch.slug) || slice.chapterBadges.includes(ch.slug),
     hasSpecialStamp: eggChapterSlugs.has(ch.slug),
   }));
 
@@ -66,6 +85,7 @@ export default async function JourneyPage() {
       userName={profile?.name ?? ""}
       chapters={passportChapters}
       foundEggs={foundEggs}
+      chapterCerts={chapterCerts}
       levelCerts={slice.levelCerts ?? []}
       courseCertAt={slice.courseCertAt ?? null}
     />

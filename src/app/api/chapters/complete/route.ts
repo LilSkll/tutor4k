@@ -208,6 +208,10 @@ export async function POST(req: NextRequest) {
         courseId,
         chapterSlug: body.chapterSlug,
         chapterLevel: (resolvedChapter?.level ?? chapterLevel) as GrammarLevel,
+        chapterNumber: resolvedChapter?.number ?? 0,
+        chapterTitle: resolvedChapter?.title ?? body.chapterSlug,
+        chapterTitleNative:
+          resolvedChapter?.titleEs || resolvedChapter?.title || body.chapterSlug,
         scorePercent: body.score ?? 0,
         exercisesCompleted: body.exercisesCompleted ?? 0,
         isReplay,

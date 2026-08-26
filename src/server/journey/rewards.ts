@@ -2,6 +2,8 @@ import type { GrammarLevel } from "@/types";
 import {
   emptyCourseFinds,
   getEggById,
+  normalizeCourseFinds,
+  type ChapterCertRecord,
   type EasterEggDef,
   type JourneyCourseFinds,
   type JourneyFindsStore,
@@ -25,7 +27,7 @@ function courseSlice(
   store: JourneyFindsStore,
   courseId: string,
 ): JourneyCourseFinds {
-  return store[courseId] ?? emptyCourseFinds();
+  return normalizeCourseFinds(store[courseId] ?? emptyCourseFinds());
 }
 
 function eggPayload(
@@ -111,6 +113,9 @@ export async function awardChapterCompleteRewards(input: {
   courseId: string;
   chapterSlug: string;
   chapterLevel: GrammarLevel;
+  chapterNumber: number;
+  chapterTitle: string;
+  chapterTitleNative: string;
   scorePercent: number;
   exercisesCompleted: number;
   isReplay: boolean;
@@ -126,6 +131,9 @@ export async function awardChapterCompleteRewards(input: {
     courseId,
     chapterSlug,
     chapterLevel,
+    chapterNumber,
+    chapterTitle,
+    chapterTitleNative,
     scorePercent,
     exercisesCompleted,
     isReplay,
@@ -135,13 +143,27 @@ export async function awardChapterCompleteRewards(input: {
   } = input;
 
   const store = await loadJourneyFinds(client, userId);
-  const slice = { ...courseSlice(store, courseId) };
+  const slice = courseSlice(store, courseId);
   slice.eggs = [...(slice.eggs ?? [])];
   slice.chapterBadges = [...(slice.chapterBadges ?? [])];
+  slice.chapterCerts = [...(slice.chapterCerts ?? [])];
   slice.levelCerts = [...(slice.levelCerts ?? [])];
 
-  const badgeIsNew = !slice.chapterBadges.includes(chapterSlug);
-  if (badgeIsNew) slice.chapterBadges.push(chapterSlug);
+  const badgeIsNew = !slice.chapterCerts.some((c) => c.slug === chapterSlug);
+  if (badgeIsNew) {
+    const cert: ChapterCertRecord = {
+      slug: chapterSlug,
+      level: chapterLevel,
+      number: chapterNumber,
+      title: chapterTitle,
+      titleNative: chapterTitleNative,
+      at: new Date().toISOString(),
+    };
+    slice.chapterCerts.push(cert);
+    if (!slice.chapterBadges.includes(chapterSlug)) {
+      slice.chapterBadges.push(chapterSlug);
+    }
+  }
 
   const owned = new Set(slice.eggs.map((e) => e.id));
   const rolled = rollEasterEgg({
