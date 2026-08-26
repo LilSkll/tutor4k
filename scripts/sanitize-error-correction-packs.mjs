@@ -47,42 +47,6 @@ function isTokenDump(q) {
   return (String(q).match(/ \/? /g) ?? []).length >= 2;
 }
 
-function usableMC(ex) {
-  const q = cleanMarks(ex.question ?? "");
-  const a = cleanMarks(ex.answer ?? "");
-  const options = (ex.options ?? []).map(cleanMarks).filter(Boolean);
-  if (!q || !a) return null;
-  if (COMPLETA_STUB.test(q) || CYRILLIC.test(q) || isTokenDump(q)) return null;
-  if (INDEX_MARK.test(q) || HASH_N.test(q)) return null;
-  if (hasFakeX(a) || options.some(hasFakeX)) return null;
-  if (options.length < 2) return null;
-  return {
-    ...ex,
-    type: "multiple_choice",
-    question: q,
-    answer: a,
-    options: [...new Set([a, ...options.filter((o) => o !== a)])].slice(0, 4),
-  };
-}
-
-function usableFB(ex) {
-  const q = cleanMarks(ex.question ?? "");
-  const a = cleanMarks(ex.answer ?? "");
-  if (!q || !a || !/___+/.test(q)) return null;
-  if (COMPLETA_STUB.test(q) || /^(Completa|Complete)\b/i.test(q)) return null;
-  if (CYRILLIC.test(q) || INDEX_MARK.test(q) || HASH_N.test(q)) return null;
-  if (hasFakeX(a)) return null;
-  return {
-    ...ex,
-    type: "fill_blank",
-    question: q,
-    answer: a,
-    acceptableAnswers: (ex.acceptableAnswers ?? [])
-      .map(cleanMarks)
-      .filter((x) => x && !hasFakeX(x)),
-  };
-}
-
 function usableTR(ex) {
   const q = cleanMarks(ex.question ?? "");
   const a = cleanMarks(ex.answer ?? "");
@@ -90,6 +54,14 @@ function usableTR(ex) {
   if (COMPLETA_STUB.test(q) || COMPLETA_STUB.test(a)) return null;
   if (INDEX_MARK.test(q + a) || HASH_N.test(q + a)) return null;
   if (CYRILLIC.test(a) || hasFakeX(a)) return null;
+  if (/^(Возвратное|Безличное|Взаимное|Пассивн|Indicativo|Subjuntivo|Perfecto|Imperfecto|Condicional|Futuro|Ser\s*\/\s*Estar|Se reflexivo|Se impersonal|Se pasivo|Se accidental|Se prohibición|Исправьте|Выберите|Заполните|OD|OI|CD|CI|Cuyo|Pluscuamperfecto|Imperativo|Perífrasis|Estilo|Modal|Venir|Ojalá|Hacerse|Seguir|Estar por|Deber)/i.test(q)) {
+    return null;
+  }
+  const words = q.split(/\s+/).filter(Boolean);
+  const looksLikeSentence =
+    CYRILLIC.test(q) || /[.?!¿¡]/.test(q) || words.length >= 5;
+  if (!looksLikeSentence) return null;
+  if (a.length <= 3 && /^(se|lo|la|le|me|te|nos|os)$/i.test(a)) return null;
   return {
     ...ex,
     type: "translation",
@@ -98,6 +70,63 @@ function usableTR(ex) {
     acceptableAnswers: (ex.acceptableAnswers ?? [])
       .map(cleanMarks)
       .filter((x) => x && !CYRILLIC.test(x) && !hasFakeX(x)),
+  };
+}
+
+function usableFB(ex) {
+  const q = cleanMarks(ex.question ?? "");
+  const a = cleanMarks(ex.answer ?? "");
+  const inst = (ex.instruction ?? "").trim();
+  if (!q || !a || !/___+/.test(q)) return null;
+  if (COMPLETA_STUB.test(q) || /^(Completa|Complete)\b/i.test(q)) return null;
+  if (CYRILLIC.test(q) || INDEX_MARK.test(q) || HASH_N.test(q)) return null;
+  if (hasFakeX(a)) return null;
+  if (/^(Возвратное|Взаимное|Безличное)\b/i.test(inst)) return null;
+  if (a.length <= 4 && new RegExp(`(^|[^\\p{L}])${a.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\$&")}([^\\p{L}]|$)`, "iu").test(inst)) {
+    return null;
+  }
+  return {
+    ...ex,
+    type: "fill_blank",
+    question: q,
+    answer: a,
+    instruction: /^(Возвратное|Взаимное|Безличное)\b/i.test(inst)
+      ? "Вставьте пропущенное слово"
+      : ex.instruction,
+    acceptableAnswers: (ex.acceptableAnswers ?? [])
+      .map(cleanMarks)
+      .filter((x) => x && !hasFakeX(x)),
+  };
+}
+
+function usableMC(ex) {
+  const q = cleanMarks(ex.question ?? "");
+  const a = cleanMarks(ex.answer ?? "");
+  const inst = (ex.instruction ?? "").trim();
+  const options = (ex.options ?? []).map(cleanMarks).filter(Boolean);
+  if (!q || !a) return null;
+  if (COMPLETA_STUB.test(q) || isTokenDump(q)) return null;
+  if (INDEX_MARK.test(q) || HASH_N.test(q)) return null;
+  if (CYRILLIC.test(q) && !/[a-záéíóúñü«]/i.test(q)) return null;
+  if (hasFakeX(a) || options.some(hasFakeX)) return null;
+  if (options.length < 2) return null;
+  if (!/___+/.test(q) && !/[?？]/.test(q) && !/«/.test(q)) return null;
+  let instruction = ex.instruction;
+  if (/^(Возвратное|Взаимное|Безличное)\b/i.test(inst)) {
+    instruction = "Вставьте нужное слово";
+  } else if (
+    a.length <= 4 &&
+    new RegExp(`(^|[^\\p{L}])${a.replace(/[.*+?^${}()|[\\]\\\\]/g, "\\$&")}([^\\p{L}]|$)`, "iu").test(inst)
+  ) {
+    instruction = "Выберите правильный ответ";
+  }
+  return {
+    ...ex,
+    type: "multiple_choice",
+    question: q,
+    answer: a,
+    instruction,
+    options: [...new Set([a, ...options.filter((o) => o !== a)])].slice(0, 4),
   };
 }
 

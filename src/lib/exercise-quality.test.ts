@@ -4,6 +4,7 @@ import {
   isUsableErrorCorrection,
   isUsableFillBlank,
   isUsableMultipleChoice,
+  isUsableTranslation,
   stripExerciseIndexMarks,
 } from "@/lib/exercise-quality";
 
@@ -71,6 +72,42 @@ describe("isUsableFillBlank", () => {
         answer: "El",
       }),
     ).toBe(false);
+  });
+
+  it("rejects instructions that name the answer", () => {
+    expect(
+      isUsableFillBlank({
+        question: "María ___ levanta a las siete.",
+        answer: "se",
+        instruction: "Возвратное se",
+      }),
+    ).toBe(false);
+  });
+});
+
+describe("isUsableTranslation", () => {
+  it("rejects grammar-label prompts", () => {
+    expect(
+      isUsableTranslation({
+        question: "Возвратное se",
+        answer: "María se levanta a las siete.",
+      }),
+    ).toBe(false);
+    expect(
+      isUsableTranslation({
+        question: "Se reflexivo",
+        answer: "Se levanta a las siete",
+      }),
+    ).toBe(false);
+  });
+
+  it("accepts a real L1 sentence", () => {
+    expect(
+      isUsableTranslation({
+        question: "Она встаёт в семь часов.",
+        answer: "Se levanta a las siete",
+      }),
+    ).toBe(true);
   });
 });
 

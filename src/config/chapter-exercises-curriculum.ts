@@ -87,7 +87,7 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "___ habla español en esta región.",
-      "instruction": "Безличное / пассивное se",
+      "instruction": "Вставьте нужное слово в начало",
       "options": [
         "Se",
         "Me",
@@ -95,24 +95,24 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
         "Le"
       ],
       "answer": "Se",
-      "explanation": "Se habla español — безличная/пассивная конструкция.",
+      "explanation": "Se habla español — «здесь говорят по-испански».",
       "grammarTopic": "pronombre-se"
     },
     {
       "type": "fill_blank",
       "question": "María ___ levanta a las siete.",
-      "instruction": "Возвратное se",
+      "instruction": "Вставьте пропущенное слово",
       "answer": "se",
       "acceptableAnswers": [
         "Se"
       ],
-      "explanation": "Reflexivo: María se levanta.",
+      "explanation": "María se levanta — встаёт (действие на себя).",
       "grammarTopic": "pronombre-se"
     },
     {
       "type": "multiple_choice",
       "question": "«Se me rompió el vaso» выражает…",
-      "instruction": "Тип конструкции se",
+      "instruction": "Что передаёт эта конструкция?",
       "options": [
         "случайность",
         "приказ",
@@ -120,19 +120,19 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
         "сравнение"
       ],
       "answer": "случайность",
-      "explanation": "Se + косв. местоимение + глагол — непреднамеренное действие.",
+      "explanation": "Se me rompió — «у меня разбился» (не специально).",
       "grammarTopic": "pronombre-se"
     },
     {
       "type": "translation",
       "question": "Здесь продаются книги.",
-      "instruction": "Переведите с se pasiva",
+      "instruction": "Переведите на испанский",
       "answer": "Se venden libros aquí",
       "acceptableAnswers": [
         "se venden libros aquí",
         "Aquí se venden libros"
       ],
-      "explanation": "Se venden libros — пассивная/refleja.",
+      "explanation": "Se venden libros — «книги продаются / здесь продают книги».",
       "grammarTopic": "pronombre-se"
     },
     {
@@ -149,12 +149,36 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "fill_blank",
       "question": "Ana y Luis ___ ven cada día.",
-      "instruction": "Взаимное se",
+      "instruction": "Вставьте пропущенное слово",
       "answer": "se",
       "acceptableAnswers": [
         "Se"
       ],
-      "explanation": "Recíproco: se ven = видят друг друга.",
+      "explanation": "Se ven = видят друг друга.",
+      "grammarTopic": "pronombre-se"
+    },
+    {
+      "type": "translation",
+      "question": "Она встаёт в семь часов.",
+      "instruction": "Переведите на испанский",
+      "answer": "Se levanta a las siete",
+      "acceptableAnswers": [
+        "Ella se levanta a las siete",
+        "Se levanta a las siete."
+      ],
+      "explanation": "Levantarse → se levanta.",
+      "grammarTopic": "pronombre-se"
+    },
+    {
+      "type": "translation",
+      "question": "Мне забылось имя. / Я забыл имя (случайно).",
+      "instruction": "Переведите на испанский",
+      "answer": "Se me olvidó el nombre",
+      "acceptableAnswers": [
+        "Se me olvidó el nombre.",
+        "Se me ha olvidado el nombre"
+      ],
+      "explanation": "Se me olvidó — «у меня забылось», не специально.",
       "grammarTopic": "pronombre-se"
     }
   ],
