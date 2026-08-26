@@ -1451,7 +1451,7 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       instruction: "Внимание: предлог повторяется",
       options: ["con quien", "que", "quien", "cual"],
       answer: "con quien",
-      explanation: "Предлог повторяется: Es CON ella CON quien… «Es con ella que» — калька, избегается.",
+      explanation: "Предлог повторяется: Es CON ella CON quien… «Es con ella que» — так по-французски, в испанском так не говорят.",
     },
     {
       type: "multiple_choice",
