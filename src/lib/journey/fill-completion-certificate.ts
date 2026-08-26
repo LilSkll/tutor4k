@@ -1,6 +1,13 @@
 /**
  * Fill the branded completion certificate template (1024×723) with student data.
  * Client-only (uses Canvas + Image).
+ *
+ * Layout calibrated against public/certificates/completion-template.png:
+ * - Gold rule under name ≈ y 295
+ * - “has successfully completed” ≈ y 322–326
+ * - “CHAPTER / LEVEL” placeholder ≈ y 344–355
+ * - “in the course” ≈ y 391
+ * - Course title (“SPANISH WITH PAVEL” on art) ≈ y 405–414
  */
 
 export const CERTIFICATE_TEMPLATE_SRC = "/certificates/completion-template.png";
@@ -9,8 +16,8 @@ export const CERTIFICATE_HEIGHT = 723;
 
 /** Navy from the template artwork. */
 const INK = "#0a2540";
-/** Parchment sampled from blank area of the template. */
-const PARCHMENT = "#f3e7d0";
+/** Parchment sampled from blank area of the template (~244,232,210). */
+const PARCHMENT = "#f4e8d2";
 
 export type CompletionCertificateFields = {
   userName: string;
@@ -68,9 +75,54 @@ function fitCentered(
   return size;
 }
 
+/** Cover a parchment band so template placeholders never show through. */
+function coverBand(
+  ctx: CanvasRenderingContext2D,
+  x: number,
+  y: number,
+  w: number,
+  h: number,
+) {
+  ctx.fillStyle = PARCHMENT;
+  ctx.fillRect(x, y, w, h);
+}
+
+/**
+ * Split achievement into up to two centered lines when too wide.
+ * Prefers breaking after “—” / “–” / “·” (chapter number | title).
+ */
+export function splitAchievementLines(
+  measure: (text: string) => number,
+  text: string,
+  maxWidth: number,
+): string[] {
+  const trimmed = text.trim();
+  if (!trimmed) return [];
+  if (measure(trimmed) <= maxWidth) return [trimmed];
+
+  const dashBreak = trimmed.match(/^(.+?)\s*[—–·|]\s+(.+)$/);
+  if (dashBreak) {
+    const a = dashBreak[1].trim();
+    const b = dashBreak[2].trim();
+    if (a && b) return [a, b];
+  }
+
+  const words = trimmed.split(/\s+/);
+  if (words.length < 2) return [trimmed];
+
+  // Greedy pack of the first line; fitCentered will shrink if needed.
+  let take = 1;
+  while (
+    take < words.length - 1 &&
+    measure(words.slice(0, take + 1).join(" ")) <= maxWidth
+  ) {
+    take += 1;
+  }
+  return [words.slice(0, take).join(" "), words.slice(take).join(" ")];
+}
+
 /**
  * Draw filled certificate onto a canvas and return PNG data URL.
- * Layout calibrated against public/certificates/completion-template.png (1024×723).
  */
 export async function fillCompletionCertificate(
   fields: CompletionCertificateFields,
@@ -89,35 +141,53 @@ export async function fillCompletionCertificate(
   ctx.textBaseline = "middle";
   ctx.fillStyle = INK;
 
-  // ── Name (ornamental line under “THIS CERTIFIES THAT”, ~y 295) ────
+  // ── Name: blank band above the gold rule (~y 295) ─────────────────
+  // No parchment patch — template is empty here; keep glyphs above the rule.
   const name = fields.userName.trim() || "Student";
-  const nameSize = fitCentered(ctx, name, 520, 34, 18, italicFont);
+  const nameSize = fitCentered(ctx, name, 500, 36, 18, italicFont);
   ctx.font = italicFont(nameSize);
-  ctx.fillText(name, cx, 288);
-
-  // ── Achievement on CHAPTER / LEVEL line (~y 350) ──────────────────
-  const achievement = fields.achievement.trim();
-  // Soft-cover the gold “CHAPTER / LEVEL” label so the real title reads cleanly.
-  ctx.fillStyle = PARCHMENT;
-  ctx.fillRect(300, 358, 424, 22);
   ctx.fillStyle = INK;
-  const achSize = fitCentered(ctx, achievement, 560, 20, 13, boldFont);
-  ctx.font = boldFont(achSize);
-  ctx.fillText(achievement, cx, 350);
+  ctx.fillText(name, cx, 268);
 
-  // ── Language course under “in the course” (not the product brand) ─
-  ctx.fillStyle = PARCHMENT;
-  ctx.fillRect(180, 398, 664, 52);
+  // ── Achievement: fully cover “CHAPTER / LEVEL” (≈ y 344–355) ──────
+  const achievement = fields.achievement.trim();
+  const achMax = 520;
+  ctx.font = boldFont(18);
+  const lines = splitAchievementLines(
+    (t) => ctx.measureText(t).width,
+    achievement,
+    achMax,
+  );
+  if (lines.length <= 1) {
+    coverBand(ctx, 230, 336, 564, 38);
+    const line = lines[0] ?? "";
+    const achSize = fitCentered(ctx, line, achMax, 18, 12, boldFont);
+    ctx.font = boldFont(achSize);
+    ctx.fillStyle = INK;
+    ctx.fillText(line, cx, 354);
+  } else {
+    coverBand(ctx, 230, 328, 564, 52);
+    const size0 = fitCentered(ctx, lines[0], achMax, 16, 11, boldFont);
+    const size1 = fitCentered(ctx, lines[1], achMax, 16, 11, boldFont);
+    const size = Math.min(size0, size1);
+    ctx.font = boldFont(size);
+    ctx.fillStyle = INK;
+    ctx.fillText(lines[0], cx, 340);
+    ctx.fillText(lines[1], cx, 362);
+  }
+
+  // ── Language course: cover template “SPANISH WITH PAVEL” title ────
+  coverBand(ctx, 160, 396, 704, 62);
   ctx.fillStyle = INK;
   const courseSize = fitCentered(ctx, fields.courseLine, 580, 26, 16, boldFont);
   ctx.font = boldFont(courseSize);
-  ctx.fillText(fields.courseLine, cx, 422);
+  ctx.fillText(fields.courseLine, cx, 426);
 
-  // ── Date (bottom left) ────────────────────────────────────────────
+  // ── Date (bottom left, under DATE) ────────────────────────────────
   ctx.font = sansFont(12);
   ctx.fillText(fields.dateLabel, 212, 508);
 
-  // ── Level (bottom right) ──────────────────────────────────────────
+  // ── Level (bottom right, under LEVEL) ─────────────────────────────
   ctx.font = sansFont(14);
   ctx.fillText(fields.level, 812, 508);
 

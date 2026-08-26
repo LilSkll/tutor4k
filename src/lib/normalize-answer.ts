@@ -15,6 +15,7 @@ function foldSpanishChars(s: string): string {
 /** Strip punctuation and symbols that learners often omit on mobile keyboards. */
 function stripPunctuation(s: string): string {
   return s
+    .replace(/\s*\[\d+\]/g, "") // pack-generator index marks, if any remain
     .replace(/[¿?¡!.,;:'"«»„""''`´…]/g, "")
     .replace(/[-–—_/\\|]/g, " ")
     .replace(/\s+/g, " ")

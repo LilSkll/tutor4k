@@ -1,7 +1,13 @@
 import type { ExerciseType, StaticExercise } from "@/types";
 import { TARGET_EXERCISES_PER_TYPE } from "@/lib/exercise-bank";
+import { isUsableErrorCorrection } from "@/lib/exercise-quality";
 
 type Draft = Omit<StaticExercise, "id"> & { id?: string };
+
+function packItemOk(ex: Draft): boolean {
+  if (ex.type === "error_correction") return isUsableErrorCorrection(ex);
+  return Boolean(ex.question?.trim() && ex.answer?.trim());
+}
 
 /**
  * Expand a chapter bank toward TARGET_EXERCISES_PER_TYPE for every type.
@@ -26,6 +32,7 @@ export function expandChapterBank(
   };
 
   for (const ex of curated) {
+    if (!packItemOk(ex)) continue;
     byType[ex.type].push(ex);
   }
 
@@ -33,6 +40,7 @@ export function expandChapterBank(
     const pack = packs[type] ?? [];
     for (const ex of pack) {
       if (byType[type].length >= targetFor(type)) break;
+      if (!packItemOk(ex)) continue;
       const key = `${ex.type}|${ex.question.trim().toLowerCase()}`;
       if (seen.has(key)) continue;
       seen.add(key);
