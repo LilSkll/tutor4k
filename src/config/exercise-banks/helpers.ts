@@ -1,6 +1,9 @@
 import type { ExerciseType, StaticExercise } from "@/types";
 import { TARGET_EXERCISES_PER_TYPE } from "@/lib/exercise-bank";
-import { isUsableBankExercise } from "@/lib/exercise-quality";
+import {
+  isUsableBankExercise,
+  sanitizeBankExercise,
+} from "@/lib/exercise-quality";
 
 type Draft = Omit<StaticExercise, "id"> & { id?: string };
 
@@ -64,14 +67,15 @@ export function expandChapterBank(
   };
 
   const tryAdd = (ex: Draft): boolean => {
-    if (!packItemOk(ex)) return false;
-    const exact = `${ex.type}|${ex.question.trim().toLowerCase()}`;
+    const cleaned = sanitizeBankExercise(ex);
+    if (!cleaned || !packItemOk(cleaned)) return false;
+    const exact = `${cleaned.type}|${cleaned.question.trim().toLowerCase()}`;
     if (seenExact.has(exact)) return false;
-    const content = exerciseContentFingerprint(ex);
+    const content = exerciseContentFingerprint(cleaned);
     if (seenContent.has(content)) return false;
     seenExact.add(exact);
     seenContent.add(content);
-    byType[ex.type].push(ex);
+    byType[cleaned.type].push(cleaned);
     return true;
   };
 

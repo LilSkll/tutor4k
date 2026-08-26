@@ -1075,6 +1075,19 @@ export function hasCompletedPrereqChain(
   return true;
 }
 
+/**
+ * Slugs before the first chapter at `level` in curriculum order.
+ * Used to credit prior bands when the learner picks A2+ at onboarding.
+ */
+export function getPriorChapterSlugsForLevel(
+  chapters: { slug: string; level: string }[],
+  level: string,
+): string[] {
+  const idx = chapters.findIndex((c) => c.level === level);
+  if (idx <= 0) return [];
+  return chapters.slice(0, idx).map((c) => c.slug);
+}
+
 /** Infer course id from chapter slug when DB course_id is missing. */
 export function inferCourseIdFromChapterSlug(slug: string): string {
   if (slug.startsWith("eng-")) return "english";

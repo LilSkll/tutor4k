@@ -155,6 +155,56 @@ async function main() {
     failed ||= r.fatal;
   }
 
+  // Raw curated/supplements must pass the same quality gates as packs.
+  {
+    const { isUsableBankExercise, sanitizeBankExercise } = await import(
+      pathToFileURL(path.join(root, "src/lib/exercise-quality.ts")).href
+    );
+    const { SPANISH_CURATED_SUPPLEMENTS } = await import(
+      pathToFileURL(
+        path.join(root, "src/config/exercise-seeds/spanish-curated-supplements.ts"),
+      ).href
+    );
+    const { ENGLISH_CURATED_SUPPLEMENTS } = await import(
+      pathToFileURL(
+        path.join(root, "src/config/exercise-seeds/english-curated-supplements.ts"),
+      ).href
+    );
+
+    const checkSupplements = (label, data) => {
+      let bad = 0;
+      const samples = [];
+      for (const [slug, items] of Object.entries(data)) {
+        for (const ex of items) {
+          const cleaned = sanitizeBankExercise(ex);
+          if (!cleaned || !isUsableBankExercise(cleaned)) {
+            bad += 1;
+            if (samples.length < 8) {
+              samples.push({
+                slug,
+                type: ex.type,
+                q: String(ex.question ?? "").slice(0, 60),
+              });
+            }
+          }
+        }
+      }
+      console.log(`\n=== ${label} curated quality ===`);
+      console.log("Unusable items:", bad);
+      if (bad) {
+        for (const s of samples) console.log(" ", s);
+        failed = true;
+      }
+    };
+
+    if (courseFilter === "spanish" || courseFilter === "both") {
+      checkSupplements("SPANISH", SPANISH_CURATED_SUPPLEMENTS);
+    }
+    if (courseFilter === "english" || courseFilter === "both") {
+      checkSupplements("ENGLISH", ENGLISH_CURATED_SUPPLEMENTS);
+    }
+  }
+
   if (failed) {
     console.log("\n❌ Validation failed");
     process.exit(1);

@@ -14,6 +14,7 @@
     "build:exercise-i18n": "node scripts/build-spanish-translation-prompts.mjs && node scripts/build-spanish-sentence-glosses.mjs",
     "ingest": "tsx scripts/ingest-pdf.ts",
     "build:exercise-banks": "tsx scripts/build-curated-supplements.mjs && tsx scripts/generate-missing-exercise-packs.mjs",
+    "sanitize:curated": "tsx scripts/sanitize-curated-supplements.mjs",
     "audit:exercises": "tsx scripts/audit-exercise-coverage.mjs",
     "validate:exercises": "tsx scripts/validate-exercise-bank.mjs"
   },

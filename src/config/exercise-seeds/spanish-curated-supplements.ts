@@ -907,17 +907,6 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
     },
     {
       "type": "sentence_building",
-      "question": "Es / medianoche",
-      "options": [
-        "Es",
-        "medianoche"
-      ],
-      "answer": "Es medianoche",
-      "instruction": "Соберите полночь",
-      "explanation": "Es medianoche — без las."
-    },
-    {
-      "type": "sentence_building",
       "question": "Son / las / cinco / y / media",
       "options": [
         "Son",
@@ -3886,17 +3875,6 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
     },
     {
       "type": "sentence_building",
-      "question": "Escucha / atentamente",
-      "options": [
-        "Escucha",
-        "atentamente"
-      ],
-      "answer": "Escucha atentamente",
-      "instruction": "Составьте предложение из слов",
-      "explanation": "Escucha atentamente."
-    },
-    {
-      "type": "sentence_building",
       "question": "No / corras / en / el / pasillo",
       "options": [
         "No",
@@ -4014,17 +3992,6 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Déjame en paz",
       "instruction": "Составьте предложение из слов",
       "explanation": "Déjame en paz — оставь меня в покое."
-    },
-    {
-      "type": "sentence_building",
-      "question": "Sentémonos / aquí",
-      "options": [
-        "Sentémonos",
-        "aquí"
-      ],
-      "answer": "Sentémonos aquí",
-      "instruction": "Составьте предложение из слов",
-      "explanation": "Sentémonos — давайте сядем (nosotros)."
     },
     {
       "type": "sentence_building",
@@ -8370,13 +8337,6 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
     },
     {
       "type": "error_correction",
-      "question": "Acabado el trabajo, nos fuimos.",
-      "answer": "Acabado el trabajo, nos fuimos.",
-      "instruction": "Participio masculino",
-      "explanation": "El trabajo (m.) → Acabado."
-    },
-    {
-      "type": "error_correction",
       "question": "Porque llovió, cancelamos el picnic.",
       "answer": "A causa de la lluvia, cancelamos el picnic.",
       "instruction": "Estilo culto",
@@ -8402,13 +8362,6 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Hechos los deberes, puede salir.",
       "instruction": "Concordancia plural",
       "explanation": "Los deberes → Hechos."
-    },
-    {
-      "type": "error_correction",
-      "question": "Llegado el momento, actuaremos.",
-      "answer": "Llegado el momento, actuaremos.",
-      "instruction": "Participio absoluto",
-      "explanation": "Llegado el momento…"
     },
     {
       "type": "error_correction",
@@ -8451,13 +8404,6 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "El resultado es insatisfactorio; no obstante, proseguimos.",
       "instruction": "Registro académico",
       "explanation": "Proseguimos — culto."
-    },
-    {
-      "type": "error_correction",
-      "question": "Acabada la cena, dimos un paseo.",
-      "answer": "Acabada la cena, dimos un paseo.",
-      "instruction": "Ya correcto — variante",
-      "explanation": "Acabada la cena (f.) ✓"
     },
     {
       "type": "sentence_building",
@@ -8766,13 +8712,6 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Por el hecho de que no vino, nos preocupamos.",
       "instruction": "Puntuación",
       "explanation": "Coma tras subordinada."
-    },
-    {
-      "type": "error_correction",
-      "question": "El resultado es insatisfactorio no obstante proseguimos.",
-      "answer": "El resultado es insatisfactorio; no obstante, proseguimos.",
-      "instruction": "Conector",
-      "explanation": "Punto y coma + no obstante."
     },
     {
       "type": "error_correction",
@@ -9149,31 +9088,10 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
     },
     {
       "type": "error_correction",
-      "question": "Menudo trabajo hemos hecho!",
-      "answer": "Menudo trabajo hemos hecho.",
-      "instruction": "Puntuación",
-      "explanation": "Sin «!» excesivo en culto."
-    },
-    {
-      "type": "error_correction",
       "question": "Claro que si es perfecto.",
       "answer": "Claro, es el plan perfecto.",
       "instruction": "Ironía escrita",
       "explanation": "Comas para ironía."
-    },
-    {
-      "type": "error_correction",
-      "question": "Bravo otra vez llegas tarde.",
-      "answer": "Bravo, otra vez llegas tarde.",
-      "instruction": "Puntuación",
-      "explanation": "Coma tras interjección."
-    },
-    {
-      "type": "error_correction",
-      "question": "Como siempre todo perfecto!",
-      "answer": "Como siempre, todo perfecto.",
-      "instruction": "Ironía",
-      "explanation": "Coma + tono."
     },
     {
       "type": "error_correction",
@@ -9202,13 +9120,6 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "¿Sería tan amable de pasarme la sal?",
       "instruction": "Cortesía",
       "explanation": "¿Sería tan amable de…?"
-    },
-    {
-      "type": "error_correction",
-      "question": "Por extraño que parezca se negó.",
-      "answer": "Por extraño que parezca, se negó.",
-      "instruction": "Puntuación",
-      "explanation": "Coma tras parezca."
     },
     {
       "type": "error_correction",
@@ -9574,38 +9485,10 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
     },
     {
       "type": "error_correction",
-      "question": "Sin comentarios!",
-      "answer": "Sin comentarios.",
-      "instruction": "Puntuación",
-      "explanation": "Sin exclamación en culto."
-    },
-    {
-      "type": "error_correction",
-      "question": "Claro todo según el plan.",
-      "answer": "Claro, todo según el plan.",
-      "instruction": "Puntuación",
-      "explanation": "Coma tras claro."
-    },
-    {
-      "type": "error_correction",
       "question": "Gracias muy util.",
       "answer": "Gracias, muy útil.",
       "instruction": "Ortografía",
       "explanation": "Útil con tilde + coma."
-    },
-    {
-      "type": "error_correction",
-      "question": "Un genio nada menos!",
-      "answer": "Un genio, nada menos.",
-      "instruction": "Puntuación",
-      "explanation": "Coma + punto."
-    },
-    {
-      "type": "error_correction",
-      "question": "Como siempre sin sorpresas.",
-      "answer": "Como siempre, sin sorpresas.",
-      "instruction": "Puntuación",
-      "explanation": "Coma tras como siempre."
     },
     {
       "type": "error_correction",
@@ -9620,13 +9503,6 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Sí, claro, muy lógico.",
       "instruction": "Ortografía",
       "explanation": "Sí, lógico con tilde."
-    },
-    {
-      "type": "error_correction",
-      "question": "Brillante idea!",
-      "answer": "Brillante idea.",
-      "instruction": "Ironía escrita",
-      "explanation": "Punto, no exclamación."
     },
     {
       "type": "error_correction",
@@ -10288,13 +10164,6 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Le ruego me confirme la recepción de la presente carta.",
       "instruction": "Найдите и исправьте ошибку",
       "explanation": "Le ruego + subjuntivo (me confirme), no infinitivo."
-    },
-    {
-      "type": "error_correction",
-      "question": "Por un lado ahorra tiempo por otro incrementa los riesgos.",
-      "answer": "Por un lado, ahorra tiempo; por otro, incrementa los riesgos.",
-      "instruction": "Conectores — puntuación",
-      "explanation": "Comas y punto y coma en estructura paralela."
     },
     {
       "type": "error_correction",
@@ -12378,7 +12247,12 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "multiple_choice",
       "question": "¿Recuerdas la canción ___ bailamos en la fiesta?",
       "instruction": "Выберите правильный вариант",
-      "options": ["que", "quien", "cuyo", "donde"],
+      "options": [
+        "que",
+        "quien",
+        "cuyo",
+        "donde"
+      ],
       "answer": "que",
       "explanation": "Без предлога — que: la canción que bailamos."
     },
@@ -12387,7 +12261,11 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "question": "Ese es el colegio ___ estudié de niño.",
       "instruction": "Заполните пропуск",
       "answer": "donde",
-      "acceptableAnswers": ["Donde", "en el que", "En el que"],
+      "acceptableAnswers": [
+        "Donde",
+        "en el que",
+        "En el que"
+      ],
       "explanation": "Место → donde / en el que."
     },
     {
@@ -12415,7 +12293,14 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
     {
       "type": "sentence_building",
       "question": "La / ciudad / donde / nací / es / pequeña",
-      "options": ["La", "ciudad", "donde", "nací", "es", "pequeña"],
+      "options": [
+        "La",
+        "ciudad",
+        "donde",
+        "nací",
+        "es",
+        "pequeña"
+      ],
       "answer": "La ciudad donde nací es pequeña",
       "instruction": "Составьте предложение из слов",
       "explanation": "Donde — место рождения."
@@ -13892,24 +13777,6 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "answer": "Estimado señor:",
       "instruction": "Registro formal",
       "explanation": "Sin «Hola» en carta formal."
-    },
-    {
-      "type": "error_correction",
-      "question": "Atentamente Juan",
-      "answer": "Atentamente, Juan",
-      "instruction": "Puntuación",
-      "explanation": "Coma tras Atentamente."
-    },
-    {
-      "type": "sentence_building",
-      "question": "Estimado / señor",
-      "options": [
-        "Estimado",
-        "señor"
-      ],
-      "answer": "Estimado señor",
-      "instruction": "Encabezado",
-      "explanation": "Estimado señor…"
     },
     {
       "type": "sentence_building",

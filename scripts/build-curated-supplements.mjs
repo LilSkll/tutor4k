@@ -7,7 +7,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import {
   SPANISH_C1_SB_SUPPLEMENTS,
   SPANISH_C2_SUPPLEMENTS,
@@ -1073,7 +1073,14 @@ function countExercises(data) {
   return Object.values(data).reduce((sum, arr) => sum + arr.length, 0);
 }
 
-function main() {
+async function sanitizeMap(data) {
+  const { sanitizeChapterExerciseMap } = await import(
+    pathToFileURL(path.join(root, "src/lib/exercise-quality.ts")).href
+  );
+  return sanitizeChapterExerciseMap(data);
+}
+
+async function main() {
   let spanish = mergeSupplements(SPANISH_CURATED_SUPPLEMENTS, SPANISH_TOP_UPS);
   spanish = mergeSupplements(spanish, SPANISH_C2_SUPPLEMENTS);
   spanish = mergeSupplements(spanish, SPANISH_C2_THICK);
@@ -1090,13 +1097,33 @@ function main() {
   english = mergeSupplements(english, C2_ENGLISH_THICK);
   english = mergeSupplements(english, ENGLISH_SB_TOPUP);
   english = mergeSupplements(english, ENGLISH_C1_EXAM_TR_EC_TOPUP);
-  writeModule("SPANISH_CURATED_SUPPLEMENTS", "spanish-curated-supplements", spanish);
-  writeModule("ENGLISH_CURATED_SUPPLEMENTS", "english-curated-supplements", english);
 
-  const spCount = countExercises(spanish);
-  const enCount = countExercises(english);
-  console.log(`Spanish: ${Object.keys(spanish).length} chapters, ${spCount} exercises`);
-  console.log(`English: ${Object.keys(english).length} chapters, ${enCount} exercises`);
+  const esSan = await sanitizeMap(spanish);
+  const enSan = await sanitizeMap(english);
+  if (esSan.dropped || enSan.dropped) {
+    console.log(
+      `Quality gate dropped: ES ${esSan.dropped}, EN ${enSan.dropped}`,
+    );
+  }
+
+  writeModule(
+    "SPANISH_CURATED_SUPPLEMENTS",
+    "spanish-curated-supplements",
+    esSan.cleaned,
+  );
+  writeModule(
+    "ENGLISH_CURATED_SUPPLEMENTS",
+    "english-curated-supplements",
+    enSan.cleaned,
+  );
+
+  const spCount = countExercises(esSan.cleaned);
+  const enCount = countExercises(enSan.cleaned);
+  console.log(`Spanish: ${Object.keys(esSan.cleaned).length} chapters, ${spCount} exercises`);
+  console.log(`English: ${Object.keys(enSan.cleaned).length} chapters, ${enCount} exercises`);
 }
 
-main();
+main().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});

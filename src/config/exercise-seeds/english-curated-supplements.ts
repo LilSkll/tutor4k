@@ -4667,13 +4667,6 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
     },
     {
       "type": "error_correction",
-      "question": "The results are inconclusive, however the trend is clear.",
-      "answer": "The results are inconclusive; however, the trend is clear.",
-      "instruction": "However — punctuation",
-      "explanation": "However after semicolon or new sentence."
-    },
-    {
-      "type": "error_correction",
       "question": "Despite of the rain, we went out.",
       "answer": "Despite the rain, we went out.",
       "instruction": "Despite — no of",
@@ -4727,13 +4720,6 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "In addition to this, we must consider costs.",
       "instruction": "Must + base",
       "explanation": "must + base verb (no «to»)."
-    },
-    {
-      "type": "error_correction",
-      "question": "On the one hand it is cheap on the other hand quality is low.",
-      "answer": "On the one hand, it is cheap; on the other hand, quality is low.",
-      "instruction": "Punctuation",
-      "explanation": "Commas and semicolon needed."
     },
     {
       "type": "error_correction",
@@ -5168,13 +5154,6 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "On the other hand, the risks are significant.",
       "instruction": "Fixed phrase",
       "explanation": "On the other hand — с артиклем the."
-    },
-    {
-      "type": "error_correction",
-      "question": "In particular young people suffered most.",
-      "answer": "In particular, young people suffered most.",
-      "instruction": "Punctuation — discourse marker",
-      "explanation": "Запятая после In particular."
     },
     {
       "type": "error_correction",
@@ -6831,13 +6810,6 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
     },
     {
       "type": "error_correction",
-      "question": "What I need is a holiday and relax.",
-      "answer": "What I need is a holiday.",
-      "instruction": "Wh-cleft — redundancy",
-      "explanation": "What I need is a holiday — sufficient."
-    },
-    {
-      "type": "error_correction",
       "question": "It was in Paris who I met her.",
       "answer": "It was in Paris that I met her.",
       "instruction": "It-cleft — place",
@@ -8354,21 +8326,6 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "Strictly speaking…"
     },
     {
-      "type": "sentence_building",
-      "question": "The / situation / is / rather / more / complex",
-      "options": [
-        "The",
-        "situation",
-        "is",
-        "rather",
-        "more",
-        "complex"
-      ],
-      "answer": "The situation is rather more complex",
-      "instruction": "Rather",
-      "explanation": "rather more complex"
-    },
-    {
       "type": "translation",
       "question": "Результаты, по-видимому, указывают на связь.",
       "answer": "The results appear to suggest a link",
@@ -8486,13 +8443,6 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "One could make a case for either side",
       "instruction": "Make a case",
       "explanation": "One could make a case…"
-    },
-    {
-      "type": "translation",
-      "question": "Ситуация несколько сложнее.",
-      "answer": "The situation is rather more complex",
-      "instruction": "Rather hedge",
-      "explanation": "rather more complex."
     },
     {
       "type": "translation",
@@ -9231,17 +9181,6 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
   "eng-ch35-ielts-informal": [
     {
       "type": "sentence_building",
-      "question": "Hi / Sarah",
-      "options": [
-        "Hi",
-        "Sarah"
-      ],
-      "answer": "Hi Sarah",
-      "instruction": "Неформальное приветствие",
-      "explanation": "Hi + имя — без запятой в письме другу."
-    },
-    {
-      "type": "sentence_building",
       "question": "How / are / you / doing?",
       "options": [
         "How",
@@ -9424,17 +9363,6 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "Take care and talk soon",
       "instruction": "Неформальное прощание",
       "explanation": "Take care — береги себя."
-    },
-    {
-      "type": "sentence_building",
-      "question": "Best / wishes",
-      "options": [
-        "Best",
-        "wishes"
-      ],
-      "answer": "Best wishes",
-      "instruction": "Заключительная формула",
-      "explanation": "Best wishes — нейтрально-дружеское."
     },
     {
       "type": "sentence_building",
@@ -9798,28 +9726,6 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
     },
     {
       "type": "sentence_building",
-      "question": "Yours / faithfully",
-      "options": [
-        "Yours",
-        "faithfully"
-      ],
-      "answer": "Yours faithfully",
-      "instruction": "Заключение без имени",
-      "explanation": "Yours faithfully — если не знаете имя."
-    },
-    {
-      "type": "sentence_building",
-      "question": "Yours / sincerely",
-      "options": [
-        "Yours",
-        "sincerely"
-      ],
-      "answer": "Yours sincerely",
-      "instruction": "Заключение с именем",
-      "explanation": "Yours sincerely — после Dear Mr/Ms…"
-    },
-    {
-      "type": "sentence_building",
       "question": "I / am / writing / in / response / to / your / email",
       "options": [
         "I",
@@ -10015,13 +9921,6 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "I am writing to express my interest in the course",
       "instruction": "Expression of interest",
       "explanation": "to express my interest — цель письма."
-    },
-    {
-      "type": "error_correction",
-      "question": "Dear Mr. Thompson,",
-      "answer": "Dear Mr Thompson,",
-      "instruction": "British punctuation — no full stop",
-      "explanation": "Mr Thompson — без точки после Mr (BrE)."
     },
     {
       "type": "error_correction",
@@ -10907,13 +10806,6 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
     },
     {
       "type": "error_correction",
-      "question": "Nevertheless the argument remains weak.",
-      "answer": "Nevertheless, the argument remains weak.",
-      "instruction": "Punctuation — connector",
-      "explanation": "Запятая после Nevertheless."
-    },
-    {
-      "type": "error_correction",
       "question": "Moreover the research confirm this.",
       "answer": "Moreover, the research confirms this.",
       "instruction": "Agreement + punctuation",
@@ -10925,13 +10817,6 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "On the other hand, there are opponents.",
       "instruction": "There are + plural",
       "explanation": "there are opponents — множественное число."
-    },
-    {
-      "type": "error_correction",
-      "question": "This in turn affected prices.",
-      "answer": "This, in turn, affected prices.",
-      "instruction": "Punctuation — in turn",
-      "explanation": "in turn в запятых."
     },
     {
       "type": "error_correction",
@@ -13161,24 +13046,6 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "answer": "The report having been completed we submitted it",
       "instruction": "Absolute construction",
       "explanation": "Having been completed — абсолютная конструкция."
-    },
-    {
-      "type": "sentence_building",
-      "question": "So / complex / was / the / problem / that / experts / were / consulted",
-      "options": [
-        "So",
-        "complex",
-        "was",
-        "the",
-        "problem",
-        "that",
-        "experts",
-        "were",
-        "consulted"
-      ],
-      "answer": "So complex was the problem that experts were consulted",
-      "instruction": "So… that inversion",
-      "explanation": "So complex was the problem — C1 инверсия."
     },
     {
       "type": "sentence_building",

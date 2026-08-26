@@ -250,3 +250,40 @@ export function stripExerciseIndexMarks(s: string): string {
     .replace(/\s+([.?!])$/u, "$1")
     .trim();
 }
+
+/** Clean string fields and drop items that fail bank quality gates. */
+export function sanitizeBankExercise<T extends BankExerciseLike>(ex: T): T | null {
+  const cleaned = {
+    ...ex,
+    question: stripExerciseIndexMarks(String(ex.question ?? "")),
+    answer: stripExerciseIndexMarks(String(ex.answer ?? "")),
+    options: Array.isArray(ex.options)
+      ? ex.options.map((o) => stripExerciseIndexMarks(String(o)))
+      : ex.options,
+  } as T;
+  const alts = (ex as BankExerciseLike & { acceptableAnswers?: string[] })
+    .acceptableAnswers;
+  if (Array.isArray(alts)) {
+    (cleaned as BankExerciseLike & { acceptableAnswers?: string[] }).acceptableAnswers =
+      alts.map((a) => stripExerciseIndexMarks(a));
+  }
+  return isUsableBankExercise(cleaned) ? cleaned : null;
+}
+
+/** Sanitize a chapter map of draft exercises (curated / supplements). */
+export function sanitizeChapterExerciseMap<T extends BankExerciseLike>(
+  data: Record<string, T[]>,
+): { cleaned: Record<string, T[]>; dropped: number } {
+  const cleaned: Record<string, T[]> = {};
+  let dropped = 0;
+  for (const [slug, items] of Object.entries(data)) {
+    const next: T[] = [];
+    for (const ex of items) {
+      const ok = sanitizeBankExercise(ex);
+      if (ok) next.push(ok);
+      else dropped += 1;
+    }
+    if (next.length > 0) cleaned[slug] = next;
+  }
+  return { cleaned, dropped };
+}

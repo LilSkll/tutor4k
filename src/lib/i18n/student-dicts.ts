@@ -55,7 +55,8 @@ const ru: Dictionary = {
   "onboarding.name": "Как тебя зовут?",
   "onboarding.namePlaceholder": "Имя",
   "onboarding.level": "Твой текущий уровень испанского",
-  "onboarding.levelHint": "Если не знаешь — выбери A1, поможем определиться!",
+  "onboarding.levelHint":
+    "Если не знаешь — выбери A1. Выше A1: предыдущие главы зачтутся для пути (можно повторить позже).",
   "onboarding.levelUnknown": "Не знаю",
   "onboarding.levelUnknownBtn": "🤷 Не знаю мой уровень",
   "onboarding.goal": "Какая у тебя цель?",
@@ -742,7 +743,8 @@ const en: Dictionary = {
   "onboarding.name": "What's your name?",
   "onboarding.namePlaceholder": "Name",
   "onboarding.level": "Your current Spanish level",
-  "onboarding.levelHint": "If you're not sure — pick A1, we'll help you figure it out!",
+  "onboarding.levelHint":
+    "If you're not sure — pick A1. Above A1, earlier chapters are credited so you can start at your band (review anytime).",
   "onboarding.levelUnknown": "I don't know",
   "onboarding.levelUnknownBtn": "🤷 I don't know my level",
   "onboarding.goal": "What's your goal?",
@@ -1405,7 +1407,8 @@ const es: Dictionary = {
   "onboarding.name": "¿Cómo te llamas?",
   "onboarding.namePlaceholder": "Nombre",
   "onboarding.level": "Tu nivel actual de español",
-  "onboarding.levelHint": "Si no lo sabes — elige A1, ¡te ayudamos a decidir!",
+  "onboarding.levelHint":
+    "Si no lo sabes — elige A1. Por encima de A1, los capítulos anteriores se acreditan para empezar en tu banda (puedes repasar después).",
   "onboarding.levelUnknown": "No lo sé",
   "onboarding.levelUnknownBtn": "🤷 No sé mi nivel",
   "onboarding.goal": "¿Cuál es tu objetivo?",
