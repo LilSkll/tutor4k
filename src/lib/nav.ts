@@ -11,6 +11,7 @@ import {
   Settings,
   TrendingUp,
   Map,
+  Stamp,
 } from "lucide-react";
 
 export type NavItem = {
@@ -53,6 +54,7 @@ export const NAV_SECTIONS: NavSection[] = [
     labelKey: "nav.section.account",
     items: [
       { href: "/progress", labelKey: "nav.progress", icon: TrendingUp },
+      { href: "/journey", labelKey: "nav.journey", icon: Stamp },
       { href: "/settings", labelKey: "nav.settings", icon: Settings },
     ],
   },

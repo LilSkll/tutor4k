@@ -34,12 +34,16 @@ import { ExerciseFreeTextBlock } from "@/components/exercises/exercise-free-text
 import { SentenceBuildingBlock } from "@/components/exercises/sentence-building-block";
 import { localizeExerciseInstruction } from "@/lib/exercise-localize";
 import { ChapterExerciseTypeGuide } from "@/components/chapters/chapter-exercise-type-guide";
+import { CompletionCertificateCard } from "@/components/journey/completion-certificate-card";
+import { EasterEggReveal } from "@/components/journey/easter-egg-reveal";
+import type { ChapterCompleteRewards } from "@/lib/journey/types";
 import {
   grammarTheoryPagesFromMarkdown,
 } from "@/lib/grammar-markdown";
 import { cn } from "@/lib/utils";
 import { runExclusive, startTutorAbort } from "@/lib/tutor-fetch";
 import type { Chapter } from "@/types";
+import Link from "next/link";
 
 type Phase =
   | "intro"
@@ -128,6 +132,10 @@ export function LessonRunner({
   const [bankCursor, setBankCursor] = React.useState(0);
   const [theoryPageIdx, setTheoryPageIdx] = React.useState(0);
   const [finishError, setFinishError] = React.useState<string | null>(null);
+  const [rewards, setRewards] = React.useState<ChapterCompleteRewards | null>(
+    null,
+  );
+  const [summaryName, setSummaryName] = React.useState(userName);
 
   React.useEffect(() => {
     let cancelled = false;
@@ -365,12 +373,25 @@ export function LessonRunner({
         return;
       }
 
+      const data = (await res.json()) as {
+        rewards?: ChapterCompleteRewards | null;
+        userName?: string;
+      };
+      if (data.rewards) setRewards(data.rewards);
+      if (data.userName) setSummaryName(data.userName);
+
       trackEvent("chapter_complete", {
         chapter: chapter.slug,
         level: chapter.level,
         course: courseId,
         score: percent,
       });
+      if (data.rewards?.egg) {
+        trackEvent("easter_egg_found", {
+          rarity: data.rewards.egg.rarity,
+          course: courseId,
+        });
+      }
 
       setPhase("summary");
       router.refresh();
@@ -857,6 +878,53 @@ export function LessonRunner({
             </p>
           </div>
           <CardContent className="p-6 space-y-4">
+            {rewards?.egg ? <EasterEggReveal egg={rewards.egg} /> : null}
+
+            <CompletionCertificateCard
+              userName={summaryName || userName}
+              achievement={t("journey.chapterLine", {
+                number: chapter.number,
+                title: chapter.titleEs || chapterDisplayTitle,
+              })}
+              level={chapter.level}
+              courseId={courseId}
+              downloadStem={`chapter-${chapter.number}`}
+            />
+
+            {rewards?.levelCert ? (
+              <div className="space-y-2">
+                {rewards.levelCert.isNew ? (
+                  <p className="text-center text-sm font-medium text-emerald-700">
+                    {t("journey.levelCertUnlocked")}
+                  </p>
+                ) : null}
+                <CompletionCertificateCard
+                  userName={summaryName || userName}
+                  achievement={t("journey.levelCertAchievement", {
+                    level: rewards.levelCert.level,
+                  })}
+                  level={rewards.levelCert.level}
+                  courseId={courseId}
+                  downloadStem={`level-${rewards.levelCert.level}`}
+                />
+              </div>
+            ) : null}
+
+            {rewards?.courseCert?.isNew ? (
+              <div className="space-y-2">
+                <p className="text-center text-sm font-medium text-amber-800">
+                  {t("journey.courseCertTitle")}
+                </p>
+                <CompletionCertificateCard
+                  userName={summaryName || userName}
+                  achievement={t("journey.courseCertAchievement")}
+                  level={chapter.level}
+                  courseId={courseId}
+                  downloadStem={`course-${courseId}`}
+                />
+              </div>
+            ) : null}
+
             <div className="rounded-lg bg-muted/30 p-4 space-y-2">
               <p className="font-semibold text-sm mb-2">
                 {t("lesson.todayYouLearned")}
@@ -922,7 +990,7 @@ export function LessonRunner({
             <p className="text-base text-muted-foreground text-center">
               <span className="text-2xl">🦅</span>{" "}
               {t("lesson.mentorQuote", {
-                name: userName || t("lesson.friend"),
+                name: summaryName || userName || t("lesson.friend"),
               })}
             </p>
             <Button
@@ -933,6 +1001,9 @@ export function LessonRunner({
             >
               <ArrowRight className="h-4 w-4" />
               {t("lesson.openNext")}
+            </Button>
+            <Button variant="ghost" size="sm" className="w-full" asChild>
+              <Link href="/journey">{t("journey.openPassport")}</Link>
             </Button>
           </CardContent>
         </Card>

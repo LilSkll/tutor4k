@@ -51,6 +51,7 @@ export function scrubAnalyticsUrl(rawUrl: string): string {
 
 export type AnalyticsEvent =
   | "chapter_complete"
+  | "easter_egg_found"
   | "dele_round_start"
   | "journey_reset";
 

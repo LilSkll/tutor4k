@@ -64,6 +64,8 @@ export interface Profile {
   role?: UserRole | null;
   /** Persistent Student Learning Profile store (JSONB). */
   learning_profile?: import("@/types/learning-profile").StudentLearningProfileStore | null;
+  /** Journey rewards (easter eggs, badges, level/course certs) keyed by courseId. */
+  journey_finds?: import("@/config/journey/easter-eggs").JourneyFindsStore | null;
   terms_accepted_at?: string | null;
   privacy_accepted_at?: string | null;
   marketing_consent?: boolean;
