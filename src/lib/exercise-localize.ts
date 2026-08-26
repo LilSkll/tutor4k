@@ -26,6 +26,26 @@ export function detectSourceLanguage(s: string): "ru" | "en" {
 }
 
 /**
+ * Direct quote → reported speech rewrite (estilo indirecto), wrongly stored
+ * as error_correction in some packs. Not a grammar-error hunt.
+ */
+export function isReportedSpeechRewrite(
+  exercise: Pick<StaticExercise, "type" | "question" | "answer">,
+): boolean {
+  if (exercise.type !== "error_correction") return false;
+  const q = exercise.question?.trim() ?? "";
+  const a = exercise.answer?.trim() ?? "";
+  if (!q || !a) return false;
+  const hasQuote =
+    /:\s*[«"“']/.test(q) || /[«"“][^»"”']+[»"”']/.test(q);
+  if (!hasQuote) return false;
+  return (
+    /\bque\b/i.test(a) ||
+    /\b(dónde|como|cómo|qué|quién|cuándo|si)\b/i.test(a)
+  );
+}
+
+/**
  * Interface-language gloss for the exercise prompt (shown in parentheses).
  * Uses inline questionTranslations only (populated on the server).
  */
@@ -98,6 +118,13 @@ const ERROR_CORRECTION_FULL: Record<InterfaceLanguage, string> = {
   de: "Schreibe den ganzen Satz neu und korrigiere den Grammatikfehler",
 };
 
+const REPORTED_SPEECH_FULL: Record<InterfaceLanguage, string> = {
+  ru: "Перепишите прямую речь в косвенную (estilo indirecto)",
+  en: "Rewrite the direct quote as reported speech",
+  es: "Pasa el estilo directo al estilo indirecto",
+  de: "Schreibe die direkte Rede in die indirekte Rede um",
+};
+
 const GENERIC_INSTRUCTION: Record<
   InterfaceLanguage,
   Record<ExerciseType, string>
@@ -141,9 +168,17 @@ const GENERIC_INSTRUCTION: Record<
  * spoil the answer — always replace those with a generic prompt.
  */
 export function localizeExerciseInstruction(
-  exercise: Pick<StaticExercise, "type"> & { instruction?: string },
+  exercise: Pick<StaticExercise, "type" | "question" | "answer"> & {
+    instruction?: string;
+  },
   interfaceLanguage: InterfaceLanguage,
 ): string {
+  if (isReportedSpeechRewrite(exercise)) {
+    return (
+      REPORTED_SPEECH_FULL[interfaceLanguage] ?? REPORTED_SPEECH_FULL.en
+    );
+  }
+
   const instruction = exercise.instruction?.trim() ?? "";
   const fallback = (): string => {
     if (exercise.type === "error_correction") {

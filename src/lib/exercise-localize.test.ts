@@ -51,6 +51,19 @@ describe("translation localization", () => {
     );
     expect(ex.instruction).toBe("Заполните пропуск");
   });
+
+  it("uses reported-speech prompt for quote rewrites", async () => {
+    const { localizeExerciseInstruction, isReportedSpeechRewrite } =
+      await import("@/lib/exercise-localize");
+    const item = {
+      type: "error_correction" as const,
+      question: 'Miguel respondió: "No puedo ir."',
+      answer: "Miguel respondió que no podía ir.",
+      instruction: "Modal → imperfecto",
+    };
+    expect(isReportedSpeechRewrite(item)).toBe(true);
+    expect(localizeExerciseInstruction(item, "ru")).toMatch(/косвенную/i);
+  });
 });
 
 describe("orderEarlyLevelPractice", () => {

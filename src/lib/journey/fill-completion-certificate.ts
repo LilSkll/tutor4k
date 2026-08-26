@@ -151,7 +151,7 @@ export async function fillCompletionCertificate(
   ctx.fillStyle = INK;
   ctx.fillText(name, cx, 268);
 
-  // ── Achievement: fully cover “CHAPTER / LEVEL” (≈ y 344–355) ──────
+  // ── Achievement: cover only the CHAPTER/LEVEL text band (not side art) ─
   const achievement = fields.achievement.trim();
   const achMax = 520;
   ctx.font = boldFont(18);
@@ -161,14 +161,14 @@ export async function fillCompletionCertificate(
     achMax,
   );
   if (lines.length <= 1) {
-    coverBand(ctx, 230, 336, 564, 38);
+    coverBand(ctx, 300, 336, 424, 40);
     const line = lines[0] ?? "";
     const achSize = fitCentered(ctx, line, achMax, 18, 12, boldFont);
     ctx.font = boldFont(achSize);
     ctx.fillStyle = INK;
     ctx.fillText(line, cx, 354);
   } else {
-    coverBand(ctx, 230, 328, 564, 52);
+    coverBand(ctx, 300, 328, 424, 52);
     const size0 = fitCentered(ctx, lines[0], achMax, 16, 11, boldFont);
     const size1 = fitCentered(ctx, lines[1], achMax, 16, 11, boldFont);
     const size = Math.min(size0, size1);
@@ -178,17 +178,17 @@ export async function fillCompletionCertificate(
     ctx.fillText(lines[1], cx, 362);
   }
 
-  // ── Language course: cover template “SPANISH WITH PAVEL” title ────
-  // Title sits ≈ y 463–480; stop before calendar/book icons (~540).
-  coverBand(ctx, 200, 448, 624, 46);
+  // ── Language course: cover only the title glyphs (≈ x 360–660) ─────
+  // Wide bands paint over the left/right ink illustrations.
+  coverBand(ctx, 350, 455, 324, 34);
   ctx.fillStyle = INK;
-  const courseSize = fitCentered(ctx, fields.courseLine, 580, 26, 16, boldFont);
+  const courseSize = fitCentered(ctx, fields.courseLine, 520, 26, 16, boldFont);
   ctx.font = boldFont(courseSize);
   ctx.fillText(fields.courseLine, cx, 470);
 
-  // ── Date / level: replace DATE & LEVEL captions under the icons ───
-  coverBand(ctx, 248, 582, 84, 30);
-  coverBand(ctx, 698, 582, 84, 30);
+  // ── Date / level: small caption patches under the icons only ───────
+  coverBand(ctx, 258, 586, 64, 22);
+  coverBand(ctx, 708, 586, 64, 22);
   ctx.font = sansFont(13);
   ctx.fillStyle = INK;
   ctx.fillText(fields.dateLabel, 290, 595);

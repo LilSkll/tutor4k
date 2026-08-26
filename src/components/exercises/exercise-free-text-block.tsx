@@ -3,13 +3,13 @@
 import { Input } from "@/components/ui/input";
 import {
   detectSourceLanguage,
+  isReportedSpeechRewrite,
   localizeExerciseInstruction,
 } from "@/lib/exercise-localize";
 import { translate } from "@/lib/i18n";
-import type { ExerciseType, InterfaceLanguage } from "@/types";
+import type { ExerciseType, InterfaceLanguage, StaticExercise } from "@/types";
 
-type ExerciseLike = {
-  type: ExerciseType;
+type ExerciseLike = Pick<StaticExercise, "type" | "question" | "answer"> & {
   instruction?: string;
 };
 
@@ -34,9 +34,11 @@ export function ExerciseFreeTextBlock({
 }) {
   const t = (key: string) => translate(key, interfaceLanguage);
   const instruction = localizeExerciseInstruction(exercise, interfaceLanguage);
+  const reportedSpeech = isReportedSpeechRewrite(exercise);
   const authored = exercise.instruction?.trim() ?? "";
   const showAuthoredHint =
     exercise.type === "error_correction" &&
+    !reportedSpeech &&
     authored.length > 0 &&
     detectSourceLanguage(authored) === interfaceLanguage;
 
@@ -49,8 +51,9 @@ export function ExerciseFreeTextBlock({
   const showAccentHint =
     spanishCourse && freeTextTypes.includes(exercise.type);
 
-  const placeholder =
-    exercise.type === "error_correction"
+  const placeholder = reportedSpeech
+    ? t("exercises.reportedSpeechPlaceholder")
+    : exercise.type === "error_correction"
       ? t("exercises.errorCorrectionPlaceholder")
       : showAccentHint
         ? t("exercises.answerPlaceholderNoAccents")
@@ -65,7 +68,9 @@ export function ExerciseFreeTextBlock({
         </p>
         {exercise.type === "error_correction" ? (
           <p className="text-xs text-muted-foreground">
-            {t("exercises.errorCorrectionLead")}
+            {reportedSpeech
+              ? t("exercises.reportedSpeechLead")
+              : t("exercises.errorCorrectionLead")}
           </p>
         ) : null}
         {showAuthoredHint && authored !== instruction ? (

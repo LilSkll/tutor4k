@@ -16,7 +16,7 @@ function normalizeStem(s: string): string {
     .replace(/\p{M}/gu, "")
     .replace(/___+/g, "_")
     .replace(/\s*\/\s*/g, " ")
-    .replace(/[¿?¡!.,;:'"«»„""''`´…()]/g, "")
+    .replace(/[¿?¡!.,;:'"«»„""''`´…]/g, "")
     .replace(/[-–—]/g, " ")
     .replace(/\s+/g, " ")
     .trim();

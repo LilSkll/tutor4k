@@ -8599,8 +8599,14 @@
         ],
         "answer": "Laura",
         "instruction": "Выберите правильный ответ",
-        "explanation": "Te llamaré → me llamaría.",
-        "grammarTopic": "b2-estilo-indirecto"
+        "explanation": "Косвенная речь: Te llamaré → me/te llamaría (в зависимости от того, кому пересказываете).",
+        "grammarTopic": "b2-estilo-indirecto",
+        "acceptableAnswers": [
+          "Laura prometió que me llamaría.",
+          "Laura prometió que me llamaría",
+          "Laura prometió que te llamaría.",
+          "Laura prometió que te llamaría"
+        ]
       },
       {
         "type": "multiple_choice",
@@ -8613,8 +8619,12 @@
         ],
         "answer": "Miguel",
         "instruction": "Выберите правильный ответ",
-        "explanation": "No puedo → no podía.",
-        "grammarTopic": "b2-estilo-indirecto"
+        "explanation": "Косвенная речь: No puedo → no podía (сдвиг после прошедшего respondió).",
+        "grammarTopic": "b2-estilo-indirecto",
+        "acceptableAnswers": [
+          "Miguel respondió que no podía ir.",
+          "Miguel respondió que no podía ir"
+        ]
       },
       {
         "type": "multiple_choice",
@@ -8779,91 +8789,123 @@
         "type": "error_correction",
         "question": "María dijo: \"Voy mañana al médico.\"",
         "answer": "María dijo que iba al médico al día siguiente.",
-        "instruction": "Estilo indirecto",
-        "explanation": "Presente → imperfecto; mañana → al día siguiente.",
+        "instruction": "Перепишите прямую речь в косвенную",
+        "explanation": "Косвенная речь: Presente → imperfecto; mañana → al día siguiente.",
         "grammarTopic": "b2-estilo-indirecto",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "María dijo que iba al médico al día siguiente",
+          "María dijo que iba al médico al día siguiente."
+        ]
       },
       {
         "type": "error_correction",
         "question": "Juan afirmó: \"Estoy cansado.\"",
         "answer": "Juan afirmó que estaba cansado.",
-        "instruction": "Estilo indirecto — estar",
-        "explanation": "Estoy → estaba.",
+        "instruction": "Перепишите прямую речь в косвенную",
+        "explanation": "Косвенная речь: Estoy → estaba.",
         "grammarTopic": "b2-estilo-indirecto",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Juan afirmó que estaba cansado",
+          "Juan afirmó que estaba cansado."
+        ]
       },
       {
         "type": "error_correction",
         "question": "Ella preguntó: \"¿Dónde está el baño?\"",
         "answer": "Ella preguntó dónde estaba el baño.",
-        "instruction": "Pregunta indirecta",
-        "explanation": "¿Dónde está? → dónde estaba.",
+        "instruction": "Перепишите прямую речь в косвенную",
+        "explanation": "Косвенная речь: ¿Dónde está? → dónde estaba.",
         "grammarTopic": "b2-estilo-indirecto",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Ella preguntó dónde estaba el baño",
+          "Ella preguntó dónde estaba el baño."
+        ]
       },
       {
         "type": "error_correction",
         "question": "Pedro explicó: \"Llegaré tarde.\"",
         "answer": "Pedro explicó que llegaría tarde.",
-        "instruction": "Найдите и исправьте ошибку",
-        "explanation": "Llegaré → llegaría.",
+        "instruction": "Перепишите прямую речь в косвенную",
+        "explanation": "Косвенная речь: Llegaré → llegaría.",
         "grammarTopic": "b2-estilo-indirecto",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Pedro explicó que llegaría tarde",
+          "Pedro explicó que llegaría tarde."
+        ]
       },
       {
         "type": "error_correction",
         "question": "Ana dijo: \"He terminado el trabajo.\"",
         "answer": "Ana dijo que había terminado el trabajo.",
-        "instruction": "Найдите и исправьте ошибку",
-        "explanation": "He terminado → había terminado.",
+        "instruction": "Перепишите прямую речь в косвенную",
+        "explanation": "Косвенная речь: He terminado → había terminado.",
         "grammarTopic": "b2-estilo-indirecto",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Ana dijo que había terminado el trabajo",
+          "Ana dijo que había terminado el trabajo."
+        ]
       },
       {
         "type": "error_correction",
         "question": "Carlos contó: \"Vine ayer.\"",
         "answer": "Carlos contó que había venido el día anterior.",
-        "instruction": "Indefinido → pluscuamperfecto",
-        "explanation": "Vine → había venido; ayer → el día anterior.",
+        "instruction": "Перепишите прямую речь в косвенную",
+        "explanation": "Косвенная речь: Vine → había venido; ayer → el día anterior.",
         "grammarTopic": "b2-estilo-indirecto",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Carlos contó que había venido el día anterior",
+          "Carlos contó que había venido el día anterior."
+        ]
       },
       {
         "type": "error_correction",
         "question": "Laura prometió: \"Te llamaré.\"",
         "answer": "Laura prometió que me llamaría.",
-        "instruction": "Promesa indirecta",
-        "explanation": "Te llamaré → me llamaría.",
+        "instruction": "Перепишите прямую речь в косвенную",
+        "explanation": "Косвенная речь: Te llamaré → me/te llamaría (в зависимости от того, кому пересказываете).",
         "grammarTopic": "b2-estilo-indirecto",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Laura prometió que me llamaría",
+          "Laura prometió que me llamaría.",
+          "Laura prometió que te llamaría.",
+          "Laura prometió que te llamaría"
+        ]
       },
       {
         "type": "error_correction",
         "question": "Miguel respondió: \"No puedo ir.\"",
         "answer": "Miguel respondió que no podía ir.",
-        "instruction": "Modal → imperfecto",
-        "explanation": "No puedo → no podía.",
+        "instruction": "Перепишите прямую речь в косвенную",
+        "explanation": "Косвенная речь: No puedo → no podía (сдвиг после прошедшего respondió).",
         "grammarTopic": "b2-estilo-indirecto",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Miguel respondió que no podía ir",
+          "Miguel respondió que no podía ir."
+        ]
       },
       {
         "type": "error_correction",
         "question": "Sofía dijo: \"Estudio en Madrid.\"",
         "answer": "Sofía dijo que estudiaba en Madrid.",
-        "instruction": "Найдите и исправьте ошибку",
-        "explanation": "Estudio → estudiaba.",
+        "instruction": "Перепишите прямую речь в косвенную",
+        "explanation": "Косвенная речь: Estudio → estudiaba.",
         "grammarTopic": "b2-estilo-indirecto",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Sofía dijo que estudiaba en Madrid",
+          "Sofía dijo que estudiaba en Madrid."
+        ]
       },
       {
         "type": "error_correction",
         "question": "Roberto afirmó: \"Mañana es mi cumpleaños.\"",
         "answer": "Roberto afirmó que al día siguiente era su cumpleaños.",
-        "instruction": "Cambio temporal",
-        "explanation": "Mañana → al día siguiente; es → era.",
+        "instruction": "Перепишите прямую речь в косвенную",
+        "explanation": "Косвенная речь: Mañana → al día siguiente; es → era.",
         "grammarTopic": "b2-estilo-indirecto",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Roberto afirmó que al día siguiente era su cumpleaños",
+          "Roberto afirmó que al día siguiente era su cumpleaños."
+        ]
       },
       {
         "type": "error_correction",
@@ -14883,9 +14925,12 @@
         "question": "No puedo ir hoy pero quiero ir mañana hoy.",
         "answer": "No puedo ir hoy pero quiero ir mañana.",
         "instruction": "Contradicción temporal",
-        "explanation": "Hoy y mañana — no ambos.",
+        "explanation": "Косвенная речь: No puedo → no podía (сдвиг после прошедшего respondió).",
         "grammarTopic": "a1-verbos-frecuentes",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Miguel respondió que no podía ir.",
+          "Miguel respondió que no podía ir"
+        ]
       },
       {
         "type": "error_correction",
@@ -30271,12 +30316,13 @@
         "type": "error_correction",
         "question": "«Que te crees tú eso» expresa acuerdo.",
         "answer": "«Que te crees tú eso» expresa incredulidad irónica.",
-        "instruction": "Исправьте ошибку",
-        "explanation": "Que te crees tú eso — «это ты так думаешь» (ироничное недоверие).",
+        "instruction": "Перепишите прямую речь в косвенную",
+        "explanation": "Косвенная речь: Que te crees tú eso — «это ты так думаешь» (ироничное недоверие).",
         "grammarTopic": "c2-ironia-registry",
         "acceptableAnswers": [
           "«Que te crees tú eso» expresa incredulidad irónica",
-          "«que te crees tú eso» expresa incredulidad irónica"
+          "«que te crees tú eso» expresa incredulidad irónica",
+          "«Que te crees tú eso» expresa incredulidad irónica."
         ]
       }
     ],

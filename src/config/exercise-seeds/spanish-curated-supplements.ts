@@ -4470,71 +4470,71 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "María dijo: \"Voy mañana al médico.\"",
       "answer": "María dijo que iba al médico al día siguiente.",
-      "instruction": "Estilo indirecto",
-      "explanation": "Presente → imperfecto; mañana → al día siguiente."
+      "instruction": "Перепишите прямую речь в косвенную",
+      "explanation": "Косвенная речь: Presente → imperfecto; mañana → al día siguiente."
     },
     {
       "type": "error_correction",
       "question": "Juan afirmó: \"Estoy cansado.\"",
       "answer": "Juan afirmó que estaba cansado.",
-      "instruction": "Estilo indirecto — estar",
-      "explanation": "Estoy → estaba."
+      "instruction": "Перепишите прямую речь в косвенную",
+      "explanation": "Косвенная речь: Estoy → estaba."
     },
     {
       "type": "error_correction",
       "question": "Ella preguntó: \"¿Dónde está el baño?\"",
       "answer": "Ella preguntó dónde estaba el baño.",
-      "instruction": "Pregunta indirecta",
-      "explanation": "¿Dónde está? → dónde estaba."
+      "instruction": "Перепишите прямую речь в косвенную",
+      "explanation": "Косвенная речь: ¿Dónde está? → dónde estaba."
     },
     {
       "type": "error_correction",
       "question": "Pedro explicó: \"Llegaré tarde.\"",
       "answer": "Pedro explicó que llegaría tarde.",
-      "instruction": "Найдите и исправьте ошибку",
-      "explanation": "Llegaré → llegaría."
+      "instruction": "Перепишите прямую речь в косвенную",
+      "explanation": "Косвенная речь: Llegaré → llegaría."
     },
     {
       "type": "error_correction",
       "question": "Ana dijo: \"He terminado el trabajo.\"",
       "answer": "Ana dijo que había terminado el trabajo.",
-      "instruction": "Найдите и исправьте ошибку",
-      "explanation": "He terminado → había terminado."
+      "instruction": "Перепишите прямую речь в косвенную",
+      "explanation": "Косвенная речь: He terminado → había terminado."
     },
     {
       "type": "error_correction",
       "question": "Carlos contó: \"Vine ayer.\"",
       "answer": "Carlos contó que había venido el día anterior.",
-      "instruction": "Indefinido → pluscuamperfecto",
-      "explanation": "Vine → había venido; ayer → el día anterior."
+      "instruction": "Перепишите прямую речь в косвенную",
+      "explanation": "Косвенная речь: Vine → había venido; ayer → el día anterior."
     },
     {
       "type": "error_correction",
       "question": "Laura prometió: \"Te llamaré.\"",
       "answer": "Laura prometió que me llamaría.",
-      "instruction": "Promesa indirecta",
-      "explanation": "Te llamaré → me llamaría."
+      "instruction": "Перепишите прямую речь в косвенную",
+      "explanation": "Косвенная речь: Te llamaré → me/te llamaría (кому пересказываете)."
     },
     {
       "type": "error_correction",
       "question": "Miguel respondió: \"No puedo ir.\"",
       "answer": "Miguel respondió que no podía ir.",
-      "instruction": "Modal → imperfecto",
-      "explanation": "No puedo → no podía."
+      "instruction": "Перепишите прямую речь в косвенную",
+      "explanation": "Косвенная речь: No puedo → no podía (сдвиг после прошедшего respondió)."
     },
     {
       "type": "error_correction",
       "question": "Sofía dijo: \"Estudio en Madrid.\"",
       "answer": "Sofía dijo que estudiaba en Madrid.",
-      "instruction": "Найдите и исправьте ошибку",
-      "explanation": "Estudio → estudiaba."
+      "instruction": "Перепишите прямую речь в косвенную",
+      "explanation": "Косвенная речь: Estudio → estudiaba."
     },
     {
       "type": "error_correction",
       "question": "Roberto afirmó: \"Mañana es mi cumpleaños.\"",
       "answer": "Roberto afirmó que al día siguiente era su cumpleaños.",
-      "instruction": "Cambio temporal",
-      "explanation": "Mañana → al día siguiente; es → era."
+      "instruction": "Перепишите прямую речь в косвенную",
+      "explanation": "Косвенная речь: Mañana → al día siguiente; es → era."
     },
     {
       "type": "translation",

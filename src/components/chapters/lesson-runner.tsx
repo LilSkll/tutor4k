@@ -160,12 +160,14 @@ export function LessonRunner({
 
   const chapterBank = React.useMemo(() => {
     if (presetExercises.length === 0) return [];
+    // Mastered short path: pad with different leftover items, never clone the same stem.
     if (
       adaptation?.practiceEmphasis &&
       adaptation.mode === "mastered_short" &&
       presetExercises.length < SESSION_EXERCISES
     ) {
-      return [...presetExercises, ...presetExercises.slice(0, 2)];
+      const extra = presetExercises.filter((_, i) => i >= 2).slice(0, 2);
+      return [...presetExercises, ...extra];
     }
     return presetExercises;
   }, [presetExercises, adaptation]);

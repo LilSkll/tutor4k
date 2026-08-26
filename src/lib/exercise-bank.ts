@@ -122,6 +122,22 @@ const EARLY_LEVEL_TYPE_PRIORITY: ExerciseType[] = [
   "error_correction",
 ];
 
+/** Soft content key so MC/FB of the same blank sentence never share a round arc. */
+function softContentKey(ex: StaticExercise): string {
+  const raw =
+    ex.type === "sentence_building" || ex.type === "error_correction"
+      ? ex.answer
+      : ex.question;
+  return raw
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/\p{M}/gu, "")
+    .replace(/___+/g, "_")
+    .replace(/[^\p{L}\p{N}\s_()]/gu, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 export function orderEarlyLevelPractice(
   exercises: StaticExercise[],
   level: GrammarLevel,
@@ -137,14 +153,30 @@ export function orderEarlyLevelPractice(
   for (const ex of exercises) buckets[ex.type].push(ex);
 
   const ordered: StaticExercise[] = [];
-  let round = 0;
-  const maxLen = Math.max(...ALL_EXERCISE_TYPES.map((t) => buckets[t].length));
-  while (round < maxLen) {
+  const usedSoft = new Set<string>();
+  const cursor: Record<ExerciseType, number> = {
+    multiple_choice: 0,
+    fill_blank: 0,
+    translation: 0,
+    error_correction: 0,
+    sentence_building: 0,
+  };
+
+  let progress = true;
+  while (progress) {
+    progress = false;
     for (const type of EARLY_LEVEL_TYPE_PRIORITY) {
-      const item = buckets[type][round];
-      if (item) ordered.push(item);
+      const bucket = buckets[type];
+      while (cursor[type] < bucket.length) {
+        const item = bucket[cursor[type]++];
+        const key = softContentKey(item);
+        if (key && usedSoft.has(key)) continue;
+        if (key) usedSoft.add(key);
+        ordered.push(item);
+        progress = true;
+        break;
+      }
     }
-    round += 1;
   }
 
   return ordered.length > 0 ? ordered : exercises;
