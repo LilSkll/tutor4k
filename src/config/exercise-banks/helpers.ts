@@ -1,12 +1,11 @@
 import type { ExerciseType, StaticExercise } from "@/types";
 import { TARGET_EXERCISES_PER_TYPE } from "@/lib/exercise-bank";
-import { isUsableErrorCorrection } from "@/lib/exercise-quality";
+import { isUsableBankExercise } from "@/lib/exercise-quality";
 
 type Draft = Omit<StaticExercise, "id"> & { id?: string };
 
 function packItemOk(ex: Draft): boolean {
-  if (ex.type === "error_correction") return isUsableErrorCorrection(ex);
-  return Boolean(ex.question?.trim() && ex.answer?.trim());
+  return isUsableBankExercise(ex);
 }
 
 /**

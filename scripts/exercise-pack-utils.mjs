@@ -179,6 +179,24 @@ function normKey(s) {
     .toLowerCase();
 }
 
+function fullTargetSentence(s, lang) {
+  const raw =
+    lang === "english"
+      ? s.en || s.acc?.[0] || s.es || ""
+      : s.es || s.en || s.acc?.[0] || "";
+  const t = cleanIndexMarks(raw);
+  if (!t || CYRILLIC_RE.test(t)) return "";
+  return t;
+}
+
+/** Replace the answer token in a full sentence with ___ for MC/FB stems. */
+function blankOneToken(sentence, ans) {
+  if (!sentence || !ans) return "";
+  const re = new RegExp(`\\b${String(ans).replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\b`, "i");
+  if (!re.test(sentence)) return "";
+  return sentence.replace(re, "___");
+}
+
 /**
  * Build a real EC pair: wrong token substituted into a full target sentence.
  * Never invents Cyrillic prompts or `[n]` markers into graded answers.
@@ -236,8 +254,7 @@ export function chapterFromSeeds(g, topic, seeds, lang = "spanish", perType = 20
   for (let i = 0; i < perType; i++) {
     const s = seeds[i % seeds.length];
     const sbSeed = sbPool[i % sbPool.length];
-    const n = i + 1;
-    // Keep stems stable — do not inject `[n]` into learner-facing prompts/answers.
+    // Keep stems stable — do not inject `[n]` / Completa stubs into prompts.
     const q = cleanIndexMarks(s.q);
     const opts = s.options || [s.ans, "—", "—", "—"];
     const options = [...new Set([s.ans, ...opts.filter((o) => o !== s.ans)])].slice(
@@ -248,7 +265,12 @@ export function chapterFromSeeds(g, topic, seeds, lang = "spanish", perType = 20
 
     mcA.push(
       mc(
-        q.includes("___") ? q : `${q} (#${n})`.replace(/ \(#\d+\) \(#\d+\)/, ` (#${n})`),
+        q.includes("___")
+          ? q
+          : fullTargetSentence(s, lang)
+            ? // Prefer a blanked target sentence over a bare prompt
+              blankOneToken(fullTargetSentence(s, lang), s.ans) || q
+            : q,
         options,
         s.ans,
         lang === "english" ? "Choose the correct answer" : "Выберите правильный ответ",
@@ -257,15 +279,21 @@ export function chapterFromSeeds(g, topic, seeds, lang = "spanish", perType = 20
       ),
     );
 
-    fbA.push(
-      fb(
-        q.includes("___") ? q : `Completa (${topic}): ___`,
-        s.ans,
-        lang === "english" ? "Fill in the blank" : "Заполните пропуск",
-        s.explanation || `${topic}: «${s.ans}».`,
-        g,
-      ),
-    );
+    const fbStem =
+      q.includes("___")
+        ? q
+        : blankOneToken(fullTargetSentence(s, lang), s.ans);
+    if (fbStem && /___+/.test(fbStem) && !/^(Completa|Complete)\b/i.test(fbStem)) {
+      fbA.push(
+        fb(
+          fbStem,
+          s.ans,
+          lang === "english" ? "Fill in the blank" : "Заполните пропуск",
+          s.explanation || `${topic}: «${s.ans}».`,
+          g,
+        ),
+      );
+    }
 
     const fullTarget = cleanIndexMarks(
       lang === "english" ? s.en || s.acc?.[0] || s.es || s.ans : s.es || s.acc?.[0] || s.ans,

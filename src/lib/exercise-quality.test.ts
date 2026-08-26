@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 import {
+  isUsableBankExercise,
   isUsableErrorCorrection,
+  isUsableFillBlank,
+  isUsableMultipleChoice,
   stripExerciseIndexMarks,
 } from "@/lib/exercise-quality";
 
@@ -12,6 +15,15 @@ describe("isUsableErrorCorrection", () => {
         answer: "Dijo que vendría al día siguiente.",
       }),
     ).toBe(true);
+  });
+
+  it("rejects Completa stubs and elx fakes", () => {
+    expect(
+      isUsableErrorCorrection({
+        question: "Completa (Misterios del Barrio Gótico) #10: elx.",
+        answer: "Completa (Misterios del Barrio Gótico) #10: El.",
+      }),
+    ).toBe(false);
   });
 
   it("rejects index-marker garbage from the pack generator", () => {
@@ -40,21 +52,67 @@ describe("isUsableErrorCorrection", () => {
       }),
     ).toBe(false);
   });
+});
 
-  it("rejects sentence-building token dumps", () => {
+describe("isUsableFillBlank", () => {
+  it("accepts a real blank sentence", () => {
     expect(
-      isUsableErrorCorrection({
-        question: "Dijo / que / vendría / al / día / siguiente",
-        answer: "Dijo / que / vendría / al / día / siguiente.",
+      isUsableFillBlank({
+        question: "El libro ___ escrito por Ana.",
+        answer: "fue",
+      }),
+    ).toBe(true);
+  });
+
+  it("rejects Completa (Topic) #N stubs", () => {
+    expect(
+      isUsableFillBlank({
+        question: "Completa (Misterios del Barrio Gótico) #10: ___",
+        answer: "El",
+      }),
+    ).toBe(false);
+  });
+});
+
+describe("isUsableMultipleChoice", () => {
+  it("rejects Cyrillic stems and [n] markers", () => {
+    expect(
+      isUsableMultipleChoice({
+        question: "Я из России [4].",
+        answer: "Soy",
+        options: ["Soy", "Estoy", "Es", "Somos"],
+      }),
+    ).toBe(false);
+  });
+
+  it("accepts a blank stem with options", () => {
+    expect(
+      isUsableMultipleChoice({
+        question: "Yo ___ estudiante.",
+        answer: "soy",
+        options: ["soy", "estoy", "es", "somos"],
+      }),
+    ).toBe(true);
+  });
+});
+
+describe("isUsableBankExercise", () => {
+  it("routes by type", () => {
+    expect(
+      isUsableBankExercise({
+        type: "fill_blank",
+        question: "Completa (X) #1: ___",
+        answer: "El",
       }),
     ).toBe(false);
   });
 });
 
 describe("stripExerciseIndexMarks", () => {
-  it("removes [n] markers", () => {
+  it("removes [n] and #n markers", () => {
     expect(stripExerciseIndexMarks("Dijo que estaba allí [2].")).toBe(
       "Dijo que estaba allí.",
     );
+    expect(stripExerciseIndexMarks("Yo hablo (#3).")).toBe("Yo hablo.");
   });
 });
