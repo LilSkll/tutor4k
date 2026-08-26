@@ -2146,7 +2146,7 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 | Время | \`Fue X cuando…\` | \`**Fue ayer cuando** lo supe.\` — Именно вчера я это узнал. |
 | Причина | \`Es por X por lo que…\` | \`**Es por eso por lo que** me fui.\` — Именно поэтому я ушёл. |
 
-> ⚠️ Предлог **повторяется**: \`Es **con** ella **con** quien quiero hablar.\` (не \`*Es con ella que…\` — калька с французского, в культурной норме избегается)
+> ⚠️ Предлог **повторяется**: \`Es **con** ella **con** quien quiero hablar.\` (не \`*Es con ella que…\` — так по-французски; в испанской норме так не говорят)
 
 ### LO QUE — выделение действия/объекта
 - \`**Lo que** necesito **es** dormir.\` — Что мне нужно — так это выспаться.
