@@ -1067,13 +1067,13 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 
 ## Местоимение SE — пять функций, один вид
 
-### 1. Возвратное (reflexivo)
-\`levantarse\` → \`Me **levanto** a las 7.\` — Я встаю в 7.
-\`lavarse\` → \`Se **lava** las manos.\` — Он моет руки.
+### 1. Возвратное (reflexivo) — действие на себя
+\`levantarse\` → \`María **se** levanta a las 7.\` — Мария встаёт в 7.
+\`lavarse\` → \`Se **lava** las manos.\` — Он моет себе руки.
 
-### 2. Взаимное (recíproco)
-\`**Se** ven todos los días.\` — Они видят друг друга каждый день.
-\`**Nos** abrazamos.\` — Мы обнимаемся.
+### 2. Взаимное (recíproco) — «друг друга»
+\`Ana y Luis **se** ven todos los días.\` — Они видят друг друга каждый день.
+\`Nos **abrazamos**.\` — Мы обнимаемся.
 
 ### 3. Пассивное (pasiva refleja) — без указания исполнителя
 \`**Se** habla español.\` — Здесь говорят по-испански.

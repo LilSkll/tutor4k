@@ -7,7 +7,9 @@
  * - “has successfully completed” ≈ y 322–326
  * - “CHAPTER / LEVEL” placeholder ≈ y 344–355
  * - “in the course” ≈ y 391
- * - Course title (“SPANISH WITH PAVEL” on art) ≈ y 405–414
+ * - Course title (“SPANISH WITH PAVEL” on art) ≈ y 463–480
+ * - Calendar / book icons ≈ y 540–560 (centers x ≈ 290 / 740)
+ * - DATE / LEVEL labels ≈ y 590–597 (replaced by real values)
  */
 
 export const CERTIFICATE_TEMPLATE_SRC = "/certificates/completion-template.png";
@@ -177,19 +179,21 @@ export async function fillCompletionCertificate(
   }
 
   // ── Language course: cover template “SPANISH WITH PAVEL” title ────
-  coverBand(ctx, 160, 396, 704, 62);
+  // Title sits ≈ y 463–480; stop before calendar/book icons (~540).
+  coverBand(ctx, 200, 448, 624, 46);
   ctx.fillStyle = INK;
   const courseSize = fitCentered(ctx, fields.courseLine, 580, 26, 16, boldFont);
   ctx.font = boldFont(courseSize);
-  ctx.fillText(fields.courseLine, cx, 426);
+  ctx.fillText(fields.courseLine, cx, 470);
 
-  // ── Date (bottom left, under DATE) ────────────────────────────────
-  ctx.font = sansFont(12);
-  ctx.fillText(fields.dateLabel, 212, 508);
-
-  // ── Level (bottom right, under LEVEL) ─────────────────────────────
+  // ── Date / level: replace DATE & LEVEL captions under the icons ───
+  coverBand(ctx, 248, 582, 84, 30);
+  coverBand(ctx, 698, 582, 84, 30);
+  ctx.font = sansFont(13);
+  ctx.fillStyle = INK;
+  ctx.fillText(fields.dateLabel, 290, 595);
   ctx.font = sansFont(14);
-  ctx.fillText(fields.level, 812, 508);
+  ctx.fillText(fields.level, 740, 595);
 
   return canvas.toDataURL("image/png");
 }

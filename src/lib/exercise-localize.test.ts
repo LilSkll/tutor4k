@@ -34,6 +34,23 @@ describe("translation localization", () => {
     const [ex] = prepareExercisesForInterface([sample], "en");
     expect(ex.question).toBe("I am a student.");
   });
+
+  it("replaces spoiler grammar-tag instructions", () => {
+    const [ex] = prepareExercisesForInterface(
+      [
+        {
+          ...sample,
+          id: "se1",
+          type: "fill_blank",
+          question: "Ana y Luis ___ ven cada día.",
+          answer: "se",
+          instruction: "Взаимное se",
+        },
+      ],
+      "ru",
+    );
+    expect(ex.instruction).toBe("Заполните пропуск");
+  });
 });
 
 describe("orderEarlyLevelPractice", () => {

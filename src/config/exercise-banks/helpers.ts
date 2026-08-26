@@ -8,9 +8,43 @@ function packItemOk(ex: Draft): boolean {
   return isUsableBankExercise(ex);
 }
 
+/** Collapse accents/punct so the same sentence is not reused across types. */
+function normalizeStem(s: string): string {
+  return s
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/\p{M}/gu, "")
+    .replace(/___+/g, "_")
+    .replace(/\s*\/\s*/g, " ")
+    .replace(/[¿?¡!.,;:'"«»„""''`´…()]/g, "")
+    .replace(/[-–—]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/**
+ * Content fingerprint shared across MC/FB (same blank stem) and across
+ * EC/SB (same finished sentence) so chapters do not recycle one phrase.
+ */
+export function exerciseContentFingerprint(ex: Draft): string {
+  switch (ex.type) {
+    case "sentence_building":
+    case "error_correction":
+      return `sent|${normalizeStem(ex.answer)}`;
+    case "translation":
+      return `tr|${normalizeStem(ex.question)}`;
+    case "multiple_choice":
+    case "fill_blank":
+      return `blank|${normalizeStem(ex.question)}`;
+    default:
+      return `${ex.type}|${normalizeStem(ex.question)}`;
+  }
+}
+
 /**
  * Expand a chapter bank toward TARGET_EXERCISES_PER_TYPE for every type.
- * Keeps curated items first; appends supplemental packs without duplicates.
+ * Keeps curated items first; appends supplemental packs without duplicates
+ * (same blank stem or finished sentence across types is skipped).
  */
 export function expandChapterBank(
   curated: Draft[],
@@ -19,9 +53,8 @@ export function expandChapterBank(
 ): Draft[] {
   const targetFor = (type: ExerciseType) =>
     typeTargets?.[type] ?? TARGET_EXERCISES_PER_TYPE;
-  const seen = new Set(
-    curated.map((e) => `${e.type}|${e.question.trim().toLowerCase()}`),
-  );
+  const seenExact = new Set<string>();
+  const seenContent = new Set<string>();
   const byType: Record<ExerciseType, Draft[]> = {
     multiple_choice: [],
     fill_blank: [],
@@ -30,20 +63,27 @@ export function expandChapterBank(
     sentence_building: [],
   };
 
-  for (const ex of curated) {
-    if (!packItemOk(ex)) continue;
+  const tryAdd = (ex: Draft): boolean => {
+    if (!packItemOk(ex)) return false;
+    const exact = `${ex.type}|${ex.question.trim().toLowerCase()}`;
+    if (seenExact.has(exact)) return false;
+    const content = exerciseContentFingerprint(ex);
+    if (seenContent.has(content)) return false;
+    seenExact.add(exact);
+    seenContent.add(content);
     byType[ex.type].push(ex);
+    return true;
+  };
+
+  for (const ex of curated) {
+    tryAdd(ex);
   }
 
   for (const type of Object.keys(byType) as ExerciseType[]) {
     const pack = packs[type] ?? [];
     for (const ex of pack) {
       if (byType[type].length >= targetFor(type)) break;
-      if (!packItemOk(ex)) continue;
-      const key = `${ex.type}|${ex.question.trim().toLowerCase()}`;
-      if (seen.has(key)) continue;
-      seen.add(key);
-      byType[type].push(ex);
+      tryAdd(ex);
     }
   }
 

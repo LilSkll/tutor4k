@@ -1,5 +1,6 @@
 import type { ExerciseType, InterfaceLanguage, StaticExercise } from "@/types";
 import { lookupTranslationPrompt } from "@/config/exercise-translation-prompts";
+import { isGrammarCategoryInstruction } from "@/lib/exercise-quality";
 
 // =====================================================================
 // Interface-language handling for the static exercise bank.
@@ -135,13 +136,16 @@ const GENERIC_INSTRUCTION: Record<
  * Instruction shown above the exercise. Keeps the authored instruction when
  * it is already in the interface language; otherwise falls back to a
  * localized generic instruction for the exercise type.
+ *
+ * Grammar-category tags (“Взаимное se”, “Se reflexivo”, “Perfecto — ya”)
+ * spoil the answer — always replace those with a generic prompt.
  */
 export function localizeExerciseInstruction(
   exercise: Pick<StaticExercise, "type"> & { instruction?: string },
   interfaceLanguage: InterfaceLanguage,
 ): string {
   const instruction = exercise.instruction?.trim() ?? "";
-  if (!instruction) {
+  const fallback = (): string => {
     if (exercise.type === "error_correction") {
       return (
         ERROR_CORRECTION_FULL[interfaceLanguage] ?? ERROR_CORRECTION_FULL.en
@@ -151,18 +155,14 @@ export function localizeExerciseInstruction(
       GENERIC_INSTRUCTION[interfaceLanguage]?.[exercise.type] ??
       GENERIC_INSTRUCTION.en[exercise.type]
     );
+  };
+
+  if (!instruction || isGrammarCategoryInstruction(instruction)) {
+    return fallback();
   }
   const source = detectSourceLanguage(instruction);
   if (source === interfaceLanguage) return instruction;
-  if (exercise.type === "error_correction") {
-    return (
-      ERROR_CORRECTION_FULL[interfaceLanguage] ?? ERROR_CORRECTION_FULL.en
-    );
-  }
-  return (
-    GENERIC_INSTRUCTION[interfaceLanguage]?.[exercise.type] ??
-    GENERIC_INSTRUCTION.en[exercise.type]
-  );
+  return fallback();
 }
 
 /**

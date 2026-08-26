@@ -79,6 +79,41 @@ const GRAMMAR_LABEL_PROMPT =
 const SECTION_HEADER_PROMPT =
   /^(Возвратное|Безличное|Взаимное|Пассивн|Indicativo|Subjuntivo|Perfecto|Imperfecto|Condicional|Futuro|Ser\s*\/\s*Estar|Se reflexivo|Se impersonal|Se pasivo|Se accidental|Se prohibición)/i;
 
+/** True when instruction is a grammar tag that spoils what to write. */
+export function isGrammarCategoryInstruction(instruction: string): boolean {
+  const inst = instruction.trim();
+  if (!inst) return false;
+  // Real learner prompts — keep them.
+  if (
+    /^(Выберите|Заполните|Вставьте|Переведите|Исправьте|Найдите|Составьте|Choose|Fill|Complete|Translate|Rewrite|Find|Build|Elige|Completa|Traduce|Reescribe|Ordena|Wähle|Fülle|Übersetze|Finde|Bilde)\b/i.test(
+      inst,
+    )
+  ) {
+    // “Переведите с donde / se pasiva” still spoils the construction.
+    if (/^переведите с\b/i.test(inst)) return true;
+    return false;
+  }
+  if (/относительн|притяжательн/i.test(inst) && inst.length <= 40) return true;
+  if (/^[A-Za-záéíóúñüÁÉÍÓÚÑÜ]+\s*\/\s*[A-Za-záéíóúñüÁÉÍÓÚÑÜ]+/i.test(inst) && inst.length <= 28) {
+    return true;
+  }
+  if (SECTION_HEADER_PROMPT.test(inst)) return true;
+  if (
+    /^(Возвратное|Взаимное|Безличное|Пассивн)\b/i.test(inst)
+  ) {
+    return true;
+  }
+  if (
+    /^(Perfecto|Imperfecto|Pluscuamperfecto|Condicional|Futuro|Subjuntivo|Indicativo|Presente|Pasiva|Pasivo|Imperativo|Se|Ser(\s*\/\s*Estar)?|Estar|Hacerse|Relativ|Cuyo|OD|OI|CD|CI|Irreal)\b/i.test(
+      inst,
+    ) &&
+    inst.length <= 48
+  ) {
+    return true;
+  }
+  return false;
+}
+
 function instructionSpoilsAnswer(instruction: string, answer: string): boolean {
   const a = answer.trim();
   if (a.length < 2 || a.length > 14) return false;
@@ -102,13 +137,20 @@ export function isUsableTranslation(ex: {
   if (hasFakeXToken(a)) return false;
   if (CYRILLIC.test(a)) return false;
   if (SECTION_HEADER_PROMPT.test(q) || GRAMMAR_LABEL_PROMPT.test(q)) return false;
-  // Need a real prompt sentence — not a 2–3 word grammar tag
+  if (isGrammarCategoryInstruction(q)) return false;
+  // Grammar-tag dumps used as “prompts” (2–3 words, no real sentence)
   const words = q.split(/\s+/).filter(Boolean);
-  const looksLikeSentence =
-    CYRILLIC.test(q) || /[.?!¿¡]/.test(q) || words.length >= 5;
-  if (!looksLikeSentence) return false;
+  if (CYRILLIC.test(q)) {
+    const looksLikeSentence =
+      /[.?!…,]/.test(q) || words.length >= 4;
+    if (!looksLikeSentence) return false;
+  } else {
+    const looksLikeSentence =
+      /[.?!¿¡]/.test(q) || words.length >= 5;
+    if (!looksLikeSentence) return false;
+  }
   // Tiny pronoun-only "translations"
-  if (a.length <= 3 && /^(se|lo|la|le|me|te|nos|os)$/i.test(a)) return false;
+  if (a.length <= 3 && /^(se|lo|la|le|me|te|nos|os|que)$/i.test(a)) return false;
   return true;
 }
 
@@ -131,7 +173,7 @@ export function isUsableFillBlank(ex: {
     return false;
   }
   if (instructionSpoilsAnswer(inst, a)) return false;
-  if (/^(Возвратное|Взаимное|Безличное)\b/i.test(inst)) return false;
+  if (isGrammarCategoryInstruction(inst)) return false;
   return true;
 }
 
@@ -160,7 +202,7 @@ export function isUsableMultipleChoice(ex: {
   // Need a blank, a question, or a quoted phrase to analyse — not a full spoiled sentence
   if (!/___+/.test(q) && !/[?？]/.test(q) && !/«/.test(q)) return false;
   if (instructionSpoilsAnswer(inst, a) && a.length <= 4) return false;
-  if (/^(Возвратное|Взаимное|Безличное)/i.test(inst)) return false;
+  if (isGrammarCategoryInstruction(inst)) return false;
   return true;
 }
 

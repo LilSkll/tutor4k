@@ -547,7 +547,7 @@
   },
   "___ habla español aquí. (пассив с se)": {
     "ru": "___ говорят по-испански здесь. (пассив с se)",
-    "en": "___ Spanish is spoken here. (se-passive)",
+    "en": "___ Spanish is spoken here.",
     "es": "___ habla español aquí. (pasiva con se)",
     "de": "___ wird hier Spanisch gesprochen. (Passiv mit se)"
   },
@@ -559,7 +559,7 @@
   },
   "Se ___ coches en esta fábrica.": {
     "ru": "В этой фабрике ___ машины. (se-пассив)",
-    "en": "Cars ___ in this factory. (se-passive)",
+    "en": "Cars ___ in this factory.",
     "es": "Se ___ coches en esta fábrica.",
     "de": "In dieser Fabrik ___ Autos. (Passiv mit se)"
   },

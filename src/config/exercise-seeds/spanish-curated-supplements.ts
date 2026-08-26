@@ -5,35 +5,35 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Я встаю в семь утра.",
       "answer": "Me levanto a las siete",
-      "instruction": "Presente — утренние рутины",
+      "instruction": "Переведите предложение",
       "explanation": "Me levanto = встаю. a las siete = в семь."
     },
     {
       "type": "translation",
       "question": "Мы завтракаем вместе каждое утро.",
       "answer": "Desayunamos juntos cada mañana",
-      "instruction": "Presente nosotros",
+      "instruction": "Переведите предложение",
       "explanation": "Desayunamos — завтракаем (nosotros)."
     },
     {
       "type": "translation",
       "question": "Она читает книгу каждый вечер.",
       "answer": "Ella lee un libro cada noche",
-      "instruction": "Presente ella",
+      "instruction": "Переведите предложение",
       "explanation": "Ella lee — читает. cada noche = каждый вечер."
     },
     {
       "type": "translation",
       "question": "Они учатся в университете.",
       "answer": "Estudian en la universidad",
-      "instruction": "Presente ellos",
+      "instruction": "Переведите предложение",
       "explanation": "Ellos → estudian (-ar). Sin pronombre posible."
     },
     {
       "type": "translation",
       "question": "Ты готовишь ужин сегодня?",
       "answer": "¿Cocinas la cena hoy?",
-      "instruction": "Presente tú — вопрос",
+      "instruction": "Переведите предложение",
       "explanation": "¿Cocinas…? — готовишь ли ты."
     },
     {
@@ -47,21 +47,21 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Мой брат работает в больнице.",
       "answer": "Mi hermano trabaja en un hospital",
-      "instruction": "Presente — trabajo",
+      "instruction": "Переведите предложение",
       "explanation": "Trabaja en un hospital."
     },
     {
       "type": "translation",
       "question": "Мы ужинаем в восемь часов.",
       "answer": "Cenamos a las ocho",
-      "instruction": "Presente — cenar",
+      "instruction": "Переведите предложение",
       "explanation": "Cenamos a las ocho = ужинаем в восемь."
     },
     {
       "type": "translation",
       "question": "Он слушает музыку по дороге на работу.",
       "answer": "Escucha música camino al trabajo",
-      "instruction": "Presente él",
+      "instruction": "Переведите предложение",
       "explanation": "Escucha música. camino al trabajo = по дороге на работу."
     },
     {
@@ -189,14 +189,14 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "Yo me levanto a las siete de la mañana cada días.",
       "answer": "Me levanto a las siete de la mañana cada día.",
-      "instruction": "Presente — cada día",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Cada día — singular (no días)."
     },
     {
       "type": "error_correction",
       "question": "Ella lee un libro cada noches.",
       "answer": "Ella lee un libro cada noche.",
-      "instruction": "Presente — cada noche",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Cada noche — singular."
     },
     {
@@ -273,7 +273,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "día"
       ],
       "answer": "Trabajo ocho horas al día",
-      "instruction": "Presente",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Trabajo ocho horas…"
     },
     {
@@ -314,7 +314,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "periódico"
       ],
       "answer": "Mi padre lee el periódico",
-      "instruction": "Presente él",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Lee el periódico."
     },
     {
@@ -372,7 +372,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "bien"
       ],
       "answer": "Ella cocina muy bien",
-      "instruction": "Presente ella",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Cocina muy bien."
     },
     {
@@ -1475,7 +1475,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "amable"
       ],
       "answer": "El vendedor es muy amable",
-      "instruction": "Ser",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Es muy amable."
     },
     {
@@ -1541,7 +1541,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "altos"
       ],
       "answer": "Los precios son altos",
-      "instruction": "Ser + adj",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Los precios son altos."
     },
     {
@@ -1968,7 +1968,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Она никогда не была в Аргентине.",
       "answer": "Ella nunca ha estado en Argentina",
-      "instruction": "Perfecto + nunca",
+      "instruction": "Переведите предложение",
       "explanation": "Nunca ha estado en…"
     },
     {
@@ -1982,49 +1982,49 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Ты когда-нибудь пробовал паэлью?",
       "answer": "¿Has probado alguna vez la paella?",
-      "instruction": "Perfecto — вопрос",
+      "instruction": "Переведите предложение",
       "explanation": "¿Has probado alguna vez…?"
     },
     {
       "type": "translation",
       "question": "Они ещё не закончили.",
       "answer": "Todavía no han terminado",
-      "instruction": "Perfecto negativo",
+      "instruction": "Переведите предложение",
       "explanation": "Todavía no han terminado."
     },
     {
       "type": "translation",
       "question": "Я уже видел этот фильм.",
       "answer": "Ya he visto esta película",
-      "instruction": "Perfecto — ver",
+      "instruction": "Переведите предложение",
       "explanation": "He visto — видел."
     },
     {
       "type": "translation",
       "question": "Он потерял ключи.",
       "answer": "Ha perdido las llaves",
-      "instruction": "Perfecto reciente",
+      "instruction": "Переведите предложение",
       "explanation": "Ha perdido las llaves."
     },
     {
       "type": "translation",
       "question": "Мы жили здесь пять лет.",
       "answer": "Hemos vivido aquí cinco años",
-      "instruction": "Perfecto + duración",
+      "instruction": "Переведите предложение",
       "explanation": "Hemos vivido aquí cinco años."
     },
     {
       "type": "translation",
       "question": "Она написала три письма.",
       "answer": "Ha escrito tres cartas",
-      "instruction": "Perfecto — escribir",
+      "instruction": "Переведите предложение",
       "explanation": "Ha escrito tres cartas."
     },
     {
       "type": "error_correction",
       "question": "Yo he comido ayer.",
       "answer": "Yo he comido.",
-      "instruction": "Perfecto — маркер",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "He comido — без ayer (ya = связь с presente).",
       "acceptableAnswers": [
         "He comido hoy."
@@ -2034,7 +2034,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "Ella ha ido a París en 2019.",
       "answer": "Ella ha ido a París.",
-      "instruction": "Perfecto vs indefinido",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Fecha cerrada → indefinido; sin fecha → perfecto OK."
     },
     {
@@ -2048,7 +2048,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "trabajo"
       ],
       "answer": "Ya he terminado el trabajo",
-      "instruction": "Perfecto — ya",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Ya he terminado…"
     },
     {
@@ -2062,7 +2062,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "Chile"
       ],
       "answer": "Nunca he estado en Chile",
-      "instruction": "Perfecto — nunca",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Nunca he estado…"
     },
     {
@@ -2075,7 +2075,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "paella?"
       ],
       "answer": "¿Has probado la paella?",
-      "instruction": "Perfecto — pregunta",
+      "instruction": "Составьте предложение из слов",
       "explanation": "¿Has probado…?"
     },
     {
@@ -2089,7 +2089,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "años"
       ],
       "answer": "Hemos vivido aquí cinco años",
-      "instruction": "Perfecto + duración",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Hemos vivido aquí…"
     },
     {
@@ -2102,7 +2102,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "llegado"
       ],
       "answer": "Todavía no han llegado",
-      "instruction": "Perfecto negativo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Todavía no han llegado."
     },
     {
@@ -2115,7 +2115,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "llaves"
       ],
       "answer": "Ha perdido las llaves",
-      "instruction": "Perfecto reciente",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Ha perdido las llaves."
     },
     {
@@ -2142,7 +2142,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "veces"
       ],
       "answer": "He visto esta película tres veces",
-      "instruction": "Perfecto + frecuencia",
+      "instruction": "Составьте предложение из слов",
       "explanation": "He visto… tres veces."
     },
     {
@@ -2155,7 +2155,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "deberes?"
       ],
       "answer": "¿Has hecho los deberes?",
-      "instruction": "Perfecto — hacer",
+      "instruction": "Составьте предложение из слов",
       "explanation": "¿Has hecho los deberes?"
     },
     {
@@ -2168,7 +2168,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "bien"
       ],
       "answer": "No he dormido bien",
-      "instruction": "Perfecto negativo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "No he dormido bien."
     },
     {
@@ -2181,7 +2181,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "cartas"
       ],
       "answer": "Han escrito tres cartas",
-      "instruction": "Perfecto — escribir",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Han escrito tres cartas."
     },
     {
@@ -2193,7 +2193,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "demasiado"
       ],
       "answer": "He comido demasiado",
-      "instruction": "Perfecto — comer",
+      "instruction": "Составьте предложение из слов",
       "explanation": "He comido demasiado."
     },
     {
@@ -2206,7 +2206,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "museo?"
       ],
       "answer": "¿Has visitado el museo?",
-      "instruction": "Perfecto — visitar",
+      "instruction": "Составьте предложение из слов",
       "explanation": "¿Has visitado el museo?"
     },
     {
@@ -2221,7 +2221,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "novelas"
       ],
       "answer": "Esta semana he leído dos novelas",
-      "instruction": "Perfecto — periodo abierto",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Esta semana he leído — на этой неделе прочитал."
     },
     {
@@ -2236,7 +2236,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "hoy?"
       ],
       "answer": "¿Has oído las noticias de hoy?",
-      "instruction": "Perfecto — pregunta",
+      "instruction": "Составьте предложение из слов",
       "explanation": "¿Has oído? — ты слышал?"
     },
     {
@@ -2250,7 +2250,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "ceviche"
       ],
       "answer": "Nunca he probado el ceviche",
-      "instruction": "Perfecto — nunca",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Nunca he probado — никогда не пробовал."
     },
     {
@@ -2263,7 +2263,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "opinión"
       ],
       "answer": "Hemos cambiado de opinión",
-      "instruction": "Perfecto — nosotros",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Hemos cambiado — мы изменили мнение."
     },
     {
@@ -2278,7 +2278,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "poco"
       ],
       "answer": "Ha empezado a llover hace poco",
-      "instruction": "Perfecto — reciente",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Ha empezado a llover — недавно начался дождь."
     },
     {
@@ -2292,7 +2292,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "problema?"
       ],
       "answer": "¿Han resuelto ya el problema?",
-      "instruction": "Perfecto — ellos",
+      "instruction": "Составьте предложение из слов",
       "explanation": "¿Han resuelto ya? — они уже решили?"
     }
   ],
@@ -2699,84 +2699,84 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Когда я был ребёнком, играл в футбол.",
       "answer": "Cuando era niño jugaba al fútbol",
-      "instruction": "Imperfecto — привычка",
+      "instruction": "Переведите предложение",
       "explanation": "Cuando era niño jugaba al fútbol."
     },
     {
       "type": "translation",
       "question": "Было холодно и шёл дождь.",
       "answer": "Hacía frío y llovía",
-      "instruction": "Imperfecto — погода",
+      "instruction": "Переведите предложение",
       "explanation": "Hacía frío y llovía."
     },
     {
       "type": "translation",
       "question": "Она всегда читала перед сном.",
       "answer": "Siempre leía antes de dormir",
-      "instruction": "Imperfecto — siempre",
+      "instruction": "Переведите предложение",
       "explanation": "Siempre leía antes de dormir."
     },
     {
       "type": "translation",
       "question": "Мы жили в маленьком городе.",
       "answer": "Vivíamos en un pueblo pequeño",
-      "instruction": "Imperfecto — описание",
+      "instruction": "Переведите предложение",
       "explanation": "Vivíamos en un pueblo pequeño."
     },
     {
       "type": "translation",
       "question": "Он часто ходил в библиотеку.",
       "answer": "Iba a menudo a la biblioteca",
-      "instruction": "Imperfecto — ir",
+      "instruction": "Переведите предложение",
       "explanation": "Iba a menudo a la biblioteca."
     },
     {
       "type": "translation",
       "question": "Было три часа, когда я позвонил.",
       "answer": "Eran las tres cuando llamé",
-      "instruction": "Imperfecto + indefinido",
+      "instruction": "Переведите предложение",
       "explanation": "Eran las tres cuando llamé."
     },
     {
       "type": "translation",
       "question": "Они были счастливы в те годы.",
       "answer": "Eran felices en aquellos años",
-      "instruction": "Imperfecto ser",
+      "instruction": "Переведите предложение",
       "explanation": "Eran felices en aquellos años."
     },
     {
       "type": "translation",
       "question": "Я думал, что ты дома.",
       "answer": "Pensaba que estabas en casa",
-      "instruction": "Imperfecto — мысль",
+      "instruction": "Переведите предложение",
       "explanation": "Pensaba que estabas en casa."
     },
     {
       "type": "translation",
       "question": "Каждое лето мы ездили на море.",
       "answer": "Cada verano íbamos al mar",
-      "instruction": "Imperfecto — привычка",
+      "instruction": "Переведите предложение",
       "explanation": "Cada verano íbamos al mar."
     },
     {
       "type": "translation",
       "question": "Мы часто ходили в парк.",
       "answer": "Íbamos a menudo al parque",
-      "instruction": "Imperfecto hábito",
+      "instruction": "Переведите предложение",
       "explanation": "Íbamos al parque — привычка"
     },
     {
       "type": "error_correction",
       "question": "Cuando era niño jugué al fútbol.",
       "answer": "Cuando era niño jugaba al fútbol.",
-      "instruction": "Imperfecto hábito",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Hábito pasado → jugaba (imperfecto)."
     },
     {
       "type": "error_correction",
       "question": "Hacía frío y llovió.",
       "answer": "Hacía frío y llovía.",
-      "instruction": "Imperfecto simultáneo",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Acciones simultáneas → imperfecto."
     },
     {
@@ -2791,7 +2791,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "fútbol"
       ],
       "answer": "Cuando era niño jugaba al fútbol",
-      "instruction": "Imperfecto — hábito",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Cuando era niño jugaba…"
     },
     {
@@ -2804,7 +2804,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "llovía"
       ],
       "answer": "Hacía frío y llovía",
-      "instruction": "Imperfecto — clima",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Hacía frío y llovía."
     },
     {
@@ -2818,7 +2818,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "dormir"
       ],
       "answer": "Siempre leía antes de dormir",
-      "instruction": "Imperfecto — siempre",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Siempre leía…"
     },
     {
@@ -2832,7 +2832,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "pequeño"
       ],
       "answer": "Vivíamos en un pueblo pequeño",
-      "instruction": "Imperfecto — descripción",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Vivíamos en un pueblo…"
     },
     {
@@ -2847,7 +2847,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "biblioteca"
       ],
       "answer": "Iba a menudo a la biblioteca",
-      "instruction": "Imperfecto — ir",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Iba a menudo…"
     },
     {
@@ -2861,7 +2861,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "llamé"
       ],
       "answer": "Eran las tres cuando llamé",
-      "instruction": "Imperfecto + indefinido",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Eran las tres cuando llamé."
     },
     {
@@ -2875,7 +2875,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "años"
       ],
       "answer": "Eran felices en aquellos años",
-      "instruction": "Imperfecto ser",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Eran felices…"
     },
     {
@@ -2889,7 +2889,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "casa"
       ],
       "answer": "Pensaba que estabas en casa",
-      "instruction": "Imperfecto — pensar",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Pensaba que estabas…"
     },
     {
@@ -2903,7 +2903,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "mar"
       ],
       "answer": "Cada verano íbamos al mar",
-      "instruction": "Imperfecto — costumbre",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Cada verano íbamos…"
     },
     {
@@ -2918,7 +2918,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "luminosa"
       ],
       "answer": "La casa era grande y luminosa",
-      "instruction": "Imperfecto — descripción",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Era grande y luminosa."
     },
     {
@@ -2931,7 +2931,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "decir"
       ],
       "answer": "No sabía qué decir",
-      "instruction": "Imperfecto — saber",
+      "instruction": "Составьте предложение из слов",
       "explanation": "No sabía qué decir."
     },
     {
@@ -2944,7 +2944,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "música"
       ],
       "answer": "Mientras cocinaba escuchaba música",
-      "instruction": "Imperfecto simultáneo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Mientras cocinaba…"
     },
     {
@@ -2957,7 +2957,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "entonces"
       ],
       "answer": "Tenía quince años entonces",
-      "instruction": "Imperfecto — edad",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Tenía quince años."
     },
     {
@@ -2971,7 +2971,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "tarde"
       ],
       "answer": "Los domingos dormíamos hasta tarde",
-      "instruction": "Imperfecto — rutina",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Los domingos dormíamos…"
     },
     {
@@ -2987,7 +2987,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "oscuridad"
       ],
       "answer": "De pequeño tenía miedo a la oscuridad",
-      "instruction": "Imperfecto — infancia",
+      "instruction": "Составьте предложение из слов",
       "explanation": "De pequeño tenía miedo — в детстве боялся."
     },
     {
@@ -3001,7 +3001,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "timbre"
       ],
       "answer": "Mientras cenábamos sonó el timbre",
-      "instruction": "Imperfecto + indefinido",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Mientras cenábamos… sonó — фон + событие."
     },
     {
@@ -3016,7 +3016,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "chistes"
       ],
       "answer": "Siempre nos reíamos de sus chistes",
-      "instruction": "Imperfecto — hábito",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Siempre nos reíamos — всегда смеялись."
     },
     {
@@ -3031,7 +3031,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "dormía"
       ],
       "answer": "Eran las ocho y aún dormía",
-      "instruction": "Imperfecto — hora + acción",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Eran las ocho y dormía — было восемь и он спал."
     },
     {
@@ -3047,7 +3047,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "fiesta"
       ],
       "answer": "No conocía a nadie en la fiesta",
-      "instruction": "Imperfecto — estado pasado",
+      "instruction": "Составьте предложение из слов",
       "explanation": "No conocía a nadie — никого не знал."
     }
   ],
@@ -3387,56 +3387,56 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Я хочу, чтобы ты пришёл.",
       "answer": "Quiero que vengas",
-      "instruction": "Subjuntivo — deseo",
+      "instruction": "Переведите предложение",
       "explanation": "Quiero que vengas. venir → vengas."
     },
     {
       "type": "translation",
       "question": "Надеюсь, что она будет счастлива.",
       "answer": "Espero que sea feliz",
-      "instruction": "Subjuntivo — esperar",
+      "instruction": "Переведите предложение",
       "explanation": "Espero que sea feliz."
     },
     {
       "type": "translation",
       "question": "Важно, чтобы вы пришли вовремя.",
       "answer": "Es importante que lleguen a tiempo",
-      "instruction": "Subjuntivo — impersonal",
+      "instruction": "Переведите предложение",
       "explanation": "Es importante que lleguen."
     },
     {
       "type": "translation",
       "question": "Она просит, чтобы мы молчали.",
       "answer": "Pide que callemos",
-      "instruction": "Subjuntivo — pedir",
+      "instruction": "Переведите предложение",
       "explanation": "Pide que callemos."
     },
     {
       "type": "translation",
       "question": "Сомневаюсь, что он прав.",
       "answer": "Dudo que tenga razón",
-      "instruction": "Subjuntivo — dudar",
+      "instruction": "Переведите предложение",
       "explanation": "Dudo que tenga razón."
     },
     {
       "type": "translation",
       "question": "Пока он не придёт, мы подождём.",
       "answer": "Esperaremos hasta que venga",
-      "instruction": "Subjuntivo — hasta que",
+      "instruction": "Переведите предложение",
       "explanation": "Hasta que venga."
     },
     {
       "type": "translation",
       "question": "Мне жаль, что ты уезжаешь.",
       "answer": "Siento que te vayas",
-      "instruction": "Subjuntivo — sentir",
+      "instruction": "Переведите предложение",
       "explanation": "Siento que te vayas."
     },
     {
       "type": "translation",
       "question": "Боюсь, что опоздаю.",
       "answer": "Temo llegar tarde",
-      "instruction": "Subjuntivo / infinitivo",
+      "instruction": "Переведите предложение",
       "explanation": "Temo llegar tarde (o: Temo que llegue tarde).",
       "acceptableAnswers": [
         "Temo que llegue tarde"
@@ -3446,21 +3446,21 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Нужно, чтобы ты это сделал.",
       "answer": "Es necesario que lo hagas",
-      "instruction": "Subjuntivo — necesario",
+      "instruction": "Переведите предложение",
       "explanation": "Es necesario que lo hagas."
     },
     {
       "type": "error_correction",
       "question": "Quiero que vienes mañana.",
       "answer": "Quiero que vengas mañana.",
-      "instruction": "Subjuntivo — venir",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Quiero que → vengas (subjuntivo)."
     },
     {
       "type": "error_correction",
       "question": "Espero que es feliz.",
       "answer": "Espero que sea feliz.",
-      "instruction": "Subjuntivo — ser",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Espero que → sea."
     },
     {
@@ -3473,7 +3473,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "mañana"
       ],
       "answer": "Quiero que vengas mañana",
-      "instruction": "Subjuntivo — deseo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Quiero que vengas…"
     },
     {
@@ -3486,7 +3486,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "feliz"
       ],
       "answer": "Espero que sea feliz",
-      "instruction": "Subjuntivo — esperar",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Espero que sea feliz."
     },
     {
@@ -3501,7 +3501,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "tiempo"
       ],
       "answer": "Es importante que lleguen a tiempo",
-      "instruction": "Subjuntivo impersonal",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Es importante que lleguen…"
     },
     {
@@ -3513,7 +3513,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "callemos"
       ],
       "answer": "Pide que callemos",
-      "instruction": "Subjuntivo — pedir",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Pide que callemos."
     },
     {
@@ -3526,7 +3526,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "razón"
       ],
       "answer": "Dudo que tenga razón",
-      "instruction": "Subjuntivo — dudar",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Dudo que tenga razón."
     },
     {
@@ -3552,7 +3552,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "vayas"
       ],
       "answer": "Siento que te vayas",
-      "instruction": "Subjuntivo — sentir",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Siento que te vayas."
     },
     {
@@ -3566,7 +3566,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "hagas"
       ],
       "answer": "Es necesario que lo hagas",
-      "instruction": "Subjuntivo — necesario",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Es necesario que lo hagas."
     },
     {
@@ -3580,7 +3580,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "aquí"
       ],
       "answer": "Me alegra que estés aquí",
-      "instruction": "Subjuntivo — emoción",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Me alegra que estés…"
     },
     {
@@ -3594,7 +3594,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "hoy"
       ],
       "answer": "No creo que llueva hoy",
-      "instruction": "Subjuntivo — negación",
+      "instruction": "Составьте предложение из слов",
       "explanation": "No creo que llueva…"
     },
     {
@@ -3619,7 +3619,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "mañana"
       ],
       "answer": "Prefiero que hablemos mañana",
-      "instruction": "Subjuntivo — preferir",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Prefiero que hablemos…"
     },
     {
@@ -3632,7 +3632,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "tarde"
       ],
       "answer": "Temo que llegue tarde",
-      "instruction": "Subjuntivo — temer",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Temo que llegue tarde."
     },
     {
@@ -3646,7 +3646,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "francés"
       ],
       "answer": "Busco alguien que hable francés",
-      "instruction": "Subjuntivo — antecedente indefinido",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Alguien que hable — subjuntivo после неопределённого."
     },
     {
@@ -3662,7 +3662,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "ventana"
       ],
       "answer": "Antes de que salgas cierra la ventana",
-      "instruction": "Subjuntivo — antes de que",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Antes de que salgas — subjuntivo."
     },
     {
@@ -3676,7 +3676,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "tarde"
       ],
       "answer": "Es posible que lleguen tarde",
-      "instruction": "Subjuntivo — posible",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Es posible que + subjuntivo."
     },
     {
@@ -3690,7 +3690,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "saldremos"
       ],
       "answer": "A menos que llueva saldremos",
-      "instruction": "Subjuntivo — a menos que",
+      "instruction": "Составьте предложение из слов",
       "explanation": "A menos que llueva — если не пойдёт дождь."
     },
     {
@@ -3704,7 +3704,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "venga"
       ],
       "answer": "Me sorprende que no venga",
-      "instruction": "Subjuntivo — emoción",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Me sorprende que — удивляет что."
     },
     {
@@ -3719,7 +3719,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "aprobarás"
       ],
       "answer": "Con tal de que estudies aprobarás",
-      "instruction": "Subjuntivo — condición",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Con tal de que estudies — при условии что учишься."
     },
     {
@@ -3733,7 +3733,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "aquí"
       ],
       "answer": "No permito que fumen aquí",
-      "instruction": "Subjuntivo — prohibición",
+      "instruction": "Составьте предложение из слов",
       "explanation": "No permito que fumen — не разрешаю курить."
     }
   ],
@@ -3742,14 +3742,14 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "¡Come la fruta tu!",
       "answer": "¡Come la fruta!",
-      "instruction": "Imperativo tú — лишнее",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Уберите «tu» после imperativo."
     },
     {
       "type": "error_correction",
       "question": "No hables tan alto tú.",
       "answer": "¡No hables tan alto!",
-      "instruction": "Imperativo negativo",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Imperativo negativo: No hables…"
     },
     {
@@ -3763,21 +3763,21 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "Hable usted más despacio por favor usted.",
       "answer": "Hable usted más despacio, por favor.",
-      "instruction": "Imperativo usted",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Уберите второе «usted»."
     },
     {
       "type": "error_correction",
       "question": "¡Bebe agua tu antes de salir!",
       "answer": "¡Bebe agua antes de salir!",
-      "instruction": "Imperativo tú",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Bebe agua — sin «tu»."
     },
     {
       "type": "error_correction",
       "question": "No corras en el pasillo por favor no corras.",
       "answer": "¡No corras en el pasillo, por favor!",
-      "instruction": "Imperativo negativo",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Один imperativo достаточно."
     },
     {
@@ -3791,7 +3791,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "Cierra la puerta tu por favor cierra.",
       "answer": "¡Cierra la puerta, por favor!",
-      "instruction": "Imperativo",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Cierra la puerta."
     },
     {
@@ -3805,42 +3805,42 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "No fume usted aquí por favor no fume usted.",
       "answer": "No fume usted aquí, por favor.",
-      "instruction": "Imperativo usted negativo",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "No fume usted aquí."
     },
     {
       "type": "translation",
       "question": "Закрой окно, пожалуйста.",
       "answer": "Cierra la ventana, por favor",
-      "instruction": "Imperativo tú",
+      "instruction": "Переведите предложение",
       "explanation": "Cierra la ventana…"
     },
     {
       "type": "translation",
       "question": "Не говори так громко.",
       "answer": "No hables tan alto",
-      "instruction": "Imperativo negativo",
+      "instruction": "Переведите предложение",
       "explanation": "No hables tan alto."
     },
     {
       "type": "translation",
       "question": "Пройдите, пожалуйста.",
       "answer": "Pase usted, por favor",
-      "instruction": "Imperativo usted",
+      "instruction": "Переведите предложение",
       "explanation": "Pase usted…"
     },
     {
       "type": "translation",
       "question": "Давайте пойдём в кино.",
       "answer": "Vamos al cine",
-      "instruction": "Imperativo nosotros",
+      "instruction": "Переведите предложение",
       "explanation": "Vamos al cine."
     },
     {
       "type": "translation",
       "question": "Пей воду.",
       "answer": "Bebe agua",
-      "instruction": "Imperativo tú",
+      "instruction": "Переведите предложение",
       "explanation": "Bebe agua."
     },
     {
@@ -3854,7 +3854,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "favor"
       ],
       "answer": "Cierra la ventana, por favor",
-      "instruction": "Imperativo tú",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Cierra la ventana…"
     },
     {
@@ -3867,7 +3867,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "alto"
       ],
       "answer": "No hables tan alto",
-      "instruction": "Imperativo negativo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "No hables tan alto."
     },
     {
@@ -3881,7 +3881,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "salir"
       ],
       "answer": "Bebe agua antes de salir",
-      "instruction": "Imperativo tú",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Bebe agua…"
     },
     {
@@ -3892,7 +3892,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "atentamente"
       ],
       "answer": "Escucha atentamente",
-      "instruction": "Imperativo tú",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Escucha atentamente."
     },
     {
@@ -3906,7 +3906,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "pasillo"
       ],
       "answer": "No corras en el pasillo",
-      "instruction": "Imperativo negativo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "No corras…"
     },
     {
@@ -3920,7 +3920,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "favor"
       ],
       "answer": "Abran la puerta, por favor",
-      "instruction": "Imperativo ustedes",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Abran la puerta…"
     },
     {
@@ -3934,7 +3934,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "favor"
       ],
       "answer": "Hable más despacio, por favor",
-      "instruction": "Imperativo usted",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Hable más despacio…"
     },
     {
@@ -3947,7 +3947,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "aquí"
       ],
       "answer": "No fume usted aquí",
-      "instruction": "Imperativo usted neg.",
+      "instruction": "Составьте предложение из слов",
       "explanation": "No fume usted aquí."
     },
     {
@@ -3961,7 +3961,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "noche"
       ],
       "answer": "Vamos al cine esta noche",
-      "instruction": "Imperativo nosotros",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Vamos al cine…"
     },
     {
@@ -3974,7 +3974,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "favor"
       ],
       "answer": "Siéntate aquí, por favor",
-      "instruction": "Imperativo reflexivo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Siéntate aquí…"
     },
     {
@@ -3987,7 +3987,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "favor"
       ],
       "answer": "Pase usted por favor",
-      "instruction": "Imperativo usted — вежливая просьба",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Pase usted — формальное приглашение пройти."
     },
     {
@@ -4000,7 +4000,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "rápido"
       ],
       "answer": "No comas tan rápido",
-      "instruction": "Imperativo tú negativo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "No comas — отрицательный imperativo для tú."
     },
     {
@@ -4012,7 +4012,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "paz"
       ],
       "answer": "Déjame en paz",
-      "instruction": "Imperativo tú",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Déjame en paz — оставь меня в покое."
     },
     {
@@ -4023,7 +4023,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "aquí"
       ],
       "answer": "Sentémonos aquí",
-      "instruction": "Imperativo nosotros",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Sentémonos — давайте сядем (nosotros)."
     },
     {
@@ -4035,7 +4035,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "mañana"
       ],
       "answer": "Llame usted mañana",
-      "instruction": "Imperativo usted",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Llame usted — позвоните (usted)."
     },
     {
@@ -4048,7 +4048,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "usted"
       ],
       "answer": "No se preocupe usted",
-      "instruction": "Imperativo usted negativo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "No se preocupe — не беспокойтесь (usted)."
     },
     {
@@ -4060,7 +4060,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "plato"
       ],
       "answer": "Prueba este plato",
-      "instruction": "Imperativo tú",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Prueba — попробуй (tú)."
     },
     {
@@ -4073,7 +4073,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "playa"
       ],
       "answer": "Vayamos a la playa",
-      "instruction": "Imperativo nosotros — ir",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Vayamos — subjuntivo nosotros как призыв."
     },
     {
@@ -4085,7 +4085,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "usted"
       ],
       "answer": "Tome asiento usted",
-      "instruction": "Imperativo usted",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Tome asiento — присядьте (usted)."
     },
     {
@@ -4098,7 +4098,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "todavía"
       ],
       "answer": "No te levantes todavía",
-      "instruction": "Imperativo tú negativo reflexivo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "No te levantes — не вставай ещё."
     }
   ],
@@ -4107,49 +4107,49 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Я бы поехал в Испанию.",
       "answer": "Viajaría a España",
-      "instruction": "Condicional — deseo",
+      "instruction": "Переведите предложение",
       "explanation": "Viajaría a España."
     },
     {
       "type": "translation",
       "question": "Что бы ты сделал на моём месте?",
       "answer": "¿Qué harías en mi lugar?",
-      "instruction": "Condicional — pregunta",
+      "instruction": "Переведите предложение",
       "explanation": "¿Qué harías en mi lugar?"
     },
     {
       "type": "translation",
       "question": "Она хотела бы жить у моря.",
       "answer": "Le gustaría vivir junto al mar",
-      "instruction": "Condicional — gustaría",
+      "instruction": "Переведите предложение",
       "explanation": "Le gustaría vivir junto al mar."
     },
     {
       "type": "translation",
       "question": "Мы могли бы встретиться завтра.",
       "answer": "Podríamos vernos mañana",
-      "instruction": "Condicional — podría",
+      "instruction": "Переведите предложение",
       "explanation": "Podríamos vernos mañana."
     },
     {
       "type": "translation",
       "question": "Это было бы здорово.",
       "answer": "Sería genial",
-      "instruction": "Condicional ser",
+      "instruction": "Переведите предложение",
       "explanation": "Sería genial."
     },
     {
       "type": "translation",
       "question": "Я бы купил дом, если бы у меня были деньги.",
       "answer": "Compraría una casa si tuviera dinero",
-      "instruction": "Condicional + imperfecto subj",
+      "instruction": "Переведите предложение",
       "explanation": "Compraría… si tuviera…"
     },
     {
       "type": "translation",
       "question": "Он сказал бы правду.",
       "answer": "Diría la verdad",
-      "instruction": "Condicional decir",
+      "instruction": "Переведите предложение",
       "explanation": "Diría la verdad."
     },
     {
@@ -4166,28 +4166,28 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Было бы лучше остаться дома.",
       "answer": "Sería mejor quedarse en casa",
-      "instruction": "Condicional — consejo",
+      "instruction": "Переведите предложение",
       "explanation": "Sería mejor quedarse en casa."
     },
     {
       "type": "translation",
       "question": "Я бы купил дом.",
       "answer": "Compraría una casa",
-      "instruction": "Condicional",
+      "instruction": "Переведите предложение",
       "explanation": "Compraría — condicional"
     },
     {
       "type": "error_correction",
       "question": "Viajaría a España si tendría dinero.",
       "answer": "Viajaría a España si tuviera dinero.",
-      "instruction": "Condicional + subj.",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Si tuviera — imperfecto subjuntivo."
     },
     {
       "type": "error_correction",
       "question": "Sería genial si es posible.",
       "answer": "Sería genial si fuera posible.",
-      "instruction": "Condicional + subj.",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Si fuera posible — subjuntivo."
     },
     {
@@ -4202,7 +4202,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "gusto"
       ],
       "answer": "Viajaría a España con mucho gusto",
-      "instruction": "Condicional — deseo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Viajaría a España…"
     },
     {
@@ -4216,7 +4216,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "lugar?"
       ],
       "answer": "¿Qué harías en mi lugar?",
-      "instruction": "Condicional — pregunta",
+      "instruction": "Составьте предложение из слов",
       "explanation": "¿Qué harías…?"
     },
     {
@@ -4231,7 +4231,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "mar"
       ],
       "answer": "Le gustaría vivir junto al mar",
-      "instruction": "Condicional — gustaría",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Le gustaría vivir…"
     },
     {
@@ -4243,7 +4243,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "mañana"
       ],
       "answer": "Podríamos vernos mañana",
-      "instruction": "Condicional — podría",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Podríamos vernos…"
     },
     {
@@ -4255,7 +4255,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "conocerte"
       ],
       "answer": "Sería genial conocerte",
-      "instruction": "Condicional ser",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Sería genial…"
     },
     {
@@ -4270,7 +4270,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "dinero"
       ],
       "answer": "Compraría una casa si tuviera dinero",
-      "instruction": "Condicional + si",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Compraría… si tuviera…"
     },
     {
@@ -4282,7 +4282,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "verdad"
       ],
       "answer": "Diría la verdad",
-      "instruction": "Condicional decir",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Diría la verdad."
     },
     {
@@ -4296,7 +4296,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "casa"
       ],
       "answer": "Sería mejor quedarse en casa",
-      "instruction": "Condicional — consejo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Sería mejor quedarse…"
     },
     {
@@ -4311,7 +4311,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "favor"
       ],
       "answer": "Me gustaría un café, por favor",
-      "instruction": "Condicional cortesía",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Me gustaría un café…"
     },
     {
@@ -4324,7 +4324,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "momento?"
       ],
       "answer": "¿Podrías ayudarme un momento?",
-      "instruction": "Condicional — petición",
+      "instruction": "Составьте предложение из слов",
       "explanation": "¿Podrías ayudarme…?"
     },
     {
@@ -4336,7 +4336,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "más"
       ],
       "answer": "Deberías descansar más",
-      "instruction": "Condicional deber",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Deberías descansar…"
     },
     {
@@ -4349,7 +4349,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "pudieras"
       ],
       "answer": "Iríamos juntos si pudieras",
-      "instruction": "Condicional + si",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Iríamos… si pudieras."
     },
     {
@@ -4362,7 +4362,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "libre"
       ],
       "answer": "Tendría más tiempo libre",
-      "instruction": "Condicional tener",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Tendría más tiempo…"
     },
     {
@@ -4375,7 +4375,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "nunca"
       ],
       "answer": "No lo haría nunca",
-      "instruction": "Condicional negativo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "No lo haría nunca."
     },
     {
@@ -4390,7 +4390,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "hoy"
       ],
       "answer": "Con más tiempo lo terminaría hoy",
-      "instruction": "Condicional — hipótesis",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Terminaría — condicional simple."
     },
     {
@@ -4404,7 +4404,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "ventana?"
       ],
       "answer": "¿Te importaría abrir la ventana?",
-      "instruction": "Condicional — cortesía",
+      "instruction": "Составьте предложение из слов",
       "explanation": "¿Te importaría? — вежливая просьба."
     },
     {
@@ -4417,7 +4417,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "casa"
       ],
       "answer": "Preferiría quedarme en casa",
-      "instruction": "Condicional — preferencia",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Preferiría quedarme — предпочёл бы остаться."
     },
     {
@@ -4431,7 +4431,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "llamó"
       ],
       "answer": "Serían las ocho cuando llamó",
-      "instruction": "Condicional — probabilidad pasada",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Serían las ocho — вероятно было восемь."
     },
     {
@@ -4445,7 +4445,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "Japón"
       ],
       "answer": "Me encantaría viajar a Japón",
-      "instruction": "Condicional — deseo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Me encantaría — мне бы очень хотелось."
     },
     {
@@ -4461,7 +4461,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "pudiera"
       ],
       "answer": "Lo haría de otra manera si pudiera",
-      "instruction": "Condicional + subjuntivo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Haría… si pudiera — второе условие."
     }
   ],
@@ -4491,14 +4491,14 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "Pedro explicó: \"Llegaré tarde.\"",
       "answer": "Pedro explicó que llegaría tarde.",
-      "instruction": "Futuro → condicional",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Llegaré → llegaría."
     },
     {
       "type": "error_correction",
       "question": "Ana dijo: \"He terminado el trabajo.\"",
       "answer": "Ana dijo que había terminado el trabajo.",
-      "instruction": "Perfecto → pluscuamperfecto",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "He terminado → había terminado."
     },
     {
@@ -4526,7 +4526,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "Sofía dijo: \"Estudio en Madrid.\"",
       "answer": "Sofía dijo que estudiaba en Madrid.",
-      "instruction": "Presente → imperfecto",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Estudio → estudiaba."
     },
     {
@@ -4587,7 +4587,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "tarde"
       ],
       "answer": "Explicó que llegaría tarde",
-      "instruction": "Futuro → condicional",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Llegaría tarde."
     },
     {
@@ -4603,7 +4603,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "anterior"
       ],
       "answer": "Contó que había venido el día anterior",
-      "instruction": "Pluscuamperfecto",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Había venido…"
     },
     {
@@ -4644,7 +4644,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "Madrid"
       ],
       "answer": "Afirmó que estudiaba en Madrid",
-      "instruction": "Presente → imperfecto",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Estudiaba en Madrid."
     },
     {
@@ -4672,7 +4672,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "trabajo"
       ],
       "answer": "Dijo que había terminado el trabajo",
-      "instruction": "Perfecto → plusc.",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Había terminado…"
     },
     {
@@ -4839,77 +4839,77 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Книга написана Габrielем Гарсиа Маркесом.",
       "answer": "El libro fue escrito por Gabriel García Márquez",
-      "instruction": "Pasiva — ser + participio",
+      "instruction": "Переведите предложение",
       "explanation": "Fue escrito por…"
     },
     {
       "type": "translation",
       "question": "Дом построен в 1920 году.",
       "answer": "La casa fue construida en 1920",
-      "instruction": "Pasiva — construir",
+      "instruction": "Переведите предложение",
       "explanation": "Fue construida en 1920."
     },
     {
       "type": "translation",
       "question": "Письмо отправлено вчера.",
       "answer": "La carta fue enviada ayer",
-      "instruction": "Pasiva — enviar",
+      "instruction": "Переведите предложение",
       "explanation": "Fue enviada ayer."
     },
     {
       "type": "translation",
       "question": "Решение принято правительством.",
       "answer": "La decisión fue tomada por el gobierno",
-      "instruction": "Pasiva — tomar",
+      "instruction": "Переведите предложение",
       "explanation": "Fue tomada por el gobierno."
     },
     {
       "type": "translation",
       "question": "Язык говорят в двадцати странах.",
       "answer": "El idioma es hablado en veinte países",
-      "instruction": "Pasiva — presente",
+      "instruction": "Переведите предложение",
       "explanation": "Es hablado en veinte países."
     },
     {
       "type": "translation",
       "question": "Окна открыты.",
       "answer": "Las ventanas están abiertas",
-      "instruction": "Pasiva de estado",
+      "instruction": "Переведите предложение",
       "explanation": "Están abiertas — состояние."
     },
     {
       "type": "translation",
       "question": "Еда приготовлена мамой.",
       "answer": "La comida fue preparada por mi madre",
-      "instruction": "Pasiva — preparar",
+      "instruction": "Переведите предложение",
       "explanation": "Fue preparada por mi madre."
     },
     {
       "type": "translation",
       "question": "Проблема решена.",
       "answer": "El problema ha sido resuelto",
-      "instruction": "Pasiva — perfecto",
+      "instruction": "Переведите предложение",
       "explanation": "Ha sido resuelto."
     },
     {
       "type": "translation",
       "question": "Закон принят в прошлом году.",
       "answer": "La ley fue aprobada el año pasado",
-      "instruction": "Pasiva — aprobar",
+      "instruction": "Переведите предложение",
       "explanation": "Fue aprobada el año pasado."
     },
     {
       "type": "error_correction",
       "question": "El libro fue escrito por García.",
       "answer": "El libro fue escrito por García Márquez.",
-      "instruction": "Pasiva — agente",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Nombre completo OK; ejemplo base correcta."
     },
     {
       "type": "error_correction",
       "question": "La casa fue construida en 1920 por.",
       "answer": "La casa fue construida en 1920.",
-      "instruction": "Pasiva — agente omitido",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Por sin agente — error."
     },
     {
@@ -4925,7 +4925,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "Márquez"
       ],
       "answer": "El libro fue escrito por García Márquez",
-      "instruction": "Pasiva ser",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Fue escrito por…"
     },
     {
@@ -4940,7 +4940,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "1920"
       ],
       "answer": "La casa fue construida en 1920",
-      "instruction": "Pasiva — año",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Fue construida en 1920."
     },
     {
@@ -4954,7 +4954,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "ayer"
       ],
       "answer": "La carta fue enviada ayer",
-      "instruction": "Pasiva — enviar",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Fue enviada ayer."
     },
     {
@@ -4970,7 +4970,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "países"
       ],
       "answer": "El idioma es hablado en veinte países",
-      "instruction": "Pasiva presente",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Es hablado en…"
     },
     {
@@ -4999,7 +4999,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "madre"
       ],
       "answer": "La comida fue preparada por mi madre",
-      "instruction": "Pasiva — agente",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Fue preparada por…"
     },
     {
@@ -5013,7 +5013,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "resuelto"
       ],
       "answer": "El problema ha sido resuelto",
-      "instruction": "Pasiva perfecto",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Ha sido resuelto."
     },
     {
@@ -5026,7 +5026,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "aquí"
       ],
       "answer": "Se habla español aquí",
-      "instruction": "Pasiva refleja",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Se habla español."
     },
     {
@@ -5042,7 +5042,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "pasado"
       ],
       "answer": "La ley fue aprobada el año pasado",
-      "instruction": "Pasiva — aprobar",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Fue aprobada…"
     },
     {
@@ -5057,7 +5057,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "construido"
       ],
       "answer": "Un nuevo puente está siendo construido",
-      "instruction": "Pasiva progresiva",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Está siendo construido."
     },
     {
@@ -5071,7 +5071,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "conferencia"
       ],
       "answer": "Fue invitado a la conferencia",
-      "instruction": "Pasiva — invitar",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Fue invitado…"
     },
     {
@@ -5086,7 +5086,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "día"
       ],
       "answer": "La habitación es limpiada cada día",
-      "instruction": "Pasiva hábito",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Es limpiada cada día."
     },
     {
@@ -5100,7 +5100,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "anoche"
       ],
       "answer": "El cuadro fue robado anoche",
-      "instruction": "Pasiva — robar",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Fue robado anoche."
     },
     {
@@ -5174,7 +5174,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "taquilla"
       ],
       "answer": "Se venden entradas en la taquilla",
-      "instruction": "Pasiva refleja",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Se venden entradas — безличная пассивная."
     },
     {
@@ -6511,84 +6511,84 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Завтра я позвоню тебе.",
       "answer": "Mañana te llamaré",
-      "instruction": "Futuro simple",
+      "instruction": "Переведите предложение",
       "explanation": "Te llamaré — позвоню."
     },
     {
       "type": "translation",
       "question": "Она приедет в пятницу.",
       "answer": "Llegará el viernes",
-      "instruction": "Futuro — llegar",
+      "instruction": "Переведите предложение",
       "explanation": "Llegará el viernes."
     },
     {
       "type": "translation",
       "question": "Мы будем жить в Барcelona.",
       "answer": "Viviremos en Barcelona",
-      "instruction": "Futuro — vivir",
+      "instruction": "Переведите предложение",
       "explanation": "Viviremos en Barcelona."
     },
     {
       "type": "translation",
       "question": "Это будет сложно.",
       "answer": "Será difícil",
-      "instruction": "Futuro ser",
+      "instruction": "Переведите предложение",
       "explanation": "Será difícil."
     },
     {
       "type": "translation",
       "question": "Они не придут.",
       "answer": "No vendrán",
-      "instruction": "Futuro negativo",
+      "instruction": "Переведите предложение",
       "explanation": "No vendrán. venir → vendrán."
     },
     {
       "type": "translation",
       "question": "Ты успеешь?",
       "answer": "¿Llegarás a tiempo?",
-      "instruction": "Futuro — pregunta",
+      "instruction": "Переведите предложение",
       "explanation": "¿Llegarás a tiempo?"
     },
     {
       "type": "translation",
       "question": "Я думаю, что будет дождь.",
       "answer": "Creo que lloverá",
-      "instruction": "Futuro — llover",
+      "instruction": "Переведите предложение",
       "explanation": "Lloverá — будет дождь."
     },
     {
       "type": "translation",
       "question": "Он сделает домашнее задание.",
       "answer": "Hará los deberes",
-      "instruction": "Futuro — hacer",
+      "instruction": "Переведите предложение",
       "explanation": "Hará los deberes. hacer → hará."
     },
     {
       "type": "translation",
       "question": "Через год я буду говорить по-испански.",
       "answer": "Dentro de un año hablaré español",
-      "instruction": "Futuro — hablar",
+      "instruction": "Переведите предложение",
       "explanation": "Hablaré español."
     },
     {
       "type": "translation",
       "question": "Наверное, сейчас десять часов.",
       "answer": "Serán las diez ahora",
-      "instruction": "Futuro de probabilidad",
+      "instruction": "Переведите предложение",
       "explanation": "Serán las diez = наверное, десять."
     },
     {
       "type": "error_correction",
       "question": "Mañana yo llamaré a ti.",
       "answer": "Mañana te llamaré.",
-      "instruction": "Futuro — pronombre",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Te llamaré — pronombre antes del verbo."
     },
     {
       "type": "error_correction",
       "question": "Serán las diez ahora mismo.",
       "answer": "Serán las diez.",
-      "instruction": "Futuro de probabilidad",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Sin «ahora mismo» redundante."
     },
     {
@@ -6600,7 +6600,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "llamaré"
       ],
       "answer": "Mañana te llamaré",
-      "instruction": "Futuro simple",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Te llamaré — mañana."
     },
     {
@@ -6615,7 +6615,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "tarde"
       ],
       "answer": "Llegará el viernes por la tarde",
-      "instruction": "Futuro — llegar",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Llegará el viernes…"
     },
     {
@@ -6630,7 +6630,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "año"
       ],
       "answer": "Viviremos en Barcelona el próximo año",
-      "instruction": "Futuro — vivir",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Viviremos en Barcelona…"
     },
     {
@@ -6644,7 +6644,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "lograremos"
       ],
       "answer": "Será difícil pero lo lograremos",
-      "instruction": "Futuro ser",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Será difícil…"
     },
     {
@@ -6658,7 +6658,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "fiesta"
       ],
       "answer": "No vendrán a la fiesta",
-      "instruction": "Futuro negativo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "No vendrán…"
     },
     {
@@ -6670,7 +6670,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "tiempo?"
       ],
       "answer": "¿Llegarás a tiempo?",
-      "instruction": "Futuro — pregunta",
+      "instruction": "Составьте предложение из слов",
       "explanation": "¿Llegarás a tiempo?"
     },
     {
@@ -6684,7 +6684,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "tarde"
       ],
       "answer": "Creo que lloverá esta tarde",
-      "instruction": "Futuro — llover",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Lloverá esta tarde."
     },
     {
@@ -6698,7 +6698,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "noche"
       ],
       "answer": "Hará los deberes esta noche",
-      "instruction": "Futuro — hacer",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Hará los deberes…"
     },
     {
@@ -6715,7 +6715,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "fluidez"
       ],
       "answer": "Dentro de un año hablaré español con fluidez",
-      "instruction": "Futuro — hablar",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Hablaré español…"
     },
     {
@@ -6728,7 +6728,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "ahora"
       ],
       "answer": "Serán las diez ahora",
-      "instruction": "Futuro de probabilidad",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Serán las diez…"
     },
     {
@@ -6741,7 +6741,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "agosto"
       ],
       "answer": "Tendremos vacaciones en agosto",
-      "instruction": "Futuro — tener",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Tendremos vacaciones…"
     },
     {
@@ -6754,7 +6754,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "nosotros"
       ],
       "answer": "Podrás venir con nosotros",
-      "instruction": "Futuro — poder",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Podrás venir…"
     },
     {
@@ -6767,7 +6767,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "mañana"
       ],
       "answer": "Saldré de viaje mañana",
-      "instruction": "Futuro — salir",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Saldré de viaje…"
     },
     {
@@ -6782,7 +6782,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "siete"
       ],
       "answer": "Estaré en casa sobre las siete",
-      "instruction": "Futuro simple — hora",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Estaré en casa — буду дома."
     },
     {
@@ -6796,7 +6796,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "verano?"
       ],
       "answer": "¿Qué harás el próximo verano?",
-      "instruction": "Futuro — pregunta",
+      "instruction": "Составьте предложение из слов",
       "explanation": "¿Qué harás? — что будешь делать?"
     },
     {
@@ -6811,7 +6811,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "tarde"
       ],
       "answer": "Probablemente lloverá mañana por la tarde",
-      "instruction": "Futuro — probabilidad",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Lloverá — будет идти дождь."
     },
     {
@@ -6825,7 +6825,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "mayo"
       ],
       "answer": "Terminarán el proyecto en mayo",
-      "instruction": "Futuro — ellos",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Terminarán — они закончат."
     },
     {
@@ -6840,7 +6840,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "tarde"
       ],
       "answer": "Te enviaré un mensaje más tarde",
-      "instruction": "Futuro — promesa",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Te enviaré — я отправлю тебе."
     },
     {
@@ -6853,7 +6853,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "ganadores"
       ],
       "answer": "Serán ellos los ganadores",
-      "instruction": "Futuro de probabilidad",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Serán ellos — наверное они."
     }
   ],
@@ -7743,35 +7743,35 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Наверное, сейчас два часа.",
       "answer": "Serán las dos ahora",
-      "instruction": "Futuro de conjetura",
+      "instruction": "Переведите предложение",
       "explanation": "Serán las dos…"
     },
     {
       "type": "translation",
       "question": "Президент, по сообщениям, согласился.",
       "answer": "El presidente habría aceptado",
-      "instruction": "Condicional de rumor",
+      "instruction": "Переведите предложение",
       "explanation": "Habría aceptado — rumor."
     },
     {
       "type": "translation",
       "question": "Ему, наверное, лет сорок.",
       "answer": "Tendrá unos cuarenta años",
-      "instruction": "Futuro de conjetura",
+      "instruction": "Переведите предложение",
       "explanation": "Tendrá unos cuarenta años."
     },
     {
       "type": "translation",
       "question": "Она, наверное, уже ушла.",
       "answer": "Habrá salido ya",
-      "instruction": "Futuro perfecto de conjetura",
+      "instruction": "Переведите предложение",
       "explanation": "Habrá salido ya."
     },
     {
       "type": "translation",
       "question": "Было, наверное, часа два, когда он пришёл.",
       "answer": "Serían las dos cuando llegó",
-      "instruction": "Condicional de conjetura pasada",
+      "instruction": "Переведите предложение",
       "explanation": "Serían las dos…"
     },
     {
@@ -7785,91 +7785,91 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Наверное, будет дождь.",
       "answer": "Lloverá esta tarde",
-      "instruction": "Futuro de conjetura",
+      "instruction": "Переведите предложение",
       "explanation": "Lloverá — догадка о будущем."
     },
     {
       "type": "translation",
       "question": "Его, по слухам, уволили.",
       "answer": "Lo habrían despedido",
-      "instruction": "Condicional de rumor",
+      "instruction": "Переведите предложение",
       "explanation": "Habrían despedido — plural rumor."
     },
     {
       "type": "translation",
       "question": "Наверное, у него мало денег.",
       "answer": "Tendrá poco dinero",
-      "instruction": "Futuro de conjetura",
+      "instruction": "Переведите предложение",
       "explanation": "Tendrá poco dinero."
     },
     {
       "type": "translation",
       "question": "Она, наверное, уже знает.",
       "answer": "Lo sabrá ya",
-      "instruction": "Futuro de conjetura",
+      "instruction": "Переведите предложение",
       "explanation": "Lo sabrá ya."
     },
     {
       "type": "translation",
       "question": "Было, наверное, холодно.",
       "answer": "Haría frío",
-      "instruction": "Condicional de conjetura",
+      "instruction": "Переведите предложение",
       "explanation": "Haría frío — прошлое."
     },
     {
       "type": "translation",
       "question": "Они, должно быть, опоздают.",
       "answer": "Llegarán tarde",
-      "instruction": "Futuro de conjetura",
+      "instruction": "Переведите предложение",
       "explanation": "Llegarán tarde."
     },
     {
       "type": "translation",
       "question": "Наверное, это правда.",
       "answer": "Será verdad",
-      "instruction": "Futuro de conjetura",
+      "instruction": "Переведите предложение",
       "explanation": "Será verdad."
     },
     {
       "type": "translation",
       "question": "Он, похоже, уже спит.",
       "answer": "Estará durmiendo ya",
-      "instruction": "Futuro progresivo de conjetura",
+      "instruction": "Переведите предложение",
       "explanation": "Estará durmiendo."
     },
     {
       "type": "translation",
       "question": "Их, говорят, было человек сто.",
       "answer": "Habría unas cien personas",
-      "instruction": "Condicional de cantidad",
+      "instruction": "Переведите предложение",
       "explanation": "Habría unas cien personas."
     },
     {
       "type": "translation",
       "question": "Наверное, она забыла.",
       "answer": "Se habrá olvidado",
-      "instruction": "Futuro perfecto reflexivo",
+      "instruction": "Переведите предложение",
       "explanation": "Se habrá olvidado."
     },
     {
       "type": "translation",
       "question": "Договор, по слухам, подписан.",
       "answer": "El acuerdo habría sido firmado",
-      "instruction": "Pasiva de rumor",
+      "instruction": "Переведите предложение",
       "explanation": "Habría sido firmado."
     },
     {
       "type": "translation",
       "question": "Наверное, мы опоздаем.",
       "answer": "Llegaremos tarde",
-      "instruction": "Futuro de conjetura",
+      "instruction": "Переведите предложение",
       "explanation": "Llegaremos tarde."
     },
     {
       "type": "translation",
       "question": "Ему, наверное, не нравится.",
       "answer": "No le gustará",
-      "instruction": "Futuro de conjetura negativa",
+      "instruction": "Переведите предложение",
       "explanation": "No le gustará."
     },
     {
@@ -7911,7 +7911,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "rato"
       ],
       "answer": "Habrá salido hace rato",
-      "instruction": "Futuro perfecto conjetura",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Habrá salido…"
     },
     {
@@ -7950,7 +7950,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "ayuda"
       ],
       "answer": "Sería imposible sin ayuda",
-      "instruction": "Condicional conjetura",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Sería imposible…"
     },
     {
@@ -7963,7 +7963,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "ahora"
       ],
       "answer": "Estarán de vacaciones ahora",
-      "instruction": "Estar conjetura",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Estarán de vacaciones."
     },
     {
@@ -7977,7 +7977,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "noche"
       ],
       "answer": "Habrá llovido toda la noche",
-      "instruction": "Futuro perfecto",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Habrá llovido…"
     },
     {
@@ -8029,7 +8029,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "dinero"
       ],
       "answer": "Habría costado mucho dinero",
-      "instruction": "Condicional pasado",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Habría costado…"
     },
     {
@@ -8058,7 +8058,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "jefe"
       ],
       "answer": "Tendrán problemas con el jefe",
-      "instruction": "Futuro conjetura plural",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Tendrán problemas…"
     },
     {
@@ -8085,7 +8085,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "malentendido"
       ],
       "answer": "Habrá sido un malentendido",
-      "instruction": "Futuro perfecto ser",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Habrá sido un malentendido."
     },
     {
@@ -8098,7 +8098,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "seguro"
       ],
       "answer": "Lloverá esta tarde seguro",
-      "instruction": "Futuro conjetura clima",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Lloverá esta tarde."
     },
     {
@@ -8125,7 +8125,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Наверное, он уже знает правду.",
       "answer": "Lo sabrá ya",
-      "instruction": "Futuro conjetura",
+      "instruction": "Переведите предложение",
       "explanation": "Lo sabrá ya."
     },
     {
@@ -8139,7 +8139,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Было, наверное, невозможно без помощи.",
       "answer": "Sería imposible sin ayuda",
-      "instruction": "Condicional",
+      "instruction": "Переведите предложение",
       "explanation": "Sería imposible…"
     },
     {
@@ -8160,14 +8160,14 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Наверное, шёл дождь всю ночь.",
       "answer": "Habrá llovido toda la noche",
-      "instruction": "Futuro perfecto",
+      "instruction": "Переведите предложение",
       "explanation": "Habrá llovido…"
     },
     {
       "type": "translation",
       "question": "Им, наверное, не понравится.",
       "answer": "No les gustará",
-      "instruction": "Futuro negativo",
+      "instruction": "Переведите предложение",
       "explanation": "No les gustará."
     },
     {
@@ -8181,7 +8181,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Было, наверное, недоразумение.",
       "answer": "Habrá sido un malentendido",
-      "instruction": "Futuro perfecto ser",
+      "instruction": "Переведите предложение",
       "explanation": "Habrá sido un malentendido."
     },
     {
@@ -9109,7 +9109,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "Por extraño que parece, aceptó.",
       "answer": "Por extraño que parezca, aceptó.",
-      "instruction": "Subjuntivo",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Por extraño que parezca — subjuntivo."
     },
     {
@@ -9130,14 +9130,14 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "Por difícil que es, lo lograremos.",
       "answer": "Por difícil que sea, lo lograremos.",
-      "instruction": "Subjuntivo",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Por difícil que sea — subjuntivo."
     },
     {
       "type": "error_correction",
       "question": "Por mucho que protesta, vino.",
       "answer": "Por mucho que protestara, vino.",
-      "instruction": "Subjuntivo imperfecto",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Por mucho que protestara — subj."
     },
     {
@@ -9419,7 +9419,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "negó"
       ],
       "answer": "Por extraño que parezca, se negó",
-      "instruction": "Subjuntivo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Por extraño que parezca…"
     },
     {
@@ -9745,7 +9745,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "libro"
       ],
       "answer": "Estoy por terminar el libro",
-      "instruction": "Estar por",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Estar por + inf — «собираюсь»."
     },
     {
@@ -9802,7 +9802,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "llorar"
       ],
       "answer": "Estoy a punto de llorar",
-      "instruction": "Estar a punto de",
+      "instruction": "Составьте предложение из слов",
       "explanation": "A punto de + inf."
     },
     {
@@ -9978,7 +9978,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "Estoy por terminar el informe ya mismo.",
       "answer": "Estoy a punto de terminar el informe.",
-      "instruction": "Estar por vs a punto de",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "«Вот-вот» → estar a punto de; estar por = «собираться» en otro matiz."
     },
     {
@@ -10286,7 +10286,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "Le ruego confirmarme la recepción de la presente carta.",
       "answer": "Le ruego me confirme la recepción de la presente carta.",
-      "instruction": "Subjuntivo en carta formal",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Le ruego + subjuntivo (me confirme), no infinitivo."
     },
     {
@@ -10307,7 +10307,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "En conclusión recomiendo revisar la estrategia ya.",
       "answer": "En conclusión, recomendaría revisar la estrategia.",
-      "instruction": "Condicional de recomendación",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Recomendaría — matiz prudente; coma tras «En conclusión»."
     },
     {
@@ -10786,7 +10786,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "llamado"
       ],
       "answer": "Mencionó que lo habían llamado",
-      "instruction": "Pasiva indirecta",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Lo habían llamado."
     },
     {
@@ -10935,7 +10935,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Он отметил, что опоздал.",
       "answer": "Comentó que había llegado tarde",
-      "instruction": "Pluscuamperfecto indirecto",
+      "instruction": "Переведите предложение",
       "explanation": "Pret. perfecto → pluscuamperfecto (había llegado)."
     },
     {
@@ -10977,7 +10977,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Он объяснил, что уходит в пять.",
       "answer": "Explicó que se iba a las cinco",
-      "instruction": "Presente → imperfecto",
+      "instruction": "Переведите предложение",
       "explanation": "Presente directo → imperfecto (se iba)."
     },
     {
@@ -11005,14 +11005,14 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "Comentó que ha llegado tarde.",
       "answer": "Comentó que había llegado tarde.",
-      "instruction": "Pluscuamperfecto",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Ha llegado → había llegado en estilo indirecto."
     },
     {
       "type": "error_correction",
       "question": "Prometió que lo hará pronto.",
       "answer": "Prometió que lo haría pronto.",
-      "instruction": "Futuro → condicional",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Prometió (pasado) → haría, no hará."
     },
     {
@@ -11047,7 +11047,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "Explicó que se va a las cinco.",
       "answer": "Explicó que se iba a las cinco.",
-      "instruction": "Presente → imperfecto",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Se va → se iba tras explicó."
     },
     {
@@ -11159,7 +11159,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "nadie"
       ],
       "answer": "No se lo digas a nadie",
-      "instruction": "Imperativo + pronombres",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Se lo digas — imperativo."
     },
     {
@@ -11259,7 +11259,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "principio"
       ],
       "answer": "Me lo imaginaba desde el principio",
-      "instruction": "Imperfecto + pronombres",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Me lo imaginaba."
     },
     {
@@ -11271,7 +11271,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "puedas"
       ],
       "answer": "Dádmelo cuando puedas",
-      "instruction": "Imperativo plural",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Dádmelo — vosotros."
     },
     {
@@ -11306,7 +11306,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Не говори это никому.",
       "answer": "No se lo digas a nadie",
-      "instruction": "Imperativo + pronombres",
+      "instruction": "Переведите предложение",
       "explanation": "No se lo digas — imperativo tú."
     },
     {
@@ -11341,7 +11341,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Объясни мне это ещё раз.",
       "answer": "Explícamelo otra vez",
-      "instruction": "Imperativo + enclisis",
+      "instruction": "Переведите предложение",
       "explanation": "Explícamelo — imperativo con enclíticos."
     },
     {
@@ -11369,7 +11369,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "No le digas lo a nadie.",
       "answer": "No se lo digas a nadie.",
-      "instruction": "Imperativo + se",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Se lo digas — le→se ante lo."
     },
     {
@@ -11430,7 +11430,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "lúcido"
       ],
       "answer": "Es listo pero hoy no está muy lúcido",
-      "instruction": "Ser vs estar listo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Es listo (inteligente) vs está lúcido."
     },
     {
@@ -11447,7 +11447,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "clase"
       ],
       "answer": "Es aburrido el profesor está aburrido en clase",
-      "instruction": "Ser vs estar aburrido",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Es aburrido (causa) vs está aburrido (estado)."
     },
     {
@@ -11464,7 +11464,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "envidia"
       ],
       "answer": "Es verde la camiseta está verde de envidia",
-      "instruction": "Ser vs estar verde",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Color vs metáfora."
     },
     {
@@ -11482,7 +11482,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "humor"
       ],
       "answer": "Es mala persona pero hoy está de buen humor",
-      "instruction": "Ser vs estar malo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Personalidad vs estado."
     },
     {
@@ -11498,7 +11498,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "hoy"
       ],
       "answer": "Es pesado el saco está pesado hoy",
-      "instruction": "Ser vs estar pesado",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Cualidad vs peso actual."
     },
     {
@@ -11515,7 +11515,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "hoy"
       ],
       "answer": "Es vivo el niño está muy vivo hoy",
-      "instruction": "Ser vs estar vivo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Inteligencia vs energía."
     },
     {
@@ -11532,7 +11532,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "ambiente"
       ],
       "answer": "Es raro el caso está raro el ambiente",
-      "instruction": "Ser vs estar raro",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Cualidad vs ambiente."
     },
     {
@@ -11548,7 +11548,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "hoy"
       ],
       "answer": "Es pálido de natural está pálido hoy",
-      "instruction": "Ser vs estar pálido",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Rasgo vs estado."
     },
     {
@@ -11565,7 +11565,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "corte"
       ],
       "answer": "Es guapo pero está feo con ese corte",
-      "instruction": "Ser vs estar guapo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Atractivo vs apariencia."
     },
     {
@@ -11582,7 +11582,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "edad"
       ],
       "answer": "Es joven pero está mayor que su edad",
-      "instruction": "Ser vs estar joven",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Edad vs apariencia."
     },
     {
@@ -11597,7 +11597,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "deprimido"
       ],
       "answer": "Es optimista pero hoy está deprimido",
-      "instruction": "Ser vs estar",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Rasgo vs estado emocional."
     },
     {
@@ -11613,7 +11613,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "seguro"
       ],
       "answer": "Es seguro el plan no estoy seguro",
-      "instruction": "Ser vs estar seguro",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Plan seguro vs duda."
     },
     {
@@ -11628,7 +11628,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "cansado"
       ],
       "answer": "Es cansado el discurso estoy cansado",
-      "instruction": "Ser vs estar cansado",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Aburrido vs fatiga."
     },
     {
@@ -11644,7 +11644,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "conservado"
       ],
       "answer": "Es malo el vino está mal conservado",
-      "instruction": "Ser vs estar malo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Calidad vs conservación."
     },
     {
@@ -11659,126 +11659,126 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "baja"
       ],
       "answer": "Es profesor pero está de baja",
-      "instruction": "Ser vs estar profesor",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Profesión vs situación laboral."
     },
     {
       "type": "translation",
       "question": "Он умный, но сегодня не в форме.",
       "answer": "Es listo, pero hoy no está muy lúcido",
-      "instruction": "Ser vs estar listo",
+      "instruction": "Переведите предложение",
       "explanation": "Es listo (rasgo) vs está lúcido (estado)."
     },
     {
       "type": "translation",
       "question": "Лекция скучная, а студенты скучают.",
       "answer": "La clase es aburrida y los alumnos están aburridos",
-      "instruction": "Ser vs estar aburrido",
+      "instruction": "Переведите предложение",
       "explanation": "Es aburrida (causa) vs están aburridos (estado)."
     },
     {
       "type": "translation",
       "question": "Футболка зелёная, а он зелен от зависти.",
       "answer": "La camiseta es verde y él está verde de envidia",
-      "instruction": "Ser vs estar verde",
+      "instruction": "Переведите предложение",
       "explanation": "Color (es) vs metáfora (está)."
     },
     {
       "type": "translation",
       "question": "Он плохой человек, но сегодня в хорошем настроении.",
       "answer": "Es mala persona, pero hoy está de buen humor",
-      "instruction": "Ser vs estar malo",
+      "instruction": "Переведите предложение",
       "explanation": "Rasgo moral vs estado anímico."
     },
     {
       "type": "translation",
       "question": "Мешок тяжёлый, но сегодня кажется ещё тяжелее.",
       "answer": "El saco es pesado, pero hoy está más pesado",
-      "instruction": "Ser vs estar pesado",
+      "instruction": "Переведите предложение",
       "explanation": "Cualidad habitual vs sensación actual."
     },
     {
       "type": "translation",
       "question": "Мальчик сообразительный и сегодня очень живой.",
       "answer": "El niño es vivo y hoy está muy animado",
-      "instruction": "Ser vs estar vivo",
+      "instruction": "Переведите предложение",
       "explanation": "Es vivo (inteligente) vs está animado (energía)."
     },
     {
       "type": "translation",
       "question": "Случай странный, а атмосфера тоже странная.",
       "answer": "El caso es raro y el ambiente está raro",
-      "instruction": "Ser vs estar raro",
+      "instruction": "Переведите предложение",
       "explanation": "Cualidad objetiva vs ambiente."
     },
     {
       "type": "translation",
       "question": "Он бледный от природы, но сегодня особенно бледен.",
       "answer": "Es pálido de natural, pero hoy está muy pálido",
-      "instruction": "Ser vs estar pálido",
+      "instruction": "Переведите предложение",
       "explanation": "Rasgo vs estado momentáneo."
     },
     {
       "type": "translation",
       "question": "Он симпатичный, но с этой стрижкой выглядит не очень.",
       "answer": "Es guapo, pero con ese corte está feo",
-      "instruction": "Ser vs estar guapo",
+      "instruction": "Переведите предложение",
       "explanation": "Atractivo innato vs apariencia actual."
     },
     {
       "type": "translation",
       "question": "План надёжный, но я не уверен.",
       "answer": "El plan es seguro, pero no estoy seguro",
-      "instruction": "Ser vs estar seguro",
+      "instruction": "Переведите предложение",
       "explanation": "Seguro (fiable) vs estar seguro (convicción)."
     },
     {
       "type": "error_correction",
       "question": "Está listo, pero hoy no es muy lúcido.",
       "answer": "Es listo, pero hoy no está muy lúcido.",
-      "instruction": "Ser vs estar listo",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Inteligencia (es listo) vs estado (está lúcido)."
     },
     {
       "type": "error_correction",
       "question": "La clase está aburrida y los alumnos son aburridos.",
       "answer": "La clase es aburrida y los alumnos están aburridos.",
-      "instruction": "Ser vs estar aburrido",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "La clase es aburrida (causa); alumnos están aburridos."
     },
     {
       "type": "error_correction",
       "question": "La camiseta está verde y él es verde de envidia.",
       "answer": "La camiseta es verde y él está verde de envidia.",
-      "instruction": "Ser vs estar verde",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Color → es; metáfora → está."
     },
     {
       "type": "error_correction",
       "question": "Es mala persona, pero hoy es de buen humor.",
       "answer": "Es mala persona, pero hoy está de buen humor.",
-      "instruction": "Estar de buen humor",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Estado anímico → está de buen humor."
     },
     {
       "type": "error_correction",
       "question": "El saco está pesado de natural.",
       "answer": "El saco es pesado.",
-      "instruction": "Ser vs estar pesado",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Peso/cualidad habitual → es pesado."
     },
     {
       "type": "error_correction",
       "question": "El niño está vivo y hoy es muy animado.",
       "answer": "El niño es vivo y hoy está muy animado.",
-      "instruction": "Ser vs estar vivo",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Es vivo (listo); está animado (energía)."
     },
     {
       "type": "error_correction",
       "question": "El caso está raro y el ambiente es raro.",
       "answer": "El caso es raro y el ambiente está raro.",
-      "instruction": "Ser vs estar raro",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Caso es raro; ambiente está raro."
     },
     {
@@ -11792,14 +11792,14 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "Está guapo, pero con ese corte es feo.",
       "answer": "Es guapo, pero con ese corte está feo.",
-      "instruction": "Ser vs estar guapo",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Es guapo (rasgo); está feo (apariencia actual)."
     },
     {
       "type": "error_correction",
       "question": "El plan está seguro, pero no soy seguro.",
       "answer": "El plan es seguro, pero no estoy seguro.",
-      "instruction": "Ser vs estar seguro",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Plan es seguro; convicción → estoy seguro."
     }
   ],
@@ -11808,56 +11808,56 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Я студент.",
       "answer": "Soy estudiante",
-      "instruction": "Ser — профессия",
+      "instruction": "Переведите предложение",
       "explanation": "Soy estudiante — без артикля."
     },
     {
       "type": "translation",
       "question": "Она устала.",
       "answer": "Está cansada",
-      "instruction": "Estar — состояние",
+      "instruction": "Переведите предложение",
       "explanation": "Está cansada — сейчас устала."
     },
     {
       "type": "translation",
       "question": "Мы из Испании.",
       "answer": "Somos de España",
-      "instruction": "Ser — происхождение",
+      "instruction": "Переведите предложение",
       "explanation": "Somos de España."
     },
     {
       "type": "translation",
       "question": "Он дома.",
       "answer": "Está en casa",
-      "instruction": "Estar — место",
+      "instruction": "Переведите предложение",
       "explanation": "Está en casa."
     },
     {
       "type": "error_correction",
       "question": "Yo es estudiante.",
       "answer": "Yo soy estudiante.",
-      "instruction": "Ser — yo",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Yo → soy."
     },
     {
       "type": "error_correction",
       "question": "Ella está de España.",
       "answer": "Ella es de España.",
-      "instruction": "Ser vs estar — origen",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Origen → ser (es de España)."
     },
     {
       "type": "error_correction",
       "question": "Nosotros somos en casa.",
       "answer": "Estamos en casa.",
-      "instruction": "Estar — lugar",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Lugar → estar (estamos en casa)."
     },
     {
       "type": "error_correction",
       "question": "El profesor está aburrido persona.",
       "answer": "El profesor es aburrido.",
-      "instruction": "Ser vs estar — rasgo",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Rasgo de carácter → ser."
     },
     {
@@ -11870,7 +11870,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "español"
       ],
       "answer": "Soy estudiante de español",
-      "instruction": "Ser — profesión",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Soy estudiante…"
     },
     {
@@ -11882,7 +11882,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "hoy"
       ],
       "answer": "Estoy cansado hoy",
-      "instruction": "Estar — estado",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Estoy cansado hoy."
     },
     {
@@ -11894,7 +11894,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "Madrid"
       ],
       "answer": "Somos de Madrid",
-      "instruction": "Ser — origen",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Somos de Madrid."
     },
     {
@@ -11907,7 +11907,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "biblioteca"
       ],
       "answer": "Está en la biblioteca",
-      "instruction": "Estar — lugar",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Está en la biblioteca."
     },
     {
@@ -11920,7 +11920,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "historia"
       ],
       "answer": "Es profesor de historia",
-      "instruction": "Ser — profesión",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Es profesor de historia."
     },
     {
@@ -11934,7 +11934,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "resultado"
       ],
       "answer": "Estamos contentos con el resultado",
-      "instruction": "Estar — emoción",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Estamos contentos…"
     },
     {
@@ -11948,7 +11948,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "infancia"
       ],
       "answer": "Son amigos desde la infancia",
-      "instruction": "Ser — relación",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Son amigos…"
     },
     {
@@ -11960,7 +11960,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "hoy?"
       ],
       "answer": "¿Cómo estás hoy?",
-      "instruction": "Estar — pregunta",
+      "instruction": "Составьте предложение из слов",
       "explanation": "¿Cómo estás?"
     },
     {
@@ -11973,7 +11973,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "acuerdo"
       ],
       "answer": "No estoy de acuerdo",
-      "instruction": "Estar de acuerdo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Estoy de acuerdo / No estoy de acuerdo."
     },
     {
@@ -11986,7 +11986,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "soleado"
       ],
       "answer": "Es un día soleado",
-      "instruction": "Ser — descripción",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Es un día soleado."
     },
     {
@@ -11998,7 +11998,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "estudiante"
       ],
       "answer": "Yo soy estudiante",
-      "instruction": "Ser — identidad",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Soy estudiante."
     },
     {
@@ -12010,7 +12010,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "cansada"
       ],
       "answer": "Ella está cansada",
-      "instruction": "Estar — estado",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Está cansada."
     },
     {
@@ -12022,7 +12022,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "amigos"
       ],
       "answer": "Nosotros somos amigos",
-      "instruction": "Ser — relación",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Somos amigos."
     },
     {
@@ -12036,7 +12036,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "amable"
       ],
       "answer": "El profesor es muy amable",
-      "instruction": "Ser — rasgo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Es muy amable."
     },
     {
@@ -12049,7 +12049,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "contento"
       ],
       "answer": "Hoy estoy muy contento",
-      "instruction": "Estar — emoción",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Estoy contento."
     },
     {
@@ -12061,7 +12061,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "España?"
       ],
       "answer": "¿Eres de España?",
-      "instruction": "Ser — origen",
+      "instruction": "Составьте предложение из слов",
       "explanation": "¿Eres de España?"
     },
     {
@@ -12074,7 +12074,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "médica"
       ],
       "answer": "Mi hermana es médica",
-      "instruction": "Ser — profesión",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Es médica."
     },
     {
@@ -12089,7 +12089,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "parque"
       ],
       "answer": "Los niños están en el parque",
-      "instruction": "Estar — lugar",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Están en el parque."
     }
   ],
@@ -12105,7 +12105,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "siete"
       ],
       "answer": "Se levanta a las siete",
-      "instruction": "Se reflexivo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Se levanta — reflexivo."
     },
     {
@@ -12119,7 +12119,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "ocho"
       ],
       "answer": "Se van a las ocho",
-      "instruction": "Se reflexivo plural",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Se van — ellos."
     },
     {
@@ -12132,7 +12132,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "aquí"
       ],
       "answer": "Se habla español aquí",
-      "instruction": "Se impersonal",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Se habla español — impersonal."
     },
     {
@@ -12145,7 +12145,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "fresco"
       ],
       "answer": "Se vende pan fresco",
-      "instruction": "Se pasivo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Se vende — pasiva refleja."
     },
     {
@@ -12159,7 +12159,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "nombre"
       ],
       "answer": "Se me olvidó el nombre",
-      "instruction": "Se accidental",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Se me olvidó — accidental."
     },
     {
@@ -12172,7 +12172,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "llueve"
       ],
       "answer": "Se dice que llueve",
-      "instruction": "Se impersonal",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Se dice que…"
     },
     {
@@ -12187,7 +12187,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "español?"
       ],
       "answer": "¿Cómo se dice esto en español?",
-      "instruction": "Se impersonal",
+      "instruction": "Составьте предложение из слов",
       "explanation": "¿Cómo se dice…?"
     },
     {
@@ -12200,7 +12200,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "casas"
       ],
       "answer": "Se construyeron muchas casas",
-      "instruction": "Se pasivo plural",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Se construyeron…"
     },
     {
@@ -12213,7 +12213,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "hoy"
       ],
       "answer": "Se sienten cansados hoy",
-      "instruction": "Se reflexivo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Se sienten cansados."
     },
     {
@@ -12228,7 +12228,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "hospital"
       ],
       "answer": "No se fuma en el hospital",
-      "instruction": "Se prohibición",
+      "instruction": "Составьте предложение из слов",
       "explanation": "No se fuma…"
     },
     {
@@ -12242,7 +12242,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "tiempo"
       ],
       "answer": "Se nos acabó el tiempo",
-      "instruction": "Se accidental",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Se nos acabó el tiempo."
     },
     {
@@ -12255,7 +12255,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "ya"
       ],
       "answer": "Se hace tarde ya",
-      "instruction": "Hacerse — cambio",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Se hace tarde."
     },
     {
@@ -12269,7 +12269,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "España"
       ],
       "answer": "Se comen mucho en España",
-      "instruction": "Se impersonal",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Se comen mucho…"
     },
     {
@@ -12285,7 +12285,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "comer"
       ],
       "answer": "Se lavan las manos antes de comer",
-      "instruction": "Se reflexivo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Se lavan las manos…"
     },
     {
@@ -12299,7 +12299,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "diciembre"
       ],
       "answer": "Se trabaja mucho en diciembre",
-      "instruction": "Se impersonal",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Se trabaja mucho…"
     },
     {
@@ -12312,7 +12312,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "céntrico"
       ],
       "answer": "Se alquila piso céntrico",
-      "instruction": "Se — anuncio impersonal",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Se alquila — сдаётся (объявление)."
     },
     {
@@ -12326,7 +12326,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "vaso"
       ],
       "answer": "Se nos cayó el vaso",
-      "instruction": "Se — accidental",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Se nos cayó — у нас упал."
     },
     {
@@ -12339,7 +12339,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "difíciles"
       ],
       "answer": "Se viven momentos difíciles",
-      "instruction": "Se — impersonal plural",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Se viven momentos — переживаются моменты."
     },
     {
@@ -12355,7 +12355,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "nueve"
       ],
       "answer": "Se abrieron las puertas a las nueve",
-      "instruction": "Se — pasiva refleja plural",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Se abrieron las puertas — двери открылись."
     },
     {
@@ -12369,308 +12369,56 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "café"
       ],
       "answer": "Se me antoja un café",
-      "instruction": "Se — antojo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Se me antoja — мне хочется."
     }
   ],
   "chapter-33-relativos": [
     {
-      "type": "sentence_building",
-      "question": "El / libro / que / leí / es / interesante",
-      "options": [
-        "El",
-        "libro",
-        "que",
-        "leí",
-        "es",
-        "interesante"
+      "type": "multiple_choice",
+      "question": "¿Recuerdas la canción ___ bailamos en la fiesta?",
+      "instruction": "Выберите правильный вариант",
+      "options": ["que", "quien", "cuyo", "donde"],
+      "answer": "que",
+      "explanation": "Без предлога — que: la canción que bailamos."
+    },
+    {
+      "type": "fill_blank",
+      "question": "Ese es el colegio ___ estudié de niño.",
+      "instruction": "Заполните пропуск",
+      "answer": "donde",
+      "acceptableAnswers": ["Donde", "en el que", "En el que"],
+      "explanation": "Место → donde / en el que."
+    },
+    {
+      "type": "translation",
+      "question": "Друг, которому я написал, не ответил.",
+      "instruction": "Переведите на испанский",
+      "answer": "El amigo a quien escribí no respondió",
+      "acceptableAnswers": [
+        "El amigo a quien escribí no respondió.",
+        "El amigo al que escribí no respondió"
       ],
-      "answer": "El libro que leí es interesante",
-      "instruction": "Que — objeto",
-      "explanation": "El libro que leí…"
+      "explanation": "Кому → a quien / al que."
+    },
+    {
+      "type": "error_correction",
+      "question": "Esta es la razón que no vine.",
+      "instruction": "Исправьте ошибку",
+      "answer": "Esta es la razón por la que no vine.",
+      "acceptableAnswers": [
+        "Esta es la razón por la que no vine",
+        "Esta es la razón por la cual no vine."
+      ],
+      "explanation": "Причина → por la que (не голое que)."
     },
     {
       "type": "sentence_building",
-      "question": "La / mujer / quien / llamó / es / mi / tía",
-      "options": [
-        "La",
-        "mujer",
-        "quien",
-        "llamó",
-        "es",
-        "mi",
-        "tía"
-      ],
-      "answer": "La mujer quien llamó es mi tía",
-      "instruction": "Quien — sujeto",
-      "explanation": "La mujer quien llamó…"
-    },
-    {
-      "type": "sentence_building",
-      "question": "Lo / que / dijiste / es / verdad",
-      "options": [
-        "Lo",
-        "que",
-        "dijiste",
-        "es",
-        "verdad"
-      ],
-      "answer": "Lo que dijiste es verdad",
-      "instruction": "Lo que",
-      "explanation": "Lo que dijiste…"
-    },
-    {
-      "type": "sentence_building",
-      "question": "Busco / un / sitio / donde / haya / silencio",
-      "options": [
-        "Busco",
-        "un",
-        "sitio",
-        "donde",
-        "haya",
-        "silencio"
-      ],
-      "answer": "Busco un sitio donde haya silencio",
-      "instruction": "Donde + subj.",
-      "explanation": "Donde haya silencio."
-    },
-    {
-      "type": "sentence_building",
-      "question": "Mi / hermano / cuya / novia / es / médica / vive / aquí",
-      "options": [
-        "Mi",
-        "hermano",
-        "cuya",
-        "novia",
-        "es",
-        "médica",
-        "vive",
-        "aquí"
-      ],
-      "answer": "Mi hermano cuya novia es médica vive aquí",
-      "instruction": "Cuyo — posesión",
-      "explanation": "Cuya novia…"
-    },
-    {
-      "type": "sentence_building",
-      "question": "La / casa / en / la / que / vivimos / es / antigua",
-      "options": [
-        "La",
-        "casa",
-        "en",
-        "la",
-        "que",
-        "vivimos",
-        "es",
-        "antigua"
-      ],
-      "answer": "La casa en la que vivimos es antigua",
-      "instruction": "En la que",
-      "explanation": "En la que vivimos…"
-    },
-    {
-      "type": "sentence_building",
-      "question": "El / motivo / por / el / que / vine / es / importante",
-      "options": [
-        "El",
-        "motivo",
-        "por",
-        "el",
-        "que",
-        "vine",
-        "es",
-        "importante"
-      ],
-      "answer": "El motivo por el que vine es importante",
-      "instruction": "Por el que",
-      "explanation": "Por el que vine…"
-    },
-    {
-      "type": "sentence_building",
-      "question": "Todo / lo / que / necesitas / está / aquí",
-      "options": [
-        "Todo",
-        "lo",
-        "que",
-        "necesitas",
-        "está",
-        "aquí"
-      ],
-      "answer": "Todo lo que necesitas está aquí",
-      "instruction": "Todo lo que",
-      "explanation": "Todo lo que necesitas…"
-    },
-    {
-      "type": "sentence_building",
-      "question": "Conocí / a / alguien / que / habla / cinco / idiomas",
-      "options": [
-        "Conocí",
-        "a",
-        "alguien",
-        "que",
-        "habla",
-        "cinco",
-        "idiomas"
-      ],
-      "answer": "Conocí a alguien que habla cinco idiomas",
-      "instruction": "Que — persona",
-      "explanation": "Alguien que habla…"
-    },
-    {
-      "type": "sentence_building",
-      "question": "El / día / cuando / llegué / llovió / mucho",
-      "options": [
-        "El",
-        "día",
-        "cuando",
-        "llegué",
-        "llovió",
-        "mucho"
-      ],
-      "answer": "El día cuando llegué llovió mucho",
-      "instruction": "Cuando — tiempo",
-      "explanation": "El día cuando llegué…"
-    },
-    {
-      "type": "sentence_building",
-      "question": "Es / el / mejor / film / que / he / visto",
-      "options": [
-        "Es",
-        "el",
-        "mejor",
-        "film",
-        "que",
-        "he",
-        "visto"
-      ],
-      "answer": "Es el mejor film que he visto",
-      "instruction": "Superlativo + que",
-      "explanation": "El mejor film que he visto."
-    },
-    {
-      "type": "sentence_building",
-      "question": "No / hay / nada / que / me / asuste",
-      "options": [
-        "No",
-        "hay",
-        "nada",
-        "que",
-        "me",
-        "asuste"
-      ],
-      "answer": "No hay nada que me asuste",
-      "instruction": "Que + subj.",
-      "explanation": "Nada que me asuste."
-    },
-    {
-      "type": "sentence_building",
-      "question": "La / persona / a / quien / escribí / no / respondió",
-      "options": [
-        "La",
-        "persona",
-        "a",
-        "quien",
-        "escribí",
-        "no",
-        "respondió"
-      ],
-      "answer": "La persona a quien escribí no respondió",
-      "instruction": "A quien",
-      "explanation": "A quien escribí…"
-    },
-    {
-      "type": "sentence_building",
-      "question": "El / problema / del / que / hablamos / es / grave",
-      "options": [
-        "El",
-        "problema",
-        "del",
-        "que",
-        "hablamos",
-        "es",
-        "grave"
-      ],
-      "answer": "El problema del que hablamos es grave",
-      "instruction": "Del que",
-      "explanation": "Del que hablamos…"
-    },
-    {
-      "type": "sentence_building",
-      "question": "Quiero / un / trabajo / en / el / que / pueda / viajar",
-      "options": [
-        "Quiero",
-        "un",
-        "trabajo",
-        "en",
-        "el",
-        "que",
-        "pueda",
-        "viajar"
-      ],
-      "answer": "Quiero un trabajo en el que pueda viajar",
-      "instruction": "En el que + subj.",
-      "explanation": "En el que pueda viajar."
-    },
-    {
-      "type": "sentence_building",
-      "question": "El / chico / al / que / conocí / es / italiano",
-      "options": [
-        "El",
-        "chico",
-        "al",
-        "que",
-        "conocí",
-        "es",
-        "italiano"
-      ],
-      "answer": "El chico al que conocí es italiano",
-      "instruction": "Relativo — a + el que",
-      "explanation": "Al que conocí — которого я познал."
-    },
-    {
-      "type": "sentence_building",
-      "question": "Busco / una / casa / cuyo / jardín / sea / grande",
-      "options": [
-        "Busco",
-        "una",
-        "casa",
-        "cuyo",
-        "jardín",
-        "sea",
-        "grande"
-      ],
-      "answer": "Busco una casa cuyo jardín sea grande",
-      "instruction": "Relativo — cuyo + subj.",
-      "explanation": "Cuyo jardín sea grande — чей сад большой."
-    },
-    {
-      "type": "sentence_building",
-      "question": "Fue / entonces / cuando / todo / cambió",
-      "options": [
-        "Fue",
-        "entonces",
-        "cuando",
-        "todo",
-        "cambió"
-      ],
-      "answer": "Fue entonces cuando todo cambió",
-      "instruction": "Relativo temporal — cuando",
-      "explanation": "Fue entonces cuando — именно тогда когда."
-    },
-    {
-      "type": "sentence_building",
-      "question": "Hay / pocas / cosas / que / me / molesten",
-      "options": [
-        "Hay",
-        "pocas",
-        "cosas",
-        "que",
-        "me",
-        "molesten"
-      ],
-      "answer": "Hay pocas cosas que me molesten",
-      "instruction": "Relativo + subjuntivo",
-      "explanation": "Cosas que me molesten — subjuntivo."
+      "question": "La / ciudad / donde / nací / es / pequeña",
+      "options": ["La", "ciudad", "donde", "nací", "es", "pequeña"],
+      "answer": "La ciudad donde nací es pequeña",
+      "instruction": "Составьте предложение из слов",
+      "explanation": "Donde — место рождения."
     }
   ],
   "chapter-34-pluscuamperfecto": [
@@ -12685,7 +12433,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "llegaste"
       ],
       "answer": "Ya había comido cuando llegaste",
-      "instruction": "Pluscuamperfecto",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Había comido cuando…"
     },
     {
@@ -12699,7 +12447,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "cosa"
       ],
       "answer": "Nunca había visto tal cosa",
-      "instruction": "Pluscuamperfecto",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Nunca había visto…"
     },
     {
@@ -12714,7 +12462,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "ido"
       ],
       "answer": "Cuando llegué ya se habían ido",
-      "instruction": "Pluscuamperfecto",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Se habían ido antes."
     },
     {
@@ -12729,7 +12477,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "examen"
       ],
       "answer": "Había estudiado mucho antes del examen",
-      "instruction": "Pluscuamperfecto",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Había estudiado…"
     },
     {
@@ -12743,7 +12491,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "meses"
       ],
       "answer": "No había llovido en meses",
-      "instruction": "Pluscuamperfecto neg.",
+      "instruction": "Составьте предложение из слов",
       "explanation": "No había llovido…"
     },
     {
@@ -12771,7 +12519,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "años"
       ],
       "answer": "Habíamos vivido allí diez años",
-      "instruction": "Pluscuamperfecto",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Habíamos vivido…"
     },
     {
@@ -12787,7 +12535,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "ocho"
       ],
       "answer": "Ella había salido antes de las ocho",
-      "instruction": "Pluscuamperfecto",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Había salido antes…"
     },
     {
@@ -12802,7 +12550,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "Perú?"
       ],
       "answer": "¿Habías estado alguna vez en Perú?",
-      "instruction": "Pluscuamperfecto — pregunta",
+      "instruction": "Составьте предложение из слов",
       "explanation": "¿Habías estado…?"
     },
     {
@@ -12817,7 +12565,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "casa"
       ],
       "answer": "Había olvidado las llaves en casa",
-      "instruction": "Pluscuamperfecto",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Había olvidado…"
     },
     {
@@ -12833,7 +12581,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "poco"
       ],
       "answer": "Cuando sonó el teléfono había dormido poco",
-      "instruction": "Pluscuamperfecto",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Había dormido poco…"
     },
     {
@@ -12848,7 +12596,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "eso"
       ],
       "answer": "Nadie había oído hablar de eso",
-      "instruction": "Pluscuamperfecto",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Había oído hablar…"
     },
     {
@@ -12863,7 +12611,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "llegamos"
       ],
       "answer": "Habían cerrado la tienda cuando llegamos",
-      "instruction": "Pluscuamperfecto",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Habían cerrado…"
     },
     {
@@ -12877,7 +12625,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "vendrías"
       ],
       "answer": "Yo había pensado que vendrías",
-      "instruction": "Pluscuamperfecto",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Había pensado que…"
     },
     {
@@ -12893,7 +12641,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "zona"
       ],
       "answer": "Antes de mudarnos habíamos visitado la zona",
-      "instruction": "Pluscuamperfecto",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Habíamos visitado…"
     },
     {
@@ -12907,7 +12655,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "llamaste"
       ],
       "answer": "Ya había salido cuando llamaste",
-      "instruction": "Pluscuamperfecto — anterioridad",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Había salido cuando llamaste — уже ушёл."
     },
     {
@@ -12922,7 +12670,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "rico"
       ],
       "answer": "Nunca había probado algo tan rico",
-      "instruction": "Pluscuamperfecto — experiencia",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Nunca había probado — никогда не пробовал."
     },
     {
@@ -12936,7 +12684,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "cenar"
       ],
       "answer": "Habían terminado antes de cenar",
-      "instruction": "Pluscuamperfecto — ellos",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Habían terminado — они закончили."
     },
     {
@@ -12949,7 +12697,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "antes?"
       ],
       "answer": "¿Habías visitado Roma antes?",
-      "instruction": "Pluscuamperfecto — pregunta",
+      "instruction": "Составьте предложение из слов",
       "explanation": "¿Habías visitado? — ты бывал?"
     },
     {
@@ -12964,7 +12712,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "pagado"
       ],
       "answer": "Me dijo que ya había pagado",
-      "instruction": "Pluscuamperfecto — indirecto",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Había pagado en estilo indirecto."
     }
   ],
@@ -13270,7 +13018,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "ayer"
       ],
       "answer": "Se lo di a María ayer",
-      "instruction": "CD/CI — se lo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Se lo di — le→se ante lo."
     },
     {
@@ -13311,7 +13059,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "correo"
       ],
       "answer": "Se las envié por correo",
-      "instruction": "Se las",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Se las envié…"
     },
     {
@@ -13326,7 +13074,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "nadie"
       ],
       "answer": "No se lo digas a nadie",
-      "instruction": "Imperativo + pronombres",
+      "instruction": "Составьте предложение из слов",
       "explanation": "No se lo digas…"
     },
     {
@@ -13380,7 +13128,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "madre"
       ],
       "answer": "Se la dedico a mi madre",
-      "instruction": "Se la",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Se la dedico…"
     },
     {
@@ -13421,7 +13169,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "puedas"
       ],
       "answer": "Dádmelo cuando puedas",
-      "instruction": "Imperativo plural",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Dádmelo…"
     },
     {
@@ -13796,14 +13544,14 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Я уже ел сегодня.",
       "answer": "Ya he comido hoy",
-      "instruction": "Perfecto — hoy",
+      "instruction": "Переведите предложение",
       "explanation": "Ya he comido — perfecto."
     },
     {
       "type": "translation",
       "question": "Когда я был ребёнком, жил в деревне.",
       "answer": "Cuando era niño vivía en el pueblo",
-      "instruction": "Imperfecto — infancia",
+      "instruction": "Переведите предложение",
       "explanation": "Era niño → imperfecto."
     },
     {
@@ -13817,7 +13565,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "Cuando era niño fui al parque cada día.",
       "answer": "Cuando era niño iba al parque cada día.",
-      "instruction": "Imperfecto hábito",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Hábito pasado → iba."
     },
     {
@@ -13850,7 +13598,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "hoy"
       ],
       "answer": "Ya he comido hoy",
-      "instruction": "Perfecto",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Ya he comido hoy."
     },
     {
@@ -13866,7 +13614,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "pueblo"
       ],
       "answer": "Cuando era niño vivía en el pueblo",
-      "instruction": "Imperfecto",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Vivía en el pueblo."
     },
     {
@@ -13895,7 +13643,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "Japón"
       ],
       "answer": "Nunca he estado en Japón",
-      "instruction": "Perfecto",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Nunca he estado…"
     },
     {
@@ -13922,7 +13670,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "salimos"
       ],
       "answer": "Había llovido cuando salimos",
-      "instruction": "Pluscuamperfecto",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Había llovido cuando…"
     },
     {
@@ -13948,7 +13696,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "aquí"
       ],
       "answer": "Llevamos tres años viviendo aquí",
-      "instruction": "Perfecto duración",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Llevamos… viviendo."
     },
     {
@@ -13962,7 +13710,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "tarde"
       ],
       "answer": "Esta mañana he desayunado tarde",
-      "instruction": "Perfecto — hoy",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Esta mañana → perfecto."
     },
     {
@@ -13978,7 +13726,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "trabajo"
       ],
       "answer": "Antes de llegar había terminado el trabajo",
-      "instruction": "Pluscuamperfecto",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Había terminado antes…"
     },
     {
@@ -13993,7 +13741,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "mercado"
       ],
       "answer": "Todos los domingos íbamos al mercado",
-      "instruction": "Imperfecto hábito",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Íbamos al mercado…"
     },
     {
@@ -14023,7 +13771,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "nueva?"
       ],
       "answer": "¿Has visto la película nueva?",
-      "instruction": "Perfecto — pregunta",
+      "instruction": "Составьте предложение из слов",
       "explanation": "¿Has visto…?"
     },
     {
@@ -14053,7 +13801,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "tarde"
       ],
       "answer": "De niño jugaba al fútbol cada tarde",
-      "instruction": "Imperfecto",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Jugaba al fútbol…"
     },
     {
@@ -14082,7 +13830,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "así"
       ],
       "answer": "Nunca había visto nada así",
-      "instruction": "Pluscuamperfecto",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Nunca había visto…"
     },
     {
@@ -14095,7 +13843,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "música"
       ],
       "answer": "Mientras estudiaba escuchaba música",
-      "instruction": "Imperfecto simultáneo",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Mientras estudiaba…"
     },
     {
@@ -14576,7 +14324,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "terminado"
       ],
       "answer": "Para cuando llegues ya habré terminado",
-      "instruction": "Futuro compuesto",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Habré terminado…"
     },
     {
@@ -15096,7 +14844,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "famoso"
       ],
       "answer": "El autor cuyas obras leo es famoso",
-      "instruction": "Cuyo plural",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Cuyas obras…"
     },
     {
@@ -15257,7 +15005,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "ayer"
       ],
       "answer": "Cuyo nombre no recuerdo vino ayer",
-      "instruction": "Cuyo — antecedente",
+      "instruction": "Составьте предложение из слов",
       "explanation": "Cuyo nombre no recuerdo…"
     },
     {

@@ -87,7 +87,7 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "Vergangenheit; B1: Subjuntivo (hablo ≠ hable).",
     ),
     pairs: [
-      p("Hablo español.", "Hable español.", "говорю (факт) vs чтобы говорил (B1)", "I speak (fact) vs that I speak (B1)", "hablo (hecho) vs hable (B1)", "ich spreche (Fakt) vs. hable (B1)"),
+      p("Hablo español.", "Hablo inglés.", "одно лицо, разные языки — одно окончание -o", "same person, different languages — same -o ending", "misma persona, distinto idioma — misma -o", "gleiche Person, andere Sprache — dieselbe -o"),
       p("Habláis vosotros.", "Hablan ustedes.", "вы в Испании vs вы в Америке", "you (Spain) vs you (Latin America)", "vosotros (España) vs ustedes (América)", "vosotros (Spanien) vs. ustedes (Lateinamerika)"),
     ],
   },
@@ -290,7 +290,7 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
     ),
     pairs: [
       p("Leía cuando llamaste.", "Llamaste mientras leía.", "фон / процесс + разовое событие", "background / ongoing + one-off event", "fondo / proceso + evento puntual", "Hintergrund / Verlauf + einmaliges Ereignis"),
-      p("Era las tres.", "→ Eran las tres.", "в прошлом тоже: era → eran las…", "in the past too: era → eran las…", "en pasado también: era → eran las…", "auch in der Vergangenheit: era → eran las…"),
+      p("Era las tres.", "Eran las tres.", "ошибка: era las… → правильно eran las…", "wrong: era las… → correct eran las…", "error: era las… → correcto eran las…", "Falsch: era las… → richtig eran las…"),
     ],
   },
   "a2-por-para": {
@@ -418,8 +418,9 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "se habla (Alltag) vs fue escrito — Passiv B2.",
     ),
     pairs: [
-      p("Se lava.", "Se habla español aquí.", "моет себя vs «здесь говорят»", "washes himself vs “people speak Spanish here”", "se lava vs «aquí se habla»", "wäscht sich vs. «hier spricht man»"),
+      p("María se lava.", "Se habla español aquí.", "моет себя vs «здесь говорят»", "washes herself vs “people speak Spanish here”", "se lava vs «aquí se habla»", "wäscht sich vs. «hier spricht man»"),
       p("Se me cayó el vaso.", "Yo tiré el vaso.", "само выпало vs я уронил специально", "it fell by accident vs I dropped it on purpose", "se cayó solo vs yo lo tiré", "es ist mir runtergefallen vs. ich habe es absichtlich fallen lassen"),
+      p("Ana y Luis se ven.", "Ana se ve en el espejo.", "друг друга vs себя в зеркале", "each other vs herself in the mirror", "uno a otro vs ella misma en el espejo", "einander vs. sich selbst im Spiegel"),
     ],
   },
   "b1-relativos": {
@@ -436,8 +437,8 @@ const SPANISH_LEVEL_FRAMES: Record<string, GrammarLevelFrame> = {
       "Formelles el cual, lo que — B2.",
     ),
     pairs: [
-      p("el libro que leí", "el hombre quien / que vino", "про вещь vs про человека (часто всё равно que)", "about a thing vs a person (que is still common)", "cosa vs persona (que sigue siendo frecuente)", "Ding vs. Person (que bleibt häufig)"),
-      p("el tema del que hablamos", "el tema de que hablamos", "правильно: del que / de la que — не голое de que", "use del que / de la que — not bare de que", "del que / de la que, no *de que", "del que / de la que, nicht bloßes de que"),
+      p("el libro que leí", "el hombre que vino", "про вещь и про человека чаще всего que", "for things and people, que is usually fine", "cosa y persona: normalmente que", "Ding und Person: meist que"),
+      p("el tema del que hablamos", "el tema de que hablamos", "правильно del que — не голое de que", "use del que — not bare de que", "del que, no *de que", "del que, nicht bloßes de que"),
     ],
   },
   "b1-pluscuamperfecto": {

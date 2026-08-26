@@ -187,80 +187,209 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "La mujer ___ habla es mi profesora.",
-      "instruction": "Относительное местоимение",
-      "options": [
-        "que",
-        "quien",
-        "cuyo",
-        "donde"
-      ],
+      "instruction": "Выберите правильный вариант",
+      "options": ["que", "quien", "cuyo", "donde"],
       "answer": "que",
-      "explanation": "Que — универсальное относительное местоимение.",
-      "grammarTopic": "relativos"
-    },
-    {
-      "type": "fill_blank",
-      "question": "El chico ___ padre es médico estudia mucho.",
-      "instruction": "Притяжательное относительное",
-      "answer": "cuyo",
-      "acceptableAnswers": [
-        "Cuyo"
-      ],
-      "explanation": "Cuyo = чей (cuyo padre).",
+      "explanation": "Без предлога для людей и вещей обычно que: la mujer que habla.",
       "grammarTopic": "relativos"
     },
     {
       "type": "multiple_choice",
       "question": "___ me gusta es la libertad.",
-      "instruction": "Lo que / que",
-      "options": [
-        "Lo que",
-        "La que",
-        "El que",
-        "Donde"
-      ],
+      "instruction": "Выберите правильный вариант",
+      "options": ["Lo que", "La que", "El que", "Donde"],
       "answer": "Lo que",
       "explanation": "Lo que = «то, что» (абстрактное).",
       "grammarTopic": "relativos"
     },
     {
-      "type": "translation",
-      "question": "Это дом, где я вырос.",
-      "instruction": "Переведите с donde",
-      "answer": "Es la casa donde crecí",
-      "acceptableAnswers": [
-        "es la casa donde crecí"
-      ],
-      "explanation": "Donde = где (относительное).",
+      "type": "multiple_choice",
+      "question": "Este es el parque ___ jugábamos de niños.",
+      "instruction": "Выберите правильный вариант",
+      "options": ["donde", "que", "quien", "cuyo"],
+      "answer": "donde",
+      "explanation": "Donde связывает место: el parque donde…",
       "grammarTopic": "relativos"
     },
     {
-      "type": "sentence_building",
-      "question": "El / libro / que / leí / es / interesante",
-      "options": [
-        "El",
-        "libro",
-        "que",
-        "leí",
-        "es",
-        "interesante"
-      ],
-      "answer": "El libro que leí es interesante",
-      "instruction": "Соберите фразу с que",
-      "explanation": "El libro que leí — «книга, которую я прочитал».",
+      "type": "multiple_choice",
+      "question": "La persona ___ escribí no respondió.",
+      "instruction": "Выберите правильный вариант",
+      "options": ["a quien", "que", "cuyo", "donde"],
+      "answer": "a quien",
+      "explanation": "После предлога a для человека: a quien (не голое que).",
+      "grammarTopic": "relativos"
+    },
+    {
+      "type": "fill_blank",
+      "question": "El chico ___ padre es médico estudia mucho.",
+      "instruction": "Заполните пропуск",
+      "answer": "cuyo",
+      "acceptableAnswers": ["Cuyo"],
+      "explanation": "Cuyo = «чей» и согласуется с тем, что принадлежит: cuyo padre.",
       "grammarTopic": "relativos"
     },
     {
       "type": "fill_blank",
       "question": "Conozco a alguien ___ sabe ruso.",
-      "instruction": "Quien / que",
+      "instruction": "Заполните пропуск",
       "answer": "que",
+      "acceptableAnswers": ["Que", "quien", "Quien"],
+      "explanation": "После alguien чаще que; quien тоже возможен.",
+      "grammarTopic": "relativos"
+    },
+    {
+      "type": "fill_blank",
+      "question": "El tema ___ hablamos es difícil.",
+      "instruction": "Заполните пропуск",
+      "answer": "del que",
+      "acceptableAnswers": ["Del que", "de que"],
+      "explanation": "После de нужен артикль: del que / de la que, не голое de que.",
+      "grammarTopic": "relativos"
+    },
+    {
+      "type": "fill_blank",
+      "question": "No hay nada ___ me asuste.",
+      "instruction": "Заполните пропуск",
+      "answer": "que",
+      "acceptableAnswers": ["Que"],
+      "explanation": "После nada/algo/alguien часто que + subjuntivo: nada que me asuste.",
+      "grammarTopic": "relativos"
+    },
+    {
+      "type": "translation",
+      "question": "Это дом, где я вырос.",
+      "instruction": "Переведите на испанский",
+      "answer": "Es la casa donde crecí",
       "acceptableAnswers": [
-        "Que",
-        "quien",
-        "Quien"
+        "Esta es la casa donde crecí",
+        "Ésta es la casa donde crecí",
+        "Es la casa donde me crié",
+        "Esta es la casa donde me crié",
+        "La casa donde crecí",
+        "Es la casa en la que crecí",
+        "Esta es la casa en la que crecí",
+        "Es la casa en donde crecí",
+        "Es la casa donde crecí."
       ],
-      "explanation": "После alguien часто que; quien тоже возможен для людей.",
+      "explanation": "Место → donde (или en la que): Es la casa donde crecí.",
+      "grammarTopic": "relativos"
+    },
+    {
+      "type": "translation",
+      "question": "Книга, которую я прочитал, интересная.",
+      "instruction": "Переведите на испанский",
+      "answer": "El libro que leí es interesante",
+      "acceptableAnswers": [
+        "El libro que leí es interesante.",
+        "El libro que he leído es interesante",
+        "El libro que yo leí es interesante"
+      ],
+      "explanation": "Для вещи без предлога — que: el libro que leí.",
+      "grammarTopic": "relativos"
+    },
+    {
+      "type": "translation",
+      "question": "То, что ты сказал, правда.",
+      "instruction": "Переведите на испанский",
+      "answer": "Lo que dijiste es verdad",
+      "acceptableAnswers": [
+        "Lo que dijiste es verdad.",
+        "Lo que has dicho es verdad",
+        "Lo que tú dijiste es verdad"
+      ],
+      "explanation": "«То, что» → lo que.",
+      "grammarTopic": "relativos"
+    },
+    {
+      "type": "translation",
+      "question": "Ищу место, где было бы тихо.",
+      "instruction": "Переведите на испанский",
+      "answer": "Busco un sitio donde haya silencio",
+      "acceptableAnswers": [
+        "Busco un sitio donde haya silencio.",
+        "Busco un lugar donde haya silencio",
+        "Busco un sitio donde esté en silencio",
+        "Busco un sitio en el que haya silencio"
+      ],
+      "explanation": "После donde в значении «такой, где бы…» часто subjuntivo: donde haya.",
+      "grammarTopic": "relativos"
+    },
+    {
+      "type": "error_correction",
+      "question": "La que me gusta es la libertad.",
+      "instruction": "Исправьте ошибку",
+      "answer": "Lo que me gusta es la libertad.",
+      "acceptableAnswers": ["Lo que me gusta es la libertad"],
+      "explanation": "Абстрактное «то, что» — lo que, не la que.",
+      "grammarTopic": "relativos"
+    },
+    {
+      "type": "error_correction",
+      "question": "El tema de que hablamos es difícil.",
+      "instruction": "Исправьте ошибку",
+      "answer": "El tema del que hablamos es difícil.",
+      "acceptableAnswers": [
+        "El tema del que hablamos es difícil"
+      ],
+      "explanation": "После de: del que / de la que (с артиклем).",
+      "grammarTopic": "relativos"
+    },
+    {
+      "type": "error_correction",
+      "question": "Es el chico cual padre es médico.",
+      "instruction": "Исправьте ошибку",
+      "answer": "Es el chico cuyo padre es médico.",
+      "acceptableAnswers": ["Es el chico cuyo padre es médico"],
+      "explanation": "«Чей» → cuyo (не cual).",
+      "grammarTopic": "relativos"
+    },
+    {
+      "type": "error_correction",
+      "question": "La persona que escribí no respondió.",
+      "instruction": "Исправьте ошибку",
+      "answer": "La persona a quien escribí no respondió.",
+      "acceptableAnswers": [
+        "La persona a quien escribí no respondió",
+        "La persona a la que escribí no respondió"
+      ],
+      "explanation": "Писать кому-то → a quien / a la que.",
+      "grammarTopic": "relativos"
+    },
+    {
+      "type": "sentence_building",
+      "question": "El / libro / que / leí / es / interesante",
+      "options": ["El", "libro", "que", "leí", "es", "interesante"],
+      "answer": "El libro que leí es interesante",
+      "instruction": "Составьте предложение из слов",
+      "explanation": "El libro que leí — «книга, которую я прочитал».",
+      "grammarTopic": "relativos"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Lo / que / dijiste / es / verdad",
+      "options": ["Lo", "que", "dijiste", "es", "verdad"],
+      "answer": "Lo que dijiste es verdad",
+      "instruction": "Составьте предложение из слов",
+      "explanation": "Lo que = «то, что».",
+      "grammarTopic": "relativos"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Busco / un / sitio / donde / haya / silencio",
+      "options": ["Busco", "un", "sitio", "donde", "haya", "silencio"],
+      "answer": "Busco un sitio donde haya silencio",
+      "instruction": "Составьте предложение из слов",
+      "explanation": "Donde + subjuntivo: donde haya silencio.",
+      "grammarTopic": "relativos"
+    },
+    {
+      "type": "sentence_building",
+      "question": "Mi / hermano / cuya / novia / es / médica / vive / aquí",
+      "options": ["Mi", "hermano", "cuya", "novia", "es", "médica", "vive", "aquí"],
+      "answer": "Mi hermano cuya novia es médica vive aquí",
+      "instruction": "Составьте предложение из слов",
+      "explanation": "Cuya согласуется с novia (ж.р.).",
       "grammarTopic": "relativos"
     }
   ],
@@ -269,7 +398,7 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "Cuando llegué, ya ___ (comer).",
-      "instruction": "Pluscuamperfecto",
+      "instruction": "Выберите правильный вариант",
       "options": [
         "había comido",
         "he comido",
@@ -294,7 +423,7 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "translation",
       "question": "Она уже прочитала книгу, когда я пришёл.",
-      "instruction": "Pluscuamperfecto",
+      "instruction": "Переведите предложение",
       "answer": "Ya había leído el libro cuando llegué",
       "acceptableAnswers": [
         "ya había leído el libro cuando llegué"
@@ -344,7 +473,7 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "Si ___ (tener) dinero, viajaría.",
-      "instruction": "Subjuntivo imperfecto",
+      "instruction": "Выберите правильный вариант",
       "options": [
         "tuviera",
         "tengo",
@@ -406,7 +535,7 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "fill_blank",
       "question": "Si ___ (ser) más joven, correría más.",
-      "instruction": "Ser → subj. imperf.",
+      "instruction": "Заполните пропуск",
       "answer": "fuera",
       "acceptableAnswers": [
         "Fuera",
@@ -421,7 +550,7 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "¿Ves el libro? — Sí, ___ veo.",
-      "instruction": "OD lo/la",
+      "instruction": "Выберите правильный вариант",
       "options": [
         "lo",
         "le",
@@ -447,7 +576,7 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "translation",
       "question": "Я её вижу каждый день.",
-      "instruction": "OD местоимение",
+      "instruction": "Переведите предложение",
       "answer": "La veo cada día",
       "acceptableAnswers": [
         "la veo cada día"
@@ -470,7 +599,7 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "¿___ escribes a María?",
-      "instruction": "OI le",
+      "instruction": "Выберите правильный вариант",
       "options": [
         "Le",
         "Lo",
@@ -484,7 +613,7 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "fill_blank",
       "question": "No ___ (entender) — habla más despacio.",
-      "instruction": "OD «это»",
+      "instruction": "Заполните пропуск",
       "answer": "lo",
       "acceptableAnswers": [
         "Lo"
@@ -577,7 +706,7 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "Es posible que ya ___ (terminar).",
-      "instruction": "Subjuntivo perfecto",
+      "instruction": "Выберите правильный вариант",
       "options": [
         "haya terminado",
         "hube terminado",
@@ -654,7 +783,7 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "Si hubiera sabido, ___ (ir).",
-      "instruction": "Condicional compuesto",
+      "instruction": "Выберите правильный вариант",
       "options": [
         "habría ido",
         "iría",
@@ -680,7 +809,7 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "translation",
       "question": "Если бы ты позвонил, я бы приехал.",
-      "instruction": "Irreal presente",
+      "instruction": "Переведите предложение",
       "answer": "Si llamaras, vendría",
       "acceptableAnswers": [
         "si llamaras, vendría",
@@ -923,7 +1052,7 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "error_correction",
       "question": "Busco un sitio donde hay silencio.",
-      "instruction": "Indicativo vs subj.",
+      "instruction": "Найдите и исправьте ошибку",
       "answer": "Busco un sitio donde haya silencio.",
       "acceptableAnswers": [
         "Busco un sitio donde haya silencio"
@@ -1065,7 +1194,7 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "Pidió que ___ (callar).",
-      "instruction": "Subjuntivo en indirecto",
+      "instruction": "Выберите правильный вариант",
       "options": [
         "callara",
         "calló",
@@ -1152,7 +1281,7 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "fill_blank",
       "question": "A María ___ veo cada día.",
-      "instruction": "OD + a + имя",
+      "instruction": "Заполните пропуск",
       "answer": "la",
       "acceptableAnswers": [
         "La"
@@ -1259,7 +1388,7 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "Juan ___ listo (inteligente).",
-      "instruction": "Ser vs estar",
+      "instruction": "Выберите правильный вариант",
       "options": [
         "es",
         "está",
@@ -1273,7 +1402,7 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "fill_blank",
       "question": "Juan ___ listo (preparado).",
-      "instruction": "Ser vs estar",
+      "instruction": "Заполните пропуск",
       "answer": "está",
       "acceptableAnswers": [
         "Está"
@@ -1284,7 +1413,7 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "translation",
       "question": "Она злая (характер).",
-      "instruction": "Ser",
+      "instruction": "Переведите предложение",
       "answer": "Es mala",
       "acceptableAnswers": [
         "es mala"
@@ -1320,7 +1449,7 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "fill_blank",
       "question": "La fiesta ___ divertida (в целом).",
-      "instruction": "Ser",
+      "instruction": "Заполните пропуск",
       "answer": "es",
       "acceptableAnswers": [
         "Es"

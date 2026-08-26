@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  isGrammarCategoryInstruction,
   isUsableBankExercise,
   isUsableErrorCorrection,
   isUsableFillBlank,
@@ -85,6 +86,18 @@ describe("isUsableFillBlank", () => {
   });
 });
 
+describe("isGrammarCategoryInstruction", () => {
+  it("flags spoiler tags and keeps real prompts", () => {
+    expect(isGrammarCategoryInstruction("Взаимное se")).toBe(true);
+    expect(isGrammarCategoryInstruction("Se reflexivo")).toBe(true);
+    expect(isGrammarCategoryInstruction("Perfecto — ya")).toBe(true);
+    expect(isGrammarCategoryInstruction("Заполните пропуск")).toBe(false);
+    expect(isGrammarCategoryInstruction("Вставьте пропущенное слово")).toBe(
+      false,
+    );
+  });
+});
+
 describe("isUsableTranslation", () => {
   it("rejects grammar-label prompts", () => {
     expect(
@@ -99,6 +112,12 @@ describe("isUsableTranslation", () => {
         answer: "Se levanta a las siete",
       }),
     ).toBe(false);
+    expect(
+      isUsableTranslation({
+        question: "Относительное местоимение",
+        answer: "que",
+      }),
+    ).toBe(false);
   });
 
   it("accepts a real L1 sentence", () => {
@@ -106,6 +125,12 @@ describe("isUsableTranslation", () => {
       isUsableTranslation({
         question: "Она встаёт в семь часов.",
         answer: "Se levanta a las siete",
+      }),
+    ).toBe(true);
+    expect(
+      isUsableTranslation({
+        question: "Это дом, где я вырос.",
+        answer: "Es la casa donde crecí",
       }),
     ).toBe(true);
   });
