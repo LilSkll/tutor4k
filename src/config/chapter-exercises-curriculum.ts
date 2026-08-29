@@ -944,6 +944,38 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
 
   "chapter-41-conectores-discursivos": [
     {
+      "type": "translation",
+      "question": "Я хотел выйти; однако шёл дождь.",
+      "instruction": "Переведите на испанский (sin embargo)",
+      "answer": "Quería salir; sin embargo, llovía.",
+      "acceptableAnswers": [
+        "Quería salir, sin embargo llovía",
+        "Quería salir; no obstante, llovía"
+      ],
+      "explanation": "Sin embargo / no obstante — письменное «однако».",
+      "grammarTopic": "b2-conectores"
+    },
+    {
+      "type": "translation",
+      "question": "Объясняю тебе, чтобы ты понял.",
+      "instruction": "Переведите на испанский (para que)",
+      "answer": "Te lo explico para que lo entiendas.",
+      "acceptableAnswers": [
+        "Te lo explico para que entiendas"
+      ],
+      "explanation": "Para que + subjuntivo при другом лице.",
+      "grammarTopic": "b2-conectores"
+    },
+    {
+      "type": "multiple_choice",
+      "question": "Te lo explico ___ lo entiendas.",
+      "instruction": "Цель — другое лицо",
+      "options": ["para que", "para", "porque", "aunque"],
+      "answer": "para que",
+      "explanation": "Другое лицо → para que + subjuntivo.",
+      "grammarTopic": "b2-conectores"
+    },
+    {
       "type": "multiple_choice",
       "question": "Estudio mucho; ___, apruebo.",
       "instruction": "Причина → следствие",
@@ -990,7 +1022,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       "answer": "En definitiva, la decisión fue correcta",
       "acceptableAnswers": [
         "en definitiva, la decisión fue correcta",
-        "En suma, la decisión fue correcta"
+        "En suma, la decisión fue correcta",
+        "En conclusión, la decisión fue correcta",
+        "Al final, la decisión fue correcta",
+        "Finalmente, la decisión fue correcta",
+        "En resumen, la decisión fue correcta"
       ],
       "explanation": "En definitiva — «в итоге».",
       "grammarTopic": "conectores"

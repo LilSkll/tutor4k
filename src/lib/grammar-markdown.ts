@@ -85,12 +85,29 @@ function toPages(
 /**
  * Theory pages: `##` sections only. Nested `###` stay on the same page
  * so the lesson does not add extra round-trips or extra markdown renders.
+ *
+ * Lead/blockquote before the first `##` is merged into that page so
+ * shortTheory never shows only the «Перед этой темой» teaser.
  */
 export function grammarTheoryPagesFromMarkdown(markdown: string): string[] {
   const md = stripComments(markdown);
   if (!md) return [];
   const parts = splitOnHeadings(md, false);
-  return parts.length > 0 ? parts : [md];
+  if (parts.length === 0) return [md];
+
+  const pages: string[] = [];
+  let lead = "";
+  for (const part of parts) {
+    if (!/^##\s/m.test(part)) {
+      lead = lead ? `${lead}\n\n${part}` : part;
+      continue;
+    }
+    pages.push(lead ? `${lead}\n\n${part}` : part);
+    lead = "";
+  }
+  if (pages.length === 0) return lead ? [lead] : [md];
+  if (lead) pages.push(lead);
+  return pages;
 }
 
 /**

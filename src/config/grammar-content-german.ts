@@ -1754,9 +1754,11 @@ Stimmt mit **dem Besitz** überein, nicht mit dem Besitzer:
   },
 
   "b2-conectores": {
-    de: `> **Vor diesem Thema:** porque / pero reichen bis B1. Ab B2 **variiert** man Konnektoren; manche ziehen schon Subjuntivo.
+    de: `> **Vor diesem Thema:** bis B1 reichen meist **porque** und **pero**. **In diesem Thema:** schriftliche Konnektoren — **sin embargo**, **por lo tanto**, **para que**…
 
 ## Diskurskonnektoren (Conectores discursivos)
+
+Konnektoren verbinden Ideen im Absatz. Ab B2 solltest du sie **variieren** und wissen, welche den **Subjuntivo** brauchen.
 
 ### Addition
 - **además** — außerdem, des Weiteren

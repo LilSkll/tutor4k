@@ -1,4 +1,4 @@
-import { answersMatch } from "@/lib/normalize-answer";
+import { answersMatch, answersMatchFlexible } from "@/lib/normalize-answer";
 import { formatBankTutorFeedback } from "@/lib/tutor-feedback";
 import type { ExerciseType, InterfaceLanguage } from "@/types";
 
@@ -16,10 +16,14 @@ export function gradeStaticExerciseLocally(
   userAnswer: string,
   language: InterfaceLanguage,
 ): { correct: boolean; feedback: string } {
-  const correct = answersMatch(userAnswer, [
+  const acceptable = [
     exercise.answer,
     ...(exercise.acceptableAnswers ?? []),
-  ]);
+  ];
+  const correct =
+    exercise.type === "translation" || exercise.type === "error_correction"
+      ? answersMatchFlexible(userAnswer, acceptable)
+      : answersMatch(userAnswer, acceptable);
   return {
     correct,
     feedback: formatBankTutorFeedback({

@@ -43,7 +43,7 @@ describe("resolveConstructionHint", () => {
 });
 
 describe("enrichFeedbackWithConstruction", () => {
-  it("adds construction + variant note on wrong translation", () => {
+  it("adds construction on wrong translation without ironic variant note", () => {
     const out = enrichFeedbackWithConstruction({
       language: "ru",
       correct: false,
@@ -54,6 +54,18 @@ describe("enrichFeedbackWithConstruction", () => {
     });
     expect(out).toContain("Si + imperf. subj. + condicional");
     expect(out).toMatch(/конструкци/i);
+    expect(out).not.toMatch(/синонимичн/i);
+  });
+
+  it("mentions synonym linkers when the answer is correct", () => {
+    const out = enrichFeedbackWithConstruction({
+      language: "ru",
+      correct: true,
+      feedback: "Верно.",
+      explanation: "En definitiva — «в итоге».",
+      exerciseType: "translation",
+    });
+    expect(out).toMatch(/синонимичн/i);
   });
 });
 

@@ -139,8 +139,8 @@ Learner's answer: ${input.userAnswer}
 
 ${
   isTranslation
-    ? `For TRANSLATION: accept the learner's answer if it is a natural ${target} rendering of the prompt that uses the SAME required tense/construction (see instruction/grammar note), even when wording differs from the model answer (pronouns, word order, synonyms, optional subject pronouns). Mark INCORRECT only when the meaning is wrong or the required construction/tense is missing.`
-    : `Accept clearly equivalent answers (minor wording / accents / punctuation). Mark INCORRECT when the grammar target is missed.`
+    ? `For TRANSLATION: accept the learner's answer if it is a natural ${target} rendering of the prompt that keeps the required grammar target (see instruction/grammar note). Accept synonym discourse markers and openers (en definitiva ≈ en suma ≈ en conclusión ≈ al final ≈ finalmente; sin embargo ≈ no obstante; por lo tanto ≈ por consiguiente ≈ por eso), optional subject pronouns, and harmless word-order/synonym differences. Mark INCORRECT only when the meaning is wrong or the required construction/tense is missing.`
+    : `Accept clearly equivalent answers (minor wording / accents / punctuation; synonym linkers when the grammar target is a connector). Mark INCORRECT when the grammar target is missed.`
 }
 
 Reply in EXACTLY this format:

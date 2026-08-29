@@ -19463,6 +19463,62 @@
         "instruction": "Структура текста",
         "explanation": "En primer lugar — первый пункт.",
         "grammarTopic": "conectores"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Te lo explico ___ lo entiendas.",
+        "options": [
+          "para que",
+          "para",
+          "porque",
+          "aunque"
+        ],
+        "answer": "para que",
+        "instruction": "Цель — другое лицо",
+        "explanation": "Другое лицо → para que + subjuntivo: entiendas.",
+        "grammarTopic": "b2-conectores"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Estudio mucho ___ aprobar el examen.",
+        "options": [
+          "para",
+          "para que",
+          "a menos que",
+          "aunque"
+        ],
+        "answer": "para",
+        "instruction": "Цель — то же лицо",
+        "explanation": "То же лицо → para + infinitivo.",
+        "grammarTopic": "b2-conectores"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Quería salir; ___, llovía.",
+        "options": [
+          "sin embargo",
+          "por lo tanto",
+          "además",
+          "así que"
+        ],
+        "answer": "sin embargo",
+        "instruction": "Противопоставление",
+        "explanation": "Sin embargo — «однако» (письменно).",
+        "grammarTopic": "b2-conectores"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Saldré ___ llueva.",
+        "options": [
+          "a menos que",
+          "porque",
+          "además",
+          "por eso"
+        ],
+        "answer": "a menos que",
+        "instruction": "Условие + subjuntivo",
+        "explanation": "A menos que + subjuntivo: llueva.",
+        "grammarTopic": "b2-conectores"
       }
     ],
     "fill_blank": [
@@ -19512,6 +19568,54 @@
         "instruction": "Заполните пропуск",
         "explanation": "En primer lugar — первый пункт.",
         "grammarTopic": "b2-conectores"
+      },
+      {
+        "type": "fill_blank",
+        "question": "Estudia mucho; ___, aprueba.",
+        "answer": "por lo tanto",
+        "acceptableAnswers": [
+          "Por lo tanto",
+          "por consiguiente",
+          "Por consiguiente"
+        ],
+        "instruction": "Следствие",
+        "explanation": "Por lo tanto / por consiguiente — следствие.",
+        "grammarTopic": "b2-conectores"
+      },
+      {
+        "type": "fill_blank",
+        "question": "___ no tenía tiempo, no fui.",
+        "answer": "Como",
+        "acceptableAnswers": [
+          "como",
+          "Ya que",
+          "ya que"
+        ],
+        "instruction": "Причина в начале фразы",
+        "explanation": "Como / ya que в начале — «так как».",
+        "grammarTopic": "b2-conectores"
+      },
+      {
+        "type": "fill_blank",
+        "question": "Te ayudo ___ entiendas la regla.",
+        "answer": "para que",
+        "acceptableAnswers": [
+          "Para que"
+        ],
+        "instruction": "Para que + subjuntivo",
+        "explanation": "Другое лицо → para que + subjuntivo.",
+        "grammarTopic": "b2-conectores"
+      },
+      {
+        "type": "fill_blank",
+        "question": "No iré ___ me invites.",
+        "answer": "a menos que",
+        "acceptableAnswers": [
+          "A menos que"
+        ],
+        "instruction": "A menos que",
+        "explanation": "A menos que + subjuntivo.",
+        "grammarTopic": "b2-conectores"
       }
     ],
     "translation": [
@@ -19521,11 +19625,78 @@
         "answer": "En definitiva, la decisión fue correcta",
         "acceptableAnswers": [
           "en definitiva, la decisión fue correcta",
-          "En suma, la decisión fue correcta"
+          "En suma, la decisión fue correcta",
+          "En conclusión, la decisión fue correcta",
+          "Al final, la decisión fue correcta",
+          "Finalmente, la decisión fue correcta",
+          "En resumen, la decisión fue correcta"
         ],
         "instruction": "En definitiva / en suma",
         "explanation": "En definitiva — «в итоге».",
         "grammarTopic": "conectores"
+      },
+      {
+        "type": "translation",
+        "question": "Я хотел выйти; однако шёл дождь.",
+        "answer": "Quería salir; sin embargo, llovía.",
+        "acceptableAnswers": [
+          "Quería salir, sin embargo llovía",
+          "Quería salir; no obstante, llovía",
+          "queria salir; sin embargo, llovia"
+        ],
+        "instruction": "Переведите на испанский (sin embargo)",
+        "explanation": "Sin embargo / no obstante — письменное «однако».",
+        "grammarTopic": "b2-conectores"
+      },
+      {
+        "type": "translation",
+        "question": "Он много учится, поэтому сдаёт экзамены.",
+        "answer": "Estudia mucho; por lo tanto, aprueba.",
+        "acceptableAnswers": [
+          "Estudia mucho, por lo tanto aprueba",
+          "Estudia mucho; por consiguiente, aprueba",
+          "estudia mucho; por lo tanto, aprueba"
+        ],
+        "instruction": "Переведите на испанский (por lo tanto)",
+        "explanation": "Por lo tanto — следствие.",
+        "grammarTopic": "b2-conectores"
+      },
+      {
+        "type": "translation",
+        "question": "Объясняю тебе, чтобы ты понял.",
+        "answer": "Te lo explico para que lo entiendas.",
+        "acceptableAnswers": [
+          "Te lo explico para que entiendas",
+          "te lo explico para que lo entiendas"
+        ],
+        "instruction": "Переведите на испанский (para que)",
+        "explanation": "Para que + subjuntivo при другом лице.",
+        "grammarTopic": "b2-conectores"
+      },
+      {
+        "type": "translation",
+        "question": "Кроме того, я повторил конспекты.",
+        "answer": "Además, repasé los apuntes.",
+        "acceptableAnswers": [
+          "Además repasé los apuntes",
+          "asimismo, repasé los apuntes",
+          "ademas, repase los apuntes"
+        ],
+        "instruction": "Переведите на испанский (además)",
+        "explanation": "Además — добавление.",
+        "grammarTopic": "b2-conectores"
+      },
+      {
+        "type": "translation",
+        "question": "Я уйду, если только не пойдёт дождь.",
+        "answer": "Saldré a menos que llueva.",
+        "acceptableAnswers": [
+          "Saldré a menos que llueva",
+          "saldre a menos que llueva"
+        ],
+        "instruction": "Переведите на испанский (a menos que)",
+        "explanation": "A menos que + subjuntivo.",
+        "grammarTopic": "b2-conectores"
       }
     ],
     "error_correction": [
@@ -19566,6 +19737,30 @@
           "Sin embargo, no estoy de acuerdo.",
           "sin embargo, no estoy de acuerdo."
         ]
+      },
+      {
+        "type": "error_correction",
+        "question": "Estudio para que aprobar el examen.",
+        "answer": "Estudio para aprobar el examen.",
+        "acceptableAnswers": [
+          "Estudio para aprobar el examen",
+          "estudio para aprobar el examen"
+        ],
+        "instruction": "То же лицо → infinitivo",
+        "explanation": "То же лицо: para + infinitivo, не para que.",
+        "grammarTopic": "b2-conectores"
+      },
+      {
+        "type": "error_correction",
+        "question": "Te ayudo para entender la regla.",
+        "answer": "Te ayudo para que entiendas la regla.",
+        "acceptableAnswers": [
+          "Te ayudo para que entiendas la regla",
+          "te ayudo para que entiendas la regla"
+        ],
+        "instruction": "Другое лицо → para que",
+        "explanation": "Другое лицо: para que + subjuntivo.",
+        "grammarTopic": "b2-conectores"
       }
     ],
     "sentence_building": [
@@ -19771,125 +19966,6 @@
         "answer": "Cabe destacar que el informe es preciso",
         "instruction": "Fórmula culta",
         "explanation": "Cabe destacar que…",
-        "grammarTopic": "b2-conectores",
-        "acceptableAnswers": []
-      },
-      {
-        "type": "sentence_building",
-        "question": "En / línea / con / lo / anterior / insistimos",
-        "options": [
-          "En",
-          "línea",
-          "con",
-          "lo",
-          "anterior",
-          "insistimos"
-        ],
-        "answer": "En línea con lo anterior insistimos",
-        "instruction": "Cohesión",
-        "explanation": "En línea con lo anterior…",
-        "grammarTopic": "b2-conectores",
-        "acceptableAnswers": []
-      },
-      {
-        "type": "sentence_building",
-        "question": "Dicho / de / otro / modo / no / es / viable",
-        "options": [
-          "Dicho",
-          "de",
-          "otro",
-          "modo",
-          "no",
-          "es",
-          "viable"
-        ],
-        "answer": "Dicho de otro modo no es viable",
-        "instruction": "Reformulación",
-        "explanation": "Dicho de otro modo…",
-        "grammarTopic": "b2-conectores",
-        "acceptableAnswers": []
-      },
-      {
-        "type": "sentence_building",
-        "question": "Asimismo / convendría / revisar / el / plazo",
-        "options": [
-          "Asimismo",
-          "convendría",
-          "revisar",
-          "el",
-          "plazo"
-        ],
-        "answer": "Asimismo convendría revisar el plazo",
-        "instruction": "Asimismo",
-        "explanation": "Asimismo convendría…",
-        "grammarTopic": "b2-conectores",
-        "acceptableAnswers": []
-      },
-      {
-        "type": "sentence_building",
-        "question": "En / consecuencia / el / proyecto / se / retrasó",
-        "options": [
-          "En",
-          "consecuencia",
-          "el",
-          "proyecto",
-          "se",
-          "retrasó"
-        ],
-        "answer": "En consecuencia el proyecto se retrasó",
-        "instruction": "En consecuencia",
-        "explanation": "En consecuencia…",
-        "grammarTopic": "b2-conectores",
-        "acceptableAnswers": []
-      },
-      {
-        "type": "sentence_building",
-        "question": "No / obstante / conviene / ser / prudentes",
-        "options": [
-          "No",
-          "obstante",
-          "conviene",
-          "ser",
-          "prudentes"
-        ],
-        "answer": "No obstante conviene ser prudentes",
-        "instruction": "Conector — no obstante",
-        "explanation": "No obstante — тем не менее.",
-        "grammarTopic": "b2-conectores",
-        "acceptableAnswers": []
-      },
-      {
-        "type": "sentence_building",
-        "question": "Por / una / parte / gana / por / otra / pierde",
-        "options": [
-          "Por",
-          "una",
-          "parte",
-          "gana",
-          "por",
-          "otra",
-          "pierde"
-        ],
-        "answer": "Por una parte gana por otra pierde",
-        "instruction": "Conector — por una parte",
-        "explanation": "Por una parte… por otra — с одной стороны… с другой.",
-        "grammarTopic": "b2-conectores",
-        "acceptableAnswers": []
-      },
-      {
-        "type": "sentence_building",
-        "question": "En / última / instancia / depende / de / nosotros",
-        "options": [
-          "En",
-          "última",
-          "instancia",
-          "depende",
-          "de",
-          "nosotros"
-        ],
-        "answer": "En última instancia depende de nosotros",
-        "instruction": "Conector — en última instancia",
-        "explanation": "En última instancia — в конечном итоге.",
         "grammarTopic": "b2-conectores",
         "acceptableAnswers": []
       }

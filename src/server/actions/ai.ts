@@ -23,7 +23,7 @@ import type {
   InterfaceLanguage,
   Level,
 } from "@/types";
-import { answersMatch, normalizeAnswer } from "@/lib/normalize-answer";
+import { answersMatch, answersMatchFlexible, normalizeAnswer } from "@/lib/normalize-answer";
 import { recordStudySession } from "@/server/actions/data";
 import {
   asCourseId,
@@ -753,7 +753,13 @@ export async function checkExerciseAnswer(input: {
     answersMatch(input.userAnswer, [
       input.exercise.answer,
       ...(input.exercise.acceptableAnswers ?? []),
-    ])
+    ]) ||
+    ((input.exercise.type === "translation" ||
+      input.exercise.type === "error_correction") &&
+      answersMatchFlexible(input.userAnswer, [
+        input.exercise.answer,
+        ...(input.exercise.acceptableAnswers ?? []),
+      ]))
   ) {
     const feedback = input.exercise.staticSource
       ? formatBankTutorFeedback({

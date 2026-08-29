@@ -93,13 +93,43 @@ export function expandChapterBank(
     return true;
   };
 
+  // Curated first, but round-robin by type so a SB-heavy curated list
+  // does not lock every stem before TR/MC/FB get a chance.
+  const curatedByType: Record<ExerciseType, Draft[]> = {
+    multiple_choice: [],
+    fill_blank: [],
+    translation: [],
+    error_correction: [],
+    sentence_building: [],
+  };
   for (const ex of curated) {
-    tryAdd(ex);
+    if (ex.type in curatedByType) curatedByType[ex.type as ExerciseType].push(ex);
+  }
+  const types = Object.keys(byType) as ExerciseType[];
+  let curatedProgress = true;
+  const curatedCursor: Record<ExerciseType, number> = {
+    multiple_choice: 0,
+    fill_blank: 0,
+    translation: 0,
+    error_correction: 0,
+    sentence_building: 0,
+  };
+  while (curatedProgress) {
+    curatedProgress = false;
+    for (const type of types) {
+      const list = curatedByType[type];
+      while (curatedCursor[type] < list.length) {
+        const ex = list[curatedCursor[type]++]!;
+        if (tryAdd(ex)) {
+          curatedProgress = true;
+          break;
+        }
+      }
+    }
   }
 
   // Round-robin across types from packs so one sentence family does not
   // exhaust the shared stem set for later types.
-  const types = Object.keys(byType) as ExerciseType[];
   let added = true;
   while (added) {
     added = false;
@@ -118,6 +148,20 @@ export function expandChapterBank(
           break;
         }
       }
+    }
+  }
+
+  // Soft-cap sentence_building when other types are thin so the chapter
+  // guide does not read as «19 SB / 1 TR».
+  const otherCount =
+    byType.multiple_choice.length +
+    byType.fill_blank.length +
+    byType.translation.length +
+    byType.error_correction.length;
+  if (otherCount > 0) {
+    const maxSb = Math.max(6, otherCount);
+    if (byType.sentence_building.length > maxSb) {
+      byType.sentence_building = byType.sentence_building.slice(0, maxSb);
     }
   }
 

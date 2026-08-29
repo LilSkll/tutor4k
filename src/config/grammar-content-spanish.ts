@@ -2478,9 +2478,11 @@ Concuerda con **lo poseído**, no con el poseedor:
   },
 
   "b2-conectores": {
-    en: `> **Before this topic:** porque and pero are enough until B1. **In this topic:** linkers for writing — sin embargo, por lo tanto, para que…
+    en: `> **Before this topic:** until B1, **porque** and **pero** are usually enough. **In this topic:** written linkers — **sin embargo**, **por lo tanto**, **para que**…
 
 ## Connectors (Conectores discursivos)
+
+Connectors link ideas in a paragraph. At B2 you should **vary** them and know which ones take the **subjunctive**.
 
 ### Addition
 - **además** — moreover, furthermore
@@ -2489,13 +2491,17 @@ Concuerda con **lo poseído**, no con el poseedor:
 - **por otra parte** — on the other hand
 - **incluso** — even
 
+\`Estudié toda la noche. **Además**, repasé los apuntes.\`
+
 ### Contrast
-- **pero** — but
-- **sin embargo** — however
+- **pero** — but (spoken)
+- **sin embargo** — however (written)
 - **no obstante** — nevertheless (formal)
 - **aunque** — although
 - **en cambio** — on the contrary
 - **por el contrario** — on the contrary
+
+\`Quería salir; **sin embargo**, llovía.\`
 
 ### Cause
 - **porque** — because
@@ -2504,6 +2510,8 @@ Concuerda con **lo poseído**, no con el poseedor:
 - **debido a que** — due to the fact that
 - **puesto que** — since (formal)
 
+\`**Como** no tenía tiempo, no fui.\`
+
 ### Consequence
 - **por lo tanto** — therefore
 - **por eso** — that's why
@@ -2511,22 +2519,39 @@ Concuerda con **lo poseído**, no con el poseedor:
 - **por consiguiente** — consequently (formal)
 - **entonces** — then, so
 
+\`Estudia mucho; **por lo tanto**, aprueba.\`
+
 ### Condition
 - **si** — if
-- **a menos que** — unless (⚠️ requires subjuntivo)
-- **con tal de que** — provided that (⚠️ subjuntivo)
-- **en caso de que** — in case (⚠️ subjuntivo)
-- **aunque** — although (⚠️ subjuntivo if hypothetical)
+- **a menos que** — unless (⚠️ **subjunctive**)
+- **con tal de que** — provided that (⚠️ **subjunctive**)
+- **en caso de que** — in case (⚠️ **subjunctive**)
+- **aunque** — although (⚠️ **subjunctive** if hypothetical)
+
+\`Saldré **a menos que** llueva.\`
 
 ### Purpose
-- **para que** — so that (⚠️ subjuntivo)
-- **a fin de que** — in order that (⚠️ subjuntivo)
-- **con el objetivo de** + infinitivo — with the aim of
+- **para que** — so that (⚠️ **subjunctive**, different subject)
+- **a fin de que** — in order that (⚠️ **subjunctive**)
+- **para** + infinitive — same subject (\`Estudio **para** aprobar\`)
+- **con el objetivo de** + infinitive — with the aim of
+
+\`Te lo explico **para que** lo entiendas.\`
+
+## Common traps
+
+| Wrong | Right | Why |
+|---|---|---|
+| \`Estudio para que aprobar\` | \`Estudio **para** aprobar\` | same subject → infinitive |
+| \`Te ayudo para entender\` | \`Te ayudo **para que** entiendas\` | different subject → para que + subj. |
+| only \`pero\` in an essay | \`sin embargo\` / \`no obstante\` | written register |
 
 > 💡 B2/C1 level = ability to **vary** connectors, not repeat \`porque\` and \`pero\` constantly.`,
-    es: `> **Antes de este tema:** hasta B1 bastan porque y pero. **En este tema:** conectores de escritura — sin embargo, por lo tanto, para que…
+    es: `> **Antes de este tema:** hasta B1 suelen bastar **porque** y **pero**. **En este tema:** conectores de escritura — **sin embargo**, **por lo tanto**, **para que**…
 
 ## Conectores discursivos
+
+Los conectores unen ideas en el párrafo. En B2 importa **variarlos** y saber cuáles piden **subjuntivo**.
 
 ### Adición
 - **además** — además
@@ -2535,13 +2560,17 @@ Concuerda con **lo poseído**, no con el poseedor:
 - **por otra parte** — por otra parte
 - **incluso** — incluso
 
+\`Estudié toda la noche. **Además**, repasé los apuntes.\`
+
 ### Contraste
-- **pero** — pero
-- **sin embargo** — sin embargo
+- **pero** — pero (oral)
+- **sin embargo** — sin embargo (escrito)
 - **no obstante** — no obstante (formal)
 - **aunque** — aunque
 - **en cambio** — en cambio
 - **por el contrario** — por el contrario
+
+\`Quería salir; **sin embargo**, llovía.\`
 
 ### Causa
 - **porque** — porque
@@ -2550,6 +2579,8 @@ Concuerda con **lo poseído**, no con el poseedor:
 - **debido a que** — debido a que
 - **puesto que** — puesto que (formal)
 
+\`**Como** no tenía tiempo, no fui.\`
+
 ### Consecuencia
 - **por lo tanto** — por lo tanto
 - **por eso** — por eso
@@ -2557,17 +2588,32 @@ Concuerda con **lo poseído**, no con el poseedor:
 - **por consiguiente** — por consiguiente (formal)
 - **entonces** — entonces
 
+\`Estudia mucho; **por lo tanto**, aprueba.\`
+
 ### Condición
 - **si** — si
-- **a menos que** — a menos que (⚠️ requiere subjuntivo)
-- **con tal de que** — con tal de que (⚠️ subjuntivo)
-- **en caso de que** — en caso de que (⚠️ subjuntivo)
-- **aunque** — aunque (⚠️ subjuntivo si es hipotético)
+- **a menos que** — a menos que (⚠️ **subjuntivo**)
+- **con tal de que** — con tal de que (⚠️ **subjuntivo**)
+- **en caso de que** — en caso de que (⚠️ **subjuntivo**)
+- **aunque** — aunque (⚠️ **subjuntivo** si es hipotético)
+
+\`Saldré **a menos que** llueva.\`
 
 ### Finalidad
-- **para que** — para que (⚠️ subjuntivo)
-- **a fin de que** — a fin de que (⚠️ subjuntivo)
+- **para que** — para que (⚠️ **subjuntivo**, otro sujeto)
+- **a fin de que** — a fin de que (⚠️ **subjuntivo**)
+- **para** + infinitivo — mismo sujeto (\`Estudio **para** aprobar\`)
 - **con el objetivo de** + infinitivo — con el objetivo de
+
+\`Te lo explico **para que** lo entiendas.\`
+
+## Errores frecuentes
+
+| Incorrecto | Correcto | Por qué |
+|---|---|---|
+| \`Estudio para que aprobar\` | \`Estudio **para** aprobar\` | mismo sujeto → infinitivo |
+| \`Te ayudo para entender\` | \`Te ayudo **para que** entiendas\` | otro sujeto → para que + subj. |
+| solo \`pero\` en un ensayo | \`sin embargo\` / \`no obstante\` | registro escrito |
 
 > 💡 Nivel B2/C1 = saber **variar** conectores, no repetir \`porque\` y \`pero\` constantemente.`,
   },

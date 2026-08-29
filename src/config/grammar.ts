@@ -1683,9 +1683,11 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
     level: "B2",
     category: "Синтаксис",
     summary: "Связки для текста B2+: sin embargo, por lo tanto; часть требует subjuntivo.",
-    content: `> **Перед этой темой:** porque и pero хватает до B1. **В этой теме:** связки для письменной речи — sin embargo, por lo tanto, para que…
+    content: `> **Перед этой темой:** до B1 обычно хватает **porque** и **pero**. **В этой теме:** письменные связки — **sin embargo**, **por lo tanto**, **para que**…
 
 ## Связки текста
+
+Коннекторы связывают идеи в абзаце. На B2 важно **варьировать** их и помнить, какие тянут **subjuntivo**.
 
 ### Addition (добавление)
 - **además** — кроме того, более того
@@ -1694,13 +1696,17 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 - **por otra parte** — с другой стороны
 - **incluso** — даже
 
+\`Estudié toda la noche. **Además**, repasé los apuntes.\`
+
 ### Contrast (противопоставление)
-- **pero** — но
-- **sin embargo** — однако
+- **pero** — но (разговорный)
+- **sin embargo** — однако (письменный)
 - **no obstante** — тем не менее (формально)
 - **aunque** — хотя
 - **en cambio** — зато, напротив
 - **por el contrario** — наоборот
+
+\`Quería salir; **sin embargo**, llovía.\`
 
 ### Cause (причина)
 - **porque** — потому что
@@ -1709,6 +1715,8 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 - **debido a que** — из-за того что
 - **puesto que** — поскольку (формально)
 
+\`**Como** no tenía tiempo, no fui.\`
+
 ### Consequence (следствие)
 - **por lo tanto** — следовательно
 - **por eso** — поэтому
@@ -1716,20 +1724,34 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
 - **por consiguiente** — следовательно (формально)
 - **entonces** — тогда, итак
 
+\`Estudia mucho; **por lo tanto**, aprueba.\`
+
 ### Condition (условие)
 - **si** — если
-- **a menos que** — если не (⚠️ требует subjuntivo)
-- **con tal de que** — при условии что (⚠️ subjuntivo)
-- **en caso de que** — в случае если (⚠️ subjuntivo)
-- **aunque** — хотя (⚠️ subjuntivo если гипотетично)
+- **a menos que** — если не (⚠️ **subjuntivo**)
+- **con tal de que** — при условии что (⚠️ **subjuntivo**)
+- **en caso de que** — в случае если (⚠️ **subjuntivo**)
+- **aunque** — хотя (⚠️ **subjuntivo**, если гипотетично)
+
+\`Saldré **a menos que** llueva.\`
 
 ### Purpose (цель)
-- **para que** — чтобы (⚠️ subjuntivo)
-- **a fin de que** — с тем чтобы (⚠️ subjuntivo)
+- **para que** — чтобы (⚠️ **subjuntivo**, другое лицо)
+- **a fin de que** — с тем чтобы (⚠️ **subjuntivo**)
+- **para** + infinitivo — чтобы (то же лицо: \`Estudio **para** aprobar\`)
 - **con el objetivo de** + infinitivo — с целью
 
-> 💡 Уровень B2/C1 = умение **варьировать** коннекторы, не повторять
-> \`porque\` и \`pero\` постоянно.`,
+\`Te lo explico **para que** lo entiendas.\`
+
+## Частые ошибки
+
+| Неверно | Верно | Почему |
+|---|---|---|
+| \`Estudio para que aprobar\` | \`Estudio **para** aprobar\` | то же лицо → infinitivo |
+| \`Te ayudo para entender\` | \`Te ayudo **para que** entiendas\` | другое лицо → para que + subj. |
+| только \`pero\` в эссе | \`sin embargo\` / \`no obstante\` | письменный регистр |
+
+> 💡 Уровень B2/C1 = умение **варьировать** коннекторы, не повторять \`porque\` и \`pero\` постоянно.`,
   },
 
   // ----- C1 ---------------------------------------------------------,

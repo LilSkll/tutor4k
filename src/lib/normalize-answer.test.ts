@@ -1,5 +1,10 @@
 import { describe, expect, it } from "vitest";
-import { answersMatch, normalizeAnswer } from "@/lib/normalize-answer";
+import {
+  answersMatch,
+  answersMatchFlexible,
+  canonicalizeSynonymPhrases,
+  normalizeAnswer,
+} from "@/lib/normalize-answer";
 
 describe("normalizeAnswer", () => {
   it("ignores accents and ñ", () => {
@@ -30,5 +35,42 @@ describe("answersMatch", () => {
         "Se venden casas en el centro.",
       ]),
     ).toBe(true);
+  });
+});
+
+describe("answersMatchFlexible", () => {
+  it("accepts synonym discourse openers", () => {
+    expect(
+      answersMatchFlexible("En conclusión, la decisión fue correcta", [
+        "En definitiva, la decisión fue correcta",
+        "En suma, la decisión fue correcta",
+      ]),
+    ).toBe(true);
+    expect(
+      answersMatchFlexible("Al final la decision fue correcta", [
+        "En definitiva, la decisión fue correcta",
+      ]),
+    ).toBe(true);
+    expect(
+      answersMatchFlexible("Finalmente, la decisión fue correcta", [
+        "En definitiva, la decisión fue correcta",
+      ]),
+    ).toBe(true);
+  });
+
+  it("still rejects a different meaning", () => {
+    expect(
+      answersMatchFlexible("Sin embargo, la decisión fue correcta", [
+        "En definitiva, la decisión fue correcta",
+      ]),
+    ).toBe(false);
+  });
+});
+
+describe("canonicalizeSynonymPhrases", () => {
+  it("maps en suma to en definitiva", () => {
+    expect(canonicalizeSynonymPhrases("en suma la decision fue correcta")).toBe(
+      canonicalizeSynonymPhrases("en definitiva la decision fue correcta"),
+    );
   });
 });

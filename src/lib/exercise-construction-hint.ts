@@ -56,10 +56,10 @@ export function shouldSoftCheckEquivalents(type: ExerciseType): boolean {
 }
 
 const VARIANT_NOTE: Record<InterfaceLanguage, string> = {
-  ru: "Другие формулировки с той же конструкцией тоже возможны — смотрим на времена и шаблон.",
-  en: "Other wordings with the same construction can also be fine — we check the tense pattern.",
-  es: "Otras formulaciones con la misma construcción también valen — miramos el patrón de tiempos.",
-  de: "Andere Formulierungen mit derselben Konstruktion gehen auch — wir prüfen das Zeitmuster.",
+  ru: "Синонимичные связки с тем же смыслом тоже засчитываются.",
+  en: "Synonym linkers with the same meaning also count.",
+  es: "Los conectores sinónimos con el mismo sentido también cuentan.",
+  de: "Synonyme Konnektoren mit derselben Bedeutung zählen auch.",
 };
 
 const CONSTRUCTION_LEAD: Record<InterfaceLanguage, string> = {
@@ -90,7 +90,7 @@ export function enrichFeedbackWithConstruction(input: {
   }
 
   if (
-    !input.correct &&
+    input.correct &&
     input.exerciseType &&
     shouldSoftCheckEquivalents(input.exerciseType)
   ) {
