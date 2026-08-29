@@ -138,6 +138,14 @@ export function isGrammarCategoryInstruction(instruction: string): boolean {
   ) {
     return true;
   }
+  // Compact conjugation cues for blanks — not spoilers (person is in the stem).
+  if (/^Forma:\s*\S/i.test(inst) && inst.length <= 56) return false;
+  if (
+    /^[a-záéíóúñü]+(?:\s*[·•,]\s*[a-záéíóúñü./]+){1,3}$/i.test(inst) &&
+    inst.length <= 48
+  ) {
+    return false;
+  }
   // Remaining short English curriculum tags (IELTS labels, grammar names)
   // that are not real learner prompts. Keep Cyrillic/Spanish prompts alone —
   // they are handled above or by language-specific rules.
@@ -165,6 +173,16 @@ function instructionSpoilsAnswer(instruction: string, answer: string): boolean {
   const escaped = a.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const re = new RegExp(`(^|[^\\p{L}])${escaped}([^\\p{L}]|$)`, "iu");
   return re.test(instruction);
+}
+
+/**
+ * Blank prompts that already name person + infinitive in parentheses
+ * (e.g. «___ hambre. (Yo, tener)») give away the conjugated form.
+ */
+export function hasPersonVerbSpoilerParen(question: string): boolean {
+  return /\(\s*(yo|tú|tu|él|el|ella|usted|nosotros|nosotras|vosotros|vosotras|ellos|ellas|ustedes)\s*,\s*[a-záéíóúñü]{2,}\s*\)/i.test(
+    question,
+  );
 }
 
 /** Cyrillic letter stuck to Latin (Габrielем / Барcelona). */
@@ -294,6 +312,7 @@ export function isUsableFillBlank(ex: {
   if (!q || !a) return false;
   if (isPlaceholderToken(a)) return false;
   if (!/___+/.test(q)) return false;
+  if (hasPersonVerbSpoilerParen(q)) return false;
   if (COMPLETA_STUB.test(q)) return false;
   if (INDEX_MARK.test(q) || HASH_N.test(q)) return false;
   if (CYRILLIC.test(q)) return false;

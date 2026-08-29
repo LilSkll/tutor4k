@@ -40,6 +40,23 @@ describe("resolveConstructionHint", () => {
       }),
     ).toBe("Si + imperf. subj. + condicional");
   });
+
+  it("does not surface Yo → tengo spoilers before the answer", () => {
+    expect(
+      resolveConstructionHint({
+        instruction: "Переведите предложение",
+        explanation: "Tener hambre = быть голодным. Yo → tengo.",
+        answer: "Tengo",
+      }),
+    ).toBeNull();
+    expect(
+      resolveConstructionHint({
+        instruction: "tener · presente",
+        explanation: "Tener hambre = быть голодным. Yo → tengo.",
+        answer: "Tengo",
+      }),
+    ).toBe("tener · presente");
+  });
 });
 
 describe("enrichFeedbackWithConstruction", () => {

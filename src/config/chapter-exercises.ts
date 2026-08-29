@@ -266,11 +266,11 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
   "chapter-5-mercado": [
     {
       type: "fill_blank",
-      question: "___ hambre. (Yo, tener)",
-      instruction: "Поставьте tener в правильную форму для «я голоден»",
+      question: "Yo ___ hambre.",
+      instruction: "Forma: tener · presente",
       answer: "Tengo",
       acceptableAnswers: ["tengo"],
-      explanation: "Tener hambre = быть голодным. Yo → tengo.",
+      explanation: "Tener hambre = быть голодным.",
     },
     {
       type: "multiple_choice",
@@ -656,7 +656,7 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     },
     {
       type: "fill_blank",
-      question: "¿___ (tú) al partido ayer? (ir)",
+      question: "¿___ al partido ayer?",
       instruction: "Поставьте вопрос с ir в indefinido",
       answer: "Fuiste",
       acceptableAnswers: ["fuiste"],
@@ -832,7 +832,7 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
   "chapter-12-imperativo": [
     {
       type: "fill_blank",
-      question: "¡___ (comer) la fruta! (tú)",
+      question: "¡___ la fruta!",
       instruction: "Поставьте в утвердительное повелительное (tú)",
       answer: "Come",
       acceptableAnswers: ["come"],
@@ -840,7 +840,7 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     },
     {
       type: "multiple_choice",
-      question: "¡No ___ eso! (tú, decir)",
+      question: "¡No ___ eso!",
       instruction: "Выберите отрицательное повелительное",
       options: ["digas", "di", "dices", "dijiste"],
       answer: "digas",
@@ -848,7 +848,7 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     },
     {
       type: "translation",
-      question: "Скажи мне правду! (tú)",
+      question: "Скажи мне правду!",
       instruction: "Используйте утвердительное повелительное",
       answer: "¡Dime la verdad!",
       acceptableAnswers: ["dime la verdad", "¡Dime la verdad!"],
@@ -856,7 +856,7 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     },
     {
       type: "fill_blank",
-      question: "¡___ (hacer) los deberes! (tú)",
+      question: "¡___ los deberes!",
       instruction: "Утвердительное повелительное от hacer",
       answer: "Haz",
       acceptableAnswers: ["haz"],

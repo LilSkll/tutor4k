@@ -53,7 +53,7 @@
           "Soy"
         ],
         "instruction": "Поставьте глагол ser в правильной форме",
-        "explanation": "Yo → soy. Профессия — постоянная характеристика, поэтому ser.",
+        "explanation": "Профессия — постоянная характеристика, поэтому ser.",
         "grammarTopic": "a1-ser-estar"
       },
       {
@@ -153,7 +153,7 @@
           "Yo soy estudiante"
         ],
         "instruction": "Переведите на испанский (ser)",
-        "explanation": "Yo → soy. Профессия — постоянная характеристика, поэтому ser.",
+        "explanation": "Профессия — постоянная характеристика, поэтому ser.",
         "grammarTopic": "a1-ser-estar"
       }
     ],
@@ -163,7 +163,7 @@
         "question": "Yo es estudiante.",
         "answer": "Yo soy estudiante.",
         "instruction": "Найдите и исправьте ошибку",
-        "explanation": "Yo → soy.",
+        "explanation": "Проверьте лицо и время глагола.",
         "grammarTopic": "a1-ser-estar",
         "acceptableAnswers": []
       },
@@ -564,7 +564,7 @@
         ],
         "answer": "haces",
         "instruction": "Выберите неправильную форму hacer для tú",
-        "explanation": "Tú → haces. Hacer неправильный: yo hago, tú haces, él hace.",
+        "explanation": "Hacer неправильный: yo hago, tú haces, él hace.",
         "grammarTopic": "a1-presente"
       }
     ],
@@ -576,8 +576,8 @@
         "acceptableAnswers": [
           "Hablo"
         ],
-        "instruction": "Спрягите глагол hablar в presente",
-        "explanation": "Глагол -ar, yo → hablo. Регулярное спряжение.",
+        "instruction": "Форма: hablar",
+        "explanation": "Глагол -ar, Регулярное спряжение.",
         "grammarTopic": "a1-presente"
       },
       {
@@ -587,7 +587,7 @@
         "acceptableAnswers": [
           "Vivimos"
         ],
-        "instruction": "Поставьте vivir в правильную форму",
+        "instruction": "Форма: vivir",
         "explanation": "Глагол -ir, nosotros → vivimos.",
         "grammarTopic": "a1-presente"
       },
@@ -599,7 +599,7 @@
           "Come",
           "come"
         ],
-        "instruction": "Заполните пропуск",
+        "instruction": "Форма: comer",
         "explanation": "Глагол -er, él/ella/usted → come.",
         "grammarTopic": "a1-presente"
       },
@@ -611,8 +611,8 @@
           "Haces",
           "haces"
         ],
-        "instruction": "Заполните пропуск",
-        "explanation": "Tú → haces. Hacer неправильный: yo hago, tú haces, él hace.",
+        "instruction": "Форма: hacer",
+        "explanation": "Hacer неправильный: yo hago, tú haces, él hace.",
         "grammarTopic": "a1-presente"
       }
     ],
@@ -720,7 +720,7 @@
           "Yo hablo español todos los dias"
         ],
         "instruction": "Переведите на испанский (presente)",
-        "explanation": "Глагол -ar, yo → hablo.",
+        "explanation": "Глагол -ar,",
         "grammarTopic": "a1-presente"
       },
       {
@@ -2412,13 +2412,13 @@
     "fill_blank": [
       {
         "type": "fill_blank",
-        "question": "___ hambre. (Yo, tener)",
+        "question": "Yo ___ hambre.",
         "answer": "Tengo",
         "acceptableAnswers": [
           "tengo"
         ],
-        "instruction": "Поставьте tener в правильную форму для «я голоден»",
-        "explanation": "Tener hambre = быть голодным. Yo → tengo.",
+        "instruction": "Forma: tener · presente",
+        "explanation": "Tener hambre = быть голодным.",
         "grammarTopic": "a1-tener-expressions"
       },
       {
@@ -2548,7 +2548,7 @@
           "tengo hambre"
         ],
         "instruction": "Переведите на испанский (tener)",
-        "explanation": "Tener hambre = быть голодным. Yo → tengo.",
+        "explanation": "Tener hambre = быть голодным.",
         "grammarTopic": "a1-tener-expressions"
       },
       {
@@ -3604,12 +3604,12 @@
     "fill_blank": [
       {
         "type": "fill_blank",
-        "question": "Hoy ___ (comer) pizza. (yo)",
+        "question": "Hoy yo ___ (comer) pizza.",
         "answer": "he comido",
         "acceptableAnswers": [
           "He comido"
         ],
-        "instruction": "Поставьте в pretérito perfecto",
+        "instruction": "Форма: comer, yo, perfecto",
         "explanation": "haber (he) + comido. Pretérito perfecto для сегодняшнего действия.",
         "grammarTopic": "a2-preterito-perfecto"
       },
@@ -3620,7 +3620,7 @@
         "acceptableAnswers": [
           "Ha escrito"
         ],
-        "instruction": "Поставьте escribir в perfecto",
+        "instruction": "Форма: escribir",
         "explanation": "haber (ha) + escrito. Escribir → escrito (неправильный).",
         "grammarTopic": "a2-preterito-perfecto"
       },
@@ -4123,7 +4123,7 @@
         ],
         "answer": "viví",
         "instruction": "Выберите форму vivir в indefinido",
-        "explanation": "Vivir в indefinido, yo → viví. «В прошлом году» = конкретный момент.",
+        "explanation": "Vivir в indefinido, «В прошлом году» = конкретный момент.",
         "grammarTopic": "a2-preterito-indefinido"
       },
       {
@@ -4144,23 +4144,23 @@
     "fill_blank": [
       {
         "type": "fill_blank",
-        "question": "Ayer ___ (ir) al cine. (yo)",
+        "question": "Ayer yo ___ (ir) al cine.",
         "answer": "fui",
         "acceptableAnswers": [
           "Fui"
         ],
-        "instruction": "Поставьте ir в indefinido",
+        "instruction": "Форма: ir, yo, pretérito",
         "explanation": "Ir → fui (indefinido, yo). Полностью неправильный.",
         "grammarTopic": "a2-preterito-indefinido"
       },
       {
         "type": "fill_blank",
-        "question": "¿___ (tú) al partido ayer? (ir)",
+        "question": "¿___ al partido ayer?",
         "answer": "Fuiste",
         "acceptableAnswers": [
           "fuiste"
         ],
-        "instruction": "Поставьте вопрос с ir в indefinido",
+        "instruction": "Forma: ir · pretérito · tú",
         "explanation": "Ir → fuiste (tú, indefinido).",
         "grammarTopic": "a2-preterito-indefinido"
       },
@@ -4173,7 +4173,7 @@
           "viví"
         ],
         "instruction": "Заполните пропуск",
-        "explanation": "Vivir в indefinido, yo → viví. «В прошлом году» = конкретный момент.",
+        "explanation": "Vivir в indefinido, «В прошлом году» = конкретный момент.",
         "grammarTopic": "a2-preterito-indefinido"
       },
       {
@@ -4332,7 +4332,7 @@
         "question": "Ayer yo fue al mercado.",
         "answer": "Ayer yo fui al mercado.",
         "instruction": "Спряжение ir",
-        "explanation": "Yo → fui (no fue).",
+        "explanation": "Проверьте лицо и время глагола.",
         "grammarTopic": "a2-preterito-indefinido",
         "acceptableAnswers": []
       },
@@ -5900,7 +5900,7 @@
         "acceptableAnswers": [
           "Hables"
         ],
-        "instruction": "Поставьте hablar в subjuntivo",
+        "instruction": "Форма: hablar, subjuntivo",
         "explanation": "Después de «quiero que» → subjuntivo. Hablar → hables (tú).",
         "grammarTopic": "b1-subjuntivo"
       },
@@ -6417,7 +6417,7 @@
     "multiple_choice": [
       {
         "type": "multiple_choice",
-        "question": "¡No ___ eso! (tú, decir)",
+        "question": "¡No ___ eso!",
         "options": [
           "digas",
           "di",
@@ -6425,8 +6425,8 @@
           "dijiste"
         ],
         "answer": "digas",
-        "instruction": "Выберите отрицательное повелительное",
-        "explanation": "Отрицательное → subjuntivo: decir → no digas.",
+        "instruction": "Forma: decir · imperativo negativo · tú",
+        "explanation": "Отрицательное → subjuntivo: digas.",
         "grammarTopic": "b1-imperativo"
       },
       {
@@ -6447,36 +6447,36 @@
     "fill_blank": [
       {
         "type": "fill_blank",
-        "question": "¡___ (comer) la fruta! (tú)",
+        "question": "¡___ la fruta!",
         "answer": "Come",
         "acceptableAnswers": [
           "come"
         ],
-        "instruction": "Поставьте в утвердительное повелительное (tú)",
-        "explanation": "Tú afirmativo: comer → come.",
+        "instruction": "Forma: comer · imperativo · tú",
+        "explanation": "Tú afirmativo:.",
         "grammarTopic": "b1-imperativo"
       },
       {
         "type": "fill_blank",
-        "question": "¡___ (hacer) los deberes! (tú)",
+        "question": "¡___ los deberes!",
         "answer": "Haz",
         "acceptableAnswers": [
           "haz"
         ],
-        "instruction": "Утвердительное повелительное от hacer",
-        "explanation": "Hacer → haz (tú, imperativo). Неправильная форма.",
+        "instruction": "Forma: hacer · imperativo · tú",
+        "explanation": ". Неправильная форма.",
         "grammarTopic": "b1-imperativo"
       },
       {
         "type": "fill_blank",
-        "question": "¡No ___ eso! (tú, decir).",
+        "question": "¡No ___ eso!",
         "answer": "digas",
         "acceptableAnswers": [
           "Digas",
           "digas"
         ],
-        "instruction": "Заполните пропуск",
-        "explanation": "Отрицательное → subjuntivo: decir → no digas.",
+        "instruction": "Forma: decir · imperativo negativo · tú",
+        "explanation": "Отрицательное → subjuntivo: digas.",
         "grammarTopic": "b1-imperativo"
       },
       {
@@ -6681,7 +6681,7 @@
       },
       {
         "type": "error_correction",
-        "question": "¡No di eso! (tú, decir).",
+        "question": "¡No di eso! .",
         "answer": "¡No digas eso!.",
         "acceptableAnswers": [
           "¡No digas eso! (tú, decir).",
@@ -12469,14 +12469,14 @@
     "fill_blank": [
       {
         "type": "fill_blank",
-        "question": "Mañana ___ (hablar) con ella. (yo)",
+        "question": "Mañana yo ___ (hablar) con ella.",
         "answer": "hablaré",
         "acceptableAnswers": [
           "Hablare",
           "hablaré"
         ],
-        "instruction": "Заполните пропуск",
-        "explanation": "yo → infinitivo + é: hablaré.",
+        "instruction": "Форма: hablar, yo",
+        "explanation": "+ é: hablaré.",
         "grammarTopic": "a2-futuro-simple"
       },
       {
@@ -12989,7 +12989,7 @@
         ],
         "answer": "voy",
         "instruction": "Выберите форму ir",
-        "explanation": "Yo → voy (ir — неправильный глагол).",
+        "explanation": "Проверьте лицо и время глагола.",
         "grammarTopic": "verbos-frecuentes"
       },
       {
@@ -13039,7 +13039,7 @@
           "voy"
         ],
         "instruction": "Заполните пропуск",
-        "explanation": "Yo → voy (ir — неправильный глагол).",
+        "explanation": "Проверьте лицо и время глагола.",
         "grammarTopic": "a1-verbos-frecuentes"
       },
       {
@@ -14705,7 +14705,7 @@
           "Había comido",
           "había comido"
         ],
-        "instruction": "Заполните пропуск",
+        "instruction": "Форма: comer",
         "explanation": "Действие раньше другого в прошлом → había + participio.",
         "grammarTopic": "b1-pluscuamperfecto"
       },
@@ -15148,7 +15148,7 @@
           "Tuviera",
           "tuviera"
         ],
-        "instruction": "Заполните пропуск",
+        "instruction": "Форма: tener, condicional",
         "explanation": "Si + subj. imperf. + condicional: нереальное условие.",
         "grammarTopic": "b1-subjuntivo-imperfecto"
       },
@@ -18585,7 +18585,7 @@
           "Habría ido",
           "habría ido"
         ],
-        "instruction": "Заполните пропуск",
+        "instruction": "Форма: ir, condicional",
         "explanation": "Si hubiera + condicional compuesto — прошлое, которое не случилось.",
         "grammarTopic": "b2-condicionales-compuestos"
       },
@@ -21236,7 +21236,7 @@
           "Digo",
           "digo"
         ],
-        "instruction": "Заполните пропуск",
+        "instruction": "Форма: decir",
         "explanation": "Como + indicativo — «как я говорю» (способ).",
         "grammarTopic": "c1-subjuntivo-avanzado"
       }

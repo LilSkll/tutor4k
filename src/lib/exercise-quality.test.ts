@@ -85,6 +85,22 @@ describe("isUsableFillBlank", () => {
       }),
     ).toBe(false);
   });
+
+  it("rejects person+verb spoilers in parentheses", () => {
+    expect(
+      isUsableFillBlank({
+        question: "___ hambre. (Yo, tener)",
+        answer: "Tengo",
+      }),
+    ).toBe(false);
+    expect(
+      isUsableFillBlank({
+        question: "Yo ___ hambre.",
+        answer: "Tengo",
+        instruction: "Forma: tener · presente",
+      }),
+    ).toBe(true);
+  });
 });
 
 describe("isGrammarCategoryInstruction", () => {

@@ -41,6 +41,7 @@ export function ExerciseFreeTextBlock({
   const constructionHint = resolveConstructionHint({
     instruction: exercise.instruction,
     explanation: exercise.explanation,
+    answer: exercise.answer,
   });
   const reportedSpeech = isReportedSpeechRewrite(exercise);
   const authored = exercise.instruction?.trim() ?? "";

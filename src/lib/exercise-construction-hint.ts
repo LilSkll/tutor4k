@@ -1,10 +1,18 @@
 import type { ExerciseType, InterfaceLanguage } from "@/types";
 
 const GENERIC_INSTRUCTION =
-  /^(переведите|translate|traduce|traduzca|übersetze|заполните|fill|completa|completa el|исправьте|correct|corrige|выберите|choose|elige|соберите|build|arma|используйте|use)\b/i;
+  /^(переведите|translate|traduce|traduzca|übersetze|заполните|fill|completa|completa el|исправьте|correct|corrige|выберите|choose|elige|соберите|build|arma|используйте|use)(\s|$)/i;
 
 const FORMULA_SIGNAL =
   /(\+|→|->|subj|condic|imperfect|pluscuam|presente|pret[eé]rito|futuro|perfecto|indicativ|gerund|infinitiv|condicional|subjuntivo|first conditional|second conditional|third conditional|si\s*\+|if\s*\+|would|will\b|have\s*\+|haber\s*\+)/i;
+
+/** Person → conjugated form spoilers (Yo → tengo). */
+const CONJUGATION_SPOILER =
+  /\b(?:yo|tú|tu|él|ella|usted|nosotros|nosotras|vosotros|vosotras|ellos|ellas|ustedes)\s*→\s*\p{L}+/iu;
+
+/** Infinitive/lemma → form spoilers that give the blank away (Hablar → hables). */
+const LEMMA_FORM_SPOILER =
+  /\b[A-Za-záéíóúñüÁÉÍÓÚÑÜ]{3,}\s*→\s*[A-Za-záéíóúñüÁÉÍÓÚÑÜ]{3,}(?:\s*\([^)]*\))?/;
 
 /**
  * True when text looks like a tense/construction formula rather than a
@@ -14,36 +22,85 @@ export function looksLikeConstructionFormula(text: string): boolean {
   const t = text.trim();
   if (t.length < 6 || t.length > 120) return false;
   if (GENERIC_INSTRUCTION.test(t)) return false;
+  if (CONJUGATION_SPOILER.test(t)) return false;
   return FORMULA_SIGNAL.test(t) || /^[A-Za-zÁÉÍÓÚáéíóúÑñÜü\s+→\-/>.,:()]+$/.test(t) && /\+/.test(t);
+}
+
+/** Strip answer-giving conjugation tips from a candidate hint. */
+export function stripConjugationSpoilers(text: string): string {
+  return text
+    .replace(CONJUGATION_SPOILER, "")
+    .replace(LEMMA_FORM_SPOILER, (m) =>
+      /(presente|imperfecto|indefinido|perfecto|futuro|condicional|subjuntivo|indicativo)\s*→/i.test(
+        m,
+      )
+        ? m
+        : "",
+    )
+    .replace(/\s{2,}/g, " ")
+    .replace(/\s+([.!?])/g, "$1")
+    .trim();
 }
 
 export function resolveConstructionHint(input: {
   instruction?: string | null;
   explanation?: string | null;
+  /** When set, hints that contain this form are dropped (pre-answer UI). */
+  answer?: string | null;
 }): string | null {
   const instruction = input.instruction?.trim() ?? "";
   const explanation = input.explanation?.trim() ?? "";
+  const answer = (input.answer ?? "").trim().replace(/[¡!¿?.,]/g, "");
+
+  const usable = (raw: string): string | null => {
+    let t = stripConjugationSpoilers(raw);
+    if (!t || t.length < 4) return null;
+    if (CONJUGATION_SPOILER.test(t)) return null;
+    if (answer.length >= 3) {
+      const re = new RegExp(
+        `(^|[^\\p{L}])${answer.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}([^\\p{L}]|$)`,
+        "iu",
+      );
+      if (re.test(t)) return null;
+    }
+    return t;
+  };
 
   if (instruction && looksLikeConstructionFormula(instruction)) {
-    return instruction;
+    return usable(instruction);
+  }
+  // Compact bank instructions like "tener · presente" are good pre-answer hints.
+  if (
+    instruction &&
+    instruction.length <= 48 &&
+    !GENERIC_INSTRUCTION.test(instruction) &&
+    !CONJUGATION_SPOILER.test(instruction)
+  ) {
+    const fromInstr = usable(instruction);
+    if (fromInstr) return fromInstr;
   }
 
   if (explanation && looksLikeConstructionFormula(explanation)) {
-    const cleaned = explanation.replace(/[.!?]+$/u, "").trim();
-    // Prefer the whole formula string — don't split on "imperf." / "subj." abbreviations.
-    if (looksLikeConstructionFormula(cleaned) || FORMULA_SIGNAL.test(cleaned)) {
-      return cleaned;
+    const cleaned = stripConjugationSpoilers(
+      explanation.replace(/[.!?]+$/u, "").trim(),
+    );
+    if (cleaned && (looksLikeConstructionFormula(cleaned) || FORMULA_SIGNAL.test(cleaned))) {
+      return usable(cleaned);
     }
   }
 
-  // Pull a formula substring out of a longer explanation.
   const match = explanation.match(
     /((?:Si|If)\s*\+[^!?\n]{4,90}|[A-Za-zÁÉÍÓÚáéíóúÑñ]+\s*\+\s*[A-Za-zÁÉÍÓÚáéíóúÑñ+][^!?\n]{0,70})/,
   );
   if (match?.[1]) {
-    const candidate = match[1].trim().replace(/[.!?]+$/u, "");
-    if (looksLikeConstructionFormula(candidate) || FORMULA_SIGNAL.test(candidate)) {
-      return candidate;
+    const candidate = stripConjugationSpoilers(
+      match[1].trim().replace(/[.!?]+$/u, ""),
+    );
+    if (
+      candidate &&
+      (looksLikeConstructionFormula(candidate) || FORMULA_SIGNAL.test(candidate))
+    ) {
+      return usable(candidate);
     }
   }
 
@@ -77,11 +134,13 @@ export function enrichFeedbackWithConstruction(input: {
   instruction?: string | null;
   explanation?: string | null;
   exerciseType?: ExerciseType;
+  answer?: string | null;
 }): string {
   const lang = input.language ?? "ru";
   const hint = resolveConstructionHint({
     instruction: input.instruction,
     explanation: input.explanation,
+    answer: input.correct ? null : input.answer,
   });
   const parts: string[] = [input.feedback.trim()];
 

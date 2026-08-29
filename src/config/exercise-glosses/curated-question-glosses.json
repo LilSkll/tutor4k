@@ -119,12 +119,6 @@
     "es": "Hay ___ días en una semana. (7)",
     "de": "Es gibt ___ Tage in einer Woche. (7)"
   },
-  "___ hambre. (Yo, tener)": {
-    "ru": "___ голоден. (Я, tener)",
-    "en": "___ hungry. (I, tener)",
-    "es": "___ hambre. (Yo, tener)",
-    "de": "___ Hunger. (Ich, tener)"
-  },
   "¿De qué color es la hierba?": {
     "ru": "Какого цвета трава?",
     "en": "What color is the grass?",
@@ -275,12 +269,6 @@
     "es": "Juan es más alto que Pedro. (corrige el error)",
     "de": "Juan ist größer als Pedro. (korrigiere den Fehler)"
   },
-  "Mañana ___ (hablar) con ella. (yo)": {
-    "ru": "Завтра ___ (hablar / говорить) с ней. (я)",
-    "en": "Tomorrow I ___ (hablar / to talk) with her. (yo)",
-    "es": "Mañana ___ (hablar) con ella. (yo)",
-    "de": "Morgen ___ (hablar / sprechen) ich mit ihr. (yo)"
-  },
   "Ellos ___ mañana.": {
     "ru": "Они ___ завтра.",
     "en": "They ___ tomorrow.",
@@ -298,12 +286,6 @@
     "en": "What ___ you do next year?",
     "es": "¿Qué ___ tú el próximo año?",
     "de": "Was ___ du nächstes Jahr?"
-  },
-  "Hoy ___ (comer) pizza. (yo)": {
-    "ru": "Сегодня ___ (comer / есть) пиццу. (я)",
-    "en": "Today I ___ (comer / to eat) pizza. (yo)",
-    "es": "Hoy ___ (comer) pizza. (yo)",
-    "de": "Heute ___ (comer / essen) ich Pizza. (yo)"
   },
   "¿Has ___ en España? (estar)": {
     "ru": "¿Has ___ в Испании? (estar)",
@@ -329,12 +311,6 @@
     "es": "Hoy hemos ___ mucho.",
     "de": "Heute haben wir viel ___."
   },
-  "Ayer ___ (ir) al cine. (yo)": {
-    "ru": "Вчера ___ (ir / идти) в кино. (я)",
-    "en": "Yesterday I ___ (ir / to go) to the cinema. (yo)",
-    "es": "Ayer ___ (ir) al cine. (yo)",
-    "de": "Gestern ___ (ir / gehen) ich ins Kino. (yo)"
-  },
   "El año pasado ___ en Barcelona. (vivir, yo)": {
     "ru": "В прошлом году ___ в Барселоне. (vivir, я)",
     "en": "Last year I ___ in Barcelona. (vivir, yo)",
@@ -346,12 +322,6 @@
     "en": "Yesterday I bought a book.",
     "es": "Ayer compré un libro.",
     "de": "Gestern habe ich ein Buch gekauft."
-  },
-  "¿___ (tú) al partido ayer? (ir)": {
-    "ru": "¿___ (ты) на матч вчера? (ir)",
-    "en": "¿___ (you) to the match yesterday? (ir)",
-    "es": "¿___ (tú) al partido ayer? (ir)",
-    "de": "¿___ (du) gestern zum Spiel? (ir)"
   },
   "Hace dos años ellos ___ a Japón.": {
     "ru": "Два года назад они ___ в Японию.",
@@ -449,29 +419,11 @@
     "es": "Ojalá ___ buen tiempo mañana.",
     "de": "Hoffentlich ___ morgen gutes Wetter."
   },
-  "¡___ (comer) la fruta! (tú)": {
-    "ru": "¡___ (comer / есть) фрукты! (tú)",
-    "en": "¡___ (comer / to eat) the fruit! (tú)",
-    "es": "¡___ (comer) la fruta! (tú)",
-    "de": "¡___ (comer / iss) das Obst! (tú)"
-  },
-  "¡No ___ eso! (tú, decir)": {
-    "ru": "¡No ___ это! (tú, decir / говорить)",
-    "en": "Don't ___ that! (tú, decir / to say)",
-    "es": "¡No ___ eso! (tú, decir)",
-    "de": "___ das nicht! (tú, decir)"
-  },
   "Скажи мне правду! (tú)": {
     "ru": "Скажи мне правду! (tú)",
     "en": "Tell me the truth! (tú)",
     "es": "¡Dime la verdad! (tú)",
     "de": "Sag mir die Wahrheit! (tú)"
-  },
-  "¡___ (hacer) los deberes! (tú)": {
-    "ru": "¡___ (hacer / делать) домашнее задание! (tú)",
-    "en": "¡___ (hacer / to do) your homework! (tú)",
-    "es": "¡___ (hacer) los deberes! (tú)",
-    "de": "¡___ (hacer / mach) die Hausaufgaben! (tú)"
   },
   "¡___ usted, por favor! (sentarse)": {
     "ru": "¡___ usted, пожалуйста! (sentarse / сесть)",
@@ -1690,5 +1642,53 @@
     "en": "Arguably / It could be argued that the results are inconclusive.",
     "es": "Podría decirse / Se podría argumentar que los resultados no son concluyentes.",
     "de": "Man könnte sagen / Es lässt sich argumentieren, dass die Ergebnisse unschlüssig sind."
+  },
+  "Yo ___ hambre.": {
+    "ru": "___ голоден.",
+    "en": "Yo ___ hambre.",
+    "es": "Yo ___ hambre.",
+    "de": "___ Hunger. (Ich, tener)"
+  },
+  "Hoy yo ___ (comer) pizza.": {
+    "ru": "Сегодня ___ пиццу. (я)",
+    "en": "Hoy yo ___ (comer) pizza.",
+    "es": "Hoy yo ___ (comer) pizza.",
+    "de": "Heute ___ (comer / essen) ich Pizza. (yo)"
+  },
+  "Ayer yo ___ (ir) al cine.": {
+    "ru": "Вчера ___ в кино. (я)",
+    "en": "Ayer yo ___ (ir) al cine.",
+    "es": "Ayer yo ___ (ir) al cine.",
+    "de": "Gestern ___ (ir / gehen) ich ins Kino. (yo)"
+  },
+  "¿___ al partido ayer?": {
+    "ru": "¿___ (ты) на матч вчера?",
+    "en": "¿___ al partido ayer?",
+    "es": "¿___ al partido ayer?",
+    "de": "¿___ (du) gestern zum Spiel? (ir)"
+  },
+  "¡No ___ eso!": {
+    "ru": "¡No ___ это!",
+    "en": "¡No ___ eso!",
+    "es": "¡No ___ eso!",
+    "de": "___ das nicht! (tú, decir)"
+  },
+  "¡___ la fruta!": {
+    "ru": "¡___ фрукты!",
+    "en": "¡___ la fruta!",
+    "es": "¡___ la fruta!",
+    "de": "¡___ (comer / iss) das Obst! (tú)"
+  },
+  "¡___ los deberes!": {
+    "ru": "¡___ домашнее задание!",
+    "en": "¡___ los deberes!",
+    "es": "¡___ los deberes!",
+    "de": "¡___ (hacer / mach) die Hausaufgaben! (tú)"
+  },
+  "Mañana yo ___ (hablar) con ella.": {
+    "ru": "Завтра ___ (hablar / говорить) с ней. (я)",
+    "en": "Mañana yo ___ (hablar) con ella.",
+    "es": "Mañana yo ___ (hablar) con ella.",
+    "de": "Morgen ___ (hablar / sprechen) ich mit ihr. (yo)"
   }
 }
