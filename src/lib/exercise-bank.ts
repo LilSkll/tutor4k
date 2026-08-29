@@ -122,16 +122,19 @@ const EARLY_LEVEL_TYPE_PRIORITY: ExerciseType[] = [
   "error_correction",
 ];
 
-/** Soft content key so MC/FB of the same blank sentence never share a round arc. */
+/** Soft content key: finished target sentence shared across exercise types. */
 function softContentKey(ex: StaticExercise): string {
-  const raw =
-    ex.type === "sentence_building" || ex.type === "error_correction"
-      ? ex.answer
-      : ex.question;
-  return raw
+  const filled =
+    ex.type === "multiple_choice" || ex.type === "fill_blank"
+      ? /___+/.test(ex.question)
+        ? ex.question.replace(/___+/g, ex.answer)
+        : ex.question
+      : ex.answer || ex.question;
+  return filled
     .toLowerCase()
     .normalize("NFD")
     .replace(/\p{M}/gu, "")
+    .replace(/\([^)]*\)/g, " ")
     .replace(/___+/g, "_")
     .replace(/[^\p{L}\p{N}\s_()]/gu, " ")
     .replace(/\s+/g, " ")
@@ -143,7 +146,8 @@ export function orderEarlyLevelPractice(
   level: GrammarLevel,
 ): StaticExercise[] {
   if (level !== "A1" && level !== "A2" && level !== "B1" && level !== "B2") {
-    return exercises;
+    // Still dedupe by finished stem for advanced levels.
+    return dedupeByTargetStem(exercises);
   }
 
   const buckets = Object.fromEntries(
@@ -180,4 +184,41 @@ export function orderEarlyLevelPractice(
   }
 
   return ordered.length > 0 ? ordered : exercises;
+}
+
+/** Keep first occurrence of each finished target sentence. */
+export function dedupeByTargetStem(
+  exercises: StaticExercise[],
+): StaticExercise[] {
+  const seen = new Set<string>();
+  const out: StaticExercise[] = [];
+  for (const ex of exercises) {
+    const key = softContentKey(ex);
+    if (key && seen.has(key)) continue;
+    if (key) seen.add(key);
+    out.push(ex);
+  }
+  return out;
+}
+
+/**
+ * Pick up to `count` exercises from `fromCursor`, skipping finished-sentence
+ * duplicates within the batch (and advancing past used stems).
+ */
+export function pickUniqueStemBatch(
+  bank: StaticExercise[],
+  fromCursor: number,
+  count: number,
+): { batch: StaticExercise[]; nextCursor: number } {
+  const batch: StaticExercise[] = [];
+  const used = new Set<string>();
+  let i = Math.max(0, fromCursor);
+  while (i < bank.length && batch.length < count) {
+    const item = bank[i++];
+    const key = softContentKey(item);
+    if (key && used.has(key)) continue;
+    if (key) used.add(key);
+    batch.push(item);
+  }
+  return { batch, nextCursor: i };
 }

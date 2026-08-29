@@ -2111,7 +2111,7 @@ Cuando aparecen ambos: \`me lo, te lo, se lo, nos lo\`.
   "b2-estilo-indirecto": {
     en: `> **Before this topic:** you have covered **DELE letter writing** (condicional, formal register). **In this topic:** **reported speech** — how to relay someone else’s words: dijo que vendría.
 
-## Estilo Indirecto (Reported Speech)
+## Reported Speech (estilo indirecto)
 
 ### Direct → Indirect (same time frame)
 > Direct: \`Ana dice: "Hoy **llego** tarde."\`

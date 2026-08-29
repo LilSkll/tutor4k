@@ -254,14 +254,27 @@ export function chapterFromSeeds(g, topic, seeds, lang = "spanish", perType = 20
   const ecA = [];
   const sbA = [];
 
+  if (!seeds.length) {
+    return pack(mcA, fbA, trA, ecA, sbA, perType);
+  }
+
   const sbSeeds = seeds.filter((s) => Array.isArray(s.tokens) && s.tokens.length >= 3);
   const sbPool = sbSeeds.length > 0 ? sbSeeds : seeds;
   const seenEc = new Set();
+  const usedTargets = new Set(); // finished target sentence → one type only
 
-  for (let i = 0; i < perType; i++) {
+  const targetKey = (s) =>
+    normKey(
+      lang === "english"
+        ? s.en || s.acc?.[0] || s.es || s.answer || s.ans || ""
+        : s.es || s.acc?.[0] || s.answer || s.ans || "",
+    );
+
+  // Offset seeds per type so the same seed index does not flood all 5 types.
+  for (let i = 0; i < perType * seeds.length && mcA.length < perType; i++) {
     const s = seeds[i % seeds.length];
-    const sbSeed = sbPool[i % sbPool.length];
-    // Keep stems stable — do not inject `[n]` / Completa stubs into prompts.
+    const tk = targetKey(s);
+    if (tk && usedTargets.has(tk)) continue;
     const q = cleanIndexMarks(s.q);
     const opts = s.options || [s.ans, "—", "—", "—"];
     const options = [...new Set([s.ans, ...opts.filter((o) => o !== s.ans)])].slice(
@@ -269,15 +282,14 @@ export function chapterFromSeeds(g, topic, seeds, lang = "spanish", perType = 20
       4,
     );
     while (options.length < 4) options.push(`${s.ans}?`);
-
+    const stem = q.includes("___")
+      ? q
+      : fullTargetSentence(s, lang)
+        ? blankOneToken(fullTargetSentence(s, lang), s.ans) || q
+        : q;
     mcA.push(
       mc(
-        q.includes("___")
-          ? q
-          : fullTargetSentence(s, lang)
-            ? // Prefer a blanked target sentence over a bare prompt
-              blankOneToken(fullTargetSentence(s, lang), s.ans) || q
-            : q,
+        stem,
         options,
         s.ans,
         lang === "english" ? "Choose the correct answer" : "Выберите правильный ответ",
@@ -285,71 +297,101 @@ export function chapterFromSeeds(g, topic, seeds, lang = "spanish", perType = 20
         g,
       ),
     );
+    if (tk) usedTargets.add(tk);
+  }
 
+  for (let i = 0; i < perType * seeds.length && fbA.length < perType; i++) {
+    const s = seeds[(i + 1) % seeds.length];
+    const tk = targetKey(s);
+    if (tk && usedTargets.has(tk)) continue;
+    const q = cleanIndexMarks(s.q);
     const fbStem =
       q.includes("___")
         ? q
         : blankOneToken(fullTargetSentence(s, lang), s.ans);
-    if (fbStem && /___+/.test(fbStem) && !/^(Completa|Complete)\b/i.test(fbStem)) {
-      fbA.push(
-        fb(
-          fbStem,
-          s.ans,
-          lang === "english" ? "Fill in the blank" : "Заполните пропуск",
-          s.explanation || `${topic}: «${s.ans}».`,
-          g,
-        ),
-      );
+    if (!fbStem || !/___+/.test(fbStem) || /^(Completa|Complete)\b/i.test(fbStem)) {
+      continue;
     }
+    fbA.push(
+      fb(
+        fbStem,
+        s.ans,
+        lang === "english" ? "Fill in the blank" : "Заполните пропуск",
+        s.explanation || `${topic}: «${s.ans}».`,
+        g,
+      ),
+    );
+    if (tk) usedTargets.add(tk);
+  }
 
+  for (let i = 0; i < perType * seeds.length && trA.length < perType; i++) {
+    const s = seeds[(i + 2) % seeds.length];
     const fullTarget = cleanIndexMarks(
       lang === "english" ? s.en || s.acc?.[0] || s.es || s.ans : s.es || s.acc?.[0] || s.ans,
     );
-
     const trPrompt = cleanIndexMarks(s.ru || "");
     const trLooksMeta =
       !trPrompt ||
       /\+\s*(adj|adv|verb|noun|subj)\b/i.test(trPrompt) ||
-      /^(Соберите|Составьте|Выберите|Заполните|Исправьте|Переведите|Build|Choose|Fill|Complete|Rewrite|Fix)\b/i.test(
+      /^(Соберите|Составьте|Выберите|Заполните|Исправьте|Переведите|Build|Choose|Fill|Complete|Rewrite|Fix)(\s|$)/i.test(
         trPrompt,
       ) ||
-      /^(Наречие|Прилагательное|Существительное|Глагол|Слово|Форма|Конструкция)\b/i.test(
+      /^(Наречие|Прилагательное|Существительное|Глагол|Слово|Форма|Конструкция)(\s|$|[«"])/i.test(
         trPrompt,
       ) ||
       (lang === "spanish" && !CYRILLIC_RE.test(trPrompt)) ||
-      (lang === "english" && CYRILLIC_RE.test(trPrompt) === false && trPrompt.split(/\s+/).length < 3);
+      (lang === "english" && !CYRILLIC_RE.test(trPrompt) && trPrompt.split(/\s+/).length < 3);
+    if (trLooksMeta || !fullTarget || CYRILLIC_RE.test(fullTarget)) continue;
+    const tk = normKey(fullTarget);
+    if (tk && usedTargets.has(tk)) continue;
+    trA.push(
+      tr(
+        trPrompt,
+        fullTarget,
+        lang === "english" ? "Translate to English" : "Переведите на испанский",
+        s.explanation || `${topic}: «${s.ans}».`,
+        g,
+        s.acc || [fullTarget.toLowerCase(), fullTarget],
+      ),
+    );
+    if (tk) usedTargets.add(tk);
+  }
 
-    if (!trLooksMeta && fullTarget && !CYRILLIC_RE.test(fullTarget)) {
-      trA.push(
-        tr(
-          trPrompt,
-          fullTarget,
-          lang === "english" ? "Translate to English" : "Переведите на испанский",
-          s.explanation || `${topic}: «${s.ans}».`,
-          g,
-          s.acc || [fullTarget.toLowerCase(), fullTarget],
-        ),
-      );
-    }
-
+  for (let i = 0; i < perType * seeds.length && ecA.length < perType; i++) {
+    const s = seeds[(i + 3) % seeds.length];
+    const opts = s.options || [s.ans, "—", "—", "—"];
+    const options = [...new Set([s.ans, ...opts.filter((o) => o !== s.ans)])].slice(0, 4);
     const ecItem = buildErrorCorrection(s, options, lang, topic);
-    if (ecItem) {
-      const key = normKey(ecItem.question);
-      if (!seenEc.has(key)) {
-        seenEc.add(key);
-        ecA.push(ecItem);
-      }
-    }
+    if (!ecItem) continue;
+    const key = normKey(ecItem.question);
+    const tk = normKey(ecItem.answer);
+    if (seenEc.has(key) || (tk && usedTargets.has(tk))) continue;
+    seenEc.add(key);
+    if (tk) usedTargets.add(tk);
+    ecA.push(ecItem);
+  }
 
+  for (let i = 0; i < perType * sbPool.length && sbA.length < perType; i++) {
+    const sbSeed = sbPool[(i + 4) % sbPool.length];
+    const fullTarget = cleanIndexMarks(
+      sbSeed.answer ||
+        (lang === "english"
+          ? sbSeed.en || sbSeed.acc?.[0] || sbSeed.es || sbSeed.ans
+          : sbSeed.es || sbSeed.acc?.[0] || sbSeed.ans) ||
+        "",
+    );
     const tokens =
       sbSeed.tokens ??
-      (sbSeed.answer || fullTarget)
+      fullTarget
         .replace(/[¿?¡!.]/g, "")
         .split(/\s+/)
         .filter(Boolean);
-    const toks = tokens.length >= 3 ? tokens : ["Por", "favor", "usa", sbSeed.ans];
+    const toks = tokens.length >= 3 ? tokens : null;
+    if (!toks) continue;
     const sbAnswer = sbSeed.answer || toks.join(" ");
-
+    const tk = normKey(sbAnswer);
+    if (tk && usedTargets.has(tk)) continue;
+    if (tk) usedTargets.add(tk);
     sbA.push(
       sb(
         toks,
@@ -360,19 +402,6 @@ export function chapterFromSeeds(g, topic, seeds, lang = "spanish", perType = 20
         [sbAnswer.toLowerCase(), ...(sbSeed.acc ?? [])],
       ),
     );
-  }
-
-  // Top up EC from remaining seeds if the first pass was thin
-  for (let i = 0; ecA.length < perType && i < seeds.length * 3; i++) {
-    const s = seeds[i % seeds.length];
-    const opts = s.options || [s.ans, "—", "—", "—"];
-    const options = [...new Set([s.ans, ...opts.filter((o) => o !== s.ans)])].slice(0, 4);
-    const ecItem = buildErrorCorrection(s, options, lang, topic);
-    if (!ecItem) continue;
-    const key = normKey(ecItem.question);
-    if (seenEc.has(key)) continue;
-    seenEc.add(key);
-    ecA.push(ecItem);
   }
 
   return pack(mcA, fbA, trA, ecA, sbA, perType);

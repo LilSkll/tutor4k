@@ -1455,7 +1455,7 @@ export const GRAMMAR_TOPICS: GrammarTopic[] = [
   {
     slug: "b2-estilo-indirecto",
     title: "Estilo Indirecto",
-    titleEs: "Estilo Indirecto (Reported Speech)",
+    titleEs: "Estilo Indirecto",
     level: "B2",
     category: "Синтаксис",
     summary: "Estilo indirecto — передача чужих слов: dijo que vendría; сдвиг времён после прошедшего.",

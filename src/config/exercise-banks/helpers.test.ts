@@ -42,6 +42,25 @@ describe("exerciseContentFingerprint", () => {
     });
     expect(ec).toBe(sb);
   });
+
+  it("links translation and MC that finish as the same sentence", () => {
+    const tr = exerciseContentFingerprint({
+      type: "translation",
+      question: "Я учитель.",
+      answer: "I am a teacher",
+      instruction: "Translate",
+      explanation: "x",
+    });
+    const mc = exerciseContentFingerprint({
+      type: "multiple_choice",
+      question: "I ___ a teacher",
+      answer: "am",
+      options: ["am", "is", "are"],
+      instruction: "Choose",
+      explanation: "x",
+    });
+    expect(tr).toBe(mc);
+  });
 });
 
 describe("expandChapterBank", () => {
@@ -68,5 +87,30 @@ describe("expandChapterBank", () => {
     );
     expect(out).toHaveLength(1);
     expect(out[0].type).toBe("multiple_choice");
+  });
+
+  it("keeps only one type when TR and SB share the target sentence", () => {
+    const out = expandChapterBank(
+      [
+        {
+          type: "translation",
+          question: "Он бежит слишком быстро.",
+          answer: "Corre demasiado rápido",
+          instruction: "Переведите",
+          explanation: "x",
+        },
+        {
+          type: "sentence_building",
+          question: "Corre / demasiado / rápido",
+          options: ["Corre", "demasiado", "rápido"],
+          answer: "Corre demasiado rápido",
+          instruction: "Составьте",
+          explanation: "x",
+        },
+      ],
+      {},
+    );
+    expect(out).toHaveLength(1);
+    expect(out[0].type).toBe("translation");
   });
 });

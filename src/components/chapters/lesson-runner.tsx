@@ -21,7 +21,7 @@ import { Markdown } from "@/components/shared/markdown";
 import { useLocalizedGrammarArticle } from "@/hooks/use-localized-grammar-article";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { translate } from "@/lib/i18n";
-import { SESSION_EXERCISES } from "@/lib/exercise-bank";
+import { SESSION_EXERCISES, pickUniqueStemBatch } from "@/lib/exercise-bank";
 import { gradeStaticExerciseLocally } from "@/lib/exercise-check-client";
 import { scorePercent } from "@/lib/normalize-answer";
 import { trackEvent } from "@/lib/analytics";
@@ -244,12 +244,16 @@ export function LessonRunner({
   };
 
   const startBankRound = (fromCursor: number, kind: PracticeKind) => {
-    const batch = chapterBank.slice(fromCursor, fromCursor + SESSION_EXERCISES);
+    const { batch, nextCursor } = pickUniqueStemBatch(
+      chapterBank,
+      fromCursor,
+      SESSION_EXERCISES,
+    );
     if (batch.length === 0) {
       setPhase("dialogue");
       return;
     }
-    setBankCursor(fromCursor + batch.length);
+    setBankCursor(nextCursor);
     setExercises(batch);
     setCurrentExerciseIdx(0);
     setUserAnswer("");
