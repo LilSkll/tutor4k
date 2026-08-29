@@ -283,40 +283,95 @@ export function LessonRunner({
     if (!answer) return;
 
     const local = gradeStaticExerciseLocally(ex, answer, language);
-    setResult(local);
-    setExercisesCompleted((n) => n + 1);
-    if (local.correct) {
-      setScore((s) => s + 1);
-    } else if (ex.id) {
-      setFailedExerciseIds((ids) =>
-        ids.includes(ex.id) ? ids : [...ids, ex.id],
-      );
+    const needsSoftCheck =
+      !local.correct &&
+      (ex.type === "translation" || ex.type === "error_correction");
+
+    if (!needsSoftCheck) {
+      setResult(local);
+      setExercisesCompleted((n) => n + 1);
+      if (local.correct) {
+        setScore((s) => s + 1);
+      } else if (ex.id) {
+        setFailedExerciseIds((ids) =>
+          ids.includes(ex.id) ? ids : [...ids, ex.id],
+        );
+      }
+
+      void fetch("/api/exercises/check", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          exercise: {
+            type: ex.type,
+            level: chapter.level,
+            question: ex.question,
+            instruction: ex.instruction,
+            options: ex.options,
+            answer: ex.answer,
+            acceptableAnswers: ex.acceptableAnswers,
+            topic: targetTitle,
+            explanation: ex.explanation,
+            staticSource: true,
+            exerciseId: ex.id,
+            chapterSlug: chapter.slug,
+          },
+          userAnswer: answer,
+          level: chapter.level,
+        }),
+      }).catch(() => {
+        // Local grade already shown; server sync is best-effort.
+      });
+      return;
     }
 
-    void fetch("/api/exercises/check", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        exercise: {
-          type: ex.type,
+    setLoading(true);
+    try {
+      const res = await fetch("/api/exercises/check", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          exercise: {
+            type: ex.type,
+            level: chapter.level,
+            question: ex.question,
+            instruction: ex.instruction,
+            options: ex.options,
+            answer: ex.answer,
+            acceptableAnswers: ex.acceptableAnswers,
+            topic: targetTitle,
+            explanation: ex.explanation,
+            staticSource: true,
+            exerciseId: ex.id,
+            chapterSlug: chapter.slug,
+          },
+          userAnswer: answer,
           level: chapter.level,
-          question: ex.question,
-          instruction: ex.instruction,
-          options: ex.options,
-          answer: ex.answer,
-          acceptableAnswers: ex.acceptableAnswers,
-          topic: targetTitle,
-          explanation: ex.explanation,
-          staticSource: true,
-          exerciseId: ex.id,
-          chapterSlug: chapter.slug,
-        },
-        userAnswer: answer,
-        level: chapter.level,
-      }),
-    }).catch(() => {
-      // Local grade already shown; server sync is best-effort.
-    });
+        }),
+      });
+      const data = res.ok
+        ? ((await res.json()) as { correct: boolean; feedback: string })
+        : local;
+      setResult(data);
+      setExercisesCompleted((n) => n + 1);
+      if (data.correct) {
+        setScore((s) => s + 1);
+      } else if (ex.id) {
+        setFailedExerciseIds((ids) =>
+          ids.includes(ex.id) ? ids : [...ids, ex.id],
+        );
+      }
+    } catch {
+      setResult(local);
+      setExercisesCompleted((n) => n + 1);
+      if (ex.id) {
+        setFailedExerciseIds((ids) =>
+          ids.includes(ex.id) ? ids : [...ids, ex.id],
+        );
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   const afterPracticeBlock = () => {

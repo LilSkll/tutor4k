@@ -346,12 +346,39 @@ export function ExerciseRunner({
       const isStatic = exercise.staticSource !== false;
 
       if (isStatic) {
-        applyCheckResult(
-          exercise,
-          answer,
-          gradeStaticExerciseLocally(exercise, answer, language),
-        );
-        persistCheck(answer, exercise);
+        const local = gradeStaticExerciseLocally(exercise, answer, language);
+        const needsSoftCheck =
+          !local.correct &&
+          (exercise.type === "translation" ||
+            exercise.type === "error_correction");
+
+        if (!needsSoftCheck) {
+          applyCheckResult(exercise, answer, local);
+          persistCheck(answer, exercise);
+          return;
+        }
+
+        setPhase("loading");
+        try {
+          const res = await fetch("/api/exercises/check", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              exercise,
+              userAnswer: answer,
+              level,
+            }),
+          });
+          if (!res.ok) throw new Error("Failed");
+          const data = (await res.json()) as {
+            correct: boolean;
+            feedback: string;
+          };
+          applyCheckResult(exercise, answer, data);
+        } catch {
+          applyCheckResult(exercise, answer, local);
+          persistCheck(answer, exercise);
+        }
         return;
       }
 

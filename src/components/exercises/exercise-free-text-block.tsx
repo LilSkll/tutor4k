@@ -1,6 +1,7 @@
 "use client";
 
 import { Input } from "@/components/ui/input";
+import { resolveConstructionHint } from "@/lib/exercise-construction-hint";
 import {
   detectSourceLanguage,
   isReportedSpeechRewrite,
@@ -9,7 +10,10 @@ import {
 import { translate } from "@/lib/i18n";
 import type { ExerciseType, InterfaceLanguage, StaticExercise } from "@/types";
 
-type ExerciseLike = Pick<StaticExercise, "type" | "question" | "answer"> & {
+type ExerciseLike = Pick<
+  StaticExercise,
+  "type" | "question" | "answer" | "explanation"
+> & {
   instruction?: string;
 };
 
@@ -34,6 +38,10 @@ export function ExerciseFreeTextBlock({
 }) {
   const t = (key: string) => translate(key, interfaceLanguage);
   const instruction = localizeExerciseInstruction(exercise, interfaceLanguage);
+  const constructionHint = resolveConstructionHint({
+    instruction: exercise.instruction,
+    explanation: exercise.explanation,
+  });
   const reportedSpeech = isReportedSpeechRewrite(exercise);
   const authored = exercise.instruction?.trim() ?? "";
   const showAuthoredHint =
@@ -66,6 +74,15 @@ export function ExerciseFreeTextBlock({
           <span className="font-semibold text-primary">{taskLabel} </span>
           {instruction}
         </p>
+        {constructionHint &&
+        constructionHint.toLowerCase() !== instruction.trim().toLowerCase() ? (
+          <p className="text-xs text-foreground/90 border-t border-primary/10 pt-1.5">
+            <span className="font-semibold text-primary">
+              {t("exercises.constructionHintLabel")}{" "}
+            </span>
+            {constructionHint}
+          </p>
+        ) : null}
         {exercise.type === "error_correction" ? (
           <p className="text-xs text-muted-foreground">
             {reportedSpeech

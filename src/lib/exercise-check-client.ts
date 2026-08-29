@@ -1,11 +1,13 @@
 import { answersMatch } from "@/lib/normalize-answer";
 import { formatBankTutorFeedback } from "@/lib/tutor-feedback";
-import type { InterfaceLanguage } from "@/types";
+import type { ExerciseType, InterfaceLanguage } from "@/types";
 
 type CheckableExercise = {
+  type?: ExerciseType;
   answer: string;
   acceptableAnswers?: string[];
   explanation: string;
+  instruction?: string;
 };
 
 /** Grade a static bank item locally (accents / ñ tolerant). */
@@ -24,6 +26,8 @@ export function gradeStaticExerciseLocally(
       language,
       correct,
       explanation: exercise.explanation,
+      instruction: exercise.instruction,
+      exerciseType: exercise.type,
     }),
   };
 }

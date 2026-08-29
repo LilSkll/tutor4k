@@ -112,10 +112,12 @@ Only include "options" for multiple_choice and sentence_building. JSON must be v
 /** Build the user prompt for AI answer checking (slow path). */
 export function buildExerciseCheckPrompt(input: {
   exercise: {
+    type?: string;
     question: string;
     answer: string;
     acceptableAnswers?: string[];
     explanation: string;
+    instruction?: string;
   };
   userAnswer: string;
   course: CourseConfig;
@@ -123,15 +125,25 @@ export function buildExerciseCheckPrompt(input: {
 }): string {
   const langName = interfaceLangName(input.language);
   const target = input.course.titleNative;
+  const isTranslation = input.exercise.type === "translation";
 
   return `A ${target} learner answered an exercise. Decide if the answer is correct.
 Target language: ${target} (${input.course.languageCode}).
+Exercise type: ${input.exercise.type ?? "unknown"}
 Question: ${input.exercise.question}
-Correct answer: ${input.exercise.answer}
-Acceptable alternatives: ${(input.exercise.acceptableAnswers ?? []).join(", ") || "none"}
+Instruction / construction hint: ${input.exercise.instruction ?? "(none)"}
+Model answer: ${input.exercise.answer}
+Listed alternatives: ${(input.exercise.acceptableAnswers ?? []).join(", ") || "none"}
+Grammar note: ${input.exercise.explanation || "(none)"}
 Learner's answer: ${input.userAnswer}
+
+${
+  isTranslation
+    ? `For TRANSLATION: accept the learner's answer if it is a natural ${target} rendering of the prompt that uses the SAME required tense/construction (see instruction/grammar note), even when wording differs from the model answer (pronouns, word order, synonyms, optional subject pronouns). Mark INCORRECT only when the meaning is wrong or the required construction/tense is missing.`
+    : `Accept clearly equivalent answers (minor wording / accents / punctuation). Mark INCORRECT when the grammar target is missed.`
+}
 
 Reply in EXACTLY this format:
 VERDICT: CORRECT or INCORRECT
-FEEDBACK: one short sentence in ${langName} explaining why; if incorrect, show the right ${target} answer.`;
+FEEDBACK: one short sentence in ${langName} explaining why; if incorrect, name the required construction and show a good ${target} model answer.`;
 }

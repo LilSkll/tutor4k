@@ -12,6 +12,7 @@ function ex(
     type: "translation",
     question,
     answer,
+    instruction: "Translate",
     explanation: "",
   };
 }

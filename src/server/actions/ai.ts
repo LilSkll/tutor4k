@@ -729,7 +729,9 @@ function shuffle<T>(arr: T[]): T[] {
 
 /**
  * Check a learner's answer against the correct one.
- * Static bank items never call a model. AI check is only for generated items.
+ * Exact bank matches stay local. For static translation / error_correction,
+ * near-misses get a soft AI check so equivalent wordings with the same
+ * construction are accepted. Other static types keep bank-only grading.
  */
 export async function checkExerciseAnswer(input: {
   exercise: GeneratedExercise;
@@ -743,6 +745,9 @@ export async function checkExerciseAnswer(input: {
 }> {
   const courseId = input.courseId ?? "spanish";
   const bankExplanation = input.exercise.explanation;
+  const { shouldSoftCheckEquivalents, enrichFeedbackWithConstruction } =
+    await import("@/lib/exercise-construction-hint");
+  const { formatBankTutorFeedback } = await import("@/lib/tutor-feedback");
 
   if (
     answersMatch(input.userAnswer, [
@@ -751,10 +756,12 @@ export async function checkExerciseAnswer(input: {
     ])
   ) {
     const feedback = input.exercise.staticSource
-      ? (await import("@/lib/tutor-feedback")).formatBankTutorFeedback({
+      ? formatBankTutorFeedback({
           language: input.language,
           correct: true,
           explanation: bankExplanation,
+          instruction: input.exercise.instruction,
+          exerciseType: input.exercise.type,
         })
       : input.exercise.explanation;
 
@@ -773,14 +780,17 @@ export async function checkExerciseAnswer(input: {
     };
   }
 
-  // Static bank exercises: use stored explanation framed as tutor feedback.
-  if (input.exercise.staticSource) {
-    const feedback = (
-      await import("@/lib/tutor-feedback")
-    ).formatBankTutorFeedback({
+  const allowSoftAi =
+    !input.exercise.staticSource ||
+    shouldSoftCheckEquivalents(input.exercise.type);
+
+  if (input.exercise.staticSource && !allowSoftAi) {
+    const feedback = formatBankTutorFeedback({
       language: input.language,
       correct: false,
       explanation: bankExplanation,
+      instruction: input.exercise.instruction,
+      exerciseType: input.exercise.type,
     });
 
     await persistExerciseOutcome({
@@ -799,7 +809,13 @@ export async function checkExerciseAnswer(input: {
   }
 
   let isCorrect = false;
-  let feedback = input.exercise.explanation;
+  let feedback = formatBankTutorFeedback({
+    language: input.language,
+    correct: false,
+    explanation: bankExplanation,
+    instruction: input.exercise.instruction,
+    exerciseType: input.exercise.type,
+  });
   try {
     const { generateAIResponse } = await import("@/server/ai/orchestrator");
     const course = await getCourse(courseId);
@@ -823,12 +839,27 @@ export async function checkExerciseAnswer(input: {
 
     isCorrect = /VERDICT:\s*CORRECT/i.test(response.content);
     const feedbackMatch = response.content.match(/FEEDBACK:\s*([\s\S]+)/i);
-    feedback = feedbackMatch
-      ? feedbackMatch[1].trim()
-      : input.exercise.explanation;
+    const aiFeedback = feedbackMatch?.[1]?.trim();
+    if (aiFeedback) {
+      feedback = enrichFeedbackWithConstruction({
+        language: input.language,
+        correct: isCorrect,
+        feedback: aiFeedback,
+        instruction: input.exercise.instruction,
+        explanation: bankExplanation,
+        exerciseType: input.exercise.type,
+      });
+    } else if (isCorrect) {
+      feedback = formatBankTutorFeedback({
+        language: input.language,
+        correct: true,
+        explanation: bankExplanation,
+        instruction: input.exercise.instruction,
+        exerciseType: input.exercise.type,
+      });
+    }
   } catch (err) {
     console.warn("[exercises] AI check failed:", (err as Error).message);
-    feedback = input.exercise.explanation;
   }
 
   await persistExerciseOutcome({

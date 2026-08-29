@@ -1,4 +1,5 @@
-import type { InterfaceLanguage } from "@/types";
+import type { ExerciseType, InterfaceLanguage } from "@/types";
+import { enrichFeedbackWithConstruction } from "@/lib/exercise-construction-hint";
 
 const CYRILLIC = /[\u0400-\u04FF]/;
 
@@ -106,18 +107,30 @@ export function localizeBankExplanation(
 
 /**
  * Tutor-style framing around bank explanations (no AI generation of items).
+ * For free-text items, appends the construction formula and a short note that
+ * equivalent wordings with the same tense pattern can also be acceptable.
  */
 export function formatBankTutorFeedback(input: {
   language?: InterfaceLanguage;
   correct: boolean;
   explanation: string;
+  instruction?: string | null;
+  exerciseType?: ExerciseType;
 }): string {
   const lang = input.language ?? "ru";
   const explanation = localizeBankExplanation(input.explanation, lang);
-  if (input.correct) {
-    return `${pick(PRAISE[lang] ?? PRAISE.ru)} ${explanation}`;
-  }
-  return `${pick(MISTAKE_INTRO[lang] ?? MISTAKE_INTRO.ru)} ${explanation}`;
+  const base = input.correct
+    ? `${pick(PRAISE[lang] ?? PRAISE.ru)} ${explanation}`
+    : `${pick(MISTAKE_INTRO[lang] ?? MISTAKE_INTRO.ru)} ${explanation}`;
+
+  return enrichFeedbackWithConstruction({
+    language: lang,
+    correct: input.correct,
+    feedback: base,
+    instruction: input.instruction,
+    explanation: input.explanation,
+    exerciseType: input.exerciseType,
+  });
 }
 
 /** Short session wrap-up after a round of N bank exercises. */
