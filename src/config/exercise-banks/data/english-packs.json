@@ -545,7 +545,7 @@
           "are you a teacher"
         ],
         "instruction": "Translate to English",
-        "explanation": "Are you…?",
+        "explanation": "Are you…? Образец: Are you a teacher?.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -557,7 +557,7 @@
           "he is my brother"
         ],
         "instruction": "Translate to English",
-        "explanation": "He is…",
+        "explanation": "He is… Образец: He is my brother.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -570,7 +570,7 @@
           "this is a book"
         ],
         "instruction": "Translate to English",
-        "explanation": "It is a…",
+        "explanation": "It is a… Образец: It is a book.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -582,7 +582,7 @@
           "i am not hungry"
         ],
         "instruction": "Translate to English",
-        "explanation": "I am not…",
+        "explanation": "I am not… Образец: I am not hungry.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -594,7 +594,7 @@
           "Is she home?"
         ],
         "instruction": "Translate to English",
-        "explanation": "Is she…?",
+        "explanation": "Is she…? Образец: Is she at home?.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -606,7 +606,7 @@
           "we are in the park"
         ],
         "instruction": "Translate to English",
-        "explanation": "We are in…",
+        "explanation": "We are in… Образец: We are in the park.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -628,7 +628,7 @@
           "are you ready"
         ],
         "instruction": "Translate to English",
-        "explanation": "Are you…?",
+        "explanation": "Are you…? Образец: Are you ready?.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -664,7 +664,7 @@
           "i am from Russia"
         ],
         "instruction": "Translate to English",
-        "explanation": "I am from…",
+        "explanation": "I am from… Образец: I am from Russia.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -688,7 +688,7 @@
           "We aren't tired"
         ],
         "instruction": "Translate to English",
-        "explanation": "We are not…",
+        "explanation": "We are not… Образец: We are not tired.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -700,7 +700,7 @@
           "she is my sister"
         ],
         "instruction": "Translate to English",
-        "explanation": "She is…",
+        "explanation": "She is… Образец: She is my sister.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -723,7 +723,7 @@
           "you are very kind"
         ],
         "instruction": "Translate to English",
-        "explanation": "You are…",
+        "explanation": "You are… Образец: You are very kind.",
         "grammarTopic": "eng-a1-be"
       }
     ],
@@ -747,7 +747,7 @@
           "she is from London"
         ],
         "instruction": "Correct the mistake",
-        "explanation": "She → is.",
+        "explanation": "She → is. Исправьте на: She is from London.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -758,7 +758,7 @@
           "they are happy"
         ],
         "instruction": "Correct the mistake",
-        "explanation": "They → are.",
+        "explanation": "They → are. Исправьте на: They are happy.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -780,7 +780,7 @@
           "he is my brother"
         ],
         "instruction": "Correct the mistake",
-        "explanation": "He → is.",
+        "explanation": "He → is. Исправьте на: He is my brother.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -791,7 +791,7 @@
           "we are in the park"
         ],
         "instruction": "Correct the mistake",
-        "explanation": "We → are.",
+        "explanation": "We → are. Исправьте на: We are in the park.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -802,7 +802,7 @@
           "it is cold today"
         ],
         "instruction": "Correct the mistake",
-        "explanation": "It → is.",
+        "explanation": "It → is. Исправьте на: It is cold today.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -813,7 +813,7 @@
           "you are very kind"
         ],
         "instruction": "Correct the mistake",
-        "explanation": "You → are.",
+        "explanation": "You → are. Исправьте на: You are very kind.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -847,7 +847,7 @@
           "i am not hungry"
         ],
         "instruction": "Correct the mistake",
-        "explanation": "I → am.",
+        "explanation": "I → am. Исправьте на: I am not hungry.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -869,7 +869,7 @@
           "this is my bag"
         ],
         "instruction": "Correct the mistake",
-        "explanation": "This → is.",
+        "explanation": "This → is. Исправьте на: This is my bag.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -891,7 +891,7 @@
           "we are friends"
         ],
         "instruction": "Correct the mistake",
-        "explanation": "We → are.",
+        "explanation": "We → are. Исправьте на: We are friends.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -935,7 +935,7 @@
           "that is interesting"
         ],
         "instruction": "Correct the mistake",
-        "explanation": "That → is.",
+        "explanation": "That → is. Исправьте на: That is interesting.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -1024,7 +1024,7 @@
         "answer": "He is my brother",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "He + is…",
+        "explanation": "He + is… Ответ: He is my brother.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -1055,7 +1055,7 @@
         "answer": "It is cold today",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "It + is…",
+        "explanation": "It + is… Ответ: It is cold today.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -1070,7 +1070,7 @@
         "answer": "You are very kind",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "You + are…",
+        "explanation": "You + are… Ответ: You are very kind.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -1085,7 +1085,7 @@
         "answer": "My name is Pavel",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "My name is…",
+        "explanation": "My name is… Ответ: My name is Pavel.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -1102,7 +1102,7 @@
           "Is she from Spain?"
         ],
         "instruction": "Build the sentence",
-        "explanation": "Is + she…",
+        "explanation": "Is + she… Ответ: Is she from Spain.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -1117,7 +1117,7 @@
         "answer": "I am not hungry",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "I am not…",
+        "explanation": "I am not… Ответ: I am not hungry.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -1149,7 +1149,7 @@
         "answer": "This is my bag",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "This + is…",
+        "explanation": "This + is… Ответ: This is my bag.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -1165,7 +1165,7 @@
           "Are they ready?"
         ],
         "instruction": "Build the sentence",
-        "explanation": "Are + they…",
+        "explanation": "Are + they… Ответ: Are they ready.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -1179,7 +1179,7 @@
         "answer": "We are friends",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "We + are…",
+        "explanation": "We + are… Ответ: We are friends.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -1210,7 +1210,7 @@
           "Am I next?"
         ],
         "instruction": "Build the sentence",
-        "explanation": "Am + I…",
+        "explanation": "Am + I… Ответ: Am I next.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -1239,7 +1239,7 @@
         "answer": "That is interesting",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "That + is…",
+        "explanation": "That + is… Ответ: That is interesting.",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -1254,7 +1254,7 @@
         "answer": "I am from Russia",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "I am from…",
+        "explanation": "I am from… Ответ: I am from Russia.",
         "grammarTopic": "eng-a1-be"
       }
     ]
@@ -1810,7 +1810,7 @@
           "i don't like coffee"
         ],
         "instruction": "Translate to English",
-        "explanation": "I → don't.",
+        "explanation": "I → don't. Образец: I don't like coffee..",
         "grammarTopic": "eng-a1-present-simple"
       },
       {
@@ -1823,7 +1823,7 @@
           "She goes to school by bus"
         ],
         "instruction": "Translate to English",
-        "explanation": "She → goes.",
+        "explanation": "She → goes. Образец: She goes to school by bus..",
         "grammarTopic": "eng-a1-present-simple"
       },
       {
@@ -1875,7 +1875,7 @@
           "We have dinner at 7"
         ],
         "instruction": "Translate to English",
-        "explanation": "We → have.",
+        "explanation": "We → have. Образец: We have dinner at 7..",
         "grammarTopic": "eng-a1-present-simple"
       },
       {
@@ -1901,7 +1901,7 @@
           "It rains a lot in autumn"
         ],
         "instruction": "Translate to English",
-        "explanation": "It → rains.",
+        "explanation": "It → rains. Образец: It rains a lot in autumn..",
         "grammarTopic": "eng-a1-present-simple"
       },
       {
@@ -1914,7 +1914,7 @@
           "You walk very fast"
         ],
         "instruction": "Translate to English",
-        "explanation": "You → walk.",
+        "explanation": "You → walk. Образец: You walk very fast..",
         "grammarTopic": "eng-a1-present-simple"
       },
       {
@@ -1927,7 +1927,7 @@
           "The shop opens at 9"
         ],
         "instruction": "Translate to English",
-        "explanation": "It → opens.",
+        "explanation": "It → opens. Образец: The shop opens at 9..",
         "grammarTopic": "eng-a1-present-simple"
       },
       {
@@ -1940,7 +1940,7 @@
           "I listen to music every morning"
         ],
         "instruction": "Translate to English",
-        "explanation": "I → listen.",
+        "explanation": "I → listen. Образец: I listen to music every morning..",
         "grammarTopic": "eng-a1-present-simple"
       },
       {
@@ -1981,7 +1981,7 @@
           "He has breakfast at home"
         ],
         "instruction": "Translate to English",
-        "explanation": "He → has.",
+        "explanation": "He → has. Образец: He has breakfast at home..",
         "grammarTopic": "eng-a1-present-simple"
       },
       {
@@ -2007,7 +2007,7 @@
           "The sun rises in the east"
         ],
         "instruction": "Translate to English",
-        "explanation": "It → rises.",
+        "explanation": "It → rises. Образец: The sun rises in the east..",
         "grammarTopic": "eng-a1-present-simple"
       },
       {
@@ -2020,7 +2020,7 @@
           "We go to the gym on Mondays"
         ],
         "instruction": "Translate to English",
-        "explanation": "We → go.",
+        "explanation": "We → go. Образец: We go to the gym on Mondays..",
         "grammarTopic": "eng-a1-present-simple"
       },
       {
@@ -3245,7 +3245,7 @@
           "How old are you"
         ],
         "instruction": "Translate to English",
-        "explanation": "How old…?",
+        "explanation": "How old…? Образец: How old are you?.",
         "grammarTopic": "eng-a1-questions"
       },
       {
@@ -3297,7 +3297,7 @@
           "What is your favourite colour"
         ],
         "instruction": "Translate to English",
-        "explanation": "What is…?",
+        "explanation": "What is…? Образец: What is your favourite colour?.",
         "grammarTopic": "eng-a1-questions"
       },
       {
@@ -3375,7 +3375,7 @@
           "What time is it"
         ],
         "instruction": "Translate to English",
-        "explanation": "What time…?",
+        "explanation": "What time…? Образец: What time is it?.",
         "grammarTopic": "eng-a1-questions"
       },
       {
@@ -3388,7 +3388,7 @@
           "Where is the nearest station"
         ],
         "instruction": "Translate to English",
-        "explanation": "Where is…?",
+        "explanation": "Where is…? Образец: Where is the nearest station?.",
         "grammarTopic": "eng-a1-questions"
       },
       {
@@ -3427,7 +3427,7 @@
           "When does the film start"
         ],
         "instruction": "Translate to English",
-        "explanation": "When does…?",
+        "explanation": "When does…? Образец: When does the film start?.",
         "grammarTopic": "eng-a1-questions"
       },
       {
@@ -4676,7 +4676,7 @@
           "There are two windows in the room"
         ],
         "instruction": "Translate to English",
-        "explanation": "Two → are.",
+        "explanation": "Two → are. Образец: There are two windows in the room..",
         "grammarTopic": "eng-a1-there-is-are"
       },
       {
@@ -5516,7 +5516,7 @@
         ],
         "answer": "speak",
         "instruction": "Choose the correct answer",
-        "explanation": "can + base.",
+        "explanation": "can + base. Нужно «speak».",
         "grammarTopic": "eng-a1-can"
       },
       {
@@ -5572,7 +5572,7 @@
         ],
         "answer": "play",
         "instruction": "Choose the correct answer",
-        "explanation": "can + base.",
+        "explanation": "can + base. Нужно «play».",
         "grammarTopic": "eng-a1-can"
       },
       {
@@ -5586,7 +5586,7 @@
         ],
         "answer": "can",
         "instruction": "Choose the correct answer",
-        "explanation": "ability.",
+        "explanation": "ability. Нужно «can».",
         "grammarTopic": "eng-a1-can"
       },
       {
@@ -5628,7 +5628,7 @@
         ],
         "answer": "sing",
         "instruction": "Choose the correct answer",
-        "explanation": "can + base.",
+        "explanation": "can + base. Нужно «sing».",
         "grammarTopic": "eng-a1-can"
       },
       {
@@ -5642,7 +5642,7 @@
         ],
         "answer": "can",
         "instruction": "Choose the correct answer",
-        "explanation": "permission.",
+        "explanation": "permission. Нужно «can».",
         "grammarTopic": "eng-a1-can"
       },
       {
@@ -5684,7 +5684,7 @@
         ],
         "answer": "catch",
         "instruction": "Choose the correct answer",
-        "explanation": "can + base.",
+        "explanation": "can + base. Нужно «catch».",
         "grammarTopic": "eng-a1-can"
       },
       {
@@ -5712,7 +5712,7 @@
         ],
         "answer": "speak",
         "instruction": "Choose the correct answer",
-        "explanation": "can + base.",
+        "explanation": "can + base. Нужно «speak».",
         "grammarTopic": "eng-a1-can"
       },
       {
@@ -5788,7 +5788,7 @@
           "speak"
         ],
         "instruction": "Fill in the blank",
-        "explanation": "can + base.",
+        "explanation": "can + base. Нужно «speak».",
         "grammarTopic": "eng-a1-can"
       },
       {
@@ -5836,7 +5836,7 @@
           "play"
         ],
         "instruction": "Fill in the blank",
-        "explanation": "can + base.",
+        "explanation": "can + base. Нужно «play».",
         "grammarTopic": "eng-a1-can"
       },
       {
@@ -5848,7 +5848,7 @@
           "can"
         ],
         "instruction": "Fill in the blank",
-        "explanation": "ability.",
+        "explanation": "ability. Нужно «can».",
         "grammarTopic": "eng-a1-can"
       },
       {
@@ -5884,7 +5884,7 @@
           "sing"
         ],
         "instruction": "Fill in the blank",
-        "explanation": "can + base.",
+        "explanation": "can + base. Нужно «sing».",
         "grammarTopic": "eng-a1-can"
       },
       {
@@ -5896,7 +5896,7 @@
           "can"
         ],
         "instruction": "Fill in the blank",
-        "explanation": "permission.",
+        "explanation": "permission. Нужно «can».",
         "grammarTopic": "eng-a1-can"
       },
       {
@@ -5932,7 +5932,7 @@
           "catch"
         ],
         "instruction": "Fill in the blank",
-        "explanation": "can + base.",
+        "explanation": "can + base. Нужно «catch».",
         "grammarTopic": "eng-a1-can"
       },
       {
@@ -5956,7 +5956,7 @@
           "speak"
         ],
         "instruction": "Fill in the blank",
-        "explanation": "can + base.",
+        "explanation": "can + base. Нужно «speak».",
         "grammarTopic": "eng-a1-can"
       },
       {
@@ -6035,7 +6035,7 @@
           "They can speak English"
         ],
         "instruction": "Translate to English",
-        "explanation": "can + base.",
+        "explanation": "can + base. Образец: They can speak English..",
         "grammarTopic": "eng-a1-can"
       },
       {
@@ -6087,7 +6087,7 @@
           "He can play the piano"
         ],
         "instruction": "Translate to English",
-        "explanation": "can + base.",
+        "explanation": "can + base. Образец: He can play the piano..",
         "grammarTopic": "eng-a1-can"
       },
       {
@@ -6100,7 +6100,7 @@
           "Birds can fly"
         ],
         "instruction": "Translate to English",
-        "explanation": "ability.",
+        "explanation": "ability. Образец: Birds can fly..",
         "grammarTopic": "eng-a1-can"
       },
       {
@@ -6113,7 +6113,7 @@
           "I can't hear you"
         ],
         "instruction": "Translate to English",
-        "explanation": "can't hear.",
+        "explanation": "can't hear. Образец: I can't hear you..",
         "grammarTopic": "eng-a1-can"
       },
       {
@@ -6126,7 +6126,7 @@
           "Can you cook"
         ],
         "instruction": "Translate to English",
-        "explanation": "Can you…?",
+        "explanation": "Can you…? Образец: Can you cook?.",
         "grammarTopic": "eng-a1-can"
       },
       {
@@ -6139,7 +6139,7 @@
           "She can sing very well"
         ],
         "instruction": "Translate to English",
-        "explanation": "can + base.",
+        "explanation": "can + base. Образец: She can sing very well..",
         "grammarTopic": "eng-a1-can"
       },
       {
@@ -6152,7 +6152,7 @@
           "Children can swim here"
         ],
         "instruction": "Translate to English",
-        "explanation": "permission.",
+        "explanation": "permission. Образец: Children can swim here..",
         "grammarTopic": "eng-a1-can"
       },
       {
@@ -6165,7 +6165,7 @@
           "He can't come today"
         ],
         "instruction": "Translate to English",
-        "explanation": "can't come.",
+        "explanation": "can't come. Образец: He can't come today..",
         "grammarTopic": "eng-a1-can"
       },
       {
@@ -6178,7 +6178,7 @@
           "Can we help"
         ],
         "instruction": "Translate to English",
-        "explanation": "Can we…?",
+        "explanation": "Can we…? Образец: Can we help?.",
         "grammarTopic": "eng-a1-can"
       },
       {
@@ -6191,7 +6191,7 @@
           "My dog can catch a ball"
         ],
         "instruction": "Translate to English",
-        "explanation": "can + base.",
+        "explanation": "can + base. Образец: My dog can catch a ball..",
         "grammarTopic": "eng-a1-can"
       },
       {
@@ -6217,7 +6217,7 @@
           "I can speak Spanish a little"
         ],
         "instruction": "Translate to English",
-        "explanation": "can + base.",
+        "explanation": "can + base. Образец: I can speak Spanish a little..",
         "grammarTopic": "eng-a1-can"
       },
       {
@@ -6230,7 +6230,7 @@
           "Can she ride a bike"
         ],
         "instruction": "Translate to English",
-        "explanation": "Can she…?",
+        "explanation": "Can she…? Образец: Can she ride a bike?.",
         "grammarTopic": "eng-a1-can"
       }
     ],
@@ -7335,7 +7335,7 @@
           "She is at home"
         ],
         "instruction": "Translate to English",
-        "explanation": "at home.",
+        "explanation": "at home. Образец: She is at home..",
         "grammarTopic": "eng-a1-prepositions"
       },
       {
@@ -7348,7 +7348,7 @@
           "We live in London"
         ],
         "instruction": "Translate to English",
-        "explanation": "in + city.",
+        "explanation": "in + city. Образец: We live in London..",
         "grammarTopic": "eng-a1-prepositions"
       },
       {
@@ -7374,7 +7374,7 @@
           "The café is next to the bank"
         ],
         "instruction": "Translate to English",
-        "explanation": "next to.",
+        "explanation": "next to. Образец: The café is next to the bank..",
         "grammarTopic": "eng-a1-prepositions"
       },
       {
@@ -7491,7 +7491,7 @@
           "The dog is under the sofa"
         ],
         "instruction": "Translate to English",
-        "explanation": "under.",
+        "explanation": "under. Образец: The dog is under the sofa..",
         "grammarTopic": "eng-a1-prepositions"
       },
       {
@@ -8326,7 +8326,7 @@
         "question": "Мы встретили старых друзей.",
         "answer": "We met old friends",
         "instruction": "Past simple irregular",
-        "explanation": "meet → met.",
+        "explanation": "meet → met. Образец: We met old friends.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
       },
@@ -8362,7 +8362,7 @@
         "question": "Мы провели отличные выходные.",
         "answer": "We had a great weekend",
         "instruction": "Past simple — have",
-        "explanation": "have → had.",
+        "explanation": "have → had. Образец: We had a great weekend.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
       },
@@ -8654,7 +8654,7 @@
         ],
         "answer": "We met our old friends in York",
         "instruction": "Past simple — meet",
-        "explanation": "meet → met.",
+        "explanation": "meet → met. Ответ: We met our old friends in York.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
       },
@@ -8725,7 +8725,7 @@
         ],
         "answer": "We had a great weekend in Edinburgh",
         "instruction": "Past simple — have",
-        "explanation": "have → had.",
+        "explanation": "have → had. Ответ: We had a great weekend in Edinburgh.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
       },
@@ -11685,7 +11685,7 @@
         "question": "Я думаю, что он согласится.",
         "answer": "I think he will agree",
         "instruction": "Will — opinion",
-        "explanation": "will agree.",
+        "explanation": "will agree. Образец: I think he will agree.",
         "grammarTopic": "eng-b1-future-conditional",
         "acceptableAnswers": []
       },
@@ -11694,7 +11694,7 @@
         "question": "Мы проведём отпуск в Италии.",
         "answer": "We will spend our holiday in Italy",
         "instruction": "Will — plan",
-        "explanation": "will spend…",
+        "explanation": "will spend… Образец: We will spend our holiday in Italy.",
         "grammarTopic": "eng-b1-future-conditional",
         "acceptableAnswers": []
       },
@@ -12034,7 +12034,7 @@
         ],
         "answer": "I think he will agree",
         "instruction": "Will — opinion",
-        "explanation": "will agree.",
+        "explanation": "will agree. Ответ: I think he will agree.",
         "grammarTopic": "eng-b1-future-conditional",
         "acceptableAnswers": []
       },
@@ -15081,7 +15081,7 @@
         "question": "Картина была украдена.",
         "answer": "The painting was stolen",
         "instruction": "Past passive",
-        "explanation": "was stolen.",
+        "explanation": "was stolen. Образец: The painting was stolen.",
         "grammarTopic": "eng-b2-passive",
         "acceptableAnswers": []
       },
@@ -15434,7 +15434,7 @@
         ],
         "answer": "The painting was stolen",
         "instruction": "Past passive",
-        "explanation": "was stolen.",
+        "explanation": "was stolen. Ответ: The painting was stolen.",
         "grammarTopic": "eng-b2-passive",
         "acceptableAnswers": []
       },
@@ -15582,9 +15582,9 @@
         "question": "This is the book ___ I told you about.",
         "options": [
           "that",
-          "That",
-          "which",
-          "Which"
+          "who",
+          "where",
+          "when"
         ],
         "answer": "that",
         "instruction": "Choose the correct answer",
@@ -15635,7 +15635,7 @@
         "question": "Она сказала: «Я устала».",
         "answer": "She said that she was tired",
         "instruction": "Reported speech — present",
-        "explanation": "am → was.",
+        "explanation": "am → was. Образец: She said that she was tired.",
         "grammarTopic": "eng-b2-reported-clauses",
         "acceptableAnswers": []
       },
@@ -15716,7 +15716,7 @@
         "question": "Он спросил: «Который час?»",
         "answer": "He asked what time it was",
         "instruction": "Reported question",
-        "explanation": "is → was.",
+        "explanation": "is → was. Образец: He asked what time it was.",
         "grammarTopic": "eng-b2-reported-clauses",
         "acceptableAnswers": []
       },
@@ -15763,7 +15763,7 @@
         "question": "She said: \"I am tired.\"",
         "answer": "She said (that) she was tired.",
         "instruction": "Reported speech — present",
-        "explanation": "am → was.",
+        "explanation": "am → was. Исправьте на: She said (that) she was tired..",
         "grammarTopic": "eng-b2-reported-clauses",
         "acceptableAnswers": []
       },
@@ -15844,7 +15844,7 @@
         "question": "He asked: \"What time is it?\"",
         "answer": "He asked what time it was.",
         "instruction": "Reported question",
-        "explanation": "is → was.",
+        "explanation": "is → was. Исправьте на: He asked what time it was..",
         "grammarTopic": "eng-b2-reported-clauses",
         "acceptableAnswers": []
       },
@@ -18302,7 +18302,7 @@
         "question": "В целом, тенденция положительная.",
         "answer": "Overall, the trend is positive",
         "instruction": "Summary",
-        "explanation": "Overall…",
+        "explanation": "Overall… Образец: Overall, the trend is positive.",
         "grammarTopic": "eng-c1-review",
         "acceptableAnswers": []
       },
@@ -18764,7 +18764,7 @@
         ],
         "answer": "Overall, the trend is positive",
         "instruction": "Build summary",
-        "explanation": "Overall…",
+        "explanation": "Overall… Ответ: Overall, the trend is positive.",
         "grammarTopic": "eng-c1-review",
         "acceptableAnswers": []
       },
@@ -18840,7 +18840,7 @@
         ],
         "answer": "Thanks to new technology, progress has accelerated",
         "instruction": "Build thanks to",
-        "explanation": "Thanks to…",
+        "explanation": "Thanks to… Ответ: Thanks to new technology, progress has accelerated.",
         "grammarTopic": "eng-c1-review",
         "acceptableAnswers": []
       },
@@ -19389,7 +19389,7 @@
           "He bought an apple."
         ],
         "instruction": "Translate to English",
-        "explanation": "Apple → an.",
+        "explanation": "Apple → an. Образец: He bought an apple.",
         "grammarTopic": "eng-a1-articles-basics"
       },
       {
@@ -19526,7 +19526,7 @@
           "I need one hour"
         ],
         "instruction": "Translate to English",
-        "explanation": "Hour → an.",
+        "explanation": "Hour → an. Образец: I need an hour.",
         "grammarTopic": "eng-a1-articles-basics"
       }
     ],
@@ -19631,7 +19631,7 @@
           "I need an hour"
         ],
         "instruction": "Fix the grammar mistake",
-        "explanation": "Hour → an.",
+        "explanation": "Hour → an. Исправьте на: I need an hour..",
         "grammarTopic": "eng-a1-articles-basics"
       },
       {
@@ -19752,7 +19752,7 @@
           "He bought an apple"
         ],
         "instruction": "Fix the grammar mistake",
-        "explanation": "Apple → an.",
+        "explanation": "Apple → an. Исправьте на: He bought an apple..",
         "grammarTopic": "eng-a1-articles-basics"
       }
     ],
@@ -19932,7 +19932,7 @@
         "answer": "I need an hour",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "Hour → an.",
+        "explanation": "Hour → an. Ответ: I need an hour.",
         "grammarTopic": "eng-a1-articles-basics"
       },
       {
@@ -20027,7 +20027,7 @@
         "answer": "He bought an apple",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "Apple → an.",
+        "explanation": "Apple → an. Ответ: He bought an apple.",
         "grammarTopic": "eng-a1-articles-basics"
       },
       {
@@ -20609,7 +20609,7 @@
           "It's my book"
         ],
         "instruction": "Translate to English",
-        "explanation": "my + noun.",
+        "explanation": "my + noun. Образец: This is my book.",
         "grammarTopic": "eng-a2-possessives"
       },
       {
@@ -20644,7 +20644,7 @@
           "The phone is hers"
         ],
         "instruction": "Translate to English",
-        "explanation": "hers.",
+        "explanation": "hers. Образец: This phone is hers.",
         "grammarTopic": "eng-a2-possessives"
       },
       {
@@ -20667,7 +20667,7 @@
           "That car is ours."
         ],
         "instruction": "Translate to English",
-        "explanation": "ours.",
+        "explanation": "ours. Образец: That car is ours.",
         "grammarTopic": "eng-a2-possessives"
       },
       {
@@ -20678,7 +20678,7 @@
           "He forgot his wallet."
         ],
         "instruction": "Translate to English",
-        "explanation": "his + noun.",
+        "explanation": "his + noun. Образец: He forgot his wallet.",
         "grammarTopic": "eng-a2-possessives"
       },
       {
@@ -20792,7 +20792,7 @@
           "A friend of mine called me"
         ],
         "instruction": "Fix the grammar mistake",
-        "explanation": "of mine.",
+        "explanation": "of mine. Исправьте на: A friend of mine called me..",
         "grammarTopic": "eng-a2-possessives"
       },
       {
@@ -21072,7 +21072,7 @@
         ],
         "answer": "Her dog loves the park",
         "instruction": "Притяжательные — her",
-        "explanation": "Her + dog.",
+        "explanation": "Her + dog. Ответ: Her dog loves the park.",
         "grammarTopic": "eng-a1-possessives",
         "acceptableAnswers": []
       },
@@ -21152,7 +21152,7 @@
         ],
         "answer": "Is this his pen?",
         "instruction": "Притяжательные — his",
-        "explanation": "his + pen.",
+        "explanation": "his + pen. Ответ: Is this his pen?.",
         "grammarTopic": "eng-a1-possessives",
         "acceptableAnswers": []
       },
@@ -21775,7 +21775,7 @@
           "There were few cars on the road."
         ],
         "instruction": "Translate to English",
-        "explanation": "few + cars.",
+        "explanation": "few + cars. Образец: There were few cars on the road.",
         "grammarTopic": "eng-a2-countable-uncountable"
       },
       {
@@ -21997,7 +21997,7 @@
           "There were few cars on the road"
         ],
         "instruction": "Fix the grammar mistake",
-        "explanation": "Cars → few.",
+        "explanation": "Cars → few. Исправьте на: There were few cars on the road..",
         "grammarTopic": "eng-a2-countable-uncountable"
       },
       {
@@ -22322,7 +22322,7 @@
         "answer": "There were few cars",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "few + cars.",
+        "explanation": "few + cars. Ответ: There were few cars.",
         "grammarTopic": "eng-a2-countable-uncountable"
       },
       {
@@ -22950,7 +22950,7 @@
           "I have never seen that movie"
         ],
         "instruction": "Translate to English",
-        "explanation": "never.",
+        "explanation": "never. Образец: I have never seen that film.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -22961,7 +22961,7 @@
           "She's just finished her homework"
         ],
         "instruction": "Translate to English",
-        "explanation": "just.",
+        "explanation": "just. Образец: She has just finished her homework.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -22984,7 +22984,7 @@
           "I have already had lunch"
         ],
         "instruction": "Translate to English",
-        "explanation": "already.",
+        "explanation": "already. Образец: I have already eaten lunch.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -23007,7 +23007,7 @@
           "We've never met before"
         ],
         "instruction": "Translate to English",
-        "explanation": "never.",
+        "explanation": "never. Образец: We have never met before.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -23018,7 +23018,7 @@
           "Has she ever tried sushi?"
         ],
         "instruction": "Translate to English",
-        "explanation": "ever.",
+        "explanation": "ever. Образец: Has she ever tried sushi?.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -23030,7 +23030,7 @@
           "They have just left the building"
         ],
         "instruction": "Translate to English",
-        "explanation": "just.",
+        "explanation": "just. Образец: They have just left.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -23042,7 +23042,7 @@
           "I have already washed the dishes"
         ],
         "instruction": "Translate to English",
-        "explanation": "already.",
+        "explanation": "already. Образец: I have already done the washing-up.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -23053,7 +23053,7 @@
           "Have you finished your project yet?"
         ],
         "instruction": "Translate to English",
-        "explanation": "yet.",
+        "explanation": "yet. Образец: Have you finished your project yet?.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -23065,7 +23065,7 @@
           "I have never been to Japan"
         ],
         "instruction": "Translate to English",
-        "explanation": "never.",
+        "explanation": "never. Образец: I have never visited Japan.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -23076,7 +23076,7 @@
           "She's just come back from work"
         ],
         "instruction": "Translate to English",
-        "explanation": "just.",
+        "explanation": "just. Образец: She has just returned from work.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -23087,7 +23087,7 @@
           "Have you ever ridden a horse?"
         ],
         "instruction": "Translate to English",
-        "explanation": "ever.",
+        "explanation": "ever. Образец: Have you ever ridden a horse?.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -23098,7 +23098,7 @@
           "We've already seen this episode"
         ],
         "instruction": "Translate to English",
-        "explanation": "already.",
+        "explanation": "already. Образец: We have already seen this episode.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -23109,7 +23109,7 @@
           "He has not paid the bill yet"
         ],
         "instruction": "Translate to English",
-        "explanation": "yet.",
+        "explanation": "yet. Образец: He hasn't paid the bill yet.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -23120,7 +23120,7 @@
           "I've never been so happy"
         ],
         "instruction": "Translate to English",
-        "explanation": "never + so.",
+        "explanation": "never + so. Образец: I have never been so happy.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -23131,7 +23131,7 @@
           "Has the train left yet?"
         ],
         "instruction": "Translate to English",
-        "explanation": "yet.",
+        "explanation": "yet. Образец: Has the train left yet?.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       }
     ],
@@ -23328,7 +23328,7 @@
           "We have already seen this episode"
         ],
         "instruction": "Fix the grammar mistake",
-        "explanation": "already.",
+        "explanation": "already. Исправьте на: We've already seen this episode..",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -23351,7 +23351,7 @@
           "I've never been so happy"
         ],
         "instruction": "Fix the grammar mistake",
-        "explanation": "never + so.",
+        "explanation": "never + so. Исправьте на: I have never been so happy..",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -23473,7 +23473,7 @@
         "answer": "I have never seen that film",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "never.",
+        "explanation": "never. Ответ: I have never seen that film.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -23490,7 +23490,7 @@
         "answer": "She has just finished her homework",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "just.",
+        "explanation": "just. Ответ: She has just finished her homework.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -23507,7 +23507,7 @@
           "Have they arrived yet?"
         ],
         "instruction": "Build the sentence",
-        "explanation": "yet.",
+        "explanation": "yet. Ответ: Have they arrived yet.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -23523,7 +23523,7 @@
         "answer": "I have already eaten lunch",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "already.",
+        "explanation": "already. Ответ: I have already eaten lunch.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -23555,7 +23555,7 @@
         "answer": "We have never met before",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "never.",
+        "explanation": "never. Ответ: We have never met before.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -23573,7 +23573,7 @@
           "Has she ever tried sushi?"
         ],
         "instruction": "Build the sentence",
-        "explanation": "ever.",
+        "explanation": "ever. Ответ: Has she ever tried sushi.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -23588,7 +23588,7 @@
         "answer": "They have just left",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "just.",
+        "explanation": "just. Ответ: They have just left.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -23605,7 +23605,7 @@
         "answer": "I have already done the washing-up",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "already.",
+        "explanation": "already. Ответ: I have already done the washing-up.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -23622,7 +23622,7 @@
           "Have you finished yet?"
         ],
         "instruction": "Build the sentence",
-        "explanation": "yet.",
+        "explanation": "yet. Ответ: Have you finished yet.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -23638,7 +23638,7 @@
         "answer": "I have never visited Japan",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "never.",
+        "explanation": "never. Ответ: I have never visited Japan.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -23653,7 +23653,7 @@
         "answer": "She has just returned",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "just.",
+        "explanation": "just. Ответ: She has just returned.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -23672,7 +23672,7 @@
           "Have you ever ridden a horse?"
         ],
         "instruction": "Build the sentence",
-        "explanation": "ever.",
+        "explanation": "ever. Ответ: Have you ever ridden a horse.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -23689,7 +23689,7 @@
         "answer": "We have already seen this episode",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "already.",
+        "explanation": "already. Ответ: We have already seen this episode.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
       {
@@ -23706,7 +23706,7 @@
         "answer": "He hasn't paid the bill yet",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "yet.",
+        "explanation": "yet. Ответ: He hasn't paid the bill yet.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       }
     ]
@@ -23878,7 +23878,7 @@
         ],
         "answer": "will catch",
         "instruction": "Choose the correct verb form",
-        "explanation": "First.",
+        "explanation": "First. Нужно «will catch».",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -23892,7 +23892,7 @@
         ],
         "answer": "would call",
         "instruction": "Choose the correct verb form",
-        "explanation": "Second.",
+        "explanation": "Second. Нужно «would call».",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -23906,7 +23906,7 @@
         ],
         "answer": "melts",
         "instruction": "Choose the correct verb form",
-        "explanation": "Zero.",
+        "explanation": "Zero. Нужно «melts».",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -23962,7 +23962,7 @@
         ],
         "answer": "will be",
         "instruction": "Choose the correct verb form",
-        "explanation": "First.",
+        "explanation": "First. Нужно «will be».",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24062,7 +24062,7 @@
           "Die"
         ],
         "instruction": "Fill in the present form",
-        "explanation": "Zero.",
+        "explanation": "Zero. Нужно «die».",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24086,7 +24086,7 @@
           "Heat"
         ],
         "instruction": "Fill in the present form",
-        "explanation": "Zero.",
+        "explanation": "Zero. Нужно «heat».",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24099,7 +24099,7 @@
           "was"
         ],
         "instruction": "Fill in the blank with the correct verb form",
-        "explanation": "Second.",
+        "explanation": "Second. Нужно «were».",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24112,7 +24112,7 @@
           "turns on"
         ],
         "instruction": "Fill in the present form",
-        "explanation": "Zero.",
+        "explanation": "Zero. Нужно «comes».",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24125,7 +24125,7 @@
           "is"
         ],
         "instruction": "Fill in the present form",
-        "explanation": "Zero.",
+        "explanation": "Zero. Нужно «gets».",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24137,7 +24137,7 @@
           "Had"
         ],
         "instruction": "Fill in the past form",
-        "explanation": "Second.",
+        "explanation": "Second. Нужно «had».",
         "grammarTopic": "eng-b1-conditionals-review"
       }
     ],
@@ -24162,7 +24162,7 @@
           "If you heat water to 100 degrees, it boils"
         ],
         "instruction": "Translate to English",
-        "explanation": "Zero.",
+        "explanation": "Zero. Образец: If you heat water to 100°C, it boils.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24174,7 +24174,7 @@
           "If it rains tomorrow, we will stay home"
         ],
         "instruction": "Translate to English",
-        "explanation": "First.",
+        "explanation": "First. Образец: If it rains tomorrow, we will stay at home.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24185,7 +24185,7 @@
           "If I had more time, I'd travel more"
         ],
         "instruction": "Translate to English",
-        "explanation": "Second.",
+        "explanation": "Second. Образец: If I had more time, I would travel more.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24196,7 +24196,7 @@
           "If she studied harder, she'd pass the exam"
         ],
         "instruction": "Translate to English",
-        "explanation": "Second.",
+        "explanation": "Second. Образец: If she studied harder, she would pass the exam.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24207,7 +24207,7 @@
           "If you mix blue and yellow, you get green."
         ],
         "instruction": "Translate to English",
-        "explanation": "Zero.",
+        "explanation": "Zero. Образец: If you mix blue and yellow, you get green.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24218,7 +24218,7 @@
           "If I see Tom, I'll tell him the news"
         ],
         "instruction": "Translate to English",
-        "explanation": "First.",
+        "explanation": "First. Образец: If I see Tom, I will tell him the news.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24241,7 +24241,7 @@
           "Ice melts if you heat it."
         ],
         "instruction": "Translate to English",
-        "explanation": "Zero.",
+        "explanation": "Zero. Образец: Ice melts if you heat it.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24252,7 +24252,7 @@
           "If they invite us, we'll go"
         ],
         "instruction": "Translate to English",
-        "explanation": "First.",
+        "explanation": "First. Образец: If they invite us, we will go.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24263,7 +24263,7 @@
           "If she was rich, she would buy a villa"
         ],
         "instruction": "Translate to English",
-        "explanation": "Second.",
+        "explanation": "Second. Образец: If she were rich, she would buy a villa.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24274,7 +24274,7 @@
           "Plants die if they do not get enough water"
         ],
         "instruction": "Translate to English",
-        "explanation": "Zero.",
+        "explanation": "Zero. Образец: Plants die if they don't get enough water.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24285,7 +24285,7 @@
           "If you hurry, you'll catch the bus"
         ],
         "instruction": "Translate to English",
-        "explanation": "First.",
+        "explanation": "First. Образец: If you hurry, you will catch the bus.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24296,7 +24296,7 @@
           "If I knew her number, I'd call her"
         ],
         "instruction": "Translate to English",
-        "explanation": "Second.",
+        "explanation": "Second. Образец: If I knew her number, I would call her.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24307,7 +24307,7 @@
           "If the sun shines, the snow melts"
         ],
         "instruction": "Translate to English",
-        "explanation": "Zero.",
+        "explanation": "Zero. Образец: If the sun shines, snow melts.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24318,7 +24318,7 @@
           "If he doesn't apologize, I won't speak to him"
         ],
         "instruction": "Translate to English",
-        "explanation": "First.",
+        "explanation": "First. Образец: If he doesn't apologise, I won't speak to him.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24329,7 +24329,7 @@
           "If we had a car, we'd drive to the coast"
         ],
         "instruction": "Translate to English",
-        "explanation": "Second.",
+        "explanation": "Second. Образец: If we had a car, we would drive to the coast.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24340,7 +24340,7 @@
           "Water freezes when it reaches zero degrees"
         ],
         "instruction": "Translate to English",
-        "explanation": "Zero.",
+        "explanation": "Zero. Образец: Water freezes when it reaches 0°C.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24351,7 +24351,7 @@
           "If you help me, I'll be grateful"
         ],
         "instruction": "Translate to English",
-        "explanation": "First.",
+        "explanation": "First. Образец: If you help me, I will be grateful.",
         "grammarTopic": "eng-b1-conditionals-review"
       }
     ],
@@ -24689,7 +24689,7 @@
           "If you heat water, it boils"
         ],
         "instruction": "Build the sentence",
-        "explanation": "Zero.",
+        "explanation": "Zero. Ответ: If you heat water it boils.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24710,7 +24710,7 @@
           "If it rains, we'll stay home"
         ],
         "instruction": "Build the sentence",
-        "explanation": "First.",
+        "explanation": "First. Ответ: If it rains we will stay home.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24731,7 +24731,7 @@
           "If I had more time, I would travel"
         ],
         "instruction": "Build the sentence",
-        "explanation": "Second.",
+        "explanation": "Second. Ответ: If I had more time I would travel.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24751,7 +24751,7 @@
           "If she studied harder, she would pass"
         ],
         "instruction": "Build the sentence",
-        "explanation": "Second.",
+        "explanation": "Second. Ответ: If she studied harder she would pass.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24773,7 +24773,7 @@
           "If you mix blue and yellow, you get green"
         ],
         "instruction": "Build the sentence",
-        "explanation": "Zero.",
+        "explanation": "Zero. Ответ: If you mix blue and yellow you get green.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24794,7 +24794,7 @@
           "If I see Tom, I will tell him"
         ],
         "instruction": "Build the sentence",
-        "explanation": "First.",
+        "explanation": "First. Ответ: If I see Tom I will tell him.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24832,7 +24832,7 @@
         "answer": "Ice melts if you heat it",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "Zero.",
+        "explanation": "Zero. Ответ: Ice melts if you heat it.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24852,7 +24852,7 @@
           "If they invite us, we will go"
         ],
         "instruction": "Build the sentence",
-        "explanation": "First.",
+        "explanation": "First. Ответ: If they invite us we will go.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24874,7 +24874,7 @@
           "If she were rich, she would buy a villa"
         ],
         "instruction": "Build the sentence",
-        "explanation": "Second.",
+        "explanation": "Second. Ответ: If she were rich she would buy a villa.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24892,7 +24892,7 @@
         "answer": "Plants die if they don't get water",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "Zero.",
+        "explanation": "Zero. Ответ: Plants die if they don't get water.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24913,7 +24913,7 @@
           "If you hurry, you will catch the bus"
         ],
         "instruction": "Build the sentence",
-        "explanation": "First.",
+        "explanation": "First. Ответ: If you hurry you will catch the bus.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24934,7 +24934,7 @@
           "If I knew her number, I would call"
         ],
         "instruction": "Build the sentence",
-        "explanation": "Second.",
+        "explanation": "Second. Ответ: If I knew her number I would call.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24953,7 +24953,7 @@
           "If the sun shines, snow melts"
         ],
         "instruction": "Build the sentence",
-        "explanation": "Zero.",
+        "explanation": "Zero. Ответ: If the sun shines snow melts.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24973,7 +24973,7 @@
           "If he doesn't apologise, I won't speak"
         ],
         "instruction": "Build the sentence",
-        "explanation": "First.",
+        "explanation": "First. Ответ: If he doesn't apologise I won't speak.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -24994,7 +24994,7 @@
           "If we had a car, we would drive"
         ],
         "instruction": "Build the sentence",
-        "explanation": "Second.",
+        "explanation": "Second. Ответ: If we had a car we would drive.",
         "grammarTopic": "eng-b1-conditionals-review"
       }
     ]
@@ -25541,7 +25541,7 @@
           "He asked me if I was ready"
         ],
         "instruction": "Translate to English",
-        "explanation": "if + past.",
+        "explanation": "if + past. Образец: He asked if I was ready.",
         "grammarTopic": "eng-b1-reported-speech"
       },
       {
@@ -25563,7 +25563,7 @@
           "They told us to be quiet."
         ],
         "instruction": "Translate to English",
-        "explanation": "told us to…",
+        "explanation": "told us to… Образец: They told us to be quiet.",
         "grammarTopic": "eng-b1-reported-speech"
       },
       {
@@ -25586,7 +25586,7 @@
           "Mother told me to tidy my room"
         ],
         "instruction": "Translate to English",
-        "explanation": "told me to…",
+        "explanation": "told me to… Образец: Mum told me to tidy my room.",
         "grammarTopic": "eng-b1-reported-speech"
       },
       {
@@ -25608,7 +25608,7 @@
           "He said that he had already eaten"
         ],
         "instruction": "Translate to English",
-        "explanation": "have → had.",
+        "explanation": "have → had. Образец: He said he had already eaten.",
         "grammarTopic": "eng-b1-reported-speech"
       },
       {
@@ -25619,7 +25619,7 @@
           "They said that they were leaving"
         ],
         "instruction": "Translate to English",
-        "explanation": "are → were.",
+        "explanation": "are → were. Образец: They said they were leaving.",
         "grammarTopic": "eng-b1-reported-speech"
       },
       {
@@ -25686,7 +25686,7 @@
           "He said that his name was Paul"
         ],
         "instruction": "Translate to English",
-        "explanation": "is → was.",
+        "explanation": "is → was. Образец: He said his name was Paul.",
         "grammarTopic": "eng-b1-reported-speech"
       },
       {
@@ -25708,7 +25708,7 @@
           "He said that the meeting was at nine"
         ],
         "instruction": "Translate to English",
-        "explanation": "backshift.",
+        "explanation": "backshift. Образец: He said the meeting was at nine.",
         "grammarTopic": "eng-b1-reported-speech"
       },
       {
@@ -25719,7 +25719,7 @@
           "She asked whether we were ready"
         ],
         "instruction": "Translate to English",
-        "explanation": "if + were.",
+        "explanation": "if + were. Образец: She asked if we were ready.",
         "grammarTopic": "eng-b1-reported-speech"
       }
     ],
@@ -25829,7 +25829,7 @@
           "They told us to be quiet"
         ],
         "instruction": "Rewrite as reported speech",
-        "explanation": "told us to…",
+        "explanation": "told us to… Исправьте на: They told us to be quiet..",
         "grammarTopic": "eng-b1-reported-speech"
       },
       {
@@ -25877,7 +25877,7 @@
           "He said he had already eaten"
         ],
         "instruction": "Rewrite as reported speech",
-        "explanation": "have → had.",
+        "explanation": "have → had. Исправьте на: He said he had already eaten..",
         "grammarTopic": "eng-b1-reported-speech"
       },
       {
@@ -25900,7 +25900,7 @@
           "They said they were leaving"
         ],
         "instruction": "Rewrite as reported speech",
-        "explanation": "are → were.",
+        "explanation": "are → were. Исправьте на: They said they were leaving..",
         "grammarTopic": "eng-b1-reported-speech"
       },
       {
@@ -26066,7 +26066,7 @@
         "answer": "They told us to be quiet",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "told us to…",
+        "explanation": "told us to… Ответ: They told us to be quiet.",
         "grammarTopic": "eng-b1-reported-speech"
       },
       {
@@ -26083,7 +26083,7 @@
         "answer": "He asked if I was ready",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "if + past.",
+        "explanation": "if + past. Ответ: He asked if I was ready.",
         "grammarTopic": "eng-b1-reported-speech"
       },
       {
@@ -26117,7 +26117,7 @@
         "answer": "Mum told me to tidy my room",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "told me to…",
+        "explanation": "told me to… Ответ: Mum told me to tidy my room.",
         "grammarTopic": "eng-b1-reported-speech"
       },
       {
@@ -26134,7 +26134,7 @@
         "answer": "He said he had already eaten",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "have → had.",
+        "explanation": "have → had. Ответ: He said he had already eaten.",
         "grammarTopic": "eng-b1-reported-speech"
       },
       {
@@ -26168,7 +26168,7 @@
         "answer": "They said they were leaving",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "are → were.",
+        "explanation": "are → were. Ответ: They said they were leaving.",
         "grammarTopic": "eng-b1-reported-speech"
       },
       {
@@ -26185,7 +26185,7 @@
         "answer": "He told her not to worry",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "not to…",
+        "explanation": "not to… Ответ: He told her not to worry.",
         "grammarTopic": "eng-b1-reported-speech"
       },
       {
@@ -26203,7 +26203,7 @@
         "answer": "She said she would go to Paris",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "would.",
+        "explanation": "would. Ответ: She said she would go to Paris.",
         "grammarTopic": "eng-b1-reported-speech"
       },
       {
@@ -26238,7 +26238,7 @@
         "answer": "She said she had to leave",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "had to.",
+        "explanation": "had to. Ответ: She said she had to leave.",
         "grammarTopic": "eng-b1-reported-speech"
       },
       {
@@ -26255,7 +26255,7 @@
         "answer": "They asked us where we lived",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "wh + past.",
+        "explanation": "wh + past. Ответ: They asked us where we lived.",
         "grammarTopic": "eng-b1-reported-speech"
       },
       {
@@ -26272,7 +26272,7 @@
         "answer": "He said his name was Paul",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "was.",
+        "explanation": "was. Ответ: He said his name was Paul.",
         "grammarTopic": "eng-b1-reported-speech"
       },
       {
@@ -26307,7 +26307,7 @@
         "answer": "He said the meeting was at nine",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "backshift.",
+        "explanation": "backshift. Ответ: He said the meeting was at nine.",
         "grammarTopic": "eng-b1-reported-speech"
       }
     ]
@@ -26333,9 +26333,9 @@
         "question": "The book ___ I read was exciting.",
         "options": [
           "that",
-          "That",
-          "which",
-          "Which"
+          "who",
+          "where",
+          "when"
         ],
         "answer": "that",
         "instruction": "Choose the correct answer",
@@ -26347,9 +26347,9 @@
         "question": "That's the restaurant ___ we met.",
         "options": [
           "where",
-          "Where",
-          "that",
-          "Which"
+          "who",
+          "which",
+          "when"
         ],
         "answer": "where",
         "instruction": "Choose the correct answer",
@@ -26846,7 +26846,7 @@
           "This is the book I bought yesterday"
         ],
         "instruction": "Translate to English",
-        "explanation": "which/that.",
+        "explanation": "which/that. Образец: This is the book which I bought yesterday.",
         "grammarTopic": "eng-b1-relative-clauses"
       },
       {
@@ -26858,7 +26858,7 @@
           "She's the teacher that helped me"
         ],
         "instruction": "Translate to English",
-        "explanation": "who.",
+        "explanation": "who. Образец: She's the teacher who helped me.",
         "grammarTopic": "eng-b1-relative-clauses"
       },
       {
@@ -26870,7 +26870,7 @@
           "That is the café where we met"
         ],
         "instruction": "Translate to English",
-        "explanation": "where.",
+        "explanation": "where. Образец: That's the café where we met.",
         "grammarTopic": "eng-b1-relative-clauses"
       },
       {
@@ -26881,7 +26881,7 @@
           "I know a man whose car is red."
         ],
         "instruction": "Translate to English",
-        "explanation": "whose.",
+        "explanation": "whose. Образец: I know a man whose car is red.",
         "grammarTopic": "eng-b1-relative-clauses"
       },
       {
@@ -26893,7 +26893,7 @@
           "The film we watched was long"
         ],
         "instruction": "Translate to English",
-        "explanation": "that/which.",
+        "explanation": "that/which. Образец: The film that we watched was long.",
         "grammarTopic": "eng-b1-relative-clauses"
       },
       {
@@ -26904,7 +26904,7 @@
           "People that live here are friendly"
         ],
         "instruction": "Translate to English",
-        "explanation": "who.",
+        "explanation": "who. Образец: People who live here are friendly.",
         "grammarTopic": "eng-b1-relative-clauses"
       },
       {
@@ -26916,7 +26916,7 @@
           "Is this the house your parents built?"
         ],
         "instruction": "Translate to English",
-        "explanation": "that/which.",
+        "explanation": "that/which. Образец: Is this the house that your parents built?.",
         "grammarTopic": "eng-b1-relative-clauses"
       },
       {
@@ -26927,7 +26927,7 @@
           "Do you remember the day we first met?"
         ],
         "instruction": "Translate to English",
-        "explanation": "when.",
+        "explanation": "when. Образец: Do you remember the day when we first met?.",
         "grammarTopic": "eng-b1-relative-clauses"
       },
       {
@@ -26938,7 +26938,7 @@
           "She is the artist whose paintings I love"
         ],
         "instruction": "Translate to English",
-        "explanation": "whose.",
+        "explanation": "whose. Образец: She's the artist whose paintings I love.",
         "grammarTopic": "eng-b1-relative-clauses"
       },
       {
@@ -26949,7 +26949,7 @@
           "The laptop that is on the desk is mine"
         ],
         "instruction": "Translate to English",
-        "explanation": "which/that.",
+        "explanation": "which/that. Образец: The laptop which is on the desk is mine.",
         "grammarTopic": "eng-b1-relative-clauses"
       },
       {
@@ -26961,7 +26961,7 @@
           "He's the colleague I told you about"
         ],
         "instruction": "Translate to English",
-        "explanation": "who/that.",
+        "explanation": "who/that. Образец: He's the colleague who I told you about.",
         "grammarTopic": "eng-b1-relative-clauses"
       },
       {
@@ -26972,7 +26972,7 @@
           "This is the town where I grew up."
         ],
         "instruction": "Translate to English",
-        "explanation": "where.",
+        "explanation": "where. Образец: This is the town where I grew up.",
         "grammarTopic": "eng-b1-relative-clauses"
       },
       {
@@ -26983,7 +26983,7 @@
           "Students whose homework is late must stay."
         ],
         "instruction": "Translate to English",
-        "explanation": "whose.",
+        "explanation": "whose. Образец: Students whose homework is late must stay.",
         "grammarTopic": "eng-b1-relative-clauses"
       },
       {
@@ -26995,7 +26995,7 @@
           "The reason why I am calling is simple"
         ],
         "instruction": "Translate to English",
-        "explanation": "why.",
+        "explanation": "why. Образец: The reason why I'm calling is simple.",
         "grammarTopic": "eng-b1-relative-clauses"
       },
       {
@@ -27006,7 +27006,7 @@
           "I met a woman that speaks five languages"
         ],
         "instruction": "Translate to English",
-        "explanation": "who.",
+        "explanation": "who. Образец: I met a woman who speaks five languages.",
         "grammarTopic": "eng-b1-relative-clauses"
       }
     ],
@@ -27209,7 +27209,7 @@
           "The reason I'm calling is simple"
         ],
         "instruction": "Fix the grammar mistake",
-        "explanation": "reason why.",
+        "explanation": "reason why. Исправьте на: The reason why I'm calling is simple..",
         "grammarTopic": "eng-b1-relative-clauses"
       },
       {
@@ -27863,7 +27863,7 @@
         ],
         "answer": "was awarded",
         "instruction": "Choose the correct passive form",
-        "explanation": "be awarded.",
+        "explanation": "be awarded. Нужно «was awarded».",
         "grammarTopic": "eng-b2-passive-advanced"
       },
       {
@@ -28024,7 +28024,7 @@
           "Caught"
         ],
         "instruction": "Fill in the past participle",
-        "explanation": "was + PP.",
+        "explanation": "was + PP. Нужно «caught».",
         "grammarTopic": "eng-b2-passive-advanced"
       },
       {
@@ -28048,7 +28048,7 @@
           "Checked"
         ],
         "instruction": "Fill in the past participle",
-        "explanation": "are + PP.",
+        "explanation": "are + PP. Нужно «checked».",
         "grammarTopic": "eng-b2-passive-advanced"
       },
       {
@@ -28177,7 +28177,7 @@
           "She was given a new laptop for her birthday."
         ],
         "instruction": "Translate to English",
-        "explanation": "be given.",
+        "explanation": "be given. Образец: She was given a new laptop for her birthday.",
         "grammarTopic": "eng-b2-passive-advanced"
       },
       {
@@ -28266,7 +28266,7 @@
           "The cake was baked by my sister"
         ],
         "instruction": "Translate to English",
-        "explanation": "by-agent.",
+        "explanation": "by-agent. Образец: The cake was made by my sister.",
         "grammarTopic": "eng-b2-passive-advanced"
       },
       {
@@ -28332,7 +28332,7 @@
           "English is spoken worldwide"
         ],
         "instruction": "Translate to English",
-        "explanation": "is spoken.",
+        "explanation": "is spoken. Образец: English is spoken all over the world.",
         "grammarTopic": "eng-b2-passive-advanced"
       },
       {
@@ -28470,7 +28470,7 @@
           "The thief was caught by the police yesterday"
         ],
         "instruction": "Fix the grammar mistake",
-        "explanation": "was caught.",
+        "explanation": "was caught. Исправьте на: The thief was caught by the police yesterday..",
         "grammarTopic": "eng-b2-passive-advanced"
       },
       {
@@ -28504,7 +28504,7 @@
           "He was allowed to leave early"
         ],
         "instruction": "Fix the grammar mistake",
-        "explanation": "allowed.",
+        "explanation": "allowed. Исправьте на: He was allowed to leave early..",
         "grammarTopic": "eng-b2-passive-advanced"
       },
       {
@@ -28515,7 +28515,7 @@
           "The cake was made by my sister"
         ],
         "instruction": "Fix the grammar mistake",
-        "explanation": "made.",
+        "explanation": "made. Исправьте на: The cake was made by my sister..",
         "grammarTopic": "eng-b2-passive-advanced"
       },
       {
@@ -28559,7 +28559,7 @@
           "She was awarded the prize last year"
         ],
         "instruction": "Fix the grammar mistake",
-        "explanation": "awarded.",
+        "explanation": "awarded. Исправьте на: She was awarded the prize last year..",
         "grammarTopic": "eng-b2-passive-advanced"
       },
       {
@@ -28719,7 +28719,7 @@
         "answer": "She was given a new laptop",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "be given.",
+        "explanation": "be given. Ответ: She was given a new laptop.",
         "grammarTopic": "eng-b2-passive-advanced"
       },
       {
@@ -28855,7 +28855,7 @@
         "answer": "The cake was made by my sister",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "by-agent.",
+        "explanation": "by-agent. Ответ: The cake was made by my sister.",
         "grammarTopic": "eng-b2-passive-advanced"
       },
       {
@@ -29513,7 +29513,7 @@
           "You must be exhausted."
         ],
         "instruction": "Translate to English",
-        "explanation": "must.",
+        "explanation": "must. Образец: You must be exhausted.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -29537,7 +29537,7 @@
           "Somebody must be at home"
         ],
         "instruction": "Translate to English",
-        "explanation": "must.",
+        "explanation": "must. Образец: Someone must be at home.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -29560,7 +29560,7 @@
           "He cannot know the answer"
         ],
         "instruction": "Translate to English",
-        "explanation": "can't.",
+        "explanation": "can't. Образец: He can't know the answer.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -29571,7 +29571,7 @@
           "They must have arrived already"
         ],
         "instruction": "Translate to English",
-        "explanation": "must have.",
+        "explanation": "must have. Образец: They must have arrived by now.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -29582,7 +29582,7 @@
           "She must have heard the news."
         ],
         "instruction": "Translate to English",
-        "explanation": "must have.",
+        "explanation": "must have. Образец: She must have heard the news.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -29593,7 +29593,7 @@
           "This restaurant must be expensive"
         ],
         "instruction": "Translate to English",
-        "explanation": "must.",
+        "explanation": "must. Образец: That restaurant must be expensive.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -29604,7 +29604,7 @@
           "He cannot be the manager — he's only nineteen"
         ],
         "instruction": "Translate to English",
-        "explanation": "can't.",
+        "explanation": "can't. Образец: He can't be the manager.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -29616,7 +29616,7 @@
           "My phone might be in my bag"
         ],
         "instruction": "Translate to English",
-        "explanation": "might.",
+        "explanation": "might. Образец: It might be in my bag.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -29628,7 +29628,7 @@
           "You can't be serious!"
         ],
         "instruction": "Translate to English",
-        "explanation": "can't.",
+        "explanation": "can't. Образец: You can't be serious.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -29640,7 +29640,7 @@
           "It must have rained."
         ],
         "instruction": "Translate to English",
-        "explanation": "must have.",
+        "explanation": "must have. Образец: It must have rained.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -29652,7 +29652,7 @@
           "She may still be at work"
         ],
         "instruction": "Translate to English",
-        "explanation": "might.",
+        "explanation": "might. Образец: She might still be at work.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -29664,7 +29664,7 @@
           "This must be Tom's"
         ],
         "instruction": "Translate to English",
-        "explanation": "must.",
+        "explanation": "must. Образец: This must belong to Tom.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -29675,7 +29675,7 @@
           "They must have missed the train."
         ],
         "instruction": "Translate to English",
-        "explanation": "must have.",
+        "explanation": "must have. Образец: They must have missed the train.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -29687,7 +29687,7 @@
           "It may be a mistake"
         ],
         "instruction": "Translate to English",
-        "explanation": "could.",
+        "explanation": "could. Образец: It could be a mistake.",
         "grammarTopic": "eng-b2-modals-deduction"
       }
     ],
@@ -29948,7 +29948,7 @@
         "answer": "That can't be true",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "can't.",
+        "explanation": "can't. Ответ: That can't be true.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -29965,7 +29965,7 @@
         "answer": "He might be stuck in traffic",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "might.",
+        "explanation": "might. Ответ: He might be stuck in traffic.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -29980,7 +29980,7 @@
         "answer": "You must be exhausted",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "must.",
+        "explanation": "must. Ответ: You must be exhausted.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -29995,7 +29995,7 @@
         "answer": "She can't have forgotten",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "can't have.",
+        "explanation": "can't have. Ответ: She can't have forgotten.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -30011,7 +30011,7 @@
         "answer": "Someone must be at home",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "must.",
+        "explanation": "must. Ответ: Someone must be at home.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -30026,7 +30026,7 @@
         "answer": "It could rain later",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "could.",
+        "explanation": "could. Ответ: It could rain later.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -30042,7 +30042,7 @@
         "answer": "He can't know the answer",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "can't.",
+        "explanation": "can't. Ответ: He can't know the answer.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -30059,7 +30059,7 @@
         "answer": "They must have arrived by now",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "must have.",
+        "explanation": "must have. Ответ: They must have arrived by now.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -30076,7 +30076,7 @@
         "answer": "She must have heard the news",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "must have.",
+        "explanation": "must have. Ответ: She must have heard the news.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -30092,7 +30092,7 @@
         "answer": "That restaurant must be expensive",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "must.",
+        "explanation": "must. Ответ: That restaurant must be expensive.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -30108,7 +30108,7 @@
         "answer": "He can't be the manager",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "can't.",
+        "explanation": "can't. Ответ: He can't be the manager.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -30125,7 +30125,7 @@
         "answer": "It might be in my bag",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "might.",
+        "explanation": "might. Ответ: It might be in my bag.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -30140,7 +30140,7 @@
         "answer": "You can't be serious",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "can't.",
+        "explanation": "can't. Ответ: You can't be serious.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -30155,7 +30155,7 @@
         "answer": "It must have rained",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "must have.",
+        "explanation": "must have. Ответ: It must have rained.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -30172,7 +30172,7 @@
         "answer": "She might still be at work",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "might.",
+        "explanation": "might. Ответ: She might still be at work.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -30188,7 +30188,7 @@
         "answer": "This must belong to Tom",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "must.",
+        "explanation": "must. Ответ: This must belong to Tom.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -30205,7 +30205,7 @@
         "answer": "They must have missed the train",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "must have.",
+        "explanation": "must have. Ответ: They must have missed the train.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -30221,7 +30221,7 @@
         "answer": "It could be a mistake",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "could.",
+        "explanation": "could. Ответ: It could be a mistake.",
         "grammarTopic": "eng-b2-modals-deduction"
       },
       {
@@ -30237,7 +30237,7 @@
         "answer": "He must be from France",
         "acceptableAnswers": [],
         "instruction": "Build the sentence",
-        "explanation": "must.",
+        "explanation": "must. Ответ: He must be from France.",
         "grammarTopic": "eng-b2-modals-deduction"
       }
     ]
@@ -31032,9 +31032,9 @@
         "question": "I am writing in response to your ___ about the trip.",
         "options": [
           "email",
-          "Email",
-          "letter",
-          "message"
+          "song",
+          "recipe",
+          "ticket"
         ],
         "answer": "email",
         "instruction": "Choose the correct answer",
@@ -31046,9 +31046,9 @@
         "question": "Please let me know if you need any further ___.",
         "options": [
           "information",
-          "Information",
-          "details",
-          "assistance"
+          "furniture",
+          "weather",
+          "luggage"
         ],
         "answer": "information",
         "instruction": "Choose the correct answer",
@@ -31605,9 +31605,9 @@
         "question": "The figure ___ sharply between 2015 and 2018.",
         "options": [
           "rose",
-          "Rose",
-          "increased",
-          "Increased"
+          "fell",
+          "stayed",
+          "dropped"
         ],
         "answer": "rose",
         "instruction": "Choose the correct answer",
@@ -31619,9 +31619,9 @@
         "question": "There was a ___ decline in exports after 2019.",
         "options": [
           "gradual",
-          "Gradual",
-          "sharp",
-          "Sharp"
+          "sudden",
+          "total",
+          "minor"
         ],
         "answer": "gradual",
         "instruction": "Choose the correct answer",
@@ -31946,9 +31946,9 @@
         "question": "This essay will ___ that technology improves education.",
         "options": [
           "argue",
-          "Argue",
           "discuss",
-          "Discuss"
+          "ignore",
+          "deny"
         ],
         "answer": "argue",
         "instruction": "Choose the correct answer",
@@ -33073,9 +33073,9 @@
         "question": "Have you ever wondered why ___ travel is so popular?",
         "options": [
           "solo",
-          "Solo",
-          "budget",
-          "Budget"
+          "group",
+          "night",
+          "space"
         ],
         "answer": "solo",
         "instruction": "Choose the correct answer",
@@ -33709,9 +33709,9 @@
         "question": "___, this trend is unlikely to reverse.",
         "options": [
           "Arguably",
-          "arguably",
-          "Clearly",
-          "clearly"
+          "However",
+          "Suddenly",
+          "Rarely"
         ],
         "answer": "Arguably",
         "instruction": "Choose the correct answer",
@@ -35806,7 +35806,7 @@
         ],
         "answer": "I do hope you understand",
         "instruction": "Emphatic do",
-        "explanation": "I do hope…",
+        "explanation": "I do hope… Ответ: I do hope you understand.",
         "grammarTopic": "eng-c2-cleft-emphasis",
         "acceptableAnswers": []
       },
@@ -35982,7 +35982,7 @@
         "question": "Он работает больше, чем я.",
         "answer": "He works harder than I do",
         "instruction": "Do substitution",
-        "explanation": "than I do.",
+        "explanation": "than I do. Образец: He works harder than I do.",
         "grammarTopic": "eng-c2-ellipsis-substitution",
         "acceptableAnswers": []
       },
@@ -36121,7 +36121,7 @@
         "question": "Have you finished? Not yet I have.",
         "answer": "Have you finished? Not yet.",
         "instruction": "Not yet ellipsis",
-        "explanation": "Not yet.",
+        "explanation": "Not yet. Исправьте на: Have you finished? Not yet..",
         "grammarTopic": "eng-c2-ellipsis-substitution",
         "acceptableAnswers": []
       },
@@ -36211,7 +36211,7 @@
         "question": "I would go if I would could.",
         "answer": "I would go if I could.",
         "instruction": "Conditional ellipsis",
-        "explanation": "if I could.",
+        "explanation": "if I could. Исправьте на: I would go if I could..",
         "grammarTopic": "eng-c2-ellipsis-substitution",
         "acceptableAnswers": []
       },
@@ -36347,7 +36347,7 @@
         ],
         "answer": "Will it work? I hope so",
         "instruction": "Hope so",
-        "explanation": "I hope so",
+        "explanation": "I hope so Ответ: Will it work? I hope so.",
         "grammarTopic": "eng-c2-ellipsis-substitution",
         "acceptableAnswers": []
       },
@@ -36468,7 +36468,7 @@
         ],
         "answer": "Have you finished? Not yet",
         "instruction": "Not yet",
-        "explanation": "Not yet",
+        "explanation": "Not yet Ответ: Have you finished? Not yet.",
         "grammarTopic": "eng-c2-ellipsis-substitution",
         "acceptableAnswers": []
       },
@@ -36503,7 +36503,7 @@
         ],
         "answer": "Will she agree? I expect so",
         "instruction": "Expect so",
-        "explanation": "I expect so",
+        "explanation": "I expect so Ответ: Will she agree? I expect so.",
         "grammarTopic": "eng-c2-ellipsis-substitution",
         "acceptableAnswers": []
       },
@@ -36520,7 +36520,7 @@
         ],
         "answer": "He runs fast. So do I",
         "instruction": "So do I run",
-        "explanation": "So do I",
+        "explanation": "So do I Ответ: He runs fast. So do I.",
         "grammarTopic": "eng-c2-ellipsis-substitution",
         "acceptableAnswers": []
       },
@@ -36611,7 +36611,7 @@
         "question": "Можно сказать, что политика не сработала.",
         "answer": "Arguably, the policy has failed",
         "instruction": "Arguably hedge",
-        "explanation": "Arguably…",
+        "explanation": "Arguably… Образец: Arguably, the policy has failed.",
         "grammarTopic": "eng-c2-hedging-nuance",
         "acceptableAnswers": []
       },

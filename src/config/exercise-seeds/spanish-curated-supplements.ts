@@ -14121,7 +14121,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "más"
       ],
       "answer": "Ojalá hubiera estudiado más",
-      "instruction": "Pluscuam. subj.",
+      "instruction": "Если бы я тогда больше учился!",
       "explanation": "Hubiera estudiado…"
     },
     {
@@ -14176,7 +14176,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "llamado"
       ],
       "answer": "Quería que hubieras llamado",
-      "instruction": "Pluscuam. subj.",
+      "instruction": "Если бы я тогда больше учился!",
       "explanation": "Hubieras llamado…"
     },
     {
@@ -14222,7 +14222,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "tiempo"
       ],
       "answer": "Dudaba que hubiera llegado a tiempo",
-      "instruction": "Pluscuam. subj.",
+      "instruction": "Если бы я тогда больше учился!",
       "explanation": "Hubiera llegado…"
     },
     {
@@ -14251,7 +14251,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "más"
       ],
       "answer": "Ojalá hubiéramos viajado más",
-      "instruction": "Pluscuam. subj. nos.",
+      "instruction": "Если бы я тогда больше учился! nos.",
       "explanation": "Hubiéramos viajado…"
     },
     {

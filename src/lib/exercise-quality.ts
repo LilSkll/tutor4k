@@ -259,11 +259,20 @@ export function isMetaOrFormulaPrompt(text: string): boolean {
   if (/^[A-Za-záéíóúñüÁÉÍÓÚÑÜ][\wáéíóúñüÁÉÍÓÚÑÜ'’]*\s*\+\s*\S/i.test(q) && q.length <= 40) {
     return true;
   }
-  // Note: JS \b does not treat Cyrillic as word chars — use whitespace/end anchors.
-  if (/^(Соберите|Составьте|Выберите|Заполните|Вставьте|Исправьте|Найдите|Переведите)(\s|$)/i.test(q)) {
+  // Abbreviated grammar tags used as prompts (Pluscuam. subj. nos.)
+  if (/^(Pluscuam|Pretérito|Imperf|Condic|Futuro|Presente|Subj|Imperat)\b/i.test(q) && q.length <= 48) {
     return true;
   }
-  if (/^(Build|Choose|Fill|Complete|Rewrite|Fix|Translate)\b/i.test(q) && q.length <= 56) {
+  // Note: JS \b does not treat Cyrillic as word chars — use whitespace/end anchors.
+  if (
+    /^(Соберите|Составьте|Выберите|Заполните|Вставьте|Исправьте|Найдите|Переведите|Поставьте|Спрягите|Утвердительное|Вежливое|Косвенная|Обратите|Внимание|Формальный|Гипотеза|Какое выражение|Какой артикль)(\s|$)/i.test(
+      q,
+    )
+  ) {
+    return true;
+  }
+  if (/^После\s+(es |el |la |un |una |de |haber |que )/i.test(q)) return true;
+  if (/^(Build|Choose|Fill|Complete|Rewrite|Fix|Translate|Conjugate|Put|Select)\b/i.test(q) && q.length <= 56) {
     return true;
   }
   // Glossary-style “Наречие «X»” / “Слово «X»” — not a sentence to translate.
@@ -365,6 +374,9 @@ export function isUsableMultipleChoice(ex: {
   }
   if (isTokenDump(q)) return false;
   if (options.length < 2) return false;
+  // Case-only duplicates ("that"/"That") confuse learners and waste options.
+  const optKeys = options.map((o) => String(o).trim().toLowerCase()).filter(Boolean);
+  if (new Set(optKeys).size < optKeys.length) return false;
   if (hasFakeXToken(a) || options.some((o) => hasFakeXToken(o))) return false;
   if (hasJunkMcOptions(a, options)) return false;
   if (isFirstWordFakeMc(q, a)) return false;

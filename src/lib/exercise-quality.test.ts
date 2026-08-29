@@ -167,6 +167,24 @@ describe("isUsableTranslation", () => {
     expect(
       isUsableTranslation({
         question: "Соберите фразу с muy",
+        answer: "Es muy interesante",
+      }),
+    ).toBe(false);
+    expect(
+      isUsableTranslation({
+        question: "Поставьте глагол ser в правильной форме",
+        answer: "Yo soy estudiante.",
+      }),
+    ).toBe(false);
+    expect(
+      isUsableTranslation({
+        question: "Pluscuam. subj. nos.",
+        answer: "Ojalá hubiéramos viajado más",
+      }),
+    ).toBe(false);
+    expect(
+      isUsableTranslation({
+        question: "Соберите фразу с muy",
         answer: "Es una persona muy amable",
       }),
     ).toBe(false);
@@ -221,6 +239,16 @@ describe("isUsableMultipleChoice", () => {
         options: ["soy", "estoy", "es", "somos"],
       }),
     ).toBe(true);
+  });
+
+  it("rejects case-only duplicate options", () => {
+    expect(
+      isUsableMultipleChoice({
+        question: "This is the book ___ I told you about.",
+        answer: "that",
+        options: ["that", "That", "which", "Which"],
+      }),
+    ).toBe(false);
   });
 
   it("rejects em-dash placeholders and junk option twins", () => {

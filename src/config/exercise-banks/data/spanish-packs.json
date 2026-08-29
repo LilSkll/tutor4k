@@ -145,13 +145,14 @@
       },
       {
         "type": "translation",
-        "question": "Поставьте глагол ser в правильной форме",
-        "answer": "Yo soy estudiante. (ser)",
+        "question": "Я студент.",
+        "answer": "Yo soy estudiante.",
         "acceptableAnswers": [
-          "yo soy estudiante. (ser)",
-          "soy"
+          "Soy estudiante",
+          "soy estudiante",
+          "Yo soy estudiante"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите на испанский (ser)",
         "explanation": "Yo → soy. Профессия — постоянная характеристика, поэтому ser.",
         "grammarTopic": "a1-ser-estar"
       }
@@ -196,7 +197,7 @@
       {
         "type": "error_correction",
         "question": "¿Cómo estás tú? (descripción, no estado)?",
-        "answer": "¿Cómo eres tú? (descripción, no estado)?",
+        "answer": "¿Cómo eres tú?",
         "acceptableAnswers": [
           "¿Cómo eres tú? (descripción, no estado)?",
           "¿cómo eres tú? (descripción, no estado)?",
@@ -712,25 +713,25 @@
       },
       {
         "type": "translation",
-        "question": "Спрягите глагол hablar в presente",
-        "answer": "Yo hablo (hablar) español todos los días.",
+        "question": "Я говорю по-испански каждый день.",
+        "answer": "Yo hablo español todos los días.",
         "acceptableAnswers": [
-          "yo hablo (hablar) español todos los días.",
-          "hablo"
+          "Hablo español todos los días",
+          "Yo hablo español todos los dias"
         ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Глагол -ar, yo → hablo. Регулярное спряжение.",
+        "instruction": "Переведите на испанский (presente)",
+        "explanation": "Глагол -ar, yo → hablo.",
         "grammarTopic": "a1-presente"
       },
       {
         "type": "translation",
-        "question": "Поставьте vivir в правильную форму",
-        "answer": "Nosotros vivimos (vivir) en Madrid.",
+        "question": "Мы живём в Мадриде.",
+        "answer": "Nosotros vivimos en Madrid.",
         "acceptableAnswers": [
-          "nosotros vivimos (vivir) en madrid.",
-          "vivimos"
+          "Vivimos en Madrid",
+          "Nosotros vivimos en Madrid"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите на испанский (presente)",
         "explanation": "Глагол -ir, nosotros → vivimos.",
         "grammarTopic": "a1-presente"
       }
@@ -820,7 +821,7 @@
       {
         "type": "error_correction",
         "question": "Ella como (comer) una manzana.",
-        "answer": "Ella come (comer) una manzana.",
+        "answer": "Ella come una manzana.",
         "acceptableAnswers": [
           "Ella come (comer) una manzana.",
           "ella come (comer) una manzana.",
@@ -1340,26 +1341,27 @@
       },
       {
         "type": "translation",
-        "question": "Хлеб как продукт часто без артикля (или el, если конкретный)",
-        "answer": "Compro el pan en la panadería.",
+        "question": "Я покупаю хлеб в булочной.",
+        "answer": "Compro pan en la panadería.",
         "acceptableAnswers": [
-          "compro el pan en la panadería.",
-          "el"
+          "Compro el pan en la panadería",
+          "Compro pan en la panaderia"
         ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Compro pan — хлеб вообще (нулевой артикль). Compro el pan — этот / обычный хлеб. *Un pan* — одна буханка, не «хлеб как вещество».",
+        "instruction": "Переведите на испанский (артикли)",
+        "explanation": "Compro pan — хлеб вообще; compro el pan — конкретный хлеб.",
         "grammarTopic": "a1-articulos"
       },
       {
         "type": "translation",
-        "question": "Какой артикль перед agua? (не путать с abuela)",
-        "answer": "el",
+        "question": "Вода холодная.",
+        "answer": "El agua está fría.",
         "acceptableAnswers": [
-          "el",
-          "el"
+          "El agua esta fria",
+          "El agua es fría",
+          "el agua está fría"
         ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Agua — женского рода, но одна вещь и ударение на первой a (Á-gua) → el agua. Во множественном: las aguas. Не путать: la abuela (ударение на -bue-).",
+        "instruction": "Переведите на испанский (артикли)",
+        "explanation": "Agua — женского рода, но el agua (ударение на Á-gua).",
         "grammarTopic": "a1-articulos"
       }
     ],
@@ -2539,25 +2541,25 @@
       },
       {
         "type": "translation",
-        "question": "Поставьте tener в правильную форму для «я голоден»",
-        "answer": "Tengo hambre. (Yo, tener)",
+        "question": "Я голоден.",
+        "answer": "Tengo hambre.",
         "acceptableAnswers": [
-          "tengo hambre. (yo, tener)",
-          "Tengo"
+          "Yo tengo hambre",
+          "tengo hambre"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите на испанский (tener)",
         "explanation": "Tener hambre = быть голодным. Yo → tengo.",
         "grammarTopic": "a1-tener-expressions"
       },
       {
         "type": "translation",
-        "question": "Какое выражение с tener подходит?",
-        "answer": "Tienes suerte (suerte) de viajar.",
+        "question": "Тебе везёт путешествовать.",
+        "answer": "Tienes suerte de viajar.",
         "acceptableAnswers": [
-          "tienes suerte (suerte) de viajar.",
-          "suerte"
+          "Tienes suerte de viajar",
+          "tú tienes suerte de viajar"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите на испанский (tener suerte)",
         "explanation": "Tener suerte = быть удачливым.",
         "grammarTopic": "a1-tener-expressions"
       }
@@ -3734,26 +3736,26 @@
       },
       {
         "type": "translation",
-        "question": "Поставьте в pretérito perfecto",
-        "answer": "Hoy he comido (comer) pizza. (yo)",
+        "question": "Сегодня я съел пиццу.",
+        "answer": "Hoy he comido pizza.",
         "acceptableAnswers": [
-          "hoy he comido (comer) pizza. (yo)",
-          "he comido"
+          "Hoy he comido pizza",
+          "He comido pizza hoy"
         ],
-        "instruction": "Переведите на испанский",
-        "explanation": "haber (he) + comido. Pretérito perfecto для сегодняшнего действия.",
+        "instruction": "Переведите на испанский (pretérito perfecto)",
+        "explanation": "haber (he) + comido — действие сегодня.",
         "grammarTopic": "a2-preterito-perfecto"
       },
       {
         "type": "translation",
-        "question": "Поставьте escribir в perfecto",
-        "answer": "Ella ha escrito (escribir) un correo.",
+        "question": "Она написала письмо.",
+        "answer": "Ella ha escrito un correo.",
         "acceptableAnswers": [
-          "ella ha escrito (escribir) un correo.",
-          "ha escrito"
+          "Ha escrito un correo",
+          "Ella ha escrito un correo"
         ],
-        "instruction": "Переведите на испанский",
-        "explanation": "haber (ha) + escrito. Escribir → escrito (неправильный).",
+        "instruction": "Переведите на испанский (perfecto)",
+        "explanation": "haber (ha) + escrito.",
         "grammarTopic": "a2-preterito-perfecto"
       }
     ],
@@ -4301,25 +4303,25 @@
       },
       {
         "type": "translation",
-        "question": "Поставьте ir в indefinido",
-        "answer": "Ayer fui (ir) al cine. (yo)",
+        "question": "Вчера я ходил в кино.",
+        "answer": "Ayer fui al cine.",
         "acceptableAnswers": [
-          "ayer fui (ir) al cine. (yo)",
-          "fui"
+          "Ayer fui al cine",
+          "Fui al cine ayer"
         ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Ir → fui (indefinido, yo). Полностью неправильный.",
+        "instruction": "Переведите на испанский (indefinido)",
+        "explanation": "Ir → fui (indefinido, yo).",
         "grammarTopic": "a2-preterito-indefinido"
       },
       {
         "type": "translation",
-        "question": "Поставьте вопрос с ir в indefinido",
-        "answer": "¿Fuiste (tú) al partido ayer? (ir)",
+        "question": "Ты вчера ходил на матч?",
+        "answer": "¿Fuiste al partido ayer?",
         "acceptableAnswers": [
-          "¿fuiste (tú) al partido ayer? (ir)",
-          "Fuiste"
+          "Fuiste al partido ayer",
+          "¿Fuiste al partido ayer?"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите на испанский (indefinido)",
         "explanation": "Ir → fuiste (tú, indefinido).",
         "grammarTopic": "a2-preterito-indefinido"
       }
@@ -4400,7 +4402,7 @@
       {
         "type": "error_correction",
         "question": "El año pasado vivía en Barcelona. (vivir, yo).",
-        "answer": "El año pasado viví en Barcelona. (vivir, yo).",
+        "answer": "El año pasado viví en Barcelona..",
         "acceptableAnswers": [
           "El año pasado viví en Barcelona. (vivir, yo).",
           "el año pasado viví en barcelona. (vivir, yo).",
@@ -4929,20 +4931,20 @@
       },
       {
         "type": "translation",
-        "question": "Поставьте jugar в imperfecto",
-        "answer": "Cuando era niño, jugaba (jugar) al fútbol.",
+        "question": "Когда я был ребёнком, я играл в футбол.",
+        "answer": "Cuando era niño, jugaba al fútbol.",
         "acceptableAnswers": [
-          "cuando era niño, jugaba (jugar) al fútbol.",
-          "jugaba"
+          "Cuando era niño jugaba al fútbol",
+          "Cuando era nino, jugaba al futbol"
         ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Привычное действие в прошлом → imperfecto: jugaba.",
+        "instruction": "Переведите на испанский (imperfecto)",
+        "explanation": "Привычка в прошлом → imperfecto: jugaba.",
         "grammarTopic": "a2-imperfecto"
       },
       {
         "type": "translation",
         "question": "Привычка в прошлом — какое время?",
-        "answer": "Todos los días comía (comer) a las dos.",
+        "answer": "Todos los días comía a las dos.",
         "acceptableAnswers": [
           "todos los días comía (comer) a las dos.",
           "comía"
@@ -4999,7 +5001,7 @@
       {
         "type": "error_correction",
         "question": "Todos los días comíamos (comer) a las dos.",
-        "answer": "Todos los días comía (comer) a las dos.",
+        "answer": "Todos los días comía a las dos.",
         "instruction": "Исправьте ошибку",
         "explanation": "Привычное действие в прошлом → imperfecto: comía.",
         "grammarTopic": "a2-imperfecto",
@@ -6026,20 +6028,20 @@
       },
       {
         "type": "translation",
-        "question": "Поставьте hablar в subjuntivo",
-        "answer": "Quiero que tú hables (hablar).",
+        "question": "Я хочу, чтобы ты говорил.",
+        "answer": "Quiero que hables.",
         "acceptableAnswers": [
-          "quiero que tú hables (hablar).",
-          "hables"
+          "Quiero que tú hables",
+          "Quiero que hables"
         ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Después de «quiero que» → subjuntivo. Hablar → hables (tú).",
+        "instruction": "Переведите на испанский (subjuntivo)",
+        "explanation": "После quiero que → subjuntivo: hables.",
         "grammarTopic": "b1-subjuntivo"
       },
       {
         "type": "translation",
         "question": "Сомнение → какое наклонение?",
-        "answer": "Dudo que sea (ser) verdad.",
+        "answer": "Dudo que sea verdad.",
         "acceptableAnswers": [
           "dudo que sea (ser) verdad.",
           "sea"
@@ -6550,37 +6552,38 @@
       },
       {
         "type": "translation",
-        "question": "Поставьте в утвердительное повелительное (tú)",
-        "answer": "¡Come (comer) la fruta! (tú)",
+        "question": "Ешь фрукты!",
+        "answer": "¡Come la fruta!",
         "acceptableAnswers": [
-          "¡come (comer) la fruta! (tú)",
-          "Come"
+          "Come la fruta",
+          "¡Come la fruta!"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите на испанский (imperativo tú)",
         "explanation": "Tú afirmativo: comer → come.",
         "grammarTopic": "b1-imperativo"
       },
       {
         "type": "translation",
-        "question": "Утвердительное повелительное от hacer",
-        "answer": "¡Haz (hacer) los deberes! (tú)",
+        "question": "Сделай домашнее задание!",
+        "answer": "¡Haz los deberes!",
         "acceptableAnswers": [
-          "¡haz (hacer) los deberes! (tú)",
-          "Haz"
+          "Haz los deberes",
+          "¡Haz los deberes!"
         ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Hacer → haz (tú, imperativo). Неправильная форма.",
+        "instruction": "Переведите на испанский (imperativo)",
+        "explanation": "Hacer → haz (tú, imperativo).",
         "grammarTopic": "b1-imperativo"
       },
       {
         "type": "translation",
-        "question": "Вежливое повелительное для usted",
-        "answer": "siéntese",
+        "question": "Садитесь, пожалуйста.",
+        "answer": "Siéntese, por favor.",
         "acceptableAnswers": [
-          "siéntese",
-          "siéntese"
+          "Siéntese por favor",
+          "Sientese, por favor",
+          "Siéntese"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите на испанский (usted)",
         "explanation": "Usted → subjuntivo: sentarse → siéntese.",
         "grammarTopic": "b1-imperativo"
       }
@@ -6679,7 +6682,7 @@
       {
         "type": "error_correction",
         "question": "¡No di eso! (tú, decir).",
-        "answer": "¡No digas eso! (tú, decir).",
+        "answer": "¡No digas eso!.",
         "acceptableAnswers": [
           "¡No digas eso! (tú, decir).",
           "¡no digas eso! (tú, decir).",
@@ -6692,7 +6695,7 @@
       {
         "type": "error_correction",
         "question": "¡siéntate usted, por favor! (sentarse).",
-        "answer": "¡siéntese usted, por favor! (sentarse).",
+        "answer": "¡siéntese usted, por favor!.",
         "acceptableAnswers": [
           "¡siéntese usted, por favor! (sentarse).",
           "¡siéntese usted, por favor! (sentarse).",
@@ -7152,14 +7155,14 @@
       },
       {
         "type": "translation",
-        "question": "Вежливая просьба через condicional",
-        "answer": "¿Podría ayudar (ayudar)me?",
+        "question": "Не могли бы вы мне помочь?",
+        "answer": "¿Podría ayudarme?",
         "acceptableAnswers": [
-          "¿podría ayudar (ayudar)me?",
-          "ayudar"
+          "Podría ayudarme",
+          "¿Podría usted ayudarme?"
         ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Podría + infinitivo. ¿Podría ayudarme? = Не могли бы вы помочь?",
+        "instruction": "Переведите на испанский (condicional)",
+        "explanation": "Podría + infinitivo — вежливая просьба.",
         "grammarTopic": "b1-condicional"
       },
       {
@@ -7651,26 +7654,26 @@
       },
       {
         "type": "translation",
-        "question": "Косвенная речь — выберите время",
-        "answer": "estaba",
+        "question": "Он сказал, что он дома (сейчас / в тот момент).",
+        "answer": "Dijo que estaba en casa.",
         "acceptableAnswers": [
-          "estaba",
-          "estaba"
+          "Dijo que estaba en casa",
+          "dijo que estaba en casa"
         ],
-        "instruction": "Переведите на испанский",
-        "explanation": "После dijo (прошедшее) presente → imperfecto: está → estaba.",
+        "instruction": "Переведите на испанский (estilo indirecto)",
+        "explanation": "После dijo presente → imperfecto: está → estaba.",
         "grammarTopic": "b2-estilo-indirecto"
       },
       {
         "type": "translation",
-        "question": "Косвенная речь после presente",
-        "answer": "María dice que vendrá (venir) mañana.",
+        "question": "Мария говорит, что придёт завтра.",
+        "answer": "María dice que vendrá mañana.",
         "acceptableAnswers": [
-          "maría dice que vendrá (venir) mañana.",
-          "vendrá"
+          "María dice que vendrá mañana",
+          "Maria dice que vendra manana"
         ],
-        "instruction": "Переведите на испанский",
-        "explanation": "После dice (presente) время не меняется: viene / vendrá.",
+        "instruction": "Переведите на испанский (estilo indirecto)",
+        "explanation": "После dice (presente) время не сдвигается: vendrá.",
         "grammarTopic": "b2-estilo-indirecto"
       },
       {
@@ -7837,7 +7840,7 @@
       {
         "type": "error_correction",
         "question": "María dice que viene (venir) mañana.",
-        "answer": "María dice que vendrá (venir) mañana.",
+        "answer": "María dice que vendrá mañana.",
         "acceptableAnswers": [
           "María dice que vendrá (venir) mañana.",
           "maría dice que vendrá (venir) mañana.",
@@ -8917,7 +8920,7 @@
       {
         "type": "translation",
         "question": "Какая перифраза для ближайшего будущего?",
-        "answer": "Voy a estudiar (estudiar) español.",
+        "answer": "Voy a estudiar español.",
         "acceptableAnswers": [
           "voy a estudiar (estudiar) español.",
           "a estudiar"
@@ -12627,7 +12630,7 @@
       {
         "type": "error_correction",
         "question": "Mañana Hablare (hablar) con ella. (yo).",
-        "answer": "Mañana hablaré (hablar) con ella. (yo).",
+        "answer": "Mañana hablaré con ella..",
         "acceptableAnswers": [
           "Mañana hablaré (hablar) con ella. (yo).",
           "mañana hablaré (hablar) con ella. (yo).",
@@ -14747,7 +14750,7 @@
       {
         "type": "error_correction",
         "question": "Cuando llegué, ya he comido (comer).",
-        "answer": "Cuando llegué, ya había comido (comer).",
+        "answer": "Cuando llegué, ya había comido.",
         "acceptableAnswers": [
           "Cuando llegué, ya había comido (comer).",
           "cuando llegué, ya había comido (comer).",
@@ -15190,7 +15193,7 @@
       {
         "type": "error_correction",
         "question": "Si tengo (tener) dinero, viajaría.",
-        "answer": "Si tuviera (tener) dinero, viajaría.",
+        "answer": "Si tuviera dinero, viajaría.",
         "acceptableAnswers": [
           "Si tuviera (tener) dinero, viajaría.",
           "si tuviera (tener) dinero, viajaría.",
@@ -15203,7 +15206,7 @@
       {
         "type": "error_correction",
         "question": "Ojalá llueve (lluvia) mañana.",
-        "answer": "Ojalá llueva (lluvia) mañana.",
+        "answer": "Ojalá llueva mañana.",
         "acceptableAnswers": [
           "Ojalá llueva (lluvia) mañana.",
           "ojalá llueva (lluvia) mañana.",
@@ -15216,7 +15219,7 @@
       {
         "type": "error_correction",
         "question": "Quería que viniese (venir) a la fiesta.",
-        "answer": "Quería que vinieras (venir) a la fiesta.",
+        "answer": "Quería que vinieras a la fiesta.",
         "instruction": "Исправьте ошибку",
         "explanation": "Quería que + subjuntivo: vinieras/viniese.",
         "grammarTopic": "subjuntivo-imperfecto",
@@ -15228,7 +15231,7 @@
       {
         "type": "error_correction",
         "question": "Si fuese (ser) más joven, correría más.",
-        "answer": "Si fuera (ser) más joven, correría más.",
+        "answer": "Si fuera más joven, correría más.",
         "instruction": "Исправьте ошибку",
         "explanation": "Ser → fuera/fuese en subjuntivo imperfecto.",
         "grammarTopic": "subjuntivo-imperfecto",
@@ -16399,7 +16402,7 @@
       {
         "type": "error_correction",
         "question": "Quizás llueve (llover) mañana.",
-        "answer": "Quizás llueva (llover) mañana.",
+        "answer": "Quizás llueva mañana.",
         "acceptableAnswers": [
           "Quizás llueva (llover) mañana.",
           "quizás llueva (llover) mañana.",
@@ -16824,14 +16827,14 @@
         "question": "___ (ducharse, yo) cuando sonó el teléfono.",
         "options": [
           "Me duchaba",
-          "me duchaba",
-          "Me estaba duchando",
-          "me estaba duchando"
+          "Me duché",
+          "Me ducharé",
+          "Me he duchado"
         ],
         "answer": "Me duchaba",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Фон — imperfecto (me duchaba / estaba duchándome), событие — indefinido (sonó).",
-        "grammarTopic": "dele-contraste-pasados"
+        "instruction": "Выберите форму",
+        "explanation": "Фон + внезапное действие: imperfecto Me duchaba.",
+        "grammarTopic": "b1-indefinido-imperfecto"
       }
     ],
     "fill_blank": [
@@ -16977,7 +16980,7 @@
       {
         "type": "translation",
         "question": "Фон + событие: поставьте глагол в нужное время",
-        "answer": "Me duchaba (ducharse, yo) cuando sonó el teléfono.",
+        "answer": "Me duchaba cuando sonó el teléfono.",
         "acceptableAnswers": [
           "me duchaba (ducharse, yo) cuando sonó el teléfono.",
           "Me duchaba"
@@ -16988,14 +16991,14 @@
       },
       {
         "type": "translation",
-        "question": "Обратите внимание на маркер anoche",
-        "answer": "Anoche no dormí (dormir, yo) bien.",
+        "question": "Вчера вечером я плохо спал.",
+        "answer": "Anoche no dormí bien.",
         "acceptableAnswers": [
-          "anoche no dormí (dormir, yo) bien.",
-          "dormí"
+          "Anoche no dormí bien",
+          "Anoche no dormi bien"
         ],
-        "instruction": "Переведите на испанский",
-        "explanation": "«Anoche» → indefinido. Dormir неправильный: dormí.",
+        "instruction": "Переведите на испанский (indefinido)",
+        "explanation": "Anoche → indefinido. Dormir → dormí.",
         "grammarTopic": "dele-contraste-pasados"
       }
     ],
@@ -17094,7 +17097,7 @@
       {
         "type": "error_correction",
         "question": "Me estaba duchando (ducharse, yo) cuando sonó el teléfono.",
-        "answer": "Me duchaba (ducharse, yo) cuando sonó el teléfono.",
+        "answer": "Me duchaba cuando sonó el teléfono.",
         "instruction": "Исправьте ошибку",
         "explanation": "Фон — imperfecto (me duchaba / estaba duchándome), событие — indefinido (sonó).",
         "grammarTopic": "dele-contraste-pasados",
@@ -17656,7 +17659,7 @@
       {
         "type": "error_correction",
         "question": "Un beso , Juan Pérez (final de una carta formal).",
-        "answer": "Atentamente , Juan Pérez (final de una carta formal).",
+        "answer": "Atentamente, Juan Pérez.",
         "acceptableAnswers": [
           "Atentamente , Juan Pérez (final de una carta formal).",
           "atentamente , juan pérez (final de una carta formal).",
@@ -18103,38 +18106,38 @@
       },
       {
         "type": "translation",
-        "question": "После es posible que",
+        "question": "Возможно, он уже закончил.",
         "answer": "Es posible que ya haya terminado.",
         "acceptableAnswers": [
-          "Es posible que ya haya terminado.",
-          "Es posible que ya haya terminado"
+          "Es posible que ya haya terminado",
+          "Es posible que haya terminado ya"
         ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Триггер subjuntivo → haya terminado.",
+        "instruction": "Переведите на испанский (subjuntivo compuesto)",
+        "explanation": "Es posible que → subjuntivo: haya terminado.",
         "grammarTopic": "b2-subjuntivo-compuestos"
       },
       {
         "type": "translation",
-        "question": "Pluscuam. subj.",
-        "answer": "Ojalá hubiera estudiado más",
+        "question": "Если бы я тогда больше учился!",
+        "answer": "Ojalá hubiera estudiado más.",
         "acceptableAnswers": [
-          "ojalá hubiera estudiado más",
-          "Ojalá"
+          "Ojalá hubiera estudiado más",
+          "Ojala hubiera estudiado mas"
         ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Hubiera estudiado…",
+        "instruction": "Переведите на испанский (pluscuamperfecto de subjuntivo)",
+        "explanation": "Ojalá + hubiera estudiado…",
         "grammarTopic": "b2-subjuntivo-compuestos"
       },
       {
         "type": "translation",
-        "question": "Pluscuam. subj. nos.",
-        "answer": "Ojalá hubiéramos viajado más",
+        "question": "Если бы мы тогда больше путешествовали!",
+        "answer": "Ojalá hubiéramos viajado más.",
         "acceptableAnswers": [
-          "ojalá hubiéramos viajado más",
-          "Ojalá"
+          "Ojalá hubiéramos viajado más",
+          "Ojala hubieramos viajado mas"
         ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Hubiéramos viajado…",
+        "instruction": "Переведите на испанский (pluscuamperfecto de subjuntivo)",
+        "explanation": "Ojalá + hubiéramos viajado…",
         "grammarTopic": "b2-subjuntivo-compuestos"
       }
     ],
@@ -18153,7 +18156,7 @@
       {
         "type": "error_correction",
         "question": "Es posible que ya hube terminado (terminar).",
-        "answer": "Es posible que ya haya terminado (terminar).",
+        "answer": "Es posible que ya haya terminado.",
         "acceptableAnswers": [
           "Es posible que ya haya terminado (terminar).",
           "es posible que ya haya terminado (terminar).",
@@ -18179,7 +18182,7 @@
       {
         "type": "error_correction",
         "question": "Si hubiese ido (haber + ir), no estaríamos aquí.",
-        "answer": "Si hubiera ido (haber + ir), no estaríamos aquí.",
+        "answer": "Si hubiera ido , no estaríamos aquí.",
         "instruction": "Исправьте ошибку",
         "explanation": "Si hubiera ido — нереальное в прошлом.",
         "grammarTopic": "subjuntivo-compuestos",
@@ -18191,7 +18194,7 @@
       {
         "type": "error_correction",
         "question": "Ojalá hubiese visto (haber + ver) la exposición.",
-        "answer": "Ojalá hubiera visto (haber + ver) la exposición.",
+        "answer": "Ojalá hubiera visto la exposición.",
         "instruction": "Исправьте ошибку",
         "explanation": "Ojalá hubiera visto — сожаление о прошлом.",
         "grammarTopic": "subjuntivo-compuestos",
@@ -18628,7 +18631,7 @@
       {
         "type": "error_correction",
         "question": "Si hubiera sabido, iría (ir).",
-        "answer": "Si hubiera sabido, habría ido (ir).",
+        "answer": "Si hubiera sabido, habría ido.",
         "acceptableAnswers": [
           "Si hubiera sabido, habría ido (ir).",
           "si hubiera sabido, habría ido (ir).",
@@ -18641,7 +18644,7 @@
       {
         "type": "error_correction",
         "question": "Si hubiese estudiado (haber + estudiar) más, habría aprobado.",
-        "answer": "Si hubiera estudiado (haber + estudiar) más, habría aprobado.",
+        "answer": "Si hubiera estudiado más, habría aprobado.",
         "acceptableAnswers": [
           "Si hubiera estudiado (haber + estudiar) más, habría aprobado.",
           "si hubiera estudiado (haber + estudiar) más, habría aprobado.",
@@ -18667,7 +18670,7 @@
       {
         "type": "error_correction",
         "question": "Habríamos ganado si hubiésemos jugado (haber + jugar) mejor.",
-        "answer": "Habríamos ganado si hubiéramos jugado (haber + jugar) mejor.",
+        "answer": "Habríamos ganado si hubiéramos jugado mejor.",
         "instruction": "Исправьте ошибку",
         "explanation": "Si hubiéramos jugado…",
         "grammarTopic": "condicionales-compuestos",
@@ -20101,14 +20104,14 @@
       },
       {
         "type": "translation",
-        "question": "Внимание: de ahí que требует особого наклонения",
-        "answer": "sea",
+        "question": "Отсюда следует, что это так.",
+        "answer": "De ahí que sea así.",
         "acceptableAnswers": [
-          "sea",
-          "sea"
+          "De ahí que sea así",
+          "De ahi que sea asi"
         ],
-        "instruction": "Переведите на испанский",
-        "explanation": "De ahí que — всегда subjuntivo: sea. Классическая ловушка DELE.",
+        "instruction": "Переведите на испанский (de ahí que + subjuntivo)",
+        "explanation": "De ahí que почти всегда + subjuntivo: sea.",
         "grammarTopic": "dele-conectores-redaccion"
       }
     ],
@@ -20702,14 +20705,14 @@
       },
       {
         "type": "translation",
-        "question": "Гипотеза о возрасте — экзаменатор ждёт futuro de conjetura",
-        "answer": "Tendrán",
+        "question": "Им, наверное, лет тридцать.",
+        "answer": "Tendrán unos treinta años.",
         "acceptableAnswers": [
-          "tendrán",
-          "Tendrán"
+          "Tendrán unos treinta años",
+          "Tendran unos treinta anos"
         ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Догадка о настоящем → futuro: Tendrán unos treinta años — «им лет тридцать».",
+        "instruction": "Переведите на испанский (futuro de conjetura)",
+        "explanation": "Догадка о настоящем → futuro: Tendrán…",
         "grammarTopic": "dele-expresion-oral"
       },
       {
@@ -21437,7 +21440,7 @@
       {
         "type": "error_correction",
         "question": "Aunque llueva (llover), salimos.",
-        "answer": "Aunque llueve (llover), salimos.",
+        "answer": "Aunque llueve , salimos.",
         "acceptableAnswers": [
           "Aunque llueve (llover), salimos.",
           "aunque llueve (llover), salimos.",
@@ -21450,7 +21453,7 @@
       {
         "type": "error_correction",
         "question": "Hazlo como diga (decir).",
-        "answer": "Hazlo como digo (decir).",
+        "answer": "Hazlo como digo.",
         "acceptableAnswers": [
           "Hazlo como digo (decir).",
           "hazlo como digo (decir).",
@@ -21463,7 +21466,7 @@
       {
         "type": "error_correction",
         "question": "Aunque tuviese (tener) dinero, no lo haría.",
-        "answer": "Aunque tuviera (tener) dinero, no lo haría.",
+        "answer": "Aunque tuviera dinero, no lo haría.",
         "instruction": "Исправьте ошибку",
         "explanation": "Aunque + subjuntivo — гипотетическое уступление.",
         "grammarTopic": "subjuntivo-avanzado",
@@ -22079,7 +22082,7 @@
       {
         "type": "error_correction",
         "question": "Pidió que calló (callar).",
-        "answer": "Pidió que callara (callar).",
+        "answer": "Pidió que callara.",
         "acceptableAnswers": [
           "Pidió que callara (callar).",
           "pidió que callara (callar).",
@@ -23271,7 +23274,7 @@
       {
         "type": "error_correction",
         "question": "Juan está listo (inteligente).",
-        "answer": "Juan es listo (inteligente).",
+        "answer": "Juan es listo.",
         "acceptableAnswers": [
           "Juan es listo (inteligente).",
           "juan es listo (inteligente).",
@@ -25770,14 +25773,13 @@
       },
       {
         "type": "translation",
-        "question": "Формальный запрет: queda + participio",
+        "question": "Запрещено курить во всём здании.",
         "answer": "Queda prohibido fumar en todo el edificio.",
         "acceptableAnswers": [
-          "queda prohibido fumar en todo el edificio.",
-          "prohibido"
+          "Queda prohibido fumar en todo el edificio"
         ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Queda prohibido — формальный запрет (queda + participio).",
+        "instruction": "Переведите на испанский (queda + participio)",
+        "explanation": "Queda prohibido — формальный запрет.",
         "grammarTopic": "c2-estilo-culto"
       }
     ],
@@ -26025,7 +26027,7 @@
       {
         "type": "error_correction",
         "question": "(estilo culto) Porque los precios subieron.",
-        "answer": "(estilo culto) Debido al aumento de los precios.",
+        "answer": "Debido al aumento de los precios.",
         "instruction": "Исправьте ошибку",
         "explanation": "Книжный стиль заменяет глагол существительным: debido al aumento de…",
         "grammarTopic": "c2-estilo-culto",
@@ -26407,7 +26409,7 @@
           "¿cómo estás?",
           "un saludo"
         ],
-        "answer": "nada de eso (negación)",
+        "answer": "nada de eso",
         "instruction": "Разговорный регистр: что означает фраза?",
         "explanation": "¡Qué va! — разговорное энергичное отрицание («вовсе нет»).",
         "grammarTopic": "c2-ironia-registry"
@@ -26468,7 +26470,7 @@
       {
         "type": "fill_blank",
         "question": "«¡Qué va!» significa ___.",
-        "answer": "nada de eso (negación)",
+        "answer": "nada de eso",
         "acceptableAnswers": [
           "Nada de eso (negación)",
           "nada de eso (negación)"
@@ -26977,7 +26979,7 @@
       {
         "type": "error_correction",
         "question": "«¡Qué va!» significa entusiasmo.",
-        "answer": "«¡Qué va!» significa nada de eso (negación).",
+        "answer": "«¡Qué va!» significa nada de eso.",
         "instruction": "Исправьте ошибку",
         "explanation": "¡Qué va! — разговорное энергичное отрицание («вовсе нет»).",
         "grammarTopic": "c2-ironia-registry",
