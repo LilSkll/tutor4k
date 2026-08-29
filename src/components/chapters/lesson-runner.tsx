@@ -150,6 +150,7 @@ export function LessonRunner({
           courseId,
           grammarTopic: grammarTopicSlug,
           vocabTopic: chapter.vocabTopic ?? null,
+          chapterSlug: chapter.slug,
         });
         if (cancelled) return;
         setAdaptation(data.adaptation);
@@ -161,7 +162,7 @@ export function LessonRunner({
     return () => {
       cancelled = true;
     };
-  }, [courseId, grammarTopicSlug, chapter.vocabTopic, language]);
+  }, [courseId, grammarTopicSlug, chapter.vocabTopic, chapter.slug, language]);
 
   const chapterBank = React.useMemo(() => {
     if (presetExercises.length === 0) return [];
