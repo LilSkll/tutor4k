@@ -38,7 +38,7 @@ export const SPANISH_C2_GAP_SUPPLEMENTS = {
     tr("Именно вчера я всё узнал.", "Fue anoche cuando lo supe todo", "Hendida — tiempo", "Fue anoche cuando…"),
     tr("Именно она права.", "Es ella quien tiene la razón", "Hendida — sujeto", "Es ella quien…"),
     tr("То, что нам нужно, — время.", "Lo que necesitamos es tiempo", "Lo que necesitamos", "Lo que necesitamos es…"),
-    tr("Именно Juan разбил вазу.", "Fue Juan quien rompió el vaso", "Hendida — persona", "Fue Juan quien…"),
+    tr("Именно Хуан разбил вазу.", "Fue Juan quien rompió el vaso", "Hendida — persona", "Fue Juan quien…"),
     tr("Именно в Мадриде живёт моя сестра.", "Es en Madrid donde vive mi hermana", "Hendida — lugar", "Es en Madrid donde…"),
     tr("То, что меня раздражает, — шум.", "Lo que me molesta es el ruido", "Lo que… es…", "Lo que me molesta es…"),
     tr("Именно вчера это произошло.", "Fue ayer cuando ocurrió", "Hendida — tiempo", "Fue ayer cuando…"),

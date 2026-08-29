@@ -886,13 +886,16 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     },
     {
       "type": "translation",
-      "question": "То, что сказал el profesor, es importante.",
-      "instruction": "Lo que",
+      "question": "То, что сказал преподаватель, важно.",
+      "instruction": "Переведите на испанский (lo que)",
       "answer": "Lo que dijo el profesor es importante",
       "acceptableAnswers": [
-        "lo que dijo el profesor es importante"
+        "lo que dijo el profesor es importante",
+        "Lo que dijo el profesor es importante.",
+        "Lo que el profesor dijo es importante",
+        "lo que el profesor dijo es importante"
       ],
-      "explanation": "Lo que = «то, что».",
+      "explanation": "Lo que = «то, что». Образец: Lo que dijo el profesor es importante.",
       "grammarTopic": "relativos-avanzado"
     },
     {

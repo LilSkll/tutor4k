@@ -142,6 +142,27 @@ describe("isUsableTranslation", () => {
     ).toBe(true);
   });
 
+  it("rejects mixed RU+ES source prompts", () => {
+    expect(
+      isUsableTranslation({
+        question: "То, что сказал el profesor, es importante.",
+        answer: "Lo que dijo el profesor es importante",
+      }),
+    ).toBe(false);
+    expect(
+      isUsableTranslation({
+        question: "Мы будем жить в Барcelona.",
+        answer: "Viviremos en Barcelona",
+      }),
+    ).toBe(false);
+    expect(
+      isUsableTranslation({
+        question: "То, что сказал преподаватель, важно.",
+        answer: "Lo que dijo el profesor es importante",
+      }),
+    ).toBe(true);
+  });
+
   it("rejects pack leaks: SB instructions and grammar formulas as TR prompts", () => {
     expect(
       isUsableTranslation({

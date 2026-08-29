@@ -55,7 +55,7 @@ export const SPANISH_C1_TR_EC_TOPUP = {
     tr("Не могли бы вы уточнить сроки выполнения?", "¿Sería tan amable de concretar los plazos de ejecución?", "Cortesía formal", "¿Sería tan amable de…? — usted cortés."),
     tr("Таким образом, мы приходим к следующему выводу.", "Por consiguiente, llegamos a la siguiente conclusión", "Conector consecutivo", "Por consiguiente — consecuencia formal."),
     tr("В ответ на ваш запрос сообщаю следующее.", "En respuesta a su solicitud, le comunico lo siguiente", "Correspondencia formal", "En respuesta a su solicitud — fórmula epistolar."),
-    tr("Несмотря на это, результаты остаются alentadores.", "No obstante, los resultados siguen siendo alentadores", "Conector adversativo", "No obstante — adversativo culto."),
+    tr("Несмотря на это, результаты остаются обнадёживающими.", "No obstante, los resultados siguen siendo alentadores", "Conector adversativo", "No obstante — adversativo culto."),
     tr("То есть проблема носит скорее структурный характер.", "Es decir, el problema es de carácter estructural", "Reformulación DELE", "Es decir — aclaración en ensayo."),
     ec("Desde mi punto de vista la solución propuesta es pertinente y buena.", "Desde mi punto de vista, la solución propuesta es pertinente.", "Registro formal — puntuación", "Coma tras la fórmula introductoria; «y buena» resta precisión."),
     ec("Le ruego confirmarme la recepción de la presente carta.", "Le ruego me confirme la recepción de la presente carta.", "Subjuntivo en carta formal", "Le ruego + subjuntivo (me confirme), no infinitivo."),

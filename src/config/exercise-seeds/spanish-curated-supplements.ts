@@ -4804,7 +4804,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
   "chapter-15-voz-pasiva": [
     {
       "type": "translation",
-      "question": "Книга написана Габrielем Гарсиа Маркесом.",
+      "question": "Книга написана Габриэлем Гарсиа Маркесом.",
       "answer": "El libro fue escrito por Gabriel García Márquez",
       "instruction": "Переведите предложение",
       "explanation": "Fue escrito por…"
@@ -6490,7 +6490,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
     },
     {
       "type": "translation",
-      "question": "Мы будем жить в Барcelona.",
+      "question": "Мы будем жить в Барселоне.",
       "answer": "Viviremos en Barcelona",
       "instruction": "Переведите предложение",
       "explanation": "Viviremos en Barcelona."
@@ -7524,7 +7524,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
     },
     {
       "type": "translation",
-      "question": "Именно Juan разбил вазу.",
+      "question": "Именно Хуан разбил вазу.",
       "answer": "Fue Juan quien rompió el vaso",
       "instruction": "Hendida — persona",
       "explanation": "Fue Juan quien…"
@@ -10139,7 +10139,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
     },
     {
       "type": "translation",
-      "question": "Несмотря на это, результаты остаются alentadores.",
+      "question": "Несмотря на это, результаты остаются обнадёживающими.",
       "answer": "No obstante, los resultados siguen siendo alentadores",
       "instruction": "Conector adversativo",
       "explanation": "No obstante — adversativo culto."

@@ -8270,7 +8270,7 @@
       },
       {
         "type": "translation",
-        "question": "Книга написана Габrielем Гарсиа Маркесом.",
+        "question": "Книга написана Габриэлем Гарсиа Маркесом.",
         "answer": "El libro fue escrito por Gabriel García Márquez",
         "instruction": "Переведите предложение",
         "explanation": "Fue escrito por…",
@@ -9542,7 +9542,7 @@
       },
       {
         "type": "translation",
-        "question": "Несмотря на это, результаты остаются alentadores.",
+        "question": "Несмотря на это, результаты остаются обнадёживающими.",
         "answer": "No obstante, los resultados siguen siendo alentadores",
         "instruction": "Conector adversativo",
         "explanation": "No obstante — adversativo culto.",
@@ -12534,7 +12534,7 @@
       },
       {
         "type": "translation",
-        "question": "Мы будем жить в Барcelona.",
+        "question": "Мы будем жить в Барселоне.",
         "answer": "Viviremos en Barcelona",
         "instruction": "Переведите предложение",
         "explanation": "Viviremos en Barcelona.",
@@ -19029,13 +19029,16 @@
     "translation": [
       {
         "type": "translation",
-        "question": "То, что сказал el profesor, es importante.",
+        "question": "То, что сказал преподаватель, важно.",
         "answer": "Lo que dijo el profesor es importante",
         "acceptableAnswers": [
-          "lo que dijo el profesor es importante"
+          "lo que dijo el profesor es importante",
+          "Lo que dijo el profesor es importante.",
+          "Lo que el profesor dijo es importante",
+          "lo que el profesor dijo es importante"
         ],
-        "instruction": "Lo que",
-        "explanation": "Lo que = «то, что».",
+        "instruction": "Переведите на испанский (lo que)",
+        "explanation": "Lo que = «то, что». Образец: Lo que dijo el profesor es importante.",
         "grammarTopic": "relativos-avanzado"
       }
     ],
@@ -23827,7 +23830,7 @@
       },
       {
         "type": "translation",
-        "question": "Именно Juan разбил вазу.",
+        "question": "Именно Хуан разбил вазу.",
         "answer": "Fue Juan quien rompió el vaso",
         "instruction": "Hendida — persona",
         "explanation": "Fue Juan quien…",

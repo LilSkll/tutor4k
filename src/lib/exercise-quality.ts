@@ -167,6 +167,38 @@ function instructionSpoilsAnswer(instruction: string, answer: string): boolean {
   return re.test(instruction);
 }
 
+/** Cyrillic letter stuck to Latin (Габrielем / Барcelona). */
+export function hasScriptMixedToken(text: string): boolean {
+  return /[\u0400-\u04FF][A-Za-záéíóúñüÁÉÍÓÚÑÜ]|[A-Za-záéíóúñüÁÉÍÓÚÑÜ][\u0400-\u04FF]/.test(
+    text,
+  );
+}
+
+/**
+ * Spanish closed-class / content leaked into a Cyrillic L1 translation prompt
+ * (e.g. «То, что сказал el profesor, es importante.»).
+ */
+const SPANISH_LEAK_IN_CYRILLIC =
+  /\b(el|la|los|las|un|una|unos|unas|es|son|está|están|fue|fueron|dijo|dijeron|profesor|profesora|hay|también|muy|más|para|por|con|sin|del|al|me|te|se|lo|la|le|nos|os|les|yo|tú|él|ella|nosotros|vosotros|ellos|ellas|si|sí|no|ya|esto|esta|este|aquí|allí)\b/iu;
+
+/** Grammar jargon often kept in Latin inside Russian meta prompts (not sentences). */
+const LATIN_GRAMMAR_JARGON =
+  /^(pretérito|perfecto|imperfecto|indefinido|subjuntivo|condicional|presente|participio|infinitivo|gerundio|futuro|conjetura|imperativo|indicativo|pluscuamperfecto|compuesto|simple|reflexivo|relativo|conectores?|hendida|leísmo|loísmo|dele|ielts)$/i;
+
+/**
+ * True when a would-be L1 prompt mixes Cyrillic with Spanish wording.
+ */
+export function hasMixedLanguageTranslationPrompt(question: string): boolean {
+  const q = question.trim();
+  if (!q || !CYRILLIC.test(q)) return false;
+  if (hasScriptMixedToken(q)) return true;
+  if (SPANISH_LEAK_IN_CYRILLIC.test(q)) return true;
+  // Latin content words (≥5) that are not grammar jargon — e.g. alentadores.
+  const latinWords = q.match(/[A-Za-záéíóúñüÁÉÍÓÚÑÜ]{5,}/g) ?? [];
+  if (latinWords.some((w) => !LATIN_GRAMMAR_JARGON.test(w))) return true;
+  return false;
+}
+
 /** True when translation prompt/answer look usable. */
 export function isUsableTranslation(ex: {
   question?: string;
@@ -184,6 +216,8 @@ export function isUsableTranslation(ex: {
   if (isGrammarCategoryInstruction(q)) return false;
   // Pack generator leaks SB/EC instructions as "translation" prompts.
   if (isMetaOrFormulaPrompt(q)) return false;
+  // Hybrid RU+ES source sentences confuse learners and grading.
+  if (hasMixedLanguageTranslationPrompt(q)) return false;
   // Grammar-tag dumps used as “prompts” (2–3 words, no real sentence)
   const words = q.split(/\s+/).filter(Boolean);
   // Ignore abbreviation dots (adj. / subj.) when judging "has sentence punctuation"

@@ -351,7 +351,7 @@ const SPANISH_CURATED_SUPPLEMENTS = {
   ],
 
   "chapter-15-voz-pasiva": [
-    tr("Книга написана Габrielем Гарсиа Маркесом.", "El libro fue escrito por Gabriel García Márquez", "Pasiva — ser + participio", "Fue escrito por…"),
+    tr("Книга написана Габриэлем Гарсиа Маркесом.", "El libro fue escrito por Gabriel García Márquez", "Pasiva — ser + participio", "Fue escrito por…"),
     tr("Дом построен в 1920 году.", "La casa fue construida en 1920", "Pasiva — construir", "Fue construida en 1920."),
     tr("Письмо отправлено вчера.", "La carta fue enviada ayer", "Pasiva — enviar", "Fue enviada ayer."),
     tr("Решение принято правительством.", "La decisión fue tomada por el gobierno", "Pasiva — tomar", "Fue tomada por el gobierno."),
@@ -458,7 +458,7 @@ const SPANISH_CURATED_SUPPLEMENTS = {
   "chapter-22-futuro": [
     tr("Завтра я позвоню тебе.", "Mañana te llamaré", "Futuro simple", "Te llamaré — позвоню."),
     tr("Она приедет в пятницу.", "Llegará el viernes", "Futuro — llegar", "Llegará el viernes."),
-    tr("Мы будем жить в Барcelona.", "Viviremos en Barcelona", "Futuro — vivir", "Viviremos en Barcelona."),
+    tr("Мы будем жить в Барселоне.", "Viviremos en Barcelona", "Futuro — vivir", "Viviremos en Barcelona."),
     tr("Это будет сложно.", "Será difícil", "Futuro ser", "Será difícil."),
     tr("Они не придут.", "No vendrán", "Futuro negativo", "No vendrán. venir → vendrán."),
     tr("Ты успеешь?", "¿Llegarás a tiempo?", "Futuro — pregunta", "¿Llegarás a tiempo?"),
