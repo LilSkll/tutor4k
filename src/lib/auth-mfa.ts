@@ -8,5 +8,6 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 export async function sessionNeedsMfa(
   _supabase: SupabaseClient,
 ): Promise<boolean> {
+  void _supabase;
   return false;
 }

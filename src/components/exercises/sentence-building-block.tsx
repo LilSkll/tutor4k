@@ -1,30 +1,48 @@
 "use client";
 
 import * as React from "react";
+import { shuffleSentenceBuildingOptions } from "@/lib/exercise-options";
 import { cn } from "@/lib/utils";
 
 export function SentenceBuildingBlock({
   options,
+  answer,
   onAnswerChange,
   hint,
   removeLastLabel,
   wordsPlacedLabel,
 }: {
   options: string[];
+  /** Graded sentence — used so tiles are never left in answer order. */
+  answer?: string;
   onAnswerChange: (answer: string) => void;
   hint: string;
   removeLastLabel: string;
   wordsPlacedLabel?: string;
 }) {
+  const [tiles, setTiles] = React.useState<string[]>(() =>
+    shuffleSentenceBuildingOptions({
+      type: "sentence_building",
+      options,
+      answer,
+    }) ?? options,
+  );
   const [wordOrder, setWordOrder] = React.useState<number[]>([]);
 
   React.useEffect(() => {
+    setTiles(
+      shuffleSentenceBuildingOptions({
+        type: "sentence_building",
+        options,
+        answer,
+      }) ?? options,
+    );
     setWordOrder([]);
-  }, [options]);
+  }, [options, answer]);
 
   const syncAnswer = (order: number[]) => {
     setWordOrder(order);
-    onAnswerChange(order.map((i) => options[i]).join(" "));
+    onAnswerChange(order.map((i) => tiles[i]).join(" "));
   };
 
   const addWord = (idx: number) => {
@@ -53,17 +71,17 @@ export function SentenceBuildingBlock({
               onClick={() => removeWordAt(pos)}
               className="rounded-lg bg-primary text-primary-foreground px-3 py-1.5 text-sm font-medium shadow-sm hover:bg-primary/90 transition-colors"
             >
-              {options[optIdx]}
+              {tiles[optIdx]}
             </button>
           ))
         )}
       </div>
       <div className="flex flex-wrap gap-2">
-        {options.map((opt, i) => {
+        {tiles.map((opt, i) => {
           const used = wordOrder.includes(i);
           return (
             <button
-              key={i}
+              key={`${opt}-${i}`}
               type="button"
               onClick={() => addWord(i)}
               disabled={used}

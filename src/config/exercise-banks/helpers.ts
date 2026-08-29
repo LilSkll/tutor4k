@@ -243,10 +243,27 @@ export function sb(
   explanation: string,
   acceptableAnswers?: string[],
 ): Draft {
+  // Keep bank order scrambled so raw packs never ship answer-order tiles.
+  // Session prep also re-shuffles at serve time.
+  const options = [...tokens];
+  for (let i = options.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [options[i], options[j]] = [options[j]!, options[i]!];
+  }
+  if (
+    options.length >= 2 &&
+    options.every((t, i) => t === tokens[i]) &&
+    options.length > 1
+  ) {
+    [options[0], options[options.length - 1]] = [
+      options[options.length - 1]!,
+      options[0]!,
+    ];
+  }
   return {
     type: "sentence_building",
     question: tokens.join(" / "),
-    options: tokens,
+    options,
     answer,
     acceptableAnswers,
     instruction,

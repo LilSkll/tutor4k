@@ -80,4 +80,35 @@ describe("pickRandomRevisionExercises", () => {
     const stems = picks.map((p) => p.question);
     expect(new Set(stems).size).toBe(stems.length);
   });
+
+  it("prefers a mix of exercise types in the warm-up", () => {
+    const poolByChapter = new Map<string, StaticExercise[]>([
+      [
+        "ch1",
+        [
+          { ...ex("sb1", "Busco / una / silla", "Busco una silla"), type: "sentence_building", options: ["Busco", "una", "silla"] },
+          { ...ex("sb2", "Hay / un / libro", "Hay un libro"), type: "sentence_building", options: ["Hay", "un", "libro"] },
+          { ...ex("tr1", "Я голодный", "Tengo hambre"), type: "translation" },
+          {
+            id: "mc1",
+            type: "multiple_choice",
+            question: "Yo ___ estudiante",
+            options: ["soy", "estoy"],
+            answer: "soy",
+            instruction: "Choose",
+            explanation: "",
+          },
+        ],
+      ],
+    ]);
+
+    const picks = pickRandomRevisionExercises({
+      poolByChapter,
+      completedSlugs: ["ch1"],
+      count: 3,
+    });
+
+    expect(picks).toHaveLength(3);
+    expect(new Set(picks.map((p) => p.type)).size).toBe(3);
+  });
 });

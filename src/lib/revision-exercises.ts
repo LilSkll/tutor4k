@@ -71,20 +71,28 @@ export function pickRandomRevisionExercises(input: {
   const picked: StaticExercise[] = [];
   const usedStems = new Set<string>();
   const usedQuestions = new Set<string>();
+  const usedTypes = new Set<string>();
 
-  const tryTake = (ex: StaticExercise) => {
+  const tryTake = (ex: StaticExercise, preferNewType: boolean) => {
     if (picked.length >= count) return;
+    if (preferNewType && usedTypes.has(ex.type) && usedTypes.size < count) {
+      return;
+    }
     const q = ex.question.trim().toLowerCase();
     const stem = revisionStemKey(ex);
     if (usedQuestions.has(q)) return;
     if (stem && usedStems.has(stem)) return;
     usedQuestions.add(q);
     if (stem) usedStems.add(stem);
+    usedTypes.add(ex.type);
     picked.push(ex);
   };
 
-  for (const ex of preferredPool) tryTake(ex);
-  for (const ex of otherPool) tryTake(ex);
+  // First pass: prefer distinct exercise types so warm-ups are not 3× SB.
+  for (const ex of preferredPool) tryTake(ex, true);
+  for (const ex of otherPool) tryTake(ex, true);
+  for (const ex of preferredPool) tryTake(ex, false);
+  for (const ex of otherPool) tryTake(ex, false);
 
   return picked;
 }

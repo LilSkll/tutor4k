@@ -28,6 +28,7 @@ import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 import { QuestionWithGloss } from "@/components/exercises/question-with-gloss";
 import { ExerciseFreeTextBlock } from "@/components/exercises/exercise-free-text-block";
+import { SentenceBuildingBlock } from "@/components/exercises/sentence-building-block";
 import { gradeStaticExerciseLocally } from "@/lib/exercise-check-client";
 import { localizeExerciseInstruction } from "@/lib/exercise-localize";
 import type {
@@ -772,26 +773,6 @@ function ExerciseCard({
     exercise.options &&
     exercise.options.length > 0;
 
-  const [wordOrder, setWordOrder] = React.useState<number[]>([]);
-  const options = exercise.options ?? [];
-
-  const addWord = (idx: number) => {
-    if (wordOrder.includes(idx)) return;
-    const next = [...wordOrder, idx];
-    setWordOrder(next);
-    setUserAnswer(next.map((i) => options[i]).join(" "));
-  };
-  const removeLastWord = () => {
-    const next = wordOrder.slice(0, -1);
-    setWordOrder(next);
-    setUserAnswer(next.map((i) => options[i]).join(" "));
-  };
-  const removeWordAt = (pos: number) => {
-    const next = wordOrder.slice(0, pos);
-    setWordOrder(next);
-    setUserAnswer(next.map((i) => options[i]).join(" "));
-  };
-
   return (
     <Card className="animate-fade-in">
       <CardContent className="p-6 space-y-4">
@@ -828,62 +809,20 @@ function ExerciseCard({
             autoFocus
           />
         ) : isSentenceBuilding && hasOptions ? (
-          <div className="space-y-3">
-            <div className="min-h-[60px] rounded-lg border-2 border-dashed border-primary/30 bg-primary/5 p-3 flex flex-wrap gap-2 items-center">
-              {wordOrder.length === 0 ? (
-                <span className="text-sm text-muted-foreground italic">
-                  {t("exercises.sentenceBuildingHint")}
-                </span>
-              ) : (
-                wordOrder.map((optIdx, pos) => (
-                  <button
-                    key={pos}
-                    onClick={() => removeWordAt(pos)}
-                    className="rounded-lg bg-primary text-primary-foreground px-3 py-1.5 text-sm font-medium shadow-sm hover:bg-primary/90 transition-colors"
-                  >
-                    {options[optIdx]}
-                  </button>
-                ))
-              )}
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {options.map((opt, i) => {
-                const used = wordOrder.includes(i);
-                return (
-                  <button
-                    key={i}
-                    onClick={() => addWord(i)}
-                    disabled={used}
-                    className={cn(
-                      "rounded-lg border-2 px-3 py-1.5 text-sm font-medium transition-all",
-                      used
-                        ? "opacity-30 border-muted bg-muted cursor-not-allowed"
-                        : "border-primary/40 bg-card hover:border-primary hover:bg-primary/10 cursor-pointer",
-                    )}
-                  >
-                    {opt}
-                  </button>
-                );
-              })}
-            </div>
-            <div className="flex items-center justify-between">
-              <button
-                onClick={removeLastWord}
-                disabled={wordOrder.length === 0}
-                className="text-xs text-muted-foreground hover:text-foreground disabled:opacity-40"
-              >
-                {t("exercises.removeLastWord")}
-              </button>
-              {wordOrder.length > 0 && (
-                <span className="text-xs text-muted-foreground">
-                  {t("exercises.wordsPlaced", {
-                    count: wordOrder.length,
-                    total: options.length,
-                  })}
-                </span>
-              )}
-            </div>
-          </div>
+          <SentenceBuildingBlock
+            key={exercise.id ?? exercise.question}
+            options={exercise.options!}
+            answer={exercise.answer}
+            onAnswerChange={setUserAnswer}
+            hint={t("exercises.sentenceBuildingHint")}
+            removeLastLabel={t("exercises.removeLastWord")}
+            wordsPlacedLabel={t("exercises.wordsPlaced", {
+              count: userAnswer.trim()
+                ? userAnswer.trim().split(/\s+/).length
+                : 0,
+              total: exercise.options!.length,
+            })}
+          />
         ) : isMultipleChoice && hasOptions ? (
           <div className="grid gap-2">
             {exercise.options!.map((opt, i) => (

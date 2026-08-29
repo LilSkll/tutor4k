@@ -14,6 +14,31 @@ function sameOrder(a: string[], b: string[]): boolean {
   return a.length === b.length && a.every((word, i) => word === b[i]);
 }
 
+function normalizeJoined(tokens: string[]): string {
+  return tokens
+    .join(" ")
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/\p{M}/gu, "")
+    .replace(/[¿?¡!.,;:'"«»„""''`´…]/g, "")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+/** True when tiles left-to-right already spell the graded answer. */
+export function sentenceBuildingTilesSpoilAnswer(
+  tokens: string[],
+  answer?: string | null,
+): boolean {
+  if (tokens.length < 2) return false;
+  const joined = normalizeJoined(tokens);
+  if (!joined) return false;
+  if (answer?.trim()) {
+    return joined === normalizeJoined(answer.trim().split(/\s+/));
+  }
+  return false;
+}
+
 /** Jumble word tiles for sentence_building; bank options are the source of truth. */
 export function shuffleSentenceBuildingOptions(
   exercise: Pick<StaticExercise, "type" | "options" | "answer">,
@@ -27,12 +52,14 @@ export function shuffleSentenceBuildingOptions(
   if (tokens.length < 2) return exercise.options;
 
   const canonicalOrder = [...tokens];
+  const answer = exercise.answer ?? "";
   let shuffled = shuffleArray(tokens);
   let attempts = 0;
   while (
-    attempts < 10 &&
-    tokens.length >= 3 &&
-    sameOrder(shuffled, canonicalOrder)
+    attempts < 24 &&
+    tokens.length >= 2 &&
+    (sameOrder(shuffled, canonicalOrder) ||
+      sentenceBuildingTilesSpoilAnswer(shuffled, answer))
   ) {
     shuffled = shuffleArray(tokens);
     attempts++;

@@ -15,6 +15,7 @@ import type {
 import type { StaticExercise, InterfaceLanguage } from "@/types";
 import { attachQuestionGlossesToMany } from "@/lib/exercise-gloss-attach";
 import { prepareExercisesForInterface } from "@/lib/exercise-localize";
+import { prepareExercisesForSession } from "@/lib/exercise-options";
 import { pickRandomRevisionExercises } from "@/lib/revision-exercises";
 import { getChapterProgress } from "@/server/actions/data";
 
@@ -169,7 +170,9 @@ async function localizeRevisionExercises(
     // fall through with ru
   }
   void courseId;
-  return attachQuestionGlossesToMany(
-    prepareExercisesForInterface(exercises, language),
+  return prepareExercisesForSession(
+    attachQuestionGlossesToMany(
+      prepareExercisesForInterface(exercises, language),
+    ),
   );
 }

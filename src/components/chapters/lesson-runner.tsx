@@ -166,17 +166,9 @@ export function LessonRunner({
 
   const chapterBank = React.useMemo(() => {
     if (presetExercises.length === 0) return [];
-    // Mastered short path: pad with different leftover items, never clone the same stem.
-    if (
-      adaptation?.practiceEmphasis &&
-      adaptation.mode === "mastered_short" &&
-      presetExercises.length < SESSION_EXERCISES
-    ) {
-      const extra = presetExercises.filter((_, i) => i >= 2).slice(0, 2);
-      return [...presetExercises, ...extra];
-    }
+    // Never pad by cloning the same stems — short banks just run fewer items.
     return presetExercises;
-  }, [presetExercises, adaptation]);
+  }, [presetExercises]);
 
   const exerciseCountByType = React.useMemo(() => {
     const counts: Partial<Record<import("@/types").ExerciseType, number>> = {};
@@ -616,6 +608,7 @@ export function LessonRunner({
                     <SentenceBuildingBlock
                       key={ex.id ?? currentExerciseIdx}
                       options={ex.options!}
+                      answer={ex.answer}
                       onAnswerChange={setUserAnswer}
                       hint={t("exercises.sentenceBuildingHint")}
                       removeLastLabel={t("exercises.removeLastWord")}

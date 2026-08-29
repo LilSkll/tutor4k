@@ -81,6 +81,7 @@ export function getGrammarContent(
   topic: { content: string },
   _interfaceLanguage: InterfaceLanguage,
 ): string {
+  void _interfaceLanguage;
   return topic.content;
 }
 

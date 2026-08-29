@@ -53,7 +53,7 @@ export function resolveConstructionHint(input: {
   const answer = (input.answer ?? "").trim().replace(/[¡!¿?.,]/g, "");
 
   const usable = (raw: string): string | null => {
-    let t = stripConjugationSpoilers(raw);
+    const t = stripConjugationSpoilers(raw);
     if (!t || t.length < 4) return null;
     if (CONJUGATION_SPOILER.test(t)) return null;
     if (answer.length >= 3) {

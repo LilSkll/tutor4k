@@ -11,7 +11,8 @@ export type LocalizedGrammarTopicMeta = GrammarTopicMeta & {
 };
 
 export function toGrammarTopicMeta(topic: GrammarTopic): GrammarTopicMeta {
-  const { content: _content, ...meta } = topic;
+  const { content, ...meta } = topic;
+  void content;
   return meta;
 }
 

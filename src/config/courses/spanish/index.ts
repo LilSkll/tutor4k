@@ -1,4 +1,4 @@
-import type { CourseConfig, InterfaceLanguage, Level } from "@/types";
+import type { CourseConfig } from "@/types";
 
 // =====================================================================
 // Spanish Course Configuration

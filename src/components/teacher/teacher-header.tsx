@@ -4,7 +4,8 @@ import { ThemeToggle } from "@/components/shared/theme-toggle";
 import { translate } from "@/lib/i18n/with-teacher";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 
-export function TeacherHeader(_props: { title?: string }) {
+export function TeacherHeader(_props?: { title?: string }) {
+  void _props;
   const language = useInterfaceLanguage();
   const t = (key: string) => translate(key, language);
 
