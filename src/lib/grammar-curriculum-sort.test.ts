@@ -29,7 +29,7 @@ describe("sortGrammarTopicsByCurriculum", () => {
     const fromChapters = CHAPTERS.map((c) => c.grammarTopic);
     expect(fromChapters).toEqual([...SPANISH_CHAPTER_GRAMMAR_ORDER]);
 
-    const rank = new Map(
+    const rank = new Map<string, number>(
       SPANISH_GRAMMAR_CURRICULUM_ORDER.map((slug, index) => [slug, index]),
     );
     let last = -1;

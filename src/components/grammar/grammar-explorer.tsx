@@ -10,7 +10,6 @@ import type { GrammarLevel, InterfaceLanguage } from "@/types";
 import type { LocalizedGrammarTopicMeta } from "@/lib/grammar-topic-meta";
 import { ENGLISH_GRAMMAR_CURRICULUM_ORDER } from "@/config/english-curriculum-order";
 import { SPANISH_GRAMMAR_CURRICULUM_ORDER } from "@/config/grammar-curriculum-order";
-import { sortGrammarForCourse } from "@/lib/grammar-curriculum-sort";
 import { cn } from "@/lib/utils";
 
 const GrammarTopicDialog = dynamic(

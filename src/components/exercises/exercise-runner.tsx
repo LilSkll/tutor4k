@@ -810,7 +810,7 @@ function ExerciseCard({
           />
         ) : isSentenceBuilding && hasOptions ? (
           <SentenceBuildingBlock
-            key={exercise.id ?? exercise.question}
+            key={exercise.exerciseId ?? exercise.question}
             options={exercise.options!}
             answer={exercise.answer}
             onAnswerChange={setUserAnswer}

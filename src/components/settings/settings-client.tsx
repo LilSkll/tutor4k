@@ -130,7 +130,7 @@ export function SettingsClient({ profile }: { profile: Profile }) {
         });
         const data = (await res.json()) as { error?: string };
         if (!res.ok) {
-          toast.error(t("settings.deleteFailed"));
+          toast.error(data.error ?? t("settings.deleteFailed"));
           return;
         }
         toast.success(t("settings.deleteSuccess"));

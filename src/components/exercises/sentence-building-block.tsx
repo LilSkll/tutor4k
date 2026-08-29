@@ -24,7 +24,7 @@ export function SentenceBuildingBlock({
     shuffleSentenceBuildingOptions({
       type: "sentence_building",
       options,
-      answer,
+      answer: answer ?? "",
     }) ?? options,
   );
   const [wordOrder, setWordOrder] = React.useState<number[]>([]);
@@ -34,7 +34,7 @@ export function SentenceBuildingBlock({
       shuffleSentenceBuildingOptions({
         type: "sentence_building",
         options,
-        answer,
+        answer: answer ?? "",
       }) ?? options,
     );
     setWordOrder([]);

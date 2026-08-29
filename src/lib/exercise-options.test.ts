@@ -31,6 +31,7 @@ describe("prepareExerciseForSession", () => {
       question: "Test?",
       options: ["a", "b"],
       answer: "a",
+      instruction: "Choose",
       explanation: "x",
     };
     expect(prepareExerciseForSession(mc)).toEqual(mc);
@@ -43,6 +44,7 @@ describe("prepareExerciseForSession", () => {
       question: "Busco / una / silla / libre",
       options: ["Busco", "una", "silla", "libre"],
       answer: "Busco una silla libre",
+      instruction: "Build",
       explanation: "x",
     };
     const prepared = prepareExerciseForSession(sb);
