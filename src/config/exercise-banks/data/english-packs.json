@@ -369,18 +369,6 @@
       },
       {
         "type": "fill_blank",
-        "question": "___ (be) you OK?",
-        "answer": "Are",
-        "acceptableAnswers": [
-          "Are",
-          "are"
-        ],
-        "instruction": "Question form of be",
-        "explanation": "You → Are…?",
-        "grammarTopic": "eng-a1-be"
-      },
-      {
-        "type": "fill_blank",
         "question": "My sister ___ (be) 20.",
         "answer": "is",
         "acceptableAnswers": [
@@ -429,18 +417,6 @@
       },
       {
         "type": "fill_blank",
-        "question": "___ (be) he your teacher?",
-        "answer": "Is",
-        "acceptableAnswers": [
-          "Is",
-          "is"
-        ],
-        "instruction": "Question form of be",
-        "explanation": "He → Is…?",
-        "grammarTopic": "eng-a1-be"
-      },
-      {
-        "type": "fill_blank",
         "question": "Our house ___ (be) old.",
         "answer": "is",
         "acceptableAnswers": [
@@ -473,18 +449,6 @@
         ],
         "instruction": "Fill in the correct form of be",
         "explanation": "These → are.",
-        "grammarTopic": "eng-a1-be"
-      },
-      {
-        "type": "fill_blank",
-        "question": "___ (be) we late?",
-        "answer": "Are",
-        "acceptableAnswers": [
-          "Are",
-          "are"
-        ],
-        "instruction": "Question form of be",
-        "explanation": "We → Are…?",
         "grammarTopic": "eng-a1-be"
       },
       {
@@ -8240,20 +8204,6 @@
     "multiple_choice": [
       {
         "type": "multiple_choice",
-        "question": "She didn't ___ TV.",
-        "options": [
-          "watch",
-          "watched",
-          "watching",
-          "watches"
-        ],
-        "answer": "watch",
-        "instruction": "Negative past simple",
-        "explanation": "didn't + base verb (no -ed).",
-        "grammarTopic": "eng-a2-past-simple"
-      },
-      {
-        "type": "multiple_choice",
         "question": "He ___ a new car last week.",
         "options": [
           "bought",
@@ -8268,28 +8218,6 @@
       }
     ],
     "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "I ___ (go) to London yesterday.",
-        "answer": "went",
-        "acceptableAnswers": [
-          "Went"
-        ],
-        "instruction": "Past simple irregular",
-        "explanation": "go → went (irregular).",
-        "grammarTopic": "eng-a2-past-simple"
-      },
-      {
-        "type": "fill_blank",
-        "question": "___ you see the film?",
-        "answer": "Did",
-        "acceptableAnswers": [
-          "did"
-        ],
-        "instruction": "Question in past simple",
-        "explanation": "Did + subject + base verb.",
-        "grammarTopic": "eng-a2-past-simple"
-      },
       {
         "type": "fill_blank",
         "question": "She didn't ___ TV.",
@@ -8945,59 +8873,8 @@
     ]
   },
   "eng-ch5-choices": {
-    "multiple_choice": [
-      {
-        "type": "multiple_choice",
-        "question": "An elephant is ___ a cat.",
-        "options": [
-          "bigger than",
-          "bigger",
-          "biggest",
-          "more big"
-        ],
-        "answer": "bigger than",
-        "instruction": "Comparative",
-        "explanation": "big → bigger + than.",
-        "grammarTopic": "eng-a2-comparatives"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "I am older ___ my sister.",
-        "options": [
-          "than",
-          "then",
-          "that",
-          "as"
-        ],
-        "answer": "than",
-        "instruction": "Comparative link word",
-        "explanation": "comparative + than.",
-        "grammarTopic": "eng-a2-comparatives"
-      }
-    ],
+    "multiple_choice": [],
     "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "She is the ___ (good) student.",
-        "answer": "best",
-        "acceptableAnswers": [
-          "Best"
-        ],
-        "instruction": "Superlative",
-        "explanation": "good → the best (irregular).",
-        "grammarTopic": "eng-a2-comparatives"
-      },
-      {
-        "type": "fill_blank",
-        "question": "This exercise is ___ (difficult) than the last one.",
-        "answer": "more difficult",
-        "acceptableAnswers": [
-          "More difficult"
-        ],
-        "instruction": "Comparative, 2+ syllables",
-        "explanation": "difficult → more difficult.",
-        "grammarTopic": "eng-a2-comparatives"
-      },
       {
         "type": "fill_blank",
         "question": "An elephant is ___ a cat.",
@@ -9685,48 +9562,8 @@
     ]
   },
   "eng-ch20-going-to": {
-    "multiple_choice": [
-      {
-        "type": "multiple_choice",
-        "question": "I am going to ___ a book.",
-        "options": [
-          "read",
-          "reading",
-          "reads",
-          "readed"
-        ],
-        "answer": "read",
-        "instruction": "going to + verb",
-        "explanation": "going to + base verb.",
-        "grammarTopic": "eng-a2-going-to"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Look at the clouds — it ___ rain.",
-        "options": [
-          "is going to",
-          "will to",
-          "going",
-          "goes to"
-        ],
-        "answer": "is going to",
-        "instruction": "Prediction with going to",
-        "explanation": "Evidence → be going to.",
-        "grammarTopic": "eng-a2-going-to"
-      }
-    ],
+    "multiple_choice": [],
     "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "___ you going to come?",
-        "answer": "Are",
-        "acceptableAnswers": [
-          "are"
-        ],
-        "instruction": "Question with going to",
-        "explanation": "Are you going to…?",
-        "grammarTopic": "eng-a2-going-to"
-      },
       {
         "type": "fill_blank",
         "question": "I am going to ___ a book.",
@@ -10401,17 +10238,6 @@
     "fill_blank": [
       {
         "type": "fill_blank",
-        "question": "I have ___ (visit) Paris.",
-        "answer": "visited",
-        "acceptableAnswers": [
-          "Visited"
-        ],
-        "instruction": "Present perfect",
-        "explanation": "have + visited (-ed).",
-        "grammarTopic": "eng-a2-present-perfect"
-      },
-      {
-        "type": "fill_blank",
         "question": "She has ___ her keys.",
         "answer": "lost",
         "acceptableAnswers": [
@@ -10585,18 +10411,6 @@
         "explanation": "have known… since childhood.",
         "grammarTopic": "eng-a2-present-perfect",
         "acceptableAnswers": []
-      },
-      {
-        "type": "translation",
-        "question": "ever or never?",
-        "answer": "Have you ever been to Japan?",
-        "acceptableAnswers": [
-          "have you ever been to japan?",
-          "ever"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Questions use ever.",
-        "grammarTopic": "eng-a2-present-perfect"
       }
     ],
     "error_correction": [
@@ -11751,48 +11565,8 @@
     ]
   },
   "eng-ch7-future-plans": {
-    "multiple_choice": [
-      {
-        "type": "multiple_choice",
-        "question": "If it rains, I ___ stay home.",
-        "options": [
-          "will",
-          "would",
-          "am",
-          "going"
-        ],
-        "answer": "will",
-        "instruction": "First conditional",
-        "explanation": "If + present, will + base.",
-        "grammarTopic": "eng-b1-future-conditional"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "He won't ___ to the party.",
-        "options": [
-          "come",
-          "comes",
-          "coming",
-          "came"
-        ],
-        "answer": "come",
-        "instruction": "won't + verb",
-        "explanation": "won't = will not + base verb.",
-        "grammarTopic": "eng-b1-future-conditional"
-      }
-    ],
+    "multiple_choice": [],
     "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "If you study, you ___ pass.",
-        "answer": "will",
-        "acceptableAnswers": [
-          "Will"
-        ],
-        "instruction": "First conditional",
-        "explanation": "If + present, will + V.",
-        "grammarTopic": "eng-b1-future-conditional"
-      },
       {
         "type": "fill_blank",
         "question": "If it rains, I ___ stay home.",
@@ -12450,36 +12224,7 @@
     ]
   },
   "eng-ch22-modals": {
-    "multiple_choice": [
-      {
-        "type": "multiple_choice",
-        "question": "I ___ to work tomorrow.",
-        "options": [
-          "have",
-          "must",
-          "should",
-          "can"
-        ],
-        "answer": "have",
-        "instruction": "External obligation",
-        "explanation": "have to = external obligation.",
-        "grammarTopic": "eng-b1-modals"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "You don't ___ to come if you're busy.",
-        "options": [
-          "have",
-          "must",
-          "should",
-          "can"
-        ],
-        "answer": "have",
-        "instruction": "No necessity",
-        "explanation": "don't have to = not necessary.",
-        "grammarTopic": "eng-b1-modals"
-      }
-    ],
+    "multiple_choice": [],
     "fill_blank": [
       {
         "type": "fill_blank",
@@ -13084,60 +12829,8 @@
     ]
   },
   "eng-ch8-storytelling": {
-    "multiple_choice": [
-      {
-        "type": "multiple_choice",
-        "question": "I used to ___ tennis every weekend.",
-        "options": [
-          "play",
-          "played",
-          "playing",
-          "plays"
-        ],
-        "answer": "play",
-        "instruction": "used to + verb",
-        "explanation": "used to + base verb.",
-        "grammarTopic": "eng-b1-narrative"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "They ___ TV when I entered.",
-        "options": [
-          "were watching",
-          "was watching",
-          "watched",
-          "watch"
-        ],
-        "answer": "were watching",
-        "instruction": "Past continuous (they)",
-        "explanation": "They → were + V-ing.",
-        "grammarTopic": "eng-b1-narrative"
-      }
-    ],
+    "multiple_choice": [],
     "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "I ___ (read) when she called.",
-        "answer": "was reading",
-        "acceptableAnswers": [
-          "Was reading"
-        ],
-        "instruction": "Past continuous",
-        "explanation": "I → was + V-ing.",
-        "grammarTopic": "eng-b1-narrative"
-      },
-      {
-        "type": "fill_blank",
-        "question": "When I arrived, the train ___ (leave).",
-        "answer": "had left",
-        "acceptableAnswers": [
-          "Had left",
-          "had left"
-        ],
-        "instruction": "Past perfect",
-        "explanation": "had + left (before arrival).",
-        "grammarTopic": "eng-b1-narrative"
-      },
       {
         "type": "fill_blank",
         "question": "I used to ___ tennis every weekend.",
@@ -13858,17 +13551,6 @@
     "fill_blank": [
       {
         "type": "fill_blank",
-        "question": "How long ___ you been waiting?",
-        "answer": "have",
-        "acceptableAnswers": [
-          "Have"
-        ],
-        "instruction": "Present perfect continuous question",
-        "explanation": "How long have you been + V-ing?",
-        "grammarTopic": "eng-b1-perfect-continuous"
-      },
-      {
-        "type": "fill_blank",
         "question": "She has been working here ___ 2020.",
         "answer": "since",
         "acceptableAnswers": [
@@ -14509,60 +14191,8 @@
     ]
   },
   "eng-ch10-what-if": {
-    "multiple_choice": [
-      {
-        "type": "multiple_choice",
-        "question": "If she had studied, she ___ (pass).",
-        "options": [
-          "would have passed",
-          "would pass",
-          "will pass",
-          "passed"
-        ],
-        "answer": "would have passed",
-        "instruction": "Third conditional",
-        "explanation": "If + past perfect → would have + V3.",
-        "grammarTopic": "eng-b2-conditionals"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "If I were you, I ___ accept the offer.",
-        "options": [
-          "would",
-          "will",
-          "would have",
-          "had"
-        ],
-        "answer": "would",
-        "instruction": "Second conditional",
-        "explanation": "If I were you, I would...",
-        "grammarTopic": "eng-b2-conditionals"
-      }
-    ],
+    "multiple_choice": [],
     "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "If I ___ (have) more money, I would travel.",
-        "answer": "had",
-        "acceptableAnswers": [
-          "Had"
-        ],
-        "instruction": "Second conditional",
-        "explanation": "If + past simple → would + base verb.",
-        "grammarTopic": "eng-b2-conditionals"
-      },
-      {
-        "type": "fill_blank",
-        "question": "I wish I ___ (not / eat) so much yesterday.",
-        "answer": "hadn't eaten",
-        "acceptableAnswers": [
-          "had not eaten",
-          "Hadn't eaten"
-        ],
-        "instruction": "wish + past perfect",
-        "explanation": "wish + past perfect for past regret.",
-        "grammarTopic": "eng-b2-conditionals"
-      },
       {
         "type": "fill_blank",
         "question": "If she had studied, she ___ (pass).",
@@ -15299,59 +14929,8 @@
     ]
   },
   "eng-ch11-passive": {
-    "multiple_choice": [
-      {
-        "type": "multiple_choice",
-        "question": "English ___ in many countries.",
-        "options": [
-          "is spoken",
-          "speaks",
-          "spoken",
-          "was spoken"
-        ],
-        "answer": "is spoken",
-        "instruction": "Present simple passive",
-        "explanation": "Present passive: is/are + V3.",
-        "grammarTopic": "eng-b2-passive"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "The report has ___ finished.",
-        "options": [
-          "been",
-          "being",
-          "be",
-          "was"
-        ],
-        "answer": "been",
-        "instruction": "Present perfect passive",
-        "explanation": "has/have been + V3.",
-        "grammarTopic": "eng-b2-passive"
-      }
-    ],
+    "multiple_choice": [],
     "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "The house ___ (build) in 1990.",
-        "answer": "was built",
-        "acceptableAnswers": [
-          "Was built"
-        ],
-        "instruction": "Past simple passive",
-        "explanation": "was/were + V3 in past passive.",
-        "grammarTopic": "eng-b2-passive"
-      },
-      {
-        "type": "fill_blank",
-        "question": "I had my car ___ (repair) yesterday.",
-        "answer": "repaired",
-        "acceptableAnswers": [
-          "Repaired"
-        ],
-        "instruction": "have something done",
-        "explanation": "have + object + V3.",
-        "grammarTopic": "eng-b2-passive"
-      },
       {
         "type": "fill_blank",
         "question": "English ___ in many countries.",
@@ -16000,34 +15579,6 @@
     "multiple_choice": [
       {
         "type": "multiple_choice",
-        "question": "The man ___ lives next door is a doctor.",
-        "options": [
-          "who",
-          "which",
-          "whose",
-          "where"
-        ],
-        "answer": "who",
-        "instruction": "Relative pronoun for people",
-        "explanation": "who for people.",
-        "grammarTopic": "eng-b2-reported-clauses"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "My brother, ___ is a lawyer, lives abroad.",
-        "options": [
-          "who",
-          "that",
-          "which",
-          "what"
-        ],
-        "answer": "who",
-        "instruction": "Non-defining relative clause",
-        "explanation": "Non-defining clauses use who (not that).",
-        "grammarTopic": "eng-b2-reported-clauses"
-      },
-      {
-        "type": "multiple_choice",
         "question": "This is the book ___ I told you about.",
         "options": [
           "that",
@@ -16042,30 +15593,6 @@
       }
     ],
     "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "She said she ___ (be) tired.",
-        "answer": "was",
-        "acceptableAnswers": [
-          "Was"
-        ],
-        "instruction": "Reported speech",
-        "explanation": "Present → past in reported speech.",
-        "grammarTopic": "eng-b2-reported-clauses"
-      },
-      {
-        "type": "fill_blank",
-        "question": "This is the book ___ I told you about.",
-        "answer": "that",
-        "acceptableAnswers": [
-          "That",
-          "which",
-          "Which"
-        ],
-        "instruction": "Relative pronoun",
-        "explanation": "that/which for things.",
-        "grammarTopic": "eng-b2-reported-clauses"
-      },
       {
         "type": "fill_blank",
         "question": "The man ___ lives next door is a doctor.",
@@ -16768,20 +16295,6 @@
     "multiple_choice": [
       {
         "type": "multiple_choice",
-        "question": "It was John ___ broke the window.",
-        "options": [
-          "who",
-          "which",
-          "what",
-          "that only in defining"
-        ],
-        "answer": "who",
-        "instruction": "Cleft sentence",
-        "explanation": "It was + focus + who/that...",
-        "grammarTopic": "eng-c1-inversion"
-      },
-      {
-        "type": "multiple_choice",
         "question": "What I need ___ a vacation.",
         "options": [
           "is",
@@ -16796,28 +16309,6 @@
       }
     ],
     "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "Never ___ I seen such beauty.",
-        "answer": "have",
-        "acceptableAnswers": [
-          "Have"
-        ],
-        "instruction": "Negative inversion",
-        "explanation": "Never + auxiliary + subject + verb.",
-        "grammarTopic": "eng-c1-inversion"
-      },
-      {
-        "type": "fill_blank",
-        "question": "Hardly ___ I arrived when it started raining.",
-        "answer": "had",
-        "acceptableAnswers": [
-          "Had"
-        ],
-        "instruction": "Inversion after Hardly",
-        "explanation": "Hardly had + subject + past participle...",
-        "grammarTopic": "eng-c1-inversion"
-      },
       {
         "type": "fill_blank",
         "question": "It was John ___ broke the window.",
@@ -16955,18 +16446,6 @@
         ],
         "instruction": "Translate to English",
         "explanation": "What I need is + noun.",
-        "grammarTopic": "eng-c1-inversion"
-      },
-      {
-        "type": "translation",
-        "question": "Build the negative inversion sentence",
-        "answer": "Never have I seen such beauty",
-        "acceptableAnswers": [
-          "never have i seen such beauty",
-          "Never"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Never + inversion: Never have I seen…",
         "grammarTopic": "eng-c1-inversion"
       }
     ],
@@ -17463,48 +16942,8 @@
     ]
   },
   "eng-ch14-art-language": {
-    "multiple_choice": [
-      {
-        "type": "multiple_choice",
-        "question": "A: Are you ready? B: ___",
-        "options": [
-          "Yes, I am",
-          "I am ready.",
-          "Ready?",
-          "No, I'm not ready yet"
-        ],
-        "answer": "Yes, I am",
-        "instruction": "Ellipsis in conversation",
-        "explanation": "Short answers with ellipsis are natural in conversation.",
-        "grammarTopic": "eng-c1-discourse"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Such ___ his anger that he left.",
-        "options": [
-          "was",
-          "is",
-          "were",
-          "be"
-        ],
-        "answer": "was",
-        "instruction": "Fronting with Such",
-        "explanation": "Such was + noun phrase...",
-        "grammarTopic": "eng-c1-discourse"
-      }
-    ],
+    "multiple_choice": [],
     "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "She was ___ exhausted to continue.",
-        "answer": "absolutely",
-        "acceptableAnswers": [
-          "Absolutely"
-        ],
-        "instruction": "Intensifying adverb",
-        "explanation": "absolutely + adjective for emphasis.",
-        "grammarTopic": "eng-c1-discourse"
-      },
       {
         "type": "fill_blank",
         "question": "A: Are you ready? B: ___?",
@@ -17625,66 +17064,6 @@
         "explanation": "absolutely + прилагательное — усиление.",
         "grammarTopic": "eng-c1-discourse",
         "acceptableAnswers": []
-      },
-      {
-        "type": "translation",
-        "question": "Build the fronted Such sentence",
-        "answer": "Such was his anger that he left",
-        "acceptableAnswers": [
-          "such was his anger that he left",
-          "Such"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Such was + noun phrase + that…",
-        "grammarTopic": "eng-c1-discourse"
-      },
-      {
-        "type": "translation",
-        "question": "Build the relative clause sentence",
-        "answer": "This is the book I told you about",
-        "acceptableAnswers": [
-          "this is the book i told you about",
-          "This"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Relative clause with preposition stranding.",
-        "grammarTopic": "eng-c1-discourse"
-      },
-      {
-        "type": "translation",
-        "question": "Литературное описание",
-        "answer": "The moon hung low over the silent harbour",
-        "acceptableAnswers": [
-          "the moon hung low over the silent harbour",
-          "The"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Hung low — образное описание.",
-        "grammarTopic": "eng-c1-discourse"
-      },
-      {
-        "type": "translation",
-        "question": "Интенсификаторы",
-        "answer": "Her voice trembled with barely contained emotion",
-        "acceptableAnswers": [
-          "her voice trembled with barely contained emotion",
-          "Her"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Barely contained — нюанс эмоции.",
-        "grammarTopic": "eng-c1-discourse"
-      },
-      {
-        "type": "translation",
-        "question": "Контраст в прозе",
-        "answer": "He spoke softly yet every word carried weight",
-        "acceptableAnswers": [
-          "he spoke softly yet every word carried weight",
-          "He"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Softly yet… carried weight — контраст.",
-        "grammarTopic": "eng-c1-discourse"
       }
     ],
     "error_correction": [
@@ -18159,59 +17538,8 @@
     ]
   },
   "eng-ch15-mastery": {
-    "multiple_choice": [
-      {
-        "type": "multiple_choice",
-        "question": "It is said ___ he left the country.",
-        "options": [
-          "that",
-          "to",
-          "for",
-          "about"
-        ],
-        "answer": "that",
-        "instruction": "Advanced passive",
-        "explanation": "It is said that + clause.",
-        "grammarTopic": "eng-c1-mixed-conditionals"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "If I were taller, I ___ joined the basketball team.",
-        "options": [
-          "would have",
-          "would",
-          "will have",
-          "had"
-        ],
-        "answer": "would have",
-        "instruction": "Mixed conditional",
-        "explanation": "Present condition → past result.",
-        "grammarTopic": "eng-c1-mixed-conditionals"
-      }
-    ],
+    "multiple_choice": [],
     "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "If I had studied medicine, I ___ a doctor now.",
-        "answer": "would be",
-        "acceptableAnswers": [
-          "Would be"
-        ],
-        "instruction": "Mixed conditional",
-        "explanation": "Past condition → present result.",
-        "grammarTopic": "eng-c1-mixed-conditionals"
-      },
-      {
-        "type": "fill_blank",
-        "question": "I wish you ___ stop doing that.",
-        "answer": "would",
-        "acceptableAnswers": [
-          "Would"
-        ],
-        "instruction": "wish + would",
-        "explanation": "wish + would for annoyance about habits.",
-        "grammarTopic": "eng-c1-mixed-conditionals"
-      },
       {
         "type": "fill_blank",
         "question": "It is said ___ he left the country.",
@@ -18338,30 +17666,6 @@
         "explanation": "Had I known — без if, C1.",
         "grammarTopic": "eng-c1-mixed-conditionals",
         "acceptableAnswers": []
-      },
-      {
-        "type": "translation",
-        "question": "Build the need + V-ing sentence",
-        "answer": "This car needs cleaning before the trip",
-        "acceptableAnswers": [
-          "this car needs cleaning before the trip",
-          "This"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "need + V-ing = need to be done.",
-        "grammarTopic": "eng-c1-mixed-conditionals"
-      },
-      {
-        "type": "translation",
-        "question": "Build the mixed conditional (past result)",
-        "answer": "If I were taller, I would have joined the team",
-        "acceptableAnswers": [
-          "if i were taller, i would have joined the team",
-          "If"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Present condition → past result.",
-        "grammarTopic": "eng-c1-mixed-conditionals"
       }
     ],
     "error_correction": [
@@ -18858,60 +18162,8 @@
     ]
   },
   "eng-ch16-ielts": {
-    "multiple_choice": [
-      {
-        "type": "multiple_choice",
-        "question": "Which connector shows contrast?",
-        "options": [
-          "nevertheless",
-          "furthermore",
-          "therefore",
-          "moreover"
-        ],
-        "answer": "nevertheless",
-        "instruction": "Discourse markers",
-        "explanation": "nevertheless = however, shows contrast.",
-        "grammarTopic": "eng-c1-review"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "In academic writing, contractions are usually ___",
-        "options": [
-          "avoided",
-          "encouraged",
-          "required",
-          "preferred"
-        ],
-        "answer": "avoided",
-        "instruction": "Register",
-        "explanation": "Formal register avoids contractions.",
-        "grammarTopic": "eng-c1-review"
-      }
-    ],
+    "multiple_choice": [],
     "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "He ___ have left — his keys are still here.",
-        "answer": "can't",
-        "acceptableAnswers": [
-          "Can't",
-          "cannot"
-        ],
-        "instruction": "Modal perfect deduction",
-        "explanation": "can't have + V3 = impossible past deduction.",
-        "grammarTopic": "eng-c1-review"
-      },
-      {
-        "type": "fill_blank",
-        "question": "She should ___ studied harder for the test.",
-        "answer": "have",
-        "acceptableAnswers": [
-          "Have"
-        ],
-        "instruction": "Modal perfect regret",
-        "explanation": "should have + V3 = regret about past.",
-        "grammarTopic": "eng-c1-review"
-      },
       {
         "type": "fill_blank",
         "question": "In academic writing, contractions are usually ___.",
@@ -19748,20 +19000,6 @@
       },
       {
         "type": "multiple_choice",
-        "question": "___ sun rises in the east.",
-        "options": [
-          "A",
-          "An",
-          "The",
-          "no article"
-        ],
-        "answer": "The",
-        "instruction": "Choose the correct article",
-        "explanation": "Unique object → the sun.",
-        "grammarTopic": "eng-a1-articles-basics"
-      },
-      {
-        "type": "multiple_choice",
         "question": "I like ___ music.",
         "options": [
           "a",
@@ -19786,20 +19024,6 @@
         "answer": "an",
         "instruction": "Choose the correct article",
         "explanation": "Apple → vowel sound → an.",
-        "grammarTopic": "eng-a1-articles-basics"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "We live near ___ river.",
-        "options": [
-          "a",
-          "an",
-          "the",
-          "no article"
-        ],
-        "answer": "the",
-        "instruction": "Choose the correct article",
-        "explanation": "Specific known river → the.",
         "grammarTopic": "eng-a1-articles-basics"
       },
       {
@@ -19832,20 +19056,6 @@
       },
       {
         "type": "multiple_choice",
-        "question": "Please close ___ door.",
-        "options": [
-          "a",
-          "an",
-          "the",
-          "no article"
-        ],
-        "answer": "the",
-        "instruction": "Choose the correct article",
-        "explanation": "Specific door in the room → the.",
-        "grammarTopic": "eng-a1-articles-basics"
-      },
-      {
-        "type": "multiple_choice",
         "question": "I saw ___ European tourist.",
         "options": [
           "a",
@@ -19856,20 +19066,6 @@
         "answer": "a",
         "instruction": "Choose the correct article",
         "explanation": "European starts with /j/ consonant sound → a.",
-        "grammarTopic": "eng-a1-articles-basics"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "___ Amazon is a long river.",
-        "options": [
-          "A",
-          "An",
-          "The",
-          "no article"
-        ],
-        "answer": "The",
-        "instruction": "Choose the correct article",
-        "explanation": "Named rivers take the.",
         "grammarTopic": "eng-a1-articles-basics"
       },
       {
@@ -19902,20 +19098,6 @@
       },
       {
         "type": "multiple_choice",
-        "question": "I left my keys on ___ table.",
-        "options": [
-          "a",
-          "an",
-          "the",
-          "no article"
-        ],
-        "answer": "the",
-        "instruction": "Choose the correct article",
-        "explanation": "Specific table → the.",
-        "grammarTopic": "eng-a1-articles-basics"
-      },
-      {
-        "type": "multiple_choice",
         "question": "She wants to be ___ engineer.",
         "options": [
           "a",
@@ -19944,20 +19126,6 @@
       },
       {
         "type": "multiple_choice",
-        "question": "Can you pass me ___ salt, please?",
-        "options": [
-          "a",
-          "an",
-          "the",
-          "no article"
-        ],
-        "answer": "the",
-        "instruction": "Choose the correct article",
-        "explanation": "Salt on the table (shared) → the.",
-        "grammarTopic": "eng-a1-articles-basics"
-      },
-      {
-        "type": "multiple_choice",
         "question": "He speaks ___ French fluently.",
         "options": [
           "a",
@@ -19982,20 +19150,6 @@
         "answer": "a",
         "instruction": "Choose the correct article",
         "explanation": "One of many hotels, first mention → a.",
-        "grammarTopic": "eng-a1-articles-basics"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "___ Pacific Ocean is huge.",
-        "options": [
-          "A",
-          "An",
-          "The",
-          "no article"
-        ],
-        "answer": "The",
-        "instruction": "Choose the correct article",
-        "explanation": "Oceans take the.",
         "grammarTopic": "eng-a1-articles-basics"
       }
     ],
@@ -20049,18 +19203,6 @@
       },
       {
         "type": "fill_blank",
-        "question": "___ moon looks bright tonight.",
-        "answer": "The",
-        "acceptableAnswers": [
-          "The",
-          "the"
-        ],
-        "instruction": "Fill in the blank with the correct article",
-        "explanation": "Unique → The moon.",
-        "grammarTopic": "eng-a1-articles-basics"
-      },
-      {
-        "type": "fill_blank",
         "question": "I like ___ coffee in the morning.",
         "answer": "no article",
         "acceptableAnswers": [
@@ -20081,18 +19223,6 @@
         ],
         "instruction": "Fill in the blank with the correct article",
         "explanation": "Old → vowel sound → an.",
-        "grammarTopic": "eng-a1-articles-basics"
-      },
-      {
-        "type": "fill_blank",
-        "question": "Open ___ window, please.",
-        "answer": "the",
-        "acceptableAnswers": [
-          "the",
-          "The"
-        ],
-        "instruction": "Fill in the blank with the correct article",
-        "explanation": "Specific window → the.",
         "grammarTopic": "eng-a1-articles-basics"
       },
       {
@@ -20121,18 +19251,6 @@
       },
       {
         "type": "fill_blank",
-        "question": "We crossed ___ Thames yesterday.",
-        "answer": "the",
-        "acceptableAnswers": [
-          "the",
-          "The"
-        ],
-        "instruction": "Fill in the blank with the correct article",
-        "explanation": "Named river → the.",
-        "grammarTopic": "eng-a1-articles-basics"
-      },
-      {
-        "type": "fill_blank",
         "question": "They play ___ tennis after school.",
         "answer": "no article",
         "acceptableAnswers": [
@@ -20153,18 +19271,6 @@
         ],
         "instruction": "Fill in the blank with the correct article",
         "explanation": "Hour → silent h → an.",
-        "grammarTopic": "eng-a1-articles-basics"
-      },
-      {
-        "type": "fill_blank",
-        "question": "Put the milk in ___ fridge.",
-        "answer": "the",
-        "acceptableAnswers": [
-          "the",
-          "The"
-        ],
-        "instruction": "Fill in the blank with the correct article",
-        "explanation": "Known fridge → the.",
         "grammarTopic": "eng-a1-articles-basics"
       },
       {
@@ -20193,18 +19299,6 @@
       },
       {
         "type": "fill_blank",
-        "question": "___ Nile is in Africa.",
-        "answer": "The",
-        "acceptableAnswers": [
-          "The",
-          "the"
-        ],
-        "instruction": "Fill in the blank with the correct article",
-        "explanation": "Named river → The.",
-        "grammarTopic": "eng-a1-articles-basics"
-      },
-      {
-        "type": "fill_blank",
         "question": "He wants to be ___ actor.",
         "answer": "an",
         "acceptableAnswers": [
@@ -20226,18 +19320,6 @@
         "instruction": "Fill in the blank with the correct article",
         "explanation": "One → /w/ sound → a.",
         "grammarTopic": "eng-a1-articles-basics"
-      },
-      {
-        "type": "fill_blank",
-        "question": "Please pass ___ pepper.",
-        "answer": "the",
-        "acceptableAnswers": [
-          "the",
-          "The"
-        ],
-        "instruction": "Fill in the blank with the correct article",
-        "explanation": "Shared item on table → the.",
-        "grammarTopic": "eng-a1-articles-basics"
       }
     ],
     "translation": [
@@ -20251,30 +19333,6 @@
         "instruction": "Zero article",
         "explanation": "Music — неисчисляемое, без артикля.",
         "grammarTopic": "articles-basics"
-      },
-      {
-        "type": "translation",
-        "question": "Профессия без the",
-        "answer": "She is a doctor.",
-        "acceptableAnswers": [
-          "she is a doctor.",
-          "a"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Профессия в общем смысле → a doctor.",
-        "grammarTopic": "eng-a1-articles-basics"
-      },
-      {
-        "type": "translation",
-        "question": "Уникальный объект",
-        "answer": "The",
-        "acceptableAnswers": [
-          "the",
-          "The"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "The sun — единственный в мире объект.",
-        "grammarTopic": "eng-a1-articles-basics"
       },
       {
         "type": "translation",
@@ -21024,20 +20082,6 @@
     "multiple_choice": [
       {
         "type": "multiple_choice",
-        "question": "This is ___ phone.",
-        "options": [
-          "her",
-          "she",
-          "hers",
-          "she's"
-        ],
-        "answer": "her",
-        "instruction": "Притяжательное (she)",
-        "explanation": "Her + существительное: her phone.",
-        "grammarTopic": "possessives"
-      },
-      {
-        "type": "multiple_choice",
         "question": "The dog wagged ___ tail.",
         "options": [
           "its",
@@ -21558,138 +20602,6 @@
       },
       {
         "type": "translation",
-        "question": "Притяжательное (she)",
-        "answer": "her",
-        "acceptableAnswers": [
-          "her",
-          "her"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Her + существительное: her phone.",
-        "grammarTopic": "eng-a1-possessives"
-      },
-      {
-        "type": "translation",
-        "question": "Соберите вопрос",
-        "answer": "Is this your bag?",
-        "acceptableAnswers": [
-          "is this your bag?",
-          "Is"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Is this your bag? — притяжательное + существительное.",
-        "grammarTopic": "eng-a1-possessives"
-      },
-      {
-        "type": "translation",
-        "question": "Притяжательные — my",
-        "answer": "This is my book",
-        "acceptableAnswers": [
-          "this is my book",
-          "This"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "My + существительное без артикля.",
-        "grammarTopic": "eng-a1-possessives"
-      },
-      {
-        "type": "translation",
-        "question": "Притяжательные — your",
-        "answer": "Is this your phone?",
-        "acceptableAnswers": [
-          "is this your phone?",
-          "Is"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Your перед существительным.",
-        "grammarTopic": "eng-a1-possessives"
-      },
-      {
-        "type": "translation",
-        "question": "Притяжательные — their",
-        "answer": "Their house is very big",
-        "acceptableAnswers": [
-          "their house is very big",
-          "Their"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Their + house.",
-        "grammarTopic": "eng-a1-possessives"
-      },
-      {
-        "type": "translation",
-        "question": "Whose — чей?",
-        "answer": "Whose keys are these?",
-        "acceptableAnswers": [
-          "whose keys are these?",
-          "Whose"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Whose keys — вопрос о принадлежности.",
-        "grammarTopic": "eng-a1-possessives"
-      },
-      {
-        "type": "translation",
-        "question": "Притяжательные местоимения",
-        "answer": "That laptop is mine",
-        "acceptableAnswers": [
-          "that laptop is mine",
-          "That"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Mine — без существительного после.",
-        "grammarTopic": "eng-a1-possessives"
-      },
-      {
-        "type": "translation",
-        "question": "Yours — твои",
-        "answer": "Are these gloves yours?",
-        "acceptableAnswers": [
-          "are these gloves yours?",
-          "Are"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Yours = your gloves.",
-        "grammarTopic": "eng-a1-possessives"
-      },
-      {
-        "type": "translation",
-        "question": "Притяжательные — our",
-        "answer": "Our teacher is from Scotland",
-        "acceptableAnswers": [
-          "our teacher is from scotland",
-          "Our"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Our + teacher.",
-        "grammarTopic": "eng-a1-possessives"
-      },
-      {
-        "type": "translation",
-        "question": "Притяжательные — his",
-        "answer": "His sister works in a hospital",
-        "acceptableAnswers": [
-          "his sister works in a hospital",
-          "His"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "His — его (муж.).",
-        "grammarTopic": "eng-a1-possessives"
-      },
-      {
-        "type": "translation",
-        "question": "Притяжательные — her",
-        "answer": "Her dog loves the park",
-        "acceptableAnswers": [
-          "her dog loves the park",
-          "Her"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Her + dog.",
-        "grammarTopic": "eng-a1-possessives"
-      },
-      {
-        "type": "translation",
         "question": "Это моя книга.",
         "answer": "This is my book",
         "acceptableAnswers": [
@@ -21852,17 +20764,6 @@
       },
       {
         "type": "error_correction",
-        "question": "The dog wagged it's tail.",
-        "answer": "The dog wagged its tail.",
-        "acceptableAnswers": [
-          "The dog wagged its tail"
-        ],
-        "instruction": "Fix the grammar mistake",
-        "explanation": "its = possessive; it's = it is.",
-        "grammarTopic": "eng-a2-possessives"
-      },
-      {
-        "type": "error_correction",
         "question": "Is this pen your or mine?",
         "answer": "Is this pen yours or mine?",
         "acceptableAnswers": [
@@ -21953,17 +20854,6 @@
       },
       {
         "type": "error_correction",
-        "question": "Don't judge a book by it's cover.",
-        "answer": "Don't judge a book by its cover.",
-        "acceptableAnswers": [
-          "Don't judge a book by its cover"
-        ],
-        "instruction": "Fix the grammar mistake",
-        "explanation": "its cover.",
-        "grammarTopic": "eng-a2-possessives"
-      },
-      {
-        "type": "error_correction",
         "question": "I like theirs new apartment.",
         "answer": "I like their new apartment.",
         "acceptableAnswers": [
@@ -21993,17 +20883,6 @@
         ],
         "instruction": "Fix the grammar mistake",
         "explanation": "Standalone → ours.",
-        "grammarTopic": "eng-a2-possessives"
-      },
-      {
-        "type": "error_correction",
-        "question": "The cat cleaned it's paws.",
-        "answer": "The cat cleaned its paws.",
-        "acceptableAnswers": [
-          "The cat cleaned its paws"
-        ],
-        "instruction": "Fix the grammar mistake",
-        "explanation": "its, not it's.",
         "grammarTopic": "eng-a2-possessives"
       }
     ],
@@ -22698,54 +21577,6 @@
       },
       {
         "type": "fill_blank",
-        "question": "I don't have ___ cash on me.",
-        "answer": "much",
-        "acceptableAnswers": [
-          "much",
-          "Much"
-        ],
-        "instruction": "Fill in much or many",
-        "explanation": "Cash = uncountable → much.",
-        "grammarTopic": "eng-a2-countable-uncountable"
-      },
-      {
-        "type": "fill_blank",
-        "question": "Very ___ tourists visit in winter.",
-        "answer": "few",
-        "acceptableAnswers": [
-          "few",
-          "Few"
-        ],
-        "instruction": "Fill in few or little",
-        "explanation": "Tourists = countable → few.",
-        "grammarTopic": "eng-a2-countable-uncountable"
-      },
-      {
-        "type": "fill_blank",
-        "question": "There is ___ evidence for that claim.",
-        "answer": "little",
-        "acceptableAnswers": [
-          "little",
-          "Little"
-        ],
-        "instruction": "Fill in few or little",
-        "explanation": "Evidence = uncountable → little.",
-        "grammarTopic": "eng-a2-countable-uncountable"
-      },
-      {
-        "type": "fill_blank",
-        "question": "She knows ___ people here.",
-        "answer": "many",
-        "acceptableAnswers": [
-          "many",
-          "Many"
-        ],
-        "instruction": "Fill in much or many",
-        "explanation": "People = countable → many.",
-        "grammarTopic": "eng-a2-countable-uncountable"
-      },
-      {
-        "type": "fill_blank",
         "question": "We need ___ more advice.",
         "answer": "a little",
         "acceptableAnswers": [
@@ -22753,18 +21584,6 @@
         ],
         "instruction": "Fill in a few or a little",
         "explanation": "Advice = uncountable → a little.",
-        "grammarTopic": "eng-a2-countable-uncountable"
-      },
-      {
-        "type": "fill_blank",
-        "question": "There aren't ___ buses after midnight.",
-        "answer": "many",
-        "acceptableAnswers": [
-          "many",
-          "Many"
-        ],
-        "instruction": "Fill in much or many",
-        "explanation": "Buses = countable → many.",
         "grammarTopic": "eng-a2-countable-uncountable"
       },
       {
@@ -22780,43 +21599,6 @@
       },
       {
         "type": "fill_blank",
-        "question": "___ of my friends live abroad.",
-        "answer": "Many",
-        "acceptableAnswers": [
-          "Many",
-          "many"
-        ],
-        "instruction": "Fill in Many or Much",
-        "explanation": "Friends = countable → Many.",
-        "grammarTopic": "eng-a2-countable-uncountable"
-      },
-      {
-        "type": "fill_blank",
-        "question": "I have ___ flour left.",
-        "answer": "little",
-        "acceptableAnswers": [
-          "little",
-          "Little"
-        ],
-        "instruction": "Fill in few or little",
-        "explanation": "Flour = uncountable → little.",
-        "grammarTopic": "eng-a2-countable-uncountable"
-      },
-      {
-        "type": "fill_blank",
-        "question": "There were ___ mistakes in the essay.",
-        "answer": "few",
-        "acceptableAnswers": [
-          "few",
-          "Few",
-          "a few"
-        ],
-        "instruction": "Fill in few or little",
-        "explanation": "Mistakes = countable → few.",
-        "grammarTopic": "eng-a2-countable-uncountable"
-      },
-      {
-        "type": "fill_blank",
         "question": "Could I have ___ milk in my tea?",
         "answer": "a little",
         "acceptableAnswers": [
@@ -22824,30 +21606,6 @@
         ],
         "instruction": "Fill in a few or a little",
         "explanation": "Milk = uncountable → a little.",
-        "grammarTopic": "eng-a2-countable-uncountable"
-      },
-      {
-        "type": "fill_blank",
-        "question": "She asked ___ questions.",
-        "answer": "many",
-        "acceptableAnswers": [
-          "many",
-          "Many"
-        ],
-        "instruction": "Fill in much or many",
-        "explanation": "Questions = countable → many.",
-        "grammarTopic": "eng-a2-countable-uncountable"
-      },
-      {
-        "type": "fill_blank",
-        "question": "There isn't ___ bread left.",
-        "answer": "much",
-        "acceptableAnswers": [
-          "much",
-          "Much"
-        ],
-        "instruction": "Fill in much or many",
-        "explanation": "Bread = uncountable → much.",
         "grammarTopic": "eng-a2-countable-uncountable"
       }
     ],
@@ -24174,18 +22932,6 @@
       },
       {
         "type": "translation",
-        "question": "Yet в отрицании",
-        "answer": "They haven't arrived yet.",
-        "acceptableAnswers": [
-          "they haven't arrived yet.",
-          "yet"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Yet — в − и ? (ещё не).",
-        "grammarTopic": "eng-a2-present-perfect-intro"
-      },
-      {
-        "type": "translation",
         "question": "Ты когда-нибудь был в Испании?",
         "answer": "Have you ever been to Spain?",
         "acceptableAnswers": [
@@ -24969,20 +23715,6 @@
     "multiple_choice": [
       {
         "type": "multiple_choice",
-        "question": "If you heat water to 100°C, it ___.",
-        "options": [
-          "boils",
-          "will boil",
-          "would boil",
-          "boiled"
-        ],
-        "answer": "boils",
-        "instruction": "Zero conditional",
-        "explanation": "Zero: If + Present, Present (закон природы).",
-        "grammarTopic": "conditionals-review"
-      },
-      {
-        "type": "multiple_choice",
         "question": "If I ___ rich, I would travel.",
         "options": [
           "were",
@@ -25311,18 +24043,6 @@
       },
       {
         "type": "fill_blank",
-        "question": "If it rains, we ___ stay indoors.",
-        "answer": "will",
-        "acceptableAnswers": [
-          "will",
-          "Will"
-        ],
-        "instruction": "Fill in will or would",
-        "explanation": "First conditional → will.",
-        "grammarTopic": "eng-b1-conditionals-review"
-      },
-      {
-        "type": "fill_blank",
         "question": "If I ___ more money, I would buy a bike.",
         "answer": "had",
         "acceptableAnswers": [
@@ -25335,18 +24055,6 @@
       },
       {
         "type": "fill_blank",
-        "question": "If she practised more, she ___ improve.",
-        "answer": "would",
-        "acceptableAnswers": [
-          "would",
-          "Would"
-        ],
-        "instruction": "Fill in will or would",
-        "explanation": "Second → would.",
-        "grammarTopic": "eng-b1-conditionals-review"
-      },
-      {
-        "type": "fill_blank",
         "question": "If you don't water plants, they ___.",
         "answer": "die",
         "acceptableAnswers": [
@@ -25355,18 +24063,6 @@
         ],
         "instruction": "Fill in the present form",
         "explanation": "Zero.",
-        "grammarTopic": "eng-b1-conditionals-review"
-      },
-      {
-        "type": "fill_blank",
-        "question": "If I see her, I ___ say hello.",
-        "answer": "will",
-        "acceptableAnswers": [
-          "will",
-          "Will"
-        ],
-        "instruction": "Fill in will or would",
-        "explanation": "First.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -25391,18 +24087,6 @@
         ],
         "instruction": "Fill in the present form",
         "explanation": "Zero.",
-        "grammarTopic": "eng-b1-conditionals-review"
-      },
-      {
-        "type": "fill_blank",
-        "question": "If they offer me the role, I ___ accept.",
-        "answer": "will",
-        "acceptableAnswers": [
-          "will",
-          "Will"
-        ],
-        "instruction": "Fill in will or would",
-        "explanation": "First.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -25433,30 +24117,6 @@
       },
       {
         "type": "fill_blank",
-        "question": "If you leave now, you ___ catch the train.",
-        "answer": "will",
-        "acceptableAnswers": [
-          "will",
-          "Will"
-        ],
-        "instruction": "Fill in will or would",
-        "explanation": "First.",
-        "grammarTopic": "eng-b1-conditionals-review"
-      },
-      {
-        "type": "fill_blank",
-        "question": "If I knew the answer, I ___ tell you.",
-        "answer": "would",
-        "acceptableAnswers": [
-          "would",
-          "Would"
-        ],
-        "instruction": "Fill in will or would",
-        "explanation": "Second.",
-        "grammarTopic": "eng-b1-conditionals-review"
-      },
-      {
-        "type": "fill_blank",
         "question": "If it ___ cold, water turns to ice.",
         "answer": "gets",
         "acceptableAnswers": [
@@ -25466,18 +24126,6 @@
         ],
         "instruction": "Fill in the present form",
         "explanation": "Zero.",
-        "grammarTopic": "eng-b1-conditionals-review"
-      },
-      {
-        "type": "fill_blank",
-        "question": "If he doesn't hurry, he ___ be late.",
-        "answer": "will",
-        "acceptableAnswers": [
-          "will",
-          "Will"
-        ],
-        "instruction": "Fill in will or would",
-        "explanation": "First.",
         "grammarTopic": "eng-b1-conditionals-review"
       },
       {
@@ -25505,19 +24153,6 @@
         "instruction": "1st conditional",
         "explanation": "If + Present → will.",
         "grammarTopic": "conditionals-review"
-      },
-      {
-        "type": "translation",
-        "question": "Will в if-клаузе",
-        "answer": "If it rains, I will stay home.",
-        "acceptableAnswers": [
-          "If it rains, I will stay home.",
-          "If it rains, I will stay home",
-          "If it rains, I'll stay home."
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Нельзя will после if — только Present.",
-        "grammarTopic": "eng-b1-conditionals-review"
       },
       {
         "type": "translation",
@@ -26366,34 +25001,6 @@
   },
   "eng-ch31-reported-speech": {
     "multiple_choice": [
-      {
-        "type": "multiple_choice",
-        "question": "She said she ___ tired.",
-        "options": [
-          "was",
-          "is",
-          "has been",
-          "will be"
-        ],
-        "answer": "was",
-        "instruction": "Tense backshift",
-        "explanation": "Present → Past: is → was.",
-        "grammarTopic": "reported-speech"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "«I'm happy» → She said she ___ happy.",
-        "options": [
-          "was",
-          "is",
-          "had been",
-          "would be"
-        ],
-        "answer": "was",
-        "instruction": "Backshift",
-        "explanation": "I'm → she was (backshift).",
-        "grammarTopic": "reported-speech"
-      },
       {
         "type": "multiple_choice",
         "question": "He told me ___ wait.",
@@ -27723,20 +26330,6 @@
       },
       {
         "type": "multiple_choice",
-        "question": "The man ___ car was stolen called the police.",
-        "options": [
-          "whose",
-          "who's",
-          "who",
-          "which"
-        ],
-        "answer": "whose",
-        "instruction": "Whose",
-        "explanation": "Whose = чей (whose car).",
-        "grammarTopic": "relative-clauses"
-      },
-      {
-        "type": "multiple_choice",
         "question": "The book ___ I read was exciting.",
         "options": [
           "that",
@@ -28243,54 +26836,6 @@
         "instruction": "Translate the sentence",
         "explanation": "Where = in which (место).",
         "grammarTopic": "relative-clauses"
-      },
-      {
-        "type": "translation",
-        "question": "Соберите с who",
-        "answer": "The teacher who teaches English is kind",
-        "acceptableAnswers": [
-          "the teacher who teaches english is kind",
-          "The"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Defining clause без запятых.",
-        "grammarTopic": "eng-b1-relative-clauses"
-      },
-      {
-        "type": "translation",
-        "question": "That после everything",
-        "answer": "Everything that you said made sense",
-        "acceptableAnswers": [
-          "everything that you said made sense",
-          "Everything"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Everything that…",
-        "grammarTopic": "eng-b1-relative-clauses"
-      },
-      {
-        "type": "translation",
-        "question": "Which — компания",
-        "answer": "The company which employs her is international",
-        "acceptableAnswers": [
-          "the company which employs her is international",
-          "The"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Which для организаций.",
-        "grammarTopic": "eng-b1-relative-clauses"
-      },
-      {
-        "type": "translation",
-        "question": "That — потерянные ключи",
-        "answer": "The keys that I lost were in my pocket",
-        "acceptableAnswers": [
-          "the keys that i lost were in my pocket",
-          "The"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "That I lost — определяет keys.",
-        "grammarTopic": "eng-b1-relative-clauses"
       },
       {
         "type": "translation",
@@ -29085,20 +27630,6 @@
     "multiple_choice": [
       {
         "type": "multiple_choice",
-        "question": "The report ___ yesterday.",
-        "options": [
-          "was written",
-          "wrote",
-          "has written",
-          "is writing"
-        ],
-        "answer": "was written",
-        "instruction": "Past passive",
-        "explanation": "Past passive: was/were + V3.",
-        "grammarTopic": "passive-advanced"
-      },
-      {
-        "type": "multiple_choice",
         "question": "I need to ___ my hair cut.",
         "options": [
           "have",
@@ -29365,17 +27896,6 @@
       }
     ],
     "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "A new bridge ___ (build) at the moment.",
-        "answer": "is being built",
-        "acceptableAnswers": [
-          "Is being built"
-        ],
-        "instruction": "Present continuous passive",
-        "explanation": "Is being + V3 — процесс сейчас.",
-        "grammarTopic": "passive-advanced"
-      },
       {
         "type": "fill_blank",
         "question": "He had his wallet ___.",
@@ -31724,31 +30244,7 @@
   },
   "eng-ch35-ielts-informal": {
     "multiple_choice": [],
-    "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "Thanks for your email — great to ___ from you!",
-        "answer": "hear",
-        "acceptableAnswers": [
-          "Hear"
-        ],
-        "instruction": "Opening phrase",
-        "explanation": "Great to hear from you — стандартное opening.",
-        "grammarTopic": "ielts-letter-informal"
-      },
-      {
-        "type": "fill_blank",
-        "question": "I'm sorry I haven't written for ___.",
-        "answer": "ages",
-        "acceptableAnswers": [
-          "Ages",
-          "a long time"
-        ],
-        "instruction": "Informal apology",
-        "explanation": "Haven't written for ages — типичная фраза.",
-        "grammarTopic": "ielts-letter-informal"
-      }
-    ],
+    "fill_blank": [],
     "translation": [
       {
         "type": "translation",
@@ -31839,174 +30335,6 @@
         "explanation": "I hope you're doing well — дружеское.",
         "grammarTopic": "eng-ielts-letter-informal",
         "acceptableAnswers": []
-      },
-      {
-        "type": "translation",
-        "question": "Неформальное приветствие",
-        "answer": "Hi Sarah",
-        "acceptableAnswers": [
-          "hi sarah",
-          "Hi"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Hi + имя — без запятой в письме другу.",
-        "grammarTopic": "eng-ielts-letter-informal"
-      },
-      {
-        "type": "translation",
-        "question": "Неформальный вопрос",
-        "answer": "How are you doing?",
-        "acceptableAnswers": [
-          "how are you doing?",
-          "How"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "How are you doing? — разговорный вариант.",
-        "grammarTopic": "eng-ielts-letter-informal"
-      },
-      {
-        "type": "translation",
-        "question": "Радость от письма",
-        "answer": "It was great to hear from you",
-        "acceptableAnswers": [
-          "it was great to hear from you",
-          "It"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Стандартная фраза в начале ответа.",
-        "grammarTopic": "eng-ielts-letter-informal"
-      },
-      {
-        "type": "translation",
-        "question": "Извинение за паузу",
-        "answer": "Sorry I haven't written for ages",
-        "acceptableAnswers": [
-          "sorry i haven't written for ages",
-          "Sorry"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Haven't written for ages.",
-        "grammarTopic": "eng-ielts-letter-informal"
-      },
-      {
-        "type": "translation",
-        "question": "Переход к теме",
-        "answer": "Anyway let me tell you about my trip",
-        "acceptableAnswers": [
-          "anyway let me tell you about my trip",
-          "Anyway"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Anyway — переход к основному.",
-        "grammarTopic": "eng-ielts-letter-informal"
-      },
-      {
-        "type": "translation",
-        "question": "Интрига",
-        "answer": "You'll never guess what happened",
-        "acceptableAnswers": [
-          "you'll never guess what happened",
-          "You'll"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "You'll never guess — неформальный крючок.",
-        "grammarTopic": "eng-ielts-letter-informal"
-      },
-      {
-        "type": "translation",
-        "question": "Цель письма",
-        "answer": "I'm writing to let you know the news",
-        "acceptableAnswers": [
-          "i'm writing to let you know the news",
-          "I'm"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Let you know — сообщить.",
-        "grammarTopic": "eng-ielts-letter-informal"
-      },
-      {
-        "type": "translation",
-        "question": "Кстати",
-        "answer": "By the way how is your new job?",
-        "acceptableAnswers": [
-          "by the way how is your new job?",
-          "By"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "By the way — дополнительный вопрос.",
-        "grammarTopic": "eng-ielts-letter-informal"
-      },
-      {
-        "type": "translation",
-        "question": "Передача привета",
-        "answer": "Give my love to your family",
-        "acceptableAnswers": [
-          "give my love to your family",
-          "Give"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Give my love to…",
-        "grammarTopic": "eng-ielts-letter-informal"
-      },
-      {
-        "type": "translation",
-        "question": "Нетерпение",
-        "answer": "I can't wait to see you again",
-        "acceptableAnswers": [
-          "i can't wait to see you again",
-          "I"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Can't wait to — разговорное.",
-        "grammarTopic": "eng-ielts-letter-informal"
-      },
-      {
-        "type": "translation",
-        "question": "Просьба написать",
-        "answer": "Drop me a line when you get a chance",
-        "acceptableAnswers": [
-          "drop me a line when you get a chance",
-          "Drop"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Drop me a line — напиши.",
-        "grammarTopic": "eng-ielts-letter-informal"
-      },
-      {
-        "type": "translation",
-        "question": "Завершение части",
-        "answer": "That's all for now",
-        "acceptableAnswers": [
-          "that's all for now",
-          "That's"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "That's all for now — пока всё.",
-        "grammarTopic": "eng-ielts-letter-informal"
-      },
-      {
-        "type": "translation",
-        "question": "Неформальное прощание",
-        "answer": "Take care and talk soon",
-        "acceptableAnswers": [
-          "take care and talk soon",
-          "Take"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Take care — береги себя.",
-        "grammarTopic": "eng-ielts-letter-informal"
-      },
-      {
-        "type": "translation",
-        "question": "Заключительная формула",
-        "answer": "Best wishes",
-        "acceptableAnswers": [
-          "best wishes",
-          "Best"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Best wishes — нейтрально-дружеское.",
-        "grammarTopic": "eng-ielts-letter-informal"
       }
     ],
     "error_correction": [
@@ -32406,31 +30734,7 @@
   },
   "eng-ch36-ielts-formal": {
     "multiple_choice": [],
-    "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "I am writing to ___ about the service I received.",
-        "answer": "complain",
-        "acceptableAnswers": [
-          "Complain",
-          "enquire"
-        ],
-        "instruction": "Complaint opening",
-        "explanation": "I am writing to complain/enquire about…",
-        "grammarTopic": "ielts-letter-formal"
-      },
-      {
-        "type": "fill_blank",
-        "question": "I look forward to ___ from you.",
-        "answer": "hearing",
-        "acceptableAnswers": [
-          "Hearing"
-        ],
-        "instruction": "Closing line",
-        "explanation": "Look forward to + -ing.",
-        "grammarTopic": "ielts-letter-formal"
-      }
-    ],
+    "fill_blank": [],
     "translation": [
       {
         "type": "translation",
@@ -32752,34 +31056,7 @@
         "grammarTopic": "eng-cambridge-letter-email"
       }
     ],
-    "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "I am writing in response to your ___ about the trip.",
-        "answer": "email",
-        "acceptableAnswers": [
-          "Email",
-          "letter",
-          "message"
-        ],
-        "instruction": "Semi-formal opening",
-        "explanation": "In response to your email/letter…",
-        "grammarTopic": "cambridge-letter-email"
-      },
-      {
-        "type": "fill_blank",
-        "question": "Please let me know if you need any further ___.",
-        "answer": "information",
-        "acceptableAnswers": [
-          "Information",
-          "details",
-          "assistance"
-        ],
-        "instruction": "Semi-formal offer",
-        "explanation": "Any further information/assistance.",
-        "grammarTopic": "cambridge-letter-email"
-      }
-    ],
+    "fill_blank": [],
     "translation": [
       {
         "type": "translation",
@@ -32870,174 +31147,6 @@
         "explanation": "to express my interest — цель письма.",
         "grammarTopic": "eng-cambridge-letter-email",
         "acceptableAnswers": []
-      },
-      {
-        "type": "translation",
-        "question": "Полуформальное обращение",
-        "answer": "Dear Mr Thompson",
-        "acceptableAnswers": [
-          "dear mr thompson",
-          "Dear"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Dear + титул + фамилия.",
-        "grammarTopic": "eng-cambridge-letter-email"
-      },
-      {
-        "type": "translation",
-        "question": "Цель письма",
-        "answer": "I am writing to enquire about the position",
-        "acceptableAnswers": [
-          "i am writing to enquire about the position",
-          "I"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "I am writing to enquire — формально.",
-        "grammarTopic": "eng-cambridge-letter-email"
-      },
-      {
-        "type": "translation",
-        "question": "Вежливая просьба",
-        "answer": "I would be grateful if you could send me the details",
-        "acceptableAnswers": [
-          "i would be grateful if you could send me the details",
-          "I"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Would be grateful if you could…",
-        "grammarTopic": "eng-cambridge-letter-email"
-      },
-      {
-        "type": "translation",
-        "question": "Ссылка на объявление",
-        "answer": "With reference to your advertisement I wish to apply",
-        "acceptableAnswers": [
-          "with reference to your advertisement i wish to apply",
-          "With"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "With reference to — по поводу.",
-        "grammarTopic": "eng-cambridge-letter-email"
-      },
-      {
-        "type": "translation",
-        "question": "Завершение — ожидание",
-        "answer": "I look forward to hearing from you",
-        "acceptableAnswers": [
-          "i look forward to hearing from you",
-          "I"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Look forward to + gerund.",
-        "grammarTopic": "eng-cambridge-letter-email"
-      },
-      {
-        "type": "translation",
-        "question": "Приглашение связаться",
-        "answer": "Please do not hesitate to contact me",
-        "acceptableAnswers": [
-          "please do not hesitate to contact me",
-          "Please"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Do not hesitate to contact…",
-        "grammarTopic": "eng-cambridge-letter-email"
-      },
-      {
-        "type": "translation",
-        "question": "Доступность",
-        "answer": "I am available for an interview at your convenience",
-        "acceptableAnswers": [
-          "i am available for an interview at your convenience",
-          "I"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "At your convenience — когда вам удобно.",
-        "grammarTopic": "eng-cambridge-letter-email"
-      },
-      {
-        "type": "translation",
-        "question": "Благодарность",
-        "answer": "Thank you for considering my application",
-        "acceptableAnswers": [
-          "thank you for considering my application",
-          "Thank"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Thank you for considering…",
-        "grammarTopic": "eng-cambridge-letter-email"
-      },
-      {
-        "type": "translation",
-        "question": "Приложение",
-        "answer": "I enclose my CV for your attention",
-        "acceptableAnswers": [
-          "i enclose my cv for your attention",
-          "I"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "I enclose — прилагаю.",
-        "grammarTopic": "eng-cambridge-letter-email"
-      },
-      {
-        "type": "translation",
-        "question": "Заключение без имени",
-        "answer": "Yours faithfully",
-        "acceptableAnswers": [
-          "yours faithfully",
-          "Yours"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Yours faithfully — если не знаете имя.",
-        "grammarTopic": "eng-cambridge-letter-email"
-      },
-      {
-        "type": "translation",
-        "question": "Заключение с именем",
-        "answer": "Yours sincerely",
-        "acceptableAnswers": [
-          "yours sincerely",
-          "Yours"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Yours sincerely — после Dear Mr/Ms…",
-        "grammarTopic": "eng-cambridge-letter-email"
-      },
-      {
-        "type": "translation",
-        "question": "Ответ на письмо",
-        "answer": "I am writing in response to your email",
-        "acceptableAnswers": [
-          "i am writing in response to your email",
-          "I"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "In response to your email.",
-        "grammarTopic": "eng-cambridge-letter-email"
-      },
-      {
-        "type": "translation",
-        "question": "Вежливый вопрос",
-        "answer": "Could you please confirm the meeting time?",
-        "acceptableAnswers": [
-          "could you please confirm the meeting time?",
-          "Could"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Could you please confirm…",
-        "grammarTopic": "eng-cambridge-letter-email"
-      },
-      {
-        "type": "translation",
-        "question": "Просьба об ответе",
-        "answer": "I would appreciate a prompt reply",
-        "acceptableAnswers": [
-          "i would appreciate a prompt reply",
-          "I"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Would appreciate a prompt reply.",
-        "grammarTopic": "eng-cambridge-letter-email"
       }
     ],
     "error_correction": [
@@ -33520,35 +31629,7 @@
         "grammarTopic": "eng-ielts-task1-report"
       }
     ],
-    "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "The figure ___ sharply between 2015 and 2018.",
-        "answer": "rose",
-        "acceptableAnswers": [
-          "Rose",
-          "increased",
-          "Increased"
-        ],
-        "instruction": "Trend verb",
-        "explanation": "Rose/increased sharply — рост.",
-        "grammarTopic": "ielts-task1-report"
-      },
-      {
-        "type": "fill_blank",
-        "question": "There was a ___ decline in exports after 2019.",
-        "answer": "gradual",
-        "acceptableAnswers": [
-          "Gradual",
-          "sharp",
-          "Sharp",
-          "steady"
-        ],
-        "instruction": "Adjective + noun",
-        "explanation": "Gradual/sharp decline — описание тренда.",
-        "grammarTopic": "ielts-task1-report"
-      }
-    ],
+    "fill_blank": [],
     "translation": [
       {
         "type": "translation",
@@ -33875,33 +31956,7 @@
         "grammarTopic": "eng-ielts-essay-structure"
       }
     ],
-    "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "This essay will ___ that technology improves education.",
-        "answer": "argue",
-        "acceptableAnswers": [
-          "Argue",
-          "discuss",
-          "Discuss",
-          "examine"
-        ],
-        "instruction": "Thesis verb",
-        "explanation": "This essay will argue/discuss that…",
-        "grammarTopic": "ielts-essay-structure"
-      },
-      {
-        "type": "fill_blank",
-        "question": "The main drawback is ___ lack of face-to-face interaction.",
-        "answer": "the",
-        "acceptableAnswers": [
-          "The"
-        ],
-        "instruction": "Article",
-        "explanation": "The lack of… — конкретный недостаток.",
-        "grammarTopic": "ielts-essay-structure"
-      }
-    ],
+    "fill_blank": [],
     "translation": [
       {
         "type": "translation",
@@ -33992,162 +32047,6 @@
         "explanation": "Thus — следствие и рекомендация.",
         "grammarTopic": "eng-ielts-essay-structure",
         "acceptableAnswers": []
-      },
-      {
-        "type": "translation",
-        "question": "Введение — контекст",
-        "answer": "In recent years technology has transformed daily life",
-        "acceptableAnswers": [
-          "in recent years technology has transformed daily life",
-          "In"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "In recent years — временной контекст.",
-        "grammarTopic": "eng-ielts-essay-structure"
-      },
-      {
-        "type": "translation",
-        "question": "Введение — значимость",
-        "answer": "There are several reasons why this issue matters",
-        "acceptableAnswers": [
-          "there are several reasons why this issue matters",
-          "There"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Several reasons why…",
-        "grammarTopic": "eng-ielts-essay-structure"
-      },
-      {
-        "type": "translation",
-        "question": "Первый аргумент",
-        "answer": "On the one hand online learning offers flexibility",
-        "acceptableAnswers": [
-          "on the one hand online learning offers flexibility",
-          "On"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "On the one hand — первая сторона.",
-        "grammarTopic": "eng-ielts-essay-structure"
-      },
-      {
-        "type": "translation",
-        "question": "Второй аргумент",
-        "answer": "On the other hand it lacks face-to-face interaction",
-        "acceptableAnswers": [
-          "on the other hand it lacks face-to-face interaction",
-          "On"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "On the other hand — контраст.",
-        "grammarTopic": "eng-ielts-essay-structure"
-      },
-      {
-        "type": "translation",
-        "question": "Преимущество",
-        "answer": "One major advantage is that costs are lower",
-        "acceptableAnswers": [
-          "one major advantage is that costs are lower",
-          "One"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "One major advantage is that…",
-        "grammarTopic": "eng-ielts-essay-structure"
-      },
-      {
-        "type": "translation",
-        "question": "Недостаток",
-        "answer": "A significant drawback is the lack of social contact",
-        "acceptableAnswers": [
-          "a significant drawback is the lack of social contact",
-          "A"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "A significant drawback is…",
-        "grammarTopic": "eng-ielts-essay-structure"
-      },
-      {
-        "type": "translation",
-        "question": "Пример",
-        "answer": "For example many students struggle with motivation",
-        "acceptableAnswers": [
-          "for example many students struggle with motivation",
-          "For"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "For example — иллюстрация аргумента.",
-        "grammarTopic": "eng-ielts-essay-structure"
-      },
-      {
-        "type": "translation",
-        "question": "Дополнительный аргумент",
-        "answer": "Furthermore remote work reduces commuting time",
-        "acceptableAnswers": [
-          "furthermore remote work reduces commuting time",
-          "Furthermore"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Furthermore — добавление.",
-        "grammarTopic": "eng-ielts-essay-structure"
-      },
-      {
-        "type": "translation",
-        "question": "Контраргумент",
-        "answer": "However not everyone has reliable internet access",
-        "acceptableAnswers": [
-          "however not everyone has reliable internet access",
-          "However"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "However — ограничение.",
-        "grammarTopic": "eng-ielts-essay-structure"
-      },
-      {
-        "type": "translation",
-        "question": "Заключение — позиция",
-        "answer": "In conclusion the benefits outweigh the drawbacks",
-        "acceptableAnswers": [
-          "in conclusion the benefits outweigh the drawbacks",
-          "In"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "In conclusion — итоговая оценка.",
-        "grammarTopic": "eng-ielts-essay-structure"
-      },
-      {
-        "type": "translation",
-        "question": "Резюме + рекомендация",
-        "answer": "To sum up governments should invest in public transport",
-        "acceptableAnswers": [
-          "to sum up governments should invest in public transport",
-          "To"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "To sum up — краткий итог.",
-        "grammarTopic": "eng-ielts-essay-structure"
-      },
-      {
-        "type": "translation",
-        "question": "Призыв",
-        "answer": "It is clear that action must be taken urgently",
-        "acceptableAnswers": [
-          "it is clear that action must be taken urgently",
-          "It"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "It is clear that — уверенный вывод.",
-        "grammarTopic": "eng-ielts-essay-structure"
-      },
-      {
-        "type": "translation",
-        "question": "Рефлексия эссе",
-        "answer": "This essay has argued that education needs reform",
-        "acceptableAnswers": [
-          "this essay has argued that education needs reform",
-          "This"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "This essay has argued that…",
-        "grammarTopic": "eng-ielts-essay-structure"
       }
     ],
     "error_correction": [
@@ -34619,48 +32518,8 @@
     ]
   },
   "eng-ch40-ielts-cohesion": {
-    "multiple_choice": [
-      {
-        "type": "multiple_choice",
-        "question": "Refer back to «this policy»:",
-        "options": [
-          "This approach has failed.",
-          "A policy has failed.",
-          "They failed.",
-          "It failed them."
-        ],
-        "answer": "This approach has failed.",
-        "instruction": "Reference",
-        "explanation": "This approach — ссылка на policy.",
-        "grammarTopic": "ielts-essay-cohesion"
-      }
-    ],
-    "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "___, the cost of living has risen significantly.",
-        "answer": "Furthermore",
-        "acceptableAnswers": [
-          "Furthermore",
-          "Moreover",
-          "In addition"
-        ],
-        "instruction": "Adding information",
-        "explanation": "Furthermore/Moreover — добавление.",
-        "grammarTopic": "ielts-essay-cohesion"
-      },
-      {
-        "type": "fill_blank",
-        "question": "___ a result, unemployment fell.",
-        "answer": "As",
-        "acceptableAnswers": [
-          "As"
-        ],
-        "instruction": "Cause → effect",
-        "explanation": "As a result — следствие.",
-        "grammarTopic": "ielts-essay-cohesion"
-      }
-    ],
+    "multiple_choice": [],
+    "fill_blank": [],
     "translation": [
       {
         "type": "translation",
@@ -34751,126 +32610,6 @@
         "explanation": "With regard to — что касается.",
         "grammarTopic": "eng-ielts-essay-cohesion",
         "acceptableAnswers": []
-      },
-      {
-        "type": "translation",
-        "question": "However — контраст",
-        "answer": "The policy was popular however it proved expensive",
-        "acceptableAnswers": [
-          "the policy was popular however it proved expensive",
-          "The"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "However между двумя частями.",
-        "grammarTopic": "eng-ielts-essay-cohesion"
-      },
-      {
-        "type": "translation",
-        "question": "Furthermore — добавление",
-        "answer": "Furthermore the data supports this conclusion",
-        "acceptableAnswers": [
-          "furthermore the data supports this conclusion",
-          "Furthermore"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Furthermore усиливает аргумент.",
-        "grammarTopic": "eng-ielts-essay-cohesion"
-      },
-      {
-        "type": "translation",
-        "question": "As a result — следствие",
-        "answer": "As a result public trust declined",
-        "acceptableAnswers": [
-          "as a result public trust declined",
-          "As"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "As a result — причинно-следственная связь.",
-        "grammarTopic": "eng-ielts-essay-cohesion"
-      },
-      {
-        "type": "translation",
-        "question": "Nevertheless — уступка",
-        "answer": "Nevertheless the project continued on schedule",
-        "acceptableAnswers": [
-          "nevertheless the project continued on schedule",
-          "Nevertheless"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Nevertheless — несмотря на.",
-        "grammarTopic": "eng-ielts-essay-cohesion"
-      },
-      {
-        "type": "translation",
-        "question": "Similarly — аналогия",
-        "answer": "Similarly other countries adopted the same approach",
-        "acceptableAnswers": [
-          "similarly other countries adopted the same approach",
-          "Similarly"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Similarly — параллель.",
-        "grammarTopic": "eng-ielts-essay-cohesion"
-      },
-      {
-        "type": "translation",
-        "question": "Moreover — усиление",
-        "answer": "This trend has continued moreover it has accelerated",
-        "acceptableAnswers": [
-          "this trend has continued moreover it has accelerated",
-          "This"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Moreover — кроме того, усиление.",
-        "grammarTopic": "eng-ielts-essay-cohesion"
-      },
-      {
-        "type": "translation",
-        "question": "Структурная связка",
-        "answer": "The first point concerns environmental impact",
-        "acceptableAnswers": [
-          "the first point concerns environmental impact",
-          "The"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "The first point concerns…",
-        "grammarTopic": "eng-ielts-essay-cohesion"
-      },
-      {
-        "type": "translation",
-        "question": "Переход между частями",
-        "answer": "The following section examines economic effects",
-        "acceptableAnswers": [
-          "the following section examines economic effects",
-          "The"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "The following section…",
-        "grammarTopic": "eng-ielts-essay-cohesion"
-      },
-      {
-        "type": "translation",
-        "question": "Such — отсылка назад",
-        "answer": "Such measures can reduce carbon emissions significantly",
-        "acceptableAnswers": [
-          "such measures can reduce carbon emissions significantly",
-          "Such"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Such measures — ссылка на предыдущее.",
-        "grammarTopic": "eng-ielts-essay-cohesion"
-      },
-      {
-        "type": "translation",
-        "question": "These — референс",
-        "answer": "These findings suggest a need for reform",
-        "acceptableAnswers": [
-          "these findings suggest a need for reform",
-          "These"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "These findings — указание на данные.",
-        "grammarTopic": "eng-ielts-essay-cohesion"
       }
     ],
     "error_correction": [
@@ -35344,33 +33083,7 @@
         "grammarTopic": "eng-cambridge-essay-article"
       }
     ],
-    "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "Have you ever wondered why ___ travel is so popular?",
-        "answer": "solo",
-        "acceptableAnswers": [
-          "Solo",
-          "budget",
-          "Budget"
-        ],
-        "instruction": "Article hook",
-        "explanation": "Have you ever wondered… — engaging hook.",
-        "grammarTopic": "cambridge-essay-article"
-      },
-      {
-        "type": "fill_blank",
-        "question": "An article often uses ___ person to involve the reader.",
-        "answer": "second",
-        "acceptableAnswers": [
-          "Second",
-          "you"
-        ],
-        "instruction": "You / we",
-        "explanation": "Articles often use you/we for engagement.",
-        "grammarTopic": "cambridge-essay-article"
-      }
-    ],
+    "fill_blank": [],
     "translation": [
       {
         "type": "translation",
@@ -35472,126 +33185,6 @@
         "explanation": "The commentator notes — отстранённый тон.",
         "grammarTopic": "eng-cambridge-essay-article",
         "acceptableAnswers": []
-      },
-      {
-        "type": "translation",
-        "question": "Build the wh-cleft thesis sentence",
-        "answer": "What makes a good essay is a clear thesis",
-        "acceptableAnswers": [
-          "what makes a good essay is a clear thesis",
-          "What"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "What makes… is… — emphasis on the key element.",
-        "grammarTopic": "eng-cambridge-essay-article"
-      },
-      {
-        "type": "translation",
-        "question": "Build the article closing call",
-        "answer": "So why not give it a try this weekend?",
-        "acceptableAnswers": [
-          "so why not give it a try this weekend?",
-          "So"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Direct address to readers — article style.",
-        "grammarTopic": "eng-cambridge-essay-article"
-      },
-      {
-        "type": "translation",
-        "question": "Цель статьи",
-        "answer": "The purpose of this article is to explore the topic",
-        "acceptableAnswers": [
-          "the purpose of this article is to explore the topic",
-          "The"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "The purpose of this article…",
-        "grammarTopic": "eng-cambridge-essay-article"
-      },
-      {
-        "type": "translation",
-        "question": "Академическая вводная",
-        "answer": "It is widely acknowledged that climate change is accelerating",
-        "acceptableAnswers": [
-          "it is widely acknowledged that climate change is accelerating",
-          "It"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "It is widely acknowledged that…",
-        "grammarTopic": "eng-cambridge-essay-article"
-      },
-      {
-        "type": "translation",
-        "question": "Академический ракурс",
-        "answer": "From an academic perspective the evidence is compelling",
-        "acceptableAnswers": [
-          "from an academic perspective the evidence is compelling",
-          "From"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "From an academic perspective…",
-        "grammarTopic": "eng-cambridge-essay-article"
-      },
-      {
-        "type": "translation",
-        "question": "Структура текста",
-        "answer": "The article begins by outlining the main issues",
-        "acceptableAnswers": [
-          "the article begins by outlining the main issues",
-          "The"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Begins by outlining…",
-        "grammarTopic": "eng-cambridge-essay-article"
-      },
-      {
-        "type": "translation",
-        "question": "Ключевой аспект",
-        "answer": "A key consideration is the impact on young people",
-        "acceptableAnswers": [
-          "a key consideration is the impact on young people",
-          "A"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "A key consideration is…",
-        "grammarTopic": "eng-cambridge-essay-article"
-      },
-      {
-        "type": "translation",
-        "question": "Дистанцированная позиция",
-        "answer": "It could be argued that technology isolates individuals",
-        "acceptableAnswers": [
-          "it could be argued that technology isolates individuals",
-          "It"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "It could be argued that — осторожность.",
-        "grammarTopic": "eng-cambridge-essay-article"
-      },
-      {
-        "type": "translation",
-        "question": "Позиция автора",
-        "answer": "The writer contends that reform is long overdue",
-        "acceptableAnswers": [
-          "the writer contends that reform is long overdue",
-          "The"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Contends that — утверждает.",
-        "grammarTopic": "eng-cambridge-essay-article"
-      },
-      {
-        "type": "translation",
-        "question": "Риторический переход",
-        "answer": "This raises the question of government accountability",
-        "acceptableAnswers": [
-          "this raises the question of government accountability",
-          "This"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Raises the question of…",
-        "grammarTopic": "eng-cambridge-essay-article"
       }
     ],
     "error_correction": [
@@ -36113,20 +33706,6 @@
     "multiple_choice": [
       {
         "type": "multiple_choice",
-        "question": "To what extent do you agree?",
-        "options": [
-          "While I accept some benefits, I largely disagree.",
-          "Yes.",
-          "No.",
-          "Maybe sometimes."
-        ],
-        "answer": "While I accept some benefits, I largely disagree.",
-        "instruction": "Partial agreement",
-        "explanation": "While… — частичное согласие + позиция.",
-        "grammarTopic": "ielts-opinion-language"
-      },
-      {
-        "type": "multiple_choice",
         "question": "___, this trend is unlikely to reverse.",
         "options": [
           "Arguably",
@@ -36140,33 +33719,7 @@
         "grammarTopic": "eng-ielts-opinion-language"
       }
     ],
-    "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "It ___ to me that the policy is unfair.",
-        "answer": "seems",
-        "acceptableAnswers": [
-          "Seems",
-          "appears"
-        ],
-        "instruction": "Soft opinion",
-        "explanation": "It seems/appears that… — мягкая позиция.",
-        "grammarTopic": "ielts-opinion-language"
-      },
-      {
-        "type": "fill_blank",
-        "question": "___, this trend is unlikely to reverse.",
-        "answer": "Arguably",
-        "acceptableAnswers": [
-          "arguably",
-          "Clearly",
-          "clearly"
-        ],
-        "instruction": "Hedged assertion",
-        "explanation": "Arguably/Clearly — оценочная связка.",
-        "grammarTopic": "ielts-opinion-language"
-      }
-    ],
+    "fill_blank": [],
     "translation": [
       {
         "type": "translation",
@@ -36269,54 +33822,6 @@
         "explanation": "It is likely that — вероятностная оценка.",
         "grammarTopic": "eng-ielts-opinion-language",
         "acceptableAnswers": []
-      },
-      {
-        "type": "translation",
-        "question": "Build the academic opinion sentence",
-        "answer": "I would argue that education should be free",
-        "acceptableAnswers": [
-          "i would argue that education should be free",
-          "I"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "I would argue that… — formal opinion.",
-        "grammarTopic": "eng-ielts-opinion-language"
-      },
-      {
-        "type": "translation",
-        "question": "Build the partial agreement sentence",
-        "answer": "To some extent, I agree with this view",
-        "acceptableAnswers": [
-          "to some extent, i agree with this view",
-          "To"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "To some extent — partial agreement.",
-        "grammarTopic": "eng-ielts-opinion-language"
-      },
-      {
-        "type": "translation",
-        "question": "Build the contrast opinion sentence",
-        "answer": "While I accept some benefits, I largely disagree",
-        "acceptableAnswers": [
-          "while i accept some benefits, i largely disagree",
-          "While"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "While… — contrast before stating your position.",
-        "grammarTopic": "eng-ielts-opinion-language"
-      },
-      {
-        "type": "translation",
-        "question": "Build the soft opinion sentence",
-        "answer": "It seems to me that the policy is unfair",
-        "acceptableAnswers": [
-          "it seems to me that the policy is unfair",
-          "It"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "It seems to me that… — softened opinion.",
-        "grammarTopic": "eng-ielts-opinion-language"
       }
     ],
     "error_correction": [
@@ -36815,62 +34320,8 @@
     ]
   },
   "eng-ch43-register-shift": {
-    "multiple_choice": [
-      {
-        "type": "multiple_choice",
-        "question": "Formal rewrite of «Can you send it ASAP?»:",
-        "options": [
-          "I would be grateful if you could send it at your earliest convenience.",
-          "Send it ASAP pls!!!",
-          "Gimme the file.",
-          "Yo send it quick."
-        ],
-        "answer": "I would be grateful if you could send it at your earliest convenience.",
-        "instruction": "Register shift",
-        "explanation": "ASAP → at your earliest convenience.",
-        "grammarTopic": "register-shift"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Informal equivalent of «I am writing to enquire»:",
-        "options": [
-          "Just wanted to ask…",
-          "I hereby request information regarding…",
-          "Pursuant to your advertisement…",
-          "I am writing to inform you that…"
-        ],
-        "answer": "Just wanted to ask…",
-        "instruction": "Downshift",
-        "explanation": "Just wanted to ask — informal enquiry.",
-        "grammarTopic": "register-shift"
-      }
-    ],
-    "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "Informal: «___ a lot!» → Formal: «Thank you very much for your assistance.»",
-        "answer": "Thanks",
-        "acceptableAnswers": [
-          "Thanks",
-          "Cheers"
-        ],
-        "instruction": "Thanks shift",
-        "explanation": "Thanks → Thank you very much.",
-        "grammarTopic": "register-shift"
-      },
-      {
-        "type": "fill_blank",
-        "question": "Consistent tone means: don't mix «Hi» with «___.»",
-        "answer": "Yours faithfully",
-        "acceptableAnswers": [
-          "Yours faithfully",
-          "Yours sincerely"
-        ],
-        "instruction": "Formal sign-off",
-        "explanation": "Hi + Yours faithfully — register clash.",
-        "grammarTopic": "register-shift"
-      }
-    ],
+    "multiple_choice": [],
+    "fill_blank": [],
     "translation": [
       {
         "type": "translation",
@@ -36974,114 +34425,6 @@
         "explanation": "What's new? — разговорное приветствие.",
         "grammarTopic": "eng-cbe-register-shift",
         "acceptableAnswers": []
-      },
-      {
-        "type": "translation",
-        "question": "Build the formal closing phrase",
-        "answer": "I look forward to hearing from you",
-        "acceptableAnswers": [
-          "i look forward to hearing from you",
-          "I"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Standard formal email closing phrase.",
-        "grammarTopic": "eng-cbe-register-shift"
-      },
-      {
-        "type": "translation",
-        "question": "Формальный регистр",
-        "answer": "I would be obliged if you could assist me",
-        "acceptableAnswers": [
-          "i would be obliged if you could assist me",
-          "I"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Would be obliged — вместо please help.",
-        "grammarTopic": "eng-cbe-register-shift"
-      },
-      {
-        "type": "translation",
-        "question": "Неформальный регистр",
-        "answer": "Can you give me a hand with this?",
-        "acceptableAnswers": [
-          "can you give me a hand with this?",
-          "Can"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Give me a hand — разговорное.",
-        "grammarTopic": "eng-cbe-register-shift"
-      },
-      {
-        "type": "translation",
-        "question": "Официальный отказ",
-        "answer": "We regret to inform you that your application was unsuccessful",
-        "acceptableAnswers": [
-          "we regret to inform you that your application was unsuccessful",
-          "We"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Regret to inform — формально.",
-        "grammarTopic": "eng-cbe-register-shift"
-      },
-      {
-        "type": "translation",
-        "question": "Неформальный отказ",
-        "answer": "Sorry but you didn't get the job",
-        "acceptableAnswers": [
-          "sorry but you didn't get the job",
-          "Sorry"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Sorry but — прямолинейно, неформально.",
-        "grammarTopic": "eng-cbe-register-shift"
-      },
-      {
-        "type": "translation",
-        "question": "Формальная просьба",
-        "answer": "Please kindly submit the form by Friday",
-        "acceptableAnswers": [
-          "please kindly submit the form by friday",
-          "Please"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Kindly submit — официально.",
-        "grammarTopic": "eng-cbe-register-shift"
-      },
-      {
-        "type": "translation",
-        "question": "Неформальная просьба",
-        "answer": "Just send me the form by Friday",
-        "acceptableAnswers": [
-          "just send me the form by friday",
-          "Just"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Just send me — casual.",
-        "grammarTopic": "eng-cbe-register-shift"
-      },
-      {
-        "type": "translation",
-        "question": "Формальное решение",
-        "answer": "The committee has resolved to postpone the meeting",
-        "acceptableAnswers": [
-          "the committee has resolved to postpone the meeting",
-          "The"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Has resolved to — официально.",
-        "grammarTopic": "eng-cbe-register-shift"
-      },
-      {
-        "type": "translation",
-        "question": "Неформальное решение",
-        "answer": "We've decided to put off the meeting",
-        "acceptableAnswers": [
-          "we've decided to put off the meeting",
-          "We've"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Put off — разговорный синоним postpone.",
-        "grammarTopic": "eng-cbe-register-shift"
       }
     ],
     "error_correction": [
@@ -37209,18 +34552,6 @@
         "acceptableAnswers": [
           "Consistent tone means: don't mix «Hi» with «Yours faithfully.».",
           "consistent tone means: don't mix «hi» with «yours faithfully.»."
-        ]
-      },
-      {
-        "type": "error_correction",
-        "question": "Informal: «Cheers a lot!» → Formal: «Thank you very much for your assistance.».",
-        "answer": "Informal: «Thanks a lot!» → Formal: «Thank you very much for your assistance.».",
-        "instruction": "Correct the mistake",
-        "explanation": "Thanks → Thank you very much.",
-        "grammarTopic": "eng-cbe-register-shift",
-        "acceptableAnswers": [
-          "Informal: «Thanks a lot!» → Formal: «Thank you very much for your assistance.».",
-          "informal: «thanks a lot!» → formal: «thank you very much for your assistance.»."
         ]
       }
     ],
@@ -37621,63 +34952,9 @@
         "instruction": "Выберите правильный ответ",
         "explanation": "It-cleft: It was John who… highlights the person.",
         "grammarTopic": "eng-c2-cleft-emphasis"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "___ I need is a holiday.",
-        "options": [
-          "What",
-          "That",
-          "Which",
-          "It"
-        ],
-        "answer": "What",
-        "instruction": "Wh-cleft (pseudo-cleft)",
-        "explanation": "Wh-cleft: What I need is… emphasizes the object.",
-        "grammarTopic": "eng-c2-cleft-emphasis"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "It was in Paris ___ I met her.",
-        "options": [
-          "that",
-          "who",
-          "what",
-          "which"
-        ],
-        "answer": "that",
-        "instruction": "It-cleft for place",
-        "explanation": "It was + place + that… (not who — who is for people).",
-        "grammarTopic": "eng-c2-cleft-emphasis"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "I ___ like your idea — honestly!",
-        "options": [
-          "do",
-          "am",
-          "would",
-          "will"
-        ],
-        "answer": "do",
-        "instruction": "Emphatic auxiliary",
-        "explanation": "Emphatic do stresses the verb: I do like it.",
-        "grammarTopic": "eng-c2-cleft-emphasis"
       }
     ],
     "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "The reason ___ I left was the noise.",
-        "answer": "why",
-        "acceptableAnswers": [
-          "Why",
-          "that"
-        ],
-        "instruction": "The reason … I left",
-        "explanation": "The reason why/that I left was… — cleft with reason.",
-        "grammarTopic": "eng-c2-cleft-emphasis"
-      },
       {
         "type": "fill_blank",
         "question": "___ was John who broke the vase.",
@@ -38638,62 +35915,9 @@
         "instruction": "Выберите правильный ответ",
         "explanation": "I hope not = I hope it won't rain. (I hope so = positive.)",
         "grammarTopic": "eng-c2-ellipsis-substitution"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "I love jazz. — So ___ I.",
-        "options": [
-          "do",
-          "am",
-          "have",
-          "like"
-        ],
-        "answer": "do",
-        "instruction": "Agreement with inversion",
-        "explanation": "So do I — auxiliary matches the tense (love → do).",
-        "grammarTopic": "eng-c2-ellipsis-substitution"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "I can't swim. — ___ can I.",
-        "options": [
-          "Neither",
-          "So",
-          "Either",
-          "Nor do"
-        ],
-        "answer": "Neither",
-        "instruction": "Negative agreement",
-        "explanation": "Negative agreement: Neither can I / Me neither.",
-        "grammarTopic": "eng-c2-ellipsis-substitution"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "She runs faster than I ___.",
-        "options": [
-          "do",
-          "run fast",
-          "am",
-          "does"
-        ],
-        "answer": "do",
-        "instruction": "Substitute the verb phrase",
-        "explanation": "do replaces the verb phrase: than I do (= than I run).",
-        "grammarTopic": "eng-c2-ellipsis-substitution"
       }
     ],
     "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "Which cake would you like? — The chocolate ___.",
-        "answer": "one",
-        "acceptableAnswers": [
-          "One"
-        ],
-        "instruction": "Substitute the noun",
-        "explanation": "one/ones replaces a countable noun: the chocolate one.",
-        "grammarTopic": "eng-c2-ellipsis-substitution"
-      },
       {
         "type": "fill_blank",
         "question": "Will it rain? — I hope ___.",
@@ -39321,76 +36545,8 @@
     ]
   },
   "eng-ch25-between-lines": {
-    "multiple_choice": [
-      {
-        "type": "multiple_choice",
-        "question": "It could be ___ that the policy failed.",
-        "options": [
-          "argued",
-          "argue",
-          "arguing",
-          "argues"
-        ],
-        "answer": "argued",
-        "instruction": "Academic hedging",
-        "explanation": "It could be argued that… — classic hedged claim.",
-        "grammarTopic": "eng-c2-hedging-nuance"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "The results ___ to suggest a link.",
-        "options": [
-          "appear",
-          "prove",
-          "insist",
-          "confirm"
-        ],
-        "answer": "appear",
-        "instruction": "Cautious reporting verb",
-        "explanation": "appear/seem to suggest — hedged; prove/confirm are too strong.",
-        "grammarTopic": "eng-c2-hedging-nuance"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "A British speaker says «Not bad» about your work. They probably mean…",
-        "options": [
-          "it's very good",
-          "it's terrible",
-          "it's average",
-          "they didn't see it"
-        ],
-        "answer": "it's very good",
-        "instruction": "Understatement",
-        "explanation": "British understatement: Not bad ≈ excellent.",
-        "grammarTopic": "eng-c2-hedging-nuance"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "I ___ wondering if you could help me.",
-        "options": [
-          "was",
-          "am",
-          "will be",
-          "have been"
-        ],
-        "answer": "was",
-        "instruction": "Distancing through tense",
-        "explanation": "Past tense distances politely: I was wondering…",
-        "grammarTopic": "eng-c2-hedging-nuance"
-      }
-    ],
+    "multiple_choice": [],
     "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "I see what you mean, ___ I'm not sure I'd go that far.",
-        "answer": "but",
-        "acceptableAnswers": [
-          "But"
-        ],
-        "instruction": "Polite disagreement",
-        "explanation": "I see what you mean, but… — softened disagreement.",
-        "grammarTopic": "eng-c2-hedging-nuance"
-      },
       {
         "type": "fill_blank",
         "question": "It could be ___ that the policy failed.",

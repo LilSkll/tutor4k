@@ -105,11 +105,15 @@ export function isGrammarCategoryInstruction(instruction: string): boolean {
     return true;
   }
   if (
-    /^(Perfecto|Imperfecto|Pluscuamperfecto|Condicional|Futuro|Subjuntivo|Indicativo|Presente|Pasiva|Pasivo|Imperativo|Se|Ser(\s*\/\s*Estar)?|Estar|Hacerse|Relativ|Cuyo|OD|OI|CD|CI|Irreal)\b/i.test(
+    /^(Perfecto|Imperfecto|Pluscuamperfecto|Condicional|Futuro|Subjuntivo|Indicativo|Presente|Pasiva|Pasivo|Imperativo|Se|Ser(\s*\/\s*Estar)?|Estar|Hacerse|Relativ|Cuyo|OD|OI|CD|CI|Irreal|Demasiado|Quizás|Muy|Mucho|Adverbio)\b/i.test(
       inst,
     ) &&
     inst.length <= 48
   ) {
+    return true;
+  }
+  // Formula tags: "Demasiado + adj.", "Quizás + subj."
+  if (/\+\s*(adj|adv|verb|noun|subj|n|v|inf|ger|pp)\b\.?/i.test(inst) && inst.length <= 40) {
     return true;
   }
   // English curriculum/pack grammar tags (spoil the construction).
@@ -141,10 +145,10 @@ export function isGrammarCategoryInstruction(instruction: string): boolean {
     inst.length <= 42 &&
     !/[.?!¿¡]/.test(inst) &&
     !CYRILLIC.test(inst) &&
-    !/^(Choose|Fill|Complete|Translate|Rewrite|Find|Build|Fix|Add|Put|Elige|Completa|Traduce|Reescribe|Ordena|Wähle|Fülle|Übersetze|Finde|Bilde)\b/i.test(
+    !/^(Choose|Fill|Complete|Translate|Rewrite|Find|Build|Fix|Add|Put|Elige|Completa|Traduce|Reescribe|Ordena|Wähle|Fülle|Übersetze|Finde|Bilde|Forma|Pon|Escribe|Corrige|Marca|Señala|Indica|Haz|Lee|Pasa)\b/i.test(
       inst,
     ) &&
-    !/\b(choose|fill|complete|translate|rewrite|find|build|fix|add|put|correct|select|write|use)\b/i.test(
+    !/\b(choose|fill|complete|translate|rewrite|find|build|fix|add|put|correct|select|write|use|frase|verbo|opción|hueco|palabra|estilo|indirecto|directo)\b/i.test(
       inst,
     ) &&
     /^[A-Za-z]/.test(inst)
@@ -178,20 +182,61 @@ export function isUsableTranslation(ex: {
   if (CYRILLIC.test(a)) return false;
   if (SECTION_HEADER_PROMPT.test(q) || GRAMMAR_LABEL_PROMPT.test(q)) return false;
   if (isGrammarCategoryInstruction(q)) return false;
+  // Pack generator leaks SB/EC instructions as "translation" prompts.
+  if (isMetaOrFormulaPrompt(q)) return false;
   // Grammar-tag dumps used as “prompts” (2–3 words, no real sentence)
   const words = q.split(/\s+/).filter(Boolean);
+  // Ignore abbreviation dots (adj. / subj.) when judging "has sentence punctuation"
+  const qNoAbbrev = q.replace(/\b[a-záéíóúñü]{1,6}\./gi, "");
   if (CYRILLIC.test(q)) {
     const looksLikeSentence =
-      /[.?!…,]/.test(q) || words.length >= 4;
+      /[.?!…,]/.test(qNoAbbrev) || words.length >= 4;
     if (!looksLikeSentence) return false;
+    // UI/meta imperatives are not source sentences to translate.
+    if (
+      /^(Соберите|Составьте|Выберите|Заполните|Вставьте|Исправьте|Найдите|Переведите)(\s|$)/i.test(
+        q,
+      )
+    ) {
+      return false;
+    }
   } else {
     const looksLikeSentence =
-      /[.?!¿¡]/.test(q) || words.length >= 5;
+      /[.?!¿¡]/.test(qNoAbbrev) || words.length >= 5;
     if (!looksLikeSentence) return false;
+    if (
+      /^(Choose|Fill|Complete|Translate|Rewrite|Find|Build|Fix|Elige|Completa|Traduce|Reescribe|Ordena)\b/i.test(
+        q,
+      )
+    ) {
+      return false;
+    }
   }
   // Tiny pronoun-only "translations"
   if (a.length <= 3 && /^(se|lo|la|le|me|te|nos|os|que)$/i.test(a)) return false;
   return true;
+}
+
+/** Instruction / grammar-formula leaked as a learner prompt. */
+export function isMetaOrFormulaPrompt(text: string): boolean {
+  const q = text.trim();
+  if (!q) return false;
+  if (/\+\s*(adj|adv|verb|noun|subj|n|v|inf|ger|pp)\b\.?/i.test(q)) return true;
+  if (/^[A-Za-záéíóúñüÁÉÍÓÚÑÜ][\wáéíóúñüÁÉÍÓÚÑÜ'’]*\s*\+\s*\S/i.test(q) && q.length <= 40) {
+    return true;
+  }
+  // Note: JS \b does not treat Cyrillic as word chars — use whitespace/end anchors.
+  if (/^(Соберите|Составьте|Выберите|Заполните|Вставьте|Исправьте|Найдите|Переведите)(\s|$)/i.test(q)) {
+    return true;
+  }
+  if (/^(Build|Choose|Fill|Complete|Rewrite|Fix|Translate)\b/i.test(q) && q.length <= 56) {
+    return true;
+  }
+  // Glossary-style “Наречие «X»” / “Слово «X»” — not a sentence to translate.
+  if (/^(Наречие|Прилагательное|Существительное|Глагол|Слово|Форма|Конструкция)(\s|$|[«"])/i.test(q)) {
+    return true;
+  }
+  return false;
 }
 
 /** True when a fill-blank stem is a real sentence with a blank. */

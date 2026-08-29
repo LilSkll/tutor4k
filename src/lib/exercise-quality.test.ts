@@ -141,6 +141,44 @@ describe("isUsableTranslation", () => {
       }),
     ).toBe(true);
   });
+
+  it("rejects pack leaks: SB instructions and grammar formulas as TR prompts", () => {
+    expect(
+      isUsableTranslation({
+        question: "Соберите фразу с muy",
+        answer: "Es una persona muy amable",
+      }),
+    ).toBe(false);
+    expect(
+      isUsableTranslation({
+        question: "Demasiado + adj.",
+        answer: "Corre demasiado rápido",
+      }),
+    ).toBe(false);
+    expect(
+      isUsableTranslation({
+        question: "Quizás + subj.",
+        answer: "Quizás llueva mañana",
+      }),
+    ).toBe(false);
+    expect(
+      isUsableTranslation({
+        question: "Build the fronted Such sentence",
+        answer: "Such was his anger that he left",
+      }),
+    ).toBe(false);
+  });
+});
+
+describe("isMetaOrFormulaPrompt", () => {
+  it("flags Cyrillic SB instructions and +adj formulas", async () => {
+    const { isMetaOrFormulaPrompt, isGrammarCategoryInstruction } = await import(
+      "@/lib/exercise-quality"
+    );
+    expect(isMetaOrFormulaPrompt("Соберите фразу с muy")).toBe(true);
+    expect(isMetaOrFormulaPrompt("Demasiado + adj.")).toBe(true);
+    expect(isGrammarCategoryInstruction("Demasiado + adj.")).toBe(true);
+  });
 });
 
 describe("isUsableMultipleChoice", () => {

@@ -131,7 +131,8 @@ export function exerciseToSeed(ex, lang = "spanish") {
       ans: ex.answer.split(/\s+/)[0] ?? ex.answer,
       options: [ex.answer, ex.question.split(/\s+/)[0], "—", "—"],
       explanation,
-      ru: instruction,
+      // Do not leak grammar-tag instructions into translation prompts.
+      ru: CYRILLIC_RE.test(String(ex.question || "")) ? "" : "",
       es: ex.answer,
       en: ex.answer,
       acc: [ex.answer, ...(ex.acceptableAnswers ?? [])],
@@ -143,12 +144,18 @@ export function exerciseToSeed(ex, lang = "spanish") {
     const tokens = ex.options?.length
       ? ex.options
       : ex.answer.split(/\s+/).filter(Boolean);
+    // Never put the SB instruction into `ru` — chapterFromSeeds would
+    // turn "Соберите фразу с muy" / "Demasiado + adj." into fake translations.
+    const ruPrompt =
+      CYRILLIC_RE.test(String(ex.question || "")) && !/\s*\/\s*/.test(ex.question || "")
+        ? ex.question
+        : "";
     return {
       q: ex.question,
       ans: tokens[0] ?? ex.answer,
       options: tokens,
       explanation,
-      ru: instruction,
+      ru: ruPrompt,
       es: ex.answer,
       en: ex.answer,
       tokens,
@@ -299,18 +306,31 @@ export function chapterFromSeeds(g, topic, seeds, lang = "spanish", perType = 20
       lang === "english" ? s.en || s.acc?.[0] || s.es || s.ans : s.es || s.acc?.[0] || s.ans,
     );
 
-    const trPrompt = cleanIndexMarks(s.ru || s.q);
-
-    trA.push(
-      tr(
+    const trPrompt = cleanIndexMarks(s.ru || "");
+    const trLooksMeta =
+      !trPrompt ||
+      /\+\s*(adj|adv|verb|noun|subj)\b/i.test(trPrompt) ||
+      /^(Соберите|Составьте|Выберите|Заполните|Исправьте|Переведите|Build|Choose|Fill|Complete|Rewrite|Fix)\b/i.test(
         trPrompt,
-        fullTarget,
-        lang === "english" ? "Translate to English" : "Переведите на испанский",
-        s.explanation || `${topic}: «${s.ans}».`,
-        g,
-        s.acc || [fullTarget.toLowerCase(), s.ans],
-      ),
-    );
+      ) ||
+      /^(Наречие|Прилагательное|Существительное|Глагол|Слово|Форма|Конструкция)\b/i.test(
+        trPrompt,
+      ) ||
+      (lang === "spanish" && !CYRILLIC_RE.test(trPrompt)) ||
+      (lang === "english" && CYRILLIC_RE.test(trPrompt) === false && trPrompt.split(/\s+/).length < 3);
+
+    if (!trLooksMeta && fullTarget && !CYRILLIC_RE.test(fullTarget)) {
+      trA.push(
+        tr(
+          trPrompt,
+          fullTarget,
+          lang === "english" ? "Translate to English" : "Переведите на испанский",
+          s.explanation || `${topic}: «${s.ans}».`,
+          g,
+          s.acc || [fullTarget.toLowerCase(), fullTarget],
+        ),
+      );
+    }
 
     const ecItem = buildErrorCorrection(s, options, lang, topic);
     if (ecItem) {

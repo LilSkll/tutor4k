@@ -692,7 +692,7 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "fill_blank",
       "question": "___ (probable) llegará tarde.",
-      "instruction": "Наречие «вероятно»",
+      "instruction": "Заполните пропуск наречием",
       "answer": "Probablemente",
       "acceptableAnswers": [
         "probablemente"

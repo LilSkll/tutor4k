@@ -42,75 +42,6 @@
         "instruction": "Выберите форму estar для «мы»",
         "explanation": "Чувства/эмоции → estar. Nosotros → estamos.",
         "grammarTopic": "a1-ser-estar"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Yo ___ estudiante. (ser).",
-        "options": [
-          "soy",
-          "Soy",
-          "soy?"
-        ],
-        "answer": "soy",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Yo → soy. Профессия — постоянная характеристика, поэтому ser.",
-        "grammarTopic": "a1-ser-estar"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Yo es estudiante.",
-        "options": [
-          "Yo",
-          "Yo soy estudiante.",
-          "—",
-          "Yo?"
-        ],
-        "answer": "Yo",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Yo → soy.",
-        "grammarTopic": "a1-ser-estar"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Ella está de España.",
-        "options": [
-          "Ella",
-          "Ella es de España.",
-          "—",
-          "Ella?"
-        ],
-        "answer": "Ella",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Origen → ser (es de España).",
-        "grammarTopic": "a1-ser-estar"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Nosotros somos en casa.",
-        "options": [
-          "Estamos",
-          "Estamos en casa.",
-          "Nosotros",
-          "—"
-        ],
-        "answer": "Estamos",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Lugar → estar (estamos en casa).",
-        "grammarTopic": "a1-ser-estar"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "El profesor está aburrido persona.",
-        "options": [
-          "El",
-          "El profesor es aburrido.",
-          "—",
-          "El?"
-        ],
-        "answer": "El",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Rasgo de carácter → ser.",
-        "grammarTopic": "a1-ser-estar"
       }
     ],
     "fill_blank": [
@@ -214,18 +145,6 @@
       },
       {
         "type": "translation",
-        "question": "ser (какой ты) или estar (как дела сейчас)?",
-        "answer": "eres",
-        "acceptableAnswers": [
-          "eres",
-          "eres"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "¿Cómo eres? — какой ты характером / внешне (ser). ¿Cómo estás? — как ты себя чувствуешь сейчас (estar). Для имени: ¿Cómo te llamas?",
-        "grammarTopic": "a1-ser-estar"
-      },
-      {
-        "type": "translation",
         "question": "Поставьте глагол ser в правильной форме",
         "answer": "Yo soy estudiante. (ser)",
         "acceptableAnswers": [
@@ -234,30 +153,6 @@
         ],
         "instruction": "Переведите на испанский",
         "explanation": "Yo → soy. Профессия — постоянная характеристика, поэтому ser.",
-        "grammarTopic": "a1-ser-estar"
-      },
-      {
-        "type": "translation",
-        "question": "Соберите вопрос «Как тебя зовут?»",
-        "answer": "¿Cómo te llamas?",
-        "acceptableAnswers": [
-          "¿cómo te llamas?",
-          "¿Cómo"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "¿Cómo te llamas? — первое знакомство в испанском.",
-        "grammarTopic": "a1-ser-estar"
-      },
-      {
-        "type": "translation",
-        "question": "Соберите фразу представления",
-        "answer": "Me llamo Ana y soy de España",
-        "acceptableAnswers": [
-          "me llamo ana y soy de españa",
-          "Me"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Me llamo… + soy de… — имя и происхождение.",
         "grammarTopic": "a1-ser-estar"
       }
     ],
@@ -670,32 +565,6 @@
         "instruction": "Выберите неправильную форму hacer для tú",
         "explanation": "Tú → haces. Hacer неправильный: yo hago, tú haces, él hace.",
         "grammarTopic": "a1-presente"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Yo ___ (hablar) español todos los días.",
-        "options": [
-          "hablo",
-          "Hablo",
-          "hablo?"
-        ],
-        "answer": "hablo",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Глагол -ar, yo → hablo. Регулярное спряжение.",
-        "grammarTopic": "a1-presente"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Nosotros ___ (vivir) en Madrid.",
-        "options": [
-          "vivimos",
-          "Vivimos",
-          "vivimos?"
-        ],
-        "answer": "vivimos",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Глагол -ir, nosotros → vivimos.",
-        "grammarTopic": "a1-presente"
       }
     ],
     "fill_blank": [
@@ -864,30 +733,6 @@
         "instruction": "Переведите на испанский",
         "explanation": "Глагол -ir, nosotros → vivimos.",
         "grammarTopic": "a1-presente"
-      },
-      {
-        "type": "translation",
-        "question": "Соберите фразу о ежедневной практике",
-        "answer": "Yo hablo español todos los días",
-        "acceptableAnswers": [
-          "yo hablo español todos los días",
-          "Yo"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Presente: yo hablo. todos los días = каждый день.",
-        "grammarTopic": "a1-presente"
-      },
-      {
-        "type": "translation",
-        "question": "Соберите вопрос о выходных",
-        "answer": "¿Qué haces los fines de semana?",
-        "acceptableAnswers": [
-          "¿qué haces los fines de semana?",
-          "¿Qué"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "¿Qué haces…? — Что ты делаешь…? fines de semana = выходные.",
-        "grammarTopic": "a1-presente"
       }
     ],
     "error_correction": [
@@ -983,19 +828,6 @@
         ],
         "instruction": "Исправьте ошибку",
         "explanation": "Нужно «come», не «como».",
-        "grammarTopic": "a1-presente"
-      },
-      {
-        "type": "error_correction",
-        "question": "¿Qué hago (hacer) tú los fines de semana??.",
-        "answer": "¿Qué haces (hacer) tú los fines de semana??",
-        "acceptableAnswers": [
-          "¿Qué haces (hacer) tú los fines de semana??",
-          "¿qué haces (hacer) tú los fines de semana??",
-          "haces"
-        ],
-        "instruction": "Исправьте ошибку",
-        "explanation": "Нужно «haces», не «hago».",
         "grammarTopic": "a1-presente"
       }
     ],
@@ -1360,19 +1192,6 @@
         "instruction": "Какой артикль перед agua? (не путать с abuela)",
         "explanation": "Agua — женского рода, но одна вещь и ударение на первой a (Á-gua) → el agua. Во множественном: las aguas. Не путать: la abuela (ударение на -bue-).",
         "grammarTopic": "a1-articulos"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Compro ___ pan en la panadería.",
-        "options": [
-          "el",
-          "El",
-          "el?"
-        ],
-        "answer": "el",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Compro pan — хлеб вообще (нулевой артикль). Compro el pan — этот / обычный хлеб. *Un pan* — одна буханка, не «хлеб как вещество».",
-        "grammarTopic": "a1-articulos"
       }
     ],
     "fill_blank": [
@@ -1541,30 +1360,6 @@
         ],
         "instruction": "Переведите на испанский",
         "explanation": "Agua — женского рода, но одна вещь и ударение на первой a (Á-gua) → el agua. Во множественном: las aguas. Не путать: la abuela (ударение на -bue-).",
-        "grammarTopic": "a1-articulos"
-      },
-      {
-        "type": "translation",
-        "question": "Соберите фразу с артиклем un",
-        "answer": "Un libro interesante en la mesa",
-        "acceptableAnswers": [
-          "un libro interesante en la mesa",
-          "Un"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "un libro — какая-то одна книга; en la mesa — на столе.",
-        "grammarTopic": "a1-articulos"
-      },
-      {
-        "type": "translation",
-        "question": "Соберите фразу с el agua",
-        "answer": "El agua está fría",
-        "acceptableAnswers": [
-          "el agua está fría",
-          "El"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "el agua (не la) + estar для состояния: está fría.",
         "grammarTopic": "a1-articulos"
       }
     ],
@@ -2030,88 +1825,6 @@
         "instruction": "Какой день первый?",
         "explanation": "В испанском календаре неделя начинается с lunes (понедельник).",
         "grammarTopic": "a1-numeros-1-100"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Tengo ___ años. (25)",
-        "options": [
-          "veinticinco",
-          "Veinticinco",
-          "veinticinco?"
-        ],
-        "answer": "veinticinco",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "25 → veinticinco. Числа 21-29 пишутся слитно.",
-        "grammarTopic": "a1-numeros-1-100"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Hay ___ días en una semana. (7).",
-        "options": [
-          "siete",
-          "Siete",
-          "siete?"
-        ],
-        "answer": "siete",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "7 → siete.",
-        "grammarTopic": "a1-numeros-1-100"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Son las tres y cuarto de la tarde de la mañana.",
-        "options": [
-          "Son",
-          "Son las tres y cuarto de la tarde.",
-          "—",
-          "Son?"
-        ],
-        "answer": "Son",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Una sola parte del día.",
-        "grammarTopic": "a1-numeros-1-100"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Es medianoche a las doce.",
-        "options": [
-          "Es",
-          "Es medianoche.",
-          "—",
-          "Es?"
-        ],
-        "answer": "Es",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Medianoche = las doce de la noche.",
-        "grammarTopic": "a1-numeros-1-100"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Son las una y media.",
-        "options": [
-          "Es",
-          "Es la una y media.",
-          "Son",
-          "—"
-        ],
-        "answer": "Es",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Es la una — singular.",
-        "grammarTopic": "a1-numeros-1-100"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Hoy es lunes martes.",
-        "options": [
-          "Hoy",
-          "Hoy es lunes.",
-          "—",
-          "Hoy?"
-        ],
-        "answer": "Hoy",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Un solo día.",
-        "grammarTopic": "a1-numeros-1-100"
       }
     ],
     "fill_blank": [
@@ -2238,18 +1951,6 @@
       },
       {
         "type": "translation",
-        "question": "Напишите число прописью",
-        "answer": "Tengo veinticinco años. (25)",
-        "acceptableAnswers": [
-          "tengo veinticinco años. (25)",
-          "veinticinco"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "25 → veinticinco. Числа 21-29 пишутся слитно.",
-        "grammarTopic": "a1-numeros-1-100"
-      },
-      {
-        "type": "translation",
         "question": "Какой день идёт после понедельника?",
         "answer": "martes",
         "acceptableAnswers": [
@@ -2270,18 +1971,6 @@
         ],
         "instruction": "Переведите на испанский",
         "explanation": "В испанском календаре неделя начинается с lunes (понедельник).",
-        "grammarTopic": "a1-numeros-1-100"
-      },
-      {
-        "type": "translation",
-        "question": "Соберите фразу о времени",
-        "answer": "Son las tres de la tarde",
-        "acceptableAnswers": [
-          "son las tres de la tarde",
-          "Son"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Son las + часы; de la tarde = дня (после полудня).",
         "grammarTopic": "a1-numeros-1-100"
       }
     ],
@@ -2716,32 +2405,6 @@
         "instruction": "Выберите правильное число",
         "explanation": "15 → quince.",
         "grammarTopic": "a1-tener-expressions"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "___ hambre. (Yo, tener)",
-        "options": [
-          "Tengo",
-          "tengo",
-          "Tengo?"
-        ],
-        "answer": "Tengo",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Tener hambre = быть голодным. Yo → tengo.",
-        "grammarTopic": "a1-tener-expressions"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Tienes ___ (suerte) de viajar.",
-        "options": [
-          "suerte",
-          "Suerte",
-          "suerte?"
-        ],
-        "answer": "suerte",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Tener suerte = быть удачливым.",
-        "grammarTopic": "a1-tener-expressions"
       }
     ],
     "fill_blank": [
@@ -2980,19 +2643,6 @@
         "explanation": "Sin «el» extra.",
         "grammarTopic": "a1-tener-expressions",
         "acceptableAnswers": []
-      },
-      {
-        "type": "error_correction",
-        "question": "¿Cuánto cuesta este libro? — Cuesta cinco euros. (15)??.",
-        "answer": "¿Cuánto cuesta este libro? — Cuesta quince euros. (15)??",
-        "acceptableAnswers": [
-          "¿Cuánto cuesta este libro? — Cuesta quince euros. (15)??",
-          "¿cuánto cuesta este libro? — cuesta quince euros. (15)??",
-          "quince"
-        ],
-        "instruction": "Исправьте ошибку",
-        "explanation": "Нужно «quince», не «cinco».",
-        "grammarTopic": "a1-tener-expressions"
       }
     ],
     "sentence_building": [
@@ -3475,18 +3125,6 @@
         "instruction": "Переведите на испанский",
         "explanation": "El médico = врач. Voy al médico cuando estoy enfermo.",
         "grammarTopic": "a1-gustar"
-      },
-      {
-        "type": "translation",
-        "question": "Соберите фразу с gustar",
-        "answer": "Me gusta el café pero no me gusta el té",
-        "acceptableAnswers": [
-          "me gusta el café pero no me gusta el té",
-          "Me"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Me gusta + ед.ч.; me gustan + мн.ч. Pero = но.",
-        "grammarTopic": "a1-gustar"
       }
     ],
     "error_correction": [
@@ -3959,60 +3597,6 @@
         "instruction": "Выберите participio для trabajar",
         "explanation": "Trabajar → trabajado. Hemos trabajado = мы поработали.",
         "grammarTopic": "a2-preterito-perfecto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Hoy ___ (comer) pizza. (yo)",
-        "options": [
-          "he comido",
-          "He comido",
-          "he comido?"
-        ],
-        "answer": "he comido",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "haber (he) + comido. Pretérito perfecto для сегодняшнего действия.",
-        "grammarTopic": "a2-preterito-perfecto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Ella ___ (escribir) un correo.",
-        "options": [
-          "ha escrito",
-          "Ha escrito",
-          "ha escrito?"
-        ],
-        "answer": "ha escrito",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "haber (ha) + escrito. Escribir → escrito (неправильный).",
-        "grammarTopic": "a2-preterito-perfecto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Yo he comido ayer.",
-        "options": [
-          "Yo",
-          "Yo he comido.",
-          "—",
-          "Yo?"
-        ],
-        "answer": "Yo",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "He comido — без ayer (ya = связь с presente).",
-        "grammarTopic": "a2-preterito-perfecto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Ella ha ido a París en 2019.",
-        "options": [
-          "Ella",
-          "Ella ha ido a París.",
-          "—",
-          "Ella?"
-        ],
-        "answer": "Ella",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Fecha cerrada → indefinido; sin fecha → perfecto OK.",
-        "grammarTopic": "a2-preterito-perfecto"
       }
     ],
     "fill_blank": [
@@ -4171,18 +3755,6 @@
         "instruction": "Переведите на испанский",
         "explanation": "haber (ha) + escrito. Escribir → escrito (неправильный).",
         "grammarTopic": "a2-preterito-perfecto"
-      },
-      {
-        "type": "translation",
-        "question": "Соберите фразу в pretérito perfecto",
-        "answer": "Hoy he comido en un restaurante",
-        "acceptableAnswers": [
-          "hoy he comido en un restaurante",
-          "Hoy"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "he + participio: hoy he comido = сегодня я поел.",
-        "grammarTopic": "a2-preterito-perfecto"
       }
     ],
     "error_correction": [
@@ -4205,19 +3777,6 @@
         "explanation": "Fecha cerrada → indefinido; sin fecha → perfecto OK.",
         "grammarTopic": "a2-preterito-perfecto",
         "acceptableAnswers": []
-      },
-      {
-        "type": "error_correction",
-        "question": "¿Has estando en España? (estar)??.",
-        "answer": "¿Has estado en España? (estar)??",
-        "acceptableAnswers": [
-          "¿Has estado en España? (estar)??",
-          "¿has estado en españa? (estar)??",
-          "estado"
-        ],
-        "instruction": "Исправьте ошибку",
-        "explanation": "Нужно «estado», не «estando».",
-        "grammarTopic": "a2-preterito-perfecto"
       },
       {
         "type": "error_correction",
@@ -4578,74 +4137,6 @@
         "instruction": "Выберите форму",
         "explanation": "«Два года назад» = конкретный момент → indefinido: fueron.",
         "grammarTopic": "a2-preterito-indefinido"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Ayer ___ (ir) al cine. (yo)",
-        "options": [
-          "fui",
-          "Fui",
-          "fui?"
-        ],
-        "answer": "fui",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Ir → fui (indefinido, yo). Полностью неправильный.",
-        "grammarTopic": "a2-preterito-indefinido"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "¿___ (tú) al partido ayer? (ir)?",
-        "options": [
-          "Fuiste",
-          "fuiste",
-          "Fuiste?"
-        ],
-        "answer": "Fuiste",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Ir → fuiste (tú, indefinido).",
-        "grammarTopic": "a2-preterito-indefinido"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Ayer yo fue al mercado.",
-        "options": [
-          "Ayer",
-          "Ayer yo fui al mercado.",
-          "—",
-          "Ayer?"
-        ],
-        "answer": "Ayer",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Yo → fui (no fue).",
-        "grammarTopic": "a2-preterito-indefinido"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Ella compró un vestido nuevo ayer mañana.",
-        "options": [
-          "Ella",
-          "Ella compró un vestido nuevo ayer.",
-          "—",
-          "Ella?"
-        ],
-        "answer": "Ella",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "ayer mañana — лишнее.",
-        "grammarTopic": "a2-preterito-indefinido"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Nosotros nos encontramos en el parque ayer y fuimos felices.",
-        "options": [
-          "Nos",
-          "Nos encontramos en el parque ayer.",
-          "Nosotros",
-          "—"
-        ],
-        "answer": "Nos",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Уберите «nosotros» и лишнее.",
-        "grammarTopic": "a2-preterito-indefinido"
       }
     ],
     "fill_blank": [
@@ -4830,18 +4321,6 @@
         ],
         "instruction": "Переведите на испанский",
         "explanation": "Ir → fuiste (tú, indefinido).",
-        "grammarTopic": "a2-preterito-indefinido"
-      },
-      {
-        "type": "translation",
-        "question": "Соберите фразу о вчерашней покупке",
-        "answer": "Ayer compré un libro interesante",
-        "acceptableAnswers": [
-          "ayer compré un libro interesante",
-          "Ayer"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Ayer + pretérito indefinido: compré.",
         "grammarTopic": "a2-preterito-indefinido"
       }
     ],
@@ -5294,61 +4773,6 @@
         "instruction": "Описание внешности в прошлом",
         "explanation": "Описание характеристики в прошлом → imperfecto: era.",
         "grammarTopic": "a2-imperfecto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Cuando era niño, ___ (jugar) al fútbol.",
-        "options": [
-          "jugaba",
-          "Jugaba",
-          "jugaba?"
-        ],
-        "answer": "jugaba",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Привычное действие в прошлом → imperfecto: jugaba.",
-        "grammarTopic": "a2-imperfecto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Todos los días ___ (comer) a las dos.",
-        "options": [
-          "comía",
-          "Comía",
-          "comíamos",
-          "comía?"
-        ],
-        "answer": "comía",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Привычное действие в прошлом → imperfecto: comía.",
-        "grammarTopic": "a2-imperfecto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Cuando era niño jugué al fútbol.",
-        "options": [
-          "Cuando",
-          "Cuando era niño jugaba al fútbol.",
-          "—",
-          "Cuando?"
-        ],
-        "answer": "Cuando",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Hábito pasado → jugaba (imperfecto).",
-        "grammarTopic": "a2-imperfecto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Hacía frío y llovió.",
-        "options": [
-          "Hacía",
-          "Hacía frío y llovía.",
-          "—",
-          "Hacía?"
-        ],
-        "answer": "Hacía",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Acciones simultáneas → imperfecto.",
-        "grammarTopic": "a2-imperfecto"
       }
     ],
     "fill_blank": [
@@ -5538,18 +4962,6 @@
         "instruction": "Переведите на испанский",
         "explanation": "Описание характеристики в прошлом → imperfecto: era.",
         "grammarTopic": "a2-imperfecto"
-      },
-      {
-        "type": "translation",
-        "question": "Соберите фразу о детстве",
-        "answer": "Cuando era niño jugaba al fútbol",
-        "acceptableAnswers": [
-          "cuando era niño jugaba al fútbol",
-          "Cuando"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Cuando era niño + imperfecto jugaba — привычка в прошлом.",
-        "grammarTopic": "a2-imperfecto"
       }
     ],
     "error_correction": [
@@ -5582,19 +4994,6 @@
         ],
         "instruction": "Исправьте ошибку",
         "explanation": "Нужно «cantaban», не «cantaron».",
-        "grammarTopic": "a2-imperfecto"
-      },
-      {
-        "type": "error_correction",
-        "question": "¿Cómo fue tu abuela??.",
-        "answer": "¿Cómo era tu abuela??",
-        "acceptableAnswers": [
-          "¿Cómo era tu abuela??",
-          "¿cómo era tu abuela??",
-          "era"
-        ],
-        "instruction": "Исправьте ошибку",
-        "explanation": "Нужно «era», не «fue».",
         "grammarTopic": "a2-imperfecto"
       },
       {
@@ -5951,32 +5350,6 @@
         "instruction": "Выберите предлог цены/обмена",
         "explanation": "Обмен/цена → por. Por 10 euros = за 10 евро.",
         "grammarTopic": "a2-por-para"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Caminamos ___ el parque.",
-        "options": [
-          "por",
-          "Por",
-          "por?"
-        ],
-        "answer": "por",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Движение через место → por. Por el parque = по парку.",
-        "grammarTopic": "a2-por-para"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "___ favor, ayúdame.",
-        "options": [
-          "Por",
-          "por",
-          "Por?"
-        ],
-        "answer": "Por",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Por favor = пожалуйста. Устойчивое выражение.",
-        "grammarTopic": "a2-por-para"
       }
     ],
     "fill_blank": [
@@ -6133,18 +5506,6 @@
         ],
         "instruction": "Переведите на испанский",
         "explanation": "Por favor = пожалуйста. Устойчивое выражение.",
-        "grammarTopic": "a2-por-para"
-      },
-      {
-        "type": "translation",
-        "question": "Соберите фразу с para (цель)",
-        "answer": "Estudio español para viajar",
-        "acceptableAnswers": [
-          "estudio español para viajar",
-          "Estudio"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "para + infinitivo = чтобы / для того чтобы.",
         "grammarTopic": "a2-por-para"
       }
     ],
@@ -6526,60 +5887,6 @@
         "answer": "haga",
         "instruction": "Выберите форму",
         "explanation": "Ojalá → siempre subjuntivo. Hacer → haga.",
-        "grammarTopic": "b1-subjuntivo"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Quiero que tú ___ (hablar).",
-        "options": [
-          "hables",
-          "Hables",
-          "hables?"
-        ],
-        "answer": "hables",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Después de «quiero que» → subjuntivo. Hablar → hables (tú).",
-        "grammarTopic": "b1-subjuntivo"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Dudo que ___ (ser) verdad.",
-        "options": [
-          "sea",
-          "Sea",
-          "sea?"
-        ],
-        "answer": "sea",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Dudar que → subjuntivo. Ser → sea.",
-        "grammarTopic": "b1-subjuntivo"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Quiero que vienes mañana.",
-        "options": [
-          "Quiero",
-          "Quiero que vengas mañana.",
-          "—",
-          "Quiero?"
-        ],
-        "answer": "Quiero",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Quiero que → vengas (subjuntivo).",
-        "grammarTopic": "b1-subjuntivo"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Espero que es feliz.",
-        "options": [
-          "Espero",
-          "Espero que sea feliz.",
-          "—",
-          "Espero?"
-        ],
-        "answer": "Espero",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Espero que → sea.",
         "grammarTopic": "b1-subjuntivo"
       }
     ],
@@ -7133,172 +6440,6 @@
         "instruction": "Вежливое повелительное для usted",
         "explanation": "Usted → subjuntivo: sentarse → siéntese.",
         "grammarTopic": "b1-imperativo"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "¡___ (comer) la fruta! (tú)",
-        "options": [
-          "Come",
-          "come",
-          "Come?"
-        ],
-        "answer": "Come",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Tú afirmativo: comer → come.",
-        "grammarTopic": "b1-imperativo"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "¡___ (hacer) los deberes! (tú).",
-        "options": [
-          "Haz",
-          "haz",
-          "Haz?"
-        ],
-        "answer": "Haz",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Hacer → haz (tú, imperativo). Неправильная форма.",
-        "grammarTopic": "b1-imperativo"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "¡Come la fruta tu!.",
-        "options": [
-          "¡Come",
-          "¡Come la fruta!",
-          "—",
-          "¡Come?"
-        ],
-        "answer": "¡Come",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Уберите «tu» после imperativo.",
-        "grammarTopic": "b1-imperativo"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "No hables tan alto tú.",
-        "options": [
-          "¡No",
-          "¡No hables tan alto!",
-          "No",
-          "—"
-        ],
-        "answer": "¡No",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Imperativo negativo: No hables…",
-        "grammarTopic": "b1-imperativo"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "¡Vamos al cine ahora mismo vamos!.",
-        "options": [
-          "¡Vamos",
-          "¡Vamos al cine ahora mismo!",
-          "—",
-          "¡Vamos?"
-        ],
-        "answer": "¡Vamos",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Повтор «vamos» лишний.",
-        "grammarTopic": "b1-imperativo"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Hable usted más despacio por favor usted.",
-        "options": [
-          "Hable",
-          "Hable usted más despacio, por favor.",
-          "—",
-          "Hable?"
-        ],
-        "answer": "Hable",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Уберите второе «usted».",
-        "grammarTopic": "b1-imperativo"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "¡Bebe agua tu antes de salir!.",
-        "options": [
-          "¡Bebe",
-          "¡Bebe agua antes de salir!",
-          "—",
-          "¡Bebe?"
-        ],
-        "answer": "¡Bebe",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Bebe agua — sin «tu».",
-        "grammarTopic": "b1-imperativo"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "No corras en el pasillo por favor no corras.",
-        "options": [
-          "¡No",
-          "¡No corras en el pasillo, por favor!",
-          "No",
-          "—"
-        ],
-        "answer": "¡No",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Один imperativo достаточно.",
-        "grammarTopic": "b1-imperativo"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "¡Abre la ventana abrir!.",
-        "options": [
-          "¡Abre",
-          "¡Abre la ventana!",
-          "—",
-          "¡Abre?"
-        ],
-        "answer": "¡Abre",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Abre, не abrir.",
-        "grammarTopic": "b1-imperativo"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Cierra la puerta tu por favor cierra.",
-        "options": [
-          "¡Cierra",
-          "¡Cierra la puerta, por favor!",
-          "Cierra",
-          "—"
-        ],
-        "answer": "¡Cierra",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Cierra la puerta.",
-        "grammarTopic": "b1-imperativo"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "¡Escucha atentamente escuchar!.",
-        "options": [
-          "¡Escucha",
-          "¡Escucha atentamente!",
-          "—",
-          "¡Escucha?"
-        ],
-        "answer": "¡Escucha",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Escucha — imperativo.",
-        "grammarTopic": "b1-imperativo"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "No fume usted aquí por favor no fume usted.",
-        "options": [
-          "No",
-          "No fume usted aquí, por favor.",
-          "—",
-          "No?"
-        ],
-        "answer": "No",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "No fume usted aquí.",
-        "grammarTopic": "b1-imperativo"
       }
     ],
     "fill_blank": [
@@ -7441,17 +6582,6 @@
         ],
         "instruction": "Переведите на испанский",
         "explanation": "Usted → subjuntivo: sentarse → siéntese.",
-        "grammarTopic": "b1-imperativo"
-      },
-      {
-        "type": "translation",
-        "question": "Infinitivo вместо imperativo",
-        "answer": "¡Abre la ventana!",
-        "acceptableAnswers": [
-          "¡Abre la ventana!"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Abre, не abrir.",
         "grammarTopic": "b1-imperativo"
       }
     ],
@@ -7876,46 +7006,6 @@
         "answer": "haría",
         "instruction": "Совет — какое наклонение?",
         "explanation": "«На твоём месте» → condicional: haría.",
-        "grammarTopic": "b1-condicional"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "¿Podría ___ (ayudar)me?",
-        "options": [
-          "ayudar",
-          "ayudar?"
-        ],
-        "answer": "ayudar",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Podría + infinitivo. ¿Podría ayudarme? = Не могли бы вы помочь?",
-        "grammarTopic": "b1-condicional"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Viajaría a España si tendría dinero.",
-        "options": [
-          "Viajaría",
-          "Viajaría a España si tuviera dinero.",
-          "—",
-          "Viajaría?"
-        ],
-        "answer": "Viajaría",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Si tuviera — imperfecto subjuntivo.",
-        "grammarTopic": "b1-condicional"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Sería genial si es posible.",
-        "options": [
-          "Sería",
-          "Sería genial si fuera posible.",
-          "—",
-          "Sería?"
-        ],
-        "answer": "Sería",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Si fuera posible — subjuntivo.",
         "grammarTopic": "b1-condicional"
       }
     ],
@@ -8476,182 +7566,6 @@
         "answer": "llegaba",
         "instruction": "Преобразуйте в косвенную речь",
         "explanation": "Presente → imperfecto в косвенной (после прошедшего): llego → llegaba.",
-        "grammarTopic": "b2-estilo-indirecto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "María dice que ___ (venir) mañana.",
-        "options": [
-          "vendrá",
-          "viene",
-          "vendrá?"
-        ],
-        "answer": "vendrá",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "После dice (presente) время не меняется: viene / vendrá.",
-        "grammarTopic": "b2-estilo-indirecto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Me preguntó ___ estaba cansado.",
-        "options": [
-          "si",
-          "Si",
-          "si?"
-        ],
-        "answer": "si",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Косвенный вопрос «ли» → si. Me preguntó si... = Он спросил, ... ли.",
-        "grammarTopic": "b2-estilo-indirecto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "María dijo: \"Voy mañana al médico.\".",
-        "options": [
-          "María",
-          "María dijo que iba al médico al día siguiente.",
-          "—",
-          "María?"
-        ],
-        "answer": "María",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Presente → imperfecto; mañana → al día siguiente.",
-        "grammarTopic": "b2-estilo-indirecto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Juan afirmó: \"Estoy cansado.\".",
-        "options": [
-          "Juan",
-          "Juan afirmó que estaba cansado.",
-          "—",
-          "Juan?"
-        ],
-        "answer": "Juan",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Estoy → estaba.",
-        "grammarTopic": "b2-estilo-indirecto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Ella preguntó: \"¿Dónde está el baño?\"?",
-        "options": [
-          "Ella",
-          "Ella preguntó dónde estaba el baño.",
-          "—",
-          "Ella?"
-        ],
-        "answer": "Ella",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "¿Dónde está? → dónde estaba.",
-        "grammarTopic": "b2-estilo-indirecto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Pedro explicó: \"Llegaré tarde.\".",
-        "options": [
-          "Pedro",
-          "Pedro explicó que llegaría tarde.",
-          "—",
-          "Pedro?"
-        ],
-        "answer": "Pedro",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Llegaré → llegaría.",
-        "grammarTopic": "b2-estilo-indirecto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Ana dijo: \"He terminado el trabajo.\".",
-        "options": [
-          "Ana",
-          "Ana dijo que había terminado el trabajo.",
-          "—",
-          "Ana?"
-        ],
-        "answer": "Ana",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "He terminado → había terminado.",
-        "grammarTopic": "b2-estilo-indirecto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Carlos contó: \"Vine ayer.\".",
-        "options": [
-          "Carlos",
-          "Carlos contó que había venido el día anterior.",
-          "—",
-          "Carlos?"
-        ],
-        "answer": "Carlos",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Vine → había venido; ayer → el día anterior.",
-        "grammarTopic": "b2-estilo-indirecto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Laura prometió: \"Te llamaré.\".",
-        "options": [
-          "Laura",
-          "Laura prometió que me llamaría.",
-          "—",
-          "Laura?"
-        ],
-        "answer": "Laura",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Косвенная речь: Te llamaré → me/te llamaría (в зависимости от того, кому пересказываете).",
-        "grammarTopic": "b2-estilo-indirecto",
-        "acceptableAnswers": [
-          "Laura prometió que me llamaría.",
-          "Laura prometió que me llamaría",
-          "Laura prometió que te llamaría.",
-          "Laura prometió que te llamaría"
-        ]
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Miguel respondió: \"No puedo ir.\".",
-        "options": [
-          "Miguel",
-          "Miguel respondió que no podía ir.",
-          "—",
-          "Miguel?"
-        ],
-        "answer": "Miguel",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Косвенная речь: No puedo → no podía (сдвиг после прошедшего respondió).",
-        "grammarTopic": "b2-estilo-indirecto",
-        "acceptableAnswers": [
-          "Miguel respondió que no podía ir.",
-          "Miguel respondió que no podía ir"
-        ]
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Sofía dijo: \"Estudio en Madrid.\".",
-        "options": [
-          "Sofía",
-          "Sofía dijo que estudiaba en Madrid.",
-          "—",
-          "Sofía?"
-        ],
-        "answer": "Sofía",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Estudio → estudiaba.",
-        "grammarTopic": "b2-estilo-indirecto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Roberto afirmó: \"Mañana es mi cumpleaños.\".",
-        "options": [
-          "Roberto",
-          "Roberto afirmó que al día siguiente era su cumpleaños.",
-          "—",
-          "Roberto?"
-        ],
-        "answer": "Roberto",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Mañana → al día siguiente; es → era.",
         "grammarTopic": "b2-estilo-indirecto"
       }
     ],
@@ -9302,47 +8216,6 @@
         "instruction": "Выберите форму pasiva refleja",
         "explanation": "Pasiva refleje с мн.ч.: se venden coches = «продаются машины».",
         "grammarTopic": "b2-voz-pasiva"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "El museo ___ (construir) en 1990.",
-        "options": [
-          "fue construido",
-          "Fue construido",
-          "fue construido?"
-        ],
-        "answer": "fue construido",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Ser (fue) + participio (construido).",
-        "grammarTopic": "b2-voz-pasiva"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "El libro fue escrito por García.",
-        "options": [
-          "El",
-          "El libro fue escrito por García Márquez.",
-          "—",
-          "El?"
-        ],
-        "answer": "El",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Nombre completo OK; ejemplo base correcta.",
-        "grammarTopic": "b2-voz-pasiva"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "La casa fue construida en 1920 por.",
-        "options": [
-          "La",
-          "La casa fue construida en 1920.",
-          "—",
-          "La?"
-        ],
-        "answer": "La",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Por sin agente — error.",
-        "grammarTopic": "b2-voz-pasiva"
       }
     ],
     "fill_blank": [
@@ -9475,18 +8348,6 @@
         "explanation": "Fue aprobada el año pasado.",
         "grammarTopic": "b2-voz-pasiva",
         "acceptableAnswers": []
-      },
-      {
-        "type": "translation",
-        "question": "Пассив в прошедшем",
-        "answer": "El museo fue construido (construir) en 1990.",
-        "acceptableAnswers": [
-          "el museo fue construido (construir) en 1990.",
-          "fue construido"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Ser (fue) + participio (construido).",
-        "grammarTopic": "b2-voz-pasiva"
       }
     ],
     "error_correction": [
@@ -9901,31 +8762,6 @@
         "instruction": "Выберите форму для длительности",
         "explanation": "Llevar + gerundio = длительность. Llevo estudiando dos horas.",
         "grammarTopic": "c1-perifrasis-verbales"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Voy ___ (estudiar) español.",
-        "options": [
-          "a estudiar",
-          "a estudiar?"
-        ],
-        "answer": "a estudiar",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Ir a + infinitivo = собираться сделать. Voy a estudiar.",
-        "grammarTopic": "c1-perifrasis-verbales"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Sigo ___ (aprender) cada día.",
-        "options": [
-          "aprendiendo",
-          "Aprendiendo",
-          "aprendiendo?"
-        ],
-        "answer": "aprendiendo",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Seguir + gerundio = продолжать. Sigo aprendiendo.",
-        "grammarTopic": "c1-perifrasis-verbales"
       }
     ],
     "fill_blank": [
@@ -10100,78 +8936,6 @@
         ],
         "instruction": "Переведите на испанский",
         "explanation": "Tener que + infinitivo = должен. Tengo que estudiar.",
-        "grammarTopic": "c1-perifrasis-verbales"
-      },
-      {
-        "type": "translation",
-        "question": "Перифраза продолжения",
-        "answer": "Sigo aprendiendo (aprender) cada día.",
-        "acceptableAnswers": [
-          "sigo aprendiendo (aprender) cada día.",
-          "aprendiendo"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Seguir + gerundio = продолжать. Sigo aprendiendo.",
-        "grammarTopic": "c1-perifrasis-verbales"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте перифразу acabar de",
-        "answer": "Acabo de terminar la redacción",
-        "acceptableAnswers": [
-          "acabo de terminar la redacción",
-          "Acabo"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Acabar de + infinitivo = только что закончил.",
-        "grammarTopic": "c1-perifrasis-verbales"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте перифразу llevar + gerundio",
-        "answer": "Llevo tres horas estudiando sin parar",
-        "acceptableAnswers": [
-          "llevo tres horas estudiando sin parar",
-          "Llevo"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Llevar + gerundio — длительность действия.",
-        "grammarTopic": "c1-perifrasis-verbales"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте ir a + infinitivo",
-        "answer": "Voy a empezar a leer ahora",
-        "acceptableAnswers": [
-          "voy a empezar a leer ahora",
-          "Voy"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Ir a + infinitivo — ближайшее будущее.",
-        "grammarTopic": "c1-perifrasis-verbales"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте перифразу deber de (догадка)",
-        "answer": "Debe de haber un error en el texto",
-        "acceptableAnswers": [
-          "debe de haber un error en el texto",
-          "Debe"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Deber de — вероятность, догадка.",
-        "grammarTopic": "c1-perifrasis-verbales"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте seguir + gerundio",
-        "answer": "Sigo pensando en la misma idea",
-        "acceptableAnswers": [
-          "sigo pensando en la misma idea",
-          "Sigo"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Seguir + gerundio — продолжать делать.",
         "grammarTopic": "c1-perifrasis-verbales"
       }
     ],
@@ -10652,45 +9416,9 @@
         "instruction": "Отрицание мнения — какое наклонение?",
         "explanation": "No creer que → subjuntivo: tenga.",
         "grammarTopic": "c1-matices-estilisticos"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Por mucho que ___, no lo conseguiré. (intentar).",
-        "options": [
-          "intente",
-          "Intente",
-          "intente?"
-        ],
-        "answer": "intente",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Por mucho que + subjuntivo: intente (гипотетично).",
-        "grammarTopic": "c1-matices-estilisticos"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Estoy cansado de ___ (esperar).",
-        "options": [
-          "esperar",
-          "esperar?"
-        ],
-        "answer": "esperar",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Estar cansado de + infinitivo = устать от чего-то.",
-        "grammarTopic": "c1-matices-estilisticos"
       }
     ],
     "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "Por mucho que ___, no lo conseguiré. (intentar)",
-        "answer": "intente",
-        "acceptableAnswers": [
-          "Intente"
-        ],
-        "instruction": "Concessive clause — какое наклонение?",
-        "explanation": "Por mucho que + subjuntivo: intente (гипотетично).",
-        "grammarTopic": "c1-matices-estilisticos"
-      },
       {
         "type": "fill_blank",
         "question": "Estoy cansado de ___ (esperar).",
@@ -10832,30 +9560,6 @@
       },
       {
         "type": "translation",
-        "question": "Concessive clause — какое наклонение?",
-        "answer": "Por mucho que intente, no lo conseguiré. (intentar)",
-        "acceptableAnswers": [
-          "por mucho que intente, no lo conseguiré. (intentar)",
-          "intente"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Por mucho que + subjuntivo: intente (гипотетично).",
-        "grammarTopic": "c1-matices-estilisticos"
-      },
-      {
-        "type": "translation",
-        "question": "Перифраза состояния",
-        "answer": "Estoy cansado de esperar (esperar).",
-        "acceptableAnswers": [
-          "estoy cansado de esperar (esperar).",
-          "esperar"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Estar cansado de + infinitivo = устать от чего-то.",
-        "grammarTopic": "c1-matices-estilisticos"
-      },
-      {
-        "type": "translation",
         "question": "Отрицание мнения — какое наклонение?",
         "answer": "tenga",
         "acceptableAnswers": [
@@ -10864,90 +9568,6 @@
         ],
         "instruction": "Переведите на испанский",
         "explanation": "No creer que → subjuntivo: tenga.",
-        "grammarTopic": "c1-matices-estilisticos"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте устойчивое выражение",
-        "answer": "Sea como sea iré",
-        "acceptableAnswers": [
-          "sea como sea iré",
-          "Sea"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Sea como sea — «как бы то ни было».",
-        "grammarTopic": "c1-matices-estilisticos"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте уступительную конструкцию",
-        "answer": "Por mucho que intente no lo conseguiré",
-        "acceptableAnswers": [
-          "por mucho que intente no lo conseguiré",
-          "Por"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Por mucho que + subjuntivo — «сколько бы ни…».",
-        "grammarTopic": "c1-matices-estilisticos"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте формальную просьбу (usted)",
-        "answer": "Le ruego que me envíe la documentación",
-        "acceptableAnswers": [
-          "le ruego que me envíe la documentación",
-          "Le"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Le ruego que + subjuntivo — очень вежливая просьба.",
-        "grammarTopic": "c1-matices-estilisticos"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте вежливый вопрос с condicional",
-        "answer": "¿Podría indicarme dónde está la sala?",
-        "acceptableAnswers": [
-          "¿podría indicarme dónde está la sala?",
-          "¿Podría"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "¿Podría…? — вежливость через condicional.",
-        "grammarTopic": "c1-matices-estilisticos"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте формальный связующий оборот",
-        "answer": "No obstante, debemos continuar con el plan",
-        "acceptableAnswers": [
-          "no obstante, debemos continuar con el plan",
-          "No"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "No obstante — «несмотря на это» (формальный регистр).",
-        "grammarTopic": "c1-matices-estilisticos"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте устойчивое вводное выражение",
-        "answer": "A fin de cuentas, lo importante es aprender",
-        "acceptableAnswers": [
-          "a fin de cuentas, lo importante es aprender",
-          "A"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "A fin de cuentas — «в конечном счёте».",
-        "grammarTopic": "c1-matices-estilisticos"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте мягкое предложение с subjuntivo",
-        "answer": "Me gustaría que lo revisáramos juntos",
-        "acceptableAnswers": [
-          "me gustaría que lo revisáramos juntos",
-          "Me"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Me gustaría que + imperfecto de subjuntivo — мягкое предложение.",
         "grammarTopic": "c1-matices-estilisticos"
       }
     ],
@@ -12939,30 +11559,6 @@
         "instruction": "Переведите на испанский",
         "explanation": "¿Quién? = кто?",
         "grammarTopic": "a1-preguntas"
-      },
-      {
-        "type": "translation",
-        "question": "Соберите вопрос «Где ты живёшь?»",
-        "answer": "¿Dónde vives tú?",
-        "acceptableAnswers": [
-          "¿dónde vives tú?",
-          "¿Dónde"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "¿Dónde vives? — вопрос о месте жительства.",
-        "grammarTopic": "a1-preguntas"
-      },
-      {
-        "type": "translation",
-        "question": "Соберите вопрос о возрасте",
-        "answer": "¿Cuántos años tienes?",
-        "acceptableAnswers": [
-          "¿cuántos años tienes?",
-          "¿Cuántos"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "¿Cuántos años tienes? = Сколько тебе лет?",
-        "grammarTopic": "a1-preguntas"
       }
     ],
     "error_correction": [
@@ -13046,32 +11642,6 @@
         "explanation": "Me llamo Juan — sin «es».",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
-      },
-      {
-        "type": "error_correction",
-        "question": "Qué te llamas??",
-        "answer": "Cómo te llamas??",
-        "acceptableAnswers": [
-          "Cómo te llamas??",
-          "cómo te llamas??",
-          "Cómo"
-        ],
-        "instruction": "Исправьте ошибку",
-        "explanation": "Нужно «Cómo», не «Qué».",
-        "grammarTopic": "a1-preguntas"
-      },
-      {
-        "type": "error_correction",
-        "question": "¿Qué es tu profesor??.",
-        "answer": "¿Quién es tu profesor??",
-        "acceptableAnswers": [
-          "¿Quién es tu profesor??",
-          "¿quién es tu profesor??",
-          "Quién"
-        ],
-        "instruction": "Исправьте ошибку",
-        "explanation": "Нужно «Quién», не «Qué».",
-        "grammarTopic": "a1-preguntas"
       }
     ],
     "sentence_building": [
@@ -13379,48 +11949,6 @@
         "instruction": "Сравнение «больше чем»",
         "explanation": "más + прилагательное + que.",
         "grammarTopic": "a2-comparativos"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Juan es más alto de Pedro.",
-        "options": [
-          "Juan",
-          "Juan es más alto que Pedro.",
-          "—",
-          "Juan?"
-        ],
-        "answer": "Juan",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Сравнение с que, не de (кроме чисел).",
-        "grammarTopic": "a2-comparativos"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Madrid es más grande de Toledo.",
-        "options": [
-          "Madrid",
-          "Madrid es más grande que Toledo.",
-          "—",
-          "Madrid?"
-        ],
-        "answer": "Madrid",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Más grande que — not de.",
-        "grammarTopic": "a2-comparativos"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Es tan alta como su madre es.",
-        "options": [
-          "Es",
-          "Es tan alta como su madre.",
-          "—",
-          "Es?"
-        ],
-        "answer": "Es",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Sin verbo repetido al final.",
-        "grammarTopic": "a2-comparativos"
       }
     ],
     "fill_blank": [
@@ -13539,30 +12067,6 @@
         "explanation": "más interesante",
         "grammarTopic": "a2-comparativos",
         "acceptableAnswers": []
-      },
-      {
-        "type": "translation",
-        "question": "Сравнение «больше чем»",
-        "answer": "más / que",
-        "acceptableAnswers": [
-          "más / que",
-          "más / que"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "más + прилагательное + que.",
-        "grammarTopic": "a2-comparativos"
-      },
-      {
-        "type": "translation",
-        "question": "Соберите сравнительную фразу",
-        "answer": "Madrid es más grande que Toledo",
-        "acceptableAnswers": [
-          "madrid es más grande que toledo",
-          "Madrid"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "más + прилагательное + que.",
-        "grammarTopic": "a2-comparativos"
       }
     ],
     "error_correction": [
@@ -13957,47 +12461,6 @@
         "instruction": "hacer в будущем",
         "explanation": "hacer → harás.",
         "grammarTopic": "a2-futuro-simple"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Mañana ___ (hablar) con ella. (yo)",
-        "options": [
-          "hablaré",
-          "Hablare",
-          "hablaré?"
-        ],
-        "answer": "hablaré",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "yo → infinitivo + é: hablaré.",
-        "grammarTopic": "a2-futuro-simple"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Mañana yo llamaré a ti.",
-        "options": [
-          "Mañana",
-          "Mañana te llamaré.",
-          "—",
-          "Mañana?"
-        ],
-        "answer": "Mañana",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Te llamaré — pronombre antes del verbo.",
-        "grammarTopic": "a2-futuro-simple"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Serán las diez ahora mismo.",
-        "options": [
-          "Serán",
-          "Serán las diez.",
-          "—",
-          "Serán?"
-        ],
-        "answer": "Serán",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Sin «ahora mismo» redundante.",
-        "grammarTopic": "a2-futuro-simple"
       }
     ],
     "fill_blank": [
@@ -14140,30 +12603,6 @@
         "explanation": "Serán las diez = наверное, десять.",
         "grammarTopic": "a2-futuro-simple",
         "acceptableAnswers": []
-      },
-      {
-        "type": "translation",
-        "question": "hacer в будущем",
-        "answer": "harás",
-        "acceptableAnswers": [
-          "harás",
-          "harás"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "hacer → harás.",
-        "grammarTopic": "a2-futuro-simple"
-      },
-      {
-        "type": "translation",
-        "question": "Соберите фразу в futuro simple",
-        "answer": "Mañana hablaré con mi profesor",
-        "acceptableAnswers": [
-          "mañana hablaré con mi profesor",
-          "Mañana"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Mañana + futuro: hablaré.",
-        "grammarTopic": "a2-futuro-simple"
       }
     ],
     "error_correction": [
@@ -14209,19 +12648,6 @@
         ],
         "instruction": "Исправьте ошибку",
         "explanation": "Нужно «vendrán», не «vienen».",
-        "grammarTopic": "a2-futuro-simple"
-      },
-      {
-        "type": "error_correction",
-        "question": "¿Qué haces tú el próximo año??.",
-        "answer": "¿Qué harás tú el próximo año??",
-        "acceptableAnswers": [
-          "¿Qué harás tú el próximo año??",
-          "¿qué harás tú el próximo año??",
-          "harás"
-        ],
-        "instruction": "Исправьте ошибку",
-        "explanation": "Нужно «harás», не «haces».",
         "grammarTopic": "a2-futuro-simple"
       }
     ],
@@ -14576,88 +13002,6 @@
         "instruction": "Выберите poder (yo)",
         "explanation": "Yo no puedo — poder o→ue в настоящем.",
         "grammarTopic": "verbos-frecuentes"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "¿Qué ___ hacer hoy?",
-        "options": [
-          "quieres",
-          "Quieres",
-          "quieres?"
-        ],
-        "answer": "quieres",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Querer: yo quiero, tú quieres, él quiere.",
-        "grammarTopic": "a1-verbos-frecuentes"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Ella ___ la comida en casa.",
-        "options": [
-          "hace",
-          "Hace",
-          "hace?"
-        ],
-        "answer": "hace",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Hacer: yo hago, tú haces, él/ella hace.",
-        "grammarTopic": "a1-verbos-frecuentes"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Yo no puedo ir hoy pero quiero ir mañana ayer.",
-        "options": [
-          "No",
-          "No puedo ir hoy pero quiero ir mañana.",
-          "Yo",
-          "—"
-        ],
-        "answer": "No",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Mañana — no ayer.",
-        "grammarTopic": "a1-verbos-frecuentes"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Quiero aprender español aprendo.",
-        "options": [
-          "Quiero",
-          "Quiero aprender español.",
-          "—",
-          "Quiero?"
-        ],
-        "answer": "Quiero",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Quiero + infinitivo — no conjugado.",
-        "grammarTopic": "a1-verbos-frecuentes"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Tengo que irme ir.",
-        "options": [
-          "Tengo",
-          "Tengo que irme.",
-          "—",
-          "Tengo?"
-        ],
-        "answer": "Tengo",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Irme — sin «ir» extra.",
-        "grammarTopic": "a1-verbos-frecuentes"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Debes descansar descansas.",
-        "options": [
-          "Debes",
-          "Debes descansar.",
-          "—",
-          "Debes?"
-        ],
-        "answer": "Debes",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Debes + infinitivo.",
-        "grammarTopic": "a1-verbos-frecuentes"
       }
     ],
     "fill_blank": [
@@ -14800,42 +13144,6 @@
         "explanation": "Creo que sí.",
         "grammarTopic": "a1-verbos-frecuentes",
         "acceptableAnswers": []
-      },
-      {
-        "type": "translation",
-        "question": "Поставьте querer (tú)",
-        "answer": "¿Qué quieres hacer hoy?",
-        "acceptableAnswers": [
-          "¿qué quieres hacer hoy?",
-          "quieres"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Querer: yo quiero, tú quieres, él quiere.",
-        "grammarTopic": "a1-verbos-frecuentes"
-      },
-      {
-        "type": "translation",
-        "question": "Поставьте hacer (ella)",
-        "answer": "Ella hace la comida en casa.",
-        "acceptableAnswers": [
-          "ella hace la comida en casa.",
-          "hace"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Hacer: yo hago, tú haces, él/ella hace.",
-        "grammarTopic": "a1-verbos-frecuentes"
-      },
-      {
-        "type": "translation",
-        "question": "Соберите вопрос «Что ты говоришь?»",
-        "answer": "¿Qué dices tú?",
-        "acceptableAnswers": [
-          "¿qué dices tú?",
-          "¿"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Decir: yo digo, tú dices. ¿Qué dices?",
-        "grammarTopic": "a1-verbos-frecuentes"
       }
     ],
     "error_correction": [
@@ -15286,46 +13594,6 @@
         "instruction": "Выберите правильный ответ",
         "explanation": "Se habla español — безличная/пассивная конструкция.",
         "grammarTopic": "pronombre-se"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "María ___ levanta a las siete.",
-        "options": [
-          "se",
-          "Se",
-          "se?"
-        ],
-        "answer": "se",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Reflexivo: María se levanta.",
-        "grammarTopic": "b1-pronombre-se"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Se vende casas en el centro.",
-        "options": [
-          "Se",
-          "Se venden casas en el centro.",
-          "—",
-          "Se?"
-        ],
-        "answer": "Se",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Casas — мн.ч. → se venden.",
-        "grammarTopic": "b1-pronombre-se"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Ana y Luis ___ ven cada día.",
-        "options": [
-          "se",
-          "Se",
-          "se?"
-        ],
-        "answer": "se",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Recíproco: se ven = видят друг друга.",
-        "grammarTopic": "b1-pronombre-se"
       }
     ],
     "fill_blank": [
@@ -16423,71 +14691,9 @@
         "instruction": "Формула",
         "explanation": "Imperfecto de haber + participio.",
         "grammarTopic": "pluscuamperfecto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Ya ___ (salir) cuando llamaste.",
-        "options": [
-          "había salido",
-          "Había salido",
-          "había salido?"
-        ],
-        "answer": "había salido",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Salir → salido: había salido.",
-        "grammarTopic": "b1-pluscuamperfecto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Cuando llegué, ya he comido.",
-        "options": [
-          "Cuando",
-          "Cuando llegué, ya había comido.",
-          "—",
-          "Cuando?"
-        ],
-        "answer": "Cuando",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Оба события в прошлом → pluscuamperfecto, не perfecto.",
-        "grammarTopic": "b1-pluscuamperfecto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Nunca ___ (ver) esa película antes de ayer.",
-        "options": [
-          "había visto",
-          "Había visto",
-          "había visto?"
-        ],
-        "answer": "había visto",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Ver → visto: había visto.",
-        "grammarTopic": "b1-pluscuamperfecto"
       }
     ],
     "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "Ya ___ (salir) cuando llamaste.",
-        "answer": "había salido",
-        "acceptableAnswers": [
-          "Había salido"
-        ],
-        "instruction": "Salir → participio",
-        "explanation": "Salir → salido: había salido.",
-        "grammarTopic": "pluscuamperfecto"
-      },
-      {
-        "type": "fill_blank",
-        "question": "Nunca ___ (ver) esa película antes de ayer.",
-        "answer": "había visto",
-        "acceptableAnswers": [
-          "Había visto"
-        ],
-        "instruction": "Ver → participio",
-        "explanation": "Ver → visto: había visto.",
-        "grammarTopic": "pluscuamperfecto"
-      },
       {
         "type": "fill_blank",
         "question": "Cuando llegué, ya ___ (comer).",
@@ -16524,30 +14730,6 @@
         "instruction": "Переведите предложение",
         "explanation": "Había leído — «уже прочитала (до того)».",
         "grammarTopic": "pluscuamperfecto"
-      },
-      {
-        "type": "translation",
-        "question": "Формула",
-        "answer": "había/habías/había…",
-        "acceptableAnswers": [
-          "había/habías/había…",
-          "había/habías/había…"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Imperfecto de haber + participio.",
-        "grammarTopic": "b1-pluscuamperfecto"
-      },
-      {
-        "type": "translation",
-        "question": "Indirecto + plusc.",
-        "answer": "Me dijo que había terminado",
-        "acceptableAnswers": [
-          "me dijo que había terminado",
-          "Me"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Había terminado en estilo indirecto.",
-        "grammarTopic": "b1-pluscuamperfecto"
       }
     ],
     "error_correction": [
@@ -16940,77 +15122,9 @@
         "instruction": "Выберите правильный вариант",
         "explanation": "Si + subj. imperf. + condicional: нереальное условие.",
         "grammarTopic": "subjuntivo-imperfecto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Ojalá ___ (lluvia) mañana.",
-        "options": [
-          "llueva",
-          "llueve",
-          "llovió",
-          "lloverá"
-        ],
-        "answer": "llueva",
-        "instruction": "Ojalá + subjuntivo",
-        "explanation": "Ojalá + subjuntivo (presente или imperfecto).",
-        "grammarTopic": "subjuntivo-imperfecto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Quería que ___ (venir) a la fiesta.",
-        "options": [
-          "vinieras",
-          "Vinieras",
-          "viniese",
-          "vinieras?"
-        ],
-        "answer": "vinieras",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Quería que + subjuntivo: vinieras/viniese.",
-        "grammarTopic": "b1-subjuntivo-imperfecto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Si tengo tiempo, iría.",
-        "options": [
-          "Si",
-          "Si tuviera tiempo, iría.",
-          "—",
-          "Si?"
-        ],
-        "answer": "Si",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Нереальное условие → subjuntivo imperfecto.",
-        "grammarTopic": "b1-subjuntivo-imperfecto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Si ___ (ser) más joven, correría más.",
-        "options": [
-          "fuera",
-          "Fuera",
-          "fuese",
-          "fuera?"
-        ],
-        "answer": "fuera",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Ser → fuera/fuese en subjuntivo imperfecto.",
-        "grammarTopic": "b1-subjuntivo-imperfecto"
       }
     ],
     "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "Quería que ___ (venir) a la fiesta.",
-        "answer": "vinieras",
-        "acceptableAnswers": [
-          "Vinieras",
-          "viniese"
-        ],
-        "instruction": "Venir → subjuntivo",
-        "explanation": "Quería que + subjuntivo: vinieras/viniese.",
-        "grammarTopic": "subjuntivo-imperfecto"
-      },
       {
         "type": "fill_blank",
         "question": "Si ___ (ser) más joven, correría más.",
@@ -17059,90 +15173,6 @@
         "instruction": "Si + subj. + condicional",
         "explanation": "Si lo supiera, llamaría — классическая пара.",
         "grammarTopic": "subjuntivo-imperfecto"
-      },
-      {
-        "type": "translation",
-        "question": "Ser → subj. imperf.",
-        "answer": "Si fuera (ser) más joven, correría más.",
-        "acceptableAnswers": [
-          "si fuera (ser) más joven, correría más.",
-          "fuera"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Ser → fuera/fuese en subjuntivo imperfecto.",
-        "grammarTopic": "b1-subjuntivo-imperfecto"
-      },
-      {
-        "type": "translation",
-        "question": "Imperf. subj. + cond.",
-        "answer": "Si tuviera dinero viajaría más",
-        "acceptableAnswers": [
-          "si tuviera dinero viajaría más",
-          "Si"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Si tuviera… viajaría…",
-        "grammarTopic": "b1-subjuntivo-imperfecto"
-      },
-      {
-        "type": "translation",
-        "question": "Imperf. subj.",
-        "answer": "Quería que vinieras a la fiesta",
-        "acceptableAnswers": [
-          "quería que vinieras a la fiesta",
-          "Quería"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Quería que vinieras…",
-        "grammarTopic": "b1-subjuntivo-imperfecto"
-      },
-      {
-        "type": "translation",
-        "question": "Imperf. subj. — ojalá",
-        "answer": "Ojalá pudiera ayudarte",
-        "acceptableAnswers": [
-          "ojalá pudiera ayudarte",
-          "Ojalá"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Ojalá pudiera…",
-        "grammarTopic": "b1-subjuntivo-imperfecto"
-      },
-      {
-        "type": "translation",
-        "question": "Imperf. subj. — pedir",
-        "answer": "Me pidió que hablara más despacio",
-        "acceptableAnswers": [
-          "me pidió que hablara más despacio",
-          "Me"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Pidió que hablara…",
-        "grammarTopic": "b1-subjuntivo-imperfecto"
-      },
-      {
-        "type": "translation",
-        "question": "Como si + plusc.",
-        "answer": "Como si nada hubiera pasado",
-        "acceptableAnswers": [
-          "como si nada hubiera pasado",
-          "Como"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Como si hubiera pasado.",
-        "grammarTopic": "b1-subjuntivo-imperfecto"
-      },
-      {
-        "type": "translation",
-        "question": "Imperf. subj. — dudar",
-        "answer": "Dudaba que llegara a tiempo",
-        "acceptableAnswers": [
-          "dudaba que llegara a tiempo",
-          "Dudaba"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Dudaba que llegara…",
-        "grammarTopic": "b1-subjuntivo-imperfecto"
       }
     ],
     "error_correction": [
@@ -17567,47 +15597,6 @@
         "instruction": "Выберите правильный ответ",
         "explanation": "A María → le escribes (косвенное).",
         "grammarTopic": "pronombres-objetos"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Le doy el regalo → ___ doy el regalo.",
-        "options": [
-          "Se lo",
-          "se lo",
-          "Se lo doy",
-          "Se lo?"
-        ],
-        "answer": "Se lo",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Le + lo → se lo (не le lo).",
-        "grammarTopic": "b1-pronombres-objetos"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Le lo digo la verdad.",
-        "options": [
-          "Se",
-          "Se lo digo.",
-          "Le",
-          "—"
-        ],
-        "answer": "Se",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Le lo → se lo.",
-        "grammarTopic": "b1-pronombres-objetos"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "No ___ (entender) — habla más despacio.",
-        "options": [
-          "lo",
-          "Lo",
-          "lo?"
-        ],
-        "answer": "lo",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "No lo entiendo — «не понимаю (это)».",
-        "grammarTopic": "b1-pronombres-objetos"
       }
     ],
     "fill_blank": [
@@ -17708,19 +15697,6 @@
         ],
         "instruction": "Исправьте ошибку",
         "explanation": "Нужно «lo», не «le».",
-        "grammarTopic": "b1-pronombres-objetos"
-      },
-      {
-        "type": "error_correction",
-        "question": "¿Lo escribes a María??.",
-        "answer": "¿Le escribes a María??",
-        "acceptableAnswers": [
-          "¿Le escribes a María??",
-          "¿le escribes a maría??",
-          "Le"
-        ],
-        "instruction": "Исправьте ошибку",
-        "explanation": "Нужно «Le», не «Lo».",
         "grammarTopic": "b1-pronombres-objetos"
       },
       {
@@ -18060,56 +16036,114 @@
     "multiple_choice": [
       {
         "type": "multiple_choice",
-        "question": "Habla muy ___.",
+        "question": "Ella habla ___ despacio.",
         "options": [
-          "rápido",
-          "rápidamente",
+          "muy",
           "mucho",
-          "muy"
+          "más",
+          "tan"
         ],
-        "answer": "rápido",
-        "instruction": "Muy + adjetivo",
-        "explanation": "Muy + прилагательное (rápido), не наречие.",
-        "grammarTopic": "adverbios"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Quizás ___ (llover) mañana.",
-        "options": [
-          "llueva",
-          "llueve",
-          "llovió",
-          "lloverá"
-        ],
-        "answer": "llueva",
-        "instruction": "Quizás + subjuntivo",
-        "explanation": "Quizás + subjuntivo.",
-        "grammarTopic": "adverbios"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Corre ___ (lento).",
-        "options": [
-          "lentamente",
-          "Lentamente",
-          "lentamente?"
-        ],
-        "answer": "lentamente",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Lento → lentamente (-mente).",
+        "answer": "muy",
+        "instruction": "Выберите правильный вариант",
+        "explanation": "Muy + наречие/прилагательное.",
         "grammarTopic": "b1-adverbios"
       },
       {
         "type": "multiple_choice",
-        "question": "___ (probable) llegará tarde.",
+        "question": "Corre ___ rápido para la ciudad.",
         "options": [
-          "Probablemente",
-          "probablemente",
-          "Probablemente?"
+          "demasiado",
+          "muy mucho",
+          "bastante de",
+          "tan de"
         ],
-        "answer": "Probablemente",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Probable → probablemente.",
+        "answer": "demasiado",
+        "instruction": "Выберите правильный вариант",
+        "explanation": "Demasiado + adj./adv.",
+        "grammarTopic": "b1-adverbios"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Trabaja ___ cada día.",
+        "options": [
+          "mucho",
+          "muy",
+          "demasiado de",
+          "tan"
+        ],
+        "answer": "mucho",
+        "instruction": "Выберите правильный вариант",
+        "explanation": "Mucho как наречие.",
+        "grammarTopic": "b1-adverbios"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "___ llegue a tiempo.",
+        "options": [
+          "Quizás",
+          "Muy",
+          "Demasiado",
+          "Mucho"
+        ],
+        "answer": "Quizás",
+        "instruction": "Выберите правильный вариант",
+        "explanation": "Quizás + subjuntivo.",
+        "grammarTopic": "b1-adverbios"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Habla ___ , por favor.",
+        "options": [
+          "más despacio",
+          "más despaciomente",
+          "muy despacio de",
+          "demasiado de despacio"
+        ],
+        "answer": "más despacio",
+        "instruction": "Выберите правильный вариант",
+        "explanation": "Más + наречие.",
+        "grammarTopic": "b1-adverbios"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Es ___ amable con todos.",
+        "options": [
+          "muy",
+          "mucho",
+          "demasiado de",
+          "tan de"
+        ],
+        "answer": "muy",
+        "instruction": "Выберите правильный вариант",
+        "explanation": "Muy + adj.",
+        "grammarTopic": "b1-adverbios"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Llegó ___ tarde.",
+        "options": [
+          "demasiado",
+          "muy mucho",
+          "bastante de",
+          "tan"
+        ],
+        "answer": "demasiado",
+        "instruction": "Выберите правильный вариант",
+        "explanation": "Demasiado + adv.",
+        "grammarTopic": "b1-adverbios"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Lo hice ___.",
+        "options": [
+          "rápidamente",
+          "rápido mente",
+          "muy rápido de",
+          "demasiado de rápido"
+        ],
+        "answer": "rápidamente",
+        "instruction": "Выберите правильный вариант",
+        "explanation": "Adj. + -mente.",
         "grammarTopic": "b1-adverbios"
       }
     ],
@@ -18159,6 +16193,82 @@
         "instruction": "Заполните пропуск",
         "explanation": "Quizás + subjuntivo.",
         "grammarTopic": "b1-adverbios"
+      },
+      {
+        "type": "fill_blank",
+        "question": "Habla ___ despacio, por favor.",
+        "answer": "muy",
+        "acceptableAnswers": [
+          "muy",
+          "Muy"
+        ],
+        "instruction": "Заполните пропуск",
+        "explanation": "Muy + adv.",
+        "grammarTopic": "b1-adverbios"
+      },
+      {
+        "type": "fill_blank",
+        "question": "Corre ___ rápido.",
+        "answer": "demasiado",
+        "acceptableAnswers": [
+          "demasiado",
+          "Demasiado"
+        ],
+        "instruction": "Заполните пропуск",
+        "explanation": "Demasiado + adj.",
+        "grammarTopic": "b1-adverbios"
+      },
+      {
+        "type": "fill_blank",
+        "question": "Trabaja ___ los fines de semana.",
+        "answer": "mucho",
+        "acceptableAnswers": [
+          "mucho",
+          "Mucho"
+        ],
+        "instruction": "Заполните пропуск",
+        "explanation": "Mucho как наречие.",
+        "grammarTopic": "b1-adverbios"
+      },
+      {
+        "type": "fill_blank",
+        "question": "___ llueva mañana.",
+        "answer": "Quizás",
+        "acceptableAnswers": [
+          "Quizás",
+          "quizás",
+          "Tal vez",
+          "tal vez"
+        ],
+        "instruction": "Заполните пропуск",
+        "explanation": "Quizás + subjuntivo.",
+        "grammarTopic": "b1-adverbios"
+      },
+      {
+        "type": "fill_blank",
+        "question": "Es una persona ___ simpática.",
+        "answer": "muy",
+        "acceptableAnswers": [
+          "muy",
+          "Muy"
+        ],
+        "instruction": "Заполните пропуск",
+        "explanation": "Muy + adj.",
+        "grammarTopic": "b1-adverbios"
+      },
+      {
+        "type": "fill_blank",
+        "question": "Camina ___ por el parque.",
+        "answer": "lentamente",
+        "acceptableAnswers": [
+          "lentamente",
+          "Lentamente",
+          "despacio",
+          "Despacio"
+        ],
+        "instruction": "Заполните пропуск",
+        "explanation": "-mente.",
+        "grammarTopic": "b1-adverbios"
       }
     ],
     "translation": [
@@ -18175,62 +16285,100 @@
       },
       {
         "type": "translation",
-        "question": "-mente от lento",
-        "answer": "Corre lentamente (lento).",
+        "question": "Он говорит очень медленно.",
+        "answer": "Habla muy despacio",
         "acceptableAnswers": [
-          "corre lentamente (lento).",
-          "lentamente"
+          "Habla muy despacio.",
+          "Habla muy lento."
         ],
         "instruction": "Переведите на испанский",
-        "explanation": "Lento → lentamente (-mente).",
+        "explanation": "Muy + adv.",
         "grammarTopic": "b1-adverbios"
       },
       {
         "type": "translation",
-        "question": "Соберите фразу с muy",
-        "answer": "Es una persona muy amable",
-        "acceptableAnswers": [
-          "es una persona muy amable",
-          "Es"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Muy amable — «очень добрый».",
-        "grammarTopic": "b1-adverbios"
-      },
-      {
-        "type": "translation",
-        "question": "Наречие «вероятно»",
-        "answer": "Probablemente (probable) llegará tarde.",
-        "acceptableAnswers": [
-          "probablemente (probable) llegará tarde.",
-          "Probablemente"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Probable → probablemente.",
-        "grammarTopic": "b1-adverbios"
-      },
-      {
-        "type": "translation",
-        "question": "Demasiado + adj.",
+        "question": "Она бежит слишком быстро.",
         "answer": "Corre demasiado rápido",
         "acceptableAnswers": [
-          "corre demasiado rápido",
-          "Corre"
+          "Corre demasiado rápido.",
+          "Corre demasiado de prisa."
         ],
         "instruction": "Переведите на испанский",
-        "explanation": "Demasiado rápido.",
+        "explanation": "Demasiado + adj.",
         "grammarTopic": "b1-adverbios"
       },
       {
         "type": "translation",
-        "question": "Quizás + subj.",
-        "answer": "Quizás llueva mañana",
+        "question": "Он много работает.",
+        "answer": "Trabaja mucho",
         "acceptableAnswers": [
-          "quizás llueva mañana",
-          "Quizás"
+          "Trabaja mucho.",
+          "Él trabaja mucho."
         ],
         "instruction": "Переведите на испанский",
-        "explanation": "Quizás llueva…",
+        "explanation": "Mucho.",
+        "grammarTopic": "b1-adverbios"
+      },
+      {
+        "type": "translation",
+        "question": "Возможно, завтра будет дождь.",
+        "answer": "Quizás llueva mañana",
+        "acceptableAnswers": [
+          "Quizás llueva mañana.",
+          "Tal vez llueva mañana.",
+          "Quizá llueva mañana."
+        ],
+        "instruction": "Переведите на испанский",
+        "explanation": "Quizás + subj.",
+        "grammarTopic": "b1-adverbios"
+      },
+      {
+        "type": "translation",
+        "question": "Она очень добрая.",
+        "answer": "Es muy amable",
+        "acceptableAnswers": [
+          "Es muy amable.",
+          "Ella es muy amable."
+        ],
+        "instruction": "Переведите на испанский",
+        "explanation": "Muy + adj.",
+        "grammarTopic": "b1-adverbios"
+      },
+      {
+        "type": "translation",
+        "question": "Пожалуйста, говори медленнее.",
+        "answer": "Habla más despacio, por favor",
+        "acceptableAnswers": [
+          "Habla más despacio, por favor.",
+          "Habla más despacio por favor."
+        ],
+        "instruction": "Переведите на испанский",
+        "explanation": "Más + adv.",
+        "grammarTopic": "b1-adverbios"
+      },
+      {
+        "type": "translation",
+        "question": "Он ушёл слишком поздно.",
+        "answer": "Se fue demasiado tarde",
+        "acceptableAnswers": [
+          "Se fue demasiado tarde.",
+          "Llegó demasiado tarde."
+        ],
+        "instruction": "Переведите на испанский",
+        "explanation": "Demasiado.",
+        "grammarTopic": "b1-adverbios"
+      },
+      {
+        "type": "translation",
+        "question": "Она отвечает быстро.",
+        "answer": "Responde rápidamente",
+        "acceptableAnswers": [
+          "Responde rápidamente.",
+          "Contesta rápidamente.",
+          "Responde rápido."
+        ],
+        "instruction": "Переведите на испанский",
+        "explanation": "-mente.",
         "grammarTopic": "b1-adverbios"
       }
     ],
@@ -18259,6 +16407,54 @@
         ],
         "instruction": "Исправьте ошибку",
         "explanation": "Нужно «llueva», не «llueve».",
+        "grammarTopic": "b1-adverbios"
+      },
+      {
+        "type": "error_correction",
+        "question": "Habla mucho despacio.",
+        "answer": "Habla muy despacio.",
+        "acceptableAnswers": [
+          "Habla muy despacio.",
+          "Habla muy despacio"
+        ],
+        "instruction": "Исправьте ошибку",
+        "explanation": "Muy, не mucho перед наречием.",
+        "grammarTopic": "b1-adverbios"
+      },
+      {
+        "type": "error_correction",
+        "question": "Corre muy demasiado rápido.",
+        "answer": "Corre demasiado rápido.",
+        "acceptableAnswers": [
+          "Corre demasiado rápido.",
+          "Corre demasiado rápido"
+        ],
+        "instruction": "Исправьте ошибку",
+        "explanation": "Demasiado уже усиливает.",
+        "grammarTopic": "b1-adverbios"
+      },
+      {
+        "type": "error_correction",
+        "question": "Es mucho amable.",
+        "answer": "Es muy amable.",
+        "acceptableAnswers": [
+          "Es muy amable.",
+          "Es muy amable"
+        ],
+        "instruction": "Исправьте ошибку",
+        "explanation": "Muy + adj.",
+        "grammarTopic": "b1-adverbios"
+      },
+      {
+        "type": "error_correction",
+        "question": "Quizás llueve mañana.",
+        "answer": "Quizás llueva mañana.",
+        "acceptableAnswers": [
+          "Quizás llueva mañana.",
+          "Quizás llueva mañana"
+        ],
+        "instruction": "Исправьте ошибку",
+        "explanation": "Quizás + subjuntivo.",
         "grammarTopic": "b1-adverbios"
       }
     ],
@@ -18635,75 +16831,6 @@
         "answer": "Me duchaba",
         "instruction": "Выберите правильный ответ",
         "explanation": "Фон — imperfecto (me duchaba / estaba duchándome), событие — indefinido (sonó).",
-        "grammarTopic": "dele-contraste-pasados"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Anoche no ___ (dormir, yo) bien.",
-        "options": [
-          "dormí",
-          "Dormí",
-          "dormí?"
-        ],
-        "answer": "dormí",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "«Anoche» → indefinido. Dormir неправильный: dormí.",
-        "grammarTopic": "dele-contraste-pasados"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Ayer conocía a tu hermana en la fiesta.",
-        "options": [
-          "Ayer",
-          "Ayer conocí a tu hermana en la fiesta.",
-          "—",
-          "Ayer?"
-        ],
-        "answer": "Ayer",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "«Познакомился» (событие) → conocí. Conocía = «был знаком» (фон).",
-        "grammarTopic": "dele-contraste-pasados"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Ayer he ido al cine.",
-        "options": [
-          "Ayer",
-          "Ayer fui al cine.",
-          "—",
-          "Ayer?"
-        ],
-        "answer": "Ayer",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Ayer + fecha → indefinido (fui).",
-        "grammarTopic": "dele-contraste-pasados"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Cuando era niño fui al parque cada día.",
-        "options": [
-          "Cuando",
-          "Cuando era niño iba al parque cada día.",
-          "—",
-          "Cuando?"
-        ],
-        "answer": "Cuando",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Hábito pasado → iba.",
-        "grammarTopic": "dele-contraste-pasados"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Ya comí hoy.",
-        "options": [
-          "Ya",
-          "Ya he comido hoy.",
-          "—",
-          "Ya?"
-        ],
-        "answer": "Ya",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Hoy + ya → perfecto (he comido).",
         "grammarTopic": "dele-contraste-pasados"
       }
     ],
@@ -19351,87 +17478,6 @@
         "instruction": "Выберите формальное прощание",
         "explanation": "Atentamente — стандартное формальное прощание. Un beso — только близким.",
         "grammarTopic": "dele-carta-formal"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Quisiera presentar una ___ por el mal servicio.",
-        "options": [
-          "reclamación",
-          "Reclamación",
-          "queja",
-          "reclamación?"
-        ],
-        "answer": "reclamación",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Presentar una reclamación — подать официальную жалобу.",
-        "grammarTopic": "dele-carta-formal"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Me ___ (dirigir) a usted con motivo de la oferta de trabajo.",
-        "options": [
-          "dirijo",
-          "Dirijo",
-          "dirijo?"
-        ],
-        "answer": "dirijo",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Me dirijo a usted con motivo de… — классическая формула причины письма.",
-        "grammarTopic": "dele-carta-formal"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "A la ___ de su respuesta, le saluda atentamente.",
-        "options": [
-          "espera",
-          "Espera",
-          "espera?"
-        ],
-        "answer": "espera",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "A la espera de su respuesta — «в ожидании вашего ответа».",
-        "grammarTopic": "dele-carta-formal"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Hola estimado señor:.",
-        "options": [
-          "Estimado",
-          "Estimado señor:",
-          "Hola",
-          "—"
-        ],
-        "answer": "Estimado",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Sin «Hola» en carta formal.",
-        "grammarTopic": "dele-carta-formal"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Atentamente Juan.",
-        "options": [
-          "Atentamente,",
-          "Atentamente, Juan",
-          "Atentamente",
-          "—"
-        ],
-        "answer": "Atentamente,",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Coma tras Atentamente.",
-        "grammarTopic": "dele-carta-formal"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Estimado / señor.",
-        "options": [
-          "Estimado",
-          "señor",
-          "Estimado?"
-        ],
-        "answer": "Estimado",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Estimado señor…",
-        "grammarTopic": "dele-carta-formal"
       }
     ],
     "fill_blank": [
@@ -19568,30 +17614,6 @@
         ],
         "instruction": "Переведите на испанский",
         "explanation": "Presentar una reclamación — подать официальную жалобу.",
-        "grammarTopic": "dele-carta-formal"
-      },
-      {
-        "type": "translation",
-        "question": "Формула начала письма",
-        "answer": "Me dirijo (dirigir) a usted con motivo de la oferta de trabajo.",
-        "acceptableAnswers": [
-          "me dirijo (dirigir) a usted con motivo de la oferta de trabajo.",
-          "dirijo"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Me dirijo a usted con motivo de… — классическая формула причины письма.",
-        "grammarTopic": "dele-carta-formal"
-      },
-      {
-        "type": "translation",
-        "question": "Формула завершения",
-        "answer": "A la espera de su respuesta, le saluda atentamente.",
-        "acceptableAnswers": [
-          "a la espera de su respuesta, le saluda atentamente.",
-          "espera"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "A la espera de su respuesta — «в ожидании вашего ответа».",
         "grammarTopic": "dele-carta-formal"
       }
     ],
@@ -20015,48 +18037,6 @@
         "instruction": "Формула",
         "explanation": "Presente de subjuntivo de haber + participio.",
         "grammarTopic": "subjuntivo-compuestos"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Si ___ (haber + ir), no estaríamos aquí.",
-        "options": [
-          "hubiera ido",
-          "Hubiera ido",
-          "hubiese ido",
-          "hubiera ido?"
-        ],
-        "answer": "hubiera ido",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Si hubiera ido — нереальное в прошлом.",
-        "grammarTopic": "b2-subjuntivo-compuestos"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Es posible que ya terminó.",
-        "options": [
-          "Es",
-          "Es posible que ya haya terminado.",
-          "—",
-          "Es?"
-        ],
-        "answer": "Es",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Триггер subjuntivo → haya terminado.",
-        "grammarTopic": "b2-subjuntivo-compuestos"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Ojalá ___ (haber + ver) la exposición.",
-        "options": [
-          "hubiera visto",
-          "Hubiera visto",
-          "hubiese visto",
-          "hubiera visto?"
-        ],
-        "answer": "hubiera visto",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Ojalá hubiera visto — сожаление о прошлом.",
-        "grammarTopic": "b2-subjuntivo-compuestos"
       }
     ],
     "fill_blank": [
@@ -20123,18 +18103,6 @@
       },
       {
         "type": "translation",
-        "question": "Plusc. de subj.",
-        "answer": "Si hubiera ido (haber + ir), no estaríamos aquí.",
-        "acceptableAnswers": [
-          "si hubiera ido (haber + ir), no estaríamos aquí.",
-          "hubiera ido"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Si hubiera ido — нереальное в прошлом.",
-        "grammarTopic": "b2-subjuntivo-compuestos"
-      },
-      {
-        "type": "translation",
         "question": "После es posible que",
         "answer": "Es posible que ya haya terminado.",
         "acceptableAnswers": [
@@ -20147,42 +18115,6 @@
       },
       {
         "type": "translation",
-        "question": "Формула",
-        "answer": "haya/hayas…",
-        "acceptableAnswers": [
-          "haya/hayas…",
-          "haya/hayas…"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Presente de subjuntivo de haber + participio.",
-        "grammarTopic": "b2-subjuntivo-compuestos"
-      },
-      {
-        "type": "translation",
-        "question": "Subj. pluscuamperfecto",
-        "answer": "Ojalá hubiera visto (haber + ver) la exposición.",
-        "acceptableAnswers": [
-          "ojalá hubiera visto (haber + ver) la exposición.",
-          "hubiera visto"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Ojalá hubiera visto — сожаление о прошлом.",
-        "grammarTopic": "b2-subjuntivo-compuestos"
-      },
-      {
-        "type": "translation",
-        "question": "Subj. compuesto",
-        "answer": "Es posible que haya llegado tarde",
-        "acceptableAnswers": [
-          "es posible que haya llegado tarde",
-          "Es"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Haya llegado — subj. compuesto.",
-        "grammarTopic": "b2-subjuntivo-compuestos"
-      },
-      {
-        "type": "translation",
         "question": "Pluscuam. subj.",
         "answer": "Ojalá hubiera estudiado más",
         "acceptableAnswers": [
@@ -20191,18 +18123,6 @@
         ],
         "instruction": "Переведите на испанский",
         "explanation": "Hubiera estudiado…",
-        "grammarTopic": "b2-subjuntivo-compuestos"
-      },
-      {
-        "type": "translation",
-        "question": "Cond. compuesto",
-        "answer": "Si hubiera sabido habría venido",
-        "acceptableAnswers": [
-          "si hubiera sabido habría venido",
-          "Si"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Hubiera sabido… habría venido.",
         "grammarTopic": "b2-subjuntivo-compuestos"
       },
       {
@@ -20627,61 +18547,6 @@
         "instruction": "Выберите правильный вариант",
         "explanation": "Si hubiera + condicional compuesto — прошлое, которое не случилось.",
         "grammarTopic": "condicionales-compuestos"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Si llueve, ___ en casa.",
-        "options": [
-          "me quedo",
-          "me quedaría",
-          "me hubiera quedado",
-          "me quedara"
-        ],
-        "answer": "me quedo",
-        "instruction": "Si real",
-        "explanation": "Реальное условие → indicativo presente.",
-        "grammarTopic": "condicionales-compuestos"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "___ (haber + estudiar) más, habría aprobado.",
-        "options": [
-          "Si hubiera estudiado",
-          "Si hubiese estudiado",
-          "Si hubiera estudiado?"
-        ],
-        "answer": "Si hubiera estudiado",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Si hubiera estudiado, habría aprobado.",
-        "grammarTopic": "b2-condicionales-compuestos"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Si hubiera sabido, iría.",
-        "options": [
-          "Si",
-          "Si hubiera sabido, habría ido.",
-          "—",
-          "Si?"
-        ],
-        "answer": "Si",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Hubiera → habría (cond. compuesto).",
-        "grammarTopic": "b2-condicionales-compuestos"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Habríamos ganado si ___ (haber + jugar) mejor.",
-        "options": [
-          "hubiéramos jugado",
-          "Hubiéramos jugado",
-          "hubiésemos jugado",
-          "hubiéramos jugado?"
-        ],
-        "answer": "hubiéramos jugado",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Si hubiéramos jugado…",
-        "grammarTopic": "b2-condicionales-compuestos"
       }
     ],
     "fill_blank": [
@@ -20746,42 +18611,6 @@
         "instruction": "Переведите предложение",
         "explanation": "Si + imperf. subj. + condicional.",
         "grammarTopic": "condicionales-compuestos"
-      },
-      {
-        "type": "translation",
-        "question": "Si + pluscuam. + cond. comp.",
-        "answer": "Si hubiera estudiado (haber + estudiar) más, habría aprobado.",
-        "acceptableAnswers": [
-          "si hubiera estudiado (haber + estudiar) más, habría aprobado.",
-          "Si hubiera estudiado"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Si hubiera estudiado, habría aprobado.",
-        "grammarTopic": "b2-condicionales-compuestos"
-      },
-      {
-        "type": "translation",
-        "question": "Согласуйте времена",
-        "answer": "Si hubiera sabido, habría ido.",
-        "acceptableAnswers": [
-          "Si hubiera sabido, habría ido.",
-          "Si hubiera sabido, habría ido"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Hubiera → habría (cond. compuesto).",
-        "grammarTopic": "b2-condicionales-compuestos"
-      },
-      {
-        "type": "translation",
-        "question": "Cond. compuesto",
-        "answer": "Habríamos ganado si hubiéramos jugado (haber + jugar) mejor.",
-        "acceptableAnswers": [
-          "habríamos ganado si hubiéramos jugado (haber + jugar) mejor.",
-          "hubiéramos jugado"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Si hubiéramos jugado…",
-        "grammarTopic": "b2-condicionales-compuestos"
       }
     ],
     "error_correction": [
@@ -21182,73 +19011,8 @@
     ]
   },
   "chapter-40-relativos-avanzado": {
-    "multiple_choice": [
-      {
-        "type": "multiple_choice",
-        "question": "La propuesta, ___ firmó el director, es clara.",
-        "options": [
-          "la cual",
-          "que",
-          "donde",
-          "cuyo"
-        ],
-        "answer": "la cual",
-        "instruction": "El cual",
-        "explanation": "El/la cual — формальное относительное.",
-        "grammarTopic": "relativos-avanzado"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "La ciudad ___ nací es pequeña.",
-        "options": [
-          "donde",
-          "Donde",
-          "adonde",
-          "donde?"
-        ],
-        "answer": "donde",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Donde/adonde nací — место рождения.",
-        "grammarTopic": "b2-relativos-avanzado"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "No entendí ___ dijiste.",
-        "options": [
-          "lo que",
-          "Lo que",
-          "lo que?"
-        ],
-        "answer": "lo que",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Lo que dijiste — «то, что ты сказал».",
-        "grammarTopic": "b2-relativos-avanzado"
-      }
-    ],
+    "multiple_choice": [],
     "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "La ciudad ___ nací es pequeña.",
-        "answer": "donde",
-        "acceptableAnswers": [
-          "Donde",
-          "adonde"
-        ],
-        "instruction": "Adonde / donde",
-        "explanation": "Donde/adonde nací — место рождения.",
-        "grammarTopic": "relativos-avanzado"
-      },
-      {
-        "type": "fill_blank",
-        "question": "No entendí ___ dijiste.",
-        "answer": "lo que",
-        "acceptableAnswers": [
-          "Lo que"
-        ],
-        "instruction": "Lo que",
-        "explanation": "Lo que dijiste — «то, что ты сказал».",
-        "grammarTopic": "relativos-avanzado"
-      },
       {
         "type": "fill_blank",
         "question": "La propuesta, ___ firmó el director, es clara.",
@@ -21273,18 +19037,6 @@
         "instruction": "Lo que",
         "explanation": "Lo que = «то, что».",
         "grammarTopic": "relativos-avanzado"
-      },
-      {
-        "type": "translation",
-        "question": "Соберите с del cual",
-        "answer": "El informe del cual hablamos es largo",
-        "acceptableAnswers": [
-          "el informe del cual hablamos es largo",
-          "El"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Del cual — формальная связка.",
-        "grammarTopic": "b2-relativos-avanzado"
       }
     ],
     "error_correction": [
@@ -21708,32 +19460,6 @@
         "instruction": "Структура текста",
         "explanation": "En primer lugar — первый пункт.",
         "grammarTopic": "conectores"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "___, no estoy de acuerdo.",
-        "options": [
-          "Sin embargo",
-          "sin embargo",
-          "No obstante",
-          "Sin embargo?"
-        ],
-        "answer": "Sin embargo",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Sin embargo / no obstante — «однако».",
-        "grammarTopic": "b2-conectores"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "___ de todo, gracias por venir.",
-        "options": [
-          "Ante",
-          "Ante?"
-        ],
-        "answer": "Ante",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Ante todo — «прежде всего».",
-        "grammarTopic": "b2-conectores"
       }
     ],
     "fill_blank": [
@@ -21797,66 +19523,6 @@
         "instruction": "En definitiva / en suma",
         "explanation": "En definitiva — «в итоге».",
         "grammarTopic": "conectores"
-      },
-      {
-        "type": "translation",
-        "question": "Причина → следствие",
-        "answer": "por consiguiente",
-        "acceptableAnswers": [
-          "por consiguiente",
-          "por consiguiente"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Por consiguiente — «следовательно».",
-        "grammarTopic": "b2-conectores"
-      },
-      {
-        "type": "translation",
-        "question": "Противопоставление",
-        "answer": "Sin embargo, no estoy de acuerdo.",
-        "acceptableAnswers": [
-          "sin embargo, no estoy de acuerdo.",
-          "Sin embargo"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Sin embargo / no obstante — «однако».",
-        "grammarTopic": "b2-conectores"
-      },
-      {
-        "type": "translation",
-        "question": "Структура текста",
-        "answer": "En primer",
-        "acceptableAnswers": [
-          "en primer",
-          "En primer"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "En primer lugar — первый пункт.",
-        "grammarTopic": "b2-conectores"
-      },
-      {
-        "type": "translation",
-        "question": "Соберите с no obstante",
-        "answer": "No obstante, el plan es viable",
-        "acceptableAnswers": [
-          "no obstante, el plan es viable",
-          "No"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "No obstante + запятая.",
-        "grammarTopic": "b2-conectores"
-      },
-      {
-        "type": "translation",
-        "question": "Начало речи",
-        "answer": "Ante de todo, gracias por venir.",
-        "acceptableAnswers": [
-          "ante de todo, gracias por venir.",
-          "Ante"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Ante todo — «прежде всего».",
-        "grammarTopic": "b2-conectores"
       }
     ],
     "error_correction": [
@@ -22283,34 +19949,6 @@
         "instruction": "Мнение с отрицанием",
         "explanation": "No creo que + subjuntivo: sea. Creo que + indicativo: es.",
         "grammarTopic": "dele-conectores-redaccion"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "En primer lugar es importante pero en conclusión estoy de acuerdo sin conectores.",
-        "options": [
-          "En",
-          "En primer lugar, esto es importante. En conclusión, estoy de acuerdo.",
-          "—",
-          "En?"
-        ],
-        "answer": "En",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Puntos entre ideas.",
-        "grammarTopic": "dele-conectores-redaccion"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Por otro lado es caro y por lo tanto no compro.",
-        "options": [
-          "Por",
-          "Por un lado es caro; por lo tanto, no lo compro.",
-          "—",
-          "Por?"
-        ],
-        "answer": "Por",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Por un lado… por lo tanto…",
-        "grammarTopic": "dele-conectores-redaccion"
       }
     ],
     "fill_blank": [
@@ -22384,30 +20022,6 @@
       },
       {
         "type": "translation",
-        "question": "Коннектор начала эссе",
-        "answer": "En primer",
-        "acceptableAnswers": [
-          "en primer",
-          "En primer"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "En primer lugar — «во-первых», стандартное начало redacción.",
-        "grammarTopic": "dele-conectores-redaccion"
-      },
-      {
-        "type": "translation",
-        "question": "Формальное противопоставление",
-        "answer": "no obstante",
-        "acceptableAnswers": [
-          "no obstante",
-          "no obstante"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "No obstante — «тем не менее», формальнее, чем sin embargo.",
-        "grammarTopic": "dele-conectores-redaccion"
-      },
-      {
-        "type": "translation",
         "question": "Внимание: de ahí que требует особого наклонения",
         "answer": "sea",
         "acceptableAnswers": [
@@ -22416,30 +20030,6 @@
         ],
         "instruction": "Переведите на испанский",
         "explanation": "De ahí que — всегда subjuntivo: sea. Классическая ловушка DELE.",
-        "grammarTopic": "dele-conectores-redaccion"
-      },
-      {
-        "type": "translation",
-        "question": "Мнение с отрицанием",
-        "answer": "sea",
-        "acceptableAnswers": [
-          "sea",
-          "sea"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "No creo que + subjuntivo: sea. Creo que + indicativo: es.",
-        "grammarTopic": "dele-conectores-redaccion"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте предложение из фрагментов",
-        "answer": "Por un lado es útil por otro es caro",
-        "acceptableAnswers": [
-          "por un lado es útil por otro es caro",
-          "Por un lado"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Por un lado…, por otro (lado)… — конструкция «с одной стороны… с другой…».",
         "grammarTopic": "dele-conectores-redaccion"
       }
     ],
@@ -22916,47 +20506,6 @@
         "instruction": "Вежливое несогласие",
         "explanation": "Entiendo tu postura, pero… — вежливое несогласие в interacción.",
         "grammarTopic": "dele-expresion-oral"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Al ___ hay unas montañas.",
-        "options": [
-          "fondo",
-          "Fondo",
-          "fondo?"
-        ],
-        "answer": "fondo",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Al fondo — «на заднем плане».",
-        "grammarTopic": "dele-expresion-oral"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "En la foto veo una plaza muy bonita y mucha gente y árboles y fuente.",
-        "options": [
-          "En",
-          "En la foto se ve una plaza con mucha gente, árboles y una fuente.",
-          "—",
-          "En?"
-        ],
-        "answer": "En",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Estructura clara — no lista caótica.",
-        "grammarTopic": "dele-expresion-oral"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Creo que ellos discuten porque están enojados.",
-        "options": [
-          "Puede",
-          "Puede que estén discutiendo.",
-          "Creo",
-          "—"
-        ],
-        "answer": "Puede",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Puede que + subj. — hipótesis cautelosa.",
-        "grammarTopic": "dele-expresion-oral"
       }
     ],
     "fill_blank": [
@@ -23094,18 +20643,6 @@
         ],
         "instruction": "Переведите на испанский",
         "explanation": "Puede que — всегда subjuntivo: sean. Parece que + indicativo: son.",
-        "grammarTopic": "dele-expresion-oral"
-      },
-      {
-        "type": "translation",
-        "question": "Вежливое несогласие",
-        "answer": "pero",
-        "acceptableAnswers": [
-          "pero",
-          "pero"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Entiendo tu postura, pero… — вежливое несогласие в interacción.",
         "grammarTopic": "dele-expresion-oral"
       },
       {
@@ -23571,61 +21108,6 @@
         "instruction": "Известный факт",
         "explanation": "Aunque + indicativo — известный/реальный факт.",
         "grammarTopic": "subjuntivo-avanzado"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Hazlo como ___ (decir).",
-        "options": [
-          "digo",
-          "diga",
-          "dijera",
-          "diré"
-        ],
-        "answer": "digo",
-        "instruction": "Como + indicativo",
-        "explanation": "Como + indicativo — «как я говорю» (способ).",
-        "grammarTopic": "subjuntivo-avanzado"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Aunque ___ (tener) dinero, no lo haría.",
-        "options": [
-          "tuviera",
-          "Tuviera",
-          "tuviese",
-          "tuviera?"
-        ],
-        "answer": "tuviera",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Aunque + subjuntivo — гипотетическое уступление.",
-        "grammarTopic": "c1-subjuntivo-avanzado"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Busco un sitio donde hay silencio.",
-        "options": [
-          "Busco",
-          "Busco un sitio donde haya silencio.",
-          "—",
-          "Busco?"
-        ],
-        "answer": "Busco",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Antecedente no definido → subjuntivo.",
-        "grammarTopic": "c1-subjuntivo-avanzado"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Donde ___ (haber) humo, hay fuego.",
-        "options": [
-          "hay",
-          "Hay",
-          "hay?"
-        ],
-        "answer": "hay",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Donde hay — indicativo (общая истина).",
-        "grammarTopic": "c1-subjuntivo-avanzado"
       }
     ],
     "fill_blank": [
@@ -23769,150 +21251,6 @@
         "explanation": "Lamento que + imperf. subj. — pasado.",
         "grammarTopic": "c1-subjuntivo-avanzado",
         "acceptableAnswers": []
-      },
-      {
-        "type": "translation",
-        "question": "Известный факт",
-        "answer": "llueve",
-        "acceptableAnswers": [
-          "llueve",
-          "llueve"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Aunque + indicativo — известный/реальный факт.",
-        "grammarTopic": "c1-subjuntivo-avanzado"
-      },
-      {
-        "type": "translation",
-        "question": "Гипотеза",
-        "answer": "Aunque tuviera (tener) dinero, no lo haría.",
-        "acceptableAnswers": [
-          "aunque tuviera (tener) dinero, no lo haría.",
-          "tuviera"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Aunque + subjuntivo — гипотетическое уступление.",
-        "grammarTopic": "c1-subjuntivo-avanzado"
-      },
-      {
-        "type": "translation",
-        "question": "Пословица",
-        "answer": "Donde hay (haber) humo, hay fuego.",
-        "acceptableAnswers": [
-          "donde hay (haber) humo, hay fuego.",
-          "hay"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Donde hay — indicativo (общая истина).",
-        "grammarTopic": "c1-subjuntivo-avanzado"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте предложение с subjuntivo (antecedente no definido)",
-        "answer": "Busco un sitio donde haya silencio",
-        "acceptableAnswers": [
-          "busco un sitio donde haya silencio",
-          "Busco"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Busco un sitio donde haya… — место ещё не найдено → subjuntivo.",
-        "grammarTopic": "c1-subjuntivo-avanzado"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте конструкцию por + adj + que + subj.",
-        "answer": "Por extraño que parezca, aceptó",
-        "acceptableAnswers": [
-          "por extraño que parezca, aceptó",
-          "Por"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Por extraño que parezca — уступительная конструкция с subjuntivo.",
-        "grammarTopic": "c1-subjuntivo-avanzado"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте гипотетическое уступление",
-        "answer": "Aunque llueva mañana, saldremos igual",
-        "acceptableAnswers": [
-          "aunque llueva mañana, saldremos igual",
-          "Aunque"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Aunque + subjuntivo — гипотетическое «даже если».",
-        "grammarTopic": "c1-subjuntivo-avanzado"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте предложение: como + indicativo (способ)",
-        "answer": "Hazlo como te lo expliqué",
-        "acceptableAnswers": [
-          "hazlo como te lo expliqué",
-          "Hazlo"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Como te lo expliqué — indicativo: «как я объяснил».",
-        "grammarTopic": "c1-subjuntivo-avanzado"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте пословицу с subjuntivo",
-        "answer": "Donde haya voluntad, hay camino",
-        "acceptableAnswers": [
-          "donde haya voluntad, hay camino",
-          "Donde"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Donde haya… — общая истина с subjuntivo в придаточном.",
-        "grammarTopic": "c1-subjuntivo-avanzado"
-      },
-      {
-        "type": "translation",
-        "question": "Aunque + subj.",
-        "answer": "Aunque llueva saldremos igual",
-        "acceptableAnswers": [
-          "aunque llueva saldremos igual",
-          "Aunque"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Aunque llueva — hipótesis.",
-        "grammarTopic": "c1-subjuntivo-avanzado"
-      },
-      {
-        "type": "translation",
-        "question": "Como + indic.",
-        "answer": "Hazlo como te digo",
-        "acceptableAnswers": [
-          "hazlo como te digo",
-          "Hazlo"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Como te digo — indicativo.",
-        "grammarTopic": "c1-subjuntivo-avanzado"
-      },
-      {
-        "type": "translation",
-        "question": "Para que + subj.",
-        "answer": "Para que entres necesitas invitación",
-        "acceptableAnswers": [
-          "para que entres necesitas invitación",
-          "Para"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Para que entres…",
-        "grammarTopic": "c1-subjuntivo-avanzado"
-      },
-      {
-        "type": "translation",
-        "question": "Sin que + subj.",
-        "answer": "Sin que nadie lo sepa partió",
-        "acceptableAnswers": [
-          "sin que nadie lo sepa partió",
-          "Sin"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Sin que nadie lo sepa…",
-        "grammarTopic": "c1-subjuntivo-avanzado"
       }
     ],
     "error_correction": [
@@ -24413,71 +21751,9 @@
         "instruction": "Выберите правильный вариант",
         "explanation": "Pedir que + subjuntivo.",
         "grammarTopic": "indirecto-avanzado"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Dijo: «Estoy aquí» → Dijo que ___ allí.",
-        "options": [
-          "estaba",
-          "Estaba",
-          "estaba?"
-        ],
-        "answer": "estaba",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Presente → imperfecto en estilo indirecto.",
-        "grammarTopic": "c1-indirecto-avanzado"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Dijo que viene mañana.",
-        "options": [
-          "Dijo",
-          "Dijo que vendría al día siguiente.",
-          "—",
-          "Dijo?"
-        ],
-        "answer": "Dijo",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "После dijo — сдвиг времён и указателей.",
-        "grammarTopic": "c1-indirecto-avanzado"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "«Hoy no puedo» → Dijo que ___ aquel día no podía.",
-        "options": [
-          "aquel",
-          "Aquel",
-          "aquel?"
-        ],
-        "answer": "aquel",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Hoy → aquel día en estilo indirecto.",
-        "grammarTopic": "c1-indirecto-avanzado"
       }
     ],
     "fill_blank": [
-      {
-        "type": "fill_blank",
-        "question": "Dijo: «Estoy aquí» → Dijo que ___ allí.",
-        "answer": "estaba",
-        "acceptableAnswers": [
-          "Estaba"
-        ],
-        "instruction": "Está → estaba",
-        "explanation": "Presente → imperfecto en estilo indirecto.",
-        "grammarTopic": "indirecto-avanzado"
-      },
-      {
-        "type": "fill_blank",
-        "question": "«Hoy no puedo» → Dijo que ___ aquel día no podía.",
-        "answer": "aquel",
-        "acceptableAnswers": [
-          "Aquel"
-        ],
-        "instruction": "Hoy → aquel día",
-        "explanation": "Hoy → aquel día en estilo indirecto.",
-        "grammarTopic": "indirecto-avanzado"
-      },
       {
         "type": "fill_blank",
         "question": "Dijo: «Vengo mañana» → Dijo que ___ al día siguiente.",
@@ -24604,90 +21880,6 @@
         "explanation": "Informó de que + imperfecto.",
         "grammarTopic": "c1-indirecto-avanzado",
         "acceptableAnswers": []
-      },
-      {
-        "type": "translation",
-        "question": "Сдвиг указателя",
-        "answer": "vendría",
-        "acceptableAnswers": [
-          "vendría",
-          "vendría"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Mañana → al día siguiente + condicional.",
-        "grammarTopic": "c1-indirecto-avanzado"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте estilo indirecto со сдвигом времени",
-        "answer": "Dijo que vendría al día siguiente",
-        "acceptableAnswers": [
-          "dijo que vendría al día siguiente",
-          "Dijo"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Mañana → al día siguiente; futuro → condicional.",
-        "grammarTopic": "c1-indirecto-avanzado"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте косвенную речь с subjuntivo",
-        "answer": "Me pidió que no lo contara a nadie",
-        "acceptableAnswers": [
-          "me pidió que no lo contara a nadie",
-          "Me"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Pedir que + imperfecto de subjuntivo en estilo indirecto.",
-        "grammarTopic": "c1-indirecto-avanzado"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте pluscuamperfecto en indirecto",
-        "answer": "Afirmó que ya había terminado el trabajo",
-        "acceptableAnswers": [
-          "afirmó que ya había terminado el trabajo",
-          "Afirmó"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Pretérito perfecto → pluscuamperfecto en estilo indirecto.",
-        "grammarTopic": "c1-indirecto-avanzado"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте сдвиг указателя hoy → aquel día",
-        "answer": "Le dijo que aquel día no podía venir",
-        "acceptableAnswers": [
-          "le dijo que aquel día no podía venir",
-          "Le"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Hoy → aquel día; presente → imperfecto.",
-        "grammarTopic": "c1-indirecto-avanzado"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте вопрос в estilo indirecto",
-        "answer": "Quería saber si ya habíamos reservado",
-        "acceptableAnswers": [
-          "quería saber si ya habíamos reservado",
-          "Quería"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "¿Ya habéis reservado? → si + pluscuamperfecto.",
-        "grammarTopic": "c1-indirecto-avanzado"
-      },
-      {
-        "type": "translation",
-        "question": "Plusc. indirecto",
-        "answer": "Comentó que había llegado tarde",
-        "acceptableAnswers": [
-          "comentó que había llegado tarde",
-          "Comentó"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Había llegado — pluscuamperfecto.",
-        "grammarTopic": "c1-indirecto-avanzado"
       }
     ],
     "error_correction": [
@@ -25154,46 +22346,6 @@
         "instruction": "Выберите правильный ответ",
         "explanation": "Lo bueno = «хорошая сторона / то хорошее, что…».",
         "grammarTopic": "pronombres-avanzado"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "A María ___ veo cada día.",
-        "options": [
-          "la",
-          "La",
-          "la?"
-        ],
-        "answer": "la",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "A María la veo — ударение на OD.",
-        "grammarTopic": "c1-pronombres-avanzado"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "A la ciudad le visitamos.",
-        "options": [
-          "Visitamos",
-          "Visitamos la ciudad.",
-          "A",
-          "—"
-        ],
-        "answer": "Visitamos",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Visitar — прямое дополнение → la, не le.",
-        "grammarTopic": "c1-pronombres-avanzado"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "___ importante es participar.",
-        "options": [
-          "Lo",
-          "lo",
-          "Lo?"
-        ],
-        "answer": "Lo",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Lo importante es…",
-        "grammarTopic": "c1-pronombres-avanzado"
       }
     ],
     "fill_blank": [
@@ -25334,78 +22486,6 @@
         "explanation": "Explícamelo — imperativo con enclíticos.",
         "grammarTopic": "c1-pronombres-avanzado",
         "acceptableAnswers": []
-      },
-      {
-        "type": "translation",
-        "question": "Lo + adj.",
-        "answer": "Lo importante es participar.",
-        "acceptableAnswers": [
-          "lo importante es participar.",
-          "Lo"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Lo importante es…",
-        "grammarTopic": "c1-pronombres-avanzado"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте конструкцию lo + adjetivo",
-        "answer": "Lo difícil es empezar a tiempo",
-        "acceptableAnswers": [
-          "lo difícil es empezar a tiempo",
-          "Lo"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Lo difícil es… — «самое сложное — …».",
-        "grammarTopic": "c1-pronombres-avanzado"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте предложение с ударением на OD",
-        "answer": "A María la vi en la conferencia",
-        "acceptableAnswers": [
-          "a maría la vi en la conferencia",
-          "A"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "A María la vi — местоимение перед глаголом, a + имя.",
-        "grammarTopic": "c1-pronombres-avanzado"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте конструкцию lo que… es…",
-        "answer": "Lo que más me gusta es viajar",
-        "acceptableAnswers": [
-          "lo que más me gusta es viajar",
-          "Lo"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Lo que más me gusta es… — «то, что мне больше всего нравится — …».",
-        "grammarTopic": "c1-pronombres-avanzado"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте lo bueno de todo es que…",
-        "answer": "Lo bueno de todo es que aprendimos",
-        "acceptableAnswers": [
-          "lo bueno de todo es que aprendimos",
-          "Lo"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Lo bueno de todo es que… — «хорошая сторона всего в том, что…».",
-        "grammarTopic": "c1-pronombres-avanzado"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте предложение с двойным местоимением",
-        "answer": "No se lo dije porque no estaba",
-        "acceptableAnswers": [
-          "no se lo dije porque no estaba",
-          "No"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Se lo dije — IO (se) + OD (lo) перед глаголом.",
-        "grammarTopic": "c1-pronombres-avanzado"
       }
     ],
     "error_correction": [
@@ -25877,33 +22957,6 @@
         "instruction": "Выберите правильный вариант",
         "explanation": "Es listo — умный по характеру (ser).",
         "grammarTopic": "ser-estar-avanzado"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Juan ___ listo (preparado).",
-        "options": [
-          "está",
-          "Está",
-          "está?"
-        ],
-        "answer": "está",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Está listo — готов (estar).",
-        "grammarTopic": "c1-ser-estar-avanzado"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "La sopa es fría — está fría (temp.).",
-        "options": [
-          "La",
-          "La sopa está fría.",
-          "—",
-          "La?"
-        ],
-        "answer": "La",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Температура еды → está fría.",
-        "grammarTopic": "c1-ser-estar-avanzado"
       }
     ],
     "fill_blank": [
@@ -26032,78 +23085,6 @@
         "explanation": "Seguro (fiable) vs estar seguro (convicción).",
         "grammarTopic": "c1-ser-estar-avanzado",
         "acceptableAnswers": []
-      },
-      {
-        "type": "translation",
-        "question": "Еда: ser/estar",
-        "answer": "La sopa está fría.",
-        "acceptableAnswers": [
-          "La sopa está fría.",
-          "La sopa está fría"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Температура еды → está fría.",
-        "grammarTopic": "c1-ser-estar-avanzado"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте пару ser/estar con listo",
-        "answer": "Juan es listo pero hoy no está listo",
-        "acceptableAnswers": [
-          "juan es listo pero hoy no está listo",
-          "Juan"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Es listo (умный) vs está listo (готов) — разные значения.",
-        "grammarTopic": "c1-ser-estar-avanzado"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте контраст ser/estar с frío",
-        "answer": "La sopa está fría pero el plato es frío",
-        "acceptableAnswers": [
-          "la sopa está fría pero el plato es frío",
-          "La"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Está fría (температура) vs es frío (материал/на ощупь).",
-        "grammarTopic": "c1-ser-estar-avanzado"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте пару es/está aburrido",
-        "answer": "Es aburrido el libro pero estoy aburrido ya",
-        "acceptableAnswers": [
-          "es aburrido el libro pero estoy aburrido ya",
-          "Es"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Es aburrido (скучный) vs estoy aburrido (мне скучно).",
-        "grammarTopic": "c1-ser-estar-avanzado"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте ser (характеристика) + estar (состояние)",
-        "answer": "El examen es difícil y estoy muy nervioso",
-        "acceptableAnswers": [
-          "el examen es difícil y estoy muy nervioso",
-          "El"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Es difícil (сложный) + estoy nervioso (волнуюсь).",
-        "grammarTopic": "c1-ser-estar-avanzado"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте пару ser/estar con vivo",
-        "answer": "Mi abuela es viva y todavía está viva",
-        "acceptableAnswers": [
-          "mi abuela es viva y todavía está viva",
-          "Mi"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Es viva (живой характер) vs está viva (жива, не умерла).",
-        "grammarTopic": "c1-ser-estar-avanzado"
       }
     ],
     "error_correction": [
@@ -26654,19 +23635,6 @@
         "instruction": "Выделяем причину раздражения",
         "explanation": "Lo que + verbo + es… — выделение действия/объекта.",
         "grammarTopic": "c2-oraciones-hendidas"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Fue ayer ___ lo supe.",
-        "options": [
-          "cuando",
-          "Cuando",
-          "cuando?"
-        ],
-        "answer": "cuando",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Fue + время + cuando… — ser согласуется со временем события.",
-        "grammarTopic": "c2-oraciones-hendidas"
       }
     ],
     "fill_blank": [
@@ -26913,102 +23881,6 @@
       },
       {
         "type": "translation",
-        "question": "Выделяем лицо",
-        "answer": "quien",
-        "acceptableAnswers": [
-          "quien",
-          "quien"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Fue X quien… — выделительная конструкция для лица.",
-        "grammarTopic": "c2-oraciones-hendidas"
-      },
-      {
-        "type": "translation",
-        "question": "Выделяем место",
-        "answer": "donde",
-        "acceptableAnswers": [
-          "donde",
-          "donde"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Es en X donde… — выделение места.",
-        "grammarTopic": "c2-oraciones-hendidas"
-      },
-      {
-        "type": "translation",
-        "question": "Внимание: предлог повторяется",
-        "answer": "con quien",
-        "acceptableAnswers": [
-          "con quien",
-          "con quien"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Предлог повторяется: Es CON ella CON quien… «Es con ella que» — калька, избегается.",
-        "grammarTopic": "c2-oraciones-hendidas"
-      },
-      {
-        "type": "translation",
-        "question": "Выделяем причину раздражения",
-        "answer": "Lo que",
-        "acceptableAnswers": [
-          "lo que",
-          "Lo que"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Lo que + verbo + es… — выделение действия/объекта.",
-        "grammarTopic": "c2-oraciones-hendidas"
-      },
-      {
-        "type": "translation",
-        "question": "Выделяем время",
-        "answer": "Fue ayer cuando lo supe.",
-        "acceptableAnswers": [
-          "fue ayer cuando lo supe.",
-          "cuando"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Fue + время + cuando… — ser согласуется со временем события.",
-        "grammarTopic": "c2-oraciones-hendidas"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте выделительную конструкцию",
-        "answer": "Lo que necesito es dormir",
-        "acceptableAnswers": [
-          "lo que necesito es dormir",
-          "Lo que"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Lo que necesito es… — «что мне нужно, так это…».",
-        "grammarTopic": "c2-oraciones-hendidas"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте выделительную конструкцию (лицо)",
-        "answer": "Fue Juan quien rompió el vaso",
-        "acceptableAnswers": [
-          "fue juan quien rompió el vaso",
-          "Fue"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Fue X quien… — выделение лица: «именно Хuan (тот, кто)…».",
-        "grammarTopic": "c2-oraciones-hendidas"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте выделительную конструкцию (место)",
-        "answer": "Es en Madrid donde vive mi hermana",
-        "acceptableAnswers": [
-          "es en madrid donde vive mi hermana",
-          "Es"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Es en X donde… — выделение места: «именно в Мадриде живёт…».",
-        "grammarTopic": "c2-oraciones-hendidas"
-      },
-      {
-        "type": "translation",
         "question": "Повторите предлог в выделительной конструкции",
         "answer": "Es con ella con quien quiero hablar",
         "acceptableAnswers": [
@@ -27017,18 +23889,6 @@
         ],
         "instruction": "Переведите на испанский",
         "explanation": "Es CON ella CON quien… — предлог повторяется в hendida.",
-        "grammarTopic": "c2-oraciones-hendidas"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте конструкцию Lo que… es…",
-        "answer": "Lo que me molesta es el ruido",
-        "acceptableAnswers": [
-          "lo que me molesta es el ruido",
-          "Lo que"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Lo que + verbo + es… — выделение того, что раздражает.",
         "grammarTopic": "c2-oraciones-hendidas"
       }
     ],
@@ -27660,19 +24520,6 @@
         "instruction": "Вероятность ~90%: deber или deber de?",
         "explanation": "Debe de estar — вероятность. Debe estar (без de) — долженствование.",
         "grammarTopic": "c2-conjetura-rumor"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "___ salido ya — no contesta al teléfono.",
-        "options": [
-          "Habrá",
-          "habrá",
-          "Habrá?"
-        ],
-        "answer": "Habrá",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Habrá salido — «наверное, уже ушёл»: futuro perfecto как догадка.",
-        "grammarTopic": "c2-conjetura-rumor"
       }
     ],
     "fill_blank": [
@@ -27991,30 +24838,6 @@
         "explanation": "Habrá sido un malentendido.",
         "grammarTopic": "c2-conjetura-rumor",
         "acceptableAnswers": []
-      },
-      {
-        "type": "translation",
-        "question": "Догадка о настоящем",
-        "answer": "serán",
-        "acceptableAnswers": [
-          "serán",
-          "serán"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Futuro de conjetura: serán las diez — «наверное, часов десять».",
-        "grammarTopic": "c2-conjetura-rumor"
-      },
-      {
-        "type": "translation",
-        "question": "Неподтверждённая информация (пресса)",
-        "answer": "habría aceptado",
-        "acceptableAnswers": [
-          "habría aceptado",
-          "habría aceptado"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Condicional de rumor: habría aceptado — «по сообщениям, принял».",
-        "grammarTopic": "c2-conjetura-rumor"
       }
     ],
     "error_correction": [
@@ -28571,20 +25394,6 @@
     "multiple_choice": [
       {
         "type": "multiple_choice",
-        "question": "___ la reunión, todos se fueron.",
-        "options": [
-          "Terminada",
-          "Terminado",
-          "Terminando",
-          "Terminar"
-        ],
-        "answer": "Terminada",
-        "instruction": "Participio absoluto (согласуйте!)",
-        "explanation": "Participio absoluto согласуется: la reunión (f.) → Terminada.",
-        "grammarTopic": "c2-estilo-culto"
-      },
-      {
-        "type": "multiple_choice",
         "question": "Una vez ___ los documentos, no hay vuelta atrás.",
         "options": [
           "firmados",
@@ -28623,159 +25432,6 @@
         "answer": "no obstante",
         "instruction": "Самый формальный коннектор противопоставления",
         "explanation": "No obstante — книжное «тем не менее».",
-        "grammarTopic": "c2-estilo-culto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Queda ___ fumar en todo el edificio.",
-        "options": [
-          "prohibido",
-          "Prohibido",
-          "prohibido?"
-        ],
-        "answer": "prohibido",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Queda prohibido — формальный запрет (queda + participio).",
-        "grammarTopic": "c2-estilo-culto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Terminado la reunión, todos se fueron.",
-        "options": [
-          "Terminada",
-          "Terminada la reunión, todos se fueron.",
-          "Terminado",
-          "—"
-        ],
-        "answer": "Terminada",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "La reunión — женский род → Terminada.",
-        "grammarTopic": "c2-estilo-culto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Firmado los documentos, no hay vuelta atrás.",
-        "options": [
-          "Firmados",
-          "Firmados los documentos, no hay vuelta atrás.",
-          "Firmado",
-          "—"
-        ],
-        "answer": "Firmados",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Los documentos → Firmados.",
-        "grammarTopic": "c2-estilo-culto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Queda prohibida fumar aquí.",
-        "options": [
-          "Queda",
-          "Queda prohibido fumar aquí.",
-          "—",
-          "Queda?"
-        ],
-        "answer": "Queda",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Queda prohibido + infinitivo.",
-        "grammarTopic": "c2-estilo-culto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Debido a que aumentaron los precios, subió la inflación.",
-        "options": [
-          "Debido",
-          "Debido al aumento de los precios, aumentó la inflación.",
-          "—",
-          "Debido?"
-        ],
-        "answer": "Debido",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Nominalización: debido al aumento de…",
-        "grammarTopic": "c2-estilo-culto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "El proyecto es caro pero lo aprobaremos.",
-        "options": [
-          "El",
-          "El proyecto es caro; no obstante, lo aprobaremos.",
-          "—",
-          "El?"
-        ],
-        "answer": "El",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "No obstante — punto y coma.",
-        "grammarTopic": "c2-estilo-culto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Una vez firmado los papeles, salimos.",
-        "options": [
-          "Una",
-          "Una vez firmados los papeles, salimos.",
-          "—",
-          "Una?"
-        ],
-        "answer": "Una",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Los papeles → firmados.",
-        "grammarTopic": "c2-estilo-culto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Acabado el trabajo, nos fuimos.",
-        "options": [
-          "Acabado",
-          "Acabado el trabajo, nos fuimos.",
-          "—",
-          "Acabado?"
-        ],
-        "answer": "Acabado",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "El trabajo (m.) → Acabado.",
-        "grammarTopic": "c2-estilo-culto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Porque llovió, cancelamos el picnic.",
-        "options": [
-          "A",
-          "A causa de la lluvia, cancelamos el picnic.",
-          "Porque",
-          "—"
-        ],
-        "answer": "A",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "A causa de la lluvia — nominal.",
-        "grammarTopic": "c2-estilo-culto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "Cuando terminó, se marcharon.",
-        "options": [
-          "Concluida",
-          "Concluida la sesión, se marcharon.",
-          "Cuando",
-          "—"
-        ],
-        "answer": "Concluida",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Concluida la sesión…",
-        "grammarTopic": "c2-estilo-culto"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "El informe es malo pero lo enviaremos.",
-        "options": [
-          "El",
-          "El informe es deficiente; no obstante, procederemos a su envío.",
-          "—",
-          "El?"
-        ],
-        "answer": "El",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Registro elevado.",
         "grammarTopic": "c2-estilo-culto"
       }
     ],
@@ -29023,30 +25679,6 @@
       },
       {
         "type": "translation",
-        "question": "Participio absoluto (согласуйте!)",
-        "answer": "Terminada",
-        "acceptableAnswers": [
-          "terminada",
-          "Terminada"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Participio absoluto согласуется: la reunión (f.) → Terminada.",
-        "grammarTopic": "c2-estilo-culto"
-      },
-      {
-        "type": "translation",
-        "question": "Согласуйте причастие",
-        "answer": "firmados",
-        "acceptableAnswers": [
-          "firmados",
-          "firmados"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Los documentos (m. pl.) → firmados.",
-        "grammarTopic": "c2-estilo-culto"
-      },
-      {
-        "type": "translation",
         "question": "Самый формальный коннектор противопоставления",
         "answer": "no obstante",
         "acceptableAnswers": [
@@ -29067,18 +25699,6 @@
         ],
         "instruction": "Переведите на испанский",
         "explanation": "Queda prohibido — формальный запрет (queda + participio).",
-        "grammarTopic": "c2-estilo-culto"
-      },
-      {
-        "type": "translation",
-        "question": "Составьте фразу с participio absoluto",
-        "answer": "Terminada la reunión todos se fueron",
-        "acceptableAnswers": [
-          "terminada la reunión todos se fueron",
-          "Terminada"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Participio absoluto: Terminada la reunión,… — «когда собрание закончилось…».",
         "grammarTopic": "c2-estilo-culto"
       }
     ],
@@ -29739,19 +26359,6 @@
         "answer": "incredulidad irónica",
         "instruction": "Ирония через структуру: что выражает фраза?",
         "explanation": "Que te crees tú eso — «это ты так думаешь» (ироничное недоверие).",
-        "grammarTopic": "c2-ironia-registry"
-      },
-      {
-        "type": "multiple_choice",
-        "question": "En Argentina en lugar de «tú» se usa «___».",
-        "options": [
-          "vos",
-          "Vos",
-          "vos?"
-        ],
-        "answer": "vos",
-        "instruction": "Выберите правильный ответ",
-        "explanation": "Voseo: в Аргентине vos (vos tenés, vos sos).",
         "grammarTopic": "c2-ironia-registry"
       }
     ],
