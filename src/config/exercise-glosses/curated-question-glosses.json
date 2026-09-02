@@ -1667,23 +1667,23 @@
     "es": "¿___ al partido ayer?",
     "de": "¿___ (du) gestern zum Spiel? (ir)"
   },
-  "¡No ___ eso!": {
-    "ru": "¡No ___ это!",
-    "en": "¡No ___ eso!",
-    "es": "¡No ___ eso!",
-    "de": "___ das nicht! (tú, decir)"
+  "¡No ___ (decir) eso!": {
+    "ru": "Не говори этого! — decir, tú, imperativo negativo",
+    "en": "Don't say that! — decir, tú, negative imperative",
+    "es": "¡No ___ eso! — decir, tú, imperativo negativo",
+    "de": "Sag ___ das nicht! — decir, tú, imperativo negativo"
   },
-  "¡___ la fruta!": {
-    "ru": "¡___ фрукты!",
-    "en": "¡___ la fruta!",
-    "es": "¡___ la fruta!",
-    "de": "¡___ (comer / iss) das Obst! (tú)"
+  "¡___ (comer) la fruta!": {
+    "ru": "Ешь фрукт! — comer, tú, imperativo",
+    "en": "Eat the fruit! — comer, tú, imperative",
+    "es": "¡___ la fruta! — comer, tú, imperativo",
+    "de": "Iss ___ die Frucht! — comer, tú, imperativo"
   },
-  "¡___ los deberes!": {
-    "ru": "¡___ домашнее задание!",
-    "en": "¡___ los deberes!",
-    "es": "¡___ los deberes!",
-    "de": "¡___ (hacer / mach) die Hausaufgaben! (tú)"
+  "¡___ (hacer) los deberes!": {
+    "ru": "Сделай домашнее задание! — hacer, tú, imperativo",
+    "en": "Do your homework! — hacer, tú, imperative",
+    "es": "¡___ los deberes! — hacer, tú, imperativo",
+    "de": "Mach ___ die Hausaufgaben! — hacer, tú, imperativo"
   },
   "Mañana yo ___ (hablar) con ella.": {
     "ru": "Завтра ___ (hablar / говорить) с ней. (я)",

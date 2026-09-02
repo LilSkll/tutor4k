@@ -6417,7 +6417,7 @@
     "multiple_choice": [
       {
         "type": "multiple_choice",
-        "question": "¡No ___ eso!",
+        "question": "¡No ___ (decir) eso!",
         "options": [
           "digas",
           "di",
@@ -6447,7 +6447,7 @@
     "fill_blank": [
       {
         "type": "fill_blank",
-        "question": "¡___ la fruta!",
+        "question": "¡___ (comer) la fruta!",
         "answer": "Come",
         "acceptableAnswers": [
           "come"
@@ -6458,7 +6458,7 @@
       },
       {
         "type": "fill_blank",
-        "question": "¡___ los deberes!",
+        "question": "¡___ (hacer) los deberes!",
         "answer": "Haz",
         "acceptableAnswers": [
           "haz"
@@ -6469,7 +6469,7 @@
       },
       {
         "type": "fill_blank",
-        "question": "¡No ___ eso!",
+        "question": "¡No ___ (decir) eso!",
         "answer": "digas",
         "acceptableAnswers": [
           "Digas",

@@ -185,6 +185,30 @@ export function hasPersonVerbSpoilerParen(question: string): boolean {
   );
 }
 
+/**
+ * Imperative blank without an infinitive cue — e.g. «¡___ la fruta!» with no verb.
+ * Learners cannot know whether to write come, haz, di, etc.
+ */
+export function isContextlessImperativeBlank(question: string): boolean {
+  const q = question.trim();
+  if (!/^¡(?:No\s+)?___/.test(q)) return false;
+  if (/\([a-záéíóúñü]{2,}\)/i.test(q)) return false;
+  return true;
+}
+
+/** Insert (infinitive) from «Forma: verb · …» when the stem is a bare imperative blank. */
+export function enrichImperativeBlankQuestion(
+  question: string,
+  instruction?: string | null,
+): string {
+  if (!isContextlessImperativeBlank(question)) return question;
+  const inst = (instruction ?? "").trim();
+  const forma = inst.match(/^Forma:\s*([a-záéíóúñü]+)/i);
+  if (!forma?.[1]) return question;
+  const verb = forma[1];
+  return question.replace(/^(¡(?:No\s+)?___)(\s)/i, `$1 (${verb})$2`);
+}
+
 /** Cyrillic letter stuck to Latin (Габrielем / Барcelona). */
 export function hasScriptMixedToken(text: string): boolean {
   return /[\u0400-\u04FF][A-Za-záéíóúñüÁÉÍÓÚÑÜ]|[A-Za-záéíóúñüÁÉÍÓÚÑÜ][\u0400-\u04FF]/.test(
@@ -322,6 +346,7 @@ export function isUsableFillBlank(ex: {
   }
   if (instructionSpoilsAnswer(inst, a)) return false;
   if (isGrammarCategoryInstruction(inst)) return false;
+  if (isContextlessImperativeBlank(q)) return false;
   return true;
 }
 
@@ -459,9 +484,15 @@ export function stripExerciseIndexMarks(s: string): string {
 
 /** Clean string fields and drop items that fail bank quality gates. */
 export function sanitizeBankExercise<T extends BankExerciseLike>(ex: T): T | null {
+  const type = ex.type ?? "";
+  let question = stripExerciseIndexMarks(String(ex.question ?? ""));
+  const instruction = String(ex.instruction ?? "");
+  if (type === "fill_blank") {
+    question = enrichImperativeBlankQuestion(question, instruction);
+  }
   const cleaned = {
     ...ex,
-    question: stripExerciseIndexMarks(String(ex.question ?? "")),
+    question,
     answer: stripExerciseIndexMarks(String(ex.answer ?? "")),
     options: Array.isArray(ex.options)
       ? ex.options.map((o) => stripExerciseIndexMarks(String(o)))

@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  enrichImperativeBlankQuestion,
   isGrammarCategoryInstruction,
   isUsableBankExercise,
   isUsableErrorCorrection,
@@ -7,6 +8,7 @@ import {
   isUsableMultipleChoice,
   isUsableSentenceBuilding,
   isUsableTranslation,
+  sanitizeBankExercise,
   stripExerciseIndexMarks,
 } from "@/lib/exercise-quality";
 
@@ -293,6 +295,40 @@ describe("isUsableMultipleChoice", () => {
 });
 
 describe("isUsableFillBlank / sentence_building placeholders", () => {
+  it("rejects bare imperative blanks without an infinitive cue", () => {
+    expect(
+      isUsableFillBlank({
+        question: "¡___ la fruta!",
+        answer: "Come",
+        instruction: "Поставьте в утвердительное повelительное (tú)",
+      }),
+    ).toBe(false);
+    expect(
+      isUsableFillBlank({
+        question: "¡___ (comer) la fruta!",
+        answer: "Come",
+        instruction: "Forma: comer · imperativo · tú",
+      }),
+    ).toBe(true);
+  });
+
+  it("enriches imperative blanks from Forma instruction during sanitize", () => {
+    expect(
+      enrichImperativeBlankQuestion(
+        "¡___ la fruta!",
+        "Forma: comer · imperativo · tú",
+      ),
+    ).toBe("¡___ (comer) la fruta!");
+    const ok = sanitizeBankExercise({
+      type: "fill_blank",
+      question: "¡___ los deberes!",
+      answer: "Haz",
+      instruction: "Forma: hacer · imperativo · tú",
+      explanation: "x",
+    });
+    expect(ok?.question).toBe("¡___ (hacer) los deberes!");
+  });
+
   it("rejects em-dash answers", () => {
     expect(
       isUsableFillBlank({

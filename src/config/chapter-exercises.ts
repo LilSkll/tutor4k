@@ -832,16 +832,16 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
   "chapter-12-imperativo": [
     {
       type: "fill_blank",
-      question: "¡___ la fruta!",
-      instruction: "Поставьте в утвердительное повелительное (tú)",
+      question: "¡___ (comer) la fruta!",
+      instruction: "Forma: comer · imperativo · tú",
       answer: "Come",
       acceptableAnswers: ["come"],
       explanation: "Tú afirmativo: comer → come.",
     },
     {
       type: "multiple_choice",
-      question: "¡No ___ eso!",
-      instruction: "Выберите отрицательное повелительное",
+      question: "¡No ___ (decir) eso!",
+      instruction: "Forma: decir · imperativo negativo · tú",
       options: ["digas", "di", "dices", "dijiste"],
       answer: "digas",
       explanation: "Отрицательное → subjuntivo: decir → no digas.",
@@ -856,8 +856,8 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     },
     {
       type: "fill_blank",
-      question: "¡___ los deberes!",
-      instruction: "Утвердительное повелительное от hacer",
+      question: "¡___ (hacer) los deberes!",
+      instruction: "Forma: hacer · imperativo · tú",
       answer: "Haz",
       acceptableAnswers: ["haz"],
       explanation: "Hacer → haz (tú, imperativo). Неправильная форма.",
@@ -865,7 +865,7 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       type: "multiple_choice",
       question: "¡___ usted, por favor! (sentarse)",
-      instruction: "Вежливое повелительное для usted",
+      instruction: "Forma: sentarse · imperativo · usted",
       options: ["siéntese", "siéntate", "sienta", "sentarse"],
       answer: "siéntese",
       explanation: "Usted → subjuntivo: sentarse → siéntese.",
