@@ -45,6 +45,7 @@ export type BankExerciseLike = {
   type?: string;
   question?: string;
   answer?: string;
+  instruction?: string;
   options?: string[];
 };
 
