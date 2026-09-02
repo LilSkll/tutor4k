@@ -8,6 +8,18 @@ import { resolvePostLoginPath } from "@/lib/roles";
 import { sessionNeedsMfa } from "@/lib/auth-mfa";
 import type { Goal, InterfaceLanguage, Level, UserRole } from "@/types";
 
+const UI_LANGS = new Set<InterfaceLanguage>(["ru", "en", "es", "de"]);
+
+function interfaceLanguageFromForm(formData: FormData): InterfaceLanguage {
+  const raw = String(formData.get("interfaceLanguage") ?? "")
+    .trim()
+    .slice(0, 2)
+    .toLowerCase();
+  return UI_LANGS.has(raw as InterfaceLanguage)
+    ? (raw as InterfaceLanguage)
+    : "ru";
+}
+
 // =====================================================================
 // Authentication server actions
 // =====================================================================
@@ -272,7 +284,7 @@ export async function signUpWithEmail(formData: FormData) {
       role === "teacher"
         ? "check-email-teacher"
         : "check-email",
-    )}`,
+    )}&lang=${encodeURIComponent(interfaceLanguageFromForm(formData))}`,
   );
 }
 

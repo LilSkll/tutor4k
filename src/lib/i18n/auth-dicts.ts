@@ -18,6 +18,7 @@ const ru: Dictionary = {
   "auth.checkEmail": "Аккаунт создан. Проверь почту для подтверждения.",
   "auth.checkEmailTitle": "Аккаунт создан — проверь почту.",
   "auth.checkEmailBody": "В письме нажми ссылку подтверждения: откроется кабинет сразу, заново входить не нужно.",
+  "auth.checkEmailSpamNote": "Если письма нет во «Входящих», проверь папку «Спам» или «Промоакции».",
   "auth.checkEmailTeacherTitle": "Аккаунт преподавателя создан.",
   "auth.checkEmailTeacherBody": "Проверь почту и нажми ссылку подтверждения — откроется Teacher Studio. Заново входить не нужно.",
   "auth.passwordUpdated": "Пароль обновлён. Войди с новым паролем.",
@@ -99,6 +100,7 @@ const en: Dictionary = {
   "auth.checkEmail": "Account created. Check your email to confirm.",
   "auth.checkEmailTitle": "Account created — check your email.",
   "auth.checkEmailBody": "Open the confirmation link in the email: the app opens right away — no need to sign in again.",
+  "auth.checkEmailSpamNote": "If you don't see it in Inbox, check Spam or Promotions.",
   "auth.checkEmailTeacherTitle": "Teacher account created.",
   "auth.checkEmailTeacherBody": "Check your email and open the confirmation link — Teacher Studio opens. No need to sign in again.",
   "auth.passwordUpdated": "Password updated. Sign in with your new password.",
@@ -180,6 +182,7 @@ const es: Dictionary = {
   "auth.checkEmail": "Cuenta creada. Revisa tu correo para confirmar.",
   "auth.checkEmailTitle": "Cuenta creada — revisa tu correo.",
   "auth.checkEmailBody": "Abre el enlace de confirmación: la app se abre al momento — no hace falta volver a iniciar sesión.",
+  "auth.checkEmailSpamNote": "Si no lo ves en la bandeja de entrada, revisa Spam o Promociones.",
   "auth.checkEmailTeacherTitle": "Cuenta de profesor creada.",
   "auth.checkEmailTeacherBody": "Revisa el correo y abre el enlace — se abrirá Teacher Studio. No hace falta volver a iniciar sesión.",
   "auth.passwordUpdated": "Contraseña actualizada. Entra con la nueva.",
@@ -244,6 +247,15 @@ const es: Dictionary = {
 };
 
 const de: Dictionary = {
+  "auth.checkEmail": "Konto erstellt. Bitte bestätige deine E-Mail.",
+  "auth.checkEmailTitle": "Konto erstellt — bitte E-Mail prüfen.",
+  "auth.checkEmailBody":
+    "Öffne den Bestätigungslink in der E-Mail: Die App startet sofort — kein erneuter Login nötig.",
+  "auth.checkEmailSpamNote":
+    "Falls die E-Mail nicht im Posteingang ist, prüfe auch Spam oder Werbung.",
+  "auth.checkEmailTeacherTitle": "Lehrkonto erstellt.",
+  "auth.checkEmailTeacherBody":
+    "Prüfe deine E-Mail und öffne den Bestätigungslink — Teacher Studio startet. Kein erneuter Login nötig.",
   "auth.emailConfirmed": "E-Mail bestätigt — du bist angemeldet. Du kannst loslernen.",
   "auth.emailConfirmedTeacher": "E-Mail bestätigt — du bist im Teacher Studio.",
   "common.close": "Schließen",

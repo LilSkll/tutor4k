@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CheckEmailNotice } from "@/components/auth/check-email-notice";
 import { AuthFormNative } from "@/components/auth/auth-form-native";
 import { IconArrowLeft, IconGraduationCap } from "@/components/auth/auth-icons";
 import { BrandIcon } from "@/components/shared/brand-icon";
@@ -51,16 +52,10 @@ export function LoginView({
             </div>
           )}
           {notice === "check-email" && (
-            <div className="mb-4 rounded-lg border border-success/30 bg-success/10 px-4 py-3 text-sm text-success space-y-1">
-              <p className="font-medium">{t("auth.checkEmailTitle")}</p>
-              <p>{t("auth.checkEmailBody")}</p>
-            </div>
+            <CheckEmailNotice serverLanguage={language} />
           )}
           {notice === "check-email-teacher" && (
-            <div className="mb-4 rounded-lg border border-success/30 bg-success/10 px-4 py-3 text-sm text-success space-y-1">
-              <p className="font-medium">{t("auth.checkEmailTeacherTitle")}</p>
-              <p>{t("auth.checkEmailTeacherBody")}</p>
-            </div>
+            <CheckEmailNotice teacher serverLanguage={language} />
           )}
           {notice === "password-updated" && (
             <div className="mb-4 rounded-lg border border-success/30 bg-success/10 px-4 py-3 text-sm text-success">

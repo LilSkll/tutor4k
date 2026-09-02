@@ -42,6 +42,7 @@ export function AuthFormNative({
         {mode === "signin" && redirect ? (
           <input type="hidden" name="redirect" value={redirect} />
         ) : null}
+        <input type="hidden" name="interfaceLanguage" value={language} />
 
         {mode === "signup" ? (
           <fieldset className="space-y-2">
