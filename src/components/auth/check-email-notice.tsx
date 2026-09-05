@@ -1,10 +1,14 @@
 "use client";
 
 import { translate } from "@/lib/i18n/auth";
-import { useInterfaceLanguage } from "@/hooks/use-interface-language";
+import { useUIStore } from "@/stores";
 import type { InterfaceLanguage } from "@/types";
 
-/** Post-signup notice — respects saved interface language (localStorage / profile). */
+/**
+ * Post-signup notice.
+ * Prefer explicit server/URL language on auth pages — Zustand often defaults to
+ * `ru` before profile hydrate and would otherwise spoil EN/ES/DE shells.
+ */
 export function CheckEmailNotice({
   teacher = false,
   serverLanguage,
@@ -12,7 +16,8 @@ export function CheckEmailNotice({
   teacher?: boolean;
   serverLanguage?: InterfaceLanguage;
 }) {
-  const language = useInterfaceLanguage(serverLanguage);
+  const storeLanguage = useUIStore((s) => s.interfaceLanguage);
+  const language = serverLanguage ?? storeLanguage ?? "ru";
   const t = (key: string) => translate(key, language);
 
   return (

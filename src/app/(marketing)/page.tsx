@@ -15,10 +15,8 @@ import { BrandIcon } from "@/components/shared/brand-icon";
 import { translate } from "@/lib/i18n";
 import { LegalFooterLinks } from "@/components/legal/legal-footer-links";
 import { ConfirmEmailHashRedirect } from "@/components/auth/confirm-email-hash-redirect";
-
-/** CDN cache — do not read headers()/cookies() here (that forces SSR and ~1s TTFB). */
-export const dynamic = "force-static";
-export const revalidate = 86400;
+import { getRequestInterfaceLanguage } from "@/lib/request-language";
+import type { InterfaceLanguage } from "@/types";
 
 const btnGhost =
   "inline-flex items-center justify-center gap-2 rounded-xl text-sm font-medium h-11 px-4 hover:bg-accent hover:text-accent-foreground";
@@ -41,25 +39,58 @@ const FEATURE_KEYS = [
 ] as const;
 
 const LEVELS = ["A1", "A2", "B1", "B2", "C1"] as const;
+const LANG_SWITCH: { id: InterfaceLanguage; label: string }[] = [
+  { id: "ru", label: "RU" },
+  { id: "en", label: "EN" },
+  { id: "es", label: "ES" },
+  { id: "de", label: "DE" },
+];
 
-export default function LandingPage() {
-  const language = "ru" as const;
+export default async function LandingPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ lang?: string }>;
+}) {
+  const sp = await searchParams;
+  const language = await getRequestInterfaceLanguage(sp.lang);
   const t = (key: string) => translate(key, language);
+  const q = `?lang=${language}`;
 
   return (
     <div className="min-h-screen bg-background">
       <ConfirmEmailHashRedirect />
       <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur-md">
-        <div className="container flex h-16 items-center justify-between">
-          <div className="flex items-center gap-2">
-            <BrandIcon size={40} priority className="h-10 w-10" />
-            <span className="font-bold text-lg gradient-text">Spanish with Pavel</span>
+        <div className="container flex h-16 items-center justify-between gap-3">
+          <div className="flex items-center gap-2 min-w-0">
+            <BrandIcon size={40} priority className="h-10 w-10 shrink-0" />
+            <span className="font-bold text-lg gradient-text truncate">
+              Spanish with Pavel
+            </span>
           </div>
-          <div className="flex items-center gap-2">
-            <Link href="/login" className={btnGhost}>
+          <div className="flex items-center gap-1 sm:gap-2">
+            <nav
+              className="hidden sm:flex items-center gap-1 mr-1"
+              aria-label="Language"
+            >
+              {LANG_SWITCH.map((l) => (
+                <Link
+                  key={l.id}
+                  href={l.id === language ? `/?lang=${l.id}` : `/?lang=${l.id}`}
+                  className={`rounded-md px-2 py-1 text-xs font-semibold ${
+                    l.id === language
+                      ? "bg-primary/15 text-primary"
+                      : "text-muted-foreground hover:text-foreground"
+                  }`}
+                  hrefLang={l.id}
+                >
+                  {l.label}
+                </Link>
+              ))}
+            </nav>
+            <Link href={`/login${q}`} className={btnGhost}>
               {t("landing.signIn")}
             </Link>
-            <Link href="/signup" className={btnGradient}>
+            <Link href={`/signup${q}`} className={btnGradient}>
               {t("landing.getStarted")}
               <ArrowRight className="h-4 w-4" />
             </Link>
@@ -81,11 +112,11 @@ export default function LandingPage() {
           {t("landing.heroSubtitle")}
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-12">
-          <Link href="/signup" className={btnGradientLg}>
+          <Link href={`/signup${q}`} className={btnGradientLg}>
             {t("landing.createAccount")}
             <ArrowRight className="h-4 w-4" />
           </Link>
-          <Link href="/login" className={btnOutlineLg}>
+          <Link href={`/login${q}`} className={btnOutlineLg}>
             {t("landing.haveAccount")}
           </Link>
         </div>
@@ -93,7 +124,7 @@ export default function LandingPage() {
         <div className="relative mx-auto mt-8 mb-4 h-64 w-64 shrink-0 overflow-hidden rounded-3xl border-4 border-primary/20 md:h-72 md:w-72">
           <Image
             src="/hippogriff-hero-768.webp"
-            alt="Талисман приложения — гиппогриф"
+            alt={t("landing.mascotAlt")}
             fill
             priority
             fetchPriority="high"
@@ -104,7 +135,9 @@ export default function LandingPage() {
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-2">
-          <span className="text-sm text-muted-foreground">{t("landing.levelsLabel")}</span>
+          <span className="text-sm text-muted-foreground">
+            {t("landing.levelsLabel")}
+          </span>
           {LEVELS.map((lvl) => (
             <span
               key={lvl}
@@ -137,7 +170,7 @@ export default function LandingPage() {
           <p className="mx-auto max-w-xl text-primary-foreground/90 mb-6">
             {t("landing.ctaSubtitle")}
           </p>
-          <Link href="/signup" className={btnSecondaryLg}>
+          <Link href={`/signup${q}`} className={btnSecondaryLg}>
             {t("landing.createAccount")}
             <ArrowRight className="h-4 w-4" />
           </Link>
@@ -154,7 +187,7 @@ export default function LandingPage() {
             <p>{t("landing.footer")}</p>
           </div>
           <LegalFooterLinks locale={language} />
-          <p className="text-xs">Разработчик — Драгунов Павел</p>
+          <p className="text-xs">{t("landing.developer")}</p>
         </div>
       </footer>
     </div>

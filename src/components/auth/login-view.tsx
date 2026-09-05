@@ -73,7 +73,7 @@ export function LoginView({
           <p className="mt-6 text-center text-sm text-muted-foreground">
             {t("auth.noAccount")}{" "}
             <Link
-              href="/signup"
+              href={`/signup?lang=${language}`}
               className="text-primary font-medium hover:underline"
             >
               {t("auth.signUp")}

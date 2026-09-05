@@ -28,7 +28,8 @@ export function LegalFooterLinks({
         ? { privacy: "Privacidad", terms: "Términos", contact: "Contacto" }
         : { privacy: "Конфиденциальность", terms: "Соглашение", contact: "Контакты" };
 
-  const langSuffix = lang === "en" ? "?lang=en" : "";
+  const langSuffix =
+    lang === "en" ? "?lang=en" : lang === "es" ? "?lang=es" : "";
 
   return (
     <nav

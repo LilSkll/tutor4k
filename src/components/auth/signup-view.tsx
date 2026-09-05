@@ -56,7 +56,7 @@ export function SignupView({
           <p className="mt-6 text-center text-sm text-muted-foreground">
             {t("auth.haveAccount")}{" "}
             <Link
-              href="/login"
+              href={`/login?lang=${language}`}
               className="text-primary font-medium hover:underline"
             >
               {t("auth.signIn")}

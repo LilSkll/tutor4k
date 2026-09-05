@@ -144,6 +144,8 @@ const ru: Dictionary = {
   "landing.ctaTitle": "Начни своё путешествие в испанский сегодня!",
   "landing.ctaSubtitle": "Гибкий онбординг, персональные рекомендации и репетитор, подстраивающийся под твой уровень.",
   "landing.footer": "Создано на Next.js, Supabase, Groq и Gemini.",
+  "landing.mascotAlt": "Талисман приложения — гиппогриф",
+  "landing.developer": "Разработчик — Драгунов Павел",
   "feature.ai.title": "Умный ИИ-репетитор",
   "feature.ai.desc": "Персональный преподаватель, который объясняет правила, даёт подсказки и никогда не решает за тебя.",
   "feature.markdown.title": "Объяснения с markdown",
@@ -691,6 +693,40 @@ const ru: Dictionary = {
 };
 
 const en: Dictionary = {
+  "landing.signIn": "Sign in",
+  "landing.getStarted": "Get started free",
+  "landing.badge": "Powered by Groq + Gemini",
+  "landing.heroTitle1": "Learn Spanish with",
+  "landing.heroTitle2": "a personal AI tutor",
+  "landing.heroSubtitle":
+    "Not just a chatbot. A teacher that explains rules, gives hints, and makes you think. Grammar, vocabulary, exercises, and exam prep — in one place.",
+  "landing.createAccount": "Create account",
+  "landing.haveAccount": "I already have an account",
+  "landing.levelsLabel": "CEFR levels:",
+  "landing.ctaTitle": "Start your Spanish journey today!",
+  "landing.ctaSubtitle":
+    "Flexible onboarding, personal recommendations, and a tutor that adapts to your level.",
+  "landing.footer": "Built with Next.js, Supabase, Groq, and Gemini.",
+  "landing.mascotAlt": "App mascot — a hippogriff",
+  "landing.developer": "Developer — Pavel Dragunov",
+  "feature.ai.title": "Smart AI tutor",
+  "feature.ai.desc":
+    "A personal teacher that explains rules, gives hints, and never solves for you.",
+  "feature.markdown.title": "Markdown explanations",
+  "feature.markdown.desc":
+    "Conjugation tables, examples, and highlighted rules in every answer.",
+  "feature.grammar.title": "Level-based grammar",
+  "feature.grammar.desc":
+    "CEFR topics from A1 to C1 — from articles to the subjunctive.",
+  "feature.exercises.title": "AI exercises",
+  "feature.exercises.desc":
+    "Multiple choice, fill-in-the-blank, translation, error correction, sentence building.",
+  "feature.streak.title": "Streaks and daily goals",
+  "feature.streak.desc":
+    "Stay consistent with day streaks, goals, and recommendations.",
+  "feature.vocab.title": "Personal vocabulary",
+  "feature.vocab.desc":
+    "Save words, translations, and examples for review.",
   "nav.dashboard": "Dashboard",
   "nav.tutor": "AI Tutor",
   "nav.grammar": "Grammar",
@@ -1357,6 +1393,40 @@ const en: Dictionary = {
 };
 
 const es: Dictionary = {
+  "landing.signIn": "Iniciar sesión",
+  "landing.getStarted": "Empezar gratis",
+  "landing.badge": "Con Groq + Gemini",
+  "landing.heroTitle1": "Aprende español con",
+  "landing.heroTitle2": "un tutor de IA personal",
+  "landing.heroSubtitle":
+    "No es solo un chat. Es un profesor que explica reglas, da pistas y te hace pensar. Gramática, léxico, ejercicios y preparación de exámenes — todo en un solo lugar.",
+  "landing.createAccount": "Crear cuenta",
+  "landing.haveAccount": "Ya tengo una cuenta",
+  "landing.levelsLabel": "Niveles CEFR:",
+  "landing.ctaTitle": "¡Empieza tu viaje en español hoy!",
+  "landing.ctaSubtitle":
+    "Onboarding flexible, recomendaciones personales y un tutor que se adapta a tu nivel.",
+  "landing.footer": "Hecho con Next.js, Supabase, Groq y Gemini.",
+  "landing.mascotAlt": "Mascota de la app — un hipogrifo",
+  "landing.developer": "Desarrollador — Pavel Dragunov",
+  "feature.ai.title": "Tutor IA inteligente",
+  "feature.ai.desc":
+    "Un profesor personal que explica reglas, da pistas y nunca resuelve por ti.",
+  "feature.markdown.title": "Explicaciones en markdown",
+  "feature.markdown.desc":
+    "Tablas de conjugación, ejemplos y reglas destacadas en cada respuesta.",
+  "feature.grammar.title": "Gramática por niveles",
+  "feature.grammar.desc":
+    "Temas CEFR de A1 a C1 — de los artículos al subjuntivo.",
+  "feature.exercises.title": "Ejercicios con IA",
+  "feature.exercises.desc":
+    "Opción múltiple, huecos, traducción, corrección de errores, construcción de frases.",
+  "feature.streak.title": "Rachas y metas diarias",
+  "feature.streak.desc":
+    "Mantén la constancia con rachas, metas y recomendaciones.",
+  "feature.vocab.title": "Vocabulario personal",
+  "feature.vocab.desc":
+    "Guarda palabras, traducciones y ejemplos para repasar.",
   "nav.dashboard": "Inicio",
   "nav.tutor": "Tutor IA",
   "nav.grammar": "Gramática",
@@ -2023,6 +2093,40 @@ const es: Dictionary = {
 };
 
 const de: Dictionary = {
+  "landing.signIn": "Anmelden",
+  "landing.getStarted": "Kostenlos starten",
+  "landing.badge": "Mit Groq + Gemini",
+  "landing.heroTitle1": "Spanisch lernen mit",
+  "landing.heroTitle2": "einem persönlichen KI-Tutor",
+  "landing.heroSubtitle":
+    "Nicht nur ein Chat. Ein Lehrer, der Regeln erklärt, Tipps gibt und dich zum Denken bringt. Grammatik, Wortschatz, Übungen und Prüfungsvorbereitung — alles an einem Ort.",
+  "landing.createAccount": "Konto erstellen",
+  "landing.haveAccount": "Ich habe schon ein Konto",
+  "landing.levelsLabel": "GER-Niveaus:",
+  "landing.ctaTitle": "Starte noch heute deine Spanisch-Reise!",
+  "landing.ctaSubtitle":
+    "Flexibles Onboarding, persönliche Empfehlungen und ein Tutor, der sich an dein Niveau anpasst.",
+  "landing.footer": "Gebaut mit Next.js, Supabase, Groq und Gemini.",
+  "landing.mascotAlt": "App-Maskottchen — ein Hippogreif",
+  "landing.developer": "Entwickler — Pavel Dragunov",
+  "feature.ai.title": "Kluger KI-Tutor",
+  "feature.ai.desc":
+    "Ein persönlicher Lehrer, der Regeln erklärt, Tipps gibt und nie für dich löst.",
+  "feature.markdown.title": "Erklärungen mit Markdown",
+  "feature.markdown.desc":
+    "Konjugationstabellen, Beispiele und hervorgehobene Regeln in jeder Antwort.",
+  "feature.grammar.title": "Grammatik nach Niveau",
+  "feature.grammar.desc":
+    "GER-Themen von A1 bis C1 — von Artikeln bis zum Subjuntivo.",
+  "feature.exercises.title": "KI-Übungen",
+  "feature.exercises.desc":
+    "Multiple Choice, Lücken, Übersetzung, Fehlerkorrektur, Satzbau.",
+  "feature.streak.title": "Serien und Tagesziele",
+  "feature.streak.desc":
+    "Bleib dran mit Tages-Serien, Zielen und Empfehlungen.",
+  "feature.vocab.title": "Persönlicher Wortschatz",
+  "feature.vocab.desc":
+    "Speichere Wörter, Übersetzungen und Beispiele zum Wiederholen.",
   "nav.journey": "Pass",
   "nav.logout": "Abmelden",
   "nav.homework": "Hausaufgaben",

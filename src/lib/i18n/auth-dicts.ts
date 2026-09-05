@@ -247,6 +247,21 @@ const es: Dictionary = {
 };
 
 const de: Dictionary = {
+  "auth.signIn": "Anmelden",
+  "auth.signUp": "Registrieren",
+  "auth.email": "E-Mail",
+  "auth.password": "Passwort",
+  "auth.name": "Name",
+  "auth.welcome": "Willkommen",
+  "auth.tagline": "Spanisch lernen mit einem KI-Tutor",
+  "auth.haveAccount": "Schon ein Konto?",
+  "auth.noAccount": "Noch kein Konto?",
+  "auth.backHome": "Zur Startseite",
+  "auth.welcomeBack": "Willkommen zurück!",
+  "auth.loginSubtitle": "Melde dich an, um weiterzulernen.",
+  "auth.signupTitle": "Konto erstellen",
+  "auth.signupSubtitle":
+    "Rolle wählen: Schüler (Lernen) oder Lehrkraft (Teacher Studio).",
   "auth.checkEmail": "Konto erstellt. Bitte bestätige deine E-Mail.",
   "auth.checkEmailTitle": "Konto erstellt — bitte E-Mail prüfen.",
   "auth.checkEmailBody":
@@ -256,9 +271,79 @@ const de: Dictionary = {
   "auth.checkEmailTeacherTitle": "Lehrkonto erstellt.",
   "auth.checkEmailTeacherBody":
     "Prüfe deine E-Mail und öffne den Bestätigungslink — Teacher Studio startet. Kein erneuter Login nötig.",
+  "auth.passwordUpdated": "Passwort aktualisiert. Melde dich mit dem neuen Passwort an.",
+  "auth.namePlaceholder": "Dein Name",
+  "auth.passwordPlaceholder": "••••••••",
+  "auth.emailPlaceholder": "du@email.com",
+  "auth.heroSide.login": "Dein Tutor, 24/7",
+  "auth.heroSide.loginDesc":
+    "Lerne Grammatik und Wortschatz und bereite dich auf Prüfungen vor — mit einem Tutor, der sich an dein Niveau anpasst.",
+  "auth.heroSide.signup": "Ein Tutor, der dich denken lässt",
+  "auth.heroSide.signupDesc":
+    "Löst nicht für dich: erklärt, gibt Tipps und verfolgt deinen Fortschritt. So lernt man richtig.",
+  "auth.accountType": "Kontotyp",
+  "auth.roleStudent": "Schüler",
+  "auth.roleStudentDesc": "Sprache lernen: Kapitel, Übungen, KI-Tutor",
+  "auth.roleTeacher": "Lehrkraft",
+  "auth.roleTeacherDesc": "Teacher Studio: Schüler und Einladungen",
+  "auth.teacherWarningTitle": "Wichtig für Lernende",
+  "auth.teacherWarning1":
+    "Ein Lehrkonto ist nicht zum Sprachenlernen. Im Teacher Studio gibt es keine Kapitel, Übungen oder Schülerfortschritt. Wenn du lernen willst — wähle Schüler.",
+  "auth.teacherWarning2":
+    "Registriere dich nur als Lehrkraft, wenn du unterrichtest und deine Schüler einladen wirst.",
+  "auth.teacherConfirm":
+    "Ich bin Lehrkraft und verstehe, dass dies ein Arbeitsbereich für Schüler ist, kein Lernkonto",
+  "auth.acceptTerms": "Ich akzeptiere die",
+  "auth.termsLink": "Nutzungsbedingungen",
+  "auth.acceptPrivacy": "Ich akzeptiere die",
+  "auth.privacyLink": "Datenschutzerklärung",
+  "auth.marketingConsent": "Ich möchte Produkt- und Lern-News erhalten (optional)",
+  "auth.forgotPassword": "Passwort vergessen?",
+  "auth.createStudent": "Schülerkonto erstellen",
+  "auth.createTeacher": "Lehrkonto erstellen",
+  "auth.or": "oder",
+  "auth.continueGoogle": "Weiter mit Google",
+  "auth.oauthRuUnavailable":
+    "Google-Anmeldung ist in deiner Region nicht verfügbar. Bitte E-Mail und Passwort nutzen.",
+  "auth.oauthNeedConsent":
+    "Bitte akzeptiere die Nutzungsbedingungen und die Datenschutzerklärung.",
+  "auth.oauthNeedTeacher": "Bitte bestätige, dass du dich als Lehrkraft registrierst.",
+  "auth.oauthStartFail": "Anmeldung konnte nicht gestartet werden. Bitte erneut versuchen.",
+  "auth.oauthGoogleUnavailable":
+    "Google-Anmeldung ist nicht verfügbar. Einstellungen prüfen.",
+  "auth.oauthGenericError": "Anmeldefehler",
+  "auth.registerFooter": "Mit der Registrierung akzeptierst du die",
+  "auth.and": "und",
+  "auth.backToLogin": "Zurück zur Anmeldung",
+  "auth.forgotTitle": "Passwort vergessen?",
+  "auth.forgotSubtitle":
+    "Gib deine E-Mail ein — wir senden einen Link für ein neues Passwort.",
+  "auth.forgotSent":
+    "Falls ein Konto mit dieser E-Mail existiert, wurde eine Nachricht gesendet. Prüfe Posteingang und Spam. Öffne den Link auf demselben Host (.com oder vercel.app).",
+  "auth.forgotHero": "Zugang wiederherstellen",
+  "auth.forgotHeroDesc":
+    "Der E-Mail-Link läuft nach einiger Zeit ab. Danach kannst du dich mit dem neuen Passwort anmelden.",
+  "auth.sendResetLink": "Link senden",
+  "auth.rememberPassword": "Passwort wieder eingefallen?",
+  "auth.newPassword": "Neues Passwort",
+  "auth.confirmNewPassword": "Passwort wiederholen",
+  "auth.savePassword": "Passwort speichern",
+  "auth.resetTitle": "Neues Passwort",
+  "auth.resetSubtitle": "Wähle ein Passwort mit mindestens 6 Zeichen.",
+  "auth.resetNoSession":
+    "Wenn das Formular nicht speichert — öffne den E-Mail-Link erneut (er sollte zu dieser Seite führen). Tab offen lassen bis zum Speichern.",
+  "auth.resetHero": "Fast fertig",
+  "auth.resetHeroDesc":
+    "Nach dem Speichern mit dem neuen Passwort anmelden. Lehrkräfte gehen zu Teacher Studio; Schüler lernen weiter.",
+  "auth.backToLoginShort": "Zur Anmeldung",
   "auth.emailConfirmed": "E-Mail bestätigt — du bist angemeldet. Du kannst loslernen.",
   "auth.emailConfirmedTeacher": "E-Mail bestätigt — du bist im Teacher Studio.",
   "common.close": "Schließen",
+  "legal.cookieTitle": "Wir verwenden Cookies",
+  "legal.cookieBody":
+    "Essenzielle Cookies sind für die Anmeldung nötig. Seitenaufrufe und Performance messen wir mit cookieless Vercel Analytics (aggregiert, ohne Werbung). Mehr in der",
+  "legal.cookiePolicyLink": "Datenschutzerklärung",
+  "legal.cookieAccept": "Verstanden",
 };
 
 export const AUTH_DICTS: Record<"ru" | "en" | "es" | "de", Dictionary> = { ru, en, es, de };
