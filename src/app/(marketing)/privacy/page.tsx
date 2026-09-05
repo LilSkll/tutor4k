@@ -1,10 +1,7 @@
 import { Suspense } from "react";
 import { LegalDocumentView } from "@/components/legal/legal-document-view";
 import { getPrivacyDocument } from "@/content/legal/privacy";
-import {
-  legalDocumentLocale,
-  resolveLegalLocale,
-} from "@/config/legal";
+import { resolveLegalLocale } from "@/config/legal";
 
 export const metadata = {
   title: "Privacy Policy — Spanish with Pavel",
@@ -17,7 +14,7 @@ export default async function PrivacyPage({
 }) {
   const sp = await searchParams;
   const locale = resolveLegalLocale(sp.lang);
-  const doc = getPrivacyDocument(legalDocumentLocale(locale));
+  const doc = getPrivacyDocument(locale);
 
   return (
     <Suspense>

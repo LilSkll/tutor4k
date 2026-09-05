@@ -9,9 +9,8 @@ type LegalFooterLinksProps = {
   vertical?: boolean;
 };
 
-function footerLocale(locale: InterfaceLanguage): "ru" | "en" | "es" {
-  if (locale === "en" || locale === "de") return "en";
-  if (locale === "es") return "es";
+function footerLocale(locale: InterfaceLanguage): "ru" | "en" | "es" | "de" {
+  if (locale === "en" || locale === "es" || locale === "de") return locale;
   return "ru";
 }
 
@@ -26,10 +25,11 @@ export function LegalFooterLinks({
       ? { privacy: "Privacy", terms: "Terms", contact: "Contact" }
       : lang === "es"
         ? { privacy: "Privacidad", terms: "Términos", contact: "Contacto" }
-        : { privacy: "Конфиденциальность", terms: "Соглашение", contact: "Контакты" };
+        : lang === "de"
+          ? { privacy: "Datenschutz", terms: "Nutzungsbedingungen", contact: "Kontakt" }
+          : { privacy: "Конфиденциальность", terms: "Соглашение", contact: "Контакты" };
 
-  const langSuffix =
-    locale === "ru" ? "" : `?lang=${locale === "de" ? "en" : locale}`;
+  const langSuffix = locale === "ru" ? "" : `?lang=${locale}`;
 
   return (
     <nav

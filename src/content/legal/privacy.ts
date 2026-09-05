@@ -3,8 +3,12 @@ import type { LegalDocument } from "./types";
 
 const O = LEGAL_OPERATOR;
 
-export function getPrivacyDocument(locale: "ru" | "en"): LegalDocument {
+export function getPrivacyDocument(
+  locale: "ru" | "en" | "es" | "de",
+): LegalDocument {
   if (locale === "en") return privacyEn;
+  if (locale === "es") return privacyEs;
+  if (locale === "de") return privacyDe;
   return privacyRu;
 }
 
@@ -26,7 +30,9 @@ const privacyRu: LegalDocument = {
     {
       id: "data",
       title: "2. Какие данные мы обрабатываем",
-      paragraphs: ["Мы обрабатываем только данные, необходимые для работы образовательного сервиса:"],
+      paragraphs: [
+        "Мы обрабатываем только данные, необходимые для работы образовательного сервиса:",
+      ],
       list: [
         "Регистрационные данные: email, имя, пароль (хранится в зашифрованном виде у провайдера аутентификации).",
         "Данные профиля: уровень языка, цель обучения, язык интерфейса, активный курс, дневная цель, серия занятий.",
@@ -240,6 +246,250 @@ const privacyEn: LegalDocument = {
       paragraphs: [
         `Controller: ${O.operatorNameEn}`,
         `Email: ${O.contactEmail}`,
+        `Website: ${O.website}`,
+      ],
+    },
+  ],
+};
+
+const privacyEs: LegalDocument = {
+  locale: "es",
+  title: "Política de privacidad",
+  subtitle: `Servicio «${O.serviceName}»`,
+  updated: O.policyVersion,
+  sections: [
+    {
+      id: "operator",
+      title: "1. Responsable del tratamiento",
+      paragraphs: [
+        `El responsable del tratamiento es ${O.operatorNameEn} («nosotros»), contacto: ${O.contactEmail}.`,
+        `Sitio web: ${O.website}.`,
+        "Esta Política explica cómo recopilamos y usamos datos personales al utilizar nuestra plataforma de aprendizaje de idiomas. Está pensada para usuarios de España, la UE, el Reino Unido y otras jurisdicciones, junto con la versión en ruso cuando proceda.",
+      ],
+    },
+    {
+      id: "data",
+      title: "2. Datos que tratamos",
+      paragraphs: [
+        "Tratamos los datos necesarios para prestar el servicio educativo:",
+      ],
+      list: [
+        "Datos de cuenta: email, nombre, contraseña (cifrada por el proveedor de autenticación).",
+        "Perfil: nivel, objetivo de aprendizaje, idioma de interfaz, curso activo, meta diaria, racha.",
+        "Progreso: capítulos, puntuaciones, ejercicios, vocabulario personal.",
+        "Conversaciones con el tutor de IA: contenido de mensajes e historial.",
+        "Learning Profile: confianza agregada por habilidades según tus respuestas.",
+        "Datos técnicos: cookies de sesión, IP, datos del navegador — seguridad y funcionamiento. Analítica agregada de Vercel (sin cookies) — tráfico y rendimiento.",
+      ],
+    },
+    {
+      id: "purposes",
+      title: "3. Finalidades",
+      paragraphs: ["Usamos tus datos para:"],
+      list: [
+        "crear y proteger tu cuenta;",
+        "ofrecer lecciones personalizadas y tutoría con IA;",
+        "guardar el progreso y adaptar el contenido;",
+        "dar soporte y mejorar el servicio;",
+        "cumplir obligaciones legales.",
+      ],
+    },
+    {
+      id: "legal-basis",
+      title: "4. Base jurídica (UE / Reino Unido)",
+      paragraphs: [
+        "Ejecución del contrato (art. 6.1.b RGPD / UK GDPR) — prestar el servicio para el que te registraste.",
+        "Interés legítimo (art. 6.1.f) — seguridad, prevención de fraude y mejora del servicio (ponderado frente a tus derechos).",
+        "Consentimiento (art. 6.1.a) — comunicaciones de marketing opcionales, cuando aplique.",
+      ],
+    },
+    {
+      id: "processors",
+      title: "5. Encargados y transferencias internacionales",
+      paragraphs: [
+        "No vendemos datos personales. Proveedores de infraestructura e IA pueden tratar datos en nuestro nombre:",
+        "Si los datos salen del EEE/Reino Unido, aplicamos garantías adecuadas (Cláusulas contractuales tipo u equivalentes).",
+      ],
+      list: [
+        "Supabase (base de datos y autenticación).",
+        "Vercel (alojamiento de la aplicación).",
+        "Proveedores de API de IA (Groq, Google Gemini) — solo el texto necesario para la tutoría.",
+      ],
+    },
+    {
+      id: "retention",
+      title: "6. Conservación",
+      paragraphs: [
+        "Los datos se conservan mientras la cuenta esté activa. Tras el borrado, los datos principales se eliminan en 30 días; las copias de seguridad pueden permanecer hasta 90 días.",
+      ],
+    },
+    {
+      id: "rights",
+      title: "7. Tus derechos",
+      paragraphs: [
+        "Según tu ubicación, puedes ejercer el derecho a:",
+        `Escríbenos a ${O.contactEmail}. Respondemos en un plazo de 30 días.`,
+      ],
+      list: [
+        "acceder y obtener una copia de tus datos (Ajustes → Exportar datos);",
+        "rectificar datos inexactos;",
+        "suprimir tu cuenta (Ajustes → Eliminar cuenta);",
+        "limitar u oponerte a determinados tratamientos;",
+        "portabilidad de datos;",
+        "retirar el consentimiento cuando el tratamiento se base en él;",
+        "presentar una reclamación ante la AEPD (España), la ICO (Reino Unido) u otra autoridad de control.",
+      ],
+    },
+    {
+      id: "cookies",
+      title: "8. Cookies",
+      paragraphs: [
+        "Usamos cookies de sesión esenciales para el inicio de sesión (sesión de Supabase). No usamos cookies publicitarias.",
+        "Para estadísticas de visitas y rendimiento usamos Vercel Web Analytics y Speed Insights. No establecen cookies y recopilan solo datos agregados y anonimizados. Los parámetros sensibles de la URL se eliminan antes del envío. No usamos rastreadores publicitarios de terceros.",
+      ],
+    },
+    {
+      id: "children",
+      title: "9. Menores",
+      paragraphs: [
+        "El servicio está destinado a usuarios de 16 años o más. Los menores necesitan el consentimiento de un padre o tutor.",
+      ],
+    },
+    {
+      id: "changes",
+      title: "10. Cambios",
+      paragraphs: [
+        `Podemos actualizar esta Política. La versión vigente está siempre en ${O.website}/privacy.`,
+      ],
+    },
+    {
+      id: "contact",
+      title: "11. Contacto",
+      paragraphs: [
+        `Responsable: ${O.operatorNameEn}`,
+        `Email: ${O.contactEmail}`,
+        `Sitio web: ${O.website}`,
+      ],
+    },
+  ],
+};
+
+const privacyDe: LegalDocument = {
+  locale: "de",
+  title: "Datenschutzerklärung",
+  subtitle: `Dienst «${O.serviceName}»`,
+  updated: O.policyVersion,
+  sections: [
+    {
+      id: "operator",
+      title: "1. Verantwortlicher",
+      paragraphs: [
+        `Verantwortlicher für die Verarbeitung ist ${O.operatorNameEn} („wir“), Kontakt: ${O.contactEmail}.`,
+        `Website: ${O.website}.`,
+        "Diese Erklärung beschreibt, wie wir personenbezogene Daten erheben und nutzen, wenn du unsere Sprachlernplattform verwendest. Sie richtet sich an Nutzer in der EU, im Vereinigten Königreich, in Spanien und weiteren Ländern – parallel zur russischen Fassung, soweit anwendbar.",
+      ],
+    },
+    {
+      id: "data",
+      title: "2. Welche Daten wir verarbeiten",
+      paragraphs: [
+        "Wir verarbeiten nur Daten, die für den Bildungsdienst erforderlich sind:",
+      ],
+      list: [
+        "Kontodaten: E-Mail, Name, Passwort (gehasht beim Auth-Anbieter).",
+        "Profil: Sprachniveau, Lernziel, Interface-Sprache, aktiver Kurs, Tagesziel, Serie.",
+        "Lernfortschritt: Kapitel, Punkte, Übungen, persönlicher Wortschatz.",
+        "KI-Tutor-Gespräche: Nachrichteninhalt und Chatverlauf.",
+        "Learning Profile: aggregierte Kompetenzwerte anhand deiner Antworten.",
+        "Technische Daten: Sitzungs-Cookies, IP, Browserdaten — Sicherheit und Betrieb. Aggregierte Vercel-Web-Analytics (ohne Cookies) — Traffic und Performance.",
+      ],
+    },
+    {
+      id: "purposes",
+      title: "3. Zwecke",
+      paragraphs: ["Wir nutzen deine Daten, um:"],
+      list: [
+        "dein Konto anzulegen und zu schützen;",
+        "personalisierten Unterricht und KI-Tutoring zu liefern;",
+        "Fortschritt zu speichern und Inhalte anzupassen;",
+        "Support zu leisten und den Dienst zu verbessern;",
+        "gesetzliche Pflichten zu erfüllen.",
+      ],
+    },
+    {
+      id: "legal-basis",
+      title: "4. Rechtsgrundlage (EU / UK)",
+      paragraphs: [
+        "Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO / UK GDPR) — Bereitstellung des gebuchten Dienstes.",
+        "Berechtigte Interessen (Art. 6 Abs. 1 lit. f) — Sicherheit, Betrugsprävention, Produktverbesserung (abgewogen gegen deine Rechte).",
+        "Einwilligung (Art. 6 Abs. 1 lit. a) — optionale Marketing-Kommunikation, soweit anwendbar.",
+      ],
+    },
+    {
+      id: "processors",
+      title: "5. Auftragsverarbeiter und internationale Übermittlungen",
+      paragraphs: [
+        "Wir verkaufen keine personenbezogenen Daten. Infrastruktur- und KI-Anbieter können Daten in unserem Auftrag verarbeiten:",
+        "Verlassen Daten den EWR/UK, stützen wir uns auf geeignete Garantien (Standardvertragsklauseln oder gleichwertig).",
+      ],
+      list: [
+        "Supabase (Datenbank & Authentifizierung).",
+        "Vercel (App-Hosting).",
+        "KI-API-Anbieter (Groq, Google Gemini) — nur Prompt-/Antworttext für den Tutor.",
+      ],
+    },
+    {
+      id: "retention",
+      title: "6. Speicherdauer",
+      paragraphs: [
+        "Daten werden gespeichert, solange dein Konto aktiv ist. Nach Löschung entfernen wir Primärdaten innerhalb von 30 Tagen; Backups können bis zu 90 Tage bestehen.",
+      ],
+    },
+    {
+      id: "rights",
+      title: "7. Deine Rechte",
+      paragraphs: [
+        "Je nach Wohnsitz kannst du insbesondere verlangen:",
+        `Kontaktiere uns unter ${O.contactEmail}. Wir antworten innerhalb von 30 Tagen.`,
+      ],
+      list: [
+        "Auskunft und Kopie deiner Daten (Einstellungen → Daten exportieren);",
+        "Berichtigung unrichtiger Daten;",
+        "Löschung des Kontos (Einstellungen → Konto löschen);",
+        "Einschränkung oder Widerspruch gegen bestimmte Verarbeitungen;",
+        "Datenübertragbarkeit;",
+        "Widerruf einer Einwilligung, soweit die Verarbeitung darauf beruht;",
+        "Beschwerde bei einer Aufsichtsbehörde (z. B. ICO im UK oder lokale Behörde in der EU).",
+      ],
+    },
+    {
+      id: "cookies",
+      title: "8. Cookies",
+      paragraphs: [
+        "Wir verwenden essenzielle Sitzungs-Cookies für den Login (Supabase-Sitzung). Werbe-Cookies setzen wir nicht ein.",
+        "Für Besucherzahlen und Seitenleistung nutzen wir Vercel Web Analytics und Speed Insights. Diese setzen keine Cookies und erfassen nur aggregierte, anonymisierte Daten. Sensible URL-Parameter werden vor dem Versand entfernt. Werbe- oder Drittanbieter-Tracker verwenden wir nicht.",
+      ],
+    },
+    {
+      id: "children",
+      title: "9. Kinder",
+      paragraphs: [
+        "Der Dienst richtet sich an Nutzer ab 16 Jahren. Jüngere Nutzer benötigen die Einwilligung eines Erziehungsberechtigten.",
+      ],
+    },
+    {
+      id: "changes",
+      title: "10. Änderungen",
+      paragraphs: [
+        `Wir können diese Erklärung aktualisieren. Die aktuelle Fassung steht stets unter ${O.website}/privacy.`,
+      ],
+    },
+    {
+      id: "contact",
+      title: "11. Kontakt",
+      paragraphs: [
+        `Verantwortlicher: ${O.operatorNameEn}`,
+        `E-Mail: ${O.contactEmail}`,
         `Website: ${O.website}`,
       ],
     },
