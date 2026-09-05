@@ -35,7 +35,7 @@ export function Sidebar({ userName, level, streak }: NavProps) {
     >
       <div
         className={cn(
-          "flex h-16 items-center gap-3 border-b border-border/60",
+          "flex min-h-16 items-center gap-3 border-b border-border/60 py-2",
           collapsed ? "justify-center px-2" : "px-5",
         )}
       >
@@ -48,7 +48,7 @@ export function Sidebar({ userName, level, streak }: NavProps) {
             <p className="font-bold text-sm leading-tight gradient-text truncate">
               Spanish with Pavel
             </p>
-            <p className="text-[11px] text-muted-foreground">
+            <p className="text-[11px] leading-snug text-muted-foreground">
               {t("nav.brandTagline")}
             </p>
           </div>
