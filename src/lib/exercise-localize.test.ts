@@ -35,12 +35,12 @@ describe("translation localization", () => {
     expect(ex.question).toBe("I am a student.");
   });
 
-  it("does not spoil English-course TR when UI is English", () => {
+  it("keeps English-course TR for EN UI without spoiling the answer", () => {
     const enCourse: StaticExercise = {
       ...sample,
       answer: "I am a student",
     };
-    expect(isExerciseUsableForLanguage(enCourse, "en", "english")).toBe(false);
+    expect(isExerciseUsableForLanguage(enCourse, "en", "english")).toBe(true);
     const kept = localizeTranslationQuestion(enCourse, "en", "english");
     expect(kept).toBe("Я студент.");
   });

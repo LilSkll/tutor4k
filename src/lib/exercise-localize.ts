@@ -332,8 +332,8 @@ export function localizeExerciseInstruction(
 /**
  * True when an exercise makes sense for the given interface language.
  * Translation items with a localized prompt stay available for en/es/de.
- * For English course + English UI, RU→EN swaps that equal the answer are
- * treated as spoilers and dropped (keep RU UI or other L1 prompts).
+ * English course: keep RU-authored TRs even without a map (show RU source);
+ * never swap in an EN prompt that equals the English answer.
  */
 export function isExerciseUsableForLanguage(
   exercise: Pick<
@@ -348,19 +348,27 @@ export function isExerciseUsableForLanguage(
 
   if (exercise.type === "translation") {
     if (!hasCyrillicText(exercise.question)) return true;
+    // English course is authored in Russian → English. Non-RU UI can still
+    // practice with the RU source when no L1 map exists; EN map is skipped
+    // when it would spoil the answer.
+    if (courseId === "english") {
+      if (interfaceLanguage === "en") return true;
+      const localized =
+        exercise.questionTranslations?.[interfaceLanguage]?.trim() ??
+        lookupTranslationPrompt(exercise.question, interfaceLanguage);
+      if (
+        localized &&
+        normalizeForCompare(localized) ===
+          normalizeForCompare(exercise.answer ?? "")
+      ) {
+        return true; // fall back to RU in localizeTranslationQuestion
+      }
+      return true;
+    }
     const localized =
       exercise.questionTranslations?.[interfaceLanguage]?.trim() ??
       lookupTranslationPrompt(exercise.question, interfaceLanguage);
-    if (!localized) return false;
-    // English course: never show an EN prompt that is the EN answer.
-    if (
-      courseId === "english" &&
-      interfaceLanguage === "en" &&
-      normalizeForCompare(localized) === normalizeForCompare(exercise.answer)
-    ) {
-      return false;
-    }
-    return true;
+    return Boolean(localized);
   }
 
   return !hasCyrillicText(exercise.question);
@@ -378,26 +386,31 @@ export function localizeTranslationQuestion(
   if (exercise.type !== "translation" || interfaceLanguage === "ru") {
     return exercise.question;
   }
+  const answer = exercise.answer ?? "";
   const inline = exercise.questionTranslations?.[interfaceLanguage]?.trim();
   if (inline) {
     if (
       courseId === "english" &&
-      interfaceLanguage === "en" &&
-      normalizeForCompare(inline) === normalizeForCompare(exercise.answer ?? "")
+      normalizeForCompare(inline) === normalizeForCompare(answer)
     ) {
       return exercise.question;
     }
     return inline;
   }
   if (!hasCyrillicText(exercise.question)) return exercise.question;
+
+  // Shared Spanish-course map: EN entries are often the English answer —
+  // never use them as L1 for the English course.
+  if (courseId === "english" && interfaceLanguage === "en") {
+    return exercise.question;
+  }
+
   const mapped = lookupTranslationPrompt(exercise.question, interfaceLanguage);
   if (!mapped) return exercise.question;
   if (
     courseId === "english" &&
-    interfaceLanguage === "en" &&
-    normalizeForCompare(mapped) === normalizeForCompare(exercise.answer ?? "")
+    normalizeForCompare(mapped) === normalizeForCompare(answer)
   ) {
-    // Spoiler: keep Russian source rather than printing the answer as the prompt.
     return exercise.question;
   }
   return mapped;

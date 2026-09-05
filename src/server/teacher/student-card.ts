@@ -1,6 +1,7 @@
 import { createSupabaseAdminClient } from "@/lib/supabase-admin";
 import { getCourse } from "@/config/courses";
 import { getChapterTitle } from "@/lib/chapter-display";
+import { resolveTeacherTopicLabel } from "@/lib/teacher-topic-label";
 import { ProgressService } from "@/server/services/progress";
 import type { WeekActivityDay } from "@/server/services/progress";
 import { assertCanViewStudent } from "@/server/teacher/links";
@@ -178,6 +179,13 @@ export async function getStudentCard(
     getCourseLearningProfileAdmin(studentId, courseId, 8),
   ]);
 
+  const difficultTopics = await Promise.all(
+    (learningProfile.recommendations ?? []).map(async (rec) => ({
+      ...rec,
+      topic: await resolveTeacherTopicLabel(rec.topic, courseId, interfaceLanguage),
+    })),
+  );
+
   return {
     link,
     student: {
@@ -200,6 +208,6 @@ export async function getStudentCard(
     activityHistory,
     recentExercises,
     recentMistakes,
-    difficultTopics: learningProfile.recommendations ?? [],
+    difficultTopics,
   };
 }

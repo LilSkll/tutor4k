@@ -1,7 +1,9 @@
 import { getTeacherDashboardRows } from "@/server/teacher/dashboard";
 import { AssignmentService } from "@/server/services/assignments";
 import { getCourseLearningProfileAdmin } from "@/server/learning/student-profile";
+import { resolveTeacherTopicLabel } from "@/lib/teacher-topic-label";
 import type { TeacherAnalyticsDTO } from "@/types/teacher";
+import type { InterfaceLanguage } from "@/types";
 
 export type { TeacherAnalyticsDTO };
 
@@ -9,6 +11,7 @@ export type { TeacherAnalyticsDTO };
 export async function getTeacherAnalytics(
   teacherId: string,
   courseId?: string,
+  interfaceLanguage: InterfaceLanguage = "ru",
 ): Promise<TeacherAnalyticsDTO> {
   const [rows, assignments] = await Promise.all([
     getTeacherDashboardRows(teacherId, courseId),
@@ -64,10 +67,20 @@ export async function getTeacherAnalytics(
       }
     }),
   );
-  const weakTopics = [...topicCounts.entries()]
+  const weakTopicsRaw = [...topicCounts.entries()]
     .map(([topic, v]) => ({ topic, type: v.type, count: v.count }))
     .sort((a, b) => b.count - a.count)
     .slice(0, 12);
+  const weakTopics = await Promise.all(
+    weakTopicsRaw.map(async (w) => ({
+      ...w,
+      topic: await resolveTeacherTopicLabel(
+        w.topic,
+        courseId === "english" || courseId === "spanish" ? courseId : "spanish",
+        interfaceLanguage,
+      ),
+    })),
+  );
 
   const mistakeTypeCounts = new Map<string, number>();
   let openMistakes = 0;

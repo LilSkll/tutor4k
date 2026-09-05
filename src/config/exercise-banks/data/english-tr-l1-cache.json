@@ -1,0 +1,2686 @@
+{
+  "Я студент.": {
+    "es": "Soy estudiante.",
+    "de": "Ich bin Student."
+  },
+  "Она из Лондона.": {
+    "es": "Ella es de Londres.",
+    "de": "Sie kommt aus London."
+  },
+  "Они счастливы.": {
+    "es": "Están felices.",
+    "de": "Sie sind glücklich."
+  },
+  "Мы друзья.": {
+    "es": "Somos amigos.",
+    "de": "Wir sind Freunde."
+  },
+  "Ты учитель?": {
+    "es": "¿Eres profesor?",
+    "de": "Sind Sie Lehrer?"
+  },
+  "Он мой брат.": {
+    "es": "Él es mi hermano.",
+    "de": "Er ist mein Bruder."
+  },
+  "Это книга.": {
+    "es": "Este es un libro.",
+    "de": "Das ist ein Buch."
+  },
+  "Я не голоден.": {
+    "es": "No tengo hambre.",
+    "de": "Ich habe keinen Hunger."
+  },
+  "Она дома?": {
+    "es": "¿Está ella en casa?",
+    "de": "Ist sie zu Hause?"
+  },
+  "Мы в парке.": {
+    "es": "Estamos en el parque.",
+    "de": "Wir sind im Park."
+  },
+  "Его имя Том.": {
+    "es": "Su nombre es Tom.",
+    "de": "Sein Name ist Tom."
+  },
+  "Вы готовы?": {
+    "es": "¿Estás listo?",
+    "de": "Sind Sie bereit?"
+  },
+  "Погода хорошая.": {
+    "es": "El clima es bueno.",
+    "de": "Das Wetter ist gut."
+  },
+  "Они врачи.": {
+    "es": "Son doctores.",
+    "de": "Sie sind Ärzte."
+  },
+  "Я из России.": {
+    "es": "Soy de Rusia.",
+    "de": "Ich komme aus Russland."
+  },
+  "Это интересно.": {
+    "es": "Esto es interesante.",
+    "de": "Das ist interessant."
+  },
+  "Мы не устали.": {
+    "es": "No estamos cansados.",
+    "de": "Wir sind nicht müde."
+  },
+  "Она моя сестра.": {
+    "es": "Ella es mi hermana.",
+    "de": "Sie ist meine Schwester."
+  },
+  "Книги на столе.": {
+    "es": "Libros sobre la mesa.",
+    "de": "Bücher auf dem Tisch."
+  },
+  "Ты очень добрый.": {
+    "es": "Eres muy amable.",
+    "de": "Du bist sehr nett."
+  },
+  "Он работает в банке.": {
+    "es": "Trabaja en un banco.",
+    "de": "Er arbeitet in einer Bank."
+  },
+  "Я не люблю кофе.": {
+    "es": "No me gusta el café.",
+    "de": "Ich mag keinen Kaffee."
+  },
+  "Она ездит в школу на автобусе.": {
+    "es": "Ella va a la escuela en autobús.",
+    "de": "Sie fährt mit dem Bus zur Schule."
+  },
+  "Ты играешь в теннис?": {
+    "es": "¿Juegas tenis?",
+    "de": "Spielst du Tennis?"
+  },
+  "Они учат английский каждый день.": {
+    "es": "Aprenden inglés todos los días.",
+    "de": "Sie lernen jeden Tag Englisch."
+  },
+  "Мой брат смотрит телевизор вечером.": {
+    "es": "Mi hermano mira televisión por la noche.",
+    "de": "Abends schaut mein Bruder fern."
+  },
+  "Мы ужинаем в 7.": {
+    "es": "Cenamos a las 7.",
+    "de": "Wir essen um 7 Uhr zu Abend."
+  },
+  "Она работает здесь?": {
+    "es": "¿Ella trabaja aquí?",
+    "de": "Arbeitet sie hier?"
+  },
+  "Осенью часто идёт дождь.": {
+    "es": "En otoño llueve a menudo.",
+    "de": "Im Herbst regnet es oft."
+  },
+  "Ты ходишь очень быстро.": {
+    "es": "Caminas muy rápido.",
+    "de": "Du gehst sehr schnell."
+  },
+  "Магазин открывается в 9.": {
+    "es": "La tienda abre a las 9.",
+    "de": "Der Laden öffnet um 9 Uhr."
+  },
+  "Я слушаю музыку каждое утро.": {
+    "es": "Escucho música todas las mañanas.",
+    "de": "Ich höre jeden Morgen Musik."
+  },
+  "Она не ест мясо.": {
+    "es": "Ella no come carne.",
+    "de": "Sie isst kein Fleisch."
+  },
+  "Они живут в Лондоне?": {
+    "es": "¿Viven en Londres?",
+    "de": "Leben sie in London?"
+  },
+  "Он завтракает дома.": {
+    "es": "Desayuna en casa.",
+    "de": "Er frühstückt zu Hause."
+  },
+  "Кошки любят молоко.": {
+    "es": "A los gatos les encanta la leche.",
+    "de": "Katzen lieben Milch."
+  },
+  "Солнце встаёт на востоке.": {
+    "es": "El sol sale por el este.",
+    "de": "Die Sonne geht im Osten auf."
+  },
+  "Мы ходим в зал по понедельникам.": {
+    "es": "Los lunes vamos al gimnasio.",
+    "de": "Montags gehen wir ins Fitnessstudio."
+  },
+  "Зимой идёт снег?": {
+    "es": "¿Nieva en invierno?",
+    "de": "Schneit es im Winter?"
+  },
+  "Мои родители живут в Москве.": {
+    "es": "Mis padres viven en Moscú.",
+    "de": "Meine Eltern leben in Moskau."
+  },
+  "Как тебя зовут?": {
+    "es": "¿Cómo te llamas?",
+    "de": "Wie heißt du?"
+  },
+  "Где ты живёшь?": {
+    "es": "¿Dónde vive?",
+    "de": "Wo wohnst du?"
+  },
+  "Почему ты опоздал?": {
+    "es": "¿Por qué llegas tarde?",
+    "de": "Warum bist du zu spät?"
+  },
+  "Кто она?": {
+    "es": "¿Quién es ella?",
+    "de": "Wer ist sie?"
+  },
+  "Сколько тебе лет?": {
+    "es": "¿Cuántos años tiene?",
+    "de": "Wie alt bist du?"
+  },
+  "Когда занятие?": {
+    "es": "¿Cuándo es la clase?",
+    "de": "Wann ist Unterricht?"
+  },
+  "Сколько у тебя книг?": {
+    "es": "¿Cuantos libros tienes?",
+    "de": "Wie viele Bücher hast du?"
+  },
+  "Где ты работаешь?": {
+    "es": "¿Dónde trabajas?",
+    "de": "Wo arbeitest du?"
+  },
+  "Какой твой любимый цвет?": {
+    "es": "¿Cuál es tu color favorito?",
+    "de": "Was ist deine Lieblingsfarbe?"
+  },
+  "Кто тебе звонил?": {
+    "es": "¿Quién te llamó?",
+    "de": "Wer hat dich angerufen?"
+  },
+  "Откуда ты?": {
+    "es": "¿De dónde eres?",
+    "de": "Woher kommst du?"
+  },
+  "Когда у тебя день рождения?": {
+    "es": "¿Cuándo es tu cumpleaños?",
+    "de": "Wann ist dein Geburtstag?"
+  },
+  "Почему ты учишь английский?": {
+    "es": "¿Por qué estás aprendiendo inglés?",
+    "de": "Warum lernst du Englisch?"
+  },
+  "Сколько это стоит?": {
+    "es": "¿Cuánto cuesta?",
+    "de": "Wie viel kostet es?"
+  },
+  "Который час?": {
+    "es": "¿Qué hora es?",
+    "de": "Wie spät ist es?"
+  },
+  "Где ближайшая станция?": {
+    "es": "¿Dónde está la estación más cercana?",
+    "de": "Wo ist der nächste Bahnhof?"
+  },
+  "Как ты добираешься на работу?": {
+    "es": "¿Cómo llegas al trabajo?",
+    "de": "Wie kommst du zur Arbeit?"
+  },
+  "Кто написал эту книгу?": {
+    "es": "¿Quién escribió este libro?",
+    "de": "Wer hat dieses Buch geschrieben?"
+  },
+  "Когда начинается фильм?": {
+    "es": "¿Cuándo empieza la película?",
+    "de": "Wann beginnt der Film?"
+  },
+  "Какая погода?": {
+    "es": "¿Como está el clima?",
+    "de": "Wie ist das Wetter?"
+  },
+  "Здесь рядом есть банк.": {
+    "es": "Hay un banco cerca.",
+    "de": "In der Nähe gibt es eine Bank."
+  },
+  "На столе три книги.": {
+    "es": "Hay tres libros sobre la mesa.",
+    "de": "Auf dem Tisch liegen drei Bücher."
+  },
+  "Яблок нет.": {
+    "es": "No hay manzanas.",
+    "de": "Es gibt keine Äpfel."
+  },
+  "Здесь есть аптека?": {
+    "es": "¿Hay una farmacia cerca?",
+    "de": "Gibt es hier eine Apotheke?"
+  },
+  "В парке есть люди.": {
+    "es": "Hay gente en el parque.",
+    "de": "Es sind Leute im Park."
+  },
+  "На этой улице есть кафе?": {
+    "es": "¿Hay una cafetería en esta calle?",
+    "de": "Gibt es in dieser Straße ein Café?"
+  },
+  "В холодильнике нет молока.": {
+    "es": "No hay leche en el frigorífico.",
+    "de": "Im Kühlschrank ist keine Milch."
+  },
+  "Есть ли стулья?": {
+    "es": "¿Hay sillas?",
+    "de": "Gibt es Stühle?"
+  },
+  "В комнате два окна.": {
+    "es": "La habitación tiene dos ventanas.",
+    "de": "Das Zimmer hat zwei Fenster."
+  },
+  "Есть проблема.": {
+    "es": "Hay un problema.",
+    "de": "Es gibt ein Problem."
+  },
+  "Есть для меня сообщения?": {
+    "es": "¿Tienes algún mensaje para mí?",
+    "de": "Haben Sie Nachrichten für mich?"
+  },
+  "Сахара не осталось.": {
+    "es": "No queda azúcar.",
+    "de": "Es ist kein Zucker mehr übrig."
+  },
+  "Летом много туристов.": {
+    "es": "Hay muchos turistas en verano.",
+    "de": "Im Sommer gibt es viele Touristen."
+  },
+  "Рядом есть университет?": {
+    "es": "¿Hay una universidad cerca?",
+    "de": "Gibt es eine Universität in der Nähe?"
+  },
+  "В центре есть старая церковь.": {
+    "es": "Hay una antigua iglesia en el centro.",
+    "de": "Im Zentrum steht eine alte Kirche."
+  },
+  "После полуночи автобусов нет.": {
+    "es": "No hay autobuses después de medianoche.",
+    "de": "Nach Mitternacht fahren keine Busse mehr."
+  },
+  "Здесь есть супермаркет?": {
+    "es": "¿Hay un supermercado aquí?",
+    "de": "Gibt es hier einen Supermarkt?"
+  },
+  "В очереди пять человек.": {
+    "es": "Hay cinco personas en fila.",
+    "de": "In der Schlange stehen fünf Personen."
+  },
+  "На тарелке апельсин.": {
+    "es": "Hay una naranja en el plato.",
+    "de": "Auf dem Teller liegt eine Orange."
+  },
+  "Есть открытые магазины?": {
+    "es": "¿Hay tiendas abiertas?",
+    "de": "Sind Geschäfte geöffnet?"
+  },
+  "Можешь мне помочь?": {
+    "es": "¿Me puedes ayudar?",
+    "de": "Können Sie mir helfen?"
+  },
+  "Я умею плавать.": {
+    "es": "Puedo nadar.",
+    "de": "Ich kann schwimmen."
+  },
+  "Она не умеет водить.": {
+    "es": "Ella no sabe conducir.",
+    "de": "Sie weiß nicht, wie man Auto fährt."
+  },
+  "Он говорит по-французски?": {
+    "es": "¿Habla francés?",
+    "de": "Spricht er Französisch?"
+  },
+  "Они умеют говорить по-английски.": {
+    "es": "Pueden hablar inglés.",
+    "de": "Sie können Englisch sprechen."
+  },
+  "Можешь идти.": {
+    "es": "Puedes irte.",
+    "de": "Du kannst gehen."
+  },
+  "Мы не можем прийти завтра.": {
+    "es": "No podemos venir mañana.",
+    "de": "Wir können morgen nicht kommen."
+  },
+  "Можно открыть окно?": {
+    "es": "¿Puedo abrir la ventana?",
+    "de": "Kann ich das Fenster öffnen?"
+  },
+  "Он умеет играть на пианино.": {
+    "es": "Sabe tocar el piano.",
+    "de": "Er kann Klavier spielen."
+  },
+  "Птицы умеют летать.": {
+    "es": "Los pájaros pueden volar.",
+    "de": "Vögel können fliegen."
+  },
+  "Я тебя не слышу.": {
+    "es": "No puedo oírte.",
+    "de": "Ich kann dich nicht hören."
+  },
+  "Ты умеешь готовить?": {
+    "es": "¿Sabes cocinar?",
+    "de": "Kannst du kochen?"
+  },
+  "Она хорошо поёт.": {
+    "es": "Ella canta bien.",
+    "de": "Sie singt gut."
+  },
+  "Дети могут здесь плавать.": {
+    "es": "Los niños pueden nadar aquí.",
+    "de": "Kinder können hier schwimmen."
+  },
+  "Он не может прийти сегодня.": {
+    "es": "No puede venir hoy.",
+    "de": "Er kann heute nicht kommen."
+  },
+  "Мы можем помочь?": {
+    "es": "¿Podemos ayudar?",
+    "de": "Können wir helfen?"
+  },
+  "Моя собака умеет ловить мяч.": {
+    "es": "Mi perro puede atrapar una pelota.",
+    "de": "Mein Hund kann einen Ball fangen."
+  },
+  "Здесь нельзя парковаться.": {
+    "es": "No se permite estacionarse aquí.",
+    "de": "Sie dürfen hier nicht parken."
+  },
+  "Я немного говорю по-испански.": {
+    "es": "Hablo un poco de español.",
+    "de": "Ich spreche ein wenig Spanisch."
+  },
+  "Она умеет ездить на велосипеде?": {
+    "es": "¿Puede andar en bicicleta?",
+    "de": "Kann sie Fahrrad fahren?"
+  },
+  "Книга на столе.": {
+    "es": "El libro está sobre la mesa.",
+    "de": "Das Buch liegt auf dem Tisch."
+  },
+  "Она дома.": {
+    "es": "Ella está en casa.",
+    "de": "Sie ist zu Hause."
+  },
+  "Мы живём в Лондоне.": {
+    "es": "Vivimos en Londres.",
+    "de": "Wir leben in London."
+  },
+  "Кот под кроватью.": {
+    "es": "El gato está debajo de la cama.",
+    "de": "Die Katze ist unter dem Bett."
+  },
+  "Кафе рядом с банком.": {
+    "es": "Cafetería al lado del banco.",
+    "de": "Café neben der Bank."
+  },
+  "Он работает в больнице.": {
+    "es": "Trabaja en un hospital.",
+    "de": "Er arbeitet in einem Krankenhaus."
+  },
+  "На стене картина.": {
+    "es": "Hay un cuadro en la pared.",
+    "de": "An der Wand hängt ein Bild."
+  },
+  "Ключи в сумке.": {
+    "es": "Llaves en el bolso.",
+    "de": "Schlüssel in der Tasche."
+  },
+  "Встретимся на станции.": {
+    "es": "Encuéntrame en la estación.",
+    "de": "Treffen Sie mich am Bahnhof."
+  },
+  "Магазин между кино и парком.": {
+    "es": "Compra entre el cine y el parque.",
+    "de": "Einkaufen zwischen Kino und Park."
+  },
+  "Машина перед домом.": {
+    "es": "Coche delante de la casa.",
+    "de": "Auto vor dem Haus."
+  },
+  "Она стоит у двери.": {
+    "es": "Ella está parada en la puerta.",
+    "de": "Sie steht an der Tür."
+  },
+  "Они живут на Оксфорд-стрит.": {
+    "es": "Viven en Oxford Street.",
+    "de": "Sie wohnen in der Oxford Street."
+  },
+  "Собака под диваном.": {
+    "es": "El perro está debajo del sofá.",
+    "de": "Der Hund liegt unter dem Sofa."
+  },
+  "Поставь молоко в холодильник.": {
+    "es": "Pon la leche en el frigorífico.",
+    "de": "Die Milch in den Kühlschrank stellen."
+  },
+  "Он ждёт на остановке.": {
+    "es": "Está esperando en la parada del autobús.",
+    "de": "Er wartet an der Bushaltestelle."
+  },
+  "Сад за домом.": {
+    "es": "Jardín detrás de la casa.",
+    "de": "Garten hinter dem Haus."
+  },
+  "Мой офис на втором этаже.": {
+    "es": "Mi oficina está en el segundo piso.",
+    "de": "Mein Büro befindet sich im zweiten Stock."
+  },
+  "Рядом со школой парк.": {
+    "es": "Hay un parque al lado de la escuela.",
+    "de": "Neben der Schule befindet sich ein Park."
+  },
+  "Она учится в библиотеке.": {
+    "es": "Ella estudia en la biblioteca.",
+    "de": "Sie studiert in der Bibliothek."
+  },
+  "Мы поехали в аэропорт.": {
+    "es": "Fuimos al aeropuerto.",
+    "de": "Wir gingen zum Flughafen."
+  },
+  "Вчера я ходил в музей.": {
+    "es": "Ayer fui al museo.",
+    "de": "Gestern war ich im Museum."
+  },
+  "Она не пришла на встречу.": {
+    "es": "Ella no vino a la reunión.",
+    "de": "Sie kam nicht zum Treffen."
+  },
+  "Мы смотрели фильм вчера вечером.": {
+    "es": "Anoche vimos una película.",
+    "de": "Gestern Abend haben wir einen Film gesehen."
+  },
+  "Он потерял ключи.": {
+    "es": "Perdió sus llaves.",
+    "de": "Er hat seine Schlüssel verloren."
+  },
+  "Ты когда-нибудь был в Париже?": {
+    "es": "¿Has estado alguna vez en París?",
+    "de": "Waren Sie schon einmal in Paris?"
+  },
+  "Они приехали поздно.": {
+    "es": "Llegaron tarde.",
+    "de": "Sie kamen spät an."
+  },
+  "Я не понял вопрос.": {
+    "es": "No entendí la pregunta.",
+    "de": "Ich habe die Frage nicht verstanden."
+  },
+  "Мы встретили старых друзей.": {
+    "es": "Nos encontramos con viejos amigos.",
+    "de": "Wir haben alte Freunde getroffen."
+  },
+  "Она написала длинное письмо.": {
+    "es": "Ella escribió una larga carta.",
+    "de": "Sie schrieb einen langen Brief."
+  },
+  "Он не ответил на звонок.": {
+    "es": "No respondió la llamada.",
+    "de": "Er antwortete nicht auf den Anruf."
+  },
+  "Я ел суши впервые.": {
+    "es": "Comí sushi por primera vez.",
+    "de": "Ich habe zum ersten Mal Sushi gegessen."
+  },
+  "Мы провели отличные выходные.": {
+    "es": "Tuvimos un gran fin de semana.",
+    "de": "Wir hatten ein tolles Wochenende."
+  },
+  "Она родилась в Лондоне.": {
+    "es": "Nació en Londres.",
+    "de": "Sie wurde in London geboren."
+  },
+  "Они не знали правду.": {
+    "es": "No sabían la verdad.",
+    "de": "Sie kannten die Wahrheit nicht."
+  },
+  "Это самое высокое здание.": {
+    "es": "Este es el edificio más alto.",
+    "de": "Dies ist das höchste Gebäude."
+  },
+  "Эта книга интереснее той.": {
+    "es": "Este libro es más interesante que aquel.",
+    "de": "Dieses Buch ist interessanter als jenes."
+  },
+  "Она лучший студент в классе.": {
+    "es": "Ella es la mejor alumna de la clase.",
+    "de": "Sie ist die beste Schülerin der Klasse."
+  },
+  "Он бегает быстрее меня.": {
+    "es": "Corre más rápido que yo.",
+    "de": "Er rennt schneller als ich."
+  },
+  "Моя машина такая же быстрая, как твоя.": {
+    "es": "Mi coche es tan rápido como el tuyo.",
+    "de": "Mein Auto ist genauso schnell wie deines."
+  },
+  "Это самое сложное упражнение сегодня.": {
+    "es": "Este es el ejercicio más difícil hoy.",
+    "de": "Dies ist heute die schwierigste Übung."
+  },
+  "Лондон больше Оксфорда.": {
+    "es": "Londres es más grande que Oxford.",
+    "de": "London ist größer als Oxford."
+  },
+  "Она говорит по-английски лучше своего брата.": {
+    "es": "Habla inglés mejor que su hermano.",
+    "de": "Sie spricht besser Englisch als ihr Bruder."
+  },
+  "Это был худший фильм, который я когда-либо видел.": {
+    "es": "Fue la peor película que he visto en mi vida.",
+    "de": "Es war der schlechteste Film, den ich je gesehen habe."
+  },
+  "Этот ресторан дешевле того.": {
+    "es": "Este restaurante es más barato que aquel.",
+    "de": "Dieses Restaurant ist billiger als dieses."
+  },
+  "Он выше своего отца.": {
+    "es": "Es más alto que su padre.",
+    "de": "Er ist größer als sein Vater."
+  },
+  "Этот маршрут короче другого.": {
+    "es": "Esta ruta es más corta que la otra.",
+    "de": "Diese Route ist kürzer als die andere."
+  },
+  "Она не такая высокая, как её сестра.": {
+    "es": "Ella no es tan alta como su hermana.",
+    "de": "Sie ist nicht so groß wie ihre Schwester."
+  },
+  "Чем больше ты практикуешься, тем лучше получается.": {
+    "es": "Cuanto más practicas, mejor te vuelves.",
+    "de": "Je mehr Sie üben, desto besser werden Sie."
+  },
+  "Этот телефон дешевле моего.": {
+    "es": "Este teléfono es más barato que el mío.",
+    "de": "Dieses Telefon ist billiger als meines."
+  },
+  "Мы собираемся путешествовать.": {
+    "es": "Vamos a viajar.",
+    "de": "Wir werden reisen."
+  },
+  "Мы собираемся путешествовать летом.": {
+    "es": "Vamos a viajar en verano.",
+    "de": "Wir werden im Sommer verreisen."
+  },
+  "Она собирается переехать в Лондон.": {
+    "es": "Ella está planeando mudarse a Londres.",
+    "de": "Sie plant, nach London zu ziehen."
+  },
+  "Ты собираешься прийти?": {
+    "es": "¿Vas a venir?",
+    "de": "Wirst du kommen?"
+  },
+  "Они не собираются покупать машину.": {
+    "es": "No van a comprar un coche.",
+    "de": "Sie werden kein Auto kaufen."
+  },
+  "Я собираюсь выучить испанский.": {
+    "es": "Voy a aprender español.",
+    "de": "Ich werde Spanisch lernen."
+  },
+  "Он собирается позвонить тебе.": {
+    "es": "Él te va a llamar.",
+    "de": "Er wird dich anrufen."
+  },
+  "Мы собираемся ужинать в ресторане.": {
+    "es": "Vamos a cenar a un restaurante.",
+    "de": "Wir werden in einem Restaurant zu Abend essen."
+  },
+  "Она собирается сдать экзамен.": {
+    "es": "Ella va a hacer el examen.",
+    "de": "Sie wird die Prüfung ablegen."
+  },
+  "Ты собираешься рано ложиться?": {
+    "es": "¿Te acostarás temprano?",
+    "de": "Gehst du früh zu Bett?"
+  },
+  "Они собираются жениться.": {
+    "es": "Se van a casar.",
+    "de": "Sie werden heiraten."
+  },
+  "Я собираюсь начать новую работу.": {
+    "es": "Estoy a punto de empezar un nuevo trabajo.",
+    "de": "Ich bin dabei, einen neuen Job anzufangen."
+  },
+  "Мы не собираемся сдаваться.": {
+    "es": "No nos vamos a rendir.",
+    "de": "Wir werden nicht aufgeben."
+  },
+  "Они собираются переехать.": {
+    "es": "Se van a mover.",
+    "de": "Sie werden umziehen."
+  },
+  "Я никогда не был в Лондоне.": {
+    "es": "Nunca he estado en Londres.",
+    "de": "Ich war noch nie in London."
+  },
+  "Я никогда не был в Японии.": {
+    "es": "Nunca he estado en Japón.",
+    "de": "Ich war noch nie in Japan."
+  },
+  "Она уже закончила домашнее задание.": {
+    "es": "Ella ya terminó su tarea.",
+    "de": "Sie hat ihre Hausaufgaben bereits erledigt."
+  },
+  "Мы только что приехали.": {
+    "es": "Acabamos de llegar.",
+    "de": "Wir sind gerade angekommen."
+  },
+  "Ты когда-нибудь пробовал суши?": {
+    "es": "¿Alguna vez has probado el sushi?",
+    "de": "Haben Sie schon einmal Sushi probiert?"
+  },
+  "Он потерял паспорт.": {
+    "es": "Perdió su pasaporte.",
+    "de": "Er hat seinen Reisepass verloren."
+  },
+  "Они ещё не ответили.": {
+    "es": "Aún no han respondido.",
+    "de": "Sie haben noch nicht geantwortet."
+  },
+  "Я видел этот фильм три раза.": {
+    "es": "He visto esta película tres veces.",
+    "de": "Ich habe diesen Film dreimal gesehen."
+  },
+  "Она жила в Берлине пять лет.": {
+    "es": "Vivió en Berlín durante cinco años.",
+    "de": "Sie lebte fünf Jahre in Berlin."
+  },
+  "Мы не встречались давно.": {
+    "es": "Hace mucho que no nos vemos.",
+    "de": "Wir haben uns schon lange nicht mehr getroffen."
+  },
+  "Он написал две книги.": {
+    "es": "Escribió dos libros.",
+    "de": "Er schrieb zwei Bücher."
+  },
+  "Ты когда-нибудь летал на воздушном шаре?": {
+    "es": "¿Alguna vez has volado en un globo aerostático?",
+    "de": "Sind Sie schon einmal mit einem Heißluftballon geflogen?"
+  },
+  "Я ещё не ел сегодня.": {
+    "es": "Todavía no he comido hoy.",
+    "de": "Ich habe heute noch nichts gegessen."
+  },
+  "Она уехала в командировку.": {
+    "es": "Se fue de viaje de negocios.",
+    "de": "Sie war auf Geschäftsreise."
+  },
+  "Мы знаем друг друга с детства.": {
+    "es": "Nos conocemos desde la infancia.",
+    "de": "Wir kennen uns seit unserer Kindheit."
+  },
+  "У меня есть немного времени.": {
+    "es": "Tengo algo de tiempo.",
+    "de": "Ich habe etwas Zeit."
+  },
+  "У меня много друзей.": {
+    "es": "Tengo muchos amigos.",
+    "de": "Ich habe viele Freunde."
+  },
+  "В бутылке много воды.": {
+    "es": "Hay mucha agua en la botella.",
+    "de": "Es ist viel Wasser in der Flasche."
+  },
+  "У меня немного денег.": {
+    "es": "No tengo mucho dinero.",
+    "de": "Ich habe nicht viel Geld."
+  },
+  "У неё меньше книг, чем у меня.": {
+    "es": "Ella tiene menos libros que yo.",
+    "de": "Sie hat weniger Bücher als ich."
+  },
+  "Здесь много людей.": {
+    "es": "Hay mucha gente aquí.",
+    "de": "Es sind viele Leute hier."
+  },
+  "Мне нужна небольшая информация.": {
+    "es": "Necesito un poco de información.",
+    "de": "Ich brauche ein paar Informationen."
+  },
+  "Сколько яблок ты хочешь?": {
+    "es": "¿Cuántas manzanas quieres?",
+    "de": "Wie viele Äpfel möchtest du?"
+  },
+  "У нас много домашней работы.": {
+    "es": "Tenemos mucha tarea.",
+    "de": "Wir haben viele Hausaufgaben."
+  },
+  "Сахара почти не осталось.": {
+    "es": "Casi no queda azúcar.",
+    "de": "Es ist fast kein Zucker mehr übrig."
+  },
+  "Он выпил слишком много чашек кофе.": {
+    "es": "Bebió demasiadas tazas de café.",
+    "de": "Er hat zu viele Tassen Kaffee getrunken."
+  },
+  "У меня меньше времени, чем у тебя.": {
+    "es": "Tengo menos tiempo que tú.",
+    "de": "Ich habe weniger Zeit als du."
+  },
+  "В стакане немного воды.": {
+    "es": "Hay un poco de agua en el vaso.",
+    "de": "Es ist etwas Wasser im Glas."
+  },
+  "У нас достаточно места.": {
+    "es": "Tenemos suficiente espacio.",
+    "de": "Wir haben genug Platz."
+  },
+  "Несколько студентов опоздали.": {
+    "es": "Varios estudiantes llegaron tarde.",
+    "de": "Mehrere Schüler kamen zu spät."
+  },
+  "Я позвоню тебе завтра.": {
+    "es": "Te llamaré mañana.",
+    "de": "Ich rufe dich morgen an."
+  },
+  "Она приедет в пятницу.": {
+    "es": "Llegará el viernes.",
+    "de": "Sie wird am Freitag ankommen."
+  },
+  "Мы не опоздаем.": {
+    "es": "No llegaremos tarde.",
+    "de": "Wir kommen nicht zu spät."
+  },
+  "Если пойдёт дождь, я останусь дома.": {
+    "es": "Si llueve, me quedaré en casa.",
+    "de": "Wenn es regnet, bleibe ich zu Hause."
+  },
+  "Я помогу тебе с этим.": {
+    "es": "Te ayudaré con esto.",
+    "de": "Ich helfe Ihnen dabei."
+  },
+  "Они, наверное, не придут.": {
+    "es": "Probablemente no vengan.",
+    "de": "Sie werden wahrscheinlich nicht kommen."
+  },
+  "Ты успеешь?": {
+    "es": "¿Llegarás a tiempo?",
+    "de": "Wirst du pünktlich sein?"
+  },
+  "Это будет сложно.": {
+    "es": "Será difícil.",
+    "de": "Es wird schwierig sein."
+  },
+  "Я думаю, что он согласится.": {
+    "es": "Creo que estará de acuerdo.",
+    "de": "Ich denke, er wird zustimmen."
+  },
+  "Мы проведём отпуск в Италии.": {
+    "es": "Pasaremos nuestras vacaciones en Italia.",
+    "de": "Wir werden unseren Urlaub in Italien verbringen."
+  },
+  "Она не забудет.": {
+    "es": "Ella no lo olvidará.",
+    "de": "Sie wird es nicht vergessen."
+  },
+  "Через год я буду говорить по-английски свободно.": {
+    "es": "En un año hablaré inglés con fluidez.",
+    "de": "In einem Jahr werde ich fließend Englisch sprechen."
+  },
+  "Он сделает всё возможное.": {
+    "es": "Él hará lo mejor que pueda.",
+    "de": "Er wird sein Bestes geben."
+  },
+  "Мы увидимся скоро.": {
+    "es": "Nos vemos pronto.",
+    "de": "Wir sehen uns bald."
+  },
+  "Это изменит всё.": {
+    "es": "Esto cambiará todo.",
+    "de": "Das wird alles verändern."
+  },
+  "Тебе следует отдохнуть.": {
+    "es": "Deberías descansar.",
+    "de": "Du solltest dich ausruhen."
+  },
+  "Ты должен носить шлем.": {
+    "es": "Debes usar casco.",
+    "de": "Sie müssen einen Helm tragen."
+  },
+  "Мне нужно работать завтра.": {
+    "es": "Necesito trabajar mañana.",
+    "de": "Ich muss morgen arbeiten."
+  },
+  "Здесь нельзя курить.": {
+    "es": "No puedes fumar aquí.",
+    "de": "Hier darf nicht geraucht werden."
+  },
+  "Тебе не обязательно приходить.": {
+    "es": "No tienes que venir.",
+    "de": "Du musst nicht kommen."
+  },
+  "Ты можешь помочь мне?": {
+    "es": "¿Me puedes ayudar?",
+    "de": "Können Sie mir helfen?"
+  },
+  "Она умеет играть на пианино.": {
+    "es": "Ella puede tocar el piano.",
+    "de": "Sie kann Klavier spielen."
+  },
+  "Можно мне войти?": {
+    "es": "¿Puedo entrar?",
+    "de": "Kann ich reinkommen?"
+  },
+  "Ты мог бы закрыть окно?": {
+    "es": "¿Podrías cerrar la ventana?",
+    "de": "Könnten Sie das Fenster schließen?"
+  },
+  "Он, должно быть, заблудился.": {
+    "es": "Debe haberse perdido.",
+    "de": "Er muss sich verlaufen haben."
+  },
+  "Тебе следовало позвонить.": {
+    "es": "Deberías haber llamado.",
+    "de": "Du hättest anrufen sollen."
+  },
+  "Он мог бы помочь, но не помог.": {
+    "es": "Podría haber ayudado, pero no lo hizo.",
+    "de": "Er hätte helfen können, aber er tat es nicht."
+  },
+  "Ты не должен был так говорить.": {
+    "es": "No deberías haber dicho eso.",
+    "de": "Das hättest du nicht sagen sollen."
+  },
+  "Мне нужно было раньше уйти.": {
+    "es": "Debería haberme ido antes.",
+    "de": "Ich hätte früher gehen sollen."
+  },
+  "Он не мог быть дома.": {
+    "es": "No podía estar en casa.",
+    "de": "Er konnte nicht zu Hause sein."
+  },
+  "Я читал книгу, когда позвонил телефон.": {
+    "es": "Estaba leyendo un libro cuando sonó el teléfono.",
+    "de": "Ich las gerade ein Buch, als das Telefon klingelte."
+  },
+  "Я читал, когда она позвонила.": {
+    "es": "Estaba leyendo cuando llamó.",
+    "de": "Ich habe gerade gelesen, als sie anrief."
+  },
+  "Они смотрели телевизор.": {
+    "es": "Estaban viendo la televisión.",
+    "de": "Sie sahen fern."
+  },
+  "Когда я пришёл, поезд уже уехал.": {
+    "es": "Cuando llegué, el tren ya había partido.",
+    "de": "Als ich ankam, war der Zug bereits abgefahren."
+  },
+  "Раньше я играл в теннис.": {
+    "es": "Solía ​​jugar al tenis.",
+    "de": "Ich habe früher Tennis gespielt."
+  },
+  "Она готовила, когда я пришёл.": {
+    "es": "Ella estaba cocinando cuando llegué.",
+    "de": "Sie war gerade am Kochen, als ich ankam."
+  },
+  "Пока мы шли, начался дождь.": {
+    "es": "Mientras caminábamos empezó a llover.",
+    "de": "Während wir gingen, fing es an zu regnen."
+  },
+  "Он уже закончил, когда я пришёл.": {
+    "es": "Ya había terminado cuando llegué.",
+    "de": "Als ich ankam, war er bereits fertig."
+  },
+  "Я учился всю ночь.": {
+    "es": "Estudié toda la noche.",
+    "de": "Ich habe die ganze Nacht gelernt."
+  },
+  "Они ушли домой до полуночи.": {
+    "es": "Regresaron a casa antes de medianoche.",
+    "de": "Sie gingen vor Mitternacht nach Hause."
+  },
+  "Раньше она жила в Париже.": {
+    "es": "Solía ​​vivir en París.",
+    "de": "Sie lebte früher in Paris."
+  },
+  "Я читал книгу, когда зазвонил телефон.": {
+    "es": "Estaba leyendo un libro cuando sonó el teléfono.",
+    "de": "Ich las gerade ein Buch, als das Telefon klingelte."
+  },
+  "Мы ужинали в восемь.": {
+    "es": "Cenamos a las ocho.",
+    "de": "Wir aßen um acht zu Abend."
+  },
+  "К тому времени, как я пришёл, они уже ушли.": {
+    "es": "Cuando llegué ya se habían ido.",
+    "de": "Als ich ankam, waren sie bereits gegangen."
+  },
+  "Он работал, когда я его увидел.": {
+    "es": "Estaba trabajando cuando lo vi.",
+    "de": "Er arbeitete, als ich ihn sah."
+  },
+  "Она работает здесь с 2020 года.": {
+    "es": "Trabaja aquí desde 2020.",
+    "de": "Seit 2020 arbeitet sie hier."
+  },
+  "Сколько времени ты ждёшь?": {
+    "es": "¿Cuánto tiempo estás esperando?",
+    "de": "Wie lange wartest du?"
+  },
+  "Они учат испанский два года.": {
+    "es": "Llevan dos años estudiando español.",
+    "de": "Sie lernen seit zwei Jahren Spanisch."
+  },
+  "Дождь идёт с утра.": {
+    "es": "Ha estado lloviendo desde la mañana.",
+    "de": "Seit dem Morgen regnet es."
+  },
+  "Я давно не видел его.": {
+    "es": "Hace mucho que no lo veo.",
+    "de": "Ich habe ihn schon lange nicht mehr gesehen."
+  },
+  "Она весь день готовит.": {
+    "es": "Ella cocina todo el día.",
+    "de": "Sie kocht den ganzen Tag."
+  },
+  "Мы живём здесь с прошлого года.": {
+    "es": "Hemos estado viviendo aquí desde el año pasado.",
+    "de": "Wir wohnen seit letztem Jahr hier."
+  },
+  "Он весь вечер играл в футбол.": {
+    "es": "Jugó al fútbol toda la noche.",
+    "de": "Er spielte den ganzen Abend Fußball."
+  },
+  "Сколько времени ты изучаешь английский?": {
+    "es": "¿Cuánto tiempo llevas estudiando inglés?",
+    "de": "Wie lange lernen Sie schon Englisch?"
+  },
+  "Я давно хочу посетить Японию.": {
+    "es": "Hace tiempo que quiero visitar Japón.",
+    "de": "Ich wollte schon seit langem Japan besuchen."
+  },
+  "Они ремонтируют дом уже три месяца.": {
+    "es": "Ya llevan tres meses renovando la casa.",
+    "de": "Seit drei Monaten renovieren sie das Haus."
+  },
+  "Ты давно здесь?": {
+    "es": "¿Cuánto tiempo llevas aquí?",
+    "de": "Wie lange bist du schon hier?"
+  },
+  "Она весь день говорит по телефону.": {
+    "es": "Habla por teléfono todo el día.",
+    "de": "Sie telefoniert den ganzen Tag."
+  },
+  "Хотел бы я знать ответ.": {
+    "es": "Ojalá supiera la respuesta.",
+    "de": "Ich wünschte, ich wüsste die Antwort."
+  },
+  "Если у меня будет время, я тебе позвоню.": {
+    "es": "Si tengo tiempo te llamo.",
+    "de": "Wenn ich Zeit habe, rufe ich dich an."
+  },
+  "Если бы я был богат, я бы путешествовал.": {
+    "es": "Si fuera rico, viajaría.",
+    "de": "Wenn ich reich wäre, würde ich reisen."
+  },
+  "Если бы она училась, она бы сдала.": {
+    "es": "Si hubiera estudiado, habría aprobado.",
+    "de": "Wenn sie studiert hätte, hätte sie bestanden."
+  },
+  "Если бы я знал, я бы тебе сказал.": {
+    "es": "Si lo supiera, te lo diría.",
+    "de": "Wenn ich es wüsste, würde ich es dir sagen."
+  },
+  "На твоём месте я бы принял.": {
+    "es": "Si yo fuera tú, aceptaría.",
+    "de": "Wenn ich du wäre, würde ich akzeptieren."
+  },
+  "Если бы он пошёл, он бы это увидел.": {
+    "es": "Si hubiera ido, lo habría visto.",
+    "de": "Wenn er gegangen wäre, hätte er es gesehen."
+  },
+  "Если нагреть лёд, он тает.": {
+    "es": "Si calientas hielo, se derrite.",
+    "de": "Wenn man Eis erhitzt, schmilzt es."
+  },
+  "Если бы у меня было больше времени, я бы выучил французский.": {
+    "es": "Si tuviera más tiempo, aprendería francés.",
+    "de": "Wenn ich mehr Zeit hätte, würde ich Französisch lernen."
+  },
+  "Если бы она училась усерднее, она бы сдала.": {
+    "es": "Si hubiera estudiado más, habría aprobado.",
+    "de": "Wenn sie härter gelernt hätte, hätte sie bestanden."
+  },
+  "Если бы я выиграл в лотерею, я бы купил дом.": {
+    "es": "Si me ganara la lotería, compraría una casa.",
+    "de": "Wenn ich im Lotto gewinnen würde, würde ich ein Haus kaufen."
+  },
+  "Если бы они приехали раньше, они бы успели на поезд.": {
+    "es": "Si hubieran llegado antes, habrían cogido el tren.",
+    "de": "Wenn sie früher angekommen wären, hätten sie den Zug genommen."
+  },
+  "Если ты попросишь вежливо, он может помочь.": {
+    "es": "Si se lo pides cortésmente, puede que te ayude.",
+    "de": "Wenn Sie höflich fragen, kann er Ihnen helfen."
+  },
+  "Если бы я был выше, я бы играл в баскетбол.": {
+    "es": "Si fuera más alto, jugaría baloncesto.",
+    "de": "Wenn ich größer wäre, würde ich Basketball spielen."
+  },
+  "Мона Лиза была написана Леонардо да Винчи.": {
+    "es": "Mona Lisa fue pintada por Leonardo da Vinci.",
+    "de": "Mona Lisa wurde von Leonardo da Vinci gemalt."
+  },
+  "Книга написана в 1990 году.": {
+    "es": "El libro fue escrito en 1990.",
+    "de": "Das Buch wurde 1990 geschrieben."
+  },
+  "Дом построен в прошлом веке.": {
+    "es": "La casa fue construida en el siglo pasado.",
+    "de": "Das Haus wurde im letzten Jahrhundert erbaut."
+  },
+  "Письмо отправлено вчера.": {
+    "es": "La carta fue enviada ayer.",
+    "de": "Der Brief wurde gestern verschickt."
+  },
+  "Английский говорят во всём мире.": {
+    "es": "El inglés se habla en todo el mundo.",
+    "de": "Auf der ganzen Welt wird Englisch gesprochen."
+  },
+  "Решение принято правительством.": {
+    "es": "La decisión fue tomada por el gobierno.",
+    "de": "Die Entscheidung wurde von der Regierung getroffen."
+  },
+  "Окна открыты.": {
+    "es": "Las ventanas están abiertas.",
+    "de": "Die Fenster sind geöffnet."
+  },
+  "Еда приготовлена мамой.": {
+    "es": "La comida la prepara mamá.",
+    "de": "Das Essen wird von Mama zubereitet."
+  },
+  "Проблема решена.": {
+    "es": "Problema resuelto.",
+    "de": "Problem gelöst."
+  },
+  "Закон принят в прошлом году.": {
+    "es": "La ley fue aprobada el año pasado.",
+    "de": "Das Gesetz wurde letztes Jahr verabschiedet."
+  },
+  "Новый мост строят сейчас.": {
+    "es": "Ahora se está construyendo un nuevo puente.",
+    "de": "Jetzt wird eine neue Brücke gebaut."
+  },
+  "Его пригласили на конференцию.": {
+    "es": "Fue invitado a la conferencia.",
+    "de": "Er wurde zur Konferenz eingeladen."
+  },
+  "Комнату убирают каждый день.": {
+    "es": "La habitación se limpia todos los días.",
+    "de": "Das Zimmer wird jeden Tag gereinigt."
+  },
+  "Картина была украдена.": {
+    "es": "El cuadro fue robado.",
+    "de": "Das Gemälde wurde gestohlen."
+  },
+  "Работа будет закончена завтра.": {
+    "es": "La obra estará terminada mañana.",
+    "de": "Die Arbeiten werden morgen abgeschlossen sein."
+  },
+  "Он сказал, что придёт завтра.": {
+    "es": "Dijo que vendría mañana.",
+    "de": "Er sagte, er würde morgen kommen."
+  },
+  "Она сказала: «Я устала».": {
+    "es": "Ella dijo: \"Estoy cansada\".",
+    "de": "Sie sagte: „Ich bin müde.“"
+  },
+  "Он сказал мне: «Я приду завтра».": {
+    "es": "Me dijo: \"Vendré mañana\".",
+    "de": "Er sagte mir: „Ich komme morgen.“"
+  },
+  "Они спросили: «Где вокзал?»": {
+    "es": "Preguntaron: \"¿Dónde está la estación?\"",
+    "de": "Sie fragten: „Wo ist der Bahnhof?“"
+  },
+  "Она сказала: «Я закончила».": {
+    "es": "Ella dijo: \"Ya terminé\".",
+    "de": "Sie sagte: „Ich bin fertig.“"
+  },
+  "Он сказал: «Я пошёл домой вчера».": {
+    "es": "Él dijo: \"Ayer fui a casa\".",
+    "de": "Er sagte: „Ich bin gestern nach Hause gegangen.“"
+  },
+  "Она спросила: «Ты можешь мне помочь?»": {
+    "es": "Ella preguntó: \"¿Puedes ayudarme?\"",
+    "de": "Sie fragte: „Können Sie mir helfen?“"
+  },
+  "Он сказал: «Я живу в Лондоне».": {
+    "es": "Dijo: \"Vivo en Londres\".",
+    "de": "Er sagte: „Ich lebe in London.“"
+  },
+  "Они сказали: «Мы уходим сейчас».": {
+    "es": "Dijeron: \"Nos vamos ahora\".",
+    "de": "Sie sagten: „Wir gehen jetzt.“"
+  },
+  "Она сказала ему: «Я тебя люблю».": {
+    "es": "Ella le dijo: \"Te amo\".",
+    "de": "Sie sagte zu ihm: „Ich liebe dich.“"
+  },
+  "Он спросил: «Который час?»": {
+    "es": "Preguntó: \"¿Qué hora es?\"",
+    "de": "Er fragte: „Wie spät ist es?“"
+  },
+  "Она сказала: «Я не умею плавать».": {
+    "es": "Ella dijo: \"No sé nadar\".",
+    "de": "Sie sagte: „Ich kann nicht schwimmen.“"
+  },
+  "Они объяснили: «Мы приедем в шесть».": {
+    "es": "Explicaron: “Llegaremos a las seis”.",
+    "de": "Sie erklärten: „Wir werden um sechs ankommen.“"
+  },
+  "Он сказал: «Я должен идти».": {
+    "es": "Él dijo: \"Tengo que irme\".",
+    "de": "Er sagte: „Ich muss gehen.“"
+  },
+  "Она спросила: «Ты любишь кофе?»": {
+    "es": "Ella preguntó: \"¿Te gusta el café?\"",
+    "de": "Sie fragte: „Magst du Kaffee?“"
+  },
+  "Я действительно верю тебе!": {
+    "es": "¡Realmente te creo!",
+    "de": "Ich glaube dir wirklich!"
+  },
+  "Никогда я не видел такой красоты.": {
+    "es": "Nunca había visto tanta belleza.",
+    "de": "So eine Schönheit habe ich noch nie gesehen."
+  },
+  "Именно Джон решил эту проблему.": {
+    "es": "Fue Juan quien resolvió este problema.",
+    "de": "Es war John, der dieses Problem löste."
+  },
+  "То, что мне нужно, — это длинный отпуск.": {
+    "es": "Lo que necesito son unas largas vacaciones.",
+    "de": "Was ich brauche, ist ein langer Urlaub."
+  },
+  "Редко мы становимся свидетелями такой преданности.": {
+    "es": "Rara vez somos testigos de tal devoción.",
+    "de": "Selten erleben wir eine solche Hingabe."
+  },
+  "Только тогда я понял правду.": {
+    "es": "Sólo entonces entendí la verdad.",
+    "de": "Erst dann verstand ich die Wahrheit."
+  },
+  "Ни при каких обстоятельствах не открывай эту дверь.": {
+    "es": "Bajo ninguna circunstancia abras esta puerta.",
+    "de": "Öffnen Sie diese Tür unter keinen Umständen."
+  },
+  "Именно свободу люди ценят больше всего.": {
+    "es": "Es la libertad lo que más valora la gente.",
+    "de": "Es ist die Freiheit, die die Menschen am meisten schätzen."
+  },
+  "Едва он приехал, как зазвонил телефон.": {
+    "es": "Apenas había llegado cuando sonó el teléfono.",
+    "de": "Er war kaum angekommen, als das Telefon klingelte."
+  },
+  "Так устала была она, что сразу заснула.": {
+    "es": "Estaba tan cansada que inmediatamente se quedó dormida.",
+    "de": "Sie war so müde, dass sie sofort einschlief."
+  },
+  "Не только она выиграла, но и побила рекорд.": {
+    "es": "No sólo ganó, sino que también batió el récord.",
+    "de": "Sie hat nicht nur gewonnen, sondern auch den Rekord gebrochen."
+  },
+  "Я думаю, что да.": {
+    "es": "Creo que sí.",
+    "de": "Ich glaube schon."
+  },
+  "Мне красный, пожалуйста.": {
+    "es": "Quisiera uno rojo, por favor.",
+    "de": "Ich hätte gerne ein rotes, bitte."
+  },
+  "Она устала, а он — нет.": {
+    "es": "Ella estaba cansada, pero él no.",
+    "de": "Sie war müde, er jedoch nicht."
+  },
+  "Очень красиво, не правда ли?": {
+    "es": "Muy hermoso, ¿no?",
+    "de": "Sehr schön, nicht wahr?"
+  },
+  "Такова была её реакция.": {
+    "es": "Esta fue su reacción.",
+    "de": "Das war ihre Reaktion."
+  },
+  "На столе лежала книга.": {
+    "es": "Había un libro sobre la mesa.",
+    "de": "Auf dem Tisch lag ein Buch."
+  },
+  "Никогда я не забуду тот день.": {
+    "es": "Nunca olvidaré ese día.",
+    "de": "Ich werde diesen Tag nie vergessen."
+  },
+  "Он может помочь, если захочет.": {
+    "es": "Él puede ayudar si quiere.",
+    "de": "Er kann helfen, wenn er will."
+  },
+  "Абсолютно потрясающий фильм!": {
+    "es": "¡Película absolutamente increíble!",
+    "de": "Absolut toller Film!"
+  },
+  "Эта машина нуждается в мойке.": {
+    "es": "Este auto necesita lavado.",
+    "de": "Dieses Auto muss gewaschen werden."
+  },
+  "Если бы я учил медицину, я был бы врачом сейчас.": {
+    "es": "Si hubiera estudiado medicina, ahora sería médico.",
+    "de": "Wenn ich Medizin studiert hätte, wäre ich jetzt Arzt."
+  },
+  "Если бы я был выше, я бы попал в команду.": {
+    "es": "Si fuera más alto, habría entrado en el equipo.",
+    "de": "Wenn ich größer wäre, hätte ich es ins Team geschafft."
+  },
+  "Предложение отклонили до нашего прихода.": {
+    "es": "La oferta fue rechazada antes de que llegáramos.",
+    "de": "Das Angebot wurde vor unserer Ankunft abgelehnt."
+  },
+  "Говорят, что проект провалится.": {
+    "es": "Dicen que el proyecto fracasará.",
+    "de": "Sie sagen, das Projekt werde scheitern."
+  },
+  "Ему следовало позвонить раньше.": {
+    "es": "Debería haber llamado antes.",
+    "de": "Er hätte früher anrufen sollen."
+  },
+  "Если бы не её помощь, мы бы провалились.": {
+    "es": "Si no fuera por su ayuda, habríamos fracasado.",
+    "de": "Ohne ihre Hilfe wären wir gescheitert."
+  },
+  "Документ, по-видимому, был подделан.": {
+    "es": "El documento parece haber sido falsificado.",
+    "de": "Das Dokument scheint gefälscht zu sein."
+  },
+  "К тому времени дом уже был построен.": {
+    "es": "Para entonces la casa ya estaba construida.",
+    "de": "Zu diesem Zeitpunkt war das Haus bereits gebaut."
+  },
+  "Ей не следовало так говорить.": {
+    "es": "Ella no debería haber dicho eso.",
+    "de": "Das hätte sie nicht sagen sollen."
+  },
+  "Если бы я знал, я бы пришёл.": {
+    "es": "Si lo hubiera sabido, habría venido.",
+    "de": "Wenn ich es gewusst hätte, wäre ich gekommen."
+  },
+  "Более того, это важно для экзамена.": {
+    "es": "Además, es importante para el examen.",
+    "de": "Darüber hinaus ist es wichtig für die Prüfung."
+  },
+  "Тем не менее, результаты неоднозначны.": {
+    "es": "Sin embargo, los resultados son mixtos.",
+    "de": "Allerdings sind die Ergebnisse gemischt."
+  },
+  "Следовательно, нужны дальнейшие исследования.": {
+    "es": "Por lo tanto, se necesita más investigación.",
+    "de": "Daher ist weitere Forschung erforderlich."
+  },
+  "С одной стороны, это дешевле.": {
+    "es": "Por un lado, es más barato.",
+    "de": "Einerseits ist es günstiger."
+  },
+  "С другой стороны, качество ниже.": {
+    "es": "Por otro lado, la calidad es menor.",
+    "de": "Andererseits ist die Qualität geringer."
+  },
+  "В заключение, преимущества перевешивают недостатки.": {
+    "es": "En conclusión, las ventajas superan a las desventajas.",
+    "de": "Zusammenfassend lässt sich sagen, dass die Vorteile die Nachteile überwiegen."
+  },
+  "Несмотря на трудности, проект успешен.": {
+    "es": "A pesar de las dificultades, el proyecto tiene éxito.",
+    "de": "Trotz der Schwierigkeiten ist das Projekt erfolgreich."
+  },
+  "Благодаря новым технологиям прогресс ускорился.": {
+    "es": "Gracias a las nuevas tecnologías, el progreso se ha acelerado.",
+    "de": "Dank neuer Technologien hat sich der Fortschritt beschleunigt."
+  },
+  "В то время как одни согласны, другие возражают.": {
+    "es": "Mientras algunos están de acuerdo, otros no están de acuerdo.",
+    "de": "Während einige zustimmen, sind andere anderer Meinung."
+  },
+  "Кроме того, следует учитывать экологический аспект.": {
+    "es": "Además, se debe tener en cuenta el aspecto medioambiental.",
+    "de": "Darüber hinaus sollte der Umweltaspekt berücksichtigt werden."
+  },
+  "По моему мнению, это справедливое решение.": {
+    "es": "En mi opinión, esta es una decisión justa.",
+    "de": "Meiner Meinung nach ist das eine faire Entscheidung."
+  },
+  "Согласно исследованию, цифры выросли.": {
+    "es": "Según el estudio, las cifras han aumentado.",
+    "de": "Der Studie zufolge sind die Zahlen gestiegen."
+  },
+  "В отличие от предыдущего отчёта, данные точнее.": {
+    "es": "A diferencia del informe anterior, los datos son más precisos.",
+    "de": "Im Gegensatz zum vorherigen Bericht sind die Daten genauer."
+  },
+  "В целом, тенденция положительная.": {
+    "es": "En general, la tendencia es positiva.",
+    "de": "Generell ist der Trend positiv."
+  },
+  "Например, в развивающихся странах…": {
+    "es": "Por ejemplo, en los países en desarrollo...",
+    "de": "Beispielsweise in Entwicklungsländern..."
+  },
+  "По всей видимости, он уже ушёл.": {
+    "es": "Al parecer ya se fue.",
+    "de": "Offenbar ist er bereits gegangen."
+  },
+  "Маловероятно, что они согласятся.": {
+    "es": "Es poco probable que estén de acuerdo.",
+    "de": "Es ist unwahrscheinlich, dass sie zustimmen werden."
+  },
+  "С другой стороны, риски значительны.": {
+    "es": "Por otro lado, los riesgos son importantes.",
+    "de": "Andererseits sind die Risiken erheblich."
+  },
+  "В частности, молодёжь пострадала больше всего.": {
+    "es": "Los jóvenes en particular son los que más han sufrido.",
+    "de": "Vor allem junge Menschen haben am meisten gelitten."
+  },
+  "В заключение следует отметить прогресс.": {
+    "es": "En conclusión, cabe señalar los avances.",
+    "de": "Abschließend sind Fortschritte festzustellen."
+  },
+  "Несмотря на это, тенденция сохраняется.": {
+    "es": "A pesar de esto, la tendencia continúa.",
+    "de": "Trotzdem hält der Trend an."
+  },
+  "Следует подчеркнуть важность образования.": {
+    "es": "Se debe enfatizar la importancia de la educación.",
+    "de": "Die Bedeutung der Bildung sollte betont werden."
+  },
+  "По сравнению с прошлым годом продажи выросли.": {
+    "es": "Las ventas han aumentado en comparación con el año pasado.",
+    "de": "Der Umsatz ist im Vergleich zum letzten Jahr gestiegen."
+  },
+  "Это может привести к серьёзным последствиям.": {
+    "es": "Esto puede tener consecuencias graves.",
+    "de": "Dies kann schwerwiegende Folgen haben."
+  },
+  "В целом, доказательства убедительны.": {
+    "es": "En general, la evidencia es convincente.",
+    "de": "Insgesamt sind die Beweise überzeugend."
+  },
+  "Мне нравится музыка.": {
+    "es": "Me gusta la música.",
+    "de": "Ich mag Musik."
+  },
+  "Она врач.": {
+    "es": "Ella es doctora.",
+    "de": "Sie ist Ärztin."
+  },
+  "Мне нужен зонт.": {
+    "es": "Necesito un paraguas.",
+    "de": "Ich brauche einen Regenschirm."
+  },
+  "Я люблю музыку.": {
+    "es": "Me encanta la música.",
+    "de": "Ich liebe Musik."
+  },
+  "Он купил яблоко.": {
+    "es": "Compró una manzana.",
+    "de": "Er kaufte einen Apfel."
+  },
+  "Закрой дверь, пожалуйста.": {
+    "es": "Cierra la puerta por favor.",
+    "de": "Bitte schließen Sie die Tür."
+  },
+  "Кошки — независимые животные.": {
+    "es": "Los gatos son animales independientes.",
+    "de": "Katzen sind unabhängige Tiere."
+  },
+  "Она честный человек.": {
+    "es": "Ella es una persona honesta.",
+    "de": "Sie ist eine ehrliche Person."
+  },
+  "Мы живём рядом с рекой.": {
+    "es": "Vivimos al lado de un río.",
+    "de": "Wir wohnen an einem Fluss."
+  },
+  "Они играют в футбол.": {
+    "es": "Están jugando al fútbol.",
+    "de": "Sie spielen Fußball."
+  },
+  "Амазонка — длинная река.": {
+    "es": "El Amazonas es un río largo.",
+    "de": "Der Amazonas ist ein langer Fluss."
+  },
+  "В этом городе есть университет.": {
+    "es": "Hay una universidad en esta ciudad.",
+    "de": "In dieser Stadt gibt es eine Universität."
+  },
+  "Она хочет стать инженером.": {
+    "es": "Quiere ser ingeniera.",
+    "de": "Sie möchte Ingenieurin werden."
+  },
+  "Он говорит по-французски.": {
+    "es": "Habla francés.",
+    "de": "Er spricht Französisch."
+  },
+  "Передай соль, пожалуйста.": {
+    "es": "Pasa la sal, por favor.",
+    "de": "Geben Sie mir bitte das Salz."
+  },
+  "Тихий океан огромный.": {
+    "es": "El Océano Pacífico es enorme.",
+    "de": "Der Pazifische Ozean ist riesig."
+  },
+  "Мне нужен час.": {
+    "es": "Necesito una hora.",
+    "de": "Ich brauche eine Stunde."
+  },
+  "Это дом моих родителей.": {
+    "es": "Esta es la casa de mis padres.",
+    "de": "Das ist das Haus meiner Eltern."
+  },
+  "Это моя книга.": {
+    "es": "Este es mi libro.",
+    "de": "Das ist mein Buch."
+  },
+  "Эта книга моя.": {
+    "es": "Este libro es mío.",
+    "de": "Dieses Buch gehört mir."
+  },
+  "Это твоя сумка?": {
+    "es": "¿Es este tu bolso?",
+    "de": "Ist das deine Tasche?"
+  },
+  "Этот телефон её.": {
+    "es": "Este teléfono es suyo.",
+    "de": "Dieses Telefon gehört ihr."
+  },
+  "Они потеряли свои ключи.": {
+    "es": "Perdieron sus llaves.",
+    "de": "Sie haben ihre Schlüssel verloren."
+  },
+  "Эта машина наша.": {
+    "es": "Este auto es nuestro.",
+    "de": "Dieses Auto gehört uns."
+  },
+  "Он забыл свой кошелёк.": {
+    "es": "Olvidó su billetera.",
+    "de": "Er hat sein Portemonnaie vergessen."
+  },
+  "Собака виляла хвостом.": {
+    "es": "El perro meneó la cola.",
+    "de": "Der Hund wedelte mit dem Schwanz."
+  },
+  "У меня мало времени.": {
+    "es": "No tengo mucho tiempo.",
+    "de": "Ich habe nicht viel Zeit."
+  },
+  "Сколько тебе нужно денег?": {
+    "es": "¿Cuánto dinero necesitas?",
+    "de": "Wie viel Geld brauchen Sie?"
+  },
+  "Осталось всего несколько яблок.": {
+    "es": "Sólo quedan unas pocas manzanas.",
+    "de": "Es sind nur noch wenige Äpfel übrig."
+  },
+  "В холодильнике немного молока.": {
+    "es": "Hay un poco de leche en el frigorífico.",
+    "de": "Im Kühlschrank ist etwas Milch."
+  },
+  "У меня сегодня мало времени.": {
+    "es": "No tengo mucho tiempo hoy.",
+    "de": "Ich habe heute nicht viel Zeit."
+  },
+  "На встречу пришло мало людей.": {
+    "es": "A la reunión acudió poca gente.",
+    "de": "Zu dem Treffen kamen nur wenige Leute."
+  },
+  "Осталось мало надежды.": {
+    "es": "Quedan pocas esperanzas.",
+    "de": "Es gibt kaum noch Hoffnung."
+  },
+  "У неё много друзей в Лондоне.": {
+    "es": "Tiene muchos amigos en Londres.",
+    "de": "Sie hat viele Freunde in London."
+  },
+  "Нам нужно немного информации.": {
+    "es": "Necesitamos algo de información.",
+    "de": "Wir brauchen ein paar Informationen."
+  },
+  "В комнате мало стульев.": {
+    "es": "Hay pocas sillas en la habitación.",
+    "de": "Es gibt nur wenige Stühle im Raum."
+  },
+  "Он пьёт слишком много кофе.": {
+    "es": "Bebe demasiado café.",
+    "de": "Er trinkt zu viel Kaffee."
+  },
+  "Многие студенты сдали экзамен.": {
+    "es": "Muchos estudiantes aprobaron el examen.",
+    "de": "Viele Studierende haben die Prüfung bestanden."
+  },
+  "У меня мало сахара.": {
+    "es": "No tengo suficiente azúcar.",
+    "de": "Ich habe nicht genug Zucker."
+  },
+  "На дороге было мало машин.": {
+    "es": "Había pocos coches en la carretera.",
+    "de": "Es waren nur wenige Autos unterwegs."
+  },
+  "Можно немного воды?": {
+    "es": "¿Puedo tomar un poco de agua?",
+    "de": "Kann ich etwas Wasser haben?"
+  },
+  "Она сделала много ошибок.": {
+    "es": "Cometió muchos errores.",
+    "de": "Sie hat viele Fehler gemacht."
+  },
+  "Риса почти не осталось.": {
+    "es": "Casi no quedaba arroz.",
+    "de": "Es war fast kein Reis mehr übrig."
+  },
+  "Доступно только несколько билетов.": {
+    "es": "Sólo unas pocas entradas disponibles.",
+    "de": "Nur noch wenige Tickets verfügbar."
+  },
+  "У него мало терпения.": {
+    "es": "Tiene poca paciencia.",
+    "de": "Er hat wenig Geduld."
+  },
+  "Он только что ушёл.": {
+    "es": "Él simplemente se fue.",
+    "de": "Er ist einfach gegangen."
+  },
+  "Ты когда-нибудь был в Испании?": {
+    "es": "¿Has estado alguna vez en España?",
+    "de": "Sind Sie schon einmal in Spanien gewesen?"
+  },
+  "Я никогда не видел этот фильм.": {
+    "es": "Nunca he visto esta película.",
+    "de": "Ich habe diesen Film noch nie gesehen."
+  },
+  "Она только что закончила домашнюю работу.": {
+    "es": "Ella acaba de terminar su tarea.",
+    "de": "Sie hat gerade ihre Hausaufgaben erledigt."
+  },
+  "Они уже приехали?": {
+    "es": "¿Ya llegaron?",
+    "de": "Sind sie schon angekommen?"
+  },
+  "Я уже пообедал.": {
+    "es": "Ya almorcé.",
+    "de": "Ich habe bereits zu Mittag gegessen."
+  },
+  "Он ещё не позвонил мне.": {
+    "es": "No me ha llamado todavía.",
+    "de": "Er hat mich noch nicht angerufen."
+  },
+  "Мы никогда не встречались раньше.": {
+    "es": "Nunca nos habíamos conocido antes.",
+    "de": "Wir sind uns noch nie begegnet."
+  },
+  "Она когда-нибудь пробовала суши?": {
+    "es": "¿Ha probado alguna vez el sushi?",
+    "de": "Hat sie jemals Sushi probiert?"
+  },
+  "Они только что ушли.": {
+    "es": "Acaban de irse.",
+    "de": "Sie sind einfach gegangen."
+  },
+  "Я уже помыл посуду.": {
+    "es": "Ya lavé los platos.",
+    "de": "Ich habe das Geschirr bereits gespült."
+  },
+  "Ты уже закончил проект?": {
+    "es": "¿Ya terminaste el proyecto?",
+    "de": "Hast du das Projekt schon abgeschlossen?"
+  },
+  "Она только что вернулась с работы.": {
+    "es": "Ella acaba de regresar del trabajo.",
+    "de": "Sie ist gerade von der Arbeit zurückgekommen."
+  },
+  "Ты когда-нибудь ездил верхом?": {
+    "es": "¿Alguna vez has montado a caballo?",
+    "de": "Sind Sie schon einmal auf einem Pferd geritten?"
+  },
+  "Мы уже видели эту серию.": {
+    "es": "Ya hemos visto este episodio.",
+    "de": "Wir haben diese Folge bereits gesehen."
+  },
+  "Он ещё не оплатил счёт.": {
+    "es": "Aún no ha pagado la cuenta.",
+    "de": "Er hat die Rechnung noch nicht bezahlt."
+  },
+  "Я никогда не был так счастлив.": {
+    "es": "Nunca he sido tan feliz.",
+    "de": "Ich war noch nie so glücklich."
+  },
+  "Поезд уже ушёл?": {
+    "es": "¿Ya salió el tren?",
+    "de": "Ist der Zug schon abgefahren?"
+  },
+  "Если ты позвонишь, я приду.": {
+    "es": "Si llamas, iré.",
+    "de": "Wenn du anrufst, komme ich."
+  },
+  "Если нагреть воду до 100°C, она закипает.": {
+    "es": "Si calientas agua a 100°C, hierve.",
+    "de": "Wenn man Wasser auf 100°C erhitzt, kocht es."
+  },
+  "Если завтра будет дождь, мы останемся дома.": {
+    "es": "Si mañana llueve, nos quedaremos en casa.",
+    "de": "Wenn es morgen regnet, bleiben wir zu Hause."
+  },
+  "Если бы у меня было больше времени, я бы больше путешествовал.": {
+    "es": "Si tuviera más tiempo, viajaría más.",
+    "de": "Wenn ich mehr Zeit hätte, würde ich mehr reisen."
+  },
+  "Если бы она усерднее училась, она бы сдала экзамен.": {
+    "es": "Si hubiera estudiado más, habría aprobado el examen.",
+    "de": "Wenn sie härter gelernt hätte, hätte sie die Prüfung bestanden."
+  },
+  "Если смешать синий и жёлтый, получится зелёный.": {
+    "es": "Si mezclas azul y amarillo, obtienes verde.",
+    "de": "Wenn man Blau und Gelb mischt, erhält man Grün."
+  },
+  "Если я увижу Тома, я расскажу ему новости.": {
+    "es": "Si veo a Tom, le contaré la noticia.",
+    "de": "Wenn ich Tom sehe, erzähle ich ihm die Neuigkeiten."
+  },
+  "На твоём месте я бы извинился.": {
+    "es": "Si yo fuera tú, me disculparía.",
+    "de": "Wenn ich du wäre, würde ich mich entschuldigen."
+  },
+  "Лёд тает, если его нагреть.": {
+    "es": "El hielo se derrite si se calienta.",
+    "de": "Eis schmilzt, wenn es erhitzt wird."
+  },
+  "Если они нас пригласят, мы пойдём.": {
+    "es": "Si nos invitan, iremos.",
+    "de": "Wenn sie uns einladen, gehen wir."
+  },
+  "Если бы она была богатой, она купила бы виллу.": {
+    "es": "Si fuera rica, compraría una villa.",
+    "de": "Wenn sie reich wäre, würde sie eine Villa kaufen."
+  },
+  "Растения погибают, если не получают достаточно воды.": {
+    "es": "Las plantas mueren si no reciben suficiente agua.",
+    "de": "Pflanzen sterben, wenn sie nicht genug Wasser bekommen."
+  },
+  "Если поторопишься, успеешь на автобус.": {
+    "es": "Si te das prisa, cogerás el autobús.",
+    "de": "Wenn Sie sich beeilen, nehmen Sie den Bus."
+  },
+  "Если бы я знал её номер, я бы ей позвонил.": {
+    "es": "Si supiera su número, la llamaría.",
+    "de": "Wenn ich ihre Nummer wüsste, würde ich sie anrufen."
+  },
+  "Если светит солнце, снег тает.": {
+    "es": "Si brilla el sol, la nieve se derrite.",
+    "de": "Wenn die Sonne scheint, schmilzt der Schnee."
+  },
+  "Если он не извинится, я не буду с ним разговаривать.": {
+    "es": "Si no se disculpa, no hablaré con él.",
+    "de": "Wenn er sich nicht entschuldigt, werde ich nicht mit ihm reden."
+  },
+  "Если бы у нас была машина, мы поехали бы на побережье.": {
+    "es": "Si tuviéramos coche, iríamos a la costa.",
+    "de": "Wenn wir ein Auto hätten, würden wir an die Küste fahren."
+  },
+  "Вода замерзает, когда достигает 0°C.": {
+    "es": "El agua se congela cuando alcanza los 0°C.",
+    "de": "Wasser gefriert, wenn es 0°C erreicht."
+  },
+  "Если ты мне поможешь, я буду благодарен.": {
+    "es": "Si me ayudas te lo agradeceré.",
+    "de": "Wenn Sie mir helfen, werde ich Ihnen dankbar sein."
+  },
+  "Она спросила, где я живу.": {
+    "es": "Ella me preguntó dónde vivo.",
+    "de": "Sie fragte, wo ich wohne."
+  },
+  "Он сказал, что устал.": {
+    "es": "Dijo que estaba cansado.",
+    "de": "Er sagte, er sei müde."
+  },
+  "Она велела мне ждать.": {
+    "es": "Ella me dijo que esperara.",
+    "de": "Sie sagte mir, ich solle warten."
+  },
+  "Он спросил, готов ли я.": {
+    "es": "Me preguntó si estaba listo.",
+    "de": "Er fragte, ob ich bereit sei."
+  },
+  "Она сказала, что поможет позже.": {
+    "es": "Ella dijo que ayudaría más tarde.",
+    "de": "Sie sagte, sie würde später helfen."
+  },
+  "Они сказали нам быть тише.": {
+    "es": "Nos dijeron que nos quedáramos en silencio.",
+    "de": "Sie sagten uns, wir sollten ruhig sein."
+  },
+  "Он сказал, что умеет плавать.": {
+    "es": "Dijo que sabía nadar.",
+    "de": "Er sagte, er könne schwimmen."
+  },
+  "Мама сказала мне убрать комнату.": {
+    "es": "Mamá me dijo que limpiara la habitación.",
+    "de": "Mama sagte mir, ich solle das Zimmer aufräumen."
+  },
+  "Она спросила, во сколько отходит поезд.": {
+    "es": "Preguntó a qué hora salía el tren.",
+    "de": "Sie fragte, wann der Zug abfahre."
+  },
+  "Он сказал, что уже поел.": {
+    "es": "Dijo que ya había comido.",
+    "de": "Er sagte, dass er bereits gegessen hatte."
+  },
+  "Они сказали, что уезжают.": {
+    "es": "Dijeron que se iban.",
+    "de": "Sie sagten, sie würden gehen."
+  },
+  "Он велел ей не волноваться.": {
+    "es": "Él le dijo que no se preocupara.",
+    "de": "Er sagte ihr, sie solle sich keine Sorgen machen."
+  },
+  "Она сказала, что на следующий день поедет в Париж.": {
+    "es": "Dijo que iría a París al día siguiente.",
+    "de": "Sie sagte, dass sie am nächsten Tag nach Paris fahren würde."
+  },
+  "Он спросил, получила ли она письмо.": {
+    "es": "Le preguntó si había recibido la carta.",
+    "de": "Er fragte, ob sie den Brief erhalten habe."
+  },
+  "Она сказала, что должна уйти.": {
+    "es": "Ella dijo que tenía que irse.",
+    "de": "Sie sagte, sie müsse gehen."
+  },
+  "Они спросили нас, где мы живём.": {
+    "es": "Nos preguntaron dónde vivimos.",
+    "de": "Sie fragten uns, wo wir wohnen."
+  },
+  "Он сказал, что его зовут Пол.": {
+    "es": "Dijo que se llamaba Pablo.",
+    "de": "Er sagte, sein Name sei Paul."
+  },
+  "Она сказала ему быть осторожным.": {
+    "es": "Ella le dijo que tuviera cuidado.",
+    "de": "Sie sagte ihm, er solle vorsichtig sein."
+  },
+  "Он сказал, что встреча в девять.": {
+    "es": "Dijo que la reunión es a las nueve.",
+    "de": "Er sagte, das Treffen sei um neun."
+  },
+  "Она спросила, готовы ли мы.": {
+    "es": "Ella preguntó si estábamos listos.",
+    "de": "Sie fragte, ob wir bereit seien."
+  },
+  "Это дом, где я вырос.": {
+    "es": "Esta es la casa donde crecí.",
+    "de": "Das ist das Haus, in dem ich aufgewachsen bin."
+  },
+  "Это книга, которую я купил вчера.": {
+    "es": "Este es el libro que compré ayer.",
+    "de": "Das ist das Buch, das ich gestern gekauft habe."
+  },
+  "Она учительница, которая мне помогла.": {
+    "es": "Ella es la maestra que me ayudó.",
+    "de": "Sie ist die Lehrerin, die mir geholfen hat."
+  },
+  "Вот кафе, где мы встретились.": {
+    "es": "Este es el café donde nos conocimos.",
+    "de": "Dies ist das Café, in dem wir uns kennengelernt haben."
+  },
+  "Я знаю мужчину, чья машина красная.": {
+    "es": "Conozco a un hombre cuyo auto es rojo.",
+    "de": "Ich kenne einen Mann, dessen Auto rot ist."
+  },
+  "Фильм, который мы смотрели, был длинным.": {
+    "es": "La película que vimos fue larga.",
+    "de": "Der Film, den wir sahen, war lang."
+  },
+  "Люди, которые здесь живут, дружелюбны.": {
+    "es": "La gente que vive aquí es amigable.",
+    "de": "Die Menschen, die hier leben, sind freundlich."
+  },
+  "Это дом, который построили твои родители?": {
+    "es": "¿Es esta la casa que construyeron tus padres?",
+    "de": "Ist das das Haus, das deine Eltern gebaut haben?"
+  },
+  "Помнишь день, когда мы впервые встретились?": {
+    "es": "¿Recuerdas el día que nos conocimos?",
+    "de": "Erinnern Sie sich an den Tag, an dem wir uns das erste Mal trafen?"
+  },
+  "Она художница, чьи картины я люблю.": {
+    "es": "Ella es una artista cuyas pinturas me encantan.",
+    "de": "Sie ist eine Künstlerin, deren Gemälde ich liebe."
+  },
+  "Ноутбук, который на столе, мой.": {
+    "es": "El portátil que está sobre la mesa es mío.",
+    "de": "Der Laptop auf dem Tisch gehört mir."
+  },
+  "Он коллега, о котором я тебе рассказывал.": {
+    "es": "Es el colega del que te hablé.",
+    "de": "Er ist der Kollege, von dem ich Ihnen erzählt habe."
+  },
+  "Это город, где я вырос.": {
+    "es": "Esta es la ciudad donde crecí.",
+    "de": "Das ist die Stadt, in der ich aufgewachsen bin."
+  },
+  "Студенты, чьи домашние задания опоздали, должны остаться.": {
+    "es": "Los estudiantes cuya tarea llegue tarde deben quedarse atrás.",
+    "de": "Schüler, deren Hausaufgaben zu spät kommen, müssen zurückbleiben."
+  },
+  "Причина, по которой я звоню, проста.": {
+    "es": "La razón por la que llamo es simple.",
+    "de": "Der Grund, warum ich anrufe, ist einfach."
+  },
+  "Я встретил женщину, которая говорит на пяти языках.": {
+    "es": "Conocí a una mujer que habla cinco idiomas.",
+    "de": "Ich habe eine Frau getroffen, die fünf Sprachen spricht."
+  },
+  "Закон был принят в прошлом году.": {
+    "es": "La ley fue aprobada el año pasado.",
+    "de": "Das Gesetz wurde letztes Jahr verabschiedet."
+  },
+  "Отчёт должен быть закончен к пятнице.": {
+    "es": "El informe debería estar terminado el viernes.",
+    "de": "Der Bericht soll bis Freitag fertiggestellt sein."
+  },
+  "Окна сейчас моют.": {
+    "es": "Ahora se están lavando las ventanas.",
+    "de": "Die Fenster werden jetzt geputzt."
+  },
+  "Документы уже отправлены клиенту.": {
+    "es": "Los documentos ya han sido enviados al cliente.",
+    "de": "Die Unterlagen wurden bereits an den Auftraggeber versandt."
+  },
+  "Ей подарили новый ноутбук на день рождения.": {
+    "es": "Le regalaron una computadora portátil nueva para su cumpleaños.",
+    "de": "Zu ihrem Geburtstag bekam sie einen neuen Laptop geschenkt."
+  },
+  "Мост построят в следующем году.": {
+    "es": "El puente se construirá el próximo año.",
+    "de": "Die Brücke wird nächstes Jahr gebaut."
+  },
+  "Ужин подавали, когда мы пришли.": {
+    "es": "Cuando llegamos ya estaban sirviendo la cena.",
+    "de": "Als wir ankamen, wurde gerade das Abendessen serviert."
+  },
+  "Эти письма нужно внимательно проверить.": {
+    "es": "Estas cartas deben revisarse cuidadosamente.",
+    "de": "Diese Briefe müssen sorgfältig geprüft werden."
+  },
+  "Вора вчера поймала полиция.": {
+    "es": "El ladrón fue detenido ayer por la policía.",
+    "de": "Der Dieb wurde gestern von der Polizei gefasst."
+  },
+  "Решение ещё не принято.": {
+    "es": "Aún no se ha tomado ninguna decisión.",
+    "de": "Es wurde noch keine Entscheidung getroffen."
+  },
+  "Пациентов проверяют каждый час.": {
+    "es": "Los pacientes son controlados cada hora.",
+    "de": "Die Patienten werden stündlich untersucht."
+  },
+  "Ему разрешили уйти пораньше.": {
+    "es": "Le permitieron salir temprano.",
+    "de": "Er durfte vorzeitig gehen."
+  },
+  "Торт испекла моя сестра.": {
+    "es": "Mi hermana horneó el pastel.",
+    "de": "Meine Schwester hat den Kuchen gebacken."
+  },
+  "Ваш заказ доставят завтра утром.": {
+    "es": "Su pedido será entregado mañana por la mañana.",
+    "de": "Ihre Bestellung wird morgen früh geliefert."
+  },
+  "Проблему сейчас обсуждают.": {
+    "es": "El problema se está discutiendo actualmente.",
+    "de": "Das Problem wird derzeit diskutiert."
+  },
+  "Все заявки должны быть поданы до полудня.": {
+    "es": "Todas las solicitudes deben enviarse antes del mediodía.",
+    "de": "Alle Bewerbungen müssen bis 12:00 Uhr eingereicht werden."
+  },
+  "Ей вручили приз в прошлом году.": {
+    "es": "Le concedieron el premio el año pasado.",
+    "de": "Sie wurde letztes Jahr mit dem Preis ausgezeichnet."
+  },
+  "Комнату нужно убрать до приезда гостей.": {
+    "es": "La habitación debe limpiarse antes de la llegada de los huéspedes.",
+    "de": "Das Zimmer muss vor der Ankunft der Gäste gereinigt werden."
+  },
+  "На английском говорят во всём мире.": {
+    "es": "El inglés se habla en todo el mundo.",
+    "de": "Auf der ganzen Welt wird Englisch gesprochen."
+  },
+  "Письма уже были отправлены к пяти.": {
+    "es": "Las cartas ya habían sido enviadas a las cinco.",
+    "de": "Die Briefe waren bereits um fünf Uhr verschickt worden."
+  },
+  "Он, возможно, опоздал.": {
+    "es": "Puede que haya llegado tarde.",
+    "de": "Möglicherweise kam er zu spät."
+  },
+  "Она не отвечает. Она, должно быть, занята.": {
+    "es": "Ella no responde. Debe estar ocupada.",
+    "de": "Sie antwortet nicht. Sie muss beschäftigt sein."
+  },
+  "Это не может быть правдой.": {
+    "es": "Esto no puede ser verdad.",
+    "de": "Das kann nicht wahr sein."
+  },
+  "Он опаздывает. Возможно, он застрял в пробке.": {
+    "es": "Llega tarde. Quizás estaba atrapado en el tráfico.",
+    "de": "Er ist zu spät. Vielleicht steckte er im Stau fest."
+  },
+  "Ты, должно быть, очень устал.": {
+    "es": "Debes estar muy cansado.",
+    "de": "Du musst sehr müde sein."
+  },
+  "Она не могла забыть — она очень организованная.": {
+    "es": "No podía olvidarlo: es muy organizada.",
+    "de": "Sie konnte es nicht vergessen – sie ist sehr organisiert."
+  },
+  "Свет горит. Кто-то, должно быть, дома.": {
+    "es": "La luz está encendida. Alguien debe estar en casa.",
+    "de": "Das Licht ist an. Jemand muss zu Hause sein."
+  },
+  "Не уверен. Позже может пойти дождь.": {
+    "es": "No estoy seguro. Puede que llueva más tarde.",
+    "de": "Nicht sicher. Es kann später regnen."
+  },
+  "Он не может знать ответ — его там не было.": {
+    "es": "No puede saber la respuesta: no estaba allí.",
+    "de": "Er kann die Antwort nicht wissen – sie war nicht da."
+  },
+  "Они уехали час назад. Они, должно быть, уже приехали.": {
+    "es": "Se fueron hace una hora. Ya deben haber llegado.",
+    "de": "Sie sind vor einer Stunde gegangen. Sie müssen bereits angekommen sein."
+  },
+  "Она выглядит расстроенной. Она, должно быть, услышала новости.": {
+    "es": "Ella parece molesta. Ella debe haber escuchado la noticia.",
+    "de": "Sie sieht verärgert aus. Sie muss die Nachricht gehört haben."
+  },
+  "Этот ресторан, должно быть, дорогой.": {
+    "es": "Este restaurante debe ser caro.",
+    "de": "Dieses Restaurant muss teuer sein."
+  },
+  "Он не может быть менеджером — ему всего девятнадцать.": {
+    "es": "No puede ser gerente; sólo tiene diecinueve años.",
+    "de": "Er kann kein Manager sein – er ist erst neunzehn."
+  },
+  "Где мой телефон? Он может быть в сумке.": {
+    "es": "¿Dónde está mi teléfono? Puede que esté en tu bolso.",
+    "de": "Wo ist mein Telefon? Es könnte in Ihrer Tasche sein."
+  },
+  "Ты не можешь говорить серьёзно!": {
+    "es": "¡No puedes hablar en serio!",
+    "de": "Das kann doch nicht dein Ernst sein!"
+  },
+  "Дороги мокрые. Должно быть, шёл дождь.": {
+    "es": "Los caminos están mojados. Debe haber estado lloviendo.",
+    "de": "Die Straßen sind nass. Es muss geregnet haben."
+  },
+  "Её нет. Возможно, она ещё на работе.": {
+    "es": "Ella se ha ido. Quizás todavía esté en el trabajo.",
+    "de": "Sie ist weg. Vielleicht ist sie noch bei der Arbeit."
+  },
+  "Это, должно быть, принадлежит Тому — внутри его имя.": {
+    "es": "Este debe ser de Tom; su nombre está adentro.",
+    "de": "Das muss Toms sein – sein Name steht drin."
+  },
+  "Они, должно быть, опоздали на поезд.": {
+    "es": "Debieron haber perdido el tren.",
+    "de": "Sie müssen den Zug verpasst haben."
+  },
+  "Это может быть ошибка — проверь ещё раз.": {
+    "es": "Esto puede ser un error; compruébalo nuevamente.",
+    "de": "Dies kann ein Fehler sein. Überprüfen Sie es erneut."
+  },
+  "Привет! Как дела?": {
+    "es": "¡Hola! ¿Cómo estás?",
+    "de": "Hallo! Wie geht es dir?"
+  },
+  "Было здорово получить твоё письмо.": {
+    "es": "Fue genial recibir tu carta.",
+    "de": "Es war toll, Ihren Brief zu erhalten."
+  },
+  "Извини, что давно не писал.": {
+    "es": "Lo siento, hace mucho que no escribo.",
+    "de": "Tut mir leid, dass ich lange nicht geschrieben habe."
+  },
+  "Ты не поверишь, что случилось!": {
+    "es": "¡No creerás lo que pasó!",
+    "de": "Sie werden nicht glauben, was passiert ist!"
+  },
+  "Кстати, как твоя новая работа?": {
+    "es": "Por cierto, ¿cómo es tu nuevo trabajo?",
+    "de": "Übrigens, wie ist Ihr neuer Job?"
+  },
+  "Передай привет своей семье.": {
+    "es": "Saluda a tu familia.",
+    "de": "Sag Hallo zu deiner Familie."
+  },
+  "Не могу дождаться нашей встречи!": {
+    "es": "¡No puedo esperar para conocerte!",
+    "de": "Ich kann es kaum erwarten, dich kennenzulernen!"
+  },
+  "Напиши, когда будет время.": {
+    "es": "Escribe cuando tengas tiempo.",
+    "de": "Schreiben Sie, wenn Sie Zeit haben."
+  },
+  "Береги себя и скоро поговорим!": {
+    "es": "¡Cuídate y hablamos pronto!",
+    "de": "Passen Sie auf sich auf und sprechen Sie bald mit Ihnen!"
+  },
+  "Надеюсь, у тебя всё хорошо.": {
+    "es": "Espero que estés bien.",
+    "de": "Ich hoffe, es geht dir gut."
+  },
+  "Буду благодарен, если вы пришлёте информацию.": {
+    "es": "Agradecería enviar información.",
+    "de": "Für die Zusendung von Informationen wäre ich Ihnen dankbar."
+  },
+  "Пишу, чтобы пожаловаться на обслуживание.": {
+    "es": "Le escribo para quejarme del servicio.",
+    "de": "Ich schreibe, um mich über den Service zu beschweren."
+  },
+  "Я крайне разочарован качеством продукта.": {
+    "es": "Estoy extremadamente decepcionado con la calidad del producto.",
+    "de": "Ich bin äußerst enttäuscht von der Qualität des Produkts."
+  },
+  "Прошу вернуть полную стоимость.": {
+    "es": "Solicito un reembolso completo.",
+    "de": "Ich beantrage eine vollständige Rückerstattung."
+  },
+  "Надеюсь, вы решите этот вопрос оперативно.": {
+    "es": "Espero que resuelvas este problema rápidamente.",
+    "de": "Ich hoffe, dass Sie dieses Problem umgehend lösen."
+  },
+  "Приложена копия чека.": {
+    "es": "Adjunto copia del recibo.",
+    "de": "Beigefügt ist eine Kopie der Quittung."
+  },
+  "Буду благодарен за ваше содействие.": {
+    "es": "Le agradecería su ayuda.",
+    "de": "Ich wäre Ihnen für Ihre Hilfe dankbar."
+  },
+  "Обращаюсь к вам по поводу бронирования.": {
+    "es": "Me estoy comunicando con usted con respecto a una reserva.",
+    "de": "Ich kontaktiere Sie bezüglich einer Reservierung."
+  },
+  "С сожалением сообщаю, что вынужден отменить заказ.": {
+    "es": "Lamento informarles que tengo que cancelar mi pedido.",
+    "de": "Leider muss ich Ihnen mitteilen, dass ich meine Bestellung stornieren muss."
+  },
+  "Прошу подтвердить получение этого письма.": {
+    "es": "Por favor confirme el recibo de esta carta.",
+    "de": "Bitte bestätigen Sie den Erhalt dieses Schreibens."
+  },
+  "С уважением.": {
+    "es": "Atentamente.",
+    "de": "Aufrichtig."
+  },
+  "Уважаемый господин Томпсон,": {
+    "es": "Estimado Sr. Thompson,",
+    "de": "Sehr geehrter Herr Thompson,"
+  },
+  "Пишу в ответ на ваше объявление.": {
+    "es": "Le escribo en respuesta a su anuncio.",
+    "de": "Ich schreibe als Antwort auf Ihre Anzeige."
+  },
+  "Буду рад предоставить дополнительную информацию.": {
+    "es": "Estaré encantado de proporcionar información adicional.",
+    "de": "Gerne gebe ich Ihnen weitere Informationen."
+  },
+  "Не могли бы вы сообщить о стоимости?": {
+    "es": "¿Podría por favor indicar el costo?",
+    "de": "Könnten Sie uns bitte die Kosten mitteilen?"
+  },
+  "Заранее благодарю за помощь.": {
+    "es": "Gracias de antemano por su ayuda.",
+    "de": "Vielen Dank im Voraus für Ihre Hilfe."
+  },
+  "Прошу прощения за задержку с ответом.": {
+    "es": "Pido disculpas por la demora en la respuesta.",
+    "de": "Ich entschuldige mich für die verspätete Antwort."
+  },
+  "С нетерпением жду возможности обсудить это.": {
+    "es": "Espero con ansias discutir esto.",
+    "de": "Ich freue mich darauf, darüber zu diskutieren."
+  },
+  "Пожалуйста, не стесняйтесь связаться со мной.": {
+    "es": "No dude en ponerse en contacto conmigo.",
+    "de": "Nehmen Sie gerne Kontakt mit mir auf."
+  },
+  "С наилучшими пожеланиями.": {
+    "es": "Los mejores deseos.",
+    "de": "Beste Wünsche."
+  },
+  "Пишу, чтобы выразить заинтересованность в курсе.": {
+    "es": "Le escribo para expresar mi interés en el curso.",
+    "de": "Ich schreibe, um mein Interesse an dem Kurs auszudrücken."
+  },
+  "В целом, оба показателя оставались стабильными.": {
+    "es": "En general, ambos indicadores se mantuvieron estables.",
+    "de": "Insgesamt blieben beide Indikatoren stabil."
+  },
+  "График показывает изменения за период с 2000 по 2020 год.": {
+    "es": "El gráfico muestra los cambios de 2000 a 2020.",
+    "de": "Die Grafik zeigt die Veränderungen von 2000 bis 2020."
+  },
+  "В целом, наблюдается рост продаж.": {
+    "es": "En general, ha habido un aumento en las ventas.",
+    "de": "Insgesamt ist ein Umsatzanstieg zu verzeichnen."
+  },
+  "Цифры выросли с 20% до 45%.": {
+    "es": "Las cifras aumentaron del 20% al 45%.",
+    "de": "Die Zahlen stiegen von 20 % auf 45 %."
+  },
+  "К 2015 году уровень достиг пика.": {
+    "es": "En 2015 el nivel alcanzó su punto máximo.",
+    "de": "Im Jahr 2015 erreichte das Niveau seinen Höhepunkt."
+  },
+  "Самый резкий рост произошёл в 2018 году.": {
+    "es": "El aumento más pronunciado se produjo en 2018.",
+    "de": "Der stärkste Anstieg erfolgte im Jahr 2018."
+  },
+  "В то время как экспорт вырос, импорт снизился.": {
+    "es": "Si bien las exportaciones aumentaron, las importaciones disminuyeron.",
+    "de": "Während die Exporte zunahmen, gingen die Importe zurück."
+  },
+  "Доля упала примерно на 10 процентных пунктов.": {
+    "es": "La proporción cayó alrededor de 10 puntos porcentuales.",
+    "de": "Der Anteil sank um etwa 10 Prozentpunkte."
+  },
+  "Оба показателя оставались стабильными до 2010 года.": {
+    "es": "Ambos indicadores se mantuvieron estables hasta 2010.",
+    "de": "Beide Indikatoren blieben bis 2010 stabil."
+  },
+  "После этого наблюдался постепенный спад.": {
+    "es": "Después de esto hubo un declive paulatino.",
+    "de": "Danach kam es zu einem allmählichen Rückgang."
+  },
+  "В 2020 году показатель был в два раза выше, чем в 2000.": {
+    "es": "En 2020, la cifra fue el doble que en 2000.",
+    "de": "Im Jahr 2020 war der Wert doppelt so hoch wie im Jahr 2000."
+  },
+  "В последние годы технологии изменили повседневную жизнь.": {
+    "es": "En los últimos años, la tecnología ha cambiado la vida cotidiana.",
+    "de": "In den letzten Jahren hat die Technologie den Alltag verändert."
+  },
+  "Существуют разные мнения по этому вопросу.": {
+    "es": "Hay diferentes opiniones sobre este tema.",
+    "de": "Zu diesem Thema gibt es unterschiedliche Meinungen."
+  },
+  "С одной стороны, это приносит экономическую выгоду.": {
+    "es": "Por un lado, esto trae beneficios económicos.",
+    "de": "Dies bringt einerseits wirtschaftliche Vorteile mit sich."
+  },
+  "С другой стороны, есть и недостатки.": {
+    "es": "Por otro lado, también existen desventajas.",
+    "de": "Andererseits gibt es auch Nachteile."
+  },
+  "Главным аргументом в пользу этого является…": {
+    "es": "El principal argumento a favor de esto es...",
+    "de": "Das Hauptargument dafür ist..."
+  },
+  "Однако некоторые утверждают, что риски слишком велики.": {
+    "es": "Sin embargo, algunos sostienen que los riesgos son demasiado grandes.",
+    "de": "Einige argumentieren jedoch, dass die Risiken zu groß seien."
+  },
+  "Например, многие семьи сталкиваются с трудностями.": {
+    "es": "Por ejemplo, muchas familias enfrentan dificultades.",
+    "de": "Viele Familien stehen beispielsweise vor Schwierigkeiten."
+  },
+  "Подводя итог, я считаю, что преимущества перевешивают.": {
+    "es": "En resumen, creo que los beneficios superan los beneficios.",
+    "de": "Zusammenfassend denke ich, dass die Vorteile die Vorteile überwiegen."
+  },
+  "В заключение следует отметить важность баланса.": {
+    "es": "En conclusión, la importancia del equilibrio.",
+    "de": "Abschließend die Bedeutung des Gleichgewichts."
+  },
+  "Таким образом, правительство должно принять меры.": {
+    "es": "Por eso el gobierno debe tomar medidas.",
+    "de": "Die Regierung muss also handeln."
+  },
+  "Тем не менее, аргумент остаётся слабым.": {
+    "es": "Sin embargo, el argumento sigue siendo débil.",
+    "de": "Das Argument bleibt jedoch schwach."
+  },
+  "Более того, исследование это подтверждает.": {
+    "es": "Además, el estudio lo confirma.",
+    "de": "Darüber hinaus bestätigt die Studie dies."
+  },
+  "С другой стороны, есть и противники.": {
+    "es": "Por otro lado, también hay opositores.",
+    "de": "Andererseits gibt es auch Gegner."
+  },
+  "Это, в свою очередь, повлияло на цены.": {
+    "es": "Esto, a su vez, afectó a los precios.",
+    "de": "Dies wiederum wirkte sich auf die Preise aus."
+  },
+  "Как упоминалось ранее, ситуация улучшилась.": {
+    "es": "Como se mencionó anteriormente, la situación ha mejorado.",
+    "de": "Wie bereits erwähnt, hat sich die Situation verbessert."
+  },
+  "В связи с этим необходимы меры.": {
+    "es": "En este sentido, son necesarias medidas.",
+    "de": "In diesem Zusammenhang sind Maßnahmen erforderlich."
+  },
+  "Аналогичным образом, другие страны последовали примеру.": {
+    "es": "Asimismo, otros países siguieron su ejemplo.",
+    "de": "Auch andere Länder folgten diesem Beispiel."
+  },
+  "Напротив, эксперты предупреждают об опасности.": {
+    "es": "Al contrario, los expertos advierten del peligro.",
+    "de": "Im Gegenteil, Experten warnen vor der Gefahr."
+  },
+  "Следовательно, политику нужно пересмотреть.": {
+    "es": "Por lo tanto, es necesario revisar la política.",
+    "de": "Daher muss die Richtlinie überprüft werden."
+  },
+  "Что касается образования, прогресс очевиден.": {
+    "es": "En lo que respecta a la educación, los avances son evidentes.",
+    "de": "Was die Bildung betrifft, sind Fortschritte offensichtlich."
+  },
+  "В заключение, оба подхода имеют свои достоинства.": {
+    "es": "En conclusión, ambos enfoques tienen sus ventajas.",
+    "de": "Zusammenfassend lässt sich sagen, dass beide Ansätze ihre Vorzüge haben."
+  },
+  "Цель этой статьи — рассмотреть проблему.": {
+    "es": "El propósito de este artículo es abordar el problema.",
+    "de": "Der Zweck dieses Artikels besteht darin, das Problem anzugehen."
+  },
+  "Автор утверждает, что реформа необходима.": {
+    "es": "El autor sostiene que la reforma es necesaria.",
+    "de": "Der Autor argumentiert, dass eine Reform notwendig sei."
+  },
+  "Согласно недавним данным, спрос вырос.": {
+    "es": "Según datos recientes, la demanda ha aumentado.",
+    "de": "Jüngsten Daten zufolge ist die Nachfrage gestiegen."
+  },
+  "Данный анализ показывает положительную тенденцию.": {
+    "es": "Este análisis muestra una tendencia positiva.",
+    "de": "Diese Analyse zeigt einen positiven Trend."
+  },
+  "В отличие от эссе, статья требует объективности.": {
+    "es": "A diferencia de un ensayo, un artículo requiere objetividad.",
+    "de": "Im Gegensatz zu einem Aufsatz erfordert ein Artikel Objektivität."
+  },
+  "Читатель может заметить, что аргумент убедителен.": {
+    "es": "El lector puede notar que el argumento es convincente.",
+    "de": "Dem Leser wird vielleicht auffallen, dass das Argument überzeugend ist."
+  },
+  "Как показывает таблица, цифры выросли.": {
+    "es": "Como muestra la tabla, las cifras han aumentado.",
+    "de": "Wie die Tabelle zeigt, sind die Zahlen gestiegen."
+  },
+  "В данном разделе рассматриваются основные факторы.": {
+    "es": "En esta sección se analizan los factores principales.",
+    "de": "In diesem Abschnitt werden die Hauptfaktoren besprochen."
+  },
+  "Подводя итог, можно сказать, что выводы обоснованы.": {
+    "es": "En resumen, podemos decir que las conclusiones están justificadas.",
+    "de": "Zusammenfassend können wir sagen, dass die Schlussfolgerungen berechtigt sind."
+  },
+  "Комментатор отмечает рост интереса к теме.": {
+    "es": "El comentarista nota el creciente interés por el tema.",
+    "de": "Der Kommentator stellt das wachsende Interesse an dem Thema fest."
+  },
+  "В определённой степени я согласен с этим.": {
+    "es": "Hasta cierto punto estoy de acuerdo con esto.",
+    "de": "Bis zu einem gewissen Grad stimme ich dem zu."
+  },
+  "Я твёрдо убеждён, что образование должно быть бесплатным.": {
+    "es": "Creo firmemente que la educación debería ser gratuita.",
+    "de": "Ich bin fest davon überzeugt, dass Bildung kostenlos sein sollte."
+  },
+  "По моему мнению, преимущества перевешивают недостатки.": {
+    "es": "En mi opinión, las ventajas superan a las desventajas.",
+    "de": "Meiner Meinung nach überwiegen die Vorteile die Nachteile."
+  },
+  "Можно утверждать, что технологии изменили общество.": {
+    "es": "Se puede argumentar que la tecnología ha cambiado la sociedad.",
+    "de": "Man kann argumentieren, dass Technologie die Gesellschaft verändert hat."
+  },
+  "Я склонен считать, что это справедливое решение.": {
+    "es": "Me inclino a pensar que se trata de una decisión justa.",
+    "de": "Ich neige dazu zu glauben, dass dies eine faire Entscheidung ist."
+  },
+  "Безусловно, существуют и другие точки зрения.": {
+    "es": "Por supuesto, hay otros puntos de vista.",
+    "de": "Natürlich gibt es auch andere Standpunkte."
+  },
+  "Я полностью согласен с тем, что нужны реформы.": {
+    "es": "Estoy completamente de acuerdo en que se necesitan reformas.",
+    "de": "Ich stimme voll und ganz zu, dass Reformen erforderlich sind."
+  },
+  "Кажется, что общественное мнение меняется.": {
+    "es": "Parece que la opinión pública está cambiando.",
+    "de": "Es scheint, dass sich die öffentliche Meinung ändert."
+  },
+  "Я убеждён, что это лучший подход.": {
+    "es": "Estoy convencido de que éste es el mejor enfoque.",
+    "de": "Ich bin überzeugt, dass dies der beste Ansatz ist."
+  },
+  "С моей точки зрения, политика неэффективна.": {
+    "es": "Desde mi punto de vista, la política es ineficaz.",
+    "de": "Aus meiner Sicht ist die Richtlinie wirkungslos."
+  },
+  "Вероятно, ситуация улучшится в будущем.": {
+    "es": "La situación probablemente mejorará en el futuro.",
+    "de": "Die Situation wird sich in Zukunft wahrscheinlich verbessern."
+  },
+  "Не могли бы вы перезвонить? (formal)": {
+    "es": "¿Podrías devolverme la llamada? (formal)",
+    "de": "Könnten Sie mich zurückrufen? (formell)"
+  },
+  "Не могли бы вы мне помочь?": {
+    "es": "¿Me podría ayudar?",
+    "de": "Könnten Sie mir bitte helfen?"
+  },
+  "Буду признателен за ваш ответ.": {
+    "es": "Agradecería su respuesta.",
+    "de": "Ich würde mich über Ihre Antwort freuen."
+  },
+  "Прошу прощения за неудобства.": {
+    "es": "Pido disculpas por las molestias.",
+    "de": "Ich entschuldige mich für die Unannehmlichkeiten."
+  },
+  "Дай знать, когда будешь свободен.": {
+    "es": "Avísame cuando estés libre.",
+    "de": "Sag mir Bescheid, wenn du Zeit hast."
+  },
+  "Пишу, чтобы сообщить о задержке.": {
+    "es": "Le escribo para informarle sobre el retraso.",
+    "de": "Ich schreibe Ihnen, um Sie über die Verzögerung zu informieren."
+  },
+  "Классно было с тобой пообщаться!": {
+    "es": "¡Fue genial hablar contigo!",
+    "de": "Es war toll, mit dir zu reden!"
+  },
+  "Прошу рассмотреть мою жалобу.": {
+    "es": "Por favor considere mi queja.",
+    "de": "Bitte berücksichtigen Sie meine Beschwerde."
+  },
+  "Спишемся на днях!": {
+    "es": "¡Escribamos un día de estos!",
+    "de": "Lasst uns einen dieser Tage schreiben!"
+  },
+  "С нетерпением жду вашего ответа.": {
+    "es": "Espero su respuesta.",
+    "de": "Ich freue mich auf Ihre Antwort."
+  },
+  "Что нового?": {
+    "es": "¿Qué hay de nuevo?",
+    "de": "Was ist neu?"
+  },
+  "Именно Джон сломал вазу.": {
+    "es": "Fue John quien rompió el jarrón.",
+    "de": "Es war John, der die Vase zerbrach."
+  },
+  "Мне нужен отпуск.": {
+    "es": "Necesito unas vacaciones.",
+    "de": "Ich brauche Urlaub."
+  },
+  "Именно в Париже я её встретил.": {
+    "es": "Fue en París donde la conocí.",
+    "de": "In Paris lernte ich sie kennen."
+  },
+  "Я правда люблю твою идею.": {
+    "es": "Realmente me encanta tu idea.",
+    "de": "Ich liebe deine Idee wirklich."
+  },
+  "Причина, по которой я ушёл, — шум.": {
+    "es": "La razón por la que me fui fue por el ruido.",
+    "de": "Der Grund, warum ich gegangen bin, war der Lärm."
+  },
+  "Именно она решила уйти.": {
+    "es": "Ella fue quien decidió irse.",
+    "de": "Sie war diejenige, die sich entschied zu gehen."
+  },
+  "То, что она сделала, — уволилась.": {
+    "es": "Lo que hizo fue renunciar.",
+    "de": "Was sie tat, war, aufzuhören."
+  },
+  "Именно вчера это произошло.": {
+    "es": "Esto sucedió ayer mismo.",
+    "de": "Das ist erst gestern passiert."
+  },
+  "Именно ты мне нужен.": {
+    "es": "Eres tú a quien necesito.",
+    "de": "Du bist es, den ich brauche."
+  },
+  "То, что меня беспокоит, — цена.": {
+    "es": "Lo que me preocupa es el precio.",
+    "de": "Was mich beunruhigt, ist der Preis."
+  },
+  "Именно из-за дождя мы отменили пикник.": {
+    "es": "Fue por la lluvia que cancelamos el picnic.",
+    "de": "Wegen des Regens haben wir das Picknick abgesagt."
+  },
+  "Я действительно понимаю тебя.": {
+    "es": "Realmente te entiendo.",
+    "de": "Ich verstehe dich wirklich."
+  },
+  "Именно здесь мы впервые поцеловались.": {
+    "es": "Fue aquí donde nos besamos por primera vez.",
+    "de": "Hier küssten wir uns zum ersten Mal."
+  },
+  "То, чего я хочу, — спокойствие.": {
+    "es": "Lo que quiero es paz.",
+    "de": "Was ich will, ist Frieden."
+  },
+  "Именно они выиграли конкурс.": {
+    "es": "Ellos fueron los que ganaron la competencia.",
+    "de": "Sie waren diejenigen, die den Wettbewerb gewonnen haben."
+  },
+  "Именно сейчас нужно действовать.": {
+    "es": "Ahora es el momento de actuar.",
+    "de": "Jetzt ist es an der Zeit zu handeln."
+  },
+  "То, что произошло, — катастрофа.": {
+    "es": "Lo que pasó fue un desastre.",
+    "de": "Was passiert ist, war eine Katastrophe."
+  },
+  "Я действительно не согласен.": {
+    "es": "Realmente no estoy de acuerdo.",
+    "de": "Ich bin wirklich anderer Meinung."
+  },
+  "Именно эта книга изменила мою жизнь.": {
+    "es": "Fue este libro el que cambió mi vida.",
+    "de": "Es war dieses Buch, das mein Leben veränderte."
+  },
+  "То, что важно, — честность.": {
+    "es": "Lo importante es la honestidad.",
+    "de": "Wichtig ist Ehrlichkeit."
+  },
+  "Именно из-за тебя мы опоздали.": {
+    "es": "Es por tu culpa que llegamos tarde.",
+    "de": "Wegen dir sind wir zu spät."
+  },
+  "То, что удивило всех, — его молчание.": {
+    "es": "Lo que sorprendió a todos fue su silencio.",
+    "de": "Was alle überraschte, war sein Schweigen."
+  },
+  "Я правда не хочу туда ехать.": {
+    "es": "Realmente no quiero ir allí.",
+    "de": "Ich möchte da wirklich nicht hin."
+  },
+  "Именно в этот момент всё изменилось.": {
+    "es": "Fue en ese momento que todo cambió.",
+    "de": "In diesem Moment änderte sich alles."
+  },
+  "То, что нужно команде, — ясность.": {
+    "es": "Lo que necesita el equipo es claridad.",
+    "de": "Was das Team braucht, ist Klarheit."
+  },
+  "Именно они предложили решение.": {
+    "es": "Fueron ellos quienes dieron con la solución.",
+    "de": "Sie waren diejenigen, die die Lösung fanden."
+  },
+  "То, чего мы добились, — прогресс.": {
+    "es": "Lo que hemos logrado es progreso.",
+    "de": "Was wir erreicht haben, ist Fortschritt."
+  },
+  "Я действительно ценю вашу помощь.": {
+    "es": "Realmente aprecio tu ayuda.",
+    "de": "Ich schätze Ihre Hilfe sehr."
+  },
+  "Именно поэтому я отказался.": {
+    "es": "Por eso me negué.",
+    "de": "Deshalb habe ich abgelehnt."
+  },
+  "Именно здесь началась история.": {
+    "es": "Aquí es donde comenzó la historia.",
+    "de": "Hier begann die Geschichte."
+  },
+  "Она бегает быстрее меня.": {
+    "es": "Ella corre más rápido que yo.",
+    "de": "Sie rennt schneller als ich."
+  },
+  "Он работает больше, чем я.": {
+    "es": "Él trabaja más que yo.",
+    "de": "Er arbeitet mehr als ich."
+  },
+  "Она может помочь, а я — нет.": {
+    "es": "Ella puede ayudar, pero yo no.",
+    "de": "Sie kann helfen, aber ich kann nicht."
+  },
+  "Я бы поехал, если бы мог.": {
+    "es": "Iría si pudiera.",
+    "de": "Ich würde gehen, wenn ich könnte."
+  },
+  "Он сказал, что придёт, и пришёл.": {
+    "es": "Dijo que vendría y vino.",
+    "de": "Er sagte, er würde kommen, und er kam."
+  },
+  "Я не могу сегодня, но завтра — смогу.": {
+    "es": "No puedo hoy, pero mañana puedo.",
+    "de": "Ich kann heute nicht, aber morgen schon."
+  },
+  "Она играет лучше, чем когда-либо.": {
+    "es": "Está jugando mejor que nunca.",
+    "de": "Sie spielt besser als je zuvor."
+  },
+  "Можно сказать, что результаты неубедительны.": {
+    "es": "Se puede decir que los resultados no son concluyentes.",
+    "de": "Man kann sagen, dass die Ergebnisse nicht schlüssig sind."
+  },
+  "Результаты, по-видимому, указывают на связь.": {
+    "es": "Los resultados parecen indicar una conexión.",
+    "de": "Die Ergebnisse scheinen auf einen Zusammenhang hinzuweisen."
+  },
+  "Можно сказать, что политика не сработала.": {
+    "es": "Se puede decir que la política no funcionó.",
+    "de": "Man kann sagen, dass die Politik nicht funktioniert hat."
+  },
+  "Я не совсем уверен, что согласен.": {
+    "es": "No estoy del todo seguro de estar de acuerdo.",
+    "de": "Ich bin mir nicht ganz sicher, ob ich damit einverstanden bin."
+  },
+  "Есть риск, что план не увенчается успехом.": {
+    "es": "Existe el riesgo de que el plan no tenga éxito.",
+    "de": "Es besteht die Gefahr, dass der Plan scheitert."
+  },
+  "Это не идеально, мягко говоря.": {
+    "es": "No es ideal, por decir lo menos.",
+    "de": "Es ist gelinde gesagt nicht ideal."
+  },
+  "Данные, возможно, подлежат разной интерпретации.": {
+    "es": "Los datos pueden estar sujetos a diferentes interpretaciones.",
+    "de": "Die Daten können unterschiedlich interpretiert werden."
+  },
+  "Вам, возможно, стоит пересмотреть подход.": {
+    "es": "Es posible que deba reconsiderar su enfoque.",
+    "de": "Möglicherweise müssen Sie Ihren Ansatz überdenken."
+  },
+  "Это, по-видимому, жизнеспособное решение.": {
+    "es": "Esta parece ser una solución viable.",
+    "de": "Dies scheint eine praktikable Lösung zu sein."
+  },
+  "Я понимаю вашу точку зрения, но не до конца.": {
+    "es": "Entiendo tu punto de vista, pero no del todo.",
+    "de": "Ich verstehe Ihren Standpunkt, aber nicht ganz."
+  },
+  "Широко принято, что это так.": {
+    "es": "Es ampliamente aceptado que este es el caso.",
+    "de": "Es ist allgemein anerkannt, dass dies der Fall ist."
+  },
+  "Строго говоря, это неточно.": {
+    "es": "En rigor, esto es inexacto.",
+    "de": "Streng genommen ist das ungenau."
+  },
+  "В некоторой степени я согласен.": {
+    "es": "Hasta cierto punto estoy de acuerdo.",
+    "de": "Bis zu einem gewissen Grad stimme ich zu."
+  },
+  "Цифры несколько неубедительны.": {
+    "es": "Las cifras son algo poco concluyentes.",
+    "de": "Die Zahlen sind etwas unschlüssig."
+  },
+  "Я бы не пошёл так далеко.": {
+    "es": "Yo no iría tan lejos.",
+    "de": "So weit würde ich nicht gehen."
+  },
+  "Вполне возможно, что мы ошибались.": {
+    "es": "Es muy posible que estuviéramos equivocados.",
+    "de": "Es ist durchaus möglich, dass wir uns geirrt haben."
+  },
+  "Отчёт менее чем однозначен.": {
+    "es": "El informe no es nada claro.",
+    "de": "Der Bericht ist alles andere als klar."
+  },
+  "Можно привести аргументы за обе стороны.": {
+    "es": "Se pueden presentar argumentos a favor de ambas partes.",
+    "de": "Argumente können für beide Seiten vorgebracht werden."
+  },
+  "Есть некоторые основания полагать иное.": {
+    "es": "Hay algunas razones para creer lo contrario.",
+    "de": "Es gibt einige Gründe, etwas anderes zu glauben."
+  },
+  "Я бы не стал называть это провалом.": {
+    "es": "Yo no lo llamaría un fracaso.",
+    "de": "Ich würde es nicht als Misserfolg bezeichnen."
+  },
+  "Похоже, расходы выросли.": {
+    "es": "Parece que los costos han aumentado.",
+    "de": "Es sieht so aus, als wären die Kosten gestiegen."
+  },
+  "Есть некоторые доказательства в пользу этого.": {
+    "es": "Hay alguna evidencia que respalda esto.",
+    "de": "Dafür gibt es einige Belege."
+  },
+  "Можно правдоподобно утверждать обратное.": {
+    "es": "Se puede argumentar plausiblemente lo contrario.",
+    "de": "Man kann plausibel das Gegenteil argumentieren."
+  },
+  "Исход отнюдь не предрешён.": {
+    "es": "El resultado no está en modo alguno predeterminado.",
+    "de": "Das Ergebnis ist keineswegs vorherbestimmt."
+  },
+  "Нельзя считать это необоснованным предположением.": {
+    "es": "Esto no puede considerarse una suposición infundada.",
+    "de": "Dies kann nicht als unbegründete Annahme angesehen werden."
+  },
+  "В известной степени я разделяю эту точку зрения.": {
+    "es": "Hasta cierto punto, comparto este punto de vista.",
+    "de": "Bis zu einem gewissen Grad teile ich diesen Standpunkt."
+  },
+  "Автор, возможно, не доносит всей правды.": {
+    "es": "Puede que el autor no esté diciendo toda la verdad.",
+    "de": "Der Autor sagt möglicherweise nicht die ganze Wahrheit."
+  },
+  "Эксперимент, возможно, пострадал от ограничений дизайна.": {
+    "es": "Es posible que el experimento haya sufrido limitaciones de diseño.",
+    "de": "Das Experiment litt möglicherweise unter Designeinschränkungen."
+  },
+  "Он, возможно, не совсем подходит для этой роли.": {
+    "es": "Quizás no sea el adecuado para el papel.",
+    "de": "Er ist möglicherweise nicht ganz der Richtige für die Rolle."
+  }
+}

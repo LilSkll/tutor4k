@@ -34,10 +34,10 @@ export function TeacherAnalyticsClient() {
   React.useEffect(() => {
     const ac = new AbortController();
     setLoading(true);
-    const q =
-      courseId === "all"
-        ? ""
-        : `?courseId=${encodeURIComponent(courseId)}`;
+    const params = new URLSearchParams();
+    if (courseId !== "all") params.set("courseId", courseId);
+    params.set("interfaceLanguage", language);
+    const q = `?${params.toString()}`;
     void (async () => {
       try {
         const res = await fetch(`/api/teacher/analytics${q}`, {
@@ -58,7 +58,7 @@ export function TeacherAnalyticsClient() {
       }
     })();
     return () => ac.abort();
-  }, [courseId, t]);
+  }, [courseId, language, t]);
 
   const weekChart =
     data?.weekActivity.map((d) => ({
