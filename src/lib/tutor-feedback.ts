@@ -73,8 +73,8 @@ function pick<T>(arr: T[]): T {
 }
 
 /**
- * Bank explanations are often authored in Russian. For non-RU UI, keep
- * non-Cyrillic bits (Spanish forms) or fall back to a short localized hint.
+ * Bank explanations are often authored in Russian (with target-language forms).
+ * For non-RU UI: keep short construction formulas; drop foreign prose.
  */
 export function localizeBankExplanation(
   explanation: string,
@@ -84,25 +84,48 @@ export function localizeBankExplanation(
   if (!trimmed) {
     return EXPLANATION_FALLBACK[language] ?? EXPLANATION_FALLBACK.en;
   }
-  if (language === "ru" || !CYRILLIC.test(trimmed)) return trimmed;
+  if (language === "ru") return trimmed;
 
-  const kept = trimmed
-    .split(/(?<=[.!?…])\s+/)
-    .map((s) => s.trim())
-    .filter((s) => s && !CYRILLIC.test(s))
-    .join(" ")
-    .trim();
-  if (kept.length >= 8) return kept;
-
-  const latinBits = trimmed
-    .replace(/[\u0400-\u04FF]+/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-  if (latinBits.length >= 8 && /[a-záéíóúñü]/i.test(latinBits)) {
-    return latinBits;
+  // Strip Cyrillic commentary; keep Latin forms / formulas when useful.
+  let kept = trimmed;
+  if (CYRILLIC.test(trimmed)) {
+    kept = trimmed
+      .split(/(?<=[.!?…])\s+/)
+      .map((s) => s.trim())
+      .filter((s) => s && !CYRILLIC.test(s))
+      .join(" ")
+      .trim();
+    if (!kept) {
+      kept = trimmed
+        .replace(/[\u0400-\u04FF]+/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+    }
   }
 
-  return EXPLANATION_FALLBACK[language] ?? EXPLANATION_FALLBACK.en;
+  if (!kept || kept.length < 4) {
+    return EXPLANATION_FALLBACK[language] ?? EXPLANATION_FALLBACK.en;
+  }
+
+  // Long Spanish prose on a non-Spanish UI is confusing — keep only short formulas.
+  const looksSpanishProse =
+    /\b(el|la|los|las|que|como|está|están|para|por|también|siempre|nunca)\b/i.test(
+      kept,
+    ) && kept.split(/\s+/).length >= 8;
+  if (language !== "es" && looksSpanishProse && !/[→+]/.test(kept)) {
+    return EXPLANATION_FALLBACK[language] ?? EXPLANATION_FALLBACK.en;
+  }
+
+  // Long English prose on a non-English UI — same rule.
+  const looksEnglishProse =
+    /\b(the|and|with|that|this|have|has|was|were|from|into)\b/i.test(kept) &&
+    kept.split(/\s+/).length >= 10 &&
+    !/[→+]/.test(kept);
+  if (language !== "en" && looksEnglishProse) {
+    return EXPLANATION_FALLBACK[language] ?? EXPLANATION_FALLBACK.en;
+  }
+
+  return kept;
 }
 
 /**
@@ -119,6 +142,7 @@ export function formatBankTutorFeedback(input: {
 }): string {
   const lang = input.language ?? "ru";
   const explanation = localizeBankExplanation(input.explanation, lang);
+  const instruction = localizeBankExplanation(input.instruction ?? "", lang);
   const base = input.correct
     ? `${pick(PRAISE[lang] ?? PRAISE.ru)} ${explanation}`
     : `${pick(MISTAKE_INTRO[lang] ?? MISTAKE_INTRO.ru)} ${explanation}`;
@@ -127,8 +151,8 @@ export function formatBankTutorFeedback(input: {
     language: lang,
     correct: input.correct,
     feedback: base,
-    instruction: input.instruction,
-    explanation: input.explanation,
+    instruction: instruction === (EXPLANATION_FALLBACK[lang] ?? "") ? null : instruction || null,
+    explanation,
     exerciseType: input.exerciseType,
   });
 }

@@ -200,10 +200,40 @@ export async function fillCompletionCertificate(
 
 /**
  * Language course name for the certificate (“in the course …”).
- * Product brand stays “Spanish with Pavel” on the seal/disclaimer artwork.
+ * Localized for the learner's interface language.
  */
-export function courseLineForId(courseId: string): string {
-  if (courseId === "english") return "English";
-  if (courseId === "russian") return "Russian";
-  return "Spanish";
+export function courseLineForId(
+  courseId: string,
+  language: "ru" | "en" | "es" | "de" = "en",
+): string {
+  const lines: Record<
+    "spanish" | "english" | "russian",
+    Record<"ru" | "en" | "es" | "de", string>
+  > = {
+    spanish: {
+      ru: "Испанский",
+      en: "Spanish",
+      es: "Español",
+      de: "Spanisch",
+    },
+    english: {
+      ru: "Английский",
+      en: "English",
+      es: "Inglés",
+      de: "Englisch",
+    },
+    russian: {
+      ru: "Русский",
+      en: "Russian",
+      es: "Ruso",
+      de: "Russisch",
+    },
+  };
+  const key =
+    courseId === "english"
+      ? "english"
+      : courseId === "russian"
+        ? "russian"
+        : "spanish";
+  return lines[key][language] ?? lines[key].en;
 }

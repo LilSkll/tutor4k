@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import {
   enrichImperativeBlankQuestion,
+  isEnglishMetaTranslationPrompt,
   isGrammarCategoryInstruction,
   isUsableBankExercise,
   isUsableErrorCorrection,
@@ -224,6 +225,25 @@ describe("isUsableTranslation", () => {
         answer: "Such was his anger that he left",
       }),
     ).toBe(false);
+    expect(
+      isUsableTranslation({
+        question: "some or any?",
+        answer: "any",
+      }),
+    ).toBe(false);
+    expect(
+      isUsableTranslation({
+        question: "Cleft: What I need is...",
+        answer: "is",
+      }),
+    ).toBe(false);
+    expect(isEnglishMetaTranslationPrompt("for or since?")).toBe(true);
+    expect(
+      isUsableTranslation({
+        question: "Не могли бы вы перезвонить? (formal)",
+        answer: "Could you call back?",
+      }),
+    ).toBe(true);
   });
 });
 

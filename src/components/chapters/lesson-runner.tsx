@@ -1007,7 +1007,7 @@ export function LessonRunner({
               userName={summaryName || userName}
               achievement={t("journey.chapterLine", {
                 number: chapter.number,
-                title: targetTitle || chapterDisplayTitle,
+                title: chapterDisplayTitle,
               })}
               level={chapter.level}
               courseId={courseId}

@@ -35,6 +35,16 @@ describe("translation localization", () => {
     expect(ex.question).toBe("I am a student.");
   });
 
+  it("does not spoil English-course TR when UI is English", () => {
+    const enCourse: StaticExercise = {
+      ...sample,
+      answer: "I am a student",
+    };
+    expect(isExerciseUsableForLanguage(enCourse, "en", "english")).toBe(false);
+    const kept = localizeTranslationQuestion(enCourse, "en", "english");
+    expect(kept).toBe("Я студент.");
+  });
+
   it("replaces spoiler grammar-tag instructions", () => {
     const [ex] = prepareExercisesForInterface(
       [
@@ -139,10 +149,35 @@ describe("orderEarlyLevelPractice", () => {
   it("interleaves phrase types first for A1", async () => {
     const { orderEarlyLevelPractice } = await import("@/lib/exercise-bank");
     const bank: StaticExercise[] = [
-      { ...sample, id: "1", type: "multiple_choice", question: "A" },
-      { ...sample, id: "2", type: "sentence_building", question: "B" },
-      { ...sample, id: "3", type: "translation", question: "C" },
-      { ...sample, id: "4", type: "fill_blank", question: "D" },
+      {
+        ...sample,
+        id: "1",
+        type: "multiple_choice",
+        question: "A ___",
+        answer: "one",
+      },
+      {
+        ...sample,
+        id: "2",
+        type: "sentence_building",
+        question: "B / C",
+        answer: "B C",
+        options: ["B", "C"],
+      },
+      {
+        ...sample,
+        id: "3",
+        type: "translation",
+        question: "Привет",
+        answer: "Hello",
+      },
+      {
+        ...sample,
+        id: "4",
+        type: "fill_blank",
+        question: "D ___",
+        answer: "two",
+      },
     ];
     const ordered = orderEarlyLevelPractice(bank, "A1");
     expect(ordered[0].type).toBe("sentence_building");

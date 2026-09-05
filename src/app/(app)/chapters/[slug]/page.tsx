@@ -68,7 +68,7 @@ export default async function ChapterPage({
   const exercises = prepareExercisesForSession(
     attachQuestionGlossesToMany(
       orderEarlyLevelPractice(
-        prepareExercisesForInterface(course.getExercises(slug), lang),
+        prepareExercisesForInterface(course.getExercises(slug), lang, courseId),
         chapter.level,
       ),
     ),

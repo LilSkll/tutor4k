@@ -1,10 +1,12 @@
 import { createSupabaseAdminClient } from "@/lib/supabase-admin";
 import { getCourse } from "@/config/courses";
+import { getChapterTitle } from "@/lib/chapter-display";
 import { ProgressService } from "@/server/services/progress";
 import type { WeekActivityDay } from "@/server/services/progress";
 import { assertCanViewStudent } from "@/server/teacher/links";
 import { getCourseLearningProfileAdmin } from "@/server/learning/student-profile";
 import type { TeacherStudentCardDTO } from "@/types/teacher";
+import type { InterfaceLanguage } from "@/types";
 
 export type StudentCardData = TeacherStudentCardDTO;
 
@@ -19,6 +21,7 @@ function requireAdmin() {
 async function getChapterRows(
   userId: string,
   courseId: string,
+  lang: InterfaceLanguage = "ru",
 ): Promise<TeacherStudentCardDTO["chapters"]> {
   const admin = requireAdmin();
   const course = await getCourse(courseId);
@@ -48,7 +51,7 @@ async function getChapterRows(
       const ch = bySlug.get(slug);
       return {
         chapterSlug: slug,
-        title: ch?.title ?? slug,
+        title: ch ? getChapterTitle(ch, lang) : slug,
         status: r.status as TeacherStudentCardDTO["chapters"][number]["status"],
         score: Number(r.score) || 0,
         completedAt: (r.completed_at as string | null) ?? null,
@@ -142,6 +145,7 @@ export async function getStudentCard(
   teacherId: string,
   studentId: string,
   courseId: string,
+  interfaceLanguage: InterfaceLanguage = "ru",
 ): Promise<StudentCardData> {
   const link = await assertCanViewStudent(teacherId, studentId, courseId);
   const admin = requireAdmin();
@@ -166,7 +170,7 @@ export async function getStudentCard(
     learningProfile,
   ] = await Promise.all([
     ProgressService.getCourseProgress(studentId, courseId),
-    getChapterRows(studentId, courseId),
+    getChapterRows(studentId, courseId, interfaceLanguage),
     ProgressService.getWeekActivity(studentId, courseId),
     getActivityHistory(studentId, courseId, 30),
     getExerciseRows(studentId, courseId, 25),

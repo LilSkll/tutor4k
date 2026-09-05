@@ -226,13 +226,18 @@ const SPANISH_LEAK_IN_CYRILLIC =
 
 /** Grammar jargon often kept in Latin inside Russian meta prompts (not sentences). */
 const LATIN_GRAMMAR_JARGON =
-  /^(pretérito|perfecto|imperfecto|indefinido|subjuntivo|condicional|presente|participio|infinitivo|gerundio|futuro|conjetura|imperativo|indicativo|pluscuamperfecto|compuesto|simple|reflexivo|relativo|conectores?|hendida|leísmo|loísmo|dele|ielts)$/i;
+  /^(pretérito|perfecto|imperfecto|indefinido|subjuntivo|condicional|presente|participio|infinitivo|gerundio|futuro|conjetura|imperativo|indicativo|pluscuamperfecto|compuesto|simple|reflexivo|relativo|conectores?|hendida|leísmo|loísmo|dele|ielts|formal|informal|neutral|polite|register)$/i;
 
 /**
  * True when a would-be L1 prompt mixes Cyrillic with Spanish wording.
+ * Register notes like «(formal)» are allowed — strip them before the Latin check.
  */
 export function hasMixedLanguageTranslationPrompt(question: string): boolean {
-  const q = question.trim();
+  const q = question
+    .trim()
+    .replace(/\((formal|informal|neutral|polite|register)\)/gi, " ")
+    .replace(/\s+/g, " ")
+    .trim();
   if (!q || !CYRILLIC.test(q)) return false;
   if (hasScriptMixedToken(q)) return true;
   if (SPANISH_LEAK_IN_CYRILLIC.test(q)) return true;
@@ -259,6 +264,8 @@ export function isUsableTranslation(ex: {
   if (isGrammarCategoryInstruction(q)) return false;
   // Pack generator leaks SB/EC instructions as "translation" prompts.
   if (isMetaOrFormulaPrompt(q)) return false;
+  // English pack leaks: "some or any?", "Cleft: What I need is..."
+  if (isEnglishMetaTranslationPrompt(q)) return false;
   // Hybrid RU+ES source sentences confuse learners and grading.
   if (hasMixedLanguageTranslationPrompt(q)) return false;
   // Grammar-tag dumps used as “prompts” (2–3 words, no real sentence)
@@ -292,6 +299,27 @@ export function isUsableTranslation(ex: {
   // Tiny pronoun-only "translations"
   if (a.length <= 3 && /^(se|lo|la|le|me|te|nos|os|que)$/i.test(a)) return false;
   return true;
+}
+
+/**
+ * English curriculum tags leaked as "translation" prompts
+ * (e.g. «some or any?», «Cleft: What I need is…»).
+ */
+export function isEnglishMetaTranslationPrompt(text: string): boolean {
+  const q = text.trim();
+  if (!q) return false;
+  if (/^(some|any|much|many|a few|a little|for|since)\s+or\s+/i.test(q)) {
+    return true;
+  }
+  if (/^\w+(\s+or\s+\w+){1,3}\??$/i.test(q) && q.length <= 40) return true;
+  if (
+    /^(Cleft|Inversion|Backshift|Register|Quantifier|Article|Modal|Passive|Conditional|Relative)\s*:/i.test(
+      q,
+    )
+  ) {
+    return true;
+  }
+  return false;
 }
 
 /** Instruction / grammar-formula leaked as a learner prompt. */

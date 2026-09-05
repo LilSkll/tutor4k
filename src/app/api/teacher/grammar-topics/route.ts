@@ -14,13 +14,19 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ error: "courseId required" }, { status: 400 });
     }
     const course = await getCourse(courseId);
-  const lang =
-    teacher.interface_language === "en" ||
-    teacher.interface_language === "es" ||
-    teacher.interface_language === "de" ||
-    teacher.interface_language === "ru"
-      ? teacher.interface_language
-      : "ru";
+    const langParam = url.searchParams.get("interfaceLanguage");
+    const lang =
+      langParam === "en" ||
+      langParam === "es" ||
+      langParam === "de" ||
+      langParam === "ru"
+        ? langParam
+        : teacher.interface_language === "en" ||
+            teacher.interface_language === "es" ||
+            teacher.interface_language === "de" ||
+            teacher.interface_language === "ru"
+          ? teacher.interface_language
+          : "ru";
     const topics = localizeGrammarTopicMetaList(
       toGrammarTopicMetaList(course.getGrammar()),
       lang,

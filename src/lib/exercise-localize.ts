@@ -70,7 +70,11 @@ export function getQuestionGloss(
 }
 
 function normalizeForCompare(s: string): string {
-  return s.replace(/\s+/g, " ").trim().toLowerCase();
+  return s
+    .replace(/[¿?¡!.,;:'"«»„""''`´…]/g, "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLowerCase();
 }
 
 /** Render "question (gloss)" when a gloss exists. */
@@ -328,6 +332,8 @@ export function localizeExerciseInstruction(
 /**
  * True when an exercise makes sense for the given interface language.
  * Translation items with a localized prompt stay available for en/es/de.
+ * For English course + English UI, RU→EN swaps that equal the answer are
+ * treated as spoilers and dropped (keep RU UI or other L1 prompts).
  */
 export function isExerciseUsableForLanguage(
   exercise: Pick<
@@ -335,6 +341,7 @@ export function isExerciseUsableForLanguage(
     "question" | "answer" | "type" | "questionTranslations"
   >,
   interfaceLanguage: InterfaceLanguage,
+  courseId?: string | null,
 ): boolean {
   if (interfaceLanguage === "ru") return true;
   if (hasCyrillicText(exercise.answer)) return false;
@@ -344,7 +351,16 @@ export function isExerciseUsableForLanguage(
     const localized =
       exercise.questionTranslations?.[interfaceLanguage]?.trim() ??
       lookupTranslationPrompt(exercise.question, interfaceLanguage);
-    return Boolean(localized);
+    if (!localized) return false;
+    // English course: never show an EN prompt that is the EN answer.
+    if (
+      courseId === "english" &&
+      interfaceLanguage === "en" &&
+      normalizeForCompare(localized) === normalizeForCompare(exercise.answer)
+    ) {
+      return false;
+    }
+    return true;
   }
 
   return !hasCyrillicText(exercise.question);
@@ -354,32 +370,52 @@ export function isExerciseUsableForLanguage(
 export function localizeTranslationQuestion(
   exercise: Pick<
     StaticExercise,
-    "question" | "type" | "questionTranslations"
+    "question" | "answer" | "type" | "questionTranslations"
   >,
   interfaceLanguage: InterfaceLanguage,
+  courseId?: string | null,
 ): string {
   if (exercise.type !== "translation" || interfaceLanguage === "ru") {
     return exercise.question;
   }
   const inline = exercise.questionTranslations?.[interfaceLanguage]?.trim();
-  if (inline) return inline;
+  if (inline) {
+    if (
+      courseId === "english" &&
+      interfaceLanguage === "en" &&
+      normalizeForCompare(inline) === normalizeForCompare(exercise.answer ?? "")
+    ) {
+      return exercise.question;
+    }
+    return inline;
+  }
   if (!hasCyrillicText(exercise.question)) return exercise.question;
-  return (
-    lookupTranslationPrompt(exercise.question, interfaceLanguage) ??
-    exercise.question
-  );
+  const mapped = lookupTranslationPrompt(exercise.question, interfaceLanguage);
+  if (!mapped) return exercise.question;
+  if (
+    courseId === "english" &&
+    interfaceLanguage === "en" &&
+    normalizeForCompare(mapped) === normalizeForCompare(exercise.answer ?? "")
+  ) {
+    // Spoiler: keep Russian source rather than printing the answer as the prompt.
+    return exercise.question;
+  }
+  return mapped;
 }
 
 /** Filter + localize a batch of bank exercises for the interface language. */
 export function prepareExercisesForInterface<T extends StaticExercise>(
   exercises: T[],
   interfaceLanguage: InterfaceLanguage,
+  courseId?: string | null,
 ): T[] {
   return exercises
-    .filter((ex) => isExerciseUsableForLanguage(ex, interfaceLanguage))
+    .filter((ex) =>
+      isExerciseUsableForLanguage(ex, interfaceLanguage, courseId),
+    )
     .map((ex) => ({
       ...ex,
-      question: localizeTranslationQuestion(ex, interfaceLanguage),
+      question: localizeTranslationQuestion(ex, interfaceLanguage, courseId),
       instruction: localizeExerciseInstruction(ex, interfaceLanguage),
       explanation: localizeBankExplanation(ex.explanation, interfaceLanguage),
     }));

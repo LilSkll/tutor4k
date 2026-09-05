@@ -11077,30 +11077,6 @@
         "explanation": "students = countable → a few.",
         "grammarTopic": "eng-a2-quantifiers",
         "acceptableAnswers": []
-      },
-      {
-        "type": "translation",
-        "question": "some or any?",
-        "answer": "any",
-        "acceptableAnswers": [
-          "any",
-          "any"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "Negative → any.",
-        "grammarTopic": "eng-a2-quantifiers"
-      },
-      {
-        "type": "translation",
-        "question": "much or many?",
-        "answer": "How many books do you have?",
-        "acceptableAnswers": [
-          "how many books do you have?",
-          "many"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "books = countable → many.",
-        "grammarTopic": "eng-a2-quantifiers"
       }
     ],
     "error_correction": [
@@ -13703,18 +13679,6 @@
         "explanation": "has been on the phone all day.",
         "grammarTopic": "eng-b1-perfect-continuous",
         "acceptableAnswers": []
-      },
-      {
-        "type": "translation",
-        "question": "for or since?",
-        "answer": "I have been studying for three hours.",
-        "acceptableAnswers": [
-          "i have been studying for three hours.",
-          "for"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "for + duration: for three hours.",
-        "grammarTopic": "eng-b1-perfect-continuous"
       }
     ],
     "error_correction": [
@@ -16435,18 +16399,6 @@
         "explanation": "Not only did she — инверсия в первой части.",
         "grammarTopic": "eng-c1-inversion",
         "acceptableAnswers": []
-      },
-      {
-        "type": "translation",
-        "question": "Cleft: What I need is...",
-        "answer": "is",
-        "acceptableAnswers": [
-          "is",
-          "is"
-        ],
-        "instruction": "Translate to English",
-        "explanation": "What I need is + noun.",
-        "grammarTopic": "eng-c1-inversion"
       }
     ],
     "error_correction": [

@@ -104,8 +104,12 @@ export function TeacherAssignmentsClient() {
       const [aRes, sRes, cRes, gRes] = await Promise.all([
         fetch(`/api/teacher/assignments?courseId=${courseId}`),
         fetch(`/api/teacher/students?courseId=${courseId}`),
-        fetch(`/api/teacher/chapters?courseId=${courseId}`),
-        fetch(`/api/teacher/grammar-topics?courseId=${courseId}`),
+        fetch(
+          `/api/teacher/chapters?courseId=${courseId}&interfaceLanguage=${encodeURIComponent(language)}`,
+        ),
+        fetch(
+          `/api/teacher/grammar-topics?courseId=${courseId}&interfaceLanguage=${encodeURIComponent(language)}`,
+        ),
       ]);
       const aData = (await aRes.json()) as {
         assignments?: TeacherAssignmentDTO[];
@@ -140,7 +144,7 @@ export function TeacherAssignmentsClient() {
     } finally {
       if (gen === loadGen.current) setLoading(false);
     }
-  }, [courseId, t]);
+  }, [courseId, language, t]);
 
   React.useEffect(() => {
     void load();

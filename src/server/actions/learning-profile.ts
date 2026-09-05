@@ -172,7 +172,7 @@ async function localizeRevisionExercises(
   void courseId;
   return prepareExercisesForSession(
     attachQuestionGlossesToMany(
-      prepareExercisesForInterface(exercises, language),
+      prepareExercisesForInterface(exercises, language, courseId),
     ),
   );
 }

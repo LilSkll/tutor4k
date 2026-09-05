@@ -55,7 +55,7 @@ export function CompletionCertificateCard({
 
   const displayName = userName.trim() || t("lesson.friend");
   const dateLabel = formatDate(completedAt, language);
-  const courseLine = courseLineForId(courseId);
+  const courseLine = courseLineForId(courseId, language);
 
   React.useEffect(() => {
     let cancelled = false;

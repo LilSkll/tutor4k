@@ -9,7 +9,8 @@ export async function GET(
   try {
     const teacher = await requireTeacherSession();
     const { studentId } = await ctx.params;
-    const courseId = new URL(req.url).searchParams.get("courseId");
+    const url = new URL(req.url);
+    const courseId = url.searchParams.get("courseId");
     if (!studentId) {
       return NextResponse.json({ error: "studentId required" }, { status: 400 });
     }
@@ -19,8 +20,21 @@ export async function GET(
         { status: 400 },
       );
     }
+    const langParam = url.searchParams.get("interfaceLanguage");
+    const lang =
+      langParam === "en" ||
+      langParam === "es" ||
+      langParam === "de" ||
+      langParam === "ru"
+        ? langParam
+        : teacher.interface_language === "en" ||
+            teacher.interface_language === "es" ||
+            teacher.interface_language === "de" ||
+            teacher.interface_language === "ru"
+          ? teacher.interface_language
+          : "ru";
 
-    const card = await getStudentCard(teacher.id, studentId, courseId);
+    const card = await getStudentCard(teacher.id, studentId, courseId, lang);
     return NextResponse.json({ card });
   } catch (err) {
     const msg = (err as Error).message;

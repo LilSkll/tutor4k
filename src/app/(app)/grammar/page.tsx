@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { BookOpen } from "lucide-react";
 import { unstable_cache } from "next/cache";
 import { getCourse } from "@/config/courses";
@@ -45,12 +46,18 @@ export default async function GrammarPage({
         <p className="text-sm text-muted-foreground">{t("grammar.subtitle")}</p>
       </div>
 
-      <GrammarExplorer
-        initialLevel={params.level}
-        topics={grammarTopics}
-        courseId={courseId}
-        serverLanguage={lang}
-      />
+      <Suspense
+        fallback={
+          <div className="h-40 animate-pulse rounded-xl bg-muted/40" />
+        }
+      >
+        <GrammarExplorer
+          initialLevel={params.level}
+          topics={grammarTopics}
+          courseId={courseId}
+          serverLanguage={lang}
+        />
+      </Suspense>
     </div>
   );
 }

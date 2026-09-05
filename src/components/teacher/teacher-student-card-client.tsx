@@ -44,7 +44,7 @@ export function TeacherStudentCardClient({
       setLoading(true);
       try {
         const res = await fetch(
-          `/api/teacher/students/${encodeURIComponent(studentId)}?courseId=${encodeURIComponent(courseId)}`,
+          `/api/teacher/students/${encodeURIComponent(studentId)}?courseId=${encodeURIComponent(courseId)}&interfaceLanguage=${encodeURIComponent(language)}`,
         );
         const data = (await res.json()) as {
           card?: TeacherStudentCardDTO;
@@ -64,7 +64,7 @@ export function TeacherStudentCardClient({
     return () => {
       cancelled = true;
     };
-  }, [studentId, courseId, t]);
+  }, [studentId, courseId, language, t]);
 
   if (loading) {
     return (

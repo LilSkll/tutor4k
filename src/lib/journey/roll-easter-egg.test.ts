@@ -8,6 +8,12 @@ describe("courseLineForId", () => {
     expect(courseLineForId("english")).toBe("English");
     expect(courseLineForId("russian")).toBe("Russian");
   });
+
+  it("localizes course names for the learner UI language", () => {
+    expect(courseLineForId("spanish", "ru")).toBe("Испанский");
+    expect(courseLineForId("english", "de")).toBe("Englisch");
+    expect(courseLineForId("spanish", "es")).toBe("Español");
+  });
 });
 
 describe("rollEasterEgg", () => {
