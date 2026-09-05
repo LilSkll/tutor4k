@@ -26,10 +26,10 @@ export async function loadSpanishCourse(): Promise<CourseConfig> {
   return {
     id: "spanish",
     languageCode: "es",
-    title: "Испанский язык",
+    title: "Spanish",
     titleNative: "Español",
     flag: "🇪🇸",
-    description: "Изучай испанский язык с ИИ-репетитором",
+    description: "Learn Spanish with an AI tutor",
     promptId: "spanish",
     textbookNames: "Дышлевая, Гонсалес-Алимова",
     examName: "DELE",

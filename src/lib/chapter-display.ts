@@ -525,6 +525,261 @@ export const SPANISH_CHAPTER_LOCALE: Record<
       location: "Cervantes-Theater",
     },
   },
+  "chapter-31-verbos-frecuentes": {
+    en: {
+      title: "Map of Frequent Verbs",
+      summary: "High-frequency irregulars: ir, tener, hacer, poder, querer, decir.",
+      location: "Cartography Room",
+    },
+    es: {
+      title: "El Mapa de los Verbos",
+      summary: "Verbos irregulares frecuentes: ir, tener, hacer, poder, querer, decir.",
+      location: "Sala de cartografía",
+    },
+    de: {
+      title: "Karte der häufigen Verben",
+      summary: "Häufige unregelmäßige Verben: ir, tener, hacer, poder, querer, decir.",
+      location: "Kartographie-Raum",
+    },
+  },
+  "chapter-32-pronombre-se": {
+    en: {
+      title: "Hall of Mirrors",
+      summary: "The pronoun se — five uses: reflexive, reciprocal, impersonal, passive, accidental.",
+      location: "Mirror Hall, Seville",
+    },
+    es: {
+      title: "La Sala de los Espejos",
+      summary: "El pronombre se — cinco valores: reflexivo, recíproco, impersonal, pasivo, accidental.",
+      location: "Sala de los espejos, Sevilla",
+    },
+    de: {
+      title: "Spiegelsaal",
+      summary: "Das Pronomen se — fünf Werte: reflexiv, reziprok, unpersönlich, passiv, zufällig.",
+      location: "Spiegelsaal, Sevilla",
+    },
+  },
+  "chapter-33-relativos": {
+    en: {
+      title: "Threads of the Story",
+      summary: "Relative pronouns: que, quien, lo que, cuyo, donde — linking two clauses.",
+      location: "Archive of Tales",
+    },
+    es: {
+      title: "Los Hilos de la Historia",
+      summary: "Pronombres relativos: que, quien, lo que, cuyo, donde — unir dos frases.",
+      location: "Archivo de relatos",
+    },
+    de: {
+      title: "Fäden der Geschichte",
+      summary: "Relativpronomen: que, quien, lo que, cuyo, donde — zwei Sätze verbinden.",
+      location: "Erzählarchiv",
+    },
+  },
+  "chapter-34-pluscuamperfecto": {
+    en: {
+      title: "Two Layers of the Past",
+      summary: "Pluscuamperfecto — already done before: había comido when you arrived.",
+      location: "Clock Tower",
+    },
+    es: {
+      title: "Dos Capas del Pasado",
+      summary: "Pluscuamperfecto — ya había pasado: había comido cuando llegaste.",
+      location: "Torre del reloj",
+    },
+    de: {
+      title: "Zwei Schichten der Vergangenheit",
+      summary: "Pluscuamperfecto — schon vorher geschehen: había comido, als du ankamst.",
+      location: "Uhrturm",
+    },
+  },
+  "chapter-35-subjuntivo-imperfecto": {
+    en: {
+      title: "If It Were in the Past",
+      summary: "Imperfecto de subjuntivo — wishes and unreal past: si tuviera, quería que vinieras.",
+      location: "Garden of What Might Have Been",
+    },
+    es: {
+      title: "Si en el Pasado",
+      summary: "Imperfecto de subjuntivo — deseos e irreal pasado: si tuviera, quería que vinieras.",
+      location: "Jardín de lo que pudo ser",
+    },
+    de: {
+      title: "Wenn es in der Vergangenheit wäre",
+      summary: "Imperfecto de subjuntivo — Wünsche und Irrealis: si tuviera, quería que vinieras.",
+      location: "Garten des Möglichen",
+    },
+  },
+  "chapter-36-pronombres-objetos": {
+    en: {
+      title: "Little Words",
+      summary: "Direct and indirect objects: lo/la = it, le = him/her, se lo (not le lo).",
+      location: "Linguistics Workshop",
+    },
+    es: {
+      title: "Las Palabras Pequeñas",
+      summary: "Complemento directo e indirecto: lo/la, le, se lo (no le lo).",
+      location: "Taller lingüístico",
+    },
+    de: {
+      title: "Kleine Wörter",
+      summary: "Direktes und indirektes Objekt: lo/la, le, se lo (nicht le lo).",
+      location: "Sprachwerkstatt",
+    },
+  },
+  "chapter-37-adverbios": {
+    en: {
+      title: "Shades of Speech",
+      summary: "Adverbs: rápidamente (-mente), muy vs mucho; quizás + subjunctive.",
+      location: "Palette of Words",
+    },
+    es: {
+      title: "Matices del Habla",
+      summary: "Adverbios: rápidamente (-mente), muy vs mucho; quizás + subjuntivo.",
+      location: "Paleta de palabras",
+    },
+    de: {
+      title: "Nuancen der Rede",
+      summary: "Adverbien: rápidamente (-mente), muy vs mucho; quizás + Subjuntivo.",
+      location: "Wortpalette",
+    },
+  },
+  "chapter-38-subjuntivo-compuestos": {
+    en: {
+      title: "Compound Subjunctive",
+      summary: "Subjuntivo compuesto — haya hablado, hubiera hablado (same rule, different tense).",
+      location: "Hall of Time",
+    },
+    es: {
+      title: "Subjuntivo Compuesto",
+      summary: "Subjuntivo compuesto — haya hablado, hubiera hablado (misma regla, otro tiempo).",
+      location: "Sala del tiempo",
+    },
+    de: {
+      title: "Zusammengesetzter Subjuntivo",
+      summary: "Subjuntivo compuesto — haya hablado, hubiera hablado (gleiche Regel, andere Zeit).",
+      location: "Zeithalle",
+    },
+  },
+  "chapter-39-condicionales-compuestos": {
+    en: {
+      title: "Three Worlds of If",
+      summary: "Condicional compuesto — habría ido; three si types: real, unreal, unreal past.",
+      location: "Fork of Fates",
+    },
+    es: {
+      title: "Tres Mundos del Si",
+      summary: "Condicional compuesto — habría ido; tres tipos de si: real, irreal, irreal pasado.",
+      location: "Bifurcación de destinos",
+    },
+    de: {
+      title: "Drei Welten des Wenn",
+      summary: "Condicional compuesto — habría ido; drei si-Typen: real, irreal, irreal Vergangenheit.",
+      location: "Schicksalsspaltung",
+    },
+  },
+  "chapter-40-relativos-avanzado": {
+    en: {
+      title: "Formal Threads",
+      summary: "Advanced relatives: el cual, lo que, adonde — for formal register.",
+      location: "Salamanca Salon",
+    },
+    es: {
+      title: "Hilos Formales",
+      summary: "Relativos avanzados: el cual, lo que, adonde — registro formal.",
+      location: "Salón de Salamanca",
+    },
+    de: {
+      title: "Formelle Fäden",
+      summary: "Fortgeschrittene Relativa: el cual, lo que, adonde — formelles Register.",
+      location: "Salon Salamanca",
+    },
+  },
+  "chapter-41-conectores-discursivos": {
+    en: {
+      title: "Bridges Between Ideas",
+      summary: "Discourse connectors B2+: sin embargo, por lo tanto; some require subjunctive.",
+      location: "Salamanca Bridge",
+    },
+    es: {
+      title: "Puentes entre Ideas",
+      summary: "Conectores discursivos B2+: sin embargo, por lo tanto; algunos con subjuntivo.",
+      location: "Puente de Salamanca",
+    },
+    de: {
+      title: "Brücken zwischen Gedanken",
+      summary: "Diskurskonnektoren B2+: sin embargo, por lo tanto; manche mit Subjuntivo.",
+      location: "Salamanca-Brücke",
+    },
+  },
+  "chapter-42-subjuntivo-avanzado": {
+    en: {
+      title: "Tricky Subjunctive Cases",
+      summary: "Borderline subjunctive: aunque, donde, como — fact vs hypothesis.",
+      location: "Debate Hall",
+    },
+    es: {
+      title: "Subjuntivo: Casos Dudosos",
+      summary: "Casos dudosos del subjuntivo: aunque, donde, como — hecho o hipótesis.",
+      location: "Sala de debates",
+    },
+    de: {
+      title: "Strittige Subjuntivo-Fälle",
+      summary: "Grenzfälle: aunque, donde, como — Fakt oder Hypothese.",
+      location: "Debattenhalle",
+    },
+  },
+  "chapter-43-indirecto-avanzado": {
+    en: {
+      title: "Full Reported-Speech Grid",
+      summary: "Complete estilo indirecto: all tense shifts, subjunctive, hoy → aquel día.",
+      location: "Protocol Archive",
+    },
+    es: {
+      title: "Estilo Indirecto Completo",
+      summary: "Estilo indirecto completo: todos los cambios de tiempo, subjuntivo, hoy → aquel día.",
+      location: "Archivo de protocolos",
+    },
+    de: {
+      title: "Vollständiges indirektes Sprechen",
+      summary: "Vollständiges estilo indirecto: alle Zeitverschiebungen, Subjuntivo, hoy → aquel día.",
+      location: "Protokollarchiv",
+    },
+  },
+  "chapter-44-pronombres-avanzado": {
+    en: {
+      title: "The Good of It All",
+      summary: "Advanced pronouns: lo bueno, a María la veo, leísmo / laísmo.",
+      location: "Linguistics Museum",
+    },
+    es: {
+      title: "Lo Bueno de Todo",
+      summary: "Pronombres avanzados: lo bueno, a María la veo, leísmo / laísmo.",
+      location: "Museo lingüístico",
+    },
+    de: {
+      title: "Das Gute an allem",
+      summary: "Fortgeschrittene Pronomen: lo bueno, a María la veo, leísmo / laísmo.",
+      location: "Linguistik-Museum",
+    },
+  },
+  "chapter-45-ser-estar-matices": {
+    en: {
+      title: "Two Be’s Again",
+      summary: "Ser vs estar in hard pairs: es listo vs está listo — meaning flips.",
+      location: "Hall of Meaning Mirrors",
+    },
+    es: {
+      title: "Ser y Estar Otra Vez",
+      summary: "Ser vs estar en pares difíciles: es listo vs está listo — cambia el sentido.",
+      location: "Sala de espejos del sentido",
+    },
+    de: {
+      title: "Zwei ‚sein‘ noch einmal",
+      summary: "Ser vs estar in schwierigen Paaren: es listo vs está listo — Bedeutung kippt.",
+      location: "Halle der Bedeutungsspiegel",
+    },
+  },
 };
 
 /**

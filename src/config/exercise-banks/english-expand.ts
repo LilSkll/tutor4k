@@ -31,5 +31,7 @@ export function expandEnglishChapterBank(
           error_correction: THICK_TR_EC_TARGET,
         }
       : undefined;
-  return expandChapterBank(curated, PACKS[chapterSlug] ?? {}, typeTargets);
+  return expandChapterBank(curated, PACKS[chapterSlug] ?? {}, typeTargets, {
+    contentScope: "per-type",
+  });
 }

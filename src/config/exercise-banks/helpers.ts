@@ -53,21 +53,35 @@ export function exerciseTargetSentence(ex: {
 /**
  * Content fingerprint shared across ALL types for the same finished sentence,
  * so a chapter does not recycle one phrase as TR then SB then MC.
+ * With `per-type`, each exercise type may reuse the same finished sentence
+ * (needed for English packs where MC/FB/TR share stems).
  */
-export function exerciseContentFingerprint(ex: Draft): string {
-  return `stem|${normalizeStem(exerciseTargetSentence(ex))}`;
+export function exerciseContentFingerprint(
+  ex: Draft,
+  scope: "shared" | "per-type" = "shared",
+): string {
+  const stem = normalizeStem(exerciseTargetSentence(ex));
+  if (scope === "per-type") return `${ex.type ?? "x"}|${stem}`;
+  return `stem|${stem}`;
 }
+
+export type ExpandChapterBankOptions = {
+  /** Default `shared` (Spanish). Use `per-type` for English pack density. */
+  contentScope?: "shared" | "per-type";
+};
 
 /**
  * Expand a chapter bank toward TARGET_EXERCISES_PER_TYPE for every type.
  * Keeps curated items first; appends supplemental packs without duplicates
- * (same finished sentence across types is skipped).
+ * (same finished sentence across types is skipped unless per-type scope).
  */
 export function expandChapterBank(
   curated: Draft[],
   packs: Partial<Record<ExerciseType, Draft[]>>,
   typeTargets?: Partial<Record<ExerciseType, number>>,
+  options?: ExpandChapterBankOptions,
 ): Draft[] {
+  const contentScope = options?.contentScope ?? "shared";
   const targetFor = (type: ExerciseType) =>
     typeTargets?.[type] ?? TARGET_EXERCISES_PER_TYPE;
   const seenExact = new Set<string>();
@@ -85,7 +99,7 @@ export function expandChapterBank(
     if (!cleaned || !packItemOk(cleaned)) return false;
     const exact = `${cleaned.type}|${cleaned.question.trim().toLowerCase()}`;
     if (seenExact.has(exact)) return false;
-    const content = exerciseContentFingerprint(cleaned);
+    const content = exerciseContentFingerprint(cleaned, contentScope);
     if (!content.endsWith("|") && seenContent.has(content)) return false;
     seenExact.add(exact);
     if (!content.endsWith("|")) seenContent.add(content);

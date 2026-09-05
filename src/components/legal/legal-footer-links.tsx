@@ -29,7 +29,7 @@ export function LegalFooterLinks({
         : { privacy: "Конфиденциальность", terms: "Соглашение", contact: "Контакты" };
 
   const langSuffix =
-    lang === "en" ? "?lang=en" : lang === "es" ? "?lang=es" : "";
+    locale === "ru" ? "" : `?lang=${locale === "de" ? "en" : locale}`;
 
   return (
     <nav

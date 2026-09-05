@@ -17,10 +17,10 @@ export async function loadEnglishCourse(): Promise<CourseConfig> {
   return {
     id: "english",
     languageCode: "en",
-    title: "Английский язык",
+    title: "English",
     titleNative: "English",
     flag: "🇬🇧",
-    description: "Learn English with AI tutor",
+    description: "Learn English with an AI tutor",
     promptId: "english",
     textbookNames: "Life (National Geographic)",
     examName: "IELTS",

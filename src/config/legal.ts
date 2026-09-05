@@ -20,4 +20,15 @@ export const LEGAL_OPERATOR = {
 
 export const COOKIE_CONSENT_KEY = "swp-cookie-consent-v1";
 
-export type LegalLocale = "ru" | "en";
+export type LegalLocale = "ru" | "en" | "es" | "de";
+
+/** Resolve UI language to a legal document locale (ES/DE use EN text for now). */
+export function resolveLegalLocale(lang: string | null | undefined): LegalLocale {
+  if (lang === "en" || lang === "es" || lang === "de") return lang;
+  return "ru";
+}
+
+/** Document body language — ES/DE currently share the English legal text. */
+export function legalDocumentLocale(locale: LegalLocale): "ru" | "en" {
+  return locale === "ru" ? "ru" : "en";
+}

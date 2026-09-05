@@ -153,6 +153,7 @@ export function ProgressClient({
           totalExercises,
           accuracy,
           byLevel,
+          interfaceLanguage: language,
         }),
       });
       if (!res.ok) throw new Error("Failed");
