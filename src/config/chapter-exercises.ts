@@ -9,7 +9,11 @@
 
 import type { StaticExercise } from "@/types";
 import { withExerciseIds } from "@/lib/exercise-bank";
+import { matchesChapterGrammar } from "@/lib/chapter-grammar-match";
+import { CHAPTERS } from "@/config/chapters";
 import { expandSpanishChapterBank } from "@/config/exercise-banks/spanish-expand";
+import { CURRICULUM_CHAPTER_EXERCISES } from "@/config/chapter-exercises-curriculum";
+import { SPANISH_CURATED_SUPPLEMENTS } from "@/config/exercise-seeds/spanish-curated-supplements";
 
 /** Draft bank item before id assignment. */
 export type ExerciseDraft = Omit<StaticExercise, "id"> & { id?: string };
@@ -21,11 +25,12 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
   "chapter-1-despertar": [
     {
       type: "multiple_choice",
-      question: "¿Cómo ___ tú? (ser/estar)",
-      instruction: "Выберите правильный глагол для знакомства",
+      question: "¿Cómo ___ tú? (descripción, no estado)",
+      instruction: "ser (какой ты) или estar (как дела сейчас)?",
       options: ["eres", "estás", "soy", "es"],
       answer: "eres",
-      explanation: "Для знакомства «Кто ты?» используется ser: ¿Cómo eres? / ¿Cómo estás? — для состояния.",
+      explanation:
+        "¿Cómo eres? — какой ты характером / внешне (ser). ¿Cómo estás? — как ты себя чувствуешь сейчас (estar). Для имени: ¿Cómo te llamas?",
     },
     {
       type: "fill_blank",
@@ -59,9 +64,31 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       answer: "estamos",
       explanation: "Чувства/эмоции → estar. Nosotros → estamos.",
     },
+    {
+      type: "sentence_building",
+      question: "¿Cómo / te / llamas?",
+      options: ["¿Cómo", "te", "llamas?"],
+      answer: "¿Cómo te llamas?",
+      instruction: "Соберите вопрос «Как тебя зовут?»",
+      explanation: "¿Cómo te llamas? — первое знакомство в испанском.",
+    },
+    {
+      type: "sentence_building",
+      question: "Me / llamo / Ana / y / soy / de / España",
+      options: ["Me", "llamo", "Ana", "y", "soy", "de", "España"],
+      answer: "Me llamo Ana y soy de España",
+      instruction: "Соберите фразу представления",
+      explanation: "Me llamo… + soy de… — имя и происхождение.",
+    },
+    {
+      type: "fill_blank",
+      question: "Mucho ___. (приятно познакомиться)",
+      instruction: "Заполните устойчивую фразу",
+      answer: "gusto",
+      acceptableAnswers: ["Gusto"],
+      explanation: "Mucho gusto — очень приятно (после знакомства).",
+    },
   ],
-
-  // ===== Chapter 2: presente =======================================
   "chapter-2-primer-dialogo": [
     {
       type: "fill_blank",
@@ -103,6 +130,22 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       answer: "haces",
       explanation: "Tú → haces. Hacer неправильный: yo hago, tú haces, él hace.",
     },
+    {
+      type: "sentence_building",
+      question: "Yo / hablo / español / todos / los / días",
+      options: ["Yo", "hablo", "español", "todos", "los", "días"],
+      answer: "Yo hablo español todos los días",
+      instruction: "Соберите фразу о ежедневной практике",
+      explanation: "Presente: yo hablo. todos los días = каждый день.",
+    },
+    {
+      type: "sentence_building",
+      question: "¿Qué / haces / los / fines / de / semana?",
+      options: ["¿Qué", "haces", "los", "fines", "de", "semana?"],
+      answer: "¿Qué haces los fines de semana?",
+      instruction: "Соберите вопрос о выходных",
+      explanation: "¿Qué haces…? — Что ты делаешь…? fines de semana = выходные.",
+    },
   ],
 
   // ===== Chapter 3: artículos ======================================
@@ -110,42 +153,60 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       type: "multiple_choice",
       question: "___ libro está en la mesa.",
-      instruction: "Выберите определённый артикль (м.р., ед.ч.)",
+      instruction: "Выберите артикль для известной конкретной вещи мужского рода (одна книга)",
       options: ["El", "La", "Un", "Una"],
       answer: "El",
-      explanation: "Libro — м.р., ед.ч., конкретный → el libro.",
+      explanation: "Libro — мужской род, одна известная книга → el libro.",
     },
     {
       type: "fill_blank",
       question: "Compro ___ pan en la panadería.",
-      instruction: "Вставьте артикль (неопределённый не используется с неисчисляемыми)",
-      answer: "",
-      acceptableAnswers: ["el", ""],
-      explanation: "С неисчисляемыми (pan) обычно используется el или нулевой артикль: compro pan.",
+      instruction: "Хлеб как продукт часто без артикля (или el, если конкретный)",
+      answer: "el",
+      acceptableAnswers: ["el", "El", ""],
+      explanation:
+        "Compro pan — хлеб вообще (нулевой артикль). Compro el pan — этот / обычный хлеб. *Un pan* — одна буханка, не «хлеб как вещество».",
     },
     {
       type: "multiple_choice",
       question: "Vivo en ___ casa bonita.",
-      instruction: "Выберите неопределённый артикль (ж.р., ед.ч.)",
+      instruction: "Выберите артикль для «какой-то» дома женского рода (один дом)",
       options: ["un", "una", "el", "la"],
       answer: "una",
-      explanation: "Casa — ж.р., ед.ч., неопределённая → una casa.",
+      explanation: "Casa — женский род, один ещё не конкретный дом → una casa.",
     },
     {
       type: "translation",
       question: "Девочки играют в парке.",
-      instruction: "Переведите (мн.ч., ж.р.)",
+      instruction: "Переведите: несколько девочек (женский род, много)",
       answer: "Las niñas juegan en el parque",
       acceptableAnswers: ["las niñas juegan en el parque", "Las niñas juegan en el parque"],
-      explanation: "Las niñas (ж.р., мн.ч.) + el parque (м.р.)",
+      explanation: "Las niñas — женский род, много; el parque — мужской род, один известный парк.",
     },
     {
       type: "multiple_choice",
       question: "Bebo ___ agua fría.",
-      instruction: "Какой артикль перед agua?",
+      instruction: "Какой артикль перед agua? (не путать с abuela)",
       options: ["la", "el", "un", "las"],
       answer: "el",
-      explanation: "Слова ж.р. на ударное a-/ha- → el: el agua, el águila.",
+      explanation:
+        "Agua — женского рода, но одна вещь и ударение на первой a (Á-gua) → el agua. Во множественном: las aguas. Не путать: la abuela (ударение на -bue-).",
+    },
+    {
+      type: "sentence_building",
+      question: "Un / libro / interesante / en / la / mesa",
+      options: ["Un", "libro", "interesante", "en", "la", "mesa"],
+      answer: "Un libro interesante en la mesa",
+      instruction: "Соберите фразу с артиклем un",
+      explanation: "un libro — какая-то одна книга; en la mesa — на столе.",
+    },
+    {
+      type: "sentence_building",
+      question: "El / agua / está / fría",
+      options: ["El", "agua", "está", "fría"],
+      answer: "El agua está fría",
+      instruction: "Соберите фразу с el agua",
+      explanation: "el agua (не la) + estar для состояния: está fría.",
     },
   ],
 
@@ -191,17 +252,25 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       acceptableAnswers: ["Siete"],
       explanation: "7 → siete.",
     },
+    {
+      type: "sentence_building",
+      question: "Son / las / tres / de / la / tarde",
+      options: ["Son", "las", "tres", "de", "la", "tarde"],
+      answer: "Son las tres de la tarde",
+      instruction: "Соберите фразу о времени",
+      explanation: "Son las + часы; de la tarde = дня (после полудня).",
+    },
   ],
 
   // ===== Chapter 5: tener expressions ==============================
   "chapter-5-mercado": [
     {
       type: "fill_blank",
-      question: "___ hambre. (Yo, tener)",
-      instruction: "Поставьте tener в правильную форму для «я голоден»",
+      question: "Yo ___ hambre.",
+      instruction: "Forma: tener · presente",
       answer: "Tengo",
       acceptableAnswers: ["tengo"],
-      explanation: "Tener hambre = быть голодным. Yo → tengo.",
+      explanation: "Tener hambre = быть голодным.",
     },
     {
       type: "multiple_choice",
@@ -279,6 +348,14 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       acceptableAnswers: ["Cabeza"],
       explanation: "La cabeza = голова. Me duele la cabeza = у меня болит голова.",
     },
+    {
+      type: "sentence_building",
+      question: "Me / gusta / el / café / pero / no / me / gusta / el / té",
+      options: ["Me", "gusta", "el", "café", "pero", "no", "me", "gusta", "el", "té"],
+      answer: "Me gusta el café pero no me gusta el té",
+      instruction: "Соберите фразу с gustar",
+      explanation: "Me gusta + ед.ч.; me gustan + мн.ч. Pero = но.",
+    },
   ],
 
   // ===== Chapter 18: género y número ==============================
@@ -293,7 +370,7 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     },
     {
       type: "fill_blank",
-      question: "Los ___ (libro, мн.ч.)",
+      question: "Los ___ (libro, много книг)",
       instruction: "Поставьте существительное во множественное число",
       answer: "libros",
       acceptableAnswers: ["Libros"],
@@ -314,6 +391,14 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       answer: "Las casas blancas",
       acceptableAnswers: ["las casas blancas"],
       explanation: "casa (ж.р. мн.) → las casas blancas.",
+    },
+    {
+      type: "sentence_building",
+      question: "Las / casas / son / blancas",
+      options: ["Las", "casas", "son", "blancas"],
+      answer: "Las casas son blancas",
+      instruction: "Соберите фразу о множественном числе",
+      explanation: "casas (ж.р., мн.) → las casas son blancas.",
     },
   ],
 
@@ -387,6 +472,22 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       acceptableAnswers: ["por qué estudias español", "¿Por que estudias español?"],
       explanation: "¿Por qué? = почему?",
     },
+    {
+      type: "sentence_building",
+      question: "¿Dónde / vives / tú?",
+      options: ["¿Dónde", "vives", "tú?"],
+      answer: "¿Dónde vives tú?",
+      instruction: "Соберите вопрос «Где ты живёшь?»",
+      explanation: "¿Dónde vives? — вопрос о месте жительства.",
+    },
+    {
+      type: "sentence_building",
+      question: "¿Cuántos / años / tienes?",
+      options: ["¿Cuántos", "años", "tienes?"],
+      answer: "¿Cuántos años tienes?",
+      instruction: "Соберите вопрос о возрасте",
+      explanation: "¿Cuántos años tienes? = Сколько тебе лет?",
+    },
   ],
 
   // ===== Chapter 21: comparativos =================================
@@ -423,6 +524,14 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       acceptableAnswers: ["juan es más alto que pedro"],
       explanation: "Сравнение с que, не de (кроме чисел).",
     },
+    {
+      type: "sentence_building",
+      question: "Madrid / es / más / grande / que / Toledo",
+      options: ["Madrid", "es", "más", "grande", "que", "Toledo"],
+      answer: "Madrid es más grande que Toledo",
+      instruction: "Соберите сравнительную фразу",
+      explanation: "más + прилагательное + que.",
+    },
   ],
 
   // ===== Chapter 22: futuro simple ================================
@@ -458,6 +567,14 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       options: ["harás", "haces", "hiciste", "hacías"],
       answer: "harás",
       explanation: "hacer → harás.",
+    },
+    {
+      type: "sentence_building",
+      question: "Mañana / hablaré / con / mi / profesor",
+      options: ["Mañana", "hablaré", "con", "mi", "profesor"],
+      answer: "Mañana hablaré con mi profesor",
+      instruction: "Соберите фразу в futuro simple",
+      explanation: "Mañana + futuro: hablaré.",
     },
   ],
 
@@ -496,6 +613,14 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       explanation: "Ya + haber + participio. Ya he comido.",
     },
     {
+      type: "sentence_building",
+      question: "Hoy / he / comido / en / un / restaurante",
+      options: ["Hoy", "he", "comido", "en", "un", "restaurante"],
+      answer: "Hoy he comido en un restaurante",
+      instruction: "Соберите фразу в pretérito perfecto",
+      explanation: "he + participio: hoy he comido = сегодня я поел.",
+    },
+    {
       type: "multiple_choice",
       question: "Hoy hemos ___ mucho.",
       instruction: "Выберите participio для trabajar",
@@ -504,8 +629,6 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       explanation: "Trabajar → trabajado. Hemos trabajado = мы поработали.",
     },
   ],
-
-  // ===== Chapter 8: pretérito indefinido ==========================
   "chapter-8-pasado-indefinido": [
     {
       type: "fill_blank",
@@ -533,7 +656,7 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     },
     {
       type: "fill_blank",
-      question: "¿___ (tú) al partido ayer? (ir)",
+      question: "¿___ al partido ayer?",
       instruction: "Поставьте вопрос с ir в indefinido",
       answer: "Fuiste",
       acceptableAnswers: ["fuiste"],
@@ -546,6 +669,14 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       options: ["fueron", "iban", "van", "han ido"],
       answer: "fueron",
       explanation: "«Два года назад» = конкретный момент → indefinido: fueron.",
+    },
+    {
+      type: "sentence_building",
+      question: "Ayer / compré / un / libro / interesante",
+      options: ["Ayer", "compré", "un", "libro", "interesante"],
+      answer: "Ayer compré un libro interesante",
+      instruction: "Соберите фразу о вчерашней покупке",
+      explanation: "Ayer + pretérito indefinido: compré.",
     },
   ],
 
@@ -591,6 +722,14 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       answer: "era",
       explanation: "Описание характеристики в прошлом → imperfecto: era.",
     },
+    {
+      type: "sentence_building",
+      question: "Cuando / era / niño / jugaba / al / fútbol",
+      options: ["Cuando", "era", "niño", "jugaba", "al", "fútbol"],
+      answer: "Cuando era niño jugaba al fútbol",
+      instruction: "Соберите фразу о детстве",
+      explanation: "Cuando era niño + imperfecto jugaba — привычка в прошлом.",
+    },
   ],
 
   // ===== Chapter 10: por/para ======================================
@@ -634,6 +773,14 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       answer: "Por",
       acceptableAnswers: ["por"],
       explanation: "Por favor = пожалуйста. Устойчивое выражение.",
+    },
+    {
+      type: "sentence_building",
+      question: "Estudio / español / para / viajar",
+      options: ["Estudio", "español", "para", "viajar"],
+      answer: "Estudio español para viajar",
+      instruction: "Соберите фразу с para (цель)",
+      explanation: "para + infinitivo = чтобы / для того чтобы.",
     },
   ],
 
@@ -685,23 +832,23 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
   "chapter-12-imperativo": [
     {
       type: "fill_blank",
-      question: "¡___ (comer) la fruta! (tú)",
-      instruction: "Поставьте в утвердительное повелительное (tú)",
+      question: "¡___ (comer) la fruta!",
+      instruction: "Forma: comer · imperativo · tú",
       answer: "Come",
       acceptableAnswers: ["come"],
       explanation: "Tú afirmativo: comer → come.",
     },
     {
       type: "multiple_choice",
-      question: "¡No ___ eso! (tú, decir)",
-      instruction: "Выберите отрицательное повелительное",
+      question: "¡No ___ (decir) eso!",
+      instruction: "Forma: decir · imperativo negativo · tú",
       options: ["digas", "di", "dices", "dijiste"],
       answer: "digas",
       explanation: "Отрицательное → subjuntivo: decir → no digas.",
     },
     {
       type: "translation",
-      question: "Скажи мне правду! (tú)",
+      question: "Скажи мне правду!",
       instruction: "Используйте утвердительное повелительное",
       answer: "¡Dime la verdad!",
       acceptableAnswers: ["dime la verdad", "¡Dime la verdad!"],
@@ -709,8 +856,8 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     },
     {
       type: "fill_blank",
-      question: "¡___ (hacer) los deberes! (tú)",
-      instruction: "Утвердительное повелительное от hacer",
+      question: "¡___ (hacer) los deberes!",
+      instruction: "Forma: hacer · imperativo · tú",
       answer: "Haz",
       acceptableAnswers: ["haz"],
       explanation: "Hacer → haz (tú, imperativo). Неправильная форма.",
@@ -718,7 +865,7 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       type: "multiple_choice",
       question: "¡___ usted, por favor! (sentarse)",
-      instruction: "Вежливое повелительное для usted",
+      instruction: "Forma: sentarse · imperativo · usted",
       options: ["siéntese", "siéntate", "sienta", "sentarse"],
       answer: "siéntese",
       explanation: "Usted → subjuntivo: sentarse → siéntese.",
@@ -897,6 +1044,51 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       answer: "estudiando",
       explanation: "Llevar + gerundio = длительность. Llevo estudiando dos horas.",
     },
+    {
+      type: "sentence_building",
+      question: "Acabo / de / terminar / la / redacción",
+      instruction: "Составьте перифразу acabar de",
+      options: ["Acabo", "de", "terminar", "la", "redacción"],
+      answer: "Acabo de terminar la redacción",
+      explanation: "Acabar de + infinitivo = только что закончил.",
+      grammarTopic: "c1-perifrasis-verbales",
+    },
+    {
+      type: "sentence_building",
+      question: "Llevo / tres / horas / estudiando / sin / parar",
+      instruction: "Составьте перифразу llevar + gerundio",
+      options: ["Llevo", "tres", "horas", "estudiando", "sin", "parar"],
+      answer: "Llevo tres horas estudiando sin parar",
+      explanation: "Llevar + gerundio — длительность действия.",
+      grammarTopic: "c1-perifrasis-verbales",
+    },
+    {
+      type: "sentence_building",
+      question: "Voy / a / empezar / a / leer / ahora",
+      instruction: "Составьте ir a + infinitivo",
+      options: ["Voy", "a", "empezar", "a", "leer", "ahora"],
+      answer: "Voy a empezar a leer ahora",
+      explanation: "Ir a + infinitivo — ближайшее будущее.",
+      grammarTopic: "c1-perifrasis-verbales",
+    },
+    {
+      type: "sentence_building",
+      question: "Debe / de / haber / un / error / en / el / texto",
+      instruction: "Составьте перифразу deber de (догадка)",
+      options: ["Debe", "de", "haber", "un", "error", "en", "el", "texto"],
+      answer: "Debe de haber un error en el texto",
+      explanation: "Deber de — вероятность, догадка.",
+      grammarTopic: "c1-perifrasis-verbales",
+    },
+    {
+      type: "sentence_building",
+      question: "Sigo / pensando / en / la / misma / idea",
+      instruction: "Составьте seguir + gerundio",
+      options: ["Sigo", "pensando", "en", "la", "misma", "idea"],
+      answer: "Sigo pensando en la misma idea",
+      explanation: "Seguir + gerundio — продолжать делать.",
+      grammarTopic: "c1-perifrasis-verbales",
+    },
   ],
 
   "chapter-17-dele": [
@@ -940,12 +1132,634 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       answer: "tenga",
       explanation: "No creer que → subjuntivo: tenga.",
     },
+    {
+      type: "sentence_building",
+      question: "Sea / como / sea / iré",
+      instruction: "Составьте устойчивое выражение",
+      options: ["Sea", "como", "sea", "iré"],
+      answer: "Sea como sea iré",
+      acceptableAnswers: ["Sea como sea, iré", "sea como sea ire"],
+      explanation: "Sea como sea — «как бы то ни было».",
+      grammarTopic: "c1-matices-estilisticos",
+    },
+    {
+      type: "sentence_building",
+      question: "Por / mucho / que / intente / no / lo / conseguiré",
+      instruction: "Составьте уступительную конструкцию",
+      options: ["Por", "mucho", "que", "intente", "no", "lo", "conseguiré"],
+      answer: "Por mucho que intente no lo conseguiré",
+      acceptableAnswers: [
+        "Por mucho que intente, no lo conseguiré",
+        "por mucho que intente no lo conseguire",
+      ],
+      explanation: "Por mucho que + subjuntivo — «сколько бы ни…».",
+      grammarTopic: "c1-matices-estilisticos",
+    },
+    {
+      type: "sentence_building",
+      question: "Le / ruego / que / me / envíe / la / documentación",
+      instruction: "Составьте формальную просьбу (usted)",
+      options: ["Le", "ruego", "que", "me", "envíe", "la", "documentación"],
+      answer: "Le ruego que me envíe la documentación",
+      explanation: "Le ruego que + subjuntivo — очень вежливая просьба.",
+      grammarTopic: "c1-matices-estilisticos",
+    },
+    {
+      type: "sentence_building",
+      question: "¿Podría / indicarme / dónde / está / la / sala?",
+      instruction: "Составьте вежливый вопрос с condicional",
+      options: ["¿Podría", "indicarme", "dónde", "está", "la", "sala?"],
+      answer: "¿Podría indicarme dónde está la sala?",
+      explanation: "¿Podría…? — вежливость через condicional.",
+      grammarTopic: "c1-matices-estilisticos",
+    },
+    {
+      type: "sentence_building",
+      question: "No / obstante / debemos / continuar / con / el / plan",
+      instruction: "Составьте формальный связующий оборот",
+      options: ["No", "obstante", "debemos", "continuar", "con", "el", "plan"],
+      answer: "No obstante, debemos continuar con el plan",
+      explanation: "No obstante — «несмотря на это» (формальный регистр).",
+      grammarTopic: "c1-matices-estilisticos",
+    },
+    {
+      type: "sentence_building",
+      question: "A / fin / de / cuentas / lo / importante / es / aprender",
+      instruction: "Составьте устойчивое вводное выражение",
+      options: ["A", "fin", "de", "cuentas", "lo", "importante", "es", "aprender"],
+      answer: "A fin de cuentas, lo importante es aprender",
+      explanation: "A fin de cuentas — «в конечном счёте».",
+      grammarTopic: "c1-matices-estilisticos",
+    },
+    {
+      type: "sentence_building",
+      question: "Me / gustaría / que / lo / revisáramos / juntos",
+      instruction: "Составьте мягкое предложение с subjuntivo",
+      options: ["Me", "gustaría", "que", "lo", "revisáramos", "juntos"],
+      answer: "Me gustaría que lo revisáramos juntos",
+      explanation: "Me gustaría que + imperfecto de subjuntivo — мягкое предложение.",
+      grammarTopic: "c1-matices-estilisticos",
+    },
+  ],
+
+  // ===== Chapter 23: DELE contraste de pasados ========================
+  "chapter-23-cronicas": [
+    {
+      type: "multiple_choice",
+      question: "Ayer ___ a Marta en el mercado.",
+      instruction: "Выберите правильное прошедшее время",
+      options: ["vi", "veía", "he visto", "había visto"],
+      answer: "vi",
+      explanation: "«Ayer» — маркер indefinido: событие в закрытом прошлом → vi.",
+    },
+    {
+      type: "multiple_choice",
+      question: "Cuando era niño, ___ al fútbol todos los días.",
+      instruction: "Привычка в прошлом — какое время?",
+      options: ["jugaba", "jugué", "he jugado", "había jugado"],
+      answer: "jugaba",
+      explanation: "Привычка/повторение в прошлом (todos los días) → imperfecto: jugaba.",
+    },
+    {
+      type: "multiple_choice",
+      question: "Esta mañana ___ dos cafés.",
+      instruction: "Период не закрыт — выберите время",
+      options: ["he tomado", "tomé", "tomaba", "había tomado"],
+      answer: "he tomado",
+      explanation: "«Esta mañana» связана с настоящим → perfecto: he tomado (норма Испании).",
+    },
+    {
+      type: "multiple_choice",
+      question: "Cuando llegué a casa, mi hermano ya ___.",
+      instruction: "Действие раньше другого прошлого",
+      options: ["se había ido", "se fue", "se iba", "se ha ido"],
+      answer: "se había ido",
+      explanation: "«Ya… cuando» — предпрошедшее → pluscuamperfecto: se había ido.",
+    },
+    {
+      type: "fill_blank",
+      question: "___ (ducharse, yo) cuando sonó el teléfono.",
+      instruction: "Фон + событие: поставьте глагол в нужное время",
+      answer: "Me duchaba",
+      acceptableAnswers: ["me duchaba", "Me estaba duchando", "me estaba duchando", "Estaba duchándome", "estaba duchándome"],
+      explanation: "Фон — imperfecto (me duchaba / estaba duchándome), событие — indefinido (sonó).",
+    },
+    {
+      type: "fill_blank",
+      question: "Anoche no ___ (dormir, yo) bien.",
+      instruction: "Обратите внимание на маркер anoche",
+      answer: "dormí",
+      acceptableAnswers: ["Dormí"],
+      explanation: "«Anoche» → indefinido. Dormir неправильный: dormí.",
+    },
+    {
+      type: "error_correction",
+      question: "Ayer conocía a tu hermana en la fiesta.",
+      instruction: "Исправьте время глагола",
+      answer: "Ayer conocí a tu hermana en la fiesta.",
+      acceptableAnswers: ["conocí", "Ayer conocí a tu hermana en la fiesta"],
+      explanation: "«Познакомился» (событие) → conocí. Conocía = «был знаком» (фон).",
+    },
+  ],
+
+  // ===== Chapter 24: DELE carta formal ================================
+  "chapter-24-carta": [
+    {
+      type: "multiple_choice",
+      question: "___ señora: Le escribo para solicitar información.",
+      instruction: "Выберите формальное обращение",
+      options: ["Estimada", "Querida", "Hola", "Oye"],
+      answer: "Estimada",
+      explanation: "Формальное письмо → Estimado/Estimada. Querida — для друзей.",
+    },
+    {
+      type: "multiple_choice",
+      question: "Le agradecería que me ___ más información.",
+      instruction: "Вежливая просьба — какая форма?",
+      options: ["enviara", "envía", "enviará", "envíe"],
+      answer: "enviara",
+      explanation: "Le agradecería que + subjuntivo imperfecto: enviara.",
+    },
+    {
+      type: "multiple_choice",
+      question: "___ , Juan Pérez (final de una carta formal)",
+      instruction: "Выберите формальное прощание",
+      options: ["Atentamente", "Un beso", "Chao", "Besitos"],
+      answer: "Atentamente",
+      explanation: "Atentamente — стандартное формальное прощание. Un beso — только близким.",
+    },
+    {
+      type: "fill_blank",
+      question: "Quisiera presentar una ___ por el mal servicio.",
+      instruction: "Формальная жалоба — какое слово?",
+      answer: "reclamación",
+      acceptableAnswers: ["Reclamación", "queja"],
+      explanation: "Presentar una reclamación — подать официальную жалобу.",
+    },
+    {
+      type: "fill_blank",
+      question: "Me ___ (dirigir) a usted con motivo de la oferta de trabajo.",
+      instruction: "Формула начала письма",
+      answer: "dirijo",
+      acceptableAnswers: ["Dirijo"],
+      explanation: "Me dirijo a usted con motivo de… — классическая формула причины письма.",
+    },
+    {
+      type: "fill_blank",
+      question: "A la ___ de su respuesta, le saluda atentamente.",
+      instruction: "Формула завершения",
+      answer: "espera",
+      acceptableAnswers: ["Espera"],
+      explanation: "A la espera de su respuesta — «в ожидании вашего ответа».",
+    },
+    {
+      type: "translation",
+      question: "Я хотел бы подать жалобу.",
+      instruction: "Переведите формально (quisiera…)",
+      answer: "Quisiera presentar una reclamación",
+      acceptableAnswers: ["quisiera presentar una reclamación", "Quisiera presentar una reclamación."],
+      explanation: "Quisiera + infinitivo — вежливая форма. Presentar una reclamación — подать жалобу.",
+    },
+  ],
+
+  // ===== Chapter 25: DELE conectores ==================================
+  "chapter-25-conectores": [
+    {
+      type: "multiple_choice",
+      question: "___ lugar, hay que analizar las causas del problema.",
+      instruction: "Коннектор начала эссе",
+      options: ["En primer", "Al primer", "El primero", "Primero de"],
+      answer: "En primer",
+      explanation: "En primer lugar — «во-первых», стандартное начало redacción.",
+    },
+    {
+      type: "multiple_choice",
+      question: "El plan es caro; ___, es necesario.",
+      instruction: "Формальное противопоставление",
+      options: ["no obstante", "porque", "además", "por ejemplo"],
+      answer: "no obstante",
+      explanation: "No obstante — «тем не менее», формальнее, чем sin embargo.",
+    },
+    {
+      type: "multiple_choice",
+      question: "De ahí que ___ necesario actuar ya.",
+      instruction: "Внимание: de ahí que требует особого наклонения",
+      options: ["sea", "es", "será", "era"],
+      answer: "sea",
+      explanation: "De ahí que — всегда subjuntivo: sea. Классическая ловушка DELE.",
+    },
+    {
+      type: "multiple_choice",
+      question: "No creo que la medida ___ suficiente.",
+      instruction: "Мнение с отрицанием",
+      options: ["sea", "es", "será", "sería"],
+      answer: "sea",
+      explanation: "No creo que + subjuntivo: sea. Creo que + indicativo: es.",
+    },
+    {
+      type: "fill_blank",
+      question: "En ___, la educación es la clave del futuro. (вывод)",
+      instruction: "Коннектор заключения",
+      answer: "definitiva",
+      acceptableAnswers: ["conclusión", "resumen", "Definitiva"],
+      explanation: "En definitiva / en conclusión / en resumen — коннекторы вывода.",
+    },
+    {
+      type: "sentence_building",
+      question: "Por un lado / es útil / por otro / es caro",
+      instruction: "Составьте предложение из фрагментов",
+      options: ["Por un lado", "es útil", "por otro", "es caro"],
+      answer: "Por un lado es útil por otro es caro",
+      acceptableAnswers: ["por un lado es útil por otro es caro", "Por un lado es útil, por otro es caro"],
+      explanation: "Por un lado…, por otro (lado)… — конструкция «с одной стороны… с другой…».",
+    },
+  ],
+
+  // ===== Chapter 26: DELE expresión oral ==============================
+  "chapter-26-voz-plaza": [
+    {
+      type: "multiple_choice",
+      question: "En primer ___ se ve a una familia comiendo.",
+      instruction: "Описание фото: передний план",
+      options: ["plano", "lugar", "piso", "punto"],
+      answer: "plano",
+      explanation: "En primer plano — «на переднем плане» (фото). En primer lugar — «во-первых» (эссе).",
+    },
+    {
+      type: "multiple_choice",
+      question: "___ unos treinta años.",
+      instruction: "Гипотеза о возрасте — экзаменатор ждёт futuro de conjetura",
+      options: ["Tendrán", "Tienen", "Tenían", "Tuvieron"],
+      answer: "Tendrán",
+      explanation: "Догадка о настоящем → futuro: Tendrán unos treinta años — «им лет тридцать».",
+    },
+    {
+      type: "multiple_choice",
+      question: "Puede que ___ amigos.",
+      instruction: "Puede que + …?",
+      options: ["sean", "son", "serán", "eran"],
+      answer: "sean",
+      explanation: "Puede que — всегда subjuntivo: sean. Parece que + indicativo: son.",
+    },
+    {
+      type: "multiple_choice",
+      question: "Entiendo tu postura, ___ yo lo veo de otra manera.",
+      instruction: "Вежливое несогласие",
+      options: ["pero", "porque", "así que", "o sea"],
+      answer: "pero",
+      explanation: "Entiendo tu postura, pero… — вежливое несогласие в interacción.",
+    },
+    {
+      type: "fill_blank",
+      question: "Al ___ hay unas montañas.",
+      instruction: "Описание фото: задний план",
+      answer: "fondo",
+      acceptableAnswers: ["Fondo"],
+      explanation: "Al fondo — «на заднем плане».",
+    },
+    {
+      type: "translation",
+      question: "Я полностью с тобой согласен.",
+      instruction: "Переведите фразу согласия",
+      answer: "Estoy totalmente de acuerdo contigo",
+      acceptableAnswers: ["estoy totalmente de acuerdo contigo", "Estoy totalmente de acuerdo contigo."],
+      explanation: "Estar de acuerdo con — «быть согласным с». Totalmente усиливает.",
+    },
+  ],
+
+  // ===== Chapter 27: C2 oraciones hendidas ============================
+  "chapter-27-hendidas": [
+    {
+      type: "multiple_choice",
+      question: "Fue Juan ___ rompió el vaso.",
+      instruction: "Выделяем лицо",
+      options: ["quien", "que cual", "cuyo", "donde"],
+      answer: "quien",
+      explanation: "Fue X quien… — выделительная конструкция для лица.",
+    },
+    {
+      type: "multiple_choice",
+      question: "Es en Madrid ___ vive mi hermana.",
+      instruction: "Выделяем место",
+      options: ["donde", "quien", "cuando", "cuyo"],
+      answer: "donde",
+      explanation: "Es en X donde… — выделение места.",
+    },
+    {
+      type: "multiple_choice",
+      question: "Es con ella ___ quiero hablar.",
+      instruction: "Внимание: предлог повторяется",
+      options: ["con quien", "que", "quien", "cual"],
+      answer: "con quien",
+      explanation: "Предлог повторяется: Es CON ella CON quien… «Es con ella que» — так по-французски, в испанском так не говорят.",
+    },
+    {
+      type: "multiple_choice",
+      question: "___ me molesta es el ruido.",
+      instruction: "Выделяем причину раздражения",
+      options: ["Lo que", "El que", "Que", "Cual"],
+      answer: "Lo que",
+      explanation: "Lo que + verbo + es… — выделение действия/объекта.",
+    },
+    {
+      type: "fill_blank",
+      question: "Fue ayer ___ lo supe.",
+      instruction: "Выделяем время",
+      answer: "cuando",
+      acceptableAnswers: ["Cuando"],
+      explanation: "Fue + время + cuando… — ser согласуется со временем события.",
+    },
+    {
+      type: "sentence_building",
+      question: "Lo que / necesito / es / dormir",
+      instruction: "Составьте выделительную конструкцию",
+      options: ["Lo que", "necesito", "es", "dormir"],
+      answer: "Lo que necesito es dormir",
+      acceptableAnswers: ["lo que necesito es dormir"],
+      explanation: "Lo que necesito es… — «что мне нужно, так это…».",
+    },
+    {
+      type: "sentence_building",
+      question: "Fue / Juan / quien / rompió / el / vaso",
+      instruction: "Составьте выделительную конструкцию (лицо)",
+      options: ["Fue", "Juan", "quien", "rompió", "el", "vaso"],
+      answer: "Fue Juan quien rompió el vaso",
+      acceptableAnswers: ["fue juan quien rompio el vaso"],
+      explanation: "Fue X quien… — выделение лица: «именно Хuan (тот, кто)…».",
+    },
+    {
+      type: "sentence_building",
+      question: "Es / en Madrid / donde / vive / mi / hermana",
+      instruction: "Составьте выделительную конструкцию (место)",
+      options: ["Es", "en Madrid", "donde", "vive", "mi", "hermana"],
+      answer: "Es en Madrid donde vive mi hermana",
+      acceptableAnswers: ["es en madrid donde vive mi hermana"],
+      explanation: "Es en X donde… — выделение места: «именно в Мадриде живёт…».",
+    },
+    {
+      type: "sentence_building",
+      question: "Es / con ella / con quien / quiero / hablar",
+      instruction: "Повторите предлог в выделительной конструкции",
+      options: ["Es", "con ella", "con quien", "quiero", "hablar"],
+      answer: "Es con ella con quien quiero hablar",
+      acceptableAnswers: [
+        "es con ella con quien quiero hablar",
+        "Es con ella con quien quiero hablar.",
+      ],
+      explanation: "Es CON ella CON quien… — предлог повторяется в hendida.",
+    },
+    {
+      type: "sentence_building",
+      question: "Lo que / me molesta / es / el / ruido",
+      instruction: "Составьте конструкцию Lo que… es…",
+      options: ["Lo que", "me molesta", "es", "el", "ruido"],
+      answer: "Lo que me molesta es el ruido",
+      acceptableAnswers: ["lo que me molesta es el ruido"],
+      explanation: "Lo que + verbo + es… — выделение того, что раздражает.",
+    },
+    {
+      type: "sentence_building",
+      question: "Fue / ayer / cuando / lo / supe",
+      instruction: "Составьте выделительную конструкцию (время)",
+      options: ["Fue", "ayer", "cuando", "lo", "supe"],
+      answer: "Fue ayer cuando lo supe",
+      acceptableAnswers: ["fue ayer cuando lo supe"],
+      explanation: "Fue + tiempo + cuando… — выделение момента времени.",
+    },
+  ],
+
+  // ===== Chapter 28: C2 conjetura y rumor =============================
+  "chapter-28-conjetura": [
+    {
+      type: "multiple_choice",
+      question: "— ¿Qué hora es? — No sé, ___ las diez.",
+      instruction: "Догадка о настоящем",
+      options: ["serán", "son", "eran", "fueron"],
+      answer: "serán",
+      explanation: "Futuro de conjetura: serán las diez — «наверное, часов десять».",
+    },
+    {
+      type: "multiple_choice",
+      question: "El presidente ___ el acuerdo, según fuentes no oficiales.",
+      instruction: "Неподтверждённая информация (пресса)",
+      options: ["habría aceptado", "aceptó", "ha aceptado", "aceptará"],
+      answer: "habría aceptado",
+      explanation: "Condicional de rumor: habría aceptado — «по сообщениям, принял».",
+    },
+    {
+      type: "multiple_choice",
+      question: "___ las dos cuando llegó a casa.",
+      instruction: "Догадка о прошлом",
+      options: ["Serían", "Son", "Serán", "Han sido"],
+      answer: "Serían",
+      explanation: "Condicional de conjetura: serían las dos — «было, наверное, часа два».",
+    },
+    {
+      type: "multiple_choice",
+      question: "___ de estar en casa — la luz está encendida.",
+      instruction: "Вероятность ~90%: deber или deber de?",
+      options: ["Debe", "Tiene", "Ha", "Va"],
+      answer: "Debe",
+      explanation: "Debe de estar — вероятность. Debe estar (без de) — долженствование.",
+    },
+    {
+      type: "fill_blank",
+      question: "___ salido ya — no contesta al teléfono.",
+      instruction: "Догадка о недавнем прошлом: futuro perfecto de conjetura",
+      answer: "Habrá",
+      acceptableAnswers: ["habrá"],
+      explanation: "Habrá salido — «наверное, уже ушёл»: futuro perfecto как догадка.",
+    },
+    {
+      type: "translation",
+      question: "Ему, наверное, лет сорок.",
+      instruction: "Переведите через futuro de conjetura",
+      answer: "Tendrá unos cuarenta años",
+      acceptableAnswers: ["tendrá unos cuarenta años", "Tendrá unos 40 años"],
+      explanation: "Догадка → futuro: Tendrá unos cuarenta años.",
+    },
+    {
+      type: "sentence_building",
+      question: "Serán / las / diez / ahora",
+      instruction: "Составьте догадку о времени (futuro de conjetura)",
+      options: ["Serán", "las", "diez", "ahora"],
+      answer: "Serán las diez ahora",
+      acceptableAnswers: ["seran las diez ahora", "Serán las diez"],
+      explanation: "Futuro de conjetura: serán las diez — «наверное, сейчас десять».",
+    },
+    {
+      type: "sentence_building",
+      question: "Habrá / salido / ya",
+      instruction: "Составьте догадку о недавнем прошлом",
+      options: ["Habrá", "salido", "ya"],
+      answer: "Habrá salido ya",
+      acceptableAnswers: ["Ya habrá salido", "habrá salido ya"],
+      explanation: "Habrá salido — «наверное, уже ушёл» (futuro perfecto de conjetura).",
+    },
+  ],
+
+  // ===== Chapter 29: C2 estilo culto ==================================
+  "chapter-29-culto": [
+    {
+      type: "multiple_choice",
+      question: "___ la reunión, todos se fueron.",
+      instruction: "Participio absoluto (согласуйте!)",
+      options: ["Terminada", "Terminado", "Terminando", "Terminar"],
+      answer: "Terminada",
+      explanation: "Participio absoluto согласуется: la reunión (f.) → Terminada.",
+    },
+    {
+      type: "multiple_choice",
+      question: "Una vez ___ los documentos, no hay vuelta atrás.",
+      instruction: "Согласуйте причастие",
+      options: ["firmados", "firmado", "firmada", "firmando"],
+      answer: "firmados",
+      explanation: "Los documentos (m. pl.) → firmados.",
+    },
+    {
+      type: "multiple_choice",
+      question: "«porque aumentaron los precios» → (estilo culto) ___",
+      instruction: "Выберите книжный аналог (номинализация)",
+      options: [
+        "Debido al aumento de los precios",
+        "Porque los precios subieron",
+        "Ya que suben los precios",
+        "Como los precios",
+      ],
+      answer: "Debido al aumento de los precios",
+      explanation: "Книжный стиль заменяет глагол существительным: debido al aumento de…",
+    },
+    {
+      type: "multiple_choice",
+      question: "El proyecto es caro; ___, lo aprobaremos.",
+      instruction: "Самый формальный коннектор противопоставления",
+      options: ["no obstante", "pero", "aunque sí", "es que"],
+      answer: "no obstante",
+      explanation: "No obstante — книжное «тем не менее».",
+    },
+    {
+      type: "fill_blank",
+      question: "Queda ___ fumar en todo el edificio.",
+      instruction: "Формальный запрет: queda + participio",
+      answer: "prohibido",
+      acceptableAnswers: ["Prohibido"],
+      explanation: "Queda prohibido — формальный запрет (queda + participio).",
+    },
+    {
+      type: "error_correction",
+      question: "Terminado la reunión, todos se fueron.",
+      instruction: "Исправьте согласование",
+      answer: "Terminada la reunión, todos se fueron.",
+      acceptableAnswers: ["Terminada"],
+      explanation: "La reunión — женский род → Terminada.",
+    },
+    {
+      type: "sentence_building",
+      question: "Terminada / la reunión / todos / se / fueron",
+      instruction: "Составьте фразу с participio absoluto",
+      options: ["Terminada", "la reunión", "todos", "se", "fueron"],
+      answer: "Terminada la reunión todos se fueron",
+      acceptableAnswers: [
+        "Terminada la reunión, todos se fueron",
+        "terminada la reunion todos se fueron",
+      ],
+      explanation: "Participio absoluto: Terminada la reunión,… — «когда собрание закончилось…».",
+    },
+  ],
+
+  // ===== Chapter 30: C2 ironía y registro =============================
+  "chapter-30-ironia": [
+    {
+      type: "multiple_choice",
+      question: "«¡No me digas!» normalmente expresa ___",
+      instruction: "Прагматика разговорной речи: что выражает фраза?",
+      options: ["sorpresa / ironía", "una prohibición", "una orden", "un saludo"],
+      answer: "sorpresa / ironía",
+      explanation: "¡No me digas! — «да ну!, не может быть» (удивление, часто ироничное).",
+    },
+    {
+      type: "multiple_choice",
+      question: "«¡Qué va!» significa ___",
+      instruction: "Разговорный регистр: что означает фраза?",
+      options: ["nada de eso (negación)", "entusiasmo", "¿cómo estás?", "un saludo"],
+      answer: "nada de eso (negación)",
+      explanation: "¡Qué va! — разговорное энергичное отрицание («вовсе нет»).",
+    },
+    {
+      type: "multiple_choice",
+      question: "Versión formal de «¿Me pasas el agua?»: ___",
+      instruction: "Смена регистра: бар → министерство",
+      options: [
+        "¿Sería tan amable de pasarme el agua?",
+        "¡Agua, ya!",
+        "Dame agua.",
+        "¿Agua o qué?",
+      ],
+      answer: "¿Sería tan amable de pasarme el agua?",
+      explanation: "Condicional + формула вежливости = высокий регистр.",
+    },
+    {
+      type: "multiple_choice",
+      question: "«Que te crees tú eso» expresa ___",
+      instruction: "Ирония через структуру: что выражает фраза?",
+      options: ["incredulidad irónica", "acuerdo", "un cumplido", "una petición"],
+      answer: "incredulidad irónica",
+      explanation: "Que te crees tú eso — «это ты так думаешь» (ироничное недоверие).",
+    },
+    {
+      type: "fill_blank",
+      question: "En Argentina en lugar de «tú» se usa «___».",
+      instruction: "Региональная норма",
+      answer: "vos",
+      acceptableAnswers: ["Vos"],
+      explanation: "Voseo: в Аргентине vos (vos tenés, vos sos).",
+    },
+    {
+      type: "translation",
+      question: "Как ни странно, он отказался.",
+      instruction: "Переведите с «por extraño que…»",
+      answer: "Por extraño que parezca, se negó",
+      acceptableAnswers: ["por extraño que parezca, se negó", "Por extraño que parezca se negó"],
+      explanation: "Por + adjetivo + que + subjuntivo: por extraño que parezca — «как ни странно».",
+    },
+    {
+      type: "sentence_building",
+      question: "Por / extraño / que / parezca / se / negó",
+      instruction: "Составьте фразу с por extraño que…",
+      options: ["Por", "extraño", "que", "parezca", "se", "negó"],
+      answer: "Por extraño que parezca se negó",
+      acceptableAnswers: [
+        "Por extraño que parezca, se negó",
+        "por extraño que parezca se negó",
+      ],
+      explanation: "Por extraño que parezca — «как ни странно» + subjuntivo.",
+    },
   ],
 };
 
 /** Get exercises for a chapter slug (ids assigned, bank expanded). */
 export function getChapterExercises(chapterSlug: string): StaticExercise[] {
-  const curated = CHAPTER_EXERCISES[chapterSlug] ?? [];
+  const chapter = CHAPTERS.find((c) => c.slug === chapterSlug);
+  const grammarTopic = chapter?.grammarTopic ?? null;
+  const curated = [
+    ...(CHAPTER_EXERCISES[chapterSlug] ?? []),
+    ...(CURRICULUM_CHAPTER_EXERCISES[chapterSlug] ?? []),
+    ...((SPANISH_CURATED_SUPPLEMENTS as unknown as Record<string, ExerciseDraft[]>)[
+      chapterSlug
+    ] ?? []),
+  ];
   const expanded = expandSpanishChapterBank(chapterSlug, curated);
-  return withExerciseIds("spanish", chapterSlug, expanded);
+  const aligned = grammarTopic
+    ? expanded.filter((ex) => matchesChapterGrammar(grammarTopic, ex.grammarTopic))
+    : expanded;
+  const allowed = chapter?.exerciseTypes;
+  const typeFiltered =
+    allowed && allowed.length > 0
+      ? aligned.filter((ex) => allowed.includes(ex.type))
+      : aligned;
+  const tagged = typeFiltered.map((ex) => ({
+    ...ex,
+    grammarTopic: ex.grammarTopic ?? grammarTopic ?? undefined,
+  }));
+  return withExerciseIds("spanish", chapterSlug, tagged);
 }

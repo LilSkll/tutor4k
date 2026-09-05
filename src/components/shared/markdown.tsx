@@ -1,29 +1,36 @@
 "use client";
 
 import * as React from "react";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
+import dynamic from "next/dynamic";
 import { cn } from "@/lib/utils";
 
+const MarkdownRenderer = dynamic(
+  () =>
+    import("@/components/shared/markdown-renderer").then(
+      (m) => m.MarkdownRenderer,
+    ),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="h-16 animate-pulse rounded-md bg-muted/40" aria-hidden />
+    ),
+  },
+);
+
 /**
- * Markdown renderer used for AI tutor responses and grammar reference.
- * Supports GFM (tables, strikethrough, task lists) and is styled via
- * the `.markdown-body` CSS class in globals.css.
+ * Lazy Markdown wrapper — keeps react-markdown / remark-gfm out of the
+ * initial route chunk until content is actually shown.
  */
-export function Markdown({ content, className }: { content: string; className?: string }) {
+export function Markdown({
+  content,
+  className,
+}: {
+  content: string;
+  className?: string;
+}) {
   return (
     <div className={cn("markdown-body", className)}>
-      <ReactMarkdown
-        remarkPlugins={[remarkGfm]}
-        components={{
-          // Open links in a new tab safely.
-          a: ({ ...props }) => (
-            <a target="_blank" rel="noopener noreferrer" {...props} />
-          ),
-        }}
-      >
-        {content}
-      </ReactMarkdown>
+      <MarkdownRenderer content={content} />
     </div>
   );
 }

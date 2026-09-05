@@ -1,6 +1,10 @@
 import type { StaticExercise } from "@/types";
 import { withExerciseIds } from "@/lib/exercise-bank";
 import { expandEnglishChapterBank } from "@/config/exercise-banks/english-expand";
+import { attachEnglishTrL1 } from "@/config/exercise-translation-prompts";
+import { ENGLISH_CURRICULUM_CHAPTER_EXERCISES } from "./chapter-exercises-curriculum";
+import { ENGLISH_CURATED_SUPPLEMENTS } from "@/config/exercise-seeds/english-curated-supplements";
+import { getEngChapter } from "./chapters";
 
 // =====================================================================
 // English Course — Permanent adaptive exercise bank (curated seed)
@@ -24,12 +28,33 @@ export const ENGLISH_EXERCISES: Record<string, Draft[]> = {
     { type: "fill_blank", question: "___ you play tennis?", instruction: "Question form in present simple", answer: "Do", acceptableAnswers: ["do"], explanation: "You → Do you...?" },
     { type: "multiple_choice", question: "She ___ to school by bus.", instruction: "Choose the verb form", options: ["go", "goes", "going", "gone"], answer: "goes", explanation: "She → go + -es (ends in -o)." },
   ],
+  "eng-ch17-questions": [
+    { type: "multiple_choice", question: "___ is your name?", instruction: "Choose the question word", options: ["What", "Where", "When", "Why"], answer: "What", explanation: "What asks for a thing or information." },
+    { type: "fill_blank", question: "___ do you live?", instruction: "Where / When / Who?", answer: "Where", acceptableAnswers: ["where"], explanation: "Where = place." },
+    { type: "translation", question: "Сколько тебе лет?", instruction: "Translate to English", answer: "How old are you?", acceptableAnswers: ["how old are you"], explanation: "How old + be." },
+    { type: "fill_blank", question: "___ are you late?", instruction: "Why / What / Who?", answer: "Why", acceptableAnswers: ["why"], explanation: "Why = reason." },
+    { type: "multiple_choice", question: "___ is she?", instruction: "Ask about a person", options: ["Who", "What", "Where", "When"], answer: "Who", explanation: "Who asks about people." },
+  ],
   "eng-ch3-around-town": [
     { type: "multiple_choice", question: "There ___ a bank near here.", instruction: "Choose singular/plural", options: ["is", "are", "be", "am"], answer: "is", explanation: "a bank (singular) → there is." },
     { type: "fill_blank", question: "There ___ three books on the table.", instruction: "Fill in there is/are", answer: "are", acceptableAnswers: ["Are"], explanation: "three books (plural) → there are." },
+    { type: "multiple_choice", question: "There aren't ___ apples.", instruction: "some or any?", options: ["some", "any", "a", "the"], answer: "any", explanation: "Negative → any." },
+    { type: "translation", question: "Есть ли здесь аптека?", instruction: "Translate into English", answer: "Is there a pharmacy here?", acceptableAnswers: ["Is there a pharmacy", "is there a pharmacy here"], explanation: "Is there + singular noun." },
+    { type: "fill_blank", question: "There ___ some people in the park.", instruction: "is or are?", answer: "are", acceptableAnswers: ["Are"], explanation: "people (plural) → there are." },
+  ],
+  "eng-ch18-can": [
     { type: "multiple_choice", question: "Can you ___ me?", instruction: "Choose the verb after can", options: ["helps", "help", "helping", "helped"], answer: "help", explanation: "Can + base verb (no -s)." },
-    { type: "translation", question: "Есть ли здесь аптека?", instruction: "Use there is/are question", answer: "Is there a pharmacy here?", acceptableAnswers: ["Is there a pharmacy", "is there a pharmacy here"], explanation: "Is there + singular noun." },
-    { type: "fill_blank", question: "There aren't ___ apples.", instruction: "some or any?", answer: "any", acceptableAnswers: ["Any"], explanation: "Negative → any." },
+    { type: "fill_blank", question: "I ___ swim.", instruction: "can or can't (ability)", answer: "can", acceptableAnswers: ["Can"], explanation: "can = ability." },
+    { type: "translation", question: "Она не умеет водить.", instruction: "Translate into English", answer: "She can't drive", acceptableAnswers: ["She cannot drive", "she can't drive"], explanation: "can't + base verb." },
+    { type: "fill_blank", question: "___ you speak English?", instruction: "Question with can", answer: "Can", acceptableAnswers: ["can"], explanation: "Can + subject + base verb?" },
+    { type: "multiple_choice", question: "He ___ play the piano.", instruction: "Ability", options: ["can", "cans", "can to", "is can"], answer: "can", explanation: "can never takes -s." },
+  ],
+  "eng-ch19-prepositions": [
+    { type: "multiple_choice", question: "The book is ___ the table.", instruction: "Preposition of place", options: ["on", "in", "at", "under"], answer: "on", explanation: "on = on a surface." },
+    { type: "fill_blank", question: "She is ___ home.", instruction: "in / on / at?", answer: "at", acceptableAnswers: ["At"], explanation: "at home — fixed phrase." },
+    { type: "translation", question: "Кот под кроватью.", instruction: "Translate into English", answer: "The cat is under the bed", acceptableAnswers: ["the cat is under the bed"], explanation: "under = below." },
+    { type: "fill_blank", question: "We live ___ London.", instruction: "in / on / at?", answer: "in", acceptableAnswers: ["In"], explanation: "in + city." },
+    { type: "sentence_building", question: "next / the / bank / to / is / café / The", instruction: "Build the sentence", options: ["The", "café", "is", "next", "to", "the", "bank"], answer: "The café is next to the bank", acceptableAnswers: ["The cafe is next to the bank"], explanation: "next to = beside." },
   ],
   "eng-ch4-past-stories": [
     { type: "fill_blank", question: "I ___ (go) to London yesterday.", instruction: "Past simple irregular", answer: "went", acceptableAnswers: ["Went"], explanation: "go → went (irregular)." },
@@ -42,8 +67,15 @@ export const ENGLISH_EXERCISES: Record<string, Draft[]> = {
     { type: "multiple_choice", question: "An elephant is ___ a cat.", instruction: "Comparative", options: ["bigger than", "bigger", "biggest", "more big"], answer: "bigger than", explanation: "big → bigger + than." },
     { type: "fill_blank", question: "She is the ___ (good) student.", instruction: "Superlative", answer: "best", acceptableAnswers: ["Best"], explanation: "good → the best (irregular)." },
     { type: "translation", question: "Это самое высокое здание.", instruction: "Superlative", answer: "This is the tallest building", acceptableAnswers: ["this is the tallest building", "It is the tallest building"], explanation: "tall → the tallest." },
-    { type: "multiple_choice", question: "I am going to ___ a book.", instruction: "going to + verb", options: ["read", "reading", "reads", "readed"], answer: "read", explanation: "going to + base verb." },
+    { type: "multiple_choice", question: "I am older ___ my sister.", instruction: "Comparative link word", options: ["than", "then", "that", "as"], answer: "than", explanation: "comparative + than." },
     { type: "fill_blank", question: "This exercise is ___ (difficult) than the last one.", instruction: "Comparative, 2+ syllables", answer: "more difficult", acceptableAnswers: ["More difficult"], explanation: "difficult → more difficult." },
+  ],
+  "eng-ch20-going-to": [
+    { type: "multiple_choice", question: "I am going to ___ a book.", instruction: "going to + verb", options: ["read", "reading", "reads", "readed"], answer: "read", explanation: "going to + base verb." },
+    { type: "fill_blank", question: "She ___ going to visit us.", instruction: "am / is / are", answer: "is", acceptableAnswers: ["Is"], explanation: "She → is going to." },
+    { type: "translation", question: "Мы собираемся путешествовать.", instruction: "Translate into English", answer: "We are going to travel", acceptableAnswers: ["We're going to travel", "we are going to travel"], explanation: "are going to + base verb." },
+    { type: "fill_blank", question: "___ you going to come?", instruction: "Question with going to", answer: "Are", acceptableAnswers: ["are"], explanation: "Are you going to…?" },
+    { type: "multiple_choice", question: "Look at the clouds — it ___ rain.", instruction: "Prediction with going to", options: ["is going to", "will to", "going", "goes to"], answer: "is going to", explanation: "Evidence → be going to." },
   ],
   "eng-ch6-experiences": [
     { type: "fill_blank", question: "I have ___ (visit) Paris.", instruction: "Present perfect", answer: "visited", acceptableAnswers: ["Visited"], explanation: "have + visited (-ed)." },
@@ -52,12 +84,26 @@ export const ENGLISH_EXERCISES: Record<string, Draft[]> = {
     { type: "fill_blank", question: "Have you ___ been to Japan?", instruction: "ever or never?", answer: "ever", acceptableAnswers: ["Ever"], explanation: "Questions use ever." },
     { type: "multiple_choice", question: "They ___ already finished.", instruction: "Choose correct form", options: ["have", "has", "had", "having"], answer: "have", explanation: "They → have + V3." },
   ],
+  "eng-ch21-quantifiers": [
+    { type: "multiple_choice", question: "I don't have ___ milk.", instruction: "some or any?", options: ["some", "any", "many", "much"], answer: "any", explanation: "Negative → any." },
+    { type: "fill_blank", question: "How ___ books do you have?", instruction: "much or many?", answer: "many", acceptableAnswers: ["Many"], explanation: "books = countable → many." },
+    { type: "translation", question: "У меня есть немного времени.", instruction: "Translate into English", answer: "I have some time", acceptableAnswers: ["I've got some time", "i have some time"], explanation: "some in affirmative." },
+    { type: "fill_blank", question: "There isn't ___ sugar left.", instruction: "much / many / any", answer: "any", acceptableAnswers: ["much", "Any"], explanation: "Negative uncountable → any (or much)." },
+    { type: "error_correction", question: "I have much friends.", instruction: "Fix the quantifier", answer: "I have many friends", acceptableAnswers: ["I have a lot of friends"], explanation: "friends = countable → many / a lot of." },
+  ],
   "eng-ch7-future-plans": [
     { type: "fill_blank", question: "I ___ help you tomorrow.", instruction: "Future with will", answer: "will", acceptableAnswers: ["Will", "'ll"], explanation: "will + base verb for promises." },
     { type: "multiple_choice", question: "If it rains, I ___ stay home.", instruction: "First conditional", options: ["will", "would", "am", "going"], answer: "will", explanation: "If + present, will + base." },
-    { type: "translation", question: "Тебе следует отдохнуть.", instruction: "Use should", answer: "You should rest", acceptableAnswers: ["you should rest"], explanation: "should + base verb." },
-    { type: "fill_blank", question: "You ___ wear a helmet. (обязательно)", instruction: "must or should?", answer: "must", acceptableAnswers: ["Must"], explanation: "must = obligation." },
+    { type: "translation", question: "Я позвоню тебе завтра.", instruction: "Translate into English", answer: "I will call you tomorrow", acceptableAnswers: ["I'll call you tomorrow", "i will call you tomorrow"], explanation: "will + base verb." },
+    { type: "fill_blank", question: "If you study, you ___ pass.", instruction: "First conditional", answer: "will", acceptableAnswers: ["Will"], explanation: "If + present, will + V." },
     { type: "multiple_choice", question: "He won't ___ to the party.", instruction: "won't + verb", options: ["come", "comes", "coming", "came"], answer: "come", explanation: "won't = will not + base verb." },
+  ],
+  "eng-ch22-modals": [
+    { type: "translation", question: "Тебе следует отдохнуть.", instruction: "Translate into English", answer: "You should rest", acceptableAnswers: ["you should rest"], explanation: "should + base verb." },
+    { type: "fill_blank", question: "You ___ wear a helmet. (обязательно)", instruction: "must or should?", answer: "must", acceptableAnswers: ["Must"], explanation: "must = strong obligation." },
+    { type: "multiple_choice", question: "I ___ to work tomorrow.", instruction: "External obligation", options: ["have", "must", "should", "can"], answer: "have", explanation: "have to = external obligation." },
+    { type: "fill_blank", question: "You ___ smoke here. (запрещено)", instruction: "mustn't", answer: "mustn't", acceptableAnswers: ["must not", "Mustn't"], explanation: "mustn't = prohibition." },
+    { type: "multiple_choice", question: "You don't ___ to come if you're busy.", instruction: "No necessity", options: ["have", "must", "should", "can"], answer: "have", explanation: "don't have to = not necessary." },
   ],
   "eng-ch8-storytelling": [
     { type: "fill_blank", question: "I ___ (read) when she called.", instruction: "Past continuous", answer: "was reading", acceptableAnswers: ["Was reading"], explanation: "I → was + V-ing." },
@@ -76,14 +122,14 @@ export const ENGLISH_EXERCISES: Record<string, Draft[]> = {
   "eng-ch10-what-if": [
     { type: "fill_blank", question: "If I ___ (have) more money, I would travel.", instruction: "Second conditional", answer: "had", acceptableAnswers: ["Had"], explanation: "If + past simple → would + base verb." },
     { type: "multiple_choice", question: "If she had studied, she ___ (pass).", instruction: "Third conditional", options: ["would pass", "would have passed", "will pass", "passed"], answer: "would have passed", explanation: "If + past perfect → would have + V3." },
-    { type: "translation", question: "Хотел бы я знать ответ.", instruction: "Use wish + past", answer: "I wish I knew the answer", acceptableAnswers: ["I wish I knew the answer."], explanation: "wish + past simple for present regret." },
+    { type: "translation", question: "Хотел бы я знать ответ.", instruction: "Translate into English", answer: "I wish I knew the answer", acceptableAnswers: ["I wish I knew the answer."], explanation: "wish + past simple for present regret." },
     { type: "fill_blank", question: "I wish I ___ (not / eat) so much yesterday.", instruction: "wish + past perfect", answer: "hadn't eaten", acceptableAnswers: ["had not eaten", "Hadn't eaten"], explanation: "wish + past perfect for past regret." },
     { type: "multiple_choice", question: "If I were you, I ___ accept the offer.", instruction: "Second conditional", options: ["will", "would", "would have", "had"], answer: "would", explanation: "If I were you, I would..." },
   ],
   "eng-ch11-passive": [
     { type: "fill_blank", question: "The house ___ (build) in 1990.", instruction: "Past simple passive", answer: "was built", acceptableAnswers: ["Was built"], explanation: "was/were + V3 in past passive." },
     { type: "multiple_choice", question: "English ___ in many countries.", instruction: "Present simple passive", options: ["speaks", "is spoken", "spoken", "was spoken"], answer: "is spoken", explanation: "Present passive: is/are + V3." },
-    { type: "translation", question: "Мона Лisa была написана Леонardo da Vinci.", instruction: "Passive voice", answer: "The Mona Lisa was painted by Leonardo da Vinci", acceptableAnswers: ["Mona Lisa was painted by Leonardo da Vinci"], explanation: "was + V3 + by + agent." },
+    { type: "translation", question: "Мона Лиза была написана Леонардо да Винчи.", instruction: "Passive voice", answer: "The Mona Lisa was painted by Leonardo da Vinci", acceptableAnswers: ["Mona Lisa was painted by Leonardo da Vinci"], explanation: "was + V3 + by + agent." },
     { type: "fill_blank", question: "I had my car ___ (repair) yesterday.", instruction: "have something done", answer: "repaired", acceptableAnswers: ["Repaired"], explanation: "have + object + V3." },
     { type: "multiple_choice", question: "The report has ___ finished.", instruction: "Present perfect passive", options: ["been", "being", "be", "was"], answer: "been", explanation: "has/have been + V3." },
   ],
@@ -100,13 +146,23 @@ export const ENGLISH_EXERCISES: Record<string, Draft[]> = {
     { type: "translation", question: "Я действительно верю тебе!", instruction: "Emphatic do", answer: "I do believe you!", acceptableAnswers: ["I do believe you"], explanation: "do/does/did for emphasis." },
     { type: "fill_blank", question: "Hardly ___ I arrived when it started raining.", instruction: "Inversion after Hardly", answer: "had", acceptableAnswers: ["Had"], explanation: "Hardly had + subject + past participle..." },
     { type: "multiple_choice", question: "What I need ___ a vacation.", instruction: "Cleft: What I need is...", options: ["is", "are", "was", "be"], answer: "is", explanation: "What I need is + noun." },
+    { type: "sentence_building", question: "Never / have / I / seen / such / beauty", instruction: "Build the negative inversion sentence", options: ["Never", "have", "I", "seen", "such", "beauty"], answer: "Never have I seen such beauty", explanation: "Never + inversion: Never have I seen…" },
+    { type: "sentence_building", question: "It / was / John / who / broke / the / window", instruction: "Build the it-cleft sentence", options: ["It", "was", "John", "who", "broke", "the", "window"], answer: "It was John who broke the window", explanation: "It-cleft highlights the person: It was John who…" },
+    { type: "sentence_building", question: "What / I / need / is / a / long / vacation", instruction: "Build the wh-cleft sentence", options: ["What", "I", "need", "is", "a", "long", "vacation"], answer: "What I need is a long vacation", explanation: "Wh-cleft: What I need is + noun phrase." },
+    { type: "sentence_building", question: "Hardly / had / I / arrived / when / it / started / raining", instruction: "Build the Hardly…when sentence", options: ["Hardly", "had", "I", "arrived", "when", "it", "started", "raining"], answer: "Hardly had I arrived when it started raining", explanation: "Hardly had + subject + V3 + when…" },
+    { type: "sentence_building", question: "I / do / believe / you / completely", instruction: "Build the emphatic sentence", options: ["I", "do", "believe", "you", "completely"], answer: "I do believe you completely", explanation: "Emphatic do: I do believe you." },
   ],
   "eng-ch14-art-language": [
     { type: "fill_blank", question: "I'll have the red ___, please.", instruction: "Substitution with one", answer: "one", acceptableAnswers: ["One"], explanation: "one replaces a countable noun." },
     { type: "multiple_choice", question: "A: Are you ready? B: ___", instruction: "Ellipsis in conversation", options: ["I am ready.", "Ready?", "Yes, I am", "No, I'm not ready yet"], answer: "Yes, I am", explanation: "Short answers with ellipsis are natural in conversation." },
-    { type: "translation", question: "Я думаю, что да.", instruction: "Use 'so' for substitution", answer: "I think so", acceptableAnswers: ["I think so."], explanation: "I think so = I think that is true." },
+    { type: "translation", question: "Я думаю, что да.", instruction: "Translate into English", answer: "I think so", acceptableAnswers: ["I think so."], explanation: "I think so = I think that is true." },
     { type: "fill_blank", question: "She was ___ exhausted to continue.", instruction: "Intensifying adverb", answer: "absolutely", acceptableAnswers: ["Absolutely"], explanation: "absolutely + adjective for emphasis." },
     { type: "multiple_choice", question: "Such ___ his anger that he left.", instruction: "Fronting with Such", options: ["was", "is", "were", "be"], answer: "was", explanation: "Such was + noun phrase..." },
+    { type: "sentence_building", question: "I / think / so / but / I'm / not / sure", instruction: "Build the substitution sentence", options: ["I", "think", "so", "but", "I'm", "not", "sure"], answer: "I think so but I'm not sure", explanation: "I think so — substitution with so." },
+    { type: "sentence_building", question: "Such / was / his / anger / that / he / left", instruction: "Build the fronted Such sentence", options: ["Such", "was", "his", "anger", "that", "he", "left"], answer: "Such was his anger that he left", explanation: "Such was + noun phrase + that…" },
+    { type: "sentence_building", question: "She / was / absolutely / exhausted / to / continue", instruction: "Build the intensified sentence", options: ["She", "was", "absolutely", "exhausted", "to", "continue"], answer: "She was absolutely exhausted to continue", explanation: "absolutely + adjective for emphasis." },
+    { type: "sentence_building", question: "This / is / the / book / I / told / you / about", instruction: "Build the relative clause sentence", options: ["This", "is", "the", "book", "I", "told", "you", "about"], answer: "This is the book I told you about", explanation: "Relative clause with preposition stranding." },
+    { type: "sentence_building", question: "I'll / have / the / red / one / please", instruction: "Build the substitution sentence", options: ["I'll", "have", "the", "red", "one", "please"], answer: "I'll have the red one, please", explanation: "one replaces a countable noun." },
   ],
   "eng-ch15-mastery": [
     { type: "fill_blank", question: "If I had studied medicine, I ___ a doctor now.", instruction: "Mixed conditional", answer: "would be", acceptableAnswers: ["Would be"], explanation: "Past condition → present result." },
@@ -114,6 +170,11 @@ export const ENGLISH_EXERCISES: Record<string, Draft[]> = {
     { type: "translation", question: "Эта машина нуждается в мойке.", instruction: "Need + V-ing", answer: "This car needs cleaning", acceptableAnswers: ["The car needs cleaning"], explanation: "need + V-ing = need to be done." },
     { type: "fill_blank", question: "I wish you ___ stop doing that.", instruction: "wish + would", answer: "would", acceptableAnswers: ["Would"], explanation: "wish + would for annoyance about habits." },
     { type: "multiple_choice", question: "If I were taller, I ___ joined the basketball team.", instruction: "Mixed conditional", options: ["would", "would have", "will have", "had"], answer: "would have", explanation: "Present condition → past result." },
+    { type: "sentence_building", question: "If / I / had / studied / medicine / I / would / be / a / doctor / now", instruction: "Build the mixed conditional", options: ["If", "I", "had", "studied", "medicine", "I", "would", "be", "a", "doctor", "now"], answer: "If I had studied medicine, I would be a doctor now", explanation: "Past condition → present result." },
+    { type: "sentence_building", question: "It / is / said / that / he / left / the / country", instruction: "Build the advanced passive", options: ["It", "is", "said", "that", "he", "left", "the", "country"], answer: "It is said that he left the country", explanation: "It is said that + clause." },
+    { type: "sentence_building", question: "I / wish / you / would / stop / doing / that", instruction: "Build the wish sentence", options: ["I", "wish", "you", "would", "stop", "doing", "that"], answer: "I wish you would stop doing that", explanation: "wish + would for annoying habits." },
+    { type: "sentence_building", question: "This / car / needs / cleaning / before / the / trip", instruction: "Build the need + V-ing sentence", options: ["This", "car", "needs", "cleaning", "before", "the", "trip"], answer: "This car needs cleaning before the trip", explanation: "need + V-ing = need to be done." },
+    { type: "sentence_building", question: "If / I / were / taller / I / would / have / joined / the / team", instruction: "Build the mixed conditional (past result)", options: ["If", "I", "were", "taller", "I", "would", "have", "joined", "the", "team"], answer: "If I were taller, I would have joined the team", explanation: "Present condition → past result." },
   ],
   "eng-ch16-ielts": [
     { type: "multiple_choice", question: "Which connector shows contrast?", instruction: "Discourse markers", options: ["furthermore", "nevertheless", "therefore", "moreover"], answer: "nevertheless", explanation: "nevertheless = however, shows contrast." },
@@ -122,11 +183,65 @@ export const ENGLISH_EXERCISES: Record<string, Draft[]> = {
     { type: "fill_blank", question: "She should ___ studied harder for the test.", instruction: "Modal perfect regret", answer: "have", acceptableAnswers: ["Have"], explanation: "should have + V3 = regret about past." },
     { type: "multiple_choice", question: "In academic writing, contractions are usually ___", instruction: "Register", options: ["encouraged", "avoided", "required", "preferred"], answer: "avoided", explanation: "Formal register avoids contractions." },
   ],
+
+  // ===== C2: cleft sentences & emphasis ================================
+  "eng-ch23-spotlight": [
+    { type: "multiple_choice", question: "___ was John who broke the vase.", instruction: "It-cleft structure", options: ["It", "That", "There", "What"], answer: "It", explanation: "It-cleft: It was John who… highlights the person." },
+    { type: "multiple_choice", question: "___ I need is a holiday.", instruction: "Wh-cleft (pseudo-cleft)", options: ["What", "That", "Which", "It"], answer: "What", explanation: "Wh-cleft: What I need is… emphasizes the object." },
+    { type: "multiple_choice", question: "It was in Paris ___ I met her.", instruction: "It-cleft for place", options: ["that", "who", "what", "which"], answer: "that", explanation: "It was + place + that… (not who — who is for people)." },
+    { type: "multiple_choice", question: "I ___ like your idea — honestly!", instruction: "Emphatic auxiliary", options: ["do", "am", "would", "will"], answer: "do", explanation: "Emphatic do stresses the verb: I do like it." },
+    { type: "fill_blank", question: "The reason ___ I left was the noise.", instruction: "The reason … I left", answer: "why", acceptableAnswers: ["Why", "that"], explanation: "The reason why/that I left was… — cleft with reason." },
+    { type: "sentence_building", question: "What / she did / was / resign", instruction: "Build the wh-cleft sentence", options: ["What", "she did", "was", "resign"], answer: "What she did was resign", acceptableAnswers: ["what she did was resign"], explanation: "Wh-cleft with action: What she did was (to) resign." },
+  ],
+
+  // ===== C2: ellipsis & substitution ===================================
+  "eng-ch24-unspoken": [
+    { type: "multiple_choice", question: "Will it rain? — I hope ___.", instruction: "Substitution with so/not", options: ["not", "no", "isn't", "don't"], answer: "not", explanation: "I hope not = I hope it won't rain. (I hope so = positive.)" },
+    { type: "multiple_choice", question: "I love jazz. — So ___ I.", instruction: "Agreement with inversion", options: ["do", "am", "have", "like"], answer: "do", explanation: "So do I — auxiliary matches the tense (love → do)." },
+    { type: "multiple_choice", question: "I can't swim. — ___ can I.", instruction: "Negative agreement", options: ["Neither", "So", "Either", "Nor do"], answer: "Neither", explanation: "Negative agreement: Neither can I / Me neither." },
+    { type: "multiple_choice", question: "She runs faster than I ___.", instruction: "Substitute the verb phrase", options: ["do", "run fast", "am", "does"], answer: "do", explanation: "do replaces the verb phrase: than I do (= than I run)." },
+    { type: "fill_blank", question: "Which cake would you like? — The chocolate ___.", instruction: "Substitute the noun", answer: "one", acceptableAnswers: ["One"], explanation: "one/ones replaces a countable noun: the chocolate one." },
+    { type: "error_correction", question: "She has been to Peru. — So I have.", instruction: "Fix the word order", answer: "So have I.", acceptableAnswers: ["So have I"], explanation: "Inversion is required: So have I (So I have = 'indeed I have')." },
+    { type: "sentence_building", question: "I / love / jazz / So / do / I", instruction: "Build the agreement sentence", options: ["I", "love", "jazz", "So", "do", "I"], answer: "I love jazz. So do I", explanation: "So + auxiliary + subject — agreement with inversion." },
+    { type: "sentence_building", question: "I / hope / not", instruction: "Build the negative substitution", options: ["I", "hope", "not"], answer: "I hope not", acceptableAnswers: ["I hope not."], explanation: "I hope not — negative substitution for I hope it won't rain." },
+    { type: "sentence_building", question: "Neither / can / I / swim / very / well", instruction: "Build the negative agreement", options: ["Neither", "can", "I", "swim", "very", "well"], answer: "Neither can I swim very well", explanation: "Neither + auxiliary + subject — negative agreement." },
+    { type: "sentence_building", question: "She / runs / faster / than / I / do", instruction: "Build the verb substitution sentence", options: ["She", "runs", "faster", "than", "I", "do"], answer: "She runs faster than I do", explanation: "do replaces the repeated verb phrase." },
+    { type: "sentence_building", question: "The / chocolate / one / please / not / the / vanilla", instruction: "Build the one substitution sentence", options: ["The", "chocolate", "one", "please", "not", "the", "vanilla"], answer: "The chocolate one, please — not the vanilla", explanation: "one replaces a countable noun." },
+  ],
+
+  // ===== C2: hedging & understatement ==================================
+  "eng-ch25-between-lines": [
+    { type: "multiple_choice", question: "It could be ___ that the policy failed.", instruction: "Academic hedging", options: ["argued", "argue", "arguing", "argues"], answer: "argued", explanation: "It could be argued that… — classic hedged claim." },
+    { type: "multiple_choice", question: "The results ___ to suggest a link.", instruction: "Cautious reporting verb", options: ["appear", "prove", "insist", "confirm"], answer: "appear", explanation: "appear/seem to suggest — hedged; prove/confirm are too strong." },
+    { type: "multiple_choice", question: "A British speaker says «Not bad» about your work. They probably mean…", instruction: "Understatement", options: ["it's very good", "it's terrible", "it's average", "they didn't see it"], answer: "it's very good", explanation: "British understatement: Not bad ≈ excellent." },
+    { type: "multiple_choice", question: "I ___ wondering if you could help me.", instruction: "Distancing through tense", options: ["was", "am", "will be", "have been"], answer: "was", explanation: "Past tense distances politely: I was wondering…" },
+    { type: "fill_blank", question: "I see what you mean, ___ I'm not sure I'd go that far.", instruction: "Polite disagreement", answer: "but", acceptableAnswers: ["But"], explanation: "I see what you mean, but… — softened disagreement." },
+    { type: "translation", question: "Можно сказать, что результаты неубедительны.", instruction: "Translate with a hedge (arguably / it could be argued)", answer: "Arguably, the results are inconclusive", acceptableAnswers: ["It could be argued that the results are inconclusive", "arguably, the results are inconclusive"], explanation: "Arguably / It could be argued that… — academic hedging." },
+    { type: "sentence_building", question: "It / could / be / argued / that / the / results / are / inconclusive", instruction: "Build the hedged claim", options: ["It", "could", "be", "argued", "that", "the", "results", "are", "inconclusive"], answer: "It could be argued that the results are inconclusive", explanation: "It could be argued that… — academic hedge." },
+    { type: "sentence_building", question: "The / results / appear / to / suggest / a / link", instruction: "Build the cautious reporting sentence", options: ["The", "results", "appear", "to", "suggest", "a", "link"], answer: "The results appear to suggest a link", explanation: "appear to suggest — hedged reporting verb." },
+    { type: "sentence_building", question: "I / was / wondering / if / you / could / help / me", instruction: "Build the distancing request", options: ["I", "was", "wondering", "if", "you", "could", "help", "me"], answer: "I was wondering if you could help me", explanation: "I was wondering… — polite distancing." },
+    { type: "sentence_building", question: "I / see / what / you / mean / but / I'm / not / sure", instruction: "Build the polite disagreement", options: ["I", "see", "what", "you", "mean", "but", "I'm", "not", "sure"], answer: "I see what you mean, but I'm not sure", explanation: "I see what you mean, but… — softened disagreement." },
+    { type: "sentence_building", question: "Arguably / the / policy / has / failed / to / deliver", instruction: "Build the Arguably sentence", options: ["Arguably", "the", "policy", "has", "failed", "to", "deliver"], answer: "Arguably, the policy has failed to deliver", explanation: "Arguably — hedging adverb at the start." },
+  ],
 };
 
 /** Chapter exercises with stable ids + expanded permanent bank packs. */
 export function getEnglishExercises(chapterSlug: string): StaticExercise[] {
-  const curated = ENGLISH_EXERCISES[chapterSlug] ?? [];
-  const expanded = expandEnglishChapterBank(chapterSlug, curated);
-  return withExerciseIds("english", chapterSlug, expanded);
+  const curated = [
+    ...(ENGLISH_EXERCISES[chapterSlug] ?? []),
+    ...(ENGLISH_CURRICULUM_CHAPTER_EXERCISES[chapterSlug] ?? []),
+    ...((ENGLISH_CURATED_SUPPLEMENTS as unknown as Record<string, Draft[]>)[
+      chapterSlug
+    ] ?? []),
+  ];
+  const expanded = expandEnglishChapterBank(chapterSlug, curated).map(
+    attachEnglishTrL1,
+  );
+  const chapter = getEngChapter(chapterSlug);
+  const allowed = chapter?.exerciseTypes;
+  const filtered =
+    allowed && allowed.length > 0
+      ? expanded.filter((ex) => allowed.includes(ex.type))
+      : expanded;
+  return withExerciseIds("english", chapterSlug, filtered);
 }

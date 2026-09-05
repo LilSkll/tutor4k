@@ -4,229 +4,525 @@ export const SPANISH_GRAMMAR_CONTENT: Partial<
   Record<string, Partial<Record<InterfaceLanguage, string>>>
 > = {
   "a1-articulos": {
-    en: `## Definite articles (Artículos definidos)
+    en: `> **Before this topic:** you already know **ser/estar** and the **present tense** (hablo, soy). **In this topic:** articles before nouns — **el, la, un, una** — and when to use each.
 
-| Gender / Number | Article | Example |
+## What an article is
+
+**Rule:** an article is the short word **before** a noun: known or some, one or many, masculine or feminine.
+
+In dictionaries: **m.** = masculino = masculine, **f.** = femenino = feminine. Singular = one, plural = many.
+
+## A specific, known thing
+
+**Rule:** familiar / specific thing → **el / la / los / las**.
+
+| | One | Many |
 |---|---|---|
-| m. singular | **el** | el libro |
-| f. singular | **la** | la casa |
-| m./f. + a/ha | **el** | el agua |
-| plural | **los / las** | los libros, las casas |
+| masculine | **el** libro | **los** libros |
+| feminine | **la** casa | **las** casas |
 
-## Indefinite articles (Artículos indefinidos)
+Examples: \`el sol\`, \`la casa de Ana\`, \`los libros en la mesa\`.
 
-| Number | Masculine | Feminine |
+## An unknown or “some” thing
+
+**Rule:** not named yet, any, or “one of” → **un / una / unos / unas**.
+
+| | One | Many |
 |---|---|---|
-| Singular | **un** | **una** |
-| Plural | **unos** | **unas** |
+| masculine | **un** libro | **unos** libros |
+| feminine | **una** casa | **unas** casas |
 
-### Key rules
-- **El** is used for a specific, known item: \`el sol\`.
-- **Un/una** is used for something indefinite: \`un libro interesante\`.
-- Before feminine nouns starting with stressed **a-/ha-**, use **el**: \`el agua\`, \`el águila\` (but in plural: \`las aguas\`).
+Examples: \`un libro interesante\`, \`una casa nueva\`.
 
-> 💡 Remember: gender in Spanish is not always logical — \`el problema\` (m.), \`la mano\` (f.).`,
-    es: `## Artículos definidos
+## Exception: el agua — not la abuela
 
-| Género / Número | Artículo | Ejemplo |
+**Rule:** **el agua**, but **la abuela**. Stressed first **a** — not every word starting with a.
+
+Use **el** (or **un**) before a **feminine** word only if **all** of these are true:
+
+1. the word is feminine;
+2. you mean **one** thing;
+3. it starts with **a** or **ha**;
+4. the stress falls on **that first a** (as in **Á-gua**). There may be no written accent — what matters is the sound.
+
+Then: \`el agua\`, \`el águila\`, \`el hacha\`, \`el aula\`, \`el hambre\`.
+
+The word **stays feminine**: \`el agua fría\` (not *frío*). In the plural the exception disappears — go by gender again: \`las aguas\`, \`las águilas\`, \`las aulas\`.
+
+**Not this exception** (the first *a* is unstressed):
+
+| Word | Where the stress is | How we say it |
 |---|---|---|
-| m. singular | **el** | el libro |
-| f. singular | **la** | la casa |
-| m./f. + a/ha | **el** | el agua |
-| plural | **los / las** | los libros, las casas |
+| abuela | a-**BUE**-la | **la** abuela, **las** abuelas |
+| amiga | a-**MI**-ga | **la** amiga |
+| harina | ha-**RI**-na | **la** harina |
+| habitación | on **-ció-** | **la** habitación |
 
-## Artículos indefinidos
+> ⚠️ Common mistake: *el abuela*. Correct: **la abuela**.
+> If another word stands between the article and the noun, use **la** again: \`la misma agua\`, \`la amplia aula\`.
 
-| Número | Masculino | Femenino |
+## Other exceptions
+
+### Profession after ser — no article
+
+**Rule:** after *ser*, a job usually has **no** article. A specific person takes an article.
+
+- \`Soy profesora.\` — I am a teacher (role).
+- \`La profesora es Ana.\` — that teacher is Ana.
+
+### Language: hablo español
+
+**Rule:** “I speak a language” — no article. The language as a topic takes **el**.
+
+- \`Hablo español.\`
+- \`El español es fácil.\`
+
+### Days: el lunes / los lunes
+
+**Rule:** one day = **el lunes**. Habit = **los lunes** (on Mondays).
+
+### a + el = al, de + el = del
+
+**Rule:** **a + el → al**, **de + el → del**. No merge with **la**: *a la*, *de la*. Before agua: \`al agua\`, \`del agua\`.
+
+### el problema, la mano
+
+**Rule:** full gender is in “Gender and number”. Here only the article: \`el problema\`, \`el tema\`, but \`la mano\`, \`la foto\`.
+
+## Four steps to choose
+
+**Rule:** number → gender → known/some → only then the *el agua* check.
+
+1. One thing or many?
+2. Masculine or feminine? (gender does **not** change because of el agua)
+3. A specific known thing (**el / la / los / las**) or “some / a” (**un / una / unos / unas**)?
+4. If feminine + one + stressed **a / ha** at the start → **el** / **un**. In the plural always **las** / **unas**.`,
+    es: `> **Antes de este tema:** ya conoces **ser/estar** y el **presente** (hablo, soy). **En este tema:** los artículos delante del sustantivo — **el, la, un, una** — y cuándo usar cada uno.
+
+## Qué es un artículo
+
+**Regla:** el artículo es la palabrita **delante** del sustantivo: conocido o alguno, uno o muchos, masculino o femenino.
+
+En el diccionario: **m.** = masculino, **f.** = femenino. Singular = uno, plural = muchos.
+
+## Algo concreto y conocido
+
+**Regla:** cosa conocida / concreta → **el / la / los / las**.
+
+| | Uno | Muchos |
 |---|---|---|
-| Singular | **un** | **una** |
-| Plural | **unos** | **unas** |
+| masculino | **el** libro | **los** libros |
+| femenino | **la** casa | **las** casas |
 
-### Reglas clave
-- **El** se usa para algo concreto y conocido: \`el sol\`.
-- **Un/una** para algo indefinido: \`un libro interesante\`.
-- Ante sustantivos femeninos que empiezan por **a-/ha-** tónica, se usa **el**: \`el agua\`, \`el águila\` (pero en plural: \`las aguas\`).
+Ejemplos: \`el sol\`, \`la casa de Ana\`, \`los libros en la mesa\`.
 
-> 💡 Recuerda: el género en español no siempre es lógico — \`el problema\` (m.), \`la mano\` (f.).`,
+## Algo desconocido o «alguno»
+
+**Regla:** aún no se ha nombrado, cualquiera o «uno de» → **un / una / unos / unas**.
+
+| | Uno | Muchos |
+|---|---|---|
+| masculino | **un** libro | **unos** libros |
+| femenino | **una** casa | **unas** casas |
+
+Ejemplos: \`un libro interesante\`, \`una casa nueva\`.
+
+## Excepción: el agua — no la abuela
+
+**Regla:** **el agua**, pero **la abuela**. La primera **a** tónica — no cualquier palabra en a.
+
+Se pone **el** (o **un**) delante de una palabra **femenina** solo si se cumplen **todas** las condiciones:
+
+1. la palabra es femenina;
+2. hablamos de **una** cosa;
+3. empieza por **a** o **ha**;
+4. el acento (la fuerza de la voz) cae en **esa primera a** (como **Á-gua**). Puede no haber tilde: importa el sonido, no la escritura.
+
+Entonces: \`el agua\`, \`el águila\`, \`el hacha\`, \`el aula\`, \`el hambre\`.
+
+La palabra **sigue siendo femenina**: \`el agua fría\` (no *frío*). En plural la excepción desaparece: \`las aguas\`, \`las águilas\`, \`las aulas\`.
+
+**No entra aquí** (la primera a no es tónica):
+
+| Palabra | Dónde cae la fuerza | Cómo se dice |
+|---|---|---|
+| abuela | a-**BUE**-la | **la** abuela, **las** abuelas |
+| amiga | a-**MI**-ga | **la** amiga |
+| harina | ha-**RI**-na | **la** harina |
+| habitación | en **-ció-** | **la** habitación |
+
+> ⚠️ Error frecuente: *el abuela*. Lo correcto es **la abuela**.
+> Si hay otra palabra entre el artículo y el sustantivo, otra vez **la**: \`la misma agua\`, \`la amplia aula\`.
+
+## Otras excepciones
+
+### Profesión con ser — sin artículo
+
+**Regla:** tras *ser* la profesión suele ir **sin** artículo. Una persona concreta lleva artículo.
+
+- \`Soy profesora.\` — soy profesora (rol).
+- \`La profesora es Ana.\` — esa profesora es Ana.
+
+### Idioma: hablo español
+
+**Regla:** «hablo un idioma» — sin artículo. El idioma como tema lleva **el**.
+
+- \`Hablo español.\`
+- \`El español es fácil.\`
+
+### Días: el lunes / los lunes
+
+**Regla:** un día = **el lunes**. Costumbre = **los lunes**.
+
+### a + el = al, de + el = del
+
+**Regla:** **a + el → al**, **de + el → del**. Con **la** no se junta: *a la*, *de la*. Delante de agua: \`al agua\`, \`del agua\`.
+
+### el problema, la mano
+
+**Regla:** el género entero está en «Género y número». Aquí solo el artículo: \`el problema\`, \`el tema\`, pero \`la mano\`, \`la foto\`.
+
+## Cómo elegir en 4 pasos
+
+**Regla:** número → género → conocido/alguno → solo entonces *el agua*.
+
+1. ¿Uno o muchos?
+2. ¿Masculino o femenino? (el género **no** cambia por el agua)
+3. ¿Algo concreto y conocido (**el / la / los / las**) o «alguno» (**un / una / unos / unas**)?
+4. Si es femenino + uno + empieza por **a / ha** tónica → **el** / **un**. En plural siempre **las** / **unas**.`,
   },
 
   "a1-ser-estar": {
-    en: `## Ser vs Estar — both mean "to be"
+    en: `> **Before this topic:** this is the **first** grammar topic in the course. **In this topic:** we start from zero — pronouns (yo, tú) and two verbs for “to be”: **ser** and **estar**.
 
-### SER — permanent characteristics
-Used for **identity, profession, origin, description**:
-- \`Yo soy profesor.\`
-- \`Ella es de México.\`
-- \`El cielo es azul.\`
+## Greetings and introductions
 
-| Person | SER |
+Spanish questions use **two** marks: \`¿…?\`
+
+| Spanish | English |
 |---|---|
-| yo | soy |
-| tú | eres |
-| él/ella/usted | es |
-| nosotros/as | somos |
-| **vosotros/as** | **sois** |
-| ellos/ustedes | son |
+| **Hola** | Hello |
+| **Buenos días** | Good morning |
+| **Buenas tardes** | Good afternoon / evening |
+| **Buenas noches** | Good night |
+| **Adiós / Hasta luego** | Bye / See you later |
+| **¿Cómo te llamas?** | What’s your name? |
+| **Me llamo…** | My name is… |
+| **Mucho gusto** | Nice to meet you |
+| **¿Cómo estás?** | How are you? (right now) |
+| **Bien, gracias** | Fine, thanks |
 
-### ESTAR — temporary states and location
-Used for **state, feelings, location**:
-- \`Estoy cansado.\`
-- \`El libro está en la mesa.\`
+> 💡 After a greeting people often ask the name: \`Hola, ¿cómo te llamas?\`
 
-| Person | ESTAR |
+## Who is speaking — I, you, he…
+
+The verb **changes by person**. Keep this table — it is used in the whole course.
+
+| English | Pronoun | When |
+|---|---|---|
+| I | **yo** | the speaker |
+| you (informal, one) | **tú** | one person, “tú” |
+| he / she / you (formal, one) | **él / ella / usted** | one verb form for all three |
+| we | **nosotros / nosotras** | -as if all women |
+| you (plural, Spain) | **vosotros / vosotras** | almost unused in Latin America |
+| they / you (plural formal) | **ellos / ellas / ustedes** | in Latin America *ustedes* = “you” to several people |
+
+## Two verbs for “to be”: ser and estar
+
+English has one “am / is / are”. Spanish has **two**.
+
+### SER — who / what someone **is**
+Identity, job, origin, description, time, relationship:
+
+- \`Yo **soy** profesor.\`
+- \`Ella **es** de México.\`
+- \`El cielo **es** azul.\` (in general)
+- \`**Son** las tres.\` (clock time also uses ser)
+
+| Who | SER |
 |---|---|
-| yo | estoy |
-| tú | estás |
-| él/ella/usted | está |
-| nosotros/as | estamos |
-| **vosotros/as** | **estáis** |
-| ellos/ustedes | están |
+| yo | **soy** |
+| tú | **eres** |
+| él / ella / usted | **es** |
+| nosotros | **somos** |
+| vosotros | **sois** |
+| ellos / ustedes | **son** |
 
-### Mnemonic DOCTOR / PLACE
-- **SER**: **D**escription, **O**ccupation, **C**haracteristic, **T**ime, **O**rigin, **R**elationship.
-- **ESTAR**: **P**osition, **L**ocation, **A**ction (gerundio), **C**ondition, **E**motion.
+### ESTAR — how / where **right now**
+State, feelings, place:
 
-> ⚠️ Adjectives change meaning: \`es aburrido\` (a boring person) vs \`está aburrido\` (he/she is bored).`,
-    es: `## Ser vs Estar — ambos significan «ser/estar»
+- \`**Estoy** cansado.\`
+- \`El libro **está** en la mesa.\`
 
-### SER — características permanentes
-Se usa para **identidad, profesión, origen, descripción**:
-- \`Yo soy profesor.\`
-- \`Ella es de México.\`
-- \`El cielo es azul.\`
-
-| Persona | SER |
+| Who | ESTAR |
 |---|---|
-| yo | soy |
-| tú | eres |
-| él/ella/usted | es |
-| nosotros/as | somos |
-| **vosotros/as** | **sois** |
-| ellos/ustedes | son |
+| yo | **estoy** |
+| tú | **estás** |
+| él / ella / usted | **está** |
+| nosotros | **estamos** |
+| vosotros | **estáis** |
+| ellos / ustedes | **están** |
 
-### ESTAR — estados temporales y ubicación
-Se usa para **estado, sentimientos, lugar**:
-- \`Estoy cansado.\`
-- \`El libro está en la mesa.\`
+## How to choose
 
-| Persona | ESTAR |
+1. **Who / what it is / where from / what time** → **ser**.
+2. **Where / how someone feels / temporary** → **estar**.
+
+Hint without memorising English acronyms:
+- **ser**: description, job, character, time, origin, relationship;
+- **estar**: posture, place, -ando/-iendo action, condition, emotion.
+
+> ⚠️ Same adjective, two meanings: \`es aburrido\` (a boring person) vs \`está aburrido\` (bored now).
+> \`estar frío\` is for a thing; “I’m cold” is *tener* (\`tengo frío\`).`,
+    es: `> **Antes de este tema:** este es el **primer** tema de gramática del curso. **En este tema:** empezamos desde cero — pronombres (yo, tú) y dos verbos «ser / estar».
+
+## Saludos y presentaciones
+
+La pregunta se escribe con **dos** signos: \`¿…?\`
+
+| Fórmula | Para qué |
 |---|---|
-| yo | estoy |
-| tú | estás |
-| él/ella/usted | está |
-| nosotros/as | estamos |
-| **vosotros/as** | **estáis** |
-| ellos/ustedes | están |
+| **Hola** | saludo informal |
+| **Buenos días / Buenas tardes / Buenas noches** | saludo según la hora |
+| **Adiós / Hasta luego** | despedida |
+| **¿Cómo te llamas?** / **Me llamo…** | nombre |
+| **Mucho gusto** | al presentarse |
+| **¿Cómo estás?** | estado ahora (estar) |
+| **Bien, gracias** | respuesta corta |
 
-### Mnemotecnia DOCTOR / PLACE
-- **SER**: **D**escripción, **O**cupación, **C**aracterística, **T**iempo, **O**rigen, **R**elación.
-- **ESTAR**: **P**osición, **L**ugar, **A**cción (gerundio), **C**ondición, **E**moción.
+> 💡 Después del saludo: \`Hola, ¿cómo te llamas?\`
 
-> ⚠️ Los adjetivos cambian de sentido: \`es aburrido\` (persona aburrida) vs \`está aburrido\` (está aburrido).`,
+## Quién habla — yo, tú, él…
+
+El verbo **cambia según la persona**. Esta tabla se usa en todo el curso.
+
+| | Pronombre | Notas |
+|---|---|---|
+| yo | **yo** | quien habla |
+| tú | **tú** | una persona de confianza |
+| él / ella / usted | **él / ella / usted** | una sola forma de verbo |
+| nosotros / nosotras | **nosotros / nosotras** | -as si son solo mujeres |
+| vosotros / vosotras | **vosotros / vosotras** | España; en América, *ustedes* |
+| ellos / ellas / ustedes | **ellos / ellas / ustedes** | en América *ustedes* = «vosotros» |
+
+## Dos verbos: ser y estar
+
+En ruso hay un «ser». En español hay **dos**.
+
+### SER — quién / cómo **es**
+Identidad, profesión, origen, descripción, hora, relación:
+
+- \`Yo **soy** profesor.\`
+- \`Ella **es** de México.\`
+- \`El cielo **es** azul.\`
+- \`**Son** las tres.\` (la hora también va con ser)
+
+| Quién | SER |
+|---|---|
+| yo | **soy** |
+| tú | **eres** |
+| él / ella / usted | **es** |
+| nosotros | **somos** |
+| vosotros | **sois** |
+| ellos / ustedes | **son** |
+
+### ESTAR — cómo / dónde **ahora**
+Estado, sentimientos, lugar:
+
+- \`**Estoy** cansado.\`
+- \`El libro **está** en la mesa.\`
+
+| Quién | ESTAR |
+|---|---|
+| yo | **estoy** |
+| tú | **estás** |
+| él / ella / usted | **está** |
+| nosotros | **estamos** |
+| vosotros | **estáis** |
+| ellos / ustedes | **están** |
+
+## Cómo elegir
+
+1. **Quién es / de dónde / qué hora** → **ser**.
+2. **Dónde / cómo se siente / temporal** → **estar**.
+
+- **ser**: descripción, profesión, carácter, tiempo, origen, relación;
+- **estar**: postura, lugar, acción en -ando/-iendo, estado, emoción.
+
+> ⚠️ \`es aburrido\` (persona aburrida) vs \`está aburrido\` (ahora se aburre).
+> \`estar frío\` es de cosas; «tengo frío» es *tener*.`,
   },
 
   "a1-presente": {
-    en: `## Presente de Indicativo
+    en: `> **Before this topic:** you already know **soy** and **estoy**. **In this topic:** how to build any action in the present tense — hablo, como, vivo.
 
-### Regular verbs (3 conjugations)
+## What Presente is
 
-| Person | -AR (hablar) | -ER (comer) | -IR (vivir) |
+**Presente** = present. The dictionary form is the **infinitive** (not yet I/you): hablar, comer, vivir.
+
+The infinitive ending shows the family:
+- **-ar** — the largest (\`hablar\` — to speak);
+- **-er** (\`comer\` — to eat);
+- **-ir** (\`vivir\` — to live).
+
+Drop -ar / -er / -ir and add an ending **by person**.
+
+## Regular verbs
+
+“Regular” = the table endings, the stem does not break.
+
+| Who | -AR hablar | -ER comer | -IR vivir |
 |---|---|---|---|
-| yo | hablo | como | vivo |
-| tú | hablas | comes | vives |
-| él/ella | habla | come | vive |
-| nosotros | hablamos | comemos | vivimos |
-| vosotros | habláis | coméis | vivís |
-| ellos | hablan | comen | viven |
+| yo | habl**o** | com**o** | viv**o** |
+| tú | habl**as** | com**es** | viv**es** |
+| él / ella / usted | habl**a** | com**e** | viv**e** |
+| nosotros | habl**amos** | com**emos** | viv**imos** |
+| vosotros | habl**áis** | com**éis** | viv**ís** |
+| ellos / ustedes | habl**an** | com**en** | viv**en** |
 
-### Irregular verbs (most common)
-- **ser**: soy, eres, es, somos, sois, son
-- **estar**: estoy, estás, está, estamos, estáis, están
-- **ir**: voy, vas, va, vamos, vais, van
-- **tener**: tengo, tienes, tiene, tenemos, tenéis, tienen
-- **hacer**: hago, haces, hace, hacemos, hacéis, hacen
+Say them whole: \`habláis\`, \`coméis\`, \`vivís\`.
 
-### Usage
-- Action in the present: \`Trabajo en Madrid.\`
-- General facts: \`El agua hierve a 100°C.\`
-- Near future: \`Mañana voy al cine.\`
+> yo almost always ends in **-o**. In Latin America vosotros is replaced by ustedes (ellos form).
 
-> 💡 Verbs with vowel alternation: \`pensar → pienso\`, \`pedir → pido\`, \`dormir → duermo\`.`,
-    es: `## Presente de Indicativo
+## When people use it
 
-### Verbos regulares (3 conjugaciones)
+- Now / usually: \`Trabajo en Madrid.\`
+- Facts: \`El agua hierve a 100°C.\`
+- Near future: \`Mañana **voy** al cine.\` (ir is irregular)
 
-| Persona | -AR (hablar) | -ER (comer) | -IR (vivir) |
+## The irregulars you need first
+
+**ser** and **estar** you already know.
+
+| Verb | yo | tú | él | nosotros | vosotros | ellos |
+|---|---|---|---|---|---|---|
+| **ser** | soy | eres | es | somos | sois | son |
+| **estar** | estoy | estás | está | estamos | estáis | están |
+| **ir** | voy | vas | va | vamos | vais | van |
+| **tener** | tengo | tienes | tiene | tenemos | tenéis | tienen |
+| **hacer** | hago | haces | hace | hacemos | hacéis | hacen |
+
+Some verbs change a vowel **only** in the stressed syllable (not nosotros / vosotros):
+\`pensar → pienso\`, \`pedir → pido\`, \`dormir → duermo\`. Full list — Frequent verbs.`,
+    es: `> **Antes de este tema:** ya conoces **soy** y **estoy**. **En este tema:** cómo construir cualquier acción en presente — hablo, como, vivo.
+
+## Qué es el Presente
+
+**Presente** = ahora / lo habitual. En el diccionario el verbo está en **infinitivo** (aún no yo/tú): hablar, comer, vivir.
+
+La terminación dice la familia:
+- **-ar** — la más grande (\`hablar\`);
+- **-er** (\`comer\`);
+- **-ir** (\`vivir\`).
+
+Se quita -ar / -er / -ir y se pone la terminación **según quién habla**.
+
+## Verbos regulares
+
+«Regular» = las terminaciones de la tabla, la raíz no se rompe.
+
+| Quién | -AR hablar | -ER comer | -IR vivir |
 |---|---|---|---|
-| yo | hablo | como | vivo |
-| tú | hablas | comes | vives |
-| él/ella | habla | come | vive |
-| nosotros | hablamos | comemos | vivimos |
-| vosotros | habláis | coméis | vivís |
-| ellos | hablan | comen | viven |
+| yo | habl**o** | com**o** | viv**o** |
+| tú | habl**as** | com**es** | viv**es** |
+| él / ella / usted | habl**a** | com**e** | viv**e** |
+| nosotros | habl**amos** | com**emos** | viv**imos** |
+| vosotros | habl**áis** | com**éis** | viv**ís** |
+| ellos / ustedes | habl**an** | com**en** | viv**en** |
 
-### Verbos irregulares (más frecuentes)
-- **ser**: soy, eres, es, somos, sois, son
-- **estar**: estoy, estás, está, estamos, estáis, están
-- **ir**: voy, vas, va, vamos, vais, van
-- **tener**: tengo, tienes, tiene, tenemos, tenéis, tienen
-- **hacer**: hago, haces, hace, hacemos, hacéis, hacen
+Enteros: \`habláis\`, \`coméis\`, \`vivís\`.
 
-### Uso
-- Acción en el presente: \`Trabajo en Madrid.\`
-- Hechos generales: \`El agua hierve a 100°C.\`
-- Futuro próximo: \`Mañana voy al cine.\`
+> yo casi siempre acaba en **-o**. En América vosotros se sustituye por ustedes.
 
-> 💡 Verbos con alternancia vocálica: \`pensar → pienso\`, \`pedir → pido\`, \`dormir → duermo\`.`,
+## Cuándo se usa
+
+- Ahora / normalmente: \`Trabajo en Madrid.\`
+- Hechos: \`El agua hierve a 100°C.\`
+- Futuro cercano: \`Mañana **voy** al cine.\`
+
+## Irregulares que hacen falta ya
+
+**ser** y **estar** ya salieron.
+
+| Verbo | yo | tú | él | nosotros | vosotros | ellos |
+|---|---|---|---|---|---|---|
+| **ser** | soy | eres | es | somos | sois | son |
+| **estar** | estoy | estás | está | estamos | estáis | están |
+| **ir** | voy | vas | va | vamos | vais | van |
+| **tener** | tengo | tienes | tiene | tenemos | tenéis | tienen |
+| **hacer** | hago | haces | hace | hacemos | hacéis | hacen |
+
+Algunos cambian la vocal **solo** en la sílaba tónica (no en nosotros / vosotros):
+\`pensar → pienso\`, \`pedir → pido\`, \`dormir → duermo\`. Lista — Verbos frecuentes.`,
   },
 
   "a1-genero-numero": {
-    en: `## Género (Gender)
+    en: `> **Before this topic:** you already know **el, la, un, una**. **In this topic:** noun gender and number — why la casa but el problema, and why not *el abuela*.
 
-| Ending | Gender | Example |
+## Masculine and feminine
+
+Every Spanish noun has a gender. It does **not** always match real-world sex and it is **not** always logical.
+
+In dictionaries: **m.** = masculino = masculine, **f.** = femenino = feminine.
+
+| Usually | Gender | Examples |
 |---|---|---|
-| -o | m. | el libro, el perro |
-| -a | f. | la casa, la gata |
-| -ción/-sión | f. | la canción, la televisión |
-| -dad/-tad | f. | la ciudad, la libertad |
-| consonant | varies | el lápiz / la pared |
+| ends in **-o** | masculine | el libro, el perro |
+| ends in **-a** | feminine | la casa, la gata |
+| **-ción / -sión** | feminine | la canción, la televisión |
+| **-dad / -tad** | feminine | la ciudad, la libertad |
+| ends in a consonant | check the dictionary | el lápiz / la pared |
 
-**Exceptions:** \`el problema\`, \`el mapa\`, \`el día\` (m. despite -a);
-\`la mano\`, \`la foto\` (f. despite -o).
+**Ending exceptions:**
+- ends in **-a** but masculine: \`el problema\`, \`el mapa\`, \`el día\`, \`el tema\`, \`el idioma\`;
+- ends in **-o** but feminine: \`la mano\`, \`la foto\`, \`la radio\`, \`la moto\`.
 
-## Número (Number)
+The article **el** in \`el agua\` does **not** make the word masculine — see **Articles**. Say \`el agua fría\`; in the plural \`las aguas\`. Do not mix this up with \`**la** abuela\` (stress on **-bue-**, not the first *a*).
 
-- Add **-s** (after vowel): \`libro → libros\`, \`mesa → mesas\`
-- Add **-es** (after consonant): \`flor → flores\`, \`mes → meses\`
+## One or many
+
+- After a vowel add **-s**: \`libro → libros\`, \`mesa → mesas\`
+- After a consonant add **-es**: \`flor → flores\`, \`mes → meses\`
 - \`el lápiz → los lápices\` (z → c before -es)
-- \`el prógrama → los programas\` (without accent)
+- A written accent may disappear: \`el programa → los programas\`
 
-> ⚠️ Agreement: article + adjective + noun must match in gender and number: \`la casa blanca\`, \`los coches rojos\`.`,
-    es: `## Género
+> ⚠️ Article, adjective and noun must match in gender and number: \`la casa blanca\`, \`los coches rojos\`, \`el agua fría\`.`,
+    es: `> **Antes de este tema:** ya conoces **el, la, un, una**. **En este tema:** género y número — por qué la casa, pero el problema, y por qué no *el abuela*.
 
-| Terminación | Género | Ejemplo |
+## Masculino y femenino
+
+Cada sustantivo en español tiene género. **No** siempre coincide con el sexo en la vida real y **no** siempre es lógico.
+
+En el diccionario: **m.** = masculino, **f.** = femenino.
+
+| Suele ser | Género | Ejemplos |
 |---|---|---|
-| -o | m. | el libro, el perro |
-| -a | f. | la casa, la gata |
-| -ción/-sión | f. | la canción, la televisión |
-| -dad/-tad | f. | la ciudad, la libertad |
-| consonante | variable | el lápiz / la pared |
+| termina en **-o** | masculino | el libro, el perro |
+| termina en **-a** | femenino | la casa, la gata |
+| **-ción / -sión** | femenino | la canción, la televisión |
+| **-dad / -tad** | femenino | la ciudad, la libertad |
+| termina en consonante | mira el diccionario | el lápiz / la pared |
 
-**Excepciones:** \`el problema\`, \`el mapa\`, \`el día\` (m. a pesar de -a);
-\`la mano\`, \`la foto\` (f. a pesar de -o).
+**Excepciones por la terminación:**
+- en **-a**, pero masculinos: \`el problema\`, \`el mapa\`, \`el día\`, \`el tema\`, \`el idioma\`;
+- en **-o**, pero femeninos: \`la mano\`, \`la foto\`, \`la radio\`, \`la moto\`.
 
-## Número
+El artículo **el** de \`el agua\` **no** convierte la palabra en masculina — ver **Artículos**. Se dice \`el agua fría\`; en plural \`las aguas\`. No confundir con \`**la** abuela\` (el acento está en **-bue-**, no en la primera a).
 
-- Se añade **-s** (tras vocal): \`libro → libros\`, \`mesa → mesas\`
-- Se añade **-es** (tras consonante): \`flor → flores\`, \`mes → meses\`
+## Uno o muchos
+
+- Tras vocal se añade **-s**: \`libro → libros\`, \`mesa → mesas\`
+- Tras consonante, **-es**: \`flor → flores\`, \`mes → meses\`
 - \`el lápiz → los lápices\` (z → c antes de -es)
-- \`el prógrama → los programas\` (sin tilde)
+- A veces desaparece la tilde: \`el programa → los programas\`
 
-> ⚠️ Concordancia: artículo + adjetivo + sustantivo deben coincidir en género y número: \`la casa blanca\`, \`los coches rojos\`.`,
+> ⚠️ Artículo, adjetivo y sustantivo coinciden en género y número: \`la casa blanca\`, \`los coches rojos\`, \`el agua fría\`.`,
   },
 
   "a1-numeros-1-100": {
-    en: `## Cardinal numbers (Números cardinales)
+    en: `> **Before this topic:** you already know **el, la** and noun gender. **In this topic:** numbers, days of the week, and telling the time (**la una**, **las dos**).
+
+## Numbers 1–100
 
 | Range | Example |
 |---|---|
@@ -242,8 +538,69 @@ Se usa para **estado, sentimientos, lugar**:
 - \`veintiún\` before m.: \`veintiún años\`
 - \`cien\` (100) vs \`ciento\` (before a number): \`ciento uno\`
 
-> 💡 Age: \`Tengo veinte años.\` Prices: \`Cuesta cinco euros.\``,
-    es: `## Números cardinales
+> 💡 Age: \`Tengo veinte años.\` Prices: \`Cuesta cinco euros.\`
+
+## Days of the week
+
+| Spanish | English |
+|---|---|
+| **lunes** | Monday |
+| **martes** | Tuesday |
+| **miércoles** | Wednesday |
+| **jueves** | Thursday |
+| **viernes** | Friday |
+| **sábado** | Saturday |
+| **domingo** | Sunday |
+
+**How to talk about days:**
+- Days are usually **lowercase**: \`el lunes\`
+- **el lunes** = on Monday (one time)
+- **los lunes** = on Mondays (habit)
+- \`Hoy es viernes.\` — Today is Friday.
+
+> 💡 Not \`en lunes\` — use \`el lunes\` / \`los lunes\`.
+
+## Months of the year
+
+enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre, octubre, noviembre, diciembre
+
+- **en enero** = in January
+- Date: \`el 5 de mayo\` — May 5th
+- Months are usually lowercase.
+
+## Telling the time (la hora)
+
+Question: **¿Qué hora es?**
+
+### The article before the hour
+| Time | Form |
+|---|---|
+| 1:00 | **Es la una** |
+| 2:00–12:00 | **Son las dos** |
+
+❌ Wrong: \`Es una\`, \`Son dos\`  
+✅ Right: \`Es **la** una\`, \`Son **las** tres\`
+
+### Minutes
+| Phrase | Example | Meaning |
+|---|---|---|
+| y … | Son las tres **y diez** | 3:10 |
+| y cuarto | Son las cuatro **y cuarto** | 4:15 |
+| y media | Son las cinco **y media** | 5:30 |
+| menos cuarto | Son las seis **menos cuarto** | 5:45 |
+
+### At what time? → **a + la/las**
+- \`a la una\` / \`a las tres\`
+- \`La clase es **a las** nueve.\`
+
+### Part of the day
+- **de la mañana** / **de la tarde** / **de la noche**
+- \`Son las ocho de la mañana.\`
+
+> 💡 Remember: **Es la una** / **Son las…** — always use the article.`,
+    es: `> **Antes de este tema:** ya conoces **el, la** y el género. **En este tema:** números, días de la semana y la hora (**la una**, **las dos**).
+
+## Números 1–100
 
 | Rango | Ejemplo |
 |---|---|
@@ -255,22 +612,73 @@ Se usa para **estado, sentimientos, lugar**:
 | decenas + unidades | treinta y uno, cuarenta y cinco |
 
 **Particularidades:**
-- \`uno → un\` delante de sustantivo: \`un libro\` (no \`uno libro\`)
+- \`uno → un\` delante de sustantivo: \`un libro\`
 - \`veintiún\` delante de m.: \`veintiún años\`
 - \`cien\` (100) vs \`ciento\` (delante de número): \`ciento uno\`
 
-> 💡 Edad: \`Tengo veinte años.\` Precios: \`Cuesta cinco euros.\``,
+> 💡 Edad: \`Tengo veinte años.\` Precios: \`Cuesta cinco euros.\`
+
+## Días de la semana
+
+lunes, martes, miércoles, jueves, viernes, sábado, domingo
+
+- Normalmente **en minúscula**: \`el lunes\`
+- **el lunes** = ese día concreto
+- **los lunes** = todos los lunes (hábito)
+- \`Hoy es viernes.\`
+
+> 💡 No se dice \`en lunes\`, sino \`el lunes\` / \`los lunes\`.
+
+## Meses del año
+
+enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre, octubre, noviembre, diciembre
+
+- **en enero**
+- Fecha: \`el 5 de mayo\`
+- Los meses suelen ir en minúscula.
+
+## La hora
+
+Pregunta: **¿Qué hora es?**
+
+### El artículo delante de la hora
+| Hora | Forma |
+|---|---|
+| 1:00 | **Es la una** |
+| 2:00–12:00 | **Son las dos** |
+
+❌ Incorrecto: \`Es una\`, \`Son dos\`  
+✅ Correcto: \`Es **la** una\`, \`Son **las** tres\`
+
+### Minutos
+| Expresión | Ejemplo |
+|---|---|
+| y … | Son las tres **y diez** |
+| y cuarto | Son las cuatro **y cuarto** |
+| y media | Son las cinco **y media** |
+| menos cuarto | Son las seis **menos cuarto** |
+
+### ¿A qué hora? → **a + la/las**
+- \`a la una\` / \`a las tres\`
+- \`La clase es **a las** nueve.\`
+
+### Parte del día
+- **de la mañana** / **de la tarde** / **de la noche**
+
+> 💡 Recuerda: **Es la una** / **Son las…** — siempre con artículo.`,
   },
 
   "a1-preposiciones-lugar": {
-    en: `## Main prepositions of place
+    en: `> **Before this topic:** you already know **numbers, days, and telling the time**. **In this topic:** prepositions of place — en, a, de, sobre, debajo — and **estar** for location.
+
+## Main prepositions of place
 
 | Preposition | Meaning | Example |
 |---|---|---|
 | **en** | in/on | El libro está **en** la mesa |
 | **a** | to/in (movement) | Voy **a** Madrid |
 | **de** | from/of | Soy **de** Rusia |
-| **sobre** | on/over | La lámpara está **sobre** la mesa |
+| **sobre** | on (on top of) | La lámpara está **sobre** la mesa |
 | **debajo de** | under | El gato está **debajo de** la silla |
 | **delante de** | in front of | El coche está **delante de** la casa |
 | **detrás de** | behind | El jardín está **detrás de** la casa |
@@ -283,7 +691,9 @@ Se usa para **estado, sentimientos, lugar**:
 **Ir + a + place** for direction: \`Voy al cine.\` (\`a + el = al\`)
 
 > ⚠️ \`a + el = al\`, \`de + el = del\` — mandatory contraction.`,
-    es: `## Preposiciones de lugar principales
+    es: `> **Antes de este tema:** ya conoces **números, días y la hora**. **En este tema:** preposiciones de lugar — en, a, de, sobre, debajo — y **estar** para «¿dónde?».
+
+## Preposiciones de lugar principales
 
 | Preposición | Significado | Ejemplo |
 |---|---|---|
@@ -306,7 +716,21 @@ Se usa para **estado, sentimientos, lugar**:
   },
 
   "a1-gustar": {
-    en: `## Gustar — "to like" (literally: "to be pleasing")
+    en: `> **Before this topic:** you already know **tener hambre / frío / sueño** and other **tener** expressions. **In this topic:** **gustar** — “I like” works differently from English.
+
+## Mini: me / te / le clitics
+
+With **gustar** you meet short “to whom” forms for the first time:
+
+| To whom | Form | Example |
+|---|---|---|
+| to me | **me** | **Me** gusta el café |
+| to you | **te** | **Te** gusta viajar |
+| to him/her/you (usted) | **le** | **Le** gusta el flamenco |
+
+This is not the full OD/OI system yet (lo veo, le doy) — that comes later. Here: **me/te/le** go **before** gusta/gustan and name who likes it.
+
+## Gustar — "to like" (literally: "to be pleasing")
 
 In Spanish, \`gustar\` works **the other way around**: the subject is what is liked, not the person who likes it.
 
@@ -335,7 +759,21 @@ In Spanish, \`gustar\` works **the other way around**: the subject is what is li
 \`A **mí** me gusta el café.\`
 
 > 💡 Similar verbs: \`encantar\` (to love), \`interesar\` (to interest), \`doler\` (to hurt) — work the same way.`,
-    es: `## Gustar — «gustar» (literalmente: «ser agradable»)
+    es: `> **Antes de este tema:** ya conoces **tener hambre / frío / sueño** y otras expresiones con **tener**. **En este tema:** **gustar** — «me gusta el café», no «yo gusto el café».
+
+## Mini: clíticos me / te / le
+
+Con **gustar** aparecen por primera vez las formas cortas de «a quién»:
+
+| A quién | Forma | Ejemplo |
+|---|---|---|
+| a mí | **me** | **Me** gusta el café |
+| a ti | **te** | **Te** gusta viajar |
+| a él/ella/usted | **le** | **Le** gusta el flamenco |
+
+Aún no es el sistema completo de OD/OI (lo veo, le doy). Aquí: **me/te/le** van **antes** de gusta/gustan.
+
+## Gustar — «gustar» (literalmente: «ser agradable»)
 
 En español, \`gustar\` funciona **al revés**: el sujeto es lo que gusta, no la persona.
 
@@ -367,7 +805,9 @@ En español, \`gustar\` funciona **al revés**: el sujeto es lo que gusta, no la
   },
 
   "a1-tener-expressions": {
-    en: `## Expressions with TENER
+    en: `> **Before this topic:** you already know **prepositions of place** (en, a, de) and **ser / estar**. **In this topic:** states with **tener** — hambre, frío, sueño, razón.
+
+## Expressions with TENER
 
 In Spanish, many states are expressed with **tener + noun**, not with ser/estar.
 
@@ -394,7 +834,9 @@ In Spanish, many states are expressed with **tener + noun**, not with ser/estar.
 \`Tengo veinte años.\`
 
 > ⚠️ Agreement: \`Tiene**mos** hambre\`, \`Tiene**n** sueño\`.`,
-    es: `## Expresiones con TENER
+    es: `> **Antes de este tema:** ya conoces **preposiciones de lugar** (en, a, de) y **ser / estar**. **En este tema:** estados con **tener** — hambre, frío, sueño, razón.
+
+## Expresiones con TENER
 
 En español, muchos estados se expresan con **tener + sustantivo**, no con ser/estar.
 
@@ -424,7 +866,9 @@ En español, muchos estados se expresan con **tener + sustantivo**, no con ser/e
   },
 
   "a1-preguntas": {
-    en: `## Question words (Palabras interrogativas)
+    en: `> **Before this topic:** you already know **gustar** (me gusta…) and basic questions from ser/estar (¿Cómo estás?). **In this topic:** other question words and **¿?** in writing.
+
+## Question words (Palabras interrogativas)
 
 | Word | Meaning | Example |
 |---|---|---|
@@ -450,7 +894,9 @@ Spanish uses **double** marks: \`¿…?\` opening + \`…?\` closing.
 \`¿Cómo te llamas?\`
 
 > 💡 In speech the opening \`¿\` is often omitted, but in writing it is required.`,
-    es: `## Palabras interrogativas
+    es: `> **Antes de este tema:** ya conoces **gustar** (me gusta…) y preguntas básicas de ser/estar (¿Cómo estás?). **En este tema:** otras interrogativas y **¿?** en la escritura.
+
+## Palabras interrogativas
 
 | Palabra | Significado | Ejemplo |
 |---|---|---|
@@ -479,7 +925,9 @@ En español hay **doble** signo: \`¿…?\` de apertura + \`…?\` de cierre.
   },
 
   "a1-verbos-frecuentes": {
-    en: `## Most essential irregular verbs (presente)
+    en: `> **Before this topic:** you have covered **questions** (qué, dónde, ¿…?). **In this topic:** frequent irregular verbs — ir, tener, hacer, poder, querer, decir.
+
+## Most essential irregular verbs (presente)
 
 ### IR — to go
 | yo | tú | él/ella/usted | nosotros/as | **vosotros/as** | ellos/ustedes |
@@ -523,7 +971,9 @@ En español hay **doble** signo: \`¿…?\` de apertura + \`…?\` de cierre.
 
 > 💡 \`poder\` + infinitive = "can do": \`Puedo ayudarte.\`
 > \`querer\` + infinitive = "want to do": \`Quiero aprender español.\``,
-    es: `## Verbos irregulares más necesarios (presente)
+    es: `> **Antes de este tema:** ya viste las **preguntas** (qué, dónde, ¿…?). **En este tema:** verbos irregulares frecuentes — ir, tener, hacer, poder, querer, decir.
+
+## Verbos irregulares más necesarios (presente)
 
 ### IR — ir
 | yo | tú | él/ella/usted | nosotros/as | **vosotros/as** | ellos/ustedes |
@@ -570,7 +1020,9 @@ En español hay **doble** signo: \`¿…?\` de apertura + \`…?\` de cierre.
   },
 
   "a2-preterito-perfecto": {
-    en: `## Pretérito Perfecto (Spanish passé composé)
+    en: `> **Before this topic:** you have finished **A1** (including **frequent verbs**). **In this topic:** **Pretérito Perfecto** — past linked to now: he comido, has ido.
+
+## Pretérito Perfecto (Spanish passé composé)
 
 ### Formula: **HABER** + **participio**
 
@@ -601,7 +1053,9 @@ En español hay **doble** signo: \`¿…?\` de apertura + \`…?\` de cierre.
 hoy, esta semana, este año, ya, todavía no, nunca, alguna vez.
 
 > ⚠️ With **ayer, el año pasado, en 2020** use Pretérito Indefinido.`,
-    es: `## Pretérito Perfecto
+    es: `> **Antes de este tema:** ya terminaste **A1** (incluidos **verbos frecuentes**). **En este tema:** **Pretérito Perfecto** — pasado ligado al presente: he comido, has ido.
+
+## Pretérito Perfecto
 
 ### Fórmula: **HABER** + **participio**
 
@@ -635,7 +1089,9 @@ hoy, esta semana, este año, ya, todavía no, nunca, alguna vez.
   },
 
   "a2-preterito-indefinido": {
-    en: `## Pretérito Indefinido (simple past)
+    en: `> **Before this topic:** **Perfecto** (he comido) is when the time frame is still open. **In this topic:** **Indefinido** — a finished past fact: ayer fui, en 2018 viajé.
+
+## Pretérito Indefinido (simple past)
 
 ### Regular verbs
 
@@ -672,7 +1128,9 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
 
 > 💡 Indefinido = past facts; Imperfecto = background description. Compare:
 > \`Ayer **llovió**\` (what happened) / \`**Llovía**\` (what the weather was like).`,
-    es: `## Pretérito Indefinido
+    es: `> **Antes de este tema:** el **Perfecto** (he comido) es cuando el periodo sigue abierto. **En este tema:** **Indefinido** — hecho cerrado del pasado: ayer fui, en 2018 viajé.
+
+## Pretérito Indefinido
 
 ### Verbos regulares
 
@@ -712,7 +1170,9 @@ ayer, anteayer, el lunes pasado, hace dos años, en 1999.
   },
 
   "a2-imperfecto": {
-    en: `## Pretérito Imperfecto — background of the past
+    en: `> **Before this topic:** **Indefinido** (ayer fui) is a single event. **In this topic:** **Imperfecto** — background in the past: habits, descriptions, “when I was a child”.
+
+## Pretérito Imperfecto — background of the past
 
 ### Regular endings
 
@@ -743,7 +1203,9 @@ Example: \`hablar\` → hablaba, hablabas, hablaba, hablábamos, **hablabais**, 
 ### Comparison with Indefinido
 \`**Estaba** en casa cuando **llegó** María.\`
 (Imperfecto — what was happening / Indefinido — what happened).`,
-    es: `## Pretérito Imperfecto — fondo del pasado
+    es: `> **Antes de este tema:** el **Indefinido** (ayer fui) es un suceso puntual. **En este tema:** **Imperfecto** — fondo del pasado: hábitos, descripciones, «cuando era niño».
+
+## Pretérito Imperfecto — fondo del pasado
 
 ### Terminaciones regulares
 
@@ -777,19 +1239,21 @@ Ejemplo: \`hablar\` → hablaba, hablabas, hablaba, hablábamos, **hablabais**, 
   },
 
   "a2-por-para": {
-    en: `## POR vs PARA — both translate differently
+    en: `> **Before this topic:** you already use **a, de, en**. **In this topic:** the two key prepositions **para** and **por** — purpose, reason, price, route.
+
+## POR vs PARA — both translate differently
 
 ### PARA — purpose, destination, deadline
 - **Purpose:** \`Estudio **para** aprender.\`
 - **Recipient:** \`Es un regalo **para** ti.\`
-- **Direction:** \`Voy **para** Madrid.\`
+- **Direction / destination:** \`El avión sale **para** Madrid.\` (heading for; “I go to the city” is usually \`Voy **a** Madrid\`)
 - **Deadline:** \`Para mañana.\`
 
 ### POR — cause, route, exchange, duration
 - **Cause:** \`**Por** el frío, no salí.\`
 - **Route/place:** \`Paseo **por** el parque.\`
 - **Exchange:** \`Lo compré **por** 10 euros.\`
-- **Duration:** \`Estudié **por** dos horas.\`
+- **Duration:** \`Estudié **durante** dos horas.\`
 - **On behalf of:** \`Lo hago **por** ti.\`
 
 ### Mnemonic
@@ -797,19 +1261,21 @@ Ejemplo: \`hablar\` → hablaba, hablabas, hablaba, hablábamos, **hablabais**, 
 **POR** = cause, route, price
 
 > ⚠️ Fixed expressions: \`por favor\`, \`por qué\`, \`para siempre\`, \`por la mañana\`.`,
-    es: `## POR vs PARA — se traducen de formas distintas
+    es: `> **Antes de este tema:** ya usas **a, de, en**. **En este tema:** **para** y **por** — finalidad, causa, precio, ruta.
+
+## POR vs PARA — se traducen de formas distintas
 
 ### PARA — finalidad, destino, plazo
 - **Finalidad:** \`Estudio **para** aprender.\`
 - **Destinatario:** \`Es un regalo **para** ti.\`
-- **Dirección:** \`Voy **para** Madrid.\`
+- **Dirección / destino:** \`El avión sale **para** Madrid.\` (rumbo; «voy a la ciudad» suele ser \`Voy **a** Madrid\`)
 - **Plazo:** \`Para mañana.\`
 
 ### POR — causa, camino, intercambio, duración
 - **Causa:** \`**Por** el frío, no salí.\`
 - **Camino/lugar:** \`Paseo **por** el parque.\`
 - **Intercambio:** \`Lo compré **por** 10 euros.\`
-- **Duración:** \`Estudié **por** dos horas.\`
+- **Duración:** \`Estudié **durante** dos horas.\`
 - **En lugar de:** \`Lo hago **por** ti.\`
 
 ### Mnemotecnia
@@ -820,13 +1286,22 @@ Ejemplo: \`hablar\` → hablaba, hablabas, hablaba, hablábamos, **hablabais**, 
   },
 
   "a2-comparativos": {
-    en: `## Comparatives (Comparativos)
+    en: `> **Before this topic:** adjectives agree in gender (blanca, rojos). **In this topic:** comparisons — más… que, tan… como, el más…
+
+## Comparatives (Comparativos)
 
 ### Regular adjectives
 \`más + adjective + (que)\` / \`menos + … + (que)\`
 
 - \`María es **más alta que** Ana.\`
 - \`Este coche es **menos caro que** el otro.\`
+
+### Equality — tan / tanto
+| Pattern | Use | Example |
+|---|---|---|
+| **tan + adjective + como** | same quality | Es **tan alta como** su hermana |
+| **tanto/a(s) + noun + como** | same quantity | Tiene **tantos libros como** yo |
+| **igual de + adjective + que** | also "as … as" | Es **igual de inteligente que** tú |
 
 ### Special forms (must memorize!)
 
@@ -853,13 +1328,22 @@ Ejemplo: \`hablar\` → hablaba, hablabas, hablaba, hablábamos, **hablabais**, 
 \`rápido → rapidísimo\`
 
 > ⚠️ \`el mejor / la mejor\` (best), \`el peor / la peor\` (worst) — special superlative forms.`,
-    es: `## Comparativos
+    es: `> **Antes de este tema:** los adjetivos concuerdan (blanca, rojos). **En este tema:** comparaciones — más… que, tan… como, el más…
+
+## Comparativos
 
 ### Adjetivos regulares
 \`más + adjetivo + (que)\` / \`menos + … + (que)\`
 
 - \`María es **más alta que** Ana.\`
 - \`Este coche es **menos caro que** el otro.\`
+
+### Igualdad — tan / tanto
+| Estructura | Uso | Ejemplo |
+|---|---|---|
+| **tan + adjetivo + como** | misma cualidad | Es **tan alta como** su hermana |
+| **tanto/a(s) + sustantivo + como** | misma cantidad | Tiene **tantos libros como** yo |
+| **igual de + adjetivo + que** | también «igual de» | Es **igual de inteligente que** tú |
 
 ### Formas especiales (¡memorizar!)
 
@@ -889,7 +1373,9 @@ Ejemplo: \`hablar\` → hablaba, hablabas, hablaba, hablábamos, **hablabais**, 
   },
 
   "a2-futuro-simple": {
-    en: `## Futuro Simple
+    en: `> **Before this topic:** near future with **ir a + infinitive** (voy a comer). **In this topic:** **simple future** in one word — hablaré, tendré.
+
+## Futuro Simple
 
 ### Formation: infinitive + ending
 
@@ -928,8 +1414,10 @@ Examples:
 2. **Promise:** \`Te **llamaré** esta noche.\`
 3. **Plans:** \`El año que viene **viajaré** a España.\`
 
-> 💡 Also: probability in the present: \`¿Qué hora es? — Serán las tres.\``,
-    es: `## Futuro Simple
+> 💡 Also: “probably three o’clock” (\`Serán las tres\`) is **C2 conjecture**, not this future-as-plan.`,
+    es: `> **Antes de este tema:** futuro próximo con **ir a + infinitivo** (voy a comer). **En este tema:** **futuro simple** en una palabra — hablaré, tendré.
+
+## Futuro Simple
 
 ### Formación: infinitivo + terminación
 
@@ -968,11 +1456,13 @@ Ejemplos:
 2. **Promesa:** \`Te **llamaré** esta noche.\`
 3. **Planes:** \`El año que viene **viajaré** a España.\`
 
-> 💡 También: probabilidad en el presente: \`¿Qué hora es? — Serán las tres.\``,
+> 💡 También: «probablemente son las tres» (\`Serán las tres\`) es **conjetura C2**, no este futuro-plan.`,
   },
 
   "b1-subjuntivo": {
-    en: `## Modo Subjuntivo — Presente
+    en: `> **Before this topic:** main tenses describe **facts**. **In this topic:** **subjunctive** — for wishes, doubt, or emotion (quiero que vengas).
+
+## Modo Subjuntivo — Presente
 
 ### Formation
 Take the **yo** form of presente, change ending: -AR ↔ -ER/-IR.
@@ -1002,7 +1492,9 @@ Take the **yo** form of presente, change ending: -AR ↔ -ER/-IR.
 **W**ish, **E**motion, **Impersonal expressions**, **R**ecommendation, **D**oubt, **O**jalá.
 
 > ⚠️ \`Creo que...\` → Indicativo (certainty). \`No creo que...\` → Subjuntivo (doubt).`,
-    es: `## Modo Subjuntivo — Presente
+    es: `> **Antes de este tema:** los tiempos principales describen **hechos**. **En este tema:** **subjuntivo** — deseos, dudas o emociones (quiero que vengas).
+
+## Modo Subjuntivo — Presente
 
 ### Formación
 Se toma la forma **yo** del presente y se cambia la terminación: -AR ↔ -ER/-IR.
@@ -1035,23 +1527,33 @@ Se toma la forma **yo** del presente y se cambia la terminación: -AR ↔ -ER/-I
   },
 
   "b1-imperativo": {
-    en: `## Imperativo
+    en: `> **Before this topic:** you already know **subjunctive** forms (hable, comas). **In this topic:** **Imperativo** — commands and requests: habla, no hables.
+
+## Imperativo
 
 ### Affirmative form (afirmativo)
 
-| Person | -AR | -ER/-IR | Common irregulars |
-|---|---|---|---|
-| tú | -a (habla) | -e (come) | ten, pon, ven, sal, haz |
-| usted | -e (hable) | -a (coma) | sea, vaya |
-| nosotros | -emos | -amos | vamos, demos |
-| vosotros | -ad (hablad) | -ed (comed) / **-id (vivid)** |  |
-| ustedes | -en (hablen) | -an (coman) |  |
+Imperative for **tú / usted / nosotros / vosotros / ustedes** matches **present subjunctive** (except affirmative **tú** and **vosotros**).
+
+| Person | -AR | -ER | -IR | Common irregulars |
+|---|---|---|---|---|
+| **tú** | habl**a** | com**e** | viv**e** | ten, pon, ven, sal, haz, di, sé, ve |
+| **usted** | habl**e** | com**a** | viv**a** | sea, vaya, dé |
+| **nosotros** | habl**emos** | com**amos** | viv**amos** | vamos, demos |
+| **vosotros** | habl**ad** | com**ed** | viv**id** | — |
+| **ustedes** | habl**en** | com**an** | viv**an** | sean, vayan |
+
+Whole forms: \`hablad\`, \`comed\`, \`vivid\`. Negative vosotros: \`no habléis\`, \`no comáis\`, \`no viváis\`.
+
+> ⚠️ **nosotros**: -AR → **-emos** (\`hablemos\`), -ER/-IR → **-amos** (\`comamos\`, \`vivamos\`). Not like present indicative (\`hablamos\` / \`comemos\`).
 
 ### Negative form (negativo) = Subjuntivo
-\`No **hables**\`, \`No **comas**\`, \`No **vengas**\`.
-Vosotros: \`No **habléis**\`, \`No **comáis**\`, \`No **viváis**\`.
+Always subjunctive + \`no\` before the verb:
+- \`No **hables**\`, \`No **comas**\`, \`No **vivas**\`
+- \`No **hablemos**\`, \`No **comamos**\`
+- Vosotros: \`No **habléis**\`, \`No **comáis**\`, \`No **viváis**\`
 
-### Special tú forms (affirmative)
+### Special tú forms (affirmative only)
 | Infinitive | tú |
 |---|---|
 | tener | ten |
@@ -1063,6 +1565,8 @@ Vosotros: \`No **habléis**\`, \`No **comáis**\`, \`No **viváis**\`.
 | ser | sé |
 | ir | ve |
 
+> 💡 Negatives drop the short forms: \`ten\` → \`no **tengas**\`, \`ve\` → \`no **vayas**\`.
+
 ### With pronouns
 In affirmative form, pronouns **attach** to the verb:
 \`**Dímelo**\` (di + me + lo) = tell me it.
@@ -1071,23 +1575,33 @@ In negative — pronouns go **before**:
 \`**No me lo digas**\`.
 
 > 💡 Stress stays on the verb: dí-me-lo, có-me-lo.`,
-    es: `## Imperativo
+    es: `> **Antes de este tema:** ya conoces el **subjuntivo** (hable, comas). **En este tema:** **Imperativo** — órdenes y peticiones: habla, no hables.
+
+## Imperativo
 
 ### Forma afirmativa
 
-| Persona | -AR | -ER/-IR | Irregulares frecuentes |
-|---|---|---|---|
-| tú | -a (habla) | -e (come) | ten, pon, ven, sal, haz |
-| usted | -e (hable) | -a (coma) | sea, vaya |
-| nosotros | -emos | -amos | vamos, demos |
-| vosotros | -ad (hablad) | -ed (comed) / **-id (vivid)** |  |
-| ustedes | -en (hablen) | -an (coman) |  |
+El imperativo de **tú / usted / nosotros / vosotros / ustedes** coincide con el **presente de subjuntivo** (excepto **tú** y **vosotros** afirmativos).
+
+| Persona | -AR | -ER | -IR | Irregulares frecuentes |
+|---|---|---|---|---|
+| **tú** | habl**a** | com**e** | viv**e** | ten, pon, ven, sal, haz, di, sé, ve |
+| **usted** | habl**e** | com**a** | viv**a** | sea, vaya, dé |
+| **nosotros** | habl**emos** | com**amos** | viv**amos** | vamos, demos |
+| **vosotros** | habl**ad** | com**ed** | viv**id** | — |
+| **ustedes** | habl**en** | com**an** | viv**an** | sean, vayan |
+
+Enteros: \`hablad\`, \`comed\`, \`vivid\`. Negación vosotros: \`no habléis\`, \`no comáis\`, \`no viváis\`.
+
+> ⚠️ **nosotros**: -AR → **-emos** (\`hablemos\`), -ER/-IR → **-amos** (\`comamos\`, \`vivamos\`). No es como el presente de indicativo (\`hablamos\` / \`comemos\`).
 
 ### Forma negativa = Subjuntivo
-\`No **hables**\`, \`No **comas**\`, \`No **vengas**\`.
-Vosotros: \`No **habléis**\`, \`No **comáis**\`, \`No **viváis**\`.
+Siempre subjuntivo + \`no\` delante del verbo:
+- \`No **hables**\`, \`No **comas**\`, \`No **vivas**\`
+- \`No **hablemos**\`, \`No **comamos**\`
+- Vosotros: \`No **habléis**\`, \`No **comáis**\`, \`No **viváis**\`
 
-### Formas especiales tú (afirmativo)
+### Formas especiales tú (solo afirmativo)
 | Infinitivo | tú |
 |---|---|
 | tener | ten |
@@ -1098,6 +1612,8 @@ Vosotros: \`No **habléis**\`, \`No **comáis**\`, \`No **viváis**\`.
 | decir | di |
 | ser | sé |
 | ir | ve |
+
+> 💡 En negativo no se usan: \`ten\` → \`no **tengas**\`, \`ve\` → \`no **vayas**\`.
 
 ### Con pronombres
 En afirmativo, los pronombres **se unen** al verbo:
@@ -1110,7 +1626,9 @@ En negativo van **delante**:
   },
 
   "b1-condicional": {
-    en: `## Condicional Simple
+    en: `> **Before this topic:** you already build **Futuro** (hablaré, tendré). **In this topic:** **Condicional** — “I would” and polite requests: hablaría, podría.
+
+## Condicional Simple
 
 ### Formation: infinitive + ending
 
@@ -1142,7 +1660,9 @@ Examples:
 - \`Si + Subjuntivo imperfecto + Condicional\`
 
 > 💡 Condicional = future shifted into the imaginary/hypothetical.`,
-    es: `## Condicional Simple
+    es: `> **Antes de este tema:** ya formas el **Futuro** (hablaré, tendré). **En este tema:** **Condicional** — «yo haría» y peticiones corteses: hablaría, podría.
+
+## Condicional Simple
 
 ### Formación: infinitivo + terminación
 
@@ -1176,8 +1696,10 @@ Ejemplos:
 > 💡 Condicional = futuro trasladado a lo imaginario/hipotético.`,
   },
 
-  "b1-preposiciones-por-para-2": {
-    en: `## The pronoun SE — most important functions
+  "b1-pronombre-se": {
+    en: `> **Before this topic:** you know the **Condicional** (hablaría, podría). **In this topic:** the pronoun **se** — before the “Passive voice” chapter; por/para was covered in A2.
+
+## The pronoun SE — most important functions
 
 ### 1. Reflexive (reflexivo)
 \`levantarse\` → \`Me **levanto** a las 7.\`
@@ -1202,7 +1724,9 @@ Ejemplos:
 \`**Se** le olvidó la contraseña.\`
 
 > ⚠️ \`se\` is the most common pronoun in Spanish after \`que\`. Context determines the meaning.`,
-    es: `## El pronombre SE — funciones principales
+    es: `> **Antes de este tema:** ya conoces el **Condicional** (hablaría, podría). **En este tema:** el pronombre **se** — antes del capítulo «Voz pasiva»; por/para ya viste en A2.
+
+## El pronombre SE — funciones principales
 
 ### 1. Reflexivo
 \`levantarse\` → \`Me **levanto** a las 7.\`
@@ -1230,13 +1754,15 @@ Ejemplos:
   },
 
   "b1-relativos": {
-    en: `## Relative pronouns (Pronombres relativos)
+    en: `> **Before this topic:** you already build complex sentences. **In this topic:** linking words **que, quien, donde, cuyo** to connect two clauses.
+
+## Relative pronouns (Pronombres relativos)
 
 ### QUE — the most universal
 \`El libro **que** leo.\`
 \`La mujer **que** habla.\`
-- Used for people and things; after preposition with things:
-\`el tema **de que** hablamos\` (but: \`la persona **de la que** hablo\`).
+- Used for people and things. After a preposition use **el/la que**, not bare *de que*:
+\`el tema **del que** hablamos\`, \`la persona **de la que** hablo\`.
 
 ### QUIEN — only for people (after comma or preposition)
 \`Mi hermano, **quien** vive en Madrid, es médico.\`
@@ -1259,13 +1785,15 @@ Ejemplos:
 \`La ciudad **donde** vivo.\`
 
 > 💡 \`que\` = general; \`quien\` = people only; \`donde\` = place only; \`cuyo\` = possession (whose).`,
-    es: `## Pronombres relativos
+    es: `> **Antes de este tema:** ya construyes oraciones complejas. **En este tema:** conectores **que, quien, donde, cuyo** para unir dos frases.
+
+## Pronombres relativos
 
 ### QUE — el más universal
 \`El libro **que** leo.\`
 \`La mujer **que** habla.\`
-- Para personas y cosas; tras preposición con cosas:
-\`el tema **de que** hablamos\` (pero: \`la persona **de la que** hablo\`).
+- Para personas y cosas. Tras preposición: **el/la que**, no *de que* suelto:
+\`el tema **del que** hablamos\`, \`la persona **de la que** hablo\`.
 
 ### QUIEN — solo personas (tras coma o preposición)
 \`Mi hermano, **quien** vive en Madrid, es médico.\`
@@ -1291,7 +1819,9 @@ Ejemplos:
   },
 
   "b1-pluscuamperfecto": {
-    en: `## Pretérito Pluscuamperfecto — "past-before-past"
+    en: `> **Before this topic:** you know **haber + participle** from Perfecto (he comido). **In this topic:** **Pluscuamperfecto** — haber in the imperfect: había comido.
+
+## Pretérito Pluscuamperfecto — "past-before-past"
 
 ### Formula: HABER (in imperfecto) + participio
 
@@ -1318,7 +1848,9 @@ Action that happened **before** another action in the past:
 \`ya\`, \`nunca\`, \`todavía no\`.
 
 > 💡 Used in reported speech: \`Dijo que **había** terminado.\``,
-    es: `## Pretérito Pluscuamperfecto — «pasado del pasado»
+    es: `> **Antes de este tema:** ya conoces **haber + participio** del Perfecto (he comido). **En este tema:** **Pluscuamperfecto** — haber en imperfecto: había comido.
+
+## Pretérito Pluscuamperfecto — «pasado del pasado»
 
 ### Fórmula: HABER (en imperfecto) + participio
 
@@ -1348,18 +1880,24 @@ Acción que ocurrió **antes** que otra acción en el pasado:
   },
 
   "b1-subjuntivo-imperfecto": {
-    en: `## Subjuntivo Imperfecto
+    en: `> **Before this topic:** you already use present **subjunctive** (quiera que vengas). **In this topic:** **Imperfecto de Subjuntivo** — si tuviera, quería que vinieras.
 
-### Formation: infinitive + endings (with stress)
+## Subjuntivo Imperfecto
 
-For -AR: -ara, -aras, -ara, -áramos, -arais, -aran
-For -ER/-IR: -iera, -ieras, -iera, -iéramos, -ierais, -ieran
+### Formation
 
-Example: \`hablar → hablara\`, \`comer → comiera\`, \`vivir → viviera\`.
+Not from the infinitive and **not** like the future (\`tendré\`, \`haré\`, \`diré\`).
 
-⚠️ Same irregulars as futuro simple:
-\`tener → tuviera\`, \`poner → pusiera\`, \`hacer → hiciera\`, \`saber → supiera\`,
-\`venir → viniera\`, \`poder → pudiera\`, \`querer → quisiera\`, \`decir → dijera\`.
+Take the **ellos** form of pretérito indefinido, drop **-ron**, add **-ra** (or **-se**):
+
+| ellos indefinido | → imperfect subjunctive |
+|---|---|
+| habla**ron** | habla**ra**, habla**ras**… |
+| tuvie**ron** | tuvie**ra**… |
+| dije**ron** | dije**ra**… |
+
+Regular: \`hablar → hablara\`, \`comer → comiera\`.
+Irregulars share **indefinido** stems, not future stems: \`tener → tuviera\` (not *tendriera), \`decir → dijera\`, \`hacer → hiciera\`.
 
 ### When to use
 1. **Si-construction (unreal condition):**
@@ -1372,21 +1910,27 @@ Example: \`hablar → hablara\`, \`comer → comiera\`, \`vivir → viviera\`.
    \`Quisiera un café.\`
 
 ### Double form (-ra / -se)
-There is an older -se form: \`hablase, comiese\`. Found in literature.
+\`hablara = hablase\`. Not “obsolete”: **-se** is more common in writing.
 
 > ⚠️ \`Si + imperfecto de subjuntivo + condicional\` = unreal condition. One of the most common B1-B2 constructions.`,
-    es: `## Subjuntivo Imperfecto
+    es: `> **Antes de este tema:** ya usas el **subjuntivo** presente (quiera que vengas). **En este tema:** **Imperfecto de Subjuntivo** — si tuviera, quería que vinieras.
 
-### Formación: infinitivo + terminaciones (con tilde)
+## Subjuntivo Imperfecto
 
-Para -AR: -ara, -aras, -ara, -áramos, -arais, -aran
-Para -ER/-IR: -iera, -ieras, -iera, -iéramos, -ierais, -ieran
+### Formación
 
-Ejemplo: \`hablar → hablara\`, \`comer → comiera\`, \`vivir → viviera\`.
+No sale del infinitivo ni del **futuro** (\`tendré\`, \`haré\`, \`diré\`).
 
-⚠️ Los mismos irregulares que en futuro simple:
-\`tener → tuviera\`, \`poner → pusiera\`, \`hacer → hiciera\`, \`saber → supiera\`,
-\`venir → viniera\`, \`poder → pudiera\`, \`querer → quisiera\`, \`decir → dijera\`.
+Se toma la forma de **ellos** del pretérito indefinido, se quita **-ron** y se añade **-ra** (o **-se**):
+
+| ellos indefinido | → imperfecto de subjuntivo |
+|---|---|
+| habla**ron** | habla**ra**, habla**ras**… |
+| tuvie**ron** | tuvie**ra**… |
+| dije**ron** | dije**ra**… |
+
+Regulares: \`hablar → hablara\`, \`comer → comiera\`.
+Irregulares = raíces del **indefinido**, no del futuro: \`tener → tuviera\` (no *tendriera), \`decir → dijera\`, \`hacer → hiciera\`.
 
 ### Cuándo usarlo
 1. **Construcción con si (condición irreal):**
@@ -1399,13 +1943,15 @@ Ejemplo: \`hablar → hablara\`, \`comer → comiera\`, \`vivir → viviera\`.
    \`Quisiera un café.\`
 
 ### Doble forma (-ra / -se)
-Existe la forma en -se: \`hablase, comiese\`. Aparece en la literatura.
+\`hablara = hablase\`. No es «anticuada»: **-se** es más frecuente en el registro escrito.
 
 > ⚠️ \`Si + imperfecto de subjuntivo + condicional\` = condición irreal. Una de las construcciones más frecuentes de B1-B2.`,
   },
 
   "b1-pronombres-objetos": {
-    en: `## Object pronouns (OD and OI)
+    en: `> **Before this topic:** you know **me / te / le** from gustar. **In this topic:** **lo, la, le** — direct and indirect objects: lo veo, le doy, se lo digo.
+
+## Object pronouns (OD and OI)
 
 ### Direct object (Objeto Directo — what?)
 Answers "what/whom?" (no preposition).
@@ -1448,7 +1994,9 @@ When both appear: \`me lo, te lo, se lo, nos lo\`.
 3. **After affirmative imperative (attached):** \`¡**Dímelo**!\`
 
 > 💡 Mnemonic: OI before OD — "Le lo" is impossible. Hence "Se lo".`,
-    es: `## Pronombres de objeto (OD y OI)
+    es: `> **Antes de este tema:** ya conoces **me / te / le** del gustar. **En este tema:** **lo, la, le** — complemento directo e indirecto: lo veo, le doy, se lo digo.
+
+## Pronombres de objeto (OD y OI)
 
 ### Objeto directo (OD — ¿qué?)
 Responde a «¿qué/quién?» (sin preposición).
@@ -1494,7 +2042,9 @@ Cuando aparecen ambos: \`me lo, te lo, se lo, nos lo\`.
   },
 
   "b1-adverbios": {
-    en: `## Adverbs (Adverbios)
+    en: `> **Before this topic:** you agree adjectives (rápida, fácil). **In this topic:** adverbs — “how?” — often **-mente**: rápidamente, fácilmente.
+
+## Adverbs (Adverbios)
 
 ### Formation -mente (how? in what manner?)
 **Adjective (f.) + mente:**
@@ -1504,8 +2054,7 @@ Cuando aparecen ambos: \`me lo, te lo, se lo, nos lo\`.
 
 ⚠️ If the adjective has only m. form: \`feliz → felizmente\`.
 
-⚠️ If the source adjective has stress, \`-mente\` also carries stress:
-\`difícil**mente**\`.
+⚠️ The written accent **stays on the adjective**; -mente does not get one: \`fácil → fácilmente\`, \`difícil → difícilmente\`.
 
 ### Adverbs of time
 \`hoy\`, \`ayer\`, \`mañana\`, \`ahora\`, \`tarde\`, \`temprano\`, \`pronto\`,
@@ -1525,7 +2074,9 @@ Cuando aparecen ambos: \`me lo, te lo, se lo, nos lo\`.
 ### muy vs mucho
 - **muy** + adjective/adverb: \`muy **bueno**\`, \`muy **rápido**\`
 - **mucho** + noun/verb: \`mucho **trabajo**\`, \`trabajo **mucho**\``,
-    es: `## Adverbios
+    es: `> **Antes de este tema:** ya concuerdas adjetivos (rápida, fácil). **En este tema:** adverbios — «¿cómo?» — a menudo **-mente**: rápidamente.
+
+## Adverbios
 
 ### Formación -mente (¿cómo?)
 **Adjetivo (f.) + mente:**
@@ -1535,8 +2086,7 @@ Cuando aparecen ambos: \`me lo, te lo, se lo, nos lo\`.
 
 ⚠️ Si el adjetivo solo tiene forma m.: \`feliz → felizmente\`.
 
-⚠️ Si el adjetivo lleva tilde, \`-mente\` también la lleva:
-\`difícil**mente**\`.
+⚠️ La tilde **se queda en el adjetivo**; -mente no lleva acento propio: \`fácil → fácilmente\`, \`difícil → difícilmente\`.
 
 ### Adverbios de tiempo
 \`hoy\`, \`ayer\`, \`mañana\`, \`ahora\`, \`tarde\`, \`temprano\`, \`pronto\`,
@@ -1559,7 +2109,9 @@ Cuando aparecen ambos: \`me lo, te lo, se lo, nos lo\`.
   },
 
   "b2-estilo-indirecto": {
-    en: `## Estilo Indirecto (Reported Speech)
+    en: `> **Before this topic:** you have covered **DELE letter writing** (condicional, formal register). **In this topic:** **reported speech** — how to relay someone else’s words: dijo que vendría.
+
+## Reported Speech (estilo indirecto)
 
 ### Direct → Indirect (same time frame)
 > Direct: \`Ana dice: "Hoy **llego** tarde."\`
@@ -1594,7 +2146,9 @@ Example:
 
 > ⚠️ Imperative → Subjuntivo:
 > \`Dijo: "Hazlo"\` → \`Dijo que **lo hiciera**.\``,
-    es: `## Estilo Indirecto
+    es: `> **Antes de este tema:** ya viste la **carta DELE** (condicional, registro formal). **En este tema:** **estilo indirecto** — transmitir palabras ajenas: dijo que vendría.
+
+## Estilo Indirecto
 
 ### Directo → Indirecto (simultaneidad)
 > Directo: \`Ana dice: "Hoy **llego** tarde."\`
@@ -1632,7 +2186,9 @@ Ejemplo:
   },
 
   "b2-voz-pasiva": {
-    en: `## Voz Pasiva
+    en: `> **Before this topic:** you have covered **reported speech** and the **SE pronoun** chapter. **In this topic:** **passive voice** — ser + participle and **se** passive (se habla, se venden).
+
+## Voz Pasiva
 
 ### 1. Voz pasiva con SER (classical)
 **SER** + participio (+ **por** + agent)
@@ -1667,7 +2223,9 @@ Agreement with subject:
 > 💡 In Spanish pasiva refleja is much more natural than English passive.
 > Don't translate literally: \`"The door is closed"\` → \`"La puerta está cerrada"\`
 > (state) or \`"Se cierra la puerta"\` (action).`,
-    es: `## Voz Pasiva
+    es: `> **Antes de este tema:** ya viste **estilo indirecto** y el capítulo del **pronombre se**. **En este tema:** **voz pasiva** — ser + participio y **se** pasiva (se habla, se venden).
+
+## Voz Pasiva
 
 ### 1. Voz pasiva con SER (clásica)
 **SER** + participio (+ **por** + agente)
@@ -1705,7 +2263,9 @@ Concordancia con el sujeto:
   },
 
   "b2-subjuntivo-compuestos": {
-    en: `## Compound Subjuntivo forms
+    en: `> **Before this topic:** you already know the **subjunctive** rule. **In this topic:** compound forms — **haya hablado**, **hubiera hablado**.
+
+## Compound Subjuntivo forms
 
 ### Subjuntivo Perfecto (completed past)
 Formula: **haya** + participio
@@ -1738,7 +2298,9 @@ Usage:
 
 > ⚠️ Universal rule: **Indicativo for facts, Subjuntivo for subjective**
 > (emotion, doubt, wish, hypothesis). Perfect forms simply shift the same rule to the past.`,
-    es: `## Formas compuestas del Subjuntivo
+    es: `> **Antes de este tema:** ya conoces la regla del **subjuntivo**. **En este tema:** formas compuestas — **haya hablado**, **hubiera hablado**.
+
+## Formas compuestas del Subjuntivo
 
 ### Subjuntivo Perfecto (pasado completado)
 Fórmula: **haya** + participio
@@ -1774,7 +2336,9 @@ Uso:
   },
 
   "b2-condicionales-compuestos": {
-    en: `## Condicional Compuesto
+    en: `> **Before this topic:** you know **si tuviera, saldría**. **In this topic:** past result — **habría** + participle — plus a summary of three **si** types.
+
+## Condicional Compuesto
 
 ### Formula: **haber** (in condicional) + participio
 
@@ -1804,7 +2368,9 @@ Examples:
 - \`Si llueve, me quedo.\` (real)
 - \`Si lloviera, me quedaría.\` (unreal now)
 - \`Si hubiera llovido, me habría quedado.\` (unreal in past)`,
-    es: `## Condicional Compuesto
+    es: `> **Antes de este tema:** ya conoces **si tuviera, saldría**. **En este tema:** resultado en pasado — **habría** + participio — y resumen de tres tipos de **si**.
+
+## Condicional Compuesto
 
 ### Fórmula: **haber** (en condicional) + participio
 
@@ -1837,7 +2403,9 @@ Ejemplos:
   },
 
   "b2-relativos-avanzado": {
-    en: `## Relative pronouns (Advanced)
+    en: `> **Before this topic:** you use **que, quien, cuyo**. **In this topic:** more formal forms — **el cual, lo que, adonde**.
+
+## Relative pronouns (Advanced)
 
 ### LO QUE — "what/that which" (abstract, neutral)
 \`No entiendo **lo que** dices.\`
@@ -1871,7 +2439,9 @@ Agrees with **what is owned**, not the owner:
 
 > 💡 Formal register: \`el coche **del cual**\` instead of \`el coche **cuyo**\`,
 > but \`cuyo\` is more precise and shorter.`,
-    es: `## Pronombres relativos (nivel avanzado)
+    es: `> **Antes de este tema:** ya usas **que, quien, cuyo**. **En este tema:** formas más formales — **el cual, lo que, adonde**.
+
+## Pronombres relativos (nivel avanzado)
 
 ### LO QUE — «lo que» (abstracto, neutro)
 \`No entiendo **lo que** dices.\`
@@ -1908,7 +2478,11 @@ Concuerda con **lo poseído**, no con el poseedor:
   },
 
   "b2-conectores": {
-    en: `## Connectors (Conectores discursivos)
+    en: `> **Before this topic:** until B1, **porque** and **pero** are usually enough. **In this topic:** written linkers — **sin embargo**, **por lo tanto**, **para que**…
+
+## Connectors (Conectores discursivos)
+
+Connectors link ideas in a paragraph. At B2 you should **vary** them and know which ones take the **subjunctive**.
 
 ### Addition
 - **además** — moreover, furthermore
@@ -1917,13 +2491,17 @@ Concuerda con **lo poseído**, no con el poseedor:
 - **por otra parte** — on the other hand
 - **incluso** — even
 
+\`Estudié toda la noche. **Además**, repasé los apuntes.\`
+
 ### Contrast
-- **pero** — but
-- **sin embargo** — however
+- **pero** — but (spoken)
+- **sin embargo** — however (written)
 - **no obstante** — nevertheless (formal)
 - **aunque** — although
 - **en cambio** — on the contrary
 - **por el contrario** — on the contrary
+
+\`Quería salir; **sin embargo**, llovía.\`
 
 ### Cause
 - **porque** — because
@@ -1932,6 +2510,8 @@ Concuerda con **lo poseído**, no con el poseedor:
 - **debido a que** — due to the fact that
 - **puesto que** — since (formal)
 
+\`**Como** no tenía tiempo, no fui.\`
+
 ### Consequence
 - **por lo tanto** — therefore
 - **por eso** — that's why
@@ -1939,20 +2519,39 @@ Concuerda con **lo poseído**, no con el poseedor:
 - **por consiguiente** — consequently (formal)
 - **entonces** — then, so
 
+\`Estudia mucho; **por lo tanto**, aprueba.\`
+
 ### Condition
 - **si** — if
-- **a menos que** — unless (⚠️ requires subjuntivo)
-- **con tal de que** — provided that (⚠️ subjuntivo)
-- **en caso de que** — in case (⚠️ subjuntivo)
-- **aunque** — although (⚠️ subjuntivo if hypothetical)
+- **a menos que** — unless (⚠️ **subjunctive**)
+- **con tal de que** — provided that (⚠️ **subjunctive**)
+- **en caso de que** — in case (⚠️ **subjunctive**)
+- **aunque** — although (⚠️ **subjunctive** if hypothetical)
+
+\`Saldré **a menos que** llueva.\`
 
 ### Purpose
-- **para que** — so that (⚠️ subjuntivo)
-- **a fin de que** — in order that (⚠️ subjuntivo)
-- **con el objetivo de** + infinitivo — with the aim of
+- **para que** — so that (⚠️ **subjunctive**, different subject)
+- **a fin de que** — in order that (⚠️ **subjunctive**)
+- **para** + infinitive — same subject (\`Estudio **para** aprobar\`)
+- **con el objetivo de** + infinitive — with the aim of
+
+\`Te lo explico **para que** lo entiendas.\`
+
+## Common traps
+
+| Wrong | Right | Why |
+|---|---|---|
+| \`Estudio para que aprobar\` | \`Estudio **para** aprobar\` | same subject → infinitive |
+| \`Te ayudo para entender\` | \`Te ayudo **para que** entiendas\` | different subject → para que + subj. |
+| only \`pero\` in an essay | \`sin embargo\` / \`no obstante\` | written register |
 
 > 💡 B2/C1 level = ability to **vary** connectors, not repeat \`porque\` and \`pero\` constantly.`,
-    es: `## Conectores discursivos
+    es: `> **Antes de este tema:** hasta B1 suelen bastar **porque** y **pero**. **En este tema:** conectores de escritura — **sin embargo**, **por lo tanto**, **para que**…
+
+## Conectores discursivos
+
+Los conectores unen ideas en el párrafo. En B2 importa **variarlos** y saber cuáles piden **subjuntivo**.
 
 ### Adición
 - **además** — además
@@ -1961,13 +2560,17 @@ Concuerda con **lo poseído**, no con el poseedor:
 - **por otra parte** — por otra parte
 - **incluso** — incluso
 
+\`Estudié toda la noche. **Además**, repasé los apuntes.\`
+
 ### Contraste
-- **pero** — pero
-- **sin embargo** — sin embargo
+- **pero** — pero (oral)
+- **sin embargo** — sin embargo (escrito)
 - **no obstante** — no obstante (formal)
 - **aunque** — aunque
 - **en cambio** — en cambio
 - **por el contrario** — por el contrario
+
+\`Quería salir; **sin embargo**, llovía.\`
 
 ### Causa
 - **porque** — porque
@@ -1976,6 +2579,8 @@ Concuerda con **lo poseído**, no con el poseedor:
 - **debido a que** — debido a que
 - **puesto que** — puesto que (formal)
 
+\`**Como** no tenía tiempo, no fui.\`
+
 ### Consecuencia
 - **por lo tanto** — por lo tanto
 - **por eso** — por eso
@@ -1983,23 +2588,40 @@ Concuerda con **lo poseído**, no con el poseedor:
 - **por consiguiente** — por consiguiente (formal)
 - **entonces** — entonces
 
+\`Estudia mucho; **por lo tanto**, aprueba.\`
+
 ### Condición
 - **si** — si
-- **a menos que** — a menos que (⚠️ requiere subjuntivo)
-- **con tal de que** — con tal de que (⚠️ subjuntivo)
-- **en caso de que** — en caso de que (⚠️ subjuntivo)
-- **aunque** — aunque (⚠️ subjuntivo si es hipotético)
+- **a menos que** — a menos que (⚠️ **subjuntivo**)
+- **con tal de que** — con tal de que (⚠️ **subjuntivo**)
+- **en caso de que** — en caso de que (⚠️ **subjuntivo**)
+- **aunque** — aunque (⚠️ **subjuntivo** si es hipotético)
+
+\`Saldré **a menos que** llueva.\`
 
 ### Finalidad
-- **para que** — para que (⚠️ subjuntivo)
-- **a fin de que** — a fin de que (⚠️ subjuntivo)
+- **para que** — para que (⚠️ **subjuntivo**, otro sujeto)
+- **a fin de que** — a fin de que (⚠️ **subjuntivo**)
+- **para** + infinitivo — mismo sujeto (\`Estudio **para** aprobar\`)
 - **con el objetivo de** + infinitivo — con el objetivo de
+
+\`Te lo explico **para que** lo entiendas.\`
+
+## Errores frecuentes
+
+| Incorrecto | Correcto | Por qué |
+|---|---|---|
+| \`Estudio para que aprobar\` | \`Estudio **para** aprobar\` | mismo sujeto → infinitivo |
+| \`Te ayudo para entender\` | \`Te ayudo **para que** entiendas\` | otro sujeto → para que + subj. |
+| solo \`pero\` en un ensayo | \`sin embargo\` / \`no obstante\` | registro escrito |
 
 > 💡 Nivel B2/C1 = saber **variar** conectores, no repetir \`porque\` y \`pero\` constantemente.`,
   },
 
   "c1-perifrasis-verbales": {
-    en: `## Perífrasis Verbales
+    en: `> **Before this topic:** you know **ir a + inf** and **estar + -ando** from A1–A2. **In this topic:** a catalogue of periphrases — acabar de, llevar + gerundio, deber vs deber de.
+
+## Perífrasis Verbales
 
 Structure: **auxiliary verb + (link) + infinitive/gerundio/participio**.
 
@@ -2035,7 +2657,9 @@ Structure: **auxiliary verb + (link) + infinitive/gerundio/participio**.
 >
 > \`Deber + inf\` = must (moral); \`deber de + inf\` = probably
 > (\`Debe de ser tarde\` ≈ "It must be late").`,
-    es: `## Perífrasis Verbales
+    es: `> **Antes de este tema:** ya conoces **ir a + inf** y **estar + -ando** desde A1–A2. **En este tema:** catálogo de perífrasis — acabar de, llevar + gerundio, deber vs deber de.
+
+## Perífrasis Verbales
 
 Estructura: **verbo auxiliar + (enlace) + infinitivo/gerundio/participio**.
 
@@ -2074,7 +2698,9 @@ Estructura: **verbo auxiliar + (enlace) + infinitivo/gerundio/participio**.
   },
 
   "c1-matices-estilisticos": {
-    en: `## Matices Estilísticos (C1)
+    en: `> **Before this topic:** all main forms are familiar. **In this topic:** **register and politeness** — when tú vs usted, how to soften a request.
+
+## Matices Estilísticos (C1)
 
 ### 1. Conditionals and hypotheses
 - **Real**: \`Si llueve, me quedo.\` (Indicativo + Futuro)
@@ -2109,7 +2735,9 @@ Estructura: **verbo auxiliar + (enlace) + infinitivo/gerundio/participio**.
 > 💡 At C1 level the key is not "correctness" but **appropriateness**: the same
 > meaning can be expressed in dozens of ways, and the choice depends on context,
 > region, and interlocutor.`,
-    es: `## Matices Estilísticos (C1)
+    es: `> **Antes de este tema:** ya conoces las formas principales. **En este tema:** **registro y cortesía** — cuándo tú o usted, cómo suavizar una petición.
+
+## Matices Estilísticos (C1)
 
 ### 1. Condicionales e hipótesis
 - **Real**: \`Si llueve, me quedo.\` (Indicativo + Futuro)
@@ -2147,7 +2775,9 @@ Estructura: **verbo auxiliar + (enlace) + infinitivo/gerundio/participio**.
   },
 
   "c1-subjuntivo-avanzado": {
-    en: `## Subjuntivo — Advanced uses (C1)
+    en: `> **Before this topic:** you already use **subjunctive** in typical cases. **In this topic:** borderline cases — aunque, donde, como: indicative or subjunctive?
+
+## Subjuntivo — Advanced uses (C1)
 
 ### Aunque (although) — indicativo vs subjuntivo
 - **Indicativo** (known fact): \`**Aunque** llueve, salgo.\`
@@ -2176,7 +2806,9 @@ Estructura: **verbo auxiliar + (enlace) + infinitivo/gerundio/participio**.
 \`No es cierto que **haya** venido.\`
 
 > ⚠️ Main C1 rule: **Subjuntivo = uncertainty / hypothesis / subjectivity**. If the fact is real and known — Indicativo.`,
-    es: `## Subjuntivo — usos avanzados (C1)
+    es: `> **Antes de este tema:** ya usas el **subjuntivo** en casos típicos. **En este tema:** casos dudosos — aunque, donde, como: ¿indicativo o subjuntivo?
+
+## Subjuntivo — usos avanzados (C1)
 
 ### Aunque — indicativo vs subjuntivo
 - **Indicativo** (hecho conocido): \`**Aunque** llueve, salgo.\`
@@ -2208,7 +2840,9 @@ Estructura: **verbo auxiliar + (enlace) + infinitivo/gerundio/participio**.
   },
 
   "c1-indirecto-avanzado": {
-    en: `## Estilo Indirecto — complete system (C1)
+    en: `> **Before this topic:** you know the B2 **dijo que + shift** pattern. **In this topic:** the full grid — all tenses, subjunctive, time and place markers.
+
+## Estilo Indirecto — complete system (C1)
 
 ### Tense translation (after main verb in past)
 
@@ -2253,7 +2887,9 @@ Only persons/pronouns shift.
 
 > 💡 Main C1 mistake — forgetting to change **time/place deictics**:
 > \`ayer → el día anterior\`, \`aquí → allí\`.`,
-    es: `## Estilo Indirecto — sistema completo (C1)
+    es: `> **Antes de este tema:** ya conoces **dijo que + cambio de tiempo** de B2. **En este tema:** tabla completa — todos los tiempos, subjuntivo, marcadores.
+
+## Estilo Indirecto — sistema completo (C1)
 
 ### Traslación de tiempos (tras verbo principal en pasado)
 
@@ -2301,7 +2937,9 @@ Solo cambian personas/pronombres.
   },
 
   "c1-pronombres-avanzado": {
-    en: `## Pronouns — Advanced cases (C1)
+    en: `> **Before this topic:** **lo, le, se lo** are already in daily use. **In this topic:** abstract **lo**, obligatory **a + pronoun** doubling, leísmo / laísmo.
+
+## Pronouns — Advanced cases (C1)
 
 ### Neutral LO (lo + adjective/adverb)
 \`**Lo** bueno de España.\`
@@ -2337,7 +2975,9 @@ Regional deviations from the norm:
 
 > 💡 C1 = ability to **naturally** duplicate (sounds Spanish),
 > not avoiding \`a + pronoun + OD/OI\`.`,
-    es: `## Pronombres — casos avanzados (C1)
+    es: `> **Antes de este tema:** **lo, le, se lo** ya están en el uso diario. **En este tema:** **lo** abstracto, duplicación **a + pronombre**, leísmo / laísmo.
+
+## Pronombres — casos avanzados (C1)
 
 ### LO neutro (lo + adjetivo/adverbio)
 \`**Lo** bueno de España.\`
@@ -2376,7 +3016,9 @@ Desviaciones regionales de la norma:
   },
 
   "c1-ser-estar-avanzado": {
-    en: `## Ser vs Estar — Subtle cases (C1)
+    en: `> **Before this topic:** basic **ser / estar** from A1 is in place. **In this topic:** pairs where the verb choice **changes the meaning** — es listo vs está listo.
+
+## Ser vs Estar — Subtle cases (C1)
 
 ### Adjectives that change meaning
 | Adjective | SER (permanent) | ESTAR (state) |
@@ -2405,16 +3047,19 @@ Desviaciones regionales de la norma:
 \`Es **profesor**.\` — He is a teacher (profession).
 \`Está **de** profesor.\` — He is working (temporarily) as a teacher.
 
-### Bread/food
-\`El pan **es** fresco.\` — The bread is fresh (in general/by nature).
-\`El pan **está** fresco.\` — The bread is fresh (now, just baked).
+### Made of vs state
+\`El vaso **es** de cristal.\`
+\`El vaso **está** lleno.\`
+Freshness of food is usually **estar**: \`El pan **está** fresco.\`
 
 ### Passive
-\`**Es** escrito por Cervantes.\` — (action, process — ser pasiva)
-\`**Está** escrito.\` — (result — estar + participio)
+\`Don Quijote **fue** escrito por Cervantes.\` — past action (ser + participle).
+\`El libro **está** escrito en español.\` — result / state.
 
 > 💡 Universal C1 hint: **SER = identity**, **ESTAR = state/result**. When in doubt — ask "is this a definition or a current state?".`,
-    es: `## Ser vs Estar — matices avanzados (C1)
+    es: `> **Antes de este tema:** el **ser / estar** básico de A1 ya lo tienes. **En este tema:** pares donde la elección **cambia el sentido** — es listo vs está listo.
+
+## Ser vs Estar — matices avanzados (C1)
 
 ### Adjetivos que cambian de significado
 | Adjetivo | SER (permanente) | ESTAR (estado) |
@@ -2443,19 +3088,22 @@ Desviaciones regionales de la norma:
 \`Es **profesor**.\` — Es profesor (profesión).
 \`Está **de** profesor.\` — Está trabajando (temporalmente) de profesor.
 
-### Pan/comida
-\`El pan **es** fresco.\` — El pan es fresco (en general/por naturaleza).
-\`El pan **está** fresco.\` — El pan está fresco (ahora, recién hecho).
+### De qué está hecho vs estado
+\`El vaso **es** de cristal.\`
+\`El vaso **está** lleno.\`
+La frescura de la comida suele ir con **estar**: \`El pan **está** fresco.\`
 
 ### Pasiva
-\`**Es** escrito por Cervantes.\` — (acción, proceso — ser pasiva)
-\`**Está** escrito.\` — (resultado — estar + participio)
+\`Don Quijote **fue** escrito por Cervantes.\` — acción en el pasado.
+\`El libro **está** escrito en español.\` — resultado / estado.
 
 > 💡 Pista universal de C1: **SER = identidad**, **ESTAR = estado/resultado**. Si dudas — pregúntate «¿es definición o estado actual?».`,
   },
 
   "c2-ironia-registry": {
-    en: `## Irony and Register (C1-C2)
+    en: `> **Before this topic:** moods and register from C1. **In this topic:** **how a phrase sounds** — irony, distance, register shifts.
+
+## Irony and Register (C1-C2)
 
 ### Ironic Subjuntivo
 Used for **polite criticism** or irony:
@@ -2498,7 +3146,9 @@ Used for **polite criticism** or irony:
 
 > 💡 C2 = ability to **switch register** instantly, understand irony and
 > use sarcasm through grammar (especially subjuntivo).`,
-    es: `## Ironía y Registro (C1-C2)
+    es: `> **Antes de este tema:** modos y registro desde C1. **En este tema:** **cómo suena** la frase — ironía, distancia, cambio de registro.
+
+## Ironía y Registro (C1-C2)
 
 ### Subjuntivo irónico
 Se usa para **crítica cortés** o ironía:
@@ -2541,5 +3191,628 @@ Se usa para **crítica cortés** o ironía:
 
 > 💡 C2 = capacidad de **cambiar de registro** al instante, entender la ironía y
 > usar el sarcasmo a través de la gramática (especialmente subjuntivo).`,
+  },
+  "c2-oraciones-hendidas": {
+    en: `> **Before this topic:** you link clauses with **que / lo que** since B1. **In this topic:** **cleft sentences** — fue Juan quien…, lo que necesito es… — to highlight what matters.
+
+## Cleft sentences (oraciones hendidas)
+
+Native speakers "split" the sentence to **emphasize** a specific element.
+
+### SER + QUE / QUIEN / DONDE / CUANDO
+
+| Focus on | Structure | Example |
+|---|---|---|
+| Person | \`Fue X quien…\` | \`**Fue Juan quien** rompió el vaso.\` — It was Juan who broke the glass. |
+| Place | \`Es en X donde…\` | \`**Es en Madrid donde** vive.\` — It's in Madrid that he lives. |
+| Time | \`Fue X cuando…\` | \`**Fue ayer cuando** lo supe.\` — It was yesterday that I found out. |
+| Reason | \`Es por X por lo que…\` | \`**Es por eso por lo que** me fui.\` — That's exactly why I left. |
+
+> ⚠️ The preposition is **repeated**: \`Es **con** ella **con** quien quiero hablar.\` (not \`*Es con ella que…\` — a French calque, avoided in the educated norm)
+
+### LO QUE — emphasizing an action/object
+- \`**Lo que** necesito **es** dormir.\` — What I need is sleep.
+- \`**Lo que** me molesta **es** el ruido.\` — What bothers me is the noise.
+
+### Tense agreement of SER
+\`**Fue** ayer **cuando**…\` / \`**Es** ahora **cuando**…\` — ser agrees with the time of the event.
+
+### Colloquial emphasis
+- \`¡Vaya coche que se ha comprado!\` — What a car he's bought!
+- \`De tonto no tiene un pelo.\` — He's anything but a fool.
+- Doubling: \`Saber, sé; pero no te lo diré.\` — Know it I do, but I won't tell you.
+
+> 💡 On DELE C2, cleft structures are a marker of fluent writing and speech.`,
+    es: `> **Antes de este tema:** ya enlazas con **que / lo que** desde B1. **En este tema:** **oraciones hendidas** — fue Juan quien…, lo que necesito es… — para destacar lo importante.
+
+## Oraciones hendidas
+
+Los nativos «parten» la frase para **destacar** el elemento que les interesa.
+
+### SER + QUE / QUIEN / DONDE / CUANDO
+
+| Se destaca | Estructura | Ejemplo |
+|---|---|---|
+| Persona | \`Fue X quien…\` | \`**Fue Juan quien** rompió el vaso.\` |
+| Lugar | \`Es en X donde…\` | \`**Es en Madrid donde** vive.\` |
+| Tiempo | \`Fue X cuando…\` | \`**Fue ayer cuando** lo supe.\` |
+| Causa | \`Es por X por lo que…\` | \`**Es por eso por lo que** me fui.\` |
+
+> ⚠️ La preposición **se repite**: \`Es **con** ella **con** quien quiero hablar.\` (no \`*Es con ella que…\` — calco del francés, evitado en la norma culta)
+
+### LO QUE — destacar la acción o el objeto
+- \`**Lo que** necesito **es** dormir.\`
+- \`**Lo que** me molesta **es** el ruido.\`
+
+### Concordancia temporal de SER
+\`**Fue** ayer **cuando**…\` / \`**Es** ahora **cuando**…\` — ser concuerda con el tiempo del evento.
+
+### Énfasis coloquial
+- \`¡Vaya coche que se ha comprado!\`
+- \`De tonto no tiene un pelo.\`
+- Duplicación: \`Saber, sé; pero no te lo diré.\`
+
+> 💡 En el DELE C2, las oraciones hendidas son un marcador de escritura y habla fluidas.`,
+  },
+  "c2-conjetura-rumor": {
+    en: `> **Before this topic:** **Futuro** and **Condicional** as plan and “I would” are done. **In this topic:** the same forms for **guesses and hearsay** — Serán las diez, habría mil personas.
+
+## Futuro de conjetura and condicional de rumor
+
+In Spanish, the future and conditional express more than time — they encode **degree of certainty**.
+
+### Futuro de conjetura — guessing about the present
+| Fact | Guess |
+|---|---|
+| \`Son las diez.\` — It's ten. | \`**Serán** las diez.\` — It must be around ten. |
+| \`Está en casa.\` | \`**Estará** en casa.\` — He's probably at home. |
+| \`Tiene 40 años.\` | \`**Tendrá** unos 40 años.\` — He must be about 40. |
+
+Futuro perfecto — guessing about the recent past:
+- \`**Habrá salido** ya.\` — He's probably left already.
+
+### Condicional de conjetura — guessing about the past
+- \`**Serían** las dos cuando llegó.\` — It was probably around two when he arrived.
+- \`**Tendría** veinte años entonces.\` — He must have been about twenty then.
+
+### Condicional de rumor — the language of the press
+Conveys **unconfirmed information** (journalistic style):
+- \`El presidente **habría aceptado** el acuerdo.\` — The president has reportedly accepted the deal.
+- \`**Habría** unas mil personas en la plaza.\` — There were reportedly about a thousand people in the square.
+
+### Synonymous modal constructions
+| Certainty | Structure | Example |
+|---|---|---|
+| ~90% | \`deber de + inf\` | \`**Debe de** estar en casa.\` |
+| ~50% | \`poder + inf\` | \`**Puede** estar en casa.\` |
+| conjecture | futuro/condicional | \`**Estará** en casa.\` |
+
+> ⚠️ \`deber de + inf\` = probability; \`deber + inf\` = obligation: \`Debes estudiar\` — you must study.
+
+> 💡 Hear a future tense where the present would be logical? It's not about the future — it means "probably".`,
+    es: `> **Antes de este tema:** ya usas **Futuro** y **Condicional** como plan y «yo haría». **En este tema:** las mismas formas para **conjura y rumor** — Serán las diez, habría mil personas.
+
+## Futuro de conjetura y condicional de rumor
+
+El futuro y el condicional no solo expresan tiempo: codifican el **grado de certeza**.
+
+### Futuro de conjetura — suposición sobre el presente
+| Hecho | Suposición |
+|---|---|
+| \`Son las diez.\` | \`**Serán** las diez.\` — probablemente |
+| \`Está en casa.\` | \`**Estará** en casa.\` |
+| \`Tiene 40 años.\` | \`**Tendrá** unos 40 años.\` |
+
+Futuro perfecto — suposición sobre el pasado reciente:
+- \`**Habrá salido** ya.\`
+
+### Condicional de conjetura — suposición sobre el pasado
+- \`**Serían** las dos cuando llegó.\`
+- \`**Tendría** veinte años entonces.\`
+
+### Condicional de rumor — el lenguaje de la prensa
+Transmite **información no confirmada** (estilo periodístico):
+- \`El presidente **habría aceptado** el acuerdo.\`
+- \`**Habría** unas mil personas en la plaza.\`
+
+### Construcciones modales sinónimas
+| Certeza | Estructura | Ejemplo |
+|---|---|---|
+| ~90% | \`deber de + inf\` | \`**Debe de** estar en casa.\` |
+| ~50% | \`poder + inf\` | \`**Puede** estar en casa.\` |
+| conjetura | futuro/condicional | \`**Estará** en casa.\` |
+
+> ⚠️ \`deber de + inf\` = probabilidad; \`deber + inf\` = obligación: \`Debes estudiar\`.
+
+> 💡 ¿Oyes un futuro donde lo lógico sería el presente? No habla del futuro: significa «probablemente».`,
+  },
+  "c2-estilo-culto": {
+    en: `> **Before this topic:** **participle** and **gerund** from the tenses. **In this topic:** **written register** — absolute participle, compressing clauses.
+
+## Formal style: absolute constructions and nominalization
+
+Devices of **written / formal** Spanish: press, essays, DELE C2.
+
+### Participio absoluto
+A participle + noun replaces a whole subordinate clause:
+- \`**Terminada la reunión**, todos se fueron.\` = Cuando terminó la reunión…
+- \`**Dicho esto**, pasemos al siguiente punto.\` — That said, let's move to the next point.
+- \`**Una vez firmado el contrato**, no hay vuelta atrás.\` — Once the contract is signed, there's no going back.
+
+> ⚠️ The participle **agrees**: \`Terminad**a** la reunión\`, \`Firmad**os** los documentos\`.
+
+### Gerundio absoluto
+With its own subject:
+- \`**Estando yo en Madrid**, ocurrió todo.\` — While I was in Madrid, it all happened.
+- \`**Siendo esto así**, no hay más que hablar.\` — That being so, there's nothing more to say.
+
+### Nominalization — noun instead of verb
+| Colloquial | Formal |
+|---|---|
+| \`Cuando llegó el tren…\` | \`**A la llegada del** tren…\` |
+| \`Antes de que salgamos…\` | \`**Antes de nuestra salida**…\` |
+| \`Porque aumentaron los precios…\` | \`**Debido al aumento de** los precios…\` |
+
+### Formal connectors
+- \`No obstante\` — nevertheless (more formal than \`sin embargo\`)
+- \`Asimismo\` — likewise
+- \`Por consiguiente\` — consequently
+- \`En aras de\` — for the sake of
+- \`Si bien\` — although (formal \`aunque\`)
+- \`Cabe señalar que…\` — it should be noted that…
+
+### Passive and impersonal coloring
+- \`Se procederá a la evaluación de…\` — an evaluation will be carried out…
+- \`Queda prohibido fumar.\` — smoking is prohibited (queda + participio)
+- \`Resulta imprescindible…\` — it proves essential…
+
+> 💡 C2 means **switching registers**: saying the same thing in a bar and in a ministry.`,
+    es: `> **Antes de este tema:** **participio** y **gerundio** de los tiempos verbales. **En este tema:** **registro escrito** — participio absoluto, compresión de oraciones.
+
+## Estilo culto: construcciones absolutas y nominalización
+
+Recursos del español **escrito / formal**: prensa, ensayos, DELE C2.
+
+### Participio absoluto
+Un participio + sustantivo sustituye a toda una subordinada:
+- \`**Terminada la reunión**, todos se fueron.\` = Cuando terminó la reunión…
+- \`**Dicho esto**, pasemos al siguiente punto.\`
+- \`**Una vez firmado el contrato**, no hay vuelta atrás.\`
+
+> ⚠️ El participio **concuerda**: \`Terminad**a** la reunión\`, \`Firmad**os** los documentos\`.
+
+### Gerundio absoluto
+Con sujeto propio:
+- \`**Estando yo en Madrid**, ocurrió todo.\`
+- \`**Siendo esto así**, no hay más que hablar.\`
+
+### Nominalización — sustantivo en lugar de verbo
+| Coloquial | Culto |
+|---|---|
+| \`Cuando llegó el tren…\` | \`**A la llegada del** tren…\` |
+| \`Antes de que salgamos…\` | \`**Antes de nuestra salida**…\` |
+| \`Porque aumentaron los precios…\` | \`**Debido al aumento de** los precios…\` |
+
+### Conectores cultos
+- \`No obstante\` — más formal que \`sin embargo\`
+- \`Asimismo\` · \`Por consiguiente\` · \`En aras de\` · \`Si bien\`
+- \`Cabe señalar que…\`
+
+### Matiz pasivo e impersonal
+- \`Se procederá a la evaluación de…\`
+- \`Queda prohibido fumar.\` (queda + participio)
+- \`Resulta imprescindible…\`
+
+> 💡 C2 es saber **cambiar de registro**: decir lo mismo en un bar y en un ministerio.`,
+  },
+  "dele-contraste-pasados": {
+    en: `> **Before this topic:** in **A2** and **B1** you covered all past tenses, including **Pluscuamperfecto**. **In this topic:** **DELE overview** — picking the right past tense.
+
+## Contrasting past tenses — trap #1 on the DELE
+
+DELE tasks (Comprensión de lectura, gap-fill) most often test the choice between the four past tenses.
+
+### Decision cheat sheet
+
+| Question about the action | Tense | Example |
+|---|---|---|
+| What happened? (event, plot driver) | **Indefinido** | \`Ayer **vi** a Marta.\` |
+| What was the background? (habit, description) | **Imperfecto** | \`**Hacía** frío y **llovía**.\` |
+| Linked to the present / period not closed | **Perfecto** | \`**He visto** a Marta esta mañana.\` |
+| Earlier than another past event | **Pluscuamperfecto** | \`Cuando llegué, ya **se había ido**.\` |
+
+### Marker words (learn by heart)
+- **Indefinido:** \`ayer\`, \`anoche\`, \`el año pasado\`, \`en 2010\`, \`de repente\`, \`entonces\`
+- **Imperfecto:** \`antes\`, \`siempre\`, \`cada día\`, \`de niño\`, \`mientras\`, \`todos los veranos\`
+- **Perfecto:** \`hoy\`, \`esta semana\`, \`este año\`, \`ya\`, \`todavía no\`, \`alguna vez\`, \`nunca (en mi vida)\`
+- **Pluscuamperfecto:** \`ya… cuando\`, \`antes de que\`, \`nunca hasta entonces\`
+
+### The classic exam pair
+\`**Estaba** duchándome **cuando** **sonó** el teléfono.\`
+Background (imperfecto) + event (indefinido) — DELE asks about this pair almost every time.
+
+### Meaning changes with the tense
+| Imperfecto | Indefinido |
+|---|---|
+| \`**Conocía** a Juan.\` — knew him | \`**Conocí** a Juan.\` — met him |
+| \`**Sabía** la verdad.\` — knew | \`**Supe** la verdad.\` — found out |
+| \`**Quería** salir.\` — wanted | \`**Quise** salir.\` — tried |
+| \`No **quería** ir.\` — didn't want | \`No **quiso** ir.\` — refused |
+
+> 💡 Spain vs Latin America: in Spain \`esta mañana **he visto**\`, in most of the Americas \`esta mañana **vi**\`. DELE accepts both norms — just be consistent.`,
+    es: `> **Antes de este tema:** en **A2** y **B1** ya viste todos los pasados, incluido **Pluscamperfecto**. **En este tema:** **resumen DELE** — elegir el pasado en el examen.
+
+## Contraste de pasados — la trampa n.º 1 del DELE
+
+Las tareas del DELE (Comprensión de lectura, huecos) evalúan sobre todo la elección entre los cuatro pasados.
+
+### Chuleta de decisión
+
+| Pregunta sobre la acción | Tiempo | Ejemplo |
+|---|---|---|
+| ¿Qué pasó? (evento, avance de la trama) | **Indefinido** | \`Ayer **vi** a Marta.\` |
+| ¿Cómo era el fondo? (hábito, descripción) | **Imperfecto** | \`**Hacía** frío y **llovía**.\` |
+| Conectado con el presente / periodo abierto | **Perfecto** | \`**He visto** a Marta esta mañana.\` |
+| Anterior a otro pasado | **Pluscuamperfecto** | \`Cuando llegué, ya **se había ido**.\` |
+
+### Marcadores (para memorizar)
+- **Indefinido:** \`ayer\`, \`anoche\`, \`el año pasado\`, \`en 2010\`, \`de repente\`, \`entonces\`
+- **Imperfecto:** \`antes\`, \`siempre\`, \`cada día\`, \`de niño\`, \`mientras\`, \`todos los veranos\`
+- **Perfecto:** \`hoy\`, \`esta semana\`, \`este año\`, \`ya\`, \`todavía no\`, \`alguna vez\`, \`nunca (en mi vida)\`
+- **Pluscuamperfecto:** \`ya… cuando\`, \`antes de que\`, \`nunca hasta entonces\`
+
+### La combinación clásica del examen
+\`**Estaba** duchándome **cuando** **sonó** el teléfono.\`
+Fondo (imperfecto) + evento (indefinido): el DELE lo pregunta casi siempre.
+
+### El tiempo cambia el significado
+| Imperfecto | Indefinido |
+|---|---|
+| \`**Conocía** a Juan.\` — lo conocía de antes | \`**Conocí** a Juan.\` — lo conocí entonces |
+| \`**Sabía** la verdad.\` — la sabía | \`**Supe** la verdad.\` — me enteré |
+| \`**Quería** salir.\` — quería | \`**Quise** salir.\` — lo intenté |
+| \`No **quería** ir.\` — no quería | \`No **quiso** ir.\` — se negó |
+
+> 💡 España vs. América: en España \`esta mañana **he visto**\`; en gran parte de América \`esta mañana **vi**\`. El DELE acepta ambas normas: sé coherente.`,
+  },
+  "dele-carta-formal": {
+    en: `> **Before this topic:** **condicional** (podría, quisiera) and formal **usted** are in place. **In this topic:** **DELE letter writing** — ready-made openings and polite requests.
+
+## Writing letters on the DELE (Expresión e interacción escritas)
+
+The writing paper almost always includes a letter/e-mail. What's graded is the **register** — formulas must match the addressee.
+
+### Formal letter
+
+| Block | Formulas |
+|---|---|
+| Greeting | \`Estimado señor / Estimada señora:\` · \`Muy señores míos:\` · \`A quien corresponda:\` |
+| Reason for writing | \`Le escribo para + inf…\` · \`Me dirijo a usted con motivo de…\` · \`Me pongo en contacto con ustedes para…\` |
+| Request | \`Le agradecería que + subjuntivo imperfecto\` (\`…que me **enviara** más información\`) · \`¿Podría + inf…?\` · \`Le ruego (que) + subj\` |
+| Complaint | \`Me veo obligado/a a expresar mi malestar por…\` · \`Quisiera presentar una reclamación…\` |
+| Closing line | \`A la espera de su respuesta, …\` · \`Sin otro particular, …\` · \`Le agradezco de antemano su atención.\` |
+| Sign-off | \`Atentamente,\` · \`Un cordial saludo,\` · \`Reciba un cordial saludo,\` |
+
+> ⚠️ The whole letter uses **usted/ustedes**. A single "tú" in a formal letter = losing points for adecuación.
+
+### Informal letter
+
+| Block | Formulas |
+|---|---|
+| Greeting | \`¡Hola, Ana!\` · \`Querido Pablo:\` |
+| Opening | \`¿Qué tal estás? Espero que todo te vaya bien.\` · \`¡Cuánto tiempo sin saber de ti!\` |
+| Body | \`Te escribo porque…\` · \`¿Sabes qué? Resulta que…\` · \`Por cierto, …\` |
+| Closing | \`Bueno, te dejo, que…\` · \`Escríbeme pronto.\` · \`Dale recuerdos a tu familia.\` |
+| Sign-off | \`Un abrazo,\` · \`Un beso,\` · \`Hasta pronto,\` |
+
+### Grammar of politeness (raises your score)
+- Conditional: \`**Querría** saber si…\` / \`**Me gustaría** + inf\`
+- Imperfecto de cortesía: \`**Quería** pedirle un favor.\`
+- \`Le agradecería que me **informara**…\` — conditional + imperfect subjunctive = top-level B2.
+
+### How many words to write (by DELE level)
+
+| Level | Task | Length |
+|---|---|---|
+| A2 | Personal letter / e-mail | **60–70 words** |
+| B1 | Letter or e-mail (Tarea 1) | **100–120 words** |
+| B2 | Formal letter (Tarea 1) | **150–180 words** |
+| C1 | Letter / task-based text | **220–250 words** |
+
+> ⚠️ Falling far short = not all task points covered. Going far over = more mistakes and padding. Stay within ±10% of the range.
+
+### Formal letter skeleton (5 blocks)
+
+1. **Saludo** — \`Estimado señor:\` (1 line)
+2. **Motivo** — why you write: \`Me dirijo a usted con motivo de…\` (~20% of the text)
+3. **Desarrollo** — the substance: facts, details, arguments (1–2 paragraphs, ~50%)
+4. **Petición / propuesta** — what you request or propose: \`Le agradecería que…\` (~20%)
+5. **Despedida** — \`A la espera de su respuesta, … Atentamente,\` + name (1–2 lines)
+
+### What the examiners grade
+
+| Criterion | What they check |
+|---|---|
+| **Adecuación** | **All task points** covered; register matches the addressee; letter format respected |
+| **Coherencia** | Logical paragraphs, connectors, no repetition or jumps in thought |
+| **Corrección** | Grammar: tenses, agreement, spelling, punctuation |
+| **Alcance** | Variety of vocabulary and structures — don't repeat \`pedir\` five times |
+
+> 💡 Before handing in: tick off every task point against your draft. A missed point is the most common way to lose marks, even with perfect grammar.
+
+> 💡 Learn the letter skeleton by heart — in the exam you'll only need to fill in the content.`,
+    es: `> **Antes de este tema:** ya dominas **condicional** (podría, quisiera) y **usted** formal. **En este tema:** **carta DELE** — fórmulas de saludo y peticiones corteses.
+
+## La carta en el DELE (Expresión e interacción escritas)
+
+En la parte escrita casi siempre hay una carta o e-mail. Se evalúa el **registro**: las fórmulas deben corresponder al destinatario.
+
+### Carta formal
+
+| Bloque | Fórmulas |
+|---|---|
+| Saludo | \`Estimado señor / Estimada señora:\` · \`Muy señores míos:\` · \`A quien corresponda:\` |
+| Motivo | \`Le escribo para + inf…\` · \`Me dirijo a usted con motivo de…\` · \`Me pongo en contacto con ustedes para…\` |
+| Petición | \`Le agradecería que + subjuntivo imperfecto\` (\`…que me **enviara** más información\`) · \`¿Podría + inf…?\` · \`Le ruego (que) + subj\` |
+| Queja | \`Me veo obligado/a a expresar mi malestar por…\` · \`Quisiera presentar una reclamación…\` |
+| Cierre | \`A la espera de su respuesta, …\` · \`Sin otro particular, …\` · \`Le agradezco de antemano su atención.\` |
+| Despedida | \`Atentamente,\` · \`Un cordial saludo,\` · \`Reciba un cordial saludo,\` |
+
+> ⚠️ Toda la carta va en **usted/ustedes**. Un solo «tú» en una carta formal = menos puntos de adecuación.
+
+### Carta informal
+
+| Bloque | Fórmulas |
+|---|---|
+| Saludo | \`¡Hola, Ana!\` · \`Querido Pablo:\` |
+| Inicio | \`¿Qué tal estás? Espero que todo te vaya bien.\` · \`¡Cuánto tiempo sin saber de ti!\` |
+| Cuerpo | \`Te escribo porque…\` · \`¿Sabes qué? Resulta que…\` · \`Por cierto, …\` |
+| Cierre | \`Bueno, te dejo, que…\` · \`Escríbeme pronto.\` · \`Dale recuerdos a tu familia.\` |
+| Despedida | \`Un abrazo,\` · \`Un beso,\` · \`Hasta pronto,\` |
+
+### Gramática de la cortesía (sube nota)
+- Condicional: \`**Querría** saber si…\` / \`**Me gustaría** + inf\`
+- Imperfecto de cortesía: \`**Quería** pedirle un favor.\`
+- \`Le agradecería que me **informara**…\` — condicional + subjuntivo imperfecto = nivel B2 alto.
+
+### Cuántas palabras escribir (por nivel DELE)
+
+| Nivel | Tarea | Extensión |
+|---|---|---|
+| A2 | Carta personal / e-mail | **60–70 palabras** |
+| B1 | Carta o e-mail (Tarea 1) | **100–120 palabras** |
+| B2 | Carta formal (Tarea 1) | **150–180 palabras** |
+| C1 | Carta / texto según la tarea | **220–250 palabras** |
+
+> ⚠️ Quedarse muy corto = no se cubren todos los puntos de la tarea. Pasarse mucho = más errores y relleno. Mantente dentro del ±10% del rango.
+
+### Esqueleto de la carta formal (5 bloques)
+
+1. **Saludo** — \`Estimado señor:\` (1 línea)
+2. **Motivo** — por qué escribes: \`Me dirijo a usted con motivo de…\` (~20% del texto)
+3. **Desarrollo** — lo esencial: hechos, detalles, argumentos (1–2 párrafos, ~50%)
+4. **Petición / propuesta** — qué pides o propones: \`Le agradecería que…\` (~20%)
+5. **Despedida** — \`A la espera de su respuesta, … Atentamente,\` + nombre (1–2 líneas)
+
+### Qué evalúan los examinadores
+
+| Criterio | Qué comprueban |
+|---|---|
+| **Adecuación** | Se cubren **todos los puntos** de la tarea; el registro corresponde al destinatario; se respeta el formato |
+| **Coherencia** | Párrafos lógicos, conectores, sin repeticiones ni saltos de ideas |
+| **Corrección** | Gramática: tiempos, concordancia, ortografía, puntuación |
+| **Alcance** | Variedad de léxico y estructuras — no repitas \`pedir\` cinco veces |
+
+> 💡 Antes de entregar: marca cada punto de la tarea en tu borrador. Un punto sin cubrir es la causa más frecuente de perder nota, incluso con gramática perfecta.
+
+> 💡 Memoriza el esqueleto de la carta: en el examen solo tendrás que rellenar el contenido.`,
+  },
+  "dele-conectores-redaccion": {
+    en: `> **Before this topic:** you have covered **passive voice** and the **Connectors** chapter. **In this topic:** **DELE essay** — text structure and linkers (en primer lugar, sin embargo…).
+
+## Connectors for the redacción (Expresión escrita B2–C1)
+
+Your **coherencia** score depends directly on linking devices. Here is a working essay skeleton.
+
+### Text structure
+
+| Function | Connectors |
+|---|---|
+| Opening | \`En primer lugar\` · \`Para empezar\` · \`Hoy en día\` · \`Es un hecho que…\` |
+| Addition | \`Además\` · \`Asimismo\` · \`Cabe añadir que\` · \`No solo…, sino también…\` |
+| Contrast | \`Sin embargo\` · \`No obstante\` · \`Ahora bien\` · \`Por el contrario\` · \`A pesar de que\` |
+| Two sides | \`Por un lado…, por otro (lado)…\` · \`En cuanto a…\` · \`Respecto a…\` |
+| Cause | \`Debido a\` · \`Puesto que\` · \`Dado que\` · \`Ya que\` |
+| Consequence | \`Por lo tanto\` · \`Por consiguiente\` · \`De ahí que + subj\` · \`Así pues\` |
+| Example | \`Por ejemplo\` · \`Como muestra\` · \`Un claro ejemplo de ello es…\` |
+| Conclusion | \`En definitiva\` · \`En conclusión\` · \`Para concluir\` · \`En resumen\` |
+
+### Expressing opinion: indicativo or subjuntivo?
+
+| Structure | Mood | Example |
+|---|---|---|
+| \`Creo que / Pienso que\` | **indicativo** | \`Creo que **es** útil.\` |
+| \`No creo que / Dudo que\` | **subjuntivo** | \`No creo que **sea** útil.\` |
+| \`Es evidente / cierto que\` | **indicativo** | \`Es evidente que **funciona**.\` |
+| \`Es importante / necesario que\` | **subjuntivo** | \`Es importante que se **regule**.\` |
+| \`(No) me parece que\` | ind. / **subj.** | \`No me parece que **tenga** sentido.\` |
+
+### Point-losing traps
+- \`De ahí que\` — **always subjunctive**: \`De ahí que **sea** necesario actuar.\`
+- \`A pesar de **que** + verbo\`, but \`a pesar de + inf/sust\`.
+- Don't repeat \`pero\` — alternate \`sin embargo / no obstante / ahora bien\`.
+
+### Essay length and timing
+
+| Level | Length | Suggested timing (per text) |
+|---|---|---|
+| B1 | **130–150 words** | 5 min plan → 20 min writing → 5 min review |
+| B2 | **150–180 words** | 5 min plan → 25 min writing → 5 min review |
+| C1 | **220–250 words** | 10 min plan → 30 min writing → 5 min review |
+
+### Four-paragraph essay skeleton (word budget for B2)
+
+1. **Introducción** (~25–30 words) — present the topic: \`Hoy en día…\` + thesis.
+2. **Argumento 1 / a favor** (~50–60 words) — \`En primer lugar…\` → thesis → argument → example.
+3. **Argumento 2 / en contra** (~50–60 words) — \`Sin embargo…\` / \`Por otro lado…\` → counter-argument → example.
+4. **Conclusión** (~25–30 words) — \`En definitiva…\` + your own position (\`Es fundamental que + subj…\`).
+
+### What the examiners expect
+
+| Criterion | What they look at |
+|---|---|
+| **Adecuación** | The text answers **all** the task questions; the genre is respected (essay ≠ letter) |
+| **Coherencia** | Clear paragraphs, varied connectors, logical progression of ideas |
+| **Corrección** | Subjunctive where needed; tense agreement; spelling with accent marks |
+| **Alcance** | Rich topic vocabulary, complex structures (\`de ahí que\`, pasiva refleja) |
+
+- Examiners recognise memorised "universal" paragraphs and **penalise** them — learn the skeleton, not a ready-made text.
+- Count words at the end: 3–4 words per draft line × number of lines is a quick estimate.
+
+> 💡 B2 paragraph formula: connector → thesis → argument → example. Four paragraphs and the structure is done.`,
+    es: `> **Antes de este tema:** ya viste **voz pasiva** y el capítulo **Conectores**. **En este tema:** **redacción DELE** — estructura y conectores (en primer lugar, sin embargo…).
+
+## Conectores para la redacción (Expresión escrita B2–C1)
+
+La nota de **coherencia** depende directamente de los conectores. Aquí tienes un esqueleto de redacción.
+
+### Estructura del texto
+
+| Función | Conectores |
+|---|---|
+| Inicio | \`En primer lugar\` · \`Para empezar\` · \`Hoy en día\` · \`Es un hecho que…\` |
+| Adición | \`Además\` · \`Asimismo\` · \`Cabe añadir que\` · \`No solo…, sino también…\` |
+| Contraste | \`Sin embargo\` · \`No obstante\` · \`Ahora bien\` · \`Por el contrario\` · \`A pesar de que\` |
+| Dos caras | \`Por un lado…, por otro (lado)…\` · \`En cuanto a…\` · \`Respecto a…\` |
+| Causa | \`Debido a\` · \`Puesto que\` · \`Dado que\` · \`Ya que\` |
+| Consecuencia | \`Por lo tanto\` · \`Por consiguiente\` · \`De ahí que + subj\` · \`Así pues\` |
+| Ejemplo | \`Por ejemplo\` · \`Como muestra\` · \`Un claro ejemplo de ello es…\` |
+| Conclusión | \`En definitiva\` · \`En conclusión\` · \`Para concluir\` · \`En resumen\` |
+
+### Opinión: ¿indicativo o subjuntivo?
+
+| Estructura | Modo | Ejemplo |
+|---|---|---|
+| \`Creo que / Pienso que\` | **indicativo** | \`Creo que **es** útil.\` |
+| \`No creo que / Dudo que\` | **subjuntivo** | \`No creo que **sea** útil.\` |
+| \`Es evidente / cierto que\` | **indicativo** | \`Es evidente que **funciona**.\` |
+| \`Es importante / necesario que\` | **subjuntivo** | \`Es importante que se **regule**.\` |
+| \`(No) me parece que\` | ind. / **subj.** | \`No me parece que **tenga** sentido.\` |
+
+### Trampas que restan puntos
+- \`De ahí que\` — **siempre subjuntivo**: \`De ahí que **sea** necesario actuar.\`
+- \`A pesar de **que** + verbo\`, pero \`a pesar de + inf/sust\`.
+- No repitas \`pero\`: alterna \`sin embargo / no obstante / ahora bien\`.
+
+### Extensión de la redacción y tiempo
+
+| Nivel | Extensión | Tiempo recomendado (por texto) |
+|---|---|---|
+| B1 | **130–150 palabras** | 5 min de plan → 20 min de texto → 5 min de revisión |
+| B2 | **150–180 palabras** | 5 min de plan → 25 min de texto → 5 min de revisión |
+| C1 | **220–250 palabras** | 10 min de plan → 30 min de texto → 5 min de revisión |
+
+### Esqueleto de redacción en 4 párrafos (presupuesto de palabras para B2)
+
+1. **Introducción** (~25–30 palabras) — presenta el tema: \`Hoy en día…\` + tesis.
+2. **Argumento 1 / a favor** (~50–60 palabras) — \`En primer lugar…\` → tesis → argumento → ejemplo.
+3. **Argumento 2 / en contra** (~50–60 palabras) — \`Sin embargo…\` / \`Por otro lado…\` → contraargumento → ejemplo.
+4. **Conclusión** (~25–30 palabras) — \`En definitiva…\` + postura propia (\`Es fundamental que + subj…\`).
+
+### Qué esperan los examinadores
+
+| Criterio | En qué se fijan |
+|---|---|
+| **Adecuación** | El texto responde a **todas** las preguntas de la tarea; se respeta el género (redacción ≠ carta) |
+| **Coherencia** | Párrafos claros, conectores variados, progresión lógica de ideas |
+| **Corrección** | Subjuntivo donde toca; concordancia de tiempos; ortografía con tildes |
+| **Alcance** | Léxico rico del tema, estructuras complejas (\`de ahí que\`, pasiva refleja) |
+
+- Los examinadores reconocen los párrafos «universales» memorizados y los **penalizan**: aprende el esqueleto, no un texto hecho.
+- Cuenta las palabras al final: 3–4 palabras por línea del borrador × número de líneas es una estimación rápida.
+
+> 💡 Fórmula del párrafo B2: conector → tesis → argumento → ejemplo. Cuatro párrafos y la estructura está lista.`,
+  },
+  "dele-expresion-oral": {
+    en: `> **Before this topic:** you have covered **DELE essay writing**. **In this topic:** **DELE speaking** — photos, opinions, agreeing; full conjecture theory (Serán las diez…) comes in C2 “Conjetura”.
+
+## The DELE speaking paper (Expresión e interacción orales)
+
+### Describing a photo (the classic task)
+Locating things in the picture:
+- \`En primer plano se ve…\` — in the foreground you can see…
+- \`Al fondo hay…\` — in the background there is…
+- \`A la derecha / izquierda aparece…\`
+
+Hypotheses — the examiner expects the **futuro de conjetura**:
+- \`**Será** su madre.\` — She must be his mother.
+- \`**Tendrán** unos treinta años.\` — They must be about thirty.
+- \`**Estarán** celebrando algo.\` — They're probably celebrating something.
+- \`Parece que + indicativo\` / \`Puede que + **subjuntivo**\` (\`Puede que **sean** amigos.\`)
+
+### Opinion and evaluation
+- \`Desde mi punto de vista…\` · \`A mi modo de ver…\` · \`En mi opinión…\`
+- \`Lo que más me llama la atención es…\` — what strikes me most is…
+- \`Me da la impresión de que…\`
+
+### Agreeing / disagreeing (interacción)
+| Agreement | Disagreement |
+|---|---|
+| \`Estoy totalmente de acuerdo contigo.\` | \`No estoy del todo de acuerdo.\` |
+| \`Tienes toda la razón.\` | \`Yo lo veo de otra manera.\` |
+| \`Yo pienso lo mismo.\` | \`Entiendo tu postura, pero…\` |
+| \`Sin duda.\` / \`Desde luego.\` | \`No creo que **sea** así.\` (+subj!) |
+
+### Filler words (to buy time)
+\`Bueno…\` · \`Pues…\` · \`A ver…\` · \`Es que…\` · \`O sea…\` · \`¿Cómo te diría?\` · \`En fin…\`
+
+They sound natural and give you seconds to think — examiners score this as **fluidez**.
+
+### Compensation strategies (if you forget a word)
+- \`Es una cosa que sirve para…\` — it's a thing you use for…
+- \`No recuerdo la palabra exacta, pero…\`
+- \`Es algo parecido a…\` — it's something like…
+
+> 💡 In your minute of prep, jot down 3 connectors + 2 hypotheses with the future tense — enough for a structured monologue.`,
+    es: `> **Antes de este tema:** ya viste la **redacción DELE**. **En este tema:** **expresión oral DELE** — fotos, opinión, acuerdo; conjetura (Serán las diez…) en detalle en C2 «Conjetura».
+
+## La parte oral del DELE (Expresión e interacción orales)
+
+### Descripción de una foto (tarea clásica)
+Situar elementos:
+- \`En primer plano se ve…\`
+- \`Al fondo hay…\`
+- \`A la derecha / izquierda aparece…\`
+
+Hipótesis — el examinador espera el **futuro de conjetura**:
+- \`**Será** su madre.\`
+- \`**Tendrán** unos treinta años.\`
+- \`**Estarán** celebrando algo.\`
+- \`Parece que + indicativo\` / \`Puede que + **subjuntivo**\` (\`Puede que **sean** amigos.\`)
+
+### Opinión y valoración
+- \`Desde mi punto de vista…\` · \`A mi modo de ver…\` · \`En mi opinión…\`
+- \`Lo que más me llama la atención es…\`
+- \`Me da la impresión de que…\`
+
+### Acuerdo / desacuerdo (interacción)
+| Acuerdo | Desacuerdo |
+|---|---|
+| \`Estoy totalmente de acuerdo contigo.\` | \`No estoy del todo de acuerdo.\` |
+| \`Tienes toda la razón.\` | \`Yo lo veo de otra manera.\` |
+| \`Yo pienso lo mismo.\` | \`Entiendo tu postura, pero…\` |
+| \`Sin duda.\` / \`Desde luego.\` | \`No creo que **sea** así.\` (¡+subj!) |
+
+### Muletillas (para ganar tiempo)
+\`Bueno…\` · \`Pues…\` · \`A ver…\` · \`Es que…\` · \`O sea…\` · \`¿Cómo te diría?\` · \`En fin…\`
+
+Suenan naturales y dan segundos para pensar: los examinadores lo valoran como **fluidez**.
+
+### Estrategias de compensación (si olvidas una palabra)
+- \`Es una cosa que sirve para…\`
+- \`No recuerdo la palabra exacta, pero…\`
+- \`Es algo parecido a…\`
+
+> 💡 En el minuto de preparación apunta 3 conectores + 2 hipótesis con futuro: suficiente para un monólogo estructurado.`,
   },
 };

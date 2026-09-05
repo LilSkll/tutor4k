@@ -1,8 +1,18 @@
-import type { ExerciseType, Level, StaticExercise } from "@/types";
+import type {
+  ExerciseType,
+  GrammarLevel,
+  InterfaceLanguage,
+  StaticExercise,
+} from "@/types";
 import { getCourse } from "@/config/courses";
+import { getChapterTargetTitle } from "@/lib/chapter-display";
+import { isExerciseUsableForLanguage } from "@/lib/exercise-localize";
+import { answersMatch } from "@/lib/normalize-answer";
 import { getCourseLearningProfile } from "@/server/learning/student-profile";
 import { getExerciseProgressMap } from "@/server/learning/exercise-progress";
+import { prepareExerciseForSession } from "@/lib/exercise-options";
 import {
+  filterPoolByLevel,
   filterPoolByTypeLevel,
   pickAdaptiveFromCandidates,
   scoreBankExercise,
@@ -10,7 +20,7 @@ import {
 } from "@/server/learning/adaptive-exercise";
 
 export type PooledExercise = StaticExercise & {
-  level: Level;
+  level: GrammarLevel;
   topic: string;
   courseId: string;
   chapterSlug: string;
@@ -20,10 +30,10 @@ export type PooledExercise = StaticExercise & {
   staticSource: true;
 };
 
-/** Aggregate all chapter-bound static exercises for a course. */
-export async function getExercisePool(
-  courseId: string,
-): Promise<PooledExercise[]> {
+/** In-memory pool cache — rebuilt once per warm server instance per course. */
+const poolCache = new Map<string, Promise<PooledExercise[]>>();
+
+async function buildExercisePool(courseId: string): Promise<PooledExercise[]> {
   const course = await getCourse(courseId);
   const pool: PooledExercise[] = [];
 
@@ -33,7 +43,7 @@ export async function getExercisePool(
       pool.push({
         ...ex,
         level: chapter.level,
-        topic: chapter.titleEs || chapter.title,
+        topic: getChapterTargetTitle(chapter, courseId),
         courseId,
         chapterSlug: chapter.slug,
         grammarTopic: chapter.grammarTopic,
@@ -46,21 +56,68 @@ export async function getExercisePool(
   return pool;
 }
 
+/** Aggregate all chapter-bound static exercises for a course. */
+export async function getExercisePool(
+  courseId: string,
+): Promise<PooledExercise[]> {
+  let pending = poolCache.get(courseId);
+  if (!pending) {
+    pending = buildExercisePool(courseId);
+    poolCache.set(courseId, pending);
+  }
+  return pending;
+}
+
 type PickInput = {
   courseId: string;
   type: ExerciseType;
-  level: Level;
+  level: GrammarLevel;
+  /** When true, pick any exercise type at the given level. */
+  mixed?: boolean;
   topic?: string;
   preferredChapterSlugs?: string[];
+  /**
+   * Hard filter: only these chapter banks (journey-unlocked).
+   * When set, level relaxation stays inside this set.
+   */
+  allowedChapterSlugs?: string[];
   /** Skip ids already used in this session (continue rounds). */
   excludeIds?: string[];
+  /** Drop items unusable in this interface language (e.g. RU prompts). */
+  interfaceLanguage?: InterfaceLanguage;
 };
 
 async function loadRankedCandidates(
   input: PickInput,
+  opts?: { relaxLevel?: boolean },
 ): Promise<RankedBankItem[]> {
   const pool = await getExercisePool(input.courseId);
-  let candidates = filterPoolByTypeLevel(pool, input.type, input.level);
+  const allowed =
+    input.allowedChapterSlugs && input.allowedChapterSlugs.length > 0
+      ? new Set(input.allowedChapterSlugs)
+      : null;
+
+  const inAllowed = (ex: { chapterSlug: string }) =>
+    !allowed || allowed.has(ex.chapterSlug);
+
+  let candidates = input.mixed
+    ? filterPoolByLevel(pool, input.level)
+    : filterPoolByTypeLevel(pool, input.type, input.level);
+  candidates = candidates.filter(inAllowed);
+
+  if (opts?.relaxLevel) {
+    // Relax exercise *type* only — never the requested CEFR band.
+    // (Crossing levels made A1 journey users get A1 when they picked C1.)
+    const sameLevel = filterPoolByLevel(pool, input.level).filter(inAllowed);
+    if (sameLevel.length > candidates.length) candidates = sameLevel;
+  }
+
+  if (input.interfaceLanguage && input.interfaceLanguage !== "ru") {
+    const usable = candidates.filter((ex) =>
+      isExerciseUsableForLanguage(ex, input.interfaceLanguage!),
+    );
+    if (usable.length > 0) candidates = usable;
+  }
 
   if (candidates.length === 0) return [];
 
@@ -123,7 +180,7 @@ export async function pickStaticExercise(
   const picked = pickAdaptiveFromCandidates(ranked);
   const chosen = picked ?? ranked[0]?.exercise;
   if (!chosen) return null;
-  return { ...chosen, staticSource: true as const };
+  return prepareExerciseForSession({ ...chosen, staticSource: true as const });
 }
 
 /**
@@ -135,13 +192,18 @@ export async function pickStaticExercises(
 ): Promise<PooledExercise[]> {
   const count = Math.max(1, Math.min(20, input.count));
   let ranked = await loadRankedCandidates(input);
+  if (ranked.length < count) {
+    ranked = await loadRankedCandidates(input, { relaxLevel: true });
+  }
   const results: PooledExercise[] = [];
 
   for (let i = 0; i < count && ranked.length > 0; i++) {
     const picked = pickAdaptiveFromCandidates(ranked);
     const chosen = picked ?? ranked[0]?.exercise;
     if (!chosen) break;
-    results.push({ ...chosen, staticSource: true as const });
+    results.push(
+      prepareExerciseForSession({ ...chosen, staticSource: true as const }),
+    );
     ranked = ranked.filter((r) => r.exercise.id !== chosen.id);
   }
 
@@ -156,16 +218,10 @@ export function checkStaticExerciseAnswer(
   >,
   userAnswer: string,
 ): { correct: boolean; feedback: string } {
-  const norm = (s: string) =>
-    s.trim().toLowerCase().replace(/[¿?¡!.,]/g, "").replace(/\s+/g, " ");
-
-  const userNorm = norm(userAnswer);
-  const acceptable = [
+  const correct = answersMatch(userAnswer, [
     exercise.answer,
     ...(exercise.acceptableAnswers ?? []),
-  ].map(norm);
-
-  const correct = acceptable.includes(userNorm);
+  ]);
   return {
     correct,
     feedback: exercise.explanation,

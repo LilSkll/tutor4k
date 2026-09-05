@@ -16,6 +16,9 @@ import {
 import { getCourse } from "@/config/courses";
 import { isOffTopicForCourse } from "@/server/ai/prompts/domain-guard";
 import { getOffTopicRefusal } from "@/server/ai/prompts/refusals";
+import { scrubSpanishImperativoLeaks } from "@/server/ai/scrub-conjugation-leaks";
+import { scrubScriptLeaks } from "@/server/ai/scrub-script-leaks";
+import { getInterfaceLanguageName } from "@/server/ai/prompts/interface-language";
 
 // =====================================================================
 // AI Orchestrator
@@ -113,6 +116,7 @@ export async function generateAIResponse(
     retrievedContext,
     learnerContext,
     courseId = "spanish",
+    groundedToLesson = false,
   } = options;
 
   const resolvedLanguage: InterfaceLanguage =
@@ -154,6 +158,7 @@ export async function generateAIResponse(
     lastUserMessage &&
     isOffTopicForCourse(lastUserMessage.content, course.keywords, {
       priorAssistantContent: lastAssistantMessage?.content ?? null,
+      groundedToLesson,
     })
   ) {
     return {
@@ -200,7 +205,15 @@ export async function generateAIResponse(
 
   for (const provider of chain) {
     try {
-      return await callWithRetry(provider, providerOptions);
+      const result = await callWithRetry(provider, providerOptions);
+      let content = scrubScriptLeaks(result.content, resolvedLanguage);
+      if (courseId === "spanish") {
+        content = scrubSpanishImperativoLeaks(content);
+      }
+      return {
+        ...result,
+        content,
+      };
     } catch (err) {
       errors.push(`${provider.name}: ${(err as Error).message}`);
     }
@@ -220,6 +233,71 @@ export async function generateAIResponse(
   return {
     content: fallbackMessage,
     provider: chain[0].name,
+    model: "unavailable",
+  };
+}
+
+/**
+ * Call the provider chain with an explicit system prompt (Teacher Studio coach, etc.).
+ * Does not attach the student tutor course prompt or domain guard.
+ */
+export async function generateWithSystemPrompt(options: {
+  systemPrompt: string;
+  messages: AIMessage[];
+  temperature?: number;
+  maxTokens?: number;
+  interfaceLanguage?: InterfaceLanguage;
+}): Promise<AIResponse> {
+  const resolvedLanguage: InterfaceLanguage =
+    options.interfaceLanguage ?? "en";
+  const languageLock = `\n\nLANGUAGE LOCK: Write the entire reply in ${getInterfaceLanguageName(resolvedLanguage)}. Do not switch language.`;
+  const providerOptions: ProviderCallOptions = {
+    messages: options.messages,
+    temperature: options.temperature ?? 0.4,
+    maxTokens: options.maxTokens ?? 1200,
+    systemPrompt: `${options.systemPrompt}${languageLock}`,
+  };
+
+  const chain = buildProviderChain();
+  if (chain.length === 0) {
+    return {
+      content:
+        resolvedLanguage === "ru"
+          ? "⚠️ ИИ-сервис не настроен."
+          : resolvedLanguage === "es"
+            ? "⚠️ El servicio de IA no está configurado."
+            : resolvedLanguage === "de"
+              ? "⚠️ KI-Dienst ist nicht konfiguriert."
+              : "⚠️ AI service is not configured.",
+      provider: "groq",
+      model: "none",
+    };
+  }
+
+  const errors: string[] = [];
+  for (const provider of chain) {
+    try {
+      const result = await callWithRetry(provider, providerOptions);
+      return {
+        ...result,
+        content: scrubScriptLeaks(result.content, resolvedLanguage),
+      };
+    } catch (err) {
+      errors.push(`${provider.name}: ${(err as Error).message}`);
+    }
+  }
+
+  console.error("[orchestrator] custom system prompt failed:", errors);
+  return {
+    content:
+      resolvedLanguage === "ru"
+        ? "Не удалось сгенерировать анализ. Попробуйте позже."
+        : resolvedLanguage === "es"
+          ? "No se pudo generar el análisis. Inténtalo más tarde."
+          : resolvedLanguage === "de"
+            ? "Analyse konnte nicht erstellt werden. Bitte später erneut versuchen."
+            : "Could not generate the analysis. Please try again later.",
+    provider: chain[0]!.name,
     model: "unavailable",
   };
 }

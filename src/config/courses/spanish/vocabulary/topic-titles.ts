@@ -3,7 +3,7 @@ export const SPANISH_TOPIC_TITLES_EN: Record<string, string> = {
   "a1-familia": "The Family",
   "a1-comida": "Food and Drink",
   "a1-casa": "The Home and Furniture",
-  "a1-numeros-tiempo": "Numbers and Time",
+  "a1-numeros-tiempo": "Numbers, Days & Time",
   "a1-ciudad": "The City and Directions",
   "a1-colores": "Colors",
   "a1-cuerpo": "The Body and Health",

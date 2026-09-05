@@ -4,7 +4,21 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
 import { getFirstChapterSlugForLevel } from "@/config/chapters";
-import type { Goal, InterfaceLanguage, Level } from "@/types";
+import { resolvePostLoginPath } from "@/lib/roles";
+import { sessionNeedsMfa } from "@/lib/auth-mfa";
+import type { Goal, InterfaceLanguage, Level, UserRole } from "@/types";
+
+const UI_LANGS = new Set<InterfaceLanguage>(["ru", "en", "es", "de"]);
+
+function interfaceLanguageFromForm(formData: FormData): InterfaceLanguage {
+  const raw = String(formData.get("interfaceLanguage") ?? "")
+    .trim()
+    .slice(0, 2)
+    .toLowerCase();
+  return UI_LANGS.has(raw as InterfaceLanguage)
+    ? (raw as InterfaceLanguage)
+    : "ru";
+}
 
 // =====================================================================
 // Authentication server actions
@@ -74,7 +88,7 @@ function friendlyAuthError(errorOrMessage: unknown): string {
     return "Supabase пока шлёт письма только участникам команды. Подключите рабочий Custom SMTP — тогда сброс заработает для учеников.";
   }
   if (m.includes("redirect") && (m.includes("allow") || m.includes("not"))) {
-    return "Redirect URL не разрешён. В Supabase → Authentication → URL Configuration добавьте: https://ваш-домен/auth/callback";
+    return "Redirect URL не разрешён. В Supabase → Authentication → URL Configuration добавьте оба домена: …/auth/callback и …/auth/recovery (и для .com, и для vercel.app).";
   }
   if (m.includes("smtp") || m.includes("error sending") || m.includes("mail")) {
     return "Ошибка почтового сервера (SMTP). Проверьте логин, пароль приложения и порт в Custom SMTP.";
@@ -113,35 +127,74 @@ function friendlyAuthError(errorOrMessage: unknown): string {
 }
 
 async function appOrigin(): Promise<string> {
-  const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
-  if (fromEnv) return fromEnv;
+  // Prefer the host the user is actually on, so reset links land on the same
+  // deployment (vercel.app vs custom domain) and cookies match.
+  // Optional override for email links when one domain is unreachable:
+  // NEXT_PUBLIC_AUTH_EMAIL_ORIGIN=https://spanish-tutor-psi.vercel.app
+  const emailOverride = process.env.NEXT_PUBLIC_AUTH_EMAIL_ORIGIN?.replace(
+    /\/$/,
+    "",
+  );
+  if (emailOverride) return emailOverride;
+
+  const allowed = (process.env.NEXT_PUBLIC_AUTH_ORIGINS ?? "")
+    .split(",")
+    .map((s) => s.trim().replace(/\/$/, ""))
+    .filter(Boolean);
+
   try {
     const { headers } = await import("next/headers");
     const h = await headers();
-    const host = h.get("x-forwarded-host") ?? h.get("host");
+    const hostHeader = h.get("x-forwarded-host") ?? h.get("host");
+    const host = hostHeader?.split(",")[0]?.trim();
     if (host) {
-      const proto = h.get("x-forwarded-proto") ?? "https";
-      return `${proto}://${host}`;
+      const protoHeader = h.get("x-forwarded-proto") ?? "https";
+      const proto = protoHeader.split(",")[0]?.trim() || "https";
+      const origin = `${proto}://${host}`;
+      // If an allowlist is configured, only trust listed hosts for auth emails.
+      if (allowed.length === 0 || allowed.includes(origin)) {
+        return origin;
+      }
     }
   } catch {
     // ignore
   }
+  if (allowed[0]) return allowed[0];
+  const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
+  if (fromEnv) return fromEnv;
   return "http://localhost:3000";
 }
 
 export async function signInWithEmail(formData: FormData) {
   const email = String(formData.get("email") ?? "");
   const password = String(formData.get("password") ?? "");
-  const redirectPath = String(formData.get("redirect") ?? "/dashboard");
+  const redirectPath = String(formData.get("redirect") ?? "");
 
   const supabase = await createSupabaseServerClient();
-  const { error } = await supabase.auth.signInWithPassword({ email, password });
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
 
   if (error) {
     redirect(`/login?error=${encodeURIComponent(friendlyAuthError(error))}`);
   }
 
-  redirect(redirectPath);
+  let role: UserRole = "student";
+  if (data.user) {
+    const { data: profile } = await supabase
+      .from("profiles")
+      .select("role")
+      .eq("id", data.user.id)
+      .maybeSingle();
+    role = (profile?.role as UserRole | undefined) ?? "student";
+  }
+
+  if (await sessionNeedsMfa(supabase)) {
+    redirect("/auth/mfa");
+  }
+
+  redirect(resolvePostLoginPath(role, redirectPath || null));
 }
 
 export async function signUpWithEmail(formData: FormData) {
@@ -151,6 +204,9 @@ export async function signUpWithEmail(formData: FormData) {
   const acceptTerms = formData.get("acceptTerms") === "on";
   const acceptPrivacy = formData.get("acceptPrivacy") === "on";
   const marketingConsent = formData.get("marketingConsent") === "on";
+  const rawRole = String(formData.get("role") ?? "student").toLowerCase();
+  const role: UserRole = rawRole === "teacher" ? "teacher" : "student";
+  const teacherConfirm = formData.get("teacherConfirm") === "on";
 
   if (!acceptTerms || !acceptPrivacy) {
     redirect(
@@ -158,14 +214,29 @@ export async function signUpWithEmail(formData: FormData) {
     );
   }
 
+  if (role === "teacher" && !teacherConfirm) {
+    redirect(
+      `/signup?error=${encodeURIComponent(
+        "Чтобы зарегистрироваться как преподаватель, подтвердите, что понимаете назначение Teacher Studio.",
+      )}`,
+    );
+  }
+
   const now = new Date().toISOString();
   const supabase = await createSupabaseServerClient();
+  const origin = await appOrigin();
+  // Confirmation link must hit /auth/callback so we exchange the code and
+  // land in the app — not the marketing Site URL ("/") with no instructions.
+  const postConfirmPath =
+    role === "teacher" ? "/teacher/dashboard" : "/dashboard";
   const { data, error } = await supabase.auth.signUp({
     email,
     password,
     options: {
+      emailRedirectTo: `${origin}/auth/callback?next=${encodeURIComponent(postConfirmPath)}`,
       data: {
         name,
+        role,
         terms_accepted_at: now,
         privacy_accepted_at: now,
         marketing_consent: marketingConsent,
@@ -178,21 +249,43 @@ export async function signUpWithEmail(formData: FormData) {
     redirect(`/signup?error=${encodeURIComponent(friendlyAuthError(error))}`);
   }
 
-  // If session is returned (email confirmation disabled), persist consent on profile.
+  // Persist role + consent if session is returned (email confirmation disabled).
+  // Trigger also sets role from metadata when signup-role-trigger.sql is applied.
   if (data.user) {
-    await supabase
+    const { error: profileErr } = await supabase
       .from("profiles")
       .update({
+        role,
+        ...(role === "teacher" ? { onboarded: true } : {}),
         terms_accepted_at: now,
         privacy_accepted_at: now,
         marketing_consent: marketingConsent,
         marketing_consent_at: marketingConsent ? now : null,
       })
       .eq("id", data.user.id);
+    if (profileErr) {
+      console.error("signup profile update failed", profileErr.message);
+      if (data.session) {
+        redirect(
+          `/signup?error=${encodeURIComponent(
+            "Аккаунт создан, но роль не сохранилась. Войдите и напишите в поддержку.",
+          )}`,
+        );
+      }
+    }
   }
 
-  // Email confirmation may be required — redirect to login with notice.
-  redirect("/login?notice=check-email");
+  if (data.session && data.user) {
+    redirect(resolvePostLoginPath(role, null));
+  }
+
+  redirect(
+    `/login?notice=${encodeURIComponent(
+      role === "teacher"
+        ? "check-email-teacher"
+        : "check-email",
+    )}&lang=${encodeURIComponent(interfaceLanguageFromForm(formData))}`,
+  );
 }
 
 /** Send a password-reset email (Supabase Auth). */
@@ -206,10 +299,11 @@ export async function requestPasswordReset(formData: FormData) {
 
   const supabase = await createSupabaseServerClient();
   const origin = await appOrigin();
-  // Keep redirectTo free of query params — Supabase allowlist matches path exactly
-  // unless you add a wildcard. Callback always sends recovery sessions to reset form.
+  // Dedicated recovery endpoint — always opens the new-password form
+  // (teachers must not be redirected to Teacher Studio first).
+  // Add `{origin}/auth/recovery` to Supabase Redirect URLs allowlist.
   const { error } = await supabase.auth.resetPasswordForEmail(email, {
-    redirectTo: `${origin}/auth/callback`,
+    redirectTo: `${origin}/auth/recovery`,
   });
 
   if (error) {
@@ -256,6 +350,19 @@ export async function updatePassword(formData: FormData) {
     );
   }
 
+  // Block logged-in users who open /auth/reset-password without a recovery flow.
+  const { hasRecoveryCookie, clearRecoveryCookie, sessionLooksLikeRecovery } =
+    await import("@/lib/auth-recovery");
+  const { data: sessionData } = await supabase.auth.getSession();
+  const allowed =
+    (await hasRecoveryCookie()) ||
+    sessionLooksLikeRecovery(sessionData.session);
+  if (!allowed) {
+    redirect(
+      `/login?error=${encodeURIComponent("Смена пароля только по ссылке из письма или через Настройки.")}`,
+    );
+  }
+
   const { error } = await supabase.auth.updateUser({ password });
   if (error) {
     redirect(
@@ -263,7 +370,69 @@ export async function updatePassword(formData: FormData) {
     );
   }
 
+  await clearRecoveryCookie();
+  // End recovery session so role-based home redirects don't skip the login screen.
+  await supabase.auth.signOut();
   redirect("/login?notice=password-updated");
+}
+
+/**
+ * Change password while signed in (Settings / Teacher Studio).
+ * Verifies the current password first.
+ */
+export async function changePasswordLoggedIn(formData: FormData) {
+  const currentPassword = String(formData.get("currentPassword") ?? "");
+  const password = String(formData.get("password") ?? "");
+  const confirm = String(formData.get("confirm") ?? "");
+  const returnTo = String(formData.get("returnTo") ?? "/settings");
+
+  const safeReturn =
+    returnTo.startsWith("/") && !returnTo.startsWith("//")
+      ? returnTo
+      : "/settings";
+
+  if (password.length < 6) {
+    redirect(
+      `${safeReturn}?pwdError=${encodeURIComponent("Пароль слишком короткий. Минимум 6 символов.")}`,
+    );
+  }
+  if (password !== confirm) {
+    redirect(
+      `${safeReturn}?pwdError=${encodeURIComponent("Пароли не совпадают.")}`,
+    );
+  }
+  if (!currentPassword) {
+    redirect(
+      `${safeReturn}?pwdError=${encodeURIComponent("Введите текущий пароль.")}`,
+    );
+  }
+
+  const supabase = await createSupabaseServerClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user?.email) {
+    redirect("/login");
+  }
+
+  const { error: reauthError } = await supabase.auth.signInWithPassword({
+    email: user.email,
+    password: currentPassword,
+  });
+  if (reauthError) {
+    redirect(
+      `${safeReturn}?pwdError=${encodeURIComponent("Текущий пароль неверный.")}`,
+    );
+  }
+
+  const { error } = await supabase.auth.updateUser({ password });
+  if (error) {
+    redirect(
+      `${safeReturn}?pwdError=${encodeURIComponent(friendlyAuthError(error))}`,
+    );
+  }
+
+  redirect(`${safeReturn}?pwdNotice=${encodeURIComponent("password-changed")}`);
 }
 
 export async function signOut() {
@@ -309,9 +478,34 @@ export async function completeOnboarding(input: {
   }
 
   revalidatePath("/", "layout");
-  // Redirect to the first chapter matching the user's level.
-  // A B2 user starts at the B2 chapter, not A1.
-  const chapterSlug = getFirstChapterSlugForLevel(level);
+  const { data: profileRow } = await supabase
+    .from("profiles")
+    .select("active_course_id")
+    .eq("id", user.id)
+    .maybeSingle();
+  const courseId = (profileRow?.active_course_id as string) ?? "spanish";
+
+  // Credit prior CEFR bands so B2+ learners unlock the chosen band's first chapter.
+  if (level) {
+    const { creditPriorChaptersForLevel } = await import(
+      "@/server/actions/data"
+    );
+    await creditPriorChaptersForLevel(level, courseId).catch((err) => {
+      console.warn(
+        "[completeOnboarding] creditPriorChaptersForLevel:",
+        (err as Error).message,
+      );
+    });
+  }
+
+  const { getCurrentChapterSlug } = await import("@/server/actions/data");
+  const { getCourse } = await import("@/config/courses");
+  const unlockedSlug = await getCurrentChapterSlug(courseId);
+  const course = await getCourse(courseId);
+  const chapterSlug =
+    unlockedSlug ??
+    course.getChapters()[0]?.slug ??
+    getFirstChapterSlugForLevel(level);
   redirect(`/chapters/${chapterSlug}`);
 }
 
@@ -353,6 +547,27 @@ export async function updateProfile(input: {
     .eq("id", user.id);
 
   if (error) return { error: error.message };
+
+  if (input.level !== undefined && input.level !== "A1") {
+    const { data: profileRow } = await supabase
+      .from("profiles")
+      .select("active_course_id")
+      .eq("id", user.id)
+      .maybeSingle();
+    const courseId =
+      (input.activeCourseId as string | undefined) ??
+      (profileRow?.active_course_id as string) ??
+      "spanish";
+    const { creditPriorChaptersForLevel } = await import(
+      "@/server/actions/data"
+    );
+    await creditPriorChaptersForLevel(input.level, courseId).catch((err) => {
+      console.warn(
+        "[updateProfile] creditPriorChaptersForLevel:",
+        (err as Error).message,
+      );
+    });
+  }
 
   revalidatePath("/", "layout");
   return { error: null };

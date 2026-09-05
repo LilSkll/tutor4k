@@ -6,6 +6,8 @@
 export type Level = "A1" | "A2" | "B1" | "B2" | "C1";
 /** Extended CEFR level including C2 for advanced vocabulary entries. */
 export type VocabLevel = Level | "C2";
+/** Grammar reference level — includes C2 for advanced style/register topics. */
+export type GrammarLevel = Level | "C2";
 
 /** Onboarding "I don't know my level" placeholder. */
 export type LevelOrUnknown = Level | "UNKNOWN";
@@ -21,6 +23,9 @@ export type Goal =
 
 /** Interface language for the app. */
 export type InterfaceLanguage = "ru" | "en" | "es" | "de";
+
+/** Platform role — Student Journey vs Teacher Studio (see docs/adr). */
+export type UserRole = "student" | "teacher" | "school_admin";
 
 /** Conversation message role. */
 export type MessageRole = "user" | "assistant" | "system";
@@ -55,8 +60,12 @@ export interface Profile {
   streak: number;
   last_active_date: string | null;
   active_course_id: string | null;
+  /** student | teacher | school_admin — missing/null treated as student. */
+  role?: UserRole | null;
   /** Persistent Student Learning Profile store (JSONB). */
   learning_profile?: import("@/types/learning-profile").StudentLearningProfileStore | null;
+  /** Journey rewards (easter eggs, badges, level/course certs) keyed by courseId. */
+  journey_finds?: import("@/config/journey/easter-eggs").JourneyFindsStore | null;
   terms_accepted_at?: string | null;
   privacy_accepted_at?: string | null;
   marketing_consent?: boolean;
@@ -117,6 +126,11 @@ export interface Exercise {
   type: ExerciseType;
   level: Level;
   question: string;
+  /**
+   * Interface-language gloss of the question (shown in parentheses).
+   * Keyed by UI language, not target language.
+   */
+  questionTranslations?: Partial<Record<InterfaceLanguage, string>>;
   /** Translation hint / instruction (for translation exercises). */
   instruction?: string;
   /** Options for multiple choice / sentence building. */
@@ -177,6 +191,8 @@ export interface AIGenerateOptions {
   courseId?: string | null;
   /** Markdown TeacherContext block from buildTeacherContext(). */
   learnerContext?: string | null;
+  /** Lesson question about the current chapter — allow unless hard-blocked. */
+  groundedToLesson?: boolean;
 }
 
 // ----- Grammar reference ---------------------------------------------
@@ -185,11 +201,13 @@ export interface GrammarTopic {
   slug: string;
   title: string;
   titleEs: string;
-  level: Level;
+  level: GrammarLevel;
   category: string;
   summary: string;
   /** Markdown reference content. */
   content: string;
+  /** Exam tag (e.g. "DELE") — topic shows up in the exam filter group. */
+  exam?: string;
 }
 
 // ----- Streak / daily stats ------------------------------------------
@@ -207,7 +225,8 @@ export interface Chapter {
   number: number;          // 1, 2, 3...
   title: string;           // «Пробуждение»
   titleEs: string;         // «El Despertar»
-  level: Level;
+  /** Chapter CEFR band; C2 chapters exist even though user Level caps at C1. */
+  level: GrammarLevel;
   location: string;        // «Академия» (для карты путешествия)
   icon: string;            // emoji
   summary: string;
@@ -359,7 +378,22 @@ export interface StaticExercise {
   id: string;
   type: ExerciseType;
   question: string;
+  /**
+   * Interface-language gloss of the question (shown in parentheses).
+   * Prefer populated maps in bank data; curated fallback via exercise-glosses.
+   */
+  questionTranslations?: Partial<Record<InterfaceLanguage, string>>;
   instruction: string;
+  /**
+   * Stable key for a localized instruction (por/para, reported speech, etc.).
+   * Preferred over authored RU instruction when localizing for non-RU UI.
+   */
+  instructionKey?: string;
+  /**
+   * When type is error_correction: grammar fix vs rewrite (estilo indirecto).
+   * If omitted, heuristics may still detect reported-speech rewrites.
+   */
+  rewriteMode?: "grammar_fix" | "reported_speech";
   options?: string[];
   answer: string;
   acceptableAnswers?: string[];
