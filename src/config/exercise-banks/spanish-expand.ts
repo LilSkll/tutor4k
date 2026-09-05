@@ -31,5 +31,8 @@ export function expandSpanishChapterBank(
           error_correction: THICK_TR_EC_TARGET,
         }
       : undefined;
-  return expandChapterBank(curated, PACKS[chapterSlug] ?? {}, typeTargets);
+  // per-type: advanced packs are SB-heavy; shared stems were starving MC/FB/TR.
+  return expandChapterBank(curated, PACKS[chapterSlug] ?? {}, typeTargets, {
+    contentScope: "per-type",
+  });
 }

@@ -1,6 +1,7 @@
 import type { StaticExercise } from "@/types";
 import { withExerciseIds } from "@/lib/exercise-bank";
 import { expandEnglishChapterBank } from "@/config/exercise-banks/english-expand";
+import { attachEnglishTrL1 } from "@/config/exercise-translation-prompts";
 import { ENGLISH_CURRICULUM_CHAPTER_EXERCISES } from "./chapter-exercises-curriculum";
 import { ENGLISH_CURATED_SUPPLEMENTS } from "@/config/exercise-seeds/english-curated-supplements";
 import { getEngChapter } from "./chapters";
@@ -233,7 +234,9 @@ export function getEnglishExercises(chapterSlug: string): StaticExercise[] {
       chapterSlug
     ] ?? []),
   ];
-  const expanded = expandEnglishChapterBank(chapterSlug, curated);
+  const expanded = expandEnglishChapterBank(chapterSlug, curated).map(
+    attachEnglishTrL1,
+  );
   const chapter = getEngChapter(chapterSlug);
   const allowed = chapter?.exerciseTypes;
   const filtered =

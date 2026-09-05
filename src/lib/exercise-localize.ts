@@ -355,7 +355,11 @@ export function isExerciseUsableForLanguage(
       if (interfaceLanguage === "en") return true;
       const localized =
         exercise.questionTranslations?.[interfaceLanguage]?.trim() ??
-        lookupTranslationPrompt(exercise.question, interfaceLanguage);
+        lookupTranslationPrompt(
+          exercise.question,
+          interfaceLanguage,
+          exercise.answer,
+        );
       if (
         localized &&
         normalizeForCompare(localized) ===
@@ -367,7 +371,11 @@ export function isExerciseUsableForLanguage(
     }
     const localized =
       exercise.questionTranslations?.[interfaceLanguage]?.trim() ??
-      lookupTranslationPrompt(exercise.question, interfaceLanguage);
+      lookupTranslationPrompt(
+        exercise.question,
+        interfaceLanguage,
+        exercise.answer,
+      );
     return Boolean(localized);
   }
 
@@ -405,7 +413,11 @@ export function localizeTranslationQuestion(
     return exercise.question;
   }
 
-  const mapped = lookupTranslationPrompt(exercise.question, interfaceLanguage);
+  const mapped = lookupTranslationPrompt(
+    exercise.question,
+    interfaceLanguage,
+    answer,
+  );
   if (!mapped) return exercise.question;
   if (
     courseId === "english" &&

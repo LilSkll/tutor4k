@@ -14,7 +14,8 @@ import type { CourseKeywords } from "@/types";
 
 /** Language-learning intent. */
 const LEARNING_SIGNALS: string[] = [
-  // Ask / explain / translate / meaning
+  // Ask / explain / translate / meaning — keep specific; bare "what is"
+  // alone is NOT enough (see WEAK_ASK_SIGNALS).
   "объясни",
   "обьясни",
   "расскажи",
@@ -24,10 +25,8 @@ const LEARNING_SIGNALS: string[] = [
   "explica",
   "explícame",
   "tell me about",
-  "what is",
-  "what's",
-  "что такое",
-  "что это",
+  "что значит",
+  "что означает",
   "как сказать",
   "как будет",
   "как перевести",
@@ -37,8 +36,6 @@ const LEARNING_SIGNALS: string[] = [
   "как спряг",
   "как использ",
   "когда использ",
-  "что значит",
-  "что означает",
   "перевед",
   "translate",
   "translation",
@@ -51,6 +48,7 @@ const LEARNING_SIGNALS: string[] = [
   "how to pronounce",
   "what does",
   "what is the difference",
+  "what's the difference",
   "разница между",
   "difference between",
   "means in",
@@ -158,6 +156,41 @@ const LEARNING_SIGNALS: string[] = [
   "исключен",
   "наклонен",
   "mood",
+];
+
+/**
+ * Ask-shell phrases that alone do not prove language intent
+ * (e.g. "What is the capital of France?").
+ * Allowed only when paired with a domain anchor.
+ */
+const WEAK_ASK_SIGNALS: string[] = [
+  "what is",
+  "what's",
+  "что такое",
+  "что это",
+  "was ist",
+  "qué es",
+  "que es",
+];
+
+/** Geography / trivia that must not ride on weak ask shells. */
+const GENERIC_TRIVIA_OFF: string[] = [
+  "capital of",
+  "capital de",
+  "столиц",
+  "population of",
+  "населен",
+  "who invented",
+  "who discovered",
+  "когда изобрел",
+  "president of",
+  "премьер",
+  "prime minister",
+  "how tall is",
+  "how far is",
+  "distance between",
+  "weather in",
+  "прогноз погод",
 ];
 
 /**
@@ -350,7 +383,27 @@ function isGreeting(q: string, keywords: CourseKeywords): boolean {
   );
 }
 
+function hasDomainAnchor(q: string, keywords: CourseKeywords): boolean {
+  return (
+    includesAny(q, COURSE_SIGNALS) ||
+    includesAny(q, CULTURE_SIGNALS) ||
+    includesAny(q, keywords.onTopic ?? []) ||
+    isGrammarTermQuery(q) ||
+    // Strong learning signals excluding weak ask shells (already separate).
+    includesAny(
+      q,
+      LEARNING_SIGNALS.filter(
+        (s) => !WEAK_ASK_SIGNALS.some((w) => s === w || s.startsWith(`${w} `)),
+      ),
+    )
+  );
+}
+
 function isAllowedTopic(q: string, keywords: CourseKeywords): boolean {
+  // Weak ask shells ("what is…") need a language/course/culture anchor.
+  if (includesAny(q, WEAK_ASK_SIGNALS)) {
+    return hasDomainAnchor(q, keywords);
+  }
   return (
     includesAny(q, LEARNING_SIGNALS) ||
     includesAny(q, COURSE_SIGNALS) ||
@@ -431,6 +484,11 @@ export function isOffTopicForCourse(
 
   // Explicit course offTopic keywords (e.g. other languages on English course).
   if (includesAny(q, keywords.offTopic ?? [])) return true;
+
+  // Generic trivia that matches weak ask shells ("what is the capital…").
+  if (includesAny(q, GENERIC_TRIVIA_OFF) && !hasDomainAnchor(q, keywords)) {
+    return true;
+  }
 
   if (isGreeting(q, keywords)) return false;
 

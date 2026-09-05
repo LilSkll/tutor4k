@@ -2682,5 +2682,121 @@
   "Он, возможно, не совсем подходит для этой роли.": {
     "es": "Quizás no sea el adecuado para el papel.",
     "de": "Er ist möglicherweise nicht ganz der Richtige für die Rolle."
+  },
+  "Он врач.": {
+    "es": "Él es médico.",
+    "de": "Er ist Arzt."
+  },
+  "Она работает каждый день.": {
+    "es": "Ella trabaja todos los días.",
+    "de": "Sie arbeitet jeden Tag."
+  },
+  "Есть ли здесь аптека?": {
+    "es": "¿Hay una farmacia cerca?",
+    "de": "Gibt es hier eine Apotheke?"
+  },
+  "Смотри на облака — скоро пойдёт дождь.": {
+    "es": "Mira las nubes: pronto lloverá.",
+    "de": "Schauen Sie sich die Wolken an – es wird bald regnen."
+  },
+  "Смотри — машина собирается повернуть.": {
+    "es": "Mira, el auto está a punto de girar.",
+    "de": "Schauen Sie, das Auto dreht sich gleich um."
+  },
+  "Она не может быть дома — машины нет.": {
+    "es": "No puede estar en casa, no hay coche.",
+    "de": "Sie kann nicht zu Hause sein, es gibt kein Auto."
+  },
+  "Я устал — я бегал.": {
+    "es": "Estaba cansado, estaba corriendo.",
+    "de": "Ich war müde – ich rannte."
+  },
+  "Ты придёшь? — Надеюсь.": {
+    "es": "¿Vendrás? - Esperanza.",
+    "de": "Kommst du? - Hoffnung."
+  },
+  "Пойдёт дождь? — Надеюсь, нет.": {
+    "es": "¿Lloverá? - Espero que no.",
+    "de": "Wird es regnen? - Ich hoffe nicht."
+  },
+  "Я люблю джаз. — И я.": {
+    "es": "Me encanta el jazz. - Y yo.",
+    "de": "Ich liebe Jazz. - Und ich."
+  },
+  "Я не умею плавать. — И я не умею.": {
+    "es": "No sé nadar. - Y no puedo.",
+    "de": "Ich kann nicht schwimmen. - Und ich kann nicht."
+  },
+  "Какой торт ты хочешь? — Шоколадный.": {
+    "es": "¿Qué tipo de pastel quieres? - Chocolate.",
+    "de": "Was für einen Kuchen möchtest du? - Schokolade."
+  },
+  "Ты придёшь? — Надеюсь, да.": {
+    "es": "¿Vendrás? - Eso espero.",
+    "de": "Kommst du? - Ich hoffe es."
+  },
+  "Я тоже был в Перу.": {
+    "es": "Yo también estuve en Perú.",
+    "de": "Ich war auch in Peru."
+  },
+  "Я не люблю оливки. — И я.": {
+    "es": "No me gustan las aceitunas. - Y yo.",
+    "de": "Ich mag keine Oliven. - Und ich."
+  },
+  "Хочешь чай или кофе? — Чай, пожалуйста.": {
+    "es": "¿Quieres té o café? - Quisiera un té, por favor.",
+    "de": "Möchten Sie Tee oder Kaffee? - Ich hätte gerne einen Tee bitte."
+  },
+  "Кто-нибудь звонил? — Да, звонил.": {
+    "es": "¿Alguien llamó? - Sí, llamé.",
+    "de": "Hat jemand angerufen? - Ja, ich habe angerufen."
+  },
+  "Ты видел этот фильм? — Нет, не видел.": {
+    "es": "¿Has visto esta película? - No, no lo vi.",
+    "de": "Hast du diesen Film gesehen? - Nein, ich habe es nicht gesehen."
+  },
+  "Ты хочешь красное или белое вино? — Красное.": {
+    "es": "¿Quieres vino tinto o blanco? - Rojo.",
+    "de": "Möchten Sie Rot- oder Weißwein? - Rot."
+  },
+  "Ты был там? — Нет.": {
+    "es": "¿Has estado allí? - No.",
+    "de": "Warst du dort? - NEIN."
+  },
+  "Можешь помочь? — Конечно.": {
+    "es": "¿Puedes ayudar? - Ciertamente.",
+    "de": "Können Sie helfen? - Sicherlich."
+  },
+  "Ты тоже был там? — Да, был.": {
+    "es": "¿Estabas ahí también? - Sí, lo era.",
+    "de": "Warst du auch dabei? - Ja, das war ich."
+  },
+  "Кто хочет чай? — Я.": {
+    "es": "¿Quién quiere té? - I.",
+    "de": "Wer will Tee? - ICH."
+  },
+  "Ты видел фильм? — Нет, не видел.": {
+    "es": "¿Has visto la película? - No, no lo vi.",
+    "de": "Hast du den Film gesehen? - Nein, ich habe es nicht gesehen."
+  },
+  "Передай соль, пожалуйста. — Вот.": {
+    "es": "Pasa la sal, por favor. - Aquí.",
+    "de": "Geben Sie mir bitte das Salz. - Hier."
+  },
+  "Ты придёшь? — Боюсь, что нет.": {
+    "es": "¿Vendrás? - Me temo que no.",
+    "de": "Kommst du? - Ich fürchte nein."
+  },
+  "Можешь помочь? — Буду рад.": {
+    "es": "¿Puedes ayudar? - Me alegraré.",
+    "de": "Können Sie helfen? - Ich werde mich freuen."
+  },
+  "Она говорит по-французски. — И её брат тоже.": {
+    "es": "Ella habla francés. - Y su hermano también.",
+    "de": "Sie spricht Französisch. - Und ihr Bruder auch."
+  },
+  "Я тоже не люблю это.": {
+    "es": "A mí tampoco me gusta.",
+    "de": "Mir gefällt es auch nicht."
   }
 }

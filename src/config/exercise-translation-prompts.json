@@ -2,7 +2,7 @@
   "Я студент.": {
     "en": "I am a student.",
     "de": "Ich bin Student.",
-    "es": "I am a student."
+    "es": "Soy estudiante."
   },
   "Она устала.": {
     "en": "She is tired.",
@@ -17,7 +17,7 @@
   "Книга на столе.": {
     "en": "The book is on the table.",
     "de": "Das Buch ist auf dem Tisch.",
-    "es": "The book is on the table."
+    "es": "El libro está sobre la mesa."
   },
   "Ты мой друг.": {
     "en": "You are my friend.",
@@ -57,7 +57,7 @@
   "Он врач.": {
     "en": "He is a doctor.",
     "de": "Er ist Arzt.",
-    "es": "He is a doctor."
+    "es": "Él es médico."
   },
   "Суп холодный.": {
     "en": "The soup is cold.",
@@ -162,7 +162,7 @@
   "Есть проблема.": {
     "en": "There is a problem.",
     "de": "Es gibt ein Problem.",
-    "es": "There is a problem."
+    "es": "Hay un problema."
   },
   "Вода холодная.": {
     "en": "The water is cold.",
@@ -432,12 +432,12 @@
   "Как тебя зовут?": {
     "en": "What is your name?",
     "de": "Wie heißt du?",
-    "es": "What is your name?"
+    "es": "¿Cómo te llamas?"
   },
   "Где ты живёшь?": {
     "en": "Where do you live?",
     "de": "Wo wohnst du?",
-    "es": "Where do you live?"
+    "es": "¿Dónde vive?"
   },
   "Кто твой учитель?": {
     "en": "Who is your teacher?",
@@ -452,7 +452,7 @@
   "Который час?": {
     "en": "What time is it?",
     "de": "Wie spät ist es?",
-    "es": "What time is it?"
+    "es": "¿Qué hora es?"
   },
   "Когда идёшь в кино?": {
     "en": "When are you going to the cinema?",
@@ -467,12 +467,12 @@
   "Сколько тебе лет?": {
     "en": "How old are you?",
     "de": "Wie alt bist du?",
-    "es": "How old are you?"
+    "es": "¿Cuántos años tiene?"
   },
   "Откуда ты?": {
     "en": "Where are you from?",
     "de": "Woher kommst du?",
-    "es": "Where are you from?"
+    "es": "¿De dónde eres?"
   },
   "Как дела?": {
     "en": "How are you?",
@@ -782,7 +782,7 @@
   "Я из России.": {
     "en": "I am from Russia.",
     "de": "Ich komme aus Russland.",
-    "es": "I am from Russia."
+    "es": "Soy de Rusia."
   },
   "Они работают в офисе.": {
     "en": "They work in an office.",
@@ -1447,7 +1447,7 @@
   "Ты успеешь?": {
     "en": "Will you make it in time?",
     "de": "Schaffst du es noch?",
-    "es": "Will you make it in time?"
+    "es": "¿Llegarás a tiempo?"
   },
   "Начало речи": {
     "en": "Beginning of the speech",
@@ -1472,7 +1472,7 @@
   "Окна открыты.": {
     "en": "The windows are open.",
     "de": "Die Fenster sind offen.",
-    "es": "The windows are open."
+    "es": "Las ventanas están abiertas."
   },
   "Выделяем лицо": {
     "en": "Highlighting the face",
@@ -1487,7 +1487,7 @@
   "Проблема решена.": {
     "en": "Problem solved.",
     "de": "Problem gelöst.",
-    "es": "Problem solved."
+    "es": "Problema resuelto."
   },
   "Она знает ответ.": {
     "en": "She knows the answer.",
@@ -1512,12 +1512,12 @@
   "Он потерял ключи.": {
     "en": "He lost his keys.",
     "de": "Er hat seine Schlüssel verloren.",
-    "es": "He lost his keys."
+    "es": "Perdió sus llaves."
   },
   "Это будет сложно.": {
     "en": "This will be difficult.",
     "de": "Das wird schwierig sein.",
-    "es": "This will be difficult."
+    "es": "Será difícil."
   },
   "Я уже ел сегодня.": {
     "en": "I have already eaten today.",
@@ -1847,7 +1847,7 @@
   "Мы только что приехали.": {
     "en": "We just arrived.",
     "de": "Wir sind gerade angekommen.",
-    "es": "We just arrived."
+    "es": "Acabamos de llegar."
   },
   "Ты когда-нибудь пробовал паэлью?": {
     "en": "Have you ever tried paella?",
@@ -2242,12 +2242,12 @@
   "Письмо отправлено вчера.": {
     "en": "The letter was sent yesterday.",
     "de": "Der Brief wurde gestern abgeschickt.",
-    "es": "The letter was sent yesterday."
+    "es": "La carta fue enviada ayer."
   },
   "Решение принято правительством.": {
     "en": "The decision was made by the government.",
     "de": "Die Entscheidung wurde von der Regierung getroffen.",
-    "es": "The decision was made by the government."
+    "es": "La decisión fue tomada por el gobierno."
   },
   "Язык говорят в двадцати странах.": {
     "en": "The language is spoken in twenty countries.",
@@ -2257,12 +2257,12 @@
   "Еда приготовлена мамой.": {
     "en": "The food was prepared by mom.",
     "de": "Das Essen wurde von der Mama zubereitet.",
-    "es": "The food was prepared by mom."
+    "es": "La comida la prepara mamá."
   },
   "Закон принят в прошлом году.": {
     "en": "The law was passed last year.",
     "de": "Das Gesetz wurde letztes Jahr verabschiedet.",
-    "es": "The law was passed last year."
+    "es": "La ley fue aprobada el año pasado."
   },
   "Пассив в прошедшем": {
     "en": "Passive in the past",
@@ -2467,12 +2467,12 @@
   "Почему ты опоздал?": {
     "en": "Why were you late?",
     "de": "Warum warst du zu spät?",
-    "es": "Why were you late?"
+    "es": "¿Por qué llegas tarde?"
   },
   "Когда начинается фильм?": {
     "en": "When does the movie start?",
     "de": "Wann beginnt der Film?",
-    "es": "When does the movie start?"
+    "es": "¿Cuándo empieza la película?"
   },
   "С кем ты идёшь?": {
     "en": "Who are you going with?",
@@ -2487,7 +2487,7 @@
   "Сколько это стоит?": {
     "en": "How much does this cost?",
     "de": "Wie viel kostet das?",
-    "es": "How much does this cost?"
+    "es": "¿Cuánto cuesta?"
   },
   "Зачем ты здесь?": {
     "en": "Why are you here?",
@@ -2527,7 +2527,7 @@
   "Он бегает быстрее меня.": {
     "en": "He runs faster than me.",
     "de": "Er läuft schneller als ich.",
-    "es": "He runs faster than me."
+    "es": "Corre más rápido que yo."
   },
   "У неё меньше проблем, чем у меня.": {
     "en": "She has fewer problems than me.",
@@ -2567,7 +2567,7 @@
   "Она приедет в пятницу.": {
     "en": "She will arrive on Friday.",
     "de": "Sie wird am Freitag ankommen.",
-    "es": "She will arrive on Friday."
+    "es": "Llegará el viernes."
   },
   "Мы будем жить в Барселоне.": {
     "en": "We will live in Barcelona.",
@@ -3057,7 +3057,7 @@
   "Он сказал, что уже поел.": {
     "en": "He said he had already eaten.",
     "de": "Er sagte, dass er schon gegessen hat.",
-    "es": "He said he had already eaten."
+    "es": "Dijo que ya había comido."
   },
   "Он отметил, что опоздал.": {
     "en": "He noted that he was late.",
@@ -3157,7 +3157,7 @@
   "То, что важно, — честность.": {
     "en": "What matters is honesty.",
     "de": "Was zählt, ist Ehrlichkeit.",
-    "es": "What matters is honesty."
+    "es": "Lo importante es la honestidad."
   },
   "То, что нам нужно, — время.": {
     "en": "What we need is time.",
@@ -3167,7 +3167,7 @@
   "Именно вчера это произошло.": {
     "en": "It happened exactly yesterday.",
     "de": "Es geschah genau gestern.",
-    "es": "It happened exactly yesterday."
+    "es": "Esto sucedió ayer mismo."
   },
   "Они, должно быть, опоздают.": {
     "en": "They will probably be late.",
@@ -3242,12 +3242,12 @@
   "Именно здесь началась история.": {
     "en": "This is exactly where the story began.",
     "de": "Genau hier begann die Geschichte.",
-    "es": "This is exactly where the story began."
+    "es": "Aquí es donde comenzó la historia."
   },
   "Именно из-за тебя мы опоздали.": {
     "en": "It's exactly because of you that we're late.",
     "de": "Genau wegen dir sind wir zu spät.",
-    "es": "It's exactly because of you that we're late."
+    "es": "Es por tu culpa que llegamos tarde."
   },
   "Их, говорят, было человек сто.": {
     "en": "They say there were about a hundred of them.",
@@ -3462,7 +3462,7 @@
   "То, что удивило всех, — его молчание.": {
     "en": "What surprised everyone was his silence.",
     "de": "Was alle überraschte, war seine Stille.",
-    "es": "What surprised everyone was his silence."
+    "es": "Lo que sorprendió a todos fue su silencio."
   },
   "Президент, по сообщениям, согласился.": {
     "en": "The president reportedly agreed.",
@@ -3687,7 +3687,7 @@
   "То, что она сделала, — уволилась.": {
     "en": "What she did was quit.",
     "de": "Was sie tat, war zu kündigen.",
-    "es": "What she did was quit."
+    "es": "Lo que hizo fue renunciar."
   },
   "Именно из-за дождя мы отменили.": {
     "en": "It was because of the rain that we cancelled.",
