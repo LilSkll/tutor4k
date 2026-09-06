@@ -6,6 +6,7 @@ import { createSupabaseServerClient } from "@/lib/supabase-server";
 import { getFirstChapterSlugForLevel } from "@/config/chapters";
 import { resolvePostLoginPath } from "@/lib/roles";
 import { sessionNeedsMfa } from "@/lib/auth-mfa";
+import { ensureProfileRoleMatchesMetadata } from "@/server/auth/signup-role";
 import type { Goal, InterfaceLanguage, Level, UserRole } from "@/types";
 
 const UI_LANGS = new Set<InterfaceLanguage>(["ru", "en", "es", "de"]);
@@ -182,12 +183,9 @@ export async function signInWithEmail(formData: FormData) {
 
   let role: UserRole = "student";
   if (data.user) {
-    const { data: profile } = await supabase
-      .from("profiles")
-      .select("role")
-      .eq("id", data.user.id)
-      .maybeSingle();
-    role = (profile?.role as UserRole | undefined) ?? "student";
+    role = await ensureProfileRoleMatchesMetadata(data.user, {
+      userClient: supabase,
+    });
   }
 
   if (await sessionNeedsMfa(supabase)) {
@@ -249,26 +247,28 @@ export async function signUpWithEmail(formData: FormData) {
     redirect(`/signup?error=${encodeURIComponent(friendlyAuthError(error))}`);
   }
 
-  // Persist role + consent if session is returned (email confirmation disabled).
-  // Trigger also sets role from metadata when signup-role-trigger.sql is applied.
+  // Persist role + consent. Prefer service-role: with email confirmation
+  // there is often no session yet, so a user-scoped update is blocked by RLS
+  // and teachers were left as students when the DB trigger omitted role.
   if (data.user) {
-    const { error: profileErr } = await supabase
-      .from("profiles")
-      .update({
-        role,
-        ...(role === "teacher" ? { onboarded: true } : {}),
-        terms_accepted_at: now,
-        privacy_accepted_at: now,
-        marketing_consent: marketingConsent,
-        marketing_consent_at: marketingConsent ? now : null,
-      })
-      .eq("id", data.user.id);
-    if (profileErr) {
-      console.error("signup profile update failed", profileErr.message);
+    const synced = await ensureProfileRoleMatchesMetadata(data.user, {
+      consent: {
+        termsAcceptedAt: now,
+        privacyAcceptedAt: now,
+        marketingConsent,
+        marketingConsentAt: marketingConsent ? now : null,
+      },
+      userClient: data.session ? supabase : undefined,
+    });
+    if (role === "teacher" && synced !== "teacher") {
+      console.error("signup profile teacher role sync failed", {
+        userId: data.user.id,
+        synced,
+      });
       if (data.session) {
         redirect(
           `/signup?error=${encodeURIComponent(
-            "Аккаунт создан, но роль не сохранилась. Войдите и напишите в поддержку.",
+            "Аккаунт создан, но роль преподавателя не сохранилась. Войдите и напишите в поддержку.",
           )}`,
         );
       }

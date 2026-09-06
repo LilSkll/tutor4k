@@ -13,6 +13,7 @@ import {
 } from "@/lib/oauth-intent";
 import { resolvePostLoginPath } from "@/lib/roles";
 import { sessionNeedsMfa } from "@/lib/auth-mfa";
+import { ensureProfileRoleMatchesMetadata } from "@/server/auth/signup-role";
 import type { UserRole } from "@/types";
 
 type CookieToSet = {
@@ -117,6 +118,16 @@ export async function GET(request: Request) {
         const now = new Date().toISOString();
         const signupRole = resolveOAuthSignupRole(oauthIntent);
         if (oauthIntent.acceptTerms && oauthIntent.acceptPrivacy) {
+          // Stamp chosen OAuth role into metadata so DB/app stay aligned.
+          await supabase.auth.updateUser({
+            data: {
+              role: signupRole,
+              terms_accepted_at: now,
+              privacy_accepted_at: now,
+              marketing_consent: oauthIntent.marketingConsent,
+              marketing_consent_at: oauthIntent.marketingConsent ? now : null,
+            },
+          });
           await supabase
             .from("profiles")
             .update({
@@ -131,13 +142,14 @@ export async function GET(request: Request) {
         }
       }
 
-      const { data: profile } = await supabase
-        .from("profiles")
-        .select("role")
-        .eq("id", user.id)
-        .maybeSingle();
-      role = ((profile as { role?: UserRole } | null)?.role ??
-        "student") as UserRole;
+      const {
+        data: { user: freshUser },
+      } = await supabase.auth.getUser();
+      // Email confirm / OAuth: heal student profiles when metadata says teacher
+      // (broken or outdated handle_new_user trigger is a common cause).
+      role = await ensureProfileRoleMatchesMetadata(freshUser ?? user, {
+        userClient: supabase,
+      });
     }
 
     const preferredNext =
@@ -174,13 +186,9 @@ export async function GET(request: Request) {
     } = await supabase.auth.getUser();
     let role: UserRole = "student";
     if (user) {
-      const { data: profile } = await supabase
-        .from("profiles")
-        .select("role")
-        .eq("id", user.id)
-        .maybeSingle();
-      role = ((profile as { role?: UserRole } | null)?.role ??
-        "student") as UserRole;
+      role = await ensureProfileRoleMatchesMetadata(user, {
+        userClient: supabase,
+      });
     }
 
     const preferredNext =

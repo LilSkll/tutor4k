@@ -2,6 +2,10 @@
 -- Signup role: handle_new_user reads role from auth metadata
 -- Run AFTER teacher-role-migration.sql (profiles.role must exist).
 -- Allowed self-serve values: student | teacher (never school_admin from signup).
+--
+-- IMPORTANT: Do NOT re-apply older handle_new_user snippets from
+-- schema.sql / fix-profiles-trigger.sql / legal-consent-migration.sql
+-- after this — they omit `role` and force every new account to student.
 -- =====================================================================
 
 CREATE OR REPLACE FUNCTION public.handle_new_user()
@@ -76,3 +80,13 @@ BEGIN
   RETURN NEW;
 END;
 $$;
+
+-- Heal existing teachers stuck as students (metadata says teacher).
+UPDATE public.profiles p
+SET
+  role = 'teacher',
+  onboarded = true
+FROM auth.users u
+WHERE p.id = u.id
+  AND p.role = 'student'
+  AND lower(COALESCE(u.raw_user_meta_data->>'role', '')) = 'teacher';
