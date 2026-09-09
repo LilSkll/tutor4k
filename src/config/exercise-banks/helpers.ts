@@ -66,7 +66,7 @@ export function exerciseContentFingerprint(
 }
 
 export type ExpandChapterBankOptions = {
-  /** Default `shared` (Spanish). Use `per-type` for English pack density. */
+  /** Default `shared` — one finished sentence across all types. Prefer this. */
   contentScope?: "shared" | "per-type";
 };
 

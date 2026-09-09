@@ -21,7 +21,7 @@ import { Markdown } from "@/components/shared/markdown";
 import { useLocalizedGrammarArticle } from "@/hooks/use-localized-grammar-article";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { translate } from "@/lib/i18n";
-import { SESSION_EXERCISES, pickUniqueStemBatch } from "@/lib/exercise-bank";
+import { SESSION_EXERCISES, pickUniqueStemBatch, exerciseStemKey } from "@/lib/exercise-bank";
 import { gradeStaticExerciseLocally } from "@/lib/exercise-check-client";
 import { scorePercent } from "@/lib/normalize-answer";
 import { trackEvent } from "@/lib/analytics";
@@ -186,7 +186,15 @@ export function LessonRunner({
       .filter((ex): ex is StaticExercise => Boolean(ex));
     const failedIds = new Set(failed.map((ex) => ex.id));
     const unseen = chapterBank.filter((ex) => !failedIds.has(ex.id));
-    const pick = [...failed, ...unseen].slice(0, Math.min(2, chapterBank.length));
+    const pick: StaticExercise[] = [];
+    const usedStems = new Set<string>();
+    for (const ex of [...failed, ...unseen]) {
+      if (pick.length >= Math.min(2, chapterBank.length)) break;
+      const stem = exerciseStemKey(ex);
+      if (stem && usedStems.has(stem)) continue;
+      if (stem) usedStems.add(stem);
+      pick.push(ex);
+    }
     return pick;
   }, [adaptation, chapterBank, failedExerciseIds]);
 

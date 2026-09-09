@@ -31,7 +31,9 @@ export function expandEnglishChapterBank(
           error_correction: THICK_TR_EC_TARGET,
         }
       : undefined;
+  // Shared finished-sentence fingerprints across types — denser per-type
+  // packs caused the same line to show up as MC then FB/TR in one chapter.
   return expandChapterBank(curated, PACKS[chapterSlug] ?? {}, typeTargets, {
-    contentScope: "per-type",
+    contentScope: "shared",
   });
 }

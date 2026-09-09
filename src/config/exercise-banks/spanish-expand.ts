@@ -31,8 +31,9 @@ export function expandSpanishChapterBank(
           error_correction: THICK_TR_EC_TARGET,
         }
       : undefined;
-  // per-type: advanced packs are SB-heavy; shared stems were starving MC/FB/TR.
+  // Shared stems: the same finished sentence must not appear as MC and FB
+  // (and TR/SB/EC) in one chapter — users perceive that as broken alternation.
   return expandChapterBank(curated, PACKS[chapterSlug] ?? {}, typeTargets, {
-    contentScope: "per-type",
+    contentScope: "shared",
   });
 }

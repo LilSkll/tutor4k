@@ -18,6 +18,7 @@ import {
   scoreBankExercise,
   type RankedBankItem,
 } from "@/server/learning/adaptive-exercise";
+import { exerciseStemKey } from "@/lib/exercise-bank";
 
 export type PooledExercise = StaticExercise & {
   level: GrammarLevel;
@@ -196,14 +197,22 @@ export async function pickStaticExercises(
     ranked = await loadRankedCandidates(input, { relaxLevel: true });
   }
   const results: PooledExercise[] = [];
+  const usedStems = new Set<string>();
 
   for (let i = 0; i < count && ranked.length > 0; i++) {
-    const picked = pickAdaptiveFromCandidates(ranked);
-    const chosen = picked ?? ranked[0]?.exercise;
+    const eligible = ranked.filter((r) => {
+      const stem = exerciseStemKey(r.exercise);
+      return !stem || !usedStems.has(stem);
+    });
+    const pool = eligible.length > 0 ? eligible : ranked;
+    const picked = pickAdaptiveFromCandidates(pool);
+    const chosen = picked ?? pool[0]?.exercise;
     if (!chosen) break;
     results.push(
       prepareExerciseForSession({ ...chosen, staticSource: true as const }),
     );
+    const stem = exerciseStemKey(chosen);
+    if (stem) usedStems.add(stem);
     ranked = ranked.filter((r) => r.exercise.id !== chosen.id);
   }
 

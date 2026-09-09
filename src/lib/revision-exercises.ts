@@ -1,21 +1,5 @@
 import type { StaticExercise } from "@/types";
-
-function revisionStemKey(ex: StaticExercise): string {
-  const filled =
-    ex.type === "multiple_choice" || ex.type === "fill_blank"
-      ? /___+/.test(ex.question)
-        ? ex.question.replace(/___+/g, ex.answer)
-        : ex.question
-      : ex.answer || ex.question;
-  return filled
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/\p{M}/gu, "")
-    .replace(/\([^)]*\)/g, " ")
-    .replace(/[^\p{L}\p{N}\s]/gu, " ")
-    .replace(/\s+/g, " ")
-    .trim();
-}
+import { exerciseStemKey } from "@/lib/exercise-bank";
 
 function shuffleInPlace<T>(items: T[]): T[] {
   for (let i = items.length - 1; i > 0; i -= 1) {
@@ -79,7 +63,7 @@ export function pickRandomRevisionExercises(input: {
       return;
     }
     const q = ex.question.trim().toLowerCase();
-    const stem = revisionStemKey(ex);
+    const stem = exerciseStemKey(ex);
     if (usedQuestions.has(q)) return;
     if (stem && usedStems.has(stem)) return;
     usedQuestions.add(q);

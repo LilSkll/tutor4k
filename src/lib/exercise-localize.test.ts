@@ -25,8 +25,13 @@ describe("translation localization", () => {
     for (const lang of ["en", "de", "es"] as const) {
       expect(isExerciseUsableForLanguage(sample, lang)).toBe(true);
       const q = localizeTranslationQuestion(sample, lang);
-      expect(q).not.toMatch(/[\u0400-\u04FF]/);
-      expect(q.length).toBeGreaterThan(3);
+      if (lang === "es") {
+        // Spanish-course answer is already Spanish; ES L1 would spoil → keep RU.
+        expect(q).toBe("Я студент.");
+      } else {
+        expect(q).not.toMatch(/[\u0400-\u04FF]/);
+        expect(q.length).toBeGreaterThan(3);
+      }
     }
   });
 

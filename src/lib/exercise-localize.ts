@@ -341,42 +341,18 @@ export function isExerciseUsableForLanguage(
     "question" | "answer" | "type" | "questionTranslations"
   >,
   interfaceLanguage: InterfaceLanguage,
-  courseId?: string | null,
+  _courseId?: string | null,
 ): boolean {
+  void _courseId;
   if (interfaceLanguage === "ru") return true;
   if (hasCyrillicText(exercise.answer)) return false;
 
   if (exercise.type === "translation") {
     if (!hasCyrillicText(exercise.question)) return true;
-    // English course is authored in Russian → English. Non-RU UI can still
-    // practice with the RU source when no L1 map exists; EN map is skipped
-    // when it would spoil the answer.
-    if (courseId === "english") {
-      if (interfaceLanguage === "en") return true;
-      const localized =
-        exercise.questionTranslations?.[interfaceLanguage]?.trim() ??
-        lookupTranslationPrompt(
-          exercise.question,
-          interfaceLanguage,
-          exercise.answer,
-        );
-      if (
-        localized &&
-        normalizeForCompare(localized) ===
-          normalizeForCompare(exercise.answer ?? "")
-      ) {
-        return true; // fall back to RU in localizeTranslationQuestion
-      }
-      return true;
-    }
-    const localized =
-      exercise.questionTranslations?.[interfaceLanguage]?.trim() ??
-      lookupTranslationPrompt(
-        exercise.question,
-        interfaceLanguage,
-        exercise.answer,
-      );
-    return Boolean(localized);
+    // RU→target drills stay available for every UI language. Prefer L1 prompts
+    // when present; if the only map equals the target answer (spoiler), the
+    // localizer falls back to the Russian source instead of dropping the item.
+    return true;
   }
 
   return !hasCyrillicText(exercise.question);

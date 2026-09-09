@@ -1,4 +1,8 @@
 import type { ExerciseType, GrammarLevel, StaticExercise } from "@/types";
+import {
+  exerciseTargetSentence,
+  normalizeStem,
+} from "@/config/exercise-banks/helpers";
 
 /** Target depth for the permanent adaptive bank (per type, per chapter). */
 export const TARGET_EXERCISES_PER_TYPE = 20;
@@ -123,22 +127,15 @@ const EARLY_LEVEL_TYPE_PRIORITY: ExerciseType[] = [
 ];
 
 /** Soft content key: finished target sentence shared across exercise types. */
+export function exerciseStemKey(
+  ex: Pick<StaticExercise, "type" | "question" | "answer">,
+): string {
+  return normalizeStem(exerciseTargetSentence(ex));
+}
+
+/** @deprecated Use exerciseStemKey — kept for callers/tests. */
 function softContentKey(ex: StaticExercise): string {
-  const filled =
-    ex.type === "multiple_choice" || ex.type === "fill_blank"
-      ? /___+/.test(ex.question)
-        ? ex.question.replace(/___+/g, ex.answer)
-        : ex.question
-      : ex.answer || ex.question;
-  return filled
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/\p{M}/gu, "")
-    .replace(/\([^)]*\)/g, " ")
-    .replace(/___+/g, "_")
-    .replace(/[^\p{L}\p{N}\s_()]/gu, " ")
-    .replace(/\s+/g, " ")
-    .trim();
+  return exerciseStemKey(ex);
 }
 
 export function orderEarlyLevelPractice(
