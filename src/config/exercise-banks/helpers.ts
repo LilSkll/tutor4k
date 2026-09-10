@@ -68,6 +68,13 @@ export function exerciseContentFingerprint(
 export type ExpandChapterBankOptions = {
   /** Default `shared` — one finished sentence across all types. Prefer this. */
   contentScope?: "shared" | "per-type";
+  /**
+   * After shared expand, fill types that are still empty using per-type
+   * fingerprints (allows same stem as another type). Prefer unique pack
+   * items first; only then fall back to stem-sharing fillers.
+   * Default 0 = do not fill (strict shared).
+   */
+  fillEmptyTypesTo?: number;
 };
 
 /**
@@ -176,6 +183,34 @@ export function expandChapterBank(
     const maxSb = Math.max(6, otherCount);
     if (byType.sentence_building.length > maxSb) {
       byType.sentence_building = byType.sentence_building.slice(0, maxSb);
+    }
+  }
+
+  // Rescue empty enabled types without relaxing shared stems for types
+  // that already have items (keeps alternation clean for populated types).
+  const fillEmptyTo = options?.fillEmptyTypesTo ?? 0;
+  if (fillEmptyTo > 0) {
+    for (const type of types) {
+      if (byType[type].length > 0) continue;
+      const pack = packs[type] ?? [];
+      const have = new Set(
+        byType[type].map((e) => `${e.question.trim().toLowerCase()}`),
+      );
+      for (const ex of pack) {
+        if (byType[type].length >= fillEmptyTo) break;
+        if (have.has(ex.question.trim().toLowerCase())) continue;
+        const cleaned = sanitizeBankExercise(ex);
+        if (!cleaned || !packItemOk(cleaned)) continue;
+        const exact = `${cleaned.type}|${cleaned.question.trim().toLowerCase()}`;
+        if (seenExact.has(exact)) continue;
+        // Per-type fingerprint only — may share finished sentence with another type.
+        const content = exerciseContentFingerprint(cleaned, "per-type");
+        if (!content.endsWith("|") && seenContent.has(content)) continue;
+        seenExact.add(exact);
+        if (!content.endsWith("|")) seenContent.add(content);
+        byType[type].push(cleaned);
+        have.add(cleaned.question.trim().toLowerCase());
+      }
     }
   }
 

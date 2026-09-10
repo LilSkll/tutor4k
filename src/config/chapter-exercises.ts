@@ -1738,7 +1738,12 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
 };
 
 /** Get exercises for a chapter slug (ids assigned, bank expanded). */
+const spanishExerciseCache = new Map<string, StaticExercise[]>();
+
 export function getChapterExercises(chapterSlug: string): StaticExercise[] {
+  const cached = spanishExerciseCache.get(chapterSlug);
+  if (cached) return cached;
+
   const chapter = CHAPTERS.find((c) => c.slug === chapterSlug);
   const grammarTopic = chapter?.grammarTopic ?? null;
   const curated = [
@@ -1761,5 +1766,7 @@ export function getChapterExercises(chapterSlug: string): StaticExercise[] {
     ...ex,
     grammarTopic: ex.grammarTopic ?? grammarTopic ?? undefined,
   }));
-  return withExerciseIds("spanish", chapterSlug, tagged);
+  const withIds = withExerciseIds("spanish", chapterSlug, tagged);
+  spanishExerciseCache.set(chapterSlug, withIds);
+  return withIds;
 }

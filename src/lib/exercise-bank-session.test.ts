@@ -71,7 +71,7 @@ describe("pickUniqueStemBatch", () => {
 });
 
 describe("orderEarlyLevelPractice", () => {
-  it("does not interleave TR and MC that share a finished sentence", () => {
+  it("keeps unique stems first, then rescues one item per empty type", () => {
     const ordered = orderEarlyLevelPractice(
       [
         ex({
@@ -103,6 +103,8 @@ describe("orderEarlyLevelPractice", () => {
       ],
       "A1",
     );
-    expect(ordered.map((e) => e.id)).toEqual(["sb", "tr2"]);
+    // Pass 1: sb + tr2 (unique stems). Pass 2: mc rescued so MC is not missing.
+    // Session rounds still skip the shared stem via pickUniqueStemBatch.
+    expect(ordered.map((e) => e.id)).toEqual(["sb", "tr2", "mc"]);
   });
 });

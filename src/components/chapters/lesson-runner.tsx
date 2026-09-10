@@ -21,7 +21,7 @@ import { Markdown } from "@/components/shared/markdown";
 import { useLocalizedGrammarArticle } from "@/hooks/use-localized-grammar-article";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { translate } from "@/lib/i18n";
-import { SESSION_EXERCISES, pickUniqueStemBatch, exerciseStemKey } from "@/lib/exercise-bank";
+import { SESSION_EXERCISES, pickUniqueStemBatch, exerciseStemKey, availableExerciseTypes } from "@/lib/exercise-bank";
 import { gradeStaticExerciseLocally } from "@/lib/exercise-check-client";
 import { scorePercent } from "@/lib/normalize-answer";
 import { trackEvent } from "@/lib/analytics";
@@ -131,6 +131,8 @@ export function LessonRunner({
     React.useState<PracticeKind>("main");
   /** Cursor into the chapter bank for successive rounds of SESSION_EXERCISES. */
   const [bankCursor, setBankCursor] = React.useState(0);
+  /** Finished-sentence stems already shown this lesson (blocks cross-round repeats). */
+  const [sessionStems, setSessionStems] = React.useState<string[]>([]);
   const [theoryPageIdx, setTheoryPageIdx] = React.useState(0);
   /** Wrong answers in this lesson — feed reinforce, not the first bank items. */
   const [failedExerciseIds, setFailedExerciseIds] = React.useState<string[]>(
@@ -169,6 +171,11 @@ export function LessonRunner({
     // Never pad by cloning the same stems — short banks just run fewer items.
     return presetExercises;
   }, [presetExercises]);
+
+  const guideExerciseTypes = React.useMemo(
+    () => availableExerciseTypes(chapterBank, chapter.exerciseTypes),
+    [chapterBank, chapter.exerciseTypes],
+  );
 
   const exerciseCountByType = React.useMemo(() => {
     const counts: Partial<Record<import("@/types").ExerciseType, number>> = {};
@@ -245,16 +252,29 @@ export function LessonRunner({
   };
 
   const startBankRound = (fromCursor: number, kind: PracticeKind) => {
+    const priorStems =
+      fromCursor === 0 && kind === "main" ? [] : sessionStems;
     const { batch, nextCursor } = pickUniqueStemBatch(
       chapterBank,
       fromCursor,
       SESSION_EXERCISES,
+      priorStems,
     );
     if (batch.length === 0) {
       setPhase("dialogue");
       return;
     }
     setBankCursor(nextCursor);
+    if (fromCursor === 0 && kind === "main") {
+      setSessionStems(
+        batch.map((ex) => exerciseStemKey(ex)).filter(Boolean),
+      );
+    } else {
+      setSessionStems((prev) => [
+        ...prev,
+        ...batch.map((ex) => exerciseStemKey(ex)).filter(Boolean),
+      ]);
+    }
     setExercises(batch);
     setCurrentExerciseIdx(0);
     setUserAnswer("");
@@ -754,10 +774,10 @@ export function LessonRunner({
             <p className="text-base text-muted-foreground mb-6">
               <span className="text-2xl">🦅</span> {introGreeting} {introBody}
             </p>
-            {chapter.exerciseTypes?.length ? (
+            {guideExerciseTypes.length ? (
               <div className="mb-6 text-left">
                 <ChapterExerciseTypeGuide
-                  exerciseTypes={chapter.exerciseTypes}
+                  exerciseTypes={guideExerciseTypes}
                   exerciseCountByType={exerciseCountByType}
                   language={language}
                 />
@@ -830,10 +850,10 @@ export function LessonRunner({
                 <Markdown content={theoryMarkdown} />
               </>
             ) : null}
-            {isLastTheoryPage && chapter.exerciseTypes?.length ? (
+            {isLastTheoryPage && guideExerciseTypes.length ? (
               <div className="mt-6 pt-6 border-t border-border">
                 <ChapterExerciseTypeGuide
-                  exerciseTypes={chapter.exerciseTypes}
+                  exerciseTypes={guideExerciseTypes}
                   exerciseCountByType={exerciseCountByType}
                   language={language}
                 />

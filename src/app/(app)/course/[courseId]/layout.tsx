@@ -1,10 +1,9 @@
-import { notFound, redirect } from "next/navigation";
-import { getCourse, DEFAULT_COURSE_ID } from "@/config/courses";
-import type { CourseConfig } from "@/types";
+import { notFound } from "next/navigation";
+import { getCourse } from "@/config/courses";
 
 /**
  * Layout for course-scoped routes: /course/spanish/dashboard, etc.
- * Loads the CourseConfig and passes it via a React Context.
+ * Validates the course id before rendering children.
  */
 export default async function CourseLayout({
   children,
@@ -15,7 +14,6 @@ export default async function CourseLayout({
 }) {
   const { courseId } = await params;
 
-  // Validate course exists.
   const course = await getCourse(courseId);
   if (!course) {
     notFound();

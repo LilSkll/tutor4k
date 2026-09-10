@@ -226,7 +226,12 @@ export const ENGLISH_EXERCISES: Record<string, Draft[]> = {
 };
 
 /** Chapter exercises with stable ids + expanded permanent bank packs. */
+const englishExerciseCache = new Map<string, StaticExercise[]>();
+
 export function getEnglishExercises(chapterSlug: string): StaticExercise[] {
+  const cached = englishExerciseCache.get(chapterSlug);
+  if (cached) return cached;
+
   const curated = [
     ...(ENGLISH_EXERCISES[chapterSlug] ?? []),
     ...(ENGLISH_CURRICULUM_CHAPTER_EXERCISES[chapterSlug] ?? []),
@@ -243,5 +248,7 @@ export function getEnglishExercises(chapterSlug: string): StaticExercise[] {
     allowed && allowed.length > 0
       ? expanded.filter((ex) => allowed.includes(ex.type))
       : expanded;
-  return withExerciseIds("english", chapterSlug, filtered);
+  const withIds = withExerciseIds("english", chapterSlug, filtered);
+  englishExerciseCache.set(chapterSlug, withIds);
+  return withIds;
 }

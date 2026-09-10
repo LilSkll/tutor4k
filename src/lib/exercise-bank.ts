@@ -142,11 +142,6 @@ export function orderEarlyLevelPractice(
   exercises: StaticExercise[],
   level: GrammarLevel,
 ): StaticExercise[] {
-  if (level !== "A1" && level !== "A2" && level !== "B1" && level !== "B2") {
-    // Still dedupe by finished stem for advanced levels.
-    return dedupeByTargetStem(exercises);
-  }
-
   const buckets = Object.fromEntries(
     ALL_EXERCISE_TYPES.map((t) => [t, [] as StaticExercise[]]),
   ) as Record<ExerciseType, StaticExercise[]>;
@@ -155,6 +150,13 @@ export function orderEarlyLevelPractice(
 
   const ordered: StaticExercise[] = [];
   const usedSoft = new Set<string>();
+  const typeCounts: Record<ExerciseType, number> = {
+    multiple_choice: 0,
+    fill_blank: 0,
+    translation: 0,
+    error_correction: 0,
+    sentence_building: 0,
+  };
   const cursor: Record<ExerciseType, number> = {
     multiple_choice: 0,
     fill_blank: 0,
@@ -163,21 +165,42 @@ export function orderEarlyLevelPractice(
     sentence_building: 0,
   };
 
+  const priority =
+    level === "A1" || level === "A2" || level === "B1" || level === "B2"
+      ? EARLY_LEVEL_TYPE_PRIORITY
+      : ALL_EXERCISE_TYPES;
+
+  // Pass 1 — unique finished sentences only.
   let progress = true;
   while (progress) {
     progress = false;
-    for (const type of EARLY_LEVEL_TYPE_PRIORITY) {
+    for (const type of priority) {
       const bucket = buckets[type];
       while (cursor[type] < bucket.length) {
-        const item = bucket[cursor[type]++];
+        const item = bucket[cursor[type]++]!;
         const key = softContentKey(item);
         if (key && usedSoft.has(key)) continue;
         if (key) usedSoft.add(key);
         ordered.push(item);
+        typeCounts[type] += 1;
         progress = true;
         break;
       }
     }
+  }
+
+  // Pass 2 — if a type still has zero items, take one even with a shared stem
+  // so the chapter guide/practice is not missing an enabled format entirely.
+  for (const type of priority) {
+    if (typeCounts[type] > 0) continue;
+    const item = buckets[type].find(
+      (ex) => !ordered.some((o) => o.id === ex.id),
+    );
+    if (!item) continue;
+    ordered.push(item);
+    typeCounts[type] += 1;
+    const key = softContentKey(item);
+    if (key) usedSoft.add(key);
   }
 
   return ordered.length > 0 ? ordered : exercises;
@@ -200,15 +223,16 @@ export function dedupeByTargetStem(
 
 /**
  * Pick up to `count` exercises from `fromCursor`, skipping finished-sentence
- * duplicates within the batch (and advancing past used stems).
+ * duplicates within the batch (and optional stems already used this session).
  */
 export function pickUniqueStemBatch(
   bank: StaticExercise[],
   fromCursor: number,
   count: number,
+  alreadyUsedStems?: Iterable<string>,
 ): { batch: StaticExercise[]; nextCursor: number } {
   const batch: StaticExercise[] = [];
-  const used = new Set<string>();
+  const used = new Set<string>(alreadyUsedStems ?? []);
   let i = Math.max(0, fromCursor);
   while (i < bank.length && batch.length < count) {
     const item = bank[i++];
@@ -218,4 +242,16 @@ export function pickUniqueStemBatch(
     batch.push(item);
   }
   return { batch, nextCursor: i };
+}
+
+/** Types that actually appear in a bank (for honest UI labels). */
+export function availableExerciseTypes(
+  exercises: Array<{ type: ExerciseType }>,
+  declared?: ExerciseType[] | null,
+): ExerciseType[] {
+  const present = new Set(exercises.map((e) => e.type));
+  if (declared && declared.length > 0) {
+    return declared.filter((t) => present.has(t));
+  }
+  return ALL_EXERCISE_TYPES.filter((t) => present.has(t));
 }
