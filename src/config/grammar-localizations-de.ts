@@ -26,30 +26,40 @@ export const DE_GRAMMAR_CATEGORY: Record<string, string> = {
   Дискурс: "Diskurs",
   "Условия / Залог": "Konditionale / Genus Verbi",
   "Подготовка к экзамену": "Prüfungsvorbereitung",
+  "Подготовка к DELE": "DELE-Vorbereitung",
+  Определители: "Bestimmungswörter",
+  Артикли: "Artikel",
+  Условные: "Konditionale",
+  Речь: "Rede",
+  "Сложное предложение": "Komplexe Sätze",
+  "Письмо / IELTS": "Schreiben / IELTS",
+  "Письмо / Cambridge": "Schreiben / Cambridge",
+  "Стиль / Exam": "Stil / Prüfung",
 };
 
 export const DE_GRAMMAR_TOPIC: Record<string, GrammarLocaleFields> = {
   "a1-articulos": {
     title: "Artikel",
     summary:
-      "Bestimmte und unbestimmte Artikel; maskulines und feminines Genus.",
+      "Definite and indefinite articles (el/la vs un/una); special case: el agua.",
   },
   "a1-ser-estar": {
     title: "Ser / Estar",
     summary:
-      "Zwei Verben für „sein“: bleibende Eigenschaften vs. vorübergehende Zustände.",
+      "First topic: greetings and two verbs for “to be” — ser (who you are) and estar (how you are now).",
   },
   "a1-presente": {
     title: "Präsens (Indikativ)",
-    summary: "Präsens: regelmäßige und unregelmäßige Verben.",
+    summary: "Präsens: drei Verb-Familien (-ar / -er / -ir) und warum die Endung wechselt.",
   },
   "a1-genero-numero": {
     title: "Genus und Numerus",
-    summary: "Maskulinum/Femininum und Singular/Plural der Substantive.",
+    summary:
+      "Noun gender and number; exceptions like problema, mano, and el agua.",
   },
   "a1-numeros-1-100": {
-    title: "Zahlen 1–100",
-    summary: "Kardinalzahlen zum Zählen, für Alter und Preise.",
+    title: "Zahlen, Tage und Uhrzeit",
+    summary: "Zahlen 1–100, Wochentage, Monate und Uhrzeit.",
   },
   "a1-preposiciones-lugar": {
     title: "Ortspräpositionen",
@@ -58,7 +68,7 @@ export const DE_GRAMMAR_TOPIC: Record<string, GrammarLocaleFields> = {
   "a1-gustar": {
     title: "Verb Gustar",
     summary:
-      "Das besondere Verb „gefallen“ — konjugiert nach dem Gefallenen, nicht nach der Person.",
+      "Verb gustar: “I like coffee” = me gusta el café — the thing liked is the subject.",
   },
   "a1-tener-expressions": {
     title: "Ausdrücke mit Tener",
@@ -83,7 +93,7 @@ export const DE_GRAMMAR_TOPIC: Record<string, GrammarLocaleFields> = {
   "a2-imperfecto": {
     title: "Pretérito Imperfecto",
     summary:
-      "Hintergrund in der Vergangenheit: Gewohnheiten, Beschreibungen, andauernde Handlungen.",
+      "Pretérito Imperfecto — habits, descriptions, and ongoing background in the past.",
   },
   "a2-por-para": {
     title: "Por vs Para",
@@ -91,7 +101,7 @@ export const DE_GRAMMAR_TOPIC: Record<string, GrammarLocaleFields> = {
   },
   "a2-comparativos": {
     title: "Komparativ und Superlativ",
-    summary: "Vergleiche: mehr/weniger/am meisten — Vergleichsformen.",
+    summary: "más/menos, tan…como und el más… — Vergleichsformen.",
   },
   "a2-futuro-simple": {
     title: "Futuro Simple",
@@ -109,7 +119,7 @@ export const DE_GRAMMAR_TOPIC: Record<string, GrammarLocaleFields> = {
     title: "Condicional Simple",
     summary: "Höfliche Bitten, Hypothesen und Wünsche.",
   },
-  "b1-preposiciones-por-para-2": {
+  "b1-pronombre-se": {
     title: "Pronomen SE",
     summary: "Unpersönliches se, Passiv-se, reziprokes se — mehrere Verwendungen.",
   },
@@ -124,7 +134,7 @@ export const DE_GRAMMAR_TOPIC: Record<string, GrammarLocaleFields> = {
   "b1-subjuntivo-imperfecto": {
     title: "Imperfecto de Subjuntivo",
     summary:
-      "Konjunktiv in Vergangenheit/Irrealis: Hypothesen und irreale Bedingungen.",
+      "Imperfect subjunctive — unreal conditions and past wishes: si tuviera…",
   },
   "b1-pronombres-objetos": {
     title: "Objektpronomen",
@@ -204,6 +214,14 @@ export const DE_GRAMMAR_TOPIC: Record<string, GrammarLocaleFields> = {
     title: "Can / Can't",
     summary: "Modalverb can: Fähigkeit und Möglichkeit.",
   },
+  "eng-a1-questions": {
+    title: "W-Fragen",
+    summary: "What, who, where, when, why, how.",
+  },
+  "eng-a1-prepositions": {
+    title: "Ortspräpositionen",
+    summary: "in, on, at, under, between, next to.",
+  },
   "eng-a2-past-simple": {
     title: "Past Simple",
     summary: "Simple Past: regelmäßige und unregelmäßige Verben.",
@@ -216,9 +234,21 @@ export const DE_GRAMMAR_TOPIC: Record<string, GrammarLocaleFields> = {
     title: "Present Perfect",
     summary: "Vergangenheit mit Gegenwartsbezug: Erfahrung und Ergebnis.",
   },
+  "eng-a2-going-to": {
+    title: "Going to",
+    summary: "be going to für Pläne und Absichten.",
+  },
+  "eng-a2-quantifiers": {
+    title: "Some / Any / Much / Many",
+    summary: "Quantoren bei zählbaren und unzählbaren Nomen.",
+  },
   "eng-b1-future-conditional": {
     title: "Zukunft & First Conditional",
-    summary: "will/won't, First Conditional, should/must.",
+    summary: "will/won't und First Conditional.",
+  },
+  "eng-b1-modals": {
+    title: "Should / Must / Have to",
+    summary: "Rat und Pflicht: should, must, have to.",
   },
   "eng-b1-narrative": {
     title: "Erzählzeiten",
@@ -255,6 +285,131 @@ export const DE_GRAMMAR_TOPIC: Record<string, GrammarLocaleFields> = {
   "eng-c1-review": {
     title: "Gesamtrepetition + IELTS",
     summary: "Vollständige Wiederholung aller Themen plus IELTS-Fähigkeiten.",
+  },
+  "c2-oraciones-hendidas": {
+    title: "Emphase: Spaltsätze",
+    summary:
+      "Cleft sentences — fue Juan quien…, lo que necesito es… — for emphasis.",
+  },
+  "c2-conjetura-rumor": {
+    title: "Vermutung und Gerüchte: futuro y condicional",
+    summary:
+      "Futuro de conjetura and condicional de rumor — probably / reportedly, not plans.",
+  },
+  "c2-estilo-culto": {
+    title: "Gehobener Stil: absolute Konstruktionen",
+    summary:
+      "Literary style — absolute participle, nominalization; not for everyday chat.",
+  },
+  "dele-contraste-pasados": {
+    title: "DELE: Kontrast der Vergangenheitszeiten",
+    summary:
+      "DELE past-tense contrast — Perfecto vs Indefinido vs Imperfecto; Pluscuamperfecto in chapter journey.",
+  },
+  "dele-carta-formal": {
+    title: "DELE: formeller und informeller Brief",
+    summary:
+      "DELE formal letter — openings, polite requests, closings; condicional and register.",
+  },
+  "dele-conectores-redaccion": {
+    title: "DELE: Konnektoren für den Aufsatz",
+    summary:
+      "DELE essay — en primer lugar, no obstante, en definitiva; opinion with subjunctive.",
+  },
+  "dele-expresion-oral": {
+    title: "DELE: mündlicher Teil",
+    summary:
+      "DELE speaking — describing photos, hypotheses, opinions, agreeing/disagreeing.",
+  },
+  "eng-c2-cleft-emphasis": {
+    title: "Cleft Sentences und Emphase",
+    summary:
+      "It was John who…, What I need is…, emphatisches do — Hervorhebung und Fokus.",
+  },
+  "eng-c2-ellipsis-substitution": {
+    title: "Ellipse und Substitution",
+    summary: "So do I, I hope so, if not — wie Muttersprachler Wiederholungen vermeiden.",
+  },
+  "eng-c2-hedging-nuance": {
+    title: "Hedging und Understatement",
+    summary:
+      "It could be argued…, not entirely convinced, britisches Understatement und höfliche Kritik.",
+  },
+  "eng-a1-articles-basics": {
+    title: "Artikel a/an/the",
+    summary: "a/an vs the vs Nullartikel; nach dem Laut wählen, nicht nach dem Buchstaben.",
+  },
+  "eng-a1-possessives": {
+    title: "Possessiva my/your und 's",
+    summary: "my/your/his… und sächsischer Genitiv. its ≠ it's.",
+  },
+  "eng-a1-can-ability": {
+    title: "Can / can't — Können und Erlaubnis",
+    summary: "I can swim; Can I…?; Can you help? Infinitiv ohne to.",
+  },
+  "eng-a2-countable": {
+    title: "Zählbar und unzählbar",
+    summary: "many/much, a few/a little, some/any; advice und information ohne -s.",
+  },
+  "eng-a2-present-perfect-intro": {
+    title: "Present Perfect: just/already/yet",
+    summary: "have + V3 für Erfahrung mit Jetzt; yesterday bleibt Past Simple.",
+  },
+  "eng-b1-conditionals-review": {
+    title: "Konditionale 0 / 1 / 2",
+    summary: "If + present; if + present → will; if + past → would. If I were you.",
+  },
+  "eng-b1-reported-speech": {
+    title: "Indirekte Rede (Basis)",
+    summary: "say/tell und Zeitverschiebung; Fragen ohne do.",
+  },
+  "eng-b1-relative-clauses": {
+    title: "Relativsätze who/which/that",
+    summary: "Defining ohne Kommas; whose; that als Objekt kann weg.",
+  },
+  "eng-b2-passive-advanced": {
+    title: "Passiv in allen Zeiten",
+    summary: "be + V3; have/get something done für Dienstleistungen.",
+  },
+  "eng-b2-modals-deduction": {
+    title: "Modalverben der Schlussfolgerung",
+    summary: "must/might/can't für Sicherheit; must have left in der Vergangenheit.",
+  },
+  "eng-ielts-letter-informal": {
+    title: "IELTS GT: informeller Brief",
+    summary: "Freundschaftsbrief: 4 Blöcke, ~150 Wörter, drei Bullets, informelles Register.",
+  },
+  "eng-ielts-letter-formal": {
+    title: "IELTS GT: formeller Brief",
+    summary: "Beschwerde/Anfrage: Yours faithfully vs sincerely, 5 Blöcke, ~150 Wörter.",
+  },
+  "eng-ielts-essay-structure": {
+    title: "IELTS Academic: Essay-Struktur",
+    summary: "Task 2: 4 Absätze, 250+ Wörter, Fragetyp treffen, keine neuen Ideen im Schluss.",
+  },
+  "eng-ielts-essay-cohesion": {
+    title: "IELTS: Kohäsion",
+    summary: "Linker nach Funktion, Referencing, eine Idee pro Absatz.",
+  },
+  "eng-ielts-task1-report": {
+    title: "IELTS Academic Task 1: Grafiken",
+    summary: "Paraphrase, Overview, Kernmerkmale; Trendsprache; ~150 Wörter; nicht spekulieren.",
+  },
+  "eng-cambridge-letter-email": {
+    title: "Cambridge B2 First: Brief und E-Mail",
+    summary: "Informell / formell / semi-formell, Layout und CA-Kriterium.",
+  },
+  "eng-cambridge-essay-article": {
+    title: "Cambridge: Essay vs Article",
+    summary: "Verschiedene Genres: These vs Hook; alle Notes; Wortzahlen B2/C1.",
+  },
+  "eng-ielts-opinion-language": {
+    title: "Meinungs- und Argumentationssprache",
+    summary: "Stärke der Behauptung, Hedging, Konzession + Gegenangriff.",
+  },
+  "eng-cbe-register-shift": {
+    title: "Register: vom Chat zum Formalen",
+    summary: "Informell / neutral / formell; WhatsApp-Test; Anrede und Schluss müssen zusammenpassen.",
   },
 };
 

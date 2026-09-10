@@ -118,7 +118,7 @@ const TOPIC = {
     en: { title: "Simple Conditional", summary: "Polite requests, hypotheses, and wishes." },
     es: { title: "Modo Condicional", summary: "Peticiones corteses, hipótesis y deseos." },
   },
-  "b1-preposiciones-por-para-2": {
+  "b1-pronombre-se": {
     en: { title: "Pronoun SE", summary: "Impersonal se, passive se, reciprocal se — multiple uses." },
     es: { title: "Pronombre SE", summary: "Se impersonal, se pasivo, se recíproco — usos múltiples." },
   },

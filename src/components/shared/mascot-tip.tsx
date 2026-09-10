@@ -16,7 +16,7 @@ export function MascotTip({ message, className }: MascotTipProps) {
       )}
     >
       <Image
-        src="/hippogriff-icon.png"
+        src="/hippogriff-icon.webp"
         alt=""
         width={36}
         height={36}

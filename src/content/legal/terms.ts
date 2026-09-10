@@ -3,8 +3,12 @@ import type { LegalDocument } from "./types";
 
 const O = LEGAL_OPERATOR;
 
-export function getTermsDocument(locale: "ru" | "en"): LegalDocument {
+export function getTermsDocument(
+  locale: "ru" | "en" | "es" | "de",
+): LegalDocument {
   if (locale === "en") return termsEn;
+  if (locale === "es") return termsEs;
+  if (locale === "de") return termsDe;
   return termsRu;
 }
 
@@ -188,6 +192,192 @@ const termsEn: LegalDocument = {
       paragraphs: [
         `${O.operatorNameEn}`,
         `Email: ${O.contactEmail}`,
+        `Website: ${O.website}`,
+      ],
+    },
+  ],
+};
+
+const termsEs: LegalDocument = {
+  locale: "es",
+  title: "Términos del servicio",
+  subtitle: `${O.serviceName}`,
+  updated: O.policyVersion,
+  sections: [
+    {
+      id: "parties",
+      title: "1. Acuerdo",
+      paragraphs: [
+        `Estos Términos regulan el uso de ${O.serviceName} (${O.website}), operado por ${O.operatorNameEn} («nosotros»).`,
+        "El servicio ofrece herramientas para aprender idiomas: lecciones, ejercicios, tutor de IA, vocabulario y seguimiento del progreso.",
+        "Al crear una cuenta confirmas que has leído y aceptas estos Términos y la Política de privacidad.",
+      ],
+    },
+    {
+      id: "account",
+      title: "2. Cuenta",
+      paragraphs: [
+        "Debes registrarte con un email válido y custodiar tus credenciales.",
+        "Una persona, una cuenta. No se permite compartir la cuenta.",
+        "Podemos suspender o cancelar cuentas que incumplan estos Términos.",
+      ],
+    },
+    {
+      id: "service",
+      title: "3. Servicio y aviso sobre la IA",
+      paragraphs: [
+        "Las respuestas del tutor de IA se generan automáticamente con fines educativos y pueden contener errores. No las uses como única fuente para exámenes o decisiones profesionales.",
+        "Buscamos una alta disponibilidad, pero no garantizamos un acceso ininterrumpido.",
+      ],
+    },
+    {
+      id: "conduct",
+      title: "4. Uso aceptable",
+      paragraphs: ["Te comprometes a no:"],
+      list: [
+        "usar el servicio con fines no educativos o ilícitos;",
+        "intentar accesos no autorizados;",
+        "subir malware, spam o contenido abusivo;",
+        "abusar de límites técnicos o eludir controles.",
+      ],
+    },
+    {
+      id: "ip",
+      title: "5. Propiedad intelectual",
+      paragraphs: [
+        "El contenido de la plataforma nos pertenece a nosotros o a nuestros licenciantes. No puedes copiarlo ni explotarlo comercialmente sin permiso.",
+        "Conservas los derechos sobre tus mensajes; nos concedes una licencia para procesarlos solo para operar el servicio.",
+      ],
+    },
+    {
+      id: "payment",
+      title: "6. Precio",
+      paragraphs: [
+        "El acceso básico puede ser gratuito al lanzamiento. Las funciones de pago, si se introducen, se describirán antes de la compra.",
+      ],
+    },
+    {
+      id: "liability",
+      title: "7. Responsabilidad",
+      paragraphs: [
+        "El servicio se ofrece «tal cual». No respondemos por daños indirectos ni por resultados de exámenes.",
+        "Nuestra responsabilidad total se limita a las cantidades pagadas en los últimos 12 meses (o cero si el uso es gratuito).",
+      ],
+    },
+    {
+      id: "termination",
+      title: "8. Terminación",
+      paragraphs: [
+        "Puedes eliminar tu cuenta en Ajustes en cualquier momento. Podemos cerrar el acceso ante incumplimientos graves.",
+        "El tratamiento de datos tras el borrado se describe en la Política de privacidad.",
+      ],
+    },
+    {
+      id: "law",
+      title: "9. Ley aplicable",
+      paragraphs: [
+        "Los usuarios de la UE y de España conservan las protecciones imperativas de consumo de su país de residencia. Para usuarios del Reino Unido, salvo derecho imperativo en contrario, se aplica la legislación de Inglaterra y Gales.",
+      ],
+    },
+    {
+      id: "contact",
+      title: "10. Contacto",
+      paragraphs: [
+        `${O.operatorNameEn}`,
+        `Email: ${O.contactEmail}`,
+        `Sitio web: ${O.website}`,
+      ],
+    },
+  ],
+};
+
+const termsDe: LegalDocument = {
+  locale: "de",
+  title: "Nutzungsbedingungen",
+  subtitle: `${O.serviceName}`,
+  updated: O.policyVersion,
+  sections: [
+    {
+      id: "parties",
+      title: "1. Vereinbarung",
+      paragraphs: [
+        `Diese Bedingungen regeln die Nutzung von ${O.serviceName} (${O.website}), betrieben von ${O.operatorNameEn} („wir“).`,
+        "Der Dienst bietet Sprachlern-Tools: Lektionen, Übungen, KI-Tutor, Wortschatz und Fortschrittsverfolgung.",
+        "Mit der Kontoerstellung bestätigst du, dass du diese Bedingungen und die Datenschutzerklärung gelesen und akzeptiert hast.",
+      ],
+    },
+    {
+      id: "account",
+      title: "2. Konto",
+      paragraphs: [
+        "Du musst dich mit einer gültigen E-Mail registrieren und Zugangsdaten sicher aufbewahren.",
+        "Eine Person, ein Konto. Konto-Sharing ist nicht erlaubt.",
+        "Wir können Konten bei Verstößen sperren oder kündigen.",
+      ],
+    },
+    {
+      id: "service",
+      title: "3. Dienst & KI-Hinweis",
+      paragraphs: [
+        "Antworten des KI-Tutors werden automatisch zu Bildungszwecken erzeugt und können Fehler enthalten. Verlasse dich nicht allein darauf für Prüfungen oder professionelle Entscheidungen.",
+        "Wir streben hohe Verfügbarkeit an, garantieren aber keinen unterbrechungsfreien Zugang.",
+      ],
+    },
+    {
+      id: "conduct",
+      title: "4. Zulässige Nutzung",
+      paragraphs: ["Du verpflichtest dich, Folgendes zu unterlassen:"],
+      list: [
+        "den Dienst für nicht-pädagogische oder rechtswidrige Zwecke zu nutzen;",
+        "unbefugten Zugang zu versuchen;",
+        "Malware, Spam oder beleidigende Inhalte hochzuladen;",
+        "technische Limits zu missbrauchen oder Kontrollen zu umgehen.",
+      ],
+    },
+    {
+      id: "ip",
+      title: "5. Geistiges Eigentum",
+      paragraphs: [
+        "Plattforminhalte gehören uns oder unseren Lizenzgebern. Kopieren oder kommerzielle Nutzung ohne Erlaubnis ist untersagt.",
+        "Rechte an eigenen Nachrichten behältst du; du räumst uns eine Lizenz ein, sie ausschließlich zum Betrieb des Dienstes zu verarbeiten.",
+      ],
+    },
+    {
+      id: "payment",
+      title: "6. Entgelte",
+      paragraphs: [
+        "Der Kernzugang kann beim Start kostenlos sein. Kostenpflichtige Funktionen werden vor dem Kauf beschrieben, falls eingeführt.",
+      ],
+    },
+    {
+      id: "liability",
+      title: "7. Haftung",
+      paragraphs: [
+        "Der Dienst wird „wie besehen“ bereitgestellt. Wir haften nicht für indirekte Schäden oder Prüfungsergebnisse.",
+        "Unsere Gesamthaftung ist auf in den letzten 12 Monaten gezahlte Entgelte begrenzt (oder null bei kostenloser Nutzung).",
+      ],
+    },
+    {
+      id: "termination",
+      title: "8. Beendigung",
+      paragraphs: [
+        "Du kannst dein Konto jederzeit in den Einstellungen löschen. Bei wesentlichen Verstößen können wir den Zugang beenden.",
+        "Die Datenverarbeitung nach der Löschung beschreibt die Datenschutzerklärung.",
+      ],
+    },
+    {
+      id: "law",
+      title: "9. Anwendbares Recht",
+      paragraphs: [
+        "EU-/spanische Nutzer behalten zwingende Verbraucherschutzrechte ihres Wohnsitzlandes. Für Nutzer im Vereinigten Königreich gelten – soweit nicht zwingend anders – die Gesetze von England und Wales.",
+      ],
+    },
+    {
+      id: "contact",
+      title: "10. Kontakt",
+      paragraphs: [
+        `${O.operatorNameEn}`,
+        `E-Mail: ${O.contactEmail}`,
         `Website: ${O.website}`,
       ],
     },

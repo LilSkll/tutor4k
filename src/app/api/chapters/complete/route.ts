@@ -2,7 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
 import { getCourse } from "@/config/courses";
 import { inferCourseIdFromChapterSlug } from "@/lib/chapter-display";
-import type { Level } from "@/types";
+import { toUserLevel } from "@/lib/user-level";
+import { awardChapterCompleteRewards } from "@/server/journey/rewards";
+import type { GrammarLevel, InterfaceLanguage } from "@/types";
 
 /**
  * POST /api/chapters/complete
@@ -45,18 +47,42 @@ export async function POST(req: NextRequest) {
       // keep inferred courseId
     }
 
-    const course = await getCourse(courseId);
-    const chapter = course.getChapter(body.chapterSlug);
+    let course = await getCourse(courseId);
+    let chapter = course.getChapter(body.chapterSlug);
     // Fallback: slug may belong to another course (e.g. switched mid-lesson).
-    const chapterLevel: Level =
+    const chapterLevel: GrammarLevel =
       chapter?.level ??
       (await getCourse(inferCourseIdFromChapterSlug(body.chapterSlug))).getChapter(
         body.chapterSlug,
       )?.level ??
       "A1";
 
+    // Soft server gate: if the chapter has a practice bank, require a full round.
+    try {
+      const { getChapterExercises } = await import("@/config/chapter-exercises");
+      const { SESSION_EXERCISES } = await import("@/lib/exercise-bank");
+      const bankSize = getChapterExercises(body.chapterSlug).length;
+      const minPractice =
+        bankSize === 0 ? 0 : Math.min(SESSION_EXERCISES, bankSize);
+      if ((body.exercisesCompleted ?? 0) < minPractice) {
+        return NextResponse.json(
+          {
+            error: `Complete at least ${minPractice} exercises before finishing this chapter.`,
+          },
+          { status: 400 },
+        );
+      }
+    } catch {
+      // Non-fatal if bank lookup fails — client gate still applies.
+    }
+
+    // DB user_level historically A1–C1; clamp C2 so progress saves before migration.
+    const dbLevel = toUserLevel(chapterLevel);
+
     if (!chapter) {
       courseId = inferCourseIdFromChapterSlug(body.chapterSlug);
+      course = await getCourse(courseId);
+      chapter = course.getChapter(body.chapterSlug);
     }
 
     let client = supabase;
@@ -72,11 +98,12 @@ export async function POST(req: NextRequest) {
 
     const { data: existing } = await client
       .from("learning_progress")
-      .select("id")
+      .select("id, status")
       .eq("user_id", user.id)
       .eq("chapter_slug", body.chapterSlug)
       .maybeSingle();
 
+    const isReplay = existing?.status === "completed";
     let progressOk = false;
 
     if (existing) {
@@ -84,7 +111,7 @@ export async function POST(req: NextRequest) {
         .from("learning_progress")
         .update({
           status: "completed",
-          level: chapterLevel,
+          level: dbLevel,
           score: body.score ?? 0,
           completed_at: new Date().toISOString(),
           words_learned: body.wordsLearned ?? 0,
@@ -105,7 +132,7 @@ export async function POST(req: NextRequest) {
           user_id: user.id,
           chapter_slug: body.chapterSlug,
           topic: body.chapterSlug,
-          level: chapterLevel,
+          level: dbLevel,
           status: "completed",
           score: body.score ?? 0,
           started_at: new Date().toISOString(),
@@ -145,7 +172,7 @@ export async function POST(req: NextRequest) {
 
     const { data: profile } = await client
       .from("profiles")
-      .select("streak, last_active_date")
+      .select("streak, last_active_date, interface_language, name")
       .eq("id", user.id)
       .single();
 
@@ -166,11 +193,99 @@ export async function POST(req: NextRequest) {
       }
     }
 
+    // Build completed set + chapters by level for journey rewards.
+    const chapters = course.getChapters();
+    const chaptersByLevel = {} as Record<GrammarLevel, string[]>;
+    for (const ch of chapters) {
+      (chaptersByLevel[ch.level] ??= []).push(ch.slug);
+    }
+
+    const { data: progressRows } = await client
+      .from("learning_progress")
+      .select("chapter_slug, status")
+      .eq("user_id", user.id)
+      .eq("status", "completed");
+
+    const completedSlugs = new Set(
+      (progressRows ?? [])
+        .map((r) => r.chapter_slug as string)
+        .filter(Boolean),
+    );
+    completedSlugs.add(body.chapterSlug);
+
+    const interfaceLanguage = (profile?.interface_language as InterfaceLanguage) ?? "ru";
+    const resolvedChapter =
+      chapter ??
+      (await getCourse(inferCourseIdFromChapterSlug(body.chapterSlug))).getChapter(
+        body.chapterSlug,
+      );
+
+    let rewards = null;
+    try {
+      rewards = await awardChapterCompleteRewards({
+        client: client as never,
+        userId: user.id,
+        courseId,
+        chapterSlug: body.chapterSlug,
+        chapterLevel: (resolvedChapter?.level ?? chapterLevel) as GrammarLevel,
+        chapterNumber: resolvedChapter?.number ?? 0,
+        chapterTitle: resolvedChapter?.title ?? body.chapterSlug,
+        chapterTitleNative:
+          resolvedChapter?.titleEs || resolvedChapter?.title || body.chapterSlug,
+        scorePercent: body.score ?? 0,
+        exercisesCompleted: body.exercisesCompleted ?? 0,
+        isReplay,
+        chaptersByLevel,
+        completedSlugs,
+        interfaceLanguage,
+      });
+    } catch (rewardErr) {
+      console.warn(
+        "[chapter/complete] rewards skipped:",
+        (rewardErr as Error).message,
+      );
+    }
+
+    // Mirror unused completeChapter(): bump adaptive learning profile on real finish path.
+    const chapterForProfile = resolvedChapter ?? chapter;
+    if (chapterForProfile) {
+      try {
+        const { updateStudentLearningProfile } = await import(
+          "@/server/learning/student-profile"
+        );
+        const ok = (body.score ?? 0) >= 50;
+        await updateStudentLearningProfile({
+          courseId,
+          grammarTopic: chapterForProfile.grammarTopic,
+          vocabTopic: chapterForProfile.vocabTopic ?? null,
+          correct: ok,
+          addStrength: ok
+            ? `completed chapter: ${chapterForProfile.titleEs || chapterForProfile.title}`
+            : null,
+          addWeakness: ok
+            ? null
+            : `needs review: ${chapterForProfile.grammarTopic}`,
+          skillHints: {
+            reading: chapterForProfile.level === "C2" ? "C1" : chapterForProfile.level,
+            writing: chapterForProfile.level === "C2" ? "C1" : chapterForProfile.level,
+          },
+        });
+      } catch (profileErr) {
+        console.warn(
+          "[chapter/complete] learning profile update failed:",
+          (profileErr as Error).message,
+        );
+      }
+    }
+
     return NextResponse.json({
       ok: true,
       progressSaved: progressOk,
       usingAdmin,
       courseId,
+      isReplay,
+      userName: (profile?.name as string) ?? "",
+      rewards,
     });
   } catch (err) {
     console.error("[/api/chapters/complete]", err);

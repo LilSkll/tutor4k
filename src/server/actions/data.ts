@@ -4,6 +4,7 @@ import type {
   ChapterProgress,
   ExerciseHistory,
   LearningProgress,
+  Level,
   Profile,
 } from "@/types";
 
@@ -204,9 +205,11 @@ export async function getCurrentChapterSlug(
   courseId?: string | null,
 ): Promise<string | null> {
   const { getCourse } = await import("@/config/courses");
+  const { hasCompletedPrereqChain } = await import("@/lib/chapter-display");
   const course = await getCourse(courseId ?? "spanish");
   const chapters = course.getChapters();
   const courseSlugs = new Set(chapters.map((c) => c.slug));
+  const chaptersBySlug = new Map(chapters.map((c) => [c.slug, c]));
 
   const progress = await getChapterProgress();
   const completedSlugs = new Set(
@@ -217,7 +220,10 @@ export async function getCurrentChapterSlug(
   );
 
   for (const ch of chapters) {
-    if (!completedSlugs.has(ch.slug)) return ch.slug;
+    if (completedSlugs.has(ch.slug)) continue;
+    if (hasCompletedPrereqChain(ch, chaptersBySlug, completedSlugs)) {
+      return ch.slug;
+    }
   }
   return null;
 }
@@ -247,11 +253,29 @@ export async function startChapter(chapterSlug: string): Promise<void> {
 
   if (existing) return; // Already started or completed.
 
+  // Resolve CEFR band for NOT NULL level column (C2 chapters → C1 until enum migrates).
+  let dbLevel: string = "A1";
+  try {
+    const { data: profile } = await client
+      .from("profiles")
+      .select("active_course_id")
+      .eq("id", user.id)
+      .maybeSingle();
+    const courseId = (profile?.active_course_id as string) ?? "spanish";
+    const { getCourse } = await import("@/config/courses");
+    const { toUserLevel } = await import("@/lib/user-level");
+    const chapter = (await getCourse(courseId)).getChapter(chapterSlug);
+    dbLevel = toUserLevel(chapter?.level);
+  } catch {
+    // keep A1
+  }
+
   // Insert a new in_progress row.
   await client.from("learning_progress").insert({
     user_id: user.id,
     chapter_slug: chapterSlug,
     topic: chapterSlug,
+    level: dbLevel,
     status: "in_progress",
     score: 0,
     started_at: new Date().toISOString(),
@@ -327,8 +351,9 @@ export async function completeChapter(
           ? null
           : `needs review: ${chapter.grammarTopic}`,
         skillHints: {
-          reading: chapter.level,
-          writing: chapter.level,
+          // Skill levels cap at C1 (user Level scale); C2 chapters count as C1.
+          reading: chapter.level === "C2" ? "C1" : chapter.level,
+          writing: chapter.level === "C2" ? "C1" : chapter.level,
         },
       });
     }
@@ -338,4 +363,79 @@ export async function completeChapter(
       (err as Error).message,
     );
   }
+}
+
+/**
+ * Mark every chapter before the first one at `level` as completed so the
+ * prereq chain unlocks that band. Does not overwrite real completions or
+ * bump streaks / learning profile (placement credit, not mastery).
+ */
+export async function creditPriorChaptersForLevel(
+  level: Level,
+  courseId?: string | null,
+): Promise<number> {
+  if (level === "A1") return 0;
+
+  const supabase = await createSupabaseServerClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return 0;
+
+  const { getCourse } = await import("@/config/courses");
+  const { getPriorChapterSlugsForLevel } = await import(
+    "@/lib/chapter-display"
+  );
+  const { toUserLevel } = await import("@/lib/user-level");
+  const course = await getCourse(courseId ?? "spanish");
+  const chapters = course.getChapters();
+  const prior = getPriorChapterSlugsForLevel(chapters, level);
+  if (prior.length === 0) return 0;
+
+  const { createSupabaseAdminClient } = await import("@/lib/supabase-admin");
+  const admin = createSupabaseAdminClient();
+  const client = admin ?? supabase;
+
+  const { data: existing } = await client
+    .from("learning_progress")
+    .select("chapter_slug, status")
+    .eq("user_id", user.id)
+    .in("chapter_slug", prior);
+
+  const alreadyDone = new Set(
+    (existing ?? [])
+      .filter((r) => r.status === "completed" && r.chapter_slug)
+      .map((r) => r.chapter_slug as string),
+  );
+
+  const now = new Date().toISOString();
+  const rows = prior
+    .filter((slug) => !alreadyDone.has(slug))
+    .map((slug) => {
+      const ch = chapters.find((c) => c.slug === slug);
+      const chapterLevel = ch?.level ?? "A1";
+      return {
+        user_id: user.id,
+        chapter_slug: slug,
+        topic: slug,
+        level: toUserLevel(chapterLevel === "C2" ? "C1" : chapterLevel),
+        status: "completed" as const,
+        score: 0,
+        started_at: now,
+        completed_at: now,
+        words_learned: 0,
+        exercises_completed: 0,
+      };
+    });
+
+  if (rows.length === 0) return 0;
+
+  const { error } = await client
+    .from("learning_progress")
+    .upsert(rows, { onConflict: "user_id,chapter_slug" });
+  if (error) {
+    console.warn("[creditPriorChaptersForLevel]", error.message);
+    return 0;
+  }
+  return rows.length;
 }

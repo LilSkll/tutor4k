@@ -1,7 +1,58 @@
-import type { ExerciseType, StaticExercise } from "@/types";
+import type { ExerciseType, GrammarLevel, StaticExercise } from "@/types";
+import {
+  exerciseTargetSentence,
+  normalizeStem,
+} from "@/config/exercise-banks/helpers";
 
 /** Target depth for the permanent adaptive bank (per type, per chapter). */
 export const TARGET_EXERCISES_PER_TYPE = 20;
+
+/** Thicker TR/EC pool for advanced / exam chapters on /exercises. */
+export const THICK_TR_EC_TARGET = 30;
+
+/** Thicker TR/EC pool for C2 English chapters on /exercises. */
+export const ENGLISH_C2_TR_EC_TARGET = THICK_TR_EC_TARGET;
+
+export const ENGLISH_C2_THICK_CHAPTERS = new Set([
+  "eng-ch23-spotlight",
+  "eng-ch24-unspoken",
+  "eng-ch25-between-lines",
+]);
+
+/** Thicker pool for Spanish C2 chapters on /exercises. */
+export const SPANISH_C2_TR_EC_TARGET = THICK_TR_EC_TARGET;
+
+export const SPANISH_C1_THICK_CHAPTERS = new Set([
+  "chapter-16-perifrasis",
+  "chapter-17-dele",
+  "chapter-42-subjuntivo-avanzado",
+  "chapter-43-indirecto-avanzado",
+  "chapter-44-pronombres-avanzado",
+  "chapter-45-ser-estar-matices",
+]);
+
+export const SPANISH_C2_THICK_CHAPTERS = new Set([
+  "chapter-27-hendidas",
+  "chapter-28-conjetura",
+  "chapter-29-culto",
+  "chapter-30-ironia",
+]);
+
+export const ENGLISH_C1_EXAM_THICK_CHAPTERS = new Set([
+  "eng-ch13-advanced-structures",
+  "eng-ch14-art-language",
+  "eng-ch15-mastery",
+  "eng-ch16-ielts",
+  "eng-ch35-ielts-informal",
+  "eng-ch36-ielts-formal",
+  "eng-ch37-cambridge-letter",
+  "eng-ch38-ielts-task1",
+  "eng-ch39-ielts-essay",
+  "eng-ch40-ielts-cohesion",
+  "eng-ch41-cambridge-essay",
+  "eng-ch42-ielts-opinion",
+  "eng-ch43-register-shift",
+]);
 
 /** How many bank items one practice round serves (per type / lesson block). */
 export const SESSION_EXERCISES = 5;
@@ -64,4 +115,143 @@ export function bankCoverageSummary(exercises: StaticExercise[]): {
     byType,
     missingTowardTarget,
   };
+}
+
+/** A1–A2: phrase + translation drills appear in the first practice rounds. */
+const EARLY_LEVEL_TYPE_PRIORITY: ExerciseType[] = [
+  "sentence_building",
+  "translation",
+  "fill_blank",
+  "multiple_choice",
+  "error_correction",
+];
+
+/** Soft content key: finished target sentence shared across exercise types. */
+export function exerciseStemKey(
+  ex: Pick<StaticExercise, "type" | "question" | "answer">,
+): string {
+  return normalizeStem(exerciseTargetSentence(ex));
+}
+
+/** @deprecated Use exerciseStemKey — kept for callers/tests. */
+function softContentKey(ex: StaticExercise): string {
+  return exerciseStemKey(ex);
+}
+
+export function orderEarlyLevelPractice(
+  exercises: StaticExercise[],
+  level: GrammarLevel,
+): StaticExercise[] {
+  const buckets = Object.fromEntries(
+    ALL_EXERCISE_TYPES.map((t) => [t, [] as StaticExercise[]]),
+  ) as Record<ExerciseType, StaticExercise[]>;
+
+  for (const ex of exercises) buckets[ex.type].push(ex);
+
+  const ordered: StaticExercise[] = [];
+  const usedSoft = new Set<string>();
+  const typeCounts: Record<ExerciseType, number> = {
+    multiple_choice: 0,
+    fill_blank: 0,
+    translation: 0,
+    error_correction: 0,
+    sentence_building: 0,
+  };
+  const cursor: Record<ExerciseType, number> = {
+    multiple_choice: 0,
+    fill_blank: 0,
+    translation: 0,
+    error_correction: 0,
+    sentence_building: 0,
+  };
+
+  const priority =
+    level === "A1" || level === "A2" || level === "B1" || level === "B2"
+      ? EARLY_LEVEL_TYPE_PRIORITY
+      : ALL_EXERCISE_TYPES;
+
+  // Pass 1 — unique finished sentences only.
+  let progress = true;
+  while (progress) {
+    progress = false;
+    for (const type of priority) {
+      const bucket = buckets[type];
+      while (cursor[type] < bucket.length) {
+        const item = bucket[cursor[type]++]!;
+        const key = softContentKey(item);
+        if (key && usedSoft.has(key)) continue;
+        if (key) usedSoft.add(key);
+        ordered.push(item);
+        typeCounts[type] += 1;
+        progress = true;
+        break;
+      }
+    }
+  }
+
+  // Pass 2 — if a type still has zero items, take one even with a shared stem
+  // so the chapter guide/practice is not missing an enabled format entirely.
+  for (const type of priority) {
+    if (typeCounts[type] > 0) continue;
+    const item = buckets[type].find(
+      (ex) => !ordered.some((o) => o.id === ex.id),
+    );
+    if (!item) continue;
+    ordered.push(item);
+    typeCounts[type] += 1;
+    const key = softContentKey(item);
+    if (key) usedSoft.add(key);
+  }
+
+  return ordered.length > 0 ? ordered : exercises;
+}
+
+/** Keep first occurrence of each finished target sentence. */
+export function dedupeByTargetStem(
+  exercises: StaticExercise[],
+): StaticExercise[] {
+  const seen = new Set<string>();
+  const out: StaticExercise[] = [];
+  for (const ex of exercises) {
+    const key = softContentKey(ex);
+    if (key && seen.has(key)) continue;
+    if (key) seen.add(key);
+    out.push(ex);
+  }
+  return out;
+}
+
+/**
+ * Pick up to `count` exercises from `fromCursor`, skipping finished-sentence
+ * duplicates within the batch (and optional stems already used this session).
+ */
+export function pickUniqueStemBatch(
+  bank: StaticExercise[],
+  fromCursor: number,
+  count: number,
+  alreadyUsedStems?: Iterable<string>,
+): { batch: StaticExercise[]; nextCursor: number } {
+  const batch: StaticExercise[] = [];
+  const used = new Set<string>(alreadyUsedStems ?? []);
+  let i = Math.max(0, fromCursor);
+  while (i < bank.length && batch.length < count) {
+    const item = bank[i++];
+    const key = softContentKey(item);
+    if (key && used.has(key)) continue;
+    if (key) used.add(key);
+    batch.push(item);
+  }
+  return { batch, nextCursor: i };
+}
+
+/** Types that actually appear in a bank (for honest UI labels). */
+export function availableExerciseTypes(
+  exercises: Array<{ type: ExerciseType }>,
+  declared?: ExerciseType[] | null,
+): ExerciseType[] {
+  const present = new Set(exercises.map((e) => e.type));
+  if (declared && declared.length > 0) {
+    return declared.filter((t) => present.has(t));
+  }
+  return ALL_EXERCISE_TYPES.filter((t) => present.has(t));
 }

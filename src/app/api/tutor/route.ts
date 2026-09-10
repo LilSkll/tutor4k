@@ -3,7 +3,13 @@ import {
   getTutorSessionOpening,
   sendTutorMessage,
 } from "@/server/actions/ai";
-import type { AIMessage } from "@/types";
+import { asInterfaceLanguage } from "@/server/ai/tutor-request";
+import type { AIMessage, InterfaceLanguage } from "@/types";
+
+/**
+ * GET /api/tutor
+ * Personalized session opening from TeacherContext (empty chat).
+ */
 
 /**
  * GET /api/tutor
@@ -24,12 +30,22 @@ export async function GET() {
 
 /**
  * POST /api/tutor
- * Body: { messages: AIMessage[] }
- * Returns: { content, provider, conversationId }
+ * Body: { messages, conversationId?, interfaceLanguage?, courseId?, grammarTopicSlug? }
  */
 export async function POST(req: NextRequest) {
   try {
-    const body = (await req.json()) as { messages?: AIMessage[] };
+    let body: {
+      messages?: AIMessage[];
+      conversationId?: string | null;
+      interfaceLanguage?: InterfaceLanguage | null;
+      courseId?: string | null;
+      grammarTopicSlug?: string | null;
+    };
+    try {
+      body = (await req.json()) as typeof body;
+    } catch {
+      return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
+    }
     const messages = body.messages;
 
     if (!Array.isArray(messages) || messages.length === 0) {
@@ -39,7 +55,13 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const result = await sendTutorMessage({ messages });
+    const result = await sendTutorMessage({
+      messages,
+      conversationId: body.conversationId ?? null,
+      interfaceLanguage: asInterfaceLanguage(body.interfaceLanguage),
+      courseId: body.courseId ?? null,
+      grammarTopicSlug: body.grammarTopicSlug ?? null,
+    });
     return NextResponse.json(result);
   } catch (err) {
     console.error("[/api/tutor]", err);

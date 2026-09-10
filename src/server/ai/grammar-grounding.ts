@@ -1,6 +1,7 @@
 import type { CourseConfig, GrammarTopic, InterfaceLanguage } from "@/types";
 import { getStaticGrammarContent } from "@/config/grammar-content-localizations";
 import { getGrammarTopicTitle } from "@/lib/grammar-display";
+import { withGrammarLevelFrame } from "@/config/grammar-level-frames";
 
 /**
  * Match a learner question to an official course grammar article and
@@ -15,7 +16,11 @@ export function resolveGrammarGrounding(input: {
   const topics = input.course.getGrammar?.() ?? [];
   if (topics.length === 0) return null;
 
-  const q = normalize(input.query);
+  // Strip the "Explain:" UI prefix so exact-title matches score highest.
+  const q = normalize(input.query).replace(
+    /^(объясни|обьясни|расскажи|разбери|поясни|explain|explica(?:me)?|erklar(?:e)?)\s+/,
+    "",
+  );
   if (q.length < 2) return null;
 
   let best: { topic: GrammarTopic; score: number } | null = null;
@@ -33,6 +38,28 @@ export function resolveGrammarGrounding(input: {
   const content = pickContent(best.topic, lang);
   if (!content.trim()) return null;
 
+  return formatOfficialGrounding(best.topic, lang, content);
+}
+
+/** Force grounding to a chapter's grammar slug (lesson «ask about this topic»). */
+export function groundingForSlug(input: {
+  course: CourseConfig;
+  slug: string;
+  interfaceLanguage?: InterfaceLanguage;
+}): string | null {
+  const topic = input.course.getGrammarTopic(input.slug);
+  if (!topic) return null;
+  const lang = input.interfaceLanguage ?? "ru";
+  const content = pickContent(topic, lang);
+  if (!content.trim()) return null;
+  return formatOfficialGrounding(topic, lang, content);
+}
+
+function formatOfficialGrounding(
+  topic: GrammarTopic,
+  lang: InterfaceLanguage,
+  content: string,
+): string {
   const clipped = content.length > 3500 ? `${content.slice(0, 3500).trim()}…` : content;
   const iface =
     lang === "ru"
@@ -43,15 +70,20 @@ export function resolveGrammarGrounding(input: {
           ? "German"
           : "English";
 
-  const topicTitle = getGrammarTopicTitle(best.topic, lang);
+  const topicTitle = getGrammarTopicTitle(topic, lang);
 
   return `# OFFICIAL COURSE GRAMMAR (COPY FORMS EXACTLY — DO NOT INVENT)
-Topic: ${topicTitle} (${best.topic.slug})
+Topic: ${topicTitle} (${topic.slug})
 Student interface language: ${iface} (${lang}).
 Teach and explain ONLY in ${iface}. Do NOT insert glosses from other interface languages (no Russian if interface is English, etc.).
+Never insert Chinese/Japanese/Korean characters into explanations.
 When you draw conjugation tables, use ONLY the forms from this article.
 Never mix moods (e.g. do not put subjuntivo endings in an imperativo afirmativo table).
-vosotros affirmative imperative of -ar verbs ends in **-ad** (hablad), NOT habléis / habláis.
+HARD LOCK — vosotros:
+- Imperativo **afirmativo**: habl**ad**, com**ed**, viv**id** (NEVER habléis / habláis / comáis / viváis).
+- Imperativo **negativo**: no habl**éis**, no com**áis**, no viv**áis**.
+- Presente indicativo: habl**áis** / com**éis** / viv**ís**.
+When stating the answer key, list ONLY correct forms. If the student made mistakes, do not praise as fully correct.
 
 ${clipped}`;
 }
@@ -62,24 +94,25 @@ function pickContent(
   lang: InterfaceLanguage,
 ): string {
   const localized = getStaticGrammarContent(topic.slug, lang);
-  if (localized?.trim()) return localized;
-  if (lang === "ru" && topic.content?.trim()) return topic.content;
-  // Last resort: native content may be Russian — caller still forbids mixing languages in the reply.
-  return topic.content || "";
+  const body =
+    localized?.trim() ||
+    (lang === "ru" ? topic.content : topic.content) ||
+    "";
+  return withGrammarLevelFrame(topic.slug, lang, body);
 }
 
 /** True when the user is asking to explain a grammar label — skip FAQ cache. */
 export function isGrammarExplainQuery(query: string): boolean {
   const q = normalize(query);
   if (
-    /^(объясни|обьясни|расскажи|разбери|поясни|explain|explica|what is|what's|что такое|что это)(\s|$)/i.test(
+    /^(объясни|обьясни|расскажи|разбери|поясни|explain|explica(me)?|erkl[aä]r(e)?|what is|what's|что такое|что это)(\s|$)/i.test(
       q,
     )
   ) {
     return true;
   }
   // Bare mood / tense labels pasted from the course UI.
-  return /^(imperativo|subjuntivo|indicativo|condicional|pret[eé]rito|imperfecto|gerundio|infinitivo|ser\s*\/?\s*estar|por\s*\/?\s*para|narrative tenses|present simple|past simple|present perfect|passive voice|second.*conditional|third.*conditional)(\s|$)/i.test(
+  return /^(imperativo|subjuntivo|indicativo|condicional|pret[eé]rito|imperfecto|gerundio|infinitivo|ser\s*\/?\s*estar|por\s*\/?\s*para|narrative tenses|present simple|past simple|present perfect|passive voice|second.*conditional|third.*conditional|dele\b|oraciones hendidas|cleft|ellipsis|hedging)(\s|$)/i.test(
     q,
   );
 }
@@ -134,6 +167,22 @@ function scoreTopic(topic: GrammarTopic, q: string): number {
 
   if (titleEs && (q.includes(titleEs) || titleEs.includes(q))) score += 10;
   if (title && (q.includes(title) || title.includes(q))) score += 8;
+  // Exact title paste (the "Explain: <title>" button) beats sibling topics.
+  if (q === title || q === titleEs) score += 15;
+
+  // Localized UI titles ("Explain: <EN/ES/DE title>" from the grammar page).
+  for (const l of ["en", "es", "de"] as const) {
+    const localized = normalize(getGrammarTopicTitle(topic, l));
+    if (!localized || localized === title || localized === titleEs) continue;
+    if (q === localized) {
+      score += 25;
+      break;
+    }
+    if (q.includes(localized) || (q.length >= 6 && localized.includes(q))) {
+      score += 10;
+      break;
+    }
+  }
 
   const slugToken = slug.replace(/^(a1|a2|b1|b2|c1)\s+/, "");
   if (slugToken.length >= 4 && q.includes(slugToken)) score += 9;
@@ -146,6 +195,9 @@ function scoreTopic(topic: GrammarTopic, q: string): number {
 
   if (category && q.includes(category)) score += 1;
 
+  // Exam-tagged topics (DELE, …) win when the exam is named in the query.
+  if (topic.exam && q.includes(topic.exam.toLowerCase())) score += 8;
+
   // Strong aliases for common learner wording.
   const aliases: Record<string, string[]> = {
     imperativo: ["повелительн", "imperative", "команд"],
@@ -155,6 +207,17 @@ function scoreTopic(topic: GrammarTopic, q: string): number {
     "ser estar": ["ser/estar", "ser y estar"],
     "por para": ["por/para", "por y para"],
     narrative: ["narrative tenses", "повествовательн"],
+    // New C2 / DELE topics — common learner wording in all interface languages.
+    hendidas: ["выделительн", "расколот", "cleft", "spaltsatz", "hendida"],
+    conjetura: ["догадк", "слух", "rumor", "vermutung", "conjecture", "hearsay", "probablemente"],
+    culto: ["книжн", "абсолютн", "absolute construction", "nominalizacion", "номинализац"],
+    contraste: ["контраст прошедш", "past tense contrast", "kontrast der vergangenheit"],
+    carta: ["формальное письмо", "неформальное письмо", "formal letter", "informal letter", "formeller brief", "carta formal"],
+    conectores: ["коннектор", "connector", "linking words", "связк", "konnektor"],
+    oral: ["устная част", "speaking exam", "монолог", "описание фото", "describir una foto"],
+    cleft: ["выделительн", "расколот", "hendidas", "emphatic do", "эмфаза", "emphase"],
+    ellipsis: ["эллипсис", "замещени", "substitution", "sustitucion", "elipsis", "so do i", "me neither", "ellipse"],
+    hedging: ["хеджирован", "understatement", "смягчени", "сдержанност", "vague language"],
   };
   for (const [key, list] of Object.entries(aliases)) {
     if (
@@ -186,4 +249,24 @@ function scoreTopic(topic: GrammarTopic, q: string): number {
   }
 
   return score;
+}
+
+/** Compact lock injected whenever the turn mentions Imperativo / commands. */
+export function spanishImperativoQuickLock(): string {
+  return `# SPANISH IMPERATIVO — HARD LOCK (copy exactly)
+AFIRMATIVO: tú habla/come/vive · usted hable/coma/viva · nosotros hablemos/comamos/vivamos · vosotros **hablad/comed/vivid** · ustedes hablen/coman/vivan
+NEGATIVO (= subjuntivo): no hables/comas/vivas · no hable/coma/viva · no hablemos/comamos/vivamos · no **habléis/comáis/viváis** · no hablen/coman/vivan
+NEVER list habléis/habláis/comáis as affirmative vosotros. NEVER list hables as usted Imperativo (that is tú subjuntivo / negativo).
+Feedback: if the student has mistakes, do not open with full praise — correct clearly, then show the clean paradigm.`;
+}
+
+export function queryMentionsImperativo(query: string): boolean {
+  const q = normalize(query);
+  return (
+    q.includes("imperativ") ||
+    q.includes("повелительн") ||
+    /\b(hablad|comed|vivid|hableis|hablais|comais)\b/.test(q) ||
+    (q.includes("vosotros") &&
+      (q.includes("habl") || q.includes("com") || q.includes("viv")))
+  );
 }

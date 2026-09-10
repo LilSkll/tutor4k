@@ -21,7 +21,13 @@ export default async function CoursesPage() {
     const chapters = config.getChapters();
     const grammar = config.getGrammar();
     const vocab = config.getVocab();
-    const levels = [...new Set(chapters.map((c) => c.level))];
+    // Range spans both journey chapters and the grammar library (incl. C2).
+    const CEFR_ORDER = ["A1", "A2", "B1", "B2", "C1", "C2"] as const;
+    const levelSet = new Set<string>([
+      ...chapters.map((c) => c.level),
+      ...grammar.map((g) => g.level),
+    ]);
+    const levels = CEFR_ORDER.filter((l) => levelSet.has(l));
     const difficulty =
       levels.length > 0
         ? `${levels[0]}–${levels[levels.length - 1]}`

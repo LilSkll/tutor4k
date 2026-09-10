@@ -1,0 +1,3772 @@
+{
+  "Я студент.": {
+    "en": "I am a student.",
+    "de": "Ich bin Student.",
+    "es": "Soy estudiante."
+  },
+  "Она устала.": {
+    "en": "She is tired.",
+    "de": "Sie ist müde.",
+    "es": "She is tired."
+  },
+  "Мы из России.": {
+    "en": "We are from Russia.",
+    "de": "Wir kommen aus Russland.",
+    "es": "We are from Russia."
+  },
+  "Книга на столе.": {
+    "en": "The book is on the table.",
+    "de": "Das Buch ist auf dem Tisch.",
+    "es": "El libro está sobre la mesa."
+  },
+  "Ты мой друг.": {
+    "en": "You are my friend.",
+    "de": "Du bist mein Freund.",
+    "es": "You are my friend."
+  },
+  "Сегодня понедельник.": {
+    "en": "Today is Monday.",
+    "de": "Heute ist Montag.",
+    "es": "Today is Monday."
+  },
+  "Они в парке.": {
+    "en": "They are in the park.",
+    "de": "Sie sind im Park.",
+    "es": "They are in the park."
+  },
+  "Я дома.": {
+    "en": "I am at home.",
+    "de": "Ich bin zu Hause.",
+    "es": "I am at home."
+  },
+  "Она высокая.": {
+    "en": "She is tall.",
+    "de": "Sie ist groß.",
+    "es": "She is tall."
+  },
+  "Где ванная?": {
+    "en": "Where is the bathroom?",
+    "de": "Wo ist das Bad?",
+    "es": "Where is the bathroom?"
+  },
+  "Мы счастливы.": {
+    "en": "We are happy.",
+    "de": "Wir sind glücklich.",
+    "es": "We are happy."
+  },
+  "Он врач.": {
+    "en": "He is a doctor.",
+    "de": "Er ist Arzt.",
+    "es": "Él es médico."
+  },
+  "Суп холодный.": {
+    "en": "The soup is cold.",
+    "de": "Die Suppe ist kalt.",
+    "es": "The soup is cold."
+  },
+  "Вы (usted) учитель.": {
+    "en": "You (formal) are a teacher.",
+    "de": "Sie sind Lehrer.",
+    "es": "You (formal) are a teacher."
+  },
+  "Ключи здесь.": {
+    "en": "The keys are here.",
+    "de": "Die Schlüssel sind hier.",
+    "es": "The keys are here."
+  },
+  "Я занят.": {
+    "en": "I am busy.",
+    "de": "Ich bin beschäftigt.",
+    "es": "I am busy."
+  },
+  "Мадрид — столица.": {
+    "en": "Madrid is the capital.",
+    "de": "Madrid ist die Hauptstadt.",
+    "es": "Madrid is the capital."
+  },
+  "Они мои друзья.": {
+    "en": "They are my friends.",
+    "de": "Sie sind meine Freunde.",
+    "es": "They are my friends."
+  },
+  "Как ты? (состояние)": {
+    "en": "How are you?",
+    "de": "Wie geht es dir?",
+    "es": "How are you?"
+  },
+  "Это важно.": {
+    "en": "This is important.",
+    "de": "Das ist wichtig.",
+    "es": "This is important."
+  },
+  "Я говорю по-испански.": {
+    "en": "I speak Spanish.",
+    "de": "Ich spreche Spanisch.",
+    "es": "I speak Spanish."
+  },
+  "Ты пьёшь кофе.": {
+    "en": "You drink coffee.",
+    "de": "Du trinkst Kaffee.",
+    "es": "You drink coffee."
+  },
+  "Она живёт в Мадриде.": {
+    "en": "She lives in Madrid.",
+    "de": "Sie lebt in Madrid.",
+    "es": "She lives in Madrid."
+  },
+  "Мы работаем в офисе.": {
+    "en": "We work in an office.",
+    "de": "Wir arbeiten in einem Büro.",
+    "es": "We work in an office."
+  },
+  "Ты говоришь по-английски?": {
+    "en": "Do you speak English?",
+    "de": "Sprichst du Englisch?",
+    "es": "Do you speak English?"
+  },
+  "Они готовят ужин.": {
+    "en": "They are preparing dinner.",
+    "de": "Sie bereiten das Abendessen vor.",
+    "es": "They are preparing dinner."
+  },
+  "Он много учится.": {
+    "en": "He studies a lot.",
+    "de": "Er lernt viel.",
+    "es": "He studies a lot."
+  },
+  "Где вы живёте?": {
+    "en": "Where do you live?",
+    "de": "Wo wohnen Sie?",
+    "es": "Where do you live?"
+  },
+  "Я не ем мясо.": {
+    "en": "I do not eat meat.",
+    "de": "Ich esse kein Fleisch.",
+    "es": "I do not eat meat."
+  },
+  "Вы играете в футбол.": {
+    "en": "You play football.",
+    "de": "Ihr spielt Fußball.",
+    "es": "You play football."
+  },
+  "Хочу яблоко.": {
+    "en": "I want an apple.",
+    "de": "Ich möchte einen Apfel.",
+    "es": "I want an apple."
+  },
+  "Дома большие.": {
+    "en": "The houses are big.",
+    "de": "Die Häuser sind groß.",
+    "es": "The houses are big."
+  },
+  "Есть проблема.": {
+    "en": "There is a problem.",
+    "de": "Es gibt ein Problem.",
+    "es": "Hay un problema."
+  },
+  "Вода холодная.": {
+    "en": "The water is cold.",
+    "de": "Das Wasser ist kalt.",
+    "es": "The water is cold."
+  },
+  "Мне нужен карандаш.": {
+    "en": "I need a pencil.",
+    "de": "Ich brauche einen Bleistift.",
+    "es": "I need a pencil."
+  },
+  "Женщина — учительница.": {
+    "en": "The woman is a teacher.",
+    "de": "Die Frau ist Lehrerin.",
+    "es": "The woman is a teacher."
+  },
+  "Я купил туфли.": {
+    "en": "I bought shoes.",
+    "de": "Ich habe Schuhe gekauft.",
+    "es": "I bought shoes."
+  },
+  "Стол деревянный.": {
+    "en": "The table is wooden.",
+    "de": "Der Tisch ist aus Holz.",
+    "es": "The table is wooden."
+  },
+  "Понятия не имею.": {
+    "en": "I have no idea.",
+    "de": "Ich habe keine Ahnung.",
+    "es": "I have no idea."
+  },
+  "Белый дом (ж.р.).": {
+    "en": "The white house (fem.).",
+    "de": "Das weiße Haus (fem.).",
+    "es": "The white house (fem.)."
+  },
+  "Интересная книга (м.р.).": {
+    "en": "An interesting book (masc.).",
+    "de": "Ein interessantes Buch (mask.).",
+    "es": "An interesting book (masc.)."
+  },
+  "У меня два брата.": {
+    "en": "I have two brothers.",
+    "de": "Ich habe zwei Brüder.",
+    "es": "I have two brothers."
+  },
+  "Цветы красные.": {
+    "en": "The flowers are red.",
+    "de": "Die Blumen sind rot.",
+    "es": "The flowers are red."
+  },
+  "Проблема серьёзная.": {
+    "en": "The problem is serious.",
+    "de": "Das Problem ist ernst.",
+    "es": "The problem is serious."
+  },
+  "Столы большие.": {
+    "en": "The tables are big.",
+    "de": "Die Tische sind groß.",
+    "es": "The tables are big."
+  },
+  "Испанский друг.": {
+    "en": "A Spanish friend.",
+    "de": "Ein spanischer Freund.",
+    "es": "A Spanish friend."
+  },
+  "Воды реки.": {
+    "en": "The waters of the river.",
+    "de": "Die Wasser des Flusses.",
+    "es": "The waters of the river."
+  },
+  "Эти машины новые.": {
+    "en": "These cars are new.",
+    "de": "Diese Autos sind neu.",
+    "es": "These cars are new."
+  },
+  "Девочка умная.": {
+    "en": "The girl is smart.",
+    "de": "Das Mädchen ist klug.",
+    "es": "The girl is smart."
+  },
+  "Сейчас три часа.": {
+    "en": "It is three o'clock.",
+    "de": "Es ist drei Uhr.",
+    "es": "It is three o'clock."
+  },
+  "Мне двадцать лет.": {
+    "en": "I am twenty years old.",
+    "de": "Ich bin zwanzig Jahre alt.",
+    "es": "I am twenty years old."
+  },
+  "Поезд уходит в десять.": {
+    "en": "The train leaves at ten.",
+    "de": "Der Zug fährt um zehn ab.",
+    "es": "The train leaves at ten."
+  },
+  "Сейчас январь.": {
+    "en": "It is January now.",
+    "de": "Jetzt ist Januar.",
+    "es": "It is January now."
+  },
+  "Пять человек.": {
+    "en": "There are five people.",
+    "de": "Es sind fünf Personen.",
+    "es": "There are five people."
+  },
+  "ДР 15-го.": {
+    "en": "My birthday is on the 15th.",
+    "de": "Mein Geburtstag ist am 15.",
+    "es": "My birthday is on the 15th."
+  },
+  "Половина третьего.": {
+    "en": "It is half past two.",
+    "de": "Es ist halb drei.",
+    "es": "It is half past two."
+  },
+  "Осталось десять минут.": {
+    "en": "Ten minutes are left.",
+    "de": "Es sind noch zehn Minuten.",
+    "es": "Ten minutes are left."
+  },
+  "Я родился в 19xx.": {
+    "en": "I was born in 1990.",
+    "de": "Ich wurde 1990 geboren.",
+    "es": "I was born in 1990."
+  },
+  "Иду в школу.": {
+    "en": "I am going to school.",
+    "de": "Ich gehe zur Schule.",
+    "es": "I am going to school."
+  },
+  "Кот под столом.": {
+    "en": "The cat is under the table.",
+    "de": "Die Katze ist unter dem Tisch.",
+    "es": "The cat is under the table."
+  },
+  "Мадрид в Испании.": {
+    "en": "Madrid is in Spain.",
+    "de": "Madrid liegt in Spanien.",
+    "es": "Madrid is in Spain."
+  },
+  "Магазин между банком и кафе.": {
+    "en": "The shop is between the bank and the café.",
+    "de": "Der Laden ist zwischen der Bank und dem Café.",
+    "es": "The shop is between the bank and the café."
+  },
+  "Идёт через парк.": {
+    "en": "He walks through the park.",
+    "de": "Er geht durch den Park.",
+    "es": "He walks through the park."
+  },
+  "Собака перед дверью.": {
+    "en": "The dog is in front of the door.",
+    "de": "Der Hund ist vor der Tür.",
+    "es": "The dog is in front of the door."
+  },
+  "Живу с родителями.": {
+    "en": "I live with my parents.",
+    "de": "Ich lebe bei meinen Eltern.",
+    "es": "I live with my parents."
+  },
+  "Стул рядом со столом.": {
+    "en": "The chair is next to the table.",
+    "de": "Der Stuhl steht neben dem Tisch.",
+    "es": "The chair is next to the table."
+  },
+  "Я голоден.": {
+    "en": "I am hungry.",
+    "de": "Ich habe Hunger.",
+    "es": "I am hungry."
+  },
+  "Ты хочешь пить?": {
+    "en": "Are you thirsty?",
+    "de": "Hast du Durst?",
+    "es": "Are you thirsty?"
+  },
+  "Ей холодно.": {
+    "en": "She is cold.",
+    "de": "Ihr ist kalt.",
+    "es": "She is cold."
+  },
+  "Мы правы.": {
+    "en": "We are right.",
+    "de": "Wir haben recht.",
+    "es": "We are right."
+  },
+  "Им везёт.": {
+    "en": "They are lucky.",
+    "de": "Sie haben Glück.",
+    "es": "They are lucky."
+  },
+  "Мне 20 лет.": {
+    "en": "I am 20 years old.",
+    "de": "Ich bin 20 Jahre alt.",
+    "es": "I am 20 years old."
+  },
+  "Что у тебя в сумке?": {
+    "en": "What do you have in your bag?",
+    "de": "Was hast du in der Tasche?",
+    "es": "What do you have in your bag?"
+  },
+  "Я не боюсь.": {
+    "en": "I am not afraid.",
+    "de": "Ich habe keine Angst.",
+    "es": "I am not afraid."
+  },
+  "Сколько у тебя братьев/сестёр?": {
+    "en": "How many brothers and sisters do you have?",
+    "de": "Wie viele Geschwister hast du?",
+    "es": "How many brothers and sisters do you have?"
+  },
+  "Я сегодня тороплюсь.": {
+    "en": "I am in a hurry today.",
+    "de": "Ich habe heute Eile.",
+    "es": "I am in a hurry today."
+  },
+  "Мне нравится кофе.": {
+    "en": "I like coffee.",
+    "de": "Ich mag Kaffee.",
+    "es": "I like coffee."
+  },
+  "Мне нравятся яблоки.": {
+    "en": "I like apples.",
+    "de": "Ich mag Äpfel.",
+    "es": "I like apples."
+  },
+  "Тебе нравится шоколад?": {
+    "en": "Do you like chocolate?",
+    "de": "Magst du Schokolade?",
+    "es": "Do you like chocolate?"
+  },
+  "Ей нравится танцевать.": {
+    "en": "She likes to dance.",
+    "de": "Sie tanzt gern.",
+    "es": "She likes to dance."
+  },
+  "Нам нравятся книги.": {
+    "en": "We like books.",
+    "de": "Wir mögen Bücher.",
+    "es": "We like books."
+  },
+  "Не люблю вставать рано.": {
+    "en": "I do not like getting up early.",
+    "de": "Ich stehe nicht gern früh auf.",
+    "es": "I do not like getting up early."
+  },
+  "Им нравится футбол.": {
+    "en": "They like football.",
+    "de": "Sie mögen Fußball.",
+    "es": "They like football."
+  },
+  "Что тебе больше нравится?": {
+    "en": "What do you like more?",
+    "de": "Was magst du lieber?",
+    "es": "What do you like more?"
+  },
+  "Мне очень нравится путешествовать.": {
+    "en": "I really like travelling.",
+    "de": "Ich reise sehr gern.",
+    "es": "I really like travelling."
+  },
+  "Тебе нравятся фильмы.": {
+    "en": "You like films.",
+    "de": "Du magst Filme.",
+    "es": "You like films."
+  },
+  "Как тебя зовут?": {
+    "en": "What is your name?",
+    "de": "Wie heißt du?",
+    "es": "¿Cómo te llamas?"
+  },
+  "Где ты живёшь?": {
+    "en": "Where do you live?",
+    "de": "Wo wohnst du?",
+    "es": "¿Dónde vive?"
+  },
+  "Кто твой учитель?": {
+    "en": "Who is your teacher?",
+    "de": "Wer ist dein Lehrer?",
+    "es": "Who is your teacher?"
+  },
+  "Почему учишь испанский?": {
+    "en": "Why are you learning Spanish?",
+    "de": "Warum lernst du Spanisch?",
+    "es": "Why are you learning Spanish?"
+  },
+  "Который час?": {
+    "en": "What time is it?",
+    "de": "Wie spät ist es?",
+    "es": "¿Qué hora es?"
+  },
+  "Когда идёшь в кино?": {
+    "en": "When are you going to the cinema?",
+    "de": "Wann gehst du ins Kino?",
+    "es": "When are you going to the cinema?"
+  },
+  "Какую книгу хочешь?": {
+    "en": "Which book do you want?",
+    "de": "Welches Buch möchtest du?",
+    "es": "Which book do you want?"
+  },
+  "Сколько тебе лет?": {
+    "en": "How old are you?",
+    "de": "Wie alt bist du?",
+    "es": "¿Cuántos años tiene?"
+  },
+  "Откуда ты?": {
+    "en": "Where are you from?",
+    "de": "Woher kommst du?",
+    "es": "¿De dónde eres?"
+  },
+  "Как дела?": {
+    "en": "How are you?",
+    "de": "Wie geht es dir?",
+    "es": "How are you?"
+  },
+  "Я прочитал книгу.": {
+    "en": "I have read the book.",
+    "de": "Ich habe das Buch gelesen.",
+    "es": "I have read the book."
+  },
+  "Она ездила в Мадрид.": {
+    "en": "She has travelled to Madrid.",
+    "de": "Sie ist nach Madrid gereist.",
+    "es": "She has travelled to Madrid."
+  },
+  "Ты уже поел?": {
+    "en": "Have you already eaten?",
+    "de": "Hast du schon gegessen?",
+    "es": "Have you already eaten?"
+  },
+  "Мы много поработали сегодня.": {
+    "en": "We have worked a lot today.",
+    "de": "Wir haben heute viel gearbeitet.",
+    "es": "We have worked a lot today."
+  },
+  "Они открыли дверь.": {
+    "en": "They have opened the door.",
+    "de": "Sie haben die Tür geöffnet.",
+    "es": "They have opened the door."
+  },
+  "Я ничего не видел.": {
+    "en": "I have not seen anything.",
+    "de": "Ich habe nichts gesehen.",
+    "es": "I have not seen anything."
+  },
+  "Что ты сделал?": {
+    "en": "What have you done?",
+    "de": "Was hast du gemacht?",
+    "es": "What have you done?"
+  },
+  "Всю ночь шёл дождь.": {
+    "en": "It has rained all night.",
+    "de": "Es hat die ganze Nacht geregnet.",
+    "es": "It has rained all night."
+  },
+  "Я ещё не закончил.": {
+    "en": "I have not finished yet.",
+    "de": "Ich bin noch nicht fertig.",
+    "es": "I have not finished yet."
+  },
+  "Мы написали письмо.": {
+    "en": "We have written a letter.",
+    "de": "Wir haben einen Brief geschrieben.",
+    "es": "We have written a letter."
+  },
+  "Вчера я ходил в кино.": {
+    "en": "Yesterday I went to the cinema.",
+    "de": "Gestern ging ich ins Kino.",
+    "es": "Yesterday I went to the cinema."
+  },
+  "Она написала письмо.": {
+    "en": "She wrote a letter.",
+    "de": "Sie schrieb einen Brief.",
+    "es": "She wrote a letter."
+  },
+  "Ты смотрел фильм?": {
+    "en": "Did you watch the film?",
+    "de": "Hast du den Film gesehen?",
+    "es": "Did you watch the film?"
+  },
+  "Мы спали в отеле.": {
+    "en": "We slept in a hotel.",
+    "de": "Wir schliefen in einem Hotel.",
+    "es": "We slept in a hotel."
+  },
+  "Они купили дом.": {
+    "en": "They bought a house.",
+    "de": "Sie kauften ein Haus.",
+    "es": "They bought a house."
+  },
+  "Он вышел рано.": {
+    "en": "He left early.",
+    "de": "Er ging früh weg.",
+    "es": "He left early."
+  },
+  "Я ничего не сказал.": {
+    "en": "I said nothing.",
+    "de": "Ich sagte nichts.",
+    "es": "I said nothing."
+  },
+  "Что вы сделали?": {
+    "en": "What did you do?",
+    "de": "Was haben Sie gemacht?",
+    "es": "What did you do?"
+  },
+  "Вчера вечером шёл сильный дождь.": {
+    "en": "It rained heavily last night.",
+    "de": "Gestern Abend regnete es stark.",
+    "es": "It rained heavily last night."
+  },
+  "Ты сказал правду.": {
+    "en": "You told the truth.",
+    "de": "Du hast die Wahrheit gesagt.",
+    "es": "You told the truth."
+  },
+  "В детстве я много играл.": {
+    "en": "When I was a child, I played a lot.",
+    "de": "Als Kind spielte ich viel.",
+    "es": "When I was a child, I played a lot."
+  },
+  "Она была высокой и худой.": {
+    "en": "She was tall and thin.",
+    "de": "Sie war groß und dünn.",
+    "es": "She was tall and thin."
+  },
+  "Мы жили в Севилье.": {
+    "en": "We lived in Seville.",
+    "de": "Wir lebten in Sevilla.",
+    "es": "We lived in Seville."
+  },
+  "Всегда пил кофе утром.": {
+    "en": "He always drank coffee in the morning.",
+    "de": "Er trank morgens immer Kaffee.",
+    "es": "He always drank coffee in the morning."
+  },
+  "Они были счастливы.": {
+    "en": "They were happy.",
+    "de": "Sie waren glücklich.",
+    "es": "They were happy."
+  },
+  "Пока я читал, зазвонил телефон.": {
+    "en": "While I was reading, the phone rang.",
+    "de": "Während ich las, klingelte das Telefon.",
+    "es": "While I was reading, the phone rang."
+  },
+  "В детстве боялся темноты.": {
+    "en": "As a child I was afraid of the dark.",
+    "de": "Als Kind hatte ich Angst vor der Dunkelheit.",
+    "es": "As a child I was afraid of the dark."
+  },
+  "Что ты делал в тот час?": {
+    "en": "What were you doing at that hour?",
+    "de": "Was hast du zu der Stunde gemacht?",
+    "es": "What were you doing at that hour?"
+  },
+  "Было холодно и шёл дождь.": {
+    "en": "It was cold and raining.",
+    "de": "Es war kalt und es regnete.",
+    "es": "It was cold and raining."
+  },
+  "Мои родители тогда работали.": {
+    "en": "My parents were working then.",
+    "de": "Meine Eltern arbeiteten damals.",
+    "es": "My parents were working then."
+  },
+  "Этот подарок для тебя.": {
+    "en": "This gift is for you.",
+    "de": "Dieses Geschenk ist für dich.",
+    "es": "This gift is for you."
+  },
+  "Мы прошли через парк.": {
+    "en": "We walked through the park.",
+    "de": "Wir gingen durch den Park.",
+    "es": "We walked through the park."
+  },
+  "Учу испанский, чтобы путешествовать.": {
+    "en": "I learn Spanish in order to travel.",
+    "de": "Ich lerne Spanisch, um zu reisen.",
+    "es": "I learn Spanish in order to travel."
+  },
+  "Спасибо за помощь.": {
+    "en": "Thanks for your help.",
+    "de": "Danke für deine Hilfe.",
+    "es": "Thanks for your help."
+  },
+  "Выхожу утром.": {
+    "en": "I leave in the morning.",
+    "de": "Ich gehe morgens weg.",
+    "es": "I leave in the morning."
+  },
+  "Поезд до Мадрида в 10.": {
+    "en": "The train to Madrid leaves at 10.",
+    "de": "Der Zug nach Madrid fährt um 10 ab.",
+    "es": "The train to Madrid leaves at 10."
+  },
+  "Я сделал это ради тебя.": {
+    "en": "I did it for you.",
+    "de": "Ich habe es für dich getan.",
+    "es": "I did it for you."
+  },
+  "Мне нужен отчёт к завтра.": {
+    "en": "I need the report by tomorrow.",
+    "de": "Ich brauche den Bericht bis morgen.",
+    "es": "I need the report by tomorrow."
+  },
+  "Иду по улице.": {
+    "en": "I walk along the street.",
+    "de": "Ich gehe die Straße entlang.",
+    "es": "I walk along the street."
+  },
+  "Купил это за пять евро.": {
+    "en": "I bought it for five euros.",
+    "de": "Ich kaufte es für fünf Euro.",
+    "es": "I bought it for five euros."
+  },
+  "Ана выше Луиса.": {
+    "en": "Ana is taller than Luis.",
+    "de": "Ana ist größer als Luis.",
+    "es": "Ana is taller than Luis."
+  },
+  "Такая же интересная.": {
+    "en": "This book is as interesting as that one.",
+    "de": "Dieses Buch ist so interessant wie jenes.",
+    "es": "This book is as interesting as that one."
+  },
+  "Самый большой город.": {
+    "en": "It is the biggest city.",
+    "de": "Es ist die größte Stadt.",
+    "es": "It is the biggest city."
+  },
+  "У меня больше книг, чем у тебя.": {
+    "en": "I have more books than you.",
+    "de": "Ich habe mehr Bücher als du.",
+    "es": "I have more books than you."
+  },
+  "Она моложе меня.": {
+    "en": "She is younger than me.",
+    "de": "Sie ist jünger als ich.",
+    "es": "She is younger than me."
+  },
+  "Самый умный ученик.": {
+    "en": "He is the smartest student in the class.",
+    "de": "Er ist der klügste Schüler der Klasse.",
+    "es": "He is the smartest student in the class."
+  },
+  "Мой дом лучше твоего.": {
+    "en": "My house is better than yours.",
+    "de": "Mein Haus ist besser als deins.",
+    "es": "My house is better than yours."
+  },
+  "Сегодня холоднее, чем вчера.": {
+    "en": "Today is colder than yesterday.",
+    "de": "Heute ist es kälter als gestern.",
+    "es": "Today is colder than yesterday."
+  },
+  "Так же счастливы, как раньше.": {
+    "en": "We are as happy as before.",
+    "de": "Wir sind so glücklich wie früher.",
+    "es": "We are as happy as before."
+  },
+  "Самый интересный фильм.": {
+    "en": "This is the most interesting film.",
+    "de": "Das ist der interessanteste Film.",
+    "es": "This is the most interesting film."
+  },
+  "Завтра поговорю с ней.": {
+    "en": "Tomorrow I will talk to her.",
+    "de": "Morgen werde ich mit ihr sprechen.",
+    "es": "Tomorrow I will talk to her."
+  },
+  "Они придут завтра.": {
+    "en": "They will come tomorrow.",
+    "de": "Sie werden morgen kommen.",
+    "es": "They will come tomorrow."
+  },
+  "Мы поедем в Испанию.": {
+    "en": "We will go to Spain.",
+    "de": "Wir werden nach Spanien fahren.",
+    "es": "We will go to Spain."
+  },
+  "Что будешь делать в будущем году?": {
+    "en": "What will you do next year?",
+    "de": "Was wirst du nächstes Jahr machen?",
+    "es": "What will you do next year?"
+  },
+  "Она скажет правду.": {
+    "en": "She will tell the truth.",
+    "de": "Sie wird die Wahrheit sagen.",
+    "es": "She will tell the truth."
+  },
+  "Я выйду рано.": {
+    "en": "I will leave early.",
+    "de": "Ich werde früh gehen.",
+    "es": "I will leave early."
+  },
+  "Вы придёте на праздник?": {
+    "en": "Will you come to the party?",
+    "de": "Werden Sie zur Feier kommen?",
+    "es": "Will you come to the party?"
+  },
+  "Будет много людей.": {
+    "en": "There will be many people.",
+    "de": "Es wird viele Leute geben.",
+    "es": "There will be many people."
+  },
+  "Мы приготовим ужин.": {
+    "en": "We will prepare dinner.",
+    "de": "Wir werden das Abendessen zubereiten.",
+    "es": "We will prepare dinner."
+  },
+  "Ты сдашь экзамен.": {
+    "en": "You will pass the exam.",
+    "de": "Du wirst die Prüfung bestehen.",
+    "es": "You will pass the exam."
+  },
+  "Я из России.": {
+    "en": "I am from Russia.",
+    "de": "Ich komme aus Russland.",
+    "es": "Soy de Rusia."
+  },
+  "Они работают в офисе.": {
+    "en": "They work in an office.",
+    "de": "Sie arbeiten in einem Büro.",
+    "es": "They work in an office."
+  },
+  "Девочки играют в парке.": {
+    "en": "The girls are playing in the park.",
+    "de": "Die Mädchen spielen im Park.",
+    "es": "The girls are playing in the park."
+  },
+  "Сейчас три часа дня.": {
+    "en": "It is three in the afternoon.",
+    "de": "Es ist drei Uhr nachmittags.",
+    "es": "It is three in the afternoon."
+  },
+  "Мне холодно.": {
+    "en": "I am cold.",
+    "de": "Mir ist kalt.",
+    "es": "I am cold."
+  },
+  "Мне нравится испанский.": {
+    "en": "I like Spanish.",
+    "de": "Ich mag Spanisch.",
+    "es": "I like Spanish."
+  },
+  "Белые дома": {
+    "en": "White houses",
+    "de": "Weiße Häuser",
+    "es": "White houses"
+  },
+  "Ключи на столе.": {
+    "en": "The keys are on the table.",
+    "de": "Die Schlüssel sind auf dem Tisch.",
+    "es": "The keys are on the table."
+  },
+  "Почему ты изучаешь испанский?": {
+    "en": "Why are you studying Spanish?",
+    "de": "Warum lernst du Spanisch?",
+    "es": "Why are you studying Spanish?"
+  },
+  "Это самый большой город.": {
+    "en": "This is the biggest city.",
+    "de": "Das ist die größte Stadt.",
+    "es": "This is the biggest city."
+  },
+  "Я уже поел.": {
+    "en": "I have already eaten.",
+    "de": "Ich habe schon gegessen.",
+    "es": "I have already eaten."
+  },
+  "Вчера я купил книгу.": {
+    "en": "Yesterday I bought a book.",
+    "de": "Gestern kaufte ich ein Buch.",
+    "es": "Yesterday I bought a book."
+  },
+  "Когда я был маленьким, я жил в Москве.": {
+    "en": "When I was little, I lived in Moscow.",
+    "de": "Als ich klein war, lebte ich in Moskau.",
+    "es": "When I was little, I lived in Moscow."
+  },
+  "Хочу, чтобы ты пришёл.": {
+    "en": "I want you to come.",
+    "de": "Ich möchte, dass du kommst.",
+    "es": "I want you to come."
+  },
+  "Важно, чтобы она училась.": {
+    "en": "It is important that she studies.",
+    "de": "Es ist wichtig, dass sie lernt.",
+    "es": "It is important that she studies."
+  },
+  "Сомневаюсь, что он говорит правду.": {
+    "en": "I doubt he is telling the truth.",
+    "de": "Ich bezweifle, dass er die Wahrheit sagt.",
+    "es": "I doubt he is telling the truth."
+  },
+  "Надеюсь, будет хорошая погода.": {
+    "en": "I hope the weather will be good.",
+    "de": "Ich hoffe, das Wetter wird gut.",
+    "es": "I hope the weather will be good."
+  },
+  "Не думаю, что это возможно.": {
+    "en": "I do not think it is possible.",
+    "de": "Ich glaube nicht, dass das möglich ist.",
+    "es": "I do not think it is possible."
+  },
+  "Советую тебе больше отдыхать.": {
+    "en": "I advise you to rest more.",
+    "de": "Ich rate dir, mehr zu ruhen.",
+    "es": "I advise you to rest more."
+  },
+  "Хотелось бы, чтобы завтра шёл дождь.": {
+    "en": "I would like it to rain tomorrow.",
+    "de": "Ich würde mir wünschen, dass es morgen regnet.",
+    "es": "I would like it to rain tomorrow."
+  },
+  "Чтобы успеть, выйди рано.": {
+    "en": "To be on time, leave early.",
+    "de": "Damit du es schaffst, geh früh los.",
+    "es": "To be on time, leave early."
+  },
+  "Рад, что ты здесь.": {
+    "en": "I am glad you are here.",
+    "de": "Ich freue mich, dass du hier bist.",
+    "es": "I am glad you are here."
+  },
+  "Нужно, чтобы мы поговорили.": {
+    "en": "We need to talk.",
+    "de": "Wir müssen reden.",
+    "es": "We need to talk."
+  },
+  "Открой дверь, пожалуйста.": {
+    "en": "Open the door, please.",
+    "de": "Öffne bitte die Tür.",
+    "es": "Open the door, please."
+  },
+  "Не говори так громко.": {
+    "en": "Do not speak so loudly.",
+    "de": "Sprich nicht so laut.",
+    "es": "Do not speak so loudly."
+  },
+  "Подождите здесь.": {
+    "en": "Wait here.",
+    "de": "Warten Sie hier.",
+    "es": "Wait here."
+  },
+  "Скажи правду.": {
+    "en": "Tell the truth.",
+    "de": "Sag die Wahrheit.",
+    "es": "Tell the truth."
+  },
+  "Не делай этого.": {
+    "en": "Do not do that.",
+    "de": "Tu das nicht.",
+    "es": "Do not do that."
+  },
+  "Обрати внимание.": {
+    "en": "Pay attention.",
+    "de": "Pass auf.",
+    "es": "Pay attention."
+  },
+  "Говорите медленнее.": {
+    "en": "Speak more slowly.",
+    "de": "Sprechen Sie langsamer.",
+    "es": "Speak more slowly."
+  },
+  "Прочитай книгу.": {
+    "en": "Read the book.",
+    "de": "Lies das Buch.",
+    "es": "Read the book."
+  },
+  "Не волнуйся.": {
+    "en": "Do not worry.",
+    "de": "Mach dir keine Sorgen.",
+    "es": "Do not worry."
+  },
+  "Приходи сюда завтра.": {
+    "en": "Come here tomorrow.",
+    "de": "Komm morgen hierher.",
+    "es": "Come here tomorrow."
+  },
+  "Я бы хотел кофе.": {
+    "en": "I would like coffee.",
+    "de": "Ich hätte gern Kaffee.",
+    "es": "I would like coffee."
+  },
+  "Ей хотелось бы поехать в Италию.": {
+    "en": "She would like to go to Italy.",
+    "de": "Sie würde gern nach Italien fahren.",
+    "es": "She would like to go to Italy."
+  },
+  "Не мог бы ты помочь?": {
+    "en": "Could you help?",
+    "de": "Könntest du helfen?",
+    "es": "Could you help?"
+  },
+  "Если бы было время, пошёл бы.": {
+    "en": "If there were time, I would go.",
+    "de": "Wenn es Zeit gäbe, würde ich gehen.",
+    "es": "If there were time, I would go."
+  },
+  "Нам нужно было бы больше денег.": {
+    "en": "We would need more money.",
+    "de": "Wir würden mehr Geld brauchen.",
+    "es": "We would need more money."
+  },
+  "Он сказал бы правду.": {
+    "en": "He would tell the truth.",
+    "de": "Er würde die Wahrheit sagen.",
+    "es": "He would tell the truth."
+  },
+  "Я бы этого не сделал.": {
+    "en": "I would not do that.",
+    "de": "Das würde ich nicht tun.",
+    "es": "I would not do that."
+  },
+  "Что бы вы сделали?": {
+    "en": "What would you do?",
+    "de": "Was würden Sie tun?",
+    "es": "What would you do?"
+  },
+  "Мне хотелось бы остаться.": {
+    "en": "I would like to stay.",
+    "de": "Ich würde gern bleiben.",
+    "es": "I would like to stay."
+  },
+  "Им следовало бы прийти.": {
+    "en": "They should have come.",
+    "de": "Sie hätten kommen sollen.",
+    "es": "They should have come."
+  },
+  "Она сказала, что устала.": {
+    "en": "She said she was tired.",
+    "de": "Sie sagte, dass sie müde sei.",
+    "es": "She said she was tired."
+  },
+  "Сказал, что придёт завтра.": {
+    "en": "He said he would come tomorrow.",
+    "de": "Er sagte, dass er morgen kommen würde.",
+    "es": "He said he would come tomorrow."
+  },
+  "Спросил, готов ли я.": {
+    "en": "He asked if I was ready.",
+    "de": "Er fragte, ob ich bereit sei.",
+    "es": "He asked if I was ready."
+  },
+  "Сказал, что голоден.": {
+    "en": "He said he was hungry.",
+    "de": "Er sagte, dass er hungrig sei.",
+    "es": "He said he was hungry."
+  },
+  "Попросил нас подождать.": {
+    "en": "He asked us to wait.",
+    "de": "Er bat uns zu warten.",
+    "es": "He asked us to wait."
+  },
+  "Объяснил, что опоздал на поезд.": {
+    "en": "He explained that he missed the train.",
+    "de": "Er erklärte, dass er den Zug verpasst habe.",
+    "es": "He explained that he missed the train."
+  },
+  "Спросил, где я живу.": {
+    "en": "He asked where I live.",
+    "de": "Er fragte, wo ich wohne.",
+    "es": "He asked where I live."
+  },
+  "Сказал, что ничего не знает.": {
+    "en": "He said he knows nothing.",
+    "de": "Er sagte, dass er nichts wisse.",
+    "es": "He said he knows nothing."
+  },
+  "Утверждал, что говорит правду.": {
+    "en": "He claimed he was telling the truth.",
+    "de": "Er behauptete, die Wahrheit zu sagen.",
+    "es": "He claimed he was telling the truth."
+  },
+  "Пообещал, что придёт вовремя.": {
+    "en": "He promised he would arrive on time.",
+    "de": "Er versprach, pünktlich zu kommen.",
+    "es": "He promised he would arrive on time."
+  },
+  "Книга написана Сервантесом.": {
+    "en": "The book was written by Cervantes.",
+    "de": "Das Buch wurde von Cervantes geschrieben.",
+    "es": "The book was written by Cervantes."
+  },
+  "Дом построили в 1990.": {
+    "en": "The house was built in 1990.",
+    "de": "Das Haus wurde 1990 gebaut.",
+    "es": "The house was built in 1990."
+  },
+  "Письма отправили вчера.": {
+    "en": "The letters were sent yesterday.",
+    "de": "Die Briefe wurden gestern verschickt.",
+    "es": "The letters were sent yesterday."
+  },
+  "Музей посещают каждый день.": {
+    "en": "The museum is visited every day.",
+    "de": "Das Museum wird jeden Tag besucht.",
+    "es": "The museum is visited every day."
+  },
+  "Дверь открыл ветер.": {
+    "en": "The door was opened by the wind.",
+    "de": "Die Tür wurde vom Wind geöffnet.",
+    "es": "The door was opened by the wind."
+  },
+  "Здесь говорят по-испански.": {
+    "en": "Spanish is spoken here.",
+    "de": "Hier spricht man Spanisch.",
+    "es": "Spanish is spoken here."
+  },
+  "Машину ремонтируют.": {
+    "en": "The car is being repaired.",
+    "de": "Das Auto wird repariert.",
+    "es": "The car is being repaired."
+  },
+  "Фильм вышел в 2020.": {
+    "en": "The film came out in 2020.",
+    "de": "Der Film kam 2020 heraus.",
+    "es": "The film came out in 2020."
+  },
+  "Документы подписаны.": {
+    "en": "The documents are signed.",
+    "de": "Die Dokumente sind unterschrieben.",
+    "es": "The documents are signed."
+  },
+  "Сообщение отправила Ана.": {
+    "en": "Ana sent the message.",
+    "de": "Ana hat die Nachricht geschickt.",
+    "es": "Ana sent the message."
+  },
+  "Завтра собираюсь учиться.": {
+    "en": "Tomorrow I am going to study.",
+    "de": "Morgen werde ich lernen.",
+    "es": "Tomorrow I am going to study."
+  },
+  "Я читаю книгу.": {
+    "en": "I am reading a book.",
+    "de": "Ich lese ein Buch.",
+    "es": "I am reading a book."
+  },
+  "Я только что пришёл.": {
+    "en": "I have just arrived.",
+    "de": "Ich bin gerade angekommen.",
+    "es": "I have just arrived."
+  },
+  "Мне нужно работать.": {
+    "en": "I need to work.",
+    "de": "Ich muss arbeiten.",
+    "es": "I need to work."
+  },
+  "Продолжаю учить испанский.": {
+    "en": "I keep learning Spanish.",
+    "de": "Ich lerne weiter Spanisch.",
+    "es": "I keep learning Spanish."
+  },
+  "Бросаю курить.": {
+    "en": "I am quitting smoking.",
+    "de": "Ich höre mit dem Rauchen auf.",
+    "es": "I am quitting smoking."
+  },
+  "Снова попробую.": {
+    "en": "I will try again.",
+    "de": "Ich werde es noch einmal versuchen.",
+    "es": "I will try again."
+  },
+  "Жду уже два часа.": {
+    "en": "I have been waiting for two hours.",
+    "de": "Ich warte schon seit zwei Stunden.",
+    "es": "I have been waiting for two hours."
+  },
+  "Нужно практиковаться.": {
+    "en": "You need to practise.",
+    "de": "Man muss üben.",
+    "es": "You need to practise."
+  },
+  "Вот-вот выйдет.": {
+    "en": "It is about to come out.",
+    "de": "Es kommt gleich heraus.",
+    "es": "It is about to come out."
+  },
+  "Рад, что ты пришёл.": {
+    "en": "I am glad you came.",
+    "de": "Ich freue mich, dass du gekommen bist.",
+    "es": "I am glad you came."
+  },
+  "Тем не менее нужно продолжать.": {
+    "en": "Nevertheless, we must continue.",
+    "de": "Trotzdem müssen wir weitermachen.",
+    "es": "Nevertheless, we must continue."
+  },
+  "Текст написан в формальном тоне.": {
+    "en": "The text is written in a formal tone.",
+    "de": "Der Text ist in formellem Ton geschrieben.",
+    "es": "The text is written in a formal tone."
+  },
+  "Хотя и устал, закончил.": {
+    "en": "Although tired, he finished.",
+    "de": "Obwohl er müde war, beendete er es.",
+    "es": "Although tired, he finished."
+  },
+  "Ожидается, что скоро приедет.": {
+    "en": "He is expected to arrive soon.",
+    "de": "Es wird erwartet, dass er bald ankommt.",
+    "es": "He is expected to arrive soon."
+  },
+  "Следовало бы больше учиться.": {
+    "en": "You should study more.",
+    "de": "Du solltest mehr lernen.",
+    "es": "You should study more."
+  },
+  "Как только приедешь, позвони.": {
+    "en": "As soon as you arrive, call.",
+    "de": "Sobald du ankommst, ruf an.",
+    "es": "As soon as you arrive, call."
+  },
+  "С одной стороны… с другой…": {
+    "en": "On one hand… on the other…",
+    "de": "Einerseits… andererseits…",
+    "es": "On one hand… on the other…"
+  },
+  "Вероятно, он прав.": {
+    "en": "He is probably right.",
+    "de": "Er hat wahrscheinlich recht.",
+    "es": "He is probably right."
+  },
+  "Me ___ los libros. (gustar, мн.ч.)": {
+    "en": "I ___ books. (gustar, plural)",
+    "de": "Mir ___ die Bücher. (gustar, Plural)",
+    "es": "Me ___ los libros. (gustar, plural)"
+  },
+  "Me duele la ___ (голова).": {
+    "en": "My ___ hurts. (head)",
+    "de": "Mir tut der/die ___ weh. (Kopf)",
+    "es": "Me duele la ___ (cabeza)."
+  },
+  "___ casa es grande. (артикль)": {
+    "en": "___ house is big. (article)",
+    "de": "___ Haus ist groß. (Artikel)",
+    "es": "___ casa es grande. (artículo)"
+  },
+  "Los ___ (libro, мн.ч.)": {
+    "en": "Los ___ (libro, plural)",
+    "de": "Los ___ (libro, Plural)",
+    "es": "Los ___ (libro, plural)"
+  },
+  "¿___ vives? (где)": {
+    "en": "¿___ vives? (where)",
+    "de": "¿___ vives? (wo)",
+    "es": "¿___ vives? (dónde)"
+  },
+  "Ana es ___ alta ___ María. (такая же)": {
+    "en": "Ana is ___ tall ___ María. (the same)",
+    "de": "Ana ist ___ groß ___ María. (genauso)",
+    "es": "Ana es ___ alta ___ María. (igual)"
+  },
+  "Это подарок для тебя.": {
+    "en": "This is a gift for you.",
+    "de": "Das ist ein Geschenk für dich.",
+    "es": "Es un regalo para ti."
+  },
+  "Я хочу, чтобы ты пришёл.": {
+    "en": "I want you to come.",
+    "de": "Ich möchte, dass du kommst.",
+    "es": "Quiero que vengas / que venga."
+  },
+  "Скажи мне правду! (tú)": {
+    "en": "Tell me the truth! (tú)",
+    "de": "Sag mir die Wahrheit! (tú)",
+    "es": "¡Dime la verdad! (tú)"
+  },
+  "Me ___ (gustar) un café. (вежливо)": {
+    "en": "I ___ (gustar) a coffee. (polite)",
+    "de": "Ich ___ (gustar) einen Kaffee. (höflich)",
+    "es": "Me ___ (gustar) un café. (cortés)"
+  },
+  "Я бы хотел путешествовать.": {
+    "en": "I would like to travel.",
+    "de": "Ich würde gerne reisen.",
+    "es": "Me gustaría viajar."
+  },
+  "Он сказал, что придёт завтра.": {
+    "en": "He said that he would come tomorrow.",
+    "de": "Er sagte, er werde / würde morgen kommen.",
+    "es": "Dijo que vendría mañana."
+  },
+  "___ habla español aquí. (пассив с se)": {
+    "en": "___ Spanish is spoken here.",
+    "de": "___ wird hier Spanisch gesprochen. (Passiv mit se)",
+    "es": "___ habla español aquí. (pasiva con se)"
+  },
+  "Письмо отправлено.": {
+    "en": "The letter has been / is sent.",
+    "de": "Der Brief ist / wurde abgeschickt.",
+    "es": "La carta es / está enviada."
+  },
+  "Как бы то ни было, я поеду.": {
+    "en": "Come what may, I will go.",
+    "de": "Wie dem auch sei, ich fahre.",
+    "es": "Sea como sea, iré."
+  },
+  "Я хотел бы подать жалобу.": {
+    "en": "I would like to file a complaint.",
+    "de": "Ich möchte eine Beschwerde einreichen.",
+    "es": "Quisiera presentar una reclamación."
+  },
+  "En ___, la educación es la clave del futuro. (вывод)": {
+    "en": "In ___, education is the key to the future. (conclusion)",
+    "de": "___ ist Bildung der Schlüssel zur Zukunft. (Schlussfolgerung)",
+    "es": "En ___, la educación es la clave del futuro. (conclusión)"
+  },
+  "Я полностью с тобой согласен.": {
+    "en": "I completely agree with you.",
+    "de": "Ich stimme dir völlig zu.",
+    "es": "Estoy totalmente de acuerdo contigo."
+  },
+  "Ему, наверное, лет сорок.": {
+    "en": "He must be about forty.",
+    "de": "Er ist wohl etwa vierzig.",
+    "es": "Tendrá unos cuarenta años."
+  },
+  "Как ни странно, он отказался.": {
+    "en": "Strange as it may seem, he refused.",
+    "de": "So seltsam es auch scheint, er lehnte ab.",
+    "es": "Por extraño que parezca, se negó."
+  },
+  "Она работает каждый день.": {
+    "en": "She works every day.",
+    "de": "Sie arbeitet jeden Tag.",
+    "es": "Ella trabaja todos los días."
+  },
+  "Есть ли здесь аптека?": {
+    "en": "Is there a pharmacy here?",
+    "de": "Gibt es hier eine Apotheke?",
+    "es": "¿Hay una farmacia aquí?"
+  },
+  "Она не умеет водить.": {
+    "en": "She can't drive.",
+    "de": "Sie kann nicht Auto fahren.",
+    "es": "Ella no sabe conducir / no puede conducir."
+  },
+  "Кот под кроватью.": {
+    "en": "The cat is under the bed.",
+    "de": "Die Katze ist unter dem Bett.",
+    "es": "El gato está debajo de la cama."
+  },
+  "Мы поехали в аэропорт.": {
+    "en": "We went to the airport.",
+    "de": "Wir sind zum Flughafen gefahren.",
+    "es": "Fuimos al aeropuerto."
+  },
+  "Это самое высокое здание.": {
+    "en": "This is the tallest building.",
+    "de": "Das ist das höchste Gebäude.",
+    "es": "Este es el edificio más alto."
+  },
+  "Мы собираемся путешествовать.": {
+    "en": "We are going to travel.",
+    "de": "Wir werden reisen / Wir haben vor zu reisen.",
+    "es": "Vamos a viajar."
+  },
+  "Я никогда не был в Лондоне.": {
+    "en": "I have never been to London.",
+    "de": "Ich war noch nie in London.",
+    "es": "Nunca he estado en Londres."
+  },
+  "У меня есть немного времени.": {
+    "en": "I have some time.",
+    "de": "Ich habe etwas Zeit.",
+    "es": "Tengo algo de tiempo."
+  },
+  "Я позвоню тебе завтра.": {
+    "en": "I will call you tomorrow.",
+    "de": "Ich werde dich morgen anrufen.",
+    "es": "Te llamaré mañana."
+  },
+  "Тебе следует отдохнуть.": {
+    "en": "You should rest.",
+    "de": "Du solltest dich ausruhen.",
+    "es": "Deberías descansar."
+  },
+  "You ___ wear a helmet. (обязательно)": {
+    "en": "You ___ wear a helmet. (obligatory)",
+    "de": "Du ___ einen Helm tragen. (verpflichtend)",
+    "es": "Debes ___ llevar casco. (obligatorio)"
+  },
+  "You ___ smoke here. (запрещено)": {
+    "en": "You ___ smoke here. (forbidden)",
+    "de": "Hier ___ du nicht rauchen. (verboten)",
+    "es": "Aquí no ___ fumar. (prohibido)"
+  },
+  "Я читал книгу, когда позвонил телефон.": {
+    "en": "I was reading a book when the phone rang.",
+    "de": "Ich las ein Buch, als das Telefon klingelte.",
+    "es": "Estaba leyendo un libro cuando sonó el teléfono."
+  },
+  "Я устал — я бегал.": {
+    "en": "I'm tired — I've been running.",
+    "de": "Ich bin müde — ich bin gelaufen / habe gejoggt.",
+    "es": "Estoy cansado — he estado corriendo."
+  },
+  "Хотел бы я знать ответ.": {
+    "en": "I wish I knew the answer.",
+    "de": "Ich wünschte, ich wüsste die Antwort.",
+    "es": "Ojalá supiera la respuesta. / Desearía saber la respuesta."
+  },
+  "Мона Лиза была написана Леонардо да Винчи.": {
+    "en": "The Mona Lisa was painted by Leonardo da Vinci.",
+    "de": "Die Mona Lisa wurde von Leonardo da Vinci gemalt.",
+    "es": "La Mona Lisa fue pintada por Leonardo da Vinci."
+  },
+  "Я действительно верю тебе!": {
+    "en": "I do believe you!",
+    "de": "Ich glaube dir wirklich!",
+    "es": "¡Sí te creo! / ¡Realmente te creo!"
+  },
+  "Я думаю, что да.": {
+    "en": "I think so.",
+    "de": "Ich denke schon. / Ich glaube schon.",
+    "es": "Creo que sí. / Pienso que sí."
+  },
+  "Эта машина нуждается в мойке.": {
+    "en": "This car needs cleaning / to be washed.",
+    "de": "Dieses Auto muss gewaschen werden.",
+    "es": "Este coche necesita una limpia / necesita lavarse."
+  },
+  "Более того, это важно для экзамена.": {
+    "en": "Furthermore / Moreover, this is important for the exam.",
+    "de": "Darüber hinaus ist das wichtig für die Prüfung.",
+    "es": "Además / Es más, esto es importante para el examen."
+  },
+  "Можно сказать, что результаты неубедительны.": {
+    "en": "Arguably / It could be argued that the results are inconclusive.",
+    "de": "Man könnte sagen / Es lässt sich argumentieren, dass die Ergebnisse unschlüssig sind.",
+    "es": "Podría decirse / Se podría argumentar que los resultados no son concluyentes."
+  },
+  "Кто?": {
+    "en": "Who?",
+    "de": "Wer?",
+    "es": "Who?"
+  },
+  "Формула": {
+    "en": "Formula",
+    "de": "Formel",
+    "es": "Formula"
+  },
+  "Он дома.": {
+    "en": "He is at home.",
+    "de": "Er ist zu Hause.",
+    "es": "He is at home."
+  },
+  "Полдень.": {
+    "en": "Noon.",
+    "de": "Mittag.",
+    "es": "Noon."
+  },
+  "Гипотеза": {
+    "en": "Hypothesis",
+    "de": "Hypothese",
+    "es": "Hypothesis"
+  },
+  "Пей воду.": {
+    "en": "Drink water.",
+    "de": "Trink Wasser.",
+    "es": "Drink water."
+  },
+  "Пословица": {
+    "en": "Proverb",
+    "de": "Sprichwort",
+    "es": "Proverb"
+  },
+  "Вовсе нет!": {
+    "en": "Not at all!",
+    "de": "Garnicht!",
+    "es": "Not at all!"
+  },
+  "Где газета?": {
+    "en": "Where is the newspaper?",
+    "de": "Wo ist die Zeitung?",
+    "es": "Where is the newspaper?"
+  },
+  "Ты успеешь?": {
+    "en": "Will you make it in time?",
+    "de": "Schaffst du es noch?",
+    "es": "¿Llegarás a tiempo?"
+  },
+  "Начало речи": {
+    "en": "Beginning of the speech",
+    "de": "Anfang der Rede",
+    "es": "Beginning of the speech"
+  },
+  "Можно войти?": {
+    "en": "May I come in?",
+    "de": "Darf ich hereinkommen?",
+    "es": "May I come in?"
+  },
+  "С уважением…": {
+    "en": "Sincerely...",
+    "de": "Mit freundlichen Grüßen...",
+    "es": "Sincerely..."
+  },
+  "Ты видел это?": {
+    "en": "Did you see that?",
+    "de": "Hast du das gesehen?",
+    "es": "Did you see that?"
+  },
+  "Окна открыты.": {
+    "en": "The windows are open.",
+    "de": "Die Fenster sind offen.",
+    "es": "Las ventanas están abiertas."
+  },
+  "Выделяем лицо": {
+    "en": "Highlighting the face",
+    "de": "Das Gesicht hervorheben",
+    "es": "Highlighting the face"
+  },
+  "Сдвиг указателя": {
+    "en": "Pointer shift",
+    "de": "Zeigerverschiebung",
+    "es": "Pointer shift"
+  },
+  "Проблема решена.": {
+    "en": "Problem solved.",
+    "de": "Problem gelöst.",
+    "es": "Problema resuelto."
+  },
+  "Она знает ответ.": {
+    "en": "She knows the answer.",
+    "de": "Sie kennt die Antwort.",
+    "es": "She knows the answer."
+  },
+  "Замените le + OD": {
+    "en": "Replace le + OD",
+    "de": "Ersetzen Sie le + OD",
+    "es": "Replace le + OD"
+  },
+  "Структура текста": {
+    "en": "Text structure",
+    "de": "Textstruktur",
+    "es": "Text structure"
+  },
+  "У неё мало денег.": {
+    "en": "She has little money.",
+    "de": "Sie hat wenig Geld.",
+    "es": "She has little money."
+  },
+  "Он потерял ключи.": {
+    "en": "He lost his keys.",
+    "de": "Er hat seine Schlüssel verloren.",
+    "es": "Perdió sus llaves."
+  },
+  "Это будет сложно.": {
+    "en": "This will be difficult.",
+    "de": "Das wird schwierig sein.",
+    "es": "Será difícil."
+  },
+  "Я уже ел сегодня.": {
+    "en": "I have already eaten today.",
+    "de": "Ich habe heute schon gegessen.",
+    "es": "I have already eaten today."
+  },
+  "Я пишу по поводу…": {
+    "en": "I am writing regarding...",
+    "de": "Ich schreibe bezüglich…",
+    "es": "I am writing regarding..."
+  },
+  "Именно она права.": {
+    "en": "She is exactly right.",
+    "de": "Sie hat genau recht.",
+    "es": "She is exactly right."
+  },
+  "Без комментариев.": {
+    "en": "No comment.",
+    "de": "Kein Kommentar.",
+    "es": "No comment."
+  },
+  "Какой день первый?": {
+    "en": "Which day is first?",
+    "de": "Welcher Tag ist der erste?",
+    "es": "Which day is first?"
+  },
+  "У тебя есть время?": {
+    "en": "Do you have time?",
+    "de": "Hast du Zeit?",
+    "es": "Do you have time?"
+  },
+  "У него три сестры.": {
+    "en": "He has three sisters.",
+    "de": "Er hat drei Schwestern.",
+    "es": "He has three sisters."
+  },
+  "У меня нет машины.": {
+    "en": "I don't have a car.",
+    "de": "Ich habe kein Auto.",
+    "es": "I don't have a car."
+  },
+  "Мы из Испании.": {
+    "en": "We are from Spain.",
+    "de": "Wir sind aus Spanien.",
+    "es": "We are from Spain."
+  },
+  "ser (какой ты) или estar (как дела сейчас)?": {
+    "en": "ser (what you are like) or estar (how you are right now)?",
+    "de": "ser (wie du bist) oder estar (wie es dir gerade geht)?",
+    "es": "ser (what you are like) or estar (how you are right now)?"
+  },
+  "Поставьте глагол ser в правильной форме": {
+    "en": "Put the verb ser in the correct form.",
+    "de": "Setzen Sie das Verb ser in die richtige Form.",
+    "es": "Put the verb ser in the correct form."
+  },
+  "Соберите вопрос «Как тебя зовут?»": {
+    "en": "Assemble the question \"What is your name?\"",
+    "de": "Bauen Sie die Frage \"Wie heißt du?\" zusammen.",
+    "es": "Assemble the question \"What is your name?\""
+  },
+  "Соберите фразу представления": {
+    "en": "Assemble the introduction phrase.",
+    "de": "Bauen Sie den Vorstellungssatz zusammen.",
+    "es": "Assemble the introduction phrase."
+  },
+  "Я встаю в семь утра.": {
+    "en": "I get up at seven in the morning.",
+    "de": "Ich stehe um sieben Uhr morgens auf.",
+    "es": "I get up at seven in the morning."
+  },
+  "Мы завтракаем вместе каждое утро.": {
+    "en": "We have breakfast together every morning.",
+    "de": "Wir frühstücken jeden Morgen zusammen.",
+    "es": "We have breakfast together every morning."
+  },
+  "Она читает книгу каждый вечер.": {
+    "en": "She reads a book every evening.",
+    "de": "Sie liest jeden Abend ein Buch.",
+    "es": "She reads a book every evening."
+  },
+  "Они учатся в университете.": {
+    "en": "They study at the university.",
+    "de": "Sie studieren an der Universität.",
+    "es": "They study at the university."
+  },
+  "Ты готовишь ужин сегодня?": {
+    "en": "Are you cooking dinner today?",
+    "de": "Kochst du heute Abendessen?",
+    "es": "Are you cooking dinner today?"
+  },
+  "Я мою зубы два раза в день.": {
+    "en": "I brush my teeth twice a day.",
+    "de": "Ich putze mir zweimal am Tag die Zähne.",
+    "es": "I brush my teeth twice a day."
+  },
+  "Мой брат работает в больнице.": {
+    "en": "My brother works in a hospital.",
+    "de": "Mein Bruder arbeitet in einem Krankenhaus.",
+    "es": "My brother works in a hospital."
+  },
+  "Мы ужинаем в восемь часов.": {
+    "en": "We have dinner at eight o'clock.",
+    "de": "Wir essen um acht Uhr zu Abend.",
+    "es": "We have dinner at eight o'clock."
+  },
+  "Он слушает музыку по дороге на работу.": {
+    "en": "He listens to music on the way to work.",
+    "de": "Er hört Musik auf dem Weg zur Arbeit.",
+    "es": "He listens to music on the way to work."
+  },
+  "Спрягите глагол hablar в presente": {
+    "en": "Conjugate the verb hablar in the present tense.",
+    "de": "Konjugieren Sie das Verb hablar im Präsens.",
+    "es": "Conjugate the verb hablar in the present tense."
+  },
+  "Поставьте vivir в правильную форму": {
+    "en": "Put \"vivir\" in the correct form",
+    "de": "Setzen Sie \"vivir\" in die richtige Form",
+    "es": "Put \"vivir\" in the correct form"
+  },
+  "Соберите фразу о ежедневной практике": {
+    "en": "Assemble the phrase about daily practice",
+    "de": "Stellen Sie den Satz über die tägliche Übung zusammen",
+    "es": "Assemble the phrase about daily practice"
+  },
+  "Соберите вопрос о выходных": {
+    "en": "Assemble the question about the weekend",
+    "de": "Stellen Sie die Frage zum Wochenende zusammen",
+    "es": "Assemble the question about the weekend"
+  },
+  "В библиотеке есть книга.": {
+    "en": "There is a book in the library.",
+    "de": "In der Bibliothek gibt es ein Buch.",
+    "es": "There is a book in the library."
+  },
+  "Мне нужна синяя ручка.": {
+    "en": "I need a blue pen.",
+    "de": "Ich brauche einen blauen Kugelschreiber.",
+    "es": "I need a blue pen."
+  },
+  "На столе лежит журнал.": {
+    "en": "A magazine is lying on the table.",
+    "de": "Auf dem Tisch liegt eine Zeitschrift.",
+    "es": "A magazine is lying on the table."
+  },
+  "Это интересная статья.": {
+    "en": "This is an interesting article.",
+    "de": "Das ist ein interessanter Artikel.",
+    "es": "This is an interesting article."
+  },
+  "В комнате нет стульев.": {
+    "en": "There are no chairs in the room.",
+    "de": "Im Zimmer gibt es keine Stühle.",
+    "es": "There are no chairs in the room."
+  },
+  "Я ищу словарь испанского языка.": {
+    "en": "I am looking for a Spanish dictionary.",
+    "de": "Ich suche ein spanisches Wörterbuch.",
+    "es": "I am looking for a Spanish dictionary."
+  },
+  "Где находится туалет?": {
+    "en": "Where is the toilet?",
+    "de": "Wo ist die Toilette?",
+    "es": "Where is the toilet?"
+  },
+  "Есть ли здесь Wi-Fi?": {
+    "en": "Is there Wi-Fi here?",
+    "de": "Gibt es hier WLAN?",
+    "es": "Is there Wi-Fi here?"
+  },
+  "Хлеб как продукт часто без артикля (или el, если конкретный)": {
+    "en": "Bread as a product is often used without an article (or \"el\" if specific).",
+    "de": "Brot als Produkt wird oft ohne Artikel verwendet (oder „el“, wenn spezifisch).",
+    "es": "Bread as a product is often used without an article (or \"el\" if specific)."
+  },
+  "Какой артикль перед agua? (не путать с abuela)": {
+    "en": "Which article goes before \"agua\"? (do not confuse with \"abuela\")",
+    "de": "Welcher Artikel steht vor „agua“? (nicht mit „abuela“ verwechseln)",
+    "es": "Which article goes before \"agua\"? (do not confuse with \"abuela\")"
+  },
+  "Соберите фразу с артиклем un": {
+    "en": "Form a phrase with the article \"un\"",
+    "de": "Bilde eine Phrase mit dem Artikel „un“",
+    "es": "Form a phrase with the article \"un\""
+  },
+  "Соберите фразу с el agua": {
+    "en": "Form a phrase with \"el agua\"",
+    "de": "Bilde eine Phrase mit „el agua“",
+    "es": "Form a phrase with \"el agua\""
+  },
+  "Сейчас половина пятого.": {
+    "en": "It's half past four.",
+    "de": "Es ist halb fünf.",
+    "es": "It's half past four."
+  },
+  "Сейчас без пятнадцати шесть.": {
+    "en": "It's a quarter to six.",
+    "de": "Es ist Viertel vor sechs.",
+    "es": "It's a quarter to six."
+  },
+  "Какой сегодня день?": {
+    "en": "What day is it today?",
+    "de": "Welcher Tag ist heute?",
+    "es": "What day is it today?"
+  },
+  "Мой день рождения 15 марта.": {
+    "en": "My birthday is on March 15.",
+    "de": "Mein Geburtstag ist am 15. März.",
+    "es": "My birthday is on March 15."
+  },
+  "Сейчас десять утра.": {
+    "en": "It's ten in the morning.",
+    "de": "Es ist zehn Uhr morgens.",
+    "es": "It's ten in the morning."
+  },
+  "Напишите число прописью": {
+    "en": "Write the number in words.",
+    "de": "Schreiben Sie die Zahl aus.",
+    "es": "Write the number in words."
+  },
+  "Какой день идёт после понедельника?": {
+    "en": "What day comes after Monday?",
+    "de": "Welcher Tag kommt nach Montag?",
+    "es": "What day comes after Monday?"
+  },
+  "Соберите фразу о времени": {
+    "en": "Build a phrase about time.",
+    "de": "Bilde einen Satz über die Zeit.",
+    "es": "Build a phrase about time."
+  },
+  "У меня есть два яблока.": {
+    "en": "I have two apples.",
+    "de": "Ich habe zwei Äpfel.",
+    "es": "I have two apples."
+  },
+  "У нас много работы.": {
+    "en": "We have a lot of work.",
+    "de": "Wir haben viel Arbeit.",
+    "es": "We have a lot of work."
+  },
+  "У меня болит голова.": {
+    "en": "I have a headache.",
+    "de": "Ich habe Kopfschmerzen.",
+    "es": "I have a headache."
+  },
+  "У них есть большой дом.": {
+    "en": "They have a big house.",
+    "de": "Sie haben ein großes Haus.",
+    "es": "They have a big house."
+  },
+  "Мне нужно купить хлеб.": {
+    "en": "I need to buy bread.",
+    "de": "Ich muss Brot kaufen.",
+    "es": "I need to buy bread."
+  },
+  "Поставьте tener в правильную форму для «я голоден»": {
+    "en": "Put \"tener\" in the correct form for \"I am hungry\"",
+    "de": "Setzen Sie \"tener\" in die richtige Form für \"ich bin hungrig\"",
+    "es": "Put \"tener\" in the correct form for \"I am hungry\""
+  },
+  "Какое выражение с tener подходит?": {
+    "en": "Which expression with \"tener\" fits?",
+    "de": "Welcher Ausdruck mit \"tener\" passt?",
+    "es": "Which expression with \"tener\" fits?"
+  },
+  "Мне нравится плавание.": {
+    "en": "I like swimming.",
+    "de": "Mir gefällt das Schwimmen.",
+    "es": "I like swimming."
+  },
+  "Ей нравятся цветы.": {
+    "en": "She likes flowers.",
+    "de": "Sie mag Blumen.",
+    "es": "She likes flowers."
+  },
+  "Нам нравится эта музыка.": {
+    "en": "We like this music.",
+    "de": "Diese Musik gefällt uns.",
+    "es": "We like this music."
+  },
+  "Тебе нравится этот фильм?": {
+    "en": "Do you like this movie?",
+    "de": "Gefällt dir dieser Film?",
+    "es": "Do you like this movie?"
+  },
+  "Ему не нравится холод.": {
+    "en": "He doesn't like the cold.",
+    "de": "Er mag die Kälte nicht.",
+    "es": "He doesn't like the cold."
+  },
+  "Мне нравятся испанские блюда.": {
+    "en": "I like Spanish dishes.",
+    "de": "Ich mag spanische Gerichte.",
+    "es": "I like Spanish dishes."
+  },
+  "Ей нравится читать по вечерам.": {
+    "en": "She likes to read in the evenings.",
+    "de": "Sie liest gerne abends.",
+    "es": "She likes to read in the evenings."
+  },
+  "Нам не нравится вставать рано.": {
+    "en": "We don't like getting up early.",
+    "de": "Wir stehen nicht gerne früh auf.",
+    "es": "We don't like getting up early."
+  },
+  "Тебе нравится твоя работа?": {
+    "en": "Do you like your job?",
+    "de": "Gefällt dir deine Arbeit?",
+    "es": "Do you like your job?"
+  },
+  "Куда идут когда болеют?": {
+    "en": "Where do people go when they are sick?",
+    "de": "Wohin geht man, wenn man krank ist?",
+    "es": "Where do people go when they are sick?"
+  },
+  "Соберите фразу с gustar": {
+    "en": "Build a sentence using 'gustar'",
+    "de": "Bilde einen Satz mit 'gustar'",
+    "es": "Build a sentence using 'gustar'"
+  },
+  "Она никогда не была в Аргентине.": {
+    "en": "She has never been to Argentina.",
+    "de": "Sie war noch nie in Argentinien.",
+    "es": "She has never been to Argentina."
+  },
+  "Мы только что приехали.": {
+    "en": "We just arrived.",
+    "de": "Wir sind gerade angekommen.",
+    "es": "Acabamos de llegar."
+  },
+  "Ты когда-нибудь пробовал паэлью?": {
+    "en": "Have you ever tried paella?",
+    "de": "Hast du schon mal Paella probiert?",
+    "es": "Have you ever tried paella?"
+  },
+  "Они ещё не закончили.": {
+    "en": "They haven't finished yet.",
+    "de": "Sie sind noch nicht fertig.",
+    "es": "They haven't finished yet."
+  },
+  "Я уже видел этот фильм.": {
+    "en": "I have already seen this movie.",
+    "de": "Ich habe diesen Film schon gesehen.",
+    "es": "I have already seen this movie."
+  },
+  "Мы жили здесь пять лет.": {
+    "en": "We lived here for five years.",
+    "de": "Wir haben fünf Jahre hier gelebt.",
+    "es": "We lived here for five years."
+  },
+  "Она написала три письма.": {
+    "en": "She wrote three letters.",
+    "de": "Sie hat drei Briefe geschrieben.",
+    "es": "She wrote three letters."
+  },
+  "Поставьте в pretérito perfecto": {
+    "en": "Conjugate in the pretérito perfecto.",
+    "de": "Konjugieren Sie im pretérito perfecto.",
+    "es": "Conjugate in the pretérito perfecto."
+  },
+  "Поставьте escribir в perfecto": {
+    "en": "Conjugate \"escribir\" in the perfect tense.",
+    "de": "Konjugieren Sie \"escribir\" im Perfekt.",
+    "es": "Conjugate \"escribir\" in the perfect tense."
+  },
+  "Соберите фразу в pretérito perfecto": {
+    "en": "Assemble the phrase in pretérito perfecto",
+    "de": "Bilden Sie den Satz im Pretérito Perfetto",
+    "es": "Assemble the phrase in pretérito perfecto"
+  },
+  "Она купила новое платье.": {
+    "en": "She bought a new dress.",
+    "de": "Sie hat ein neues Kleid gekauft.",
+    "es": "She bought a new dress."
+  },
+  "Мы встретились в парке.": {
+    "en": "We met in the park.",
+    "de": "Wir trafen uns im Park.",
+    "es": "We met in the park."
+  },
+  "Он не пришёл на встречу.": {
+    "en": "He didn't come to the meeting.",
+    "de": "Er kam nicht zur Besprechung.",
+    "es": "He didn't come to the meeting."
+  },
+  "Они вернулись поздно.": {
+    "en": "They returned late.",
+    "de": "Sie kehrten spät zurück.",
+    "es": "They returned late."
+  },
+  "Я ел паэлью в Валенсии.": {
+    "en": "I ate paella in Valencia.",
+    "de": "Ich aß Paella in Valencia.",
+    "es": "I ate paella in Valencia."
+  },
+  "Мы провели отличные каникулы.": {
+    "en": "We had a great vacation.",
+    "de": "Wir hatten einen tollen Urlaub.",
+    "es": "We had a great vacation."
+  },
+  "Она родилась в 1990 году.": {
+    "en": "She was born in 1990.",
+    "de": "Sie wurde 1990 geboren.",
+    "es": "She was born in 1990."
+  },
+  "Он закрыл дверь и ушёл.": {
+    "en": "He closed the door and left.",
+    "de": "Er schloss die Tür und ging.",
+    "es": "He closed the door and left."
+  },
+  "Поставьте ir в indefinido": {
+    "en": "Conjugate ir in the preterite.",
+    "de": "Konjugieren Sie ir im Indefinido.",
+    "es": "Conjugate ir in the preterite."
+  },
+  "Поставьте вопрос с ir в indefinido": {
+    "en": "Form a question using \"ir\" in the preterite tense.",
+    "de": "Stellen Sie eine Frage mit \"ir\" im Indefinido.",
+    "es": "Form a question using \"ir\" in the preterite tense."
+  },
+  "Соберите фразу о вчерашней покупке": {
+    "en": "Construct a sentence about yesterday's purchase.",
+    "de": "Bilden Sie einen Satz über den gestrigen Einkauf.",
+    "es": "Construct a sentence about yesterday's purchase."
+  },
+  "Когда я был ребёнком, играл в футбол.": {
+    "en": "When I was a child, I played football.",
+    "de": "Als ich ein Kind war, spielte ich Fußball.",
+    "es": "When I was a child, I played football."
+  },
+  "Она всегда читала перед сном.": {
+    "en": "She always read before bed.",
+    "de": "Sie las immer vor dem Schlafengehen.",
+    "es": "She always read before bed."
+  },
+  "Мы жили в маленьком городе.": {
+    "en": "We lived in a small town.",
+    "de": "Wir lebten in einer kleinen Stadt.",
+    "es": "We lived in a small town."
+  },
+  "Он часто ходил в библиотеку.": {
+    "en": "He often went to the library.",
+    "de": "Er ging oft in die Bibliothek.",
+    "es": "He often went to the library."
+  },
+  "Было три часа, когда я позвонил.": {
+    "en": "It was three o'clock when I called.",
+    "de": "Es war drei Uhr, als ich anrief.",
+    "es": "It was three o'clock when I called."
+  },
+  "Они были счастливы в те годы.": {
+    "en": "They were happy in those years.",
+    "de": "Sie waren in jenen Jahren glücklich.",
+    "es": "They were happy in those years."
+  },
+  "Я думал, что ты дома.": {
+    "en": "I thought you were at home.",
+    "de": "Ich dachte, du wärst zu Hause.",
+    "es": "I thought you were at home."
+  },
+  "Каждое лето мы ездили на море.": {
+    "en": "Every summer we went to the sea.",
+    "de": "Jeden Sommer fuhren wir ans Meer.",
+    "es": "Every summer we went to the sea."
+  },
+  "Мы часто ходили в парк.": {
+    "en": "We often went to the park.",
+    "de": "Wir gingen oft in den Park.",
+    "es": "We often went to the park."
+  },
+  "Поставьте jugar в imperfecto": {
+    "en": "Put \"jugar\" in the imperfect tense.",
+    "de": "Setzen Sie „jugar“ in den Imperfekt.",
+    "es": "Put \"jugar\" in the imperfect tense."
+  },
+  "Привычка в прошлом — какое время?": {
+    "en": "Habit in the past — which tense?",
+    "de": "Gewohnheit in der Vergangenheit — welche Zeit?",
+    "es": "Habit in the past — which tense?"
+  },
+  "Описание внешности в прошлом": {
+    "en": "Description of appearance in the past.",
+    "de": "Beschreibung des Äußeren in der Vergangenheit.",
+    "es": "Description of appearance in the past."
+  },
+  "Соберите фразу о детстве": {
+    "en": "Create a sentence about childhood.",
+    "de": "Bilden Sie einen Satz über die Kindheit.",
+    "es": "Create a sentence about childhood."
+  },
+  "Я учу испанский для работы.": {
+    "en": "I am learning Spanish for work.",
+    "de": "Ich lerne Spanisch für die Arbeit.",
+    "es": "I am learning Spanish for work."
+  },
+  "Мы гуляли по парку.": {
+    "en": "We were walking in the park.",
+    "de": "Wir spazierten im Park.",
+    "es": "We were walking in the park."
+  },
+  "Он благодарен за помощь.": {
+    "en": "He is grateful for the help.",
+    "de": "Er ist dankbar für die Hilfe.",
+    "es": "He is grateful for the help."
+  },
+  "Книга написана для детей.": {
+    "en": "The book is written for children.",
+    "de": "Das Buch ist für Kinder geschrieben.",
+    "es": "The book is written for children."
+  },
+  "Мы говорили об этом два часа.": {
+    "en": "We talked about it for two hours.",
+    "de": "Wir haben zwei Stunden darüber gesprochen.",
+    "es": "We talked about it for two hours."
+  },
+  "Я еду в Мадрид для учёбы.": {
+    "en": "I am going to Madrid to study.",
+    "de": "Ich fahre nach Madrid, um zu studieren.",
+    "es": "I am going to Madrid to study."
+  },
+  "Спасибо за всё.": {
+    "en": "Thank you for everything.",
+    "de": "Danke für alles.",
+    "es": "Thank you for everything."
+  },
+  "Она работает для международной компании.": {
+    "en": "She works for an international company.",
+    "de": "Sie arbeitet für ein internationales Unternehmen.",
+    "es": "She works for an international company."
+  },
+  "Какой предлог места/пути?": {
+    "en": "Which preposition of place/direction?",
+    "de": "Welche Präposition des Ortes/der Richtung?",
+    "es": "Which preposition of place/direction?"
+  },
+  "Какое устойчивое выражение?": {
+    "en": "What is the fixed expression?",
+    "de": "Welcher feste Ausdruck?",
+    "es": "What is the fixed expression?"
+  },
+  "Соберите фразу с para (цель)": {
+    "en": "Build a sentence with 'para' (purpose)",
+    "de": "Bilden Sie einen Satz mit 'para' (Zweck)",
+    "es": "Build a sentence with 'para' (purpose)"
+  },
+  "Надеюсь, что она будет счастлива.": {
+    "en": "I hope that she will be happy.",
+    "de": "Ich hoffe, dass sie glücklich sein wird.",
+    "es": "I hope that she will be happy."
+  },
+  "Важно, чтобы вы пришли вовремя.": {
+    "en": "It is important that you arrive on time.",
+    "de": "Es ist wichtig, dass Sie pünktlich kommen.",
+    "es": "It is important that you arrive on time."
+  },
+  "Она просит, чтобы мы молчали.": {
+    "en": "She asks that we be quiet.",
+    "de": "Sie bittet darum, dass wir still sind.",
+    "es": "She asks that we be quiet."
+  },
+  "Сомневаюсь, что он прав.": {
+    "en": "I doubt that he is right.",
+    "de": "Ich bezweifle, dass er recht hat.",
+    "es": "I doubt that he is right."
+  },
+  "Пока он не придёт, мы подождём.": {
+    "en": "Until he comes, we will wait.",
+    "de": "Bis er kommt, werden wir warten.",
+    "es": "Until he comes, we will wait."
+  },
+  "Мне жаль, что ты уезжаешь.": {
+    "en": "I'm sorry you're leaving.",
+    "de": "Es tut mir leid, dass du weggehst.",
+    "es": "I'm sorry you're leaving."
+  },
+  "Боюсь, что опоздаю.": {
+    "en": "I'm afraid I'll be late.",
+    "de": "Ich fürchte, ich werde zu spät kommen.",
+    "es": "I'm afraid I'll be late."
+  },
+  "Нужно, чтобы ты это сделал.": {
+    "en": "It is necessary that you do this.",
+    "de": "Es ist notwendig, dass du das tust.",
+    "es": "It is necessary that you do this."
+  },
+  "Поставьте hablar в subjuntivo": {
+    "en": "Put 'hablar' in the subjunctive.",
+    "de": "Setzen Sie 'hablar' in den Konjunktiv.",
+    "es": "Put 'hablar' in the subjunctive."
+  },
+  "Сомнение → какое наклонение?": {
+    "en": "Doubt → what mood?",
+    "de": "Zweifel → welcher Modus?",
+    "es": "Doubt → what mood?"
+  },
+  "Закрой окно, пожалуйста.": {
+    "en": "Close the window, please.",
+    "de": "Schließ das Fenster, bitte.",
+    "es": "Close the window, please."
+  },
+  "Пройдите, пожалуйста.": {
+    "en": "Please come in.",
+    "de": "Bitte kommen Sie herein.",
+    "es": "Please come in."
+  },
+  "Давайте пойдём в кино.": {
+    "en": "Let's go to the cinema.",
+    "de": "Gehen wir ins Kino.",
+    "es": "Let's go to the cinema."
+  },
+  "Поставьте в утвердительное повелительное (tú)": {
+    "en": "Convert to the affirmative imperative (tú)",
+    "de": "In den bejahenden Imperativ (tú) umwandeln",
+    "es": "Convert to the affirmative imperative (tú)"
+  },
+  "Утвердительное повелительное от hacer": {
+    "en": "Affirmative imperative of \"hacer\"",
+    "de": "Bejahender Imperativ von \"hacer\"",
+    "es": "Affirmative imperative of \"hacer\""
+  },
+  "Вежливое повелительное для usted": {
+    "en": "Polite imperative for \"usted\"",
+    "de": "Höflicher Imperativ für \"usted\"",
+    "es": "Polite imperative for \"usted\""
+  },
+  "Infinitivo вместо imperativo": {
+    "en": "Infinitive instead of imperative",
+    "de": "Infinitiv statt Imperativ",
+    "es": "Infinitive instead of imperative"
+  },
+  "Я бы поехал в Испанию.": {
+    "en": "I would go to Spain.",
+    "de": "Ich würde nach Spanien fahren.",
+    "es": "I would go to Spain."
+  },
+  "Что бы ты сделал на моём месте?": {
+    "en": "What would you do in my place?",
+    "de": "Was würdest du an meiner Stelle tun?",
+    "es": "What would you do in my place?"
+  },
+  "Она хотела бы жить у моря.": {
+    "en": "She would like to live by the sea.",
+    "de": "Sie würde gerne am Meer wohnen.",
+    "es": "She would like to live by the sea."
+  },
+  "Мы могли бы встретиться завтра.": {
+    "en": "We could meet tomorrow.",
+    "de": "Wir könnten uns morgen treffen.",
+    "es": "We could meet tomorrow."
+  },
+  "Это было бы здорово.": {
+    "en": "That would be great.",
+    "de": "Das wäre toll.",
+    "es": "That would be great."
+  },
+  "Я бы купил дом, если бы у меня были деньги.": {
+    "en": "I would buy a house if I had money.",
+    "de": "Ich würde ein Haus kaufen, wenn ich Geld hätte.",
+    "es": "I would buy a house if I had money."
+  },
+  "Ты должен был позвонить.": {
+    "en": "You should have called.",
+    "de": "Du hättest anrufen sollen.",
+    "es": "You should have called."
+  },
+  "Было бы лучше остаться дома.": {
+    "en": "It would be better to stay home.",
+    "de": "Es wäre besser, zu Hause zu bleiben.",
+    "es": "It would be better to stay home."
+  },
+  "Я бы купил дом.": {
+    "en": "I would buy a house.",
+    "de": "Ich würde ein Haus kaufen.",
+    "es": "I would buy a house."
+  },
+  "Вежливая просьба через condicional": {
+    "en": "Polite request using the conditional.",
+    "de": "Höfliche Bitte im Konditional.",
+    "es": "Polite request using the conditional."
+  },
+  "Совет — какое наклонение?": {
+    "en": "Advice — which mood?",
+    "de": "Ratschlag — welcher Modus?",
+    "es": "Advice — which mood?"
+  },
+  "Он спросил, где вокзал.": {
+    "en": "He asked where the station is.",
+    "de": "Er fragte, wo der Bahnhof ist.",
+    "es": "He asked where the station is."
+  },
+  "Косвенная речь — выберите время": {
+    "en": "Indirect speech — choose the tense",
+    "de": "Indirekte Rede — wählen Sie die Zeitform",
+    "es": "Indirect speech — choose the tense"
+  },
+  "Косвенная речь после presente": {
+    "en": "Indirect speech after the present tense",
+    "de": "Indirekte Rede nach dem Präsens",
+    "es": "Indirect speech after the present tense"
+  },
+  "Какое слово для косвенного вопроса?": {
+    "en": "Which word for an indirect question?",
+    "de": "Welches Wort für eine indirekte Frage?",
+    "es": "Which word for an indirect question?"
+  },
+  "Преобразуйте в косвенную речь": {
+    "en": "Convert to indirect speech",
+    "de": "Wandeln Sie in die indirekte Rede um",
+    "es": "Convert to indirect speech"
+  },
+  "Книга написана Габриэлем Гарсиа Маркесом.": {
+    "en": "The book was written by Gabriel García Márquez.",
+    "de": "Das Buch wurde von Gabriel García Márquez geschrieben.",
+    "es": "The book was written by Gabriel García Márquez."
+  },
+  "Дом построен в 1920 году.": {
+    "en": "The house was built in 1920.",
+    "de": "Das Haus wurde 1920 erbaut.",
+    "es": "The house was built in 1920."
+  },
+  "Письмо отправлено вчера.": {
+    "en": "The letter was sent yesterday.",
+    "de": "Der Brief wurde gestern abgeschickt.",
+    "es": "La carta fue enviada ayer."
+  },
+  "Решение принято правительством.": {
+    "en": "The decision was made by the government.",
+    "de": "Die Entscheidung wurde von der Regierung getroffen.",
+    "es": "La decisión fue tomada por el gobierno."
+  },
+  "Язык говорят в двадцати странах.": {
+    "en": "The language is spoken in twenty countries.",
+    "de": "Die Sprache wird in zwanzig Ländern gesprochen.",
+    "es": "The language is spoken in twenty countries."
+  },
+  "Еда приготовлена мамой.": {
+    "en": "The food was prepared by mom.",
+    "de": "Das Essen wurde von der Mama zubereitet.",
+    "es": "La comida la prepara mamá."
+  },
+  "Закон принят в прошлом году.": {
+    "en": "The law was passed last year.",
+    "de": "Das Gesetz wurde letztes Jahr verabschiedet.",
+    "es": "La ley fue aprobada el año pasado."
+  },
+  "Пассив в прошедшем": {
+    "en": "Passive in the past",
+    "de": "Passiv in der Vergangenheit",
+    "es": "Passive in the past"
+  },
+  "Я только что приехал с вокзала.": {
+    "en": "I just arrived from the station.",
+    "de": "Ich bin gerade vom Bahnhof angekommen.",
+    "es": "I just arrived from the station."
+  },
+  "Я живу здесь уже пять лет.": {
+    "en": "I have been living here for five years already.",
+    "de": "Ich lebe schon seit fünf Jahren hier.",
+    "es": "I have been living here for five years already."
+  },
+  "Завтра я собираюсь подать заявление.": {
+    "en": "Tomorrow I am going to submit an application.",
+    "de": "Morgen werde ich einen Antrag stellen.",
+    "es": "Tomorrow I am going to submit an application."
+  },
+  "Обычно я встаю в семь.": {
+    "en": "I usually get up at seven.",
+    "de": "Ich stehe normalerweise um sieben auf.",
+    "es": "I usually get up at seven."
+  },
+  "Он снова начал жаловаться на работу.": {
+    "en": "He started complaining about work again.",
+    "de": "Er hat wieder angefangen, sich über die Arbeit zu beschweren.",
+    "es": "He started complaining about work again."
+  },
+  "Она продолжает искать квартиру.": {
+    "en": "She continues to look for an apartment.",
+    "de": "Sie sucht weiterhin nach einer Wohnung.",
+    "es": "She continues to look for an apartment."
+  },
+  "Он ходит и ищет работу с января.": {
+    "en": "He has been looking for a job since January.",
+    "de": "Er sucht seit Januar nach einer Arbeit.",
+    "es": "He has been looking for a job since January."
+  },
+  "Ситуация постепенно улучшается.": {
+    "en": "The situation is gradually improving.",
+    "de": "Die Situation verbessert sich allmählich.",
+    "es": "The situation is gradually improving."
+  },
+  "Я вот-вот закончу отчёт.": {
+    "en": "I'm about to finish the report.",
+    "de": "Ich werde den Bericht gleich fertigstellen.",
+    "es": "I'm about to finish the report."
+  },
+  "По закону я обязан явиться в суд.": {
+    "en": "By law, I am obliged to appear in court.",
+    "de": "Nach dem Gesetz bin ich verpflichtet, vor Gericht zu erscheinen.",
+    "es": "By law, I am obliged to appear in court."
+  },
+  "Какая перифраза для ближайшего будущего?": {
+    "en": "What is the periphrasis for the near future?",
+    "de": "Welche Periphrase gibt es für die nahe Zukunft?",
+    "es": "What is the periphrasis for the near future?"
+  },
+  "Какая перифраза долженствования?": {
+    "en": "What is the periphrasis of obligation?",
+    "de": "Welche Periphrase gibt es für die Verpflichtung?",
+    "es": "What is the periphrasis of obligation?"
+  },
+  "Перифраза продолжения": {
+    "en": "Periphrasis of continuation",
+    "de": "Periphrase der Fortsetzung",
+    "es": "Periphrasis of continuation"
+  },
+  "Составьте перифразу acabar de": {
+    "en": "Create a paraphrase for acabar de",
+    "de": "Bilden Sie eine Umformulierung für acabar de",
+    "es": "Create a paraphrase for acabar de"
+  },
+  "Составьте перифразу llevar + gerundio": {
+    "en": "Create a paraphrase for llevar + gerundio",
+    "de": "Bilden Sie eine Umformulierung für llevar + Gerundium",
+    "es": "Create a paraphrase for llevar + gerundio"
+  },
+  "Составьте ir a + infinitivo": {
+    "en": "Create ir a + infinitivo",
+    "de": "Bilden Sie ir a + Infinitiv",
+    "es": "Create ir a + infinitivo"
+  },
+  "Составьте перифразу deber de (догадка)": {
+    "en": "Create a paraphrase for deber de (supposition)",
+    "de": "Bilden Sie eine Umformulierung für deber de (Vermutung)",
+    "es": "Create a paraphrase for deber de (supposition)"
+  },
+  "Составьте seguir + gerundio": {
+    "en": "Create a paraphrase for seguir + gerundio",
+    "de": "Bilden Sie eine Umformulierung für seguir + Gerundium",
+    "es": "Create a paraphrase for seguir + gerundio"
+  },
+  "С моей точки зрения, предложенное решение уместно.": {
+    "en": "In my opinion, the proposed solution is appropriate.",
+    "de": "Aus meiner Sicht ist die vorgeschlagene Lösung angemessen.",
+    "es": "In my opinion, the proposed solution is appropriate."
+  },
+  "Прошу подтвердить получение данного письма.": {
+    "en": "Please confirm receipt of this letter.",
+    "de": "Bitte bestätigen Sie den Erhalt dieses Schreibens.",
+    "es": "Please confirm receipt of this letter."
+  },
+  "С одной стороны, это экономит время; с другой — повышает риски.": {
+    "en": "On the one hand, it saves time; on the other, it increases the risks.",
+    "de": "Einerseits spart es Zeit, andererseits erhöht es die Risiken.",
+    "es": "On the one hand, it saves time; on the other, it increases the risks."
+  },
+  "Следует отметить, что данные неполные.": {
+    "en": "It should be noted that the data is incomplete.",
+    "de": "Es ist anzumerken, dass die Daten unvollständig sind.",
+    "es": "It should be noted that the data is incomplete."
+  },
+  "В заключение я бы рекомендовал пересмотреть стратегию.": {
+    "en": "In conclusion, I would recommend reviewing the strategy.",
+    "de": "Abschließend würde ich empfehlen, die Strategie zu überdenken.",
+    "es": "In conclusion, I would recommend reviewing the strategy."
+  },
+  "Не могли бы вы уточнить сроки выполнения?": {
+    "en": "Could you please clarify the deadlines?",
+    "de": "Könnten Sie bitte die Fristen konkretisieren?",
+    "es": "Could you please clarify the deadlines?"
+  },
+  "Таким образом, мы приходим к следующему выводу.": {
+    "en": "Therefore, we arrive at the following conclusion.",
+    "de": "Somit kommen wir zu folgendem Schluss.",
+    "es": "Therefore, we arrive at the following conclusion."
+  },
+  "В ответ на ваш запрос сообщаю следующее.": {
+    "en": "In response to your request, I would like to inform you of the following.",
+    "de": "In Antwort auf Ihre Anfrage teile ich Ihnen Folgendes mit.",
+    "es": "In response to your request, I would like to inform you of the following."
+  },
+  "Несмотря на это, результаты остаются обнадёживающими.": {
+    "en": "Despite this, the results remain encouraging.",
+    "de": "Trotz dessen bleiben die Ergebnisse ermutigend.",
+    "es": "Despite this, the results remain encouraging."
+  },
+  "То есть проблема носит скорее структурный характер.": {
+    "en": "That is, the problem is more of a structural nature.",
+    "de": "Das heißt, das Problem ist eher struktureller Natur.",
+    "es": "That is, the problem is more of a structural nature."
+  },
+  "Concessive clause — какое наклонение?": {
+    "en": "Concessive clause — which mood?",
+    "de": "Konzessivsatz — welcher Modus?",
+    "es": "Concessive clause — which mood?"
+  },
+  "Перифраза состояния": {
+    "en": "Stative periphrasis",
+    "de": "Zustandsperiphrase",
+    "es": "Stative periphrasis"
+  },
+  "Отрицание мнения — какое наклонение?": {
+    "en": "Negation of opinion — which mood?",
+    "de": "Verneinung einer Meinung — welcher Modus?",
+    "es": "Negation of opinion — which mood?"
+  },
+  "Составьте устойчивое выражение": {
+    "en": "Form a fixed expression",
+    "de": "Bilden Sie eine feste Redewendung",
+    "es": "Form a fixed expression"
+  },
+  "Составьте уступительную конструкцию": {
+    "en": "Form a concessive construction",
+    "de": "Bilden Sie eine konzessive Konstruktion",
+    "es": "Form a concessive construction"
+  },
+  "Составьте формальную просьбу (usted)": {
+    "en": "Formulate a formal request (usted)",
+    "de": "Formulieren Sie eine formelle Bitte (usted)",
+    "es": "Formulate a formal request (usted)"
+  },
+  "Составьте вежливый вопрос с condicional": {
+    "en": "Formulate a polite question with the conditional",
+    "de": "Formulieren Sie eine höfliche Frage mit dem Konditional",
+    "es": "Formulate a polite question with the conditional"
+  },
+  "Составьте формальный связующий оборот": {
+    "en": "Formulate a formal linking phrase",
+    "de": "Formulieren Sie einen formellen verbindenden Ausdruck",
+    "es": "Formulate a formal linking phrase"
+  },
+  "Составьте устойчивое вводное выражение": {
+    "en": "Formulate a fixed introductory expression",
+    "de": "Formulieren Sie einen festen einleitenden Ausdruck",
+    "es": "Formulate a fixed introductory expression"
+  },
+  "Составьте мягкое предложение с subjuntivo": {
+    "en": "Formulate a soft suggestion with the subjunctive",
+    "de": "Formulieren Sie einen sanften Vorschlag mit dem Subjunktiv",
+    "es": "Formulate a soft suggestion with the subjunctive"
+  },
+  "Что ты делаешь?": {
+    "en": "What are you doing?",
+    "de": "Was machst du?",
+    "es": "What are you doing?"
+  },
+  "Почему ты опоздал?": {
+    "en": "Why were you late?",
+    "de": "Warum warst du zu spät?",
+    "es": "¿Por qué llegas tarde?"
+  },
+  "Когда начинается фильм?": {
+    "en": "When does the movie start?",
+    "de": "Wann beginnt der Film?",
+    "es": "¿Cuándo empieza la película?"
+  },
+  "С кем ты идёшь?": {
+    "en": "Who are you going with?",
+    "de": "Mit wem gehst du?",
+    "es": "Who are you going with?"
+  },
+  "Какой это цвет?": {
+    "en": "What color is this?",
+    "de": "Welche Farbe ist das?",
+    "es": "What color is this?"
+  },
+  "Сколько это стоит?": {
+    "en": "How much does this cost?",
+    "de": "Wie viel kostet das?",
+    "es": "¿Cuánto cuesta?"
+  },
+  "Зачем ты здесь?": {
+    "en": "Why are you here?",
+    "de": "Warum bist du hier?",
+    "es": "Why are you here?"
+  },
+  "Соберите вопрос «Где ты живёшь?»": {
+    "en": "Form the question \"Where do you live?\"",
+    "de": "Bilde die Frage \"Wo wohnst du?\"",
+    "es": "Form the question \"Where do you live?\""
+  },
+  "Соберите вопрос о возрасте": {
+    "en": "Form the question about age.",
+    "de": "Bilde die Frage nach dem Alter.",
+    "es": "Form the question about age."
+  },
+  "Мадрид больше, чем Толедо.": {
+    "en": "Madrid is bigger than Toledo.",
+    "de": "Madrid ist größer als Toledo.",
+    "es": "Madrid is bigger than Toledo."
+  },
+  "Она такая же высокая, как её мать.": {
+    "en": "She is as tall as her mother.",
+    "de": "Sie ist so groß wie ihre Mutter.",
+    "es": "She is as tall as her mother."
+  },
+  "Это самый красивый город.": {
+    "en": "This is the most beautiful city.",
+    "de": "Das ist die schönste Stadt.",
+    "es": "This is the most beautiful city."
+  },
+  "Испанский проще, чем я думал.": {
+    "en": "Spanish is easier than I thought.",
+    "de": "Spanisch ist einfacher, als ich dachte.",
+    "es": "Spanish is easier than I thought."
+  },
+  "Он бегает быстрее меня.": {
+    "en": "He runs faster than me.",
+    "de": "Er läuft schneller als ich.",
+    "es": "Corre más rápido que yo."
+  },
+  "У неё меньше проблем, чем у меня.": {
+    "en": "She has fewer problems than me.",
+    "de": "Sie hat weniger Probleme als ich.",
+    "es": "She has fewer problems than me."
+  },
+  "Это лучший ресторан в городе.": {
+    "en": "This is the best restaurant in the city.",
+    "de": "Das ist das beste Restaurant in der Stadt.",
+    "es": "This is the best restaurant in the city."
+  },
+  "Она самая умная в классе.": {
+    "en": "She is the smartest in the class.",
+    "de": "Sie ist die Klügste in der Klasse.",
+    "es": "She is the smartest in the class."
+  },
+  "Этот фильм интереснее.": {
+    "en": "This movie is more interesting.",
+    "de": "Dieser Film ist interessanter.",
+    "es": "This movie is more interesting."
+  },
+  "Сравнение «больше чем»": {
+    "en": "Comparison \"more than\"",
+    "de": "Vergleich \"mehr als\"",
+    "es": "Comparison \"more than\""
+  },
+  "Соберите сравнительную фразу": {
+    "en": "Form a comparative phrase",
+    "de": "Bilden Sie einen Vergleichsausdruck",
+    "es": "Form a comparative phrase"
+  },
+  "Завтра я позвоню тебе.": {
+    "en": "I will call you tomorrow.",
+    "de": "Ich werde dich morgen anrufen.",
+    "es": "I will call you tomorrow."
+  },
+  "Она приедет в пятницу.": {
+    "en": "She will arrive on Friday.",
+    "de": "Sie wird am Freitag ankommen.",
+    "es": "Llegará el viernes."
+  },
+  "Мы будем жить в Барселоне.": {
+    "en": "We will live in Barcelona.",
+    "de": "Wir werden in Barcelona wohnen.",
+    "es": "We will live in Barcelona."
+  },
+  "Они не придут.": {
+    "en": "They will not come.",
+    "de": "Sie werden nicht kommen.",
+    "es": "They will not come."
+  },
+  "Я думаю, что будет дождь.": {
+    "en": "I think it will rain.",
+    "de": "Ich denke, es wird regnen.",
+    "es": "I think it will rain."
+  },
+  "Он сделает домашнее задание.": {
+    "en": "He will do his homework.",
+    "de": "Er wird seine Hausaufgaben machen.",
+    "es": "He will do his homework."
+  },
+  "Через год я буду говорить по-испански.": {
+    "en": "In a year I will speak Spanish.",
+    "de": "In einem Jahr werde ich Spanisch sprechen.",
+    "es": "In a year I will speak Spanish."
+  },
+  "Наверное, сейчас десять часов.": {
+    "en": "It's probably ten o'clock now.",
+    "de": "Es ist wahrscheinlich jetzt zehn Uhr.",
+    "es": "It's probably ten o'clock now."
+  },
+  "hacer в будущем": {
+    "en": "hacer in the future",
+    "de": "hacer in der Zukunft",
+    "es": "hacer in the future"
+  },
+  "Соберите фразу в futuro simple": {
+    "en": "Assemble the sentence in the simple future.",
+    "de": "Bilde den Satz im Futur I.",
+    "es": "Assemble the sentence in the simple future."
+  },
+  "У меня есть два брата.": {
+    "en": "I have two brothers.",
+    "de": "Ich habe zwei Brüder.",
+    "es": "I have two brothers."
+  },
+  "Я не могу сегодня.": {
+    "en": "I can't today.",
+    "de": "Ich kann heute nicht.",
+    "es": "I can't today."
+  },
+  "Я хочу учить испанский.": {
+    "en": "I want to learn Spanish.",
+    "de": "Ich möchte Spanisch lernen.",
+    "es": "I want to learn Spanish."
+  },
+  "Мне нужно идти.": {
+    "en": "I need to go.",
+    "de": "Ich muss gehen.",
+    "es": "I need to go."
+  },
+  "Ты должен отдохнуть.": {
+    "en": "You should rest.",
+    "de": "Du solltest dich ausruhen.",
+    "es": "You should rest."
+  },
+  "Мы идём в магазин.": {
+    "en": "We are going to the store.",
+    "de": "Wir gehen in den Laden.",
+    "es": "We are going to the store."
+  },
+  "Он говорит по-испански.": {
+    "en": "He speaks Spanish.",
+    "de": "Er spricht Spanisch.",
+    "es": "He speaks Spanish."
+  },
+  "Поставьте querer (tú)": {
+    "en": "Conjugate \"querer\" (tú)",
+    "de": "Konjugieren Sie \"querer\" (tú)",
+    "es": "Conjugate \"querer\" (tú)"
+  },
+  "Поставьте hacer (ella)": {
+    "en": "Conjugate \"hacer\" (ella)",
+    "de": "Konjugieren Sie \"hacer\" (ella)",
+    "es": "Conjugate \"hacer\" (ella)"
+  },
+  "Соберите вопрос «Что ты говоришь?»": {
+    "en": "Form the question \"What are you saying?\"",
+    "de": "Bilden Sie die Frage „Was sagst du?“",
+    "es": "Form the question \"What are you saying?\""
+  },
+  "Здесь продаются книги.": {
+    "en": "Books are sold here.",
+    "de": "Hier werden Bücher verkauft.",
+    "es": "Books are sold here."
+  },
+  "Мужчина, чья машина красная, — мой сосед.": {
+    "en": "The man whose car is red is my neighbor.",
+    "de": "Der Mann, dessen Auto rot ist, ist mein Nachbar.",
+    "es": "The man whose car is red is my neighbor."
+  },
+  "Город, где я живу, большой.": {
+    "en": "The city where I live is big.",
+    "de": "Die Stadt, in der ich lebe, ist groß.",
+    "es": "The city where I live is big."
+  },
+  "Девушка, с которой я говорил, испанка.": {
+    "en": "The girl I was talking to is Spanish.",
+    "de": "Das Mädchen, mit dem ich gesprochen habe, ist Spanierin.",
+    "es": "The girl I was talking to is Spanish."
+  },
+  "Всё, что тебе нужно, на столе.": {
+    "en": "Everything you need is on the table.",
+    "de": "Alles, was du brauchst, ist auf dem Tisch.",
+    "es": "Everything you need is on the table."
+  },
+  "Нет ничего, что меня пугает.": {
+    "en": "There is nothing that scares me.",
+    "de": "Es gibt nichts, das mich erschreckt.",
+    "es": "There is nothing that scares me."
+  },
+  "Это лучший фильм, который я видел.": {
+    "en": "This is the best movie I have ever seen.",
+    "de": "Das ist der beste Film, den ich je gesehen habe.",
+    "es": "This is the best movie I have ever seen."
+  },
+  "Она уже прочитала книгу, когда я пришёл.": {
+    "en": "She had already read the book when I arrived.",
+    "de": "Sie hatte das Buch schon gelesen, als ich kam.",
+    "es": "She had already read the book when I arrived."
+  },
+  "Если бы я знал, я бы позвонил.": {
+    "en": "If I had known, I would have called.",
+    "de": "Wenn ich es gewusst hätte, hätte ich angerufen.",
+    "es": "If I had known, I would have called."
+  },
+  "Я её вижу каждый день.": {
+    "en": "I see her every day.",
+    "de": "Ich sehe sie jeden Tag.",
+    "es": "I see her every day."
+  },
+  "Он работает много.": {
+    "en": "He works a lot.",
+    "de": "Er arbeitet viel.",
+    "es": "He works a lot."
+  },
+  "-mente от lento": {
+    "en": "-mente from lento",
+    "de": "-mente von lento",
+    "es": "-mente from lento"
+  },
+  "Соберите фразу с muy": {
+    "en": "Make a phrase with muy",
+    "de": "Bilde einen Satz mit muy",
+    "es": "Make a phrase with muy"
+  },
+  "Наречие «вероятно»": {
+    "en": "Adverb \"probably\"",
+    "de": "Adverb \"wahrscheinlich\"",
+    "es": "Adverb \"probably\""
+  },
+  "Вчера я ходил в магазин.": {
+    "en": "Yesterday I went to the store.",
+    "de": "Gestern bin ich zum Geschäft gegangen.",
+    "es": "Yesterday I went to the store."
+  },
+  "Когда я был ребёнком, жил в деревне.": {
+    "en": "When I was a child, I lived in the village.",
+    "de": "Als ich ein Kind war, lebte ich auf dem Land.",
+    "es": "When I was a child, I lived in the village."
+  },
+  "Период не закрыт — выберите время": {
+    "en": "The period is not closed — choose the tense",
+    "de": "Der Zeitraum ist nicht abgeschlossen — wählen Sie die Zeitform",
+    "es": "The period is not closed — choose the tense"
+  },
+  "Действие раньше другого прошлого": {
+    "en": "Action before another past action",
+    "de": "Handlung vor einer anderen vergangenen Handlung",
+    "es": "Action before another past action"
+  },
+  "Фон + событие: поставьте глагол в нужное время": {
+    "en": "Background + event: put the verb in the correct tense",
+    "de": "Hintergrund + Ereignis: setzen Sie das Verb in die richtige Zeitform",
+    "es": "Background + event: put the verb in the correct tense"
+  },
+  "Обратите внимание на маркер anoche": {
+    "en": "Pay attention to the marker \"anoche\"",
+    "de": "Achten Sie auf den Marker \"anoche\"",
+    "es": "Pay attention to the marker \"anoche\""
+  },
+  "Уважаемый господин…": {
+    "en": "Dear Sir...",
+    "de": "Sehr geehrter Herr...",
+    "es": "Dear Sir..."
+  },
+  "Вежливая просьба — какая форма?": {
+    "en": "Polite request — which form?",
+    "de": "Höfliche Bitte — welche Form?",
+    "es": "Polite request — which form?"
+  },
+  "Формальная жалоба — какое слово?": {
+    "en": "Formal complaint — which word?",
+    "de": "Formelle Beschwerde — welches Wort?",
+    "es": "Formal complaint — which word?"
+  },
+  "Формула начала письма": {
+    "en": "Opening formula",
+    "de": "Anredeformel",
+    "es": "Opening formula"
+  },
+  "Формула завершения": {
+    "en": "Closing formula",
+    "de": "Schlussformel",
+    "es": "Closing formula"
+  },
+  "Сомневаюсь, что он уже приехал.": {
+    "en": "I doubt he has already arrived.",
+    "de": "Ich bezweifle, dass er bereits angekommen ist.",
+    "es": "I doubt he has already arrived."
+  },
+  "После es posible que": {
+    "en": "After \"it is possible that\"",
+    "de": "Nach \"es ist möglich, dass\"",
+    "es": "After \"it is possible that\""
+  },
+  "Если бы ты позвонил, я бы приехал.": {
+    "en": "If you had called, I would have come.",
+    "de": "Wenn du angerufen hättest, wäre ich gekommen.",
+    "es": "If you had called, I would have come."
+  },
+  "Согласуйте времена": {
+    "en": "Match the tenses",
+    "de": "Stimmen Sie die Zeiten ab",
+    "es": "Match the tenses"
+  },
+  "То, что сказал преподаватель, важно.": {
+    "en": "What the professor said is important.",
+    "de": "Was der Professor gesagt hat, ist wichtig.",
+    "es": "What the professor said is important."
+  },
+  "Соберите с del cual": {
+    "en": "Construct sentences with 'del cual'",
+    "de": "Sätze mit 'del cual' bilden",
+    "es": "Construct sentences with 'del cual'"
+  },
+  "В итоге, решение было правильным.": {
+    "en": "Ultimately, the decision was correct.",
+    "de": "Letztlich war die Entscheidung korrekt.",
+    "es": "Ultimately, the decision was correct."
+  },
+  "Причина → следствие": {
+    "en": "Cause → effect",
+    "de": "Ursache → Wirkung",
+    "es": "Cause → effect"
+  },
+  "Противопоставление": {
+    "en": "Contrast",
+    "de": "Gegenüberstellung",
+    "es": "Contrast"
+  },
+  "Соберите с no obstante": {
+    "en": "Construct sentences with 'no obstante'",
+    "de": "Sätze mit 'no obstante' bilden",
+    "es": "Construct sentences with 'no obstante'"
+  },
+  "Во-первых, это важно.": {
+    "en": "First of all, this is important.",
+    "de": "Erstens ist dies wichtig.",
+    "es": "First of all, this is important."
+  },
+  "В заключение, я согласен.": {
+    "en": "In conclusion, I agree.",
+    "de": "Abschließend stimme ich zu.",
+    "es": "In conclusion, I agree."
+  },
+  "Коннектор начала эссе": {
+    "en": "Essay opening connector",
+    "de": "Konnektor für den Essayanfang",
+    "es": "Essay opening connector"
+  },
+  "Формальное противопоставление": {
+    "en": "Formal contrast",
+    "de": "Formaler Gegensatz",
+    "es": "Formal contrast"
+  },
+  "Внимание: de ahí que требует особого наклонения": {
+    "en": "Note: 'de ahí que' requires the subjunctive mood.",
+    "de": "Hinweis: 'de ahí que' erfordert den Konjunktiv.",
+    "es": "Note: 'de ahí que' requires the subjunctive mood."
+  },
+  "Мнение с отрицанием": {
+    "en": "Opinion with negation",
+    "de": "Meinung mit Verneinung",
+    "es": "Opinion with negation"
+  },
+  "Составьте предложение из фрагментов": {
+    "en": "Form a sentence from the fragments",
+    "de": "Bilden Sie einen Satz aus den Fragmenten",
+    "es": "Form a sentence from the fragments"
+  },
+  "На фото видна площадь.": {
+    "en": "A square is visible in the photo.",
+    "de": "Auf dem Foto ist ein Platz zu sehen.",
+    "es": "A square is visible in the photo."
+  },
+  "Возможно, они спорят.": {
+    "en": "Perhaps they are arguing.",
+    "de": "Vielleicht streiten sie.",
+    "es": "Perhaps they are arguing."
+  },
+  "По-моему, это хорошая идея.": {
+    "en": "In my opinion, it's a good idea.",
+    "de": "Meiner Meinung nach ist das eine gute Idee.",
+    "es": "In my opinion, it's a good idea."
+  },
+  "Описание фото: передний план": {
+    "en": "Description of the photo: foreground",
+    "de": "Beschreibung des Fotos: Vordergrund",
+    "es": "Description of the photo: foreground"
+  },
+  "Гипотеза о возрасте — экзаменатор ждёт futuro de conjetura": {
+    "en": "Hypothesis about age — the examiner expects a speculative future tense",
+    "de": "Hypothese zum Alter — der Prüfer erwartet ein spekulatives Futur",
+    "es": "Hypothesis about age — the examiner expects a speculative future tense"
+  },
+  "Вежливое несогласие": {
+    "en": "Polite disagreement",
+    "de": "Höflicher Widerspruch",
+    "es": "Polite disagreement"
+  },
+  "Описание фото: задний план": {
+    "en": "Description of the photo: background",
+    "de": "Beschreibung des Fotos: Hintergrund",
+    "es": "Description of the photo: background"
+  },
+  "Как ни странно, он согласился.": {
+    "en": "Strangely enough, he agreed.",
+    "de": "Seltsamerweise hat er zugestimmt.",
+    "es": "Strangely enough, he agreed."
+  },
+  "Даже если пойдёт дождь, мы всё равно выйдем.": {
+    "en": "Even if it rains, we will still go out.",
+    "de": "Selbst wenn es regnet, gehen wir trotzdem raus.",
+    "es": "Even if it rains, we will still go out."
+  },
+  "Хотя он и устал, продолжал работать.": {
+    "en": "Although he was tired, he continued to work.",
+    "de": "Obwohl er müde war, arbeitete er weiter.",
+    "es": "Although he was tired, he continued to work."
+  },
+  "Сделай, как я тебе говорю.": {
+    "en": "Do as I tell you.",
+    "de": "Mach, wie ich es dir sage.",
+    "es": "Do as I tell you."
+  },
+  "Куда бы ты ни пошёл, я пойду за тобой.": {
+    "en": "Wherever you go, I will follow you.",
+    "de": "Wohin du auch gehst, ich werde dir folgen.",
+    "es": "Wherever you go, I will follow you."
+  },
+  "Я не думаю, что он придёт сегодня.": {
+    "en": "I don't think he will come today.",
+    "de": "Ich denke nicht, dass er heute kommt.",
+    "es": "I don't think he will come today."
+  },
+  "Возможно, завтра будет дождь.": {
+    "en": "It might rain tomorrow.",
+    "de": "Vielleicht regnet es morgen.",
+    "es": "It might rain tomorrow."
+  },
+  "Пусть никто об этом не узнает.": {
+    "en": "Let no one find out about this.",
+    "de": "Möge niemand davon erfahren.",
+    "es": "Let no one find out about this."
+  },
+  "Если только он не позвонит, я не приду.": {
+    "en": "Unless he calls, I won't come.",
+    "de": "Wenn er nicht anruft, komme ich nicht.",
+    "es": "Unless he calls, I won't come."
+  },
+  "Жаль, что ты не смог прийти вчера.": {
+    "en": "It's a pity you couldn't come yesterday.",
+    "de": "Es ist schade, dass du gestern nicht kommen konntest.",
+    "es": "It's a pity you couldn't come yesterday."
+  },
+  "Известный факт": {
+    "en": "A known fact",
+    "de": "Eine bekannte Tatsache",
+    "es": "A known fact"
+  },
+  "Еда: ser/estar": {
+    "en": "Food: ser/estar",
+    "de": "Essen: ser/estar",
+    "es": "Food: ser/estar"
+  },
+  "Выделяем место": {
+    "en": "We reserve a place",
+    "de": "Wir reservieren einen Platz",
+    "es": "We reserve a place"
+  },
+  "Выделяем время": {
+    "en": "We set aside time",
+    "de": "Wir nehmen uns Zeit",
+    "es": "We set aside time"
+  },
+  "Не может быть!": {
+    "en": "It can't be!",
+    "de": "Das kann nicht sein!",
+    "es": "It can't be!"
+  },
+  "Я дал это ей вчера.": {
+    "en": "I gave it to her yesterday.",
+    "de": "Ich habe es ihr gestern gegeben.",
+    "es": "I gave it to her yesterday."
+  },
+  "Догадка о настоящем": {
+    "en": "A guess about the present",
+    "de": "Eine Vermutung über die Gegenwart",
+    "es": "A guess about the present"
+  },
+  "Это ты так думаешь?": {
+    "en": "Is that what you think?",
+    "de": "Ist das deine Meinung?",
+    "es": "Is that what you think?"
+  },
+  "Она злая (характер).": {
+    "en": "She is bad-tempered.",
+    "de": "Sie ist schlecht gelaunt.",
+    "es": "She is bad-tempered."
+  },
+  "Согласуйте причастие": {
+    "en": "Match the participle",
+    "de": "Stimmen Sie das Partizip",
+    "es": "Match the participle"
+  },
+  "Ты гений (иронично).": {
+    "en": "You're a genius (ironically).",
+    "de": "Du bist ein Genie (ironisch).",
+    "es": "You're a genius (ironically)."
+  },
+  "Ничего себе новости.": {
+    "en": "Wow, what news!",
+    "de": "Was für Neuigkeiten!",
+    "es": "Wow, what news!"
+  },
+  "Не говори это никому.": {
+    "en": "Don't tell anyone this.",
+    "de": "Sag das niemandem.",
+    "es": "Don't tell anyone this."
+  },
+  "Наверное, это правда.": {
+    "en": "It's probably true.",
+    "de": "Das ist wahrscheinlich wahr.",
+    "es": "It's probably true."
+  },
+  "Он, похоже, уже спит.": {
+    "en": "He seems to be asleep already.",
+    "de": "Er scheint schon zu schlafen.",
+    "es": "He seems to be asleep already."
+  },
+  "Наверное, она забыла.": {
+    "en": "She probably forgot.",
+    "de": "Sie hat es wahrscheinlich vergessen.",
+    "es": "She probably forgot."
+  },
+  "Ты, наверное, шутишь.": {
+    "en": "You're probably joking.",
+    "de": "Du scherzt wahrscheinlich.",
+    "es": "You're probably joking."
+  },
+  "Плохо то, что опоздали.": {
+    "en": "The bad thing is that we were late.",
+    "de": "Das Schlimme ist, dass wir zu spät kamen.",
+    "es": "The bad thing is that we were late."
+  },
+  "Именно Мария позвонила.": {
+    "en": "It was Maria who called.",
+    "de": "Es war Maria, die angerufen hat.",
+    "es": "It was Maria who called."
+  },
+  "Говорят, их было сотня.": {
+    "en": "They say there were a hundred of them.",
+    "de": "Man sagt, es waren hundert von ihnen.",
+    "es": "They say there were a hundred of them."
+  },
+  "Он сказал, что уже поел.": {
+    "en": "He said he had already eaten.",
+    "de": "Er sagte, dass er schon gegessen hat.",
+    "es": "Dijo que ya había comido."
+  },
+  "Он отметил, что опоздал.": {
+    "en": "He noted that he was late.",
+    "de": "Er bemerkte, dass er zu spät war.",
+    "es": "He noted that he was late."
+  },
+  "Объясни мне это ещё раз.": {
+    "en": "Explain this to me again.",
+    "de": "Erkläre mir das noch einmal.",
+    "es": "Explain this to me again."
+  },
+  "Именно Хуан разбил вазу.": {
+    "en": "It was Juan who broke the vase.",
+    "de": "Es war Juan, der die Vase zerbrochen hat.",
+    "es": "It was Juan who broke the vase."
+  },
+  "Она, наверное, уже ушла.": {
+    "en": "She has probably already left.",
+    "de": "Sie ist wahrscheinlich schon gegangen.",
+    "es": "She has probably already left."
+  },
+  "Его, по слухам, уволили.": {
+    "en": "He was reportedly fired.",
+    "de": "Angeblich wurde er entlassen.",
+    "es": "He was reportedly fired."
+  },
+  "Было, наверное, холодно.": {
+    "en": "It was probably cold.",
+    "de": "Es war wahrscheinlich kalt.",
+    "es": "It was probably cold."
+  },
+  "Тем не менее мы одобрим.": {
+    "en": "Nevertheless, we will approve.",
+    "de": "Dennoch werden wir zustimmen.",
+    "es": "Nevertheless, we will approve."
+  },
+  "Ты, должно быть, шутишь.": {
+    "en": "You must be joking.",
+    "de": "Du musst scherzen.",
+    "es": "You must be joking."
+  },
+  "Ну да, логично (ирония).": {
+    "en": "Well, yes, logical (ironic).",
+    "de": "Na ja, logisch (ironisch).",
+    "es": "Well, yes, logical (ironic)."
+  },
+  "Именно вчера я всё узнал.": {
+    "en": "I found out everything just yesterday.",
+    "de": "Genau gestern habe ich alles erfahren.",
+    "es": "I found out everything just yesterday."
+  },
+  "Она, наверное, уже знает.": {
+    "en": "She probably already knows.",
+    "de": "Sie weiß es wahrscheinlich schon.",
+    "es": "She probably already knows."
+  },
+  "Закончив работу, мы ушли.": {
+    "en": "After finishing work, we left.",
+    "de": "Als wir mit der Arbeit fertig waren, sind wir gegangen.",
+    "es": "After finishing work, we left."
+  },
+  "Я отправил их ей по почте.": {
+    "en": "I sent them to her by mail.",
+    "de": "Ich habe sie ihr per Post geschickt.",
+    "es": "I sent them to her by mail."
+  },
+  "То, что я хочу, — это мир.": {
+    "en": "What I want is peace.",
+    "de": "Was ich will, ist Frieden.",
+    "es": "What I want is peace."
+  },
+  "Наверное, сейчас два часа.": {
+    "en": "It's probably two o'clock now.",
+    "de": "Es ist wahrscheinlich zwei Uhr.",
+    "es": "It's probably two o'clock now."
+  },
+  "Сделав уроки, можно выйти.": {
+    "en": "After doing homework, you can go out.",
+    "de": "Wenn du die Hausaufgaben gemacht hast, darfst du rausgehen.",
+    "es": "After doing homework, you can go out."
+  },
+  "Подписав бумаги, мы вышли.": {
+    "en": "After signing the papers, we left.",
+    "de": "Nachdem wir die Papiere unterzeichnet hatten, gingen wir.",
+    "es": "After signing the papers, we left."
+  },
+  "Ну да, конечно (иронично).": {
+    "en": "Oh sure, of course (sarcastic).",
+    "de": "Na klar, natürlich (ironisch).",
+    "es": "Oh sure, of course (sarcastic)."
+  },
+  "Блестящая идея (иронично).": {
+    "en": "Brilliant idea (sarcastic).",
+    "de": "Geniale Idee (ironisch).",
+    "es": "Brilliant idea (sarcastic)."
+  },
+  "То, что важно, — честность.": {
+    "en": "What matters is honesty.",
+    "de": "Was zählt, ist Ehrlichkeit.",
+    "es": "Lo importante es la honestidad."
+  },
+  "То, что нам нужно, — время.": {
+    "en": "What we need is time.",
+    "de": "Was wir brauchen, ist Zeit.",
+    "es": "What we need is time."
+  },
+  "Именно вчера это произошло.": {
+    "en": "It happened exactly yesterday.",
+    "de": "Es geschah genau gestern.",
+    "es": "Esto sucedió ayer mismo."
+  },
+  "Они, должно быть, опоздают.": {
+    "en": "They will probably be late.",
+    "de": "Sie werden wahrscheinlich zu spät kommen.",
+    "es": "They will probably be late."
+  },
+  "Ему, наверное, не нравится.": {
+    "en": "He probably doesn't like it.",
+    "de": "Es gefällt ihm wahrscheinlich nicht.",
+    "es": "He probably doesn't like it."
+  },
+  "Курение в здании запрещено.": {
+    "en": "Smoking is prohibited in the building.",
+    "de": "Rauchen im Gebäude ist verboten.",
+    "es": "Smoking is prohibited in the building."
+  },
+  "После ужина мы прогулялись.": {
+    "en": "After dinner, we took a walk.",
+    "de": "Nach dem Abendessen sind wir spazieren gegangen.",
+    "es": "After dinner, we took a walk."
+  },
+  "Не верю этому ни на секунду.": {
+    "en": "I don't believe it for a second.",
+    "de": "Ich glaube das nicht eine Sekunde.",
+    "es": "I don't believe it for a second."
+  },
+  "Выделяем причину раздражения": {
+    "en": "We identify the cause of irritation.",
+    "de": "Wir identifizieren die Ursache der Reizung.",
+    "es": "We identify the cause of irritation."
+  },
+  "Наверное, у него мало денег.": {
+    "en": "He probably doesn't have much money.",
+    "de": "Er hat wahrscheinlich wenig Geld.",
+    "es": "He probably doesn't have much money."
+  },
+  "Им, наверное, не понравится.": {
+    "en": "They probably won't like it.",
+    "de": "Das wird ihnen wahrscheinlich nicht gefallen.",
+    "es": "They probably won't like it."
+  },
+  "Отличная новость (иронично).": {
+    "en": "Great news (sarcastic).",
+    "de": "Tolle Neuigkeiten (ironisch).",
+    "es": "Great news (sarcastic)."
+  },
+  "Именно директор одобрил план.": {
+    "en": "It was the director who approved the plan.",
+    "de": "Genau der Direktor hat den Plan genehmigt.",
+    "es": "It was the director who approved the plan."
+  },
+  "Внимание: предлог повторяется": {
+    "en": "Note: the preposition is repeated.",
+    "de": "Hinweis: die Präposition wird wiederholt.",
+    "es": "Note: the preposition is repeated."
+  },
+  "Договор, по слухам, подписан.": {
+    "en": "The contract has reportedly been signed.",
+    "de": "Der Vertrag soll unterzeichnet worden sein.",
+    "es": "The contract has reportedly been signed."
+  },
+  "Наверное, шёл дождь всю ночь.": {
+    "en": "It probably rained all night.",
+    "de": "Es hat wahrscheinlich die ganze Nacht geregnet.",
+    "es": "It probably rained all night."
+  },
+  "Вход без разрешения запрещён.": {
+    "en": "Entry without permission is forbidden.",
+    "de": "Betreten ohne Erlaubnis ist verboten.",
+    "es": "Entry without permission is forbidden."
+  },
+  "Именно здесь началась история.": {
+    "en": "This is exactly where the story began.",
+    "de": "Genau hier begann die Geschichte.",
+    "es": "Aquí es donde comenzó la historia."
+  },
+  "Именно из-за тебя мы опоздали.": {
+    "en": "It's exactly because of you that we're late.",
+    "de": "Genau wegen dir sind wir zu spät.",
+    "es": "Es por tu culpa que llegamos tarde."
+  },
+  "Их, говорят, было человек сто.": {
+    "en": "They say there were about a hundred of them.",
+    "de": "Angeblich waren es etwa hundert.",
+    "es": "They say there were about a hundred of them."
+  },
+  "Наверное, он уже знает правду.": {
+    "en": "He probably already knows the truth.",
+    "de": "Wahrscheinlich weiß er schon die Wahrheit.",
+    "es": "He probably already knows the truth."
+  },
+  "Он отрицал, что что-либо украл.": {
+    "en": "He denied stealing anything.",
+    "de": "Er leugnete, etwas gestohlen zu haben.",
+    "es": "He denied stealing anything."
+  },
+  "Она призналась, что не училась.": {
+    "en": "She admitted that she hadn't been studying.",
+    "de": "Sie gab zu, nicht gelernt zu haben.",
+    "es": "She admitted that she hadn't been studying."
+  },
+  "Он предложил подождать немного.": {
+    "en": "He suggested waiting a little.",
+    "de": "Er schlug vor, ein wenig zu warten.",
+    "es": "He suggested waiting a little."
+  },
+  "Он объяснил, что уходит в пять.": {
+    "en": "He explained that he was leaving at five.",
+    "de": "Er erklärte, dass er um fünf Uhr geht.",
+    "es": "He explained that he was leaving at five."
+  },
+  "Из-за дождя мы отменили пикник.": {
+    "en": "Because of the rain, we canceled the picnic.",
+    "de": "Wegen des Regens haben wir das Picknick abgesagt.",
+    "es": "Because of the rain, we canceled the picnic."
+  },
+  "Какая неожиданность (иронично).": {
+    "en": "What a surprise (ironic).",
+    "de": "Was für eine Überraschung (ironisch).",
+    "es": "What a surprise (ironic)."
+  },
+  "Составьте пословицу с subjuntivo": {
+    "en": "Compose a proverb with the subjunctive.",
+    "de": "Bilden Sie ein Sprichwort mit dem Konjunktiv.",
+    "es": "Compose a proverb with the subjunctive."
+  },
+  "Не могу сказать тебе это сейчас.": {
+    "en": "I can't tell you that right now.",
+    "de": "Ich kann dir das jetzt nicht sagen.",
+    "es": "I can't tell you that right now."
+  },
+  "Он умный, но сегодня не в форме.": {
+    "en": "He's smart, but not at his best today.",
+    "de": "Er ist schlau, aber heute nicht in Form.",
+    "es": "He's smart, but not at his best today."
+  },
+  "Именно в 2020 году всё началось.": {
+    "en": "Everything began precisely in 2020.",
+    "de": "Alles begann genau im Jahr 2020.",
+    "es": "Everything began precisely in 2020."
+  },
+  "Молодец, опять опоздал (ирония).": {
+    "en": "Well done, late again (ironic).",
+    "de": "Gut gemacht, wieder zu spät (ironisch).",
+    "es": "Well done, late again (ironic)."
+  },
+  "Я хочу отдать это ему до отъезда.": {
+    "en": "I want to give it to him before departure.",
+    "de": "Ich möchte es ihm vor der Abreise geben.",
+    "es": "I want to give it to him before departure."
+  },
+  "Составьте конструкцию Lo que… es…": {
+    "en": "Construct the structure 'Lo que… es…'",
+    "de": "Bilden Sie die Konstruktion 'Lo que… es…'",
+    "es": "Construct the structure 'Lo que… es…'"
+  },
+  "Договор, по слухам, уже подписан.": {
+    "en": "The contract, according to rumors, has already been signed.",
+    "de": "Der Vertrag ist, Gerüchten zufolge, bereits unterzeichnet.",
+    "es": "The contract, according to rumors, has already been signed."
+  },
+  "Из-за роста цен выросла инфляция.": {
+    "en": "Due to the rise in prices, inflation has increased.",
+    "de": "Aufgrund des Preisanstiegs ist die Inflation gestiegen.",
+    "es": "Due to the rise in prices, inflation has increased."
+  },
+  "Сессия завершена — они удалились.": {
+    "en": "The session is over — they have left.",
+    "de": "Die Sitzung ist beendet — sie sind gegangen.",
+    "es": "The session is over — they have left."
+  },
+  "Перед лицом кризиса приняли меры.": {
+    "en": "Measures were taken in the face of the crisis.",
+    "de": "Im Angesicht der Krise wurden Maßnahmen ergriffen.",
+    "es": "Measures were taken in the face of the crisis."
+  },
+  "Participio absoluto (согласуйте!)": {
+    "en": "Absolute participle (make it agree)",
+    "de": "Absoluter Partizipialabsatz (stimmen Sie überein)",
+    "es": "Absolute participle (make it agree)"
+  },
+  "Дай воды, пожалуйста (формально).": {
+    "en": "Please give me some water.",
+    "de": "Geben Sie mir bitte etwas Wasser.",
+    "es": "Please give me some water."
+  },
+  "Она спросила, могу ли я ей помочь.": {
+    "en": "She asked if I could help her.",
+    "de": "Sie fragte, ob ich ihr helfen könnte.",
+    "es": "She asked if I could help her."
+  },
+  "Ну конечно, всё по плану (ирония).": {
+    "en": "Oh, sure, everything's going according to plan (ironic).",
+    "de": "Na klar, alles läuft nach Plan (ironisch).",
+    "es": "Oh, sure, everything's going according to plan (ironic)."
+  },
+  "Составьте гипотетическое уступление": {
+    "en": "Formulate a hypothetical concession clause.",
+    "de": "Bilden Sie einen hypothetischen Konzessivsatz.",
+    "es": "Formulate a hypothetical concession clause."
+  },
+  "Составьте вопрос в estilo indirecto": {
+    "en": "Formulate a question in indirect speech.",
+    "de": "Bilden Sie eine Frage im indirekten Stil.",
+    "es": "Formulate a question in indirect speech."
+  },
+  "Составьте конструкцию lo + adjetivo": {
+    "en": "Formulate the 'lo + adjective' construction.",
+    "de": "Bilden Sie die Konstruktion 'lo + Adjektiv'.",
+    "es": "Formulate the 'lo + adjective' construction."
+  },
+  "Лекция скучная, а студенты скучают.": {
+    "en": "The lecture is boring, and the students are bored.",
+    "de": "Die Vorlesung ist langweilig, und die Studenten sind gelangweilt.",
+    "es": "The lecture is boring, and the students are bored."
+  },
+  "Составьте контраст ser/estar с frío": {
+    "en": "Create a contrast using ser/estar with frío.",
+    "de": "Bilden Sie einen Kontrast mit ser/estar und frío.",
+    "es": "Create a contrast using ser/estar with frío."
+  },
+  "То, что меня беспокоит, — это цена.": {
+    "en": "What worries me is the price.",
+    "de": "Was mich beunruhigt, ist der Preis.",
+    "es": "What worries me is the price."
+  },
+  "Составьте выделительную конструкцию": {
+    "en": "Create a cleft sentence.",
+    "de": "Bilden Sie einen Spaltsatz.",
+    "es": "Create a cleft sentence."
+  },
+  "Должно быть, они знакомы с детства.": {
+    "en": "They must have known each other since childhood.",
+    "de": "Sie müssen sich seit ihrer Kindheit kennen.",
+    "es": "They must have known each other since childhood."
+  },
+  "Подписав документы, пути назад нет.": {
+    "en": "Once the documents are signed, there is no turning back.",
+    "de": "Sobald die Dokumente unterzeichnet sind, gibt es kein Zurück mehr.",
+    "es": "Once the documents are signed, there is no turning back."
+  },
+  "Из-за роста расходов они закрылись.": {
+    "en": "Due to rising costs, they closed down.",
+    "de": "Aufgrund steigender Kosten haben sie geschlossen.",
+    "es": "Due to rising costs, they closed down."
+  },
+  "В молодости он много путешествовал.": {
+    "en": "In his youth, he traveled a lot.",
+    "de": "In seiner Jugend reiste er viel.",
+    "es": "In his youth, he traveled a lot."
+  },
+  "Как всегда, без сюрпризов (ирония).": {
+    "en": "As always, no surprises (ironic).",
+    "de": "Wie immer, keine Überraschungen (ironisch).",
+    "es": "As always, no surprises (ironic)."
+  },
+  "Она настаивала, чтобы мы все пришли.": {
+    "en": "She insisted that we all come.",
+    "de": "Sie bestand darauf, dass wir alle kommen.",
+    "es": "She insisted that we all come."
+  },
+  "Они, должно быть, дома — свет горит.": {
+    "en": "They must be home — the light is on.",
+    "de": "Sie müssen zu Hause sein — das Licht brennt.",
+    "es": "They must be home — the light is on."
+  },
+  "Неподтверждённая информация (пресса)": {
+    "en": "Unconfirmed information (press)",
+    "de": "Unbestätigte Informationen (Presse)",
+    "es": "Unconfirmed information (press)"
+  },
+  "Как бы ни было сложно, мы справимся.": {
+    "en": "No matter how difficult it is, we will manage.",
+    "de": "Wie schwierig es auch sein mag, wir werden es schaffen.",
+    "es": "No matter how difficult it is, we will manage."
+  },
+  "Она пообещала, что сделает это скоро.": {
+    "en": "She promised that she would do it soon.",
+    "de": "Sie versprach, dass sie es bald tun würde.",
+    "es": "She promised that she would do it soon."
+  },
+  "Составьте косвенную речь с subjuntivo": {
+    "en": "Construct indirect speech using the subjunctive.",
+    "de": "Bilden Sie den indirekten Satz mit Konjunktiv.",
+    "es": "Construct indirect speech using the subjunctive."
+  },
+  "Именно сегодня мы решили действовать.": {
+    "en": "We decided to act precisely today.",
+    "de": "Genau heute haben wir beschlossen, zu handeln.",
+    "es": "We decided to act precisely today."
+  },
+  "То, что удивило всех, — его молчание.": {
+    "en": "What surprised everyone was his silence.",
+    "de": "Was alle überraschte, war seine Stille.",
+    "es": "Lo que sorprendió a todos fue su silencio."
+  },
+  "Президент, по сообщениям, согласился.": {
+    "en": "The president reportedly agreed.",
+    "de": "Berichten zufolge stimmte der Präsident zu.",
+    "es": "The president reportedly agreed."
+  },
+  "Когда собрание закончилось, все ушли.": {
+    "en": "When the meeting ended, everyone left.",
+    "de": "Als die Sitzung zu Ende war, gingen alle weg.",
+    "es": "When the meeting ended, everyone left."
+  },
+  "Формальный запрет: queda + participio": {
+    "en": "Formal prohibition:",
+    "de": "Formales Verbot:",
+    "es": "Formal prohibition:"
+  },
+  "Составьте фразу с participio absoluto": {
+    "en": "Create a sentence with an absolute phrase",
+    "de": "Bilden Sie einen Satz mit absolutem Genitiv",
+    "es": "Create a sentence with an absolute phrase"
+  },
+  "Конечно, это идеальный план (ирония).": {
+    "en": "Of course, this is the perfect plan (ironic).",
+    "de": "Natürlich, das ist der perfekte Plan (ironisch).",
+    "es": "Of course, this is the perfect plan (ironic)."
+  },
+  "Она сообщила, что проект продолжается.": {
+    "en": "She reported that the project is ongoing.",
+    "de": "Sie gab bekannt, dass das Projekt weiterläuft.",
+    "es": "She reported that the project is ongoing."
+  },
+  "Было, наверное, невозможно без помощи.": {
+    "en": "It was probably impossible without help.",
+    "de": "Es war wahrscheinlich ohne Hilfe unmöglich.",
+    "es": "It was probably impossible without help."
+  },
+  "Когда наступил момент, мы действовали.": {
+    "en": "When the moment came, we acted.",
+    "de": "Als der Moment gekommen war, handelten wir.",
+    "es": "When the moment came, we acted."
+  },
+  "Составьте pluscuamperfecto en indirecto": {
+    "en": "Form the pluperfect in indirect speech.",
+    "de": "Bilden Sie das Plusquamperfekt im indirekten Stil.",
+    "es": "Form the pluperfect in indirect speech."
+  },
+  "Составьте предложение с ударением на OD": {
+    "en": "Construct a sentence with stress on the object.",
+    "de": "Bilden Sie einen Satz mit Betonung auf dem Objekt.",
+    "es": "Construct a sentence with stress on the object."
+  },
+  "Наверное, он болен — поэтому не пришёл.": {
+    "en": "He is probably sick — that's why he didn't come.",
+    "de": "Er ist wahrscheinlich krank — deshalb ist er nicht gekommen.",
+    "es": "He is probably sick — that's why he didn't come."
+  },
+  "На основании договорённости мы действуем.": {
+    "en": "We are acting based on the agreement.",
+    "de": "Wir handeln auf Grundlage der Vereinbarung.",
+    "es": "We are acting based on the agreement."
+  },
+  "Составьте выделительную конструкцию (лицо)": {
+    "en": "Construct a cleft sentence (person).",
+    "de": "Bilden Sie eine Fokus-Konstruktion (Person).",
+    "es": "Construct a cleft sentence (person)."
+  },
+  "Было, наверное, часа два, когда он пришёл.": {
+    "en": "It was probably around two o'clock when he arrived.",
+    "de": "Es war wahrscheinlich gegen zwei Uhr, als er kam.",
+    "es": "It was probably around two o'clock when he arrived."
+  },
+  "Случай странный, а атмосфера тоже странная.": {
+    "en": "The case is strange, and the atmosphere is strange too.",
+    "de": "Der Fall ist seltsam, und die Atmosphäre ist ebenfalls seltsam.",
+    "es": "The case is strange, and the atmosphere is strange too."
+  },
+  "Составьте выделительную конструкцию (место)": {
+    "en": "Form a cleft construction focusing on place",
+    "de": "Bilden Sie eine Spaltsatzkonstruktion mit Fokus auf den Ort",
+    "es": "Form a cleft construction focusing on place"
+  },
+  "Составьте предложение с двойным местоимением": {
+    "en": "Create a sentence with a double pronoun",
+    "de": "Bilden Sie einen Satz mit doppeltem Pronomen",
+    "es": "Create a sentence with a double pronoun"
+  },
+  "Составьте конструкцию por + adj + que + subj.": {
+    "en": "Form a construction with por + adj + que + subj.",
+    "de": "Bilden Sie eine Konstruktion mit por + adj + que + subj.",
+    "es": "Form a construction with por + adj + que + subj."
+  },
+  "Составьте estilo indirecto со сдвигом времени": {
+    "en": "Create indirect speech with a tense shift",
+    "de": "Bilden Sie die indirekte Rede mit Zeitverschiebung",
+    "es": "Create indirect speech with a tense shift"
+  },
+  "Повторите предлог в выделительной конструкции": {
+    "en": "Repeat the preposition in the emphatic construction.",
+    "de": "Wiederholen Sie die Präposition in der Hervorhebungsstruktur.",
+    "es": "Repeat the preposition in the emphatic construction."
+  },
+  "Самый формальный коннектор противопоставления": {
+    "en": "The most formal contrast connector",
+    "de": "Der formellste Kontrastkonnektor",
+    "es": "The most formal contrast connector"
+  },
+  "Мешок тяжёлый, но сегодня кажется ещё тяжелее.": {
+    "en": "The bag is heavy, but today it seems even heavier.",
+    "de": "Der Sack ist schwer, aber heute scheint er noch schwerer zu sein.",
+    "es": "The bag is heavy, but today it seems even heavier."
+  },
+  "Мальчик сообразительный и сегодня очень живой.": {
+    "en": "The boy is clever and very lively today.",
+    "de": "Der Junge ist klug und heute sehr lebhaft.",
+    "es": "The boy is clever and very lively today."
+  },
+  "Он плохой человек, но сегодня в хорошем настроении.": {
+    "en": "He is a bad person, but today he is in a good mood.",
+    "de": "Er ist ein schlechter Mensch, aber heute ist er in guter Stimmung.",
+    "es": "He is a bad person, but today he is in a good mood."
+  },
+  "По тому факту, что он не пришёл, мы забеспокоились.": {
+    "en": "Given the fact that he didn't come, we got worried.",
+    "de": "Aufgrund der Tatsache, dass er nicht gekommen ist, haben wir uns Sorgen gemacht.",
+    "es": "Given the fact that he didn't come, we got worried."
+  },
+  "Он симпатичный, но с этой стрижкой выглядит не очень.": {
+    "en": "He is good-looking, but with this haircut he doesn't look very good.",
+    "de": "Er ist attraktiv, aber mit dieser Frisur sieht er nicht besonders gut aus.",
+    "es": "He is good-looking, but with this haircut he doesn't look very good."
+  },
+  "В связи со сложившейся ситуацией мы должны действовать.": {
+    "en": "In view of the current situation, we must act.",
+    "de": "Angesichts der aktuellen Situation müssen wir handeln.",
+    "es": "In view of the current situation, we must act."
+  },
+  "Результат неудовлетворительный; тем не менее продолжаем.": {
+    "en": "The result is unsatisfactory; nevertheless, we continue.",
+    "de": "Das Ergebnis ist unbefriedigend; dennoch setzen wir fort.",
+    "es": "The result is unsatisfactory; nevertheless, we continue."
+  },
+  "Составьте предложение с subjuntivo (antecedente no definido)": {
+    "en": "Construct a sentence with the subjunctive (undefined antecedent).",
+    "de": "Bilden Sie einen Satz mit dem Konjunktiv (unbestimmtes Bezugswort).",
+    "es": "Construct a sentence with the subjunctive (undefined antecedent)."
+  },
+  "Составьте предложение: como + indicativo (способ)": {
+    "en": "Make a sentence with como + indicative (manner)",
+    "de": "Bilde einen Satz mit como + Indikativ (Art und Weise)",
+    "es": "Make a sentence with como + indicative (manner)"
+  },
+  "Он сказал, что приедет на следующий день.": {
+    "en": "He said he would arrive the next day.",
+    "de": "Er sagte, er würde am nächsten Tag ankommen.",
+    "es": "He said he would arrive the next day."
+  },
+  "Составьте сдвиг указателя hoy → aquel día": {
+    "en": "Rewrite with the time shift hoy → aquel día",
+    "de": "Schreibe mit der Zeitverschiebung hoy → aquel día",
+    "es": "Rewrite with the time shift hoy → aquel día"
+  },
+  "Самое сложное — начать.": {
+    "en": "The hardest part is to start.",
+    "de": "Das Schwierigste ist anzufangen.",
+    "es": "The hardest part is to start."
+  },
+  "Хорошо то, что мы договорились.": {
+    "en": "The good thing is that we reached an agreement.",
+    "de": "Das Gute ist, dass wir uns geeinigt haben.",
+    "es": "The good thing is that we reached an agreement."
+  },
+  "Рассказали ли тебе уже?": {
+    "en": "Have they told you already?",
+    "de": "Haben sie es dir schon erzählt?",
+    "es": "Have they told you already?"
+  },
+  "Составьте конструкцию lo que… es…": {
+    "en": "Build a sentence with lo que… es…",
+    "de": "Bilde einen Satz mit lo que… es…",
+    "es": "Build a sentence with lo que… es…"
+  },
+  "Составьте lo bueno de todo es que…": {
+    "en": "Build a sentence with lo bueno de todo es que…",
+    "de": "Bilde einen Satz mit lo bueno de todo es que…",
+    "es": "Build a sentence with lo bueno de todo es que…"
+  },
+  "Футболка зелёная, а он зелен от зависти.": {
+    "en": "The T-shirt is green, and he is green with envy.",
+    "de": "Das T-Shirt ist grün, und er ist grün vor Neid.",
+    "es": "The T-shirt is green, and he is green with envy."
+  },
+  "Он бледный от природы, но сегодня особенно бледен.": {
+    "en": "He is naturally pale, but today he looks especially pale.",
+    "de": "Er ist von Natur aus blass, aber heute sieht er besonders blass aus.",
+    "es": "He is naturally pale, but today he looks especially pale."
+  },
+  "План надёжный, но я не уверен.": {
+    "en": "The plan is reliable, but I am not sure.",
+    "de": "Der Plan ist zuverlässig, aber ich bin mir nicht sicher.",
+    "es": "The plan is reliable, but I am not sure."
+  },
+  "Составьте пару ser/estar con listo": {
+    "en": "Make a ser/estar pair with listo",
+    "de": "Bilde ein ser/estar-Paar mit listo",
+    "es": "Make a ser/estar pair with listo"
+  },
+  "Составьте пару es/está aburrido": {
+    "en": "Make an es/está pair with aburrido",
+    "de": "Bilde ein es/está-Paar mit aburrido",
+    "es": "Make an es/está pair with aburrido"
+  },
+  "Составьте ser (характеристика) + estar (состояние)": {
+    "en": "Make a sentence: ser (trait) + estar (state)",
+    "de": "Bilde einen Satz: ser (Eigenschaft) + estar (Zustand)",
+    "es": "Make a sentence: ser (trait) + estar (state)"
+  },
+  "Составьте пару ser/estar con vivo": {
+    "en": "Make a ser/estar pair with vivo",
+    "de": "Bilde ein ser/estar-Paar mit vivo",
+    "es": "Make a ser/estar pair with vivo"
+  },
+  "То, что она сделала, — уволилась.": {
+    "en": "What she did was quit.",
+    "de": "Was sie tat, war zu kündigen.",
+    "es": "Lo que hizo fue renunciar."
+  },
+  "Именно из-за дождя мы отменили.": {
+    "en": "It was because of the rain that we cancelled.",
+    "de": "Wegen des Regens haben wir abgesagt.",
+    "es": "It was because of the rain that we cancelled."
+  },
+  "Именно с тобой я хочу поговорить.": {
+    "en": "It is you I want to talk to.",
+    "de": "Mit dir möchte ich sprechen.",
+    "es": "It is you I want to talk to."
+  },
+  "Именно в Мадриде живёт моя сестра.": {
+    "en": "It is in Madrid that my sister lives.",
+    "de": "In Madrid wohnt meine Schwester.",
+    "es": "It is in Madrid that my sister lives."
+  },
+  "То, что меня раздражает, — шум.": {
+    "en": "What bothers me is the noise.",
+    "de": "Was mich stört, ist der Lärm.",
+    "es": "What bothers me is the noise."
+  },
+  "Наверное, будет дождь.": {
+    "en": "It will probably rain.",
+    "de": "Es wird wahrscheinlich regnen.",
+    "es": "It will probably rain."
+  },
+  "Наверное, мы опоздаем.": {
+    "en": "We will probably be late.",
+    "de": "Wir werden wahrscheinlich zu spät kommen.",
+    "es": "We will probably be late."
+  },
+  "Было, наверное, недоразумение.": {
+    "en": "It was probably a misunderstanding.",
+    "de": "Es war wahrscheinlich ein Missverständnis.",
+    "es": "It was probably a misunderstanding."
+  },
+  "Не могли бы вы передать соль?": {
+    "en": "Could you please pass the salt?",
+    "de": "Könnten Sie mir bitte das Salz reichen?",
+    "es": "Could you please pass the salt?"
+  },
+  "Несмотря ни на что, он пришёл.": {
+    "en": "No matter what, he came.",
+    "de": "Trotz allem ist er gekommen.",
+    "es": "No matter what, he came."
+  },
+  "Отлично поработали (иронично).": {
+    "en": "Great job we did (ironic).",
+    "de": "Tolle Arbeit haben wir gemacht (ironisch).",
+    "es": "Great job we did (ironic)."
+  },
+  "Какая неожиданность (ирония).": {
+    "en": "What a surprise (irony).",
+    "de": "Was für eine Überraschung (Ironie).",
+    "es": "What a surprise (irony)."
+  },
+  "Как всегда, всё идеально (ирония).": {
+    "en": "As always, everything is perfect (irony).",
+    "de": "Wie immer ist alles perfekt (Ironie).",
+    "es": "As always, everything is perfect (irony)."
+  },
+  "Спасибо за помощь (иронично — не помог).": {
+    "en": "Thanks for the help (ironic — they didn't help).",
+    "de": "Danke für die Hilfe (ironisch — keine Hilfe).",
+    "es": "Thanks for the help (ironic — they didn't help)."
+  },
+  "Спасибо, очень помог (ирония).": {
+    "en": "Thanks, that was very helpful (irony).",
+    "de": "Danke, sehr hilfreich (Ironie).",
+    "es": "Thanks, that was very helpful (irony)."
+  },
+  "Гений, просто гений (ирония).": {
+    "en": "A genius, nothing less (irony).",
+    "de": "Ein Genie, nichts weniger (Ironie).",
+    "es": "A genius, nothing less (irony)."
+  },
+  "Прагматика разговорной речи: что выражает фраза?": {
+    "en": "Conversational pragmatics: what does the phrase express?",
+    "de": "Gesprächspragmatik: was drückt der Satz aus?",
+    "es": "Conversational pragmatics: what does the phrase express?"
+  }
+}

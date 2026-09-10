@@ -37,3 +37,6 @@ next-env.d.ts
 .vscode/*
 !.vscode/extensions.json
 .idea
+
+# local script snippets (not part of repo)
+scripts/.bootstrap-*.txt

@@ -1,6 +1,9 @@
 import type { VocabTopic, VocabWord } from "@/types";
+import { ENGLISH_CHAPTERS } from "../chapters";
 import { ENGLISH_VOCAB_A1_A2 } from "./topics-a1-a2";
 import { ENGLISH_VOCAB_B1_C2 } from "./topics-b1-c2";
+import { ENGLISH_VOCAB_EXPAND } from "./topics-expand";
+import { ENGLISH_VOCAB_EXPAND_2 } from "./topics-expand-2";
 import { flattenWords, totalWordCount, wordsByChapter } from "./helpers";
 
 export { w, topic, flattenWords, totalWordCount, wordsByChapter } from "./helpers";
@@ -9,6 +12,8 @@ export { w, topic, flattenWords, totalWordCount, wordsByChapter } from "./helper
 export const ENGLISH_VOCAB: VocabTopic[] = [
   ...ENGLISH_VOCAB_A1_A2,
   ...ENGLISH_VOCAB_B1_C2,
+  ...ENGLISH_VOCAB_EXPAND,
+  ...ENGLISH_VOCAB_EXPAND_2,
 ];
 
 export function getEnglishVocabTopics(): VocabTopic[] {
@@ -16,7 +21,8 @@ export function getEnglishVocabTopics(): VocabTopic[] {
 }
 
 export function getEnglishVocabByChapter(chapterSlug: string): VocabWord[] {
-  return wordsByChapter(ENGLISH_VOCAB, chapterSlug);
+  const chapter = ENGLISH_CHAPTERS.find((c) => c.slug === chapterSlug);
+  return wordsByChapter(ENGLISH_VOCAB, chapterSlug, chapter?.vocabTopic);
 }
 
 export function getEnglishVocabBySlug(topicSlug: string): VocabTopic | undefined {

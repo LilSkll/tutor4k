@@ -1,13 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-import { Providers } from "@/components/providers";
-
-const inter = Inter({
-  subsets: ["latin", "cyrillic"],
-  variable: "--font-sans",
-  display: "swap",
-});
+import { VercelAnalytics } from "@/components/analytics/vercel-analytics";
 
 export const metadata: Metadata = {
   title: "Spanish with Pavel — AI Spanish Learning Platform",
@@ -40,8 +33,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" suppressHydrationWarning>
-      <body className={`${inter.variable} font-sans antialiased`}>
-        <Providers>{children}</Providers>
+      <body className="font-sans antialiased">
+        {children}
+        <VercelAnalytics />
       </body>
     </html>
   );

@@ -25,11 +25,25 @@ import {
   countCompletedForCourse,
   getChapterLocation,
   getChapterSummary,
+  getChapterTargetTitle,
   getChapterTitle,
+  hasCompletedPrereqChain,
 } from "@/lib/chapter-display";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
+import { Suspense } from "react";
+import { EmailConfirmedBanner } from "@/components/auth/email-confirmed-banner";
 
-export default async function DashboardPage() {
+export default async function DashboardPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ confirmed?: string | string[] }>;
+}) {
+  const params = await searchParams;
+  const confirmedRaw = params.confirmed;
+  const showConfirmed =
+    confirmedRaw === "1" ||
+    (Array.isArray(confirmedRaw) && confirmedRaw.includes("1"));
+
   const [profile, progress] = await Promise.all([
     getCurrentProfile(),
     getChapterProgress(),
@@ -87,7 +101,7 @@ export default async function DashboardPage() {
 
   if (CHAPTERS.length === 0) {
     return (
-      <div className="page-container space-y-6 md:space-y-8 animate-fade-in">
+      <div className="page-container space-y-6 md:space-y-8">
         <div className="flex flex-col gap-1">
           <p className="meta-label">{courseLabel}</p>
           <h1 className="page-title">{greeting}</h1>
@@ -116,6 +130,7 @@ export default async function DashboardPage() {
   }
 
   const courseChapterSlugs = CHAPTERS.map((c) => c.slug);
+  const chaptersBySlug = new Map(CHAPTERS.map((c) => [c.slug, c]));
   const completedSlugs = new Set(
     progress
       .filter((p) => p.status === "completed")
@@ -132,13 +147,42 @@ export default async function DashboardPage() {
 
   const startIndex = CHAPTERS.findIndex((c) => c.slug === currentChapter.slug);
   for (let i = Math.max(0, startIndex); i < CHAPTERS.length; i++) {
-    if (!completedSlugs.has(CHAPTERS[i].slug)) {
-      currentChapter = CHAPTERS[i];
+    const ch = CHAPTERS[i]!;
+    if (completedSlugs.has(ch.slug)) continue;
+    if (hasCompletedPrereqChain(ch, chaptersBySlug, completedSlugs)) {
+      currentChapter = ch;
       break;
     }
   }
 
+  // If level jump left us on a locked chapter, fall back to earliest unlocked.
+  if (
+    !completedSlugs.has(currentChapter.slug) &&
+    !hasCompletedPrereqChain(currentChapter, chaptersBySlug, completedSlugs)
+  ) {
+    currentChapter =
+      CHAPTERS.find(
+        (ch) =>
+          !completedSlugs.has(ch.slug) &&
+          hasCompletedPrereqChain(ch, chaptersBySlug, completedSlugs),
+      ) ?? CHAPTERS[0]!;
+  }
+
   const nextChapter = course.getNextChapter(currentChapter.slug);
+  const nextUnlocked =
+    nextChapter &&
+    hasCompletedPrereqChain(nextChapter, chaptersBySlug, completedSlugs)
+      ? nextChapter
+      : null;
+  // Show upcoming as preview only when it unlocks after finishing current.
+  const upcomingPreview =
+    nextChapter &&
+    !nextUnlocked &&
+    nextChapter.prereqChapter === currentChapter.slug
+      ? nextChapter
+      : null;
+  const upcomingChapter = nextUnlocked ?? upcomingPreview;
+  const upcomingLinked = Boolean(nextUnlocked);
   const totalCompleted = countCompletedForCourse(
     completedSlugs,
     courseChapterSlugs,
@@ -168,7 +212,12 @@ export default async function DashboardPage() {
       : t("dashboard.motivationStart");
 
   return (
-    <div className="page-container space-y-6 md:space-y-8 animate-fade-in">
+    <div className="page-container space-y-6 md:space-y-8">
+      {showConfirmed ? (
+        <Suspense fallback={null}>
+          <EmailConfirmedBanner initialVisible />
+        </Suspense>
+      ) : null}
       {/* Header */}
       <div className="flex flex-col gap-1">
         <p className="meta-label">{courseLabel}</p>
@@ -203,9 +252,12 @@ export default async function DashboardPage() {
                 <h3 className="text-xl sm:text-2xl font-bold truncate">
                   {getChapterTitle(currentChapter, lang)}
                 </h3>
-                <p className="text-white/75 text-sm italic truncate">
-                  {currentChapter.titleEs}
-                </p>
+                {getChapterTargetTitle(currentChapter, courseId) !==
+                  getChapterTitle(currentChapter, lang) && (
+                  <p className="text-white/75 text-sm italic truncate">
+                    {getChapterTargetTitle(currentChapter, courseId)}
+                  </p>
+                )}
                 <p className="text-white/70 text-sm mt-2 line-clamp-2">
                   {getChapterSummary(currentChapter, lang)}
                 </p>
@@ -327,7 +379,7 @@ export default async function DashboardPage() {
               <p className="meta-label mb-2">{t("dashboard.wordOfDay")}</p>
               <div className="flex items-start gap-3">
                 <Image
-                  src="/hippogriff-icon.png"
+                  src="/hippogriff-icon.webp"
                   alt=""
                   width={40}
                   height={40}
@@ -352,22 +404,38 @@ export default async function DashboardPage() {
         <Card className="card-hover">
           <CardContent className="p-4 sm:p-5 space-y-3">
             <p className="meta-label">{t("dashboard.upcoming")}</p>
-            {nextChapter ? (
-              <Link
-                href={`/chapters/${nextChapter.slug}`}
-                className="flex items-center gap-3 group"
-              >
-                <span className="text-3xl">{nextChapter.icon}</span>
-                <div className="flex-1 min-w-0">
-                  <p className="font-semibold truncate group-hover:text-primary transition-colors">
-                    {getChapterTitle(nextChapter, lang)}
-                  </p>
-                  <p className="text-xs text-muted-foreground truncate">
-                    {nextChapter.titleEs} · {nextChapter.level}
-                  </p>
+            {upcomingChapter ? (
+              upcomingLinked ? (
+                <Link
+                  href={`/chapters/${upcomingChapter.slug}`}
+                  className="flex items-center gap-3 group"
+                >
+                  <span className="text-3xl">{upcomingChapter.icon}</span>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-semibold truncate group-hover:text-primary transition-colors">
+                      {getChapterTitle(upcomingChapter, lang)}
+                    </p>
+                    <p className="text-xs text-muted-foreground truncate">
+                      {getChapterTargetTitle(upcomingChapter, courseId)} ·{" "}
+                      {upcomingChapter.level}
+                    </p>
+                  </div>
+                  <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                </Link>
+              ) : (
+                <div className="flex items-center gap-3 opacity-70">
+                  <span className="text-3xl">{upcomingChapter.icon}</span>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-semibold truncate">
+                      {getChapterTitle(upcomingChapter, lang)}
+                    </p>
+                    <p className="text-xs text-muted-foreground truncate">
+                      {getChapterTargetTitle(upcomingChapter, courseId)} ·{" "}
+                      {upcomingChapter.level}
+                    </p>
+                  </div>
                 </div>
-                <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-              </Link>
+              )
             ) : (
               <p className="text-sm text-muted-foreground">
                 {t("dashboard.final")}
@@ -405,8 +473,8 @@ export default async function DashboardPage() {
               {t("dashboard.journeyDesc", {
                 completed: totalCompleted,
                 total: totalChapters,
-                next: nextChapter
-                  ? getChapterTitle(nextChapter, lang)
+                next: upcomingChapter
+                  ? getChapterTitle(upcomingChapter, lang)
                   : t("dashboard.final"),
               })}
             </p>

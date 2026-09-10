@@ -4,7 +4,7 @@ import {
   type GeneratedExercise,
 } from "@/server/actions/ai";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
-import type { InterfaceLanguage, Level } from "@/types";
+import type { GrammarLevel, InterfaceLanguage, Level } from "@/types";
 
 /**
  * POST /api/exercises/check
@@ -16,8 +16,11 @@ export async function POST(req: NextRequest) {
     const body = (await req.json()) as {
       exercise: GeneratedExercise;
       userAnswer: string;
-      level: Level;
+      level: GrammarLevel;
     };
+    // AI feedback context tops out at C1; C2 items are checked as C1.
+    const { toUserLevel } = await import("@/lib/user-level");
+    const checkLevel: Level = toUserLevel(body.level);
 
     if (!body.exercise || typeof body.userAnswer !== "string") {
       return NextResponse.json(
@@ -54,7 +57,7 @@ export async function POST(req: NextRequest) {
     const result = await checkExerciseAnswer({
       exercise: body.exercise,
       userAnswer: body.userAnswer,
-      level: body.level,
+      level: checkLevel,
       language,
       courseId,
     });
