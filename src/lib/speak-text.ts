@@ -28,24 +28,42 @@ export function plainTextForSpeech(markdown: string): string {
     .trim();
 }
 
+/** BCP-47 tag for interface / tutor reply language (not the course language). */
+export function interfaceSpeechLang(lang: string): string {
+  switch (lang) {
+    case "ru":
+      return "ru-RU";
+    case "es":
+      return "es-ES";
+    case "de":
+      return "de-DE";
+    case "en":
+    default:
+      return "en-US";
+  }
+}
+
+/** @deprecated Prefer interfaceSpeechLang — tutor replies use UI language. */
 export function courseSpeechLang(courseId: string): string {
-  if (courseId === "english") return "en";
-  if (courseId === "russian") return "ru";
-  return "es";
+  if (courseId === "english") return "en-US";
+  if (courseId === "russian") return "ru-RU";
+  return "es-ES";
 }
 
 export function speakText(
   text: string,
-  langPrefix: string,
+  langTag: string,
   onEnd?: () => void,
 ): { stop: () => void } | null {
   if (typeof window === "undefined" || !window.speechSynthesis) return null;
   const plain = plainTextForSpeech(text);
   if (!plain) return null;
 
+  const langPrefix = langTag.slice(0, 2).toLowerCase();
+
   window.speechSynthesis.cancel();
   const utter = new SpeechSynthesisUtterance(plain);
-  utter.lang = langPrefix;
+  utter.lang = langTag;
   utter.rate = 0.95;
 
   const applyVoice = () => {

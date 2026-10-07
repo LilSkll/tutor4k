@@ -1,5 +1,12 @@
 import { cache } from "react";
+import { cookies } from "next/headers";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
+import {
+  localDateKey,
+  parseLocalDateKey,
+  previousDateKey,
+  shiftDateKey,
+} from "@/lib/local-date";
 import type {
   ChapterProgress,
   ExerciseHistory,
@@ -7,6 +14,22 @@ import type {
   Level,
   Profile,
 } from "@/types";
+
+/** Prefer browser calendar day (cookie), then optional override, then server local. */
+async function resolveActivityDate(
+  override?: string | null,
+): Promise<string> {
+  const fromArg = parseLocalDateKey(override);
+  if (fromArg) return fromArg;
+  try {
+    const jar = await cookies();
+    const fromCookie = parseLocalDateKey(jar.get("st_local_date")?.value);
+    if (fromCookie) return fromCookie;
+  } catch {
+    // Outside a request (scripts / tests).
+  }
+  return localDateKey();
+}
 
 // =====================================================================
 // Read-only data access helpers (used by Server Components)
@@ -79,14 +102,14 @@ export async function getDailyActivity(days = 30): Promise<DailyActivityRow[]> {
 
   if (!user) return [];
 
-  const since = new Date();
-  since.setDate(since.getDate() - days);
+  const today = await resolveActivityDate(null);
+  const sinceKey = shiftDateKey(today, -days);
 
   const { data } = await supabase
     .from("daily_activity")
     .select("activity_date, lessons_completed, minutes_studied")
     .eq("user_id", user.id)
-    .gte("activity_date", since.toISOString().slice(0, 10))
+    .gte("activity_date", sinceKey)
     .order("activity_date", { ascending: true });
 
   return (data ?? []) as unknown as DailyActivityRow[];
@@ -103,10 +126,12 @@ export async function getDailyActivity(days = 30): Promise<DailyActivityRow[]> {
 export async function recordStudySession(
   minutes: number,
   lessons = 1,
+  opts?: { activityDate?: string | null },
 ): Promise<{
   error: string | null;
   streak?: number;
   minutesToday?: number;
+  activityDate?: string;
 }> {
   // Authenticate via the user's session (verifies identity).
   const userClient = await createSupabaseServerClient();
@@ -121,7 +146,8 @@ export async function recordStudySession(
   const admin = createSupabaseAdminClient();
   const writeClient = admin ?? userClient;
 
-  const today = new Date().toISOString().slice(0, 10);
+  const today = await resolveActivityDate(opts?.activityDate);
+  const yesterdayKey = previousDateKey(today);
 
   // Read today's existing row so we can accumulate (not overwrite).
   const { data: existing } = await writeClient
@@ -166,9 +192,6 @@ export async function recordStudySession(
     const last = (profile.last_active_date as string) ?? null;
 
     if (last !== today) {
-      const yesterday = new Date();
-      yesterday.setDate(yesterday.getDate() - 1);
-      const yesterdayKey = yesterday.toISOString().slice(0, 10);
       streak = last === yesterdayKey ? streak + 1 : 1;
 
       await writeClient
@@ -178,7 +201,7 @@ export async function recordStudySession(
     }
   }
 
-  return { error: null, streak, minutesToday };
+  return { error: null, streak, minutesToday, activityDate: today };
 }
 
 // =====================================================================

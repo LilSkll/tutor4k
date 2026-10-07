@@ -1,4 +1,5 @@
 import type { DailyActivityRow } from "@/server/actions/data";
+import { shiftLocalDateKey } from "@/lib/local-date";
 
 export type WeeklyActivitySummary = {
   activeDays: number;
@@ -11,10 +12,7 @@ export function summarizeRecentActivity(
   rows: DailyActivityRow[],
   days = 7,
 ): WeeklyActivitySummary {
-  const since = new Date();
-  since.setHours(0, 0, 0, 0);
-  since.setDate(since.getDate() - (days - 1));
-  const sinceKey = since.toISOString().slice(0, 10);
+  const sinceKey = shiftLocalDateKey(-(days - 1));
 
   let activeDays = 0;
   let minutes = 0;

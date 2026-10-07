@@ -14,6 +14,7 @@ import {
   recordStudySession,
 } from "@/server/actions/data";
 import { getLessonAdaptationAction } from "@/server/actions/learning-profile";
+import { parseLocalDateKey, previousDateKey } from "@/lib/local-date";
 import type { GrammarLevel, InterfaceLanguage, StaticExercise } from "@/types";
 
 export type DailySessionPlan = {
@@ -105,6 +106,8 @@ export async function getDailySessionPlanAction(): Promise<DailySessionPlan | nu
 /** Record that the student finished today's Continue Path (~8 minutes). */
 export async function completeDailySessionAction(input?: {
   minutes?: number;
+  /** Browser YYYY-MM-DD so streak aligns with the student's calendar. */
+  localDate?: string;
 }): Promise<{
   error: string | null;
   streak?: number;
@@ -112,18 +115,18 @@ export async function completeDailySessionAction(input?: {
   minutesYesterday?: number;
 }> {
   const minutes = Math.max(1, Math.min(30, Math.round(input?.minutes ?? 8)));
-  const result = await recordStudySession(minutes, 1);
+  const activityDate = parseLocalDateKey(input?.localDate);
+  const result = await recordStudySession(minutes, 1, { activityDate });
   if (result.error) {
     return { error: result.error };
   }
 
-  const yesterday = new Date();
-  yesterday.setDate(yesterday.getDate() - 1);
-  const yesterdayKey = yesterday.toISOString().slice(0, 10);
+  const todayKey = result.activityDate;
   const recent = await getDailyActivity(2);
-  const minutesYesterday =
-    recent.find((row) => row.activity_date === yesterdayKey)
-      ?.minutes_studied ?? 0;
+  const minutesYesterday = todayKey
+    ? (recent.find((row) => row.activity_date === previousDateKey(todayKey))
+        ?.minutes_studied ?? 0)
+    : 0;
 
   return {
     error: null,

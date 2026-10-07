@@ -6,6 +6,7 @@ import { ThemeProvider } from "next-themes";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
 import { IdleCookieBanner } from "@/components/legal/idle-cookie-banner";
+import { LocalDateSync } from "@/components/shared/local-date-sync";
 
 /**
  * Full app shell providers (student + teacher).
@@ -36,6 +37,7 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
       <QueryClientProvider client={queryClient}>
         <TooltipProvider delayDuration={200}>
           {children}
+          <LocalDateSync />
           <IdleCookieBanner />
           <Toaster richColors position="top-right" />
         </TooltipProvider>

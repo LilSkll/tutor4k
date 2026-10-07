@@ -27,8 +27,11 @@ import { DEFAULT_COURSE_ID, getCourse } from "@/config/courses";
 import { toRoman } from "@/config/chapters";
 import { translate } from "@/lib/i18n";
 import { resolveCourseTopicLabel } from "@/lib/course-topic-label";
+import { localDateKey, parseLocalDateKey } from "@/lib/local-date";
 import { summarizeRecentActivity } from "@/lib/retention-stats";
 import { getWordGloss } from "@/lib/vocab-display";
+import { cookies } from "next/headers";
+import type { InterfaceLanguage } from "@/types";
 import {
   countCompletedForCourse,
   getChapterLocation,
@@ -59,9 +62,12 @@ export default async function DashboardPage({
     getDailyActivity(7),
   ]);
 
-  const lang = profile?.interface_language ?? "ru";
+  const lang = (profile?.interface_language ?? "ru") as InterfaceLanguage;
   const t = (key: string, vars?: Record<string, string | number>) =>
     translate(key, lang, vars);
+  const jar = await cookies();
+  const todayIso =
+    parseLocalDateKey(jar.get("st_local_date")?.value) ?? localDateKey();
 
   let courseId = profile?.active_course_id ?? DEFAULT_COURSE_ID;
   let course = await getCourse(courseId);
@@ -204,7 +210,6 @@ export default async function DashboardPage({
       : 0;
   const streak = profile?.streak ?? 0;
   const dailyGoal = profile?.daily_goal_minutes ?? 15;
-  const todayIso = new Date().toISOString().slice(0, 10);
   const minutesToday =
     recentActivity.find((row) => row.activity_date === todayIso)
       ?.minutes_studied ?? 0;

@@ -32,9 +32,10 @@ import {
   completeDailySessionAction,
   type DailySessionPlan,
 } from "@/server/actions/daily-session";
+import { localDateKey } from "@/lib/local-date";
 import {
   canUseSpeechSynthesis,
-  courseSpeechLang,
+  interfaceSpeechLang,
   speakText,
 } from "@/lib/speak-text";
 import {
@@ -251,7 +252,10 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
     setLoading(true);
     setFinishError(null);
     try {
-      const result = await completeDailySessionAction({ minutes: 8 });
+      const result = await completeDailySessionAction({
+        minutes: 8,
+        localDate: localDateKey(),
+      });
       if (result.error) {
         setFinishError(result.error);
         return;
@@ -420,7 +424,7 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
                       }
                       const handle = speakText(
                         dialogueResponse,
-                        courseSpeechLang(plan.courseId),
+                        interfaceSpeechLang(language),
                         () => {
                           setSpeaking(false);
                           speechStopRef.current = null;

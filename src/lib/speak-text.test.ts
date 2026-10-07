@@ -1,5 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { courseSpeechLang, plainTextForSpeech } from "@/lib/speak-text";
+import {
+  interfaceSpeechLang,
+  plainTextForSpeech,
+} from "@/lib/speak-text";
 
 describe("plainTextForSpeech", () => {
   it("strips light markdown", () => {
@@ -9,10 +12,11 @@ describe("plainTextForSpeech", () => {
   });
 });
 
-describe("courseSpeechLang", () => {
-  it("maps course ids", () => {
-    expect(courseSpeechLang("english")).toBe("en");
-    expect(courseSpeechLang("spanish")).toBe("es");
-    expect(courseSpeechLang("russian")).toBe("ru");
+describe("interfaceSpeechLang", () => {
+  it("maps UI languages to BCP-47 tags", () => {
+    expect(interfaceSpeechLang("ru")).toBe("ru-RU");
+    expect(interfaceSpeechLang("en")).toBe("en-US");
+    expect(interfaceSpeechLang("es")).toBe("es-ES");
+    expect(interfaceSpeechLang("de")).toBe("de-DE");
   });
 });
