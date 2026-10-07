@@ -19,6 +19,7 @@ import { Input } from "@/components/ui/input";
 import { Markdown } from "@/components/shared/markdown";
 import { BackLink } from "@/components/shared/back-link";
 import { StreakStampCard } from "@/components/shared/streak-stamp-card";
+import { DialogueSpeakRepeat } from "@/components/daily/dialogue-speak-repeat";
 import { QuestionWithGloss } from "@/components/exercises/question-with-gloss";
 import { ExerciseFreeTextBlock } from "@/components/exercises/exercise-free-text-block";
 import { SentenceBuildingBlock } from "@/components/exercises/sentence-building-block";
@@ -455,34 +456,42 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
             {dialogueResponse ? (
               <div className="rounded-lg border bg-card p-4 space-y-3">
                 <Markdown content={dialogueResponse} />
-                {speechSupported ? (
-                  <Button
-                    type="button"
-                    variant="outline"
-                    size="sm"
-                    className="w-full sm:w-auto"
-                    onClick={() => {
-                      if (speaking) {
-                        speechStopRef.current?.();
-                        return;
-                      }
-                      const handle = speakText(
-                        dialogueResponse,
-                        interfaceSpeechLang(language),
-                        () => {
-                          setSpeaking(false);
-                          speechStopRef.current = null;
-                        },
-                      );
-                      if (!handle) return;
-                      speechStopRef.current = handle.stop;
-                      setSpeaking(true);
-                    }}
-                  >
-                    <Volume2 className="h-4 w-4" />
-                    {speaking ? t("daily.stopSpeaking") : t("daily.listenReply")}
-                  </Button>
-                ) : null}
+                <div className="flex flex-col sm:flex-row flex-wrap gap-2">
+                  {speechSupported ? (
+                    <Button
+                      type="button"
+                      variant="outline"
+                      size="sm"
+                      className="w-full sm:w-auto"
+                      onClick={() => {
+                        if (speaking) {
+                          speechStopRef.current?.();
+                          return;
+                        }
+                        const handle = speakText(
+                          dialogueResponse,
+                          interfaceSpeechLang(language),
+                          () => {
+                            setSpeaking(false);
+                            speechStopRef.current = null;
+                          },
+                        );
+                        if (!handle) return;
+                        speechStopRef.current = handle.stop;
+                        setSpeaking(true);
+                      }}
+                    >
+                      <Volume2 className="h-4 w-4" />
+                      {speaking
+                        ? t("daily.stopSpeaking")
+                        : t("daily.listenReply")}
+                    </Button>
+                  ) : null}
+                  <DialogueSpeakRepeat />
+                </div>
+                <p className="text-xs text-muted-foreground">
+                  {t("daily.speakHint")}
+                </p>
               </div>
             ) : null}
             {finishError ? (

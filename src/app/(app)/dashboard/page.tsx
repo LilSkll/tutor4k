@@ -44,6 +44,8 @@ import { createSupabaseServerClient } from "@/lib/supabase-server";
 import { Suspense } from "react";
 import { EmailConfirmedBanner } from "@/components/auth/email-confirmed-banner";
 import { StreakStampCard } from "@/components/shared/streak-stamp-card";
+import { WeekPostcardCard } from "@/components/shared/week-postcard-card";
+import { isStreakGap } from "@/lib/streak-gap";
 
 export default async function DashboardPage({
   searchParams,
@@ -245,8 +247,23 @@ export default async function DashboardPage({
     ? getWordGloss(wordOfDay, lang, courseId) || wordOfDay.translation || ""
     : "";
 
-  const motivation =
-    streak > 0 && minutesToday === 0
+  const streakGap = isStreakGap({
+    lastActiveDate: profile?.last_active_date,
+    today: todayIso,
+  });
+  const quietReturn =
+    streakGap && streak > 0 && minutesToday === 0
+      ? {
+          main: t("dashboard.streakRestart", { streak }),
+          topic: reviewTopicLabel
+            ? t("dashboard.streakRestartTopic", { topic: reviewTopicLabel })
+            : null,
+        }
+      : null;
+
+  const motivation = quietReturn
+    ? quietReturn.main
+    : streak > 0 && minutesToday === 0
       ? t("dashboard.streakProtect", { streak })
       : streak > 0
         ? t("dashboard.motivationStreak", { streak })
@@ -269,6 +286,11 @@ export default async function DashboardPage({
       </div>
 
       <MascotTip message={motivation} />
+      {quietReturn?.topic ? (
+        <p className="text-sm text-muted-foreground -mt-3 px-0.5">
+          {quietReturn.topic}
+        </p>
+      ) : null}
 
       {/* Today's lesson */}
       <section className="space-y-3">
@@ -356,7 +378,15 @@ export default async function DashboardPage({
                     })}
                   </p>
                 ) : null}
-                {streak > 0 && minutesToday === 0 ? (
+                {quietReturn ? (
+                  <p className="mt-2 flex items-start gap-1.5 text-sm text-white/85">
+                    <Flame className="h-3.5 w-3.5 shrink-0 mt-0.5" />
+                    <span>
+                      {quietReturn.main}
+                      {quietReturn.topic ? ` ${quietReturn.topic}` : ""}
+                    </span>
+                  </p>
+                ) : streak > 0 && minutesToday === 0 ? (
                   <p className="mt-2 flex items-center gap-1.5 text-sm text-white/85">
                     <Flame className="h-3.5 w-3.5 shrink-0" />
                     {t("dashboard.streakProtect", { streak })}
@@ -475,6 +505,17 @@ export default async function DashboardPage({
               {t("dashboard.thisWeekTipDefault")}
             </p>
           )}
+          {weekSummary.activeDays >= 3 ? (
+            <WeekPostcardCard
+              activeDays={weekSummary.activeDays}
+              minutes={weekSummary.minutes}
+              tip={
+                reviewTopicLabel
+                  ? t("dashboard.thisWeekTip", { topic: reviewTopicLabel })
+                  : t("dashboard.thisWeekTipDefault")
+              }
+            />
+          ) : null}
         </CardContent>
       </Card>
 
