@@ -71,13 +71,16 @@ export type ExpandChapterBankOptions = {
   /**
    * After shared expand, raise every type up to this floor from packs.
    * Pass 1 uses unique shared stems; pass 2 may reuse a stem already taken
-   * by another type, but each finished sentence soft-rescues at most one
-   * additional type (avoids MC+FB+TR triples of the same sentence).
+   * by another type, but each finished sentence soft-rescues at most
+   * `softSharePerStem` additional types (default 2 — enough for floor 8
+   * without MC+FB+TR+EC quadruples of the same sentence).
    * Default 0 = do not fill (strict shared).
    *
    * `fillEmptyTypesTo` is kept as an alias of this floor.
    */
   fillTypesBelow?: number;
+  /** Max extra types that may soft-share one finished sentence. Default 2. */
+  softSharePerStem?: number;
   /** @deprecated Prefer `fillTypesBelow` — same behavior. */
   fillEmptyTypesTo?: number;
 };
@@ -196,8 +199,9 @@ export function expandChapterBank(
   const fillBelow =
     options?.fillTypesBelow ?? options?.fillEmptyTypesTo ?? 0;
   if (fillBelow > 0) {
-    /** Shared stems already used once for a soft (stem-sharing) rescue. */
-    const softSharedOnce = new Set<string>();
+    /** How many soft-rescues each shared stem has already granted. */
+    const softShareCount = new Map<string, number>();
+    const softShareLimit = Math.max(1, options?.softSharePerStem ?? 2);
 
     // Neediest types first so SB/MC do not consume soft-shares before EC/TR.
     const rescueOrder = [...types].sort(
@@ -220,7 +224,7 @@ export function expandChapterBank(
         }
       }
 
-      // Pass 2 — allow one soft share per finished sentence across types.
+      // Pass 2 — soft-share already-taken stems up to softShareLimit extras.
       for (const ex of pack) {
         if (byType[type].length >= fillBelow) break;
         if (have.has(ex.question.trim().toLowerCase())) continue;
@@ -230,10 +234,11 @@ export function expandChapterBank(
         if (seenExact.has(exact)) continue;
         const shared = exerciseContentFingerprint(cleaned, "shared");
         if (!shared.endsWith("|")) {
-          if (softSharedOnce.has(shared)) continue;
+          const used = softShareCount.get(shared) ?? 0;
+          if (used >= softShareLimit) continue;
           // Only soft-share stems that are already taken; free stems belong in pass 1.
           if (!seenContent.has(shared)) continue;
-          softSharedOnce.add(shared);
+          softShareCount.set(shared, used + 1);
         }
         seenExact.add(exact);
         byType[type].push(cleaned);

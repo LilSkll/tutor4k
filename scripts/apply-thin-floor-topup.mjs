@@ -7,6 +7,7 @@ import fs from "fs";
 import path from "path";
 import { fileURLToPath, pathToFileURL } from "url";
 import { THIN_FLOOR_TOPUP } from "./data/thin-floor-topup.mjs";
+import { MID_FLOOR_TOPUP } from "./data/mid-floor-topup.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
@@ -108,7 +109,14 @@ function main() {
   const esPacks = JSON.parse(fs.readFileSync(PACK_FILES.spanish, "utf8"));
 
   const report = [];
-  for (const [slug, byType] of Object.entries(THIN_FLOOR_TOPUP)) {
+  const combined = { ...THIN_FLOOR_TOPUP };
+  for (const [slug, byType] of Object.entries(MID_FLOOR_TOPUP)) {
+    if (!combined[slug]) combined[slug] = {};
+    for (const [type, items] of Object.entries(byType)) {
+      combined[slug][type] = [...(combined[slug][type] ?? []), ...items];
+    }
+  }
+  for (const [slug, byType] of Object.entries(combined)) {
     const packs = isEnglishSlug(slug) ? enPacks : esPacks;
     if (!packs[slug]) packs[slug] = {};
     const row = { slug, added: {} };

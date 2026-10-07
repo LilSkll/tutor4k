@@ -23745,6 +23745,24 @@
           "es": "¡Película absolutamente increíble!",
           "de": "Absolut toller Film!"
         }
+      },
+      {
+        "type": "translation",
+        "question": "Это поднимает более широкий вопрос о власти.",
+        "answer": "This raises a broader question about power",
+        "acceptableAnswers": [],
+        "instruction": "Translate into English",
+        "explanation": "raises a broader question…",
+        "grammarTopic": "eng-c1-discourse"
+      },
+      {
+        "type": "translation",
+        "question": "Иными словами, данные неоднозначны.",
+        "answer": "In other words, the data are ambiguous",
+        "acceptableAnswers": [],
+        "instruction": "Translate into English",
+        "explanation": "In other words…",
+        "grammarTopic": "eng-c1-discourse"
       }
     ],
     "error_correction": [
@@ -43882,6 +43900,15 @@
         ],
         "instruction": "Correct the mistake",
         "explanation": "Use «Furthermore», not «Moreover».",
+        "grammarTopic": "eng-ielts-essay-cohesion"
+      },
+      {
+        "type": "error_correction",
+        "question": "On the other hand however, costs rose.",
+        "answer": "On the other hand, costs rose.",
+        "acceptableAnswers": [],
+        "instruction": "Correct the error",
+        "explanation": "One contrast linker is enough.",
         "grammarTopic": "eng-ielts-essay-cohesion"
       }
     ],

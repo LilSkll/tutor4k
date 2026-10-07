@@ -146,8 +146,8 @@ describe("expandChapterBank", () => {
         exerciseContentFingerprint(e) ===
         "stem|to some extent i agree with this",
     );
-    // TR keeps the stem; at most one of MC/FB may soft-share it.
-    expect(sameStem.length).toBeLessThanOrEqual(2);
+    // TR keeps the stem; up to softSharePerStem (default 2) extras may share it.
+    expect(sameStem.length).toBeLessThanOrEqual(3);
     expect(sameStem.some((e) => e.type === "translation")).toBe(true);
   });
 });

@@ -401,6 +401,35 @@
         "instruction": "Переведите на испанский",
         "explanation": "Lugar → estar (estamos en casa).",
         "grammarTopic": "a1-ser-estar"
+      },
+      {
+        "type": "translation",
+        "question": "Сейчас я усталый.",
+        "answer": "Ahora estoy cansado",
+        "acceptableAnswers": [
+          "Ahora estoy cansada"
+        ],
+        "instruction": "Переведите на испанский",
+        "explanation": "estoy cansado.",
+        "grammarTopic": "a1-ser-estar"
+      },
+      {
+        "type": "translation",
+        "question": "Она студентка.",
+        "answer": "Ella es estudiante",
+        "acceptableAnswers": [],
+        "instruction": "Переведите на испанский",
+        "explanation": "es estudiante.",
+        "grammarTopic": "a1-ser-estar"
+      },
+      {
+        "type": "translation",
+        "question": "Мы дома сейчас.",
+        "answer": "Estamos en casa ahora",
+        "acceptableAnswers": [],
+        "instruction": "Переведите на испанский",
+        "explanation": "estamos en casa.",
+        "grammarTopic": "a1-ser-estar"
       }
     ],
     "error_correction": [
@@ -10373,6 +10402,15 @@
         "instruction": "Переведите на испанский (usted)",
         "explanation": "Usted → subjuntivo: sentarse → siéntese.",
         "grammarTopic": "b1-imperativo"
+      },
+      {
+        "type": "translation",
+        "question": "Открой окно, пожалуйста.",
+        "answer": "Abre la ventana, por favor",
+        "acceptableAnswers": [],
+        "instruction": "Переведите на испанский",
+        "explanation": "Abre…",
+        "grammarTopic": "b1-imperativo"
       }
     ],
     "error_correction": [
@@ -17433,6 +17471,42 @@
         "instruction": "Исправьте ошибку",
         "explanation": "¿Por qué? = почему?",
         "grammarTopic": "a1-preguntas"
+      },
+      {
+        "type": "error_correction",
+        "question": "¿De dónde eres tú eres?",
+        "answer": "¿De dónde eres?",
+        "acceptableAnswers": [],
+        "instruction": "Исправьте ошибку",
+        "explanation": "¿De dónde eres?",
+        "grammarTopic": "a1-preguntas"
+      },
+      {
+        "type": "error_correction",
+        "question": "¿Cuánto cuestan esto?",
+        "answer": "¿Cuánto cuesta esto?",
+        "acceptableAnswers": [],
+        "instruction": "Исправьте ошибку",
+        "explanation": "cuesta — singular.",
+        "grammarTopic": "a1-preguntas"
+      },
+      {
+        "type": "error_correction",
+        "question": "¿Qué hora es es?",
+        "answer": "¿Qué hora es?",
+        "acceptableAnswers": [],
+        "instruction": "Исправьте ошибку",
+        "explanation": "¿Qué hora es?",
+        "grammarTopic": "a1-preguntas"
+      },
+      {
+        "type": "error_correction",
+        "question": "¿Adónde vas a vas?",
+        "answer": "¿Adónde vas?",
+        "acceptableAnswers": [],
+        "instruction": "Исправьте ошибку",
+        "explanation": "¿Adónde vas?",
+        "grammarTopic": "a1-preguntas"
       }
     ],
     "sentence_building": [
@@ -22628,6 +22702,34 @@
         "instruction": "Выберите правильный вариант",
         "explanation": "¿Habías estado…?",
         "grammarTopic": "b1-pluscuamperfecto"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Cuando llegué, ellos ya ___.",
+        "options": [
+          "habían salido",
+          "han salido",
+          "salieron",
+          "salen"
+        ],
+        "answer": "habían salido",
+        "instruction": "Выберите правильный вариант",
+        "explanation": "ya + pluscuamperfecto.",
+        "grammarTopic": "b1-pluscuamperfecto"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Ella dijo que ___ el libro.",
+        "options": [
+          "había leído",
+          "ha leído",
+          "leyó",
+          "lee"
+        ],
+        "answer": "había leído",
+        "instruction": "Выберите правильный вариант",
+        "explanation": "había leído.",
+        "grammarTopic": "b1-pluscuamperfecto"
       }
     ],
     "fill_blank": [
@@ -24878,6 +24980,15 @@
         "instruction": "Переведите на испанский",
         "explanation": "¿Te lo han contado?",
         "grammarTopic": "b1-pronombres-objetos"
+      },
+      {
+        "type": "translation",
+        "question": "Я ей это уже сказал.",
+        "answer": "Ya se lo dije",
+        "acceptableAnswers": [],
+        "instruction": "Переведите на испанский",
+        "explanation": "se lo dije.",
+        "grammarTopic": "b1-pronombres-objetos"
       }
     ],
     "error_correction": [
@@ -25062,6 +25173,17 @@
         ],
         "instruction": "Исправьте ошибку",
         "explanation": "dar algo a alguien → le.",
+        "grammarTopic": "b1-pronombres-objetos"
+      },
+      {
+        "type": "error_correction",
+        "question": "¿Puedes darme lo el bolígrafo?",
+        "answer": "¿Puedes darme el bolígrafo?",
+        "acceptableAnswers": [
+          "¿Puedes dármelo?"
+        ],
+        "instruction": "Исправьте ошибку",
+        "explanation": "darme el bolígrafo / dármelo.",
         "grammarTopic": "b1-pronombres-objetos"
       }
     ],
@@ -26411,6 +26533,48 @@
         "instruction": "Выберите правильный вариант",
         "explanation": "Hábito pasado → iba.",
         "grammarTopic": "dele-contraste-pasados"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Ayer ___ al mercado y luego ___.",
+        "options": [
+          "fui / compré",
+          "iba / compraba",
+          "he ido / he comprado",
+          "voy / compro"
+        ],
+        "answer": "fui / compré",
+        "instruction": "Выберите правильный вариант",
+        "explanation": "pretérito — acciones acabadas.",
+        "grammarTopic": "dele-contraste-pasados"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "Cuando era niño, siempre ___ al río.",
+        "options": [
+          "iba",
+          "fui",
+          "he ido",
+          "voy"
+        ],
+        "answer": "iba",
+        "instruction": "Выберите правильный вариант",
+        "explanation": "imperfecto — hábito.",
+        "grammarTopic": "dele-contraste-pasados"
+      },
+      {
+        "type": "multiple_choice",
+        "question": "De pronto ___ un ruido fuerte.",
+        "options": [
+          "oí",
+          "oía",
+          "he oído",
+          "oigo"
+        ],
+        "answer": "oí",
+        "instruction": "Выберите правильный вариант",
+        "explanation": "pretérito — acción puntual.",
+        "grammarTopic": "dele-contraste-pasados"
       }
     ],
     "fill_blank": [
@@ -26647,6 +26811,15 @@
         ],
         "instruction": "Переведите на испанский (indefinido)",
         "explanation": "Anoche → indefinido. Dormir → dormí.",
+        "grammarTopic": "dele-contraste-pasados"
+      },
+      {
+        "type": "translation",
+        "question": "Пока я готовил, она читала.",
+        "answer": "Mientras yo cocinaba, ella leía",
+        "acceptableAnswers": [],
+        "instruction": "Переведите на испанский",
+        "explanation": "mientras + imperfecto.",
         "grammarTopic": "dele-contraste-pasados"
       }
     ],
@@ -27631,6 +27804,33 @@
         ],
         "instruction": "Переведите на испанский",
         "explanation": "Нужно «enviara», не «envía».",
+        "grammarTopic": "dele-carta-formal"
+      },
+      {
+        "type": "translation",
+        "question": "Уважаемый господин, пишу вам, чтобы запросить информацию.",
+        "answer": "Estimado señor: Le escribo para solicitar información",
+        "acceptableAnswers": [],
+        "instruction": "Переведите на испанский",
+        "explanation": "Le escribo para…",
+        "grammarTopic": "dele-carta-formal"
+      },
+      {
+        "type": "translation",
+        "question": "Прилагаю копию договора.",
+        "answer": "Adjunto una copia del contrato",
+        "acceptableAnswers": [],
+        "instruction": "Переведите на испанский",
+        "explanation": "Adjunto una copia…",
+        "grammarTopic": "dele-carta-formal"
+      },
+      {
+        "type": "translation",
+        "question": "С уважением, жду вашего ответа.",
+        "answer": "Atentamente, quedo a la espera de su respuesta",
+        "acceptableAnswers": [],
+        "instruction": "Переведите на испанский",
+        "explanation": "quedo a la espera…",
         "grammarTopic": "dele-carta-formal"
       }
     ],
@@ -28684,6 +28884,15 @@
         "acceptableAnswers": [],
         "instruction": "Переведите на испанский",
         "explanation": "hayas podido.",
+        "grammarTopic": "b2-subjuntivo-compuestos"
+      },
+      {
+        "type": "translation",
+        "question": "Не думаю, что они уже уехали.",
+        "answer": "No creo que se hayan ido ya",
+        "acceptableAnswers": [],
+        "instruction": "Переведите на испанский",
+        "explanation": "hayan ido.",
         "grammarTopic": "b2-subjuntivo-compuestos"
       }
     ],
@@ -33636,6 +33845,15 @@
         ],
         "instruction": "Переведите на испанский",
         "explanation": "Al fondo — «на заднем плане».",
+        "grammarTopic": "dele-expresion-oral"
+      },
+      {
+        "type": "translation",
+        "question": "С моей точки зрения, нужно больше практики.",
+        "answer": "Desde mi punto de vista, hace falta más práctica",
+        "acceptableAnswers": [],
+        "instruction": "Переведите на испанский",
+        "explanation": "desde mi punto de vista…",
         "grammarTopic": "dele-expresion-oral"
       }
     ],
