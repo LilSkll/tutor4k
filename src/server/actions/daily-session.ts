@@ -2,6 +2,7 @@
 
 import { getCourse } from "@/config/courses";
 import { getChapterTitle } from "@/lib/chapter-display";
+import { resolveCourseTopicLabel } from "@/lib/course-topic-label";
 import { buildDailyExerciseBlocks } from "@/lib/daily-session-plan";
 import { attachQuestionGlossesToMany } from "@/lib/exercise-gloss-attach";
 import { prepareExercisesForInterface } from "@/lib/exercise-localize";
@@ -72,16 +73,26 @@ export async function getDailySessionPlanAction(): Promise<DailySessionPlan | nu
     level: chapter.level as GrammarLevel,
   });
 
-  const recommendationLabel =
-    adaptation.revisionTopics[0]?.topic?.trim() || null;
+  const recommendationLabel = resolveCourseTopicLabel(
+    adaptation.revisionTopics[0]?.topic,
+    course,
+    language,
+    courseId,
+  );
 
-  const grammarTopic = course.getGrammarTopic(chapter.grammarTopic);
+  const topicTitle =
+    resolveCourseTopicLabel(
+      chapter.grammarTopic,
+      course,
+      language,
+      courseId,
+    ) ?? chapter.grammarTopic;
 
   return {
     courseId,
     chapterSlug,
     chapterTitle: getChapterTitle(chapter, language),
-    topicTitle: grammarTopic?.title ?? chapter.grammarTopic,
+    topicTitle,
     grammarTopicSlug: chapter.grammarTopic,
     level: chapter.level,
     recommendationLabel,

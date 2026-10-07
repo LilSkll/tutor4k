@@ -11,6 +11,18 @@ describe("localizeBankExplanation", () => {
     );
   });
 
+  it("drops English topic glosses on RU UI", () => {
+    expect(
+      localizeBankExplanation("prepositions of place: word order.", "ru"),
+    ).toMatch(/правильн/i);
+  });
+
+  it("keeps Latin formulas on RU UI", () => {
+    expect(localizeBankExplanation("have + been + V3", "ru")).toBe(
+      "have + been + V3",
+    );
+  });
+
   it("strips Cyrillic for EN UI", () => {
     const out = localizeBankExplanation(
       "Правильно: estoy. Не estar frío.",
@@ -34,5 +46,18 @@ describe("formatBankTutorFeedback", () => {
       explanation: "Нужно me gusta, не yo gusto.",
     });
     expect(fb).not.toMatch(/[\u0400-\u04FF]/);
+  });
+
+  it("keeps RU framing without English gloss or generic construction leak", () => {
+    const fb = formatBankTutorFeedback({
+      language: "ru",
+      correct: false,
+      explanation: "prepositions of place: word order.",
+      instruction: "Составьте предложение по образцу",
+      exerciseType: "sentence_building",
+    });
+    expect(fb).toMatch(/Почти|Не совсем|Давай|Хорошая/i);
+    expect(fb).not.toMatch(/prepositions of place/i);
+    expect(fb).not.toMatch(/Составьте предложение/i);
   });
 });

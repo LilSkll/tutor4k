@@ -19,6 +19,20 @@ describe("looksLikeConstructionFormula", () => {
   it("rejects generic translate labels", () => {
     expect(looksLikeConstructionFormula("Переведите предложение")).toBe(false);
     expect(looksLikeConstructionFormula("Translate the sentence")).toBe(false);
+    expect(
+      looksLikeConstructionFormula("Составьте предложение по образцу"),
+    ).toBe(false);
+  });
+});
+
+describe("resolveConstructionHint rejects localized task labels", () => {
+  it("does not treat build-sentence instructions as constructions", () => {
+    expect(
+      resolveConstructionHint({
+        instruction: "Составьте предложение по образцу",
+        explanation: "prepositions of place: word order.",
+      }),
+    ).toBeNull();
   });
 });
 

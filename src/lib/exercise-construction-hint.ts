@@ -1,7 +1,11 @@
 import type { ExerciseType, InterfaceLanguage } from "@/types";
 
 const GENERIC_INSTRUCTION =
-  /^(переведите|translate|traduce|traduzca|übersetze|заполните|fill|completa|completa el|исправьте|correct|corrige|выберите|choose|elige|соберите|build|arma|используйте|use)(\s|$)/i;
+  /^(переведите|translate|traduce|traduzca|übersetze|заполните|fill|completa|completa el|исправьте|correct|corrige|выберите|choose|elige|соберите|составьте|build|arma|forma|bilde|используйте|use|найдите|find|ordena|rewrite|перепишите)(\s|$)/i;
+
+/** Localized task labels that must never become "construction" feedback. */
+const GENERIC_TASK_LABEL =
+  /по образцу|on the model|siguiendo el modelo|nach dem muster|из слов|from the words|para formar|aus den wörtern|правильный вариант|correct option|opción correcta|richtige option/i;
 
 const FORMULA_SIGNAL =
   /(\+|→|->|subj|condic|imperfect|pluscuam|presente|pret[eé]rito|futuro|perfecto|indicativ|gerund|infinitiv|condicional|subjuntivo|first conditional|second conditional|third conditional|si\s*\+|if\s*\+|would|will\b|have\s*\+|haber\s*\+)/i;
@@ -22,6 +26,7 @@ export function looksLikeConstructionFormula(text: string): boolean {
   const t = text.trim();
   if (t.length < 6 || t.length > 120) return false;
   if (GENERIC_INSTRUCTION.test(t)) return false;
+  if (GENERIC_TASK_LABEL.test(t)) return false;
   if (CONJUGATION_SPOILER.test(t)) return false;
   return FORMULA_SIGNAL.test(t) || /^[A-Za-zÁÉÍÓÚáéíóúÑñÜü\s+→\-/>.,:()]+$/.test(t) && /\+/.test(t);
 }
@@ -66,15 +71,23 @@ export function resolveConstructionHint(input: {
     return t;
   };
 
-  if (instruction && looksLikeConstructionFormula(instruction)) {
+  if (
+    instruction &&
+    !GENERIC_TASK_LABEL.test(instruction) &&
+    looksLikeConstructionFormula(instruction)
+  ) {
     return usable(instruction);
   }
   // Compact bank instructions like "tener · presente" are good pre-answer hints.
+  // Require a formula signal (· / + / → / tense keyword) so localized task
+  // labels like "Составьте предложение по образцу" are never treated as hints.
   if (
     instruction &&
     instruction.length <= 48 &&
     !GENERIC_INSTRUCTION.test(instruction) &&
-    !CONJUGATION_SPOILER.test(instruction)
+    !GENERIC_TASK_LABEL.test(instruction) &&
+    !CONJUGATION_SPOILER.test(instruction) &&
+    (FORMULA_SIGNAL.test(instruction) || /[·•]/.test(instruction))
   ) {
     const fromInstr = usable(instruction);
     if (fromInstr) return fromInstr;

@@ -73,8 +73,8 @@ function pick<T>(arr: T[]): T {
 }
 
 /**
- * Bank explanations are often authored in Russian (with target-language forms).
- * For non-RU UI: keep short construction formulas; drop foreign prose.
+ * Bank explanations are often authored in Russian (Spanish course) or English
+ * (English course). Keep the UI language: formulas stay; foreign prose falls back.
  */
 export function localizeBankExplanation(
   explanation: string,
@@ -84,6 +84,21 @@ export function localizeBankExplanation(
   if (!trimmed) {
     return EXPLANATION_FALLBACK[language] ?? EXPLANATION_FALLBACK.en;
   }
+
+  const fallback = EXPLANATION_FALLBACK[language] ?? EXPLANATION_FALLBACK.en;
+  const hasFormula = /[→+]/.test(trimmed);
+
+  // RU UI + Latin-only English bank gloss ("prepositions of place: word order")
+  // → drop unless it looks like a tense/construction formula.
+  if (language === "ru" && !CYRILLIC.test(trimmed)) {
+    if (hasFormula) return trimmed;
+    const words = trimmed.split(/\s+/).filter(Boolean);
+    if (words.length >= 3 && /[a-z]{3,}/i.test(trimmed)) {
+      return fallback;
+    }
+    return trimmed;
+  }
+
   if (language === "ru") return trimmed;
 
   // Strip Cyrillic commentary; keep Latin forms / formulas when useful.
@@ -104,7 +119,7 @@ export function localizeBankExplanation(
   }
 
   if (!kept || kept.length < 4) {
-    return EXPLANATION_FALLBACK[language] ?? EXPLANATION_FALLBACK.en;
+    return fallback;
   }
 
   // Long Spanish prose on a non-Spanish UI is confusing — keep only short formulas.
@@ -113,16 +128,18 @@ export function localizeBankExplanation(
       kept,
     ) && kept.split(/\s+/).length >= 8;
   if (language !== "es" && looksSpanishProse && !/[→+]/.test(kept)) {
-    return EXPLANATION_FALLBACK[language] ?? EXPLANATION_FALLBACK.en;
+    return fallback;
   }
 
-  // Long English prose on a non-English UI — same rule.
+  // English prose / topic glosses on a non-English UI.
   const looksEnglishProse =
-    /\b(the|and|with|that|this|have|has|was|were|from|into)\b/i.test(kept) &&
-    kept.split(/\s+/).length >= 10 &&
+    /\b(the|and|with|that|this|have|has|was|were|from|into|word order|prepositions|present|past|simple)\b/i.test(
+      kept,
+    ) &&
+    kept.split(/\s+/).length >= 4 &&
     !/[→+]/.test(kept);
   if (language !== "en" && looksEnglishProse) {
-    return EXPLANATION_FALLBACK[language] ?? EXPLANATION_FALLBACK.en;
+    return fallback;
   }
 
   return kept;
