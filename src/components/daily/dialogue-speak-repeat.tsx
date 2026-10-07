@@ -12,7 +12,7 @@ type Phase = "idle" | "recording" | "done" | "unsupported" | "denied";
 
 /**
  * One short spoken reply after the tutor message — no accent scoring.
- * Audio stays in-memory only; we celebrate that they spoke.
+ * Audio is discarded immediately; we only celebrate that they spoke.
  */
 export function DialogueSpeakRepeat() {
   const language = useInterfaceLanguage();
@@ -20,23 +20,37 @@ export function DialogueSpeakRepeat() {
     translate(key, language, vars);
 
   const [phase, setPhase] = React.useState<Phase>("idle");
+  const [starting, setStarting] = React.useState(false);
   const recorderRef = React.useRef<MediaRecorder | null>(null);
   const streamRef = React.useRef<MediaStream | null>(null);
-  const chunksRef = React.useRef<Blob[]>([]);
   const timerRef = React.useRef<number | null>(null);
+  const startingRef = React.useRef(false);
+  const mountedRef = React.useRef(true);
 
-  const cleanup = React.useCallback(() => {
+  const cleanupStream = React.useCallback(() => {
     if (timerRef.current != null) {
       window.clearTimeout(timerRef.current);
       timerRef.current = null;
     }
+    const rec = recorderRef.current;
     recorderRef.current = null;
+    if (rec && rec.state !== "inactive") {
+      try {
+        rec.ondataavailable = null;
+        rec.onstop = null;
+        rec.stop();
+      } catch {
+        // already stopped
+      }
+    }
     streamRef.current?.getTracks().forEach((tr) => tr.stop());
     streamRef.current = null;
-    chunksRef.current = [];
+    startingRef.current = false;
+    if (mountedRef.current) setStarting(false);
   }, []);
 
   React.useEffect(() => {
+    mountedRef.current = true;
     if (
       typeof window === "undefined" ||
       typeof MediaRecorder === "undefined" ||
@@ -44,45 +58,74 @@ export function DialogueSpeakRepeat() {
     ) {
       setPhase("unsupported");
     }
-    return () => cleanup();
-  }, [cleanup]);
+    return () => {
+      mountedRef.current = false;
+      cleanupStream();
+    };
+  }, [cleanupStream]);
+
+  const finishOk = React.useCallback(() => {
+    cleanupStream();
+    if (mountedRef.current) setPhase("done");
+  }, [cleanupStream]);
 
   const stopRecording = React.useCallback(() => {
     const rec = recorderRef.current;
     if (rec && rec.state !== "inactive") {
-      rec.stop();
-    } else {
-      cleanup();
-      setPhase("done");
+      try {
+        rec.stop();
+      } catch {
+        finishOk();
+      }
+      return;
     }
-  }, [cleanup]);
+    finishOk();
+  }, [finishOk]);
 
   const startRecording = async () => {
-    if (phase === "recording" || phase === "unsupported") return;
+    if (
+      phase === "recording" ||
+      phase === "unsupported" ||
+      phase === "done" ||
+      startingRef.current
+    ) {
+      return;
+    }
+    startingRef.current = true;
+    setStarting(true);
     try {
-      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      const stream = await navigator.mediaDevices.getUserMedia({
+        audio: {
+          echoCancellation: true,
+          noiseSuppression: true,
+        },
+      });
+      if (!mountedRef.current) {
+        stream.getTracks().forEach((tr) => tr.stop());
+        startingRef.current = false;
+        return;
+      }
       streamRef.current = stream;
-      chunksRef.current = [];
-      const mime = MediaRecorder.isTypeSupported("audio/webm")
-        ? "audio/webm"
-        : undefined;
+      const mime = MediaRecorder.isTypeSupported("audio/webm;codecs=opus")
+        ? "audio/webm;codecs=opus"
+        : MediaRecorder.isTypeSupported("audio/webm")
+          ? "audio/webm"
+          : undefined;
       const rec = mime
         ? new MediaRecorder(stream, { mimeType: mime })
         : new MediaRecorder(stream);
       recorderRef.current = rec;
-      rec.ondataavailable = (e) => {
-        if (e.data.size > 0) chunksRef.current.push(e.data);
-      };
-      rec.onstop = () => {
-        cleanup();
-        setPhase("done");
-      };
+      // Discard chunks — we never upload or score accent.
+      rec.ondataavailable = () => {};
+      rec.onstop = () => finishOk();
       rec.start();
       setPhase("recording");
+      startingRef.current = false;
+      setStarting(false);
       timerRef.current = window.setTimeout(() => stopRecording(), MAX_MS);
     } catch {
-      cleanup();
-      setPhase("denied");
+      cleanupStream();
+      if (mountedRef.current) setPhase("denied");
     }
   };
 
@@ -108,6 +151,7 @@ export function DialogueSpeakRepeat() {
       variant={phase === "recording" ? "destructive" : "secondary"}
       size="sm"
       className="w-full sm:w-auto"
+      disabled={starting}
       onClick={() => {
         if (phase === "recording") stopRecording();
         else void startRecording();
@@ -117,6 +161,12 @@ export function DialogueSpeakRepeat() {
         <>
           <Square className="h-4 w-4" />
           {t("daily.speakStop")}
+          <Loader2 className="h-3.5 w-3.5 animate-spin opacity-70" />
+        </>
+      ) : starting ? (
+        <>
+          <Loader2 className="h-4 w-4 animate-spin" />
+          {t("daily.speakRepeat")}
         </>
       ) : (
         <>
@@ -124,9 +174,6 @@ export function DialogueSpeakRepeat() {
           {t("daily.speakRepeat")}
         </>
       )}
-      {phase === "recording" ? (
-        <Loader2 className="h-3.5 w-3.5 animate-spin opacity-70" />
-      ) : null}
     </Button>
   );
 }

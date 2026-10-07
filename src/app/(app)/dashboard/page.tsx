@@ -378,15 +378,7 @@ export default async function DashboardPage({
                     })}
                   </p>
                 ) : null}
-                {quietReturn ? (
-                  <p className="mt-2 flex items-start gap-1.5 text-sm text-white/85">
-                    <Flame className="h-3.5 w-3.5 shrink-0 mt-0.5" />
-                    <span>
-                      {quietReturn.main}
-                      {quietReturn.topic ? ` ${quietReturn.topic}` : ""}
-                    </span>
-                  </p>
-                ) : streak > 0 && minutesToday === 0 ? (
+                {!quietReturn && streak > 0 && minutesToday === 0 ? (
                   <p className="mt-2 flex items-center gap-1.5 text-sm text-white/85">
                     <Flame className="h-3.5 w-3.5 shrink-0" />
                     {t("dashboard.streakProtect", { streak })}
