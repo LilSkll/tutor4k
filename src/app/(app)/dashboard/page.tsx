@@ -453,6 +453,15 @@ export default async function DashboardPage({
           <Progress
             value={Math.min(100, Math.round((weekSummary.activeDays / 7) * 100))}
           />
+          {reviewTopicLabel ? (
+            <p className="text-xs text-muted-foreground">
+              {t("dashboard.thisWeekTip", { topic: reviewTopicLabel })}
+            </p>
+          ) : (
+            <p className="text-xs text-muted-foreground">
+              {t("dashboard.thisWeekTipDefault")}
+            </p>
+          )}
         </CardContent>
       </Card>
 

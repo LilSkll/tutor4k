@@ -10,6 +10,7 @@ import {
   Loader2,
   MessageSquare,
   Sparkles,
+  Volume2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -31,6 +32,11 @@ import {
   completeDailySessionAction,
   type DailySessionPlan,
 } from "@/server/actions/daily-session";
+import {
+  canUseSpeechSynthesis,
+  courseSpeechLang,
+  speakText,
+} from "@/lib/speak-text";
 import type { StaticExercise } from "@/types";
 
 type Phase = "review" | "practice" | "dialogue" | "done";
@@ -72,7 +78,18 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
   const [doneMinutesToday, setDoneMinutesToday] = React.useState<number | null>(
     null,
   );
+  const [speechSupported, setSpeechSupported] = React.useState(false);
+  const [speaking, setSpeaking] = React.useState(false);
   const askInFlight = React.useRef(false);
+  const speechStopRef = React.useRef<(() => void) | null>(null);
+
+  React.useEffect(() => {
+    setSpeechSupported(canUseSpeechSynthesis());
+    return () => {
+      speechStopRef.current?.();
+      speechStopRef.current = null;
+    };
+  }, []);
 
   const phaseOrder: Phase[] = hasReview
     ? ["review", "practice", "dialogue", "done"]
@@ -363,8 +380,36 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
               {loading ? t("lesson.thinking") : t("lesson.askTutor")}
             </Button>
             {dialogueResponse ? (
-              <div className="rounded-lg border bg-card p-4">
+              <div className="rounded-lg border bg-card p-4 space-y-3">
                 <Markdown content={dialogueResponse} />
+                {speechSupported ? (
+                  <Button
+                    type="button"
+                    variant="outline"
+                    size="sm"
+                    className="w-full sm:w-auto"
+                    onClick={() => {
+                      if (speaking) {
+                        speechStopRef.current?.();
+                        return;
+                      }
+                      const handle = speakText(
+                        dialogueResponse,
+                        courseSpeechLang(plan.courseId),
+                        () => {
+                          setSpeaking(false);
+                          speechStopRef.current = null;
+                        },
+                      );
+                      if (!handle) return;
+                      speechStopRef.current = handle.stop;
+                      setSpeaking(true);
+                    }}
+                  >
+                    <Volume2 className="h-4 w-4" />
+                    {speaking ? t("daily.stopSpeaking") : t("daily.listenReply")}
+                  </Button>
+                ) : null}
               </div>
             ) : null}
             {finishError ? (
