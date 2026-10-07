@@ -9452,7 +9452,7 @@
           "yesterday"
         ],
         "answer": "I went to the museum yesterday",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "I went to the museum yesterday.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9469,7 +9469,7 @@
           "meeting"
         ],
         "answer": "She didn't come to the meeting",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "didn't + base verb.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9486,7 +9486,7 @@
           "night"
         ],
         "answer": "We watched a film last night",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "watch → watched.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9504,7 +9504,7 @@
           "bus"
         ],
         "answer": "He lost his keys on the bus",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "lose → lost.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9520,7 +9520,7 @@
           "Paris?"
         ],
         "answer": "Did you ever visit Paris?",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Did you ever visit…?",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9537,7 +9537,7 @@
           "station"
         ],
         "answer": "They arrived late at the station",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "arrived late at the station.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9553,7 +9553,7 @@
           "question"
         ],
         "answer": "I didn't understand the question",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "didn't understand.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9571,7 +9571,7 @@
           "York"
         ],
         "answer": "We met our old friends in York",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "meet → met. Ответ: We met our old friends in York.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9590,7 +9590,7 @@
           "aunt"
         ],
         "answer": "She wrote a long letter to her aunt",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "write → wrote.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9606,7 +9606,7 @@
           "phone"
         ],
         "answer": "He didn't answer the phone",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "didn't answer.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9624,7 +9624,7 @@
           "time"
         ],
         "answer": "I tried sushi for the first time",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "try → tried.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9642,7 +9642,7 @@
           "Edinburgh"
         ],
         "answer": "We had a great weekend in Edinburgh",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "have → had. Ответ: We had a great weekend in Edinburgh.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9660,7 +9660,7 @@
           "week"
         ],
         "answer": "I bought a new jacket last week",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "buy → bought (irregular).",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9676,7 +9676,7 @@
           "project?"
         ],
         "answer": "Did they finish the project?",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Did + subject + base verb.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9694,7 +9694,7 @@
           "Saturday"
         ],
         "answer": "She sang at the concert on Saturday",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "sing → sang (irregular).",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9712,7 +9712,7 @@
           "party"
         ],
         "answer": "We didn't see him at the party",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "didn't + base verb.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9728,7 +9728,7 @@
           "yesterday"
         ],
         "answer": "He drove to Manchester yesterday",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "drive → drove (irregular).",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9747,7 +9747,7 @@
           "station"
         ],
         "answer": "They found a nice café near the station",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "find → found (irregular).",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9765,7 +9765,7 @@
           "morning"
         ],
         "answer": "I spoke to the manager this morning",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "speak → spoke (irregular).",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9783,7 +9783,7 @@
           "tired"
         ],
         "answer": "She left early because she felt tired",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "leave → left; feel → felt.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -10851,7 +10851,7 @@
           "town"
         ],
         "answer": "This hotel is the most comfortable in town",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "the most comfortable — длинное прилагательное.",
         "grammarTopic": "eng-a2-comparatives",
         "acceptableAnswers": []
@@ -10887,7 +10887,7 @@
           "sister"
         ],
         "answer": "She runs more slowly than her sister",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "more slowly than — наречие сравнения.",
         "grammarTopic": "eng-a2-comparatives",
         "acceptableAnswers": []
@@ -10906,7 +10906,7 @@
           "life"
         ],
         "answer": "It was the happiest day of my life",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "happiest — happy → happiest.",
         "grammarTopic": "eng-a2-comparatives",
         "acceptableAnswers": []
@@ -10925,7 +10925,7 @@
           "yours"
         ],
         "answer": "My room is not as big as yours",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "not as big as yours.",
         "grammarTopic": "eng-a2-comparatives",
         "acceptableAnswers": []
@@ -11652,6 +11652,81 @@
         "instruction": "Correct the mistake",
         "explanation": "Use «read», not «reading».",
         "grammarTopic": "eng-a2-going-to"
+      },
+      {
+        "type": "error_correction",
+        "question": "Tomorrow we going visit grandma.",
+        "answer": "Tomorrow we are going to visit grandma.",
+        "acceptableAnswers": [],
+        "instruction": "Correct the error",
+        "explanation": "are going to visit.",
+        "grammarTopic": "eng-a2-going-to"
+      },
+      {
+        "type": "error_correction",
+        "question": "Look — those dark clouds. It will raining soon.",
+        "answer": "Look — those dark clouds. It's going to rain soon.",
+        "acceptableAnswers": [],
+        "instruction": "Correct the error",
+        "explanation": "Evidence for near future → going to, not will + -ing.",
+        "grammarTopic": "eng-a2-going-to"
+      },
+      {
+        "type": "error_correction",
+        "question": "I gonna buy tickets online tonight.",
+        "answer": "I'm going to buy tickets online tonight.",
+        "acceptableAnswers": [],
+        "instruction": "Correct the error",
+        "explanation": "I'm going to buy…",
+        "grammarTopic": "eng-a2-going-to"
+      },
+      {
+        "type": "error_correction",
+        "question": "Is she go to study abroad next year?",
+        "answer": "Is she going to study abroad next year?",
+        "acceptableAnswers": [],
+        "instruction": "Correct the error",
+        "explanation": "Is she going to + base verb?",
+        "grammarTopic": "eng-a2-going-to"
+      },
+      {
+        "type": "error_correction",
+        "question": "They going to the cinema this evening.",
+        "answer": "They are going to the cinema this evening.",
+        "acceptableAnswers": [
+          "They're going to the cinema this evening.",
+          "They are going to go to the cinema this evening."
+        ],
+        "instruction": "Correct the error",
+        "explanation": "are going to the cinema (movement) OR are going to go…",
+        "grammarTopic": "eng-a2-going-to"
+      },
+      {
+        "type": "error_correction",
+        "question": "We aren't going watch the match.",
+        "answer": "We aren't going to watch the match.",
+        "acceptableAnswers": [],
+        "instruction": "Correct the error",
+        "explanation": "aren't going to + base verb.",
+        "grammarTopic": "eng-a2-going-to"
+      },
+      {
+        "type": "error_correction",
+        "question": "He is going to goes home early.",
+        "answer": "He is going to go home early.",
+        "acceptableAnswers": [],
+        "instruction": "Correct the error",
+        "explanation": "going to go — no -s.",
+        "grammarTopic": "eng-a2-going-to"
+      },
+      {
+        "type": "error_correction",
+        "question": "Are you going to be cook dinner?",
+        "answer": "Are you going to cook dinner?",
+        "acceptableAnswers": [],
+        "instruction": "Correct the error",
+        "explanation": "going to cook — not going to be cook.",
+        "grammarTopic": "eng-a2-going-to"
       }
     ],
     "sentence_building": [
@@ -11669,7 +11744,7 @@
           "summer"
         ],
         "answer": "We are going to travel in the summer",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "We are going to travel…",
         "grammarTopic": "eng-a2-going-to",
         "acceptableAnswers": []
@@ -11687,7 +11762,7 @@
           "London"
         ],
         "answer": "She is going to move to London",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "She is going to move…",
         "grammarTopic": "eng-a2-going-to",
         "acceptableAnswers": []
@@ -11706,7 +11781,7 @@
           "rain"
         ],
         "answer": "Look at the clouds it's going to rain",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "it's going to rain — evidence.",
         "grammarTopic": "eng-a2-going-to",
         "acceptableAnswers": []
@@ -11722,7 +11797,7 @@
           "come?"
         ],
         "answer": "Are you going to come?",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Are you going to come?",
         "grammarTopic": "eng-a2-going-to",
         "acceptableAnswers": []
@@ -11740,7 +11815,7 @@
           "car"
         ],
         "answer": "They aren't going to buy a car",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "aren't going to buy…",
         "grammarTopic": "eng-a2-going-to",
         "acceptableAnswers": []
@@ -11756,7 +11831,7 @@
           "Spanish"
         ],
         "answer": "I'm going to learn Spanish",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "going to learn Spanish.",
         "grammarTopic": "eng-a2-going-to",
         "acceptableAnswers": []
@@ -11773,7 +11848,7 @@
           "you"
         ],
         "answer": "He is going to call you",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "is going to call you.",
         "grammarTopic": "eng-a2-going-to",
         "acceptableAnswers": []
@@ -11793,7 +11868,7 @@
           "restaurant"
         ],
         "answer": "We are going to have dinner at a restaurant",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "going to have dinner…",
         "grammarTopic": "eng-a2-going-to",
         "acceptableAnswers": []
@@ -11811,7 +11886,7 @@
           "exam"
         ],
         "answer": "She is going to take the exam",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "going to take the exam.",
         "grammarTopic": "eng-a2-going-to",
         "acceptableAnswers": []
@@ -11830,7 +11905,7 @@
           "early?"
         ],
         "answer": "Are you going to go to bed early?",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "going to go to bed early?",
         "grammarTopic": "eng-a2-going-to",
         "acceptableAnswers": []
@@ -11847,7 +11922,7 @@
           "married"
         ],
         "answer": "They are going to get married",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "going to get married.",
         "grammarTopic": "eng-a2-going-to",
         "acceptableAnswers": []
@@ -11865,7 +11940,7 @@
           "job"
         ],
         "answer": "I'm going to start a new job",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "going to start a new job.",
         "grammarTopic": "eng-a2-going-to",
         "acceptableAnswers": []
@@ -11882,7 +11957,7 @@
           "up"
         ],
         "answer": "We aren't going to give up",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "aren't going to give up.",
         "grammarTopic": "eng-a2-going-to",
         "acceptableAnswers": []
@@ -11900,7 +11975,7 @@
           "turn"
         ],
         "answer": "Look the car is going to turn",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "is going to turn — вот-вот произойдёт.",
         "grammarTopic": "eng-a2-going-to",
         "acceptableAnswers": []
@@ -11918,7 +11993,7 @@
           "grandparents"
         ],
         "answer": "I am going to visit my grandparents",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "am going to visit my grandparents.",
         "grammarTopic": "eng-a2-going-to",
         "acceptableAnswers": []
@@ -11936,7 +12011,7 @@
           "match?"
         ],
         "answer": "Are you going to watch the match?",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Are you going to watch…?",
         "grammarTopic": "eng-a2-going-to",
         "acceptableAnswers": []
@@ -11953,7 +12028,7 @@
           "medicine"
         ],
         "answer": "She is going to study medicine",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "is going to study medicine.",
         "grammarTopic": "eng-a2-going-to",
         "acceptableAnswers": []
@@ -11971,7 +12046,7 @@
           "kitchen"
         ],
         "answer": "They are going to paint the kitchen",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "going to paint the kitchen.",
         "grammarTopic": "eng-a2-going-to",
         "acceptableAnswers": []
@@ -11989,7 +12064,7 @@
           "longer"
         ],
         "answer": "He isn't going to wait any longer",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "isn't going to wait any longer.",
         "grammarTopic": "eng-a2-going-to",
         "acceptableAnswers": []
@@ -12005,7 +12080,7 @@
           "tonight"
         ],
         "answer": "We're going to celebrate tonight",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "going to celebrate tonight.",
         "grammarTopic": "eng-a2-going-to",
         "acceptableAnswers": []
@@ -12782,7 +12857,7 @@
           "Japan"
         ],
         "answer": "I have never been to Japan",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "have never been to Japan.",
         "grammarTopic": "eng-a2-present-perfect",
         "acceptableAnswers": []
@@ -12799,7 +12874,7 @@
           "homework"
         ],
         "answer": "She has already finished her homework",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "has already finished…",
         "grammarTopic": "eng-a2-present-perfect",
         "acceptableAnswers": []
@@ -12814,7 +12889,7 @@
           "arrived"
         ],
         "answer": "We have just arrived",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "have just arrived.",
         "grammarTopic": "eng-a2-present-perfect",
         "acceptableAnswers": []
@@ -12830,7 +12905,7 @@
           "sushi?"
         ],
         "answer": "Have you ever tried sushi?",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Have you ever tried…?",
         "grammarTopic": "eng-a2-present-perfect",
         "acceptableAnswers": []
@@ -12846,7 +12921,7 @@
           "passport"
         ],
         "answer": "He has lost his passport",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "has lost his passport.",
         "grammarTopic": "eng-a2-present-perfect",
         "acceptableAnswers": []
@@ -12861,7 +12936,7 @@
           "yet"
         ],
         "answer": "They haven't replied yet",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "haven't replied yet.",
         "grammarTopic": "eng-a2-present-perfect",
         "acceptableAnswers": []
@@ -12879,7 +12954,7 @@
           "times"
         ],
         "answer": "I have seen this film three times",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "have seen… three times.",
         "grammarTopic": "eng-a2-present-perfect",
         "acceptableAnswers": []
@@ -12898,7 +12973,7 @@
           "years"
         ],
         "answer": "She has lived in Berlin for five years",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "has lived… for five years.",
         "grammarTopic": "eng-a2-present-perfect",
         "acceptableAnswers": []
@@ -12914,7 +12989,7 @@
           "ages"
         ],
         "answer": "We haven't met for ages",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "haven't met for ages.",
         "grammarTopic": "eng-a2-present-perfect",
         "acceptableAnswers": []
@@ -12930,7 +13005,7 @@
           "books"
         ],
         "answer": "He has written two books",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "has written two books.",
         "grammarTopic": "eng-a2-present-perfect",
         "acceptableAnswers": []
@@ -12950,7 +13025,7 @@
           "balloon?"
         ],
         "answer": "Have you ever flown in a hot air balloon?",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Have you ever flown…?",
         "grammarTopic": "eng-a2-present-perfect",
         "acceptableAnswers": []
@@ -12965,7 +13040,7 @@
           "today"
         ],
         "answer": "I haven't eaten today",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "haven't eaten today.",
         "grammarTopic": "eng-a2-present-perfect",
         "acceptableAnswers": []
@@ -12982,7 +13057,7 @@
           "shop"
         ],
         "answer": "She has gone to the shop",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "has gone = ушла и ещё там.",
         "grammarTopic": "eng-a2-present-perfect",
         "acceptableAnswers": []
@@ -13000,7 +13075,7 @@
           "years"
         ],
         "answer": "We have known each other for years",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "have known… for years.",
         "grammarTopic": "eng-a2-present-perfect",
         "acceptableAnswers": []
@@ -13017,7 +13092,7 @@
           "food?"
         ],
         "answer": "Has he ever eaten Indian food?",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Has he ever + V3?",
         "grammarTopic": "eng-a2-present-perfect",
         "acceptableAnswers": []
@@ -13033,7 +13108,7 @@
           "Scotland"
         ],
         "answer": "They have never visited Scotland",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "have never visited…",
         "grammarTopic": "eng-a2-present-perfect",
         "acceptableAnswers": []
@@ -13050,7 +13125,7 @@
           "coffee"
         ],
         "answer": "I have just finished my coffee",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "have just finished…",
         "grammarTopic": "eng-a2-present-perfect",
         "acceptableAnswers": []
@@ -13065,7 +13140,7 @@
           "yet"
         ],
         "answer": "She hasn't called yet",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "hasn't called yet.",
         "grammarTopic": "eng-a2-present-perfect",
         "acceptableAnswers": []
@@ -13081,7 +13156,7 @@
           "before"
         ],
         "answer": "We have done this before",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "do → done (V3).",
         "grammarTopic": "eng-a2-present-perfect",
         "acceptableAnswers": []
@@ -13097,7 +13172,7 @@
           "phone"
         ],
         "answer": "He has broken his phone",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "break → broken (V3).",
         "grammarTopic": "eng-a2-present-perfect",
         "acceptableAnswers": []
@@ -13883,7 +13958,7 @@
           "friends"
         ],
         "answer": "I have many friends",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "many friends — countable.",
         "grammarTopic": "eng-a2-quantifiers",
         "acceptableAnswers": []
@@ -13901,7 +13976,7 @@
           "bottle"
         ],
         "answer": "There is much water in the bottle",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "much water — uncountable.",
         "grammarTopic": "eng-a2-quantifiers",
         "acceptableAnswers": []
@@ -13917,7 +13992,7 @@
           "money"
         ],
         "answer": "I have a little money",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "a little money.",
         "grammarTopic": "eng-a2-quantifiers",
         "acceptableAnswers": []
@@ -13934,7 +14009,7 @@
           "me"
         ],
         "answer": "She has fewer books than me",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "fewer books than me.",
         "grammarTopic": "eng-a2-quantifiers",
         "acceptableAnswers": []
@@ -13950,7 +14025,7 @@
           "here"
         ],
         "answer": "There are many people here",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "many people here.",
         "grammarTopic": "eng-a2-quantifiers",
         "acceptableAnswers": []
@@ -13966,7 +14041,7 @@
           "information"
         ],
         "answer": "I need a little information",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "a little information.",
         "grammarTopic": "eng-a2-quantifiers",
         "acceptableAnswers": []
@@ -13983,7 +14058,7 @@
           "want?"
         ],
         "answer": "How many apples do you want?",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "How many apples…?",
         "grammarTopic": "eng-a2-quantifiers",
         "acceptableAnswers": []
@@ -14000,7 +14075,7 @@
           "homework"
         ],
         "answer": "We have a lot of homework",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "a lot of homework.",
         "grammarTopic": "eng-a2-quantifiers",
         "acceptableAnswers": []
@@ -14018,7 +14093,7 @@
           "coffee"
         ],
         "answer": "He drank too many cups of coffee",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "too many cups of coffee.",
         "grammarTopic": "eng-a2-quantifiers",
         "acceptableAnswers": []
@@ -14035,7 +14110,7 @@
           "you"
         ],
         "answer": "I have less time than you",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "less time than you.",
         "grammarTopic": "eng-a2-quantifiers",
         "acceptableAnswers": []
@@ -14054,7 +14129,7 @@
           "glass"
         ],
         "answer": "There is a little water in the glass",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "a little water in the glass.",
         "grammarTopic": "eng-a2-quantifiers",
         "acceptableAnswers": []
@@ -14069,7 +14144,7 @@
           "space"
         ],
         "answer": "We have enough space",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "enough + uncountable noun.",
         "grammarTopic": "eng-a2-quantifiers",
         "acceptableAnswers": []
@@ -14085,7 +14160,7 @@
           "late"
         ],
         "answer": "A few students were late",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "a few students — исчисляемое.",
         "grammarTopic": "eng-a2-quantifiers",
         "acceptableAnswers": []
@@ -14100,7 +14175,7 @@
           "options"
         ],
         "answer": "There are several options",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "several options — несколько.",
         "grammarTopic": "eng-a2-quantifiers",
         "acceptableAnswers": []
@@ -14116,7 +14191,7 @@
           "questions"
         ],
         "answer": "I don't have any questions",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "any questions в отрицании.",
         "grammarTopic": "eng-a2-quantifiers",
         "acceptableAnswers": []
@@ -14132,7 +14207,7 @@
           "chocolate"
         ],
         "answer": "She ate too much chocolate",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "too much chocolate.",
         "grammarTopic": "eng-a2-quantifiers",
         "acceptableAnswers": []
@@ -14147,7 +14222,7 @@
           "time"
         ],
         "answer": "We need more time",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "more time — неисчисляемое.",
         "grammarTopic": "eng-a2-quantifiers",
         "acceptableAnswers": []
@@ -14163,7 +14238,7 @@
           "left"
         ],
         "answer": "There aren't many tickets left",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "aren't many tickets left.",
         "grammarTopic": "eng-a2-quantifiers",
         "acceptableAnswers": []
@@ -14179,7 +14254,7 @@
           "experience"
         ],
         "answer": "He has plenty of experience",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "plenty of experience.",
         "grammarTopic": "eng-a2-quantifiers",
         "acceptableAnswers": []
@@ -14967,7 +15042,7 @@
           "tomorrow"
         ],
         "answer": "I will call you tomorrow",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "will call you tomorrow.",
         "grammarTopic": "eng-b1-future-conditional",
         "acceptableAnswers": []
@@ -14983,7 +15058,7 @@
           "Friday"
         ],
         "answer": "She will arrive on Friday",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "will arrive on Friday.",
         "grammarTopic": "eng-b1-future-conditional",
         "acceptableAnswers": []
@@ -14998,7 +15073,7 @@
           "late"
         ],
         "answer": "We won't be late",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "won't be late.",
         "grammarTopic": "eng-b1-future-conditional",
         "acceptableAnswers": []
@@ -15016,7 +15091,7 @@
           "home"
         ],
         "answer": "If it rains I will stay home",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "If + present, will + base.",
         "grammarTopic": "eng-b1-future-conditional",
         "acceptableAnswers": []
@@ -15033,7 +15108,7 @@
           "this"
         ],
         "answer": "I will help you with this",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "will help you with this.",
         "grammarTopic": "eng-b1-future-conditional",
         "acceptableAnswers": []
@@ -15048,7 +15123,7 @@
           "come"
         ],
         "answer": "They probably won't come",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "probably won't come.",
         "grammarTopic": "eng-b1-future-conditional",
         "acceptableAnswers": []
@@ -15065,7 +15140,7 @@
           "time?"
         ],
         "answer": "Will you make it in time?",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Will you make it in time?",
         "grammarTopic": "eng-b1-future-conditional",
         "acceptableAnswers": []
@@ -15080,7 +15155,7 @@
           "difficult"
         ],
         "answer": "It will be difficult",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "will be difficult.",
         "grammarTopic": "eng-b1-future-conditional",
         "acceptableAnswers": []
@@ -15096,7 +15171,7 @@
           "agree"
         ],
         "answer": "I think he will agree",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "will agree. Ответ: I think he will agree.",
         "grammarTopic": "eng-b1-future-conditional",
         "acceptableAnswers": []
@@ -15114,7 +15189,7 @@
           "Italy"
         ],
         "answer": "We will spend our holiday in Italy",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "will spend our holiday…",
         "grammarTopic": "eng-b1-future-conditional",
         "acceptableAnswers": []
@@ -15128,7 +15203,7 @@
           "forget"
         ],
         "answer": "She won't forget",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "won't forget.",
         "grammarTopic": "eng-b1-future-conditional",
         "acceptableAnswers": []
@@ -15147,7 +15222,7 @@
           "fluently"
         ],
         "answer": "In a year I will speak English fluently",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "will speak English fluently.",
         "grammarTopic": "eng-b1-future-conditional",
         "acceptableAnswers": []
@@ -15163,7 +15238,7 @@
           "best"
         ],
         "answer": "He will do his best",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "will do his best.",
         "grammarTopic": "eng-b1-future-conditional",
         "acceptableAnswers": []
@@ -15180,7 +15255,7 @@
           "soon"
         ],
         "answer": "We will see each other soon",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "will see each other soon.",
         "grammarTopic": "eng-b1-future-conditional",
         "acceptableAnswers": []
@@ -15195,7 +15270,7 @@
           "everything"
         ],
         "answer": "It will change everything",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "will change everything.",
         "grammarTopic": "eng-b1-future-conditional",
         "acceptableAnswers": []
@@ -15211,7 +15286,7 @@
           "offer?"
         ],
         "answer": "Will she accept the offer?",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Will she accept…?",
         "grammarTopic": "eng-b1-future-conditional",
         "acceptableAnswers": []
@@ -15229,7 +15304,7 @@
           "time"
         ],
         "answer": "They will not be ready in time",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "will not be ready…",
         "grammarTopic": "eng-b1-future-conditional",
         "acceptableAnswers": []
@@ -15246,7 +15321,7 @@
           "details"
         ],
         "answer": "I will send you the details",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "will send you the details.",
         "grammarTopic": "eng-b1-future-conditional",
         "acceptableAnswers": []
@@ -15262,7 +15337,7 @@
           "tomorrow"
         ],
         "answer": "The weather will improve tomorrow",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "will improve tomorrow.",
         "grammarTopic": "eng-b1-future-conditional",
         "acceptableAnswers": []
@@ -15279,7 +15354,7 @@
           "station"
         ],
         "answer": "We will meet at the station",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "will meet at the station.",
         "grammarTopic": "eng-b1-future-conditional",
         "acceptableAnswers": []
@@ -16043,7 +16118,7 @@
           "rest"
         ],
         "answer": "You should rest",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "should rest.",
         "grammarTopic": "eng-b1-modals",
         "acceptableAnswers": []
@@ -16059,7 +16134,7 @@
           "helmet"
         ],
         "answer": "You must wear a helmet",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "must wear a helmet.",
         "grammarTopic": "eng-b1-modals",
         "acceptableAnswers": []
@@ -16075,7 +16150,7 @@
           "tomorrow"
         ],
         "answer": "I have to work tomorrow",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "have to work tomorrow.",
         "grammarTopic": "eng-b1-modals",
         "acceptableAnswers": []
@@ -16090,7 +16165,7 @@
           "here"
         ],
         "answer": "You mustn't smoke here",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "mustn't smoke here.",
         "grammarTopic": "eng-b1-modals",
         "acceptableAnswers": []
@@ -16106,7 +16181,7 @@
           "come"
         ],
         "answer": "You don't have to come",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "don't have to come.",
         "grammarTopic": "eng-b1-modals",
         "acceptableAnswers": []
@@ -16121,7 +16196,7 @@
           "me?"
         ],
         "answer": "Can you help me?",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Can you help me?",
         "grammarTopic": "eng-b1-modals",
         "acceptableAnswers": []
@@ -16137,7 +16212,7 @@
           "piano"
         ],
         "answer": "She can play the piano",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "can play the piano.",
         "grammarTopic": "eng-b1-modals",
         "acceptableAnswers": []
@@ -16152,7 +16227,7 @@
           "in?"
         ],
         "answer": "May I come in?",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "May I come in?",
         "grammarTopic": "eng-b1-modals",
         "acceptableAnswers": []
@@ -16168,7 +16243,7 @@
           "window?"
         ],
         "answer": "Could you close the window?",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Could you close the window?",
         "grammarTopic": "eng-b1-modals",
         "acceptableAnswers": []
@@ -16183,7 +16258,7 @@
           "lost"
         ],
         "answer": "He must be lost",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "must be lost.",
         "grammarTopic": "eng-b1-modals",
         "acceptableAnswers": []
@@ -16199,7 +16274,7 @@
           "home"
         ],
         "answer": "She can't be at home",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "can't be at home.",
         "grammarTopic": "eng-b1-modals",
         "acceptableAnswers": []
@@ -16214,7 +16289,7 @@
           "called"
         ],
         "answer": "You should have called",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "should have called.",
         "grammarTopic": "eng-b1-modals",
         "acceptableAnswers": []
@@ -16229,7 +16304,7 @@
           "right"
         ],
         "answer": "You might be right",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "might be right — возможность.",
         "grammarTopic": "eng-b1-modals",
         "acceptableAnswers": []
@@ -16244,7 +16319,7 @@
           "apologize"
         ],
         "answer": "You ought to apologize",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "ought to + base verb.",
         "grammarTopic": "eng-b1-modals",
         "acceptableAnswers": []
@@ -16262,7 +16337,7 @@
           "five"
         ],
         "answer": "I could swim when I was five",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "could swim — умел в прошлом.",
         "grammarTopic": "eng-b1-modals",
         "acceptableAnswers": []
@@ -16276,7 +16351,7 @@
           "worry"
         ],
         "answer": "You needn't worry",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "needn't worry — не обязательно.",
         "grammarTopic": "eng-b1-modals",
         "acceptableAnswers": []
@@ -16291,7 +16366,7 @@
           "early"
         ],
         "answer": "She may leave early",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "may leave early — возможно.",
         "grammarTopic": "eng-b1-modals",
         "acceptableAnswers": []
@@ -16306,7 +16381,7 @@
           "late"
         ],
         "answer": "We mustn't be late",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "mustn't be late — запрет.",
         "grammarTopic": "eng-b1-modals",
         "acceptableAnswers": []
@@ -16321,7 +16396,7 @@
           "forgotten"
         ],
         "answer": "He might have forgotten",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "might have + V3.",
         "grammarTopic": "eng-b1-modals",
         "acceptableAnswers": []
@@ -16337,7 +16412,7 @@
           "fast"
         ],
         "answer": "You shouldn't eat so fast",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "shouldn't eat so fast.",
         "grammarTopic": "eng-b1-modals",
         "acceptableAnswers": []
@@ -17141,7 +17216,7 @@
           "called"
         ],
         "answer": "I was reading when she called",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "was reading when she called.",
         "grammarTopic": "eng-b1-narrative",
         "acceptableAnswers": []
@@ -17156,7 +17231,7 @@
           "TV"
         ],
         "answer": "They were watching TV",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "were watching TV.",
         "grammarTopic": "eng-b1-narrative",
         "acceptableAnswers": []
@@ -17175,7 +17250,7 @@
           "left"
         ],
         "answer": "When I arrived the train had already left",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "had already left.",
         "grammarTopic": "eng-b1-narrative",
         "acceptableAnswers": []
@@ -17191,7 +17266,7 @@
           "tennis"
         ],
         "answer": "I used to play tennis",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "used to play tennis.",
         "grammarTopic": "eng-b1-narrative",
         "acceptableAnswers": []
@@ -17208,7 +17283,7 @@
           "came"
         ],
         "answer": "She was cooking when I came",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "was cooking when I came.",
         "grammarTopic": "eng-b1-narrative",
         "acceptableAnswers": []
@@ -17227,7 +17302,7 @@
           "rain"
         ],
         "answer": "While we were walking it started to rain",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "While we were walking…",
         "grammarTopic": "eng-b1-narrative",
         "acceptableAnswers": []
@@ -17244,7 +17319,7 @@
           "arrived"
         ],
         "answer": "He had finished before I arrived",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "had finished before I arrived.",
         "grammarTopic": "eng-b1-narrative",
         "acceptableAnswers": []
@@ -17260,7 +17335,7 @@
           "night"
         ],
         "answer": "I was studying all night",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "was studying all night.",
         "grammarTopic": "eng-b1-narrative",
         "acceptableAnswers": []
@@ -17277,7 +17352,7 @@
           "midnight"
         ],
         "answer": "They had gone home before midnight",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "had gone home before midnight.",
         "grammarTopic": "eng-b1-narrative",
         "acceptableAnswers": []
@@ -17294,7 +17369,7 @@
           "Paris"
         ],
         "answer": "She used to live in Paris",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "used to live in Paris.",
         "grammarTopic": "eng-b1-narrative",
         "acceptableAnswers": []
@@ -17314,7 +17389,7 @@
           "rang"
         ],
         "answer": "I was reading a book when the phone rang",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "was reading when the phone rang.",
         "grammarTopic": "eng-b1-narrative",
         "acceptableAnswers": []
@@ -17331,7 +17406,7 @@
           "eight"
         ],
         "answer": "We were having dinner at eight",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "were having dinner at eight.",
         "grammarTopic": "eng-b1-narrative",
         "acceptableAnswers": []
@@ -17351,7 +17426,7 @@
           "left"
         ],
         "answer": "By the time I got there they had left",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "had left by then.",
         "grammarTopic": "eng-b1-narrative",
         "acceptableAnswers": []
@@ -17369,7 +17444,7 @@
           "thing"
         ],
         "answer": "I had never seen such a thing",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "see → seen (V3); had never seen.",
         "grammarTopic": "eng-b1-narrative",
         "acceptableAnswers": []
@@ -17387,7 +17462,7 @@
           "him"
         ],
         "answer": "He was working when I saw him",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "was working when I saw him.",
         "grammarTopic": "eng-b1-narrative",
         "acceptableAnswers": []
@@ -17405,7 +17480,7 @@
           "raining"
         ],
         "answer": "When I woke up it was raining",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "was raining — фоновое действие.",
         "grammarTopic": "eng-b1-narrative",
         "acceptableAnswers": []
@@ -17423,7 +17498,7 @@
           "cooking"
         ],
         "answer": "They were talking while I was cooking",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "While… were talking… was cooking.",
         "grammarTopic": "eng-b1-narrative",
         "acceptableAnswers": []
@@ -17441,7 +17516,7 @@
           "called"
         ],
         "answer": "She had already left when I called",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "had already left when I called.",
         "grammarTopic": "eng-b1-narrative",
         "acceptableAnswers": []
@@ -17459,7 +17534,7 @@
           "summer"
         ],
         "answer": "We used to go fishing every summer",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "used to go fishing — привычка в прошлом.",
         "grammarTopic": "eng-b1-narrative",
         "acceptableAnswers": []
@@ -17479,7 +17554,7 @@
           "started"
         ],
         "answer": "By the time we arrived the show had started",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "had started — до нашего прихода.",
         "grammarTopic": "eng-b1-narrative",
         "acceptableAnswers": []
@@ -18203,6 +18278,80 @@
         "instruction": "Correct the mistake",
         "explanation": "Use «has», not «have».",
         "grammarTopic": "eng-b1-perfect-continuous"
+      },
+      {
+        "type": "error_correction",
+        "question": "I have been wait for an hour.",
+        "answer": "I have been waiting for an hour.",
+        "acceptableAnswers": [],
+        "instruction": "Correct the error",
+        "explanation": "have been waiting.",
+        "grammarTopic": "eng-b1-perfect-continuous"
+      },
+      {
+        "type": "error_correction",
+        "question": "She has working here since 2019.",
+        "answer": "She has been working here since 2019.",
+        "acceptableAnswers": [],
+        "instruction": "Correct the error",
+        "explanation": "has been working… since.",
+        "grammarTopic": "eng-b1-perfect-continuous"
+      },
+      {
+        "type": "error_correction",
+        "question": "How long are you studying English?",
+        "answer": "How long have you been studying English?",
+        "acceptableAnswers": [],
+        "instruction": "Correct the error",
+        "explanation": "How long have you been studying…?",
+        "grammarTopic": "eng-b1-perfect-continuous"
+      },
+      {
+        "type": "error_correction",
+        "question": "They have been lived in Leeds for two years.",
+        "answer": "They have been living in Leeds for two years.",
+        "acceptableAnswers": [],
+        "instruction": "Correct the error",
+        "explanation": "have been living — not lived.",
+        "grammarTopic": "eng-b1-perfect-continuous"
+      },
+      {
+        "type": "error_correction",
+        "question": "We has been travelling all morning.",
+        "answer": "We have been travelling all morning.",
+        "acceptableAnswers": [],
+        "instruction": "Correct the error",
+        "explanation": "We have been travelling…",
+        "grammarTopic": "eng-b1-perfect-continuous"
+      },
+      {
+        "type": "error_correction",
+        "question": "He have been reading that book lately.",
+        "answer": "He has been reading that book lately.",
+        "acceptableAnswers": [],
+        "instruction": "Correct the error",
+        "explanation": "He has been reading…",
+        "grammarTopic": "eng-b1-perfect-continuous"
+      },
+      {
+        "type": "error_correction",
+        "question": "I am knowing her for ages.",
+        "answer": "I have known her for ages.",
+        "acceptableAnswers": [
+          "I've known her for ages."
+        ],
+        "instruction": "Correct the error",
+        "explanation": "have known — not progressive know.",
+        "grammarTopic": "eng-b1-perfect-continuous"
+      },
+      {
+        "type": "error_correction",
+        "question": "It has raining since noon.",
+        "answer": "It has been raining since noon.",
+        "acceptableAnswers": [],
+        "instruction": "Correct the error",
+        "explanation": "has been raining since noon.",
+        "grammarTopic": "eng-b1-perfect-continuous"
       }
     ],
     "sentence_building": [
@@ -18217,7 +18366,7 @@
           "running"
         ],
         "answer": "I'm tired I've been running",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "I've been running — tired result.",
         "grammarTopic": "eng-b1-perfect-continuous",
         "acceptableAnswers": []
@@ -18235,7 +18384,7 @@
           "2020"
         ],
         "answer": "She has been working here since 2020",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "has been working since 2020.",
         "grammarTopic": "eng-b1-perfect-continuous",
         "acceptableAnswers": []
@@ -18252,7 +18401,7 @@
           "waiting?"
         ],
         "answer": "How long have you been waiting?",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "How long have you been waiting?",
         "grammarTopic": "eng-b1-perfect-continuous",
         "acceptableAnswers": []
@@ -18271,7 +18420,7 @@
           "years"
         ],
         "answer": "They have been studying Spanish for two years",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "have been studying for two years.",
         "grammarTopic": "eng-b1-perfect-continuous",
         "acceptableAnswers": []
@@ -18288,7 +18437,7 @@
           "morning"
         ],
         "answer": "It has been raining since morning",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "has been raining since morning.",
         "grammarTopic": "eng-b1-perfect-continuous",
         "acceptableAnswers": []
@@ -18307,7 +18456,7 @@
           "time"
         ],
         "answer": "I haven't seen him for a long time",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "haven't seen him for a long time.",
         "grammarTopic": "eng-b1-perfect-continuous",
         "acceptableAnswers": []
@@ -18324,7 +18473,7 @@
           "day"
         ],
         "answer": "She has been cooking all day",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "has been cooking all day.",
         "grammarTopic": "eng-b1-perfect-continuous",
         "acceptableAnswers": []
@@ -18343,7 +18492,7 @@
           "year"
         ],
         "answer": "We have been living here since last year",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "have been living since last year.",
         "grammarTopic": "eng-b1-perfect-continuous",
         "acceptableAnswers": []
@@ -18361,7 +18510,7 @@
           "evening"
         ],
         "answer": "He has been playing football all evening",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "has been playing all evening.",
         "grammarTopic": "eng-b1-perfect-continuous",
         "acceptableAnswers": []
@@ -18379,7 +18528,7 @@
           "English?"
         ],
         "answer": "How long have you been learning English?",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "How long have you been learning English?",
         "grammarTopic": "eng-b1-perfect-continuous",
         "acceptableAnswers": []
@@ -18399,7 +18548,7 @@
           "ages"
         ],
         "answer": "I have been wanting to visit Japan for ages",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "have been wanting for ages.",
         "grammarTopic": "eng-b1-perfect-continuous",
         "acceptableAnswers": []
@@ -18419,7 +18568,7 @@
           "months"
         ],
         "answer": "They have been renovating the house for three months",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "have been renovating for three months.",
         "grammarTopic": "eng-b1-perfect-continuous",
         "acceptableAnswers": []
@@ -18435,7 +18584,7 @@
           "long?"
         ],
         "answer": "Have you been here long?",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Have you been here long?",
         "grammarTopic": "eng-b1-perfect-continuous",
         "acceptableAnswers": []
@@ -18454,7 +18603,7 @@
           "day"
         ],
         "answer": "She has been on the phone all day",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "has been on the phone all day.",
         "grammarTopic": "eng-b1-perfect-continuous",
         "acceptableAnswers": []
@@ -18471,7 +18620,7 @@
           "morning"
         ],
         "answer": "They have been arguing all morning",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "have been arguing all morning.",
         "grammarTopic": "eng-b1-perfect-continuous",
         "acceptableAnswers": []
@@ -18489,7 +18638,7 @@
           "lately"
         ],
         "answer": "I have been thinking about it lately",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "have been thinking about it lately.",
         "grammarTopic": "eng-b1-perfect-continuous",
         "acceptableAnswers": []
@@ -18507,7 +18656,7 @@
           "marathon"
         ],
         "answer": "He has been training for the marathon",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "has been training for the marathon.",
         "grammarTopic": "eng-b1-perfect-continuous",
         "acceptableAnswers": []
@@ -18527,7 +18676,7 @@
           "months"
         ],
         "answer": "We have been looking for a flat for months",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "have been looking… for months.",
         "grammarTopic": "eng-b1-perfect-continuous",
         "acceptableAnswers": []
@@ -18544,7 +18693,7 @@
           "recently"
         ],
         "answer": "She has been feeling unwell recently",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "has been feeling unwell recently.",
         "grammarTopic": "eng-b1-perfect-continuous",
         "acceptableAnswers": []
@@ -19370,7 +19519,7 @@
           "you"
         ],
         "answer": "If I have time I will call you",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "If + present, will + base.",
         "grammarTopic": "eng-b2-conditionals",
         "acceptableAnswers": []
@@ -19388,7 +19537,7 @@
           "travel"
         ],
         "answer": "If I were rich I would travel",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "If I were… would travel.",
         "grammarTopic": "eng-b2-conditionals",
         "acceptableAnswers": []
@@ -19405,7 +19554,7 @@
           "pass"
         ],
         "answer": "If she studied she would pass",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "If + past, would + base.",
         "grammarTopic": "eng-b2-conditionals",
         "acceptableAnswers": []
@@ -19425,7 +19574,7 @@
           "you"
         ],
         "answer": "If I had known I would have told you",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "If I had known… would have told.",
         "grammarTopic": "eng-b2-conditionals",
         "acceptableAnswers": []
@@ -19443,7 +19592,7 @@
           "home"
         ],
         "answer": "If it rains I will stay home",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "If it rains… will stay.",
         "grammarTopic": "eng-b2-conditionals",
         "acceptableAnswers": []
@@ -19461,7 +19610,7 @@
           "accept"
         ],
         "answer": "If I were you I would accept",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "If I were you…",
         "grammarTopic": "eng-b2-conditionals",
         "acceptableAnswers": []
@@ -19481,7 +19630,7 @@
           "it"
         ],
         "answer": "If he had gone he would have seen it",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "If he had gone… would have seen.",
         "grammarTopic": "eng-b2-conditionals",
         "acceptableAnswers": []
@@ -19498,7 +19647,7 @@
           "melts"
         ],
         "answer": "If you heat ice it melts",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "If + present, present.",
         "grammarTopic": "eng-b2-conditionals",
         "acceptableAnswers": []
@@ -19518,7 +19667,7 @@
           "French"
         ],
         "answer": "If I had more time I would learn French",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "If I had more time…",
         "grammarTopic": "eng-b2-conditionals",
         "acceptableAnswers": []
@@ -19538,7 +19687,7 @@
           "passed"
         ],
         "answer": "If she had studied harder she would have passed",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "would have passed.",
         "grammarTopic": "eng-b2-conditionals",
         "acceptableAnswers": []
@@ -19559,7 +19708,7 @@
           "house"
         ],
         "answer": "If I won the lottery I would buy a house",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "If I won… would buy.",
         "grammarTopic": "eng-b2-conditionals",
         "acceptableAnswers": []
@@ -19581,7 +19730,7 @@
           "train"
         ],
         "answer": "If they had arrived earlier they would have caught the train",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "would have caught the train.",
         "grammarTopic": "eng-b2-conditionals",
         "acceptableAnswers": []
@@ -19601,7 +19750,7 @@
           "purple"
         ],
         "answer": "If you mix red and blue you get purple",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "If + present, present — общая истина.",
         "grammarTopic": "eng-b2-conditionals",
         "acceptableAnswers": []
@@ -19621,7 +19770,7 @@
           "shelf"
         ],
         "answer": "If I were taller I would reach the shelf",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "If I were taller… would reach.",
         "grammarTopic": "eng-b2-conditionals",
         "acceptableAnswers": []
@@ -19641,7 +19790,7 @@
           "train"
         ],
         "answer": "If we leave now we will catch the train",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "If + present, will + base.",
         "grammarTopic": "eng-b2-conditionals",
         "acceptableAnswers": []
@@ -19660,7 +19809,7 @@
           "understood"
         ],
         "answer": "If he had listened he would have understood",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "If he had listened… would have understood.",
         "grammarTopic": "eng-b2-conditionals",
         "acceptableAnswers": []
@@ -19679,7 +19828,7 @@
           "bus"
         ],
         "answer": "Unless you hurry you will miss the bus",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Unless = if not; will miss.",
         "grammarTopic": "eng-b2-conditionals",
         "acceptableAnswers": []
@@ -19698,7 +19847,7 @@
           "come"
         ],
         "answer": "If I had known I wouldn't have come",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "wouldn't have come — сожаление.",
         "grammarTopic": "eng-b2-conditionals",
         "acceptableAnswers": []
@@ -19717,7 +19866,7 @@
           "us"
         ],
         "answer": "If she were here she would help us",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "If she were here… would help.",
         "grammarTopic": "eng-b2-conditionals",
         "acceptableAnswers": []
@@ -19735,7 +19884,7 @@
           "close"
         ],
         "answer": "If it snows the schools will close",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "If it snows… will close.",
         "grammarTopic": "eng-b2-conditionals",
         "acceptableAnswers": []
@@ -20511,7 +20660,7 @@
           "1990"
         ],
         "answer": "The book was written in 1990",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "was written in 1990.",
         "grammarTopic": "eng-b2-passive",
         "acceptableAnswers": []
@@ -20530,7 +20679,7 @@
           "century"
         ],
         "answer": "The house was built in the last century",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "was built in the last century.",
         "grammarTopic": "eng-b2-passive",
         "acceptableAnswers": []
@@ -20546,7 +20695,7 @@
           "yesterday"
         ],
         "answer": "The letter was sent yesterday",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "was sent yesterday.",
         "grammarTopic": "eng-b2-passive",
         "acceptableAnswers": []
@@ -20564,7 +20713,7 @@
           "world"
         ],
         "answer": "English is spoken all over the world",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "is spoken all over the world.",
         "grammarTopic": "eng-b2-passive",
         "acceptableAnswers": []
@@ -20582,7 +20731,7 @@
           "government"
         ],
         "answer": "The decision was made by the government",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "was made by the government.",
         "grammarTopic": "eng-b2-passive",
         "acceptableAnswers": []
@@ -20600,7 +20749,7 @@
           "mother"
         ],
         "answer": "The food was prepared by my mother",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "was prepared by my mother.",
         "grammarTopic": "eng-b2-passive",
         "acceptableAnswers": []
@@ -20616,7 +20765,7 @@
           "solved"
         ],
         "answer": "The problem has been solved",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "has been solved.",
         "grammarTopic": "eng-b2-passive",
         "acceptableAnswers": []
@@ -20633,7 +20782,7 @@
           "year"
         ],
         "answer": "The law was passed last year",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "was passed last year.",
         "grammarTopic": "eng-b2-passive",
         "acceptableAnswers": []
@@ -20651,7 +20800,7 @@
           "now"
         ],
         "answer": "A new bridge is being built now",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "is being built now.",
         "grammarTopic": "eng-b2-passive",
         "acceptableAnswers": []
@@ -20668,7 +20817,7 @@
           "conference"
         ],
         "answer": "He was invited to the conference",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "was invited to the conference.",
         "grammarTopic": "eng-b2-passive",
         "acceptableAnswers": []
@@ -20685,7 +20834,7 @@
           "day"
         ],
         "answer": "The room is cleaned every day",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "is cleaned every day.",
         "grammarTopic": "eng-b2-passive",
         "acceptableAnswers": []
@@ -20700,7 +20849,7 @@
           "stolen"
         ],
         "answer": "The painting was stolen",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "was stolen. Ответ: The painting was stolen.",
         "grammarTopic": "eng-b2-passive",
         "acceptableAnswers": []
@@ -20717,7 +20866,7 @@
           "tomorrow"
         ],
         "answer": "The work will be finished tomorrow",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "will be finished tomorrow.",
         "grammarTopic": "eng-b2-passive",
         "acceptableAnswers": []
@@ -20733,7 +20882,7 @@
           "Brazil"
         ],
         "answer": "Coffee is grown in Brazil",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "is grown in Brazil.",
         "grammarTopic": "eng-b2-passive",
         "acceptableAnswers": []
@@ -20750,7 +20899,7 @@
           "morning"
         ],
         "answer": "The email was sent this morning",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "was sent this morning.",
         "grammarTopic": "eng-b2-passive",
         "acceptableAnswers": []
@@ -20767,7 +20916,7 @@
           "schools"
         ],
         "answer": "English is taught in many schools",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "is taught in many schools.",
         "grammarTopic": "eng-b2-passive",
         "acceptableAnswers": []
@@ -20785,7 +20934,7 @@
           "storm"
         ],
         "answer": "The window was broken by the storm",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "was broken by the storm.",
         "grammarTopic": "eng-b2-passive",
         "acceptableAnswers": []
@@ -20803,7 +20952,7 @@
           "children"
         ],
         "answer": "The cake was eaten by the children",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "was eaten by the children.",
         "grammarTopic": "eng-b2-passive",
         "acceptableAnswers": []
@@ -20819,7 +20968,7 @@
           "published"
         ],
         "answer": "The report has been published",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "has been published.",
         "grammarTopic": "eng-b2-passive",
         "acceptableAnswers": []
@@ -20835,7 +20984,7 @@
           "repaired"
         ],
         "answer": "The road is being repaired",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "is being repaired.",
         "grammarTopic": "eng-b2-passive",
         "acceptableAnswers": []
@@ -21650,7 +21799,7 @@
           "tired"
         ],
         "answer": "She said that she was tired",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "said that she was tired.",
         "grammarTopic": "eng-b2-reported-clauses",
         "acceptableAnswers": []
@@ -21671,7 +21820,7 @@
           "day"
         ],
         "answer": "He told me that he would come the next day",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "would come the next day.",
         "grammarTopic": "eng-b2-reported-clauses",
         "acceptableAnswers": []
@@ -21688,7 +21837,7 @@
           "was"
         ],
         "answer": "They asked where the station was",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "asked where the station was.",
         "grammarTopic": "eng-b2-reported-clauses",
         "acceptableAnswers": []
@@ -21705,7 +21854,7 @@
           "finished"
         ],
         "answer": "She said that she had finished",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "said that she had finished.",
         "grammarTopic": "eng-b2-reported-clauses",
         "acceptableAnswers": []
@@ -21726,7 +21875,7 @@
           "before"
         ],
         "answer": "He said that he had gone home the day before",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "had gone home the day before.",
         "grammarTopic": "eng-b2-reported-clauses",
         "acceptableAnswers": []
@@ -21744,7 +21893,7 @@
           "her"
         ],
         "answer": "She asked if I could help her",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "asked if I could help her.",
         "grammarTopic": "eng-b2-reported-clauses",
         "acceptableAnswers": []
@@ -21762,7 +21911,7 @@
           "London"
         ],
         "answer": "He said that he lived in London",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "said that he lived in London.",
         "grammarTopic": "eng-b2-reported-clauses",
         "acceptableAnswers": []
@@ -21780,7 +21929,7 @@
           "then"
         ],
         "answer": "They said that they were leaving then",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "were leaving then.",
         "grammarTopic": "eng-b2-reported-clauses",
         "acceptableAnswers": []
@@ -21798,7 +21947,7 @@
           "him"
         ],
         "answer": "She told him that she loved him",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "told him that she loved him.",
         "grammarTopic": "eng-b2-reported-clauses",
         "acceptableAnswers": []
@@ -21815,7 +21964,7 @@
           "was"
         ],
         "answer": "He asked what time it was",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "asked what time it was.",
         "grammarTopic": "eng-b2-reported-clauses",
         "acceptableAnswers": []
@@ -21832,7 +21981,7 @@
           "swim"
         ],
         "answer": "She said that she couldn't swim",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "said that she couldn't swim.",
         "grammarTopic": "eng-b2-reported-clauses",
         "acceptableAnswers": []
@@ -21851,7 +22000,7 @@
           "six"
         ],
         "answer": "They explained that they would arrive at six",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "would arrive at six.",
         "grammarTopic": "eng-b2-reported-clauses",
         "acceptableAnswers": []
@@ -21869,7 +22018,7 @@
           "go"
         ],
         "answer": "He said that he had to go",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "must → had to.",
         "grammarTopic": "eng-b2-reported-clauses",
         "acceptableAnswers": []
@@ -21886,7 +22035,7 @@
           "coffee"
         ],
         "answer": "She asked if I liked coffee",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Do you like → if I liked.",
         "grammarTopic": "eng-b2-reported-clauses",
         "acceptableAnswers": []
@@ -21905,7 +22054,7 @@
           "there"
         ],
         "answer": "He said that he had never been there",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "have never been → had never been.",
         "grammarTopic": "eng-b2-reported-clauses",
         "acceptableAnswers": []
@@ -21922,7 +22071,7 @@
           "lived"
         ],
         "answer": "She asked me where I lived",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Where do you live → where I lived.",
         "grammarTopic": "eng-b2-reported-clauses",
         "acceptableAnswers": []
@@ -21939,7 +22088,7 @@
           "help"
         ],
         "answer": "They said that they would help",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "will → would.",
         "grammarTopic": "eng-b2-reported-clauses",
         "acceptableAnswers": []
@@ -21955,7 +22104,7 @@
           "wait"
         ],
         "answer": "He told her to wait",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "told her to wait — приказ.",
         "grammarTopic": "eng-b2-reported-clauses",
         "acceptableAnswers": []
@@ -21972,7 +22121,7 @@
           "late"
         ],
         "answer": "She asked why I was late",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Why are you → why I was.",
         "grammarTopic": "eng-b2-reported-clauses",
         "acceptableAnswers": []
@@ -21989,7 +22138,7 @@
           "tired"
         ],
         "answer": "They explained that they were tired",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "explained that they were tired.",
         "grammarTopic": "eng-b2-reported-clauses",
         "acceptableAnswers": []
@@ -22785,7 +22934,7 @@
           "sunset"
         ],
         "answer": "Never have I seen such a beautiful sunset",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Never have I — инверсия после отрицания.",
         "grammarTopic": "eng-c1-inversion",
         "acceptableAnswers": []
@@ -22807,7 +22956,7 @@
           "record"
         ],
         "answer": "Not only did she win but she also broke the record",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Not only did she — инверсия.",
         "grammarTopic": "eng-c1-inversion",
         "acceptableAnswers": []
@@ -22824,7 +22973,7 @@
           "dedication"
         ],
         "answer": "Rarely do we witness such dedication",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Rarely do we — инверсия.",
         "grammarTopic": "eng-c1-inversion",
         "acceptableAnswers": []
@@ -22842,7 +22991,7 @@
           "him"
         ],
         "answer": "Little did he know what awaited him",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Little did he know — литературная инверсия.",
         "grammarTopic": "eng-c1-inversion",
         "acceptableAnswers": []
@@ -22861,7 +23010,7 @@
           "understand"
         ],
         "answer": "Only when the results arrived did we understand",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Only when… did we — инверсия.",
         "grammarTopic": "eng-c1-inversion",
         "acceptableAnswers": []
@@ -22879,7 +23028,7 @@
           "problem"
         ],
         "answer": "It was John who solved the problem",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "It-cleft для акцента на John.",
         "grammarTopic": "eng-c1-inversion",
         "acceptableAnswers": []
@@ -22897,7 +23046,7 @@
           "holiday"
         ],
         "answer": "What I need is a long holiday",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "What I need is — псевдоразделительное.",
         "grammarTopic": "eng-c1-inversion",
         "acceptableAnswers": []
@@ -22915,7 +23064,7 @@
           "most"
         ],
         "answer": "It is freedom that people value most",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "It is freedom that — акцент на freedom.",
         "grammarTopic": "eng-c1-inversion",
         "acceptableAnswers": []
@@ -22933,7 +23082,7 @@
           "calmness"
         ],
         "answer": "What surprised me most was her calmness",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "What surprised me most was…",
         "grammarTopic": "eng-c1-inversion",
         "acceptableAnswers": []
@@ -22952,7 +23101,7 @@
           "door"
         ],
         "answer": "Under no circumstances should you open that door",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Under no circumstances should you…",
         "grammarTopic": "eng-c1-inversion",
         "acceptableAnswers": []
@@ -22972,7 +23121,7 @@
           "immediately"
         ],
         "answer": "So tired was she that she fell asleep immediately",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "So tired was she — инверсия после so.",
         "grammarTopic": "eng-c1-inversion",
         "acceptableAnswers": []
@@ -22992,7 +23141,7 @@
           "differently"
         ],
         "answer": "Had I known earlier I would have acted differently",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Had I known — без if.",
         "grammarTopic": "eng-c1-inversion",
         "acceptableAnswers": []
@@ -23011,7 +23160,7 @@
           "met"
         ],
         "answer": "It was in Paris that they first met",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "It was in Paris that — акцент на месте.",
         "grammarTopic": "eng-c1-inversion",
         "acceptableAnswers": []
@@ -23029,7 +23178,7 @@
           "evening"
         ],
         "answer": "All I want is a quiet evening",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "All I want is — упрощённое cleft.",
         "grammarTopic": "eng-c1-inversion",
         "acceptableAnswers": []
@@ -23049,7 +23198,7 @@
           "rang"
         ],
         "answer": "No sooner had he arrived than the phone rang",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "No sooner had he — инверсия + than.",
         "grammarTopic": "eng-c1-inversion",
         "acceptableAnswers": []
@@ -23815,7 +23964,7 @@
           "street"
         ],
         "answer": "Shadows crept across the empty street",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Shadows crept — оживление.",
         "grammarTopic": "eng-c1-discourse",
         "acceptableAnswers": []
@@ -23853,7 +24002,7 @@
           "rain"
         ],
         "answer": "The air was thick with the scent of rain",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Thick with the scent — осязательный образ.",
         "grammarTopic": "eng-c1-discourse",
         "acceptableAnswers": []
@@ -23891,7 +24040,7 @@
           "moment"
         ],
         "answer": "Time seemed to stand still in that moment",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Time stood still — метафора.",
         "grammarTopic": "eng-c1-discourse",
         "acceptableAnswers": []
@@ -23910,7 +24059,7 @@
           "wind"
         ],
         "answer": "The old house stood defiant against the wind",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Stood defiant — personification.",
         "grammarTopic": "eng-c1-discourse",
         "acceptableAnswers": []
@@ -23929,7 +24078,7 @@
           "thought"
         ],
         "answer": "She gazed into the distance lost in thought",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Lost in thought — причастный оборот.",
         "grammarTopic": "eng-c1-discourse",
         "acceptableAnswers": []
@@ -23947,7 +24096,7 @@
           "curtains"
         ],
         "answer": "A faint light flickered behind the curtains",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Faint light flickered — атмосфера.",
         "grammarTopic": "eng-c1-discourse",
         "acceptableAnswers": []
@@ -23966,7 +24115,7 @@
           "thunder"
         ],
         "answer": "The silence was broken only by distant thunder",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Broken only by — контраст.",
         "grammarTopic": "eng-c1-discourse",
         "acceptableAnswers": []
@@ -23984,7 +24133,7 @@
           "instant"
         ],
         "answer": "Words failed her in that crucial instant",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Words failed her — литературный оборот.",
         "grammarTopic": "eng-c1-discourse",
         "acceptableAnswers": []
@@ -24003,7 +24152,7 @@
           "sky"
         ],
         "answer": "The landscape stretched endlessly beneath a pale sky",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Stretched endlessly — панорама.",
         "grammarTopic": "eng-c1-discourse",
         "acceptableAnswers": []
@@ -24023,7 +24172,7 @@
           "appeared"
         ],
         "answer": "His smile faded as quickly as it had appeared",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "As quickly as — параллельная структура.",
         "grammarTopic": "eng-c1-discourse",
         "acceptableAnswers": []
@@ -24042,7 +24191,7 @@
           "foreign"
         ],
         "answer": "The room felt strangely familiar yet utterly foreign",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Familiar yet foreign — oxymoron.",
         "grammarTopic": "eng-c1-discourse",
         "acceptableAnswers": []
@@ -24062,7 +24211,7 @@
           "throat"
         ],
         "answer": "She turned away swallowing the lump in her throat",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Lump in her throat — физическое проявление.",
         "grammarTopic": "eng-c1-discourse",
         "acceptableAnswers": []
@@ -24869,7 +25018,7 @@
           "signed"
         ],
         "answer": "Had I been warned I would never have signed",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Had I been warned — без if, C1.",
         "grammarTopic": "eng-c1-mixed-conditionals",
         "acceptableAnswers": []
@@ -24888,7 +25037,7 @@
           "action"
         ],
         "answer": "It is high time the government took action",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "High time + past subjunctive.",
         "grammarTopic": "eng-c1-mixed-conditionals",
         "acceptableAnswers": []
@@ -24907,7 +25056,7 @@
           "rejected"
         ],
         "answer": "The proposal is said to have been rejected",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Is said to have been — сложный passive.",
         "grammarTopic": "eng-c1-mixed-conditionals",
         "acceptableAnswers": []
@@ -24927,7 +25076,7 @@
           "error"
         ],
         "answer": "Not until last week did anyone discover the error",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Not until… did anyone — инверсия.",
         "grammarTopic": "eng-c1-mixed-conditionals",
         "acceptableAnswers": []
@@ -24948,7 +25097,7 @@
           "failed"
         ],
         "answer": "Were it not for her help we would have failed",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Were it not for — формальное if it weren't.",
         "grammarTopic": "eng-c1-mixed-conditionals",
         "acceptableAnswers": []
@@ -24967,7 +25116,7 @@
           "wait"
         ],
         "answer": "Having considered all options they chose to wait",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Having considered — причастие совершенного вида.",
         "grammarTopic": "eng-c1-mixed-conditionals",
         "acceptableAnswers": []
@@ -24987,7 +25136,7 @@
           "become"
         ],
         "answer": "The more you practise the more confident you become",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "The more… the more — корреляция.",
         "grammarTopic": "eng-c1-mixed-conditionals",
         "acceptableAnswers": []
@@ -25006,7 +25155,7 @@
           "erupted"
         ],
         "answer": "Scarcely had the meeting begun when protests erupted",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Scarcely had… when — инверсия.",
         "grammarTopic": "eng-c1-mixed-conditionals",
         "acceptableAnswers": []
@@ -25026,7 +25175,7 @@
           "fail"
         ],
         "answer": "It is widely believed that the policy will fail",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "It is widely believed that…",
         "grammarTopic": "eng-c1-mixed-conditionals",
         "acceptableAnswers": []
@@ -25045,7 +25194,7 @@
           "you"
         ],
         "answer": "Whatever decision you make I will support you",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Whatever decision — уступительное.",
         "grammarTopic": "eng-c1-mixed-conditionals",
         "acceptableAnswers": []
@@ -25064,7 +25213,7 @@
           "it"
         ],
         "answer": "The report having been completed we submitted it",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Having been completed — абсолютная конструкция.",
         "grammarTopic": "eng-c1-mixed-conditionals",
         "acceptableAnswers": []
@@ -25083,7 +25232,7 @@
           "company"
         ],
         "answer": "He talks as though he owned the company",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "As though he owned — irrealis.",
         "grammarTopic": "eng-c1-mixed-conditionals",
         "acceptableAnswers": []
@@ -25103,7 +25252,7 @@
           "collapsed"
         ],
         "answer": "Little wonder that confidence in the system has collapsed",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Little wonder that — идиоматично C1.",
         "grammarTopic": "eng-c1-mixed-conditionals",
         "acceptableAnswers": []
@@ -25123,7 +25272,7 @@
           "cautiously"
         ],
         "answer": "Be that as it may we must proceed cautiously",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Be that as it may — формальный переход.",
         "grammarTopic": "eng-c1-mixed-conditionals",
         "acceptableAnswers": []
@@ -26381,7 +26530,7 @@
           "drawbacks"
         ],
         "answer": "Overall the benefits outweigh the drawbacks",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Overall — итоговая оценка в эссе.",
         "grammarTopic": "eng-c1-review",
         "acceptableAnswers": []
@@ -26399,7 +26548,7 @@
           "matters"
         ],
         "answer": "It is widely believed that education matters",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "It is widely believed that…",
         "grammarTopic": "eng-c1-review",
         "acceptableAnswers": []
@@ -26417,7 +26566,7 @@
           "more"
         ],
         "answer": "In my view governments should invest more",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "In my view — личная позиция Task 2.",
         "grammarTopic": "eng-c1-review",
         "acceptableAnswers": []
@@ -26435,7 +26584,7 @@
           "merit"
         ],
         "answer": "To sum up both sides have merit",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "To sum up — заключение дискуссионного эссе.",
         "grammarTopic": "eng-c1-review",
         "acceptableAnswers": []
@@ -28208,7 +28357,7 @@
           "this is my parents' house",
           "It's my parents' house"
         ],
-        "instruction": "Parents' (мн.ч.)",
+        "instruction": "Translate into English",
         "explanation": "Parents → parents' (апостроф после -s).",
         "grammarTopic": "possessives",
         "questionTranslations": {
@@ -28561,7 +28710,7 @@
           "book"
         ],
         "answer": "This is my book",
-        "instruction": "Притяжательные — my",
+        "instruction": "Build the sentence from the words",
         "explanation": "My + существительное без артикля.",
         "grammarTopic": "eng-a1-possessives",
         "acceptableAnswers": []
@@ -28576,7 +28725,7 @@
           "phone?"
         ],
         "answer": "Is this your phone?",
-        "instruction": "Притяжательные — your",
+        "instruction": "Build the sentence from the words",
         "explanation": "Your перед существительным.",
         "grammarTopic": "eng-a1-possessives",
         "acceptableAnswers": []
@@ -28592,7 +28741,7 @@
           "big"
         ],
         "answer": "Their house is very big",
-        "instruction": "Притяжательные — their",
+        "instruction": "Build the sentence from the words",
         "explanation": "Their + house.",
         "grammarTopic": "eng-a1-possessives",
         "acceptableAnswers": []
@@ -28609,7 +28758,7 @@
           "table"
         ],
         "answer": "Anna's bag is on the table",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Anna's bag — притяжательный падеж через 's.",
         "grammarTopic": "eng-a1-possessives",
         "acceptableAnswers": []
@@ -28625,7 +28774,7 @@
           "upstairs"
         ],
         "answer": "The children's room is upstairs",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Children's — множественное число + 's.",
         "grammarTopic": "eng-a1-possessives",
         "acceptableAnswers": []
@@ -28640,7 +28789,7 @@
           "these?"
         ],
         "answer": "Whose keys are these?",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Whose keys — вопрос о принадлежности.",
         "grammarTopic": "eng-a1-possessives",
         "acceptableAnswers": []
@@ -28655,7 +28804,7 @@
           "mine"
         ],
         "answer": "That laptop is mine",
-        "instruction": "Притяжательные местоимения",
+        "instruction": "Build the sentence from the words",
         "explanation": "Mine — без существительного после.",
         "grammarTopic": "eng-a1-possessives",
         "acceptableAnswers": []
@@ -28670,7 +28819,7 @@
           "yours?"
         ],
         "answer": "Are these gloves yours?",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Yours = your gloves.",
         "grammarTopic": "eng-a1-possessives",
         "acceptableAnswers": []
@@ -28686,7 +28835,7 @@
           "Scotland"
         ],
         "answer": "Our teacher is from Scotland",
-        "instruction": "Притяжательные — our",
+        "instruction": "Build the sentence from the words",
         "explanation": "Our + teacher.",
         "grammarTopic": "eng-a1-possessives",
         "acceptableAnswers": []
@@ -28703,7 +28852,7 @@
           "hospital"
         ],
         "answer": "His sister works in a hospital",
-        "instruction": "Притяжательные — his",
+        "instruction": "Build the sentence from the words",
         "explanation": "His — его (муж.).",
         "grammarTopic": "eng-a1-possessives",
         "acceptableAnswers": []
@@ -28719,7 +28868,7 @@
           "park"
         ],
         "answer": "Her dog loves the park",
-        "instruction": "Притяжательные — her",
+        "instruction": "Build the sentence from the words",
         "explanation": "Her + dog. Ответ: Her dog loves the park.",
         "grammarTopic": "eng-a1-possessives",
         "acceptableAnswers": []
@@ -28735,7 +28884,7 @@
           "outside"
         ],
         "answer": "James's car is parked outside",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "James's car — имя + 's.",
         "grammarTopic": "eng-a1-possessives",
         "acceptableAnswers": []
@@ -28751,7 +28900,7 @@
           "excellent"
         ],
         "answer": "The students' essays were excellent",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Students' — мн. число, только апостроф.",
         "grammarTopic": "eng-a1-possessives",
         "acceptableAnswers": []
@@ -28784,7 +28933,7 @@
           "hers?"
         ],
         "answer": "Is that coat hers?",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Hers = her coat.",
         "grammarTopic": "eng-a1-possessives",
         "acceptableAnswers": []
@@ -28799,7 +28948,7 @@
           "pen?"
         ],
         "answer": "Is this his pen?",
-        "instruction": "Притяжательные — his",
+        "instruction": "Build the sentence from the words",
         "explanation": "his + pen. Ответ: Is this his pen?.",
         "grammarTopic": "eng-a1-possessives",
         "acceptableAnswers": []
@@ -28815,7 +28964,7 @@
           "friendly"
         ],
         "answer": "Our neighbours are very friendly",
-        "instruction": "Притяжательные — our",
+        "instruction": "Build the sentence from the words",
         "explanation": "our neighbours — наши соседи.",
         "grammarTopic": "eng-a1-possessives",
         "acceptableAnswers": []
@@ -28831,7 +28980,7 @@
           "tail"
         ],
         "answer": "The dog wagged its tail",
-        "instruction": "Притяжательные — its",
+        "instruction": "Build the sentence from the words",
         "explanation": "its — для животных и вещей.",
         "grammarTopic": "eng-a1-possessives",
         "acceptableAnswers": []
@@ -28846,7 +28995,7 @@
           "it?"
         ],
         "answer": "Whose turn is it?",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Whose turn is it? — чья очередь?",
         "grammarTopic": "eng-a1-possessives",
         "acceptableAnswers": []
@@ -35412,7 +35561,7 @@
           "aunt"
         ],
         "answer": "The woman who called you is my aunt",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Who для людей.",
         "grammarTopic": "eng-b1-relative-clauses",
         "acceptableAnswers": []
@@ -35430,7 +35579,7 @@
           "fantastic"
         ],
         "answer": "The book that I bought is fantastic",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "That для предметов.",
         "grammarTopic": "eng-b1-relative-clauses",
         "acceptableAnswers": []
@@ -35448,7 +35597,7 @@
           "built"
         ],
         "answer": "This is the house which Jack built",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Which для вещей.",
         "grammarTopic": "eng-b1-relative-clauses",
         "acceptableAnswers": []
@@ -35467,7 +35616,7 @@
           "prize"
         ],
         "answer": "The student whose essay won got a prize",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Whose = чей.",
         "grammarTopic": "eng-b1-relative-clauses",
         "acceptableAnswers": []
@@ -35484,7 +35633,7 @@
           "healthier"
         ],
         "answer": "People who exercise regularly feel healthier",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Определяющее придаточное без запятых.",
         "grammarTopic": "eng-b1-relative-clauses",
         "acceptableAnswers": []
@@ -35504,7 +35653,7 @@
           "boring"
         ],
         "answer": "The film that we saw last night was boring",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "That we saw — ограничительное.",
         "grammarTopic": "eng-b1-relative-clauses",
         "acceptableAnswers": []
@@ -35525,7 +35674,7 @@
           "lot"
         ],
         "answer": "The city where I grew up has changed a lot",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Where = in which.",
         "grammarTopic": "eng-b1-relative-clauses",
         "acceptableAnswers": []
@@ -35544,7 +35693,7 @@
           "unclear"
         ],
         "answer": "The reason why she left is still unclear",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "The reason why…",
         "grammarTopic": "eng-b1-relative-clauses",
         "acceptableAnswers": []
@@ -35564,7 +35713,7 @@
           "doctor"
         ],
         "answer": "The man whom I met yesterday is a doctor",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Whom — объектное местоимение.",
         "grammarTopic": "eng-b1-relative-clauses",
         "acceptableAnswers": []
@@ -35619,7 +35768,7 @@
           "hand"
         ],
         "answer": "Anyone who knows the answer should raise a hand",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Anyone who knows…",
         "grammarTopic": "eng-b1-relative-clauses",
         "acceptableAnswers": []
@@ -35639,7 +35788,7 @@
           "pocket"
         ],
         "answer": "The keys that I lost were in my pocket",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "That I lost — определяет keys.",
         "grammarTopic": "eng-b1-relative-clauses",
         "acceptableAnswers": []
@@ -35660,7 +35809,7 @@
           "door"
         ],
         "answer": "The girl whose father is a pilot lives next door",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Whose father — чей отец.",
         "grammarTopic": "eng-b1-relative-clauses",
         "acceptableAnswers": []
@@ -35699,7 +35848,7 @@
           "police"
         ],
         "answer": "The man whose car was stolen called the police",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Whose car — чья машина.",
         "grammarTopic": "eng-b1-relative-clauses",
         "acceptableAnswers": []
@@ -35716,7 +35865,7 @@
           "Japanese"
         ],
         "answer": "I know someone who speaks Japanese",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Someone who speaks — определяющее.",
         "grammarTopic": "eng-b1-relative-clauses",
         "acceptableAnswers": []
@@ -35734,7 +35883,7 @@
           "sunny"
         ],
         "answer": "The day when we met was sunny",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "The day when we met…",
         "grammarTopic": "eng-b1-relative-clauses",
         "acceptableAnswers": []
@@ -35751,7 +35900,7 @@
           "called"
         ],
         "answer": "That's the reason why I called",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "The reason why I called.",
         "grammarTopic": "eng-b1-relative-clauses",
         "acceptableAnswers": []
@@ -39205,7 +39354,7 @@
           "?"
         ],
         "answer": "Why don't you come and visit?",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Why don't you…? — дружеское приглашение.",
         "grammarTopic": "ielts-letter-informal",
         "acceptableAnswers": []
@@ -39430,20 +39579,6 @@
         "answer": "I hope you're doing well",
         "instruction": "Неформальное начало",
         "explanation": "I hope you're doing well — дружеское.",
-        "grammarTopic": "eng-ielts-letter-informal",
-        "acceptableAnswers": []
-      },
-      {
-        "type": "sentence_building",
-        "question": "Write / back / soon",
-        "options": [
-          "Write",
-          "back",
-          "soon"
-        ],
-        "answer": "Write back soon",
-        "instruction": "Просьба ответить",
-        "explanation": "Write back soon — напиши скорее.",
         "grammarTopic": "eng-ielts-letter-informal",
         "acceptableAnswers": []
       },
@@ -40129,6 +40264,158 @@
         ],
         "instruction": "Build the sentence",
         "explanation": "Look forward to + -ing.",
+        "grammarTopic": "eng-ielts-letter-formal"
+      },
+      {
+        "type": "sentence_building",
+        "question": "I / am / writing / to / enquire / about / the / vacancy",
+        "options": [
+          "I",
+          "am",
+          "writing",
+          "to",
+          "enquire",
+          "about",
+          "the",
+          "vacancy"
+        ],
+        "answer": "I am writing to enquire about the vacancy",
+        "acceptableAnswers": [],
+        "instruction": "Build the sentence from the words",
+        "explanation": "enquire about — formal enquire.",
+        "grammarTopic": "eng-ielts-letter-formal"
+      },
+      {
+        "type": "sentence_building",
+        "question": "Please / find / attached / a / copy / of / my / CV",
+        "options": [
+          "Please",
+          "find",
+          "attached",
+          "a",
+          "copy",
+          "of",
+          "my",
+          "CV"
+        ],
+        "answer": "Please find attached a copy of my CV",
+        "acceptableAnswers": [],
+        "instruction": "Build the sentence from the words",
+        "explanation": "Please find attached…",
+        "grammarTopic": "eng-ielts-letter-formal"
+      },
+      {
+        "type": "sentence_building",
+        "question": "I / would / be / grateful / if / you / could / clarify / this",
+        "options": [
+          "I",
+          "would",
+          "be",
+          "grateful",
+          "if",
+          "you",
+          "could",
+          "clarify",
+          "this"
+        ],
+        "answer": "I would be grateful if you could clarify this",
+        "acceptableAnswers": [],
+        "instruction": "Build the sentence from the words",
+        "explanation": "I would be grateful if…",
+        "grammarTopic": "eng-ielts-letter-formal"
+      },
+      {
+        "type": "sentence_building",
+        "question": "I / am / available / for / an / interview / next / week",
+        "options": [
+          "I",
+          "am",
+          "available",
+          "for",
+          "an",
+          "interview",
+          "next",
+          "week"
+        ],
+        "answer": "I am available for an interview next week",
+        "acceptableAnswers": [],
+        "instruction": "Build the sentence from the words",
+        "explanation": "available for an interview…",
+        "grammarTopic": "eng-ielts-letter-formal"
+      },
+      {
+        "type": "sentence_building",
+        "question": "Thank / you / for / your / prompt / attention / to / this / matter",
+        "options": [
+          "Thank",
+          "you",
+          "for",
+          "your",
+          "prompt",
+          "attention",
+          "to",
+          "this",
+          "matter"
+        ],
+        "answer": "Thank you for your prompt attention to this matter",
+        "acceptableAnswers": [],
+        "instruction": "Build the sentence from the words",
+        "explanation": "prompt attention to this matter.",
+        "grammarTopic": "eng-ielts-letter-formal"
+      },
+      {
+        "type": "sentence_building",
+        "question": "Yours / faithfully",
+        "options": [
+          "Yours",
+          "faithfully"
+        ],
+        "answer": "Yours faithfully",
+        "acceptableAnswers": [],
+        "instruction": "Build the sentence from the words",
+        "explanation": "Yours faithfully — Dear Sir/Madam.",
+        "grammarTopic": "eng-ielts-letter-formal"
+      },
+      {
+        "type": "sentence_building",
+        "question": "I / wish / to / draw / your / attention / to / a / billing / error",
+        "options": [
+          "I",
+          "wish",
+          "to",
+          "draw",
+          "your",
+          "attention",
+          "to",
+          "a",
+          "billing",
+          "error"
+        ],
+        "answer": "I wish to draw your attention to a billing error",
+        "acceptableAnswers": [],
+        "instruction": "Build the sentence from the words",
+        "explanation": "draw your attention to…",
+        "grammarTopic": "eng-ielts-letter-formal"
+      },
+      {
+        "type": "sentence_building",
+        "question": "I / look / forward / to / your / reply / at / your / earliest / convenience",
+        "options": [
+          "I",
+          "look",
+          "forward",
+          "to",
+          "your",
+          "reply",
+          "at",
+          "your",
+          "earliest",
+          "convenience"
+        ],
+        "answer": "I look forward to your reply at your earliest convenience",
+        "acceptableAnswers": [],
+        "instruction": "Build the sentence from the words",
+        "explanation": "at your earliest convenience.",
         "grammarTopic": "eng-ielts-letter-formal"
       }
     ]
@@ -40818,7 +41105,7 @@
           "this"
         ],
         "answer": "Thank you for your help with this",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Thank you for… — стандарт semi-formal.",
         "grammarTopic": "cambridge-letter-email",
         "acceptableAnswers": []
@@ -41732,22 +42019,6 @@
     "sentence_building": [
       {
         "type": "sentence_building",
-        "question": "Best / overview / sentence:",
-        "options": [
-          "Best",
-          "overview",
-          "sentence:"
-        ],
-        "answer": "Best overview sentence:",
-        "acceptableAnswers": [
-          "best overview sentence:"
-        ],
-        "instruction": "Build the sentence",
-        "explanation": "Overview = общий тренд без мнения.",
-        "grammarTopic": "eng-ielts-task1-report"
-      },
-      {
-        "type": "sentence_building",
         "question": "The / figure / rose / sharply / between / 2015 / and / 2018",
         "options": [
           "The",
@@ -41765,22 +42036,6 @@
         ],
         "instruction": "Build the sentence",
         "explanation": "Rose/increased sharply — рост.",
-        "grammarTopic": "eng-ielts-task1-report"
-      },
-      {
-        "type": "sentence_building",
-        "question": "Compare / two / figures:",
-        "options": [
-          "Compare",
-          "two",
-          "figures:"
-        ],
-        "answer": "Compare two figures:",
-        "acceptableAnswers": [
-          "compare two figures:"
-        ],
-        "instruction": "Build the sentence",
-        "explanation": "Twice as high as — объективное сравнение.",
         "grammarTopic": "eng-ielts-task1-report"
       },
       {
@@ -41803,6 +42058,157 @@
         ],
         "instruction": "Build the sentence",
         "explanation": "Gradual/sharp decline — описание тренда.",
+        "grammarTopic": "eng-ielts-task1-report"
+      },
+      {
+        "type": "sentence_building",
+        "question": "The / chart / illustrates / changes / in / energy / use / from / 2000 / to / 2020",
+        "options": [
+          "The",
+          "chart",
+          "illustrates",
+          "changes",
+          "in",
+          "energy",
+          "use",
+          "from",
+          "2000",
+          "to",
+          "2020"
+        ],
+        "answer": "The chart illustrates changes in energy use from 2000 to 2020",
+        "acceptableAnswers": [],
+        "instruction": "Build the sentence from the words",
+        "explanation": "The chart illustrates…",
+        "grammarTopic": "eng-ielts-task1-report"
+      },
+      {
+        "type": "sentence_building",
+        "question": "Overall / renewable / energy / rose / while / coal / fell",
+        "options": [
+          "Overall",
+          "renewable",
+          "energy",
+          "rose",
+          "while",
+          "coal",
+          "fell"
+        ],
+        "answer": "Overall, renewable energy rose while coal fell",
+        "acceptableAnswers": [],
+        "instruction": "Build the sentence from the words",
+        "explanation": "Overall… while…",
+        "grammarTopic": "eng-ielts-task1-report"
+      },
+      {
+        "type": "sentence_building",
+        "question": "In / 2010 / the / figure / stood / at / approximately / 40 / percent",
+        "options": [
+          "In",
+          "2010",
+          "the",
+          "figure",
+          "stood",
+          "at",
+          "approximately",
+          "40",
+          "percent"
+        ],
+        "answer": "In 2010 the figure stood at approximately 40 percent",
+        "acceptableAnswers": [],
+        "instruction": "Build the sentence from the words",
+        "explanation": "stood at approximately…",
+        "grammarTopic": "eng-ielts-task1-report"
+      },
+      {
+        "type": "sentence_building",
+        "question": "By / contrast / imports / remained / relatively / stable",
+        "options": [
+          "By",
+          "contrast",
+          "imports",
+          "remained",
+          "relatively",
+          "stable"
+        ],
+        "answer": "By contrast, imports remained relatively stable",
+        "acceptableAnswers": [],
+        "instruction": "Build the sentence from the words",
+        "explanation": "By contrast…",
+        "grammarTopic": "eng-ielts-task1-report"
+      },
+      {
+        "type": "sentence_building",
+        "question": "The / proportion / of / online / sales / nearly / doubled",
+        "options": [
+          "The",
+          "proportion",
+          "of",
+          "online",
+          "sales",
+          "nearly",
+          "doubled"
+        ],
+        "answer": "The proportion of online sales nearly doubled",
+        "acceptableAnswers": [],
+        "instruction": "Build the sentence from the words",
+        "explanation": "nearly doubled.",
+        "grammarTopic": "eng-ielts-task1-report"
+      },
+      {
+        "type": "sentence_building",
+        "question": "There / was / a / sharp / increase / in / tourism / after / 2015",
+        "options": [
+          "There",
+          "was",
+          "a",
+          "sharp",
+          "increase",
+          "in",
+          "tourism",
+          "after",
+          "2015"
+        ],
+        "answer": "There was a sharp increase in tourism after 2015",
+        "acceptableAnswers": [],
+        "instruction": "Build the sentence from the words",
+        "explanation": "a sharp increase in…",
+        "grammarTopic": "eng-ielts-task1-report"
+      },
+      {
+        "type": "sentence_building",
+        "question": "Exports / peaked / in / 2018 / before / declining / slightly",
+        "options": [
+          "Exports",
+          "peaked",
+          "in",
+          "2018",
+          "before",
+          "declining",
+          "slightly"
+        ],
+        "answer": "Exports peaked in 2018 before declining slightly",
+        "acceptableAnswers": [],
+        "instruction": "Build the sentence from the words",
+        "explanation": "peaked… before declining…",
+        "grammarTopic": "eng-ielts-task1-report"
+      },
+      {
+        "type": "sentence_building",
+        "question": "Both / countries / followed / a / similar / upward / trend",
+        "options": [
+          "Both",
+          "countries",
+          "followed",
+          "a",
+          "similar",
+          "upward",
+          "trend"
+        ],
+        "answer": "Both countries followed a similar upward trend",
+        "acceptableAnswers": [],
+        "instruction": "Build the sentence from the words",
+        "explanation": "a similar upward trend.",
         "grammarTopic": "eng-ielts-task1-report"
       }
     ]
@@ -42490,7 +42896,7 @@
           "drawbacks"
         ],
         "answer": "In conclusion, the benefits outweigh the drawbacks",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "In conclusion, + итоговая позиция.",
         "grammarTopic": "ielts-essay-structure",
         "acceptableAnswers": []
@@ -42529,7 +42935,7 @@
           "argument"
         ],
         "answer": "This essay will examine both sides of the argument",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Will examine both sides — дискуссионный формат.",
         "grammarTopic": "eng-ielts-essay-structure",
         "acceptableAnswers": []
@@ -43496,7 +43902,7 @@
           "opportunities"
         ],
         "answer": "On the other hand, urban life offers more opportunities",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "On the other hand — другая сторона.",
         "grammarTopic": "ielts-essay-cohesion",
         "acceptableAnswers": []
@@ -43515,7 +43921,7 @@
           "expensive"
         ],
         "answer": "The policy was popular however it proved expensive",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "However между двумя частями.",
         "grammarTopic": "eng-ielts-essay-cohesion",
         "acceptableAnswers": []
@@ -43532,7 +43938,7 @@
           "conclusion"
         ],
         "answer": "Furthermore the data supports this conclusion",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Furthermore усиливает аргумент.",
         "grammarTopic": "eng-ielts-essay-cohesion",
         "acceptableAnswers": []
@@ -43550,7 +43956,7 @@
           "year"
         ],
         "answer": "In addition unemployment fell sharply that year",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "In addition — дополнительный факт.",
         "grammarTopic": "eng-ielts-essay-cohesion",
         "acceptableAnswers": []
@@ -43567,7 +43973,7 @@
           "declined"
         ],
         "answer": "As a result public trust declined",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "As a result — причинно-следственная связь.",
         "grammarTopic": "eng-ielts-essay-cohesion",
         "acceptableAnswers": []
@@ -43583,7 +43989,7 @@
           "abroad"
         ],
         "answer": "Consequently many firms relocated abroad",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Consequently = as a result.",
         "grammarTopic": "eng-ielts-essay-cohesion",
         "acceptableAnswers": []
@@ -43600,7 +44006,7 @@
           "schedule"
         ],
         "answer": "Nevertheless the project continued on schedule",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Nevertheless — несмотря на.",
         "grammarTopic": "eng-ielts-essay-cohesion",
         "acceptableAnswers": []
@@ -43618,7 +44024,7 @@
           "opposite"
         ],
         "answer": "On the contrary evidence suggests the opposite",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "On the contrary — прямое опровержение.",
         "grammarTopic": "eng-ielts-essay-cohesion",
         "acceptableAnswers": []
@@ -43636,7 +44042,7 @@
           "approach"
         ],
         "answer": "Similarly other countries adopted the same approach",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Similarly — параллель.",
         "grammarTopic": "eng-ielts-essay-cohesion",
         "acceptableAnswers": []
@@ -43654,7 +44060,7 @@
           "growth"
         ],
         "answer": "By contrast rural areas saw little growth",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "By contrast — противопоставление.",
         "grammarTopic": "eng-ielts-essay-cohesion",
         "acceptableAnswers": []
@@ -43673,7 +44079,7 @@
           "accelerated"
         ],
         "answer": "This trend has continued moreover it has accelerated",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Moreover — кроме того, усиление.",
         "grammarTopic": "eng-ielts-essay-cohesion",
         "acceptableAnswers": []
@@ -43725,7 +44131,7 @@
           "significantly"
         ],
         "answer": "Such measures can reduce carbon emissions significantly",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Such measures — ссылка на предыдущее.",
         "grammarTopic": "eng-ielts-essay-cohesion",
         "acceptableAnswers": []
@@ -43743,7 +44149,7 @@
           "reform"
         ],
         "answer": "These findings suggest a need for reform",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "These findings — указание на данные.",
         "grammarTopic": "eng-ielts-essay-cohesion",
         "acceptableAnswers": []
@@ -43761,7 +44167,7 @@
           "remain"
         ],
         "answer": "In spite of this progress challenges remain",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "In spite of this — несмотря на прогресс.",
         "grammarTopic": "eng-ielts-essay-cohesion",
         "acceptableAnswers": []
@@ -43778,7 +44184,7 @@
           "faster"
         ],
         "answer": "In contrast urban areas grew faster",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "In contrast — формальный контраст.",
         "grammarTopic": "eng-ielts-essay-cohesion",
         "acceptableAnswers": []
@@ -43794,7 +44200,7 @@
           "rose"
         ],
         "answer": "As a consequence costs rose",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "As a consequence — результат.",
         "grammarTopic": "eng-ielts-essay-cohesion",
         "acceptableAnswers": []
@@ -43812,7 +44218,7 @@
           "Finland"
         ],
         "answer": "To illustrate consider the case of Finland",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "To illustrate — переход к примеру.",
         "grammarTopic": "eng-ielts-essay-cohesion",
         "acceptableAnswers": []
@@ -43828,7 +44234,7 @@
           "continued"
         ],
         "answer": "Despite this the policy continued",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Despite this — несмотря на вышесказанное.",
         "grammarTopic": "eng-ielts-essay-cohesion",
         "acceptableAnswers": []
@@ -44796,7 +45202,7 @@
           "economy"
         ],
         "answer": "Not only does this affect health but also the economy",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Not only does… but also — усиление.",
         "grammarTopic": "eng-cambridge-essay-article",
         "acceptableAnswers": []
@@ -44815,7 +45221,7 @@
           "solution"
         ],
         "answer": "What matters most is finding a sustainable solution",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "What matters most is…",
         "grammarTopic": "eng-cambridge-essay-article",
         "acceptableAnswers": []
@@ -45724,7 +46130,7 @@
           "free"
         ],
         "answer": "I firmly believe that education should be free",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Firmly believe — сильная позиция.",
         "grammarTopic": "eng-ielts-opinion-language",
         "acceptableAnswers": []
@@ -45743,7 +46149,7 @@
           "employees"
         ],
         "answer": "In my view remote work benefits many employees",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "In my view — личное мнение.",
         "grammarTopic": "eng-ielts-opinion-language",
         "acceptableAnswers": []
@@ -45761,7 +46167,7 @@
           "obvious"
         ],
         "answer": "From my perspective the advantages are obvious",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "From my perspective — точка зрения.",
         "grammarTopic": "eng-ielts-opinion-language",
         "acceptableAnswers": []
@@ -45780,7 +46186,7 @@
           "now"
         ],
         "answer": "I am convinced that action is needed now",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "I am convinced that — уверенность.",
         "grammarTopic": "eng-ielts-opinion-language",
         "acceptableAnswers": []
@@ -45797,7 +46203,7 @@
           "funding"
         ],
         "answer": "Arguably the biggest challenge is funding",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Arguably — можно утверждать.",
         "grammarTopic": "eng-ielts-opinion-language",
         "acceptableAnswers": []
@@ -45816,7 +46222,7 @@
           "innovation"
         ],
         "answer": "It is often claimed that competition drives innovation",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Distancing — часто утверждают.",
         "grammarTopic": "eng-ielts-opinion-language",
         "acceptableAnswers": []
@@ -45836,7 +46242,7 @@
           "view"
         ],
         "answer": "To a large extent I agree with this view",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "To a large extent — частичное согласие.",
         "grammarTopic": "eng-ielts-opinion-language",
         "acceptableAnswers": []
@@ -45855,7 +46261,7 @@
           "inconclusive"
         ],
         "answer": "I would argue that the evidence is inconclusive",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Would argue — смягчённая позиция.",
         "grammarTopic": "eng-ielts-opinion-language",
         "acceptableAnswers": []
@@ -45874,7 +46280,7 @@
           "required"
         ],
         "answer": "Personally I feel that more support is required",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Personally — личный акцент.",
         "grammarTopic": "eng-ielts-opinion-language",
         "acceptableAnswers": []
@@ -45896,7 +46302,7 @@
           "essential"
         ],
         "answer": "There is no doubt in my mind that reform is essential",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "No doubt in my mind — полная уверенность.",
         "grammarTopic": "eng-ielts-opinion-language",
         "acceptableAnswers": []
@@ -45915,7 +46321,7 @@
           "intervene"
         ],
         "answer": "It is my contention that governments must intervene",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "It is my contention that — формальное мнение.",
         "grammarTopic": "eng-ielts-opinion-language",
         "acceptableAnswers": []
@@ -45936,7 +46342,7 @@
           "continue"
         ],
         "answer": "I am inclined to think that the trend will continue",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Inclined to think — склонность.",
         "grammarTopic": "eng-ielts-opinion-language",
         "acceptableAnswers": []
@@ -45956,7 +46362,7 @@
           "costs"
         ],
         "answer": "On balance I believe the benefits exceed the costs",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "On balance — взвешенное мнение.",
         "grammarTopic": "eng-ielts-opinion-language",
         "acceptableAnswers": []
@@ -45975,7 +46381,7 @@
           "debatable"
         ],
         "answer": "To what extent this is true remains debatable",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "To what extent — IELTS discursive prompt.",
         "grammarTopic": "eng-ielts-opinion-language",
         "acceptableAnswers": []
@@ -48181,7 +48587,7 @@
           "called"
         ],
         "answer": "It was Maria who called",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "It was Maria who…",
         "grammarTopic": "eng-c2-cleft-emphasis",
         "acceptableAnswers": []
@@ -48198,7 +48604,7 @@
           "silence"
         ],
         "answer": "What surprised me was his silence",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "What surprised me was…",
         "grammarTopic": "eng-c2-cleft-emphasis",
         "acceptableAnswers": []
@@ -48215,7 +48621,7 @@
           "decide"
         ],
         "answer": "It is today that we decide",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "It is today that…",
         "grammarTopic": "eng-c2-cleft-emphasis",
         "acceptableAnswers": []
@@ -48231,7 +48637,7 @@
           "peace"
         ],
         "answer": "What I want is peace",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "What I want is…",
         "grammarTopic": "eng-c2-cleft-emphasis",
         "acceptableAnswers": []
@@ -48249,7 +48655,7 @@
           "started"
         ],
         "answer": "It was in 2020 that it started",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "It was in 2020 that…",
         "grammarTopic": "eng-c2-cleft-emphasis",
         "acceptableAnswers": []
@@ -48266,7 +48672,7 @@
           "lost"
         ],
         "answer": "Never have I felt so lost",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Never have I…",
         "grammarTopic": "eng-c2-cleft-emphasis",
         "acceptableAnswers": []
@@ -48282,7 +48688,7 @@
           "understand"
         ],
         "answer": "Only then did I understand",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Only then did I…",
         "grammarTopic": "eng-c2-cleft-emphasis",
         "acceptableAnswers": []
@@ -48301,7 +48707,7 @@
           "stayed"
         ],
         "answer": "It was because of rain that we stayed",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "It was because of…",
         "grammarTopic": "eng-c2-cleft-emphasis",
         "acceptableAnswers": []
@@ -48317,7 +48723,7 @@
           "time"
         ],
         "answer": "What they need is time",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "What they need is…",
         "grammarTopic": "eng-c2-cleft-emphasis",
         "acceptableAnswers": []
@@ -48335,7 +48741,7 @@
           "it"
         ],
         "answer": "It was the manager who approved it",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "It was the manager who…",
         "grammarTopic": "eng-c2-cleft-emphasis",
         "acceptableAnswers": []
@@ -48354,7 +48760,7 @@
           "left"
         ],
         "answer": "So intense was the heat that we left",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "So intense was…",
         "grammarTopic": "eng-c2-cleft-emphasis",
         "acceptableAnswers": []
@@ -48372,7 +48778,7 @@
           "made"
         ],
         "answer": "It is here that history was made",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "It is here that…",
         "grammarTopic": "eng-c2-cleft-emphasis",
         "acceptableAnswers": []
@@ -48388,7 +48794,7 @@
           "honesty"
         ],
         "answer": "What matters most is honesty",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "What matters most is…",
         "grammarTopic": "eng-c2-cleft-emphasis",
         "acceptableAnswers": []
@@ -48404,7 +48810,7 @@
           "understand"
         ],
         "answer": "I do hope you understand",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "I do hope… Ответ: I do hope you understand.",
         "grammarTopic": "eng-c2-cleft-emphasis",
         "acceptableAnswers": []
@@ -48421,7 +48827,7 @@
           "awaited"
         ],
         "answer": "Little did she know what awaited",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Little did she know…",
         "grammarTopic": "eng-c2-cleft-emphasis",
         "acceptableAnswers": []
@@ -48440,7 +48846,7 @@
           "came"
         ],
         "answer": "It was not John but Peter who came",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "not John but Peter…",
         "grammarTopic": "eng-c2-cleft-emphasis",
         "acceptableAnswers": []
@@ -48456,7 +48862,7 @@
           "unexpected"
         ],
         "answer": "What we discovered was unexpected",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "What we discovered was…",
         "grammarTopic": "eng-c2-cleft-emphasis",
         "acceptableAnswers": []
@@ -48473,7 +48879,7 @@
           "talent"
         ],
         "answer": "Rarely have I seen such talent",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Rarely have I…",
         "grammarTopic": "eng-c2-cleft-emphasis",
         "acceptableAnswers": []
@@ -48492,7 +48898,7 @@
           "accepted"
         ],
         "answer": "It was with great joy that she accepted",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "It was with great joy that…",
         "grammarTopic": "eng-c2-cleft-emphasis",
         "acceptableAnswers": []
@@ -49277,7 +49683,7 @@
           "some"
         ],
         "answer": "A: Would you like tea? B: I'd love some",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "I'd love some = some tea",
         "grammarTopic": "eng-c2-ellipsis-substitution",
         "acceptableAnswers": []
@@ -49293,7 +49699,7 @@
           "you?"
         ],
         "answer": "I can swim. Can you?",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Can you? = Can you swim?",
         "grammarTopic": "eng-c2-ellipsis-substitution",
         "acceptableAnswers": []
@@ -49310,7 +49716,7 @@
           "does"
         ],
         "answer": "She works harder than he does",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "he does = he works",
         "grammarTopic": "eng-c2-ellipsis-substitution",
         "acceptableAnswers": []
@@ -49327,7 +49733,7 @@
           "so"
         ],
         "answer": "Will it work? I hope so",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "I hope so Ответ: Will it work? I hope so.",
         "grammarTopic": "eng-c2-ellipsis-substitution",
         "acceptableAnswers": []
@@ -49344,7 +49750,7 @@
           "not"
         ],
         "answer": "Are you coming? I'm afraid not",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "I'm afraid not",
         "grammarTopic": "eng-c2-ellipsis-substitution",
         "acceptableAnswers": []
@@ -49362,7 +49768,7 @@
           "I"
         ],
         "answer": "I don't like it. Neither do I",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Neither do I",
         "grammarTopic": "eng-c2-ellipsis-substitution",
         "acceptableAnswers": []
@@ -49378,7 +49784,7 @@
           "do"
         ],
         "answer": "Who wants coffee? I do",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "I do = I want coffee",
         "grammarTopic": "eng-c2-ellipsis-substitution",
         "acceptableAnswers": []
@@ -49396,7 +49802,7 @@
           "red"
         ],
         "answer": "Take the blue one, not the red",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "the red = the red one",
         "grammarTopic": "eng-c2-ellipsis-substitution",
         "acceptableAnswers": []
@@ -49414,7 +49820,7 @@
           "brother"
         ],
         "answer": "She speaks French. So does her brother",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "So does her brother",
         "grammarTopic": "eng-c2-ellipsis-substitution",
         "acceptableAnswers": []
@@ -49432,7 +49838,7 @@
           "mind"
         ],
         "answer": "I'd rather not, if you don't mind",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "I'd rather not",
         "grammarTopic": "eng-c2-ellipsis-substitution",
         "acceptableAnswers": []
@@ -49448,7 +49854,7 @@
           "yet"
         ],
         "answer": "Have you finished? Not yet",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Not yet Ответ: Have you finished? Not yet.",
         "grammarTopic": "eng-c2-ellipsis-substitution",
         "acceptableAnswers": []
@@ -49466,7 +49872,7 @@
           "to"
         ],
         "answer": "Can you help? I'd be glad to",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "I'd be glad to help",
         "grammarTopic": "eng-c2-ellipsis-substitution",
         "acceptableAnswers": []
@@ -49483,7 +49889,7 @@
           "so"
         ],
         "answer": "Will she agree? I expect so",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "I expect so Ответ: Will she agree? I expect so.",
         "grammarTopic": "eng-c2-ellipsis-substitution",
         "acceptableAnswers": []
@@ -49500,7 +49906,7 @@
           "I"
         ],
         "answer": "He runs fast. So do I",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "So do I Ответ: He runs fast. So do I.",
         "grammarTopic": "eng-c2-ellipsis-substitution",
         "acceptableAnswers": []
@@ -49518,7 +49924,7 @@
           "are"
         ],
         "answer": "Pass the salt, please. Here you are",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Short dialogue",
         "grammarTopic": "eng-c2-ellipsis-substitution",
         "acceptableAnswers": []
@@ -50661,7 +51067,7 @@
           "risen"
         ],
         "answer": "It would seem that costs have risen",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "It would seem that…",
         "grammarTopic": "eng-c2-hedging-nuance",
         "acceptableAnswers": []
@@ -50679,7 +51085,7 @@
           "pattern"
         ],
         "answer": "The data tend to suggest a pattern",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "tend to suggest",
         "grammarTopic": "eng-c2-hedging-nuance",
         "acceptableAnswers": []
@@ -50698,7 +51104,7 @@
           "failure"
         ],
         "answer": "I would hesitate to call it a failure",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "would hesitate to…",
         "grammarTopic": "eng-c2-hedging-nuance",
         "acceptableAnswers": []
@@ -50717,7 +51123,7 @@
           "view"
         ],
         "answer": "There is some evidence to support this view",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "some evidence",
         "grammarTopic": "eng-c2-hedging-nuance",
         "acceptableAnswers": []
@@ -50733,7 +51139,7 @@
           "otherwise"
         ],
         "answer": "One might plausibly argue otherwise",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "One might plausibly…",
         "grammarTopic": "eng-c2-hedging-nuance",
         "acceptableAnswers": []
@@ -50751,7 +51157,7 @@
           "certain"
         ],
         "answer": "The outcome is by no means certain",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "by no means certain",
         "grammarTopic": "eng-c2-hedging-nuance",
         "acceptableAnswers": []
@@ -50770,7 +51176,7 @@
           "much"
         ],
         "answer": "It is not unreasonable to assume as much",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "not unreasonable to assume",
         "grammarTopic": "eng-c2-hedging-nuance",
         "acceptableAnswers": []
@@ -50789,7 +51195,7 @@
           "view"
         ],
         "answer": "To a certain extent, I share that view",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "To a certain extent…",
         "grammarTopic": "eng-c2-hedging-nuance",
         "acceptableAnswers": []
@@ -50805,7 +51211,7 @@
           "inconclusive"
         ],
         "answer": "The figures are somewhat inconclusive",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "somewhat inconclusive",
         "grammarTopic": "eng-c2-hedging-nuance",
         "acceptableAnswers": []
@@ -50822,7 +51228,7 @@
           "far"
         ],
         "answer": "I wouldn't go quite that far",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "wouldn't go quite that far",
         "grammarTopic": "eng-c2-hedging-nuance",
         "acceptableAnswers": []
@@ -50841,7 +51247,7 @@
           "wrong"
         ],
         "answer": "It may well be that we were wrong",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "It may well be that…",
         "grammarTopic": "eng-c2-hedging-nuance",
         "acceptableAnswers": []
@@ -50858,7 +51264,7 @@
           "definitive"
         ],
         "answer": "The report is less than definitive",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "less than definitive",
         "grammarTopic": "eng-c2-hedging-nuance",
         "acceptableAnswers": []
@@ -50877,7 +51283,7 @@
           "side"
         ],
         "answer": "One could make a case for either side",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "One could make a case…",
         "grammarTopic": "eng-c2-hedging-nuance",
         "acceptableAnswers": []
@@ -50893,7 +51299,7 @@
           "accurate"
         ],
         "answer": "Strictly speaking, that isn't accurate",
-        "instruction": "Arrange the words",
+        "instruction": "Build the sentence from the words",
         "explanation": "Strictly speaking…",
         "grammarTopic": "eng-c2-hedging-nuance",
         "acceptableAnswers": []
