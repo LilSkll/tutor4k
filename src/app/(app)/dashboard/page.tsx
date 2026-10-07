@@ -16,7 +16,11 @@ import { Badge } from "@/components/ui/badge";
 import { ProgressRing } from "@/components/shared/progress-ring";
 import { StatCard } from "@/components/shared/stat-card";
 import { MascotTip } from "@/components/shared/mascot-tip";
-import { getCurrentProfile, getChapterProgress } from "@/server/actions/data";
+import {
+  getCurrentProfile,
+  getChapterProgress,
+  getDailyActivity,
+} from "@/server/actions/data";
 import { DEFAULT_COURSE_ID, getCourse } from "@/config/courses";
 import { toRoman } from "@/config/chapters";
 import { translate } from "@/lib/i18n";
@@ -44,9 +48,10 @@ export default async function DashboardPage({
     confirmedRaw === "1" ||
     (Array.isArray(confirmedRaw) && confirmedRaw.includes("1"));
 
-  const [profile, progress] = await Promise.all([
+  const [profile, progress, recentActivity] = await Promise.all([
     getCurrentProfile(),
     getChapterProgress(),
+    getDailyActivity(1),
   ]);
 
   const lang = profile?.interface_language ?? "ru";
@@ -194,6 +199,10 @@ export default async function DashboardPage({
       : 0;
   const streak = profile?.streak ?? 0;
   const dailyGoal = profile?.daily_goal_minutes ?? 15;
+  const todayIso = new Date().toISOString().slice(0, 10);
+  const minutesToday =
+    recentActivity.find((row) => row.activity_date === todayIso)
+      ?.minutes_studied ?? 0;
 
   // Stable "word of the day" from course vocab (no AI).
   const dayIndex = Math.floor(Date.now() / 86_400_000);
@@ -272,16 +281,27 @@ export default async function DashboardPage({
                     })}
                   </span>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-2 mt-5">
+                <div className="flex flex-col sm:flex-row sm:flex-wrap gap-2 mt-5">
                   <Button
                     variant="secondary"
                     size="lg"
                     className="w-full sm:w-auto bg-white text-primary hover:bg-white/90 shadow-soft"
                     asChild
                   >
-                    <Link href={`/chapters/${currentChapter.slug}`}>
+                    <Link href="/daily">
                       <Play className="h-4 w-4" />
-                      {t("dashboard.continueLearning")}
+                      {t("daily.start")}
+                    </Link>
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="lg"
+                    className="w-full sm:w-auto text-white hover:bg-white/15 hover:text-white"
+                    asChild
+                  >
+                    <Link href={`/chapters/${currentChapter.slug}`}>
+                      <ArrowRight className="h-4 w-4" />
+                      {t("dashboard.openFullChapter")}
                     </Link>
                   </Button>
                   <Button
@@ -323,11 +343,24 @@ export default async function DashboardPage({
           label={t("dashboard.dailyGoal")}
           value={
             <span className="flex items-center gap-2">
-              <Target className="h-5 w-5 text-primary" />
-              {dailyGoal}
+              <ProgressRing
+                value={minutesToday}
+                max={Math.max(1, dailyGoal)}
+                size={40}
+                strokeWidth={4}
+                indicatorClassName="stroke-primary"
+              >
+                <Target className="h-4 w-4 text-primary" />
+              </ProgressRing>
+              <span className="tabular-nums">
+                {minutesToday}/{dailyGoal}
+              </span>
             </span>
           }
-          footnote={t("dashboard.minutesGoal", { n: dailyGoal })}
+          footnote={t("daily.minutesToday", {
+            minutes: minutesToday,
+            goal: dailyGoal,
+          })}
         />
         <div className="rounded-2xl bg-card shadow-soft p-4 flex items-center gap-3 col-span-2 lg:col-span-1">
           <ProgressRing
