@@ -17,6 +17,10 @@ describe("localizeBankExplanation", () => {
     ).toMatch(/правильн/i);
   });
 
+  it("drops short English replies on RU UI", () => {
+    expect(localizeBankExplanation("So do I", "ru")).toMatch(/правильн/i);
+  });
+
   it("keeps Latin formulas on RU UI", () => {
     expect(localizeBankExplanation("have + been + V3", "ru")).toBe(
       "have + been + V3",

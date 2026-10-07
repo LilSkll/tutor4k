@@ -69,11 +69,16 @@ export type ExpandChapterBankOptions = {
   /** Default `shared` — one finished sentence across all types. Prefer this. */
   contentScope?: "shared" | "per-type";
   /**
-   * After shared expand, fill types that are still empty using per-type
-   * fingerprints (allows same stem as another type). Prefer unique pack
-   * items first; only then fall back to stem-sharing fillers.
+   * After shared expand, raise every type up to this floor from packs.
+   * Pass 1 uses unique shared stems; pass 2 may reuse a stem already taken
+   * by another type, but each finished sentence soft-rescues at most one
+   * additional type (avoids MC+FB+TR triples of the same sentence).
    * Default 0 = do not fill (strict shared).
+   *
+   * `fillEmptyTypesTo` is kept as an alias of this floor.
    */
+  fillTypesBelow?: number;
+  /** @deprecated Prefer `fillTypesBelow` — same behavior. */
   fillEmptyTypesTo?: number;
 };
 
@@ -186,28 +191,51 @@ export function expandChapterBank(
     }
   }
 
-  // Rescue empty enabled types without relaxing shared stems for types
-  // that already have items (keeps alternation clean for populated types).
-  const fillEmptyTo = options?.fillEmptyTypesTo ?? 0;
-  if (fillEmptyTo > 0) {
-    for (const type of types) {
-      if (byType[type].length > 0) continue;
+  // Raise thin/empty types to a floor from packs without creating
+  // MC+FB+TR triples of the same finished sentence.
+  const fillBelow =
+    options?.fillTypesBelow ?? options?.fillEmptyTypesTo ?? 0;
+  if (fillBelow > 0) {
+    /** Shared stems already used once for a soft (stem-sharing) rescue. */
+    const softSharedOnce = new Set<string>();
+
+    // Neediest types first so SB/MC do not consume soft-shares before EC/TR.
+    const rescueOrder = [...types].sort(
+      (a, b) => byType[a].length - byType[b].length,
+    );
+
+    for (const type of rescueOrder) {
+      if (byType[type].length >= fillBelow) continue;
       const pack = packs[type] ?? [];
       const have = new Set(
         byType[type].map((e) => `${e.question.trim().toLowerCase()}`),
       );
+
+      // Pass 1 — unique shared stems only.
       for (const ex of pack) {
-        if (byType[type].length >= fillEmptyTo) break;
+        if (byType[type].length >= fillBelow) break;
+        if (have.has(ex.question.trim().toLowerCase())) continue;
+        if (tryAdd(ex)) {
+          have.add(ex.question.trim().toLowerCase());
+        }
+      }
+
+      // Pass 2 — allow one soft share per finished sentence across types.
+      for (const ex of pack) {
+        if (byType[type].length >= fillBelow) break;
         if (have.has(ex.question.trim().toLowerCase())) continue;
         const cleaned = sanitizeBankExercise(ex);
         if (!cleaned || !packItemOk(cleaned)) continue;
         const exact = `${cleaned.type}|${cleaned.question.trim().toLowerCase()}`;
         if (seenExact.has(exact)) continue;
-        // Per-type fingerprint only — may share finished sentence with another type.
-        const content = exerciseContentFingerprint(cleaned, "per-type");
-        if (!content.endsWith("|") && seenContent.has(content)) continue;
+        const shared = exerciseContentFingerprint(cleaned, "shared");
+        if (!shared.endsWith("|")) {
+          if (softSharedOnce.has(shared)) continue;
+          // Only soft-share stems that are already taken; free stems belong in pass 1.
+          if (!seenContent.has(shared)) continue;
+          softSharedOnce.add(shared);
+        }
         seenExact.add(exact);
-        if (!content.endsWith("|")) seenContent.add(content);
         byType[type].push(cleaned);
         have.add(cleaned.question.trim().toLowerCase());
       }

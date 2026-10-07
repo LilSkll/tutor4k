@@ -32,10 +32,10 @@ export function expandEnglishChapterBank(
         }
       : undefined;
   // Shared finished-sentence fingerprints across types.
-  // fillEmptyTypesTo: if a type would be completely empty, allow a small
-  // per-type rescue from packs (session still dedupes stems in a round).
+  // fillTypesBelow: raise thin/empty types to a usable floor; soft-share
+  // a stem with at most one extra type (session still dedupes in a round).
   return expandChapterBank(curated, PACKS[chapterSlug] ?? {}, typeTargets, {
     contentScope: "shared",
-    fillEmptyTypesTo: 8,
+    fillTypesBelow: 8,
   });
 }

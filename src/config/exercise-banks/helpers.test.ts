@@ -113,4 +113,41 @@ describe("expandChapterBank", () => {
     expect(out).toHaveLength(1);
     expect(out[0].type).toBe("translation");
   });
+
+  it("soft-rescues at most one extra type per shared stem", () => {
+    const tr = {
+      type: "translation" as const,
+      question: "В определённой степени я согласен с этим.",
+      answer: "To some extent, I agree with this",
+      instruction: "Translate into English",
+      explanation: "partial agreement",
+    };
+    const mc = {
+      type: "multiple_choice" as const,
+      question: "To ___ extent, I agree with this.",
+      options: ["many", "any", "some", "much"],
+      answer: "some",
+      instruction: "Choose correct option",
+      explanation: "partial agreement",
+    };
+    const fb = {
+      type: "fill_blank" as const,
+      question: "To ___ extent, I agree with this.",
+      answer: "some",
+      instruction: "Complete this gap",
+      explanation: "partial agreement",
+    };
+    const out = expandChapterBank([tr], {
+      multiple_choice: [mc],
+      fill_blank: [fb],
+    }, undefined, { contentScope: "shared", fillTypesBelow: 8 });
+    const sameStem = out.filter(
+      (e) =>
+        exerciseContentFingerprint(e) ===
+        "stem|to some extent i agree with this",
+    );
+    // TR keeps the stem; at most one of MC/FB may soft-share it.
+    expect(sameStem.length).toBeLessThanOrEqual(2);
+    expect(sameStem.some((e) => e.type === "translation")).toBe(true);
+  });
 });

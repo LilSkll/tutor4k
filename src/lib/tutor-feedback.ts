@@ -88,12 +88,12 @@ export function localizeBankExplanation(
   const fallback = EXPLANATION_FALLBACK[language] ?? EXPLANATION_FALLBACK.en;
   const hasFormula = /[→+]/.test(trimmed);
 
-  // RU UI + Latin-only English bank gloss ("prepositions of place: word order")
-  // → drop unless it looks like a tense/construction formula.
+  // RU UI + Latin-only English bank gloss ("prepositions of place: word order",
+  // "So do I") → drop unless it looks like a tense/construction formula.
   if (language === "ru" && !CYRILLIC.test(trimmed)) {
     if (hasFormula) return trimmed;
     const words = trimmed.split(/\s+/).filter(Boolean);
-    if (words.length >= 3 && /[a-z]{3,}/i.test(trimmed)) {
+    if (words.length >= 2 && /[A-Za-z]/.test(trimmed)) {
       return fallback;
     }
     return trimmed;

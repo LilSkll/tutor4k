@@ -278,8 +278,10 @@ function thickenChapter(byType) {
   for (const s of sentences) {
     const blank = pickBlank(s.sentence);
     if (blank && !usedQ.has(blank.question.toLowerCase())) {
-      usedQ.add(blank.question.toLowerCase());
-      if (mc.length < mcNeed) {
+      // Prefer the needier type so MC and FB do not share the same blank stem.
+      const preferMc = mcNeed - mc.length >= fbNeed - fb.length;
+      if (preferMc && mc.length < mcNeed) {
+        usedQ.add(blank.question.toLowerCase());
         mc.push({
           type: "multiple_choice",
           question: blank.question,
@@ -289,8 +291,8 @@ function thickenChapter(byType) {
           explanation: s.explanation || `Elige «${blank.answer}».`,
           grammarTopic: s.grammarTopic,
         });
-      }
-      if (fb.length < fbNeed) {
+      } else if (fb.length < fbNeed) {
+        usedQ.add(blank.question.toLowerCase());
         fb.push({
           type: "fill_blank",
           question: blank.question,

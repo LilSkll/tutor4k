@@ -33,6 +33,6 @@ export function expandSpanishChapterBank(
       : undefined;
   return expandChapterBank(curated, PACKS[chapterSlug] ?? {}, typeTargets, {
     contentScope: "shared",
-    fillEmptyTypesTo: 8,
+    fillTypesBelow: 8,
   });
 }
