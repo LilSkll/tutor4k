@@ -104,8 +104,16 @@ export async function getDailySessionPlanAction(): Promise<DailySessionPlan | nu
 /** Record that the student finished today's Continue Path (~8 minutes). */
 export async function completeDailySessionAction(input?: {
   minutes?: number;
-}): Promise<{ error: string | null }> {
+}): Promise<{
+  error: string | null;
+  streak?: number;
+  minutesToday?: number;
+}> {
   const minutes = Math.max(1, Math.min(30, Math.round(input?.minutes ?? 8)));
   const result = await recordStudySession(minutes, 1);
-  return { error: result.error ?? null };
+  return {
+    error: result.error ?? null,
+    streak: result.streak,
+    minutesToday: result.minutesToday,
+  };
 }

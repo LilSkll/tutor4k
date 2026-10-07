@@ -100,7 +100,14 @@ export async function getDailyActivity(days = 30): Promise<DailyActivityRow[]> {
  * so progress is never lost due to a stale session cookie in an API
  * route). Falls back to the user client if the service key is absent.
  */
-export async function recordStudySession(minutes: number, lessons = 1) {
+export async function recordStudySession(
+  minutes: number,
+  lessons = 1,
+): Promise<{
+  error: string | null;
+  streak?: number;
+  minutesToday?: number;
+}> {
   // Authenticate via the user's session (verifies identity).
   const userClient = await createSupabaseServerClient();
   const {
@@ -126,6 +133,7 @@ export async function recordStudySession(minutes: number, lessons = 1) {
 
   const prevLessons = (existing?.lessons_completed as number) ?? 0;
   const prevMinutes = (existing?.minutes_studied as number) ?? 0;
+  const minutesToday = prevMinutes + minutes;
 
   // Upsert with accumulated totals.
   const { error: upsertError } = await writeClient
@@ -135,7 +143,7 @@ export async function recordStudySession(minutes: number, lessons = 1) {
         user_id: user.id,
         activity_date: today,
         lessons_completed: prevLessons + lessons,
-        minutes_studied: prevMinutes + minutes,
+        minutes_studied: minutesToday,
       },
       { onConflict: "user_id,activity_date" },
     );
@@ -152,9 +160,10 @@ export async function recordStudySession(minutes: number, lessons = 1) {
     .eq("id", user.id)
     .single();
 
+  let streak = (profile?.streak as number) ?? 0;
+
   if (profile) {
     const last = (profile.last_active_date as string) ?? null;
-    let streak = (profile.streak as number) ?? 0;
 
     if (last !== today) {
       const yesterday = new Date();
@@ -169,7 +178,7 @@ export async function recordStudySession(minutes: number, lessons = 1) {
     }
   }
 
-  return { error: null };
+  return { error: null, streak, minutesToday };
 }
 
 // =====================================================================

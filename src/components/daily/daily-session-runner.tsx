@@ -6,6 +6,7 @@ import {
   ArrowRight,
   Check,
   CheckCircle2,
+  Flame,
   Loader2,
   MessageSquare,
   Sparkles,
@@ -16,6 +17,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Markdown } from "@/components/shared/markdown";
 import { BackLink } from "@/components/shared/back-link";
+import { StreakStampCard } from "@/components/shared/streak-stamp-card";
 import { QuestionWithGloss } from "@/components/exercises/question-with-gloss";
 import { ExerciseFreeTextBlock } from "@/components/exercises/exercise-free-text-block";
 import { SentenceBuildingBlock } from "@/components/exercises/sentence-building-block";
@@ -66,6 +68,10 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
   );
   const [dialogueInput, setDialogueInput] = React.useState("");
   const [finishError, setFinishError] = React.useState<string | null>(null);
+  const [doneStreak, setDoneStreak] = React.useState<number | null>(null);
+  const [doneMinutesToday, setDoneMinutesToday] = React.useState<number | null>(
+    null,
+  );
   const askInFlight = React.useRef(false);
 
   const phaseOrder: Phase[] = hasReview
@@ -221,11 +227,13 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
     setLoading(true);
     setFinishError(null);
     try {
-      const { error } = await completeDailySessionAction({ minutes: 8 });
-      if (error) {
-        setFinishError(error);
+      const result = await completeDailySessionAction({ minutes: 8 });
+      if (result.error) {
+        setFinishError(result.error);
         return;
       }
+      setDoneStreak(result.streak ?? null);
+      setDoneMinutesToday(result.minutesToday ?? null);
       setPhase("done");
     } catch {
       setFinishError(t("daily.finishError"));
@@ -259,6 +267,19 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
                 })}
               </li>
               <li>{t("daily.summaryMinutes", { minutes: 8 })}</li>
+              {doneMinutesToday != null ? (
+                <li>
+                  {t("daily.summaryMinutesToday", {
+                    minutes: doneMinutesToday,
+                  })}
+                </li>
+              ) : null}
+              {doneStreak != null && doneStreak > 0 ? (
+                <li className="flex items-center gap-1.5 text-orange-600 dark:text-orange-400">
+                  <Flame className="h-3.5 w-3.5 shrink-0" />
+                  {t("daily.summaryStreak", { streak: doneStreak })}
+                </li>
+              ) : null}
               {plan.recommendationLabel ? (
                 <li>
                   {t("daily.summaryFocus", {
@@ -267,16 +288,22 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
                 </li>
               ) : null}
             </ul>
-            <div className="flex flex-col sm:flex-row gap-2">
-              <Button variant="gradient" className="w-full" asChild>
-                <Link href={`/chapters/${plan.chapterSlug}`}>
-                  <ArrowRight className="h-4 w-4" />
-                  {t("daily.openChapter")}
-                </Link>
-              </Button>
-              <Button variant="outline" className="w-full" asChild>
-                <Link href="/dashboard">{t("daily.backDashboard")}</Link>
-              </Button>
+            {doneStreak != null ? (
+              <StreakStampCard streak={doneStreak} />
+            ) : null}
+            <div className="space-y-2">
+              <p className="meta-label">{t("daily.nextStepLabel")}</p>
+              <div className="flex flex-col sm:flex-row gap-2">
+                <Button variant="gradient" className="w-full" asChild>
+                  <Link href={`/chapters/${plan.chapterSlug}`}>
+                    <ArrowRight className="h-4 w-4" />
+                    {t("daily.nextStepChapter")}
+                  </Link>
+                </Button>
+                <Button variant="outline" className="w-full" asChild>
+                  <Link href="/dashboard">{t("daily.backDashboard")}</Link>
+                </Button>
+              </div>
             </div>
           </CardContent>
         </Card>

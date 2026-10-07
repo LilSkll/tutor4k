@@ -21,9 +21,13 @@ import {
   getChapterProgress,
   getDailyActivity,
 } from "@/server/actions/data";
+import { getStudentLearningProfileAction } from "@/server/actions/learning-profile";
+import { planLessonAdaptation } from "@/server/learning/adaptive";
 import { DEFAULT_COURSE_ID, getCourse } from "@/config/courses";
 import { toRoman } from "@/config/chapters";
 import { translate } from "@/lib/i18n";
+import { resolveCourseTopicLabel } from "@/lib/course-topic-label";
+import { summarizeRecentActivity } from "@/lib/retention-stats";
 import { getWordGloss } from "@/lib/vocab-display";
 import {
   countCompletedForCourse,
@@ -36,6 +40,7 @@ import {
 import { createSupabaseServerClient } from "@/lib/supabase-server";
 import { Suspense } from "react";
 import { EmailConfirmedBanner } from "@/components/auth/email-confirmed-banner";
+import { StreakStampCard } from "@/components/shared/streak-stamp-card";
 
 export default async function DashboardPage({
   searchParams,
@@ -51,7 +56,7 @@ export default async function DashboardPage({
   const [profile, progress, recentActivity] = await Promise.all([
     getCurrentProfile(),
     getChapterProgress(),
-    getDailyActivity(1),
+    getDailyActivity(7),
   ]);
 
   const lang = profile?.interface_language ?? "ru";
@@ -203,6 +208,26 @@ export default async function DashboardPage({
   const minutesToday =
     recentActivity.find((row) => row.activity_date === todayIso)
       ?.minutes_studied ?? 0;
+  const weekSummary = summarizeRecentActivity(recentActivity, 7);
+
+  const { profile: learningProfile } = await getStudentLearningProfileAction(
+    courseId,
+  );
+  const adaptation = planLessonAdaptation(
+    learningProfile,
+    currentChapter.grammarTopic,
+    currentChapter.vocabTopic,
+  );
+  const reviewRec =
+    adaptation.revisionTopics.find(
+      (r) => r.reason === "stale_topic" || r.reason === "forgetting",
+    ) ?? adaptation.revisionTopics[0];
+  const reviewTopicLabel = resolveCourseTopicLabel(
+    reviewRec?.topic,
+    course,
+    lang,
+    courseId,
+  );
 
   // Stable "word of the day" from course vocab (no AI).
   const dayIndex = Math.floor(Date.now() / 86_400_000);
@@ -216,9 +241,11 @@ export default async function DashboardPage({
     : "";
 
   const motivation =
-    streak > 0
-      ? t("dashboard.motivationStreak", { streak })
-      : t("dashboard.motivationStart");
+    streak > 0 && minutesToday === 0
+      ? t("dashboard.streakProtect", { streak })
+      : streak > 0
+        ? t("dashboard.motivationStreak", { streak })
+        : t("dashboard.motivationStart");
 
   return (
     <div className="page-container space-y-6 md:space-y-8">
@@ -316,11 +343,31 @@ export default async function DashboardPage({
                     </Link>
                   </Button>
                 </div>
+                {streak > 0 && minutesToday === 0 ? (
+                  <p className="mt-3 flex items-center gap-1.5 text-sm text-white/85">
+                    <Flame className="h-3.5 w-3.5 shrink-0" />
+                    {t("dashboard.streakProtect", { streak })}
+                  </p>
+                ) : null}
               </div>
             </div>
           </div>
         </Card>
+
+        {reviewTopicLabel ? (
+          <p className="text-sm text-muted-foreground px-0.5">
+            {t("dashboard.reviewInTwoDays", { topic: reviewTopicLabel })}{" "}
+            <Link
+              href="/daily"
+              className="font-medium text-primary underline-offset-2 hover:underline"
+            >
+              {t("dashboard.reviewInTwoDaysCta")}
+            </Link>
+          </p>
+        ) : null}
       </section>
+
+      {streak >= 7 ? <StreakStampCard streak={streak} /> : null}
 
       {/* Stats row */}
       <section className="grid grid-cols-2 lg:grid-cols-4 gap-3">
@@ -375,7 +422,7 @@ export default async function DashboardPage({
             </span>
           </ProgressRing>
           <div className="min-w-0">
-            <p className="meta-label mb-0.5">{t("dashboard.weeklyProgress")}</p>
+            <p className="meta-label mb-0.5">{t("dashboard.courseProgressShort")}</p>
             <p className="text-sm font-semibold tabular-nums">
               {totalCompleted}/{totalChapters}
             </p>
@@ -385,6 +432,29 @@ export default async function DashboardPage({
           </div>
         </div>
       </section>
+
+      {/* This week */}
+      <Card>
+        <CardContent className="p-4 sm:p-5 space-y-3">
+          <div className="flex items-center justify-between gap-3">
+            <div>
+              <h2 className="section-title">{t("dashboard.thisWeekTitle")}</h2>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                {t("dashboard.thisWeekSubtitle", {
+                  days: weekSummary.activeDays,
+                  minutes: weekSummary.minutes,
+                })}
+              </p>
+            </div>
+            <span className="text-sm font-semibold tabular-nums text-primary">
+              {weekSummary.activeDays}/7
+            </span>
+          </div>
+          <Progress
+            value={Math.min(100, Math.round((weekSummary.activeDays / 7) * 100))}
+          />
+        </CardContent>
+      </Card>
 
       {/* Course progress bar */}
       <Card>
