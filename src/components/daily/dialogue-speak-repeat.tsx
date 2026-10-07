@@ -27,24 +27,14 @@ export function DialogueSpeakRepeat() {
   const startingRef = React.useRef(false);
   const mountedRef = React.useRef(true);
 
-  const cleanupStream = React.useCallback(() => {
+  const releaseMic = React.useCallback(() => {
     if (timerRef.current != null) {
       window.clearTimeout(timerRef.current);
       timerRef.current = null;
     }
-    const rec = recorderRef.current;
-    recorderRef.current = null;
-    if (rec && rec.state !== "inactive") {
-      try {
-        rec.ondataavailable = null;
-        rec.onstop = null;
-        rec.stop();
-      } catch {
-        // already stopped
-      }
-    }
     streamRef.current?.getTracks().forEach((tr) => tr.stop());
     streamRef.current = null;
+    recorderRef.current = null;
     startingRef.current = false;
     if (mountedRef.current) setStarting(false);
   }, []);
@@ -60,19 +50,30 @@ export function DialogueSpeakRepeat() {
     }
     return () => {
       mountedRef.current = false;
-      cleanupStream();
+      const rec = recorderRef.current;
+      if (rec && rec.state !== "inactive") {
+        try {
+          rec.ondataavailable = null;
+          rec.onstop = null;
+          rec.stop();
+        } catch {
+          // already stopped
+        }
+      }
+      releaseMic();
     };
-  }, [cleanupStream]);
+  }, [releaseMic]);
 
   const finishOk = React.useCallback(() => {
-    cleanupStream();
+    releaseMic();
     if (mountedRef.current) setPhase("done");
-  }, [cleanupStream]);
+  }, [releaseMic]);
 
   const stopRecording = React.useCallback(() => {
     const rec = recorderRef.current;
     if (rec && rec.state !== "inactive") {
       try {
+        // Let onstop → finishOk release the mic (don't clear handlers first).
         rec.stop();
       } catch {
         finishOk();
@@ -124,7 +125,7 @@ export function DialogueSpeakRepeat() {
       setStarting(false);
       timerRef.current = window.setTimeout(() => stopRecording(), MAX_MS);
     } catch {
-      cleanupStream();
+      releaseMic();
       if (mountedRef.current) setPhase("denied");
     }
   };

@@ -73,6 +73,8 @@ export async function getLessonAdaptationAction(input: {
 }): Promise<{
   adaptation: LessonAdaptation;
   revisionExercises: StaticExercise[];
+  /** Same profile used for adaptation — reuse to avoid a second load. */
+  profile: StudentCourseProfile;
 }> {
   const profile = await getCourseLearningProfile(input.courseId);
   const adaptation = planLessonAdaptation(
@@ -143,6 +145,7 @@ export async function getLessonAdaptationAction(input: {
       revisionExercises,
       input.courseId,
     ),
+    profile,
   };
 }
 

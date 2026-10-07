@@ -33,6 +33,7 @@ export function WeekPostcardCard({
   const [previewUrl, setPreviewUrl] = React.useState<string | null>(null);
   const [busy, setBusy] = React.useState(false);
   const [open, setOpen] = React.useState(false);
+  const previewRef = React.useRef<string | null>(null);
 
   const fields = React.useMemo(() => {
     const tr = (key: string, vars?: Record<string, string | number>) =>
@@ -47,12 +48,19 @@ export function WeekPostcardCard({
     };
   }, [activeDays, minutes, tip, language]);
 
+  // Drop cached image when stats/language change so share/download stay accurate.
+  React.useEffect(() => {
+    previewRef.current = null;
+    setPreviewUrl(null);
+  }, [fields]);
+
   const ensurePreview = React.useCallback(() => {
-    if (previewUrl) return previewUrl;
+    if (previewRef.current) return previewRef.current;
     const url = fillWeekPostcard(fields);
+    previewRef.current = url;
     setPreviewUrl(url);
     return url;
-  }, [fields, previewUrl]);
+  }, [fields]);
 
   const reveal = () => {
     setBusy(true);

@@ -14,7 +14,6 @@ import {
   recordStudySession,
 } from "@/server/actions/data";
 import { getLessonAdaptationAction } from "@/server/actions/learning-profile";
-import { getCourseLearningProfile } from "@/server/learning/student-profile";
 import { pickStrengthTopicSlug } from "@/lib/daily-personalization";
 import { parseLocalDateKey, previousDateKey } from "@/lib/local-date";
 import type { GrammarLevel, InterfaceLanguage, StaticExercise } from "@/types";
@@ -63,12 +62,13 @@ export async function getDailySessionPlanAction(): Promise<DailySessionPlan | nu
   const chapter = course.getChapter(chapterSlug);
   if (!chapter) return null;
 
-  const { adaptation, revisionExercises } = await getLessonAdaptationAction({
-    courseId,
-    grammarTopic: chapter.grammarTopic,
-    vocabTopic: chapter.vocabTopic,
-    chapterSlug,
-  });
+  const { adaptation, revisionExercises, profile: learningProfile } =
+    await getLessonAdaptationAction({
+      courseId,
+      grammarTopic: chapter.grammarTopic,
+      vocabTopic: chapter.vocabTopic,
+      chapterSlug,
+    });
 
   const { reviewExercises, practiceExercises } = buildDailyExerciseBlocks({
     revisionExercises,
@@ -88,7 +88,6 @@ export async function getDailySessionPlanAction(): Promise<DailySessionPlan | nu
     courseId,
   );
 
-  const learningProfile = await getCourseLearningProfile(courseId);
   const strengthLabel = resolveCourseTopicLabel(
     pickStrengthTopicSlug(learningProfile, weakTopicSlug),
     course,
