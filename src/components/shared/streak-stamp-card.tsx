@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { translate } from "@/lib/i18n";
+import { streakRewardKey } from "@/lib/streak-reward";
 
 type StreakStampCardProps = {
   streak: number;
@@ -22,6 +23,7 @@ export function StreakStampCard({ streak, className }: StreakStampCardProps) {
 
   if (streak < 7) return null;
 
+  const rewardKey = streakRewardKey(streak);
   const shareText = t("dashboard.streakStampShare", { streak });
 
   const share = async () => {
@@ -58,6 +60,11 @@ export function StreakStampCard({ streak, className }: StreakStampCardProps) {
           <p className="text-base font-semibold tracking-tight">
             {t("dashboard.streakStampTitle", { streak })}
           </p>
+          {rewardKey ? (
+            <p className="text-sm font-medium text-orange-700 dark:text-orange-300">
+              {t(rewardKey)}
+            </p>
+          ) : null}
           <p className="text-sm text-muted-foreground">
             {t("dashboard.streakStampBody")}
           </p>

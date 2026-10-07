@@ -343,8 +343,13 @@ export default async function DashboardPage({
                     </Link>
                   </Button>
                 </div>
+                {reviewTopicLabel ? (
+                  <p className="mt-3 text-sm text-white/85">
+                    {t("daily.recommendation", { topic: reviewTopicLabel })}
+                  </p>
+                ) : null}
                 {streak > 0 && minutesToday === 0 ? (
-                  <p className="mt-3 flex items-center gap-1.5 text-sm text-white/85">
+                  <p className="mt-2 flex items-center gap-1.5 text-sm text-white/85">
                     <Flame className="h-3.5 w-3.5 shrink-0" />
                     {t("dashboard.streakProtect", { streak })}
                   </p>

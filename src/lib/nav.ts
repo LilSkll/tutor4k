@@ -9,6 +9,7 @@ import {
   LayoutDashboard,
   MessageSquare,
   Settings,
+  Timer,
   TrendingUp,
   Map,
   Stamp,
@@ -40,6 +41,7 @@ export const NAV_SECTIONS: NavSection[] = [
     id: "learning",
     labelKey: "nav.section.learning",
     items: [
+      { href: "/daily", labelKey: "nav.daily", icon: Timer },
       { href: "/chapters", labelKey: "nav.chapters", icon: Map },
       { href: "/tutor", labelKey: "nav.tutor", icon: MessageSquare },
       { href: "/grammar", labelKey: "nav.grammar", icon: BookOpen },

@@ -37,6 +37,10 @@ import {
   courseSpeechLang,
   speakText,
 } from "@/lib/speak-text";
+import {
+  isExactStreakMilestone,
+  streakRewardKey,
+} from "@/lib/streak-reward";
 import type { StaticExercise } from "@/types";
 
 type Phase = "review" | "practice" | "dialogue" | "done";
@@ -78,6 +82,9 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
   const [doneMinutesToday, setDoneMinutesToday] = React.useState<number | null>(
     null,
   );
+  const [doneMinutesYesterday, setDoneMinutesYesterday] = React.useState<
+    number | null
+  >(null);
   const [speechSupported, setSpeechSupported] = React.useState(false);
   const [speaking, setSpeaking] = React.useState(false);
   const askInFlight = React.useRef(false);
@@ -251,6 +258,7 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
       }
       setDoneStreak(result.streak ?? null);
       setDoneMinutesToday(result.minutesToday ?? null);
+      setDoneMinutesYesterday(result.minutesYesterday ?? null);
       setPhase("done");
     } catch {
       setFinishError(t("daily.finishError"));
@@ -260,6 +268,11 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
   };
 
   if (phase === "done") {
+    const milestoneKey =
+      doneStreak != null && isExactStreakMilestone(doneStreak)
+        ? streakRewardKey(doneStreak)
+        : null;
+
     return (
       <div className="max-w-2xl mx-auto py-6 space-y-6">
         <BackLink href="/dashboard" />
@@ -291,10 +304,22 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
                   })}
                 </li>
               ) : null}
+              {doneMinutesYesterday != null ? (
+                <li>
+                  {t("daily.summaryMinutesYesterday", {
+                    minutes: doneMinutesYesterday,
+                  })}
+                </li>
+              ) : null}
               {doneStreak != null && doneStreak > 0 ? (
                 <li className="flex items-center gap-1.5 text-orange-600 dark:text-orange-400">
                   <Flame className="h-3.5 w-3.5 shrink-0" />
                   {t("daily.summaryStreak", { streak: doneStreak })}
+                </li>
+              ) : null}
+              {milestoneKey ? (
+                <li className="font-medium text-foreground">
+                  {t(milestoneKey)}
                 </li>
               ) : null}
               {plan.recommendationLabel ? (

@@ -10,6 +10,7 @@ import { prepareExercisesForSession } from "@/lib/exercise-options";
 import {
   getCurrentChapterSlug,
   getCurrentProfile,
+  getDailyActivity,
   recordStudySession,
 } from "@/server/actions/data";
 import { getLessonAdaptationAction } from "@/server/actions/learning-profile";
@@ -108,12 +109,26 @@ export async function completeDailySessionAction(input?: {
   error: string | null;
   streak?: number;
   minutesToday?: number;
+  minutesYesterday?: number;
 }> {
   const minutes = Math.max(1, Math.min(30, Math.round(input?.minutes ?? 8)));
   const result = await recordStudySession(minutes, 1);
+  if (result.error) {
+    return { error: result.error };
+  }
+
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+  const yesterdayKey = yesterday.toISOString().slice(0, 10);
+  const recent = await getDailyActivity(2);
+  const minutesYesterday =
+    recent.find((row) => row.activity_date === yesterdayKey)
+      ?.minutes_studied ?? 0;
+
   return {
-    error: result.error ?? null,
+    error: null,
     streak: result.streak,
     minutesToday: result.minutesToday,
+    minutesYesterday,
   };
 }
