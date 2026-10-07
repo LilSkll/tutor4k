@@ -350,7 +350,10 @@ export default async function DashboardPage({
                 </div>
                 {reviewTopicLabel ? (
                   <p className="mt-3 text-sm text-white/85">
-                    {t("daily.recommendation", { topic: reviewTopicLabel })}
+                    {t("daily.whyTodayWeak", {
+                      weak: reviewTopicLabel,
+                      chapter: getChapterTitle(currentChapter, lang),
+                    })}
                   </p>
                 ) : null}
                 {streak > 0 && minutesToday === 0 ? (

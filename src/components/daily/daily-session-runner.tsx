@@ -86,10 +86,22 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
   const [doneMinutesYesterday, setDoneMinutesYesterday] = React.useState<
     number | null
   >(null);
+  /** Last wrong answer this session — shown once on Done (UI language wrapper). */
+  const [microMemory, setMicroMemory] = React.useState<{
+    wrong: string;
+    right: string;
+  } | null>(null);
   const [speechSupported, setSpeechSupported] = React.useState(false);
   const [speaking, setSpeaking] = React.useState(false);
   const askInFlight = React.useRef(false);
   const speechStopRef = React.useRef<(() => void) | null>(null);
+
+  const rememberMistake = (wrong: string, right: string) => {
+    const w = wrong.trim();
+    const r = right.trim();
+    if (!w || !r) return;
+    setMicroMemory({ wrong: w, right: r });
+  };
 
   React.useEffect(() => {
     setSpeechSupported(canUseSpeechSynthesis());
@@ -131,7 +143,11 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
     if (!needsSoftCheck) {
       setResult(local);
       setExercisesCompleted((n) => n + 1);
-      if (local.correct) setScore((s) => s + 1);
+      if (local.correct) {
+        setScore((s) => s + 1);
+      } else {
+        rememberMistake(answer, ex.answer);
+      }
       void fetch("/api/exercises/check", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -186,10 +202,15 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
         : local;
       setResult(data);
       setExercisesCompleted((n) => n + 1);
-      if (data.correct) setScore((s) => s + 1);
+      if (data.correct) {
+        setScore((s) => s + 1);
+      } else {
+        rememberMistake(answer, ex.answer);
+      }
     } catch {
       setResult(local);
       setExercisesCompleted((n) => n + 1);
+      if (!local.correct) rememberMistake(answer, ex.answer);
     } finally {
       setLoading(false);
     }
@@ -333,7 +354,30 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
                   })}
                 </li>
               ) : null}
+              {plan.strengthLabel && plan.recommendationLabel ? (
+                <li>
+                  {t("daily.balanceLine", {
+                    strong: plan.strengthLabel,
+                    weak: plan.recommendationLabel,
+                  })}
+                </li>
+              ) : null}
             </ul>
+            {microMemory ? (
+              <div className="rounded-xl border bg-muted/40 p-3 space-y-1">
+                <p className="meta-label">{t("daily.memoryLabel")}</p>
+                <p className="text-sm text-foreground">
+                  {t("daily.memoryLine", {
+                    wrong: microMemory.wrong,
+                    right: microMemory.right,
+                  })}
+                </p>
+              </div>
+            ) : exercisesCompleted > 0 && score === exercisesCompleted ? (
+              <p className="text-sm text-muted-foreground">
+                {t("daily.memoryPerfect")}
+              </p>
+            ) : null}
             {doneStreak != null ? (
               <StreakStampCard streak={doneStreak} />
             ) : null}

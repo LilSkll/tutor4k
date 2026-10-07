@@ -14,6 +14,8 @@ import {
   recordStudySession,
 } from "@/server/actions/data";
 import { getLessonAdaptationAction } from "@/server/actions/learning-profile";
+import { getCourseLearningProfile } from "@/server/learning/student-profile";
+import { pickStrengthTopicSlug } from "@/lib/daily-personalization";
 import { parseLocalDateKey, previousDateKey } from "@/lib/local-date";
 import type { GrammarLevel, InterfaceLanguage, StaticExercise } from "@/types";
 
@@ -24,7 +26,10 @@ export type DailySessionPlan = {
   topicTitle: string;
   grammarTopicSlug: string;
   level: string;
+  /** Localized weak-topic label for UI copy (interface language). */
   recommendationLabel: string | null;
+  /** Localized strength-topic label for balance line (interface language). */
+  strengthLabel: string | null;
   reviewExercises: StaticExercise[];
   practiceExercises: StaticExercise[];
 };
@@ -75,8 +80,17 @@ export async function getDailySessionPlanAction(): Promise<DailySessionPlan | nu
     level: chapter.level as GrammarLevel,
   });
 
+  const weakTopicSlug = adaptation.revisionTopics[0]?.topic ?? null;
   const recommendationLabel = resolveCourseTopicLabel(
-    adaptation.revisionTopics[0]?.topic,
+    weakTopicSlug,
+    course,
+    language,
+    courseId,
+  );
+
+  const learningProfile = await getCourseLearningProfile(courseId);
+  const strengthLabel = resolveCourseTopicLabel(
+    pickStrengthTopicSlug(learningProfile, weakTopicSlug),
     course,
     language,
     courseId,
@@ -98,6 +112,7 @@ export async function getDailySessionPlanAction(): Promise<DailySessionPlan | nu
     grammarTopicSlug: chapter.grammarTopic,
     level: chapter.level,
     recommendationLabel,
+    strengthLabel,
     reviewExercises,
     practiceExercises,
   };
