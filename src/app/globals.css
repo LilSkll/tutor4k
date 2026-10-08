@@ -344,6 +344,32 @@ html[data-season="halloween"] {
   --shadow-brand: 0 8px 24px hsl(25 90% 45% / 0.28);
 }
 
+/* Soft atmospheric wash on app main — CSS only, no images / layout shift */
+html[data-season="halloween"] main {
+  background-image:
+    radial-gradient(
+      ellipse 90% 55% at 100% -8%,
+      hsl(25 95% 48% / 0.14),
+      transparent 58%
+    ),
+    radial-gradient(
+      ellipse 70% 45% at -5% 105%,
+      hsl(275 45% 35% / 0.1),
+      transparent 52%
+    );
+  background-repeat: no-repeat;
+  background-attachment: local;
+}
+
+/* Tiny pumpkin accent on dashboard Halloween card only */
+.hw-pumpkin-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50% 50% 45% 45%;
+  background: radial-gradient(circle at 35% 35%, #fb923c, #c2410c 70%);
+  box-shadow: 0 -2px 0 -1px #166534;
+}
+
 .hw-witch-hat {
   width: 18px;
   height: 14px;

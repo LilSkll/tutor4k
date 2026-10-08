@@ -68,6 +68,13 @@ export function getSeasonalTheme(date = new Date()): SeasonalTheme {
 export const HALLOWEEN_EGG_ID = "seasonal-halloween-pumpkin-streak";
 export const HALLOWEEN_DAILY_STREAK_TARGET = 5;
 
+/** Courses that participate in the Halloween event. */
+export function isHalloweenCourse(
+  courseId: string | null | undefined,
+): boolean {
+  return courseId === "spanish" || courseId === "english";
+}
+
 /** How many consecutive calendar days ending at `todayKey` are present in `dates`. */
 export function countConsecutiveSeasonalDays(
   dates: Iterable<string>,

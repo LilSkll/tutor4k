@@ -1,4 +1,5 @@
 import { seededShuffle } from "@/lib/exercise-bank";
+import { HALLOWEEN_EXERCISES_ENGLISH } from "@/config/halloween-exercises-english";
 import type { StaticExercise } from "@/types";
 
 /**
@@ -219,6 +220,15 @@ export const HALLOWEEN_EXERCISES: StaticExercise[] = [
     vocabTopic: "a2-halloween",
   },
 ];
+
+/** Seasonal pool for the active course (empty = no mix). */
+export function getHalloweenExercisesForCourse(
+  courseId: string,
+): StaticExercise[] {
+  if (courseId === "spanish") return HALLOWEEN_EXERCISES;
+  if (courseId === "english") return HALLOWEEN_EXERCISES_ENGLISH;
+  return [];
+}
 
 /** Slot Halloween items into Daily practice (keep total length). */
 export function mixHalloweenPractice(

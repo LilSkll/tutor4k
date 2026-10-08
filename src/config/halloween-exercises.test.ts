@@ -1,8 +1,10 @@
 import { describe, expect, it } from "vitest";
 import {
   HALLOWEEN_EXERCISES,
+  getHalloweenExercisesForCourse,
   mixHalloweenPractice,
 } from "@/config/halloween-exercises";
+import { HALLOWEEN_EXERCISES_ENGLISH } from "@/config/halloween-exercises-english";
 import { prepareExercisesForInterface } from "@/lib/exercise-localize";
 import { sanitizeBankExercise } from "@/lib/exercise-quality";
 import type { StaticExercise } from "@/types";
@@ -63,6 +65,58 @@ describe("HALLOWEEN_EXERCISES", () => {
     for (const ex of ru) {
       expect(ex.question, ex.id).toMatch(/[\u0400-\u04FF]/);
     }
+  });
+});
+
+describe("HALLOWEEN_EXERCISES_ENGLISH", () => {
+  it("keeps a small seasonal pool", () => {
+    expect(HALLOWEEN_EXERCISES_ENGLISH.length).toBeGreaterThanOrEqual(10);
+    expect(HALLOWEEN_EXERCISES_ENGLISH.length).toBeLessThanOrEqual(20);
+  });
+
+  it("passes quality gates and stays usable per language", () => {
+    expect(
+      HALLOWEEN_EXERCISES_ENGLISH.filter(
+        (ex) => sanitizeBankExercise(ex) == null,
+      ),
+    ).toEqual([]);
+    for (const lang of ["ru", "en", "es", "de"] as const) {
+      const kept = prepareExercisesForInterface(
+        HALLOWEEN_EXERCISES_ENGLISH,
+        lang,
+        "english",
+      );
+      expect(kept.length, lang).toBe(HALLOWEEN_EXERCISES_ENGLISH.length);
+    }
+  });
+
+  it("localizes TR prompts for es/de (EN UI keeps RU source)", () => {
+    const translations = HALLOWEEN_EXERCISES_ENGLISH.filter(
+      (e) => e.type === "translation",
+    );
+    for (const lang of ["es", "de"] as const) {
+      const kept = prepareExercisesForInterface(translations, lang, "english");
+      for (const ex of kept) {
+        expect(ex.question, `${ex.id} (${lang})`).not.toMatch(
+          /[\u0400-\u04FF]/,
+        );
+      }
+    }
+    const en = prepareExercisesForInterface(translations, "en", "english");
+    for (const ex of en) {
+      // English course: EN prompt would spoil the answer → keep Russian source.
+      expect(ex.question, ex.id).toMatch(/[\u0400-\u04FF]/);
+    }
+  });
+});
+
+describe("getHalloweenExercisesForCourse", () => {
+  it("returns the matching pool", () => {
+    expect(getHalloweenExercisesForCourse("spanish")).toBe(HALLOWEEN_EXERCISES);
+    expect(getHalloweenExercisesForCourse("english")).toBe(
+      HALLOWEEN_EXERCISES_ENGLISH,
+    );
+    expect(getHalloweenExercisesForCourse("russian")).toEqual([]);
   });
 });
 

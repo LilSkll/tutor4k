@@ -2,7 +2,7 @@ import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { DailySessionGate } from "@/components/daily/daily-session-gate";
 import { localDateKey, parseLocalDateKey } from "@/lib/local-date";
-import { isHalloweenSeasonOn } from "@/lib/seasonal";
+import { isHalloweenCourse, isHalloweenSeasonOn } from "@/lib/seasonal";
 import { getCurrentChapterSlug, getCurrentProfile } from "@/server/actions/data";
 
 export default async function DailyPage() {
@@ -21,7 +21,7 @@ export default async function DailyPage() {
   const todayIso =
     parseLocalDateKey(jar.get("st_local_date")?.value) ?? localDateKey();
   const halloween =
-    courseId === "spanish" && isHalloweenSeasonOn(todayIso);
+    isHalloweenCourse(courseId) && isHalloweenSeasonOn(todayIso);
 
   return (
     <div className="page-container relative space-y-4">

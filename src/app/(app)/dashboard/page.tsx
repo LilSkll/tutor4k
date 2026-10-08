@@ -47,7 +47,7 @@ import { StreakStampCard } from "@/components/shared/streak-stamp-card";
 import { WeekPostcardCard } from "@/components/shared/week-postcard-card";
 import { HalloweenDailyCard } from "@/components/seasonal/halloween-daily-card";
 import { isStreakGap } from "@/lib/streak-gap";
-import { isHalloweenSeasonOn } from "@/lib/seasonal";
+import { isHalloweenCourse, isHalloweenSeasonOn } from "@/lib/seasonal";
 
 export default async function DashboardPage({
   searchParams,
@@ -264,7 +264,7 @@ export default async function DashboardPage({
       : null;
 
   const halloween =
-    courseId === "spanish" && isHalloweenSeasonOn(todayIso);
+    isHalloweenCourse(courseId) && isHalloweenSeasonOn(todayIso);
   const motivation = quietReturn
     ? quietReturn.main
     : halloween

@@ -62,7 +62,7 @@ export const EASTER_EGGS: EasterEggDef[] = [
     id: "seasonal-halloween-pumpkin-streak",
     rarity: "rare",
     kind: "phrase",
-    courseIds: ["spanish"],
+    courseIds: ["spanish", "english"],
     weight: 0,
     title: L(
       "Pumpkin Streak",
