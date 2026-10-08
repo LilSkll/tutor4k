@@ -53,25 +53,26 @@
   }
 
   .dark {
-    --background: 222 40% 6%;
+    /* Navy dark theme (blue, not near-black) */
+    --background: 220 42% 12%;
     --foreground: 210 40% 98%;
 
-    --card: 222 36% 9%;
+    --card: 220 38% 15%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222 36% 9%;
+    --popover: 220 38% 15%;
     --popover-foreground: 210 40% 98%;
 
     --primary: 0 74% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 217 28% 14%;
+    --secondary: 217 34% 18%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217 28% 14%;
-    --muted-foreground: 215 16% 62%;
+    --muted: 217 34% 18%;
+    --muted-foreground: 215 20% 68%;
 
-    --accent: 0 40% 14%;
+    --accent: 0 40% 16%;
     --accent-foreground: 0 90% 80%;
 
     --destructive: 0 72% 51%;
@@ -83,39 +84,39 @@
     --warning: 38 92% 50%;
     --warning-foreground: 222 47% 11%;
 
-    --border: 217 28% 16%;
-    --input: 217 28% 16%;
+    --border: 217 30% 22%;
+    --input: 217 30% 22%;
     --ring: 0 74% 55%;
 
-    --shadow-soft: 0 1px 2px hsl(0 0% 0% / 0.2),
-      0 4px 16px hsl(0 0% 0% / 0.25);
-    --shadow-elevated: 0 4px 8px hsl(0 0% 0% / 0.25),
-      0 12px 32px hsl(0 0% 0% / 0.35);
+    --shadow-soft: 0 1px 2px hsl(220 50% 4% / 0.25),
+      0 4px 16px hsl(220 50% 4% / 0.3);
+    --shadow-elevated: 0 4px 8px hsl(220 50% 4% / 0.28),
+      0 12px 32px hsl(220 50% 4% / 0.38);
     --shadow-brand: 0 8px 24px hsl(0 74% 50% / 0.3);
   }
 
   /* Auth/marketing without next-themes — match system preference only. */
   @media (prefers-color-scheme: dark) {
     .auth-shell {
-      --background: 222 40% 6%;
+      --background: 220 42% 12%;
       --foreground: 210 40% 98%;
 
-      --card: 222 36% 9%;
+      --card: 220 38% 15%;
       --card-foreground: 210 40% 98%;
 
-      --popover: 222 36% 9%;
+      --popover: 220 38% 15%;
       --popover-foreground: 210 40% 98%;
 
       --primary: 0 74% 55%;
       --primary-foreground: 0 0% 100%;
 
-      --secondary: 217 28% 14%;
+      --secondary: 217 34% 18%;
       --secondary-foreground: 210 40% 98%;
 
-      --muted: 217 28% 14%;
-      --muted-foreground: 215 16% 62%;
+      --muted: 217 34% 18%;
+      --muted-foreground: 215 20% 68%;
 
-      --accent: 0 40% 14%;
+      --accent: 0 40% 16%;
       --accent-foreground: 0 90% 80%;
 
       --destructive: 0 72% 51%;
@@ -127,14 +128,14 @@
       --warning: 38 92% 50%;
       --warning-foreground: 222 47% 11%;
 
-      --border: 217 28% 16%;
-      --input: 217 28% 16%;
+      --border: 217 30% 22%;
+      --input: 217 30% 22%;
       --ring: 0 74% 55%;
 
-      --shadow-soft: 0 1px 2px hsl(0 0% 0% / 0.2),
-        0 4px 16px hsl(0 0% 0% / 0.25);
-      --shadow-elevated: 0 4px 8px hsl(0 0% 0% / 0.25),
-        0 12px 32px hsl(0 0% 0% / 0.35);
+      --shadow-soft: 0 1px 2px hsl(220 50% 4% / 0.25),
+        0 4px 16px hsl(220 50% 4% / 0.3);
+      --shadow-elevated: 0 4px 8px hsl(220 50% 4% / 0.28),
+        0 12px 32px hsl(220 50% 4% / 0.38);
       --shadow-brand: 0 8px 24px hsl(0 74% 50% / 0.3);
       color-scheme: dark;
     }
@@ -345,31 +346,76 @@ html[data-season="halloween"] {
 }
 
 /*
- * Light seasonal wash + sparse pumpkin/hat watermark on the app shell.
- * One quiet tile layer — no dark night stacks, no dense mess.
+ * Semi-transparent pumpkin (BL) + witch hat (BR) corner photos.
+ * Pointer-events none; faded with masks so UI stays readable.
  */
 html[data-season="halloween"] .hw-app-shell {
-  background-color: hsl(var(--background));
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cellipse cx='36' cy='40' rx='12' ry='10' fill='%23c2410c' opacity='0.1'/%3E%3Crect x='34' y='26' width='4' height='8' rx='1' fill='%23166534' opacity='0.12'/%3E%3Cpolygon points='156,28 140,56 172,56' fill='%231a1025' opacity='0.08'/%3E%3Crect x='142' y='54' width='28' height='4' rx='1' fill='%231a1025' opacity='0.08'/%3E%3C/svg%3E"),
-    radial-gradient(
-      ellipse 80% 50% at 100% 0%,
-      hsl(25 90% 55% / 0.06),
-      transparent 55%
-    ),
-    radial-gradient(
-      ellipse 60% 40% at 0% 100%,
-      hsl(280 25% 50% / 0.04),
-      transparent 50%
-    );
-  background-size: 200px 200px, auto, auto;
-  background-repeat: repeat, no-repeat, no-repeat;
-  background-attachment: local;
+  position: relative;
+  isolation: isolate;
 }
 
-html[data-season="halloween"] .hw-app-shell main,
-html[data-season="halloween"] .hw-app-shell > .flex-1 {
-  background-color: transparent;
+html[data-season="halloween"] .hw-app-shell::before,
+html[data-season="halloween"] .hw-app-shell::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: min(280px, 28vw);
+  height: min(280px, 28vw);
+  pointer-events: none;
+  opacity: 0.32;
+  mix-blend-mode: multiply;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* Navy dark: soft-light so white photo mats don't flash as bright blobs */
+html.dark[data-season="halloween"] .hw-app-shell::before,
+html.dark[data-season="halloween"] .hw-app-shell::after {
+  opacity: 0.22;
+  mix-blend-mode: soft-light;
+}
+
+html[data-season="halloween"] .hw-app-shell::before {
+  left: 0;
+  bottom: 0;
+  background-image: url("/seasonal/halloween-pumpkin-corner.webp");
+  background-position: left bottom;
+  mask-image: linear-gradient(to top right, black 35%, transparent 78%);
+  -webkit-mask-image: linear-gradient(to top right, black 35%, transparent 78%);
+}
+
+html[data-season="halloween"] .hw-app-shell::after {
+  right: 0;
+  bottom: 0;
+  background-image: url("/seasonal/halloween-hat-corner.webp");
+  background-position: right bottom;
+  mask-image: linear-gradient(to top left, black 35%, transparent 78%);
+  -webkit-mask-image: linear-gradient(to top left, black 35%, transparent 78%);
+}
+
+html[data-season="halloween"] .hw-app-shell > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Mobile: smaller, quieter, clear of the bottom tab bar */
+@media (max-width: 767px) {
+  html[data-season="halloween"] .hw-app-shell::before,
+  html[data-season="halloween"] .hw-app-shell::after {
+    width: min(132px, 34vw);
+    height: min(132px, 34vw);
+    opacity: 0.14;
+    bottom: calc(3.75rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (max-width: 380px) {
+  html[data-season="halloween"] .hw-app-shell::before,
+  html[data-season="halloween"] .hw-app-shell::after {
+    opacity: 0.1;
+    width: 96px;
+    height: 96px;
+  }
 }
 
 /* Tiny pumpkin accent on dashboard Halloween card only */
