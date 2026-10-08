@@ -346,8 +346,8 @@ html[data-season="halloween"] {
 }
 
 /*
- * Semi-transparent Halloween mascots in bottom corners (portrait WebP, alpha).
- * Same opacity as previous pumpkin/hat corners; soft edge masks keep UI readable.
+ * Halloween mascots in bottom corners (portrait WebP + alpha).
+ * No mix-blend — it washed dark characters out. Soft top fade only.
  */
 html[data-season="halloween"] .hw-app-shell {
   position: relative;
@@ -359,21 +359,18 @@ html[data-season="halloween"] .hw-app-shell::after {
   content: "";
   position: absolute;
   z-index: 0;
-  /* Portrait slot (~9:16) so the full figure stays sharp, not squashed */
-  width: min(200px, 18vw);
-  height: min(356px, 32vw);
+  /* Portrait slot so the full figure stays sharp */
+  width: min(220px, 20vw);
+  height: min(390px, 36vw);
   pointer-events: none;
-  opacity: 0.32;
-  mix-blend-mode: multiply;
+  opacity: 0.62;
   background-repeat: no-repeat;
   background-size: contain;
 }
 
-/* Navy dark: soft-light keeps characters readable without a black matte flash */
 html.dark[data-season="halloween"] .hw-app-shell::before,
 html.dark[data-season="halloween"] .hw-app-shell::after {
-  opacity: 0.22;
-  mix-blend-mode: soft-light;
+  opacity: 0.55;
 }
 
 html[data-season="halloween"] .hw-app-shell::before {
@@ -382,8 +379,9 @@ html[data-season="halloween"] .hw-app-shell::before {
   bottom: 0;
   background-image: url("/seasonal/halloween-mascot-left.webp");
   background-position: left bottom;
-  mask-image: linear-gradient(to top right, black 40%, transparent 82%);
-  -webkit-mask-image: linear-gradient(to top right, black 40%, transparent 82%);
+  /* Fade only the upper tip into the page — keep body readable */
+  mask-image: linear-gradient(to top, black 62%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, black 62%, transparent 100%);
 }
 
 html[data-season="halloween"] .hw-app-shell::after {
@@ -391,8 +389,8 @@ html[data-season="halloween"] .hw-app-shell::after {
   bottom: 0;
   background-image: url("/seasonal/halloween-mascot-right.webp");
   background-position: right bottom;
-  mask-image: linear-gradient(to top left, black 40%, transparent 82%);
-  -webkit-mask-image: linear-gradient(to top left, black 40%, transparent 82%);
+  mask-image: linear-gradient(to top, black 62%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, black 62%, transparent 100%);
 }
 
 html[data-season="halloween"] .hw-app-shell > * {
@@ -400,14 +398,19 @@ html[data-season="halloween"] .hw-app-shell > * {
   z-index: 1;
 }
 
-/* Mobile: true corners, quieter, clear of the tab bar */
+/* Mobile: true corners, still visible but clear of the tab bar */
 @media (max-width: 767px) {
   html[data-season="halloween"] .hw-app-shell::before,
   html[data-season="halloween"] .hw-app-shell::after {
-    width: min(96px, 26vw);
-    height: min(170px, 46vw);
-    opacity: 0.12;
+    width: min(110px, 30vw);
+    height: min(196px, 52vw);
+    opacity: 0.4;
     bottom: calc(3.75rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  html.dark[data-season="halloween"] .hw-app-shell::before,
+  html.dark[data-season="halloween"] .hw-app-shell::after {
+    opacity: 0.36;
   }
 
   html[data-season="halloween"] .hw-app-shell::before {
@@ -418,9 +421,9 @@ html[data-season="halloween"] .hw-app-shell > * {
 @media (max-width: 380px) {
   html[data-season="halloween"] .hw-app-shell::before,
   html[data-season="halloween"] .hw-app-shell::after {
-    opacity: 0.09;
-    width: 72px;
-    height: 128px;
+    opacity: 0.32;
+    width: 84px;
+    height: 150px;
   }
 }
 
