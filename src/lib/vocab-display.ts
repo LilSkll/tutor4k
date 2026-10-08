@@ -1,5 +1,6 @@
 import type { InterfaceLanguage, VocabTopic, VocabWord } from "@/types";
 import { ENGLISH_VOCAB_GLOSS } from "@/config/courses/english/vocabulary/glosses";
+import { SPANISH_VOCAB_GLOSS } from "@/config/courses/spanish/vocabulary/glosses";
 import { SPANISH_TOPIC_TITLES_EN } from "@/config/courses/spanish/vocabulary/topic-titles";
 
 function hasCyrillic(text: string): boolean {
@@ -89,15 +90,18 @@ export function getWordGloss(
     return word.translation;
   }
 
+  const key = word.word.trim().toLowerCase();
+
   if (courseId === "english") {
-    const key = word.word.toLowerCase();
     const gloss = ENGLISH_VOCAB_GLOSS[interfaceLanguage]?.[key];
     if (gloss) return gloss;
   }
 
-  if (hasCyrillic(word.translation)) {
-    return word.translation;
+  if (courseId === "spanish") {
+    const gloss = SPANISH_VOCAB_GLOSS[interfaceLanguage]?.[key];
+    if (gloss) return gloss;
   }
 
+  // Last resort: keep authored translation even if still Russian.
   return word.translation;
 }

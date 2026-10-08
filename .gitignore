@@ -33,6 +33,9 @@ next-env.d.ts
 # vercel
 .vercel
 
+# generated vocab gloss rebuild cache (glosses.ts is committed)
+src/config/courses/spanish/vocabulary/gloss-cache.json
+
 # editor
 .vscode/*
 !.vscode/extensions.json
