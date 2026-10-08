@@ -152,4 +152,32 @@ describe("buildDailyExerciseBlocks", () => {
       b.practiceExercises.map((e) => e.id),
     );
   });
+
+  it("skips excludeIds so a second open differs from the first", () => {
+    const chapter = Array.from({ length: 12 }, (_, i) =>
+      ex({
+        id: `p${i}`,
+        type: "translation",
+        question: `Q${i}`,
+        answer: `A${i}`,
+      }),
+    );
+    const first = buildDailyExerciseBlocks({
+      revisionExercises: [],
+      chapterExercises: chapter,
+      level: "B1",
+      rotationSeed: "spanish:ch1:2026-10-08:r0",
+    });
+    const second = buildDailyExerciseBlocks({
+      revisionExercises: [],
+      chapterExercises: chapter,
+      level: "B1",
+      rotationSeed: "spanish:ch1:2026-10-08:r1",
+      excludeIds: first.practiceExercises.map((e) => e.id),
+    });
+    const firstIds = new Set(first.practiceExercises.map((e) => e.id));
+    for (const item of second.practiceExercises) {
+      expect(firstIds.has(item.id)).toBe(false);
+    }
+  });
 });

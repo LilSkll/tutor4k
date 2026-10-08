@@ -32,6 +32,8 @@ export type DailySessionPlan = {
   strengthLabel: string | null;
   reviewExercises: StaticExercise[];
   practiceExercises: StaticExercise[];
+  /** Client should clear seen-ids when the bank cycled. */
+  exhaustedExclusions?: boolean;
 };
 
 function localizeBank(
@@ -49,8 +51,14 @@ function localizeBank(
 /**
  * Build today's Continue Path: weak-topic review + current-chapter practice.
  * Does not mark the chapter complete.
+ *
+ * Pass `excludeIds` + `runNonce` from the client so reopening Daily the same
+ * day does not repeat the same practice items.
  */
-export async function getDailySessionPlanAction(): Promise<DailySessionPlan | null> {
+export async function getDailySessionPlanAction(input?: {
+  excludeIds?: string[];
+  runNonce?: number;
+}): Promise<DailySessionPlan | null> {
   const profile = await getCurrentProfile();
   if (!profile) return null;
 
@@ -66,7 +74,8 @@ export async function getDailySessionPlanAction(): Promise<DailySessionPlan | nu
   const jar = await cookies();
   const todayIso =
     parseLocalDateKey(jar.get("st_local_date")?.value) ?? localDateKey();
-  const rotationSeed = `${courseId}:${chapterSlug}:${todayIso}`;
+  const runNonce = Math.max(0, Math.floor(Number(input?.runNonce) || 0));
+  const rotationSeed = `${courseId}:${chapterSlug}:${todayIso}:r${runNonce}`;
 
   const { adaptation, revisionExercises, profile: learningProfile } =
     await getLessonAdaptationAction({
@@ -77,16 +86,18 @@ export async function getDailySessionPlanAction(): Promise<DailySessionPlan | nu
       rotationSeed,
     });
 
-  const { reviewExercises, practiceExercises } = buildDailyExerciseBlocks({
-    revisionExercises,
-    chapterExercises: localizeBank(
-      course.getExercises(chapterSlug),
-      language,
-      courseId,
-    ),
-    level: chapter.level as GrammarLevel,
-    rotationSeed,
-  });
+  const { reviewExercises, practiceExercises, exhaustedExclusions } =
+    buildDailyExerciseBlocks({
+      revisionExercises,
+      chapterExercises: localizeBank(
+        course.getExercises(chapterSlug),
+        language,
+        courseId,
+      ),
+      level: chapter.level as GrammarLevel,
+      rotationSeed,
+      excludeIds: input?.excludeIds,
+    });
 
   const weakTopicSlug = adaptation.revisionTopics[0]?.topic ?? null;
   const recommendationLabel = resolveCourseTopicLabel(
@@ -130,6 +141,7 @@ export async function getDailySessionPlanAction(): Promise<DailySessionPlan | nu
     strengthLabel,
     reviewExercises,
     practiceExercises,
+    exhaustedExclusions,
   };
 }
 

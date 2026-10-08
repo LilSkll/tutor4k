@@ -180,7 +180,12 @@ function inferInstructionKey(instruction: string): string | null {
   }
   if (/\bpor\b.*\bpara\b|\bpara\b.*\bpor\b/.test(s)) return "por_para";
   if (/\bser\b.*\bestar\b|\bestar\b.*\bser\b/.test(s)) return "ser_estar";
-  if (/pretérito|preterito|imperfecto|indefinido/.test(s) && /или|or|o |\/|vs/.test(s)) {
+  // Contrast drills only — do not map plain "indefinido" / translate prompts here.
+  if (
+    /(pretérito|preterito|indefinido)/.test(s) &&
+    /imperfecto/.test(s) &&
+    /или|or|\/|\bvs\b/.test(s)
+  ) {
     return "pret_imp";
   }
   if (/составьте|build|forma una|bilde/.test(s)) return "build_sentence";
