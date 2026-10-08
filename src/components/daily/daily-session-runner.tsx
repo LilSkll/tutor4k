@@ -422,6 +422,9 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
             <p className="text-base text-muted-foreground">
               {t("daily.dialoguePrompt", { topic: plan.topicTitle })}
             </p>
+            <p className="text-sm text-muted-foreground rounded-lg border border-dashed bg-muted/30 px-3 py-2">
+              {t("daily.speakWhere")}
+            </p>
             <Input
               value={dialogueInput}
               onChange={(e) => setDialogueInput(e.target.value)}
@@ -456,49 +459,54 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
               {loading ? t("lesson.thinking") : t("lesson.askTutor")}
             </Button>
             {dialogueResponse ? (
-              <div className="rounded-lg border bg-card p-4 space-y-3">
+              <div className="rounded-xl border-2 border-primary/25 bg-card p-4 space-y-3 shadow-soft">
+                <p className="text-sm font-semibold tracking-tight">
+                  {t("daily.tutorReplyLabel")}
+                </p>
                 <Markdown content={dialogueResponse} />
-                <div className="flex flex-col sm:flex-row flex-wrap gap-2">
-                  {speechSupported ? (
-                    <Button
-                      type="button"
-                      variant="outline"
-                      size="sm"
-                      className="w-full sm:w-auto"
-                      onClick={() => {
-                        if (speaking) {
-                          speechStopRef.current?.();
-                          return;
-                        }
-                        // Quoted L2 examples → course voice (pronunciation);
-                        // otherwise full reply in the interface language.
-                        const payload = pickSpeechPayload(
-                          dialogueResponse,
-                          language,
-                          plan.courseId,
-                        );
-                        const handle = speakText(
-                          payload.text,
-                          payload.langTag,
-                          () => {
-                            setSpeaking(false);
-                            speechStopRef.current = null;
-                          },
-                          payload.fallbackLangTag,
-                        );
-                        if (!handle) return;
-                        speechStopRef.current = handle.stop;
-                        setSpeaking(true);
-                      }}
-                    >
-                      <Volume2 className="h-4 w-4" />
-                      {speaking
-                        ? t("daily.stopSpeaking")
-                        : t("daily.listenReply")}
-                    </Button>
-                  ) : null}
-                  <DialogueSpeakRepeat />
-                </div>
+                {speechSupported ? (
+                  <Button
+                    type="button"
+                    variant="gradient"
+                    size="lg"
+                    className="w-full"
+                    onClick={() => {
+                      if (speaking) {
+                        speechStopRef.current?.();
+                        return;
+                      }
+                      // Quoted L2 examples → course voice (pronunciation);
+                      // otherwise full reply in the interface language.
+                      const payload = pickSpeechPayload(
+                        dialogueResponse,
+                        language,
+                        plan.courseId,
+                      );
+                      const handle = speakText(
+                        payload.text,
+                        payload.langTag,
+                        () => {
+                          setSpeaking(false);
+                          speechStopRef.current = null;
+                        },
+                        payload.fallbackLangTag,
+                      );
+                      if (!handle) return;
+                      speechStopRef.current = handle.stop;
+                      setSpeaking(true);
+                    }}
+                  >
+                    <Volume2 className="h-5 w-5" />
+                    {speaking
+                      ? t("daily.stopSpeaking")
+                      : t("daily.listenReply")}
+                  </Button>
+                ) : (
+                  <p className="text-xs text-muted-foreground">
+                    {t("daily.speechUnsupported")}
+                  </p>
+                )}
+                <DialogueSpeakRepeat />
                 <p className="text-xs text-muted-foreground">
                   {t("daily.speakHint")}
                 </p>

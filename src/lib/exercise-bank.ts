@@ -221,6 +221,41 @@ export function dedupeByTargetStem(
   return out;
 }
 
+/** FNV-1a-ish hash for stable day/chapter rotation (not crypto). */
+export function hashSeed(seed: string): number {
+  let h = 2166136261;
+  for (let i = 0; i < seed.length; i++) {
+    h ^= seed.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return h >>> 0;
+}
+
+/**
+ * Rotate a bank so Daily / first practice rounds don't always start at index 0.
+ * Same seed → same order (stable within a calendar day).
+ */
+export function rotateBankBySeed<T>(items: T[], seed: string): T[] {
+  if (items.length <= 1) return items.slice();
+  const offset = hashSeed(seed) % items.length;
+  if (offset === 0) return items.slice();
+  return [...items.slice(offset), ...items.slice(0, offset)];
+}
+
+/** Seeded Fisher–Yates — varies by day without Math.random flicker. */
+export function seededShuffle<T>(items: T[], seed: string): T[] {
+  const arr = items.slice();
+  let s = hashSeed(seed) || 1;
+  for (let i = arr.length - 1; i > 0; i--) {
+    s = (Math.imul(s, 1664525) + 1013904223) >>> 0;
+    const j = s % (i + 1);
+    const tmp = arr[i]!;
+    arr[i] = arr[j]!;
+    arr[j] = tmp;
+  }
+  return arr;
+}
+
 /**
  * Pick up to `count` exercises from `fromCursor`, skipping finished-sentence
  * duplicates within the batch (and optional stems already used this session).

@@ -1,7 +1,12 @@
 import type { StaticExercise } from "@/types";
-import { exerciseStemKey } from "@/lib/exercise-bank";
+import { exerciseStemKey, seededShuffle } from "@/lib/exercise-bank";
 
-function shuffleInPlace<T>(items: T[]): T[] {
+function shuffleInPlace<T>(items: T[], seed?: string): T[] {
+  if (seed) {
+    const shuffled = seededShuffle(items, seed);
+    for (let i = 0; i < items.length; i++) items[i] = shuffled[i]!;
+    return items;
+  }
   for (let i = items.length - 1; i > 0; i -= 1) {
     const j = Math.floor(Math.random() * (i + 1));
     const tmp = items[i]!;
@@ -14,8 +19,8 @@ function shuffleInPlace<T>(items: T[]): T[] {
 /**
  * Pick up to `count` revision exercises from completed chapters.
  * Prefers chapters matching weak/stale topics when provided, then fills from
- * the rest of completed chapters. Always randomizes so users do not memorize
- * the same warm-up every lesson.
+ * the rest of completed chapters. Randomizes (or uses `rotationSeed`) so
+ * users do not memorize the same warm-up every lesson.
  */
 export function pickRandomRevisionExercises(input: {
   poolByChapter: Map<string, StaticExercise[]>;
@@ -23,9 +28,12 @@ export function pickRandomRevisionExercises(input: {
   preferredSlugs?: string[];
   excludeChapterSlug?: string;
   count?: number;
+  /** When set, shuffle is stable for the day instead of pure Math.random. */
+  rotationSeed?: string;
 }): StaticExercise[] {
   const count = input.count ?? 3;
   if (count <= 0 || input.completedSlugs.length === 0) return [];
+  const seed = input.rotationSeed?.trim();
 
   const preferred = new Set(
     (input.preferredSlugs ?? []).filter((s) =>
@@ -38,6 +46,7 @@ export function pickRandomRevisionExercises(input: {
       input.completedSlugs.filter(
         (s) => s !== input.excludeChapterSlug && !preferred.has(s),
       ),
+      seed ? `${seed}:slugs` : undefined,
     ),
   ].filter((s) => s !== input.excludeChapterSlug);
 
@@ -49,8 +58,8 @@ export function pickRandomRevisionExercises(input: {
     else otherPool.push(...items);
   }
 
-  shuffleInPlace(preferredPool);
-  shuffleInPlace(otherPool);
+  shuffleInPlace(preferredPool, seed ? `${seed}:pref` : undefined);
+  shuffleInPlace(otherPool, seed ? `${seed}:other` : undefined);
 
   const picked: StaticExercise[] = [];
   const usedStems = new Set<string>();

@@ -21,7 +21,14 @@ import { Markdown } from "@/components/shared/markdown";
 import { useLocalizedGrammarArticle } from "@/hooks/use-localized-grammar-article";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { translate } from "@/lib/i18n";
-import { SESSION_EXERCISES, pickUniqueStemBatch, exerciseStemKey, availableExerciseTypes } from "@/lib/exercise-bank";
+import {
+  SESSION_EXERCISES,
+  pickUniqueStemBatch,
+  exerciseStemKey,
+  availableExerciseTypes,
+  rotateBankBySeed,
+} from "@/lib/exercise-bank";
+import { localDateKey } from "@/lib/local-date";
 import { gradeStaticExerciseLocally } from "@/lib/exercise-check-client";
 import { scorePercent } from "@/lib/normalize-answer";
 import { trackEvent } from "@/lib/analytics";
@@ -172,6 +179,16 @@ export function LessonRunner({
     return presetExercises;
   }, [presetExercises]);
 
+  // Rotate by local day so the first practice round is not always items 0–4.
+  const practiceBank = React.useMemo(
+    () =>
+      rotateBankBySeed(
+        chapterBank,
+        `${courseId}:${chapter.slug}:${localDateKey()}`,
+      ),
+    [chapterBank, courseId, chapter.slug],
+  );
+
   const guideExerciseTypes = React.useMemo(
     () => availableExerciseTypes(chapterBank, chapter.exerciseTypes),
     [chapterBank, chapter.exerciseTypes],
@@ -205,13 +222,13 @@ export function LessonRunner({
     return pick;
   }, [adaptation, chapterBank, failedExerciseIds]);
 
-  const bankRemaining = Math.max(0, chapterBank.length - bankCursor);
+  const bankRemaining = Math.max(0, practiceBank.length - bankCursor);
 
   /** Require a full session round when the bank can supply one. */
   const minPracticeToFinish =
-    chapterBank.length === 0
+    practiceBank.length === 0
       ? 0
-      : Math.min(SESSION_EXERCISES, chapterBank.length);
+      : Math.min(SESSION_EXERCISES, practiceBank.length);
 
   const practiceGateMet = exercisesCompleted >= minPracticeToFinish;
 
@@ -252,10 +269,11 @@ export function LessonRunner({
   };
 
   const startBankRound = (fromCursor: number, kind: PracticeKind) => {
+    const bank = kind === "reinforce" ? chapterBank : practiceBank;
     const priorStems =
       fromCursor === 0 && kind === "main" ? [] : sessionStems;
     const { batch, nextCursor } = pickUniqueStemBatch(
-      chapterBank,
+      bank,
       fromCursor,
       SESSION_EXERCISES,
       priorStems,
@@ -285,7 +303,7 @@ export function LessonRunner({
   };
 
   const generateExercises = () => {
-    if (chapterBank.length > 0) {
+    if (practiceBank.length > 0) {
       startBankRound(0, "main");
     } else {
       setPhase("dialogue");

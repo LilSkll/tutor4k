@@ -149,9 +149,9 @@ export function DialogueSpeakRepeat() {
   return (
     <Button
       type="button"
-      variant={phase === "recording" ? "destructive" : "secondary"}
-      size="sm"
-      className="w-full sm:w-auto"
+      variant={phase === "recording" ? "destructive" : "outline"}
+      size="lg"
+      className="w-full"
       disabled={starting}
       onClick={() => {
         if (phase === "recording") stopRecording();

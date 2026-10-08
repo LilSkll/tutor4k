@@ -145,17 +145,19 @@ export function WeekPostcardCard({
       ) : (
         <>
           <p className="meta-label">{t("dashboard.weekPostcardEyebrow")}</p>
-          <div className="overflow-hidden rounded-2xl border shadow-soft bg-card">
+          <div className="overflow-hidden rounded-2xl border shadow-soft bg-muted/30">
             {previewUrl ? (
               // eslint-disable-next-line @next/next/no-img-element -- dynamic canvas data URL
               <img
                 src={previewUrl}
                 alt={t("dashboard.weekPostcardTitle")}
-                className="h-auto w-full max-h-72 object-cover object-top"
+                className="mx-auto block h-auto w-full max-w-sm object-contain"
+                width={720}
+                height={900}
                 loading="lazy"
               />
             ) : (
-              <div className="flex h-40 items-center justify-center bg-muted/40">
+              <div className="flex aspect-[4/5] max-w-sm mx-auto items-center justify-center bg-muted/40">
                 <div className="h-8 w-8 animate-pulse rounded-full bg-muted-foreground/20" />
               </div>
             )}

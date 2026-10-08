@@ -126,4 +126,30 @@ describe("buildDailyExerciseBlocks", () => {
     expect(reviewExercises).toHaveLength(0);
     expect(practiceExercises).toHaveLength(1);
   });
+
+  it("rotates practice window by seed so day-1 ≠ day-2", () => {
+    const chapter = Array.from({ length: 12 }, (_, i) =>
+      ex({
+        id: `p${i}`,
+        type: "translation",
+        question: `Q${i}`,
+        answer: `A${i}`,
+      }),
+    );
+    const a = buildDailyExerciseBlocks({
+      revisionExercises: [],
+      chapterExercises: chapter,
+      level: "B1",
+      rotationSeed: "spanish:ch1:2026-10-08",
+    });
+    const b = buildDailyExerciseBlocks({
+      revisionExercises: [],
+      chapterExercises: chapter,
+      level: "B1",
+      rotationSeed: "spanish:ch1:2026-10-09",
+    });
+    expect(a.practiceExercises.map((e) => e.id)).not.toEqual(
+      b.practiceExercises.map((e) => e.id),
+    );
+  });
 });

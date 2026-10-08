@@ -18,6 +18,8 @@ import { prepareExercisesForInterface } from "@/lib/exercise-localize";
 import { prepareExercisesForSession } from "@/lib/exercise-options";
 import { pickRandomRevisionExercises } from "@/lib/revision-exercises";
 import { getChapterProgress } from "@/server/actions/data";
+import { localDateKey, parseLocalDateKey } from "@/lib/local-date";
+import { cookies } from "next/headers";
 
 /**
  * Read the persistent Student Learning Profile for the active (or given) course.
@@ -70,6 +72,8 @@ export async function getLessonAdaptationAction(input: {
   vocabTopic?: string | null;
   /** Current chapter — excluded from the revision pool. */
   chapterSlug?: string | null;
+  /** Optional day key so warm-ups rotate instead of always the same three. */
+  rotationSeed?: string | null;
 }): Promise<{
   adaptation: LessonAdaptation;
   revisionExercises: StaticExercise[];
@@ -124,12 +128,25 @@ export async function getLessonAdaptationAction(input: {
       poolByChapter.set(slug, course.getExercises(slug));
     }
 
+    let rotationSeed = input.rotationSeed?.trim() || "";
+    if (!rotationSeed) {
+      try {
+        const jar = await cookies();
+        rotationSeed =
+          parseLocalDateKey(jar.get("st_local_date")?.value) ?? localDateKey();
+      } catch {
+        rotationSeed = localDateKey();
+      }
+      rotationSeed = `${input.courseId}:${input.chapterSlug ?? "any"}:${rotationSeed}`;
+    }
+
     revisionExercises = pickRandomRevisionExercises({
       poolByChapter,
       completedSlugs: poolSlugs,
       preferredSlugs,
       excludeChapterSlug: input.chapterSlug ?? undefined,
       count: 3,
+      rotationSeed,
     });
   } catch {
     // Non-fatal: lesson continues without revision block.

@@ -1,6 +1,6 @@
 /**
  * Client-only canvas postcard for the week's study ritual.
- * Kept modest (720×900 JPEG) so dashboard share stays light.
+ * Portrait 720×900 JPEG — preview must use object-contain (not cover).
  */
 
 export const WEEK_POSTCARD_WIDTH = 720;
@@ -50,11 +50,33 @@ function wrapText(
     } else {
       lines.push(current);
       current = words[i]!;
-      if (lines.length >= maxLines) return lines.slice(0, maxLines);
+      if (lines.length >= maxLines) {
+        // Ellipsis on last line if we still have leftover words.
+        const last = lines[lines.length - 1] ?? current;
+        lines[lines.length - 1] =
+          ctx.measureText(`${last}…`).width <= maxWidth ? `${last}…` : last;
+        return lines.slice(0, maxLines);
+      }
     }
   }
   if (lines.length < maxLines) lines.push(current);
   return lines.slice(0, maxLines);
+}
+
+function fitCenteredLines(
+  ctx: CanvasRenderingContext2D,
+  text: string,
+  maxWidth: number,
+  maxLines: number,
+  fontSpec: string,
+): { lines: string[]; lineHeight: number } {
+  ctx.font = fontSpec;
+  const sizeMatch = fontSpec.match(/(\d+)px/);
+  const size = sizeMatch ? Number(sizeMatch[1]) : 28;
+  return {
+    lines: wrapText(ctx, text, maxWidth, maxLines),
+    lineHeight: Math.round(size * 1.25),
+  };
 }
 
 /** Sync draw — cheap enough for on-demand click, not every dashboard paint. */
@@ -81,50 +103,81 @@ export function fillWeekPostcard(fields: WeekPostcardFields): string {
   roundRect(ctx, 48, 64, WEEK_POSTCARD_WIDTH - 96, WEEK_POSTCARD_HEIGHT - 128, 32);
   ctx.fill();
 
+  const maxW = WEEK_POSTCARD_WIDTH - 140;
+  const cx = WEEK_POSTCARD_WIDTH / 2;
+
   ctx.fillStyle = "#ffffff";
   ctx.textAlign = "center";
-  ctx.font = '600 24px "Segoe UI", system-ui, sans-serif';
+  ctx.textBaseline = "alphabetic";
+
+  ctx.font = '600 22px "Segoe UI", system-ui, sans-serif';
   ctx.globalAlpha = 0.85;
-  ctx.fillText(fields.title.toUpperCase(), WEEK_POSTCARD_WIDTH / 2, 140);
+  ctx.fillText(fields.title.toUpperCase(), cx, 130);
   ctx.globalAlpha = 1;
 
-  ctx.font = '700 42px Georgia, "Times New Roman", serif';
-  const subtitleLines = wrapText(
+  let y = 190;
+  const subtitle = fitCenteredLines(
     ctx,
     fields.subtitle,
-    WEEK_POSTCARD_WIDTH - 140,
+    maxW,
     2,
+    '700 40px Georgia, "Times New Roman", serif',
   );
-  let y = 210;
-  for (const line of subtitleLines) {
-    ctx.fillText(line, WEEK_POSTCARD_WIDTH / 2, y);
-    y += 52;
+  for (const line of subtitle.lines) {
+    ctx.fillText(line, cx, y);
+    y += subtitle.lineHeight;
   }
 
-  ctx.font = '700 64px Georgia, "Times New Roman", serif';
-  ctx.fillText(fields.daysLabel, WEEK_POSTCARD_WIDTH / 2, 370);
-  ctx.font = '600 28px "Segoe UI", system-ui, sans-serif';
-  ctx.globalAlpha = 0.9;
-  ctx.fillText(fields.minutesLabel, WEEK_POSTCARD_WIDTH / 2, 425);
+  y += 36;
+  const days = fitCenteredLines(
+    ctx,
+    fields.daysLabel,
+    maxW,
+    2,
+    '700 52px Georgia, "Times New Roman", serif',
+  );
+  for (const line of days.lines) {
+    ctx.fillText(line, cx, y);
+    y += days.lineHeight;
+  }
+
+  y += 12;
+  const minutes = fitCenteredLines(
+    ctx,
+    fields.minutesLabel,
+    maxW,
+    2,
+    '600 26px "Segoe UI", system-ui, sans-serif',
+  );
+  ctx.globalAlpha = 0.92;
+  for (const line of minutes.lines) {
+    ctx.fillText(line, cx, y);
+    y += minutes.lineHeight;
+  }
   ctx.globalAlpha = 1;
 
-  ctx.font = '500 24px "Segoe UI", system-ui, sans-serif';
-  const tipLines = wrapText(ctx, fields.tip, WEEK_POSTCARD_WIDTH - 150, 4);
-  y = 520;
-  for (const line of tipLines) {
-    ctx.fillText(line, WEEK_POSTCARD_WIDTH / 2, y);
-    y += 36;
+  y = Math.max(y + 48, 500);
+  const tip = fitCenteredLines(
+    ctx,
+    fields.tip,
+    maxW,
+    5,
+    '500 22px "Segoe UI", system-ui, sans-serif',
+  );
+  for (const line of tip.lines) {
+    ctx.fillText(line, cx, y);
+    y += tip.lineHeight;
   }
 
   ctx.globalAlpha = 0.8;
-  ctx.font = '500 18px "Segoe UI", system-ui, sans-serif';
-  ctx.fillText(
-    fields.footer,
-    WEEK_POSTCARD_WIDTH / 2,
-    WEEK_POSTCARD_HEIGHT - 100,
-  );
+  ctx.font = '500 17px "Segoe UI", system-ui, sans-serif';
+  const footerLines = wrapText(ctx, fields.footer, maxW, 2);
+  let footerY = WEEK_POSTCARD_HEIGHT - 88 - (footerLines.length - 1) * 24;
+  for (const line of footerLines) {
+    ctx.fillText(line, cx, footerY);
+    footerY += 24;
+  }
   ctx.globalAlpha = 1;
 
-  // JPEG is much smaller than PNG for this gradient art.
-  return canvas.toDataURL("image/jpeg", 0.84);
+  return canvas.toDataURL("image/jpeg", 0.86);
 }

@@ -15,8 +15,9 @@ import {
 } from "@/server/actions/data";
 import { getLessonAdaptationAction } from "@/server/actions/learning-profile";
 import { pickStrengthTopicSlug } from "@/lib/daily-personalization";
-import { parseLocalDateKey, previousDateKey } from "@/lib/local-date";
+import { localDateKey, parseLocalDateKey, previousDateKey } from "@/lib/local-date";
 import type { GrammarLevel, InterfaceLanguage, StaticExercise } from "@/types";
+import { cookies } from "next/headers";
 
 export type DailySessionPlan = {
   courseId: string;
@@ -62,12 +63,18 @@ export async function getDailySessionPlanAction(): Promise<DailySessionPlan | nu
   const chapter = course.getChapter(chapterSlug);
   if (!chapter) return null;
 
+  const jar = await cookies();
+  const todayIso =
+    parseLocalDateKey(jar.get("st_local_date")?.value) ?? localDateKey();
+  const rotationSeed = `${courseId}:${chapterSlug}:${todayIso}`;
+
   const { adaptation, revisionExercises, profile: learningProfile } =
     await getLessonAdaptationAction({
       courseId,
       grammarTopic: chapter.grammarTopic,
       vocabTopic: chapter.vocabTopic,
       chapterSlug,
+      rotationSeed,
     });
 
   const { reviewExercises, practiceExercises } = buildDailyExerciseBlocks({
@@ -78,6 +85,7 @@ export async function getDailySessionPlanAction(): Promise<DailySessionPlan | nu
       courseId,
     ),
     level: chapter.level as GrammarLevel,
+    rotationSeed,
   });
 
   const weakTopicSlug = adaptation.revisionTopics[0]?.topic ?? null;
