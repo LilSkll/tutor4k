@@ -345,50 +345,26 @@ html[data-season="halloween"] {
 }
 
 /*
- * Pumpkins + witch hats as the app shell background (inline SVG tiles).
- * Dense dual-layer repeat — no extra DOM, no animation loops.
+ * Light seasonal wash + sparse pumpkin/hat watermark on the app shell.
+ * One quiet tile layer — no dark night stacks, no dense mess.
  */
 html[data-season="halloween"] .hw-app-shell {
-  /* Dark seasonal base (layers below the icon tiles) */
-  background-color: #120c18;
+  background-color: hsl(var(--background));
   background-image:
-    /* Layer A: pumpkins + hats */
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cellipse cx='22' cy='24' rx='11' ry='9' fill='%23ea580c' opacity='0.42'/%3E%3Crect x='20' y='12' width='4' height='7' rx='1' fill='%234ade80' opacity='0.45'/%3E%3Cpolygon points='88,10 74,36 102,36' fill='%23f8fafc' opacity='0.22'/%3E%3Crect x='76' y='34' width='24' height='4' rx='1' fill='%23f97316' opacity='0.35'/%3E%3Cellipse cx='98' cy='88' rx='10' ry='8' fill='%23fb923c' opacity='0.4'/%3E%3Crect x='96' y='76' width='4' height='7' rx='1' fill='%234ade80' opacity='0.42'/%3E%3Cpolygon points='28,78 16,102 40,102' fill='%23e2e8f0' opacity='0.2'/%3E%3Crect x='18' y='100' width='20' height='3.5' rx='1' fill='%23f97316' opacity='0.32'/%3E%3Cellipse cx='60' cy='58' rx='8' ry='7' fill='%23f97316' opacity='0.34'/%3E%3Crect x='58' y='48' width='3.5' height='6' rx='1' fill='%234ade80' opacity='0.4'/%3E%3C/svg%3E"),
-    /* Layer B: offset hats + smaller pumpkins */
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpolygon points='50,6 38,28 62,28' fill='%23f8fafc' opacity='0.16'/%3E%3Crect x='40' y='26' width='20' height='3' rx='1' fill='%23f97316' opacity='0.28'/%3E%3Cellipse cx='18' cy='70' rx='8' ry='7' fill='%23c2410c' opacity='0.36'/%3E%3Crect x='16' y='60' width='3.5' height='6' rx='1' fill='%234ade80' opacity='0.38'/%3E%3Cpolygon points='100,52 88,74 112,74' fill='%23e2e8f0' opacity='0.18'/%3E%3Crect x='90' y='72' width='20' height='3' rx='1' fill='%23f97316' opacity='0.28'/%3E%3Cellipse cx='70' cy='100' rx='9' ry='7.5' fill='%23ea580c' opacity='0.34'/%3E%3Crect x='68' y='89' width='3.5' height='6' rx='1' fill='%234ade80' opacity='0.36'/%3E%3C/svg%3E"),
-    /* Dark night washes */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cellipse cx='36' cy='40' rx='12' ry='10' fill='%23c2410c' opacity='0.1'/%3E%3Crect x='34' y='26' width='4' height='8' rx='1' fill='%23166534' opacity='0.12'/%3E%3Cpolygon points='156,28 140,56 172,56' fill='%231a1025' opacity='0.08'/%3E%3Crect x='142' y='54' width='28' height='4' rx='1' fill='%231a1025' opacity='0.08'/%3E%3C/svg%3E"),
     radial-gradient(
-      ellipse 100% 70% at 50% 0%,
-      hsl(25 80% 28% / 0.35),
+      ellipse 80% 50% at 100% 0%,
+      hsl(25 90% 55% / 0.06),
       transparent 55%
     ),
     radial-gradient(
-      ellipse 80% 60% at 100% 100%,
-      hsl(280 40% 18% / 0.55),
+      ellipse 60% 40% at 0% 100%,
+      hsl(280 25% 50% / 0.04),
       transparent 50%
-    ),
-    radial-gradient(
-      ellipse 70% 50% at 0% 80%,
-      hsl(220 30% 12% / 0.5),
-      transparent 48%
-    ),
-    linear-gradient(
-      165deg,
-      #1a1025 0%,
-      #120c18 42%,
-      #0c0812 100%
     );
-  background-size:
-    88px 88px,
-    88px 88px,
-    auto,
-    auto,
-    auto,
-    auto;
-  background-position: 0 0, 44px 44px, 0 0, 0 0, 0 0, 0 0;
-  background-repeat: repeat, repeat, no-repeat, no-repeat, no-repeat, no-repeat;
+  background-size: 200px 200px, auto, auto;
+  background-repeat: repeat, no-repeat, no-repeat;
   background-attachment: local;
-  color-scheme: dark;
 }
 
 html[data-season="halloween"] .hw-app-shell main,
