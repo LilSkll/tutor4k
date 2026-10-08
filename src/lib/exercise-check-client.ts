@@ -32,6 +32,7 @@ export function gradeStaticExerciseLocally(
       explanation: exercise.explanation,
       instruction: exercise.instruction,
       exerciseType: exercise.type,
+      answer: exercise.answer,
     }),
   };
 }

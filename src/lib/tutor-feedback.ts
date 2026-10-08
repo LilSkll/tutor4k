@@ -63,11 +63,32 @@ const MISTAKE_INTRO: Record<InterfaceLanguage, string[]> = {
 };
 
 const EXPLANATION_FALLBACK: Record<InterfaceLanguage, string> = {
-  ru: "Сравни с правильным ответом выше.",
-  en: "Compare with the correct answer above.",
-  es: "Compara con la respuesta correcta de arriba.",
-  de: "Vergleiche mit der richtigen Antwort oben.",
+  ru: "Сверься с правильным ответом.",
+  en: "Check the correct answer.",
+  es: "Compara con la respuesta correcta.",
+  de: "Vergleiche mit der richtigen Antwort.",
 };
+
+const MODEL_ANSWER_LABEL: Record<InterfaceLanguage, string> = {
+  ru: "Правильный ответ:",
+  en: "Correct answer:",
+  es: "Respuesta correcta:",
+  de: "Richtige Antwort:",
+};
+
+/** Append a localized model answer if the feedback does not already include it. */
+export function ensureModelAnswerInFeedback(
+  feedback: string,
+  answer: string | null | undefined,
+  language: InterfaceLanguage,
+  correct: boolean,
+): string {
+  const a = answer?.trim();
+  if (correct || !a) return feedback;
+  if (feedback.includes(a)) return feedback;
+  const label = MODEL_ANSWER_LABEL[language] ?? MODEL_ANSWER_LABEL.en;
+  return `${feedback.trim()} ${label} ${a}`.trim();
+}
 
 function pick<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)] ?? arr[0];
@@ -82,9 +103,8 @@ export function localizeBankExplanation(
   language: InterfaceLanguage,
 ): string {
   const trimmed = explanation.trim();
-  if (!trimmed) {
-    return EXPLANATION_FALLBACK[language] ?? EXPLANATION_FALLBACK.en;
-  }
+  // Empty bank note — caller may attach the model answer instead of a vague hint.
+  if (!trimmed) return "";
 
   const fallback = EXPLANATION_FALLBACK[language] ?? EXPLANATION_FALLBACK.en;
   const hasFormula = /[→+]/.test(trimmed);
@@ -146,10 +166,22 @@ export function localizeBankExplanation(
   return kept;
 }
 
+function isGenericExplanation(
+  explanation: string,
+  language: InterfaceLanguage,
+): boolean {
+  const trimmed = explanation.trim();
+  if (!trimmed) return true;
+  const fallback = EXPLANATION_FALLBACK[language] ?? EXPLANATION_FALLBACK.en;
+  return trimmed === fallback;
+}
+
 /**
  * Tutor-style framing around bank explanations (no AI generation of items).
  * For free-text items, appends the construction formula and a short note that
  * equivalent wordings with the same tense pattern can also be acceptable.
+ * Always includes the model answer on mistakes when provided — Daily/lesson
+ * UIs must not say “see above” without showing it.
  */
 export function formatBankTutorFeedback(input: {
   language?: InterfaceLanguage;
@@ -157,25 +189,46 @@ export function formatBankTutorFeedback(input: {
   explanation: string;
   instruction?: string | null;
   exerciseType?: ExerciseType;
+  /** Model answer — shown on mistakes when the bank note is empty/generic. */
+  answer?: string | null;
 }): string {
   const lang = input.language ?? "ru";
-  const explanation = localizeBankExplanation(input.explanation, lang);
+  let explanation = localizeBankExplanation(input.explanation, lang);
   const instruction = localizeBankExplanation(input.instruction ?? "", lang);
-  const base = input.correct
-    ? `${pick(PRAISE[lang] ?? PRAISE.ru)} ${explanation}`
-    : `${pick(MISTAKE_INTRO[lang] ?? MISTAKE_INTRO.ru)} ${explanation}`;
+  const answer = input.answer?.trim() || "";
+
+  // Vague “check the answer” with no answer attached is useless — drop it.
+  if (isGenericExplanation(explanation, lang) && answer) {
+    explanation = "";
+  } else if (isGenericExplanation(explanation, lang) && !input.correct && !answer) {
+    explanation = EXPLANATION_FALLBACK[lang] ?? EXPLANATION_FALLBACK.en;
+  }
+
+  const answerLine =
+    !input.correct && answer
+      ? `${MODEL_ANSWER_LABEL[lang] ?? MODEL_ANSWER_LABEL.en} ${answer}`
+      : "";
+
+  const intro = input.correct
+    ? pick(PRAISE[lang] ?? PRAISE.ru)
+    : pick(MISTAKE_INTRO[lang] ?? MISTAKE_INTRO.ru);
+
+  const base = [intro, explanation, answerLine]
+    .map((p) => p.trim())
+    .filter(Boolean)
+    .join(" ");
 
   return plainTutorText(
     enrichFeedbackWithConstruction({
       language: lang,
       correct: input.correct,
       feedback: base,
-      instruction:
-        instruction === (EXPLANATION_FALLBACK[lang] ?? "")
-          ? null
-          : instruction || null,
+      instruction: isGenericExplanation(instruction, lang)
+        ? null
+        : instruction || null,
       explanation,
       exerciseType: input.exerciseType,
+      answer: input.correct ? null : answer || null,
     }),
   );
 }

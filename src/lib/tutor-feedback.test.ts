@@ -59,9 +59,22 @@ describe("formatBankTutorFeedback", () => {
       explanation: "prepositions of place: word order.",
       instruction: "Составьте предложение по образцу",
       exerciseType: "sentence_building",
+      answer: "Estoy en casa",
     });
     expect(fb).toMatch(/Почти|Не совсем|Давай|Хорошая/i);
     expect(fb).not.toMatch(/prepositions of place/i);
     expect(fb).not.toMatch(/Составьте предложение/i);
+    expect(fb).toMatch(/Правильный ответ:\s*Estoy en casa/);
+  });
+
+  it("includes the model answer when the bank note is empty", () => {
+    const fb = formatBankTutorFeedback({
+      language: "ru",
+      correct: false,
+      explanation: "",
+      answer: "Volvieron tarde",
+    });
+    expect(fb).toMatch(/Правильный ответ:\s*Volvieron tarde/);
+    expect(fb).not.toMatch(/выше/i);
   });
 });

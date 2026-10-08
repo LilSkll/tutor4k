@@ -753,6 +753,11 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
                   : t("lesson.incorrect")}
               </p>
             </div>
+            {!result.correct ? (
+              <p className="text-sm font-medium">
+                {t("lesson.correctAnswer", { answer: ex.answer })}
+              </p>
+            ) : null}
             <p className="text-sm text-muted-foreground whitespace-pre-wrap">
               {plainTutorText(result.feedback)}
             </p>

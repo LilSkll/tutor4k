@@ -747,11 +747,19 @@ export async function checkExerciseAnswer(input: {
   const bankExplanation = input.exercise.explanation;
   const { shouldSoftCheckEquivalents, enrichFeedbackWithConstruction } =
     await import("@/lib/exercise-construction-hint");
-  const { formatBankTutorFeedback } = await import("@/lib/tutor-feedback");
+  const { ensureModelAnswerInFeedback, formatBankTutorFeedback } =
+    await import("@/lib/tutor-feedback");
   const { plainTutorText } = await import("@/lib/plain-tutor-text");
   const finish = (correct: boolean, rawFeedback: string) => ({
     correct,
-    feedback: plainTutorText(rawFeedback),
+    feedback: plainTutorText(
+      ensureModelAnswerInFeedback(
+        rawFeedback,
+        input.exercise.answer,
+        input.language ?? "ru",
+        correct,
+      ),
+    ),
   });
 
   if (
@@ -775,6 +783,7 @@ export async function checkExerciseAnswer(input: {
             explanation: bankExplanation,
             instruction: input.exercise.instruction,
             exerciseType: input.exercise.type,
+            answer: input.exercise.answer,
           })
         : input.exercise.explanation,
     );
@@ -804,6 +813,7 @@ export async function checkExerciseAnswer(input: {
         explanation: bankExplanation,
         instruction: input.exercise.instruction,
         exerciseType: input.exercise.type,
+        answer: input.exercise.answer,
       }),
     );
 
@@ -826,6 +836,7 @@ export async function checkExerciseAnswer(input: {
     explanation: bankExplanation,
     instruction: input.exercise.instruction,
     exerciseType: input.exercise.type,
+    answer: input.exercise.answer,
   });
   try {
     const { generateAIResponse } = await import("@/server/ai/orchestrator");
@@ -859,6 +870,7 @@ export async function checkExerciseAnswer(input: {
         instruction: input.exercise.instruction,
         explanation: bankExplanation,
         exerciseType: input.exercise.type,
+        answer: isCorrect ? null : input.exercise.answer,
       });
     } else if (isCorrect) {
       feedback = formatBankTutorFeedback({
@@ -867,6 +879,7 @@ export async function checkExerciseAnswer(input: {
         explanation: bankExplanation,
         instruction: input.exercise.instruction,
         exerciseType: input.exercise.type,
+        answer: input.exercise.answer,
       });
     }
   } catch (err) {
