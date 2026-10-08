@@ -344,69 +344,56 @@ html[data-season="halloween"] {
   --shadow-brand: 0 8px 24px hsl(25 90% 45% / 0.28);
 }
 
-/* Soft atmospheric wash on app main — CSS only, no images / layout shift */
-html[data-season="halloween"] main {
+/*
+ * Pumpkins + witch hats as the app shell background (inline SVG tiles).
+ * Dense dual-layer repeat — no extra DOM, no animation loops.
+ */
+html[data-season="halloween"] .hw-app-shell {
+  /* Dark seasonal base (layers below the icon tiles) */
+  background-color: #120c18;
   background-image:
+    /* Layer A: pumpkins + hats */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cellipse cx='22' cy='24' rx='11' ry='9' fill='%23ea580c' opacity='0.42'/%3E%3Crect x='20' y='12' width='4' height='7' rx='1' fill='%234ade80' opacity='0.45'/%3E%3Cpolygon points='88,10 74,36 102,36' fill='%23f8fafc' opacity='0.22'/%3E%3Crect x='76' y='34' width='24' height='4' rx='1' fill='%23f97316' opacity='0.35'/%3E%3Cellipse cx='98' cy='88' rx='10' ry='8' fill='%23fb923c' opacity='0.4'/%3E%3Crect x='96' y='76' width='4' height='7' rx='1' fill='%234ade80' opacity='0.42'/%3E%3Cpolygon points='28,78 16,102 40,102' fill='%23e2e8f0' opacity='0.2'/%3E%3Crect x='18' y='100' width='20' height='3.5' rx='1' fill='%23f97316' opacity='0.32'/%3E%3Cellipse cx='60' cy='58' rx='8' ry='7' fill='%23f97316' opacity='0.34'/%3E%3Crect x='58' y='48' width='3.5' height='6' rx='1' fill='%234ade80' opacity='0.4'/%3E%3C/svg%3E"),
+    /* Layer B: offset hats + smaller pumpkins */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpolygon points='50,6 38,28 62,28' fill='%23f8fafc' opacity='0.16'/%3E%3Crect x='40' y='26' width='20' height='3' rx='1' fill='%23f97316' opacity='0.28'/%3E%3Cellipse cx='18' cy='70' rx='8' ry='7' fill='%23c2410c' opacity='0.36'/%3E%3Crect x='16' y='60' width='3.5' height='6' rx='1' fill='%234ade80' opacity='0.38'/%3E%3Cpolygon points='100,52 88,74 112,74' fill='%23e2e8f0' opacity='0.18'/%3E%3Crect x='90' y='72' width='20' height='3' rx='1' fill='%23f97316' opacity='0.28'/%3E%3Cellipse cx='70' cy='100' rx='9' ry='7.5' fill='%23ea580c' opacity='0.34'/%3E%3Crect x='68' y='89' width='3.5' height='6' rx='1' fill='%234ade80' opacity='0.36'/%3E%3C/svg%3E"),
+    /* Dark night washes */
     radial-gradient(
-      ellipse 90% 55% at 100% -8%,
-      hsl(25 95% 48% / 0.14),
-      transparent 58%
+      ellipse 100% 70% at 50% 0%,
+      hsl(25 80% 28% / 0.35),
+      transparent 55%
     ),
     radial-gradient(
-      ellipse 70% 45% at -5% 105%,
-      hsl(275 45% 35% / 0.1),
-      transparent 52%
+      ellipse 80% 60% at 100% 100%,
+      hsl(280 40% 18% / 0.55),
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 70% 50% at 0% 80%,
+      hsl(220 30% 12% / 0.5),
+      transparent 48%
+    ),
+    linear-gradient(
+      165deg,
+      #1a1025 0%,
+      #120c18 42%,
+      #0c0812 100%
     );
-  background-repeat: no-repeat;
+  background-size:
+    88px 88px,
+    88px 88px,
+    auto,
+    auto,
+    auto,
+    auto;
+  background-position: 0 0, 44px 44px, 0 0, 0 0, 0 0, 0 0;
+  background-repeat: repeat, repeat, no-repeat, no-repeat, no-repeat, no-repeat;
   background-attachment: local;
+  color-scheme: dark;
 }
 
-/* App-wide sparse décor layer (fixed, non-interactive, no loops) */
-.hw-bg-layer {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.hw-pumpkin {
-  position: absolute;
-  border-radius: 48% 48% 42% 42%;
-  background: radial-gradient(circle at 35% 32%, #fb923c, #c2410c 72%);
-  box-shadow: 0 -3px 0 -1px #166534;
-}
-
-.hw-pumpkin::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: -18%;
-  width: 22%;
-  height: 28%;
-  transform: translateX(-50%);
-  border-radius: 2px;
-  background: #166534;
-}
-
-.hw-witch-hat-deco {
-  position: absolute;
-  background: #1a1025;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  border-radius: 1px;
-  box-shadow: 0 1px 0 1px #f97316;
-}
-
-.hw-witch-hat-deco::after {
-  content: "";
-  position: absolute;
-  left: 8%;
-  right: 8%;
-  bottom: -12%;
-  height: 22%;
-  background: #1a1025;
-  border-radius: 1px;
-  box-shadow: 0 1px 0 #f97316;
+html[data-season="halloween"] .hw-app-shell main,
+html[data-season="halloween"] .hw-app-shell > .flex-1 {
+  background-color: transparent;
 }
 
 /* Tiny pumpkin accent on dashboard Halloween card only */
