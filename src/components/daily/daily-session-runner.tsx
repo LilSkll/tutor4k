@@ -89,6 +89,9 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
   const [doneMinutesYesterday, setDoneMinutesYesterday] = React.useState<
     number | null
   >(null);
+  const [doneMinutesCredited, setDoneMinutesCredited] = React.useState<
+    number | null
+  >(null);
   /** Last wrong answer this session — shown once on Done (UI language wrapper). */
   const [microMemory, setMicroMemory] = React.useState<{
     wrong: string;
@@ -98,6 +101,19 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
   const [speaking, setSpeaking] = React.useState(false);
   const askInFlight = React.useRef(false);
   const speechStopRef = React.useRef<(() => void) | null>(null);
+  const sessionStartedAt = React.useRef(Date.now());
+  const finishOnceRef = React.useRef(false);
+
+  /** Honest band for the ritual: elapsed wall time, clamped 2–12. */
+  const estimateSessionMinutes = () => {
+    const elapsed = Math.round(
+      (Date.now() - sessionStartedAt.current) / 60_000,
+    );
+    if (elapsed <= 0) return 4;
+    return Math.max(2, Math.min(12, elapsed));
+  };
+
+  const dailyCreditKey = () => `st_daily_credit_${localDateKey()}`;
 
   const rememberMistake = (wrong: string, right: string) => {
     const w = wrong.trim();
@@ -273,23 +289,44 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
   };
 
   const finishSession = async () => {
-    if (loading) return;
+    if (loading || finishOnceRef.current) return;
+    finishOnceRef.current = true;
     setLoading(true);
     setFinishError(null);
     try {
+      let minutes = estimateSessionMinutes();
+      try {
+        if (typeof window !== "undefined" && localStorage.getItem(dailyCreditKey())) {
+          // Already credited the Daily ritual today — don't stack another 8+.
+          minutes = 0;
+        }
+      } catch {
+        // private mode / blocked storage — still credit once this mount
+      }
       const result = await completeDailySessionAction({
-        minutes: 8,
+        minutes,
         localDate: localDateKey(),
       });
       if (result.error) {
+        finishOnceRef.current = false;
         setFinishError(result.error);
         return;
       }
+      const credited = result.minutesCredited ?? minutes;
+      if (credited > 0) {
+        try {
+          localStorage.setItem(dailyCreditKey(), String(credited));
+        } catch {
+          // ignore
+        }
+      }
+      setDoneMinutesCredited(credited);
       setDoneStreak(result.streak ?? null);
       setDoneMinutesToday(result.minutesToday ?? null);
       setDoneMinutesYesterday(result.minutesYesterday ?? null);
       setPhase("done");
     } catch {
+      finishOnceRef.current = false;
       setFinishError(t("daily.finishError"));
     } finally {
       setLoading(false);
@@ -325,7 +362,13 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
                   total: exercisesCompleted,
                 })}
               </li>
-              <li>{t("daily.summaryMinutes", { minutes: 8 })}</li>
+              <li>
+                {doneMinutesCredited != null && doneMinutesCredited > 0
+                  ? t("daily.summaryMinutes", {
+                      minutes: doneMinutesCredited,
+                    })
+                  : t("daily.summaryMinutesAlready")}
+              </li>
               {doneMinutesToday != null ? (
                 <li>
                   {t("daily.summaryMinutesToday", {

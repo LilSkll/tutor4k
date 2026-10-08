@@ -263,7 +263,7 @@ export async function sendTutorMessage(input: {
               .from("chat_conversations")
               .update({ updated_at: new Date().toISOString() })
               .eq("id", conversationId);
-            await recordStudySession(2, 0).catch(() => {});
+            await recordStudySession(1, 0).catch(() => {});
           } catch (err) {
             console.warn("[tutor] persist cache hit failed:", (err as Error).message);
           }
@@ -440,7 +440,7 @@ export async function sendTutorMessage(input: {
         .from("chat_conversations")
         .update({ updated_at: new Date().toISOString() })
         .eq("id", conversationId);
-      await recordStudySession(2, 0).catch(() => {});
+      await recordStudySession(1, 0).catch(() => {});
     } catch (err) {
       console.warn("[tutor] persist assistant failed:", (err as Error).message);
     }
@@ -1019,7 +1019,9 @@ async function saveExerciseHistory(input: {
     console.error("[saveExerciseHistory] insert error:", error.message);
   }
 
-  await recordStudySession(3, 1).catch(() => {});
+  // Do NOT call recordStudySession here — every check was adding ~3 minutes
+  // and inflated "today" totals (Daily 8 exercises ≈ +24 before the ritual credit).
+  // Study time is recorded at session boundaries (Daily finish, chapter complete, tutor).
 }
 
 export async function getExerciseHistoryRows(): Promise<ExerciseHistory[]> {

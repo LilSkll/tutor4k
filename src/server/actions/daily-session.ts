@@ -143,10 +143,15 @@ export async function completeDailySessionAction(input?: {
   streak?: number;
   minutesToday?: number;
   minutesYesterday?: number;
+  /** Minutes actually added this call (0 if already credited today). */
+  minutesCredited?: number;
 }> {
-  const minutes = Math.max(1, Math.min(30, Math.round(input?.minutes ?? 8)));
+  // 0 = already credited today (client idempotency); still refresh totals/streak.
+  const minutes = Math.max(0, Math.min(15, Math.round(input?.minutes ?? 8)));
   const activityDate = parseLocalDateKey(input?.localDate);
-  const result = await recordStudySession(minutes, 1, { activityDate });
+  const result = await recordStudySession(minutes, minutes > 0 ? 1 : 0, {
+    activityDate,
+  });
   if (result.error) {
     return { error: result.error };
   }
@@ -163,5 +168,6 @@ export async function completeDailySessionAction(input?: {
     streak: result.streak,
     minutesToday: result.minutesToday,
     minutesYesterday,
+    minutesCredited: minutes,
   };
 }
