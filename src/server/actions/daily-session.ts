@@ -97,29 +97,32 @@ export async function getDailySessionPlanAction(input?: {
       rotationSeed,
     });
 
-  let { reviewExercises, practiceExercises, exhaustedExclusions } =
-    buildDailyExerciseBlocks({
-      revisionExercises,
-      chapterExercises: localizeBank(
-        course.getExercises(chapterSlug),
-        language,
-        courseId,
-      ),
-      level: chapter.level as GrammarLevel,
-      rotationSeed,
-      excludeIds: input?.excludeIds,
-    });
+  const {
+    reviewExercises,
+    exhaustedExclusions,
+    practiceExercises: practiceBase,
+  } = buildDailyExerciseBlocks({
+    revisionExercises,
+    chapterExercises: localizeBank(
+      course.getExercises(chapterSlug),
+      language,
+      courseId,
+    ),
+    level: chapter.level as GrammarLevel,
+    rotationSeed,
+    excludeIds: input?.excludeIds,
+  });
 
   const halloween =
     courseId === "spanish" && isHalloweenSeasonOn(todayIso);
-  if (halloween) {
-    practiceExercises = mixHalloweenPractice(
-      practiceExercises,
-      rotationSeed,
-      2,
-      localizeBank(HALLOWEEN_EXERCISES, language, courseId),
-    );
-  }
+  const practiceExercises = halloween
+    ? mixHalloweenPractice(
+        practiceBase,
+        rotationSeed,
+        2,
+        localizeBank(HALLOWEEN_EXERCISES, language, courseId),
+      )
+    : practiceBase;
 
   const weakTopicSlug = adaptation.revisionTopics[0]?.topic ?? null;
   const recommendationLabel = resolveCourseTopicLabel(
