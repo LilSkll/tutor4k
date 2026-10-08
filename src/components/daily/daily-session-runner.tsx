@@ -36,8 +36,9 @@ import {
 import { localDateKey } from "@/lib/local-date";
 import {
   canUseSpeechSynthesis,
-  interfaceSpeechLang,
+  pickSpeechPayload,
   speakText,
+  warmSpeechVoices,
 } from "@/lib/speak-text";
 import {
   isExactStreakMilestone,
@@ -106,6 +107,7 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
 
   React.useEffect(() => {
     setSpeechSupported(canUseSpeechSynthesis());
+    warmSpeechVoices();
     return () => {
       speechStopRef.current?.();
       speechStopRef.current = null;
@@ -468,13 +470,21 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
                           speechStopRef.current?.();
                           return;
                         }
-                        const handle = speakText(
+                        // Quoted L2 examples → course voice (pronunciation);
+                        // otherwise full reply in the interface language.
+                        const payload = pickSpeechPayload(
                           dialogueResponse,
-                          interfaceSpeechLang(language),
+                          language,
+                          plan.courseId,
+                        );
+                        const handle = speakText(
+                          payload.text,
+                          payload.langTag,
                           () => {
                             setSpeaking(false);
                             speechStopRef.current = null;
                           },
+                          payload.fallbackLangTag,
                         );
                         if (!handle) return;
                         speechStopRef.current = handle.stop;

@@ -259,12 +259,9 @@ export async function POST(req: NextRequest) {
           grammarTopic: chapterForProfile.grammarTopic,
           vocabTopic: chapterForProfile.vocabTopic ?? null,
           correct: ok,
-          addStrength: ok
-            ? `completed chapter: ${chapterForProfile.titleEs || chapterForProfile.title}`
-            : null,
-          addWeakness: ok
-            ? null
-            : `needs review: ${chapterForProfile.grammarTopic}`,
+          // Topic slugs only — UI localizes via resolveCourseTopicLabel.
+          addStrength: ok ? chapterForProfile.grammarTopic : null,
+          addWeakness: ok ? null : chapterForProfile.grammarTopic,
           skillHints: {
             reading: chapterForProfile.level === "C2" ? "C1" : chapterForProfile.level,
             writing: chapterForProfile.level === "C2" ? "C1" : chapterForProfile.level,

@@ -88,12 +88,20 @@ export async function getDailySessionPlanAction(): Promise<DailySessionPlan | nu
     courseId,
   );
 
-  const strengthLabel = resolveCourseTopicLabel(
+  const strengthRaw = resolveCourseTopicLabel(
     pickStrengthTopicSlug(learningProfile, weakTopicSlug),
     course,
     language,
     courseId,
   );
+  // Hide balance line if unresolved or identical to the weak topic.
+  const strengthLabel =
+    strengthRaw &&
+    (!recommendationLabel ||
+      strengthRaw.trim().toLowerCase() !==
+        recommendationLabel.trim().toLowerCase())
+      ? strengthRaw
+      : null;
 
   const topicTitle =
     resolveCourseTopicLabel(

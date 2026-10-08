@@ -35,10 +35,29 @@ describe("resolveCourseTopicLabel", () => {
     ).toBe("Глагол be (am/is/are)");
   });
 
-  it("humanizes unknown eng slugs", () => {
+  it("hides unknown eng slugs in non-EN UI", () => {
     const course = stubCourse({});
     expect(
       resolveCourseTopicLabel("eng-a1-mystery", course, "ru", "english"),
+    ).toBeNull();
+  });
+
+  it("humanizes unknown eng slugs in EN UI", () => {
+    const course = stubCourse({});
+    expect(
+      resolveCourseTopicLabel("eng-a1-mystery", course, "en", "english"),
     ).toBe("a1 mystery");
+  });
+
+  it("never surfaces completed-chapter meta", () => {
+    const course = stubCourse({});
+    expect(
+      resolveCourseTopicLabel(
+        "completed chapter: Los Recuerdos",
+        course,
+        "ru",
+        "spanish",
+      ),
+    ).toBeNull();
   });
 });

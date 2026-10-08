@@ -376,12 +376,9 @@ export async function completeChapter(
         grammarTopic: chapter.grammarTopic,
         vocabTopic: chapter.vocabTopic ?? null,
         correct: ok,
-        addStrength: ok
-          ? `completed chapter: ${chapter.titleEs || chapter.title}`
-          : null,
-        addWeakness: ok
-          ? null
-          : `needs review: ${chapter.grammarTopic}`,
+        // Store topic slugs only — never English meta like "completed chapter: …".
+        addStrength: ok ? chapter.grammarTopic : null,
+        addWeakness: ok ? null : chapter.grammarTopic,
         skillHints: {
           // Skill levels cap at C1 (user Level scale); C2 chapters count as C1.
           reading: chapter.level === "C2" ? "C1" : chapter.level,

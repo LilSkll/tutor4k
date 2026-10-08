@@ -16,6 +16,11 @@ export function resolveCourseTopicLabel(
   const raw = topicKey?.trim();
   if (!raw) return null;
 
+  // Legacy learning-profile notes — never surface as topic titles.
+  if (/^(completed chapter|needs review)\s*:/i.test(raw)) {
+    return null;
+  }
+
   const grammar =
     course.getGrammarTopic(raw) ??
     course.getGrammar().find((t) => t.slug === raw);
@@ -30,11 +35,20 @@ export function resolveCourseTopicLabel(
     return getVocabTopicTitle(vocab, language, courseId);
   }
 
+  // Unknown machine slugs — hide rather than show English-ish leftovers in RU/ES/DE UI.
   if (/^eng-|^chapter-|^a\d-|^b\d-|^c\d-/.test(raw)) {
-    return raw
-      .replace(/^eng-/, "")
-      .replace(/^chapter-\d+-/, "")
-      .replace(/-/g, " ");
+    if (language === "en") {
+      return raw
+        .replace(/^eng-/, "")
+        .replace(/^chapter-\d+-/, "")
+        .replace(/-/g, " ");
+    }
+    return null;
+  }
+
+  // Bare Latin slug leftovers look crooked outside EN UI.
+  if (language !== "en" && /^[a-z0-9]+(?:-[a-z0-9]+)+$/i.test(raw)) {
+    return null;
   }
 
   return raw;
