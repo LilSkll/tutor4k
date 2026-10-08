@@ -57,6 +57,26 @@ function L(ru: string, en: string, es?: string): LocalizedText {
  * only reveal when awarded.
  */
 export const EASTER_EGGS: EasterEggDef[] = [
+  // ── Seasonal (awarded via Daily Pumpkin Streak, not chapter roll) ───
+  {
+    id: "seasonal-halloween-pumpkin-streak",
+    rarity: "rare",
+    kind: "phrase",
+    courseIds: ["spanish"],
+    weight: 0,
+    title: L(
+      "Pumpkin Streak",
+      "Pumpkin Streak",
+      "Racha de calabaza",
+    ),
+    body: L(
+      "5 Daily подряд в Хэллоуин — тыква зажжена. Награда остаётся в паспорте.",
+      "5 Dailies in a row during Halloween — pumpkin lit. The stamp stays in your passport.",
+      "5 Daily seguidos en Halloween — calabaza encendida. El sello queda en tu pasaporte.",
+    ),
+    highlight: L("🎃", "🎃", "🎃"),
+    stampLabel: L("Тыква", "Pumpkin", "Calabaza"),
+  },
   // ── Global / common flavor ─────────────────────────────────────────
   {
     id: "global-cafe-con-leche",
@@ -309,6 +329,11 @@ export type JourneyCourseFinds = {
   chapterCerts: ChapterCertRecord[];
   levelCerts: GrammarLevel[];
   courseCertAt?: string | null;
+  /**
+   * YYYY-MM-DD marks from seasonal Daily completions (e.g. Halloween Pumpkin Streak).
+   * Not shown in the passport UI — progress only.
+   */
+  seasonalDailyDates?: string[];
 };
 
 export type JourneyFindsStore = Record<string, JourneyCourseFinds>;
@@ -320,6 +345,7 @@ export function emptyCourseFinds(): JourneyCourseFinds {
     chapterCerts: [],
     levelCerts: [],
     courseCertAt: null,
+    seasonalDailyDates: [],
   };
 }
 
@@ -349,5 +375,10 @@ export function normalizeCourseFinds(raw: JourneyCourseFinds | undefined | null)
     chapterCerts,
     levelCerts: Array.isArray(raw.levelCerts) ? [...raw.levelCerts] : [],
     courseCertAt: raw.courseCertAt ?? null,
+    seasonalDailyDates: Array.isArray(raw.seasonalDailyDates)
+      ? raw.seasonalDailyDates.filter(
+          (d): d is string => typeof d === "string" && /^\d{4}-\d{2}-\d{2}$/.test(d),
+        )
+      : [],
   };
 }

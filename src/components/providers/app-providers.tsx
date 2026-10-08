@@ -7,6 +7,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { Toaster } from "@/components/ui/sonner";
 import { IdleCookieBanner } from "@/components/legal/idle-cookie-banner";
 import { LocalDateSync } from "@/components/shared/local-date-sync";
+import { SeasonalRoot } from "@/components/seasonal/seasonal-root";
 
 /**
  * Full app shell providers (student + teacher).
@@ -36,7 +37,7 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
     >
       <QueryClientProvider client={queryClient}>
         <TooltipProvider delayDuration={200}>
-          {children}
+          <SeasonalRoot>{children}</SeasonalRoot>
           <LocalDateSync />
           <IdleCookieBanner />
           <Toaster richColors position="top-right" />

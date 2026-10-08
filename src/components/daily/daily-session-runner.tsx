@@ -19,6 +19,7 @@ import { Input } from "@/components/ui/input";
 import { Markdown } from "@/components/shared/markdown";
 import { BackLink } from "@/components/shared/back-link";
 import { StreakStampCard } from "@/components/shared/streak-stamp-card";
+import { HalloweenBurst } from "@/components/seasonal/halloween-burst";
 import { DialogueSpeakRepeat } from "@/components/daily/dialogue-speak-repeat";
 import { QuestionWithGloss } from "@/components/exercises/question-with-gloss";
 import { ExerciseFreeTextBlock } from "@/components/exercises/exercise-free-text-block";
@@ -92,6 +93,8 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
   const [doneMinutesCredited, setDoneMinutesCredited] = React.useState<
     number | null
   >(null);
+  const [halloweenDone, setHalloweenDone] = React.useState(false);
+  const [pumpkinStreakAwarded, setPumpkinStreakAwarded] = React.useState(false);
   /** Last wrong answer this session — shown once on Done (UI language wrapper). */
   const [microMemory, setMicroMemory] = React.useState<{
     wrong: string;
@@ -324,6 +327,8 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
       setDoneStreak(result.streak ?? null);
       setDoneMinutesToday(result.minutesToday ?? null);
       setDoneMinutesYesterday(result.minutesYesterday ?? null);
+      setHalloweenDone(Boolean(result.halloween ?? plan.halloween));
+      setPumpkinStreakAwarded(Boolean(result.pumpkinStreakAwarded));
       setPhase("done");
     } catch {
       finishOnceRef.current = false;
@@ -342,13 +347,27 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
     return (
       <div className="max-w-2xl mx-auto py-6 space-y-6">
         <BackLink href="/dashboard" />
-        <Card className="border-0 shadow-lg overflow-hidden">
-          <div className="bg-gradient-to-br from-primary via-orange-500 to-rose-500 p-8 text-white text-center">
+        <Card className="relative border-0 shadow-lg overflow-hidden">
+          <HalloweenBurst active={halloweenDone} />
+          <div
+            className={cn(
+              "p-8 text-white text-center",
+              halloweenDone
+                ? "bg-gradient-to-br from-violet-700 via-orange-500 to-amber-600"
+                : "bg-gradient-to-br from-primary via-orange-500 to-rose-500",
+            )}
+          >
             <div className="text-5xl mb-3">
-              <Sparkles className="h-12 w-12 mx-auto" />
+              {halloweenDone ? (
+                <span className="inline-block text-5xl" aria-hidden>
+                  🎃
+                </span>
+              ) : (
+                <Sparkles className="h-12 w-12 mx-auto" />
+              )}
             </div>
             <h1 className="text-2xl sm:text-3xl font-bold mb-2">
-              {t("daily.doneTitle")}
+              {halloweenDone ? t("halloween.doneTitle") : t("daily.doneTitle")}
             </h1>
             <p className="text-white/85 text-sm sm:text-base">
               {t("daily.doneSubtitle", { chapter: plan.chapterTitle })}
@@ -387,6 +406,11 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
                 <li className="flex items-center gap-1.5 text-orange-600 dark:text-orange-400">
                   <Flame className="h-3.5 w-3.5 shrink-0" />
                   {t("daily.summaryStreak", { streak: doneStreak })}
+                </li>
+              ) : null}
+              {pumpkinStreakAwarded ? (
+                <li className="font-medium text-orange-600 dark:text-orange-400">
+                  {t("halloween.pumpkinStreak")}
                 </li>
               ) : null}
               {milestoneKey ? (

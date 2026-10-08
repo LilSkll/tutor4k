@@ -338,3 +338,57 @@
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-muted-foreground/40;
 }
+
+/* ── Halloween seasonal accents (CSS-only, no permanent loops) ── */
+html[data-season="halloween"] {
+  --shadow-brand: 0 8px 24px hsl(25 90% 45% / 0.28);
+}
+
+.hw-witch-hat {
+  width: 18px;
+  height: 14px;
+  background: #1a1025;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  border-radius: 1px;
+  box-shadow: 0 1px 0 1px #f97316;
+}
+
+.hw-web {
+  width: 28px;
+  height: 28px;
+  background:
+    radial-gradient(circle at 100% 0%, transparent 60%, hsl(0 0% 40% / 0.35) 61%, transparent 62%),
+    linear-gradient(
+      135deg,
+      transparent 48%,
+      hsl(0 0% 45% / 0.35) 49%,
+      hsl(0 0% 45% / 0.35) 51%,
+      transparent 52%
+    );
+}
+
+@keyframes hw-bat-fly {
+  0% {
+    transform: translateY(40%) translateX(0) scale(0.7);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120%) translateX(24px) scale(1);
+    opacity: 0;
+  }
+}
+
+.hw-bat {
+  bottom: 18%;
+  animation: hw-bat-fly 1.35s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hw-bat {
+    animation: none;
+    opacity: 0;
+  }
+}

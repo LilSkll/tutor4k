@@ -15,6 +15,16 @@ import {
 } from "@/server/actions/data";
 import { getLessonAdaptationAction } from "@/server/actions/learning-profile";
 import { pickStrengthTopicSlug } from "@/lib/daily-personalization";
+import {
+  HALLOWEEN_EXERCISES,
+  mixHalloweenPractice,
+} from "@/config/halloween-exercises";
+import {
+  HALLOWEEN_DAILY_STREAK_TARGET,
+  HALLOWEEN_EGG_ID,
+  countConsecutiveSeasonalDays,
+  isHalloweenSeasonOn,
+} from "@/lib/seasonal";
 import { localDateKey, parseLocalDateKey, previousDateKey } from "@/lib/local-date";
 import type { GrammarLevel, InterfaceLanguage, StaticExercise } from "@/types";
 import { cookies } from "next/headers";
@@ -34,6 +44,7 @@ export type DailySessionPlan = {
   practiceExercises: StaticExercise[];
   /** Client should clear seen-ids when the bank cycled. */
   exhaustedExclusions?: boolean;
+  halloween?: boolean;
 };
 
 function localizeBank(
@@ -86,7 +97,7 @@ export async function getDailySessionPlanAction(input?: {
       rotationSeed,
     });
 
-  const { reviewExercises, practiceExercises, exhaustedExclusions } =
+  let { reviewExercises, practiceExercises, exhaustedExclusions } =
     buildDailyExerciseBlocks({
       revisionExercises,
       chapterExercises: localizeBank(
@@ -98,6 +109,17 @@ export async function getDailySessionPlanAction(input?: {
       rotationSeed,
       excludeIds: input?.excludeIds,
     });
+
+  const halloween =
+    courseId === "spanish" && isHalloweenSeasonOn(todayIso);
+  if (halloween) {
+    practiceExercises = mixHalloweenPractice(
+      practiceExercises,
+      rotationSeed,
+      2,
+      localizeBank(HALLOWEEN_EXERCISES, language, courseId),
+    );
+  }
 
   const weakTopicSlug = adaptation.revisionTopics[0]?.topic ?? null;
   const recommendationLabel = resolveCourseTopicLabel(
@@ -142,6 +164,7 @@ export async function getDailySessionPlanAction(input?: {
     reviewExercises,
     practiceExercises,
     exhaustedExclusions,
+    halloween,
   };
 }
 
@@ -157,6 +180,8 @@ export async function completeDailySessionAction(input?: {
   minutesYesterday?: number;
   /** Minutes actually added this call (0 if already credited today). */
   minutesCredited?: number;
+  halloween?: boolean;
+  pumpkinStreakAwarded?: boolean;
 }> {
   // 0 = already credited today (client idempotency); still refresh totals/streak.
   const minutes = Math.max(0, Math.min(15, Math.round(input?.minutes ?? 8)));
@@ -168,12 +193,20 @@ export async function completeDailySessionAction(input?: {
     return { error: result.error };
   }
 
-  const todayKey = result.activityDate;
-  const recent = await getDailyActivity(2);
-  const minutesYesterday = todayKey
-    ? (recent.find((row) => row.activity_date === previousDateKey(todayKey))
-        ?.minutes_studied ?? 0)
-    : 0;
+  const todayKey = result.activityDate ?? localDateKey();
+  const profile = await getCurrentProfile();
+  const courseId = profile?.active_course_id ?? "spanish";
+  const halloween =
+    courseId === "spanish" && isHalloweenSeasonOn(todayKey);
+  const recent = await getDailyActivity(7);
+  const minutesYesterday =
+    recent.find((row) => row.activity_date === previousDateKey(todayKey))
+      ?.minutes_studied ?? 0;
+
+  let pumpkinStreakAwarded = false;
+  if (halloween) {
+    pumpkinStreakAwarded = await maybeAwardPumpkinStreak(todayKey);
+  }
 
   return {
     error: null,
@@ -181,5 +214,72 @@ export async function completeDailySessionAction(input?: {
     minutesToday: result.minutesToday,
     minutesYesterday,
     minutesCredited: minutes,
+    halloween,
+    pumpkinStreakAwarded,
   };
+}
+
+/** 5 consecutive Halloween Daily finishes → journey egg (persists after season). */
+async function maybeAwardPumpkinStreak(todayKey: string): Promise<boolean> {
+  try {
+    const { createSupabaseServerClient } = await import("@/lib/supabase-server");
+    const supabase = await createSupabaseServerClient();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    if (!user) return false;
+
+    const { createSupabaseAdminClient } = await import("@/lib/supabase-admin");
+    const admin = createSupabaseAdminClient();
+    const client = admin ?? supabase;
+
+    const { loadJourneyFinds, saveJourneyFinds } = await import(
+      "@/server/journey/rewards"
+    );
+    const {
+      emptyCourseFinds,
+      normalizeCourseFinds,
+      getEggById,
+    } = await import("@/config/journey/easter-eggs");
+
+    // Same boundary cast as chapters/complete (rewards.Client is a narrow duck type).
+    const journeyClient = client as never;
+    const store = await loadJourneyFinds(journeyClient, user.id);
+    const courseId = "spanish";
+    const slice = normalizeCourseFinds(store[courseId] ?? emptyCourseFinds());
+
+    // Record this Daily finish (idempotent per calendar day).
+    const dates = new Set(slice.seasonalDailyDates ?? []);
+    dates.add(todayKey);
+    slice.seasonalDailyDates = [...dates].sort();
+
+    const alreadyHasEgg = slice.eggs.some((e) => e.id === HALLOWEEN_EGG_ID);
+    let awarded = false;
+    if (
+      !alreadyHasEgg &&
+      countConsecutiveSeasonalDays(dates, todayKey) >=
+        HALLOWEEN_DAILY_STREAK_TARGET
+    ) {
+      const egg = getEggById(HALLOWEEN_EGG_ID);
+      if (egg) {
+        slice.eggs.push({
+          id: egg.id,
+          rarity: egg.rarity,
+          chapterSlug: "seasonal-halloween",
+          at: new Date().toISOString(),
+        });
+        awarded = true;
+      }
+    }
+
+    store[courseId] = slice;
+    const ok = await saveJourneyFinds(journeyClient, user.id, store);
+    return ok && awarded;
+  } catch (err) {
+    console.warn(
+      "[halloween] pumpkin streak award failed:",
+      (err as Error).message,
+    );
+    return false;
+  }
 }

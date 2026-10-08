@@ -12,6 +12,7 @@ export const SPANISH_TOPIC_TITLES_EN: Record<string, string> = {
   "a2-trabajo": "Work and Professions",
   "a2-ropa": "Clothing",
   "a2-clima": "Weather and Nature",
+  "a2-halloween": "Halloween",
   "a2-deportes": "Sports and Hobbies",
   "a2-compras": "Shopping",
   "a2-tecnologia": "Technology",

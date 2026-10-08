@@ -45,7 +45,9 @@ import { Suspense } from "react";
 import { EmailConfirmedBanner } from "@/components/auth/email-confirmed-banner";
 import { StreakStampCard } from "@/components/shared/streak-stamp-card";
 import { WeekPostcardCard } from "@/components/shared/week-postcard-card";
+import { HalloweenDailyCard } from "@/components/seasonal/halloween-daily-card";
 import { isStreakGap } from "@/lib/streak-gap";
+import { isHalloweenSeasonOn } from "@/lib/seasonal";
 
 export default async function DashboardPage({
   searchParams,
@@ -261,13 +263,17 @@ export default async function DashboardPage({
         }
       : null;
 
+  const halloween =
+    courseId === "spanish" && isHalloweenSeasonOn(todayIso);
   const motivation = quietReturn
     ? quietReturn.main
-    : streak > 0 && minutesToday === 0
-      ? t("dashboard.streakProtect", { streak })
-      : streak > 0
-        ? t("dashboard.motivationStreak", { streak })
-        : t("dashboard.motivationStart");
+    : halloween
+      ? t("halloween.mascotTip")
+      : streak > 0 && minutesToday === 0
+        ? t("dashboard.streakProtect", { streak })
+        : streak > 0
+          ? t("dashboard.motivationStreak", { streak })
+          : t("dashboard.motivationStart");
 
   return (
     <div className="page-container space-y-6 md:space-y-8">
@@ -285,7 +291,7 @@ export default async function DashboardPage({
         </p>
       </div>
 
-      <MascotTip message={motivation} />
+      <MascotTip message={motivation} halloween={halloween} />
       {quietReturn?.topic ? (
         <p className="text-sm text-muted-foreground -mt-3 px-0.5">
           {quietReturn.topic}
@@ -298,6 +304,14 @@ export default async function DashboardPage({
           <h2 className="section-title">{t("dashboard.todaysLesson")}</h2>
           <Badge variant="level">{currentChapter.level}</Badge>
         </div>
+
+        {halloween ? (
+          <HalloweenDailyCard
+            title={t("halloween.dailyTitle")}
+            body={t("halloween.dailyBody")}
+            cta={t("halloween.dailyCta")}
+          />
+        ) : null}
 
         <Card className="relative overflow-hidden shadow-elevated">
           <div className="bg-gradient-to-br from-primary via-orange-500 to-rose-500 p-5 sm:p-7 text-white">
