@@ -28,7 +28,7 @@ export function AppShell({
   const isImmersive = pathname.startsWith("/tutor");
 
   return (
-    <div className="flex h-[100dvh] overflow-hidden bg-background">
+    <div className="relative z-[1] flex h-[100dvh] overflow-hidden bg-background">
       <Suspense fallback={null}>
         <NavigationProgress />
       </Suspense>

@@ -25,7 +25,7 @@ export const HALLOWEEN_EXERCISES: StaticExercise[] = [
       "Un fantasma en la casa vieja",
       "El fantasma está en la casa vieja",
     ],
-    explanation: "fantasma = призрак.",
+    explanation: "fantasma = ghost / призрак.",
     grammarTopic: "a1-ser-estar",
     vocabTopic: "a2-halloween",
   },
@@ -42,7 +42,7 @@ export const HALLOWEEN_EXERCISES: StaticExercise[] = [
     instructionKey: "translate_to_es",
     answer: "La bruja vuela de noche",
     acceptableAnswers: ["La bruja vuela por la noche"],
-    explanation: "bruja = ведьма; volar = летать.",
+    explanation: "bruja = witch / ведьма; volar = to fly.",
     vocabTopic: "a2-halloween",
   },
   {
@@ -58,7 +58,7 @@ export const HALLOWEEN_EXERCISES: StaticExercise[] = [
     instructionKey: "translate_to_es",
     answer: "Tengo miedo",
     acceptableAnswers: ["Me da miedo", "Estoy asustado", "Estoy asustada"],
-    explanation: "tener miedo / dar miedo.",
+    explanation: "tener miedo / dar miedo = to be scared.",
     vocabTopic: "a2-halloween",
   },
   {
@@ -77,7 +77,7 @@ export const HALLOWEEN_EXERCISES: StaticExercise[] = [
       "La calabaza de la puerta es grande",
       "Hay una calabaza grande en la puerta",
     ],
-    explanation: "calabaza = тыква.",
+    explanation: "calabaza = pumpkin / тыква.",
     vocabTopic: "a2-halloween",
   },
   {
@@ -86,7 +86,7 @@ export const HALLOWEEN_EXERCISES: StaticExercise[] = [
     question: "El ___ vive en el castillo oscuro. (vampiro)",
     instruction: "Заполните пропуск",
     answer: "vampiro",
-    explanation: "vampiro = вампир.",
+    explanation: "vampiro = vampire / вампир.",
     vocabTopic: "a2-halloween",
   },
   {
@@ -95,7 +95,7 @@ export const HALLOWEEN_EXERCISES: StaticExercise[] = [
     question: "Los niños llevan un ___ en Halloween. (disfraz)",
     instruction: "Заполните пропуск",
     answer: "disfraz",
-    explanation: "disfraz = костюм.",
+    explanation: "disfraz = costume / костюм.",
     vocabTopic: "a2-halloween",
   },
   {
@@ -105,7 +105,7 @@ export const HALLOWEEN_EXERCISES: StaticExercise[] = [
     instruction: "Заполните пропуск",
     answer: "embrujada",
     acceptableAnswers: ["encantada"],
-    explanation: "embrujado/a = заколдованный.",
+    explanation: "embrujado/a = haunted / заколдованный.",
     vocabTopic: "a2-halloween",
   },
   {
@@ -115,7 +115,7 @@ export const HALLOWEEN_EXERCISES: StaticExercise[] = [
     instruction: "Выберите правильный вариант",
     options: ["el cementerio", "la biblioteca", "el mercado", "la estación"],
     answer: "el cementerio",
-    explanation: "cementerio = кладбище.",
+    explanation: "cementerio = cemetery / кладбище.",
     vocabTopic: "a2-halloween",
   },
   {
@@ -130,7 +130,7 @@ export const HALLOWEEN_EXERCISES: StaticExercise[] = [
       "un parque",
     ],
     answer: "una criatura enorme y fea",
-    explanation: "monstruo = монстр.",
+    explanation: "monstruo = monster / монстр.",
     vocabTopic: "a2-halloween",
   },
   {
@@ -145,7 +145,7 @@ export const HALLOWEEN_EXERCISES: StaticExercise[] = [
       "Bruja la vuela",
     ],
     answer: "La bruja vuela",
-    explanation: "bruja — женский род: la bruja.",
+    explanation: "bruja is feminine: la bruja.",
     vocabTopic: "a2-halloween",
   },
   {
@@ -155,7 +155,7 @@ export const HALLOWEEN_EXERCISES: StaticExercise[] = [
     instruction: "Исправьте ошибку",
     answer: "El fantasma está en la cocina.",
     acceptableAnswers: ["El fantasma esta en la cocina."],
-    explanation: "Место → estar.",
+    explanation: "location → estar.",
     grammarTopic: "a1-ser-estar",
     vocabTopic: "a2-halloween",
   },
@@ -176,7 +176,7 @@ export const HALLOWEEN_EXERCISES: StaticExercise[] = [
     instructionKey: "build_sentence",
     options: ["El", "monstruo", "es", "muy", "grande"],
     answer: "El monstruo es muy grande",
-    explanation: "ser + прилагательное.",
+    explanation: "ser + adjective.",
     vocabTopic: "a2-halloween",
   },
   {
@@ -187,7 +187,7 @@ export const HALLOWEEN_EXERCISES: StaticExercise[] = [
     instructionKey: "build_sentence",
     options: ["Me", "da", "miedo", "la", "noche"],
     answer: "Me da miedo la noche",
-    explanation: "dar miedo = пугать / быть страшным.",
+    explanation: "dar miedo = to scare / to be scary.",
     vocabTopic: "a2-halloween",
   },
   {
@@ -207,7 +207,7 @@ export const HALLOWEEN_EXERCISES: StaticExercise[] = [
       "No tengas miedo: es solo un disfraz",
       "No te asustes, es solo un disfraz",
     ],
-    explanation: "disfraz = костюм; no tengas miedo.",
+    explanation: "disfraz = costume / костюм; no tengas miedo.",
     vocabTopic: "a2-halloween",
   },
   {
@@ -216,7 +216,7 @@ export const HALLOWEEN_EXERCISES: StaticExercise[] = [
     question: "De noche oímos un ruido en el ___. (cementerio)",
     instruction: "Заполните пропуск",
     answer: "cementerio",
-    explanation: "cementerio = кладбище.",
+    explanation: "cementerio = cemetery / кладбище.",
     vocabTopic: "a2-halloween",
   },
 ];

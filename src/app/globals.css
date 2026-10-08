@@ -361,6 +361,54 @@ html[data-season="halloween"] main {
   background-attachment: local;
 }
 
+/* App-wide sparse décor layer (fixed, non-interactive, no loops) */
+.hw-bg-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.hw-pumpkin {
+  position: absolute;
+  border-radius: 48% 48% 42% 42%;
+  background: radial-gradient(circle at 35% 32%, #fb923c, #c2410c 72%);
+  box-shadow: 0 -3px 0 -1px #166534;
+}
+
+.hw-pumpkin::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -18%;
+  width: 22%;
+  height: 28%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+  background: #166534;
+}
+
+.hw-witch-hat-deco {
+  position: absolute;
+  background: #1a1025;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  border-radius: 1px;
+  box-shadow: 0 1px 0 1px #f97316;
+}
+
+.hw-witch-hat-deco::after {
+  content: "";
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: -12%;
+  height: 22%;
+  background: #1a1025;
+  border-radius: 1px;
+  box-shadow: 0 1px 0 #f97316;
+}
+
 /* Tiny pumpkin accent on dashboard Halloween card only */
 .hw-pumpkin-dot {
   width: 10px;

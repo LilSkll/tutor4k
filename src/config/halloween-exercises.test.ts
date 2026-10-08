@@ -120,6 +120,34 @@ describe("getHalloweenExercisesForCourse", () => {
   });
 });
 
+describe("halloween instruction localization", () => {
+  it("localizes Spanish pool instructions for each UI language", () => {
+    const sample = HALLOWEEN_EXERCISES.find((e) => e.type === "fill_blank")!;
+    const ru = prepareExercisesForInterface([sample], "ru", "spanish")[0]!;
+    const en = prepareExercisesForInterface([sample], "en", "spanish")[0]!;
+    const es = prepareExercisesForInterface([sample], "es", "spanish")[0]!;
+    const de = prepareExercisesForInterface([sample], "de", "spanish")[0]!;
+    expect(ru.instruction).toMatch(/Заполните|пропуск/i);
+    expect(en.instruction.toLowerCase()).toMatch(/fill|blank/);
+    expect(es.instruction.toLowerCase()).toMatch(/completa|hueco/);
+    expect(de.instruction.toLowerCase()).toMatch(/füll|lück/i);
+  });
+
+  it("localizes English pool instructions for each UI language", () => {
+    const sample = HALLOWEEN_EXERCISES_ENGLISH.find(
+      (e) => e.type === "fill_blank",
+    )!;
+    const ru = prepareExercisesForInterface([sample], "ru", "english")[0]!;
+    const en = prepareExercisesForInterface([sample], "en", "english")[0]!;
+    const es = prepareExercisesForInterface([sample], "es", "english")[0]!;
+    const de = prepareExercisesForInterface([sample], "de", "english")[0]!;
+    expect(ru.instruction).toMatch(/Заполните|пропуск/i);
+    expect(en.instruction.toLowerCase()).toMatch(/fill|blank/);
+    expect(es.instruction.toLowerCase()).toMatch(/completa|hueco/);
+    expect(de.instruction.toLowerCase()).toMatch(/füll|lück/i);
+  });
+});
+
 describe("mixHalloweenPractice", () => {
   it("slots halloween items and preserves length", () => {
     const mixed = mixHalloweenPractice(sample, "seed-a", 2);

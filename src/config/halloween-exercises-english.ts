@@ -3,6 +3,8 @@ import type { StaticExercise } from "@/types";
 /**
  * Small seasonal English exercise pool (~16 items).
  * Merged into Daily practice only while Halloween season is on.
+ * Explanations keep Latin + RU gloss so RU UI stays readable and EN/ES/DE
+ * keep the Latin part after localizeBankExplanation.
  */
 export const HALLOWEEN_EXERCISES_ENGLISH: StaticExercise[] = [
   {
@@ -20,7 +22,7 @@ export const HALLOWEEN_EXERCISES_ENGLISH: StaticExercise[] = [
       "A ghost is in the old house",
       "The ghost is in an old house",
     ],
-    explanation: "ghost = призрак.",
+    explanation: "ghost = призрак / spirit.",
     vocabTopic: "eng-a2-halloween",
   },
   {
@@ -35,7 +37,7 @@ export const HALLOWEEN_EXERCISES_ENGLISH: StaticExercise[] = [
     instructionKey: "translate_to_en",
     answer: "The witch flies at night",
     acceptableAnswers: ["The witch is flying at night"],
-    explanation: "witch = ведьма; fly = летать.",
+    explanation: "witch = ведьма; fly → flies.",
     vocabTopic: "eng-a2-halloween",
   },
   {
@@ -86,7 +88,7 @@ export const HALLOWEEN_EXERCISES_ENGLISH: StaticExercise[] = [
       "Don't be scared — it's just a costume",
       "Don't be afraid, it's only a costume",
     ],
-    explanation: "costume = костюм.",
+    explanation: "costume = костюм; Don't be afraid.",
     vocabTopic: "eng-a2-halloween",
   },
   {
@@ -104,7 +106,7 @@ export const HALLOWEEN_EXERCISES_ENGLISH: StaticExercise[] = [
     question: "The children wear a ___ on Halloween. (costume)",
     instruction: "Fill in the blank",
     answer: "costume",
-    explanation: "costume = костюм / маскарадный наряд.",
+    explanation: "costume = костюм.",
     vocabTopic: "eng-a2-halloween",
   },
   {
@@ -114,7 +116,7 @@ export const HALLOWEEN_EXERCISES_ENGLISH: StaticExercise[] = [
     instruction: "Fill in the blank",
     answer: "haunted",
     acceptableAnswers: ["scary", "spooky"],
-    explanation: "haunted = с привидениями.",
+    explanation: "haunted = с привидениями / spooky.",
     vocabTopic: "eng-a2-halloween",
   },
   {
@@ -164,7 +166,7 @@ export const HALLOWEEN_EXERCISES_ENGLISH: StaticExercise[] = [
       "The witches flies",
     ],
     answer: "The witch flies",
-    explanation: "3rd person singular: fly → flies.",
+    explanation: "3rd person: fly → flies.",
     vocabTopic: "eng-a2-halloween",
   },
   {
@@ -174,7 +176,7 @@ export const HALLOWEEN_EXERCISES_ENGLISH: StaticExercise[] = [
     instruction: "Fix the mistake",
     answer: "The ghost is in the kitchen.",
     acceptableAnswers: ["The ghost is in the kitchen"],
-    explanation: "ghost = singular → is.",
+    explanation: "ghost is singular → is.",
     vocabTopic: "eng-a2-halloween",
   },
   {
@@ -187,7 +189,7 @@ export const HALLOWEEN_EXERCISES_ENGLISH: StaticExercise[] = [
       "The children are afraid.",
       "The children have fear.",
     ],
-    explanation: "Prefer be scared / be afraid; or have fear (children → have).",
+    explanation: "Prefer be scared / be afraid; children → have.",
     vocabTopic: "eng-a2-halloween",
   },
   {
