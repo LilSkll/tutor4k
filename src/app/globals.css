@@ -376,7 +376,8 @@ html.dark[data-season="halloween"] .hw-app-shell::after {
 }
 
 html[data-season="halloween"] .hw-app-shell::before {
-  left: 0;
+  /* Desktop: sit just into the main column so the open sidebar (260px) doesn't cover it */
+  left: 248px;
   bottom: 0;
   background-image: url("/seasonal/halloween-pumpkin-corner.webp");
   background-position: left bottom;
@@ -398,23 +399,27 @@ html[data-season="halloween"] .hw-app-shell > * {
   z-index: 1;
 }
 
-/* Mobile: smaller, quieter, clear of the bottom tab bar */
+/* Mobile: pumpkin back to true BL corner, quieter, clear of the tab bar */
 @media (max-width: 767px) {
   html[data-season="halloween"] .hw-app-shell::before,
   html[data-season="halloween"] .hw-app-shell::after {
-    width: min(132px, 34vw);
-    height: min(132px, 34vw);
-    opacity: 0.14;
+    width: min(120px, 32vw);
+    height: min(120px, 32vw);
+    opacity: 0.12;
     bottom: calc(3.75rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  html[data-season="halloween"] .hw-app-shell::before {
+    left: 0;
   }
 }
 
 @media (max-width: 380px) {
   html[data-season="halloween"] .hw-app-shell::before,
   html[data-season="halloween"] .hw-app-shell::after {
-    opacity: 0.1;
-    width: 96px;
-    height: 96px;
+    opacity: 0.09;
+    width: 88px;
+    height: 88px;
   }
 }
 
@@ -425,15 +430,6 @@ html[data-season="halloween"] .hw-app-shell > * {
   border-radius: 50% 50% 45% 45%;
   background: radial-gradient(circle at 35% 35%, #fb923c, #c2410c 70%);
   box-shadow: 0 -2px 0 -1px #166534;
-}
-
-.hw-witch-hat {
-  width: 18px;
-  height: 14px;
-  background: #1a1025;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  border-radius: 1px;
-  box-shadow: 0 1px 0 1px #f97316;
 }
 
 .hw-web {
