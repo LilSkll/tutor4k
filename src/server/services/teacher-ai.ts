@@ -10,6 +10,7 @@ import { getStudentCard } from "@/server/teacher/student-card";
 import { assertCanViewStudent } from "@/server/teacher/links";
 import type { InterfaceLanguage } from "@/types";
 import type { TeacherAiReportDTO } from "@/types/teacher";
+import { plainTutorText } from "@/lib/plain-tutor-text";
 
 const STALE_MS = 24 * 60 * 60 * 1000;
 
@@ -36,7 +37,11 @@ function requireAdmin() {
 
 function asStringArray(value: unknown): string[] {
   if (!Array.isArray(value)) return [];
-  return value.filter((x): x is string => typeof x === "string").slice(0, 8);
+  return value
+    .filter((x): x is string => typeof x === "string")
+    .map((x) => plainTutorText(x))
+    .filter(Boolean)
+    .slice(0, 8);
 }
 
 function rowToDto(row: ReportRow, meta: { cached: boolean; stale: boolean }): TeacherAiReportDTO {
@@ -46,7 +51,7 @@ function rowToDto(row: ReportRow, meta: { cached: boolean; stale: boolean }): Te
     courseId: row.course_id,
     locale: row.locale,
     generatedAt: row.generated_at,
-    summary: row.summary ?? "",
+    summary: plainTutorText(row.summary ?? ""),
     recommendations: asStringArray(row.recommendations),
     weakTopics: asStringArray(row.weak_topics),
     nextSteps: asStringArray(row.next_steps),
@@ -92,7 +97,7 @@ function buildEvidence(card: Awaited<ReturnType<typeof getStudentCard>>) {
     recentMistakes: card.recentMistakes.slice(0, 8).map((m) => ({
       exercise: m.exercise,
       type: m.exerciseType,
-      feedback: m.feedback,
+      feedback: plainTutorText(m.feedback),
     })),
     exerciseSample: {
       recentTotal,
@@ -158,14 +163,14 @@ function parseCoachJson(content: string): {
   try {
     const parsed = JSON.parse(match[0]) as Record<string, unknown>;
     return {
-      summary: String(parsed.summary ?? "").trim().slice(0, 2000),
+      summary: plainTutorText(String(parsed.summary ?? "")).slice(0, 2000),
       recommendations: asStringArray(parsed.recommendations),
       weak_topics: asStringArray(parsed.weak_topics),
       next_steps: asStringArray(parsed.next_steps),
     };
   } catch {
     return {
-      summary: content.trim().slice(0, 1200),
+      summary: plainTutorText(content).slice(0, 1200),
       recommendations: [],
       weak_topics: [],
       next_steps: [],

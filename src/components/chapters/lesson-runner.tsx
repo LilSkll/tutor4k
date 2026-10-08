@@ -29,6 +29,7 @@ import {
   rotateBankBySeed,
 } from "@/lib/exercise-bank";
 import { localDateKey } from "@/lib/local-date";
+import { plainTutorText } from "@/lib/plain-tutor-text";
 import { gradeStaticExerciseLocally } from "@/lib/exercise-check-client";
 import { scorePercent } from "@/lib/normalize-answer";
 import { trackEvent } from "@/lib/analytics";
@@ -742,7 +743,7 @@ export function LessonRunner({
               </div>
               <div className="rounded-lg border border-primary/20 bg-primary/5 p-4">
                 <p className="text-xs font-semibold text-primary mb-1">{t("lesson.explanation")}</p>
-                <p className="text-sm">{result.feedback}</p>
+                <p className="text-sm">{plainTutorText(result.feedback)}</p>
               </div>
               <Button variant="gradient" className="w-full" onClick={nextExercise}>
                 {nextLabel}

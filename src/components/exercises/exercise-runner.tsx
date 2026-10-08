@@ -21,6 +21,7 @@ import { EXERCISE_TYPES, PRACTICE_LEVELS } from "@/config/app";
 import { SESSION_EXERCISES } from "@/lib/exercise-bank";
 import { parseHomeworkExerciseSearchParams } from "@/lib/homework-exercise-link";
 import { formatSessionTutorSummary } from "@/lib/tutor-feedback";
+import { plainTutorText } from "@/lib/plain-tutor-text";
 import { useInterfaceLanguage, useActiveCourseId } from "@/hooks/use-interface-language";
 import { translate } from "@/lib/i18n";
 import { getCourseTitle } from "@/config/courses";
@@ -701,7 +702,9 @@ export function ExerciseRunner({
               <p className="text-xs font-semibold text-primary mb-2">
                 {t("exercises.tutorSummaryLabel")}
               </p>
-              <p className="text-sm text-foreground">{sessionSummary}</p>
+              <p className="text-sm text-foreground">
+                {plainTutorText(sessionSummary)}
+              </p>
             </div>
 
             <div className="grid gap-2 sm:grid-cols-2">
@@ -916,7 +919,9 @@ function ResultCard({
 
         <div className="rounded-lg border border-primary/20 bg-primary/5 p-4">
           <p className="text-xs font-semibold text-primary mb-1">{t("exercises.explanationLabel")}</p>
-          <p className="text-sm text-foreground">{result.feedback}</p>
+          <p className="text-sm text-foreground">
+            {plainTutorText(result.feedback)}
+          </p>
         </div>
 
         <Button variant="gradient" className="w-full" onClick={onNext}>

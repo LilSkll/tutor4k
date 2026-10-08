@@ -40,6 +40,7 @@ import {
   speakText,
   warmSpeechVoices,
 } from "@/lib/speak-text";
+import { plainTutorText } from "@/lib/plain-tutor-text";
 import {
   isExactStreakMilestone,
   streakRewardKey,
@@ -753,7 +754,7 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
               </p>
             </div>
             <p className="text-sm text-muted-foreground whitespace-pre-wrap">
-              {result.feedback}
+              {plainTutorText(result.feedback)}
             </p>
             <Button
               variant="gradient"

@@ -748,6 +748,11 @@ export async function checkExerciseAnswer(input: {
   const { shouldSoftCheckEquivalents, enrichFeedbackWithConstruction } =
     await import("@/lib/exercise-construction-hint");
   const { formatBankTutorFeedback } = await import("@/lib/tutor-feedback");
+  const { plainTutorText } = await import("@/lib/plain-tutor-text");
+  const finish = (correct: boolean, rawFeedback: string) => ({
+    correct,
+    feedback: plainTutorText(rawFeedback),
+  });
 
   if (
     answersMatch(input.userAnswer, [
@@ -761,29 +766,29 @@ export async function checkExerciseAnswer(input: {
         ...(input.exercise.acceptableAnswers ?? []),
       ]))
   ) {
-    const feedback = input.exercise.staticSource
-      ? formatBankTutorFeedback({
-          language: input.language,
-          correct: true,
-          explanation: bankExplanation,
-          instruction: input.exercise.instruction,
-          exerciseType: input.exercise.type,
-        })
-      : input.exercise.explanation;
+    const outcome = finish(
+      true,
+      input.exercise.staticSource
+        ? formatBankTutorFeedback({
+            language: input.language,
+            correct: true,
+            explanation: bankExplanation,
+            instruction: input.exercise.instruction,
+            exerciseType: input.exercise.type,
+          })
+        : input.exercise.explanation,
+    );
 
     await persistExerciseOutcome({
       exercise: input.exercise,
       courseId,
       level: input.level,
       userAnswer: input.userAnswer,
-      correct: true,
-      feedback,
+      correct: outcome.correct,
+      feedback: outcome.feedback,
     });
 
-    return {
-      correct: true,
-      feedback,
-    };
+    return outcome;
   }
 
   const allowSoftAi =
@@ -791,27 +796,27 @@ export async function checkExerciseAnswer(input: {
     shouldSoftCheckEquivalents(input.exercise.type);
 
   if (input.exercise.staticSource && !allowSoftAi) {
-    const feedback = formatBankTutorFeedback({
-      language: input.language,
-      correct: false,
-      explanation: bankExplanation,
-      instruction: input.exercise.instruction,
-      exerciseType: input.exercise.type,
-    });
+    const outcome = finish(
+      false,
+      formatBankTutorFeedback({
+        language: input.language,
+        correct: false,
+        explanation: bankExplanation,
+        instruction: input.exercise.instruction,
+        exerciseType: input.exercise.type,
+      }),
+    );
 
     await persistExerciseOutcome({
       exercise: input.exercise,
       courseId,
       level: input.level,
       userAnswer: input.userAnswer,
-      correct: false,
-      feedback,
+      correct: outcome.correct,
+      feedback: outcome.feedback,
     });
 
-    return {
-      correct: false,
-      feedback,
-    };
+    return outcome;
   }
 
   let isCorrect = false;
@@ -868,16 +873,18 @@ export async function checkExerciseAnswer(input: {
     console.warn("[exercises] AI check failed:", (err as Error).message);
   }
 
+  const outcome = finish(isCorrect, feedback);
+
   await persistExerciseOutcome({
     exercise: input.exercise,
     courseId,
     level: input.level,
     userAnswer: input.userAnswer,
-    correct: isCorrect,
-    feedback,
+    correct: outcome.correct,
+    feedback: outcome.feedback,
   });
 
-  return { correct: isCorrect, feedback };
+  return outcome;
 }
 
 /** Silent learning-profile update after an exercise attempt. */
@@ -889,6 +896,8 @@ async function persistExerciseOutcome(input: {
   correct: boolean;
   feedback: string;
 }): Promise<void> {
+  const { plainTutorText } = await import("@/lib/plain-tutor-text");
+  const feedback = plainTutorText(input.feedback);
   try {
     await saveExerciseHistory({
       exercise: input.exercise.question,
@@ -898,7 +907,7 @@ async function persistExerciseOutcome(input: {
       level: input.level,
       userAnswer: input.userAnswer,
       correct: input.correct,
-      feedback: input.feedback,
+      feedback,
     });
   } catch (err) {
     console.warn("[exercises] history persist failed:", (err as Error).message);
@@ -907,7 +916,7 @@ async function persistExerciseOutcome(input: {
     courseId: input.courseId,
     topic: input.exercise.topic,
     correct: input.correct,
-    feedback: input.feedback,
+    feedback,
   });
   if (!input.exercise.exerciseId) return;
   try {

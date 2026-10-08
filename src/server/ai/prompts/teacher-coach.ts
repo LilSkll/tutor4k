@@ -30,6 +30,8 @@ RULES:
 - Tone: professional, concise, actionable (like a senior colleague's note).
 - If evidence is thin, say so briefly and suggest what to observe next.
 
+- PLAIN TEXT in every JSON string: never use markdown (**bold**, *italics*, backticks, # headings).
+
 OUTPUT: return ONLY valid JSON (no markdown fences) with this shape:
 {
   "summary": "2–4 sentences on current state",

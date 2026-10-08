@@ -1,6 +1,7 @@
 import { createSupabaseAdminClient } from "@/lib/supabase-admin";
 import { getCourse } from "@/config/courses";
 import { countCompletedForCourse } from "@/lib/chapter-display";
+import { plainTutorText } from "@/lib/plain-tutor-text";
 
 export type CourseProgressSummary = {
   completedChapters: number;
@@ -195,7 +196,7 @@ export const ProgressService = {
         id: r.id as string,
         exercise: String(r.exercise ?? "").slice(0, 120),
         exerciseType: String(r.exercise_type ?? ""),
-        feedback: String(r.feedback ?? "").slice(0, 160),
+        feedback: plainTutorText(String(r.feedback ?? "")).slice(0, 160),
         createdAt: r.created_at as string,
       }));
   },

@@ -145,5 +145,5 @@ ${
 
 Reply in EXACTLY this format:
 VERDICT: CORRECT or INCORRECT
-FEEDBACK: one short sentence in ${langName} explaining why; if incorrect, name the required construction and show a good ${target} model answer.`;
+FEEDBACK: one short sentence in ${langName} explaining why; if incorrect, name the required construction and show a good ${target} model answer. PLAIN TEXT ONLY — never use markdown (no **bold**, no *italics*, no backticks, no # headings). Use «guillemets» for example phrases if needed.`;
 }

@@ -11,6 +11,7 @@ import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { getCourseTitle } from "@/config/courses";
 import type { TeacherStudentCardDTO } from "@/types/teacher";
 import { TeacherAiAnalysisPanel } from "@/components/teacher/teacher-ai-analysis-panel";
+import { plainTutorText } from "@/lib/plain-tutor-text";
 
 const REASON_KEYS: Record<string, string> = {
   low_confidence: "teacher.card.reason.lowConfidence",
@@ -300,7 +301,7 @@ export function TeacherStudentCardClient({
                 <span className="text-foreground">
                   {m.exercise || m.exerciseType || "—"}
                 </span>
-                {m.feedback ? ` — ${m.feedback}` : ""}
+                {m.feedback ? ` — ${plainTutorText(m.feedback)}` : ""}
               </li>
             ))}
           </ul>

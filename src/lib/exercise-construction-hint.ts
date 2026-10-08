@@ -1,4 +1,5 @@
 import type { ExerciseType, InterfaceLanguage } from "@/types";
+import { plainTutorText } from "@/lib/plain-tutor-text";
 
 const GENERIC_INSTRUCTION =
   /^(переведите|translate|traduce|traduzca|übersetze|заполните|fill|completa|completa el|исправьте|correct|corrige|выберите|choose|elige|соберите|составьте|build|arma|forma|bilde|используйте|use|найдите|find|ordena|rewrite|перепишите)(\s|$)/i;
@@ -172,5 +173,5 @@ export function enrichFeedbackWithConstruction(input: {
     }
   }
 
-  return parts.filter(Boolean).join(" ");
+  return plainTutorText(parts.filter(Boolean).join(" "));
 }

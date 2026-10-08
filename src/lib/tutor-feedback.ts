@@ -1,5 +1,6 @@
 import type { ExerciseType, InterfaceLanguage } from "@/types";
 import { enrichFeedbackWithConstruction } from "@/lib/exercise-construction-hint";
+import { plainTutorText } from "@/lib/plain-tutor-text";
 
 const CYRILLIC = /[\u0400-\u04FF]/;
 
@@ -164,14 +165,19 @@ export function formatBankTutorFeedback(input: {
     ? `${pick(PRAISE[lang] ?? PRAISE.ru)} ${explanation}`
     : `${pick(MISTAKE_INTRO[lang] ?? MISTAKE_INTRO.ru)} ${explanation}`;
 
-  return enrichFeedbackWithConstruction({
-    language: lang,
-    correct: input.correct,
-    feedback: base,
-    instruction: instruction === (EXPLANATION_FALLBACK[lang] ?? "") ? null : instruction || null,
-    explanation,
-    exerciseType: input.exerciseType,
-  });
+  return plainTutorText(
+    enrichFeedbackWithConstruction({
+      language: lang,
+      correct: input.correct,
+      feedback: base,
+      instruction:
+        instruction === (EXPLANATION_FALLBACK[lang] ?? "")
+          ? null
+          : instruction || null,
+      explanation,
+      exerciseType: input.exerciseType,
+    }),
+  );
 }
 
 /** Short session wrap-up after a round of N bank exercises. */
@@ -237,5 +243,5 @@ export function formatSessionTutorSummary(input: {
     lines.push(`• «${m.question}» → ${m.correctAnswer}. ${expl}`);
   }
 
-  return lines.join("\n");
+  return plainTutorText(lines.join("\n"));
 }

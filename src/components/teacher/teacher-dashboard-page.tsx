@@ -9,6 +9,7 @@ import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { getCourseTitle } from "@/config/courses";
 import { EmailConfirmedBanner } from "@/components/auth/email-confirmed-banner";
 import { EmptyState } from "@/components/shared/empty-state";
+import { plainTutorText } from "@/lib/plain-tutor-text";
 import { Suspense } from "react";
 
 type Mistake = {
@@ -238,7 +239,9 @@ export function TeacherDashboardPage({ teacherName }: { teacherName: string }) {
                           <span className="text-foreground">
                             {m.exercise || m.exerciseType || "—"}
                           </span>
-                          {m.feedback ? ` — ${m.feedback}` : ""}
+                          {m.feedback
+                            ? ` — ${plainTutorText(m.feedback)}`
+                            : ""}
                         </li>
                       ))}
                     </ul>

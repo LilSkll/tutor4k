@@ -8,6 +8,7 @@ import { assertCanViewStudent } from "@/server/teacher/links";
 import { getCourseLearningProfileAdmin } from "@/server/learning/student-profile";
 import type { TeacherStudentCardDTO } from "@/types/teacher";
 import type { InterfaceLanguage } from "@/types";
+import { plainTutorText } from "@/lib/plain-tutor-text";
 
 export type StudentCardData = TeacherStudentCardDTO;
 
@@ -90,7 +91,7 @@ async function getExerciseRows(
       level: (r.level as string | null) ?? null,
       correct: Boolean(r.correct),
       userAnswer: String(r.user_answer ?? "").slice(0, 120),
-      feedback: String(r.feedback ?? "").slice(0, 160),
+      feedback: plainTutorText(String(r.feedback ?? "")).slice(0, 160),
       createdAt: r.created_at as string,
     }));
 }
