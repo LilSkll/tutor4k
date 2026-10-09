@@ -18,6 +18,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Markdown } from "@/components/shared/markdown";
+import { WordHintText } from "@/components/shared/word-hint-text";
 import { useLocalizedGrammarArticle } from "@/hooks/use-localized-grammar-article";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { translate } from "@/lib/i18n";
@@ -619,6 +620,7 @@ export function LessonRunner({
                     <QuestionWithGloss
                       exercise={ex}
                       interfaceLanguage={language}
+                      courseId={courseId}
                     />
                   </div>
                   <ExerciseFreeTextBlock
@@ -648,6 +650,7 @@ export function LessonRunner({
                       <QuestionWithGloss
                         exercise={ex}
                         interfaceLanguage={language}
+                        courseId={courseId}
                       />
                     </div>
                   ) : null}
@@ -784,10 +787,10 @@ export function LessonRunner({
           <CardContent className="p-6 text-center">
             {chapterStory && (
               <div className="mb-6 rounded-xl border border-primary/15 bg-primary/5 px-5 py-4 text-left">
-                <p className="text-sm leading-relaxed text-foreground/85 italic">
+                <div className="text-sm leading-relaxed text-foreground/85 italic">
                   <span className="mr-1.5 not-italic">📜</span>
-                  {chapterStory}
-                </p>
+                  <WordHintText text={chapterStory} courseId={courseId} />
+                </div>
               </div>
             )}
             <p className="text-base text-muted-foreground mb-6">
@@ -866,7 +869,11 @@ export function LessonRunner({
                     {t("lesson.shortTheoryNote")}
                   </p>
                 )}
-                <Markdown content={theoryMarkdown} />
+                <Markdown
+                  content={theoryMarkdown}
+                  enableWordHints
+                  courseId={courseId}
+                />
               </>
             ) : null}
             {isLastTheoryPage && guideExerciseTypes.length ? (
@@ -989,7 +996,11 @@ export function LessonRunner({
             </Button>
             {dialogueResponse && (
               <div className="rounded-lg border bg-card p-4">
-                <Markdown content={dialogueResponse} />
+                <Markdown
+                  content={dialogueResponse}
+                  enableWordHints
+                  courseId={courseId}
+                />
               </div>
             )}
             {bankRemaining > 0 && (

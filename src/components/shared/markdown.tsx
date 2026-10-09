@@ -24,13 +24,22 @@ const MarkdownRenderer = dynamic(
 export function Markdown({
   content,
   className,
+  enableWordHints,
+  courseId,
 }: {
   content: string;
   className?: string;
+  /** Tap known target-language words for a UI-language gloss. */
+  enableWordHints?: boolean;
+  courseId?: string;
 }) {
   return (
     <div className={cn("markdown-body", className)}>
-      <MarkdownRenderer content={content} />
+      <MarkdownRenderer
+        content={content}
+        enableWordHints={enableWordHints}
+        courseId={courseId}
+      />
     </div>
   );
 }

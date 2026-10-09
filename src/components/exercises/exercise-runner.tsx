@@ -796,7 +796,11 @@ function ExerciseCard({
 
         {exercise.type !== "sentence_building" ? (
           <div className="rounded-lg bg-muted/50 p-4">
-            <QuestionWithGloss exercise={exercise} interfaceLanguage={interfaceLanguage} />
+            <QuestionWithGloss
+              exercise={exercise}
+              interfaceLanguage={interfaceLanguage}
+              courseId={courseId}
+            />
           </div>
         ) : null}
 

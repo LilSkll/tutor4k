@@ -690,6 +690,7 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
                   <QuestionWithGloss
                     exercise={ex}
                     interfaceLanguage={language}
+                    courseId={plan.courseId}
                   />
                 </div>
                 <ExerciseFreeTextBlock
@@ -719,6 +720,7 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
                     <QuestionWithGloss
                       exercise={ex}
                       interfaceLanguage={language}
+                      courseId={plan.courseId}
                     />
                   </div>
                 ) : null}

@@ -1,5 +1,9 @@
 import { describe, expect, it } from "vitest";
-import { getWordDefinition, getWordGloss } from "@/lib/vocab-display";
+import {
+  getWordDefinition,
+  getWordGloss,
+  lookupWordHint,
+} from "@/lib/vocab-display";
 import type { VocabWord } from "@/types";
 
 const padre: VocabWord = {
@@ -44,5 +48,23 @@ describe("getWordDefinition (spanish course)", () => {
     expect(getWordDefinition(withInline, "en", "spanish")).toBe(
       "Inline father definition for tests.",
     );
+  });
+});
+
+describe("lookupWordHint", () => {
+  it("resolves Spanish tokens to UI-language glosses", () => {
+    const ru = lookupWordHint("padre", "ru", "spanish");
+    const en = lookupWordHint("padre!", "en", "spanish");
+    expect(ru?.gloss.toLowerCase()).toMatch(/отец|папа/);
+    expect(en?.gloss.toLowerCase()).toMatch(/father|dad/);
+  });
+
+  it("resolves English tokens for the English course", () => {
+    const ru = lookupWordHint("breakfast", "ru", "english");
+    expect(ru?.gloss.toLowerCase()).toMatch(/завтрак/);
+  });
+
+  it("returns null for unknown tokens", () => {
+    expect(lookupWordHint("xyzzy123", "ru", "spanish")).toBeNull();
   });
 });
