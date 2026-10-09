@@ -203,7 +203,11 @@ const INSTRUCTION_BY_KEY: Record<
 /** Map common RU authored instructions → instructionKey. */
 function inferInstructionKey(instruction: string): string | null {
   const s = instruction.toLowerCase();
-  if (/косвенн|estilo indirecto|reported speech|reported question|прямую речь|backshift/.test(s)) {
+  if (
+    /косвенн|estilo indirecto|pregunta indirecta|reported speech|reported question|прямую речь|backshift/.test(
+      s,
+    )
+  ) {
     return "reported_speech";
   }
   if (/\bpor\b.*\bpara\b|\bpara\b.*\bpor\b/.test(s)) return "por_para";
@@ -231,7 +235,11 @@ function inferInstructionKey(instruction: string): string | null {
     return "translate_to_en";
   }
   if (/перевед|traduc|übersetz|translate/.test(s)) return "translate";
-  if (/поставьте глагол|conjugate|conjug|forma correcta|правильную форму/.test(s)) {
+  if (
+    /поставьте\b|conjugate|conjug|forma correcta|правильную форму|правильная форма/.test(
+      s,
+    )
+  ) {
     return "fill_conjugation";
   }
   if (/сослагательн|subjuntiv|наклонен/.test(s)) return "subjunctive_trigger";

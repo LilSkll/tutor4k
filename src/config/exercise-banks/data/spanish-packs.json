@@ -6086,7 +6086,7 @@
           "han ido"
         ],
         "answer": "fueron",
-        "instruction": "Выберите форму",
+        "instruction": "Выберите форму ir в pretérito indefinido",
         "explanation": "«Два года назад» = конкретный момент → indefinido: fueron.",
         "grammarTopic": "a2-preterito-indefinido"
       },
@@ -9037,7 +9037,7 @@
           "hizo"
         ],
         "answer": "haga",
-        "instruction": "Выберите форму",
+        "instruction": "Выберите форму после Ojalá",
         "explanation": "Ojalá → siempre subjuntivo. Hacer → haga.",
         "grammarTopic": "b1-subjuntivo"
       },
@@ -10508,7 +10508,7 @@
         "type": "error_correction",
         "question": "¡Escucha atentamente escuchar!",
         "answer": "¡Escucha atentamente!",
-        "instruction": "Forma incorrecta",
+        "instruction": "Исправьте ошибку в предложении",
         "explanation": "Escucha — imperativo.",
         "grammarTopic": "b1-imperativo",
         "acceptableAnswers": []
@@ -16975,7 +16975,7 @@
           "Dónde"
         ],
         "answer": "Cómo",
-        "instruction": "Как тебя зовут?",
+        "instruction": "Выберите вопросительное слово",
         "explanation": "¿Cómo te llamas? = Как тебя зовут?",
         "grammarTopic": "a1-preguntas"
       },
@@ -16989,7 +16989,7 @@
           "Cuál"
         ],
         "answer": "Quién",
-        "instruction": "Кто?",
+        "instruction": "Выберите вопросительное слово",
         "explanation": "¿Quién? = кто?",
         "grammarTopic": "a1-preguntas"
       },
@@ -18769,7 +18769,7 @@
           "venían"
         ],
         "answer": "vendrán",
-        "instruction": "venir в будущем",
+        "instruction": "Выберите форму venir в futuro simple",
         "explanation": "venir → vendrán (неправильный корень).",
         "grammarTopic": "a2-futuro-simple"
       },
@@ -18783,7 +18783,7 @@
           "hacías"
         ],
         "answer": "harás",
-        "instruction": "hacer в будущем",
+        "instruction": "Выберите форму hacer в futuro simple",
         "explanation": "hacer → harás.",
         "grammarTopic": "a2-futuro-simple"
       },
@@ -26450,7 +26450,7 @@
           "Me he duchado"
         ],
         "answer": "Me duchaba",
-        "instruction": "Выберите форму",
+        "instruction": "Выберите время: фон или событие?",
         "explanation": "Фон + внезапное действие: imperfecto Me duchaba.",
         "grammarTopic": "b1-indefinido-imperfecto"
       },
@@ -33501,7 +33501,7 @@
           "eran"
         ],
         "answer": "sean",
-        "instruction": "Puede que + …?",
+        "instruction": "Выберите форму после Puede que",
         "explanation": "Puede que — всегда subjuntivo: sean. Parece que + indicativo: son.",
         "grammarTopic": "dele-expresion-oral"
       },
@@ -41294,7 +41294,7 @@
           "¿cómo estás?",
           "un saludo"
         ],
-        "answer": "nada de eso",
+        "answer": "nada de eso (negación)",
         "instruction": "Разговорный регистр: что означает фраза?",
         "explanation": "¡Qué va! — разговорное энергичное отрицание («вовсе нет»).",
         "grammarTopic": "c2-ironia-registry"

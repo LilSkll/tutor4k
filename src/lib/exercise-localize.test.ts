@@ -69,6 +69,26 @@ describe("translation localization", () => {
     );
   });
 
+  it("replaces Latin pack tags on EN UI", () => {
+    const [ex] = prepareExercisesForInterface(
+      [
+        {
+          ...sample,
+          id: "subj1",
+          type: "fill_blank",
+          question: "Me alegra que ___ venido.",
+          answer: "hayas",
+          instruction: "Subj. compuesto",
+        },
+      ],
+      "en",
+    );
+    expect(ex.instruction).toBe(
+      "Type the single missing word or verb form",
+    );
+    expect(ex.instruction).not.toBe("Subj. compuesto");
+  });
+
   it("uses reported-speech prompt for quote rewrites", async () => {
     const { localizeExerciseInstruction, isReportedSpeechRewrite } =
       await import("@/lib/exercise-localize");

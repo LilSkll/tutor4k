@@ -122,6 +122,25 @@ describe("isGrammarCategoryInstruction", () => {
       false,
     );
   });
+
+  it("treats Spanish pack abbreviations as tags (not EN instructions)", () => {
+    expect(isGrammarCategoryInstruction("Subj. compuesto")).toBe(true);
+    expect(isGrammarCategoryInstruction("3ª condicional")).toBe(true);
+    expect(isGrammarCategoryInstruction("Estilo culto")).toBe(true);
+    expect(isGrammarCategoryInstruction("Cond. compuesto")).toBe(true);
+    expect(isGrammarCategoryInstruction("Imperf. subj.")).toBe(true);
+    expect(isGrammarCategoryInstruction("Admitir + indirecto")).toBe(true);
+    expect(isGrammarCategoryInstruction("-mente")).toBe(true);
+    expect(isGrammarCategoryInstruction("Pregunta")).toBe(true);
+    expect(isGrammarCategoryInstruction("Rutina")).toBe(true);
+    expect(isGrammarCategoryInstruction("Forma incorrecta")).toBe(true);
+    expect(
+      isGrammarCategoryInstruction("Pretérito indefinido — последовательность"),
+    ).toBe(true);
+    expect(isGrammarCategoryInstruction("Forma: tener · presente")).toBe(
+      false,
+    );
+  });
 });
 
 describe("isUsableTranslation", () => {

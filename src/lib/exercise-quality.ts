@@ -113,12 +113,29 @@ export function isGrammarCategoryInstruction(instruction: string): boolean {
   ) {
     return true;
   }
-  // Formula tags: "Demasiado + adj.", "Quizás + subj."
-  if (/\+\s*(adj|adv|verb|noun|subj|n|v|inf|ger|pp)\b\.?/i.test(inst) && inst.length <= 40) {
+  // Formula tags: "Demasiado + adj.", "Quizás + subj.", "Admitir + indirecto"
+  if (
+    /\+\s*(adj|adv|verb|noun|subj|n|v|inf|ger|pp|indirecto|condicional|indic|plusc)\b\.?/i.test(
+      inst,
+    ) &&
+    inst.length <= 48
+  ) {
+    return true;
+  }
+  // Spanish pack abbreviations that used to leak into EN/DE UI as "instructions".
+  if (
+    inst.length <= 56 &&
+    /^(Subj\.|Cond\.|Imperf\.|Pluscuam\.|Plusc\.|3ª\b|Estilo\b|Admitir\b|Ojalá\b|Como si\b|Puede que\b|Opinión\b|Verbo de\b|Emoción\b|Haber en\b|Si \+|Lo que \+|-\s*mente\b)/i.test(
+      inst,
+    )
+  ) {
     return true;
   }
   // English curriculum/pack grammar tags (spoil the construction).
+  // Keep mixed RU prompts that already tell the learner what to do
+  // (e.g. «Participio absoluto (согласуйте!)»).
   if (
+    !CYRILLIC.test(inst) &&
     inst.length <= 56 &&
     /^(Zero article|Backshift|No backshift|Tense backshift|Reported question|Tell \+|Saxon genitive|Past simple|Present (simple|perfect|continuous)|Countable|Uncountable|Quantifier|Relative|Passive|Modal|Conditional|Register|Opening|Sign-off|Overview|Thesis|Trend|Comparison|Cohesion|Informal|Formal|Semi-formal|Have something done|Participio|Its vs|Day's|Parents'|Just \+|PP vs|Yet |Ever |Already |Who |Whose|Where relative|Must |Might |Can't )/i.test(
       inst,
@@ -126,10 +143,19 @@ export function isGrammarCategoryInstruction(instruction: string): boolean {
   ) {
     return true;
   }
-  // Short "Label — detail" tags: "Past simple — go", "Countable noun"
-  if (inst.length <= 48 && /^[A-Za-z][\w'’+\s/]{0,30}\s+[—–-]\s+\S/.test(inst)) {
+  // Short "Label — detail" tags: "Past simple — go", "Pregunta — nombre",
+  // "Pretérito indefinido — последовательность"
+  if (
+    inst.length <= 64 &&
+    /\s[—–]\s/.test(inst) &&
+    !/^(Выберите|Заполните|Вставьте|Переведите|Исправьте|Найдите|Составьте|Соберите|Choose|Fill|Complete|Translate|Rewrite|Find|Build|Elige|Completa|Traduce)\b/i.test(
+      inst,
+    )
+  ) {
     return true;
   }
+  // Bare error-correction meta labels (not real learner prompts).
+  if (/^Forma incorrecta$/i.test(inst)) return true;
   if (
     inst.length <= 40 &&
     /^(Countable|Uncountable|Zero article|Articles?|Possessives?|Quantifiers?|Modals?|Passives?|Conditionals?)\b/i.test(
@@ -147,20 +173,23 @@ export function isGrammarCategoryInstruction(instruction: string): boolean {
   ) {
     return false;
   }
-  // Remaining short English curriculum tags (IELTS labels, grammar names)
-  // that are not real learner prompts. Keep Cyrillic/Spanish prompts alone —
-  // they are handled above or by language-specific rules.
+  // Remaining short Latin curriculum tags (IELTS / grammar names), including
+  // abbreviated dots like "Subj. compuesto" that previously leaked to EN UI.
+  const withoutAbbrevDots = inst.replace(
+    /\b[A-Za-zÁÉÍÓÚáéíóúÑñÜü]{2,12}\./g,
+    "Abbr",
+  );
   if (
-    inst.length <= 42 &&
-    !/[.?!¿¡]/.test(inst) &&
+    inst.length <= 48 &&
+    !/[?!¿¡]/.test(withoutAbbrevDots) &&
     !CYRILLIC.test(inst) &&
     !/^(Choose|Fill|Complete|Translate|Rewrite|Find|Build|Fix|Add|Put|Elige|Completa|Traduce|Reescribe|Ordena|Wähle|Fülle|Übersetze|Finde|Bilde|Forma|Pon|Escribe|Corrige|Marca|Señala|Indica|Haz|Lee|Pasa)\b/i.test(
       inst,
     ) &&
-    !/\b(choose|fill|complete|translate|rewrite|find|build|fix|add|put|correct|select|write|use|frase|verbo|opción|hueco|palabra|estilo|indirecto|directo)\b/i.test(
+    !/\b(choose|fill|complete|translate|rewrite|find|build|fix|add|put|correct|select|write|use|frase|verbo|opción|hueco|palabra)\b/i.test(
       inst,
     ) &&
-    /^[A-Za-z]/.test(inst)
+    /^[A-Za-zÁÉÍÓÚáéíóúÑñÜü0-9ª-]/.test(inst)
   ) {
     return true;
   }

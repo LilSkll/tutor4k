@@ -435,7 +435,7 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       type: "multiple_choice",
       question: "El gato está ___ el sofá.",
-      instruction: "«под»",
+      instruction: "Какой предлог означает «под»?",
       options: ["debajo de", "encima de", "delante de", "entre"],
       answer: "debajo de",
       explanation: "debajo de = под.",
@@ -455,7 +455,7 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       type: "multiple_choice",
       question: "___ te llamas?",
-      instruction: "Как тебя зовут?",
+      instruction: "Выберите вопросительное слово",
       options: ["Cómo", "Qué", "Quién", "Dónde"],
       answer: "Cómo",
       explanation: "¿Cómo te llamas? = Как тебя зовут?",
@@ -463,7 +463,7 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       type: "fill_blank",
       question: "¿___ vives? (где)",
-      instruction: "Вопросительное слово",
+      instruction: "Впишите вопросительное слово",
       answer: "Dónde",
       acceptableAnswers: ["dónde", "Donde", "donde"],
       explanation: "¿Dónde? = где?",
@@ -471,7 +471,7 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       type: "multiple_choice",
       question: "¿___ es tu profesor?",
-      instruction: "Кто?",
+      instruction: "Выберите вопросительное слово",
       options: ["Quién", "Qué", "Cuándo", "Cuál"],
       answer: "Quién",
       explanation: "¿Quién? = кто?",
@@ -551,7 +551,7 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       type: "fill_blank",
       question: "Mañana ___ (hablar) con ella. (yo)",
-      instruction: "Futuro simple",
+      instruction: "Поставьте глагол в futuro simple",
       answer: "hablaré",
       acceptableAnswers: ["Hablare", "hablaré"],
       explanation: "yo → infinitivo + é: hablaré.",
@@ -559,7 +559,7 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       type: "multiple_choice",
       question: "Ellos ___ mañana.",
-      instruction: "venir в будущем",
+      instruction: "Выберите форму venir в futuro simple",
       options: ["vendrán", "vienen", "vinieron", "venían"],
       answer: "vendrán",
       explanation: "venir → vendrán (неправильный корень).",
@@ -567,7 +567,7 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       type: "translation",
       question: "Мы поедем в Испанию.",
-      instruction: "Futuro de ir",
+      instruction: "Переведите на испанский (futuro de ir)",
       answer: "Iremos a España",
       acceptableAnswers: ["iremos a españa", "Nosotros iremos a España"],
       explanation: "ir → iremos.",
@@ -575,7 +575,7 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       type: "multiple_choice",
       question: "¿Qué ___ tú el próximo año?",
-      instruction: "hacer в будущем",
+      instruction: "Выберите форму hacer в futuro simple",
       options: ["harás", "haces", "hiciste", "hacías"],
       answer: "harás",
       explanation: "hacer → harás.",
@@ -677,7 +677,7 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       type: "multiple_choice",
       question: "Hace dos años ellos ___ a Japón.",
-      instruction: "Выберите форму",
+      instruction: "Выберите форму ir в pretérito indefinido",
       options: ["fueron", "iban", "van", "han ido"],
       answer: "fueron",
       explanation: "«Два года назад» = конкретный момент → indefinido: fueron.",
@@ -833,7 +833,7 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       type: "multiple_choice",
       question: "Ojalá ___ buen tiempo mañana.",
-      instruction: "Выберите форму",
+      instruction: "Выберите форму после Ojalá",
       options: ["haga", "hace", "hará", "hizo"],
       answer: "haga",
       explanation: "Ojalá → siempre subjuntivo. Hacer → haga.",
@@ -1115,7 +1115,7 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       type: "fill_blank",
       question: "Por mucho que ___, no lo conseguiré. (intentar)",
-      instruction: "Concessive clause — какое наклонение?",
+      instruction: "Уступительное предложение: какое наклонение?",
       answer: "intente",
       acceptableAnswers: ["Intente"],
       explanation: "Por mucho que + subjuntivo: intente (гипотетично).",
@@ -1408,7 +1408,7 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       type: "multiple_choice",
       question: "Puede que ___ amigos.",
-      instruction: "Puede que + …?",
+      instruction: "Выберите форму после Puede que",
       options: ["sean", "son", "serán", "eran"],
       answer: "sean",
       explanation: "Puede que — всегда subjuntivo: sean. Parece que + indicativo: son.",
@@ -1615,7 +1615,7 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       type: "multiple_choice",
       question: "___ la reunión, todos se fueron.",
-      instruction: "Participio absoluto (согласуйте!)",
+      instruction: "Согласуйте причастие (participio absoluto)",
       options: ["Terminada", "Terminado", "Terminando", "Terminar"],
       answer: "Terminada",
       explanation: "Participio absoluto согласуется: la reunión (f.) → Terminada.",

@@ -3787,7 +3787,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "¡Escucha atentamente escuchar!",
       "answer": "¡Escucha atentamente!",
-      "instruction": "Forma incorrecta",
+      "instruction": "Исправьте ошибку в предложении",
       "explanation": "Escucha — imperativo."
     },
     {
