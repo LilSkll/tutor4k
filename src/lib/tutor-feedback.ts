@@ -126,20 +126,30 @@ export function localizeBankExplanation(
   const fallback = EXPLANATION_FALLBACK[language] ?? EXPLANATION_FALLBACK.en;
   const hasFormula = /[→+]/.test(trimmed);
 
-  // RU UI + Latin-only English bank gloss → keep micro-hints / formulas;
-  // drop bare English replies like "So do I".
+  // RU UI + Latin-only English bank gloss → keep pedagogy; drop bare replies.
   if (language === "ru" && !CYRILLIC.test(trimmed)) {
     if (hasFormula || /=/.test(trimmed)) return trimmed;
     const words = trimmed.split(/\s+/).filter(Boolean);
-    // Short grammar/vocab notes: "word order", "next to = beside", "Present simple".
+    // Bare agreement / substitution replies that are not teaching notes.
     if (
-      words.length <= 10 &&
-      /\b(word order|order|article|preposition|tense|simple|perfect|continuous|beside|next to|plural|singular|subject|verb)\b/i.test(
+      /^(so do i|so does|neither (do|can|have|am)|nor (do|can)|i hope (so|not)|me too|i think so)\b/i.test(
         trimmed,
       )
     ) {
+      return fallback;
+    }
+    // Keep English teaching notes (short or long) for English-course RU UI.
+    if (
+      /\b(word order|article|preposition|tense|simple|perfect|continuous|beside|next to|plural|singular|subject|verb|use|used|take|takes|means|when|after|before|instead|compare|emphasis|inversion|clause|modal|passive|conditional|relative|pattern|form|object|replace|highlights|hedge|agreement|substitution|possessive|unique|standalone|jobs|objects|cleft|permission|prohibition|request)\b/i.test(
+        trimmed,
+      ) ||
+      /[…?]/.test(trimmed) ||
+      /:\s*\S/.test(trimmed) ||
+      words.length >= 4
+    ) {
       return trimmed;
     }
+    // Remaining tiny Latin fragments without pedagogy → generic fallback.
     if (words.length >= 2 && /[A-Za-z]/.test(trimmed)) {
       return fallback;
     }

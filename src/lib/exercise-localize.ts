@@ -101,6 +101,30 @@ export function getSentenceBuildingMeaning(
   return gloss;
 }
 
+const SOURCE_RUSSIAN_LABEL: Record<InterfaceLanguage, string> = {
+  ru: "Источник: русский",
+  en: "Source: Russian",
+  es: "Origen: ruso",
+  de: "Quelle: Russisch",
+};
+
+/**
+ * When English-course TR keeps a Russian stem (EN UI cannot use EN L1 without
+ * spoiling the answer), surface an explicit source label.
+ */
+export function getTranslationSourceLabel(
+  exercise: Pick<StaticExercise, "question" | "type">,
+  interfaceLanguage: InterfaceLanguage,
+  courseId?: string | null,
+): string | null {
+  if (exercise.type !== "translation") return null;
+  if (courseId !== "english") return null;
+  if (!hasCyrillicText(exercise.question)) return null;
+  return (
+    SOURCE_RUSSIAN_LABEL[interfaceLanguage] ?? SOURCE_RUSSIAN_LABEL.en
+  );
+}
+
 /** Render "question (gloss)" when a gloss exists. */
 export function formatQuestionWithGloss(
   exercise: Pick<
@@ -197,6 +221,12 @@ const INSTRUCTION_BY_KEY: Record<
     en: "Put the verb in the correct form",
     es: "Pon el verbo en la forma correcta",
     de: "Setze das Verb in die richtige Form",
+  },
+  choose_option: {
+    ru: "Выберите один правильный вариант из списка",
+    en: "Choose the correct option",
+    es: "Elige la opción correcta",
+    de: "Wähle die richtige Option",
   },
 };
 
@@ -436,10 +466,23 @@ export function localizeTranslationQuestion(
     return exercise.question;
   }
 
+  // Spanish course: for ES UI, Spanish L1 often equals the target answer —
+  // prefer EN L1 instead of spoiling or falling back to Cyrillic.
+  if (courseId === "spanish" && interfaceLanguage === "es") {
+    const es = lookupTranslationPrompt(exercise.question, "es", null);
+    if (es && normalizeForCompare(es) !== normalizeForCompare(answer)) {
+      return es;
+    }
+    const en = lookupTranslationPrompt(exercise.question, "en", null);
+    if (en) return en;
+    return exercise.question;
+  }
+
   const mapped = lookupTranslationPrompt(
     exercise.question,
     interfaceLanguage,
-    answer,
+    // Only treat answer as an English spoiler on the English course.
+    courseId === "english" ? answer : null,
   );
   if (!mapped) return exercise.question;
   if (

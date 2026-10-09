@@ -2798,5 +2798,13 @@
   "Я тоже не люблю это.": {
     "es": "A mí tampoco me gusta.",
     "de": "Mir gefällt es auch nicht."
+  },
+  "Это поднимает более широкий вопрос о власти.": {
+    "es": "Esto plantea una cuestión más amplia sobre el poder.",
+    "de": "Das wirft eine breitere Frage nach Macht auf."
+  },
+  "Иными словами, данные неоднозначны.": {
+    "es": "En otras palabras, los datos son ambiguos.",
+    "de": "Mit anderen Worten: die Daten sind mehrdeutig."
   }
 }

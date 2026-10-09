@@ -111,16 +111,24 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     },
     {
       "type": "multiple_choice",
-      "question": "«Se me rompió el vaso» выражает…",
-      "instruction": "Что передаёт эта конструкция?",
+      "question": "«Se me rompió el vaso» expresses…",
+      "instruction": "What does this construction convey?",
+      "instructionKey": "choose_option",
       "options": [
-        "случайность",
-        "приказ",
-        "будущее",
-        "сравнение"
+        "an accident / mishap",
+        "an order",
+        "the future",
+        "a comparison"
       ],
-      "answer": "случайность",
-      "explanation": "Se me rompió — «у меня разбился» (не специально).",
+      "answer": "an accident / mishap",
+      "acceptableAnswers": [
+        "an accident / mishap",
+        "accident",
+        "mishap",
+        "casualidad",
+        "случайность"
+      ],
+      "explanation": "Se me rompió = it broke on me (unintentional mishap).",
       "grammarTopic": "pronombre-se"
     },
     {
@@ -917,16 +925,23 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     },
     {
       "type": "multiple_choice",
-      "question": "«El cual» чаще в…",
-      "instruction": "Регистр",
+      "question": "«El cual» is more common in…",
+      "instruction": "Choose the register",
+      "instructionKey": "choose_option",
       "options": [
-        "формальном тексте",
+        "formal writing",
         "SMS",
-        "детской речи",
-        "слэнге"
+        "child speech",
+        "slang"
       ],
-      "answer": "формальном тексте",
-      "explanation": "El cual — письменный/формальный стиль.",
+      "answer": "formal writing",
+      "acceptableAnswers": [
+        "formal writing",
+        "formal text",
+        "texto formal",
+        "формальном тексте"
+      ],
+      "explanation": "El cual is typical of written / formal style.",
       "grammarTopic": "relativos-avanzado"
     },
     {

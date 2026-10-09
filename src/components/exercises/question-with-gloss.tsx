@@ -1,6 +1,9 @@
 "use client";
 
-import { formatQuestionWithGloss } from "@/lib/exercise-localize";
+import {
+  formatQuestionWithGloss,
+  getTranslationSourceLabel,
+} from "@/lib/exercise-localize";
 import {
   useActiveCourseId,
   useInterfaceLanguage,
@@ -32,10 +35,16 @@ export function QuestionWithGloss({
   const lang = interfaceLanguage ?? hookLang;
   const courseId = useActiveCourseId(courseIdProp);
   const { question, gloss } = formatQuestionWithGloss(exercise, lang);
+  const sourceLabel = getTranslationSourceLabel(exercise, lang, courseId);
   if (!question && !gloss) return null;
 
   return (
     <div className={cn("text-lg font-medium", className)}>
+      {sourceLabel ? (
+        <div className="mb-1 text-xs font-normal text-muted-foreground">
+          {sourceLabel}
+        </div>
+      ) : null}
       {question ? (
         <WordHintText text={question} courseId={courseId} />
       ) : null}

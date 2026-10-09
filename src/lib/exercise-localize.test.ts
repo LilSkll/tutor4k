@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  getTranslationSourceLabel,
   isExerciseUsableForLanguage,
   localizeTranslationQuestion,
   prepareExercisesForInterface,
@@ -23,20 +24,16 @@ describe("translation localization", () => {
 
   it("localizes prompts for EN/DE/ES on A1-A2 bank items", () => {
     for (const lang of ["en", "de", "es"] as const) {
-      expect(isExerciseUsableForLanguage(sample, lang)).toBe(true);
-      const q = localizeTranslationQuestion(sample, lang);
-      if (lang === "es") {
-        // Spanish-course answer is already Spanish; ES L1 would spoil → keep RU.
-        expect(q).toBe("Я студент.");
-      } else {
-        expect(q).not.toMatch(/[\u0400-\u04FF]/);
-        expect(q.length).toBeGreaterThan(3);
-      }
+      expect(isExerciseUsableForLanguage(sample, lang, "spanish")).toBe(true);
+      const q = localizeTranslationQuestion(sample, lang, "spanish");
+      // Spanish-course ES UI uses English L1 when Spanish would equal the answer.
+      expect(q).not.toMatch(/[\u0400-\u04FF]/);
+      expect(q.length).toBeGreaterThan(3);
     }
   });
 
   it("prepareExercisesForInterface swaps translation question", () => {
-    const [ex] = prepareExercisesForInterface([sample], "en");
+    const [ex] = prepareExercisesForInterface([sample], "en", "spanish");
     expect(ex.question).toBe("I am a student.");
   });
 
@@ -48,6 +45,9 @@ describe("translation localization", () => {
     expect(isExerciseUsableForLanguage(enCourse, "en", "english")).toBe(true);
     const kept = localizeTranslationQuestion(enCourse, "en", "english");
     expect(kept).toBe("Я студент.");
+    expect(getTranslationSourceLabel(enCourse, "en", "english")).toBe(
+      "Source: Russian",
+    );
   });
 
   it("replaces spoiler grammar-tag instructions", () => {

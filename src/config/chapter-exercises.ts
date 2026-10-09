@@ -374,11 +374,12 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
   "chapter-18-genero-numero": [
     {
       type: "multiple_choice",
-      question: "___ casa es grande. (артикль)",
-      instruction: "Выберите артикль для casa",
+      question: "___ casa es grande.",
+      instruction: "Choose the article for casa",
+      instructionKey: "choose_option",
       options: ["La", "El", "Los", "Unos"],
       answer: "La",
-      explanation: "Casa — женский род → la casa.",
+      explanation: "Casa is feminine → la casa.",
     },
     {
       type: "fill_blank",

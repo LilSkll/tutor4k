@@ -173,8 +173,8 @@
     "es": "Me duele la ___ (cabeza).",
     "de": "Mir tut der/die ___ weh. (Kopf)"
   },
-  "___ casa es grande. (артикль)": {
-    "ru": "___ дом большой. (артикль)",
+  "___ casa es grande.": {
+    "ru": "___ дом большой.",
     "en": "___ house is big. (article)",
     "es": "___ casa es grande. (artículo)",
     "de": "___ Haus ist groß. (Artikel)"
