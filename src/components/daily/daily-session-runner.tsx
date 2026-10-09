@@ -807,11 +807,12 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
         </Card>
       ) : (
         <Card
-          className={
+          className={cn(
             result.correct
               ? "border-emerald-500/40 bg-emerald-500/5"
-              : "border-destructive/40 bg-destructive/5"
-          }
+              : "border-destructive/40 bg-destructive/5",
+            result.correct ? "answer-pulse" : "answer-shake",
+          )}
         >
           <CardContent className="p-6 space-y-4">
             <div className="flex items-center gap-2">

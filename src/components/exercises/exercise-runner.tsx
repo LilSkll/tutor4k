@@ -903,8 +903,8 @@ function ResultCard({
           className={cn(
             "flex items-center gap-3 rounded-lg p-4",
             result.correct
-              ? "bg-success/10 text-success"
-              : "bg-destructive/10 text-destructive",
+              ? "answer-pulse bg-success/10 text-success"
+              : "answer-shake bg-destructive/10 text-destructive",
           )}
         >
           {result.correct ? (

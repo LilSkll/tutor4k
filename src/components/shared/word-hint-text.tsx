@@ -112,7 +112,7 @@ export function WordHintText({
             </TooltipTrigger>
             <TooltipContent
               side="top"
-              className="max-w-[240px] space-y-0.5 px-3 py-2"
+              className="glass-float max-w-[240px] space-y-0.5 rounded-xl border-0 bg-transparent px-3 py-2.5 text-popover-foreground shadow-none"
               onPointerDownOutside={() => setOpenIdx(null)}
             >
               <p className="text-[10px] uppercase tracking-wide text-muted-foreground">

@@ -36,6 +36,11 @@ export function TeacherMobileNav({
   const moreActive = [...MORE_HREFS].some((href) =>
     isTeacherNavActive(pathname, href),
   );
+  const tabIdx = TAB_ITEMS.findIndex((item) =>
+    isTeacherNavActive(pathname, item.href),
+  );
+  const pillIdx =
+    moreActive || drawerOpen ? TAB_ITEMS.length : tabIdx >= 0 ? tabIdx : -1;
 
   React.useEffect(() => {
     setDrawerOpen(false);
@@ -72,45 +77,56 @@ export function TeacherMobileNav({
 
       {/* Bottom tabs */}
       <nav className="glass-shell md:hidden fixed bottom-0 inset-x-0 z-40 border-t safe-pb">
-        <ul className="grid grid-cols-5 h-14">
-          {TAB_ITEMS.map((item) => {
-            const Icon = item.icon;
-            const active = isTeacherNavActive(pathname, item.href);
-            return (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className={cn(
-                    "flex h-full flex-col items-center justify-center gap-0.5 text-[10px] transition-colors",
-                    active
-                      ? "text-primary font-medium"
-                      : "text-muted-foreground",
-                  )}
-                >
-                  <Icon className="h-5 w-5" />
-                  <span className="truncate max-w-[4.5rem]">
-                    {t(item.labelKey)}
-                  </span>
-                </Link>
-              </li>
-            );
-          })}
-          <li>
-            <button
-              type="button"
-              onClick={() => setDrawerOpen(true)}
-              className={cn(
-                "flex h-full w-full flex-col items-center justify-center gap-0.5 text-[10px] transition-colors",
-                moreActive || drawerOpen
-                  ? "text-primary font-medium"
-                  : "text-muted-foreground",
-              )}
+        <div className="relative px-1">
+          {pillIdx >= 0 ? (
+            <span
+              aria-hidden
+              className="tab-pill pointer-events-none absolute top-1.5 left-1 z-0 h-8 w-[calc((100%-0.5rem)/5)] transition-transform duration-200 ease-out"
+              style={{ transform: `translateX(${pillIdx * 100}%)` }}
             >
-              <MoreHorizontal className="h-5 w-5" />
-              <span>{t("teacher.nav.more")}</span>
-            </button>
-          </li>
-        </ul>
+              <span className="mx-0.5 block h-full rounded-xl bg-primary/12 ring-1 ring-primary/15 shadow-sm" />
+            </span>
+          ) : null}
+          <ul className="relative z-[1] grid grid-cols-5 h-14">
+            {TAB_ITEMS.map((item) => {
+              const Icon = item.icon;
+              const active = isTeacherNavActive(pathname, item.href);
+              return (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    className={cn(
+                      "flex h-full flex-col items-center justify-center gap-0.5 text-[10px] transition-colors duration-150",
+                      active
+                        ? "text-primary font-medium"
+                        : "text-muted-foreground",
+                    )}
+                  >
+                    <Icon className="h-5 w-5" />
+                    <span className="truncate max-w-[4.5rem]">
+                      {t(item.labelKey)}
+                    </span>
+                  </Link>
+                </li>
+              );
+            })}
+            <li>
+              <button
+                type="button"
+                onClick={() => setDrawerOpen(true)}
+                className={cn(
+                  "flex h-full w-full flex-col items-center justify-center gap-0.5 text-[10px] transition-colors duration-150",
+                  moreActive || drawerOpen
+                    ? "text-primary font-medium"
+                    : "text-muted-foreground",
+                )}
+              >
+                <MoreHorizontal className="h-5 w-5" />
+                <span>{t("teacher.nav.more")}</span>
+              </button>
+            </li>
+          </ul>
+        </div>
       </nav>
 
       {/* Drawer */}

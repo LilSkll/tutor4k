@@ -736,7 +736,9 @@ export function LessonRunner({
             <CardContent className="p-6 space-y-4">
               <div className={cn(
                 "flex items-center gap-3 rounded-lg p-4",
-                result.correct ? "bg-success/10 text-success" : "bg-destructive/10 text-destructive",
+                result.correct
+                  ? "answer-pulse bg-success/10 text-success"
+                  : "answer-shake bg-destructive/10 text-destructive",
               )}>
                 {result.correct ? <CheckCircle2 className="h-6 w-6 shrink-0" /> : <Sparkles className="h-6 w-6 shrink-0" />}
                 <div>

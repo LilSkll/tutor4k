@@ -352,6 +352,40 @@ html.dark .hw-app-shell {
   }
 }
 
+/* One-shot exercise feedback (≤200ms) — never loops. */
+@keyframes answer-pulse {
+  0% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes answer-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-3px);
+  }
+  75% {
+    transform: translateX(3px);
+  }
+}
+
+.answer-pulse {
+  animation: answer-pulse 180ms ease-out both;
+}
+
+.answer-shake {
+  animation: answer-shake 180ms ease-out both;
+}
+
 /* Slightly lighter blur on small screens (perf + battery). */
 @media (max-width: 767px) {
   :root,
@@ -364,7 +398,10 @@ html.dark .hw-app-shell {
 @media (prefers-reduced-motion: reduce) {
   .page-enter,
   .card-hover,
-  .nav-item {
+  .nav-item,
+  .answer-pulse,
+  .answer-shake,
+  .tab-pill {
     animation: none !important;
     transition: none !important;
   }
