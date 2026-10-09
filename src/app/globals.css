@@ -346,29 +346,25 @@ html[data-season="halloween"] {
 }
 
 /*
- * Halloween mascots in bottom corners (portrait WebP + alpha).
- * Light theme: dark navy stages under figures (dark art needs a dark bed).
- * Dark theme: quieter figures on navy shell.
+ * Halloween corners: left jack-o'-lantern PNG, right mascot WebP.
+ * Light: warm glow under pumpkin + navy stage under dark mascot.
+ * Dark: soft amber halo on pumpkin, quieter mascot.
  */
 html[data-season="halloween"] .hw-app-shell {
   position: relative;
   isolation: isolate;
 }
 
-/*
- * Light mode: compact Halloween corner pools — dark core under the figure,
- * warm amber rim so the cutout reads as décor, not a smudge on white.
- */
 html[data-season="halloween"]:not(.dark) .hw-app-shell {
   background-image:
+    /* Left — pumpkin bed: soft amber so orange reads on white */
     radial-gradient(
-      ellipse 28% 38% at left 248px bottom,
-      hsl(222 48% 9% / 0.94) 0%,
-      hsl(222 40% 14% / 0.72) 28%,
-      hsl(24 70% 42% / 0.22) 48%,
-      hsl(32 50% 70% / 0.1) 62%,
-      transparent 76%
+      ellipse 26% 28% at left 248px bottom,
+      hsl(28 90% 55% / 0.28) 0%,
+      hsl(24 70% 40% / 0.14) 40%,
+      transparent 72%
     ),
+    /* Right — navy stage for dark mascot */
     radial-gradient(
       ellipse 28% 38% at 100% 100%,
       hsl(222 48% 9% / 0.94) 0%,
@@ -380,42 +376,65 @@ html[data-season="halloween"]:not(.dark) .hw-app-shell {
   background-repeat: no-repeat;
 }
 
+html.dark[data-season="halloween"] .hw-app-shell {
+  background-image:
+    radial-gradient(
+      ellipse 24% 26% at left 248px bottom,
+      hsl(28 95% 55% / 0.22) 0%,
+      hsl(24 80% 40% / 0.1) 45%,
+      transparent 70%
+    );
+  background-repeat: no-repeat;
+}
+
 html[data-season="halloween"] .hw-app-shell::before,
 html[data-season="halloween"] .hw-app-shell::after {
   content: "";
   position: absolute;
   z-index: 0;
-  width: min(200px, 18vw);
-  height: min(355px, 32vw);
   pointer-events: none;
-  opacity: 0.94;
   background-repeat: no-repeat;
   background-size: contain;
-  filter: drop-shadow(0 10px 22px hsl(222 45% 8% / 0.35));
 }
 
-html.dark[data-season="halloween"] .hw-app-shell::before,
-html.dark[data-season="halloween"] .hw-app-shell::after {
-  opacity: 0.58;
-  filter: drop-shadow(0 8px 22px hsl(220 50% 4% / 0.35));
-}
-
+/* Left: jack-o'-lantern */
 html[data-season="halloween"] .hw-app-shell::before {
   left: 248px;
   bottom: 0;
-  background-image: url("/seasonal/halloween-mascot-left.webp");
+  width: min(168px, 16vw);
+  height: min(168px, 16vw);
+  opacity: 0.92;
+  background-image: url("/seasonal/halloween-pumpkin-left.png");
   background-position: left bottom;
-  mask-image: linear-gradient(to top, black 78%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to top, black 78%, transparent 100%);
+  filter:
+    drop-shadow(0 0 14px hsl(28 95% 50% / 0.35))
+    drop-shadow(0 8px 18px hsl(222 30% 20% / 0.18));
 }
 
+html.dark[data-season="halloween"] .hw-app-shell::before {
+  opacity: 0.78;
+  filter:
+    drop-shadow(0 0 18px hsl(28 100% 52% / 0.45))
+    drop-shadow(0 6px 16px hsl(220 50% 4% / 0.4));
+}
+
+/* Right: mascot (portrait) */
 html[data-season="halloween"] .hw-app-shell::after {
   right: 0;
   bottom: 0;
+  width: min(200px, 18vw);
+  height: min(355px, 32vw);
+  opacity: 0.94;
   background-image: url("/seasonal/halloween-mascot-right.webp");
   background-position: right bottom;
   mask-image: linear-gradient(to top, black 78%, transparent 100%);
   -webkit-mask-image: linear-gradient(to top, black 78%, transparent 100%);
+  filter: drop-shadow(0 10px 22px hsl(222 45% 8% / 0.35));
+}
+
+html.dark[data-season="halloween"] .hw-app-shell::after {
+  opacity: 0.58;
+  filter: drop-shadow(0 8px 22px hsl(220 50% 4% / 0.35));
 }
 
 html[data-season="halloween"] .hw-app-shell > * {
@@ -427,11 +446,10 @@ html[data-season="halloween"] .hw-app-shell > * {
   html[data-season="halloween"]:not(.dark) .hw-app-shell {
     background-image:
       radial-gradient(
-        ellipse 38% 34% at 0% 100%,
-        hsl(222 48% 9% / 0.88) 0%,
-        hsl(222 40% 14% / 0.55) 34%,
-        hsl(24 70% 42% / 0.16) 52%,
-        transparent 72%
+        ellipse 36% 28% at 0% 100%,
+        hsl(28 90% 55% / 0.24) 0%,
+        hsl(24 70% 40% / 0.1) 45%,
+        transparent 70%
       ),
       radial-gradient(
         ellipse 38% 34% at 100% 100%,
@@ -442,27 +460,50 @@ html[data-season="halloween"] .hw-app-shell > * {
       );
   }
 
-  html[data-season="halloween"] .hw-app-shell::before,
-  html[data-season="halloween"] .hw-app-shell::after {
-    width: min(100px, 28vw);
-    height: min(178px, 48vw);
-    opacity: 0.88;
-    bottom: calc(3.75rem + env(safe-area-inset-bottom, 0px));
-    filter: drop-shadow(0 8px 16px hsl(222 45% 8% / 0.28));
+  html.dark[data-season="halloween"] .hw-app-shell {
+    background-image:
+      radial-gradient(
+        ellipse 34% 26% at 0% 100%,
+        hsl(28 95% 55% / 0.2) 0%,
+        transparent 68%
+      );
   }
 
-  html.dark[data-season="halloween"] .hw-app-shell::before,
-  html.dark[data-season="halloween"] .hw-app-shell::after {
-    opacity: 0.42;
+  html[data-season="halloween"] .hw-app-shell::before,
+  html[data-season="halloween"] .hw-app-shell::after {
+    bottom: calc(3.75rem + env(safe-area-inset-bottom, 0px));
   }
 
   html[data-season="halloween"] .hw-app-shell::before {
     left: 0;
+    width: min(92px, 26vw);
+    height: min(92px, 26vw);
+    opacity: 0.88;
+  }
+
+  html.dark[data-season="halloween"] .hw-app-shell::before {
+    opacity: 0.72;
+  }
+
+  html[data-season="halloween"] .hw-app-shell::after {
+    width: min(100px, 28vw);
+    height: min(178px, 48vw);
+    opacity: 0.88;
+    filter: drop-shadow(0 8px 16px hsl(222 45% 8% / 0.28));
+  }
+
+  html.dark[data-season="halloween"] .hw-app-shell::after {
+    opacity: 0.42;
   }
 }
 
 @media (max-width: 380px) {
-  html[data-season="halloween"] .hw-app-shell::before,
+  html[data-season="halloween"] .hw-app-shell::before {
+    width: 72px;
+    height: 72px;
+    opacity: 0.8;
+  }
+
   html[data-season="halloween"] .hw-app-shell::after {
     opacity: 0.72;
     width: 84px;
