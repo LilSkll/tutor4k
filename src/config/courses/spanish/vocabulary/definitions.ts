@@ -3286,7 +3286,7 @@ export const SPANISH_VOCAB_DEFINITION: Partial<
   "parecer": "Scheinen.",
   "patinar": "Schlittschuh.",
   "pensar": "Ein Akt des Denkens; Überlegung (über etwas).",
-  "perder": "Bewirken, dass (etwas) aufgrund unglücklicher oder unbekannter Umstände, Ereignisse oder Gründe nicht mehr in unserem Besitz oder in unseren Fähigkeiten ist.",
+  "perder": "Verlieren; auch ein Spiel verlieren.",
   "perderse": "Sich verlaufen.",
   "perdone / disculpe": "Der Akt, sich zu entschuldigen; eine Entschuldigung.",
   "pibe / piba (argentina)": "Mann/Mädchen.",
