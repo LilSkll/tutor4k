@@ -121,6 +121,10 @@ describe("isGrammarCategoryInstruction", () => {
     expect(isGrammarCategoryInstruction("Вставьте пропущенное слово")).toBe(
       false,
     );
+    expect(
+      isGrammarCategoryInstruction("Не бойся — это только костюм."),
+    ).toBe(false);
+    expect(isGrammarCategoryInstruction("I am a student.")).toBe(false);
   });
 
   it("treats Spanish pack abbreviations as tags (not EN instructions)", () => {
@@ -176,6 +180,18 @@ describe("isUsableTranslation", () => {
       isUsableTranslation({
         question: "Это дом, где я вырос.",
         answer: "Es la casa donde crecí",
+      }),
+    ).toBe(true);
+    expect(
+      isUsableTranslation({
+        question: "Не бойся — это только костюм.",
+        answer: "No tengas miedo — es solo un disfraz",
+      }),
+    ).toBe(true);
+    expect(
+      isUsableTranslation({
+        question: "I am a student.",
+        answer: "Soy estudiante",
       }),
     ).toBe(true);
   });

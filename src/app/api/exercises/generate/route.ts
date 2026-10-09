@@ -5,16 +5,16 @@ import { prepareExerciseForSession } from "@/lib/exercise-options";
 import { pickStaticExercises } from "@/lib/exercise-pool";
 import {
   isExerciseUsableForLanguage,
-  localizeExerciseInstruction,
+  prepareExercisesForInterface,
 } from "@/lib/exercise-localize";
 import { attachQuestionGlosses } from "@/lib/exercise-gloss-attach";
 import { SESSION_EXERCISES } from "@/lib/exercise-bank";
-import { localizeBankExplanation } from "@/lib/tutor-feedback";
 import type {
   ExerciseType,
   GrammarLevel,
   InterfaceLanguage,
   Level,
+  StaticExercise,
 } from "@/types";
 
 /**
@@ -50,30 +50,32 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    const supabase = await createSupabaseServerClient();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    if (!user) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
     let language: InterfaceLanguage = "ru";
     let courseId = "spanish";
     // Teacher-context level tops out at C1; the requested C2 still drives the pick.
     let level: Level = body.level === "C2" ? "C1" : body.level;
     try {
-      const supabase = await createSupabaseServerClient();
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      if (user) {
-        const { data: profile } = await supabase
-          .from("profiles")
-          .select("interface_language, active_course_id, level")
-          .eq("id", user.id)
-          .maybeSingle();
-        if (profile?.interface_language) {
-          language = profile.interface_language as InterfaceLanguage;
-        }
-        if (profile?.active_course_id) {
-          courseId = profile.active_course_id as string;
-        }
-        if (profile?.level) {
-          level = profile.level as Level;
-        }
+      const { data: profile } = await supabase
+        .from("profiles")
+        .select("interface_language, active_course_id, level")
+        .eq("id", user.id)
+        .maybeSingle();
+      if (profile?.interface_language) {
+        language = profile.interface_language as InterfaceLanguage;
+      }
+      if (profile?.active_course_id) {
+        courseId = profile.active_course_id as string;
+      }
+      if (profile?.level) {
+        level = profile.level as Level;
       }
     } catch {
       // Non-fatal: fall back to defaults.
@@ -201,22 +203,27 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const exercises: GeneratedExercise[] = picked.map((staticEx) => {
+    const localized = prepareExercisesForInterface(
+      picked as StaticExercise[],
+      language,
+      courseId,
+    );
+    const exercises: GeneratedExercise[] = localized.map((staticEx) => {
       const withGloss = attachQuestionGlosses(staticEx);
+      const meta = picked.find((p) => p.id === staticEx.id)!;
       return {
         type: withGloss.type,
-        level: withGloss.level,
+        level: meta.level,
         question: withGloss.question,
-        questionTranslations: withGloss.questionTranslations,
-        instruction: localizeExerciseInstruction(withGloss, language),
+        instruction: withGloss.instruction,
         options: withGloss.options,
         answer: withGloss.answer,
         acceptableAnswers: withGloss.acceptableAnswers,
-        topic: withGloss.topic,
-        explanation: localizeBankExplanation(withGloss.explanation, language),
+        topic: meta.topic,
+        explanation: withGloss.explanation,
         staticSource: true,
         exerciseId: withGloss.id,
-        chapterSlug: withGloss.chapterSlug,
+        chapterSlug: meta.chapterSlug,
       };
     });
 
@@ -276,24 +283,33 @@ async function pickDeleSession(input: {
   const fresh = candidates.filter((ex) => !exclude.has(ex.id));
   const pickFrom = fresh.length > 0 ? fresh : candidates;
 
-  const exercises: GeneratedExercise[] = shuffle(pickFrom)
+  const preparedBatch = shuffle(pickFrom)
     .slice(0, input.count)
-    .map((ex) => {
-      const prepared = prepareExerciseForSession(ex);
-      return {
-        type: prepared.type,
-        level: prepared.level,
-        question: prepared.question,
-        instruction: localizeExerciseInstruction(prepared, input.language),
-        options: prepared.options,
-        answer: prepared.answer,
-        acceptableAnswers: prepared.acceptableAnswers,
-        topic: ex.deleTopic,
-        explanation: prepared.explanation,
-        staticSource: true,
-        exerciseId: prepared.id,
-      };
-    });
+    .map((ex) => prepareExerciseForSession(ex));
+  const localized = prepareExercisesForInterface(
+    preparedBatch,
+    input.language,
+    "spanish",
+  );
+
+  const exercises: GeneratedExercise[] = localized.map((prepared, i) => {
+    const ex =
+      pickFrom.find((p) => p.id === prepared.id) ??
+      (preparedBatch[i] as (typeof pickFrom)[number] | undefined);
+    return {
+      type: prepared.type,
+      level: ex?.level ?? input.level,
+      question: prepared.question,
+      instruction: prepared.instruction,
+      options: prepared.options,
+      answer: prepared.answer,
+      acceptableAnswers: prepared.acceptableAnswers,
+      topic: ex?.deleTopic ?? "DELE",
+      explanation: prepared.explanation,
+      staticSource: true,
+      exerciseId: prepared.id,
+    };
+  });
 
   return exercises;
 }

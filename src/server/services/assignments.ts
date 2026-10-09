@@ -340,7 +340,7 @@ export const AssignmentService = {
     const admin = requireAdmin();
     const { data: row, error: fetchErr } = await admin
       .from("teacher_assignments")
-      .select("id, kind")
+      .select("id, kind, payload, course_id")
       .eq("id", assignmentId)
       .eq("student_id", studentId)
       .eq("status", "assigned")
@@ -348,9 +348,45 @@ export const AssignmentService = {
       .maybeSingle();
     if (fetchErr) throw new Error(fetchErr.message);
     if (!row) throw new Error("NOT_FOUND");
-    if ((row.kind as TeacherAssignmentKind) === "writing") {
+    const kind = row.kind as TeacherAssignmentKind;
+    if (kind === "writing") {
       // Writing must be submitted via submitWriting (captures the body).
       throw new Error("WRITING_REQUIRES_SUBMIT");
+    }
+
+    if (kind === "chapter") {
+      const payload = (row.payload ?? {}) as ChapterAssignmentPayload;
+      const slugs = Array.isArray(payload.chapterSlugs)
+        ? payload.chapterSlugs
+        : [];
+      if (slugs.length === 0) throw new Error("INVALID_PAYLOAD");
+      const { data: done, error: progErr } = await admin
+        .from("learning_progress")
+        .select("chapter_slug")
+        .eq("user_id", studentId)
+        .eq("status", "completed")
+        .in("chapter_slug", slugs);
+      if (progErr) throw new Error(progErr.message);
+      const completed = new Set(
+        (done ?? []).map((r) => String((r as { chapter_slug: string }).chapter_slug)),
+      );
+      if (!slugs.every((s) => completed.has(s))) {
+        throw new Error("CHAPTER_NOT_COMPLETED");
+      }
+    } else if (kind === "exercise_set") {
+      const payload = (row.payload ?? {}) as ExerciseSetAssignmentPayload;
+      const need = Math.min(Math.max(Number(payload.count) || 5, 1), 30);
+      const since = new Date(Date.now() - 14 * 24 * 60 * 60 * 1000).toISOString();
+      const { count, error: histErr } = await admin
+        .from("exercises_history")
+        .select("id", { count: "exact", head: true })
+        .eq("user_id", studentId)
+        .eq("course_id", row.course_id)
+        .gte("created_at", since);
+      if (histErr) throw new Error(histErr.message);
+      if ((count ?? 0) < need) {
+        throw new Error("EXERCISES_INCOMPLETE");
+      }
     }
 
     const { data, error } = await admin

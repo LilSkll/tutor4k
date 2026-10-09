@@ -252,6 +252,7 @@ export async function signUpWithEmail(formData: FormData) {
   // and teachers were left as students when the DB trigger omitted role.
   if (data.user) {
     const synced = await ensureProfileRoleMatchesMetadata(data.user, {
+      allowTeacherUpgrade: true,
       consent: {
         termsAcceptedAt: now,
         privacyAcceptedAt: now,

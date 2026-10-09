@@ -41,7 +41,16 @@ export async function PATCH(req: NextRequest) {
     if (body.name !== undefined) updates.name = body.name;
     if (body.interfaceLanguage !== undefined)
       updates.interface_language = body.interfaceLanguage;
-    if (body.level !== undefined) updates.level = body.level;
+    if (body.level !== undefined) {
+      const allowed = new Set(["A1", "A2", "B1", "B2", "C1", "C2"]);
+      if (!allowed.has(String(body.level))) {
+        return NextResponse.json(
+          { error: "Invalid CEFR level" },
+          { status: 400 },
+        );
+      }
+      updates.level = body.level;
+    }
     if (body.goal !== undefined) updates.goal = body.goal;
     if (body.dailyGoalMinutes !== undefined)
       updates.daily_goal_minutes = body.dailyGoalMinutes;

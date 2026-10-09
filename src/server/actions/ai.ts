@@ -55,6 +55,9 @@ export async function sendTutorMessage(input: {
   const {
     data: { user },
   } = await supabase.auth.getUser();
+  if (!user) {
+    throw new Error("Unauthorized");
+  }
 
   // Use the service-role client for DB writes when available (RLS-safe,
   // so chat history + progress never get silently dropped).
@@ -67,7 +70,7 @@ export async function sendTutorMessage(input: {
   let language: InterfaceLanguage = "ru";
   let courseId: string | null = null;
 
-  if (user) {
+  {
     const { data: profile } = await supabase
       .from("profiles")
       .select("level, name, interface_language, active_course_id")

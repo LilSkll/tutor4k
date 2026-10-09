@@ -25,13 +25,11 @@ type ConsentPatch = {
 };
 
 /**
- * Ensure profiles.role matches signup metadata when the DB trigger
- * (or a later migration) created the row as student by default.
+ * Sync consent (and optionally teacher role) onto profiles.
  *
- * - Upgrades student → teacher when metadata says teacher.
- * - Never downgrades teacher/school_admin.
- * Prefers service-role so this works before email confirmation
- * (no user session / RLS). Falls back to an authenticated user client.
+ * Teacher upgrade from auth metadata is ONLY allowed when
+ * `allowTeacherUpgrade` is true (email/OAuth signup). Login must never
+ * promote student → teacher from mutable user_metadata.
  */
 export async function ensureProfileRoleMatchesMetadata(
   user: Pick<User, "id" | "user_metadata" | "app_metadata">,
@@ -39,6 +37,11 @@ export async function ensureProfileRoleMatchesMetadata(
     consent?: ConsentPatch;
     /** Authenticated client — used when service role is unavailable. */
     userClient?: SupabaseClient;
+    /**
+     * When true (signup only), may set profiles.role = teacher from metadata.
+     * Never pass true from login / email-confirm of existing learners.
+     */
+    allowTeacherUpgrade?: boolean;
   },
 ): Promise<UserRole> {
   const metaRole = roleFromAuthMetadata(
@@ -50,7 +53,9 @@ export async function ensureProfileRoleMatchesMetadata(
     console.warn(
       "[signup-role] no admin/user client; cannot sync teacher role to profiles",
     );
-    return metaRole === "teacher" ? "teacher" : "student";
+    return metaRole === "teacher" && opts?.allowTeacherUpgrade
+      ? "teacher"
+      : "student";
   }
 
   const { data: profile, error: readErr } = await db
@@ -65,6 +70,7 @@ export async function ensureProfileRoleMatchesMetadata(
 
   const current = ((profile as ProfileRoleRow | null)?.role ??
     "student") as UserRole;
+  const onboarded = Boolean((profile as ProfileRoleRow | null)?.onboarded);
 
   const patch: Record<string, unknown> = {};
 
@@ -79,12 +85,17 @@ export async function ensureProfileRoleMatchesMetadata(
 
   if (current === "school_admin" || current === "teacher") {
     nextRole = current;
-  } else if (metaRole === "teacher") {
+  } else if (
+    opts?.allowTeacherUpgrade &&
+    metaRole === "teacher" &&
+    !onboarded
+  ) {
+    // Fresh signup only — never promote an onboarded student.
     patch.role = "teacher";
     patch.onboarded = true;
     nextRole = "teacher";
   } else {
-    nextRole = "student";
+    nextRole = current;
   }
 
   if (Object.keys(patch).length === 0) {

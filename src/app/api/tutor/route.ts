@@ -4,12 +4,8 @@ import {
   sendTutorMessage,
 } from "@/server/actions/ai";
 import { asInterfaceLanguage } from "@/server/ai/tutor-request";
+import { createSupabaseServerClient } from "@/lib/supabase-server";
 import type { AIMessage, InterfaceLanguage } from "@/types";
-
-/**
- * GET /api/tutor
- * Personalized session opening from TeacherContext (empty chat).
- */
 
 /**
  * GET /api/tutor
@@ -17,6 +13,14 @@ import type { AIMessage, InterfaceLanguage } from "@/types";
  */
 export async function GET() {
   try {
+    const supabase = await createSupabaseServerClient();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    if (!user) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
     const opening = await getTutorSessionOpening();
     return NextResponse.json(opening);
   } catch (err) {
@@ -34,6 +38,14 @@ export async function GET() {
  */
 export async function POST(req: NextRequest) {
   try {
+    const supabase = await createSupabaseServerClient();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    if (!user) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
     let body: {
       messages?: AIMessage[];
       conversationId?: string | null;

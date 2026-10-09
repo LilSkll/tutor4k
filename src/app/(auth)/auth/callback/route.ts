@@ -118,7 +118,8 @@ export async function GET(request: Request) {
         const now = new Date().toISOString();
         const signupRole = resolveOAuthSignupRole(oauthIntent);
         if (oauthIntent.acceptTerms && oauthIntent.acceptPrivacy) {
-          // Stamp chosen OAuth role into metadata so DB/app stay aligned.
+          // Metadata only here — profiles.role is written via admin sync below
+          // (RLS/trigger blocks client role changes).
           await supabase.auth.updateUser({
             data: {
               role: signupRole,
@@ -128,27 +129,30 @@ export async function GET(request: Request) {
               marketing_consent_at: oauthIntent.marketingConsent ? now : null,
             },
           });
-          await supabase
-            .from("profiles")
-            .update({
-              role: signupRole,
-              ...(signupRole === "teacher" ? { onboarded: true } : {}),
-              terms_accepted_at: now,
-              privacy_accepted_at: now,
-              marketing_consent: oauthIntent.marketingConsent,
-              marketing_consent_at: oauthIntent.marketingConsent ? now : null,
-            })
-            .eq("id", user.id);
         }
       }
 
       const {
         data: { user: freshUser },
       } = await supabase.auth.getUser();
-      // Email confirm / OAuth: heal student profiles when metadata says teacher
-      // (broken or outdated handle_new_user trigger is a common cause).
+      const signupConsent =
+        oauthIntent?.mode === "signup" &&
+        oauthIntent.acceptTerms &&
+        oauthIntent.acceptPrivacy
+          ? {
+              termsAcceptedAt: new Date().toISOString(),
+              privacyAcceptedAt: new Date().toISOString(),
+              marketingConsent: oauthIntent.marketingConsent,
+              marketingConsentAt: oauthIntent.marketingConsent
+                ? new Date().toISOString()
+                : null,
+            }
+          : undefined;
+      // Signup may set teacher; login must not promote from mutable metadata.
       role = await ensureProfileRoleMatchesMetadata(freshUser ?? user, {
         userClient: supabase,
+        allowTeacherUpgrade: oauthIntent?.mode === "signup",
+        consent: signupConsent,
       });
     }
 

@@ -144,7 +144,9 @@ export function isGrammarCategoryInstruction(instruction: string): boolean {
     return true;
   }
   // Short "Label — detail" tags: "Past simple — go", "Pregunta — nombre",
-  // "Pretérito indefinido — последовательность"
+  // "Pretérito indefinido — последовательность".
+  // Do NOT treat learner sentences with prose dashes
+  // ("Не бойся — это только костюм.") as grammar tags.
   if (
     inst.length <= 64 &&
     /\s[—–]\s/.test(inst) &&
@@ -152,7 +154,16 @@ export function isGrammarCategoryInstruction(instruction: string): boolean {
       inst,
     )
   ) {
-    return true;
+    const left = inst.split(/\s[—–]\s/, 2)[0]?.trim() ?? "";
+    const leftWords = left.split(/\s+/).filter(Boolean);
+    const leftIsClause =
+      /[.?!…,]/.test(left) ||
+      (CYRILLIC.test(left) &&
+        leftWords.length >= 2 &&
+        !/^(Форма|Вид|Время|Наклонение)\b/i.test(left));
+    if (!leftIsClause && leftWords.length <= 4) {
+      return true;
+    }
   }
   // Bare error-correction meta labels (not real learner prompts).
   if (/^Forma incorrecta$/i.test(inst)) return true;
@@ -175,13 +186,16 @@ export function isGrammarCategoryInstruction(instruction: string): boolean {
   }
   // Remaining short Latin curriculum tags (IELTS / grammar names), including
   // abbreviated dots like "Subj. compuesto" that previously leaked to EN UI.
+  // Keep real sentences ("I am a student.") — catch-all is for 1–3 word tags.
   const withoutAbbrevDots = inst.replace(
-    /\b[A-Za-zÁÉÍÓÚáéíóúÑñÜü]{2,12}\./g,
+    /\b[A-Za-zÁÉÍÓÚáéíóúÑñÜü]{1,6}\./g,
     "Abbr",
   );
+  const tagWordCount = inst.split(/\s+/).filter(Boolean).length;
   if (
     inst.length <= 48 &&
-    !/[?!¿¡]/.test(withoutAbbrevDots) &&
+    tagWordCount <= 3 &&
+    !/[.?!¿¡]/.test(withoutAbbrevDots) &&
     !CYRILLIC.test(inst) &&
     !/^(Choose|Fill|Complete|Translate|Rewrite|Find|Build|Fix|Add|Put|Elige|Completa|Traduce|Reescribe|Ordena|Wähle|Fülle|Übersetze|Finde|Bilde|Forma|Pon|Escribe|Corrige|Marca|Señala|Indica|Haz|Lee|Pasa)\b/i.test(
       inst,
@@ -290,8 +304,9 @@ export function isUsableTranslation(ex: {
   if (hasFakeXToken(a)) return false;
   if (CYRILLIC.test(a)) return false;
   if (SECTION_HEADER_PROMPT.test(q) || GRAMMAR_LABEL_PROMPT.test(q)) return false;
-  if (isGrammarCategoryInstruction(q)) return false;
   // Pack generator leaks SB/EC instructions as "translation" prompts.
+  // Do not run isGrammarCategoryInstruction on questions — that helper is for
+  // instruction tags and over-rejects real sentences with dashes / periods.
   if (isMetaOrFormulaPrompt(q)) return false;
   // English pack leaks: "some or any?", "Cleft: What I need is..."
   if (isEnglishMetaTranslationPrompt(q)) return false;

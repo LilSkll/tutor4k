@@ -57,24 +57,63 @@ export async function POST(req: NextRequest) {
       )?.level ??
       "A1";
 
-    // Soft server gate: if the chapter has a practice bank, require a full round.
+    // Server gate: require real attempts in exercise_progress for this chapter.
+    let verifiedCompleted = 0;
     try {
-      const { getChapterExercises } = await import("@/config/chapter-exercises");
       const { SESSION_EXERCISES } = await import("@/lib/exercise-bank");
-      const bankSize = getChapterExercises(body.chapterSlug).length;
+      const bankSize = course.getExercises(body.chapterSlug).length;
       const minPractice =
         bankSize === 0 ? 0 : Math.min(SESSION_EXERCISES, bankSize);
-      if ((body.exercisesCompleted ?? 0) < minPractice) {
-        return NextResponse.json(
-          {
-            error: `Complete at least ${minPractice} exercises before finishing this chapter.`,
-          },
-          { status: 400 },
-        );
+
+      if (minPractice > 0) {
+        const { count, error: countErr } = await supabase
+          .from("exercise_progress")
+          .select("exercise_id", { count: "exact", head: true })
+          .eq("user_id", user.id)
+          .eq("course_id", courseId)
+          .like("exercise_id", `%:${body.chapterSlug}:%`)
+          .gt("times_seen", 0);
+        if (countErr) {
+          console.warn("[chapters/complete] progress count:", countErr.message);
+          // Table missing / RLS — fall back to client count once.
+          if ((body.exercisesCompleted ?? 0) < minPractice) {
+            return NextResponse.json(
+              {
+                error: `Complete at least ${minPractice} exercises before finishing this chapter.`,
+              },
+              { status: 400 },
+            );
+          }
+          verifiedCompleted = body.exercisesCompleted ?? 0;
+        } else {
+          verifiedCompleted = count ?? 0;
+          if (verifiedCompleted < minPractice) {
+            return NextResponse.json(
+              {
+                error: `Complete at least ${minPractice} exercises before finishing this chapter.`,
+              },
+              { status: 400 },
+            );
+          }
+        }
       }
-    } catch {
-      // Non-fatal if bank lookup fails — client gate still applies.
+    } catch (err) {
+      console.warn(
+        "[chapters/complete] practice gate:",
+        (err as Error).message,
+      );
+      verifiedCompleted = body.exercisesCompleted ?? 0;
     }
+
+    const safeScore = Math.max(
+      0,
+      Math.min(100, Math.round(Number(body.score) || 0)),
+    );
+    const safeWords = Math.max(0, Math.round(Number(body.wordsLearned) || 0));
+    const safeExercises =
+      verifiedCompleted > 0
+        ? verifiedCompleted
+        : Math.max(0, Math.round(Number(body.exercisesCompleted) || 0));
 
     // DB user_level historically A1–C1; clamp C2 so progress saves before migration.
     const dbLevel = toUserLevel(chapterLevel);
@@ -112,10 +151,10 @@ export async function POST(req: NextRequest) {
         .update({
           status: "completed",
           level: dbLevel,
-          score: body.score ?? 0,
+          score: safeScore,
           completed_at: new Date().toISOString(),
-          words_learned: body.wordsLearned ?? 0,
-          exercises_completed: body.exercisesCompleted ?? 0,
+          words_learned: safeWords,
+          exercises_completed: safeExercises,
           course_id: courseId,
         })
         .eq("id", existing.id);
@@ -134,11 +173,11 @@ export async function POST(req: NextRequest) {
           topic: body.chapterSlug,
           level: dbLevel,
           status: "completed",
-          score: body.score ?? 0,
+          score: safeScore,
           started_at: new Date().toISOString(),
           completed_at: new Date().toISOString(),
-          words_learned: body.wordsLearned ?? 0,
-          exercises_completed: body.exercisesCompleted ?? 0,
+          words_learned: safeWords,
+          exercises_completed: safeExercises,
           course_id: courseId,
         });
 

@@ -69,6 +69,63 @@ export async function getExercisePool(
   return pending;
 }
 
+/**
+ * Resolve a bank item by stable id (chapter pool, then seasonal / DELE).
+ * Used by /api/exercises/check so clients cannot forge answers.
+ */
+export async function findBankExerciseById(
+  courseId: string,
+  exerciseId: string,
+): Promise<PooledExercise | null> {
+  const id = exerciseId.trim();
+  if (!id) return null;
+
+  const pool = await getExercisePool(courseId);
+  const fromPool = pool.find((e) => e.id === id);
+  if (fromPool) return fromPool;
+
+  try {
+    const { getHalloweenExercisesForCourse } = await import(
+      "@/config/halloween-exercises"
+    );
+    const seasonal = getHalloweenExercisesForCourse(courseId);
+    const hit = seasonal.find((e) => e.id === id);
+    if (hit) {
+      return {
+        ...hit,
+        level: "A1" as GrammarLevel,
+        topic: "halloween",
+        courseId,
+        chapterSlug: "halloween",
+        staticSource: true as const,
+      };
+    }
+  } catch {
+    // seasonal helper optional
+  }
+
+  if (courseId === "spanish") {
+    try {
+      const { DELE_EXERCISES } = await import("@/config/dele-exercises");
+      const hit = DELE_EXERCISES.find((e) => e.id === id);
+      if (hit) {
+        return {
+          ...hit,
+          level: hit.level,
+          topic: hit.deleTopic ?? "DELE",
+          courseId,
+          chapterSlug: "dele",
+          staticSource: true as const,
+        };
+      }
+    } catch {
+      // DELE bank optional
+    }
+  }
+
+  return null;
+}
+
 type PickInput = {
   courseId: string;
   type: ExerciseType;

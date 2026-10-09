@@ -127,10 +127,10 @@ describe("halloween instruction localization", () => {
     const en = prepareExercisesForInterface([sample], "en", "spanish")[0]!;
     const es = prepareExercisesForInterface([sample], "es", "spanish")[0]!;
     const de = prepareExercisesForInterface([sample], "de", "spanish")[0]!;
-    expect(ru.instruction).toMatch(/Заполните|пропуск/i);
-    expect(en.instruction.toLowerCase()).toMatch(/fill|blank/);
-    expect(es.instruction.toLowerCase()).toMatch(/completa|hueco/);
-    expect(de.instruction.toLowerCase()).toMatch(/füll|lück/i);
+    expect(ru.instruction).toMatch(/Заполните|Впишите|пропуск|пропущенн/i);
+    expect(en.instruction.toLowerCase()).toMatch(/fill|blank|missing|type/);
+    expect(es.instruction.toLowerCase()).toMatch(/completa|hueco|escribe/);
+    expect(de.instruction.toLowerCase()).toMatch(/füll|lück|fehlend|schreib/i);
   });
 
   it("localizes English pool instructions for each UI language", () => {
@@ -141,10 +141,10 @@ describe("halloween instruction localization", () => {
     const en = prepareExercisesForInterface([sample], "en", "english")[0]!;
     const es = prepareExercisesForInterface([sample], "es", "english")[0]!;
     const de = prepareExercisesForInterface([sample], "de", "english")[0]!;
-    expect(ru.instruction).toMatch(/Заполните|пропуск/i);
-    expect(en.instruction.toLowerCase()).toMatch(/fill|blank/);
-    expect(es.instruction.toLowerCase()).toMatch(/completa|hueco/);
-    expect(de.instruction.toLowerCase()).toMatch(/füll|lück/i);
+    expect(ru.instruction).toMatch(/Заполните|Впишите|пропуск|пропущенн/i);
+    expect(en.instruction.toLowerCase()).toMatch(/fill|blank|missing|type/);
+    expect(es.instruction.toLowerCase()).toMatch(/completa|hueco|escribe/);
+    expect(de.instruction.toLowerCase()).toMatch(/füll|lück|fehlend|schreib/i);
   });
 });
 
