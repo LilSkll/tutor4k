@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { getWordGloss } from "@/lib/vocab-display";
+import { getWordDefinition, getWordGloss } from "@/lib/vocab-display";
 import type { VocabWord } from "@/types";
 
 const padre: VocabWord = {
@@ -23,5 +23,26 @@ describe("getWordGloss (spanish course)", () => {
     expect(en.toLowerCase()).toMatch(/father|dad|padre/);
     expect(es.toLowerCase()).toMatch(/padre|papá|papa/);
     expect(de.toLowerCase()).toMatch(/vater|papa/);
+  });
+});
+
+describe("getWordDefinition (spanish course)", () => {
+  it("returns localized definitions for all UI languages when mapped", () => {
+    const langs = ["ru", "en", "es", "de"] as const;
+    for (const lang of langs) {
+      const def = getWordDefinition(padre, lang, "spanish");
+      expect(def, `missing definition for ${lang}`).toBeTruthy();
+      expect(def!.length).toBeGreaterThan(3);
+    }
+  });
+
+  it("prefers inline definitions over course maps", () => {
+    const withInline: VocabWord = {
+      ...padre,
+      definitions: { en: "Inline father definition for tests." },
+    };
+    expect(getWordDefinition(withInline, "en", "spanish")).toBe(
+      "Inline father definition for tests.",
+    );
   });
 });

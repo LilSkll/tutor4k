@@ -1,5 +1,7 @@
 import type { InterfaceLanguage, VocabTopic, VocabWord } from "@/types";
+import { ENGLISH_VOCAB_DEFINITION } from "@/config/courses/english/vocabulary/definitions";
 import { ENGLISH_VOCAB_GLOSS } from "@/config/courses/english/vocabulary/glosses";
+import { SPANISH_VOCAB_DEFINITION } from "@/config/courses/spanish/vocabulary/definitions";
 import { SPANISH_VOCAB_GLOSS } from "@/config/courses/spanish/vocabulary/glosses";
 import { SPANISH_TOPIC_TITLES_EN } from "@/config/courses/spanish/vocabulary/topic-titles";
 
@@ -104,4 +106,31 @@ export function getWordGloss(
 
   // Last resort: keep authored translation even if still Russian.
   return word.translation;
+}
+
+/**
+ * Short dictionary-style definition in the user's interface language.
+ * Returns null when no definition is available (do not fall back to gloss).
+ */
+export function getWordDefinition(
+  word: VocabWord,
+  interfaceLanguage: InterfaceLanguage,
+  courseId?: string,
+): string | null {
+  const inline = word.definitions?.[interfaceLanguage]?.trim();
+  if (inline) return inline;
+
+  const key = word.word.trim().toLowerCase();
+
+  if (courseId === "english") {
+    const def = ENGLISH_VOCAB_DEFINITION[interfaceLanguage]?.[key]?.trim();
+    if (def) return def;
+  }
+
+  if (courseId === "spanish") {
+    const def = SPANISH_VOCAB_DEFINITION[interfaceLanguage]?.[key]?.trim();
+    if (def) return def;
+  }
+
+  return null;
 }

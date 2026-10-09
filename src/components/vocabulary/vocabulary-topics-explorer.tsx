@@ -17,6 +17,7 @@ import { translate } from "@/lib/i18n";
 import {
   getVocabTopicSubtitle,
   getVocabTopicTitle,
+  getWordDefinition,
   getWordGloss,
 } from "@/lib/vocab-display";
 import type { VocabTopic, VocabWord } from "@/types";
@@ -71,9 +72,11 @@ export function VocabularyTopicsExplorer({
     for (const topic of topics) {
       for (const word of topic.words) {
         const gloss = getWordGloss(word, language, courseId);
+        const definition = getWordDefinition(word, language, courseId) ?? "";
         if (
           word.word.toLowerCase().includes(q) ||
-          gloss.toLowerCase().includes(q)
+          gloss.toLowerCase().includes(q) ||
+          definition.toLowerCase().includes(q)
         ) {
           results.push({ topic, word });
         }
@@ -132,7 +135,9 @@ export function VocabularyTopicsExplorer({
           <p className="text-sm text-muted-foreground">
             {t("vocabTopics.found", { count: searchResults.length })}
           </p>
-          {searchResults.map(({ topic, word }, i) => (
+          {searchResults.map(({ topic, word }, i) => {
+            const definition = getWordDefinition(word, language, courseId);
+            return (
             <div
               key={i}
               className="flex items-center justify-between rounded-lg border p-3 bg-card"
@@ -143,6 +148,11 @@ export function VocabularyTopicsExplorer({
                   <Badge variant="level" className="shrink-0">{topic.level}</Badge>
                 </div>
                 <p className="text-sm text-muted-foreground">{getWordGloss(word, language, courseId)}</p>
+                {definition && (
+                  <p className="text-xs text-muted-foreground/90 mt-0.5">
+                    {definition}
+                  </p>
+                )}
                 <p className="text-xs italic text-muted-foreground mt-0.5">{word.example}</p>
               </div>
               <Button
@@ -158,7 +168,7 @@ export function VocabularyTopicsExplorer({
                 )}
               </Button>
             </div>
-          ))}
+          );})}
         </div>
       ) : (
         <>
@@ -243,7 +253,9 @@ export function VocabularyTopicsExplorer({
                 </DialogHeader>
 
                 <div className="space-y-2 mt-2">
-                  {topic.words.map((word, i) => (
+                  {topic.words.map((word, i) => {
+                    const definition = getWordDefinition(word, language, courseId);
+                    return (
                     <div
                       key={i}
                       className="flex items-start justify-between gap-2 rounded-lg border p-3 bg-card"
@@ -264,6 +276,11 @@ export function VocabularyTopicsExplorer({
                           )}
                         </div>
                         <p className="text-sm text-muted-foreground mt-0.5">{getWordGloss(word, language, courseId)}</p>
+                        {definition && (
+                          <p className="text-xs text-muted-foreground/90 mt-0.5">
+                            {definition}
+                          </p>
+                        )}
                         {(word.examples ?? [word.example]).map((ex, j) => (
                           <p key={j} className="text-xs italic text-muted-foreground mt-1 border-l-2 border-primary/20 pl-2">
                             {ex}
@@ -305,7 +322,7 @@ export function VocabularyTopicsExplorer({
                         )}
                       </Button>
                     </div>
-                  ))}
+                  );})}
                 </div>
               </>
             );

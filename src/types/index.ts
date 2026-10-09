@@ -360,6 +360,8 @@ export interface VocabWord {
   translation: string;
   /** Optional glosses per interface language. */
   translations?: Partial<Record<InterfaceLanguage, string>>;
+  /** Optional short dictionary-style definitions per interface language. */
+  definitions?: Partial<Record<InterfaceLanguage, string>>;
   /** Primary example sentence (backward compatible). */
   example: string;
   transcription?: string;
