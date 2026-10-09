@@ -296,8 +296,10 @@
     @apply text-muted-foreground hover:bg-accent/80 hover:text-foreground;
   }
 
+  /* No animation-fill-mode: lingering transform/translate makes
+     position:fixed tooltips anchor to this box instead of the viewport. */
   .page-enter {
-    animation: page-enter var(--motion-page) ease-out both;
+    animation: page-enter var(--motion-page) ease-out;
   }
 }
 
