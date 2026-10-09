@@ -77,17 +77,45 @@ function normalizeForCompare(s: string): string {
     .toLowerCase();
 }
 
+/**
+ * L1 meaning for sentence-building without revealing tile order.
+ * Uses questionTranslations already attached to the exercise.
+ */
+export function getSentenceBuildingMeaning(
+  exercise: Pick<
+    StaticExercise,
+    "question" | "answer" | "type" | "questionTranslations"
+  >,
+  interfaceLanguage: InterfaceLanguage,
+): string | null {
+  if (exercise.type !== "sentence_building") return null;
+  const gloss = exercise.questionTranslations?.[interfaceLanguage]?.trim() ?? "";
+  if (!gloss) return null;
+  const glossNorm = normalizeForCompare(gloss);
+  if (!glossNorm) return null;
+  if (glossNorm === normalizeForCompare(exercise.answer ?? "")) return null;
+  const promptNorm = normalizeForCompare(
+    (exercise.question ?? "").replace(/\s*\/\s*/g, " "),
+  );
+  if (promptNorm && glossNorm === promptNorm) return null;
+  return gloss;
+}
+
 /** Render "question (gloss)" when a gloss exists. */
 export function formatQuestionWithGloss(
   exercise: Pick<
     StaticExercise,
-    "question" | "type" | "questionTranslations"
+    "question" | "answer" | "type" | "questionTranslations"
   >,
   interfaceLanguage: InterfaceLanguage,
 ): { question: string; gloss: string | null } {
   // Slash-separated token prompts leak the correct word order for tile exercises.
+  // Still surface an L1 meaning when available so the task is not a blind puzzle.
   if (exercise.type === "sentence_building") {
-    return { question: "", gloss: null };
+    return {
+      question: "",
+      gloss: getSentenceBuildingMeaning(exercise, interfaceLanguage),
+    };
   }
 
   return {
@@ -159,10 +187,10 @@ const INSTRUCTION_BY_KEY: Record<
     de: "Übersetze den Satz",
   },
   build_sentence: {
-    ru: "Составьте предложение по образцу",
-    en: "Build a sentence on the model",
-    es: "Forma una frase siguiendo el modelo",
-    de: "Bilde einen Satz nach dem Muster",
+    ru: "Соберите предложение из слов ниже (не перевод и не ввод с клавиатуры)",
+    en: "Build the sentence from the word tiles below (do not translate or type)",
+    es: "Ordena las palabras de abajo (no traduzcas ni escribas)",
+    de: "Baue den Satz aus den Wörtern unten (nicht übersetzen, nicht tippen)",
   },
   fill_conjugation: {
     ru: "Поставьте глагол в правильную форму",
@@ -188,7 +216,9 @@ function inferInstructionKey(instruction: string): string | null {
   ) {
     return "pret_imp";
   }
-  if (/составьте|build|forma una|bilde/.test(s)) return "build_sentence";
+  if (/составьте|соберите|build|forma una|ordena|bilde/.test(s)) {
+    return "build_sentence";
+  }
   // Language-specific translate — never assume Spanish for every "переведите".
   if (
     /на испанск|into spanish|al español|ins spanische|to spanish/.test(s)
@@ -213,32 +243,36 @@ const GENERIC_INSTRUCTION: Record<
   Record<ExerciseType, string>
 > = {
   ru: {
-    multiple_choice: "Выберите правильный вариант",
-    fill_blank: "Заполните пропуск",
-    translation: "Переведите предложение",
-    error_correction: "Найдите и исправьте ошибку",
-    sentence_building: "Составьте предложение из слов",
+    multiple_choice: "Выберите один правильный вариант из списка",
+    fill_blank: "Впишите одно пропущенное слово или форму глагола",
+    translation: "Переведите фразу на целевой язык в поле ввода",
+    error_correction: "Найдите ошибку и напишите исправленное предложение целиком",
+    sentence_building:
+      "Соберите фразу, нажимая слова ниже по порядку — не переводите и не печатайте",
   },
   en: {
-    multiple_choice: "Choose the correct option",
-    fill_blank: "Fill in the blank",
-    translation: "Translate the sentence",
-    error_correction: "Find and correct the mistake",
-    sentence_building: "Build the sentence from the words",
+    multiple_choice: "Choose one correct option from the list",
+    fill_blank: "Type the single missing word or verb form",
+    translation: "Translate the phrase into the target language in the input",
+    error_correction: "Find the mistake and write the full corrected sentence",
+    sentence_building:
+      "Tap the words below in order to build the phrase — do not translate or type",
   },
   es: {
-    multiple_choice: "Elige la opción correcta",
-    fill_blank: "Completa el hueco",
-    translation: "Traduce la frase",
-    error_correction: "Encuentra y corrige el error",
-    sentence_building: "Ordena las palabras para formar la frase",
+    multiple_choice: "Elige una sola opción correcta de la lista",
+    fill_blank: "Escribe la única palabra o forma verbal que falta",
+    translation: "Traduce la frase al idioma objetivo en el campo de texto",
+    error_correction: "Encuentra el error y escribe la oración corregida completa",
+    sentence_building:
+      "Toca las palabras abajo en orden para armar la frase — no traduzcas ni escribas",
   },
   de: {
-    multiple_choice: "Wähle die richtige Option",
-    fill_blank: "Fülle die Lücke aus",
-    translation: "Übersetze den Satz",
-    error_correction: "Finde und korrigiere den Fehler",
-    sentence_building: "Bilde den Satz aus den Wörtern",
+    multiple_choice: "Wähle eine richtige Option aus der Liste",
+    fill_blank: "Schreibe das eine fehlende Wort oder die Verbform",
+    translation: "Übersetze die Phrase in die Zielsprache im Eingabefeld",
+    error_correction: "Finde den Fehler und schreibe den ganzen korrigierten Satz",
+    sentence_building:
+      "Tippe die Wörter unten der Reihe nach an — nicht übersetzen und nicht tippen",
   },
 };
 

@@ -125,7 +125,7 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       type: "multiple_choice",
       question: "¿Qué ___ (hacer) tú los fines de semana?",
-      instruction: "Выберите неправильную форму hacer для tú",
+      instruction: "Выберите правильную форму hacer для tú",
       options: ["haces", "hago", "hace", "hacéis"],
       answer: "haces",
       explanation: "Tú → haces. Hacer неправильный: yo hago, tú haces, él hace.",
@@ -137,14 +137,26 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
       answer: "Yo hablo español todos los días",
       instruction: "Соберите фразу о ежедневной практике",
       explanation: "Presente: yo hablo. todos los días = каждый день.",
+      questionTranslations: {
+        ru: "Я говорю по-испански каждый день.",
+        en: "I speak Spanish every day.",
+        es: "Yo hablo español todos los días.",
+        de: "Ich spreche jeden Tag Spanisch.",
+      },
     },
     {
       type: "sentence_building",
       question: "¿Qué / haces / los / fines / de / semana?",
       options: ["¿Qué", "haces", "los", "fines", "de", "semana?"],
       answer: "¿Qué haces los fines de semana?",
-      instruction: "Соберите вопрос о выходных",
+      instruction: "Соберите вопрос о выходных из слов ниже",
       explanation: "¿Qué haces…? — Что ты делаешь…? fines de semana = выходные.",
+      questionTranslations: {
+        ru: "Что ты делаешь по выходным?",
+        en: "What do you do on weekends?",
+        es: "¿Qué haces los fines de semana?",
+        de: "Was machst du am Wochenende?",
+      },
     },
   ],
 

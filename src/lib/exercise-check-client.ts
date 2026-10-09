@@ -33,6 +33,8 @@ export function gradeStaticExerciseLocally(
       instruction: exercise.instruction,
       exerciseType: exercise.type,
       answer: exercise.answer,
+      // Lesson / Daily / practice UIs already show «Correct answer: …».
+      includeModelAnswer: false,
     }),
   };
 }

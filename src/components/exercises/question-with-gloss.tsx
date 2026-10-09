@@ -11,7 +11,7 @@ import { cn } from "@/lib/utils";
 
 type QuestionShape = Pick<
   StaticExercise,
-  "question" | "type" | "questionTranslations"
+  "question" | "answer" | "type" | "questionTranslations"
 > & {
   type: ExerciseType;
 };

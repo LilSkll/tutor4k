@@ -913,7 +913,7 @@
           "hacéis"
         ],
         "answer": "haces",
-        "instruction": "Выберите неправильную форму hacer для tú",
+        "instruction": "Выберите правильную форму hacer для tú",
         "explanation": "Hacer неправильный: yo hago, tú haces, él hace.",
         "grammarTopic": "a1-presente"
       },
@@ -1434,7 +1434,13 @@
         "instruction": "Соберите фразу о ежедневной практике",
         "explanation": "Presente: yo hablo. todos los días = каждый день.",
         "grammarTopic": "a1-presente",
-        "acceptableAnswers": []
+        "acceptableAnswers": [],
+        "questionTranslations": {
+          "ru": "Я говорю по-испански каждый день.",
+          "en": "I speak Spanish every day.",
+          "es": "Yo hablo español todos los días.",
+          "de": "Ich spreche jeden Tag Spanisch."
+        }
       },
       {
         "type": "sentence_building",
@@ -1448,10 +1454,16 @@
           "semana?"
         ],
         "answer": "¿Qué haces los fines de semana?",
-        "instruction": "Соберите вопрос о выходных",
+        "instruction": "Соберите вопрос о выходных из слов ниже",
         "explanation": "¿Qué haces…? — Что ты делаешь…? fines de semana = выходные.",
         "grammarTopic": "a1-presente",
-        "acceptableAnswers": []
+        "acceptableAnswers": [],
+        "questionTranslations": {
+          "ru": "Что ты делаешь по выходным?",
+          "en": "What do you do on weekends?",
+          "es": "¿Qué haces los fines de semana?",
+          "de": "Was machst du am Wochenende?"
+        }
       },
       {
         "type": "sentence_building",
@@ -1519,7 +1531,13 @@
         "instruction": "Соберите ежедневную практику",
         "explanation": "Estudio español todos los días.",
         "grammarTopic": "a1-presente",
-        "acceptableAnswers": []
+        "acceptableAnswers": [],
+        "questionTranslations": {
+          "ru": "Я говорю по-испански каждый день.",
+          "en": "I speak Spanish every day.",
+          "es": "Yo hablo español todos los días.",
+          "de": "Ich spreche jeden Tag Spanisch."
+        }
       },
       {
         "type": "sentence_building",

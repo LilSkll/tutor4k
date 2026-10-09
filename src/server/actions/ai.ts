@@ -739,28 +739,55 @@ export async function checkExerciseAnswer(input: {
   level: Level;
   language?: InterfaceLanguage;
   courseId?: string;
+  /**
+   * Student UIs already show «Correct answer» separately.
+   * Default false to avoid duplicating it inside tutor feedback.
+   */
+  includeModelAnswer?: boolean;
 }): Promise<{
   correct: boolean;
   feedback: string;
 }> {
   const courseId = input.courseId ?? "spanish";
+  const includeModelAnswer = input.includeModelAnswer === true;
   const bankExplanation = input.exercise.explanation;
   const { shouldSoftCheckEquivalents, enrichFeedbackWithConstruction } =
     await import("@/lib/exercise-construction-hint");
-  const { ensureModelAnswerInFeedback, formatBankTutorFeedback } =
-    await import("@/lib/tutor-feedback");
+  const {
+    ensureModelAnswerInFeedback,
+    formatBankTutorFeedback,
+    stripEmbeddedModelAnswer,
+  } = await import("@/lib/tutor-feedback");
   const { plainTutorText } = await import("@/lib/plain-tutor-text");
-  const finish = (correct: boolean, rawFeedback: string) => ({
-    correct,
-    feedback: plainTutorText(
-      ensureModelAnswerInFeedback(
-        rawFeedback,
+  const finish = (correct: boolean, rawFeedback: string) => {
+    const lang = input.language ?? "ru";
+    let feedback = rawFeedback;
+    if (includeModelAnswer) {
+      feedback = ensureModelAnswerInFeedback(
+        feedback,
         input.exercise.answer,
-        input.language ?? "ru",
+        lang,
         correct,
-      ),
-    ),
-  });
+      );
+    } else {
+      feedback = stripEmbeddedModelAnswer(
+        feedback,
+        input.exercise.answer,
+        lang,
+      );
+    }
+    return { correct, feedback: plainTutorText(feedback) };
+  };
+  const bankFeedback = (correct: boolean) =>
+    formatBankTutorFeedback({
+      language: input.language,
+      correct,
+      explanation: bankExplanation,
+      instruction: input.exercise.instruction,
+      exerciseType: input.exercise.type,
+      answer: input.exercise.answer,
+      includeModelAnswer,
+    });
 
   if (
     answersMatch(input.userAnswer, [
@@ -777,14 +804,7 @@ export async function checkExerciseAnswer(input: {
     const outcome = finish(
       true,
       input.exercise.staticSource
-        ? formatBankTutorFeedback({
-            language: input.language,
-            correct: true,
-            explanation: bankExplanation,
-            instruction: input.exercise.instruction,
-            exerciseType: input.exercise.type,
-            answer: input.exercise.answer,
-          })
+        ? bankFeedback(true)
         : input.exercise.explanation,
     );
 
@@ -805,17 +825,7 @@ export async function checkExerciseAnswer(input: {
     shouldSoftCheckEquivalents(input.exercise.type);
 
   if (input.exercise.staticSource && !allowSoftAi) {
-    const outcome = finish(
-      false,
-      formatBankTutorFeedback({
-        language: input.language,
-        correct: false,
-        explanation: bankExplanation,
-        instruction: input.exercise.instruction,
-        exerciseType: input.exercise.type,
-        answer: input.exercise.answer,
-      }),
-    );
+    const outcome = finish(false, bankFeedback(false));
 
     await persistExerciseOutcome({
       exercise: input.exercise,
@@ -830,14 +840,7 @@ export async function checkExerciseAnswer(input: {
   }
 
   let isCorrect = false;
-  let feedback = formatBankTutorFeedback({
-    language: input.language,
-    correct: false,
-    explanation: bankExplanation,
-    instruction: input.exercise.instruction,
-    exerciseType: input.exercise.type,
-    answer: input.exercise.answer,
-  });
+  let feedback = bankFeedback(false);
   try {
     const { generateAIResponse } = await import("@/server/ai/orchestrator");
     const course = await getCourse(courseId);
@@ -870,17 +873,11 @@ export async function checkExerciseAnswer(input: {
         instruction: input.exercise.instruction,
         explanation: bankExplanation,
         exerciseType: input.exercise.type,
-        answer: isCorrect ? null : input.exercise.answer,
+        answer:
+          includeModelAnswer && !isCorrect ? input.exercise.answer : null,
       });
     } else if (isCorrect) {
-      feedback = formatBankTutorFeedback({
-        language: input.language,
-        correct: true,
-        explanation: bankExplanation,
-        instruction: input.exercise.instruction,
-        exerciseType: input.exercise.type,
-        answer: input.exercise.answer,
-      });
+      feedback = bankFeedback(true);
     }
   } catch (err) {
     console.warn("[exercises] AI check failed:", (err as Error).message);

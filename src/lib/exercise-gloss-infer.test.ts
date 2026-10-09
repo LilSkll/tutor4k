@@ -51,9 +51,10 @@ describe("question gloss attach", () => {
     const withGloss = attachQuestionGlosses(ex);
     const ru = withGloss.questionTranslations?.ru;
     expect(ru).toBeTruthy();
-    // Gloss is stored server-side but not shown — it would leak word order.
-    expect(formatQuestionWithGloss(withGloss, "ru").gloss).toBeNull();
-    expect(formatQuestionWithGloss(withGloss, "ru").question).toBe("");
+    // Slash prompt stays hidden; L1 meaning is shown so the task is not blind.
+    const formatted = formatQuestionWithGloss(withGloss, "ru");
+    expect(formatted.question).toBe("");
+    expect(formatted.gloss).toBe(ru);
   });
 
   it("infers EN gloss from reconstructed sentence", () => {

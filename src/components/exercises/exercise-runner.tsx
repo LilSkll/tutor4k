@@ -29,9 +29,13 @@ import { trackEvent } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 import { QuestionWithGloss } from "@/components/exercises/question-with-gloss";
 import { ExerciseFreeTextBlock } from "@/components/exercises/exercise-free-text-block";
+import { ExerciseTaskBanner } from "@/components/exercises/exercise-task-banner";
 import { SentenceBuildingBlock } from "@/components/exercises/sentence-building-block";
 import { gradeStaticExerciseLocally } from "@/lib/exercise-check-client";
-import { localizeExerciseInstruction } from "@/lib/exercise-localize";
+import {
+  getSentenceBuildingMeaning,
+  localizeExerciseInstruction,
+} from "@/lib/exercise-localize";
 import type {
   ExerciseType,
   GrammarLevel,
@@ -786,12 +790,12 @@ function ExerciseCard({
 
         {(!isFreeText || isMultipleChoice || isSentenceBuilding) &&
         (exercise.instruction || isMultipleChoice || isSentenceBuilding) ? (
-          <div className="rounded-lg bg-primary/10 border border-primary/20 px-4 py-2.5">
-            <p className="text-sm text-foreground">
-              <span className="font-semibold text-primary">{t("exercises.taskLabel")} </span>
-              {localizeExerciseInstruction(exercise, interfaceLanguage)}
-            </p>
-          </div>
+          <ExerciseTaskBanner
+            type={exercise.type}
+            instruction={localizeExerciseInstruction(exercise, interfaceLanguage)}
+            meaning={getSentenceBuildingMeaning(exercise, interfaceLanguage)}
+            language={interfaceLanguage}
+          />
         ) : null}
 
         {exercise.type !== "sentence_building" ? (
@@ -830,6 +834,10 @@ function ExerciseCard({
               total: exercise.options!.length,
             })}
           />
+        ) : isSentenceBuilding ? (
+          <p className="text-sm text-muted-foreground">
+            {t("exercises.sentenceBuildingMissingTiles")}
+          </p>
         ) : isMultipleChoice && hasOptions ? (
           <div className="grid gap-2">
             {exercise.options!.map((opt, i) => (

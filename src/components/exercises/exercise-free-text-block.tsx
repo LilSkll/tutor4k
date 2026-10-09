@@ -1,6 +1,7 @@
 "use client";
 
 import { Input } from "@/components/ui/input";
+import { ExerciseTaskBanner } from "@/components/exercises/exercise-task-banner";
 import { resolveConstructionHint } from "@/lib/exercise-construction-hint";
 import {
   detectSourceLanguage,
@@ -24,7 +25,7 @@ export function ExerciseFreeTextBlock({
   value,
   onChange,
   onSubmit,
-  taskLabel,
+  taskLabel: _taskLabel,
   autoFocus = true,
 }: {
   exercise: ExerciseLike;
@@ -33,9 +34,11 @@ export function ExerciseFreeTextBlock({
   value: string;
   onChange: (value: string) => void;
   onSubmit?: () => void;
-  taskLabel: string;
+  /** @deprecated Banner uses i18n lesson.taskLabel; kept for call-site compatibility. */
+  taskLabel?: string;
   autoFocus?: boolean;
 }) {
+  void _taskLabel;
   const t = (key: string) => translate(key, interfaceLanguage);
   const instruction = localizeExerciseInstruction(exercise, interfaceLanguage);
   const constructionHint = resolveConstructionHint({
@@ -70,33 +73,30 @@ export function ExerciseFreeTextBlock({
 
   return (
     <div className="space-y-3">
-      <div className="rounded-lg bg-primary/10 border border-primary/20 px-4 py-2.5 space-y-1.5">
-        <p className="text-sm text-foreground">
-          <span className="font-semibold text-primary">{taskLabel} </span>
-          {instruction}
+      <ExerciseTaskBanner
+        type={exercise.type}
+        instruction={instruction}
+        language={interfaceLanguage}
+      />
+      {constructionHint &&
+      constructionHint.toLowerCase() !== instruction.trim().toLowerCase() ? (
+        <p className="text-xs text-foreground/90 rounded-lg border border-primary/15 bg-primary/5 px-3 py-2">
+          <span className="font-semibold text-primary">
+            {t("exercises.constructionHintLabel")}{" "}
+          </span>
+          {constructionHint}
         </p>
-        {constructionHint &&
-        constructionHint.toLowerCase() !== instruction.trim().toLowerCase() ? (
-          <p className="text-xs text-foreground/90 border-t border-primary/10 pt-1.5">
-            <span className="font-semibold text-primary">
-              {t("exercises.constructionHintLabel")}{" "}
-            </span>
-            {constructionHint}
-          </p>
-        ) : null}
-        {exercise.type === "error_correction" ? (
-          <p className="text-xs text-muted-foreground">
-            {reportedSpeech
-              ? t("exercises.reportedSpeechLead")
-              : t("exercises.errorCorrectionLead")}
-          </p>
-        ) : null}
-        {showAuthoredHint && authored !== instruction ? (
-          <p className="text-xs text-muted-foreground border-t border-primary/10 pt-1.5">
-            {authored}
-          </p>
-        ) : null}
-      </div>
+      ) : null}
+      {exercise.type === "error_correction" ? (
+        <p className="text-xs text-muted-foreground">
+          {reportedSpeech
+            ? t("exercises.reportedSpeechLead")
+            : t("exercises.errorCorrectionLead")}
+        </p>
+      ) : null}
+      {showAuthoredHint && authored !== instruction ? (
+        <p className="text-xs text-muted-foreground">{authored}</p>
+      ) : null}
 
       <Input
         value={value}

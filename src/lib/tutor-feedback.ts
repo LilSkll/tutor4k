@@ -90,6 +90,23 @@ export function ensureModelAnswerInFeedback(
   return `${feedback.trim()} ${label} ${a}`.trim();
 }
 
+/** Remove «Correct answer: …» when the UI already shows the model answer. */
+export function stripEmbeddedModelAnswer(
+  feedback: string,
+  answer: string | null | undefined,
+  language: InterfaceLanguage,
+): string {
+  const a = answer?.trim();
+  if (!a) return feedback;
+  const label = MODEL_ANSWER_LABEL[language] ?? MODEL_ANSWER_LABEL.en;
+  const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return feedback
+    .replace(new RegExp(`${esc(label)}\\s*${esc(a)}`, "gi"), "")
+    .replace(new RegExp(`${esc(label)}\\s*`, "gi"), "")
+    .replace(/\s{2,}/g, " ")
+    .trim();
+}
+
 function pick<T>(arr: T[]): T {
   return arr[Math.floor(Math.random() * arr.length)] ?? arr[0];
 }
@@ -191,11 +208,17 @@ export function formatBankTutorFeedback(input: {
   exerciseType?: ExerciseType;
   /** Model answer — shown on mistakes when the bank note is empty/generic. */
   answer?: string | null;
+  /**
+   * When false, skip appending «Correct answer: …» (UI already shows it).
+   * Defaults to true for API / daily paths that rely on feedback alone.
+   */
+  includeModelAnswer?: boolean;
 }): string {
   const lang = input.language ?? "ru";
   let explanation = localizeBankExplanation(input.explanation, lang);
   const instruction = localizeBankExplanation(input.instruction ?? "", lang);
   const answer = input.answer?.trim() || "";
+  const includeModelAnswer = input.includeModelAnswer !== false;
 
   // Vague “check the answer” with no answer attached is useless — drop it.
   if (isGenericExplanation(explanation, lang) && answer) {
@@ -204,8 +227,14 @@ export function formatBankTutorFeedback(input: {
     explanation = EXPLANATION_FALLBACK[lang] ?? EXPLANATION_FALLBACK.en;
   }
 
+  // Remind what the task was when the bank note looks like a translation gloss.
+  const typeReminder =
+    !input.correct && input.exerciseType
+      ? TASK_REMINDER[lang]?.[input.exerciseType] ?? ""
+      : "";
+
   const answerLine =
-    !input.correct && answer
+    includeModelAnswer && !input.correct && answer
       ? `${MODEL_ANSWER_LABEL[lang] ?? MODEL_ANSWER_LABEL.en} ${answer}`
       : "";
 
@@ -213,7 +242,7 @@ export function formatBankTutorFeedback(input: {
     ? pick(PRAISE[lang] ?? PRAISE.ru)
     : pick(MISTAKE_INTRO[lang] ?? MISTAKE_INTRO.ru);
 
-  const base = [intro, explanation, answerLine]
+  const base = [intro, typeReminder, explanation, answerLine]
     .map((p) => p.trim())
     .filter(Boolean)
     .join(" ");
@@ -228,10 +257,49 @@ export function formatBankTutorFeedback(input: {
         : instruction || null,
       explanation,
       exerciseType: input.exerciseType,
-      answer: input.correct ? null : answer || null,
+      answer:
+        includeModelAnswer && !input.correct ? answer || null : null,
     }),
   );
 }
+
+const TASK_REMINDER: Record<
+  InterfaceLanguage,
+  Partial<Record<ExerciseType, string>>
+> = {
+  ru: {
+    sentence_building:
+      "Нужно было собрать фразу из готовых слов снизу — не переводить.",
+    translation: "Нужно было перевести фразу на целевой язык.",
+    fill_blank: "Нужно было вписать одно слово или форму в пропуск.",
+    multiple_choice: "Нужно было выбрать один вариант из списка.",
+    error_correction: "Нужно было переписать предложение целиком без ошибки.",
+  },
+  en: {
+    sentence_building:
+      "You needed to tap the word tiles below in order — not translate.",
+    translation: "You needed to translate the phrase into the target language.",
+    fill_blank: "You needed to type the single missing word or form.",
+    multiple_choice: "You needed to pick one option from the list.",
+    error_correction: "You needed to rewrite the full corrected sentence.",
+  },
+  es: {
+    sentence_building:
+      "Había que ordenar las palabras de abajo — no traducir.",
+    translation: "Había que traducir la frase al idioma objetivo.",
+    fill_blank: "Había que escribir la única palabra o forma que falta.",
+    multiple_choice: "Había que elegir una opción de la lista.",
+    error_correction: "Había que reescribir la oración completa sin el error.",
+  },
+  de: {
+    sentence_building:
+      "Du solltest die Wörter unten der Reihe nach antippen — nicht übersetzen.",
+    translation: "Du solltest die Phrase in die Zielsprache übersetzen.",
+    fill_blank: "Du solltest das eine fehlende Wort oder die Form schreiben.",
+    multiple_choice: "Du solltest eine Option aus der Liste wählen.",
+    error_correction: "Du solltest den ganzen korrigierten Satz neu schreiben.",
+  },
+};
 
 /** Short session wrap-up after a round of N bank exercises. */
 export function formatSessionTutorSummary(input: {

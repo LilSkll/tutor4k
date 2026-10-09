@@ -22,12 +22,16 @@ import { StreakStampCard } from "@/components/shared/streak-stamp-card";
 import { HalloweenBurst } from "@/components/seasonal/halloween-burst";
 import { DialogueSpeakRepeat } from "@/components/daily/dialogue-speak-repeat";
 import { QuestionWithGloss } from "@/components/exercises/question-with-gloss";
+import { ExerciseTaskBanner } from "@/components/exercises/exercise-task-banner";
 import { ExerciseFreeTextBlock } from "@/components/exercises/exercise-free-text-block";
 import { SentenceBuildingBlock } from "@/components/exercises/sentence-building-block";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 import { translate } from "@/lib/i18n";
 import { gradeStaticExerciseLocally } from "@/lib/exercise-check-client";
-import { localizeExerciseInstruction } from "@/lib/exercise-localize";
+import {
+  getSentenceBuildingMeaning,
+  localizeExerciseInstruction,
+} from "@/lib/exercise-localize";
 import { runExclusive, startTutorAbort } from "@/lib/tutor-fetch";
 import { cn } from "@/lib/utils";
 import {
@@ -705,16 +709,12 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
               </>
             ) : (
               <>
-                {(ex.instruction || hasMcOptions || hasSbOptions) && (
-                  <div className="rounded-lg bg-primary/10 border border-primary/20 px-4 py-2.5">
-                    <p className="text-sm text-foreground">
-                      <span className="font-semibold text-primary">
-                        {t("lesson.taskLabel")}
-                      </span>
-                      {localizeExerciseInstruction(ex, language)}
-                    </p>
-                  </div>
-                )}
+                <ExerciseTaskBanner
+                  type={ex.type}
+                  instruction={localizeExerciseInstruction(ex, language)}
+                  meaning={getSentenceBuildingMeaning(ex, language)}
+                  language={language}
+                />
                 {ex.type !== "sentence_building" ? (
                   <div className="rounded-lg bg-muted/50 p-4">
                     <QuestionWithGloss
@@ -739,6 +739,10 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
                       total: ex.options!.length,
                     })}
                   />
+                ) : ex.type === "sentence_building" ? (
+                  <p className="text-sm text-muted-foreground">
+                    {t("exercises.sentenceBuildingMissingTiles")}
+                  </p>
                 ) : hasMcOptions ? (
                   <div className="grid gap-2">
                     {ex.options!.map((opt, i) => (

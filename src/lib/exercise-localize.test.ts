@@ -64,7 +64,9 @@ describe("translation localization", () => {
       ],
       "ru",
     );
-    expect(ex.instruction).toBe("Заполните пропуск");
+    expect(ex.instruction).toBe(
+      "Впишите одно пропущенное слово или форму глагола",
+    );
   });
 
   it("uses reported-speech prompt for quote rewrites", async () => {

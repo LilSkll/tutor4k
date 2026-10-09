@@ -40,8 +40,12 @@ import type { LessonAdaptation } from "@/types/learning-profile";
 import { BackLink } from "@/components/shared/back-link";
 import { QuestionWithGloss } from "@/components/exercises/question-with-gloss";
 import { ExerciseFreeTextBlock } from "@/components/exercises/exercise-free-text-block";
+import { ExerciseTaskBanner } from "@/components/exercises/exercise-task-banner";
 import { SentenceBuildingBlock } from "@/components/exercises/sentence-building-block";
-import { localizeExerciseInstruction } from "@/lib/exercise-localize";
+import {
+  getSentenceBuildingMeaning,
+  localizeExerciseInstruction,
+} from "@/lib/exercise-localize";
 import { getChapterTargetTitle } from "@/lib/chapter-display";
 import { ChapterExerciseTypeGuide } from "@/components/chapters/chapter-exercise-type-guide";
 import { CompletionCertificateCard } from "@/components/journey/completion-certificate-card";
@@ -635,16 +639,12 @@ export function LessonRunner({
                 </>
               ) : (
                 <>
-                  {(ex.instruction || hasMcOptions || hasSbOptions) && (
-                    <div className="rounded-lg bg-primary/10 border border-primary/20 px-4 py-2.5">
-                      <p className="text-sm text-foreground">
-                        <span className="font-semibold text-primary">
-                          {t("lesson.taskLabel")}
-                        </span>
-                        {localizeExerciseInstruction(ex, language)}
-                      </p>
-                    </div>
-                  )}
+                  <ExerciseTaskBanner
+                    type={ex.type}
+                    instruction={localizeExerciseInstruction(ex, language)}
+                    meaning={getSentenceBuildingMeaning(ex, language)}
+                    language={language}
+                  />
                   {ex.type !== "sentence_building" ? (
                     <div className="rounded-lg bg-muted/50 p-4">
                       <QuestionWithGloss
@@ -669,6 +669,10 @@ export function LessonRunner({
                         total: ex.options!.length,
                       })}
                     />
+                  ) : ex.type === "sentence_building" ? (
+                    <p className="text-sm text-muted-foreground">
+                      {t("exercises.sentenceBuildingMissingTiles")}
+                    </p>
                   ) : hasMcOptions ? (
                     <div className="grid gap-2">
                       {ex.options!.map((opt, i) => (
