@@ -443,7 +443,7 @@ export function lookupWordHint(
 }
 
 function isJunkDefinition(def: string): boolean {
-  return /возможност|opportunity or scope|gelegenheit oder spielraum|oportunidad o alcance/i.test(
+  return /возможност|opportunity or scope|gelegenheit oder spielraum|oportunidad o alcance|чтобы иметь возможность|^para poder\.?$|^кэп\.?$/i.test(
     def,
   );
 }
