@@ -12,10 +12,16 @@ describe("localizeBankExplanation", () => {
     );
   });
 
-  it("drops English topic glosses on RU UI", () => {
+  it("keeps short English grammar micro-hints on RU UI", () => {
     expect(
       localizeBankExplanation("prepositions of place: word order.", "ru"),
-    ).toMatch(/правильн/i);
+    ).toBe("prepositions of place: word order.");
+  });
+
+  it("keeps X = Y glosses on RU UI", () => {
+    expect(localizeBankExplanation("next to = beside.", "ru")).toBe(
+      "next to = beside.",
+    );
   });
 
   it("drops short English replies on RU UI", () => {
@@ -53,19 +59,33 @@ describe("formatBankTutorFeedback", () => {
     expect(fb).not.toMatch(/[\u0400-\u04FF]/);
   });
 
-  it("keeps RU framing without English gloss or generic construction leak", () => {
+  it("shows bank gloss for sentence building instead of a task howto", () => {
     const fb = formatBankTutorFeedback({
       language: "ru",
       correct: false,
-      explanation: "prepositions of place: word order.",
-      instruction: "Составьте предложение по образцу",
+      explanation: "next to = beside.",
+      instruction: "Build the sentence",
+      exerciseType: "sentence_building",
+      answer: "The café is next to the bank",
+      includeModelAnswer: false,
+    });
+    expect(fb).toMatch(/Почти|Не совсем|Давай|Хорошая/i);
+    expect(fb).toMatch(/next to = beside/i);
+    expect(fb).not.toMatch(/собрать фразу из готовых слов/i);
+    expect(fb).not.toMatch(/не переводить/i);
+    expect(fb).not.toMatch(/Правильный ответ:/);
+  });
+
+  it("falls back to word-order hint when sentence building has no bank note", () => {
+    const fb = formatBankTutorFeedback({
+      language: "ru",
+      correct: false,
+      explanation: "",
       exerciseType: "sentence_building",
       answer: "Estoy en casa",
     });
-    expect(fb).toMatch(/Почти|Не совсем|Давай|Хорошая/i);
-    expect(fb).not.toMatch(/prepositions of place/i);
-    expect(fb).not.toMatch(/Составьте предложение/i);
-    expect(fb).toMatch(/собрать фразу из готовых слов/i);
+    expect(fb).toMatch(/порядок слов/i);
+    expect(fb).not.toMatch(/не переводить/i);
     expect(fb).toMatch(/Правильный ответ:\s*Estoy en casa/);
   });
 
@@ -78,7 +98,8 @@ describe("formatBankTutorFeedback", () => {
       answer: "¿Qué haces los fines de semana?",
       includeModelAnswer: false,
     });
-    expect(fb).toMatch(/собрать фразу из готовых слов/i);
+    expect(fb).toMatch(/fines de semana = выходные/i);
+    expect(fb).not.toMatch(/собрать фразу из готовых слов/i);
     expect(fb).not.toMatch(/Правильный ответ:/);
   });
 

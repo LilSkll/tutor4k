@@ -126,11 +126,20 @@ export function localizeBankExplanation(
   const fallback = EXPLANATION_FALLBACK[language] ?? EXPLANATION_FALLBACK.en;
   const hasFormula = /[→+]/.test(trimmed);
 
-  // RU UI + Latin-only English bank gloss ("prepositions of place: word order",
-  // "So do I") → drop unless it looks like a tense/construction formula.
+  // RU UI + Latin-only English bank gloss → keep micro-hints / formulas;
+  // drop bare English replies like "So do I".
   if (language === "ru" && !CYRILLIC.test(trimmed)) {
-    if (hasFormula) return trimmed;
+    if (hasFormula || /=/.test(trimmed)) return trimmed;
     const words = trimmed.split(/\s+/).filter(Boolean);
+    // Short grammar/vocab notes: "word order", "next to = beside", "Present simple".
+    if (
+      words.length <= 10 &&
+      /\b(word order|order|article|preposition|tense|simple|perfect|continuous|beside|next to|plural|singular|subject|verb)\b/i.test(
+        trimmed,
+      )
+    ) {
+      return trimmed;
+    }
     if (words.length >= 2 && /[A-Za-z]/.test(trimmed)) {
       return fallback;
     }
@@ -227,11 +236,18 @@ export function formatBankTutorFeedback(input: {
     explanation = EXPLANATION_FALLBACK[lang] ?? EXPLANATION_FALLBACK.en;
   }
 
-  // Remind what the task was when the bank note looks like a translation gloss.
-  const typeReminder =
-    !input.correct && input.exerciseType
-      ? TASK_REMINDER[lang]?.[input.exerciseType] ?? ""
-      : "";
+  // Pedagogy first: only remind about the task type when there is no useful note.
+  // Sentence-building must NOT fall back to “don't translate” — the task banner
+  // already says that; learners need word-order / meaning help instead.
+  let typeReminder = "";
+  if (!input.correct && !explanation && input.exerciseType) {
+    if (input.exerciseType === "sentence_building") {
+      typeReminder =
+        SENTENCE_ORDER_HINT[lang] ?? SENTENCE_ORDER_HINT.en;
+    } else {
+      typeReminder = TASK_REMINDER[lang]?.[input.exerciseType] ?? "";
+    }
+  }
 
   const answerLine =
     includeModelAnswer && !input.correct && answer
@@ -242,7 +258,7 @@ export function formatBankTutorFeedback(input: {
     ? pick(PRAISE[lang] ?? PRAISE.ru)
     : pick(MISTAKE_INTRO[lang] ?? MISTAKE_INTRO.ru);
 
-  const base = [intro, typeReminder, explanation, answerLine]
+  const base = [intro, explanation, typeReminder, answerLine]
     .map((p) => p.trim())
     .filter(Boolean)
     .join(" ");
@@ -263,37 +279,37 @@ export function formatBankTutorFeedback(input: {
   );
 }
 
+/** Used only when the bank left no useful explanation. */
+const SENTENCE_ORDER_HINT: Record<InterfaceLanguage, string> = {
+  ru: "Сверь порядок слов с моделью — смысл тот же, важен порядок плиток.",
+  en: "Match the model word order — same meaning, the tiles must go in that sequence.",
+  es: "Compara el orden de las palabras con el modelo: el sentido es el mismo, importa la secuencia.",
+  de: "Vergleiche die Wortreihenfolge mit dem Modell — gleiche Bedeutung, die Reihenfolge zählt.",
+};
+
 const TASK_REMINDER: Record<
   InterfaceLanguage,
   Partial<Record<ExerciseType, string>>
 > = {
   ru: {
-    sentence_building:
-      "Нужно было собрать фразу из готовых слов снизу — не переводить.",
     translation: "Нужно было перевести фразу на целевой язык.",
     fill_blank: "Нужно было вписать одно слово или форму в пропуск.",
     multiple_choice: "Нужно было выбрать один вариант из списка.",
     error_correction: "Нужно было переписать предложение целиком без ошибки.",
   },
   en: {
-    sentence_building:
-      "You needed to tap the word tiles below in order — not translate.",
     translation: "You needed to translate the phrase into the target language.",
     fill_blank: "You needed to type the single missing word or form.",
     multiple_choice: "You needed to pick one option from the list.",
     error_correction: "You needed to rewrite the full corrected sentence.",
   },
   es: {
-    sentence_building:
-      "Había que ordenar las palabras de abajo — no traducir.",
     translation: "Había que traducir la frase al idioma objetivo.",
     fill_blank: "Había que escribir la única palabra o forma que falta.",
     multiple_choice: "Había que elegir una opción de la lista.",
     error_correction: "Había que reescribir la oración completa sin el error.",
   },
   de: {
-    sentence_building:
-      "Du solltest die Wörter unten der Reihe nach antippen — nicht übersetzen.",
     translation: "Du solltest die Phrase in die Zielsprache übersetzen.",
     fill_blank: "Du solltest das eine fehlende Wort oder die Form schreiben.",
     multiple_choice: "Du solltest eine Option aus der Liste wählen.",
