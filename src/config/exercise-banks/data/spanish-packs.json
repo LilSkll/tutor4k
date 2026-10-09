@@ -529,7 +529,7 @@
           "Somos de España."
         ],
         "instruction": "Исправьте ошибку",
-        "explanation": "Somos de España.",
+        "explanation": "Проверьте выбор ser/estar и согласование лица.",
         "grammarTopic": "a1-ser-estar"
       },
       {
@@ -541,7 +541,7 @@
           "Está en casa."
         ],
         "instruction": "Исправьте ошибку",
-        "explanation": "Está en casa.",
+        "explanation": "Проверьте выбор ser/estar и согласование лица.",
         "grammarTopic": "a1-ser-estar"
       },
       {
@@ -849,7 +849,7 @@
         ],
         "answer": "¿Eres de España?",
         "instruction": "Составьте предложение из слов",
-        "explanation": "¿Eres de España?",
+        "explanation": "Проверьте выбор ser/estar и согласование лица.",
         "grammarTopic": "a1-ser-estar",
         "acceptableAnswers": []
       },
@@ -1651,7 +1651,7 @@
         ],
         "answer": "¿A qué hora cenáis?",
         "instruction": "Составьте предложение",
-        "explanation": "¿A qué hora cenáis?",
+        "explanation": "Поставьте глагол в presente de indicativo.",
         "grammarTopic": "a1-presente",
         "acceptableAnswers": []
       },
@@ -2152,7 +2152,7 @@
         "question": "Где находится туалет?",
         "answer": "¿Dónde está el baño?",
         "instruction": "Переведите на испанский",
-        "explanation": "¿Dónde está el baño?",
+        "explanation": "Проверьте артикль и род/число существительного.",
         "grammarTopic": "a1-articulos",
         "acceptableAnswers": []
       },
@@ -2161,7 +2161,7 @@
         "question": "Есть ли здесь Wi-Fi?",
         "answer": "¿Hay Wi-Fi aquí?",
         "instruction": "Переведите на испанский",
-        "explanation": "¿Hay Wi-Fi aquí?",
+        "explanation": "Проверьте артикль и род/число существительного.",
         "grammarTopic": "a1-articulos",
         "acceptableAnswers": []
       },
@@ -2527,7 +2527,7 @@
         ],
         "answer": "¿Tienes un bolígrafo?",
         "instruction": "Составьте предложение",
-        "explanation": "¿Tienes un bolígrafo?",
+        "explanation": "Проверьте артикль и род/число существительного.",
         "grammarTopic": "a1-articulos",
         "acceptableAnswers": []
       },
@@ -2587,7 +2587,7 @@
         ],
         "answer": "¿Hay algún diccionario?",
         "instruction": "Составьте предложение",
-        "explanation": "¿Hay algún diccionario?",
+        "explanation": "Проверьте артикль и род/число существительного.",
         "grammarTopic": "a1-articulos",
         "acceptableAnswers": []
       },
@@ -2994,7 +2994,7 @@
         "question": "Какой сегодня день?",
         "answer": "¿Qué día es hoy?",
         "instruction": "Переведите на испанский",
-        "explanation": "¿Qué día es hoy?",
+        "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки.",
         "grammarTopic": "a1-numeros-1-100",
         "acceptableAnswers": []
       },
@@ -3269,7 +3269,7 @@
         ],
         "answer": "¿Qué día es hoy?",
         "instruction": "Соберите pregunta",
-        "explanation": "¿Qué día es hoy?",
+        "explanation": "Соберите слова в естественном порядке испанского предложения.",
         "grammarTopic": "a1-numeros-1-100",
         "acceptableAnswers": []
       },
@@ -3382,7 +3382,7 @@
         ],
         "answer": "¿Qué hora es?",
         "instruction": "Соберите pregunta hora",
-        "explanation": "¿Qué hora es?",
+        "explanation": "Соберите слова в естественном порядке испанского предложения.",
         "grammarTopic": "a1-numeros-1-100",
         "acceptableAnswers": []
       },
@@ -3812,7 +3812,7 @@
         "question": "У тебя есть время?",
         "answer": "¿Tienes tiempo?",
         "instruction": "Переведите на испанский",
-        "explanation": "¿Tienes tiempo?",
+        "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки.",
         "grammarTopic": "a1-tener-expressions",
         "acceptableAnswers": []
       },
@@ -4265,7 +4265,7 @@
         ],
         "answer": "¿Vende pan integral?",
         "instruction": "Составьте предложение",
-        "explanation": "¿Vende pan integral?",
+        "explanation": "Соберите слова в естественном порядке испанского предложения.",
         "grammarTopic": "a1-tener-expressions",
         "acceptableAnswers": []
       },
@@ -4706,7 +4706,7 @@
         "question": "Тебе нравится твоя работа?",
         "answer": "¿Te gusta tu trabajo?",
         "instruction": "Переведите на испанский",
-        "explanation": "¿Te gusta tu trabajo?",
+        "explanation": "Помните: gustar согласуется с тем, что нравится.",
         "grammarTopic": "a1-gustar",
         "acceptableAnswers": []
       },
@@ -5092,7 +5092,7 @@
         ],
         "answer": "¿Os gusta viajar?",
         "instruction": "Составьте предложение",
-        "explanation": "¿Os gusta viajar?",
+        "explanation": "Помните: gustar согласуется с тем, что нравится.",
         "grammarTopic": "a1-gustar",
         "acceptableAnswers": []
       },
@@ -5139,7 +5139,7 @@
         ],
         "answer": "¿Qué te gusta hacer?",
         "instruction": "Составьте предложение",
-        "explanation": "¿Qué te gusta hacer?",
+        "explanation": "Помните: gustar согласуется с тем, что нравится.",
         "grammarTopic": "a1-gustar",
         "acceptableAnswers": []
       },
@@ -5656,7 +5656,7 @@
           "Acabamos de llegar."
         ],
         "instruction": "Исправьте ошибку",
-        "explanation": "Acabamos de llegar.",
+        "explanation": "Связь с настоящим → pretérito perfecto (haber + participio).",
         "grammarTopic": "a2-preterito-perfecto"
       },
       {
@@ -5680,7 +5680,7 @@
           "Todavía no han terminado."
         ],
         "instruction": "Исправьте ошибку",
-        "explanation": "Todavía no han terminado.",
+        "explanation": "Связь с настоящим → pretérito perfecto (haber + participio).",
         "grammarTopic": "a2-preterito-perfecto"
       },
       {
@@ -5704,7 +5704,7 @@
           "Ha perdido las llaves."
         ],
         "instruction": "Исправьте ошибку",
-        "explanation": "Ha perdido las llaves.",
+        "explanation": "Связь с настоящим → pretérito perfecto (haber + participio).",
         "grammarTopic": "a2-preterito-perfecto"
       },
       {
@@ -5897,7 +5897,7 @@
         ],
         "answer": "¿Has hecho los deberes?",
         "instruction": "Составьте предложение из слов",
-        "explanation": "¿Has hecho los deberes?",
+        "explanation": "Связь с настоящим → pretérito perfecto (haber + participio).",
         "grammarTopic": "a2-preterito-perfecto",
         "acceptableAnswers": []
       },
@@ -5956,7 +5956,7 @@
         ],
         "answer": "¿Has visitado el museo?",
         "instruction": "Составьте предложение из слов",
-        "explanation": "¿Has visitado el museo?",
+        "explanation": "Связь с настоящим → pretérito perfecto (haber + participio).",
         "grammarTopic": "a2-preterito-perfecto",
         "acceptableAnswers": []
       },
@@ -6572,7 +6572,7 @@
         "question": "¿Viste eso tu ayer?",
         "answer": "¿Viste eso ayer?",
         "instruction": "Лишнее tu",
-        "explanation": "¿Viste eso ayer?",
+        "explanation": "Маркер законченного действия → pretérito indefinido.",
         "grammarTopic": "a2-preterito-indefinido",
         "acceptableAnswers": []
       },
@@ -6733,7 +6733,7 @@
         ],
         "answer": "¿Viste esa película?",
         "instruction": "Соберите вопрос",
-        "explanation": "¿Viste esa película?",
+        "explanation": "Маркер законченного действия → pretérito indefinido.",
         "grammarTopic": "a2-preterito-indefinido",
         "acceptableAnswers": []
       },
@@ -7585,7 +7585,7 @@
           "Cuando era niño jugaba al fútbol."
         ],
         "instruction": "Исправьте ошибку",
-        "explanation": "Cuando era niño jugaba al fútbol.",
+        "explanation": "Фон, привычка или описание → imperfecto.",
         "grammarTopic": "a2-imperfecto"
       },
       {
@@ -7597,7 +7597,7 @@
           "Hacía frío y llovía."
         ],
         "instruction": "Исправьте ошибку",
-        "explanation": "Hacía frío y llovía.",
+        "explanation": "Фон, привычка или описание → imperfecto.",
         "grammarTopic": "a2-imperfecto"
       },
       {
@@ -7609,7 +7609,7 @@
           "Siempre leía antes de dormir."
         ],
         "instruction": "Исправьте ошибку",
-        "explanation": "Siempre leía antes de dormir.",
+        "explanation": "Фон, привычка или описание → imperfecto.",
         "grammarTopic": "a2-imperfecto"
       },
       {
@@ -7621,7 +7621,7 @@
           "Vivíamos en un pueblo pequeño."
         ],
         "instruction": "Исправьте ошибку",
-        "explanation": "Vivíamos en un pueblo pequeño.",
+        "explanation": "Фон, привычка или описание → imperfecto.",
         "grammarTopic": "a2-imperfecto"
       },
       {
@@ -7633,7 +7633,7 @@
           "Iba a menudo a la biblioteca."
         ],
         "instruction": "Исправьте ошибку",
-        "explanation": "Iba a menudo a la biblioteca.",
+        "explanation": "Фон, привычка или описание → imperfecto.",
         "grammarTopic": "a2-imperfecto"
       }
     ],
@@ -8685,7 +8685,7 @@
           "Gracias por todo."
         ],
         "instruction": "Исправьте ошибку",
-        "explanation": "Gracias por todo.",
+        "explanation": "Найдите и исправьте грамматическую ошибку в предложении.",
         "grammarTopic": "a2-por-para"
       }
     ],
@@ -9643,7 +9643,7 @@
           "Espero que sea feliz."
         ],
         "instruction": "Исправьте ошибку",
-        "explanation": "Espero que sea feliz.",
+        "explanation": "После выражения желания/сомнения → subjuntivo.",
         "grammarTopic": "b1-subjuntivo"
       },
       {
@@ -9667,7 +9667,7 @@
           "Pide que callemos."
         ],
         "instruction": "Исправьте ошибку",
-        "explanation": "Pide que callemos.",
+        "explanation": "После выражения желания/сомнения → subjuntivo.",
         "grammarTopic": "b1-subjuntivo"
       },
       {
@@ -9679,7 +9679,7 @@
           "Dudo que tenga razón."
         ],
         "instruction": "Исправьте ошибку",
-        "explanation": "Dudo que tenga razón.",
+        "explanation": "После выражения желания/сомнения → subjuntivo.",
         "grammarTopic": "b1-subjuntivo"
       },
       {
@@ -11166,7 +11166,7 @@
         "question": "Что бы ты сделал на моём месте?",
         "answer": "¿Qué harías en mi lugar?",
         "instruction": "Переведите предложение",
-        "explanation": "¿Qué harías en mi lugar?",
+        "explanation": "Вежливая просьба или гипотеза → condicional.",
         "grammarTopic": "b1-condicional",
         "acceptableAnswers": []
       },
@@ -11335,7 +11335,7 @@
           "Viajaría a España."
         ],
         "instruction": "Исправьте ошибку",
-        "explanation": "Viajaría a España.",
+        "explanation": "Вежливая просьба или гипотеза → condicional.",
         "grammarTopic": "b1-condicional"
       },
       {
@@ -11359,7 +11359,7 @@
           "Le gustaría vivir junto al mar."
         ],
         "instruction": "Исправьте ошибку",
-        "explanation": "Le gustaría vivir junto al mar.",
+        "explanation": "Вежливая просьба или гипотеза → condicional.",
         "grammarTopic": "b1-condicional"
       },
       {
@@ -11383,7 +11383,7 @@
           "Diría la verdad."
         ],
         "instruction": "Исправьте ошибку",
-        "explanation": "Diría la verdad.",
+        "explanation": "Вежливая просьба или гипотеза → condicional.",
         "grammarTopic": "b1-condicional"
       },
       {
@@ -17298,7 +17298,7 @@
         "question": "Как тебя зовут?",
         "answer": "¿Cómo te llamas?",
         "instruction": "Переведите на испанский",
-        "explanation": "¿Cómo te llamas?",
+        "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки.",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
       },
@@ -17307,7 +17307,7 @@
         "question": "Сколько тебе лет?",
         "answer": "¿Cuántos años tienes?",
         "instruction": "Переведите на испанский",
-        "explanation": "¿Cuántos años tienes?",
+        "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки.",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
       },
@@ -17316,7 +17316,7 @@
         "question": "Откуда ты?",
         "answer": "¿De dónde eres?",
         "instruction": "Переведите на испанский",
-        "explanation": "¿De dónde eres?",
+        "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки.",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
       },
@@ -17325,7 +17325,7 @@
         "question": "Что ты делаешь?",
         "answer": "¿Qué haces?",
         "instruction": "Переведите на испанский",
-        "explanation": "¿Qué haces?",
+        "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки.",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
       },
@@ -17334,7 +17334,7 @@
         "question": "Почему ты опоздал?",
         "answer": "¿Por qué llegaste tarde?",
         "instruction": "Переведите на испанский",
-        "explanation": "¿Por qué llegaste tarde?",
+        "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки.",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
       },
@@ -17343,7 +17343,7 @@
         "question": "Когда начинается фильм?",
         "answer": "¿Cuándo empieza la película?",
         "instruction": "Переведите на испанский",
-        "explanation": "¿Cuándo empieza la película?",
+        "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки.",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
       },
@@ -17352,7 +17352,7 @@
         "question": "С кем ты идёшь?",
         "answer": "¿Con quién vas?",
         "instruction": "Переведите на испанский",
-        "explanation": "¿Con quién vas?",
+        "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки.",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
       },
@@ -17361,7 +17361,7 @@
         "question": "Какой это цвет?",
         "answer": "¿De qué color es?",
         "instruction": "Переведите на испанский",
-        "explanation": "¿De qué color es?",
+        "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки.",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
       },
@@ -17370,7 +17370,7 @@
         "question": "Сколько это стоит?",
         "answer": "¿Cuánto cuesta?",
         "instruction": "Переведите на испанский",
-        "explanation": "¿Cuánto cuesta?",
+        "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки.",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
       },
@@ -17379,7 +17379,7 @@
         "question": "Зачем ты здесь?",
         "answer": "¿Para qué estás aquí?",
         "instruction": "Переведите на испанский",
-        "explanation": "¿Para qué estás aquí?",
+        "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки.",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
       },
@@ -17496,7 +17496,7 @@
         "answer": "¿De dónde eres?",
         "acceptableAnswers": [],
         "instruction": "Исправьте ошибку",
-        "explanation": "¿De dónde eres?",
+        "explanation": "Найдите и исправьте грамматическую ошибку в предложении.",
         "grammarTopic": "a1-preguntas"
       },
       {
@@ -17514,7 +17514,7 @@
         "answer": "¿Qué hora es?",
         "acceptableAnswers": [],
         "instruction": "Исправьте ошибку",
-        "explanation": "¿Qué hora es?",
+        "explanation": "Найдите и исправьте грамматическую ошибку в предложении.",
         "grammarTopic": "a1-preguntas"
       },
       {
@@ -17523,7 +17523,7 @@
         "answer": "¿Adónde vas?",
         "acceptableAnswers": [],
         "instruction": "Исправьте ошибку",
-        "explanation": "¿Adónde vas?",
+        "explanation": "Найдите и исправьте грамматическую ошибку в предложении.",
         "grammarTopic": "a1-preguntas"
       }
     ],
@@ -17566,7 +17566,7 @@
         ],
         "answer": "¿Cómo te llamas?",
         "instruction": "Соберите вопрос",
-        "explanation": "¿Cómo te llamas?",
+        "explanation": "Соберите слова в естественном порядке испанского предложения.",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
       },
@@ -17580,7 +17580,7 @@
         ],
         "answer": "¿De dónde eres?",
         "instruction": "Соберите origen",
-        "explanation": "¿De dónde eres?",
+        "explanation": "Соберите слова в естественном порядке испанского предложения.",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
       },
@@ -17689,7 +17689,7 @@
         ],
         "answer": "¿A qué te dedicas?",
         "instruction": "Составьте предложение",
-        "explanation": "¿A qué te dedicas?",
+        "explanation": "Соберите слова в естественном порядке испанского предложения.",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
       },
@@ -17747,7 +17747,7 @@
         ],
         "answer": "¿Con quién vives?",
         "instruction": "Составьте предложение",
-        "explanation": "¿Con quién vives?",
+        "explanation": "Соберите слова в естественном порядке испанского предложения.",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
       },
@@ -19137,7 +19137,7 @@
         "question": "Ты успеешь?",
         "answer": "¿Llegarás a tiempo?",
         "instruction": "Переведите предложение",
-        "explanation": "¿Llegarás a tiempo?",
+        "explanation": "Будущее действие → futuro simple.",
         "grammarTopic": "a2-futuro-simple",
         "acceptableAnswers": []
       },
@@ -19256,7 +19256,7 @@
           "Llegará el viernes."
         ],
         "instruction": "Исправьте ошибку",
-        "explanation": "Llegará el viernes.",
+        "explanation": "Будущее действие → futuro simple.",
         "grammarTopic": "a2-futuro-simple"
       },
       {
@@ -19268,7 +19268,7 @@
           "Viviremos en Barcelona."
         ],
         "instruction": "Исправьте ошибку",
-        "explanation": "Viviremos en Barcelona.",
+        "explanation": "Будущее действие → futuro simple.",
         "grammarTopic": "a2-futuro-simple"
       },
       {
@@ -19448,7 +19448,7 @@
         ],
         "answer": "¿Llegarás a tiempo?",
         "instruction": "Составьте предложение из слов",
-        "explanation": "¿Llegarás a tiempo?",
+        "explanation": "Будущее действие → futuro simple.",
         "grammarTopic": "a2-futuro-simple",
         "acceptableAnswers": []
       },
@@ -20163,7 +20163,7 @@
         "question": "Можно войти?",
         "answer": "¿Puedo entrar?",
         "instruction": "Переведите на испанский",
-        "explanation": "¿Puedo entrar?",
+        "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки.",
         "grammarTopic": "a1-verbos-frecuentes",
         "acceptableAnswers": []
       },
@@ -21243,7 +21243,7 @@
         "answer": "¿Cómo te llamas?",
         "acceptableAnswers": [],
         "instruction": "Переведите на испанский",
-        "explanation": "¿Cómo te llamas?",
+        "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки.",
         "grammarTopic": "b1-pronombre-se"
       },
       {
@@ -25128,7 +25128,7 @@
           "No me lo creo."
         ],
         "instruction": "Исправьте ошибку",
-        "explanation": "No me lo creo.",
+        "explanation": "Найдите и исправьте грамматическую ошибку в предложении.",
         "grammarTopic": "b1-pronombres-objetos"
       },
       {
@@ -33979,7 +33979,7 @@
           "Puede que estén discutiendo."
         ],
         "instruction": "Исправьте ошибку",
-        "explanation": "Puede que estén discutiendo.",
+        "explanation": "Найдите и исправьте грамматическую ошибку в предложении.",
         "grammarTopic": "dele-expresion-oral"
       },
       {

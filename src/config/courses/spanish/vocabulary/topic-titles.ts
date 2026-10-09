@@ -8,6 +8,7 @@ export const SPANISH_TOPIC_TITLES_EN: Record<string, string> = {
   "a1-colores": "Colors",
   "a1-cuerpo": "The Body and Health",
   "a1-verbos-basicos": "Basic Verbs",
+  "a1-conectores": "Prepositions & Linkers",
   "a2-viajes": "Travel",
   "a2-trabajo": "Work and Professions",
   "a2-ropa": "Clothing",

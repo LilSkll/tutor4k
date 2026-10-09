@@ -3523,7 +3523,7 @@
           "Where are you from"
         ],
         "instruction": "Translate to English",
-        "explanation": "Where are you from?",
+        "explanation": "Match the model translation — small wording differences are OK.",
         "grammarTopic": "eng-a1-questions",
         "questionTranslations": {
           "es": "¿De dónde eres?",
@@ -11531,7 +11531,7 @@
         "question": "Они собираются переехать.",
         "answer": "They are going to move",
         "instruction": "Translate into English",
-        "explanation": "They are going to move",
+        "explanation": "Match the model translation — small wording differences are OK.",
         "grammarTopic": "eng-a2-going-to",
         "acceptableAnswers": [],
         "questionTranslations": {
@@ -11798,7 +11798,7 @@
         ],
         "answer": "Are you going to come?",
         "instruction": "Build the sentence from the words",
-        "explanation": "Are you going to come?",
+        "explanation": "Put the words in natural English word order.",
         "grammarTopic": "eng-a2-going-to",
         "acceptableAnswers": []
       },
@@ -15141,7 +15141,7 @@
         ],
         "answer": "Will you make it in time?",
         "instruction": "Build the sentence from the words",
-        "explanation": "Will you make it in time?",
+        "explanation": "Put the words in natural English word order.",
         "grammarTopic": "eng-b1-future-conditional",
         "acceptableAnswers": []
       },
@@ -15855,7 +15855,7 @@
         "question": "Ты можешь помочь мне?",
         "answer": "Can you help me?",
         "instruction": "Translate into English",
-        "explanation": "Can you help me?",
+        "explanation": "Match the model translation — small wording differences are OK.",
         "grammarTopic": "eng-b1-modals",
         "acceptableAnswers": [],
         "questionTranslations": {
@@ -15881,7 +15881,7 @@
         "question": "Можно мне войти?",
         "answer": "May I come in?",
         "instruction": "Translate into English",
-        "explanation": "May I come in?",
+        "explanation": "Match the model translation — small wording differences are OK.",
         "grammarTopic": "eng-b1-modals",
         "acceptableAnswers": [],
         "questionTranslations": {
@@ -16197,7 +16197,7 @@
         ],
         "answer": "Can you help me?",
         "instruction": "Build the sentence from the words",
-        "explanation": "Can you help me?",
+        "explanation": "Put the words in natural English word order.",
         "grammarTopic": "eng-b1-modals",
         "acceptableAnswers": []
       },
@@ -16228,7 +16228,7 @@
         ],
         "answer": "May I come in?",
         "instruction": "Build the sentence from the words",
-        "explanation": "May I come in?",
+        "explanation": "Put the words in natural English word order.",
         "grammarTopic": "eng-b1-modals",
         "acceptableAnswers": []
       },
@@ -16244,7 +16244,7 @@
         ],
         "answer": "Could you close the window?",
         "instruction": "Build the sentence from the words",
-        "explanation": "Could you close the window?",
+        "explanation": "Put the words in natural English word order.",
         "grammarTopic": "eng-b1-modals",
         "acceptableAnswers": []
       },
@@ -18131,7 +18131,7 @@
         "question": "Ты давно здесь?",
         "answer": "Have you been here long?",
         "instruction": "Translate into English",
-        "explanation": "Have you been here long?",
+        "explanation": "Match the model translation — small wording differences are OK.",
         "grammarTopic": "eng-b1-perfect-continuous",
         "acceptableAnswers": [],
         "questionTranslations": {
@@ -18402,7 +18402,7 @@
         ],
         "answer": "How long have you been waiting?",
         "instruction": "Build the sentence from the words",
-        "explanation": "How long have you been waiting?",
+        "explanation": "Put the words in natural English word order.",
         "grammarTopic": "eng-b1-perfect-continuous",
         "acceptableAnswers": []
       },
@@ -18529,7 +18529,7 @@
         ],
         "answer": "How long have you been learning English?",
         "instruction": "Build the sentence from the words",
-        "explanation": "How long have you been learning English?",
+        "explanation": "Put the words in natural English word order.",
         "grammarTopic": "eng-b1-perfect-continuous",
         "acceptableAnswers": []
       },
@@ -18585,7 +18585,7 @@
         ],
         "answer": "Have you been here long?",
         "instruction": "Build the sentence from the words",
-        "explanation": "Have you been here long?",
+        "explanation": "Put the words in natural English word order.",
         "grammarTopic": "eng-b1-perfect-continuous",
         "acceptableAnswers": []
       },
@@ -48380,7 +48380,7 @@
         "question": "It is you who I need him.",
         "answer": "It is you that I need.",
         "instruction": "Correct the error",
-        "explanation": "It is you that I need.",
+        "explanation": "Find and fix the grammar mistake in the sentence.",
         "grammarTopic": "eng-c2-cleft-emphasis",
         "acceptableAnswers": []
       },
@@ -49616,7 +49616,7 @@
         "question": "I don't think so not.",
         "answer": "I don't think so.",
         "instruction": "Correct the error",
-        "explanation": "I don't think so.",
+        "explanation": "Find and fix the grammar mistake in the sentence.",
         "grammarTopic": "eng-c2-ellipsis-substitution",
         "acceptableAnswers": []
       },

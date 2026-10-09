@@ -287,7 +287,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       ],
       "answer": "¿A qué hora cenáis?",
       "instruction": "Pregunta rutina",
-      "explanation": "¿A qué hora cenáis?"
+      "explanation": "Соберите слова в естественном порядке испанского предложения."
     },
     {
       "type": "sentence_building",
@@ -445,14 +445,14 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "question": "Где находится туалет?",
       "answer": "¿Dónde está el baño?",
       "instruction": "El baño",
-      "explanation": "¿Dónde está el baño?"
+      "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки."
     },
     {
       "type": "translation",
       "question": "Есть ли здесь Wi-Fi?",
       "answer": "¿Hay Wi-Fi aquí?",
       "instruction": "Hay — вопрос",
-      "explanation": "¿Hay Wi-Fi aquí?"
+      "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки."
     },
     {
       "type": "sentence_building",
@@ -676,7 +676,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       ],
       "answer": "¿Tienes un bolígrafo?",
       "instruction": "Tener — pregunta",
-      "explanation": "¿Tienes un bolígrafo?"
+      "explanation": "Соберите слова в естественном порядке испанского предложения."
     },
     {
       "type": "sentence_building",
@@ -728,7 +728,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       ],
       "answer": "¿Hay algún diccionario?",
       "instruction": "Algún",
-      "explanation": "¿Hay algún diccionario?"
+      "explanation": "Соберите слова в естественном порядке испанского предложения."
     },
     {
       "type": "sentence_building",
@@ -805,7 +805,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "question": "Какой сегодня день?",
       "answer": "¿Qué día es hoy?",
       "instruction": "Día de la semana",
-      "explanation": "¿Qué día es hoy?"
+      "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки."
     },
     {
       "type": "translation",
@@ -984,7 +984,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       ],
       "answer": "¿Qué día es hoy?",
       "instruction": "Соберите pregunta",
-      "explanation": "¿Qué día es hoy?"
+      "explanation": "Соберите слова в естественном порядке испанского предложения."
     },
     {
       "type": "sentence_building",
@@ -1083,7 +1083,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       ],
       "answer": "¿Qué hora es?",
       "instruction": "Соберите pregunta hora",
-      "explanation": "¿Qué hora es?"
+      "explanation": "Соберите слова в естественном порядке испанского предложения."
     },
     {
       "type": "sentence_building",
@@ -1169,7 +1169,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "question": "У тебя есть время?",
       "answer": "¿Tienes tiempo?",
       "instruction": "Tener — вопрос",
-      "explanation": "¿Tienes tiempo?"
+      "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки."
     },
     {
       "type": "translation",
@@ -1518,7 +1518,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       ],
       "answer": "¿Vende pan integral?",
       "instruction": "Pregunta",
-      "explanation": "¿Vende pan integral?"
+      "explanation": "Соберите слова в естественном порядке испанского предложения."
     },
     {
       "type": "sentence_building",
@@ -1608,7 +1608,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "question": "Тебе нравится твоя работа?",
       "answer": "¿Te gusta tu trabajo?",
       "instruction": "Gustar + sustantivo",
-      "explanation": "¿Te gusta tu trabajo?"
+      "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки."
     },
     {
       "type": "sentence_building",
@@ -1884,7 +1884,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       ],
       "answer": "¿Os gusta viajar?",
       "instruction": "Gustar vosotros",
-      "explanation": "¿Os gusta viajar?"
+      "explanation": "Соберите слова в естественном порядке испанского предложения."
     },
     {
       "type": "sentence_building",
@@ -1925,7 +1925,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       ],
       "answer": "¿Qué te gusta hacer?",
       "instruction": "Pregunta",
-      "explanation": "¿Qué te gusta hacer?"
+      "explanation": "Соберите слова в естественном порядке испанского предложения."
     },
     {
       "type": "sentence_building",
@@ -2145,7 +2145,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       ],
       "answer": "¿Has hecho los deberes?",
       "instruction": "Составьте предложение из слов",
-      "explanation": "¿Has hecho los deberes?"
+      "explanation": "Соберите слова в естественном порядке испанского предложения."
     },
     {
       "type": "sentence_building",
@@ -2196,7 +2196,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       ],
       "answer": "¿Has visitado el museo?",
       "instruction": "Составьте предложение из слов",
-      "explanation": "¿Has visitado el museo?"
+      "explanation": "Соберите слова в естественном порядке испанского предложения."
     },
     {
       "type": "sentence_building",
@@ -2396,7 +2396,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "question": "¿Viste eso tu ayer?",
       "answer": "¿Viste eso ayer?",
       "instruction": "Лишнее tu",
-      "explanation": "¿Viste eso ayer?"
+      "explanation": "Найдите и исправьте грамматическую ошибку в предложении."
     },
     {
       "type": "error_correction",
@@ -2497,7 +2497,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       ],
       "answer": "¿Viste esa película?",
       "instruction": "Соберите вопрос",
-      "explanation": "¿Viste esa película?"
+      "explanation": "Соберите слова в естественном порядке испанского предложения."
     },
     {
       "type": "sentence_building",
@@ -4082,7 +4082,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "question": "Что бы ты сделал на моём месте?",
       "answer": "¿Qué harías en mi lugar?",
       "instruction": "Переведите предложение",
-      "explanation": "¿Qué harías en mi lugar?"
+      "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки."
     },
     {
       "type": "translation",
@@ -5723,63 +5723,63 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "question": "Как тебя зовут?",
       "answer": "¿Cómo te llamas?",
       "instruction": "Pregunta — nombre",
-      "explanation": "¿Cómo te llamas?"
+      "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки."
     },
     {
       "type": "translation",
       "question": "Сколько тебе лет?",
       "answer": "¿Cuántos años tienes?",
       "instruction": "Pregunta — edad",
-      "explanation": "¿Cuántos años tienes?"
+      "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки."
     },
     {
       "type": "translation",
       "question": "Откуда ты?",
       "answer": "¿De dónde eres?",
       "instruction": "Pregunta — origen",
-      "explanation": "¿De dónde eres?"
+      "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки."
     },
     {
       "type": "translation",
       "question": "Что ты делаешь?",
       "answer": "¿Qué haces?",
       "instruction": "Pregunta — actividad",
-      "explanation": "¿Qué haces?"
+      "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки."
     },
     {
       "type": "translation",
       "question": "Почему ты опоздал?",
       "answer": "¿Por qué llegaste tarde?",
       "instruction": "Pregunta — razón",
-      "explanation": "¿Por qué llegaste tarde?"
+      "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки."
     },
     {
       "type": "translation",
       "question": "Когда начинается фильм?",
       "answer": "¿Cuándo empieza la película?",
       "instruction": "Pregunta — tiempo",
-      "explanation": "¿Cuándo empieza la película?"
+      "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки."
     },
     {
       "type": "translation",
       "question": "С кем ты идёшь?",
       "answer": "¿Con quién vas?",
       "instruction": "Pregunta — compañía",
-      "explanation": "¿Con quién vas?"
+      "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки."
     },
     {
       "type": "translation",
       "question": "Какой это цвет?",
       "answer": "¿De qué color es?",
       "instruction": "Pregunta — color",
-      "explanation": "¿De qué color es?"
+      "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки."
     },
     {
       "type": "translation",
       "question": "Сколько это стоит?",
       "answer": "¿Cuánto cuesta?",
       "instruction": "Pregunta — precio",
-      "explanation": "¿Cuánto cuesta?"
+      "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки."
     },
     {
       "type": "sentence_building",
@@ -5791,7 +5791,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       ],
       "answer": "¿Cómo te llamas?",
       "instruction": "Соберите вопрос",
-      "explanation": "¿Cómo te llamas?"
+      "explanation": "Соберите слова в естественном порядке испанского предложения."
     },
     {
       "type": "sentence_building",
@@ -5803,7 +5803,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       ],
       "answer": "¿Cuántos años tienes?",
       "instruction": "Соберите edad",
-      "explanation": "¿Cuántos años tienes?"
+      "explanation": "Соберите слова в естественном порядке испанского предложения."
     },
     {
       "type": "sentence_building",
@@ -5815,7 +5815,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       ],
       "answer": "¿De dónde eres?",
       "instruction": "Соберите origen",
-      "explanation": "¿De dónde eres?"
+      "explanation": "Соберите слова в естественном порядке испанского предложения."
     },
     {
       "type": "sentence_building",
@@ -5953,14 +5953,14 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "question": "Сколько это стоит?",
       "answer": "¿Cuánto cuesta?",
       "instruction": "Pregunta con cuánto",
-      "explanation": "¿Cuánto cuesta?"
+      "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки."
     },
     {
       "type": "translation",
       "question": "Зачем ты здесь?",
       "answer": "¿Para qué estás aquí?",
       "instruction": "Para qué",
-      "explanation": "¿Para qué estás aquí?"
+      "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки."
     },
     {
       "type": "sentence_building",
@@ -5987,7 +5987,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       ],
       "answer": "¿A qué te dedicas?",
       "instruction": "Profesión",
-      "explanation": "¿A qué te dedicas?"
+      "explanation": "Соберите слова в естественном порядке испанского предложения."
     },
     {
       "type": "sentence_building",
@@ -6037,7 +6037,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       ],
       "answer": "¿Con quién vives?",
       "instruction": "Compañía",
-      "explanation": "¿Con quién vives?"
+      "explanation": "Соберите слова в естественном порядке испанского предложения."
     },
     {
       "type": "sentence_building",
@@ -6514,7 +6514,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "question": "Ты успеешь?",
       "answer": "¿Llegarás a tiempo?",
       "instruction": "Переведите предложение",
-      "explanation": "¿Llegarás a tiempo?"
+      "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки."
     },
     {
       "type": "translation",
@@ -6638,7 +6638,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       ],
       "answer": "¿Llegarás a tiempo?",
       "instruction": "Составьте предложение из слов",
-      "explanation": "¿Llegarás a tiempo?"
+      "explanation": "Соберите слова в естественном порядке испанского предложения."
     },
     {
       "type": "sentence_building",
@@ -6858,7 +6858,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "question": "Можно войти?",
       "answer": "¿Puedo entrar?",
       "instruction": "Poder — permiso",
-      "explanation": "¿Puedo entrar?"
+      "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки."
     },
     {
       "type": "translation",
@@ -11931,7 +11931,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       ],
       "answer": "¿Eres de España?",
       "instruction": "Составьте предложение из слов",
-      "explanation": "¿Eres de España?"
+      "explanation": "Соберите слова в естественном порядке испанского предложения."
     },
     {
       "type": "sentence_building",
@@ -15901,4 +15901,4 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Para terminar diría — в заключение сказал бы."
     }
   ]
-} as const;
+};

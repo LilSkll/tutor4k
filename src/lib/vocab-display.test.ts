@@ -75,12 +75,32 @@ describe("lookupWordHint", () => {
     expect(tres?.gloss).not.toMatch(/носа|burro/i);
 
     const las = lookupWordHint("las", "ru", "spanish");
-    expect(las).toBeNull();
+    expect(las?.gloss.toLowerCase()).toMatch(/артикл|их/);
+    expect(las?.gloss).not.toMatch(/наесться|бот/i);
 
     const ver = lookupWordHint("ver", "ru", "spanish");
     if (ver) {
       expect(ver.lemma).not.toMatch(/burro/);
       expect(ver.gloss).not.toMatch(/носа/);
     }
+  });
+
+  it("resolves Spanish conjugations and clock homonyms", () => {
+    expect(lookupWordHint("es", "ru", "spanish")?.lemma).toBe("ser");
+    expect(lookupWordHint("son", "ru", "spanish")?.gloss).toMatch(/быть/i);
+    expect(lookupWordHint("hay", "ru", "spanish")?.lemma).toBe("haber");
+    expect(lookupWordHint("tengo", "en", "spanish")?.lemma).toBe("tener");
+    expect(lookupWordHint("cuarto", "ru", "spanish")?.gloss).toMatch(/четверть/i);
+    expect(lookupWordHint("media", "ru", "spanish")?.gloss).toMatch(/половин/i);
+    expect(lookupWordHint("tiempo", "ru", "spanish")?.gloss).toMatch(/время/i);
+  });
+
+  it("resolves English core verbs and inflected forms", () => {
+    expect(lookupWordHint("have", "ru", "english")?.gloss).toMatch(/иметь/i);
+    expect(lookupWordHint("has", "ru", "english")?.lemma).toBe("have");
+    expect(lookupWordHint("made", "ru", "english")?.lemma).toBe("make");
+    expect(lookupWordHint("went", "ru", "english")?.lemma).toBe("go");
+    expect(lookupWordHint("time", "ru", "english")?.gloss).toMatch(/время/i);
+    expect(lookupWordHint("get", "de", "english")?.gloss).toBeTruthy();
   });
 });

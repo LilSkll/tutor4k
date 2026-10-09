@@ -5,6 +5,15 @@ import { ENGLISH_VOCAB_GLOSS } from "@/config/courses/english/vocabulary/glosses
 import { SPANISH_VOCAB_DEFINITION } from "@/config/courses/spanish/vocabulary/definitions";
 import { SPANISH_VOCAB_GLOSS } from "@/config/courses/spanish/vocabulary/glosses";
 import { SPANISH_TOPIC_TITLES_EN } from "@/config/courses/spanish/vocabulary/topic-titles";
+import {
+  ENGLISH_CORE_LEMMAS,
+  ENGLISH_INFLECTED_FORMS,
+  ENGLISH_TOKEN_OVERRIDES,
+  SPANISH_CORE_LEMMAS,
+  SPANISH_INFLECTED_FORMS,
+  SPANISH_TOKEN_OVERRIDES,
+  type HintGloss,
+} from "@/config/word-hint-lexicon";
 import { VOCAB_TOPICS } from "@/config/vocabulary-topics";
 
 function hasCyrillic(text: string): boolean {
@@ -208,9 +217,21 @@ function registerExactLemma(
   if (ruGloss) index.ruByLemma.set(key, ruGloss);
 }
 
+function seedCoreLemmas(
+  index: LemmaIndex,
+  core: Record<string, HintGloss>,
+) {
+  for (const [lemma, gloss] of Object.entries(core)) {
+    addLemmaToIndex(index, lemma, gloss.ru);
+  }
+}
+
 function getSpanishHintIndex(): LemmaIndex {
   if (spanishHintIndex) return spanishHintIndex;
   const index: LemmaIndex = { byToken: new Map(), ruByLemma: new Map() };
+  // Core lemmas first so catalog articles like «el cuarto» don't steal «cuarto»
+  // for homonym overrides — overrides still win in lookupWordHint.
+  seedCoreLemmas(index, SPANISH_CORE_LEMMAS);
   for (const map of Object.values(SPANISH_VOCAB_GLOSS)) {
     if (!map) continue;
     for (const lemma of Object.keys(map)) addLemmaToIndex(index, lemma);
@@ -231,6 +252,7 @@ function getSpanishHintIndex(): LemmaIndex {
 function getEnglishHintIndex(): LemmaIndex {
   if (englishHintIndex) return englishHintIndex;
   const index: LemmaIndex = { byToken: new Map(), ruByLemma: new Map() };
+  seedCoreLemmas(index, ENGLISH_CORE_LEMMAS);
   for (const map of Object.values(ENGLISH_VOCAB_GLOSS)) {
     if (!map) continue;
     for (const lemma of Object.keys(map)) addLemmaToIndex(index, lemma);
@@ -248,6 +270,19 @@ function getEnglishHintIndex(): LemmaIndex {
   return index;
 }
 
+function pickGloss(
+  gloss: HintGloss | undefined,
+  interfaceLanguage: InterfaceLanguage,
+): string | null {
+  if (!gloss) return null;
+  return (
+    gloss[interfaceLanguage]?.trim() ||
+    gloss.en?.trim() ||
+    gloss.ru?.trim() ||
+    null
+  );
+}
+
 function glossForLemma(
   lemma: string,
   interfaceLanguage: InterfaceLanguage,
@@ -255,21 +290,32 @@ function glossForLemma(
   ruByLemma: Map<string, string>,
 ): string | null {
   if (courseId === "english") {
+    const core = pickGloss(ENGLISH_CORE_LEMMAS[lemma], interfaceLanguage);
     if (interfaceLanguage === "ru") {
       return (
         ENGLISH_VOCAB_GLOSS.ru?.[lemma] ??
         ruByLemma.get(lemma) ??
+        core ??
         null
       );
     }
-    return ENGLISH_VOCAB_GLOSS[interfaceLanguage]?.[lemma] ?? null;
+    return (
+      ENGLISH_VOCAB_GLOSS[interfaceLanguage]?.[lemma] ??
+      core ??
+      null
+    );
   }
 
   if (courseId === "spanish") {
+    const core = pickGloss(SPANISH_CORE_LEMMAS[lemma], interfaceLanguage);
     if (interfaceLanguage === "ru") {
-      return ruByLemma.get(lemma) ?? null;
+      return ruByLemma.get(lemma) ?? core ?? null;
     }
-    return SPANISH_VOCAB_GLOSS[interfaceLanguage]?.[lemma] ?? null;
+    return (
+      SPANISH_VOCAB_GLOSS[interfaceLanguage]?.[lemma] ??
+      core ??
+      null
+    );
   }
 
   return null;
@@ -291,7 +337,7 @@ function definitionForLemma(
 
 /**
  * Resolve a clicked token to a UI-language gloss (and optional definition)
- * using the active course vocabulary maps.
+ * using the active course vocabulary maps, core lexicon, and form tables.
  */
 export function lookupWordHint(
   rawToken: string,
@@ -299,14 +345,64 @@ export function lookupWordHint(
   courseId?: string,
 ): WordHint | null {
   const token = normalizeHintToken(rawToken);
-  if (!token || token.length < 2) return null;
+  if (!token) return null;
 
   const course = courseId === "english" ? "english" : "spanish";
+  const overrides =
+    course === "english" ? ENGLISH_TOKEN_OVERRIDES : SPANISH_TOKEN_OVERRIDES;
+  const forms =
+    course === "english" ? ENGLISH_INFLECTED_FORMS : SPANISH_INFLECTED_FORMS;
+  const core =
+    course === "english" ? ENGLISH_CORE_LEMMAS : SPANISH_CORE_LEMMAS;
+
+  // Skip ultra-short noise unless we have an authored gloss (y / o / a / I).
+  if (
+    token.length < 2 &&
+    !overrides[token] &&
+    !forms[token] &&
+    !core[token]
+  ) {
+    return null;
+  }
+
+  const override = overrides[token];
+  if (override) {
+    const gloss = pickGloss(override.gloss, interfaceLanguage);
+    if (gloss) {
+      return { lemma: override.lemma, gloss };
+    }
+  }
+
   const index = course === "english" ? getEnglishHintIndex() : getSpanishHintIndex();
 
-  const candidates = [token, stripArticle(token)].filter(Boolean);
+  const formLemma = forms[token];
+  const candidates = [
+    formLemma,
+    token,
+    stripArticle(token),
+  ].filter((c): c is string => !!c);
+
   let lemma: string | undefined;
   for (const c of candidates) {
+    if (formLemma && c === formLemma) {
+      // Prefer the infinitive as the displayed lemma when resolving a form.
+      const gloss = glossForLemma(
+        formLemma,
+        interfaceLanguage,
+        course,
+        index.ruByLemma,
+      );
+      if (gloss) {
+        const definition = definitionForLemma(
+          formLemma,
+          interfaceLanguage,
+          course,
+        );
+        return definition
+          ? { lemma: formLemma, gloss, definition }
+          : { lemma: formLemma, gloss };
+      }
+    }
     lemma = index.byToken.get(c);
     if (lemma) break;
   }
