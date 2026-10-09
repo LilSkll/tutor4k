@@ -50,6 +50,18 @@
     --shadow-elevated: 0 4px 8px hsl(222 47% 11% / 0.04),
       0 12px 32px hsl(222 47% 11% / 0.08);
     --shadow-brand: 0 8px 24px hsl(0 74% 50% / 0.25);
+
+    /* Warm liquid glass — light */
+    --glass-shell: 0 0% 100% / 0.72;
+    --glass-surface: 0 0% 100% / 0.58;
+    --glass-float: 0 0% 100% / 0.78;
+    --glass-border: 0 0% 100% / 0.55;
+    --glass-border-strong: 20 20% 91% / 0.65;
+    --glass-highlight: inset 0 1px 0 0 hsl(0 0% 100% / 0.72);
+    --glass-blur: 18px;
+    --glass-blur-strong: 28px;
+    --motion-fast: 160ms;
+    --motion-page: 220ms;
   }
 
   .dark {
@@ -93,6 +105,16 @@
     --shadow-elevated: 0 4px 8px hsl(220 50% 4% / 0.28),
       0 12px 32px hsl(220 50% 4% / 0.38);
     --shadow-brand: 0 8px 24px hsl(0 74% 50% / 0.3);
+
+    /* Cool navy liquid glass — dark */
+    --glass-shell: 220 38% 15% / 0.72;
+    --glass-surface: 220 38% 16% / 0.55;
+    --glass-float: 220 38% 16% / 0.82;
+    --glass-border: 210 40% 98% / 0.08;
+    --glass-border-strong: 217 30% 28% / 0.7;
+    --glass-highlight: inset 0 1px 0 0 hsl(210 40% 98% / 0.1);
+    --glass-blur: 20px;
+    --glass-blur-strong: 32px;
   }
 
   /* Auth/marketing without next-themes — match system preference only. */
@@ -180,7 +202,34 @@
 
 @layer components {
   .glass {
-    @apply bg-background/75 backdrop-blur-xl;
+    background: hsl(var(--glass-shell));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    backdrop-filter: blur(var(--glass-blur));
+    box-shadow: var(--glass-highlight);
+  }
+
+  .glass-shell {
+    background: hsl(var(--glass-shell));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    backdrop-filter: blur(var(--glass-blur));
+    border-color: hsl(var(--glass-border-strong));
+    box-shadow: var(--glass-highlight);
+  }
+
+  .glass-surface {
+    background: hsl(var(--glass-surface));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid hsl(var(--glass-border-strong));
+    box-shadow: var(--glass-highlight), var(--shadow-soft);
+  }
+
+  .glass-float {
+    background: hsl(var(--glass-float));
+    -webkit-backdrop-filter: blur(var(--glass-blur-strong));
+    backdrop-filter: blur(var(--glass-blur-strong));
+    border: 1px solid hsl(var(--glass-border-strong));
+    box-shadow: var(--glass-highlight), var(--shadow-elevated);
   }
 
   .gradient-text {
@@ -188,7 +237,16 @@
   }
 
   .card-hover {
-    @apply transition-all duration-200 ease-out hover:shadow-elevated hover:-translate-y-0.5 active:scale-[0.99];
+    transition:
+      transform var(--motion-fast) ease-out,
+      box-shadow var(--motion-fast) ease-out;
+  }
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--glass-highlight), var(--shadow-elevated);
+  }
+  .card-hover:active {
+    transform: scale(0.99);
   }
 
   .page-container {
@@ -220,15 +278,99 @@
   }
 
   .nav-item {
-    @apply flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all duration-150;
+    @apply flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium;
+    transition:
+      background-color var(--motion-fast) ease-out,
+      color var(--motion-fast) ease-out,
+      box-shadow var(--motion-fast) ease-out,
+      transform var(--motion-fast) ease-out;
   }
 
   .nav-item-active {
-    @apply bg-primary/10 text-primary shadow-sm;
+    @apply text-primary;
+    background: hsl(var(--primary) / 0.12);
+    box-shadow: var(--glass-highlight), 0 1px 2px hsl(var(--primary) / 0.08);
   }
 
   .nav-item-idle {
-    @apply text-muted-foreground hover:bg-accent hover:text-foreground;
+    @apply text-muted-foreground hover:bg-accent/80 hover:text-foreground;
+  }
+
+  .page-enter {
+    animation: page-enter var(--motion-page) ease-out both;
+  }
+}
+
+/* Soft brand atmosphere behind glass (layout unchanged). */
+.hw-app-shell {
+  background-color: hsl(var(--background));
+  background-image:
+    radial-gradient(
+      ellipse 70% 45% at 8% -8%,
+      hsl(var(--primary) / 0.09),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 55% 40% at 100% 0%,
+      hsl(12 100% 60% / 0.06),
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 50% 35% at 50% 100%,
+      hsl(var(--primary) / 0.04),
+      transparent 55%
+    );
+}
+
+html.dark .hw-app-shell {
+  background-image:
+    radial-gradient(
+      ellipse 70% 45% at 8% -8%,
+      hsl(var(--primary) / 0.14),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 55% 40% at 100% 0%,
+      hsl(220 60% 40% / 0.12),
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 50% 35% at 50% 100%,
+      hsl(var(--primary) / 0.06),
+      transparent 55%
+    );
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Slightly lighter blur on small screens (perf + battery). */
+@media (max-width: 767px) {
+  :root,
+  .dark {
+    --glass-blur: 14px;
+    --glass-blur-strong: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter,
+  .card-hover,
+  .nav-item {
+    animation: none !important;
+    transition: none !important;
+  }
+  .card-hover:hover,
+  .card-hover:active {
+    transform: none !important;
   }
 }
 

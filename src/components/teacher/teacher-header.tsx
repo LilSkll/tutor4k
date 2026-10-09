@@ -10,7 +10,7 @@ export function TeacherHeader(_props?: { title?: string }) {
   const t = (key: string) => translate(key, language);
 
   return (
-    <header className="flex h-14 items-center justify-between border-b border-border/60 px-4 bg-background/80 backdrop-blur-md">
+    <header className="glass-shell flex h-14 items-center justify-between border-b px-4">
       <h1 className="text-sm font-semibold tracking-tight">
         {t("teacher.studioTitle")}
       </h1>

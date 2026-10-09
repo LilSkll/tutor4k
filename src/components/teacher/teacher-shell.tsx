@@ -19,7 +19,7 @@ export function TeacherShell({
   headerTitle?: string;
 }) {
   return (
-    <div className="flex h-[100dvh] overflow-hidden bg-background">
+    <div className="hw-app-shell relative flex h-[100dvh] overflow-hidden">
       <Suspense fallback={null}>
         <NavigationProgress />
       </Suspense>
@@ -31,7 +31,7 @@ export function TeacherShell({
           <TeacherHeader title={headerTitle} />
         </div>
         <main className="flex-1 overflow-y-auto overflow-x-hidden min-h-0 p-4 md:p-6 pb-[4.5rem] md:pb-6">
-          {children}
+          <div className="page-enter min-h-full">{children}</div>
         </main>
       </div>
     </div>

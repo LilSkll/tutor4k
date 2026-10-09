@@ -14,7 +14,7 @@ export function MobileTabBar() {
 
   return (
     <nav
-      className="md:hidden fixed bottom-0 inset-x-0 z-40 border-t border-border/60 bg-background/95 backdrop-blur-md safe-pb"
+      className="glass-shell md:hidden fixed bottom-0 inset-x-0 z-40 border-t safe-pb"
       aria-label="Primary"
     >
       <div className="grid grid-cols-5 h-[3.75rem] px-1">
@@ -27,14 +27,14 @@ export function MobileTabBar() {
               key={item.href}
               href={item.href}
               className={cn(
-                "flex flex-col items-center justify-center gap-0.5 rounded-xl transition-colors touch-target",
+                "flex flex-col items-center justify-center gap-0.5 rounded-xl transition-colors duration-150 touch-target",
                 active ? "text-primary" : "text-muted-foreground",
               )}
             >
               <span
                 className={cn(
-                  "flex h-8 w-8 items-center justify-center rounded-xl transition-all",
-                  active && "bg-primary/10 shadow-sm",
+                  "flex h-8 w-8 items-center justify-center rounded-xl transition-all duration-150",
+                  active && "bg-primary/12 shadow-sm ring-1 ring-primary/15",
                 )}
               >
                 <Icon className="h-5 w-5" strokeWidth={active ? 2.4 : 2} />

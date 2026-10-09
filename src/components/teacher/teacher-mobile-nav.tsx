@@ -44,7 +44,7 @@ export function TeacherMobileNav({
   return (
     <>
       {/* Top bar */}
-      <div className="md:hidden sticky top-0 z-40 flex h-14 items-center justify-between border-b border-border/60 bg-background/95 backdrop-blur-md px-4 safe-pt">
+      <div className="glass-shell md:hidden sticky top-0 z-40 flex h-14 items-center justify-between border-b px-4 safe-pt">
         <div className="flex items-center gap-2.5 min-w-0">
           <BrandIcon size={32} className="h-8 w-8 rounded-lg shrink-0" />
           <div className="min-w-0">
@@ -71,7 +71,7 @@ export function TeacherMobileNav({
       </div>
 
       {/* Bottom tabs */}
-      <nav className="md:hidden fixed bottom-0 inset-x-0 z-40 border-t border-border/60 bg-background/95 backdrop-blur-md safe-pb">
+      <nav className="glass-shell md:hidden fixed bottom-0 inset-x-0 z-40 border-t safe-pb">
         <ul className="grid grid-cols-5 h-14">
           {TAB_ITEMS.map((item) => {
             const Icon = item.icon;
@@ -122,7 +122,7 @@ export function TeacherMobileNav({
             aria-label={t("common.cancel")}
             onClick={() => setDrawerOpen(false)}
           />
-          <div className="relative ml-auto flex h-full w-[min(20rem,88vw)] flex-col bg-card shadow-elevated animate-slide-in safe-pt safe-pb">
+          <div className="glass-float relative ml-auto flex h-full w-[min(20rem,88vw)] flex-col animate-slide-in safe-pt safe-pb">
             <div className="flex h-14 items-center justify-between border-b border-border/60 px-4">
               <span className="font-semibold text-sm">
                 {t("teacher.studioTitle")}

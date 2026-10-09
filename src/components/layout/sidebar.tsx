@@ -29,7 +29,7 @@ export function Sidebar({ userName, level, streak }: NavProps) {
   return (
     <aside
       className={cn(
-        "hidden md:flex flex-col border-r border-border/60 bg-card/80 backdrop-blur-xl transition-[width] duration-300",
+        "glass-shell hidden md:flex flex-col border-r transition-[width] duration-300",
         collapsed ? "w-[76px]" : "w-[260px]",
       )}
     >

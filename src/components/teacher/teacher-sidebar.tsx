@@ -23,7 +23,7 @@ export function TeacherSidebar({
   const t = (key: string) => translate(key, language);
 
   return (
-    <aside className="hidden md:flex w-[240px] flex-col border-r border-border/60 bg-card/80 backdrop-blur-xl">
+    <aside className="glass-shell hidden md:flex w-[240px] flex-col border-r">
       <div className="flex h-16 items-center gap-3 border-b border-border/60 px-5">
         <BrandIcon
           size={40}

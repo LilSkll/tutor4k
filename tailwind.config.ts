@@ -91,7 +91,7 @@ const config: Config = {
           to: { opacity: "1", transform: "translateX(0)" },
         },
         "slide-up": {
-          from: { opacity: "0", transform: "translateY(10px)" },
+          from: { opacity: "0", transform: "translateY(8px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
         shimmer: {
@@ -109,9 +109,9 @@ const config: Config = {
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in": "fade-in 0.35s ease-out",
-        "slide-in": "slide-in 0.3s ease-out",
-        "slide-up": "slide-up 0.35s ease-out",
+        "fade-in": "fade-in 0.22s ease-out",
+        "slide-in": "slide-in 0.22s ease-out",
+        "slide-up": "slide-up 0.22s ease-out",
         shimmer: "shimmer 1.5s infinite",
         "pulse-soft": "pulse-soft 1.4s ease-in-out infinite",
         "nav-progress": "nav-progress 0.8s ease-out infinite",

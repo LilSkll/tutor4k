@@ -191,7 +191,7 @@ export function TutorChat() {
 
   return (
     <div className="flex flex-col h-[calc(100dvh-3.5rem-3.75rem-env(safe-area-inset-bottom,0px))] md:h-[calc(100dvh-3.5rem)]">
-      <div className="flex items-center justify-between px-4 md:px-6 py-3 border-b border-border/60 bg-background/80 backdrop-blur-xl">
+      <div className="glass-shell flex items-center justify-between px-4 md:px-6 py-3 border-b">
         <div className="flex items-center gap-3 min-w-0">
           <div className="relative shrink-0">
             <Image
@@ -253,7 +253,7 @@ export function TutorChat() {
         )}
       </div>
 
-      <div className="border-t border-border/60 bg-background/90 backdrop-blur-xl px-3 sm:px-4 md:px-6 py-3">
+      <div className="glass-shell border-t px-3 sm:px-4 md:px-6 py-3">
         <div className="mx-auto max-w-3xl">
           <div className="flex items-end gap-2 rounded-2xl border border-border/70 bg-card p-2 shadow-soft focus-within:ring-2 focus-within:ring-ring/60 focus-within:border-primary/30 transition-shadow">
             <Textarea
