@@ -168,16 +168,44 @@ type LemmaIndex = {
 let spanishHintIndex: LemmaIndex | null = null;
 let englishHintIndex: LemmaIndex | null = null;
 
+/**
+ * Index a catalog lemma for tap-to-translate.
+ * Never map a single token inside a multi-word idiom onto the whole phrase
+ * (that made «tres» resolve to «no ver tres en un burro»).
+ * Slash alternatives («el primo / la prima») are registered separately.
+ */
 function addLemmaToIndex(index: LemmaIndex, lemma: string, ruGloss?: string) {
-  const key = lemma.trim().toLowerCase();
+  const gloss = ruGloss?.trim() || undefined;
+  const alternatives = lemma
+    .split(/\s*\/\s*/)
+    .map((s) => s.trim().toLowerCase())
+    .filter(Boolean);
+  for (const key of alternatives) {
+    registerExactLemma(index, key, gloss);
+  }
+}
+
+function registerExactLemma(
+  index: LemmaIndex,
+  key: string,
+  ruGloss?: string,
+) {
   if (!key) return;
+  // Prefer an existing exact single-word lemma over a later multi-word overwrite.
+  const existing = index.byToken.get(key);
+  if (existing && !existing.includes(" ") && key.includes(" ")) {
+    return;
+  }
   index.byToken.set(key, key);
   const bare = stripArticle(key);
-  if (bare) index.byToken.set(bare, key);
-  for (const part of bare.split(/\s+/)) {
-    if (part.length >= 3) index.byToken.set(part, key);
+  if (bare && bare !== key) {
+    const bareExisting = index.byToken.get(bare);
+    // Keep a dedicated short lemma (e.g. «hora») over phrase leftovers.
+    if (!bareExisting || bareExisting.includes(" ") || bareExisting === bare) {
+      index.byToken.set(bare, key);
+    }
   }
-  if (ruGloss?.trim()) index.ruByLemma.set(key, ruGloss.trim());
+  if (ruGloss) index.ruByLemma.set(key, ruGloss);
 }
 
 function getSpanishHintIndex(): LemmaIndex {

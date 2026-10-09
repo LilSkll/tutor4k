@@ -67,4 +67,20 @@ describe("lookupWordHint", () => {
   it("returns null for unknown tokens", () => {
     expect(lookupWordHint("xyzzy123", "ru", "spanish")).toBeNull();
   });
+
+  it("does not map a lone token to an unrelated multi-word idiom", () => {
+    const tres = lookupWordHint("tres", "ru", "spanish");
+    expect(tres?.lemma).toBe("tres");
+    expect(tres?.gloss.toLowerCase()).toMatch(/три/);
+    expect(tres?.gloss).not.toMatch(/носа|burro/i);
+
+    const las = lookupWordHint("las", "ru", "spanish");
+    expect(las).toBeNull();
+
+    const ver = lookupWordHint("ver", "ru", "spanish");
+    if (ver) {
+      expect(ver.lemma).not.toMatch(/burro/);
+      expect(ver.gloss).not.toMatch(/носа/);
+    }
+  });
 });
