@@ -6,7 +6,10 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ?? "https://spanishwithpavel.com",
   ),
-  title: "Spanish with Pavel — AI Spanish Learning Platform",
+  title: {
+    default: "Spanish with Pavel",
+    template: "%s · Spanish with Pavel",
+  },
   description:
     "Personal AI tutor for learning Spanish: grammar, vocabulary, exercises, DELE prep and progress tracking.",
   authors: [{ name: "Драгунов Павел" }],

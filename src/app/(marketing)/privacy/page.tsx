@@ -4,7 +4,7 @@ import { getPrivacyDocument } from "@/content/legal/privacy";
 import { resolveLegalLocale } from "@/config/legal";
 
 export const metadata = {
-  title: "Privacy Policy — Spanish with Pavel",
+  title: "Privacy Policy",
 };
 
 export default async function PrivacyPage({

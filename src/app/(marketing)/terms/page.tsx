@@ -4,7 +4,7 @@ import { getTermsDocument } from "@/content/legal/terms";
 import { resolveLegalLocale } from "@/config/legal";
 
 export const metadata = {
-  title: "Terms of Service — Spanish with Pavel",
+  title: "Terms of Service",
 };
 
 export default async function TermsPage({

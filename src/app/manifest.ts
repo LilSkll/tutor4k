@@ -8,7 +8,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     id: "/",
     name: "Spanish with Pavel",
-    short_name: "SpanishPavel",
+    short_name: "Spanish with Pavel",
     description:
       "Personal AI tutor for learning Spanish: grammar, vocabulary, exercises and progress.",
     start_url: "/",
