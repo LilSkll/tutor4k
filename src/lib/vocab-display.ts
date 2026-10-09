@@ -209,12 +209,18 @@ function registerExactLemma(
   const bare = stripArticle(key);
   if (bare && bare !== key) {
     const bareExisting = index.byToken.get(bare);
-    // Keep a dedicated short lemma (e.g. «hora») over phrase leftovers.
-    if (!bareExisting || bareExisting.includes(" ") || bareExisting === bare) {
+    // Never let «el cuarto» steal the bare token «cuarto» from a dedicated
+    // short lemma / core entry — that caused clock tips to show «комната».
+    if (bareExisting && !bareExisting.includes(" ")) {
+      // keep bareExisting
+    } else if (!bareExisting || bareExisting.includes(" ")) {
       index.byToken.set(bare, key);
     }
   }
-  if (ruGloss) index.ruByLemma.set(key, ruGloss);
+  if (ruGloss) {
+    // Don't overwrite a better short-lemma gloss with an article-form gloss.
+    if (!index.ruByLemma.has(key)) index.ruByLemma.set(key, ruGloss);
+  }
 }
 
 function seedCoreLemmas(
@@ -365,12 +371,20 @@ export function lookupWordHint(
     return null;
   }
 
+  // Exact-token overrides and core senses win over catalog article forms
+  // («el cuarto» = room must not beat clock «cuarto»).
   const override = overrides[token];
   if (override) {
     const gloss = pickGloss(override.gloss, interfaceLanguage);
-    if (gloss) {
-      return { lemma: override.lemma, gloss };
-    }
+    if (gloss) return { lemma: override.lemma, gloss };
+  }
+  const coreSense = pickGloss(core[token], interfaceLanguage);
+  // Homonyms that must not resolve to a catalog article-noun sense.
+  if (
+    coreSense &&
+    (token === "cuarto" || token === "media" || token === "tiempo")
+  ) {
+    return { lemma: token, gloss: coreSense };
   }
 
   const index = course === "english" ? getEnglishHintIndex() : getSpanishHintIndex();
@@ -385,7 +399,6 @@ export function lookupWordHint(
   let lemma: string | undefined;
   for (const c of candidates) {
     if (formLemma && c === formLemma) {
-      // Prefer the infinitive as the displayed lemma when resolving a form.
       const gloss = glossForLemma(
         formLemma,
         interfaceLanguage,
@@ -393,20 +406,22 @@ export function lookupWordHint(
         index.ruByLemma,
       );
       if (gloss) {
-        const definition = definitionForLemma(
-          formLemma,
-          interfaceLanguage,
-          course,
-        );
-        return definition
-          ? { lemma: formLemma, gloss, definition }
-          : { lemma: formLemma, gloss };
+        return finishHint(formLemma, gloss, interfaceLanguage, course);
       }
     }
     lemma = index.byToken.get(c);
     if (lemma) break;
   }
-  if (!lemma) return null;
+
+  // Bare token with a core gloss still preferred over article lemma.
+  if (coreSense && lemma && stripArticle(lemma) === token && lemma !== token) {
+    return { lemma: token, gloss: coreSense };
+  }
+
+  if (!lemma) {
+    if (coreSense) return { lemma: token, gloss: coreSense };
+    return null;
+  }
 
   const gloss = glossForLemma(
     lemma,
@@ -414,16 +429,40 @@ export function lookupWordHint(
     course,
     index.ruByLemma,
   );
-  if (!gloss) return null;
-
-  // Don't show a "hint" that is basically the same as the clicked word.
-  const glossNorm = normalizeHintToken(gloss);
-  if (glossNorm === token || glossNorm === normalizeHintToken(lemma)) {
-    const definition = definitionForLemma(lemma, interfaceLanguage, course);
-    if (!definition) return null;
-    return { lemma, gloss, definition };
+  if (!gloss) {
+    if (coreSense) return { lemma: token, gloss: coreSense };
+    return null;
   }
 
-  const definition = definitionForLemma(lemma, interfaceLanguage, course);
-  return definition ? { lemma, gloss, definition } : { lemma, gloss };
+  const glossNorm = normalizeHintToken(gloss);
+  if (glossNorm === token || glossNorm === normalizeHintToken(lemma)) {
+    return finishHint(lemma, gloss, interfaceLanguage, course, true);
+  }
+
+  return finishHint(lemma, gloss, interfaceLanguage, course);
+}
+
+function isJunkDefinition(def: string): boolean {
+  return /возможност|opportunity or scope|gelegenheit oder spielraum|oportunidad o alcance/i.test(
+    def,
+  );
+}
+
+function finishHint(
+  lemma: string,
+  gloss: string,
+  interfaceLanguage: InterfaceLanguage,
+  courseId: string,
+  requireDefinition = false,
+): WordHint | null {
+  const definition = definitionForLemma(lemma, interfaceLanguage, courseId);
+  if (
+    definition &&
+    !isJunkDefinition(definition) &&
+    normalizeHintToken(definition) !== normalizeHintToken(gloss)
+  ) {
+    return { lemma, gloss, definition };
+  }
+  if (requireDefinition) return null;
+  return { lemma, gloss };
 }

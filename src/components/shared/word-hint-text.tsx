@@ -20,6 +20,14 @@ type TextPart =
 
 const WORD_RE = /[\p{L}\p{M}]+(?:['’-][\p{L}\p{M}]+)*/gu;
 
+function normalizeHintDisplay(s: string): string {
+  return s
+    .replace(/[¿?¡!.,;:'"«»„""''`´…]/g, "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .toLowerCase();
+}
+
 function splitHintText(text: string): TextPart[] {
   const parts: TextPart[] = [];
   let last = 0;
@@ -111,10 +119,17 @@ export function WordHintText({
                 {t("wordHint.label")}
               </p>
               <p className="text-sm font-medium leading-snug">{hint.gloss}</p>
-              {hint.definition ? (
-                <p className="text-xs leading-snug text-muted-foreground">
-                  {hint.definition}
-                </p>
+              {hint.definition &&
+              normalizeHintDisplay(hint.definition) !==
+                normalizeHintDisplay(hint.gloss) ? (
+                <>
+                  <p className="pt-1 text-[10px] uppercase tracking-wide text-muted-foreground">
+                    {t("wordHint.definition")}
+                  </p>
+                  <p className="text-xs leading-snug text-muted-foreground">
+                    {hint.definition}
+                  </p>
+                </>
               ) : null}
             </TooltipContent>
           </Tooltip>

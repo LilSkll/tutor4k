@@ -196,7 +196,7 @@ export const VOCAB_TOPICS: VocabTopic[] = [
       { word: "noviembre", translation: "ноябрь", example: "Noviembre es otoñal." },
       { word: "diciembre", translation: "декабрь", example: "En diciembre es Navidad." },
       { word: "media", translation: "половина (часа)", example: "Son las tres y media." },
-      { word: "cuarto", translation: "четверть (часа) / комната", example: "Son las cuatro y cuarto." },
+      { word: "cuarto", translation: "четверть (часа); также: комната", example: "Son las cuatro y cuarto." },
       { word: "y media", translation: "половина (часа)", example: "Son las tres y media." },
       { word: "y cuarto", translation: "четверть часа", example: "Son las cuatro y cuarto." },
       { word: "menos cuarto", translation: "без четверти", example: "Son las cinco menos cuarto." },

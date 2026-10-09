@@ -90,7 +90,10 @@ describe("lookupWordHint", () => {
     expect(lookupWordHint("son", "ru", "spanish")?.gloss).toMatch(/быть/i);
     expect(lookupWordHint("hay", "ru", "spanish")?.lemma).toBe("haber");
     expect(lookupWordHint("tengo", "en", "spanish")?.lemma).toBe("tener");
-    expect(lookupWordHint("cuarto", "ru", "spanish")?.gloss).toMatch(/четверть/i);
+    const cuarto = lookupWordHint("cuarto", "ru", "spanish");
+    expect(cuarto?.gloss).toMatch(/четверть/i);
+    expect(cuarto?.gloss.toLowerCase()).not.toBe("комната");
+    expect(cuarto?.definition).toBeUndefined();
     expect(lookupWordHint("media", "ru", "spanish")?.gloss).toMatch(/половин/i);
     expect(lookupWordHint("tiempo", "ru", "spanish")?.gloss).toMatch(/время/i);
   });

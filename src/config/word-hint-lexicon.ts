@@ -16,10 +16,10 @@ export const SPANISH_TOKEN_OVERRIDES: Record<string, HintSense> = {
   cuarto: {
     lemma: "cuarto",
     gloss: {
-      ru: "четверть (часа) / комната",
-      en: "quarter (hour) / room",
-      es: "cuarto de hora / habitación",
-      de: "Viertelstunde / Zimmer",
+      ru: "четверть (часа); также: комната",
+      en: "quarter (of an hour); also: room",
+      es: "cuarto de hora; también: habitación",
+      de: "Viertelstunde; auch: Zimmer",
     },
   },
   media: {
@@ -27,17 +27,17 @@ export const SPANISH_TOKEN_OVERRIDES: Record<string, HintSense> = {
     gloss: {
       ru: "половина (часа)",
       en: "half (past the hour)",
-      es: "media hora / y media",
+      es: "y media (hora)",
       de: "halb (Uhrzeit)",
     },
   },
   tiempo: {
     lemma: "tiempo",
     gloss: {
-      ru: "время / погода",
-      en: "time / weather",
-      es: "tiempo / clima",
-      de: "Zeit / Wetter",
+      ru: "время; также: погода",
+      en: "time; also: weather",
+      es: "tiempo; también: clima",
+      de: "Zeit; auch: Wetter",
     },
   },
   banco: {
@@ -271,6 +271,25 @@ export const SPANISH_INFLECTED_FORMS: Record<string, string> = {
 
 /** Core lemmas missing from catalog (or weak coverage) — seeded into the hint index. */
 export const SPANISH_CORE_LEMMAS: Record<string, HintGloss> = {
+  // Clock / homonyms — must win over «el cuarto» = room in the catalog.
+  cuarto: {
+    ru: "четверть (часа); также: комната",
+    en: "quarter (of an hour); also: room",
+    es: "cuarto de hora; también: habitación",
+    de: "Viertelstunde; auch: Zimmer",
+  },
+  media: {
+    ru: "половина (часа)",
+    en: "half (past the hour)",
+    es: "y media (hora)",
+    de: "halb (Uhrzeit)",
+  },
+  tiempo: {
+    ru: "время; также: погода",
+    en: "time; also: weather",
+    es: "tiempo; también: clima",
+    de: "Zeit; auch: Wetter",
+  },
   haber: {
     ru: "есть / иметься (hay); вспом. глагол",
     en: "there is/are (hay); auxiliary",
