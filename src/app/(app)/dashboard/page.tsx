@@ -16,6 +16,7 @@ import { Badge } from "@/components/ui/badge";
 import { ProgressRing } from "@/components/shared/progress-ring";
 import { StatCard } from "@/components/shared/stat-card";
 import { MascotTip } from "@/components/shared/mascot-tip";
+import { ChapterCover } from "@/components/chapters/chapter-cover";
 import {
   getCurrentProfile,
   getChapterProgress,
@@ -316,10 +317,13 @@ export default async function DashboardPage({
         <Card className="relative overflow-hidden shadow-elevated">
           <div className="bg-gradient-to-br from-primary via-orange-500 to-rose-500 p-5 sm:p-7 text-white">
             <div className="flex flex-col sm:flex-row sm:items-start gap-4">
-              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white/15 text-4xl backdrop-blur-sm">
-                {currentChapter.icon}
-              </div>
-              <div className="flex-1 min-w-0">
+              <ChapterCover
+                slug={currentChapter.slug}
+                size="lg"
+                priority
+                className="mx-auto sm:mx-0"
+              />
+              <div className="flex-1 min-w-0 text-center sm:text-left">
                 <p className="text-xs text-white/70 uppercase tracking-wide mb-1">
                   {t("dashboard.chapterLabel", {
                     number: toRoman(currentChapter.number),
@@ -582,7 +586,7 @@ export default async function DashboardPage({
                   href={`/chapters/${upcomingChapter.slug}`}
                   className="flex items-center gap-3 group"
                 >
-                  <span className="text-3xl">{upcomingChapter.icon}</span>
+                  <ChapterCover slug={upcomingChapter.slug} size="sm" />
                   <div className="flex-1 min-w-0">
                     <p className="font-semibold truncate group-hover:text-primary transition-colors">
                       {getChapterTitle(upcomingChapter, lang)}
@@ -596,7 +600,7 @@ export default async function DashboardPage({
                 </Link>
               ) : (
                 <div className="flex items-center gap-3 opacity-70">
-                  <span className="text-3xl">{upcomingChapter.icon}</span>
+                  <ChapterCover slug={upcomingChapter.slug} size="sm" muted />
                   <div className="flex-1 min-w-0">
                     <p className="font-semibold truncate">
                       {getChapterTitle(upcomingChapter, lang)}

@@ -15,6 +15,7 @@ import {
   hasCompletedPrereqChain,
 } from "@/lib/chapter-display";
 import { ResetProgressButton } from "@/components/chapters/reset-progress-button";
+import { ChapterCover } from "@/components/chapters/chapter-cover";
 import { cn } from "@/lib/utils";
 
 export default async function ChaptersMapPage() {
@@ -127,33 +128,26 @@ export default async function ChaptersMapPage() {
                   isCurrent && "ring-2 ring-primary/40 shadow-md",
                 )}
               >
-                <CardContent className="p-4">
-                  <div className="flex items-center gap-4">
-                    <div
-                      className={cn(
-                        "relative flex h-12 w-12 shrink-0 items-center justify-center rounded-xl text-2xl",
-                        isCompleted && "bg-success/15",
-                        isCurrent && "bg-primary/10",
-                        isLocked && "bg-muted",
-                      )}
-                    >
-                      <span
+                <CardContent className="p-3 sm:p-4">
+                  <div className="flex items-center gap-3.5 sm:gap-4">
+                    <div className="relative shrink-0">
+                      <ChapterCover
+                        slug={chapter.slug}
+                        size="md"
+                        muted={isLocked}
                         className={cn(
-                          "leading-none",
-                          isLocked && "opacity-45 grayscale",
-                          isCompleted && "opacity-70",
+                          "transition-transform duration-300",
+                          isCurrent && "scale-[1.04]",
+                          isCompleted && "opacity-80",
                         )}
-                        aria-hidden
-                      >
-                        {chapter.icon}
-                      </span>
+                      />
                       {isCompleted && (
-                        <span className="absolute -bottom-0.5 -right-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-background shadow-sm ring-1 ring-border">
+                        <span className="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-background shadow-sm ring-1 ring-border">
                           <Check className="h-3 w-3 text-success" />
                         </span>
                       )}
                       {isLocked && (
-                        <span className="absolute -bottom-0.5 -right-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-background shadow-sm ring-1 ring-border">
+                        <span className="absolute -bottom-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-background shadow-sm ring-1 ring-border">
                           <Lock className="h-3 w-3 text-muted-foreground" />
                         </span>
                       )}

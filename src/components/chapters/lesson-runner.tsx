@@ -38,6 +38,7 @@ import { getLessonAdaptationAction } from "@/server/actions/learning-profile";
 import type { StaticExercise } from "@/types";
 import type { LessonAdaptation } from "@/types/learning-profile";
 import { BackLink } from "@/components/shared/back-link";
+import { ChapterCoverHero } from "@/components/chapters/chapter-cover";
 import { QuestionWithGloss } from "@/components/exercises/question-with-gloss";
 import { ExerciseFreeTextBlock } from "@/components/exercises/exercise-free-text-block";
 import { ExerciseTaskBanner } from "@/components/exercises/exercise-task-banner";
@@ -772,35 +773,44 @@ export function LessonRunner({
           href={`/chapters?courseId=${encodeURIComponent(courseId)}`}
         />
         <Card className="border-0 shadow-lg overflow-hidden">
-          <div className="bg-gradient-to-br from-primary via-orange-500 to-rose-500 p-8 text-white text-center">
-            <div className="text-6xl mb-4">{chapter.icon}</div>
-            <Badge className="bg-white/20 text-white border-0 mb-2">
-              {t("lesson.chapterBadge", {
-                number: chapter.number,
-                level: chapter.level,
-              })}
-            </Badge>
-            <h1 className="text-3xl font-bold mb-1">{chapterDisplayTitle}</h1>
-            {targetTitle !== chapterDisplayTitle && (
-              <p className="text-white/80 italic">{targetTitle}</p>
-            )}
-            <p className="text-white/70 text-sm mt-3">{chapterDisplaySummary}</p>
-            <div className="mt-4 inline-flex items-center gap-2 text-sm text-white/80">
-              <Sparkles className="h-4 w-4" />
-              📍 {chapterDisplayLocation} · {t("lesson.minutes", { minutes: chapter.estimatedMinutes })}
-            </div>
-          </div>
+          <ChapterCoverHero
+            slug={chapter.slug}
+            priority
+            title={chapterDisplayTitle}
+            subtitle={
+              targetTitle !== chapterDisplayTitle ? targetTitle : undefined
+            }
+            badge={
+              <Badge className="bg-white/20 text-white border-0 backdrop-blur-sm">
+                {t("lesson.chapterBadge", {
+                  number: chapter.number,
+                  level: chapter.level,
+                })}
+              </Badge>
+            }
+            meta={
+              <div className="space-y-2">
+                <p className="text-white/85 text-sm leading-relaxed max-w-xl">
+                  {chapterDisplaySummary}
+                </p>
+                <div className="inline-flex items-center gap-2 text-sm text-white/90">
+                  <Sparkles className="h-4 w-4" />
+                  {chapterDisplayLocation} ·{" "}
+                  {t("lesson.minutes", { minutes: chapter.estimatedMinutes })}
+                </div>
+              </div>
+            }
+          />
           <CardContent className="p-6 text-center">
             {chapterStory && (
               <div className="mb-6 rounded-xl border border-primary/15 bg-primary/5 px-5 py-4 text-left">
                 <div className="text-sm leading-relaxed text-foreground/85 italic">
-                  <span className="mr-1.5 not-italic">📜</span>
                   <WordHintText text={chapterStory} courseId={courseId} />
                 </div>
               </div>
             )}
             <p className="text-base text-muted-foreground mb-6">
-              <span className="text-2xl">🦅</span> {introGreeting} {introBody}
+              {introGreeting} {introBody}
             </p>
             {guideExerciseTypes.length ? (
               <div className="mb-6 text-left">
@@ -1053,17 +1063,15 @@ export function LessonRunner({
           href={`/chapters?courseId=${encodeURIComponent(courseId)}`}
         />
         <Card className="border-0 shadow-lg overflow-hidden">
-          <div className="bg-gradient-to-br from-primary via-orange-500 to-rose-500 p-8 text-white text-center">
-            <div className="text-6xl mb-4">🎉</div>
-            <h1 className="text-3xl font-bold mb-2">
-              {t("lesson.chapterComplete", { number: chapter.number })}
-            </h1>
-            <p className="text-white/80">
-              {targetTitle !== chapterDisplayTitle
+          <ChapterCoverHero
+            slug={chapter.slug}
+            title={t("lesson.chapterComplete", { number: chapter.number })}
+            subtitle={
+              targetTitle !== chapterDisplayTitle
                 ? `${chapterDisplayTitle} — ${targetTitle}`
-                : chapterDisplayTitle}
-            </p>
-          </div>
+                : chapterDisplayTitle
+            }
+          />
           <CardContent className="p-6 space-y-4">
             {rewards?.egg ? <EasterEggReveal egg={rewards.egg} /> : null}
 
