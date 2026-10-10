@@ -1,6 +1,20 @@
 import type { InterfaceLanguage, VocabTopic, VocabWord } from "@/types";
+import { ENGLISH_VOCAB } from "@/config/courses/english/vocabulary";
+import { ENGLISH_VOCAB_DEFINITION } from "@/config/courses/english/vocabulary/definitions";
 import { ENGLISH_VOCAB_GLOSS } from "@/config/courses/english/vocabulary/glosses";
+import { SPANISH_VOCAB_DEFINITION } from "@/config/courses/spanish/vocabulary/definitions";
+import { SPANISH_VOCAB_GLOSS } from "@/config/courses/spanish/vocabulary/glosses";
 import { SPANISH_TOPIC_TITLES_EN } from "@/config/courses/spanish/vocabulary/topic-titles";
+import {
+  ENGLISH_CORE_LEMMAS,
+  ENGLISH_INFLECTED_FORMS,
+  ENGLISH_TOKEN_OVERRIDES,
+  SPANISH_CORE_LEMMAS,
+  SPANISH_INFLECTED_FORMS,
+  SPANISH_TOKEN_OVERRIDES,
+  type HintGloss,
+} from "@/config/word-hint-lexicon";
+import { VOCAB_TOPICS } from "@/config/vocabulary-topics";
 
 function hasCyrillic(text: string): boolean {
   return /[\u0400-\u04FF]/.test(text);
@@ -43,22 +57,19 @@ export function getVocabTopicSubtitle(
 ): string | null {
   const primary = getVocabTopicTitle(topic, interfaceLanguage, courseId);
 
-  if (interfaceLanguage === "ru") {
-    return topic.topicEs !== primary ? topic.topicEs : null;
+  // English course: target subtitle is always English (never Spanish topicEs leftovers).
+  if (courseId === "english") {
+    const enTitle =
+      topic.topicEn?.trim() ||
+      (isLatinScript(topic.topicEs) && !looksSpanishTopicTitle(topic.topicEs)
+        ? topic.topicEs
+        : "") ||
+      (isLatinScript(topic.topic) ? topic.topic : "");
+    return enTitle && enTitle !== primary ? enTitle : null;
   }
 
-  if (courseId === "english") {
-    if (interfaceLanguage === "es") {
-      const enTitle =
-        topic.topicEn ??
-        (isLatinScript(topic.topicEs) ? topic.topicEs : null);
-      return enTitle && enTitle !== primary ? enTitle : null;
-    }
-    if (interfaceLanguage === "en" || interfaceLanguage === "de") {
-      return topic.topicEs !== primary && isLatinScript(topic.topicEs)
-        ? topic.topicEs
-        : null;
-    }
+  if (interfaceLanguage === "ru") {
+    return topic.topicEs !== primary ? topic.topicEs : null;
   }
 
   if (interfaceLanguage === "es") {
@@ -70,6 +81,12 @@ export function getVocabTopicSubtitle(
   }
 
   return null;
+}
+
+function looksSpanishTopicTitle(s: string): boolean {
+  return /\b(Información|Familia|Hogar|Objetos|Rutina|Ciudad|Viajes|Trabajo|Compras|Salud|Cuerpo|Emociones|Personalidad)\b/i.test(
+    s,
+  );
 }
 
 /** Word gloss in the user's interface language. */
@@ -86,15 +103,366 @@ export function getWordGloss(
     return word.translation;
   }
 
+  const key = word.word.trim().toLowerCase();
+
   if (courseId === "english") {
-    const key = word.word.toLowerCase();
     const gloss = ENGLISH_VOCAB_GLOSS[interfaceLanguage]?.[key];
     if (gloss) return gloss;
   }
 
-  if (hasCyrillic(word.translation)) {
-    return word.translation;
+  if (courseId === "spanish") {
+    const gloss = SPANISH_VOCAB_GLOSS[interfaceLanguage]?.[key];
+    if (gloss) return gloss;
   }
 
+  // Last resort: keep authored translation even if still Russian.
   return word.translation;
+}
+
+/**
+ * Short dictionary-style definition in the user's interface language.
+ * Returns null when no definition is available (do not fall back to gloss).
+ */
+export function getWordDefinition(
+  word: VocabWord,
+  interfaceLanguage: InterfaceLanguage,
+  courseId?: string,
+): string | null {
+  const inline = word.definitions?.[interfaceLanguage]?.trim();
+  if (inline) return inline;
+
+  const key = word.word.trim().toLowerCase();
+
+  if (courseId === "english") {
+    const def = ENGLISH_VOCAB_DEFINITION[interfaceLanguage]?.[key]?.trim();
+    if (def) return def;
+  }
+
+  if (courseId === "spanish") {
+    const def = SPANISH_VOCAB_DEFINITION[interfaceLanguage]?.[key]?.trim();
+    if (def) return def;
+  }
+
+  return null;
+}
+
+export type WordHint = {
+  lemma: string;
+  gloss: string;
+  definition?: string;
+};
+
+const ARTICLE_RE = /^(el|la|los|las|un|una|unos|unas|the|a|an)\s+/i;
+
+function normalizeHintToken(raw: string): string {
+  return raw
+    .trim()
+    .toLowerCase()
+    .replace(/^[¿¡«"'(]+/, "")
+    .replace(/[»"'.,!?;:…)\]}]+$/u, "")
+    .trim();
+}
+
+function stripArticle(lemma: string): string {
+  return lemma.replace(ARTICLE_RE, "").trim();
+}
+
+type LemmaIndex = {
+  /** token / bare lemma → canonical catalog key */
+  byToken: Map<string, string>;
+  /** canonical key → Russian gloss from authored catalog */
+  ruByLemma: Map<string, string>;
+};
+
+let spanishHintIndex: LemmaIndex | null = null;
+let englishHintIndex: LemmaIndex | null = null;
+
+/**
+ * Index a catalog lemma for tap-to-translate.
+ * Never map a single token inside a multi-word idiom onto the whole phrase
+ * (that made «tres» resolve to «no ver tres en un burro»).
+ * Slash alternatives («el primo / la prima») are registered separately.
+ */
+function addLemmaToIndex(index: LemmaIndex, lemma: string, ruGloss?: string) {
+  const gloss = ruGloss?.trim() || undefined;
+  const alternatives = lemma
+    .split(/\s*\/\s*/)
+    .map((s) => s.trim().toLowerCase())
+    .filter(Boolean);
+  for (const key of alternatives) {
+    registerExactLemma(index, key, gloss);
+  }
+}
+
+function registerExactLemma(
+  index: LemmaIndex,
+  key: string,
+  ruGloss?: string,
+) {
+  if (!key) return;
+  // Prefer an existing exact single-word lemma over a later multi-word overwrite.
+  const existing = index.byToken.get(key);
+  if (existing && !existing.includes(" ") && key.includes(" ")) {
+    return;
+  }
+  index.byToken.set(key, key);
+  const bare = stripArticle(key);
+  if (bare && bare !== key) {
+    const bareExisting = index.byToken.get(bare);
+    // Never let «el cuarto» steal the bare token «cuarto» from a dedicated
+    // short lemma / core entry — that caused clock tips to show «комната».
+    if (bareExisting && !bareExisting.includes(" ")) {
+      // keep bareExisting
+    } else if (!bareExisting || bareExisting.includes(" ")) {
+      index.byToken.set(bare, key);
+    }
+  }
+  if (ruGloss) {
+    // Don't overwrite a better short-lemma gloss with an article-form gloss.
+    if (!index.ruByLemma.has(key)) index.ruByLemma.set(key, ruGloss);
+  }
+}
+
+function seedCoreLemmas(
+  index: LemmaIndex,
+  core: Record<string, HintGloss>,
+) {
+  for (const [lemma, gloss] of Object.entries(core)) {
+    addLemmaToIndex(index, lemma, gloss.ru);
+  }
+}
+
+function getSpanishHintIndex(): LemmaIndex {
+  if (spanishHintIndex) return spanishHintIndex;
+  const index: LemmaIndex = { byToken: new Map(), ruByLemma: new Map() };
+  // Core lemmas first so catalog articles like «el cuarto» don't steal «cuarto»
+  // for homonym overrides — overrides still win in lookupWordHint.
+  seedCoreLemmas(index, SPANISH_CORE_LEMMAS);
+  for (const map of Object.values(SPANISH_VOCAB_GLOSS)) {
+    if (!map) continue;
+    for (const lemma of Object.keys(map)) addLemmaToIndex(index, lemma);
+  }
+  for (const map of Object.values(SPANISH_VOCAB_DEFINITION)) {
+    if (!map) continue;
+    for (const lemma of Object.keys(map)) addLemmaToIndex(index, lemma);
+  }
+  for (const topic of VOCAB_TOPICS) {
+    for (const word of topic.words) {
+      addLemmaToIndex(index, word.word, word.translation);
+    }
+  }
+  spanishHintIndex = index;
+  return index;
+}
+
+function getEnglishHintIndex(): LemmaIndex {
+  if (englishHintIndex) return englishHintIndex;
+  const index: LemmaIndex = { byToken: new Map(), ruByLemma: new Map() };
+  seedCoreLemmas(index, ENGLISH_CORE_LEMMAS);
+  for (const map of Object.values(ENGLISH_VOCAB_GLOSS)) {
+    if (!map) continue;
+    for (const lemma of Object.keys(map)) addLemmaToIndex(index, lemma);
+  }
+  for (const map of Object.values(ENGLISH_VOCAB_DEFINITION)) {
+    if (!map) continue;
+    for (const lemma of Object.keys(map)) addLemmaToIndex(index, lemma);
+  }
+  for (const topic of ENGLISH_VOCAB) {
+    for (const word of topic.words) {
+      addLemmaToIndex(index, word.word, word.translation);
+    }
+  }
+  englishHintIndex = index;
+  return index;
+}
+
+function pickGloss(
+  gloss: HintGloss | undefined,
+  interfaceLanguage: InterfaceLanguage,
+): string | null {
+  if (!gloss) return null;
+  return (
+    gloss[interfaceLanguage]?.trim() ||
+    gloss.en?.trim() ||
+    gloss.ru?.trim() ||
+    null
+  );
+}
+
+function glossForLemma(
+  lemma: string,
+  interfaceLanguage: InterfaceLanguage,
+  courseId: string,
+  ruByLemma: Map<string, string>,
+): string | null {
+  if (courseId === "english") {
+    const core = pickGloss(ENGLISH_CORE_LEMMAS[lemma], interfaceLanguage);
+    if (interfaceLanguage === "ru") {
+      return (
+        ENGLISH_VOCAB_GLOSS.ru?.[lemma] ??
+        ruByLemma.get(lemma) ??
+        core ??
+        null
+      );
+    }
+    return (
+      ENGLISH_VOCAB_GLOSS[interfaceLanguage]?.[lemma] ??
+      core ??
+      null
+    );
+  }
+
+  if (courseId === "spanish") {
+    const core = pickGloss(SPANISH_CORE_LEMMAS[lemma], interfaceLanguage);
+    if (interfaceLanguage === "ru") {
+      return ruByLemma.get(lemma) ?? core ?? null;
+    }
+    return (
+      SPANISH_VOCAB_GLOSS[interfaceLanguage]?.[lemma] ??
+      core ??
+      null
+    );
+  }
+
+  return null;
+}
+
+function definitionForLemma(
+  lemma: string,
+  interfaceLanguage: InterfaceLanguage,
+  courseId: string,
+): string | undefined {
+  if (courseId === "english") {
+    return ENGLISH_VOCAB_DEFINITION[interfaceLanguage]?.[lemma];
+  }
+  if (courseId === "spanish") {
+    return SPANISH_VOCAB_DEFINITION[interfaceLanguage]?.[lemma];
+  }
+  return undefined;
+}
+
+/**
+ * Resolve a clicked token to a UI-language gloss (and optional definition)
+ * using the active course vocabulary maps, core lexicon, and form tables.
+ */
+export function lookupWordHint(
+  rawToken: string,
+  interfaceLanguage: InterfaceLanguage,
+  courseId?: string,
+): WordHint | null {
+  const token = normalizeHintToken(rawToken);
+  if (!token) return null;
+
+  const course = courseId === "english" ? "english" : "spanish";
+  const overrides =
+    course === "english" ? ENGLISH_TOKEN_OVERRIDES : SPANISH_TOKEN_OVERRIDES;
+  const forms =
+    course === "english" ? ENGLISH_INFLECTED_FORMS : SPANISH_INFLECTED_FORMS;
+  const core =
+    course === "english" ? ENGLISH_CORE_LEMMAS : SPANISH_CORE_LEMMAS;
+
+  // Skip ultra-short noise unless we have an authored gloss (y / o / a / I).
+  if (
+    token.length < 2 &&
+    !overrides[token] &&
+    !forms[token] &&
+    !core[token]
+  ) {
+    return null;
+  }
+
+  // Exact-token overrides and core senses win over catalog article forms
+  // («el cuarto» = room must not beat clock «cuarto»).
+  const override = overrides[token];
+  if (override) {
+    const gloss = pickGloss(override.gloss, interfaceLanguage);
+    if (gloss) return { lemma: override.lemma, gloss };
+  }
+  const coreSense = pickGloss(core[token], interfaceLanguage);
+  // Homonyms that must not resolve to a catalog article-noun sense.
+  if (
+    coreSense &&
+    (token === "cuarto" || token === "media" || token === "tiempo")
+  ) {
+    return { lemma: token, gloss: coreSense };
+  }
+
+  const index = course === "english" ? getEnglishHintIndex() : getSpanishHintIndex();
+
+  const formLemma = forms[token];
+  const candidates = [
+    formLemma,
+    token,
+    stripArticle(token),
+  ].filter((c): c is string => !!c);
+
+  let lemma: string | undefined;
+  for (const c of candidates) {
+    if (formLemma && c === formLemma) {
+      const gloss = glossForLemma(
+        formLemma,
+        interfaceLanguage,
+        course,
+        index.ruByLemma,
+      );
+      if (gloss) {
+        return finishHint(formLemma, gloss, interfaceLanguage, course);
+      }
+    }
+    lemma = index.byToken.get(c);
+    if (lemma) break;
+  }
+
+  // Bare token with a core gloss still preferred over article lemma.
+  if (coreSense && lemma && stripArticle(lemma) === token && lemma !== token) {
+    return { lemma: token, gloss: coreSense };
+  }
+
+  if (!lemma) {
+    if (coreSense) return { lemma: token, gloss: coreSense };
+    return null;
+  }
+
+  const gloss = glossForLemma(
+    lemma,
+    interfaceLanguage,
+    course,
+    index.ruByLemma,
+  );
+  if (!gloss) {
+    if (coreSense) return { lemma: token, gloss: coreSense };
+    return null;
+  }
+
+  const glossNorm = normalizeHintToken(gloss);
+  if (glossNorm === token || glossNorm === normalizeHintToken(lemma)) {
+    return finishHint(lemma, gloss, interfaceLanguage, course, true);
+  }
+
+  return finishHint(lemma, gloss, interfaceLanguage, course);
+}
+
+function isJunkDefinition(def: string): boolean {
+  return /возможност|opportunity or scope|gelegenheit oder spielraum|oportunidad o alcance|чтобы иметь возможность|^para poder\.?$|^кэп\.?$/i.test(
+    def,
+  );
+}
+
+function finishHint(
+  lemma: string,
+  gloss: string,
+  interfaceLanguage: InterfaceLanguage,
+  courseId: string,
+  requireDefinition = false,
+): WordHint | null {
+  const definition = definitionForLemma(lemma, interfaceLanguage, courseId);
+  if (
+    definition &&
+    !isJunkDefinition(definition) &&
+    normalizeHintToken(definition) !== normalizeHintToken(gloss)
+  ) {
+    return { lemma, gloss, definition };
+  }
+  if (requireDefinition) return null;
+  return { lemma, gloss };
 }

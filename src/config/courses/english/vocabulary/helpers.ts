@@ -59,9 +59,18 @@ export function flattenWords(topics: VocabTopic[]): VocabWord[] {
 export function wordsByChapter(
   topics: VocabTopic[],
   chapterSlug: string,
+  /** When set, also include the topic referenced by chapter.vocabTopic. */
+  vocabTopicSlug?: string | null,
 ): VocabWord[] {
   return topics
-    .filter((t) => t.chapterSlug === chapterSlug || t.slug === chapterSlug)
+    .filter(
+      (t) =>
+        t.chapterSlug === chapterSlug ||
+        t.slug === chapterSlug ||
+        (vocabTopicSlug != null &&
+          vocabTopicSlug !== "" &&
+          t.slug === vocabTopicSlug),
+    )
     .flatMap((t) => t.words);
 }
 

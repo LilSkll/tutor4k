@@ -19,10 +19,19 @@ import type {
   AIMessage,
   ExerciseHistory,
   ExerciseType,
+  GrammarLevel,
   InterfaceLanguage,
   Level,
 } from "@/types";
+import { answersMatch, answersMatchFlexible, normalizeAnswer } from "@/lib/normalize-answer";
 import { recordStudySession } from "@/server/actions/data";
+import {
+  asCourseId,
+  asInterfaceLanguage,
+  resolveLessonSlug,
+  sanitizeTutorMessages,
+  shouldUseStaticGrammarFallback,
+} from "@/server/ai/tutor-request";
 
 // =====================================================================
 // AI Tutor chat — server action (streamed back to client in one payload)
@@ -31,6 +40,12 @@ import { recordStudySession } from "@/server/actions/data";
 export async function sendTutorMessage(input: {
   messages: AIMessage[];
   conversationId?: string | null;
+  /** Live UI language — prefer over a stale profile row. */
+  interfaceLanguage?: InterfaceLanguage | null;
+  /** Active course from the client (lesson / tutor page). */
+  courseId?: string | null;
+  /** Chapter grammar slug: ground the reply in that article. */
+  grammarTopicSlug?: string | null;
 }): Promise<{
   content: string;
   provider: string;
@@ -40,6 +55,9 @@ export async function sendTutorMessage(input: {
   const {
     data: { user },
   } = await supabase.auth.getUser();
+  if (!user) {
+    throw new Error("Unauthorized");
+  }
 
   // Use the service-role client for DB writes when available (RLS-safe,
   // so chat history + progress never get silently dropped).
@@ -52,12 +70,12 @@ export async function sendTutorMessage(input: {
   let language: InterfaceLanguage = "ru";
   let courseId: string | null = null;
 
-  if (user) {
+  {
     const { data: profile } = await supabase
       .from("profiles")
       .select("level, name, interface_language, active_course_id")
       .eq("id", user.id)
-      .single();
+      .maybeSingle();
 
     if (profile) {
       level = (profile.level as Level | null) ?? null;
@@ -67,7 +85,38 @@ export async function sendTutorMessage(input: {
     }
   }
 
-  const resolvedCourseId = courseId ?? "spanish";
+  const fromUi = asInterfaceLanguage(input.interfaceLanguage);
+  if (fromUi) language = fromUi;
+
+  const fromClientCourse = asCourseId(input.courseId);
+  const resolvedCourseId = fromClientCourse ?? courseId ?? "spanish";
+  const messages = sanitizeTutorMessages(input.messages);
+
+  let lessonSlug: string | null = null;
+  try {
+    const course = await getCourse(resolvedCourseId);
+    lessonSlug = resolveLessonSlug(
+      input.grammarTopicSlug,
+      course.getGrammarTopic,
+    );
+  } catch {
+    lessonSlug = null;
+  }
+
+  if (!messages.some((m) => m.role === "user")) {
+    return {
+      content:
+        language === "ru"
+          ? "Напишите вопрос — я отвечу."
+          : language === "es"
+            ? "Escribe una pregunta y te respondo."
+            : language === "de"
+              ? "Schreib eine Frage — ich antworte."
+              : "Type a question and I’ll answer.",
+      provider: "guard",
+      conversationId: "",
+    };
+  }
 
   // TeacherContext — real curriculum memory for every reply.
   let learnerPromptBlock: string | null | undefined = undefined;
@@ -93,38 +142,41 @@ export async function sendTutorMessage(input: {
   // --- Persist conversation (best-effort) ------------------------------
   let conversationId = input.conversationId;
 
-  if (user && input.messages.length > 0) {
-    if (!conversationId) {
-      const title =
-        input.messages.find((m) => m.role === "user")?.content.slice(0, 50) ??
-        "Chat";
-      const { data: conv } = await supabase
-        .from("chat_conversations")
-        .insert({
-          user_id: user.id,
-          title,
-          course_id: resolvedCourseId,
-        })
-        .select("id")
-        .single();
-      conversationId = conv?.id ?? null;
-    }
+  if (user && messages.length > 0) {
+    try {
+      if (!conversationId) {
+        const title =
+          messages.find((m) => m.role === "user")?.content.slice(0, 50) ??
+          "Chat";
+        const { data: conv } = await writeClient
+          .from("chat_conversations")
+          .insert({
+            user_id: user.id,
+            title,
+            course_id: resolvedCourseId,
+          })
+          .select("id")
+          .maybeSingle();
+        conversationId = conv?.id ?? null;
+      }
 
-    // Persist the last user message.
-    const lastUserMsg = [...input.messages]
-      .reverse()
-      .find((m) => m.role === "user");
-    if (lastUserMsg && conversationId) {
-      await writeClient.from("chat_messages").insert({
-        conversation_id: conversationId,
-        role: "user",
-        content: lastUserMsg.content,
-      });
+      const lastUserMsg = [...messages]
+        .reverse()
+        .find((m) => m.role === "user");
+      if (lastUserMsg && conversationId) {
+        await writeClient.from("chat_messages").insert({
+          conversation_id: conversationId,
+          role: "user",
+          content: lastUserMsg.content,
+        });
+      }
+    } catch (err) {
+      console.warn("[tutor] persist user message failed:", (err as Error).message);
     }
   }
 
   // --- Resolve the last user question (reused for cache + RAG) -------
-  const lastUser = [...input.messages]
+  const lastUser = [...messages]
     .reverse()
     .find((m) => m.role === "user");
 
@@ -139,16 +191,17 @@ export async function sendTutorMessage(input: {
       const { getOffTopicRefusal } = await import(
         "@/server/ai/prompts/refusals"
       );
-      const lastAssistant = [...input.messages]
+      const lastAssistant = [...messages]
         .reverse()
         .find((m) => m.role === "assistant");
       if (
         isOffTopicForCourse(lastUser.content, course.keywords, {
           priorAssistantContent: lastAssistant?.content ?? null,
+          groundedToLesson: Boolean(lessonSlug),
         })
       ) {
         const refusal = getOffTopicRefusal(course.titleNative, language);
-        if (shouldUseSharedTutorCache(input.messages)) {
+        if (shouldUseSharedTutorCache(messages)) {
           // Overwrite any previous mistaken cache entry for this question.
           setCachedTutorResponse(
             lastUser.content,
@@ -159,11 +212,15 @@ export async function sendTutorMessage(input: {
           ).catch(() => {});
         }
         if (user && conversationId) {
-          await writeClient.from("chat_messages").insert({
-            conversation_id: conversationId,
-            role: "assistant",
-            content: refusal,
-          });
+          try {
+            await writeClient.from("chat_messages").insert({
+              conversation_id: conversationId,
+              role: "assistant",
+              content: refusal,
+            });
+          } catch (err) {
+            console.warn("[tutor] persist refusal failed:", (err as Error).message);
+          }
         }
         return {
           content: refusal,
@@ -184,12 +241,12 @@ export async function sendTutorMessage(input: {
       const { isGrammarExplainQuery } = await import(
         "@/server/ai/grammar-grounding"
       );
-      skipFaqCache = isGrammarExplainQuery(lastUser.content);
+      skipFaqCache = isGrammarExplainQuery(lastUser.content) || Boolean(lessonSlug);
     } catch {
       skipFaqCache = false;
     }
   }
-  if (lastUser && shouldUseSharedTutorCache(input.messages) && !skipFaqCache) {
+  if (lastUser && shouldUseSharedTutorCache(messages) && !skipFaqCache) {
     try {
       const cached = await getCachedTutorResponse(
         lastUser.content,
@@ -199,16 +256,33 @@ export async function sendTutorMessage(input: {
       );
       if (cached) {
         if (user && conversationId) {
-          await writeClient.from("chat_messages").insert({
-            conversation_id: conversationId,
-            role: "assistant",
-            content: cached,
+          try {
+            await writeClient.from("chat_messages").insert({
+              conversation_id: conversationId,
+              role: "assistant",
+              content: cached,
+            });
+            await supabase
+              .from("chat_conversations")
+              .update({ updated_at: new Date().toISOString() })
+              .eq("id", conversationId);
+            await recordStudySession(1, 0).catch(() => {});
+          } catch (err) {
+            console.warn("[tutor] persist cache hit failed:", (err as Error).message);
+          }
+        }
+        try {
+          const { recordAiMetric } = await import("@/lib/ai-metrics");
+          recordAiMetric({
+            op: "tutor_cache",
+            provider: "cache",
+            model: "cache",
+            ok: true,
+            latencyMs: 0,
+            courseId: resolvedCourseId,
           });
-          await supabase
-            .from("chat_conversations")
-            .update({ updated_at: new Date().toISOString() })
-            .eq("id", conversationId);
-          await recordStudySession(2, 0).catch(() => {});
+        } catch {
+          /* metrics optional */
         }
         return {
           content: cached,
@@ -228,14 +302,23 @@ export async function sendTutorMessage(input: {
   if (lastUser) {
     try {
       const course = await getCourse(resolvedCourseId);
-      const { resolveGrammarGrounding } = await import(
-        "@/server/ai/grammar-grounding"
-      );
-      grammarGrounding = resolveGrammarGrounding({
-        course,
-        query: lastUser.content,
-        interfaceLanguage: language,
-      });
+      const {
+        resolveGrammarGrounding,
+        groundingForSlug,
+        queryMentionsImperativo,
+        spanishImperativoQuickLock,
+      } = await import("@/server/ai/grammar-grounding");
+      grammarGrounding = lessonSlug
+        ? groundingForSlug({
+            course,
+            slug: lessonSlug,
+            interfaceLanguage: language,
+          })
+        : resolveGrammarGrounding({
+            course,
+            query: lastUser.content,
+            interfaceLanguage: language,
+          });
 
       // Grammar explains: prefer the static article only (smaller prompt,
       // reliable when providers rate-limit). Skip heavy textbook RAG.
@@ -258,40 +341,89 @@ export async function sendTutorMessage(input: {
           .join("\n\n");
         if (!retrievedContext) retrievedContext = null;
       }
+
+      // Extra Imperativo lock even on exercise turns (vosotros slips are common).
+      if (
+        resolvedCourseId === "spanish" &&
+        (queryMentionsImperativo(lastUser.content) ||
+          grammarGrounding?.toLowerCase().includes("imperativ"))
+      ) {
+        const lock = spanishImperativoQuickLock();
+        retrievedContext = retrievedContext
+          ? `${lock}\n\n${retrievedContext}`
+          : lock;
+      }
     } catch (err) {
       console.warn("[tutor] retrieval failed:", (err as Error).message);
     }
   }
 
   // --- Generate AI response (course-aware via prompt registry) --------
-  let response = await generateAIResponse({
-    messages: input.messages,
-    level,
-    interfaceLanguage: language,
-    userName,
-    retrievedContext,
-    // Leaner context on explain turns → fewer token / provider failures.
-    learnerContext: explainQuery ? null : learnerPromptBlock,
-    courseId: resolvedCourseId,
-  });
+  let response;
+  try {
+    response = await generateAIResponse({
+      messages,
+      level,
+      interfaceLanguage: language,
+      userName,
+      retrievedContext,
+      // Leaner context on explain turns → fewer token / provider failures.
+      learnerContext: explainQuery ? null : learnerPromptBlock,
+      courseId: resolvedCourseId,
+      groundedToLesson: Boolean(lessonSlug),
+    });
+  } catch (err) {
+    console.warn("[tutor] generateAIResponse failed:", (err as Error).message);
+    response = {
+      content:
+        language === "ru"
+          ? "😔 Извините, я не смог обработать ваш запрос. Попробуйте ещё раз через минуту."
+          : language === "es"
+            ? "😔 Lo siento, no pude procesar tu solicitud. Inténtalo de nuevo en un minuto."
+            : language === "de"
+              ? "😔 Entschuldigung, ich konnte deine Anfrage nicht verarbeiten. Bitte versuche es in einer Minute erneut."
+              : "😔 Sorry, I couldn't process your request. Please try again in a minute.",
+      provider: "groq" as const,
+      model: "unavailable",
+    };
+  }
 
   // Provider outage: still answer Explain: … from the static rule bank.
   if (
     lastUser &&
-    grammarGrounding &&
-    (response.content.startsWith("😔") || response.content.startsWith("⚠️"))
+    shouldUseStaticGrammarFallback(response.content, grammarGrounding)
   ) {
-    const { formatStaticGrammarTutorReply } = await import(
-      "@/server/ai/grammar-grounding"
-    );
+    try {
+      const { formatStaticGrammarTutorReply } = await import(
+        "@/server/ai/grammar-grounding"
+      );
+      response = {
+        ...response,
+        content: formatStaticGrammarTutorReply({
+          groundingBlock: grammarGrounding!,
+          interfaceLanguage: language,
+        }),
+        provider: "static-grammar",
+        model: "course-bank",
+      };
+    } catch (err) {
+      console.warn("[tutor] static grammar fallback failed:", (err as Error).message);
+    }
+  }
+
+  // Final safety net: CJK leaks + common Imperativo conjugation slips (Spanish only).
+  {
+    const { scrubScriptLeaks } = await import("@/server/ai/scrub-script-leaks");
+    let content = scrubScriptLeaks(response.content, language);
+    if (resolvedCourseId === "spanish") {
+      const { scrubSpanishImperativoLeaks } = await import(
+        "@/server/ai/scrub-conjugation-leaks"
+      );
+      content = scrubSpanishImperativoLeaks(content);
+    }
     response = {
       ...response,
-      content: formatStaticGrammarTutorReply({
-        groundingBlock: grammarGrounding,
-        interfaceLanguage: language,
-      }),
-      provider: "static-grammar",
-      model: "course-bank",
+      content,
     };
   }
   // --- Store in shared cache for other users (best-effort) ------------
@@ -299,7 +431,7 @@ export async function sendTutorMessage(input: {
   if (
     lastUser &&
     response.content &&
-    shouldUseSharedTutorCache(input.messages) &&
+    shouldUseSharedTutorCache(messages) &&
     !skipFaqCache &&
     !grammarGrounding
   ) {
@@ -314,18 +446,20 @@ export async function sendTutorMessage(input: {
 
   // --- Persist assistant reply (best-effort) --------------------------
   if (user && conversationId) {
-    await writeClient.from("chat_messages").insert({
-      conversation_id: conversationId,
-      role: "assistant",
-      content: response.content,
-    });
-    await writeClient
-      .from("chat_conversations")
-      .update({ updated_at: new Date().toISOString() })
-      .eq("id", conversationId);
-
-    // Count study time: ~2 min per exchange.
-    await recordStudySession(2, 0).catch(() => {});
+    try {
+      await writeClient.from("chat_messages").insert({
+        conversation_id: conversationId,
+        role: "assistant",
+        content: response.content,
+      });
+      await writeClient
+        .from("chat_conversations")
+        .update({ updated_at: new Date().toISOString() })
+        .eq("id", conversationId);
+      await recordStudySession(1, 0).catch(() => {});
+    } catch (err) {
+      console.warn("[tutor] persist assistant failed:", (err as Error).message);
+    }
   }
 
   // --- Silent Student Learning Profile update (never shown to user) ---
@@ -393,19 +527,29 @@ export async function getTutorSessionOpening(): Promise<{
     }
   }
 
-  const { buildTeacherContext } = await import("@/server/ai/learner-context");
-  const teacher = await buildTeacherContext({
-    courseId,
-    interfaceLanguage: language,
-    level,
-  });
+  try {
+    const { buildTeacherContext } = await import("@/server/ai/learner-context");
+    const teacher = await buildTeacherContext({
+      courseId,
+      interfaceLanguage: language,
+      level,
+    });
 
-  return {
-    opening: teacher.sessionOpening,
-    recommendedNextTopic: teacher.recommendedNextTopic,
-    currentChapter: teacher.currentChapter,
-    fingerprint: teacher.fingerprint,
-  };
+    return {
+      opening: teacher.sessionOpening,
+      recommendedNextTopic: teacher.recommendedNextTopic,
+      currentChapter: teacher.currentChapter,
+      fingerprint: teacher.fingerprint,
+    };
+  } catch (err) {
+    console.warn("[tutor] session opening failed:", (err as Error).message);
+    return {
+      opening: "",
+      recommendedNextTopic: "",
+      currentChapter: null,
+      fingerprint: "",
+    };
+  }
 }
 
 // =====================================================================
@@ -414,7 +558,7 @@ export async function getTutorSessionOpening(): Promise<{
 
 export interface GeneratedExercise {
   type: ExerciseType;
-  level: Level;
+  level: GrammarLevel;
   question: string;
   instruction?: string;
   options?: string[];
@@ -526,6 +670,7 @@ export async function generateExercise(input: {
       retrievedContext: exerciseContext,
       learnerContext: learnerPromptBlock,
       courseId,
+      metricOp: "exercise_generate",
     },
   );
 
@@ -550,9 +695,7 @@ function sanitizeExercise(
   // Multiple choice: guarantee the answer is among the options.
   if (type === "multiple_choice" && ex.options && ex.options.length > 0) {
     const opts = ex.options.map((o) => o.trim());
-    const norm = (s: string) =>
-      s.trim().toLowerCase().replace(/[¿?¡!.,]/g, "");
-    const exists = opts.some((o) => norm(o) === norm(answer));
+    const exists = opts.some((o) => normalizeAnswer(o) === normalizeAnswer(answer));
     if (!exists) {
       // Force-insert the correct answer, replacing a random wrong option.
       const idx = Math.floor(Math.random() * opts.length);
@@ -562,7 +705,7 @@ function sanitizeExercise(
     const seen = new Set<string>();
     const deduped: string[] = [];
     for (const o of opts) {
-      const key = norm(o);
+      const key = normalizeAnswer(o);
       if (!seen.has(key)) {
         seen.add(key);
         deduped.push(o);
@@ -603,8 +746,9 @@ function shuffle<T>(arr: T[]): T[] {
 
 /**
  * Check a learner's answer against the correct one.
- * Uses the model for tolerance (accents, capitalization, word order)
- * but falls back to a strict comparison.
+ * Exact bank matches stay local. For static translation / error_correction,
+ * near-misses get a soft AI check so equivalent wordings with the same
+ * construction are accepted. Other static types keep bank-only grading.
  */
 export async function checkExerciseAnswer(input: {
   exercise: GeneratedExercise;
@@ -612,160 +756,209 @@ export async function checkExerciseAnswer(input: {
   level: Level;
   language?: InterfaceLanguage;
   courseId?: string;
+  /**
+   * Student UIs already show «Correct answer» separately.
+   * Default false to avoid duplicating it inside tutor feedback.
+   */
+  includeModelAnswer?: boolean;
 }): Promise<{
   correct: boolean;
   feedback: string;
 }> {
-  const { generateAIResponse } = await import("@/server/ai/orchestrator");
   const courseId = input.courseId ?? "spanish";
-  const course = await getCourse(courseId);
-
-  const normalized = (s: string) =>
-    s.trim().toLowerCase().replace(/[¿?¡!.,]/g, "").replace(/\s+/g, " ");
-
-  const userNorm = normalized(input.userAnswer);
-  const acceptable = [
-    input.exercise.answer,
-    ...(input.exercise.acceptableAnswers ?? []),
-  ].map(normalized);
-
-  // Fast path: exact / normalized match.
-  if (acceptable.includes(userNorm)) {
-    const feedback = input.exercise.staticSource
-      ? (await import("@/lib/tutor-feedback")).formatBankTutorFeedback({
-          language: input.language,
-          correct: true,
-          explanation: input.exercise.explanation,
-        })
-      : input.exercise.explanation;
-
-    await saveExerciseHistory({
-      exercise: input.exercise.question,
-      exerciseId: input.exercise.exerciseId,
-      courseId,
-      type: input.exercise.type,
-      level: input.level,
-      userAnswer: input.userAnswer,
-      correct: true,
-      feedback,
-    });
-    await recordExerciseProfileUpdate({
-      courseId,
-      topic: input.exercise.topic,
-      correct: true,
-      feedback,
-    });
-    if (input.exercise.exerciseId) {
-      const { recordExerciseAttempt } = await import(
-        "@/server/learning/exercise-progress"
+  const includeModelAnswer = input.includeModelAnswer === true;
+  const bankExplanation = input.exercise.explanation;
+  const { shouldSoftCheckEquivalents, enrichFeedbackWithConstruction } =
+    await import("@/lib/exercise-construction-hint");
+  const {
+    ensureModelAnswerInFeedback,
+    formatBankTutorFeedback,
+    stripEmbeddedModelAnswer,
+  } = await import("@/lib/tutor-feedback");
+  const { plainTutorText } = await import("@/lib/plain-tutor-text");
+  const finish = (correct: boolean, rawFeedback: string) => {
+    const lang = input.language ?? "ru";
+    let feedback = rawFeedback;
+    if (includeModelAnswer) {
+      feedback = ensureModelAnswerInFeedback(
+        feedback,
+        input.exercise.answer,
+        lang,
+        correct,
       );
-      await recordExerciseAttempt({
-        courseId,
-        exerciseId: input.exercise.exerciseId,
-        correct: true,
-      });
+    } else {
+      feedback = stripEmbeddedModelAnswer(
+        feedback,
+        input.exercise.answer,
+        lang,
+      );
     }
-
-    return {
-      correct: true,
-      feedback,
-    };
-  }
-
-  // Static bank exercises: use stored explanation framed as tutor feedback.
-  if (input.exercise.staticSource) {
-    const feedback = (
-      await import("@/lib/tutor-feedback")
-    ).formatBankTutorFeedback({
+    return { correct, feedback: plainTutorText(feedback) };
+  };
+  const bankFeedback = (correct: boolean) =>
+    formatBankTutorFeedback({
       language: input.language,
-      correct: false,
-      explanation: input.exercise.explanation,
+      correct,
+      explanation: bankExplanation,
+      instruction: input.exercise.instruction,
+      exerciseType: input.exercise.type,
+      answer: input.exercise.answer,
+      includeModelAnswer,
     });
 
+  if (
+    answersMatch(input.userAnswer, [
+      input.exercise.answer,
+      ...(input.exercise.acceptableAnswers ?? []),
+    ]) ||
+    ((input.exercise.type === "translation" ||
+      input.exercise.type === "error_correction") &&
+      answersMatchFlexible(input.userAnswer, [
+        input.exercise.answer,
+        ...(input.exercise.acceptableAnswers ?? []),
+      ]))
+  ) {
+    const outcome = finish(
+      true,
+      input.exercise.staticSource
+        ? bankFeedback(true)
+        : input.exercise.explanation,
+    );
+
+    await persistExerciseOutcome({
+      exercise: input.exercise,
+      courseId,
+      level: input.level,
+      userAnswer: input.userAnswer,
+      correct: outcome.correct,
+      feedback: outcome.feedback,
+    });
+
+    return outcome;
+  }
+
+  const allowSoftAi =
+    !input.exercise.staticSource ||
+    shouldSoftCheckEquivalents(input.exercise.type);
+
+  if (input.exercise.staticSource && !allowSoftAi) {
+    const outcome = finish(false, bankFeedback(false));
+
+    await persistExerciseOutcome({
+      exercise: input.exercise,
+      courseId,
+      level: input.level,
+      userAnswer: input.userAnswer,
+      correct: outcome.correct,
+      feedback: outcome.feedback,
+    });
+
+    return outcome;
+  }
+
+  let isCorrect = false;
+  let feedback = bankFeedback(false);
+  try {
+    const { generateAIResponse } = await import("@/server/ai/orchestrator");
+    const course = await getCourse(courseId);
+
+    const prompt = buildExerciseCheckPrompt({
+      exercise: input.exercise,
+      userAnswer: input.userAnswer,
+      course,
+      language: input.language,
+    });
+
+    const response = await generateAIResponse({
+      messages: [{ role: "user", content: prompt }],
+      level: input.level,
+      temperature: 0.1,
+      maxTokens: 150,
+      skipGuard: true,
+      interfaceLanguage: input.language,
+      courseId,
+      metricOp: "exercise_check",
+    });
+
+    isCorrect = /VERDICT:\s*CORRECT/i.test(response.content);
+    const feedbackMatch = response.content.match(/FEEDBACK:\s*([\s\S]+)/i);
+    const aiFeedback = feedbackMatch?.[1]?.trim();
+    if (aiFeedback) {
+      feedback = enrichFeedbackWithConstruction({
+        language: input.language,
+        correct: isCorrect,
+        feedback: aiFeedback,
+        instruction: input.exercise.instruction,
+        explanation: bankExplanation,
+        exerciseType: input.exercise.type,
+        answer:
+          includeModelAnswer && !isCorrect ? input.exercise.answer : null,
+      });
+    } else if (isCorrect) {
+      feedback = bankFeedback(true);
+    }
+  } catch (err) {
+    console.warn("[exercises] AI check failed:", (err as Error).message);
+  }
+
+  const outcome = finish(isCorrect, feedback);
+
+  await persistExerciseOutcome({
+    exercise: input.exercise,
+    courseId,
+    level: input.level,
+    userAnswer: input.userAnswer,
+    correct: outcome.correct,
+    feedback: outcome.feedback,
+  });
+
+  return outcome;
+}
+
+/** Silent learning-profile update after an exercise attempt. */
+async function persistExerciseOutcome(input: {
+  exercise: GeneratedExercise;
+  courseId: string;
+  level: Level;
+  userAnswer: string;
+  correct: boolean;
+  feedback: string;
+}): Promise<void> {
+  const { plainTutorText } = await import("@/lib/plain-tutor-text");
+  const feedback = plainTutorText(input.feedback);
+  try {
     await saveExerciseHistory({
       exercise: input.exercise.question,
       exerciseId: input.exercise.exerciseId,
-      courseId,
+      courseId: input.courseId,
       type: input.exercise.type,
       level: input.level,
       userAnswer: input.userAnswer,
-      correct: false,
+      correct: input.correct,
       feedback,
     });
-    await recordExerciseProfileUpdate({
-      courseId,
-      topic: input.exercise.topic,
-      correct: false,
-      feedback,
-    });
-    if (input.exercise.exerciseId) {
-      const { recordExerciseAttempt } = await import(
-        "@/server/learning/exercise-progress"
-      );
-      await recordExerciseAttempt({
-        courseId,
-        exerciseId: input.exercise.exerciseId,
-        correct: false,
-      });
-    }
-
-    return {
-      correct: false,
-      feedback,
-    };
+  } catch (err) {
+    console.warn("[exercises] history persist failed:", (err as Error).message);
   }
-
-  const prompt = buildExerciseCheckPrompt({
-    exercise: input.exercise,
-    userAnswer: input.userAnswer,
-    course,
-    language: input.language,
-  });
-
-  const response = await generateAIResponse({
-    messages: [{ role: "user", content: prompt }],
-    level: input.level,
-    temperature: 0.1,
-    maxTokens: 150,
-    skipGuard: true,
-    interfaceLanguage: input.language,
-    courseId,
-  });
-
-  const isCorrect = /VERDICT:\s*CORRECT/i.test(response.content);
-  const feedbackMatch = response.content.match(/FEEDBACK:\s*([\s\S]+)/i);
-  const feedback = feedbackMatch
-    ? feedbackMatch[1].trim()
-    : input.exercise.explanation;
-
-  await saveExerciseHistory({
-    exercise: input.exercise.question,
-    exerciseId: input.exercise.exerciseId,
-    courseId,
-    type: input.exercise.type,
-    level: input.level,
-    userAnswer: input.userAnswer,
-    correct: isCorrect,
-    feedback,
-  });
   await recordExerciseProfileUpdate({
-    courseId,
+    courseId: input.courseId,
     topic: input.exercise.topic,
-    correct: isCorrect,
+    correct: input.correct,
     feedback,
   });
-  if (input.exercise.exerciseId) {
+  if (!input.exercise.exerciseId) return;
+  try {
     const { recordExerciseAttempt } = await import(
       "@/server/learning/exercise-progress"
     );
     await recordExerciseAttempt({
-      courseId,
+      courseId: input.courseId,
       exerciseId: input.exercise.exerciseId,
-      correct: isCorrect,
+      correct: input.correct,
     });
+  } catch (err) {
+    console.warn("[exercises] attempt persist failed:", (err as Error).message);
   }
-
-  return { correct: isCorrect, feedback };
 }
 
 /** Silent learning-profile update after an exercise attempt. */
@@ -822,11 +1015,12 @@ async function saveExerciseHistory(input: {
   const admin = createSupabaseAdminClient();
   const writeClient = admin ?? userClient;
 
+  const { toUserLevel } = await import("@/lib/user-level");
   const row: Record<string, unknown> = {
     user_id: user.id,
     exercise: input.exercise,
     exercise_type: input.type,
-    level: input.level,
+    level: toUserLevel(input.level),
     user_answer: input.userAnswer,
     correct: input.correct,
     feedback: input.feedback,
@@ -840,7 +1034,9 @@ async function saveExerciseHistory(input: {
     console.error("[saveExerciseHistory] insert error:", error.message);
   }
 
-  await recordStudySession(3, 1).catch(() => {});
+  // Do NOT call recordStudySession here — every check was adding ~3 minutes
+  // and inflated "today" totals (Daily 8 exercises ≈ +24 before the ritual credit).
+  // Study time is recorded at session boundaries (Daily finish, chapter complete, tutor).
 }
 
 export async function getExerciseHistoryRows(): Promise<ExerciseHistory[]> {

@@ -244,13 +244,35 @@ CREATE POLICY "daily_activity_update_own" ON public.daily_activity
   FOR UPDATE USING (public.is_owner(user_id));
 
 -- ---------- Auto-create profile on signup --------------------------
+-- Prefer signup-role-trigger.sql in production (includes role + consent).
 
 CREATE OR REPLACE FUNCTION public.handle_new_user()
 RETURNS trigger LANGUAGE plpgsql SECURITY DEFINER SET search_path = public AS $$
+DECLARE
+  meta_role text;
+  resolved_role public.user_role;
 BEGIN
-  INSERT INTO public.profiles (id, email, name)
-  VALUES (NEW.id, NEW.email, COALESCE(NEW.raw_user_meta_data->>'name', ''))
-  ON CONFLICT (id) DO NOTHING;
+  meta_role := lower(COALESCE(NEW.raw_user_meta_data->>'role', 'student'));
+  IF meta_role = 'teacher' THEN
+    resolved_role := 'teacher';
+  ELSE
+    resolved_role := 'student';
+  END IF;
+
+  INSERT INTO public.profiles (id, email, name, role, onboarded)
+  VALUES (
+    NEW.id,
+    NEW.email,
+    COALESCE(NEW.raw_user_meta_data->>'name', ''),
+    resolved_role,
+    CASE WHEN resolved_role = 'teacher' THEN true ELSE false END
+  )
+  ON CONFLICT (id) DO UPDATE SET
+    role = EXCLUDED.role,
+    onboarded = CASE
+      WHEN EXCLUDED.role = 'teacher' THEN true
+      ELSE public.profiles.onboarded
+    END;
   RETURN NEW;
 END;
 $$;

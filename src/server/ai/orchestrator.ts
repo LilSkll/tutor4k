@@ -16,6 +16,14 @@ import {
 import { getCourse } from "@/config/courses";
 import { isOffTopicForCourse } from "@/server/ai/prompts/domain-guard";
 import { getOffTopicRefusal } from "@/server/ai/prompts/refusals";
+import { scrubSpanishImperativoLeaks } from "@/server/ai/scrub-conjugation-leaks";
+import { scrubScriptLeaks } from "@/server/ai/scrub-script-leaks";
+import { getInterfaceLanguageName } from "@/server/ai/prompts/interface-language";
+import {
+  estimateCostUsd,
+  recordAiMetric,
+  type AiOperation,
+} from "@/lib/ai-metrics";
 
 // =====================================================================
 // AI Orchestrator
@@ -113,6 +121,8 @@ export async function generateAIResponse(
     retrievedContext,
     learnerContext,
     courseId = "spanish",
+    groundedToLesson = false,
+    metricOp = "tutor",
   } = options;
 
   const resolvedLanguage: InterfaceLanguage =
@@ -154,8 +164,17 @@ export async function generateAIResponse(
     lastUserMessage &&
     isOffTopicForCourse(lastUserMessage.content, course.keywords, {
       priorAssistantContent: lastAssistantMessage?.content ?? null,
+      groundedToLesson,
     })
   ) {
+    recordAiMetric({
+      op: metricOp,
+      provider: "guard",
+      model: "guard",
+      ok: true,
+      latencyMs: 0,
+      courseId: courseId ?? undefined,
+    });
     return {
       content: getOffTopicRefusal(course.titleNative, resolvedLanguage),
       provider: "groq",
@@ -197,12 +216,50 @@ export async function generateAIResponse(
   }
 
   const errors: string[] = [];
+  const started = Date.now();
+  const op: AiOperation = metricOp;
 
   for (const provider of chain) {
+    const attemptStarted = Date.now();
     try {
-      return await callWithRetry(provider, providerOptions);
+      const result = await callWithRetry(provider, providerOptions);
+      let content = scrubScriptLeaks(result.content, resolvedLanguage);
+      if (courseId === "spanish") {
+        content = scrubSpanishImperativoLeaks(content);
+      }
+      const promptTokens = result.usage?.promptTokens;
+      const completionTokens = result.usage?.completionTokens;
+      recordAiMetric({
+        op,
+        provider: result.provider,
+        model: result.model,
+        ok: true,
+        latencyMs: Date.now() - started,
+        promptTokens,
+        completionTokens,
+        costUsd: estimateCostUsd({
+          model: result.model,
+          promptTokens,
+          completionTokens,
+        }),
+        courseId: courseId ?? undefined,
+      });
+      return {
+        ...result,
+        content,
+      };
     } catch (err) {
       errors.push(`${provider.name}: ${(err as Error).message}`);
+      const status = err instanceof Error ? err.message.match(/\b([45]\d\d)\b/)?.[1] : undefined;
+      recordAiMetric({
+        op,
+        provider: provider.name,
+        model: "unavailable",
+        ok: false,
+        latencyMs: Date.now() - attemptStarted,
+        errorCode: status ? `http_${status}` : "provider_error",
+        courseId: courseId ?? undefined,
+      });
     }
   }
 
@@ -216,10 +273,109 @@ export async function generateAIResponse(
           : "😔 Sorry, I couldn't process your request. Please try again in a minute.";
 
   console.error("[orchestrator] All providers failed:", errors);
+  recordAiMetric({
+    op,
+    provider: chain[0]?.name,
+    model: "unavailable",
+    ok: false,
+    latencyMs: Date.now() - started,
+    errorCode: "all_providers_failed",
+    courseId: courseId ?? undefined,
+  });
 
   return {
     content: fallbackMessage,
     provider: chain[0].name,
+    model: "unavailable",
+  };
+}
+
+/**
+ * Call the provider chain with an explicit system prompt (Teacher Studio coach, etc.).
+ * Does not attach the student tutor course prompt or domain guard.
+ */
+export async function generateWithSystemPrompt(options: {
+  systemPrompt: string;
+  messages: AIMessage[];
+  temperature?: number;
+  maxTokens?: number;
+  interfaceLanguage?: InterfaceLanguage;
+}): Promise<AIResponse> {
+  const resolvedLanguage: InterfaceLanguage =
+    options.interfaceLanguage ?? "en";
+  const languageLock = `\n\nLANGUAGE LOCK: Write the entire reply in ${getInterfaceLanguageName(resolvedLanguage)}. Do not switch language.`;
+  const providerOptions: ProviderCallOptions = {
+    messages: options.messages,
+    temperature: options.temperature ?? 0.4,
+    maxTokens: options.maxTokens ?? 1200,
+    systemPrompt: `${options.systemPrompt}${languageLock}`,
+  };
+
+  const chain = buildProviderChain();
+  if (chain.length === 0) {
+    return {
+      content:
+        resolvedLanguage === "ru"
+          ? "⚠️ ИИ-сервис не настроен."
+          : resolvedLanguage === "es"
+            ? "⚠️ El servicio de IA no está configurado."
+            : resolvedLanguage === "de"
+              ? "⚠️ KI-Dienst ist nicht konfiguriert."
+              : "⚠️ AI service is not configured.",
+      provider: "groq",
+      model: "none",
+    };
+  }
+
+  const errors: string[] = [];
+  const started = Date.now();
+  for (const provider of chain) {
+    try {
+      const result = await callWithRetry(provider, providerOptions);
+      const promptTokens = result.usage?.promptTokens;
+      const completionTokens = result.usage?.completionTokens;
+      recordAiMetric({
+        op: "teacher_coach",
+        provider: result.provider,
+        model: result.model,
+        ok: true,
+        latencyMs: Date.now() - started,
+        promptTokens,
+        completionTokens,
+        costUsd: estimateCostUsd({
+          model: result.model,
+          promptTokens,
+          completionTokens,
+        }),
+      });
+      return {
+        ...result,
+        content: scrubScriptLeaks(result.content, resolvedLanguage),
+      };
+    } catch (err) {
+      errors.push(`${provider.name}: ${(err as Error).message}`);
+    }
+  }
+
+  console.error("[orchestrator] custom system prompt failed:", errors);
+  recordAiMetric({
+    op: "teacher_coach",
+    provider: chain[0]?.name,
+    model: "unavailable",
+    ok: false,
+    latencyMs: Date.now() - started,
+    errorCode: "all_providers_failed",
+  });
+  return {
+    content:
+      resolvedLanguage === "ru"
+        ? "Не удалось сгенерировать анализ. Попробуйте позже."
+        : resolvedLanguage === "es"
+          ? "No se pudo generar el análisis. Inténtalo más tarde."
+          : resolvedLanguage === "de"
+            ? "Analyse konnte nicht erstellt werden. Bitte später erneut versuchen."
+            : "Could not generate the analysis. Please try again later.",
+    provider: chain[0]!.name,
     model: "unavailable",
   };
 }
@@ -235,6 +391,7 @@ export async function generateStructuredJSON<T>(
     retrievedContext?: string | null;
     learnerContext?: string | null;
     courseId?: string | null;
+    metricOp?: AIGenerateOptions["metricOp"];
   },
 ): Promise<T> {
   const response = await generateAIResponse({
@@ -247,6 +404,7 @@ export async function generateStructuredJSON<T>(
     retrievedContext: opts?.retrievedContext,
     learnerContext: opts?.learnerContext,
     courseId: opts?.courseId ?? "spanish",
+    metricOp: opts?.metricOp ?? "structured_json",
   });
 
   const jsonMatch = response.content.match(/\{[\s\S]*\}/);

@@ -6,6 +6,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { chapterFromSeeds } from "./exercise-pack-utils.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const outPath = path.join(
@@ -14,125 +15,6 @@ const outPath = path.join(
 );
 
 const existing = JSON.parse(fs.readFileSync(outPath, "utf8"));
-
-function mc(q, options, answer, instruction, explanation, g) {
-  return {
-    type: "multiple_choice",
-    question: q,
-    options,
-    answer,
-    instruction,
-    explanation,
-    grammarTopic: g,
-  };
-}
-function fb(q, answer, instruction, explanation, g, acceptableAnswers) {
-  return {
-    type: "fill_blank",
-    question: q,
-    answer,
-    acceptableAnswers:
-      acceptableAnswers || [answer[0].toUpperCase() + answer.slice(1), answer],
-    instruction,
-    explanation,
-    grammarTopic: g,
-  };
-}
-function tr(q, answer, instruction, explanation, g, acceptableAnswers = []) {
-  return {
-    type: "translation",
-    question: q,
-    answer,
-    acceptableAnswers,
-    instruction,
-    explanation,
-    grammarTopic: g,
-  };
-}
-function ec(q, answer, instruction, explanation, g, acceptableAnswers = []) {
-  return {
-    type: "error_correction",
-    question: q,
-    answer,
-    acceptableAnswers,
-    instruction,
-    explanation,
-    grammarTopic: g,
-  };
-}
-function sb(tokens, answer, instruction, explanation, g, acceptableAnswers = []) {
-  return {
-    type: "sentence_building",
-    question: tokens.join(" / "),
-    options: tokens,
-    answer,
-    acceptableAnswers,
-    instruction,
-    explanation,
-    grammarTopic: g,
-  };
-}
-function pack(mcA, fbA, trA, ecA, sbA) {
-  return {
-    multiple_choice: mcA.slice(0, 20),
-    fill_blank: fbA.slice(0, 20),
-    translation: trA.slice(0, 20),
-    error_correction: ecA.slice(0, 20),
-    sentence_building: sbA.slice(0, 20),
-  };
-}
-
-function chapterFromSeeds(g, topic, seeds) {
-  const mcA = [];
-  const fbA = [];
-  const trA = [];
-  const ecA = [];
-  const sbA = [];
-  for (let i = 0; i < 20; i++) {
-    const s = seeds[i % seeds.length];
-    const n = i + 1;
-    const q = i < seeds.length ? s.q : s.q.replace(/\.$/, "").replace(/\?$/, "") + ` (#${n}).`;
-    const opts = s.options || [s.ans, "—", "—", "—"];
-    const options = [...new Set([s.ans, ...opts.filter((o) => o !== s.ans)])].slice(0, 4);
-    while (options.length < 4) options.push(`${s.ans}?`);
-    mcA.push(
-      mc(q, options, s.ans, "Выберите правильный ответ", s.explanation || `${topic}: «${s.ans}».`, g),
-    );
-    fbA.push(
-      fb(
-        q.includes("___") ? q : `Completa (${topic}) #${n}: ___`,
-        s.ans,
-        "Заполните пропуск",
-        s.explanation || `${topic}: «${s.ans}».`,
-        g,
-      ),
-    );
-    const filled = q.replace("___", s.ans).replace(/ \(#\d+\)\.?$/, "").replace(/\.$/, "") + (q.includes("?") ? "?" : ".");
-    const wrong = options.find((o) => o !== s.ans) || "WRONG";
-    const broken = q.replace("___", wrong).replace(/ \(#\d+\)\.?$/, "").replace(/\.$/, "") + (q.includes("?") ? "?" : ".");
-    trA.push(
-      tr(
-        s.ru || `Напишите по-испански, используя «${s.ans}» (#${n}).`,
-        s.es || filled,
-        "Переведите на испанский",
-        s.explanation || `${topic}: «${s.ans}».`,
-        g,
-        s.acc || [s.ans, (s.es || filled).toLowerCase()],
-      ),
-    );
-    ecA.push(
-      ec(broken, filled, "Исправьте ошибку", `Нужно «${s.ans}», не «${wrong}».`, g, [s.ans]),
-    );
-    const tokens = filled.replace(/[¿?¡!.]/g, "").split(/\s+/).filter(Boolean).slice(0, 6);
-    const toks = tokens.length >= 3 ? tokens : ["Por", "favor", "usa", s.ans];
-    sbA.push(
-      sb(toks, toks.join(" "), "Составьте предложение", `${topic}: порядок слов.`, g, [
-        toks.join(" ").toLowerCase(),
-      ]),
-    );
-  }
-  return pack(mcA, fbA, trA, ecA, sbA);
-}
 
 const ES = {
   "chapter-1-despertar": existing["chapter-1-despertar"],

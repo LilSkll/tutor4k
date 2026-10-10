@@ -40,35 +40,51 @@
 
     --radius: 0.875rem;
 
-    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+    --font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji";
+
 
     --shadow-soft: 0 1px 2px hsl(222 47% 11% / 0.04),
       0 4px 16px hsl(222 47% 11% / 0.05);
     --shadow-elevated: 0 4px 8px hsl(222 47% 11% / 0.04),
       0 12px 32px hsl(222 47% 11% / 0.08);
     --shadow-brand: 0 8px 24px hsl(0 74% 50% / 0.25);
+
+    /* Warm liquid glass — light */
+    --glass-shell: 0 0% 100% / 0.72;
+    --glass-surface: 0 0% 100% / 0.58;
+    --glass-float: 0 0% 100% / 0.78;
+    --glass-border: 0 0% 100% / 0.55;
+    --glass-border-strong: 20 20% 91% / 0.65;
+    --glass-highlight: inset 0 1px 0 0 hsl(0 0% 100% / 0.72);
+    --glass-blur: 18px;
+    --glass-blur-strong: 28px;
+    --motion-fast: 160ms;
+    --motion-page: 220ms;
   }
 
   .dark {
-    --background: 222 40% 6%;
+    /* Navy dark theme (blue, not near-black) */
+    --background: 220 42% 12%;
     --foreground: 210 40% 98%;
 
-    --card: 222 36% 9%;
+    --card: 220 38% 15%;
     --card-foreground: 210 40% 98%;
 
-    --popover: 222 36% 9%;
+    --popover: 220 38% 15%;
     --popover-foreground: 210 40% 98%;
 
     --primary: 0 74% 55%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 217 28% 14%;
+    --secondary: 217 34% 18%;
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 217 28% 14%;
-    --muted-foreground: 215 16% 62%;
+    --muted: 217 34% 18%;
+    --muted-foreground: 215 20% 68%;
 
-    --accent: 0 40% 14%;
+    --accent: 0 40% 16%;
     --accent-foreground: 0 90% 80%;
 
     --destructive: 0 72% 51%;
@@ -80,15 +96,88 @@
     --warning: 38 92% 50%;
     --warning-foreground: 222 47% 11%;
 
-    --border: 217 28% 16%;
-    --input: 217 28% 16%;
+    --border: 217 30% 22%;
+    --input: 217 30% 22%;
     --ring: 0 74% 55%;
 
-    --shadow-soft: 0 1px 2px hsl(0 0% 0% / 0.2),
-      0 4px 16px hsl(0 0% 0% / 0.25);
-    --shadow-elevated: 0 4px 8px hsl(0 0% 0% / 0.25),
-      0 12px 32px hsl(0 0% 0% / 0.35);
+    --shadow-soft: 0 1px 2px hsl(220 50% 4% / 0.25),
+      0 4px 16px hsl(220 50% 4% / 0.3);
+    --shadow-elevated: 0 4px 8px hsl(220 50% 4% / 0.28),
+      0 12px 32px hsl(220 50% 4% / 0.38);
     --shadow-brand: 0 8px 24px hsl(0 74% 50% / 0.3);
+
+    /* Cool navy liquid glass — dark */
+    --glass-shell: 220 38% 15% / 0.72;
+    --glass-surface: 220 38% 16% / 0.55;
+    --glass-float: 220 38% 16% / 0.82;
+    --glass-border: 210 40% 98% / 0.08;
+    --glass-border-strong: 217 30% 28% / 0.7;
+    --glass-highlight: inset 0 1px 0 0 hsl(210 40% 98% / 0.1);
+    --glass-blur: 20px;
+    --glass-blur-strong: 32px;
+  }
+
+  /* Auth/marketing without next-themes — match system preference only. */
+  @media (prefers-color-scheme: dark) {
+    .auth-shell {
+      --background: 220 42% 12%;
+      --foreground: 210 40% 98%;
+
+      --card: 220 38% 15%;
+      --card-foreground: 210 40% 98%;
+
+      --popover: 220 38% 15%;
+      --popover-foreground: 210 40% 98%;
+
+      --primary: 0 74% 55%;
+      --primary-foreground: 0 0% 100%;
+
+      --secondary: 217 34% 18%;
+      --secondary-foreground: 210 40% 98%;
+
+      --muted: 217 34% 18%;
+      --muted-foreground: 215 20% 68%;
+
+      --accent: 0 40% 16%;
+      --accent-foreground: 0 90% 80%;
+
+      --destructive: 0 72% 51%;
+      --destructive-foreground: 210 40% 98%;
+
+      --success: 142 71% 45%;
+      --success-foreground: 0 0% 100%;
+
+      --warning: 38 92% 50%;
+      --warning-foreground: 222 47% 11%;
+
+      --border: 217 30% 22%;
+      --input: 217 30% 22%;
+      --ring: 0 74% 55%;
+
+      --shadow-soft: 0 1px 2px hsl(220 50% 4% / 0.25),
+        0 4px 16px hsl(220 50% 4% / 0.3);
+      --shadow-elevated: 0 4px 8px hsl(220 50% 4% / 0.28),
+        0 12px 32px hsl(220 50% 4% / 0.38);
+      --shadow-brand: 0 8px 24px hsl(0 74% 50% / 0.3);
+      color-scheme: dark;
+    }
+  }
+
+  /* Progressive signup: teacher panel + submit label without JS. */
+  .auth-form-native .teacher-panel {
+    display: none;
+  }
+  .auth-form-native:has(#role-teacher:checked) .teacher-panel {
+    display: block;
+  }
+  .auth-form-native .signup-submit-teacher {
+    display: none;
+  }
+  .auth-form-native:has(#role-teacher:checked) .signup-submit-student {
+    display: none;
+  }
+  .auth-form-native:has(#role-teacher:checked) .signup-submit-teacher {
+    display: inline;
   }
 }
 
@@ -113,7 +202,34 @@
 
 @layer components {
   .glass {
-    @apply bg-background/75 backdrop-blur-xl;
+    background: hsl(var(--glass-shell));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    backdrop-filter: blur(var(--glass-blur));
+    box-shadow: var(--glass-highlight);
+  }
+
+  .glass-shell {
+    background: hsl(var(--glass-shell));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    backdrop-filter: blur(var(--glass-blur));
+    border-color: hsl(var(--glass-border-strong));
+    box-shadow: var(--glass-highlight);
+  }
+
+  .glass-surface {
+    background: hsl(var(--glass-surface));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid hsl(var(--glass-border-strong));
+    box-shadow: var(--glass-highlight), var(--shadow-soft);
+  }
+
+  .glass-float {
+    background: hsl(var(--glass-float));
+    -webkit-backdrop-filter: blur(var(--glass-blur-strong));
+    backdrop-filter: blur(var(--glass-blur-strong));
+    border: 1px solid hsl(var(--glass-border-strong));
+    box-shadow: var(--glass-highlight), var(--shadow-elevated);
   }
 
   .gradient-text {
@@ -121,7 +237,16 @@
   }
 
   .card-hover {
-    @apply transition-all duration-200 ease-out hover:shadow-elevated hover:-translate-y-0.5 active:scale-[0.99];
+    transition:
+      transform var(--motion-fast) ease-out,
+      box-shadow var(--motion-fast) ease-out;
+  }
+  .card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--glass-highlight), var(--shadow-elevated);
+  }
+  .card-hover:active {
+    transform: scale(0.99);
   }
 
   .page-container {
@@ -153,15 +278,138 @@
   }
 
   .nav-item {
-    @apply flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all duration-150;
+    @apply flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium;
+    transition:
+      background-color var(--motion-fast) ease-out,
+      color var(--motion-fast) ease-out,
+      box-shadow var(--motion-fast) ease-out,
+      transform var(--motion-fast) ease-out;
   }
 
   .nav-item-active {
-    @apply bg-primary/10 text-primary shadow-sm;
+    @apply text-primary;
+    background: hsl(var(--primary) / 0.12);
+    box-shadow: var(--glass-highlight), 0 1px 2px hsl(var(--primary) / 0.08);
   }
 
   .nav-item-idle {
-    @apply text-muted-foreground hover:bg-accent hover:text-foreground;
+    @apply text-muted-foreground hover:bg-accent/80 hover:text-foreground;
+  }
+
+  /* No animation-fill-mode: lingering transform/translate makes
+     position:fixed tooltips anchor to this box instead of the viewport. */
+  .page-enter {
+    animation: page-enter var(--motion-page) ease-out;
+  }
+}
+
+/* Soft brand atmosphere behind glass (layout unchanged). */
+.hw-app-shell {
+  background-color: hsl(var(--background));
+  background-image:
+    radial-gradient(
+      ellipse 70% 45% at 8% -8%,
+      hsl(var(--primary) / 0.09),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 55% 40% at 100% 0%,
+      hsl(12 100% 60% / 0.06),
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 50% 35% at 50% 100%,
+      hsl(var(--primary) / 0.04),
+      transparent 55%
+    );
+}
+
+html.dark .hw-app-shell {
+  background-image:
+    radial-gradient(
+      ellipse 70% 45% at 8% -8%,
+      hsl(var(--primary) / 0.14),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse 55% 40% at 100% 0%,
+      hsl(220 60% 40% / 0.12),
+      transparent 50%
+    ),
+    radial-gradient(
+      ellipse 50% 35% at 50% 100%,
+      hsl(var(--primary) / 0.06),
+      transparent 55%
+    );
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* One-shot exercise feedback (≤200ms) — never loops. */
+@keyframes answer-pulse {
+  0% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes answer-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-3px);
+  }
+  75% {
+    transform: translateX(3px);
+  }
+}
+
+.answer-pulse {
+  animation: answer-pulse 180ms ease-out both;
+}
+
+.answer-shake {
+  animation: answer-shake 180ms ease-out both;
+}
+
+/* Slightly lighter blur on small screens (perf + battery). */
+@media (max-width: 767px) {
+  :root,
+  .dark {
+    --glass-blur: 14px;
+    --glass-blur-strong: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter,
+  .card-hover,
+  .nav-item,
+  .answer-pulse,
+  .answer-shake,
+  .tab-pill {
+    animation: none !important;
+    transition: none !important;
+  }
+  .card-hover:hover,
+  .card-hover:active {
+    transform: none !important;
   }
 }
 
@@ -271,4 +519,224 @@
 
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-muted-foreground/40;
+}
+
+/* ── Halloween seasonal accents (CSS-only, no permanent loops) ── */
+html[data-season="halloween"] {
+  --shadow-brand: 0 8px 24px hsl(25 90% 45% / 0.28);
+}
+
+/*
+ * Halloween corners: left mascot WebP, right jack-o'-lantern PNG.
+ * Light: navy stage under dark mascot + amber glow under pumpkin.
+ * Dark: quieter mascot, soft amber halo on pumpkin.
+ */
+html[data-season="halloween"] .hw-app-shell {
+  position: relative;
+  isolation: isolate;
+}
+
+html[data-season="halloween"]:not(.dark) .hw-app-shell {
+  background-image:
+    /* Left — navy stage for dark mascot */
+    radial-gradient(
+      ellipse 28% 38% at left 248px bottom,
+      hsl(222 48% 9% / 0.94) 0%,
+      hsl(222 40% 14% / 0.72) 28%,
+      hsl(24 70% 42% / 0.22) 48%,
+      hsl(32 50% 70% / 0.1) 62%,
+      transparent 76%
+    ),
+    /* Right — pumpkin bed: soft amber so orange reads on white */
+    radial-gradient(
+      ellipse 26% 28% at 100% 100%,
+      hsl(28 90% 55% / 0.28) 0%,
+      hsl(24 70% 40% / 0.14) 40%,
+      transparent 72%
+    );
+  background-repeat: no-repeat;
+}
+
+html.dark[data-season="halloween"] .hw-app-shell {
+  background-image:
+    radial-gradient(
+      ellipse 24% 26% at 100% 100%,
+      hsl(28 95% 55% / 0.22) 0%,
+      hsl(24 80% 40% / 0.1) 45%,
+      transparent 70%
+    );
+  background-repeat: no-repeat;
+}
+
+html[data-season="halloween"] .hw-app-shell::before,
+html[data-season="halloween"] .hw-app-shell::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* Left: mascot (portrait) */
+html[data-season="halloween"] .hw-app-shell::before {
+  left: 248px;
+  bottom: 0;
+  width: min(200px, 18vw);
+  height: min(355px, 32vw);
+  opacity: 0.94;
+  background-image: url("/seasonal/halloween-mascot-left.webp");
+  background-position: left bottom;
+  mask-image: linear-gradient(to top, black 78%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to top, black 78%, transparent 100%);
+  filter: drop-shadow(0 10px 22px hsl(222 45% 8% / 0.35));
+}
+
+html.dark[data-season="halloween"] .hw-app-shell::before {
+  opacity: 0.58;
+  filter: drop-shadow(0 8px 22px hsl(220 50% 4% / 0.35));
+}
+
+/* Right: jack-o'-lantern */
+html[data-season="halloween"] .hw-app-shell::after {
+  right: 0;
+  bottom: 0;
+  width: min(168px, 16vw);
+  height: min(168px, 16vw);
+  opacity: 0.92;
+  background-image: url("/seasonal/halloween-pumpkin-right.png");
+  background-position: right bottom;
+  filter:
+    drop-shadow(0 0 14px hsl(28 95% 50% / 0.35))
+    drop-shadow(0 8px 18px hsl(222 30% 20% / 0.18));
+}
+
+html.dark[data-season="halloween"] .hw-app-shell::after {
+  opacity: 0.78;
+  filter:
+    drop-shadow(0 0 18px hsl(28 100% 52% / 0.45))
+    drop-shadow(0 6px 16px hsl(220 50% 4% / 0.4));
+}
+
+html[data-season="halloween"] .hw-app-shell > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 767px) {
+  html[data-season="halloween"]:not(.dark) .hw-app-shell {
+    background-image:
+      radial-gradient(
+        ellipse 38% 34% at 0% 100%,
+        hsl(222 48% 9% / 0.88) 0%,
+        hsl(222 40% 14% / 0.55) 34%,
+        hsl(24 70% 42% / 0.16) 52%,
+        transparent 72%
+      ),
+      radial-gradient(
+        ellipse 36% 28% at 100% 100%,
+        hsl(28 90% 55% / 0.24) 0%,
+        hsl(24 70% 40% / 0.1) 45%,
+        transparent 70%
+      );
+  }
+
+  html.dark[data-season="halloween"] .hw-app-shell {
+    background-image:
+      radial-gradient(
+        ellipse 34% 26% at 100% 100%,
+        hsl(28 95% 55% / 0.2) 0%,
+        transparent 68%
+      );
+  }
+
+  html[data-season="halloween"] .hw-app-shell::before,
+  html[data-season="halloween"] .hw-app-shell::after {
+    bottom: calc(3.75rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  html[data-season="halloween"] .hw-app-shell::before {
+    left: 0;
+    width: min(100px, 28vw);
+    height: min(178px, 48vw);
+    opacity: 0.88;
+    filter: drop-shadow(0 8px 16px hsl(222 45% 8% / 0.28));
+  }
+
+  html.dark[data-season="halloween"] .hw-app-shell::before {
+    opacity: 0.42;
+  }
+
+  html[data-season="halloween"] .hw-app-shell::after {
+    width: min(92px, 26vw);
+    height: min(92px, 26vw);
+    opacity: 0.88;
+  }
+
+  html.dark[data-season="halloween"] .hw-app-shell::after {
+    opacity: 0.72;
+  }
+}
+
+@media (max-width: 380px) {
+  html[data-season="halloween"] .hw-app-shell::before {
+    opacity: 0.72;
+    width: 84px;
+    height: 150px;
+  }
+
+  html[data-season="halloween"] .hw-app-shell::after {
+    width: 72px;
+    height: 72px;
+    opacity: 0.8;
+  }
+}
+
+/* Tiny pumpkin accent on dashboard Halloween card only */
+.hw-pumpkin-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50% 50% 45% 45%;
+  background: radial-gradient(circle at 35% 35%, #fb923c, #c2410c 70%);
+  box-shadow: 0 -2px 0 -1px #166534;
+}
+
+.hw-web {
+  width: 28px;
+  height: 28px;
+  background:
+    radial-gradient(circle at 100% 0%, transparent 60%, hsl(0 0% 40% / 0.35) 61%, transparent 62%),
+    linear-gradient(
+      135deg,
+      transparent 48%,
+      hsl(0 0% 45% / 0.35) 49%,
+      hsl(0 0% 45% / 0.35) 51%,
+      transparent 52%
+    );
+}
+
+@keyframes hw-bat-fly {
+  0% {
+    transform: translateY(40%) translateX(0) scale(0.7);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-120%) translateX(24px) scale(1);
+    opacity: 0;
+  }
+}
+
+.hw-bat {
+  bottom: 18%;
+  animation: hw-bat-fly 1.35s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hw-bat {
+    animation: none;
+    opacity: 0;
+  }
 }

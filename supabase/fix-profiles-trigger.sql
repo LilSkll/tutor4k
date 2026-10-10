@@ -28,19 +28,27 @@ SELECT count(*) AS total_auth_users FROM auth.users;
 SELECT count(*) AS total_profiles FROM public.profiles;
 
 -- ---------- 2. RECREATE the trigger function (robust version) --------
+-- NOTE: Must keep reading role from metadata (see signup-role-trigger.sql).
+-- An older version of this file omitted role and made every signup a student.
 
--- Drop and recreate the function with a bulletproof body that handles:
---  - users without raw_user_meta_data
---  - duplicate inserts (ON CONFLICT)
---  - the email field from auth.users
 CREATE OR REPLACE FUNCTION public.handle_new_user()
 RETURNS trigger
 LANGUAGE plpgsql
 SECURITY DEFINER
 SET search_path = public
 AS $$
+DECLARE
+  meta_role text;
+  resolved_role public.user_role;
 BEGIN
-  INSERT INTO public.profiles (id, email, name)
+  meta_role := lower(COALESCE(NEW.raw_user_meta_data->>'role', 'student'));
+  IF meta_role = 'teacher' THEN
+    resolved_role := 'teacher';
+  ELSE
+    resolved_role := 'student';
+  END IF;
+
+  INSERT INTO public.profiles (id, email, name, role, onboarded)
   VALUES (
     NEW.id,
     NEW.email,
@@ -49,9 +57,16 @@ BEGIN
       NULLIF(NEW.raw_user_meta_data->>'full_name', ''),
       NULLIF(NEW.raw_user_meta_data->>'user_name', ''),
       split_part(NEW.email, '@', 1)
-    )
+    ),
+    resolved_role,
+    CASE WHEN resolved_role = 'teacher' THEN true ELSE false END
   )
-  ON CONFLICT (id) DO NOTHING;
+  ON CONFLICT (id) DO UPDATE SET
+    role = EXCLUDED.role,
+    onboarded = CASE
+      WHEN EXCLUDED.role = 'teacher' THEN true
+      ELSE public.profiles.onboarded
+    END;
   RETURN NEW;
 END;
 $$;

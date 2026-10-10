@@ -1,11 +1,35 @@
 import { cache } from "react";
+import { cookies } from "next/headers";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
+import {
+  localDateKey,
+  parseLocalDateKey,
+  previousDateKey,
+  shiftDateKey,
+} from "@/lib/local-date";
 import type {
   ChapterProgress,
   ExerciseHistory,
   LearningProgress,
+  Level,
   Profile,
 } from "@/types";
+
+/** Prefer browser calendar day (cookie), then optional override, then server local. */
+async function resolveActivityDate(
+  override?: string | null,
+): Promise<string> {
+  const fromArg = parseLocalDateKey(override);
+  if (fromArg) return fromArg;
+  try {
+    const jar = await cookies();
+    const fromCookie = parseLocalDateKey(jar.get("st_local_date")?.value);
+    if (fromCookie) return fromCookie;
+  } catch {
+    // Outside a request (scripts / tests).
+  }
+  return localDateKey();
+}
 
 // =====================================================================
 // Read-only data access helpers (used by Server Components)
@@ -78,14 +102,14 @@ export async function getDailyActivity(days = 30): Promise<DailyActivityRow[]> {
 
   if (!user) return [];
 
-  const since = new Date();
-  since.setDate(since.getDate() - days);
+  const today = await resolveActivityDate(null);
+  const sinceKey = shiftDateKey(today, -days);
 
   const { data } = await supabase
     .from("daily_activity")
     .select("activity_date, lessons_completed, minutes_studied")
     .eq("user_id", user.id)
-    .gte("activity_date", since.toISOString().slice(0, 10))
+    .gte("activity_date", sinceKey)
     .order("activity_date", { ascending: true });
 
   return (data ?? []) as unknown as DailyActivityRow[];
@@ -99,7 +123,16 @@ export async function getDailyActivity(days = 30): Promise<DailyActivityRow[]> {
  * so progress is never lost due to a stale session cookie in an API
  * route). Falls back to the user client if the service key is absent.
  */
-export async function recordStudySession(minutes: number, lessons = 1) {
+export async function recordStudySession(
+  minutes: number,
+  lessons = 1,
+  opts?: { activityDate?: string | null },
+): Promise<{
+  error: string | null;
+  streak?: number;
+  minutesToday?: number;
+  activityDate?: string;
+}> {
   // Authenticate via the user's session (verifies identity).
   const userClient = await createSupabaseServerClient();
   const {
@@ -113,7 +146,8 @@ export async function recordStudySession(minutes: number, lessons = 1) {
   const admin = createSupabaseAdminClient();
   const writeClient = admin ?? userClient;
 
-  const today = new Date().toISOString().slice(0, 10);
+  const today = await resolveActivityDate(opts?.activityDate);
+  const yesterdayKey = previousDateKey(today);
 
   // Read today's existing row so we can accumulate (not overwrite).
   const { data: existing } = await writeClient
@@ -125,6 +159,7 @@ export async function recordStudySession(minutes: number, lessons = 1) {
 
   const prevLessons = (existing?.lessons_completed as number) ?? 0;
   const prevMinutes = (existing?.minutes_studied as number) ?? 0;
+  const minutesToday = prevMinutes + minutes;
 
   // Upsert with accumulated totals.
   const { error: upsertError } = await writeClient
@@ -134,7 +169,7 @@ export async function recordStudySession(minutes: number, lessons = 1) {
         user_id: user.id,
         activity_date: today,
         lessons_completed: prevLessons + lessons,
-        minutes_studied: prevMinutes + minutes,
+        minutes_studied: minutesToday,
       },
       { onConflict: "user_id,activity_date" },
     );
@@ -151,14 +186,12 @@ export async function recordStudySession(minutes: number, lessons = 1) {
     .eq("id", user.id)
     .single();
 
+  let streak = (profile?.streak as number) ?? 0;
+
   if (profile) {
     const last = (profile.last_active_date as string) ?? null;
-    let streak = (profile.streak as number) ?? 0;
 
     if (last !== today) {
-      const yesterday = new Date();
-      yesterday.setDate(yesterday.getDate() - 1);
-      const yesterdayKey = yesterday.toISOString().slice(0, 10);
       streak = last === yesterdayKey ? streak + 1 : 1;
 
       await writeClient
@@ -168,7 +201,7 @@ export async function recordStudySession(minutes: number, lessons = 1) {
     }
   }
 
-  return { error: null };
+  return { error: null, streak, minutesToday, activityDate: today };
 }
 
 // =====================================================================
@@ -204,9 +237,11 @@ export async function getCurrentChapterSlug(
   courseId?: string | null,
 ): Promise<string | null> {
   const { getCourse } = await import("@/config/courses");
+  const { hasCompletedPrereqChain } = await import("@/lib/chapter-display");
   const course = await getCourse(courseId ?? "spanish");
   const chapters = course.getChapters();
   const courseSlugs = new Set(chapters.map((c) => c.slug));
+  const chaptersBySlug = new Map(chapters.map((c) => [c.slug, c]));
 
   const progress = await getChapterProgress();
   const completedSlugs = new Set(
@@ -217,7 +252,10 @@ export async function getCurrentChapterSlug(
   );
 
   for (const ch of chapters) {
-    if (!completedSlugs.has(ch.slug)) return ch.slug;
+    if (completedSlugs.has(ch.slug)) continue;
+    if (hasCompletedPrereqChain(ch, chaptersBySlug, completedSlugs)) {
+      return ch.slug;
+    }
   }
   return null;
 }
@@ -247,11 +285,29 @@ export async function startChapter(chapterSlug: string): Promise<void> {
 
   if (existing) return; // Already started or completed.
 
+  // Resolve CEFR band for NOT NULL level column (C2 chapters → C1 until enum migrates).
+  let dbLevel: string = "A1";
+  try {
+    const { data: profile } = await client
+      .from("profiles")
+      .select("active_course_id")
+      .eq("id", user.id)
+      .maybeSingle();
+    const courseId = (profile?.active_course_id as string) ?? "spanish";
+    const { getCourse } = await import("@/config/courses");
+    const { toUserLevel } = await import("@/lib/user-level");
+    const chapter = (await getCourse(courseId)).getChapter(chapterSlug);
+    dbLevel = toUserLevel(chapter?.level);
+  } catch {
+    // keep A1
+  }
+
   // Insert a new in_progress row.
   await client.from("learning_progress").insert({
     user_id: user.id,
     chapter_slug: chapterSlug,
     topic: chapterSlug,
+    level: dbLevel,
     status: "in_progress",
     score: 0,
     started_at: new Date().toISOString(),
@@ -320,15 +376,13 @@ export async function completeChapter(
         grammarTopic: chapter.grammarTopic,
         vocabTopic: chapter.vocabTopic ?? null,
         correct: ok,
-        addStrength: ok
-          ? `completed chapter: ${chapter.titleEs || chapter.title}`
-          : null,
-        addWeakness: ok
-          ? null
-          : `needs review: ${chapter.grammarTopic}`,
+        // Store topic slugs only — never English meta like "completed chapter: …".
+        addStrength: ok ? chapter.grammarTopic : null,
+        addWeakness: ok ? null : chapter.grammarTopic,
         skillHints: {
-          reading: chapter.level,
-          writing: chapter.level,
+          // Skill levels cap at C1 (user Level scale); C2 chapters count as C1.
+          reading: chapter.level === "C2" ? "C1" : chapter.level,
+          writing: chapter.level === "C2" ? "C1" : chapter.level,
         },
       });
     }
@@ -338,4 +392,79 @@ export async function completeChapter(
       (err as Error).message,
     );
   }
+}
+
+/**
+ * Mark every chapter before the first one at `level` as completed so the
+ * prereq chain unlocks that band. Does not overwrite real completions or
+ * bump streaks / learning profile (placement credit, not mastery).
+ */
+export async function creditPriorChaptersForLevel(
+  level: Level,
+  courseId?: string | null,
+): Promise<number> {
+  if (level === "A1") return 0;
+
+  const supabase = await createSupabaseServerClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (!user) return 0;
+
+  const { getCourse } = await import("@/config/courses");
+  const { getPriorChapterSlugsForLevel } = await import(
+    "@/lib/chapter-display"
+  );
+  const { toUserLevel } = await import("@/lib/user-level");
+  const course = await getCourse(courseId ?? "spanish");
+  const chapters = course.getChapters();
+  const prior = getPriorChapterSlugsForLevel(chapters, level);
+  if (prior.length === 0) return 0;
+
+  const { createSupabaseAdminClient } = await import("@/lib/supabase-admin");
+  const admin = createSupabaseAdminClient();
+  const client = admin ?? supabase;
+
+  const { data: existing } = await client
+    .from("learning_progress")
+    .select("chapter_slug, status")
+    .eq("user_id", user.id)
+    .in("chapter_slug", prior);
+
+  const alreadyDone = new Set(
+    (existing ?? [])
+      .filter((r) => r.status === "completed" && r.chapter_slug)
+      .map((r) => r.chapter_slug as string),
+  );
+
+  const now = new Date().toISOString();
+  const rows = prior
+    .filter((slug) => !alreadyDone.has(slug))
+    .map((slug) => {
+      const ch = chapters.find((c) => c.slug === slug);
+      const chapterLevel = ch?.level ?? "A1";
+      return {
+        user_id: user.id,
+        chapter_slug: slug,
+        topic: slug,
+        level: toUserLevel(chapterLevel === "C2" ? "C1" : chapterLevel),
+        status: "completed" as const,
+        score: 0,
+        started_at: now,
+        completed_at: now,
+        words_learned: 0,
+        exercises_completed: 0,
+      };
+    });
+
+  if (rows.length === 0) return 0;
+
+  const { error } = await client
+    .from("learning_progress")
+    .upsert(rows, { onConflict: "user_id,chapter_slug" });
+  if (error) {
+    console.warn("[creditPriorChaptersForLevel]", error.message);
+    return 0;
+  }
+  return rows.length;
 }

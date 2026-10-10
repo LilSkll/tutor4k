@@ -16,28 +16,63 @@ import { Badge } from "@/components/ui/badge";
 import { ProgressRing } from "@/components/shared/progress-ring";
 import { StatCard } from "@/components/shared/stat-card";
 import { MascotTip } from "@/components/shared/mascot-tip";
-import { getCurrentProfile, getChapterProgress } from "@/server/actions/data";
+import { ChapterCover } from "@/components/chapters/chapter-cover";
+import {
+  getCurrentProfile,
+  getChapterProgress,
+  getDailyActivity,
+} from "@/server/actions/data";
+import { getStudentLearningProfileAction } from "@/server/actions/learning-profile";
+import { planLessonAdaptation } from "@/server/learning/adaptive";
 import { DEFAULT_COURSE_ID, getCourse } from "@/config/courses";
 import { toRoman } from "@/config/chapters";
 import { translate } from "@/lib/i18n";
+import { resolveCourseTopicLabel } from "@/lib/course-topic-label";
+import { localDateKey, parseLocalDateKey } from "@/lib/local-date";
+import { summarizeRecentActivity } from "@/lib/retention-stats";
 import { getWordGloss } from "@/lib/vocab-display";
+import { cookies } from "next/headers";
+import type { InterfaceLanguage } from "@/types";
 import {
   countCompletedForCourse,
   getChapterLocation,
   getChapterSummary,
+  getChapterTargetTitle,
   getChapterTitle,
+  hasCompletedPrereqChain,
 } from "@/lib/chapter-display";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
+import { Suspense } from "react";
+import { EmailConfirmedBanner } from "@/components/auth/email-confirmed-banner";
+import { StreakStampCard } from "@/components/shared/streak-stamp-card";
+import { WeekPostcardCard } from "@/components/shared/week-postcard-card";
+import { HalloweenDailyCard } from "@/components/seasonal/halloween-daily-card";
+import { isStreakGap } from "@/lib/streak-gap";
+import { isHalloweenCourse, isHalloweenSeasonOn } from "@/lib/seasonal";
 
-export default async function DashboardPage() {
-  const [profile, progress] = await Promise.all([
+export default async function DashboardPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ confirmed?: string | string[] }>;
+}) {
+  const params = await searchParams;
+  const confirmedRaw = params.confirmed;
+  const showConfirmed =
+    confirmedRaw === "1" ||
+    (Array.isArray(confirmedRaw) && confirmedRaw.includes("1"));
+
+  const [profile, progress, recentActivity] = await Promise.all([
     getCurrentProfile(),
     getChapterProgress(),
+    getDailyActivity(7),
   ]);
 
-  const lang = profile?.interface_language ?? "ru";
+  const lang = (profile?.interface_language ?? "ru") as InterfaceLanguage;
   const t = (key: string, vars?: Record<string, string | number>) =>
     translate(key, lang, vars);
+  const jar = await cookies();
+  const todayIso =
+    parseLocalDateKey(jar.get("st_local_date")?.value) ?? localDateKey();
 
   let courseId = profile?.active_course_id ?? DEFAULT_COURSE_ID;
   let course = await getCourse(courseId);
@@ -87,7 +122,7 @@ export default async function DashboardPage() {
 
   if (CHAPTERS.length === 0) {
     return (
-      <div className="page-container space-y-6 md:space-y-8 animate-fade-in">
+      <div className="page-container space-y-6 md:space-y-8">
         <div className="flex flex-col gap-1">
           <p className="meta-label">{courseLabel}</p>
           <h1 className="page-title">{greeting}</h1>
@@ -116,6 +151,7 @@ export default async function DashboardPage() {
   }
 
   const courseChapterSlugs = CHAPTERS.map((c) => c.slug);
+  const chaptersBySlug = new Map(CHAPTERS.map((c) => [c.slug, c]));
   const completedSlugs = new Set(
     progress
       .filter((p) => p.status === "completed")
@@ -132,13 +168,42 @@ export default async function DashboardPage() {
 
   const startIndex = CHAPTERS.findIndex((c) => c.slug === currentChapter.slug);
   for (let i = Math.max(0, startIndex); i < CHAPTERS.length; i++) {
-    if (!completedSlugs.has(CHAPTERS[i].slug)) {
-      currentChapter = CHAPTERS[i];
+    const ch = CHAPTERS[i]!;
+    if (completedSlugs.has(ch.slug)) continue;
+    if (hasCompletedPrereqChain(ch, chaptersBySlug, completedSlugs)) {
+      currentChapter = ch;
       break;
     }
   }
 
+  // If level jump left us on a locked chapter, fall back to earliest unlocked.
+  if (
+    !completedSlugs.has(currentChapter.slug) &&
+    !hasCompletedPrereqChain(currentChapter, chaptersBySlug, completedSlugs)
+  ) {
+    currentChapter =
+      CHAPTERS.find(
+        (ch) =>
+          !completedSlugs.has(ch.slug) &&
+          hasCompletedPrereqChain(ch, chaptersBySlug, completedSlugs),
+      ) ?? CHAPTERS[0]!;
+  }
+
   const nextChapter = course.getNextChapter(currentChapter.slug);
+  const nextUnlocked =
+    nextChapter &&
+    hasCompletedPrereqChain(nextChapter, chaptersBySlug, completedSlugs)
+      ? nextChapter
+      : null;
+  // Show upcoming as preview only when it unlocks after finishing current.
+  const upcomingPreview =
+    nextChapter &&
+    !nextUnlocked &&
+    nextChapter.prereqChapter === currentChapter.slug
+      ? nextChapter
+      : null;
+  const upcomingChapter = nextUnlocked ?? upcomingPreview;
+  const upcomingLinked = Boolean(nextUnlocked);
   const totalCompleted = countCompletedForCourse(
     completedSlugs,
     courseChapterSlugs,
@@ -150,6 +215,29 @@ export default async function DashboardPage() {
       : 0;
   const streak = profile?.streak ?? 0;
   const dailyGoal = profile?.daily_goal_minutes ?? 15;
+  const minutesToday =
+    recentActivity.find((row) => row.activity_date === todayIso)
+      ?.minutes_studied ?? 0;
+  const weekSummary = summarizeRecentActivity(recentActivity, 7);
+
+  const { profile: learningProfile } = await getStudentLearningProfileAction(
+    courseId,
+  );
+  const adaptation = planLessonAdaptation(
+    learningProfile,
+    currentChapter.grammarTopic,
+    currentChapter.vocabTopic,
+  );
+  const reviewRec =
+    adaptation.revisionTopics.find(
+      (r) => r.reason === "stale_topic" || r.reason === "forgetting",
+    ) ?? adaptation.revisionTopics[0];
+  const reviewTopicLabel = resolveCourseTopicLabel(
+    reviewRec?.topic,
+    course,
+    lang,
+    courseId,
+  );
 
   // Stable "word of the day" from course vocab (no AI).
   const dayIndex = Math.floor(Date.now() / 86_400_000);
@@ -162,13 +250,39 @@ export default async function DashboardPage() {
     ? getWordGloss(wordOfDay, lang, courseId) || wordOfDay.translation || ""
     : "";
 
-  const motivation =
-    streak > 0
-      ? t("dashboard.motivationStreak", { streak })
-      : t("dashboard.motivationStart");
+  const streakGap = isStreakGap({
+    lastActiveDate: profile?.last_active_date,
+    today: todayIso,
+  });
+  const quietReturn =
+    streakGap && streak > 0 && minutesToday === 0
+      ? {
+          main: t("dashboard.streakRestart", { streak }),
+          topic: reviewTopicLabel
+            ? t("dashboard.streakRestartTopic", { topic: reviewTopicLabel })
+            : null,
+        }
+      : null;
+
+  const halloween =
+    isHalloweenCourse(courseId) && isHalloweenSeasonOn(todayIso);
+  const motivation = quietReturn
+    ? quietReturn.main
+    : halloween
+      ? t("halloween.mascotTip")
+      : streak > 0 && minutesToday === 0
+        ? t("dashboard.streakProtect", { streak })
+        : streak > 0
+          ? t("dashboard.motivationStreak", { streak })
+          : t("dashboard.motivationStart");
 
   return (
-    <div className="page-container space-y-6 md:space-y-8 animate-fade-in">
+    <div className="page-container space-y-6 md:space-y-8">
+      {showConfirmed ? (
+        <Suspense fallback={null}>
+          <EmailConfirmedBanner initialVisible />
+        </Suspense>
+      ) : null}
       {/* Header */}
       <div className="flex flex-col gap-1">
         <p className="meta-label">{courseLabel}</p>
@@ -178,7 +292,12 @@ export default async function DashboardPage() {
         </p>
       </div>
 
-      <MascotTip message={motivation} />
+      <MascotTip message={motivation} halloween={halloween} />
+      {quietReturn?.topic ? (
+        <p className="text-sm text-muted-foreground -mt-3 px-0.5">
+          {quietReturn.topic}
+        </p>
+      ) : null}
 
       {/* Today's lesson */}
       <section className="space-y-3">
@@ -187,13 +306,24 @@ export default async function DashboardPage() {
           <Badge variant="level">{currentChapter.level}</Badge>
         </div>
 
+        {halloween ? (
+          <HalloweenDailyCard
+            title={t("halloween.dailyTitle")}
+            body={t("halloween.dailyBody")}
+            cta={t("halloween.dailyCta")}
+          />
+        ) : null}
+
         <Card className="relative overflow-hidden shadow-elevated">
           <div className="bg-gradient-to-br from-primary via-orange-500 to-rose-500 p-5 sm:p-7 text-white">
             <div className="flex flex-col sm:flex-row sm:items-start gap-4">
-              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-white/15 text-4xl backdrop-blur-sm">
-                {currentChapter.icon}
-              </div>
-              <div className="flex-1 min-w-0">
+              <ChapterCover
+                slug={currentChapter.slug}
+                size="lg"
+                priority
+                className="mx-auto sm:mx-0"
+              />
+              <div className="flex-1 min-w-0 text-center sm:text-left">
                 <p className="text-xs text-white/70 uppercase tracking-wide mb-1">
                   {t("dashboard.chapterLabel", {
                     number: toRoman(currentChapter.number),
@@ -203,9 +333,12 @@ export default async function DashboardPage() {
                 <h3 className="text-xl sm:text-2xl font-bold truncate">
                   {getChapterTitle(currentChapter, lang)}
                 </h3>
-                <p className="text-white/75 text-sm italic truncate">
-                  {currentChapter.titleEs}
-                </p>
+                {getChapterTargetTitle(currentChapter, courseId) !==
+                  getChapterTitle(currentChapter, lang) && (
+                  <p className="text-white/75 text-sm italic truncate">
+                    {getChapterTargetTitle(currentChapter, courseId)}
+                  </p>
+                )}
                 <p className="text-white/70 text-sm mt-2 line-clamp-2">
                   {getChapterSummary(currentChapter, lang)}
                 </p>
@@ -220,16 +353,27 @@ export default async function DashboardPage() {
                     })}
                   </span>
                 </div>
-                <div className="flex flex-col sm:flex-row gap-2 mt-5">
+                <div className="flex flex-col sm:flex-row sm:flex-wrap gap-2 mt-5">
                   <Button
                     variant="secondary"
                     size="lg"
                     className="w-full sm:w-auto bg-white text-primary hover:bg-white/90 shadow-soft"
                     asChild
                   >
-                    <Link href={`/chapters/${currentChapter.slug}`}>
+                    <Link href="/daily">
                       <Play className="h-4 w-4" />
-                      {t("dashboard.continueLearning")}
+                      {t("daily.start")}
+                    </Link>
+                  </Button>
+                  <Button
+                    variant="ghost"
+                    size="lg"
+                    className="w-full sm:w-auto text-white hover:bg-white/15 hover:text-white"
+                    asChild
+                  >
+                    <Link href={`/chapters/${currentChapter.slug}`}>
+                      <ArrowRight className="h-4 w-4" />
+                      {t("dashboard.openFullChapter")}
                     </Link>
                   </Button>
                   <Button
@@ -244,11 +388,39 @@ export default async function DashboardPage() {
                     </Link>
                   </Button>
                 </div>
+                {reviewTopicLabel ? (
+                  <p className="mt-3 text-sm text-white/85">
+                    {t("daily.whyTodayWeak", {
+                      weak: reviewTopicLabel,
+                      chapter: getChapterTitle(currentChapter, lang),
+                    })}
+                  </p>
+                ) : null}
+                {!quietReturn && streak > 0 && minutesToday === 0 ? (
+                  <p className="mt-2 flex items-center gap-1.5 text-sm text-white/85">
+                    <Flame className="h-3.5 w-3.5 shrink-0" />
+                    {t("dashboard.streakProtect", { streak })}
+                  </p>
+                ) : null}
               </div>
             </div>
           </div>
         </Card>
+
+        {reviewTopicLabel ? (
+          <p className="text-sm text-muted-foreground px-0.5">
+            {t("dashboard.reviewInTwoDays", { topic: reviewTopicLabel })}{" "}
+            <Link
+              href="/daily"
+              className="font-medium text-primary underline-offset-2 hover:underline"
+            >
+              {t("dashboard.reviewInTwoDaysCta")}
+            </Link>
+          </p>
+        ) : null}
       </section>
+
+      {streak >= 7 ? <StreakStampCard streak={streak} /> : null}
 
       {/* Stats row */}
       <section className="grid grid-cols-2 lg:grid-cols-4 gap-3">
@@ -271,11 +443,24 @@ export default async function DashboardPage() {
           label={t("dashboard.dailyGoal")}
           value={
             <span className="flex items-center gap-2">
-              <Target className="h-5 w-5 text-primary" />
-              {dailyGoal}
+              <ProgressRing
+                value={minutesToday}
+                max={Math.max(1, dailyGoal)}
+                size={40}
+                strokeWidth={4}
+                indicatorClassName="stroke-primary"
+              >
+                <Target className="h-4 w-4 text-primary" />
+              </ProgressRing>
+              <span className="tabular-nums">
+                {minutesToday}/{dailyGoal}
+              </span>
             </span>
           }
-          footnote={t("dashboard.minutesGoal", { n: dailyGoal })}
+          footnote={t("daily.minutesToday", {
+            minutes: minutesToday,
+            goal: dailyGoal,
+          })}
         />
         <div className="rounded-2xl bg-card shadow-soft p-4 flex items-center gap-3 col-span-2 lg:col-span-1">
           <ProgressRing
@@ -290,7 +475,7 @@ export default async function DashboardPage() {
             </span>
           </ProgressRing>
           <div className="min-w-0">
-            <p className="meta-label mb-0.5">{t("dashboard.weeklyProgress")}</p>
+            <p className="meta-label mb-0.5">{t("dashboard.courseProgressShort")}</p>
             <p className="text-sm font-semibold tabular-nums">
               {totalCompleted}/{totalChapters}
             </p>
@@ -300,6 +485,49 @@ export default async function DashboardPage() {
           </div>
         </div>
       </section>
+
+      {/* This week */}
+      <Card>
+        <CardContent className="p-4 sm:p-5 space-y-3">
+          <div className="flex items-center justify-between gap-3">
+            <div>
+              <h2 className="section-title">{t("dashboard.thisWeekTitle")}</h2>
+              <p className="text-xs text-muted-foreground mt-0.5">
+                {t("dashboard.thisWeekSubtitle", {
+                  days: weekSummary.activeDays,
+                  minutes: weekSummary.minutes,
+                })}
+              </p>
+            </div>
+            <span className="text-sm font-semibold tabular-nums text-primary">
+              {weekSummary.activeDays}/7
+            </span>
+          </div>
+          <Progress
+            value={Math.min(100, Math.round((weekSummary.activeDays / 7) * 100))}
+          />
+          {reviewTopicLabel ? (
+            <p className="text-xs text-muted-foreground">
+              {t("dashboard.thisWeekTip", { topic: reviewTopicLabel })}
+            </p>
+          ) : (
+            <p className="text-xs text-muted-foreground">
+              {t("dashboard.thisWeekTipDefault")}
+            </p>
+          )}
+          {weekSummary.activeDays >= 3 ? (
+            <WeekPostcardCard
+              activeDays={weekSummary.activeDays}
+              minutes={weekSummary.minutes}
+              tip={
+                reviewTopicLabel
+                  ? t("dashboard.thisWeekTip", { topic: reviewTopicLabel })
+                  : t("dashboard.thisWeekTipDefault")
+              }
+            />
+          ) : null}
+        </CardContent>
+      </Card>
 
       {/* Course progress bar */}
       <Card>
@@ -327,7 +555,7 @@ export default async function DashboardPage() {
               <p className="meta-label mb-2">{t("dashboard.wordOfDay")}</p>
               <div className="flex items-start gap-3">
                 <Image
-                  src="/hippogriff-icon.png"
+                  src="/hippogriff-icon.webp"
                   alt=""
                   width={40}
                   height={40}
@@ -352,22 +580,38 @@ export default async function DashboardPage() {
         <Card className="card-hover">
           <CardContent className="p-4 sm:p-5 space-y-3">
             <p className="meta-label">{t("dashboard.upcoming")}</p>
-            {nextChapter ? (
-              <Link
-                href={`/chapters/${nextChapter.slug}`}
-                className="flex items-center gap-3 group"
-              >
-                <span className="text-3xl">{nextChapter.icon}</span>
-                <div className="flex-1 min-w-0">
-                  <p className="font-semibold truncate group-hover:text-primary transition-colors">
-                    {getChapterTitle(nextChapter, lang)}
-                  </p>
-                  <p className="text-xs text-muted-foreground truncate">
-                    {nextChapter.titleEs} · {nextChapter.level}
-                  </p>
+            {upcomingChapter ? (
+              upcomingLinked ? (
+                <Link
+                  href={`/chapters/${upcomingChapter.slug}`}
+                  className="flex items-center gap-3 group"
+                >
+                  <ChapterCover slug={upcomingChapter.slug} size="sm" />
+                  <div className="flex-1 min-w-0">
+                    <p className="font-semibold truncate group-hover:text-primary transition-colors">
+                      {getChapterTitle(upcomingChapter, lang)}
+                    </p>
+                    <p className="text-xs text-muted-foreground truncate">
+                      {getChapterTargetTitle(upcomingChapter, courseId)} ·{" "}
+                      {upcomingChapter.level}
+                    </p>
+                  </div>
+                  <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                </Link>
+              ) : (
+                <div className="flex items-center gap-3 opacity-70">
+                  <ChapterCover slug={upcomingChapter.slug} size="sm" muted />
+                  <div className="flex-1 min-w-0">
+                    <p className="font-semibold truncate">
+                      {getChapterTitle(upcomingChapter, lang)}
+                    </p>
+                    <p className="text-xs text-muted-foreground truncate">
+                      {getChapterTargetTitle(upcomingChapter, courseId)} ·{" "}
+                      {upcomingChapter.level}
+                    </p>
+                  </div>
                 </div>
-                <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-              </Link>
+              )
             ) : (
               <p className="text-sm text-muted-foreground">
                 {t("dashboard.final")}
@@ -405,8 +649,8 @@ export default async function DashboardPage() {
               {t("dashboard.journeyDesc", {
                 completed: totalCompleted,
                 total: totalChapters,
-                next: nextChapter
-                  ? getChapterTitle(nextChapter, lang)
+                next: upcomingChapter
+                  ? getChapterTitle(upcomingChapter, lang)
                   : t("dashboard.final"),
               })}
             </p>

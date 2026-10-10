@@ -1,0 +1,3122 @@
+{
+  "Soy estudiante": {
+    "ru": "Я студент.",
+    "en": "I am a student.",
+    "de": "Ich bin Student.",
+    "es": "I am a student."
+  },
+  "soy estudiante": {
+    "ru": "Я студент.",
+    "en": "I am a student.",
+    "de": "Ich bin Student.",
+    "es": "I am a student."
+  },
+  "Ella está cansada": {
+    "ru": "Она устала.",
+    "en": "She is tired.",
+    "de": "Sie ist müde.",
+    "es": "She is tired."
+  },
+  "ella esta cansada": {
+    "ru": "Она устала.",
+    "en": "She is tired.",
+    "de": "Sie ist müde.",
+    "es": "She is tired."
+  },
+  "Somos de Rusia": {
+    "ru": "Мы из России.",
+    "en": "We are from Russia.",
+    "de": "Wir kommen aus Russland.",
+    "es": "We are from Russia."
+  },
+  "somos de rusia": {
+    "ru": "Мы из России.",
+    "en": "We are from Russia.",
+    "de": "Wir kommen aus Russland.",
+    "es": "We are from Russia."
+  },
+  "El libro está en la mesa": {
+    "ru": "Книга на столе.",
+    "en": "The book is on the table.",
+    "de": "Das Buch ist auf dem Tisch.",
+    "es": "The book is on the table."
+  },
+  "el libro esta en la mesa": {
+    "ru": "мужской род → el libro (не la)",
+    "en": "мужской род → el libro (не la)",
+    "de": "мужской род → el libro (не la)",
+    "es": "мужской род → el libro (не la)"
+  },
+  "Tú eres mi amigo": {
+    "ru": "Ты мой друг.",
+    "en": "You are my friend.",
+    "de": "Du bist mein Freund.",
+    "es": "You are my friend."
+  },
+  "tu eres mi amigo": {
+    "ru": "Ты мой друг.",
+    "en": "You are my friend.",
+    "de": "Du bist mein Freund.",
+    "es": "You are my friend."
+  },
+  "Hoy es lunes": {
+    "ru": "Сегодня понедельник.",
+    "en": "Today is Monday.",
+    "de": "Heute ist Montag.",
+    "es": "Today is Monday."
+  },
+  "hoy es lunes": {
+    "ru": "lunes",
+    "en": "lunes",
+    "de": "lunes",
+    "es": "lunes"
+  },
+  "Ellos están en el parque": {
+    "ru": "Они в парке.",
+    "en": "They are in the park.",
+    "de": "Sie sind im Park.",
+    "es": "They are in the park."
+  },
+  "ellos estan en el parque": {
+    "ru": "Они в парке.",
+    "en": "They are in the park.",
+    "de": "Sie sind im Park.",
+    "es": "They are in the park."
+  },
+  "Estoy en casa": {
+    "ru": "Я дома.",
+    "en": "I am at home.",
+    "de": "Ich bin zu Hause.",
+    "es": "I am at home."
+  },
+  "estoy en casa": {
+    "ru": "en",
+    "en": "en",
+    "de": "en",
+    "es": "en"
+  },
+  "Ella es alta": {
+    "ru": "Она высокая.",
+    "en": "She is tall.",
+    "de": "Sie ist groß.",
+    "es": "She is tall."
+  },
+  "ella es alta": {
+    "ru": "Она высокая.",
+    "en": "She is tall.",
+    "de": "Sie ist groß.",
+    "es": "She is tall."
+  },
+  "¿Dónde está el baño?": {
+    "ru": "Где ванная?",
+    "en": "Where is the bathroom?",
+    "de": "Wo ist das Bad?",
+    "es": "Where is the bathroom?"
+  },
+  "donde esta el bano": {
+    "ru": "Где ванная?",
+    "en": "Where is the bathroom?",
+    "de": "Wo ist das Bad?",
+    "es": "Where is the bathroom?"
+  },
+  "Estamos felices": {
+    "ru": "Мы счастливы.",
+    "en": "We are happy.",
+    "de": "Wir sind glücklich.",
+    "es": "We are happy."
+  },
+  "estamos felices": {
+    "ru": "Мы счастливы.",
+    "en": "We are happy.",
+    "de": "Wir sind glücklich.",
+    "es": "We are happy."
+  },
+  "Él es médico": {
+    "ru": "Он врач.",
+    "en": "He is a doctor.",
+    "de": "Er ist Arzt.",
+    "es": "He is a doctor."
+  },
+  "el es medico": {
+    "ru": "Он врач.",
+    "en": "He is a doctor.",
+    "de": "Er ist Arzt.",
+    "es": "He is a doctor."
+  },
+  "La sopa está fría": {
+    "ru": "Суп холодный.",
+    "en": "The soup is cold.",
+    "de": "Die Suppe ist kalt.",
+    "es": "The soup is cold."
+  },
+  "la sopa esta fria": {
+    "ru": "Суп холодный.",
+    "en": "The soup is cold.",
+    "de": "Die Suppe ist kalt.",
+    "es": "The soup is cold."
+  },
+  "Usted es profesor": {
+    "ru": "Вы (usted) учитель.",
+    "en": "You (formal) are a teacher.",
+    "de": "Sie sind Lehrer.",
+    "es": "You (formal) are a teacher."
+  },
+  "usted es profesor": {
+    "ru": "Вы (usted) учитель.",
+    "en": "You (formal) are a teacher.",
+    "de": "Sie sind Lehrer.",
+    "es": "You (formal) are a teacher."
+  },
+  "Las llaves están aquí": {
+    "ru": "Ключи здесь.",
+    "en": "The keys are here.",
+    "de": "Die Schlüssel sind hier.",
+    "es": "The keys are here."
+  },
+  "las llaves estan aqui": {
+    "ru": "Ключи здесь.",
+    "en": "The keys are here.",
+    "de": "Die Schlüssel sind hier.",
+    "es": "The keys are here."
+  },
+  "Estoy ocupado": {
+    "ru": "Я занят.",
+    "en": "I am busy.",
+    "de": "Ich bin beschäftigt.",
+    "es": "I am busy."
+  },
+  "estoy ocupado": {
+    "ru": "Я занят.",
+    "en": "I am busy.",
+    "de": "Ich bin beschäftigt.",
+    "es": "I am busy."
+  },
+  "Madrid es la capital": {
+    "ru": "Мадрид — столица.",
+    "en": "Madrid is the capital.",
+    "de": "Madrid ist die Hauptstadt.",
+    "es": "Madrid is the capital."
+  },
+  "madrid es la capital": {
+    "ru": "Мадрид — столица.",
+    "en": "Madrid is the capital.",
+    "de": "Madrid ist die Hauptstadt.",
+    "es": "Madrid is the capital."
+  },
+  "Ellos son mis amigos": {
+    "ru": "Они мои друзья.",
+    "en": "They are my friends.",
+    "de": "Sie sind meine Freunde.",
+    "es": "They are my friends."
+  },
+  "ellos son mis amigos": {
+    "ru": "Они мои друзья.",
+    "en": "They are my friends.",
+    "de": "Sie sind meine Freunde.",
+    "es": "They are my friends."
+  },
+  "¿Cómo estás?": {
+    "ru": "Как дела?",
+    "en": "How are you?",
+    "de": "Wie geht es dir?",
+    "es": "How are you?"
+  },
+  "como estas": {
+    "ru": "Cómo",
+    "en": "Cómo",
+    "de": "Cómo",
+    "es": "Cómo"
+  },
+  "Esto es importante": {
+    "ru": "Это важно.",
+    "en": "This is important.",
+    "de": "Das ist wichtig.",
+    "es": "This is important."
+  },
+  "esto es importante": {
+    "ru": "Это важно.",
+    "en": "This is important.",
+    "de": "Das ist wichtig.",
+    "es": "This is important."
+  },
+  "Yo hablo español.": {
+    "ru": "hablo",
+    "en": "hablo",
+    "de": "hablo",
+    "es": "hablo"
+  },
+  "yo hablo espanol": {
+    "ru": "hablo",
+    "en": "hablo",
+    "de": "hablo",
+    "es": "hablo"
+  },
+  "Tú bebes café.": {
+    "ru": "bebes",
+    "en": "bebes",
+    "de": "bebes",
+    "es": "bebes"
+  },
+  "tu bebes cafe": {
+    "ru": "bebes",
+    "en": "bebes",
+    "de": "bebes",
+    "es": "bebes"
+  },
+  "Ella vive en Madrid.": {
+    "ru": "vive",
+    "en": "vive",
+    "de": "vive",
+    "es": "vive"
+  },
+  "ella vive en madrid": {
+    "ru": "vive",
+    "en": "vive",
+    "de": "vive",
+    "es": "vive"
+  },
+  "Nosotros trabajamos en una oficina.": {
+    "ru": "trabajamos",
+    "en": "trabajamos",
+    "de": "trabajamos",
+    "es": "trabajamos"
+  },
+  "nosotros trabajamos en una oficina": {
+    "ru": "trabajamos",
+    "en": "trabajamos",
+    "de": "trabajamos",
+    "es": "trabajamos"
+  },
+  "¿Hablas tú inglés?": {
+    "ru": "Ты говоришь по-английски?",
+    "en": "Do you speak English?",
+    "de": "Sprichst du Englisch?",
+    "es": "Do you speak English?"
+  },
+  "hablas tu ingles": {
+    "ru": "hablas",
+    "en": "hablas",
+    "de": "hablas",
+    "es": "hablas"
+  },
+  "Ellos preparan la cena.": {
+    "ru": "preparan",
+    "en": "preparan",
+    "de": "preparan",
+    "es": "preparan"
+  },
+  "ellos preparan la cena": {
+    "ru": "preparan",
+    "en": "preparan",
+    "de": "preparan",
+    "es": "preparan"
+  },
+  "Él estudia mucho.": {
+    "ru": "estudia",
+    "en": "estudia",
+    "de": "estudia",
+    "es": "estudia"
+  },
+  "el estudia mucho": {
+    "ru": "estudia",
+    "en": "estudia",
+    "de": "estudia",
+    "es": "estudia"
+  },
+  "¿Dónde viven ustedes?": {
+    "ru": "Где вы живёте?",
+    "en": "Where do you live?",
+    "de": "Wo wohnen Sie?",
+    "es": "Where do you live?"
+  },
+  "donde viven ustedes": {
+    "ru": "viven",
+    "en": "viven",
+    "de": "viven",
+    "es": "viven"
+  },
+  "Yo no como carne.": {
+    "ru": "como",
+    "en": "como",
+    "de": "como",
+    "es": "como"
+  },
+  "yo no como carne": {
+    "ru": "como",
+    "en": "como",
+    "de": "como",
+    "es": "como"
+  },
+  "Vosotros jugáis fútbol.": {
+    "ru": "jugáis",
+    "en": "jugáis",
+    "de": "jugáis",
+    "es": "jugáis"
+  },
+  "vosotros jugais futbol": {
+    "ru": "jugáis",
+    "en": "jugáis",
+    "de": "jugáis",
+    "es": "jugáis"
+  },
+  "El libro está en la mesa.": {
+    "ru": "мужской род → el libro (не la)",
+    "en": "мужской род → el libro (не la)",
+    "de": "мужской род → el libro (не la)",
+    "es": "мужской род → el libro (не la)"
+  },
+  "Quiero una manzana.": {
+    "ru": "женский род → una manzana (не un)",
+    "en": "женский род → una manzana (не un)",
+    "de": "женский род → una manzana (не un)",
+    "es": "женский род → una manzana (не un)"
+  },
+  "quiero una manzana": {
+    "ru": "женский род → una manzana (не un)",
+    "en": "женский род → una manzana (не un)",
+    "de": "женский род → una manzana (не un)",
+    "es": "женский род → una manzana (не un)"
+  },
+  "Las casas son grandes.": {
+    "ru": "женский род, много → las casas",
+    "en": "женский род, много → las casas",
+    "de": "женский род, много → las casas",
+    "es": "женский род, много → las casas"
+  },
+  "las casas son grandes": {
+    "ru": "женский род, много → las casas",
+    "en": "женский род, много → las casas",
+    "de": "женский род, много → las casas",
+    "es": "женский род, много → las casas"
+  },
+  "Hay un problema.": {
+    "ru": "мужской род, хотя на -a → un problema",
+    "en": "мужской род, хотя на -a → un problema",
+    "de": "мужской род, хотя на -a → un problema",
+    "es": "мужской род, хотя на -a → un problema"
+  },
+  "hay un problema": {
+    "ru": "мужской род, хотя на -a → un problema",
+    "en": "мужской род, хотя на -a → un problema",
+    "de": "мужской род, хотя на -a → un problema",
+    "es": "мужской род, хотя на -a → un problema"
+  },
+  "El agua está fría.": {
+    "ru": "женский род, но ударная первая a → el agua (не la agua)",
+    "en": "женский род, но ударная первая a → el agua (не la agua)",
+    "de": "женский род, но ударная первая a → el agua (не la agua)",
+    "es": "женский род, но ударная первая a → el agua (не la agua)"
+  },
+  "el agua esta fria": {
+    "ru": "женский род, но ударная первая a → el agua (не la agua)",
+    "en": "женский род, но ударная первая a → el agua (не la agua)",
+    "de": "женский род, но ударная первая a → el agua (не la agua)",
+    "es": "женский род, но ударная первая a → el agua (не la agua)"
+  },
+  "Necesito un lápiz.": {
+    "ru": "мужской род → un lápiz",
+    "en": "мужской род → un lápiz",
+    "de": "мужской род → un lápiz",
+    "es": "мужской род → un lápiz"
+  },
+  "necesito un lapiz": {
+    "ru": "мужской род → un lápiz",
+    "en": "мужской род → un lápiz",
+    "de": "мужской род → un lápiz",
+    "es": "мужской род → un lápiz"
+  },
+  "La mujer es profesora.": {
+    "ru": "женский род → la mujer",
+    "en": "женский род → la mujer",
+    "de": "женский род → la mujer",
+    "es": "женский род → la mujer"
+  },
+  "la mujer es profesora": {
+    "ru": "женский род → la mujer",
+    "en": "женский род → la mujer",
+    "de": "женский род → la mujer",
+    "es": "женский род → la mujer"
+  },
+  "Compré unos zapatos.": {
+    "ru": "мужской род, несколько → unos zapatos",
+    "en": "мужской род, несколько → unos zapatos",
+    "de": "мужской род, несколько → unos zapatos",
+    "es": "мужской род, несколько → unos zapatos"
+  },
+  "compre unos zapatos": {
+    "ru": "мужской род, несколько → unos zapatos",
+    "en": "мужской род, несколько → unos zapatos",
+    "de": "мужской род, несколько → unos zapatos",
+    "es": "мужской род, несколько → unos zapatos"
+  },
+  "La mesa es de madera.": {
+    "ru": "женский род → la mesa",
+    "en": "женский род → la mesa",
+    "de": "женский род → la mesa",
+    "es": "женский род → la mesa"
+  },
+  "la mesa es de madera": {
+    "ru": "женский род → la mesa",
+    "en": "женский род → la mesa",
+    "de": "женский род → la mesa",
+    "es": "женский род → la mesa"
+  },
+  "No tengo ni idea.": {
+    "ru": "понятия не имею",
+    "en": "понятия не имею",
+    "de": "понятия не имею",
+    "es": "понятия не имею"
+  },
+  "no tengo ni idea": {
+    "ru": "понятия не имею",
+    "en": "понятия не имею",
+    "de": "понятия не имею",
+    "es": "понятия не имею"
+  },
+  "Son las tres horas.": {
+    "ru": "las tres",
+    "en": "las tres",
+    "de": "las tres",
+    "es": "las tres"
+  },
+  "son las tres horas": {
+    "ru": "las tres",
+    "en": "las tres",
+    "de": "las tres",
+    "es": "las tres"
+  },
+  "Tengo veinte años.": {
+    "ru": "veinte",
+    "en": "veinte",
+    "de": "veinte",
+    "es": "veinte"
+  },
+  "tengo veinte anos": {
+    "ru": "veinte",
+    "en": "veinte",
+    "de": "veinte",
+    "es": "veinte"
+  },
+  "Hoy es lunes.": {
+    "ru": "lunes",
+    "en": "lunes",
+    "de": "lunes",
+    "es": "lunes"
+  },
+  "El tren sale a las diez.": {
+    "ru": "las diez",
+    "en": "las diez",
+    "de": "las diez",
+    "es": "las diez"
+  },
+  "el tren sale a las diez": {
+    "ru": "las diez",
+    "en": "las diez",
+    "de": "las diez",
+    "es": "las diez"
+  },
+  "Estamos en enero.": {
+    "ru": "enero",
+    "en": "enero",
+    "de": "enero",
+    "es": "enero"
+  },
+  "estamos en enero": {
+    "ru": "enero",
+    "en": "enero",
+    "de": "enero",
+    "es": "enero"
+  },
+  "Hay cinco personas.": {
+    "ru": "cinco",
+    "en": "cinco",
+    "de": "cinco",
+    "es": "cinco"
+  },
+  "hay cinco personas": {
+    "ru": "cinco",
+    "en": "cinco",
+    "de": "cinco",
+    "es": "cinco"
+  },
+  "Mi cumpleaños es el quince.": {
+    "ru": "quince",
+    "en": "quince",
+    "de": "quince",
+    "es": "quince"
+  },
+  "mi cumpleanos es el quince": {
+    "ru": "quince",
+    "en": "quince",
+    "de": "quince",
+    "es": "quince"
+  },
+  "Son las dos y media.": {
+    "ru": "dos",
+    "en": "dos",
+    "de": "dos",
+    "es": "dos"
+  },
+  "son las dos y media": {
+    "ru": "dos",
+    "en": "dos",
+    "de": "dos",
+    "es": "dos"
+  },
+  "Faltan diez minutos.": {
+    "ru": "diez",
+    "en": "diez",
+    "de": "diez",
+    "es": "diez"
+  },
+  "faltan diez minutos": {
+    "ru": "diez",
+    "en": "diez",
+    "de": "diez",
+    "es": "diez"
+  },
+  "Nací en mil novecientos.": {
+    "ru": "mil novecientos",
+    "en": "mil novecientos",
+    "de": "mil novecientos",
+    "es": "mil novecientos"
+  },
+  "naci en mil novecientos": {
+    "ru": "mil novecientos",
+    "en": "mil novecientos",
+    "de": "mil novecientos",
+    "es": "mil novecientos"
+  },
+  "Yo tengo hambre.": {
+    "ru": "tengo",
+    "en": "tengo",
+    "de": "tengo",
+    "es": "tengo"
+  },
+  "yo tengo hambre": {
+    "ru": "tengo",
+    "en": "tengo",
+    "de": "tengo",
+    "es": "tengo"
+  },
+  "¿Tienes sed?": {
+    "ru": "Ты хочешь пить?",
+    "en": "Are you thirsty?",
+    "de": "Hast du Durst?",
+    "es": "Are you thirsty?"
+  },
+  "tienes sed": {
+    "ru": "Tienes",
+    "en": "Tienes",
+    "de": "Tienes",
+    "es": "Tienes"
+  },
+  "Ella tiene frío.": {
+    "ru": "tiene",
+    "en": "tiene",
+    "de": "tiene",
+    "es": "tiene"
+  },
+  "ella tiene frio": {
+    "ru": "tiene",
+    "en": "tiene",
+    "de": "tiene",
+    "es": "tiene"
+  },
+  "Nosotros tenemos razón.": {
+    "ru": "tenemos",
+    "en": "tenemos",
+    "de": "tenemos",
+    "es": "tenemos"
+  },
+  "nosotros tenemos razon": {
+    "ru": "tenemos",
+    "en": "tenemos",
+    "de": "tenemos",
+    "es": "tenemos"
+  },
+  "Ellos tienen suerte.": {
+    "ru": "tienen",
+    "en": "tienen",
+    "de": "tienen",
+    "es": "tienen"
+  },
+  "ellos tienen suerte": {
+    "ru": "tienen",
+    "en": "tienen",
+    "de": "tienen",
+    "es": "tienen"
+  },
+  "Yo tengo 20 años.": {
+    "ru": "tengo",
+    "en": "tengo",
+    "de": "tengo",
+    "es": "tengo"
+  },
+  "yo tengo 20 anos": {
+    "ru": "tengo",
+    "en": "tengo",
+    "de": "tengo",
+    "es": "tengo"
+  },
+  "¿Qué tienes en la bolsa?": {
+    "ru": "Что у тебя в сумке?",
+    "en": "What do you have in your bag?",
+    "de": "Was hast du in der Tasche?",
+    "es": "What do you have in your bag?"
+  },
+  "que tienes en la bolsa": {
+    "ru": "tienes",
+    "en": "tienes",
+    "de": "tienes",
+    "es": "tienes"
+  },
+  "No tengo miedo.": {
+    "ru": "tengo",
+    "en": "tengo",
+    "de": "tengo",
+    "es": "tengo"
+  },
+  "no tengo miedo": {
+    "ru": "tengo",
+    "en": "tengo",
+    "de": "tengo",
+    "es": "tengo"
+  },
+  "¿Cuántos hermanos tienes?": {
+    "ru": "Сколько у тебя братьев/сестёр?",
+    "en": "How many brothers and sisters do you have?",
+    "de": "Wie viele Geschwister hast du?",
+    "es": "How many brothers and sisters do you have?"
+  },
+  "cuantos hermanos tienes": {
+    "ru": "tienes",
+    "en": "tienes",
+    "de": "tienes",
+    "es": "tienes"
+  },
+  "Hoy tengo prisa.": {
+    "ru": "tengo",
+    "en": "tengo",
+    "de": "tengo",
+    "es": "tengo"
+  },
+  "hoy tengo prisa": {
+    "ru": "tengo",
+    "en": "tengo",
+    "de": "tengo",
+    "es": "tengo"
+  },
+  "Me gusta el café.": {
+    "ru": "gusta",
+    "en": "gusta",
+    "de": "gusta",
+    "es": "gusta"
+  },
+  "me gusta el cafe": {
+    "ru": "gusta",
+    "en": "gusta",
+    "de": "gusta",
+    "es": "gusta"
+  },
+  "Me gustan las manzanas.": {
+    "ru": "gustan",
+    "en": "gustan",
+    "de": "gustan",
+    "es": "gustan"
+  },
+  "me gustan las manzanas": {
+    "ru": "gustan",
+    "en": "gustan",
+    "de": "gustan",
+    "es": "gustan"
+  },
+  "¿Te gusta el chocolate?": {
+    "ru": "Тебе нравится шоколад?",
+    "en": "Do you like chocolate?",
+    "de": "Magst du Schokolade?",
+    "es": "Do you like chocolate?"
+  },
+  "te gusta el chocolate": {
+    "ru": "gusta",
+    "en": "gusta",
+    "de": "gusta",
+    "es": "gusta"
+  },
+  "A ella le gusta bailar.": {
+    "ru": "gusta",
+    "en": "gusta",
+    "de": "gusta",
+    "es": "gusta"
+  },
+  "a ella le gusta bailar": {
+    "ru": "gusta",
+    "en": "gusta",
+    "de": "gusta",
+    "es": "gusta"
+  },
+  "Nos gustan los libros.": {
+    "ru": "gustan",
+    "en": "gustan",
+    "de": "gustan",
+    "es": "gustan"
+  },
+  "nos gustan los libros": {
+    "ru": "gustan",
+    "en": "gustan",
+    "de": "gustan",
+    "es": "gustan"
+  },
+  "No me gusta madrugar.": {
+    "ru": "gusta",
+    "en": "gusta",
+    "de": "gusta",
+    "es": "gusta"
+  },
+  "no me gusta madrugar": {
+    "ru": "gusta",
+    "en": "gusta",
+    "de": "gusta",
+    "es": "gusta"
+  },
+  "A ellos les gusta el fútbol.": {
+    "ru": "gusta",
+    "en": "gusta",
+    "de": "gusta",
+    "es": "gusta"
+  },
+  "a ellos les gusta el futbol": {
+    "ru": "gusta",
+    "en": "gusta",
+    "de": "gusta",
+    "es": "gusta"
+  },
+  "¿Qué te gusta más?": {
+    "ru": "Что тебе больше нравится?",
+    "en": "What do you like more?",
+    "de": "Was magst du lieber?",
+    "es": "What do you like more?"
+  },
+  "que te gusta mas": {
+    "ru": "gusta",
+    "en": "gusta",
+    "de": "gusta",
+    "es": "gusta"
+  },
+  "Me gusta mucho viajar.": {
+    "ru": "gusta",
+    "en": "gusta",
+    "de": "gusta",
+    "es": "gusta"
+  },
+  "me gusta mucho viajar": {
+    "ru": "gusta",
+    "en": "gusta",
+    "de": "gusta",
+    "es": "gusta"
+  },
+  "A ti te gustan las películas.": {
+    "ru": "gustan",
+    "en": "gustan",
+    "de": "gustan",
+    "es": "gustan"
+  },
+  "a ti te gustan las peliculas": {
+    "ru": "gustan",
+    "en": "gustan",
+    "de": "gustan",
+    "es": "gustan"
+  },
+  "Yo he leído el libro.": {
+    "ru": "leído",
+    "en": "leído",
+    "de": "leído",
+    "es": "leído"
+  },
+  "yo he leido el libro": {
+    "ru": "leído",
+    "en": "leído",
+    "de": "leído",
+    "es": "leído"
+  },
+  "Ella ha viajado a Madrid.": {
+    "ru": "viajado",
+    "en": "viajado",
+    "de": "viajado",
+    "es": "viajado"
+  },
+  "ella ha viajado a madrid": {
+    "ru": "viajado",
+    "en": "viajado",
+    "de": "viajado",
+    "es": "viajado"
+  },
+  "¿Has comido ya?": {
+    "ru": "Ты уже поел?",
+    "en": "Have you already eaten?",
+    "de": "Hast du schon gegessen?",
+    "es": "Have you already eaten?"
+  },
+  "has comido ya": {
+    "ru": "comido",
+    "en": "comido",
+    "de": "comido",
+    "es": "comido"
+  },
+  "Hemos trabajado mucho hoy.": {
+    "ru": "trabajado",
+    "en": "trabajado",
+    "de": "trabajado",
+    "es": "trabajado"
+  },
+  "hemos trabajado mucho hoy": {
+    "ru": "trabajado",
+    "en": "trabajado",
+    "de": "trabajado",
+    "es": "trabajado"
+  },
+  "Ellos han abierto la puerta.": {
+    "ru": "abierto",
+    "en": "abierto",
+    "de": "abierto",
+    "es": "abierto"
+  },
+  "ellos han abierto la puerta": {
+    "ru": "abierto",
+    "en": "abierto",
+    "de": "abierto",
+    "es": "abierto"
+  },
+  "No he visto nada.": {
+    "ru": "visto",
+    "en": "visto",
+    "de": "visto",
+    "es": "visto"
+  },
+  "no he visto nada": {
+    "ru": "visto",
+    "en": "visto",
+    "de": "visto",
+    "es": "visto"
+  },
+  "¿Qué has hecho?": {
+    "ru": "Что ты сделал?",
+    "en": "What have you done?",
+    "de": "Was hast du gemacht?",
+    "es": "What have you done?"
+  },
+  "que has hecho": {
+    "ru": "hecho",
+    "en": "hecho",
+    "de": "hecho",
+    "es": "hecho"
+  },
+  "Ha llovido toda la noche.": {
+    "ru": "llovido",
+    "en": "llovido",
+    "de": "llovido",
+    "es": "llovido"
+  },
+  "ha llovido toda la noche": {
+    "ru": "llovido",
+    "en": "llovido",
+    "de": "llovido",
+    "es": "llovido"
+  },
+  "Todavía no he terminado.": {
+    "ru": "terminado",
+    "en": "terminado",
+    "de": "terminado",
+    "es": "terminado"
+  },
+  "todavia no he terminado": {
+    "ru": "terminado",
+    "en": "terminado",
+    "de": "terminado",
+    "es": "terminado"
+  },
+  "Hemos escrito una carta.": {
+    "ru": "escrito",
+    "en": "escrito",
+    "de": "escrito",
+    "es": "escrito"
+  },
+  "hemos escrito una carta": {
+    "ru": "escrito",
+    "en": "escrito",
+    "de": "escrito",
+    "es": "escrito"
+  },
+  "Ayer yo fui al cine.": {
+    "ru": "fui",
+    "en": "fui",
+    "de": "fui",
+    "es": "fui"
+  },
+  "ayer yo fui al cine": {
+    "ru": "fui",
+    "en": "fui",
+    "de": "fui",
+    "es": "fui"
+  },
+  "Ella escribió una carta.": {
+    "ru": "escribió",
+    "en": "escribió",
+    "de": "escribió",
+    "es": "escribió"
+  },
+  "ella escribio una carta": {
+    "ru": "escribió",
+    "en": "escribió",
+    "de": "escribió",
+    "es": "escribió"
+  },
+  "¿Viste tú la película?": {
+    "ru": "Ты смотрел фильм?",
+    "en": "Did you watch the film?",
+    "de": "Hast du den Film gesehen?",
+    "es": "Did you watch the film?"
+  },
+  "viste tu la pelicula": {
+    "ru": "Viste",
+    "en": "Viste",
+    "de": "Viste",
+    "es": "Viste"
+  },
+  "Nosotros dormimos en un hotel.": {
+    "ru": "dormimos",
+    "en": "dormimos",
+    "de": "dormimos",
+    "es": "dormimos"
+  },
+  "nosotros dormimos en un hotel": {
+    "ru": "dormimos",
+    "en": "dormimos",
+    "de": "dormimos",
+    "es": "dormimos"
+  },
+  "Ellos compraron la casa.": {
+    "ru": "compraron",
+    "en": "compraron",
+    "de": "compraron",
+    "es": "compraron"
+  },
+  "ellos compraron la casa": {
+    "ru": "compraron",
+    "en": "compraron",
+    "de": "compraron",
+    "es": "compraron"
+  },
+  "Él salió temprano.": {
+    "ru": "salió",
+    "en": "salió",
+    "de": "salió",
+    "es": "salió"
+  },
+  "el salio temprano": {
+    "ru": "salió",
+    "en": "salió",
+    "de": "salió",
+    "es": "salió"
+  },
+  "Yo no dije nada.": {
+    "ru": "dije",
+    "en": "dije",
+    "de": "dije",
+    "es": "dije"
+  },
+  "yo no dije nada": {
+    "ru": "dije",
+    "en": "dije",
+    "de": "dije",
+    "es": "dije"
+  },
+  "¿Qué hicieron ustedes?": {
+    "ru": "Что вы сделали?",
+    "en": "What did you do?",
+    "de": "Was haben Sie gemacht?",
+    "es": "What did you do?"
+  },
+  "que hicieron ustedes": {
+    "ru": "hicieron",
+    "en": "hicieron",
+    "de": "hicieron",
+    "es": "hicieron"
+  },
+  "Anoche llovió mucho.": {
+    "ru": "llovió",
+    "en": "llovió",
+    "de": "llovió",
+    "es": "llovió"
+  },
+  "anoche llovio mucho": {
+    "ru": "llovió",
+    "en": "llovió",
+    "de": "llovió",
+    "es": "llovió"
+  },
+  "Tú dijiste la verdad.": {
+    "ru": "dijiste",
+    "en": "dijiste",
+    "de": "dijiste",
+    "es": "dijiste"
+  },
+  "tu dijiste la verdad": {
+    "ru": "dijiste",
+    "en": "dijiste",
+    "de": "dijiste",
+    "es": "dijiste"
+  },
+  "Cuando era niño, jugaba mucho.": {
+    "ru": "jugaba",
+    "en": "jugaba",
+    "de": "jugaba",
+    "es": "jugaba"
+  },
+  "cuando era nino jugaba mucho": {
+    "ru": "jugaba",
+    "en": "jugaba",
+    "de": "jugaba",
+    "es": "jugaba"
+  },
+  "Ella era alta y delgada.": {
+    "ru": "era",
+    "en": "era",
+    "de": "era",
+    "es": "era"
+  },
+  "ella era alta y delgada": {
+    "ru": "era",
+    "en": "era",
+    "de": "era",
+    "es": "era"
+  },
+  "Nosotros vivíamos en Sevilla.": {
+    "ru": "vivíamos",
+    "en": "vivíamos",
+    "de": "vivíamos",
+    "es": "vivíamos"
+  },
+  "nosotros viviamos en sevilla": {
+    "ru": "vivíamos",
+    "en": "vivíamos",
+    "de": "vivíamos",
+    "es": "vivíamos"
+  },
+  "Siempre tomaba café por la mañana.": {
+    "ru": "tomaba",
+    "en": "tomaba",
+    "de": "tomaba",
+    "es": "tomaba"
+  },
+  "siempre tomaba cafe por la manana": {
+    "ru": "tomaba",
+    "en": "tomaba",
+    "de": "tomaba",
+    "es": "tomaba"
+  },
+  "Ellos estaban felices.": {
+    "ru": "estaban",
+    "en": "estaban",
+    "de": "estaban",
+    "es": "estaban"
+  },
+  "ellos estaban felices": {
+    "ru": "estaban",
+    "en": "estaban",
+    "de": "estaban",
+    "es": "estaban"
+  },
+  "Mientras yo leía, sonó el teléfono.": {
+    "ru": "leía",
+    "en": "leía",
+    "de": "leía",
+    "es": "leía"
+  },
+  "mientras yo leia sono el telefono": {
+    "ru": "leía",
+    "en": "leía",
+    "de": "leía",
+    "es": "leía"
+  },
+  "De pequeño tenía miedo a la oscuridad.": {
+    "ru": "tenía",
+    "en": "tenía",
+    "de": "tenía",
+    "es": "tenía"
+  },
+  "de pequeno tenia miedo a la oscuridad": {
+    "ru": "tenía",
+    "en": "tenía",
+    "de": "tenía",
+    "es": "tenía"
+  },
+  "¿Qué hacías tú a esa hora?": {
+    "ru": "Что ты делал в тот час?",
+    "en": "What were you doing at that hour?",
+    "de": "Was hast du zu der Stunde gemacht?",
+    "es": "What were you doing at that hour?"
+  },
+  "que hacias tu a esa hora": {
+    "ru": "hacías",
+    "en": "hacías",
+    "de": "hacías",
+    "es": "hacías"
+  },
+  "Hacía frío y llovía.": {
+    "ru": "llovía",
+    "en": "llovía",
+    "de": "llovía",
+    "es": "llovía"
+  },
+  "hacia frio y llovia": {
+    "ru": "llovía",
+    "en": "llovía",
+    "de": "llovía",
+    "es": "llovía"
+  },
+  "Mis padres trabajaban en esa época.": {
+    "ru": "trabajaban",
+    "en": "trabajaban",
+    "de": "trabajaban",
+    "es": "trabajaban"
+  },
+  "mis padres trabajaban en esa epoca": {
+    "ru": "trabajaban",
+    "en": "trabajaban",
+    "de": "trabajaban",
+    "es": "trabajaban"
+  },
+  "Este regalo es para ti.": {
+    "ru": "para",
+    "en": "para",
+    "de": "para",
+    "es": "para"
+  },
+  "este regalo es para ti": {
+    "ru": "para",
+    "en": "para",
+    "de": "para",
+    "es": "para"
+  },
+  "Pasamos por el parque.": {
+    "ru": "por",
+    "en": "por",
+    "de": "por",
+    "es": "por"
+  },
+  "pasamos por el parque": {
+    "ru": "por",
+    "en": "por",
+    "de": "por",
+    "es": "por"
+  },
+  "Estudio español para viajar.": {
+    "ru": "para",
+    "en": "para",
+    "de": "para",
+    "es": "para"
+  },
+  "estudio espanol para viajar": {
+    "ru": "para",
+    "en": "para",
+    "de": "para",
+    "es": "para"
+  },
+  "Gracias por tu ayuda.": {
+    "ru": "por",
+    "en": "por",
+    "de": "por",
+    "es": "por"
+  },
+  "gracias por tu ayuda": {
+    "ru": "por",
+    "en": "por",
+    "de": "por",
+    "es": "por"
+  },
+  "Salgo por la mañana.": {
+    "ru": "por",
+    "en": "por",
+    "de": "por",
+    "es": "por"
+  },
+  "salgo por la manana": {
+    "ru": "por",
+    "en": "por",
+    "de": "por",
+    "es": "por"
+  },
+  "El tren para Madrid sale a las 10.": {
+    "ru": "para",
+    "en": "para",
+    "de": "para",
+    "es": "para"
+  },
+  "el tren para madrid sale a las 10": {
+    "ru": "para",
+    "en": "para",
+    "de": "para",
+    "es": "para"
+  },
+  "Lo hice por ti.": {
+    "ru": "por",
+    "en": "por",
+    "de": "por",
+    "es": "por"
+  },
+  "lo hice por ti": {
+    "ru": "por",
+    "en": "por",
+    "de": "por",
+    "es": "por"
+  },
+  "Necesito el informe para mañana.": {
+    "ru": "para",
+    "en": "para",
+    "de": "para",
+    "es": "para"
+  },
+  "necesito el informe para manana": {
+    "ru": "para",
+    "en": "para",
+    "de": "para",
+    "es": "para"
+  },
+  "Camino por la calle.": {
+    "ru": "por",
+    "en": "por",
+    "de": "por",
+    "es": "por"
+  },
+  "camino por la calle": {
+    "ru": "por",
+    "en": "por",
+    "de": "por",
+    "es": "por"
+  },
+  "Compré esto por cinco euros.": {
+    "ru": "por",
+    "en": "por",
+    "de": "por",
+    "es": "por"
+  },
+  "compre esto por cinco euros": {
+    "ru": "por",
+    "en": "por",
+    "de": "por",
+    "es": "por"
+  },
+  "Quiero que tú vengas.": {
+    "ru": "vengas",
+    "en": "vengas",
+    "de": "vengas",
+    "es": "vengas"
+  },
+  "quiero que tu vengas": {
+    "ru": "vengas",
+    "en": "vengas",
+    "de": "vengas",
+    "es": "vengas"
+  },
+  "Es importante que ella estudie.": {
+    "ru": "estudie",
+    "en": "estudie",
+    "de": "estudie",
+    "es": "estudie"
+  },
+  "es importante que ella estudie": {
+    "ru": "estudie",
+    "en": "estudie",
+    "de": "estudie",
+    "es": "estudie"
+  },
+  "Dudo que él diga la verdad.": {
+    "ru": "diga",
+    "en": "diga",
+    "de": "diga",
+    "es": "diga"
+  },
+  "dudo que el diga la verdad": {
+    "ru": "diga",
+    "en": "diga",
+    "de": "diga",
+    "es": "diga"
+  },
+  "Espero que haga buen tiempo.": {
+    "ru": "haga",
+    "en": "haga",
+    "de": "haga",
+    "es": "haga"
+  },
+  "espero que haga buen tiempo": {
+    "ru": "haga",
+    "en": "haga",
+    "de": "haga",
+    "es": "haga"
+  },
+  "No creo que sea posible.": {
+    "ru": "sea",
+    "en": "sea",
+    "de": "sea",
+    "es": "sea"
+  },
+  "no creo que sea posible": {
+    "ru": "sea",
+    "en": "sea",
+    "de": "sea",
+    "es": "sea"
+  },
+  "Te recomiendo que descanses más.": {
+    "ru": "descanses",
+    "en": "descanses",
+    "de": "descanses",
+    "es": "descanses"
+  },
+  "te recomiendo que descanses mas": {
+    "ru": "descanses",
+    "en": "descanses",
+    "de": "descanses",
+    "es": "descanses"
+  },
+  "Ojalá llueva mañana.": {
+    "ru": "llueva",
+    "en": "llueva",
+    "de": "llueva",
+    "es": "llueva"
+  },
+  "ojala llueva manana": {
+    "ru": "llueva",
+    "en": "llueva",
+    "de": "llueva",
+    "es": "llueva"
+  },
+  "Para que llegues a tiempo, sal temprano.": {
+    "ru": "llegues",
+    "en": "llegues",
+    "de": "llegues",
+    "es": "llegues"
+  },
+  "para que llegues a tiempo sal temprano": {
+    "ru": "llegues",
+    "en": "llegues",
+    "de": "llegues",
+    "es": "llegues"
+  },
+  "Me alegra que estés aquí.": {
+    "ru": "estés",
+    "en": "estés",
+    "de": "estés",
+    "es": "estés"
+  },
+  "me alegra que estes aqui": {
+    "ru": "estés",
+    "en": "estés",
+    "de": "estés",
+    "es": "estés"
+  },
+  "Es necesario que nosotros hablemos.": {
+    "ru": "hablemos",
+    "en": "hablemos",
+    "de": "hablemos",
+    "es": "hablemos"
+  },
+  "es necesario que nosotros hablemos": {
+    "ru": "hablemos",
+    "en": "hablemos",
+    "de": "hablemos",
+    "es": "hablemos"
+  },
+  "Abre la puerta, por favor.": {
+    "ru": "Abre",
+    "en": "Abre",
+    "de": "Abre",
+    "es": "Abre"
+  },
+  "abre la puerta por favor": {
+    "ru": "Abre",
+    "en": "Abre",
+    "de": "Abre",
+    "es": "Abre"
+  },
+  "No hables tan alto.": {
+    "ru": "hables",
+    "en": "hables",
+    "de": "hables",
+    "es": "hables"
+  },
+  "no hables tan alto": {
+    "ru": "hables",
+    "en": "hables",
+    "de": "hables",
+    "es": "hables"
+  },
+  "Espere usted aquí.": {
+    "ru": "Espere",
+    "en": "Espere",
+    "de": "Espere",
+    "es": "Espere"
+  },
+  "espere usted aqui": {
+    "ru": "Espere",
+    "en": "Espere",
+    "de": "Espere",
+    "es": "Espere"
+  },
+  "Di la verdad.": {
+    "ru": "Di",
+    "en": "Di",
+    "de": "Di",
+    "es": "Di"
+  },
+  "di la verdad": {
+    "ru": "Di",
+    "en": "Di",
+    "de": "Di",
+    "es": "Di"
+  },
+  "No hagas eso.": {
+    "ru": "hagas",
+    "en": "hagas",
+    "de": "hagas",
+    "es": "hagas"
+  },
+  "no hagas eso": {
+    "ru": "hagas",
+    "en": "hagas",
+    "de": "hagas",
+    "es": "hagas"
+  },
+  "Presta atención.": {
+    "ru": "Presta",
+    "en": "Presta",
+    "de": "Presta",
+    "es": "Presta"
+  },
+  "presta atencion": {
+    "ru": "Presta",
+    "en": "Presta",
+    "de": "Presta",
+    "es": "Presta"
+  },
+  "Hablen ustedes más despacio.": {
+    "ru": "Hablen",
+    "en": "Hablen",
+    "de": "Hablen",
+    "es": "Hablen"
+  },
+  "hablen ustedes mas despacio": {
+    "ru": "Hablen",
+    "en": "Hablen",
+    "de": "Hablen",
+    "es": "Hablen"
+  },
+  "Lee el libro.": {
+    "ru": "Lee",
+    "en": "Lee",
+    "de": "Lee",
+    "es": "Lee"
+  },
+  "lee el libro": {
+    "ru": "Lee",
+    "en": "Lee",
+    "de": "Lee",
+    "es": "Lee"
+  },
+  "No te preocupes.": {
+    "ru": "preocupes",
+    "en": "preocupes",
+    "de": "preocupes",
+    "es": "preocupes"
+  },
+  "no te preocupes": {
+    "ru": "preocupes",
+    "en": "preocupes",
+    "de": "preocupes",
+    "es": "preocupes"
+  },
+  "Ven aquí mañana.": {
+    "ru": "Ven",
+    "en": "Ven",
+    "de": "Ven",
+    "es": "Ven"
+  },
+  "ven aqui manana": {
+    "ru": "Ven",
+    "en": "Ven",
+    "de": "Ven",
+    "es": "Ven"
+  },
+  "Yo quisiera un café, por favor.": {
+    "ru": "quisiera",
+    "en": "quisiera",
+    "de": "quisiera",
+    "es": "quisiera"
+  },
+  "yo quisiera un cafe por favor": {
+    "ru": "quisiera",
+    "en": "quisiera",
+    "de": "quisiera",
+    "es": "quisiera"
+  },
+  "A ella le gustaría viajar a Italia.": {
+    "ru": "gustaría",
+    "en": "gustaría",
+    "de": "gustaría",
+    "es": "gustaría"
+  },
+  "a ella le gustaria viajar a italia": {
+    "ru": "gustaría",
+    "en": "gustaría",
+    "de": "gustaría",
+    "es": "gustaría"
+  },
+  "¿Podrías ayudarme?": {
+    "ru": "Не мог бы ты помочь?",
+    "en": "Could you help?",
+    "de": "Könntest du helfen?",
+    "es": "Could you help?"
+  },
+  "podrias ayudarme": {
+    "ru": "Podrías",
+    "en": "Podrías",
+    "de": "Podrías",
+    "es": "Podrías"
+  },
+  "Si tuviera tiempo, iría.": {
+    "ru": "tuviera",
+    "en": "tuviera",
+    "de": "tuviera",
+    "es": "tuviera"
+  },
+  "si tuviera tiempo iria": {
+    "ru": "tuviera",
+    "en": "tuviera",
+    "de": "tuviera",
+    "es": "tuviera"
+  },
+  "Nosotros necesitaríamos más dinero.": {
+    "ru": "necesitaríamos",
+    "en": "necesitaríamos",
+    "de": "necesitaríamos",
+    "es": "necesitaríamos"
+  },
+  "nosotros necesitariamos mas dinero": {
+    "ru": "necesitaríamos",
+    "en": "necesitaríamos",
+    "de": "necesitaríamos",
+    "es": "necesitaríamos"
+  },
+  "Él diría la verdad.": {
+    "ru": "diría",
+    "en": "diría",
+    "de": "diría",
+    "es": "diría"
+  },
+  "el diria la verdad": {
+    "ru": "diría",
+    "en": "diría",
+    "de": "diría",
+    "es": "diría"
+  },
+  "Yo no haría eso.": {
+    "ru": "haría",
+    "en": "haría",
+    "de": "haría",
+    "es": "haría"
+  },
+  "yo no haria eso": {
+    "ru": "haría",
+    "en": "haría",
+    "de": "haría",
+    "es": "haría"
+  },
+  "¿Qué haría usted?": {
+    "ru": "Что бы вы сделали?",
+    "en": "What would you do?",
+    "de": "Was würden Sie tun?",
+    "es": "What would you do?"
+  },
+  "que haria usted": {
+    "ru": "haría",
+    "en": "haría",
+    "de": "haría",
+    "es": "haría"
+  },
+  "Me gustaría quedarme.": {
+    "ru": "gustaría",
+    "en": "gustaría",
+    "de": "gustaría",
+    "es": "gustaría"
+  },
+  "me gustaria quedarme": {
+    "ru": "gustaría",
+    "en": "gustaría",
+    "de": "gustaría",
+    "es": "gustaría"
+  },
+  "Ellos deberían venir.": {
+    "ru": "deberían",
+    "en": "deberían",
+    "de": "deberían",
+    "es": "deberían"
+  },
+  "ellos deberian venir": {
+    "ru": "deberían",
+    "en": "deberían",
+    "de": "deberían",
+    "es": "deberían"
+  },
+  "Ella dijo que estaba cansada.": {
+    "ru": "estaba",
+    "en": "estaba",
+    "de": "estaba",
+    "es": "estaba"
+  },
+  "ella dijo que estaba cansada": {
+    "ru": "estaba",
+    "en": "estaba",
+    "de": "estaba",
+    "es": "estaba"
+  },
+  "Me dijo que vendría mañana.": {
+    "ru": "vendría",
+    "en": "vendría",
+    "de": "vendría",
+    "es": "vendría"
+  },
+  "me dijo que vendria manana": {
+    "ru": "vendría",
+    "en": "vendría",
+    "de": "vendría",
+    "es": "vendría"
+  },
+  "Preguntó si yo estaba listo.": {
+    "ru": "estaba",
+    "en": "estaba",
+    "de": "estaba",
+    "es": "estaba"
+  },
+  "pregunto si yo estaba listo": {
+    "ru": "estaba",
+    "en": "estaba",
+    "de": "estaba",
+    "es": "estaba"
+  },
+  "Dijo que tenía hambre.": {
+    "ru": "Сказал, что голоден.",
+    "en": "He said he was hungry.",
+    "de": "Er sagte, dass er hungrig sei.",
+    "es": "He said he was hungry."
+  },
+  "dijo que tenia hambre": {
+    "ru": "Сказал, что голоден.",
+    "en": "He said he was hungry.",
+    "de": "Er sagte, dass er hungrig sei.",
+    "es": "He said he was hungry."
+  },
+  "Nos pidió que esperáramos.": {
+    "ru": "esperáramos",
+    "en": "esperáramos",
+    "de": "esperáramos",
+    "es": "esperáramos"
+  },
+  "nos pidio que esperaramos": {
+    "ru": "esperáramos",
+    "en": "esperáramos",
+    "de": "esperáramos",
+    "es": "esperáramos"
+  },
+  "Explicó que había perdido el tren.": {
+    "ru": "había perdido",
+    "en": "había perdido",
+    "de": "había perdido",
+    "es": "había perdido"
+  },
+  "explico que habia perdido el tren": {
+    "ru": "había perdido",
+    "en": "había perdido",
+    "de": "había perdido",
+    "es": "había perdido"
+  },
+  "Me preguntó dónde vivía.": {
+    "ru": "vivía",
+    "en": "vivía",
+    "de": "vivía",
+    "es": "vivía"
+  },
+  "me pregunto donde vivia": {
+    "ru": "vivía",
+    "en": "vivía",
+    "de": "vivía",
+    "es": "vivía"
+  },
+  "Dijo que no sabía nada.": {
+    "ru": "sabía",
+    "en": "sabía",
+    "de": "sabía",
+    "es": "sabía"
+  },
+  "dijo que no sabia nada": {
+    "ru": "sabía",
+    "en": "sabía",
+    "de": "sabía",
+    "es": "sabía"
+  },
+  "Afirmó que decía la verdad.": {
+    "ru": "decía",
+    "en": "decía",
+    "de": "decía",
+    "es": "decía"
+  },
+  "afirmo que decia la verdad": {
+    "ru": "decía",
+    "en": "decía",
+    "de": "decía",
+    "es": "decía"
+  },
+  "Prometió que llegaría a tiempo.": {
+    "ru": "llegaría",
+    "en": "llegaría",
+    "de": "llegaría",
+    "es": "llegaría"
+  },
+  "prometio que llegaria a tiempo": {
+    "ru": "llegaría",
+    "en": "llegaría",
+    "de": "llegaría",
+    "es": "llegaría"
+  },
+  "El libro fue escrito por Cervantes.": {
+    "ru": "fue escrito",
+    "en": "fue escrito",
+    "de": "fue escrito",
+    "es": "fue escrito"
+  },
+  "el libro fue escrito por cervantes": {
+    "ru": "fue escrito",
+    "en": "fue escrito",
+    "de": "fue escrito",
+    "es": "fue escrito"
+  },
+  "La casa fue construida en 1990.": {
+    "ru": "fue construida",
+    "en": "fue construida",
+    "de": "fue construida",
+    "es": "fue construida"
+  },
+  "la casa fue construida en 1990": {
+    "ru": "fue construida",
+    "en": "fue construida",
+    "de": "fue construida",
+    "es": "fue construida"
+  },
+  "Las cartas fueron enviadas ayer.": {
+    "ru": "fueron enviadas",
+    "en": "fueron enviadas",
+    "de": "fueron enviadas",
+    "es": "fueron enviadas"
+  },
+  "las cartas fueron enviadas ayer": {
+    "ru": "fueron enviadas",
+    "en": "fueron enviadas",
+    "de": "fueron enviadas",
+    "es": "fueron enviadas"
+  },
+  "El museo es visitado todos los días.": {
+    "ru": "es visitado",
+    "en": "es visitado",
+    "de": "es visitado",
+    "es": "es visitado"
+  },
+  "el museo es visitado todos los dias": {
+    "ru": "es visitado",
+    "en": "es visitado",
+    "de": "es visitado",
+    "es": "es visitado"
+  },
+  "La puerta fue abierta por el viento.": {
+    "ru": "fue abierta",
+    "en": "fue abierta",
+    "de": "fue abierta",
+    "es": "fue abierta"
+  },
+  "la puerta fue abierta por el viento": {
+    "ru": "fue abierta",
+    "en": "fue abierta",
+    "de": "fue abierta",
+    "es": "fue abierta"
+  },
+  "Se habla español aquí.": {
+    "ru": "habla",
+    "en": "habla",
+    "de": "habla",
+    "es": "habla"
+  },
+  "se habla espanol aqui": {
+    "ru": "habla",
+    "en": "habla",
+    "de": "habla",
+    "es": "habla"
+  },
+  "El coche está siendo reparado.": {
+    "ru": "está siendo",
+    "en": "está siendo",
+    "de": "está siendo",
+    "es": "está siendo"
+  },
+  "el coche esta siendo reparado": {
+    "ru": "está siendo",
+    "en": "está siendo",
+    "de": "está siendo",
+    "es": "está siendo"
+  },
+  "La película fue estrenada en 2020.": {
+    "ru": "fue estrenada",
+    "en": "fue estrenada",
+    "de": "fue estrenada",
+    "es": "fue estrenada"
+  },
+  "la pelicula fue estrenada en 2020": {
+    "ru": "fue estrenada",
+    "en": "fue estrenada",
+    "de": "fue estrenada",
+    "es": "fue estrenada"
+  },
+  "Los documentos han sido firmados.": {
+    "ru": "han sido",
+    "en": "han sido",
+    "de": "han sido",
+    "es": "han sido"
+  },
+  "los documentos han sido firmados": {
+    "ru": "han sido",
+    "en": "han sido",
+    "de": "han sido",
+    "es": "han sido"
+  },
+  "El mensaje fue enviado por Ana.": {
+    "ru": "fue enviado",
+    "en": "fue enviado",
+    "de": "fue enviado",
+    "es": "fue enviado"
+  },
+  "el mensaje fue enviado por ana": {
+    "ru": "fue enviado",
+    "en": "fue enviado",
+    "de": "fue enviado",
+    "es": "fue enviado"
+  },
+  "Voy a estudiar mañana.": {
+    "ru": "estudiar",
+    "en": "estudiar",
+    "de": "estudiar",
+    "es": "estudiar"
+  },
+  "voy a estudiar manana": {
+    "ru": "estudiar",
+    "en": "estudiar",
+    "de": "estudiar",
+    "es": "estudiar"
+  },
+  "Estoy leyendo un libro.": {
+    "ru": "leyendo",
+    "en": "leyendo",
+    "de": "leyendo",
+    "es": "leyendo"
+  },
+  "estoy leyendo un libro": {
+    "ru": "leyendo",
+    "en": "leyendo",
+    "de": "leyendo",
+    "es": "leyendo"
+  },
+  "Acabo de llegar.": {
+    "ru": "llegar",
+    "en": "llegar",
+    "de": "llegar",
+    "es": "llegar"
+  },
+  "acabo de llegar": {
+    "ru": "llegar",
+    "en": "llegar",
+    "de": "llegar",
+    "es": "llegar"
+  },
+  "Tengo que trabajar.": {
+    "ru": "trabajar",
+    "en": "trabajar",
+    "de": "trabajar",
+    "es": "trabajar"
+  },
+  "tengo que trabajar": {
+    "ru": "trabajar",
+    "en": "trabajar",
+    "de": "trabajar",
+    "es": "trabajar"
+  },
+  "Sigo estudiando español.": {
+    "ru": "estudiando",
+    "en": "estudiando",
+    "de": "estudiando",
+    "es": "estudiando"
+  },
+  "sigo estudiando espanol": {
+    "ru": "estudiando",
+    "en": "estudiando",
+    "de": "estudiando",
+    "es": "estudiando"
+  },
+  "Dejo de fumar.": {
+    "ru": "fumar",
+    "en": "fumar",
+    "de": "fumar",
+    "es": "fumar"
+  },
+  "dejo de fumar": {
+    "ru": "fumar",
+    "en": "fumar",
+    "de": "fumar",
+    "es": "fumar"
+  },
+  "Vuelvo a intentarlo.": {
+    "ru": "intentarlo",
+    "en": "intentarlo",
+    "de": "intentarlo",
+    "es": "intentarlo"
+  },
+  "vuelvo a intentarlo": {
+    "ru": "intentarlo",
+    "en": "intentarlo",
+    "de": "intentarlo",
+    "es": "intentarlo"
+  },
+  "Llevo dos horas esperando.": {
+    "ru": "esperando",
+    "en": "esperando",
+    "de": "esperando",
+    "es": "esperando"
+  },
+  "llevo dos horas esperando": {
+    "ru": "esperando",
+    "en": "esperando",
+    "de": "esperando",
+    "es": "esperando"
+  },
+  "Hay que practicar.": {
+    "ru": "practicar",
+    "en": "practicar",
+    "de": "practicar",
+    "es": "practicar"
+  },
+  "hay que practicar": {
+    "ru": "practicar",
+    "en": "practicar",
+    "de": "practicar",
+    "es": "practicar"
+  },
+  "Está a punto de salir.": {
+    "ru": "salir",
+    "en": "salir",
+    "de": "salir",
+    "es": "salir"
+  },
+  "esta a punto de salir": {
+    "ru": "salir",
+    "en": "salir",
+    "de": "salir",
+    "es": "salir"
+  },
+  "Me alegro de que hayas venido.": {
+    "ru": "hayas",
+    "en": "hayas",
+    "de": "hayas",
+    "es": "hayas"
+  },
+  "me alegro de que hayas venido": {
+    "ru": "hayas",
+    "en": "hayas",
+    "de": "hayas",
+    "es": "hayas"
+  },
+  "No obstante, debemos continuar.": {
+    "ru": "debemos",
+    "en": "debemos",
+    "de": "debemos",
+    "es": "debemos"
+  },
+  "no obstante debemos continuar": {
+    "ru": "debemos",
+    "en": "debemos",
+    "de": "debemos",
+    "es": "debemos"
+  },
+  "El texto está escrito en un tono formal.": {
+    "ru": "está escrito",
+    "en": "está escrito",
+    "de": "está escrito",
+    "es": "está escrito"
+  },
+  "el texto esta escrito en un tono formal": {
+    "ru": "está escrito",
+    "en": "está escrito",
+    "de": "está escrito",
+    "es": "está escrito"
+  },
+  "Aunque estuviera cansado, terminó.": {
+    "ru": "estuviera",
+    "en": "estuviera",
+    "de": "estuviera",
+    "es": "estuviera"
+  },
+  "aunque estuviera cansado termino": {
+    "ru": "estuviera",
+    "en": "estuviera",
+    "de": "estuviera",
+    "es": "estuviera"
+  },
+  "Se espera que llegue pronto.": {
+    "ru": "espera",
+    "en": "espera",
+    "de": "espera",
+    "es": "espera"
+  },
+  "se espera que llegue pronto": {
+    "ru": "espera",
+    "en": "espera",
+    "de": "espera",
+    "es": "espera"
+  },
+  "Hubiera estudiado más.": {
+    "ru": "estudiado",
+    "en": "estudiado",
+    "de": "estudiado",
+    "es": "estudiado"
+  },
+  "hubiera estudiado mas": {
+    "ru": "estudiado",
+    "en": "estudiado",
+    "de": "estudiado",
+    "es": "estudiado"
+  },
+  "En cuanto llegues, llámame.": {
+    "ru": "llegues",
+    "en": "llegues",
+    "de": "llegues",
+    "es": "llegues"
+  },
+  "en cuanto llegues llamame": {
+    "ru": "llegues",
+    "en": "llegues",
+    "de": "llegues",
+    "es": "llegues"
+  },
+  "Por un lado…; por otro, …": {
+    "ru": "С одной стороны… с другой…",
+    "en": "On one hand… on the other…",
+    "de": "Einerseits… andererseits…",
+    "es": "On one hand… on the other…"
+  },
+  "por un lado; por otro": {
+    "ru": "otro",
+    "en": "otro",
+    "de": "otro",
+    "es": "otro"
+  },
+  "Es probable que tenga razón.": {
+    "ru": "tenga",
+    "en": "tenga",
+    "de": "tenga",
+    "es": "tenga"
+  },
+  "es probable que tenga razon": {
+    "ru": "tenga",
+    "en": "tenga",
+    "de": "tenga",
+    "es": "tenga"
+  },
+  "La casa es blanca.": {
+    "ru": "женский род → la casa",
+    "en": "женский род → la casa",
+    "de": "женский род → la casa",
+    "es": "женский род → la casa"
+  },
+  "la casa es blanca": {
+    "ru": "женский род → la casa",
+    "en": "женский род → la casa",
+    "de": "женский род → la casa",
+    "es": "женский род → la casa"
+  },
+  "El libro es interesante.": {
+    "ru": "мужской род → el libro",
+    "en": "мужской род → el libro",
+    "de": "мужской род → el libro",
+    "es": "мужской род → el libro"
+  },
+  "el libro es interesante": {
+    "ru": "мужской род → el libro",
+    "en": "мужской род → el libro",
+    "de": "мужской род → el libro",
+    "es": "мужской род → el libro"
+  },
+  "Tengo dos hermanos.": {
+    "ru": "много",
+    "en": "много",
+    "de": "много",
+    "es": "много"
+  },
+  "tengo dos hermanos": {
+    "ru": "много",
+    "en": "много",
+    "de": "много",
+    "es": "много"
+  },
+  "Las flores son rojas.": {
+    "ru": "Цветы красные.",
+    "en": "The flowers are red.",
+    "de": "Die Blumen sind rot.",
+    "es": "The flowers are red."
+  },
+  "las flores son rojas": {
+    "ru": "Цветы красные.",
+    "en": "The flowers are red.",
+    "de": "Die Blumen sind rot.",
+    "es": "The flowers are red."
+  },
+  "El problema es grave.": {
+    "ru": "мужской род, хотя на -a → el problema",
+    "en": "мужской род, хотя на -a → el problema",
+    "de": "мужской род, хотя на -a → el problema",
+    "es": "мужской род, хотя на -a → el problema"
+  },
+  "el problema es grave": {
+    "ru": "мужской род, хотя на -a → el problema",
+    "en": "мужской род, хотя на -a → el problema",
+    "de": "мужской род, хотя на -a → el problema",
+    "es": "мужской род, хотя на -a → el problema"
+  },
+  "Las mesas son grandes.": {
+    "ru": "Столы большие.",
+    "en": "The tables are big.",
+    "de": "Die Tische sind groß.",
+    "es": "The tables are big."
+  },
+  "las mesas son grandes": {
+    "ru": "Столы большие.",
+    "en": "The tables are big.",
+    "de": "Die Tische sind groß.",
+    "es": "The tables are big."
+  },
+  "Un amigo español.": {
+    "ru": "мужской род, один друг",
+    "en": "мужской род, один друг",
+    "de": "мужской род, один друг",
+    "es": "мужской род, один друг"
+  },
+  "un amigo espanol": {
+    "ru": "мужской род, один друг",
+    "en": "мужской род, один друг",
+    "de": "мужской род, один друг",
+    "es": "мужской род, один друг"
+  },
+  "Las aguas del río.": {
+    "ru": "женский род, много → las aguas (исключение el agua только для одной вещи)",
+    "en": "женский род, много → las aguas (исключение el agua только для одной вещи)",
+    "de": "женский род, много → las aguas (исключение el agua только для одной вещи)",
+    "es": "женский род, много → las aguas (исключение el agua только для одной вещи)"
+  },
+  "las aguas del rio": {
+    "ru": "женский род, много → las aguas (исключение el agua только для одной вещи)",
+    "en": "женский род, много → las aguas (исключение el agua только для одной вещи)",
+    "de": "женский род, много → las aguas (исключение el agua только для одной вещи)",
+    "es": "женский род, много → las aguas (исключение el agua только для одной вещи)"
+  },
+  "Estos coches son nuevos.": {
+    "ru": "Эти машины новые.",
+    "en": "These cars are new.",
+    "de": "Diese Autos sind neu.",
+    "es": "These cars are new."
+  },
+  "estos coches son nuevos": {
+    "ru": "Эти машины новые.",
+    "en": "These cars are new.",
+    "de": "Diese Autos sind neu.",
+    "es": "These cars are new."
+  },
+  "La niña es inteligente.": {
+    "ru": "Девочка умная.",
+    "en": "The girl is smart.",
+    "de": "Das Mädchen ist klug.",
+    "es": "The girl is smart."
+  },
+  "la nina es inteligente": {
+    "ru": "Девочка умная.",
+    "en": "The girl is smart.",
+    "de": "Das Mädchen ist klug.",
+    "es": "The girl is smart."
+  },
+  "Estoy en casa.": {
+    "ru": "en",
+    "en": "en",
+    "de": "en",
+    "es": "en"
+  },
+  "Voy a la escuela.": {
+    "ru": "a",
+    "en": "a",
+    "de": "a",
+    "es": "a"
+  },
+  "voy a la escuela": {
+    "ru": "a",
+    "en": "a",
+    "de": "a",
+    "es": "a"
+  },
+  "El gato está bajo la mesa.": {
+    "ru": "bajo",
+    "en": "bajo",
+    "de": "bajo",
+    "es": "bajo"
+  },
+  "el gato esta bajo la mesa": {
+    "ru": "bajo",
+    "en": "bajo",
+    "de": "bajo",
+    "es": "bajo"
+  },
+  "El libro está sobre la mesa.": {
+    "ru": "sobre",
+    "en": "sobre",
+    "de": "sobre",
+    "es": "sobre"
+  },
+  "el libro esta sobre la mesa": {
+    "ru": "sobre",
+    "en": "sobre",
+    "de": "sobre",
+    "es": "sobre"
+  },
+  "Madrid está en España.": {
+    "ru": "en",
+    "en": "en",
+    "de": "en",
+    "es": "en"
+  },
+  "madrid esta en espana": {
+    "ru": "en",
+    "en": "en",
+    "de": "en",
+    "es": "en"
+  },
+  "La tienda está entre el banco y el café.": {
+    "ru": "entre",
+    "en": "entre",
+    "de": "entre",
+    "es": "entre"
+  },
+  "la tienda esta entre el banco y el cafe": {
+    "ru": "entre",
+    "en": "entre",
+    "de": "entre",
+    "es": "entre"
+  },
+  "Camina por el parque.": {
+    "ru": "por",
+    "en": "por",
+    "de": "por",
+    "es": "por"
+  },
+  "camina por el parque": {
+    "ru": "por",
+    "en": "por",
+    "de": "por",
+    "es": "por"
+  },
+  "El perro está delante de la puerta.": {
+    "ru": "delante de",
+    "en": "delante de",
+    "de": "delante de",
+    "es": "delante de"
+  },
+  "el perro esta delante de la puerta": {
+    "ru": "delante de",
+    "en": "delante de",
+    "de": "delante de",
+    "es": "delante de"
+  },
+  "Vivo con mis padres.": {
+    "ru": "con",
+    "en": "con",
+    "de": "con",
+    "es": "con"
+  },
+  "vivo con mis padres": {
+    "ru": "con",
+    "en": "con",
+    "de": "con",
+    "es": "con"
+  },
+  "La silla está cerca de la mesa.": {
+    "ru": "cerca de",
+    "en": "cerca de",
+    "de": "cerca de",
+    "es": "cerca de"
+  },
+  "la silla esta cerca de la mesa": {
+    "ru": "cerca de",
+    "en": "cerca de",
+    "de": "cerca de",
+    "es": "cerca de"
+  },
+  "¿Cómo te llamas?": {
+    "ru": "Как тебя зовут?",
+    "en": "What is your name?",
+    "de": "Wie heißt du?",
+    "es": "What is your name?"
+  },
+  "como te llamas": {
+    "ru": "Cómo",
+    "en": "Cómo",
+    "de": "Cómo",
+    "es": "Cómo"
+  },
+  "¿Dónde vives?": {
+    "ru": "Где ты живёшь?",
+    "en": "Where do you live?",
+    "de": "Wo wohnst du?",
+    "es": "Where do you live?"
+  },
+  "donde vives": {
+    "ru": "Dónde",
+    "en": "Dónde",
+    "de": "Dónde",
+    "es": "Dónde"
+  },
+  "¿Quién es tu profesor?": {
+    "ru": "Кто твой учитель?",
+    "en": "Who is your teacher?",
+    "de": "Wer ist dein Lehrer?",
+    "es": "Who is your teacher?"
+  },
+  "quien es tu profesor": {
+    "ru": "Quién",
+    "en": "Quién",
+    "de": "Quién",
+    "es": "Quién"
+  },
+  "¿Por qué estudias español?": {
+    "ru": "Почему учишь испанский?",
+    "en": "Why are you learning Spanish?",
+    "de": "Warum lernst du Spanisch?",
+    "es": "Why are you learning Spanish?"
+  },
+  "por que estudias espanol": {
+    "ru": "Por qué",
+    "en": "Por qué",
+    "de": "Por qué",
+    "es": "Por qué"
+  },
+  "¿Qué hora es?": {
+    "ru": "Который час?",
+    "en": "What time is it?",
+    "de": "Wie spät ist es?",
+    "es": "What time is it?"
+  },
+  "que hora es": {
+    "ru": "Qué",
+    "en": "Qué",
+    "de": "Qué",
+    "es": "Qué"
+  },
+  "¿Cuándo vas al cine?": {
+    "ru": "Когда идёшь в кино?",
+    "en": "When are you going to the cinema?",
+    "de": "Wann gehst du ins Kino?",
+    "es": "When are you going to the cinema?"
+  },
+  "cuando vas al cine": {
+    "ru": "Cuándo",
+    "en": "Cuándo",
+    "de": "Cuándo",
+    "es": "Cuándo"
+  },
+  "¿Cuál libro quieres?": {
+    "ru": "Какую книгу хочешь?",
+    "en": "Which book do you want?",
+    "de": "Welches Buch möchtest du?",
+    "es": "Which book do you want?"
+  },
+  "cual libro quieres": {
+    "ru": "Cuál",
+    "en": "Cuál",
+    "de": "Cuál",
+    "es": "Cuál"
+  },
+  "¿Cuántos años tienes?": {
+    "ru": "Сколько тебе лет?",
+    "en": "How old are you?",
+    "de": "Wie alt bist du?",
+    "es": "How old are you?"
+  },
+  "cuantos anos tienes": {
+    "ru": "Cuántos",
+    "en": "Cuántos",
+    "de": "Cuántos",
+    "es": "Cuántos"
+  },
+  "¿De dónde eres?": {
+    "ru": "Откуда ты?",
+    "en": "Where are you from?",
+    "de": "Woher kommst du?",
+    "es": "Where are you from?"
+  },
+  "de donde eres": {
+    "ru": "dónde",
+    "en": "dónde",
+    "de": "dónde",
+    "es": "dónde"
+  },
+  "Ana es más alta que Luis.": {
+    "ru": "Ана выше Луиса.",
+    "en": "Ana is taller than Luis.",
+    "de": "Ana ist größer als Luis.",
+    "es": "Ana is taller than Luis."
+  },
+  "ana es mas alta que luis": {
+    "ru": "Ана выше Луиса.",
+    "en": "Ana is taller than Luis.",
+    "de": "Ana ist größer als Luis.",
+    "es": "Ana is taller than Luis."
+  },
+  "Este libro es tan interesante como aquel.": {
+    "ru": "Такая же интересная.",
+    "en": "This book is as interesting as that one.",
+    "de": "Dieses Buch ist so interessant wie jenes.",
+    "es": "This book is as interesting as that one."
+  },
+  "este libro es tan interesante como aquel": {
+    "ru": "Такая же интересная.",
+    "en": "This book is as interesting as that one.",
+    "de": "Dieses Buch ist so interessant wie jenes.",
+    "es": "This book is as interesting as that one."
+  },
+  "Madrid es la ciudad más grande.": {
+    "ru": "más",
+    "en": "más",
+    "de": "más",
+    "es": "más"
+  },
+  "madrid es la ciudad mas grande": {
+    "ru": "más",
+    "en": "más",
+    "de": "más",
+    "es": "más"
+  },
+  "Tengo más libros que tú.": {
+    "ru": "У меня больше книг, чем у тебя.",
+    "en": "I have more books than you.",
+    "de": "Ich habe mehr Bücher als du.",
+    "es": "I have more books than you."
+  },
+  "tengo mas libros que tu": {
+    "ru": "У меня больше книг, чем у тебя.",
+    "en": "I have more books than you.",
+    "de": "Ich habe mehr Bücher als du.",
+    "es": "I have more books than you."
+  },
+  "Ella es menos joven que yo.": {
+    "ru": "Она моложе меня.",
+    "en": "She is younger than me.",
+    "de": "Sie ist jünger als ich.",
+    "es": "She is younger than me."
+  },
+  "ella es menos joven que yo": {
+    "ru": "Она моложе меня.",
+    "en": "She is younger than me.",
+    "de": "Sie ist jünger als ich.",
+    "es": "She is younger than me."
+  },
+  "Es el alumno más inteligente de la clase.": {
+    "ru": "más",
+    "en": "más",
+    "de": "más",
+    "es": "más"
+  },
+  "es el alumno mas inteligente de la clase": {
+    "ru": "más",
+    "en": "más",
+    "de": "más",
+    "es": "más"
+  },
+  "Mi casa es mejor que la tuya.": {
+    "ru": "mejor",
+    "en": "mejor",
+    "de": "mejor",
+    "es": "mejor"
+  },
+  "mi casa es mejor que la tuya": {
+    "ru": "mejor",
+    "en": "mejor",
+    "de": "mejor",
+    "es": "mejor"
+  },
+  "Hoy hace más frío que ayer.": {
+    "ru": "Сегодня холоднее, чем вчера.",
+    "en": "Today is colder than yesterday.",
+    "de": "Heute ist es kälter als gestern.",
+    "es": "Today is colder than yesterday."
+  },
+  "hoy hace mas frio que ayer": {
+    "ru": "Сегодня холоднее, чем вчера.",
+    "en": "Today is colder than yesterday.",
+    "de": "Heute ist es kälter als gestern.",
+    "es": "Today is colder than yesterday."
+  },
+  "Somos tan felices como antes.": {
+    "ru": "Так же счастливы, как раньше.",
+    "en": "We are as happy as before.",
+    "de": "Wir sind so glücklich wie früher.",
+    "es": "We are as happy as before."
+  },
+  "somos tan felices como antes": {
+    "ru": "Так же счастливы, как раньше.",
+    "en": "We are as happy as before.",
+    "de": "Wir sind so glücklich wie früher.",
+    "es": "We are as happy as before."
+  },
+  "Esta película es la más interesante.": {
+    "ru": "la más",
+    "en": "la más",
+    "de": "la más",
+    "es": "la más"
+  },
+  "esta pelicula es la mas interesante": {
+    "ru": "la más",
+    "en": "la más",
+    "de": "la más",
+    "es": "la más"
+  },
+  "Mañana hablaré con ella.": {
+    "ru": "hablaré",
+    "en": "hablaré",
+    "de": "hablaré",
+    "es": "hablaré"
+  },
+  "manana hablare con ella": {
+    "ru": "hablaré",
+    "en": "hablaré",
+    "de": "hablaré",
+    "es": "hablaré"
+  },
+  "Ellos vendrán mañana.": {
+    "ru": "vendrán",
+    "en": "vendrán",
+    "de": "vendrán",
+    "es": "vendrán"
+  },
+  "ellos vendran manana": {
+    "ru": "vendrán",
+    "en": "vendrán",
+    "de": "vendrán",
+    "es": "vendrán"
+  },
+  "Nosotros iremos a España.": {
+    "ru": "iremos",
+    "en": "iremos",
+    "de": "iremos",
+    "es": "iremos"
+  },
+  "nosotros iremos a espana": {
+    "ru": "iremos",
+    "en": "iremos",
+    "de": "iremos",
+    "es": "iremos"
+  },
+  "¿Qué harás tú el año que viene?": {
+    "ru": "Что будешь делать в будущем году?",
+    "en": "What will you do next year?",
+    "de": "Was wirst du nächstes Jahr machen?",
+    "es": "What will you do next year?"
+  },
+  "que haras tu el ano que viene": {
+    "ru": "harás",
+    "en": "harás",
+    "de": "harás",
+    "es": "harás"
+  },
+  "Ella dirá la verdad.": {
+    "ru": "dirá",
+    "en": "dirá",
+    "de": "dirá",
+    "es": "dirá"
+  },
+  "ella dira la verdad": {
+    "ru": "dirá",
+    "en": "dirá",
+    "de": "dirá",
+    "es": "dirá"
+  },
+  "Yo saldré temprano.": {
+    "ru": "saldré",
+    "en": "saldré",
+    "de": "saldré",
+    "es": "saldré"
+  },
+  "yo saldre temprano": {
+    "ru": "saldré",
+    "en": "saldré",
+    "de": "saldré",
+    "es": "saldré"
+  },
+  "¿Vendrán ustedes a la fiesta?": {
+    "ru": "Вы придёте на праздник?",
+    "en": "Will you come to the party?",
+    "de": "Werden Sie zur Feier kommen?",
+    "es": "Will you come to the party?"
+  },
+  "vendran ustedes a la fiesta": {
+    "ru": "Vendrán",
+    "en": "Vendrán",
+    "de": "Vendrán",
+    "es": "Vendrán"
+  },
+  "Habrá mucha gente.": {
+    "ru": "mucha",
+    "en": "mucha",
+    "de": "mucha",
+    "es": "mucha"
+  },
+  "habra mucha gente": {
+    "ru": "mucha",
+    "en": "mucha",
+    "de": "mucha",
+    "es": "mucha"
+  },
+  "Nosotros prepararemos la cena.": {
+    "ru": "prepararemos",
+    "en": "prepararemos",
+    "de": "prepararemos",
+    "es": "prepararemos"
+  },
+  "nosotros prepararemos la cena": {
+    "ru": "prepararemos",
+    "en": "prepararemos",
+    "de": "prepararemos",
+    "es": "prepararemos"
+  },
+  "Tú aprobarás el examen.": {
+    "ru": "aprobarás",
+    "en": "aprobarás",
+    "de": "aprobarás",
+    "es": "aprobarás"
+  },
+  "tu aprobaras el examen": {
+    "ru": "aprobarás",
+    "en": "aprobarás",
+    "de": "aprobarás",
+    "es": "aprobarás"
+  },
+  "¿hablas tú inglés??": {
+    "ru": "hablas",
+    "en": "hablas",
+    "de": "hablas",
+    "es": "hablas"
+  },
+  "¿Dónde viven ustedes??": {
+    "ru": "viven",
+    "en": "viven",
+    "de": "viven",
+    "es": "viven"
+  },
+  "¿hablas tú inglés.": {
+    "ru": "hablas",
+    "en": "hablas",
+    "de": "hablas",
+    "es": "hablas"
+  },
+  "¿Dónde viven ustedes.": {
+    "ru": "viven",
+    "en": "viven",
+    "de": "viven",
+    "es": "viven"
+  },
+  "¿Tienes sed??": {
+    "ru": "Tienes",
+    "en": "Tienes",
+    "de": "Tienes",
+    "es": "Tienes"
+  },
+  "¿Qué tienes en la bolsa??": {
+    "ru": "tienes",
+    "en": "tienes",
+    "de": "tienes",
+    "es": "tienes"
+  },
+  "¿Cuántos hermanos tienes??": {
+    "ru": "tienes",
+    "en": "tienes",
+    "de": "tienes",
+    "es": "tienes"
+  },
+  "¿Tienes sed.": {
+    "ru": "Tienes",
+    "en": "Tienes",
+    "de": "Tienes",
+    "es": "Tienes"
+  },
+  "¿Qué tienes en la bolsa.": {
+    "ru": "tienes",
+    "en": "tienes",
+    "de": "tienes",
+    "es": "tienes"
+  },
+  "¿Cuántos hermanos tienes.": {
+    "ru": "tienes",
+    "en": "tienes",
+    "de": "tienes",
+    "es": "tienes"
+  },
+  "¿Te gusta el chocolate??": {
+    "ru": "gusta",
+    "en": "gusta",
+    "de": "gusta",
+    "es": "gusta"
+  },
+  "¿Qué te gusta más??": {
+    "ru": "gusta",
+    "en": "gusta",
+    "de": "gusta",
+    "es": "gusta"
+  },
+  "¿Te gusta el chocolate.": {
+    "ru": "gusta",
+    "en": "gusta",
+    "de": "gusta",
+    "es": "gusta"
+  },
+  "¿Qué te gusta más.": {
+    "ru": "gusta",
+    "en": "gusta",
+    "de": "gusta",
+    "es": "gusta"
+  },
+  "¿Has comido ya??": {
+    "ru": "comido",
+    "en": "comido",
+    "de": "comido",
+    "es": "comido"
+  },
+  "¿Qué has hecho??": {
+    "ru": "hecho",
+    "en": "hecho",
+    "de": "hecho",
+    "es": "hecho"
+  },
+  "¿Has comido ya.": {
+    "ru": "comido",
+    "en": "comido",
+    "de": "comido",
+    "es": "comido"
+  },
+  "¿Qué has hecho.": {
+    "ru": "hecho",
+    "en": "hecho",
+    "de": "hecho",
+    "es": "hecho"
+  },
+  "¿Viste tú la película??": {
+    "ru": "Viste",
+    "en": "Viste",
+    "de": "Viste",
+    "es": "Viste"
+  },
+  "¿Qué hicieron ustedes??": {
+    "ru": "hicieron",
+    "en": "hicieron",
+    "de": "hicieron",
+    "es": "hicieron"
+  },
+  "¿Viste tú la película.": {
+    "ru": "Viste",
+    "en": "Viste",
+    "de": "Viste",
+    "es": "Viste"
+  },
+  "¿Qué hicieron ustedes.": {
+    "ru": "hicieron",
+    "en": "hicieron",
+    "de": "hicieron",
+    "es": "hicieron"
+  },
+  "¿Qué hacías tú a esa hora??": {
+    "ru": "hacías",
+    "en": "hacías",
+    "de": "hacías",
+    "es": "hacías"
+  },
+  "¿Qué hacías tú a esa hora.": {
+    "ru": "hacías",
+    "en": "hacías",
+    "de": "hacías",
+    "es": "hacías"
+  },
+  "¿Podrías ayudarme??": {
+    "ru": "Podrías",
+    "en": "Podrías",
+    "de": "Podrías",
+    "es": "Podrías"
+  },
+  "¿Qué haría usted??": {
+    "ru": "haría",
+    "en": "haría",
+    "de": "haría",
+    "es": "haría"
+  },
+  "¿Podrías ayudarme.": {
+    "ru": "Podrías",
+    "en": "Podrías",
+    "de": "Podrías",
+    "es": "Podrías"
+  },
+  "¿Qué haría usted.": {
+    "ru": "haría",
+    "en": "haría",
+    "de": "haría",
+    "es": "haría"
+  },
+  "Dijo: «Tengo hambre» → Dijo que tenía hambre.": {
+    "ru": "tenía",
+    "en": "tenía",
+    "de": "tenía",
+    "es": "tenía"
+  },
+  "dijo: «tengo hambre» → dijo que tenia hambre": {
+    "ru": "tenía",
+    "en": "tenía",
+    "de": "tenía",
+    "es": "tenía"
+  },
+  "Por un lado…; por otro, ….": {
+    "ru": "otro",
+    "en": "otro",
+    "de": "otro",
+    "es": "otro"
+  },
+  "¿Cómo te llamas??": {
+    "ru": "Cómo",
+    "en": "Cómo",
+    "de": "Cómo",
+    "es": "Cómo"
+  },
+  "¿Dónde vives??": {
+    "ru": "Dónde",
+    "en": "Dónde",
+    "de": "Dónde",
+    "es": "Dónde"
+  },
+  "¿Quién es tu profesor??": {
+    "ru": "Quién",
+    "en": "Quién",
+    "de": "Quién",
+    "es": "Quién"
+  },
+  "¿Por qué estudias español??": {
+    "ru": "Por qué",
+    "en": "Por qué",
+    "de": "Por qué",
+    "es": "Por qué"
+  },
+  "¿Qué hora es??": {
+    "ru": "Qué",
+    "en": "Qué",
+    "de": "Qué",
+    "es": "Qué"
+  },
+  "¿Cuándo vas al cine??": {
+    "ru": "Cuándo",
+    "en": "Cuándo",
+    "de": "Cuándo",
+    "es": "Cuándo"
+  },
+  "¿Cuál libro quieres??": {
+    "ru": "Cuál",
+    "en": "Cuál",
+    "de": "Cuál",
+    "es": "Cuál"
+  },
+  "¿Cuántos años tienes??": {
+    "ru": "Cuántos",
+    "en": "Cuántos",
+    "de": "Cuántos",
+    "es": "Cuántos"
+  },
+  "¿De dónde eres??": {
+    "ru": "dónde",
+    "en": "dónde",
+    "de": "dónde",
+    "es": "dónde"
+  },
+  "¿Cómo estás??": {
+    "ru": "Cómo",
+    "en": "Cómo",
+    "de": "Cómo",
+    "es": "Cómo"
+  },
+  "¿Cómo te llamas.": {
+    "ru": "Cómo",
+    "en": "Cómo",
+    "de": "Cómo",
+    "es": "Cómo"
+  },
+  "¿Dónde vives.": {
+    "ru": "Dónde",
+    "en": "Dónde",
+    "de": "Dónde",
+    "es": "Dónde"
+  },
+  "¿Quién es tu profesor.": {
+    "ru": "Quién",
+    "en": "Quién",
+    "de": "Quién",
+    "es": "Quién"
+  },
+  "¿Por qué estudias español.": {
+    "ru": "Por qué",
+    "en": "Por qué",
+    "de": "Por qué",
+    "es": "Por qué"
+  },
+  "¿Qué hora es.": {
+    "ru": "Qué",
+    "en": "Qué",
+    "de": "Qué",
+    "es": "Qué"
+  },
+  "¿Cuándo vas al cine.": {
+    "ru": "Cuándo",
+    "en": "Cuándo",
+    "de": "Cuándo",
+    "es": "Cuándo"
+  },
+  "¿Cuál libro quieres.": {
+    "ru": "Cuál",
+    "en": "Cuál",
+    "de": "Cuál",
+    "es": "Cuál"
+  },
+  "¿Cuántos años tienes.": {
+    "ru": "Cuántos",
+    "en": "Cuántos",
+    "de": "Cuántos",
+    "es": "Cuántos"
+  },
+  "¿De dónde eres.": {
+    "ru": "dónde",
+    "en": "dónde",
+    "de": "dónde",
+    "es": "dónde"
+  },
+  "¿Cómo estás.": {
+    "ru": "Cómo",
+    "en": "Cómo",
+    "de": "Cómo",
+    "es": "Cómo"
+  },
+  "Ana es más / que alta ___ Luis.": {
+    "ru": "más / que",
+    "en": "más / que",
+    "de": "más / que",
+    "es": "más / que"
+  },
+  "ana es mas / que alta ___ luis": {
+    "ru": "más / que",
+    "en": "más / que",
+    "de": "más / que",
+    "es": "más / que"
+  },
+  "Este libro es tan / como interesante ___ aquel.": {
+    "ru": "tan / como",
+    "en": "tan / como",
+    "de": "tan / como",
+    "es": "tan / como"
+  },
+  "este libro es tan / como interesante ___ aquel": {
+    "ru": "tan / como",
+    "en": "tan / como",
+    "de": "tan / como",
+    "es": "tan / como"
+  },
+  "Tengo más / que libros ___ tú.": {
+    "ru": "más / que",
+    "en": "más / que",
+    "de": "más / que",
+    "es": "más / que"
+  },
+  "tengo mas / que libros ___ tu": {
+    "ru": "más / que",
+    "en": "más / que",
+    "de": "más / que",
+    "es": "más / que"
+  },
+  "Ella es menos / que joven ___ yo.": {
+    "ru": "menos / que",
+    "en": "menos / que",
+    "de": "menos / que",
+    "es": "menos / que"
+  },
+  "ella es menos / que joven ___ yo": {
+    "ru": "menos / que",
+    "en": "menos / que",
+    "de": "menos / que",
+    "es": "menos / que"
+  },
+  "Hoy hace más / que frío ___ ayer.": {
+    "ru": "más / que",
+    "en": "más / que",
+    "de": "más / que",
+    "es": "más / que"
+  },
+  "hoy hace mas / que frio ___ ayer": {
+    "ru": "más / que",
+    "en": "más / que",
+    "de": "más / que",
+    "es": "más / que"
+  },
+  "Somos tan / como felices ___ antes.": {
+    "ru": "tan / como",
+    "en": "tan / como",
+    "de": "tan / como",
+    "es": "tan / como"
+  },
+  "somos tan / como felices ___ antes": {
+    "ru": "tan / como",
+    "en": "tan / como",
+    "de": "tan / como",
+    "es": "tan / como"
+  },
+  "¿Qué harás tú el año que viene??": {
+    "ru": "harás",
+    "en": "harás",
+    "de": "harás",
+    "es": "harás"
+  },
+  "¿Vendrán ustedes a la fiesta??": {
+    "ru": "Vendrán",
+    "en": "Vendrán",
+    "de": "Vendrán",
+    "es": "Vendrán"
+  },
+  "¿Qué harás tú el año que viene.": {
+    "ru": "harás",
+    "en": "harás",
+    "de": "harás",
+    "es": "harás"
+  },
+  "¿Vendrán ustedes a la fiesta.": {
+    "ru": "Vendrán",
+    "en": "Vendrán",
+    "de": "Vendrán",
+    "es": "Vendrán"
+  }
+}

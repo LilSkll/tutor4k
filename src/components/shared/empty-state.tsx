@@ -36,7 +36,7 @@ export function EmptyState({
         <div className="relative mb-5">
           <div className="absolute inset-0 rounded-full bg-primary/10 blur-2xl" />
           <Image
-            src="/hippogriff-icon.png"
+            src="/hippogriff-icon.webp"
             alt=""
             width={72}
             height={72}

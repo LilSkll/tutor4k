@@ -3,10 +3,11 @@ import { Skeleton } from "@/components/ui/skeleton";
 /**
  * Shown during soft navigations inside the app shell so tab switches
  * don't look "frozen" while the next page's RSC + auth finish.
+ * No enter-fade here — pages should not double-animate after this.
  */
 export default function AppLoading() {
   return (
-    <div className="mx-auto w-full max-w-5xl space-y-6 p-4 md:p-8 animate-fade-in">
+    <div className="mx-auto w-full max-w-5xl space-y-6 p-4 md:p-8">
       <div className="space-y-2">
         <Skeleton className="h-8 w-48" />
         <Skeleton className="h-4 w-72 max-w-full" />

@@ -12,6 +12,7 @@ import { useUIStore } from "@/stores";
 import { translate } from "@/lib/i18n";
 import { getCourseTitle } from "@/config/courses";
 import { cn } from "@/lib/utils";
+import { runExclusive, startTutorAbort } from "@/lib/tutor-fetch";
 import type { AIMessage, ChatMessage } from "@/types";
 
 const SUGGESTION_KEYS = [
@@ -33,6 +34,8 @@ export function TutorChat() {
   const addMessage = useChatStore((s) => s.addMessage);
   const setMessages = useChatStore((s) => s.setMessages);
   const setStreaming = useChatStore((s) => s.setStreaming);
+  const conversationId = useChatStore((s) => s.conversationId);
+  const setConversationId = useChatStore((s) => s.setConversationId);
   const clear = useChatStore((s) => s.clear);
   const language = useUIStore((s) => s.interfaceLanguage);
   const activeCourseId = useUIStore((s) => s.activeCourseId);
@@ -46,6 +49,7 @@ export function TutorChat() {
   const scrollRef = React.useRef<HTMLDivElement>(null);
   const textareaRef = React.useRef<HTMLTextAreaElement>(null);
   const openingFetched = React.useRef(false);
+  const sendInFlight = React.useRef(false);
 
   const loadSessionOpening = React.useCallback(async () => {
     if (searchParams.get("q")) return;
@@ -121,38 +125,61 @@ export function TutorChat() {
       content: m.content,
     }));
 
-    addMessage(userMsg);
-    addMessage(placeholder);
-    setInput("");
-    setPending(true);
-    setStreaming(true);
+    await runExclusive(sendInFlight, async () => {
+      const abort = startTutorAbort();
+      addMessage(userMsg);
+      addMessage(placeholder);
+      setInput("");
+      setPending(true);
+      setStreaming(true);
 
-    try {
-      const res = await fetch("/api/tutor", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ messages: history }),
-      });
-      const data = await res.json();
+      try {
+        const res = await fetch("/api/tutor", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          signal: abort.signal,
+          body: JSON.stringify({
+            messages: history,
+            conversationId,
+            interfaceLanguage: language,
+            courseId: activeCourseId,
+          }),
+        });
+        const data = (await res.json().catch(() => ({}))) as {
+          content?: string;
+          conversationId?: string;
+          error?: string;
+        };
 
-      setMessages([
-        ...messages,
-        userMsg,
-        { ...placeholder, content: data.content },
-      ]);
-    } catch {
-      setMessages([
-        ...messages,
-        userMsg,
-        {
-          ...placeholder,
-          content: t("tutor.error"),
-        },
-      ]);
-    } finally {
-      setPending(false);
-      setStreaming(false);
-    }
+        if (data.conversationId) {
+          setConversationId(data.conversationId);
+        }
+
+        const reply =
+          res.ok && data.content?.trim()
+            ? data.content
+            : t("tutor.error");
+
+        setMessages([
+          ...messages,
+          userMsg,
+          { ...placeholder, content: reply },
+        ]);
+      } catch {
+        setMessages([
+          ...messages,
+          userMsg,
+          {
+            ...placeholder,
+            content: t("tutor.error"),
+          },
+        ]);
+      } finally {
+        abort.clear();
+        setPending(false);
+        setStreaming(false);
+      }
+    });
   };
 
   const onKeyDown = (e: React.KeyboardEvent) => {
@@ -164,11 +191,11 @@ export function TutorChat() {
 
   return (
     <div className="flex flex-col h-[calc(100dvh-3.5rem-3.75rem-env(safe-area-inset-bottom,0px))] md:h-[calc(100dvh-3.5rem)]">
-      <div className="flex items-center justify-between px-4 md:px-6 py-3 border-b border-border/60 bg-background/80 backdrop-blur-xl">
+      <div className="glass-shell flex items-center justify-between px-4 md:px-6 py-3 border-b">
         <div className="flex items-center gap-3 min-w-0">
           <div className="relative shrink-0">
             <Image
-              src="/hippogriff-icon.png"
+              src="/hippogriff-icon.webp"
               alt=""
               width={40}
               height={40}
@@ -226,7 +253,7 @@ export function TutorChat() {
         )}
       </div>
 
-      <div className="border-t border-border/60 bg-background/90 backdrop-blur-xl px-3 sm:px-4 md:px-6 py-3">
+      <div className="glass-shell border-t px-3 sm:px-4 md:px-6 py-3">
         <div className="mx-auto max-w-3xl">
           <div className="flex items-end gap-2 rounded-2xl border border-border/70 bg-card p-2 shadow-soft focus-within:ring-2 focus-within:ring-ring/60 focus-within:border-primary/30 transition-shadow">
             <Textarea
@@ -283,7 +310,7 @@ function MessageBubble({
         </div>
       ) : (
         <Image
-          src="/hippogriff-icon.png"
+          src="/hippogriff-icon.webp"
           alt=""
           width={36}
           height={36}
@@ -344,7 +371,7 @@ function EmptyState({
       <div className="relative mb-5">
         <div className="absolute inset-0 rounded-full bg-primary/15 blur-2xl" />
         <Image
-          src="/hippogriff-icon.png"
+          src="/hippogriff-icon.webp"
           alt=""
           width={80}
           height={80}

@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { useTransition } from "react";
+import { Suspense, useTransition } from "react";
 import { useRouter } from "next/navigation";
 import {
   Download,
@@ -50,7 +50,10 @@ import {
 } from "@/config/app";
 import { LEGAL_OPERATOR } from "@/config/legal";
 import { LegalFooterLinks } from "@/components/legal/legal-footer-links";
+import { LinkTeacherCard } from "@/components/invite/link-teacher-card";
+import { ChangePasswordCard } from "@/components/auth/change-password-card";
 import { updateProfile, signOut } from "@/server/actions/auth";
+import { isStudentRole } from "@/lib/roles";
 import { useUIStore } from "@/stores";
 import { translate } from "@/lib/i18n";
 import type { Goal, InterfaceLanguage, Level, Profile } from "@/types";
@@ -87,7 +90,7 @@ export function SettingsClient({ profile }: { profile: Profile }) {
         dailyGoalMinutes: dailyGoal,
       });
       if (res.error) {
-        toast.error(res.error);
+        toast.error(t("settings.saveFailed"));
       } else {
         setLang(language);
         toast.success(t("settings.toastSaved"));
@@ -146,7 +149,7 @@ export function SettingsClient({ profile }: { profile: Profile }) {
       : LEGAL_OPERATOR.operatorNameRu;
 
   return (
-    <div className="container max-w-2xl py-6 md:py-8 space-y-6">
+    <div className="container max-w-2xl min-w-0 py-6 md:py-8 space-y-6">
       <div>
         <h1 className="text-2xl font-bold">{t("settings.title")}</h1>
         <p className="text-sm text-muted-foreground">
@@ -187,7 +190,7 @@ export function SettingsClient({ profile }: { profile: Profile }) {
                   <SelectItem value="none">{t("settings.noLevel")}</SelectItem>
                   {LEVELS.map((lvl) => (
                     <SelectItem key={lvl.value} value={lvl.value}>
-                      {lvl.label} — {lvl.description}
+                      {lvl.value} — {t(lvl.descriptionKey)}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -207,7 +210,7 @@ export function SettingsClient({ profile }: { profile: Profile }) {
                   <SelectItem value="none">{t("settings.noGoal")}</SelectItem>
                   {GOALS.map((g) => (
                     <SelectItem key={g.value} value={g.value}>
-                      {g.emoji} {g.label}
+                      {g.emoji} {t(g.labelKey)}
                     </SelectItem>
                   ))}
                 </SelectContent>
@@ -216,6 +219,12 @@ export function SettingsClient({ profile }: { profile: Profile }) {
           </div>
         </CardContent>
       </Card>
+
+      {isStudentRole(profile.role) && <LinkTeacherCard />}
+
+      <Suspense fallback={null}>
+        <ChangePasswordCard returnTo="/settings" />
+      </Suspense>
 
       {/* Preferences */}
       <Card>
@@ -405,7 +414,7 @@ export function SettingsClient({ profile }: { profile: Profile }) {
         <Button
           variant="gradient"
           onClick={save}
-          disabled={pending}
+          pending={pending}
           className="flex-1"
         >
           {pending && <Loader2 className="h-4 w-4 animate-spin" />}

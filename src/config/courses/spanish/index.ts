@@ -1,4 +1,4 @@
-import type { CourseConfig, InterfaceLanguage, Level } from "@/types";
+import type { CourseConfig } from "@/types";
 
 // =====================================================================
 // Spanish Course Configuration
@@ -16,6 +16,9 @@ export async function loadSpanishCourse(): Promise<CourseConfig> {
     import("@/config/chapters"),
   ]);
   const { GRAMMAR_TOPICS, getTopicBySlug } = await import("@/config/grammar");
+  const { sortGrammarTopicsByCurriculum } = await import(
+    "@/lib/grammar-curriculum-sort"
+  );
   const { VOCAB_TOPICS } = await import("@/config/vocabulary-topics");
   const { getChapterExercises } = await import("@/config/chapter-exercises");
   const { buildSpanishPrompt } = await import("@/server/ai/prompts/spanish");
@@ -23,10 +26,10 @@ export async function loadSpanishCourse(): Promise<CourseConfig> {
   return {
     id: "spanish",
     languageCode: "es",
-    title: "Испанский язык",
+    title: "Spanish",
     titleNative: "Español",
     flag: "🇪🇸",
-    description: "Изучай испанский язык с ИИ-репетитором",
+    description: "Learn Spanish with an AI tutor",
     promptId: "spanish",
     textbookNames: "Дышлевая, Гонсалес-Алимова",
     examName: "DELE",
@@ -92,7 +95,7 @@ export async function loadSpanishCourse(): Promise<CourseConfig> {
     getChapters: () => CHAPTERS,
     getChapter,
     getNextChapter,
-    getGrammar: () => GRAMMAR_TOPICS,
+    getGrammar: () => sortGrammarTopicsByCurriculum(GRAMMAR_TOPICS),
     getGrammarTopic: getTopicBySlug,
     getVocab: () => VOCAB_TOPICS,
     getExercises: getChapterExercises,
