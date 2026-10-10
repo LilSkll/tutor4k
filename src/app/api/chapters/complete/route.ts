@@ -74,35 +74,40 @@ export async function POST(req: NextRequest) {
           .like("exercise_id", `%:${body.chapterSlug}:%`)
           .gt("times_seen", 0);
         if (countErr) {
-          console.warn("[chapters/complete] progress count:", countErr.message);
-          // Table missing / RLS — fall back to client count once.
-          if ((body.exercisesCompleted ?? 0) < minPractice) {
-            return NextResponse.json(
-              {
-                error: `Complete at least ${minPractice} exercises before finishing this chapter.`,
-              },
-              { status: 400 },
-            );
-          }
-          verifiedCompleted = body.exercisesCompleted ?? 0;
-        } else {
-          verifiedCompleted = count ?? 0;
-          if (verifiedCompleted < minPractice) {
-            return NextResponse.json(
-              {
-                error: `Complete at least ${minPractice} exercises before finishing this chapter.`,
-              },
-              { status: 400 },
-            );
-          }
+          console.error(
+            "[chapters/complete] progress count failed (fail-closed):",
+            countErr.message,
+          );
+          return NextResponse.json(
+            {
+              error:
+                "Could not verify practice progress. Please try again in a moment.",
+            },
+            { status: 503 },
+          );
+        }
+        verifiedCompleted = count ?? 0;
+        if (verifiedCompleted < minPractice) {
+          return NextResponse.json(
+            {
+              error: `Complete at least ${minPractice} exercises before finishing this chapter.`,
+            },
+            { status: 400 },
+          );
         }
       }
     } catch (err) {
-      console.warn(
-        "[chapters/complete] practice gate:",
+      console.error(
+        "[chapters/complete] practice gate failed (fail-closed):",
         (err as Error).message,
       );
-      verifiedCompleted = body.exercisesCompleted ?? 0;
+      return NextResponse.json(
+        {
+          error:
+            "Could not verify practice progress. Please try again in a moment.",
+        },
+        { status: 503 },
+      );
     }
 
     const safeScore = Math.max(

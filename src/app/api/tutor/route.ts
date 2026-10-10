@@ -5,6 +5,7 @@ import {
 } from "@/server/actions/ai";
 import { asInterfaceLanguage } from "@/server/ai/tutor-request";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
+import { checkRateLimit, rateLimitResponse } from "@/lib/rate-limit";
 import type { AIMessage, InterfaceLanguage } from "@/types";
 
 /**
@@ -45,6 +46,12 @@ export async function POST(req: NextRequest) {
     if (!user) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
+
+    const limit = checkRateLimit(`tutor:${user.id}`, {
+      limit: 30,
+      windowMs: 60_000,
+    });
+    if (!limit.ok) return rateLimitResponse(limit.retryAfterSec);
 
     let body: {
       messages?: AIMessage[];

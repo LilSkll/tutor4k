@@ -16,15 +16,18 @@ export function LinkTeacherCard() {
     translate(key, language, vars);
   const [code, setCode] = React.useState("");
   const [busy, setBusy] = React.useState(false);
+  const inFlight = React.useRef(false);
 
   const submit = async () => {
-    if (!code.trim()) return;
+    const normalized = code.trim().toUpperCase().replace(/\s+/g, "");
+    if (!normalized || inFlight.current) return;
+    inFlight.current = true;
     setBusy(true);
     try {
       const res = await fetch("/api/invite/accept", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ code: code.trim().toUpperCase() }),
+        body: JSON.stringify({ code: normalized }),
       });
       const data = (await res.json()) as {
         teacherName?: string;
@@ -42,6 +45,7 @@ export function LinkTeacherCard() {
     } catch (e) {
       toast.error((e as Error).message || t("invite.acceptFail"));
     } finally {
+      inFlight.current = false;
       setBusy(false);
     }
   };

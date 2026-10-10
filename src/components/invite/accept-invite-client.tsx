@@ -32,8 +32,11 @@ export function AcceptInviteClient({
     teacherName: string;
     courseId: string;
   } | null>(null);
+  const inFlight = React.useRef(false);
 
   const accept = async () => {
+    if (inFlight.current) return;
+    inFlight.current = true;
     setBusy(true);
     setError(null);
     try {
@@ -57,6 +60,7 @@ export function AcceptInviteClient({
     } catch (e) {
       setError((e as Error).message || t("invite.acceptFail"));
     } finally {
+      inFlight.current = false;
       setBusy(false);
     }
   };

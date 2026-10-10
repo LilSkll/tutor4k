@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
 import { acceptInvite, getInviteByToken } from "@/server/teacher/links";
 import { isStudentRole } from "@/lib/roles";
+import { checkRateLimit, rateLimitResponse } from "@/lib/rate-limit";
 import type { UserRole } from "@/types";
 
 /** GET ?token= — public preview of an open invite (no PII beyond teacher name). */
@@ -34,6 +35,12 @@ export async function POST(req: NextRequest) {
     if (!user) {
       return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
     }
+
+    const limit = checkRateLimit(`invite-accept:${user.id}`, {
+      limit: 20,
+      windowMs: 60_000,
+    });
+    if (!limit.ok) return rateLimitResponse(limit.retryAfterSec);
 
     const { data: profile } = await supabase
       .from("profiles")

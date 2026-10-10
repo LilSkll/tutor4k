@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { requireTeacherSession } from "@/server/teacher/links";
 import { TeacherAiService } from "@/server/services/teacher-ai";
+import { checkRateLimit, rateLimitResponse } from "@/lib/rate-limit";
 import type { InterfaceLanguage } from "@/types";
 
 function resolveLocale(raw: string | null, fallback: InterfaceLanguage): InterfaceLanguage {
@@ -49,6 +50,12 @@ export async function POST(
 ) {
   try {
     const teacher = await requireTeacherSession();
+    const limit = checkRateLimit(`teacher-ai:${teacher.id}`, {
+      limit: 12,
+      windowMs: 60 * 60_000,
+    });
+    if (!limit.ok) return rateLimitResponse(limit.retryAfterSec);
+
     const { studentId } = await ctx.params;
     const url = new URL(req.url);
     const body = (await req.json().catch(() => ({}))) as {

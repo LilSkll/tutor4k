@@ -6,6 +6,7 @@ import {
 import { createSupabaseServerClient } from "@/lib/supabase-server";
 import { findBankExerciseById } from "@/lib/exercise-pool";
 import { prepareExerciseForSession } from "@/lib/exercise-options";
+import { checkRateLimit, rateLimitResponse } from "@/lib/rate-limit";
 import type { GrammarLevel, InterfaceLanguage, Level } from "@/types";
 
 /**
@@ -29,6 +30,12 @@ export async function POST(req: NextRequest) {
     if (!user) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
+
+    const limit = checkRateLimit(`ex-check:${user.id}`, {
+      limit: 90,
+      windowMs: 60_000,
+    });
+    if (!limit.ok) return rateLimitResponse(limit.retryAfterSec);
 
     // AI feedback context tops out at C1; C2 items are checked as C1.
     const { toUserLevel } = await import("@/lib/user-level");

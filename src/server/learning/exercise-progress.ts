@@ -80,7 +80,13 @@ export async function recordExerciseAttempt(input: {
     if (!user) return null;
 
     const admin = createSupabaseAdminClient();
-    const writeClient = admin ?? userClient;
+    if (!admin) {
+      console.error(
+        "[exercise-progress] SUPABASE_SERVICE_ROLE_KEY required for writes",
+      );
+      return null;
+    }
+    const writeClient = admin;
 
     const { data: existing } = await writeClient
       .from("exercise_progress")

@@ -104,7 +104,11 @@ export async function createInvite(input: {
 
     if (!error && data) return data as TeacherInviteRow;
     lastError = error?.message ?? "insert failed";
-    if (!lastError.includes("uq_teacher_invites_code")) break;
+    // Retry only on live-code unique collisions (index: uq_teacher_invites_code_live).
+    const collision =
+      /uq_teacher_invites_code/i.test(lastError) ||
+      /duplicate key/i.test(lastError);
+    if (!collision) break;
   }
   throw new Error(lastError ?? "Could not create invite");
 }
@@ -185,6 +189,10 @@ export async function revokeTeacherStudent(
   if (!data) throw new Error("NOT_FOUND");
 }
 
+function normalizeInviteCode(code: string): string {
+  return code.trim().toUpperCase().replace(/\s+/g, "");
+}
+
 async function findOpenInvite(opts: {
   code?: string;
   token?: string;
@@ -198,7 +206,7 @@ async function findOpenInvite(opts: {
     .limit(1);
 
   if (opts.token) q = q.eq("token", opts.token);
-  else if (opts.code) q = q.eq("code", opts.code.trim().toUpperCase());
+  else if (opts.code) q = q.eq("code", normalizeInviteCode(opts.code));
   else return null;
 
   const { data, error } = await q.maybeSingle();
@@ -217,11 +225,77 @@ function inviteIsUsable(invite: TeacherInviteRow): string | null {
   return null;
 }
 
+type AcceptInviteRpcResult = {
+  link: TeacherStudentRow;
+  courseId: string;
+  teacherName: string;
+  alreadyLinked?: boolean;
+};
+
 /**
  * Student accepts an invite by code or token.
- * Creates/reactivates teacher_students (active) for that course.
+ * Prefers atomic Postgres RPC; falls back to idempotent app-level accept.
  */
 export async function acceptInvite(input: {
+  studentId: string;
+  code?: string;
+  token?: string;
+}): Promise<{ link: TeacherStudentRow; courseId: string; teacherName: string }> {
+  const admin = await getAdmin();
+  const code = input.code ? normalizeInviteCode(input.code) : undefined;
+  const token = input.token?.trim() || undefined;
+
+  if (!code && !token) throw new Error("code or token required");
+
+  const { data: rpcData, error: rpcErr } = await admin.rpc(
+    "accept_teacher_invite",
+    {
+      p_student_id: input.studentId,
+      p_code: code ?? null,
+      p_token: token ?? null,
+    },
+  );
+
+  if (!rpcErr && rpcData) {
+    const parsed = rpcData as AcceptInviteRpcResult;
+    if (!parsed?.link || !parsed.courseId) {
+      throw new Error("Accept failed");
+    }
+    return {
+      link: parsed.link,
+      courseId: parsed.courseId,
+      teacherName: parsed.teacherName || "Teacher",
+    };
+  }
+
+  if (rpcErr) {
+    const missingFn =
+      /could not find the function|function .* does not exist|PGRST202|schema cache/i.test(
+        rpcErr.message,
+      );
+    if (!missingFn) {
+      // Business errors from RAISE EXCEPTION — surface cleanly, do not retry.
+      const msg = rpcErr.message
+        .replace(/^.*ERROR:\s*/i, "")
+        .split("\n")[0]
+        ?.trim();
+      throw new Error(msg || rpcErr.message);
+    }
+    console.warn(
+      "[acceptInvite] RPC not installed, using fallback:",
+      rpcErr.message,
+    );
+  }
+
+  return acceptInviteFallback({
+    studentId: input.studentId,
+    code,
+    token,
+  });
+}
+
+/** Idempotent fallback when accept_teacher_invite RPC is not installed. */
+async function acceptInviteFallback(input: {
   studentId: string;
   code?: string;
   token?: string;
@@ -241,7 +315,34 @@ export async function acceptInvite(input: {
 
   const admin = await getAdmin();
 
-  // Atomic claim of one invite use (optimistic lock on uses_count).
+  const { data: existing } = await admin
+    .from("teacher_students")
+    .select("*")
+    .eq("teacher_id", invite.teacher_id)
+    .eq("student_id", input.studentId)
+    .eq("course_id", invite.course_id)
+    .eq("status", "active")
+    .is("deleted_at", null)
+    .maybeSingle();
+
+  if (existing) {
+    await admin
+      .from("profiles")
+      .update({ active_course_id: invite.course_id })
+      .eq("id", input.studentId);
+    const { data: teacher } = await admin
+      .from("profiles")
+      .select("name")
+      .eq("id", invite.teacher_id)
+      .maybeSingle();
+    return {
+      link: existing as TeacherStudentRow,
+      courseId: invite.course_id,
+      teacherName: (teacher?.name as string) || "Teacher",
+    };
+  }
+
+  // Claim one use only after we know we need a new/reactivated link.
   const { data: claimed, error: claimErr } = await admin
     .from("teacher_invites")
     .update({ uses_count: invite.uses_count + 1 })
@@ -265,42 +366,78 @@ export async function acceptInvite(input: {
       .eq("id", invite.id);
   }
 
-  // Soft-delete any previous live link for same triple, then insert active.
-  await admin
+  const now = new Date().toISOString();
+  const { data: revoked } = await admin
     .from("teacher_students")
-    .update({ status: "revoked", deleted_at: new Date().toISOString() })
+    .select("id")
     .eq("teacher_id", invite.teacher_id)
     .eq("student_id", input.studentId)
     .eq("course_id", invite.course_id)
-    .is("deleted_at", null);
+    .not("deleted_at", "is", null)
+    .order("created_at", { ascending: false })
+    .limit(1)
+    .maybeSingle();
 
-  const now = new Date().toISOString();
-  const { data: link, error } = await admin
-    .from("teacher_students")
-    .insert({
-      teacher_id: invite.teacher_id,
-      student_id: input.studentId,
-      group_id: invite.group_id,
-      course_id: invite.course_id,
-      role: "student",
-      status: "active",
-      created_by: "teacher",
-      invited_at: invite.created_at,
-      accepted_at: now,
-    })
-    .select("*")
-    .single();
-  if (error) {
-    // Roll back the claimed use so the invite stays usable.
-    await admin
-      .from("teacher_invites")
+  let link: TeacherStudentRow | null = null;
+
+  if (revoked?.id) {
+    const { data: reactivated, error: reactivateErr } = await admin
+      .from("teacher_students")
       .update({
-        uses_count: invite.uses_count,
-        status: "open",
+        status: "active",
+        deleted_at: null,
+        accepted_at: now,
+        group_id: invite.group_id,
+        invited_at: invite.created_at,
+        role: "student",
       })
-      .eq("id", invite.id);
-    throw new Error(error.message);
+      .eq("id", revoked.id)
+      .select("*")
+      .single();
+    if (reactivateErr) {
+      await admin
+        .from("teacher_invites")
+        .update({ uses_count: Math.max(0, invite.uses_count) })
+        .eq("id", invite.id)
+        .eq("uses_count", claimed.uses_count as number);
+      throw new Error(reactivateErr.message);
+    }
+    link = reactivated as TeacherStudentRow;
+  } else {
+    const { data: inserted, error } = await admin
+      .from("teacher_students")
+      .insert({
+        teacher_id: invite.teacher_id,
+        student_id: input.studentId,
+        group_id: invite.group_id,
+        course_id: invite.course_id,
+        role: "student",
+        status: "active",
+        created_by: "teacher",
+        invited_at: invite.created_at,
+        accepted_at: now,
+      })
+      .select("*")
+      .single();
+    if (error) {
+      // Decrement only our claimed slot (CAS), never rewrite a stale absolute.
+      await admin
+        .from("teacher_invites")
+        .update({
+          uses_count: Math.max(0, (claimed.uses_count as number) - 1),
+          status: "open",
+        })
+        .eq("id", invite.id)
+        .eq("uses_count", claimed.uses_count as number);
+      throw new Error(error.message);
+    }
+    link = inserted as TeacherStudentRow;
   }
+
+  await admin
+    .from("profiles")
+    .update({ active_course_id: invite.course_id })
+    .eq("id", input.studentId);
 
   const { data: teacher } = await admin
     .from("profiles")
@@ -309,7 +446,7 @@ export async function acceptInvite(input: {
     .maybeSingle();
 
   return {
-    link: link as TeacherStudentRow,
+    link: link!,
     courseId: invite.course_id,
     teacherName: (teacher?.name as string) || "Teacher",
   };
