@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
     }
 
-    const limit = await checkRateLimit(`invite-accept:${user.id}`, {
+    const limit = checkRateLimit(`invite-accept:${user.id}`, {
       limit: 20,
       windowMs: 60_000,
     });

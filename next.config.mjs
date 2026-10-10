@@ -1,5 +1,4 @@
 import bundleAnalyzer from "@next/bundle-analyzer";
-import { withSentryConfig } from "@sentry/nextjs/config";
 
 const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === "true",
@@ -58,21 +57,4 @@ const nextConfig = {
   },
 };
 
-const analyzed = withBundleAnalyzer(nextConfig);
-
-const sentryOptions = {
-  org: process.env.SENTRY_ORG,
-  project: process.env.SENTRY_PROJECT,
-  authToken: process.env.SENTRY_AUTH_TOKEN,
-  silent: !process.env.CI,
-  // Avoid ad-blockers dropping events in production browsers.
-  tunnelRoute: "/monitoring",
-  widenClientFileUpload: true,
-  disableLogger: true,
-  automaticVercelMonitors: true,
-};
-
-// Keep local/CI builds working without Sentry project env.
-export default process.env.NEXT_PUBLIC_SENTRY_DSN || process.env.SENTRY_DSN
-  ? withSentryConfig(analyzed, sentryOptions)
-  : analyzed;
+export default withBundleAnalyzer(nextConfig);
