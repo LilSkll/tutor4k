@@ -50,7 +50,7 @@ export async function POST(
 ) {
   try {
     const teacher = await requireTeacherSession();
-    const limit = checkRateLimit(`teacher-ai:${teacher.id}`, {
+    const limit = await checkRateLimit(`teacher-ai:${teacher.id}`, {
       limit: 12,
       windowMs: 60 * 60_000,
     });

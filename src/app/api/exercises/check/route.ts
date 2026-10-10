@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    const limit = checkRateLimit(`ex-check:${user.id}`, {
+    const limit = await checkRateLimit(`ex-check:${user.id}`, {
       limit: 90,
       windowMs: 60_000,
     });
