@@ -271,6 +271,19 @@ export async function sendTutorMessage(input: {
             console.warn("[tutor] persist cache hit failed:", (err as Error).message);
           }
         }
+        try {
+          const { recordAiMetric } = await import("@/lib/ai-metrics");
+          recordAiMetric({
+            op: "tutor_cache",
+            provider: "cache",
+            model: "cache",
+            ok: true,
+            latencyMs: 0,
+            courseId: resolvedCourseId,
+          });
+        } catch {
+          /* metrics optional */
+        }
         return {
           content: cached,
           provider: "cache",
@@ -657,6 +670,7 @@ export async function generateExercise(input: {
       retrievedContext: exerciseContext,
       learnerContext: learnerPromptBlock,
       courseId,
+      metricOp: "exercise_generate",
     },
   );
 
@@ -863,6 +877,7 @@ export async function checkExerciseAnswer(input: {
       skipGuard: true,
       interfaceLanguage: input.language,
       courseId,
+      metricOp: "exercise_check",
     });
 
     isCorrect = /VERDICT:\s*CORRECT/i.test(response.content);

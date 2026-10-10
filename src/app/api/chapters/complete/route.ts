@@ -95,6 +95,9 @@ export async function POST(req: NextRequest) {
             { status: 400 },
           );
         }
+      } else {
+        // No bank exercises → never trust client counters (score still capped below).
+        verifiedCompleted = 0;
       }
     } catch (err) {
       console.error(
@@ -114,11 +117,9 @@ export async function POST(req: NextRequest) {
       0,
       Math.min(100, Math.round(Number(body.score) || 0)),
     );
-    const safeWords = Math.max(0, Math.round(Number(body.wordsLearned) || 0));
-    const safeExercises =
-      verifiedCompleted > 0
-        ? verifiedCompleted
-        : Math.max(0, Math.round(Number(body.exercisesCompleted) || 0));
+    // Cap vanity counters; exercises always from verified DB rows, never client body.
+    const safeWords = Math.max(0, Math.min(500, Math.round(Number(body.wordsLearned) || 0)));
+    const safeExercises = verifiedCompleted;
 
     // DB user_level historically A1–C1; clamp C2 so progress saves before migration.
     const dbLevel = toUserLevel(chapterLevel);

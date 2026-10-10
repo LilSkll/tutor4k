@@ -1,9 +1,8 @@
 -- =====================================================================
 -- Protect forgeable profile stats / journey fields from client UPDATE
 -- =====================================================================
--- Complements protect-profiles-role.sql. Learners may still update name,
--- interface_language, active_course_id, etc. via their own UPDATE policy;
--- privileged counters are restored unless the caller is service_role.
+-- Complements protect-profiles-role.sql.
+-- Same SECURITY DEFINER pitfall: never trust current_user=postgres.
 -- =====================================================================
 
 CREATE OR REPLACE FUNCTION public.protect_profiles_stats()
@@ -13,29 +12,37 @@ SECURITY DEFINER
 SET search_path = public
 AS $$
 DECLARE
+  claims text;
   jwt_role text;
 BEGIN
-  BEGIN
-    jwt_role := coalesce(
-      auth.jwt() ->> 'role',
-      current_setting('request.jwt.claim.role', true)
-    );
-  EXCEPTION WHEN OTHERS THEN
-    jwt_role := NULL;
-  END;
-
-  IF jwt_role IN ('service_role', 'postgres') OR current_user IN ('postgres', 'supabase_admin') THEN
+  IF TG_OP <> 'UPDATE' THEN
     RETURN NEW;
   END IF;
 
-  IF TG_OP = 'UPDATE' THEN
-    NEW.streak := OLD.streak;
-    NEW.last_active_date := OLD.last_active_date;
-    NEW.journey_finds := OLD.journey_finds;
-    NEW.learning_profile := OLD.learning_profile;
-    -- CEFR band on profile is set by server progress flows, not the client.
-    NEW.level := OLD.level;
+  BEGIN
+    claims := current_setting('request.jwt.claims', true);
+  EXCEPTION WHEN OTHERS THEN
+    claims := NULL;
+  END;
+
+  -- Direct SQL (Dashboard / migrations): no PostgREST JWT → allow.
+  IF claims IS NULL OR claims = '' THEN
+    RETURN NEW;
   END IF;
+
+  jwt_role := coalesce(claims::json ->> 'role', '');
+
+  -- Next.js service-role client → allow.
+  IF jwt_role = 'service_role' THEN
+    RETURN NEW;
+  END IF;
+
+  -- Authenticated / anon clients: restore privileged fields.
+  NEW.streak := OLD.streak;
+  NEW.last_active_date := OLD.last_active_date;
+  NEW.journey_finds := OLD.journey_finds;
+  NEW.learning_profile := OLD.learning_profile;
+  NEW.level := OLD.level;
 
   RETURN NEW;
 END;
@@ -48,4 +55,4 @@ CREATE TRIGGER trg_protect_profiles_stats
   EXECUTE FUNCTION public.protect_profiles_stats();
 
 COMMENT ON FUNCTION public.protect_profiles_stats() IS
-  'Blocks client UPDATEs to streak/journey/learning_profile/level; service_role only.';
+  'Blocks PostgREST client UPDATEs to streak/journey/learning_profile/level.';

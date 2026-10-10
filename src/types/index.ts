@@ -193,6 +193,14 @@ export interface AIGenerateOptions {
   learnerContext?: string | null;
   /** Lesson question about the current chapter — allow unless hard-blocked. */
   groundedToLesson?: boolean;
+  /** Observability label for ai_metric (defaults to tutor). */
+  metricOp?:
+    | "tutor"
+    | "exercise_check"
+    | "exercise_generate"
+    | "structured_json"
+    | "writing_assist"
+    | "other";
 }
 
 // ----- Grammar reference ---------------------------------------------

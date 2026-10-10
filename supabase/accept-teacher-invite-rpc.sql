@@ -170,6 +170,7 @@ END;
 $$;
 
 REVOKE ALL ON FUNCTION public.accept_teacher_invite(uuid, text, uuid) FROM PUBLIC;
+REVOKE ALL ON FUNCTION public.accept_teacher_invite(uuid, text, uuid) FROM anon, authenticated;
 GRANT EXECUTE ON FUNCTION public.accept_teacher_invite(uuid, text, uuid) TO service_role;
 
 COMMENT ON FUNCTION public.accept_teacher_invite(uuid, text, uuid) IS
