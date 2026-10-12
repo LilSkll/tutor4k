@@ -571,6 +571,8 @@ export interface GeneratedExercise {
   /** Stable bank id for adaptive progress tracking. */
   exerciseId?: string;
   chapterSlug?: string;
+  /** L1 glosses / TR prompt maps for client re-localization. */
+  questionTranslations?: Partial<Record<InterfaceLanguage, string>>;
 }
 
 /**

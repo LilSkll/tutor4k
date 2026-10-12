@@ -54,8 +54,10 @@ function localizeBank(
   courseId: string,
 ): StaticExercise[] {
   return prepareExercisesForSession(
-    attachQuestionGlossesToMany(
-      prepareExercisesForInterface(exercises, language, courseId),
+    prepareExercisesForInterface(
+      attachQuestionGlossesToMany(exercises),
+      language,
+      courseId,
     ),
   );
 }

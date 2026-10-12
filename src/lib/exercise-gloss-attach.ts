@@ -1,5 +1,6 @@
 import type { InterfaceLanguage, StaticExercise } from "@/types";
 import { lookupCuratedQuestionGloss } from "@/config/exercise-glosses";
+import { attachEnglishTrL1 } from "@/config/exercise-translation-prompts";
 import { inferQuestionGloss } from "@/lib/exercise-gloss-infer";
 import { hasCyrillicText } from "@/lib/exercise-localize";
 
@@ -16,7 +17,7 @@ export function attachQuestionGlosses<T extends StaticExercise>(
     return { ...exercise, questionTranslations: {} };
   }
 
-  const questionTranslations: Partial<Record<InterfaceLanguage, string>> = {
+  let questionTranslations: Partial<Record<InterfaceLanguage, string>> = {
     ...(exercise.questionTranslations ?? {}),
   };
   for (const lang of GLOSS_LANGS) {
@@ -33,6 +34,13 @@ export function attachQuestionGlosses<T extends StaticExercise>(
       if (inferred) questionTranslations[lang] = inferred;
     }
   }
+
+  // RU-authored TR stems: attach ES/DE L1 so EN UI never sees Cyrillic.
+  const withL1 = attachEnglishTrL1({
+    ...exercise,
+    questionTranslations,
+  });
+  questionTranslations = withL1.questionTranslations ?? questionTranslations;
 
   return { ...exercise, questionTranslations };
 }

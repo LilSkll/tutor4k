@@ -3,6 +3,7 @@
 import {
   formatQuestionWithGloss,
   getTranslationSourceLabel,
+  localizeTranslationQuestion,
 } from "@/lib/exercise-localize";
 import {
   useActiveCourseId,
@@ -34,8 +35,16 @@ export function QuestionWithGloss({
   const hookLang = useInterfaceLanguage();
   const lang = interfaceLanguage ?? hookLang;
   const courseId = useActiveCourseId(courseIdProp);
-  const { question, gloss } = formatQuestionWithGloss(exercise, lang);
-  const sourceLabel = getTranslationSourceLabel(exercise, lang, courseId);
+  // Client safety net: re-localize TR stems if the payload still has Cyrillic.
+  const displayExercise =
+    exercise.type === "translation"
+      ? {
+          ...exercise,
+          question: localizeTranslationQuestion(exercise, lang, courseId),
+        }
+      : exercise;
+  const { question, gloss } = formatQuestionWithGloss(displayExercise, lang);
+  const sourceLabel = getTranslationSourceLabel(displayExercise, lang, courseId);
   if (!question && !gloss) return null;
 
   return (

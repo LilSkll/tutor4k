@@ -203,27 +203,28 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    const withGlosses = (picked as StaticExercise[]).map(attachQuestionGlosses);
     const localized = prepareExercisesForInterface(
-      picked as StaticExercise[],
+      withGlosses,
       language,
       courseId,
     );
     const exercises: GeneratedExercise[] = localized.map((staticEx) => {
-      const withGloss = attachQuestionGlosses(staticEx);
       const meta = picked.find((p) => p.id === staticEx.id)!;
       return {
-        type: withGloss.type,
+        type: staticEx.type,
         level: meta.level,
-        question: withGloss.question,
-        instruction: withGloss.instruction,
-        options: withGloss.options,
-        answer: withGloss.answer,
-        acceptableAnswers: withGloss.acceptableAnswers,
+        question: staticEx.question,
+        instruction: staticEx.instruction,
+        options: staticEx.options,
+        answer: staticEx.answer,
+        acceptableAnswers: staticEx.acceptableAnswers,
         topic: meta.topic,
-        explanation: withGloss.explanation,
+        explanation: staticEx.explanation,
         staticSource: true,
-        exerciseId: withGloss.id,
+        exerciseId: staticEx.id,
         chapterSlug: meta.chapterSlug,
+        questionTranslations: staticEx.questionTranslations,
       };
     });
 
@@ -285,7 +286,7 @@ async function pickDeleSession(input: {
 
   const preparedBatch = shuffle(pickFrom)
     .slice(0, input.count)
-    .map((ex) => prepareExerciseForSession(ex));
+    .map((ex) => prepareExerciseForSession(attachQuestionGlosses(ex)));
   const localized = prepareExercisesForInterface(
     preparedBatch,
     input.language,
@@ -308,6 +309,7 @@ async function pickDeleSession(input: {
       explanation: prepared.explanation,
       staticSource: true,
       exerciseId: prepared.id,
+      questionTranslations: prepared.questionTranslations,
     };
   });
 

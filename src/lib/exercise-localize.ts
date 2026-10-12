@@ -5,11 +5,10 @@ import { localizeBankExplanation } from "@/lib/tutor-feedback";
 
 // =====================================================================
 // Interface-language handling for the static exercise bank.
-// Bank sources are single-language: Spanish-course items are authored in
-// Russian, English-course items in English. When the user's interface
-// language differs, we (a) swap the instruction for a localized generic
-// one and (b) drop items that are unusable in that language (e.g.
-// "translate from Russian" when the UI is not Russian).
+// Bank TR stems are often authored in Russian. When the UI language is not
+// Russian we (a) swap instructions to localized generics / keys, (b) replace
+// Cyrillic TR prompts with EN/ES/DE L1 (never spoil the target answer), and
+// (c) drop items that still cannot be shown without Russian.
 //
 // Curated question gloss JSON stays server-side (exercise-gloss-attach).
 // Client gloss UI reads exercise.questionTranslations only.
@@ -101,16 +100,51 @@ export function getSentenceBuildingMeaning(
   return gloss;
 }
 
-const SOURCE_RUSSIAN_LABEL: Record<InterfaceLanguage, string> = {
-  ru: "Источник: русский",
-  en: "Source: Russian",
-  es: "Origen: ruso",
-  de: "Quelle: Russisch",
+const SOURCE_LABEL: Record<
+  "ru" | "es" | "de",
+  Record<InterfaceLanguage, string>
+> = {
+  ru: {
+    ru: "Источник: русский",
+    en: "Source: Russian",
+    es: "Origen: ruso",
+    de: "Quelle: Russisch",
+  },
+  es: {
+    ru: "Источник: испанский",
+    en: "Source: Spanish",
+    es: "Origen: español",
+    de: "Quelle: Spanisch",
+  },
+  de: {
+    ru: "Источник: немецкий",
+    en: "Source: German",
+    es: "Origen: alemán",
+    de: "Quelle: Deutsch",
+  },
 };
 
+function detectPromptSourceLang(
+  prompt: string,
+): "ru" | "es" | "de" | "en" | null {
+  if (!prompt.trim()) return null;
+  if (hasCyrillicText(prompt)) return "ru";
+  if (/[äöüß]/i.test(prompt)) return "de";
+  if (/[áéíóúüñ¿¡]/i.test(prompt)) return "es";
+  // Unaccented Spanish still common as EN-course L1 (e.g. "Soy estudiante").
+  if (
+    /\b(el|la|los|las|un|una|unos|unas|es|está|estan|están|soy|eres|somos|tengo|tiene|hay|que|por|para|con|sin|muy|también|tambien)\b/i.test(
+      prompt,
+    )
+  ) {
+    return "es";
+  }
+  return "en";
+}
+
 /**
- * When English-course TR keeps a Russian stem (EN UI cannot use EN L1 without
- * spoiling the answer), surface an explicit source label.
+ * When the TR stem language differs from the UI (e.g. English course keeps a
+ * Spanish L1 for EN UI so the English answer is not spoiled), label the source.
  */
 export function getTranslationSourceLabel(
   exercise: Pick<StaticExercise, "question" | "type">,
@@ -119,10 +153,10 @@ export function getTranslationSourceLabel(
 ): string | null {
   if (exercise.type !== "translation") return null;
   if (courseId !== "english") return null;
-  if (!hasCyrillicText(exercise.question)) return null;
-  return (
-    SOURCE_RUSSIAN_LABEL[interfaceLanguage] ?? SOURCE_RUSSIAN_LABEL.en
-  );
+  const source = detectPromptSourceLang(exercise.question ?? "");
+  if (!source || source === "en") return null;
+  if (source === interfaceLanguage) return null;
+  return SOURCE_LABEL[source]?.[interfaceLanguage] ?? null;
 }
 
 /** Render "question (gloss)" when a gloss exists. */
@@ -407,10 +441,62 @@ export function localizeExerciseInstruction(
 }
 
 /**
+ * Safe non-Cyrillic L1 for a RU-authored translation stem.
+ * Never returns a prompt that equals the target answer (spoiler).
+ */
+function resolveNonCyrillicTranslationPrompt(
+  exercise: Pick<
+    StaticExercise,
+    "question" | "answer" | "questionTranslations"
+  >,
+  interfaceLanguage: InterfaceLanguage,
+  courseId?: string | null,
+): string | null {
+  const answer = exercise.answer ?? "";
+  const isSpoiler = (candidate: string) =>
+    normalizeForCompare(candidate) === normalizeForCompare(answer);
+
+  const tryLang = (lang: Exclude<InterfaceLanguage, "ru">): string | null => {
+    const inline = exercise.questionTranslations?.[lang]?.trim();
+    if (inline && !hasCyrillicText(inline) && !isSpoiler(inline)) return inline;
+    const mapped = lookupTranslationPrompt(
+      exercise.question,
+      lang,
+      courseId === "english" ? answer : null,
+    );
+    if (mapped && !hasCyrillicText(mapped) && !isSpoiler(mapped)) return mapped;
+    return null;
+  };
+
+  // Preferred UI language first.
+  if (interfaceLanguage !== "ru") {
+    const preferred = tryLang(interfaceLanguage);
+    if (preferred) return preferred;
+  }
+
+  // English course + EN UI: EN L1 spoils the English answer → use ES, then DE.
+  if (courseId === "english" && interfaceLanguage === "en") {
+    return tryLang("es") ?? tryLang("de");
+  }
+
+  // Spanish course + ES UI: Spanish L1 often equals the Spanish answer → EN, then DE.
+  if (courseId === "spanish" && interfaceLanguage === "es") {
+    return tryLang("en") ?? tryLang("de");
+  }
+
+  // Other mismatches: try remaining L1s so we never serve Cyrillic to non-RU UI.
+  for (const lang of ["en", "es", "de"] as const) {
+    if (lang === interfaceLanguage) continue;
+    const alt = tryLang(lang);
+    if (alt) return alt;
+  }
+  return null;
+}
+
+/**
  * True when an exercise makes sense for the given interface language.
- * Translation items with a localized prompt stay available for en/es/de.
- * English course: keep RU-authored TRs even without a map (show RU source);
- * never swap in an EN prompt that equals the English answer.
+ * Non-RU UI never receives Cyrillic questions/answers — TR items need a
+ * localized L1 prompt (ES/DE/EN map), otherwise they are dropped.
  */
 export function isExerciseUsableForLanguage(
   exercise: Pick<
@@ -418,18 +504,20 @@ export function isExerciseUsableForLanguage(
     "question" | "answer" | "type" | "questionTranslations"
   >,
   interfaceLanguage: InterfaceLanguage,
-  _courseId?: string | null,
+  courseId?: string | null,
 ): boolean {
-  void _courseId;
   if (interfaceLanguage === "ru") return true;
   if (hasCyrillicText(exercise.answer)) return false;
 
   if (exercise.type === "translation") {
     if (!hasCyrillicText(exercise.question)) return true;
-    // RU→target drills stay available for every UI language. Prefer L1 prompts
-    // when present; if the only map equals the target answer (spoiler), the
-    // localizer falls back to the Russian source instead of dropping the item.
-    return true;
+    return (
+      resolveNonCyrillicTranslationPrompt(
+        exercise,
+        interfaceLanguage,
+        courseId,
+      ) != null
+    );
   }
 
   return !hasCyrillicText(exercise.question);
@@ -447,51 +535,15 @@ export function localizeTranslationQuestion(
   if (exercise.type !== "translation" || interfaceLanguage === "ru") {
     return exercise.question;
   }
-  const answer = exercise.answer ?? "";
-  const inline = exercise.questionTranslations?.[interfaceLanguage]?.trim();
-  if (inline) {
-    if (
-      courseId === "english" &&
-      normalizeForCompare(inline) === normalizeForCompare(answer)
-    ) {
-      return exercise.question;
-    }
-    return inline;
-  }
   if (!hasCyrillicText(exercise.question)) return exercise.question;
 
-  // Shared Spanish-course map: EN entries are often the English answer —
-  // never use them as L1 for the English course.
-  if (courseId === "english" && interfaceLanguage === "en") {
-    return exercise.question;
-  }
-
-  // Spanish course: for ES UI, Spanish L1 often equals the target answer —
-  // prefer EN L1 instead of spoiling or falling back to Cyrillic.
-  if (courseId === "spanish" && interfaceLanguage === "es") {
-    const es = lookupTranslationPrompt(exercise.question, "es", null);
-    if (es && normalizeForCompare(es) !== normalizeForCompare(answer)) {
-      return es;
-    }
-    const en = lookupTranslationPrompt(exercise.question, "en", null);
-    if (en) return en;
-    return exercise.question;
-  }
-
-  const mapped = lookupTranslationPrompt(
-    exercise.question,
+  const resolved = resolveNonCyrillicTranslationPrompt(
+    exercise,
     interfaceLanguage,
-    // Only treat answer as an English spoiler on the English course.
-    courseId === "english" ? answer : null,
+    courseId,
   );
-  if (!mapped) return exercise.question;
-  if (
-    courseId === "english" &&
-    normalizeForCompare(mapped) === normalizeForCompare(answer)
-  ) {
-    return exercise.question;
-  }
-  return mapped;
+  // Callers filter unusable items; keep original only as a last resort.
+  return resolved ?? exercise.question;
 }
 
 /** Filter + localize a batch of bank exercises for the interface language. */

@@ -37,16 +37,36 @@ describe("translation localization", () => {
     expect(ex.question).toBe("I am a student.");
   });
 
-  it("keeps English-course TR for EN UI without spoiling the answer", () => {
+  it("uses Spanish L1 for English-course TR on EN UI (never Cyrillic)", () => {
     const enCourse: StaticExercise = {
       ...sample,
       answer: "I am a student",
+      questionTranslations: { es: "Soy estudiante" },
     };
     expect(isExerciseUsableForLanguage(enCourse, "en", "english")).toBe(true);
     const kept = localizeTranslationQuestion(enCourse, "en", "english");
-    expect(kept).toBe("Я студент.");
-    expect(getTranslationSourceLabel(enCourse, "en", "english")).toBe(
-      "Source: Russian",
+    expect(kept).not.toMatch(/[\u0400-\u04FF]/);
+    expect(kept.toLowerCase()).toContain("estudiante");
+    expect(
+      getTranslationSourceLabel(
+        { ...enCourse, question: kept },
+        "en",
+        "english",
+      ),
+    ).toBe("Source: Spanish");
+  });
+
+  it("drops English-course TR for EN UI when no safe non-RU L1 exists", () => {
+    const orphan: StaticExercise = {
+      ...sample,
+      id: "orphan",
+      question: "Редкая фраза без карты L1.",
+      answer: "A rare phrase with no L1 map",
+      questionTranslations: {},
+    };
+    expect(isExerciseUsableForLanguage(orphan, "en", "english")).toBe(false);
+    expect(prepareExercisesForInterface([orphan], "en", "english")).toHaveLength(
+      0,
     );
   });
 

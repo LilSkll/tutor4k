@@ -171,10 +171,14 @@ async function loadRankedCandidates(
   }
 
   if (input.interfaceLanguage && input.interfaceLanguage !== "ru") {
-    const usable = candidates.filter((ex) =>
-      isExerciseUsableForLanguage(ex, input.interfaceLanguage!),
+    // Never fall back to Cyrillic / unusable items for non-RU UI.
+    candidates = candidates.filter((ex) =>
+      isExerciseUsableForLanguage(
+        ex,
+        input.interfaceLanguage!,
+        input.courseId,
+      ),
     );
-    if (usable.length > 0) candidates = usable;
   }
 
   if (candidates.length === 0) return [];

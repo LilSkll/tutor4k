@@ -90,22 +90,17 @@ describe("HALLOWEEN_EXERCISES_ENGLISH", () => {
     }
   });
 
-  it("localizes TR prompts for es/de (EN UI keeps RU source)", () => {
+  it("localizes TR prompts for en/es/de without Cyrillic", () => {
     const translations = HALLOWEEN_EXERCISES_ENGLISH.filter(
       (e) => e.type === "translation",
     );
-    for (const lang of ["es", "de"] as const) {
+    for (const lang of ["en", "es", "de"] as const) {
       const kept = prepareExercisesForInterface(translations, lang, "english");
       for (const ex of kept) {
         expect(ex.question, `${ex.id} (${lang})`).not.toMatch(
           /[\u0400-\u04FF]/,
         );
       }
-    }
-    const en = prepareExercisesForInterface(translations, "en", "english");
-    for (const ex of en) {
-      // English course: EN prompt would spoil the answer → keep Russian source.
-      expect(ex.question, ex.id).toMatch(/[\u0400-\u04FF]/);
     }
   });
 });

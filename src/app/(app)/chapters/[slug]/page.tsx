@@ -66,11 +66,13 @@ export default async function ChapterPage({
   const nextChapter = course.getNextChapter(slug);
   const lang = profile?.interface_language ?? "ru";
   const exercises = prepareExercisesForSession(
-    attachQuestionGlossesToMany(
-      orderEarlyLevelPractice(
-        prepareExercisesForInterface(course.getExercises(slug), lang, courseId),
-        chapter.level,
+    orderEarlyLevelPractice(
+      prepareExercisesForInterface(
+        attachQuestionGlossesToMany(course.getExercises(slug)),
+        lang,
+        courseId,
       ),
+      chapter.level,
     ),
   );
   const chapterStory = await getChapterStory(slug, lang);
