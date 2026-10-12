@@ -64,8 +64,8 @@ export default async function LandingPage({
           />
           {/* Light header/footer blend only — keep the scene vivid */}
           <div className="absolute inset-0 bg-[linear-gradient(180deg,hsl(222_47%_6%/0.16)_0%,transparent_12%,transparent_88%,#070d1a_100%)]" />
-          {/* Adaptive navy veil behind copy (right third), soft fade into photo */}
-          <div className="absolute inset-y-0 right-0 w-[min(50%,40rem)] bg-[linear-gradient(90deg,transparent_0%,hsl(222_47%_8%/0.18)_18%,hsl(222_47%_7%/0.5)_48%,hsl(222_47%_6%/0.76)_74%,hsl(222_47%_6%/0.86)_100%)]" />
+          {/* Soft right assist — blends with glass copy panel, does not wash the figures */}
+          <div className="absolute inset-y-0 right-0 w-[min(48%,38rem)] bg-[linear-gradient(90deg,transparent_0%,hsl(222_47%_8%/0.12)_20%,hsl(222_47%_7%/0.32)_55%,hsl(222_47%_6%/0.55)_82%,hsl(222_47%_6%/0.68)_100%)]" />
         </div>
 
         {/* Mobile / tablet soft backdrop (stacked layout) */}
@@ -122,9 +122,9 @@ export default async function LandingPage({
           </div>
         </header>
 
-        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col px-4 pb-10 pt-6 sm:px-6 lg:max-w-none lg:justify-center lg:px-10 lg:pb-16 lg:pt-10 xl:px-14 2xl:px-20">
+        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col px-4 pb-10 pt-5 sm:px-6 md:pb-12 md:pt-7 lg:max-w-none lg:justify-center lg:px-10 lg:pb-16 lg:pt-10 xl:px-14 2xl:px-20">
           {/* Mobile / tablet photo — dedicated frame, figures preserved */}
-          <div className="relative mb-7 aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.45)] lg:hidden">
+          <div className="relative mb-5 aspect-[16/10] w-full overflow-hidden rounded-2xl border border-white/10 sm:mb-6 sm:aspect-[3/2] md:mb-7 lg:hidden">
             <Image
               src="/landing-founder-hippogriff.jpg"
               alt={t("landing.mascotAlt")}
@@ -133,65 +133,70 @@ export default async function LandingPage({
               fetchPriority="high"
               unoptimized
               sizes="(max-width: 1023px) 100vw, 0px"
-              className="object-cover object-[24%_38%] sm:object-[28%_40%] brightness-[1.1] contrast-[1.04] saturate-[1.06]"
+              className="object-cover object-[22%_36%] sm:object-[26%_40%] md:object-[30%_42%] brightness-[1.1] contrast-[1.04] saturate-[1.06]"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#070d1a]/28 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#070d1a]/35 via-transparent to-transparent" />
           </div>
 
-          {/* Copy — desktop: right column clear of figures; mobile/tablet: stacked below photo */}
-          <div className="relative flex w-full min-w-0 max-w-xl flex-col lg:absolute lg:right-[clamp(1.75rem,4vw,4rem)] lg:top-1/2 lg:w-[min(27rem,34vw)] lg:max-w-none lg:-translate-y-[42%] xl:w-[min(29rem,30vw)]">
-            {/* Local navy scrim behind title + CTAs (desktop) — soft ellipse, not a card */}
+          {/* Copy panel — frosted navy under text+CTAs; desktop right, mobile stacked */}
+          <div className="relative w-full min-w-0 lg:absolute lg:right-[clamp(1.5rem,3.5vw,3.75rem)] lg:top-1/2 lg:w-[min(30rem,36vw)] lg:-translate-y-[44%] xl:w-[min(32rem,32vw)]">
             <div
-              className="pointer-events-none absolute -inset-x-14 -inset-y-16 hidden lg:block bg-[radial-gradient(ellipse_at_70%_40%,hsl(222_47%_6%/0.8)_0%,hsl(222_47%_6%/0.52)_36%,hsl(222_47%_6%/0.2)_62%,transparent_82%)]"
-              aria-hidden="true"
-            />
-            {/* Mobile / tablet: soft lift under copy on dark shell */}
-            <div
-              className="pointer-events-none absolute -inset-x-4 -inset-y-5 rounded-[1.75rem] bg-[radial-gradient(ellipse_at_50%_20%,hsl(222_47%_12%/0.45)_0%,transparent_70%)] lg:hidden"
-              aria-hidden="true"
-            />
-            <div className="relative">
-              <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-amber-200 [text-shadow:0_1px_14px_rgba(7,13,26,0.75)] sm:text-xs sm:tracking-[0.16em]">
-                {t("landing.eyebrow")}
-              </p>
-              <h1 className="max-w-[18ch] text-balance text-3xl font-bold leading-[1.12] tracking-tight text-white [text-shadow:0_2px_28px_rgba(7,13,26,0.7)] sm:text-4xl lg:max-w-none lg:text-[2.85rem] xl:text-5xl">
-                <span className="block">{t("landing.heroTitle1")}</span>
-                <span className="mt-1 block text-white">
-                  {t("landing.heroTitle2")}
-                </span>
-              </h1>
-              <p className="mt-5 max-w-md text-pretty text-lg leading-relaxed text-slate-50 [text-shadow:0_1px_18px_rgba(7,13,26,0.75)] sm:text-xl lg:text-lg xl:text-xl">
-                {t("landing.heroSubtitle")}
-              </p>
-
-              <div className="mt-8 flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap">
-                <Link
-                  href={`/signup${q}`}
-                  className="inline-flex h-12 w-full shrink-0 items-center justify-center gap-2 rounded-xl bg-rose-600 px-5 text-base font-semibold text-white shadow-[0_10px_28px_rgba(225,29,72,0.35)] transition-colors hover:bg-rose-500 sm:w-auto motion-safe:transition-transform motion-safe:hover:-translate-y-0.5"
-                >
-                  {t("landing.createAccount")}
-                  <ArrowRight className="h-4 w-4 shrink-0" />
-                </Link>
-                <Link
-                  href={`/login${q}`}
-                  className="inline-flex h-12 w-full items-center justify-center rounded-xl border border-white/40 bg-[#070d1a]/65 px-5 text-base font-medium text-white shadow-[0_8px_24px_rgba(7,13,26,0.35)] backdrop-blur-sm hover:border-white/55 hover:bg-[#070d1a]/80 sm:w-auto"
-                >
-                  {t("landing.haveAccount")}
-                </Link>
-              </div>
-
-              <div className="mt-8 flex flex-wrap items-center gap-2">
-                <span className="text-sm text-slate-200 [text-shadow:0_1px_12px_rgba(7,13,26,0.75)]">
-                  {t("landing.levelsLabel")}
-                </span>
-                {LEVELS.map((lvl) => (
-                  <span
-                    key={lvl}
-                    className="rounded-full border border-amber-300/35 bg-amber-400/15 px-2.5 py-0.5 text-xs font-semibold text-amber-100"
-                  >
-                    {lvl}
+              className="
+                relative overflow-hidden rounded-2xl border border-white/[0.1]
+                bg-[linear-gradient(160deg,hsl(222_42%_11%/0.78)_0%,hsl(222_47%_7%/0.7)_100%)]
+                px-4 py-5 backdrop-blur-md
+                sm:rounded-[1.35rem] sm:px-5 sm:py-6
+                md:px-6 md:py-7
+                lg:rounded-3xl lg:border-white/[0.05]
+                lg:bg-[linear-gradient(100deg,hsl(222_42%_10%/0.12)_0%,hsl(222_47%_8%/0.42)_18%,hsl(222_47%_7%/0.62)_48%,hsl(222_47%_6%/0.74)_100%)]
+                lg:px-7 lg:py-8 lg:backdrop-blur-[12px]
+                lg:shadow-[0_12px_48px_rgba(7,13,26,0.22)]
+                xl:px-8 xl:py-9
+              "
+            >
+              <div className="relative">
+                <p className="mb-2.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-amber-200 sm:mb-3 sm:text-xs sm:tracking-[0.16em]">
+                  {t("landing.eyebrow")}
+                </p>
+                <h1 className="text-balance text-[1.7rem] font-bold leading-[1.15] tracking-tight text-white min-[360px]:text-[1.85rem] sm:text-4xl lg:text-[2.65rem] xl:text-[2.85rem]">
+                  <span className="block">{t("landing.heroTitle1")}</span>
+                  <span className="mt-1 block text-white">
+                    {t("landing.heroTitle2")}
                   </span>
-                ))}
+                </h1>
+                <p className="mt-4 max-w-prose text-pretty text-base leading-relaxed text-slate-100/95 sm:mt-5 sm:text-lg lg:text-base xl:text-lg">
+                  {t("landing.heroSubtitle")}
+                </p>
+
+                <div className="mt-6 flex w-full flex-col gap-3 sm:mt-7 sm:flex-row sm:flex-wrap lg:flex-col xl:flex-row">
+                  <Link
+                    href={`/signup${q}`}
+                    className="inline-flex h-12 w-full shrink-0 items-center justify-center gap-2 rounded-xl bg-rose-600 px-5 text-base font-semibold text-white shadow-[0_10px_28px_rgba(225,29,72,0.35)] transition-colors hover:bg-rose-500 sm:w-auto lg:w-full xl:w-auto motion-safe:transition-transform motion-safe:hover:-translate-y-0.5"
+                  >
+                    {t("landing.createAccount")}
+                    <ArrowRight className="h-4 w-4 shrink-0" />
+                  </Link>
+                  <Link
+                    href={`/login${q}`}
+                    className="inline-flex h-12 w-full items-center justify-center rounded-xl border border-white/35 bg-white/[0.06] px-5 text-base font-medium text-white hover:border-white/50 hover:bg-white/[0.1] sm:w-auto lg:w-full xl:w-auto"
+                  >
+                    {t("landing.haveAccount")}
+                  </Link>
+                </div>
+
+                <div className="mt-6 flex flex-wrap items-center gap-x-2 gap-y-2 sm:mt-7">
+                  <span className="text-xs text-slate-300 sm:text-sm">
+                    {t("landing.levelsLabel")}
+                  </span>
+                  {LEVELS.map((lvl) => (
+                    <span
+                      key={lvl}
+                      className="rounded-full border border-amber-300/30 bg-amber-400/12 px-2.5 py-0.5 text-[11px] font-semibold text-amber-100/95 sm:text-xs"
+                    >
+                      {lvl}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
