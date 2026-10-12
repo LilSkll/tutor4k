@@ -5,14 +5,14 @@ import {
 import type {
   ExerciseProgress,
   ExerciseType,
-  Level,
+  GrammarLevel,
   StaticExercise,
 } from "@/types";
 import type { StudentCourseProfile } from "@/types/learning-profile";
 
 export type RankedBankItem = {
   exercise: StaticExercise & {
-    level: Level;
+    level: GrammarLevel;
     topic: string;
     courseId: string;
     chapterSlug: string;
@@ -104,26 +104,34 @@ export function pickAdaptiveFromCandidates(
   return pick.exercise;
 }
 
-const LEVEL_NEIGHBORS: Record<Level, Level[]> = {
+const LEVEL_NEIGHBORS: Record<GrammarLevel, GrammarLevel[]> = {
   A1: ["A1", "A2"],
   A2: ["A2", "A1", "B1"],
   B1: ["B1", "A2", "B2"],
   B2: ["B2", "B1", "C1"],
-  C1: ["C1", "B2"],
+  C1: ["C1", "B2", "C2"],
+  C2: ["C2", "C1"],
 };
+
+export function filterPoolByLevel(
+  pool: RankedBankItem["exercise"][],
+  level: GrammarLevel,
+): RankedBankItem["exercise"][] {
+  const atLevel = pool.filter((ex) => ex.level === level);
+  if (atLevel.length > 0) return atLevel;
+
+  const neighbors = new Set(LEVEL_NEIGHBORS[level] ?? [level]);
+  const near = pool.filter((ex) => neighbors.has(ex.level));
+  if (near.length > 0) return near;
+
+  return pool;
+}
 
 export function filterPoolByTypeLevel(
   pool: RankedBankItem["exercise"][],
   type: ExerciseType,
-  level: Level,
+  level: GrammarLevel,
 ): RankedBankItem["exercise"][] {
   const byType = pool.filter((ex) => ex.type === type);
-  const atLevel = byType.filter((ex) => ex.level === level);
-  if (atLevel.length > 0) return atLevel;
-
-  const neighbors = new Set(LEVEL_NEIGHBORS[level] ?? [level]);
-  const near = byType.filter((ex) => neighbors.has(ex.level));
-  if (near.length > 0) return near;
-
-  return byType;
+  return filterPoolByLevel(byType, level);
 }

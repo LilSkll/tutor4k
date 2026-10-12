@@ -120,7 +120,7 @@ export function LanguageSelector({
                         {course.titleNative}
                       </h2>
                       <p className="text-sm text-muted-foreground truncate">
-                        {course.title}
+                        {t(`course.${course.id}.title`) || course.title}
                       </p>
                     </div>
                   </div>
@@ -133,7 +133,7 @@ export function LanguageSelector({
                 </div>
 
                 <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
-                  {course.description}
+                  {t(`course.${course.id}.desc`) || course.description}
                 </p>
 
                 <div className="grid grid-cols-3 gap-2">

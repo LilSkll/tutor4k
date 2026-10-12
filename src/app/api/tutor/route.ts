@@ -3,7 +3,10 @@ import {
   getTutorSessionOpening,
   sendTutorMessage,
 } from "@/server/actions/ai";
-import type { AIMessage } from "@/types";
+import { asInterfaceLanguage } from "@/server/ai/tutor-request";
+import { createSupabaseServerClient } from "@/lib/supabase-server";
+import { checkRateLimit, rateLimitResponse } from "@/lib/rate-limit";
+import type { AIMessage, InterfaceLanguage } from "@/types";
 
 /**
  * GET /api/tutor
@@ -11,6 +14,14 @@ import type { AIMessage } from "@/types";
  */
 export async function GET() {
   try {
+    const supabase = await createSupabaseServerClient();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    if (!user) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
     const opening = await getTutorSessionOpening();
     return NextResponse.json(opening);
   } catch (err) {
@@ -24,12 +35,36 @@ export async function GET() {
 
 /**
  * POST /api/tutor
- * Body: { messages: AIMessage[] }
- * Returns: { content, provider, conversationId }
+ * Body: { messages, conversationId?, interfaceLanguage?, courseId?, grammarTopicSlug? }
  */
 export async function POST(req: NextRequest) {
   try {
-    const body = (await req.json()) as { messages?: AIMessage[] };
+    const supabase = await createSupabaseServerClient();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    if (!user) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
+    const limit = checkRateLimit(`tutor:${user.id}`, {
+      limit: 30,
+      windowMs: 60_000,
+    });
+    if (!limit.ok) return rateLimitResponse(limit.retryAfterSec);
+
+    let body: {
+      messages?: AIMessage[];
+      conversationId?: string | null;
+      interfaceLanguage?: InterfaceLanguage | null;
+      courseId?: string | null;
+      grammarTopicSlug?: string | null;
+    };
+    try {
+      body = (await req.json()) as typeof body;
+    } catch {
+      return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
+    }
     const messages = body.messages;
 
     if (!Array.isArray(messages) || messages.length === 0) {
@@ -39,7 +74,13 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const result = await sendTutorMessage({ messages });
+    const result = await sendTutorMessage({
+      messages,
+      conversationId: body.conversationId ?? null,
+      interfaceLanguage: asInterfaceLanguage(body.interfaceLanguage),
+      courseId: body.courseId ?? null,
+      grammarTopicSlug: body.grammarTopicSlug ?? null,
+    });
     return NextResponse.json(result);
   } catch (err) {
     console.error("[/api/tutor]", err);

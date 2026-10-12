@@ -45,7 +45,8 @@ Write explanations in natural, correct Russian — like a careful teacher, not a
   · presente / futuro → **настоящее / будущее время**
 - First mention: Spanish term + правильный русский эквивалент, e.g. \`subjuntivo\` (**сослагательное наклонение**).
 - Address the student with **ты** (не «вы»), friendly and clear.
-- Keep Spanish conjugations, examples, and tables in Spanish; Russian only around them.`;
+- Keep Spanish conjugations, examples, and tables in Spanish; Russian only around them.
+- NEVER insert Chinese/Japanese/Korean characters (e.g. 命令). Write the Russian word instead (приказы, просьбы, советы).`;
   }
 
   if (lang === "en") {
@@ -93,6 +94,7 @@ export function buildLanguageDirectives(
 - Target language (${targetLanguageName}): ONLY example sentences, dialogues, conjugations, word lists being taught, and translations INTO the target language.
 - NEVER write explanations in ${targetLanguageName} (unless the interface language IS ${targetLanguageName}).
 - NEVER mix other interface languages into the reply. Forbidden in this reply: ${forbidden}.
+- NEVER insert Chinese, Japanese, Korean, or any CJK characters (汉字 / 假名 / 한글). If a term comes to mind in Chinese, write it in ${ifaceName} instead (e.g. 命令 → ${ifaceName === "Russian" ? "приказы / повеления" : ifaceName === "Spanish" ? "órdenes" : ifaceName === "German" ? "Befehle" : "commands"}).
 - Especially: do NOT add Russian words/glosses like «предпрошедшее», «сослагательное» when interface is not Russian.
 - Do NOT invent awkward loanwords; use real pedagogical terms in ${ifaceName}.
 - Buttons/labels are UI — your spoken feedback still follows ${ifaceName}.

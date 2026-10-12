@@ -1,4 +1,4 @@
-import type { CourseConfig, InterfaceLanguage, Level } from "@/types";
+import type { CourseConfig } from "@/types";
 
 // =====================================================================
 // English Course Configuration — FULLY POPULATED
@@ -7,6 +7,9 @@ import type { CourseConfig, InterfaceLanguage, Level } from "@/types";
 export async function loadEnglishCourse(): Promise<CourseConfig> {
   const { ENGLISH_CHAPTERS, getEngChapter, getEngNextChapter } = await import("./chapters");
   const { ENGLISH_GRAMMAR, getEngGrammarTopic } = await import("./grammar");
+  const { sortEnglishGrammarByCurriculum } = await import(
+    "@/lib/grammar-curriculum-sort"
+  );
   const { ENGLISH_VOCAB } = await import("./vocabulary");
   const { getEnglishExercises } = await import("./exercises");
   const { buildEnglishPrompt } = await import("@/server/ai/prompts/english");
@@ -14,10 +17,10 @@ export async function loadEnglishCourse(): Promise<CourseConfig> {
   return {
     id: "english",
     languageCode: "en",
-    title: "Английский язык",
+    title: "English",
     titleNative: "English",
     flag: "🇬🇧",
-    description: "Learn English with AI tutor",
+    description: "Learn English with an AI tutor",
     promptId: "english",
     textbookNames: "Life (National Geographic)",
     examName: "IELTS",
@@ -25,8 +28,9 @@ export async function loadEnglishCourse(): Promise<CourseConfig> {
     storyWorld: {
       theme: "Journey through the English-speaking world",
       locations: [
-        "London", "Oxford", "Cambridge", "York", "Edinburgh",
-        "Manchester", "Dublin", "Cardiff", "Liverpool",
+        "London", "Oxford", "Bath", "Cambridge", "Brighton", "Bristol",
+        "York", "Edinburgh", "Glasgow", "Manchester", "Leeds",
+        "Dublin", "Belfast", "Cardiff", "Liverpool",
         "New York", "Boston", "San Francisco", "Chicago",
         "Toronto", "Sydney", "IELTS Castle",
       ],
@@ -66,9 +70,9 @@ export async function loadEnglishCourse(): Promise<CourseConfig> {
     },
 
     levelGuide: {
-      A1: "A1: beginner — be, present simple, there is/are, can.",
-      A2: "A2: elementary — past simple, comparatives, present perfect.",
-      B1: "B1: intermediate — conditionals, narrative tenses, perfect continuous.",
+      A1: "A1: beginner — be, present simple, questions, there is/are, can, prepositions.",
+      A2: "A2: elementary — past simple, comparatives, going to, present perfect, quantifiers.",
+      B1: "B1: intermediate — will/1st conditional, modals, narrative tenses, perfect continuous.",
       B2: "B2: upper-intermediate — passive, reported speech, relative clauses.",
       C1: "C1: advanced — inversion, discourse, mixed conditionals, IELTS.",
     },
@@ -77,7 +81,7 @@ export async function loadEnglishCourse(): Promise<CourseConfig> {
     getChapters: () => ENGLISH_CHAPTERS,
     getChapter: getEngChapter,
     getNextChapter: getEngNextChapter,
-    getGrammar: () => ENGLISH_GRAMMAR,
+    getGrammar: () => sortEnglishGrammarByCurriculum(ENGLISH_GRAMMAR),
     getGrammarTopic: getEngGrammarTopic,
     getVocab: () => ENGLISH_VOCAB,
     getExercises: (slug: string) => getEnglishExercises(slug),

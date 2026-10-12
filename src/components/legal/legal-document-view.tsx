@@ -4,9 +4,51 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { LEGAL_OPERATOR } from "@/config/legal";
+import { LEGAL_OPERATOR, type LegalLocale } from "@/config/legal";
 import type { LegalDocument } from "@/content/legal/types";
 import { cn } from "@/lib/utils";
+
+const CHROME: Record<
+  LegalLocale,
+  {
+    back: string;
+    updated: string;
+    privacy: string;
+    terms: string;
+  }
+> = {
+  ru: {
+    back: "Назад",
+    updated: "Обновлено:",
+    privacy: "Конфиденциальность",
+    terms: "Соглашение",
+  },
+  en: {
+    back: "Back",
+    updated: "Last updated:",
+    privacy: "Privacy",
+    terms: "Terms",
+  },
+  es: {
+    back: "Volver",
+    updated: "Actualizado:",
+    privacy: "Privacidad",
+    terms: "Términos",
+  },
+  de: {
+    back: "Zurück",
+    updated: "Aktualisiert:",
+    privacy: "Datenschutz",
+    terms: "Nutzungsbedingungen",
+  },
+};
+
+const LANG_LINKS: { id: LegalLocale; label: string }[] = [
+  { id: "ru", label: "RU" },
+  { id: "en", label: "EN" },
+  { id: "es", label: "ES" },
+  { id: "de", label: "DE" },
+];
 
 export function LegalDocumentView({
   doc,
@@ -16,9 +58,8 @@ export function LegalDocumentView({
   backHref?: string;
 }) {
   const pathname = usePathname();
-  const otherLang = doc.locale === "ru" ? "en" : "ru";
-  const switchLabel =
-    doc.locale === "ru" ? "English version" : "Русская версия";
+  const locale = doc.locale;
+  const chrome = CHROME[locale] ?? CHROME.en;
 
   return (
     <div className="min-h-screen bg-background">
@@ -27,15 +68,26 @@ export function LegalDocumentView({
           <Button variant="ghost" size="sm" asChild>
             <Link href={backHref}>
               <ArrowLeft className="h-4 w-4" />
-              {doc.locale === "ru" ? "Назад" : "Back"}
+              {chrome.back}
             </Link>
           </Button>
-          <Link
-            href={`${pathname}?lang=${otherLang}`}
-            className="text-sm text-primary hover:underline"
-          >
-            {switchLabel}
-          </Link>
+          <nav className="flex items-center gap-2 text-sm" aria-label="Language">
+            {LANG_LINKS.map((l) => (
+              <Link
+                key={l.id}
+                href={l.id === "ru" ? pathname : `${pathname}?lang=${l.id}`}
+                className={cn(
+                  "rounded-md px-2 py-1 font-semibold",
+                  l.id === locale
+                    ? "bg-primary/15 text-primary"
+                    : "text-muted-foreground hover:text-foreground",
+                )}
+                hrefLang={l.id}
+              >
+                {l.label}
+              </Link>
+            ))}
+          </nav>
         </div>
       </header>
 
@@ -43,7 +95,7 @@ export function LegalDocumentView({
         <p className="text-sm text-muted-foreground mb-2">{doc.subtitle}</p>
         <h1 className="text-3xl font-bold tracking-tight mb-2">{doc.title}</h1>
         <p className="text-sm text-muted-foreground mb-10">
-          {doc.locale === "ru" ? "Обновлено:" : "Last updated:"} {doc.updated}
+          {chrome.updated} {doc.updated}
         </p>
 
         <div className="prose prose-neutral dark:prose-invert max-w-none space-y-10">
@@ -76,7 +128,7 @@ export function LegalDocumentView({
             {LEGAL_OPERATOR.serviceName}
           </p>
           <p>
-            {doc.locale === "ru"
+            {locale === "ru"
               ? LEGAL_OPERATOR.operatorNameRu
               : LEGAL_OPERATOR.operatorNameEn}
           </p>
@@ -89,11 +141,17 @@ export function LegalDocumentView({
             </a>
           </p>
           <nav className={cn("flex flex-wrap gap-4 pt-2")}>
-            <Link href="/privacy" className="hover:text-primary">
-              {doc.locale === "ru" ? "Конфиденциальность" : "Privacy"}
+            <Link
+              href={locale === "ru" ? "/privacy" : `/privacy?lang=${locale}`}
+              className="hover:text-primary"
+            >
+              {chrome.privacy}
             </Link>
-            <Link href="/terms" className="hover:text-primary">
-              {doc.locale === "ru" ? "Соглашение" : "Terms"}
+            <Link
+              href={locale === "ru" ? "/terms" : `/terms?lang=${locale}`}
+              className="hover:text-primary"
+            >
+              {chrome.terms}
             </Link>
           </nav>
         </footer>

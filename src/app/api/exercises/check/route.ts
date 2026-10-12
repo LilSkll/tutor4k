@@ -4,20 +4,42 @@ import {
   type GeneratedExercise,
 } from "@/server/actions/ai";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
-import type { InterfaceLanguage, Level } from "@/types";
+import { findBankExerciseById } from "@/lib/exercise-pool";
+import { prepareExerciseForSession } from "@/lib/exercise-options";
+import { checkRateLimit, rateLimitResponse } from "@/lib/rate-limit";
+import type { GrammarLevel, InterfaceLanguage, Level } from "@/types";
 
 /**
  * POST /api/exercises/check
  * Body: { exercise, userAnswer, level }
  * Resolves the user's interface language so feedback is in their language.
+ * Static bank items are re-loaded by exerciseId — client answer keys are ignored.
  */
 export async function POST(req: NextRequest) {
   try {
     const body = (await req.json()) as {
       exercise: GeneratedExercise;
       userAnswer: string;
-      level: Level;
+      level: GrammarLevel;
     };
+
+    const supabase = await createSupabaseServerClient();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    if (!user) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
+
+    const limit = checkRateLimit(`ex-check:${user.id}`, {
+      limit: 90,
+      windowMs: 60_000,
+    });
+    if (!limit.ok) return rateLimitResponse(limit.retryAfterSec);
+
+    // AI feedback context tops out at C1; C2 items are checked as C1.
+    const { toUserLevel } = await import("@/lib/user-level");
+    const checkLevel: Level = toUserLevel(body.level);
 
     if (!body.exercise || typeof body.userAnswer !== "string") {
       return NextResponse.json(
@@ -26,35 +48,63 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Resolve interface language and active course from profile.
     let language: InterfaceLanguage = "ru";
     let courseId = "spanish";
     try {
-      const supabase = await createSupabaseServerClient();
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
-      if (user) {
-        const { data: profile } = await supabase
-          .from("profiles")
-          .select("interface_language, active_course_id")
-          .eq("id", user.id)
-          .maybeSingle();
-        if (profile?.interface_language) {
-          language = profile.interface_language as InterfaceLanguage;
-        }
-        if (profile?.active_course_id) {
-          courseId = profile.active_course_id as string;
-        }
+      const { data: profile } = await supabase
+        .from("profiles")
+        .select("interface_language, active_course_id")
+        .eq("id", user.id)
+        .maybeSingle();
+      if (profile?.interface_language) {
+        language = profile.interface_language as InterfaceLanguage;
+      }
+      if (profile?.active_course_id) {
+        courseId = profile.active_course_id as string;
       }
     } catch {
       // Non-fatal: fall back to defaults.
     }
 
+    let exercise = body.exercise;
+
+    // Never trust client answer keys for static bank items.
+    if (exercise.staticSource || exercise.exerciseId) {
+      const exerciseId = exercise.exerciseId?.trim();
+      if (!exerciseId) {
+        return NextResponse.json(
+          { error: "exerciseId is required for bank exercises" },
+          { status: 400 },
+        );
+      }
+      const bank = await findBankExerciseById(courseId, exerciseId);
+      if (!bank) {
+        return NextResponse.json(
+          { error: "Exercise not found in bank" },
+          { status: 404 },
+        );
+      }
+      const prepared = prepareExerciseForSession(bank);
+      exercise = {
+        type: prepared.type,
+        level: bank.level ?? body.level,
+        question: prepared.question,
+        instruction: prepared.instruction,
+        options: prepared.options,
+        answer: prepared.answer,
+        acceptableAnswers: prepared.acceptableAnswers,
+        topic: bank.topic,
+        explanation: prepared.explanation,
+        staticSource: true,
+        exerciseId: prepared.id,
+        chapterSlug: bank.chapterSlug,
+      };
+    }
+
     const result = await checkExerciseAnswer({
-      exercise: body.exercise,
+      exercise,
       userAnswer: body.userAnswer,
-      level: body.level,
+      level: checkLevel,
       language,
       courseId,
     });

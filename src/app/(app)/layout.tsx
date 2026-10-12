@@ -1,18 +1,28 @@
 import { redirect } from "next/navigation";
 import { getCurrentProfile } from "@/server/actions/data";
+import { assertStudentJourneyAccess } from "@/server/teacher/authz";
 import { AppShell } from "@/components/layout/app-shell";
+import { AppProviders } from "@/components/providers/app-providers";
+import { inter } from "@/lib/fonts";
 
 export default async function AppLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  // Single cached profile fetch (pages that also call getCurrentProfile share it).
   const profile = await getCurrentProfile();
   if (!profile) redirect("/login");
 
-  // Force onboarding before accessing the app.
+  // Teacher Studio roles never use Student Journey shell.
+  await assertStudentJourneyAccess(profile);
+
   if (!profile.onboarded) redirect("/onboarding");
 
-  return <AppShell profile={profile}>{children}</AppShell>;
+  return (
+    <AppProviders>
+      <div className={`${inter.variable} font-sans`}>
+        <AppShell profile={profile}>{children}</AppShell>
+      </div>
+    </AppProviders>
+  );
 }

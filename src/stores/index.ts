@@ -45,6 +45,7 @@ export const useUIStore = create<UIState>()(
     {
       name: "spanish-tutor-ui",
       storage: createJSONStorage(() => localStorage),
+      skipHydration: true,
     },
   ),
 );

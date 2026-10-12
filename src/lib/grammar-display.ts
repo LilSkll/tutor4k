@@ -1,4 +1,5 @@
-import type { GrammarTopic, InterfaceLanguage } from "@/types";
+import type { InterfaceLanguage } from "@/types";
+import type { GrammarTopicMeta } from "@/lib/grammar-topic-meta";
 import {
   GRAMMAR_CATEGORY,
   GRAMMAR_TOPIC,
@@ -13,7 +14,7 @@ function hasCyrillic(text: string): boolean {
 }
 
 export function getGrammarTopicTitle(
-  topic: GrammarTopic,
+  topic: GrammarTopicMeta,
   interfaceLanguage: InterfaceLanguage,
 ): string {
   if (interfaceLanguage === "de") {
@@ -41,7 +42,7 @@ export function getGrammarTopicTitle(
 }
 
 export function getGrammarCategory(
-  topic: GrammarTopic,
+  topic: GrammarTopicMeta,
   interfaceLanguage: InterfaceLanguage,
 ): string {
   if (interfaceLanguage === "de") {
@@ -61,7 +62,7 @@ export function getGrammarCategory(
 }
 
 export function getGrammarSummary(
-  topic: GrammarTopic,
+  topic: GrammarTopicMeta,
   interfaceLanguage: InterfaceLanguage,
 ): string {
   if (interfaceLanguage === "de") {
@@ -77,9 +78,10 @@ export function getGrammarSummary(
 
 /** Reference markdown article for the topic (Russian source). */
 export function getGrammarContent(
-  topic: GrammarTopic,
+  topic: { content: string },
   _interfaceLanguage: InterfaceLanguage,
 ): string {
+  void _interfaceLanguage;
   return topic.content;
 }
 

@@ -6,8 +6,12 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { updatePassword } from "@/server/actions/auth";
 import { Loader2 } from "lucide-react";
+import { translate } from "@/lib/i18n/auth";
+import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 
 export function ResetPasswordForm() {
+  const language = useInterfaceLanguage();
+  const t = (key: string) => translate(key, language);
   const [pending, startTransition] = useTransition();
 
   return (
@@ -20,12 +24,12 @@ export function ResetPasswordForm() {
       className="space-y-4"
     >
       <div className="space-y-2">
-        <Label htmlFor="password">Новый пароль</Label>
+        <Label htmlFor="password">{t("auth.newPassword")}</Label>
         <Input
           id="password"
           name="password"
           type="password"
-          placeholder="••••••••"
+          placeholder={t("auth.passwordPlaceholder")}
           required
           minLength={6}
           autoComplete="new-password"
@@ -33,21 +37,26 @@ export function ResetPasswordForm() {
       </div>
 
       <div className="space-y-2">
-        <Label htmlFor="confirm">Повтори пароль</Label>
+        <Label htmlFor="confirm">{t("auth.confirmNewPassword")}</Label>
         <Input
           id="confirm"
           name="confirm"
           type="password"
-          placeholder="••••••••"
+          placeholder={t("auth.passwordPlaceholder")}
           required
           minLength={6}
           autoComplete="new-password"
         />
       </div>
 
-      <Button type="submit" variant="gradient" className="w-full" disabled={pending}>
+      <Button
+        type="submit"
+        variant="gradient"
+        className="w-full"
+        pending={pending}
+      >
         {pending && <Loader2 className="h-4 w-4 animate-spin" />}
-        Сохранить пароль
+        {t("auth.savePassword")}
       </Button>
     </form>
   );

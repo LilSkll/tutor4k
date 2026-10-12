@@ -10,6 +10,11 @@ export function ProfileSync({ profile }: { profile: Profile | null }) {
   const setActiveCourseId = useUIStore((s) => s.setActiveCourseId);
 
   React.useLayoutEffect(() => {
+    // Rehydrate persisted UI prefs after mount (skipHydration on store).
+    void useUIStore.persist.rehydrate();
+  }, []);
+
+  React.useLayoutEffect(() => {
     if (profile?.interface_language) {
       setInterfaceLanguage(profile.interface_language);
     }

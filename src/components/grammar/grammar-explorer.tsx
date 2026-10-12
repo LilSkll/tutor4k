@@ -1,72 +1,98 @@
 "use client";
 
 import * as React from "react";
+import dynamic from "next/dynamic";
 import { useSearchParams, useRouter } from "next/navigation";
-import { Sparkles } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import { Markdown } from "@/components/shared/markdown";
-import { useLocalizedGrammarArticle } from "@/hooks/use-localized-grammar-article";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
-import {
-  getGrammarCategory,
-  getGrammarSummary,
-  getGrammarTopicTitle,
-} from "@/lib/grammar-display";
 import { translate } from "@/lib/i18n";
-import type { GrammarTopic, Level } from "@/types";
+import type { GrammarLevel, InterfaceLanguage } from "@/types";
+import type { LocalizedGrammarTopicMeta } from "@/lib/grammar-topic-meta";
+import { ENGLISH_GRAMMAR_CURRICULUM_ORDER } from "@/config/english-curriculum-order";
+import { SPANISH_GRAMMAR_CURRICULUM_ORDER } from "@/config/grammar-curriculum-order";
 import { cn } from "@/lib/utils";
 
-const LEVEL_COLORS: Record<Level, string> = {
+const GrammarTopicDialog = dynamic(
+  () =>
+    import("@/components/grammar/grammar-topic-dialog").then(
+      (m) => m.GrammarTopicDialog,
+    ),
+  { ssr: false },
+);
+
+const CURRICULUM_RANK_BY_COURSE: Record<string, Map<string, number>> = {
+  spanish: new Map(
+    SPANISH_GRAMMAR_CURRICULUM_ORDER.map((slug, index) => [slug, index]),
+  ),
+  english: new Map(
+    ENGLISH_GRAMMAR_CURRICULUM_ORDER.map((slug, index) => [slug, index]),
+  ),
+};
+
+function sortByCurriculum(
+  list: LocalizedGrammarTopicMeta[],
+  courseId: string,
+): LocalizedGrammarTopicMeta[] {
+  const rank = CURRICULUM_RANK_BY_COURSE[courseId];
+  if (!rank) return list;
+  return [...list].sort((a, b) => {
+    const ra = rank.get(a.slug) ?? 9999;
+    const rb = rank.get(b.slug) ?? 9999;
+    if (ra !== rb) return ra - rb;
+    return a.slug.localeCompare(b.slug);
+  });
+}
+
+const LEVEL_COLORS: Record<GrammarLevel, string> = {
   A1: "from-green-500/15 to-emerald-500/15 text-green-600 dark:text-green-400",
   A2: "from-teal-500/15 to-cyan-500/15 text-teal-600 dark:text-teal-400",
   B1: "from-blue-500/15 to-indigo-500/15 text-blue-600 dark:text-blue-400",
   B2: "from-violet-500/15 to-purple-500/15 text-violet-600 dark:text-violet-400",
   C1: "from-rose-500/15 to-orange-500/15 text-rose-600 dark:text-rose-400",
+  C2: "from-amber-500/15 to-yellow-500/15 text-amber-600 dark:text-amber-400",
 };
 
 export function GrammarExplorer({
   initialLevel,
   topics,
   courseId,
+  serverLanguage,
 }: {
-  initialLevel?: Level;
-  topics: GrammarTopic[];
+  initialLevel?: string;
+  topics: LocalizedGrammarTopicMeta[];
   courseId: string;
+  serverLanguage?: InterfaceLanguage;
 }) {
   const searchParams = useSearchParams();
   const router = useRouter();
-  const language = useInterfaceLanguage();
+  const language = useInterfaceLanguage(serverLanguage);
   const t = (key: string, vars?: Record<string, string | number>) =>
     translate(key, language, vars);
 
-  const [activeLevel, setActiveLevel] = React.useState<Level | "ALL">(
+  const [activeFilter, setActiveFilter] = React.useState<string>(
     initialLevel ?? "ALL",
   );
+
+  const examNames = React.useMemo(() => {
+    const set = new Set<string>();
+    for (const topic of topics) {
+      if (topic.exam) set.add(topic.exam);
+    }
+    return [...set].sort();
+  }, [topics]);
 
   const topicSlug = searchParams.get("topic");
   const selectedTopic = topics.find((topic) => topic.slug === topicSlug);
 
-  const {
-    content: articleContent,
-    loading,
-    error: loadError,
-  } = useLocalizedGrammarArticle(
-    selectedTopic?.slug,
-    courseId,
-    selectedTopic?.content,
-  );
-
-  const filtered =
-    activeLevel === "ALL"
-      ? topics
-      : topics.filter((topic) => topic.level === activeLevel);
+  const filtered = React.useMemo(() => {
+    const base =
+      activeFilter === "ALL"
+        ? topics
+        : activeFilter.startsWith("exam:")
+          ? topics.filter((topic) => topic.exam === activeFilter.slice(5))
+          : topics.filter((topic) => topic.level === activeFilter);
+    return sortByCurriculum(base, courseId);
+  }, [activeFilter, topics, courseId]);
 
   if (topics.length === 0) {
     return (
@@ -78,31 +104,43 @@ export function GrammarExplorer({
     <>
       <div className="flex flex-wrap gap-2">
         <FilterChip
-          active={activeLevel === "ALL"}
-          onClick={() => setActiveLevel("ALL")}
+          active={activeFilter === "ALL"}
+          onClick={() => setActiveFilter("ALL")}
         >
           {t("grammar.allChip")}
         </FilterChip>
-        {(["A1", "A2", "B1", "B2", "C1"] as Level[]).map((lvl) => (
+        {(["A1", "A2", "B1", "B2", "C1", "C2"] as GrammarLevel[]).map((lvl) => (
           <FilterChip
             key={lvl}
-            active={activeLevel === lvl}
-            onClick={() => setActiveLevel(lvl)}
+            active={activeFilter === lvl}
+            onClick={() => setActiveFilter(lvl)}
           >
             {lvl}
+          </FilterChip>
+        ))}
+        {examNames.map((name) => (
+          <FilterChip
+            key={name}
+            active={activeFilter === `exam:${name}`}
+            onClick={() => setActiveFilter(`exam:${name}`)}
+          >
+            {name}
           </FilterChip>
         ))}
       </div>
 
       <div className="grid gap-3 md:grid-cols-2">
         {filtered.map((topic) => {
-          const title = getGrammarTopicTitle(topic, language);
-          const summary = getGrammarSummary(topic, language);
+          const title = topic.localizedTitle;
+          const summary = topic.localizedSummary;
           return (
             <button
               key={topic.slug}
+              type="button"
               onClick={() =>
-                router.push(`/grammar?topic=${topic.slug}&level=${activeLevel}`)
+                router.push(
+                  `/grammar?topic=${topic.slug}&level=${encodeURIComponent(activeFilter)}`,
+                )
               }
               className={cn(
                 "text-left rounded-xl border p-4 transition-all hover:shadow-md hover:-translate-y-0.5 bg-gradient-to-br",
@@ -110,9 +148,16 @@ export function GrammarExplorer({
               )}
             >
               <div className="flex items-center justify-between mb-1">
-                <Badge variant="level">{topic.level}</Badge>
+                <div className="flex items-center gap-1.5">
+                  <Badge variant="level">{topic.level}</Badge>
+                  {topic.exam ? (
+                    <Badge variant="secondary" className="text-[10px]">
+                      {topic.exam}
+                    </Badge>
+                  ) : null}
+                </div>
                 <span className="text-[10px] opacity-70">
-                  {getGrammarCategory(topic, language)}
+                  {topic.localizedCategory}
                 </span>
               </div>
               <h3 className="font-semibold text-foreground">{title}</h3>
@@ -122,64 +167,20 @@ export function GrammarExplorer({
         })}
       </div>
 
-      <Dialog
-        open={!!selectedTopic}
-        onOpenChange={(open) => {
-          if (!open) {
-            const params = new URLSearchParams(searchParams.toString());
-            params.delete("topic");
-            router.push(`/grammar?${params.toString()}`);
-          }
-        }}
-      >
-        <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto">
-          {selectedTopic &&
-            (() => {
-              const title = getGrammarTopicTitle(selectedTopic, language);
-              return (
-                <>
-                  <DialogHeader>
-                    <div className="flex items-center gap-2">
-                      <Badge variant="level">{selectedTopic.level}</Badge>
-                      <span className="text-xs text-muted-foreground">
-                        {getGrammarCategory(selectedTopic, language)}
-                      </span>
-                    </div>
-                    <DialogTitle className="text-xl">{title}</DialogTitle>
-                    <p className="text-sm text-muted-foreground">
-                      {getGrammarSummary(selectedTopic, language)}
-                    </p>
-                  </DialogHeader>
-
-                  <div className="min-h-[120px]">
-                    {loading ? (
-                      <p className="text-sm text-muted-foreground flex items-center gap-2">
-                        <Sparkles className="h-4 w-4 animate-pulse text-primary" />
-                        {t("grammar.loadingArticle")}
-                      </p>
-                    ) : loadError ? (
-                      <p className="text-sm text-destructive">{loadError}</p>
-                    ) : articleContent ? (
-                      <Markdown content={articleContent} />
-                    ) : null}
-                  </div>
-
-                  <div className="flex gap-2 pt-2">
-                    <Button variant="outline" size="sm" asChild>
-                      <a
-                        href={`/tutor?q=${encodeURIComponent(
-                          t("grammar.askTutorPrefix") + title,
-                        )}`}
-                      >
-                        {t("grammar.askTutor")}
-                      </a>
-                    </Button>
-                  </div>
-                </>
-              );
-            })()}
-        </DialogContent>
-      </Dialog>
+      {selectedTopic ? (
+        <GrammarTopicDialog
+          topic={selectedTopic}
+          courseId={courseId}
+          open
+          onOpenChange={(open) => {
+            if (!open) {
+              const params = new URLSearchParams(searchParams.toString());
+              params.delete("topic");
+              router.push(`/grammar?${params.toString()}`);
+            }
+          }}
+        />
+      ) : null}
     </>
   );
 }
@@ -195,6 +196,7 @@ function FilterChip({
 }) {
   return (
     <button
+      type="button"
       onClick={onClick}
       className={cn(
         "rounded-full px-4 py-1.5 text-sm font-medium transition-all border",

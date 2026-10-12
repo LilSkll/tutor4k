@@ -28,7 +28,7 @@ export function AppShell({
   const isImmersive = pathname.startsWith("/tutor");
 
   return (
-    <div className="flex h-[100dvh] overflow-hidden bg-background">
+    <div className="hw-app-shell relative flex h-[100dvh] overflow-hidden bg-background">
       <Suspense fallback={null}>
         <NavigationProgress />
       </Suspense>
@@ -46,7 +46,7 @@ export function AppShell({
           streak={profile?.streak ?? 0}
         />
 
-        <div className="hidden md:flex h-14 items-center justify-between border-b border-border/60 px-4 bg-background/80 backdrop-blur-md md:backdrop-blur-xl">
+        <div className="glass-shell hidden md:flex h-14 items-center justify-between border-b px-4">
           <SidebarToggle />
           <div className="flex items-center gap-2">
             <ThemeToggle />
@@ -60,7 +60,9 @@ export function AppShell({
               "pb-[calc(4rem+env(safe-area-inset-bottom,0px))] md:pb-0",
           )}
         >
-          {children}
+          <div key={pathname} className="page-enter min-h-full">
+            {children}
+          </div>
         </main>
 
         <MobileTabBar />

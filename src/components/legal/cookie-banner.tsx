@@ -6,7 +6,7 @@ import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { COOKIE_CONSENT_KEY } from "@/config/legal";
 import { useUIStore } from "@/stores";
-import { translate } from "@/lib/i18n";
+import { translate } from "@/lib/i18n/auth";
 
 export function CookieBanner() {
   const language = useUIStore((s) => s.interfaceLanguage);
@@ -43,7 +43,7 @@ export function CookieBanner() {
     <div
       role="dialog"
       aria-live="polite"
-      className="fixed bottom-0 inset-x-0 z-[100] p-4 md:p-6 pointer-events-none"
+      className="fixed bottom-0 inset-x-0 z-[100] p-4 md:p-6 pointer-events-none [contain:layout]"
     >
       <div className="mx-auto max-w-3xl rounded-2xl border bg-card/95 backdrop-blur-md shadow-elevated p-4 md:p-5 pointer-events-auto">
         <div className="flex gap-3 items-start">
