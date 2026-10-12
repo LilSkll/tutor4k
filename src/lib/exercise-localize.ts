@@ -124,21 +124,69 @@ const SOURCE_LABEL: Record<
   },
 };
 
-function detectPromptSourceLang(
+/** Best-effort language of a prompt / instruction string. */
+export function detectPromptSourceLang(
   prompt: string,
 ): "ru" | "es" | "de" | "en" | null {
   if (!prompt.trim()) return null;
   if (hasCyrillicText(prompt)) return "ru";
+
+  // Strong orthography first.
+  if (/[¿¡]/.test(prompt)) return "es";
   if (/[äöüß]/i.test(prompt)) return "de";
-  if (/[áéíóúüñ¿¡]/i.test(prompt)) return "es";
-  // Unaccented Spanish still common as EN-course L1 (e.g. "Soy estudiante").
+
+  // German structure before Spanish accent heuristics — "Café" is common in DE.
   if (
-    /\b(el|la|los|las|un|una|unos|unas|es|está|estan|están|soy|eres|somos|tengo|tiene|hay|que|por|para|con|sin|muy|también|tambien)\b/i.test(
+    /\b(nicht|eine|einen|oder|richtig|fehlend|übersetz|wähle|setze|schreibe|fehlende|richtige|kennengelernt|dies)\b/i.test(
+      prompt,
+    )
+  ) {
+    return "de";
+  }
+  if (
+    /\b(der|die|das)\b/i.test(prompt) &&
+    /\b(und|ist|sind|nicht|ein|eine|den|dem|in|dem|wir|uns)\b/i.test(prompt)
+  ) {
+    return "de";
+  }
+
+  // Accents, ignoring capitalized names (María / Café as proper-ish tokens).
+  const withoutNames = prompt.replace(
+    /\b[\p{Lu}][^\s]*[áéíóúüñÁÉÍÓÚÜÑ][^\s]*\b/gu,
+    " ",
+  );
+  if (/[áéíóúüñ]/i.test(withoutNames)) return "es";
+
+  // Unaccented Spanish (e.g. "Soy estudiante", "Elige la forma...").
+  if (
+    /\b(elige|escribe|traduce|completa|opción|correcta|soy|eres|somos|son|estamos|están|también|tambien|estudiante|calabaza|bruja|fantasma|doctores|libro)\b/i.test(
       prompt,
     )
   ) {
     return "es";
   }
+  if (
+    /\b(este|esta|estos|estas|ese|esa|esos|esas|aquel|aquella|su|mi|tu|nuestro|nombre)\b/i.test(
+      prompt,
+    )
+  ) {
+    return "es";
+  }
+  if (
+    /\b(soy|eres|es|somos|son)\s+(un|una|el|la|de)\b/i.test(prompt) ||
+    /\b(el|la|los|las)\s+\w{3,}/i.test(prompt)
+  ) {
+    // Reject clear English clauses ("I am…", "She is…").
+    if (
+      !/\b(I|you|he|she|we|they|I'm|you're|he's|she's)\b/i.test(prompt) &&
+      !/\b(the|is|are|was|were|have|has|this|that|from|gave|yesterday)\b/i.test(
+        prompt,
+      )
+    ) {
+      return "es";
+    }
+  }
+
   return "en";
 }
 
@@ -452,7 +500,9 @@ export function localizeExerciseInstruction(
   if (!instruction || isGrammarCategoryInstruction(instruction)) {
     return fallback();
   }
-  const source = detectSourceLanguage(instruction);
+  // Keep only when the authored instruction is already in the UI language.
+  // Latin Spanish/German must not be treated as English (binary ru|en detector).
+  const source = detectPromptSourceLang(instruction);
   if (source === interfaceLanguage) return instruction;
   return fallback();
 }
