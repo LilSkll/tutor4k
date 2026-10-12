@@ -32,7 +32,10 @@ export function expandSpanishChapterBank(
         }
       : undefined;
   return expandChapterBank(curated, PACKS[chapterSlug] ?? {}, typeTargets, {
-    contentScope: "shared",
-    fillTypesBelow: 8,
+    // Per-type: packs already hold ~20 unique items per type; shared
+    // stem dedupe across types was capping runtime banks around ~8–12.
+    // Practice sessions still dedupe within a round.
+    contentScope: "per-type",
+    fillTypesBelow: 20,
   });
 }

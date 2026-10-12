@@ -39,19 +39,29 @@ async function main() {
     );
 
     let thinChapters = 0;
+    let measuredChapters = 0;
     for (const ch of chapters) {
       const exs = getExercises(ch.slug);
       const byType = Object.fromEntries(TYPES.map((t) => [t, 0]));
       for (const ex of exs) byType[ex.type]++;
       for (const t of TYPES) levelGrid[ch.level][t] += byType[t];
 
-      const min = Math.min(...TYPES.map((t) => byType[t]));
+      // Only score types the chapter actually enables (missing types are intentional).
+      const enabled =
+        Array.isArray(ch.exerciseTypes) && ch.exerciseTypes.length > 0
+          ? TYPES.filter((t) => ch.exerciseTypes.includes(t))
+          : TYPES;
+      if (enabled.length === 0) continue;
+      measuredChapters++;
+
+      const min = Math.min(...enabled.map((t) => byType[t]));
       if (min < TARGET) {
         thinChapters++;
-        const gaps = TYPES.filter((t) => byType[t] < TARGET)
+        const gaps = enabled
+          .filter((t) => byType[t] < TARGET)
           .map((t) => `${t}:${byType[t]}`)
           .join(", ");
-        if (min < 10) {
+        if (min < 10 || enabled.some((t) => byType[t] < 12)) {
           console.log(`  ${ch.level} ${ch.slug} → ${gaps}`);
         }
       }
@@ -68,7 +78,9 @@ async function main() {
       const total = TYPES.reduce((s, t) => s + levelGrid[l][t], 0);
       console.log(l.padEnd(6), row.join(""), String(total).padStart(6));
     }
-    console.log(`\nChapters below ${TARGET}/type: ${thinChapters}/${chapters.length}`);
+    console.log(
+      `\nChapters below ${TARGET}/enabled-type: ${thinChapters}/${measuredChapters} (of ${chapters.length} total)`,
+    );
   }
 
   auditCourse("SPANISH", CHAPTERS, getChapterExercises);

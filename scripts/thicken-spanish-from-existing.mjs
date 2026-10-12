@@ -15,11 +15,11 @@ const PACKS_PATH = path.join(
 );
 
 const TARGET = {
-  multiple_choice: 12,
-  fill_blank: 12,
-  error_correction: 10,
-  translation: 8,
-  sentence_building: 12,
+  multiple_choice: 20,
+  fill_blank: 20,
+  error_correction: 20,
+  translation: 20,
+  sentence_building: 20,
 };
 
 const SAFE_INST = {
@@ -116,7 +116,7 @@ function collectSentences(byType) {
   return out;
 }
 
-function pickBlank(sentence) {
+function listBlankHits(sentence) {
   const tokens = sentence.split(/\s+/);
   const hits = [];
   for (let i = 0; i < tokens.length; i++) {
@@ -127,10 +127,11 @@ function pickBlank(sentence) {
       hits.push({ i, core, key, raw });
     }
   }
-  if (!hits.length) return null;
-  const preferred =
-    hits.find((h) => h.i > 0 && !["el", "la", "un", "una"].includes(h.key)) ??
-    hits[Math.floor(hits.length / 2)];
+  return hits;
+}
+
+function blankFromHit(sentence, preferred) {
+  const tokens = sentence.split(/\s+/);
   const options = [
     preferred.core,
     ...BLANKABLES.get(preferred.key).filter(
@@ -146,8 +147,21 @@ function pickBlank(sentence) {
   return {
     question: qTokens.join(" "),
     answer: preferred.core,
-    options: shuffleStable(options, sentence),
+    options: shuffleStable(options, `${sentence}|${preferred.i}`),
   };
+}
+
+function pickBlank(sentence) {
+  const hits = listBlankHits(sentence);
+  if (!hits.length) return null;
+  const preferred =
+    hits.find((h) => h.i > 0 && !["el", "la", "un", "una"].includes(h.key)) ??
+    hits[Math.floor(hits.length / 2)];
+  return blankFromHit(sentence, preferred);
+}
+
+function pickAllBlanks(sentence) {
+  return listBlankHits(sentence).map((h) => blankFromHit(sentence, h));
 }
 
 function shuffleStable(arr, seed) {
@@ -213,21 +227,12 @@ function toSb(sentence, grammarTopic, explanation) {
   const clean = sentence.replace(/[.?!¡¿]+$/g, "").trim();
   const tokens = clean.split(/\s+/).filter(Boolean);
   if (tokens.length < 3 || tokens.length > 12) return null;
-  const options = [...tokens];
-  for (let i = options.length - 1; i > 0; i--) {
-    const j = (i * 7 + tokens.length) % (i + 1);
-    [options[i], options[j]] = [options[j], options[i]];
-  }
-  if (options.every((t, i) => t === tokens[i]) && options.length > 1) {
-    [options[0], options[options.length - 1]] = [
-      options[options.length - 1],
-      options[0],
-    ];
-  }
+  // Options stay in answer order — the client shuffles tiles for display.
+  // validate-exercise-bank requires options.join(" ") to match the answer.
   return {
     type: "sentence_building",
     question: tokens.join(" / "),
-    options,
+    options: [...tokens],
     answer: clean,
     acceptableAnswers: [clean, `${clean}.`],
     instruction: SAFE_INST.sentence_building,
@@ -276,8 +281,8 @@ function thickenChapter(byType) {
   );
 
   for (const s of sentences) {
-    const blank = pickBlank(s.sentence);
-    if (blank && !usedQ.has(blank.question.toLowerCase())) {
+    for (const blank of pickAllBlanks(s.sentence)) {
+      if (usedQ.has(blank.question.toLowerCase())) continue;
       // Prefer the needier type so MC and FB do not share the same blank stem.
       const preferMc = mcNeed - mc.length >= fbNeed - fb.length;
       if (preferMc && mc.length < mcNeed) {
@@ -306,6 +311,7 @@ function thickenChapter(byType) {
           grammarTopic: s.grammarTopic,
         });
       }
+      if (mc.length >= mcNeed && fb.length >= fbNeed) break;
     }
 
     if (ec.length < ecNeed) {
@@ -400,7 +406,8 @@ function needsThicken(byType) {
     (byType.multiple_choice ?? []).length < TARGET.multiple_choice ||
     (byType.fill_blank ?? []).length < TARGET.fill_blank ||
     (byType.error_correction ?? []).length < TARGET.error_correction ||
-    (byType.translation ?? []).length < TARGET.translation
+    (byType.translation ?? []).length < TARGET.translation ||
+    (byType.sentence_building ?? []).length < TARGET.sentence_building
   );
 }
 

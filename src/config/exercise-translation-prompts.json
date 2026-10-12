@@ -2,7 +2,7 @@
   "Я студент.": {
     "en": "I am a student.",
     "de": "Ich bin Student.",
-    "es": "I am a student."
+    "es": "Soy estudiante."
   },
   "Она устала.": {
     "en": "She is tired.",
@@ -17,7 +17,7 @@
   "Книга на столе.": {
     "en": "The book is on the table.",
     "de": "Das Buch ist auf dem Tisch.",
-    "es": "The book is on the table."
+    "es": "El libro está sobre la mesa."
   },
   "Ты мой друг.": {
     "en": "You are my friend.",
@@ -432,7 +432,7 @@
   "Как тебя зовут?": {
     "en": "What is your name?",
     "de": "Wie heißt du?",
-    "es": "What is your name?"
+    "es": "¿Cómo te llamas?"
   },
   "Где ты живёшь?": {
     "en": "Where do you live?",
@@ -472,7 +472,7 @@
   "Откуда ты?": {
     "en": "Where are you from?",
     "de": "Woher kommst du?",
-    "es": "Where are you from?"
+    "es": "¿De dónde eres?"
   },
   "Как дела?": {
     "en": "How are you?",
@@ -782,7 +782,7 @@
   "Я из России.": {
     "en": "I am from Russia.",
     "de": "Ich komme aus Russland.",
-    "es": "I am from Russia."
+    "es": "Soy de Rusia."
   },
   "Они работают в офисе.": {
     "en": "They work in an office.",
@@ -1247,7 +1247,7 @@
   "Он сказал, что придёт завтра.": {
     "en": "He said he would come tomorrow.",
     "de": "Er sagte, er komme morgen.",
-    "es": "He said he would come tomorrow."
+    "es": "Dijo que vendría mañana."
   },
   "___ habla español aquí. (пассив с se)": {
     "en": "___ Spanish is spoken here.",
@@ -1382,7 +1382,7 @@
   "Я думаю, что да.": {
     "en": "I think so.",
     "de": "Ich denke schon.",
-    "es": "I think so."
+    "es": "Creo que sí."
   },
   "Эта машина нуждается в мойке.": {
     "en": "This car needs cleaning / to be washed.",
@@ -1447,7 +1447,7 @@
   "Ты успеешь?": {
     "en": "Will you make it on time?",
     "de": "Schaffst du es rechtzeitig?",
-    "es": "Will you make it on time?"
+    "es": "¿Llegarás a tiempo?"
   },
   "Начало речи": {
     "en": "Beginning of the speech",
@@ -1472,7 +1472,7 @@
   "Окна открыты.": {
     "en": "The windows are open.",
     "de": "Die Fenster sind offen.",
-    "es": "The windows are open."
+    "es": "Las ventanas están abiertas."
   },
   "Выделяем лицо": {
     "en": "Highlighting the face",
@@ -1487,7 +1487,7 @@
   "Проблема решена.": {
     "en": "The problem has been solved.",
     "de": "Das Problem ist gelöst worden.",
-    "es": "The problem has been solved."
+    "es": "Problema resuelto."
   },
   "Она знает ответ.": {
     "en": "She knows the answer.",
@@ -1517,7 +1517,7 @@
   "Это будет сложно.": {
     "en": "This will be difficult.",
     "de": "Das wird schwierig sein.",
-    "es": "This will be difficult."
+    "es": "Será difícil."
   },
   "Я уже ел сегодня.": {
     "en": "I have already eaten today.",
@@ -1847,7 +1847,7 @@
   "Мы только что приехали.": {
     "en": "We just arrived.",
     "de": "Wir sind gerade angekommen.",
-    "es": "We just arrived."
+    "es": "Acabamos de llegar."
   },
   "Ты когда-нибудь пробовал паэлью?": {
     "en": "Have you ever tried paella?",
@@ -2247,7 +2247,7 @@
   "Решение принято правительством.": {
     "en": "The decision was taken by the government.",
     "de": "Die Entscheidung wurde von der Regierung getroffen.",
-    "es": "The decision was taken by the government."
+    "es": "La decisión fue tomada por el gobierno."
   },
   "Язык говорят в двадцати странах.": {
     "en": "The language is spoken in twenty countries.",
@@ -2262,7 +2262,7 @@
   "Закон принят в прошлом году.": {
     "en": "The law was passed last year.",
     "de": "Das Gesetz wurde letztes Jahr verabschiedet.",
-    "es": "The law was passed last year."
+    "es": "La ley fue aprobada el año pasado."
   },
   "Пассив в прошедшем": {
     "en": "Passive in the past",
@@ -2487,7 +2487,7 @@
   "Сколько это стоит?": {
     "en": "How much does this cost?",
     "de": "Wie viel kostet das?",
-    "es": "How much does this cost?"
+    "es": "¿Cuánto cuesta?"
   },
   "Зачем ты здесь?": {
     "en": "Why are you here?",
@@ -2567,7 +2567,7 @@
   "Она приедет в пятницу.": {
     "en": "She will arrive on Friday.",
     "de": "Sie kommt am Freitag an.",
-    "es": "She will arrive on Friday."
+    "es": "Llegará el viernes."
   },
   "Мы будем жить в Барселоне.": {
     "en": "We will live in Barcelona.",
@@ -3057,7 +3057,7 @@
   "Он сказал, что уже поел.": {
     "en": "He said he had already eaten.",
     "de": "Er sagte, er habe schon gegessen.",
-    "es": "He said he had already eaten."
+    "es": "Dijo que ya había comido."
   },
   "Он отметил, что опоздал.": {
     "en": "He noted that he was late.",
@@ -3242,12 +3242,12 @@
   "Именно здесь началась история.": {
     "en": "It is here that the story began.",
     "de": "Genau hier begann die Geschichte.",
-    "es": "It is here that the story began."
+    "es": "Aquí es donde comenzó la historia."
   },
   "Именно из-за тебя мы опоздали.": {
     "en": "It was because of you that we were late.",
     "de": "Genau wegen dir sind wir zu spät gekommen.",
-    "es": "It was because of you that we were late."
+    "es": "Es por tu culpa que llegamos tarde."
   },
   "Их, говорят, было человек сто.": {
     "en": "They say there were about a hundred of them.",
@@ -3862,7 +3862,7 @@
   "Не могли бы вы мне помочь?": {
     "en": "Could you help me?",
     "de": "Könnten Sie mir helfen?",
-    "es": "Could you help me?"
+    "es": "¿Me podría ayudar?"
   },
   "Мне забылось имя. / Я забыл имя (случайно).": {
     "en": "I forgot the name (by accident).",
@@ -3897,7 +3897,7 @@
   "Это дом, где я вырос.": {
     "en": "This is the house where I grew up.",
     "de": "Das ist das Haus, in dem ich aufgewachsen bin.",
-    "es": "This is the house where I grew up."
+    "es": "Esta es la casa donde crecí."
   },
   "То, что ты сказал, правда.": {
     "en": "What you said is true.",
@@ -4147,7 +4147,7 @@
   "Если бы я знал, я бы тебе сказал.": {
     "en": "If I had known, I would have told you.",
     "de": "Wenn ich es gewusst hätte, hätte ich es dir gesagt.",
-    "es": "If I had known, I would have told you."
+    "es": "Si lo supiera, te lo diría."
   },
   "Мы бы пришли раньше, если бы не опоздали на автобус.": {
     "en": "We would have arrived earlier if we had not missed the bus.",

@@ -17,6 +17,7 @@
     "sanitize:curated": "tsx scripts/sanitize-curated-supplements.mjs",
     "audit:exercises": "tsx scripts/audit-exercise-coverage.mjs",
     "validate:exercises": "tsx scripts/validate-exercise-bank.mjs",
+    "topup:translations": "node scripts/topup-translation-floor.mjs",
     "verify:prod-security": "node --env-file=.env.local scripts/verify-prod-security.mjs"
   },
   "dependencies": {
@@ -50,6 +51,7 @@
     "react-markdown": "^9.0.1",
     "recharts": "^2.15.0",
     "remark-gfm": "^4.0.0",
+    "sharp": "^0.35.5",
     "sonner": "^1.7.1",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
@@ -65,10 +67,18 @@
     "autoprefixer": "^10.4.20",
     "eslint": "^9.17.0",
     "eslint-config-next": "^15.5.27",
-    "postcss": "^8.4.49",
+    "postcss": "8.5.30",
     "tailwindcss": "^3.4.17",
     "tsx": "^4.22.4",
     "typescript": "^5.7.2",
     "vitest": "^3.2.4"
+  },
+  "optionalDependencies": {
+    "@esbuild/darwin-x64": "^0.28.2"
+  },
+  "overrides": {
+    "postcss": "$postcss",
+    "postcss-selector-parser": "7.1.6",
+    "tinypool": "2.2.0"
   }
 }
