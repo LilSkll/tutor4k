@@ -106,16 +106,22 @@ export function getWordGloss(
   const key = word.word.trim().toLowerCase();
 
   if (courseId === "english") {
-    const gloss = ENGLISH_VOCAB_GLOSS[interfaceLanguage]?.[key];
+    const gloss = ENGLISH_VOCAB_GLOSS[interfaceLanguage]?.[key]?.trim();
     if (gloss) return gloss;
+    // Prefer a real UI-language definition over leaking Russian catalog text.
+    const def = ENGLISH_VOCAB_DEFINITION[interfaceLanguage]?.[key]?.trim();
+    if (def) return def;
   }
 
   if (courseId === "spanish") {
-    const gloss = SPANISH_VOCAB_GLOSS[interfaceLanguage]?.[key];
+    const gloss = SPANISH_VOCAB_GLOSS[interfaceLanguage]?.[key]?.trim();
     if (gloss) return gloss;
+    const def = SPANISH_VOCAB_DEFINITION[interfaceLanguage]?.[key]?.trim();
+    if (def) return def;
   }
 
-  // Last resort: keep authored translation even if still Russian.
+  // Never show Cyrillic to non-RU UI — better empty than wrong language.
+  if (hasCyrillic(word.translation)) return "";
   return word.translation;
 }
 
@@ -308,6 +314,7 @@ function glossForLemma(
     return (
       ENGLISH_VOCAB_GLOSS[interfaceLanguage]?.[lemma] ??
       core ??
+      ENGLISH_VOCAB_DEFINITION[interfaceLanguage]?.[lemma] ??
       null
     );
   }
@@ -320,6 +327,7 @@ function glossForLemma(
     return (
       SPANISH_VOCAB_GLOSS[interfaceLanguage]?.[lemma] ??
       core ??
+      SPANISH_VOCAB_DEFINITION[interfaceLanguage]?.[lemma] ??
       null
     );
   }
