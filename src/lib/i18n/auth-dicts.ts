@@ -27,8 +27,8 @@ const ru: Dictionary = {
   "auth.emailPlaceholder": "твой@email.com",
   "auth.heroSide.login": "Твой преподаватель, 24/7",
   "auth.heroSide.loginDesc": "Учи грамматику, лексику и готовься к экзаменам с репетитором, который подстраивается под твой уровень.",
-  "auth.heroSide.signup": "Знание языков",
-  "auth.heroSide.signupAccent": "открывает все двери",
+  "auth.heroSide.signup": "Изучайте языки.",
+  "auth.heroSide.signupAccent": "Открывайте новые миры",
   "auth.heroSide.signupDesc": "Персональный ИИ-репетитор, адаптивная практика и понятный путь от A1 до C2.",
   "auth.accountType": "Тип аккаунта",
   "auth.roleStudent": "Ученик",
@@ -110,8 +110,8 @@ const en: Dictionary = {
   "auth.emailPlaceholder": "you@email.com",
   "auth.heroSide.login": "Your tutor, 24/7",
   "auth.heroSide.loginDesc": "Learn grammar, vocabulary, and prepare for exams with a tutor that adapts to your level.",
-  "auth.heroSide.signup": "Knowing languages",
-  "auth.heroSide.signupAccent": "opens every door",
+  "auth.heroSide.signup": "Learn languages.",
+  "auth.heroSide.signupAccent": "Open new worlds",
   "auth.heroSide.signupDesc":
     "A personal AI tutor, adaptive practice, and a clear path from A1 to C2.",
   "auth.accountType": "Account type",
@@ -194,8 +194,8 @@ const es: Dictionary = {
   "auth.emailPlaceholder": "tu@email.com",
   "auth.heroSide.login": "Tu tutor, 24/7",
   "auth.heroSide.loginDesc": "Aprende gramática, léxico y prepárate para exámenes con un tutor que se adapta a tu nivel.",
-  "auth.heroSide.signup": "El conocimiento de idiomas",
-  "auth.heroSide.signupAccent": "abre todas las puertas",
+  "auth.heroSide.signup": "Aprende idiomas.",
+  "auth.heroSide.signupAccent": "Abre nuevos mundos",
   "auth.heroSide.signupDesc":
     "Un tutor de IA personal, práctica adaptativa y un camino claro de A1 a C2.",
   "auth.accountType": "Tipo de cuenta",
@@ -284,8 +284,8 @@ const de: Dictionary = {
   "auth.heroSide.login": "Dein Tutor, 24/7",
   "auth.heroSide.loginDesc":
     "Lerne Grammatik und Wortschatz und bereite dich auf Prüfungen vor — mit einem Tutor, der sich an dein Niveau anpasst.",
-  "auth.heroSide.signup": "Sprachkenntnisse",
-  "auth.heroSide.signupAccent": "öffnen alle Türen",
+  "auth.heroSide.signup": "Lernt Sprachen.",
+  "auth.heroSide.signupAccent": "Entdeckt neue Welten",
   "auth.heroSide.signupDesc":
     "Ein persönlicher KI-Tutor, adaptives Üben und ein klarer Weg von A1 bis C2.",
   "auth.accountType": "Kontotyp",
