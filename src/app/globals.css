@@ -580,10 +580,10 @@ html[data-season="halloween"] .hw-app-shell::after {
 
 /* Left: mascot (portrait) */
 html[data-season="halloween"] .hw-app-shell::before {
-  left: 248px;
+  left: 220px;
   bottom: 0;
-  width: min(200px, 18vw);
-  height: min(355px, 32vw);
+  width: min(260px, 24vw);
+  height: min(460px, 42vw);
   opacity: 0.94;
   background-image: url("/seasonal/halloween-mascot-left.webp");
   background-position: left bottom;
@@ -657,9 +657,9 @@ html[data-season="halloween"] .hw-app-shell > * {
 
   html[data-season="halloween"] .hw-app-shell::before {
     left: 0;
-    width: min(100px, 28vw);
-    height: min(178px, 48vw);
-    opacity: 0.88;
+    width: min(132px, 34vw);
+    height: min(234px, 58vw);
+    opacity: 0.9;
     filter: drop-shadow(0 8px 16px hsl(222 45% 8% / 0.28));
   }
 
@@ -680,9 +680,9 @@ html[data-season="halloween"] .hw-app-shell > * {
 
 @media (max-width: 380px) {
   html[data-season="halloween"] .hw-app-shell::before {
-    opacity: 0.72;
-    width: 84px;
-    height: 150px;
+    opacity: 0.78;
+    width: 110px;
+    height: 196px;
   }
 
   html[data-season="halloween"] .hw-app-shell::after {
