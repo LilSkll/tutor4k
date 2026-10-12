@@ -50,6 +50,8 @@ export function LoginView({
         {/* Darken left for the form; keep the right scene vivid */}
         <div className="absolute inset-0 bg-[linear-gradient(270deg,transparent_0%,transparent_38%,hsl(222_47%_6%/0.28)_55%,hsl(222_47%_6%/0.72)_78%,hsl(222_47%_6%/0.92)_100%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,hsl(222_47%_6%/0.2)_0%,transparent_12%,transparent_82%,#070d1a_100%)]" />
+        {/* Soft local veil behind right ambient copy — sunset stays bright elsewhere */}
+        <div className="pointer-events-none absolute inset-y-[16%] right-[2%] w-[min(46%,38rem)] bg-[radial-gradient(ellipse_at_70%_42%,hsl(222_47%_6%/0.62)_0%,hsl(222_47%_6%/0.32)_48%,transparent_78%)]" />
       </div>
 
       {/* Mobile / tablet backdrop */}
@@ -181,16 +183,25 @@ export function LoginView({
         </div>
 
         {/* Ambient copy — right over the vivid photo (desktop) */}
-        <div className="order-3 hidden min-w-0 max-w-xl flex-1 lg:order-2 lg:block lg:pl-4 xl:pl-8">
-          <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-amber-200/90 sm:text-xs sm:tracking-[0.16em]">
-            Spanish with Pavel
-          </p>
-          <h2 className="text-balance text-4xl font-bold leading-[1.15] tracking-tight text-white [text-shadow:0_2px_24px_rgba(7,13,26,0.55)] xl:text-5xl">
-            {t("auth.heroSide.login")}
-          </h2>
-          <p className="mt-4 max-w-md text-pretty text-base leading-relaxed text-slate-100/90 [text-shadow:0_1px_16px_rgba(7,13,26,0.65)] lg:text-lg">
-            {t("auth.heroSide.loginDesc")}
-          </p>
+        <div className="relative order-3 hidden min-w-0 max-w-xl flex-1 lg:order-2 lg:block lg:pl-4 xl:pl-8">
+          <div
+            className="pointer-events-none absolute -inset-x-6 -inset-y-8 rounded-3xl bg-[linear-gradient(105deg,hsl(222_47%_8%/0.15)_0%,hsl(222_47%_7%/0.48)_35%,hsl(222_47%_6%/0.62)_100%)] backdrop-blur-[6px]"
+            aria-hidden="true"
+          />
+          <div className="relative px-1 py-2">
+            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-amber-200 sm:text-xs sm:tracking-[0.16em]">
+              Spanish with Pavel
+            </p>
+            <h2 className="text-balance text-4xl font-bold leading-[1.15] tracking-tight text-white [text-shadow:0_2px_24px_rgba(7,13,26,0.65)] xl:text-5xl">
+              <span className="block">{t("auth.heroSide.login")}</span>
+              <span className="mt-1 block text-white">
+                {t("auth.heroSide.loginAccent")}
+              </span>
+            </h2>
+            <p className="mt-4 max-w-md text-pretty text-base leading-relaxed text-slate-50 [text-shadow:0_1px_16px_rgba(7,13,26,0.7)] lg:text-lg">
+              {t("auth.heroSide.loginDesc")}
+            </p>
+          </div>
         </div>
       </div>
     </div>
