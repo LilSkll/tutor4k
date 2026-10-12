@@ -59,6 +59,13 @@ const config: Config = {
           DEFAULT: "hsl(var(--warning))",
           foreground: "hsl(var(--warning-foreground))",
         },
+        gold: {
+          DEFAULT: "hsl(var(--brand-gold))",
+          foreground: "hsl(var(--brand-gold-foreground))",
+        },
+        navy: {
+          DEFAULT: "hsl(var(--brand-navy))",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",

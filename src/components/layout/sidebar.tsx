@@ -116,7 +116,7 @@ export function Sidebar({ userName, level, streak }: NavProps) {
               href="/settings"
               className="flex items-center gap-3 rounded-xl p-2.5 hover:bg-accent transition-colors"
             >
-              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary via-orange-500 to-rose-500 text-white text-sm font-bold shadow-brand">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-navy via-primary to-gold text-white text-sm font-bold shadow-brand">
                 {(userName?.[0] ?? "?").toUpperCase()}
               </div>
               <div className="flex-1 min-w-0">
@@ -157,7 +157,7 @@ export function Sidebar({ userName, level, streak }: NavProps) {
             className="flex justify-center rounded-xl p-2 hover:bg-accent transition-colors"
             title={userName}
           >
-            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-primary via-orange-500 to-rose-500 text-white text-xs font-bold">
+            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-navy via-primary to-gold text-white text-xs font-bold">
               {(userName?.[0] ?? "?").toUpperCase()}
             </div>
           </Link>

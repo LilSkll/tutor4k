@@ -101,7 +101,7 @@ export function MobileNav({
 
             <div className="px-4 py-3 border-b border-border/60">
               <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary via-orange-500 to-rose-500 text-white text-sm font-bold">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-navy via-primary to-gold text-white text-sm font-bold">
                   {(userName?.[0] ?? "?").toUpperCase()}
                 </div>
                 <div className="min-w-0">
