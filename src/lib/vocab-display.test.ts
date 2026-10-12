@@ -31,13 +31,10 @@ describe("getWordGloss (spanish course)", () => {
 });
 
 describe("getWordDefinition (spanish course)", () => {
-  it("returns localized definitions for all UI languages when mapped", () => {
-    const langs = ["ru", "en", "es", "de"] as const;
-    for (const lang of langs) {
-      const def = getWordDefinition(padre, lang, "spanish");
-      expect(def, `missing definition for ${lang}`).toBeTruthy();
-      expect(def!.length).toBeGreaterThan(3);
-    }
+  it("hides definitions that only restate the gloss", () => {
+    // Catalog maps "el padre" → "Отец." / "Father." which duplicates the gloss.
+    expect(getWordDefinition(padre, "ru", "spanish")).toBeNull();
+    expect(getWordDefinition(padre, "en", "spanish")).toBeNull();
   });
 
   it("prefers inline definitions over course maps", () => {
@@ -48,6 +45,16 @@ describe("getWordDefinition (spanish course)", () => {
     expect(getWordDefinition(withInline, "en", "spanish")).toBe(
       "Inline father definition for tests.",
     );
+  });
+
+  it("keeps real colour sense definitions for English course", () => {
+    const red: VocabWord = {
+      word: "red",
+      translation: "красный",
+      example: "A red car.",
+    };
+    expect(getWordDefinition(red, "ru", "english")).toMatch(/помидор|крови/i);
+    expect(getWordDefinition(red, "en", "english")).toMatch(/tomato|blood/i);
   });
 });
 

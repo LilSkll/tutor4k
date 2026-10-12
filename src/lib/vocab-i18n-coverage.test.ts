@@ -40,9 +40,9 @@ describe("vocab gloss/definition coverage", () => {
           checked += 1;
           expect(gloss, `${word.word}/${lang}`).not.toMatch(CYRILLIC);
           if (!gloss.trim()) empty += 1;
+          // Definition may be null when it only restated the gloss ("Blue." / "blue").
           const def = getWordDefinition(word, lang, "english");
-          expect(def, `def ${word.word}/${lang}`).toBeTruthy();
-          expect(def!).not.toMatch(CYRILLIC);
+          if (def) expect(def, `def ${word.word}/${lang}`).not.toMatch(CYRILLIC);
         }
       }
     }

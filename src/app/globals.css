@@ -377,6 +377,8 @@
 
 /* Soft brand atmosphere behind glass (layout unchanged). */
 .hw-app-shell {
+  position: relative;
+  isolation: isolate;
   background-color: hsl(var(--background));
   background-image:
     radial-gradient(
@@ -413,6 +415,79 @@ html.dark .hw-app-shell {
       hsl(var(--primary) / 0.1),
       transparent 55%
     );
+}
+
+/*
+ * Bottom castle horizon wash (sun/castles light, moon/castles dark).
+ * Fades upward so copy and exercises stay readable; never captures input.
+ */
+.cabinet-horizon {
+  position: absolute;
+  inset-inline: 0;
+  bottom: 0;
+  z-index: 0;
+  height: min(34vh, 320px);
+  pointer-events: none;
+  background-image: url("/brand/cabinet-horizon-light.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center 62%;
+  opacity: 0.22;
+  mask-image: linear-gradient(
+    to top,
+    black 0%,
+    black 28%,
+    transparent 92%
+  );
+  -webkit-mask-image: linear-gradient(
+    to top,
+    black 0%,
+    black 28%,
+    transparent 92%
+  );
+}
+
+html.dark .cabinet-horizon {
+  background-image: url("/brand/cabinet-horizon-dark.webp");
+  background-position: center 55%;
+  opacity: 0.3;
+}
+
+/* Keep interactive shell content above the wash. */
+.hw-app-shell > :not(.cabinet-horizon) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Seasonal Halloween corners win; keep horizon almost invisible then. */
+html[data-season="halloween"] .cabinet-horizon {
+  z-index: 0;
+  opacity: 0.08;
+}
+
+html.dark[data-season="halloween"] .cabinet-horizon {
+  opacity: 0.1;
+}
+
+@media (max-width: 767px) {
+  .cabinet-horizon {
+    height: min(28vh, 220px);
+    opacity: 0.16;
+  }
+
+  html.dark .cabinet-horizon {
+    opacity: 0.22;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cabinet-horizon {
+    opacity: 0.12;
+  }
+
+  html.dark .cabinet-horizon {
+    opacity: 0.18;
+  }
 }
 
 @keyframes page-enter {
