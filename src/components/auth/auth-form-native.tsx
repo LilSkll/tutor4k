@@ -5,14 +5,6 @@ import type { InterfaceLanguage } from "@/types";
 import { OAuthDeferred } from "@/components/auth/oauth-deferred";
 import { cn } from "@/lib/utils";
 
-const fieldClass =
-  "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2";
-
-const labelClass = "text-sm font-medium leading-none";
-
-const submitClass =
-  "inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl text-sm font-medium text-white bg-gradient-to-r from-primary via-orange-500 to-rose-500 shadow-brand hover:opacity-90 active:scale-[0.98] transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2";
-
 /**
  * Progressive auth form: pure RSC markup + server action.
  * Email/password (and signup consents) work before any client JS hydrates.
@@ -23,14 +15,43 @@ export function AuthFormNative({
   language,
   redirect,
   allowSocialOAuth = true,
+  tone = "default",
 }: {
   mode: "signin" | "signup";
   language: InterfaceLanguage;
   redirect?: string;
   allowSocialOAuth?: boolean;
+  /** Match cinematic auth shells (dark glass panels). */
+  tone?: "default" | "cinematic";
 }) {
   const t = (key: string) => translate(key, language);
   const action = mode === "signin" ? signInWithEmail : signUpWithEmail;
+  const cinematic = tone === "cinematic";
+
+  const fieldClass = cinematic
+    ? "flex h-10 w-full rounded-lg border border-white/15 bg-white/5 px-3 py-2 text-sm text-white placeholder:text-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500/50"
+    : "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2";
+
+  const labelClass = cinematic
+    ? "text-sm font-medium leading-none text-slate-200"
+    : "text-sm font-medium leading-none";
+
+  const submitClass = cinematic
+    ? "inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl bg-rose-600 text-sm font-semibold text-white shadow-[0_10px_28px_rgba(225,29,72,0.35)] transition-colors hover:bg-rose-500 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-400/60"
+    : "inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl text-sm font-medium text-white bg-gradient-to-r from-primary via-orange-500 to-rose-500 shadow-brand hover:opacity-90 active:scale-[0.98] transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2";
+
+  const roleStudentClass = cinematic
+    ? "cursor-pointer rounded-xl border-2 border-white/15 bg-white/[0.03] p-3 text-left transition-all hover:border-rose-400/40 has-[:checked]:border-rose-400/70 has-[:checked]:bg-rose-500/15"
+    : "cursor-pointer rounded-xl border-2 border-border p-3 text-left has-[:checked]:border-primary has-[:checked]:bg-primary/5 hover:border-primary/40 transition-all";
+
+  const roleTeacherClass = cinematic
+    ? "cursor-pointer rounded-xl border-2 border-white/15 bg-white/[0.03] p-3 text-left transition-all hover:border-amber-400/40 has-[:checked]:border-amber-400/70 has-[:checked]:bg-amber-500/15"
+    : "cursor-pointer rounded-xl border-2 border-border p-3 text-left has-[:checked]:border-amber-500 has-[:checked]:bg-amber-500/5 hover:border-amber-500/40 transition-all";
+
+  const mutedText = cinematic ? "text-slate-400" : "text-muted-foreground";
+  const linkClass = cinematic
+    ? "text-amber-200 hover:text-amber-100 hover:underline"
+    : "text-primary hover:underline";
 
   return (
     <div className="space-y-4">
@@ -48,10 +69,7 @@ export function AuthFormNative({
           <fieldset className="space-y-2">
             <legend className={labelClass}>{t("auth.accountType")}</legend>
             <div className="grid grid-cols-2 gap-2">
-              <label
-                htmlFor="role-student"
-                className="cursor-pointer rounded-xl border-2 border-border p-3 text-left has-[:checked]:border-primary has-[:checked]:bg-primary/5 hover:border-primary/40 transition-all"
-              >
+              <label htmlFor="role-student" className={roleStudentClass}>
                 <input
                   id="role-student"
                   type="radio"
@@ -61,14 +79,11 @@ export function AuthFormNative({
                   className="sr-only"
                 />
                 <p className="text-sm font-semibold">{t("auth.roleStudent")}</p>
-                <p className="text-[11px] text-muted-foreground leading-snug mt-0.5">
+                <p className={cn("mt-0.5 text-[11px] leading-snug", mutedText)}>
                   {t("auth.roleStudentDesc")}
                 </p>
               </label>
-              <label
-                htmlFor="role-teacher"
-                className="cursor-pointer rounded-xl border-2 border-border p-3 text-left has-[:checked]:border-amber-500 has-[:checked]:bg-amber-500/5 hover:border-amber-500/40 transition-all"
-              >
+              <label htmlFor="role-teacher" className={roleTeacherClass}>
                 <input
                   id="role-teacher"
                   type="radio"
@@ -77,14 +92,28 @@ export function AuthFormNative({
                   className="sr-only"
                 />
                 <p className="text-sm font-semibold">{t("auth.roleTeacher")}</p>
-                <p className="text-[11px] text-muted-foreground leading-snug mt-0.5">
+                <p className={cn("mt-0.5 text-[11px] leading-snug", mutedText)}>
                   {t("auth.roleTeacherDesc")}
                 </p>
               </label>
             </div>
 
-            <div className="teacher-panel rounded-xl border border-amber-500/40 bg-amber-500/10 p-3 space-y-3">
-              <div className="space-y-1 text-xs leading-relaxed text-amber-900 dark:text-amber-100">
+            <div
+              className={cn(
+                "teacher-panel space-y-3 rounded-xl border p-3",
+                cinematic
+                  ? "border-amber-400/35 bg-amber-500/10"
+                  : "border-amber-500/40 bg-amber-500/10",
+              )}
+            >
+              <div
+                className={cn(
+                  "space-y-1 text-xs leading-relaxed",
+                  cinematic
+                    ? "text-amber-100/90"
+                    : "text-amber-900 dark:text-amber-100",
+                )}
+              >
                 <p className="font-semibold text-sm">
                   {t("auth.teacherWarningTitle")}
                 </p>
@@ -93,7 +122,10 @@ export function AuthFormNative({
               </div>
               <label
                 htmlFor="teacherConfirm"
-                className="flex items-start gap-3 cursor-pointer text-sm text-muted-foreground leading-snug"
+                className={cn(
+                  "flex cursor-pointer items-start gap-3 text-sm leading-snug",
+                  mutedText,
+                )}
               >
                 <input
                   id="teacherConfirm"
@@ -147,7 +179,7 @@ export function AuthFormNative({
             {mode === "signin" ? (
               <Link
                 href="/forgot-password"
-                className="text-xs text-primary font-medium hover:underline"
+                className={cn("text-xs font-medium", linkClass)}
               >
                 {t("auth.forgotPassword")}
               </Link>
@@ -168,10 +200,20 @@ export function AuthFormNative({
         </div>
 
         {mode === "signup" ? (
-          <div className="space-y-3 rounded-lg border bg-muted/30 p-4">
+          <div
+            className={cn(
+              "space-y-3 rounded-lg border p-4",
+              cinematic
+                ? "border-white/10 bg-white/[0.04]"
+                : "border bg-muted/30",
+            )}
+          >
             <label
               htmlFor="acceptTerms"
-              className="flex items-start gap-3 cursor-pointer text-sm text-muted-foreground leading-snug"
+              className={cn(
+                "flex cursor-pointer items-start gap-3 text-sm leading-snug",
+                mutedText,
+              )}
             >
               <input
                 id="acceptTerms"
@@ -182,18 +224,17 @@ export function AuthFormNative({
               />
               <span>
                 {t("auth.acceptTerms")}{" "}
-                <Link
-                  href="/terms"
-                  className="text-primary hover:underline"
-                  target="_blank"
-                >
+                <Link href="/terms" className={linkClass} target="_blank">
                   {t("auth.termsLink")}
                 </Link>
               </span>
             </label>
             <label
               htmlFor="acceptPrivacy"
-              className="flex items-start gap-3 cursor-pointer text-sm text-muted-foreground leading-snug"
+              className={cn(
+                "flex cursor-pointer items-start gap-3 text-sm leading-snug",
+                mutedText,
+              )}
             >
               <input
                 id="acceptPrivacy"
@@ -204,18 +245,17 @@ export function AuthFormNative({
               />
               <span>
                 {t("auth.acceptPrivacy")}{" "}
-                <Link
-                  href="/privacy"
-                  className="text-primary hover:underline"
-                  target="_blank"
-                >
+                <Link href="/privacy" className={linkClass} target="_blank">
                   {t("auth.privacyLink")}
                 </Link>
               </span>
             </label>
             <label
               htmlFor="marketingConsent"
-              className="flex items-start gap-3 cursor-pointer text-sm text-muted-foreground leading-snug"
+              className={cn(
+                "flex cursor-pointer items-start gap-3 text-sm leading-snug",
+                mutedText,
+              )}
             >
               <input
                 id="marketingConsent"
@@ -250,6 +290,7 @@ export function AuthFormNative({
         allowSocialOAuth={allowSocialOAuth}
         language={language}
         oauthUnavailableMessage={t("auth.oauthRuUnavailable")}
+        tone={tone}
       />
     </div>
   );

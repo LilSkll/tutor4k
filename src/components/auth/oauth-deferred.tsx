@@ -23,4 +23,5 @@ export type OAuthDeferredProps = {
   allowSocialOAuth: boolean;
   language: InterfaceLanguage;
   oauthUnavailableMessage: string;
+  tone?: "default" | "cinematic";
 };

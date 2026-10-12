@@ -50,8 +50,8 @@ export default async function LandingPage({
 
       {/* ─── Hero: cinematic full-bleed ─── */}
       <section className="relative isolate flex min-h-[100svh] flex-col overflow-hidden">
-        {/* Desktop / tablet background photo */}
-        <div className="absolute inset-0 hidden md:block" aria-hidden="true">
+        {/* Desktop background photo (lg+) */}
+        <div className="absolute inset-0 hidden lg:block" aria-hidden="true">
           <Image
             src="/landing-founder-hippogriff.jpg"
             alt=""
@@ -60,17 +60,16 @@ export default async function LandingPage({
             fetchPriority="high"
             unoptimized
             sizes="100vw"
-            className="object-cover object-[22%_42%] lg:object-[28%_45%] xl:object-[32%_48%]"
+            className="object-cover object-[16%_42%] xl:object-[18%_44%] 2xl:object-[20%_46%] brightness-[1.14] contrast-[1.05] saturate-[1.08]"
           />
-          {/* Keep figures on the left readable; darken right for copy */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#070d1a]/55 via-[#070d1a]/35 to-[#070d1a]/92" />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#070d1a] via-transparent to-[#070d1a]/50" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_45%,transparent_0%,hsl(222_47%_6%/0.55)_70%)]" />
+          {/* Soft right-edge assist only — figures stay clear */}
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,transparent_0%,transparent_68%,hsl(222_47%_6%/0.12)_88%,hsl(222_47%_6%/0.28)_100%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,hsl(222_47%_6%/0.14)_0%,transparent_10%,transparent_86%,#070d1a_100%)]" />
         </div>
 
-        {/* Mobile soft backdrop (no full-bleed crop of faces) */}
+        {/* Mobile / tablet soft backdrop (stacked layout) */}
         <div
-          className="absolute inset-0 md:hidden bg-[radial-gradient(ellipse_at_30%_0%,hsl(32_60%_28%/0.35),transparent_55%),linear-gradient(180deg,#0b1528_0%,#070d1a_100%)]"
+          className="absolute inset-0 lg:hidden bg-[radial-gradient(ellipse_at_30%_0%,hsl(32_60%_28%/0.35),transparent_55%),linear-gradient(180deg,#0b1528_0%,#070d1a_100%)]"
           aria-hidden="true"
         />
 
@@ -122,9 +121,9 @@ export default async function LandingPage({
           </div>
         </header>
 
-        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col px-4 pb-10 pt-6 sm:px-6 md:justify-center md:pb-16 md:pt-10 lg:px-8">
-          {/* Mobile photo — dedicated frame, figures preserved */}
-          <div className="relative mb-7 aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.45)] md:hidden">
+        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-1 flex-col px-4 pb-10 pt-6 sm:px-6 lg:max-w-none lg:justify-center lg:px-10 lg:pb-16 lg:pt-10 xl:px-14 2xl:px-20">
+          {/* Mobile / tablet photo — dedicated frame, figures preserved */}
+          <div className="relative mb-7 aspect-[3/2] w-full overflow-hidden rounded-2xl border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.45)] lg:hidden">
             <Image
               src="/landing-founder-hippogriff.jpg"
               alt={t("landing.mascotAlt")}
@@ -132,55 +131,62 @@ export default async function LandingPage({
               priority
               fetchPriority="high"
               unoptimized
-              sizes="(max-width: 768px) 100vw, 0px"
-              className="object-cover object-[24%_38%]"
+              sizes="(max-width: 1023px) 100vw, 0px"
+              className="object-cover object-[24%_38%] sm:object-[28%_40%] brightness-[1.1] contrast-[1.04] saturate-[1.06]"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#070d1a]/50 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#070d1a]/28 via-transparent to-transparent" />
           </div>
 
-          {/* Copy — right on desktop (away from figures), full width on mobile */}
-          <div className="flex w-full min-w-0 flex-col md:ml-auto md:w-[min(100%,28rem)] lg:w-[min(100%,32rem)] xl:w-[min(100%,36rem)]">
-            <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-amber-200/90 sm:text-xs sm:tracking-[0.16em]">
-              {t("landing.eyebrow")}
-            </p>
-            <h1 className="text-balance text-3xl font-bold leading-[1.15] tracking-tight text-white sm:text-4xl md:text-[2.75rem] lg:text-5xl">
-              <span className="block">{t("landing.heroTitle1")}</span>
-              <span className="mt-1 block bg-gradient-to-r from-amber-200 via-amber-100 to-rose-200 bg-clip-text text-transparent">
-                {t("landing.heroTitle2")}
-              </span>
-            </h1>
-            <p className="mt-4 text-pretty text-base leading-relaxed text-slate-300 sm:text-lg">
-              {t("landing.heroSubtitle")}
-            </p>
-
-            <div className="mt-7 flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Link
-                href={`/signup${q}`}
-                className="inline-flex h-12 w-full shrink-0 items-center justify-center gap-2 rounded-xl bg-rose-600 px-5 text-base font-semibold text-white shadow-[0_10px_28px_rgba(225,29,72,0.35)] transition-colors hover:bg-rose-500 sm:w-auto motion-safe:transition-transform motion-safe:hover:-translate-y-0.5"
-              >
-                {t("landing.createAccount")}
-                <ArrowRight className="h-4 w-4 shrink-0" />
-              </Link>
-              <Link
-                href={`/login${q}`}
-                className="inline-flex h-12 w-full items-center justify-center rounded-xl border border-white/20 bg-white/5 px-5 text-base font-medium text-slate-100 backdrop-blur-sm hover:bg-white/10 sm:w-auto"
-              >
-                {t("landing.haveAccount")}
-              </Link>
-            </div>
-
-            <div className="mt-8 flex flex-wrap items-center gap-2">
-              <span className="text-xs text-slate-400 sm:text-sm">
-                {t("landing.levelsLabel")}
-              </span>
-              {LEVELS.map((lvl) => (
-                <span
-                  key={lvl}
-                  className="rounded-full border border-amber-400/25 bg-amber-400/10 px-2.5 py-0.5 text-xs font-semibold text-amber-100/90"
-                >
-                  {lvl}
+          {/* Copy — desktop: right column clear of figures; mobile/tablet: stacked below photo */}
+          <div className="relative flex w-full min-w-0 flex-col lg:absolute lg:right-[clamp(1.75rem,4vw,4rem)] lg:top-1/2 lg:w-[min(26rem,32vw)] lg:-translate-y-[42%] xl:w-[min(28rem,28vw)]">
+            {/* Soft directed veil behind copy only (desktop) */}
+            <div
+              className="pointer-events-none absolute -inset-x-6 -inset-y-8 hidden rounded-[2rem] lg:block bg-[radial-gradient(ellipse_at_80%_40%,hsl(222_47%_6%/0.48)_0%,hsl(222_47%_6%/0.2)_55%,transparent_82%)]"
+              aria-hidden="true"
+            />
+            <div className="relative">
+              <p className="mb-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-amber-200/90 [text-shadow:0_1px_12px_rgba(7,13,26,0.55)] sm:text-xs sm:tracking-[0.16em]">
+                {t("landing.eyebrow")}
+              </p>
+              <h1 className="text-balance text-3xl font-bold leading-[1.15] tracking-tight text-white [text-shadow:0_2px_24px_rgba(7,13,26,0.55)] sm:text-4xl lg:text-[2.85rem] xl:text-5xl">
+                <span className="block">{t("landing.heroTitle1")}</span>
+                <span className="mt-1 block bg-gradient-to-r from-amber-200 via-amber-100 to-rose-200 bg-clip-text text-transparent">
+                  {t("landing.heroTitle2")}
                 </span>
-              ))}
+              </h1>
+              <p className="mt-4 text-pretty text-base leading-relaxed text-slate-100/95 [text-shadow:0_1px_16px_rgba(7,13,26,0.65)] sm:text-lg">
+                {t("landing.heroSubtitle")}
+              </p>
+
+              <div className="mt-7 flex w-full flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <Link
+                  href={`/signup${q}`}
+                  className="inline-flex h-12 w-full shrink-0 items-center justify-center gap-2 rounded-xl bg-rose-600 px-5 text-base font-semibold text-white shadow-[0_10px_28px_rgba(225,29,72,0.35)] transition-colors hover:bg-rose-500 sm:w-auto motion-safe:transition-transform motion-safe:hover:-translate-y-0.5"
+                >
+                  {t("landing.createAccount")}
+                  <ArrowRight className="h-4 w-4 shrink-0" />
+                </Link>
+                <Link
+                  href={`/login${q}`}
+                  className="inline-flex h-12 w-full items-center justify-center rounded-xl border border-white/20 bg-white/5 px-5 text-base font-medium text-slate-100 backdrop-blur-sm hover:bg-white/10 sm:w-auto"
+                >
+                  {t("landing.haveAccount")}
+                </Link>
+              </div>
+
+              <div className="mt-8 flex flex-wrap items-center gap-2">
+                <span className="text-xs text-slate-300 [text-shadow:0_1px_10px_rgba(7,13,26,0.7)] sm:text-sm">
+                  {t("landing.levelsLabel")}
+                </span>
+                {LEVELS.map((lvl) => (
+                  <span
+                    key={lvl}
+                    className="rounded-full border border-amber-400/25 bg-amber-400/10 px-2.5 py-0.5 text-xs font-semibold text-amber-100/90"
+                  >
+                    {lvl}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>

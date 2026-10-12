@@ -56,13 +56,16 @@ export function OAuthIsland({
   allowSocialOAuth,
   language,
   oauthUnavailableMessage,
+  tone = "default",
 }: {
   mode: "signin" | "signup";
   redirect?: string;
   allowSocialOAuth: boolean;
   language: InterfaceLanguage;
   oauthUnavailableMessage: string;
+  tone?: "default" | "cinematic";
 }) {
+  const cinematic = tone === "cinematic";
   const [snap, setSnap] = React.useState<FormSnapshot>({
     role: "student",
     teacherConfirm: false,
@@ -121,7 +124,13 @@ export function OAuthIsland({
 
   if (!allowSocialOAuth) {
     return (
-      <p className="text-center text-xs text-muted-foreground">
+      <p
+        className={
+          cinematic
+            ? "text-center text-xs leading-relaxed text-slate-400"
+            : "text-center text-xs text-muted-foreground"
+        }
+      >
         {oauthUnavailableMessage}
       </p>
     );
@@ -129,7 +138,14 @@ export function OAuthIsland({
 
   if (!loadOauth) {
     return (
-      <div className="h-11 animate-pulse rounded-md bg-muted/40" aria-hidden />
+      <div
+        className={
+          cinematic
+            ? "h-11 animate-pulse rounded-md bg-white/10"
+            : "h-11 animate-pulse rounded-md bg-muted/40"
+        }
+        aria-hidden
+      />
     );
   }
 
@@ -144,6 +160,7 @@ export function OAuthIsland({
       redirect={redirect}
       allowSocialOAuth
       language={language}
+      tone={tone}
     />
   );
 }

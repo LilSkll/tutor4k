@@ -42,6 +42,7 @@ export function OAuthButtons({
   disabled,
   allowSocialOAuth = true,
   language: languageProp,
+  tone = "default",
 }: {
   mode: "signin" | "signup";
   role: "student" | "teacher";
@@ -55,16 +56,24 @@ export function OAuthButtons({
   allowSocialOAuth?: boolean;
   /** Prefer server/parent language to avoid Zustand on auth TTI path. */
   language?: InterfaceLanguage;
+  tone?: "default" | "cinematic";
 }) {
   const storeLanguage = useInterfaceLanguage(languageProp);
   const language = languageProp ?? storeLanguage;
   const t = (key: string) => translate(key, language);
   const [busy, setBusy] = React.useState(false);
   const [error, setError] = React.useState<string | null>(null);
+  const cinematic = tone === "cinematic";
 
   if (!allowSocialOAuth) {
     return (
-      <p className="text-xs text-muted-foreground text-center leading-relaxed pt-1">
+      <p
+        className={
+          cinematic
+            ? "pt-1 text-center text-xs leading-relaxed text-slate-400"
+            : "pt-1 text-center text-xs leading-relaxed text-muted-foreground"
+        }
+      >
         {t("auth.oauthRuUnavailable")}
       </p>
     );
@@ -143,23 +152,45 @@ export function OAuthButtons({
     <div className="space-y-3">
       <div className="relative py-1">
         <div className="absolute inset-0 flex items-center">
-          <span className="w-full border-t" />
+          <span
+            className={
+              cinematic ? "w-full border-t border-white/15" : "w-full border-t"
+            }
+          />
         </div>
         <div className="relative flex justify-center text-xs uppercase">
-          <span className="bg-background px-2 text-muted-foreground">
+          <span
+            className={
+              cinematic
+                ? "bg-[#070d1a]/80 px-2 text-slate-400"
+                : "bg-background px-2 text-muted-foreground"
+            }
+          >
             {t("auth.or")}
           </span>
         </div>
       </div>
 
       {error && (
-        <p className="text-sm text-destructive text-center">{error}</p>
+        <p
+          className={
+            cinematic
+              ? "text-center text-sm text-rose-300"
+              : "text-center text-sm text-destructive"
+          }
+        >
+          {error}
+        </p>
       )}
 
       <Button
         type="button"
         variant="outline"
-        className="w-full"
+        className={
+          cinematic
+            ? "w-full border-white/15 bg-white/5 text-slate-100 hover:bg-white/10 hover:text-white"
+            : "w-full"
+        }
         disabled={disabled || busy || signupBlocked}
         pending={busy}
         onClick={() => void startGoogle()}
