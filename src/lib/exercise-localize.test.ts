@@ -37,36 +37,103 @@ describe("translation localization", () => {
     expect(ex.question).toBe("I am a student.");
   });
 
-  it("uses Spanish L1 for English-course TR on EN UI (never Cyrillic)", () => {
+  it("does not inject Spanish into English-course TR for EN UI", () => {
     const enCourse: StaticExercise = {
       ...sample,
       answer: "I am a student",
       questionTranslations: { es: "Soy estudiante" },
     };
-    expect(isExerciseUsableForLanguage(enCourse, "en", "english")).toBe(true);
-    const kept = localizeTranslationQuestion(enCourse, "en", "english");
-    expect(kept).not.toMatch(/[\u0400-\u04FF]/);
-    expect(kept.toLowerCase()).toContain("estudiante");
+    expect(isExerciseUsableForLanguage(enCourse, "en", "english")).toBe(false);
     expect(
-      getTranslationSourceLabel(
-        { ...enCourse, question: kept },
-        "en",
-        "english",
-      ),
-    ).toBe("Source: Spanish");
+      prepareExercisesForInterface([enCourse], "en", "english"),
+    ).toHaveLength(0);
   });
 
-  it("drops English-course TR for EN UI when no safe non-RU L1 exists", () => {
-    const orphan: StaticExercise = {
+  it("filters already-Spanish TR stems on English course + EN UI", () => {
+    const spanishStem: StaticExercise = {
       ...sample,
-      id: "orphan",
-      question: "Редкая фраза без карты L1.",
-      answer: "A rare phrase with no L1 map",
-      questionTranslations: {},
+      id: "es-stem",
+      question: "La calabaza junto a la puerta es grande.",
+      answer: "The pumpkin by the door is big",
+      questionTranslations: { es: "La calabaza junto a la puerta es grande." },
     };
-    expect(isExerciseUsableForLanguage(orphan, "en", "english")).toBe(false);
-    expect(prepareExercisesForInterface([orphan], "en", "english")).toHaveLength(
-      0,
+    expect(isExerciseUsableForLanguage(spanishStem, "en", "english")).toBe(
+      false,
+    );
+    expect(
+      prepareExercisesForInterface([spanishStem], "en", "english"),
+    ).toHaveLength(0);
+  });
+
+  it("uses Spanish L1 for English-course TR when UI is Spanish", () => {
+    const enCourse: StaticExercise = {
+      ...sample,
+      answer: "I am a student",
+      questionTranslations: { es: "Soy estudiante" },
+    };
+    expect(isExerciseUsableForLanguage(enCourse, "es", "english")).toBe(true);
+    const kept = localizeTranslationQuestion(enCourse, "es", "english");
+    expect(kept).toBe("Soy estudiante");
+  });
+
+  it("keeps non-TR questions in the course target language across UI langs", () => {
+    const fill: StaticExercise = {
+      id: "fb1",
+      type: "fill_blank",
+      question: "She ___ to school every day.",
+      answer: "goes",
+      instruction: "Present simple",
+      explanation: "3rd person -s",
+    };
+    for (const lang of ["ru", "en", "es", "de"] as const) {
+      const [ex] = prepareExercisesForInterface([fill], lang, "english");
+      // Question stays English (course target); only instruction follows UI.
+      expect(ex.question).toBe("She ___ to school every day.");
+    }
+    expect(
+      prepareExercisesForInterface([fill], "ru", "english")[0]!.instruction,
+    ).toMatch(/[\u0400-\u04FF]/);
+    expect(
+      prepareExercisesForInterface([fill], "en", "english")[0]!.instruction,
+    ).not.toMatch(/[\u0400-\u04FF]/);
+  });
+
+  it("matrix: TR L1 follows UI; never third language on English×EN", () => {
+    const spanishTr = sample;
+    const englishTr: StaticExercise = {
+      ...sample,
+      id: "en-tr",
+      answer: "I am a student",
+      questionTranslations: {
+        es: "Soy estudiante",
+        de: "Ich bin Student.",
+      },
+    };
+
+    // Spanish course
+    expect(localizeTranslationQuestion(spanishTr, "ru", "spanish")).toMatch(
+      /[\u0400-\u04FF]/,
+    );
+    expect(localizeTranslationQuestion(spanishTr, "en", "spanish")).toBe(
+      "I am a student.",
+    );
+    expect(
+      localizeTranslationQuestion(spanishTr, "es", "spanish"),
+    ).not.toMatch(/[\u0400-\u04FF]/);
+    expect(
+      localizeTranslationQuestion(spanishTr, "de", "spanish"),
+    ).not.toMatch(/[\u0400-\u04FF]/);
+
+    // English course
+    expect(localizeTranslationQuestion(englishTr, "ru", "english")).toMatch(
+      /[\u0400-\u04FF]/,
+    );
+    expect(isExerciseUsableForLanguage(englishTr, "en", "english")).toBe(false);
+    expect(localizeTranslationQuestion(englishTr, "es", "english")).toBe(
+      "Soy estudiante",
+    );
+    expect(localizeTranslationQuestion(englishTr, "de", "english")).toBe(
+      "Ich bin Student.",
     );
   });
 

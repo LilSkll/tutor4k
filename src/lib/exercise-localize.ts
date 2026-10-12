@@ -143,8 +143,10 @@ function detectPromptSourceLang(
 }
 
 /**
- * When the TR stem language differs from the UI (e.g. English course keeps a
- * Spanish L1 for EN UI so the English answer is not spoiled), label the source.
+ * Label when TR L1 language differs from the UI language.
+ * Never used to excuse a third language in English×EN practice (those items
+ * are filtered out). Typical case: Spanish course + ES UI with EN L1 because
+ * Spanish would equal the answer.
  */
 export function getTranslationSourceLabel(
   exercise: Pick<StaticExercise, "question" | "type">,
@@ -152,11 +154,26 @@ export function getTranslationSourceLabel(
   courseId?: string | null,
 ): string | null {
   if (exercise.type !== "translation") return null;
-  if (courseId !== "english") return null;
+  // English practice with EN UI must never show a foreign L1 — no label needed.
+  if (courseId === "english" && interfaceLanguage === "en") return null;
   const source = detectPromptSourceLang(exercise.question ?? "");
-  if (!source || source === "en") return null;
+  if (!source) return null;
   if (source === interfaceLanguage) return null;
-  return SOURCE_LABEL[source]?.[interfaceLanguage] ?? null;
+  // Intentional spoiler fallback: Spanish course + ES UI with English L1.
+  if (courseId === "spanish" && interfaceLanguage === "es" && source === "en") {
+    return (
+      {
+        ru: "Источник: английский",
+        en: "Source: English",
+        es: "Origen: inglés",
+        de: "Quelle: Englisch",
+      }[interfaceLanguage] ?? "Source: English"
+    );
+  }
+  if (source === "ru" || source === "es" || source === "de") {
+    return SOURCE_LABEL[source]?.[interfaceLanguage] ?? null;
+  }
+  return null;
 }
 
 /** Render "question (gloss)" when a gloss exists. */
@@ -441,10 +458,16 @@ export function localizeExerciseInstruction(
 }
 
 /**
- * Safe non-Cyrillic L1 for a RU-authored translation stem.
- * Never returns a prompt that equals the target answer (spoiler).
+ * Resolve TR source (L1) for the interface language.
+ *
+ * Rules:
+ * - Non-TR questions stay in the course target language (handled elsewhere).
+ * - TR prompt language = interface language when possible.
+ * - Never inject a third language (e.g. Spanish into English×EN practice).
+ * - Only spoiler fallback: Spanish course + ES UI may use EN/DE L1 when ES
+ *   would equal the Spanish answer.
  */
-function resolveNonCyrillicTranslationPrompt(
+function resolveTranslationPromptForUi(
   exercise: Pick<
     StaticExercise,
     "question" | "answer" | "questionTranslations"
@@ -452,6 +475,8 @@ function resolveNonCyrillicTranslationPrompt(
   interfaceLanguage: InterfaceLanguage,
   courseId?: string | null,
 ): string | null {
+  const question = exercise.question?.trim() ?? "";
+  if (!question) return null;
   const answer = exercise.answer ?? "";
   const isSpoiler = (candidate: string) =>
     normalizeForCompare(candidate) === normalizeForCompare(answer);
@@ -459,44 +484,59 @@ function resolveNonCyrillicTranslationPrompt(
   const tryLang = (lang: Exclude<InterfaceLanguage, "ru">): string | null => {
     const inline = exercise.questionTranslations?.[lang]?.trim();
     if (inline && !hasCyrillicText(inline) && !isSpoiler(inline)) return inline;
-    const mapped = lookupTranslationPrompt(
-      exercise.question,
-      lang,
-      courseId === "english" ? answer : null,
-    );
-    if (mapped && !hasCyrillicText(mapped) && !isSpoiler(mapped)) return mapped;
+    // Lookup keys are usually the original RU stem; also try current question.
+    for (const key of [question, exercise.question ?? ""]) {
+      const mapped = lookupTranslationPrompt(
+        key,
+        lang,
+        courseId === "english" ? answer : null,
+      );
+      if (mapped && !hasCyrillicText(mapped) && !isSpoiler(mapped)) return mapped;
+    }
     return null;
   };
 
-  // Preferred UI language first.
-  if (interfaceLanguage !== "ru") {
-    const preferred = tryLang(interfaceLanguage);
-    if (preferred) return preferred;
+  // Russian UI: keep Cyrillic stems; reject foreign L1 leftovers.
+  if (interfaceLanguage === "ru") {
+    return hasCyrillicText(question) ? question : null;
   }
 
-  // English course + EN UI: EN L1 spoils the English answer → use ES, then DE.
-  if (courseId === "english" && interfaceLanguage === "en") {
-    return tryLang("es") ?? tryLang("de");
+  const source = detectPromptSourceLang(question);
+
+  // Already the right L1 for this UI and not a spoiler.
+  if (source === interfaceLanguage && !isSpoiler(question)) {
+    return question;
   }
 
-  // Spanish course + ES UI: Spanish L1 often equals the Spanish answer → EN, then DE.
+  // Preferred UI language from maps / glosses.
+  const preferred = tryLang(interfaceLanguage);
+  if (preferred) return preferred;
+
+  // Spanish course + ES UI: ES L1 often equals the Spanish answer → EN, then DE.
   if (courseId === "spanish" && interfaceLanguage === "es") {
     return tryLang("en") ?? tryLang("de");
   }
 
-  // Other mismatches: try remaining L1s so we never serve Cyrillic to non-RU UI.
-  for (const lang of ["en", "es", "de"] as const) {
-    if (lang === interfaceLanguage) continue;
-    const alt = tryLang(lang);
-    if (alt) return alt;
+  // Spanish course + DE UI: if DE missing, EN is an acceptable universal L1
+  // (still not the target Spanish answer when spoiler-checked).
+  if (courseId === "spanish" && interfaceLanguage === "de") {
+    return tryLang("en");
   }
+
+  // English course: only the UI language is allowed as L1.
+  // EN UI cannot use EN when it equals the answer → drop (no ES/DE injection).
+  if (courseId === "english") {
+    return null;
+  }
+
+  // Spanish course + EN UI with no EN map: do not fall back to ES (target leak).
   return null;
 }
 
 /**
  * True when an exercise makes sense for the given interface language.
- * Non-RU UI never receives Cyrillic questions/answers — TR items need a
- * localized L1 prompt (ES/DE/EN map), otherwise they are dropped.
+ * Non-TR: question stays in the course target language (no Cyrillic leaks).
+ * TR: must resolve to an L1 prompt matching the UI language rules above.
  */
 export function isExerciseUsableForLanguage(
   exercise: Pick<
@@ -506,13 +546,13 @@ export function isExerciseUsableForLanguage(
   interfaceLanguage: InterfaceLanguage,
   courseId?: string | null,
 ): boolean {
-  if (interfaceLanguage === "ru") return true;
-  if (hasCyrillicText(exercise.answer)) return false;
+  if (hasCyrillicText(exercise.answer) && interfaceLanguage !== "ru") {
+    return false;
+  }
 
   if (exercise.type === "translation") {
-    if (!hasCyrillicText(exercise.question)) return true;
     return (
-      resolveNonCyrillicTranslationPrompt(
+      resolveTranslationPromptForUi(
         exercise,
         interfaceLanguage,
         courseId,
@@ -520,10 +560,13 @@ export function isExerciseUsableForLanguage(
     );
   }
 
+  // Non-TR: content is the language being learned — only drop Cyrillic noise
+  // for non-RU UI (RU UI may still see rare authored RU stems).
+  if (interfaceLanguage === "ru") return true;
   return !hasCyrillicText(exercise.question);
 }
 
-/** Swap RU translation prompts for the learner's interface language. */
+/** Swap TR prompts for the learner's interface language only. */
 export function localizeTranslationQuestion(
   exercise: Pick<
     StaticExercise,
@@ -532,17 +575,12 @@ export function localizeTranslationQuestion(
   interfaceLanguage: InterfaceLanguage,
   courseId?: string | null,
 ): string {
-  if (exercise.type !== "translation" || interfaceLanguage === "ru") {
-    return exercise.question;
-  }
-  if (!hasCyrillicText(exercise.question)) return exercise.question;
-
-  const resolved = resolveNonCyrillicTranslationPrompt(
+  if (exercise.type !== "translation") return exercise.question;
+  const resolved = resolveTranslationPromptForUi(
     exercise,
     interfaceLanguage,
     courseId,
   );
-  // Callers filter unusable items; keep original only as a last resort.
   return resolved ?? exercise.question;
 }
 
@@ -560,6 +598,9 @@ export function prepareExercisesForInterface<T extends StaticExercise>(
       ...ex,
       question: localizeTranslationQuestion(ex, interfaceLanguage, courseId),
       instruction: localizeExerciseInstruction(ex, interfaceLanguage),
-      explanation: localizeBankExplanation(ex.explanation, interfaceLanguage),
+      explanation: localizeBankExplanation(
+        ex.explanation ?? "",
+        interfaceLanguage,
+      ),
     }));
 }

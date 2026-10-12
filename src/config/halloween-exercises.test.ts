@@ -80,7 +80,7 @@ describe("HALLOWEEN_EXERCISES_ENGLISH", () => {
         (ex) => sanitizeBankExercise(ex) == null,
       ),
     ).toEqual([]);
-    for (const lang of ["ru", "en", "es", "de"] as const) {
+    for (const lang of ["ru", "es", "de"] as const) {
       const kept = prepareExercisesForInterface(
         HALLOWEEN_EXERCISES_ENGLISH,
         lang,
@@ -88,19 +88,40 @@ describe("HALLOWEEN_EXERCISES_ENGLISH", () => {
       );
       expect(kept.length, lang).toBe(HALLOWEEN_EXERCISES_ENGLISH.length);
     }
+    // EN UI drops RU→EN translation stems (no safe EN L1 without spoiling).
+    const enKept = prepareExercisesForInterface(
+      HALLOWEEN_EXERCISES_ENGLISH,
+      "en",
+      "english",
+    );
+    const nonTr = HALLOWEEN_EXERCISES_ENGLISH.filter(
+      (e) => e.type !== "translation",
+    ).length;
+    expect(enKept.length).toBe(nonTr);
+    expect(enKept.every((e) => e.type !== "translation")).toBe(true);
   });
 
-  it("localizes TR prompts for en/es/de without Cyrillic", () => {
+  it("localizes TR prompts for es/de; drops EN-UI items without safe EN L1", () => {
     const translations = HALLOWEEN_EXERCISES_ENGLISH.filter(
       (e) => e.type === "translation",
     );
-    for (const lang of ["en", "es", "de"] as const) {
+    for (const lang of ["es", "de"] as const) {
       const kept = prepareExercisesForInterface(translations, lang, "english");
+      expect(kept.length).toBeGreaterThan(0);
       for (const ex of kept) {
         expect(ex.question, `${ex.id} (${lang})`).not.toMatch(
           /[\u0400-\u04FF]/,
         );
       }
+    }
+    // EN UI + English course: RU→EN stems would need a non-spoiling EN prompt;
+    // do not show Spanish/Russian substitutes in English practice.
+    const en = prepareExercisesForInterface(translations, "en", "english");
+    for (const ex of en) {
+      expect(ex.question, ex.id).not.toMatch(/[\u0400-\u04FF]/);
+      expect(ex.question.toLowerCase()).not.toMatch(
+        /\b(el|la|los|las|calabaza|bruja|fantasma)\b/,
+      );
     }
   });
 });

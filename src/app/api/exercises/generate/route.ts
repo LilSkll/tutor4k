@@ -277,7 +277,7 @@ async function pickDeleSession(input: {
   let candidates = getDeleExercises(input.type, input.level);
   if (input.language !== "ru") {
     candidates = candidates.filter((ex) =>
-      isExerciseUsableForLanguage(ex, input.language),
+      isExerciseUsableForLanguage(ex, input.language, "spanish"),
     );
   }
   const exclude = new Set(input.excludeIds);

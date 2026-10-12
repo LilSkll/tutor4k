@@ -35,7 +35,8 @@ export function QuestionWithGloss({
   const hookLang = useInterfaceLanguage();
   const lang = interfaceLanguage ?? hookLang;
   const courseId = useActiveCourseId(courseIdProp);
-  // Client safety net: re-localize TR stems if the payload still has Cyrillic.
+  // Client safety net: re-bind TR L1 to the live UI language (covers stale
+  // payloads after a language switch without refetch).
   const displayExercise =
     exercise.type === "translation"
       ? {
