@@ -32,8 +32,10 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
-    // Resolve active course so progress belongs to the right language.
-    let courseId = inferCourseIdFromChapterSlug(body.chapterSlug);
+    // Prefer the course that owns this chapter slug for banks / progress rows.
+    // active_course_id can lag after a mid-lesson switch and must not disable the gate.
+    const slugCourseId = inferCourseIdFromChapterSlug(body.chapterSlug);
+    let courseId = slugCourseId;
     try {
       const { data: profile } = await supabase
         .from("profiles")
@@ -44,33 +46,51 @@ export async function POST(req: NextRequest) {
         courseId = profile.active_course_id as string;
       }
     } catch {
-      // keep inferred courseId
+      // keep slug-inferred courseId
     }
 
     let course = await getCourse(courseId);
     let chapter = course.getChapter(body.chapterSlug);
+    const slugCourse =
+      courseId === slugCourseId ? course : await getCourse(slugCourseId);
+    if (!chapter) {
+      chapter = slugCourse.getChapter(body.chapterSlug);
+      if (chapter) {
+        courseId = slugCourseId;
+        course = slugCourse;
+      }
+    }
     // Fallback: slug may belong to another course (e.g. switched mid-lesson).
     const chapterLevel: GrammarLevel =
       chapter?.level ??
-      (await getCourse(inferCourseIdFromChapterSlug(body.chapterSlug))).getChapter(
-        body.chapterSlug,
-      )?.level ??
+      slugCourse.getChapter(body.chapterSlug)?.level ??
       "A1";
 
     // Server gate: require real attempts in exercise_progress for this chapter.
     let verifiedCompleted = 0;
     try {
       const { SESSION_EXERCISES } = await import("@/lib/exercise-bank");
-      const bankSize = course.getExercises(body.chapterSlug).length;
-      const minPractice =
-        bankSize === 0 ? 0 : Math.min(SESSION_EXERCISES, bankSize);
+      const { requiredPracticeCount } = await import(
+        "@/server/chapters/practice-gate"
+      );
+      // Always size the bank from the slug-owning course so a mismatched
+      // active_course_id cannot zero-out minPractice and skip the gate.
+      const bankSize = Math.max(
+        course.getExercises(body.chapterSlug).length,
+        slugCourse.getExercises(body.chapterSlug).length,
+      );
+      const minPractice = requiredPracticeCount(bankSize, SESSION_EXERCISES);
+      const progressCourseId =
+        slugCourse.getExercises(body.chapterSlug).length > 0
+          ? slugCourseId
+          : courseId;
 
       if (minPractice > 0) {
         const { count, error: countErr } = await supabase
           .from("exercise_progress")
           .select("exercise_id", { count: "exact", head: true })
           .eq("user_id", user.id)
-          .eq("course_id", courseId)
+          .eq("course_id", progressCourseId)
           .like("exercise_id", `%:${body.chapterSlug}:%`)
           .gt("times_seen", 0);
         if (countErr) {

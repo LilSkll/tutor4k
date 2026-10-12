@@ -305,10 +305,16 @@ try {
     });
     const completeBody = await completeRes.json().catch(() => ({}));
     // Production must refuse until real exercise_progress exists (deploy gate).
+    // 503 = fail-closed gate (DB/count error) — still not a successful forge.
+    const rejected =
+      completeRes.status === 400 ||
+      completeRes.status === 401 ||
+      completeRes.status === 403 ||
+      completeRes.status === 503;
     check(
-      completeRes.status === 400 || completeRes.status === 401 || completeRes.status === 403,
+      rejected && completeBody.ok !== true,
       "Forged chapter complete rejected",
-      `status=${completeRes.status} ${completeBody.error || JSON.stringify(completeBody).slice(0, 160)}`,
+      `status=${completeRes.status} site=${site} ${completeBody.error || JSON.stringify(completeBody).slice(0, 160)}`,
     );
   } catch (err) {
     check(false, "Forged chapter complete rejected", err?.message || String(err));
