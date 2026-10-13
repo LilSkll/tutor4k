@@ -464,6 +464,33 @@ html.dark[data-season="halloween"] .cabinet-horizon {
   opacity: 0.5;
 }
 
+/* Desktop: drop the strip so the hard crop line sits below the fold. */
+@media (min-width: 768px) {
+  .cabinet-horizon {
+    bottom: -88px;
+    height: min(48vh, 500px);
+    background-position: center 78%;
+    mask-image: linear-gradient(
+      to top,
+      black 0%,
+      rgba(0, 0, 0, 0.92) 42%,
+      rgba(0, 0, 0, 0.4) 72%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to top,
+      black 0%,
+      rgba(0, 0, 0, 0.92) 42%,
+      rgba(0, 0, 0, 0.4) 72%,
+      transparent 100%
+    );
+  }
+
+  html.dark .cabinet-horizon {
+    background-position: center 74%;
+  }
+}
+
 @media (max-width: 767px) {
   .cabinet-horizon {
     height: min(36vh, 300px);
