@@ -94,7 +94,7 @@ export const HALLOWEEN_EXERCISES_ENGLISH: StaticExercise[] = [
   {
     id: "english:halloween:fill_blank:01",
     type: "fill_blank",
-    question: "The ___ lives in the dark castle. (vampire)",
+    question: "The ___ lives in the dark castle and drinks blood.",
     instruction: "Fill in the blank",
     answer: "vampire",
     explanation: "vampire = вампир.",
@@ -103,7 +103,7 @@ export const HALLOWEEN_EXERCISES_ENGLISH: StaticExercise[] = [
   {
     id: "english:halloween:fill_blank:02",
     type: "fill_blank",
-    question: "The children wear a ___ on Halloween. (costume)",
+    question: "The children wear a funny ___ on Halloween night.",
     instruction: "Fill in the blank",
     answer: "costume",
     explanation: "costume = костюм.",
@@ -112,7 +112,7 @@ export const HALLOWEEN_EXERCISES_ENGLISH: StaticExercise[] = [
   {
     id: "english:halloween:fill_blank:03",
     type: "fill_blank",
-    question: "The house looks ___. (haunted)",
+    question: "The old house looks ___ — people say a ghost lives there.",
     instruction: "Fill in the blank",
     answer: "haunted",
     acceptableAnswers: ["scary", "spooky"],
@@ -122,7 +122,7 @@ export const HALLOWEEN_EXERCISES_ENGLISH: StaticExercise[] = [
   {
     id: "english:halloween:fill_blank:04",
     type: "fill_blank",
-    question: "At night we heard a noise in the ___. (cemetery)",
+    question: "At night we heard a strange noise near the graves in the ___.",
     instruction: "Fill in the blank",
     answer: "cemetery",
     acceptableAnswers: ["graveyard"],

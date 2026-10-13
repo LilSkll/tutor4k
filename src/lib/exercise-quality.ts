@@ -230,6 +230,29 @@ export function hasPersonVerbSpoilerParen(question: string): boolean {
 }
 
 /**
+ * Vocab fill-blank that prints the answer in parentheses
+ * (e.g. «noise in the ___. (cemetery)» → answer "cemetery").
+ * Infinitive cues like «___ (comer)» where answer is "come" are OK.
+ */
+export function hasAnswerSpoilerParen(
+  question: string,
+  answer: string,
+  acceptableAnswers?: string[],
+): boolean {
+  const q = question.trim();
+  const candidates = [answer, ...(acceptableAnswers ?? [])]
+    .map((s) => s.trim().toLowerCase())
+    .filter((s) => s.length >= 2 && !/\s/.test(s));
+  if (candidates.length === 0) return false;
+  for (const m of q.matchAll(/\(([^)]+)\)/g)) {
+    const cue = m[1].trim().toLowerCase();
+    if (!cue || /\s|,/.test(cue)) continue;
+    if (candidates.includes(cue)) return true;
+  }
+  return false;
+}
+
+/**
  * Imperative blank without an infinitive cue — e.g. «¡___ la fruta!» with no verb.
  * Learners cannot know whether to write come, haz, di, etc.
  */
@@ -402,6 +425,7 @@ export function isUsableFillBlank(ex: {
   question?: string;
   answer?: string;
   instruction?: string;
+  acceptableAnswers?: string[];
 }): boolean {
   const q = (ex.question ?? "").trim();
   const a = (ex.answer ?? "").trim();
@@ -410,6 +434,7 @@ export function isUsableFillBlank(ex: {
   if (isPlaceholderToken(a)) return false;
   if (!/___+/.test(q)) return false;
   if (hasPersonVerbSpoilerParen(q)) return false;
+  if (hasAnswerSpoilerParen(q, a, ex.acceptableAnswers)) return false;
   if (COMPLETA_STUB.test(q)) return false;
   if (INDEX_MARK.test(q) || HASH_N.test(q)) return false;
   if (CYRILLIC.test(q)) return false;

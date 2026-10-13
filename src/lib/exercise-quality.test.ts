@@ -104,6 +104,21 @@ describe("isUsableFillBlank", () => {
       }),
     ).toBe(true);
   });
+
+  it("rejects vocab blanks that print the answer in parentheses", () => {
+    expect(
+      isUsableFillBlank({
+        question: "At night we heard a noise in the ___. (cemetery)",
+        answer: "cemetery",
+      }),
+    ).toBe(false);
+    expect(
+      isUsableFillBlank({
+        question: "Ella ___ (comer) una manzana.",
+        answer: "come",
+      }),
+    ).toBe(true);
+  });
 });
 
 describe("isGrammarCategoryInstruction", () => {

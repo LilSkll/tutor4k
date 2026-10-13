@@ -74,6 +74,19 @@ describe("HALLOWEEN_EXERCISES_ENGLISH", () => {
     expect(HALLOWEEN_EXERCISES_ENGLISH.length).toBeLessThanOrEqual(20);
   });
 
+  it("does not print fill_blank answers in parentheses", () => {
+    for (const pool of [HALLOWEEN_EXERCISES, HALLOWEEN_EXERCISES_ENGLISH]) {
+      for (const ex of pool.filter((e) => e.type === "fill_blank")) {
+        expect(ex.question, ex.id).not.toMatch(
+          new RegExp(
+            `\\(\\s*${ex.answer.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}\\s*\\)`,
+            "i",
+          ),
+        );
+      }
+    }
+  });
+
   it("passes quality gates and stays usable per language", () => {
     expect(
       HALLOWEEN_EXERCISES_ENGLISH.filter(

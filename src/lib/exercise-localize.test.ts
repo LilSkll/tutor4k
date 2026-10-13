@@ -257,6 +257,20 @@ describe("translation localization", () => {
       /испанск/i,
     );
   });
+
+  it("upgrades vague fill prompts when an infinitive cue is present", async () => {
+    const { localizeExerciseInstruction } = await import(
+      "@/lib/exercise-localize"
+    );
+    const blank = {
+      type: "fill_blank" as const,
+      question: "Ayer yo ___ (ir) al cine.",
+      answer: "fui",
+      instruction: "Заполните пропуск",
+    };
+    expect(localizeExerciseInstruction(blank, "ru")).toMatch(/форму/i);
+    expect(localizeExerciseInstruction(blank, "en")).toMatch(/correct form/i);
+  });
 });
 
 describe("orderEarlyLevelPractice", () => {
