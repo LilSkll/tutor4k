@@ -29,8 +29,6 @@ export function AppShell({
 
   return (
     <div className="hw-app-shell relative flex h-[100dvh] overflow-hidden bg-background">
-      {/* Soft castle horizon at the bottom — decorative only, never captures clicks. */}
-      <div className="cabinet-horizon" aria-hidden />
       <Suspense fallback={null}>
         <NavigationProgress />
       </Suspense>
@@ -41,14 +39,16 @@ export function AppShell({
         streak={profile?.streak ?? 0}
       />
 
-      <div className="flex-1 flex flex-col overflow-hidden min-w-0">
+      <div className="relative flex min-w-0 flex-1 flex-col overflow-hidden">
+        {/* Castle horizon: fixed to the content column bottom (sun/moon + castles). */}
+        <div className="cabinet-horizon" aria-hidden />
         <MobileNav
           userName={profile?.name ?? undefined}
           level={profile?.level ?? undefined}
           streak={profile?.streak ?? 0}
         />
 
-        <div className="glass-shell hidden md:flex h-14 items-center justify-between border-b px-4">
+        <div className="glass-shell relative z-[1] hidden h-14 items-center justify-between border-b px-4 md:flex">
           <SidebarToggle />
           <div className="flex items-center gap-2">
             <ThemeToggle />
@@ -57,7 +57,7 @@ export function AppShell({
 
         <main
           className={cn(
-            "flex-1 overflow-y-auto overflow-x-hidden min-h-0",
+            "relative z-[1] min-h-0 flex-1 overflow-x-hidden overflow-y-auto",
             !isImmersive &&
               "pb-[calc(4rem+env(safe-area-inset-bottom,0px))] md:pb-0",
           )}

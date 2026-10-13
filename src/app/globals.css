@@ -418,75 +418,64 @@ html.dark .hw-app-shell {
 }
 
 /*
- * Bottom castle horizon wash (sun/castles light, moon/castles dark).
- * Fades upward so copy and exercises stay readable; never captures input.
+ * Bottom castle horizon (sun/castles light, moon/castles dark).
+ * Lives in the content column; fades upward so cards/text stay readable.
  */
 .cabinet-horizon {
   position: absolute;
   inset-inline: 0;
   bottom: 0;
   z-index: 0;
-  height: min(34vh, 320px);
+  height: min(42vh, 420px);
   pointer-events: none;
   background-image: url("/brand/cabinet-horizon-light.webp");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center 62%;
-  opacity: 0.22;
+  background-position: center 58%;
+  opacity: 0.55;
   mask-image: linear-gradient(
     to top,
     black 0%,
-    black 28%,
-    transparent 92%
+    rgba(0, 0, 0, 0.85) 35%,
+    rgba(0, 0, 0, 0.35) 65%,
+    transparent 100%
   );
   -webkit-mask-image: linear-gradient(
     to top,
     black 0%,
-    black 28%,
-    transparent 92%
+    rgba(0, 0, 0, 0.85) 35%,
+    rgba(0, 0, 0, 0.35) 65%,
+    transparent 100%
   );
 }
 
 html.dark .cabinet-horizon {
   background-image: url("/brand/cabinet-horizon-dark.webp");
-  background-position: center 55%;
-  opacity: 0.3;
+  background-position: center 52%;
+  opacity: 0.62;
 }
 
-/* Keep interactive shell content above the wash. */
-.hw-app-shell > :not(.cabinet-horizon) {
-  position: relative;
-  z-index: 1;
-}
-
-/* Seasonal Halloween corners win; keep horizon almost invisible then. */
+/* Halloween corners stay; horizon stays clearly visible underneath. */
 html[data-season="halloween"] .cabinet-horizon {
-  z-index: 0;
-  opacity: 0.08;
+  opacity: 0.42;
 }
 
 html.dark[data-season="halloween"] .cabinet-horizon {
-  opacity: 0.1;
+  opacity: 0.5;
 }
 
 @media (max-width: 767px) {
   .cabinet-horizon {
-    height: min(28vh, 220px);
-    opacity: 0.16;
+    height: min(36vh, 300px);
+    opacity: 0.48;
   }
 
   html.dark .cabinet-horizon {
-    opacity: 0.22;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .cabinet-horizon {
-    opacity: 0.12;
+    opacity: 0.55;
   }
 
-  html.dark .cabinet-horizon {
-    opacity: 0.18;
+  html[data-season="halloween"] .cabinet-horizon {
+    opacity: 0.38;
   }
 }
 
@@ -765,7 +754,7 @@ html.dark[data-season="halloween"] .hw-app-shell::after {
     drop-shadow(0 6px 16px hsl(220 50% 4% / 0.4));
 }
 
-html[data-season="halloween"] .hw-app-shell > * {
+html[data-season="halloween"] .hw-app-shell > :not(.cabinet-horizon) {
   position: relative;
   z-index: 1;
 }
