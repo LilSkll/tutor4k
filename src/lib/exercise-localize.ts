@@ -137,15 +137,17 @@ export function detectPromptSourceLang(
 
   // German structure before Spanish accent heuristics — "Café" is common in DE.
   if (
-    /\b(nicht|eine|einen|oder|richtig|fehlend|übersetz|wähle|setze|schreibe|fehlende|richtige|kennengelernt|dies)\b/i.test(
+    /\b(nicht|eine|einen|oder|richtig|fehlend|übersetz|wähle|setze|schreibe|fehlende|richtige|kennengelernt|dies|immer|Schlafengehen|vor)\b/i.test(
       prompt,
     )
   ) {
     return "de";
   }
   if (
-    /\b(der|die|das)\b/i.test(prompt) &&
-    /\b(und|ist|sind|nicht|ein|eine|den|dem|in|dem|wir|uns)\b/i.test(prompt)
+    /\b(der|die|das|dem|den|des)\b/i.test(prompt) &&
+    /\b(und|ist|sind|nicht|ein|eine|den|dem|in|wir|uns|vor|immer|sie)\b/i.test(
+      prompt,
+    )
   ) {
     return "de";
   }
@@ -155,7 +157,17 @@ export function detectPromptSourceLang(
     /\b[\p{Lu}][^\s]*[áéíóúüñÁÉÍÓÚÜÑ][^\s]*\b/gu,
     " ",
   );
-  if (/[áéíóúüñ]/i.test(withoutNames)) return "es";
+  if (/[áéíóúüñ]/i.test(withoutNames)) {
+    // English loanwords like "café" must not flip a clear EN clause to ES.
+    if (
+      /\b(the|is|are|was|were|and|or|between|shop|bank|with|from|this|that|have|has)\b/i.test(
+        prompt,
+      )
+    ) {
+      return "en";
+    }
+    return "es";
+  }
 
   // Unaccented Spanish (e.g. "Soy estudiante", "Elige la forma...").
   if (

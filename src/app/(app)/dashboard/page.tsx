@@ -284,8 +284,8 @@ export default async function DashboardPage({
         </Suspense>
       ) : null}
       {/* Header */}
-      <div className="flex flex-col gap-1">
-        <p className="meta-label">{courseLabel}</p>
+      <div className="cabinet-welcome flex flex-col gap-1">
+        <p className="meta-label text-gold">{courseLabel}</p>
         <h1 className="page-title">{greeting}</h1>
         <p className="text-sm text-muted-foreground">
           {t("dashboard.hubSubtitle")}
@@ -314,8 +314,8 @@ export default async function DashboardPage({
           />
         ) : null}
 
-        <Card className="relative overflow-hidden shadow-elevated">
-          <div className="bg-gradient-to-br from-primary via-orange-500 to-rose-500 p-5 sm:p-7 text-white">
+        <Card className="relative overflow-hidden border-0 shadow-elevated">
+          <div className="lesson-hero-stage">
             <div className="flex flex-col sm:flex-row sm:items-start gap-4">
               <ChapterCover
                 slug={currentChapter.slug}
@@ -324,25 +324,25 @@ export default async function DashboardPage({
                 className="mx-auto sm:mx-0"
               />
               <div className="flex-1 min-w-0 text-center sm:text-left">
-                <p className="text-xs text-white/70 uppercase tracking-wide mb-1">
+                <p className="text-xs text-white/75 uppercase tracking-wide mb-1">
                   {t("dashboard.chapterLabel", {
                     number: toRoman(currentChapter.number),
                     level: currentChapter.level,
                   })}
                 </p>
-                <h3 className="text-xl sm:text-2xl font-bold truncate">
+                <h3 className="text-xl sm:text-2xl font-bold break-words">
                   {getChapterTitle(currentChapter, lang)}
                 </h3>
                 {getChapterTargetTitle(currentChapter, courseId) !==
                   getChapterTitle(currentChapter, lang) && (
-                  <p className="text-white/75 text-sm italic truncate">
+                  <p className="text-white/80 text-sm italic break-words">
                     {getChapterTargetTitle(currentChapter, courseId)}
                   </p>
                 )}
-                <p className="text-white/70 text-sm mt-2 line-clamp-2">
+                <p className="text-white/75 text-sm mt-2 line-clamp-3 sm:line-clamp-2">
                   {getChapterSummary(currentChapter, lang)}
                 </p>
-                <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-white/70 mt-3">
+                <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-3 gap-y-1 text-sm text-white/75 mt-3">
                   <span className="flex items-center gap-1">
                     <MapPin className="h-3.5 w-3.5" />
                     {getChapterLocation(currentChapter, lang)}
@@ -357,7 +357,7 @@ export default async function DashboardPage({
                   <Button
                     variant="secondary"
                     size="lg"
-                    className="w-full sm:w-auto bg-white text-primary hover:bg-white/90 shadow-soft"
+                    className="min-h-11 w-full sm:w-auto bg-white text-navy hover:bg-white/90 shadow-soft"
                     asChild
                   >
                     <Link href="/daily">
@@ -368,7 +368,7 @@ export default async function DashboardPage({
                   <Button
                     variant="ghost"
                     size="lg"
-                    className="w-full sm:w-auto text-white hover:bg-white/15 hover:text-white"
+                    className="min-h-11 w-full sm:w-auto text-white hover:bg-white/15 hover:text-white"
                     asChild
                   >
                     <Link href={`/chapters/${currentChapter.slug}`}>
@@ -379,7 +379,7 @@ export default async function DashboardPage({
                   <Button
                     variant="ghost"
                     size="lg"
-                    className="w-full sm:w-auto text-white hover:bg-white/15 hover:text-white"
+                    className="min-h-11 w-full sm:w-auto text-white hover:bg-white/15 hover:text-white"
                     asChild
                   >
                     <Link href="/tutor">
@@ -427,8 +427,8 @@ export default async function DashboardPage({
         <StatCard
           label={t("dashboard.currentStreak")}
           value={
-            <span className="flex items-center gap-1.5 text-orange-500">
-              <Flame className="h-6 w-6" />
+            <span className="flex items-center gap-1.5 text-primary">
+              <Flame className="h-6 w-6 text-gold" />
               {streak}
             </span>
           }
@@ -462,13 +462,13 @@ export default async function DashboardPage({
             goal: dailyGoal,
           })}
         />
-        <div className="rounded-2xl bg-card shadow-soft p-4 flex items-center gap-3 col-span-2 lg:col-span-1">
+        <div className="glass-surface col-span-2 flex items-center gap-3 rounded-2xl p-4 lg:col-span-1">
           <ProgressRing
             value={totalCompleted}
             max={totalChapters || 1}
             size={56}
             strokeWidth={5}
-            indicatorClassName="stroke-orange-500"
+            indicatorClassName="stroke-gold"
           >
             <span className="text-xs font-bold tabular-nums">
               {courseProgressPct}%
@@ -487,19 +487,19 @@ export default async function DashboardPage({
       </section>
 
       {/* This week */}
-      <Card>
-        <CardContent className="p-4 sm:p-5 space-y-3">
+      <Card className="shadow-elevated">
+        <CardContent className="space-y-3 p-4 sm:p-5">
           <div className="flex items-center justify-between gap-3">
-            <div>
+            <div className="min-w-0">
               <h2 className="section-title">{t("dashboard.thisWeekTitle")}</h2>
-              <p className="text-xs text-muted-foreground mt-0.5">
+              <p className="mt-0.5 text-xs text-muted-foreground">
                 {t("dashboard.thisWeekSubtitle", {
                   days: weekSummary.activeDays,
                   minutes: weekSummary.minutes,
                 })}
               </p>
             </div>
-            <span className="text-sm font-semibold tabular-nums text-primary">
+            <span className="shrink-0 text-sm font-semibold tabular-nums text-gold">
               {weekSummary.activeDays}/7
             </span>
           </div>
@@ -530,16 +530,16 @@ export default async function DashboardPage({
       </Card>
 
       {/* Course progress bar */}
-      <Card>
-        <CardContent className="p-4 sm:p-5 space-y-3">
+      <Card className="shadow-elevated">
+        <CardContent className="space-y-3 p-4 sm:p-5">
           <div className="flex items-center justify-between gap-3">
-            <div>
+            <div className="min-w-0">
               <h2 className="section-title">{t("dashboard.languageProgress")}</h2>
-              <p className="text-xs text-muted-foreground mt-0.5">
+              <p className="mt-0.5 text-xs text-muted-foreground truncate">
                 {courseLabel}
               </p>
             </div>
-            <span className="text-sm font-semibold tabular-nums text-primary">
+            <span className="shrink-0 text-sm font-semibold tabular-nums text-primary">
               {courseProgressPct}%
             </span>
           </div>
@@ -550,7 +550,7 @@ export default async function DashboardPage({
       {/* Quick actions + word of day */}
       <section className="grid gap-3 md:grid-cols-2">
         {wordOfDay && (
-          <Card className="card-hover">
+          <Card className="card-hover shadow-elevated">
             <CardContent className="p-4 sm:p-5">
               <p className="meta-label mb-2">{t("dashboard.wordOfDay")}</p>
               <div className="flex items-start gap-3">
@@ -559,15 +559,15 @@ export default async function DashboardPage({
                   alt=""
                   width={40}
                   height={40}
-                  className="h-10 w-10 rounded-xl shrink-0"
+                  className="hidden h-10 w-10 shrink-0 rounded-xl shadow-soft sm:block"
                 />
                 <div className="min-w-0">
-                  <p className="text-xl font-bold tracking-tight truncate">
+                  <p className="text-xl font-bold tracking-tight break-words">
                     {wordOfDay.word}
                   </p>
                   <p className="text-sm text-muted-foreground">{gloss}</p>
                   {wordOfDay.example && (
-                    <p className="text-xs text-muted-foreground/80 mt-1 italic line-clamp-2">
+                    <p className="mt-1 line-clamp-2 text-xs italic text-muted-foreground/80">
                       {wordOfDay.example}
                     </p>
                   )}
@@ -577,8 +577,8 @@ export default async function DashboardPage({
           </Card>
         )}
 
-        <Card className="card-hover">
-          <CardContent className="p-4 sm:p-5 space-y-3">
+        <Card className="card-hover shadow-elevated">
+          <CardContent className="space-y-3 p-4 sm:p-5">
             <p className="meta-label">{t("dashboard.upcoming")}</p>
             {upcomingChapter ? (
               upcomingLinked ? (
@@ -625,27 +625,27 @@ export default async function DashboardPage({
       <section className="grid gap-3 sm:grid-cols-2">
         <Link
           href="/courses"
-          className="flex items-center justify-between rounded-2xl bg-card shadow-soft p-4 card-hover"
+          className="card-hover flex min-h-11 items-center justify-between rounded-2xl glass-surface p-4"
         >
           <div className="min-w-0">
-            <h3 className="font-semibold text-sm">
+            <h3 className="text-sm font-semibold">
               {t("dashboard.languagesTitle")}
             </h3>
-            <p className="text-xs text-muted-foreground truncate">
+            <p className="truncate text-xs text-muted-foreground">
               {t("dashboard.languagesDesc", { course: courseLabel })}
             </p>
           </div>
-          <Globe className="h-5 w-5 text-muted-foreground shrink-0" />
+          <Globe className="h-5 w-5 shrink-0 text-gold" />
         </Link>
         <Link
           href="/chapters"
-          className="flex items-center justify-between rounded-2xl bg-card shadow-soft p-4 card-hover"
+          className="card-hover flex min-h-11 items-center justify-between rounded-2xl glass-surface p-4"
         >
           <div className="min-w-0">
-            <h3 className="font-semibold text-sm">
+            <h3 className="text-sm font-semibold">
               {t("dashboard.journeyMap")}
             </h3>
-            <p className="text-xs text-muted-foreground truncate">
+            <p className="truncate text-xs text-muted-foreground">
               {t("dashboard.journeyDesc", {
                 completed: totalCompleted,
                 total: totalChapters,
@@ -655,7 +655,7 @@ export default async function DashboardPage({
               })}
             </p>
           </div>
-          <ArrowRight className="h-5 w-5 text-muted-foreground shrink-0" />
+          <ArrowRight className="h-5 w-5 shrink-0 text-primary" />
         </Link>
       </section>
 

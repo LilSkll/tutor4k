@@ -60,8 +60,24 @@ export function exerciseContentFingerprint(
   ex: Draft,
   scope: "shared" | "per-type" = "shared",
 ): string {
+  // Per-type: uniqueness follows the learner-facing prompt for that type
+  // (blank stem / wrong sentence / RU prompt / SB tiles), so variants that
+  // share a finished answer still count as distinct practice items.
+  // Shared scope still keys on the finished sentence across all types.
+  if (scope === "per-type") {
+    const type = ex.type ?? "x";
+    if (
+      type === "multiple_choice" ||
+      type === "fill_blank" ||
+      type === "error_correction" ||
+      type === "translation" ||
+      type === "sentence_building"
+    ) {
+      return `${type}|${normalizeStem(ex.question ?? "")}`;
+    }
+    return `${type}|${normalizeStem(exerciseTargetSentence(ex))}`;
+  }
   const stem = normalizeStem(exerciseTargetSentence(ex));
-  if (scope === "per-type") return `${ex.type ?? "x"}|${stem}`;
   return `stem|${stem}`;
 }
 

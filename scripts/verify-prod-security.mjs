@@ -264,9 +264,9 @@ try {
 
   // App API: forged chapter complete with fake counters (no exercise_progress).
   const site =
-    process.env.NEXT_PUBLIC_SITE_URL ||
     process.env.VERIFY_SITE_URL ||
-    "https://spanish-tutor-psi.vercel.app";
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    "https://spanishwithpavel.com";
   try {
     const { data: sess, error: signErr } = await createClient(url, anon, {
       auth: { persistSession: false, autoRefreshToken: false },

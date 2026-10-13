@@ -128,28 +128,41 @@ export function getWordGloss(
 /**
  * Short dictionary-style definition in the user's interface language.
  * Returns null when no definition is available (do not fall back to gloss).
+ * Also hides definitions that only restate the translation ("красный" → "Красный.").
  */
 export function getWordDefinition(
   word: VocabWord,
   interfaceLanguage: InterfaceLanguage,
   courseId?: string,
 ): string | null {
+  const gloss = getWordGloss(word, interfaceLanguage, courseId);
   const inline = word.definitions?.[interfaceLanguage]?.trim();
-  if (inline) return inline;
+  if (inline) {
+    return isRedundantDefinition(inline, gloss) ? null : inline;
+  }
 
   const key = word.word.trim().toLowerCase();
 
   if (courseId === "english") {
     const def = ENGLISH_VOCAB_DEFINITION[interfaceLanguage]?.[key]?.trim();
-    if (def) return def;
+    if (def) return isRedundantDefinition(def, gloss) ? null : def;
   }
 
   if (courseId === "spanish") {
     const def = SPANISH_VOCAB_DEFINITION[interfaceLanguage]?.[key]?.trim();
-    if (def) return def;
+    if (def) return isRedundantDefinition(def, gloss) ? null : def;
   }
 
   return null;
+}
+
+function isRedundantDefinition(definition: string, gloss: string): boolean {
+  const defNorm = normalizeHintToken(definition);
+  const glossNorm = normalizeHintToken(gloss);
+  if (!defNorm || !glossNorm) return false;
+  // Same lemma restated ("красный" → "Красный.") — not a real definition.
+  if (defNorm === glossNorm) return true;
+  return false;
 }
 
 export type WordHint = {

@@ -31,11 +31,11 @@ export function expandEnglishChapterBank(
           error_correction: THICK_TR_EC_TARGET,
         }
       : undefined;
-  // Shared finished-sentence fingerprints across types.
-  // fillTypesBelow: raise thin/empty types to a usable floor; soft-share
-  // a stem with at most one extra type (session still dedupes in a round).
+  // Per-type: packs already hold ~20 unique items per type; shared
+  // stem dedupe across types was capping runtime banks. Sessions still
+  // dedupe within a practice round.
   return expandChapterBank(curated, PACKS[chapterSlug] ?? {}, typeTargets, {
-    contentScope: "shared",
-    fillTypesBelow: 8,
+    contentScope: "per-type",
+    fillTypesBelow: 20,
   });
 }

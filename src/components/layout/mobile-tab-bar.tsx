@@ -27,7 +27,7 @@ export function MobileTabBar() {
             className="tab-pill pointer-events-none absolute top-1.5 left-1 h-8 w-[calc((100%-0.5rem)/5)] transition-transform duration-200 ease-out"
             style={{ transform: `translateX(${activeIndex * 100}%)` }}
           >
-            <span className="mx-0.5 block h-full rounded-xl bg-primary/12 ring-1 ring-primary/15 shadow-sm" />
+            <span className="mx-0.5 block h-full rounded-xl bg-gradient-to-b from-primary/14 to-gold/10 ring-1 ring-primary/20 shadow-sm" />
           </span>
         ) : null}
         {MOBILE_TAB_ITEMS.map((item) => {

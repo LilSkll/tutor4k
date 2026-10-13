@@ -14,8 +14,13 @@ const PACKS_PATH = path.join(
   "../src/config/exercise-banks/data/english-packs.json",
 );
 
-const TARGET_MC = 16;
-const TARGET_FB = 16;
+const TARGET = {
+  multiple_choice: 20,
+  fill_blank: 20,
+  error_correction: 20,
+  translation: 20,
+  sentence_building: 20,
+};
 
 const SAFE_INST = {
   multiple_choice: "Choose correct option",
@@ -142,10 +147,22 @@ function collectSentences(byType) {
       });
     }
   }
+  for (const ex of byType.multiple_choice ?? []) {
+    const q = String(ex.question ?? "");
+    const a = String(ex.answer ?? "").trim();
+    if (!a || !/___+/.test(q)) continue;
+    const filled = normalizeSentence(q.replace(/___+/g, a));
+    if (filled.split(/\s+/).length < 3) continue;
+    out.push({
+      sentence: filled,
+      grammarTopic: ex.grammarTopic ?? "review",
+      explanation: ex.explanation ?? "",
+    });
+  }
   return out;
 }
 
-function pickBlank(sentence) {
+function listBlankHits(sentence) {
   const tokens = sentence.split(/\s+/);
   const hits = [];
   for (let i = 0; i < tokens.length; i++) {
@@ -156,11 +173,11 @@ function pickBlank(sentence) {
       hits.push({ i, core, key, raw });
     }
   }
-  if (!hits.length) return null;
-  // Prefer contentful middle blanks over first-word articles when possible.
-  const preferred =
-    hits.find((h) => h.i > 0 && !["a", "an", "the"].includes(h.key)) ??
-    hits[Math.floor(hits.length / 2)];
+  return hits;
+}
+
+function blankFromHit(sentence, preferred) {
+  const tokens = sentence.split(/\s+/);
   const options = [
     preferred.core,
     ...BLANKABLES.get(preferred.key).filter(
@@ -171,14 +188,63 @@ function pickBlank(sentence) {
     options.push(["yes", "no", "maybe", "never"][options.length]);
   }
   const qTokens = tokens.map((t, idx) =>
-    idx === preferred.i
-      ? t.replace(preferred.core, "___")
-      : t,
+    idx === preferred.i ? t.replace(preferred.core, "___") : t,
   );
   return {
     question: qTokens.join(" ") + (/\.$/.test(sentence) ? "" : "."),
     answer: preferred.core,
-    options: shuffleStable(options, sentence),
+    options: shuffleStable(options, `${sentence}|${preferred.i}`),
+  };
+}
+
+function pickAllBlanks(sentence) {
+  return listBlankHits(sentence).map((h) => blankFromHit(sentence, h));
+}
+
+function corrupt(sentence) {
+  const base = normalizeSentence(sentence);
+  const tokens = base.split(/\s+/);
+  for (let i = 0; i < tokens.length; i++) {
+    const core = tokens[i].replace(/^[“"'(]+|[”"'.,!?;:)]+$/g, "");
+    const key = core.toLowerCase();
+    const alts = BLANKABLES.get(key);
+    if (!alts?.length) continue;
+    const wrong = alts[0];
+    const bad = tokens.map((t, idx) =>
+      idx === i ? t.replace(core, wrong) : t,
+    );
+    return {
+      question: `${bad.join(" ")}.`,
+      answer: base.endsWith(".") ? base : `${base}.`,
+    };
+  }
+  if (tokens.length < 4) return null;
+  const bad = [...tokens];
+  [bad[1], bad[Math.min(3, tokens.length - 1)]] = [
+    bad[Math.min(3, tokens.length - 1)],
+    bad[1],
+  ];
+  return {
+    question: `${bad.join(" ")}.`,
+    answer: base.endsWith(".") ? base : `${base}.`,
+  };
+}
+
+function toSb(sentence, grammarTopic, explanation) {
+  const clean = normalizeSentence(sentence);
+  const tokens = clean.split(/\s+/).filter(Boolean);
+  if (tokens.length < 3 || tokens.length > 14) return null;
+  // Options stay in answer order — the client shuffles tiles for display.
+  // validate-exercise-bank requires options.join(" ") to match the answer.
+  return {
+    type: "sentence_building",
+    question: tokens.join(" / "),
+    options: [...tokens],
+    answer: clean,
+    acceptableAnswers: [clean, `${clean}.`],
+    instruction: SAFE_INST.sentence_building,
+    explanation: explanation || "Arrange the words.",
+    grammarTopic,
   };
 }
 
@@ -234,60 +300,129 @@ function scrubInstructions(packs) {
 
 function thickenChapter(byType) {
   const sentences = collectSentences(byType);
-  const mcNeed = Math.max(0, TARGET_MC - (byType.multiple_choice ?? []).length);
-  const fbNeed = Math.max(0, TARGET_FB - (byType.fill_blank ?? []).length);
-  if (!mcNeed && !fbNeed) return { mcAdd: 0, fbAdd: 0 };
+  const mcNeed = Math.max(
+    0,
+    TARGET.multiple_choice - (byType.multiple_choice ?? []).length,
+  );
+  const fbNeed = Math.max(
+    0,
+    TARGET.fill_blank - (byType.fill_blank ?? []).length,
+  );
+  const ecNeed = Math.max(
+    0,
+    TARGET.error_correction - (byType.error_correction ?? []).length,
+  );
+  const sbNeed = Math.max(
+    0,
+    TARGET.sentence_building - (byType.sentence_building ?? []).length,
+  );
+  if (!mcNeed && !fbNeed && !ecNeed && !sbNeed) {
+    return { mcAdd: 0, fbAdd: 0, ecAdd: 0, sbAdd: 0 };
+  }
 
   const mc = [];
   const fb = [];
+  const ec = [];
+  const sb = [];
   const usedQ = new Set(
-    [...(byType.multiple_choice ?? []), ...(byType.fill_blank ?? [])].map(
-      (e) => String(e.question ?? "").toLowerCase(),
-    ),
+    Object.values(byType)
+      .flat()
+      .filter(Boolean)
+      .map((e) => String(e.question ?? "").toLowerCase()),
   );
 
   for (const s of sentences) {
-    const blank = pickBlank(s.sentence);
-    if (!blank) continue;
-    if (usedQ.has(blank.question.toLowerCase())) continue;
-    // Prefer the needier type so MC and FB do not share the same blank stem.
-    const preferMc = mcNeed - mc.length >= fbNeed - fb.length;
-    if (preferMc && mc.length < mcNeed) {
-      usedQ.add(blank.question.toLowerCase());
-      mc.push({
-        type: "multiple_choice",
-        question: blank.question,
-        options: blank.options,
-        answer: blank.answer,
-        instruction: SAFE_INST.multiple_choice,
-        explanation: s.explanation || `Choose «${blank.answer}».`,
-        grammarTopic: s.grammarTopic,
-      });
-    } else if (fb.length < fbNeed) {
-      usedQ.add(blank.question.toLowerCase());
-      fb.push({
-        type: "fill_blank",
-        question: blank.question,
-        answer: blank.answer,
-        acceptableAnswers: [
-          blank.answer,
-          blank.answer[0].toUpperCase() + blank.answer.slice(1),
-        ],
-        instruction: SAFE_INST.fill_blank,
-        explanation: s.explanation || `Write «${blank.answer}».`,
-        grammarTopic: s.grammarTopic,
-      });
+    for (const blank of pickAllBlanks(s.sentence)) {
+      if (usedQ.has(blank.question.toLowerCase())) continue;
+      const preferMc = mcNeed - mc.length >= fbNeed - fb.length;
+      if (preferMc && mc.length < mcNeed) {
+        usedQ.add(blank.question.toLowerCase());
+        mc.push({
+          type: "multiple_choice",
+          question: blank.question,
+          options: blank.options,
+          answer: blank.answer,
+          instruction: SAFE_INST.multiple_choice,
+          explanation: s.explanation || `Choose «${blank.answer}».`,
+          grammarTopic: s.grammarTopic,
+        });
+      } else if (fb.length < fbNeed) {
+        usedQ.add(blank.question.toLowerCase());
+        fb.push({
+          type: "fill_blank",
+          question: blank.question,
+          answer: blank.answer,
+          acceptableAnswers: [
+            blank.answer,
+            blank.answer[0].toUpperCase() + blank.answer.slice(1),
+          ],
+          instruction: SAFE_INST.fill_blank,
+          explanation: s.explanation || `Write «${blank.answer}».`,
+          grammarTopic: s.grammarTopic,
+        });
+      }
+      if (mc.length >= mcNeed && fb.length >= fbNeed) break;
     }
-    if (mc.length >= mcNeed && fb.length >= fbNeed) break;
+
+    if (ec.length < ecNeed) {
+      const bad = corrupt(s.sentence);
+      if (bad && !usedQ.has(bad.question.toLowerCase())) {
+        usedQ.add(bad.question.toLowerCase());
+        ec.push({
+          type: "error_correction",
+          question: bad.question,
+          answer: bad.answer,
+          acceptableAnswers: [
+            bad.answer.replace(/[.?!]+$/, ""),
+            bad.answer,
+          ],
+          instruction: SAFE_INST.error_correction,
+          explanation: s.explanation || "Correct the error.",
+          grammarTopic: s.grammarTopic,
+        });
+      }
+    }
+
+    if (sb.length < sbNeed) {
+      const item = toSb(s.sentence, s.grammarTopic, s.explanation);
+      if (item && !usedQ.has(item.question.toLowerCase())) {
+        usedQ.add(item.question.toLowerCase());
+        sb.push(item);
+      }
+    }
+
+    if (
+      mc.length >= mcNeed &&
+      fb.length >= fbNeed &&
+      ec.length >= ecNeed &&
+      sb.length >= sbNeed
+    ) {
+      break;
+    }
   }
 
   byType.multiple_choice = merge(
     byType.multiple_choice ?? [],
     mc,
-    TARGET_MC,
+    TARGET.multiple_choice,
   );
-  byType.fill_blank = merge(byType.fill_blank ?? [], fb, TARGET_FB);
-  return { mcAdd: mc.length, fbAdd: fb.length };
+  byType.fill_blank = merge(byType.fill_blank ?? [], fb, TARGET.fill_blank);
+  byType.error_correction = merge(
+    byType.error_correction ?? [],
+    ec,
+    TARGET.error_correction,
+  );
+  byType.sentence_building = merge(
+    byType.sentence_building ?? [],
+    sb,
+    TARGET.sentence_building,
+  );
+  return {
+    mcAdd: mc.length,
+    fbAdd: fb.length,
+    ecAdd: ec.length,
+    sbAdd: sb.length,
+  };
 }
 
 function main() {
@@ -298,23 +433,41 @@ function main() {
     const before = {
       mc: (byType.multiple_choice ?? []).length,
       fb: (byType.fill_blank ?? []).length,
+      ec: (byType.error_correction ?? []).length,
+      sb: (byType.sentence_building ?? []).length,
     };
-    if (before.mc >= TARGET_MC && before.fb >= TARGET_FB) continue;
-    const { mcAdd, fbAdd } = thickenChapter(byType);
+    if (
+      before.mc >= TARGET.multiple_choice &&
+      before.fb >= TARGET.fill_blank &&
+      before.ec >= TARGET.error_correction &&
+      before.sb >= TARGET.sentence_building
+    ) {
+      continue;
+    }
+    const added = thickenChapter(byType);
     report.push({
       ch,
       before,
       after: {
         mc: (byType.multiple_choice ?? []).length,
         fb: (byType.fill_blank ?? []).length,
+        ec: (byType.error_correction ?? []).length,
+        sb: (byType.sentence_building ?? []).length,
       },
-      mcAdd,
-      fbAdd,
+      ...added,
     });
   }
   fs.writeFileSync(PACKS_PATH, JSON.stringify(packs, null, 2) + "\n");
   console.log({ scrubbed, thickened: report.length });
-  console.table(report.slice(0, 40));
+  console.table(
+    report.slice(0, 40).map((r) => ({
+      ch: r.ch.replace("eng-", ""),
+      mc: `${r.before.mc}→${r.after.mc}`,
+      fb: `${r.before.fb}→${r.after.fb}`,
+      ec: `${r.before.ec}→${r.after.ec}`,
+      sb: `${r.before.sb}→${r.after.sb}`,
+    })),
+  );
 }
 
 main();

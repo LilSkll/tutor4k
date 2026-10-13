@@ -29,6 +29,8 @@ export function AppShell({
 
   return (
     <div className="hw-app-shell relative flex h-[100dvh] overflow-hidden bg-background">
+      {/* Soft castle horizon at the bottom — decorative only, never captures clicks. */}
+      <div className="cabinet-horizon" aria-hidden />
       <Suspense fallback={null}>
         <NavigationProgress />
       </Suspense>
