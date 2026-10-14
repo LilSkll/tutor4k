@@ -108,7 +108,7 @@ function friendlyAuthError(errorOrMessage: unknown): string {
     return "Пользователь с таким email уже зарегистрирован. Войди через страницу входа.";
   }
   if (m.includes("invalid login") || m.includes("invalid credentials")) {
-    return "Неверный email или пароль. Проверь данные и попробуй снова.";
+    return "Неверный email или пароль. Если только что сбрасывали пароль — введите НОВЫЙ (автозаполнение на .com часто подставляет старый). Аккаунт один для .com и vercel.app.";
   }
   if (m.includes("email not confirmed")) {
     return "Email ещё не подтверждён. Проверь почту (включая папку «Спам»).";
@@ -276,7 +276,7 @@ export async function signUpWithEmail(formData: FormData) {
 
 /** Send a password-reset email (Supabase Auth). */
 export async function requestPasswordReset(formData: FormData) {
-  const email = String(formData.get("email") ?? "").trim();
+  const email = normalizeAuthEmail(String(formData.get("email") ?? ""));
   if (!email) {
     redirect(
       `/forgot-password?error=${encodeURIComponent("Укажи email.")}`,
@@ -359,7 +359,13 @@ export async function updatePassword(formData: FormData) {
   await clearRecoveryCookie();
   // End recovery session so role-based home redirects don't skip the login screen.
   await supabase.auth.signOut();
-  redirect("/login?notice=password-updated");
+  // Always land on the canonical host after reset so .com / vercel.app
+  // don't leave users with a working session on one domain and an old
+  // autofilled password on the other.
+  const canonical =
+    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
+    (await appOrigin());
+  redirect(`${canonical}/login?notice=password-updated`);
 }
 
 /**
