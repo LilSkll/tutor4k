@@ -133,10 +133,25 @@ async function appOrigin(): Promise<string> {
   return resolveAuthOrigin();
 }
 
+function normalizeAuthEmail(raw: string): string {
+  // Trim + lowercase so "User@Mail.com " matches the stored account.
+  return raw.trim().toLowerCase();
+}
+
 export async function signInWithEmail(formData: FormData) {
-  const email = String(formData.get("email") ?? "");
+  const email = normalizeAuthEmail(String(formData.get("email") ?? ""));
   const password = String(formData.get("password") ?? "");
   const redirectPath = String(formData.get("redirect") ?? "");
+
+  if (!email || !password) {
+    redirect(
+      `/login?error=${encodeURIComponent("Укажи email и пароль.")}${
+        redirectPath
+          ? `&redirect=${encodeURIComponent(redirectPath)}`
+          : ""
+      }`,
+    );
+  }
 
   const supabase = await createSupabaseServerClient();
   const { data, error } = await supabase.auth.signInWithPassword({
@@ -145,7 +160,10 @@ export async function signInWithEmail(formData: FormData) {
   });
 
   if (error) {
-    redirect(`/login?error=${encodeURIComponent(friendlyAuthError(error))}`);
+    const q = new URLSearchParams();
+    q.set("error", friendlyAuthError(error));
+    if (redirectPath) q.set("redirect", redirectPath);
+    redirect(`/login?${q.toString()}`);
   }
 
   let role: UserRole = "student";
@@ -163,9 +181,9 @@ export async function signInWithEmail(formData: FormData) {
 }
 
 export async function signUpWithEmail(formData: FormData) {
-  const email = String(formData.get("email") ?? "");
+  const email = normalizeAuthEmail(String(formData.get("email") ?? ""));
   const password = String(formData.get("password") ?? "");
-  const name = String(formData.get("name") ?? "");
+  const name = String(formData.get("name") ?? "").trim();
   const acceptTerms = formData.get("acceptTerms") === "on";
   const acceptPrivacy = formData.get("acceptPrivacy") === "on";
   const marketingConsent = formData.get("marketingConsent") === "on";
