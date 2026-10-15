@@ -32,6 +32,11 @@ import {
   sanitizeTutorMessages,
   shouldUseStaticGrammarFallback,
 } from "@/server/ai/tutor-request";
+import {
+  appendTutorChatMessage,
+  resolveTutorConversationId,
+  touchTutorConversation,
+} from "@/server/ai/tutor-conversation";
 
 // =====================================================================
 // AI Tutor chat — server action (streamed back to client in one payload)
@@ -139,39 +144,35 @@ export async function sendTutorMessage(input: {
     learnerPromptBlock = null;
   }
 
-  // --- Persist conversation (best-effort) ------------------------------
-  let conversationId = input.conversationId;
+  // --- Resolve conversation (ownership before any admin write) ---------
+  // Service-role bypasses RLS: never trust client conversationId alone.
+  let conversationId: string | null = null;
+  {
+    const title =
+      messages.find((m) => m.role === "user")?.content.slice(0, 50) ?? "Chat";
+    conversationId = await resolveTutorConversationId({
+      db: writeClient,
+      userId: user.id,
+      conversationId: input.conversationId,
+      title,
+      courseId: resolvedCourseId,
+    });
 
-  if (user && messages.length > 0) {
-    try {
-      if (!conversationId) {
-        const title =
-          messages.find((m) => m.role === "user")?.content.slice(0, 50) ??
-          "Chat";
-        const { data: conv } = await writeClient
-          .from("chat_conversations")
-          .insert({
-            user_id: user.id,
-            title,
-            course_id: resolvedCourseId,
-          })
-          .select("id")
-          .maybeSingle();
-        conversationId = conv?.id ?? null;
-      }
-
-      const lastUserMsg = [...messages]
-        .reverse()
-        .find((m) => m.role === "user");
-      if (lastUserMsg && conversationId) {
-        await writeClient.from("chat_messages").insert({
-          conversation_id: conversationId,
+    const lastUserMsg = [...messages].reverse().find((m) => m.role === "user");
+    if (lastUserMsg && conversationId) {
+      try {
+        await appendTutorChatMessage({
+          db: writeClient,
+          conversationId,
           role: "user",
           content: lastUserMsg.content,
         });
+      } catch (err) {
+        console.warn(
+          "[tutor] persist user message failed:",
+          (err as Error).message,
+        );
       }
-    } catch (err) {
-      console.warn("[tutor] persist user message failed:", (err as Error).message);
     }
   }
 
@@ -211,12 +212,18 @@ export async function sendTutorMessage(input: {
             language,
           ).catch(() => {});
         }
-        if (user && conversationId) {
+        if (conversationId) {
           try {
-            await writeClient.from("chat_messages").insert({
-              conversation_id: conversationId,
+            await appendTutorChatMessage({
+              db: writeClient,
+              conversationId,
               role: "assistant",
               content: refusal,
+            });
+            await touchTutorConversation({
+              db: writeClient,
+              conversationId,
+              userId: user.id,
             });
           } catch (err) {
             console.warn("[tutor] persist refusal failed:", (err as Error).message);
@@ -255,17 +262,19 @@ export async function sendTutorMessage(input: {
         language,
       );
       if (cached) {
-        if (user && conversationId) {
+        if (conversationId) {
           try {
-            await writeClient.from("chat_messages").insert({
-              conversation_id: conversationId,
+            await appendTutorChatMessage({
+              db: writeClient,
+              conversationId,
               role: "assistant",
               content: cached,
             });
-            await supabase
-              .from("chat_conversations")
-              .update({ updated_at: new Date().toISOString() })
-              .eq("id", conversationId);
+            await touchTutorConversation({
+              db: writeClient,
+              conversationId,
+              userId: user.id,
+            });
             await recordStudySession(1, 0).catch(() => {});
           } catch (err) {
             console.warn("[tutor] persist cache hit failed:", (err as Error).message);
@@ -358,6 +367,14 @@ export async function sendTutorMessage(input: {
     }
   }
 
+  // Shared FAQ cache must stay cross-user: strip personal name / progress
+  // from the prompt when this turn is eligible for the shared cache.
+  const sharedCacheEligible =
+    Boolean(lastUser) &&
+    shouldUseSharedTutorCache(messages) &&
+    !skipFaqCache;
+  const personalizeReply = !sharedCacheEligible;
+
   // --- Generate AI response (course-aware via prompt registry) --------
   let response;
   try {
@@ -365,10 +382,12 @@ export async function sendTutorMessage(input: {
       messages,
       level,
       interfaceLanguage: language,
-      userName,
+      userName: personalizeReply ? userName : null,
       retrievedContext,
       // Leaner context on explain turns → fewer token / provider failures.
-      learnerContext: explainQuery ? null : learnerPromptBlock,
+      // Also omit learner profile when writing a shareable FAQ answer.
+      learnerContext:
+        explainQuery || !personalizeReply ? null : learnerPromptBlock,
       courseId: resolvedCourseId,
       groundedToLesson: Boolean(lessonSlug),
     });
@@ -427,13 +446,13 @@ export async function sendTutorMessage(input: {
     };
   }
   // --- Store in shared cache for other users (best-effort) ------------
-  // Do NOT cache grammar-explain / grounded answers (conjugations stay fresh).
+  // Do NOT cache grammar-explain / grounded / personalized answers.
   if (
     lastUser &&
     response.content &&
-    shouldUseSharedTutorCache(messages) &&
-    !skipFaqCache &&
-    !grammarGrounding
+    sharedCacheEligible &&
+    !grammarGrounding &&
+    personalizeReply === false
   ) {
     setCachedTutorResponse(
       lastUser.content,
@@ -445,17 +464,19 @@ export async function sendTutorMessage(input: {
   }
 
   // --- Persist assistant reply (best-effort) --------------------------
-  if (user && conversationId) {
+  if (conversationId) {
     try {
-      await writeClient.from("chat_messages").insert({
-        conversation_id: conversationId,
+      await appendTutorChatMessage({
+        db: writeClient,
+        conversationId,
         role: "assistant",
         content: response.content,
       });
-      await writeClient
-        .from("chat_conversations")
-        .update({ updated_at: new Date().toISOString() })
-        .eq("id", conversationId);
+      await touchTutorConversation({
+        db: writeClient,
+        conversationId,
+        userId: user.id,
+      });
       await recordStudySession(1, 0).catch(() => {});
     } catch (err) {
       console.warn("[tutor] persist assistant failed:", (err as Error).message);

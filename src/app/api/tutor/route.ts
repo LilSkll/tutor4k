@@ -3,6 +3,7 @@ import {
   getTutorSessionOpening,
   sendTutorMessage,
 } from "@/server/actions/ai";
+import { isTutorConversationAccessError } from "@/server/ai/tutor-conversation";
 import { asInterfaceLanguage } from "@/server/ai/tutor-request";
 import { createSupabaseServerClient } from "@/lib/supabase-server";
 import { checkRateLimit, rateLimitResponse } from "@/lib/rate-limit";
@@ -83,6 +84,12 @@ export async function POST(req: NextRequest) {
     });
     return NextResponse.json(result);
   } catch (err) {
+    if (isTutorConversationAccessError(err)) {
+      return NextResponse.json(
+        { error: (err as Error).message || "Conversation not found" },
+        { status: 403 },
+      );
+    }
     console.error("[/api/tutor]", err);
     return NextResponse.json(
       { error: (err as Error).message || "Internal error" },
