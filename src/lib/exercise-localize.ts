@@ -470,6 +470,25 @@ export function isReportedSpeechRewrite(
  * Grammar-category tags (“Взаимное se”, “Se reflexivo”, “Perfecto — ya”)
  * spoil the answer — always replace those with a generic prompt.
  */
+/** True when blank shows an infinitive cue and expects a conjugated form. */
+export function isConjugationBlankPrompt(
+  question: string | undefined,
+  answer: string | undefined,
+): boolean {
+  const q = question?.trim() ?? "";
+  const a = answer?.trim() ?? "";
+  if (!q || !a || !/___+/.test(q)) return false;
+  // Cue next to the blank: «___ (ir) al cine» (not only trailing parens).
+  const m =
+    q.match(/___+\s*\(([a-záéíóúñü]+)\)/i) ??
+    q.match(/\(([a-záéíóúñü]+)\)\s*[.!?…]?$/i);
+  if (!m?.[1]) return false;
+  const cue = m[1].toLowerCase();
+  if (cue === a.toLowerCase()) return false;
+  // Spanish infinitive (+ optional se); skip number/noun cues like (25), (Tom).
+  return /(?:ar|er|ir)(?:se)?$/i.test(cue);
+}
+
 export function localizeExerciseInstruction(
   exercise: Pick<
     StaticExercise,
@@ -486,9 +505,19 @@ export function localizeExerciseInstruction(
     );
   }
 
-  const key =
+  let key =
     exercise.instructionKey?.trim() ||
     inferInstructionKey(exercise.instruction?.trim() ?? "");
+
+  // Generic "fill the blank" + "(comer)" cue → tell learners to conjugate.
+  if (
+    (!key || key === "choose_option") &&
+    exercise.type === "fill_blank" &&
+    isConjugationBlankPrompt(exercise.question, exercise.answer)
+  ) {
+    key = "fill_conjugation";
+  }
+
   if (key && INSTRUCTION_BY_KEY[key]) {
     return (
       INSTRUCTION_BY_KEY[key][interfaceLanguage] ??
@@ -498,6 +527,15 @@ export function localizeExerciseInstruction(
 
   const instruction = exercise.instruction?.trim() ?? "";
   const fallback = (): string => {
+    if (
+      exercise.type === "fill_blank" &&
+      isConjugationBlankPrompt(exercise.question, exercise.answer)
+    ) {
+      return (
+        INSTRUCTION_BY_KEY.fill_conjugation[interfaceLanguage] ??
+        INSTRUCTION_BY_KEY.fill_conjugation.en
+      );
+    }
     if (exercise.type === "error_correction") {
       return (
         ERROR_CORRECTION_FULL[interfaceLanguage] ?? ERROR_CORRECTION_FULL.en
@@ -515,7 +553,21 @@ export function localizeExerciseInstruction(
   // Keep only when the authored instruction is already in the UI language.
   // Latin Spanish/German must not be treated as English (binary ru|en detector).
   const source = detectPromptSourceLang(instruction);
-  if (source === interfaceLanguage) return instruction;
+  if (source === interfaceLanguage) {
+    // Still upgrade vague fill prompts when an infinitive cue is present.
+    if (
+      exercise.type === "fill_blank" &&
+      isConjugationBlankPrompt(exercise.question, exercise.answer) &&
+      /заполните|впишите|fill|complete|completa|füllt|fülle/i.test(instruction) &&
+      !/форм|conjug|verb|глагол|verbo/i.test(instruction)
+    ) {
+      return (
+        INSTRUCTION_BY_KEY.fill_conjugation[interfaceLanguage] ??
+        INSTRUCTION_BY_KEY.fill_conjugation.en
+      );
+    }
+    return instruction;
+  }
   return fallback();
 }
 

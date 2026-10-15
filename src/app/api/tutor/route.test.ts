@@ -64,4 +64,26 @@ describe("POST /api/tutor", () => {
     expect(res.status).toBe(400);
     expect(sendTutorMessage).not.toHaveBeenCalled();
   });
+
+  it("returns 403 when conversation ownership is rejected", async () => {
+    const { TutorConversationAccessError } = await import(
+      "@/server/ai/tutor-conversation"
+    );
+    sendTutorMessage.mockRejectedValueOnce(new TutorConversationAccessError());
+
+    const req = new NextRequest("http://localhost/api/tutor", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        messages: [{ role: "user", content: "hola" }],
+        conversationId: "someone-elses-id",
+      }),
+    });
+
+    const res = await POST(req);
+    expect(res.status).toBe(403);
+    await expect(res.json()).resolves.toEqual({
+      error: "Conversation not found",
+    });
+  });
 });

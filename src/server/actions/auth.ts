@@ -6,6 +6,7 @@ import { createSupabaseServerClient } from "@/lib/supabase-server";
 import { getFirstChapterSlugForLevel } from "@/config/chapters";
 import { resolvePostLoginPath } from "@/lib/roles";
 import { sessionNeedsMfa } from "@/lib/auth-mfa";
+import { resolveAuthOrigin } from "@/lib/auth-origin";
 import { ensureProfileRoleMatchesMetadata } from "@/server/auth/signup-role";
 import type { Goal, InterfaceLanguage, Level, UserRole } from "@/types";
 
@@ -89,7 +90,7 @@ function friendlyAuthError(errorOrMessage: unknown): string {
     return "Supabase пока шлёт письма только участникам команды. Подключите рабочий Custom SMTP — тогда сброс заработает для учеников.";
   }
   if (m.includes("redirect") && (m.includes("allow") || m.includes("not"))) {
-    return "Redirect URL не разрешён. В Supabase → Authentication → URL Configuration добавьте оба домена: …/auth/callback и …/auth/recovery (и для .com, и для vercel.app).";
+    return "Redirect URL не разрешён. В Supabase → Authentication → URL Configuration добавьте callback и recovery для https://spanishwithpavel.com и https://spanishwithpavel.vercel.app.";
   }
   if (m.includes("smtp") || m.includes("error sending") || m.includes("mail")) {
     return "Ошибка почтового сервера (SMTP). Проверьте логин, пароль приложения и порт в Custom SMTP.";
@@ -107,7 +108,7 @@ function friendlyAuthError(errorOrMessage: unknown): string {
     return "Пользователь с таким email уже зарегистрирован. Войди через страницу входа.";
   }
   if (m.includes("invalid login") || m.includes("invalid credentials")) {
-    return "Неверный email или пароль. Проверь данные и попробуй снова.";
+    return "Неверный email или пароль. Если только что сбрасывали пароль — введите НОВЫЙ (автозаполнение на .com часто подставляет старый). Аккаунт один для .com и vercel.app.";
   }
   if (m.includes("email not confirmed")) {
     return "Email ещё не подтверждён. Проверь почту (включая папку «Спам»).";
@@ -127,49 +128,30 @@ function friendlyAuthError(errorOrMessage: unknown): string {
   return "Ошибка: " + message;
 }
 
+/** Prefer current host (.com vs vercel.app) so auth cookies match the tab. */
 async function appOrigin(): Promise<string> {
-  // Prefer the host the user is actually on, so reset links land on the same
-  // deployment (vercel.app vs custom domain) and cookies match.
-  // Optional override for email links when one domain is unreachable:
-  // NEXT_PUBLIC_AUTH_EMAIL_ORIGIN=https://spanish-tutor-psi.vercel.app
-  const emailOverride = process.env.NEXT_PUBLIC_AUTH_EMAIL_ORIGIN?.replace(
-    /\/$/,
-    "",
-  );
-  if (emailOverride) return emailOverride;
+  return resolveAuthOrigin();
+}
 
-  const allowed = (process.env.NEXT_PUBLIC_AUTH_ORIGINS ?? "")
-    .split(",")
-    .map((s) => s.trim().replace(/\/$/, ""))
-    .filter(Boolean);
-
-  try {
-    const { headers } = await import("next/headers");
-    const h = await headers();
-    const hostHeader = h.get("x-forwarded-host") ?? h.get("host");
-    const host = hostHeader?.split(",")[0]?.trim();
-    if (host) {
-      const protoHeader = h.get("x-forwarded-proto") ?? "https";
-      const proto = protoHeader.split(",")[0]?.trim() || "https";
-      const origin = `${proto}://${host}`;
-      // If an allowlist is configured, only trust listed hosts for auth emails.
-      if (allowed.length === 0 || allowed.includes(origin)) {
-        return origin;
-      }
-    }
-  } catch {
-    // ignore
-  }
-  if (allowed[0]) return allowed[0];
-  const fromEnv = process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "");
-  if (fromEnv) return fromEnv;
-  return "http://localhost:3000";
+function normalizeAuthEmail(raw: string): string {
+  // Trim + lowercase so "User@Mail.com " matches the stored account.
+  return raw.trim().toLowerCase();
 }
 
 export async function signInWithEmail(formData: FormData) {
-  const email = String(formData.get("email") ?? "");
+  const email = normalizeAuthEmail(String(formData.get("email") ?? ""));
   const password = String(formData.get("password") ?? "");
   const redirectPath = String(formData.get("redirect") ?? "");
+
+  if (!email || !password) {
+    redirect(
+      `/login?error=${encodeURIComponent("Укажи email и пароль.")}${
+        redirectPath
+          ? `&redirect=${encodeURIComponent(redirectPath)}`
+          : ""
+      }`,
+    );
+  }
 
   const supabase = await createSupabaseServerClient();
   const { data, error } = await supabase.auth.signInWithPassword({
@@ -178,7 +160,10 @@ export async function signInWithEmail(formData: FormData) {
   });
 
   if (error) {
-    redirect(`/login?error=${encodeURIComponent(friendlyAuthError(error))}`);
+    const q = new URLSearchParams();
+    q.set("error", friendlyAuthError(error));
+    if (redirectPath) q.set("redirect", redirectPath);
+    redirect(`/login?${q.toString()}`);
   }
 
   let role: UserRole = "student";
@@ -196,9 +181,9 @@ export async function signInWithEmail(formData: FormData) {
 }
 
 export async function signUpWithEmail(formData: FormData) {
-  const email = String(formData.get("email") ?? "");
+  const email = normalizeAuthEmail(String(formData.get("email") ?? ""));
   const password = String(formData.get("password") ?? "");
-  const name = String(formData.get("name") ?? "");
+  const name = String(formData.get("name") ?? "").trim();
   const acceptTerms = formData.get("acceptTerms") === "on";
   const acceptPrivacy = formData.get("acceptPrivacy") === "on";
   const marketingConsent = formData.get("marketingConsent") === "on";
@@ -291,7 +276,7 @@ export async function signUpWithEmail(formData: FormData) {
 
 /** Send a password-reset email (Supabase Auth). */
 export async function requestPasswordReset(formData: FormData) {
-  const email = String(formData.get("email") ?? "").trim();
+  const email = normalizeAuthEmail(String(formData.get("email") ?? ""));
   if (!email) {
     redirect(
       `/forgot-password?error=${encodeURIComponent("Укажи email.")}`,
@@ -374,7 +359,13 @@ export async function updatePassword(formData: FormData) {
   await clearRecoveryCookie();
   // End recovery session so role-based home redirects don't skip the login screen.
   await supabase.auth.signOut();
-  redirect("/login?notice=password-updated");
+  // Always land on the canonical host after reset so .com / vercel.app
+  // don't leave users with a working session on one domain and an old
+  // autofilled password on the other.
+  const canonical =
+    process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ||
+    (await appOrigin());
+  redirect(`${canonical}/login?notice=password-updated`);
 }
 
 /**

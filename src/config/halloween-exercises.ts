@@ -83,7 +83,7 @@ export const HALLOWEEN_EXERCISES: StaticExercise[] = [
   {
     id: "spanish:halloween:fill_blank:01",
     type: "fill_blank",
-    question: "El ___ vive en el castillo oscuro. (vampiro)",
+    question: "El ___ vive en el castillo oscuro y bebe sangre.",
     instruction: "Заполните пропуск",
     answer: "vampiro",
     explanation: "vampiro = vampire / вампир.",
@@ -92,7 +92,7 @@ export const HALLOWEEN_EXERCISES: StaticExercise[] = [
   {
     id: "spanish:halloween:fill_blank:02",
     type: "fill_blank",
-    question: "Los niños llevan un ___ en Halloween. (disfraz)",
+    question: "Los niños llevan un ___ divertido en la noche de Halloween.",
     instruction: "Заполните пропуск",
     answer: "disfraz",
     explanation: "disfraz = costume / костюм.",
@@ -101,7 +101,7 @@ export const HALLOWEEN_EXERCISES: StaticExercise[] = [
   {
     id: "spanish:halloween:fill_blank:03",
     type: "fill_blank",
-    question: "La casa ___ da miedo. (embrujada)",
+    question: "La casa ___ da miedo: dicen que hay un fantasma.",
     instruction: "Заполните пропуск",
     answer: "embrujada",
     acceptableAnswers: ["encantada"],
@@ -213,7 +213,7 @@ export const HALLOWEEN_EXERCISES: StaticExercise[] = [
   {
     id: "spanish:halloween:fill_blank:04",
     type: "fill_blank",
-    question: "De noche oímos un ruido en el ___. (cementerio)",
+    question: "De noche oímos un ruido extraño junto a las tumbas en el ___.",
     instruction: "Заполните пропуск",
     answer: "cementerio",
     explanation: "cementerio = cemetery / кладбище.",
