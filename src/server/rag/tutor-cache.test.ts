@@ -36,10 +36,36 @@ describe("isCacheable", () => {
     expect(isCacheable("проверь мой ответ на упражнение")).toBe(false);
     expect(isCacheable("what should I study next in my chapter")).toBe(false);
     expect(isCacheable("исправь ошибку в моём предложении")).toBe(false);
+    expect(isCacheable("покажи мой прогресс по курсу")).toBe(false);
+    expect(isCacheable("help with my homework please")).toBe(false);
   });
 
   it("allows generic grammar FAQ prompts", () => {
     expect(isCacheable("в чём разница между ser и estar")).toBe(true);
+    expect(isCacheable("когда использовать pretérito indefinido")).toBe(true);
+  });
+});
+
+describe("shared vs personal cache gate (product contract)", () => {
+  it("FAQ turn: shared cache may read/write; personal turn must not", () => {
+    const faq = "в чём разница между ser y estar";
+    const personal = "проверь мой ответ на упражнение с ser";
+
+    // First user turn + cacheable query → eligible for cross-user reuse
+    expect(shouldUseSharedTutorCache([{ role: "user" }])).toBe(true);
+    expect(isCacheable(faq)).toBe(true);
+
+    // Personal wording never enters the shared table even on turn 1
+    expect(isCacheable(personal)).toBe(false);
+
+    // Multi-turn dialogue always bypasses shared cache (needs LLM context)
+    expect(
+      shouldUseSharedTutorCache([
+        { role: "user" },
+        { role: "assistant" },
+        { role: "user" },
+      ]),
+    ).toBe(false);
   });
 });
 
