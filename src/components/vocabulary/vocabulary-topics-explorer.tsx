@@ -98,6 +98,8 @@ export function VocabularyTopicsExplorer({
           translation: getWordGloss(word, language, courseId),
           example: word.example,
           level,
+          courseId,
+          partOfSpeech: word.partOfSpeech || undefined,
         }),
       });
       if (res.ok) {

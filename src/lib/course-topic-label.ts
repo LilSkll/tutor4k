@@ -35,11 +35,12 @@ export function resolveCourseTopicLabel(
     return getVocabTopicTitle(vocab, language, courseId);
   }
 
-  // Unknown machine slugs — hide rather than show English-ish leftovers in RU/ES/DE UI.
-  if (/^eng-|^chapter-|^a\d-|^b\d-|^c\d-/.test(raw)) {
+  // Unknown machine slugs — hide rather than show leftover codes in non-EN UI.
+  if (/^eng-|^ru-|^rus-|^chapter-|^a\d-|^b\d-|^c\d-/.test(raw)) {
     if (language === "en") {
       return raw
         .replace(/^eng-/, "")
+        .replace(/^ru(?:s)?-/, "")
         .replace(/^chapter-\d+-/, "")
         .replace(/-/g, " ");
     }

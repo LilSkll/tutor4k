@@ -120,6 +120,19 @@ export function getWordGloss(
     if (def) return def;
   }
 
+  // Russian course: catalog `translation` is typically English (RU UI already
+  // returned above). Prefer Latin glosses for en/es/de.
+  if (courseId === "russian") {
+    if (!hasCyrillic(word.translation)) return word.translation;
+    return (
+      word.translations?.[interfaceLanguage] ??
+      word.translations?.en ??
+      word.translations?.es ??
+      word.translations?.de ??
+      ""
+    );
+  }
+
   // Never show Cyrillic to non-RU UI — better empty than wrong language.
   if (hasCyrillic(word.translation)) return "";
   return word.translation;
@@ -373,6 +386,12 @@ export function lookupWordHint(
 ): WordHint | null {
   const token = normalizeHintToken(rawToken);
   if (!token) return null;
+
+  // Russian tap-hints: use authored word.translations / translation only —
+  // do not fall through to Spanish/English lexicons.
+  if (courseId === "russian") {
+    return null;
+  }
 
   const course = courseId === "english" ? "english" : "spanish";
   const overrides =

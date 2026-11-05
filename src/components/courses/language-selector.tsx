@@ -27,6 +27,8 @@ interface CourseItem {
   isActive: boolean;
   /** False for stub courses with no curriculum yet. */
   contentReady: boolean;
+  /** Soft launch — show Beta badge (selectable, not Coming soon). */
+  beta?: boolean;
 }
 
 export function LanguageSelector({
@@ -124,17 +126,33 @@ export function LanguageSelector({
                       </p>
                     </div>
                   </div>
-                  {course.isActive ? (
-                    <Badge variant="success" className="shrink-0">
-                      <Check className="h-3 w-3 mr-1" />
-                      {t("courses.active")}
-                    </Badge>
-                  ) : null}
+                  <div className="flex shrink-0 flex-col items-end gap-1">
+                    {course.beta ? (
+                      <Badge
+                        variant="secondary"
+                        className="shrink-0"
+                        title={t("courses.betaHint")}
+                      >
+                        {t("courses.beta")}
+                      </Badge>
+                    ) : null}
+                    {course.isActive ? (
+                      <Badge variant="success" className="shrink-0">
+                        <Check className="h-3 w-3 mr-1" />
+                        {t("courses.active")}
+                      </Badge>
+                    ) : null}
+                  </div>
                 </div>
 
                 <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
                   {t(`course.${course.id}.desc`) || course.description}
                 </p>
+                {course.beta && course.contentReady ? (
+                  <p className="text-[11px] text-muted-foreground">
+                    {t("courses.betaHint")}
+                  </p>
+                ) : null}
 
                 <div className="grid grid-cols-3 gap-2">
                   <Metric

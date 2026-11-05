@@ -1,3 +1,4 @@
+import { isKnownCourseId } from "@/lib/course-id";
 import { getTeacherDashboardRows } from "@/server/teacher/dashboard";
 import { AssignmentService } from "@/server/services/assignments";
 import { getCourseLearningProfileAdmin } from "@/server/learning/student-profile";
@@ -17,7 +18,7 @@ export async function getTeacherAnalytics(
     getTeacherDashboardRows(teacherId, courseId),
     AssignmentService.listForTeacher(teacherId, {
       courseId:
-        courseId === "spanish" || courseId === "english" ? courseId : undefined,
+        isKnownCourseId(courseId) ? courseId : undefined,
     }),
   ]);
 
@@ -76,7 +77,11 @@ export async function getTeacherAnalytics(
       ...w,
       topic: await resolveTeacherTopicLabel(
         w.topic,
-        courseId === "english" || courseId === "spanish" ? courseId : "spanish",
+        courseId === "english" ||
+          courseId === "spanish" ||
+          courseId === "russian"
+          ? courseId
+          : "spanish",
         interfaceLanguage,
       ),
     })),

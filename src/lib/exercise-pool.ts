@@ -47,8 +47,9 @@ async function buildExercisePool(courseId: string): Promise<PooledExercise[]> {
         topic: getChapterTargetTitle(chapter, courseId),
         courseId,
         chapterSlug: chapter.slug,
-        grammarTopic: chapter.grammarTopic,
-        vocabTopic: chapter.vocabTopic,
+        // Prefer per-item topics so adaptive profile tracks the exact phenomenon.
+        grammarTopic: ex.grammarTopic ?? chapter.grammarTopic,
+        vocabTopic: ex.vocabTopic ?? chapter.vocabTopic,
         staticSource: true,
       });
     }

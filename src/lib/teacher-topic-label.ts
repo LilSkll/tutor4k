@@ -12,7 +12,7 @@ export async function resolveTeacherTopicLabel(
   const raw = topicKey.trim();
   if (!raw) return raw;
   try {
-    const course = await getCourse(courseId === "english" ? "english" : "spanish");
+    const course = await getCourse(courseId);
     const grammar = course.getGrammar().find((t) => t.slug === raw);
     if (grammar) {
       return getGrammarTopicTitle(toGrammarTopicMeta(grammar), lang);
@@ -21,9 +21,10 @@ export async function resolveTeacherTopicLabel(
   } catch {
     // ignore
   }
-  if (/^eng-|^a\d-|^b\d-|^c\d-|^chapter-/.test(raw)) {
+  if (/^eng-|^ru-|^a\d-|^b\d-|^c\d-|^chapter-/.test(raw)) {
     return raw
       .replace(/^eng-/, "")
+      .replace(/^ru-/, "")
       .replace(/^chapter-\d+-/, "")
       .replace(/-/g, " ");
   }

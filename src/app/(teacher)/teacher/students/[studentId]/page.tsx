@@ -17,7 +17,7 @@ export default async function TeacherStudentCardPage({
   const lang = profile.interface_language ?? "ru";
 
   let courseId =
-    sp.courseId === "english" || sp.courseId === "spanish"
+    sp.courseId === "english" || sp.courseId === "spanish" || sp.courseId === "russian"
       ? sp.courseId
       : null;
 
@@ -25,7 +25,7 @@ export default async function TeacherStudentCardPage({
     const links = await listTeacherStudents(profile.id);
     const forStudent = links.filter((r) => r.link.student_id === studentId);
     if (forStudent.length === 1) {
-      courseId = forStudent[0]!.link.course_id as "spanish" | "english";
+      courseId = forStudent[0]!.link.course_id as "spanish" | "english" | "russian";
     } else if (forStudent.length > 1) {
       return (
         <div className="mx-auto max-w-lg space-y-4">

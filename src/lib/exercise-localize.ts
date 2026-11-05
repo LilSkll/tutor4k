@@ -610,8 +610,14 @@ function resolveTranslationPromptForUi(
     return null;
   };
 
-  // Russian UI: keep Cyrillic stems; reject foreign L1 leftovers.
+  // Russian UI studying Spanish/English: keep Cyrillic L1 stems.
+  // Russian UI studying Russian: L1 must NOT be Cyrillic (would equal target) —
+  // allow EN/ES/DE prompts (common for prep-faculty learners).
   if (interfaceLanguage === "ru") {
+    if (courseId === "russian") {
+      if (hasCyrillicText(question) || isSpoiler(question)) return null;
+      return question;
+    }
     return hasCyrillicText(question) ? question : null;
   }
 
@@ -643,6 +649,11 @@ function resolveTranslationPromptForUi(
     return null;
   }
 
+  // Russian course: UI language L1 when already matched above; else try EN.
+  if (courseId === "russian") {
+    return tryLang("en");
+  }
+
   // Spanish course + EN UI with no EN map: do not fall back to ES (target leak).
   return null;
 }
@@ -660,6 +671,20 @@ export function isExerciseUsableForLanguage(
   interfaceLanguage: InterfaceLanguage,
   courseId?: string | null,
 ): boolean {
+  // Russian as TARGET: Cyrillic answers/stems are correct for every UI language.
+  if (courseId === "russian") {
+    if (exercise.type === "translation") {
+      return (
+        resolveTranslationPromptForUi(
+          exercise,
+          interfaceLanguage,
+          courseId,
+        ) != null
+      );
+    }
+    return true;
+  }
+
   if (hasCyrillicText(exercise.answer) && interfaceLanguage !== "ru") {
     return false;
   }

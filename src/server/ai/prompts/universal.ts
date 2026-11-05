@@ -84,9 +84,13 @@ When you list the CORRECT paradigm, write only correct forms as the main answers
 If the student erred, say so clearly — do NOT open with «Очень хорошо / всё верно / perfect» and then paste wrong forms as if they were the key.`;
   }
   if (code === "ru") {
-    return `# GRAMMAR FORMS (${name})
-When conjugating verbs, use standard persons: я, ты, он/она, мы, вы, они.
-Indicate aspect (perfective / imperfective) when relevant.`;
+    return `# GRAMMAR FORMS (${name}) — RKI ACCURACY
+Persons: я · ты · он/она/оно · мы · вы · они. Always label aspect (НСВ/СВ) when both are plausible.
+Cases — never invent endings; prefer COURSE MATERIAL:
+вин. одуш. м. р. (студента), предл. (в университете / о теме), род. после нет (нет времени),
+дат. (мне нравится / звонить другу), твор. (работать врачом / с другом).
+Motion: идти/ходить, ехать/ездить; prefixes при-/у-/по-/в- at B1.
+If unsure — give a safe A1 form; do not hallucinate rare paradigms.`;
   }
   return `# GRAMMAR FORMS (${name})
 Use standard grammar tables appropriate for ${name}. Label every table with tense/mood. Never invent irregular forms — prefer COURSE MATERIAL.`;

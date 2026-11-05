@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { isKnownCourseId } from "@/lib/course-id";
 import { AssignmentService } from "@/server/services/assignments";
 import { requireTeacherSession } from "@/server/teacher/links";
 import type {
@@ -11,8 +12,7 @@ export async function GET(req: NextRequest) {
     const teacher = await requireTeacherSession();
     const courseId = new URL(req.url).searchParams.get("courseId") ?? undefined;
     const assignments = await AssignmentService.listForTeacher(teacher.id, {
-      courseId:
-        courseId === "spanish" || courseId === "english" ? courseId : undefined,
+      courseId: isKnownCourseId(courseId) ? courseId : undefined,
     });
     return NextResponse.json({ assignments });
   } catch (err) {
@@ -37,7 +37,7 @@ export async function POST(req: NextRequest) {
     if (!body.studentId) {
       return NextResponse.json({ error: "studentId required" }, { status: 400 });
     }
-    if (body.courseId !== "spanish" && body.courseId !== "english") {
+    if (!isKnownCourseId(body.courseId)) {
       return NextResponse.json({ error: "courseId required" }, { status: 400 });
     }
     if (

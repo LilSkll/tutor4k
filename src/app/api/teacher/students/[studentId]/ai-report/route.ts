@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { isKnownCourseId } from "@/lib/course-id";
 import { requireTeacherSession } from "@/server/teacher/links";
 import { TeacherAiService } from "@/server/services/teacher-ai";
 import { checkRateLimit, rateLimitResponse } from "@/lib/rate-limit";
@@ -18,9 +19,9 @@ export async function GET(
     const { studentId } = await ctx.params;
     const url = new URL(req.url);
     const courseId = url.searchParams.get("courseId");
-    if (courseId !== "spanish" && courseId !== "english") {
+    if (!isKnownCourseId(courseId)) {
       return NextResponse.json(
-        { error: "courseId required (spanish|english)" },
+        { error: "courseId required" },
         { status: 400 },
       );
     }
@@ -65,9 +66,9 @@ export async function POST(
     };
     const courseId =
       body.courseId ?? url.searchParams.get("courseId") ?? undefined;
-    if (courseId !== "spanish" && courseId !== "english") {
+    if (!isKnownCourseId(courseId)) {
       return NextResponse.json(
-        { error: "courseId required (spanish|english)" },
+        { error: "courseId required" },
         { status: 400 },
       );
     }

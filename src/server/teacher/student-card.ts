@@ -124,7 +124,8 @@ async function getActivityHistory(
   for (const row of data ?? []) {
     const cid = row.course_id as string | null;
     if (cid == null) {
-      if (courseId !== "spanish") continue;
+      if (courseId !== "spanish" && courseId !== "english" && courseId !== "russian")
+        continue;
     } else if (cid !== courseId) {
       continue;
     }

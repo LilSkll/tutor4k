@@ -133,7 +133,27 @@ export const GRAMMAR_CATEGORY: Record<
   "Стиль / Exam": {
     "en": "Style / Exam",
     "es": "Estilo / Examen"
-  }
+  },
+  "Фонетика": {
+    "en": "Phonetics",
+    "es": "Fonética",
+    "de": "Phonetik"
+  },
+  "Коммуникация": {
+    "en": "Communication",
+    "es": "Comunicación",
+    "de": "Kommunikation"
+  },
+  "Падежи": {
+    "en": "Cases",
+    "es": "Casos",
+    "de": "Kasus"
+  },
+  "Лексико-грамматика": {
+    "en": "Lexico-grammar",
+    "es": "Léxico-gramática",
+    "de": "Lexikogrammatik"
+  },
 };
 
 export const GRAMMAR_TOPIC: Record<
@@ -915,5 +935,106 @@ export const GRAMMAR_TOPIC: Record<
   "eng-cbe-register-shift": {
     "en": { "title": "Register: chat to formal", "summary": "Informal / neutral / formal columns; WhatsApp test; greeting must match sign-off." },
     "es": { "title": "Registro: del chat a lo formal", "summary": "Columnas informal / neutral / formal; test WhatsApp; saludo y cierre deben coincidir." }
-  }
+  },
+
+  "ru-a1-alphabet-phonetics": {
+    "en": { "title": "Alphabet, sounds, greetings", "summary": "Cyrillic basics, hard sounds, stress; ты/вы greetings." },
+    "es": { "title": "Alfabeto, sonidos y saludos", "summary": "Cirílico básico, sonidos difíciles, acento; saludos ты/вы." },
+    "de": { "title": "Alphabet, Laute, Begrüßungen", "summary": "Kyrillisch, schwierige Laute, Betonung; ты/вы-Begrüßungen." }
+  },
+  "ru-a1-identity-eto": {
+    "en": { "title": "Meeting people: это / кто / что", "summary": "Introducing people and things with это, кто, что." },
+    "es": { "title": "Presentaciones: это / кто / что", "summary": "Presentar personas y cosas con это, кто, что." },
+    "de": { "title": "Kennenlernen: это / кто / что", "summary": "Personen und Dinge mit это, кто, что vorstellen." }
+  },
+  "ru-a1-noun-gender": {
+    "en": { "title": "Noun gender (classroom)", "summary": "Masculine, feminine, neuter endings in classroom vocabulary." },
+    "es": { "title": "Género de los sustantivos", "summary": "Masculino, femenino y neutro en el léxico del aula." },
+    "de": { "title": "Genus der Substantive", "summary": "Maskulin, feminin, neutrum im Unterrichtswortschatz." }
+  },
+  "ru-a1-present-tense": {
+    "en": { "title": "Present tense", "summary": "Present conjugation of common verbs." },
+    "es": { "title": "Presente", "summary": "Conjugación en presente de verbos frecuentes." },
+    "de": { "title": "Präsens", "summary": "Präsens häufiger Verben." }
+  },
+  "ru-a1-accusative": {
+    "en": { "title": "Accusative case", "summary": "Direct objects and animate/inanimate endings." },
+    "es": { "title": "Caso acusativo", "summary": "Objeto directo y terminaciones animado/inanimado." },
+    "de": { "title": "Akkusativ", "summary": "Direktes Objekt und belebt/unbelebt." }
+  },
+  "ru-a1-prepositional": {
+    "en": { "title": "Prepositional case", "summary": "Location with в/на + prepositional." },
+    "es": { "title": "Caso preposicional", "summary": "Ubicación con в/на + preposicional." },
+    "de": { "title": "Präpositiv", "summary": "Ort mit в/на + Präpositiv." }
+  },
+  "ru-a1-numbers-time": {
+    "en": { "title": "Numbers and time", "summary": "Cardinals, clock time, simple schedules." },
+    "es": { "title": "Números y la hora", "summary": "Cardinales, la hora y horarios simples." },
+    "de": { "title": "Zahlen und Uhrzeit", "summary": "Kardinalzahlen, Uhrzeit, einfache Stundenpläne." }
+  },
+  "ru-a2-past-tense": {
+    "en": { "title": "Past tense", "summary": "Past forms and gender agreement." },
+    "es": { "title": "Pasado", "summary": "Formas del pasado y concordancia de género." },
+    "de": { "title": "Vergangenheit", "summary": "Vergangenheitsformen und Genuskongruenz." }
+  },
+  "ru-a2-future": {
+    "en": { "title": "Future tense", "summary": "Simple and compound future." },
+    "es": { "title": "Futuro", "summary": "Futuro simple y compuesto." },
+    "de": { "title": "Futur", "summary": "Einfaches und zusammengesetztes Futur." }
+  },
+  "ru-a2-genitive": {
+    "en": { "title": "Genitive case", "summary": "Possession, quantity, negation with genitive." },
+    "es": { "title": "Caso genitivo", "summary": "Posesión, cantidad y negación con genitivo." },
+    "de": { "title": "Genitiv", "summary": "Besitz, Menge und Negation mit Genitiv." }
+  },
+  "ru-a2-dative": {
+    "en": { "title": "Dative case", "summary": "Indirect object and key dative verbs." },
+    "es": { "title": "Caso dativo", "summary": "Objeto indirecto y verbos de dativo." },
+    "de": { "title": "Dativ", "summary": "Indirektes Objekt und Dativverben." }
+  },
+  "ru-a2-instrumental": {
+    "en": { "title": "Instrumental case", "summary": "Means, accompaniment, professions with instrumental." },
+    "es": { "title": "Caso instrumental", "summary": "Medio, compañía y profesiones con instrumental." },
+    "de": { "title": "Instrumental", "summary": "Mittel, Begleitung und Berufe mit Instrumental." }
+  },
+  "ru-a2-aspect-intro": {
+    "en": { "title": "Verb aspect (intro)", "summary": "Perfective vs imperfective pairs at A2." },
+    "es": { "title": "Aspecto verbal (intro)", "summary": "Pares perfectivo / imperfectivo en A2." },
+    "de": { "title": "Aspekt (Einführung)", "summary": "Perfektiv vs. Imperfektiv auf A2." }
+  },
+  "ru-a2-motion-basic": {
+    "en": { "title": "Basic verbs of motion", "summary": "идти/ходить, ехать/ездить directions." },
+    "es": { "title": "Verbos de movimiento (base)", "summary": "идти/ходить, ехать/ездить y dirección." },
+    "de": { "title": "Bewegungsverben (Basis)", "summary": "идти/ходить, ехать/ездить und Richtung." }
+  },
+  "ru-b1-cases-system": {
+    "en": { "title": "Case system overview", "summary": "Contrasting the six cases in academic contexts." },
+    "es": { "title": "Sistema de casos", "summary": "Contraste de los seis casos en contextos académicos." },
+    "de": { "title": "Kassussystem", "summary": "Die sechs Kasus im akademischen Kontext." }
+  },
+  "ru-b1-aspect-tenses": {
+    "en": { "title": "Aspect–tense relations", "summary": "Choosing aspect across past, present, future." },
+    "es": { "title": "Aspecto y tiempos", "summary": "Elegir el aspecto en pasado, presente y futuro." },
+    "de": { "title": "Aspekt und Tempora", "summary": "Aspektwahl in Vergangenheit, Gegenwart, Zukunft." }
+  },
+  "ru-b1-motion-prefixes": {
+    "en": { "title": "Prefixed motion verbs", "summary": "Prefixes that change direction and aspect." },
+    "es": { "title": "Movimiento con prefijos", "summary": "Prefijos que cambian dirección y aspecto." },
+    "de": { "title": "Präfigierte Bewegungsverben", "summary": "Präfixe für Richtung und Aspekt." }
+  },
+  "ru-b1-complex-sentences": {
+    "en": { "title": "Complex sentences", "summary": "Subordination and connectors for longer speech." },
+    "es": { "title": "Oraciones complejas", "summary": "Subordinación y conectores para el discurso largo." },
+    "de": { "title": "Komplexe Sätze", "summary": "Nebensätze und Konnektoren." }
+  },
+  "ru-b1-text-cohesion": {
+    "en": { "title": "Text cohesion", "summary": "Linking ideas across paragraphs." },
+    "es": { "title": "Cohesión textual", "summary": "Enlazar ideas entre párrafos." },
+    "de": { "title": "Textkohäsion", "summary": "Ideen über Absätze hinweg verbinden." }
+  },
+  "ru-b1-argumentation": {
+    "en": { "title": "Argumentation and academic talk", "summary": "Opinion, evidence, and classroom discussion phrases." },
+    "es": { "title": "Argumentación y habla académica", "summary": "Opinión, evidencia y frases de debate en clase." },
+    "de": { "title": "Argumentation und akademische Rede", "summary": "Meinung, Belege und Diskussionsphrasen." }
+  },
 };

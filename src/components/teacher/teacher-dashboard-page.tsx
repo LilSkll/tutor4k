@@ -53,7 +53,7 @@ export function TeacherDashboardPage({ teacherName }: { teacherName: string }) {
     [language],
   );
 
-  const [courseId, setCourseId] = React.useState<"all" | "spanish" | "english">(
+  const [courseId, setCourseId] = React.useState<"all" | "spanish" | "english" | "russian">(
     "all",
   );
   const [rows, setRows] = React.useState<Row[]>([]);
@@ -102,7 +102,7 @@ export function TeacherDashboardPage({ teacherName }: { teacherName: string }) {
       </div>
 
       <div className="flex flex-wrap gap-2">
-        {(["all", "spanish", "english"] as const).map((c) => (
+        {(["all", "spanish", "english", "russian"] as const).map((c) => (
           <button
             key={c}
             type="button"

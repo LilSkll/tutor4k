@@ -8,6 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { translate } from "@/lib/i18n/with-teacher";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
+import { getCourseTitle } from "@/config/courses";
 import type { TeacherInviteRow } from "@/types/teacher";
 import { EmptyState } from "@/components/shared/empty-state";
 
@@ -20,7 +21,7 @@ export function TeacherInvitesClient() {
   );
 
   const [invites, setInvites] = React.useState<TeacherInviteRow[]>([]);
-  const [courseId, setCourseId] = React.useState<"spanish" | "english">("spanish");
+  const [courseId, setCourseId] = React.useState<"spanish" | "english" | "russian">("spanish");
   const [initialLoading, setInitialLoading] = React.useState(true);
   const [creating, setCreating] = React.useState(false);
 
@@ -122,7 +123,7 @@ export function TeacherInvitesClient() {
         </CardHeader>
         <CardContent className="flex flex-wrap items-center gap-3">
           <div className="flex gap-2">
-            {(["spanish", "english"] as const).map((c) => (
+            {(["spanish", "english", "russian"] as const).map((c) => (
               <button
                 key={c}
                 type="button"
@@ -133,7 +134,7 @@ export function TeacherInvitesClient() {
                     : "rounded-full px-3 py-1 text-sm border border-border"
                 }
               >
-                {c === "spanish" ? "Español" : "English"}
+                {getCourseTitle(c)}
               </button>
             ))}
           </div>

@@ -49,6 +49,7 @@ export default async function CoursesPage() {
       difficulty,
       isActive: false,
       contentReady: chapters.length > 0,
+      beta: Boolean(config.beta),
     });
   }
 

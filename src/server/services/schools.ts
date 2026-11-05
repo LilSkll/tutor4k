@@ -1,3 +1,4 @@
+import { isKnownCourseId } from "@/lib/course-id";
 import { createSupabaseAdminClient } from "@/lib/supabase-admin";
 import type {
   SchoolDTO,
@@ -311,7 +312,7 @@ export const SchoolService = {
   }): Promise<TeacherGroupDTO> {
     const name = input.name.trim().slice(0, 80);
     if (name.length < 1) throw new Error("INVALID_NAME");
-    if (input.courseId !== "spanish" && input.courseId !== "english") {
+    if (!isKnownCourseId(input.courseId)) {
       throw new Error("INVALID_COURSE");
     }
 

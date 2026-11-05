@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { isKnownCourseId } from "@/lib/course-id";
 import { requireTeacherSession } from "@/server/teacher/links";
 import { getStudentCard } from "@/server/teacher/student-card";
 
@@ -14,9 +15,9 @@ export async function GET(
     if (!studentId) {
       return NextResponse.json({ error: "studentId required" }, { status: 400 });
     }
-    if (courseId !== "spanish" && courseId !== "english") {
+    if (!isKnownCourseId(courseId)) {
       return NextResponse.json(
-        { error: "courseId required (spanish|english)" },
+        { error: "courseId required" },
         { status: 400 },
       );
     }

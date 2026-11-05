@@ -1545,6 +1545,14 @@ export function getChapterTitle(
   const loc = getChapterLocale(chapter.slug, interfaceLanguage);
   if (loc?.title) return loc.title;
 
+  // Russian course: title = RU (target); titleEs = UI-facing EN/ES/DE label.
+  if (
+    (chapter.slug.startsWith("ru-") || chapter.slug.startsWith("rus-")) &&
+    interfaceLanguage !== "ru"
+  ) {
+    return chapter.titleEs || chapter.title;
+  }
+
   if (interfaceLanguage === "es") return chapter.titleEs || chapter.title;
 
   // Spanish source titles are Russian; English source titles are English.
@@ -1570,6 +1578,10 @@ export function getChapterTargetTitle(
     // Prefer non-Spanish titleEs if data was fixed; else canonical English title.
     const te = chapter.titleEs?.trim() ?? "";
     if (te && !looksLikeSpanishChapterTitle(te)) return te;
+    return chapter.title;
+  }
+  if (id === "russian") {
+    // Target language is Russian — chapter.title holds the RU title.
     return chapter.title;
   }
   return chapter.titleEs || chapter.title;

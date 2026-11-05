@@ -98,6 +98,8 @@ export async function POST(req: NextRequest) {
         staticSource: true,
         exerciseId: prepared.id,
         chapterSlug: bank.chapterSlug,
+        grammarTopic: bank.grammarTopic,
+        vocabTopic: bank.vocabTopic,
       };
     }
 

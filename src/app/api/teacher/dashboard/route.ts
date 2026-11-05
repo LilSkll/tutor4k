@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { isKnownCourseId } from "@/lib/course-id";
 import { requireTeacherSession } from "@/server/teacher/links";
 import { getTeacherDashboardRows } from "@/server/teacher/dashboard";
 
@@ -8,7 +9,7 @@ export async function GET(req: NextRequest) {
     const courseId = new URL(req.url).searchParams.get("courseId") ?? undefined;
     const students = await getTeacherDashboardRows(
       teacher.id,
-      courseId === "english" || courseId === "spanish" ? courseId : undefined,
+      isKnownCourseId(courseId) ? courseId : undefined,
     );
     return NextResponse.json({ students });
   } catch (err) {

@@ -93,6 +93,11 @@ export interface VocabularyWord {
   example: string;
   level: Level;
   created_at: string;
+  /** Owning course (spanish | english | russian). */
+  course_id?: string | null;
+  /** Optional free-form notes (gender, aspect, government, etc.). */
+  notes?: string | null;
+  part_of_speech?: string | null;
 }
 
 /** Exercise history row (mirrors `exercises_history`). */
@@ -315,6 +320,8 @@ export interface CourseConfig {
   levelGuide: LevelGuide;
   textbookNames: string;
   examName?: string;
+  /** Soft launch flag — show “Beta” on the course card (not Coming soon). */
+  beta?: boolean;
 
   // Content getters (lazy-loaded)
   getChapters: () => Chapter[];

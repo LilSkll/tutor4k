@@ -1,10 +1,21 @@
 import type { CourseConfig } from "@/types";
 
-// =====================================================================
-// Russian Course Configuration (STUB)
-// =====================================================================
-
+/**
+ * Russian as a Foreign Language (RKI) — A1–B1.
+ * Methodological references (not verbatim sources): «Дорога в Россию»,
+ * «Поехали!», «Пять элементов», «Жили-были», «Живём и учимся в России»,
+ * «Русская мозаика». Content is original; see .cursor/rules/rki-russian-course.mdc.
+ */
 export async function loadRussianCourse(): Promise<CourseConfig> {
+  const { RUSSIAN_CHAPTERS, getRuChapter, getRuNextChapter } = await import(
+    "./chapters"
+  );
+  const { RUSSIAN_GRAMMAR, getRuGrammarTopic } = await import("./grammar");
+  const { sortRussianGrammarByCurriculum } = await import(
+    "@/lib/grammar-curriculum-sort"
+  );
+  const { RUSSIAN_VOCAB } = await import("./vocabulary");
+  const { getRussianExercises } = await import("./exercises");
   const { buildRussianPrompt } = await import("@/server/ai/prompts/russian");
 
   return {
@@ -13,49 +24,81 @@ export async function loadRussianCourse(): Promise<CourseConfig> {
     title: "Русский язык",
     titleNative: "Русский",
     flag: "🇷🇺",
-    description: "Изучай русский язык с ИИ",
+    description:
+      "Русский как иностранный (A1–B1): грамматика, лексика и учебная коммуникация",
     promptId: "russian",
-    textbookNames: "",
+    textbookNames:
+      "РКИ-ориентиры: Дорога в Россию; Поехали!; Пять элементов; Жили-были",
     examName: "ТРКИ",
+    beta: true,
 
     storyWorld: {
-      theme: "Путешествие по России",
-      locations: ["Москва", "Санкт-Петербург", "Казань", "Сочи", "Владивосток"],
+      theme: "Путь студента в России",
+      locations: [
+        "Москва",
+        "Санкт-Петербург",
+        "Казань",
+        "Нижний Новгород",
+        "Екатеринбург",
+        "Новосибирск",
+        "Владивосток",
+        "Сочи",
+        "Калининград",
+        "Ярославль",
+        "Псков",
+      ],
     },
 
     keywords: {
       onTopic: [
-        "russian", "русский", "русский язык", "грамматика",
-        "падежи", "виды глагола", "trki", "трки",
-        "культур", "culture", "традиц", "tradition",
-        "литератур", "poetry", "поэз", "пушкин", "pushkin",
-        "толстой", "достоевск", "чехов", "москва", "петербург",
-        "блины", "борщ", "пельмени", "окрошка",
+        "russian",
+        "русский",
+        "русский язык",
+        "рки",
+        "грамматика",
+        "падежи",
+        "виды глагола",
+        "глаголы движения",
+        "trki",
+        "трки",
+        "подготовительный факультет",
+        "общежитие",
+        "университет",
+        "культур",
+        "culture",
+        "москва",
+        "петербург",
       ],
       offTopic: [
-        "испанский", "español", "english grammar",
-        "немецкий", "deutsch",
-        "chatgpt", "нейросет",
-        "программирован", "javascript", "биткоин",
+        "испанский",
+        "español",
+        "english grammar",
+        "немецкий",
+        "deutsch",
+        "chatgpt",
+        "нейросет",
+        "программирован",
+        "javascript",
+        "биткоин",
       ],
       greetings: ["привет", "здравствуйте", "hello", "hi"],
     },
 
     levelGuide: {
-      A1: "A1: алфавит, базовая лексика, простые предложения.",
-      A2: "A2: падежи, прошедшее время, повседневные темы.",
-      B1: "B1: виды глагола, сложные предложения, дискуссии.",
-      B2: "B2: причастия, деепричастия, стилистика.",
-      C1: "C1: идиомы, литературный язык, тонкие оттенки.",
+      A1: "A1: алфавит и фонетика, базовая лексика, простые предложения, основные падежные конструкции, настоящее время, базовая коммуникация.",
+      A2: "A2: расширение падежей, прошедшее и будущее, глагольное управление, виды глагола (начало), глаголы движения (начало), быт и социум.",
+      B1: "B1: систематизация падежей, видо-временные отношения, приставочные глаголы движения, сложные предложения, связность текста, аргументация, учебная речь.",
+      B2: "B2: (позже) причастия, деепричастия, расширенная стилистика.",
+      C1: "C1: (позже) идиоматика, академический и художественный регистр.",
     },
 
-    getChapters: () => [],
-    getChapter: () => undefined,
-    getNextChapter: () => undefined,
-    getGrammar: () => [],
-    getGrammarTopic: () => undefined,
-    getVocab: () => [],
-    getExercises: () => [],
+    getChapters: () => RUSSIAN_CHAPTERS,
+    getChapter: getRuChapter,
+    getNextChapter: getRuNextChapter,
+    getGrammar: () => sortRussianGrammarByCurriculum(RUSSIAN_GRAMMAR),
+    getGrammarTopic: getRuGrammarTopic,
+    getVocab: () => RUSSIAN_VOCAB,
+    getExercises: (slug: string) => getRussianExercises(slug),
 
     buildPrompt: buildRussianPrompt,
   };

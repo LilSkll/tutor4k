@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { isKnownCourseId } from "@/lib/course-id";
 import { getCourse } from "@/config/courses";
 import { requireTeacherSession } from "@/server/teacher/links";
 import { localizeGrammarTopicMetaList } from "@/lib/grammar-topic-localize";
@@ -10,7 +11,7 @@ export async function GET(req: NextRequest) {
     const teacher = await requireTeacherSession();
     const url = new URL(req.url);
     const courseId = url.searchParams.get("courseId");
-    if (courseId !== "spanish" && courseId !== "english") {
+    if (!isKnownCourseId(courseId)) {
       return NextResponse.json({ error: "courseId required" }, { status: 400 });
     }
     const course = await getCourse(courseId);

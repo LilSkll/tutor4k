@@ -592,6 +592,9 @@ export interface GeneratedExercise {
   /** Stable bank id for adaptive progress tracking. */
   exerciseId?: string;
   chapterSlug?: string;
+  /** Grammar / vocab slugs for adaptive Learning Profile. */
+  grammarTopic?: string;
+  vocabTopic?: string;
   /** L1 glosses / TR prompt maps for client re-localization. */
   questionTranslations?: Partial<Record<InterfaceLanguage, string>>;
 }
@@ -965,7 +968,9 @@ async function persistExerciseOutcome(input: {
   }
   await recordExerciseProfileUpdate({
     courseId: input.courseId,
-    topic: input.exercise.topic,
+    topic:
+      input.exercise.grammarTopic ??
+      input.exercise.topic,
     correct: input.correct,
     feedback,
   });
@@ -997,14 +1002,25 @@ async function recordExerciseProfileUpdate(input: {
       updateStudentLearningProfile,
     } = await import("@/server/learning/student-profile");
     const topics = await resolveTopicsForCourse(input.courseId, input.topic);
+    let mistakeNote: string | null = input.correct
+      ? null
+      : input.feedback.slice(0, 80) || "exercise mistake";
+    if (!input.correct && input.courseId === "russian") {
+      const { russianErrorCategoryFromTopics } = await import(
+        "@/lib/russian-error-categories"
+      );
+      const cat = russianErrorCategoryFromTopics(
+        topics.grammarTopic,
+        topics.vocabTopic,
+      );
+      mistakeNote = `[${cat}] ${mistakeNote}`.slice(0, 80);
+    }
     await updateStudentLearningProfile({
       courseId: input.courseId,
       grammarTopic: topics.grammarTopic,
       vocabTopic: topics.vocabTopic,
       correct: input.correct,
-      mistakeNote: input.correct
-        ? null
-        : input.feedback.slice(0, 80) || "exercise mistake",
+      mistakeNote,
       prefersExercises: true,
       needsRepetition: !input.correct,
     });

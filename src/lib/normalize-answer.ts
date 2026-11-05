@@ -1,7 +1,22 @@
 /**
  * Shared answer normalization for exercise grading.
- * Accents and ñ are optional: «está» = «esta», «niño» = «nino».
+ *
+ * Latin (Spanish / English / German UI prompts & ES/EN banks):
+ *   accents and ñ are optional — «está» = «esta», «niño» = «nino».
+ *
+ * Cyrillic (Russian target answers):
+ *   NFC + case-fold + punctuation strip only.
+ *   Do NOT NFD-strip combining marks (that destroyed «й» → «и»).
+ *   Do NOT globally fold «ё» → «е» (that erased «всё» ≠ «все»).
+ *   Orthographic variants like «ждёт»/«ждет» belong in acceptableAnswers.
  */
+
+const CYRILLIC = /[\u0400-\u04FF]/;
+
+/** True when the string contains Cyrillic letters. */
+export function hasCyrillicScript(s: string): boolean {
+  return CYRILLIC.test(s);
+}
 
 /** Explicit fold before NFD — covers environments where ñ decomposes oddly. */
 function foldSpanishChars(s: string): string {
@@ -10,6 +25,11 @@ function foldSpanishChars(s: string): string {
     .replace(/Ñ/g, "N")
     .replace(/ü/g, "u")
     .replace(/Ü/g, "U");
+}
+
+/** German orthographic tolerances used only on Latin-path answers. */
+function foldGermanChars(s: string): string {
+  return s.replace(/ß/g, "ss");
 }
 
 /** Strip punctuation and symbols that learners often omit on mobile keyboards. */
@@ -22,14 +42,38 @@ function stripPunctuation(s: string): string {
     .trim();
 }
 
-export function normalizeAnswer(s: string): string {
+/**
+ * Latin-script folding: optional accents / ñ / ß.
+ * Must never run on Cyrillic — NFD+\p{M} turns «й» into «и».
+ */
+function normalizeLatinAnswer(s: string): string {
   return stripPunctuation(
-    foldSpanishChars(s)
+    foldGermanChars(foldSpanishChars(s))
       .trim()
       .toLowerCase()
       .normalize("NFD")
       .replace(/\p{M}/gu, ""),
   );
+}
+
+/**
+ * Cyrillic-safe folding: preserve «й»/«и» and «ё»/«е».
+ * Unify only NFC forms of the same grapheme + case + punctuation.
+ */
+function normalizeCyrillicAnswer(s: string): string {
+  return stripPunctuation(s.normalize("NFC").trim().toLocaleLowerCase("ru-RU"));
+}
+
+/**
+ * Normalize a learner/bank answer for equality checks.
+ * Script-aware: Cyrillic keeps letter identity; Latin keeps accent-optional grading.
+ */
+export function normalizeAnswer(s: string): string {
+  const nfc = s.normalize("NFC");
+  if (hasCyrillicScript(nfc)) {
+    return normalizeCyrillicAnswer(nfc);
+  }
+  return normalizeLatinAnswer(nfc);
 }
 
 /**
@@ -97,7 +141,7 @@ export function normalizeAnswerFlexible(s: string): string {
   return n.trim();
 }
 
-/** True when normalized forms match (accents / ñ / punctuation ignored). */
+/** True when normalized forms match (script-aware). */
 export function answersMatch(
   userAnswer: string,
   acceptable: string[],

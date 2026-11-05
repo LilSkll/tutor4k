@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { isKnownCourseId } from "@/lib/course-id";
 import { requireTeacherSession } from "@/server/teacher/links";
 import { SchoolService } from "@/server/services/schools";
 
@@ -11,7 +12,7 @@ export async function GET(req: NextRequest) {
     const groups = await SchoolService.listGroups(teacher.id, {
       schoolId: schoolId || undefined,
       courseId:
-        courseId === "spanish" || courseId === "english" ? courseId : undefined,
+        isKnownCourseId(courseId) ? courseId : undefined,
     });
     return NextResponse.json({ groups });
   } catch (err) {

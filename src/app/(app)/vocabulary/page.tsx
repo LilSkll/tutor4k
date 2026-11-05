@@ -5,7 +5,9 @@ import { VocabularyClient } from "@/components/vocabulary/vocabulary-client";
 import { translate } from "@/lib/i18n";
 
 export default async function VocabularyPage() {
-  const [words, profile] = await Promise.all([getVocabulary(), getCurrentProfile()]);
+  const profile = await getCurrentProfile();
+  const courseId = profile?.active_course_id ?? "spanish";
+  const words = await getVocabulary(courseId);
   const lang = profile?.interface_language ?? "ru";
   const t = (key: string) => translate(key, lang);
 

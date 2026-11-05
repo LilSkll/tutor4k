@@ -36,10 +36,9 @@ export default async function ChapterPage({
 
   // Homework links may pass ?courseId= so the chapter resolves for that course
   // even when the student's active course differs.
+  const { parseCourseId } = await import("@/lib/course-id");
   const courseId =
-    sp.courseId === "english" || sp.courseId === "spanish"
-      ? sp.courseId
-      : (profile?.active_course_id ?? "spanish");
+    parseCourseId(sp.courseId) ?? (profile?.active_course_id ?? "spanish");
   const course = await getCourse(courseId);
 
   const chapter = course.getChapter(slug);

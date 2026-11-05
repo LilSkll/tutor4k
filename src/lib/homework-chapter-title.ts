@@ -1,5 +1,6 @@
 import { getChapter } from "@/config/chapters";
 import { getEngChapter } from "@/config/courses/english/chapters";
+import { getRuChapter } from "@/config/courses/russian/chapters";
 import { getChapterTitle } from "@/lib/chapter-display";
 import type { InterfaceLanguage } from "@/types";
 
@@ -10,7 +11,11 @@ export function resolveHomeworkChapterTitle(
   interfaceLanguage: InterfaceLanguage,
 ): string {
   const chapter =
-    courseId === "english" ? getEngChapter(slug) : getChapter(slug);
+    courseId === "english"
+      ? getEngChapter(slug)
+      : courseId === "russian"
+        ? getRuChapter(slug)
+        : getChapter(slug);
   if (!chapter) return slug;
   return getChapterTitle(chapter, interfaceLanguage);
 }

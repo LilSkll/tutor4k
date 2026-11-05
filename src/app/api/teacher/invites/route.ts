@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { resolveCourseId } from "@/lib/course-id";
 import {
   closeInvite,
   createInvite,
@@ -26,7 +27,7 @@ export async function POST(req: NextRequest) {
       maxUses?: number | null;
       expiresAt?: string | null;
     };
-    const courseId = body.courseId === "english" ? "english" : "spanish";
+    const courseId = resolveCourseId(body.courseId);
     const invite = await createInvite({
       teacherId: teacher.id,
       courseId,

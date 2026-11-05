@@ -34,10 +34,17 @@ import { getCourseTitle } from "@/config/courses";
 import { formatDate } from "@/lib/utils";
 import type { Level, VocabularyWord } from "@/types";
 
-async function fetchVocab(): Promise<VocabularyWord[]> {
-  const res = await fetch("/api/vocabulary", { cache: "no-store" });
+async function fetchVocab(courseId: string): Promise<VocabularyWord[]> {
+  const res = await fetch(
+    `/api/vocabulary?courseId=${encodeURIComponent(courseId)}`,
+    { cache: "no-store" },
+  );
   if (!res.ok) throw new Error("Failed");
   return res.json();
+}
+
+function normSearch(s: string): string {
+  return s.toLocaleLowerCase("ru-RU").replace(/ё/g, "е");
 }
 
 export function VocabularyClient({
@@ -48,19 +55,20 @@ export function VocabularyClient({
   userLevel: Level | null;
 }) {
   const qc = useQueryClient();
-  const { data: words = initialWords } = useQuery({
-    queryKey: ["vocabulary"],
-    queryFn: fetchVocab,
-    initialData: initialWords,
-  });
-
-  const [search, setSearch] = React.useState("");
-  const [dialogOpen, setDialogOpen] = React.useState(false);
   const language = useUIStore((s) => s.interfaceLanguage);
   const activeCourseId = useUIStore((s) => s.activeCourseId);
   const targetLanguage = getCourseTitle(activeCourseId);
   const t = (key: string, vars?: Record<string, string | number>) =>
     translate(key, language, { targetLanguage, ...vars });
+
+  const { data: words = initialWords } = useQuery({
+    queryKey: ["vocabulary", activeCourseId],
+    queryFn: () => fetchVocab(activeCourseId),
+    initialData: initialWords,
+  });
+
+  const [search, setSearch] = React.useState("");
+  const [dialogOpen, setDialogOpen] = React.useState(false);
 
   const addMutation = useMutation({
     mutationFn: async (input: {
@@ -68,17 +76,19 @@ export function VocabularyClient({
       translation: string;
       example: string;
       level: Level;
+      notes?: string;
+      partOfSpeech?: string;
     }) => {
       const res = await fetch("/api/vocabulary", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(input),
+        body: JSON.stringify({ ...input, courseId: activeCourseId }),
       });
       if (!res.ok) throw new Error("Failed");
       return res.json();
     },
     onSuccess: () => {
-      qc.invalidateQueries({ queryKey: ["vocabulary"] });
+      qc.invalidateQueries({ queryKey: ["vocabulary", activeCourseId] });
       setDialogOpen(false);
       toast.success(t("vocabulary.toastAdded"));
     },
@@ -95,17 +105,27 @@ export function VocabularyClient({
       if (!res.ok) throw new Error("Failed");
     },
     onSuccess: () => {
-      qc.invalidateQueries({ queryKey: ["vocabulary"] });
+      qc.invalidateQueries({ queryKey: ["vocabulary", activeCourseId] });
       toast.success(t("vocabulary.toastDeleted"));
     },
     onError: () => toast.error(t("vocabulary.toastDeleteFail")),
   });
 
-  const filtered = words.filter(
-    (w) =>
-      w.word.toLowerCase().includes(search.toLowerCase()) ||
-      w.translation.toLowerCase().includes(search.toLowerCase()),
-  );
+  const q = normSearch(search.trim());
+  const filtered = !q
+    ? words
+    : [...words]
+        .filter(
+          (w) =>
+            normSearch(w.word).includes(q) ||
+            normSearch(w.translation).includes(q) ||
+            normSearch(w.notes ?? "").includes(q),
+        )
+        .sort((a, b) =>
+          a.word.localeCompare(b.word, activeCourseId === "russian" ? "ru" : "es", {
+            sensitivity: "base",
+          }),
+        );
 
   return (
     <div className="space-y-6">
@@ -185,11 +205,16 @@ export function VocabularyClient({
                     <p className="text-sm text-muted-foreground">
                       {w.translation}
                     </p>
+                    {(w.part_of_speech || w.notes) && (
+                      <p className="mt-1 text-xs text-muted-foreground/90">
+                        {[w.part_of_speech, w.notes].filter(Boolean).join(" · ")}
+                      </p>
+                    )}
                   </div>
                   <button
                     onClick={() => deleteMutation.mutate(w.id)}
                     className="opacity-0 group-hover:opacity-100 transition-opacity text-muted-foreground hover:text-destructive"
-                    aria-label="Eliminar"
+                    aria-label={t("vocabulary.deleteAria")}
                   >
                     <Trash2 className="h-4 w-4" />
                   </button>
@@ -223,24 +248,38 @@ function AddWordDialog({
     translation: string;
     example: string;
     level: Level;
+    notes?: string;
+    partOfSpeech?: string;
   }) => void;
 }) {
   const [word, setWord] = React.useState("");
   const [translation, setTranslation] = React.useState("");
   const [example, setExample] = React.useState("");
+  const [notes, setNotes] = React.useState("");
+  const [partOfSpeech, setPartOfSpeech] = React.useState("");
   const [level, setLevel] = React.useState<Level>(defaultLevel);
   const language = useUIStore((s) => s.interfaceLanguage);
   const activeCourseId = useUIStore((s) => s.activeCourseId);
   const targetLanguage = getCourseTitle(activeCourseId);
   const t = (key: string, vars?: Record<string, string | number>) =>
     translate(key, language, { targetLanguage, ...vars });
+  const showMorph = activeCourseId === "russian";
 
   const submit = () => {
     if (!word.trim() || !translation.trim()) return;
-    onSubmit({ word, translation, example, level });
+    onSubmit({
+      word,
+      translation,
+      example,
+      level,
+      notes: notes.trim() || undefined,
+      partOfSpeech: partOfSpeech.trim() || undefined,
+    });
     setWord("");
     setTranslation("");
     setExample("");
+    setNotes("");
+    setPartOfSpeech("");
   };
 
   return (
@@ -278,6 +317,29 @@ function AddWordDialog({
             rows={2}
           />
         </div>
+        {showMorph && (
+          <>
+            <div className="space-y-2">
+              <Label htmlFor="pos">{t("vocabulary.posLabel")}</Label>
+              <Input
+                id="pos"
+                value={partOfSpeech}
+                onChange={(e) => setPartOfSpeech(e.target.value)}
+                placeholder={t("vocabulary.posPlaceholder")}
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="notes">{t("vocabulary.notesLabel")}</Label>
+              <Textarea
+                id="notes"
+                value={notes}
+                onChange={(e) => setNotes(e.target.value)}
+                placeholder={t("vocabulary.notesPlaceholder")}
+                rows={2}
+              />
+            </div>
+          </>
+        )}
         <div className="space-y-2">
           <Label>{t("common.level")}</Label>
           <Select value={level} onValueChange={(v) => setLevel(v as Level)}>

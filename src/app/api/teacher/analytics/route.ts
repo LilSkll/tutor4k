@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { isKnownCourseId } from "@/lib/course-id";
 import { requireTeacherSession } from "@/server/teacher/links";
 import { getTeacherAnalytics } from "@/server/teacher/analytics";
 import type { InterfaceLanguage } from "@/types";
@@ -23,7 +24,7 @@ export async function GET(req: NextRequest) {
           : "ru";
     const analytics = await getTeacherAnalytics(
       teacher.id,
-      courseId === "english" || courseId === "spanish" ? courseId : undefined,
+      isKnownCourseId(courseId) ? courseId : undefined,
       lang,
     );
     return NextResponse.json({ analytics });
