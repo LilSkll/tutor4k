@@ -1,4 +1,5 @@
 import type { Chapter, InterfaceLanguage } from "@/types";
+import { RUSSIAN_CHAPTER_LOCALE } from "@/config/courses/russian/chapter-locale";
 
 type ChapterLocale = {
   title: string;
@@ -1529,6 +1530,10 @@ function getChapterLocale(
   slug: string,
   interfaceLanguage: InterfaceLanguage,
 ): ChapterLocale | undefined {
+  if (interfaceLanguage !== "ru") {
+    const russian = RUSSIAN_CHAPTER_LOCALE[slug]?.[interfaceLanguage];
+    if (russian) return russian;
+  }
   const spanish = SPANISH_CHAPTER_LOCALE[slug]?.[
     interfaceLanguage as "en" | "es" | "de"
   ];

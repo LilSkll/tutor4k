@@ -18,6 +18,7 @@ import {
   getVocabTopicSubtitle,
   getVocabTopicTitle,
   getWordDefinition,
+  getExampleTranslation,
   getWordGloss,
 } from "@/lib/vocab-display";
 import type { VocabTopic, VocabWord } from "@/types";
@@ -156,6 +157,11 @@ export function VocabularyTopicsExplorer({
                   </p>
                 )}
                 <p className="text-xs italic text-muted-foreground mt-0.5">{word.example}</p>
+                {getExampleTranslation(word.example, language, courseId) && (
+                  <p className="text-xs text-muted-foreground/80 mt-0.5">
+                    {getExampleTranslation(word.example, language, courseId)}
+                  </p>
+                )}
               </div>
               <Button
                 size="sm"
@@ -283,11 +289,28 @@ export function VocabularyTopicsExplorer({
                             {definition}
                           </p>
                         )}
-                        {(word.examples ?? [word.example]).map((ex, j) => (
-                          <p key={j} className="text-xs italic text-muted-foreground mt-1 border-l-2 border-primary/20 pl-2">
-                            {ex}
-                          </p>
-                        ))}
+                        {(word.examples ?? [word.example]).map((ex, j) => {
+                          const exTr = getExampleTranslation(
+                            ex,
+                            language,
+                            courseId,
+                          );
+                          return (
+                            <div
+                              key={j}
+                              className="mt-1 border-l-2 border-primary/20 pl-2"
+                            >
+                              <p className="text-xs italic text-muted-foreground">
+                                {ex}
+                              </p>
+                              {exTr && (
+                                <p className="text-xs text-muted-foreground/80">
+                                  {exTr}
+                                </p>
+                              )}
+                            </div>
+                          );
+                        })}
                         {word.synonyms && word.synonyms.length > 0 && (
                           <p className="text-[11px] text-muted-foreground mt-1">
                             {t("vocabTopics.synonyms")}: {word.synonyms.join(", ")}

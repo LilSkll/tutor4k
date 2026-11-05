@@ -2,6 +2,7 @@ import type { InterfaceLanguage } from "@/types";
 import { SPANISH_GRAMMAR_CONTENT } from "@/config/grammar-content-spanish";
 import { GERMAN_GRAMMAR_CONTENT } from "@/config/grammar-content-german";
 import { ENGLISH_GAP_GRAMMAR_CONTENT } from "@/config/grammar-content-english-gap";
+import { RUSSIAN_GRAMMAR_CONTENT } from "@/config/grammar-content-russian";
 
 export const GRAMMAR_CONTENT: Partial<
   Record<string, Partial<Record<InterfaceLanguage, string>>>
@@ -1065,6 +1066,7 @@ export function getStaticGrammarContent(
     ENGLISH_GAP_GRAMMAR_CONTENT[slug],
     SPANISH_GRAMMAR_CONTENT[slug],
     GERMAN_GRAMMAR_CONTENT[slug],
+    RUSSIAN_GRAMMAR_CONTENT[slug],
   ];
   for (const topic of sources) {
     const content = topic?.[interfaceLanguage];

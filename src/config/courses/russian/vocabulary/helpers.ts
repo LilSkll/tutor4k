@@ -1,10 +1,12 @@
 import type {
+  InterfaceLanguage,
   PartOfSpeech,
   VocabLevel,
   VocabTopic,
   VocabWord,
   WordFrequency,
 } from "@/types";
+import { RUSSIAN_VOCAB_GLOSS } from "./glosses";
 
 export type RuWordInput = {
   word: string;
@@ -12,6 +14,8 @@ export type RuWordInput = {
   partOfSpeech: PartOfSpeech;
   /** Default gloss for RU UI learners (usually English). */
   translation: string;
+  /** Optional explicit glosses; gloss map fills gaps for en/es/de. */
+  translations?: Partial<Record<InterfaceLanguage, string>>;
   examples: string[];
   frequency?: WordFrequency;
   level: VocabLevel;
@@ -20,12 +24,22 @@ export type RuWordInput = {
 };
 
 export function w(entry: RuWordInput): VocabWord {
+  const key = entry.word.trim().toLowerCase();
+  const fromMap = {
+    en: RUSSIAN_VOCAB_GLOSS.en?.[key],
+    es: RUSSIAN_VOCAB_GLOSS.es?.[key],
+    de: RUSSIAN_VOCAB_GLOSS.de?.[key],
+  };
   return {
     word: entry.word,
     transcription: entry.transcription,
     partOfSpeech: entry.partOfSpeech,
     translation: entry.translation,
-    translations: { en: entry.translation },
+    translations: {
+      en: entry.translations?.en ?? fromMap.en ?? entry.translation,
+      es: entry.translations?.es ?? fromMap.es,
+      de: entry.translations?.de ?? fromMap.de,
+    },
     example: entry.examples[0],
     examples: entry.examples,
     frequency: entry.frequency ?? "core",

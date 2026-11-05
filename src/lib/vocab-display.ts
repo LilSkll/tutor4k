@@ -6,6 +6,10 @@ import { SPANISH_VOCAB_DEFINITION } from "@/config/courses/spanish/vocabulary/de
 import { SPANISH_VOCAB_GLOSS } from "@/config/courses/spanish/vocabulary/glosses";
 import { SPANISH_TOPIC_TITLES_EN } from "@/config/courses/spanish/vocabulary/topic-titles";
 import {
+  RUSSIAN_EXAMPLE_TRANSLATIONS,
+  RUSSIAN_VOCAB_GLOSS,
+} from "@/config/courses/russian/vocabulary/glosses";
+import {
   ENGLISH_CORE_LEMMAS,
   ENGLISH_INFLECTED_FORMS,
   ENGLISH_TOKEN_OVERRIDES,
@@ -120,22 +124,47 @@ export function getWordGloss(
     if (def) return def;
   }
 
-  // Russian course: catalog `translation` is typically English (RU UI already
-  // returned above). Prefer Latin glosses for en/es/de.
+  // Russian course: prefer per-locale authored / gloss-map entries.
+  // Never treat a missing es/de gloss as "OK" by leaking English silently
+  // when a dedicated gloss exists; English catalog `translation` is only
+  // a last resort for `en` UI.
   if (courseId === "russian") {
-    if (!hasCyrillic(word.translation)) return word.translation;
-    return (
-      word.translations?.[interfaceLanguage] ??
-      word.translations?.en ??
-      word.translations?.es ??
-      word.translations?.de ??
-      ""
-    );
+    const fromWord = word.translations?.[interfaceLanguage]?.trim();
+    if (fromWord) return fromWord;
+    const fromMap =
+      RUSSIAN_VOCAB_GLOSS[interfaceLanguage as "en" | "es" | "de"]?.[
+        key
+      ]?.trim();
+    if (fromMap) return fromMap;
+    if (interfaceLanguage === "en" && !hasCyrillic(word.translation)) {
+      return word.translation;
+    }
+    // Missing locale gloss: empty string (UI shows gap; audit catches it).
+    return "";
   }
 
   // Never show Cyrillic to non-RU UI — better empty than wrong language.
   if (hasCyrillic(word.translation)) return "";
   return word.translation;
+}
+
+/**
+ * Interface-language translation of a Russian example sentence.
+ * Returns null when unavailable — never invents a translation.
+ */
+export function getExampleTranslation(
+  example: string,
+  interfaceLanguage: InterfaceLanguage,
+  courseId?: string,
+): string | null {
+  if (!example?.trim() || interfaceLanguage === "ru") return null;
+  if (courseId !== "russian") return null;
+  const key = example.trim();
+  const hit =
+    RUSSIAN_EXAMPLE_TRANSLATIONS[
+      interfaceLanguage as "en" | "es" | "de"
+    ]?.[key]?.trim();
+  return hit || null;
 }
 
 /**

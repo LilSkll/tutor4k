@@ -1,5 +1,6 @@
 import type { ExerciseType, InterfaceLanguage, StaticExercise } from "@/types";
 import { lookupTranslationPrompt } from "@/config/exercise-translation-prompts";
+import { localizeRussianExerciseExplanation } from "@/config/courses/russian/exercise-feedback";
 import { isGrammarCategoryInstruction } from "@/lib/exercise-quality";
 import { localizeBankExplanation } from "@/lib/tutor-feedback";
 
@@ -723,6 +724,25 @@ export function localizeTranslationQuestion(
   return resolved ?? exercise.question;
 }
 
+function localizeExerciseExplanation(
+  exercise: StaticExercise,
+  interfaceLanguage: InterfaceLanguage,
+  courseId?: string | null,
+): string {
+  if (courseId === "russian" && interfaceLanguage !== "ru") {
+    const ruLocalized = localizeRussianExerciseExplanation(
+      exercise.explanation ?? "",
+      interfaceLanguage,
+      exercise.grammarTopic,
+    );
+    if (ruLocalized) return ruLocalized;
+  }
+  return localizeBankExplanation(
+    exercise.explanation ?? "",
+    interfaceLanguage,
+  );
+}
+
 /** Filter + localize a batch of bank exercises for the interface language. */
 export function prepareExercisesForInterface<T extends StaticExercise>(
   exercises: T[],
@@ -737,9 +757,10 @@ export function prepareExercisesForInterface<T extends StaticExercise>(
       ...ex,
       question: localizeTranslationQuestion(ex, interfaceLanguage, courseId),
       instruction: localizeExerciseInstruction(ex, interfaceLanguage),
-      explanation: localizeBankExplanation(
-        ex.explanation ?? "",
+      explanation: localizeExerciseExplanation(
+        ex,
         interfaceLanguage,
+        courseId,
       ),
     }));
 }
