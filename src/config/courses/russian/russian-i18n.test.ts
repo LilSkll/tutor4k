@@ -215,4 +215,12 @@ describe("RKI multilingual localization (A1)", () => {
       );
     }
   });
+
+  it("keeps chapter titles/summaries intact after story restore", async () => {
+    const course = await getCourse("russian");
+    const ch1 = course.getChapter("ru-ch1-alphabet-greetings");
+    expect(ch1?.title).toMatch(/Алфавит/);
+    expect(ch1?.grammarTopic).toBe("ru-a1-alphabet-phonetics");
+    expect(ch1?.vocabTopic).toBe("ru-a1-greetings");
+  });
 });

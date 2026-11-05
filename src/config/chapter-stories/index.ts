@@ -24,12 +24,30 @@ async function loadStoryLocale(slug: string): Promise<StoryLocale | null> {
   }
 }
 
-/** Story for the chapter intro screen, or null when not authored. */
+function isRussianChapterSlug(slug: string): boolean {
+  return slug.startsWith("ru-ch") || slug.startsWith("rus-ch");
+}
+
+/**
+ * Story for the chapter intro screen, or null when not authored / locale missing.
+ *
+ * Russian course (ru-ch*): never silent-fallback to another UI language —
+ * missing locale must surface as null so audits/tests catch the gap.
+ * Other courses keep a soft EN fallback for historically incomplete DE/ES files.
+ */
 export async function getChapterStory(
   slug: string,
   language: InterfaceLanguage,
 ): Promise<string | null> {
   const entry = await loadStoryLocale(slug);
   if (!entry) return null;
-  return entry[language] ?? entry.en ?? null;
+
+  const exact = entry[language]?.trim();
+  if (exact) return exact;
+
+  if (isRussianChapterSlug(slug)) {
+    return null;
+  }
+
+  return entry.en?.trim() || null;
 }
