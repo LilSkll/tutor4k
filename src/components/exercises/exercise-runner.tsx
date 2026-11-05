@@ -31,6 +31,7 @@ import { QuestionWithGloss } from "@/components/exercises/question-with-gloss";
 import { ExerciseFreeTextBlock } from "@/components/exercises/exercise-free-text-block";
 import { ExerciseTaskBanner } from "@/components/exercises/exercise-task-banner";
 import { SentenceBuildingBlock } from "@/components/exercises/sentence-building-block";
+import { WordHintText } from "@/components/shared/word-hint-text";
 import { gradeStaticExerciseLocally } from "@/lib/exercise-check-client";
 import {
   getSentenceBuildingMeaning,
@@ -861,7 +862,9 @@ function ExerciseCard({
                 >
                   {String.fromCharCode(65 + i)}
                 </span>
-                <span className="text-sm">{opt}</span>
+                <span className="text-sm">
+                  <WordHintText text={opt} courseId={courseId} />
+                </span>
               </button>
             ))}
           </div>

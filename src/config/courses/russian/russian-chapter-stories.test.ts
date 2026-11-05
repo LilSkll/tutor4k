@@ -52,6 +52,43 @@ describe("RKI A1 chapter backstories", () => {
     expect(ch7De).toMatch(/в общежитии|на столе|об экзамене/);
   });
 
+  it("features Altair as a recurring guide across all A1 locales", async () => {
+    for (const slug of A1_SLUGS) {
+      for (const lang of UI) {
+        const story = await getChapterStory(slug, lang);
+        expect(story, `${slug}@${lang}`).toMatch(/Альтаир|Altair/);
+        if (lang === "ru") {
+          expect(story).toMatch(/гиппогриф|Альтаир/);
+        } else if (lang === "es") {
+          expect(story).toMatch(/hipogrifo|Altair/i);
+        } else if (lang === "de") {
+          expect(story).toMatch(/Hippogreif|Altair/i);
+        } else {
+          expect(story).toMatch(/hippogriff|Altair/i);
+        }
+      }
+    }
+  });
+
+  it("keeps the A1 journey locations coherent across locales", async () => {
+    const expected: Record<(typeof A1_SLUGS)[number], RegExp> = {
+      "ru-ch1-alphabet-greetings": /Моск|Mosc|Moskau/i,
+      "ru-ch2-introduce-yourself": /МГУ|MSU|MGU/i,
+      "ru-ch3-noun-gender": /Петербург|Petersburg|Petersburgo/i,
+      "ru-ch4-present-tense": /Петербург|Petersburg|Petersburgo/i,
+      "ru-ch5-accusative": /Казан|Kazan|Kasan|Kazán/i,
+      "ru-ch6-university-day": /Казан|Kazan|Kasan|Kazán/i,
+      "ru-ch7-prepositional": /Нижн|Nizhn|Nischn|Nóvgorod|Novgorod/i,
+      "ru-ch8-numbers-time": /Нижн|Nizhn|Nischn|Nóvgorod|Novgorod/i,
+    };
+    for (const slug of A1_SLUGS) {
+      for (const lang of UI) {
+        const story = await getChapterStory(slug, lang);
+        expect(story, `${slug}@${lang}`).toMatch(expected[slug]);
+      }
+    }
+  });
+
   it("covers exactly the eight A1 chapter slugs from the course config", async () => {
     const course = await getCourse("russian");
     const a1 = course.getChapters().filter((c) => c.level === "A1");

@@ -33,7 +33,8 @@ export async function loadRussianCourse(): Promise<CourseConfig> {
     beta: true,
 
     storyWorld: {
-      theme: "Путь студента в России",
+      theme:
+        "Путь с гиппогрифом Альтаиром: от первого дня в Москве к учебной речи в России",
       locations: [
         "Москва",
         "Санкт-Петербург",
