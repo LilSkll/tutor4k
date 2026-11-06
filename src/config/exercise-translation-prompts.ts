@@ -1,10 +1,12 @@
 /**
  * Prefer English-course ES/DE L1 cache over generic translation prompts.
  * Generic prompts.json often stores English as `es` (spoiler for EN course).
+ * Russian-course TR stems are authored in English — use RUSSIAN_TR_L1 for es/de.
  */
 import type { InterfaceLanguage } from "@/types";
 import prompts from "@/config/exercise-translation-prompts.json";
 import l1Cache from "@/config/exercise-banks/data/english-tr-l1-cache.json";
+import { RUSSIAN_TR_L1 } from "@/config/courses/russian/translation-l1";
 
 type PromptMap = Record<
   string,
@@ -15,6 +17,7 @@ type L1Cache = Record<string, { es?: string; de?: string }>;
 
 const MAP = prompts as PromptMap;
 const CACHE = l1Cache as L1Cache;
+const RU_CACHE = RUSSIAN_TR_L1 as L1Cache;
 
 const LATIN_LETTER = /[A-Za-zÀ-ÿ]/;
 const CYRILLIC = /[\u0400-\u04FF]/;
@@ -85,7 +88,7 @@ function pickLang(
   return entry.en?.trim() ?? null;
 }
 
-/** Localized source sentence for a RU-authored translation exercise. */
+/** Localized source sentence for a translation exercise (RU/ES/EN banks). */
 export function lookupTranslationPrompt(
   russianQuestion: string,
   interfaceLanguage: InterfaceLanguage,
@@ -94,6 +97,10 @@ export function lookupTranslationPrompt(
   if (interfaceLanguage === "ru") return null;
   const key = russianQuestion.trim();
   if (!key) return null;
+
+  // Russian course: English-authored L1 stems → ES/DE via dedicated cache.
+  const fromRussian = pickLang(RU_CACHE[key], interfaceLanguage, englishAnswer);
+  if (fromRussian) return fromRussian;
 
   const fromCache = pickLang(CACHE[key], interfaceLanguage, englishAnswer);
   if (fromCache) return fromCache;

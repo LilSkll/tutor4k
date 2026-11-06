@@ -137,24 +137,31 @@ describe("translation localization", () => {
     );
   });
 
-  it("keeps English L1 TR stems for Russian course on ES/DE UI", () => {
+  it("localizes English L1 TR stems for Russian course on ES/DE UI", () => {
     const ruTr: StaticExercise = {
       id: "ru-tr-en",
       type: "translation",
-      question: "We were at the café.",
-      answer: "Мы были в кафе",
+      question: "Bye (to a friend)",
+      answer: "Пока",
       instruction: "Переведите на русский",
-      explanation: "Мы → были.",
+      explanation: "Пока.",
+      questionTranslations: {
+        es: "Adiós (a un amigo)",
+        de: "Tschüss (zu einem Freund)",
+      },
     };
-    for (const lang of ["en", "es", "de"] as const) {
-      expect(isExerciseUsableForLanguage(ruTr, lang, "russian")).toBe(true);
-      expect(localizeTranslationQuestion(ruTr, lang, "russian")).toBe(
-        "We were at the café.",
-      );
-    }
-    expect(
-      prepareExercisesForInterface([ruTr], "es", "russian"),
-    ).toHaveLength(1);
+    expect(localizeTranslationQuestion(ruTr, "en", "russian")).toBe(
+      "Bye (to a friend)",
+    );
+    expect(localizeTranslationQuestion(ruTr, "es", "russian")).toBe(
+      "Adiós (a un amigo)",
+    );
+    expect(localizeTranslationQuestion(ruTr, "de", "russian")).toBe(
+      "Tschüss (zu einem Freund)",
+    );
+    const [esEx] = prepareExercisesForInterface([ruTr], "es", "russian");
+    expect(esEx.question).toBe("Adiós (a un amigo)");
+    expect(esEx.instruction).toMatch(/Traduce|traduce/i);
   });
 
   it("replaces spoiler grammar-tag instructions", () => {

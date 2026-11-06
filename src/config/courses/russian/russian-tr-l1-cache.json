@@ -1,0 +1,982 @@
+{
+  "A glass of water.": {
+    "es": "Un vaso de agua.",
+    "de": "Ein Glas Wasser."
+  },
+  "A lecture about the Russian language.": {
+    "es": "Una clase magistral sobre la lengua rusa.",
+    "de": "Eine Vorlesung über die russische Sprache."
+  },
+  "After class I will go to the dean's office. (on foot)": {
+    "es": "Después de la clase iré al decanato. (a pie)",
+    "de": "Nach der Stunde gehe ich ins Dekanat. (zu Fuß)"
+  },
+  "Anna is writing to her sister.": {
+    "es": "Anna le escribe a su hermana.",
+    "de": "Anna schreibt ihrer Schwester."
+  },
+  "Anna was late for the lecture yesterday.": {
+    "es": "Ayer Anna llegó tarde a la clase magistral.",
+    "de": "Gestern kam Anna zu spät zur Vorlesung."
+  },
+  "At the museum she is interested in restoration techniques.": {
+    "es": "En el museo se interesa por las técnicas de restauración.",
+    "de": "Im Museum interessiert sie sich für Restaurierungstechniken."
+  },
+  "At what time does the class start?": {
+    "es": "¿A qué hora empieza la clase?",
+    "de": "Um wie viel Uhr beginnt die Stunde?"
+  },
+  "Bring your documents, for example your passport and the dorm certificate.": {
+    "es": "Traiga sus documentos, por ejemplo el pasaporte y el certificado de la residencia.",
+    "de": "Bringen Sie Ihre Dokumente mit, zum Beispiel den Reisepass und die Bescheinigung aus dem Wohnheim."
+  },
+  "By Friday she will have prepared for the talk.": {
+    "es": "Para el viernes se habrá preparado para la exposición.",
+    "de": "Bis Freitag wird sie sich auf das Referat vorbereitet haben."
+  },
+  "Bye (to a friend)": {
+    "es": "Adiós (a un amigo)",
+    "de": "Tschüss (zu einem Freund)"
+  },
+  "Classes start at eight.": {
+    "es": "Las clases empiezan a las ocho.",
+    "de": "Der Unterricht beginnt um acht."
+  },
+  "Come in and close the door.": {
+    "es": "Entre y cierre la puerta.",
+    "de": "Kommen Sie herein und schließen Sie die Tür."
+  },
+  "Could you name the article you are citing?": {
+    "es": "¿Podría nombrar el artículo que está citando?",
+    "de": "Könnten Sie den Artikel nennen, den Sie zitieren?"
+  },
+  "Could you tell me where they accept the dorm certificates?": {
+    "es": "¿Podría decirme dónde aceptan los certificados para la residencia?",
+    "de": "Könnten Sie mir bitte sagen, wo man die Bescheinigungen für das Wohnheim annimmt?"
+  },
+  "Do not be afraid of mistakes in the calculations.": {
+    "es": "No tengan miedo de los errores en los cálculos.",
+    "de": "Haben Sie keine Angst vor Fehlern in den Berechnungen."
+  },
+  "Do you (informal) know the rule?": {
+    "es": "¿Sabes la regla? (de tú)",
+    "de": "Kennst du die Regel? (du)"
+  },
+  "Do you see the schedule?": {
+    "es": "¿Mira usted el horario?",
+    "de": "Schauen Sie den Stundenplan an?"
+  },
+  "Do you see the student?": {
+    "es": "¿Ves al estudiante?",
+    "de": "Siehst du den Studenten?"
+  },
+  "Every evening he writes exercises.": {
+    "es": "Cada noche él escribe ejercicios.",
+    "de": "Jeden Abend schreibt er Übungen."
+  },
+  "Every evening she goes home by metro.": {
+    "es": "Cada noche va a casa en metro.",
+    "de": "Jeden Abend fährt sie mit der Metro nach Hause."
+  },
+  "Excuse me, may I ask a question?": {
+    "es": "Disculpe, ¿puedo hacer una pregunta?",
+    "de": "Entschuldigung, darf ich eine Frage stellen?"
+  },
+  "Excuse me, where is the classroom?": {
+    "es": "Disculpe, ¿dónde está el aula?",
+    "de": "Entschuldigung, wo ist der Hörsaal?"
+  },
+  "Explain again, please.": {
+    "es": "Explíquelo otra vez, por favor.",
+    "de": "Erklären Sie es bitte noch einmal."
+  },
+  "First I checked the sources, then I wrote the draft.": {
+    "es": "Primero revisé las fuentes y luego escribí el borrador.",
+    "de": "Zuerst habe ich die Quellen geprüft, dann habe ich den Entwurf geschrieben."
+  },
+  "From three to five — office hours.": {
+    "es": "De tres a cinco hay tutoría.",
+    "de": "Von drei bis fünf ist Sprechstunde."
+  },
+  "Give me the menu, please.": {
+    "es": "Deme el menú, por favor.",
+    "de": "Geben Sie mir bitte die Speisekarte."
+  },
+  "Good morning": {
+    "es": "Buenos días",
+    "de": "Guten Morgen"
+  },
+  "Goodbye": {
+    "es": "Adiós",
+    "de": "Auf Wiedersehen"
+  },
+  "He asks a question.": {
+    "es": "Él hace una pregunta.",
+    "de": "Er stellt eine Frage."
+  },
+  "He cleans the room.": {
+    "es": "Él limpia la habitación.",
+    "de": "Er putzt das Zimmer."
+  },
+  "He gets up at seven.": {
+    "es": "Él se levanta a las siete.",
+    "de": "Er steht um sieben auf."
+  },
+  "He goes to the dean's office.": {
+    "es": "Él va al decanato.",
+    "de": "Er geht ins Dekanat."
+  },
+  "He is in class.": {
+    "es": "Él está en clase.",
+    "de": "Er ist im Unterricht."
+  },
+  "He learns new words.": {
+    "es": "Él aprende palabras nuevas.",
+    "de": "Er lernt neue Wörter."
+  },
+  "He wants to become a translator at the port.": {
+    "es": "Él quiere ser traductor en el puerto.",
+    "de": "Er möchte Übersetzer im Hafen werden."
+  },
+  "He works as a doctor.": {
+    "es": "Él trabaja de médico.",
+    "de": "Er arbeitet als Arzt."
+  },
+  "Hello (formal)": {
+    "es": "Hola (de usted)",
+    "de": "Guten Tag (Sie)"
+  },
+  "Help me, please.": {
+    "es": "Ayúdeme, por favor.",
+    "de": "Helfen Sie mir bitte."
+  },
+  "Hi": {
+    "es": "Hola",
+    "de": "Hallo"
+  },
+  "How are you?": {
+    "es": "¿Cómo estás?",
+    "de": "Wie geht's?"
+  },
+  "How many students are in the group?": {
+    "es": "¿Cuántos estudiantes hay en el grupo?",
+    "de": "Wie viele Studenten sind in der Gruppe?"
+  },
+  "How much time is there?": {
+    "es": "¿Qué hora es?",
+    "de": "Wie viel Uhr ist es?"
+  },
+  "I agree with you, but an example is still necessary.": {
+    "es": "Estoy de acuerdo con usted, pero un ejemplo sigue siendo necesario.",
+    "de": "Ich stimme Ihnen zu, aber ein Beispiel ist trotzdem noch nötig."
+  },
+  "I am a student.": {
+    "es": "Soy estudiante.",
+    "de": "Ich bin Student."
+  },
+  "I am calling a friend.": {
+    "es": "Llamo a un amigo.",
+    "de": "Ich rufe einen Freund an."
+  },
+  "I am from China.": {
+    "es": "Soy de China.",
+    "de": "Ich komme aus China."
+  },
+  "I am from Turkey.": {
+    "es": "Soy de Turquía.",
+    "de": "Ich komme aus der Türkei."
+  },
+  "I am going to the center by bus. (now)": {
+    "es": "Voy al centro en autobús. (ahora)",
+    "de": "Ich fahre mit dem Bus ins Zentrum. (jetzt)"
+  },
+  "I am waiting for my colleague, not for a certificate.": {
+    "es": "Espero a mi colega, no un certificado.",
+    "de": "Ich warte auf meinen Kollegen, nicht auf eine Bescheinigung."
+  },
+  "I am walking with my sister.": {
+    "es": "Paseo con mi hermana.",
+    "de": "Ich gehe mit meiner Schwester spazieren."
+  },
+  "I did not understand step three. Please explain it again with an example.": {
+    "es": "No entendí el paso tres. Explíquelo otra vez con un ejemplo, por favor.",
+    "de": "Ich habe Schritt drei nicht verstanden. Erklären Sie ihn bitte noch einmal an einem Beispiel."
+  },
+  "I disagree with the grade because one step is missing in the calculation.": {
+    "es": "No estoy de acuerdo con la nota, porque en el cálculo falta un paso.",
+    "de": "Ich bin mit der Note nicht einverstanden, weil in der Berechnung ein Schritt fehlt."
+  },
+  "I do not have a dictionary.": {
+    "es": "No tengo diccionario.",
+    "de": "Ich habe kein Wörterbuch."
+  },
+  "I drink tea.": {
+    "es": "Bebo té.",
+    "de": "Ich trinke Tee."
+  },
+  "I find my pen.": {
+    "es": "Busco un bolígrafo.",
+    "de": "Ich suche einen Kugelschreiber."
+  },
+  "I have already done the exercise. (male)": {
+    "es": "Ya he hecho el ejercicio. (masculino)",
+    "de": "Ich habe die Übung schon gemacht. (männlich)"
+  },
+  "I have no time today.": {
+    "es": "Hoy no tengo tiempo.",
+    "de": "Heute habe ich keine Zeit."
+  },
+  "I have not done the homework yet. (female)": {
+    "es": "Todavía no he hecho los deberes. (femenino)",
+    "de": "Ich habe die Hausaufgaben noch nicht gemacht. (weiblich)"
+  },
+  "I know my classmate.": {
+    "es": "Conozco a mi compañero de curso.",
+    "de": "Ich kenne meinen Kommilitonen."
+  },
+  "I know the answer.": {
+    "es": "Sé la respuesta.",
+    "de": "Ich kenne die Antwort."
+  },
+  "I like the Russian language.": {
+    "es": "Me gusta la lengua rusa.",
+    "de": "Mir gefällt die russische Sprache."
+  },
+  "I listen to the lecture.": {
+    "es": "Escucho la clase magistral.",
+    "de": "Ich höre die Vorlesung."
+  },
+  "I live in the dorm.": {
+    "es": "Vivo en la residencia.",
+    "de": "Ich wohne im Wohnheim."
+  },
+  "I live with a friend.": {
+    "es": "Vivo con un amigo.",
+    "de": "Ich wohne mit einem Freund."
+  },
+  "I read a book.": {
+    "es": "Leo un libro.",
+    "de": "Ich lese ein Buch."
+  },
+  "I read the text aloud.": {
+    "es": "Leo el texto en voz alta.",
+    "de": "Ich lese den Text laut."
+  },
+  "I read the text.": {
+    "es": "Leo el texto.",
+    "de": "Ich lese den Text."
+  },
+  "I rest after class.": {
+    "es": "Descanso después de la clase.",
+    "de": "Ich ruhe mich nach der Stunde aus."
+  },
+  "I see a desk by the window.": {
+    "es": "Veo una mesa junto a la ventana.",
+    "de": "Ich sehe einen Tisch am Fenster."
+  },
+  "I stayed in the library because there was no light in the dorm.": {
+    "es": "Me quedé en la biblioteca porque en la residencia no había luz.",
+    "de": "Ich bin in der Bibliothek geblieben, weil es im Wohnheim kein Licht gab."
+  },
+  "I submit the assignment.": {
+    "es": "Entrego la tarea.",
+    "de": "Ich gebe die Aufgabe ab."
+  },
+  "I translate the text.": {
+    "es": "Traduzco el texto.",
+    "de": "Ich übersetze den Text."
+  },
+  "I wait at the bus stop.": {
+    "es": "Espero en la parada del autobús.",
+    "de": "Ich warte an der Bushaltestelle."
+  },
+  "I wait for the teacher.": {
+    "es": "Espero al profesor.",
+    "de": "Ich warte auf den Dozenten."
+  },
+  "I walk to class every day.": {
+    "es": "Voy a clase a pie todos los días.",
+    "de": "Ich gehe jeden Tag zu Fuß zum Unterricht."
+  },
+  "I will be reading in the evening (process).": {
+    "es": "Voy a leer por la noche (proceso).",
+    "de": "Ich werde abends lesen (Verlauf)."
+  },
+  "I will prepare for the seminar every evening.": {
+    "es": "Me prepararé para el seminario cada noche.",
+    "de": "Ich werde mich jeden Abend auf das Seminar vorbereiten."
+  },
+  "I write the answer on the board.": {
+    "es": "Escribo la respuesta en la pizarra.",
+    "de": "Ich schreibe die Antwort an die Tafel."
+  },
+  "I write with a pen.": {
+    "es": "Escribo con bolígrafo.",
+    "de": "Ich schreibe mit dem Kugelschreiber."
+  },
+  "If there is no rain, the fortress tour will go ahead.": {
+    "es": "Si no llueve, la excursión por la fortaleza se celebrará.",
+    "de": "Wenn es nicht regnet, findet die Führung durch die Festung statt."
+  },
+  "In my opinion, the deadline should be moved.": {
+    "es": "En mi opinión, hay que aplazar el plazo.",
+    "de": "Meiner Meinung nach sollte die Frist verschoben werden."
+  },
+  "In the evening I have a seminar.": {
+    "es": "Por la noche tengo un seminario.",
+    "de": "Am Abend habe ich ein Seminar."
+  },
+  "In the evening I was at home. (female)": {
+    "es": "Por la noche estaba en casa. (femenino)",
+    "de": "Am Abend war ich zu Hause. (weiblich)"
+  },
+  "In the morning I am at the university.": {
+    "es": "Por la mañana estoy en la universidad.",
+    "de": "Am Morgen bin ich an der Universität."
+  },
+  "Is this your textbook? (formal)": {
+    "es": "¿Es este su libro de texto? (de usted)",
+    "de": "Ist das Ihr Lehrbuch? (Sie)"
+  },
+  "It is exactly twelve.": {
+    "es": "Ahora son las doce en punto.",
+    "de": "Es ist jetzt genau zwölf."
+  },
+  "It is five minutes to six.": {
+    "es": "Ahora son las seis menos cinco.",
+    "de": "Es ist jetzt fünf vor sechs."
+  },
+  "It is half past one.": {
+    "es": "Ahora es la una y media.",
+    "de": "Es ist jetzt halb zwei."
+  },
+  "It is one o'clock.": {
+    "es": "Ahora es la una.",
+    "de": "Es ist jetzt ein Uhr."
+  },
+  "It is quarter past four.": {
+    "es": "Ahora son las cuatro y cuarto.",
+    "de": "Es ist jetzt Viertel nach vier."
+  },
+  "It is two o'clock.": {
+    "es": "Ahora son las dos.",
+    "de": "Es ist jetzt zwei Uhr."
+  },
+  "It seems to me that the conclusion is broader than the data.": {
+    "es": "Me parece que la conclusión es más amplia que los datos.",
+    "de": "Mir scheint, dass die Schlussfolgerung breiter ist als die Daten."
+  },
+  "Last winter this used to happen every week.": {
+    "es": "El invierno pasado esto pasaba cada semana.",
+    "de": "Letzten Winter passierte das jede Woche."
+  },
+  "Let's meet at the café.": {
+    "es": "Quedamos en el café.",
+    "de": "Treffen wir uns im Café."
+  },
+  "Look at the board! (formal plural)": {
+    "es": "¡Miren la pizarra! (de ustedes)",
+    "de": "Schauen Sie an die Tafel! (Sie, Plural)"
+  },
+  "Look at the board.": {
+    "es": "Mire la pizarra.",
+    "de": "Schauen Sie an die Tafel."
+  },
+  "Lunch is in the canteen.": {
+    "es": "El almuerzo es en el comedor.",
+    "de": "Das Mittagessen ist in der Mensa."
+  },
+  "May I ask a question about the table?": {
+    "es": "¿Puedo hacer una pregunta sobre la tabla?",
+    "de": "Darf ich eine Frage zur Tabelle stellen?"
+  },
+  "My father works as a teacher.": {
+    "es": "Mi padre trabaja de profesor.",
+    "de": "Mein Vater arbeitet als Lehrer."
+  },
+  "My name is Anna.": {
+    "es": "Me llamo Anna.",
+    "de": "Ich heiße Anna."
+  },
+  "Nice to meet you!": {
+    "es": "¡Mucho gusto!",
+    "de": "Sehr erfreut!"
+  },
+  "No": {
+    "es": "No",
+    "de": "Nein"
+  },
+  "Nothing special happened at the practice yesterday.": {
+    "es": "Ayer en la práctica no pasó nada especial.",
+    "de": "Gestern im Praktikum ist nichts Besonderes passiert."
+  },
+  "Now it is three o'clock.": {
+    "es": "Ahora son las tres.",
+    "de": "Jetzt ist es drei Uhr."
+  },
+  "Now it's a break between classes.": {
+    "es": "Ahora es el descanso.",
+    "de": "Jetzt ist Pause."
+  },
+  "On the one hand, the internship is useful; on the other hand, it takes the whole weekend.": {
+    "es": "Por un lado, la práctica es útil; por otro, ocupa todo el fin de semana.",
+    "de": "Einerseits ist das Praktikum nützlich; andererseits nimmt es das ganze Wochenende ein."
+  },
+  "On the seminar we do an exercise.": {
+    "es": "En el seminario hacemos un ejercicio.",
+    "de": "Im Seminar machen wir eine Übung."
+  },
+  "On the way she dropped into the pharmacy.": {
+    "es": "De camino se pasó por la farmacia.",
+    "de": "Unterwegs ist sie kurz in die Apotheke gegangen."
+  },
+  "On what date is the exam?": {
+    "es": "¿En qué fecha es el examen?",
+    "de": "An welchem Datum ist die Prüfung?"
+  },
+  "Open page 5.": {
+    "es": "Abra la página 5.",
+    "de": "Öffnen Sie Seite 5."
+  },
+  "Open the textbook, please. (formal)": {
+    "es": "Abra el libro de texto, por favor. (de usted)",
+    "de": "Öffnen Sie bitte das Lehrbuch. (Sie)"
+  },
+  "Open the window, please.": {
+    "es": "Abra la ventana, por favor.",
+    "de": "Öffnen Sie bitte das Fenster."
+  },
+  "Please": {
+    "es": "Por favor",
+    "de": "Bitte"
+  },
+  "Please tell us what happened.": {
+    "es": "Cuéntenos, por favor, qué pasó.",
+    "de": "Erzählen Sie uns bitte, was passiert ist."
+  },
+  "Right now I am walking to the library.": {
+    "es": "Ahora mismo voy andando a la biblioteca.",
+    "de": "Gerade gehe ich zu Fuß zur Bibliothek."
+  },
+  "She became a doctor.": {
+    "es": "Ella se hizo médica.",
+    "de": "Sie wurde Ärztin."
+  },
+  "She buys a textbook.": {
+    "es": "Ella compra un libro de texto.",
+    "de": "Sie kauft ein Lehrbuch."
+  },
+  "She came to Yaroslavl to collect material for her term paper.": {
+    "es": "Vino a Yaroslavl para recoger material para su trabajo de curso.",
+    "de": "Sie kam nach Jaroslawl, um Material für ihre Kursarbeit zu sammeln."
+  },
+  "She finally told us what had happened.": {
+    "es": "Por fin nos contó lo que había pasado.",
+    "de": "Endlich erzählte sie uns, was passiert war."
+  },
+  "She has already written the letter.": {
+    "es": "Ella ya ha escrito la carta.",
+    "de": "Sie hat den Brief schon geschrieben."
+  },
+  "She has no key to the room.": {
+    "es": "Ella no tiene la llave de la habitación.",
+    "de": "Sie hat keinen Schlüssel zum Zimmer."
+  },
+  "She is a student.": {
+    "es": "Ella es estudiante.",
+    "de": "Sie ist Studentin."
+  },
+  "She is going to the dorm now.": {
+    "es": "Ahora va a la residencia.",
+    "de": "Jetzt geht sie zum Wohnheim."
+  },
+  "She left the consultation early. (on foot)": {
+    "es": "Salió temprano de la consulta. (a pie)",
+    "de": "Sie ist früh von der Konsultation weggegangen. (zu Fuß)"
+  },
+  "She likes these courses.": {
+    "es": "Le gustan estos cursos.",
+    "de": "Ihr gefallen diese Kurse."
+  },
+  "She opens her notebook.": {
+    "es": "Ella abre su cuaderno.",
+    "de": "Sie öffnet ihr Heft."
+  },
+  "She prepares coffee.": {
+    "es": "Ella prepara café.",
+    "de": "Sie macht Kaffee."
+  },
+  "She wants to become an engineer.": {
+    "es": "Ella quiere ser ingeniera.",
+    "de": "Sie möchte Ingenieurin werden."
+  },
+  "She was writing a letter and did not finish.": {
+    "es": "Escribía una carta y no la terminó.",
+    "de": "Sie schrieb einen Brief und hat ihn nicht beendet."
+  },
+  "She will arrive on Monday.": {
+    "es": "Ella llegará el lunes.",
+    "de": "Sie kommt am Montag an."
+  },
+  "She writes a letter.": {
+    "es": "Ella escribe una carta.",
+    "de": "Sie schreibt einen Brief."
+  },
+  "She writes an exercise.": {
+    "es": "Ella escribe un ejercicio.",
+    "de": "Sie schreibt eine Übung."
+  },
+  "She wrote the essay. (completed)": {
+    "es": "Ella escribió la redacción. (completado)",
+    "de": "Sie hat den Aufsatz geschrieben. (abgeschlossen)"
+  },
+  "Step away from the edge of the platform.": {
+    "es": "Aléjese del borde del andén.",
+    "de": "Treten Sie vom Rand des Bahnsteigs zurück."
+  },
+  "Students work in the library.": {
+    "es": "Los estudiantes trabajan en la biblioteca.",
+    "de": "Die Studenten arbeiten in der Bibliothek."
+  },
+  "Tell us about the university.": {
+    "es": "Cuéntenos sobre la universidad.",
+    "de": "Erzählen Sie uns von der Universität."
+  },
+  "Thank you": {
+    "es": "Gracias",
+    "de": "Danke"
+  },
+  "Thank you very much": {
+    "es": "Muchas gracias",
+    "de": "Vielen Dank"
+  },
+  "The bus did not reach the dorm.": {
+    "es": "El autobús no llegó hasta la residencia.",
+    "de": "Der Bus ist nicht bis zum Wohnheim gefahren."
+  },
+  "The class begins at two.": {
+    "es": "La clase empieza a las dos.",
+    "de": "Die Stunde beginnt um zwei."
+  },
+  "The class is at nine o'clock.": {
+    "es": "La clase es a las nueve.",
+    "de": "Der Unterricht ist um neun Uhr."
+  },
+  "The class starts at nine.": {
+    "es": "La clase empieza a las nueve.",
+    "de": "Der Unterricht beginnt um neun."
+  },
+  "The coordinator helps foreign students fill out the form.": {
+    "es": "El coordinador ayuda a los estudiantes extranjeros a rellenar el formulario.",
+    "de": "Der Koordinator hilft den ausländischen Studenten, das Formular auszufüllen."
+  },
+  "The dean's office is on the faculty building.": {
+    "es": "El decanato está en la facultad.",
+    "de": "Das Dekanat ist in der Fakultät."
+  },
+  "The dorm where we live is next to the park.": {
+    "es": "La residencia en la que vivimos está junto al parque.",
+    "de": "Das Wohnheim, in dem wir wohnen, liegt neben dem Park."
+  },
+  "The first class is at eight thirty.": {
+    "es": "La primera clase es a las ocho y media.",
+    "de": "Die erste Stunde ist um halb neun."
+  },
+  "The guests have already arrived and are standing by the board.": {
+    "es": "Los invitados ya han llegado y están de pie junto al panel informativo.",
+    "de": "Die Gäste sind schon angekommen und stehen an der Anzeigetafel."
+  },
+  "The guide did not come, and the museum was closed. As a result, the tour was cancelled.": {
+    "es": "El guía no vino, y el museo estaba cerrado. Por eso se canceló la excursión.",
+    "de": "Der Fremdenführer kam nicht, und das Museum war geschlossen. Deshalb wurde die Führung abgesagt."
+  },
+  "The journal that you took yesterday has to be returned by Friday.": {
+    "es": "Hay que devolver hasta el viernes la revista que tomaste ayer.",
+    "de": "Die Zeitschrift, die du gestern genommen hast, muss bis Freitag zurückgegeben werden."
+  },
+  "The key is in the room.": {
+    "es": "La llave está en la habitación.",
+    "de": "Der Schlüssel ist im Zimmer."
+  },
+  "The map was inaccurate, so in the end we had to change the route.": {
+    "es": "El mapa era impreciso, así que al final tuvimos que cambiar la ruta.",
+    "de": "Die Karte war ungenau, deshalb mussten wir am Ende die Route ändern."
+  },
+  "The residents argued about the kitchen renovation.": {
+    "es": "Los residentes discutieron sobre la reforma de la cocina.",
+    "de": "Die Bewohner stritten über die Renovierung der Küche."
+  },
+  "The seminar was long. In addition, the projector in the room did not work.": {
+    "es": "El seminario fue largo. Además, el proyector del aula no funcionaba.",
+    "de": "Das Seminar war lang. Außerdem funktionierte der Projektor im Hörsaal nicht."
+  },
+  "The student does homework.": {
+    "es": "El estudiante hace los deberes.",
+    "de": "Der Student macht die Hausaufgaben."
+  },
+  "The student sleeps little.": {
+    "es": "El estudiante duerme poco.",
+    "de": "Der Student schläft wenig."
+  },
+  "The student who handed in the draft yesterday is ill today.": {
+    "es": "El estudiante que ayer entregó el borrador está hoy enfermo.",
+    "de": "Der Student, der gestern den Entwurf abgegeben hat, ist heute krank."
+  },
+  "The students are in the library.": {
+    "es": "Los estudiantes están en la biblioteca.",
+    "de": "Die Studenten sind in der Bibliothek."
+  },
+  "The teacher explains the rule to the students.": {
+    "es": "El profesor explica la regla a los estudiantes.",
+    "de": "Der Dozent erklärt den Studenten die Regel."
+  },
+  "The teacher explains the rule.": {
+    "es": "El profesor explica la regla.",
+    "de": "Der Dozent erklärt die Regel."
+  },
+  "The teacher repeats the words.": {
+    "es": "El profesor repite las palabras.",
+    "de": "Der Dozent wiederholt die Wörter."
+  },
+  "The text is on the board.": {
+    "es": "El texto está en la pizarra.",
+    "de": "Der Text steht an der Tafel."
+  },
+  "The textbook is on the desk.": {
+    "es": "El libro de texto está en la mesa.",
+    "de": "Das Lehrbuch liegt auf dem Tisch."
+  },
+  "The timetable is on the internet.": {
+    "es": "El horario está en internet.",
+    "de": "Der Stundenplan ist im Internet."
+  },
+  "The university is in Moscow.": {
+    "es": "La universidad está en Moscú.",
+    "de": "Die Universität ist in Moskau."
+  },
+  "The window was in the room.": {
+    "es": "La ventana estaba en la habitación.",
+    "de": "Das Fenster war im Zimmer."
+  },
+  "Then I will go to the library.": {
+    "es": "Luego iré a la biblioteca.",
+    "de": "Danach gehe ich in die Bibliothek."
+  },
+  "There are few shops in the dorm.": {
+    "es": "Hay pocas tiendas en la residencia.",
+    "de": "Im Wohnheim gibt es wenige Geschäfte."
+  },
+  "There are few students in the classroom.": {
+    "es": "Hay pocos estudiantes en la clase.",
+    "de": "Im Klassenzimmer gibt es wenige Studenten."
+  },
+  "There are many parks in the city.": {
+    "es": "Hay muchos parques en la ciudad.",
+    "de": "In der Stadt gibt es viele Parks."
+  },
+  "There is little time before the exam.": {
+    "es": "Queda poco tiempo antes del examen.",
+    "de": "Vor der Prüfung bleibt wenig Zeit."
+  },
+  "There is no book.": {
+    "es": "No hay libro.",
+    "de": "Es gibt kein Buch."
+  },
+  "There is no bread at home.": {
+    "es": "En casa no hay pan.",
+    "de": "Zu Hause gibt es kein Brot."
+  },
+  "There is no pharmacy near the dorm.": {
+    "es": "Cerca de la residencia no hay farmacia.",
+    "de": "In der Nähe des Wohnheims gibt es keine Apotheke."
+  },
+  "There is no pharmacy nearby.": {
+    "es": "Cerca no hay farmacia.",
+    "de": "In der Nähe gibt es keine Apotheke."
+  },
+  "There is no therapist at the clinic this week.": {
+    "es": "Esta semana no hay médico de cabecera en la policlínica.",
+    "de": "Diese Woche gibt es keinen Allgemeinmediziner in der Poliklinik."
+  },
+  "There is no ticket.": {
+    "es": "No hay billete.",
+    "de": "Es gibt keine Fahrkarte."
+  },
+  "There will be a test soon.": {
+    "es": "Pronto habrá un test.",
+    "de": "Bald gibt es einen Test."
+  },
+  "They did not understand the question.": {
+    "es": "No entendieron la pregunta.",
+    "de": "Sie haben die Frage nicht verstanden."
+  },
+  "They like the city.": {
+    "es": "Les gusta la ciudad.",
+    "de": "Ihnen gefällt die Stadt."
+  },
+  "They listen to the lecture.": {
+    "es": "Ellos escuchan la clase magistral.",
+    "de": "Sie hören die Vorlesung."
+  },
+  "They often go to the university by metro.": {
+    "es": "A menudo van a la universidad en metro.",
+    "de": "Sie fahren oft mit der Metro zur Universität."
+  },
+  "They returned the draft twice. Finally I submitted it on Thursday.": {
+    "es": "Devolvieron el borrador dos veces. Por fin lo entregué el jueves.",
+    "de": "Den Entwurf gab man zweimal zurück. Schließlich habe ich ihn am Donnerstag abgegeben."
+  },
+  "They returned the form, so I am rewriting it today.": {
+    "es": "Me devolvieron el formulario, así que hoy lo reescribo.",
+    "de": "Das Formular wurde zurückgegeben, deshalb schreibe ich es heute neu."
+  },
+  "They see a friend.": {
+    "es": "Ellos ven a un amigo.",
+    "de": "Sie sehen einen Freund."
+  },
+  "They spent two hours solving the problems and still did not finish.": {
+    "es": "Estuvieron dos horas resolviendo los problemas y aun así no terminaron.",
+    "de": "Sie haben zwei Stunden lang die Aufgaben gelöst und sind trotzdem nicht fertig geworden."
+  },
+  "They wait for the bus.": {
+    "es": "Ellos esperan el autobús.",
+    "de": "Sie warten auf den Bus."
+  },
+  "They will work tomorrow.": {
+    "es": "Ellos trabajarán mañana.",
+    "de": "Sie werden morgen arbeiten."
+  },
+  "They work in the library.": {
+    "es": "Ellos trabajan en la biblioteca.",
+    "de": "Sie arbeiten in der Bibliothek."
+  },
+  "This is Anna's room.": {
+    "es": "Esta es la habitación de Anna.",
+    "de": "Das ist Annas Zimmer."
+  },
+  "This is Pavel's book.": {
+    "es": "Este es el libro de Pavel.",
+    "de": "Das ist Pavels Buch."
+  },
+  "This is my desk.": {
+    "es": "Esta es mi mesa.",
+    "de": "Das ist mein Tisch."
+  },
+  "This is my friend (female).": {
+    "es": "Esta es mi amiga (femenino).",
+    "de": "Das ist meine Freundin (weiblich)."
+  },
+  "This is my friend.": {
+    "es": "Este es mi amigo.",
+    "de": "Das ist mein Freund."
+  },
+  "This is the teacher.": {
+    "es": "Este es el profesor.",
+    "de": "Das ist der Dozent."
+  },
+  "Today I have a grammar class.": {
+    "es": "Hoy tengo clase de gramática.",
+    "de": "Heute habe ich eine Grammatikstunde."
+  },
+  "Today I have a test.": {
+    "es": "Hoy tengo un test.",
+    "de": "Heute habe ich einen Test."
+  },
+  "Tomorrow I will write the essay. (result)": {
+    "es": "Mañana escribiré la redacción. (resultado)",
+    "de": "Morgen schreibe ich den Aufsatz. (Ergebnis)"
+  },
+  "Tomorrow there is a lecture.": {
+    "es": "Mañana hay una clase magistral.",
+    "de": "Morgen gibt es eine Vorlesung."
+  },
+  "We are going by bus. (now)": {
+    "es": "Vamos en autobús. (ahora)",
+    "de": "Wir fahren mit dem Bus. (jetzt)"
+  },
+  "We are in classroom 12.": {
+    "es": "Estamos en el aula 12.",
+    "de": "Wir sind in Hörsaal 12."
+  },
+  "We are in classroom 305.": {
+    "es": "Estamos en el aula 305.",
+    "de": "Wir sind in Hörsaal 305."
+  },
+  "We are talking with the teacher.": {
+    "es": "Hablamos con el profesor.",
+    "de": "Wir sprechen mit dem Dozenten."
+  },
+  "We are ten minutes late.": {
+    "es": "Llegamos diez minutos tarde.",
+    "de": "Wir verspäten uns um zehn Minuten."
+  },
+  "We are waiting for the committee decision.": {
+    "es": "Esperamos la decisión de la comisión.",
+    "de": "Wir warten auf die Entscheidung der Kommission."
+  },
+  "We collected the questionnaires and after that we counted the answers.": {
+    "es": "Recogimos los cuestionarios y después contamos las respuestas.",
+    "de": "Wir haben die Fragebögen eingesammelt und danach die Antworten gezählt."
+  },
+  "We crossed the bridge on foot.": {
+    "es": "Cruzamos el puente a pie.",
+    "de": "Wir sind zu Fuß über die Brücke gegangen."
+  },
+  "We do homework.": {
+    "es": "Hacemos los deberes.",
+    "de": "Wir machen die Hausaufgaben."
+  },
+  "We do the exercise.": {
+    "es": "Hacemos el ejercicio.",
+    "de": "Wir machen die Übung."
+  },
+  "We listen to the lecturer.": {
+    "es": "Escuchamos al profesor.",
+    "de": "Wir hören dem Dozenten zu."
+  },
+  "We live in a dormitory.": {
+    "es": "Vivimos en una residencia.",
+    "de": "Wir wohnen in einem Wohnheim."
+  },
+  "We need a teacher we can ask a question after class.": {
+    "es": "Necesitamos un profesor al que se pueda hacer una pregunta después de la clase.",
+    "de": "Wir brauchen einen Dozenten, dem man nach der Stunde eine Frage stellen kann."
+  },
+  "We read the text to the end.": {
+    "es": "Leímos el texto hasta el final.",
+    "de": "Wir haben den Text bis zum Ende gelesen."
+  },
+  "We repeat the text.": {
+    "es": "Repetimos el texto.",
+    "de": "Wir wiederholen den Text."
+  },
+  "We repeat the word.": {
+    "es": "Repetimos la palabra.",
+    "de": "Wir wiederholen das Wort."
+  },
+  "We speak Russian.": {
+    "es": "Hablamos ruso.",
+    "de": "Wir sprechen Russisch."
+  },
+  "We study at the university.": {
+    "es": "Estudiamos en la universidad.",
+    "de": "Wir studieren an der Universität."
+  },
+  "We talk about the exam.": {
+    "es": "Hablamos del examen.",
+    "de": "Wir sprechen über die Prüfung."
+  },
+  "We walk in the park.": {
+    "es": "Paseamos por el parque.",
+    "de": "Wir gehen im Park spazieren."
+  },
+  "We were at the café.": {
+    "es": "Estuvimos en el café.",
+    "de": "Wir waren im Café."
+  },
+  "We will live in the dormitory.": {
+    "es": "Viviremos en la residencia.",
+    "de": "Wir werden im Wohnheim wohnen."
+  },
+  "What faculty are you in?": {
+    "es": "¿En qué facultad estudia?",
+    "de": "An welcher Fakultät studieren Sie?"
+  },
+  "What is this?": {
+    "es": "¿Qué es esto?",
+    "de": "Was ist das?"
+  },
+  "What is your name? (formal)": {
+    "es": "¿Cómo se llama? (de usted)",
+    "de": "Wie heißen Sie? (Sie)"
+  },
+  "What time is it?": {
+    "es": "¿Qué hora es?",
+    "de": "Wie spät ist es?"
+  },
+  "Where are you going? (informal, on foot, now)": {
+    "es": "¿Adónde vas? (de tú, a pie, ahora)",
+    "de": "Wohin gehst du? (du, zu Fuß, jetzt)"
+  },
+  "Where is my notebook?": {
+    "es": "¿Dónde está mi cuaderno?",
+    "de": "Wo ist mein Heft?"
+  },
+  "Where is the nearest shop?": {
+    "es": "¿Dónde está la tienda más cercana?",
+    "de": "Wo ist das nächste Geschäft?"
+  },
+  "Where is the timetable?": {
+    "es": "¿Dónde está el horario?",
+    "de": "Wo ist der Stundenplan?"
+  },
+  "While the lecturer was explaining the rule, I was taking notes.": {
+    "es": "Mientras el profesor explicaba la regla, yo tomaba apuntes.",
+    "de": "Während der Dozent die Regel erklärte, habe ich mitgeschrieben."
+  },
+  "Who is this?": {
+    "es": "¿Quién es este?",
+    "de": "Wer ist das?"
+  },
+  "Will you call later? (to a friend)": {
+    "es": "¿Llamarás más tarde? (a un amigo)",
+    "de": "Rufst du später an? (zu einem Freund)"
+  },
+  "Yes": {
+    "es": "Sí",
+    "de": "Ja"
+  },
+  "Yesterday I read the book for two hours. (process, male)": {
+    "es": "Ayer estuve leyendo el libro durante dos horas. (proceso, masculino)",
+    "de": "Gestern habe ich zwei Stunden lang in dem Buch gelesen. (Verlauf, männlich)"
+  },
+  "Yesterday he was reading a new text (process, not finished).": {
+    "es": "Ayer él leía un texto nuevo (proceso, no terminado).",
+    "de": "Gestern las er einen neuen Text (Verlauf, nicht abgeschlossen)."
+  },
+  "Yesterday she was at the university.": {
+    "es": "Ayer ella estaba en la universidad.",
+    "de": "Gestern war sie an der Universität."
+  },
+  "Yesterday the students handed in the work.": {
+    "es": "Ayer los estudiantes entregaron el trabajo.",
+    "de": "Gestern haben die Studenten die Arbeit abgegeben."
+  },
+  "You (formal) eat lunch.": {
+    "es": "Usted come el almuerzo. (de usted)",
+    "de": "Sie essen das Mittagessen. (Sie)"
+  },
+  "You (formal) understand the question.": {
+    "es": "Usted entiende la pregunta. (de usted)",
+    "de": "Sie verstehen die Frage. (Sie)"
+  },
+  "my assignment": {
+    "es": "mi tarea",
+    "de": "meine Aufgabe"
+  },
+  "my chair": {
+    "es": "mi silla",
+    "de": "mein Stuhl"
+  },
+  "my dictionary": {
+    "es": "mi diccionario",
+    "de": "mein Wörterbuch"
+  },
+  "my notebook": {
+    "es": "mi cuaderno",
+    "de": "mein Heft"
+  },
+  "my pen": {
+    "es": "mi bolígrafo",
+    "de": "mein Kugelschreiber"
+  },
+  "my textbook": {
+    "es": "mi libro de texto",
+    "de": "mein Lehrbuch"
+  },
+  "my window": {
+    "es": "mi ventana",
+    "de": "mein Fenster"
+  }
+}

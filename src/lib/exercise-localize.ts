@@ -650,10 +650,22 @@ function resolveTranslationPromptForUi(
     return null;
   }
 
-  // Russian course: UI language L1 when already matched above; else EN.
-  // Many A2–B1 TR stems are authored in English. tryLang("en") only hits
-  // maps / questionTranslations — also keep an already-English stem.
+  // Russian course: prefer UI-language L1 (ES/DE from russian-tr-l1-cache).
+  // Only keep an English stem when the UI is English (or as last-resort EN).
   if (courseId === "russian") {
+    if (interfaceLanguage === "en") {
+      if (
+        source === "en" &&
+        !isSpoiler(question) &&
+        !hasCyrillicText(question)
+      ) {
+        return question;
+      }
+      return tryLang("en");
+    }
+    // es / de: never silently leave an English prompt when a map exists
+    // (preferred already tried above). Last resort: English stem so the
+    // exercise stays usable until a translation is added.
     const enMapped = tryLang("en");
     if (enMapped) return enMapped;
     if (
