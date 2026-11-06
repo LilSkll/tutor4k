@@ -401,4 +401,284 @@ export const RUSSIAN_CHAPTER_LOCALE: Record<
       location: "Pskow",
     },
   },
+  "ru-ch23-participles": {
+    en: {
+      title: "Participles",
+      summary:
+        "Active and passive participles as modifiers, with the participial phrase.",
+      location: "Veliky Novgorod",
+    },
+    es: {
+      title: "Participios",
+      summary:
+        "Participios activos y pasivos como modificadores, con el giro participial.",
+      location: "Veliki Nóvgorod",
+    },
+    de: {
+      title: "Partizipien",
+      summary:
+        "Aktive und passive Partizipien als Attribute, mit dem Partizipialsatz.",
+      location: "Weliki Nowgorod",
+    },
+  },
+  "ru-ch24-gerunds": {
+    en: {
+      title: "Gerunds",
+      summary:
+        "Imperfective and perfective gerunds: simultaneous action, prior action, one subject.",
+      location: "Veliky Novgorod",
+    },
+    es: {
+      title: "Gerundios",
+      summary:
+        "Gerundios imperfectivos y perfectivos: simultaneidad, anterioridad y un solo sujeto.",
+      location: "Veliki Nóvgorod",
+    },
+    de: {
+      title: "Adverbialpartizipien",
+      summary:
+        "Imperfektive und perfektive Adverbialpartizipien: gleichzeitig, vorher, ein Subjekt.",
+      location: "Weliki Nowgorod",
+    },
+  },
+  "ru-ch25-passive": {
+    en: {
+      title: "Passive voice",
+      summary:
+        "Short participles for a result and imperfective -ся for a process.",
+      location: "Tver",
+    },
+    es: {
+      title: "Voz pasiva",
+      summary:
+        "Participios breves para el resultado y -ся imperfectivo para el proceso.",
+      location: "Tver",
+    },
+    de: {
+      title: "Passiv",
+      summary:
+        "Kurzpartizipien für das Ergebnis und imperfektives -ся für den Prozess.",
+      location: "Twer",
+    },
+  },
+  "ru-ch26-reported-speech": {
+    en: {
+      title: "Reported speech",
+      summary:
+        "Reports, questions, and requests: сказал, что; спросил, где / ли; попросил.",
+      location: "Tver",
+    },
+    es: {
+      title: "Estilo indirecto",
+      summary:
+        "Avisos, preguntas y peticiones: сказал, что; спросил, где / ли; попросил.",
+      location: "Tver",
+    },
+    de: {
+      title: "Indirekte Rede",
+      summary:
+        "Mitteilung, Frage und Bitte: сказал, что; спросил, где / ли; попросил.",
+      location: "Twer",
+    },
+  },
+  "ru-ch27-conditionals": {
+    en: {
+      title: "Conditionals",
+      summary:
+        "A real если, a counterfactual если бы, and purpose with чтобы.",
+      location: "Vladimir",
+    },
+    es: {
+      title: "Condicionales",
+      summary:
+        "Condición real con если, irreal con если бы y finalidad con чтобы.",
+      location: "Vladímir",
+    },
+    de: {
+      title: "Konditionalgefüge",
+      summary:
+        "Reales если, irreales если бы und Zweck mit чтобы.",
+      location: "Wladimir",
+    },
+  },
+  "ru-ch28-formal-register": {
+    en: {
+      title: "Formal register",
+      summary:
+        "An application and a short official note: formulas, passive, no chat particles.",
+      location: "Vladimir",
+    },
+    es: {
+      title: "Registro formal",
+      summary:
+        "Solicitud y nota oficial: fórmulas, pasiva y sin partículas de chat.",
+      location: "Vladímir",
+    },
+    de: {
+      title: "Amtlicher Stil",
+      summary:
+        "Antrag und kurze Dienstnotiz: Formeln, Passiv, ohne Gesprächspartikeln.",
+      location: "Wladimir",
+    },
+  },
+  "ru-ch29-aspect-nuance": {
+    en: {
+      title: "Aspect nuance",
+      summary:
+        "General experience, a cancelled result, attempt versus success, warning versus ban.",
+      location: "Moscow",
+    },
+    es: {
+      title: "Matices del aspecto",
+      summary:
+        "Experiencia general, resultado anulado, intento frente a éxito, aviso frente a prohibición.",
+      location: "Moscú",
+    },
+    de: {
+      title: "Aspektnuancen",
+      summary:
+        "Allgemeine Erfahrung, aufgehobenes Resultat, Versuch gegen Erfolg, Warnung gegen Verbot.",
+      location: "Moskau",
+    },
+  },
+  "ru-ch30-idioms": {
+    en: {
+      title: "Set phrases",
+      summary:
+        "Fixed academic and everyday phrases, with their government kept intact.",
+      location: "Moscow",
+    },
+    es: {
+      title: "Expresiones fijas",
+      summary:
+        "Giros académicos y cotidianos fijos, con su régimen intacto.",
+      location: "Moscú",
+    },
+    de: {
+      title: "Feste Wendungen",
+      summary:
+        "Feste akademische und alltägliche Wendungen, mit ihrer Rektion.",
+      location: "Moskau",
+    },
+  },
+  "ru-ch31-advanced-argumentation": {
+    en: {
+      title: "Extended argument",
+      summary:
+        "Thesis, concession, counterargument, and conclusion in an essay or talk.",
+      location: "Saint Petersburg",
+    },
+    es: {
+      title: "Argumentación extensa",
+      summary:
+        "Tesis, concesión, contraargumento y conclusión en un ensayo o una exposición.",
+      location: "San Petersburgo",
+    },
+    de: {
+      title: "Ausführliche Argumentation",
+      summary:
+        "These, Einräumung, Gegenargument und Schluss in Essay oder Vortrag.",
+      location: "Sankt Petersburg",
+    },
+  },
+  "ru-ch32-media-discourse": {
+    en: {
+      title: "Media language",
+      summary:
+        "Source, impersonal reporting, якобы, and the gap between headline and body.",
+      location: "Saint Petersburg",
+    },
+    es: {
+      title: "Lenguaje de los medios",
+      summary:
+        "Fuente, informe impersonal, якобы y la distancia entre titular y cuerpo.",
+      location: "San Petersburgo",
+    },
+    de: {
+      title: "Mediensprache",
+      summary:
+        "Quelle, unpersönlicher Bericht, якобы und der Abstand von Schlagzeile und Text.",
+      location: "Sankt Petersburg",
+    },
+  },
+  "ru-ch33-registers": {
+    en: {
+      title: "Stylistic registers",
+      summary:
+        "The same fact in colloquial, neutral, and official wording.",
+      location: "Kazan",
+    },
+    es: {
+      title: "Registros estilísticos",
+      summary:
+        "El mismo hecho en registro coloquial, neutro y oficial.",
+      location: "Kazán",
+    },
+    de: {
+      title: "Stilregister",
+      summary:
+        "Derselbe Sachverhalt umgangssprachlich, neutral und amtlich.",
+      location: "Kasan",
+    },
+  },
+  "ru-ch34-literary-culture": {
+    en: {
+      title: "Literary commentary",
+      summary:
+        "Background, comparison, and naming sentences in a short cultural fragment.",
+      location: "Kazan",
+    },
+    es: {
+      title: "Comentario literario",
+      summary:
+        "Fondo, comparación y frases nominales en un fragmento cultural breve.",
+      location: "Kazán",
+    },
+    de: {
+      title: "Literarischer Kommentar",
+      summary:
+        "Hintergrund, Vergleich und Nominativsätze in einem kurzen kulturellen Fragment.",
+      location: "Kasan",
+    },
+  },
+  "ru-ch35-professional-academic": {
+    en: {
+      title: "Professional speech",
+      summary:
+        "A short paper talk, a hedged conclusion, and polite disagreement.",
+      location: "Nizhny Novgorod",
+    },
+    es: {
+      title: "Habla profesional",
+      summary:
+        "Una exposición breve, una conclusión con límite y un desacuerdo cortés.",
+      location: "Nizhni Nóvgorod",
+    },
+    de: {
+      title: "Fachsprache",
+      summary:
+        "Ein kurzer Vortrag, ein begrenzter Schluss und höflicher Widerspruch.",
+      location: "Nischni Nowgorod",
+    },
+  },
+  "ru-ch36-pragmatic-mastery": {
+    en: {
+      title: "Pragmatic nuance",
+      summary:
+        "Particles and word order: what is contrasted, assumed, or new.",
+      location: "Moscow",
+    },
+    es: {
+      title: "Matiz pragmático",
+      summary:
+        "Partículas y orden: qué se contrasta, qué se da por sabido y qué es nuevo.",
+      location: "Moscú",
+    },
+    de: {
+      title: "Pragmatische Nuance",
+      summary:
+        "Partikeln und Wortstellung: Kontrast, gemeinsame Gründe und neuer Fokus.",
+      location: "Moskau",
+    },
+  },
 };

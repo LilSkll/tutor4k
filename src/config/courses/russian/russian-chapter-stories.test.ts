@@ -110,5 +110,26 @@ describe("RKI A1 chapter backstories", () => {
       }
     }
   });
+
+  it("continues Altair stories through B2–C2 (ch23–36)", async () => {
+    const course = await getCourse("russian");
+    const advanced = course
+      .getChapters()
+      .filter((c) => ["B2", "C1", "C2"].includes(c.level))
+      .map((c) => c.slug);
+    expect(advanced.length).toBe(14);
+    for (const slug of advanced) {
+      for (const lang of UI) {
+        const story = await getChapterStory(slug, lang);
+        expect(story?.trim().length, `${slug}@${lang}`).toBeGreaterThan(80);
+        expect(story, `${slug}@${lang}`).toMatch(/Альтаир|Altair/);
+      }
+      const ru = await getChapterStory(slug, "ru");
+      for (const lang of ["en", "es", "de"] as const) {
+        const story = await getChapterStory(slug, lang);
+        expect(story, `${slug}@${lang}`).not.toBe(ru);
+      }
+    }
+  });
 });
 

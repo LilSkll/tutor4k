@@ -1037,4 +1037,74 @@ export const GRAMMAR_TOPIC: Record<
     "es": { "title": "Argumentación y habla académica", "summary": "Opinión, evidencia y frases de debate en clase." },
     "de": { "title": "Argumentation und akademische Rede", "summary": "Meinung, Belege und Diskussionsphrasen." }
   },
+  "ru-b2-participles": {
+    "en": { "title": "Participles", "summary": "Active and passive participles and the participial phrase." },
+    "es": { "title": "Participios", "summary": "Participios activos y pasivos y el giro participial." },
+    "de": { "title": "Partizipien", "summary": "Aktive und passive Partizipien und der Partizipialsatz." }
+  },
+  "ru-b2-gerunds": {
+    "en": { "title": "Gerunds", "summary": "Imperfective and perfective gerunds with one subject." },
+    "es": { "title": "Gerundios", "summary": "Gerundios imperfectivos y perfectivos con un solo sujeto." },
+    "de": { "title": "Adverbialpartizipien", "summary": "Imperfektive und perfektive Adverbialpartizipien, ein Subjekt." }
+  },
+  "ru-b2-passive": {
+    "en": { "title": "Passive voice", "summary": "Short participles for a result and -ся for a process." },
+    "es": { "title": "Voz pasiva", "summary": "Participio breve para el resultado y -ся para el proceso." },
+    "de": { "title": "Passiv", "summary": "Kurzpartizip für das Ergebnis und -ся für den Prozess." }
+  },
+  "ru-b2-reported-speech": {
+    "en": { "title": "Reported speech", "summary": "Statements, questions with ли, and requests with чтобы." },
+    "es": { "title": "Estilo indirecto", "summary": "Avisos, preguntas con ли y peticiones con чтобы." },
+    "de": { "title": "Indirekte Rede", "summary": "Aussagen, Fragen mit ли und Bitten mit чтобы." }
+  },
+  "ru-b2-conditionals": {
+    "en": { "title": "Conditionals", "summary": "Real если, counterfactual если бы, and purpose чтобы." },
+    "es": { "title": "Condicionales", "summary": "если real, если бы irreal y чтобы de finalidad." },
+    "de": { "title": "Konditionalgefüge", "summary": "Reales если, irreales если бы und Zweck mit чтобы." }
+  },
+  "ru-b2-formal-register": {
+    "en": { "title": "Formal register", "summary": "Applications: Прошу, в связи с, passive, no chat particles." },
+    "es": { "title": "Registro formal", "summary": "Solicitudes: Прошу, в связи с, pasiva, sin partículas de chat." },
+    "de": { "title": "Amtlicher Stil", "summary": "Anträge: Прошу, в связи с, Passiv, ohne Gesprächspartikeln." }
+  },
+  "ru-c1-aspect-nuance": {
+    "en": { "title": "Aspect nuance", "summary": "Experience, completion, a limited attempt/success set, ban versus warning." },
+    "es": { "title": "Matices del aspecto", "summary": "Experiencia, término, intento/éxito en una lista corta, prohibición frente a aviso." },
+    "de": { "title": "Aspektnuancen", "summary": "Erfahrung, Abschluss, Versuch/Erfolg in einer kurzen Liste, Verbot gegen Warnung." }
+  },
+  "ru-c1-idioms": {
+    "en": { "title": "Set phrases", "summary": "Fixed phrases and their government, not synonym swaps." },
+    "es": { "title": "Expresiones fijas", "summary": "Giros fijos y su régimen, sin cambiar piezas por sinónimos." },
+    "de": { "title": "Feste Wendungen", "summary": "Feste Wendungen und ihre Rektion, ohne Synonymaustausch." }
+  },
+  "ru-c1-advanced-argumentation": {
+    "en": { "title": "Extended argument", "summary": "Thesis, concession, counterargument, and conclusion." },
+    "es": { "title": "Argumentación extensa", "summary": "Tesis, concesión, contraargumento y conclusión." },
+    "de": { "title": "Ausführliche Argumentation", "summary": "These, Einräumung, Gegenargument und Schluss." }
+  },
+  "ru-c1-media-discourse": {
+    "en": { "title": "Media language", "summary": "Source markers, якобы, and headline versus body." },
+    "es": { "title": "Lenguaje de los medios", "summary": "Marcas de fuente, якобы y titular frente al cuerpo." },
+    "de": { "title": "Mediensprache", "summary": "Quellenmarkierung, якобы und Schlagzeile gegen Fließtext." }
+  },
+  "ru-c2-registers": {
+    "en": { "title": "Stylistic registers", "summary": "One fact in colloquial, neutral, and official wording." },
+    "es": { "title": "Registros estilísticos", "summary": "Un mismo hecho en registro coloquial, neutro y oficial." },
+    "de": { "title": "Stilregister", "summary": "Ein Sachverhalt umgangssprachlich, neutral und amtlich." }
+  },
+  "ru-c2-literary": {
+    "en": { "title": "Literary commentary", "summary": "Quote a device and say what it does in this fragment." },
+    "es": { "title": "Comentario literario", "summary": "Citar un recurso y decir qué hace en este fragmento." },
+    "de": { "title": "Literarischer Kommentar", "summary": "Ein Mittel zitieren und sagen, was es in diesem Fragment tut." }
+  },
+  "ru-c2-professional": {
+    "en": { "title": "Professional speech", "summary": "Talk structure, hedged conclusions, and disagreement with a reason." },
+    "es": { "title": "Habla profesional", "summary": "Estructura de la exposición, conclusión con límite y desacuerdo con motivo." },
+    "de": { "title": "Fachsprache", "summary": "Vortragsgerüst, begrenzter Schluss und Widerspruch mit Grund." }
+  },
+  "ru-c2-pragmatics": {
+    "en": { "title": "Pragmatic nuance", "summary": "Particles же, ведь, -то, разве, неужели and end focus." },
+    "es": { "title": "Matiz pragmático", "summary": "Partículas же, ведь, -то, разве, неужели y el foco al final." },
+    "de": { "title": "Pragmatische Nuance", "summary": "Partikeln же, ведь, -то, разве, неужели und Fokus am Ende." }
+  },
 };

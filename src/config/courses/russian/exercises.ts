@@ -5,18 +5,24 @@ import { RUSSIAN_A1_CH1_3_EXERCISES } from "./exercises-a1-ch1-3";
 import { RUSSIAN_A1_CH4_8_EXERCISES } from "./exercises-a1-ch4-8";
 import { RUSSIAN_A2_EXERCISES } from "./exercises-a2";
 import { RUSSIAN_B1_EXERCISES } from "./exercises-b1";
+import { RUSSIAN_B2_EXERCISES } from "./exercises-b2";
+import { RUSSIAN_C1_EXERCISES } from "./exercises-c1";
+import { RUSSIAN_C2_EXERCISES } from "./exercises-c2";
 import { RUSSIAN_TR_L1 } from "./translation-l1";
 
 type Draft = Omit<StaticExercise, "id"> & { id?: string };
 
 /**
- * RKI exercise banks — A1 deep, A2/B1 quality banks (i18n-first curriculum).
+ * RKI exercise banks — A1–C2 (i18n-first curriculum).
  */
 export const RUSSIAN_EXERCISES: Record<string, Draft[]> = {
   ...RUSSIAN_A1_CH1_3_EXERCISES,
   ...RUSSIAN_A1_CH4_8_EXERCISES,
   ...RUSSIAN_A2_EXERCISES,
   ...RUSSIAN_B1_EXERCISES,
+  ...RUSSIAN_B2_EXERCISES,
+  ...RUSSIAN_C1_EXERCISES,
+  ...RUSSIAN_C2_EXERCISES,
 };
 
 /** Attach ES/DE L1 prompts onto English-authored translation stems. */

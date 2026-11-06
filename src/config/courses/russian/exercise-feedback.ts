@@ -109,6 +109,76 @@ export const RUSSIAN_TOPIC_FEEDBACK: Record<
     es: "Usa fórmulas del campus: по-моему, согласен/согласна, можно задать вопрос?, объясните ещё раз.",
     de: "Nutze Campusformeln: по-моему, согласен/согласна, можно задать вопрос?, объясните ещё раз.",
   },
+  "ru-b2-participles": {
+    en: "Active participles name the doer (читающий, прочитавший); passive ones name the object (прочитанный / прочитана).",
+    es: "El participio activo nombra a quien actúa (читающий, прочитавший); el pasivo, al objeto (прочитанный / прочитана).",
+    de: "Aktive Partizipien nennen den Täter (читающий, прочитавший); passive das Objekt (прочитанный / прочитана).",
+  },
+  "ru-b2-gerunds": {
+    en: "Imperfective gerund = while (читая); perfective = after (прочитав). The subject stays the same.",
+    es: "Gerundio imperfectivo = mientras (читая); perfectivo = después (прочитав). El sujeto es el mismo.",
+    de: "Imperfektives Adverbialpartizip = während (читая); perfektives = danach (прочитав). Dasselbe Subjekt.",
+  },
+  "ru-b2-passive": {
+    en: "A finished result uses the short participle (написана); a process uses imperfective -ся (пишется).",
+    es: "El resultado usa el participio breve (написана); el proceso, el imperfectivo en -ся (пишется).",
+    de: "Das Ergebnis steht im Kurzpartizip (написана); der Prozess im imperfektiven -ся (пишется).",
+  },
+  "ru-b2-reported-speech": {
+    en: "Statements take что; wh-questions keep the question word; yes/no questions use ли after the verb.",
+    es: "El aviso lleva что; la pregunta con palabra interrogativa la conserva; sí/no lleva ли tras el verbo.",
+    de: "Aussagen mit что; W-Fragen behalten das Fragewort; Ja/Nein-Fragen setzen ли nach dem Verb.",
+  },
+  "ru-b2-conditionals": {
+    en: "A real future uses если + future in both clauses; если бы takes the past form plus бы; чтобы is purpose.",
+    es: "El futuro real lleva если + futuro en ambas partes; если бы usa forma de pasado y бы; чтобы es la finalidad.",
+    de: "Reale Zukunft: если + Futur in beiden Teilen; если бы mit Vergangenheitsform und бы; чтобы ist der Zweck.",
+  },
+  "ru-b2-formal-register": {
+    en: "In an application use Прошу + infinitive, в связи с + instrumental, and no chat particles.",
+    es: "En la solicitud: Прошу + infinitivo, в связи с + instrumental, sin partículas de chat.",
+    de: "Im Antrag: Прошу + Infinitiv, в связи с + Instrumental, ohne Gesprächspartikeln.",
+  },
+  "ru-c1-aspect-nuance": {
+    en: "Ask which question aspect answers: experience (читал), completion (прочитал), or a ban (не открывайте).",
+    es: "Pregunta qué resuelve el aspecto: experiencia (читал), término (прочитал) o prohibición (не открывайте).",
+    de: "Frage, was der Aspekt klärt: Erfahrung (читал), Abschluss (прочитал) oder Verbot (не открывайте).",
+  },
+  "ru-c1-idioms": {
+    en: "Keep the fixed frame: иметь в виду + accusative; речь идёт о + prepositional; внимание на.",
+    es: "Conserva el marco: иметь в виду + acusativo; речь идёт о + preposicional; внимание на.",
+    de: "Rahmen behalten: иметь в виду + Akkusativ; речь идёт о + Präpositiv; внимание на.",
+  },
+  "ru-c1-advanced-argumentation": {
+    en: "Name the thesis, add хотя / несмотря на as a limit, and close with таким образом.",
+    es: "Enuncia la tesis, marca el límite con хотя / несмотря на y cierra con таким образом.",
+    de: "These nennen, die Grenze mit хотя / несмотря на markieren und mit таким образом schließen.",
+  },
+  "ru-c1-media-discourse": {
+    en: "Give the source (по данным, согласно + dative). Якобы means the claim is not confirmed.",
+    es: "Da la fuente (по данным, согласно + dativo). Якобы marca que el dato no está confirmado.",
+    de: "Quelle nennen (по данным, согласно + Dativ). Якобы heißt: die Angabe ist nicht bestätigt.",
+  },
+  "ru-c2-registers": {
+    en: "Keep one register for the whole sentence: щас and куча stay colloquial; в настоящее время stays official.",
+    es: "Un solo registro en toda la frase: щас y куча son coloquiales; в настоящее время es oficial.",
+    de: "Ein Register für den ganzen Satz: щас und куча bleiben umgangssprachlich; в настоящее время bleibt amtlich.",
+  },
+  "ru-c2-literary": {
+    en: "Comment with a quotation: imperfective background (горела), comparison (словно), or a naming sentence (Ночь.).",
+    es: "Comenta con cita: fondo imperfectivo (горела), comparación (словно) o frase nominal (Ночь.).",
+    de: "Mit Zitat kommentieren: imperfektiver Hintergrund (горела), Vergleich (словно) oder Nominativsatz (Ночь.).",
+  },
+  "ru-c2-professional": {
+    en: "Hedge a real limit (представляется, что; нельзя утверждать, что) and disagree with a reason.",
+    es: "Marca un límite real (представляется, что; нельзя утверждать, что) y discrepa con un motivo.",
+    de: "Eine echte Grenze markieren (представляется, что; нельзя утверждать, что) und mit Grund widersprechen.",
+  },
+  "ru-c2-pragmatics": {
+    en: "же contrasts, ведь gives a shared reason, -то picks the topic; new information tends to come last.",
+    es: "же contrasta, ведь da una razón compartida, -то señala el tema; lo nuevo suele ir al final.",
+    de: "же kontrastiert, ведь gibt einen gemeinsamen Grund, -то hebt das Thema; Neues steht eher am Ende.",
+  },
 };
 
 const FORMULA_LEAD: Record<Exclude<InterfaceLanguage, "ru">, string> = {

@@ -22,13 +22,19 @@ export type RussianErrorCategory =
 const SLUG_CATEGORY: Array<{ re: RegExp; category: RussianErrorCategory }> = [
   { re: /accusative|genitive|dative|instrumental|prepositional|cases|падеж/i, category: "case" },
   { re: /gender|noun-gender|род/i, category: "gender" },
-  { re: /aspect|вид/i, category: "aspect" },
-  { re: /motion|глагол.*движен|приставочн/i, category: "verb_government" },
-  { re: /present|past|future|tense|время|спряжен/i, category: "ending" },
+  { re: /aspect|вид|participle|причасти|gerund|деепричасти/i, category: "aspect" },
+  { re: /motion|глагол.*движен|приставочн|passive|пассив|reported|косвенн/i, category: "verb_government" },
+  { re: /present|past|future|tense|время|спряжен|conditional|условн/i, category: "ending" },
   { re: /pronoun|местоимен|мой|моя|моё/i, category: "pronoun" },
   { re: /preposition|предлог/i, category: "preposition" },
-  { re: /complex|sentence|связн|аргумент|connector/i, category: "sentence_structure" },
-  { re: /alphabet|phonetic|привет|greeting|identity|знаком/i, category: "lexical" },
+  {
+    re: /complex|sentence|связн|аргумент|connector|register|регистр|discourse|дискурс|pragmatic|прагматик|formal|формальн|academic|академич|media|медиа|literary|литератур/i,
+    category: "sentence_structure",
+  },
+  {
+    re: /alphabet|phonetic|привет|greeting|identity|знаком|idiom|идиом|lexical|лексик/i,
+    category: "lexical",
+  },
 ];
 
 /** Infer a coarse category from bank grammar/vocab topic slugs. */

@@ -1,7 +1,7 @@
 import type { InterfaceLanguage } from "@/types";
 
 /**
- * EN / ES / DE pedagogical notes for Russian A1–B1 grammar.
+ * EN / ES / DE pedagogical notes for Russian A1–C2 grammar.
  * Cyrillic stays in the examples. Each interface language is a full
  * explanation, with a comparison to that language only.
  */
@@ -7096,5 +7096,1424 @@ Ein Mann sagt an derselben Stelle **Я не понял это правило**.
 3. Bitten Sie einen Dozenten, die Regel noch einmal zu erklären.
 
 **Antworten:** 1) **Я согласна с вами.** 2) **По-моему, это важно.** 3) **Объясните, пожалуйста, ещё раз.**`,
+  },
+
+  "ru-b2-participles": {
+    en: `## Active and passive participles
+
+A participle names a quality by an action. It takes aspect and tense from the verb, and gender, number, and case from the noun it modifies.
+
+### The rule
+
+Active participles describe the one who performs the action.
+
+| Tense | Aspect | Build it | Example |
+|---|---|---|---|
+| Present | imperfective only | 1st conjugation **-ущ-/-ющ-**, 2nd **-ащ-/-ящ-** | читать → **читающий**; говорить → **говорящий** |
+| Past | either aspect | **-вш-** after a vowel, **-ш-** after a consonant | **читавший**, **написавший**, прийти → **пришедший** |
+
+Passive participles describe the thing the action is done to. The verb must be transitive. **Идти** has none.
+
+| Tense | Aspect | Suffix | Example |
+|---|---|---|---|
+| Present | imperfective, bookish, not every verb | **-ем-/-ом-** or **-им-** | **читаемый**, **обсуждаемый** |
+| Past | usually perfective | **-нн-**, **-енн-/-ённ-**, or **-т-** | **прочитанный**, **решённый**, **открытый** |
+
+The long form modifies a noun: **прочитанная статья**, **открытое окно**. The short form is a predicate and does not decline: **Статья прочитана. Окно открыто. Письма отправлены.** A short form in **-н-** has one **н**: **прочитанный** → **прочитан**.
+
+Do not invent a present passive for a verb that has no usual form. **Любимый** in ordinary speech is the adjective “favorite / beloved”.
+
+### Commas
+The phrase after the noun takes commas: **Студент, читающий статью, сидит у окна.** The same phrase before the noun does not: **Читающий статью студент сидит у окна.** A phrase on a personal pronoun is always set off: **Уставший после дороги, он сел.**
+
+### Examples
+- **Студентка, прочитавшая статью, закрыла тетрадь.** — The student who had read the article closed the notebook.
+- **Я говорю о студенте, прочитавшем статью.** — I am talking about the student who read the article.
+
+### Typical mistakes
+Swapping **прочитавший** (who read) and **прочитанный** (which was read). A comma in front of a noun when the phrase is not attached to a pronoun. A homemade present passive of **писать**.
+
+### If your language is English
+English *the student reading* and *the student who read* often become one *-ing* or a clause. Russian agrees the participle: **читающий студент**, **читающая студентка**. English *read* covers both doer and object. Russian splits them: **прочитавший** and **прочитанный**.
+
+> Active = the doer. Passive = the object. Short **прочитана** is a predicate, not a case ending.`,
+    es: `## Participios activos y pasivos
+
+El participio ruso nombra una cualidad por una acción. Toma aspecto y tiempo del verbo, y género, número y caso del sustantivo al que modifica.
+
+### La regla
+
+El participio activo describe a quien realiza la acción.
+
+| Tiempo | Aspecto | Formación | Ejemplo |
+|---|---|---|---|
+| Presente | solo imperfectivo | I conjugación **-ущ-/-ющ-**, II **-ащ-/-ящ-** | читать → **читающий**; говорить → **говорящий** |
+| Pasado | cualquiera | **-вш-** tras vocal, **-ш-** tras consonante | **читавший**, **написавший**, прийти → **пришедший** |
+
+El participio pasivo describe la cosa sobre la que recae la acción. El verbo tiene que ser transitivo. **Идти** no lo tiene.
+
+| Tiempo | Aspecto | Sufijo | Ejemplo |
+|---|---|---|---|
+| Presente | imperfectivo, libresco, no todos los verbos | **-ем-/-ом-** o **-им-** | **читаемый**, **обсуждаемый** |
+| Pasado | en general perfectivo | **-нн-**, **-енн-/-ённ-** o **-т-** | **прочитанный**, **решённый**, **открытый** |
+
+La forma larga modifica al sustantivo: **прочитанная статья**, **открытое окно**. La forma breve es predicado y no se declina: **Статья прочитана. Окно открыто. Письма отправлены.** La breve en **-н-** lleva una sola **н**: **прочитанный** → **прочитан**.
+
+No fabrique un pasivo de presente si el verbo no lo usa. **Любимый** en el habla ordinaria es el adjetivo «preferido / querido».
+
+### Comas
+El giro detrás del sustantivo lleva comas: **Студент, читающий статью, сидит у окна.** Delante del sustantivo, no: **Читающий статью студент сидит у окна.** Con un pronombre personal, siempre: **Уставший после дороги, он сел.**
+
+### Ejemplos
+- **Студентка, прочитавшая статью, закрыла тетрадь.** — La estudiante que había leído el artículo cerró el cuaderno.
+- **Я говорю о студенте, прочитавшем статью.** — Hablo del estudiante que leyó el artículo.
+
+### Errores frecuentes
+Cambiar **прочитавший** (quien leyó) por **прочитанный** (lo que fue leído). Poner coma delante del sustantivo cuando el giro no va con un pronombre. Inventar un pasivo de presente de **писать**.
+
+### Si su lengua es el español
+El participio español (*leído, abierto*) se parece solo a la forma pasiva. El activo ruso (**читающий**, **прочитавший**) equivale más a *que lee* o *que ha leído*, y además concuerda: **читающая студентка**. *Leído* no distingue solo «quien leyó» de «lo leído»; el ruso sí: **прочитавший** / **прочитанный**.
+
+> Activo = quien actúa. Pasivo = el objeto. **Прочитана** es predicado, no un caso.`,
+    de: `## Aktive und passive Partizipien
+
+Ein russisches Partizip nennt eine Eigenschaft nach einer Handlung. Aspekt und Tempus kommen vom Verb, Genus, Numerus und Kasus vom Substantiv.
+
+### Die Regel
+
+Aktive Partizipien beschreiben den, der die Handlung ausführt.
+
+| Tempus | Aspekt | Bildung | Beispiel |
+|---|---|---|---|
+| Präsens | nur imperfektiv | 1. Konjugation **-ущ-/-ющ-**, 2. **-ащ-/-ящ-** | читать → **читающий**; говорить → **говорящий** |
+| Vergangenheit | beide Aspekte | **-вш-** nach Vokal, **-ш-** nach Konsonant | **читавший**, **написавший**, прийти → **пришедший** |
+
+Passive Partizipien beschreiben das, woran die Handlung geschieht. Das Verb muss transitiv sein. **Идти** hat keines.
+
+| Tempus | Aspekt | Suffix | Beispiel |
+|---|---|---|---|
+| Präsens | imperfektiv, buchsprachlich, nicht jedes Verb | **-ем-/-ом-** oder **-им-** | **читаемый**, **обсуждаемый** |
+| Vergangenheit | meist perfektiv | **-нн-**, **-енн-/-ённ-** oder **-т-** | **прочитанный**, **решённый**, **открытый** |
+
+Die Langform steht beim Substantiv: **прочитанная статья**, **открытое окно**. Die Kurzform ist Prädikat und wird nicht dekliniert: **Статья прочитана. Окно открыто. Письма отправлены.** Die Kurzform auf **-н-** hat ein **н**: **прочитанный** → **прочитан**.
+
+Bilden Sie kein Präsenspassiv, wenn das Verb keins üblich hat. **Любимый** ist in der Alltagssprache das Adjektiv «Lieblings- / geliebt».
+
+### Kommas
+Der Ausdruck nach dem Substantiv hat Kommas: **Студент, читающий статью, сидит у окна.** Davor nicht: **Читающий статью студент сидит у окна.** Bei einem Personalpronomen immer: **Уставший после дороги, он сел.**
+
+### Beispiele
+- **Студентка, прочитавшая статью, закрыла тетрадь.** — Die Studentin, die den Artikel gelesen hatte, klappte das Heft zu.
+- **Я говорю о студенте, прочитавшем статью.** — Ich spreche über den Studenten, der den Artikel gelesen hat.
+
+### Typische Fehler
+**Прочитавший** (wer gelesen hat) und **прочитанный** (was gelesen wurde) vertauschen. Ein Komma vor dem Substantiv, obwohl kein Pronomen das Partizip trägt. Ein erfundenes Präsenspassiv von **писать**.
+
+### Wenn Ihre Sprache Deutsch ist
+Deutsch *der lesende Student* liegt nah am aktiven Präsens, aber das Russische flektiert mit: **читающий студент**, **читающая студентка**. *Gelesen* deckt im Deutschen nicht sauber «wer gelesen hat» und «was gelesen wurde». Russisch trennt **прочитавший** und **прочитанный**. Die Kurzform **прочитана** ist das Prädikat, ähnlich *ist gelesen*, und hat keinen Kasus.
+
+> Aktiv = der Täter. Passiv = das Objekt. **Прочитана** wird nicht dekliniert.`,
+  },
+
+  "ru-b2-gerunds": {
+    en: `## Imperfective and perfective gerunds
+
+A gerund names a second action and belongs to the predicate. It does not change for gender or case. A participle modifies a noun and agrees with it. A gerund does not.
+
+### The rule
+
+The imperfective gerund means “while”. The usual suffix is **-а/-я**.
+
+- читать → **читая**
+- говорить → **говоря**
+- готовиться → **готовясь**
+- давать → **давая**
+
+**Читая статью, Анна выписывает слова.** Both actions run together.
+
+Some verbs have no neutral imperfective gerund. Among them are **писать, пить, ехать, бежать**. Use a **когда** clause: **Когда Анна писала конспект, она слушала лекцию.** Do not revive a rare bookish form such as **пиша**.
+
+The perfective gerund means “after”. After a vowel the usual suffix is **-в**: **сделав**, **прочитав**. Reflexive verbs take **-вшись**: **одевшись**. Verbs in **-йти** take **-я**: прийти → **придя**, выйти → **выйдя**, найти → **найдя**. For **принести** the working form is **принеся**.
+
+**Прочитав статью, Анна закрыла тетрадь.** Reading is finished, then the next action happens. Forms in **-вши** (**сделавши**) are colloquial. In a neutral text use **-в**.
+
+### One subject
+The gerund and the main verb share one doer.
+
+- Right: **Подходя к общежитию, я встретил соседа.**
+- Wrong: **Подходя к общежитию, мне позвонили.** Other people call; “I” am the one approaching.
+- Wrong: **Читая статью, у Анны болела голова.**
+- Right: **Когда Анна читала статью, у неё болела голова.**
+
+An infinitive can share that doer: **Нужно читать текст, выписывая новые слова.**
+
+### Commas
+A gerund phrase is set off by commas. Single **молча, сидя, лёжа, стоя** often work as adverbs and take no comma: **Он читал молча.** With dependents, the comma returns: **Он читал, молча глядя в окно.**
+
+### If your language is English
+English *while reading* is close to **читая**, and *having read* is close to **прочитав**. English still allows a dangling participle more freely in casual prose. Russian normative use does not: the subject of **читая** must be the subject of the main verb, not **мне** or **у Анны**.
+
+> Imperfective = during (**читая**). Perfective = after (**прочитав**). One subject for both actions.`,
+    es: `## Gerundios imperfectivos y perfectivos
+
+El деепричастие nombra una acción secundaria y depende del predicado. No cambia de género ni de caso. El participio modifica un sustantivo y concuerda con él. No son el mismo recurso, aunque ambos vengan de un verbo.
+
+### La regla
+
+El imperfectivo significa «mientras». El sufijo habitual es **-а/-я**.
+
+- читать → **читая**
+- говорить → **говоря**
+- готовиться → **готовясь**
+- давать → **давая**
+
+**Читая статью, Анна выписывает слова.** Las dos acciones van juntas.
+
+Varios verbos no tienen un gerundio imperfectivo neutro. Entre ellos están **писать, пить, ехать, бежать**. Use una oración con **когда**: **Когда Анна писала конспект, она слушала лекцию.** No recupere una forma libresca rara como **пиша**.
+
+El perfectivo significa «después de». Tras vocal, el sufijo habitual es **-в**: **сделав**, **прочитав**. Los reflexivos llevan **-вшись**: **одевшись**. Los verbos en **-йти** llevan **-я**: прийти → **придя**, выйти → **выйдя**. De **принести** la forma de trabajo es **принеся**.
+
+**Прочитав статью, Анна закрыла тетрадь.** Primero termina la lectura. Las formas en **-вши** (**сделавши**) son coloquiales. En un texto neutro use **-в**.
+
+### Un solo sujeto
+El gerundio y el verbo principal tienen el mismo agente.
+
+- Bien: **Подходя к общежитию, я встретил соседа.**
+- Mal: **Подходя к общежитию, мне позвонили.** Llaman otros; quien se acerca soy yo.
+- Mal: **Читая статью, у Анны болела голова.**
+- Bien: **Когда Анна читала статью, у неё болела голова.**
+
+Con infinitivo el agente también es común: **Нужно читать текст, выписывая новые слова.**
+
+### Comas
+El giro va entre comas. **Молча, сидя, лёжа, стоя** solos funcionan a menudo como adverbios: **Он читал молча.** Con dependientes vuelve la coma: **Он читал, молча глядя в окно.**
+
+### Si su lengua es el español
+El gerundio español (*leyendo*) se parece al imperfectivo **читая**, no al perfectivo **прочитав**. *Habiendo leído* es la comparación útil para el perfectivo, no el gerundio simple. Además el ruso exige el mismo sujeto: no vale *Leyendo el artículo, le dolía la cabeza a Ana* como calco de **Читая статью, у Анны болела голова.**
+
+> Imperfectivo = mientras (**читая**). Perfectivo = después (**прочитав**). Un solo sujeto.`,
+    de: `## Imperfektive und perfektive Adverbialpartizipien
+
+Ein деепричастие nennt eine Nebenhandlung und hängt am Prädikat. Es hat kein Genus und keinen Kasus. Ein Partizip bestimmt ein Substantiv und richtet sich nach ihm. Das sind zwei verschiedene Formen.
+
+### Die Regel
+
+Das imperfektive Adverbialpartizip heißt «während». Das übliche Suffix ist **-а/-я**.
+
+- читать → **читая**
+- говорить → **говоря**
+- готовиться → **готовясь**
+- давать → **давая**
+
+**Читая статью, Анна выписывает слова.** Beide Handlungen laufen zusammen.
+
+Manche Verben haben kein neutrales imperfektives Adverbialpartizip. Dazu gehören **писать, пить, ехать, бежать**. Nehmen Sie einen **когда**-Satz: **Когда Анна писала конспект, она слушала лекцию.** Holen Sie keine seltene Buchform wie **пиша** zurück.
+
+Das perfektive heißt «nachdem». Nach einem Vokal steht meist **-в**: **сделав**, **прочитав**. Reflexive Verben nehmen **-вшись**: **одевшись**. Verben auf **-йти** nehmen **-я**: прийти → **придя**, выйти → **выйдя**. Bei **принести** ist die brauchbare Form **принеся**.
+
+**Прочитав статью, Анна закрыла тетрадь.** Das Lesen ist vorbei, dann kommt die nächste Handlung. Formen auf **-вши** (**сделавши**) sind umgangssprachlich. Im neutralen Text steht **-в**.
+
+### Ein Subjekt
+Adverbialpartizip und finites Verb haben denselben Täter.
+
+- Richtig: **Подходя к общежитию, я встретил соседа.**
+- Falsch: **Подходя к общежитию, мне позвонили.** Andere rufen an; ich bin der, der näher kommt.
+- Falsch: **Читая статью, у Анны болела голова.**
+- Richtig: **Когда Анна читала статью, у неё болела голова.**
+
+Ein Infinitiv kann denselben Täter teilen: **Нужно читать текст, выписывая новые слова.**
+
+### Kommas
+Der Ausdruck steht in Kommas. Einzelnes **молча, сидя, лёжа, стоя** wirkt oft als Adverb: **Он читал молча.** Mit Ergänzungen kommt das Komma zurück: **Он читал, молча глядя в окно.**
+
+### Wenn Ihre Sprache Deutsch ist
+*Beim Lesen* und *lesend* liegen nah an **читая**. *Nachdem sie gelesen hatte* liegt nah an **прочитав**. Deutsch erlaubt ein Partizip leichter mit einem anderen logischen Subjekt. Die russische Norm nicht: das Subjekt von **читая** ist das Subjekt des Hauptsatzes, nicht **мне** und nicht **у Анны**.
+
+> Imperfektiv = während (**читая**). Perfektiv = danach (**прочитав**). Ein Subjekt für beide Handlungen.`,
+  },
+
+  "ru-b2-passive": {
+    en: `## Passive voice
+
+In the passive, the thing acted on is the nominative subject. The doer, if you name one, is instrumental: **Статья написана студенткой.**
+
+### A result: the short participle
+The usual model is the past passive participle of a perfective verb. The present has no auxiliary. The past adds **был / была / было / были**. The future adds **будет / будут**.
+
+| Time | Example |
+|---|---|
+| Result now | **Статья написана. Окно открыто. Задачи решены.** |
+| Past | **Статья была написана в марте.** |
+| Future | **Заявление будет рассмотрено в пятницу.** |
+
+The short form agrees with the subject: **построен, построена, построено, построены**. It does not decline. The long form stays a modifier: **написанная статья**, but **Статья написана.**
+
+### A process: imperfective -ся
+Use this for an action in progress, not for a finished result.
+
+- **Дом строится.**
+- **Заявление рассматривается.**
+- **Документы проверялись комиссией.**
+- **Тексты будут проверяться завтра.**
+
+The subject is the object of the action, usually third person. **Дом строится рабочими** is passive. **Я учусь** is not: there is no object sitting in the subject slot.
+
+### Not every -ся is passive
+**Учиться, заниматься, нравиться, улыбаться, находиться** are not passive. Test: can the object be the subject and the doer instrumental? **Дом строится бригадой** — yes. **Мне нравится лекция** — no.
+
+**Окно открыто** is a state, passive. **Окно открылось** means the window changed state; an instrumental doer does not normally sit there. It is not the same pattern as **Окно открыто техником.**
+
+### If your language is English
+English uses *be* + participle for both a state and a process: *the article is written*, *the house is being built*. Russian splits them. A result is the short participle (**написана**). A process is imperfective **-ся** (**пишется**, **строится**). Do not add **есть** or **является** to the short form.
+
+> Result = short perfective participle. Process = imperfective **-ся**. The instrumental doer can be left out.`,
+    es: `## Voz pasiva
+
+En la pasiva, la cosa sobre la que se actúa es el sujeto en nominativo. El agente, si se nombra, va en instrumental: **Статья написана студенткой.**
+
+### Resultado: participio breve
+El modelo habitual es el participio pasivo de pasado de un verbo perfectivo. El presente no lleva auxiliar. El pasado añade **был / была / было / были**. El futuro añade **будет / будут**.
+
+| Tiempo | Ejemplo |
+|---|---|
+| Resultado ahora | **Статья написана. Окно открыто. Задачи решены.** |
+| Pasado | **Статья была написана в марте.** |
+| Futuro | **Заявление будет рассмотрено в пятницу.** |
+
+La forma breve concuerda con el sujeto: **построен, построена, построено, построены**. No se declina. La forma larga sigue siendo modificador: **написанная статья**, pero **Статья написана.**
+
+### Proceso: imperfectivo en -ся
+Sirve para una acción en curso, no para un resultado cerrado.
+
+- **Дом строится.**
+- **Заявление рассматривается.**
+- **Документы проверялись комиссией.**
+- **Тексты будут проверяться завтра.**
+
+El sujeto es el objeto de la acción, en general en tercera persona. **Дом строится рабочими** es pasiva. **Я учусь** no lo es: no hay un objeto en el puesto de sujeto.
+
+### No todo -ся es pasiva
+**Учиться, заниматься, нравиться, улыбаться, находиться** no son pasiva. Prueba: ¿puede el objeto ser sujeto y el agente ir en instrumental? **Дом строится бригадой** — sí. **Мне нравится лекция** — no.
+
+**Окно открыто** es un estado, pasiva. **Окно открылось** significa que la ventana cambió de estado; el agente en instrumental no cabe ahí con naturalidad. No es el mismo esquema que **Окно открыто техником.**
+
+### Si su lengua es el español
+*Ser* + participio (*la solicitud fue examinada*) se acerca al resultado ruso, pero el ruso no usa *ser*: **Заявление рассмотрено** o **было рассмотрено**. *Se está construyendo* se acerca al proceso **строится**. No traduzca toda pasiva refleja española con **-ся**: *me gusta* es **мне нравится**, no una pasiva.
+
+> Resultado = participio breve perfectivo. Proceso = imperfectivo en **-ся**. El agente en instrumental se puede omitir.`,
+    de: `## Passiv
+
+Im Passiv ist das, woran gehandelt wird, das Subjekt im Nominativ. Der Täter steht, wenn man ihn nennt, im Instrumental: **Статья написана студенткой.**
+
+### Ergebnis: das Kurzpartizip
+Das übliche Modell ist das passive Vergangenheits-Partizip eines perfektiven Verbs. Die Gegenwart hat kein Hilfsverb. Die Vergangenheit setzt **был / была / было / были** dazu. Die Zukunft setzt **будет / будут** dazu.
+
+| Zeit | Beispiel |
+|---|---|
+| Ergebnis jetzt | **Статья написана. Окно открыто. Задачи решены.** |
+| Vergangenheit | **Статья была написана в марте.** |
+| Zukunft | **Заявление будет рассмотрено в пятницу.** |
+
+Die Kurzform richtet sich nach dem Subjekt: **построен, построена, построено, построены**. Sie wird nicht dekliniert. Die Langform bleibt Attribut: **написанная статья**, aber **Статья написана.**
+
+### Prozess: imperfektives -ся
+Das gilt für eine Handlung im Gang, nicht für ein fertiges Ergebnis.
+
+- **Дом строится.**
+- **Заявление рассматривается.**
+- **Документы проверялись комиссией.**
+- **Тексты будут проверяться завтра.**
+
+Das Subjekt ist das Objekt der Handlung, meist in der 3. Person. **Дом строится рабочими** ist Passiv. **Я учусь** ist keins: kein Objekt steht als Subjekt.
+
+### Nicht jedes -ся ist Passiv
+**Учиться, заниматься, нравиться, улыбаться, находиться** sind kein Passiv. Probe: Kann das Objekt Subjekt sein und der Täter im Instrumental stehen? **Дом строится бригадой** — ja. **Мне нравится лекция** — nein.
+
+**Окно открыто** ist ein Zustand, Passiv. **Окно открылось** heißt, dass das Fenster den Zustand gewechselt hat; ein Täter im Instrumental steht dort normalerweise nicht. Das ist nicht dasselbe Muster wie **Окно открыто техником.**
+
+### Wenn Ihre Sprache Deutsch ist
+*Der Artikel ist geschrieben* und *das Haus wird gebaut* benutzen beide *werden/sein* + Partizip. Russisch teilt sie. Ein Ergebnis ist das Kurzpartizip (**написана**), ohne **есть**. Ein Prozess ist imperfektives **-ся** (**пишется**, **строится**). Der deutsche *von*-Täter ist russisch Instrumental: **студенткой**, nicht **от студентки**.
+
+> Ergebnis = kurzes perfektives Partizip. Prozess = imperfektives **-ся**. Der Täter im Instrumental kann fehlen.`,
+  },
+
+  "ru-b2-reported-speech": {
+    en: `## Reported speech
+
+Someone else’s words become a subordinate clause, without a colon or quotation marks. Russian has no obligatory backshift of tense. The tense shows the real situation, or the tense of the original words. It does not follow an English “one step back” table.
+
+### Statements
+- Мария сказала: «Я читаю статью». → Мария сказала, что **читает** статью.
+- Мария сказала: «Я прочитала статью». → Мария сказала, что **прочитала** статью.
+- Мария сказала: «Я прочитаю статью». → Мария сказала, что **прочитает** статью.
+
+Pronouns change with the new point of view: **я → он / она**, **мой → его / её**.
+**Анна сказала: «Я сдала тест».** → **Анна сказала, что сдала тест.**
+
+If the state is already over, a past form is possible for that meaning, not as an automatic replacement of the present: **Она сказала, что была студенткой.**
+
+### Questions
+A question with a question word keeps that word, adds no **ли**, uses statement order, and has no question mark.
+
+- «Где деканат?» → Он спросил, **где** деканат.
+- «Когда начнётся лекция?» → Она спросила, **когда** начнётся лекция.
+
+A yes/no question uses **ли** after the word being asked about, usually the predicate.
+
+- Анна спросила Марка: «Ты прочитал статью?» → Анна спросила, **прочитал ли** он статью.
+- «Вы были на лекции?» → Преподаватель спросил, **был ли** я на лекции.
+
+Not **спросил, ли он прочитал**, and not **спросил, где ли деканат**.
+
+### Requests
+Use the infinitive when the doer is clear: **Декан попросил сдать заявление в пятницу.**
+Use **чтобы** plus the **-л** form when the doer is named: **Декан попросил, чтобы мы сдали заявление в пятницу.**
+The imperative does not stay in the clause: not **попросил, откройте**.
+
+### If your language is English
+*He said he was reading* often shifts *am* to *was*. Russian can keep **читает** if that is what she said and the situation still fits. Build yes/no questions with **ли** after the verb, not with *if/whether* word order copied as **если**. **Если** is a condition, not a reported yes/no question.
+
+> A statement takes **что**. A wh-question keeps its word and drops **ли**. Yes/no takes **ли** after the verb. A request is an infinitive or **чтобы**.`,
+    es: `## Estilo indirecto
+
+Las palabras de otro pasan a una subordinada, sin dos puntos ni comillas. El ruso no obliga a retroceder el tiempo. El tiempo muestra la situación real o el tiempo de las palabras originales, no una tabla de «un paso atrás».
+
+### Avisos
+- Мария сказала: «Я читаю статью». → Мария сказала, что **читает** статью.
+- Мария сказала: «Я прочитала статью». → Мария сказала, что **прочитала** статью.
+- Мария сказала: «Я прочитаю статью». → Мария сказала, что **прочитает** статью.
+
+Los pronombres cambian de punto de vista: **я → он / она**, **мой → его / её**.
+**Анна сказала: «Я сдала тест».** → **Анна сказала, что сдала тест.**
+
+Si el estado ya terminó, el pasado es posible por ese sentido, no como sustitución automática del presente: **Она сказала, что была студенткой.**
+
+### Preguntas
+La pregunta con palabra interrogativa conserva esa palabra, no añade **ли**, usa el orden enunciativo y no lleva signo de interrogación.
+
+- «Где деканат?» → Он спросил, **где** деканат.
+- «Когда начнётся лекция?» → Она спросила, **когда** начнётся лекция.
+
+La pregunta de sí o no pone **ли** detrás de la palabra preguntada, en general el predicado.
+
+- Анна спросила Марка: «Ты прочитал статью?» → Анна спросила, **прочитал ли** он статью.
+- «Вы были на лекции?» → Преподаватель спросил, **был ли** я на лекции.
+
+No valen **спросил, ли он прочитал** ni **спросил, где ли деканат**.
+
+### Peticiones
+Infinitivo si el agente está claro: **Декан попросил сдать заявление в пятницу.**
+**Чтобы** + forma en **-л** si el agente se nombra: **Декан попросил, чтобы мы сдали заявление в пятницу.**
+El imperativo no se queda en la subordinada: no **попросил, откройте**.
+
+### Si su lengua es el español
+*Dijo que leía* a menudo cambia el presente. El ruso puede conservar **читает**. *Preguntó si había leído* no se calca con **если**: **если** es condición. La pregunta de sí o no es **прочитал ли**. *Le pidió que entregáramos* se parece a **попросил, чтобы мы сдали**, con forma en **-л**, no con subjuntivo español.
+
+> Aviso con **что**. Pregunta con palabra, sin **ли**. Sí/no con **ли** tras el verbo. Petición: infinitivo o **чтобы**.`,
+    de: `## Indirekte Rede
+
+Fremde Wörter werden zum Nebensatz, ohne Doppelpunkt und ohne Anführungszeichen. Russisch hat keine Pflicht, das Tempus zurückzustufen. Das Tempus zeigt die wirkliche Lage oder das Tempus der ursprünglichen Wörter, nicht eine Tabelle «eine Stufe zurück».
+
+### Aussagen
+- Мария сказала: «Я читаю статью». → Мария сказала, что **читает** статью.
+- Мария сказала: «Я прочитала статью». → Мария сказала, что **прочитала** статью.
+- Мария сказала: «Я прочитаю статью». → Мария сказала, что **прочитает** статью.
+
+Pronomen wechseln die Perspektive: **я → он / она**, **мой → его / её**.
+**Анна сказала: «Я сдала тест».** → **Анна сказала, что сдала тест.**
+
+Ist der Zustand schon vorbei, ist die Vergangenheit für diese Bedeutung möglich, nicht als automatischer Ersatz des Präsens: **Она сказала, что была студенткой.**
+
+### Fragen
+Eine Frage mit Fragewort behält das Wort, setzt kein **ли**, hat Aussagewortstellung und kein Fragezeichen.
+
+- «Где деканат?» → Он спросил, **где** деканат.
+- «Когда начнётся лекция?» → Она спросила, **когда** начнётся лекция.
+
+Eine Ja/Nein-Frage setzt **ли** hinter das gefragte Wort, meist das Prädikat.
+
+- Анна спросила Марка: «Ты прочитал статью?» → Анна спросила, **прочитал ли** он статью.
+- «Вы были на лекции?» → Преподаватель спросил, **был ли** я на лекции.
+
+Nicht **спросил, ли он прочитал** und nicht **спросил, где ли деканат**.
+
+### Bitten
+Infinitiv, wenn der Täter klar ist: **Декан попросил сдать заявление в пятницу.**
+**Чтобы** plus **-л**-Form, wenn der Täter genannt ist: **Декан попросил, чтобы мы сдали заявление в пятницу.**
+Der Imperativ bleibt nicht im Nebensatz: nicht **попросил, откройте**.
+
+### Wenn Ihre Sprache Deutsch ist
+*Sie sagte, dass sie den Artikel lese* zieht das Verb ans Ende. Nach **что** bleibt die gewöhnliche Folge: **что читает статью**. *Ob* ist nicht **если**. **Если** ist eine Bedingung. Die Ja/Nein-Frage ist **прочитал ли**. Eine Bitte mit *dass* plus Konjunktiv liegt nah an **чтобы** + Form auf **-л**.
+
+> Aussage mit **что**. W-Frage ohne **ли**. Ja/Nein mit **ли** nach dem Verb. Bitte: Infinitiv oder **чтобы**.`,
+  },
+
+  "ru-b2-conditionals": {
+    en: `## Если, если бы, and чтобы
+
+These are three different links. **Если** is a condition the speaker treats as real. **Если бы** is one the speaker treats as unreal or doubtful. **Чтобы** is a purpose or a wanted result, not a condition.
+
+### A real condition
+For one future occasion, both clauses are future. A present verb in the **если** clause does not carry that future meaning.
+
+- **Если завтра будет консультация, я приду.**
+- **Если у меня будет время, я доеду до деканата.**
+
+A habit uses the present in both clauses: **Если у меня есть время, я читаю вечером.**
+A real past is also possible: **Если он пришёл вовремя, мы начали семинар.**
+
+A calque from English is **Если у меня есть время завтра, я приду.** Tomorrow needs **будет**. For possession here, Russian does not say **если я буду иметь время**. The pattern is **у меня есть / у меня будет**.
+
+### An unreal condition
+The verb is in the past-tense form, and the particle **бы** does not conjugate. The **-л** form here does not mean “past time”. The same pattern covers an unreal present and an unreal past.
+
+- **Если бы у меня было время, я бы пришёл.**
+- **Если бы я знала правило, я бы не ошиблась.**
+
+**Бы** usually sits after **если** and with the main predicate. Gender and number still agree: **пришёл бы / пришла бы / пришли бы**. Do not mix in a present form: not **если бы я знаю**.
+
+### Purpose
+One doer takes the infinitive: **Я остался в библиотеке, чтобы дописать конспект.**
+Different doers take **чтобы** plus the **-л** form: **Я оставил Марии конспект, чтобы она дописала введение.**
+
+**Чтобы** does not replace **если бы**. **Если бы она дописала** is a condition. **Чтобы она дописала** is a purpose or a wish.
+
+### If your language is English
+*If I have time tomorrow, I will come* uses the present in the *if* clause. Russian uses the future in both: **Если у меня будет время, я приду.** *If I knew, I would come* is **Если бы я знал, я бы пришёл**, with the past form in both parts, not *would* as a separate verb. *In order that she finish* is **чтобы**, not **если бы**.
+
+> Real tomorrow: **если** + future, and future in the main clause. Unreal: **если бы** + the **-л** form and **бы**. Purpose: **чтобы**.`,
+    es: `## Если, если бы y чтобы
+
+Son tres relaciones distintas. **Если** es una condición que el hablante trata como real. **Если бы** es una que trata como irreal o dudosa. **Чтобы** es finalidad o resultado deseado, no condición.
+
+### Condición real
+Para un futuro concreto, las dos partes van en futuro. El presente en la oración con **если** no lleva ese sentido de futuro.
+
+- **Если завтра будет консультация, я приду.**
+- **Если у меня будет время, я доеду до деканата.**
+
+Un hábito usa presente en las dos: **Если у меня есть время, я читаю вечером.**
+También cabe un pasado real: **Если он пришёл вовремя, мы начали семинар.**
+
+Un calco del español es **Если у меня есть время завтра, я приду.** Mañana pide **будет**. Para la posesión, aquí no se dice **если я буду иметь время**. El esquema es **у меня есть / у меня будет**.
+
+### Condición irreal
+El verbo va en forma de pasado y la partícula **бы** no se conjuga. La forma en **-л** aquí no significa «tiempo pasado». El mismo esquema cubre un presente irreal y un pasado irreal.
+
+- **Если бы у меня было время, я бы пришёл.**
+- **Если бы я знала правило, я бы не ошиблась.**
+
+**Бы** suele ir tras **если** y junto al predicado principal. El género y el número siguen concordando: **пришёл бы / пришла бы / пришли бы**. No mezcle un presente: no **если бы я знаю**.
+
+### Finalidad
+Un solo agente: infinitivo. **Я остался в библиотеке, чтобы дописать конспект.**
+Agentes distintos: **чтобы** + forma en **-л**. **Я оставил Марии конспект, чтобы она дописала введение.**
+
+**Чтобы** no sustituye a **если бы**. **Если бы она дописала** es condición. **Чтобы она дописала** es finalidad o deseo.
+
+### Si su lengua es el español
+*Si tengo tiempo mañana, vendré* pone presente en la condición. El ruso pone futuro en las dos: **Если у меня будет время, я приду.** *Si tuviera tiempo, vendría* es **Если бы у меня было время, я бы пришёл**, con forma de pasado en las dos partes, no con condicional español. *Para que ella terminara* es **чтобы** + forma en **-л**, no **если бы**.
+
+> Mañana real: **если** + futuro, y futuro en la principal. Irreal: **если бы** + forma en **-л** y **бы**. Finalidad: **чтобы**.`,
+    de: `## Если, если бы und чтобы
+
+Das sind drei verschiedene Beziehungen. **Если** ist eine Bedingung, die der Sprecher als real behandelt. **Если бы** ist eine, die er als irreal oder zweifelhaft behandelt. **Чтобы** ist ein Zweck oder ein gewünschtes Ergebnis, keine Bedingung.
+
+### Eine reale Bedingung
+Für einen konkreten zukünftigen Fall stehen beide Teilsätze im Futur. Ein Präsens im **если**-Satz trägt diese Zukunft nicht.
+
+- **Если завтра будет консультация, я приду.**
+- **Если у меня будет время, я доеду до деканата.**
+
+Eine Gewohnheit nimmt Präsens in beiden Teilen: **Если у меня есть время, я читаю вечером.**
+Eine reale Vergangenheit ist auch möglich: **Если он пришёл вовремя, мы начали семинар.**
+
+Eine Lehnübersetzung ist **Если у меня есть время завтра, я приду.** Morgen braucht **будет**. Besitz heißt hier nicht **если я буду иметь время**. Das Muster ist **у меня есть / у меня будет**.
+
+### Eine irreale Bedingung
+Das Verb steht in der Vergangenheitsform, die Partikel **бы** wird nicht konjugiert. Die **-л**-Form bedeutet hier nicht «Vergangenheit». Dasselbe Muster deckt irreale Gegenwart und irreale Vergangenheit.
+
+- **Если бы у меня было время, я бы пришёл.**
+- **Если бы я знала правило, я бы не ошиблась.**
+
+**Бы** steht meist nach **если** und beim Prädikat des Hauptsatzes. Genus und Numerus richten sich weiter: **пришёл бы / пришла бы / пришли бы**. Kein Präsens dazwischen: nicht **если бы я знаю**.
+
+### Zweck
+Ein Täter nimmt den Infinitiv: **Я остался в библиотеке, чтобы дописать конспект.**
+Verschiedene Täter nehmen **чтобы** plus **-л**-Form: **Я оставил Марии конспект, чтобы она дописала введение.**
+
+**Чтобы** ersetzt **если бы** nicht. **Если бы она дописала** ist eine Bedingung. **Чтобы она дописала** ist Zweck oder Wunsch.
+
+### Wenn Ihre Sprache Deutsch ist
+*Wenn ich morgen Zeit habe, komme ich* setzt das Präsens in den *wenn*-Satz und das Verb an die zweite Stelle. Russisch setzt das Futur in beide Teile und verlangt diese Zweitstellung nicht: **Если у меня будет время, я приду.** *Wenn ich Zeit hätte, käme ich* ist **Если бы у меня было время, я бы пришёл**. *Damit sie zu Ende schreibt* ist **чтобы**, nicht **если бы**.
+
+> Reales Morgen: **если** + Futur, und Futur im Hauptsatz. Irreal: **если бы** + **-л**-Form und **бы**. Zweck: **чтобы**.`,
+  },
+
+  "ru-b2-formal-register": {
+    en: `## Official style
+
+An official note and an application state a request, a ground, and a date. Evaluation, jokes, and chat particles do not belong: no **ну, вот, короче**, no **ты**, and no diminutive inside the request itself.
+
+### Patterns that belong
+- An infinitive or an impersonal frame: **необходимо сдать**, **следует направить**, **нужно предоставить**.
+- Passive and result: **Заявление рассматривается.** **Справка выдана.** **Было принято решение.**
+- **В связи с** + instrumental: **в связи с экзаменом**.
+- **На основании** + genitive: **на основании справки**.
+- **Прошу** + infinitive: **Прошу разрешить перенос консультации.**
+- In a letter, **Вы** is often capitalized. The verb is still the polite form: **направьте**, **сообщите**.
+
+### The frame of an application
+The addressee is dative. The author follows **от** in the genitive. The word **Заявление** sits in the middle, then the request, the date, and a signature.
+
+**Декану факультета Ивановой Анне Сергеевне**
+**от студента подготовительного факультета Марка Левина**
+
+**Заявление**
+
+**Прошу разрешить мне перенос консультации на пятницу в связи с экзаменом по грамматике.**
+
+**14 марта 2026 г.**
+**Подпись**
+
+The same request in speech is different: **Анна Сергеевна, можно перенести консультацию на пятницу? У меня экзамен.** The application keeps **Прошу** + infinitive and **в связи с**, without a question and without **можно**.
+
+### What to leave out
+Chat particles and a spoken hedge: **ну я типа не успеваю**. A complaint with no request and no fact. A mixed paragraph: **Прошу предоставить справку, а то я вообще не успеваю.**
+
+### If your language is English
+*I would like to ask you to move the consultation* is longer than the Russian formula. The working line is **Прошу** + infinitive. *Due to the exam* is **в связи с экзаменом**, instrumental, not **из-за** in this formula, though **из-за** is a real cause preposition in other styles. *Dear Dean* does not replace the dative name block at the top of a Russian application.
+
+> One request, one infinitive after **Прошу**. The ground is **в связи с** or **на основании**. Process and result use the passive, not a chat story about “I did”.`,
+    es: `## Estilo oficial
+
+Una nota oficial y una solicitud dicen la petición, el motivo y la fecha. La valoración, el chiste y las partículas de chat no caben: no hay **ну, вот, короче**, no hay **ты** y no hay diminutivo dentro de la petición.
+
+### Qué construcciones caben
+- Infinitivo o esquema impersonal: **необходимо сдать**, **следует направить**, **нужно предоставить**.
+- Pasiva y resultado: **Заявление рассматривается.** **Справка выдана.** **Было принято решение.**
+- **В связи с** + instrumental: **в связи с экзаменом**.
+- **На основании** + genitivo: **на основании справки**.
+- **Прошу** + infinitivo: **Прошу разрешить перенос консультации.**
+- En una carta, **Вы** suele ir con mayúscula. El verbo sigue siendo de cortesía: **направьте**, **сообщите**.
+
+### El armazón de la solicitud
+El destinatario va en dativo. El autor, tras **от**, en genitivo. La palabra **Заявление** va en el centro; luego la petición, la fecha y la firma.
+
+**Декану факультета Ивановой Анне Сергеевне**
+**от студента подготовительного факультета Марка Левина**
+
+**Заявление**
+
+**Прошу разрешить мне перенос консультации на пятницу в связи с экзаменом по грамматике.**
+
+**14 марта 2026 г.**
+**Подпись**
+
+La misma petición en voz alta es otra: **Анна Сергеевна, можно перенести консультацию на пятницу? У меня экзамен.** La solicitud conserva **Прошу** + infinitivo y **в связи с**, sin pregunta y sin **можно**.
+
+### Qué dejar fuera
+Partículas y un rodeo oral: **ну я типа не успеваю**. Una queja sin petición y sin hecho. Un párrafo mezclado: **Прошу предоставить справку, а то я вообще не успеваю.**
+
+### Si su lengua es el español
+*Le ruego que me permita aplazar la consulta* es más largo que la fórmula rusa. La línea de trabajo es **Прошу** + infinitivo. *Con motivo del examen* es **в связи с экзаменом**, en instrumental. *Estimado decano* no sustituye el bloque en dativo con el nombre al principio de la solicitud rusa.
+
+> Una petición, un infinitivo tras **Прошу**. El motivo es **в связи с** o **на основании**. El proceso y el resultado van en pasiva, no en un relato de chat.`,
+    de: `## Amtlicher Stil
+
+Eine Dienstnotiz und ein Antrag nennen die Bitte, den Grund und das Datum. Bewertung, Scherz und Gesprächspartikeln gehören nicht hinein: kein **ну, вот, короче**, kein **ты** und kein Diminutiv in der Bitte selbst.
+
+### Welche Muster hingehören
+- Infinitiv oder unpersönlicher Rahmen: **необходимо сдать**, **следует направить**, **нужно предоставить**.
+- Passiv und Ergebnis: **Заявление рассматривается.** **Справка выдана.** **Было принято решение.**
+- **В связи с** + Instrumental: **в связи с экзаменом**.
+- **На основании** + Genitiv: **на основании справки**.
+- **Прошу** + Infinitiv: **Прошу разрешить перенос консультации.**
+- Im Brief wird **Вы** oft großgeschrieben. Das Verb bleibt die Höflichkeitsform: **направьте**, **сообщите**.
+
+### Das Gerüst eines Antrags
+Der Empfänger steht im Dativ. Der Verfasser steht nach **от** im Genitiv. Das Wort **Заявление** steht in der Mitte, dann die Bitte, das Datum und die Unterschrift.
+
+**Декану факультета Ивановой Анне Сергеевне**
+**от студента подготовительного факультета Марка Левина**
+
+**Заявление**
+
+**Прошу разрешить мне перенос консультации на пятницу в связи с экзаменом по грамматике.**
+
+**14 марта 2026 г.**
+**Подпись**
+
+Dieselbe Bitte im Gespräch klingt anders: **Анна Сергеевна, можно перенести консультацию на пятницу? У меня экзамен.** Der Antrag behält **Прошу** + Infinitiv und **в связи с**, ohne Frage und ohne **можно**.
+
+### Was draußen bleibt
+Gesprächspartikeln und eine mündliche Hecke: **ну я типа не успеваю**. Eine Klage ohne Bitte und ohne Fakt. Ein gemischter Absatz: **Прошу предоставить справку, а то я вообще не успеваю.**
+
+### Wenn Ihre Sprache Deutsch ist
+*Ich bitte darum, die Sprechstunde zu verschieben* ist länger als die russische Formel. Die Arbeitszeile ist **Прошу** + Infinitiv. *Aufgrund der Prüfung* ist **в связи с экзаменом**, Instrumental. *Sehr geehrte Dekanin* ersetzt nicht den Dativblock mit Namen oben auf dem russischen Antrag.
+
+> Eine Bitte, ein Infinitiv nach **Прошу**. Der Grund ist **в связи с** oder **на основании**. Prozess und Ergebnis stehen im Passiv, nicht in einer Chat-Erzählung.`,
+  },
+
+  "ru-c1-aspect-nuance": {
+    en: `## Aspect beyond process and result
+
+At B1, aspect separates a process from a result. At C1 both forms are often grammatical, and they answer different questions. Do not copy one nuance onto every verb.
+
+### Experience and a finished job
+- **Ты читал эту статью?** — Was there such an experience? Finishing is not the point.
+- **Ты прочитал статью к понедельнику?** — Did you finish this text by the deadline?
+
+Negation keeps the same split: **Я не читал этот текст** — I did not take it up. **Я не прочитал этот текст** — I did not finish it.
+
+### A result that is gone
+- **Утром он открывал окно, а сейчас оно закрыто.** The action happened; the result is not there now.
+- **Он открыл окно, и в аудитории стало прохладно.** The result is in force.
+
+Imperfective does not always mean “the result was cancelled”. The context decides.
+
+### Attempt and success, for a short list only
+This contrast is normal with **решать / решить, уговаривать / уговорить, сдавать / сдать, ловить / поймать, доказывать / доказать**.
+
+- **Студент долго решал задачу и в итоге решил её.**
+- **Он сдавал тест дважды и наконец сдал.**
+
+With **читать / прочитать**, the imperfective does not mean “tried to read”. There it is process, experience, or an unfinished job.
+
+### The imperative
+- Perfective: one request to complete an action. **Откройте, пожалуйста, окно.**
+- Imperfective in the negative: a ban on the action itself. **Не открывайте окно.**
+- Perfective in the negative: a warning about an unwanted accident. **Осторожно, не разбейте стакан.** **Смотри, не упади.**
+
+### If your language is English
+*Did you read the article?* can mean either experience or finishing. Russian asks you to choose **читал** or **прочитал**. *Don’t open the window* is normally **Не открывайте**, imperfective. *Mind you don’t break the glass* is the perfective warning **не разбейте**, not a general ban.
+
+> Name the question first: experience, completion, a verb from the short attempt list, or a ban. Aspect answers that question.`,
+    es: `## El aspecto más allá de proceso y resultado
+
+En B1 el aspecto separa proceso y resultado. En C1 las dos formas suelen ser gramaticales y responden a preguntas distintas. No copie un matiz a todos los verbos.
+
+### Experiencia y trabajo terminado
+- **Ты читал эту статью?** — ¿Hubo esa experiencia? Terminar no es la pregunta.
+- **Ты прочитал статью к понедельнику?** — ¿Terminó este texto para el plazo?
+
+La negación conserva el corte: **Я не читал этот текст** — no lo tomé. **Я не прочитал этот текст** — no lo terminé.
+
+### Un resultado que ya no está
+- **Утром он открывал окно, а сейчас оно закрыто.** La acción ocurrió; el resultado no está ahora.
+- **Он открыл окно, и в аудитории стало прохладно.** El resultado sigue.
+
+El imperfectivo no significa siempre «el resultado se anuló». Lo decide el contexto.
+
+### Intento y éxito, solo en una lista corta
+El contraste es normal con **решать / решить, уговаривать / уговорить, сдавать / сдать, ловить / поймать, доказывать / доказать**.
+
+- **Студент долго решал задачу и в итоге решил её.**
+- **Он сдавал тест дважды и наконец сдал.**
+
+Con **читать / прочитать** el imperfectivo no significa «intentó leer». Ahí es proceso, experiencia o un trabajo sin terminar.
+
+### El imperativo
+- Perfectivo: una petición de completar la acción. **Откройте, пожалуйста, окно.**
+- Imperfectivo en negativo: prohibición de la acción. **Не открывайте окно.**
+- Perfectivo en negativo: aviso de un accidente no deseado. **Осторожно, не разбейте стакан.** **Смотри, не упади.**
+
+### Si su lengua es el español
+*¿Leíste el artículo?* puede ser experiencia o término. El ruso obliga a elegir **читал** o **прочитал**. *No abras la ventana* es en general **Не открывайте**, imperfectivo. *Cuidado, no se te rompa el vaso* se acerca al aviso perfectivo **не разбейте**, no a una prohibición general.
+
+> Nombre primero la pregunta: experiencia, término, un verbo de la lista corta de intento, o una prohibición.`,
+    de: `## Aspekt jenseits von Prozess und Resultat
+
+Auf B1 trennt der Aspekt Prozess und Resultat. Auf C1 sind beide Formen oft grammatisch und beantworten verschiedene Fragen. Übertragen Sie eine Nuance nicht auf jedes Verb.
+
+### Erfahrung und abgeschlossene Arbeit
+- **Ты читал эту статью?** — Gab es diese Erfahrung? Das Zu-Ende-Lesen ist nicht der Punkt.
+- **Ты прочитал статью к понедельнику?** — Haben Sie diesen Text bis zur Frist fertig gelesen?
+
+Die Verneinung behält denselben Schnitt: **Я не читал этот текст** — ich habe ihn nicht angefasst. **Я не прочитал этот текст** — ich habe ihn nicht zu Ende gelesen.
+
+### Ein Resultat, das nicht mehr da ist
+- **Утром он открывал окно, а сейчас оно закрыто.** Die Handlung war; das Resultat ist jetzt nicht da.
+- **Он открыл окно, и в аудитории стало прохладно.** Das Resultat gilt.
+
+Imperfektiv heißt nicht immer «das Resultat wurde aufgehoben». Der Kontext entscheidet.
+
+### Versuch und Erfolg, nur bei einer kurzen Liste
+Der Kontrast ist normal bei **решать / решить, уговаривать / уговорить, сдавать / сдать, ловить / поймать, доказывать / доказать**.
+
+- **Студент долго решал задачу и в итоге решил её.**
+- **Он сдавал тест дважды и наконец сдал.**
+
+Bei **читать / прочитать** heißt das Imperfektiv nicht «versuchte zu lesen». Dort ist es Prozess, Erfahrung oder eine unfertige Arbeit.
+
+### Der Imperativ
+- Perfektiv: eine Bitte, die Handlung abzuschließen. **Откройте, пожалуйста, окно.**
+- Imperfektiv in der Verneinung: ein Verbot der Handlung selbst. **Не открывайте окно.**
+- Perfektiv in der Verneinung: eine Warnung vor einem ungewollten Unfall. **Осторожно, не разбейте стакан.** **Смотри, не упади.**
+
+### Wenn Ihre Sprache Deutsch ist
+*Hast du den Artikel gelesen?* kann Erfahrung oder Abschluss sein. Russisch verlangt **читал** oder **прочитал**. *Öffne das Fenster nicht* ist normalerweise **Не открывайте**, imperfektiv. *Pass auf, dass du das Glas nicht zerbrichst* ist die perfektive Warnung **не разбейте**, kein allgemeines Verbot.
+
+> Zuerst die Frage benennen: Erfahrung, Abschluss, ein Verb der kurzen Versuchsliste oder ein Verbot.`,
+  },
+
+  "ru-c1-idioms": {
+    en: `## Set phrases
+
+A set phrase is not rebuilt from synonyms. The verb can change its form. The frame cannot: **принять во внимание**, not **принять в внимание**. The phrases below are ordinary ones, with their usual government.
+
+### Phrases for meaning and discussion
+| Phrase | What it does | Government | Example |
+|---|---|---|---|
+| **иметь в виду** | have in mind; mean | + accusative, or **что** | **Я имею в виду это правило.** |
+| **речь идёт о** | the topic is | **о** + prepositional | **Речь идёт о виде глагола.** |
+| **дело в том, что** | the point is that | a clause follows | **Дело в том, что консультацию перенесли.** |
+| **принимать во внимание** | take into account | + accusative | **Комиссия приняла во внимание объяснение.** |
+| **обращать внимание на** | notice | **на** + accusative | **Обратите внимание на срок.** |
+
+**Иметь в виду** is three words. The preposition **ввиду** + genitive means “because of”: **Ввиду болезни он не пришёл.** That is a different item.
+
+**Принимать во внимание** and **обращать внимание на** are not interchangeable. The second one needs **на**.
+
+### Picture phrases
+- **не в своей тарелке** — ill at ease. **Перед экзаменом он был не в своей тарелке.** **Своей** agrees with **тарелке**, not with the person’s gender.
+- **бить баклуши** — idle. **Хватит бить баклуши: семинар завтра.**
+- **водить за нос** — string someone along. **Не води меня за нос: назови дату экзамена.**
+- **с глазу на глаз** — the two of us, with no witnesses. **Мы поговорили с глазу на глаз.** The singular stays.
+- **ни при чём** — not involved. **Я тут ни при чём: заявление подал сосед.**
+
+### If your language is English
+*I mean this rule* is **Я имею в виду это правило**, not a calque with **о** and not the single word **ввиду**. *Pay attention to the date* needs **на**: **Обратите внимание на срок.** *Take the explanation into account* has no **на**: **принять во внимание объяснение**. *Face to face* does not license a plural inside **с глазу на глаз**.
+
+> Learn the government first: **о**, **на**, or a bare accusative. Then keep the pieces. Do not drop a synonym into the frame.`,
+    es: `## Expresiones fijas
+
+Una expresión fija no se reconstruye con sinónimos. El verbo puede cambiar de forma. El marco no: **принять во внимание**, no **принять в внимание**. Abajo hay giros ordinarios, con su régimen habitual.
+
+### Giros de sentido y de discusión
+| Expresión | Qué hace | Régimen | Ejemplo |
+|---|---|---|---|
+| **иметь в виду** | tener en mente; querer decir | + acusativo, o **что** | **Я имею в виду это правило.** |
+| **речь идёт о** | se trata de | **о** + preposicional | **Речь идёт о виде глагола.** |
+| **дело в том, что** | la cosa es que | sigue una subordinada | **Дело в том, что консультацию перенесли.** |
+| **принимать во внимание** | tener en cuenta | + acusativo | **Комиссия приняла во внимание объяснение.** |
+| **обращать внимание на** | fijarse | **на** + acusativo | **Обратите внимание на срок.** |
+
+**Иметь в виду** son tres palabras. La preposición **ввиду** + genitivo significa «a causa de»: **Ввиду болезни он не пришёл.** Es otra pieza.
+
+**Принимать во внимание** y **обращать внимание на** no se intercambian. La segunda necesita **на**.
+
+### Giros con imagen
+- **не в своей тарелке** — incómodo, fuera de su estado habitual. **Перед экзаменом он был не в своей тарелке.** **Своей** concuerda con **тарелке**, no con el género de la persona.
+- **бить баклуши** — holgazanear. **Хватит бить баклуши: семинар завтра.**
+- **водить за нос** — dar largas, engañar. **Не води меня за нос: назови дату экзамена.**
+- **с глазу на глаз** — los dos solos. **Мы поговорили с глазу на глаз.** El singular se queda.
+- **ни при чём** — no tiene que ver. **Я тут ни при чём: заявление подал сосед.**
+
+### Si su lengua es el español
+*Me refiero a esta regla* es **Я имею в виду это правило**, sin **о** y sin la palabra única **ввиду**. *Presta atención al plazo* lleva **на**: **Обратите внимание на срок.** *Tener en cuenta la explicación* no lleva **на**: **принять во внимание объяснение**. *Cara a cara* no autoriza un plural dentro de **с глазу на глаз**.
+
+> Primero el régimen: **о**, **на** o acusativo sin preposición. Después, las piezas enteras. No meta un sinónimo en el marco.`,
+    de: `## Feste Wendungen
+
+Eine feste Wendung wird nicht aus Synonymen neu gebaut. Das Verb kann die Form wechseln. Der Rahmen nicht: **принять во внимание**, nicht **принять в внимание**. Unten stehen gewöhnliche Wendungen mit ihrer üblichen Rektion.
+
+### Wendungen für Sinn und Gespräch
+| Wendung | Leistung | Rektion | Beispiel |
+|---|---|---|---|
+| **иметь в виду** | meinen; im Sinn haben | + Akkusativ oder **что** | **Я имею в виду это правило.** |
+| **речь идёт о** | es geht um | **о** + Präpositiv | **Речь идёт о виде глагола.** |
+| **дело в том, что** | die Sache ist, dass | ein Nebensatz folgt | **Дело в том, что консультацию перенесли.** |
+| **принимать во внимание** | berücksichtigen | + Akkusativ | **Комиссия приняла во внимание объяснение.** |
+| **обращать внимание на** | beachten | **на** + Akkusativ | **Обратите внимание на срок.** |
+
+**Иметь в виду** sind drei Wörter. Die Präposition **ввиду** + Genitiv heißt «wegen»: **Ввиду болезни он не пришёл.** Das ist ein anderer Eintrag.
+
+**Принимать во внимание** und **обращать внимание на** sind nicht austauschbar. Die zweite Wendung braucht **на**.
+
+### Bildhafte Wendungen
+- **не в своей тарелке** — nicht in seiner gewöhnlichen Verfassung. **Перед экзаменом он был не в своей тарелке.** **Своей** richtet sich nach **тарелке**, nicht nach dem Genus der Person.
+- **бить баклуши** — untätig sein. **Хватит бить баклуши: семинар завтра.**
+- **водить за нос** — hinhalten. **Не води меня за нос: назови дату экзамена.**
+- **с глазу на глаз** — unter vier Augen. **Мы поговорили с глазу на глаз.** Der Singular bleibt.
+- **ни при чём** — nicht beteiligt. **Я тут ни при чём: заявление подал сосед.**
+
+### Wenn Ihre Sprache Deutsch ist
+*Ich meine diese Regel* ist **Я имею в виду это правило**, ohne **о** und nicht als ein Wort **ввиду**. *Achten Sie auf die Frist* braucht **на**: **Обратите внимание на срок.** *Die Erklärung berücksichtigen* hat kein **на**: **принять во внимание объяснение**. *Unter vier Augen* erlaubt keinen Plural in **с глазу на глаз**.
+
+> Zuerst die Rektion: **о**, **на** oder bloßer Akkusativ. Dann die Stücke behalten. Kein Synonym in den Rahmen setzen.`,
+  },
+
+  "ru-c1-advanced-argumentation": {
+    en: `## An extended argument
+
+A B1 opinion is a position plus one reason. A longer text holds a thesis, a reason, an example, a concession, and a conclusion. A connector does not repair a weak thesis. **Таким образом** does not make it strong.
+
+### The steps
+| Step | Connectors | Example |
+|---|---|---|
+| Thesis | **можно утверждать, что**; **следует отметить, что** | **Можно утверждать, что ежедневный план полезнее ночи перед экзаменом.** |
+| Reason | **во-первых**; **потому что** | **Во-первых, материал не остаётся на один вечер.** |
+| Example | **например**; **так** | **Например, вчера хватило времени только на одну тему.** |
+| Concession | **хотя**; **несмотря на то что**; **тем не менее** | **Хотя времени мало, такой порядок всё равно спокойнее.** |
+| Counterpoint | **с одной стороны… с другой стороны**; **однако** | **С другой стороны, перед тестом нужна и общая повторная читка.** |
+| Conclusion | **таким образом**; **следовательно** | **Таким образом, короткий ежедневный план не отменяет повтор, но убирает одну ночь.** |
+
+### Three concession patterns
+- **Хотя** + clause: **Хотя времени было мало, текст был готов.**
+- **Несмотря на то, что** + clause: **Несмотря на то, что он устал, он дописал вывод.**
+- **Несмотря на** + an accusative noun: **Несмотря на усталость, он дописал вывод.**
+
+**Несмотря на** does not sit directly in front of a full clause. The clause needs **то, что**.
+
+### Comparison
+**Не только …, но и …**: **План экономит не только время, но и внимание.**
+**По сравнению с** + instrumental: **По сравнению с ночной подготовкой дневной план спокойнее.**
+
+If you open **с одной стороны**, the other side has to follow. **Однако** adds an objection, not an example.
+
+### If your language is English
+*Although* is **хотя** plus an ordinary clause, not a special verb form. *Despite being tired* with a noun is **несмотря на усталость**. *Despite the fact that* is **несмотря на то, что**. *Not only … but also* keeps the comma before **но**: **не только время, но и внимание**. *Thus* at the end should restate the thesis with its limit, not start a new topic.
+
+> State the thesis plainly. The concession shows its limit. The conclusion repeats the thesis with that limit already in it.`,
+    es: `## Una argumentación extensa
+
+Una opinión de B1 es una postura y una razón. Un texto más largo sostiene tesis, razón, ejemplo, concesión y conclusión. Un conector no arregla una tesis débil. **Таким образом** no la vuelve fuerte.
+
+### Los pasos
+| Paso | Conectores | Ejemplo |
+|---|---|---|
+| Tesis | **можно утверждать, что**; **следует отметить, что** | **Можно утверждать, что ежедневный план полезнее ночи перед экзаменом.** |
+| Razón | **во-первых**; **потому что** | **Во-первых, материал не остаётся на один вечер.** |
+| Ejemplo | **например**; **так** | **Например, вчера хватило времени только на одну тему.** |
+| Concesión | **хотя**; **несмотря на то что**; **тем не менее** | **Хотя времени мало, такой порядок всё равно спокойнее.** |
+| Contrapunto | **с одной стороны… с другой стороны**; **однако** | **С другой стороны, перед тестом нужна и общая повторная читка.** |
+| Conclusión | **таким образом**; **следовательно** | **Таким образом, короткий ежедневный план не отменяет повтор, но убирает одну ночь.** |
+
+### Tres esquemas de concesión
+- **Хотя** + subordinada: **Хотя времени было мало, текст был готов.**
+- **Несмотря на то, что** + subordinada: **Несмотря на то, что он устал, он дописал вывод.**
+- **Несмотря на** + sustantivo en acusativo: **Несмотря на усталость, он дописал вывод.**
+
+**Несмотря на** no se pone directamente delante de una subordinada completa. La subordinada necesita **то, что**.
+
+### Comparación
+**Не только …, но и …**: **План экономит не только время, но и внимание.**
+**По сравнению с** + instrumental: **По сравнению с ночной подготовкой дневной план спокойнее.**
+
+Si abre **с одной стороны**, tiene que venir la otra. **Однако** añade una objeción, no un ejemplo.
+
+### Si su lengua es el español
+*Aunque* es **хотя** más una oración ordinaria, sin subjuntivo obligatorio. *A pesar del cansancio* es **несмотря на усталость**. *A pesar de que* es **несмотря на то, что**. *No solo … sino también* conserva la coma antes de **но**: **не только время, но и внимание**. *Por lo tanto* al final debe repetir la tesis ya con su límite, no abrir otro tema.
+
+> Diga la tesis con claridad. La concesión muestra su límite. La conclusión repite la tesis con ese límite dentro.`,
+    de: `## Eine ausführliche Argumentation
+
+Eine B1-Meinung ist ein Standpunkt plus ein Grund. Ein längerer Text hält These, Grund, Beispiel, Einräumung und Schluss. Ein Konnektor repariert keine schwache These. **Таким образом** macht sie nicht stark.
+
+### Die Schritte
+| Schritt | Konnektoren | Beispiel |
+|---|---|---|
+| These | **можно утверждать, что**; **следует отметить, что** | **Можно утверждать, что ежедневный план полезнее ночи перед экзаменом.** |
+| Grund | **во-первых**; **потому что** | **Во-первых, материал не остаётся на один вечер.** |
+| Beispiel | **например**; **так** | **Например, вчера хватило времени только на одну тему.** |
+| Einräumung | **хотя**; **несмотря на то что**; **тем не менее** | **Хотя времени мало, такой порядок всё равно спокойнее.** |
+| Gegenpunkt | **с одной стороны… с другой стороны**; **однако** | **С другой стороны, перед тестом нужна и общая повторная читка.** |
+| Schluss | **таким образом**; **следовательно** | **Таким образом, короткий ежедневный план не отменяет повтор, но убирает одну ночь.** |
+
+### Drei Muster der Einräumung
+- **Хотя** + Nebensatz: **Хотя времени было мало, текст был готов.**
+- **Несмотря на то, что** + Nebensatz: **Несмотря на то, что он устал, он дописал вывод.**
+- **Несмотря на** + Substantiv im Akkusativ: **Несмотря на усталость, он дописал вывод.**
+
+**Несмотря на** steht nicht direkt vor einem ganzen Nebensatz. Der Nebensatz braucht **то, что**.
+
+### Vergleich
+**Не только …, но и …**: **План экономит не только время, но и внимание.**
+**По сравнению с** + Instrumental: **По сравнению с ночной подготовкой дневной план спокойнее.**
+
+Wer **с одной стороны** öffnet, muss die andere Seite bringen. **Однако** fügt einen Einwand an, kein Beispiel.
+
+### Wenn Ihre Sprache Deutsch ist
+*Obwohl* ist **хотя** plus ein gewöhnlicher Nebensatz. Das Verb muss im Russischen nicht ans Ende. *Trotz der Müdigkeit* mit einem Substantiv ist **несмотря на усталость**. *Trotz der Tatsache, dass* ist **несмотря на то, что**. *Nicht nur … sondern auch* behält das Komma vor **но**: **не только время, но и внимание**. *Somit* am Ende soll die These mit ihrer Grenze wiederholen, nicht ein neues Thema öffnen.
+
+> Die These klar nennen. Die Einräumung zeigt ihre Grenze. Der Schluss wiederholt die These schon mit dieser Grenze.`,
+  },
+
+  "ru-c1-media-discourse": {
+    en: `## Media language
+
+A news line separates a fact, a source, and an evaluation. A reporting verb does not prove the content. Distance markers show that the desk is not taking the claim as its own.
+
+### Source and impersonal reporting
+| Pattern | Example |
+|---|---|
+| **по данным** + genitive | **По данным университета, стипендию повысят в марте.** |
+| **согласно** + dative | **Согласно заявлению деканата, документы принимают до пятницы.** |
+| **как заявили / как сообщили** | **Как сообщили в деканате, консультацию перенесли.** |
+| impersonal | **Сообщается, что консультацию перенесли.** **Ожидается, что приём продлится до пятницы.** |
+
+The learner norm for **согласно, вопреки, благодаря** is the dative: **согласно расписанию**.
+
+### Distance and evaluation
+- **Якобы** does not decline, and it withholds confirmation: **Он якобы уже сдал тест.** The speaker is not asserting that this is true.
+- **Так называемый** agrees with the noun and holds someone else’s label at a distance: **Так называемая короткая сессия длится три недели.**
+- An evaluation is not a fact. Fact: **Стипендию повысили.** Evaluation: **неожиданное решение**. In a retelling, do not glue them into one predicate.
+
+### Headline and body
+A headline often drops the copula and uses the present: **Делегация прибывает в Казань.** That compresses a scheduled or just-happened event.
+In the body, a completed event is usually past: **Делегация прибыла утром.** The headline present does not cancel aspect and tense in the paragraph.
+
+Verbal nouns are typical of a brief: **принятие решения, проведение встречи, повышение стипендии**. They name an event as a thing and can hide the doer. If the doer matters, put the verb back: **Деканат перенёс консультацию.**
+
+### If your language is English
+*According to the dean’s office* is **согласно заявлению деканата**, dative, not a genitive calque. *Allegedly* is the job of **якобы**, which never agrees. *The so-called short session* agrees: **так называемая короткая сессия**. A present-tense headline is a headline habit, not a rule that news prose stays in the present.
+
+> Source first, then the fact. **Якобы** and **так называемый** mark a claim as someone else’s or as unchecked.`,
+    es: `## Lenguaje de los medios
+
+Una línea de noticia separa el hecho, la fuente y la valoración. Un verbo de informe no prueba el contenido. Las marcas de distancia muestran que la redacción no hace suyo el dato.
+
+### Fuente e informe impersonal
+| Esquema | Ejemplo |
+|---|---|
+| **по данным** + genitivo | **По данным университета, стипендию повысят в марте.** |
+| **согласно** + dativo | **Согласно заявлению деканата, документы принимают до пятницы.** |
+| **как заявили / как сообщили** | **Как сообщили в деканате, консультацию перенесли.** |
+| impersonal | **Сообщается, что консультацию перенесли.** **Ожидается, что приём продлится до пятницы.** |
+
+La norma para el estudiante con **согласно, вопреки, благодаря** es el dativo: **согласно расписанию**.
+
+### Distancia y valoración
+- **Якобы** no se declina y retira la confirmación: **Он якобы уже сдал тест.** Quien habla no afirma que sea verdad.
+- **Так называемый** concuerda con el sustantivo y deja el nombre ajeno a distancia: **Так называемая короткая сессия длится три недели.**
+- Una valoración no es un hecho. Hecho: **Стипендию повысили.** Valoración: **неожиданное решение**. En el relato no los pegue en un solo predicado.
+
+### Titular y cuerpo
+El titular a menudo omite la cópula y usa presente: **Делегация прибывает в Казань.** Así se comprime un hecho ya fijado o recién ocurrido.
+En el cuerpo, un hecho cerrado suele ir en pasado: **Делегация прибыла утром.** El presente del titular no anula el aspecto ni el tiempo del párrafo.
+
+Los sustantivos deverbales son típicos del resumen: **принятие решения, проведение встречи, повышение стипендии**. Nombran el hecho como cosa y pueden esconder al agente. Si el agente importa, devuelva el verbo: **Деканат перенёс консультацию.**
+
+### Si su lengua es el español
+*Según el decanato* es **согласно заявлению деканата**, en dativo, no un genitivo calcado de *según*. *Supuestamente* es el trabajo de **якобы**, que no concuerda. *La llamada sesión corta* sí concuerda: **так называемая короткая сессия**. El presente del titular es un hábito del título, no una regla de que la noticia entera quede en presente.
+
+> Primero la fuente, luego el hecho. **Якобы** y **так называемый** marcan un dato como ajeno o no comprobado.`,
+    de: `## Mediensprache
+
+Eine Nachrichtenzeile trennt Fakt, Quelle und Bewertung. Ein Mitteilungsverb beweist den Inhalt nicht. Distanzmarkierungen zeigen, dass die Redaktion die Angabe nicht als eigene nimmt.
+
+### Quelle und unpersönlicher Bericht
+| Muster | Beispiel |
+|---|---|
+| **по данным** + Genitiv | **По данным университета, стипендию повысят в марте.** |
+| **согласно** + Dativ | **Согласно заявлению деканата, документы принимают до пятницы.** |
+| **как заявили / как сообщили** | **Как сообщили в деканате, консультацию перенесли.** |
+| unpersönlich | **Сообщается, что консультацию перенесли.** **Ожидается, что приём продлится до пятницы.** |
+
+Die Lernnorm für **согласно, вопреки, благодаря** ist der Dativ: **согласно расписанию**.
+
+### Distanz und Bewertung
+- **Якобы** wird nicht dekliniert und hält die Bestätigung zurück: **Он якобы уже сдал тест.** Der Sprecher behauptet nicht, dass das wahr ist.
+- **Так называемый** richtet sich nach dem Substantiv und hält eine fremde Bezeichnung auf Abstand: **Так называемая короткая сессия длится три недели.**
+- Eine Bewertung ist kein Fakt. Fakt: **Стипендию повысили.** Bewertung: **неожиданное решение**. In der Nacherzählung nicht zu einem Prädikat verkleben.
+
+### Schlagzeile und Fließtext
+Eine Schlagzeile lässt die Kopula oft weg und nimmt das Präsens: **Делегация прибывает в Казань.** So wird ein schon angesetztes oder gerade geschehenes Ereignis verdichtet.
+Im Text steht ein abgeschlossenes Ereignis meist in der Vergangenheit: **Делегация прибыла утром.** Das Präsens der Schlagzeile hebt Aspekt und Tempus im Absatz nicht auf.
+
+Verbalsubstantive sind typisch für die Kurzmeldung: **принятие решения, проведение встречи, повышение стипендии**. Sie nennen ein Ereignis als Sache und können den Täter verstecken. Wenn der Täter wichtig ist, holen Sie das Verb zurück: **Деканат перенёс консультацию.**
+
+### Wenn Ihre Sprache Deutsch ist
+*Laut Dekanat* ist **согласно заявлению деканата**, Dativ, nicht ein Genitiv nach dem Muster von *laut*. *Angeblich* ist die Arbeit von **якобы**, das nie kongruiert. *Die sogenannte kurze Session* kongruiert: **так называемая короткая сессия**. Präsens in der Schlagzeile ist eine Schlagzeilengewohnheit, keine Regel, dass der ganze Bericht im Präsens bleibt.
+
+> Zuerst die Quelle, dann der Fakt. **Якобы** und **так называемый** markieren eine Angabe als fremd oder ungeprüft.`,
+  },
+
+  "ru-c2-registers": {
+    en: `## Stylistic registers
+
+A register is not a pile of synonyms labeled “simpler” and “fancier”. An official word is often narrower than the neutral one. **Благоприятный** talks about conditions. It does not replace **хороший** as a judgment of a person. Below, one fact appears in three registers. This is not a universal dictionary.
+
+Neutral: **Мы не можем начать сейчас, потому что работы очень много.**
+Colloquial: **Мы щас не можем начать: работы куча.**
+Official: **В настоящее время приступить к работе не представляется возможным, поскольку объём задач весьма велик.**
+
+### What actually changes
+| Neutral | Colloquial, speech only | Bookish and official |
+|---|---|---|
+| **сейчас** | **щас** | **в настоящее время** |
+| **очень** | **жутко**, **ужасно** as intensifiers | **весьма**, **чрезвычайно** |
+| **потому что** | **потому как** | **поскольку**, **так как**, **в связи с тем, что** |
+| **начать** | the same verb, different order and particles | **приступить к** + dative |
+| **много** | **куча**, **уйма** | **множество**, **значительное число** |
+| **хотеть** | **охота** + infinitive | **желать** |
+| **сказать** | **сказать** with **ну / вот** | **сообщить**, **заявить** |
+
+**Щас, куча, охота, потому как** do not move into an application. **Весьма, приступить, в настоящее время** sound out of place in a short dormitory remark.
+
+The particles **ну, вот, -то** hold a colloquial register. **Данный, вышеуказанный, нижеследующий** hold a clerical one. A neutral sentence needs neither group: **Этот срок указан в справке.**
+
+One paragraph should not jump: **В настоящее время мы щас не можем приступить, потому как задач куча.** Choose one register for the situation. A talk with a neighbor and a note to the dean’s office are two situations, even when the fact is the same.
+
+### If your language is English
+*Right now we can’t start — there’s a ton of work* can be neutral or slang depending on *a ton*. Russian forces a cleaner split: **очень много** is neutral, **куча** is colloquial, **объём задач весьма велик** is official. Do not upgrade a chat sentence by swapping in one bookish word.
+
+> Name the situation first: neighbor, seminar, or application. Then keep the whole register. One “smart” word inside a chat line does not raise the register.`,
+    es: `## Registros estilísticos
+
+Un registro no es un montón de sinónimos marcados como «más simple» o «más fino». Una palabra oficial suele ser más estrecha que la neutra. **Благоприятный** habla de condiciones. No sustituye a **хороший** como juicio sobre una persona. Abajo, un mismo hecho aparece en tres registros. No es un diccionario universal.
+
+Neutro: **Мы не можем начать сейчас, потому что работы очень много.**
+Coloquial: **Мы щас не можем начать: работы куча.**
+Oficial: **В настоящее время приступить к работе не представляется возможным, поскольку объём задач весьма велик.**
+
+### Qué cambia de verdad
+| Neutro | Coloquial, solo oral | Librario y oficial |
+|---|---|---|
+| **сейчас** | **щас** | **в настоящее время** |
+| **очень** | **жутко**, **ужасно** como intensificadores | **весьма**, **чрезвычайно** |
+| **потому что** | **потому как** | **поскольку**, **так как**, **в связи с тем, что** |
+| **начать** | el mismo verbo, otro orden y otras partículas | **приступить к** + dativo |
+| **много** | **куча**, **уйма** | **множество**, **значительное число** |
+| **хотеть** | **охота** + infinitivo | **желать** |
+| **сказать** | **сказать** con **ну / вот** | **сообщить**, **заявить** |
+
+**Щас, куча, охота, потому как** no pasan a una solicitud. **Весьма, приступить, в настоящее время** suenan fuera de lugar en una frase corta de residencia.
+
+Las partículas **ну, вот, -то** sostienen el registro coloquial. **Данный, вышеуказанный, нижеследующий** sostienen el de oficina. Una frase neutra no necesita ninguno de los dos grupos: **Этот срок указан в справке.**
+
+Un párrafo no debe saltar: **В настоящее время мы щас не можем приступить, потому как задач куча.** Elija un registro para la situación. Hablar con el vecino y escribir al decanato son dos situaciones, aunque el hecho sea el mismo.
+
+### Si su lengua es el español
+*Ahora mismo no podemos empezar: hay un montón de trabajo* puede sonar neutro o coloquial según *montón*. El ruso separa con más nitidez: **очень много** es neutro, **куча** es coloquial, **объём задач весьма велик** es oficial. No suba una frase de chat metiendo una sola palabra libresca.
+
+> Primero la situación: vecino, seminario o solicitud. Después, el registro entero. Una palabra «culta» dentro de una réplica de chat no sube el registro.`,
+    de: `## Stilregister
+
+Ein Register ist kein Haufen von Synonymen mit den Etiketten «einfacher» und «feiner». Ein amtliches Wort ist oft enger als das neutrale. **Благоприятный** gilt Bedingungen. Es ersetzt **хороший** nicht als Urteil über einen Menschen. Unten steht ein Fakt in drei Registern. Das ist kein universelles Wörterbuch.
+
+Neutral: **Мы не можем начать сейчас, потому что работы очень много.**
+Umgangssprachlich: **Мы щас не можем начать: работы куча.**
+Amtlich: **В настоящее время приступить к работе не представляется возможным, поскольку объём задач весьма велик.**
+
+### Was sich wirklich ändert
+| Neutral | Umgangssprachlich, nur mündlich | Buchsprachlich und amtlich |
+|---|---|---|
+| **сейчас** | **щас** | **в настоящее время** |
+| **очень** | **жутко**, **ужасно** als Verstärker | **весьма**, **чрезвычайно** |
+| **потому что** | **потому как** | **поскольку**, **так как**, **в связи с тем, что** |
+| **начать** | dasselbe Verb, andere Folge und Partikeln | **приступить к** + Dativ |
+| **много** | **куча**, **уйма** | **множество**, **значительное число** |
+| **хотеть** | **охота** + Infinitiv | **желать** |
+| **сказать** | **сказать** mit **ну / вот** | **сообщить**, **заявить** |
+
+**Щас, куча, охота, потому как** wandern nicht in einen Antrag. **Весьма, приступить, в настоящее время** klingen in einem kurzen Wohnheimssatz fremd.
+
+Die Partikeln **ну, вот, -то** halten das umgangssprachliche Register. **Данный, вышеуказанный, нижеследующий** halten das kanzleisprachliche. Ein neutraler Satz braucht keine der beiden Gruppen: **Этот срок указан в справке.**
+
+Ein Absatz soll nicht springen: **В настоящее время мы щас не можем приступить, потому как задач куча.** Wählen Sie ein Register für die Situation. Ein Gespräch mit dem Nachbarn und eine Notiz ans Dekanat sind zwei Situationen, auch wenn der Fakt derselbe ist.
+
+### Wenn Ihre Sprache Deutsch ist
+*Wir können jetzt nicht anfangen, es ist ein Haufen Arbeit* kann neutral oder salopp sein, je nach *Haufen*. Russisch trennt schärfer: **очень много** ist neutral, **куча** ist umgangssprachlich, **объём задач весьма велик** ist amtlich. Heben Sie einen Chatsatz nicht an, indem Sie ein einziges buchsprachliches Wort einsetzen.
+
+> Zuerst die Situation: Nachbar, Seminar oder Antrag. Dann das ganze Register. Ein «kluges» Wort in einer Chatzeile hebt das Register nicht.`,
+  },
+
+  "ru-c2-literary": {
+    en: `## Commenting on a literary fragment
+
+A comment does not retell the plot in other words. It says whose view we have, what holds the background, and which device changes the tone. A device does not “always mean one emotion”. Tie the effect to this fragment.
+
+A short teaching fragment:
+
+**У окна горела лампа. Город за стеклом лежал серым полотном. Конспект лежал открытый, словно кто-то только что вышел и ещё вернётся. Тихий, усталый коридор ждал шагов. Ночь. Пустая аудитория. Он закрыл окно и ничего не объяснил. Снова слышалась дорога домой — в шуме колёс, потом в пустом перроне, потом в шагах за дверью. На краю стола лежала чужая перчатка — будто герой уже ушёл в чужой рассказ. Потом зал опустел, и напряжение спало.**
+
+### What you can show here
+- Imperfective verbs hold the background: **горела, лежал**. There is no completed event, so the text waits instead of reporting a result.
+- **Серым полотном** is a metaphor (likeness with no **как**). **Тихий, усталый** is an epithet.
+- **Словно** introduces a comparison that is the narrator’s assumption, not a biography fact. A comparative **как, словно, будто** usually takes a comma.
+- **Как** without a comma means “in the role of”: **Она работала как переводчик.** That is not a comparison and not the same punctuation.
+- **Ночь. Пустая аудитория.** are naming sentences. They set the scene with no predicate and slow the frame.
+- **У окна горела лампа** starts from the place. Neutral **Лампа горела у окна** would start from the thing.
+- Closing the window with no explanation holds **подтекст** and is the **кульминация**. The returning road is a **лейтмотив**. The stranger’s glove is an **аллюзия**. *Зал опустел* is the **развязка**.
+
+### How to build the answer
+1. The situation in one sentence, with no verdict such as “beautiful”.
+2. Whose view: the narrator sees the room; no person is in it.
+3. One or two devices with a quotation: verb aspect, comparison, a naming sentence, word order.
+4. The effect here: waiting for a return, emptiness, a pause. Do not write “the author is sad” if sadness is not named.
+
+A comparison is not a substitute for an argument. **Словно кто-то только что вышел** is the narrator’s supposition. Call it that in the comment. It is not a fact of a character’s biography.
+
+### If your language is English
+*As if someone had just left* is close to **словно кто-то только что вышел**. English *like* in casual speech is a weak guide to the comma. In Russian the comparative **словно** takes the comma; **как** meaning “working as” does not. *Night. An empty lecture room.* is the same naming-sentence device as **Ночь. Пустая аудитория.**
+
+> A quotation, the name of the device, and the effect in this fragment. A retelling with no device, and a device with no quotation, are equally thin.`,
+    es: `## Comentar un fragmento literario
+
+Un comentario no vuelve a contar la trama con otras palabras. Dice de quién es la mirada, qué sostiene el fondo y qué recurso cambia el tono. Un recurso no «significa siempre una emoción». Ate el efecto a este fragmento.
+
+Un fragmento breve de trabajo:
+
+**У окна горела лампа. Город за стеклом лежал серым полотном. Конспект лежал открытый, словно кто-то только что вышел и ещё вернётся. Тихий, усталый коридор ждал шагов. Ночь. Пустая аудитория. Он закрыл окно и ничего не объяснил. Снова слышалась дорога домой — в шуме колёс, потом в пустом перроне, потом в шагах за дверью. На краю стола лежала чужая перчатка — будто герой уже ушёл в чужой рассказ. Потом зал опустел, и напряжение спало.**
+
+### Qué se puede mostrar aquí
+- Los verbos imperfectivos sostienen el fondo: **горела, лежал**. No hay un hecho cerrado, así que el texto espera en lugar de informar un resultado.
+- **Серым полотном** es una metáfora (parecido sin **как**). **Тихий, усталый** es un epíteto.
+- **Словно** introduce una comparación-suposición del narrador, no un hecho biográfico. Un **как, словно, будто** comparativo suele llevar coma.
+- **Как** sin coma significa «en calidad de»: **Она работала как переводчик.** Eso no es comparación ni la misma puntuación.
+- **Ночь. Пустая аудитория.** son frases nominales. Ponen el escenario sin predicado y frenan el plano.
+- **У окна горела лампа** empieza por el lugar. Lo neutro **Лампа горела у окна** empezaría por la cosa.
+- Cerrar la ventana sin explicar sostiene el **подтекст** y es la **кульминация**. El camino que vuelve es un **лейтмотив**. El guante ajeno es una **аллюзия**. *Зал опустел* es la **развязка**.
+
+### Cómo armar la respuesta
+1. La situación en una frase, sin un veredicto como «bonito».
+2. De quién es la mirada: el narrador ve la sala; no hay una persona dentro.
+3. Uno o dos recursos con cita: aspecto del verbo, comparación, frase nominal, orden de palabras.
+4. El efecto aquí: espera de una vuelta, vacío, pausa. No escriba «el autor está triste» si la tristeza no está nombrada.
+
+La comparación no sustituye un argumento. **Словно кто-то только что вышел** es una suposición del narrador. Llámalo así en el comentario. No es un hecho de la biografía de un personaje.
+
+### Si su lengua es el español
+*Como si alguien acabara de salir* se acerca a **словно кто-то только что вышел**. *Como* coloquial es una guía débil para la coma. En ruso el **словно** comparativo lleva coma; **как** con el sentido de «trabajaba de» no la lleva. *Noche. Un aula vacía.* es el mismo recurso que **Ночь. Пустая аудитория.**
+
+> Una cita, el nombre del recurso y el efecto en este fragmento. Un resumen sin recurso y un recurso sin cita quedan igual de flojos.`,
+    de: `## Einen literarischen Ausschnitt kommentieren
+
+Ein Kommentar erzählt die Handlung nicht in anderen Wörtern nach. Er sagt, wessen Blick wir haben, was den Hintergrund hält und welches Mittel den Ton ändert. Ein Mittel «bedeutet nicht immer eine Emotion». Binden Sie die Wirkung an diesen Ausschnitt.
+
+Ein kurzes Unterrichtsfragment:
+
+**У окна горела лампа. Город за стеклом лежал серым полотном. Конспект лежал открытый, словно кто-то только что вышел и ещё вернётся. Тихий, усталый коридор ждал шагов. Ночь. Пустая аудитория. Он закрыл окно и ничего не объяснил. Снова слышалась дорога домой — в шуме колёс, потом в пустом перроне, потом в шагах за дверью. На краю стола лежала чужая перчатка — будто герой уже ушёл в чужой рассказ. Потом зал опустел, и напряжение спало.**
+
+### Was sich hier zeigen lässt
+- Imperfektive Verben halten den Hintergrund: **горела, лежал**. Es gibt kein abgeschlossenes Ereignis, also wartet der Text, statt ein Resultat zu melden.
+- **Серым полотном** ist eine Metapher (Gleichnis ohne **как**). **Тихий, усталый** ist ein Epitheton.
+- **Словно** leitet einen Vergleich ein, der eine Vermutung des Erzählers ist, keine Biografie. Vergleichendes **как, словно, будто** nimmt meist ein Komma.
+- **Как** ohne Komma heißt «in der Rolle»: **Она работала как переводчик.** Das ist kein Vergleich und nicht dieselbe Zeichensetzung.
+- **Ночь. Пустая аудитория.** sind Nominativsätze. Sie setzen die Szene ohne Prädikat und verlangsamen das Bild.
+- **У окна горела лампа** beginnt mit dem Ort. Neutrales **Лампа горела у окна** würde mit der Sache beginnen.
+- Das Schließen des Fensters ohne Erklärung trägt den **подтекст** und ist die **кульминация**. Der wiederkehrende Weg ist ein **лейтмотив**. Der fremde Handschuh ist eine **аллюзия**. *Зал опустел* ist die **развязка**.
+
+### Wie die Antwort gebaut wird
+1. Die Situation in einem Satz, ohne ein Urteil wie «schön».
+2. Wessen Blick: der Erzähler sieht den Raum; ein Mensch ist nicht darin.
+3. Ein oder zwei Mittel mit Zitat: Verbaspekt, Vergleich, Nominativsatz, Wortstellung.
+4. Die Wirkung hier: Warten auf eine Rückkehr, Leere, Pause. Schreiben Sie nicht «der Autor ist traurig», wenn Trauer nicht genannt ist.
+
+Ein Vergleich ersetzt kein Argument. **Словно кто-то только что вышел** ist eine Vermutung des Erzählers. Nennen Sie sie so im Kommentar. Sie ist keine Tatsache aus einer Figurbiografie.
+
+### Wenn Ihre Sprache Deutsch ist
+*Als ob jemand gerade hinausgegangen wäre* liegt nah an **словно кто-то только что вышел**. Lockeres *wie* ist ein schwacher Wegweiser für das Komma. Im Russischen nimmt vergleichendes **словно** das Komma; **как** in der Bedeutung «arbeitete als» nimmt es nicht. *Nacht. Ein leerer Hörsaal.* ist dasselbe Mittel wie **Ночь. Пустая аудитория.**
+
+> Ein Zitat, der Name des Mittels und die Wirkung in diesem Ausschnitt. Eine Nacherzählung ohne Mittel und ein Mittel ohne Zitat sind gleich dünn.`,
+  },
+
+  "ru-c2-professional": {
+    en: `## Professional and academic speech
+
+A talk, a discussion turn, and a review are more precise than a chat opinion and drier than a news evaluation. Limit the conclusion. Politeness does not cancel disagreement. Disagreement comes with a ground.
+
+### The frame of a short talk
+1. **Тема доклада — выбор вида в научной речи.**
+2. **Актуальность связана с тем, что в тексте оба вида часто возможны.**
+3. **Цель работы — показать, какой вопрос различает эти формы.**
+4. **Материал — фрагменты студенческих статей.**
+5. **Результаты позволяют говорить о том, что выбор зависит от вопроса, а не от длины фразы.**
+6. **Вывод: таким образом, правило «процесс или результат» недостаточно, если не назван вопрос.**
+
+### Cautious wording
+These lines do not hide an empty thesis. They mark the edge of the conclusion.
+
+- **Представляется, что причина в другом.**
+- **Можно предположить, что выбор вида связан со сроком.**
+- **Данные свидетельствуют о том, что разница устойчива.**
+- **Нельзя утверждать, что так пишут во всех дисциплинах.**
+
+**Нельзя утверждать, что** is stronger than a soft **возможно**. Do not stack both on one conclusion unless you need the contrast.
+
+### A turn and a review
+- A check: **Если я правильно понял, вы оспариваете этот вывод.** **Позвольте уточнить вопрос.**
+- A basis: **Здесь я опираюсь на сопоставление двух фрагментов.**
+- Disagreement: **С этим трудно согласиться, потому что во втором фрагменте вид задан отрицанием.**
+- A review: **Автор показывает связь вида и вопроса. Однако вывод о всех типах текста недостаточно обоснован. Следовало бы уточнить, какие тексты входили в материал.**
+
+The **-л** form agrees with the speaker: **понял / поняла**, **сформулировал / сформулировала**. Politeness sits in **вы**, **позвольте**, and **если я правильно понял**, not in switching your own gender to the plural.
+
+### If your language is English
+*It seems that* is **представляется, что**, not a reason to delete the evidence. *The data suggest that* is **данные свидетельствуют о том, что**. *If I understood you correctly* is **Если я правильно понял** or **поняла**, with your gender. *One could not claim that* is **Нельзя утверждать, что**. A hedge without an example is still an empty conclusion.
+
+> Topic, aim, material, and the limit of the conclusion. In a dispute, restate the other position first, then give the ground. **Представляется** does not replace an example.`,
+    es: `## Habla profesional y académica
+
+Una exposición, una réplica y una reseña son más precisas que una opinión de chat y más secas que una valoración de noticia. Limite la conclusión. La cortesía no anula el desacuerdo. El desacuerdo llega con un motivo.
+
+### El armazón de una exposición breve
+1. **Тема доклада — выбор вида в научной речи.**
+2. **Актуальность связана с тем, что в тексте оба вида часто возможны.**
+3. **Цель работы — показать, какой вопрос различает эти формы.**
+4. **Материал — фрагменты студенческих статей.**
+5. **Результаты позволяют говорить о том, что выбор зависит от вопроса, а не от длины фразы.**
+6. **Вывод: таким образом, правило «процесс или результат» недостаточно, если не назван вопрос.**
+
+### Formulaciones cautas
+Estas líneas no esconden una tesis vacía. Marcan el borde de la conclusión.
+
+- **Представляется, что причина в другом.**
+- **Можно предположить, что выбор вида связан со сроком.**
+- **Данные свидетельствуют о том, что разница устойчива.**
+- **Нельзя утверждать, что так пишут во всех дисциплинах.**
+
+**Нельзя утверждать, что** es más fuerte que un **возможно** blando. No apile los dos en una conclusión si no necesita el contraste.
+
+### Réplica y reseña
+- Comprobación: **Если я правильно понял, вы оспариваете этот вывод.** **Позвольте уточнить вопрос.**
+- Base: **Здесь я опираюсь на сопоставление двух фрагментов.**
+- Desacuerdo: **С этим трудно согласиться, потому что во втором фрагменте вид задан отрицанием.**
+- Reseña: **Автор показывает связь вида и вопроса. Однако вывод о всех типах текста недостаточно обоснован. Следовало бы уточнить, какие тексты входили в материал.**
+
+La forma en **-л** concuerda con quien habla: **понял / поняла**, **сформулировал / сформулировала**. La cortesía está en **вы**, **позвольте** y **если я правильно понял**, no en pasar el propio género al plural.
+
+### Si su lengua es el español
+*Parece que* es **представляется, что**, no una razón para borrar la prueba. *Los datos indican que* es **данные свидетельствуют о том, что**. *Si le he entendido bien* es **Если я правильно понял** o **поняла**, con su género. *No se puede afirmar que* es **Нельзя утверждать, что**. Una cautela sin ejemplo sigue siendo una conclusión vacía.
+
+> Tema, objetivo, material y límite de la conclusión. En la discusión, reformule primero la postura ajena y después dé el motivo. **Представляется** no sustituye un ejemplo.`,
+    de: `## Fach- und Wissenschaftssprache
+
+Ein Vortrag, ein Diskussionsbeitrag und eine Rezension sind genauer als eine Chatmeinung und trockener als eine Nachrichtenbewertung. Begrenzen Sie den Schluss. Höflichkeit hebt den Widerspruch nicht auf. Widerspruch kommt mit einem Grund.
+
+### Das Gerüst eines kurzen Vortrags
+1. **Тема доклада — выбор вида в научной речи.**
+2. **Актуальность связана с тем, что в тексте оба вида часто возможны.**
+3. **Цель работы — показать, какой вопрос различает эти формы.**
+4. **Материал — фрагменты студенческих статей.**
+5. **Результаты позволяют говорить о том, что выбор зависит от вопроса, а не от длины фразы.**
+6. **Вывод: таким образом, правило «процесс или результат» недостаточно, если не назван вопрос.**
+
+### Vorsichtige Formulierungen
+Diese Sätze verstecken keine leere These. Sie markieren den Rand des Schlusses.
+
+- **Представляется, что причина в другом.**
+- **Можно предположить, что выбор вида связан со сроком.**
+- **Данные свидетельствуют о том, что разница устойчива.**
+- **Нельзя утверждать, что так пишут во всех дисциплинах.**
+
+**Нельзя утверждать, что** ist stärker als ein weiches **возможно**. Stapeln Sie nicht beides auf einen Schluss, wenn Sie den Kontrast nicht brauchen.
+
+### Beitrag und Rezension
+- Nachfrage: **Если я правильно понял, вы оспариваете этот вывод.** **Позвольте уточнить вопрос.**
+- Grundlage: **Здесь я опираюсь на сопоставление двух фрагментов.**
+- Widerspruch: **С этим трудно согласиться, потому что во втором фрагменте вид задан отрицанием.**
+- Rezension: **Автор показывает связь вида и вопроса. Однако вывод о всех типах текста недостаточно обоснован. Следовало бы уточнить, какие тексты входили в материал.**
+
+Die **-л**-Form richtet sich nach der sprechenden Person: **понял / поняла**, **сформулировал / сформулировала**. Höflichkeit sitzt in **вы**, **позвольте** und **если я правильно понял**, nicht darin, das eigene Genus in den Plural zu schieben.
+
+### Wenn Ihre Sprache Deutsch ist
+*Es scheint, dass* ist **представляется, что**, kein Grund, den Beleg zu streichen. *Die Daten sprechen dafür, dass* ist **данные свидетельствуют о том, что**. *Wenn ich Sie richtig verstanden habe* ist **Если я правильно понял** oder **поняла**, mit Ihrem Genus. *Man kann nicht behaupten, dass* ist **Нельзя утверждать, что**. Eine Einschränkung ohne Beispiel bleibt ein leerer Schluss.
+
+> Thema, Ziel, Material und die Grenze des Schlusses. In der Diskussion zuerst die fremde Position wiedergeben, dann den Grund. **Представляется** ersetzt kein Beispiel.`,
+  },
+
+  "ru-c2-pragmatics": {
+    en: `## Particles and word order
+
+A particle does not change the dictionary meaning of the verb. It shows how the speaker presents something already known: as a contrast, as a shared reason, as doubt, or as a challenge. Spoken stress can move the focus. In a written exercise the particle and the order work together.
+
+### Particles
+| Particle | What it does | Example |
+|---|---|---|
+| **же** | contrast, or “this is already clear” | **Я же отправил заявление.** **Вы же были на лекции.** |
+| **ведь** | a reason the listener can accept | **Приходите раньше: ведь аудитория далеко.** |
+| **-то** | picks out the topic, often before a contrast | **Заявление-то приняли, а справки ещё нет.** |
+| **неужели** | surprise; allows that the fact may be true | **Неужели семинар уже начался?** |
+| **разве** | a challenge; often expects “no” | **Разве вы не получили письмо?** |
+| **ли** | a neutral question, without that expectation | **Есть ли места?** |
+| **именно** | identifies which one | **Нужно именно это правило.** |
+| **только** | excludes the rest | **Нужно только это правило.** |
+
+**-то** is written with a hyphen. **Же** and **ведь** are separate words. **Разве** and **неужели** are both outside a neutral question: **разве** argues, **неужели** is surprised.
+
+**Да нет** is not the answer “yes” plus “no”. The first **да** is a particle, and **нет** is the refusal or the softening: **Да нет, я ещё не закончил.**
+
+### Word order
+Under neutral intonation, what is already known tends to come earlier, and what is new tends to come later.
+
+- **Иван прочитал статью.** The topic is Ivan; the news is what he did.
+- **Статью прочитал Иван.** The news is who.
+- **Статью прочитал Марк, а не Анна.** The end names the right person and adds the contrast at once.
+
+This is a tendency, not a hard law. A particle can highlight a word without moving it: **Иван-то прочитал, а конспект не сдал.**
+
+### If your language is English
+English often puts this work on stress: *I did send the application.* Russian can keep the words in place and add **же**: **Я же отправил заявление.** *Surely the seminar hasn’t started?* is closer to **неужели** if you are surprised, and to **разве** if you expect the answer “no”. *Exactly this rule* is **именно**; *only this rule* is **только**. They are not synonyms.
+
+> **Же** contrasts. **Ведь** offers a shared reason. **-то** picks the topic. **Разве** expects “no”; **неужели** is surprise. **Именно** identifies; **только** excludes. In a calm sentence the new piece sits nearer the end.`,
+    es: `## Partículas y orden de palabras
+
+Una partícula no cambia el significado de diccionario del verbo. Muestra cómo quien habla presenta algo ya conocido: como contraste, como razón compartida, como duda o como reto. El acento oral puede mover el foco. En un ejercicio escrito trabajan juntas la partícula y el orden.
+
+### Partículas
+| Partícula | Qué hace | Ejemplo |
+|---|---|---|
+| **же** | contraste, o «esto ya se ve» | **Я же отправил заявление.** **Вы же были на лекции.** |
+| **ведь** | una razón que el otro puede aceptar | **Приходите раньше: ведь аудитория далеко.** |
+| **-то** | señala el tema, a menudo antes de un contraste | **Заявление-то приняли, а справки ещё нет.** |
+| **неужели** | sorpresa; admite que el hecho sea cierto | **Неужели семинар уже начался?** |
+| **разве** | un reto; a menudo espera «no» | **Разве вы не получили письмо?** |
+| **ли** | pregunta neutra, sin esa espera | **Есть ли места?** |
+| **именно** | identifica cuál | **Нужно именно это правило.** |
+| **только** | excluye el resto | **Нужно только это правило.** |
+
+**-то** se escribe con guion. **Же** y **ведь** son palabras aparte. **Разве** y **неужели** están fuera de la pregunta neutra: **разве** discute, **неужели** se sorprende.
+
+**Да нет** no es la respuesta «sí» más «no». El primer **да** es una partícula y **нет** es el rechazo o el atenuante: **Да нет, я ещё не закончил.**
+
+### Orden de palabras
+Con entonación neutra, lo ya conocido suele ir antes y lo nuevo después.
+
+- **Иван прочитал статью.** El tema es Iván; la noticia es lo que hizo.
+- **Статью прочитал Иван.** La noticia es quién.
+- **Статью прочитал Марк, а не Анна.** El final nombra a la persona justa y pone el contraste enseguida.
+
+Es una tendencia, no una ley rígida. Una partícula puede destacar una palabra sin moverla: **Иван-то прочитал, а конспект не сдал.**
+
+### Si su lengua es el español
+El español suele cargar esto en el acento: *Sí que envié la solicitud.* El ruso puede dejar las palabras y añadir **же**: **Я же отправил заявление.** *¿De verdad ya empezó el seminario?* se acerca a **неужели** si hay sorpresa, y a **разве** si se espera «no». *Justo esta regla* es **именно**; *solo esta regla* es **только**. No son sinónimos.
+
+> **Же** contrasta. **Ведь** ofrece una razón compartida. **-то** señala el tema. **Разве** espera «no»; **неужели** es sorpresa. **Именно** identifica; **только** excluye. En una frase tranquila lo nuevo queda más cerca del final.`,
+    de: `## Partikeln und Wortstellung
+
+Eine Partikel ändert nicht die Wörterbuchbedeutung des Verbs. Sie zeigt, wie der Sprecher etwas schon Bekanntes vorlegt: als Kontrast, als gemeinsamen Grund, als Zweifel oder als Herausforderung. Gesprochene Betonung kann den Fokus verschieben. In einer schriftlichen Übung arbeiten Partikel und Stellung zusammen.
+
+### Partikeln
+| Partikel | Leistung | Beispiel |
+|---|---|---|
+| **же** | Kontrast oder «das ist doch schon klar» | **Я же отправил заявление.** **Вы же были на лекции.** |
+| **ведь** | ein Grund, den der Hörer annehmen kann | **Приходите раньше: ведь аудитория далеко.** |
+| **-то** | hebt das Thema, oft vor einem Kontrast | **Заявление-то приняли, а справки ещё нет.** |
+| **неужели** | Überraschung; lässt zu, dass der Fakt stimmt | **Неужели семинар уже начался?** |
+| **разве** | ein Einwand; erwartet oft «nein» | **Разве вы не получили письмо?** |
+| **ли** | eine neutrale Frage, ohne diese Erwartung | **Есть ли места?** |
+| **именно** | sagt, welches genau | **Нужно именно это правило.** |
+| **только** | schließt den Rest aus | **Нужно только это правило.** |
+
+**-то** wird mit Bindestrich geschrieben. **Же** und **ведь** sind eigene Wörter. **Разве** und **неужели** liegen beide außerhalb einer neutralen Frage: **разве** widerspricht, **неужели** ist überrascht.
+
+**Да нет** ist nicht die Antwort «ja» plus «nein». Das erste **да** ist eine Partikel, **нет** ist die Ablehnung oder die Abschwächung: **Да нет, я ещё не закончил.**
+
+### Wortstellung
+Bei neutraler Intonation steht das schon Bekannte eher vorn und das Neue eher hinten.
+
+- **Иван прочитал статью.** Thema ist Ivan; neu ist, was er getan hat.
+- **Статью прочитал Иван.** Neu ist, wer.
+- **Статью прочитал Марк, а не Анна.** Das Ende nennt die richtige Person und setzt den Kontrast gleich dazu.
+
+Das ist eine Tendenz, kein hartes Gesetz. Eine Partikel kann ein Wort hervorheben, ohne es zu verschieben: **Иван-то прочитал, а конспект не сдал.**
+
+### Wenn Ihre Sprache Deutsch ist
+Deutsch legt diese Arbeit oft auf *doch* und auf die Betonung: *Ich habe den Antrag doch abgeschickt.* Russisch kann die Wörter stehen lassen und **же** setzen: **Я же отправил заявление.** *Das Seminar hat doch noch nicht angefangen?* liegt näher an **разве**, wenn Sie «nein» erwarten, und an **неужели**, wenn Sie überrascht sind. *Genau diese Regel* ist **именно**; *nur diese Regel* ist **только**. Das sind keine Synonyme.
+
+> **Же** kontrastiert. **Ведь** gibt einen gemeinsamen Grund. **-то** hebt das Thema. **Разве** erwartet «nein»; **неужели** ist Überraschung. **Именно** identifiziert; **только** schließt aus. In einem ruhigen Satz steht das Neue näher am Ende.`,
   },
 };

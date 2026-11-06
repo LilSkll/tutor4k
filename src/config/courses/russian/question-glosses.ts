@@ -1,4 +1,5 @@
 import type { InterfaceLanguage } from "@/types";
+import { RUSSIAN_QUESTION_GLOSSES_B2C2 } from "./question-glosses-b2c2";
 import { RUSSIAN_A2B1_QUESTION_GLOSSES } from "./question-glosses-a2b1";
 import { RUSSIAN_A1_MC_GLOSSES } from "./question-glosses-mc";
 import { RUSSIAN_A1_REST_GLOSSES } from "./question-glosses-rest";
@@ -17,12 +18,13 @@ export const RUSSIAN_A1_QUESTION_GLOSSES: Record<
 };
 
 /**
- * A1 plus A2–B1. A1 is spread last so an identical stem keeps the A1 gloss.
+ * B2–C2, then A2–B1, then A1 last so an identical stem keeps the earlier-level gloss.
  */
 export const RUSSIAN_QUESTION_GLOSSES: Record<
   string,
   Partial<Record<Exclude<InterfaceLanguage, "ru">, string>>
 > = {
+  ...RUSSIAN_QUESTION_GLOSSES_B2C2,
   ...RUSSIAN_A2B1_QUESTION_GLOSSES,
   ...RUSSIAN_A1_QUESTION_GLOSSES,
 };

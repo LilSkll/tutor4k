@@ -299,8 +299,8 @@ export interface CourseKeywords {
   greetings: string[];
 }
 
-/** Level guide text per CEFR level for a specific course. */
-export type LevelGuide = Record<Level, string>;
+/** Level guide text per CEFR level for a specific course. C2 is optional: learner profiles stop at C1, while grammar and chapters use it. */
+export type LevelGuide = Record<Level, string> & { C2?: string };
 
 /**
  * Full course configuration — loaded by the course registry.

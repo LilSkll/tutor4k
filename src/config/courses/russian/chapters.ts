@@ -1,7 +1,8 @@
 import type { Chapter } from "@/types";
+import { RUSSIAN_B2_C2_CHAPTERS } from "./chapters-b2-c2";
 
 /**
- * Russian as a Foreign Language — A1–B1 journey (22 chapters).
+ * Russian as a Foreign Language — A1–C2 journey (36 chapters).
  * Methodological spine informed by common RKI sequences
  * (prep-faculty / adult learners). Original titles and summaries —
  * do not mirror any single textbook TOC.
@@ -476,6 +477,8 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
     prereqChapter: "ru-ch21-narration-cohesion",
     estimatedMinutes: 21,
   },
+
+  ...RUSSIAN_B2_C2_CHAPTERS,
 ];
 
 export function getRuChapter(slug: string): Chapter | undefined {

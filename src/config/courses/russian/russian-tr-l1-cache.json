@@ -978,5 +978,453 @@
   "my window": {
     "es": "mi ventana",
     "de": "mein Fenster"
+  },
+  "The student who read the paper at the seminar yesterday is answering the committee's questions today.": {
+    "es": "El estudiante que leyó la ponencia en el seminario ayer responde hoy a las preguntas de la comisión.",
+    "de": "Der Student, der gestern im Seminar das Referat gelesen hat, beantwortet heute die Fragen der Kommission."
+  },
+  "The article published in the faculty journal is already on the exam list.": {
+    "es": "El artículo publicado en la revista de la facultad ya está en la lista del examen.",
+    "de": "Der in der Fakultätszeitschrift veröffentlichte Artikel steht schon auf der Prüfungsliste."
+  },
+  "Anna, who had read all the sources on Novgorod, submitted the summary.": {
+    "es": "Anna, que había leído todas las fuentes sobre Nóvgorod, entregó el resumen.",
+    "de": "Anna, die alle Quellen zu Nowgorod gelesen hatte, gab die Zusammenfassung ab."
+  },
+  "Omar, who came into the classroom last, sat by the window at once.": {
+    "es": "Omar, que entró el último en el aula, se sentó enseguida junto a la ventana.",
+    "de": "Omar, der als Letzter in den Hörsaal kam, setzte sich sofort ans Fenster."
+  },
+  "The questions asked at the exam were taken from the lecture notes.": {
+    "es": "Las preguntas planteadas en el examen se tomaron de los apuntes de la clase.",
+    "de": "Die in der Prüfung gestellten Fragen stammten aus der Vorlesungsmitschrift."
+  },
+  "The text translated by the intern by Friday is on the tutor's desk.": {
+    "es": "El texto traducido por el practicante para el viernes está en la mesa del tutor.",
+    "de": "Der Text, den der Praktikant bis Freitag übersetzt hat, liegt auf dem Tisch des Tutors."
+  },
+  "On the screen there is a project the department is still developing.": {
+    "es": "En la pantalla hay un proyecto que el departamento todavía está elaborando.",
+    "de": "Auf dem Bildschirm ist ein Projekt, das die Abteilung noch entwickelt."
+  },
+  "The students who arrived for the conference in the morning registered at the desk.": {
+    "es": "Los estudiantes que llegaron por la mañana a la conferencia se registraron en el mostrador.",
+    "de": "Die Studierenden, die morgens zur Konferenz kamen, meldeten sich am Tresen an."
+  },
+  "While listening to the lecture, Anna wrote the examples in her notebook.": {
+    "es": "Mientras escuchaba la clase, Anna anotaba los ejemplos en el cuaderno.",
+    "de": "Während Anna der Vorlesung zuhörte, schrieb sie die Beispiele ins Heft."
+  },
+  "After filling in the form, Omar took it to the dean's office.": {
+    "es": "Después de rellenar el formulario, Omar lo llevó al decanato.",
+    "de": "Nachdem Omar das Formular ausgefüllt hatte, brachte er es ins Dekanat."
+  },
+  "While walking along the embankment, we discussed the talk.": {
+    "es": "Mientras caminábamos por el malecón, comentamos la ponencia.",
+    "de": "Während wir am Ufer entlanggingen, besprachen wir den Vortrag."
+  },
+  "After checking all the questions, Anna closed the file.": {
+    "es": "Después de revisar todas las preguntas, Anna cerró el archivo.",
+    "de": "Nachdem Anna alle Fragen geprüft hatte, schloss sie die Datei."
+  },
+  "While studying in the library, Omar did not hear the phone.": {
+    "es": "Mientras estudiaba en la biblioteca, Omar no oyó el teléfono.",
+    "de": "Während Omar in der Bibliothek lernte, hörte er das Telefon nicht."
+  },
+  "After receiving the certificate, Anna went straight to the dorm.": {
+    "es": "Después de recibir el certificado, Anna fue directamente a la residencia.",
+    "de": "Nachdem Anna die Bescheinigung erhalten hatte, ging sie direkt ins Wohnheim."
+  },
+  "After correcting the mistakes, the intern sent the text again.": {
+    "es": "Después de corregir los errores, el practicante volvió a enviar el texto.",
+    "de": "Nachdem der Praktikant die Fehler korrigiert hatte, schickte er den Text erneut."
+  },
+  "Without finding out the archive password, we never opened it.": {
+    "es": "Sin averiguar la contraseña del archivo, no llegamos a abrirlo.",
+    "de": "Ohne das Passwort des Archivs herauszufinden, haben wir es nie geöffnet."
+  },
+  "The article is being translated at the department now.": {
+    "es": "El artículo se está traduciendo ahora en el departamento.",
+    "de": "Der Artikel wird gerade in der Abteilung übersetzt."
+  },
+  "The application has already been signed by the dean.": {
+    "es": "La solicitud ya ha sido firmada por el decano.",
+    "de": "Der Antrag ist bereits vom Dekan unterschrieben."
+  },
+  "Omar has been admitted to the exam: the certificate is already in the file.": {
+    "es": "Omar ha sido admitido al examen: el certificado ya está en el expediente.",
+    "de": "Omar ist zur Prüfung zugelassen: die Bescheinigung liegt schon in der Akte."
+  },
+  "Anna is not admitted to the exam without a certificate from the clinic.": {
+    "es": "Anna no es admitida al examen sin un certificado de la clínica.",
+    "de": "Anna wird ohne Bescheinigung der Klinik nicht zur Prüfung zugelassen."
+  },
+  "By evening the papers had been checked and handed in to the dean's office.": {
+    "es": "Por la tarde los trabajos ya estaban revisados y entregados en el decanato.",
+    "de": "Am Abend waren die Arbeiten geprüft und im Dekanat abgegeben."
+  },
+  "This semester the course is taught on two sites.": {
+    "es": "Este semestre el curso se imparte en dos sedes.",
+    "de": "In diesem Semester wird der Kurs an zwei Standorten unterrichtet."
+  },
+  "The decision will be made by the committee only tomorrow.": {
+    "es": "La comisión tomará la decisión solo mañana.",
+    "de": "Die Entscheidung wird von der Kommission erst morgen getroffen."
+  },
+  "Certificates are issued at the dean's office on request.": {
+    "es": "Los certificados se expiden en el decanato a petición.",
+    "de": "Bescheinigungen werden im Dekanat auf Antrag ausgestellt."
+  },
+  "Omar said that he had already submitted the draft in the morning.": {
+    "es": "Omar dijo que ya había entregado el borrador por la mañana.",
+    "de": "Omar sagte, er habe den Entwurf schon am Morgen abgegeben."
+  },
+  "Anna said that she would come to the consultation tomorrow.": {
+    "es": "Anna dijo que vendría mañana a la consulta.",
+    "de": "Anna sagte, sie komme morgen zur Sprechstunde."
+  },
+  "The tutor asked where the application was.": {
+    "es": "El tutor preguntó dónde estaba la solicitud.",
+    "de": "Der Tutor fragte, wo der Antrag sei."
+  },
+  "Anna asked whether Omar had sent the file.": {
+    "es": "Anna preguntó si Omar había enviado el archivo.",
+    "de": "Anna fragte, ob Omar die Datei geschickt habe."
+  },
+  "The lecturer asked us to submit the notes by Friday.": {
+    "es": "El profesor nos pidió entregar los apuntes para el viernes.",
+    "de": "Der Dozent bat uns, die Aufzeichnungen bis Freitag abzugeben."
+  },
+  "Omar asked them not to open the archive without a password.": {
+    "es": "Omar les pidió que no abrieran el archivo sin contraseña.",
+    "de": "Omar bat sie, das Archiv nicht ohne Passwort zu öffnen."
+  },
+  "Anna replied that she does not agree with the test grade.": {
+    "es": "Anna respondió que no está de acuerdo con la nota del control.",
+    "de": "Anna antwortete, sie sei mit der Note der Arbeit nicht einverstanden."
+  },
+  "The secretary asked when the defence would start.": {
+    "es": "La secretaria preguntó cuándo empezaría la defensa.",
+    "de": "Die Sekretärin fragte, wann die Verteidigung beginne."
+  },
+  "If Anna submits the draft today, the tutor will look at it tomorrow.": {
+    "es": "Si Anna entrega el borrador hoy, el tutor lo verá mañana.",
+    "de": "Wenn Anna den Entwurf heute abgibt, sieht ihn der Tutor morgen an."
+  },
+  "If Omar had checked the timetable, he would not have come to a closed door.": {
+    "es": "Si Omar hubiera mirado el horario, no habría llegado ante una puerta cerrada.",
+    "de": "Wenn Omar den Stundenplan geprüft hätte, wäre er nicht vor einer geschlossenen Tür gestanden."
+  },
+  "Omar would have received admission if he had submitted the paper on time.": {
+    "es": "Omar habría recibido la admisión si hubiera entregado el trabajo a tiempo.",
+    "de": "Omar hätte die Zulassung erhalten, wenn er die Arbeit rechtzeitig abgegeben hätte."
+  },
+  "Anna left an hour early in order to be on time for the consultation.": {
+    "es": "Anna se fue una hora antes para llegar a tiempo a la consulta.",
+    "de": "Anna ging eine Stunde früher, um pünktlich zur Sprechstunde zu sein."
+  },
+  "If the group writes the test by Friday, the review will be on Monday.": {
+    "es": "Si el grupo escribe el control para el viernes, el repaso será el lunes.",
+    "de": "Wenn die Gruppe den Test bis Freitag schreibt, ist die Besprechung am Montag."
+  },
+  "If Omar had posted the notice, the group would not have been late.": {
+    "es": "Si Omar hubiera publicado el aviso, el grupo no habría llegado tarde.",
+    "de": "Wenn Omar die Mitteilung ausgehängt hätte, wäre die Gruppe nicht zu spät gekommen."
+  },
+  "Anna would not have gone to the archive that day if she had known about the repairs.": {
+    "es": "Anna no habría ido al archivo ese día si hubiera sabido de las obras.",
+    "de": "Anna wäre an dem Tag nicht ins Archiv gegangen, wenn sie von den Arbeiten gewusst hätte."
+  },
+  "Take your pass if the archive closes early.": {
+    "es": "Llévate el pase si el archivo cierra temprano.",
+    "de": "Nimm deinen Ausweis mit, falls das Archiv früher schließt."
+  },
+  "I request that you grant me a place in the dormitory for the second semester.": {
+    "es": "Solicito que me concedan una plaza en la residencia para el segundo semestre.",
+    "de": "Ich bitte darum, mir für das zweite Semester einen Platz im Wohnheim zu gewähren."
+  },
+  "Dear Anna Sergeyevna, I am sending you the registration certificate.": {
+    "es": "Estimada Anna Serguéyevna, le envío el certificado de registro.",
+    "de": "Sehr geehrte Anna Sergejewna, ich sende Ihnen die Registrierungsbescheinigung."
+  },
+  "The certificate was issued on the basis of the rector's order.": {
+    "es": "El certificado se expidió sobre la base de la orden del rector.",
+    "de": "Die Bescheinigung wurde auf der Grundlage der Anordnung des Rektors ausgestellt."
+  },
+  "According to the rector's order, not at the students' request, the exam has been moved to Thursday.": {
+    "es": "Según la orden del rector, y no a petición de los estudiantes, el examen se ha trasladado al jueves.",
+    "de": "Gemäß der Anordnung des Rektors, nicht auf Wunsch der Studierenden, wurde die Prüfung auf Donnerstag verschoben."
+  },
+  "Due to illness I request permission to miss the practical class on 12 November.": {
+    "es": "Por enfermedad solicito permiso para faltar a la clase práctica del 12 de noviembre.",
+    "de": "Wegen Krankheit bitte ich um Erlaubnis, die praktische Lehrveranstaltung am 12. November zu versäumen."
+  },
+  "I am writing to inform you that I will not be able to attend the meeting.": {
+    "es": "Le escribo para informarle de que no podré asistir a la reunión.",
+    "de": "Ich schreibe Ihnen, um mitzuteilen, dass ich an der Sitzung nicht teilnehmen kann."
+  },
+  "I request that you issue me a certificate of enrollment for the embassy.": {
+    "es": "Solicito que me expidan un certificado de matrícula para la embajada.",
+    "de": "Ich bitte darum, mir eine Immatrikulationsbescheinigung für die Botschaft auszustellen."
+  },
+  "Enclosure: a copy of the passport and a copy of the student card.": {
+    "es": "Anexo: una copia del pasaporte y una copia del carné de estudiante.",
+    "de": "Anlage: eine Kopie des Reisepasses und eine Kopie des Studentenausweises."
+  },
+  "Who opened the window this morning? It is shut again.": {
+    "es": "¿Quién abrió la ventana esta mañana? Ya está cerrada otra vez.",
+    "de": "Wer hat heute Morgen das Fenster geöffnet? Es ist wieder zu."
+  },
+  "Omar spent two hours editing the introduction and never submitted the file.": {
+    "es": "Omar pasó dos horas corrigiendo la introducción y no llegó a entregar el archivo.",
+    "de": "Omar hat zwei Stunden an der Einleitung gefeilt und die Datei nie abgegeben."
+  },
+  "Anna never caught the tone of the paragraph, although she reread it three times.": {
+    "es": "Anna no llegó a captar el tono del párrafo, aunque lo releyó tres veces.",
+    "de": "Anna hat den Ton des Absatzes nie getroffen, obwohl sie ihn dreimal gelesen hat."
+  },
+  "By morning the editor will narrow the thesis: it is too broad for the page.": {
+    "es": "Para la mañana el editor estrechará la tesis: es demasiado amplia para la página.",
+    "de": "Bis zum Morgen wird der Redakteur die These enger fassen: sie ist zu breit für die Seite."
+  },
+  "On the third try Omar managed to formulate the thesis.": {
+    "es": "Al tercer intento Omar logró formular la tesis.",
+    "de": "Beim dritten Versuch gelang es Omar, die These zu formulieren."
+  },
+  "He should have apologized instead of making excuses.": {
+    "es": "Debería haber pedido perdón en lugar de justificarse.",
+    "de": "Er hätte sich entschuldigen sollen, statt sich zu rechtfertigen."
+  },
+  "Until the editors check the figures, the piece will not go into the issue.": {
+    "es": "Hasta que la redacción no compruebe las cifras, el material no entrará en el número.",
+    "de": "Solange die Redaktion die Zahlen nicht geprüft hat, kommt der Beitrag nicht in die Ausgabe."
+  },
+  "Anna had barely finished the first paragraph when the editor asked her to rewrite the tone.": {
+    "es": "Apenas Anna terminó el primer párrafo, el editor le pidió que reescribiera el tono.",
+    "de": "Kaum hatte Anna den ersten Absatz beendet, bat der Redakteur, den Ton umzuschreiben."
+  },
+  "Omar knows the answer and still keeps his mouth shut.": {
+    "es": "Omar sabe la respuesta y aun así se calla.",
+    "de": "Omar kennt die Antwort und schweigt trotzdem."
+  },
+  "In the new newsroom Anna is in her element.": {
+    "es": "En la nueva redacción Anna está en su elemento.",
+    "de": "In der neuen Redaktion ist Anna in ihrem Element."
+  },
+  "The guest arrived out of the blue, and the broadcast plan fell apart.": {
+    "es": "El invitado llegó de improviso, y el plan de la emisión se vino abajo.",
+    "de": "Der Gast kam aus heiterem Himmel, und der Sendeplan fiel auseinander."
+  },
+  "Tell me in all honesty: does this thesis really hold?": {
+    "es": "Dígame con toda franqueza: ¿esta tesis de verdad se sostiene?",
+    "de": "Sagen Sie ganz ehrlich: hält diese These wirklich?"
+  },
+  "The defense was so crowded there was nowhere to move.": {
+    "es": "En la defensa no cabía ni un alfiler.",
+    "de": "Bei der Verteidigung war es zum Bersten voll."
+  },
+  "Omar is stringing us along again: the data are not ready on time.": {
+    "es": "Omar nos da largas otra vez: los datos no están listos a tiempo.",
+    "de": "Omar hält uns wieder hin: die Daten sind nicht termingerecht da."
+  },
+  "They threw the draft together in a hurry, and the table has an error.": {
+    "es": "Armaron el borrador a toda prisa, y en la tabla hay un error.",
+    "de": "Sie haben den Entwurf in aller Eile zusammengestellt, und in der Tabelle ist ein Fehler."
+  },
+  "After the argument they are working in harmony again.": {
+    "es": "Después de la discusión vuelven a trabajar en perfecta armonía.",
+    "de": "Nach dem Streit arbeiten sie wieder völlig einträchtig."
+  },
+  "The data are narrow. Nevertheless, the conclusion is broader than the sample.": {
+    "es": "Los datos son estrechos. Sin embargo, la conclusión es más amplia que la muestra.",
+    "de": "Die Daten sind schmal. Trotzdem ist die Schlussfolgerung breiter als die Stichprobe."
+  },
+  "The thesis is debatable. At the same time, the figures add up.": {
+    "es": "La tesis es discutible. Al mismo tiempo, las cifras cuadran.",
+    "de": "Die These ist umstritten. Zugleich gehen die Zahlen auf."
+  },
+  "The sample was not expanded. Therefore it is too early to speak of representativeness.": {
+    "es": "No ampliaron la muestra. Por lo tanto, es pronto para hablar de representatividad.",
+    "de": "Die Stichprobe wurde nicht erweitert. Folglich ist es zu früh, von Repräsentativität zu sprechen."
+  },
+  "In other words, this is not about the plot but about the setting.": {
+    "es": "En otras palabras, no se trata de la trama, sino del ambiente.",
+    "de": "Mit anderen Worten: es geht nicht um die Handlung, sondern um das Milieu."
+  },
+  "It appears that a narrow thesis is more honest here than a broad one.": {
+    "es": "Parece que aquí una tesis estrecha es más honesta que una amplia.",
+    "de": "Es scheint, dass eine enge These hier ehrlicher ist als eine weite."
+  },
+  "The deadline is short. For all that, the fieldwork should be kept.": {
+    "es": "El plazo es corto. Con todo, conviene conservar el trabajo de campo.",
+    "de": "Die Frist ist kurz. Dessen ungeachtet sollte die Feldphase bleiben."
+  },
+  "It is not so much the table as the reading of the source.": {
+    "es": "No se trata tanto de la tabla como de la lectura de la fuente.",
+    "de": "Es geht nicht so sehr um die Tabelle als um die Lektüre der Quelle."
+  },
+  "Contrary to a widespread opinion, the archive does not give this date.": {
+    "es": "Contra una opinión extendida, el archivo no proporciona esta fecha.",
+    "de": "Entgegen einer verbreiteten Meinung gibt das Archiv dieses Datum nicht her."
+  },
+  "The official representative denied the rumor that the program would close.": {
+    "es": "El representante oficial desmintió el rumor sobre el cierre del programa.",
+    "de": "Der offizielle Vertreter wies das Gerücht über die Einstellung der Sendung zurück."
+  },
+  "In the report the fact is called unconfirmed: there is no confirmation.": {
+    "es": "En la nota el hecho figura como no confirmado: no hay confirmación.",
+    "de": "Im Beitrag wird der Fakt als unbestätigt bezeichnet: eine Bestätigung fehlt."
+  },
+  "The guest refused to answer on air.": {
+    "es": "El invitado se negó a responder en antena.",
+    "de": "Der Gast weigerte sich, auf Sendung zu antworten."
+  },
+  "The source spoke on condition of anonymity.": {
+    "es": "La fuente habló bajo condición de anonimato.",
+    "de": "Die Quelle sprach unter der Bedingung der Anonymität."
+  },
+  "The details are still unknown: the information is being checked.": {
+    "es": "Los detalles aún se desconocen: los datos se están precisando.",
+    "de": "Die Einzelheiten sind noch unbekannt: die Angaben werden geprüft."
+  },
+  "The representative stated that the deadline had been moved by a week.": {
+    "es": "El representante declaró que el plazo se había corrido una semana.",
+    "de": "Der Vertreter erklärte, die Frist sei um eine Woche verschoben worden."
+  },
+  "The headline promises a scandal without a fact. The editor asks to remove the judgment from it.": {
+    "es": "El titular promete un escándalo sin un hecho. El editor pide quitar de él la valoración.",
+    "de": "Die Überschrift verspricht einen Skandal ohne Fakt. Der Redakteur bittet, die Wertung daraus zu nehmen."
+  },
+  "The author does not offer his own comment; he retells someone else's story.": {
+    "es": "El autor no ofrece su propio comentario, sino que recuenta una historia ajena.",
+    "de": "Der Autor gibt keinen eigenen Kommentar, sondern erzählt eine fremde Geschichte nach."
+  },
+  "In a review, use a bookish register: the deadlines now seem excessively tight.": {
+    "es": "En una reseña, registro culto: los plazos parecen ahora excesivamente apretados.",
+    "de": "In einer Rezension, gehoben: die Fristen erscheinen nun übermäßig knapp."
+  },
+  "In the corridor, say it colloquially: the deadline is already burning.": {
+    "es": "En el pasillo, en registro coloquial: el plazo ya aprieta de verdad.",
+    "de": "Auf dem Gang, umgangssprachlich: die Frist brennt schon."
+  },
+  "In an official note: the grant funds are exhausted.": {
+    "es": "En una nota oficial: los fondos de la subvención están agotados.",
+    "de": "In einem dienstlichen Vermerk: die Fördermittel sind ausgeschöpft."
+  },
+  "In a literary comment, use a bookish verb: he looks upon the city.": {
+    "es": "En un comentario literario, verbo culto: él contempla la ciudad.",
+    "de": "Im Literaturkommentar, gehoben: er blickt auf die Stadt."
+  },
+  "In a neutral talk: we were late because the train was standing.": {
+    "es": "En una intervención neutra: llegamos tarde porque el tren estaba parado.",
+    "de": "Im neutralen Vortrag: wir kamen zu spät, weil der Zug stand."
+  },
+  "In a review: the remark is highly significant.": {
+    "es": "En una reseña: la observación es sumamente sustancial.",
+    "de": "In der Rezension: die Anmerkung ist höchst wesentlich."
+  },
+  "Colloquially, Anna agrees that she got it.": {
+    "es": "En tono coloquial Anna asiente: sí, ya lo entendió.",
+    "de": "Umgangssprachlich stimmt Anna zu: ja, sie hat es verstanden."
+  },
+  "In a bookish sentence: the question is now closed.": {
+    "es": "En una frase culta: la cuestión queda ahora cerrada.",
+    "de": "In einem gehobenen Satz: die Frage ist nun geschlossen."
+  },
+  "A gray canvas of a city is a metaphor, not a literal color.": {
+    "es": "Un lienzo gris de ciudad es una metáfora, no un color literal.",
+    "de": "Eine graue Leinwand der Stadt ist eine Metapher, keine wörtliche Farbe."
+  },
+  "In the commentary, the tired station is an epithet.": {
+    "es": "En el comentario, la estación cansada es un epíteto.",
+    "de": "Im Kommentar ist der müde Bahnhof ein Epitheton."
+  },
+  "The voice of the fragment is the narrator, not the author of the article.": {
+    "es": "La voz del fragmento es el narrador, no el autor del artículo.",
+    "de": "Die Stimme des Fragments ist der Erzähler, nicht der Verfasser des Artikels."
+  },
+  "The hero closes the window and explains nothing. The meaning rests on the subtext.": {
+    "es": "El héroe cierra la ventana y no explica nada. El sentido se sostiene en el subtexto.",
+    "de": "Der Held schließt das Fenster und erklärt nichts. Der Sinn liegt im Subtext."
+  },
+  "The highest point of tension in the fragment is the climax.": {
+    "es": "El punto de mayor tensión del fragmento es el clímax.",
+    "de": "Der höchste Spannungspunkt des Fragments ist der Höhepunkt."
+  },
+  "The road motif returns in every paragraph. It is a leitmotif.": {
+    "es": "El motivo del camino vuelve en cada párrafo. Es un leitmotiv.",
+    "de": "Das Wegmotiv kehrt in jedem Absatz wieder. Es ist ein Leitmotiv."
+  },
+  "A hint at someone else's plot without a verbatim quotation is an allusion.": {
+    "es": "Un guiño a una trama ajena sin una cita literal es una alusión.",
+    "de": "Ein Hinweis auf eine fremde Handlung ohne wörtliches Zitat ist eine Anspielung."
+  },
+  "The paragraph that closes the conflict is the denouement.": {
+    "es": "El párrafo que cierra el conflicto es el desenlace.",
+    "de": "Der Absatz, der den Konflikt schließt, ist die Auflösung."
+  },
+  "Omar begins: if he understood the remark correctly, the sample does not include correspondence students.": {
+    "es": "Omar empieza: si entendió bien la observación, la muestra no incluye a los estudiantes a distancia.",
+    "de": "Omar beginnt: wenn er die Anmerkung richtig verstanden hat, umfasst die Stichprobe keine Fernstudierenden."
+  },
+  "Within the study the hypothesis remains a working hypothesis.": {
+    "es": "En el marco del estudio la hipótesis sigue siendo una hipótesis de trabajo.",
+    "de": "Im Rahmen der Untersuchung bleibt die Hypothese eine Arbeitshypothese."
+  },
+  "The conclusion needs clarification: the second step is not described.": {
+    "es": "La conclusión requiere una precisión: el segundo paso no está descrito.",
+    "de": "Die Schlussfolgerung bedarf der Präzisierung: der zweite Schritt ist nicht beschrieben."
+  },
+  "The data diverge from the conclusion, and this should be said politely.": {
+    "es": "Los datos divergen de la conclusión, y conviene decirlo con cortesía.",
+    "de": "Die Daten weichen von der Schlussfolgerung ab, und das sollte man höflich sagen."
+  },
+  "The review notes the reproducibility of the method.": {
+    "es": "La reseña señala la reproducibilidad del método.",
+    "de": "Das Gutachten vermerkt die Reproduzierbarkeit der Methode."
+  },
+  "Allow me to object: the sample does not cover the second year.": {
+    "es": "Permítame objetar: la muestra no cubre el segundo curso.",
+    "de": "Gestatten Sie den Einwand: die Stichprobe erfasst das zweite Studienjahr nicht."
+  },
+  "A link between two series with no claim of causation is a correlation.": {
+    "es": "Un vínculo entre dos series sin pretensión de causa es una correlación.",
+    "de": "Ein Zusammenhang zweier Reihen ohne Kausalanspruch ist eine Korrelation."
+  },
+  "At the end of the paper the author asks to be allowed to stop there.": {
+    "es": "Al final de la ponencia el autor pide que le permitan terminar en este punto.",
+    "de": "Am Ende des Vortrags bittet der Autor, hier schließen zu dürfen."
+  },
+  "Omar cannot believe it: did they really postpone the defense?": {
+    "es": "Omar no puede creerlo: ¿de verdad aplazaron la defensa?",
+    "de": "Omar kann es nicht glauben: haben sie die Verteidigung wirklich verschoben?"
+  },
+  "Anna reminds him of a shared fact: the deadline is tomorrow, as they both know.": {
+    "es": "Anna le recuerda un dato compartido: el plazo es mañana, y ambos lo saben.",
+    "de": "Anna erinnert an eine bekannte Tatsache: die Frist ist doch morgen."
+  },
+  "Ask the editor gently to take a look at the paragraph.": {
+    "es": "Pídale al editor con suavidad que eche un vistazo al párrafo.",
+    "de": "Bitten Sie den Redakteur sanft, einen Blick auf den Absatz zu werfen."
+  },
+  "Omar doubts it: did the editor really approve this?": {
+    "es": "Omar lo duda: ¿de verdad lo aprobó el editor?",
+    "de": "Omar bezweifelt es: hat der Redakteur das wirklich gebilligt?"
+  },
+  "Anna hesitated and sent the file anyway.": {
+    "es": "Anna dudó y envió el archivo de todos modos.",
+    "de": "Anna zögerte und schickte die Datei trotzdem."
+  },
+  "We did not read the review; we only heard a retelling. Put the focus on the review.": {
+    "es": "No leímos el dictamen; solo oímos un recuento. El foco está en el dictamen.",
+    "de": "Wir haben das Gutachten nicht gelesen, nur eine Nacherzählung gehört. Der Fokus liegt auf dem Gutachten."
+  },
+  "I do not know whether we will be on time for the broadcast.": {
+    "es": "No sé si llegaremos a tiempo a la emisión.",
+    "de": "Ich weiß nicht, ob wir rechtzeitig zur Sendung kommen."
+  },
+  "Omar picks out the argument everyone already knows: that argument is a strong one.": {
+    "es": "Omar destaca el argumento que todos ya conocen: ese argumento es fuerte.",
+    "de": "Omar hebt das Argument hervor, das alle schon kennen: das Argument ist stark."
   }
 }

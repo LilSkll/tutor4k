@@ -1,5 +1,5 @@
 /**
- * Display order for Russian (RKI) grammar topics — A1 → B1 spine.
+ * Display order for Russian (RKI) grammar topics — A1 → C2 spine.
  * Slugs must match src/config/courses/russian/grammar.ts.
  */
 export const RUSSIAN_GRAMMAR_CURRICULUM_ORDER: string[] = [
@@ -26,4 +26,21 @@ export const RUSSIAN_GRAMMAR_CURRICULUM_ORDER: string[] = [
   "ru-b1-complex-sentences",
   "ru-b1-text-cohesion",
   "ru-b1-argumentation",
+  // B2
+  "ru-b2-participles",
+  "ru-b2-gerunds",
+  "ru-b2-passive",
+  "ru-b2-reported-speech",
+  "ru-b2-conditionals",
+  "ru-b2-formal-register",
+  // C1
+  "ru-c1-aspect-nuance",
+  "ru-c1-idioms",
+  "ru-c1-advanced-argumentation",
+  "ru-c1-media-discourse",
+  // C2
+  "ru-c2-registers",
+  "ru-c2-literary",
+  "ru-c2-professional",
+  "ru-c2-pragmatics",
 ];

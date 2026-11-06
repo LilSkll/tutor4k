@@ -31,8 +31,8 @@ describe("Russian course integration", () => {
     const ru = await getCourse("russian");
     expect(ru.id).toBe("russian");
     expect(ru.beta).toBe(true);
-    expect(ru.getChapters().length).toBe(22);
-    expect(ru.getGrammar().length).toBe(20);
+    expect(ru.getChapters().length).toBe(36);
+    expect(ru.getGrammar().length).toBe(34);
   });
 
   it("localizes grammar titles/categories for all UI locales", async () => {
@@ -49,7 +49,7 @@ describe("Russian course integration", () => {
 
     const sorted = sortGrammarForCourse("russian", ru.getGrammar());
     expect(sorted[0]?.slug).toBe("ru-a1-alphabet-phonetics");
-    expect(sorted.at(-1)?.slug).toBe("ru-b1-argumentation");
+    expect(sorted.at(-1)?.slug).toBe("ru-c2-pragmatics");
   });
 
   it("builds a dedicated RKI tutor prompt (not Spanish)", async () => {
@@ -90,13 +90,25 @@ describe("Russian course integration", () => {
     expect(russianErrorCategoryFromTopics("ru-a1-noun-gender", null)).toBe(
       "gender",
     );
+    expect(russianErrorCategoryFromTopics("ru-b2-participles", null)).toBe(
+      "aspect",
+    );
+    expect(russianErrorCategoryFromTopics("ru-b2-passive", null)).toBe(
+      "verb_government",
+    );
+    expect(russianErrorCategoryFromTopics("ru-c1-idioms", null)).toBe(
+      "lexical",
+    );
+    expect(russianErrorCategoryFromTopics("ru-c2-registers", null)).toBe(
+      "sentence_structure",
+    );
   });
 
   it("adaptive pool tags every item with Russian grammar topics", async () => {
     const pool = await getExercisePool("russian");
-    // A1 deep (~680) + A2 (~320) + B1 (~240).
-    expect(pool.length).toBeGreaterThanOrEqual(1100);
-    expect(pool.length).toBeLessThan(1600);
+    // A1–C2 ≈ 1800 (680+320+240+240+160+160).
+    expect(pool.length).toBeGreaterThanOrEqual(1700);
+    expect(pool.length).toBeLessThan(2200);
     for (const ex of pool) {
       expect(ex.id, ex.question).toBeTruthy();
       expect(ex.grammarTopic?.startsWith("ru-"), ex.id).toBe(true);

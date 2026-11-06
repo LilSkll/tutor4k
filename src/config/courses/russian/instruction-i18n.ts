@@ -2265,6 +2265,1626 @@ export const RUSSIAN_INSTRUCTION_I18N: Record<
     es: "Respuesta cortés: de nada",
     de: "Gern geschehen",
   },
+  "3-е лицо настоящего времени от «требовать»": {
+    en: "3rd person present of «требовать»",
+    es: "3.ª persona del presente de «требовать»",
+    de: "3. Person Präsens von «требовать»",
+  },
+  "Безличная рамка академического мнения, 3-е лицо от «представляться»": {
+    en: "Impersonal frame for an academic opinion, 3rd person of «представляться»",
+    es: "Marco impersonal de una opinión académica, 3.ª persona de «представляться»",
+    de: "Unpersönlicher Rahmen einer akademischen Meinung, 3. Person von «представляться»",
+  },
+  "Будущее совершенного вида от «сузить»: один результат к сроку": {
+    en: "Perfective future of «сузить»: one result by a deadline",
+    es: "Futuro perfectivo de «сузить»: un resultado para una fecha",
+    de: "Perfektives Futur von «сузить»: ein Ergebnis bis zum Termin",
+  },
+  "Будущее совершенного вида после «пока не», от «сверить»": {
+    en: "Perfective future after «пока не», from «сверить»",
+    es: "Futuro perfectivo después de «пока не», de «сверить»",
+    de: "Perfektives Futur nach «пока не», von «сверить»",
+  },
+  "Будущее страдательного залога: будет + краткое причастие от «принять», средний род": {
+    en: "Future passive: будет + the short participle of «принять», neuter",
+    es: "Futuro pasivo: будет + participio corto de «принять», neutro",
+    de: "Futur Passiv: будет + kurzes Partizip von «принять», Neutrum",
+  },
+  "Винительный падеж темы в начале фразы": {
+    en: "Accusative of the theme at the start of the sentence",
+    es: "Acusativo del tema al principio de la frase",
+    de: "Akkusativ des Themas am Satzanfang",
+  },
+  "Винительный падеж: оценочное слово, которого в заголовке быть не должно": {
+    en: "Accusative: the evaluative word that should not be in the headline",
+    es: "Acusativo: la palabra valorativa que no debe estar en el titular",
+    de: "Akkusativ: das Wertwort, das nicht in die Überschrift gehört",
+  },
+  "Вторая часть оборота: свободно в своей среде": {
+    en: "Second half of the idiom: at ease in one's element",
+    es: "Segunda parte del giro: a gusto en su elemento",
+    de: "Zweiter Teil der Wendung: in seinem Element",
+  },
+  "Вторая часть пары «не столько»": {
+    en: "Second half of the pair «не столько»",
+    es: "Segunda parte del par «не столько»",
+    de: "Zweiter Teil des Paars «не столько»",
+  },
+  "Выберите безличную рамку академического мнения": {
+    en: "Choose the impersonal frame for an academic opinion",
+    es: "Elige el marco impersonal de una opinión académica",
+    de: "Wähle den unpersönlichen Rahmen einer akademischen Meinung",
+  },
+  "Выберите будущее одного результата к сроку": {
+    en: "Choose the future of one result by a deadline",
+    es: "Elige el futuro de un solo resultado para una fecha",
+    de: "Wähle das Futur eines Ergebnisses bis zum Termin",
+  },
+  "Выберите вежливое завершение": {
+    en: "Choose the polite closing",
+    es: "Elige el cierre cortés",
+    de: "Wähle den höflichen Schluss",
+  },
+  "Выберите вид после «так и не»": {
+    en: "Choose the aspect after «так и не»",
+    es: "Elige el aspecto después de «так и не»",
+    de: "Wähle den Aspekt nach «так и не»",
+  },
+  "Выберите вид процесса без результата": {
+    en: "Choose the aspect of a process with no result",
+    es: "Elige el aspecto de un proceso sin resultado",
+    de: "Wähle den Aspekt eines Prozesses ohne Ergebnis",
+  },
+  "Выберите вид: результат уже отменён": {
+    en: "Choose the aspect: the result has already been undone",
+    es: "Elige el aspecto: el resultado ya se ha anulado",
+    de: "Wähle den Aspekt: das Ergebnis ist schon aufgehoben",
+  },
+  "Выберите вторую часть пары «не столько»": {
+    en: "Choose the second half of the pair «не столько»",
+    es: "Elige la segunda parte del par «не столько»",
+    de: "Wähle den zweiten Teil des Paars «не столько»",
+  },
+  "Выберите глагол академической формулы": {
+    en: "Choose the verb of the academic formula",
+    es: "Elige el verbo de la fórmula académica",
+    de: "Wähle das Verb der akademischen Formel",
+  },
+  "Выберите глагол опровержения": {
+    en: "Choose the verb of refutation",
+    es: "Elige el verbo de la refutación",
+    de: "Wähle das Verb der Widerlegung",
+  },
+  "Выберите глагол публичного заявления": {
+    en: "Choose the verb of a public statement",
+    es: "Elige el verbo de una declaración pública",
+    de: "Wähle das Verb einer öffentlichen Erklärung",
+  },
+  "Выберите границу после «пока не»": {
+    en: "Choose the boundary after «пока не»",
+    es: "Elige el límite después de «пока не»",
+    de: "Wähle die Grenze nach «пока не»",
+  },
+  "Выберите деепричастие одновременного действия": {
+    en: "Choose the gerund of a simultaneous action",
+    es: "Elige el gerundio de una acción simultánea",
+    de: "Wähle das Adverbialpartizip einer gleichzeitigen Handlung",
+  },
+  "Выберите деепричастие предшествующего действия": {
+    en: "Choose the gerund of a prior action",
+    es: "Elige el gerundio de una acción anterior",
+    de: "Wähle das Adverbialpartizip einer vorangehenden Handlung",
+  },
+  "Выберите деепричастие: действие уже закончилось": {
+    en: "Choose the gerund: the action is already finished",
+    es: "Elige el gerundio: la acción ya ha terminado",
+    de: "Wähle das Adverbialpartizip: die Handlung ist schon zu Ende",
+  },
+  "Выберите действительное причастие настоящего времени": {
+    en: "Choose the present active participle",
+    es: "Elige el participio activo de presente",
+    de: "Wähle das aktive Partizip Präsens",
+  },
+  "Выберите действительное причастие прошедшего времени": {
+    en: "Choose the past active participle",
+    es: "Elige el participio activo de pasado",
+    de: "Wähle das aktive Partizip der Vergangenheit",
+  },
+  "Выберите добавочный довод, не следствие": {
+    en: "Choose an additional argument, not a consequence",
+    es: "Elige un argumento añadido, no una consecuencia",
+    de: "Wähle ein zusätzliches Argument, keine Folge",
+  },
+  "Выберите заголовок списка документов": {
+    en: "Choose the heading of the document list",
+    es: "Elige el encabezado de la lista de documentos",
+    de: "Wähle die Überschrift der Dokumentenliste",
+  },
+  "Выберите инфинитив вежливого несогласия": {
+    en: "Choose the infinitive of polite disagreement",
+    es: "Elige el infinitivo del desacuerdo cortés",
+    de: "Wähle den Infinitiv des höflichen Widerspruchs",
+  },
+  "Выберите инфинитив результата, не процесса": {
+    en: "Choose the infinitive of a result, not a process",
+    es: "Elige el infinitivo del resultado, no del proceso",
+    de: "Wähle den Infinitiv des Ergebnisses, nicht des Prozesses",
+  },
+  "Выберите книжное наречие времени": {
+    en: "Choose the bookish adverb of time",
+    es: "Elige el adverbio de tiempo culto",
+    de: "Wähle das gehobene Zeitadverb",
+  },
+  "Выберите книжное наречие степени": {
+    en: "Choose the bookish adverb of degree",
+    es: "Elige el adverbio de grado culto",
+    de: "Wähle das gehobene Gradadverb",
+  },
+  "Выберите книжный глагол зрения": {
+    en: "Choose the bookish verb of seeing",
+    es: "Elige el verbo de visión culto",
+    de: "Wähle das gehobene Verb des Sehens",
+  },
+  "Выберите косвенную речь": {
+    en: "Choose the reported speech",
+    es: "Elige el estilo indirecto",
+    de: "Wähle die indirekte Rede",
+  },
+  "Выберите косвенный вопрос": {
+    en: "Choose the indirect question",
+    es: "Elige la pregunta indirecta",
+    de: "Wähle die indirekte Frage",
+  },
+  "Выберите косвенный вопрос с «ли»": {
+    en: "Choose the indirect question with «ли»",
+    es: "Elige la pregunta indirecta con «ли»",
+    de: "Wähle die indirekte Frage mit «ли»",
+  },
+  "Выберите краткую форму, мужской род": {
+    en: "Choose the short form, masculine",
+    es: "Elige la forma corta, masculino",
+    de: "Wähle die Kurzform, Maskulinum",
+  },
+  "Выберите маркер переформулировки": {
+    en: "Choose the reformulation marker",
+    es: "Elige el marcador de reformulación",
+    de: "Wähle den Marker der Umformulierung",
+  },
+  "Выберите маркер следствия": {
+    en: "Choose the consequence marker",
+    es: "Elige el marcador de consecuencia",
+    de: "Wähle den Folgemarker",
+  },
+  "Выберите маркер уступки, не пересказа": {
+    en: "Choose the concession marker, not a retelling",
+    es: "Elige el marcador de concesión, no de recuento",
+    de: "Wähle den Einräumungsmarker, keine Nacherzählung",
+  },
+  "Выберите нейтральный глагол расхождения": {
+    en: "Choose the neutral verb of divergence",
+    es: "Elige el verbo neutro de divergencia",
+    de: "Wähle das neutrale Verb der Abweichung",
+  },
+  "Выберите нейтральный союз причины": {
+    en: "Choose the neutral conjunction of cause",
+    es: "Elige la conjunción neutra de causa",
+    de: "Wähle die neutrale Kausalkonjunktion",
+  },
+  "Выберите нереальное условие": {
+    en: "Choose the counterfactual condition",
+    es: "Elige la condición irreal",
+    de: "Wähle die irreale Bedingung",
+  },
+  "Выберите нереальное условие, без второго «бы»": {
+    en: "Choose the counterfactual condition, without a second «бы»",
+    es: "Elige la condición irreal, sin un segundo «бы»",
+    de: "Wähle die irreale Bedingung, ohne ein zweites «бы»",
+  },
+  "Выберите несостоявшееся однократное действие": {
+    en: "Choose the single action that did not happen",
+    es: "Elige la acción única que no llegó a ocurrir",
+    de: "Wähle die einmalige Handlung, die nicht stattfand",
+  },
+  "Выберите оборот откровенности": {
+    en: "Choose the idiom of frankness",
+    es: "Elige el giro de franqueza",
+    de: "Wähle die Wendung der Offenheit",
+  },
+  "Выберите оборот с одним подлежащим": {
+    en: "Choose the construction with one subject",
+    es: "Elige la construcción con un solo sujeto",
+    de: "Wähle die Konstruktion mit einem Subjekt",
+  },
+  "Выберите оборот согласия": {
+    en: "Choose the idiom of harmony",
+    es: "Elige el giro de armonía",
+    de: "Wähle die Wendung des Einvernehmens",
+  },
+  "Выберите оборот спешки": {
+    en: "Choose the idiom of haste",
+    es: "Elige el giro de prisa",
+    de: "Wähle die Wendung der Eile",
+  },
+  "Выберите оборот тесноты": {
+    en: "Choose the idiom of a packed space",
+    es: "Elige el giro de estar apretados",
+    de: "Wähle die Wendung der Enge",
+  },
+  "Выберите оборот: внезапно и не вовремя": {
+    en: "Choose the idiom: sudden and untimely",
+    es: "Elige el giro: de pronto y a destiempo",
+    de: "Wähle die Wendung: plötzlich und zur Unzeit",
+  },
+  "Выберите оборот: обещать и не делать": {
+    en: "Choose the idiom: to promise and not do",
+    es: "Elige el giro: prometer y no hacer",
+    de: "Wähle die Wendung: versprechen und nicht tun",
+  },
+  "Выберите оборот: свободно в новой среде": {
+    en: "Choose the idiom: at ease in a new setting",
+    es: "Elige el giro: a gusto en un entorno nuevo",
+    de: "Wähle die Wendung: in einer neuen Umgebung in seinem Element",
+  },
+  "Выберите оборот: сознательно молчать": {
+    en: "Choose the idiom: to stay silent on purpose",
+    es: "Elige el giro: callar a propósito",
+    de: "Wähle die Wendung: bewusst schweigen",
+  },
+  "Выберите обычный процесс": {
+    en: "Choose an ordinary process",
+    es: "Elige un proceso habitual",
+    de: "Wähle einen gewöhnlichen Prozess",
+  },
+  "Выберите одно уже случившееся вынужденное действие": {
+    en: "Choose one compelled action that has already happened",
+    es: "Elige una acción forzada que ya ocurrió",
+    de: "Wähle eine erzwungene Handlung, die schon geschehen ist",
+  },
+  "Выберите однократный успех": {
+    en: "Choose a one-time success",
+    es: "Elige un éxito único",
+    de: "Wähle einen einmaligen Erfolg",
+  },
+  "Выберите отрицательную просьбу": {
+    en: "Choose the negative request",
+    es: "Elige la petición negativa",
+    de: "Wähle die verneinte Bitte",
+  },
+  "Выберите официальное обращение к мужчине": {
+    en: "Choose the official address to a man",
+    es: "Elige el tratamiento oficial hacia un hombre",
+    de: "Wähle die amtliche Anrede an einen Mann",
+  },
+  "Выберите официальную рамку времени": {
+    en: "Choose the official time frame",
+    es: "Elige el marco temporal oficial",
+    de: "Wähle den amtlichen Zeitrahmen",
+  },
+  "Выберите официальную связку, после которой уже стоит «с»": {
+    en: "Choose the official link after which «с» is already there",
+    es: "Elige el nexo oficial tras el cual ya está «с»",
+    de: "Wähle die amtliche Fügung, nach der «с» schon steht",
+  },
+  "Выберите официальную формулу сообщения": {
+    en: "Choose the official formula for informing",
+    es: "Elige la fórmula oficial de comunicación",
+    de: "Wähle die amtliche Mitteilungsformel",
+  },
+  "Выберите повторяющийся процесс": {
+    en: "Choose the repeated process",
+    es: "Elige el proceso que se repite",
+    de: "Wähle den wiederholten Prozess",
+  },
+  "Выберите порядок с темой «отзыв»": {
+    en: "Choose the word order with «отзыв» as the theme",
+    es: "Elige el orden con «отзыв» como tema",
+    de: "Wähle die Wortstellung mit «отзыв» als Thema",
+  },
+  "Выберите предлог соответствия с дательным падежом": {
+    en: "Choose the preposition of accordance with the dative",
+    es: "Elige la preposición de conformidad con dativo",
+    de: "Wähle die Präposition der Entsprechung mit Dativ",
+  },
+  "Выберите предлог уступки с дательным": {
+    en: "Choose the preposition of concession with the dative",
+    es: "Elige la preposición de concesión con dativo",
+    de: "Wähle die Präposition der Einräumung mit Dativ",
+  },
+  "Выберите процесс в настоящем времени": {
+    en: "Choose the process in the present",
+    es: "Elige el proceso en presente",
+    de: "Wähle den Prozess im Präsens",
+  },
+  "Выберите процесс проверки, не готовый итог": {
+    en: "Choose the process of checking, not a finished result",
+    es: "Elige el proceso de revisión, no el resultado ya listo",
+    de: "Wähle den Prüfvorgang, nicht das fertige Ergebnis",
+  },
+  "Выберите работу с чужим сюжетом": {
+    en: "Choose working with someone else's plot",
+    es: "Elige el trabajo con una trama ajena",
+    de: "Wähle die Arbeit mit einer fremden Handlung",
+  },
+  "Выберите разговорное слово о деньгах": {
+    en: "Choose the colloquial word for money",
+    es: "Elige la palabra coloquial para el dinero",
+    de: "Wähle das umgangssprachliche Wort für Geld",
+  },
+  "Выберите разговорное согласие": {
+    en: "Choose the colloquial agreement",
+    es: "Elige el asentimiento coloquial",
+    de: "Wähle die umgangssprachliche Zustimmung",
+  },
+  "Выберите разговорный зачин": {
+    en: "Choose the colloquial opener",
+    es: "Elige el arranque coloquial",
+    de: "Wähle den umgangssprachlichen Einstieg",
+  },
+  "Выберите рамку «во время передачи»": {
+    en: "Choose the frame «during the broadcast»",
+    es: "Elige el marco «durante la emisión»",
+    de: "Wähle den Rahmen «während der Sendung»",
+  },
+  "Выберите рамку анонимности": {
+    en: "Choose the anonymity frame",
+    es: "Elige el marco del anonimato",
+    de: "Wähle den Rahmen der Anonymität",
+  },
+  "Выберите реальное условие": {
+    en: "Choose the real condition",
+    es: "Elige la condición real",
+    de: "Wähle die reale Bedingung",
+  },
+  "Выберите реальное условие при императиве": {
+    en: "Choose the real condition with an imperative",
+    es: "Elige la condición real con imperativo",
+    de: "Wähle die reale Bedingung beim Imperativ",
+  },
+  "Выберите результат": {
+    en: "Choose the result",
+    es: "Elige el resultado",
+    de: "Wähle das Ergebnis",
+  },
+  "Выберите результат в прошлом": {
+    en: "Choose the result in the past",
+    es: "Elige el resultado en el pasado",
+    de: "Wähle das Ergebnis in der Vergangenheit",
+  },
+  "Выберите результат с агентом в творительном": {
+    en: "Choose the result with the agent in the instrumental",
+    es: "Elige el resultado con el agente en instrumental",
+    de: "Wähle das Ergebnis mit dem Agens im Instrumental",
+  },
+  "Выберите результат, средний род": {
+    en: "Choose the result, neuter",
+    es: "Elige el resultado, neutro",
+    de: "Wähle das Ergebnis, Neutrum",
+  },
+  "Выберите союз цели при реальном действии": {
+    en: "Choose the purpose conjunction with a real action",
+    es: "Elige la conjunción de finalidad con una acción real",
+    de: "Wähle die Zweckkonjunktion bei einer realen Handlung",
+  },
+  "Выберите статус гипотезы, которую не сняли": {
+    en: "Choose the status of a hypothesis that has not been dropped",
+    es: "Elige el estatus de una hipótesis que no se ha retirado",
+    de: "Wähle den Status einer Hypothese, die nicht aufgegeben wurde",
+  },
+  "Выберите страдательное причастие настоящего времени": {
+    en: "Choose the present passive participle",
+    es: "Elige el participio pasivo de presente",
+    de: "Wähle das passive Partizip Präsens",
+  },
+  "Выберите страдательное причастие прошедшего времени": {
+    en: "Choose the past passive participle",
+    es: "Elige el participio pasivo de pasado",
+    de: "Wähle das passive Partizip der Vergangenheit",
+  },
+  "Выберите страдательное причастие: перевод уже закончен": {
+    en: "Choose the passive participle: the translation is already finished",
+    es: "Elige el participio pasivo: la traducción ya está terminada",
+    de: "Wähle das passive Partizip: die Übersetzung ist schon fertig",
+  },
+  "Выберите творительный падеж оценки": {
+    en: "Choose the instrumental of evaluation",
+    es: "Elige el instrumental de la valoración",
+    de: "Wähle den Instrumental der Wertung",
+  },
+  "Выберите термин высшей точки напряжения": {
+    en: "Choose the term for the highest point of tension",
+    es: "Elige el término del punto de mayor tensión",
+    de: "Wähle den Terminus für den höchsten Spannungspunkt",
+  },
+  "Выберите термин голоса внутри фрагмента": {
+    en: "Choose the term for the voice inside the fragment",
+    es: "Elige el término de la voz dentro del fragmento",
+    de: "Wähle den Terminus für die Stimme im Fragment",
+  },
+  "Выберите термин намёка, не чужой страницы": {
+    en: "Choose the term for a hint, not someone else's page",
+    es: "Elige el término de un guiño, no de una página ajena",
+    de: "Wähle den Terminus für einen Hinweis, nicht für eine fremde Seite",
+  },
+  "Выберите термин несказанного смысла": {
+    en: "Choose the term for unspoken meaning",
+    es: "Elige el término del sentido no dicho",
+    de: "Wähle den Terminus für den ungesagten Sinn",
+  },
+  "Выберите термин оценочного определения": {
+    en: "Choose the term for an evaluative modifier",
+    es: "Elige el término del modificador valorativo",
+    de: "Wähle den Terminus für eine wertende Bestimmung",
+  },
+  "Выберите термин повторяемости опыта": {
+    en: "Choose the term for reproducibility of an experiment",
+    es: "Elige el término de la repetibilidad del experimento",
+    de: "Wähle den Terminus für die Wiederholbarkeit des Versuchs",
+  },
+  "Выберите термин повторяющегося мотива": {
+    en: "Choose the term for a recurring motif",
+    es: "Elige el término del motivo que se repite",
+    de: "Wähle den Terminus für ein wiederkehrendes Motiv",
+  },
+  "Выберите термин статистики": {
+    en: "Choose the statistics term",
+    es: "Elige el término de estadística",
+    de: "Wähle den Statistikterminus",
+  },
+  "Выберите термин финала конфликта": {
+    en: "Choose the term for the end of the conflict",
+    es: "Elige el término del final del conflicto",
+    de: "Wähle den Terminus für das Ende des Konflikts",
+  },
+  "Выберите то, чего в заголовке быть не должно": {
+    en: "Choose what should not be in the headline",
+    es: "Elige lo que no debe estar en el titular",
+    de: "Wähle das, was nicht in die Überschrift gehört",
+  },
+  "Выберите верную интерпретацию сравнения": {
+    en: "Choose the correct interpretation of the comparison",
+    es: "Elige la interpretación correcta de la comparación",
+    de: "Wähle die richtige Deutung des Vergleichs",
+  },
+  "Выберите троп скрытого уподобления": {
+    en: "Choose the trope of a hidden likeness",
+    es: "Elige el tropo de una semejanza oculta",
+    de: "Wähle den Tropus einer verdeckten Ähnlichkeit",
+  },
+  "Выберите уступку: факт признан, вывод другой": {
+    en: "Choose the concession: the fact is granted, the conclusion is different",
+    es: "Elige la concesión: el hecho se admite, la conclusión es otra",
+    de: "Wähle die Einräumung: der Fakt gilt, die Folgerung ist eine andere",
+  },
+  "Выберите форму после «попросил»": {
+    en: "Choose the form after «попросил»",
+    es: "Elige la forma después de «попросил»",
+    de: "Wähle die Form nach «попросил»",
+  },
+  "Выберите форму после «прошу»": {
+    en: "Choose the form after «прошу»",
+    es: "Elige la forma después de «прошу»",
+    de: "Wähle die Form nach «прошу»",
+  },
+  "Выберите формулу основания": {
+    en: "Choose the formula of grounds",
+    es: "Elige la fórmula del fundamento",
+    de: "Wähle die Formel der Grundlage",
+  },
+  "Выберите формулу, которая грамматически открывает официальную просьбу": {
+    en: "Choose the formula that grammatically opens an official request",
+    es: "Elige la fórmula que abre gramaticalmente una petición oficial",
+    de: "Wähle die Formel, die eine amtliche Bitte grammatisch eröffnet",
+  },
+  "Выберите частицу вопреки ожиданию; говорящая — Анна": {
+    en: "Choose the particle contrary to expectation; the speaker is Anna",
+    es: "Elige la partícula contra lo esperado; quien habla es Anna",
+    de: "Wähle die Partikel wider Erwarten; die Sprecherin ist Anna",
+  },
+  "Выберите частицу выделения темы": {
+    en: "Choose the particle that highlights the theme",
+    es: "Elige la partícula que destaca el tema",
+    de: "Wähle die Partikel der Themenhervorhebung",
+  },
+  "Выберите частицу известного собеседнику факта": {
+    en: "Choose the particle for a fact the listener already knows",
+    es: "Elige la partícula de un hecho que el interlocutor ya conoce",
+    de: "Wähle die Partikel für einen dem Gesprächspartner bekannten Fakt",
+  },
+  "Выберите частицу косвенного вопроса": {
+    en: "Choose the particle of the indirect question",
+    es: "Elige la partícula de la pregunta indirecta",
+    de: "Wähle die Partikel der indirekten Frage",
+  },
+  "Выберите частицу ненавязчивой просьбы": {
+    en: "Choose the particle of a gentle request",
+    es: "Elige la partícula de una petición suave",
+    de: "Wähle die Partikel einer unaufdringlichen Bitte",
+  },
+  "Выберите частицу сильного удивления": {
+    en: "Choose the particle of strong surprise",
+    es: "Elige la partícula de fuerte sorpresa",
+    de: "Wähle die Partikel starken Erstaunens",
+  },
+  "Выберите частицу сомнения": {
+    en: "Choose the particle of doubt",
+    es: "Elige la partícula de duda",
+    de: "Wähle die Partikel des Zweifels",
+  },
+  "Выберите этикет переспроса": {
+    en: "Choose the etiquette of asking for confirmation",
+    es: "Elige la fórmula de pedir confirmación",
+    de: "Wähle die Höflichkeit des Nachfragens",
+  },
+  "Деепричастие несовершенного вида от «заниматься»": {
+    en: "Imperfective gerund of «заниматься»",
+    es: "Gerundio imperfectivo de «заниматься»",
+    de: "Imperfektives Adverbialpartizip von «заниматься»",
+  },
+  "Деепричастие несовершенного вида от «идти»": {
+    en: "Imperfective gerund of «идти»",
+    es: "Gerundio imperfectivo de «идти»",
+    de: "Imperfektives Adverbialpartizip von «идти»",
+  },
+  "Деепричастие несовершенного вида от «слушать»: действие одновременно с «записывала»": {
+    en: "Imperfective gerund of «слушать»: simultaneous with «записывала»",
+    es: "Gerundio imperfectivo de «слушать»: simultáneo con «записывала»",
+    de: "Imperfektives Adverbialpartizip von «слушать»: gleichzeitig mit «записывала»",
+  },
+  "Деепричастие совершенного вида от «заполнить»: действие до «отнёс»": {
+    en: "Perfective gerund of «заполнить»: the action is before «отнёс»",
+    es: "Gerundio perfectivo de «заполнить»: la acción es anterior a «отнёс»",
+    de: "Perfektives Adverbialpartizip von «заполнить»: die Handlung liegt vor «отнёс»",
+  },
+  "Деепричастие совершенного вида от «исправить»": {
+    en: "Perfective gerund of «исправить»",
+    es: "Gerundio perfectivo de «исправить»",
+    de: "Perfektives Adverbialpartizip von «исправить»",
+  },
+  "Деепричастие совершенного вида от «получить»": {
+    en: "Perfective gerund of «получить»",
+    es: "Gerundio perfectivo de «получить»",
+    de: "Perfektives Adverbialpartizip von «получить»",
+  },
+  "Деепричастие совершенного вида от «проверить»": {
+    en: "Perfective gerund of «проверить»",
+    es: "Gerundio perfectivo de «проверить»",
+    de: "Perfektives Adverbialpartizip von «проверить»",
+  },
+  "Деепричастие совершенного вида от «узнать» с отрицанием": {
+    en: "Perfective gerund of «узнать» with negation",
+    es: "Gerundio perfectivo de «узнать» con negación",
+    de: "Perfektives Adverbialpartizip von «узнать» mit Verneinung",
+  },
+  "Действительное причастие прошедшего времени от «войти», мужской род": {
+    en: "Past active participle of «войти», masculine",
+    es: "Participio activo de pasado de «войти», masculino",
+    de: "Aktives Partizip der Vergangenheit von «войти», Maskulinum",
+  },
+  "Действительное причастие прошедшего времени от «закончить», женский род": {
+    en: "Past active participle of «закончить», feminine",
+    es: "Participio activo de pasado de «закончить», femenino",
+    de: "Aktives Partizip der Vergangenheit von «закончить», Femininum",
+  },
+  "Действительное причастие прошедшего времени от «приехать», множественное число": {
+    en: "Past active participle of «приехать», plural",
+    es: "Participio activo de pasado de «приехать», plural",
+    de: "Aktives Partizip der Vergangenheit von «приехать», Plural",
+  },
+  "Действительное причастие прошедшего времени от «прочитать», женский род": {
+    en: "Past active participle of «прочитать», feminine",
+    es: "Participio activo de pasado de «прочитать», femenino",
+    de: "Aktives Partizip der Vergangenheit von «прочитать», Femininum",
+  },
+  "Добавьте пропущенный предлог в формулу причины": {
+    en: "Add the missing preposition in the cause formula",
+    es: "Añade la preposición que falta en la fórmula de causa",
+    de: "Füge die fehlende Präposition in die Ursachsformel ein",
+  },
+  "Добавьте частицу «бы» в нереальное следствие": {
+    en: "Add the particle «бы» in the counterfactual result",
+    es: "Añade la partícula «бы» en la consecuencia irreal",
+    de: "Füge die Partikel «бы» in die irreale Folge ein",
+  },
+  "Заголовок списка документов в конце заявления": {
+    en: "The heading of the document list at the end of the application",
+    es: "El encabezado de la lista de documentos al final de la solicitud",
+    de: "Die Überschrift der Dokumentenliste am Ende des Antrags",
+  },
+  "Замените бытовое обращение официальным": {
+    en: "Replace the everyday address with an official one",
+    es: "Sustituye el tratamiento cotidiano por uno oficial",
+    de: "Ersetze die alltägliche Anrede durch eine amtliche",
+  },
+  "Замените гипотезу на цель реального действия": {
+    en: "Replace the hypothesis with the purpose of a real action",
+    es: "Sustituye la hipótesis por la finalidad de una acción real",
+    de: "Ersetze die Hypothese durch den Zweck einer realen Handlung",
+  },
+  "Замените говорящего: будущее время": {
+    en: "Change the speaker: future tense",
+    es: "Cambia a quien habla: tiempo futuro",
+    de: "Wechsle die sprechende Person: Futur",
+  },
+  "Замените говорящего: мужской род, прошедшее время совершенного вида": {
+    en: "Change the speaker: masculine, perfective past",
+    es: "Cambia a quien habla: masculino, pasado perfectivo",
+    de: "Wechsle die sprechende Person: Maskulinum, perfektive Vergangenheit",
+  },
+  "Замените императив в отрицательной просьбе": {
+    en: "Replace the imperative in the negative request",
+    es: "Sustituye el imperativo en la petición negativa",
+    de: "Ersetze den Imperativ in der verneinten Bitte",
+  },
+  "Замените императив после «попросил»": {
+    en: "Replace the imperative after «попросил»",
+    es: "Sustituye el imperativo después de «попросил»",
+    de: "Ersetze den Imperativ nach «попросил»",
+  },
+  "Замените императив после «прошу»": {
+    en: "Replace the imperative after «прошу»",
+    es: "Sustituye el imperativo después de «прошу»",
+    de: "Ersetze den Imperativ nach «прошу»",
+  },
+  "Замените разговорный глагол официальной формулой просьбы": {
+    en: "Replace the colloquial verb with the official request formula",
+    es: "Sustituye el verbo coloquial por la fórmula oficial de petición",
+    de: "Ersetze das umgangssprachliche Verb durch die amtliche Bitteformel",
+  },
+  "Именительный падеж термина повторяемости опыта": {
+    en: "Nominative of the term for reproducibility",
+    es: "Nominativo del término de repetibilidad del experimento",
+    de: "Nominativ des Terminus für die Wiederholbarkeit des Versuchs",
+  },
+  "Инфинитив вежливого завершения доклада": {
+    en: "Infinitive of a polite close of a talk",
+    es: "Infinitivo del cierre cortés de una ponencia",
+    de: "Infinitiv eines höflichen Vortragsschlusses",
+  },
+  "Инфинитив вежливого несогласия после «позвольте»": {
+    en: "Infinitive of polite disagreement after «позвольте»",
+    es: "Infinitivo del desacuerdo cortés después de «позвольте»",
+    de: "Infinitiv des höflichen Widerspruchs nach «позвольте»",
+  },
+  "Инфинитив оборота «очень тесно»": {
+    en: "Infinitive of the “packed solid” idiom",
+    es: "Infinitivo del giro de «estar muy apretados»",
+    de: "Infinitiv der Wendung «sehr eng»",
+  },
+  "Инфинитив совершенного вида в устойчивом сочетании с «извинение»": {
+    en: "Perfective infinitive in the set phrase with «извинение»",
+    es: "Infinitivo perfectivo en la combinación fija con «извинение»",
+    de: "Perfektiver Infinitiv in der festen Verbindung mit «извинение»",
+  },
+  "Инфинитив совершенного вида после «прошу»": {
+    en: "Perfective infinitive after «прошу»",
+    es: "Infinitivo perfectivo después de «прошу»",
+    de: "Perfektiver Infinitiv nach «прошу»",
+  },
+  "Исправьте будущее страдательного залога": {
+    en: "Correct the future passive",
+    es: "Corrige el futuro pasivo",
+    de: "Korrigiere das Futur Passiv",
+  },
+  "Исправьте вид инфинитива в обороте тесноты": {
+    en: "Correct the aspect of the infinitive in the “packed” idiom",
+    es: "Corrige el aspecto del infinitivo en el giro de estrechez",
+    de: "Korrigiere den Aspekt des Infinitivs in der Enge-Wendung",
+  },
+  "Исправьте вид после «едва»": {
+    en: "Correct the aspect after «едва»",
+    es: "Corrige el aspecto después de «едва»",
+    de: "Korrigiere den Aspekt nach «едва»",
+  },
+  "Исправьте вид после «пока не»": {
+    en: "Correct the aspect after «пока не»",
+    es: "Corrige el aspecto después de «пока не»",
+    de: "Korrigiere den Aspekt nach «пока не»",
+  },
+  "Исправьте вид после «так и не»": {
+    en: "Correct the aspect after «так и не»",
+    es: "Corrige el aspecto después de «так и не»",
+    de: "Korrigiere den Aspekt nach «так и не»",
+  },
+  "Исправьте вид: два часа без результата": {
+    en: "Correct the aspect: two hours with no result",
+    es: "Corrige el aspecto: dos horas sin resultado",
+    de: "Korrigiere den Aspekt: zwei Stunden ohne Ergebnis",
+  },
+  "Исправьте вид: действие закончилось до сказуемого": {
+    en: "Correct the aspect: the action finished before the main verb",
+    es: "Corrige el aspecto: la acción terminó antes del predicado",
+    de: "Korrigiere den Aspekt: die Handlung endete vor dem Prädikat",
+  },
+  "Исправьте вид: действия идут одновременно": {
+    en: "Correct the aspect: the actions are simultaneous",
+    es: "Corrige el aspecto: las acciones son simultáneas",
+    de: "Korrigiere den Aspekt: die Handlungen laufen gleichzeitig",
+  },
+  "Исправьте вид: к сроку нужен один результат": {
+    en: "Correct the aspect: one result is needed by the deadline",
+    es: "Corrige el aspecto: para la fecha hace falta un resultado",
+    de: "Korrigiere den Aspekt: bis zum Termin braucht man ein Ergebnis",
+  },
+  "Исправьте вид: одно упущенное действие": {
+    en: "Correct the aspect: one missed action",
+    es: "Corrige el aspecto: una acción que no se logró",
+    de: "Korrigiere den Aspekt: eine verpasste Handlung",
+  },
+  "Исправьте вид: перевод закончился до отправки": {
+    en: "Correct the aspect: the translation finished before sending",
+    es: "Corrige el aspecto: la traducción terminó antes del envío",
+    de: "Korrigiere den Aspekt: die Übersetzung endete vor dem Versand",
+  },
+  "Исправьте вид: пересказ повторяется в каждом абзаце": {
+    en: "Correct the aspect: the retelling repeats in every paragraph",
+    es: "Corrige el aspecto: el recuento se repite en cada párrafo",
+    de: "Korrigiere den Aspekt: die Nacherzählung wiederholt sich in jedem Absatz",
+  },
+  "Исправьте вид: попытка закончилась неудачей до результата": {
+    en: "Correct the aspect: the attempt failed before a result",
+    es: "Corrige el aspecto: el intento fracasó antes del resultado",
+    de: "Korrigiere den Aspekt: der Versuch scheiterte vor dem Ergebnis",
+  },
+  "Исправьте вид: проверка ещё не закончена": {
+    en: "Correct the aspect: the check is not finished yet",
+    es: "Corrige el aspecto: la revisión todavía no ha terminado",
+    de: "Korrigiere den Aspekt: die Prüfung ist noch nicht zu Ende",
+  },
+  "Исправьте вид: разговор шёл во время возвращения": {
+    en: "Correct the aspect: the talk went on during the return",
+    es: "Corrige el aspecto: la conversación iba durante el regreso",
+    de: "Korrigiere den Aspekt: das Gespräch lief während der Rückkehr",
+  },
+  "Исправьте вид: результат уже отменён": {
+    en: "Correct the aspect: the result has already been undone",
+    es: "Corrige el aspecto: el resultado ya se ha anulado",
+    de: "Korrigiere den Aspekt: das Ergebnis ist schon aufgehoben",
+  },
+  "Исправьте вид: сверка шла во время перевода": {
+    en: "Correct the aspect: the checking went on during the translation",
+    es: "Corrige el aspecto: el cotejo iba durante la traducción",
+    de: "Korrigiere den Aspekt: der Abgleich lief während der Übersetzung",
+  },
+  "Исправьте вид: это один успех, не повтор": {
+    en: "Correct the aspect: this is one success, not a repetition",
+    es: "Corrige el aspecto: es un solo éxito, no una repetición",
+    de: "Korrigiere den Aspekt: das ist ein Erfolg, keine Wiederholung",
+  },
+  "Исправьте вторую часть пары «не столько»": {
+    en: "Correct the second half of the pair «не столько»",
+    es: "Corrige la segunda parte del par «не столько»",
+    de: "Korrigiere den zweiten Teil des Paars «не столько»",
+  },
+  "Исправьте глагол академической формулы": {
+    en: "Correct the verb of the academic formula",
+    es: "Corrige el verbo de la fórmula académica",
+    de: "Korrigiere das Verb der akademischen Formel",
+  },
+  "Исправьте глагол официальной формулы": {
+    en: "Correct the verb of the official formula",
+    es: "Corrige el verbo de la fórmula oficial",
+    de: "Korrigiere das Verb der amtlichen Formel",
+  },
+  "Исправьте глагол: книжный регистр": {
+    en: "Correct the verb: bookish register",
+    es: "Corrige el verbo: registro culto",
+    de: "Korrigiere das Verb: gehobenes Register",
+  },
+  "Исправьте глагол: нейтральное расхождение": {
+    en: "Correct the verb: neutral divergence",
+    es: "Corrige el verbo: divergencia neutra",
+    de: "Korrigiere das Verb: neutrale Abweichung",
+  },
+  "Исправьте глагол: развязка закрывает конфликт": {
+    en: "Correct the verb: the denouement closes the conflict",
+    es: "Corrige el verbo: el desenlace cierra el conflicto",
+    de: "Korrigiere das Verb: die Auflösung schließt den Konflikt",
+  },
+  "Исправьте глагол: слух в абзаце назван ложным": {
+    en: "Correct the verb: the rumor in the paragraph is called false",
+    es: "Corrige el verbo: el rumor del párrafo se da por falso",
+    de: "Korrigiere das Verb: das Gerücht im Absatz gilt als falsch",
+  },
+  "Исправьте глагол и связку: слух в абзаце назван ложным": {
+    en: "Correct the verb and the link: the rumor in the paragraph is called false",
+    es: "Corrige el verbo y el enlace: el rumor del párrafo se da por falso",
+    de: "Korrigiere Verb und Verknüpfung: das Gerücht im Absatz gilt als falsch",
+  },
+  "Исправьте залог и род причастия": {
+    en: "Correct the voice and gender of the participle",
+    es: "Corrige la voz y el género del participio",
+    de: "Korrigiere Genus verbi und Genus des Partizips",
+  },
+  "Исправьте залог причастия": {
+    en: "Correct the voice of the participle",
+    es: "Corrige la voz del participio",
+    de: "Korrigiere das Genus verbi des Partizips",
+  },
+  "Исправьте залог: агент стоит в творительном": {
+    en: "Correct the voice: the agent is in the instrumental",
+    es: "Corrige la voz: el agente está en instrumental",
+    de: "Korrigiere das Genus verbi: der Agens steht im Instrumental",
+  },
+  "Исправьте зачин: нужен книжный регистр": {
+    en: "Correct the opener: a bookish register is needed",
+    es: "Corrige el arranque: hace falta un registro culto",
+    de: "Korrigiere den Einstieg: ein gehobenes Register ist nötig",
+  },
+  "Исправьте зачин: разговорный регистр": {
+    en: "Correct the opener: colloquial register",
+    es: "Corrige el arranque: registro coloquial",
+    de: "Korrigiere den Einstieg: umgangssprachliches Register",
+  },
+  "Исправьте инфинитив: вежливое несогласие": {
+    en: "Correct the infinitive: polite disagreement",
+    es: "Corrige el infinitivo: desacuerdo cortés",
+    de: "Korrigiere den Infinitiv: höflicher Widerspruch",
+  },
+  "Исправьте лицо в косвенной речи": {
+    en: "Correct the person in reported speech",
+    es: "Corrige la persona en el estilo indirecto",
+    de: "Korrigiere die Person in der indirekten Rede",
+  },
+  "Исправьте лицо в косвенной речи: Омар говорил о себе": {
+    en: "Correct the person in reported speech: Omar was talking about himself",
+    es: "Corrige la persona en el estilo indirecto: Omar hablaba de sí mismo",
+    de: "Korrigiere die Person in der indirekten Rede: Omar sprach über sich",
+  },
+  "Исправьте лицо в косвенной речи: Анна говорила о себе": {
+    en: "Correct the person in reported speech: Anna was talking about herself",
+    es: "Corrige la persona en el estilo indirecto: Anna hablaba de sí misma",
+    de: "Korrigiere die Person in der indirekten Rede: Anna sprach über sich",
+  },
+  "Исправьте лицо и род": {
+    en: "Correct the person and gender",
+    es: "Corrige la persona y el género",
+    de: "Korrigiere Person und Genus",
+  },
+  "Исправьте маркер: вторая фраза поясняет первую": {
+    en: "Correct the marker: the second sentence explains the first",
+    es: "Corrige el marcador: la segunda frase aclara la primera",
+    de: "Korrigiere den Marker: der zweite Satz erläutert den ersten",
+  },
+  "Исправьте маркер: факт признан, вывод другой": {
+    en: "Correct the marker: the fact is granted, the conclusion differs",
+    es: "Corrige el marcador: el hecho se admite, la conclusión es otra",
+    de: "Korrigiere den Marker: der Fakt gilt, die Folgerung ist anders",
+  },
+  "Исправьте маркер: это второй довод, не следствие": {
+    en: "Correct the marker: this is a second argument, not a consequence",
+    es: "Corrige el marcador: es un segundo argumento, no una consecuencia",
+    de: "Korrigiere den Marker: das ist ein zweites Argument, keine Folge",
+  },
+  "Исправьте маркер: это следствие, не пример": {
+    en: "Correct the marker: this is a consequence, not an example",
+    es: "Corrige el marcador: es una consecuencia, no un ejemplo",
+    de: "Korrigiere den Marker: das ist eine Folge, kein Beispiel",
+  },
+  "Исправьте маркер: это уступка, не пересказ": {
+    en: "Correct the marker: this is a concession, not a retelling",
+    es: "Corrige el marcador: es una concesión, no un recuento",
+    de: "Korrigiere den Marker: das ist eine Einräumung, keine Nacherzählung",
+  },
+  "Исправьте на процесс в страдательном залоге": {
+    en: "Correct it to a process in the passive",
+    es: "Corrígelo a un proceso en voz pasiva",
+    de: "Korrigiere es zu einem Prozess im Passiv",
+  },
+  "Исправьте на страдательный залог: агент остаётся в творительном": {
+    en: "Correct it to the passive: the agent stays in the instrumental",
+    es: "Corrígelo a la voz pasiva: el agente sigue en instrumental",
+    de: "Korrigiere es zum Passiv: der Agens bleibt im Instrumental",
+  },
+  "Исправьте наречие степени: книжный регистр": {
+    en: "Correct the adverb of degree: bookish register",
+    es: "Corrige el adverbio de grado: registro culto",
+    de: "Korrigiere das Gradadverb: gehobenes Register",
+  },
+  "Исправьте оборот спешки": {
+    en: "Correct the idiom of haste",
+    es: "Corrige el giro de prisa",
+    de: "Korrigiere die Wendung der Eile",
+  },
+  "Исправьте оборот: ей неловко, не свободно": {
+    en: "Correct the idiom: she is ill at ease, not at ease",
+    es: "Corrige el giro: ella está incómoda, no a gusto",
+    de: "Korrigiere die Wendung: ihr ist unbehaglich, nicht wohl",
+  },
+  "Исправьте оборот: он молчит, а не бездельничает": {
+    en: "Correct the idiom: he is silent, he is not idling",
+    es: "Corrige el giro: él calla, no está de brazos cruzados",
+    de: "Korrigiere die Wendung: er schweigt, er faulenzt nicht",
+  },
+  "Исправьте описание: лейтмотив возвращается": {
+    en: "Correct the description: the leitmotif returns",
+    es: "Corrige la descripción: el leitmotiv vuelve",
+    de: "Korrigiere die Beschreibung: das Leitmotiv kehrt wieder",
+  },
+  "Исправьте ответ: официальный регистр защиты; говорящая — Анна": {
+    en: "Correct the reply: official register of the defence; the speaker is Anna",
+    es: "Corrige la respuesta: registro oficial de la defensa; quien habla es Anna",
+    de: "Korrigiere die Antwort: amtliches Register der Verteidigung; die Sprecherin ist Anna",
+  },
+  "Исправьте падеж в обороте «водить за нос»": {
+    en: "Correct the case in the idiom «водить за нос»",
+    es: "Corrige el caso en el giro «водить за нос»",
+    de: "Korrigiere den Kasus in der Wendung «водить за нос»",
+  },
+  "Исправьте падеж в обороте внезапности": {
+    en: "Correct the case in the idiom of suddenness",
+    es: "Corrige el caso en el giro de lo repentino",
+    de: "Korrigiere den Kasus in der Wendung der Plötzlichkeit",
+  },
+  "Исправьте падеж первого слова оборота согласия": {
+    en: "Correct the case of the first word in the harmony idiom",
+    es: "Corrige el caso de la primera palabra del giro de armonía",
+    de: "Korrigiere den Kasus des ersten Wortes der Einvernehmenswendung",
+  },
+  "Исправьте падеж после «на условиях»": {
+    en: "Correct the case after «на условиях»",
+    es: "Corrige el caso después de «на условиях»",
+    de: "Korrigiere den Kasus nach «на условиях»",
+  },
+  "Исправьте падеж после «назван»": {
+    en: "Correct the case after «назван»",
+    es: "Corrige el caso después de «назван»",
+    de: "Korrigiere den Kasus nach «назван»",
+  },
+  "Исправьте падеж после «остаётся»": {
+    en: "Correct the case after «остаётся»",
+    es: "Corrige el caso después de «остаётся»",
+    de: "Korrigiere den Kasus nach «остаётся»",
+  },
+  "Исправьте падеж после предлога соответствия": {
+    en: "Correct the case after the preposition of accordance",
+    es: "Corrige el caso después de la preposición de conformidad",
+    de: "Korrigiere den Kasus nach der Präposition der Entsprechung",
+  },
+  "Исправьте падеж после формулы основания": {
+    en: "Correct the case after the formula of grounds",
+    es: "Corrige el caso después de la fórmula del fundamento",
+    de: "Korrigiere den Kasus nach der Formel der Grundlage",
+  },
+  "Исправьте падеж причастия": {
+    en: "Correct the case of the participle",
+    es: "Corrige el caso del participio",
+    de: "Korrigiere den Kasus des Partizips",
+  },
+  "Исправьте порядок слов: тема — отзыв": {
+    en: "Correct the word order: the theme is the review",
+    es: "Corrige el orden de palabras: el tema es la reseña",
+    de: "Korrigiere die Wortstellung: das Thema ist das Gutachten",
+  },
+  "Исправьте последнее слово оборота честности": {
+    en: "Correct the last word of the honesty idiom",
+    es: "Corrige la última palabra del giro de honestidad",
+    de: "Korrigiere das letzte Wort der Aufrichtigkeitswendung",
+  },
+  "Исправьте предлог рамки передачи": {
+    en: "Correct the preposition of the broadcast frame",
+    es: "Corrige la preposición del marco de la emisión",
+    de: "Korrigiere die Präposition des Senderahmens",
+  },
+  "Исправьте предлог: архив спорит с мнением": {
+    en: "Correct the preposition: the archive disagrees with the opinion",
+    es: "Corrige la preposición: el archivo contradice la opinión",
+    de: "Korrigiere die Präposition: das Archiv widerspricht der Meinung",
+  },
+  "Исправьте пример: аллюзия — намёк без чужой страницы": {
+    en: "Correct the example: an allusion is a hint without someone else's page",
+    es: "Corrige el ejemplo: la alusión es un guiño sin la página ajena",
+    de: "Korrigiere das Beispiel: eine Anspielung ist ein Hinweis ohne die fremde Seite",
+  },
+  "Исправьте противоречие: подтекст как раз не сказан вслух": {
+    en: "Correct the contradiction: subtext is precisely what is not said aloud",
+    es: "Corrige la contradicción: el subtexto es justo lo que no se dice en voz alta",
+    de: "Korrigiere den Widerspruch: der Subtext ist gerade das, was nicht laut gesagt wird",
+  },
+  "Исправьте разговорное слово: нужна официальная рамка": {
+    en: "Correct the colloquial word: an official frame is needed",
+    es: "Corrige la palabra coloquial: hace falta un marco oficial",
+    de: "Korrigiere das umgangssprachliche Wort: ein amtlicher Rahmen ist nötig",
+  },
+  "Исправьте рамку академического мнения": {
+    en: "Correct the frame of the academic opinion",
+    es: "Corrige el marco de la opinión académica",
+    de: "Korrigiere den Rahmen der akademischen Meinung",
+  },
+  "Исправьте реальное условие": {
+    en: "Correct the real condition",
+    es: "Corrige la condición real",
+    de: "Korrigiere die reale Bedingung",
+  },
+  "Исправьте реальное условие при императиве": {
+    en: "Correct the real condition with an imperative",
+    es: "Corrige la condición real con imperativo",
+    de: "Korrigiere die reale Bedingung beim Imperativ",
+  },
+  "Исправьте реальное условие: уберите гипотезу": {
+    en: "Correct the real condition: remove the hypothesis",
+    es: "Corrige la condición real: quita la hipótesis",
+    de: "Korrigiere die reale Bedingung: entferne die Hypothese",
+  },
+  "Исправьте регистр глагола речи в официальной заметке": {
+    en: "Correct the register of the speech verb in the official note",
+    es: "Corrige el registro del verbo de habla en la nota oficial",
+    de: "Korrigiere das Register des Redeverbs in der amtlichen Notiz",
+  },
+  "Исправьте регистр: разговор на кухне": {
+    en: "Correct the register: talk in the kitchen",
+    es: "Corrige el registro: conversación en la cocina",
+    de: "Korrigiere das Register: Gespräch in der Küche",
+  },
+  "Исправьте род краткой формы": {
+    en: "Correct the gender of the short form",
+    es: "Corrige el género de la forma corta",
+    de: "Korrigiere das Genus der Kurzform",
+  },
+  "Исправьте род обращения": {
+    en: "Correct the gender of the address",
+    es: "Corrige el género del tratamiento",
+    de: "Korrigiere das Genus der Anrede",
+  },
+  "Исправьте род причастия": {
+    en: "Correct the gender of the participle",
+    es: "Corrige el género del participio",
+    de: "Korrigiere das Genus des Partizips",
+  },
+  "Исправьте род: говорящий — Омар": {
+    en: "Correct the gender: the speaker is Omar",
+    es: "Corrige el género: quien habla es Omar",
+    de: "Korrigiere das Genus: der Sprecher ist Omar",
+  },
+  "Исправьте смешение автора статьи и голоса фрагмента": {
+    en: "Correct the mix-up of the article's author and the voice of the fragment",
+    es: "Corrige la confusión entre el autor del artículo y la voz del fragmento",
+    de: "Korrigiere die Vermischung von Verfasser des Artikels und Stimme des Fragments",
+  },
+  "Исправьте союз: нейтральный регистр, не книжный": {
+    en: "Correct the conjunction: neutral register, not bookish",
+    es: "Corrige la conjunción: registro neutro, no culto",
+    de: "Korrigiere die Konjunktion: neutrales Register, nicht gehoben",
+  },
+  "Исправьте суффикс деепричастия совершенного вида": {
+    en: "Correct the suffix of the perfective gerund",
+    es: "Corrige el sufijo del gerundio perfectivo",
+    de: "Korrigiere das Suffix des perfektiven Adverbialpartizips",
+  },
+  "Исправьте существительное: в заголовке лишняя оценка, не фактура": {
+    en: "Correct the noun: the headline has extra judgment, not facts",
+    es: "Corrige el sustantivo: en el titular sobra la valoración, no el material factual",
+    de: "Korrigiere das Substantiv: in der Überschrift steht ein Urteil zu viel, nicht der Faktenstoff",
+  },
+  "Исправьте термин высшей точки": {
+    en: "Correct the term for the highest point",
+    es: "Corrige el término del punto más alto",
+    de: "Korrigiere den Terminus des höchsten Punkts",
+  },
+  "Исправьте термин: речь о повторяемости опыта": {
+    en: "Correct the term: this is about reproducibility",
+    es: "Corrige el término: se trata de la repetibilidad del experimento",
+    de: "Korrigiere den Terminus: es geht um die Wiederholbarkeit des Versuchs",
+  },
+  "Исправьте интерпретацию сравнения": {
+    en: "Correct the interpretation of the comparison",
+    es: "Corrige la interpretación de la comparación",
+    de: "Korrigiere die Deutung des Vergleichs",
+  },
+  "Исправьте термин: уподобление без «как»": {
+    en: "Correct the term: a likeness without «как»",
+    es: "Corrige el término: semejanza sin «как»",
+    de: "Korrigiere den Terminus: Ähnlichkeit ohne «как»",
+  },
+  "Исправьте термин: это оценочное определение": {
+    en: "Correct the term: this is an evaluative modifier",
+    es: "Corrige el término: es un modificador valorativo",
+    de: "Korrigiere den Terminus: das ist eine wertende Bestimmung",
+  },
+  "Исправьте термин: это статистика, не композиция сюжета": {
+    en: "Correct the term: this is statistics, not plot composition",
+    es: "Corrige el término: es estadística, no la composición de la trama",
+    de: "Korrigiere den Terminus: das ist Statistik, nicht die Komposition der Handlung",
+  },
+  "Исправьте финал: регистр доклада": {
+    en: "Correct the ending: the register of a talk",
+    es: "Corrige el final: registro de una ponencia",
+    de: "Korrigiere den Schluss: Register eines Vortrags",
+  },
+  "Исправьте форму деепричастия несовершенного вида": {
+    en: "Correct the form of the imperfective gerund",
+    es: "Corrige la forma del gerundio imperfectivo",
+    de: "Korrigiere die Form des imperfektiven Adverbialpartizips",
+  },
+  "Исправьте частицу косвенного вопроса": {
+    en: "Correct the particle of the indirect question",
+    es: "Corrige la partícula de la pregunta indirecta",
+    de: "Korrigiere die Partikel der indirekten Frage",
+  },
+  "Исправьте частицу: действие вопреки сомнению; говорящая — Анна": {
+    en: "Correct the particle: the action is against doubt; the speaker is Anna",
+    es: "Corrige la partícula: la acción va contra la duda; quien habla es Anna",
+    de: "Korrigiere die Partikel: die Handlung geschieht trotz des Zweifels; die Sprecherin ist Anna",
+  },
+  "Исправьте частицу: просьба без давления": {
+    en: "Correct the particle: a request without pressure",
+    es: "Corrige la partícula: petición sin presión",
+    de: "Korrigiere die Partikel: eine Bitte ohne Druck",
+  },
+  "Исправьте частицу: факт обоим уже известен": {
+    en: "Correct the particle: the fact is already known to both",
+    es: "Corrige la partícula: el hecho ya lo saben ambos",
+    de: "Korrigiere die Partikel: der Fakt ist beiden schon bekannt",
+  },
+  "Исправьте частицу: это выделение темы, не просьба": {
+    en: "Correct the particle: this highlights the theme, it is not a request",
+    es: "Corrige la partícula: esto destaca el tema, no es una petición",
+    de: "Korrigiere die Partikel: das hebt das Thema hervor, es ist keine Bitte",
+  },
+  "Исправьте частицу: это недоверие, не указание": {
+    en: "Correct the particle: this is disbelief, not a direction",
+    es: "Corrige la partícula: es incredulidad, no una indicación",
+    de: "Korrigiere die Partikel: das ist Unglaube, keine Anweisung",
+  },
+  "Исправьте частицу: это сомнение, не общее знание": {
+    en: "Correct the particle: this is doubt, not shared knowledge",
+    es: "Corrige la partícula: es duda, no un saber compartido",
+    de: "Korrigiere die Partikel: das ist Zweifel, kein gemeinsames Wissen",
+  },
+  "Исправьте число краткой формы": {
+    en: "Correct the number of the short form",
+    es: "Corrige el número de la forma corta",
+    de: "Korrigiere den Numerus der Kurzform",
+  },
+  "Исправьте число причастия": {
+    en: "Correct the number of the participle",
+    es: "Corrige el número del participio",
+    de: "Korrigiere den Numerus des Partizips",
+  },
+  "Исправьте: документ уже готов": {
+    en: "Correct it: the document is already ready",
+    es: "Corrígelo: el documento ya está listo",
+    de: "Korrigiere es: das Dokument ist schon fertig",
+  },
+  "Исправьте: нужен процесс, а не готовый результат": {
+    en: "Correct it: a process is needed, not a finished result",
+    es: "Corrígelo: hace falta un proceso, no un resultado ya listo",
+    de: "Korrigiere es: nötig ist ein Prozess, nicht ein fertiges Ergebnis",
+  },
+  "Канцелярское существительное во множественном числе": {
+    en: "A bureaucratic noun in the plural",
+    es: "Un sustantivo administrativo en plural",
+    de: "Ein bürokratisches Substantiv im Plural",
+  },
+  "Книжное наречие степени": {
+    en: "A bookish adverb of degree",
+    es: "Un adverbio de grado culto",
+    de: "Ein gehobenes Gradadverb",
+  },
+  "Косвенный вопрос со словом «где», без «ли»": {
+    en: "An indirect question with «где», without «ли»",
+    es: "Una pregunta indirecta con «где», sin «ли»",
+    de: "Eine indirekte Frage mit «где», ohne «ли»",
+  },
+  "Косвенный вопрос со словом «когда», без «ли»": {
+    en: "An indirect question with «когда», without «ли»",
+    es: "Una pregunta indirecta con «когда», sin «ли»",
+    de: "Eine indirekte Frage mit «когда», ohne «ли»",
+  },
+  "Краткое страдательное причастие от «допустить», женский род": {
+    en: "Short passive participle of «допустить», feminine",
+    es: "Participio pasivo corto de «допустить», femenino",
+    de: "Kurzes passives Partizip von «допустить», Femininum",
+  },
+  "Краткое страдательное причастие от «допустить», мужской род": {
+    en: "Short passive participle of «допустить», masculine",
+    es: "Participio pasivo corto de «допустить», masculino",
+    de: "Kurzes passives Partizip von «допустить», Maskulinum",
+  },
+  "Краткое страдательное причастие от «подписать», средний род": {
+    en: "Short passive participle of «подписать», neuter",
+    es: "Participio pasivo corto de «подписать», neutro",
+    de: "Kurzes passives Partizip von «подписать», Neutrum",
+  },
+  "Краткое страдательное причастие от «проверить», множественное число": {
+    en: "Short passive participle of «проверить», plural",
+    es: "Participio pasivo corto de «проверить», plural",
+    de: "Kurzes passives Partizip von «проверить», Plural",
+  },
+  "Маркер добавочного довода, не следствия": {
+    en: "A marker of an additional argument, not of a consequence",
+    es: "Un marcador de un argumento añadido, no de una consecuencia",
+    de: "Ein Marker eines zusätzlichen Arguments, nicht einer Folge",
+  },
+  "Маркер переформулировки": {
+    en: "A reformulation marker",
+    es: "Un marcador de reformulación",
+    de: "Ein Marker der Umformulierung",
+  },
+  "Маркер следствия": {
+    en: "A consequence marker",
+    es: "Un marcador de consecuencia",
+    de: "Ein Folgemarker",
+  },
+  "Маркер уступки, не пересказ": {
+    en: "A concession marker, not a retelling",
+    es: "Un marcador de concesión, no un recuento",
+    de: "Ein Einräumungsmarker, keine Nacherzählung",
+  },
+  "Настоящее время оборота «обманывать обещаниями»; Омар — мужской род": {
+    en: "Present of the idiom «обманывать обещаниями»; Omar is masculine",
+    es: "Presente del giro «обманывать обещаниями»; Omar es masculino",
+    de: "Präsens der Wendung «обманывать обещаниями»; Omar ist maskulin",
+  },
+  "Настоящее время, множественное число от «расходиться»": {
+    en: "Present plural of «расходиться»",
+    es: "Presente plural de «расходиться»",
+    de: "Präsens Plural von «расходиться»",
+  },
+  "Настоящее время, мужской род, книжный регистр": {
+    en: "Present, masculine, bookish register",
+    es: "Presente, masculino, registro culto",
+    de: "Präsens, Maskulinum, gehobenes Register",
+  },
+  "Настоящее время, несовершенный вид, множественное число от «уточняться»": {
+    en: "Present imperfective plural of «уточняться»",
+    es: "Presente imperfectivo plural de «уточняться»",
+    de: "Präsens imperfektiv Plural von «уточняться»",
+  },
+  "Настоящее время, несовершенный вид, от «пересказывать»": {
+    en: "Present imperfective of «пересказывать»",
+    es: "Presente imperfectivo de «пересказывать»",
+    de: "Präsens imperfektiv von «пересказывать»",
+  },
+  "Настоящее время, несовершенный вид, страдательный залог от «переводить»": {
+    en: "Present imperfective passive of «переводить»",
+    es: "Presente imperfectivo pasivo de «переводить»",
+    de: "Präsens imperfektiv Passiv von «переводить»",
+  },
+  "Настоящее время, несовершенный вид, страдательный залог от «читать»": {
+    en: "Present imperfective passive of «читать»",
+    es: "Presente imperfectivo pasivo de «читать»",
+    de: "Präsens imperfektiv Passiv von «читать»",
+  },
+  "Нейтральный союз причины": {
+    en: "A neutral conjunction of cause",
+    es: "Una conjunción neutra de causa",
+    de: "Eine neutrale Kausalkonjunktion",
+  },
+  "Нереальное следствие: прошедшее время от «выйти» и частица «бы»": {
+    en: "Counterfactual result: past of «выйти» and the particle «бы»",
+    es: "Consecuencia irreal: pasado de «выйти» y la partícula «бы»",
+    de: "Irreale Folge: Vergangenheit von «выйти» und die Partikel «бы»",
+  },
+  "Нереальное следствие: прошедшее время от «получить» и частица «бы»": {
+    en: "Counterfactual result: past of «получить» and the particle «бы»",
+    es: "Consecuencia irreal: pasado de «получить» y la partícula «бы»",
+    de: "Irreale Folge: Vergangenheit von «получить» und die Partikel «бы»",
+  },
+  "Нереальное условие: прошедшее время от «знать», без второго «бы»": {
+    en: "Counterfactual condition: past of «знать», without a second «бы»",
+    es: "Condición irreal: pasado de «знать», sin un segundo «бы»",
+    de: "Irreale Bedingung: Vergangenheit von «знать», ohne ein zweites «бы»",
+  },
+  "Нереальное условие: прошедшее время от «увидеть», без второго «бы»": {
+    en: "Counterfactual condition: past of «увидеть», without a second «бы»",
+    es: "Condición irreal: pasado de «увидеть», sin un segundo «бы»",
+    de: "Irreale Bedingung: Vergangenheit von «увидеть», ohne ein zweites «бы»",
+  },
+  "Несовершенный вид: результат уже отменён, от «открывать»": {
+    en: "Imperfective: the result has already been undone, from «открывать»",
+    es: "Imperfectivo: el resultado ya se ha anulado, de «открывать»",
+    de: "Imperfektiv: das Ergebnis ist schon aufgehoben, von «открывать»",
+  },
+  "Общий вопрос: глагол, потом «ли»": {
+    en: "A yes-no question: the verb, then «ли»",
+    es: "Una pregunta total: el verbo y luego «ли»",
+    de: "Eine Entscheidungsfrage: das Verb, dann «ли»",
+  },
+  "Одно слово высокого регистра": {
+    en: "One word of high register",
+    es: "Una palabra de registro alto",
+    de: "Ein Wort hohen Registers",
+  },
+  "Однократный успех, прошедшее от «удаться»": {
+    en: "A one-time success, past of «удаться»",
+    es: "Un éxito único, pasado de «удаться»",
+    de: "Ein einmaliger Erfolg, Vergangenheit von «удаться»",
+  },
+  "Отрицательная просьба: инфинитив несовершенного вида": {
+    en: "A negative request: imperfective infinitive",
+    es: "Una petición negativa: infinitivo imperfectivo",
+    de: "Eine verneinte Bitte: imperfektiver Infinitiv",
+  },
+  "Официальная рамка времени из трёх слов": {
+    en: "An official time frame of three words",
+    es: "Un marco temporal oficial de tres palabras",
+    de: "Ein amtlicher Zeitrahmen aus drei Wörtern",
+  },
+  "Официальная связка причины перед предлогом «с»": {
+    en: "The official cause link before the preposition «с»",
+    es: "El nexo oficial de causa antes de la preposición «с»",
+    de: "Die amtliche Ursachsfugung vor der Präposition «с»",
+  },
+  "Официальная формула просьбы, 1-е лицо единственного числа": {
+    en: "The official request formula, 1st person singular",
+    es: "La fórmula oficial de petición, 1.ª persona del singular",
+    de: "Die amtliche Bitteformel, 1. Person Singular",
+  },
+  "Официальная формула сообщения, 1-е лицо от «ставить»": {
+    en: "The official informing formula, 1st person of «ставить»",
+    es: "La fórmula oficial de comunicación, 1.ª persona de «ставить»",
+    de: "Die amtliche Mitteilungsformel, 1. Person von «ставить»",
+  },
+  "Официальное обращение к женщине": {
+    en: "Official address to a woman",
+    es: "Tratamiento oficial hacia una mujer",
+    de: "Amtliche Anrede an eine Frau",
+  },
+  "Переведите на русский в официальном регистре": {
+    en: "Translate into Russian in an official register",
+    es: "Traduce al ruso en un registro oficial",
+    de: "Übersetze ins Russische in einem amtlichen Register",
+  },
+  "Последнее слово оборота «говорить честно»": {
+    en: "The last word of the idiom «говорить честно»",
+    es: "La última palabra del giro «говорить честно»",
+    de: "Das letzte Wort der Wendung «говорить честно»",
+  },
+  "Последнее слово оборота «появиться внезапно»": {
+    en: "The last word of the idiom «появиться внезапно»",
+    es: "La última palabra del giro «появиться внезапно»",
+    de: "Das letzte Wort der Wendung «появиться внезапно»",
+  },
+  "Последнее слово оборота «сделать наспех»": {
+    en: "The last word of the idiom «сделать наспех»",
+    es: "La última palabra del giro «сделать наспех»",
+    de: "Das letzte Wort der Wendung «сделать наспех»",
+  },
+  "Последнее слово оборота «согласно, без ссор»": {
+    en: "The last word of the idiom «согласно, без ссор»",
+    es: "La última palabra del giro «согласно, без ссор»",
+    de: "Das letzte Wort der Wendung «согласно, без ссор»",
+  },
+  "Предлог соответствия, не причины; дальше дательный падеж": {
+    en: "The preposition of accordance, not of cause; the dative follows",
+    es: "La preposición de conformidad, no de causa; sigue el dativo",
+    de: "Die Präposition der Entsprechung, nicht der Ursache; danach steht der Dativ",
+  },
+  "Предлог уступки с дательным падежом": {
+    en: "The preposition of concession with the dative",
+    es: "La preposición de concesión con dativo",
+    de: "Die Präposition der Einräumung mit Dativ",
+  },
+  "Предложный падеж после «на»: несказанный смысл": {
+    en: "Prepositional case after «на»: unspoken meaning",
+    es: "Preposicional después de «на»: sentido no dicho",
+    de: "Präpositiv nach «на»: ungesagter Sinn",
+  },
+  "Просьба: инфинитив совершенного вида вместо императива": {
+    en: "A request: perfective infinitive instead of the imperative",
+    es: "Una petición: infinitivo perfectivo en lugar del imperativo",
+    de: "Eine Bitte: perfektiver Infinitiv statt des Imperativs",
+  },
+  "Процесс без результата, несовершенный вид от «править»": {
+    en: "A process with no result, imperfective of «править»",
+    es: "Un proceso sin resultado, imperfectivo de «править»",
+    de: "Ein Prozess ohne Ergebnis, Imperfektiv von «править»",
+  },
+  "Прошедшее время от «понять»; говорящий — Омар": {
+    en: "Past of «понять»; the speaker is Omar",
+    es: "Pasado de «понять»; quien habla es Omar",
+    de: "Vergangenheit von «понять»; der Sprecher ist Omar",
+  },
+  "Прошедшее время, мужской род, глагол публичного заявления от «заявить»": {
+    en: "Past, masculine, the public-statement verb from «заявить»",
+    es: "Pasado, masculino, el verbo de declaración pública de «заявить»",
+    de: "Vergangenheit, Maskulinum, das Verb der öffentlichen Erklärung von «заявить»",
+  },
+  "Прошедшее время, мужской род, от «опровергнуть»": {
+    en: "Past, masculine, of «опровергнуть»",
+    es: "Pasado, masculino, de «опровергнуть»",
+    de: "Vergangenheit, Maskulinum, von «опровергнуть»",
+  },
+  "Прошедшее время, несовершенный вид, страдательный залог от «обсуждать», мужской род": {
+    en: "Past imperfective passive of «обсуждать», masculine",
+    es: "Pasado imperfectivo pasivo de «обсуждать», masculino",
+    de: "Vergangenheit imperfektiv Passiv von «обсуждать», Maskulinum",
+  },
+  "Разговорное согласие, одно слово; говорящая — Анна": {
+    en: "Colloquial agreement, one word; the speaker is Anna",
+    es: "Asentimiento coloquial, una palabra; quien habla es Anna",
+    de: "Umgangssprachliche Zustimmung, ein Wort; die Sprecherin ist Anna",
+  },
+  "Разговорный зачин, одно слово": {
+    en: "A colloquial opener, one word",
+    es: "Un arranque coloquial, una palabra",
+    de: "Ein umgangssprachlicher Einstieg, ein Wort",
+  },
+  "Реальное условие при императиве": {
+    en: "A real condition with an imperative",
+    es: "Una condición real con imperativo",
+    de: "Eine reale Bedingung beim Imperativ",
+  },
+  "Реальное условие: будущее совершенного вида от «прислать»": {
+    en: "A real condition: perfective future of «прислать»",
+    es: "Una condición real: futuro perfectivo de «прислать»",
+    de: "Eine reale Bedingung: perfektives Futur von «прислать»",
+  },
+  "Реальное условие: будущее совершенного вида от «сдать»": {
+    en: "A real condition: perfective future of «сдать»",
+    es: "Una condición real: futuro perfectivo de «сдать»",
+    de: "Eine reale Bedingung: perfektives Futur von «сдать»",
+  },
+  "Родительный падеж в рамке анонимного источника": {
+    en: "Genitive in the frame of an anonymous source",
+    es: "Genitivo en el marco de una fuente anónima",
+    de: "Genitiv im Rahmen einer anonymen Quelle",
+  },
+  "Сделайте косвенный общий вопрос": {
+    en: "Make an indirect yes-no question",
+    es: "Haz una pregunta total indirecta",
+    de: "Bilde eine indirekte Entscheidungsfrage",
+  },
+  "Совершенный вид после «едва», от «дописать»": {
+    en: "Perfective after «едва», from «дописать»",
+    es: "Perfectivo después de «едва», de «дописать»",
+    de: "Perfektiv nach «едва», von «дописать»",
+  },
+  "Совершенный вид после «так и не», от «поймать»": {
+    en: "Perfective after «так и не», from «поймать»",
+    es: "Perfectivo después de «так и не», de «поймать»",
+    de: "Perfektiv nach «так и не», von «поймать»",
+  },
+  "Сохраните настоящее время и женский род, замените «я»": {
+    en: "Keep the present and the feminine, replace «я»",
+    es: "Conserva el presente y el femenino, sustituye «я»",
+    de: "Behalte Präsens und Femininum, ersetze «я»",
+  },
+  "Союз цели при реальном действии в прошлом": {
+    en: "The purpose conjunction with a real action in the past",
+    es: "La conjunción de finalidad con una acción real en el pasado",
+    de: "Die Zweckkonjunktion bei einer realen Handlung in der Vergangenheit",
+  },
+  "Страдательное причастие настоящего времени от «читать», женский род": {
+    en: "Present passive participle of «читать», feminine",
+    es: "Participio pasivo de presente de «читать», femenino",
+    de: "Passives Partizip Präsens von «читать», Femininum",
+  },
+  "Страдательное причастие прошедшего времени от «написать», женский род, полная форма": {
+    en: "Past passive participle of «написать», feminine, full form",
+    es: "Participio pasivo de pasado de «написать», femenino, forma larga",
+    de: "Passives Partizip der Vergangenheit von «написать», Femininum, Langform",
+  },
+  "Страдательное причастие прошедшего времени от «разработать», предложный падеж, мужской род": {
+    en: "Past passive participle of «разработать», prepositional, masculine",
+    es: "Participio pasivo de pasado de «разработать», preposicional, masculino",
+    de: "Passives Partizip der Vergangenheit von «разработать», Präpositiv, Maskulinum",
+  },
+  "Страдательное причастие прошедшего времени от «сдать», мужской род, полная форма": {
+    en: "Past passive participle of «сдать», masculine, full form",
+    es: "Participio pasivo de pasado de «сдать», masculino, forma larga",
+    de: "Passives Partizip der Vergangenheit von «сдать», Maskulinum, Langform",
+  },
+  "Творительный падеж от прилагательного «неподтверждённый»": {
+    en: "Instrumental of the adjective «неподтверждённый»",
+    es: "Instrumental del adjetivo «неподтверждённый»",
+    de: "Instrumental des Adjektivs «неподтверждённый»",
+  },
+  "Творительный падеж термина композиции после «называется»": {
+    en: "Instrumental of the composition term after «называется»",
+    es: "Instrumental del término de composición después de «называется»",
+    de: "Instrumental des Kompositionsterminus nach «называется»",
+  },
+  "Творительный падеж тропа: уподобление без «как»": {
+    en: "Instrumental of the trope: a likeness without «как»",
+    es: "Instrumental del tropo: semejanza sin «как»",
+    de: "Instrumental des Tropus: Ähnlichkeit ohne «как»",
+  },
+  "Творительный падеж: гипотезу ещё не сняли": {
+    en: "Instrumental: the hypothesis has not been dropped yet",
+    es: "Instrumental: la hipótesis todavía no se ha retirado",
+    de: "Instrumental: die Hypothese ist noch nicht aufgegeben",
+  },
+  "Творительный падеж: оценочное определение": {
+    en: "Instrumental: an evaluative modifier",
+    es: "Instrumental: un modificador valorativo",
+    de: "Instrumental: eine wertende Bestimmung",
+  },
+  "Термин интертекста, именительный падеж": {
+    en: "The intertext term, nominative",
+    es: "El término del intertexto, nominativo",
+    de: "Der Intertext-Terminus, Nominativ",
+  },
+  "Термин повествования, именительный падеж": {
+    en: "The narration term, nominative",
+    es: "El término de la narración, nominativo",
+    de: "Der Erzählterminus, Nominativ",
+  },
+  "Термин повторяющегося мотива, именительный падеж": {
+    en: "The term for a recurring motif, nominative",
+    es: "El término del motivo que se repite, nominativo",
+    de: "Der Terminus des wiederkehrenden Motivs, Nominativ",
+  },
+  "Термин статистики, именительный падеж": {
+    en: "The statistics term, nominative",
+    es: "El término de estadística, nominativo",
+    de: "Der Statistikterminus, Nominativ",
+  },
+  "Термин финала сюжета, именительный падеж": {
+    en: "The term for the end of the plot, nominative",
+    es: "El término del final de la trama, nominativo",
+    de: "Der Terminus des Handlungsendes, Nominativ",
+  },
+  "Уберите вторую частицу «бы» в условии": {
+    en: "Remove the second particle «бы» in the condition",
+    es: "Quita la segunda partícula «бы» en la condición",
+    de: "Entferne die zweite Partikel «бы» in der Bedingung",
+  },
+  "Уберите лишнюю частицу": {
+    en: "Remove the extra particle",
+    es: "Quita la partícula de más",
+    de: "Entferne die überzählige Partikel",
+  },
+  "Уберите лишнюю частицу при вопросительном слове": {
+    en: "Remove the extra particle next to the question word",
+    es: "Quita la partícula de más junto a la palabra interrogativa",
+    de: "Entferne die überzählige Partikel beim Fragewort",
+  },
+  "Устойчивая рамка: во время передачи": {
+    en: "A set frame: during the broadcast",
+    es: "Un marco fijo: durante la emisión",
+    de: "Ein fester Rahmen: während der Sendung",
+  },
+  "Уступка: факт признан, вывод другой": {
+    en: "A concession: the fact is granted, the conclusion differs",
+    es: "Una concesión: el hecho se admite, la conclusión es otra",
+    de: "Eine Einräumung: der Fakt gilt, die Folgerung ist anders",
+  },
+  "Форма оборота «сознательно молчать»; Омар — мужской род": {
+    en: "The form of the idiom «сознательно молчать»; Omar is masculine",
+    es: "La forma del giro «сознательно молчать»; Omar es masculino",
+    de: "Die Form der Wendung «сознательно молчать»; Omar ist maskulin",
+  },
+  "Формула основания перед родительным падежом": {
+    en: "The formula of grounds before the genitive",
+    es: "La fórmula del fundamento antes del genitivo",
+    de: "Die Formel der Grundlage vor dem Genitiv",
+  },
+  "Частица вопреки ожиданию; говорящая — Анна": {
+    en: "The particle contrary to expectation; the speaker is Anna",
+    es: "La partícula contra lo esperado; quien habla es Anna",
+    de: "Die Partikel wider Erwarten; die Sprecherin ist Anna",
+  },
+  "Частица выделения темы, после дефиса": {
+    en: "The theme-highlighting particle, after a hyphen",
+    es: "La partícula que destaca el tema, después de un guion",
+    de: "Die Partikel der Themenhervorhebung, nach einem Bindestrich",
+  },
+  "Частица известного собеседнику факта": {
+    en: "The particle for a fact the listener already knows",
+    es: "La partícula de un hecho que el interlocutor ya conoce",
+    de: "Die Partikel für einen dem Gesprächspartner bekannten Fakt",
+  },
+  "Частица косвенного вопроса": {
+    en: "The particle of the indirect question",
+    es: "La partícula de la pregunta indirecta",
+    de: "Die Partikel der indirekten Frage",
+  },
+  "Частица ненавязчивой просьбы, пишется после дефиса": {
+    en: "The particle of a gentle request, written after a hyphen",
+    es: "La partícula de una petición suave, se escribe tras un guion",
+    de: "Die Partikel einer unaufdringlichen Bitte, nach einem Bindestrich",
+  },
+  "Частица сильного удивления": {
+    en: "The particle of strong surprise",
+    es: "La partícula de fuerte sorpresa",
+    de: "Die Partikel starken Erstaunens",
+  },
+  "Частица сомнения в вопросе": {
+    en: "The particle of doubt in a question",
+    es: "La partícula de duda en una pregunta",
+    de: "Die Partikel des Zweifels in einer Frage",
+  },
 };
 
 export function lookupRussianInstruction(
