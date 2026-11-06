@@ -32,14 +32,24 @@ function foldGermanChars(s: string): string {
   return s.replace(/ß/g, "ss");
 }
 
-/** Strip punctuation and symbols that learners often omit on mobile keyboards. */
-function stripPunctuation(s: string): string {
-  return s
+/**
+ * Strip punctuation learners often omit on mobile keyboards.
+ *
+ * Latin: hyphens become spaces («well-known» ≈ «well known»).
+ * Cyrillic: keep hyphen-minus — «По-моему» ≠ «По моему», «по-русски» ≠ «по русски».
+ * En/em dashes in Cyrillic compound words normalize to hyphen-minus.
+ */
+function stripPunctuation(s: string, opts?: { preserveHyphen?: boolean }): string {
+  let out = s
     .replace(/\s*\[\d+\]/g, "") // pack-generator index marks, if any remain
-    .replace(/[¿?¡!.,;:'"«»„""''`´…]/g, "")
-    .replace(/[-–—_/\\|]/g, " ")
-    .replace(/\s+/g, " ")
-    .trim();
+    .replace(/[¿?¡!.,;:'"«»„""''`´…]/g, "");
+  if (opts?.preserveHyphen) {
+    // Unify dash characters to ASCII hyphen; do not turn them into spaces.
+    out = out.replace(/[–—―]/g, "-").replace(/[_/\\|]/g, " ");
+  } else {
+    out = out.replace(/[-–—_/\\|]/g, " ");
+  }
+  return out.replace(/\s+/g, " ").trim();
 }
 
 /**
@@ -57,11 +67,13 @@ function normalizeLatinAnswer(s: string): string {
 }
 
 /**
- * Cyrillic-safe folding: preserve «й»/«и» and «ё»/«е».
- * Unify only NFC forms of the same grapheme + case + punctuation.
+ * Cyrillic-safe folding: preserve «й»/«и», «ё»/«е», and orthographic hyphens.
+ * Unify only NFC forms of the same grapheme + case + non-hyphen punctuation.
  */
 function normalizeCyrillicAnswer(s: string): string {
-  return stripPunctuation(s.normalize("NFC").trim().toLocaleLowerCase("ru-RU"));
+  return stripPunctuation(s.normalize("NFC").trim().toLocaleLowerCase("ru-RU"), {
+    preserveHyphen: true,
+  });
 }
 
 /**

@@ -199,7 +199,7 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
       "sentence_building",
     ],
     prereqChapter: "ru-ch8-numbers-time",
-    estimatedMinutes: 12,
+    estimatedMinutes: 18,
   },
   {
     slug: "ru-ch10-future",
@@ -220,7 +220,7 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
       "sentence_building",
     ],
     prereqChapter: "ru-ch9-past-tense",
-    estimatedMinutes: 12,
+    estimatedMinutes: 18,
   },
   {
     slug: "ru-ch11-genitive",
@@ -241,7 +241,7 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
       "sentence_building",
     ],
     prereqChapter: "ru-ch10-future",
-    estimatedMinutes: 13,
+    estimatedMinutes: 19,
   },
   {
     slug: "ru-ch12-dative",
@@ -262,7 +262,7 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
       "sentence_building",
     ],
     prereqChapter: "ru-ch11-genitive",
-    estimatedMinutes: 12,
+    estimatedMinutes: 18,
   },
   {
     slug: "ru-ch13-instrumental",
@@ -283,7 +283,7 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
       "sentence_building",
     ],
     prereqChapter: "ru-ch12-dative",
-    estimatedMinutes: 12,
+    estimatedMinutes: 18,
   },
   {
     slug: "ru-ch14-aspect-intro",
@@ -304,7 +304,7 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
       "sentence_building",
     ],
     prereqChapter: "ru-ch13-instrumental",
-    estimatedMinutes: 13,
+    estimatedMinutes: 19,
   },
   {
     slug: "ru-ch15-motion-basic",
@@ -325,7 +325,7 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
       "sentence_building",
     ],
     prereqChapter: "ru-ch14-aspect-intro",
-    estimatedMinutes: 13,
+    estimatedMinutes: 19,
   },
   {
     slug: "ru-ch16-dorm-shops",
@@ -346,7 +346,7 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
       "sentence_building",
     ],
     prereqChapter: "ru-ch15-motion-basic",
-    estimatedMinutes: 12,
+    estimatedMinutes: 18,
   },
 
   // ===== B1 ============================================================
@@ -369,7 +369,7 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
       "sentence_building",
     ],
     prereqChapter: "ru-ch16-dorm-shops",
-    estimatedMinutes: 14,
+    estimatedMinutes: 21,
   },
   {
     slug: "ru-ch18-aspect-system",
@@ -390,7 +390,7 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
       "sentence_building",
     ],
     prereqChapter: "ru-ch17-cases-review",
-    estimatedMinutes: 14,
+    estimatedMinutes: 21,
   },
   {
     slug: "ru-ch19-motion-prefixes",
@@ -411,7 +411,7 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
       "sentence_building",
     ],
     prereqChapter: "ru-ch18-aspect-system",
-    estimatedMinutes: 14,
+    estimatedMinutes: 21,
   },
   {
     slug: "ru-ch20-complex-sentences",
@@ -432,7 +432,7 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
       "sentence_building",
     ],
     prereqChapter: "ru-ch19-motion-prefixes",
-    estimatedMinutes: 14,
+    estimatedMinutes: 21,
   },
   {
     slug: "ru-ch21-narration-cohesion",
@@ -453,7 +453,7 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
       "sentence_building",
     ],
     prereqChapter: "ru-ch20-complex-sentences",
-    estimatedMinutes: 13,
+    estimatedMinutes: 20,
   },
   {
     slug: "ru-ch22-academic-social",
@@ -474,7 +474,7 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
       "sentence_building",
     ],
     prereqChapter: "ru-ch21-narration-cohesion",
-    estimatedMinutes: 14,
+    estimatedMinutes: 21,
   },
 ];
 

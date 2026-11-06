@@ -87,9 +87,36 @@ describe("normalizeAnswer — Cyrillic (Russian)", () => {
     );
   });
 
+  it("preserves Russian orthographic hyphens (По-моему ≠ По моему)", () => {
+    expect(normalizeAnswer("По-моему")).not.toBe(normalizeAnswer("По моему"));
+    expect(answersMatch("По моему", ["По-моему"])).toBe(false);
+    expect(answersMatch("По-моему", ["По-моему", "по-моему"])).toBe(true);
+    expect(answersMatch("по-моему,", ["По-моему"])).toBe(true);
+  });
+
+  it("preserves other hyphenated Russian forms", () => {
+    expect(normalizeAnswer("по-русски")).not.toBe(normalizeAnswer("по русски"));
+    expect(normalizeAnswer("кто-то")).not.toBe(normalizeAnswer("кто то"));
+    expect(normalizeAnswer("из-за")).not.toBe(normalizeAnswer("из за"));
+    expect(normalizeAnswer("всё-таки")).not.toBe(normalizeAnswer("всё таки"));
+    expect(normalizeAnswer("когда-нибудь")).not.toBe(
+      normalizeAnswer("когда нибудь"),
+    );
+    // En-dash / em-dash in a compound unify to hyphen-minus, not a space.
+    expect(normalizeAnswer("по–моему")).toBe(normalizeAnswer("по-моему"));
+    expect(normalizeAnswer("по—моему")).toBe(normalizeAnswer("по-моему"));
+  });
+
   it("detects Cyrillic script", () => {
     expect(hasCyrillicScript("привет")).toBe(true);
     expect(hasCyrillicScript("hola")).toBe(false);
+  });
+});
+
+describe("normalizeAnswer — Latin still folds hyphens", () => {
+  it("treats Latin hyphen as optional spacing", () => {
+    expect(normalizeAnswer("well-known")).toBe(normalizeAnswer("well known"));
+    expect(normalizeAnswer("to-morrow")).toBe(normalizeAnswer("to morrow"));
   });
 });
 

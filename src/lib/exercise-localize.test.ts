@@ -137,6 +137,26 @@ describe("translation localization", () => {
     );
   });
 
+  it("keeps English L1 TR stems for Russian course on ES/DE UI", () => {
+    const ruTr: StaticExercise = {
+      id: "ru-tr-en",
+      type: "translation",
+      question: "We were at the café.",
+      answer: "Мы были в кафе",
+      instruction: "Переведите на русский",
+      explanation: "Мы → были.",
+    };
+    for (const lang of ["en", "es", "de"] as const) {
+      expect(isExerciseUsableForLanguage(ruTr, lang, "russian")).toBe(true);
+      expect(localizeTranslationQuestion(ruTr, lang, "russian")).toBe(
+        "We were at the café.",
+      );
+    }
+    expect(
+      prepareExercisesForInterface([ruTr], "es", "russian"),
+    ).toHaveLength(1);
+  });
+
   it("replaces spoiler grammar-tag instructions", () => {
     const [ex] = prepareExercisesForInterface(
       [

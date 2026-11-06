@@ -650,9 +650,20 @@ function resolveTranslationPromptForUi(
     return null;
   }
 
-  // Russian course: UI language L1 when already matched above; else try EN.
+  // Russian course: UI language L1 when already matched above; else EN.
+  // Many A2–B1 TR stems are authored in English. tryLang("en") only hits
+  // maps / questionTranslations — also keep an already-English stem.
   if (courseId === "russian") {
-    return tryLang("en");
+    const enMapped = tryLang("en");
+    if (enMapped) return enMapped;
+    if (
+      source === "en" &&
+      !isSpoiler(question) &&
+      !hasCyrillicText(question)
+    ) {
+      return question;
+    }
+    return null;
   }
 
   // Spanish course + EN UI with no EN map: do not fall back to ES (target leak).

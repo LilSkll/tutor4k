@@ -44,6 +44,71 @@ export const RUSSIAN_TOPIC_FEEDBACK: Record<
     es: "Para la hora usa в + número + час(а/ов). Pregunta Во сколько…?",
     de: "Für die Uhrzeit: в + Zahl + час(а/ов). Frage: Во сколько…?",
   },
+  "ru-a2-past-tense": {
+    en: "Past tense agrees in gender/number: -л / -ла / -ло / -ли (был / была / было / были).",
+    es: "El pasado concuerda en género/número: -л / -ла / -ло / -ли (был / была / было / были).",
+    de: "Vergangenheit nach Genus/Numerus: -л / -ла / -ло / -ли (был / была / было / были).",
+  },
+  "ru-a2-future": {
+    en: "Imperfective future: буду + infinitive. Perfective future: one conjugated form (прочитаю).",
+    es: "Futuro imperfectivo: буду + infinitivo. Futuro perfectivo: una forma conjugada (прочитаю).",
+    de: "Imperfektives Futur: буду + Infinitiv. Perfektives Futur: eine Form (прочитаю).",
+  },
+  "ru-a2-genitive": {
+    en: "After нет / много / мало use the genitive (нет книги, много студентов).",
+    es: "Tras нет / много / мало usa el genitivo (нет книги, много студентов).",
+    de: "Nach нет / много / мало steht der Genitiv (нет книги, много студентов).",
+  },
+  "ru-a2-dative": {
+    en: "Dative answers кому?/чему?: мне нравится…, звонить другу, помочь студентам.",
+    es: "El dativo responde a кому?/чему?: мне нравится…, звонить другу, помочь студентам.",
+    de: "Dativ auf кому?/чему?: мне нравится…, звонить другу, помочь студентам.",
+  },
+  "ru-a2-instrumental": {
+    en: "Instrumental: работать врачом, писать ручкой, жить с другом (с + instrumental).",
+    es: "Instrumental: работать врачом, писать ручкой, жить с другом (с + instrumental).",
+    de: "Instrumental: работать врачом, писать ручкой, жить с другом (с + Instrumental).",
+  },
+  "ru-a2-aspect-intro": {
+    en: "Imperfective = process/habit; perfective = result/one completed event.",
+    es: "Imperfectivo = proceso/hábito; perfectivo = resultado/evento completado.",
+    de: "Imperfektiv = Prozess/Gewohnheit; perfektiv = Resultat/ein abgeschlossenes Ereignis.",
+  },
+  "ru-a2-motion-basic": {
+    en: "иду/еду for one trip now; хожу/езжу for habit. Foot vs transport matters.",
+    es: "иду/еду = un viaje ahora; хожу/езжу = hábito. Pie vs transporte importa.",
+    de: "иду/еду = einmalige Fahrt jetzt; хожу/езжу = Gewohnheit. Zu Fuß vs. Verkehrsmittel.",
+  },
+  "ru-b1-cases-system": {
+    en: "Choose the case for the construction (нет + gen., нравиться + dat., с + instr., etc.).",
+    es: "Elige el caso según la construcción (нет + gen., нравиться + dat., с + instr., etc.).",
+    de: "Wähle den Kasus zur Konstruktion (нет + Gen., нравиться + Dat., с + Instr. usw.).",
+  },
+  "ru-b1-aspect-tenses": {
+    en: "In past/future, aspect still marks process vs result (долго готовился / уже подготовился).",
+    es: "En pasado/futuro el aspecto sigue marcando proceso vs resultado (долго готовился / уже подготовился).",
+    de: "In Vergangenheit/Futur markiert Aspekt weiter Prozess vs. Resultat (долго готовился / уже подготовился).",
+  },
+  "ru-b1-motion-prefixes": {
+    en: "Prefix shows direction/result: при- arrival, у- departure, по- start, во- into.",
+    es: "El prefijo marca dirección/resultado: при- llegada, у- partida, по- inicio, во- hacia dentro.",
+    de: "Präfix zeigt Richtung/Resultat: при- Ankunft, у- Weggang, по- Beginn, во- hinein.",
+  },
+  "ru-b1-complex-sentences": {
+    en: "Link clauses with потому что (reason), чтобы (purpose), если (condition), который (relative).",
+    es: "Une oraciones con потому что (causa), чтобы (fin), если (condición), который (relativo).",
+    de: "Verbinde Sätze mit потому что (Grund), чтобы (Zweck), если (Bedingung), который (Relativ).",
+  },
+  "ru-b1-text-cohesion": {
+    en: "Order the story with сначала → потом/затем → наконец/в итоге.",
+    es: "Ordena el relato con сначала → потом/затем → наконец/в итоге.",
+    de: "Ordne die Erzählung mit сначала → потом/затем → наконец/в итоге.",
+  },
+  "ru-b1-argumentation": {
+    en: "Use campus formulas: по-моему, согласен/согласна, можно задать вопрос?, объясните ещё раз.",
+    es: "Usa fórmulas del campus: по-моему, согласен/согласна, можно задать вопрос?, объясните ещё раз.",
+    de: "Nutze Campusformeln: по-моему, согласен/согласна, можно задать вопрос?, объясните ещё раз.",
+  },
 };
 
 const FORMULA_LEAD: Record<Exclude<InterfaceLanguage, "ru">, string> = {

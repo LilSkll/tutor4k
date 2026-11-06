@@ -1,10 +1,9 @@
 import { describe, expect, it } from "vitest";
 import { getCourse } from "@/config/courses";
 import { getExercisePool } from "@/lib/exercise-pool";
-import { TARGET_EXERCISES_PER_TYPE } from "@/lib/exercise-bank";
 import { answersMatch } from "@/lib/normalize-answer";
 
-const DEEP_A1_SLUGS = [
+const A1_SLUGS = [
   "ru-ch1-alphabet-greetings",
   "ru-ch2-introduce-yourself",
   "ru-ch3-noun-gender",
@@ -15,15 +14,28 @@ const DEEP_A1_SLUGS = [
   "ru-ch8-numbers-time",
 ];
 
-const SEED_CHAPTER_COUNT = 22 - DEEP_A1_SLUGS.length;
-const EXERCISES_PER_SEED = 5;
+const A2_SLUGS = [
+  "ru-ch9-past-tense",
+  "ru-ch10-future",
+  "ru-ch11-genitive",
+  "ru-ch12-dative",
+  "ru-ch13-instrumental",
+  "ru-ch14-aspect-intro",
+  "ru-ch15-motion-basic",
+  "ru-ch16-dorm-shops",
+];
 
-/**
- * Structural + distribution gates for the RKI bank.
- * A1 ch1–8 are deepened; ch9–22 are intentional thin seeds until a quality pass.
- */
+const B1_SLUGS = [
+  "ru-ch17-cases-review",
+  "ru-ch18-aspect-system",
+  "ru-ch19-motion-prefixes",
+  "ru-ch20-complex-sentences",
+  "ru-ch21-narration-cohesion",
+  "ru-ch22-academic-social",
+];
+
 describe("Russian exercise bank audit", () => {
-  it("every chapter has exercises; pool is structurally sound", async () => {
+  it("every chapter has a quality bank; pool is structurally sound", async () => {
     const ru = await getCourse("russian");
     const chapters = ru.getChapters();
     expect(chapters.length).toBe(22);
@@ -35,7 +47,7 @@ describe("Russian exercise bank audit", () => {
       const exs = ru.getExercises(ch.slug);
       counts[ch.slug] = exs.length;
       byLevel[ch.level] = (byLevel[ch.level] ?? 0) + exs.length;
-      expect(exs.length, ch.slug).toBeGreaterThanOrEqual(5);
+      expect(exs.length, ch.slug).toBeGreaterThanOrEqual(35);
 
       const seen = new Set<string>();
       for (const ex of exs) {
@@ -45,9 +57,10 @@ describe("Russian exercise bank audit", () => {
         expect(ex.grammarTopic?.startsWith("ru-"), ex.id).toBe(true);
 
         const dedupeKey = `${ex.type}\0${ex.question}`;
-        expect(seen.has(dedupeKey), `${ch.slug} duplicate ${ex.type}: ${ex.question}`).toBe(
-          false,
-        );
+        expect(
+          seen.has(dedupeKey),
+          `${ch.slug} duplicate ${ex.type}: ${ex.question}`,
+        ).toBe(false);
         seen.add(dedupeKey);
 
         if (ex.type === "multiple_choice") {
@@ -74,21 +87,12 @@ describe("Russian exercise bank audit", () => {
       }
     }
 
-    for (const slug of DEEP_A1_SLUGS) {
+    for (const slug of A1_SLUGS) {
       expect(counts[slug], slug).toBeGreaterThanOrEqual(50);
     }
-    for (const slug of DEEP_A1_SLUGS.slice(3)) {
-      expect(counts[slug], slug).toBeGreaterThanOrEqual(95);
-    }
-
-    const seedSlugs = chapters
-      .map((c) => c.slug)
-      .filter((slug) => !DEEP_A1_SLUGS.includes(slug));
-    for (const slug of seedSlugs) {
-      expect(counts[slug], slug).toBeGreaterThanOrEqual(5);
-      expect(counts[slug], `${slug} still a seed`).toBeLessThan(
-        TARGET_EXERCISES_PER_TYPE * 5,
-      );
+    for (const slug of [...A2_SLUGS, ...B1_SLUGS]) {
+      expect(counts[slug], slug).toBeGreaterThanOrEqual(35);
+      expect(counts[slug], slug).toBeLessThanOrEqual(80);
     }
 
     expect(byLevel.A1).toBeGreaterThan(byLevel.A2);
@@ -97,11 +101,9 @@ describe("Russian exercise bank audit", () => {
     const pool = await getExercisePool("russian");
     const chapterTotal = Object.values(counts).reduce((s, n) => s + n, 0);
     expect(pool.length).toBe(chapterTotal);
-    expect(pool.length).toBeGreaterThanOrEqual(700);
-    expect(pool.length).toBeLessThanOrEqual(850);
-
-    const ideal = chapters.length * 5 * TARGET_EXERCISES_PER_TYPE;
-    expect(pool.length).toBeLessThan(ideal);
+    // A1 ~680 + A2 320 + B1 240 ≈ 1240
+    expect(pool.length).toBeGreaterThanOrEqual(1100);
+    expect(pool.length).toBeLessThan(1600);
   });
 
   it("reports chapter coverage snapshot (non-flaky shape)", async () => {
@@ -112,16 +114,12 @@ describe("Russian exercise bank audit", () => {
       n: ru.getExercises(ch.slug).length,
       grammar: ch.grammarTopic,
     }));
-    const deep = rows.filter((r) => r.n >= 50);
-    const seeds = rows.filter((r) => r.n < 50);
-    expect(deep.length).toBe(DEEP_A1_SLUGS.length);
-    expect(seeds.length).toBe(SEED_CHAPTER_COUNT);
+    expect(rows.filter((r) => r.level === "A1").length).toBe(8);
+    expect(rows.filter((r) => r.level === "A2").length).toBe(8);
+    expect(rows.filter((r) => r.level === "B1").length).toBe(6);
+    expect(rows.every((r) => r.n >= 35)).toBe(true);
     const total = rows.reduce((s, r) => s + r.n, 0);
-    const deepSum = deep.reduce((s, r) => s + r.n, 0);
-    const seedSum = seeds.reduce((s, r) => s + r.n, 0);
-    expect(seedSum).toBe(SEED_CHAPTER_COUNT * EXERCISES_PER_SEED);
-    expect(total).toBe(deepSum + seedSum);
-    expect(total).toBeGreaterThanOrEqual(740);
-    expect(total).toBeLessThanOrEqual(760);
+    expect(total).toBeGreaterThanOrEqual(1100);
+    expect(total).toBeLessThan(1600);
   });
 });

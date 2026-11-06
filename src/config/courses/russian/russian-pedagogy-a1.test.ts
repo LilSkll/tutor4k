@@ -122,13 +122,19 @@ describe("RKI A1 pedagogical comprehension support", () => {
     }
   });
 
-  it("does not apply A1 gloss map to A2 chapter prompts", async () => {
+  it("attaches pedagogical glosses for A2 Cyrillic prompts", async () => {
     const course = await getCourse("russian");
     const a2 = course.getExercises("ru-ch9-past-tense");
-    expect(a2.length).toBeGreaterThan(0);
-    // Seeds may be Cyrillic; gloss lookup should miss unless coincidentally same string.
-    const withGloss = attachQuestionGlossesToMany(a2);
-    // We only assert A2 was not expanded: bank size stays small seeds.
-    expect(withGloss.length).toBeLessThan(40);
+    expect(a2.length).toBeGreaterThanOrEqual(35);
+    const withGloss = attachQuestionGlossesToMany(
+      a2.filter((e) => e.type !== "translation").slice(0, 12),
+    );
+    for (const ex of withGloss) {
+      if (!/[\u0400-\u04FF]/.test(ex.question)) continue;
+      expect(ex.questionTranslations?.en?.trim().length, ex.question).toBeGreaterThan(
+        8,
+      );
+    }
   });
 });
+

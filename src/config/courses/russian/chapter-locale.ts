@@ -337,68 +337,68 @@ export const RUSSIAN_CHAPTER_LOCALE: Record<
     en: {
       title: "Motion with prefixes",
       summary: "Prefix + motion verb: arrival, departure, crossing.",
-      location: "Irkutsk",
+      location: "Yaroslavl",
     },
     es: {
       title: "Movimiento con prefijos",
       summary: "Prefijo + verbo de movimiento: llegada, salida, cruce.",
-      location: "Irkutsk",
+      location: "Yaroslavl",
     },
     de: {
       title: "Bewegung mit Präfixen",
       summary: "Präfix + Bewegungsverb: Ankunft, Abfahrt, Überqueren.",
-      location: "Irkutsk",
+      location: "Jaroslawl",
     },
   },
   "ru-ch20-complex-sentences": {
     en: {
       title: "Complex sentences",
       summary: "Connectors: потому что, чтобы, хотя, если.",
-      location: "Irkutsk",
+      location: "Yaroslavl",
     },
     es: {
       title: "Oraciones complejas",
       summary: "Conectores: потому что, чтобы, хотя, если.",
-      location: "Irkutsk",
+      location: "Yaroslavl",
     },
     de: {
       title: "Komplexe Sätze",
       summary: "Konnektoren: потому что, чтобы, хотя, если.",
-      location: "Irkutsk",
+      location: "Jaroslawl",
     },
   },
   "ru-ch21-narration-cohesion": {
     en: {
       title: "Narration and cohesion",
       summary: "Linking devices for longer stories and reports.",
-      location: "Moscow",
+      location: "Pskov",
     },
     es: {
       title: "Narración y cohesión",
       summary: "Marcadores para relatos e informes más largos.",
-      location: "Moscú",
+      location: "Pskov",
     },
     de: {
       title: "Erzählung und Kohäsion",
       summary: "Verknüpfungsmittel für längere Erzählungen und Berichte.",
-      location: "Moskau",
+      location: "Pskow",
     },
   },
   "ru-ch22-academic-social": {
     en: {
       title: "Academic and social talk",
       summary: "Register for faculty office hours and informal campus talk.",
-      location: "Moscow",
+      location: "Pskov",
     },
     es: {
       title: "Habla académica y social",
       summary: "Registro en despacho y en el campus informal.",
-      location: "Moscú",
+      location: "Pskov",
     },
     de: {
       title: "Akademisch und sozial",
       summary: "Register in der Sprechstunde und im informellen Campusgespräch.",
-      location: "Moskau",
+      location: "Pskow",
     },
   },
 };

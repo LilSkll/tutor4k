@@ -95,8 +95,20 @@ describe("RKI A1 chapter backstories", () => {
     expect(a1.map((c) => c.slug)).toEqual([...A1_SLUGS]);
   });
 
-  it("does not invent A2 backstories in this change", async () => {
-    const story = await getChapterStory("ru-ch9-past-tense", "en");
-    expect(story).toBeNull();
+  it("continues Altair stories through A2 and B1", async () => {
+    const later = [
+      "ru-ch9-past-tense",
+      "ru-ch16-dorm-shops",
+      "ru-ch17-cases-review",
+      "ru-ch22-academic-social",
+    ] as const;
+    for (const slug of later) {
+      for (const lang of UI) {
+        const story = await getChapterStory(slug, lang);
+        expect(story?.trim().length, `${slug}@${lang}`).toBeGreaterThan(80);
+        expect(story, `${slug}@${lang}`).toMatch(/Альтаир|Altair/);
+      }
+    }
   });
 });
+

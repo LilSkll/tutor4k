@@ -94,9 +94,9 @@ describe("Russian course integration", () => {
 
   it("adaptive pool tags every item with Russian grammar topics", async () => {
     const pool = await getExercisePool("russian");
-    // 8 deep A1 chapters (~100 each for ch4–8, ~60 for ch1–3) + 14 seeds.
-    expect(pool.length).toBeGreaterThanOrEqual(700);
-    expect(pool.length).toBeLessThan(1200);
+    // A1 deep (~680) + A2 (~320) + B1 (~240).
+    expect(pool.length).toBeGreaterThanOrEqual(1100);
+    expect(pool.length).toBeLessThan(1600);
     for (const ex of pool) {
       expect(ex.id, ex.question).toBeTruthy();
       expect(ex.grammarTopic?.startsWith("ru-"), ex.id).toBe(true);

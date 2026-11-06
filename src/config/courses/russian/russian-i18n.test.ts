@@ -27,6 +27,16 @@ const A1_GRAMMAR = [
   "ru-a1-numbers-time",
 ] as const;
 
+const A2_GRAMMAR = [
+  "ru-a2-past-tense",
+  "ru-a2-future",
+  "ru-a2-genitive",
+  "ru-a2-dative",
+  "ru-a2-instrumental",
+  "ru-a2-aspect-intro",
+  "ru-a2-motion-basic",
+] as const;
+
 const CYRILLIC_META =
   /\b(В этой теме|Зачем это|Главные модели|Типичные ошибки|Перед этой темой)\b/;
 
@@ -43,15 +53,47 @@ describe("RKI multilingual localization (A1)", () => {
     }
   });
 
-  it("does not silently fall back to Russian meta for missing A2 grammar", async () => {
+  it("provides full static grammar articles for all A2 topics × en/es/de", () => {
+    for (const slug of A2_GRAMMAR) {
+      for (const lang of UI_NON_RU) {
+        const content = getStaticGrammarContent(slug, lang);
+        expect(content?.trim().length, `${slug}@${lang}`).toBeGreaterThan(400);
+        expect(content, `${slug}@${lang}`).not.toMatch(CYRILLIC_META);
+        expect(content, `${slug}@${lang}`).toMatch(/[\u0400-\u04FF]/);
+        expect(content, `${slug}@${lang}`).toMatch(/^## /m);
+      }
+    }
+  });
+
+  it("provides full static grammar articles for all B1 topics × en/es/de", () => {
+    const B1_GRAMMAR = [
+      "ru-b1-cases-system",
+      "ru-b1-aspect-tenses",
+      "ru-b1-motion-prefixes",
+      "ru-b1-complex-sentences",
+      "ru-b1-text-cohesion",
+      "ru-b1-argumentation",
+    ] as const;
+    for (const slug of B1_GRAMMAR) {
+      for (const lang of UI_NON_RU) {
+        const content = getStaticGrammarContent(slug, lang);
+        expect(content?.trim().length, `${slug}@${lang}`).toBeGreaterThan(400);
+        expect(content, `${slug}@${lang}`).not.toMatch(CYRILLIC_META);
+        expect(content, `${slug}@${lang}`).toMatch(/[\u0400-\u04FF]/);
+        expect(content, `${slug}@${lang}`).toMatch(/^## /m);
+      }
+    }
+  });
+
+  it("serves static B1 articles for en UI (no silent RU fallback)", async () => {
     const article = await getLocalizedGrammarArticle({
-      slug: "ru-a2-past-tense",
+      slug: "ru-b1-cases-system",
       courseId: "russian",
       interfaceLanguage: "en",
     });
-    expect(article.source).toBe("missing");
-    expect(article.content).toMatch(/Translation unavailable/i);
-    expect(article.content).not.toMatch(/Был \/ была/);
+    expect(article.source).toBe("static");
+    expect(article.content).toMatch(/case|Case/i);
+    expect(article.content).not.toMatch(CYRILLIC_META);
   });
 
   it("serves native Russian articles only for ru UI", async () => {
@@ -169,6 +211,88 @@ describe("RKI multilingual localization (A1)", () => {
             expect(ex.question + ex.answer, ex.id).toMatch(/[\u0400-\u04FF]/);
           }
         }
+      }
+    }
+  });
+
+  it("localizes exercise instructions across all 560 A2–B1 items × en/es/de", async () => {
+    const course = await getCourse("russian");
+    const a2b1 = course.getChapters().filter((c) => c.number >= 9 && c.number <= 22);
+    expect(a2b1).toHaveLength(14);
+
+    const byTypeLocale: Record<string, Record<string, number>> = {
+      en: {},
+      es: {},
+      de: {},
+    };
+    let total = 0;
+    const ruMeta =
+      /Выберите|Заполните|Переведите|Исправьте|Составьте|Соберите|Впишите|Добавьте|Уберите|Краткая форма|Родительный|Дательный|Творительный|Прошедшее|Будущее/;
+
+    for (const ch of a2b1) {
+      const bank = course.getExercises(ch.slug);
+      expect(bank.length, ch.slug).toBe(40);
+      total += bank.length;
+
+      for (const lang of UI_NON_RU) {
+        const prepared = prepareExercisesForInterface(bank, lang, "russian");
+        // All 40 must remain usable (EN L1 stems kept when ES/DE maps absent).
+        expect(prepared.length, `${ch.slug}@${lang}`).toBe(40);
+
+        for (const ex of prepared) {
+          byTypeLocale[lang]![ex.type] =
+            (byTypeLocale[lang]![ex.type] ?? 0) + 1;
+          expect(ex.instruction?.trim().length, `${ex.id}@${lang}`).toBeGreaterThan(8);
+          // No silent Russian meta-instruction for non-RU UI.
+          expect(ex.instruction, `${ex.id}@${lang}`).not.toMatch(ruMeta);
+          // Instruction must not equal the keyed answer (spoiler).
+          const instr = (ex.instruction ?? "").toLowerCase();
+          const ans = (ex.answer ?? "").toLowerCase();
+          if (ans.length >= 4 && /[\u0400-\u04FF]/.test(ans)) {
+            expect(instr.includes(ans), `${ex.id} spoils answer in instruction`).toBe(
+              false,
+            );
+          }
+          // Learning target stays Cyrillic except L1 translation prompts.
+          if (ex.type !== "translation") {
+            expect(ex.question + ex.answer, ex.id).toMatch(/[\u0400-\u04FF]/);
+          }
+          // Feedback is not a silent raw Russian article header.
+          expect(ex.explanation ?? "", ex.id).not.toMatch(CYRILLIC_META);
+        }
+      }
+    }
+
+    expect(total).toBe(560);
+    for (const lang of UI_NON_RU) {
+      expect(byTypeLocale[lang]).toMatchObject({
+        multiple_choice: 112,
+        fill_blank: 112,
+        translation: 112,
+        error_correction: 112,
+        sentence_building: 112,
+      });
+    }
+  });
+
+  it("keeps Russian instructions on RU UI for A2–B1 without English fallback", async () => {
+    const course = await getCourse("russian");
+    const sample = [
+      "ru-ch9-past-tense",
+      "ru-ch16-dorm-shops",
+      "ru-ch22-academic-social",
+    ] as const;
+    for (const slug of sample) {
+      const prepared = prepareExercisesForInterface(
+        course.getExercises(slug),
+        "ru",
+        "russian",
+      );
+      for (const ex of prepared) {
+        expect(ex.instruction, ex.id).toMatch(/[\u0400-\u04FF]/);
+        expect(ex.instruction, ex.id).not.toMatch(
+          /Choose one correct|Type the single missing|Translate the phrase|Find the mistake|Tap the words below/,
+        );
       }
     }
   });
