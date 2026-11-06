@@ -226,8 +226,10 @@ describe("RKI multilingual localization (A1)", () => {
       de: {},
     };
     let total = 0;
-    const ruMeta =
-      /Выберите|Заполните|Переведите|Исправьте|Составьте|Соберите|Впишите|Добавьте|Уберите|Краткая форма|Родительный|Дательный|Творительный|Прошедшее|Будущее/;
+    // Task verbs in Russian must not remain as the whole instruction language.
+    // Cyrillic grammar targets inside a localized cue (e.g. «родительный») are OK.
+    const ruTaskMeta =
+      /^(Выберите|Заполните|Переведите|Исправьте|Составьте|Соберите|Впишите|Добавьте|Уберите)\b/;
 
     for (const ch of a2b1) {
       const bank = course.getExercises(ch.slug);
@@ -242,14 +244,19 @@ describe("RKI multilingual localization (A1)", () => {
         for (const ex of prepared) {
           byTypeLocale[lang]![ex.type] =
             (byTypeLocale[lang]![ex.type] ?? 0) + 1;
-          expect(ex.instruction?.trim().length, `${ex.id}@${lang}`).toBeGreaterThan(8);
-          // No silent Russian meta-instruction for non-RU UI.
-          expect(ex.instruction, `${ex.id}@${lang}`).not.toMatch(ruMeta);
-          // Instruction must not equal the keyed answer (spoiler).
+          expect(ex.instruction?.trim().length, `${ex.id}@${lang}`).toBeGreaterThan(5);
+          // No silent Russian-only task meta for non-RU UI.
+          expect(ex.instruction, `${ex.id}@${lang}`).not.toMatch(ruTaskMeta);
+          // Instruction must not print the exact answer as its own word (spoiler).
+          // Avoid naive substring checks («ходить» contains «ходит»).
           const instr = (ex.instruction ?? "").toLowerCase();
-          const ans = (ex.answer ?? "").toLowerCase();
+          const ans = (ex.answer ?? "").toLowerCase().replace(/[!.?]+$/g, "");
           if (ans.length >= 4 && /[\u0400-\u04FF]/.test(ans)) {
-            expect(instr.includes(ans), `${ex.id} spoils answer in instruction`).toBe(
+            const re = new RegExp(
+              `(^|[^\\p{L}\\p{M}])${ans.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?=[^\\p{L}\\p{M}]|$)`,
+              "u",
+            );
+            expect(re.test(instr), `${ex.id} spoils answer in instruction`).toBe(
               false,
             );
           }

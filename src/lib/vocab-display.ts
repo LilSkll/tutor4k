@@ -9,6 +9,7 @@ import {
   RUSSIAN_EXAMPLE_TRANSLATIONS,
   RUSSIAN_VOCAB_GLOSS,
 } from "@/config/courses/russian/vocabulary/glosses";
+import { RUSSIAN_VOCAB } from "@/config/courses/russian/vocabulary";
 import {
   ENGLISH_CORE_LEMMAS,
   ENGLISH_INFLECTED_FORMS,
@@ -205,6 +206,88 @@ function isRedundantDefinition(definition: string, gloss: string): boolean {
   // Same lemma restated ("красный" → "Красный.") — not a real definition.
   if (defNorm === glossNorm) return true;
   return false;
+}
+
+type RussianHintIndex = {
+  /** lowercased lemma / multiword → glosses by UI language */
+  byLemma: Map<
+    string,
+    Partial<Record<Exclude<InterfaceLanguage, "ru">, string>> & {
+      translation?: string;
+    }
+  >;
+};
+
+let russianHintIndex: RussianHintIndex | null = null;
+
+function getRussianHintIndex(): RussianHintIndex {
+  if (russianHintIndex) return russianHintIndex;
+  const byLemma: RussianHintIndex["byLemma"] = new Map();
+
+  const register = (
+    lemma: string,
+    glosses: Partial<Record<"en" | "es" | "de", string>> & {
+      translation?: string;
+    },
+  ) => {
+    const key = lemma.trim().toLowerCase();
+    if (!key || !/[\u0400-\u04FF]/.test(key)) return;
+    const prev = byLemma.get(key) ?? {};
+    byLemma.set(key, {
+      translation: glosses.translation ?? prev.translation,
+      en: glosses.en ?? prev.en,
+      es: glosses.es ?? prev.es,
+      de: glosses.de ?? prev.de,
+    });
+  };
+
+  for (const topic of RUSSIAN_VOCAB) {
+    for (const word of topic.words) {
+      register(word.word, {
+        translation: word.translation,
+        en: word.translations?.en,
+        es: word.translations?.es,
+        de: word.translations?.de,
+      });
+    }
+  }
+
+  for (const lang of ["en", "es", "de"] as const) {
+    const map = RUSSIAN_VOCAB_GLOSS[lang];
+    if (!map) continue;
+    for (const [lemma, gloss] of Object.entries(map)) {
+      register(lemma, { [lang]: gloss });
+    }
+  }
+
+  russianHintIndex = { byLemma };
+  return russianHintIndex;
+}
+
+/** Hover/tap gloss for a Cyrillic token in the Russian course. */
+function lookupRussianWordHint(
+  token: string,
+  interfaceLanguage: InterfaceLanguage,
+): WordHint | null {
+  if (!/[\u0400-\u04FF]/.test(token)) return null;
+  const index = getRussianHintIndex();
+  const hit = index.byLemma.get(token);
+  if (!hit) return null;
+
+  if (interfaceLanguage === "ru") {
+    // Native RU UI: show English catalog gloss as meta if available.
+    const gloss = hit.en ?? hit.translation;
+    if (!gloss) return null;
+    return { lemma: token, gloss };
+  }
+
+  const gloss =
+    hit[interfaceLanguage] ??
+    (interfaceLanguage === "en" ? hit.translation : undefined) ??
+    hit.en ??
+    hit.translation;
+  if (!gloss?.trim()) return null;
+  return { lemma: token, gloss: gloss.trim() };
 }
 
 export type WordHint = {
@@ -416,10 +499,9 @@ export function lookupWordHint(
   const token = normalizeHintToken(rawToken);
   if (!token) return null;
 
-  // Russian tap-hints: use authored word.translations / translation only —
-  // do not fall through to Spanish/English lexicons.
+  // Russian course: hover/tap hints from RKI gloss maps + vocab topics only.
   if (courseId === "russian") {
-    return null;
+    return lookupRussianWordHint(token, interfaceLanguage);
   }
 
   const course = courseId === "english" ? "english" : "spanish";

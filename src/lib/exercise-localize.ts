@@ -1,6 +1,7 @@
 import type { ExerciseType, InterfaceLanguage, StaticExercise } from "@/types";
 import { lookupTranslationPrompt } from "@/config/exercise-translation-prompts";
 import { localizeRussianExerciseExplanation } from "@/config/courses/russian/exercise-feedback";
+import { lookupRussianInstruction } from "@/config/courses/russian/instruction-i18n";
 import { isGrammarCategoryInstruction } from "@/lib/exercise-quality";
 import { localizeBankExplanation } from "@/lib/tutor-feedback";
 
@@ -569,6 +570,14 @@ export function localizeExerciseInstruction(
     }
     return instruction;
   }
+
+  // Russian course banks author instructions in Russian — translate before
+  // falling back to a generic type label (keeps case/aspect cues for ES/DE).
+  if (interfaceLanguage !== "ru" && hasCyrillicText(instruction)) {
+    const ruLocalized = lookupRussianInstruction(instruction, interfaceLanguage);
+    if (ruLocalized) return ruLocalized;
+  }
+
   return fallback();
 }
 
