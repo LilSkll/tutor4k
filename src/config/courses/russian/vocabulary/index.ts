@@ -1,6 +1,6 @@
 import type { VocabTopic, VocabWord } from "@/types";
 import { RUSSIAN_CHAPTERS } from "../chapters";
-import { flattenWords, totalWordCount, wordsByChapter } from "./helpers";
+import { totalWordCount, wordsByChapter } from "./helpers";
 import { RUSSIAN_VOCAB_TOPICS } from "./topics";
 
 export { w, topic, flattenWords, totalWordCount, wordsByChapter } from "./helpers";

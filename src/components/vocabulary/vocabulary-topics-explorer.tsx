@@ -31,6 +31,7 @@ const LEVEL_COLORS: Record<string, string> = {
   B1: "from-blue-500/15 to-indigo-500/15 text-blue-600 dark:text-blue-400",
   B2: "from-violet-500/15 to-purple-500/15 text-violet-600 dark:text-violet-400",
   C1: "from-rose-500/15 to-orange-500/15 text-rose-600 dark:text-rose-400",
+  C2: "from-amber-500/15 to-yellow-500/15 text-amber-700 dark:text-amber-400",
 };
 
 function groupTopicsByLevel(topics: VocabTopic[]): Record<string, VocabTopic[]> {

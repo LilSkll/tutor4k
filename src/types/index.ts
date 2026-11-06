@@ -345,7 +345,8 @@ export interface CourseConfig {
 // Re-export types that were locally defined in config files
 export interface VocabTopic {
   slug: string;
-  level: Level;
+  /** CEFR band for the topic; includes C2 for advanced course banks. */
+  level: VocabLevel;
   topic: string;
   topicEs: string;
   /** English UI title (English course topics). */

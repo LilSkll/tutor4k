@@ -120,12 +120,12 @@ describe("RKI A2–B1 pedagogical acceptance regressions", () => {
 
   it("aligns chapter card locations with stories for Yaroslavl and Pskov", async () => {
     const locale = RUSSIAN_CHAPTER_LOCALE;
-    expect(locale["ru-ch19-motion-prefixes"].en.location).toMatch(/Yaroslavl/i);
-    expect(locale["ru-ch20-complex-sentences"].en.location).toMatch(/Yaroslavl/i);
-    expect(locale["ru-ch21-narration-cohesion"].en.location).toMatch(/Pskov/i);
-    expect(locale["ru-ch22-academic-social"].en.location).toMatch(/Pskov/i);
-    expect(locale["ru-ch19-motion-prefixes"].en.location).not.toMatch(/Irkutsk/i);
-    expect(locale["ru-ch21-narration-cohesion"].en.location).not.toMatch(/Moscow/i);
+    expect(locale["ru-ch19-motion-prefixes"]?.en?.location).toMatch(/Yaroslavl/i);
+    expect(locale["ru-ch20-complex-sentences"]?.en?.location).toMatch(/Yaroslavl/i);
+    expect(locale["ru-ch21-narration-cohesion"]?.en?.location).toMatch(/Pskov/i);
+    expect(locale["ru-ch22-academic-social"]?.en?.location).toMatch(/Pskov/i);
+    expect(locale["ru-ch19-motion-prefixes"]?.en?.location).not.toMatch(/Irkutsk/i);
+    expect(locale["ru-ch21-narration-cohesion"]?.en?.location).not.toMatch(/Moscow/i);
 
     for (const lang of UI) {
       const yar = await getChapterStory("ru-ch19-motion-prefixes", lang);
