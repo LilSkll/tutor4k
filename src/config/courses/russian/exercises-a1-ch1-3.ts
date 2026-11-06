@@ -114,16 +114,16 @@ export const RUSSIAN_A1_CH1_3_EXERCISES: Record<string, Draft[]> = {
 
     // translation
     { type: "translation", question: "My name is Anna.", instruction: "Переведите на русский", answer: "Меня зовут Анна", acceptableAnswers: ["меня зовут Анна", "Меня зовут Анна."], explanation: "Меня зовут…", grammarTopic: g2, vocabTopic: v2 },
-    { type: "translation", question: "I am a student.", instruction: "Переведите на русский (м. р.)", answer: "Я студент", acceptableAnswers: ["я студент"], explanation: "Я студент.", grammarTopic: g2, vocabTopic: v2 },
-    { type: "translation", question: "I am from China.", instruction: "Переведите на русский", answer: "Я из Китая", acceptableAnswers: ["я из Китая"], explanation: "Я из Китая.", grammarTopic: g2, vocabTopic: v2 },
+    { type: "translation", question: "I am a student.", instruction: "Переведите на русский (м. р.)", answer: "Я студент", acceptableAnswers: ["я студент", "Студент"], explanation: "Я студент.", grammarTopic: g2, vocabTopic: v2 },
+    { type: "translation", question: "I am from China.", instruction: "Переведите на русский", answer: "Я из Китая", acceptableAnswers: ["я из Китая", "Из Китая"], explanation: "Я из Китая.", grammarTopic: g2, vocabTopic: v2 },
     { type: "translation", question: "Who is this?", instruction: "Переведите на русский", answer: "Кто это?", acceptableAnswers: ["Кто это", "кто это?"], explanation: "Кто это?", grammarTopic: g2, vocabTopic: v2 },
     { type: "translation", question: "What is this?", instruction: "Переведите на русский", answer: "Что это?", acceptableAnswers: ["Что это", "что это?"], explanation: "Что это?", grammarTopic: g2, vocabTopic: v2 },
     { type: "translation", question: "This is my friend.", instruction: "Переведите на русский", answer: "Это мой друг", acceptableAnswers: ["это мой друг", "Это мой друг."], explanation: "Это мой друг.", grammarTopic: g2, vocabTopic: v2 },
     { type: "translation", question: "Nice to meet you!", instruction: "Переведите на русский", answer: "Очень приятно!", acceptableAnswers: ["Очень приятно", "очень приятно!"], explanation: "Очень приятно!", grammarTopic: g2, vocabTopic: v2 },
     { type: "translation", question: "What is your name? (formal)", instruction: "Переведите на русский", answer: "Как вас зовут?", acceptableAnswers: ["Как вас зовут", "как вас зовут?"], explanation: "Как вас зовут?", grammarTopic: g2, vocabTopic: v2 },
-    { type: "translation", question: "She is a student.", instruction: "Переведите на русский", answer: "Она студентка", acceptableAnswers: ["она студентка"], explanation: "Она студентка.", grammarTopic: g2, vocabTopic: v2 },
+    { type: "translation", question: "She is a student.", instruction: "Переведите на русский", answer: "Она студентка", acceptableAnswers: ["она студентка", "Студентка"], explanation: "Она студентка.", grammarTopic: g2, vocabTopic: v2 },
     { type: "translation", question: "This is the teacher.", instruction: "Переведите на русский", answer: "Это преподаватель", acceptableAnswers: ["это преподаватель", "Это преподаватель."], explanation: "Это преподаватель.", grammarTopic: g2, vocabTopic: v2 },
-    { type: "translation", question: "I am from Turkey.", instruction: "Переведите на русский", answer: "Я из Турции", acceptableAnswers: ["я из Турции"], explanation: "Я из Турции.", grammarTopic: g2, vocabTopic: v2 },
+    { type: "translation", question: "I am from Turkey.", instruction: "Переведите на русский", answer: "Я из Турции", acceptableAnswers: ["я из Турции", "Из Турции"], explanation: "Я из Турции.", grammarTopic: g2, vocabTopic: v2 },
     { type: "translation", question: "This is my friend (female).", instruction: "Переведите на русский", answer: "Это моя подруга", acceptableAnswers: ["это моя подруга"], explanation: "Это моя подруга.", grammarTopic: g2, vocabTopic: v2 },
 
     // error_correction

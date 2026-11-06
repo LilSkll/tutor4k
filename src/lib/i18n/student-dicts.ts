@@ -686,7 +686,7 @@ const ru: Dictionary = {
   "lesson.dialogueTitle": "Спросить наставника",
   "lesson.dialoguePrompt":
     "Короткий вопрос по теме «{topic}» — или нажми кнопку с готовым вопросом.",
-  "lesson.dialoguePlaceholder": "Например: «Когда использовать me gusta / me gustan?»",
+  "lesson.dialoguePlaceholder": "Например: «Когда использовать {topic}?»",
   "lesson.dialogueSuggested": "Пример вопроса по теме",
   "lesson.moreFromBank": "Ещё {count} заданий из банка",
   "lesson.askTutor": "Спросить репетитора",
@@ -1328,7 +1328,7 @@ const en: Dictionary = {
   "lesson.dialogueTitle": "Ask the tutor",
   "lesson.dialoguePrompt":
     "A short question about \"{topic}\" — or tap the suggested question.",
-  "lesson.dialoguePlaceholder": "For example: \"When do I use me gusta vs me gustan?\"",
+  "lesson.dialoguePlaceholder": "For example: \"When do I use {topic}?\"",
   "lesson.dialogueSuggested": "Suggested question for this topic",
   "lesson.moreFromBank": "{count} more from the bank",
   "lesson.askTutor": "Ask the tutor",
@@ -2137,7 +2137,7 @@ const es: Dictionary = {
   "lesson.dialogueTitle": "Preguntar al tutor",
   "lesson.dialoguePrompt":
     "Una pregunta corta sobre «{topic}» — o pulsa la pregunta sugerida.",
-  "lesson.dialoguePlaceholder": "Por ejemplo: «¿Cuándo uso me gusta / me gustan?»",
+  "lesson.dialoguePlaceholder": "Por ejemplo: «¿Cuándo uso {topic}?»",
   "lesson.dialogueSuggested": "Pregunta sugerida del tema",
   "lesson.moreFromBank": "{count} más del banco",
   "lesson.askTutor": "Preguntar al tutor",
@@ -2916,7 +2916,7 @@ const de: Dictionary = {
   "lesson.correctAnswer": "Richtige Antwort: {answer}",
   "lesson.correctScore": "hat {score} von {total} richtig beantwortet",
   "lesson.defaultQuestion": "Erklären Sie kurz: {topic}. Geben Sie mir ein Beispiel.",
-  "lesson.dialoguePlaceholder": "Zum Beispiel: „Wann verwende ich „me gusta“ vs. „me gustan“?",
+  "lesson.dialoguePlaceholder": "Zum Beispiel: „Wann verwende ich {topic}?“",
   "lesson.dialoguePrompt": "Eine kurze Frage zu „{topic}“ – oder tippen Sie auf die vorgeschlagene Frage.",
   "lesson.dialogueSuggested": "Vorgeschlagene Frage zu diesem Thema",
   "lesson.dialogueTitle": "Fragen Sie den Tutor",

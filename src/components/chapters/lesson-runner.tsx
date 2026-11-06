@@ -991,7 +991,9 @@ export function LessonRunner({
             <Input
               value={dialogueInput}
               onChange={(e) => setDialogueInput(e.target.value)}
-              placeholder={t("lesson.dialoguePlaceholder")}
+              placeholder={t("lesson.dialoguePlaceholder", {
+                topic: displayGrammarTitle,
+              })}
               onKeyDown={(e) => { if (e.key === "Enter") askTutor(); }}
             />
             <Button

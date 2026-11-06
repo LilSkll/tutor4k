@@ -103,7 +103,7 @@ export function getSentenceBuildingMeaning(
 }
 
 const SOURCE_LABEL: Record<
-  "ru" | "es" | "de",
+  "ru" | "es" | "de" | "en",
   Record<InterfaceLanguage, string>
 > = {
   ru: {
@@ -123,6 +123,12 @@ const SOURCE_LABEL: Record<
     en: "Source: German",
     es: "Origen: alemán",
     de: "Quelle: Deutsch",
+  },
+  en: {
+    ru: "Источник: английский",
+    en: "Source: English",
+    es: "Origen: inglés",
+    de: "Quelle: Englisch",
   },
 };
 
@@ -221,18 +227,7 @@ export function getTranslationSourceLabel(
   const source = detectPromptSourceLang(exercise.question ?? "");
   if (!source) return null;
   if (source === interfaceLanguage) return null;
-  // Intentional spoiler fallback: Spanish course + ES UI with English L1.
-  if (courseId === "spanish" && interfaceLanguage === "es" && source === "en") {
-    return (
-      {
-        ru: "Источник: английский",
-        en: "Source: English",
-        es: "Origen: inglés",
-        de: "Quelle: Englisch",
-      }[interfaceLanguage] ?? "Source: English"
-    );
-  }
-  if (source === "ru" || source === "es" || source === "de") {
+  if (source === "ru" || source === "es" || source === "de" || source === "en") {
     return SOURCE_LABEL[source]?.[interfaceLanguage] ?? null;
   }
   return null;
@@ -672,18 +667,8 @@ function resolveTranslationPromptForUi(
       }
       return tryLang("en");
     }
-    // es / de: never silently leave an English prompt when a map exists
-    // (preferred already tried above). Last resort: English stem so the
-    // exercise stays usable until a translation is added.
-    const enMapped = tryLang("en");
-    if (enMapped) return enMapped;
-    if (
-      source === "en" &&
-      !isSpoiler(question) &&
-      !hasCyrillicText(question)
-    ) {
-      return question;
-    }
+    // es / de: no silent English stem — missing L1 maps must be added to
+    // RUSSIAN_TR_L1 / questionTranslations (see russian-tr-l1.test.ts).
     return null;
   }
 

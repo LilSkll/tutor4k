@@ -306,7 +306,7 @@
   "lesson.goToDialogue": "Gehen Sie zum Dialog",
   "lesson.dialogueTitle": "Fragen Sie den Tutor",
   "lesson.dialoguePrompt": "Eine kurze Frage zu „{topic}“ – oder tippen Sie auf die vorgeschlagene Frage.",
-  "lesson.dialoguePlaceholder": "Zum Beispiel: „Wann verwende ich „me gusta“ vs. „me gustan“?",
+  "lesson.dialoguePlaceholder": "Zum Beispiel: „Wann verwende ich {topic}?“",
   "lesson.dialogueSuggested": "Vorgeschlagene Frage zu diesem Thema",
   "lesson.moreFromBank": "{count} mehr von der Bank",
   "lesson.askTutor": "Fragen Sie den Tutor",

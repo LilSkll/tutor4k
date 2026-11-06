@@ -17,6 +17,7 @@ import { prepareExercisesForSession } from "@/lib/exercise-options";
 import { orderEarlyLevelPractice } from "@/lib/exercise-bank";
 import { attachQuestionGlossesToMany } from "@/lib/exercise-gloss-attach";
 import { getChapterStory } from "@/config/chapter-stories";
+import { resolveCourseTopicLabel } from "@/lib/course-topic-label";
 import { localizeGrammarTopicMeta } from "@/lib/grammar-topic-localize";
 import { toGrammarTopicMeta } from "@/lib/grammar-topic-meta";
 
@@ -82,7 +83,10 @@ export default async function ChapterPage({
   const chapterDisplayTitle = getChapterTitle(chapter, lang);
   const chapterDisplaySummary = getChapterSummary(chapter, lang);
   const chapterDisplayLocation = getChapterLocation(chapter, lang);
-  const grammarTitle = grammarLocalized?.localizedTitle ?? null;
+  const grammarTitle =
+    grammarLocalized?.localizedTitle ??
+    resolveCourseTopicLabel(chapter.grammarTopic, course, lang, courseId) ??
+    null;
   const achievementBullets = getChapterAchievementBullets(
     chapter,
     lang,

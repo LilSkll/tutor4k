@@ -500,7 +500,9 @@ export function DailySessionRunner({ plan }: DailySessionRunnerProps) {
             <Input
               value={dialogueInput}
               onChange={(e) => setDialogueInput(e.target.value)}
-              placeholder={t("lesson.dialoguePlaceholder")}
+              placeholder={t("lesson.dialoguePlaceholder", {
+                topic: plan.topicTitle,
+              })}
               onKeyDown={(e) => {
                 if (e.key === "Enter") void askTutor();
               }}

@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  getTranslationSourceLabel,
   isExerciseUsableForLanguage,
   localizeTranslationQuestion,
   prepareExercisesForInterface,
@@ -296,6 +297,49 @@ describe("translation localization", () => {
     };
     expect(localizeExerciseInstruction(blank, "ru")).toMatch(/форму/i);
     expect(localizeExerciseInstruction(blank, "en")).toMatch(/correct form/i);
+  });
+});
+
+describe("getTranslationSourceLabel", () => {
+  const tr = (
+    question: string,
+  ): Pick<import("@/types").StaticExercise, "question" | "type"> => ({
+    type: "translation",
+    question,
+  });
+
+  it("returns null for English course + EN UI (no third-language label)", () => {
+    expect(
+      getTranslationSourceLabel(tr("Hola"), "en", "english"),
+    ).toBeNull();
+  });
+
+  it("labels EN source when UI is not English (non–English-course)", () => {
+    expect(getTranslationSourceLabel(tr("Hello"), "ru", "russian")).toBe(
+      "Источник: английский",
+    );
+    expect(getTranslationSourceLabel(tr("Hello"), "es", "russian")).toBe(
+      "Origen: inglés",
+    );
+    expect(getTranslationSourceLabel(tr("Hello"), "de", "russian")).toBe(
+      "Quelle: Englisch",
+    );
+  });
+
+  it("labels RU/ES/DE sources in the learner UI language", () => {
+    expect(getTranslationSourceLabel(tr("Я студент"), "en", "spanish")).toBe(
+      "Source: Russian",
+    );
+    expect(
+      getTranslationSourceLabel(tr("Elige la opción correcta"), "en", "spanish"),
+    ).toBe("Source: Spanish");
+    expect(
+      getTranslationSourceLabel(
+        tr("Wähle die richtige Option aus der Liste"),
+        "es",
+        "russian",
+      ),
+    ).toBe("Origen: alemán");
   });
 });
 

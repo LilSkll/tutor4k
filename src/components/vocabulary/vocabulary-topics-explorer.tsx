@@ -24,6 +24,7 @@ import {
 import type { VocabTopic, VocabWord } from "@/types";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
+import { VocabTopicAltairImage } from "@/components/vocabulary/vocab-topic-altair-image";
 
 const LEVEL_COLORS: Record<string, string> = {
   A1: "from-green-500/15 to-emerald-500/15 text-green-600 dark:text-green-400",
@@ -212,9 +213,11 @@ export function VocabularyTopicsExplorer({
                 onClick={() => setOpenTopic(topic.slug)}
               >
                 <CardContent className="p-5">
-                  <div className="flex items-start justify-between mb-2">
-                    <span className="text-3xl">{topic.icon}</span>
-                    <Badge variant="level">{topic.level}</Badge>
+                  <div className="flex items-start justify-between gap-3 mb-3">
+                    <VocabTopicAltairImage slug={topic.slug} />
+                    <Badge variant="level" className="shrink-0 self-start">
+                      {topic.level}
+                    </Badge>
                   </div>
                   <h3 className="font-semibold text-foreground">{title}</h3>
                   {subtitle && (
@@ -245,19 +248,24 @@ export function VocabularyTopicsExplorer({
             return (
               <>
                 <DialogHeader>
-                  <div className="flex items-center gap-3">
-                    <span className="text-3xl">{topic.icon}</span>
-                    <div>
-                      <DialogTitle className="text-xl">
-                        {title}
-                      </DialogTitle>
+                  <div className="flex items-start gap-3">
+                    <VocabTopicAltairImage
+                      slug={topic.slug}
+                      className="md:h-16 md:w-16"
+                    />
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-start justify-between gap-2">
+                        <DialogTitle className="text-xl">{title}</DialogTitle>
+                        <Badge variant="level" className="shrink-0">
+                          {topic.level}
+                        </Badge>
+                      </div>
                       {subtitle && (
-                        <p className="text-sm text-muted-foreground italic">
+                        <p className="text-sm text-muted-foreground italic mt-1">
                           {subtitle}
                         </p>
                       )}
                     </div>
-                    <Badge variant="level" className="ml-auto">{topic.level}</Badge>
                   </div>
                 </DialogHeader>
 
