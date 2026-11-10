@@ -21,6 +21,8 @@ export async function POST(req: NextRequest) {
       exercise: GeneratedExercise;
       userAnswer: string;
       level: GrammarLevel;
+      /** Optional lesson course — preferred over stale profile.active_course_id. */
+      courseId?: string;
     };
 
     const supabase = await createSupabaseServerClient();
@@ -77,6 +79,13 @@ export async function POST(req: NextRequest) {
           { status: 400 },
         );
       }
+      // Prefer explicit body.courseId, then course prefix on the stable id
+      // (`russian:ru-ch1-…`), then profile.active_course_id.
+      const idCourse = exerciseId.split(":")[0]?.trim();
+      const bodyCourse = body.courseId?.trim();
+      if (bodyCourse) courseId = bodyCourse;
+      else if (idCourse && idCourse !== "halloween") courseId = idCourse;
+
       const bank = await findBankExerciseById(courseId, exerciseId);
       if (!bank) {
         return NextResponse.json(

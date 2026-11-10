@@ -378,6 +378,7 @@ export function LessonRunner({
           },
           userAnswer: answer,
           level: chapter.level,
+          courseId,
         }),
       }).catch(() => {
         // Local grade already shown; server sync is best-effort.
@@ -407,6 +408,7 @@ export function LessonRunner({
           },
           userAnswer: answer,
           level: chapter.level,
+          courseId,
         }),
       });
       const data = res.ok
@@ -559,7 +561,9 @@ export function LessonRunner({
 
   const goToNextChapter = () => {
     if (nextChapterSlug) {
-      router.push(`/chapters/${nextChapterSlug}`);
+      router.push(
+        `/chapters/${nextChapterSlug}?courseId=${encodeURIComponent(courseId)}`,
+      );
     } else {
       router.push("/dashboard");
     }

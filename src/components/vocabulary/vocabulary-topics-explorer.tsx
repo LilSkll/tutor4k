@@ -25,6 +25,7 @@ import type { VocabTopic, VocabWord } from "@/types";
 import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 import { VocabTopicAltairImage } from "@/components/vocabulary/vocab-topic-altair-image";
+import { assignVocabAltairSrcs } from "@/lib/vocab-altair";
 
 const LEVEL_COLORS: Record<string, string> = {
   A1: "from-green-500/15 to-emerald-500/15 text-green-600 dark:text-green-400",
@@ -67,6 +68,19 @@ export function VocabularyTopicsExplorer({
     activeLevel === "ALL"
       ? topics
       : topics.filter((topic) => topic.level === activeLevel);
+
+  // Prefer variety in the visible grid (avoid left/above duplicates).
+  const altairBySlug = React.useMemo(() => {
+    const list =
+      activeLevel === "ALL"
+        ? topics
+        : topics.filter((topic) => topic.level === activeLevel);
+    return assignVocabAltairSrcs(
+      list.map((topic) => topic.slug),
+      courseId,
+      3,
+    );
+  }, [topics, activeLevel, courseId]);
 
   const searchResults = React.useMemo(() => {
     if (!search.trim()) return null;
@@ -217,6 +231,7 @@ export function VocabularyTopicsExplorer({
                     <VocabTopicAltairImage
                       slug={topic.slug}
                       courseId={courseId}
+                      src={altairBySlug[topic.slug]}
                     />
                     <Badge variant="level" className="shrink-0 self-start">
                       {topic.level}
@@ -255,6 +270,7 @@ export function VocabularyTopicsExplorer({
                     <VocabTopicAltairImage
                       slug={topic.slug}
                       courseId={courseId}
+                      src={altairBySlug[topic.slug]}
                       size="dialog"
                     />
                     <div className="min-w-0 flex-1">

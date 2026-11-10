@@ -58,13 +58,26 @@ export const VOCAB_TOPIC_ALTAIR_ASSETS = [
 
 export type VocabTopicAltairSrc = string;
 
-/** Stable uint32 hash for string keys (deterministic across runtimes). */
-export function hashTopicSlugToUint32(slug: string): number {
+/**
+ * Stronger mixed hash than plain FNV — folds courseId so the same slug can
+ * land on different stickers across courses, and spreads nearby slug names.
+ */
+export function hashTopicSlugToUint32(
+  slug: string,
+  courseId?: string | null,
+): number {
+  const key = `${(courseId ?? "").trim()}::${slug.trim() || "default"}`;
   let h = 2166136261;
-  for (let i = 0; i < slug.length; i++) {
-    h ^= slug.charCodeAt(i);
+  for (let i = 0; i < key.length; i++) {
+    h ^= key.charCodeAt(i);
     h = Math.imul(h, 16777619);
   }
+  // Extra avalanche mixing (Murmur-inspired finalizer).
+  h ^= h >>> 16;
+  h = Math.imul(h, 0x85ebca6b);
+  h ^= h >>> 13;
+  h = Math.imul(h, 0xc2b2ae35);
+  h ^= h >>> 16;
   return h >>> 0;
 }
 
@@ -81,7 +94,51 @@ export function getVocabTopicAltairSrc(
   courseId?: string | null,
 ): VocabTopicAltairSrc {
   const pack = packForCourse(courseId);
-  const s = slug.trim() || "default";
-  const idx = hashTopicSlugToUint32(s) % pack.length;
+  const idx = hashTopicSlugToUint32(slug, courseId) % pack.length;
   return pack[idx]!;
+}
+
+/**
+ * Assign stickers for a visible topic list so immediate neighbors in a CSS
+ * grid (left / above) rarely share the same asset. Deterministic per
+ * (courseId, slug order, column count).
+ */
+export function assignVocabAltairSrcs(
+  slugs: readonly string[],
+  courseId?: string | null,
+  columns = 3,
+): Record<string, VocabTopicAltairSrc> {
+  const pack = packForCourse(courseId);
+  const cols = Math.max(1, columns | 0);
+  const out: Record<string, VocabTopicAltairSrc> = {};
+  const assigned: string[] = [];
+
+  for (let i = 0; i < slugs.length; i++) {
+    const slug = slugs[i]!;
+    const preferred = hashTopicSlugToUint32(slug, courseId) % pack.length;
+    const left = i % cols !== 0 ? assigned[i - 1] : undefined;
+    const above = i >= cols ? assigned[i - cols] : undefined;
+    const forbidden = new Set(
+      [left, above].filter((s): s is string => typeof s === "string"),
+    );
+
+    let chosen = pack[preferred]!;
+    if (forbidden.has(chosen) && pack.length > 1) {
+      // Walk the pack from a secondary offset so we stay deterministic.
+      const step =
+        (hashTopicSlugToUint32(`${slug}::spread`, courseId) % (pack.length - 1)) +
+        1;
+      for (let k = 0; k < pack.length; k++) {
+        const idx = (preferred + step * (k + 1)) % pack.length;
+        const candidate = pack[idx]!;
+        if (!forbidden.has(candidate)) {
+          chosen = candidate;
+          break;
+        }
+      }
+    }
+    assigned.push(chosen);
+    out[slug] = chosen;
+  }
+  return out;
 }

@@ -55,6 +55,9 @@ export async function POST(req: NextRequest) {
   };
 
   const courseId = resolveCourseId(body.courseId);
+  const { toUserLevel } = await import("@/lib/user-level");
+  // Profiles / vocabulary.level enums historically stop at C1.
+  const level = toUserLevel(body.level);
 
   const { data, error } = await supabase
     .from("vocabulary")
@@ -63,7 +66,7 @@ export async function POST(req: NextRequest) {
       word: body.word.trim(),
       translation: body.translation.trim(),
       example: body.example?.trim() ?? "",
-      level: body.level,
+      level,
       course_id: courseId,
       notes: body.notes?.trim() || null,
       part_of_speech: body.partOfSpeech?.trim() || null,
@@ -81,7 +84,7 @@ export async function POST(req: NextRequest) {
           word: body.word.trim(),
           translation: body.translation.trim(),
           example: body.example?.trim() ?? "",
-          level: body.level,
+          level,
           course_id: courseId,
         })
         .select()

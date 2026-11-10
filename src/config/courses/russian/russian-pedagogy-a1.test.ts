@@ -47,7 +47,9 @@ describe("RKI A1 pedagogical comprehension support", () => {
       }
     }
 
-    expect(total).toBe(680);
+    // 680 curated A1 items + appended reading-passage extras (stable IDs after base bank).
+    expect(total).toBeGreaterThanOrEqual(680);
+    expect(total).toBeLessThanOrEqual(690);
     expect(cyrillicNonTr).toBeGreaterThan(500);
     expect(missingGloss, gaps.slice(0, 15).join(" | ")).toBe(0);
   });

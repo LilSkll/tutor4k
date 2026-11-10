@@ -10,7 +10,9 @@ describe("reading passage exercises", () => {
   it("covers multiple chapters per course with passage + MC", () => {
     for (const courseId of ["spanish", "english", "russian"] as const) {
       const chapters = listReadingPassageChapters(courseId);
-      expect(chapters.length, courseId).toBeGreaterThanOrEqual(5);
+      // Russian A2–C2 banks are size-frozen, so RU ships fewer reading chapters.
+      const min = courseId === "russian" ? 3 : 5;
+      expect(chapters.length, courseId).toBeGreaterThanOrEqual(min);
       for (const slug of chapters) {
         const drafts = getReadingPassagesForChapter(courseId, slug);
         expect(drafts.length, `${courseId}/${slug}`).toBeGreaterThanOrEqual(1);

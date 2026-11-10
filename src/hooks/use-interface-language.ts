@@ -17,5 +17,9 @@ export function useInterfaceLanguage(
 
 export function useActiveCourseId(serverFallback?: string | null): string {
   const storeCourseId = useUIStore((s) => s.activeCourseId);
-  return storeCourseId || serverFallback || "spanish";
+  // Prefer an explicit server/lesson courseId (homework ?courseId=, chapter page)
+  // over a stale persisted store value so glosses/hints match the open lesson.
+  const fromServer = serverFallback?.trim();
+  if (fromServer) return fromServer;
+  return storeCourseId || "spanish";
 }
