@@ -214,7 +214,10 @@ export function VocabularyTopicsExplorer({
               >
                 <CardContent className="p-5">
                   <div className="flex items-start justify-between gap-3 mb-3">
-                    <VocabTopicAltairImage slug={topic.slug} />
+                    <VocabTopicAltairImage
+                      slug={topic.slug}
+                      courseId={courseId}
+                    />
                     <Badge variant="level" className="shrink-0 self-start">
                       {topic.level}
                     </Badge>
@@ -251,7 +254,8 @@ export function VocabularyTopicsExplorer({
                   <div className="flex items-start gap-3">
                     <VocabTopicAltairImage
                       slug={topic.slug}
-                      className="md:h-16 md:w-16"
+                      courseId={courseId}
+                      size="dialog"
                     />
                     <div className="min-w-0 flex-1">
                       <div className="flex items-start justify-between gap-2">

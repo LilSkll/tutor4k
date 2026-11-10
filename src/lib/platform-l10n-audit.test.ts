@@ -7,7 +7,10 @@ import {
   prepareExercisesForInterface,
 } from "@/lib/exercise-localize";
 import { STUDENT_DICTS } from "@/lib/i18n/student-dicts";
-import { getVocabTopicAltairSrc, VOCAB_TOPIC_ALTAIR_ASSETS } from "@/lib/vocab-altair";
+import {
+  getVocabTopicAltairSrc,
+  VOCAB_TOPIC_ALTAIR_ASSETS_BY_COURSE,
+} from "@/lib/vocab-altair";
 import { resolveCourseTopicLabel } from "@/lib/course-topic-label";
 import type { InterfaceLanguage } from "@/types";
 
@@ -24,13 +27,15 @@ describe("platform localization × translation × vocabulary audit", () => {
   });
 
   it("resolves Altair paths only from the known asset set for any course vocab slug", async () => {
-    const allowed = new Set<string>(VOCAB_TOPIC_ALTAIR_ASSETS);
     for (const courseId of getAvailableCourseIds()) {
+      const pack = VOCAB_TOPIC_ALTAIR_ASSETS_BY_COURSE[courseId] ?? [];
+      const allowed = new Set(pack);
+      expect(allowed.size, courseId).toBeGreaterThan(5);
       const course = await getCourse(courseId);
       for (const topic of course.getVocab()) {
-        const src = getVocabTopicAltairSrc(topic.slug);
+        const src = getVocabTopicAltairSrc(topic.slug, courseId);
         expect(allowed.has(src), `${courseId}/${topic.slug} → ${src}`).toBe(true);
-        expect(src).not.toMatch(/emoji|icon\.svg/i);
+        expect(src).toMatch(/^\/altair\//);
       }
     }
   });

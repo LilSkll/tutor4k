@@ -5,6 +5,7 @@ import { attachEnglishTrL1 } from "@/config/exercise-translation-prompts";
 import { ENGLISH_CURRICULUM_CHAPTER_EXERCISES } from "./chapter-exercises-curriculum";
 import { ENGLISH_CURATED_SUPPLEMENTS } from "@/config/exercise-seeds/english-curated-supplements";
 import { getEngChapter } from "./chapters";
+import { getReadingPassagesForChapter } from "@/config/reading-passages";
 
 // =====================================================================
 // English Course — Permanent adaptive exercise bank (curated seed)
@@ -248,7 +249,12 @@ export function getEnglishExercises(chapterSlug: string): StaticExercise[] {
     allowed && allowed.length > 0
       ? expanded.filter((ex) => allowed.includes(ex.type))
       : expanded;
-  const withIds = withExerciseIds("english", chapterSlug, filtered);
+  // Append reading passages after the bank so existing adaptive IDs stay stable.
+  const withReading = [
+    ...filtered,
+    ...getReadingPassagesForChapter("english", chapterSlug),
+  ];
+  const withIds = withExerciseIds("english", chapterSlug, withReading);
   englishExerciseCache.set(chapterSlug, withIds);
   return withIds;
 }

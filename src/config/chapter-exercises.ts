@@ -14,6 +14,7 @@ import { CHAPTERS } from "@/config/chapters";
 import { expandSpanishChapterBank } from "@/config/exercise-banks/spanish-expand";
 import { CURRICULUM_CHAPTER_EXERCISES } from "@/config/chapter-exercises-curriculum";
 import { SPANISH_CURATED_SUPPLEMENTS } from "@/config/exercise-seeds/spanish-curated-supplements";
+import { getReadingPassagesForChapter } from "@/config/reading-passages";
 
 /** Draft bank item before id assignment. */
 export type ExerciseDraft = Omit<StaticExercise, "id"> & { id?: string };
@@ -1779,7 +1780,12 @@ export function getChapterExercises(chapterSlug: string): StaticExercise[] {
     ...ex,
     grammarTopic: ex.grammarTopic ?? grammarTopic ?? undefined,
   }));
-  const withIds = withExerciseIds("spanish", chapterSlug, tagged);
+  // Append reading passages after the bank so existing adaptive IDs stay stable.
+  const withReading = [
+    ...tagged,
+    ...getReadingPassagesForChapter("spanish", chapterSlug),
+  ];
+  const withIds = withExerciseIds("spanish", chapterSlug, withReading);
   spanishExerciseCache.set(chapterSlug, withIds);
   return withIds;
 }

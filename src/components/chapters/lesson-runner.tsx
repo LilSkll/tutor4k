@@ -57,13 +57,15 @@ import {
 } from "@/lib/grammar-markdown";
 import { cn } from "@/lib/utils";
 import { runExclusive, startTutorAbort } from "@/lib/tutor-fetch";
-import type { Chapter } from "@/types";
+import type { Chapter, VocabWord } from "@/types";
 import Link from "next/link";
+import { ChapterVocabPreview } from "@/components/chapters/chapter-vocab-preview";
 
 type Phase =
   | "intro"
   | "revision"
   | "theory"
+  | "vocabulary"
   | "practice"
   | "reinforce"
   | "dialogue"
@@ -85,6 +87,9 @@ interface LessonRunnerProps {
   chapterDisplayLocation: string;
   achievementBullets: string[];
   exercises: StaticExercise[];
+  /** Chapter vocabulary for the pre-practice panel (target lemmas + UI glosses). */
+  chapterVocabWords?: VocabWord[];
+  chapterVocabTitle?: string | null;
   nextChapterSlug: string | null;
   nextChapterTitle?: string | null;
   nextChapterSummary?: string | null;
@@ -104,6 +109,8 @@ export function LessonRunner({
   chapterDisplayLocation,
   achievementBullets,
   exercises: presetExercises,
+  chapterVocabWords = [],
+  chapterVocabTitle = null,
   nextChapterSlug,
   nextChapterTitle = null,
   nextChapterSummary = null,
@@ -309,12 +316,20 @@ export function LessonRunner({
     setPhase(kind === "reinforce" ? "reinforce" : "practice");
   };
 
-  const generateExercises = () => {
+  const startPracticeFromVocabOrTheory = () => {
     if (practiceBank.length > 0) {
       startBankRound(0, "main");
     } else {
       setPhase("dialogue");
     }
+  };
+
+  const generateExercises = () => {
+    if (chapterVocabWords.length > 0) {
+      setPhase("vocabulary");
+      return;
+    }
+    startPracticeFromVocabOrTheory();
   };
 
   const continueBankPractice = () => {
@@ -841,6 +856,30 @@ export function LessonRunner({
   if (phase === "revision") return renderPractice("revision");
   if (phase === "practice") return renderPractice("main");
   if (phase === "reinforce") return renderPractice("reinforce");
+
+  if (phase === "vocabulary") {
+    return (
+      <div className="max-w-3xl mx-auto py-6 space-y-6">
+        <BackLink
+          href={`/chapters?courseId=${encodeURIComponent(courseId)}`}
+        />
+        <div className="flex items-center justify-between gap-3">
+          <Badge variant="level">{chapterDisplayTitle}</Badge>
+        </div>
+        <Card>
+          <CardContent className="p-6">
+            <ChapterVocabPreview
+              words={chapterVocabWords}
+              topicTitle={chapterVocabTitle}
+              courseId={courseId}
+              onContinue={startPracticeFromVocabOrTheory}
+              continueLabel={t("lesson.vocabContinue")}
+            />
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
 
   if (phase === "theory") {
     return (

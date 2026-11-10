@@ -397,10 +397,20 @@ export interface StaticExercise {
   type: ExerciseType;
   question: string;
   /**
+   * Optional reading passage in the target language, shown above the question.
+   * Prefer this for “text / comprehension” tasks instead of stuffing the whole
+   * passage into `question`.
+   */
+  passage?: string;
+  /**
    * Interface-language gloss of the question (shown in parentheses).
    * Prefer populated maps in bank data; curated fallback via exercise-glosses.
    */
   questionTranslations?: Partial<Record<InterfaceLanguage, string>>;
+  /**
+   * Optional interface-language gloss of `passage` (shown under the passage).
+   */
+  passageTranslations?: Partial<Record<InterfaceLanguage, string>>;
   instruction: string;
   /**
    * Stable key for a localized instruction (por/para, reported speech, etc.).

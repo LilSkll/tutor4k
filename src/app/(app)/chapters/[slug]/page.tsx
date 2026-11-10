@@ -18,6 +18,7 @@ import { orderEarlyLevelPractice } from "@/lib/exercise-bank";
 import { attachQuestionGlossesToMany } from "@/lib/exercise-gloss-attach";
 import { getChapterStory } from "@/config/chapter-stories";
 import { resolveCourseTopicLabel } from "@/lib/course-topic-label";
+import { getChapterVocabPreview } from "@/lib/chapter-vocab";
 import { localizeGrammarTopicMeta } from "@/lib/grammar-topic-localize";
 import { toGrammarTopicMeta } from "@/lib/grammar-topic-meta";
 
@@ -92,6 +93,12 @@ export default async function ChapterPage({
     lang,
     grammarTitle,
   );
+  const chapterVocab = await getChapterVocabPreview(
+    courseId,
+    slug,
+    chapter.vocabTopic,
+    lang,
+  );
 
   return (
     <LessonRunner
@@ -106,6 +113,8 @@ export default async function ChapterPage({
       chapterDisplayLocation={chapterDisplayLocation}
       achievementBullets={achievementBullets}
       exercises={exercises}
+      chapterVocabWords={chapterVocab.words}
+      chapterVocabTitle={chapterVocab.topicTitle}
       nextChapterSlug={nextChapter?.slug ?? null}
       nextChapterTitle={
         nextChapter ? getChapterTitle(nextChapter, lang) : null

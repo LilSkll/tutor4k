@@ -9,6 +9,7 @@ import { RUSSIAN_B2_EXERCISES } from "./exercises-b2";
 import { RUSSIAN_C1_EXERCISES } from "./exercises-c1";
 import { RUSSIAN_C2_EXERCISES } from "./exercises-c2";
 import { RUSSIAN_TR_L1 } from "./translation-l1";
+import { getReadingPassagesForChapter } from "@/config/reading-passages";
 
 type Draft = Omit<StaticExercise, "id"> & { id?: string };
 
@@ -55,5 +56,14 @@ export function getRussianExercises(chapterSlug: string): StaticExercise[] {
       vocabTopic: withL1.vocabTopic ?? chapter?.vocabTopic,
     };
   });
-  return withExerciseIds("russian", chapterSlug, stamped);
+  // Append reading passages after the bank so existing adaptive IDs stay stable.
+  const withReading = [
+    ...stamped,
+    ...getReadingPassagesForChapter("russian", chapterSlug).map((d) => ({
+      ...d,
+      grammarTopic: d.grammarTopic ?? chapter?.grammarTopic,
+      vocabTopic: d.vocabTopic ?? chapter?.vocabTopic,
+    })),
+  ];
+  return withExerciseIds("russian", chapterSlug, withReading);
 }

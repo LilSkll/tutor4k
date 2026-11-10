@@ -318,6 +318,18 @@ const INSTRUCTION_BY_KEY: Record<
     es: "Traduce la frase",
     de: "Übersetze den Satz",
   },
+  reading_comprehension: {
+    ru: "Прочитайте текст и выберите ответ",
+    en: "Read the text and choose the answer",
+    es: "Lee el texto y elige la respuesta",
+    de: "Lies den Text und wähle die Antwort",
+  },
+  fill_blank: {
+    ru: "Заполните пропуск",
+    en: "Fill in the blank",
+    es: "Completa el espacio",
+    de: "Fülle die Lücke aus",
+  },
   build_sentence: {
     ru: "Соберите предложение из слов ниже (не перевод и не ввод с клавиатуры)",
     en: "Build the sentence from the word tiles below (do not translate or type)",
