@@ -122,6 +122,46 @@ describe("German course integration", () => {
     }
   });
 
+  it("A1 chapter-1 MC prompts are L1-readable (not pure German immersion)", async () => {
+    const course = await getCourse("german");
+    const ch1 = course.getExercises("de-ch1-alphabet-greetings");
+    const mc = ch1.filter((e) => e.type === "multiple_choice");
+    expect(mc.length).toBeGreaterThanOrEqual(4);
+
+    // Authored in Russian so absolute beginners can solve alphabet/greetings.
+    for (const e of mc) {
+      expect(
+        /[\u0400-\u04FF]/.test(e.question),
+        `expected RU L1 stem: ${e.question}`,
+      ).toBe(true);
+      expect(e.questionTranslations?.en?.trim().length).toBeGreaterThan(3);
+      expect(e.questionTranslations?.es?.trim().length).toBeGreaterThan(3);
+    }
+
+    const eszett = mc.find((e) => e.answer === "ß");
+    expect(eszett?.question).toMatch(/ss/i);
+    expect(eszett?.question).not.toMatch(/Welches Zeichen/i);
+
+    const ruPrep = prepareExercisesForInterface(ch1, "ru", "german");
+    expect(ruPrep.filter((e) => e.type === "multiple_choice").length).toBe(
+      mc.length,
+    );
+    expect(
+      ruPrep.some(
+        (e) => e.type === "multiple_choice" && /ss/i.test(e.question),
+      ),
+    ).toBe(true);
+
+    for (const lang of ["en", "es", "de"] as const) {
+      const prepared = prepareExercisesForInterface(ch1, lang, "german");
+      const prepMc = prepared.filter((e) => e.type === "multiple_choice");
+      expect(prepMc.length).toBe(mc.length);
+      for (const e of prepMc) {
+        expect(/[\u0400-\u04FF]/.test(e.question)).toBe(false);
+      }
+    }
+  });
+
   it("classifies German error categories from grammar slugs", () => {
     expect(germanErrorCategoryFromTopics("de-a1-akkusativ", null)).toBe(
       "case",

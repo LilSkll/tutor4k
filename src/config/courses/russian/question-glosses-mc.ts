@@ -700,4 +700,26 @@ export const RUSSIAN_A1_MC_GLOSSES: Record<
     es: "Son ___ minutos de la hora décima: «минут десятого» es el esquema de los minutos después de las nueve. Opciones: «семь» 7 / «семи» una forma de 7 / «семеро» siete como grupo / «семнадцать» 17.",
     de: "Es ist ___ Minuten der zehnten Stunde: «минут десятого» ist das Muster für Minuten nach neun. Optionen: «семь» 7 / «семи» eine Form von 7 / «семеро» sieben als Gruppe / «семнадцать» 17.",
   },
+
+  // ru-ch37-classroom-survival
+  "В аудитории во время объяснения ___ шуметь.": {
+    en: "In the classroom, during the explanation, ___ make noise. Choose a modal before the infinitive: a ban, permission, a mild obligation, or a wish.",
+    es: "En el aula, durante la explicación, ___ hacer ruido. Elige un modal ante el infinitivo: prohibición, permiso, una obligación suave o un deseo.",
+    de: "Im Hörsaal, während der Erklärung, ___ Lärm machen. Wähle ein Modal vor dem Infinitiv: Verbot, Erlaubnis, eine milde Pflicht oder ein Wunsch.",
+  },
+  "Студент просит разрешение: «___ выйти на пять минут?»": {
+    en: "A student asks permission: «___ step out for five minutes?» Choose the modal of permission, not a ban, a duty, or «it is time».",
+    es: "Un estudiante pide permiso: «¿___ salir cinco minutos?» Elige el modal de permiso, no una prohibición, un deber ni «ya es hora».",
+    de: "Ein Student bittet um Erlaubnis: «___ fünf Minuten hinausgehen?» Wähle das Modal der Erlaubnis, nicht Verbot, Pflicht oder «es ist Zeit».",
+  },
+  "Вы не расслышали правило. Что сказать преподавателю?": {
+    en: "You did not catch the rule. What do you say to the teacher? Choose a polite request (formal вы and «please»), not a blunt command, a greeting, or a ban.",
+    es: "No oíste la regla. ¿Qué le dices al profesor? Elige una petición cortés (вы formal y «por favor»), no una orden seca, un saludo ni una prohibición.",
+    de: "Du hast die Regel nicht gehört. Was sagst du zur Lehrkraft? Wähle eine höfliche Bitte (Sie-Form und «bitte»), keinen knappen Befehl, keinen Gruß und kein Verbot.",
+  },
+  "Анна не поняла объяснение. Как она скажет о себе?": {
+    en: "Anna did not understand the explanation. How does she say that about herself? She is speaking, and she is feminine. Match person and gender; do not mix «he» or «we» into her line.",
+    es: "Anna no entendió la explicación. ¿Cómo lo dice de sí misma? Habla ella, y es femenino. Acuerda persona y género; no mezcles «él» ni «nosotros» en su frase.",
+    de: "Anna hat die Erklärung nicht verstanden. Wie sagt sie das über sich? Sie spricht, und sie ist feminin. Person und Genus müssen passen; «er» oder «wir» gehört nicht in ihren Satz.",
+  },
 };

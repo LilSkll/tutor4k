@@ -3,7 +3,7 @@
 import {
   formatQuestionWithGloss,
   getTranslationSourceLabel,
-  localizeTranslationQuestion,
+  localizeExerciseQuestion,
 } from "@/lib/exercise-localize";
 import {
   useActiveCourseId,
@@ -44,15 +44,12 @@ export function QuestionWithGloss({
   const t = (key: string, vars?: Record<string, string | number>) =>
     translate(key, lang, vars);
 
-  // Client safety net: re-bind TR L1 to the live UI language (covers stale
-  // payloads after a language switch without refetch).
-  const displayExercise =
-    exercise.type === "translation"
-      ? {
-          ...exercise,
-          question: localizeTranslationQuestion(exercise, lang, courseId),
-        }
-      : exercise;
+  // Client safety net: re-bind L1 stems to the live UI language (TR maps and
+  // Cyrillic-authored A1 prompts after a language switch without refetch).
+  const displayExercise = {
+    ...exercise,
+    question: localizeExerciseQuestion(exercise, lang, courseId),
+  };
   const { question, gloss } = formatQuestionWithGloss(displayExercise, lang);
   const sourceLabel = getTranslationSourceLabel(displayExercise, lang, courseId);
   const passage = exercise.passage?.trim() || "";

@@ -304,9 +304,9 @@ export const READING_PASSAGES_BY_COURSE: Record<
       grammarTopic: "eng-a1-be",
       vocabTopic: "eng-a1-personal-info",
       mc: {
-        question: "Where is Tom from?",
+        question: "Откуда Том?",
         questionGloss: {
-          ru: "Откуда Том?",
+          en: "Where is Tom from?",
           es: "¿De dónde es Tom?",
           de: "Woher kommt Tom?",
         },
@@ -337,9 +337,9 @@ export const READING_PASSAGES_BY_COURSE: Record<
       grammarTopic: "eng-a1-present-simple",
       vocabTopic: "eng-a1-everyday-objects",
       mc: {
-        question: "When does Sam finish work early?",
+        question: "Когда Сэм рано заканчивает работу?",
         questionGloss: {
-          ru: "Когда Сэм рано заканчивает работу?",
+          en: "When does Sam finish work early?",
           es: "¿Cuándo termina Sam el trabajo temprano?",
           de: "Wann beendet Sam die Arbeit früh?",
         },
@@ -370,9 +370,9 @@ export const READING_PASSAGES_BY_COURSE: Record<
       grammarTopic: "eng-a2-past-simple",
       vocabTopic: "eng-a2-travel",
       mc: {
-        question: "Where did they stay?",
+        question: "Где они жили?",
         questionGloss: {
-          ru: "Где они жили?",
+          en: "Where did they stay?",
           es: "¿Dónde se alojaron?",
           de: "Wo wohnten sie?",
         },
@@ -397,9 +397,9 @@ export const READING_PASSAGES_BY_COURSE: Record<
       grammarTopic: "eng-b1-future-conditional",
       vocabTopic: "eng-b1-personality",
       mc: {
-        question: "What will happen if the interview goes well?",
+        question: "Что будет, если собеседование пройдёт хорошо?",
         questionGloss: {
-          ru: "Что будет, если собеседование пройдёт хорошо?",
+          en: "What will happen if the interview goes well?",
           es: "¿Qué pasará si la entrevista va bien?",
           de: "Was passiert, wenn das Gespräch gut läuft?",
         },
@@ -424,9 +424,9 @@ export const READING_PASSAGES_BY_COURSE: Record<
       grammarTopic: "eng-b2-passive",
       vocabTopic: "eng-b2-education",
       mc: {
-        question: "How are tickets sold?",
+        question: "Как продаются билеты?",
         questionGloss: {
-          ru: "Как продаются билеты?",
+          en: "How are tickets sold?",
           es: "¿Cómo se venden las entradas?",
           de: "Wie werden Tickets verkauft?",
         },
@@ -446,9 +446,9 @@ export const READING_PASSAGES_BY_COURSE: Record<
       grammarTopic: "eng-c1-inversion",
       vocabTopic: "eng-c1-idioms",
       mc: {
-        question: "What extra request did the committee make?",
+        question: "Какую дополнительную просьбу высказал комитет?",
         questionGloss: {
-          ru: "Какую дополнительную просьбу высказал комитет?",
+          en: "What extra request did the committee make?",
           es: "¿Qué petición extra hizo el comité?",
           de: "Welche zusätzliche Bitte stellte das Komitee?",
         },
@@ -574,11 +574,12 @@ export const READING_PASSAGES_BY_COURSE: Record<
       grammarTopic: "de-a1-alphabet-pronunciation",
       vocabTopic: "de-a1-greetings",
       mc: {
-        question: "Was sagt Lea am Abend?",
+        // A1 reading prompts in L1 — beginners cannot answer German meta-questions yet.
+        question: "Что Леа говорит вечером?",
         questionGloss: {
-          ru: "Что Леа говорит вечером?",
           en: "What does Lea say in the evening?",
           es: "¿Qué dice Lea por la tarde?",
+          de: "Was sagt Lea am Abend?",
         },
         options: ["Auf Wiedersehen", "Guten Morgen", "Willkommen", "Berlin"],
         answer: "Auf Wiedersehen",
@@ -587,9 +588,10 @@ export const READING_PASSAGES_BY_COURSE: Record<
       blank: {
         question: "Ich ___ Lea.",
         questionGloss: {
-          ru: "Меня ___ Леа.",
-          en: "I ___ Lea.",
-          es: "Me ___ Lea.",
+          ru: "Меня зовут: Ich … Lea.",
+          en: "My name is: Ich … Lea.",
+          es: "Me llamo: Ich … Lea.",
+          de: "Ich heiße Lea — welche Verbform?",
         },
         answer: "heiße",
         acceptableAnswers: ["Heiße"],
@@ -607,11 +609,11 @@ export const READING_PASSAGES_BY_COURSE: Record<
       grammarTopic: "de-a1-articles-gender-nominative",
       vocabTopic: "de-a1-everyday-objects",
       mc: {
-        question: "Was ist klein?",
+        question: "Что в тексте маленькое?",
         questionGloss: {
-          ru: "Что маленькое?",
-          en: "What is small?",
-          es: "¿Qué es pequeño?",
+          en: "What is small in the text?",
+          es: "¿Qué es pequeño en el texto?",
+          de: "Was ist klein?",
         },
         options: ["Die Lampe", "Der Tisch", "Das Buch", "Ein Mann"],
         answer: "Die Lampe",
@@ -620,9 +622,10 @@ export const READING_PASSAGES_BY_COURSE: Record<
       blank: {
         question: "___ Tisch ist groß.",
         questionGloss: {
-          ru: "___ стол большой.",
-          en: "___ table is big.",
-          es: "___ mesa es grande.",
+          ru: "Стол (муж. род): … Tisch ist groß.",
+          en: "Table (masculine): … Tisch ist groß.",
+          es: "Mesa (masculino): … Tisch ist groß.",
+          de: "Welcher Artikel? … Tisch ist groß.",
         },
         answer: "Der",
         acceptableAnswers: ["der"],
@@ -640,11 +643,11 @@ export const READING_PASSAGES_BY_COURSE: Record<
       grammarTopic: "de-a1-akkusativ",
       vocabTopic: "de-a1-food-shopping",
       mc: {
-        question: "Was kauft die Person?",
+        question: "Что покупает человек в тексте?",
         questionGloss: {
-          ru: "Что покупает человек?",
           en: "What does the person buy?",
           es: "¿Qué compra la persona?",
+          de: "Was kauft die Person?",
         },
         options: ["Einen Apfel und ein Brot", "Den Film", "Eine Katze", "Einen Tisch"],
         answer: "Einen Apfel und ein Brot",
@@ -653,9 +656,10 @@ export const READING_PASSAGES_BY_COURSE: Record<
       blank: {
         question: "Wir haben ___ Katze.",
         questionGloss: {
-          ru: "У нас есть ___ кошка.",
-          en: "We have ___ cat.",
-          es: "Tenemos ___ gata.",
+          ru: "У нас есть … кошка (винительный).",
+          en: "We have … cat (accusative).",
+          es: "Tenemos … gata (acusativo).",
+          de: "Welcher Artikel? Wir haben … Katze.",
         },
         answer: "eine",
         acceptableAnswers: ["Eine"],
@@ -673,11 +677,11 @@ export const READING_PASSAGES_BY_COURSE: Record<
       grammarTopic: "de-a1-possessives-plurals",
       vocabTopic: "de-a1-family-home",
       mc: {
-        question: "Wo wohnen die Eltern?",
+        question: "Где живут родители?",
         questionGloss: {
-          ru: "Где живут родители?",
           en: "Where do the parents live?",
           es: "¿Dónde viven los padres?",
+          de: "Wo wohnen die Eltern?",
         },
         options: ["In Hamburg", "Bei Nora", "In Berlin", "Bei Paul"],
         answer: "In Hamburg",
@@ -686,9 +690,10 @@ export const READING_PASSAGES_BY_COURSE: Record<
       blank: {
         question: "Das ist ___ Bruder Paul.",
         questionGloss: {
-          ru: "Это ___ брат Пауль.",
-          en: "This is ___ brother Paul.",
-          es: "Este es ___ hermano Paul.",
+          ru: "Это … брат Пауль (мой).",
+          en: "This is … brother Paul (my).",
+          es: "Este es … hermano Paul (mi).",
+          de: "Welches Possessiv? Das ist … Bruder Paul.",
         },
         answer: "mein",
         acceptableAnswers: ["Mein"],
@@ -706,11 +711,11 @@ export const READING_PASSAGES_BY_COURSE: Record<
       grammarTopic: "de-a1-negation-time-numbers",
       vocabTopic: "de-a1-time-calendar",
       mc: {
-        question: "Wann arbeitet die Person nicht?",
+        question: "Когда человек не работает?",
         questionGloss: {
-          ru: "Когда человек не работает?",
           en: "When does the person not work?",
           es: "¿Cuándo no trabaja la persona?",
+          de: "Wann arbeitet die Person nicht?",
         },
         options: ["Am Sonntag", "Am Montag", "Um acht Uhr", "Immer"],
         answer: "Am Sonntag",
@@ -719,9 +724,10 @@ export const READING_PASSAGES_BY_COURSE: Record<
       blank: {
         question: "Ich habe ___ Auto.",
         questionGloss: {
-          ru: "У меня ___ машины.",
-          en: "I have ___ car.",
-          es: "No tengo ___ coche.",
+          ru: "У меня нет машины: Ich habe … Auto.",
+          en: "I have no car: Ich habe … Auto.",
+          es: "No tengo coche: Ich habe … Auto.",
+          de: "Negation: Ich habe … Auto.",
         },
         answer: "kein",
         acceptableAnswers: ["Kein"],
@@ -739,11 +745,11 @@ export const READING_PASSAGES_BY_COURSE: Record<
       grammarTopic: "de-a2-dativ",
       vocabTopic: "de-a2-gifts-favors",
       mc: {
-        question: "Wem gehört das Fahrrad?",
+        question: "Кому принадлежит велосипед?",
         questionGloss: {
-          ru: "Кому принадлежит велосипед?",
           en: "Who does the bicycle belong to?",
           es: "¿A quién pertenece la bicicleta?",
+          de: "Wem gehört das Fahrrad?",
         },
         options: ["Meiner Schwester", "Dem Nachbarn", "Der Lehrerin", "Dem Kind"],
         answer: "Meiner Schwester",
@@ -772,11 +778,11 @@ export const READING_PASSAGES_BY_COURSE: Record<
       grammarTopic: "de-a2-perfekt",
       vocabTopic: "de-a2-weekend-events",
       mc: {
-        question: "Was haben sie gegessen?",
+        question: "Что они ели?",
         questionGloss: {
-          ru: "Что они ели?",
           en: "What did they eat?",
           es: "¿Qué comieron?",
+          de: "Was haben sie gegessen?",
         },
         options: ["Pizza", "Einen Film", "Freunde", "Zu Hause"],
         answer: "Pizza",
@@ -805,11 +811,11 @@ export const READING_PASSAGES_BY_COURSE: Record<
       grammarTopic: "de-a2-reflexive",
       vocabTopic: "de-a2-feelings-body",
       mc: {
-        question: "Worauf freut sich die Person?",
+        question: "Чему человек радуется?",
         questionGloss: {
-          ru: "Чему человек радуется?",
           en: "What is the person looking forward to?",
-          es: "¿Por qué se alegra la persona?",
+          es: "¿A qué se alegra la persona?",
+          de: "Worauf freut sich die Person?",
         },
         options: ["Auf den Kurs", "Auf die Küche", "Auf das Frühstück", "Auf den Morgen"],
         answer: "Auf den Kurs",
@@ -838,11 +844,11 @@ export const READING_PASSAGES_BY_COURSE: Record<
       grammarTopic: "de-a2-subordinates-zu",
       vocabTopic: "de-a2-reasons-plans",
       mc: {
-        question: "Warum bleibt die Person zu Hause?",
+        question: "Почему человек остаётся дома?",
         questionGloss: {
-          ru: "Почему человек остаётся дома?",
           en: "Why does the person stay at home?",
           es: "¿Por qué se queda la persona en casa?",
+          de: "Warum bleibt die Person zu Hause?",
         },
         options: [
           "Weil sie müde ist",
@@ -876,11 +882,11 @@ export const READING_PASSAGES_BY_COURSE: Record<
       grammarTopic: "de-b1-case-system",
       vocabTopic: "de-b1-education-work",
       mc: {
-        question: "Warum bleibt der Kurs im Gebäude?",
+        question: "Почему занятие остаётся в здании?",
         questionGloss: {
-          ru: "Почему занятие остаётся в здании?",
           en: "Why does the class stay in the building?",
           es: "¿Por qué se queda la clase en el edificio?",
+          de: "Warum bleibt der Kurs im Gebäude?",
         },
         options: [
           "Wegen des Regens",
@@ -914,11 +920,11 @@ export const READING_PASSAGES_BY_COURSE: Record<
       grammarTopic: "de-b1-relative-clauses",
       vocabTopic: "de-b1-people-profiles",
       mc: {
-        question: "Wer ist Arzt?",
+        question: "Кто врач?",
         questionGloss: {
-          ru: "Кто врач?",
           en: "Who is a doctor?",
           es: "¿Quién es médico?",
+          de: "Wer ist Arzt?",
         },
         options: [
           "Der Mann, der nebenan wohnt",
@@ -952,11 +958,11 @@ export const READING_PASSAGES_BY_COURSE: Record<
       grammarTopic: "de-b1-passive",
       vocabTopic: "de-b1-processes-news",
       mc: {
-        question: "Was wurde gestern geschrieben?",
+        question: "Что написали вчера?",
         questionGloss: {
-          ru: "Что написали вчера?",
           en: "What was written yesterday?",
           es: "¿Qué se escribió ayer?",
+          de: "Was wurde gestern geschrieben?",
         },
         options: ["Der Brief", "Das Haus", "Die Tür", "Deutsch"],
         answer: "Der Brief",
@@ -985,11 +991,11 @@ export const READING_PASSAGES_BY_COURSE: Record<
       grammarTopic: "de-b1-connectors-complex",
       vocabTopic: "de-b1-opinions-debate",
       mc: {
-        question: "Warum lernt Lea viel?",
+        question: "Зачем Леа много учится?",
         questionGloss: {
-          ru: "Зачем Леа много учится?",
           en: "Why does Lea study a lot?",
           es: "¿Para qué estudia Lea mucho?",
+          de: "Warum lernt Lea viel?",
         },
         options: [
           "Damit sie die Prüfung besteht",
@@ -1023,11 +1029,11 @@ export const READING_PASSAGES_BY_COURSE: Record<
       grammarTopic: "de-b2-konjunktiv-i-ii",
       vocabTopic: "de-b2-media-claims",
       mc: {
-        question: "Wo sei der Minister laut Reporter?",
+        question: "Где, по словам репортёра, министр?",
         questionGloss: {
-          ru: "Где, по словам репортёра, министр?",
           en: "Where is the minister, according to the reporter?",
           es: "¿Dónde está el ministro según el reportero?",
+          de: "Wo sei der Minister laut Reporter?",
         },
         options: ["Im Ausland", "In der Redaktion", "Beim Treffen", "Bei der Sprecherin"],
         answer: "Im Ausland",
@@ -1056,11 +1062,11 @@ export const READING_PASSAGES_BY_COURSE: Record<
       grammarTopic: "de-b2-nominalization",
       vocabTopic: "de-b2-formal-nouns",
       mc: {
-        question: "Was folgt auf die Prüfung des Antrags?",
+        question: "Что следует за проверкой заявки?",
         questionGloss: {
-          ru: "Что следует за проверкой заявки?",
           en: "What follows the review of the application?",
           es: "¿Qué sigue a la revisión de la solicitud?",
+          de: "Was folgt auf die Prüfung des Antrags?",
         },
         options: [
           "Die Entscheidung",
@@ -1093,11 +1099,11 @@ export const READING_PASSAGES_BY_COURSE: Record<
       grammarTopic: "de-c1-particles-idioms",
       vocabTopic: "de-c1-idioms-collocations",
       mc: {
-        question: "Was drückt die Person?",
+        question: "Что человек «держит»?",
         questionGloss: {
-          ru: "Что человек «держит»?",
           en: "What does the person press?",
           es: "¿Qué aprieta la persona?",
+          de: "Was drückt die Person?",
         },
         options: ["Die Daumen", "Den Nagel", "Den Kopf", "Die Prüfung"],
         answer: "Die Daumen",
@@ -1126,11 +1132,11 @@ export const READING_PASSAGES_BY_COURSE: Record<
       grammarTopic: "de-c1-text-pragmatics",
       vocabTopic: "de-c1-discourse-pragmatics",
       mc: {
-        question: "Was ist das eigentliche Problem?",
+        question: "В чём настоящая проблема?",
         questionGloss: {
-          ru: "В чём настоящая проблема?",
           en: "What is the actual problem?",
           es: "¿Cuál es el problema real?",
+          de: "Was ist das eigentliche Problem?",
         },
         options: ["Die Frist", "Der Preis", "Das Wetter", "Die Entschuldigung"],
         answer: "Die Frist",

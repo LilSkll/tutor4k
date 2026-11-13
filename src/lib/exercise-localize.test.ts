@@ -98,6 +98,37 @@ describe("translation localization", () => {
     ).not.toMatch(/[\u0400-\u04FF]/);
   });
 
+  it("swaps Cyrillic-authored German MC stems for non-RU UI via questionTranslations", () => {
+    const mc: StaticExercise = {
+      id: "de-mc1",
+      type: "multiple_choice",
+      question: "Какой знак читается как ss?",
+      options: ["ä", "ö", "ü", "ß"],
+      answer: "ß",
+      instruction: "Выберите правильный вариант",
+      explanation: "ß = ss",
+      questionTranslations: {
+        en: "Which character sounds like ss?",
+        es: "¿Qué signo suena como ss?",
+        de: "Welches Zeichen klingt wie ss?",
+      },
+    };
+    expect(isExerciseUsableForLanguage(mc, "ru", "german")).toBe(true);
+    expect(isExerciseUsableForLanguage(mc, "en", "german")).toBe(true);
+    expect(prepareExercisesForInterface([mc], "ru", "german")[0]!.question).toBe(
+      "Какой знак читается как ss?",
+    );
+    expect(prepareExercisesForInterface([mc], "en", "german")[0]!.question).toBe(
+      "Which character sounds like ss?",
+    );
+    const noMap: StaticExercise = {
+      ...mc,
+      id: "de-mc-bare",
+      questionTranslations: undefined,
+    };
+    expect(isExerciseUsableForLanguage(noMap, "en", "german")).toBe(false);
+  });
+
   it("matrix: TR L1 follows UI; never third language on English×EN", () => {
     const spanishTr = sample;
     const englishTr: StaticExercise = {

@@ -91,7 +91,11 @@ describe("UI × course language audit (no client-scaring leaks)", () => {
 
       for (const ex of prepared) {
         if (ex.type !== "translation") {
-          expect(ex.question, `${ex.id} non-TR`).not.toMatch(CYRILLIC);
+          // RU UI MC is a Russian task question (English stem kept in the
+          // line). EN/ES/DE swap to questionTranslations. FB stays English.
+          if (!(lang === "ru" && ex.type === "multiple_choice")) {
+            expect(ex.question, `${ex.id} non-TR`).not.toMatch(CYRILLIC);
+          }
           if (lang !== "ru") {
             expect(ex.instruction ?? "", `${ex.id} instr`).not.toMatch(CYRILLIC);
           }

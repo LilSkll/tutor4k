@@ -597,6 +597,11 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       type: "fill_blank",
       question: "Hoy ___ (comer) pizza. (yo)",
+      questionTranslations: {
+        ru: "Сегодня ___ (comer) пицца. (yo)",
+        en: "Today ___ (comer) pizza. (yo)",
+        de: "Heute ___ (comer) Pizza. (yo)",
+      },
       instruction: "Поставьте в pretérito perfecto",
       answer: "he comido",
       acceptableAnswers: ["He comido"],
@@ -647,6 +652,11 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       type: "fill_blank",
       question: "Ayer ___ (ir) al cine. (yo)",
+      questionTranslations: {
+        ru: "Вчера ___ (ir) в кино. (yo)",
+        en: "Yesterday ___ (ir) to the cinema. (yo)",
+        de: "Gestern ___ (ir) zum Kino. (yo)",
+      },
       instruction: "Поставьте ir в indefinido",
       answer: "fui",
       acceptableAnswers: ["Fui"],

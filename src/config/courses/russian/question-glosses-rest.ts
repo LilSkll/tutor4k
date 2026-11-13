@@ -2035,4 +2035,26 @@ export const RUSSIAN_A1_REST_GLOSSES: Record<
     es: "Di que es la una.",
     de: "Sag, dass es ein Uhr ist.",
   },
+
+  // ru-ch37-classroom-survival
+  "Здесь ___ курить: это коридор университета.": {
+    en: "Here ___ smoke: this is a university corridor. The blank is a modal of prohibition before the infinitive.",
+    es: "Aquí ___ fumar: es un pasillo de la universidad. El hueco es un modal de prohibición ante el infinitivo.",
+    de: "Hier ___ rauchen: das ist ein Flur der Universität. Die Lücke ist ein Modal des Verbots vor dem Infinitiv.",
+  },
+  "___, пожалуйста, это слово на доске.": {
+    en: "___, please, this word on the board. A polite request to a teacher or the group: formal imperative (вы) of the verb «to write down».",
+    es: "___, por favor, esta palabra de la pizarra. Petición cortés al profesor o al grupo: imperativo formal (вы) del verbo «anotar».",
+    de: "___, bitte, dieses Wort an der Tafel. Höfliche Bitte an die Lehrkraft oder die Gruppe: formeller Imperativ (вы) des Verbs «aufschreiben».",
+  },
+  "___, пожалуйста, тетради на пятой странице.": {
+    en: "___, please, the notebooks on page five. A polite command to the group: formal imperative (вы) of the verb «to open».",
+    es: "___, por favor, los cuadernos en la página cinco. Orden cortés al grupo: imperativo formal (вы) del verbo «abrir».",
+    de: "___, bitte, die Hefte auf Seite fünf. Höfliche Anweisung an die Gruppe: formeller Imperativ (вы) des Verbs «öffnen».",
+  },
+  "Говорите ___, пожалуйста: я записываю.": {
+    en: "Speak ___, please: I am writing it down. The blank is the comparative adverb «more slowly», not the base word for «fast».",
+    es: "Hable ___, por favor: lo estoy anotando. El hueco es el adverbio comparativo «más despacio», no la base de «rápido».",
+    de: "Sprechen Sie ___, bitte: ich schreibe mit. Die Lücke ist das Vergleichsadverb «langsamer», nicht die Grundform von «schnell».",
+  },
 };

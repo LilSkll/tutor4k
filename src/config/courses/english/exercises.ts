@@ -6,6 +6,7 @@ import { ENGLISH_CURRICULUM_CHAPTER_EXERCISES } from "./chapter-exercises-curric
 import { ENGLISH_CURATED_SUPPLEMENTS } from "@/config/exercise-seeds/english-curated-supplements";
 import { getEngChapter } from "./chapters";
 import { getReadingPassagesForChapter } from "@/config/reading-passages";
+import { applyEnglishPracticeL1 } from "./l1-prompts";
 
 // =====================================================================
 // English Course — Permanent adaptive exercise bank (curated seed)
@@ -302,10 +303,13 @@ export function getEnglishExercises(chapterSlug: string): StaticExercise[] {
       ? expanded.filter((ex) => allowed.includes(ex.type))
       : expanded;
   // Append reading passages after the bank so existing adaptive IDs stay stable.
+  // L1 cues are applied after expand: MC keeps its English stem plus a Russian
+  // task question (en/es/de maps for other UIs); FB keeps the English stem and
+  // gains a ru gloss. Doing this before dedupe would split pack duplicates.
   const withReading = [
     ...filtered,
     ...getReadingPassagesForChapter("english", chapterSlug),
-  ];
+  ].map(applyEnglishPracticeL1);
   const withIds = withExerciseIds("english", chapterSlug, withReading);
   englishExerciseCache.set(chapterSlug, withIds);
   return withIds;

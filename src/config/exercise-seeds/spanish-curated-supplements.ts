@@ -12246,6 +12246,11 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
     {
       "type": "multiple_choice",
       "question": "¿Recuerdas la canción ___ bailamos en la fiesta?",
+      "questionTranslations": {
+        "ru": "Ты помнишь песня ___ мы танцевали в праздник?",
+        "en": "You remember the song ___ we danced in the party?",
+        "de": "Du erinnerst dich die Lied ___ wir tanzten in die Fest?"
+      },
       "instruction": "Выберите правильный вариант",
       "options": [
         "que",
@@ -12259,6 +12264,11 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
     {
       "type": "fill_blank",
       "question": "Ese es el colegio ___ estudié de niño.",
+      "questionTranslations": {
+        "ru": "Тот — школа ___ я учился в детстве.",
+        "en": "That is the school ___ I studied as a child.",
+        "de": "Dieser ist der Schule ___ ich lernte als Kind."
+      },
       "instruction": "Заполните пропуск",
       "answer": "donde",
       "acceptableAnswers": [

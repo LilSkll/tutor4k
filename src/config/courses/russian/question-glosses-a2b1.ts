@@ -1,7 +1,8 @@
 import type { InterfaceLanguage } from "@/types";
 
 /**
- * Pedagogical question glosses for RKI A2 (chapters 9–16) and B1 (chapters 17–22).
+ * Pedagogical question glosses for RKI A2 (chapters 9–16), B1 (chapters 17–22),
+ * and bridge chapters 38–41.
  * Keys = exact authored question strings. Support for en/es/de must not reveal the answer.
  * One stem, «У меня нет ___.», is shared by a fill-blank and a multiple-choice item.
  */
@@ -2270,5 +2271,173 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     en: "Ask, politely, whether they could point out the source.",
     es: "Pregunta, con educación, si podrían indicar la fuente.",
     de: "Frag höflich, ob sie die Quelle angeben könnten.",
+  },
+
+  // ru-ch38-services-invitations
+  "Омар звонит в поликлинику: «Я ___ записаться на приём.»": {
+    en: "Omar calls the clinic: «I ___ make an appointment.» He is masculine. Choose the polite «would like» before the infinitive, not the feminine form and not a broken phrase.",
+    es: "Omar llama a la clínica: «Yo ___ pedir cita.» Es masculino. Elige el «quisiera» cortés ante el infinitivo, no la forma femenina ni una frase rota.",
+    de: "Omar ruft in der Poliklinik an: «Ich ___ einen Termin machen.» Er ist maskulin. Wähle das höfliche «möchte» vor dem Infinitiv, nicht die feminine Form und keine gebrochene Wendung.",
+  },
+  "Анна не может прийти. Что она пишет первой фразой?": {
+    en: "Anna cannot come. What does she write as the first line? Choose a polite refusal. A bare «I won't come» is too sharp for a note to a tutor.",
+    es: "Anna no puede ir. ¿Qué escribe como primera frase? Elige un rechazo cortés. Un «no voy, y ya» es demasiado seco para una nota al tutor.",
+    de: "Anna kann nicht kommen. Was schreibt sie als ersten Satz? Wähle eine höfliche Absage. Ein nacktes «Ich komme nicht» ist für eine Nachricht an den Betreuer zu scharf.",
+  },
+  "Как спросить удобное время?": {
+    en: "How do you ask what time is convenient? Choose a polite question to вы about the hour. Informal «you», a broken phrase, and a clock question with «unfortunately» do not ask for a convenient time.",
+    es: "¿Cómo preguntas la hora que conviene? Elige una pregunta cortés de вы sobre la hora. El «tú», una frase rota y un «qué hora es» con «por desgracia» no piden una hora cómoda.",
+    de: "Wie fragt man nach einer passenden Uhrzeit? Wähle eine höfliche Sie-Frage nach der Stunde. Du-Form, eine kaputte Wendung und «leider, wie spät ist es» fragen nicht nach einer günstigen Zeit.",
+  },
+  "Анна принимает приглашение. Что она отвечает?": {
+    en: "Anna accepts the invitation. What does she answer? Choose agreement. A line that starts with «unfortunately» or «I will not be able» is a refusal, even if a glad word is stuck on.",
+    es: "Anna acepta la invitación. ¿Qué responde? Elige un acuerdo. Una frase que empieza con «por desgracia» o «no podré» es un rechazo, aunque lleve una palabra de alegría.",
+    de: "Anna nimmt die Einladung an. Was antwortet sie? Wähle eine Zusage. Ein Satz mit «leider» oder «ich kann nicht» ist eine Absage, auch wenn ein frohes Wort daran hängt.",
+  },
+  "Я хотела бы ___ на консультацию в четверг.": {
+    en: "I would like to ___ for a consultation on Thursday. The speaker is feminine. The blank is the perfective infinitive «to book / to sign up», not a finite verb.",
+    es: "Quisiera ___ a una consulta el jueves. Habla una mujer. El hueco es el infinitivo perfectivo de «apuntarse», no un verbo conjugado.",
+    de: "Ich würde gern ___ zu einer Sprechstunde am Donnerstag. Die Sprecherin ist feminin. Die Lücke ist der perfektive Infinitiv «sich anmelden», kein finites Verb.",
+  },
+  "Давайте ___ встречу на пятницу: в четверг у меня практика.": {
+    en: "Let's ___ the meeting to Friday: on Thursday I have a practical. One finished suggestion about a new time. Perfective future, 1st person plural, of the verb «to move to another time».",
+    es: "___ la reunión al viernes: el jueves tengo práctica. Una propuesta cerrada de nueva fecha. Futuro perfectivo, 1.ª persona del plural, del verbo «aplazar».",
+    de: "Lass uns das Treffen auf Freitag ___: donnerstags habe ich ein Praktikum. Ein abgeschlossener Vorschlag zur neuen Zeit. Perfektives Futur, 1. Person Plural, des Verbs «verschieben».",
+  },
+  "Утром мне ___: пара начинается в восемь.": {
+    en: "In the morning it is ___ for me: class starts at eight. A short predicative meaning «not convenient», with мне (for me) and a time.",
+    es: "Por la mañana me es ___: la clase empieza a las ocho. Un predicativo breve de «no me viene bien», con мне (a mí) y una hora.",
+    de: "Morgens ist es mir ___: die Stunde beginnt um acht. Ein kurzes Prädikativ «unbequem», mit мне (mir) und einer Uhrzeit.",
+  },
+  "___, пожалуйста, после двух: сейчас я на паре.": {
+    en: "___, please, after two: I am in class now. A polite request to вы: formal imperative of the verb «to call back».",
+    es: "___, por favor, después de las dos: ahora estoy en clase. Petición cortés de вы: imperativo formal del verbo «volver a llamar».",
+    de: "___, bitte, nach zwei: ich bin jetzt in der Stunde. Höfliche Bitte an вы: formeller Imperativ des Verbs «zurückrufen».",
+  },
+
+  // ru-ch39-government-verbs
+  "Результат зависит ___ подготовки, а не от удачи.": {
+    en: "The result depends ___ preparation, not on luck. Choose the preposition required by the verb «to depend». The options are four different prepositions.",
+    es: "El resultado depende ___ la preparación, no de la suerte. Elige la preposición que rige el verbo «depender». Las opciones son cuatro preposiciones distintas.",
+    de: "Das Ergebnis hängt ___ der Vorbereitung ab, nicht vom Glück. Wähle die Präposition, die das Verb «abhängen» verlangt. Die Optionen sind vier verschiedene Präpositionen.",
+  },
+  "Мы гордимся ___ группы на конференции.": {
+    en: "We are proud of the group's ___ at the conference. After the verb «to be proud of», choose the instrumental case. The options are four cases of the same noun «result».",
+    es: "Estamos orgullosos del ___ del grupo en el congreso. Tras el verbo «estar orgulloso», elige el instrumental. Las opciones son cuatro casos del mismo sustantivo «resultado».",
+    de: "Wir sind stolz auf das ___ der Gruppe auf der Konferenz. Nach dem Verb «stolz sein» wähle den Instrumental. Die Optionen sind vier Kasus desselben Substantivs «Ergebnis».",
+  },
+  "Анна готовится ___ уже третью неделю.": {
+    en: "Anna has been preparing ___ for a third week already. Choose the government of the verb «to prepare for»: the right preposition plus the case of «exam».",
+    es: "Anna se prepara ___ ya desde hace tres semanas. Elige el régimen del verbo «prepararse para»: la preposición justa y el caso de «examen».",
+    de: "Anna bereitet sich schon die dritte Woche ___ vor. Wähle die Rektion des Verbs «sich vorbereiten»: die passende Präposition und den Kasus von «Prüfung».",
+  },
+  "Омар надеется ___ в следующем семестре.": {
+    en: "Omar hopes ___ next semester. Choose the government of the verb «to hope»: one preposition plus the case of «grant / stipend». The other options use the wrong preposition.",
+    es: "Omar espera ___ el próximo semestre. Elige el régimen del verbo «esperar, confiar»: una preposición y el caso de «beca». Las otras opciones llevan otra preposición.",
+    de: "Omar hofft ___ im nächsten Semester. Wähle die Rektion des Verbs «hoffen»: eine Präposition und der Kasus von «Stipendium». Die anderen Optionen haben die falsche Präposition.",
+  },
+  "Она добилась ___ только после второй попытки.": {
+    en: "She achieved ___ only on the second try. Genitive singular of the noun «success», after the verb «to achieve / to attain».",
+    es: "Ella logró ___ solo al segundo intento. Genitivo singular del sustantivo «éxito», tras el verbo «lograr».",
+    de: "Sie erreichte ___ erst beim zweiten Versuch. Genitiv Singular des Substantivs «Erfolg», nach dem Verb «erreichen».",
+  },
+  "Он избегает ___ в таблице и поэтому проверяет дважды.": {
+    en: "He avoids ___ in the table and therefore checks twice. Genitive plural of the noun «mistake», after the verb «to avoid».",
+    es: "Evita ___ en la tabla y por eso revisa dos veces. Genitivo plural del sustantivo «error», tras el verbo «evitar».",
+    de: "Er vermeidet ___ in der Tabelle und prüft deshalb zweimal. Genitiv Plural des Substantivs «Fehler», nach dem Verb «vermeiden».",
+  },
+  "Шум в коридоре мешает ___ читать.": {
+    en: "Noise in the corridor keeps ___ from reading. Dative singular of the noun «neighbor» (one male neighbor), after the verb «to hinder someone».",
+    es: "El ruido del pasillo impide ___ leer. Dativo singular del sustantivo «vecino» (un vecino), tras el verbo «estorbar a alguien».",
+    de: "Lärm im Flur hindert ___ am Lesen. Dativ Singular des Substantivs «Nachbar» (ein Nachbar), nach dem Verb «jemanden stören».",
+  },
+  "Мы отказались ___ , потому что источников мало.": {
+    en: "We refused ___ , because there are few sources. The verb «to refuse / to give up» needs its preposition plus the genitive of the noun «topic».",
+    es: "Renunciamos ___ , porque hay pocas fuentes. El verbo «renunciar» pide su preposición y el genitivo del sustantivo «tema».",
+    de: "Wir haben ___ abgelehnt, weil es wenige Quellen gibt. Das Verb «verzichten» braucht seine Präposition und den Genitiv des Substantivs «Thema».",
+  },
+
+  // ru-ch40-participle-preview
+  "Короткая замена для «студент, который читает статью».": {
+    en: "A short replacement for «a student who is reading an article». The relative clause has a present-tense verb, and the student is the subject. Choose a present active participle before the noun, not a passive and not an infinitive.",
+    es: "Un reemplazo breve de «un estudiante que lee un artículo». El relativo está en presente y el estudiante es el sujeto. Elige un participio activo de presente ante el sustantivo, no uno pasivo ni un infinitivo.",
+    de: "Ein kurzer Ersatz für «ein Student, der einen Artikel liest». Der Relativsatz steht im Präsens, und der Student ist das Subjekt. Wähle ein aktives Partizip Präsens vor dem Substantiv, kein passives und keinen Infinitiv.",
+  },
+  "Статья уже прочитана группой. Какое определение короче, чем «статья, которую прочитали»?": {
+    en: "The article has already been read by the group. Which modifier is shorter than «the article that they read»? The action on the thing is finished. Choose a past passive participle, feminine, agreeing with «article».",
+    es: "El artículo ya fue leído por el grupo. ¿Qué atributo es más breve que «el artículo que leyeron»? La acción sobre la cosa está terminada. Elige un participio pasivo de pasado, femenino, con «artículo».",
+    de: "Der Artikel ist von der Gruppe schon gelesen. Welches Attribut ist kürzer als «der Artikel, den man gelesen hat»? Die Handlung am Gegenstand ist abgeschlossen. Wähle ein passives Partizip Präteritum, feminin, zu «Artikel».",
+  },
+  "Фраза длинная, в придаточном три дополнения. Что надёжнее на B1?": {
+    en: "The sentence is long: the clause has three objects. What is safer at B1? A heavy participle phrase is risky here. Choose the relative word that keeps the clause, not a long participial phrase and not a gerund used as a modifier.",
+    es: "La frase es larga: la subordinada tiene tres complementos. ¿Qué es más seguro en B1? Un participio largo es arriesgado. Elige el relativo que mantiene la subordinada, no un participio pesado ni un gerundio como atributo.",
+    de: "Der Satz ist lang: der Nebensatz hat drei Objekte. Was ist auf B1 sicherer? Eine schwere Partizipgruppe ist riskant. Wähle das Relativwort, das den Nebensatz behält, keine lange Partizipgruppe und kein Adverbialpartizip als Attribut.",
+  },
+  "Это преподаватель, ___ я отправил черновик.": {
+    en: "This is the lecturer ___ I sent the draft. «To send» asks «to whom?» Choose the dative of the relative pronoun. The options are four cases of the same word.",
+    es: "Este es el profesor ___ le envié el borrador. «Enviar» pregunta «¿a quién?» Elige el dativo del relativo. Las opciones son cuatro casos de la misma palabra.",
+    de: "Das ist der Dozent, ___ ich den Entwurf schickte. «Schicken» fragt «wem?» Wähle den Dativ des Relativpronomens. Die Optionen sind vier Kasus desselben Wortes.",
+  },
+  "Текст, ___ написали вчера, уже в папке.": {
+    en: "The text ___ they wrote yesterday is already in the folder. The relative is the object of «wrote». The noun is masculine, so accusative looks like nominative. Do not switch to a feminine form.",
+    es: "El texto ___ escribieron ayer ya está en la carpeta. El relativo es el objeto de «escribieron». El sustantivo es masculino, así que el acusativo coincide con el nominativo. No pases a una forma femenina.",
+    de: "Der Text, ___ sie gestern schrieben, liegt schon in der Mappe. Das Relativ ist Objekt von «schrieben». Das Substantiv ist maskulin, der Akkusativ gleicht dem Nominativ. Keine feminine Form.",
+  },
+  "Метод, ___ процесс, назван в первом абзаце.": {
+    en: "The method ___ the process is named in the first paragraph. The method itself describes the process. Present active participle of «to describe», masculine singular, agreeing with «method».",
+    es: "El método ___ el proceso se nombra en el primer párrafo. El método mismo describe el proceso. Participio activo de presente de «describir», masculino singular, con «método».",
+    de: "Die Methode, ___ den Prozess, wird im ersten Absatz genannt. Die Methode selbst beschreibt den Prozess. Aktives Partizip Präsens von «beschreiben», maskulin Singular, zu «Methode».",
+  },
+  "Случай, ___ в отчёте, больше не повторяли.": {
+    en: "The case ___ in the report was not repeated again. Someone described the case. Past passive participle of «to describe», masculine singular.",
+    es: "El caso ___ en el informe ya no se repitió. Alguien describió el caso. Participio pasivo de pasado de «describir», masculino singular.",
+    de: "Den Fall, ___ im Bericht, hat man nicht wieder wiederholt. Jemand hat den Fall beschrieben. Passives Partizip Präteritum von «beschreiben», maskulin Singular.",
+  },
+  "Статья, ___ мы прочитали вчера, лежит на столе.": {
+    en: "The article ___ we read yesterday is on the table. The relative is the object. The noun is feminine, so use the feminine accusative of the relative pronoun.",
+    es: "El artículo ___ leímos ayer está en la mesa. El relativo es el objeto. El sustantivo es femenino: acusativo femenino del relativo.",
+    de: "Der Artikel, ___ wir gestern lasen, liegt auf dem Tisch. Das Relativ ist das Objekt. Das Substantiv ist feminin: femininer Akkusativ des Relativpronomens.",
+  },
+
+  // ru-ch41-opinion-structures
+  "Омар начинает реплику осторожно. Какая рамка с «что»?": {
+    en: "Omar starts his remark carefully. Which frame takes «that»? One frame is followed by «that» plus a thesis. «In my opinion» takes a comma but does not pull «that» after it.",
+    es: "Omar empieza con cuidado. ¿Qué marco lleva «que»? Un marco va seguido de «que» y una tesis. «En mi opinión» lleva coma, pero no arrastra «que».",
+    de: "Omar beginnt vorsichtig. Welcher Rahmen nimmt «dass»? Ein Rahmen steht mit «dass» plus These. «Meiner Meinung nach» nimmt ein Komma, zieht aber kein «dass» nach sich.",
+  },
+  "Анна согласна с куратором. Как она скажет?": {
+    en: "Anna agrees with the advisor. How does she say it? She is feminine. The verb of agreement takes the preposition «with» plus the instrumental, not a bare dative.",
+    es: "Anna está de acuerdo con el tutor. ¿Cómo lo dice? Es femenino. El acuerdo pide la preposición «con» y el instrumental, no un dativo suelto.",
+    de: "Anna ist mit dem Betreuer einverstanden. Wie sagt sie das? Sie ist feminin. Die Zustimmung braucht «mit» plus Instrumental, keinen bloßen Dativ.",
+  },
+  "Нужно несогласие с причиной. Что цельно?": {
+    en: "You need a disagreement that includes a reason. Which line is complete? A bare «no» or «I disagree» stops too early. The full turn keeps the reason in the same remark.",
+    es: "Hace falta un desacuerdo con su causa. ¿Qué frase está completa? Un «no» o un «no estoy de acuerdo» se corta pronto. La réplica entera deja la causa en la misma frase.",
+    de: "Es braucht eine Ablehnung mit Grund. Welcher Satz ist vollständig? Ein bloßes «Nein» oder «ich bin nicht einverstanden» bricht zu früh ab. Die ganze Replik behält den Grund im selben Satz.",
+  },
+  "Омар признаёт часть довода и оставляет границу.": {
+    en: "Omar accepts part of the argument and keeps a limit. Choose the frame of partial agreement. A total ban and an empty «no opinion» do not leave a boundary inside the point.",
+    es: "Omar acepta parte del argumento y deja un límite. Elige el marco del acuerdo parcial. Una prohibición total y un «sin opinión» no dejan un límite dentro del punto.",
+    de: "Omar gibt einen Teil des Arguments zu und lässt eine Grenze. Wähle den Rahmen der teilweisen Zustimmung. Ein totales Verbot und ein leeres «keine Meinung» lassen keine Grenze im Punkt.",
+  },
+  "___ мой взгляд, второй пример слабый.": {
+    en: "___ my view, the second example is weak. The blank is the preposition that opens the set frame «in my view». Do not write the whole frame, only its first word.",
+    es: "___ mi parecer, el segundo ejemplo es débil. El hueco es la preposición que abre el marco fijo «a mi parecer». No escribas el marco entero, solo su primera palabra.",
+    de: "___ meiner Ansicht, das zweite Beispiel ist schwach. Die Lücke ist die Präposition, die den festen Rahmen «meiner Ansicht nach» öffnet. Nur das erste Wort, nicht den ganzen Rahmen.",
+  },
+  "Омар говорит: «Я ___ с этим тезисом.»": {
+    en: "Omar says: «I ___ with this thesis.» He is masculine. Short-form agreement, masculine singular, before «with» plus the instrumental.",
+    es: "Omar dice: «Yo ___ con esta tesis.» Es masculino. Forma breve de acuerdo, masculino singular, ante «con» y el instrumental.",
+    de: "Omar sagt: «Ich bin ___ mit dieser These.» Er ist maskulin. Kurzform der Zustimmung, maskulin Singular, vor «mit» plus Instrumental.",
+  },
+  "Анна говорит: «Я совершенно не ___.»": {
+    en: "Anna says: «I am absolutely not ___.» She is feminine. Short-form agreement, feminine singular. The negation is already in the sentence.",
+    es: "Anna dice: «Yo no ___ en absoluto.» Es femenino. Forma breve de acuerdo, femenino singular. La negación ya está en la frase.",
+    de: "Anna sagt: «Ich bin ganz und gar nicht ___.» Sie ist feminin. Kurzform der Zustimmung, feminin Singular. Die Verneinung steht schon im Satz.",
+  },
+  "С одной стороны, срок реальный, ___ другой стороны, источников мало.": {
+    en: "On one hand the deadline is realistic, ___ the other hand there are few sources. The blank is the same preposition that opens the second half of this pair. One short word.",
+    es: "Por un lado el plazo es realista, ___ otro lado hay pocas fuentes. El hueco es la misma preposición que abre la segunda mitad del par. Una palabra breve.",
+    de: "Einerseits ist die Frist realistisch, ___ andererseits gibt es wenige Quellen. Die Lücke ist dieselbe Präposition, die die zweite Hälfte des Paars öffnet. Ein kurzes Wort.",
   },
 };

@@ -500,6 +500,7 @@ export function isUsableMultipleChoice(ex: {
   answer?: string;
   options?: string[];
   instruction?: string;
+  questionTranslations?: Partial<Record<"ru" | "en" | "es" | "de", string>>;
 }): boolean {
   const q = (ex.question ?? "").trim();
   const a = (ex.answer ?? "").trim();
@@ -511,8 +512,18 @@ export function isUsableMultipleChoice(ex: {
   if (COMPLETA_STUB.test(q)) return false;
   if (CYRILLIC.test(q) && !/«/.test(q)) {
     // Allow MC that quotes Spanish and asks in Russian, e.g. «Se me rompió…» выражает…
-    // but reject pure Cyrillic stems that belong to translation.
-    if (!/[a-záéíóúñü]/i.test(q)) return false;
+    // Pure Cyrillic cloze is an L1 prompt (RU UI) when EN/ES/DE maps exist so
+    // other interfaces still see the target-language stem. Reject bare Cyrillic
+    // sentences that belong to translation.
+    if (!/[a-záéíóúñü]/i.test(q)) {
+      const maps = ex.questionTranslations;
+      const mapped = ["en", "es", "de"].every((lang) => {
+        const value = maps?.[lang as "en" | "es" | "de"]?.trim() ?? "";
+        return value.length > 0 && !CYRILLIC.test(value);
+      });
+      const shaped = /___+/.test(q) || /[?？]/.test(q);
+      if (!mapped || !shaped) return false;
+    }
   }
   if (isTokenDump(q)) return false;
   if (options.length < 2) return false;

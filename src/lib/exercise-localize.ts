@@ -741,10 +741,13 @@ export function isExerciseUsableForLanguage(
     );
   }
 
-  // Non-TR: content is the language being learned — only drop Cyrillic noise
-  // for non-RU UI (RU UI may still see rare authored RU stems).
+  // Non-TR: target-language stems are fine for every UI. Cyrillic L1 stems
+  // (e.g. German A1 MC authored in Russian) need a non-Cyrillic map for EN/ES/DE.
   if (interfaceLanguage === "ru") return true;
-  return !hasCyrillicText(exercise.question);
+  if (!hasCyrillicText(exercise.question)) return true;
+  const mapped =
+    exercise.questionTranslations?.[interfaceLanguage]?.trim() ?? "";
+  return Boolean(mapped && !hasCyrillicText(mapped));
 }
 
 /** Swap TR prompts for the learner's interface language only. */
@@ -763,6 +766,37 @@ export function localizeTranslationQuestion(
     courseId,
   );
   return resolved ?? exercise.question;
+}
+
+/**
+ * Resolve the visible prompt for any exercise type.
+ * TR uses L1 maps; non-TR Cyrillic stems (German A1 pedagogy) swap to
+ * questionTranslations for non-RU UIs.
+ */
+export function localizeExerciseQuestion(
+  exercise: Pick<
+    StaticExercise,
+    "question" | "answer" | "type" | "questionTranslations"
+  >,
+  interfaceLanguage: InterfaceLanguage,
+  courseId?: string | null,
+): string {
+  if (exercise.type === "translation") {
+    return localizeTranslationQuestion(
+      exercise,
+      interfaceLanguage,
+      courseId,
+    );
+  }
+  if (
+    interfaceLanguage !== "ru" &&
+    hasCyrillicText(exercise.question)
+  ) {
+    const mapped =
+      exercise.questionTranslations?.[interfaceLanguage]?.trim() ?? "";
+    if (mapped && !hasCyrillicText(mapped)) return mapped;
+  }
+  return exercise.question;
 }
 
 function localizeExerciseExplanation(
@@ -796,7 +830,7 @@ export function prepareExercisesForInterface<T extends StaticExercise>(
     )
     .map((ex) => ({
       ...ex,
-      question: localizeTranslationQuestion(ex, interfaceLanguage, courseId),
+      question: localizeExerciseQuestion(ex, interfaceLanguage, courseId),
       instruction: localizeExerciseInstruction(ex, interfaceLanguage),
       explanation: localizeExerciseExplanation(
         ex,

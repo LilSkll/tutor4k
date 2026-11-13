@@ -8,6 +8,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "Yo ___ al mercado los sábados.",
+      "questionTranslations": {
+        "ru": "Я ___ в рынок субботы.",
+        "en": "I ___ to the market the Saturdays.",
+        "de": "Ich ___ zum Markt die Samstage."
+      },
       "instruction": "Выберите форму ir",
       "options": [
         "voy",
@@ -22,6 +27,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "fill_blank",
       "question": "¿Qué ___ hacer hoy?",
+      "questionTranslations": {
+        "ru": "Что ___ делать сегодня?",
+        "en": "What ___ to do today?",
+        "de": "Was ___ tun heute?"
+      },
       "instruction": "Поставьте querer (tú)",
       "answer": "quieres",
       "acceptableAnswers": [
@@ -33,6 +43,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "No ___ decir la verdad.",
+      "questionTranslations": {
+        "ru": "Не ___ сказать правда.",
+        "en": "Not ___ to say the truth.",
+        "de": "Nicht ___ sagen die Wahrheit."
+      },
       "instruction": "Выберите poder (yo)",
       "options": [
         "puedo",
@@ -58,6 +73,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "fill_blank",
       "question": "Ella ___ la comida en casa.",
+      "questionTranslations": {
+        "ru": "Она ___ еда дома.",
+        "en": "She ___ the food at home.",
+        "de": "Sie ___ die Essen zu Hause."
+      },
       "instruction": "Поставьте hacer (ella)",
       "answer": "hace",
       "acceptableAnswers": [
@@ -87,6 +107,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "___ habla español en esta región.",
+      "questionTranslations": {
+        "ru": "___ говорит испанский в эта регион.",
+        "en": "___ speaks Spanish in this region.",
+        "de": "___ spricht Spanisch in diese Region."
+      },
       "instruction": "Вставьте нужное слово в начало",
       "options": [
         "Se",
@@ -101,6 +126,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "fill_blank",
       "question": "María ___ levanta a las siete.",
+      "questionTranslations": {
+        "ru": "Мария ___ встаёт в семь.",
+        "en": "María ___ gets up at seven.",
+        "de": "María ___ steht auf um sieben."
+      },
       "instruction": "Вставьте пропущенное слово",
       "answer": "se",
       "acceptableAnswers": [
@@ -112,6 +142,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "«Se me rompió el vaso» expresses…",
+      "questionTranslations": {
+        "ru": "«Se me rompió el vaso» выражает…",
+        "en": "«Se me rompió el vaso» expresses…",
+        "de": "«Se me rompió el vaso» drückt aus…"
+      },
       "instruction": "What does this construction convey?",
       "instructionKey": "choose_option",
       "options": [
@@ -157,6 +192,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "fill_blank",
       "question": "Ana y Luis ___ ven cada día.",
+      "questionTranslations": {
+        "ru": "Ана и Луис ___ они идут каждый день.",
+        "en": "Ana and Luis ___ they come every day.",
+        "de": "Ana und Luis ___ sie kommen jeden Tag."
+      },
       "instruction": "Вставьте пропущенное слово",
       "answer": "se",
       "acceptableAnswers": [
@@ -195,6 +235,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "La mujer ___ habla es mi profesora.",
+      "questionTranslations": {
+        "ru": "Женщина ___ говорит — мой преподавательница.",
+        "en": "The woman ___ speaks is my teacher.",
+        "de": "Die Frau ___ spricht ist mein Lehrerin."
+      },
       "instruction": "Выберите правильный вариант",
       "options": ["que", "quien", "cuyo", "donde"],
       "answer": "que",
@@ -204,6 +249,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "___ me gusta es la libertad.",
+      "questionTranslations": {
+        "ru": "___ мне нравится — свобода.",
+        "en": "___ me like is the freedom.",
+        "de": "___ mir gefällt ist die Freiheit."
+      },
       "instruction": "Выберите правильный вариант",
       "options": ["Lo que", "La que", "El que", "Donde"],
       "answer": "Lo que",
@@ -213,6 +263,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "Este es el parque ___ jugábamos de niños.",
+      "questionTranslations": {
+        "ru": "Этот — парк ___ мы играли в детстве.",
+        "en": "This is the park ___ we used to play as children.",
+        "de": "Dieser ist der Park ___ wir spielten als Kinder."
+      },
       "instruction": "Выберите правильный вариант",
       "options": ["donde", "que", "quien", "cuyo"],
       "answer": "donde",
@@ -222,6 +277,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "La persona ___ escribí no respondió.",
+      "questionTranslations": {
+        "ru": "Человек ___ я написал не ответил.",
+        "en": "The person ___ I wrote not answered.",
+        "de": "Die Person ___ ich schrieb nicht antwortete."
+      },
       "instruction": "Выберите правильный вариант",
       "options": ["a quien", "que", "cuyo", "donde"],
       "answer": "a quien",
@@ -231,6 +291,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "fill_blank",
       "question": "El chico ___ padre es médico estudia mucho.",
+      "questionTranslations": {
+        "ru": "Парень ___ отец — врач учится очень.",
+        "en": "The boy ___ father is doctor studies much.",
+        "de": "Der Junge ___ Vater ist Arzt studiert sehr."
+      },
       "instruction": "Заполните пропуск",
       "answer": "cuyo",
       "acceptableAnswers": ["Cuyo"],
@@ -240,6 +305,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "fill_blank",
       "question": "Conozco a alguien ___ sabe ruso.",
+      "questionTranslations": {
+        "ru": "Я знаю кто-то ___ знает русский.",
+        "en": "I know to someone ___ knows Russian.",
+        "de": "Ich kenne zu jemand ___ weiß Russisch."
+      },
       "instruction": "Заполните пропуск",
       "answer": "que",
       "acceptableAnswers": ["Que", "quien", "Quien"],
@@ -249,6 +319,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "fill_blank",
       "question": "El tema ___ hablamos es difícil.",
+      "questionTranslations": {
+        "ru": "Тема ___ мы говорим — трудно.",
+        "en": "The topic ___ we speak is difficult.",
+        "de": "Der Thema ___ wir sprechen ist schwer."
+      },
       "instruction": "Заполните пропуск",
       "answer": "del que",
       "acceptableAnswers": ["Del que", "de que"],
@@ -258,6 +333,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "fill_blank",
       "question": "No hay nada ___ me asuste.",
+      "questionTranslations": {
+        "ru": "Не есть ничего ___ мне пугает.",
+        "en": "Not there is nothing ___ me scares.",
+        "de": "Nicht es gibt nichts ___ mir erschreckt."
+      },
       "instruction": "Заполните пропуск",
       "answer": "que",
       "acceptableAnswers": ["Que"],
@@ -406,6 +486,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "Cuando llegué, ya ___ (comer).",
+      "questionTranslations": {
+        "ru": "Когда я приехал, уже ___ (comer).",
+        "en": "When I arrived, already ___ (comer).",
+        "de": "Als ich kam an, schon ___ (comer)."
+      },
       "instruction": "Выберите правильный вариант",
       "options": [
         "había comido",
@@ -453,6 +538,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "Pluscuamperfecto = ___ + participio",
+      "questionTranslations": {
+        "ru": "Плюсквамперфект = ___ + причастие",
+        "en": "Pluperfect = ___ + participle",
+        "de": "Plusquamperfekt = ___ + Partizip"
+      },
       "instruction": "Формула",
       "options": [
         "había/habías/había…",
@@ -481,6 +571,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "Si ___ (tener) dinero, viajaría.",
+      "questionTranslations": {
+        "ru": "Если ___ (tener) деньги, я бы путешествовал.",
+        "en": "If ___ (tener) money, I would travel.",
+        "de": "Wenn ___ (tener) Geld, ich würde reisen."
+      },
       "instruction": "Выберите правильный вариант",
       "options": [
         "tuviera",
@@ -543,6 +638,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "fill_blank",
       "question": "Si ___ (ser) más joven, correría más.",
+      "questionTranslations": {
+        "ru": "Если ___ (ser) моложе, я бы бегал более.",
+        "en": "If ___ (ser) younger, I would run more.",
+        "de": "Wenn ___ (ser) jünger, ich würde laufen mehr."
+      },
       "instruction": "Заполните пропуск",
       "answer": "fuera",
       "acceptableAnswers": [
@@ -558,6 +658,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "¿Ves el libro? — Sí, ___ veo.",
+      "questionTranslations": {
+        "ru": "Ты видишь книга? — да, ___ я вижу.",
+        "en": "You see the book? — yes, ___ I see.",
+        "de": "Du siehst der Buch? — ja, ___ ich sehe."
+      },
       "instruction": "Выберите правильный вариант",
       "options": [
         "lo",
@@ -572,6 +677,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "fill_blank",
       "question": "Le doy el regalo → ___ doy el regalo.",
+      "questionTranslations": {
+        "ru": "Ему я даю подарок → ___ я даю подарок.",
+        "en": "Him I give the gift → ___ I give the gift.",
+        "de": "Ihm ich gebe der Geschenk → ___ ich gebe der Geschenk."
+      },
       "instruction": "Замените le + OD",
       "answer": "Se lo",
       "acceptableAnswers": [
@@ -607,6 +717,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "¿___ escribes a María?",
+      "questionTranslations": {
+        "ru": "___ ты пишешь Мария?",
+        "en": "___ you write to María?",
+        "de": "___ du schreibst zu María?"
+      },
       "instruction": "Выберите правильный вариант",
       "options": [
         "Le",
@@ -621,6 +736,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "fill_blank",
       "question": "No ___ (entender) — habla más despacio.",
+      "questionTranslations": {
+        "ru": "Не ___ (entender) — говорит медленнее.",
+        "en": "Not ___ (entender) — speaks more slowly.",
+        "de": "Nicht ___ (entender) — spricht langsamer."
+      },
       "instruction": "Заполните пропуск",
       "answer": "lo",
       "acceptableAnswers": [
@@ -635,6 +755,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "Habla muy ___.",
+      "questionTranslations": {
+        "ru": "Говорит очень ___.",
+        "en": "Speaks very ___.",
+        "de": "Spricht sehr ___."
+      },
       "instruction": "Muy + adjetivo",
       "options": [
         "rápido",
@@ -660,6 +785,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "Quizás ___ (llover) mañana.",
+      "questionTranslations": {
+        "ru": "Возможно ___ (llover) завтра.",
+        "en": "Maybe ___ (llover) tomorrow.",
+        "de": "Vielleicht ___ (llover) morgen."
+      },
       "instruction": "Quizás + subjuntivo",
       "options": [
         "llueva",
@@ -700,6 +830,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "fill_blank",
       "question": "___ (probable) llegará tarde.",
+      "questionTranslations": {
+        "ru": "___ (probable) приедет поздно.",
+        "en": "___ (probable) will arrive late.",
+        "de": "___ (probable) wird ankommen spät."
+      },
       "instruction": "Заполните пропуск наречием",
       "answer": "Probablemente",
       "acceptableAnswers": [
@@ -714,6 +849,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "Es posible que ya ___ (terminar).",
+      "questionTranslations": {
+        "ru": "— возможно что уже ___ (terminar).",
+        "en": "Is possible that already ___ (terminar).",
+        "de": "Ist möglich dass schon ___ (terminar)."
+      },
       "instruction": "Выберите правильный вариант",
       "options": [
         "haya terminado",
@@ -762,6 +902,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "Subjuntivo compuesto = ___ + participio",
+      "questionTranslations": {
+        "ru": "Сослагательное составное = ___ + причастие",
+        "en": "Subjunctive compound = ___ + participle",
+        "de": "Konjunktiv zusammengesetzt = ___ + Partizip"
+      },
       "instruction": "Формула",
       "options": [
         "haya/hayas…",
@@ -791,6 +936,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "Si hubiera sabido, ___ (ir).",
+      "questionTranslations": {
+        "ru": "Если было бы знал, ___ (ir).",
+        "en": "If there were known, ___ (ir).",
+        "de": "Wenn es gäbe gewusst, ___ (ir)."
+      },
       "instruction": "Выберите правильный вариант",
       "options": [
         "habría ido",
@@ -840,6 +990,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "Si llueve, ___ en casa.",
+      "questionTranslations": {
+        "ru": "Если идёт дождь, ___ дома.",
+        "en": "If it rains, ___ at home.",
+        "de": "Wenn es regnet, ___ zu Hause."
+      },
       "instruction": "Si real",
       "options": [
         "me quedo",
@@ -869,6 +1024,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "La propuesta, ___ firmó el director, es clara.",
+      "questionTranslations": {
+        "ru": "Предложение, ___ подписал директор, — ясная.",
+        "en": "The proposal, ___ signed the director, is clear.",
+        "de": "Die Vorschlag, ___ unterschrieb der Direktor, ist klar."
+      },
       "instruction": "El cual",
       "options": [
         "la cual",
@@ -926,6 +1086,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "«El cual» is more common in…",
+      "questionTranslations": {
+        "ru": "«El cual» чаще встречается в…",
+        "en": "«El cual» is more common in…",
+        "de": "«El cual» ist häufiger in…"
+      },
       "instruction": "Choose the register",
       "instructionKey": "choose_option",
       "options": [
@@ -993,6 +1158,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "Estudio mucho; ___, apruebo.",
+      "questionTranslations": {
+        "ru": "Я учусь очень; ___, я сдаю.",
+        "en": "I study much; ___, I pass.",
+        "de": "Ich lerne sehr; ___, ich bestehe."
+      },
       "instruction": "Причина → следствие",
       "options": [
         "por consiguiente",
@@ -1007,6 +1177,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "fill_blank",
       "question": "___, no estoy de acuerdo.",
+      "questionTranslations": {
+        "ru": "___, не я из согласен.",
+        "en": "___, not I am of I agree.",
+        "de": "___, nicht ich bin von einverstanden."
+      },
       "instruction": "Противопоставление",
       "answer": "Sin embargo",
       "acceptableAnswers": [
@@ -1019,6 +1194,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "___ lugar, debemos definir el problema.",
+      "questionTranslations": {
+        "ru": "___ место, мы должны определить проблема.",
+        "en": "___ place, we must to define the problem.",
+        "de": "___ Ort, wir müssen definieren der Problem."
+      },
       "instruction": "Структура текста",
       "options": [
         "En primer",
@@ -1066,6 +1246,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "fill_blank",
       "question": "___ de todo, gracias por venir.",
+      "questionTranslations": {
+        "ru": "___ из всё, спасибо по приходить.",
+        "en": "___ of everything, thanks for to come.",
+        "de": "___ von alles, danke für kommen."
+      },
       "instruction": "Начало речи",
       "answer": "Ante",
       "acceptableAnswers": [
@@ -1080,6 +1265,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "Aunque ___ (llover), salimos.",
+      "questionTranslations": {
+        "ru": "Хотя ___ (llover), мы выходим.",
+        "en": "Although ___ (llover), we leave.",
+        "de": "Obwohl ___ (llover), wir gehen."
+      },
       "instruction": "Известный факт",
       "options": [
         "llueve",
@@ -1094,6 +1284,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "fill_blank",
       "question": "Aunque ___ (tener) dinero, no lo haría.",
+      "questionTranslations": {
+        "ru": "Хотя ___ (tener) деньги, не это я бы сделал.",
+        "en": "Although ___ (tener) money, not it I would do.",
+        "de": "Obwohl ___ (tener) Geld, nicht es ich würde tun."
+      },
       "instruction": "Гипотеза",
       "answer": "tuviera",
       "acceptableAnswers": [
@@ -1128,6 +1323,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "Hazlo como ___ (decir).",
+      "questionTranslations": {
+        "ru": "Сделай это как ___ (decir).",
+        "en": "Do it as ___ (decir).",
+        "de": "Mach es wie ___ (decir)."
+      },
       "instruction": "Como + indicativo",
       "options": [
         "digo",
@@ -1142,6 +1342,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "fill_blank",
       "question": "Donde ___ (haber) humo, hay fuego.",
+      "questionTranslations": {
+        "ru": "Где ___ (haber) дым, есть огонь.",
+        "en": "Where ___ (haber) smoke, there is fire.",
+        "de": "Wo ___ (haber) Rauch, es gibt Feuer."
+      },
       "instruction": "Пословица",
       "answer": "hay",
       "acceptableAnswers": [
@@ -1201,6 +1406,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "Dijo: «Vengo mañana» → Dijo que ___ al día siguiente.",
+      "questionTranslations": {
+        "ru": "Сказал: «Vengo mañana» → сказал что ___ в день следующий.",
+        "en": "Said: «Vengo mañana» → said that ___ to the day next.",
+        "de": "Sagte: «Vengo mañana» → sagte dass ___ zum Tag nächste."
+      },
       "instruction": "Сдвиг указателя",
       "options": [
         "vendría",
@@ -1248,6 +1458,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "Pidió que ___ (callar).",
+      "questionTranslations": {
+        "ru": "Попросил что ___ (callar).",
+        "en": "Asked that ___ (callar).",
+        "de": "Bat dass ___ (callar)."
+      },
       "instruction": "Выберите правильный вариант",
       "options": [
         "callara",
@@ -1321,6 +1536,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "___ bueno es que llegaste.",
+      "questionTranslations": {
+        "ru": "___ хорошо — что ты приехал.",
+        "en": "___ good is that you arrived.",
+        "de": "___ gut ist dass du kamst an."
+      },
       "instruction": "Lo + adjetivo",
       "options": [
         "Lo",
@@ -1335,6 +1555,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "fill_blank",
       "question": "A María ___ veo cada día.",
+      "questionTranslations": {
+        "ru": "Мария ___ я вижу каждый день.",
+        "en": "To María ___ I see every day.",
+        "de": "Zu María ___ ich sehe jeden Tag."
+      },
       "instruction": "Заполните пропуск",
       "answer": "la",
       "acceptableAnswers": [
@@ -1383,6 +1608,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "fill_blank",
       "question": "___ importante es participar.",
+      "questionTranslations": {
+        "ru": "___ важно — участвовать.",
+        "en": "___ important is to take part.",
+        "de": "___ wichtig ist teilnehmen."
+      },
       "instruction": "Lo + adj.",
       "answer": "Lo",
       "acceptableAnswers": [
@@ -1442,6 +1672,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "multiple_choice",
       "question": "Juan ___ listo (inteligente).",
+      "questionTranslations": {
+        "ru": "Хуан ___ готов (inteligente).",
+        "en": "Juan ___ ready (inteligente).",
+        "de": "Juan ___ bereit (inteligente)."
+      },
       "instruction": "Выберите правильный вариант",
       "options": [
         "es",
@@ -1456,6 +1691,11 @@ export const CURRICULUM_CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     {
       "type": "fill_blank",
       "question": "Juan ___ listo (preparado).",
+      "questionTranslations": {
+        "ru": "Хуан ___ готов (preparado).",
+        "en": "Juan ___ ready (preparado).",
+        "de": "Juan ___ bereit (preparado)."
+      },
       "instruction": "Заполните пропуск",
       "answer": "está",
       "acceptableAnswers": [

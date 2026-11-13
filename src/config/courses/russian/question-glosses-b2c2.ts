@@ -1,9 +1,10 @@
 import type { InterfaceLanguage } from "@/types";
 
 /**
- * Pedagogical question glosses for RKI C1–C2 (chapters 29–36).
+ * Pedagogical question glosses for RKI B2–C2.
+ * C1–C2 chapters 29–36, B2 chapters 23–28, and bridge chapters 42–45.
  * Keys = exact authored question strings. en/es/de support must not reveal the answer.
- * B2 keys, if added alongside, belong in this same export and must not be overwritten.
+ * Spread first, so a repeated stem keeps the later band's gloss.
  */
 export const RUSSIAN_QUESTION_GLOSSES_B2C2: Record<
   string,
@@ -1443,5 +1444,665 @@ export const RUSSIAN_QUESTION_GLOSSES_B2C2: Record<
     "en": "Put the words in order. Omar picks out a known argument and calls it strong.",
     "es": "Ordena las palabras. Omar destaca un argumento conocido y lo llama fuerte.",
     "de": "Bringe die Wörter in Ordnung. Omar hebt ein bekanntes Argument hervor und nennt es stark."
-  }
+  },
+
+  // ru-ch23-participles
+  "Студент, ___ доклад на семинаре вчера, сегодня отвечает на вопросы комиссии.": {
+    "en": "The student who ___ the paper at yesterday's seminar is answering the committee today. He himself finished the reading. Choose a past active participle, masculine. A passive, a present active, and a short predicate are the other options.",
+    "es": "El estudiante que ___ el informe en el seminario de ayer hoy responde a la comisión. Él mismo terminó la lectura. Elige un participio activo de pasado, masculino. Las otras opciones son un pasivo, un activo de presente y un predicado breve.",
+    "de": "Der Student, der das Referat gestern im Seminar ___, antwortet heute der Kommission. Er selbst hat die Lektüre beendet. Wähle ein aktives Partizip Präteritum, maskulin. Die anderen Optionen sind ein Passiv, ein aktives Präsens und ein kurzes Prädikat.",
+  },
+  "Статья, ___ в журнале факультета, уже стоит в списке к зачёту.": {
+    "en": "The article ___ in the faculty journal is already on the exam list. Someone published the article. Choose a past passive participle, full form, feminine, used as a modifier after the comma. The short form would be a predicate, not this modifier.",
+    "es": "El artículo ___ en la revista de la facultad ya está en la lista del examen. Alguien publicó el artículo. Elige un participio pasivo de pasado, forma plena, femenino, como atributo tras la coma. La forma breve sería predicado, no este atributo.",
+    "de": "Der Artikel, ___ in der Fachzeitschrift, steht schon auf der Prüfungsliste. Jemand hat den Artikel veröffentlicht. Wähle ein passives Partizip Präteritum, Langform, feminin, als Attribut nach dem Komma. Die Kurzform wäre Prädikat, nicht dieses Attribut.",
+  },
+  "Преподаватель, ___ семинар, просит не открывать телефоны.": {
+    "en": "The lecturer ___ the seminar asks students not to open their phones. The seminar is going on now, and he is the one leading it. Choose a present active participle. Passive forms and a past active do not fit a current action by the lecturer.",
+    "es": "El profesor ___ el seminario pide no abrir los teléfonos. El seminario va ahora, y lo dirige él. Elige un participio activo de presente. Las formas pasivas y un activo de pasado no caben en una acción actual del profesor.",
+    "de": "Der Dozent, der das Seminar ___, bittet, die Telefone nicht zu öffnen. Das Seminar läuft jetzt, und er leitet es. Wähle ein aktives Partizip Präsens. Passive Formen und ein aktives Präteritum passen nicht zu einer laufenden Handlung des Dozenten.",
+  },
+  "Текст, ___ стажёром к пятнице, лежит у куратора.": {
+    "en": "The text ___ by the intern by Friday is with the advisor. The instrumental names who did the translation, and the work is finished. Choose a past passive participle, full form.",
+    "es": "El texto ___ por el becario para el viernes está con el tutor. El instrumental nombra a quien tradujo, y el trabajo está terminado. Elige un participio pasivo de pasado, forma plena.",
+    "de": "Der Text, ___ vom Praktikanten bis Freitag, liegt beim Betreuer. Der Instrumental nennt, wer übersetzt hat, und die Arbeit ist fertig. Wähle ein passives Partizip Präteritum, Langform.",
+  },
+  "Анна, ___ все источники по Новгороду, сдала конспект.": {
+    "en": "Anna, having ___ all the sources on Novgorod, handed in her notes. She herself finished the reading before handing them in. Past active participle, feminine.",
+    "es": "Anna, que ___ todas las fuentes sobre Nóvgorod, entregó el apunte. Ella misma terminó la lectura antes de entregar. Participio activo de pasado, femenino.",
+    "de": "Anna, die alle Quellen zu Nowgorod ___, gab die Mitschrift ab. Sie selbst hat die Lektüre vor der Abgabe beendet. Aktives Partizip Präteritum, feminin.",
+  },
+  "Омар, ___ в аудиторию последним, сразу сел к окну.": {
+    "en": "Omar, who ___ the room last, sat down by the window at once. The entry is finished, which is why he could sit. Past active participle, masculine. A present active is still in progress; a passive does not mean «he entered».",
+    "es": "Omar, que ___ al aula el último, se sentó enseguida junto a la ventana. La entrada ya terminó, por eso pudo sentarse. Participio activo de pasado, masculino. Un activo de presente sigue en curso; un pasivo no significa «él entró».",
+    "de": "Omar, der als Letzter in den Raum ___, setzte sich sofort ans Fenster. Der Eintritt ist abgeschlossen, darum konnte er sich setzen. Aktives Partizip Präteritum, maskulin. Ein aktives Präsens läuft noch; ein Passiv heißt nicht «er trat ein».",
+  },
+  "Вопросы, ___ на зачёте, были из конспекта лекций.": {
+    "en": "The questions ___ at the test were from the lecture notes. Someone asked the students those questions. Past passive participle, plural, full form. The short plural would be a predicate, not a modifier between commas.",
+    "es": "Las preguntas ___ en el examen eran del apunte. Alguien se las hizo a los estudiantes. Participio pasivo de pasado, plural, forma plena. El plural breve sería predicado, no un atributo entre comas.",
+    "de": "Die Fragen, ___ in der Prüfung, stammten aus der Mitschrift. Jemand hat sie den Studierenden gestellt. Passives Partizip Präteritum, Plural, Langform. Der kurze Plural wäre Prädikat, kein Attribut zwischen Kommas.",
+  },
+  "На экране ещё не готовый проект, ___ кафедрой в этом семестре.": {
+    "en": "On the screen is a project that is not ready yet, ___ by the department this semester. The department is doing it now, and the instrumental names the agent. Choose a present passive participle.",
+    "es": "En la pantalla hay un proyecto aún no listo, ___ por el departamento este semestre. El departamento lo hace ahora, y el instrumental nombra al agente. Elige un participio pasivo de presente.",
+    "de": "Auf dem Bildschirm ist ein noch nicht fertiges Projekt, ___ vom Lehrstuhl in diesem Semester. Der Lehrstuhl arbeitet jetzt daran, der Instrumental nennt den Agens. Wähle ein passives Partizip Präsens.",
+  },
+  "Студентка, ___ статью, отметила спорный тезис.": {
+    "en": "The student (feminine), having ___ the article, marked a disputed thesis. She herself finished reading it. Past active participle of «to read», feminine singular.",
+    "es": "La estudiante, que ___ el artículo, señaló una tesis discutible. Ella misma terminó de leerlo. Participio activo de pasado de «leer», femenino singular.",
+    "de": "Die Studentin, die den Artikel ___, markierte eine strittige These. Sie selbst hat ihn zu Ende gelesen. Aktives Partizip Präteritum von «lesen», feminin Singular.",
+  },
+  "Конспект, ___ вчера, уже у преподавателя.": {
+    "en": "The notes ___ yesterday are already with the lecturer. Someone handed them in. Past passive participle of «to hand in», masculine, full form, as a modifier. Not the short predicate form.",
+    "es": "El apunte ___ ayer ya está con el profesor. Alguien lo entregó. Participio pasivo de pasado de «entregar», masculino, forma plena, como atributo. No la forma breve de predicado.",
+    "de": "Die Mitschrift, ___ gestern, ist schon bei der Lehrkraft. Jemand hat sie abgegeben. Passives Partizip Präteritum von «abgeben», maskulin, Langform, als Attribut. Nicht die kurze Prädikatsform.",
+  },
+  "Омар, ___ в читальный зал последним, извинился перед группой.": {
+    "en": "Omar, who ___ the reading room last, apologized to the group. One completed entry. Past active participle of «to enter», masculine singular.",
+    "es": "Omar, que ___ a la sala de lectura el último, se disculpó ante el grupo. Una entrada ya terminada. Participio activo de pasado de «entrar», masculino singular.",
+    "de": "Omar, der als Letzter in den Lesesaal ___, entschuldigte sich vor der Gruppe. Ein abgeschlossener Eintritt. Aktives Partizip Präteritum von «eintreten», maskulin Singular.",
+  },
+  "Лекция, ___ сейчас в третьей аудитории, открыта для подготовительного факультета.": {
+    "en": "The lecture ___ now in room three is open to the preparatory faculty. People are giving it at this moment. Present passive participle of «to read / to give a lecture», feminine. Not a reflexive «reading itself».",
+    "es": "La clase ___ ahora en el aula tres está abierta a la facultad preparatoria. La están dando en este momento. Participio pasivo de presente de «dar una clase», femenino. No un reflexivo de «leerse».",
+    "de": "Die Vorlesung, die jetzt im dritten Raum ___, ist für die Vorbereitungskurse offen. Man hält sie gerade. Passives Partizip Präsens von «lesen / eine Vorlesung halten», feminin. Kein reflexives «sich selbst lesen».",
+  },
+  "Куратор рассказал о проекте, ___ кафедрой к конференции.": {
+    "en": "The advisor spoke about the project ___ by the department for the conference. The blank agrees with «about the project» (prepositional, masculine). Past passive participle of «to develop», prepositional masculine.",
+    "es": "El tutor habló del proyecto ___ por el departamento para el congreso. El hueco concuerda con «del proyecto» (preposicional, masculino). Participio pasivo de pasado de «desarrollar», preposicional masculino.",
+    "de": "Der Betreuer erzählte von dem Projekt, ___ vom Lehrstuhl zur Konferenz. Die Lücke kongruiert mit «von dem Projekt» (Präpositiv, maskulin). Passives Partizip Präteritum von «entwickeln», Präpositiv maskulin.",
+  },
+  "Анна, ___ черновик, отправила его куратору.": {
+    "en": "Anna, having ___ the draft, sent it to the advisor. She finished the draft before sending it. Past active participle of «to finish», feminine singular.",
+    "es": "Anna, que ___ el borrador, se lo envió al tutor. Terminó el borrador antes de enviarlo. Participio activo de pasado de «terminar», femenino singular.",
+    "de": "Anna, die den Entwurf ___, schickte ihn dem Betreuer. Sie hat den Entwurf vor dem Senden beendet. Aktives Partizip Präteritum von «beenden», feminin Singular.",
+  },
+  "Работа, ___ на подготовительном факультете, вошла в сборник.": {
+    "en": "The paper ___ at the preparatory faculty went into the collection. Someone wrote the paper. Past passive participle of «to write», feminine, full form.",
+    "es": "El trabajo ___ en la facultad preparatoria entró en la recopilación. Alguien escribió el trabajo. Participio pasivo de pasado de «escribir», femenino, forma plena.",
+    "de": "Die Arbeit, ___ am Vorbereitungskurs, kam in den Sammelband. Jemand hat die Arbeit geschrieben. Passives Partizip Präteritum von «schreiben», feminin, Langform.",
+  },
+  "Студенты, ___ на конференцию утром, зарегистрировались у стойки.": {
+    "en": "The students who ___ at the conference in the morning registered at the desk. Several people completed the trip. Past active participle of «to arrive», plural.",
+    "es": "Los estudiantes que ___ al congreso por la mañana se registraron en el mostrador. Varias personas terminaron el viaje. Participio activo de pasado de «llegar», plural.",
+    "de": "Die Studierenden, die morgens zur Konferenz ___, meldeten sich am Tresen an. Mehrere Personen haben die Fahrt abgeschlossen. Aktives Partizip Präteritum von «ankommen», Plural.",
+  },
+
+  // ru-ch24-gerunds
+  "___ конспект, Анна по ходу отмечала спорные места.": {
+    "en": "___ the notes, Anna marked disputed places as she went. «As she went» and the imperfective main verb show one process. Choose an imperfective gerund of a simultaneous action, not a prior perfective and not a participle.",
+    "es": "___ el apunte, Anna iba marcando los puntos discutibles. «Sobre la marcha» y el verbo principal imperfectivo muestran un proceso. Elige un gerundio imperfectivo de acción simultánea, no un perfectivo previo ni un participio.",
+    "de": "___ die Mitschrift, markierte Anna unterwegs strittige Stellen. «Unterwegs» und das imperfektive Hauptverb zeigen einen Verlauf. Wähle ein imperfektives Adverbialpartizip der Gleichzeitigkeit, kein vorzeitiges Perfektiv und kein Partizip.",
+  },
+  "___ все источники, Омар сдал обзор куратору.": {
+    "en": "___ all the sources, Omar handed the survey to the advisor. The reading of every source finished first, then he handed it in. Choose a perfective gerund of a prior action.",
+    "es": "___ todas las fuentes, Omar entregó el resumen al tutor. La lectura de todas las fuentes terminó primero, y luego entregó. Elige un gerundio perfectivo de acción previa.",
+    "de": "___ alle Quellen, gab Omar die Übersicht beim Betreuer ab. Die Lektüre aller Quellen war zuerst fertig, dann gab er ab. Wähle ein perfektives Adverbialpartizip der Vorzeitigkeit.",
+  },
+  "___ в деканат, Анна оставила заявление на столе.": {
+    "en": "___ the dean's office, Anna left the application on the table. She entered first, then left the paper. Choose a perfective gerund. Participles that agree with Anna are the wrong part of speech here.",
+    "es": "___ al decanato, Anna dejó la solicitud en la mesa. Primero entró, luego dejó el papel. Elige un gerundio perfectivo. Los participios que concuerdan con Anna son aquí otra clase de palabra.",
+    "de": "___ das Dekanat, legte Anna den Antrag auf den Tisch. Sie trat zuerst ein, dann legte sie das Papier hin. Wähle ein perfektives Adverbialpartizip. Partizipien, die mit Anna kongruieren, sind hier die falsche Wortart.",
+  },
+  "___ к зачёту, студенты параллельно слушали запись лекции.": {
+    "en": "___ for the test, the students were at the same time listening to the lecture recording. «At the same time» holds two processes together. Choose an imperfective gerund, not a perfective «having prepared» and not a participle.",
+    "es": "___ para el examen, los estudiantes escuchaban a la vez la grabación. «A la vez» junta dos procesos. Elige un gerundio imperfectivo, no un perfectivo de «haberse preparado» ni un participio.",
+    "de": "___ auf die Prüfung, hörten die Studierenden parallel die Aufnahme. «Parallel» hält zwei Verläufe zusammen. Wähle ein imperfektives Adverbialpartizip, kein perfektives «nach der Vorbereitung» und kein Partizip.",
+  },
+  "___ перевод, стажёр только потом отправил файл на кафедру.": {
+    "en": "___ the translation, the intern sent the file to the department only afterwards. «Only afterwards» puts the sending after the end of the translation. Choose a perfective gerund of a prior action.",
+    "es": "___ la traducción, el becario solo después envió el archivo al departamento. «Solo después» pone el envío tras el fin de la traducción. Elige un gerundio perfectivo de acción previa.",
+    "de": "___ die Übersetzung, schickte der Praktikant die Datei erst danach an den Lehrstuhl. «Erst danach» setzt das Senden nach dem Ende der Übersetzung. Wähle ein perfektives Adverbialpartizip der Vorzeitigkeit.",
+  },
+  "Какое предложение с деепричастием построено верно?": {
+    "en": "Which sentence with a gerund is built correctly? The gerund and the main verb must share one subject. In the sound sentence, the same person approaches the building and hears the call. In the others, the phone, the call, or the rain is the grammatical subject.",
+    "es": "¿Qué frase con gerundio está bien construida? El gerundio y el verbo principal deben compartir un sujeto. En la frase válida, la misma persona se acerca al edificio y oye la llamada. En las otras, el sujeto es el teléfono, la llamada o la lluvia.",
+    "de": "Welcher Satz mit Adverbialpartizip ist richtig gebaut? Adverbialpartizip und finites Verb müssen ein Subjekt teilen. Im richtigen Satz nähert sich dieselbe Person dem Gebäude und hört den Anruf. In den anderen ist das Telefon, der Anruf oder der Regen das Subjekt.",
+  },
+  "___ из архива, мы сразу пошли на семинар.": {
+    "en": "___ from the archive, we went straight to the seminar. «Went straight» is the next action after the return. Choose a perfective gerund of a prior action, not a participle that agrees with «we».",
+    "es": "___ del archivo, fuimos enseguida al seminario. «Fuimos enseguida» es la acción siguiente al regreso. Elige un gerundio perfectivo de acción previa, no un participio que concuerde con «nosotros».",
+    "de": "___ aus dem Archiv, gingen wir sofort zum Seminar. «Gingen sofort» ist die nächste Handlung nach der Rückkehr. Wähle ein perfektives Adverbialpartizip der Vorzeitigkeit, kein Partizip, das mit «wir» kongruiert.",
+  },
+  "___ статью на русский, Омар по ходу сверял термины.": {
+    "en": "___ the article into Russian, Omar checked the terms as he went. «As he went» means during the translation. Choose an imperfective gerund of a simultaneous action.",
+    "es": "___ el artículo al ruso, Omar iba cotejando los términos. «Sobre la marcha» significa durante la traducción. Elige un gerundio imperfectivo de acción simultánea.",
+    "de": "___ den Artikel ins Russische, glich Omar unterwegs die Termini ab. «Unterwegs» heißt während der Übersetzung. Wähle ein imperfektives Adverbialpartizip der Gleichzeitigkeit.",
+  },
+  "___ лекцию, Анна записывала примеры в тетрадь.": {
+    "en": "___ the lecture, Anna wrote examples in her notebook. Two actions of one person at the same time. Imperfective gerund of «to listen».",
+    "es": "___ la clase, Anna anotaba ejemplos en el cuaderno. Dos acciones de una persona a la vez. Gerundio imperfectivo de «escuchar».",
+    "de": "___ die Vorlesung, schrieb Anna Beispiele ins Heft. Zwei Handlungen einer Person gleichzeitig. Imperfektives Adverbialpartizip von «zuhören».",
+  },
+  "___ заявление, Омар отнёс его в деканат.": {
+    "en": "___ the application, Omar took it to the dean's office. The form was completed first, then he took it. Perfective gerund of «to fill in».",
+    "es": "___ la solicitud, Omar la llevó al decanato. El formulario se completó primero, y luego lo llevó. Gerundio perfectivo de «rellenar».",
+    "de": "___ den Antrag, brachte Omar ihn ins Dekanat. Das Formular war zuerst ausgefüllt, dann brachte er es hin. Perfektives Adverbialpartizip von «ausfüllen».",
+  },
+  "___ по набережной, мы обсуждали доклад.": {
+    "en": "___ along the embankment, we discussed the paper. Walking and talking happen together. Imperfective gerund of «to go (on foot)».",
+    "es": "___ por el malecón, comentábamos el informe. Caminar y hablar van juntos. Gerundio imperfectivo de «ir a pie».",
+    "de": "___ am Ufer entlang, besprachen wir das Referat. Gehen und Sprechen laufen zusammen. Imperfektives Adverbialpartizip von «zu Fuß gehen».",
+  },
+  "___ все вопросы, Анна закрыла файл.": {
+    "en": "___ every question, Anna closed the file. The check ended before she closed the file. Perfective gerund of «to check».",
+    "es": "___ todas las preguntas, Anna cerró el archivo. La revisión terminó antes de cerrar el archivo. Gerundio perfectivo de «revisar».",
+    "de": "___ alle Fragen, schloss Anna die Datei. Die Prüfung war vor dem Schließen fertig. Perfektives Adverbialpartizip von «prüfen».",
+  },
+  "___ в библиотеке, Омар не слышал звонка.": {
+    "en": "___ in the library, Omar did not hear the call. Studying and not hearing the call overlap in time. Imperfective gerund of «to study / to be occupied».",
+    "es": "___ en la biblioteca, Omar no oyó la llamada. Estudiar y no oír la llamada coinciden en el tiempo. Gerundio imperfectivo de «ocuparse, estudiar».",
+    "de": "___ in der Bibliothek, hörte Omar den Anruf nicht. Lernen und das Ausbleiben des Anrufs fallen zeitlich zusammen. Imperfektives Adverbialpartizip von «sich beschäftigen».",
+  },
+  "___ справку, Анна сразу пошла в общежитие.": {
+    "en": "___ the certificate, Anna went straight to the dorm. She already has the paper, then she left. Perfective gerund of «to receive».",
+    "es": "___ el certificado, Anna fue enseguida a la residencia. Ya tiene el papel, y luego se fue. Gerundio perfectivo de «recibir».",
+    "de": "___ die Bescheinigung, ging Anna sofort ins Wohnheim. Sie hat das Papier schon, dann ging sie. Perfektives Adverbialpartizip von «erhalten».",
+  },
+  "___ ошибки, стажёр отправил текст ещё раз.": {
+    "en": "___ the mistakes, the intern sent the text again. The correction ended before the second sending. Perfective gerund of «to correct».",
+    "es": "___ los errores, el becario envió el texto otra vez. La corrección terminó antes del segundo envío. Gerundio perfectivo de «corregir».",
+    "de": "___ die Fehler, schickte der Praktikant den Text noch einmal. Die Korrektur war vor dem zweiten Senden fertig. Perfektives Adverbialpartizip von «korrigieren».",
+  },
+  "___ пароля от архива, мы так и не открыли его.": {
+    "en": "___ the archive password, we never opened it. The attempt did not reach a result. Perfective gerund of «to find out», with negation.",
+    "es": "___ la contraseña del archivo, no llegamos a abrirlo. El intento no llegó a un resultado. Gerundio perfectivo de «enterarse», con negación.",
+    "de": "___ das Passwort zum Archiv, haben wir es nie geöffnet. Der Versuch kam zu keinem Ergebnis. Perfektives Adverbialpartizip von «erfahren», mit Verneinung.",
+  },
+
+  // ru-ch25-passive
+  "Сейчас статья ___ на кафедре, результат будет в пятницу.": {
+    "en": "The article ___ at the department now; the result will be on Friday. The result is still ahead, so this is a process. Present imperfective passive, not a finished short form and not an active «they translate».",
+    "es": "Ahora el artículo ___ en el departamento; el resultado será el viernes. El resultado aún no está, así que es un proceso. Pasiva imperfectiva de presente, no una forma breve de resultado ni un activo «traducen».",
+    "de": "Der Artikel ___ jetzt am Lehrstuhl; das Ergebnis kommt am Freitag. Das Ergebnis liegt noch vor, also ist es ein Verlauf. Präsens, imperfektiv, Passiv, keine fertige Kurzform und kein aktives «sie übersetzen».",
+  },
+  "Заявление уже ___, его можно забрать в деканате.": {
+    "en": "The application is already ___; you can pick it up at the dean's office. The result exists. Short passive, neuter, matching «application». Not a process in the present.",
+    "es": "La solicitud ya ___; se puede recoger en el decanato. El resultado existe. Pasiva breve, neutro, con «solicitud». No un proceso en presente.",
+    "de": "Der Antrag ist schon ___; man kann ihn im Dekanat abholen. Das Ergebnis liegt vor. Kurzes Passiv, Neutrum, zu «Antrag». Kein Verlauf im Präsens.",
+  },
+  "Решение ___ комиссией вчера вечером.": {
+    "en": "The decision ___ by the commission yesterday evening. The instrumental is the agent, and the result is already there. Short passive, neuter. An active past feminine would clash with that instrumental.",
+    "es": "La decisión ___ por la comisión ayer por la noche. El instrumental es el agente, y el resultado ya está. Pasiva breve, neutro. Un pasado activo femenino choca con ese instrumental.",
+    "de": "Der Beschluss ___ von der Kommission gestern Abend. Der Instrumental ist der Agens, und das Ergebnis liegt vor. Kurzes Passiv, Neutrum. Ein aktives feminines Präteritum widerspricht diesem Instrumental.",
+  },
+  "На подготовительном факультете зачёты ___ каждую сессию.": {
+    "en": "At the preparatory faculty, tests ___ every session. Every session is a repeated process, not one finished result. Imperfective passive.",
+    "es": "En la facultad preparatoria los exámenes ___ cada sesión. Cada sesión es un proceso repetido, no un solo resultado. Pasiva imperfectiva.",
+    "de": "An den Vorbereitungskursen ___ Prüfungen jede Session. Jede Session ist ein wiederholter Verlauf, nicht ein einzelnes Ergebnis. Imperfektives Passiv.",
+  },
+  "Омар ___ к зачёту: справка уже в деле.": {
+    "en": "Omar ___ to the test: the certificate is already in the file. The admission is a result that exists. Short passive, masculine, because Omar is masculine. Not a process and not an active «he admitted».",
+    "es": "Omar ___ al examen: el certificado ya está en el expediente. La admisión es un resultado que existe. Pasiva breve, masculino, porque Omar es masculino. No un proceso ni un activo «él admitió».",
+    "de": "Omar ist zur Prüfung ___: die Bescheinigung liegt schon in der Akte. Die Zulassung ist ein vorhandenes Ergebnis. Kurzes Passiv, maskulin, weil Omar maskulin ist. Kein Verlauf und kein aktives «er ließ zu».",
+  },
+  "К утру проверка закончилась: все работы ___.": {
+    "en": "By morning the check was over: all the papers ___. The check had finished. A past result, plural. Not a process and not an active «they checked», and not a full participle used as a modifier.",
+    "es": "Por la mañana la revisión había terminado: todos los trabajos ___. La revisión ya acabó. Un resultado en pasado, plural. No un proceso, ni un activo «revisaron», ni un participio pleno como atributo.",
+    "de": "Am Morgen war die Prüfung vorbei: alle Arbeiten ___. Die Prüfung war abgeschlossen. Ein Ergebnis in der Vergangenheit, Plural. Kein Verlauf, kein aktives «sie prüften» und kein langes Partizip als Attribut.",
+  },
+  "Объявление уже ___ на сайте факультета.": {
+    "en": "The announcement is already ___ on the faculty site. It is there now. Short passive, neuter, matching «announcement». Not a masculine form, not an active feminine, and not a present process.",
+    "es": "El anuncio ya ___ en el sitio de la facultad. Ya está allí. Pasiva breve, neutro, con «anuncio». No una forma masculina, ni un activo femenino, ni un proceso en presente.",
+    "de": "Die Ankündigung ist schon ___ auf der Seite der Fakultät. Sie ist schon dort. Kurzes Passiv, Neutrum, zu «Ankündigung». Keine maskuline Form, kein aktives Femininum und kein Verlauf im Präsens.",
+  },
+  "Справки ___ в деканате по запросу, обычно в тот же день.": {
+    "en": "Certificates ___ at the dean's office on request, usually the same day. «On request» and «usually» are a repeated procedure, not a pile of certificates already issued. Imperfective passive.",
+    "es": "Los certificados ___ en el decanato a petición, normalmente el mismo día. «A petición» y «normalmente» son un procedimiento repetido, no un fajo ya expedido. Pasiva imperfectiva.",
+    "de": "Bescheinigungen ___ im Dekanat auf Anfrage, gewöhnlich am selben Tag. «Auf Anfrage» und «gewöhnlich» sind ein wiederholtes Verfahren, kein Stoß schon ausgestellter Bescheinigungen. Imperfektives Passiv.",
+  },
+  "Текст сейчас ___ стажёром, не отвлекайте его.": {
+    "en": "The text ___ by the intern right now; do not distract him. A process at this moment. Present, imperfective, passive of «to translate». The agent may stand in the instrumental.",
+    "es": "El texto ahora ___ por el becario; no lo distraigas. Un proceso en este momento. Presente, imperfectivo, pasiva de «traducir». El agente puede ir en instrumental.",
+    "de": "Der Text ___ gerade vom Praktikanten; lenkt ihn nicht ab. Ein Verlauf in diesem Moment. Präsens, imperfektiv, Passiv von «übersetzen». Der Agens kann im Instrumental stehen.",
+  },
+  "Заявление ___ деканом ещё утром.": {
+    "en": "The application ___ by the dean already in the morning. A result. Short passive participle of «to sign», neuter, matching «application».",
+    "es": "La solicitud ___ por el decano ya por la mañana. Un resultado. Participio pasivo breve de «firmar», neutro, con «solicitud».",
+    "de": "Der Antrag ___ vom Dekan schon am Morgen. Ein Ergebnis. Kurzes passives Partizip von «unterschreiben», Neutrum, zu «Antrag».",
+  },
+  "К зачёту Омар ___: справка из поликлиники уже в деле.": {
+    "en": "Omar ___ to the test: the clinic certificate is already in the file. A result that exists. Short passive of «to admit», masculine.",
+    "es": "Omar ___ al examen: el certificado de la clínica ya está en el expediente. Un resultado que existe. Pasiva breve de «admitir», masculino.",
+    "de": "Omar ist zur Prüfung ___: die Bescheinigung der Klinik liegt schon in der Akte. Ein vorhandenes Ergebnis. Kurzes Passiv von «zulassen», maskulin.",
+  },
+  "Анна не ___ к зачёту без справки из поликлиники.": {
+    "en": "Anna is not ___ to the test without the clinic certificate. A result about her status. Short passive of «to admit», feminine, because Anna is feminine. The negation is already in the sentence.",
+    "es": "Anna no ___ al examen sin el certificado de la clínica. Un resultado sobre su situación. Pasiva breve de «admitir», femenino, porque Anna es femenino. La negación ya está en la frase.",
+    "de": "Anna ist ohne die Bescheinigung der Klinik nicht zur Prüfung ___. Ein Ergebnis über ihren Status. Kurzes Passiv von «zulassen», feminin, weil Anna feminin ist. Die Verneinung steht schon im Satz.",
+  },
+  "К вечеру работы ___ и сданы в деканат.": {
+    "en": "By evening the papers ___ and handed in to the dean's office. A finished result. Short passive of «to check», plural, matching «papers».",
+    "es": "Por la tarde los trabajos ___ y entregados al decanato. Un resultado terminado. Pasiva breve de «revisar», plural, con «trabajos».",
+    "de": "Am Abend sind die Arbeiten ___ und im Dekanat abgegeben. Ein abgeschlossenes Ergebnis. Kurzes Passiv von «prüfen», Plural, zu «Arbeiten».",
+  },
+  "В этом семестре курс ___ на двух площадках.": {
+    "en": "This semester the course ___ on two sites. The ordinary arrangement of the semester, not one finished event. Present, imperfective, passive of «to read / to teach a course».",
+    "es": "Este semestre el curso ___ en dos sedes. El orden habitual del semestre, no un hecho ya cerrado. Presente, imperfectivo, pasiva de «dar un curso».",
+    "de": "In diesem Semester ___ der Kurs an zwei Standorten. Die gewöhnliche Ordnung des Semesters, kein einzelnes abgeschlossenes Ereignis. Präsens, imperfektiv, Passiv von «eine Lehrveranstaltung halten».",
+  },
+  "Решение ___ комиссией только завтра.": {
+    "en": "The decision ___ by the commission only tomorrow. A result still in the future. Future passive: a future of «to be» plus the short participle of «to take / to adopt», neuter. The agent is the commission.",
+    "es": "La decisión ___ por la comisión solo mañana. Un resultado aún futuro. Pasiva de futuro: futuro de «ser» más el participio breve de «adoptar», neutro. El agente es la comisión.",
+    "de": "Der Beschluss ___ von der Kommission erst morgen. Ein Ergebnis noch in der Zukunft. Futur des Passivs: Futur von «sein» plus kurzes Partizip von «fassen», Neutrum. Der Agens ist die Kommission.",
+  },
+  "Вчера доклад ___ больше часа.": {
+    "en": "Yesterday the paper ___ for more than an hour. A long process yesterday, not a finished result. Past, imperfective, passive of «to discuss», masculine.",
+    "es": "Ayer el informe ___ más de una hora. Un proceso largo ayer, no un resultado cerrado. Pasado, imperfectivo, pasiva de «debatir», masculino.",
+    "de": "Gestern ___ das Referat länger als eine Stunde. Ein langer Verlauf gestern, kein abgeschlossenes Ergebnis. Präteritum, imperfektiv, Passiv von «besprechen», maskulin.",
+  },
+
+  // ru-ch26-reported-speech
+  "Омар сказал: «Я уже сдал черновик». → Омар сказал, что ___.": {
+    "en": "Omar said: «I have already handed in the draft.» → Omar said that ___. The speaker's «I» becomes «he». The past perfective stays past. Do not keep «I», and do not switch the tense to future or to an imperfective present.",
+    "es": "Omar dijo: «Ya entregué el borrador.» → Omar dijo que ___. El «yo» del hablante pasa a «él». El pasado perfectivo sigue en pasado. No dejes el «yo» ni cambies el tiempo a futuro o a un presente imperfectivo.",
+    "de": "Omar sagte: «Ich habe den Entwurf schon abgegeben.» → Omar sagte, dass ___. Das «ich» des Sprechers wird zu «er». Das perfektive Präteritum bleibt Vergangenheit. Nicht «ich» stehen lassen und nicht ins Futur oder ins imperfektive Präsens wechseln.",
+  },
+  "Анна сообщила: «Завтра я приду на консультацию». → Анна сообщила, что завтра ___.": {
+    "en": "Anna said: «Tomorrow I will come to the consultation.» → Anna said that tomorrow ___. In the retelling the future stays future, and the person changes from «I» to «she». A past form would mean she already came.",
+    "es": "Anna dijo: «Mañana iré a la consulta.» → Anna dijo que mañana ___. En el recuento el futuro sigue en futuro, y la persona pasa de «yo» a «ella». Una forma de pasado significaría que ya fue.",
+    "de": "Anna sagte: «Morgen komme ich zur Sprechstunde.» → Anna sagte, dass morgen ___. In der Nacherzählung bleibt die Zukunft Zukunft, und die Person wechselt von «ich» zu «sie». Eine Vergangenheitsform hieße, sie sei schon gekommen.",
+  },
+  "Куратор спросил: «Где лежит заявление?» → Куратор спросил, ___.": {
+    "en": "The advisor asked: «Where is the application?» → The advisor asked ___. A question that already has «where» moves into reported speech without the yes-no particle and without question word order.",
+    "es": "El tutor preguntó: «¿Dónde está la solicitud?» → El tutor preguntó ___. Una pregunta que ya tiene «dónde» pasa al estilo indirecto sin la partícula de sí/no y sin el orden de pregunta.",
+    "de": "Der Betreuer fragte: «Wo liegt der Antrag?» → Der Betreuer fragte, ___. Eine Frage, die schon «wo» hat, geht in die indirekte Rede ohne die Ja-Nein-Partikel und ohne Fragesatzstellung.",
+  },
+  "Анна спросила Омара: «Ты отправил файл?» → Анна спросила, ___.": {
+    "en": "Anna asked Omar: «Did you send the file?» → Anna asked ___. A yes-no question takes the particle after the verb. «You» becomes «he», because she asked Omar. The particle does not sit after the pronoun, and «where» is not part of this question.",
+    "es": "Anna le preguntó a Omar: «¿Enviaste el archivo?» → Anna preguntó ___. Una pregunta de sí/no lleva la partícula después del verbo. «Tú» pasa a «él», porque le preguntó a Omar. La partícula no va tras el pronombre, y «dónde» no entra en esta pregunta.",
+    "de": "Anna fragte Omar: «Hast du die Datei geschickt?» → Anna fragte, ___. Eine Ja-Nein-Frage nimmt die Partikel nach dem Verb. «Du» wird zu «er», weil sie Omar fragte. Die Partikel steht nicht nach dem Pronomen, und «wo» gehört nicht in diese Frage.",
+  },
+  "Преподаватель попросил: «Сдайте конспект к пятнице». → Преподаватель попросил ___ к пятнице.": {
+    "en": "The lecturer asked: «Hand in the notes by Friday.» → The lecturer asked ___ by Friday. A request for the same action is reported with an infinitive after «asked», not with the imperative and not with a past tense.",
+    "es": "El profesor pidió: «Entreguen el apunte para el viernes.» → El profesor pidió ___ para el viernes. Una petición de la misma acción se cuenta con infinitivo tras «pidió», no con el imperativo ni con un pasado.",
+    "de": "Die Lehrkraft bat: «Geben Sie die Mitschrift bis Freitag ab.» → Die Lehrkraft bat, die Mitschrift bis Freitag ___. Dieselbe Bitte steht im Infinitiv nach «bat», nicht im Imperativ und nicht in der Vergangenheit.",
+  },
+  "Омар попросил: «Не открывайте архив без пароля». → Омар попросил ___ без пароля.": {
+    "en": "Omar asked: «Do not open the archive without the password.» → Omar asked ___ without the password. A ban inside a request is «not» plus an imperfective infinitive, not the imperative and not a past form.",
+    "es": "Omar pidió: «No abran el archivo sin contraseña.» → Omar pidió ___ sin contraseña. Una prohibición dentro de la petición es «no» más un infinitivo imperfectivo, no el imperativo ni un pasado.",
+    "de": "Omar bat: «Öffnen Sie das Archiv nicht ohne Passwort.» → Omar bat, das Archiv ohne Passwort ___. Ein Verbot in der Bitte ist «nicht» plus imperfektiver Infinitiv, nicht der Imperativ und keine Vergangenheitsform.",
+  },
+  "Анна ответила: «Я не согласна с оценкой». → Анна ответила, что ___.": {
+    "en": "Anna answered: «I do not agree with the grade.» → Anna answered that ___. A present state stays present in the retelling. Keep Anna's feminine agreement, and change «I» to «she». Do not push it into the past.",
+    "es": "Anna respondió: «No estoy de acuerdo con la nota.» → Anna respondió que ___. Un estado en presente sigue en presente. Conserva el acuerdo femenino de Anna y cambia «yo» por «ella». No lo pases al pasado.",
+    "de": "Anna antwortete: «Ich bin mit der Note nicht einverstanden.» → Anna antwortete, dass ___. Ein Zustand im Präsens bleibt Präsens. Annas feminines Genus bleibt, «ich» wird zu «sie». Nicht in die Vergangenheit schieben.",
+  },
+  "Секретарь уточнил: «Когда начнётся защита?» → Секретарь уточнил, ___.": {
+    "en": "The secretary asked: «When will the defense start?» → The secretary asked ___. «When» already makes the question indirect, so the yes-no particle is not added. The future stays future.",
+    "es": "El secretario precisó: «¿Cuándo empezará la defensa?» → El secretario precisó ___. «Cuándo» ya hace indirecta la pregunta, así que no se añade la partícula de sí/no. El futuro sigue en futuro.",
+    "de": "Der Sekretär fragte nach: «Wann beginnt die Verteidigung?» → Der Sekretär fragte nach, ___. «Wann» macht die Frage schon indirekt, die Ja-Nein-Partikel kommt nicht dazu. Die Zukunft bleibt Zukunft.",
+  },
+  "Омар сказал: «Я сдал черновик ещё утром». Омар сказал, что ___ черновик ещё утром.": {
+    "en": "Omar said: «I handed in the draft back in the morning.» Omar said that ___ the draft back in the morning. Replace the speaker: masculine, past perfective. «I handed in» becomes a third-person masculine past.",
+    "es": "Omar dijo: «Entregué el borrador ya por la mañana.» Omar dijo que ___ el borrador ya por la mañana. Sustituye al hablante: masculino, pasado perfectivo. «Yo entregué» pasa a un pasado masculino de tercera persona.",
+    "de": "Omar sagte: «Ich habe den Entwurf schon am Morgen abgegeben.» Omar sagte, dass er den Entwurf schon am Morgen ___. Ersetze den Sprecher: maskulin, perfektives Präteritum. «Ich gab ab» wird zur dritten Person maskulin in der Vergangenheit.",
+  },
+  "Анна сообщила: «Завтра я приду на консультацию». Анна сообщила, что завтра ___ на консультацию.": {
+    "en": "Anna said: «Tomorrow I will come to the consultation.» Anna said that tomorrow ___ to the consultation. Replace the speaker and keep the future. «I will come» becomes a third-person feminine future.",
+    "es": "Anna dijo: «Mañana iré a la consulta.» Anna dijo que mañana ___ a la consulta. Sustituye a la hablante y conserva el futuro. «Yo iré» pasa a un futuro femenino de tercera persona.",
+    "de": "Anna sagte: «Morgen komme ich zur Sprechstunde.» Anna sagte, dass sie morgen zur Sprechstunde ___. Ersetze die Sprecherin und behalte die Zukunft. «Ich komme» wird zur dritten Person feminin im Futur.",
+  },
+  "Куратор спросил: «Где лежит заявление?» Куратор спросил, ___ заявление.": {
+    "en": "The advisor asked: «Where does the application lie?» The advisor asked ___ the application. An indirect question introduced by the question word «where», with no yes-no particle.",
+    "es": "El tutor preguntó: «¿Dónde está la solicitud?» El tutor preguntó ___ la solicitud. Pregunta indirecta introducida por la palabra «dónde», sin partícula de sí/no.",
+    "de": "Der Betreuer fragte: «Wo liegt der Antrag?» Der Betreuer fragte, ___ der Antrag. Indirekte Frage mit dem Fragewort «wo», ohne Ja-Nein-Partikel.",
+  },
+  "Анна спросила: «Омар, ты отправил файл?» Анна спросила, ___ Омар файл.": {
+    "en": "Anna asked: «Omar, did you send the file?» Anna asked ___ Omar the file. A yes-no question: the verb first, then the particle. The name Omar follows that pair.",
+    "es": "Anna preguntó: «Omar, ¿enviaste el archivo?» Anna preguntó ___ Omar el archivo. Pregunta de sí/no: primero el verbo, luego la partícula. El nombre Omar va después de ese par.",
+    "de": "Anna fragte: «Omar, hast du die Datei geschickt?» Anna fragte, ___ Omar die Datei. Eine Ja-Nein-Frage: zuerst das Verb, dann die Partikel. Der Name Omar folgt auf dieses Paar.",
+  },
+  "Преподаватель попросил: «Сдайте конспект к пятнице». Преподаватель попросил ___ конспект к пятнице.": {
+    "en": "The lecturer asked: «Hand in the notes by Friday.» The lecturer asked ___ the notes by Friday. Replace the imperative with a perfective infinitive after «asked».",
+    "es": "El profesor pidió: «Entreguen el apunte para el viernes.» El profesor pidió ___ el apunte para el viernes. Sustituye el imperativo por un infinitivo perfectivo tras «pidió».",
+    "de": "Die Lehrkraft bat: «Geben Sie die Mitschrift bis Freitag ab.» Die Lehrkraft bat, die Mitschrift bis Freitag ___. Ersetze den Imperativ durch einen perfektiven Infinitiv nach «bat».",
+  },
+  "Омар попросил: «Не открывайте архив без пароля». Омар попросил ___ архив без пароля.": {
+    "en": "Omar asked: «Do not open the archive without the password.» Omar asked ___ the archive without the password. A negative request: «not» plus an imperfective infinitive.",
+    "es": "Omar pidió: «No abran el archivo sin contraseña.» Omar pidió ___ el archivo sin contraseña. Petición negativa: «no» más un infinitivo imperfectivo.",
+    "de": "Omar bat: «Öffnen Sie das Archiv nicht ohne Passwort.» Omar bat, das Archiv ohne Passwort ___. Eine verneinte Bitte: «nicht» plus imperfektiver Infinitiv.",
+  },
+  "Анна ответила: «Я не согласна с оценкой за тест». Анна ответила, что ___ с оценкой за тест.": {
+    "en": "Anna answered: «I do not agree with the test grade.» Anna answered that ___ with the test grade. Keep the present and the feminine agreement, and replace «I».",
+    "es": "Anna respondió: «No estoy de acuerdo con la nota del examen.» Anna respondió que ___ con la nota del examen. Conserva el presente y el acuerdo femenino, y sustituye «yo».",
+    "de": "Anna antwortete: «Ich bin mit der Prüfungsnote nicht einverstanden.» Anna antwortete, dass sie mit der Prüfungsnote ___. Präsens und feminines Genus bleiben, «ich» wird ersetzt.",
+  },
+  "Секретарь уточнил: «Когда начнётся защита?» Секретарь уточнил, ___ защита.": {
+    "en": "The secretary asked: «When will the defense start?» The secretary asked ___ the defense. An indirect question with «when», and no yes-no particle beside it.",
+    "es": "El secretario precisó: «¿Cuándo empezará la defensa?» El secretario precisó ___ la defensa. Pregunta indirecta con «cuándo», y sin partícula de sí/no junto a ella.",
+    "de": "Der Sekretär fragte nach: «Wann beginnt die Verteidigung?» Der Sekretär fragte nach, ___ die Verteidigung. Indirekte Frage mit «wann», ohne Ja-Nein-Partikel daneben.",
+  },
+
+  // ru-ch27-conditionals
+  "Если Анна ___ черновик сегодня, куратор посмотрит его завтра.": {
+    "en": "If Anna ___ the draft today, the advisor will look at it tomorrow. A real condition about the future: «if» plus a perfective future. The particle of hypothesis does not belong here. The options include a future, a hypothetical past, a plain past, and an infinitive.",
+    "es": "Si Anna ___ el borrador hoy, el tutor lo verá mañana. Condición real sobre el futuro: «si» más un futuro perfectivo. La partícula de hipótesis no cabe aquí. Las opciones incluyen un futuro, un pasado hipotético, un pasado simple y un infinitivo.",
+    "de": "Wenn Anna den Entwurf heute ___, sieht der Betreuer ihn morgen an. Eine reale Bedingung über die Zukunft: «wenn» plus perfektives Futur. Die Hypothesenpartikel gehört hier nicht hin. Die Optionen sind ein Futur, eine hypothetische Vergangenheit, ein schlichtes Präteritum und ein Infinitiv.",
+  },
+  "Если бы Омар ___ расписание, он не пришёл бы к закрытой двери.": {
+    "en": "If Omar ___ the schedule, he would not have come to a closed door. An unreal condition. In the «if» clause the verb is past, and a second hypothesis particle on that verb is extra. The particle is already on «if».",
+    "es": "Si Omar ___ el horario, no habría llegado a una puerta cerrada. Condición irreal. En la cláusula con «si» el verbo va en pasado, y una segunda partícula de hipótesis en ese verbo sobra. La partícula ya está en «si».",
+    "de": "Wenn Omar den Plan ___, wäre er nicht vor einer geschlossenen Tür gestanden. Eine irreale Bedingung. Im «wenn»-Satz steht das Verb in der Vergangenheit, und eine zweite Hypothesenpartikel am Verb ist zu viel. Die Partikel steht schon bei «wenn».",
+  },
+  "Омар получил бы допуск, если бы ___ работу в срок.": {
+    "en": "Omar would have received admission if he ___ the paper on time. The result already has the hypothesis particle. In the condition, use a past perfective, with no extra particle and not a future or an imperfective past.",
+    "es": "Omar habría obtenido la admisión si ___ el trabajo a tiempo. El resultado ya lleva la partícula de hipótesis. En la condición, pasado perfectivo, sin partícula extra y no un futuro ni un pasado imperfectivo.",
+    "de": "Omar hätte die Zulassung bekommen, wenn er die Arbeit fristgerecht ___. Die Folge hat die Hypothesenpartikel schon. In der Bedingung ein perfektives Präteritum, ohne Extra-Partikel, kein Futur und kein imperfektives Präteritum.",
+  },
+  "___ успеть на консультацию, Анна вышла на час раньше.": {
+    "en": "___ be on time for the consultation, Anna left an hour early. She really did leave early for a purpose. Choose the conjunction of purpose with an infinitive, not a hypothesis and not a plain «if».",
+    "es": "___ llegar a tiempo a la consulta, Anna salió una hora antes. De verdad salió antes por un fin. Elige la conjunción de finalidad con infinitivo, no una hipótesis ni un «si» simple.",
+    "de": "___ rechtzeitig zur Sprechstunde zu kommen, ging Anna eine Stunde früher. Sie ist wirklich früher gegangen, um ein Ziel zu erreichen. Wähle die Zweckkonjunktion mit Infinitiv, keine Hypothese und kein schlichtes «wenn».",
+  },
+  "Если группа ___ тест к пятнице, в понедельник будет разбор.": {
+    "en": "If the group ___ the test by Friday, there will be a review on Monday. A future review depends on a future result. Real condition: perfective future, not a hypothetical past.",
+    "es": "Si el grupo ___ el examen para el viernes, el lunes habrá un repaso. Un repaso futuro depende de un resultado futuro. Condición real: futuro perfectivo, no un pasado hipotético.",
+    "de": "Wenn die Gruppe den Test bis Freitag ___, gibt es am Montag eine Besprechung. Eine künftige Besprechung hängt von einem künftigen Ergebnis ab. Reale Bedingung: perfektives Futur, keine hypothetische Vergangenheit.",
+  },
+  "Если бы Омар ___ объявление, группа не опоздала бы.": {
+    "en": "If Omar ___ the notice, the group would not have been late. An unreal condition. Omar sets masculine agreement. With «if» plus the hypothesis particle, do not add that particle again on the verb.",
+    "es": "Si Omar ___ el aviso, el grupo no habría llegado tarde. Condición irreal. Omar fija el masculino. Con «si» y la partícula de hipótesis, no añadas esa partícula otra vez al verbo.",
+    "de": "Wenn Omar die Ankündigung ___, wäre die Gruppe nicht zu spät gekommen. Eine irreale Bedingung. Omar setzt maskulines Genus. Bei «wenn» plus Hypothesenpartikel steht die Partikel nicht noch einmal am Verb.",
+  },
+  "Анна не ___ в архив в тот день, если бы знала про ремонт.": {
+    "en": "Anna ___ to the archive that day if she had known about the repairs. The trip did not happen. In the main clause of a hypothesis you need a past perfective of a one-time action plus the hypothesis particle.",
+    "es": "Anna no ___ al archivo ese día si hubiera sabido de las obras. El viaje no ocurrió. En la principal de una hipótesis hacen falta un pasado perfectivo de una acción única y la partícula de hipótesis.",
+    "de": "Anna ___ an dem Tag nicht ins Archiv, wenn sie von der Reparatur gewusst hätte. Der Gang fand nicht statt. Im Hauptsatz einer Hypothese braucht es ein perfektives Präteritum einer einmaligen Handlung plus die Hypothesenpartikel.",
+  },
+  "Возьмите пропуск, ___ архив закроют раньше.": {
+    "en": "Take a pass ___ the archive closes early. An imperative plus a future describes a real possibility. Choose the conjunction of a real condition, not purpose, not concession, and not a hypothesis.",
+    "es": "Lleven un pase ___ el archivo cierra antes. Un imperativo y un futuro describen una posibilidad real. Elige la conjunción de condición real, no de finalidad, no de concesión y no de hipótesis.",
+    "de": "Nehmen Sie einen Ausweis mit, ___ das Archiv früher schließt. Imperativ plus Futur beschreibt eine reale Möglichkeit. Wähle die Konjunktion einer realen Bedingung, nicht Zweck, nicht Einräumung und keine Hypothese.",
+  },
+  "Если Омар ___ зачёт, он останется в общежитии на каникулы.": {
+    "en": "If Omar ___ the test, he will stay in the dorm for the holidays. A real future condition. Perfective future of «to pass / to hand in».",
+    "es": "Si Omar ___ el examen, se quedará en la residencia en las vacaciones. Condición real de futuro. Futuro perfectivo de «aprobar / entregar».",
+    "de": "Wenn Omar die Prüfung ___, bleibt er in den Ferien im Wohnheim. Eine reale Zukunftsbedingung. Perfektives Futur von «bestehen / abgeben».",
+  },
+  "Если бы Анна ___ пароль, она открыла бы архив.": {
+    "en": "If Anna ___ the password, she would have opened the archive. An unreal condition. Past of «to know», and no second hypothesis particle: it is already on «if».",
+    "es": "Si Anna ___ la contraseña, habría abierto el archivo. Condición irreal. Pasado de «saber», y sin segunda partícula de hipótesis: ya está en «si».",
+    "de": "Wenn Anna das Passwort ___, hätte sie das Archiv geöffnet. Eine irreale Bedingung. Präteritum von «wissen», und keine zweite Hypothesenpartikel: sie steht schon bei «wenn».",
+  },
+  "Омар ___ допуск, если бы сдал работу в срок.": {
+    "en": "Omar ___ admission if he had handed the paper in on time. An unreal result. Past of «to receive» plus the hypothesis particle. The particle may stand before the verb.",
+    "es": "Omar ___ la admisión si hubiera entregado el trabajo a tiempo. Resultado irreal. Pasado de «recibir» más la partícula de hipótesis. La partícula puede ir antes del verbo.",
+    "de": "Omar ___ die Zulassung, wenn er die Arbeit fristgerecht abgegeben hätte. Ein irreales Ergebnis. Präteritum von «erhalten» plus die Hypothesenpartikel. Die Partikel kann vor dem Verb stehen.",
+  },
+  "___ занять место, мы пришли за двадцать минут.": {
+    "en": "___ get a seat, we arrived twenty minutes early. A real purpose of an arrival that did happen. The conjunction of purpose, not a hypothesis.",
+    "es": "___ ocupar un sitio, llegamos veinte minutos antes. Un fin real de una llegada que sí ocurrió. La conjunción de finalidad, no una hipótesis.",
+    "de": "___ einen Platz zu bekommen, kamen wir zwanzig Minuten früher. Ein reales Ziel einer Ankunft, die stattfand. Die Zweckkonjunktion, keine Hypothese.",
+  },
+  "Если куратор ___ файл сегодня, разбор будет завтра.": {
+    "en": "If the advisor ___ the file today, the review will be tomorrow. A real condition. Perfective future of «to send (here)», one future action.",
+    "es": "Si el tutor ___ el archivo hoy, el repaso será mañana. Condición real. Futuro perfectivo de «enviar (hacia aquí)», una acción futura.",
+    "de": "Wenn der Betreuer die Datei heute ___, ist die Besprechung morgen. Eine reale Bedingung. Perfektives Futur von «hersenden», eine künftige Handlung.",
+  },
+  "Если бы мы ___ объявление, то не опоздали бы на пару.": {
+    "en": "If we ___ the notice, we would not have been late for class. An unreal condition. Past of «to see», and no second hypothesis particle.",
+    "es": "Si ___ el aviso, no habríamos llegado tarde a clase. Condición irreal. Pasado de «ver», y sin segunda partícula de hipótesis.",
+    "de": "Wenn wir die Ankündigung ___, wären wir nicht zu spät zur Stunde gekommen. Eine irreale Bedingung. Präteritum von «sehen», und keine zweite Hypothesenpartikel.",
+  },
+  "Анна ___ раньше, если бы знала про отмену пары.": {
+    "en": "Anna ___ earlier if she had known the class was cancelled. She did not leave, but she would have. An unreal result: past of «to leave / to go out» plus the hypothesis particle.",
+    "es": "Anna ___ antes si hubiera sabido que cancelaron la clase. No salió, pero habría salido. Resultado irreal: pasado de «salir» más la partícula de hipótesis.",
+    "de": "Anna ___ früher, wenn sie von der Absage der Stunde gewusst hätte. Sie ging nicht, hätte aber gehen können. Ein irreales Ergebnis: Präteritum von «hinausgehen» plus die Hypothesenpartikel.",
+  },
+  "Позвоните мне, ___ изменится время защиты.": {
+    "en": "Call me ___ the defense time changes. A real condition next to an imperative. The conjunction of a possible future change.",
+    "es": "Llámenme ___ cambia la hora de la defensa. Condición real junto a un imperativo. La conjunción de un cambio futuro posible.",
+    "de": "Rufen Sie mich an, ___ sich die Zeit der Verteidigung ändert. Eine reale Bedingung neben einem Imperativ. Die Konjunktion einer möglichen künftigen Änderung.",
+  },
+
+  // ru-ch28-formal-register
+  "___ предоставить мне место в общежитии на второй семестр.": {
+    "en": "___ grant me a place in the dorm for the second semester. The sentence opens an official request and continues with an infinitive. Choose the 1st-person formula that can take that infinitive. «I want», an imperative «give», and «let» do not open this pattern.",
+    "es": "___ concederme una plaza en la residencia para el segundo semestre. La frase abre una petición oficial y sigue con un infinitivo. Elige la fórmula de 1.ª persona que puede llevar ese infinitivo. «Quiero», un imperativo «den» y «que» no abren este esquema.",
+    "de": "___ mir einen Wohnheimplatz für das zweite Semester zu gewähren. Der Satz eröffnet ein offizielles Gesuch und geht mit einem Infinitiv weiter. Wähle die Formel der 1. Person, die diesen Infinitiv tragen kann. «Ich will», ein Imperativ «geben Sie» und «lass» eröffnen dieses Muster nicht.",
+  },
+  "___ Иван Петрович, направляю заявление на академический отпуск.": {
+    "en": "___ Ivan Petrov, I am sending an application for academic leave. An official address to a man in a letter to the dean's office. Not a feminine form, not an intimate «dear», and not «hi».",
+    "es": "___ Iván Petróvich, envío una solicitud de baja académica. Tratamiento oficial a un hombre en una carta al decanato. No una forma femenina, no un «querido» íntimo y no un «hola».",
+    "de": "___ Iwan Petrowitsch, ich sende einen Antrag auf Urlaubssemester. Eine offizielle Anrede an einen Mann im Brief ans Dekanat. Keine feminine Form, kein vertrauliches «lieber» und kein «hallo».",
+  },
+  "Справка выдана ___ приказа ректора.": {
+    "en": "The certificate was issued ___ the rector's order. After the formula comes a genitive («of the order»). Choose the official formula of grounds, not a cause conjunction and not «thanks to».",
+    "es": "El certificado se expidió ___ la orden del rector. Tras la fórmula va un genitivo («de la orden»). Elige la fórmula oficial de fundamento, no una conjunción de causa ni «gracias a».",
+    "de": "Die Bescheinigung wurde ___ der Anordnung des Rektors ausgestellt. Nach der Formel steht ein Genitiv («der Anordnung»). Wähle die offizielle Formel des Grundes, keine Kausalkonjunktion und nicht «dank».",
+  },
+  "___ расписанию, а не по просьбе группы, зачёт перенесён на четверг.": {
+    "en": "___ the timetable, and not at the group's request, the test was moved to Thursday. The next word is dative. Choose the preposition of conformity, not a preposition of cause and not one of movement toward someone.",
+    "es": "___ el horario, y no a petición del grupo, el examen se pasó al jueves. La palabra siguiente va en dativo. Elige la preposición de conformidad, no una de causa ni una de movimiento hacia alguien.",
+    "de": "___ dem Stundenplan, und nicht auf Bitte der Gruppe, wurde die Prüfung auf Donnerstag verschoben. Das folgende Wort steht im Dativ. Wähle die Präposition der Übereinstimmung, nicht eine der Ursache und nicht eine der Bewegung auf jemanden zu.",
+  },
+  "___ с болезнью прошу разрешить мне пропустить практику 12 ноября.": {
+    "en": "___ illness I request permission to miss the practical on 12 November. The preposition «with» is already in the sentence. Choose the official link of cause that stands before that «with». «Alongside» would mean «on a par with», not a cause.",
+    "es": "___ la enfermedad pido que se me permita faltar a la práctica del 12 de noviembre. La preposición «con» ya está en la frase. Elige el nexo oficial de causa que va antes de ese «con». «Junto con» significaría «a la par», no una causa.",
+    "de": "___ Krankheit bitte ich, die Praxis am 12. November ausfallen lassen zu dürfen. Die Präposition «mit» steht schon im Satz. Wähle die offizielle Kausalverbindung, die vor diesem «mit» steht. «Neben» hieße «gleichrangig», nicht eine Ursache.",
+  },
+  "___ Вас в известность, что я не смогу присутствовать на собрании.": {
+    "en": "___ you informed that I will not be able to attend the meeting. This is the set official formula «to put someone in the know». An ordinary «I tell» or a bare «I request» does not complete that formula.",
+    "es": "___ a usted al tanto de que no podré asistir a la reunión. Es la fórmula oficial fija de «poner a alguien en conocimiento». Un «le digo» corriente o un «pido» suelto no completan esa fórmula.",
+    "de": "___ Sie in Kenntnis, dass ich an der Versammlung nicht teilnehmen kann. Das ist die feste Amtsformel «jemanden in Kenntnis setzen». Ein gewöhnliches «ich sage» oder ein bloßes «ich bitte» schließt die Formel nicht.",
+  },
+  "Прошу ___ мне справку об обучении для посольства.": {
+    "en": "I request ___ me a certificate of enrollment for the embassy. After the request formula, use a perfective infinitive. An imperative, a noun, and a short passive do not follow that formula.",
+    "es": "Pido ___ me un certificado de estudios para la embajada. Tras la fórmula de petición, un infinitivo perfectivo. Un imperativo, un sustantivo y una pasiva breve no siguen a esa fórmula.",
+    "de": "Ich bitte, mir eine Studienbescheinigung für die Botschaft ___. Nach der Bitteformel steht ein perfektiver Infinitiv. Ein Imperativ, ein Substantiv und ein kurzes Passiv folgen dieser Formel nicht.",
+  },
+  "___ к заявлению: копия паспорта и копия студенческого билета.": {
+    "en": "___ to the application: a copy of the passport and a copy of the student card. This is the heading of the document list at the end of an application. Not a short passive, not a gerund, and not «I am attaching» as a heading.",
+    "es": "___ a la solicitud: copia del pasaporte y copia del carné de estudiante. Es el título de la lista de documentos al final de una solicitud. No una pasiva breve, no un gerundio y no «adjunto» como título.",
+    "de": "___ zum Antrag: eine Kopie des Passes und eine Kopie des Studentenausweises. Das ist die Überschrift der Dokumentenliste am Ende eines Antrags. Kein kurzes Passiv, kein Adverbialpartizip und nicht «ich lege bei» als Überschrift.",
+  },
+  "___ разрешить мне досрочную сдачу зачёта по грамматике.": {
+    "en": "___ allow me an early sitting of the grammar test. An official request formula, 1st person singular, followed by an infinitive.",
+    "es": "___ que se me permita examinarme antes de gramática. Fórmula oficial de petición, 1.ª persona del singular, seguida de un infinitivo.",
+    "de": "___ mir eine vorgezogene Grammatikprüfung zu erlauben. Offizielle Bitteformel, 1. Person Singular, gefolgt von einem Infinitiv.",
+  },
+  "___ Анна Сергеевна, направляю Вам справку о регистрации.": {
+    "en": "___ Anna Sergeyevna, I am sending you the registration certificate. An official address to a woman. Feminine form of the formal salutation.",
+    "es": "___ Anna Serguéyevna, le envío el certificado de registro. Tratamiento oficial a una mujer. Forma femenina del saludo formal.",
+    "de": "___ Anna Sergejewna, ich sende Ihnen die Meldebescheinigung. Offizielle Anrede an eine Frau. Feminine Form der förmlichen Anrede.",
+  },
+  "Место в общежитии предоставлено ___ приказа ректора.": {
+    "en": "The dorm place was granted ___ the rector's order. The formula of official grounds before a genitive. The genitive «of the order» is already in the sentence.",
+    "es": "La plaza en la residencia se concedió ___ la orden del rector. La fórmula de fundamento oficial ante un genitivo. El genitivo «de la orden» ya está en la frase.",
+    "de": "Der Wohnheimplatz wurde ___ der Anordnung des Rektors gewährt. Die Formel des amtlichen Grundes vor einem Genitiv. Der Genitiv «der Anordnung» steht schon im Satz.",
+  },
+  "___ приказу ректора, а не по просьбе студентов, зачёт перенесён на четверг.": {
+    "en": "___ the rector's order, and not at the students' request, the test was moved to Thursday. A preposition of conformity, not of cause. The next noun is dative.",
+    "es": "___ la orden del rector, y no a petición de los estudiantes, el examen se pasó al jueves. Preposición de conformidad, no de causa. El sustantivo siguiente va en dativo.",
+    "de": "___ der Anordnung des Rektors, und nicht auf Bitte der Studierenden, wurde die Prüfung auf Donnerstag verschoben. Eine Präposition der Übereinstimmung, nicht der Ursache. Das folgende Substantiv steht im Dativ.",
+  },
+  "___ с переездом кафедры прошу перенести консультацию.": {
+    "en": "___ the department's move I request that the consultation be postponed. An official link of cause that stands before the preposition «with», which is already written.",
+    "es": "___ la mudanza del departamento pido aplazar la consulta. Nexo oficial de causa que va antes de la preposición «con», que ya está escrita.",
+    "de": "___ mit dem Umzug des Lehrstuhls bitte ich, die Sprechstunde zu verschieben. Offizielle Kausalverbindung, die vor der Präposition «mit» steht; «mit» ist schon geschrieben.",
+  },
+  "___ Вас в известность о смене аудитории.": {
+    "en": "___ you informed of the room change. The official formula of a notice, 1st person of the verb «to put / to set».",
+    "es": "___ a usted al tanto del cambio de aula. La fórmula oficial de un aviso, 1.ª persona del verbo «poner».",
+    "de": "___ Sie vom Raumwechsel in Kenntnis. Die offizielle Formel einer Mitteilung, 1. Person des Verbs «setzen».",
+  },
+  "Прошу ___ мне копию договора об обучении. В черновике было: «Выдайте копию».": {
+    "en": "I request ___ me a copy of the study contract. The draft had an imperative «Issue a copy». After the request formula that imperative becomes a perfective infinitive.",
+    "es": "Pido ___ me una copia del contrato de estudios. El borrador tenía un imperativo «Expidan una copia». Tras la fórmula de petición ese imperativo se vuelve un infinitivo perfectivo.",
+    "de": "Ich bitte, mir eine Kopie des Studienvertrags ___. Im Entwurf stand ein Imperativ «Stellen Sie eine Kopie aus». Nach der Bitteformel wird dieser Imperativ zum perfektiven Infinitiv.",
+  },
+  "___ к заявлению: копия медицинской справки.": {
+    "en": "___ to the application: a copy of the medical certificate. The heading of the document list at the end of an application.",
+    "es": "___ a la solicitud: copia del certificado médico. El título de la lista de documentos al final de una solicitud.",
+    "de": "___ zum Antrag: eine Kopie der ärztlichen Bescheinigung. Die Überschrift der Dokumentenliste am Ende eines Antrags.",
+  },
+
+  // ru-ch42-syntax-complexity
+  "Где нужна запятая: «Я перенёс консультацию ___ потому что болел.»": {
+    "en": "Where is the comma needed: «I moved the consultation ___ because I was ill.» A reason clause is set off by a comma. The options are a comma, a full stop, no mark, or a colon before the reason conjunction.",
+    "es": "¿Dónde hace falta la coma: «Aplacé la consulta ___ porque estaba enfermo.»? Una subordinada de causa se separa con coma. Las opciones son una coma, un punto, ningún signo o dos puntos ante la conjunción de causa.",
+    "de": "Wo braucht es das Komma: «Ich habe die Sprechstunde verlegt ___ weil ich krank war.» Ein Kausalsatz wird durch ein Komma abgetrennt. Die Optionen sind ein Komma, ein Punkt, kein Zeichen oder ein Doppelpunkt vor der Kausalkonjunktion.",
+  },
+  "Какая фраза держит причину и уступку, не ломая союз?": {
+    "en": "Which sentence holds both a reason and a concession without breaking the conjunction? You need both clauses: one of cause and one of concession. A reason alone, a concession alone, or a purpose conjunction used for illness is not the whole sentence.",
+    "es": "¿Qué frase sostiene causa y concesión sin romper la conjunción? Hacen falta las dos subordinadas: una de causa y una de concesión. Solo la causa, solo la concesión o una conjunción de finalidad usada para la enfermedad no es la frase entera.",
+    "de": "Welcher Satz hält Grund und Einräumung, ohne die Konjunktion zu zerbrechen? Es braucht beide Nebensätze: einen der Ursache und einen der Einräumung. Nur der Grund, nur die Einräumung oder eine Zweckkonjunktion für die Krankheit ist nicht der ganze Satz.",
+  },
+  "Цель записи на приём. Какой союз?": {
+    "en": "The purpose of booking an appointment. Which conjunction? Choose the conjunction of purpose. Cause, concession, and time are the other options.",
+    "es": "El fin de pedir cita. ¿Qué conjunción? Elige la conjunción de finalidad. Causa, concesión y tiempo son las otras opciones.",
+    "de": "Der Zweck der Terminbuchung. Welche Konjunktion? Wähle die Zweckkonjunktion. Ursache, Einräumung und Zeit sind die anderen Optionen.",
+  },
+  "Что слабее из-за двух одинаковых «что»?": {
+    "en": "Which sentence is weaker because of two identical «that»? Repeating «that… that» is the heavy line. A sentence that switches the second link to a relative, a condition, or a reason is clearer.",
+    "es": "¿Qué frase es más débil por dos «que» iguales? Repetir «que… que» es la frase pesada. Una frase que cambia el segundo nexo por un relativo, una condición o una causa queda más clara.",
+    "de": "Welcher Satz ist schwächer wegen zweier gleicher «dass»? «Dass… dass» zu wiederholen ist der schwere Satz. Ein Satz, der das zweite Bindewort durch ein Relativ, eine Bedingung oder einen Grund ersetzt, ist klarer.",
+  },
+  "Комиссия примет заявку, ___ я запишусь на приём.": {
+    "en": "The committee will accept the application ___ I book an appointment. The blank is the conjunction of a real condition.",
+    "es": "La comisión aceptará la solicitud ___ pida cita. El hueco es la conjunción de una condición real.",
+    "de": "Die Kommission nimmt den Antrag an, ___ ich einen Termin buche. Die Lücke ist die Konjunktion einer realen Bedingung.",
+  },
+  "Я написал куратору, ___ уточнить срок.": {
+    "en": "I wrote to the advisor ___ clarify the deadline. A purpose link of three words, then an infinitive. The subject of both parts is the same person.",
+    "es": "Escribí al tutor ___ precisar el plazo. Un nexo de finalidad de tres palabras, y luego un infinitivo. El sujeto de las dos partes es la misma persona.",
+    "de": "Ich schrieb dem Betreuer, ___ die Frist zu klären. Eine Zweckverbindung aus drei Wörtern, danach ein Infinitiv. Das Subjekt beider Teile ist dieselbe Person.",
+  },
+  "Мы сдали текст ___ того как проверка кончилась.": {
+    "en": "We handed in the text ___ the check had ended. The rest of the conjunction («…that as / once») is already in the sentence. The blank is only its first word, the one that means «after».",
+    "es": "Entregamos el texto ___ que terminó la revisión. El resto de la conjunción ya está en la frase. El hueco es solo su primera palabra, la que significa «después».",
+    "de": "Wir gaben den Text ab, ___ die Prüfung zu Ende war. Der Rest der Konjunktion steht schon im Satz. Die Lücke ist nur ihr erstes Wort, das «nach» bedeutet.",
+  },
+  "Срок короткий, ___ источников всё ещё мало.": {
+    "en": "The deadline is short, ___ there are still few sources. The blank is the conjunction of result, two words, meaning «so / therefore».",
+    "es": "El plazo es corto, ___ sigue habiendo pocas fuentes. El hueco es la conjunción de consecuencia, dos palabras, con el sentido de «así que».",
+    "de": "Die Frist ist kurz, ___ es immer noch wenige Quellen gibt. Die Lücke ist die Konjunktion der Folge, zwei Wörter, in der Bedeutung «sodass».",
+  },
+
+  // ru-ch43-written-discourse
+  "Новая микротема в письменном тексте. Что делать?": {
+    "en": "A new micro-topic in a written text. What do you do? Choose the step that gives the new point its own paragraph. Leaving it in the same paragraph, stripping every link, or repeating the first word ten times does not open a new point.",
+    "es": "Un microtema nuevo en un texto escrito. ¿Qué hay que hacer? Elige el paso que da al punto nuevo su propio párrafo. Dejarlo en el mismo párrafo, quitar todos los nexos o repetir la primera palabra diez veces no abre un punto nuevo.",
+    "de": "Ein neues Mikrothema in einem geschriebenen Text. Was ist zu tun? Wähle den Schritt, der dem neuen Punkt einen eigenen Absatz gibt. Es im selben Absatz zu lassen, alle Bindewörter zu streichen oder das erste Wort zehnmal zu wiederholen eröffnet keinen neuen Punkt.",
+  },
+  "Какая связка добавляет довод, а не противопоставляет?": {
+    "en": "Which linker adds a point instead of opposing one? Choose the linker of addition. The linker of contrast, a bare «on the contrary» with no link, and a full stop are the other options.",
+    "es": "¿Qué nexo añade un argumento en vez de oponerlo? Elige el nexo de adición. El nexo de contraste, un «al contrario» suelto y un punto son las otras opciones.",
+    "de": "Welches Bindewort fügt ein Argument hinzu, statt eines entgegenzusetzen? Wähle das Bindewort der Ergänzung. Das Bindewort des Gegensatzes, ein bloßes «im Gegenteil» ohne Anschluss und ein Punkt sind die anderen Optionen.",
+  },
+  "«Текст длинный. Однако не показывает метод.» Почему фраза рвётся?": {
+    "en": "«The text is long. However does not show the method.» Why does the sentence break? The second sentence has a linker and no subject. Too many paragraphs, the presence of the contrast word itself, or «only one micro-topic» is not the break.",
+    "es": "«El texto es largo. Sin embargo no muestra el método.» ¿Por qué se rompe la frase? La segunda oración tiene un nexo y no tiene sujeto. Demasiados párrafos, la mera presencia del contraste o «un solo microtema» no son la rotura.",
+    "de": "«Der Text ist lang. Jedoch zeigt nicht die Methode.» Warum bricht der Satz? Dem zweiten Satz fehlt das Subjekt. Zu viele Absätze, das bloße Vorhandensein des Gegensatzwortes oder «nur ein Mikrothema» ist nicht der Bruch.",
+  },
+  "Где стоит вывод абзаца, если мысль уже доказана?": {
+    "en": "Where does the paragraph's conclusion stand once the point is already shown? Choose the close of the paragraph. It does not stand before the topic sentence, in place of the micro-topic, or in another chapter's title.",
+    "es": "¿Dónde va la conclusión del párrafo si la idea ya está demostrada? Elige el cierre del párrafo. No va antes de la frase temática, en lugar del microtema ni en el título de otro capítulo.",
+    "de": "Wo steht der Schluss des Absatzes, wenn der Gedanke schon belegt ist? Wähle den Schluss des Absatzes. Er steht nicht vor dem Themensatz, nicht anstelle des Mikrothemas und nicht in der Überschrift eines fremden Kapitels.",
+  },
+  "Первое предложение абзаца называет ___.": {
+    "en": "The first sentence of a paragraph names the ___. One word: the accusative of the noun «micro-topic». A topic sentence names that unit.",
+    "es": "La primera frase del párrafo nombra la ___. Una palabra: el acusativo del sustantivo «microtema». La frase temática nombra esa unidad.",
+    "de": "Der erste Satz eines Absatzes nennt das ___. Ein Wort: der Akkusativ des Substantivs «Mikrothema». Ein Themensatz benennt diese Einheit.",
+  },
+  "Текст длинный. Однако ___ не показывает метод.": {
+    "en": "The text is long. However, ___ does not show the method. The blank replaces a repeat of the noun «text». A masculine singular pronoun, because «text» is masculine.",
+    "es": "El texto es largo. Sin embargo, ___ no muestra el método. El hueco sustituye una repetición del sustantivo «texto». Un pronombre masculino singular, porque «texto» es masculino.",
+    "de": "Der Text ist lang. Jedoch zeigt ___ die Methode nicht. Die Lücke ersetzt eine Wiederholung des Substantivs «Text». Ein maskulines Singularpronomen, weil «Text» maskulin ist.",
+  },
+  "Срок близкий. ___, источников всё ещё мало.": {
+    "en": "The deadline is close. ___, there are still few sources. The blank is a contrast linker. It may stand inside a paragraph or at the joint between sentences.",
+    "es": "El plazo está cerca. ___, sigue habiendo pocas fuentes. El hueco es un nexo de contraste. Puede ir dentro del párrafo o en la juntura de las oraciones.",
+    "de": "Die Frist ist nah. ___, es gibt immer noch wenige Quellen. Die Lücke ist ein Bindewort des Gegensatzes. Es kann im Absatz oder an der Satzfuge stehen.",
+  },
+  "Метод описан коротко, ___, на двух страницах есть таблица.": {
+    "en": "The method is described briefly, ___, on two pages there is a table. The blank introduces an example. One linker, meaning «for example».",
+    "es": "El método está descrito en breve, ___, en dos páginas hay una tabla. El hueco introduce un ejemplo. Un nexo, con el sentido de «por ejemplo».",
+    "de": "Die Methode ist kurz beschrieben, ___, auf zwei Seiten steht eine Tabelle. Die Lücke führt ein Beispiel ein. Ein Bindewort in der Bedeutung «zum Beispiel».",
+  },
+
+  // ru-ch44-critique-review
+  "Уступка в рецензии нужна, чтобы…": {
+    "en": "A concession in a review is needed in order to… Choose its function: it shows the limit of the evaluation. It does not cancel a strength, replace the conclusion with a plot summary, or remove the criterion.",
+    "es": "Una concesión en una reseña hace falta para… Elige su función: muestra el límite de la valoración. No anula un punto fuerte, no cambia la conclusión por un resumen ni quita el criterio.",
+    "de": "Eine Einräumung in einer Rezension ist nötig, um… Wähle ihre Funktion: sie zeigt die Grenze der Bewertung. Sie hebt eine Stärke nicht auf, ersetzt den Schluss nicht durch eine Nacherzählung und streicht das Kriterium nicht.",
+  },
+  "Какая связка ставит границу после похвалы?": {
+    "en": "Which linker sets a limit after praise? Choose the linker that brings in a weak side after a strong one. Repeating the same praise, jumping to «bad» with no linker, and a word of pretense are not that limit.",
+    "es": "¿Qué nexo pone un límite después del elogio? Elige el nexo que trae el lado débil tras el fuerte. Repetir el mismo elogio, saltar a «malo» sin nexo y una palabra de apariencia no son ese límite.",
+    "de": "Welches Bindewort setzt nach dem Lob eine Grenze? Wähle das Bindewort, das nach einer Stärke eine Schwäche einführt. Dasselbe Lob zu wiederholen, ohne Bindewort zu «schlecht» zu springen und ein Wort des Anscheins ist diese Grenze nicht.",
+  },
+  "«Заслуживает внимания» в рецензии значит…": {
+    "en": "In a review, «deserves attention» means… There is something to examine further; it is not a mark of «excellent». It does not mean the work is flawless, that it should be withdrawn, or that the source is anonymous.",
+    "es": "En una reseña, «merece atención» significa… Hay algo que seguir examinando; no es una nota de «excelente». No significa que el trabajo sea impecable, que haya que retirarlo ni que la fuente sea anónima.",
+    "de": "In einer Rezension heißt «verdient Aufmerksamkeit»… Es gibt etwas weiter zu prüfen; es ist keine Note «ausgezeichnet». Es heißt nicht, die Arbeit sei makellos, sie sei zurückzuziehen oder die Quelle sei anonym.",
+  },
+  "Тезис уже опровергнут. Какая уступка спорит сама с собой?": {
+    "en": "The thesis has already been refuted. Which concession argues against itself? After a refutation you cannot concede that «it is true» with no new limit. A narrow conclusion beside a clear method, or a noted table beside a small sample, is a coherent limit.",
+    "es": "La tesis ya está refutada. ¿Qué concesión se contradice? Tras una refutación no se puede ceder que «es verdad» sin un límite nuevo. Una conclusión estrecha junto a un método claro, o una tabla señalada junto a una muestra pequeña, es un límite coherente.",
+    "de": "Die These ist schon widerlegt. Welche Einräumung widerspricht sich selbst? Nach einer Widerlegung kann man nicht ohne neue Grenze zugeben, «es sei wahr». Ein enger Schluss neben einer klaren Methode oder eine genannte Tabelle neben einer kleinen Stichprobe ist eine stimmige Grenze.",
+  },
+  "Автор ___ показывает связь вопроса и вида.": {
+    "en": "The author ___ shows the link between the question and the aspect. The blank is an adverb of evaluation meaning «convincingly». It marks a strength.",
+    "es": "El autor ___ muestra el vínculo entre la pregunta y el aspecto. El hueco es un adverbio de valoración con el sentido de «de modo convincente». Marca un punto fuerte.",
+    "de": "Der Autor zeigt den Zusammenhang von Frage und Aspekt ___. Die Lücke ist ein Bewertungsadverb in der Bedeutung «überzeugend». Es markiert eine Stärke.",
+  },
+  "Вместе с тем вывод ___ обоснован: устного семинара в материале нет.": {
+    "en": "At the same time the conclusion is ___ grounded: the oral seminar is not in the material. The blank is an adverb of a limit, meaning «not enough». It limits the conclusion; it does not cancel the whole paper.",
+    "es": "Al mismo tiempo la conclusión está ___ fundamentada: el seminario oral no está en el material. El hueco es un adverbio de límite, con el sentido de «no lo bastante». Limita la conclusión; no anula todo el trabajo.",
+    "de": "Zugleich ist der Schluss ___ begründet: das mündliche Seminar fehlt im Material. Die Lücke ist ein Adverb der Grenze in der Bedeutung «nicht ausreichend». Es begrenzt den Schluss; es hebt die ganze Arbeit nicht auf.",
+  },
+  "___ отметить удачную таблицу во втором разделе.": {
+    "en": "___ note the successful table in the second section. An impersonal frame of two words. The blank is only the first word, an impersonal «one should».",
+    "es": "___ señalar la tabla lograda de la segunda sección. Un marco impersonal de dos palabras. El hueco es solo la primera, un impersonal de «conviene».",
+    "de": "___ die gelungene Tabelle im zweiten Abschnitt hervorheben. Ein unpersönlicher Rahmen aus zwei Wörtern. Die Lücke ist nur das erste Wort, ein unpersönliches «man soll».",
+  },
+  "Работа заслуживает ___, но рекомендация должна быть конкретной.": {
+    "en": "The paper deserves ___, but the recommendation must be concrete. Genitive of the noun «attention», after the verb «to deserve».",
+    "es": "El trabajo merece ___, pero la recomendación debe ser concreta. Genitivo del sustantivo «atención», tras el verbo «merecer».",
+    "de": "Die Arbeit verdient ___, die Empfehlung muss aber konkret sein. Genitiv des Substantivs «Aufmerksamkeit», nach dem Verb «verdienen».",
+  },
+
+  // ru-ch45-academic-writing
+  "«Цель исследования» должна называть…": {
+    "en": "«The aim of the study» should name… Choose what the frame contains: an action such as to show, to describe, or to compare. Not only the adjective «relevant», not the whole bibliography, and not a particle.",
+    "es": "«El objetivo del estudio» debe nombrar… Elige el contenido del marco: una acción como mostrar, describir o comparar. No solo el adjetivo «actual», no la bibliografía entera y no una partícula.",
+    "de": "«Das Ziel der Untersuchung» soll nennen… Wähle den Inhalt des Rahmens: eine Handlung wie zeigen, beschreiben oder vergleichen. Nicht nur das Adjektiv «aktuell», nicht das ganze Literaturverzeichnis und keine Partikel.",
+  },
+  "«Таким образом» закрывает…": {
+    "en": "«Thus» closes… Choose its function: only what has already been shown above. It does not open a new topic with no arguments, a title, or a refusal of the methods.",
+    "es": "«Así» cierra… Elige su función: solo lo que ya se mostró arriba. No abre un tema nuevo sin argumentos, ni un título, ni un rechazo de los métodos.",
+    "de": "«Somit» schließt… Wähle die Funktion: nur das, was oben schon gezeigt wurde. Es eröffnet kein neues Thema ohne Argumente, keine Überschrift und keine Absage an die Methoden.",
+  },
+  "«Во-первых» и «во-вторых» уместны, когда…": {
+    "en": "«First» and «second» are appropriate when… Choose the condition: they are two different arguments. Two synonyms of one argument, no arguments, or a date alone do not justify the numbering.",
+    "es": "«En primer lugar» y «en segundo lugar» caben cuando… Elige la condición: son dos argumentos distintos. Dos sinónimos de un solo argumento, ningún argumento o solo una fecha no justifican la numeración.",
+    "de": "«Erstens» und «zweitens» passen, wenn… Wähle die Bedingung: es sind zwei verschiedene Argumente. Zwei Synonyme eines Arguments, keine Argumente oder nur ein Datum rechtfertigen die Nummerierung nicht.",
+  },
+  "Что делать, если новизны нет?": {
+    "en": "What do you do if there is no novelty? Choose the step: drop that step instead of filling it with a vague adjective. Writing «very new», repeating relevance three times, or deleting the aim is not the honest move.",
+    "es": "¿Qué hacer si no hay novedad? Elige el paso: quitar ese paso en vez de llenarlo con un adjetivo vago. Escribir «muy nuevo», repetir la actualidad tres veces o borrar el objetivo no es el paso honesto.",
+    "de": "Was tun, wenn es keine Neuheit gibt? Wähle den Schritt: den Schritt streichen, statt ihn mit einem vagen Adjektiv zu füllen. «Sehr neu» zu schreiben, die Aktualität dreimal zu wiederholen oder das Ziel zu streichen ist nicht der redliche Schritt.",
+  },
+  "___ исследования — показать, какой вопрос различает виды.": {
+    "en": "The ___ of the study is to show which question distinguishes the aspects. Nominative of the noun «aim». The frame names an action, not an empty adjective.",
+    "es": "El ___ del estudio es mostrar qué pregunta distingue los aspectos. Nominativo del sustantivo «objetivo». El marco nombra una acción, no un adjetivo vacío.",
+    "de": "Das ___ der Untersuchung ist zu zeigen, welche Frage die Aspekte unterscheidet. Nominativ des Substantivs «Ziel». Der Rahmen nennt eine Handlung, kein leeres Adjektiv.",
+  },
+  "___ исследования устный семинар не рассматривается.": {
+    "en": "___ of the study the oral seminar is not considered. A two-word frame of a limit. The blank is both words; the first is the preposition «in». It marks the boundary of the material.",
+    "es": "___ del estudio no se considera el seminario oral. Un marco de límite de dos palabras. El hueco son las dos; la primera es la preposición «en». Marca el límite del material.",
+    "de": "___ der Untersuchung wird das mündliche Seminar nicht betrachtet. Ein Grenzrahmen aus zwei Wörtern. Die Lücke sind beide Wörter; das erste ist die Präposition «in». Er markiert die Grenze des Materials.",
+  },
+  "___ данных можно сказать, что выбор зависит от вопроса.": {
+    "en": "___ the data one can say that the choice depends on the question. A frame of support, two words, meaning «on the basis of».",
+    "es": "___ los datos se puede decir que la elección depende de la pregunta. Un marco de apoyo, dos palabras, con el sentido de «sobre la base de».",
+    "de": "___ der Daten kann man sagen, dass die Wahl von der Frage abhängt. Ein Rahmen der Stütze, zwei Wörter, in der Bedeutung «auf der Grundlage».",
+  },
+  "___ подчеркнуть: правило без вопроса не работает.": {
+    "en": "___ emphasize: a rule without a question does not work. An impersonal «one should», highlighting a thesis that is already important.",
+    "es": "___ subrayar: una regla sin pregunta no funciona. Un impersonal de «conviene», que destaca una tesis que ya es importante.",
+    "de": "___ hervorheben: eine Regel ohne Frage funktioniert nicht. Ein unpersönliches «man soll», das eine schon wichtige These hervorhebt.",
+  },
 };

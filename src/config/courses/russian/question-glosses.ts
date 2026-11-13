@@ -18,7 +18,8 @@ export const RUSSIAN_A1_QUESTION_GLOSSES: Record<
 };
 
 /**
- * B2–C2, then A2–B1, then A1 last so an identical stem keeps the earlier-level gloss.
+ * B2–C2 (including bridge 42–45), then A2–B1 (including bridge 38–41),
+ * then A1 last so an identical stem keeps the earlier-level gloss.
  */
 export const RUSSIAN_QUESTION_GLOSSES: Record<
   string,
