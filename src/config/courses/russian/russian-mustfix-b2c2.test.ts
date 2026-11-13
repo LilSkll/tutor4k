@@ -133,10 +133,21 @@ describe("RKI B2–C2 MUST-FIX regressions (M1–M3)", () => {
       sentence_building: 8,
     });
 
-    const blob = bank.map((e) => e.question + "\n" + e.answer).join("\n");
+    const blob = bank
+      .map((e) => `${e.passage ?? ""}\n${e.question}\n${e.answer}`)
+      .join("\n");
     for (const marker of CH34_FRAGMENT_MARKERS) {
-      expect(blob, marker).toMatch(new RegExp(marker.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+      expect(blob, marker).toMatch(
+        new RegExp(marker.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")),
+      );
     }
+    // Adaptive picks show the fragment as passage, not as a wall inside the question.
+    expect(bank.every((e) => (e.passage ?? "").includes("серым полотном"))).toBe(
+      true,
+    );
+    expect(
+      bank.some((e) => (e.question ?? "").includes("У окна горела лампа")),
+    ).toBe(false);
 
     // Interpretation beyond metalanguage labels.
     const interpMc = bank.find(
@@ -149,7 +160,7 @@ describe("RKI B2–C2 MUST-FIX regressions (M1–M3)", () => {
     expect(interpEc?.answer).toMatch(/предположение повествователя/);
     expect(
       answersMatch(
-        "Во фрагменте: «словно кто-то только что вышел» — это доказанный факт биографии героя.",
+        "«Словно кто-то только что вышел» — это доказанный факт биографии героя.",
         [interpEc!.answer, ...(interpEc!.acceptableAnswers ?? [])],
       ),
     ).toBe(false);

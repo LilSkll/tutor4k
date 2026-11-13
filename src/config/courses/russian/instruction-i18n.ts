@@ -3775,20 +3775,65 @@ export const RUSSIAN_INSTRUCTION_I18N: Record<
     es: "Instrumental del término de composición después de «называется»",
     de: "Instrumental des Kompositionsterminus nach «называется»",
   },
-  "Творительный падеж тропа: уподобление без «как»": {
-    en: "Instrumental of the trope: a likeness without «как»",
-    es: "Instrumental del tropo: semejanza sin «как»",
-    de: "Instrumental des Tropus: Ähnlichkeit ohne «как»",
+  "Впишите термин в форме «чем?»": {
+    en: "Type the term in the «чем?» form",
+    es: "Escribe el término en la forma «чем?»",
+    de: "Schreibe den Terminus in der Form «чем?»",
+  },
+  "Впишите термин (кто? что?)": {
+    en: "Type the term (who? what?)",
+    es: "Escribe el término (quién? qué?)",
+    de: "Schreibe den Terminus (wer? was?)",
+  },
+  "Впишите термин после «на»": {
+    en: "Type the term after «на»",
+    es: "Escribe el término después de «на»",
+    de: "Schreibe den Terminus nach «на»",
+  },
+  "Выберите название приёма": {
+    en: "Choose the name of the device",
+    es: "Elige el nombre del recurso",
+    de: "Wähle den Namen des Mittels",
+  },
+  "Выберите термин": {
+    en: "Choose the term",
+    es: "Elige el término",
+    de: "Wähle den Terminus",
+  },
+  "Выберите верную интерпретацию": {
+    en: "Choose the correct reading",
+    es: "Elige la interpretación correcta",
+    de: "Wähle die passende Deutung",
+  },
+  "Исправьте термин": {
+    en: "Correct the term",
+    es: "Corrige el término",
+    de: "Korrigiere den Terminus",
+  },
+  "Исправьте: кто ведёт взгляд в тексте?": {
+    en: "Fix it: who guides the gaze in the text?",
+    es: "Corrige: ¿quién guía la mirada en el texto?",
+    de: "Korrigiere: wer führt den Blick im Text?",
+  },
+  "Исправьте противоречие": {
+    en: "Fix the contradiction",
+    es: "Corrige la contradicción",
+    de: "Korrigiere den Widerspruch",
+  },
+  "Исправьте пример: аллюзия — намёк": {
+    en: "Fix the example: allusion is a hint",
+    es: "Corrige el ejemplo: la alusión es un guiño",
+    de: "Korrigiere das Beispiel: Anspielung ist ein Hinweis",
+  },
+  "Исправьте интерпретацию": {
+    en: "Fix the interpretation",
+    es: "Corrige la interpretación",
+    de: "Korrigiere die Deutung",
   },
   "Творительный падеж: гипотезу ещё не сняли": {
     en: "Instrumental: the hypothesis has not been dropped yet",
     es: "Instrumental: la hipótesis todavía no se ha retirado",
     de: "Instrumental: die Hypothese ist noch nicht aufgegeben",
-  },
-  "Творительный падеж: оценочное определение": {
-    en: "Instrumental: an evaluative modifier",
-    es: "Instrumental: un modificador valorativo",
-    de: "Instrumental: eine wertende Bestimmung",
   },
   "Термин интертекста, именительный падеж": {
     en: "The intertext term, nominative",

@@ -859,45 +859,85 @@ export const RUSSIAN_QUESTION_GLOSSES_B2C2: Record<
     "es": "La línea con «словно» pide una lectura. Elige cómo debe tratarla el comentario. No cites las opciones.",
     "de": "Die Zeile mit «словно» verlangt eine Deutung. Wähle, wie der Kommentar sie behandeln soll. Zitiere die Optionen nicht."
   },
-  "Во фрагменте «Город за стеклом лежал серым полотном» в разборе называют ___.": {
-    "en": "The city lies as a gray canvas. Instrumental of the trope: a likeness with no «как».",
-    "es": "La ciudad yace como un lienzo gris. Instrumental del tropo: parecido sin «как».",
-    "de": "Die Stadt liegt als graue Leinwand. Instrumental der Trope: Gleichnis ohne «как»."
+  "Город назван «серым полотном». Слова «как» нет. Это ___.": {
+    "en": "The city is called a gray canvas. There is no «как». Choose the device name.",
+    "es": "La ciudad se llama un lienzo gris. No hay «как». Elige el nombre del recurso.",
+    "de": "Die Stadt heißt eine graue Leinwand. Es gibt kein «как». Wähle den Namen des Mittels."
   },
-  "Во фрагменте «тихий, усталый коридор» в комментарии является ___.": {
-    "en": "«Quiet, tired corridor» in the commentary is ___. Instrumental: evaluative modifier.",
-    "es": "«Pasillo quieto, cansado» en el comentario es ___. Instrumental: modificador valorativo.",
-    "de": "«Stiller, müder Flur» im Kommentar ist ___. Instrumental: wertende Beifügung."
+  "«Тихий, усталый коридор» — определение с оценкой. Его называют ___.": {
+    "en": "«Quiet, tired corridor» is a judgmental modifier. Choose what it is called.",
+    "es": "«Pasillo quieto, cansado» es un modificador valorativo. Elige cómo se llama.",
+    "de": "«Stiller, müder Flur» ist eine wertende Beifügung. Wähle, wie man sie nennt."
   },
-  "Голос фрагмента, который видит пустую аудиторию и не равен автору статьи, — это ___.": {
-    "en": "The voice that sees the empty hall and is not the article’s author is ___. Nominative.",
-    "es": "La voz que ve el aula vacía y no es el autor del artículo es ___. Nominativo.",
-    "de": "Die Stimme, die den leeren Saal sieht und nicht der Verfasser des Artikels ist, ist ___. Nominativ."
+  "В тексте почти не виден человек: видна комната, лампа, коридор. Голос, который ведёт взгляд и не равен автору статьи, — это ___.": {
+    "en": "The person is barely seen; the room leads the gaze. Choose the voice that is not the article’s author.",
+    "es": "Casi no se ve a la persona; la habitación guía la mirada. Elige la voz que no es el autor del artículo.",
+    "de": "Die Person ist kaum zu sehen; der Raum führt den Blick. Wähle die Stimme, die nicht der Verfasser des Artikels ist."
+  },
+  "«Он закрыл окно и ничего не объяснил». Смысл не сказан прямо. Это ___.": {
+    "en": "He closed the window and explained nothing. The meaning is not said outright. Choose the term.",
+    "es": "Cerró la ventana y no explicó nada. El sentido no se dice en voz alta. Elige el término.",
+    "de": "Er schloss das Fenster und erklärte nichts. Der Sinn ist nicht ausgesprochen. Wähle den Terminus."
+  },
+  "Закрытие окна — самое напряжённое место; дальше ход уже другой. Это ___.": {
+    "en": "Closing the window is the peak of tension; after that the course changes. Choose the term.",
+    "es": "Cerrar la ventana es el pico de tensión; después el curso cambia. Elige el término.",
+    "de": "Das Schließen des Fensters ist der Spannungsgipfel; danach ändert sich der Lauf. Wähle den Terminus."
+  },
+  "Дорога возвращается в шуме колёс, на перроне и в шагах за дверью. Такой повтор называют ___.": {
+    "en": "The road returns three times. Choose the term for that kind of repeat.",
+    "es": "El camino vuelve tres veces. Elige el término de esa repetición.",
+    "de": "Der Weg kehrt dreimal wieder. Wähle den Terminus für diese Wiederholung."
+  },
+  "«Чужая перчатка — будто герой уже ушёл в чужой рассказ». Намёк без дословной цитаты — это ___.": {
+    "en": "A stranger’s glove hints at another story without a copied page. Choose the term.",
+    "es": "Un guante ajeno alude a otro relato sin página copiada. Elige el término.",
+    "de": "Ein fremder Handschuh deutet auf eine andere Erzählung ohne kopierte Seite. Wähle den Terminus."
+  },
+  "«Словно кто-то только что вышел и ещё вернётся». Как это читать в комментарии?": {
+    "en": "The line with «словно» invites a reading. Choose what a commentary should treat it as.",
+    "es": "La línea con «словно» pide una lectura. Elige cómo debe tratarla el comentario.",
+    "de": "Die Zeile mit «словно» verlangt eine Deutung. Wähle, wie der Kommentar sie behandeln soll."
+  },
+  "«Город лежал серым полотном» — город сравнивают с тканью, но слова «как» нет. Этот приём называют ___.": {
+    "en": "The city is likened to cloth, but there is no «как». Type the term in the «чем?» form.",
+    "es": "La ciudad se compara con una tela, pero no hay «как». Escribe el término en la forma «чем?».",
+    "de": "Die Stadt wird mit Stoff verglichen, aber ohne «как». Schreibe den Terminus in der Form «чем?»."
+  },
+  "«Тихий, усталый коридор» — определение с оценкой. В комментарии оно является ___.": {
+    "en": "«Quiet, tired corridor» is a judgmental modifier. Type the term in the «чем?» form.",
+    "es": "«Pasillo quieto, cansado» es un modificador valorativo. Escribe el término en la forma «чем?».",
+    "de": "«Stiller, müder Flur» ist eine wertende Beifügung. Schreibe den Terminus in der Form «чем?»."
+  },
+  "Голос, который видит пустую аудиторию и не равен автору статьи, — это ___.": {
+    "en": "The voice that sees the empty hall and is not the article’s author is ___.",
+    "es": "La voz que ve el aula vacía y no es el autor del artículo es ___.",
+    "de": "Die Stimme, die den leeren Saal sieht und nicht der Verfasser des Artikels ist, ist ___."
   },
   "Он закрыл окно и ничего не объяснил. Смысл держится на ___.": {
-    "en": "He closed the window and explained nothing. The meaning rests on ___. Prepositional after на.",
-    "es": "Cerró la ventana y no explicó nada. El sentido se sostiene en ___. Preposicional tras на.",
-    "de": "Er schloss das Fenster und erklärte nichts. Der Sinn ruht auf ___. Präpositiv nach на."
+    "en": "He closed the window and explained nothing. The meaning rests on ___.",
+    "es": "Cerró la ventana y no explicó nada. El sentido se sostiene en ___.",
+    "de": "Er schloss das Fenster und erklärte nichts. Der Sinn ruht auf ___."
   },
-  "Закрытие окна во фрагменте — точка высшего напряжения. Она называется ___.": {
-    "en": "Closing the window is the peak of tension. It is called ___. Instrumental after называется.",
-    "es": "Cerrar la ventana es el pico de tensión. Se llama ___. Instrumental tras называется.",
-    "de": "Das Schließen des Fensters ist der Spannungsgipfel. Es heißt ___. Instrumental nach называется."
+  "Закрытие окна — точка высшего напряжения. Она называется ___.": {
+    "en": "Closing the window is the peak of tension. It is called ___.",
+    "es": "Cerrar la ventana es el pico de tensión. Se llama ___.",
+    "de": "Das Schließen des Fensters ist der Spannungsgipfel. Es heißt ___."
   },
   "Мотив дороги возвращается в шуме колёс, на перроне и в шагах. Это ___.": {
-    "en": "The road motif returns three times. That is ___. Nominative.",
-    "es": "El motivo del camino vuelve tres veces. Eso es ___. Nominativo.",
-    "de": "Das Wegmotiv kehrt dreimal wieder. Das ist ___. Nominativ."
+    "en": "The road motif returns three times. That is ___.",
+    "es": "El motivo del camino vuelve tres veces. Eso es ___.",
+    "de": "Das Wegmotiv kehrt dreimal wieder. Das ist ___."
   },
   "«Чужая перчатка» намекает на чужой рассказ без дословной цитаты. Это ___.": {
-    "en": "The stranger’s glove hints at another story without a verbatim quote. That is ___. Nominative.",
-    "es": "El guante ajeno alude a otro relato sin cita literal. Eso es ___. Nominativo.",
-    "de": "Der fremde Handschuh deutet auf eine fremde Erzählung ohne wörtliches Zitat. Das ist ___. Nominativ."
+    "en": "The stranger’s glove hints at another story without a verbatim quote. That is ___.",
+    "es": "El guante ajeno alude a otro relato sin cita literal. Eso es ___.",
+    "de": "Der fremde Handschuh deutet auf eine fremde Erzählung ohne wörtliches Zitat. Das ist ___."
   },
   "«Потом зал опустел, и напряжение спало» закрывает конфликт. Это ___.": {
-    "en": "Then the hall emptied and the tension fell: that closes the conflict. Nominative of the ending term.",
-    "es": "Luego el aula se vació y la tensión bajó: eso cierra el conflicto. Nominativo del término del final.",
-    "de": "Dann leerte sich der Saal und die Spannung fiel: das schließt den Konflikt. Nominativ des Schluss-Terminus."
+    "en": "Then the hall emptied and the tension fell: that closes the conflict.",
+    "es": "Luego el aula se vació y la tensión bajó: eso cierra el conflicto.",
+    "de": "Dann leerte sich der Saal und die Spannung fiel: das schließt den Konflikt."
   },
   "метафора / это / полотном / серым / лежал / Город": {
     "en": "Put the words in order. Quote the fragment’s likeness and name the device.",
