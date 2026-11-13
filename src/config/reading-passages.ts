@@ -77,45 +77,16 @@ function readingItems(spec: ReadingSpec): Draft[] {
  * Short reading / comprehension items per course.
  * Appended after existing banks so adaptive IDs stay stable.
  * Russian B2–C2 chapters are intentionally omitted (frozen 40-item banks).
+ *
+ * Pedagogy: never attach passage reading to absolute-beginner openers
+ * (alphabet / greetings / first steps). Those chapters only have word- and
+ * phrase-level drills; connected L2 text starts from chapter 2+.
  */
 export const READING_PASSAGES_BY_COURSE: Record<
   string,
   Record<string, Draft[]>
 > = {
   spanish: {
-    "chapter-1-despertar": readingItems({
-      passage:
-        "Buenos días. Me llamo Ana. Soy estudiante. Hoy estoy en la academia. Mi amigo Pablo es de Madrid.",
-      passageGloss: {
-        ru: "Доброе утро. Меня зовут Ана. Я студентка. Сегодня я в академии. Мой друг Пабло из Мадрида.",
-        en: "Good morning. My name is Ana. I am a student. Today I am at the academy. My friend Pablo is from Madrid.",
-        de: "Guten Morgen. Ich heiße Ana. Ich bin Studentin. Heute bin ich in der Akademie. Mein Freund Pablo ist aus Madrid.",
-      },
-      grammarTopic: "a1-ser-estar",
-      vocabTopic: "a1-familia",
-      mc: {
-        question: "¿De dónde es Pablo?",
-        questionGloss: {
-          ru: "Откуда Пабло?",
-          en: "Where is Pablo from?",
-          de: "Woher kommt Pablo?",
-        },
-        options: ["De Madrid", "De la academia", "De Ana", "De Pablo"],
-        answer: "De Madrid",
-        explanation: "В тексте: «Mi amigo Pablo es de Madrid.»",
-      },
-      blank: {
-        question: "Hoy Ana ___ en la academia.",
-        questionGloss: {
-          ru: "Сегодня Ана ___ в академии.",
-          en: "Today Ana ___ at the academy.",
-          de: "Heute ___ Ana in der Akademie.",
-        },
-        answer: "está",
-        acceptableAnswers: ["esta", "Está"],
-        explanation: "Состояние «сейчас здесь» — estar: estoy / está.",
-      },
-    }),
     "chapter-2-primer-dialogo": readingItems({
       passage:
         "Cada mañana Leo estudia español. Trabaja en un café por la tarde y vive cerca de la plaza. Sus amigos hablan mucho después de clase.",
@@ -293,39 +264,6 @@ export const READING_PASSAGES_BY_COURSE: Record<
   },
 
   english: {
-    "eng-ch1-first-steps": readingItems({
-      passage:
-        "Hello! My name is Maya. I am a new student. Today I am at the language school. My classmate Tom is from Canada.",
-      passageGloss: {
-        ru: "Привет! Меня зовут Майя. Я новая студентка. Сегодня я в языковой школе. Мой одногруппник Том из Канады.",
-        es: "¡Hola! Me llamo Maya. Soy una estudiante nueva. Hoy estoy en la escuela de idiomas. Mi compañero Tom es de Canadá.",
-        de: "Hallo! Ich heiße Maya. Ich bin eine neue Schülerin. Heute bin ich in der Sprachschule. Mein Klassenkamerad Tom kommt aus Kanada.",
-      },
-      grammarTopic: "eng-a1-be",
-      vocabTopic: "eng-a1-personal-info",
-      mc: {
-        question: "Откуда Том?",
-        questionGloss: {
-          en: "Where is Tom from?",
-          es: "¿De dónde es Tom?",
-          de: "Woher kommt Tom?",
-        },
-        options: ["Canada", "the language school", "Maya", "Hello"],
-        answer: "Canada",
-        explanation: "«My classmate Tom is from Canada.»",
-      },
-      blank: {
-        question: "Today Maya ___ at the language school.",
-        questionGloss: {
-          ru: "Сегодня Майя ___ в языковой школе.",
-          es: "Hoy Maya ___ en la escuela de idiomas.",
-          de: "Heute ___ Maya in der Sprachschule.",
-        },
-        answer: "is",
-        acceptableAnswers: ["Is"],
-        explanation: "Present of be: I am / she is.",
-      },
-    }),
     "eng-ch2-routines": readingItems({
       passage:
         "Sam wakes up at seven. He drinks tea, checks his messages, and walks to the station. On Fridays he finishes work early.",
@@ -465,39 +403,6 @@ export const READING_PASSAGES_BY_COURSE: Record<
   },
 
   russian: {
-    "ru-ch1-alphabet-greetings": readingItems({
-      passage:
-        "Здравствуйте! Меня зовут Омар. Я студент. Сегодня я в университете. Мой друг Анна из Каира.",
-      passageGloss: {
-        en: "Hello! My name is Omar. I am a student. Today I am at the university. My friend Anna is from Cairo.",
-        es: "¡Hola! Me llamo Omar. Soy estudiante. Hoy estoy en la universidad. Mi amiga Anna es de El Cairo.",
-        de: "Guten Tag! Ich heiße Omar. Ich bin Student. Heute bin ich an der Universität. Meine Freundin Anna kommt aus Kairo.",
-      },
-      grammarTopic: "ru-a1-alphabet-phonetics",
-      vocabTopic: "ru-a1-greetings",
-      mc: {
-        question: "Откуда Анна?",
-        questionGloss: {
-          en: "Where is Anna from?",
-          es: "¿De dónde es Anna?",
-          de: "Woher kommt Anna?",
-        },
-        options: ["Из Каира", "Из университета", "Из Москвы", "Из Омара"],
-        answer: "Из Каира",
-        explanation: "«Мой друг Анна из Каира.»",
-      },
-      blank: {
-        question: "Меня зовут ___.",
-        questionGloss: {
-          en: "My name is ___.",
-          es: "Me llamo ___.",
-          de: "Ich heiße ___.",
-        },
-        answer: "Омар",
-        acceptableAnswers: ["омар", "Omar"],
-        explanation: "«Меня зовут Омар.»",
-      },
-    }),
     "ru-ch2-introduce-yourself": readingItems({
       passage:
         "Это Мария. Она из Испании. Она студентка, а её брат — инженер. Они живут в общежитии рядом с парком.",
@@ -563,41 +468,6 @@ export const READING_PASSAGES_BY_COURSE: Record<
   },
 
   german: {
-    "de-ch1-alphabet-greetings": readingItems({
-      passage:
-        "Guten Morgen! Ich heiße Lea. Ich bin neu in Berlin. Meine Lehrerin sagt: Guten Tag und willkommen. Am Abend sage ich: Auf Wiedersehen.",
-      passageGloss: {
-        ru: "Доброе утро! Меня зовут Леа. Я недавно в Берлине. Моя учительница говорит: добрый день и добро пожаловать. Вечером я говорю: до свидания.",
-        en: "Good morning! My name is Lea. I am new in Berlin. My teacher says: good day and welcome. In the evening I say: goodbye.",
-        es: "¡Buenos días! Me llamo Lea. Soy nueva en Berlín. Mi profesora dice: buen día y bienvenida. Por la tarde digo: adiós.",
-      },
-      grammarTopic: "de-a1-alphabet-pronunciation",
-      vocabTopic: "de-a1-greetings",
-      mc: {
-        // A1 reading prompts in L1 — beginners cannot answer German meta-questions yet.
-        question: "Что Леа говорит вечером?",
-        questionGloss: {
-          en: "What does Lea say in the evening?",
-          es: "¿Qué dice Lea por la tarde?",
-          de: "Was sagt Lea am Abend?",
-        },
-        options: ["Auf Wiedersehen", "Guten Morgen", "Willkommen", "Berlin"],
-        answer: "Auf Wiedersehen",
-        explanation: "В тексте: «Am Abend sage ich: Auf Wiedersehen.»",
-      },
-      blank: {
-        question: "Ich ___ Lea.",
-        questionGloss: {
-          ru: "Меня зовут: Ich … Lea.",
-          en: "My name is: Ich … Lea.",
-          es: "Me llamo: Ich … Lea.",
-          de: "Ich heiße Lea — welche Verbform?",
-        },
-        answer: "heiße",
-        acceptableAnswers: ["Heiße"],
-        explanation: "«Ich heiße Lea.»",
-      },
-    }),
     "de-ch3-articles-gender": readingItems({
       passage:
         "Der Tisch ist groß. Die Lampe ist klein. Das Buch ist neu. Ein Mann liest, und eine Frau schreibt.",

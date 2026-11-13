@@ -6,6 +6,14 @@ import {
   READING_PASSAGES_BY_COURSE,
 } from "@/config/reading-passages";
 
+/** Absolute-beginner openers: phrase drills only, no connected L2 reading. */
+const OPENER_CHAPTERS = [
+  ["spanish", "chapter-1-despertar"],
+  ["english", "eng-ch1-first-steps"],
+  ["russian", "ru-ch1-alphabet-greetings"],
+  ["german", "de-ch1-alphabet-greetings"],
+] as const;
+
 describe("reading passage exercises", () => {
   it("covers multiple chapters per course with passage + MC", () => {
     for (const courseId of [
@@ -16,8 +24,9 @@ describe("reading passage exercises", () => {
     ] as const) {
       const chapters = listReadingPassageChapters(courseId);
       // Russian A2–C2 banks are size-frozen, so RU ships fewer reading chapters.
+      // German lost the A1 opener reading block on purpose.
       const min =
-        courseId === "russian" ? 3 : courseId === "german" ? 15 : 5;
+        courseId === "russian" ? 2 : courseId === "german" ? 14 : 4;
       expect(chapters.length, courseId).toBeGreaterThanOrEqual(min);
       for (const slug of chapters) {
         const drafts = getReadingPassagesForChapter(courseId, slug);
@@ -33,19 +42,34 @@ describe("reading passage exercises", () => {
     }
   });
 
-  it("loads into banks without shifting early adaptive ids", async () => {
+  it("does not attach reading to A1 opener chapters", async () => {
+    for (const [courseId, slug] of OPENER_CHAPTERS) {
+      expect(
+        getReadingPassagesForChapter(courseId, slug),
+        `${courseId}/${slug}`,
+      ).toEqual([]);
+      const course = await getCourse(courseId);
+      const bank = course.getExercises(slug);
+      expect(
+        bank.filter((e) => e.passage?.trim()),
+        `${courseId}/${slug} bank`,
+      ).toEqual([]);
+    }
+  });
+
+  it("loads into later banks without shifting early adaptive ids", async () => {
     const cases = [
-      ["spanish", "chapter-1-despertar"],
-      ["english", "eng-ch1-first-steps"],
-      ["russian", "ru-ch1-alphabet-greetings"],
-      ["german", "de-ch1-alphabet-greetings"],
+      ["spanish", "chapter-2-primer-dialogo"],
+      ["english", "eng-ch2-routines"],
+      ["russian", "ru-ch2-introduce-yourself"],
+      ["german", "de-ch3-articles-gender"],
     ] as const;
 
     for (const [courseId, slug] of cases) {
       const course = await getCourse(courseId);
       const bank = course.getExercises(slug);
       const withPassage = bank.filter((e) => e.passage);
-      expect(withPassage.length, `${courseId} loaded`).toBeGreaterThanOrEqual(2);
+      expect(withPassage.length, `${courseId} loaded`).toBeGreaterThanOrEqual(1);
 
       const firstMc = bank.find((e) => e.type === "multiple_choice");
       expect(firstMc?.id).toMatch(
