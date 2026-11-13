@@ -181,12 +181,12 @@ export const GERMAN_A2_EXERCISES: Record<string, Draft[]> = {
       en: "The bag belongs to the woman. Die Tasche gehört … Frau.",
       es: "El bolso pertenece a la mujer. Die Tasche gehört … Frau.",
     }),
-    fb("Ich danke ___. (вам, вежливо)", "Ihnen", "Вежливое «вам» — Ihnen.", {
+    fb("Ich danke ___. (Höflichkeitsform: Sie)", "Ihnen", "Вежливое «вам» — Ihnen.", {
       ru: "Я благодарю вас (вежливо). Ich danke …",
       en: "I thank you (formal). Ich danke …",
       es: "Le doy las gracias (formal). Ich danke …",
     }),
-    fb("Sie hilft ___ Freund. (её)", "ihrem", "Притяжательное в дативе мужского рода: ihrem Freund.", {
+    fb("Sie hilft ___ Freund. (ihr, Dat.)", "ihrem", "Притяжательное в дативе мужского рода: ihrem Freund.", {
       ru: "Она помогает её другу. Sie hilft … Freund.",
       en: "She helps her friend. Sie hilft … Freund.",
       es: "Ella ayuda a su amigo. Sie hilft … Freund.",
@@ -266,7 +266,7 @@ export const GERMAN_A2_EXERCISES: Record<string, Draft[]> = {
         de: "Das Buch liegt auf ___ Tisch. Welche Form? (wo)",
       },
     ),
-    fb("Sie stellt die Tasse auf ___ Tisch. (куда)", "den", "Куда ставят: auf + винительный den Tisch.", {
+    fb("Sie stellt die Tasse auf ___ Tisch. (Wohin? Akk.)", "den", "Куда ставят: auf + винительный den Tisch.", {
       ru: "Она ставит чашку на стол (куда). Sie stellt die Tasse auf … Tisch.",
       en: "She puts the cup on the table (where to). Sie stellt die Tasse auf … Tisch.",
       es: "Pone la taza sobre la mesa (adónde). Sie stellt die Tasse auf … Tisch.",
@@ -281,7 +281,7 @@ export const GERMAN_A2_EXERCISES: Record<string, Draft[]> = {
       en: "The dog is lying under the bed. Der Hund liegt unter … Bett.",
       es: "El perro está bajo la cama. Der Hund liegt unter … Bett.",
     }),
-    fb("Die Lampe steht neben ___ Fenster. (где)", "dem", "neben + дательный, если предмет уже стоит: dem Fenster.", {
+    fb("Die Lampe steht neben ___ Fenster. (Wo? Dat.)", "dem", "neben + дательный, если предмет уже стоит: dem Fenster.", {
       ru: "Лампа стоит у окна (где). Die Lampe steht neben … Fenster.",
       en: "The lamp stands by the window (where). Die Lampe steht neben … Fenster.",
       es: "La lámpara está junto a la ventana (dónde). Die Lampe steht neben … Fenster.",
@@ -751,15 +751,15 @@ export const GERMAN_A2_EXERCISES: Record<string, Draft[]> = {
       en: "We see a small dog. Wir sehen einen … Hund.",
       es: "Vemos un perro pequeño. Wir sehen einen … Hund.",
     }),
-    fb("___ Brot schmeckt gut. (frisch, без артикля)", "Frisches", "das Brot без артикля: -es.", {
+    fb("___ Brot schmeckt gut. (frisch, ohne Artikel)", "Frisches", "das Brot без артикля: -es.", {
       ru: "Свежий хлеб вкусный (без артикля). … Brot schmeckt gut.",
       en: "Fresh bread tastes good (no article). … Brot schmeckt gut.",
       es: "El pan fresco está rico (sin artículo). … Brot schmeckt gut.",
     }),
-    fb("Die ___ Lampe ist neu. (alt)", "alte", "die + именительный: -e.", {
-      ru: "Старая лампа новая? Нет: прилагательное к лампе. Die … Lampe ist neu.",
-      en: "The old lamp is new. Die … Lampe ist neu.",
-      es: "La lámpara vieja es nueva. Die … Lampe ist neu.",
+    fb("Die ___ Lampe ist kaputt. (alt)", "alte", "die + именительный: -e.", {
+      ru: "Старая лампа сломана. Die … Lampe ist kaputt.",
+      en: "The old lamp is broken. Die … Lampe ist kaputt.",
+      es: "La lámpara vieja está rota. Die … Lampe ist kaputt.",
     }),
     tl("Это хороший день.", "Das ist ein guter Tag", "ein + мужской род: guter."),
     tl("Я вижу маленький дом.", "Ich sehe ein kleines Haus", "ein + средний род в винительном: kleines.", ["Ich sehe das kleine Haus"]),

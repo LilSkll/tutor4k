@@ -449,11 +449,11 @@
     "es": "Me gustaría viajar.",
     "de": "Ich würde gerne reisen."
   },
-  "¿Podría ___ (ayudar)me?": {
-    "ru": "¿Podría ___ (ayudar / помочь)me?",
-    "en": "Could you ___ (ayudar / help) me?",
-    "es": "¿Podría ___ (ayudar)me?",
-    "de": "Könnten Sie ___ (ayudar / helfen)?"
+  "¿Podría usted ___?": {
+    "ru": "Не могли бы вы ___?",
+    "en": "Could you ___?",
+    "es": "¿Podría usted ___?",
+    "de": "Könnten Sie ___?"
   },
   "Yo que tú, lo ___ diferente.": {
     "ru": "На твоём месте я бы сделал это иначе: lo ___.",

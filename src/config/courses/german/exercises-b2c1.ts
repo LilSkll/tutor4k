@@ -651,12 +651,12 @@ export const GERMAN_B2C1_EXERCISES: Record<string, Draft[]> = {
       en: "We have received your letter. Wir haben Ihr Schreiben …",
       es: "Hemos recibido su escrito. Wir haben Ihr Schreiben …",
     }),
-    fb("Ich ___ Sie um Rückmeldung. (вежливо)", "bitte", "bitten um = просить.", {
+    fb("Ich ___ Sie um Rückmeldung. (höflich, Sie)", "bitte", "bitten um = просить.", {
       ru: "Прошу вас об ответе (вежливо). Ich … Sie um Rückmeldung.",
       en: "I ask you for a reply (polite). Ich … Sie um Rückmeldung.",
       es: "Le pido una respuesta (cortés). Ich … Sie um Rückmeldung.",
     }),
-    fb("Другу: ___ du Zeit?", "Hast", "Разговорное du: Hast du Zeit?", {
+    fb("___ du Zeit? (an einen Freund)", "Hast", "Разговорное du: Hast du Zeit?", {
       ru: "Другу: есть время? … du Zeit?",
       en: "To a friend: do you have time? … du Zeit?",
       es: "A un amigo: ¿tienes tiempo? … du Zeit?",

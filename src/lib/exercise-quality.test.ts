@@ -87,6 +87,20 @@ describe("isUsableFillBlank", () => {
         instruction: "Возвратное se",
       }),
     ).toBe(false);
+    expect(
+      isUsableFillBlank({
+        question: "Yo ___ el texto.",
+        answer: "texto",
+        instruction: "Вставьте: texto",
+      }),
+    ).toBe(false);
+    expect(
+      isUsableFillBlank({
+        question: "Yo leo ___.",
+        answer: "libro",
+        instruction: "Вставьте: libro",
+      }),
+    ).toBe(false);
   });
 
   it("rejects person+verb spoilers in parentheses", () => {

@@ -33,7 +33,7 @@ export const GERMAN_CHAPTER_LOCALE: Record<
     ru: {
       title: "Ich bin — ich habe",
       summary:
-        "Личные местоимения; sein и haben в настоящем: кто вы и что у вас есть.",
+        "Местоимения я/ты/он…; sein (быть) и haben (иметь) в настоящем.",
     },
     en: {
       title: "I am — I have",

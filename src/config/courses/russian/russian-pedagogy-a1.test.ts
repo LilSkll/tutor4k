@@ -124,6 +124,25 @@ describe("RKI A1 pedagogical comprehension support", () => {
     }
   });
 
+  it("rejects fill-blank instructions that print the lemma/answer (Вставьте: …)", async () => {
+    const course = await getCourse("russian");
+    const spoilers: string[] = [];
+    for (const ch of course.getChapters()) {
+      for (const ex of course.getExercises(ch.slug)) {
+        if (ex.type !== "fill_blank") continue;
+        const inst = (ex.instruction ?? "").trim();
+        if (/^Вставьте:\s*/iu.test(inst)) {
+          spoilers.push(`${ch.slug}: ${ex.question} | ${inst}`);
+        }
+        // Dictionary-form cue belongs in the stem, not as a free open blank.
+        if (/^Я перевожу ___\.?$/u.test(ex.question.trim())) {
+          spoilers.push(`${ch.slug}: open blank ${ex.question}`);
+        }
+      }
+    }
+    expect(spoilers, spoilers.slice(0, 8).join(" | ")).toEqual([]);
+  });
+
   it("attaches pedagogical glosses for A2 Cyrillic prompts", async () => {
     const course = await getCourse("russian");
     const a2 = course.getExercises("ru-ch9-past-tense");

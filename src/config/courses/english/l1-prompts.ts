@@ -36,10 +36,10 @@ const POSS: Cue = {
   de: "Welches Possessiv?",
 };
 const THERE: Cue = {
-  ru: "there is или there are?",
-  en: "there is or there are?",
-  es: "¿there is o there are?",
-  de: "there is oder there are?",
+  ru: "Единственное или множественное?",
+  en: "Singular or plural form?",
+  es: "¿Forma de singular o plural?",
+  de: "Singular- oder Pluralform?",
 };
 const CAN: Cue = {
   ru: "Как строится оборот с can?",
@@ -102,10 +102,10 @@ const COUNT: Cue = {
   de: "Zählbar oder unzählbar?",
 };
 const FUT: Cue = {
-  ru: "Какая форма will или первого условного?",
-  en: "Which will or first-conditional form?",
-  es: "¿Qué forma de will o del primer condicional?",
-  de: "Welche Form von will oder vom ersten Konditional?",
+  ru: "Какая форма будущего времени?",
+  en: "Which future form?",
+  es: "¿Qué forma de futuro?",
+  de: "Welche Futurform?",
 };
 const COND: Cue = {
   ru: "Какая форма условного предложения?",

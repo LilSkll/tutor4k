@@ -19,44 +19,53 @@ const GERMAN_GRAMMAR_CORE: GrammarTopic[] = [
     category: "Фонетика",
     summary:
       "Буквы, умлауты и ß, ключевые сочетания; приветствия и Sie/du.",
-    content: `> **Перед этой темой:** это **первая** тема курса. **В этой теме:** как читать немецкие буквы и как поздороваться — на **du** и на **Sie**.
+    content: `Первая тема курса: как **читать** немецкие буквы и как **поздороваться**.
 
-## Алфавит и звуки, которых нет в латинице «как есть»
+## Особые буквы
 
-Немецкий алфавит — латиница плюс **ä, ö, ü, ß**. Буква **ß** (эсцет) — глухое «с» после долгого гласного или дифтонга. В слове, написанном прописными, **ß** передают как **SS**: **STRASSE**.
+К обычной латинице немецкие добавляют **ä, ö, ü** и **ß** (эсцет).
 
-| Буква / сочетание | Как читать | Пример |
+| Пишем | Читаем примерно | Пример |
 |---|---|---|
-| **ä** | открытое «э» | **Käse**, **Mädchen** |
-| **ö** | округлённое «ё/э» | **schön**, **können** |
-| **ü** | округлённое «ю/и» | **Tür**, **müde** |
-| **ß** | глухое «с» после долгого гласного | **Straße**, **groß** |
-| **ei** | «ай» | **mein**, **Reise** |
+| **ä** | открытое «э» | **Käse** |
+| **ö** | округлённое «ё» | **schön** |
+| **ü** | округлённое «ю» | **Tür** |
+| **ß** | глухое «с» (как **ss**) | **Straße**, **groß** |
+| **ei** | «ай» | **mein** |
 | **ie** | долгое «и» | **sie**, **Liebe** |
-| **eu / äu** | «ой» | **neu**, **Häuser** |
+| **eu / äu** | «ой» | **neu** |
 | **sch** | «ш» | **Schule** |
-| **sp / st** в начале слога | «шп» / «шт» | **Sport**, **Stadt** |
-| **ch** после i, e, ä, ö, ü, l, n | мягкое ich-Laut | **ich**, **mich** |
-| **ch** после a, o, u, au | твёрдое ach-Laut | **Bach**, **Buch** |
+| **sp- / st-** в начале слова | «шп» / «шт» | **Sport**, **Stadt** |
+| **ch** после **i, e** | мягкое (как в *ich*) | **ich**, **mich** |
+| **ch** после **a, o, u** | твёрдое (как в *Buch*) | **Buch**, **Bach** |
 
-### Оглушение на конце
-**Правило:** на конце слога **b, d, g** звучат глухо (**Tag** ≈ «так», **Hund** ≈ «хунт»), но во множественном числе звонкость возвращается: **Ta-ge**, **Hun-de**. Пишем букву, которую слышим в форме с гласным после неё.
+В словах ЗАГЛАВНЫМИ **ß** пишут как **SS**: **STRASSE**.
+
+**Важно:** **ei** = «ай», **ie** = долгое «и». Их легко перепутать.
+
+### Конец слова
+Буквы **b, d, g** на конце звучат глухо: **Tag** ≈ «так», **Hund** ≈ «хунт». В других формах звук снова звонкий: **Tage**, **Hunde**.
 
 ### Ударение
-Обычно ударение на **первом слоге корня**: **kom-men**, **ar-bei-ten**. Отделяемая приставка ударная (**AUF-stehen**), неотделяемая — нет (**be-SU-chen**). Это пригодится, когда появятся приставки.
+Чаще всего ударный **первый слог**: **KOMmen**, **ARbeiten**.
 
-## Приветствия: du и Sie
+## Приветствия: «ты» и «вы»
 
-| Ситуация | Форма | Фраза |
+В немецком два обращения:
+
+| Когда | Говорим | Примеры |
 |---|---|---|
-| друг, сверстник | **du** | **Hallo!** / **Tschüss!** |
-| незнакомый, официально | **Sie** (всегда с большой буквы, глагол как «они») | **Guten Tag!** / **Auf Wiedersehen!** |
-| утро / вечер | — | **Guten Morgen!** / **Guten Abend!** |
-| спасибо / пожалуйста | — | **Danke!** / **Bitte!** |
+| друг, ровесник | **du** (ты) | **Hallo!** · **Tschüss!** |
+| незнакомый, официально | **Sie** (вы) — **всегда с большой буквы** | **Guten Tag!** · **Auf Wiedersehen!** |
 
-**Wie heißt du?** — как тебя зовут. **Wie heißen Sie?** — как вас зовут.
+- Утро: **Guten Morgen!**
+- Вечер: **Guten Abend!**
+- Спасибо / пожалуйста: **Danke!** / **Bitte!**
 
-> 💡 **ei** читается «ай» (**mein**), **ie** — долгое «и» (**sie**). Путаница этих двух буквосочетаний — самая частая ошибка чтения на A1.`,
+**Wie heißt du?** — как тебя зовут?  
+**Wie heißen Sie?** — как вас зовут?
+
+> 💡 С **Sie** глагол такой же, как с «они»: **Sie heißen…**, **Sie sind…**`,
   },
   {
     slug: "de-a1-sein-haben-pronouns",
@@ -65,48 +74,64 @@ const GERMAN_GRAMMAR_CORE: GrammarTopic[] = [
     level: "A1",
     category: "Глаголы",
     summary:
-      "Личные местоимения; спряжение sein и haben в настоящем.",
-    content: `> **Перед этой темой:** вы читаете буквы и различаете **du / Sie**. **В этой теме:** кто есть кто и что у кого есть — **sein** и **haben**.
+      "Местоимения я/ты/он…; sein (быть) и haben (иметь) в настоящем.",
+    content: `После алфавита учим два самых нужных глагола: **sein** (быть) и **haben** (иметь) — и слова **я / ты / он…**
 
-## Местоимения (именительный падеж)
+## Кто говорит: местоимения
 
-| | ед. | мн. |
+| По-русски | По-немецки | Пример |
 |---|---|---|
-| 1 | **ich** | **wir** |
-| 2 неформ. | **du** | **ihr** |
-| 3 | **er / sie / es** | **sie** |
-| вежл. | **Sie** | **Sie** |
+| я | **ich** | **Ich** bin Anna. |
+| ты | **du** | **Du** bist Student. |
+| он | **er** | **Er** ist müde. |
+| она | **sie** | **Sie** ist Lehrerin. |
+| оно / это | **es** | **Es** ist ein Buch. |
+| мы | **wir** | **Wir** sind aus Berlin. |
+| вы (друзья, несколько человек) | **ihr** | **Ihr** seid müde. |
+| они | **sie** | **Sie** sind Studenten. |
+| вы (вежливо, к одному или многим) | **Sie** | **Sie** sind Herr Keller. |
 
-**sie** (она) и **sie** (они) пишутся одинаково; число показывает глагол: **sie ist** / **sie sind**. **Sie** с большой буквы — «вы».
+### Три разных «sie / Sie»
 
-## sein — быть
+1. **sie** + глагол в ед. ч. → **она**: **sie ist**  
+2. **sie** + глагол во мн. ч. → **они**: **sie sind**  
+3. **Sie** с **большой** буквы → вежливое **вы**: **Sie sind**
 
-| | форма | пример |
-|---|---|---|
-| ich | **bin** | Ich **bin** Anna. |
-| du | **bist** | Du **bist** Student. |
-| er/sie/es | **ist** | Das **ist** ein Buch. |
-| wir | **sind** | Wir **sind** aus Berlin. |
-| ihr | **seid** | Ihr **seid** müde. |
-| sie/Sie | **sind** | Sie **sind** Lehrerin. |
+Число и вежливость смотрите по **глаголу** и по **заглавной букве**.
 
-Профессия и национальность обычно **без артикля**: **Ich bin Ärztin.** **Er ist Deutscher.**
+## sein — «быть / являться»
 
-## haben — иметь
+| Местоимение | Форма | Пример | Перевод |
+|---|---|---|---|
+| ich | **bin** | Ich **bin** Anna. | Я — Анна. |
+| du | **bist** | Du **bist** Student. | Ты студент. |
+| er / sie / es | **ist** | Er **ist** müde. | Он устал. |
+| wir | **sind** | Wir **sind** aus Berlin. | Мы из Берлина. |
+| ihr | **seid** | Ihr **seid** müde. | Вы устали. |
+| sie / Sie | **sind** | Sie **sind** Lehrerin. | Они / Вы — учительница. |
 
-| ich | du | er/sie/es | wir | ihr | sie/Sie |
+Профессию обычно говорят **без артикля**: **Ich bin Ärztin.** **Er ist Deutscher.**
+
+## haben — «иметь» (= «у меня есть»)
+
+| ich | du | er / sie / es | wir | ihr | sie / Sie |
 |---|---|---|---|---|---|
 | **habe** | **hast** | **hat** | **haben** | **habt** | **haben** |
 
-- **Ich habe Zeit.** — У меня есть время.
-- **Hast du einen Bruder?** — У тебя есть брат?
-- **Sie hat keine Geschwister.** — У неё нет братьев и сестёр. (**kein** разберём позже; форму запомните как готовую.)
+- **Ich habe Zeit.** — У меня есть время.  
+- **Hast du einen Bruder?** — У тебя есть брат?  
+- **Sie hat keine Geschwister.** — У неё нет братьев и сестёр. (слово **kein** «никакой» разберём позже)
 
-### Вопросы и отрицание с этими глаголами
-Глагол встаёт на первое место: **Bist du müde?** **Hat er ein Auto?**
-Отрицание: **Ich bin nicht müde.** **Ich habe nicht viel Zeit.**
+### Вопрос и «не»
+В вопросе глагол ставят **в начало**:  
+**Bist du müde?** — Ты устал?  
+**Hat er ein Auto?** — У него есть машина?
 
-> 💡 **sein** и **haben** неправильные уже в настоящем. Их формы нужно знать наизусть: на них позже строятся **Perfekt** и пассив.`,
+Отрицание со **sein / haben**:  
+**Ich bin nicht müde.** — Я не устал.  
+**Ich habe nicht viel Zeit.** — У меня мало времени.
+
+> 💡 Формы **sein** и **haben** лучше выучить наизусть — они встречаются почти в каждом предложении и позже понадобятся для прошедшего времени.`,
   },
   {
     slug: "de-a1-articles-gender-nominative",
@@ -116,37 +141,41 @@ const GERMAN_GRAMMAR_CORE: GrammarTopic[] = [
     category: "Артикли",
     summary:
       "Род существительного; der/die/das и ein/eine в именительном падеже.",
-    content: `> **Перед этой темой:** вы спрягаете **sein** и **haben**. **В этой теме:** у каждого существительного есть **род**, и артикль его показывает. Пока только **номинатив** — подлежащее и именная часть.
+    content: `У каждого немецкого существительного есть **род**. Его показывает **артикль** — маленькое слово перед существительным (**der / die / das**).
+
+Пока работаем только с формой **подлежащего** (кто? что?): это и есть **номинатив** (именительный падеж).
 
 ## Три рода
 
-| Род | Определённый | Неопределённый | Пример |
+| Род | «этот/эта/это» | «один/одна» | Пример |
 |---|---|---|---|
-| мужской | **der** | **ein** | **der** Tisch, **ein** Tisch |
-| женский | **die** | **eine** | **die** Lampe, **eine** Lampe |
-| средний | **das** | **ein** | **das** Buch, **ein** Buch |
-| множественное | **die** | — (или **keine**) | **die** Bücher |
+| мужской | **der** | **ein** | **der** Tisch — стол |
+| женский | **die** | **eine** | **die** Lampe — лампа |
+| средний | **das** | **ein** | **das** Buch — книга |
+| множественное | **die** | (нет *ein*; отрицание **keine**) | **die** Bücher — книги |
 
-Род — свойство **слова**, не предмета. **Das Mädchen** — средний род (суффикс **-chen**), хотя речь о девочке. **Die Sonne** — женский, **der Mond** — мужской.
+Род — свойство **слова**, не «логического» предмета.  
+**Das Mädchen** (девочка) — средний род из‑за суффикса **-chen**.  
+**Die Sonne** — женский род, **der Mond** — мужской.
 
-### Ориентиры, не абсолютные правила
-- **-ung, -heit, -keit, -schaft, -ion** → почти всегда **die** (**die Wohnung**, **die Freiheit**)
-- **-chen, -lein** → **das** (**das Brötchen**)
-- **-er** у многих профессий → **der** (**der Lehrer**), женский вариант часто на **-in** (**die Lehrerin**)
-- дни, месяцы, времена года → **der** (**der Montag**, **der Sommer**)
+### Полезные ориентиры (не 100%, но часто)
+- окончания **-ung, -heit, -keit, -schaft, -ion** → чаще **die**  
+- **-chen, -lein** → **das**  
+- профессии на **-er** → **der** (**der Lehrer**), женщина часто на **-in** (**die Lehrerin**)  
+- дни, месяцы, времена года → **der** (**der Montag**)
 
-Новые слова учите **с артиклем**: не «Tisch», а «**der** Tisch».
+Новое слово учите **с артиклем**: не «Tisch», а «**der** Tisch».
 
 ## Зачем номинатив
-Номинатив отвечает на **wer?** / **was?** — кто? что? как подлежащее.
+Номинатив — форма для **кто делает** / **что это**.
 
-- **Der Tisch ist neu.**
-- **Das ist eine Lampe.**
-- **Ein Buch liegt hier.**
+- **Der Tisch ist neu.** — Стол новый.  
+- **Das ist eine Lampe.** — Это лампа.  
+- **Ein Buch liegt hier.** — Здесь лежит книга.
 
-**ein** не имеет формы множественного числа. «Книги» как неопределённые: просто **Bücher**, или отрицание **keine Bücher**.
+У **ein** нет отдельной формы «для многих». Несколько книг: **Bücher** или **keine Bücher**.
 
-> 💡 В номинативе мужской и средний артикль совпадают у **ein** (**ein Mann / ein Kind**), но **der** и **das** их различают. Род проверяйте по **определённому** артиклю.`,
+> 💡 У **ein** формы мужского и среднего совпадают (**ein Mann / ein Kind**). Чтобы узнать род, смотрите на **der / die / das**.`,
   },
   {
     slug: "de-a1-praesens",
@@ -156,46 +185,49 @@ const GERMAN_GRAMMAR_CORE: GrammarTopic[] = [
     category: "Глаголы",
     summary:
       "Спряжение слабых глаголов и глаголов с чередованием гласной.",
-    content: `> **Перед этой темой:** вы знаете **род** и артикль в номинативе. **В этой теме:** **Präsens** — обычные глаголы и глаголы с **a → ä**, **e → i**.
+    content: `**Präsens** — настоящее время. Им говорят и «я делаю сейчас», и «обычно», и про ближайшие планы: **Morgen fahre ich nach München.**
 
-## Слабый глагол: wohnen, machen, lernen
+## Обычный глагол (слабый)
 
-Отделяем **-en**: **wohn-**. Окончания одни на все слабые глаголы.
+Берём инфинитив (**wohnen**), убираем **-en**, получаем основу **wohn-**, добавляем окончания:
 
-| | окончание | wohnen | machen |
+| Местоимение | Окончание | wohnen | machen |
 |---|---|---|---|
 | ich | **-e** | ich wohne | ich mache |
 | du | **-st** | du wohnst | du machst |
-| er/sie/es | **-t** | er wohnt | er macht |
+| er / sie / es | **-t** | er wohnt | er macht |
 | wir | **-en** | wir wohnen | wir machen |
 | ihr | **-t** | ihr wohnt | ihr macht |
-| sie/Sie | **-en** | sie wohnen | Sie wohnen |
+| sie / Sie | **-en** | sie wohnen | Sie wohnen |
 
-Основа на **-t / -d** получает **-e-** перед **-st / -t**: **arbeiten → du arbeitest, er arbeitet**. Основа на **-s / -ß / -z**: **du heißen → du heißt** (одно **s** не удваивают).
+Если основа на **-t / -d**, перед **-st / -t** вставляют **-e-**:  
+**arbeiten → du arbeitest, er arbeitet.**
 
-**Präsens** покрывает и «я делаю», и «я делаю обычно», и ближайший план: **Morgen fahre ich nach München.**
+Если основа на **-s / -ß / -z**: **heißen → du heißt** (лишнее **s** не добавляют).
 
-## Чередование у сильных глаголов (du и er/sie/es)
+## Когда гласная меняется (сильные глаголы)
 
-| инфинитив | du | er/sie/es | остальные без чередования |
+У части глаголов в формах **du** и **er/sie/es** меняется гласная. Остальные лица — как обычно.
+
+| Инфинитив | du | er / sie / es | мы (без смены) |
 |---|---|---|---|
 | **fahren** | fährst | fährt | wir fahren |
-| **schlafen** | schläfst | schläft | |
-| **lesen** | liest | liest | |
-| **sehen** | siehst | sieht | |
-| **sprechen** | sprichst | spricht | |
-| **essen** | isst | isst | |
-| **nehmen** | nimmst | nimmt | |
-| **geben** | gibst | gibt | |
-| **helfen** | hilfst | hilft | |
+| **schlafen** | schläfst | schläft | wir schlafen |
+| **lesen** | liest | liest | wir lesen |
+| **sehen** | siehst | sieht | wir sehen |
+| **sprechen** | sprichst | spricht | wir sprechen |
+| **essen** | isst | isst | wir essen |
+| **nehmen** | nimmst | nimmt | wir nehmen |
+| **geben** | gibst | gibt | wir geben |
+| **helfen** | hilfst | hilft | wir helfen |
 
-**gehen** чередования **не** имеет: **du gehst, er geht**. **Kommen** тоже регулярный по гласной: **du kommst**.
+**gehen** и **kommen** гласную **не** меняют: **du gehst**, **du kommst**.
 
-- **Was machst du?** — Ich lerne Deutsch.
-- **Er isst ein Brot.**
-- **Wir gehen nach Hause.**
+- **Was machst du?** — Что ты делаешь?  
+- **Er isst ein Brot.** — Он ест хлеб.  
+- **Wir gehen nach Hause.** — Мы идём домой.
 
-> 💡 Чередование только у **du** и **er/sie/es**. **Wir / sie / Sie** всегда как инфинитив. Заучивайте тройку: **essen — du isst — er isst**.`,
+> 💡 Запоминайте короткой тройкой: **essen — du isst — er isst**. У **wir / sie / Sie** форма как в словаре.`,
   },
   {
     slug: "de-a1-akkusativ",
@@ -205,43 +237,53 @@ const GERMAN_GRAMMAR_CORE: GrammarTopic[] = [
     category: "Падежи",
     summary:
       "Винительный падеж: den/einen и вопрос wen oder was.",
-    content: `> **Перед этой темой:** вы спрягаете глагол в **Präsens**. **В этой теме:** **Akkusativ** — падеж прямого дополнения. Вопрос: **wen?** (кого?) или **was?** (что?).
+    content: `**Akkusativ** (винительный падеж) — форма слова, на которое **направлено** действие: кого? что?
 
-## Что меняется
+Вопросы: **wen?** (кого?) / **was?** (что?).
 
-В аккузативе **меняется только мужской род**. Женский, средний и множественное число выглядят как номинатив.
+## Что меняется в артикле
 
-| | номинатив | аккузатив |
+**Меняется только мужской род.** Женский, средний и множественное выглядят как в номинативе.
+
+| Род | Кто? что? (номинатив) | Кого? что? (аккузатив) |
 |---|---|---|
-| м | **der / ein** Mann | **den / einen** Mann |
-| ж | **die / eine** Frau | **die / eine** Frau |
-| ср | **das / ein** Kind | **das / ein** Kind |
-| мн | **die** Kinder | **die** Kinder |
+| мужской | **der / ein** Mann | **den / einen** Mann |
+| женский | **die / eine** Frau | **die / eine** Frau |
+| средний | **das / ein** Kind | **das / ein** Kind |
+| мн. число | **die** Kinder | **die** Kinder |
 
-- **Ich sehe den Mann.**
-- **Sie kauft einen Apfel.**
-- **Wir haben eine Wohnung.**
-- **Er liest das Buch.**
+Примеры:
+- **Ich sehe den Mann.** — Я вижу мужчину.  
+- **Sie kauft einen Apfel.** — Она покупает яблоко.  
+- **Wir haben eine Wohnung.** — У нас есть квартира.  
+- **Er liest das Buch.** — Он читает книгу.
 
-### Глаголы, после которых ждут Akkusativ
-**haben, sehen, hören, kaufen, brauchen, essen, trinken, nehmen, suchen, finden, lieben, kennen**.
+### Глаголы, после которых обычно нужен аккузатив
+**haben, sehen, hören, kaufen, brauchen, essen, trinken, nehmen, suchen, finden, lieben, kennen.**
 
-**Kennen** (быть знакомым) ≠ **wissen** (знать факт). **Ich kenne den Film.** **Ich weiß die Antwort** реже; чаще **Ich weiß das.**
+**kennen** = быть знакомым с чем‑то/кем‑то: **Ich kenne den Film.**  
+**wissen** = знать факт: **Ich weiß das.**
 
-### Местоимения в аккузативе
+### Местоимения «меня / тебя / его…»
 
-| номинатив | аккузатив |
+| Кто (номинатив) | Кого (аккузатив) |
 |---|---|
-| ich / du | **mich / dich** |
-| er / sie / es | **ihn / sie / es** |
-| wir / ihr | **uns / euch** |
-| sie / Sie | **sie / Sie** |
+| ich → | **mich** |
+| du → | **dich** |
+| er → | **ihn** |
+| sie (она) → | **sie** |
+| es → | **es** |
+| wir → | **uns** |
+| ihr → | **euch** |
+| sie / Sie → | **sie / Sie** |
 
-**Ich sehe ihn.** **Siehst du mich?**
+**Ich sehe ihn.** — Я его вижу.  
+**Siehst du mich?** — Ты меня видишь?
 
-Подлежащее остаётся в номинативе: **Der Mann sieht den Hund.** Кто видит? **der Mann**. Кого видит? **den Hund**.
+Подлежащее остаётся в номинативе:  
+**Der Mann sieht den Hund.** — Кто видит? **der Mann**. Кого? **den Hund**.
 
-> 💡 Если артикль был **der**, прямое дополнение почти всегда **den**. Формы **die** и **das** в аккузативе не меняются — ошибка «den Frau» сразу выдаёт, что род не учтён.`,
+> 💡 Правило‑якорь: был **der** → в дополнении почти всегда **den**. Ошибка **den Frau** значит, что род слова не учтён.`,
   },
   {
     slug: "de-a1-questions-v2",
@@ -251,47 +293,52 @@ const GERMAN_GRAMMAR_CORE: GrammarTopic[] = [
     category: "Синтаксис",
     summary:
       "Да/нет-вопросы, W-вопросы и глагол на втором месте в главном предложении.",
-    content: `> **Перед этой темой:** вы строите фразу с **аккузативом**. **В этой теме:** куда ставить **спрягаемый глагол**. Это правило немецкого порядка слов номер один: **V2**.
+    content: `Главное правило немецкого порядка слов: в обычном предложении **спрягаемый глагол стоит на втором месте**. Это называют **V2** (verb second).
 
-## Главное предложение: глагол на втором месте
+«Второе место» — не «второе слово», а **второй кусок** фразы.
 
-«Второе место» — это **вторая составляющая**, не второе слово.
+## Утверждение: глагол второй
 
-| 1-я составляющая | глагол | остальное |
+| 1-е место | Глагол | Дальше |
 |---|---|---|
 | **Ich** | **lerne** | heute Deutsch. |
 | **Heute** | **lerne** | ich Deutsch. |
-| **Deutsch** | **lerne** | ich heute. |
 | **In Berlin** | **wohne** | ich. |
 
-**In Berlin** — одна группа, хотя слова два. Глагол сразу после неё. Подлежащее тогда уходит **за глагол**.
+**In Berlin** — одна группа («в Берлине»), хотя слов два. После неё сразу глагол. Тогда **ich** уходит **за** глагол.
 
-## Вопрос без вопросительного слова — глагол первый
+Неправильно: **Heute ich lerne…**  
+Правильно: **Heute lerne ich…**
 
-- **Lernst du Deutsch?**
-- **Wohnt ihr in Hamburg?**
-- **Ist das dein Buch?**
+## Вопрос «да / нет»: глагол первый
 
-Краткий ответ: **Ja, ich lerne Deutsch.** / **Nein, ich wohne in Köln.**
+- **Lernst du Deutsch?** — Ты учишь немецкий?  
+- **Wohnt ihr in Hamburg?** — Вы живёте в Гамбурге?  
+- **Ist das dein Buch?** — Это твоя книга?
 
-## W-вопрос: слово + глагол + подлежащее
+Ответ: **Ja, …** / **Nein, …**
 
-| слово | смысл | пример |
+## Вопрос со словом (wo, was, wie…)
+
+Схема: **вопросительное слово → глагол → кто**.
+
+| Слово | Значение | Пример |
 |---|---|---|
-| **wer** | кто (номинатив) | **Wer** kommt? |
-| **wen** | кого (аккузатив) | **Wen** siehst du? |
+| **wer** | кто | **Wer** kommt? |
+| **wen** | кого | **Wen** siehst du? |
 | **was** | что | **Was** machst du? |
-| **wo** | где | **Wo** wohnst du? |
+| **wo** | где (без движения) | **Wo** wohnst du? |
 | **wohin** | куда | **Wohin** gehst du? |
 | **woher** | откуда | **Woher** kommst du? |
 | **wann** | когда | **Wann** beginnt der Kurs? |
 | **wie** | как | **Wie** heißt du? |
-| **warum / weshalb** | почему | **Warum** lernst du Deutsch? |
+| **warum** | почему | **Warum** lernst du Deutsch? |
 | **wie viel** | сколько | **Wie viel** kostet das? |
 
-**Wo** — место без движения, **wohin** — направление. **Ich wohne in München** (wo). **Ich gehe nach München** (wohin).
+**Wo** = где находится. **Wohin** = куда направляется.  
+**Ich wohne in München** (где). **Ich gehe nach München** (куда).
 
-> 💡 В повествовательном предложении спрягаемый глагол **не** стоит в конце и **не** стоит сразу после любого наречия, оставляя подлежащее на месте английского порядка. **Heute ich lerne** — неверная схема. Верно: **Heute lerne ich**.`,
+> 💡 Коротко: в рассказе глагол **второй**, в да/нет‑вопросе — **первый**, в W‑вопросе — сразу после **wo / was / wie…**`,
   },
   {
     slug: "de-a1-possessives-plurals",
@@ -301,51 +348,54 @@ const GERMAN_GRAMMAR_CORE: GrammarTopic[] = [
     category: "Имя",
     summary:
       "Mein/dein/sein и основные модели множественного числа.",
-    content: `> **Перед этой темой:** вы держите **V2** и вопросы. **В этой теме:** «мой / твой / наш» и как существительное становится **множественным**.
+    content: `Учимся говорить **мой / твой / его** и называть вещи во **множественном числе**.
 
-## Притяжательные — как ein
+## Mein, dein, sein… — «чей?»
 
-Основа зависит от **владельца**. Окончание зависит от **рода вещи**, не от владельца.
+Основа зависит от **владельца**. Окончание — от **рода вещи** (как у **ein / eine**).
 
-| владелец | основа |
-|---|---|
-| ich | **mein** |
-| du | **dein** |
-| er | **sein** |
-| sie (она) | **ihr** |
-| es | **sein** |
-| wir | **unser** |
-| ihr (вы, мн.) | **euer** |
-| sie (они) | **ihr** |
-| Sie | **Ihr** |
+| Владелец | Основа | Пример |
+|---|---|---|
+| я | **mein** | **mein** Buch |
+| ты | **dein** | **dein** Auto |
+| он | **sein** | **sein** Bruder |
+| она | **ihr** | **ihr** Bruder |
+| оно | **sein** | **sein** Spielzeug |
+| мы | **unser** | **unser** Haus |
+| вы (друзья) | **euer** | **euer** Sohn |
+| они | **ihr** | **ihr** Auto |
+| вы (вежливо) | **Ihr** | **Ihr** Name |
 
-Номинатив, как у **ein / eine / ein**:
+В номинативе окончания как у **ein**:
 
-| м | ж | ср | мн |
+| мужской | женский | средний | мн. число |
 |---|---|---|---|
 | **mein** Bruder | **meine** Schwester | **mein** Kind | **meine** Kinder |
 
-Аккузатив мужского — как **einen**: **Ich besuche meinen Bruder.**
+В аккузативе у мужского рода: **meinen** — **Ich besuche meinen Bruder.**
 
-**ihr** — три разных слова в тексте: **ihr seid** (вы), **ihr Buch** (её или их), **Ihr Buch** (ваш, вежливо). Различайте по заглавной букве и по глаголу.
+### Не путайте три «ihr / Ihr»
+- **ihr seid** — вы (друзья) есть…  
+- **ihr Buch** — её или их книга  
+- **Ihr Buch** — ваша книга (вежливо, с большой буквы)
 
-**euer** теряет внутреннее **-e-** перед окончанием: **euer Sohn**, но **eure Tochter**, **euren Sohn** (аккузатив).
+У **euer** перед окончанием часто пропадает **-e-**: **euer Sohn**, но **eure Tochter**, **euren Sohn**.
 
-## Множественное число — часть слова
+## Множественное число
 
-Единого правила нет. Учите форму вместе с единственным числом: **der Tisch — die Tische**.
+Единого правила нет — форму учат вместе со словом: **der Tisch — die Tische**.
 
-| модель | пример |
+| Как образуется | Пример |
 |---|---|
-| **-e** (± умлаут) | der Tisch → **die Tische**; der Stuhl → **die Stühle** |
-| **-(e)n** | die Frau → **die Frauen**; die Wohnung → **die Wohnungen** |
-| **-er** (± умлаут) | das Kind → **die Kinder**; das Buch → **die Bücher** |
-| нулевое (± умлаут) | der Lehrer → **die Lehrer**; der Vater → **die Väter** |
-| **-s** | das Auto → **die Autos**; das Hotel → **die Hotels** |
+| **-e** (иногда с умлаутом) | Tisch → **Tische**, Stuhl → **Stühle** |
+| **-(e)n** | Frau → **Frauen**, Wohnung → **Wohnungen** |
+| **-er** (часто с умлаутом) | Kind → **Kinder**, Buch → **Bücher** |
+| без окончания (иногда умлаут) | Lehrer → **Lehrer**, Vater → **Väter** |
+| **-s** | Auto → **Autos** |
 
-Артикль множественного числа во всех родах — **die**.
+Во множественном числе артикль всегда **die**.
 
-> 💡 Притяжательное согласуется с **предметом**: «её брат» — **ihr Bruder** (мужской род слова Bruder), «её сестра» — **ihre Schwester**. Не смотрите на пол владельца.`,
+> 💡 Смотрите на род **вещи**, не на пол владельца: «её брат» = **ihr Bruder**, «её сестра» = **ihre Schwester**.`,
   },
   {
     slug: "de-a1-modal-verbs",
@@ -355,26 +405,31 @@ const GERMAN_GRAMMAR_CORE: GrammarTopic[] = [
     category: "Глаголы",
     summary:
       "Können, müssen, wollen, dürfen, sollen, mögen: смысл и позиция инфинитива.",
-    content: `> **Перед этой темой:** вы ставите обычный глагол по правилу **V2**. **В этой теме:** модальные глаголы. Спрягается **модальный**, а смысловой инфинитив уходит в **конец**.
+    content: `Модальные глаголы добавляют смысл «могу / должен / хочу / можно».  
+Спрягается **модальный** глагол (второе место), а смысловой глагол стоит в **инфинитиве в конце** — без **zu**.
 
-## Смысл
+## Значения
 
-| глагол | смысл | пример |
+| Глагол | Значение | Пример |
 |---|---|---|
 | **können** | уметь, мочь | Ich **kann** schwimmen. |
-| **müssen** | должен (необходимость) | Ich **muss** lernen. |
-| **wollen** | хотеть (своё желание) | Wir **wollen** bleiben. |
-| **dürfen** | можно, иметь разрешение | Du **darfst** hier parken. |
-| **sollen** | должен по чужой воле, «тебе велели» | Du **sollst** die Ärztin anrufen. |
-| **mögen** | любить, нравиться | Ich **mag** Kaffee. |
+| **müssen** | должен (иначе нельзя) | Ich **muss** lernen. |
+| **wollen** | хотеть | Wir **wollen** bleiben. |
+| **dürfen** | можно / разрешено | Du **darfst** hier parken. |
+| **sollen** | должен, потому что так сказали | Du **sollst** die Ärztin anrufen. |
+| **mögen** | нравиться | Ich **mag** Kaffee. |
 | **möchten** | хотел бы (вежливо) | Ich **möchte** einen Tee. |
 
-**müssen** ≠ **sollen**. **Ich muss gehen** — иначе нельзя. **Ich soll gehen** — кто-то так сказал / от меня этого ждут.
-**nicht dürfen** — запрет: **Du darfst hier nicht rauchen.** **nicht müssen** — отсутствие необходимости: **Du musst nicht kommen** = не обязан.
+**müssen** ≠ **sollen**:  
+**Ich muss gehen** — мне нужно.  
+**Ich soll gehen** — меня просят / от меня ждут.
 
-## Спряжение (ich / du / er)
+**nicht dürfen** = нельзя: **Du darfst hier nicht rauchen.**  
+**nicht müssen** = не обязан: **Du musst nicht kommen.**
 
-| | ich / er | du |
+## Формы (запомните ich / du / er)
+
+| Глагол | ich / er | du |
 |---|---|---|
 | können | **kann** | **kannst** |
 | müssen | **muss** | **musst** |
@@ -384,16 +439,17 @@ const GERMAN_GRAMMAR_CORE: GrammarTopic[] = [
 | mögen | **mag** | **magst** |
 | möchten | **möchte** | **möchtest** |
 
-**wir / sie / Sie** — форма инфинитива (**können, müssen…**). **ihr** — **könnt, müsst, dürft, wollt, sollt, mögt, möchtet**.
+**wir / sie / Sie** = как в словаре (**können, müssen…**).  
+**ihr**: **könnt, müsst, dürft, wollt, sollt, mögt, möchtet**.
 
 ## Порядок слов
-- **Ich kann heute nicht kommen.**
-- **Kannst du mir helfen?**
+- **Ich kann heute nicht kommen.**  
+- **Kannst du mir helfen?**  
 - **Was willst du essen?**
 
-Частица **zu** перед инфинитивом **не** ставится: не *kann zu kommen*.
+Нельзя: *kann zu kommen* — частицы **zu** здесь нет.
 
-> 💡 В утвердительном предложении модальный глагол занимает место **V2**, инфинитив — самый конец, даже после отделяемой приставки: **Ich muss früh aufstehen.**`,
+> 💡 Модальный глагол на втором месте, действие — в самом конце: **Ich muss früh aufstehen.**`,
   },
   {
     slug: "de-a1-separable-verbs",
@@ -403,40 +459,44 @@ const GERMAN_GRAMMAR_CORE: GrammarTopic[] = [
     category: "Глаголы",
     summary:
       "Глаголы с отделяемой приставкой: приставка в конце главного предложения.",
-    content: `> **Перед этой темой:** модальный глагол отправляет инфинитив в конец. **В этой теме:** **отделяемые приставки** — второй типичный «хвост» немецкой фразы.
+    content: `Многие немецкие глаголы начинаются с приставки (**auf-, an-, ein-…**).  
+В обычном предложении приставка **отрывается** и уходит **в конец**.
 
-## Что отделяется
-Ударение на приставке: **aufstehen, ankommen, einkaufen, mitkommen, anfangen, aufmachen, zumachen, fernsehen, anrufen**.
+Частые глаголы: **aufstehen, ankommen, einkaufen, mitkommen, anfangen, anrufen, fernsehen**.
 
-В главном предложении спрягается основа и стоит на месте **V2**, приставка — в конце.
+## Как это выглядит
 
-| инфинитив | фраза |
+| В словаре | В предложении |
 |---|---|
-| aufstehen | Ich **stehe** um sieben **auf**. |
-| ankommen | Der Zug **kommt** um neun **an**. |
-| einkaufen | Wir **kaufen** am Samstag **ein**. |
-| mitkommen | **Kommst** du **mit**? |
-| anrufen | Ich **rufe** dich später **an**. |
-| fernsehen | Er **sieht** abends **fern**. |
+| aufstehen | Ich **stehe** um sieben **auf**. — Я встаю в семь. |
+| ankommen | Der Zug **kommt** um neun **an**. — Поезд прибывает в девять. |
+| einkaufen | Wir **kaufen** am Samstag **ein**. — В субботу мы ходим за покупками. |
+| mitkommen | **Kommst** du **mit**? — Ты идёшь с нами? |
+| anrufen | Ich **rufe** dich später **an**. — Я тебе потом позвоню. |
+| fernsehen | Er **sieht** abends **fern**. — Вечером он смотрит телевизор. |
 
-Вопрос: **Stehst du früh auf?** W-вопрос: **Wann stehst du auf?**
+Вопрос: **Stehst du früh auf?**  
+С **wann**: **Wann stehst du auf?**
 
-## С модальным глаголом приставка не отделяется
-Инфинитив снова целый, потому что спрягается модальный глагол:
+## С модальным глаголом приставка не отрывается
 
-- **Ich muss früh aufstehen.**
-- **Sie will mitkommen.**
+Спрягается модальный глагол, а весь глагол снова целый в конце:
+
+- **Ich muss früh aufstehen.**  
+- **Sie will mitkommen.**  
 - **Darf ich dich anrufen?**
 
-## Не отделяются
-Приставки **be-, emp-, ent-, er-, ge-, miss-, ver-, zer-** всегда с глаголом, ударение на корне: **besuchen, verstehen, erzählen, bekommen**.
+## Какие приставки НЕ отделяются
+**be-, emp-, ent-, er-, ge-, miss-, ver-, zer-** всегда остаются с глаголом:  
+**besuchen, verstehen, erzählen, bekommen**.
 
-- **Ich besuche meine Eltern.** (не *suche … be*)
+- **Ich besuche meine Eltern.** (не *suche … be*)  
 - **Verstehst du das?**
 
-Часть приставок (**um, über, unter, durch**) бывает и так, и так — на A1 достаточно учить глагол как готовую единицу: **umsteigen** отделяется (**ich steige um**), **übersetzen** в значении «переводить» — нет.
+На A1 глаголы вроде **umsteigen** / **übersetzen** лучше учить целиком:  
+**umsteigen** отделяется (**ich steige um**), **übersetzen** «переводить» — нет.
 
-> 💡 Слышите приставку в конце — ищите спрягаемый глагол на **втором месте**. **Ich aufstehe** — неверная схема. Верно: **Ich stehe auf.**`,
+> 💡 Нельзя говорить **Ich aufstehe**. Нужно: **Ich stehe auf.**`,
   },
   {
     slug: "de-a1-negation-time-numbers",
@@ -446,55 +506,58 @@ const GERMAN_GRAMMAR_CORE: GrammarTopic[] = [
     category: "Коммуникация",
     summary:
       "Nicht и kein; числа, часы, даты и базовые предлоги времени.",
-    content: `> **Перед этой темой:** вы собираете фразу с модальным глаголом и отделяемой приставкой. **В этой теме:** как сказать «не», назвать число и время.
+    content: `Учимся говорить «не», называть числа и время.
 
-## kein или nicht
+## kein или nicht — какое «не»?
 
-**kein** отрицает существительное **без артикля или с неопределённым артиклем**. Склоняется как **mein**.
+**kein** = «никакой / нет …» перед существительным без **der/die/das** (или вместо **ein**). Меняется как **mein**.
 
-| | пример |
+| Когда | Пример |
 |---|---|
-| номинатив | Das ist **kein** Problem. |
-| м аккузатив | Ich habe **keinen** Bruder. |
-| ж | Ich kaufe **keine** Milch. |
-| мн | Wir haben **keine** Kinder. |
+| это не проблема | Das ist **kein** Problem. |
+| нет брата | Ich habe **keinen** Bruder. |
+| не покупаю молоко | Ich kaufe **keine** Milch. |
+| нет детей | Wir haben **keine** Kinder. |
 
-**nicht** отрицает глагол, прилагательное, наречие или существительное с **определённым** артиклем / именем.
+**nicht** = «не» для глагола, прилагательного, наречия или слова с **der/die/das** / имени.
 
-- **Ich arbeite heute nicht.**
-- **Das ist nicht teuer.**
-- **Ich sehe den Film nicht.**
-- **Nicht Anna, sondern Paul kommt.**
+- **Ich arbeite heute nicht.** — Сегодня я не работаю.  
+- **Das ist nicht teuer.** — Это недорого.  
+- **Ich sehe den Film nicht.** — Я не смотрю этот фильм.  
+- **Nicht Anna, sondern Paul kommt.** — Приходит не Анна, а Пауль.
 
-**nicht** стоит перед тем, что отрицает, и перед «хвостом» (приставкой, инфинитивом): **Ich stehe morgen nicht auf.** **Ich kann nicht kommen.**
+**nicht** стоит перед тем, что отрицаем, и перед «хвостом» (приставкой / инфинитивом):  
+**Ich stehe morgen nicht auf.** · **Ich kann nicht kommen.**
 
 ## Числа
-0 **null**, 1 **eins**, 2 **zwei**, 3 **drei**, 4 **vier**, 5 **fünf**, 6 **sechs**, 7 **sieben**, 8 **acht**, 9 **neun**, 10 **zehn**, 11 **elf**, 12 **zwölf**, 16 **sechzehn**, 17 **siebzehn**.
-Десятки: 20 **zwanzig**, 30 **dreißig**, 40 **vierzig** …
-**21 = einundzwanzig** — единицы, потом **und**, потом десятки, **одним словом**.
+0 **null**, 1 **eins**, 2 **zwei**, 3 **drei**, 4 **vier**, 5 **fünf**, 6 **sechs**, 7 **sieben**, 8 **acht**, 9 **neun**, 10 **zehn**, 11 **elf**, 12 **zwölf**.  
+16 **sechzehn**, 17 **siebzehn**.  
+20 **zwanzig**, 30 **dreißig**, 40 **vierzig**…
 
-Перед существительным «один» ведёт себя как **ein**: **ein Tisch**, не *eins Tisch*.
+Составные: **21 = einundzwanzig** — сначала единицы, потом **und**, потом десятки, **одним словом**.
 
-## Часы
-- **Es ist drei Uhr.**
-- **Es ist Viertel nach drei.** — 3:15
-- **Es ist Viertel vor vier.** — 3:45
-- **Es ist halb vier.** — **3:30** (половина **четвёртого**, не «полчетвёртого» как 4:30)
+Перед существительным «один» = **ein**: **ein Tisch** (не *eins Tisch*).
 
-Официально минуты: **Es ist drei Uhr zwanzig.**
-**Um wie viel Uhr?** — **Um acht Uhr.**
+## Который час
+- **Es ist drei Uhr.** — Три часа.  
+- **Es ist Viertel nach drei.** — 3:15  
+- **Es ist Viertel vor vier.** — 3:45  
+- **Es ist halb vier.** — **3:30** (половина **следующего** часа!)
+
+Официально: **Es ist drei Uhr zwanzig.**  
+Спросить время: **Um wie viel Uhr?** — **Um acht Uhr.**
 
 ## Когда
-| предлог | пример |
+| Говорим | Пример |
 |---|---|
 | **am** + день / часть дня | **am** Montag, **am** Morgen |
 | **im** + месяц / сезон | **im** Mai, **im** Sommer |
 | **um** + час | **um** 8 Uhr |
 | **von … bis** | **von** Montag **bis** Freitag |
 
-Дата: **am dritten Mai**, **am 3. Mai**.
+Дата: **am 3. Mai** / **am dritten Mai**.
 
-> 💡 **halb vier** — это 3:30. Немецкие «пол-» смотрят на **следующий** час. Это стоит проговорить вслух на циферблате, пока не станет автоматическим.`,
+> 💡 **halb vier** = 3:30, не 4:30. Немецкие «пол-» смотрят на **час впереди**.`,
   },
 
   // ===== A2 ==========================================================

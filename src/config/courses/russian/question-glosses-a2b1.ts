@@ -470,15 +470,15 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "Di que Anna tiene poco dinero.",
     de: "Sag, dass Anna wenig Geld hat.",
   },
-  "чая / Стакан": {
-    en: "Name a glass of tea.",
-    es: "Di un vaso de té.",
-    de: "Nenne ein Glas Tee.",
+  "чая / горячего / Стакан": {
+    en: "Build a phrase with a measure and genitive (a glass of tea).",
+    es: "Construye una frase con medida y genitivo (un vaso de té).",
+    de: "Baue eine Phrase mit Maß und Genitiv (ein Glas Tee).",
   },
-  "словаря / Нет": {
-    en: "Say that there is no dictionary.",
-    es: "Di que no hay diccionario.",
-    de: "Sag, dass es kein Wörterbuch gibt.",
+  "Нет / словаря / этого": {
+    en: "Build a phrase: there is no (this) dictionary.",
+    es: "Construye una frase: no hay (este) diccionario.",
+    de: "Baue eine Phrase: es gibt (dieses) Wörterbuch nicht.",
   },
   "книг / много / аудитории / В": {
     en: "Say that there are many books in the classroom.",

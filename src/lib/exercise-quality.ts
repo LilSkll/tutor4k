@@ -216,7 +216,18 @@ function instructionSpoilsAnswer(instruction: string, answer: string): boolean {
   if (/\s/.test(a)) return false;
   const escaped = a.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const re = new RegExp(`(^|[^\\p{L}])${escaped}([^\\p{L}]|$)`, "iu");
-  return re.test(instruction);
+  if (re.test(instruction)) return true;
+  // «Вставьте: книга» names the lemma; when it equals the answer the blank
+  // is a free write-in with the solution printed in the task line.
+  const insertCue = instruction.match(/^Вставьте:\s*(.+)$/iu);
+  if (insertCue) {
+    const cue = insertCue[1].trim().toLowerCase();
+    if (cue === a.toLowerCase()) return true;
+    // Even when the lemma differs (книга → книгу), the cue still prints the
+    // target word family in the instruction slot — prefer a paren cue instead.
+    if (cue.length >= 2) return true;
+  }
+  return false;
 }
 
 /**

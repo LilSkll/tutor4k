@@ -380,7 +380,7 @@ export const GERMAN_A1_EXERCISES: Record<string, Draft[]> = {
       "der Tisch — мужской род, именительный.",
       {
         en: "___ Tisch ist neu. Which article? (table is masculine)",
-        es: "___ Tisch ist neu. ¿Qué artículo? (mesa = masculino)",
+        es: "___ Tisch ist neu. ¿Qué artículo? (Tisch = masculino)",
         de: "___ Tisch ist neu. Welcher Artikel? (Tisch = maskulin)",
       },
     ),
@@ -420,7 +420,7 @@ export const GERMAN_A1_EXERCISES: Record<string, Draft[]> = {
     fb("___ Stuhl ist braun.", "Der", "der Stuhl — мужской род.", {
       ru: "Стул (муж. род): … Stuhl ist braun.",
       en: "Chair (masculine): … Stuhl ist braun.",
-      es: "Silla (masculino): … Stuhl ist braun.",
+      es: "Silla → Stuhl (masculino en alemán): … Stuhl ist braun.",
     }),
     fb("Das ist ___ Tasche.", "eine", "die Tasche — женский род: eine Tasche.", {
       ru: "Сумка (жен. род): Das ist … Tasche.",
@@ -430,7 +430,7 @@ export const GERMAN_A1_EXERCISES: Record<string, Draft[]> = {
     fb("___ Fenster ist offen.", "Das", "das Fenster — средний род.", {
       ru: "Окно (ср. род): … Fenster ist offen.",
       en: "Window (neuter): … Fenster ist offen.",
-      es: "Ventana (neutro): … Fenster ist offen.",
+      es: "Ventana → Fenster (neutro en alemán): … Fenster ist offen.",
     }),
     fb("___ Mann ist Arzt.", "Der", "der Mann — мужской род.", {
       ru: "Мужчина: … Mann ist Arzt.",
@@ -440,7 +440,11 @@ export const GERMAN_A1_EXERCISES: Record<string, Draft[]> = {
     tl("Это стол.", "Das ist ein Tisch", "Новый предмет мужского рода: ein Tisch.", [
       "Das ist der Tisch",
     ]),
-    tl("Книга новая.", "Das Buch ist neu", "das Buch — средний род."),
+    tl(
+      "Книга новая. (das Buch)",
+      "Das Buch ist neu",
+      "das Buch — средний род; не die.",
+    ),
     tl("Это лампа.", "Das ist eine Lampe", "die Lampe — eine Lampe."),
     tl("Мужчина — врач.", "Der Mann ist Arzt", "der Mann; профессия без артикля.", [
       "Der Mann ist ein Arzt",
@@ -651,7 +655,7 @@ export const GERMAN_A1_EXERCISES: Record<string, Draft[]> = {
       "Wir haben eine Katze",
       "haben + винительный, женский род eine.",
     ),
-    tl("Он покупает книгу.", "Er kauft ein Buch", "das Buch → ein Buch."),
+    tl("Он покупает книгу. (das Buch)", "Er kauft ein Buch", "das Buch → ein Buch."),
     ec("Ich kaufe ein Apfel.", "Ich kaufe einen Apfel.", "Мужской род в винительном: einen."),
     ec("Sie sieht der Film.", "Sie sieht den Film.", "После sieht нужен винительный den."),
     ec("Wir haben ein Katze.", "Wir haben eine Katze.", "Katze женского рода: eine."),
@@ -854,7 +858,7 @@ export const GERMAN_A1_EXERCISES: Record<string, Draft[]> = {
     tl("Это мой брат.", "Das ist mein Bruder", "Мужской род: mein Bruder."),
     tl("Наша квартира маленькая.", "Unsere Wohnung ist klein", "die Wohnung: unsere."),
     tl("У неё две сестры.", "Sie hat zwei Schwestern", "die Schwester → die Schwestern."),
-    tl("Его книга новая.", "Sein Buch ist neu", "das Buch: sein Buch."),
+    tl("Его книга новая. (das Buch)", "Sein Buch ist neu", "das Buch: sein Buch; не die."),
     ec("Das ist meine Bruder.", "Das ist mein Bruder.", "Bruder мужского рода: mein, не meine."),
     ec("Sein Schwester heißt Lea.", "Seine Schwester heißt Lea.", "Schwester женского рода: seine."),
     ec("Unsere Kind ist klein.", "Unser Kind ist klein.", "das Kind — средний род единственного числа: unser."),

@@ -276,7 +276,7 @@ export const GERMAN_B1_EXERCISES: Record<string, Draft[]> = {
       en: "This is a good idea. Das ist eine … Idee.",
       es: "Esta es una buena idea. Das ist eine … Idee.",
     }),
-    fb("Wir trinken ___ Wasser. (kalt, без артикля)", "kaltes", "Средний род без артикля: -es.", {
+    fb("Wir trinken ___ Wasser. (kalt, ohne Artikel)", "kaltes", "Средний род без артикля: -es.", {
       ru: "Мы пьём холодную воду (без артикля). Wir trinken … Wasser.",
       en: "We drink cold water (no article). Wir trinken … Wasser.",
       es: "Bebemos agua fría (sin artículo). Wir trinken … Wasser.",

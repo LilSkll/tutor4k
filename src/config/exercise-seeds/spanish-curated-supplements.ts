@@ -3,10 +3,10 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
   "chapter-2-primer-dialogo": [
     {
       "type": "translation",
-      "question": "Я встаю в семь утра.",
-      "answer": "Me levanto a las siete",
+      "question": "Я говорю по-испански.",
+      "answer": "Hablo español",
       "instruction": "Переведите предложение",
-      "explanation": "Me levanto = встаю. a las siete = в семь."
+      "explanation": "Hablo español — presente, yo (hablar)."
     },
     {
       "type": "translation",
@@ -24,10 +24,10 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
     },
     {
       "type": "translation",
-      "question": "Они учатся в университете.",
-      "answer": "Estudian en la universidad",
+      "question": "Она живёт в Мадриде.",
+      "answer": "Ella vive en Madrid",
       "instruction": "Переведите предложение",
-      "explanation": "Ellos → estudian (-ar). Sin pronombre posible."
+      "explanation": "Vivir (-ir): ella → vive."
     },
     {
       "type": "translation",
@@ -38,10 +38,10 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
     },
     {
       "type": "translation",
-      "question": "Я мою зубы два раза в день.",
-      "answer": "Me lavo los dientes dos veces al día",
-      "instruction": "Reflexivo + rutina",
-      "explanation": "Me lavo = мою (себе). dos veces al día."
+      "question": "Мы едим хлеб.",
+      "answer": "Comemos pan",
+      "instruction": "Переведите предложение",
+      "explanation": "Comer (-er): nosotros → comemos."
     },
     {
       "type": "translation",
@@ -59,27 +59,29 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
     },
     {
       "type": "translation",
-      "question": "Он слушает музыку по дороге на работу.",
-      "answer": "Escucha música camino al trabajo",
+      "question": "Ты пишешь письмо?",
+      "answer": "¿Escribes una carta?",
       "instruction": "Переведите предложение",
-      "explanation": "Escucha música. camino al trabajo = по дороге на работу."
+      "explanation": "Escribir (-ir): tú → escribes."
+    },
+    {
+      "type": "translation",
+      "question": "Они пьют воду.",
+      "answer": "Ellos beben agua",
+      "instruction": "Переведите предложение",
+      "explanation": "Beber (-er): ellos → beben."
     },
     {
       "type": "sentence_building",
-      "question": "Me / levanto / a / las / siete / de / la / mañana",
+      "question": "Yo / hablo / español",
       "options": [
-        "Me",
-        "levanto",
-        "a",
-        "las",
-        "siete",
-        "de",
-        "la",
-        "mañana"
+        "Yo",
+        "hablo",
+        "español"
       ],
-      "answer": "Me levanto a las siete de la mañana",
-      "instruction": "Соберите утреннюю рутину",
-      "explanation": "Me levanto + hora."
+      "answer": "Yo hablo español",
+      "instruction": "Соберите предложение",
+      "explanation": "Yo hablo español — presente."
     },
     {
       "type": "sentence_building",
@@ -91,7 +93,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "mañana"
       ],
       "answer": "Desayunamos juntos cada mañana",
-      "instruction": "Соберите фразу о завтраке",
+      "instruction": "Соберите предложение",
       "explanation": "Desayunamos = мы завтракаем."
     },
     {
@@ -106,7 +108,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "noche"
       ],
       "answer": "Ella lee un libro cada noche",
-      "instruction": "Соберите вечернюю привычку",
+      "instruction": "Соберите предложение",
       "explanation": "Ella lee — presente."
     },
     {
@@ -121,7 +123,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "días"
       ],
       "answer": "Yo estudio español todos los días",
-      "instruction": "Соберите ежедневную практику",
+      "instruction": "Соберите предложение",
       "explanation": "Estudio español todos los días."
     },
     {
@@ -135,25 +137,20 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "noche?"
       ],
       "answer": "¿Cocinas la cena esta noche?",
-      "instruction": "Соберите вопрос",
+      "instruction": "Соберите предложение",
       "explanation": "¿Cocinas…? — tú."
     },
     {
       "type": "sentence_building",
-      "question": "Me / lavo / los / dientes / dos / veces / al / día",
+      "question": "Nosotros / comemos / pan",
       "options": [
-        "Me",
-        "lavo",
-        "los",
-        "dientes",
-        "dos",
-        "veces",
-        "al",
-        "día"
+        "Nosotros",
+        "comemos",
+        "pan"
       ],
-      "answer": "Me lavo los dientes dos veces al día",
-      "instruction": "Соберите гигиену",
-      "explanation": "Reflexivo: me lavo."
+      "answer": "Nosotros comemos pan",
+      "instruction": "Соберите предложение",
+      "explanation": "Nosotros comemos pan."
     },
     {
       "type": "sentence_building",
@@ -167,7 +164,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "hospital"
       ],
       "answer": "Mi hermano trabaja en un hospital",
-      "instruction": "Соберите фразу о работе",
+      "instruction": "Соберите предложение",
       "explanation": "Trabaja en un hospital."
     },
     {
@@ -182,15 +179,15 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "familia"
       ],
       "answer": "Cenamos a las ocho en familia",
-      "instruction": "Соберите ужин",
+      "instruction": "Соберите предложение",
       "explanation": "Cenamos a las ocho."
     },
     {
       "type": "error_correction",
-      "question": "Yo me levanto a las siete de la mañana cada días.",
-      "answer": "Me levanto a las siete de la mañana cada día.",
+      "question": "Yo hablo español todos los día.",
+      "answer": "Hablo español todos los días.",
       "instruction": "Найдите и исправьте ошибку",
-      "explanation": "Cada día — singular (no días)."
+      "explanation": "Todos los días — plural."
     },
     {
       "type": "error_correction",
@@ -203,64 +200,63 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "Nosotros desayunamos juntos cada mañana hoy.",
       "answer": "Desayunamos juntos cada mañana.",
-      "instruction": "Redundancia",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Cada mañana — sin «hoy»."
     },
     {
       "type": "error_correction",
       "question": "¿Cocinas la cena esta noche ayer?",
       "answer": "¿Cocinas la cena esta noche?",
-      "instruction": "Tiempo contradictorio",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Esta noche — no ayer."
     },
     {
       "type": "error_correction",
-      "question": "Me lavo los diente dos veces al día.",
-      "answer": "Me lavo los dientes dos veces al día.",
-      "instruction": "Plural — dientes",
-      "explanation": "Los dientes — plural."
+      "question": "Ellos beben agua frío.",
+      "answer": "Ellos beben agua fría.",
+      "instruction": "Найдите и исправьте ошибку",
+      "explanation": "Agua es femenino → fría."
     },
     {
       "type": "error_correction",
       "question": "Mi hermano trabaja en un hospital desde ayer siempre.",
       "answer": "Mi hermano trabaja en un hospital.",
-      "instruction": "Redundancia temporal",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Sin «desde ayer siempre»."
     },
     {
       "type": "error_correction",
-      "question": "Estudian en la universidad ellos ellos.",
-      "answer": "Estudian en la universidad.",
-      "instruction": "Pronombre redundante",
-      "explanation": "Ellos — no repetir."
+      "question": "Ella vive en Madrid ella.",
+      "answer": "Ella vive en Madrid.",
+      "instruction": "Найдите и исправьте ошибку",
+      "explanation": "Ella — no repetir al final."
     },
     {
       "type": "error_correction",
       "question": "Yo estudio español todos los día.",
       "answer": "Estudio español todos los días.",
-      "instruction": "Plural — días",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Todos los días — plural."
     },
     {
       "type": "error_correction",
       "question": "Ella lee un libro cada noche en las mañanas.",
       "answer": "Ella lee un libro cada noche.",
-      "instruction": "Contradicción temporal",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Cada noche — no mañanas."
     },
     {
       "type": "sentence_building",
-      "question": "Me / ducho / por / la / mañana",
+      "question": "Ella / vive / en / Madrid",
       "options": [
-        "Me",
-        "ducho",
-        "por",
-        "la",
-        "mañana"
+        "Ella",
+        "vive",
+        "en",
+        "Madrid"
       ],
-      "answer": "Me ducho por la mañana",
-      "instruction": "Rutina",
-      "explanation": "Me ducho por la mañana."
+      "answer": "Ella vive en Madrid",
+      "instruction": "Соберите предложение",
+      "explanation": "Ella vive en Madrid."
     },
     {
       "type": "sentence_building",
@@ -273,7 +269,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "día"
       ],
       "answer": "Trabajo ocho horas al día",
-      "instruction": "Составьте предложение из слов",
+      "instruction": "Соберите предложение",
       "explanation": "Trabajo ocho horas…"
     },
     {
@@ -286,8 +282,8 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "cenáis?"
       ],
       "answer": "¿A qué hora cenáis?",
-      "instruction": "Pregunta rutina",
-      "explanation": "Соберите слова в естественном порядке испанского предложения."
+      "instruction": "Соберите предложение",
+      "explanation": "¿A qué hora cenáis? — vosotros."
     },
     {
       "type": "sentence_building",
@@ -300,7 +296,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "cenar"
       ],
       "answer": "Siempre estudio después de cenar",
-      "instruction": "Hábito",
+      "instruction": "Соберите предложение",
       "explanation": "Siempre estudio…"
     },
     {
@@ -314,7 +310,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "periódico"
       ],
       "answer": "Mi padre lee el periódico",
-      "instruction": "Составьте предложение из слов",
+      "instruction": "Соберите предложение",
       "explanation": "Lee el periódico."
     },
     {
@@ -328,7 +324,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "tarde"
       ],
       "answer": "Los domingos dormimos hasta tarde",
-      "instruction": "Rutina",
+      "instruction": "Соберите предложение",
       "explanation": "Los domingos dormimos…"
     },
     {
@@ -343,7 +339,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "semana?"
       ],
       "answer": "¿Qué haces los fines de semana?",
-      "instruction": "Pregunta",
+      "instruction": "Соберите предложение",
       "explanation": "¿Qué haces…?"
     },
     {
@@ -359,7 +355,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "semana"
       ],
       "answer": "Voy al gimnasio tres veces por semana",
-      "instruction": "Frecuencia",
+      "instruction": "Соберите предложение",
       "explanation": "Tres veces por semana."
     },
     {
@@ -372,22 +368,20 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "bien"
       ],
       "answer": "Ella cocina muy bien",
-      "instruction": "Составьте предложение из слов",
+      "instruction": "Соберите предложение",
       "explanation": "Cocina muy bien."
     },
     {
       "type": "sentence_building",
-      "question": "Nos / levantamos / temprano / entre / semana",
+      "question": "Ellos / beben / agua",
       "options": [
-        "Nos",
-        "levantamos",
-        "temprano",
-        "entre",
-        "semana"
+        "Ellos",
+        "beben",
+        "agua"
       ],
-      "answer": "Nos levantamos temprano entre semana",
-      "instruction": "Reflexivo",
-      "explanation": "Nos levantamos temprano."
+      "answer": "Ellos beben agua",
+      "instruction": "Соберите предложение",
+      "explanation": "Ellos beben agua."
     }
   ],
   "chapter-3-biblioteca": [
@@ -395,63 +389,63 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "В библиотеке есть книга.",
       "answer": "Hay un libro en la biblioteca",
-      "instruction": "Hay + artículo",
+      "instruction": "Переведите предложение",
       "explanation": "Hay un libro en la biblioteca."
     },
     {
       "type": "translation",
-      "question": "Где газета?",
-      "answer": "¿Dónde está el periódico?",
-      "instruction": "El + sustantivo",
-      "explanation": "El periódico — определённый артикль."
+      "question": "Где книга?",
+      "answer": "¿Dónde está el libro?",
+      "instruction": "Переведите предложение",
+      "explanation": "El libro — определённый артикль."
     },
     {
       "type": "translation",
-      "question": "Мне нужна синяя ручка.",
-      "answer": "Necesito un bolígrafo azul",
-      "instruction": "Un + adjetivo",
-      "explanation": "Un bolígrafo azul."
+      "question": "Мне нужна ручка.",
+      "answer": "Necesito un bolígrafo",
+      "instruction": "Переведите предложение",
+      "explanation": "Necesito un bolígrafo."
     },
     {
       "type": "translation",
       "question": "На столе лежит журнал.",
       "answer": "Hay una revista en la mesa",
-      "instruction": "Hay + una",
+      "instruction": "Переведите предложение",
       "explanation": "Una revista — женский род."
     },
     {
       "type": "translation",
       "question": "Это интересная статья.",
       "answer": "Es un artículo interesante",
-      "instruction": "Un artículo",
+      "instruction": "Переведите предложение",
       "explanation": "Un artículo interesante."
     },
     {
       "type": "translation",
       "question": "В комнате нет стульев.",
       "answer": "No hay sillas en la habitación",
-      "instruction": "No hay + plural",
+      "instruction": "Переведите предложение",
       "explanation": "No hay sillas — отрицание."
     },
     {
       "type": "translation",
-      "question": "Я ищу словарь испанского языка.",
-      "answer": "Busco un diccionario de español",
-      "instruction": "Buscar + un",
-      "explanation": "Busco un diccionario de español."
+      "question": "Я ищу словарь.",
+      "answer": "Busco un diccionario",
+      "instruction": "Переведите предложение",
+      "explanation": "Busco un diccionario."
     },
     {
       "type": "translation",
-      "question": "Где находится туалет?",
+      "question": "Где туалет?",
       "answer": "¿Dónde está el baño?",
-      "instruction": "El baño",
-      "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки."
+      "instruction": "Переведите предложение",
+      "explanation": "¿Dónde está el baño?"
     },
     {
       "type": "translation",
       "question": "Есть ли здесь Wi-Fi?",
       "answer": "¿Hay Wi-Fi aquí?",
-      "instruction": "Hay — вопрос",
+      "instruction": "Переведите предложение",
       "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки."
     },
     {
@@ -466,34 +460,33 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "biblioteca"
       ],
       "answer": "Hay un libro en la biblioteca",
-      "instruction": "Соберите hay + un",
+      "instruction": "Соберите предложение",
       "explanation": "Hay un libro…"
     },
     {
       "type": "sentence_building",
-      "question": "¿Dónde / está / el / periódico?",
+      "question": "¿Dónde / está / el / libro?",
       "options": [
         "¿Dónde",
         "está",
         "el",
-        "periódico?"
+        "libro?"
       ],
-      "answer": "¿Dónde está el periódico?",
-      "instruction": "Соберите вопрос с el",
-      "explanation": "El periódico."
+      "answer": "¿Dónde está el libro?",
+      "instruction": "Соберите предложение",
+      "explanation": "El libro."
     },
     {
       "type": "sentence_building",
-      "question": "Necesito / un / bolígrafo / azul",
+      "question": "Necesito / un / bolígrafo",
       "options": [
         "Necesito",
         "un",
-        "bolígrafo",
-        "azul"
+        "bolígrafo"
       ],
-      "answer": "Necesito un bolígrafo azul",
-      "instruction": "Соберите un + adj",
-      "explanation": "Un bolígrafo azul."
+      "answer": "Necesito un bolígrafo",
+      "instruction": "Соберите предложение",
+      "explanation": "Necesito un bolígrafo."
     },
     {
       "type": "sentence_building",
@@ -507,7 +500,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "mesa"
       ],
       "answer": "Hay una revista en la mesa",
-      "instruction": "Соберите una",
+      "instruction": "Соберите предложение",
       "explanation": "Una revista — femenino."
     },
     {
@@ -520,7 +513,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "interesante"
       ],
       "answer": "Es un artículo interesante",
-      "instruction": "Соберите es + un",
+      "instruction": "Соберите предложение",
       "explanation": "Es un artículo…"
     },
     {
@@ -535,22 +528,20 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "habitación"
       ],
       "answer": "No hay sillas en la habitación",
-      "instruction": "Соберите no hay",
+      "instruction": "Соберите предложение",
       "explanation": "No hay + plural."
     },
     {
       "type": "sentence_building",
-      "question": "Busco / un / diccionario / de / español",
+      "question": "Busco / un / diccionario",
       "options": [
         "Busco",
         "un",
-        "diccionario",
-        "de",
-        "español"
+        "diccionario"
       ],
-      "answer": "Busco un diccionario de español",
-      "instruction": "Соберите buscar",
-      "explanation": "Busco un diccionario…"
+      "answer": "Busco un diccionario",
+      "instruction": "Соберите предложение",
+      "explanation": "Busco un diccionario."
     },
     {
       "type": "sentence_building",
@@ -562,7 +553,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "baño?"
       ],
       "answer": "¿Dónde está el baño?",
-      "instruction": "Соберите el baño",
+      "instruction": "Соберите предложение",
       "explanation": "El baño — мужской род."
     },
     {
@@ -574,70 +565,70 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "aquí?"
       ],
       "answer": "¿Hay Wi-Fi aquí?",
-      "instruction": "Соберите вопрос hay",
+      "instruction": "Соберите предложение",
       "explanation": "¿Hay… aquí?"
     },
     {
       "type": "error_correction",
       "question": "Hay un libro en la biblioteca el.",
       "answer": "Hay un libro en la biblioteca.",
-      "instruction": "Artículo incorrecto",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Sin «el» al final."
     },
     {
       "type": "error_correction",
-      "question": "¿Dónde está el periódico de la?",
-      "answer": "¿Dónde está el periódico?",
-      "instruction": "Artículo sobrante",
-      "explanation": "El periódico — sin «de la»."
+      "question": "¿Dónde está el libro de la?",
+      "answer": "¿Dónde está el libro?",
+      "instruction": "Найдите и исправьте ошибку",
+      "explanation": "El libro — sin «de la»."
     },
     {
       "type": "error_correction",
-      "question": "Necesito un bolígrafo azules.",
-      "answer": "Necesito un bolígrafo azul.",
-      "instruction": "Concordancia",
-      "explanation": "Azul — invariable con bolígrafo."
+      "question": "Necesito un bolígrafos.",
+      "answer": "Necesito un bolígrafo.",
+      "instruction": "Найдите и исправьте ошибку",
+      "explanation": "Un bolígrafo — singular."
     },
     {
       "type": "error_correction",
       "question": "Hay una revista en la mesa el.",
       "answer": "Hay una revista en la mesa.",
-      "instruction": "Artículo incorrecto",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Sin «el» extra."
     },
     {
       "type": "error_correction",
       "question": "Es un artículo interesantes.",
       "answer": "Es un artículo interesante.",
-      "instruction": "Concordancia",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Artículo — masculino singular."
     },
     {
       "type": "error_correction",
       "question": "No hay silla en la habitación.",
       "answer": "No hay sillas en la habitación.",
-      "instruction": "Plural",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Sillas — plural en la habitación."
     },
     {
       "type": "error_correction",
-      "question": "Busco un diccionario de españoles.",
-      "answer": "Busco un diccionario de español.",
-      "instruction": "Nombre de idioma",
-      "explanation": "De español — sin -es."
+      "question": "Busco un diccionarios.",
+      "answer": "Busco un diccionario.",
+      "instruction": "Найдите и исправьте ошибку",
+      "explanation": "Un diccionario — singular."
     },
     {
       "type": "error_correction",
       "question": "¿Dónde está el baño de la?",
       "answer": "¿Dónde está el baño?",
-      "instruction": "Artículo sobrante",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "El baño — sin «de la»."
     },
     {
       "type": "error_correction",
       "question": "¿Hay Wi-Fi aquí en el aquí?",
       "answer": "¿Hay Wi-Fi aquí?",
-      "instruction": "Redundancia",
+      "instruction": "Найдите и исправьте ошибку",
       "explanation": "Un solo «aquí»."
     },
     {
@@ -650,7 +641,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "aquí"
       ],
       "answer": "Hay muchos libros aquí",
-      "instruction": "Hay + plural",
+      "instruction": "Соберите предложение",
       "explanation": "Hay muchos libros…"
     },
     {
@@ -663,7 +654,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "libre"
       ],
       "answer": "Busco una silla libre",
-      "instruction": "Buscar + una",
+      "instruction": "Соберите предложение",
       "explanation": "Busco una silla…"
     },
     {
@@ -675,8 +666,8 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "bolígrafo?"
       ],
       "answer": "¿Tienes un bolígrafo?",
-      "instruction": "Tener — pregunta",
-      "explanation": "Соберите слова в естественном порядке испанского предложения."
+      "instruction": "Соберите предложение",
+      "explanation": "¿Tienes un bolígrafo?"
     },
     {
       "type": "sentence_building",
@@ -689,7 +680,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "libro"
       ],
       "answer": "El estudiante lee un libro",
-      "instruction": "El + sustantivo",
+      "instruction": "Соберите предложение",
       "explanation": "El estudiante lee…"
     },
     {
@@ -702,7 +693,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "libres"
       ],
       "answer": "Hay pocas mesas libres",
-      "instruction": "Hay + pocas",
+      "instruction": "Соберите предложение",
       "explanation": "Hay pocas mesas…"
     },
     {
@@ -715,7 +706,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "grande"
       ],
       "answer": "Necesito una mesa grande",
-      "instruction": "Necesitar + una",
+      "instruction": "Соберите предложение",
       "explanation": "Necesito una mesa…"
     },
     {
@@ -727,8 +718,8 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "diccionario?"
       ],
       "answer": "¿Hay algún diccionario?",
-      "instruction": "Algún",
-      "explanation": "Соберите слова в естественном порядке испанского предложения."
+      "instruction": "Соберите предложение",
+      "explanation": "¿Hay algún diccionario?"
     },
     {
       "type": "sentence_building",
@@ -741,7 +732,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "lección"
       ],
       "answer": "La profesora explica la lección",
-      "instruction": "La + femenino",
+      "instruction": "Соберите предложение",
       "explanation": "La profesora explica…"
     },
     {
@@ -754,7 +745,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "nuevo"
       ],
       "answer": "Hay un profesor nuevo",
-      "instruction": "Hay + un",
+      "instruction": "Соберите предложение",
       "explanation": "Hay un profesor nuevo."
     },
     {
@@ -767,7 +758,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
         "libro"
       ],
       "answer": "Quiero prestar un libro",
-      "instruction": "Querer + inf",
+      "instruction": "Соберите предложение",
       "explanation": "Quiero prestar…"
     }
   ],
@@ -8922,7 +8913,7 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Вовсе нет!",
       "answer": "¡Qué va!",
-      "instruction": "Registro coloquial",
+      "instruction": "Переведите на испанский",
       "explanation": "¡Qué va! — negación enérgica."
     },
     {
@@ -8984,16 +8975,24 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
     {
       "type": "translation",
       "question": "Какая неожиданность (ирония).",
-      "answer": "Qué sorpresa más grande",
-      "instruction": "Ironía",
-      "explanation": "Qué sorpresa — ironía."
+      "answer": "Vaya sorpresa",
+      "acceptableAnswers": [
+        "Vaya sorpresa",
+        "Qué sorpresa más grande"
+      ],
+      "instruction": "Переведите на испанский",
+      "explanation": "Vaya sorpresa — ironía."
     },
     {
       "type": "translation",
       "question": "Без комментариев.",
-      "answer": "No comment",
-      "instruction": "Pragmática",
-      "explanation": "No comment — evasión."
+      "answer": "Sin comentarios",
+      "acceptableAnswers": [
+        "Sin comentarios",
+        "Sin comentarios."
+      ],
+      "instruction": "Переведите на испанский",
+      "explanation": "Sin comentarios — evasión."
     },
     {
       "type": "translation",
@@ -9095,10 +9094,14 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
     },
     {
       "type": "error_correction",
-      "question": "Gracias por la ayuda! (no ayudó)",
-      "answer": "Gracias por la ayuda.",
-      "instruction": "Pragmática",
-      "explanation": "Contexto define ironía."
+      "question": "Gracias por la ayuda tan inutil (no ayudó)",
+      "answer": "Gracias por la ayuda tan útil.",
+      "acceptableAnswers": [
+        "Gracias por la ayuda tan útil.",
+        "Gracias por la ayuda tan útil"
+      ],
+      "instruction": "Прагматика",
+      "explanation": "En contexto irónico: útil (с ú), no inutil."
     },
     {
       "type": "error_correction",
@@ -9408,13 +9411,6 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
     },
     {
       "type": "translation",
-      "question": "Без комментариев.",
-      "answer": "Sin comentarios",
-      "instruction": "Pragmática",
-      "explanation": "Sin comentarios — evasión."
-    },
-    {
-      "type": "translation",
       "question": "Ну конечно, всё по плану (ирония).",
       "answer": "Claro, todo según el plan",
       "instruction": "Ironía",
@@ -9424,7 +9420,11 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Какая неожиданность (иронично).",
       "answer": "Vaya sorpresa",
-      "instruction": "Ironía",
+      "acceptableAnswers": [
+        "Vaya sorpresa",
+        "Qué sorpresa más grande"
+      ],
+      "instruction": "Переведите на испанский",
       "explanation": "Vaya sorpresa — ironía."
     },
     {

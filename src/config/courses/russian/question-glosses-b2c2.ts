@@ -85,10 +85,10 @@ export const RUSSIAN_QUESTION_GLOSSES_B2C2: Record<
     "es": "Mientras la redacción no ___ las cifras, el material no entra en el número. Futuro perfectivo tras пока не, de сверить.",
     "de": "Solange die Redaktion die Zahlen nicht ___, kommt der Beitrag nicht in die Ausgabe. Perfektives Futur nach пока не, von сверить."
   },
-  "Едва Анна ___ первый абзац, как редактор попросил переписать тон.": {
-    "en": "Anna had barely ___ the first paragraph when the editor asked to rewrite the tone. Perfective after едва. Anna is feminine.",
-    "es": "Apenas Anna ___ el primer párrafo, el editor pidió reescribir el tono. Perfectivo tras едва. Anna es femenino.",
-    "de": "Kaum hatte Anna den ersten Absatz ___, bat der Redakteur, den Ton umzuschreiben. Perfektiv nach едва. Anna ist feminin."
+  "Едва Анна ___ первый абзац, как редактор попросил сменить тон.": {
+    "en": "Anna had barely ___ the first paragraph when the editor asked to change the tone. Perfective after едва. Anna is feminine.",
+    "es": "Apenas Anna ___ el primer párrafo, el editor pidió cambiar el tono. Perfectivo tras едва. Anna es femenino.",
+    "de": "Kaum hatte Anna den ersten Absatz ___, bat der Redakteur, den Ton zu ändern. Perfektiv nach едва. Anna ist feminin."
   },
   "Окно сейчас закрыто. Кто его открыл утром?": {
     "en": "The window is shut now, but the verb treats the morning opening as a result that still holds. Fix the aspect.",
@@ -125,7 +125,7 @@ export const RUSSIAN_QUESTION_GLOSSES_B2C2: Record<
     "es": "Пока не en futuro necesita un límite, y el material aún no entra en el número. Corrige el aspecto.",
     "de": "Пока не in der Zukunft braucht eine Grenze, und der Beitrag ist noch nicht in der Ausgabe. Korrigiere den Aspekt."
   },
-  "Едва Анна дописывала первый абзац, как редактор попросил переписать тон.": {
+  "Едва Анна дописывала первый абзац, как редактор попросил сменить тон.": {
     "en": "Едва … как links a finished first step to the next one. The verb is still a process. Anna is feminine. Fix the aspect.",
     "es": "Едва … как une un primer paso terminado con el siguiente. El verbo sigue en proceso. Anna es femenino. Corrige el aspecto.",
     "de": "Едва … как verbindet einen abgeschlossenen ersten Schritt mit dem nächsten. Das Verb ist noch Verlauf. Anna ist feminin. Korrigiere den Aspekt."
@@ -750,10 +750,10 @@ export const RUSSIAN_QUESTION_GLOSSES_B2C2: Record<
     "es": "Una nota de servicio usa un «ahora» coloquial recortado. Corrígelo: hace falta el marco temporal oficial.",
     "de": "Ein dienstlicher Vermerk benutzt ein verkürztes umgangssprachliches «jetzt». Korrigiere: der amtliche Zeitrahmen ist nötig."
   },
-  "На кухне Омар читает смету вслух: «Денежные средства кончились».": {
-    "en": "Omar is reading the budget aloud in the kitchen, but the money word belongs in a formal estimate. Fix the register.",
-    "es": "Omar lee el presupuesto en voz alta en la cocina, pero la palabra del dinero es de una estimación formal. Corrige el registro.",
-    "de": "Omar liest den Kostenplan in der Küche laut, das Geldwort gehört aber in einen förmlichen Plan. Korrigiere das Register."
+  "На кухне Омар жалуется соседу и цитирует смету бюрократической фразой: «Денежные средства кончились».": {
+    "en": "On the kitchen Omar complains to a neighbor and quotes the budget in bureaucratic wording. Fix the register: colloquial money talk, not estimate language.",
+    "es": "En la cocina Omar se queja con un vecino y cita el presupuesto con frase burocrática. Corrige el registro: dinero coloquial, no lenguaje de partida.",
+    "de": "In der Küche beschwert sich Omar beim Mitbewohner und zitiert den Plan in Behördensprache. Korrigiere das Register: umgangssprachlich, nicht Kostenplansprache."
   },
   "В комментарии к рассказу: «Повествователь пялится на город».": {
     "en": "A literary comment uses a rude verb of staring. Fix the verb: bookish register.",
@@ -795,10 +795,10 @@ export const RUSSIAN_QUESTION_GLOSSES_B2C2: Record<
     "es": "Ordena las palabras. Oficial: los fondos de la subvención están agotados.",
     "de": "Bringe die Wörter in Ordnung. Amtliche Sprache: die Fördermittel sind ausgeschöpft."
   },
-  "город / на / взирает / повествователь / Книжный": {
-    "en": "Put the words in order. A bookish narrator looks upon the city.",
-    "es": "Ordena las palabras. Un narrador de registro culto contempla la ciudad.",
-    "de": "Bringe die Wörter in Ordnung. Ein gehobener Erzähler blickt auf die Stadt."
+  "город / на / взирает / Повествователь": {
+    "en": "Put the words in order. The narrator looks upon the city (bookish verb).",
+    "es": "Ordena las palabras. El narrador contempla la ciudad (verbo culto).",
+    "de": "Bringe die Wörter in Ordnung. Der Erzähler blickt auf die Stadt (gehobenes Verb)."
   },
   "стоял / поезд / что / потому / опоздали / Мы": {
     "en": "Put the words in order. Neutral: we were late because the train was standing.",
@@ -1482,10 +1482,10 @@ export const RUSSIAN_QUESTION_GLOSSES_B2C2: Record<
     "es": "Las preguntas ___ en el examen eran del apunte. Alguien se las hizo a los estudiantes. Participio pasivo de pasado, plural, forma plena. El plural breve sería predicado, no un atributo entre comas.",
     "de": "Die Fragen, ___ in der Prüfung, stammten aus der Mitschrift. Jemand hat sie den Studierenden gestellt. Passives Partizip Präteritum, Plural, Langform. Der kurze Plural wäre Prädikat, kein Attribut zwischen Kommas.",
   },
-  "На экране ещё не готовый проект, ___ кафедрой в этом семестре.": {
-    "en": "On the screen is a project that is not ready yet, ___ by the department this semester. The department is doing it now, and the instrumental names the agent. Choose a present passive participle.",
-    "es": "En la pantalla hay un proyecto aún no listo, ___ por el departamento este semestre. El departamento lo hace ahora, y el instrumental nombra al agente. Elige un participio pasivo de presente.",
-    "de": "Auf dem Bildschirm ist ein noch nicht fertiges Projekt, ___ vom Lehrstuhl in diesem Semester. Der Lehrstuhl arbeitet jetzt daran, der Instrumental nennt den Agens. Wähle ein passives Partizip Präsens.",
+  "На экране проект, ___ кафедрой в этом семестре, ещё не готов.": {
+    "en": "On the screen is a project, ___ by the department this semester, that is not ready yet. The department is doing it now; the instrumental names the agent. Choose a present passive participle.",
+    "es": "En la pantalla hay un proyecto, ___ por el departamento este semestre, que aún no está listo. El departamento lo hace ahora; el instrumental nombra al agente. Elige un participio pasivo de presente.",
+    "de": "Auf dem Bildschirm ist ein Projekt, ___ vom Lehrstuhl in diesem Semester, das noch nicht fertig ist. Der Lehrstuhl arbeitet jetzt daran; der Instrumental nennt den Agens. Wähle ein passives Partizip Präsens.",
   },
   "Студентка, ___ статью, отметила спорный тезис.": {
     "en": "The student (feminine), having ___ the article, marked a disputed thesis. She herself finished reading it. Past active participle of «to read», feminine singular.",

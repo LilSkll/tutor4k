@@ -21,6 +21,11 @@ export const RUSSIAN_A1_REST_GLOSSES: Record<
     es: "— ¿Dónde está el comedor? — ___, todo recto.",
     de: "— Wo ist die Mensa? — ___, geradeaus.",
   },
+  "— Спасибо за помощь! — ___.": {
+    en: "— Thank you for the help! — ___.",
+    es: "— ¡Gracias por la ayuda! — ___.",
+    de: "— Danke für die Hilfe! — ___.",
+  },
   "___, где аудитория 5?": {
     en: "___, where is room 5?",
     es: "___, ¿dónde está el aula 5?",
@@ -399,6 +404,11 @@ export const RUSSIAN_A1_REST_GLOSSES: Record<
     en: "Look at ___.",
     es: "Mire ___.",
     de: "Schauen Sie auf ___.",
+  },
+  "Это ___.": {
+    en: "This is a ___. (classroom board)",
+    es: "Esto es ___. (pizarra del aula)",
+    de: "Das ist ___. (Tafel im Klassenzimmer)",
   },
   "Где ___ задание?": {
     en: "Where is ___ assignment?",
@@ -908,6 +918,106 @@ export const RUSSIAN_A1_REST_GLOSSES: Record<
     en: "I translate ___.",
     es: "Traduzco ___.",
     de: "Ich übersetze ___.",
+  },
+  "Я читаю ___ (книга).": {
+    en: "I am reading ___. Put «книга» (book) into the accusative.",
+    es: "Estoy leyendo ___. Pon «книга» (libro) en acusativo.",
+    de: "Ich lese ___. Setze «книга» (Buch) in den Akkusativ.",
+  },
+  "Я ищу ___ (ручка).": {
+    en: "I am looking for ___. Put «ручка» (pen) into the accusative.",
+    es: "Busco ___. Pon «ручка» (boli) en acusativo.",
+    de: "Ich suche ___. Setze «ручка» (Stift) in den Akkusativ.",
+  },
+  "Смотрите на ___ (доска).": {
+    en: "Look at ___. Put «доска» (board) into the accusative.",
+    es: "Miren ___. Pon «доска» (pizarra) en acusativo.",
+    de: "Schauen Sie auf ___. Setze «доска» (Tafel) in den Akkusativ.",
+  },
+  "Я убираю ___ в общежитии (комната).": {
+    en: "I am tidying ___ in the dorm. Put «комната» (room) into the accusative.",
+    es: "Ordeno ___ en la residencia. Pon «комната» (habitación) en acusativo.",
+    de: "Ich räume ___ im Wohnheim auf. Setze «комната» (Zimmer) in den Akkusativ.",
+  },
+  "Откройте ___ 10 (страница).": {
+    en: "Open ___ 10. Put «страница» (page) into the accusative.",
+    es: "Abran ___ 10. Pon «страница» (página) en acusativo.",
+    de: "Öffnen Sie ___ 10. Setze «страница» (Seite) in den Akkusativ.",
+  },
+  "Я вижу ___ (друг).": {
+    en: "I see ___. Put «друг» (friend, animate) into the accusative.",
+    es: "Veo a ___. Pon «друг» (amigo, animado) en acusativo.",
+    de: "Ich sehe ___. Setze «друг» (Freund, belebt) in den Akkusativ.",
+  },
+  "Преподаватель ждёт ___ (студент).": {
+    en: "The teacher is waiting for ___. Put «студент» into the accusative.",
+    es: "El profesor espera a ___. Pon «студент» en acusativo.",
+    de: "Die Lehrkraft wartet auf ___. Setze «студент» in den Akkusativ.",
+  },
+  "Мы слушаем ___ (преподаватель).": {
+    en: "We are listening to ___. Put «преподаватель» into the accusative.",
+    es: "Escuchamos a ___. Pon «преподаватель» en acusativo.",
+    de: "Wir hören ___ zu. Setze «преподаватель» in den Akkusativ.",
+  },
+  "Я знаю ___ (однокурсник).": {
+    en: "I know ___. Put «однокурсник» (classmate) into the accusative.",
+    es: "Conozco a ___. Pon «однокурсник» (compañero) en acusativo.",
+    de: "Ich kenne ___. Setze «однокурсник» (Kommilitone) in den Akkusativ.",
+  },
+  "Она видит ___ (сестра).": {
+    en: "She sees ___. Put «сестра» (sister) into the accusative.",
+    es: "Ella ve a ___. Pon «сестра» (hermana) en acusativo.",
+    de: "Sie sieht ___. Setze «сестра» (Schwester) in den Akkusativ.",
+  },
+  "Мы встречаем ___ (подруга).": {
+    en: "We are meeting ___. Put «подруга» (female friend) into the accusative.",
+    es: "Quedamos con ___. Pon «подруга» (amiga) en acusativo.",
+    de: "Wir treffen ___. Setze «подруга» (Freundin) in den Akkusativ.",
+  },
+  "Я покупаю ___ (карта).": {
+    en: "I am buying ___. Put «карта» (map/card) into the accusative.",
+    es: "Compro ___. Pon «карта» (mapa/tarjeta) en acusativo.",
+    de: "Ich kaufe ___. Setze «карта» (Karte) in den Akkusativ.",
+  },
+  "Студент сдаёт ___ (работа).": {
+    en: "The student is handing in ___. Put «работа» (paper/work) into the accusative.",
+    es: "El estudiante entrega ___. Pon «работа» (trabajo) en acusativo.",
+    de: "Der Student gibt ___ ab. Setze «работа» (Arbeit) in den Akkusativ.",
+  },
+  "Они читают ___ (газета).": {
+    en: "They are reading ___. Put «газета» (newspaper) into the accusative.",
+    es: "Leen ___. Pon «газета» (periódico) en acusativo.",
+    de: "Sie lesen ___. Setze «газета» (Zeitung) in den Akkusativ.",
+  },
+  "Я беру ___ (сумка).": {
+    en: "I am taking ___. Put «сумка» (bag) into the accusative.",
+    es: "Cojo ___. Pon «сумка» (bolso) en acusativo.",
+    de: "Ich nehme ___. Setze «сумка» (Tasche) in den Akkusativ.",
+  },
+  "Мы ждём ___ (мама).": {
+    en: "We are waiting for ___. Put «мама» (mom) into the accusative.",
+    es: "Esperamos a ___. Pon «мама» (mamá) en acusativo.",
+    de: "Wir warten auf ___. Setze «мама» (Mama) in den Akkusativ.",
+  },
+  "Я слушаю ___ (музыка).": {
+    en: "I am listening to ___. Put «музыка» (music) into the accusative.",
+    es: "Escucho ___. Pon «музыка» (música) en acusativo.",
+    de: "Ich höre ___. Setze «музыка» (Musik) in den Akkusativ.",
+  },
+  "Он знает ___ (Анна).": {
+    en: "He knows ___. Put the name «Анна» into the accusative.",
+    es: "Él conoce a ___. Pon el nombre «Анна» en acusativo.",
+    de: "Er kennt ___. Setze den Namen «Анна» in den Akkusativ.",
+  },
+  "Я вижу ___ (преподавательница).": {
+    en: "I see ___. Put «преподавательница» (female teacher) into the accusative.",
+    es: "Veo a ___. Pon «преподавательница» (profesora) en acusativo.",
+    de: "Ich sehe ___. Setze «преподавательница» (Lehrerin) in den Akkusativ.",
+  },
+  "Они зовут ___ (коллега, м. р.).": {
+    en: "They are calling ___. Put masculine «коллега» (colleague) into the accusative.",
+    es: "Llaman a ___. Pon «коллега» masculino (colega) en acusativo.",
+    de: "Sie rufen ___. Setze maskulines «коллега» (Kollege) in den Akkusativ.",
   },
   "Я вижу ___.": {
     en: "I see ___.",

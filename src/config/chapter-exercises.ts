@@ -26,10 +26,16 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
   "chapter-1-despertar": [
     {
       type: "multiple_choice",
-      question: "¿Cómo ___ tú? (descripción, no estado)",
-      instruction: "ser (какой ты) или estar (как дела сейчас)?",
+      question: "¿Cómo ___ tú?",
+      instruction: "Выберите правильную форму",
       options: ["eres", "estás", "soy", "es"],
       answer: "eres",
+      questionTranslations: {
+        ru: "Какой ты? ¿Cómo ___ tú?",
+        en: "What are you like? ¿Cómo ___ tú?",
+        es: "¿Cómo ___ tú?",
+        de: "Wie bist du (Charakter)? ¿Cómo ___ tú?",
+      },
       explanation:
         "¿Cómo eres? — какой ты характером / внешне (ser). ¿Cómo estás? — как ты себя чувствуешь сейчас (estar). Для имени: ¿Cómo te llamas?",
     },
@@ -924,16 +930,17 @@ export const CHAPTER_EXERCISES: Record<string, ExerciseDraft[]> = {
     },
     {
       type: "fill_blank",
-      question: "¿Podría ___ (ayudar)me?",
-      instruction: "Вежливая просьба через condicional",
-      answer: "ayudar",
-      acceptableAnswers: ["ayudar"],
-      explanation: "Podría + infinitivo. ¿Podría ayudarme? = Не могли бы вы помочь?",
+      question: "¿Podría usted ___?",
+      instruction: "Заполните пропуск",
+      answer: "ayudarme",
+      acceptableAnswers: ["ayudarme"],
+      explanation:
+        "Podría + infinitivo con pronombre enclítico: ¿Podría ayudarme? = Не могли бы вы мне помочь?",
     },
     {
       type: "multiple_choice",
       question: "Yo que tú, lo ___ diferente.",
-      instruction: "Совет — какое наклонение?",
+      instruction: "Выберите правильную форму",
       options: ["haría", "hago", "hice", "haga"],
       answer: "haría",
       explanation: "«На твоём месте» → condicional: haría.",

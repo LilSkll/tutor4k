@@ -8764,7 +8764,7 @@
           "buys"
         ],
         "answer": "bought",
-        "instruction": "Choose past simple",
+        "instruction": "Выберите правильный вариант",
         "explanation": "buy → bought (irregular).",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -8778,7 +8778,7 @@
           "to"
         ],
         "answer": "to",
-        "instruction": "Choose correct option",
+        "instruction": "Выберите правильный вариант",
         "explanation": "go → went, plural = same form.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -8792,7 +8792,7 @@
           "at"
         ],
         "answer": "to",
-        "instruction": "Choose correct option",
+        "instruction": "Выберите правильный вариант",
         "explanation": "go → went. I went to the museum.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -8806,7 +8806,7 @@
           "doesn't"
         ],
         "answer": "didn't",
-        "instruction": "Choose correct option",
+        "instruction": "Выберите правильный вариант",
         "explanation": "didn't + base verb.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -8820,7 +8820,7 @@
           "the"
         ],
         "answer": "a",
-        "instruction": "Choose correct option",
+        "instruction": "Выберите правильный вариант",
         "explanation": "watch → watched.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -8834,7 +8834,7 @@
           "do"
         ],
         "answer": "Did",
-        "instruction": "Choose correct option",
+        "instruction": "Выберите правильный вариант",
         "explanation": "Did you ever + base verb?",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -8848,7 +8848,7 @@
           "don't"
         ],
         "answer": "didn't",
-        "instruction": "Choose correct option",
+        "instruction": "Выберите правильный вариант",
         "explanation": "understand → understood (same form).",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -8862,7 +8862,7 @@
           "some"
         ],
         "answer": "a",
-        "instruction": "Choose correct option",
+        "instruction": "Выберите правильный вариант",
         "explanation": "write → wrote.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -8876,7 +8876,7 @@
           "don't"
         ],
         "answer": "didn't",
-        "instruction": "Choose correct option",
+        "instruction": "Выберите правильный вариант",
         "explanation": "didn't answer.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -8890,7 +8890,7 @@
           "to"
         ],
         "answer": "for",
-        "instruction": "Choose correct option",
+        "instruction": "Выберите правильный вариант",
         "explanation": "try → tried.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -8904,7 +8904,7 @@
           "have"
         ],
         "answer": "had",
-        "instruction": "Choose correct option",
+        "instruction": "Выберите правильный вариант",
         "explanation": "have → had. Образец: We had a great weekend.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -8918,7 +8918,7 @@
           "is"
         ],
         "answer": "was",
-        "instruction": "Choose correct option",
+        "instruction": "Выберите правильный вариант",
         "explanation": "was born in London.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -8932,7 +8932,7 @@
           "doesn't"
         ],
         "answer": "didn't",
-        "instruction": "Choose correct option",
+        "instruction": "Выберите правильный вариант",
         "explanation": "know → knew.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -8946,7 +8946,7 @@
           "on"
         ],
         "answer": "on",
-        "instruction": "Choose correct option",
+        "instruction": "Выберите правильный вариант",
         "explanation": "lose → lost (irregular).",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -8960,7 +8960,7 @@
           "on"
         ],
         "answer": "at",
-        "instruction": "Choose correct option",
+        "instruction": "Выберите правильный вариант",
         "explanation": "arrive → arrived (one r).",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -8974,7 +8974,7 @@
           "to"
         ],
         "answer": "in",
-        "instruction": "Choose correct option",
+        "instruction": "Выберите правильный вариант",
         "explanation": "meet → met (irregular).",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -8988,7 +8988,7 @@
           "some"
         ],
         "answer": "the",
-        "instruction": "Choose correct option",
+        "instruction": "Выберите правильный вариант",
         "explanation": "go → went, plural = same form.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9002,7 +9002,7 @@
           "for"
         ],
         "answer": "to",
-        "instruction": "Choose correct option",
+        "instruction": "Выберите правильный вариант",
         "explanation": "didn't + base verb.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9016,7 +9016,7 @@
           "the"
         ],
         "answer": "the",
-        "instruction": "Choose correct option",
+        "instruction": "Выберите правильный вариант",
         "explanation": "understand → understood (same form).",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9030,7 +9030,7 @@
           "a"
         ],
         "answer": "the",
-        "instruction": "Choose correct option",
+        "instruction": "Выберите правильный вариант",
         "explanation": "try → tried.",
         "grammarTopic": "eng-a2-past-simple"
       }
@@ -9044,7 +9044,7 @@
           "Watch",
           "watch"
         ],
-        "instruction": "Fill in the blank",
+        "instruction": "Заполните пропуск",
         "explanation": "didn't + base verb (no -ed).",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9056,7 +9056,7 @@
           "Bought",
           "bought"
         ],
-        "instruction": "Fill in the blank",
+        "instruction": "Заполните пропуск",
         "explanation": "buy → bought (irregular).",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9068,7 +9068,7 @@
           "to",
           "To"
         ],
-        "instruction": "Complete this gap",
+        "instruction": "Заполните пропуск",
         "explanation": "go → went, plural = same form.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9080,7 +9080,7 @@
           "to",
           "To"
         ],
-        "instruction": "Complete this gap",
+        "instruction": "Заполните пропуск",
         "explanation": "go → went. I went to the museum.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9092,7 +9092,7 @@
           "didn't",
           "Didn't"
         ],
-        "instruction": "Complete this gap",
+        "instruction": "Заполните пропуск",
         "explanation": "didn't + base verb.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9104,7 +9104,7 @@
           "a",
           "A"
         ],
-        "instruction": "Complete this gap",
+        "instruction": "Заполните пропуск",
         "explanation": "watch → watched.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9116,7 +9116,7 @@
           "Did",
           "Did"
         ],
-        "instruction": "Complete this gap",
+        "instruction": "Заполните пропуск",
         "explanation": "Did you ever + base verb?",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9128,7 +9128,7 @@
           "didn't",
           "Didn't"
         ],
-        "instruction": "Complete this gap",
+        "instruction": "Заполните пропуск",
         "explanation": "understand → understood (same form).",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9140,7 +9140,7 @@
           "a",
           "A"
         ],
-        "instruction": "Complete this gap",
+        "instruction": "Заполните пропуск",
         "explanation": "write → wrote.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9152,7 +9152,7 @@
           "didn't",
           "Didn't"
         ],
-        "instruction": "Complete this gap",
+        "instruction": "Заполните пропуск",
         "explanation": "didn't answer.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9164,7 +9164,7 @@
           "for",
           "For"
         ],
-        "instruction": "Complete this gap",
+        "instruction": "Заполните пропуск",
         "explanation": "try → tried.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9176,7 +9176,7 @@
           "had",
           "Had"
         ],
-        "instruction": "Complete this gap",
+        "instruction": "Заполните пропуск",
         "explanation": "have → had. Образец: We had a great weekend.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9188,7 +9188,7 @@
           "was",
           "Was"
         ],
-        "instruction": "Complete this gap",
+        "instruction": "Заполните пропуск",
         "explanation": "was born in London.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9200,7 +9200,7 @@
           "didn't",
           "Didn't"
         ],
-        "instruction": "Complete this gap",
+        "instruction": "Заполните пропуск",
         "explanation": "know → knew.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9212,7 +9212,7 @@
           "on",
           "On"
         ],
-        "instruction": "Complete this gap",
+        "instruction": "Заполните пропуск",
         "explanation": "lose → lost (irregular).",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9224,7 +9224,7 @@
           "at",
           "At"
         ],
-        "instruction": "Complete this gap",
+        "instruction": "Заполните пропуск",
         "explanation": "arrive → arrived (one r).",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9236,7 +9236,7 @@
           "the",
           "The"
         ],
-        "instruction": "Complete this gap",
+        "instruction": "Заполните пропуск",
         "explanation": "go → went. I went to the museum.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9248,7 +9248,7 @@
           "the",
           "The"
         ],
-        "instruction": "Complete this gap",
+        "instruction": "Заполните пропуск",
         "explanation": "didn't + base verb.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9260,7 +9260,7 @@
           "the",
           "The"
         ],
-        "instruction": "Complete this gap",
+        "instruction": "Заполните пропуск",
         "explanation": "didn't answer.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9272,7 +9272,7 @@
           "a",
           "A"
         ],
-        "instruction": "Complete this gap",
+        "instruction": "Заполните пропуск",
         "explanation": "have → had. Образец: We had a great weekend.",
         "grammarTopic": "eng-a2-past-simple"
       }
@@ -9285,7 +9285,7 @@
         "acceptableAnswers": [
           "we went to the airport"
         ],
-        "instruction": "Translate into English",
+        "instruction": "Переведите на английский",
         "explanation": "go → went, plural = same form.",
         "grammarTopic": "eng-a2-past-simple",
         "questionTranslations": {
@@ -9297,7 +9297,7 @@
         "type": "translation",
         "question": "Вчера я ходил в музей.",
         "answer": "I went to the museum yesterday",
-        "instruction": "Translate into English",
+        "instruction": "Переведите на английский",
         "explanation": "go → went. I went to the museum.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": [],
@@ -9310,7 +9310,7 @@
         "type": "translation",
         "question": "Она не пришла на встречу.",
         "answer": "She didn't come to the meeting",
-        "instruction": "Translate into English",
+        "instruction": "Переведите на английский",
         "explanation": "didn't + base verb.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": [],
@@ -9323,7 +9323,7 @@
         "type": "translation",
         "question": "Мы смотрели фильм вчера вечером.",
         "answer": "We watched a film last night",
-        "instruction": "Translate into English",
+        "instruction": "Переведите на английский",
         "explanation": "watch → watched.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": [],
@@ -9336,7 +9336,7 @@
         "type": "translation",
         "question": "Он потерял ключи.",
         "answer": "He lost his keys",
-        "instruction": "Translate into English",
+        "instruction": "Переведите на английский",
         "explanation": "lose → lost.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": [],
@@ -9353,7 +9353,7 @@
           "Have you ever been to Paris?",
           "Have you ever visited Paris?"
         ],
-        "instruction": "Translate into English",
+        "instruction": "Переведите на английский",
         "explanation": "Did you ever + base verb?",
         "grammarTopic": "eng-a2-past-simple",
         "questionTranslations": {
@@ -9365,7 +9365,7 @@
         "type": "translation",
         "question": "Они приехали поздно.",
         "answer": "They arrived late",
-        "instruction": "Translate into English",
+        "instruction": "Переведите на английский",
         "explanation": "arrive → arrived.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": [],
@@ -9378,7 +9378,7 @@
         "type": "translation",
         "question": "Я не понял вопрос.",
         "answer": "I didn't understand the question",
-        "instruction": "Translate into English",
+        "instruction": "Переведите на английский",
         "explanation": "understand → understood (same form).",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": [],
@@ -9391,7 +9391,7 @@
         "type": "translation",
         "question": "Мы встретили старых друзей.",
         "answer": "We met old friends",
-        "instruction": "Translate into English",
+        "instruction": "Переведите на английский",
         "explanation": "meet → met. Образец: We met old friends.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": [],
@@ -9404,7 +9404,7 @@
         "type": "translation",
         "question": "Она написала длинное письмо.",
         "answer": "She wrote a long letter",
-        "instruction": "Translate into English",
+        "instruction": "Переведите на английский",
         "explanation": "write → wrote.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": [],
@@ -9417,7 +9417,7 @@
         "type": "translation",
         "question": "Он не ответил на звонок.",
         "answer": "He didn't answer the call",
-        "instruction": "Translate into English",
+        "instruction": "Переведите на английский",
         "explanation": "didn't answer.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": [],
@@ -9430,7 +9430,7 @@
         "type": "translation",
         "question": "Я ел суши впервые.",
         "answer": "I tried sushi for the first time",
-        "instruction": "Translate into English",
+        "instruction": "Переведите на английский",
         "explanation": "try → tried.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": [],
@@ -9443,7 +9443,7 @@
         "type": "translation",
         "question": "Мы провели отличные выходные.",
         "answer": "We had a great weekend",
-        "instruction": "Translate into English",
+        "instruction": "Переведите на английский",
         "explanation": "have → had. Образец: We had a great weekend.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": [],
@@ -9456,7 +9456,7 @@
         "type": "translation",
         "question": "Она родилась в Лондоне.",
         "answer": "She was born in London",
-        "instruction": "Translate into English",
+        "instruction": "Переведите на английский",
         "explanation": "was born in London.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": [],
@@ -9469,7 +9469,7 @@
         "type": "translation",
         "question": "Они не знали правду.",
         "answer": "They didn't know the truth",
-        "instruction": "Translate into English",
+        "instruction": "Переведите на английский",
         "explanation": "know → knew.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": [],
@@ -9486,7 +9486,7 @@
           "He lost his keys on the bus",
           "he lost his keys on the bus"
         ],
-        "instruction": "Translate into English",
+        "instruction": "Переведите на английский",
         "explanation": "Translate the Russian prompt into English.",
         "questionTranslations": {
           "es": "Perdió sus llaves en el autobús.",
@@ -9501,7 +9501,7 @@
           "They arrived late at the station",
           "they arrived late at the station"
         ],
-        "instruction": "Translate into English",
+        "instruction": "Переведите на английский",
         "explanation": "Translate the Russian prompt into English.",
         "questionTranslations": {
           "es": "Llegaron tarde a la estación.",
@@ -9516,7 +9516,7 @@
           "We met our old friends in York",
           "we met our old friends in york"
         ],
-        "instruction": "Translate into English",
+        "instruction": "Переведите на английский",
         "explanation": "Translate the Russian prompt into English.",
         "questionTranslations": {
           "es": "Nos encontramos con nuestros viejos amigos en York.",
@@ -9531,7 +9531,7 @@
           "She wrote a long letter to her aunt",
           "she wrote a long letter to her aunt"
         ],
-        "instruction": "Translate into English",
+        "instruction": "Переведите на английский",
         "explanation": "Translate the Russian prompt into English.",
         "questionTranslations": {
           "es": "Le escribió una larga carta a su tía.",
@@ -9546,7 +9546,7 @@
           "We had a great weekend in Edinburgh",
           "we had a great weekend in edinburgh"
         ],
-        "instruction": "Translate into English",
+        "instruction": "Переведите на английский",
         "explanation": "Translate the Russian prompt into English.",
         "questionTranslations": {
           "es": "Pasamos un fin de semana estupendo en Edimburgo.",
@@ -9559,7 +9559,7 @@
         "type": "error_correction",
         "question": "I goed to the museum yesterday.",
         "answer": "I went to the museum yesterday.",
-        "instruction": "Correct the error",
+        "instruction": "Исправьте ошибку",
         "explanation": "go → went (irregular).",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9568,7 +9568,7 @@
         "type": "error_correction",
         "question": "She didn't came to the meeting.",
         "answer": "She didn't come to the meeting.",
-        "instruction": "Correct the error",
+        "instruction": "Исправьте ошибку",
         "explanation": "didn't + base verb (come, not came).",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9577,7 +9577,7 @@
         "type": "error_correction",
         "question": "We watch a film last night.",
         "answer": "We watched a film last night.",
-        "instruction": "Correct the error",
+        "instruction": "Исправьте ошибку",
         "explanation": "watch → watched (+ -ed).",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9586,7 +9586,7 @@
         "type": "error_correction",
         "question": "He losed his keys on the bus.",
         "answer": "He lost his keys on the bus.",
-        "instruction": "Correct the error",
+        "instruction": "Исправьте ошибку",
         "explanation": "lose → lost (irregular).",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9595,7 +9595,7 @@
         "type": "error_correction",
         "question": "Did you ever visited Paris?",
         "answer": "Did you ever visit Paris?",
-        "instruction": "Correct the error",
+        "instruction": "Исправьте ошибку",
         "explanation": "Did + subject + base verb.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9604,7 +9604,7 @@
         "type": "error_correction",
         "question": "They arrieved late at the station.",
         "answer": "They arrived late at the station.",
-        "instruction": "Correct the error",
+        "instruction": "Исправьте ошибку",
         "explanation": "arrive → arrived (one r).",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9613,7 +9613,7 @@
         "type": "error_correction",
         "question": "I didn't understood the question.",
         "answer": "I didn't understand the question.",
-        "instruction": "Correct the error",
+        "instruction": "Исправьте ошибку",
         "explanation": "didn't + base verb (understand).",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9622,7 +9622,7 @@
         "type": "error_correction",
         "question": "We meeted our old friends in York.",
         "answer": "We met our old friends in York.",
-        "instruction": "Correct the error",
+        "instruction": "Исправьте ошибку",
         "explanation": "meet → met (irregular).",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9631,7 +9631,7 @@
         "type": "error_correction",
         "question": "She writed a long letter to her aunt.",
         "answer": "She wrote a long letter to her aunt.",
-        "instruction": "Correct the error",
+        "instruction": "Исправьте ошибку",
         "explanation": "write → wrote (irregular).",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9640,7 +9640,7 @@
         "type": "error_correction",
         "question": "He didn't answered the phone.",
         "answer": "He didn't answer the phone.",
-        "instruction": "Correct the error",
+        "instruction": "Исправьте ошибку",
         "explanation": "didn't + base verb (answer).",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9649,7 +9649,7 @@
         "type": "error_correction",
         "question": "I tryed sushi for the first time.",
         "answer": "I tried sushi for the first time.",
-        "instruction": "Correct the error",
+        "instruction": "Исправьте ошибку",
         "explanation": "try → tried (y → i + -ed).",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9658,7 +9658,7 @@
         "type": "error_correction",
         "question": "We have a great weekend in Edinburgh.",
         "answer": "We had a great weekend in Edinburgh.",
-        "instruction": "Correct the error",
+        "instruction": "Исправьте ошибку",
         "explanation": "have → had (not present have).",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9672,7 +9672,7 @@
           "she didn't watch tv.",
           "watch"
         ],
-        "instruction": "Correct the mistake",
+        "instruction": "Исправьте ошибку",
         "explanation": "Use «watch», not «watched».",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9685,7 +9685,7 @@
           "he bought a new car last week.",
           "bought"
         ],
-        "instruction": "Correct the mistake",
+        "instruction": "Исправьте ошибку",
         "explanation": "Use «bought», not «buyed».",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9697,7 +9697,7 @@
           "We went to the airport",
           "We went to the airport."
         ],
-        "instruction": "Correct the error",
+        "instruction": "Исправьте ошибку",
         "explanation": "go → went, plural = same form.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9709,7 +9709,7 @@
           "I went to the museum yesterday",
           "I went to the museum yesterday."
         ],
-        "instruction": "Correct the error",
+        "instruction": "Исправьте ошибку",
         "explanation": "go → went. I went to the museum.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9721,7 +9721,7 @@
           "She didn't come to the meeting",
           "She didn't come to the meeting."
         ],
-        "instruction": "Correct the error",
+        "instruction": "Исправьте ошибку",
         "explanation": "didn't + base verb.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9733,7 +9733,7 @@
           "We watched a film last night",
           "We watched a film last night."
         ],
-        "instruction": "Correct the error",
+        "instruction": "Исправьте ошибку",
         "explanation": "watch → watched.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9745,7 +9745,7 @@
           "He lost his keys",
           "He lost his keys."
         ],
-        "instruction": "Correct the error",
+        "instruction": "Исправьте ошибку",
         "explanation": "lose → lost.",
         "grammarTopic": "eng-a2-past-simple"
       },
@@ -9757,7 +9757,7 @@
           "Did you ever visit Paris",
           "Did you ever visit Paris."
         ],
-        "instruction": "Correct the error",
+        "instruction": "Исправьте ошибку",
         "explanation": "Did you ever + base verb?",
         "grammarTopic": "eng-a2-past-simple"
       }
@@ -9775,7 +9775,7 @@
           "yesterday"
         ],
         "answer": "I went to the museum yesterday",
-        "instruction": "Build the sentence from the words",
+        "instruction": "Соберите предложение",
         "explanation": "I went to the museum yesterday.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9792,7 +9792,7 @@
           "meeting"
         ],
         "answer": "She didn't come to the meeting",
-        "instruction": "Build the sentence from the words",
+        "instruction": "Соберите предложение",
         "explanation": "didn't + base verb.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9809,7 +9809,7 @@
           "night"
         ],
         "answer": "We watched a film last night",
-        "instruction": "Build the sentence from the words",
+        "instruction": "Соберите предложение",
         "explanation": "watch → watched.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9827,7 +9827,7 @@
           "bus"
         ],
         "answer": "He lost his keys on the bus",
-        "instruction": "Build the sentence from the words",
+        "instruction": "Соберите предложение",
         "explanation": "lose → lost.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9843,7 +9843,7 @@
           "Paris"
         ],
         "answer": "Did you ever visit Paris",
-        "instruction": "Build the sentence from the words",
+        "instruction": "Соберите предложение",
         "explanation": "Did you ever visit…?",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9860,7 +9860,7 @@
           "station"
         ],
         "answer": "They arrived late at the station",
-        "instruction": "Build the sentence from the words",
+        "instruction": "Соберите предложение",
         "explanation": "arrived late at the station.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9876,7 +9876,7 @@
           "question"
         ],
         "answer": "I didn't understand the question",
-        "instruction": "Build the sentence from the words",
+        "instruction": "Соберите предложение",
         "explanation": "didn't understand.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9894,7 +9894,7 @@
           "York"
         ],
         "answer": "We met our old friends in York",
-        "instruction": "Build the sentence from the words",
+        "instruction": "Соберите предложение",
         "explanation": "meet → met. Ответ: We met our old friends in York.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9913,7 +9913,7 @@
           "aunt"
         ],
         "answer": "She wrote a long letter to her aunt",
-        "instruction": "Build the sentence from the words",
+        "instruction": "Соберите предложение",
         "explanation": "write → wrote.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9929,7 +9929,7 @@
           "phone"
         ],
         "answer": "He didn't answer the phone",
-        "instruction": "Build the sentence from the words",
+        "instruction": "Соберите предложение",
         "explanation": "didn't answer.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9947,7 +9947,7 @@
           "time"
         ],
         "answer": "I tried sushi for the first time",
-        "instruction": "Build the sentence from the words",
+        "instruction": "Соберите предложение",
         "explanation": "try → tried.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9965,7 +9965,7 @@
           "Edinburgh"
         ],
         "answer": "We had a great weekend in Edinburgh",
-        "instruction": "Build the sentence from the words",
+        "instruction": "Соберите предложение",
         "explanation": "have → had. Ответ: We had a great weekend in Edinburgh.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9983,7 +9983,7 @@
           "week"
         ],
         "answer": "I bought a new jacket last week",
-        "instruction": "Build the sentence from the words",
+        "instruction": "Соберите предложение",
         "explanation": "buy → bought (irregular).",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -9999,7 +9999,7 @@
           "project"
         ],
         "answer": "Did they finish the project",
-        "instruction": "Build the sentence from the words",
+        "instruction": "Соберите предложение",
         "explanation": "Did + subject + base verb.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -10017,7 +10017,7 @@
           "Saturday"
         ],
         "answer": "She sang at the concert on Saturday",
-        "instruction": "Build the sentence from the words",
+        "instruction": "Соберите предложение",
         "explanation": "sing → sang (irregular).",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -10035,7 +10035,7 @@
           "party"
         ],
         "answer": "We didn't see him at the party",
-        "instruction": "Build the sentence from the words",
+        "instruction": "Соберите предложение",
         "explanation": "didn't + base verb.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -10051,7 +10051,7 @@
           "yesterday"
         ],
         "answer": "He drove to Manchester yesterday",
-        "instruction": "Build the sentence from the words",
+        "instruction": "Соберите предложение",
         "explanation": "drive → drove (irregular).",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -10070,7 +10070,7 @@
           "station"
         ],
         "answer": "They found a nice café near the station",
-        "instruction": "Build the sentence from the words",
+        "instruction": "Соберите предложение",
         "explanation": "find → found (irregular).",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -10088,7 +10088,7 @@
           "morning"
         ],
         "answer": "I spoke to the manager this morning",
-        "instruction": "Build the sentence from the words",
+        "instruction": "Соберите предложение",
         "explanation": "speak → spoke (irregular).",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -10106,7 +10106,7 @@
           "tired"
         ],
         "answer": "She left early because she felt tired",
-        "instruction": "Build the sentence from the words",
+        "instruction": "Соберите предложение",
         "explanation": "leave → left; feel → felt.",
         "grammarTopic": "eng-a2-past-simple",
         "acceptableAnswers": []
@@ -56742,7 +56742,7 @@
         "question": "Именно они выиграли конкурс.",
         "answer": "It was they who won the competition",
         "acceptableAnswers": [
-          "It was them who won the competition"
+          "It was they who won the competition"
         ],
         "instruction": "Translate into English",
         "explanation": "It was they who…",
@@ -57068,7 +57068,7 @@
         "question": "It was them who won the competition.",
         "answer": "It was they who won the competition.",
         "acceptableAnswers": [
-          "It was them who won the competition"
+          "It was they who won the competition"
         ],
         "instruction": "Correct the error",
         "explanation": "Formal: It was they who…",
@@ -59906,7 +59906,7 @@
         "question": "It is possible that the data is wrong.",
         "answer": "It is possible that the data are wrong.",
         "acceptableAnswers": [
-          "It is possible that the data is wrong"
+          "It is possible that the data are wrong"
         ],
         "instruction": "Correct the error",
         "explanation": "data can take plural in formal register.",

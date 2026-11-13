@@ -5,35 +5,35 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Вчера я ходил в музей.",
       "answer": "I went to the museum yesterday",
-      "instruction": "Past simple",
+      "instruction": "Переведите на английский",
       "explanation": "go → went. I went to the museum."
     },
     {
       "type": "translation",
       "question": "Она не пришла на встречу.",
       "answer": "She didn't come to the meeting",
-      "instruction": "Past simple negative",
+      "instruction": "Переведите на английский",
       "explanation": "didn't + base verb."
     },
     {
       "type": "translation",
       "question": "Мы смотрели фильм вчера вечером.",
       "answer": "We watched a film last night",
-      "instruction": "Past simple regular",
+      "instruction": "Переведите на английский",
       "explanation": "watch → watched."
     },
     {
       "type": "translation",
       "question": "Он потерял ключи.",
       "answer": "He lost his keys",
-      "instruction": "Past simple irregular",
+      "instruction": "Переведите на английский",
       "explanation": "lose → lost."
     },
     {
       "type": "translation",
       "question": "Ты когда-нибудь был в Париже?",
       "answer": "Did you ever visit Paris?",
-      "instruction": "Past simple question",
+      "instruction": "Переведите на английский",
       "explanation": "Did you ever + base verb?",
       "acceptableAnswers": [
         "Have you ever been to Paris?",
@@ -44,147 +44,147 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Они приехали поздно.",
       "answer": "They arrived late",
-      "instruction": "Past simple",
+      "instruction": "Переведите на английский",
       "explanation": "arrive → arrived."
     },
     {
       "type": "translation",
       "question": "Я не понял вопрос.",
       "answer": "I didn't understand the question",
-      "instruction": "Past simple negative",
+      "instruction": "Переведите на английский",
       "explanation": "understand → understood (same form)."
     },
     {
       "type": "translation",
       "question": "Мы встретили старых друзей.",
       "answer": "We met old friends",
-      "instruction": "Past simple irregular",
+      "instruction": "Переведите на английский",
       "explanation": "meet → met."
     },
     {
       "type": "translation",
       "question": "Она написала длинное письмо.",
       "answer": "She wrote a long letter",
-      "instruction": "Past simple irregular",
+      "instruction": "Переведите на английский",
       "explanation": "write → wrote."
     },
     {
       "type": "translation",
       "question": "Он не ответил на звонок.",
       "answer": "He didn't answer the call",
-      "instruction": "Past simple negative",
+      "instruction": "Переведите на английский",
       "explanation": "didn't answer."
     },
     {
       "type": "translation",
       "question": "Я ел суши впервые.",
       "answer": "I tried sushi for the first time",
-      "instruction": "Past simple",
+      "instruction": "Переведите на английский",
       "explanation": "try → tried."
     },
     {
       "type": "translation",
       "question": "Мы провели отличные выходные.",
       "answer": "We had a great weekend",
-      "instruction": "Past simple — have",
+      "instruction": "Переведите на английский",
       "explanation": "have → had."
     },
     {
       "type": "translation",
       "question": "Она родилась в Лондоне.",
       "answer": "She was born in London",
-      "instruction": "Past simple passive",
+      "instruction": "Переведите на английский",
       "explanation": "was born in London."
     },
     {
       "type": "translation",
       "question": "Они не знали правду.",
       "answer": "They didn't know the truth",
-      "instruction": "Past simple",
+      "instruction": "Переведите на английский",
       "explanation": "know → knew."
     },
     {
       "type": "error_correction",
       "question": "I goed to the museum yesterday.",
       "answer": "I went to the museum yesterday.",
-      "instruction": "Past simple — go",
+      "instruction": "Исправьте ошибку",
       "explanation": "go → went (irregular)."
     },
     {
       "type": "error_correction",
       "question": "She didn't came to the meeting.",
       "answer": "She didn't come to the meeting.",
-      "instruction": "Past simple negative",
+      "instruction": "Исправьте ошибку",
       "explanation": "didn't + base verb (come, not came)."
     },
     {
       "type": "error_correction",
       "question": "We watch a film last night.",
       "answer": "We watched a film last night.",
-      "instruction": "Past simple regular",
+      "instruction": "Исправьте ошибку",
       "explanation": "watch → watched (+ -ed)."
     },
     {
       "type": "error_correction",
       "question": "He losed his keys on the bus.",
       "answer": "He lost his keys on the bus.",
-      "instruction": "Past simple — lose",
+      "instruction": "Исправьте ошибку",
       "explanation": "lose → lost (irregular)."
     },
     {
       "type": "error_correction",
       "question": "Did you ever visited Paris?",
       "answer": "Did you ever visit Paris?",
-      "instruction": "Past simple question",
+      "instruction": "Исправьте ошибку",
       "explanation": "Did + subject + base verb."
     },
     {
       "type": "error_correction",
       "question": "They arrieved late at the station.",
       "answer": "They arrived late at the station.",
-      "instruction": "Past simple spelling",
+      "instruction": "Исправьте ошибку",
       "explanation": "arrive → arrived (one r)."
     },
     {
       "type": "error_correction",
       "question": "I didn't understood the question.",
       "answer": "I didn't understand the question.",
-      "instruction": "Past simple negative",
+      "instruction": "Исправьте ошибку",
       "explanation": "didn't + base verb (understand)."
     },
     {
       "type": "error_correction",
       "question": "We meeted our old friends in York.",
       "answer": "We met our old friends in York.",
-      "instruction": "Past simple — meet",
+      "instruction": "Исправьте ошибку",
       "explanation": "meet → met (irregular)."
     },
     {
       "type": "error_correction",
       "question": "She writed a long letter to her aunt.",
       "answer": "She wrote a long letter to her aunt.",
-      "instruction": "Past simple — write",
+      "instruction": "Исправьте ошибку",
       "explanation": "write → wrote (irregular)."
     },
     {
       "type": "error_correction",
       "question": "He didn't answered the phone.",
       "answer": "He didn't answer the phone.",
-      "instruction": "Past simple negative",
+      "instruction": "Исправьте ошибку",
       "explanation": "didn't + base verb (answer)."
     },
     {
       "type": "error_correction",
       "question": "I tryed sushi for the first time.",
       "answer": "I tried sushi for the first time.",
-      "instruction": "Past simple — try",
+      "instruction": "Исправьте ошибку",
       "explanation": "try → tried (y → i + -ed)."
     },
     {
       "type": "error_correction",
       "question": "We have a great weekend in Edinburgh.",
       "answer": "We had a great weekend in Edinburgh.",
-      "instruction": "Past simple — have",
+      "instruction": "Исправьте ошибку",
       "explanation": "have → had (not present have)."
     },
     {
@@ -199,7 +199,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "yesterday"
       ],
       "answer": "I went to the museum yesterday",
-      "instruction": "Past simple — go",
+      "instruction": "Соберите предложение",
       "explanation": "I went to the museum yesterday."
     },
     {
@@ -214,7 +214,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "meeting"
       ],
       "answer": "She didn't come to the meeting",
-      "instruction": "Past simple negative",
+      "instruction": "Соберите предложение",
       "explanation": "didn't + base verb."
     },
     {
@@ -229,7 +229,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "night"
       ],
       "answer": "We watched a film last night",
-      "instruction": "Past simple regular",
+      "instruction": "Соберите предложение",
       "explanation": "watch → watched."
     },
     {
@@ -245,7 +245,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "bus"
       ],
       "answer": "He lost his keys on the bus",
-      "instruction": "Past simple — lose",
+      "instruction": "Соберите предложение",
       "explanation": "lose → lost."
     },
     {
@@ -259,7 +259,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "Paris?"
       ],
       "answer": "Did you ever visit Paris?",
-      "instruction": "Past simple question",
+      "instruction": "Соберите предложение",
       "explanation": "Did you ever visit…?"
     },
     {
@@ -274,7 +274,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "station"
       ],
       "answer": "They arrived late at the station",
-      "instruction": "Past simple — arrive",
+      "instruction": "Соберите предложение",
       "explanation": "arrived late at the station."
     },
     {
@@ -288,7 +288,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "question"
       ],
       "answer": "I didn't understand the question",
-      "instruction": "Past simple negative",
+      "instruction": "Соберите предложение",
       "explanation": "didn't understand."
     },
     {
@@ -304,7 +304,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "York"
       ],
       "answer": "We met our old friends in York",
-      "instruction": "Past simple — meet",
+      "instruction": "Соберите предложение",
       "explanation": "meet → met."
     },
     {
@@ -321,7 +321,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "aunt"
       ],
       "answer": "She wrote a long letter to her aunt",
-      "instruction": "Past simple — write",
+      "instruction": "Соберите предложение",
       "explanation": "write → wrote."
     },
     {
@@ -335,7 +335,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "phone"
       ],
       "answer": "He didn't answer the phone",
-      "instruction": "Past simple negative",
+      "instruction": "Соберите предложение",
       "explanation": "didn't answer."
     },
     {
@@ -351,7 +351,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "time"
       ],
       "answer": "I tried sushi for the first time",
-      "instruction": "Past simple — try",
+      "instruction": "Соберите предложение",
       "explanation": "try → tried."
     },
     {
@@ -367,7 +367,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "Edinburgh"
       ],
       "answer": "We had a great weekend in Edinburgh",
-      "instruction": "Past simple — have",
+      "instruction": "Соберите предложение",
       "explanation": "have → had."
     },
     {
@@ -383,7 +383,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "week"
       ],
       "answer": "I bought a new jacket last week",
-      "instruction": "Past simple — buy",
+      "instruction": "Соберите предложение",
       "explanation": "buy → bought (irregular)."
     },
     {
@@ -397,7 +397,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "project?"
       ],
       "answer": "Did they finish the project?",
-      "instruction": "Past simple question",
+      "instruction": "Соберите предложение",
       "explanation": "Did + subject + base verb."
     },
     {
@@ -413,7 +413,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "Saturday"
       ],
       "answer": "She sang at the concert on Saturday",
-      "instruction": "Past simple — sing",
+      "instruction": "Соберите предложение",
       "explanation": "sing → sang (irregular)."
     },
     {
@@ -429,7 +429,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "party"
       ],
       "answer": "We didn't see him at the party",
-      "instruction": "Past simple negative",
+      "instruction": "Соберите предложение",
       "explanation": "didn't + base verb."
     },
     {
@@ -443,7 +443,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "yesterday"
       ],
       "answer": "He drove to Manchester yesterday",
-      "instruction": "Past simple — drive",
+      "instruction": "Соберите предложение",
       "explanation": "drive → drove (irregular)."
     },
     {
@@ -460,7 +460,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "station"
       ],
       "answer": "They found a nice café near the station",
-      "instruction": "Past simple — find",
+      "instruction": "Соберите предложение",
       "explanation": "find → found (irregular)."
     },
     {
@@ -476,7 +476,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "morning"
       ],
       "answer": "I spoke to the manager this morning",
-      "instruction": "Past simple — speak",
+      "instruction": "Соберите предложение",
       "explanation": "speak → spoke (irregular)."
     },
     {
@@ -492,7 +492,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "tired"
       ],
       "answer": "She left early because she felt tired",
-      "instruction": "Past simple — leave",
+      "instruction": "Соберите предложение",
       "explanation": "leave → left; feel → felt."
     }
   ],
@@ -511,7 +511,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "one"
       ],
       "answer": "This book is more interesting than that one",
-      "instruction": "Build a comparative",
+      "instruction": "Соберите предложение",
       "explanation": "more interesting than…"
     },
     {
@@ -528,7 +528,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "class"
       ],
       "answer": "She is the best student in the class",
-      "instruction": "Build a superlative",
+      "instruction": "Соберите предложение",
       "explanation": "the best — irregular good → best."
     },
     {
@@ -543,7 +543,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "do"
       ],
       "answer": "He runs faster than I do",
-      "instruction": "Build a comparison",
+      "instruction": "Соберите предложение",
       "explanation": "faster than I do — do replaces verb."
     },
     {
@@ -559,7 +559,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "yours"
       ],
       "answer": "My car is as fast as yours",
-      "instruction": "Build as…as",
+      "instruction": "Соберите предложение",
       "explanation": "as fast as yours."
     },
     {
@@ -575,7 +575,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "today"
       ],
       "answer": "This is the most difficult exercise today",
-      "instruction": "Build superlative",
+      "instruction": "Соберите предложение",
       "explanation": "most difficult — 3+ syllables."
     },
     {
@@ -589,7 +589,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "Oxford"
       ],
       "answer": "London is bigger than Oxford",
-      "instruction": "Build -er comparative",
+      "instruction": "Соберите предложение",
       "explanation": "bigger — double g."
     },
     {
@@ -605,7 +605,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "brother"
       ],
       "answer": "She speaks English better than her brother",
-      "instruction": "Build adverb comparative",
+      "instruction": "Соберите предложение",
       "explanation": "better — irregular well → better."
     },
     {
@@ -622,7 +622,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "seen"
       ],
       "answer": "It was the worst film I've ever seen",
-      "instruction": "Build superlative",
+      "instruction": "Соберите предложение",
       "explanation": "worst — irregular bad → worst."
     },
     {
@@ -639,7 +639,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "one"
       ],
       "answer": "This restaurant is less expensive than that one",
-      "instruction": "Build less…than",
+      "instruction": "Соберите предложение",
       "explanation": "less expensive than…"
     },
     {
@@ -654,7 +654,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "father"
       ],
       "answer": "He is taller than his father",
-      "instruction": "Build -er comparative",
+      "instruction": "Соберите предложение",
       "explanation": "taller than…"
     },
     {
@@ -670,7 +670,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "other"
       ],
       "answer": "This route is shorter than the other",
-      "instruction": "Build comparison",
+      "instruction": "Соберите предложение",
       "explanation": "shorter than the other."
     },
     {
@@ -687,7 +687,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "sister"
       ],
       "answer": "She is not as tall as her sister",
-      "instruction": "Build negative as…as",
+      "instruction": "Соберите предложение",
       "explanation": "not as tall as…"
     },
     {
@@ -703,7 +703,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "option"
       ],
       "answer": "It is by far the best option",
-      "instruction": "Build emphatic superlative",
+      "instruction": "Соберите предложение",
       "explanation": "by far the best."
     },
     {
@@ -720,7 +720,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "get"
       ],
       "answer": "The more you practice, the better you get",
-      "instruction": "Build correlative comparative",
+      "instruction": "Соберите предложение",
       "explanation": "The more… the better…"
     },
     {
@@ -735,203 +735,203 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "mine"
       ],
       "answer": "This phone is cheaper than mine",
-      "instruction": "Build comparative",
+      "instruction": "Соберите предложение",
       "explanation": "cheaper than mine."
     },
     {
       "type": "translation",
       "question": "Эта книга интереснее той.",
       "answer": "This book is more interesting than that one",
-      "instruction": "Comparative — more…than",
+      "instruction": "Переведите на английский",
       "explanation": "more interesting than that one."
     },
     {
       "type": "translation",
       "question": "Она лучший студент в классе.",
       "answer": "She is the best student in the class",
-      "instruction": "Superlative — best",
+      "instruction": "Переведите на английский",
       "explanation": "the best student in the class."
     },
     {
       "type": "translation",
       "question": "Он бегает быстрее меня.",
       "answer": "He runs faster than I do",
-      "instruction": "Comparative adverb",
+      "instruction": "Переведите на английский",
       "explanation": "faster than I do."
     },
     {
       "type": "translation",
       "question": "Моя машина такая же быстрая, как твоя.",
       "answer": "My car is as fast as yours",
-      "instruction": "As…as",
+      "instruction": "Переведите на английский",
       "explanation": "as fast as yours."
     },
     {
       "type": "translation",
       "question": "Это самое сложное упражнение сегодня.",
       "answer": "This is the most difficult exercise today",
-      "instruction": "Superlative — most",
+      "instruction": "Переведите на английский",
       "explanation": "the most difficult exercise."
     },
     {
       "type": "translation",
       "question": "Лондон больше Оксфорда.",
       "answer": "London is bigger than Oxford",
-      "instruction": "Comparative — -er",
+      "instruction": "Переведите на английский",
       "explanation": "bigger than Oxford."
     },
     {
       "type": "translation",
       "question": "Она говорит по-английски лучше своего брата.",
       "answer": "She speaks English better than her brother",
-      "instruction": "Irregular comparative",
+      "instruction": "Переведите на английский",
       "explanation": "better — irregular (well → better)."
     },
     {
       "type": "translation",
       "question": "Это был худший фильм, который я когда-либо видел.",
       "answer": "It was the worst film I've ever seen",
-      "instruction": "Superlative — worst",
+      "instruction": "Переведите на английский",
       "explanation": "worst — irregular (bad → worst)."
     },
     {
       "type": "translation",
       "question": "Этот ресторан дешевле того.",
       "answer": "This restaurant is less expensive than that one",
-      "instruction": "Less…than",
+      "instruction": "Переведите на английский",
       "explanation": "less expensive than that one."
     },
     {
       "type": "translation",
       "question": "Он выше своего отца.",
       "answer": "He is taller than his father",
-      "instruction": "Comparative — -er",
+      "instruction": "Переведите на английский",
       "explanation": "taller than his father."
     },
     {
       "type": "translation",
       "question": "Этот маршрут короче другого.",
       "answer": "This route is shorter than the other",
-      "instruction": "Comparative — -er",
+      "instruction": "Переведите на английский",
       "explanation": "shorter than the other."
     },
     {
       "type": "translation",
       "question": "Она не такая высокая, как её сестра.",
       "answer": "She is not as tall as her sister",
-      "instruction": "Negative as…as",
+      "instruction": "Переведите на английский",
       "explanation": "not as tall as her sister."
     },
     {
       "type": "translation",
       "question": "Чем больше ты практикуешься, тем лучше получается.",
       "answer": "The more you practice the better you get",
-      "instruction": "Correlative comparative",
+      "instruction": "Переведите на английский",
       "explanation": "The more… the better…"
     },
     {
       "type": "translation",
       "question": "Этот телефон дешевле моего.",
       "answer": "This phone is cheaper than mine",
-      "instruction": "Comparative — -er",
+      "instruction": "Переведите на английский",
       "explanation": "cheaper than mine."
     },
     {
       "type": "error_correction",
       "question": "This book is more interesting than that one is.",
       "answer": "This book is more interesting than that one.",
-      "instruction": "Comparative — redundancy",
+      "instruction": "Исправьте ошибку",
       "explanation": "No extra «is» after that one."
     },
     {
       "type": "error_correction",
       "question": "She is the best student in the class in.",
       "answer": "She is the best student in the class.",
-      "instruction": "Superlative — redundancy",
+      "instruction": "Исправьте ошибку",
       "explanation": "Remove repeated «in»."
     },
     {
       "type": "error_correction",
       "question": "He runs more fast than I do.",
       "answer": "He runs faster than I do.",
-      "instruction": "Comparative adverb",
+      "instruction": "Исправьте ошибку",
       "explanation": "fast → faster (not more fast)."
     },
     {
       "type": "error_correction",
       "question": "My car is so fast as yours.",
       "answer": "My car is as fast as yours.",
-      "instruction": "As…as",
+      "instruction": "Исправьте ошибку",
       "explanation": "as…as — not so…as (positive)."
     },
     {
       "type": "error_correction",
       "question": "This is the most difficult exercise today ever.",
       "answer": "This is the most difficult exercise today.",
-      "instruction": "Superlative — redundancy",
+      "instruction": "Исправьте ошибку",
       "explanation": "Remove «ever» after today."
     },
     {
       "type": "error_correction",
       "question": "London is more bigger than Oxford.",
       "answer": "London is bigger than Oxford.",
-      "instruction": "Double comparative",
+      "instruction": "Исправьте ошибку",
       "explanation": "bigger — not more bigger."
     },
     {
       "type": "error_correction",
       "question": "She speaks English more better than her brother.",
       "answer": "She speaks English better than her brother.",
-      "instruction": "Irregular comparative",
+      "instruction": "Исправьте ошибку",
       "explanation": "better — not more better."
     },
     {
       "type": "error_correction",
       "question": "It was the most worst film I've ever seen.",
       "answer": "It was the worst film I've ever seen.",
-      "instruction": "Double superlative",
+      "instruction": "Исправьте ошибку",
       "explanation": "worst — not most worst."
     },
     {
       "type": "error_correction",
       "question": "This restaurant is less expensive than that one is expensive.",
       "answer": "This restaurant is less expensive than that one.",
-      "instruction": "Comparative — redundancy",
+      "instruction": "Исправьте ошибку",
       "explanation": "No repeated adjective."
     },
     {
       "type": "error_correction",
       "question": "He is more taller than his father.",
       "answer": "He is taller than his father.",
-      "instruction": "Double comparative",
+      "instruction": "Исправьте ошибку",
       "explanation": "taller — not more taller."
     },
     {
       "type": "error_correction",
       "question": "This route is more shorter than the other.",
       "answer": "This route is shorter than the other.",
-      "instruction": "Double comparative",
+      "instruction": "Исправьте ошибку",
       "explanation": "shorter — not more shorter."
     },
     {
       "type": "error_correction",
       "question": "She is not so tall as her sister is tall.",
       "answer": "She is not as tall as her sister.",
-      "instruction": "As…as negative",
+      "instruction": "Исправьте ошибку",
       "explanation": "not as tall as — no repetition."
     },
     {
       "type": "error_correction",
       "question": "The more you practice the more better you get.",
       "answer": "The more you practice the better you get.",
-      "instruction": "Correlative comparative",
+      "instruction": "Исправьте ошибку",
       "explanation": "the better — not the more better."
     },
     {
       "type": "error_correction",
       "question": "This phone is more cheaper than mine.",
       "answer": "This phone is cheaper than mine.",
-      "instruction": "Double comparative",
+      "instruction": "Исправьте ошибку",
       "explanation": "cheaper — not more cheaper."
     },
     {
@@ -948,7 +948,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "town"
       ],
       "answer": "This hotel is the most comfortable in town",
-      "instruction": "Superlative — most",
+      "instruction": "Соберите предложение",
       "explanation": "the most comfortable — длинное прилагательное."
     },
     {
@@ -964,7 +964,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "mine"
       ],
       "answer": "Your idea is as good as mine",
-      "instruction": "As…as — равенство",
+      "instruction": "Соберите предложение",
       "explanation": "as good as mine — такой же хороший."
     },
     {
@@ -980,7 +980,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "sister"
       ],
       "answer": "She runs more slowly than her sister",
-      "instruction": "Comparative adverb",
+      "instruction": "Соберите предложение",
       "explanation": "more slowly than — наречие сравнения."
     },
     {
@@ -997,7 +997,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "life"
       ],
       "answer": "It was the happiest day of my life",
-      "instruction": "Superlative — -est",
+      "instruction": "Соберите предложение",
       "explanation": "happiest — happy → happiest."
     },
     {
@@ -1014,7 +1014,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "yours"
       ],
       "answer": "My room is not as big as yours",
-      "instruction": "Negative as…as",
+      "instruction": "Соберите предложение",
       "explanation": "not as big as yours."
     }
   ],
@@ -1023,182 +1023,182 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Я никогда не был в Японии.",
       "answer": "I have never been to Japan",
-      "instruction": "Present perfect + never",
+      "instruction": "Переведите на английский",
       "explanation": "have never been to…"
     },
     {
       "type": "translation",
       "question": "Она уже закончила домашнее задание.",
       "answer": "She has already finished her homework",
-      "instruction": "Present perfect + already",
+      "instruction": "Переведите на английский",
       "explanation": "has already + V3."
     },
     {
       "type": "translation",
       "question": "Мы только что приехали.",
       "answer": "We have just arrived",
-      "instruction": "Present perfect + just",
+      "instruction": "Переведите на английский",
       "explanation": "have just + V3."
     },
     {
       "type": "translation",
       "question": "Ты когда-нибудь пробовал суши?",
       "answer": "Have you ever tried sushi?",
-      "instruction": "Present perfect question",
+      "instruction": "Переведите на английский",
       "explanation": "Have you ever + V3?"
     },
     {
       "type": "translation",
       "question": "Он потерял паспорт.",
       "answer": "He has lost his passport",
-      "instruction": "Present perfect",
+      "instruction": "Переведите на английский",
       "explanation": "has lost — recent/relevant result."
     },
     {
       "type": "translation",
       "question": "Они ещё не ответили.",
       "answer": "They haven't replied yet",
-      "instruction": "Present perfect negative",
+      "instruction": "Переведите на английский",
       "explanation": "haven't + V3 + yet."
     },
     {
       "type": "translation",
       "question": "Я видел этот фильм три раза.",
       "answer": "I have seen this film three times",
-      "instruction": "Present perfect + frequency",
+      "instruction": "Переведите на английский",
       "explanation": "have seen… three times."
     },
     {
       "type": "translation",
       "question": "Она жила в Берлине пять лет.",
       "answer": "She has lived in Berlin for five years",
-      "instruction": "Present perfect + duration",
+      "instruction": "Переведите на английский",
       "explanation": "has lived… for five years."
     },
     {
       "type": "translation",
       "question": "Мы не встречались давно.",
       "answer": "We haven't met for ages",
-      "instruction": "Present perfect",
+      "instruction": "Переведите на английский",
       "explanation": "haven't met for ages."
     },
     {
       "type": "translation",
       "question": "Он написал две книги.",
       "answer": "He has written two books",
-      "instruction": "Present perfect",
+      "instruction": "Переведите на английский",
       "explanation": "has written two books."
     },
     {
       "type": "translation",
       "question": "Ты когда-нибудь летал на воздушном шаре?",
       "answer": "Have you ever flown in a hot air balloon?",
-      "instruction": "Present perfect question",
+      "instruction": "Переведите на английский",
       "explanation": "Have you ever flown…?"
     },
     {
       "type": "translation",
       "question": "Я ещё не ел сегодня.",
       "answer": "I haven't eaten today",
-      "instruction": "Present perfect",
+      "instruction": "Переведите на английский",
       "explanation": "haven't eaten today."
     },
     {
       "type": "translation",
       "question": "Она уехала в командировку.",
       "answer": "She has gone on a business trip",
-      "instruction": "Present perfect — go",
+      "instruction": "Переведите на английский",
       "explanation": "has gone = уехала и ещё там."
     },
     {
       "type": "translation",
       "question": "Мы знаем друг друга с детства.",
       "answer": "We have known each other since childhood",
-      "instruction": "Present perfect + since",
+      "instruction": "Переведите на английский",
       "explanation": "have known… since childhood."
     },
     {
       "type": "error_correction",
       "question": "I have never been in Japan.",
       "answer": "I have never been to Japan.",
-      "instruction": "Present perfect — been to",
+      "instruction": "Исправьте ошибку",
       "explanation": "been to Japan — not been in."
     },
     {
       "type": "error_correction",
       "question": "She has already finish her homework.",
       "answer": "She has already finished her homework.",
-      "instruction": "Present perfect — V3",
+      "instruction": "Исправьте ошибку",
       "explanation": "has already finished — V3."
     },
     {
       "type": "error_correction",
       "question": "We have just arrive.",
       "answer": "We have just arrived.",
-      "instruction": "Present perfect — V3",
+      "instruction": "Исправьте ошибку",
       "explanation": "have just arrived — V3."
     },
     {
       "type": "error_correction",
       "question": "Have you ever try sushi?",
       "answer": "Have you ever tried sushi?",
-      "instruction": "Present perfect question",
+      "instruction": "Исправьте ошибку",
       "explanation": "Have you ever tried — V3."
     },
     {
       "type": "error_correction",
       "question": "He has losted his passport.",
       "answer": "He has lost his passport.",
-      "instruction": "Present perfect — lose",
+      "instruction": "Исправьте ошибку",
       "explanation": "has lost — V3 (lost)."
     },
     {
       "type": "error_correction",
       "question": "They haven't reply yet.",
       "answer": "They haven't replied yet.",
-      "instruction": "Present perfect negative",
+      "instruction": "Исправьте ошибку",
       "explanation": "haven't replied — V3."
     },
     {
       "type": "error_correction",
       "question": "I have saw this film three times.",
       "answer": "I have seen this film three times.",
-      "instruction": "Present perfect — see",
+      "instruction": "Исправьте ошибку",
       "explanation": "see → seen (V3)."
     },
     {
       "type": "error_correction",
       "question": "She has lived in Berlin since five years.",
       "answer": "She has lived in Berlin for five years.",
-      "instruction": "For vs since",
+      "instruction": "Исправьте ошибку",
       "explanation": "for five years — duration; since + point."
     },
     {
       "type": "error_correction",
       "question": "We haven't meet for ages.",
       "answer": "We haven't met for ages.",
-      "instruction": "Present perfect — meet",
+      "instruction": "Исправьте ошибку",
       "explanation": "haven't met — V3."
     },
     {
       "type": "error_correction",
       "question": "He has wrote two books.",
       "answer": "He has written two books.",
-      "instruction": "Present perfect — write",
+      "instruction": "Исправьте ошибку",
       "explanation": "write → written (V3)."
     },
     {
       "type": "error_correction",
       "question": "Have you ever flew in a hot air balloon?",
       "answer": "Have you ever flown in a hot air balloon?",
-      "instruction": "Present perfect — fly",
+      "instruction": "Исправьте ошибку",
       "explanation": "fly → flown (V3)."
     },
     {
       "type": "error_correction",
       "question": "I haven't ate today.",
       "answer": "I haven't eaten today.",
-      "instruction": "Present perfect — eat",
+      "instruction": "Исправьте ошибку",
       "explanation": "eat → eaten (V3)."
     },
     {
@@ -1213,7 +1213,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "Japan"
       ],
       "answer": "I have never been to Japan",
-      "instruction": "Present perfect + never",
+      "instruction": "Соберите предложение",
       "explanation": "have never been to Japan."
     },
     {
@@ -1228,7 +1228,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "homework"
       ],
       "answer": "She has already finished her homework",
-      "instruction": "Present perfect + already",
+      "instruction": "Соберите предложение",
       "explanation": "has already finished…"
     },
     {
@@ -1241,7 +1241,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "arrived"
       ],
       "answer": "We have just arrived",
-      "instruction": "Present perfect + just",
+      "instruction": "Соберите предложение",
       "explanation": "have just arrived."
     },
     {
@@ -1255,7 +1255,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "sushi?"
       ],
       "answer": "Have you ever tried sushi?",
-      "instruction": "Present perfect question",
+      "instruction": "Соберите предложение",
       "explanation": "Have you ever tried…?"
     },
     {
@@ -1269,7 +1269,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "passport"
       ],
       "answer": "He has lost his passport",
-      "instruction": "Present perfect",
+      "instruction": "Соберите предложение",
       "explanation": "has lost his passport."
     },
     {
@@ -1282,7 +1282,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "yet"
       ],
       "answer": "They haven't replied yet",
-      "instruction": "Present perfect negative",
+      "instruction": "Соберите предложение",
       "explanation": "haven't replied yet."
     },
     {
@@ -1298,7 +1298,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "times"
       ],
       "answer": "I have seen this film three times",
-      "instruction": "Present perfect + frequency",
+      "instruction": "Соберите предложение",
       "explanation": "have seen… three times."
     },
     {
@@ -1315,7 +1315,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "years"
       ],
       "answer": "She has lived in Berlin for five years",
-      "instruction": "Present perfect + for",
+      "instruction": "Соберите предложение",
       "explanation": "has lived… for five years."
     },
     {
@@ -1329,7 +1329,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "ages"
       ],
       "answer": "We haven't met for ages",
-      "instruction": "Present perfect",
+      "instruction": "Соберите предложение",
       "explanation": "haven't met for ages."
     },
     {
@@ -1343,7 +1343,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "books"
       ],
       "answer": "He has written two books",
-      "instruction": "Present perfect",
+      "instruction": "Соберите предложение",
       "explanation": "has written two books."
     },
     {
@@ -1361,7 +1361,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "balloon?"
       ],
       "answer": "Have you ever flown in a hot air balloon?",
-      "instruction": "Present perfect question",
+      "instruction": "Соберите предложение",
       "explanation": "Have you ever flown…?"
     },
     {
@@ -1374,7 +1374,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "today"
       ],
       "answer": "I haven't eaten today",
-      "instruction": "Present perfect",
+      "instruction": "Соберите предложение",
       "explanation": "haven't eaten today."
     },
     {
@@ -1389,7 +1389,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "shop"
       ],
       "answer": "She has gone to the shop",
-      "instruction": "Present perfect — go",
+      "instruction": "Соберите предложение",
       "explanation": "has gone = ушла и ещё там."
     },
     {
@@ -1405,7 +1405,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "years"
       ],
       "answer": "We have known each other for years",
-      "instruction": "Present perfect + for",
+      "instruction": "Соберите предложение",
       "explanation": "have known… for years."
     },
     {
@@ -1420,7 +1420,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "food?"
       ],
       "answer": "Has he ever eaten Indian food?",
-      "instruction": "Present perfect question",
+      "instruction": "Соберите предложение",
       "explanation": "Has he ever + V3?"
     },
     {
@@ -1434,7 +1434,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "Scotland"
       ],
       "answer": "They have never visited Scotland",
-      "instruction": "Present perfect + never",
+      "instruction": "Соберите предложение",
       "explanation": "have never visited…"
     },
     {
@@ -1449,7 +1449,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "coffee"
       ],
       "answer": "I have just finished my coffee",
-      "instruction": "Present perfect + just",
+      "instruction": "Соберите предложение",
       "explanation": "have just finished…"
     },
     {
@@ -1462,7 +1462,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "yet"
       ],
       "answer": "She hasn't called yet",
-      "instruction": "Present perfect negative",
+      "instruction": "Соберите предложение",
       "explanation": "hasn't called yet."
     },
     {
@@ -1476,7 +1476,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "before"
       ],
       "answer": "We have done this before",
-      "instruction": "Present perfect — do",
+      "instruction": "Соберите предложение",
       "explanation": "do → done (V3)."
     },
     {
@@ -1490,7 +1490,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "phone"
       ],
       "answer": "He has broken his phone",
-      "instruction": "Present perfect — break",
+      "instruction": "Соберите предложение",
       "explanation": "break → broken (V3)."
     }
   ],
@@ -1499,189 +1499,189 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Я позвоню тебе завтра.",
       "answer": "I will call you tomorrow",
-      "instruction": "Will — promise",
+      "instruction": "Переведите на английский",
       "explanation": "will + base verb."
     },
     {
       "type": "translation",
       "question": "Она приедет в пятницу.",
       "answer": "She will arrive on Friday",
-      "instruction": "Will — prediction",
+      "instruction": "Переведите на английский",
       "explanation": "will arrive on Friday."
     },
     {
       "type": "translation",
       "question": "Мы не опоздаем.",
       "answer": "We won't be late",
-      "instruction": "Will negative",
+      "instruction": "Переведите на английский",
       "explanation": "won't be late."
     },
     {
       "type": "translation",
       "question": "Если пойдёт дождь, я останусь дома.",
       "answer": "If it rains, I will stay home",
-      "instruction": "First conditional",
+      "instruction": "Переведите на английский",
       "explanation": "If + present, will + base."
     },
     {
       "type": "translation",
       "question": "Я помогу тебе с этим.",
       "answer": "I will help you with this",
-      "instruction": "Will — offer",
+      "instruction": "Переведите на английский",
       "explanation": "will help you."
     },
     {
       "type": "translation",
       "question": "Они, наверное, не придут.",
       "answer": "They probably won't come",
-      "instruction": "Will — prediction",
+      "instruction": "Переведите на английский",
       "explanation": "probably won't come."
     },
     {
       "type": "translation",
       "question": "Ты успеешь?",
       "answer": "Will you make it in time?",
-      "instruction": "Will — question",
+      "instruction": "Переведите на английский",
       "explanation": "Will you make it…?"
     },
     {
       "type": "translation",
       "question": "Это будет сложно.",
       "answer": "It will be difficult",
-      "instruction": "Will + be",
+      "instruction": "Переведите на английский",
       "explanation": "will be difficult."
     },
     {
       "type": "translation",
       "question": "Я думаю, что он согласится.",
       "answer": "I think he will agree",
-      "instruction": "Will — opinion",
+      "instruction": "Переведите на английский",
       "explanation": "will agree."
     },
     {
       "type": "translation",
       "question": "Мы проведём отпуск в Италии.",
       "answer": "We will spend our holiday in Italy",
-      "instruction": "Will — plan",
+      "instruction": "Переведите на английский",
       "explanation": "will spend…"
     },
     {
       "type": "translation",
       "question": "Она не забудет.",
       "answer": "She won't forget",
-      "instruction": "Will negative",
+      "instruction": "Переведите на английский",
       "explanation": "won't forget."
     },
     {
       "type": "translation",
       "question": "Через год я буду говорить по-английски свободно.",
       "answer": "In a year I will speak English fluently",
-      "instruction": "Will — future state",
+      "instruction": "Переведите на английский",
       "explanation": "will speak… fluently."
     },
     {
       "type": "translation",
       "question": "Он сделает всё возможное.",
       "answer": "He will do his best",
-      "instruction": "Will — determination",
+      "instruction": "Переведите на английский",
       "explanation": "will do his best."
     },
     {
       "type": "translation",
       "question": "Мы увидимся скоро.",
       "answer": "We will see each other soon",
-      "instruction": "Will — future meeting",
+      "instruction": "Переведите на английский",
       "explanation": "will see each other soon."
     },
     {
       "type": "translation",
       "question": "Это изменит всё.",
       "answer": "It will change everything",
-      "instruction": "Will — consequence",
+      "instruction": "Переведите на английский",
       "explanation": "will change everything."
     },
     {
       "type": "error_correction",
       "question": "I will called you tomorrow.",
       "answer": "I will call you tomorrow.",
-      "instruction": "Will — base verb",
+      "instruction": "Исправьте ошибку",
       "explanation": "will + base verb (call)."
     },
     {
       "type": "error_correction",
       "question": "She will arrives on Friday.",
       "answer": "She will arrive on Friday.",
-      "instruction": "Will — base verb",
+      "instruction": "Исправьте ошибку",
       "explanation": "will arrive — no -s."
     },
     {
       "type": "error_correction",
       "question": "We won't be late never.",
       "answer": "We won't be late.",
-      "instruction": "Will negative — redundancy",
+      "instruction": "Исправьте ошибку",
       "explanation": "won't be late — no «never»."
     },
     {
       "type": "error_correction",
       "question": "If it will rain I will stay home.",
       "answer": "If it rains I will stay home.",
-      "instruction": "First conditional",
+      "instruction": "Исправьте ошибку",
       "explanation": "If-clause: present, not will."
     },
     {
       "type": "error_correction",
       "question": "I will helps you with this.",
       "answer": "I will help you with this.",
-      "instruction": "Will — base verb",
+      "instruction": "Исправьте ошибку",
       "explanation": "will help — no -s."
     },
     {
       "type": "error_correction",
       "question": "They probably won't comes.",
       "answer": "They probably won't come.",
-      "instruction": "Will negative",
+      "instruction": "Исправьте ошибку",
       "explanation": "won't come — base verb."
     },
     {
       "type": "error_correction",
       "question": "Will you makes it in time?",
       "answer": "Will you make it in time?",
-      "instruction": "Will question",
+      "instruction": "Исправьте ошибку",
       "explanation": "Will you make — base verb."
     },
     {
       "type": "error_correction",
       "question": "It will being difficult.",
       "answer": "It will be difficult.",
-      "instruction": "Will + be",
+      "instruction": "Исправьте ошибку",
       "explanation": "will be — not will being."
     },
     {
       "type": "error_correction",
       "question": "I think he will agrees.",
       "answer": "I think he will agree.",
-      "instruction": "Will — base verb",
+      "instruction": "Исправьте ошибку",
       "explanation": "will agree — no -s."
     },
     {
       "type": "error_correction",
       "question": "We will spent our holiday in Italy.",
       "answer": "We will spend our holiday in Italy.",
-      "instruction": "Will — base verb",
+      "instruction": "Исправьте ошибку",
       "explanation": "will spend — not spent."
     },
     {
       "type": "error_correction",
       "question": "She won't forgets.",
       "answer": "She won't forget.",
-      "instruction": "Will negative",
+      "instruction": "Исправьте ошибку",
       "explanation": "won't forget — base verb."
     },
     {
       "type": "error_correction",
       "question": "In a year I will speaks English fluently.",
       "answer": "In a year I will speak English fluently.",
-      "instruction": "Will — base verb",
+      "instruction": "Исправьте ошибку",
       "explanation": "will speak — no -s."
     },
     {
@@ -1695,7 +1695,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "tomorrow"
       ],
       "answer": "I will call you tomorrow",
-      "instruction": "Will — promise",
+      "instruction": "Соберите предложение",
       "explanation": "will call you tomorrow."
     },
     {
@@ -1709,7 +1709,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "Friday"
       ],
       "answer": "She will arrive on Friday",
-      "instruction": "Will — prediction",
+      "instruction": "Соберите предложение",
       "explanation": "will arrive on Friday."
     },
     {
@@ -1722,7 +1722,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "late"
       ],
       "answer": "We won't be late",
-      "instruction": "Will negative",
+      "instruction": "Соберите предложение",
       "explanation": "won't be late."
     },
     {
@@ -1738,7 +1738,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "home"
       ],
       "answer": "If it rains I will stay home",
-      "instruction": "First conditional",
+      "instruction": "Соберите предложение",
       "explanation": "If + present, will + base."
     },
     {
@@ -1753,7 +1753,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "this"
       ],
       "answer": "I will help you with this",
-      "instruction": "Will — offer",
+      "instruction": "Соберите предложение",
       "explanation": "will help you with this."
     },
     {
@@ -1766,7 +1766,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "come"
       ],
       "answer": "They probably won't come",
-      "instruction": "Will — prediction",
+      "instruction": "Соберите предложение",
       "explanation": "probably won't come."
     },
     {
@@ -1781,7 +1781,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "time?"
       ],
       "answer": "Will you make it in time?",
-      "instruction": "Will question",
+      "instruction": "Соберите предложение",
       "explanation": "Will you make it in time?"
     },
     {
@@ -1794,7 +1794,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "difficult"
       ],
       "answer": "It will be difficult",
-      "instruction": "Will + be",
+      "instruction": "Соберите предложение",
       "explanation": "will be difficult."
     },
     {
@@ -1808,7 +1808,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "agree"
       ],
       "answer": "I think he will agree",
-      "instruction": "Will — opinion",
+      "instruction": "Соберите предложение",
       "explanation": "will agree."
     },
     {
@@ -1824,7 +1824,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "Italy"
       ],
       "answer": "We will spend our holiday in Italy",
-      "instruction": "Will — plan",
+      "instruction": "Соберите предложение",
       "explanation": "will spend our holiday…"
     },
     {
@@ -1836,7 +1836,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "forget"
       ],
       "answer": "She won't forget",
-      "instruction": "Will negative",
+      "instruction": "Соберите предложение",
       "explanation": "won't forget."
     },
     {
@@ -1853,7 +1853,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "fluently"
       ],
       "answer": "In a year I will speak English fluently",
-      "instruction": "Will — future state",
+      "instruction": "Соберите предложение",
       "explanation": "will speak English fluently."
     },
     {
@@ -1867,7 +1867,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "best"
       ],
       "answer": "He will do his best",
-      "instruction": "Will — determination",
+      "instruction": "Соберите предложение",
       "explanation": "will do his best."
     },
     {
@@ -1882,7 +1882,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "soon"
       ],
       "answer": "We will see each other soon",
-      "instruction": "Will — future meeting",
+      "instruction": "Соберите предложение",
       "explanation": "will see each other soon."
     },
     {
@@ -1895,7 +1895,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "everything"
       ],
       "answer": "It will change everything",
-      "instruction": "Will — consequence",
+      "instruction": "Соберите предложение",
       "explanation": "will change everything."
     },
     {
@@ -1909,7 +1909,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "offer?"
       ],
       "answer": "Will she accept the offer?",
-      "instruction": "Will question",
+      "instruction": "Соберите предложение",
       "explanation": "Will she accept…?"
     },
     {
@@ -1925,7 +1925,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "time"
       ],
       "answer": "They will not be ready in time",
-      "instruction": "Will negative",
+      "instruction": "Соберите предложение",
       "explanation": "will not be ready…"
     },
     {
@@ -1940,7 +1940,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "details"
       ],
       "answer": "I will send you the details",
-      "instruction": "Will — promise",
+      "instruction": "Соберите предложение",
       "explanation": "will send you the details."
     },
     {
@@ -1954,7 +1954,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "tomorrow"
       ],
       "answer": "The weather will improve tomorrow",
-      "instruction": "Will — prediction",
+      "instruction": "Соберите предложение",
       "explanation": "will improve tomorrow."
     },
     {
@@ -1969,7 +1969,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "station"
       ],
       "answer": "We will meet at the station",
-      "instruction": "Will — arrangement",
+      "instruction": "Соберите предложение",
       "explanation": "will meet at the station."
     }
   ],
@@ -1978,21 +1978,21 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "I was read when she called.",
       "answer": "I was reading when she called.",
-      "instruction": "Past continuous",
+      "instruction": "Исправьте ошибку",
       "explanation": "was reading — not was read."
     },
     {
       "type": "error_correction",
       "question": "They was watching TV.",
       "answer": "They were watching TV.",
-      "instruction": "Past continuous plural",
+      "instruction": "Исправьте ошибку",
       "explanation": "They → were watching."
     },
     {
       "type": "error_correction",
       "question": "When I arrived, the train already left.",
       "answer": "When I arrived, the train had already left.",
-      "instruction": "Past perfect",
+      "instruction": "Исправьте ошибку",
       "explanation": "had already left — before arrival."
     },
     {
@@ -2006,7 +2006,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "She was cook when I came.",
       "answer": "She was cooking when I came.",
-      "instruction": "Past continuous",
+      "instruction": "Исправьте ошибку",
       "explanation": "was cooking — V-ing."
     },
     {
@@ -2020,98 +2020,98 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "He had finish before I arrived.",
       "answer": "He had finished before I arrived.",
-      "instruction": "Past perfect",
+      "instruction": "Исправьте ошибку",
       "explanation": "had finished — V3."
     },
     {
       "type": "error_correction",
       "question": "I was study all night.",
       "answer": "I was studying all night.",
-      "instruction": "Past continuous",
+      "instruction": "Исправьте ошибку",
       "explanation": "was studying — V-ing."
     },
     {
       "type": "error_correction",
       "question": "They had went home before midnight.",
       "answer": "They had gone home before midnight.",
-      "instruction": "Past perfect irregular",
+      "instruction": "Исправьте ошибку",
       "explanation": "go → gone (V3)."
     },
     {
       "type": "error_correction",
       "question": "She used to lives in Paris.",
       "answer": "She used to live in Paris.",
-      "instruction": "Used to",
+      "instruction": "Исправьте ошибку",
       "explanation": "used to live — base verb."
     },
     {
       "type": "error_correction",
       "question": "I read a book when the phone rang.",
       "answer": "I was reading a book when the phone rang.",
-      "instruction": "Interrupted action",
+      "instruction": "Исправьте ошибку",
       "explanation": "was reading when…"
     },
     {
       "type": "error_correction",
       "question": "We was having dinner at eight.",
       "answer": "We were having dinner at eight.",
-      "instruction": "Past continuous",
+      "instruction": "Исправьте ошибку",
       "explanation": "We → were having."
     },
     {
       "type": "error_correction",
       "question": "By the time I got there, they leave.",
       "answer": "By the time I got there, they had left.",
-      "instruction": "Past perfect",
+      "instruction": "Исправьте ошибку",
       "explanation": "had left — before got there."
     },
     {
       "type": "error_correction",
       "question": "He was work when I saw him.",
       "answer": "He was working when I saw him.",
-      "instruction": "Past continuous",
+      "instruction": "Исправьте ошибку",
       "explanation": "was working."
     },
     {
       "type": "error_correction",
       "question": "I had never saw such a thing.",
       "answer": "I had never seen such a thing.",
-      "instruction": "Past perfect irregular",
+      "instruction": "Исправьте ошибку",
       "explanation": "see → seen (V3)."
     },
     {
       "type": "translation",
       "question": "Я читал, когда она позвонила.",
       "answer": "I was reading when she called",
-      "instruction": "Past continuous",
+      "instruction": "Переведите на английский",
       "explanation": "was reading when she called."
     },
     {
       "type": "translation",
       "question": "Они смотрели телевизор.",
       "answer": "They were watching TV",
-      "instruction": "Past continuous plural",
+      "instruction": "Переведите на английский",
       "explanation": "They were watching TV."
     },
     {
       "type": "translation",
       "question": "Когда я пришёл, поезд уже уехал.",
       "answer": "When I arrived the train had already left",
-      "instruction": "Past perfect",
+      "instruction": "Переведите на английский",
       "explanation": "had already left — before arrival."
     },
     {
       "type": "translation",
       "question": "Раньше я играл в теннис.",
       "answer": "I used to play tennis",
-      "instruction": "Used to",
+      "instruction": "Переведите на английский",
       "explanation": "used to + base verb."
     },
     {
       "type": "translation",
       "question": "Она готовила, когда я пришёл.",
       "answer": "She was cooking when I came",
-      "instruction": "Past continuous",
+      "instruction": "Переведите на английский",
       "explanation": "was cooking when I came."
     },
     {
@@ -2125,56 +2125,56 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Он уже закончил, когда я пришёл.",
       "answer": "He had finished before I arrived",
-      "instruction": "Past perfect",
+      "instruction": "Переведите на английский",
       "explanation": "had finished before I arrived."
     },
     {
       "type": "translation",
       "question": "Я учился всю ночь.",
       "answer": "I was studying all night",
-      "instruction": "Past continuous",
+      "instruction": "Переведите на английский",
       "explanation": "was studying all night."
     },
     {
       "type": "translation",
       "question": "Они ушли домой до полуночи.",
       "answer": "They had gone home before midnight",
-      "instruction": "Past perfect — go",
+      "instruction": "Переведите на английский",
       "explanation": "go → gone (V3)."
     },
     {
       "type": "translation",
       "question": "Раньше она жила в Париже.",
       "answer": "She used to live in Paris",
-      "instruction": "Used to",
+      "instruction": "Переведите на английский",
       "explanation": "used to live in Paris."
     },
     {
       "type": "translation",
       "question": "Я читал книгу, когда зазвонил телефон.",
       "answer": "I was reading a book when the phone rang",
-      "instruction": "Interrupted action",
+      "instruction": "Переведите на английский",
       "explanation": "was reading when the phone rang."
     },
     {
       "type": "translation",
       "question": "Мы ужинали в восемь.",
       "answer": "We were having dinner at eight",
-      "instruction": "Past continuous",
+      "instruction": "Переведите на английский",
       "explanation": "were having dinner at eight."
     },
     {
       "type": "translation",
       "question": "К тому времени, как я пришёл, они уже ушли.",
       "answer": "By the time I got there they had left",
-      "instruction": "Past perfect",
+      "instruction": "Переведите на английский",
       "explanation": "had left — before got there."
     },
     {
       "type": "translation",
       "question": "Он работал, когда я его увидел.",
       "answer": "He was working when I saw him",
-      "instruction": "Past continuous",
+      "instruction": "Переведите на английский",
       "explanation": "was working when I saw him."
     },
     {
@@ -2189,7 +2189,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "called"
       ],
       "answer": "I was reading when she called",
-      "instruction": "Past continuous",
+      "instruction": "Соберите предложение",
       "explanation": "was reading when she called."
     },
     {
@@ -2202,7 +2202,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "TV"
       ],
       "answer": "They were watching TV",
-      "instruction": "Past continuous plural",
+      "instruction": "Соберите предложение",
       "explanation": "were watching TV."
     },
     {
@@ -2219,7 +2219,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "left"
       ],
       "answer": "When I arrived the train had already left",
-      "instruction": "Past perfect",
+      "instruction": "Соберите предложение",
       "explanation": "had already left."
     },
     {
@@ -2233,7 +2233,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "tennis"
       ],
       "answer": "I used to play tennis",
-      "instruction": "Used to",
+      "instruction": "Соберите предложение",
       "explanation": "used to play tennis."
     },
     {
@@ -2248,7 +2248,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "came"
       ],
       "answer": "She was cooking when I came",
-      "instruction": "Past continuous",
+      "instruction": "Соберите предложение",
       "explanation": "was cooking when I came."
     },
     {
@@ -2265,7 +2265,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "rain"
       ],
       "answer": "While we were walking it started to rain",
-      "instruction": "While + continuous",
+      "instruction": "Соберите предложение",
       "explanation": "While we were walking…"
     },
     {
@@ -2280,7 +2280,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "arrived"
       ],
       "answer": "He had finished before I arrived",
-      "instruction": "Past perfect",
+      "instruction": "Соберите предложение",
       "explanation": "had finished before I arrived."
     },
     {
@@ -2294,7 +2294,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "night"
       ],
       "answer": "I was studying all night",
-      "instruction": "Past continuous",
+      "instruction": "Соберите предложение",
       "explanation": "was studying all night."
     },
     {
@@ -2309,7 +2309,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "midnight"
       ],
       "answer": "They had gone home before midnight",
-      "instruction": "Past perfect",
+      "instruction": "Соберите предложение",
       "explanation": "had gone home before midnight."
     },
     {
@@ -2324,7 +2324,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "Paris"
       ],
       "answer": "She used to live in Paris",
-      "instruction": "Used to",
+      "instruction": "Соберите предложение",
       "explanation": "used to live in Paris."
     },
     {
@@ -2342,7 +2342,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "rang"
       ],
       "answer": "I was reading a book when the phone rang",
-      "instruction": "Interrupted action",
+      "instruction": "Соберите предложение",
       "explanation": "was reading when the phone rang."
     },
     {
@@ -2357,7 +2357,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "eight"
       ],
       "answer": "We were having dinner at eight",
-      "instruction": "Past continuous",
+      "instruction": "Соберите предложение",
       "explanation": "were having dinner at eight."
     },
     {
@@ -2375,7 +2375,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "left"
       ],
       "answer": "By the time I got there they had left",
-      "instruction": "Past perfect",
+      "instruction": "Соберите предложение",
       "explanation": "had left by then."
     },
     {
@@ -2391,7 +2391,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "thing"
       ],
       "answer": "I had never seen such a thing",
-      "instruction": "Past perfect — see",
+      "instruction": "Соберите предложение",
       "explanation": "see → seen (V3); had never seen."
     },
     {
@@ -2407,7 +2407,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "him"
       ],
       "answer": "He was working when I saw him",
-      "instruction": "Past continuous",
+      "instruction": "Соберите предложение",
       "explanation": "was working when I saw him."
     },
     {
@@ -2423,7 +2423,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "raining"
       ],
       "answer": "When I woke up it was raining",
-      "instruction": "Past continuous — background",
+      "instruction": "Соберите предложение",
       "explanation": "was raining — фоновое действие."
     },
     {
@@ -2455,7 +2455,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "called"
       ],
       "answer": "She had already left when I called",
-      "instruction": "Past perfect",
+      "instruction": "Соберите предложение",
       "explanation": "had already left when I called."
     },
     {
@@ -2471,7 +2471,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "summer"
       ],
       "answer": "We used to go fishing every summer",
-      "instruction": "Used to — habit",
+      "instruction": "Соберите предложение",
       "explanation": "used to go fishing — привычка в прошлом."
     },
     {
@@ -2498,182 +2498,182 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Я устал — я бегал.",
       "answer": "I'm tired — I've been running",
-      "instruction": "Present perfect continuous",
+      "instruction": "Переведите на английский",
       "explanation": "I've been running — visible result."
     },
     {
       "type": "translation",
       "question": "Она работает здесь с 2020 года.",
       "answer": "She has been working here since 2020",
-      "instruction": "Present perfect continuous + since",
+      "instruction": "Переведите на английский",
       "explanation": "has been working since 2020."
     },
     {
       "type": "translation",
       "question": "Сколько времени ты ждёшь?",
       "answer": "How long have you been waiting?",
-      "instruction": "PPC question",
+      "instruction": "Переведите на английский",
       "explanation": "How long have you been + V-ing?"
     },
     {
       "type": "translation",
       "question": "Они учат испанский два года.",
       "answer": "They have been studying Spanish for two years",
-      "instruction": "PPC + for",
+      "instruction": "Переведите на английский",
       "explanation": "have been studying… for two years."
     },
     {
       "type": "translation",
       "question": "Дождь идёт с утра.",
       "answer": "It has been raining since morning",
-      "instruction": "PPC — rain",
+      "instruction": "Переведите на английский",
       "explanation": "has been raining since morning."
     },
     {
       "type": "translation",
       "question": "Я давно не видел его.",
       "answer": "I haven't seen him for a long time",
-      "instruction": "Present perfect",
+      "instruction": "Переведите на английский",
       "explanation": "haven't seen… for a long time."
     },
     {
       "type": "translation",
       "question": "Она весь день готовит.",
       "answer": "She has been cooking all day",
-      "instruction": "PPC — duration",
+      "instruction": "Переведите на английский",
       "explanation": "has been cooking all day."
     },
     {
       "type": "translation",
       "question": "Мы живём здесь с прошлого года.",
       "answer": "We have been living here since last year",
-      "instruction": "PPC + since",
+      "instruction": "Переведите на английский",
       "explanation": "have been living since last year."
     },
     {
       "type": "translation",
       "question": "Он весь вечер играл в футбол.",
       "answer": "He has been playing football all evening",
-      "instruction": "PPC — activity",
+      "instruction": "Переведите на английский",
       "explanation": "has been playing… all evening."
     },
     {
       "type": "translation",
       "question": "Сколько времени ты изучаешь английский?",
       "answer": "How long have you been learning English?",
-      "instruction": "PPC question",
+      "instruction": "Переведите на английский",
       "explanation": "How long have you been learning…?"
     },
     {
       "type": "translation",
       "question": "Я давно хочу посетить Японию.",
       "answer": "I have been wanting to visit Japan for ages",
-      "instruction": "PPC — want",
+      "instruction": "Переведите на английский",
       "explanation": "have been wanting… for ages."
     },
     {
       "type": "translation",
       "question": "Они ремонтируют дом уже три месяца.",
       "answer": "They have been renovating the house for three months",
-      "instruction": "PPC + for",
+      "instruction": "Переведите на английский",
       "explanation": "have been renovating… for three months."
     },
     {
       "type": "translation",
       "question": "Ты давно здесь?",
       "answer": "Have you been here long?",
-      "instruction": "PPC question",
+      "instruction": "Переведите на английский",
       "explanation": "Have you been here long?"
     },
     {
       "type": "translation",
       "question": "Она весь день говорит по телефону.",
       "answer": "She has been on the phone all day",
-      "instruction": "PPC — state",
+      "instruction": "Переведите на английский",
       "explanation": "has been on the phone all day."
     },
     {
       "type": "error_correction",
       "question": "I'm tired — I've been run.",
       "answer": "I'm tired — I've been running.",
-      "instruction": "Present perfect continuous",
+      "instruction": "Исправьте ошибку",
       "explanation": "I've been running — V-ing."
     },
     {
       "type": "error_correction",
       "question": "She has been work here since 2020.",
       "answer": "She has been working here since 2020.",
-      "instruction": "PPC — V-ing",
+      "instruction": "Исправьте ошибку",
       "explanation": "has been working — V-ing."
     },
     {
       "type": "error_correction",
       "question": "How long have you been wait?",
       "answer": "How long have you been waiting?",
-      "instruction": "PPC question",
+      "instruction": "Исправьте ошибку",
       "explanation": "have you been waiting — V-ing."
     },
     {
       "type": "error_correction",
       "question": "They have been study Spanish for two years.",
       "answer": "They have been studying Spanish for two years.",
-      "instruction": "PPC + for",
+      "instruction": "Исправьте ошибку",
       "explanation": "have been studying — V-ing."
     },
     {
       "type": "error_correction",
       "question": "It has been rain since morning.",
       "answer": "It has been raining since morning.",
-      "instruction": "PPC — rain",
+      "instruction": "Исправьте ошибку",
       "explanation": "has been raining — V-ing."
     },
     {
       "type": "error_correction",
       "question": "I haven't saw him for a long time.",
       "answer": "I haven't seen him for a long time.",
-      "instruction": "Present perfect",
+      "instruction": "Исправьте ошибку",
       "explanation": "haven't seen — V3."
     },
     {
       "type": "error_correction",
       "question": "She has been cook all day.",
       "answer": "She has been cooking all day.",
-      "instruction": "PPC — duration",
+      "instruction": "Исправьте ошибку",
       "explanation": "has been cooking — V-ing."
     },
     {
       "type": "error_correction",
       "question": "We have been live here since last year.",
       "answer": "We have been living here since last year.",
-      "instruction": "PPC + since",
+      "instruction": "Исправьте ошибку",
       "explanation": "have been living — V-ing."
     },
     {
       "type": "error_correction",
       "question": "He has been play football all evening.",
       "answer": "He has been playing football all evening.",
-      "instruction": "PPC — activity",
+      "instruction": "Исправьте ошибку",
       "explanation": "has been playing — V-ing."
     },
     {
       "type": "error_correction",
       "question": "How long have you been learn English?",
       "answer": "How long have you been learning English?",
-      "instruction": "PPC question",
+      "instruction": "Исправьте ошибку",
       "explanation": "have been learning — V-ing."
     },
     {
       "type": "error_correction",
       "question": "I have been want to visit Japan for ages.",
       "answer": "I have been wanting to visit Japan for ages.",
-      "instruction": "PPC — want",
+      "instruction": "Исправьте ошибку",
       "explanation": "have been wanting — V-ing."
     },
     {
       "type": "error_correction",
       "question": "They have been renovate the house for three months.",
       "answer": "They have been renovating the house for three months.",
-      "instruction": "PPC + for",
+      "instruction": "Исправьте ошибку",
       "explanation": "have been renovating — V-ing."
     },
     {
@@ -2687,7 +2687,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "running"
       ],
       "answer": "I'm tired I've been running",
-      "instruction": "PPC — visible result",
+      "instruction": "Соберите предложение",
       "explanation": "I've been running — tired result."
     },
     {
@@ -2703,7 +2703,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "2020"
       ],
       "answer": "She has been working here since 2020",
-      "instruction": "PPC + since",
+      "instruction": "Соберите предложение",
       "explanation": "has been working since 2020."
     },
     {
@@ -2718,7 +2718,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "waiting?"
       ],
       "answer": "How long have you been waiting?",
-      "instruction": "PPC question",
+      "instruction": "Соберите предложение",
       "explanation": "How long have you been waiting?"
     },
     {
@@ -2735,7 +2735,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "years"
       ],
       "answer": "They have been studying Spanish for two years",
-      "instruction": "PPC + for",
+      "instruction": "Соберите предложение",
       "explanation": "have been studying for two years."
     },
     {
@@ -2750,7 +2750,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "morning"
       ],
       "answer": "It has been raining since morning",
-      "instruction": "PPC — rain",
+      "instruction": "Соберите предложение",
       "explanation": "has been raining since morning."
     },
     {
@@ -2767,7 +2767,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "time"
       ],
       "answer": "I haven't seen him for a long time",
-      "instruction": "Present perfect",
+      "instruction": "Соберите предложение",
       "explanation": "haven't seen him for a long time."
     },
     {
@@ -2782,7 +2782,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "day"
       ],
       "answer": "She has been cooking all day",
-      "instruction": "PPC — duration",
+      "instruction": "Соберите предложение",
       "explanation": "has been cooking all day."
     },
     {
@@ -2799,7 +2799,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "year"
       ],
       "answer": "We have been living here since last year",
-      "instruction": "PPC + since",
+      "instruction": "Соберите предложение",
       "explanation": "have been living since last year."
     },
     {
@@ -2815,7 +2815,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "evening"
       ],
       "answer": "He has been playing football all evening",
-      "instruction": "PPC — activity",
+      "instruction": "Соберите предложение",
       "explanation": "has been playing all evening."
     },
     {
@@ -2831,7 +2831,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "English?"
       ],
       "answer": "How long have you been learning English?",
-      "instruction": "PPC question",
+      "instruction": "Соберите предложение",
       "explanation": "How long have you been learning English?"
     },
     {
@@ -2849,7 +2849,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "ages"
       ],
       "answer": "I have been wanting to visit Japan for ages",
-      "instruction": "PPC — want",
+      "instruction": "Соберите предложение",
       "explanation": "have been wanting for ages."
     },
     {
@@ -2867,7 +2867,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "months"
       ],
       "answer": "They have been renovating the house for three months",
-      "instruction": "PPC + for",
+      "instruction": "Соберите предложение",
       "explanation": "have been renovating for three months."
     },
     {
@@ -2881,7 +2881,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "long?"
       ],
       "answer": "Have you been here long?",
-      "instruction": "PPC question",
+      "instruction": "Соберите предложение",
       "explanation": "Have you been here long?"
     },
     {
@@ -2898,7 +2898,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "day"
       ],
       "answer": "She has been on the phone all day",
-      "instruction": "PPC — state",
+      "instruction": "Соберите предложение",
       "explanation": "has been on the phone all day."
     },
     {
@@ -2913,7 +2913,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "waiting?"
       ],
       "answer": "How long have you been waiting?",
-      "instruction": "PPC question",
+      "instruction": "Соберите предложение",
       "explanation": "How long have you been waiting?"
     },
     {
@@ -2928,7 +2928,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "morning"
       ],
       "answer": "They have been arguing all morning",
-      "instruction": "PPC — duration",
+      "instruction": "Соберите предложение",
       "explanation": "have been arguing all morning."
     },
     {
@@ -2944,7 +2944,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "lately"
       ],
       "answer": "I have been thinking about it lately",
-      "instruction": "PPC — recent activity",
+      "instruction": "Соберите предложение",
       "explanation": "have been thinking about it lately."
     },
     {
@@ -2960,7 +2960,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "marathon"
       ],
       "answer": "He has been training for the marathon",
-      "instruction": "PPC + for",
+      "instruction": "Соберите предложение",
       "explanation": "has been training for the marathon."
     },
     {
@@ -2978,7 +2978,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "months"
       ],
       "answer": "We have been looking for a flat for months",
-      "instruction": "PPC + for",
+      "instruction": "Соберите предложение",
       "explanation": "have been looking… for months."
     },
     {
@@ -2993,7 +2993,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "recently"
       ],
       "answer": "She has been feeling unwell recently",
-      "instruction": "PPC — state",
+      "instruction": "Соберите предложение",
       "explanation": "has been feeling unwell recently."
     }
   ],
@@ -3002,210 +3002,210 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "If I will have time, I will call you.",
       "answer": "If I have time, I will call you.",
-      "instruction": "First conditional",
+      "instruction": "Исправьте ошибку",
       "explanation": "If-clause: present, not will."
     },
     {
       "type": "error_correction",
       "question": "If I was rich, I would travel.",
       "answer": "If I were rich, I would travel.",
-      "instruction": "Second conditional",
+      "instruction": "Исправьте ошибку",
       "explanation": "If I were — subjunctive form."
     },
     {
       "type": "error_correction",
       "question": "If she would study, she would pass.",
       "answer": "If she studied, she would pass.",
-      "instruction": "Second conditional",
+      "instruction": "Исправьте ошибку",
       "explanation": "If-clause: past simple, not would."
     },
     {
       "type": "error_correction",
       "question": "If I had knew, I would have told you.",
       "answer": "If I had known, I would have told you.",
-      "instruction": "Third conditional",
+      "instruction": "Исправьте ошибку",
       "explanation": "know → known (V3)."
     },
     {
       "type": "error_correction",
       "question": "If it rains, I would stay home.",
       "answer": "If it rains, I will stay home.",
-      "instruction": "First conditional",
+      "instruction": "Исправьте ошибку",
       "explanation": "Result: will, not would."
     },
     {
       "type": "error_correction",
       "question": "If I would be you, I would accept.",
       "answer": "If I were you, I would accept.",
-      "instruction": "Second conditional",
+      "instruction": "Исправьте ошибку",
       "explanation": "If I were you — fixed phrase."
     },
     {
       "type": "error_correction",
       "question": "If he had went, he would have seen it.",
       "answer": "If he had gone, he would have seen it.",
-      "instruction": "Third conditional",
+      "instruction": "Исправьте ошибку",
       "explanation": "go → gone (V3)."
     },
     {
       "type": "error_correction",
       "question": "If you heat ice, it would melt.",
       "answer": "If you heat ice, it melts.",
-      "instruction": "Zero conditional",
+      "instruction": "Исправьте ошибку",
       "explanation": "Zero: present + present."
     },
     {
       "type": "error_correction",
       "question": "If I had more time, I will learn French.",
       "answer": "If I had more time, I would learn French.",
-      "instruction": "Second conditional",
+      "instruction": "Исправьте ошибку",
       "explanation": "Result: would, not will."
     },
     {
       "type": "error_correction",
       "question": "If she had studied harder, she will pass.",
       "answer": "If she had studied harder, she would have passed.",
-      "instruction": "Third conditional",
+      "instruction": "Исправьте ошибку",
       "explanation": "Result: would have + V3."
     },
     {
       "type": "error_correction",
       "question": "If I win the lottery, I would buy a house.",
       "answer": "If I won the lottery, I would buy a house.",
-      "instruction": "Second conditional",
+      "instruction": "Исправьте ошибку",
       "explanation": "If-clause: past simple."
     },
     {
       "type": "error_correction",
       "question": "If they had arrived earlier, they would catch the train.",
       "answer": "If they had arrived earlier, they would have caught the train.",
-      "instruction": "Third conditional",
+      "instruction": "Исправьте ошибку",
       "explanation": "would have caught."
     },
     {
       "type": "error_correction",
       "question": "If you will ask nicely, he might help.",
       "answer": "If you ask nicely, he might help.",
-      "instruction": "First conditional",
+      "instruction": "Исправьте ошибку",
       "explanation": "If-clause: present."
     },
     {
       "type": "error_correction",
       "question": "If I was taller, I would play basketball.",
       "answer": "If I were taller, I would play basketball.",
-      "instruction": "Second conditional",
+      "instruction": "Исправьте ошибку",
       "explanation": "If I were — formal subjunctive."
     },
     {
       "type": "error_correction",
       "question": "If we had leave earlier, we wouldn't be late.",
       "answer": "If we had left earlier, we wouldn't be late.",
-      "instruction": "Mixed conditional",
+      "instruction": "Исправьте ошибку",
       "explanation": "had left — V3."
     },
     {
       "type": "error_correction",
       "question": "If I would have known, I would come.",
       "answer": "If I had known, I would have come.",
-      "instruction": "Third conditional",
+      "instruction": "Исправьте ошибку",
       "explanation": "If I had known…"
     },
     {
       "type": "translation",
       "question": "Если у меня будет время, я тебе позвоню.",
       "answer": "If I have time I will call you",
-      "instruction": "First conditional",
+      "instruction": "Переведите на английский",
       "explanation": "If + present, will + base."
     },
     {
       "type": "translation",
       "question": "Если бы я был богат, я бы путешествовал.",
       "answer": "If I were rich I would travel",
-      "instruction": "Second conditional",
+      "instruction": "Переведите на английский",
       "explanation": "If I were — subjunctive."
     },
     {
       "type": "translation",
       "question": "Если бы она училась, она бы сдала.",
       "answer": "If she studied she would pass",
-      "instruction": "Second conditional",
+      "instruction": "Переведите на английский",
       "explanation": "If + past simple, would + base."
     },
     {
       "type": "translation",
       "question": "Если бы я знал, я бы тебе сказал.",
       "answer": "If I had known I would have told you",
-      "instruction": "Third conditional",
+      "instruction": "Переведите на английский",
       "explanation": "If I had known… would have told."
     },
     {
       "type": "translation",
       "question": "Если пойдёт дождь, я останусь дома.",
       "answer": "If it rains I will stay home",
-      "instruction": "First conditional",
+      "instruction": "Переведите на английский",
       "explanation": "If + present, will + base."
     },
     {
       "type": "translation",
       "question": "На твоём месте я бы принял.",
       "answer": "If I were you I would accept",
-      "instruction": "Second conditional",
+      "instruction": "Переведите на английский",
       "explanation": "If I were you — fixed phrase."
     },
     {
       "type": "translation",
       "question": "Если бы он пошёл, он бы это увидел.",
       "answer": "If he had gone he would have seen it",
-      "instruction": "Third conditional",
+      "instruction": "Переведите на английский",
       "explanation": "If he had gone… would have seen."
     },
     {
       "type": "translation",
       "question": "Если нагреть лёд, он тает.",
       "answer": "If you heat ice it melts",
-      "instruction": "Zero conditional",
+      "instruction": "Переведите на английский",
       "explanation": "Zero: present + present."
     },
     {
       "type": "translation",
       "question": "Если бы у меня было больше времени, я бы выучил французский.",
       "answer": "If I had more time I would learn French",
-      "instruction": "Second conditional",
+      "instruction": "Переведите на английский",
       "explanation": "If + past, would + base."
     },
     {
       "type": "translation",
       "question": "Если бы она училась усерднее, она бы сдала.",
       "answer": "If she had studied harder she would have passed",
-      "instruction": "Third conditional",
+      "instruction": "Переведите на английский",
       "explanation": "If she had studied… would have passed."
     },
     {
       "type": "translation",
       "question": "Если бы я выиграл в лотерею, я бы купил дом.",
       "answer": "If I won the lottery I would buy a house",
-      "instruction": "Second conditional",
+      "instruction": "Переведите на английский",
       "explanation": "If + past simple, would + base."
     },
     {
       "type": "translation",
       "question": "Если бы они приехали раньше, они бы успели на поезд.",
       "answer": "If they had arrived earlier they would have caught the train",
-      "instruction": "Third conditional",
+      "instruction": "Переведите на английский",
       "explanation": "would have caught the train."
     },
     {
       "type": "translation",
       "question": "Если ты попросишь вежливо, он может помочь.",
       "answer": "If you ask nicely he might help",
-      "instruction": "First conditional",
+      "instruction": "Переведите на английский",
       "explanation": "If + present, might + base."
     },
     {
       "type": "translation",
       "question": "Если бы я был выше, я бы играл в баскетбол.",
       "answer": "If I were taller I would play basketball",
-      "instruction": "Second conditional",
+      "instruction": "Переведите на английский",
       "explanation": "If I were taller…"
     },
     {
@@ -3222,7 +3222,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "you"
       ],
       "answer": "If I have time I will call you",
-      "instruction": "First conditional",
+      "instruction": "Соберите предложение",
       "explanation": "If + present, will + base."
     },
     {
@@ -3238,7 +3238,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "travel"
       ],
       "answer": "If I were rich I would travel",
-      "instruction": "Second conditional",
+      "instruction": "Соберите предложение",
       "explanation": "If I were… would travel."
     },
     {
@@ -3253,7 +3253,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "pass"
       ],
       "answer": "If she studied she would pass",
-      "instruction": "Second conditional",
+      "instruction": "Соберите предложение",
       "explanation": "If + past, would + base."
     },
     {
@@ -3271,7 +3271,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "you"
       ],
       "answer": "If I had known I would have told you",
-      "instruction": "Third conditional",
+      "instruction": "Соберите предложение",
       "explanation": "If I had known… would have told."
     },
     {
@@ -3287,7 +3287,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "home"
       ],
       "answer": "If it rains I will stay home",
-      "instruction": "First conditional",
+      "instruction": "Соберите предложение",
       "explanation": "If it rains… will stay."
     },
     {
@@ -3303,7 +3303,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "accept"
       ],
       "answer": "If I were you I would accept",
-      "instruction": "Second conditional",
+      "instruction": "Соберите предложение",
       "explanation": "If I were you…"
     },
     {
@@ -3321,7 +3321,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "it"
       ],
       "answer": "If he had gone he would have seen it",
-      "instruction": "Third conditional",
+      "instruction": "Соберите предложение",
       "explanation": "If he had gone… would have seen."
     },
     {
@@ -3336,7 +3336,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "melts"
       ],
       "answer": "If you heat ice it melts",
-      "instruction": "Zero conditional",
+      "instruction": "Соберите предложение",
       "explanation": "If + present, present."
     },
     {
@@ -3354,7 +3354,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "French"
       ],
       "answer": "If I had more time I would learn French",
-      "instruction": "Second conditional",
+      "instruction": "Соберите предложение",
       "explanation": "If I had more time…"
     },
     {
@@ -3372,7 +3372,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "passed"
       ],
       "answer": "If she had studied harder she would have passed",
-      "instruction": "Third conditional",
+      "instruction": "Соберите предложение",
       "explanation": "would have passed."
     },
     {
@@ -3391,7 +3391,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "house"
       ],
       "answer": "If I won the lottery I would buy a house",
-      "instruction": "Second conditional",
+      "instruction": "Соберите предложение",
       "explanation": "If I won… would buy."
     },
     {
@@ -3411,7 +3411,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "train"
       ],
       "answer": "If they had arrived earlier they would have caught the train",
-      "instruction": "Third conditional",
+      "instruction": "Соберите предложение",
       "explanation": "would have caught the train."
     },
     {
@@ -3429,7 +3429,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "purple"
       ],
       "answer": "If you mix red and blue you get purple",
-      "instruction": "Zero conditional",
+      "instruction": "Соберите предложение",
       "explanation": "If + present, present — общая истина."
     },
     {
@@ -3447,7 +3447,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "shelf"
       ],
       "answer": "If I were taller I would reach the shelf",
-      "instruction": "Second conditional",
+      "instruction": "Соберите предложение",
       "explanation": "If I were taller… would reach."
     },
     {
@@ -3465,7 +3465,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "train"
       ],
       "answer": "If we leave now we will catch the train",
-      "instruction": "First conditional",
+      "instruction": "Соберите предложение",
       "explanation": "If + present, will + base."
     },
     {
@@ -3482,7 +3482,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "understood"
       ],
       "answer": "If he had listened he would have understood",
-      "instruction": "Third conditional",
+      "instruction": "Соберите предложение",
       "explanation": "If he had listened… would have understood."
     },
     {
@@ -3499,7 +3499,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "bus"
       ],
       "answer": "Unless you hurry you will miss the bus",
-      "instruction": "Unless — first conditional",
+      "instruction": "Соберите предложение",
       "explanation": "Unless = if not; will miss."
     },
     {
@@ -3516,7 +3516,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "come"
       ],
       "answer": "If I had known I wouldn't have come",
-      "instruction": "Third conditional",
+      "instruction": "Соберите предложение",
       "explanation": "wouldn't have come — сожаление."
     },
     {
@@ -3533,7 +3533,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "us"
       ],
       "answer": "If she were here she would help us",
-      "instruction": "Second conditional",
+      "instruction": "Соберите предложение",
       "explanation": "If she were here… would help."
     },
     {
@@ -3549,7 +3549,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "close"
       ],
       "answer": "If it snows the schools will close",
-      "instruction": "First conditional",
+      "instruction": "Соберите предложение",
       "explanation": "If it snows… will close."
     }
   ],
@@ -3558,28 +3558,28 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Книга написана в 1990 году.",
       "answer": "The book was written in 1990",
-      "instruction": "Past passive",
+      "instruction": "Переведите на английский",
       "explanation": "was written in 1990."
     },
     {
       "type": "translation",
       "question": "Дом построен в прошлом веке.",
       "answer": "The house was built in the last century",
-      "instruction": "Past passive",
+      "instruction": "Переведите на английский",
       "explanation": "was built in the last century."
     },
     {
       "type": "translation",
       "question": "Письмо отправлено вчера.",
       "answer": "The letter was sent yesterday",
-      "instruction": "Past passive",
+      "instruction": "Переведите на английский",
       "explanation": "was sent yesterday."
     },
     {
       "type": "translation",
       "question": "Английский говорят во всём мире.",
       "answer": "English is spoken all over the world",
-      "instruction": "Present passive",
+      "instruction": "Переведите на английский",
       "explanation": "is spoken all over the world."
     },
     {
@@ -3600,140 +3600,140 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Еда приготовлена мамой.",
       "answer": "The food was prepared by my mother",
-      "instruction": "Past passive",
+      "instruction": "Переведите на английский",
       "explanation": "was prepared by my mother."
     },
     {
       "type": "translation",
       "question": "Проблема решена.",
       "answer": "The problem has been solved",
-      "instruction": "Present perfect passive",
+      "instruction": "Переведите на английский",
       "explanation": "has been solved."
     },
     {
       "type": "translation",
       "question": "Закон принят в прошлом году.",
       "answer": "The law was passed last year",
-      "instruction": "Past passive",
+      "instruction": "Переведите на английский",
       "explanation": "was passed last year."
     },
     {
       "type": "translation",
       "question": "Новый мост строят сейчас.",
       "answer": "A new bridge is being built now",
-      "instruction": "Present continuous passive",
+      "instruction": "Переведите на английский",
       "explanation": "is being built now."
     },
     {
       "type": "translation",
       "question": "Его пригласили на конференцию.",
       "answer": "He was invited to the conference",
-      "instruction": "Past passive",
+      "instruction": "Переведите на английский",
       "explanation": "was invited to the conference."
     },
     {
       "type": "translation",
       "question": "Комнату убирают каждый день.",
       "answer": "The room is cleaned every day",
-      "instruction": "Present passive habit",
+      "instruction": "Переведите на английский",
       "explanation": "is cleaned every day."
     },
     {
       "type": "translation",
       "question": "Картина была украдена.",
       "answer": "The painting was stolen",
-      "instruction": "Past passive",
+      "instruction": "Переведите на английский",
       "explanation": "was stolen."
     },
     {
       "type": "translation",
       "question": "Работа будет закончена завтра.",
       "answer": "The work will be finished tomorrow",
-      "instruction": "Future passive",
+      "instruction": "Переведите на английский",
       "explanation": "will be finished tomorrow."
     },
     {
       "type": "error_correction",
       "question": "The book was wrote in 1990.",
       "answer": "The book was written in 1990.",
-      "instruction": "Past passive — write",
+      "instruction": "Исправьте ошибку",
       "explanation": "write → written (V3)."
     },
     {
       "type": "error_correction",
       "question": "The house was build in the last century.",
       "answer": "The house was built in the last century.",
-      "instruction": "Past passive — build",
+      "instruction": "Исправьте ошибку",
       "explanation": "build → built (V3)."
     },
     {
       "type": "error_correction",
       "question": "The letter was send yesterday.",
       "answer": "The letter was sent yesterday.",
-      "instruction": "Past passive — send",
+      "instruction": "Исправьте ошибку",
       "explanation": "send → sent (V3)."
     },
     {
       "type": "error_correction",
       "question": "English is speak all over the world.",
       "answer": "English is spoken all over the world.",
-      "instruction": "Present passive",
+      "instruction": "Исправьте ошибку",
       "explanation": "is spoken — V3."
     },
     {
       "type": "error_correction",
       "question": "The decision was make by the government.",
       "answer": "The decision was made by the government.",
-      "instruction": "Past passive — make",
+      "instruction": "Исправьте ошибку",
       "explanation": "make → made (V3)."
     },
     {
       "type": "error_correction",
       "question": "The food was prepare by my mother.",
       "answer": "The food was prepared by my mother.",
-      "instruction": "Past passive — prepare",
+      "instruction": "Исправьте ошибку",
       "explanation": "prepare → prepared (V3)."
     },
     {
       "type": "error_correction",
       "question": "The problem has been solve.",
       "answer": "The problem has been solved.",
-      "instruction": "Present perfect passive",
+      "instruction": "Исправьте ошибку",
       "explanation": "has been solved — V3."
     },
     {
       "type": "error_correction",
       "question": "The law was pass last year.",
       "answer": "The law was passed last year.",
-      "instruction": "Past passive — pass",
+      "instruction": "Исправьте ошибку",
       "explanation": "pass → passed (V3)."
     },
     {
       "type": "error_correction",
       "question": "A new bridge is being build now.",
       "answer": "A new bridge is being built now.",
-      "instruction": "Continuous passive",
+      "instruction": "Исправьте ошибку",
       "explanation": "is being built — V3."
     },
     {
       "type": "error_correction",
       "question": "He was invite to the conference.",
       "answer": "He was invited to the conference.",
-      "instruction": "Past passive — invite",
+      "instruction": "Исправьте ошибку",
       "explanation": "invite → invited (V3)."
     },
     {
       "type": "error_correction",
       "question": "The room is clean every day.",
       "answer": "The room is cleaned every day.",
-      "instruction": "Present passive habit",
+      "instruction": "Исправьте ошибку",
       "explanation": "is cleaned — V3."
     },
     {
       "type": "error_correction",
       "question": "The painting was steal.",
       "answer": "The painting was stolen.",
-      "instruction": "Past passive — steal",
+      "instruction": "Исправьте ошибку",
       "explanation": "steal → stolen (V3)."
     },
     {
@@ -3748,7 +3748,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "1990"
       ],
       "answer": "The book was written in 1990",
-      "instruction": "Past passive",
+      "instruction": "Соберите предложение",
       "explanation": "was written in 1990."
     },
     {
@@ -3765,7 +3765,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "century"
       ],
       "answer": "The house was built in the last century",
-      "instruction": "Past passive",
+      "instruction": "Соберите предложение",
       "explanation": "was built in the last century."
     },
     {
@@ -3779,7 +3779,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "yesterday"
       ],
       "answer": "The letter was sent yesterday",
-      "instruction": "Past passive",
+      "instruction": "Соберите предложение",
       "explanation": "was sent yesterday."
     },
     {
@@ -3795,7 +3795,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "world"
       ],
       "answer": "English is spoken all over the world",
-      "instruction": "Present passive",
+      "instruction": "Соберите предложение",
       "explanation": "is spoken all over the world."
     },
     {
@@ -3827,7 +3827,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "mother"
       ],
       "answer": "The food was prepared by my mother",
-      "instruction": "Past passive",
+      "instruction": "Соберите предложение",
       "explanation": "was prepared by my mother."
     },
     {
@@ -3841,7 +3841,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "solved"
       ],
       "answer": "The problem has been solved",
-      "instruction": "Present perfect passive",
+      "instruction": "Соберите предложение",
       "explanation": "has been solved."
     },
     {
@@ -3856,7 +3856,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "year"
       ],
       "answer": "The law was passed last year",
-      "instruction": "Past passive",
+      "instruction": "Соберите предложение",
       "explanation": "was passed last year."
     },
     {
@@ -3872,7 +3872,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "now"
       ],
       "answer": "A new bridge is being built now",
-      "instruction": "Continuous passive",
+      "instruction": "Соберите предложение",
       "explanation": "is being built now."
     },
     {
@@ -3887,7 +3887,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "conference"
       ],
       "answer": "He was invited to the conference",
-      "instruction": "Past passive",
+      "instruction": "Соберите предложение",
       "explanation": "was invited to the conference."
     },
     {
@@ -3902,7 +3902,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "day"
       ],
       "answer": "The room is cleaned every day",
-      "instruction": "Present passive habit",
+      "instruction": "Соберите предложение",
       "explanation": "is cleaned every day."
     },
     {
@@ -3915,7 +3915,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "stolen"
       ],
       "answer": "The painting was stolen",
-      "instruction": "Past passive",
+      "instruction": "Соберите предложение",
       "explanation": "was stolen."
     },
     {
@@ -3930,7 +3930,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "tomorrow"
       ],
       "answer": "The work will be finished tomorrow",
-      "instruction": "Future passive",
+      "instruction": "Соберите предложение",
       "explanation": "will be finished tomorrow."
     },
     {
@@ -3944,7 +3944,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "Brazil"
       ],
       "answer": "Coffee is grown in Brazil",
-      "instruction": "Present passive",
+      "instruction": "Соберите предложение",
       "explanation": "is grown in Brazil."
     },
     {
@@ -3959,7 +3959,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "morning"
       ],
       "answer": "The email was sent this morning",
-      "instruction": "Past passive",
+      "instruction": "Соберите предложение",
       "explanation": "was sent this morning."
     },
     {
@@ -3974,7 +3974,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "schools"
       ],
       "answer": "English is taught in many schools",
-      "instruction": "Present passive habit",
+      "instruction": "Соберите предложение",
       "explanation": "is taught in many schools."
     },
     {
@@ -4020,7 +4020,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "published"
       ],
       "answer": "The report has been published",
-      "instruction": "Present perfect passive",
+      "instruction": "Соберите предложение",
       "explanation": "has been published."
     },
     {
@@ -4034,7 +4034,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "repaired"
       ],
       "answer": "The road is being repaired",
-      "instruction": "Present continuous passive",
+      "instruction": "Соберите предложение",
       "explanation": "is being repaired."
     }
   ],
@@ -4043,203 +4043,203 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "She said: \"I am tired.\"",
       "answer": "She said (that) she was tired.",
-      "instruction": "Reported speech — present",
+      "instruction": "Исправьте ошибку",
       "explanation": "am → was."
     },
     {
       "type": "error_correction",
       "question": "He told me: \"I will come tomorrow.\"",
       "answer": "He told me (that) he would come the next day.",
-      "instruction": "Reported speech — will",
+      "instruction": "Исправьте ошибку",
       "explanation": "will → would; tomorrow → the next day."
     },
     {
       "type": "error_correction",
       "question": "They asked: \"Where is the station?\"",
       "answer": "They asked where the station was.",
-      "instruction": "Reported question",
+      "instruction": "Исправьте ошибку",
       "explanation": "Where is → where… was."
     },
     {
       "type": "error_correction",
       "question": "She said: \"I have finished.\"",
       "answer": "She said (that) she had finished.",
-      "instruction": "Reported speech — perfect",
+      "instruction": "Исправьте ошибку",
       "explanation": "have finished → had finished."
     },
     {
       "type": "error_correction",
       "question": "He said: \"I went home yesterday.\"",
       "answer": "He said (that) he had gone home the day before.",
-      "instruction": "Reported speech — past",
+      "instruction": "Исправьте ошибку",
       "explanation": "went → had gone; yesterday → the day before."
     },
     {
       "type": "error_correction",
       "question": "She asked: \"Can you help me?\"",
       "answer": "She asked if I could help her.",
-      "instruction": "Reported question",
+      "instruction": "Исправьте ошибку",
       "explanation": "Can → could; me → her."
     },
     {
       "type": "error_correction",
       "question": "He said: \"I live in London.\"",
       "answer": "He said (that) he lived in London.",
-      "instruction": "Reported speech",
+      "instruction": "Исправьте ошибку",
       "explanation": "live → lived."
     },
     {
       "type": "error_correction",
       "question": "They said: \"We are leaving now.\"",
       "answer": "They said (that) they were leaving then.",
-      "instruction": "Reported speech — continuous",
+      "instruction": "Исправьте ошибку",
       "explanation": "are leaving → were leaving; now → then."
     },
     {
       "type": "error_correction",
       "question": "She told him: \"I love you.\"",
       "answer": "She told him (that) she loved him.",
-      "instruction": "Reported speech",
+      "instruction": "Исправьте ошибку",
       "explanation": "love → loved."
     },
     {
       "type": "error_correction",
       "question": "He asked: \"What time is it?\"",
       "answer": "He asked what time it was.",
-      "instruction": "Reported question",
+      "instruction": "Исправьте ошибку",
       "explanation": "is → was."
     },
     {
       "type": "error_correction",
       "question": "She said: \"I can't swim.\"",
       "answer": "She said (that) she couldn't swim.",
-      "instruction": "Reported speech — modal",
+      "instruction": "Исправьте ошибку",
       "explanation": "can't → couldn't."
     },
     {
       "type": "error_correction",
       "question": "They explained: \"We will arrive at six.\"",
       "answer": "They explained (that) they would arrive at six.",
-      "instruction": "Reported speech — future",
+      "instruction": "Исправьте ошибку",
       "explanation": "will → would."
     },
     {
       "type": "error_correction",
       "question": "He said: \"I must go.\"",
       "answer": "He said (that) he had to go.",
-      "instruction": "Reported speech — must",
+      "instruction": "Исправьте ошибку",
       "explanation": "must → had to."
     },
     {
       "type": "error_correction",
       "question": "She asked: \"Do you like coffee?\"",
       "answer": "She asked if I liked coffee.",
-      "instruction": "Reported yes/no question",
+      "instruction": "Исправьте ошибку",
       "explanation": "Do you like → if I liked."
     },
     {
       "type": "error_correction",
       "question": "He said: \"I have never been there.\"",
       "answer": "He said (that) he had never been there.",
-      "instruction": "Reported perfect",
+      "instruction": "Исправьте ошибку",
       "explanation": "have never been → had never been."
     },
     {
       "type": "translation",
       "question": "Она сказала: «Я устала».",
       "answer": "She said that she was tired",
-      "instruction": "Reported speech — present",
+      "instruction": "Переведите на английский",
       "explanation": "am → was."
     },
     {
       "type": "translation",
       "question": "Он сказал мне: «Я приду завтра».",
       "answer": "He told me that he would come the next day",
-      "instruction": "Reported speech — will",
+      "instruction": "Переведите на английский",
       "explanation": "will → would; tomorrow → the next day."
     },
     {
       "type": "translation",
       "question": "Они спросили: «Где вокзал?»",
       "answer": "They asked where the station was",
-      "instruction": "Reported question",
+      "instruction": "Переведите на английский",
       "explanation": "Where is → where… was."
     },
     {
       "type": "translation",
       "question": "Она сказала: «Я закончила».",
       "answer": "She said that she had finished",
-      "instruction": "Reported speech — perfect",
+      "instruction": "Переведите на английский",
       "explanation": "have finished → had finished."
     },
     {
       "type": "translation",
       "question": "Он сказал: «Я пошёл домой вчера».",
       "answer": "He said that he had gone home the day before",
-      "instruction": "Reported speech — past",
+      "instruction": "Переведите на английский",
       "explanation": "went → had gone; yesterday → the day before."
     },
     {
       "type": "translation",
       "question": "Она спросила: «Ты можешь мне помочь?»",
       "answer": "She asked if I could help her",
-      "instruction": "Reported question",
+      "instruction": "Переведите на английский",
       "explanation": "Can → could; me → her."
     },
     {
       "type": "translation",
       "question": "Он сказал: «Я живу в Лондоне».",
       "answer": "He said that he lived in London",
-      "instruction": "Reported speech",
+      "instruction": "Переведите на английский",
       "explanation": "live → lived."
     },
     {
       "type": "translation",
       "question": "Они сказали: «Мы уходим сейчас».",
       "answer": "They said that they were leaving then",
-      "instruction": "Reported speech — continuous",
+      "instruction": "Переведите на английский",
       "explanation": "are leaving → were leaving; now → then."
     },
     {
       "type": "translation",
       "question": "Она сказала ему: «Я тебя люблю».",
       "answer": "She told him that she loved him",
-      "instruction": "Reported speech",
+      "instruction": "Переведите на английский",
       "explanation": "love → loved."
     },
     {
       "type": "translation",
       "question": "Он спросил: «Который час?»",
       "answer": "He asked what time it was",
-      "instruction": "Reported question",
+      "instruction": "Переведите на английский",
       "explanation": "is → was."
     },
     {
       "type": "translation",
       "question": "Она сказала: «Я не умею плавать».",
       "answer": "She said that she couldn't swim",
-      "instruction": "Reported speech — modal",
+      "instruction": "Переведите на английский",
       "explanation": "can't → couldn't."
     },
     {
       "type": "translation",
       "question": "Они объяснили: «Мы приедем в шесть».",
       "answer": "They explained that they would arrive at six",
-      "instruction": "Reported speech — future",
+      "instruction": "Переведите на английский",
       "explanation": "will → would."
     },
     {
       "type": "translation",
       "question": "Он сказал: «Я должен идти».",
       "answer": "He said that he had to go",
-      "instruction": "Reported speech — must",
+      "instruction": "Переведите на английский",
       "explanation": "must → had to."
     },
     {
       "type": "translation",
       "question": "Она спросила: «Ты любишь кофе?»",
       "answer": "She asked if I liked coffee",
-      "instruction": "Reported yes/no question",
+      "instruction": "Переведите на английский",
       "explanation": "Do you like → if I liked."
     },
     {
@@ -4254,7 +4254,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "tired"
       ],
       "answer": "She said that she was tired",
-      "instruction": "Reported speech",
+      "instruction": "Соберите предложение",
       "explanation": "said that she was tired."
     },
     {
@@ -4273,7 +4273,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "day"
       ],
       "answer": "He told me that he would come the next day",
-      "instruction": "Reported speech — will",
+      "instruction": "Соберите предложение",
       "explanation": "would come the next day."
     },
     {
@@ -4288,7 +4288,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "was"
       ],
       "answer": "They asked where the station was",
-      "instruction": "Reported question",
+      "instruction": "Соберите предложение",
       "explanation": "asked where the station was."
     },
     {
@@ -4303,7 +4303,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "finished"
       ],
       "answer": "She said that she had finished",
-      "instruction": "Reported perfect",
+      "instruction": "Соберите предложение",
       "explanation": "said that she had finished."
     },
     {
@@ -4322,7 +4322,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "before"
       ],
       "answer": "He said that he had gone home the day before",
-      "instruction": "Reported past",
+      "instruction": "Соберите предложение",
       "explanation": "had gone home the day before."
     },
     {
@@ -4338,7 +4338,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "her"
       ],
       "answer": "She asked if I could help her",
-      "instruction": "Reported question",
+      "instruction": "Соберите предложение",
       "explanation": "asked if I could help her."
     },
     {
@@ -4354,7 +4354,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "London"
       ],
       "answer": "He said that he lived in London",
-      "instruction": "Reported speech",
+      "instruction": "Соберите предложение",
       "explanation": "said that he lived in London."
     },
     {
@@ -4370,7 +4370,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "then"
       ],
       "answer": "They said that they were leaving then",
-      "instruction": "Reported continuous",
+      "instruction": "Соберите предложение",
       "explanation": "were leaving then."
     },
     {
@@ -4386,7 +4386,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "him"
       ],
       "answer": "She told him that she loved him",
-      "instruction": "Reported speech",
+      "instruction": "Соберите предложение",
       "explanation": "told him that she loved him."
     },
     {
@@ -4401,7 +4401,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "was"
       ],
       "answer": "He asked what time it was",
-      "instruction": "Reported question",
+      "instruction": "Соберите предложение",
       "explanation": "asked what time it was."
     },
     {
@@ -4416,7 +4416,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "swim"
       ],
       "answer": "She said that she couldn't swim",
-      "instruction": "Reported modal",
+      "instruction": "Соберите предложение",
       "explanation": "said that she couldn't swim."
     },
     {
@@ -4433,7 +4433,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "six"
       ],
       "answer": "They explained that they would arrive at six",
-      "instruction": "Reported future",
+      "instruction": "Соберите предложение",
       "explanation": "would arrive at six."
     },
     {
@@ -4449,7 +4449,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "go"
       ],
       "answer": "He said that he had to go",
-      "instruction": "Reported speech — must",
+      "instruction": "Соберите предложение",
       "explanation": "must → had to."
     },
     {
@@ -4464,7 +4464,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "coffee"
       ],
       "answer": "She asked if I liked coffee",
-      "instruction": "Reported yes/no question",
+      "instruction": "Соберите предложение",
       "explanation": "Do you like → if I liked."
     },
     {
@@ -4481,7 +4481,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "there"
       ],
       "answer": "He said that he had never been there",
-      "instruction": "Reported perfect",
+      "instruction": "Соберите предложение",
       "explanation": "have never been → had never been."
     },
     {
@@ -4496,7 +4496,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "lived"
       ],
       "answer": "She asked me where I lived",
-      "instruction": "Reported wh-question",
+      "instruction": "Соберите предложение",
       "explanation": "Where do you live → where I lived."
     },
     {
@@ -4511,7 +4511,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "help"
       ],
       "answer": "They said that they would help",
-      "instruction": "Reported speech — will",
+      "instruction": "Соберите предложение",
       "explanation": "will → would."
     },
     {
@@ -4525,7 +4525,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "wait"
       ],
       "answer": "He told her to wait",
-      "instruction": "Reported imperative",
+      "instruction": "Соберите предложение",
       "explanation": "told her to wait — приказ."
     },
     {
@@ -4540,7 +4540,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "late"
       ],
       "answer": "She asked why I was late",
-      "instruction": "Reported wh-question",
+      "instruction": "Соберите предложение",
       "explanation": "Why are you → why I was."
     },
     {
@@ -4555,7 +4555,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "tired"
       ],
       "answer": "They explained that they were tired",
-      "instruction": "Reported speech",
+      "instruction": "Соберите предложение",
       "explanation": "explained that they were tired."
     }
   ],
@@ -4564,189 +4564,189 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Более того, это важно для экзамена.",
       "answer": "Furthermore, this is important for the exam",
-      "instruction": "Formal connector",
+      "instruction": "Переведите на английский",
       "explanation": "Furthermore/Moreover add information."
     },
     {
       "type": "translation",
       "question": "Тем не менее, результаты неоднозначны.",
       "answer": "Nevertheless, the results are inconclusive",
-      "instruction": "Contrast connector",
+      "instruction": "Переведите на английский",
       "explanation": "Nevertheless = however."
     },
     {
       "type": "translation",
       "question": "Следовательно, нужны дальнейшие исследования.",
       "answer": "Therefore, further research is needed",
-      "instruction": "Result connector",
+      "instruction": "Переведите на английский",
       "explanation": "Therefore = as a result."
     },
     {
       "type": "translation",
       "question": "С одной стороны, это дешевле.",
       "answer": "On the one hand, it is cheaper",
-      "instruction": "Discourse marker",
+      "instruction": "Переведите на английский",
       "explanation": "On the one hand…"
     },
     {
       "type": "translation",
       "question": "С другой стороны, качество ниже.",
       "answer": "On the other hand, the quality is lower",
-      "instruction": "Discourse marker",
+      "instruction": "Переведите на английский",
       "explanation": "On the other hand…"
     },
     {
       "type": "translation",
       "question": "В заключение, преимущества перевешивают недостатки.",
       "answer": "In conclusion, the advantages outweigh the disadvantages",
-      "instruction": "Conclusion",
+      "instruction": "Переведите на английский",
       "explanation": "In conclusion…"
     },
     {
       "type": "translation",
       "question": "Несмотря на трудности, проект успешен.",
       "answer": "Despite the difficulties, the project is successful",
-      "instruction": "Despite + noun",
+      "instruction": "Переведите на английский",
       "explanation": "Despite the difficulties…"
     },
     {
       "type": "translation",
       "question": "Благодаря новым технологиям прогресс ускорился.",
       "answer": "Thanks to new technology, progress has accelerated",
-      "instruction": "Thanks to",
+      "instruction": "Переведите на английский",
       "explanation": "Thanks to new technology…"
     },
     {
       "type": "translation",
       "question": "В то время как одни согласны, другие возражают.",
       "answer": "Whereas some agree, others object",
-      "instruction": "Contrast — whereas",
+      "instruction": "Переведите на английский",
       "explanation": "Whereas = while (formal)."
     },
     {
       "type": "translation",
       "question": "Кроме того, следует учитывать экологический аспект.",
       "answer": "In addition, the environmental aspect should be considered",
-      "instruction": "Addition",
+      "instruction": "Переведите на английский",
       "explanation": "In addition…"
     },
     {
       "type": "translation",
       "question": "По моему мнению, это справедливое решение.",
       "answer": "In my opinion, this is a fair decision",
-      "instruction": "Opinion phrase",
+      "instruction": "Переведите на английский",
       "explanation": "In my opinion…"
     },
     {
       "type": "translation",
       "question": "Согласно исследованию, цифры выросли.",
       "answer": "According to the study, the figures have risen",
-      "instruction": "Reference",
+      "instruction": "Переведите на английский",
       "explanation": "According to the study…"
     },
     {
       "type": "translation",
       "question": "В отличие от предыдущего отчёта, данные точнее.",
       "answer": "Unlike the previous report, the data is more accurate",
-      "instruction": "Contrast — unlike",
+      "instruction": "Переведите на английский",
       "explanation": "Unlike the previous report…"
     },
     {
       "type": "translation",
       "question": "В целом, тенденция положительная.",
       "answer": "Overall, the trend is positive",
-      "instruction": "Summary",
+      "instruction": "Переведите на английский",
       "explanation": "Overall…"
     },
     {
       "type": "translation",
       "question": "Например, в развивающихся странах…",
       "answer": "For instance, in developing countries…",
-      "instruction": "Example marker",
+      "instruction": "Переведите на английский",
       "explanation": "For instance = for example."
     },
     {
       "type": "error_correction",
       "question": "Despite of the rain, we went out.",
       "answer": "Despite the rain, we went out.",
-      "instruction": "Despite — no of",
+      "instruction": "Исправьте ошибку",
       "explanation": "Despite + noun (no «of»)."
     },
     {
       "type": "error_correction",
       "question": "On contrary, I disagree.",
       "answer": "On the contrary, I disagree.",
-      "instruction": "Fixed phrase",
+      "instruction": "Исправьте ошибку",
       "explanation": "On the contrary — with «the»."
     },
     {
       "type": "error_correction",
       "question": "In spite the weather, we continued.",
       "answer": "In spite of the weather, we continued.",
-      "instruction": "In spite of",
+      "instruction": "Исправьте ошибку",
       "explanation": "In spite of — needs «of»."
     },
     {
       "type": "error_correction",
       "question": "The data suggest that climate is changing.",
       "answer": "The data suggest that the climate is changing.",
-      "instruction": "Article with climate",
+      "instruction": "Исправьте ошибку",
       "explanation": "the climate — specific topic."
     },
     {
       "type": "error_correction",
       "question": "According the report, sales fell.",
       "answer": "According to the report, sales fell.",
-      "instruction": "According to",
+      "instruction": "Исправьте ошибку",
       "explanation": "According to — needs «to»."
     },
     {
       "type": "error_correction",
       "question": "Furthermore, it is importance for the exam.",
       "answer": "Furthermore, it is important for the exam.",
-      "instruction": "Adjective not noun",
+      "instruction": "Исправьте ошибку",
       "explanation": "important (adj), not importance."
     },
     {
       "type": "error_correction",
       "question": "Nevertheless, the results is inconclusive.",
       "answer": "Nevertheless, the results are inconclusive.",
-      "instruction": "Subject-verb agreement",
+      "instruction": "Исправьте ошибку",
       "explanation": "results → are."
     },
     {
       "type": "error_correction",
       "question": "In addition to this, we must to consider costs.",
       "answer": "In addition to this, we must consider costs.",
-      "instruction": "Must + base",
+      "instruction": "Исправьте ошибку",
       "explanation": "must + base verb (no «to»)."
     },
     {
       "type": "error_correction",
       "question": "Whereas some agree, but others object.",
       "answer": "Whereas some agree, others object.",
-      "instruction": "Double connector",
+      "instruction": "Исправьте ошибку",
       "explanation": "Whereas already shows contrast — no «but»."
     },
     {
       "type": "error_correction",
       "question": "Thanks for new technology, progress accelerated.",
       "answer": "Thanks to new technology, progress has accelerated.",
-      "instruction": "Thanks to",
+      "instruction": "Исправьте ошибку",
       "explanation": "Thanks to — not «thanks for»."
     },
     {
       "type": "error_correction",
       "question": "In conclusion, the advantages outweighs the disadvantages.",
       "answer": "In conclusion, the advantages outweigh the disadvantages.",
-      "instruction": "Subject-verb agreement",
+      "instruction": "Исправьте ошибку",
       "explanation": "advantages → outweigh."
     },
     {
       "type": "error_correction",
       "question": "For instance, in developing country…",
       "answer": "For instance, in developing countries…",
-      "instruction": "Plural",
+      "instruction": "Исправьте ошибку",
       "explanation": "developing countries — plural."
     },
     {
@@ -5013,7 +5013,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "drawbacks"
       ],
       "answer": "Overall the benefits outweigh the drawbacks",
-      "instruction": "IELTS conclusion",
+      "instruction": "Соберите предложение",
       "explanation": "Overall — итоговая оценка в эссе."
     },
     {
@@ -5029,7 +5029,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "matters"
       ],
       "answer": "It is widely believed that education matters",
-      "instruction": "Hedged generalisation",
+      "instruction": "Соберите предложение",
       "explanation": "It is widely believed that…"
     },
     {
@@ -5045,7 +5045,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "more"
       ],
       "answer": "In my view governments should invest more",
-      "instruction": "Opinion phrase",
+      "instruction": "Соберите предложение",
       "explanation": "In my view — личная позиция Task 2."
     },
     {
@@ -5061,14 +5061,14 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "merit"
       ],
       "answer": "To sum up both sides have merit",
-      "instruction": "Balanced conclusion",
+      "instruction": "Соберите предложение",
       "explanation": "To sum up — заключение дискуссионного эссе."
     },
     {
       "type": "translation",
       "question": "По всей видимости, он уже ушёл.",
       "answer": "He must have left already",
-      "instruction": "Modal perfect — must have",
+      "instruction": "Переведите на английский",
       "explanation": "must have left — уверенность о прошлом."
     },
     {
@@ -5082,63 +5082,63 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "С другой стороны, риски значительны.",
       "answer": "On the other hand, the risks are significant",
-      "instruction": "Discourse marker",
+      "instruction": "Переведите на английский",
       "explanation": "On the other hand — контраст."
     },
     {
       "type": "translation",
       "question": "В частности, молодёжь пострадала больше всего.",
       "answer": "In particular, young people suffered most",
-      "instruction": "Discourse marker — in particular",
+      "instruction": "Переведите на английский",
       "explanation": "In particular — конкретизация."
     },
     {
       "type": "translation",
       "question": "В заключение следует отметить прогресс.",
       "answer": "In conclusion, it should be noted that progress has been made",
-      "instruction": "Formal conclusion",
+      "instruction": "Переведите на английский",
       "explanation": "it should be noted that — академический стиль."
     },
     {
       "type": "translation",
       "question": "Несмотря на это, тенденция сохраняется.",
       "answer": "Despite this, the trend continues",
-      "instruction": "Despite + pronoun",
+      "instruction": "Переведите на английский",
       "explanation": "Despite this — несмотря на это."
     },
     {
       "type": "translation",
       "question": "Следует подчеркнуть важность образования.",
       "answer": "It is important to emphasise the role of education",
-      "instruction": "Impersonal formal",
+      "instruction": "Переведите на английский",
       "explanation": "It is important to emphasise — безличная конструкция."
     },
     {
       "type": "translation",
       "question": "По сравнению с прошлым годом продажи выросли.",
       "answer": "Compared with last year, sales have risen",
-      "instruction": "Comparison phrase",
+      "instruction": "Переведите на английский",
       "explanation": "Compared with — формальное сравнение."
     },
     {
       "type": "translation",
       "question": "Это может привести к серьёзным последствиям.",
       "answer": "This could lead to serious consequences",
-      "instruction": "Could lead to",
+      "instruction": "Переведите на английский",
       "explanation": "could lead to — возможное следствие."
     },
     {
       "type": "translation",
       "question": "В целом, доказательства убедительны.",
       "answer": "Overall, the evidence is compelling",
-      "instruction": "Summary marker",
+      "instruction": "Переведите на английский",
       "explanation": "Overall — обобщение; evidence — singular."
     },
     {
       "type": "error_correction",
       "question": "He must left already.",
       "answer": "He must have left already.",
-      "instruction": "Modal perfect",
+      "instruction": "Исправьте ошибку",
       "explanation": "must have left — не must left."
     },
     {
@@ -5152,49 +5152,49 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "On other hand, the risks are significant.",
       "answer": "On the other hand, the risks are significant.",
-      "instruction": "Fixed phrase",
+      "instruction": "Исправьте ошибку",
       "explanation": "On the other hand — с артиклем the."
     },
     {
       "type": "error_correction",
       "question": "In conclusion it should noted that progress has been made.",
       "answer": "In conclusion, it should be noted that progress has been made.",
-      "instruction": "Passive + be",
+      "instruction": "Исправьте ошибку",
       "explanation": "it should be noted — нужен be."
     },
     {
       "type": "error_correction",
       "question": "Despite this the trend continue.",
       "answer": "Despite this, the trend continues.",
-      "instruction": "Subject-verb agreement",
+      "instruction": "Исправьте ошибку",
       "explanation": "the trend continues — 3rd person -s."
     },
     {
       "type": "error_correction",
       "question": "It is important emphasise the role of education.",
       "answer": "It is important to emphasise the role of education.",
-      "instruction": "Infinitive after adjective",
+      "instruction": "Исправьте ошибку",
       "explanation": "important to emphasise — нужен to."
     },
     {
       "type": "error_correction",
       "question": "Compared with last year, sales has risen.",
       "answer": "Compared with last year, sales have risen.",
-      "instruction": "Subject-verb agreement",
+      "instruction": "Исправьте ошибку",
       "explanation": "sales → have (plural)."
     },
     {
       "type": "error_correction",
       "question": "This could leads to serious consequences.",
       "answer": "This could lead to serious consequences.",
-      "instruction": "Modal + base verb",
+      "instruction": "Исправьте ошибку",
       "explanation": "could + base verb (lead)."
     },
     {
       "type": "error_correction",
       "question": "Overall, the evidence are compelling.",
       "answer": "Overall, the evidence is compelling.",
-      "instruction": "Uncountable noun",
+      "instruction": "Исправьте ошибку",
       "explanation": "evidence — неисчисляемое, is."
     }
   ],
@@ -6760,7 +6760,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "instruction": "It-cleft — plural",
       "explanation": "It was they who…",
       "acceptableAnswers": [
-        "It was them who won the competition"
+        "It was they who won the competition"
       ]
     },
     {
@@ -6892,7 +6892,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "instruction": "It-cleft — formal subject",
       "explanation": "Formal: It was they who…",
       "acceptableAnswers": [
-        "It was them who won the competition"
+        "It was they who won the competition"
       ]
     },
     {
@@ -7988,7 +7988,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "instruction": "Formal agreement",
       "explanation": "data can take plural in formal register.",
       "acceptableAnswers": [
-        "It is possible that the data is wrong"
+        "It is possible that the data are wrong"
       ]
     },
     {
@@ -12078,7 +12078,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "sunset"
       ],
       "answer": "Never have I seen such a beautiful sunset",
-      "instruction": "Inversion — Never",
+      "instruction": "Соберите предложение",
       "explanation": "Never have I — инверсия после отрицания."
     },
     {
@@ -12098,7 +12098,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "record"
       ],
       "answer": "Not only did she win but she also broke the record",
-      "instruction": "Not only… inversion",
+      "instruction": "Соберите предложение",
       "explanation": "Not only did she — инверсия."
     },
     {
@@ -12113,7 +12113,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "dedication"
       ],
       "answer": "Rarely do we witness such dedication",
-      "instruction": "Inversion — Rarely",
+      "instruction": "Соберите предложение",
       "explanation": "Rarely do we — инверсия."
     },
     {
@@ -12129,7 +12129,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "him"
       ],
       "answer": "Little did he know what awaited him",
-      "instruction": "Inversion — Little",
+      "instruction": "Соберите предложение",
       "explanation": "Little did he know — литературная инверсия."
     },
     {
@@ -12146,7 +12146,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "understand"
       ],
       "answer": "Only when the results arrived did we understand",
-      "instruction": "Only when… inversion",
+      "instruction": "Соберите предложение",
       "explanation": "Only when… did we — инверсия."
     },
     {
@@ -12162,7 +12162,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "problem"
       ],
       "answer": "It was John who solved the problem",
-      "instruction": "Cleft — It was… who",
+      "instruction": "Соберите предложение",
       "explanation": "It-cleft для акцента на John."
     },
     {
@@ -12178,7 +12178,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "holiday"
       ],
       "answer": "What I need is a long holiday",
-      "instruction": "Pseudo-cleft — What",
+      "instruction": "Соберите предложение",
       "explanation": "What I need is — псевдоразделительное."
     },
     {
@@ -12194,7 +12194,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "most"
       ],
       "answer": "It is freedom that people value most",
-      "instruction": "Cleft — It is… that",
+      "instruction": "Соберите предложение",
       "explanation": "It is freedom that — акцент на freedom."
     },
     {
@@ -12210,7 +12210,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "calmness"
       ],
       "answer": "What surprised me most was her calmness",
-      "instruction": "What-cleft",
+      "instruction": "Соберите предложение",
       "explanation": "What surprised me most was…"
     },
     {
@@ -12227,7 +12227,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "door"
       ],
       "answer": "Under no circumstances should you open that door",
-      "instruction": "Inversion — Under no circumstances",
+      "instruction": "Соберите предложение",
       "explanation": "Under no circumstances should you…"
     },
     {
@@ -12245,7 +12245,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "immediately"
       ],
       "answer": "So tired was she that she fell asleep immediately",
-      "instruction": "So… inversion",
+      "instruction": "Соберите предложение",
       "explanation": "So tired was she — инверсия после so."
     },
     {
@@ -12263,7 +12263,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "differently"
       ],
       "answer": "Had I known earlier I would have acted differently",
-      "instruction": "Inversion — Had I",
+      "instruction": "Соберите предложение",
       "explanation": "Had I known — без if."
     },
     {
@@ -12280,7 +12280,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "met"
       ],
       "answer": "It was in Paris that they first met",
-      "instruction": "Cleft — место",
+      "instruction": "Соберите предложение",
       "explanation": "It was in Paris that — акцент на месте."
     },
     {
@@ -12296,7 +12296,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "evening"
       ],
       "answer": "All I want is a quiet evening",
-      "instruction": "All-cleft",
+      "instruction": "Соберите предложение",
       "explanation": "All I want is — упрощённое cleft."
     },
     {
@@ -12314,147 +12314,147 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "rang"
       ],
       "answer": "No sooner had he arrived than the phone rang",
-      "instruction": "No sooner… than",
+      "instruction": "Соберите предложение",
       "explanation": "No sooner had he — инверсия + than."
     },
     {
       "type": "translation",
       "question": "Никогда я не видел такой красоты.",
       "answer": "Never have I seen such beauty",
-      "instruction": "Inversion — Never",
+      "instruction": "Переведите на английский",
       "explanation": "Never have I — инверсия после отрицания."
     },
     {
       "type": "translation",
       "question": "Именно Джон решил эту проблему.",
       "answer": "It was John who solved this problem",
-      "instruction": "Cleft — It was… who",
+      "instruction": "Переведите на английский",
       "explanation": "It-cleft для акцента на подлежащем."
     },
     {
       "type": "translation",
       "question": "То, что мне нужно, — это длинный отпуск.",
       "answer": "What I need is a long holiday",
-      "instruction": "Pseudo-cleft — What",
+      "instruction": "Переведите на английский",
       "explanation": "What I need is — псевдоразделительное предложение."
     },
     {
       "type": "translation",
       "question": "Редко мы становимся свидетелями такой преданности.",
       "answer": "Rarely do we witness such dedication",
-      "instruction": "Inversion — Rarely",
+      "instruction": "Переведите на английский",
       "explanation": "Rarely do we — инверсия с вспомогательным глаголом."
     },
     {
       "type": "translation",
       "question": "Только тогда я понял правду.",
       "answer": "Only then did I understand the truth",
-      "instruction": "Inversion — Only then",
+      "instruction": "Переведите на английский",
       "explanation": "Only then did I — инверсия после only."
     },
     {
       "type": "translation",
       "question": "Ни при каких обстоятельствах не открывай эту дверь.",
       "answer": "Under no circumstances should you open that door",
-      "instruction": "Inversion — Under no circumstances",
+      "instruction": "Переведите на английский",
       "explanation": "Under no circumstances should you — формальная инверсия."
     },
     {
       "type": "translation",
       "question": "Именно свободу люди ценят больше всего.",
       "answer": "It is freedom that people value most",
-      "instruction": "Cleft — It is… that",
+      "instruction": "Переведите на английский",
       "explanation": "It is freedom that — акцент на дополнении."
     },
     {
       "type": "translation",
       "question": "Едва он приехал, как зазвонил телефон.",
       "answer": "No sooner had he arrived than the phone rang",
-      "instruction": "No sooner… than",
+      "instruction": "Переведите на английский",
       "explanation": "No sooner had he — инверсия + than (не when)."
     },
     {
       "type": "translation",
       "question": "Так устала была она, что сразу заснула.",
       "answer": "So tired was she that she fell asleep immediately",
-      "instruction": "So… inversion",
+      "instruction": "Переведите на английский",
       "explanation": "So tired was she — инверсия после so + прилагательное."
     },
     {
       "type": "translation",
       "question": "Не только она выиграла, но и побила рекорд.",
       "answer": "Not only did she win but she also broke the record",
-      "instruction": "Not only… inversion",
+      "instruction": "Переведите на английский",
       "explanation": "Not only did she — инверсия в первой части."
     },
     {
       "type": "error_correction",
       "question": "Never I have seen such beauty.",
       "answer": "Never have I seen such beauty.",
-      "instruction": "Inversion — Never",
+      "instruction": "Исправьте ошибку",
       "explanation": "Never have I — вспомогательный глагол перед подлежащим."
     },
     {
       "type": "error_correction",
       "question": "It was John who solved this problem solved it.",
       "answer": "It was John who solved this problem.",
-      "instruction": "Cleft — redundancy",
+      "instruction": "Исправьте ошибку",
       "explanation": "Убрать повтор solved it."
     },
     {
       "type": "error_correction",
       "question": "What I need is a long holiday is rest.",
       "answer": "What I need is a long holiday.",
-      "instruction": "Pseudo-cleft — redundancy",
+      "instruction": "Исправьте ошибку",
       "explanation": "Одно дополнение после is — не два."
     },
     {
       "type": "error_correction",
       "question": "Rarely we do witness such dedication.",
       "answer": "Rarely do we witness such dedication.",
-      "instruction": "Inversion — word order",
+      "instruction": "Исправьте ошибку",
       "explanation": "Rarely do we — do перед подлежащим."
     },
     {
       "type": "error_correction",
       "question": "Only then I did understand the truth.",
       "answer": "Only then did I understand the truth.",
-      "instruction": "Inversion — Only then",
+      "instruction": "Исправьте ошибку",
       "explanation": "Only then did I — инверсия."
     },
     {
       "type": "error_correction",
       "question": "Under no circumstances you should open that door.",
       "answer": "Under no circumstances should you open that door.",
-      "instruction": "Inversion — modal",
+      "instruction": "Исправьте ошибку",
       "explanation": "should you — модальный перед подлежащим."
     },
     {
       "type": "error_correction",
       "question": "It is freedom what people value most.",
       "answer": "It is freedom that people value most.",
-      "instruction": "Cleft — that not what",
+      "instruction": "Исправьте ошибку",
       "explanation": "It is… that — не what."
     },
     {
       "type": "error_correction",
       "question": "No sooner he had arrived when the phone rang.",
       "answer": "No sooner had he arrived than the phone rang.",
-      "instruction": "No sooner… than",
+      "instruction": "Исправьте ошибку",
       "explanation": "had he + than (не when)."
     },
     {
       "type": "error_correction",
       "question": "So tired she was that she fell asleep immediately.",
       "answer": "So tired was she that she fell asleep immediately.",
-      "instruction": "So… inversion",
+      "instruction": "Исправьте ошибку",
       "explanation": "So tired was she — инверсия."
     },
     {
       "type": "error_correction",
       "question": "Not only she did win but she also broke the record.",
       "answer": "Not only did she win but she also broke the record.",
-      "instruction": "Not only… inversion",
+      "instruction": "Исправьте ошибку",
       "explanation": "Not only did she — инверсия."
     }
   ],
@@ -12488,7 +12488,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "street"
       ],
       "answer": "Shadows crept across the empty street",
-      "instruction": "Personification",
+      "instruction": "Соберите предложение",
       "explanation": "Shadows crept — оживление."
     },
     {
@@ -12522,7 +12522,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "rain"
       ],
       "answer": "The air was thick with the scent of rain",
-      "instruction": "Sensory language",
+      "instruction": "Соберите предложение",
       "explanation": "Thick with the scent — осязательный образ."
     },
     {
@@ -12556,7 +12556,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "moment"
       ],
       "answer": "Time seemed to stand still in that moment",
-      "instruction": "Metaphor",
+      "instruction": "Соберите предложение",
       "explanation": "Time stood still — метафора."
     },
     {
@@ -12573,7 +12573,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "wind"
       ],
       "answer": "The old house stood defiant against the wind",
-      "instruction": "Descriptive adjective",
+      "instruction": "Соберите предложение",
       "explanation": "Stood defiant — personification."
     },
     {
@@ -12590,7 +12590,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "thought"
       ],
       "answer": "She gazed into the distance lost in thought",
-      "instruction": "Participial phrase",
+      "instruction": "Соберите предложение",
       "explanation": "Lost in thought — причастный оборот."
     },
     {
@@ -12606,7 +12606,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "curtains"
       ],
       "answer": "A faint light flickered behind the curtains",
-      "instruction": "Atmosphere",
+      "instruction": "Соберите предложение",
       "explanation": "Faint light flickered — атмосфера."
     },
     {
@@ -12623,7 +12623,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "thunder"
       ],
       "answer": "The silence was broken only by distant thunder",
-      "instruction": "Contrast silence/sound",
+      "instruction": "Соберите предложение",
       "explanation": "Broken only by — контраст."
     },
     {
@@ -12639,7 +12639,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "instant"
       ],
       "answer": "Words failed her in that crucial instant",
-      "instruction": "Literary idiom",
+      "instruction": "Соберите предложение",
       "explanation": "Words failed her — литературный оборот."
     },
     {
@@ -12656,7 +12656,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "sky"
       ],
       "answer": "The landscape stretched endlessly beneath a pale sky",
-      "instruction": "Wide description",
+      "instruction": "Соберите предложение",
       "explanation": "Stretched endlessly — панорама."
     },
     {
@@ -12674,7 +12674,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "appeared"
       ],
       "answer": "His smile faded as quickly as it had appeared",
-      "instruction": "Parallel structure",
+      "instruction": "Соберите предложение",
       "explanation": "As quickly as — параллельная структура."
     },
     {
@@ -12691,7 +12691,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "foreign"
       ],
       "answer": "The room felt strangely familiar yet utterly foreign",
-      "instruction": "Oxymoron pair",
+      "instruction": "Соберите предложение",
       "explanation": "Familiar yet foreign — oxymoron."
     },
     {
@@ -12709,147 +12709,147 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "throat"
       ],
       "answer": "She turned away swallowing the lump in her throat",
-      "instruction": "Physical emotion",
+      "instruction": "Соберите предложение",
       "explanation": "Lump in her throat — физическое проявление."
     },
     {
       "type": "translation",
       "question": "Мне красный, пожалуйста.",
       "answer": "I'll have the red one, please",
-      "instruction": "Substitution — one",
+      "instruction": "Переведите на английский",
       "explanation": "one заменяет существительное (the red one)."
     },
     {
       "type": "translation",
       "question": "Я думаю, что да.",
       "answer": "I think so",
-      "instruction": "Substitution — so",
+      "instruction": "Переведите на английский",
       "explanation": "so заменяет целое предложение."
     },
     {
       "type": "translation",
       "question": "Ты придёшь? — Надеюсь.",
       "answer": "Will you come? — I hope so",
-      "instruction": "Substitution — hope so",
+      "instruction": "Переведите на английский",
       "explanation": "I hope so — so = that you will come."
     },
     {
       "type": "translation",
       "question": "Она устала, а он — нет.",
       "answer": "She was tired but he wasn't",
-      "instruction": "Ellipsis — wasn't",
+      "instruction": "Переведите на английский",
       "explanation": "wasn't = wasn't tired — эллипсис глагола."
     },
     {
       "type": "translation",
       "question": "Очень красиво, не правда ли?",
       "answer": "Beautiful, isn't it?",
-      "instruction": "Fronting — adjective",
+      "instruction": "Переведите на английский",
       "explanation": "Прилагательное в начале + tag question."
     },
     {
       "type": "translation",
       "question": "Такова была её реакция.",
       "answer": "Such was her reaction",
-      "instruction": "Fronting — Such",
+      "instruction": "Переведите на английский",
       "explanation": "Such was her reaction — литературный порядок слов."
     },
     {
       "type": "translation",
       "question": "На столе лежала книга.",
       "answer": "On the table lay a book",
-      "instruction": "Fronting — prepositional phrase",
+      "instruction": "Переведите на английский",
       "explanation": "On the table lay — инверсия после обстоятельства."
     },
     {
       "type": "translation",
       "question": "Никогда я не забуду тот день.",
       "answer": "Never will I forget that day",
-      "instruction": "Fronting — Never",
+      "instruction": "Переведите на английский",
       "explanation": "Never will I — инверсия после never."
     },
     {
       "type": "translation",
       "question": "Он может помочь, если захочет.",
       "answer": "He can help if he wants to",
-      "instruction": "Ellipsis — wants to",
+      "instruction": "Переведите на английский",
       "explanation": "wants to = wants to help — эллипсис."
     },
     {
       "type": "translation",
       "question": "Абсолютно потрясающий фильм!",
       "answer": "An absolutely stunning film!",
-      "instruction": "Intensifier — absolutely",
+      "instruction": "Переведите на английский",
       "explanation": "absolutely + прилагательное — усиление."
     },
     {
       "type": "error_correction",
       "question": "I'll have the red it, please.",
       "answer": "I'll have the red one, please.",
-      "instruction": "Substitution — one",
+      "instruction": "Исправьте ошибку",
       "explanation": "one — не it для замены существительного."
     },
     {
       "type": "error_correction",
       "question": "I think it so.",
       "answer": "I think so.",
-      "instruction": "Substitution — so",
+      "instruction": "Исправьте ошибку",
       "explanation": "I think so — so без it."
     },
     {
       "type": "error_correction",
       "question": "Will you come? — I hope it.",
       "answer": "Will you come? — I hope so.",
-      "instruction": "Substitution — hope so",
+      "instruction": "Исправьте ошибку",
       "explanation": "I hope so — so заменяет предложение."
     },
     {
       "type": "error_correction",
       "question": "She was tired but he didn't.",
       "answer": "She was tired but he wasn't.",
-      "instruction": "Ellipsis — wasn't",
+      "instruction": "Исправьте ошибку",
       "explanation": "wasn't = wasn't tired."
     },
     {
       "type": "error_correction",
       "question": "Beautiful, isn't it it?",
       "answer": "Beautiful, isn't it?",
-      "instruction": "Tag question — redundancy",
+      "instruction": "Исправьте ошибку",
       "explanation": "Убрать лишнее it."
     },
     {
       "type": "error_correction",
       "question": "Such her reaction was.",
       "answer": "Such was her reaction.",
-      "instruction": "Fronting — Such",
+      "instruction": "Исправьте ошибку",
       "explanation": "Such was her reaction — правильный порядок."
     },
     {
       "type": "error_correction",
       "question": "Never I will forget that day.",
       "answer": "Never will I forget that day.",
-      "instruction": "Fronting — Never",
+      "instruction": "Исправьте ошибку",
       "explanation": "Never will I — инверсия."
     },
     {
       "type": "error_correction",
       "question": "He can help if he wants.",
       "answer": "He can help if he wants to.",
-      "instruction": "Ellipsis — to",
+      "instruction": "Исправьте ошибку",
       "explanation": "wants to — нужен to после wants."
     },
     {
       "type": "error_correction",
       "question": "A absolutely stunning film!",
       "answer": "An absolutely stunning film!",
-      "instruction": "Article before vowel",
+      "instruction": "Исправьте ошибку",
       "explanation": "an — перед гласной (absolutely)."
     },
     {
       "type": "error_correction",
       "question": "On the table a book lay.",
       "answer": "On the table lay a book.",
-      "instruction": "Fronting — verb position",
+      "instruction": "Исправьте ошибку",
       "explanation": "On the table lay a book — глагол после обстоятельства."
     }
   ],
@@ -12869,7 +12869,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "signed"
       ],
       "answer": "Had I been warned I would never have signed",
-      "instruction": "Mixed conditional",
+      "instruction": "Соберите предложение",
       "explanation": "Had I been warned — без if, C1."
     },
     {
@@ -12903,7 +12903,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "rejected"
       ],
       "answer": "The proposal is said to have been rejected",
-      "instruction": "Passive reporting",
+      "instruction": "Соберите предложение",
       "explanation": "Is said to have been — сложный passive."
     },
     {
@@ -12921,7 +12921,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "error"
       ],
       "answer": "Not until last week did anyone discover the error",
-      "instruction": "Not until inversion",
+      "instruction": "Соберите предложение",
       "explanation": "Not until… did anyone — инверсия."
     },
     {
@@ -12957,7 +12957,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "wait"
       ],
       "answer": "Having considered all options they chose to wait",
-      "instruction": "Perfect participle",
+      "instruction": "Соберите предложение",
       "explanation": "Having considered — причастие совершенного вида."
     },
     {
@@ -12975,7 +12975,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "become"
       ],
       "answer": "The more you practise the more confident you become",
-      "instruction": "Correlative comparative",
+      "instruction": "Соберите предложение",
       "explanation": "The more… the more — корреляция."
     },
     {
@@ -12992,7 +12992,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "erupted"
       ],
       "answer": "Scarcely had the meeting begun when protests erupted",
-      "instruction": "Scarcely… when",
+      "instruction": "Соберите предложение",
       "explanation": "Scarcely had… when — инверсия."
     },
     {
@@ -13010,7 +13010,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "fail"
       ],
       "answer": "It is widely believed that the policy will fail",
-      "instruction": "Impersonal passive",
+      "instruction": "Соберите предложение",
       "explanation": "It is widely believed that…"
     },
     {
@@ -13027,7 +13027,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "you"
       ],
       "answer": "Whatever decision you make I will support you",
-      "instruction": "Whatever clause",
+      "instruction": "Соберите предложение",
       "explanation": "Whatever decision — уступительное."
     },
     {
@@ -13044,7 +13044,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "it"
       ],
       "answer": "The report having been completed we submitted it",
-      "instruction": "Absolute construction",
+      "instruction": "Соберите предложение",
       "explanation": "Having been completed — абсолютная конструкция."
     },
     {
@@ -13079,7 +13079,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "collapsed"
       ],
       "answer": "Little wonder that confidence in the system has collapsed",
-      "instruction": "Little wonder",
+      "instruction": "Соберите предложение",
       "explanation": "Little wonder that — идиоматично C1."
     },
     {
@@ -13097,35 +13097,35 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
         "cautiously"
       ],
       "answer": "Be that as it may we must proceed cautiously",
-      "instruction": "Fixed phrase",
+      "instruction": "Соберите предложение",
       "explanation": "Be that as it may — формальный переход."
     },
     {
       "type": "translation",
       "question": "Если бы я учил медицину, я был бы врачом сейчас.",
       "answer": "If I had studied medicine, I would be a doctor now",
-      "instruction": "Mixed conditional — past→present",
+      "instruction": "Переведите на английский",
       "explanation": "Past condition → present result (would be)."
     },
     {
       "type": "translation",
       "question": "Если бы я был выше, я бы попал в команду.",
       "answer": "If I were taller, I would have joined the team",
-      "instruction": "Mixed conditional — present→past",
+      "instruction": "Переведите на английский",
       "explanation": "Present condition → past result (would have joined)."
     },
     {
       "type": "translation",
       "question": "Предложение отклонили до нашего прихода.",
       "answer": "The proposal had been rejected before we arrived",
-      "instruction": "Past perfect passive",
+      "instruction": "Переведите на английский",
       "explanation": "had been rejected — до другого прошлого."
     },
     {
       "type": "translation",
       "question": "Говорят, что проект провалится.",
       "answer": "The project is said to fail",
-      "instruction": "Reporting passive",
+      "instruction": "Переведите на английский",
       "explanation": "is said to + infinitive."
     },
     {
@@ -13153,7 +13153,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "К тому времени дом уже был построен.",
       "answer": "By then the house had already been built",
-      "instruction": "Past perfect passive",
+      "instruction": "Переведите на английский",
       "explanation": "had already been built — к моменту в прошлом."
     },
     {
@@ -13167,35 +13167,35 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "type": "translation",
       "question": "Если бы я знал, я бы пришёл.",
       "answer": "Had I known, I would have come",
-      "instruction": "Inversion — Had I",
+      "instruction": "Переведите на английский",
       "explanation": "Had I known — без if, C1."
     },
     {
       "type": "error_correction",
       "question": "If I had studied medicine, I would have been a doctor now.",
       "answer": "If I had studied medicine, I would be a doctor now.",
-      "instruction": "Mixed conditional — result tense",
+      "instruction": "Исправьте ошибку",
       "explanation": "would be (сейчас) — не would have been."
     },
     {
       "type": "error_correction",
       "question": "If I was taller, I would have joined the team.",
       "answer": "If I were taller, I would have joined the team.",
-      "instruction": "Subjunctive — were",
+      "instruction": "Исправьте ошибку",
       "explanation": "If I were — формальный subjunctive."
     },
     {
       "type": "error_correction",
       "question": "The proposal was rejected before we had arrived.",
       "answer": "The proposal had been rejected before we arrived.",
-      "instruction": "Past perfect passive",
+      "instruction": "Исправьте ошибку",
       "explanation": "had been rejected — до we arrived."
     },
     {
       "type": "error_correction",
       "question": "The project is said to failing.",
       "answer": "The project is said to fail.",
-      "instruction": "Reporting passive — infinitive",
+      "instruction": "Исправьте ошибку",
       "explanation": "is said to fail — базовый инфинитив."
     },
     {
@@ -13223,7 +13223,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "By then the house was already built.",
       "answer": "By then the house had already been built.",
-      "instruction": "Past perfect passive",
+      "instruction": "Исправьте ошибку",
       "explanation": "had been built — к моменту by then."
     },
     {
@@ -13237,7 +13237,7 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "type": "error_correction",
       "question": "Had I know, I would have come.",
       "answer": "Had I known, I would have come.",
-      "instruction": "Inversion — Had I",
+      "instruction": "Исправьте ошибку",
       "explanation": "Had I known — V3."
     }
   ],

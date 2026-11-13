@@ -3,7 +3,7 @@
     "multiple_choice": [
       {
         "type": "multiple_choice",
-        "question": "¿Cómo ___ tú? (descripción, no estado)",
+        "question": "¿Cómo ___ tú?",
         "options": [
           "eres",
           "estás",
@@ -11,9 +11,14 @@
           "es"
         ],
         "answer": "eres",
-        "instruction": "Выберите правильный вариант",
+        "instruction": "Выберите правильную форму",
         "explanation": "¿Cómo eres? — какой ты характером / внешне (ser). ¿Cómo estás? — как ты себя чувствуешь сейчас (estar). Для имени: ¿Cómo te llamas?",
-        "grammarTopic": "a1-ser-estar"
+        "grammarTopic": "a1-ser-estar",
+        "questionTranslations": {
+          "ru": "Какой ты? ¿Cómo ___ tú?",
+          "en": "What are you like? ¿Cómo ___ tú?",
+          "de": "Wie bist du? ¿Cómo ___ tú?"
+        }
       },
       {
         "type": "multiple_choice",
@@ -27,7 +32,12 @@
         "answer": "está",
         "instruction": "Выберите глагол для временного состояния",
         "explanation": "«Устал сегодня» — временное состояние → estar: está cansado.",
-        "grammarTopic": "a1-ser-estar"
+        "grammarTopic": "a1-ser-estar",
+        "questionTranslations": {
+          "ru": "Мой брат ___ устал сегодня. Какая форма?",
+          "en": "My brother ___ tired today. Which form?",
+          "de": "Mein Bruder ___ heute müde. Welche Form?"
+        }
       },
       {
         "type": "multiple_choice",
@@ -41,7 +51,12 @@
         "answer": "estamos",
         "instruction": "Выберите форму estar для «мы»",
         "explanation": "Чувства/эмоции → estar. Nosotros → estamos.",
-        "grammarTopic": "a1-ser-estar"
+        "grammarTopic": "a1-ser-estar",
+        "questionTranslations": {
+          "ru": "Мы ___ очень счастливы. Какая форма?",
+          "en": "We ___ very happy. Which form?",
+          "de": "Wir ___ sehr glücklich. Welche Form?"
+        }
       },
       {
         "type": "multiple_choice",
@@ -381,13 +396,13 @@
       },
       {
         "type": "fill_blank",
-        "question": "¿Cómo ___ tú? (descripción, no estado)",
+        "question": "¿Cómo ___ tú?",
         "answer": "eres",
         "acceptableAnswers": [
           "Eres",
           "eres"
         ],
-        "instruction": "Заполните пропуск",
+        "instruction": "Выберите правильную форму",
         "explanation": "¿Cómo eres? — какой ты характером / внешне (ser). ¿Cómo estás? — как ты себя чувствуешь сейчас (estar). Для имени: ¿Cómo te llamas?",
         "grammarTopic": "a1-ser-estar"
       },
@@ -943,12 +958,11 @@
       },
       {
         "type": "error_correction",
-        "question": "¿Cómo estás tú? (descripción, no estado)?",
+        "question": "¿Cómo estás tú?",
         "answer": "¿Cómo eres tú?",
         "acceptableAnswers": [
-          "¿Cómo eres tú? (descripción, no estado)?",
-          "¿cómo eres tú? (descripción, no estado)?",
-          "eres"
+          "¿Cómo eres tú?",
+          "¿cómo eres tú?"
         ],
         "instruction": "Исправьте ошибку",
         "explanation": "Нужно «eres», не «estás».",
@@ -1445,7 +1459,12 @@
         "answer": "come",
         "instruction": "Выберите форму comer для ella",
         "explanation": "Глагол -er, él/ella/usted → come.",
-        "grammarTopic": "a1-presente"
+        "grammarTopic": "a1-presente",
+        "questionTranslations": {
+          "ru": "Она ___ яблоко. (comer)",
+          "en": "She ___ an apple. (comer)",
+          "de": "Sie ___ einen Apfel. (comer)"
+        }
       },
       {
         "type": "multiple_choice",
@@ -1459,7 +1478,12 @@
         "answer": "haces",
         "instruction": "Выберите правильную форму hacer для tú",
         "explanation": "Hacer неправильный: yo hago, tú haces, él hace.",
-        "grammarTopic": "a1-presente"
+        "grammarTopic": "a1-presente",
+        "questionTranslations": {
+          "ru": "Что ты ___ по выходным? (hacer)",
+          "en": "What do you ___ on weekends? (hacer)",
+          "de": "Was ___ du am Wochenende? (hacer)"
+        }
       },
       {
         "type": "multiple_choice",
@@ -1476,27 +1500,27 @@
         "grammarTopic": "a1-presente",
         "questionTranslations": {
           "ru": "Они работают ___ офис.",
-          "en": "They they work ___ a office.",
-          "de": "Sie sie arbeiten ___ eine Büro."
+          "en": "They work ___ a office.",
+          "de": "Sie arbeiten ___ eine Büro."
         }
       },
       {
-        "type": "multiple_choice",
-        "question": "Me levanto ___ las siete.",
+        "question": "Yo ___ español.",
         "options": [
-          "en",
-          "para",
-          "a",
-          "de"
+          "hablo",
+          "hablas",
+          "habla",
+          "hablan"
         ],
-        "answer": "a",
-        "instruction": "Выберите правильный вариант",
-        "explanation": "Me levanto = встаю. a las siete = в семь.",
-        "grammarTopic": "a1-presente",
+        "answer": "hablo",
+        "instruction": "Выберите форму",
+        "explanation": "yo → hablo.",
+        "type": "multiple_choice",
         "questionTranslations": {
-          "ru": "Я встаю ___ семь.",
-          "en": "I get up ___ seven.",
-          "de": "Ich stehe ___ sieben auf."
+          "ru": "Я ___ по-испански. Какая форма?",
+          "en": "I ___ Spanish. Which form?",
+          "es": "Yo ___ español. ¿Qué forma?",
+          "de": "Ich ___ Spanisch. Welche Form?"
         }
       },
       {
@@ -1557,22 +1581,22 @@
         }
       },
       {
-        "type": "multiple_choice",
-        "question": "Me lavo ___ dientes dos veces al día.",
+        "question": "Ella ___ en Madrid.",
         "options": [
-          "las",
-          "unos",
-          "los",
-          "el"
+          "vivo",
+          "vives",
+          "vive",
+          "viven"
         ],
-        "answer": "los",
-        "instruction": "Выберите правильный вариант",
-        "explanation": "Me lavo = мою (себе). dos veces al día.",
-        "grammarTopic": "a1-presente",
+        "answer": "vive",
+        "instruction": "Выберите форму",
+        "explanation": "ella → vive.",
+        "type": "multiple_choice",
         "questionTranslations": {
-          "ru": "Я мою ___ зубы два раза в день.",
-          "en": "I wash ___ teeth twice to the day.",
-          "de": "Ich wasche ___ Zähne zweimal zum Tag."
+          "ru": "Она ___ в Мадриде. Какая форма?",
+          "en": "She ___ in Madrid. Which form?",
+          "es": "Ella ___ en Madrid. ¿Qué forma?",
+          "de": "Sie ___ in Madrid. Welche Form?"
         }
       },
       {
@@ -1666,46 +1690,46 @@
         "grammarTopic": "a1-presente",
         "questionTranslations": {
           "ru": "Они работают в ___ офис.",
-          "en": "They they work in ___ office.",
-          "de": "Sie sie arbeiten in ___ Büro."
+          "en": "They work in ___ office.",
+          "de": "Sie arbeiten in ___ Büro."
         }
       },
       {
-        "type": "multiple_choice",
-        "question": "Me levanto a ___ siete.",
+        "question": "___ libro está aquí.",
         "options": [
-          "la",
-          "unas",
-          "los",
-          "las"
+          "El",
+          "La",
+          "Un",
+          "Una"
         ],
-        "answer": "las",
-        "instruction": "Выберите правильный вариант",
-        "explanation": "Me levanto = встаю. a las siete = в семь.",
-        "grammarTopic": "a1-presente",
+        "answer": "El",
+        "instruction": "Выберите артикль",
+        "explanation": "el libro.",
+        "type": "multiple_choice",
         "questionTranslations": {
-          "ru": "Я встаю в ___ семь.",
-          "en": "I get up at ___ seven.",
-          "de": "Ich stehe um ___ sieben auf."
+          "ru": "___ libro здесь. Какой артикль?",
+          "en": "___ book is here. Which article?",
+          "es": "___ libro está aquí. ¿Qué artículo?",
+          "de": "___ Buch ist hier. Welcher Artikel?"
         }
       },
       {
-        "type": "multiple_choice",
-        "question": "___ lavo los dientes dos veces al día.",
+        "question": "Yo ___ español.",
         "options": [
-          "te",
-          "nos",
-          "Me",
-          "se"
+          "hablo",
+          "hablas",
+          "habla",
+          "hablan"
         ],
-        "answer": "Me",
-        "instruction": "Выберите правильный вариант",
-        "explanation": "Me lavo = мою (себе). dos veces al día.",
-        "grammarTopic": "a1-presente",
+        "answer": "hablo",
+        "instruction": "Выберите форму",
+        "explanation": "yo → hablo.",
+        "type": "multiple_choice",
         "questionTranslations": {
-          "ru": "___ я мою зубы два раза в день.",
-          "en": "___ I wash the teeth twice to the day.",
-          "de": "___ ich wasche die Zähne zweimal zum Tag."
+          "ru": "Я ___ по-испански. Какая форма?",
+          "en": "I ___ Spanish. Which form?",
+          "es": "Yo ___ español. ¿Qué forma?",
+          "de": "Ich ___ Spanisch. Welche Form?"
         }
       },
       {
@@ -1728,41 +1752,41 @@
         }
       },
       {
-        "type": "multiple_choice",
-        "question": "Me levanto ___ las siete de la mañana cada día.",
+        "question": "Ella ___ en Madrid.",
         "options": [
-          "a",
-          "de",
-          "en",
-          "para"
+          "vivo",
+          "vives",
+          "vive",
+          "viven"
         ],
-        "answer": "a",
-        "instruction": "Выберите правильный вариант",
-        "explanation": "Cada día — singular (no días).",
-        "grammarTopic": "a1-presente",
+        "answer": "vive",
+        "instruction": "Выберите форму",
+        "explanation": "ella → vive.",
+        "type": "multiple_choice",
         "questionTranslations": {
-          "ru": "Я встаю ___ семь утра каждый день.",
-          "en": "I get up ___ the seven in the morning every day.",
-          "de": "Ich stehe auf ___ die sieben am Morgen jeden Tag."
+          "ru": "Она ___ в Мадриде. Какая форма?",
+          "en": "She ___ in Madrid. Which form?",
+          "es": "Ella ___ en Madrid. ¿Qué forma?",
+          "de": "Sie ___ in Madrid. Welche Form?"
         }
       },
       {
-        "type": "multiple_choice",
-        "question": "Me levanto a las siete ___ la mañana cada día.",
+        "question": "___ libro está aquí.",
         "options": [
-          "por",
-          "de",
-          "a",
-          "en"
+          "El",
+          "La",
+          "Un",
+          "Una"
         ],
-        "answer": "de",
-        "instruction": "Выберите правильный вариант",
-        "explanation": "Cada día — singular (no días).",
-        "grammarTopic": "a1-presente",
+        "answer": "El",
+        "instruction": "Выберите артикль",
+        "explanation": "el libro.",
+        "type": "multiple_choice",
         "questionTranslations": {
-          "ru": "Я встаю в семь ___ завтра каждый день.",
-          "en": "I get up at seven ___ the tomorrow every day.",
-          "de": "Ich stehe auf um sieben ___ die morgen jeden Tag."
+          "ru": "___ libro здесь. Какой артикль?",
+          "en": "___ book is here. Which article?",
+          "es": "___ libro está aquí. ¿Qué artículo?",
+          "de": "___ Buch ist hier. Welcher Artikel?"
         }
       },
       {
@@ -1864,26 +1888,16 @@
         "grammarTopic": "a1-presente",
         "questionTranslations": {
           "ru": "Они работают ___ офис.",
-          "en": "They they work ___ a office.",
-          "de": "Sie sie arbeiten ___ eine Büro."
+          "en": "They work ___ a office.",
+          "de": "Sie arbeiten ___ eine Büro."
         }
       },
       {
-        "type": "fill_blank",
-        "question": "Me levanto ___ las siete.",
-        "answer": "a",
-        "acceptableAnswers": [
-          "a",
-          "A"
-        ],
+        "question": "Yo ___ español.",
+        "answer": "hablo",
         "instruction": "Заполните пропуск",
-        "explanation": "Me levanto = встаю. a las siete = в семь.",
-        "grammarTopic": "a1-presente",
-        "questionTranslations": {
-          "ru": "Я встаю ___ семь.",
-          "en": "I get up ___ seven.",
-          "de": "Ich stehe ___ sieben auf."
-        }
+        "explanation": "yo hablo.",
+        "type": "fill_blank"
       },
       {
         "type": "fill_blank",
@@ -1937,21 +1951,11 @@
         }
       },
       {
-        "type": "fill_blank",
-        "question": "Me lavo ___ dientes dos veces al día.",
-        "answer": "los",
-        "acceptableAnswers": [
-          "los",
-          "Los"
-        ],
+        "question": "Ella ___ en Madrid.",
+        "answer": "vive",
         "instruction": "Заполните пропуск",
-        "explanation": "Me lavo = мою (себе). dos veces al día.",
-        "grammarTopic": "a1-presente",
-        "questionTranslations": {
-          "ru": "Я мою ___ зубы два раза в день.",
-          "en": "I wash ___ teeth twice to the day.",
-          "de": "Ich wasche ___ Zähne zweimal zum Tag."
-        }
+        "explanation": "ella vive.",
+        "type": "fill_blank"
       },
       {
         "type": "fill_blank",
@@ -2056,38 +2060,18 @@
         }
       },
       {
-        "type": "fill_blank",
-        "question": "Me levanto a ___ siete de la mañana cada día.",
-        "answer": "las",
-        "acceptableAnswers": [
-          "las",
-          "Las"
-        ],
+        "question": "Nosotros ___ pan.",
+        "answer": "comemos",
         "instruction": "Заполните пропуск",
-        "explanation": "Cada día — singular (no días).",
-        "grammarTopic": "a1-presente",
-        "questionTranslations": {
-          "ru": "Я встаю ___ семь утра каждый день.",
-          "en": "I get up to ___ seven in the morning every day.",
-          "de": "Ich stehe auf zu ___ sieben am Morgen jeden Tag."
-        }
+        "explanation": "nosotros comemos.",
+        "type": "fill_blank"
       },
       {
-        "type": "fill_blank",
-        "question": "Me levanto a las siete de ___ mañana cada día.",
-        "answer": "la",
-        "acceptableAnswers": [
-          "la",
-          "La"
-        ],
+        "question": "___ libro está aquí.",
+        "answer": "El",
         "instruction": "Заполните пропуск",
-        "explanation": "Cada día — singular (no días).",
-        "grammarTopic": "a1-presente",
-        "questionTranslations": {
-          "ru": "Я встаю в семь из ___ завтра каждый день.",
-          "en": "I get up at seven of ___ tomorrow every day.",
-          "de": "Ich stehe auf um sieben von ___ morgen jeden Tag."
-        }
+        "explanation": "El libro.",
+        "type": "fill_blank"
       },
       {
         "type": "fill_blank",
@@ -2139,13 +2123,11 @@
         "grammarTopic": "a1-presente"
       },
       {
-        "type": "translation",
-        "question": "Я встаю в семь утра.",
-        "answer": "Me levanto a las siete",
+        "question": "Я говорю по-испански.",
+        "answer": "Hablo español",
         "instruction": "Переведите предложение",
-        "explanation": "Me levanto = встаю. a las siete = в семь.",
-        "grammarTopic": "a1-presente",
-        "acceptableAnswers": []
+        "explanation": "Hablo — yo, -ar.",
+        "type": "translation"
       },
       {
         "type": "translation",
@@ -2184,13 +2166,11 @@
         "acceptableAnswers": []
       },
       {
-        "type": "translation",
-        "question": "Я мою зубы два раза в день.",
-        "answer": "Me lavo los dientes dos veces al día",
-        "instruction": "Переведите на испанский",
-        "explanation": "Me lavo = мою (себе). dos veces al día.",
-        "grammarTopic": "a1-presente",
-        "acceptableAnswers": []
+        "question": "Она живёт в Мадриде.",
+        "answer": "Ella vive en Madrid",
+        "instruction": "Переведите предложение",
+        "explanation": "vive — ella.",
+        "type": "translation"
       },
       {
         "type": "translation",
@@ -2211,13 +2191,11 @@
         "acceptableAnswers": []
       },
       {
-        "type": "translation",
-        "question": "Он слушает музыку по дороге на работу.",
-        "answer": "Escucha música camino al trabajo",
+        "question": "Мы едим хлеб.",
+        "answer": "Comemos pan",
         "instruction": "Переведите предложение",
-        "explanation": "Escucha música. camino al trabajo = по дороге на работу.",
-        "grammarTopic": "a1-presente",
-        "acceptableAnswers": []
+        "explanation": "comemos — nosotros.",
+        "type": "translation"
       },
       {
         "type": "translation",
@@ -2288,15 +2266,11 @@
         "explanation": "Переведите русскую фразу на испанский."
       },
       {
-        "type": "translation",
-        "question": "Я принимаю душ утром.",
-        "answer": "Me ducho por la mañana",
-        "acceptableAnswers": [
-          "Me ducho por la mañana",
-          "me ducho por la mañana"
-        ],
-        "instruction": "Переведите на испанский",
-        "explanation": "Переведите русскую фразу на испанский."
+        "question": "Ты пишешь письмо?",
+        "answer": "¿Escribes una carta?",
+        "instruction": "Переведите предложение",
+        "explanation": "escribes — tú.",
+        "type": "translation"
       },
       {
         "type": "translation",
@@ -2334,13 +2308,11 @@
     ],
     "error_correction": [
       {
-        "type": "error_correction",
-        "question": "Yo me levanto a las siete de la mañana cada días.",
-        "answer": "Me levanto a las siete de la mañana cada día.",
+        "question": "Yo hablo español todos los día.",
+        "answer": "Yo hablo español todos los días.",
         "instruction": "Найдите и исправьте ошибку",
-        "explanation": "Cada día — singular (no días).",
-        "grammarTopic": "a1-presente",
-        "acceptableAnswers": []
+        "explanation": "días.",
+        "type": "error_correction"
       },
       {
         "type": "error_correction",
@@ -2370,13 +2342,11 @@
         "acceptableAnswers": []
       },
       {
-        "type": "error_correction",
-        "question": "Me lavo los diente dos veces al día.",
-        "answer": "Me lavo los dientes dos veces al día.",
-        "instruction": "Исправьте ошибку",
-        "explanation": "Los dientes — plural.",
-        "grammarTopic": "a1-presente",
-        "acceptableAnswers": []
+        "question": "Ella vive en Madrid ella.",
+        "answer": "Ella vive en Madrid.",
+        "instruction": "Найдите и исправьте ошибку",
+        "explanation": "лишнее ella.",
+        "type": "error_correction"
       },
       {
         "type": "error_correction",
@@ -2440,16 +2410,11 @@
         "grammarTopic": "a1-presente"
       },
       {
-        "type": "error_correction",
-        "question": "te levanto a las siete.",
-        "answer": "Me levanto a las siete.",
-        "acceptableAnswers": [
-          "Me levanto a las siete",
-          "Me levanto a las siete."
-        ],
-        "instruction": "Исправьте ошибку",
-        "explanation": "Me levanto = встаю. a las siete = в семь.",
-        "grammarTopic": "a1-presente"
+        "question": "¿Dónde está el libro el?",
+        "answer": "¿Dónde está el libro?",
+        "instruction": "Найдите и исправьте ошибку",
+        "explanation": "лишнее el.",
+        "type": "error_correction"
       },
       {
         "type": "error_correction",
@@ -2500,16 +2465,11 @@
         "grammarTopic": "a1-presente"
       },
       {
-        "type": "error_correction",
-        "question": "te lavo los dientes dos veces al día.",
-        "answer": "Me lavo los dientes dos veces al día.",
-        "acceptableAnswers": [
-          "Me lavo los dientes dos veces al día",
-          "Me lavo los dientes dos veces al día."
-        ],
-        "instruction": "Исправьте ошибку",
-        "explanation": "Me lavo = мою (себе). dos veces al día.",
-        "grammarTopic": "a1-presente"
+        "question": "Yo hablo español todos los día.",
+        "answer": "Yo hablo español todos los días.",
+        "instruction": "Найдите и исправьте ошибку",
+        "explanation": "días.",
+        "type": "error_correction"
       },
       {
         "type": "error_correction",
@@ -2536,16 +2496,11 @@
         "grammarTopic": "a1-presente"
       },
       {
-        "type": "error_correction",
-        "question": "Escucha al camino música trabajo.",
-        "answer": "Escucha música camino al trabajo.",
-        "acceptableAnswers": [
-          "Escucha música camino al trabajo",
-          "Escucha música camino al trabajo."
-        ],
-        "instruction": "Исправьте ошибку",
-        "explanation": "Escucha música. camino al trabajo = по дороге на работу.",
-        "grammarTopic": "a1-presente"
+        "question": "Ella vive en Madrid ella.",
+        "answer": "Ella vive en Madrid.",
+        "instruction": "Найдите и исправьте ошибку",
+        "explanation": "лишнее ella.",
+        "type": "error_correction"
       }
     ],
     "sentence_building": [
@@ -2596,23 +2551,16 @@
         }
       },
       {
-        "type": "sentence_building",
-        "question": "Me / levanto / a / las / siete / de / la / mañana",
+        "question": "Yo / hablo / español",
         "options": [
-          "Me",
-          "levanto",
-          "a",
-          "las",
-          "siete",
-          "de",
-          "la",
-          "mañana"
+          "Yo",
+          "hablo",
+          "español"
         ],
-        "answer": "Me levanto a las siete de la mañana",
-        "instruction": "Соберите утреннюю рутину",
-        "explanation": "Me levanto + hora.",
-        "grammarTopic": "a1-presente",
-        "acceptableAnswers": []
+        "answer": "Yo hablo español",
+        "instruction": "Соберите предложение",
+        "explanation": "Hablo español.",
+        "type": "sentence_building"
       },
       {
         "type": "sentence_building",
@@ -2686,23 +2634,16 @@
         "acceptableAnswers": []
       },
       {
-        "type": "sentence_building",
-        "question": "Me / lavo / los / dientes / dos / veces / al / día",
+        "question": "Nosotros / comemos / pan",
         "options": [
-          "Me",
-          "lavo",
-          "los",
-          "dientes",
-          "dos",
-          "veces",
-          "al",
-          "día"
+          "Nosotros",
+          "comemos",
+          "pan"
         ],
-        "answer": "Me lavo los dientes dos veces al día",
-        "instruction": "Соберите гигиену",
-        "explanation": "Reflexivo: me lavo.",
-        "grammarTopic": "a1-presente",
-        "acceptableAnswers": []
+        "answer": "Nosotros comemos pan",
+        "instruction": "Соберите предложение",
+        "explanation": "Comemos pan.",
+        "type": "sentence_building"
       },
       {
         "type": "sentence_building",
@@ -2739,20 +2680,17 @@
         "acceptableAnswers": []
       },
       {
-        "type": "sentence_building",
-        "question": "Me / ducho / por / la / mañana",
+        "question": "¿Dónde / está / el / libro?",
         "options": [
-          "Me",
-          "ducho",
-          "por",
-          "la",
-          "mañana"
+          "¿Dónde",
+          "está",
+          "el",
+          "libro?"
         ],
-        "answer": "Me ducho por la mañana",
-        "instruction": "Составьте предложение",
-        "explanation": "Me ducho por la mañana.",
-        "grammarTopic": "a1-presente",
-        "acceptableAnswers": []
+        "answer": "¿Dónde está el libro?",
+        "instruction": "Соберите предложение",
+        "explanation": "¿Dónde está el libro?",
+        "type": "sentence_building"
       },
       {
         "type": "sentence_building",
@@ -2867,20 +2805,16 @@
         "acceptableAnswers": []
       },
       {
-        "type": "sentence_building",
-        "question": "Nos / levantamos / temprano / entre / semana",
+        "question": "Yo / hablo / español",
         "options": [
-          "Nos",
-          "levantamos",
-          "temprano",
-          "entre",
-          "semana"
+          "Yo",
+          "hablo",
+          "español"
         ],
-        "answer": "Nos levantamos temprano entre semana",
-        "instruction": "Составьте предложение",
-        "explanation": "Nos levantamos temprano.",
-        "grammarTopic": "a1-presente",
-        "acceptableAnswers": []
+        "answer": "Yo hablo español",
+        "instruction": "Соберите предложение",
+        "explanation": "Hablo español.",
+        "type": "sentence_building"
       },
       {
         "type": "sentence_building",
@@ -2917,7 +2851,12 @@
         "answer": "El",
         "instruction": "Выберите артикль для известной конкретной вещи мужского рода (одна книга)",
         "explanation": "Libro — мужской род, одна известная книга → el libro.",
-        "grammarTopic": "a1-articulos"
+        "grammarTopic": "a1-articulos",
+        "questionTranslations": {
+          "ru": "___ книга на столе. Какой артикль?",
+          "en": "___ book is on the table. Which article?",
+          "de": "___ Buch liegt auf dem Tisch. Welcher Artikel?"
+        }
       },
       {
         "type": "multiple_choice",
@@ -2931,7 +2870,12 @@
         "answer": "una",
         "instruction": "Выберите артикль для «какой-то» дома женского рода (один дом)",
         "explanation": "Casa — женский род, один ещё не конкретный дом → una casa.",
-        "grammarTopic": "a1-articulos"
+        "grammarTopic": "a1-articulos",
+        "questionTranslations": {
+          "ru": "Я живу в ___ красивом доме. Какой артикль?",
+          "en": "I live in ___ nice house. Which article?",
+          "de": "Ich wohne in ___ schönen Haus. Welcher Artikel?"
+        }
       },
       {
         "type": "multiple_choice",
@@ -2945,7 +2889,12 @@
         "answer": "el",
         "instruction": "Какой артикль перед agua? (не путать с abuela)",
         "explanation": "Agua — женского рода, но одна вещь и ударение на первой a (Á-gua) → el agua. Во множественном: las aguas. Не путать: la abuela (ударение на -bue-).",
-        "grammarTopic": "a1-articulos"
+        "grammarTopic": "a1-articulos",
+        "questionTranslations": {
+          "ru": "Я пью ___ холодную воду. Какой артикль?",
+          "en": "I drink ___ cold water. Which article?",
+          "de": "Ich trinke ___ kaltes Wasser. Welcher Artikel?"
+        }
       },
       {
         "type": "multiple_choice",
@@ -3606,13 +3555,11 @@
         "acceptableAnswers": []
       },
       {
-        "type": "translation",
-        "question": "Где газета?",
-        "answer": "¿Dónde está el periódico?",
-        "instruction": "Переведите на испанский",
-        "explanation": "El periódico — определённый артикль.",
-        "grammarTopic": "a1-articulos",
-        "acceptableAnswers": []
+        "question": "Я говорю по-испански.",
+        "answer": "Hablo español",
+        "instruction": "Переведите предложение",
+        "explanation": "Hablo — yo, -ar.",
+        "type": "translation"
       },
       {
         "type": "translation",
@@ -17494,7 +17441,7 @@
           "haga"
         ],
         "answer": "haría",
-        "instruction": "Совет — какое наклонение?",
+        "instruction": "Выберите правильную форму",
         "explanation": "«На твоём месте» → condicional: haría.",
         "grammarTopic": "b1-condicional"
       },
@@ -17718,12 +17665,12 @@
         ],
         "answer": "que",
         "instruction": "Выберите правильный вариант",
-        "explanation": "Нужно «haría», не «hago».",
+        "explanation": "Expresión fija: yo que tú — «на твоём месте».",
         "grammarTopic": "b1-condicional",
         "questionTranslations": {
-          "ru": "Я ___ ты, это я бы сделал по-другому.",
-          "en": "I ___ you, it I would do differently.",
-          "de": "Ich ___ du, es ich würde tun anders."
+          "ru": "На твоём месте (yo ___ tú) я бы сделал это по-другому.",
+          "en": "If I were you (yo ___ tú), I would do it differently.",
+          "de": "An deiner Stelle (yo ___ tú) würde ich es anders machen."
         }
       },
       {
@@ -17844,13 +17791,14 @@
     "fill_blank": [
       {
         "type": "fill_blank",
-        "question": "¿Podría ___ (ayudar)me?",
-        "answer": "ayudar",
+        "question": "¿Podría usted ___?",
+        "answer": "ayudarme",
         "acceptableAnswers": [
-          "ayudar"
+          "ayudarme",
+          "Ayudarme"
         ],
-        "instruction": "Вежливая просьба через condicional",
-        "explanation": "Podría + infinitivo. ¿Podría ayudarme? = Не могли бы вы помочь?",
+        "instruction": "Заполните пропуск",
+        "explanation": "Podría + infinitivo con pronombre enclítico: ¿Podría ayudarme? = Не могли бы вы мне помочь?",
         "grammarTopic": "b1-condicional"
       },
       {
@@ -18039,12 +17987,12 @@
           "Un"
         ],
         "instruction": "Заполните пропуск",
-        "explanation": "Нужно «compraría», не «compro».",
+        "explanation": "Artículo indefinido masculino: un coche.",
         "grammarTopic": "b1-condicional",
         "questionTranslations": {
-          "ru": "Если был бы деньги, я бы купил ___ машина.",
-          "en": "If had money, I would buy ___ car.",
-          "de": "Wenn hätte Geld, ich würde kaufen ___ Auto."
+          "ru": "Если бы у меня были деньги, я бы купил ___ машину.",
+          "en": "If I had money, I would buy ___ car.",
+          "de": "Wenn ich Geld hätte, würde ich ___ Auto kaufen."
         }
       },
       {
@@ -18056,17 +18004,17 @@
           "Lo"
         ],
         "instruction": "Заполните пропуск",
-        "explanation": "Нужно «haría», не «hago».",
+        "explanation": "Falta el pronombre de objeto directo: lo — «это».",
         "grammarTopic": "b1-condicional",
         "questionTranslations": {
-          "ru": "Я что ты, ___ я бы сделал по-другому.",
-          "en": "I that you, ___ I would do differently.",
-          "de": "Ich dass du, ___ ich würde tun anders."
+          "ru": "На твоём месте я бы сделал ___ по-другому.",
+          "en": "If I were you, I would do ___ differently.",
+          "de": "An deiner Stelle würde ich ___ anders machen."
         }
       },
       {
         "type": "fill_blank",
-        "question": "¿Qué harías si ganaras ___ lotería.",
+        "question": "¿Qué harías si ganaras ___ lotería?",
         "answer": "la",
         "acceptableAnswers": [
           "la",
@@ -18285,11 +18233,11 @@
       },
       {
         "type": "translation",
-        "question": "Совет — какое наклонение?",
-        "answer": "haría",
+        "question": "На твоём месте я бы сделал это по-другому.",
+        "answer": "Yo que tú, lo haría diferente.",
         "acceptableAnswers": [
-          "haría",
-          "haría"
+          "Yo que tú, lo haría diferente.",
+          "yo que tú, lo haría diferente."
         ],
         "instruction": "Переведите на испанский",
         "explanation": "«На твоём месте» → condicional: haría.",
@@ -64488,9 +64436,9 @@
         "explanation": "Por + adjetivo + que + subjuntivo: por extraño que parezca — «как ни странно».",
         "grammarTopic": "c2-ironia-registry",
         "questionTranslations": {
-          "ru": "По странно ___ кажется, отказался.",
-          "en": "For strange ___ it seems, itself refused.",
-          "de": "Für seltsam ___ es scheint, sich lehnte ab."
+          "ru": "Как ни странно, ___ это ни казалось, он отказался.",
+          "en": "However strange it may ___, he refused.",
+          "de": "So seltsam es auch ___, er lehnte ab."
         }
       },
       {
@@ -64640,9 +64588,9 @@
         "explanation": "Por + adjetivo + que + subjuntivo: por extraño que parezca — «как ни странно».",
         "grammarTopic": "c2-ironia-registry",
         "questionTranslations": {
-          "ru": "___ странно что кажется, отказался.",
-          "en": "___ strange that it seems, itself refused.",
-          "de": "___ seltsam dass es scheint, sich lehnte ab."
+          "ru": "___ странно это ни казалось, он отказался.",
+          "en": "___ strange it may seem, he refused.",
+          "de": "___ seltsam es auch sein mag, lehnte er ab."
         }
       },
       {
@@ -64866,9 +64814,9 @@
         "explanation": "Por + adjetivo + que + subjuntivo: por extraño que parezca — «как ни странно».",
         "grammarTopic": "c2-ironia-registry",
         "questionTranslations": {
-          "ru": "По странно ___ кажется, отказался.",
-          "en": "For strange ___ it seems, itself refused.",
-          "de": "Für seltsam ___ es scheint, sich lehnte ab."
+          "ru": "Как ни странно, ___ это ни казалось, он отказался.",
+          "en": "However strange it may ___, he refused.",
+          "de": "So seltsam es auch ___, er lehnte ab."
         }
       },
       {
@@ -64883,9 +64831,9 @@
         "explanation": "Por extraño que parezca…",
         "grammarTopic": "c2-ironia-registry",
         "questionTranslations": {
-          "ru": "По странно ___ кажется, принял.",
-          "en": "For strange ___ it seems, accepted.",
-          "de": "Für seltsam ___ es scheint, akzeptierte."
+          "ru": "Как ни странно, ___ это ни казалось, он согласился.",
+          "en": "However strange it may ___, he agreed.",
+          "de": "So seltsam es auch ___, er stimmte zu."
         }
       },
       {
@@ -65234,20 +65182,26 @@
       {
         "type": "translation",
         "question": "Какая неожиданность (ирония).",
-        "answer": "Qué sorpresa más grande",
+        "answer": "Vaya sorpresa",
+        "acceptableAnswers": [
+          "Vaya sorpresa",
+          "Qué sorpresa más grande"
+        ],
         "instruction": "Переведите на испанский",
-        "explanation": "Qué sorpresa — ironía.",
-        "grammarTopic": "c2-ironia-registry",
-        "acceptableAnswers": []
+        "explanation": "Vaya sorpresa — ironía.",
+        "grammarTopic": "c2-ironia-registry"
       },
       {
         "type": "translation",
         "question": "Без комментариев.",
-        "answer": "No comment",
+        "answer": "Sin comentarios",
+        "acceptableAnswers": [
+          "Sin comentarios",
+          "Sin comentarios."
+        ],
         "instruction": "Переведите на испанский",
-        "explanation": "No comment — evasión.",
-        "grammarTopic": "c2-ironia-registry",
-        "acceptableAnswers": []
+        "explanation": "Sin comentarios — evasión.",
+        "grammarTopic": "c2-ironia-registry"
       },
       {
         "type": "translation",
@@ -65307,10 +65261,13 @@
         "type": "translation",
         "question": "Какая неожиданность (иронично).",
         "answer": "Vaya sorpresa",
+        "acceptableAnswers": [
+          "Vaya sorpresa",
+          "Qué sorpresa más grande"
+        ],
         "instruction": "Переведите на испанский",
         "explanation": "Vaya sorpresa — ironía.",
-        "grammarTopic": "c2-ironia-registry",
-        "acceptableAnswers": []
+        "grammarTopic": "c2-ironia-registry"
       },
       {
         "type": "translation",
@@ -65472,12 +65429,15 @@
       },
       {
         "type": "error_correction",
-        "question": "Gracias por la ayuda! (no ayudó)",
-        "answer": "Gracias por la ayuda.",
+        "question": "Gracias por la ayuda tan inutil (no ayudó)",
+        "answer": "Gracias por la ayuda tan útil.",
+        "acceptableAnswers": [
+          "Gracias por la ayuda tan útil.",
+          "Gracias por la ayuda tan útil"
+        ],
         "instruction": "Исправьте ошибку",
-        "explanation": "Contexto define ironía.",
-        "grammarTopic": "c2-ironia-registry",
-        "acceptableAnswers": []
+        "explanation": "En contexto irónico: útil (с ú), no inutil.",
+        "grammarTopic": "c2-ironia-registry"
       },
       {
         "type": "error_correction",

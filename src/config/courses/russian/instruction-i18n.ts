@@ -1721,14 +1721,14 @@ export const RUSSIAN_INSTRUCTION_I18N: Record<
     de: "«прочитать»: Ergebnis",
   },
   "Прошедшее время": {
-    en: "Past tense",
-    es: "Tiempo pasado",
-    de: "Vergangenheit",
+    en: "Choose the past-tense form",
+    es: "Elige la forma del pasado",
+    de: "Wähle die Vergangenheitsform",
   },
   "Прошедшее; род говорящего": {
-    en: "Past tense; gender of the speaker",
-    es: "Pasado; género de quien habla",
-    de: "Vergangenheit; Genus der sprechenden Person",
+    en: "Choose the past-tense form; speaker's gender",
+    es: "Elige la forma del pasado; género de quien habla",
+    de: "Wähle die Vergangenheitsform; Genus der sprechenden Person",
   },
   "Прощание": {
     en: "A farewell expression",
@@ -1971,9 +1971,9 @@ export const RUSSIAN_INSTRUCTION_I18N: Record<
     de: "«Сосед»: творительный падеж (Instrumental)",
   },
   "Составное будущее": {
-    en: "Compound future tense",
-    es: "Futuro compuesto",
-    de: "Zusammengesetztes Futur",
+    en: "Choose the compound future form",
+    es: "Elige la forma del futuro compuesto",
+    de: "Wähle die zusammengesetzte Futurform",
   },
   "Сохраните совершенный вид, исправьте время": {
     en: "Keep perfective aspect; fix the tense",
@@ -1981,14 +1981,14 @@ export const RUSSIAN_INSTRUCTION_I18N: Record<
     de: "Behalte den perfektiven Aspekt und korrigiere das Tempus",
   },
   "Союз причины": {
-    en: "Conjunction of cause",
-    es: "Conjunción de causa",
-    de: "Kausalkonjunktion",
+    en: "Choose the conjunction of cause",
+    es: "Elige la conjunción de causa",
+    de: "Wähle die Kausalkonjunktion",
   },
   "Союз причины при несогласии": {
-    en: "Conjunction of cause (when disagreeing)",
-    es: "Conjunción de causa al no estar de acuerdo",
-    de: "Kausalkonjunktion bei Widerspruch",
+    en: "Choose the conjunction of cause (when disagreeing)",
+    es: "Elige la conjunción de causa al no estar de acuerdo",
+    de: "Wähle die Kausalkonjunktion bei Widerspruch",
   },
   "Союз следствия": {
     en: "Conjunction of result",
@@ -4211,9 +4211,9 @@ export const RUSSIAN_INSTRUCTION_I18N: Record<
     de: "Maskulinum, Kongruenz",
   },
   "Женский род": {
-    en: "Feminine",
-    es: "Femenino",
-    de: "Femininum",
+    en: "Choose the feminine form",
+    es: "Elige la forma femenina",
+    de: "Wähle die feminine Form",
   },
   "Предлог второй половины": {
     en: "The preposition of the second half",

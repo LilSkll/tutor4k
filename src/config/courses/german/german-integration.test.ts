@@ -162,6 +162,21 @@ describe("German course integration", () => {
     }
   });
 
+  it("keeps A1 grammar explanations beginner-readable (no cryptic person codes)", async () => {
+    const course = await getCourse("german");
+    const a1 = course.getGrammar().filter((g) => g.level === "A1");
+    expect(a1.length).toBeGreaterThanOrEqual(8);
+    for (const topic of a1) {
+      expect(topic.content, topic.slug).not.toMatch(/\|\s*1\s*\|\s*\*\*ich\*\*/);
+      expect(topic.content, topic.slug).not.toMatch(/2 неформ/);
+      expect(topic.content, topic.slug).not.toMatch(/\|\s*3\s*\|\s*\*\*er/);
+      expect(topic.content, topic.slug).not.toMatch(/\|\s*вежл\.\s*\|/);
+    }
+    const sein = course.getGrammarTopic("de-a1-sein-haben-pronouns");
+    expect(sein?.content).toMatch(/я\s*\|\s*\*\*ich\*\*/i);
+    expect(sein?.content).toMatch(/ Три разных «sie \/ Sie»|три разных «sie/i);
+  });
+
   it("classifies German error categories from grammar slugs", () => {
     expect(germanErrorCategoryFromTopics("de-a1-akkusativ", null)).toBe(
       "case",
