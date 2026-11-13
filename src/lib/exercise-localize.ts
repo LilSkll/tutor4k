@@ -627,13 +627,12 @@ function resolveTranslationPromptForUi(
     return null;
   };
 
-  // Russian UI studying Spanish/English: keep Cyrillic L1 stems.
-  // Russian UI studying Russian: L1 must NOT be Cyrillic (would equal target) —
-  // allow EN/ES/DE prompts (common for prep-faculty learners).
+  // Russian UI studying Spanish/English/German: keep Cyrillic L1 stems.
+  // Russian UI studying Russian: no valid L1 (Cyrillic would equal the target;
+  // English/Spanish/German would ignore the interface language). Drop TR.
   if (interfaceLanguage === "ru") {
     if (courseId === "russian") {
-      if (hasCyrillicText(question) || isSpoiler(question)) return null;
-      return question;
+      return null;
     }
     return hasCyrillicText(question) ? question : null;
   }

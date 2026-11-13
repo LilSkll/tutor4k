@@ -207,7 +207,7 @@ export function courseLineForId(
   language: "ru" | "en" | "es" | "de" = "en",
 ): string {
   const lines: Record<
-    "spanish" | "english" | "russian",
+    "spanish" | "english" | "russian" | "german",
     Record<"ru" | "en" | "es" | "de", string>
   > = {
     spanish: {
@@ -228,12 +228,20 @@ export function courseLineForId(
       es: "Ruso",
       de: "Russisch",
     },
+    german: {
+      ru: "Немецкий",
+      en: "German",
+      es: "Alemán",
+      de: "Deutsch",
+    },
   };
   const key =
     courseId === "english"
       ? "english"
       : courseId === "russian"
         ? "russian"
-        : "spanish";
+        : courseId === "german"
+          ? "german"
+          : "spanish";
   return lines[key][language] ?? lines[key].en;
 }

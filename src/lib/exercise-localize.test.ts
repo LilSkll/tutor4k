@@ -195,6 +195,27 @@ describe("translation localization", () => {
     expect(esEx.instruction).toMatch(/Traduce|traduce/i);
   });
 
+  it("drops Russian-course TR for Russian UI (no English L1 injection)", () => {
+    const ruTr: StaticExercise = {
+      id: "ru-tr-ru-ui",
+      type: "translation",
+      question: "Thank you",
+      answer: "Спасибо",
+      instruction: "Переведите на русский",
+      explanation: "Спасибо.",
+      questionTranslations: {
+        es: "Gracias",
+        de: "Danke",
+      },
+    };
+    expect(isExerciseUsableForLanguage(ruTr, "ru", "russian")).toBe(false);
+    expect(prepareExercisesForInterface([ruTr], "ru", "russian")).toHaveLength(
+      0,
+    );
+    expect(isExerciseUsableForLanguage(ruTr, "en", "russian")).toBe(true);
+    expect(isExerciseUsableForLanguage(ruTr, "es", "russian")).toBe(true);
+  });
+
   it("replaces spoiler grammar-tag instructions", () => {
     const [ex] = prepareExercisesForInterface(
       [

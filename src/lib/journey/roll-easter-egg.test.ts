@@ -7,12 +7,15 @@ describe("courseLineForId", () => {
     expect(courseLineForId("spanish")).toBe("Spanish");
     expect(courseLineForId("english")).toBe("English");
     expect(courseLineForId("russian")).toBe("Russian");
+    expect(courseLineForId("german")).toBe("German");
   });
 
   it("localizes course names for the learner UI language", () => {
     expect(courseLineForId("spanish", "ru")).toBe("Испанский");
     expect(courseLineForId("english", "de")).toBe("Englisch");
     expect(courseLineForId("spanish", "es")).toBe("Español");
+    expect(courseLineForId("german", "ru")).toBe("Немецкий");
+    expect(courseLineForId("german", "de")).toBe("Deutsch");
   });
 });
 

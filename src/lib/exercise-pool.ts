@@ -171,8 +171,9 @@ async function loadRankedCandidates(
     if (sameLevel.length > candidates.length) candidates = sameLevel;
   }
 
-  if (input.interfaceLanguage && input.interfaceLanguage !== "ru") {
-    // Never fall back to Cyrillic / unusable items for non-RU UI.
+  if (input.interfaceLanguage) {
+    // Drop items that cannot be shown for this UI (e.g. English L1 TR on
+    // Russian course × Russian UI, or Cyrillic stems on non-RU UI).
     candidates = candidates.filter((ex) =>
       isExerciseUsableForLanguage(
         ex,

@@ -73,7 +73,12 @@ describe("platform localization × translation × vocabulary audit", () => {
           }
         }
       }
-      expect(usableTr, `russian@${lang}`).toBeGreaterThan(200);
+      // RU UI × Russian course: no valid L1 (cannot inject EN/ES/DE), so TR is dropped.
+      if (lang === "ru") {
+        expect(usableTr, `russian@${lang}`).toBe(0);
+      } else {
+        expect(usableTr, `russian@${lang}`).toBeGreaterThan(200);
+      }
     }
   });
 
