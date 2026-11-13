@@ -6,6 +6,7 @@
 import type { InterfaceLanguage } from "@/types";
 import prompts from "@/config/exercise-translation-prompts.json";
 import l1Cache from "@/config/exercise-banks/data/english-tr-l1-cache.json";
+import expansionEnCues from "@/config/exercise-banks/data/english-expansion-tr-en.json";
 import { RUSSIAN_TR_L1 } from "@/config/courses/russian/translation-l1";
 
 type PromptMap = Record<
@@ -18,6 +19,12 @@ type L1Cache = Record<string, { es?: string; de?: string }>;
 const MAP = prompts as PromptMap;
 const CACHE = l1Cache as L1Cache;
 const RU_CACHE = RUSSIAN_TR_L1 as L1Cache;
+/** EN UI cues for new English-course chapters (not the answer key). */
+const EXPANSION_EN = expansionEnCues as Record<string, string>;
+
+function exactPromptMatch(candidate: string, answer: string): boolean {
+  return normalize(candidate) === normalize(answer);
+}
 
 const LATIN_LETTER = /[A-Za-zÀ-ÿ]/;
 const CYRILLIC = /[\u0400-\u04FF]/;
@@ -127,10 +134,15 @@ export function attachEnglishTrL1<
   const de =
     exercise.questionTranslations?.de?.trim() ||
     lookupTranslationPrompt(ru, "de", answer);
-  if (!es && !de) return exercise;
+  const en =
+    exercise.questionTranslations?.en?.trim() || EXPANSION_EN[ru]?.trim() || "";
+  if (!es && !de && !en) return exercise;
   const questionTranslations: Partial<Record<InterfaceLanguage, string>> = {
     ...(exercise.questionTranslations ?? {}),
   };
+  if (en && !exactPromptMatch(en, answer) && !CYRILLIC.test(en)) {
+    questionTranslations.en = en;
+  }
   if (es && !looksLikeEnglishSpoiler(es, answer)) questionTranslations.es = es;
   if (de && !looksLikeEnglishSpoiler(de, answer)) questionTranslations.de = de;
   return { ...exercise, questionTranslations };

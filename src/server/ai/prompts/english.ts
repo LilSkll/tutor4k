@@ -1,4 +1,4 @@
-import type { Level } from "@/types";
+import type { GrammarLevel, Level } from "@/types";
 import type { PromptBuilderOptions } from "./registry";
 import {
   buildLanguageDirectives,
@@ -10,12 +10,13 @@ import {
   buildTeacherPedagogyBlock,
 } from "./teacher";
 
-const ENGLISH_LEVEL_GUIDE: Record<Level, string> = {
+const ENGLISH_LEVEL_GUIDE: Record<Level, string> & { C2: string } = {
   A1: "A1: beginner — be, present simple, there is/are, can, basic vocabulary.",
   A2: "A2: elementary — past simple, comparatives/superlatives, going to, present perfect intro.",
   B1: "B1: intermediate — conditionals, narrative tenses, present perfect continuous, phrasal verbs.",
   B2: "B2: upper-intermediate — passive voice, reported speech, relative clauses, advanced phrasal verbs.",
   C1: "C1: advanced — inversion, discourse markers, mixed conditionals, IELTS-style tasks.",
+  C2: "C2: figurative precision (metaphor vs simile, connotation, euphemism, mixed metaphor); discourse mastery (concession, consequence, stance markers); register shift between informal and formal; hedging and understatement.",
 };
 
 const TARGET = "English";
@@ -33,7 +34,8 @@ export function buildEnglishPrompt(options: PromptBuilderOptions): string {
     learnerContext,
   } = options;
 
-  const levelText = level ? ENGLISH_LEVEL_GUIDE[level] : ENGLISH_LEVEL_GUIDE.A1;
+  const band = (level ?? "A1") as GrammarLevel;
+  const levelText = ENGLISH_LEVEL_GUIDE[band] ?? ENGLISH_LEVEL_GUIDE.A1;
   const greeting = getGreeting(interfaceLanguage);
   const nameLine = userName ? ` ${greeting}, ${userName}!` : "";
   const ifaceName = getInterfaceLanguageName(interfaceLanguage);
@@ -65,6 +67,7 @@ All example sentences, conjugations, and dialogues MUST be in English only — n
 Use standard English terminology and English examples:
 - Tenses: present simple/continuous, past simple/continuous, present/past perfect, will / going to
 - Articles, modals, conditionals, passive, reported speech, relative clauses, phrasal verbs
+- C2 only, and only when the chapter is C2: metaphor vs simile, connotation and euphemism, concession and consequence markers, formal vs informal register shift
 Subject pronouns: I, you, he/she/it, we, you, they
 
 ${pedagogy}

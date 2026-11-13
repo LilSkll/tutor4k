@@ -681,4 +681,182 @@ export const RUSSIAN_CHAPTER_LOCALE: Record<
       location: "Moskau",
     },
   },
+  "ru-ch37-classroom-survival": {
+    en: {
+      title: "Classroom survival",
+      summary:
+        "Permission and bans in class, and polite requests to a lecturer.",
+      location: "Nizhny Novgorod",
+    },
+    es: {
+      title: "Supervivencia en el aula",
+      summary:
+        "Permiso y prohibición en clase, y peticiones corteses al profesor.",
+      location: "Nizhni Nóvgorod",
+    },
+    de: {
+      title: "Sätze für den Hörsaal",
+      summary:
+        "Erlaubnis und Verbot in der Stunde und höfliche Bitten an die Lehrperson.",
+      location: "Nischni Nowgorod",
+    },
+  },
+  "ru-ch38-services-invitations": {
+    en: {
+      title: "Services and invitations",
+      summary:
+        "Book an appointment, move a meeting, and answer an invitation.",
+      location: "Sochi",
+    },
+    es: {
+      title: "Servicios e invitaciones",
+      summary:
+        "Pedir cita, aplazar una reunión y responder a una invitación.",
+      location: "Sochi",
+    },
+    de: {
+      title: "Dienste und Einladungen",
+      summary:
+        "Einen Termin machen, ein Treffen verschieben und auf eine Einladung antworten.",
+      location: "Sotschi",
+    },
+  },
+  "ru-ch39-government-verbs": {
+    en: {
+      title: "Verb government",
+      summary:
+        "Contrast drills: the case that belongs to each verb.",
+      location: "Pskov",
+    },
+    es: {
+      title: "Régimen verbal",
+      summary: "Contrastes: el caso que pertenece a cada verbo.",
+      location: "Pskov",
+    },
+    de: {
+      title: "Rektion",
+      summary: "Kontraste: der Kasus, der zu jedem Verb gehört.",
+      location: "Pskow",
+    },
+  },
+  "ru-ch40-participle-preview": {
+    en: {
+      title: "A relative and a short participle",
+      summary:
+        "A bridge toward B2: the relative stays safe, and a short participle replaces a simple one.",
+      location: "Pskov",
+    },
+    es: {
+      title: "Un relativo y un participio corto",
+      summary:
+        "Un puente hacia B2: el relativo sigue siendo seguro y el participio corto sustituye un relativo simple.",
+      location: "Pskov",
+    },
+    de: {
+      title: "Ein Relativsatz und ein kurzes Partizip",
+      summary:
+        "Eine Brücke zu B2: das Relativpronomen bleibt sicher, ein kurzes Partizip ersetzt nur einen einfachen Relativsatz.",
+      location: "Pskow",
+    },
+  },
+  "ru-ch41-opinion-structures": {
+    en: {
+      title: "Opinion and agreement",
+      summary:
+        "Frame a view, agree, or disagree and give a reason.",
+      location: "Pskov",
+    },
+    es: {
+      title: "Opinión y acuerdo",
+      summary:
+        "Enmarque una opinión, muestre acuerdo o discrepe con un motivo.",
+      location: "Pskov",
+    },
+    de: {
+      title: "Meinung und Zustimmung",
+      summary:
+        "Eine Meinung rahmen, zustimmen oder mit einem Grund widersprechen.",
+      location: "Pskow",
+    },
+  },
+  "ru-ch42-syntax-complexity": {
+    en: {
+      title: "Several subordinate clauses",
+      summary:
+        "One main clause and two subordinates, each with its own conjunction.",
+      location: "Vladimir",
+    },
+    es: {
+      title: "Varias subordinadas",
+      summary:
+        "Una principal y dos subordinadas, cada una con su conjunción.",
+      location: "Vladímir",
+    },
+    de: {
+      title: "Mehrere Nebensätze",
+      summary:
+        "Ein Hauptsatz und zwei Nebensätze, jeder mit eigener Konjunktion.",
+      location: "Wladimir",
+    },
+  },
+  "ru-ch43-written-discourse": {
+    en: {
+      title: "Paragraph cohesion",
+      summary:
+        "One microtheme per paragraph, one linker, and no third repetition.",
+      location: "Vladimir",
+    },
+    es: {
+      title: "Cohesión del párrafo",
+      summary:
+        "Una microtema por párrafo, un nexo y sin una tercera repetición.",
+      location: "Vladímir",
+    },
+    de: {
+      title: "Absatzkohäsion",
+      summary:
+        "Ein Mikrothema pro Absatz, ein Verknüpfungswort und keine dritte Wiederholung.",
+      location: "Wladimir",
+    },
+  },
+  "ru-ch44-critique-review": {
+    en: {
+      title: "Review and concession",
+      summary:
+        "A strength, a limit, and a concession that does not erase the judgment.",
+      location: "Saint Petersburg",
+    },
+    es: {
+      title: "Reseña y concesión",
+      summary:
+        "Un punto fuerte, un límite y una concesión que no borra el juicio.",
+      location: "San Petersburgo",
+    },
+    de: {
+      title: "Rezension und Einräumung",
+      summary:
+        "Eine Stärke, eine Grenze und eine Einräumung, die das Urteil nicht löscht.",
+      location: "Sankt Petersburg",
+    },
+  },
+  "ru-ch45-academic-writing": {
+    en: {
+      title: "Academic writing",
+      summary:
+        "Frames for a short paper: aim, method, border, and a conclusion.",
+      location: "Saint Petersburg",
+    },
+    es: {
+      title: "Escritura académica",
+      summary:
+        "Marcos de un trabajo breve: objetivo, método, límite y conclusión.",
+      location: "San Petersburgo",
+    },
+    de: {
+      title: "Akademisches Schreiben",
+      summary:
+        "Rahmen einer kurzen Arbeit: Ziel, Methode, Grenze und Schluss.",
+      location: "Sankt Petersburg",
+    },
+  },
 };

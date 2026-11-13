@@ -5,6 +5,8 @@ import { ENGLISH_VOCAB_GLOSS } from "@/config/courses/english/vocabulary/glosses
 import { SPANISH_VOCAB_DEFINITION } from "@/config/courses/spanish/vocabulary/definitions";
 import { SPANISH_VOCAB_GLOSS } from "@/config/courses/spanish/vocabulary/glosses";
 import { SPANISH_TOPIC_TITLES_EN } from "@/config/courses/spanish/vocabulary/topic-titles";
+import { GERMAN_VOCAB } from "@/config/courses/german/vocabulary";
+import { GERMAN_VOCAB_GLOSS } from "@/config/courses/german/vocabulary/glosses";
 import {
   RUSSIAN_EXAMPLE_TRANSLATIONS,
   RUSSIAN_VOCAB_GLOSS,
@@ -140,6 +142,21 @@ export function getWordGloss(
     if (interfaceLanguage === "en" && !hasCyrillic(word.translation)) {
       return word.translation;
     }
+    // Missing locale gloss: empty string (UI shows gap; audit catches it).
+    return "";
+  }
+
+  if (courseId === "german") {
+    const fromWord = word.translations?.[interfaceLanguage]?.trim();
+    if (fromWord) return fromWord;
+    // Gloss keys may be lemma with or without article (der tisch / tisch).
+    // RU UI already returned word.translation above.
+    const bare = key.replace(/^(der|die|das)\s+/i, "").trim();
+    const locale = interfaceLanguage as "en" | "es" | "de";
+    const fromMap =
+      GERMAN_VOCAB_GLOSS[locale]?.[key]?.trim() ??
+      GERMAN_VOCAB_GLOSS[locale]?.[bare]?.trim();
+    if (fromMap) return fromMap;
     // Missing locale gloss: empty string (UI shows gap; audit catches it).
     return "";
   }
@@ -288,6 +305,119 @@ function lookupRussianWordHint(
     hit.translation;
   if (!gloss?.trim()) return null;
   return { lemma: token, gloss: gloss.trim() };
+}
+
+type GermanHintIndex = {
+  byToken: Map<
+    string,
+    {
+      lemma: string;
+      translation?: string;
+      en?: string;
+      es?: string;
+      de?: string;
+    }
+  >;
+};
+
+let germanHintIndex: GermanHintIndex | null = null;
+
+function stripGermanArticle(lemma: string): string {
+  return lemma.replace(/^(der|die|das|den|dem|des)\s+/i, "").trim();
+}
+
+function getGermanHintIndex(): GermanHintIndex {
+  if (germanHintIndex) return germanHintIndex;
+  const byToken: GermanHintIndex["byToken"] = new Map();
+
+  const register = (
+    lemma: string,
+    glosses: {
+      translation?: string;
+      en?: string;
+      es?: string;
+      de?: string;
+    },
+  ) => {
+    const key = lemma.trim().toLowerCase();
+    if (!key) return;
+    const bare = stripGermanArticle(key);
+    const entry = {
+      lemma: key,
+      translation: glosses.translation,
+      en: glosses.en,
+      es: glosses.es,
+      de: glosses.de,
+    };
+    const prev = byToken.get(key);
+    byToken.set(key, {
+      lemma: key,
+      translation: entry.translation ?? prev?.translation,
+      en: entry.en ?? prev?.en,
+      es: entry.es ?? prev?.es,
+      de: entry.de ?? prev?.de,
+    });
+    if (bare && bare !== key) {
+      const prevBare = byToken.get(bare);
+      byToken.set(bare, {
+        lemma: key,
+        translation: entry.translation ?? prevBare?.translation,
+        en: entry.en ?? prevBare?.en,
+        es: entry.es ?? prevBare?.es,
+        de: entry.de ?? prevBare?.de,
+      });
+    }
+  };
+
+  for (const topic of GERMAN_VOCAB) {
+    for (const word of topic.words) {
+      register(word.word, {
+        translation: word.translation,
+        en: word.translations?.en,
+        es: word.translations?.es,
+        de: word.translations?.de,
+      });
+    }
+  }
+
+  for (const lang of ["en", "es", "de"] as const) {
+    const map = GERMAN_VOCAB_GLOSS[lang];
+    if (!map) continue;
+    for (const [lemma, gloss] of Object.entries(map)) {
+      register(lemma, { [lang]: gloss });
+    }
+  }
+
+  germanHintIndex = { byToken };
+  return germanHintIndex;
+}
+
+/** Hover/tap gloss for a German token in the DaF course. */
+function lookupGermanWordHint(
+  token: string,
+  interfaceLanguage: InterfaceLanguage,
+): WordHint | null {
+  if (/[\u0400-\u04FF]/.test(token)) return null;
+  if (token.length < 2) return null;
+  const index = getGermanHintIndex();
+  const hit =
+    index.byToken.get(token) ??
+    index.byToken.get(stripGermanArticle(token));
+  if (!hit) return null;
+
+  if (interfaceLanguage === "ru") {
+    const gloss = hit.translation;
+    if (!gloss?.trim()) return null;
+    return { lemma: hit.lemma, gloss: gloss.trim() };
+  }
+
+  const gloss =
+    hit[interfaceLanguage] ??
+    (interfaceLanguage === "en" ? hit.translation : undefined) ??
+    hit.en ??
+    hit.translation;
+  if (!gloss?.trim()) return null;
+  return { lemma: hit.lemma, gloss: gloss.trim() };
 }
 
 export type WordHint = {
@@ -502,6 +632,11 @@ export function lookupWordHint(
   // Russian course: hover/tap hints from RKI gloss maps + vocab topics only.
   if (courseId === "russian") {
     return lookupRussianWordHint(token, interfaceLanguage);
+  }
+
+  // German course: DaF gloss maps + vocab topics (do not fall through to Spanish).
+  if (courseId === "german") {
+    return lookupGermanWordHint(token, interfaceLanguage);
   }
 
   const course = courseId === "english" ? "english" : "spanish";

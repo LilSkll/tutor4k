@@ -1,4 +1,5 @@
 import type {
+  InterfaceLanguage,
   PartOfSpeech,
   VocabLevel,
   VocabTopic,
@@ -11,6 +12,8 @@ export type WordInput = {
   transcription: string;
   partOfSpeech: PartOfSpeech;
   translation: string;
+  /** UI glosses. Russian still falls back to `translation`. */
+  translations?: Partial<Record<InterfaceLanguage, string>>;
   examples: string[];
   commonMistakes?: string[];
   synonyms?: string[];
@@ -27,6 +30,7 @@ export function w(entry: WordInput): VocabWord {
     transcription: entry.transcription,
     partOfSpeech: entry.partOfSpeech,
     translation: entry.translation,
+    ...(entry.translations ? { translations: entry.translations } : {}),
     example: entry.examples[0],
     examples: entry.examples,
     commonMistakes: entry.commonMistakes,

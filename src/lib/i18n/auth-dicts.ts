@@ -81,6 +81,37 @@ const ru: Dictionary = {
   "legal.cookieAccept": "Понятно",
   "auth.emailConfirmed": "Почта подтверждена — вы уже в системе. Можно заниматься.",
   "auth.emailConfirmedTeacher": "Почта подтверждена — вы уже в Teacher Studio.",
+  "auth.error.genericMail":
+    "Не удалось отправить письмо. Проверьте в Supabase: Custom SMTP и Redirect URLs (должен быть …/auth/callback).",
+  "auth.error.smtp500":
+    "Сервер почты не смог отправить письмо (ошибка 500). В Supabase → Authentication → Emails → SMTP Settings проверьте Custom SMTP: хост, порт (465 или 587) и пароль приложения. Если SMTP только что включали — временно выключите его и попробуйте снова, либо исправьте настройки.",
+  "auth.error.emailNotAuthorized":
+    "Supabase пока шлёт письма только участникам команды. Подключите рабочий Custom SMTP — тогда сброс заработает для учеников.",
+  "auth.error.redirectNotAllowed":
+    "Redirect URL не разрешён. В Supabase → Authentication → URL Configuration добавьте callback и recovery для https://spanishwithpavel.com и https://spanishwithpavel.vercel.app.",
+  "auth.error.smtp":
+    "Ошибка почтового сервера (SMTP). Проверьте логин, пароль приложения и порт в Custom SMTP.",
+  "auth.error.emailRateLimit":
+    "Сервер отправил слишком много писем за час. Подожди 15–30 минут и попробуй снова.",
+  "auth.error.rateLimit":
+    "Слишком много попыток за короткое время. Подожди пару минут и попробуй снова.",
+  "auth.error.alreadyRegistered":
+    "Аккаунт с таким email уже существует. Попробуй войти вместо регистрации.",
+  "auth.error.alreadyRegisteredAlt":
+    "Пользователь с таким email уже зарегистрирован. Войди через страницу входа.",
+  "auth.error.invalidCredentials":
+    "Неверный email или пароль. Если только что сбрасывали пароль — введите НОВЫЙ (автозаполнение на .com часто подставляет старый). Аккаунт один для .com и vercel.app.",
+  "auth.error.emailNotConfirmed":
+    "Email ещё не подтверждён. Проверь почту (включая папку «Спам»).",
+  "auth.error.weakPassword":
+    "Пароль слишком простой. Используй минимум 6 символов.",
+  "auth.error.shortPassword":
+    "Пароль слишком короткий. Минимум 6 символов.",
+  "auth.error.samePassword": "Новый пароль должен отличаться от текущего.",
+  "auth.error.expiredToken":
+    "Ссылка для сброса устарела или уже использована. Запроси новую.",
+  "auth.error.emailPasswordRequired": "Укажи email и пароль.",
+  "auth.error.unknown": "Не удалось выполнить действие. Попробуй ещё раз.",
   "common.close": "Закрыть",
 };
 
@@ -162,6 +193,37 @@ const en: Dictionary = {
   "auth.backToLoginShort": "Back to sign in",
   "auth.emailConfirmed": "Email confirmed — you’re signed in. You can start studying.",
   "auth.emailConfirmedTeacher": "Email confirmed — you’re in Teacher Studio.",
+  "auth.error.genericMail":
+    "Could not send the email. Check Supabase: Custom SMTP and Redirect URLs (must include …/auth/callback).",
+  "auth.error.smtp500":
+    "The mail server could not send the message (500). In Supabase → Authentication → Emails → SMTP Settings, check Custom SMTP: host, port (465 or 587), and app password. If you just enabled SMTP — turn it off temporarily or fix the settings.",
+  "auth.error.emailNotAuthorized":
+    "Supabase currently sends mail only to team members. Connect a working Custom SMTP so password reset works for students.",
+  "auth.error.redirectNotAllowed":
+    "Redirect URL is not allowed. In Supabase → Authentication → URL Configuration add callback and recovery for https://spanishwithpavel.com and https://spanishwithpavel.vercel.app.",
+  "auth.error.smtp":
+    "Mail server (SMTP) error. Check login, app password, and port in Custom SMTP.",
+  "auth.error.emailRateLimit":
+    "Too many emails were sent this hour. Wait 15–30 minutes and try again.",
+  "auth.error.rateLimit":
+    "Too many attempts in a short time. Wait a couple of minutes and try again.",
+  "auth.error.alreadyRegistered":
+    "An account with this email already exists. Try signing in instead.",
+  "auth.error.alreadyRegisteredAlt":
+    "A user with this email is already registered. Sign in on the login page.",
+  "auth.error.invalidCredentials":
+    "Wrong email or password. If you just reset your password — enter the NEW one (.com autofill often offers the old one). One account works for .com and vercel.app.",
+  "auth.error.emailNotConfirmed":
+    "Email is not confirmed yet. Check your inbox (including Spam).",
+  "auth.error.weakPassword":
+    "Password is too weak. Use at least 6 characters.",
+  "auth.error.shortPassword":
+    "Password is too short. Minimum 6 characters.",
+  "auth.error.samePassword": "The new password must differ from the current one.",
+  "auth.error.expiredToken":
+    "The reset link expired or was already used. Request a new one.",
+  "auth.error.emailPasswordRequired": "Enter email and password.",
+  "auth.error.unknown": "Something went wrong. Please try again.",
   "common.close": "Close",
   "legal.cookieTitle": "We use cookies",
   "legal.cookieBody": "Essential cookies are required to keep you signed in. Page views and performance are measured with cookieless Vercel Analytics (aggregated, no ads). Read our",
@@ -247,6 +309,37 @@ const es: Dictionary = {
   "auth.backToLoginShort": "Volver al inicio de sesión",
   "auth.emailConfirmed": "Correo confirmado — ya estás dentro. Puedes empezar a estudiar.",
   "auth.emailConfirmedTeacher": "Correo confirmado — ya estás en Teacher Studio.",
+  "auth.error.genericMail":
+    "No se pudo enviar el correo. Revisa en Supabase: Custom SMTP y Redirect URLs (debe incluir …/auth/callback).",
+  "auth.error.smtp500":
+    "El servidor de correo no pudo enviar el mensaje (500). En Supabase → Authentication → Emails → SMTP Settings revisa Custom SMTP: host, puerto (465 o 587) y contraseña de aplicación. Si acabas de activar SMTP — desactívalo temporalmente o corrige la configuración.",
+  "auth.error.emailNotAuthorized":
+    "Supabase por ahora solo envía correos a miembros del equipo. Conecta un Custom SMTP válido para que el restablecimiento funcione para alumnos.",
+  "auth.error.redirectNotAllowed":
+    "Redirect URL no permitido. En Supabase → Authentication → URL Configuration añade callback y recovery para https://spanishwithpavel.com y https://spanishwithpavel.vercel.app.",
+  "auth.error.smtp":
+    "Error del servidor de correo (SMTP). Revisa usuario, contraseña de aplicación y puerto en Custom SMTP.",
+  "auth.error.emailRateLimit":
+    "Se enviaron demasiados correos en esta hora. Espera 15–30 minutos e inténtalo de nuevo.",
+  "auth.error.rateLimit":
+    "Demasiados intentos en poco tiempo. Espera un par de minutos e inténtalo de nuevo.",
+  "auth.error.alreadyRegistered":
+    "Ya existe una cuenta con este email. Prueba iniciar sesión.",
+  "auth.error.alreadyRegisteredAlt":
+    "Un usuario con este email ya está registrado. Entra desde la página de inicio de sesión.",
+  "auth.error.invalidCredentials":
+    "Email o contraseña incorrectos. Si acabas de restablecer la contraseña — introduce la NUEVA (el autocompletado en .com suele ofrecer la antigua). La misma cuenta sirve para .com y vercel.app.",
+  "auth.error.emailNotConfirmed":
+    "El email aún no está confirmado. Revisa el correo (incluida la carpeta Spam).",
+  "auth.error.weakPassword":
+    "La contraseña es demasiado débil. Usa al menos 6 caracteres.",
+  "auth.error.shortPassword":
+    "La contraseña es demasiado corta. Mínimo 6 caracteres.",
+  "auth.error.samePassword": "La nueva contraseña debe ser distinta de la actual.",
+  "auth.error.expiredToken":
+    "El enlace de restablecimiento caducó o ya se usó. Solicita uno nuevo.",
+  "auth.error.emailPasswordRequired": "Indica email y contraseña.",
+  "auth.error.unknown": "No se pudo completar la acción. Inténtalo de nuevo.",
   "common.close": "Cerrar",
   "legal.cookieTitle": "Usamos cookies",
   "legal.cookieBody": "Las cookies esenciales son necesarias para iniciar sesión. Las visitas y el rendimiento se miden con Vercel Analytics sin cookies (datos agregados, sin publicidad). Consulta la",
@@ -349,6 +442,37 @@ const de: Dictionary = {
   "auth.backToLoginShort": "Zur Anmeldung",
   "auth.emailConfirmed": "E-Mail bestätigt — du bist angemeldet. Du kannst loslernen.",
   "auth.emailConfirmedTeacher": "E-Mail bestätigt — du bist im Teacher Studio.",
+  "auth.error.genericMail":
+    "E-Mail konnte nicht gesendet werden. In Supabase prüfen: Custom SMTP und Redirect URLs (muss …/auth/callback enthalten).",
+  "auth.error.smtp500":
+    "Der Mailserver konnte die Nachricht nicht senden (500). In Supabase → Authentication → Emails → SMTP Settings Custom SMTP prüfen: Host, Port (465 oder 587) und App-Passwort. Wenn SMTP gerade aktiviert wurde — vorübergehend deaktivieren oder Einstellungen korrigieren.",
+  "auth.error.emailNotAuthorized":
+    "Supabase sendet derzeit nur an Teammitglieder. Verbinde ein funktionierendes Custom SMTP, damit Passwort-Reset für Lernende funktioniert.",
+  "auth.error.redirectNotAllowed":
+    "Redirect URL nicht erlaubt. In Supabase → Authentication → URL Configuration Callback und Recovery für https://spanishwithpavel.com und https://spanishwithpavel.vercel.app hinzufügen.",
+  "auth.error.smtp":
+    "Fehler beim Mailserver (SMTP). Login, App-Passwort und Port in Custom SMTP prüfen.",
+  "auth.error.emailRateLimit":
+    "Zu viele E-Mails in dieser Stunde. 15–30 Minuten warten und erneut versuchen.",
+  "auth.error.rateLimit":
+    "Zu viele Versuche in kurzer Zeit. Ein paar Minuten warten und erneut versuchen.",
+  "auth.error.alreadyRegistered":
+    "Ein Konto mit dieser E-Mail existiert bereits. Bitte anmelden statt registrieren.",
+  "auth.error.alreadyRegisteredAlt":
+    "Ein Nutzer mit dieser E-Mail ist bereits registriert. Über die Anmeldeseite einloggen.",
+  "auth.error.invalidCredentials":
+    "Falsche E-Mail oder Passwort. Wenn du das Passwort gerade zurückgesetzt hast — das NEUE eingeben (.com-Autofill bietet oft das alte an). Ein Konto gilt für .com und vercel.app.",
+  "auth.error.emailNotConfirmed":
+    "E-Mail noch nicht bestätigt. Posteingang prüfen (auch Spam).",
+  "auth.error.weakPassword":
+    "Passwort zu schwach. Mindestens 6 Zeichen verwenden.",
+  "auth.error.shortPassword":
+    "Passwort zu kurz. Mindestens 6 Zeichen.",
+  "auth.error.samePassword": "Das neue Passwort muss sich vom aktuellen unterscheiden.",
+  "auth.error.expiredToken":
+    "Der Reset-Link ist abgelaufen oder wurde bereits verwendet. Neuen anfordern.",
+  "auth.error.emailPasswordRequired": "E-Mail und Passwort angeben.",
+  "auth.error.unknown": "Aktion fehlgeschlagen. Bitte erneut versuchen.",
   "common.close": "Schließen",
   "legal.cookieTitle": "Wir verwenden Cookies",
   "legal.cookieBody":

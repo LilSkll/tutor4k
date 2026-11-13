@@ -27,7 +27,7 @@ export function TeacherSchoolClient() {
   const [loading, setLoading] = React.useState(true);
   const [schoolName, setSchoolName] = React.useState("");
   const [groupName, setGroupName] = React.useState("");
-  const [groupCourse, setGroupCourse] = React.useState<"spanish" | "english" | "russian">(
+  const [groupCourse, setGroupCourse] = React.useState<"spanish" | "english" | "russian" | "german">(
     "spanish",
   );
   const [memberEmail, setMemberEmail] = React.useState("");
@@ -291,13 +291,14 @@ export function TeacherSchoolClient() {
                 value={groupCourse}
                 onChange={(e) =>
                   setGroupCourse(
-                    e.target.value as "spanish" | "english" | "russian",
+                    e.target.value as "spanish" | "english" | "russian" | "german",
                   )
                 }
               >
                 <option value="spanish">{getCourseTitle("spanish")}</option>
                 <option value="english">{getCourseTitle("english")}</option>
                 <option value="russian">{getCourseTitle("russian")}</option>
+                <option value="german">{getCourseTitle("german")}</option>
               </select>
               <Button onClick={() => void createGroup()} disabled={busy}>
                 <Plus className="h-4 w-4" />

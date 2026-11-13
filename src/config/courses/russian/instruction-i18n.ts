@@ -3885,6 +3885,606 @@ export const RUSSIAN_INSTRUCTION_I18N: Record<
     es: "La partícula de duda en una pregunta",
     de: "Die Partikel des Zweifels in einer Frage",
   },
+  "Выберите можно или нельзя": {
+    en: "Choose можно or нельзя",
+    es: "Elige можно o нельзя",
+    de: "Wähle можно oder нельзя",
+  },
+  "Выберите слово разрешения": {
+    en: "Choose the word for permission",
+    es: "Elige la palabra de permiso",
+    de: "Wähle das Wort für Erlaubnis",
+  },
+  "Выберите готовую фразу": {
+    en: "Choose the ready-made phrase",
+    es: "Elige la frase hecha",
+    de: "Wähle die fertige Wendung",
+  },
+  "Запрет: нельзя": {
+    en: "A ban: нельзя",
+    es: "Prohibición: нельзя",
+    de: "Verbot: нельзя",
+  },
+  "Вежливая просьба от «записать»": {
+    en: "Polite request from «записать»",
+    es: "Petición cortés de «записать»",
+    de: "Höfliche Bitte von «записать»",
+  },
+  "Вежливая команда от «открыть»": {
+    en: "Polite command from «открыть»",
+    es: "Orden cortés de «открыть»",
+    de: "Höfliche Aufforderung von «открыть»",
+  },
+  "Наречие: не быстро": {
+    en: "Adverb: not fast",
+    es: "Adverbio: no rápido",
+    de: "Adverb: nicht schnell",
+  },
+  "Исправьте модальное слово": {
+    en: "Fix the modal word",
+    es: "Corrige la palabra modal",
+    de: "Korrigiere das Modalwort",
+  },
+  "Исправьте обращение на вы": {
+    en: "Fix the address: use вы",
+    es: "Corrige el trato: usa вы",
+    de: "Korrigiere die Anrede: вы",
+  },
+  "Исправьте язык вопроса о русском слове": {
+    en: "Fix the language of the question about a Russian word",
+    es: "Corrige el idioma de la pregunta sobre una palabra rusa",
+    de: "Korrigiere die Sprache der Frage nach einem russischen Wort",
+  },
+  "Соберите команду на вы": {
+    en: "Build a command in the вы form",
+    es: "Forma una orden en вы",
+    de: "Bilde eine Aufforderung in der вы-Form",
+  },
+  "Выберите вежливую форму, о мужчине": {
+    en: "Choose the polite form, a man speaking",
+    es: "Elige la forma cortés, habla un hombre",
+    de: "Wähle die höfliche Form, ein Mann spricht",
+  },
+  "Выберите вежливый отказ": {
+    en: "Choose the polite refusal",
+    es: "Elige el rechazo cortés",
+    de: "Wähle die höfliche Absage",
+  },
+  "Выберите вопрос": {
+    en: "Choose the question",
+    es: "Elige la pregunta",
+    de: "Wähle die Frage",
+  },
+  "Выберите согласие": {
+    en: "Choose the acceptance",
+    es: "Elige la aceptación",
+    de: "Wähle die Zusage",
+  },
+  "Инфинитив: записаться": {
+    en: "Infinitive: записаться",
+    es: "Infinitivo: записаться",
+    de: "Infinitiv: записаться",
+  },
+  "Совершенный вид: перенести": {
+    en: "Perfective: перенести",
+    es: "Aspecto perfectivo: перенести",
+    de: "Perfektiv: перенести",
+  },
+  "Краткое: неудобно": {
+    en: "Short form: неудобно",
+    es: "Forma breve: неудобно",
+    de: "Kurzform: неудобно",
+  },
+  "Вежливая просьба от «перезвонить»": {
+    en: "Polite request from «перезвонить»",
+    es: "Petición cortés de «перезвонить»",
+    de: "Höfliche Bitte von «перезвонить»",
+  },
+  "Исправьте местоимение в приглашении преподавателю": {
+    en: "Fix the pronoun in the invitation to the lecturer",
+    es: "Corrige el pronombre en la invitación al profesor",
+    de: "Korrigiere das Pronomen in der Einladung an die Lehrperson",
+  },
+  "Исправьте отказ: нужна вежливая рамка": {
+    en: "Fix the refusal: it needs a polite frame",
+    es: "Corrige la negativa: hace falta un marco cortés",
+    de: "Korrigiere die Absage: ein höflicher Rahmen fehlt",
+  },
+  "Исправьте форму на вы": {
+    en: "Fix the form: use вы",
+    es: "Corrige la forma: usa вы",
+    de: "Korrigiere die Form: вы",
+  },
+  "Соберите фразу Омара": {
+    en: "Build Omar's line",
+    es: "Forma la frase de Omar",
+    de: "Bilde Omars Satz",
+  },
+  "Соберите отказ": {
+    en: "Build the refusal",
+    es: "Forma la negativa",
+    de: "Bilde die Absage",
+  },
+  "Выберите управление «зависеть»": {
+    en: "Choose the government of «зависеть»",
+    es: "Elige el régimen de «зависеть»",
+    de: "Wähle die Rektion von «зависеть»",
+  },
+  "Выберите падеж после «гордиться»": {
+    en: "Choose the case after «гордиться»",
+    es: "Elige el caso tras «гордиться»",
+    de: "Wähle den Kasus nach «гордиться»",
+  },
+  "Выберите управление «готовиться»": {
+    en: "Choose the government of «готовиться»",
+    es: "Elige el régimen de «готовиться»",
+    de: "Wähle die Rektion von «готовиться»",
+  },
+  "Выберите управление «надеяться»": {
+    en: "Choose the government of «надеяться»",
+    es: "Elige el régimen de «надеяться»",
+    de: "Wähle die Rektion von «надеяться»",
+  },
+  "Родительный от «успех»": {
+    en: "Genitive of «успех»",
+    es: "Genitivo de «успех»",
+    de: "Genitiv von «успех»",
+  },
+  "Родительный множественного от «ошибка»": {
+    en: "Genitive plural of «ошибка»",
+    es: "Genitivo plural de «ошибка»",
+    de: "Genitiv Plural von «ошибка»",
+  },
+  "Дательный от «сосед»": {
+    en: "Dative of «сосед»",
+    es: "Dativo de «сосед»",
+    de: "Dativ von «сосед»",
+  },
+  "Предлог от и родительный от «тема»": {
+    en: "Preposition от plus genitive of «тема»",
+    es: "Preposición от y genitivo de «тема»",
+    de: "Präposition от und Genitiv von «тема»",
+  },
+  "Исправьте падеж после «гордиться»": {
+    en: "Fix the case after «гордиться»",
+    es: "Corrige el caso tras «гордиться»",
+    de: "Korrigiere den Kasus nach «гордиться»",
+  },
+  "Исправьте управление «надеяться»": {
+    en: "Fix the government of «надеяться»",
+    es: "Corrige el régimen de «надеяться»",
+    de: "Korrigiere die Rektion von «надеяться»",
+  },
+  "Исправьте управление «готовиться»": {
+    en: "Fix the government of «готовиться»",
+    es: "Corrige el régimen de «готовиться»",
+    de: "Korrigiere die Rektion von «готовиться»",
+  },
+  "Исправьте падеж после «пользоваться»": {
+    en: "Fix the case after «пользоваться»",
+    es: "Corrige el caso tras «пользоваться»",
+    de: "Korrigiere den Kasus nach «пользоваться»",
+  },
+  "Выберите причастие": {
+    en: "Choose the participle",
+    es: "Elige el participio",
+    de: "Wähle das Partizip",
+  },
+  "Выберите страдательное причастие": {
+    en: "Choose the passive participle",
+    es: "Elige el participio pasivo",
+    de: "Wähle das Passivpartizip",
+  },
+  "Выберите средство": {
+    en: "Choose the device",
+    es: "Elige el recurso",
+    de: "Wähle das Mittel",
+  },
+  "Винительный от «который», мужской род": {
+    en: "Accusative of «который», masculine",
+    es: "Acusativo de «который», masculino",
+    de: "Akkusativ von «который», Maskulinum",
+  },
+  "Действительное причастие от «описывать», мужской род": {
+    en: "Active participle of «описывать», masculine",
+    es: "Participio activo de «описывать», masculino",
+    de: "Aktivpartizip von «описывать», Maskulinum",
+  },
+  "Страдательное причастие от «описать»": {
+    en: "Passive participle of «описать»",
+    es: "Participio pasivo de «описать»",
+    de: "Passivpartizip von «описать»",
+  },
+  "Винительный, женский род, от «который»": {
+    en: "Accusative feminine of «который»",
+    es: "Acusativo femenino de «который»",
+    de: "Akkusativ Femininum von «который»",
+  },
+  "Переведите на русский с «который»": {
+    en: "Translate into Russian with «который»",
+    es: "Traduce al ruso con «который»",
+    de: "Übersetze ins Russische mit «который»",
+  },
+  "Переведите коротким оборотом": {
+    en: "Translate with a short participial phrase",
+    es: "Traduce con un giro breve",
+    de: "Übersetze mit einer kurzen Partizipialgruppe",
+  },
+  "Переведите со страдательным причастием": {
+    en: "Translate with a passive participle",
+    es: "Traduce con un participio pasivo",
+    de: "Übersetze mit einem Passivpartizip",
+  },
+  "Переведите с «который»": {
+    en: "Translate with «который»",
+    es: "Traduce con «который»",
+    de: "Übersetze mit «который»",
+  },
+  "Исправьте причастие: студент сам читает": {
+    en: "Fix the participle: the student himself is reading",
+    es: "Corrige el participio: el estudiante lee él mismo",
+    de: "Korrigiere das Partizip: der Student liest selbst",
+  },
+  "Исправьте: оборот с зависимым словом после существительного": {
+    en: "Fix it: the phrase with a dependent word goes after the noun",
+    es: "Corrige: el giro con palabra dependiente va tras el sustantivo",
+    de: "Korrigiere: die Gruppe mit abhängigem Wort steht nach dem Substantiv",
+  },
+  "Соберите определение": {
+    en: "Build the modifier",
+    es: "Forma el modificador",
+    de: "Bilde die Bestimmung",
+  },
+  "Соберите короткий оборот": {
+    en: "Build the short phrase",
+    es: "Forma el giro breve",
+    de: "Bilde die kurze Gruppe",
+  },
+  "Выберите рамку": {
+    en: "Choose the frame",
+    es: "Elige el marco",
+    de: "Wähle den Rahmen",
+  },
+  "Выберите форму": {
+    en: "Choose the form",
+    es: "Elige la forma",
+    de: "Wähle die Form",
+  },
+  "Выберите реплику": {
+    en: "Choose the line",
+    es: "Elige la réplica",
+    de: "Wähle die Replik",
+  },
+  "Предлог рамки «на мой взгляд»": {
+    en: "The preposition in the frame «на мой взгляд»",
+    es: "La preposición del marco «на мой взгляд»",
+    de: "Die Präposition im Rahmen «на мой взгляд»",
+  },
+  "Мужской род, согласие": {
+    en: "Masculine, agreement",
+    es: "Masculino, concordancia",
+    de: "Maskulinum, Kongruenz",
+  },
+  "Женский род": {
+    en: "Feminine",
+    es: "Femenino",
+    de: "Femininum",
+  },
+  "Предлог второй половины": {
+    en: "The preposition of the second half",
+    es: "La preposición de la segunda parte",
+    de: "Die Präposition der zweiten Hälfte",
+  },
+  "Исправьте управление": {
+    en: "Fix the government",
+    es: "Corrige el régimen",
+    de: "Korrigiere die Rektion",
+  },
+  "Исправьте рамку: после «мне кажется» нужно «что», если дальше придаточное": {
+    en: "Fix the frame: after «мне кажется» use «что» if a clause follows",
+    es: "Corrige el marco: tras «мне кажется» va «что» si sigue una subordinada",
+    de: "Korrigiere den Rahmen: nach «мне кажется» steht «что», wenn ein Nebensatz folgt",
+  },
+  "Добавьте причину, реплика оборвана": {
+    en: "Add the reason; the line is cut off",
+    es: "Añade la causa; la réplica está cortada",
+    de: "Ergänze den Grund; die Replik bricht ab",
+  },
+  "Соберите реплику": {
+    en: "Build the line",
+    es: "Forma la réplica",
+    de: "Bilde die Replik",
+  },
+  "Соберите фразу Анны": {
+    en: "Build Anna's line",
+    es: "Forma la frase de Anna",
+    de: "Bilde Annas Satz",
+  },
+  "Выберите знак": {
+    en: "Choose the punctuation mark",
+    es: "Elige el signo",
+    de: "Wähle das Satzzeichen",
+  },
+  "Выберите цельную фразу": {
+    en: "Choose the sentence that holds together",
+    es: "Elige la frase cohesionada",
+    de: "Wähle den zusammenhängenden Satz",
+  },
+  "Выберите тяжёлую фразу": {
+    en: "Choose the overloaded sentence",
+    es: "Elige la frase sobrecargada",
+    de: "Wähle den überladenen Satz",
+  },
+  "Союз условия": {
+    en: "The conjunction of condition",
+    es: "La conjunción de condición",
+    de: "Die Konjunktion der Bedingung",
+  },
+  "Союз цели из трёх слов": {
+    en: "The purpose conjunction, three words",
+    es: "La conjunción de finalidad, tres palabras",
+    de: "Die Finalkonjunktion, drei Wörter",
+  },
+  "Начало союза «после того как»": {
+    en: "The start of the conjunction «после того как»",
+    es: "El inicio de la conjunción «после того как»",
+    de: "Der Anfang der Konjunktion «после того как»",
+  },
+  "Следствие: так что": {
+    en: "Result: так что",
+    es: "Consecuencia: так что",
+    de: "Folge: так что",
+  },
+  "Исправьте союзы причины и уступки": {
+    en: "Fix the conjunctions of cause and concession",
+    es: "Corrige las conjunciones de causa y concesión",
+    de: "Korrigiere die Konjunktionen von Grund und Einräumung",
+  },
+  "Замените второе «что» на «который» нельзя без существительного; разведите смысл": {
+    en: "Do not replace the second «что» with «который» without a noun; separate the meanings",
+    es: "No sustituyas el segundo «что» por «который» sin sustantivo; separa los sentidos",
+    de: "Ersetze das zweite «что» nicht durch «который» ohne Substantiv; trenne die Bedeutungen",
+  },
+  "Исправьте союз цели": {
+    en: "Fix the purpose conjunction",
+    es: "Corrige la conjunción de finalidad",
+    de: "Korrigiere die Finalkonjunktion",
+  },
+  "Исправьте союз условия": {
+    en: "Fix the condition conjunction",
+    es: "Corrige la conjunción de condición",
+    de: "Korrigiere die Konditionalkonjunktion",
+  },
+  "Соберите цель": {
+    en: "Build the purpose clause",
+    es: "Forma la finalidad",
+    de: "Bilde den Finalsatz",
+  },
+  "Соберите условие": {
+    en: "Build the condition",
+    es: "Forma la condición",
+    de: "Bilde die Bedingung",
+  },
+  "Соберите следствие": {
+    en: "Build the result clause",
+    es: "Forma la consecuencia",
+    de: "Bilde die Folge",
+  },
+  "Выберите шаг": {
+    en: "Choose the step",
+    es: "Elige el paso",
+    de: "Wähle den Schritt",
+  },
+  "Выберите связку": {
+    en: "Choose the linker",
+    es: "Elige el nexo",
+    de: "Wähle die Verknüpfung",
+  },
+  "Выберите причину": {
+    en: "Choose the reason",
+    es: "Elige la causa",
+    de: "Wähle den Grund",
+  },
+  "Одно слово: микротема": {
+    en: "One word: the micro-topic",
+    es: "Una palabra: el microtema",
+    de: "Ein Wort: das Mikrothema",
+  },
+  "Местоимение вместо повтора «текст»": {
+    en: "A pronoun instead of repeating «текст»",
+    es: "Un pronombre en vez de repetir «текст»",
+    de: "Ein Pronomen statt «текст» zu wiederholen",
+  },
+  "Связка противопоставления": {
+    en: "The linker of contrast",
+    es: "El nexo de contraste",
+    de: "Die Verknüpfung des Gegensatzes",
+  },
+  "Связка примера": {
+    en: "The linker of an example",
+    es: "El nexo de ejemplo",
+    de: "Die Verknüpfung eines Beispiels",
+  },
+  "Переведите тематическое предложение": {
+    en: "Translate the topic sentence",
+    es: "Traduce la oración temática",
+    de: "Übersetze den Themasatz",
+  },
+  "Верните подлежащее": {
+    en: "Put the subject back",
+    es: "Devuelve el sujeto",
+    de: "Setze das Subjekt wieder ein",
+  },
+  "Исправьте порядок: сначала материал, потом вывод": {
+    en: "Fix the order: material first, then the conclusion",
+    es: "Corrige el orden: primero el material, luego la conclusión",
+    de: "Korrigiere die Reihenfolge: zuerst der Stoff, dann die Folgerung",
+  },
+  "Уберите избыточный повтор": {
+    en: "Remove the redundant repetition",
+    es: "Quita la repetición sobrante",
+    de: "Streiche die überflüssige Wiederholung",
+  },
+  "Оставьте одну связку и содержание": {
+    en: "Keep one linker and the content",
+    es: "Deja un nexo y el contenido",
+    de: "Lass eine Verknüpfung und den Inhalt",
+  },
+  "Соберите тематическое предложение": {
+    en: "Build the topic sentence",
+    es: "Forma la oración temática",
+    de: "Bilde den Themasatz",
+  },
+  "Соберите добавление": {
+    en: "Build the addition",
+    es: "Forma el añadido",
+    de: "Bilde die Ergänzung",
+  },
+  "Соберите закрытие": {
+    en: "Build the closing",
+    es: "Forma el cierre",
+    de: "Bilde den Schluss",
+  },
+  "Выберите функцию": {
+    en: "Choose the function",
+    es: "Elige la función",
+    de: "Wähle die Funktion",
+  },
+  "Выберите смысл": {
+    en: "Choose the meaning",
+    es: "Elige el sentido",
+    de: "Wähle die Bedeutung",
+  },
+  "Выберите слабую фразу": {
+    en: "Choose the weak sentence",
+    es: "Elige la frase débil",
+    de: "Wähle den schwachen Satz",
+  },
+  "Наречие оценки: убедительно": {
+    en: "Evaluative adverb: убедительно",
+    es: "Adverbio de valoración: убедительно",
+    de: "Bewertungsadverb: убедительно",
+  },
+  "Наречие предела: недостаточно": {
+    en: "Adverb of limit: недостаточно",
+    es: "Adverbio de límite: недостаточно",
+    de: "Adverb der Grenze: недостаточно",
+  },
+  "Безличная рамка из двух слов, первое «следует»": {
+    en: "Impersonal frame of two words, the first is «следует»",
+    es: "Marco impersonal de dos palabras, la primera es «следует»",
+    de: "Unpersönlicher Rahmen aus zwei Wörtern, das erste ist «следует»",
+  },
+  "Родительный от «внимание»": {
+    en: "Genitive of «внимание»",
+    es: "Genitivo de «внимание»",
+    de: "Genitiv von «внимание»",
+  },
+  "Разведите сильную сторону и предел": {
+    en: "Separate the strength and the limit",
+    es: "Separa el punto fuerte y el límite",
+    de: "Trenne die Stärke und die Grenze",
+  },
+  "Уберите противоречивую уступку": {
+    en: "Remove the contradictory concession",
+    es: "Quita la concesión contradictoria",
+    de: "Streiche die widersprüchliche Einräumung",
+  },
+  "Добавьте, что именно смотреть": {
+    en: "Add what exactly to look at",
+    es: "Añade qué hay que mirar exactamente",
+    de: "Ergänze, worauf genau zu achten ist",
+  },
+  "Исправьте род: рецензент говорит о себе": {
+    en: "Fix the gender: the reviewer is speaking about herself",
+    es: "Corrige el género: la reseñista habla de sí misma",
+    de: "Korrigiere das Genus: die Rezensentin spricht von sich",
+  },
+  "Соберите уступку": {
+    en: "Build the concession",
+    es: "Forma la concesión",
+    de: "Bilde die Einräumung",
+  },
+  "Соберите оценку": {
+    en: "Build the evaluation",
+    es: "Forma la valoración",
+    de: "Bilde die Bewertung",
+  },
+  "Соберите рамку": {
+    en: "Build the frame",
+    es: "Forma el marco",
+    de: "Bilde den Rahmen",
+  },
+  "Выберите содержание рамки": {
+    en: "Choose what the frame says",
+    es: "Elige el contenido del marco",
+    de: "Wähle den Inhalt des Rahmens",
+  },
+  "Выберите условие": {
+    en: "Choose the condition",
+    es: "Elige la condición",
+    de: "Wähle die Bedingung",
+  },
+  "Именительный: цель": {
+    en: "Nominative: цель",
+    es: "Nominativo: цель",
+    de: "Nominativ: цель",
+  },
+  "Рамка границы из двух слов, первое «в»": {
+    en: "A two-word limit frame, the first word is «в»",
+    es: "Marco de límite de dos palabras, la primera es «в»",
+    de: "Rahmen der Grenze aus zwei Wörtern, das erste ist «в»",
+  },
+  "Рамка опоры: на основании": {
+    en: "Support frame: на основании",
+    es: "Marco de apoyo: на основании",
+    de: "Stützrahmen: на основании",
+  },
+  "Безличное «следует»": {
+    en: "Impersonal «следует»",
+    es: "Forma impersonal: «следует»",
+    de: "Unpersönliches «следует»",
+  },
+  "Замените пустые прилагательные действием": {
+    en: "Replace empty adjectives with an action",
+    es: "Sustituye adjetivos vacíos por una acción",
+    de: "Ersetze leere Adjektive durch eine Handlung",
+  },
+  "Исправьте место связки: это не зачин": {
+    en: "Fix where the linker sits: it is not the opening",
+    es: "Corrige el lugar del nexo: no es el inicio",
+    de: "Korrigiere die Stelle der Verknüpfung: sie ist kein Auftakt",
+  },
+  "Разведите два разных довода": {
+    en: "Separate two different arguments",
+    es: "Separa dos argumentos distintos",
+    de: "Trenne zwei verschiedene Argumente",
+  },
+  "Либо назовите новизну, либо снимите шаг": {
+    en: "Either name what is new, or drop that step",
+    es: "O nombras la novedad, o quitas ese paso",
+    de: "Nenne entweder das Neue oder streiche den Schritt",
+  },
+  "Соберите рамку цели": {
+    en: "Build the purpose frame",
+    es: "Forma el marco de la finalidad",
+    de: "Bilde den Rahmen des Ziels",
+  },
+  "Соберите границу": {
+    en: "Build the limit",
+    es: "Forma el límite",
+    de: "Bilde die Grenze",
+  },
+  "Соберите опору": {
+    en: "Build the support",
+    es: "Forma el apoyo",
+    de: "Bilde die Stütze",
+  },
+  "Соберите вывод": {
+    en: "Build the conclusion",
+    es: "Forma la conclusión",
+    de: "Bilde die Folgerung",
+  },
 };
 
 export function lookupRussianInstruction(

@@ -1015,6 +1015,16 @@ async function recordExerciseProfileUpdate(input: {
       );
       mistakeNote = `[${cat}] ${mistakeNote}`.slice(0, 80);
     }
+    if (!input.correct && input.courseId === "german") {
+      const { germanErrorCategoryFromTopics } = await import(
+        "@/lib/german-error-categories"
+      );
+      const cat = germanErrorCategoryFromTopics(
+        topics.grammarTopic,
+        topics.vocabTopic,
+      );
+      mistakeNote = `[${cat}] ${mistakeNote}`.slice(0, 80);
+    }
     await updateStudentLearningProfile({
       courseId: input.courseId,
       grammarTopic: topics.grammarTopic,

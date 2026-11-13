@@ -29,6 +29,10 @@ interface CourseItem {
   contentReady: boolean;
   /** Soft launch — show Beta badge (selectable, not Coming soon). */
   beta?: boolean;
+  /** Pedagogical readiness — independent of contentReady. */
+  pedagogyStatus?: "approved" | "beta" | "watch";
+  /** CEFR bands under methodological Watch. */
+  pedagogyWatchBands?: string[];
 }
 
 export function LanguageSelector({
@@ -127,13 +131,15 @@ export function LanguageSelector({
                     </div>
                   </div>
                   <div className="flex shrink-0 flex-col items-end gap-1">
-                    {course.beta ? (
+                    {course.beta ||
+                    course.pedagogyStatus === "beta" ||
+                    course.pedagogyStatus === "watch" ? (
                       <Badge
                         variant="secondary"
                         className="shrink-0"
-                        title={t("courses.betaHint")}
+                        title={courseStatusHint(course, t)}
                       >
-                        {t("courses.beta")}
+                        {t("courses.new")}
                       </Badge>
                     ) : null}
                     {course.isActive ? (
@@ -148,9 +154,12 @@ export function LanguageSelector({
                 <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
                   {t(`course.${course.id}.desc`) || course.description}
                 </p>
-                {course.beta && course.contentReady ? (
+                {course.contentReady &&
+                (course.beta ||
+                  course.pedagogyStatus === "beta" ||
+                  course.pedagogyStatus === "watch") ? (
                   <p className="text-[11px] text-muted-foreground">
-                    {t("courses.betaHint")}
+                    {courseStatusHint(course, t)}
                   </p>
                 ) : null}
 
@@ -218,4 +227,23 @@ function Metric({ label, value }: { label: string; value: string }) {
       </p>
     </div>
   );
+}
+
+/** Per-course status copy — availability ≠ pedagogical approval. */
+function courseStatusHint(
+  course: CourseItem,
+  t: (key: string, vars?: Record<string, string | number>) => string,
+): string {
+  const specific = t(`course.${course.id}.statusHint`);
+  if (specific && specific !== `course.${course.id}.statusHint`) {
+    return specific;
+  }
+  const bands = (course.pedagogyWatchBands ?? []).join(", ");
+  if (course.pedagogyStatus === "watch" && bands) {
+    return t("courses.watchHint", { bands });
+  }
+  if (course.pedagogyStatus === "beta" || course.beta) {
+    return t("courses.betaHint");
+  }
+  return t("courses.approvedHint");
 }

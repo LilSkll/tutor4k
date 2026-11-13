@@ -31,6 +31,9 @@ export async function loadRussianCourse(): Promise<CourseConfig> {
       "РКИ-ориентиры: Дорога в Россию; Поехали!; Пять элементов; Жили-были",
     examName: "ТРКИ",
     beta: true,
+    /** Open beta; B1 participle preview chapter under methodological Watch. */
+    pedagogyStatus: "beta",
+    pedagogyWatchBands: ["B1"],
 
     storyWorld: {
       theme:

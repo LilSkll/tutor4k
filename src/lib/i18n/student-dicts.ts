@@ -149,10 +149,20 @@ const ru: Dictionary = {
   "landing.developer": "Разработчик — Драгунов Павел",
   "course.spanish.title": "Испанский язык",
   "course.spanish.desc": "Изучай испанский с ИИ-репетитором",
+  "course.spanish.statusHint":
+    "Курс доступен для учёбы · педагогически согласован (A1–C2)",
   "course.english.title": "Английский язык",
   "course.english.desc": "Изучай английский с ИИ-репетитором",
+  "course.english.statusHint":
+    "Курс доступен для учёбы · педагогически согласован (A1–C2)",
   "course.russian.title": "Русский язык",
   "course.russian.desc": "Изучай русский с ИИ-репетитором",
+  "course.russian.statusHint":
+    "Новинка: контент A1–C2 доступен · B1 (причастия) — на методическом контроле",
+  "course.german.title": "Немецкий язык",
+  "course.german.desc": "Изучай немецкий с ИИ-репетитором",
+  "course.german.statusHint":
+    "Новинка: контент A1–C2 доступен для практики · C2 — на методическом контроле, не полное педагогическое одобрение",
   "feature.ai.title": "Умный ИИ-репетитор",
   "feature.ai.desc": "Персональный преподаватель, который объясняет правила, даёт подсказки и никогда не решает за тебя.",
   "feature.markdown.title": "Объяснения с markdown",
@@ -540,8 +550,13 @@ const ru: Dictionary = {
   "courses.continue": "Продолжить",
   "courses.comingSoon": "Скоро",
   "courses.comingSoonToast": "Этот курс ещё готовится",
-  "courses.beta": "Бета",
-  "courses.betaHint": "Курс в открытой бете — программа A1–B1 пополняется",
+  "courses.new": "Новинка",
+  "courses.betaHint":
+    "Новый курс: доступен для учёбы, часть уровней ещё на методическом контроле",
+  "courses.watchHint":
+    "Доступен для практики · уровни {bands} на методическом контроле — доступность ≠ одобрение",
+  "courses.approvedHint":
+    "Курс доступен · педагогически согласован для заявленных уровней",
   "dashboard.greetingNamed": "Привет, {name}!",
   "dashboard.greeting": "Привет!",
   "dashboard.hubSubtitle": "Что сделать сегодня?",
@@ -830,10 +845,20 @@ const en: Dictionary = {
   "landing.developer": "Developer — Pavel Dragunov",
   "course.spanish.title": "Spanish",
   "course.spanish.desc": "Learn Spanish with an AI tutor",
+  "course.spanish.statusHint":
+    "Available for study · pedagogically aligned (A1–C2)",
   "course.english.title": "English",
   "course.english.desc": "Learn English with an AI tutor",
+  "course.english.statusHint":
+    "Available for study · pedagogically aligned (A1–C2)",
   "course.russian.title": "Russian",
   "course.russian.desc": "Learn Russian with an AI tutor",
+  "course.russian.statusHint":
+    "New: A1–C2 content available · B1 (participles) under methodological review",
+  "course.german.title": "German",
+  "course.german.desc": "Learn German with an AI tutor",
+  "course.german.statusHint":
+    "New: A1–C2 content available for practice · C2 under methodological review — availability ≠ full pedagogical approval",
   "feature.ai.title": "Smart AI tutor",
   "feature.ai.desc":
     "A personal teacher that explains rules, gives hints, and never solves for you.",
@@ -1191,8 +1216,13 @@ const en: Dictionary = {
   "courses.continue": "Continue",
   "courses.comingSoon": "Coming soon",
   "courses.comingSoonToast": "This course is still being prepared",
-  "courses.beta": "Beta",
-  "courses.betaHint": "Open beta — the A1–B1 programme is still expanding",
+  "courses.new": "New",
+  "courses.betaHint":
+    "New course: available to study; some bands are still under methodological review",
+  "courses.watchHint":
+    "Available for practice · {bands} under methodological review — availability ≠ approval",
+  "courses.approvedHint":
+    "Available · pedagogically aligned for the advertised bands",
   "dashboard.greetingNamed": "Hello, {name}!",
   "dashboard.greeting": "Hello!",
   "dashboard.hubSubtitle": "What should you do today?",
@@ -1648,10 +1678,20 @@ const es: Dictionary = {
   "landing.developer": "Desarrollador — Pavel Dragunov",
   "course.spanish.title": "Español",
   "course.spanish.desc": "Aprende español con un tutor de IA",
+  "course.spanish.statusHint":
+    "Disponible para estudiar · alineado pedagógicamente (A1–C2)",
   "course.english.title": "Inglés",
   "course.english.desc": "Aprende inglés con un tutor de IA",
+  "course.english.statusHint":
+    "Disponible para estudiar · alineado pedagógicamente (A1–C2)",
   "course.russian.title": "Ruso",
   "course.russian.desc": "Aprende ruso con un tutor de IA",
+  "course.russian.statusHint":
+    "Novedad: contenido A1–C2 disponible · B1 (participios) en revisión metodológica",
+  "course.german.title": "Alemán",
+  "course.german.desc": "Aprende alemán con un tutor de IA",
+  "course.german.statusHint":
+    "Novedad: contenido A1–C2 disponible para practicar · C2 en revisión metodológica: disponibilidad ≠ aprobación pedagógica completa",
   "feature.ai.title": "Tutor IA inteligente",
   "feature.ai.desc":
     "Un profesor personal que explica reglas, da pistas y nunca resuelve por ti.",
@@ -2009,8 +2049,13 @@ const es: Dictionary = {
   "courses.continue": "Continuar",
   "courses.comingSoon": "Pronto",
   "courses.comingSoonToast": "Este curso aún se está preparando",
-  "courses.beta": "Beta",
-  "courses.betaHint": "Beta abierta — el programa A1–B1 se sigue ampliando",
+  "courses.new": "Novedad",
+  "courses.betaHint":
+    "Curso nuevo: disponible para estudiar; algunos niveles siguen en revisión metodológica",
+  "courses.watchHint":
+    "Disponible para practicar · {bands} en revisión metodológica — disponibilidad ≠ aprobación",
+  "courses.approvedHint":
+    "Disponible · alineado pedagógicamente para los niveles anunciados",
   "dashboard.greetingNamed": "¡Hola, {name}!",
   "dashboard.greeting": "¡Hola!",
   "dashboard.hubSubtitle": "¿Qué hacer hoy?",
@@ -2557,16 +2602,31 @@ const de: Dictionary = {
   "common.today": "Heute",
   "course.english.desc": "Englisch lernen mit einem KI-Tutor",
   "course.english.title": "Englisch",
+  "course.english.statusHint":
+    "Zum Lernen verfügbar · pädagogisch abgestimmt (A1–C2)",
   "course.russian.desc": "Russisch lernen mit einem KI-Tutor",
   "course.russian.title": "Russisch",
+  "course.russian.statusHint":
+    "Neu: A1–C2-Inhalte verfügbar · B1 (Partizipien) unter methodischer Kontrolle",
+  "course.german.title": "Deutsch",
+  "course.german.desc": "Deutsch lernen mit einem KI-Tutor",
+  "course.german.statusHint":
+    "Neu: A1–C2-Inhalte zum Üben verfügbar · C2 unter methodischer Kontrolle — Verfügbarkeit ≠ volle pädagogische Freigabe",
   "course.spanish.desc": "Spanisch lernen mit einem KI-Tutor",
   "course.spanish.title": "Spanisch",
+  "course.spanish.statusHint":
+    "Zum Lernen verfügbar · pädagogisch abgestimmt (A1–C2)",
   "courses.active": "Aktiv",
   "courses.chapters": "Kapitel",
   "courses.comingSoon": "Kommt bald",
   "courses.comingSoonToast": "Dieser Kurs befindet sich noch in der Vorbereitung",
-  "courses.beta": "Beta",
-  "courses.betaHint": "Offene Beta — das A1–B1-Programm wird noch erweitert",
+  "courses.new": "Neu",
+  "courses.betaHint":
+    "Neuer Kurs: verfügbar zum Lernen; einige Stufen sind noch in methodischer Prüfung",
+  "courses.watchHint":
+    "Zum Üben verfügbar · {bands} unter methodischer Kontrolle — Verfügbarkeit ≠ Freigabe",
+  "courses.approvedHint":
+    "Verfügbar · pädagogisch abgestimmt für die angekündigten Stufen",
   "courses.completedChapters": "Abgeschlossene Kapitel: {count}",
   "courses.continue": "Weiter",
   "courses.difficulty": "Ebenen",

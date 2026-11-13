@@ -24,12 +24,13 @@ export async function loadEnglishCourse(): Promise<CourseConfig> {
     promptId: "english",
     textbookNames: "Life (National Geographic)",
     examName: "IELTS",
+    pedagogyStatus: "approved",
 
     storyWorld: {
       theme: "Journey through the English-speaking world",
       locations: [
         "London", "Oxford", "Bath", "Cambridge", "Brighton", "Bristol",
-        "York", "Edinburgh", "Glasgow", "Manchester", "Leeds",
+        "York", "Edinburgh", "Edinburgh Festival", "Glasgow", "Manchester", "Leeds",
         "Dublin", "Belfast", "Cardiff", "Liverpool",
         "New York", "Boston", "San Francisco", "Chicago",
         "Toronto", "Sydney", "IELTS Castle",
@@ -75,6 +76,7 @@ export async function loadEnglishCourse(): Promise<CourseConfig> {
       B1: "B1: intermediate — will/1st conditional, modals, narrative tenses, perfect continuous.",
       B2: "B2: upper-intermediate — passive, reported speech, relative clauses.",
       C1: "C1: advanced — inversion, discourse, mixed conditionals, IELTS.",
+      C2: "C2: figurative precision, discourse mastery, register shift, hedging and understatement.",
     },
 
     // Content getters

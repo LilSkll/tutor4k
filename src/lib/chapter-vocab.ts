@@ -1,5 +1,6 @@
 import { getCourse } from "@/config/courses";
 import { getEnglishVocabByChapter } from "@/config/courses/english/vocabulary";
+import { getGermanVocabByChapter } from "@/config/courses/german/vocabulary";
 import { getRussianVocabByChapter } from "@/config/courses/russian/vocabulary";
 import { VOCAB_TOPICS } from "@/config/vocabulary-topics";
 import { getVocabTopicTitle } from "@/lib/vocab-display";
@@ -65,6 +66,24 @@ export async function getChapterVocabPreview(
       topicSlug: topic?.slug ?? vocabTopic ?? null,
       topicTitle: topic
         ? getVocabTopicTitle(topic, interfaceLanguage, "english")
+        : null,
+      words,
+    };
+  }
+
+  if (courseId === "german") {
+    const course = await getCourse("german");
+    const topic =
+      (vocabTopic
+        ? course.getVocab().find((t) => t.slug === vocabTopic)
+        : undefined) ??
+      course.getVocab().find((t) => t.chapterSlug === chapterSlug) ??
+      null;
+    const words = getGermanVocabByChapter(chapterSlug);
+    return {
+      topicSlug: topic?.slug ?? vocabTopic ?? null,
+      topicTitle: topic
+        ? getVocabTopicTitle(topic, interfaceLanguage, "german")
         : null,
       words,
     };

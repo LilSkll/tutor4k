@@ -5,6 +5,7 @@ import { AuthFormNative } from "@/components/auth/auth-form-native";
 import { IconArrowLeft } from "@/components/auth/auth-icons";
 import { BrandIcon } from "@/components/shared/brand-icon";
 import { translate } from "@/lib/i18n/auth";
+import { resolveAuthErrorMessage } from "@/lib/resolve-auth-error";
 import type { InterfaceLanguage } from "@/types";
 
 const LANG_SWITCH: { id: InterfaceLanguage; label: string }[] = [
@@ -130,7 +131,7 @@ export function LoginView({
 
             {error ? (
               <div className="mb-4 rounded-lg border border-rose-400/30 bg-rose-500/10 px-4 py-3 text-sm text-rose-200">
-                {error}
+                {resolveAuthErrorMessage(error, language) ?? error}
               </div>
             ) : null}
 

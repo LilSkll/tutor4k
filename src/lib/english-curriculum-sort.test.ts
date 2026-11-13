@@ -16,9 +16,9 @@ describe("English curriculum", () => {
     expect(a1[2]).toBe("eng-a1-possessives");
   });
 
-  it("has 43 chapters aligned with chapter grammar order", () => {
-    expect(ENGLISH_CHAPTERS.length).toBe(43);
-    expect(ENGLISH_CHAPTER_GRAMMAR_ORDER.length).toBe(43);
+  it("has 45 chapters aligned with chapter grammar order", () => {
+    expect(ENGLISH_CHAPTERS.length).toBe(45);
+    expect(ENGLISH_CHAPTER_GRAMMAR_ORDER.length).toBe(45);
     const fromChapters = ENGLISH_CHAPTERS.map((c) => c.grammarTopic);
     expect(fromChapters).toEqual([...ENGLISH_CHAPTER_GRAMMAR_ORDER]);
   });

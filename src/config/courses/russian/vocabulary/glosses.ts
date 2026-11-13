@@ -1,4 +1,5 @@
 import type { InterfaceLanguage } from "@/types";
+import { RUSSIAN_EXPANSION_GLOSS } from "./glosses-expansion";
 
 /**
  * Interface-language glosses for RKI vocabulary (key = Russian lemma, lowercase).
@@ -578,6 +579,7 @@ export const RUSSIAN_VOCAB_GLOSS: Partial<
     "вроде": "sort of / it seems",
     "будто": "as if",
     "ли": "whether (indirect-question particle)",
+    ...RUSSIAN_EXPANSION_GLOSS.en,
   },
   es: {
     "привет": "hola",
@@ -1128,6 +1130,7 @@ export const RUSSIAN_VOCAB_GLOSS: Partial<
     "вроде": "parece que / como",
     "будто": "como si",
     "ли": "si (partícula de pregunta indirecta)",
+    ...RUSSIAN_EXPANSION_GLOSS.es,
   },
   de: {
     "привет": "hallo",
@@ -1678,6 +1681,7 @@ export const RUSSIAN_VOCAB_GLOSS: Partial<
     "вроде": "irgendwie / anscheinend",
     "будто": "als ob",
     "ли": "ob (Partikel der indirekten Frage)",
+    ...RUSSIAN_EXPANSION_GLOSS.de,
   },
 };
 

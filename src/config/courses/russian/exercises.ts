@@ -8,6 +8,7 @@ import { RUSSIAN_B1_EXERCISES } from "./exercises-b1";
 import { RUSSIAN_B2_EXERCISES } from "./exercises-b2";
 import { RUSSIAN_C1_EXERCISES } from "./exercises-c1";
 import { RUSSIAN_C2_EXERCISES } from "./exercises-c2";
+import { RUSSIAN_EXPANSION_EXERCISES } from "./exercises-expansion";
 import { RUSSIAN_TR_L1 } from "./translation-l1";
 import { getReadingPassagesForChapter } from "@/config/reading-passages";
 
@@ -24,6 +25,7 @@ export const RUSSIAN_EXERCISES: Record<string, Draft[]> = {
   ...RUSSIAN_B2_EXERCISES,
   ...RUSSIAN_C1_EXERCISES,
   ...RUSSIAN_C2_EXERCISES,
+  ...RUSSIAN_EXPANSION_EXERCISES,
 };
 
 /** Attach ES/DE L1 prompts onto English-authored translation stems. */

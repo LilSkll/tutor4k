@@ -34,6 +34,18 @@ const B1_SLUGS = [
   "ru-ch22-academic-social",
 ];
 
+const EXPANSION_SLUGS = new Set([
+  "ru-ch37-classroom-survival",
+  "ru-ch38-services-invitations",
+  "ru-ch39-government-verbs",
+  "ru-ch40-participle-preview",
+  "ru-ch41-opinion-structures",
+  "ru-ch42-syntax-complexity",
+  "ru-ch43-written-discourse",
+  "ru-ch44-critique-review",
+  "ru-ch45-academic-writing",
+]);
+
 const B2_C2_SLUGS = [
   "ru-ch23-participles",
   "ru-ch24-gerunds",
@@ -55,7 +67,7 @@ describe("Russian exercise bank audit", () => {
   it("every chapter has a quality bank; pool is structurally sound", async () => {
     const ru = await getCourse("russian");
     const chapters = ru.getChapters();
-    expect(chapters.length).toBe(36);
+    expect(chapters.length).toBe(45);
 
     const counts: Record<string, number> = {};
     const byLevel: Record<string, number> = {
@@ -71,7 +83,12 @@ describe("Russian exercise bank audit", () => {
       const exs = ru.getExercises(ch.slug);
       counts[ch.slug] = exs.length;
       byLevel[ch.level] = (byLevel[ch.level] ?? 0) + exs.length;
-      expect(exs.length, ch.slug).toBeGreaterThanOrEqual(35);
+      if (EXPANSION_SLUGS.has(ch.slug)) {
+        expect(exs.length, ch.slug).toBeGreaterThanOrEqual(20);
+        expect(exs.length, ch.slug).toBeLessThanOrEqual(24);
+      } else {
+        expect(exs.length, ch.slug).toBeGreaterThanOrEqual(35);
+      }
 
       const seen = new Set<string>();
       for (const ex of exs) {
@@ -121,8 +138,8 @@ describe("Russian exercise bank audit", () => {
 
     expect(byLevel.A1).toBeGreaterThan(byLevel.A2);
     expect(byLevel.A2).toBeGreaterThanOrEqual(byLevel.B1);
-    expect(byLevel.B2).toBe(240);
-    expect(byLevel.C1).toBe(160);
+    expect(byLevel.B2).toBe(280);
+    expect(byLevel.C1).toBe(200);
     expect(byLevel.C2).toBe(160);
 
     const pool = await getExercisePool("russian");
@@ -144,13 +161,20 @@ describe("Russian exercise bank audit", () => {
       n: ru.getExercises(ch.slug).length,
       grammar: ch.grammarTopic,
     }));
-    expect(rows.filter((r) => r.level === "A1").length).toBe(8);
-    expect(rows.filter((r) => r.level === "A2").length).toBe(8);
-    expect(rows.filter((r) => r.level === "B1").length).toBe(6);
-    expect(rows.filter((r) => r.level === "B2").length).toBe(6);
-    expect(rows.filter((r) => r.level === "C1").length).toBe(4);
+    expect(rows.filter((r) => r.level === "A1").length).toBe(9);
+    expect(rows.filter((r) => r.level === "A2").length).toBe(9);
+    expect(rows.filter((r) => r.level === "B1").length).toBe(9);
+    expect(rows.filter((r) => r.level === "B2").length).toBe(8);
+    expect(rows.filter((r) => r.level === "C1").length).toBe(6);
     expect(rows.filter((r) => r.level === "C2").length).toBe(4);
-    expect(rows.every((r) => r.n >= 35)).toBe(true);
+    for (const row of rows) {
+      if (EXPANSION_SLUGS.has(row.slug)) {
+        expect(row.n, row.slug).toBeGreaterThanOrEqual(20);
+        expect(row.n, row.slug).toBeLessThanOrEqual(24);
+      } else {
+        expect(row.n, row.slug).toBeGreaterThanOrEqual(35);
+      }
+    }
     const total = rows.reduce((s, r) => s + r.n, 0);
     expect(total).toBeGreaterThanOrEqual(1700);
     expect(total).toBeLessThan(2200);

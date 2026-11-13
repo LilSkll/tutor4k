@@ -2,7 +2,7 @@ import type { Chapter } from "@/types";
 import { RUSSIAN_B2_C2_CHAPTERS } from "./chapters-b2-c2";
 
 /**
- * Russian as a Foreign Language — A1–C2 journey (36 chapters).
+ * Russian as a Foreign Language — A1–C2 journey (45 chapters).
  * Methodological spine informed by common RKI sequences
  * (prep-faculty / adult learners). Original titles and summaries —
  * do not mirror any single textbook TOC.
@@ -179,11 +179,33 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
     prereqChapter: "ru-ch7-prepositional",
     estimatedMinutes: 22,
   },
+  {
+    slug: "ru-ch37-classroom-survival",
+    number: 9,
+    title: "Фразы для аудитории",
+    titleEs: "Classroom survival",
+    level: "A1",
+    location: "Нижний Новгород",
+    icon: "🙋",
+    summary:
+      "Вежливые просьбы в аудитории: можно / нельзя, повторите, говорите медленнее.",
+    grammarTopic: "ru-a1-classroom-survival",
+    vocabTopic: "ru-a1-classroom-survival",
+    exerciseTypes: [
+      "multiple_choice",
+      "fill_blank",
+      "translation",
+      "error_correction",
+      "sentence_building",
+    ],
+    prereqChapter: "ru-ch8-numbers-time",
+    estimatedMinutes: 20,
+  },
 
   // ===== A2 ============================================================
   {
     slug: "ru-ch9-past-tense",
-    number: 9,
+    number: 10,
     title: "Прошедшее время",
     titleEs: "Past tense",
     level: "A2",
@@ -199,12 +221,12 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
       "error_correction",
       "sentence_building",
     ],
-    prereqChapter: "ru-ch8-numbers-time",
+    prereqChapter: "ru-ch37-classroom-survival",
     estimatedMinutes: 18,
   },
   {
     slug: "ru-ch10-future",
-    number: 10,
+    number: 11,
     title: "Будущее время",
     titleEs: "Future tense",
     level: "A2",
@@ -225,7 +247,7 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
   },
   {
     slug: "ru-ch11-genitive",
-    number: 11,
+    number: 12,
     title: "Родительный падеж",
     titleEs: "Genitive case",
     level: "A2",
@@ -246,7 +268,7 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
   },
   {
     slug: "ru-ch12-dative",
-    number: 12,
+    number: 13,
     title: "Дательный падеж",
     titleEs: "Dative case",
     level: "A2",
@@ -267,7 +289,7 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
   },
   {
     slug: "ru-ch13-instrumental",
-    number: 13,
+    number: 14,
     title: "Творительный падеж",
     titleEs: "Instrumental case",
     level: "A2",
@@ -288,7 +310,7 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
   },
   {
     slug: "ru-ch14-aspect-intro",
-    number: 14,
+    number: 15,
     title: "Виды глагола: начало",
     titleEs: "Verbal aspect: introduction",
     level: "A2",
@@ -309,7 +331,7 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
   },
   {
     slug: "ru-ch15-motion-basic",
-    number: 15,
+    number: 16,
     title: "Глаголы движения",
     titleEs: "Verbs of motion",
     level: "A2",
@@ -330,7 +352,7 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
   },
   {
     slug: "ru-ch16-dorm-shops",
-    number: 16,
+    number: 17,
     title: "Общежитие и услуги",
     titleEs: "Dormitory and services",
     level: "A2",
@@ -349,11 +371,33 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
     prereqChapter: "ru-ch15-motion-basic",
     estimatedMinutes: 18,
   },
+  {
+    slug: "ru-ch38-services-invitations",
+    number: 18,
+    title: "Услуги и приглашения",
+    titleEs: "Services and invitations",
+    level: "A2",
+    location: "Сочи",
+    icon: "📞",
+    summary:
+      "Запись по телефону, перенос встречи и ответ на приглашение.",
+    grammarTopic: "ru-a2-services-invitations",
+    vocabTopic: "ru-a2-services-invitations",
+    exerciseTypes: [
+      "multiple_choice",
+      "fill_blank",
+      "translation",
+      "error_correction",
+      "sentence_building",
+    ],
+    prereqChapter: "ru-ch16-dorm-shops",
+    estimatedMinutes: 20,
+  },
 
   // ===== B1 ============================================================
   {
     slug: "ru-ch17-cases-review",
-    number: 17,
+    number: 19,
     title: "Падежная система",
     titleEs: "Case system review",
     level: "B1",
@@ -369,12 +413,12 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
       "error_correction",
       "sentence_building",
     ],
-    prereqChapter: "ru-ch16-dorm-shops",
+    prereqChapter: "ru-ch38-services-invitations",
     estimatedMinutes: 21,
   },
   {
     slug: "ru-ch18-aspect-system",
-    number: 18,
+    number: 20,
     title: "Виды и времена",
     titleEs: "Aspect and tense",
     level: "B1",
@@ -395,7 +439,7 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
   },
   {
     slug: "ru-ch19-motion-prefixes",
-    number: 19,
+    number: 21,
     title: "Приставочные глаголы движения",
     titleEs: "Prefixed motion verbs",
     level: "B1",
@@ -416,7 +460,7 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
   },
   {
     slug: "ru-ch20-complex-sentences",
-    number: 20,
+    number: 22,
     title: "Сложные предложения",
     titleEs: "Complex sentences",
     level: "B1",
@@ -437,7 +481,7 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
   },
   {
     slug: "ru-ch21-narration-cohesion",
-    number: 21,
+    number: 23,
     title: "Рассказ и связность",
     titleEs: "Narration and cohesion",
     level: "B1",
@@ -458,7 +502,7 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
   },
   {
     slug: "ru-ch22-academic-social",
-    number: 22,
+    number: 24,
     title: "Учёба и мнение",
     titleEs: "Study and opinion",
     level: "B1",
@@ -476,6 +520,72 @@ export const RUSSIAN_CHAPTERS: Chapter[] = [
     ],
     prereqChapter: "ru-ch21-narration-cohesion",
     estimatedMinutes: 21,
+  },
+  {
+    slug: "ru-ch39-government-verbs",
+    number: 25,
+    title: "Глагольное управление",
+    titleEs: "Verb government",
+    level: "B1",
+    location: "Псков",
+    icon: "🎯",
+    summary:
+      "Контраст управления: зависеть от, гордиться, готовиться к, отказаться от.",
+    grammarTopic: "ru-b1-government-verbs",
+    vocabTopic: "ru-b1-government-lexis",
+    exerciseTypes: [
+      "multiple_choice",
+      "fill_blank",
+      "translation",
+      "error_correction",
+      "sentence_building",
+    ],
+    prereqChapter: "ru-ch22-academic-social",
+    estimatedMinutes: 22,
+  },
+  {
+    slug: "ru-ch40-participle-preview",
+    number: 26,
+    title: "Который и короткий оборот",
+    titleEs: "Который and a short participle",
+    level: "B1",
+    location: "Псков",
+    icon: "🔗",
+    summary:
+      "Мост к B2: определение с который и короткий причастный оборот.",
+    grammarTopic: "ru-b1-participle-preview",
+    vocabTopic: "ru-b1-description-lexis",
+    exerciseTypes: [
+      "multiple_choice",
+      "fill_blank",
+      "translation",
+      "error_correction",
+      "sentence_building",
+    ],
+    prereqChapter: "ru-ch39-government-verbs",
+    estimatedMinutes: 22,
+  },
+  {
+    slug: "ru-ch41-opinion-structures",
+    number: 27,
+    title: "Мнение и согласие",
+    titleEs: "Opinion and agreement",
+    level: "B1",
+    location: "Псков",
+    icon: "💭",
+    summary:
+      "По-моему, мне кажется, на мой взгляд; согласие и вежливое несогласие.",
+    grammarTopic: "ru-b1-opinion-structures",
+    vocabTopic: "ru-b1-opinion-lexis",
+    exerciseTypes: [
+      "multiple_choice",
+      "fill_blank",
+      "translation",
+      "error_correction",
+      "sentence_building",
+    ],
+    prereqChapter: "ru-ch40-participle-preview",
+    estimatedMinutes: 22,
   },
 
   ...RUSSIAN_B2_C2_CHAPTERS,

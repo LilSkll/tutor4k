@@ -25,7 +25,7 @@ export function TeacherAnalyticsClient() {
     [language],
   );
 
-  const [courseId, setCourseId] = React.useState<"all" | "spanish" | "english" | "russian">(
+  const [courseId, setCourseId] = React.useState<"all" | "spanish" | "english" | "russian" | "german">(
     "all",
   );
   const [data, setData] = React.useState<TeacherAnalyticsDTO | null>(null);
@@ -99,7 +99,7 @@ export function TeacherAnalyticsClient() {
       </div>
 
       <div className="flex flex-wrap gap-2">
-        {(["all", "spanish", "english", "russian"] as const).map((c) => (
+        {(["all", "spanish", "english", "russian", "german"] as const).map((c) => (
           <button
             key={c}
             type="button"

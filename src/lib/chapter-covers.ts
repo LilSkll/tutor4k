@@ -219,6 +219,8 @@ const ENGLISH_SLUGS = [
   "eng-ch23-spotlight",
   "eng-ch24-unspoken",
   "eng-ch25-between-lines",
+  "eng-ch44-figurative-precision",
+  "eng-ch45-discourse-mastery",
 ] as const;
 
 const SPANISH_COVERS = assignCovers([...SPANISH_SLUGS], SPAIN_POOL);

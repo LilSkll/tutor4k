@@ -31,8 +31,8 @@ describe("Russian course integration", () => {
     const ru = await getCourse("russian");
     expect(ru.id).toBe("russian");
     expect(ru.beta).toBe(true);
-    expect(ru.getChapters().length).toBe(36);
-    expect(ru.getGrammar().length).toBe(34);
+    expect(ru.getChapters().length).toBe(45);
+    expect(ru.getGrammar().length).toBe(43);
   });
 
   it("localizes grammar titles/categories for all UI locales", async () => {

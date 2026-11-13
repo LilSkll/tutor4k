@@ -33,6 +33,7 @@ export async function loadSpanishCourse(): Promise<CourseConfig> {
     promptId: "spanish",
     textbookNames: "Дышлевая, Гонсалес-Алимова",
     examName: "DELE",
+    pedagogyStatus: "approved",
 
     storyWorld: {
       theme: "Путешествие по испаноязычному миру",

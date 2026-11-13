@@ -179,6 +179,51 @@ export const RUSSIAN_TOPIC_FEEDBACK: Record<
     es: "же contrasta, ведь da una razón compartida, -то señala el tema; lo nuevo suele ir al final.",
     de: "же kontrastiert, ведь gibt einen gemeinsamen Grund, -то hebt das Thema; Neues steht eher am Ende.",
   },
+  "ru-a1-classroom-survival": {
+    en: "Можно and нельзя take an infinitive. To a lecturer use the вы form and пожалуйста.",
+    es: "Можно y нельзя van con infinitivo. Al profesor: forma de вы y пожалуйста.",
+    de: "Можно und нельзя mit Infinitiv. Zur Lehrperson: вы-Form und пожалуйста.",
+  },
+  "ru-a2-services-invitations": {
+    en: "Хотел бы / хотела бы plus infinitive. A refusal starts with к сожалению.",
+    es: "Хотел бы / хотела бы más infinitivo. El rechazo empieza por к сожалению.",
+    de: "Хотел бы / хотела бы plus Infinitiv. Eine Absage beginnt mit к сожалению.",
+  },
+  "ru-b1-government-verbs": {
+    en: "Learn the verb with its case: зависеть от, готовиться к, надеяться на, гордиться plus instrumental.",
+    es: "Aprenda el verbo con su caso: зависеть от, готовиться к, надеяться на, гордиться con instrumental.",
+    de: "Lernen Sie das Verb mit dem Kasus: зависеть от, готовиться к, надеяться на, гордиться mit Instrumental.",
+  },
+  "ru-b1-participle-preview": {
+    en: "Который is the safe choice. A short participle replaces only a simple relative.",
+    es: "Который es la opción segura. Un participio corto solo sustituye un relativo simple.",
+    de: "Который bleibt sicher. Ein kurzes Partizip ersetzt nur einen einfachen Relativsatz.",
+  },
+  "ru-b1-opinion-structures": {
+    en: "Frame the view, then agree with с plus instrumental or disagree with потому что.",
+    es: "Enmarque la opinión; acuerdo con с más instrumental, o desacuerdo con потому что.",
+    de: "Rahmen nennen; Zustimmung mit с plus Instrumental oder Widerspruch mit потому что.",
+  },
+  "ru-b2-syntax-complexity": {
+    en: "Each subordinate clause gets its own conjunction and a comma. Do not stack two что.",
+    es: "Cada subordinada lleva su conjunción y su coma. No apile dos что.",
+    de: "Jeder Nebensatz hat seine Konjunktion und ein Komma. Nicht zwei что stapeln.",
+  },
+  "ru-b2-written-discourse": {
+    en: "One microtheme per paragraph. After однако, keep the subject (он).",
+    es: "Una microtema por párrafo. Tras однако, conserve el sujeto (он).",
+    de: "Ein Mikrothema pro Absatz. Nach однако das Subjekt behalten (он).",
+  },
+  "ru-c1-critique-review": {
+    en: "A concession limits the judgment. Вместе с тем does not erase the strength.",
+    es: "La concesión limita el juicio. Вместе с тем no borra el punto fuerte.",
+    de: "Die Einräumung begrenzt das Urteil. Вместе с тем löscht die Stärke nicht.",
+  },
+  "ru-c1-academic-writing": {
+    en: "Цель names an action. Таким образом closes only a claim you already showed.",
+    es: "Цель nombra una acción. Таким образом cierra solo una tesis ya mostrada.",
+    de: "Цель nennt eine Handlung. Таким образом schließt nur eine schon gezeigte These.",
+  },
 };
 
 const FORMULA_LEAD: Record<Exclude<InterfaceLanguage, "ru">, string> = {

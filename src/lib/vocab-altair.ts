@@ -48,6 +48,19 @@ export const VOCAB_TOPIC_ALTAIR_ASSETS_BY_COURSE: Record<string, readonly string
     "/altair/spanish/altair-es-11.webp",
     "/altair/spanish/altair-es-12.webp",
   ],
+  // Dedicated German sticker pack can replace this; reuse Spanish cutouts for now.
+  german: [
+    "/altair/spanish/altair-es-01.webp",
+    "/altair/spanish/altair-es-03.webp",
+    "/altair/spanish/altair-es-05.webp",
+    "/altair/spanish/altair-es-07.webp",
+    "/altair/spanish/altair-es-09.webp",
+    "/altair/spanish/altair-es-11.webp",
+    "/altair/spanish/altair-es-13.webp",
+    "/altair/spanish/altair-es-15.webp",
+    "/altair/spanish/altair-es-02.webp",
+    "/altair/spanish/altair-es-04.webp",
+  ],
 };
 
 /** @deprecated Prefer course-aware packs; kept for tests that only check path shape. */

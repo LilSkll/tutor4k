@@ -1426,5 +1426,149 @@
   "Omar picks out the argument everyone already knows: that argument is a strong one.": {
     "es": "Omar destaca el argumento que todos ya conocen: ese argumento es fuerte.",
     "de": "Omar hebt das Argument hervor, das alle schon kennen: das Argument ist stark."
+  },
+  "May I step out for five minutes?": {
+    "es": "¿Puedo salir cinco minutos?",
+    "de": "Darf ich fünf Minuten hinausgehen?"
+  },
+  "You must not make noise in the classroom.": {
+    "es": "En el aula no se puede hacer ruido.",
+    "de": "Im Hörsaal darf man keinen Lärm machen."
+  },
+  "Please speak more slowly.": {
+    "es": "Hable más despacio, por favor.",
+    "de": "Sprechen Sie bitte langsamer."
+  },
+  "Anna says she did not understand. (she is speaking about herself)": {
+    "es": "Anna dice que no ha entendido. (habla de sí misma)",
+    "de": "Anna sagt, dass sie es nicht verstanden hat. (sie spricht von sich)"
+  },
+  "I would like to make an appointment. (woman speaking)": {
+    "es": "Quisiera pedir cita. (habla una mujer)",
+    "de": "Ich möchte gern einen Termin machen. (eine Frau spricht)"
+  },
+  "What time is convenient for you?": {
+    "es": "¿A qué hora le viene bien?",
+    "de": "Wann passt es Ihnen?"
+  },
+  "Unfortunately I will not be able to come.": {
+    "es": "Lamentablemente no podré ir.",
+    "de": "Leider werde ich nicht kommen können."
+  },
+  "Let's meet in the library on Thursday.": {
+    "es": "Quedemos en la biblioteca el jueves.",
+    "de": "Lass uns uns am Donnerstag in der Bibliothek treffen."
+  },
+  "The result depends on preparation.": {
+    "es": "El resultado depende de la preparación.",
+    "de": "Das Ergebnis hängt von der Vorbereitung ab."
+  },
+  "She is preparing for the exam.": {
+    "es": "Ella se está preparando para el examen.",
+    "de": "Sie bereitet sich auf die Prüfung vor."
+  },
+  "We need practice, not another lecture.": {
+    "es": "Necesitamos práctica, no otra clase magistral.",
+    "de": "Wir brauchen Übung, nicht noch eine Vorlesung."
+  },
+  "Follow the advisor's advice.": {
+    "es": "Siga el consejo del tutor.",
+    "de": "Folgen Sie dem Rat der Betreuung."
+  },
+  "The student who is reading the article sits by the window.": {
+    "es": "El estudiante que lee el artículo está sentado junto a la ventana.",
+    "de": "Der Student, der den Artikel liest, sitzt am Fenster."
+  },
+  "Replace with a short participle: a student who is reading.": {
+    "es": "Sustituya por un participio corto: un estudiante que lee.",
+    "de": "Ersetzen Sie durch ein kurzes Partizip: ein Student, der liest."
+  },
+  "The article that we have already read is on the table.": {
+    "es": "El artículo que ya hemos leído está sobre la mesa.",
+    "de": "Der Artikel, den wir schon gelesen haben, liegt auf dem Tisch."
+  },
+  "This is the lecturer to whom I sent the draft.": {
+    "es": "Este es el profesor a quien envié el borrador.",
+    "de": "Das ist die Lehrperson, der ich den Entwurf geschickt habe."
+  },
+  "In my view, the example from the text is weak.": {
+    "es": "A mi juicio, el ejemplo del texto es débil.",
+    "de": "Meiner Ansicht nach ist das Beispiel aus dem Text schwach."
+  },
+  "Omar agrees with you.": {
+    "es": "Omar está de acuerdo con usted.",
+    "de": "Omar stimmt Ihnen zu."
+  },
+  "It is hard to agree with this conclusion because there is no example.": {
+    "es": "Es difícil estar de acuerdo con esta conclusión porque no hay ejemplo.",
+    "de": "Es ist schwer, diesem Schluss zuzustimmen, weil ein Beispiel fehlt."
+  },
+  "On the one hand the deadline is realistic; on the other hand there are few sources.": {
+    "es": "Por un lado el plazo es realista; por otro hay pocas fuentes.",
+    "de": "Einerseits ist die Frist realistisch; andererseits gibt es wenige Quellen."
+  },
+  "I moved the consultation because I was ill, even though the draft was ready.": {
+    "es": "Aplacé la consulta porque estaba enfermo, aunque el borrador ya estaba listo.",
+    "de": "Ich habe die Sprechstunde verschoben, weil ich krank war, obwohl der Entwurf fertig war."
+  },
+  "If the committee accepts the application, I will book a visit in order to clarify the deadline.": {
+    "es": "Si la comisión acepta la solicitud, pediré cita para aclarar el plazo.",
+    "de": "Wenn die Kommission den Antrag annimmt, mache ich einen Termin, um die Frist zu klären."
+  },
+  "I said that the rule which they explained yesterday is difficult.": {
+    "es": "Dije que la regla que explicaron ayer es difícil.",
+    "de": "Ich sagte, dass die Regel, die sie gestern erklärt haben, schwierig ist."
+  },
+  "We submitted the file after the check had finished, so the folder is complete.": {
+    "es": "Entregamos el archivo después de que terminó la revisión, así que la carpeta está completa.",
+    "de": "Wir haben die Datei abgegeben, nachdem die Prüfung zu Ende war, sodass die Mappe vollständig ist."
+  },
+  "Start a new paragraph: the new microtheme is the limit of the sample.": {
+    "es": "Empiece un párrafo nuevo: la microtema nueva es el límite de la muestra.",
+    "de": "Beginnen Sie einen neuen Absatz: das neue Mikrothema ist die Grenze der Stichprobe."
+  },
+  "The text is long. However, it does not show the method.": {
+    "es": "El texto es largo. Sin embargo, no muestra el método.",
+    "de": "Der Text ist lang. Er zeigt jedoch die Methode nicht."
+  },
+  "In addition, the second paragraph repeats the key word without need.": {
+    "es": "Además, el segundo párrafo repite la palabra clave sin necesidad.",
+    "de": "Außerdem wiederholt der zweite Absatz das Schlüsselwort ohne Bedarf."
+  },
+  "Thus the paragraph closes the microtheme.": {
+    "es": "Así el párrafo cierra la microtema.",
+    "de": "Somit schließt der Absatz das Mikrothema."
+  },
+  "The author shows the link convincingly. At the same time, the conclusion about all text types is not sufficiently grounded.": {
+    "es": "El autor muestra el vínculo de modo convincente. Al mismo tiempo, la conclusión sobre todos los tipos de texto no está bastante fundamentada.",
+    "de": "Der Autor zeigt den Zusammenhang überzeugend. Zugleich ist der Schluss über alle Textsorten nicht hinreichend begründet."
+  },
+  "It should be noted that the table is clear, although the sample is narrow.": {
+    "es": "Conviene señalar que la tabla es clara, aunque la muestra es estrecha.",
+    "de": "Es ist festzuhalten, dass die Tabelle klar ist, obwohl die Stichprobe eng ist."
+  },
+  "The paper deserves attention, but the recommendation must name the missing step.": {
+    "es": "El trabajo merece atención, pero la recomendación debe nombrar el paso que falta.",
+    "de": "Die Arbeit verdient Aufmerksamkeit, aber die Empfehlung muss den fehlenden Schritt nennen."
+  },
+  "Nevertheless, the second step is not described.": {
+    "es": "Sin embargo, el segundo paso no está descrito.",
+    "de": "Dennoch ist der zweite Schritt nicht beschrieben."
+  },
+  "The relevance is that both aspects are often possible in the same text.": {
+    "es": "La relevancia está en que ambos aspectos son a menudo posibles en el mismo texto.",
+    "de": "Die Relevanz liegt darin, dass beide Aspekte im selben Text oft möglich sind."
+  },
+  "The aim of the study is to show which question distinguishes the two forms.": {
+    "es": "El objetivo del estudio es mostrar qué pregunta distingue las dos formas.",
+    "de": "Ziel der Untersuchung ist es zu zeigen, welche Frage die beiden Formen unterscheidet."
+  },
+  "Within this study the oral seminar is not considered.": {
+    "es": "En el marco de este estudio no se considera el seminario oral.",
+    "de": "Im Rahmen dieser Untersuchung wird das mündliche Seminar nicht betrachtet."
+  },
+  "Thus the formula process or result is not enough.": {
+    "es": "Así, la fórmula proceso o resultado no basta.",
+    "de": "Somit reicht die Formel Prozess oder Ergebnis nicht."
   }
 }

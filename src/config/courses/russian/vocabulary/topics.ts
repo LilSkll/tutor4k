@@ -1,5 +1,6 @@
 import type { VocabTopic } from "@/types";
 import { topic, w } from "./helpers";
+import { RUSSIAN_EXPANSION_VOCAB } from "./topics-expansion";
 
 /** Original A1–B1 vocabulary topics for RKI (prep-faculty / adult contexts). */
 export const RUSSIAN_VOCAB_TOPICS: VocabTopic[] = [
@@ -1044,4 +1045,5 @@ export const RUSSIAN_VOCAB_TOPICS: VocabTopic[] = [
       w({ word: "ли", partOfSpeech: "adverb", translation: "whether (indirect-question particle)", examples: ["Анна спросила, отправил ли Омар файл."], level: "C2", chapterSlug: "ru-ch36-pragmatic-mastery" }),
     ],
   ),
+  ...RUSSIAN_EXPANSION_VOCAB,
 ];

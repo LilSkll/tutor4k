@@ -21,7 +21,7 @@ export function TeacherInvitesClient() {
   );
 
   const [invites, setInvites] = React.useState<TeacherInviteRow[]>([]);
-  const [courseId, setCourseId] = React.useState<"spanish" | "english" | "russian">("spanish");
+  const [courseId, setCourseId] = React.useState<"spanish" | "english" | "russian" | "german">("spanish");
   const [initialLoading, setInitialLoading] = React.useState(true);
   const [creating, setCreating] = React.useState(false);
 
@@ -123,7 +123,7 @@ export function TeacherInvitesClient() {
         </CardHeader>
         <CardContent className="flex flex-wrap items-center gap-3">
           <div className="flex gap-2">
-            {(["spanish", "english", "russian"] as const).map((c) => (
+            {(["spanish", "english", "russian", "german"] as const).map((c) => (
               <button
                 key={c}
                 type="button"

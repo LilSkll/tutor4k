@@ -1,6 +1,6 @@
 import { getAvailableCourseIds } from "@/config/courses";
 
-/** Registered course ids (spanish | english | russian | …). */
+/** Registered course ids (spanish | english | russian | german | …). */
 export function isKnownCourseId(
   raw: unknown,
 ): raw is string {

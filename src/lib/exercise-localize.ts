@@ -666,6 +666,18 @@ function resolveTranslationPromptForUi(
     return null;
   }
 
+  // German course: non-RU UIs need authored L1 maps (questionTranslations).
+  // RU Cyrillic stems are handled above. No silent English injection for es/de.
+  if (courseId === "german") {
+    if (interfaceLanguage === "en") {
+      if (source === "en" && !isSpoiler(question) && !hasCyrillicText(question)) {
+        return question;
+      }
+      return tryLang("en");
+    }
+    return null;
+  }
+
   // Russian course: prefer UI-language L1 (ES/DE from russian-tr-l1-cache).
   // Only keep an English stem when the UI is English (or as last-resort EN).
   if (courseId === "russian") {

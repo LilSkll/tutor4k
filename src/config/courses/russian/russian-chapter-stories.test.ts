@@ -13,6 +13,7 @@ const A1_SLUGS = [
   "ru-ch6-university-day",
   "ru-ch7-prepositional",
   "ru-ch8-numbers-time",
+  "ru-ch37-classroom-survival",
 ] as const;
 
 describe("RKI A1 chapter backstories", () => {
@@ -80,6 +81,7 @@ describe("RKI A1 chapter backstories", () => {
       "ru-ch6-university-day": /Казан|Kazan|Kasan|Kazán/i,
       "ru-ch7-prepositional": /Нижн|Nizhn|Nischn|Nóvgorod|Novgorod/i,
       "ru-ch8-numbers-time": /Нижн|Nizhn|Nischn|Nóvgorod|Novgorod/i,
+      "ru-ch37-classroom-survival": /Нижн|Nizhn|Nischn|Nóvgorod|Novgorod/i,
     };
     for (const slug of A1_SLUGS) {
       for (const lang of UI) {
@@ -89,7 +91,7 @@ describe("RKI A1 chapter backstories", () => {
     }
   });
 
-  it("covers exactly the eight A1 chapter slugs from the course config", async () => {
+  it("covers exactly the nine A1 chapter slugs from the course config", async () => {
     const course = await getCourse("russian");
     const a1 = course.getChapters().filter((c) => c.level === "A1");
     expect(a1.map((c) => c.slug)).toEqual([...A1_SLUGS]);
@@ -111,13 +113,13 @@ describe("RKI A1 chapter backstories", () => {
     }
   });
 
-  it("continues Altair stories through B2–C2 (ch23–36)", async () => {
+  it("continues Altair stories through B2–C2", async () => {
     const course = await getCourse("russian");
     const advanced = course
       .getChapters()
       .filter((c) => ["B2", "C1", "C2"].includes(c.level))
       .map((c) => c.slug);
-    expect(advanced.length).toBe(14);
+    expect(advanced.length).toBe(18);
     for (const slug of advanced) {
       for (const lang of UI) {
         const story = await getChapterStory(slug, lang);

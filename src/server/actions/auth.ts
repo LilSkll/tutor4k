@@ -7,6 +7,7 @@ import { getFirstChapterSlugForLevel } from "@/config/chapters";
 import { resolvePostLoginPath } from "@/lib/roles";
 import { sessionNeedsMfa } from "@/lib/auth-mfa";
 import { resolveAuthOrigin } from "@/lib/auth-origin";
+import { friendlyAuthErrorCode } from "@/lib/auth-errors";
 import { ensureProfileRoleMatchesMetadata } from "@/server/auth/signup-role";
 import type { Goal, InterfaceLanguage, Level, UserRole } from "@/types";
 
@@ -26,106 +27,9 @@ function interfaceLanguageFromForm(formData: FormData): InterfaceLanguage {
 // Authentication server actions
 // =====================================================================
 
-/**
- * Translate raw Supabase auth errors into friendly Russian messages so the
- * user understands what went wrong instead of seeing "email rate limit
- * exceeded" or other technical strings.
- */
-function extractAuthErrorMessage(error: unknown): string {
-  if (!error) return "";
-  if (typeof error === "string") return error;
-
-  const e = error as {
-    message?: unknown;
-    code?: unknown;
-    status?: unknown;
-    name?: unknown;
-  };
-
-  if (typeof e.message === "string" && e.message.trim() && e.message !== "{}") {
-    return e.message;
-  }
-  // Some Auth errors put a nested object in `message`.
-  if (e.message && typeof e.message === "object") {
-    try {
-      const nested = JSON.stringify(e.message);
-      if (nested && nested !== "{}") return nested;
-    } catch {
-      // ignore
-    }
-  }
-  if (typeof e.code === "string" && e.code) {
-    return e.status ? `${e.code} (${e.status})` : e.code;
-  }
-  try {
-    const raw = JSON.stringify(error);
-    if (raw && raw !== "{}") return raw;
-  } catch {
-    // ignore
-  }
-  return "";
-}
-
+/** Stable i18n key for ?error= — UI localizes via auth dicts (ru/en/es/de). */
 function friendlyAuthError(errorOrMessage: unknown): string {
-  const message = extractAuthErrorMessage(errorOrMessage);
-  const m = message.toLowerCase();
-
-  if (!m) {
-    return "Не удалось отправить письмо. Проверьте в Supabase: Custom SMTP и Redirect URLs (должен быть …/auth/callback).";
-  }
-  if (
-    m.includes("authretryablefetcherror") ||
-    m.includes('"status":500') ||
-    m.includes('"status": 500') ||
-    (typeof errorOrMessage === "object" &&
-      errorOrMessage !== null &&
-      (errorOrMessage as { status?: number; name?: string }).status === 500)
-  ) {
-    return "Сервер почты не смог отправить письмо (ошибка 500). В Supabase → Authentication → Emails → SMTP Settings проверьте Custom SMTP: хост, порт (465 или 587) и пароль приложения. Если SMTP только что включали — временно выключите его и попробуйте снова, либо исправьте настройки.";
-  }
-  if (
-    m.includes("not authorized") ||
-    m.includes("email address not authorized")
-  ) {
-    return "Supabase пока шлёт письма только участникам команды. Подключите рабочий Custom SMTP — тогда сброс заработает для учеников.";
-  }
-  if (m.includes("redirect") && (m.includes("allow") || m.includes("not"))) {
-    return "Redirect URL не разрешён. В Supabase → Authentication → URL Configuration добавьте callback и recovery для https://spanishwithpavel.com и https://spanishwithpavel.vercel.app.";
-  }
-  if (m.includes("smtp") || m.includes("error sending") || m.includes("mail")) {
-    return "Ошибка почтового сервера (SMTP). Проверьте логин, пароль приложения и порт в Custom SMTP.";
-  }
-  if (m.includes("rate limit") && m.includes("email")) {
-    return "Сервер отправил слишком много писем за час. Подожди 15–30 минут и попробуй снова.";
-  }
-  if (m.includes("rate limit")) {
-    return "Слишком много попыток за короткое время. Подожди пару минут и попробуй снова.";
-  }
-  if (m.includes("already") && m.includes("registered")) {
-    return "Аккаунт с таким email уже существует. Попробуй войти вместо регистрации.";
-  }
-  if (m.includes("already been registered")) {
-    return "Пользователь с таким email уже зарегистрирован. Войди через страницу входа.";
-  }
-  if (m.includes("invalid login") || m.includes("invalid credentials")) {
-    return "Неверный email или пароль. Если только что сбрасывали пароль — введите НОВЫЙ (автозаполнение на .com часто подставляет старый). Аккаунт один для .com и vercel.app.";
-  }
-  if (m.includes("email not confirmed")) {
-    return "Email ещё не подтверждён. Проверь почту (включая папку «Спам»).";
-  }
-  if (m.includes("password") && (m.includes("weak") || m.includes("short"))) {
-    return "Пароль слишком простой. Используй минимум 6 символов.";
-  }
-  if (m.includes("password should be")) {
-    return "Пароль слишком короткий. Минимум 6 символов.";
-  }
-  if (m.includes("same password") || m.includes("different from the old")) {
-    return "Новый пароль должен отличаться от текущего.";
-  }
-  if (m.includes("expired") || m.includes("otp") || m.includes("token")) {
-    return "Ссылка для сброса устарела или уже использована. Запроси новую.";
-  }
-  return "Ошибка: " + message;
+  return friendlyAuthErrorCode(errorOrMessage);
 }
 
 /** Prefer current host (.com vs vercel.app) so auth cookies match the tab. */
@@ -138,19 +42,31 @@ function normalizeAuthEmail(raw: string): string {
   return raw.trim().toLowerCase();
 }
 
+function loginErrorRedirect(
+  message: string,
+  opts: { redirectPath?: string; lang?: string },
+): never {
+  const q = new URLSearchParams();
+  q.set("error", message);
+  if (opts.redirectPath) q.set("redirect", opts.redirectPath);
+  const lang = opts.lang?.trim();
+  if (lang === "en" || lang === "es" || lang === "de" || lang === "ru") {
+    q.set("lang", lang);
+  }
+  redirect(`/login?${q.toString()}`);
+}
+
 export async function signInWithEmail(formData: FormData) {
   const email = normalizeAuthEmail(String(formData.get("email") ?? ""));
   const password = String(formData.get("password") ?? "");
   const redirectPath = String(formData.get("redirect") ?? "");
+  const lang = String(formData.get("interfaceLanguage") ?? "").trim();
 
   if (!email || !password) {
-    redirect(
-      `/login?error=${encodeURIComponent("Укажи email и пароль.")}${
-        redirectPath
-          ? `&redirect=${encodeURIComponent(redirectPath)}`
-          : ""
-      }`,
-    );
+    loginErrorRedirect("auth.error.emailPasswordRequired", {
+      redirectPath,
+      lang,
+    });
   }
 
   const supabase = await createSupabaseServerClient();
@@ -160,10 +76,7 @@ export async function signInWithEmail(formData: FormData) {
   });
 
   if (error) {
-    const q = new URLSearchParams();
-    q.set("error", friendlyAuthError(error));
-    if (redirectPath) q.set("redirect", redirectPath);
-    redirect(`/login?${q.toString()}`);
+    loginErrorRedirect(friendlyAuthError(error), { redirectPath, lang });
   }
 
   let role: UserRole = "student";

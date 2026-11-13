@@ -1,4 +1,5 @@
 import type { Chapter, InterfaceLanguage } from "@/types";
+import { GERMAN_CHAPTER_LOCALE } from "@/config/courses/german/chapter-locale";
 import { RUSSIAN_CHAPTER_LOCALE } from "@/config/courses/russian/chapter-locale";
 
 type ChapterLocale = {
@@ -1216,6 +1217,40 @@ export const ENGLISH_CHAPTER_LOCALE: Record<
       location: "Westminster, London",
     },
   },
+  "eng-ch44-figurative-precision": {
+    ru: {
+      title: "Точность образов",
+      summary: "Метафора, точность идиом, как не смешивать метафоры в аккуратной прозе.",
+      location: "Эдинбургский фестиваль",
+    },
+    es: {
+      title: "Precisión Figurada",
+      summary: "Metáfora, precisión idiomática y cómo evitar metáforas mixtas en prosa cuidada.",
+      location: "Festival de Edimburgo",
+    },
+    de: {
+      title: "Bildliche Präzision",
+      summary: "Metapher, idiomatische Präzision, gemischte Metaphern in sorgfältiger Prosa vermeiden.",
+      location: "Edinburgh Festival",
+    },
+  },
+  "eng-ch45-discourse-mastery": {
+    ru: {
+      title: "Мастерство дискурса",
+      summary: "Средства связности, позиция говорящего и длинные аргументативные реплики для экзамена и академической речи.",
+      location: "Замок IELTS",
+    },
+    es: {
+      title: "Dominio del Discurso",
+      summary: "Recursos de cohesión, postura y turnos argumentativos largos para el examen y el habla académica.",
+      location: "Castillo IELTS",
+    },
+    de: {
+      title: "Diskursmeisterschaft",
+      summary: "Kohäsionsmittel, Haltung und lange argumentative Redebeiträge für Prüfung und akademische Rede.",
+      location: "IELTS-Burg",
+    },
+  },
 
   "eng-ch26-articles": {
     ru: {
@@ -1530,6 +1565,10 @@ function getChapterLocale(
   slug: string,
   interfaceLanguage: InterfaceLanguage,
 ): ChapterLocale | undefined {
+  const german = GERMAN_CHAPTER_LOCALE[slug]?.[interfaceLanguage];
+  if (german) {
+    return { location: "", ...german };
+  }
   if (interfaceLanguage !== "ru") {
     const russian = RUSSIAN_CHAPTER_LOCALE[slug]?.[interfaceLanguage];
     if (russian) return russian;
@@ -1558,6 +1597,11 @@ export function getChapterTitle(
     return chapter.titleEs || chapter.title;
   }
 
+  // German course: prefer locale map; titleEs is English label for non-DE UI.
+  if (chapter.slug.startsWith("de-") && interfaceLanguage === "es") {
+    return chapter.titleEs || chapter.title;
+  }
+
   if (interfaceLanguage === "es") return chapter.titleEs || chapter.title;
 
   // Spanish source titles are Russian; English source titles are English.
@@ -1578,7 +1622,9 @@ export function getChapterTargetTitle(
       ? "english"
       : chapter.slug.startsWith("ru-") || chapter.slug.startsWith("rus-")
         ? "russian"
-        : "spanish");
+        : chapter.slug.startsWith("de-")
+          ? "german"
+          : "spanish");
   if (id === "english") {
     // Prefer non-Spanish titleEs if data was fixed; else canonical English title.
     const te = chapter.titleEs?.trim() ?? "";
@@ -1587,6 +1633,10 @@ export function getChapterTargetTitle(
   }
   if (id === "russian") {
     // Target language is Russian — chapter.title holds the RU title.
+    return chapter.title;
+  }
+  if (id === "german") {
+    // Target language is German — chapter.title holds the DE title.
     return chapter.title;
   }
   return chapter.titleEs || chapter.title;
@@ -1704,5 +1754,6 @@ export function getPriorChapterSlugsForLevel(
 export function inferCourseIdFromChapterSlug(slug: string): string {
   if (slug.startsWith("eng-")) return "english";
   if (slug.startsWith("ru-") || slug.startsWith("rus-")) return "russian";
+  if (slug.startsWith("de-")) return "german";
   return "spanish";
 }

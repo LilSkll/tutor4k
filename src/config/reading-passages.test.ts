@@ -8,10 +8,16 @@ import {
 
 describe("reading passage exercises", () => {
   it("covers multiple chapters per course with passage + MC", () => {
-    for (const courseId of ["spanish", "english", "russian"] as const) {
+    for (const courseId of [
+      "spanish",
+      "english",
+      "russian",
+      "german",
+    ] as const) {
       const chapters = listReadingPassageChapters(courseId);
       // Russian A2–C2 banks are size-frozen, so RU ships fewer reading chapters.
-      const min = courseId === "russian" ? 3 : 5;
+      const min =
+        courseId === "russian" ? 3 : courseId === "german" ? 15 : 5;
       expect(chapters.length, courseId).toBeGreaterThanOrEqual(min);
       for (const slug of chapters) {
         const drafts = getReadingPassagesForChapter(courseId, slug);
@@ -32,6 +38,7 @@ describe("reading passage exercises", () => {
       ["spanish", "chapter-1-despertar"],
       ["english", "eng-ch1-first-steps"],
       ["russian", "ru-ch1-alphabet-greetings"],
+      ["german", "de-ch1-alphabet-greetings"],
     ] as const;
 
     for (const [courseId, slug] of cases) {
@@ -49,8 +56,13 @@ describe("reading passage exercises", () => {
 
   it("keeps Russian B2–C2 chapter sizes at 40", async () => {
     const course = await getCourse("russian");
+    // Frozen banks: original B2–C2 slugs ru-ch23…ru-ch36 only.
+    // Expansion chapters (ru-ch37…ru-ch45) may use smaller seed banks.
     for (const ch of course.getChapters()) {
-      if (ch.number < 23) continue;
+      const m = /^ru-ch(\d+)-/.exec(ch.slug);
+      if (!m) continue;
+      const n = Number(m[1]);
+      if (n < 23 || n > 36) continue;
       expect(course.getExercises(ch.slug).length, ch.slug).toBe(40);
     }
   });

@@ -561,6 +561,594 @@ export const READING_PASSAGES_BY_COURSE: Record<
     // A2–C2 omitted: frozen chapter banks expect exact sizes (40 / type mixes).
     // A1 keeps a small reading set; literary C2 already embeds fragments in-bank.
   },
+
+  german: {
+    "de-ch1-alphabet-greetings": readingItems({
+      passage:
+        "Guten Morgen! Ich heiße Lea. Ich bin neu in Berlin. Meine Lehrerin sagt: Guten Tag und willkommen. Am Abend sage ich: Auf Wiedersehen.",
+      passageGloss: {
+        ru: "Доброе утро! Меня зовут Леа. Я недавно в Берлине. Моя учительница говорит: добрый день и добро пожаловать. Вечером я говорю: до свидания.",
+        en: "Good morning! My name is Lea. I am new in Berlin. My teacher says: good day and welcome. In the evening I say: goodbye.",
+        es: "¡Buenos días! Me llamo Lea. Soy nueva en Berlín. Mi profesora dice: buen día y bienvenida. Por la tarde digo: adiós.",
+      },
+      grammarTopic: "de-a1-alphabet-pronunciation",
+      vocabTopic: "de-a1-greetings",
+      mc: {
+        question: "Was sagt Lea am Abend?",
+        questionGloss: {
+          ru: "Что Леа говорит вечером?",
+          en: "What does Lea say in the evening?",
+          es: "¿Qué dice Lea por la tarde?",
+        },
+        options: ["Auf Wiedersehen", "Guten Morgen", "Willkommen", "Berlin"],
+        answer: "Auf Wiedersehen",
+        explanation: "В тексте: «Am Abend sage ich: Auf Wiedersehen.»",
+      },
+      blank: {
+        question: "Ich ___ Lea.",
+        questionGloss: {
+          ru: "Меня ___ Леа.",
+          en: "I ___ Lea.",
+          es: "Me ___ Lea.",
+        },
+        answer: "heiße",
+        acceptableAnswers: ["Heiße"],
+        explanation: "«Ich heiße Lea.»",
+      },
+    }),
+    "de-ch3-articles-gender": readingItems({
+      passage:
+        "Der Tisch ist groß. Die Lampe ist klein. Das Buch ist neu. Ein Mann liest, und eine Frau schreibt.",
+      passageGloss: {
+        ru: "Стол большой. Лампа маленькая. Книга новая. Мужчина читает, а женщина пишет.",
+        en: "The table is big. The lamp is small. The book is new. A man is reading, and a woman is writing.",
+        es: "La mesa es grande. La lámpara es pequeña. El libro es nuevo. Un hombre lee y una mujer escribe.",
+      },
+      grammarTopic: "de-a1-articles-gender-nominative",
+      vocabTopic: "de-a1-everyday-objects",
+      mc: {
+        question: "Was ist klein?",
+        questionGloss: {
+          ru: "Что маленькое?",
+          en: "What is small?",
+          es: "¿Qué es pequeño?",
+        },
+        options: ["Die Lampe", "Der Tisch", "Das Buch", "Ein Mann"],
+        answer: "Die Lampe",
+        explanation: "«Die Lampe ist klein.»",
+      },
+      blank: {
+        question: "___ Tisch ist groß.",
+        questionGloss: {
+          ru: "___ стол большой.",
+          en: "___ table is big.",
+          es: "___ mesa es grande.",
+        },
+        answer: "Der",
+        acceptableAnswers: ["der"],
+        explanation: "der Tisch — мужской род.",
+      },
+    }),
+    "de-ch5-akkusativ": readingItems({
+      passage:
+        "Heute kaufe ich einen Apfel und ein Brot. Am Abend sieht meine Freundin den Film. Wir haben eine Katze zu Hause.",
+      passageGloss: {
+        ru: "Сегодня я покупаю яблоко и хлеб. Вечером моя подруга смотрит фильм. У нас дома есть кошка.",
+        en: "Today I am buying an apple and a loaf of bread. In the evening my friend watches the film. We have a cat at home.",
+        es: "Hoy compro una manzana y un pan. Por la tarde mi amiga ve la película. Tenemos un gato en casa.",
+      },
+      grammarTopic: "de-a1-akkusativ",
+      vocabTopic: "de-a1-food-shopping",
+      mc: {
+        question: "Was kauft die Person?",
+        questionGloss: {
+          ru: "Что покупает человек?",
+          en: "What does the person buy?",
+          es: "¿Qué compra la persona?",
+        },
+        options: ["Einen Apfel und ein Brot", "Den Film", "Eine Katze", "Einen Tisch"],
+        answer: "Einen Apfel und ein Brot",
+        explanation: "«Heute kaufe ich einen Apfel und ein Brot.»",
+      },
+      blank: {
+        question: "Wir haben ___ Katze.",
+        questionGloss: {
+          ru: "У нас есть ___ кошка.",
+          en: "We have ___ cat.",
+          es: "Tenemos ___ gata.",
+        },
+        answer: "eine",
+        acceptableAnswers: ["Eine"],
+        explanation: "die Katze → винительный eine.",
+      },
+    }),
+    "de-ch7-possessives-plurals": readingItems({
+      passage:
+        "Das ist mein Bruder Paul. Seine Schwester heißt Nora. Unsere Eltern wohnen in Hamburg. Ihre Kinder haben zwei Fahrräder.",
+      passageGloss: {
+        ru: "Это мой брат Пауль. Его сестру зовут Нора. Наши родители живут в Гамбурге. У их детей два велосипеда.",
+        en: "This is my brother Paul. His sister's name is Nora. Our parents live in Hamburg. Their children have two bicycles.",
+        es: "Este es mi hermano Paul. Su hermana se llama Nora. Nuestros padres viven en Hamburgo. Sus hijos tienen dos bicicletas.",
+      },
+      grammarTopic: "de-a1-possessives-plurals",
+      vocabTopic: "de-a1-family-home",
+      mc: {
+        question: "Wo wohnen die Eltern?",
+        questionGloss: {
+          ru: "Где живут родители?",
+          en: "Where do the parents live?",
+          es: "¿Dónde viven los padres?",
+        },
+        options: ["In Hamburg", "Bei Nora", "In Berlin", "Bei Paul"],
+        answer: "In Hamburg",
+        explanation: "«Unsere Eltern wohnen in Hamburg.»",
+      },
+      blank: {
+        question: "Das ist ___ Bruder Paul.",
+        questionGloss: {
+          ru: "Это ___ брат Пауль.",
+          en: "This is ___ brother Paul.",
+          es: "Este es ___ hermano Paul.",
+        },
+        answer: "mein",
+        acceptableAnswers: ["Mein"],
+        explanation: "«Das ist mein Bruder Paul.»",
+      },
+    }),
+    "de-ch10-negation-time": readingItems({
+      passage:
+        "Es ist acht Uhr. Am Montag habe ich Deutschkurs. Am Sonntag arbeite ich nicht. Ich habe kein Auto, aber ich habe Zeit.",
+      passageGloss: {
+        ru: "Сейчас восемь часов. В понедельник у меня курс немецкого. В воскресенье я не работаю. У меня нет машины, но есть время.",
+        en: "It is eight o'clock. On Monday I have a German class. On Sunday I do not work. I have no car, but I have time.",
+        es: "Son las ocho. El lunes tengo clase de alemán. El domingo no trabajo. No tengo coche, pero tengo tiempo.",
+      },
+      grammarTopic: "de-a1-negation-time-numbers",
+      vocabTopic: "de-a1-time-calendar",
+      mc: {
+        question: "Wann arbeitet die Person nicht?",
+        questionGloss: {
+          ru: "Когда человек не работает?",
+          en: "When does the person not work?",
+          es: "¿Cuándo no trabaja la persona?",
+        },
+        options: ["Am Sonntag", "Am Montag", "Um acht Uhr", "Immer"],
+        answer: "Am Sonntag",
+        explanation: "«Am Sonntag arbeite ich nicht.»",
+      },
+      blank: {
+        question: "Ich habe ___ Auto.",
+        questionGloss: {
+          ru: "У меня ___ машины.",
+          en: "I have ___ car.",
+          es: "No tengo ___ coche.",
+        },
+        answer: "kein",
+        acceptableAnswers: ["Kein"],
+        explanation: "«Ich habe kein Auto.»",
+      },
+    }),
+    "de-ch11-dativ": readingItems({
+      passage:
+        "Ich helfe dem Nachbarn im Garten. Das Fahrrad gehört meiner Schwester. Wir danken der Lehrerin für das Buch. Sie gibt dem Kind einen Ball.",
+      passageGloss: {
+        ru: "Я помогаю соседу в саду. Велосипед принадлежит моей сестре. Мы благодарим учительницу за книгу. Она даёт ребёнку мяч.",
+        en: "I help the neighbour in the garden. The bicycle belongs to my sister. We thank the teacher for the book. She gives the child a ball.",
+        es: "Ayudo al vecino en el jardín. La bicicleta es de mi hermana. Agradecemos a la profesora el libro. Ella le da una pelota al niño.",
+      },
+      grammarTopic: "de-a2-dativ",
+      vocabTopic: "de-a2-gifts-favors",
+      mc: {
+        question: "Wem gehört das Fahrrad?",
+        questionGloss: {
+          ru: "Кому принадлежит велосипед?",
+          en: "Who does the bicycle belong to?",
+          es: "¿A quién pertenece la bicicleta?",
+        },
+        options: ["Meiner Schwester", "Dem Nachbarn", "Der Lehrerin", "Dem Kind"],
+        answer: "Meiner Schwester",
+        explanation: "«Das Fahrrad gehört meiner Schwester.»",
+      },
+      blank: {
+        question: "Ich helfe ___ Nachbarn.",
+        questionGloss: {
+          ru: "Я помогаю ___ соседу.",
+          en: "I help ___ neighbour.",
+          es: "Ayudo ___ vecino.",
+        },
+        answer: "dem",
+        acceptableAnswers: ["Dem"],
+        explanation: "helfen + дательный: dem Nachbarn.",
+      },
+    }),
+    "de-ch13-perfekt": readingItems({
+      passage:
+        "Am Samstag habe ich Freunde getroffen. Wir haben Pizza gegessen und einen Film gesehen. Danach ist Lea nach Hause gegangen. Ich bin lange geblieben.",
+      passageGloss: {
+        ru: "В субботу я встретился с друзьями. Мы съели пиццу и посмотрели фильм. Потом Леа пошла домой. Я оставался ещё долго.",
+        en: "On Saturday I met friends. We ate pizza and watched a film. After that Lea went home. I stayed for a long time.",
+        es: "El sábado quedé con amigos. Comimos pizza y vimos una película. Después Lea se fue a casa. Yo me quedé mucho tiempo.",
+      },
+      grammarTopic: "de-a2-perfekt",
+      vocabTopic: "de-a2-weekend-events",
+      mc: {
+        question: "Was haben sie gegessen?",
+        questionGloss: {
+          ru: "Что они ели?",
+          en: "What did they eat?",
+          es: "¿Qué comieron?",
+        },
+        options: ["Pizza", "Einen Film", "Freunde", "Zu Hause"],
+        answer: "Pizza",
+        explanation: "«Wir haben Pizza gegessen.»",
+      },
+      blank: {
+        question: "Lea ist nach Hause ___.",
+        questionGloss: {
+          ru: "Леа ___ домой.",
+          en: "Lea has ___ home.",
+          es: "Lea se ___ a casa.",
+        },
+        answer: "gegangen",
+        acceptableAnswers: ["Gegangen"],
+        explanation: "gehen → ist gegangen.",
+      },
+    }),
+    "de-ch15-reflexive": readingItems({
+      passage:
+        "Am Morgen wasche ich mich und frühstücke. Ich freue mich auf den Kurs. Meine Freundin interessiert sich für Musik. Abends setzen wir uns in die Küche.",
+      passageGloss: {
+        ru: "Утром я умываюсь и завтракаю. Я радуюсь занятию. Моя подруга интересуется музыкой. Вечером мы садимся на кухне.",
+        en: "In the morning I wash and have breakfast. I am looking forward to the class. My friend is interested in music. In the evening we sit down in the kitchen.",
+        es: "Por la mañana me lavo y desayuno. Me alegro por la clase. Mi amiga se interesa por la música. Por la tarde nos sentamos en la cocina.",
+      },
+      grammarTopic: "de-a2-reflexive",
+      vocabTopic: "de-a2-feelings-body",
+      mc: {
+        question: "Worauf freut sich die Person?",
+        questionGloss: {
+          ru: "Чему человек радуется?",
+          en: "What is the person looking forward to?",
+          es: "¿Por qué se alegra la persona?",
+        },
+        options: ["Auf den Kurs", "Auf die Küche", "Auf das Frühstück", "Auf den Morgen"],
+        answer: "Auf den Kurs",
+        explanation: "«Ich freue mich auf den Kurs.»",
+      },
+      blank: {
+        question: "Ich wasche ___.",
+        questionGloss: {
+          ru: "Я умываю ___.",
+          en: "I wash ___.",
+          es: "Me lavo ___.",
+        },
+        answer: "mich",
+        acceptableAnswers: ["Mich"],
+        explanation: "ich wasche mich.",
+      },
+    }),
+    "de-ch18-subordinates": readingItems({
+      passage:
+        "Ich bleibe zu Hause, weil ich müde bin. Ich weiß, dass der Kurs morgen beginnt. Wenn es regnet, nehme ich den Bus. Ich versuche, früh zu schlafen.",
+      passageGloss: {
+        ru: "Я остаюсь дома, потому что устал. Я знаю, что занятие начнётся завтра. Если идёт дождь, я еду на автобусе. Я стараюсь рано лечь спать.",
+        en: "I stay at home because I am tired. I know that the class starts tomorrow. If it rains, I take the bus. I try to sleep early.",
+        es: "Me quedo en casa porque estoy cansado. Sé que la clase empieza mañana. Si llueve, tomo el autobús. Intento dormir temprano.",
+      },
+      grammarTopic: "de-a2-subordinates-zu",
+      vocabTopic: "de-a2-reasons-plans",
+      mc: {
+        question: "Warum bleibt die Person zu Hause?",
+        questionGloss: {
+          ru: "Почему человек остаётся дома?",
+          en: "Why does the person stay at home?",
+          es: "¿Por qué se queda la persona en casa?",
+        },
+        options: [
+          "Weil sie müde ist",
+          "Weil der Kurs beginnt",
+          "Weil es regnet",
+          "Weil der Bus fehlt",
+        ],
+        answer: "Weil sie müde ist",
+        explanation: "«weil ich müde bin.»",
+      },
+      blank: {
+        question: "Ich weiß, ___ der Kurs morgen beginnt.",
+        questionGloss: {
+          ru: "Я знаю, ___ занятие начнётся завтра.",
+          en: "I know ___ the class starts tomorrow.",
+          es: "Sé ___ la clase empieza mañana.",
+        },
+        answer: "dass",
+        acceptableAnswers: ["Dass"],
+        explanation: "«Ich weiß, dass der Kurs morgen beginnt.»",
+      },
+    }),
+    "de-ch19-case-system": readingItems({
+      passage:
+        "Wegen des Regens bleibt der Kurs im Gebäude. Das ist das Büro des Chefs. Ich sehe den Lehrer im Flur und danke den Kollegen für die Hilfe.",
+      passageGloss: {
+        ru: "Из-за дождя занятие остаётся в здании. Это кабинет начальника. Я вижу учителя в коридоре и благодарю коллег за помощь.",
+        en: "Because of the rain the class stays in the building. This is the boss's office. I see the teacher in the corridor and thank the colleagues for the help.",
+        es: "Por la lluvia la clase se queda en el edificio. Este es el despacho del jefe. Veo al profesor en el pasillo y agradezco a los colegas la ayuda.",
+      },
+      grammarTopic: "de-b1-case-system",
+      vocabTopic: "de-b1-education-work",
+      mc: {
+        question: "Warum bleibt der Kurs im Gebäude?",
+        questionGloss: {
+          ru: "Почему занятие остаётся в здании?",
+          en: "Why does the class stay in the building?",
+          es: "¿Por qué se queda la clase en el edificio?",
+        },
+        options: [
+          "Wegen des Regens",
+          "Wegen des Chefs",
+          "Wegen des Lehrers",
+          "Wegen der Kollegen",
+        ],
+        answer: "Wegen des Regens",
+        explanation: "«Wegen des Regens bleibt der Kurs im Gebäude.»",
+      },
+      blank: {
+        question: "Das ist das Büro ___ Chefs.",
+        questionGloss: {
+          ru: "Это кабинет ___ начальника.",
+          en: "This is the ___ boss's office.",
+          es: "Este es el despacho ___ jefe.",
+        },
+        answer: "des",
+        acceptableAnswers: ["Des"],
+        explanation: "Генитив: das Büro des Chefs.",
+      },
+    }),
+    "de-ch21-relative": readingItems({
+      passage:
+        "Der Mann, der nebenan wohnt, ist Arzt. Die Frau, der ich helfe, heißt Sara. Der Film, den wir sehen, ist lang. Das Buch, das auf dem Tisch liegt, gehört mir.",
+      passageGloss: {
+        ru: "Мужчина, который живёт рядом, — врач. Женщину, которой я помогаю, зовут Сара. Фильм, который мы смотрим, длинный. Книга, которая лежит на столе, моя.",
+        en: "The man who lives next door is a doctor. The woman I am helping is called Sara. The film we are watching is long. The book that is on the table belongs to me.",
+        es: "El hombre que vive al lado es médico. La mujer a la que ayudo se llama Sara. La película que vemos es larga. El libro que está sobre la mesa es mío.",
+      },
+      grammarTopic: "de-b1-relative-clauses",
+      vocabTopic: "de-b1-people-profiles",
+      mc: {
+        question: "Wer ist Arzt?",
+        questionGloss: {
+          ru: "Кто врач?",
+          en: "Who is a doctor?",
+          es: "¿Quién es médico?",
+        },
+        options: [
+          "Der Mann, der nebenan wohnt",
+          "Die Frau, der ich helfe",
+          "Der Film",
+          "Das Buch",
+        ],
+        answer: "Der Mann, der nebenan wohnt",
+        explanation: "«Der Mann, der nebenan wohnt, ist Arzt.»",
+      },
+      blank: {
+        question: "Der Film, ___ wir sehen, ist lang.",
+        questionGloss: {
+          ru: "Фильм, ___ мы смотрим, длинный.",
+          en: "The film ___ we watch is long.",
+          es: "La película ___ vemos es larga.",
+        },
+        answer: "den",
+        acceptableAnswers: ["Den"],
+        explanation: "sehen требует винительный den.",
+      },
+    }),
+    "de-ch23-passive": readingItems({
+      passage:
+        "Das Haus wird gerade gebaut. Der Brief wurde gestern geschrieben. Hier wird Deutsch gesprochen. Die Tür ist schon geöffnet worden.",
+      passageGloss: {
+        ru: "Дом сейчас строят. Письмо написали вчера. Здесь говорят по-немецки. Дверь уже открыли.",
+        en: "The house is being built. The letter was written yesterday. German is spoken here. The door has already been opened.",
+        es: "La casa se está construyendo. La carta se escribió ayer. Aquí se habla alemán. La puerta ya ha sido abierta.",
+      },
+      grammarTopic: "de-b1-passive",
+      vocabTopic: "de-b1-processes-news",
+      mc: {
+        question: "Was wurde gestern geschrieben?",
+        questionGloss: {
+          ru: "Что написали вчера?",
+          en: "What was written yesterday?",
+          es: "¿Qué se escribió ayer?",
+        },
+        options: ["Der Brief", "Das Haus", "Die Tür", "Deutsch"],
+        answer: "Der Brief",
+        explanation: "«Der Brief wurde gestern geschrieben.»",
+      },
+      blank: {
+        question: "Hier wird Deutsch ___.",
+        questionGloss: {
+          ru: "Здесь ___ по-немецки.",
+          en: "German is ___ here.",
+          es: "Aquí se ___ alemán.",
+        },
+        answer: "gesprochen",
+        acceptableAnswers: ["Gesprochen"],
+        explanation: "Пассив: wird gesprochen.",
+      },
+    }),
+    "de-ch25-connectors": readingItems({
+      passage:
+        "Ich gehe spazieren, obwohl es regnet. Lea lernt viel, damit sie die Prüfung besteht. Während ich koche, hört Paul Musik. Ich rufe ihn an, bevor ich komme.",
+      passageGloss: {
+        ru: "Я иду гулять, хотя идёт дождь. Леа много учится, чтобы сдать экзамен. Пока я готовлю, Пауль слушает музыку. Я звоню ему, прежде чем прийти.",
+        en: "I go for a walk even though it is raining. Lea studies a lot so that she passes the exam. While I cook, Paul listens to music. I call him before I come.",
+        es: "Salgo a pasear aunque llueve. Lea estudia mucho para aprobar el examen. Mientras cocino, Paul escucha música. Lo llamo antes de llegar.",
+      },
+      grammarTopic: "de-b1-connectors-complex",
+      vocabTopic: "de-b1-opinions-debate",
+      mc: {
+        question: "Warum lernt Lea viel?",
+        questionGloss: {
+          ru: "Зачем Леа много учится?",
+          en: "Why does Lea study a lot?",
+          es: "¿Para qué estudia Lea mucho?",
+        },
+        options: [
+          "Damit sie die Prüfung besteht",
+          "Obwohl es regnet",
+          "Weil Paul Musik hört",
+          "Bevor ich koche",
+        ],
+        answer: "Damit sie die Prüfung besteht",
+        explanation: "«damit sie die Prüfung besteht.»",
+      },
+      blank: {
+        question: "Ich gehe spazieren, ___ es regnet.",
+        questionGloss: {
+          ru: "Я иду гулять, ___ идёт дождь.",
+          en: "I go for a walk ___ it is raining.",
+          es: "Salgo a pasear ___ llueve.",
+        },
+        answer: "obwohl",
+        acceptableAnswers: ["Obwohl"],
+        explanation: "Уступка: obwohl es regnet.",
+      },
+    }),
+    "de-ch28-konjunktiv-reported": readingItems({
+      passage:
+        "Der Reporter sagt, der Minister sei im Ausland. Eine Sprecherin meint, sie habe keine neuen Zahlen. Die Zeitung schreibt, das Treffen werde morgen stattfinden. Man sagt, die Lage sei ruhig.",
+      passageGloss: {
+        ru: "Репортёр говорит, что министр за границей. Представительница считает, что новых цифр нет. Газета пишет, что встреча состоится завтра. Говорят, что ситуация спокойная.",
+        en: "The reporter says the minister is abroad. A spokesperson thinks she has no new figures. The newspaper writes that the meeting will take place tomorrow. People say the situation is calm.",
+        es: "El reportero dice que el ministro está en el extranjero. Una portavoz cree que no hay cifras nuevas. El periódico escribe que la reunión será mañana. Se dice que la situación está tranquila.",
+      },
+      grammarTopic: "de-b2-konjunktiv-i-ii",
+      vocabTopic: "de-b2-media-claims",
+      mc: {
+        question: "Wo sei der Minister laut Reporter?",
+        questionGloss: {
+          ru: "Где, по словам репортёра, министр?",
+          en: "Where is the minister, according to the reporter?",
+          es: "¿Dónde está el ministro según el reportero?",
+        },
+        options: ["Im Ausland", "In der Redaktion", "Beim Treffen", "Bei der Sprecherin"],
+        answer: "Im Ausland",
+        explanation: "«der Minister sei im Ausland.»",
+      },
+      blank: {
+        question: "Man sagt, die Lage ___ ruhig.",
+        questionGloss: {
+          ru: "Говорят, ситуация ___ спокойная.",
+          en: "People say the situation ___ calm.",
+          es: "Se dice que la situación ___ tranquila.",
+        },
+        answer: "sei",
+        acceptableAnswers: ["Sei"],
+        explanation: "Konjunktiv I: die Lage sei ruhig.",
+      },
+    }),
+    "de-ch30-nominalization": readingItems({
+      passage:
+        "Nach der Prüfung des Antrags folgt die Entscheidung. Wegen der Änderung des Plans beginnt die Durchführung später. Die Lösung des Problems steht im Bericht. Die Verbesserung der Daten braucht Zeit.",
+      passageGloss: {
+        ru: "После проверки заявки следует решение. Из-за изменения плана проведение начнётся позже. Решение проблемы указано в отчёте. Улучшение данных требует времени.",
+        en: "After the review of the application comes the decision. Because of the change to the plan, implementation starts later. The solution to the problem is in the report. Improving the data takes time.",
+        es: "Tras la revisión de la solicitud llega la decisión. Por el cambio del plan, la ejecución empieza más tarde. La solución del problema está en el informe. Mejorar los datos lleva tiempo.",
+      },
+      grammarTopic: "de-b2-nominalization",
+      vocabTopic: "de-b2-formal-nouns",
+      mc: {
+        question: "Was folgt auf die Prüfung des Antrags?",
+        questionGloss: {
+          ru: "Что следует за проверкой заявки?",
+          en: "What follows the review of the application?",
+          es: "¿Qué sigue a la revisión de la solicitud?",
+        },
+        options: [
+          "Die Entscheidung",
+          "Die Änderung des Plans",
+          "Die Verbesserung der Daten",
+          "Ein leerer Bericht",
+        ],
+        answer: "Die Entscheidung",
+        explanation: "«Nach der Prüfung des Antrags folgt die Entscheidung.»",
+      },
+      blank: {
+        question: "Wegen der ___ des Plans beginnt die Durchführung später.",
+        questionGloss: {
+          ru: "Из-за ___ плана проведение начнётся позже.",
+          en: "Because of the ___ of the plan, implementation starts later.",
+          es: "Por la ___ del plan, la ejecución empieza más tarde.",
+        },
+        answer: "Änderung",
+        explanation: "«Wegen der Änderung des Plans.»",
+      },
+    }),
+    "de-ch34-particles-idioms": readingItems({
+      passage:
+        "Komm mal her, das ist doch ganz einfach. Ich drücke dir die Daumen für die Prüfung. Das ist eben so, sagt mein Bruder. Und er hat den Nagel auf den Kopf getroffen.",
+      passageGloss: {
+        ru: "Подойди-ка, это же совсем просто. Я держу за тебя кулаки перед экзаменом. Так уж оно и есть, говорит мой брат. И он попал в самую точку.",
+        en: "Come here a moment, this is obviously quite simple. I am keeping my fingers crossed for your exam. That is just how it is, my brother says. And he hit the nail on the head.",
+        es: "Ven un momento, esto es realmente muy fácil. Te cruzo los dedos para el examen. Así son las cosas, dice mi hermano. Y dio en el clavo.",
+      },
+      grammarTopic: "de-c1-particles-idioms",
+      vocabTopic: "de-c1-idioms-collocations",
+      mc: {
+        question: "Was drückt die Person?",
+        questionGloss: {
+          ru: "Что человек «держит»?",
+          en: "What does the person press?",
+          es: "¿Qué aprieta la persona?",
+        },
+        options: ["Die Daumen", "Den Nagel", "Den Kopf", "Die Prüfung"],
+        answer: "Die Daumen",
+        explanation: "«Ich drücke dir die Daumen.»",
+      },
+      blank: {
+        question: "Komm ___ her.",
+        questionGloss: {
+          ru: "Подойди ___ сюда.",
+          en: "Come ___ here.",
+          es: "Ven ___ aquí.",
+        },
+        answer: "mal",
+        acceptableAnswers: ["Mal"],
+        explanation: "mal смягчает императив: Komm mal her.",
+      },
+    }),
+    "de-ch36-text-pragmatics": readingItems({
+      passage:
+        "Im Seminar sagt jemand: Es zieht. Niemand fragt nach dem Wetter; die Bitte ist klar. Nicht der Preis ist das Problem, sondern die Frist. Nach der Entschuldigung sagt die Leiterin nur: Schon gut.",
+      passageGloss: {
+        ru: "На семинаре кто-то говорит: дует. Никто не спрашивает о погоде; просьба ясна. Проблема не в цене, а в сроке. После извинения руководительница говорит только: ладно, хватит.",
+        en: "In the seminar someone says: there is a draught. Nobody asks about the weather; the request is clear. The problem is not the price, but the deadline. After the apology the chair only says: all right, enough.",
+        es: "En el seminario alguien dice: hay corriente. Nadie pregunta por el tiempo; la petición es clara. El problema no es el precio, sino el plazo. Tras la disculpa la directora solo dice: ya está bien.",
+      },
+      grammarTopic: "de-c1-text-pragmatics",
+      vocabTopic: "de-c1-discourse-pragmatics",
+      mc: {
+        question: "Was ist das eigentliche Problem?",
+        questionGloss: {
+          ru: "В чём настоящая проблема?",
+          en: "What is the actual problem?",
+          es: "¿Cuál es el problema real?",
+        },
+        options: ["Die Frist", "Der Preis", "Das Wetter", "Die Entschuldigung"],
+        answer: "Die Frist",
+        explanation: "«Nicht der Preis ist das Problem, sondern die Frist.»",
+      },
+      blank: {
+        question: "Nicht der Preis ist das Problem, ___ die Frist.",
+        questionGloss: {
+          ru: "Не цена проблема, ___ срок.",
+          en: "The price is not the problem, ___ the deadline.",
+          es: "El precio no es el problema, ___ el plazo.",
+        },
+        answer: "sondern",
+        acceptableAnswers: ["Sondern"],
+        explanation: "Контраст: nicht …, sondern …",
+      },
+    }),
+  },
 };
 
 export function getReadingPassagesForChapter(

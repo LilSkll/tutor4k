@@ -1,0 +1,486 @@
+import type { StaticExercise } from "@/types";
+
+type Draft = Omit<StaticExercise, "id"> & { id?: string };
+
+const choose = "Выберите правильный вариант";
+const fill = "Вставьте пропущенное слово";
+const tr = "Переведите на немецкий";
+const fix = "Исправьте ошибку — напишите предложение целиком";
+const build = "Соберите предложение";
+
+function mc(
+  question: string,
+  options: string[],
+  answer: string,
+  explanation: string,
+): Draft {
+  return {
+    type: "multiple_choice",
+    question,
+    instruction: choose,
+    options,
+    answer,
+    explanation,
+  };
+}
+
+function fb(
+  question: string,
+  answer: string,
+  explanation: string,
+  acceptableAnswers?: string[],
+): Draft {
+  return {
+    type: "fill_blank",
+    question,
+    instruction: fill,
+    answer,
+    ...(acceptableAnswers ? { acceptableAnswers } : {}),
+    explanation,
+  };
+}
+
+function tl(
+  question: string,
+  answer: string,
+  explanation: string,
+  l1: { en: string; es: string; de: string },
+  acceptableAnswers?: string[],
+): Draft {
+  return {
+    type: "translation",
+    question,
+    instruction: tr,
+    answer,
+    explanation,
+    questionTranslations: l1,
+    ...(acceptableAnswers ? { acceptableAnswers } : {}),
+  };
+}
+
+function ec(
+  question: string,
+  answer: string,
+  explanation: string,
+  acceptableAnswers?: string[],
+): Draft {
+  return {
+    type: "error_correction",
+    question,
+    instruction: fix,
+    answer,
+    ...(acceptableAnswers ? { acceptableAnswers } : {}),
+    explanation,
+    rewriteMode: "grammar_fix",
+  };
+}
+
+function sb(
+  words: string[],
+  explanation: string,
+  acceptableAnswers?: string[],
+): Draft {
+  return {
+    type: "sentence_building",
+    question: [...words].reverse().join(" / "),
+    instruction: build,
+    options: words,
+    answer: words.join(" "),
+    ...(acceptableAnswers ? { acceptableAnswers } : {}),
+    explanation,
+  };
+}
+
+/** New DaF chapters 37–45. Old chapter banks stay in exercises-b2c1.ts. */
+export const GERMAN_EXPAND_45_EXERCISES: Record<string, Draft[]> = {
+  "de-ch37-genitiv-usage": [
+    mc("Wegen ___ Regens bleibt der Zug stehen.", ["des", "dem", "den", "die"], "des", "wegen в письменном тексте + генитив: des Regens."),
+    mc("Das Büro des ___ ist klein. (der Student)", ["Studenten", "Student", "Studentes", "Studentens"], "Studenten", "Слабое существительное: des Studenten, не des Students."),
+    mc("Innerhalb ___ Monats kommt die Antwort.", ["eines", "einem", "einen", "einer"], "eines", "innerhalb + генитив: eines Monats."),
+    mc("Aufgrund ___ Daten ändern wir den Plan.", ["der", "des", "den", "die"], "der", "Daten — множественное число, генитив der Daten."),
+    fb("Das ist das Haus ___ Vaters.", "des", "Мужской род: des + -s."),
+    fb("Trotz ___ Lärms arbeitet er.", "des", "Lärm мужской: des Lärms."),
+    fb("Statt ___ Briefes kam eine Karte.", "des", "statt + генитив: des Briefes."),
+    fb("Mangels ___ Beweises bleibt die Frage offen.", "eines", "mangels + генитив: eines Beweises."),
+    tl(
+      "Из-за дождя поезд опаздывает.",
+      "Wegen des Regens hat der Zug Verspätung",
+      "wegen + генитив, не датив.",
+      { en: "The train is delayed because of the rain.", es: "El tren llega tarde por la lluvia.", de: "Der Zug kommt später, weil es regnet." },
+      ["Der Zug hat wegen des Regens Verspätung"],
+    ),
+    tl(
+      "Это дом отца.",
+      "Das ist das Haus des Vaters",
+      "des Vaters: мужской род, окончание -s.",
+      { en: "This is the father's house.", es: "Esta es la casa del padre.", de: "Das Haus gehört dem Vater." },
+    ),
+    tl(
+      "Вместо письма пришла открытка.",
+      "Statt des Briefes kam eine Karte",
+      "statt + генитив des Briefes.",
+      { en: "A card came instead of the letter.", es: "En lugar de la carta llegó una postal.", de: "Eine Karte kam, kein Brief." },
+      ["Anstelle des Briefes kam eine Karte"],
+    ),
+    tl(
+      "На основании данных мы меняем план.",
+      "Aufgrund der Daten ändern wir den Plan",
+      "aufgrund + генитив множественного числа der Daten.",
+      { en: "We are changing the plan on the basis of the data.", es: "Cambiamos el plan a partir de los datos.", de: "Die Zahlen führen zu einem anderen Plan." },
+    ),
+    ec("Wegen dem Regen hat der Zug Verspätung.", "Wegen des Regens hat der Zug Verspätung.", "В письме wegen требует генитив: des Regens."),
+    ec("Das ist das Haus dem Vater.", "Das ist das Haus des Vaters.", "Чей дом: генитив des Vaters."),
+    ec("Innerhalb einem Monat kommt die Antwort.", "Innerhalb eines Monats kommt die Antwort.", "innerhalb + генитив eines Monats."),
+    ec("Trotz der Lärm arbeitet er.", "Trotz des Lärms arbeitet er.", "Lärm мужской: des Lärms, не der Lärm."),
+    sb(["Wegen", "des", "Regens", "hat", "der", "Zug", "Verspätung"], "wegen des Regens, глагол auf втором месте."),
+    sb(["Das", "ist", "das", "Haus", "des", "Vaters"], "des Vaters."),
+    sb(["Aufgrund", "der", "Daten", "ändern", "wir", "den", "Plan"], "der Daten — генитив множественного числа."),
+    sb(["Statt", "des", "Briefes", "kam", "eine", "Karte"], "statt des Briefes."),
+  ],
+
+  "de-ch38-connectors-advanced": [
+    mc("Er ist müde, ___ arbeitet er weiter.", ["trotzdem", "obwohl", "weil", "dass"], "trotzdem", "trotzdem — наречие: глагол сразу после него. obwohl уводил бы глагол в конец."),
+    mc("Es fehlen Belege, ___ ist die These schwach.", ["folglich", "obwohl", "weil", "wenn"], "folglich", "folglich вводит следствие и стоит перед глаголом."),
+    mc("Sie kommt. ___ bittet sie um Zeit.", ["Jedoch", "Obwohl", "Dass", "Weil"], "Jedoch", "Jedoch на первом месте, bittet на втором."),
+    mc("___ ist der Plan teuer, zum anderen ist er nötig.", ["Zum einen", "Obwohl", "Weil", "Dass"], "Zum einen", "Пара zum einen … zum anderen, обе части с глаголом на втором месте."),
+    fb("Er ist müde. ___ arbeitet er.", "Trotzdem", "Новое главное предложение: Trotzdem arbeitet er."),
+    fb("Die Belege fehlen. ___ ist die These schwach.", "Folglich", "Следствие: Folglich ist …"),
+    fb("Der Preis sinkt. Die Qualität sinkt ___.", "hingegen", "hingegen в середине: контраст."),
+    fb("___ fehlt Personal, zum anderen steigt die Nachfrage.", "Zum einen", "Первая половина пары."),
+    tl(
+      "Он устал, тем не менее он работает.",
+      "Er ist müde, trotzdem arbeitet er",
+      "trotzdem не подчиняет глагол.",
+      { en: "He is tired; nevertheless he works.", es: "Está cansado; sin embargo trabaja.", de: "Er arbeitet, auch wenn er müde ist." },
+    ),
+    tl(
+      "Доказательств нет, следовательно, тезис слаб.",
+      "Es gibt keine Belege, folglich ist die These schwach",
+      "folglich + спрягаемый глагол сразу за ним.",
+      { en: "There is no evidence, so the thesis is weak.", es: "No hay pruebas, así que la tesis es débil.", de: "Ohne Belege bleibt die These schwach." },
+    ),
+    tl(
+      "С одной стороны план дорогой, с другой — он нужен.",
+      "Zum einen ist der Plan teuer, zum anderen ist er nötig",
+      "Обе связки занимают первое место.",
+      { en: "On the one hand the plan is expensive, on the other it is necessary.", es: "Por un lado el plan es caro, por otro es necesario.", de: "Der Plan kostet viel, gebraucht wird er aber." },
+    ),
+    tl(
+      "Она согласна, однако просит время.",
+      "Sie ist einverstanden, jedoch bittet sie um Zeit",
+      "jedoch открывает второе главное предложение.",
+      { en: "She agrees, but she asks for time.", es: "Está de acuerdo, pero pide tiempo.", de: "Sie sagt ja und braucht noch Zeit." },
+      ["Sie ist einverstanden, sie bittet jedoch um Zeit"],
+    ),
+    ec("Trotzdem er müde ist, arbeitet er.", "Er ist müde, trotzdem arbeitet er.", "trotzdem не союз. Глагол стоит сразу после него."),
+    ec("Folglich die These ist schwach.", "Folglich ist die These schwach.", "После folglich сразу глагол."),
+    ec("Zum einen der Plan ist teuer.", "Zum einen ist der Plan teuer.", "Глагол — второй член, сразу после zum einen."),
+    ec("Jedoch er kommt später.", "Jedoch kommt er später.", "V2: kommt перед подлежащим."),
+    sb(["Trotzdem", "arbeitet", "er", "weiter"], "Глагол сразу после trotzdem."),
+    sb(["Folglich", "ist", "die", "These", "schwach"], "folglich ist."),
+    sb(["Zum", "einen", "ist", "der", "Plan", "teuer"], "Zum einen ist."),
+    sb(["Jedoch", "kommt", "sie", "später"], "Jedoch kommt sie."),
+  ],
+
+  "de-ch39-text-types": [
+    mc("Welcher Text bewertet und argumentiert?", ["der Kommentar", "der Bericht", "die Bewerbung", "der Lebenslauf"], "der Kommentar", "Комментарий занимает позицию. Отчёт держит факты, заявка просит место, жизнеописание перечисляет этапы."),
+    mc("Ein Bericht soll vor allem ___ bleiben.", ["sachlich", "ironisch", "wertend", "privat"], "sachlich", "В отчёте нет оценки. Wertend — это уже комментарий."),
+    mc("Mit freundlichen Grüßen steht am ___.", ["Schluss", "Betreff", "Anfang der Fakten", "Rand"], "Schluss", "Формула закрывает заявку, не открывает её."),
+    mc("Womit beginnt ein kurzer Kommentar?", ["mit einer These", "mit der Grußformel", "mit dem Lebenslauf", "mit einer Pointe ohne Thema"], "mit einer These", "Тезис — первое движение комментария."),
+    fb("Der ___ nennt Fakten ohne persönliche Note.", "Bericht", "Отчёт: факты, без оценки."),
+    fb("Im ___ steht die These meist am Anfang.", "Kommentar", "Комментарий открывается тезисом."),
+    fb("___: Bewerbung um ein Praktikum", "Betreff", "Строка темы в заявке."),
+    fb("Die ___ ordnet den Text in Einleitung, Hauptteil und Schluss.", "Gliederung", "Gliederung — план хода текста."),
+    tl(
+      "В отчёте только факты, без оценки.",
+      "Im Bericht stehen nur Fakten, ohne Bewertung",
+      "Bericht не оценивает.",
+      { en: "The report has only facts, with no evaluation.", es: "El informe solo tiene hechos, sin valoración.", de: "Der Text bleibt bei dem, was geschehen ist." },
+    ),
+    tl(
+      "Комментарий начинается с тезиса.",
+      "Der Kommentar beginnt mit einer These",
+      "These открывает комментарий.",
+      { en: "The commentary begins with a thesis.", es: "El comentario empieza con una tesis.", de: "Zuerst steht die Behauptung." },
+    ),
+    tl(
+      "Тема письма: заявка на практику.",
+      "Betreff: Bewerbung um ein Praktikum",
+      "Betreff называет повод, не приветствие.",
+      { en: "Subject: application for an internship.", es: "Asunto: solicitud de prácticas.", de: "In der Betreffzeile steht der Anlass." },
+    ),
+    tl(
+      "В конце кратко сформулируйте вывод.",
+      "Formulieren Sie am Schluss das Ergebnis kurz",
+      "Schluss держит вывод, не новый сюжет.",
+      { en: "At the end, state the conclusion briefly.", es: "Al final, formule la conclusión brevemente.", de: "Der letzte Satz nennt das Resultat in Kürze." },
+    ),
+    ec("Der Bericht finden das schlecht.", "Der Bericht nennt die Fakten.", "Отчёт не оценивает, и глагол согласуется: nennt."),
+    ec("Der Kommentar nennt nur Fakten und keine These.", "Der Kommentar beginnt mit einer These.", "Комментарий оценивает и открывается тезисом. Одни факты без оценки — это отчёт."),
+    ec("Betreff: Hallo zusammen.", "Betreff: Bewerbung um ein Praktikum.", "В теме заявки — повод, не приветствие."),
+    ec("Am Schluss stehen zum ersten Mal die neuen Fakten.", "Am Schluss steht das Ergebnis.", "Новые факты не приберегают для последней строки."),
+    sb(["Der", "Bericht", "nennt", "nur", "die", "Fakten"], "Отчёт называет факты."),
+    sb(["Der", "Kommentar", "beginnt", "mit", "einer", "These"], "Тезис в начале."),
+    sb(["Am", "Schluss", "steht", "das", "Ergebnis"], "Вывод в конце."),
+    sb(["Der", "Betreff", "nennt", "die", "Stelle"], "Тема письма называет должность."),
+  ],
+
+  "de-ch40-stilmittel": [
+    mc("„Nicht unerheblich“ ist eine ___.", ["Litotes", "Anrede", "Frage", "Liste"], "Litotes", "Отрицание противоположного усиливает: это существенно."),
+    mc("„Der sogenannte Experte“ markiert ___.", ["Distanz", "ein Kompliment", "einen Befehl", "den Genitiv"], "Distanz", "sogenannt снимает согласие автора с титулом."),
+    mc("„ein Meer von Anträgen“ ist eine ___.", ["Metapher", "Adresse", "Zahl", "Präposition"], "Metapher", "Моря нет: перенос признака «очень много»."),
+    mc("Ironie nennt oft das ___ des Gemeinten.", ["Gegenteil", "Datum", "Passiv", "Alphabet"], "Gegenteil", "Буквальная похвала при плохом результате — ирония."),
+    fb("Er war nicht ___ höflich.", "gerade", "nicht gerade сдвигает оценку вниз."),
+    fb("Das Ergebnis ist nicht ___.", "unerheblich", "Литота: nicht unerheblich значит «существенно»."),
+    fb("Die ___ sitzt im letzten Satz.", "Pointe", "Удар, который перечитывает начало."),
+    fb("Der Ausdruck ist ___: man kann ihn doppelt lesen.", "doppeldeutig", "Два чтения сразу."),
+    tl(
+      "Это совсем не плохо.",
+      "Das ist gar nicht schlecht",
+      "Преуменьшение: в строгой шкале это похвала.",
+      { en: "That is not bad at all.", es: "Eso no está nada mal.", de: "Das kann sich sehen lassen." },
+    ),
+    tl(
+      "Так называемый эксперт ошибся.",
+      "Der sogenannte Experte hat sich geirrt",
+      "sogenannt держит дистанцию, не комплимент.",
+      { en: "The so-called expert was wrong.", es: "El llamado experto se equivocó.", de: "Der Mann mit diesem Titel lag falsch." },
+    ),
+    tl(
+      "Он был не то чтобы вежлив.",
+      "Er war nicht gerade höflich",
+      "nicht gerade höflich = скорее невежлив.",
+      { en: "He was not exactly polite.", es: "No fue precisamente amable.", de: "Höflichkeit war das nicht." },
+    ),
+    tl(
+      "Это довольно существенно.",
+      "Das ist nicht unerheblich",
+      "Литота: nicht + отрицательное прилагательное.",
+      { en: "That is not insignificant.", es: "Eso no es insignificante.", de: "Das wiegt durchaus." },
+    ),
+    ec("Nicht unerheblich bedeutet völlig unwichtig.", "Nicht unerheblich bedeutet durchaus wichtig.", "Литота усиливает: отрицание противоположного значит «существенно».", ["Nicht unerheblich bedeutet wesentlich.", "Nicht unerheblich heißt, dass es wichtig ist."]),
+    ec("Der sogenannte der Experte irrt.", "Der sogenannte Experte irrt.", "Один артикль: der sogenannte Experte."),
+    ec("Nicht gerade höflich bedeutet sehr höflich.", "Nicht gerade höflich bedeutet eher unhöflich.", "nicht gerade тянет оценку вниз."),
+    ec("Ein Meer von Anträgen ist wörtlich ein Meer.", "Ein Meer von Anträgen ist nicht wörtlich gemeint.", "Метафора переносит «очень много». Моря в этой фразе нет.", ["Ein Meer von Anträgen ist eine Metapher."]),
+    sb(["Das", "ist", "nicht", "gerade", "höflich"], "nicht gerade höflich."),
+    sb(["Der", "sogenannte", "Experte", "irrt"], "Дистанция через sogenannt."),
+    sb(["Das", "ist", "eine", "klare", "Untertreibung"], "eine Untertreibung."),
+    sb(["Die", "Metapher", "ist", "nicht", "wörtlich"], "Метафору не читают буквально."),
+  ],
+
+  "de-ch41-wissenschaftssprache": [
+    mc("„in Betracht ziehen“ bedeutet hier ___.", ["erwägen", "vergessen", "bezahlen", "grüßen"], "erwägen", "Смысл несёт Betracht, не свободный перевод ziehen."),
+    mc("„Das Problem lässt sich lösen“ nennt eine ___.", ["Möglichkeit", "Pflicht zur Zahlung", "Anrede", "Uhrzeit"], "Möglichkeit", "sich lassen + инфинитив = можно."),
+    mc("„Der Antrag ist bis Freitag einzureichen“ nennt eine ___.", ["Aufgabe", "reine Vermutung", "Ironie", "Begrüßung"], "Aufgabe", "sein + zu в инструкции = надлежит."),
+    mc("Im Funktionsverbgefüge trägt das ___ die Bedeutung.", ["Nomen", "Komma", "Datum", "du"], "Nomen", "Глагол служебный, существительное держит смысл."),
+    fb("Wir ziehen den Vorschlag in ___.", "Betracht", "Фиксированная форма: in Betracht, не in Betrachtung."),
+    fb("Die Daten stellen die These in ___.", "Frage", "in Frage stellen, без лишнего артикля."),
+    fb("Die Studie bringt den Zweifel zum ___.", "Ausdruck", "zum Ausdruck bringen."),
+    fb("Das Problem ___ sich lösen.", "lässt", "lässt sich + инфинитив без zu."),
+    tl(
+      "Мы принимаем предложение во внимание.",
+      "Wir ziehen den Vorschlag in Betracht",
+      "Вся связка in Betracht ziehen.",
+      { en: "We are taking the proposal into consideration.", es: "Tenemos en cuenta la propuesta.", de: "Wir erwägen den Vorschlag." },
+    ),
+    tl(
+      "Проблему можно решить.",
+      "Das Problem lässt sich lösen",
+      "Возможность: sich lassen, без zu.",
+      { en: "The problem can be solved.", es: "El problema se puede resolver.", de: "Eine Lösung ist möglich." },
+    ),
+    tl(
+      "Данные ставят тезис под сомнение.",
+      "Die Daten stellen die These in Frage",
+      "in Frage stellen.",
+      { en: "The data call the thesis into question.", es: "Los datos ponen la tesis en duda.", de: "Die Zahlen machen die These zweifelhaft." },
+    ),
+    tl(
+      "Исследование выражает сомнение.",
+      "Die Untersuchung bringt Zweifel zum Ausdruck",
+      "zum Ausdruck bringen.",
+      { en: "The study expresses doubt.", es: "El estudio expresa dudas.", de: "Die Untersuchung sagt, dass etwas unsicher ist." },
+    ),
+    ec("Wir ziehen den Vorschlag in Betrachtung.", "Wir ziehen den Vorschlag in Betracht.", "Нет -ung: in Betracht."),
+    ec("Das Problem lässt sich zu lösen.", "Das Problem lässt sich lösen.", "После sich lassen инфинитив без zu."),
+    ec("Die Daten stellen die These in der Frage.", "Die Daten stellen die These in Frage.", "Без артикля: in Frage."),
+    ec("Das Problem ist lösen.", "Das Problem ist zu lösen.", "sein + zu + инфинитив."),
+    sb(["Wir", "ziehen", "den", "Vorschlag", "in", "Betracht"], "in Betracht в конце группы."),
+    sb(["Das", "Problem", "lässt", "sich", "lösen"], "lässt sich lösen."),
+    sb(["Die", "Daten", "stellen", "die", "These", "in", "Frage"], "in Frage stellen."),
+    sb(["Die", "Untersuchung", "bringt", "Zweifel", "zum", "Ausdruck"], "zum Ausdruck."),
+  ],
+
+  "de-ch42-nuancen-modal": [
+    mc("Die Lampe ist aus. Er ___ schon weg sein.", ["muss", "darf", "soll", "will"], "muss", "Свет погашен — улика, не приказ и не слух: эпистемический muss."),
+    mc("Die Kollegen erzählen es nur. Sie ___ reich sein.", ["soll", "muss", "darf", "will"], "soll", "Чужой рассказ без своей улики — слух: soll, не вывод muss."),
+    mc("Das ___ stimmen, sicher bin ich nicht.", ["dürfte", "muss", "soll", "darf"], "dürfte", "Неуверенность не держит сильный muss. Осторожный вывод — dürfte."),
+    mc("Die Regel ist klar. Du ___ bleiben.", ["musst", "dürftest", "willst", "magst"], "musst", "Правило и адресат: деонтический долг, форма du musst."),
+    fb("Er ___ das nicht gewusst haben, behauptet er.", "will", "will + перфектный инфинитив = его заявление, не желание."),
+    fb("Das ___ stimmen, aber es hilft uns nicht.", "mag", "mag открывает уступку. Желание или долг здесь ни при чём."),
+    fb("Sie ___ krank sein, sagt man.", "soll", "Слух: soll + инфинитив."),
+    fb("Sein Mantel hängt hier. Er ___ noch im Haus sein.", "muss", "Наблюдение → эпистемический muss."),
+    tl(
+      "Он, должно быть, уже ушёл.",
+      "Er muss schon weg sein",
+      "Эпистемический muss: вывод, не приказ.",
+      { en: "He must already be gone.", es: "Debe de haberse ido ya.", de: "Alles spricht dafür, dass er nicht mehr da ist." },
+    ),
+    tl(
+      "Говорят, она богата.",
+      "Sie soll reich sein",
+      "soll = чужой слух.",
+      { en: "She is said to be rich.", es: "Dicen que es rica.", de: "Das behaupten andere über sie." },
+    ),
+    tl(
+      "Это, пожалуй, верно.",
+      "Das dürfte stimmen",
+      "dürfte мягче, чем muss.",
+      { en: "That is probably right.", es: "Eso probablemente sea cierto.", de: "Viel spricht dafür, ganz sicher ist es nicht." },
+    ),
+    tl(
+      "Ты обязан остаться.",
+      "Du musst bleiben",
+      "Деонтический muss: долг, не догадка.",
+      { en: "You have to stay.", es: "Tienes que quedarte.", de: "Bleiben ist für dich Pflicht." },
+    ),
+    ec("Die Lampe ist aus. Er muss bleiben.", "Die Lampe ist aus. Er muss schon weg sein.", "Лампа — улика. muss значит «он, должно быть, уже ушёл», а не «он обязан остаться».", ["Die Lampe ist aus, also muss er schon weg sein."]),
+    ec("Man erzählt es nur. Sie muss reich sein.", "Man erzählt es nur. Sie soll reich sein.", "Чужой рассказ без улики — soll. muss требовал бы собственного наблюдения."),
+    ec("Er möchte das nicht gewusst haben.", "Er will das nicht gewusst haben.", "möchte было бы желанием. will с перфектным инфинитивом — заявление, что он не знал.", ["Er will es nicht gewusst haben."]),
+    ec("Das muss stimmen, obwohl ich ganz unsicher bin.", "Das dürfte stimmen, obwohl ich nicht sicher bin.", "При открытой неуверенности нужен dürfte. muss утверждает вывод слишком жёстко.", ["Das dürfte stimmen."]),
+    sb(["Er", "muss", "schon", "weg", "sein"], "Эпистемический вывод."),
+    sb(["Sie", "soll", "reich", "sein"], "soll как слух."),
+    sb(["Das", "dürfte", "stimmen"], "Осторожная вероятность."),
+    sb(["Du", "musst", "hier", "bleiben"], "Деонтический долг."),
+  ],
+
+  "de-ch43-informationsstruktur": [
+    mc("Nur Anna hat angerufen. Der Fokus liegt auf ___.", ["Anna", "dem Verb allein", "der Uhrzeit", "der Anrede"], "Anna", "nur стоит прямо перед Анной."),
+    mc("Anna hat nur angerufen. Der Fokus liegt auf ___.", ["angerufen", "Anna als einziger Person", "dem Datum", "dem Artikel"], "angerufen", "nur перед причастием выделяет действие, не лицо."),
+    mc("Im Vorfeld eines Hauptsatzes steht ___.", ["ein Satzglied", "der ganze Aufsatz", "drei finite Verben", "kein Wort"], "ein Satzglied", "Перед глаголом ровно одно составляющее."),
+    mc("Die neue Information steht meist ___.", ["am Ende", "immer allein im Vorfeld", "vor dem ersten Artikel", "im Gruß"], "am Ende", "Рема тяготеет к концу фразы."),
+    fb("___ mag ich nicht, München schon.", "Berlin", "Берлин — контрастная тема в Vorfeld."),
+    fb("___ er kam zu spät, nicht seine Kollegin.", "Ausgerechnet", "ausgerechnet перед неожиданным фокусом."),
+    fb("Gestern ___ sie angerufen.", "hat", "Время в Vorfeld, глагол сразу за ним."),
+    fb("Anna hat ___ angerufen, sie ist nicht gekommen.", "nur", "nur перед причастием: только позвонила."),
+    tl(
+      "Берлин мне не нравится.",
+      "Berlin mag ich nicht",
+      "Берлин в Vorfeld: тема для сравнения.",
+      { en: "Berlin, I don't like.", es: "Berlín no me gusta.", de: "Berlin gefällt mir nicht." },
+      ["Ich mag Berlin nicht"],
+    ),
+    tl(
+      "Только Анна позвонила.",
+      "Nur Anna hat angerufen",
+      "Фокус на Анне: другие не звонили.",
+      { en: "Only Anna called.", es: "Solo llamó Anna.", de: "Der Anruf kam von Anna und von niemand sonst." },
+    ),
+    tl(
+      "Именно он опоздал.",
+      "Ausgerechnet er kam zu spät",
+      "ausgerechnet маркирует неожиданное лицо.",
+      { en: "He, of all people, was late.", es: "Precisamente él llegó tarde.", de: "Er kam zu spät, und niemand hat damit gerechnet." },
+    ),
+    tl(
+      "Вчера она позвонила.",
+      "Gestern hat sie angerufen",
+      "Время занимает Vorfeld, hat на втором месте.",
+      { en: "She called yesterday.", es: "Ayer llamó ella.", de: "Der Anruf war am Vortag." },
+    ),
+    ec("Nur hat Anna angerufen.", "Nur Anna hat angerufen.", "Если фокус — Анна, nur стоит перед Анной."),
+    ec("Berlin ich mag nicht.", "Berlin mag ich nicht.", "После Vorfeld сразу глагол."),
+    ec("Gestern sie hat angerufen.", "Gestern hat sie angerufen.", "В Vorfeld только время, не время плюс подлежащее."),
+    ec("Ausgerechnet kam er zu spät.", "Ausgerechnet er kam zu spät.", "Неожидан фокус — лицо, частица перед er."),
+    sb(["Berlin", "mag", "ich", "nicht"], "Тема Berlin, глагол mag."),
+    sb(["Nur", "Anna", "hat", "angerufen"], "Фокус на Анне."),
+    sb(["Ausgerechnet", "er", "kam", "zu", "spät"], "ausgerechnet er."),
+    sb(["Gestern", "hat", "sie", "angerufen"], "Gestern hat."),
+  ],
+
+  "de-ch44-literarisch-kultur": [
+    mc("Der Erzähler ist ___.", ["nicht automatisch der Autor", "immer dieselbe Person wie der Autor", "nur die Biografie des Autors", "ein Beweis für das gelebte Leben"], "nicht automatisch der Autor", "Ich в тексте — роль, не паспорт автора."),
+    mc("Ein Motiv ist ___.", ["ein wiederkehrendes Element", "ein einmaliges Wort", "die einmalige Erwähnung eines Gegenstands", "der erste Satz und sonst nichts"], "ein wiederkehrendes Element", "Мотив узнают по возвращению, не по одному слову."),
+    mc("Ein Symbol meint ___.", ["mehr als den Gegenstand", "nur den sichtbaren Gegenstand", "genau das, was man anfassen kann", "weniger als den Gegenstand"], "mehr als den Gegenstand", "Перенос сверх буквального предмета."),
+    mc("Eine offene Deutung lässt ___.", ["mehrere Lesarten zu", "nur eine Lesart zu", "keine zweite Lesart zu", "die Biografie als einzigen Beweis zu"], "mehrere Lesarten zu", "Текст может удержать два чтения, если оба опираются на слова."),
+    fb("Der ___ spricht, nicht unbedingt der Autor.", "Erzähler", "Голос текста ≠ биография."),
+    fb("Das ___ kehrt im Text wieder.", "Motiv", "Повтор со сдвигом."),
+    fb("Der Text lässt die ___ offen.", "Deutung", "Открытое толкование называют прямо."),
+    fb("Die Aussage bleibt ___.", "mehrdeutig", "Оба чтения опираются на текст."),
+    tl(
+      "Рассказчик — это не автор.",
+      "Der Erzähler ist nicht der Autor",
+      "Голос и человек, написавший текст, расходятся.",
+      { en: "The narrator is not the author.", es: "El narrador no es el autor.", de: "Wer «ich» sagt, hat das Buch nicht unbedingt selbst geschrieben." },
+    ),
+    tl(
+      "Мотив снова появляется в конце.",
+      "Das Motiv kehrt am Ende wieder",
+      "Мотив — возврат, не одно упоминание.",
+      { en: "The motif returns at the end.", es: "El motivo vuelve al final.", de: "Dasselbe Element kommt am Schluss noch einmal." },
+    ),
+    tl(
+      "Текст оставляет толкование открытым.",
+      "Der Text lässt die Deutung offen",
+      "Открытость — формулировка читателя, не дефект.",
+      { en: "The text leaves the interpretation open.", es: "El texto deja abierta la interpretación.", de: "Zwei Lesarten bleiben möglich." },
+    ),
+    tl(
+      "Символ значит больше, чем предмет.",
+      "Das Symbol meint mehr als den Gegenstand",
+      "Назовите перенос, не сюжет, которого нет в тексте.",
+      { en: "The symbol means more than the object.", es: "El símbolo significa más que el objeto.", de: "Der Gegenstand steht für etwas Weiteres." },
+    ),
+    ec("Der Autor ist immer der Erzähler.", "Der Erzähler ist nicht immer der Autor.", "Ich-голос не доказывает автобиографию."),
+    ec("Ein Symbol meint nur den Gegenstand.", "Ein Symbol meint mehr als den Gegenstand.", "Символ шире буквальной вещи."),
+    ec("Ein Motiv steht nur einmal im Text.", "Ein Motiv kehrt im Text wieder.", "Мотив узнают по возвращению, а не по одному упоминанию."),
+    ec("Der Text lässt keine Lesart zu, sonst ist er falsch.", "Der Text kann mehrere Lesarten offenlassen.", "Два опоры в тексте — не ошибка автора."),
+    sb(["Der", "Erzähler", "ist", "nicht", "der", "Autor"], "Голос и автор различны."),
+    sb(["Das", "Motiv", "kehrt", "am", "Ende", "wieder"], "Возврат мотива."),
+    sb(["Der", "Text", "lässt", "die", "Deutung", "offen"], "lässt die Deutung offen."),
+    sb(["Das", "Symbol", "meint", "mehr", "als", "den", "Gegenstand"], "Больше, чем предмет."),
+  ],
+
+  "de-ch45-pragmatic-mastery": [
+    mc("„Es zieht“ kann in diesem Zimmer heißen:", ["Bitte mach das Fenster zu", "Hier ist es nur kalt, mehr nicht", "Der Wetterbericht für morgen", "Das Fenster ist schon zu"], "Bitte mach das Fenster zu", "Импликатура: ждут действия, не справки о сквозняке."),
+    mc("Ein Registerwechsel ändert ___.", ["Anrede, Ton und Wortwahl zusammen", "nur die Anrede Sie", "nur ein einzelnes bitte", "nur die Länge der Unterschrift"], "Anrede, Ton und Wortwahl zusammen", "Регистр — пакет. Одно Sie или одно bitte его не держат."),
+    mc("„Das ist nicht ganz klar“ schwächt ___ ab.", ["die Kritik", "die Behauptung bis zum Widerspruch", "nur die Anrede", "den Fakt selbst auf null"], "die Kritik", "Смягчение сохраняет претензию и лицо. Оно не отменяет факт."),
+    mc("Wenn der höfliche Hinweis nichts tut, folgt ___.", ["eine deutlichere Bitte", "sofort ein Befehl auf du", "noch einmal nur Es zieht", "ein Sprung in die Beleidigung"], "eine deutlichere Bitte", "Эскалация по ступеням: от намёка к явной просьбе, не к приказу и не к оскорблению."),
+    fb("Wenn es Ihnen ___ ist, schreibe ich kurz.", "recht", "wenn es Ihnen recht ist — выход для адресата."),
+    fb("Ich fasse mich ___.", "kurz", "Обещание не занять много времени."),
+    fb("Könnten ___ das Fenster schließen?", "Sie", "Письменный регистр: Sie, не du."),
+    fb("Unter Freunden sagt man ___, nicht Sie.", "du", "Близкий регистр держит du последовательно."),
+    tl(
+      "Если вам удобно, я напишу коротко.",
+      "Wenn es Ihnen recht ist, schreibe ich kurz",
+      "Датив Ihnen и выход для собеседника.",
+      { en: "If it is all right with you, I will keep this short.", es: "Si le parece bien, escribo breve.", de: "Ich bleibe bei wenigen Sätzen, sofern das passt." },
+    ),
+    tl(
+      "Здесь дует.",
+      "Es zieht",
+      "В комнате с окном это просьба, не прогноз.",
+      { en: "There is a draft.", es: "Hay corriente.", de: "Die Luft kommt hier durch." },
+    ),
+    tl(
+      "Не могли бы вы, пожалуйста, закрыть окно?",
+      "Könnten Sie bitte das Fenster schließen",
+      "Sie + Konjunktiv II + bitte: письменная просьба.",
+      { en: "Could you please close the window?", es: "¿Podría cerrar la ventana, por favor?", de: "Wären Sie so gut, das Fenster zu schließen?" },
+    ),
+    tl(
+      "Я буду краток.",
+      "Ich fasse mich kurz",
+      "Ход вежливости, не содержание дела.",
+      { en: "I will be brief.", es: "Seré breve.", de: "Es folgen nur wenige Sätze." },
+    ),
+    ec("Wenn es Sie recht ist, schreibe ich kurz.", "Wenn es Ihnen recht ist, schreibe ich kurz.", "После es ist нужен датив: Ihnen."),
+    ec("Sehr geehrte Frau Berg, mach mal das Fenster zu.", "Sehr geehrte Frau Berg, könnten Sie bitte das Fenster schließen?", "Обращение на Sie не держит du, mal и короткий приказ. Просьба остаётся в письменном регистре.", ["Sehr geehrte Frau Berg, könnten Sie das Fenster bitte schließen?"]),
+    ec("Sehr geehrte Frau Berg, was geht ab?", "Sehr geehrte Frau Berg, ich melde mich kurz.", "Sie-обращение не сочетается с was geht ab."),
+    ec("Ich fasse mich kurzlich.", "Ich fasse mich kurz.", "Устойчиво: sich kurz fassen."),
+    sb(["Wenn", "es", "Ihnen", "recht", "ist", "schreibe", "ich", "kurz"], "Ihnen recht ist."),
+    sb(["Könnten", "Sie", "das", "Fenster", "schließen"], "Письменная просьба."),
+    sb(["Ich", "fasse", "mich", "kurz"], "Обещание краткости."),
+    sb(["Es", "zieht", "hier", "etwas"], "Намёк на сквозняк."),
+  ],
+};

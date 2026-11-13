@@ -1,4 +1,4 @@
-import type { InterfaceLanguage, Level } from "@/types";
+import type { GrammarLevel, InterfaceLanguage } from "@/types";
 
 // =====================================================================
 // Prompt Registry
@@ -8,7 +8,7 @@ import type { InterfaceLanguage, Level } from "@/types";
 // =====================================================================
 
 export interface PromptBuilderOptions {
-  level?: Level | null;
+  level?: GrammarLevel | null;
   interfaceLanguage?: InterfaceLanguage;
   userName?: string | null;
   retrievedContext?: string | null;
@@ -25,6 +25,8 @@ const PROMPT_LOADERS: Record<string, () => Promise<PromptBuilder>> = {
     import("@/server/ai/prompts/english").then((m) => m.buildEnglishPrompt),
   russian: () =>
     import("@/server/ai/prompts/russian").then((m) => m.buildRussianPrompt),
+  german: () =>
+    import("@/server/ai/prompts/german").then((m) => m.buildGermanPrompt),
 };
 
 const cache = new Map<string, PromptBuilder>();

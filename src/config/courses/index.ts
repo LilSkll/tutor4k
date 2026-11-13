@@ -22,6 +22,8 @@ const LOADERS: Record<string, () => Promise<CourseConfig>> = {
     import("./english").then((m) => m.loadEnglishCourse()),
   russian: () =>
     import("./russian").then((m) => m.loadRussianCourse()),
+  german: () =>
+    import("./german").then((m) => m.loadGermanCourse()),
 };
 
 // In-memory cache (survives within a warm serverless instance).
@@ -68,6 +70,7 @@ export const COURSE_TITLES: Record<string, string> = {
   spanish: "Español",
   english: "English",
   russian: "Русский",
+  german: "Deutsch",
 };
 
 export function getCourseTitle(courseId: string | null | undefined): string {

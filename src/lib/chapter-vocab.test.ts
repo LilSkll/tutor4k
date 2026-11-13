@@ -28,5 +28,16 @@ describe("getChapterVocabPreview", () => {
     );
     expect(ru.words.length).toBeGreaterThan(3);
     expect(ru.words.some((w) => /[А-Яа-яЁё]/.test(w.word))).toBe(true);
+
+    const de = await getChapterVocabPreview(
+      "german",
+      "de-ch1-alphabet-greetings",
+      "de-a1-greetings",
+      "en",
+    );
+    expect(de.words.length).toBeGreaterThan(3);
+    expect(de.words.some((w) => /hallo|danke|Alphabet|Buchstabe/i.test(w.word))).toBe(
+      true,
+    );
   });
 });

@@ -27,6 +27,7 @@ const A1_GRAMMAR = [
   "ru-a1-accusative",
   "ru-a1-prepositional",
   "ru-a1-numbers-time",
+  "ru-a1-classroom-survival",
 ] as const;
 
 const A2_GRAMMAR = [
@@ -37,6 +38,7 @@ const A2_GRAMMAR = [
   "ru-a2-instrumental",
   "ru-a2-aspect-intro",
   "ru-a2-motion-basic",
+  "ru-a2-services-invitations",
 ] as const;
 
 const CYRILLIC_META =
@@ -75,10 +77,14 @@ describe("RKI multilingual localization (A1)", () => {
       "ru-b2-reported-speech",
       "ru-b2-conditionals",
       "ru-b2-formal-register",
+      "ru-b2-syntax-complexity",
+      "ru-b2-written-discourse",
       "ru-c1-aspect-nuance",
       "ru-c1-idioms",
       "ru-c1-advanced-argumentation",
       "ru-c1-media-discourse",
+      "ru-c1-critique-review",
+      "ru-c1-academic-writing",
       "ru-c2-registers",
       "ru-c2-literary",
       "ru-c2-professional",
@@ -104,7 +110,23 @@ describe("RKI multilingual localization (A1)", () => {
 
   it("localizes B2–C2 chapter cards onto the journey cities", async () => {
     const course = await getCourse("russian");
-    const later = course.getChapters().filter((c) => c.number >= 23);
+    const laterSlugs = [
+      "ru-ch23-participles",
+      "ru-ch24-gerunds",
+      "ru-ch25-passive",
+      "ru-ch26-reported-speech",
+      "ru-ch27-conditionals",
+      "ru-ch28-formal-register",
+      "ru-ch29-aspect-nuance",
+      "ru-ch30-idioms",
+      "ru-ch31-advanced-argumentation",
+      "ru-ch32-media-discourse",
+      "ru-ch33-registers",
+      "ru-ch34-literary-culture",
+      "ru-ch35-professional-academic",
+      "ru-ch36-pragmatic-mastery",
+    ];
+    const later = laterSlugs.map((slug) => course.getChapter(slug)!);
     expect(later).toHaveLength(14);
     const deCities =
       /Weliki Nowgorod|Twer|Wladimir|Moskau|Sankt Petersburg|Kasan|Nischni Nowgorod/;
@@ -130,6 +152,9 @@ describe("RKI multilingual localization (A1)", () => {
       "ru-b1-complex-sentences",
       "ru-b1-text-cohesion",
       "ru-b1-argumentation",
+      "ru-b1-government-verbs",
+      "ru-b1-participle-preview",
+      "ru-b1-opinion-structures",
     ] as const;
     for (const slug of B1_GRAMMAR) {
       for (const lang of UI_NON_RU) {
@@ -166,7 +191,7 @@ describe("RKI multilingual localization (A1)", () => {
   it("localizes A1 chapter titles/summaries for en/es/de without RU meta", async () => {
     const course = await getCourse("russian");
     const a1 = course.getChapters().filter((c) => c.level === "A1");
-    expect(a1.length).toBe(8);
+    expect(a1.length).toBe(9);
 
     for (const ch of a1) {
       for (const lang of UI_NON_RU) {
@@ -274,7 +299,23 @@ describe("RKI multilingual localization (A1)", () => {
 
   it("localizes exercise instructions across all 560 A2–B1 items × en/es/de", async () => {
     const course = await getCourse("russian");
-    const a2b1 = course.getChapters().filter((c) => c.number >= 9 && c.number <= 22);
+    const a2b1Slugs = [
+      "ru-ch9-past-tense",
+      "ru-ch10-future",
+      "ru-ch11-genitive",
+      "ru-ch12-dative",
+      "ru-ch13-instrumental",
+      "ru-ch14-aspect-intro",
+      "ru-ch15-motion-basic",
+      "ru-ch16-dorm-shops",
+      "ru-ch17-cases-review",
+      "ru-ch18-aspect-system",
+      "ru-ch19-motion-prefixes",
+      "ru-ch20-complex-sentences",
+      "ru-ch21-narration-cohesion",
+      "ru-ch22-academic-social",
+    ];
+    const a2b1 = a2b1Slugs.map((slug) => course.getChapter(slug)!);
     expect(a2b1).toHaveLength(14);
 
     const byTypeLocale: Record<string, Record<string, number>> = {
@@ -341,7 +382,23 @@ describe("RKI multilingual localization (A1)", () => {
 
   it("localizes exercise instructions across all 560 B2–C2 items × en/es/de", async () => {
     const course = await getCourse("russian");
-    const advanced = course.getChapters().filter((c) => c.number >= 23);
+    const advancedSlugs = [
+      "ru-ch23-participles",
+      "ru-ch24-gerunds",
+      "ru-ch25-passive",
+      "ru-ch26-reported-speech",
+      "ru-ch27-conditionals",
+      "ru-ch28-formal-register",
+      "ru-ch29-aspect-nuance",
+      "ru-ch30-idioms",
+      "ru-ch31-advanced-argumentation",
+      "ru-ch32-media-discourse",
+      "ru-ch33-registers",
+      "ru-ch34-literary-culture",
+      "ru-ch35-professional-academic",
+      "ru-ch36-pragmatic-mastery",
+    ];
+    const advanced = advancedSlugs.map((slug) => course.getChapter(slug)!);
     expect(advanced).toHaveLength(14);
 
     const ruTaskMeta =

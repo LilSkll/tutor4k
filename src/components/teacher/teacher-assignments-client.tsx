@@ -70,7 +70,7 @@ export function TeacherAssignmentsClient() {
   const [creating, setCreating] = React.useState(false);
   const [analyzingId, setAnalyzingId] = React.useState<string | null>(null);
 
-  const [courseId, setCourseId] = React.useState<"spanish" | "english" | "russian">(
+  const [courseId, setCourseId] = React.useState<"spanish" | "english" | "russian" | "german">(
     "spanish",
   );
   const [studentId, setStudentId] = React.useState("");
@@ -89,7 +89,12 @@ export function TeacherAssignmentsClient() {
   const prefillCourse = searchParams.get("courseId");
 
   React.useEffect(() => {
-    if (prefillCourse === "spanish" || prefillCourse === "english" || prefillCourse === "russian") {
+    if (
+      prefillCourse === "spanish" ||
+      prefillCourse === "english" ||
+      prefillCourse === "russian" ||
+      prefillCourse === "german"
+    ) {
       setCourseId(prefillCourse);
     }
     if (prefillStudent) setStudentId(prefillStudent);
@@ -298,7 +303,7 @@ export function TeacherAssignmentsClient() {
       </div>
 
       <div className="flex flex-wrap gap-2">
-        {(["spanish", "english", "russian"] as const).map((c) => (
+        {(["spanish", "english", "russian", "german"] as const).map((c) => (
           <button
             key={c}
             type="button"

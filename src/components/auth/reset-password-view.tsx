@@ -6,6 +6,7 @@ import { ResetPasswordForm } from "@/components/auth/reset-password-form";
 import { RecoveryHashSession } from "@/components/auth/recovery-hash-session";
 import { BrandIcon } from "@/components/shared/brand-icon";
 import { translate } from "@/lib/i18n/auth";
+import { resolveAuthErrorMessage } from "@/lib/resolve-auth-error";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 
 export function ResetPasswordView({
@@ -51,7 +52,7 @@ export function ResetPasswordView({
 
           {error && (
             <div className="mb-4 rounded-lg border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive">
-              {error}
+              {resolveAuthErrorMessage(error, language) ?? error}
             </div>
           )}
 

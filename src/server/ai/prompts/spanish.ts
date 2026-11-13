@@ -11,8 +11,10 @@ const SPANISH_LEVEL_GUIDE = {
 
 /** Spanish course system prompt — never used for other courses. */
 export function buildSpanishPrompt(options: PromptBuilderOptions): string {
+  // User Level caps at C1; GrammarLevel may be C2 for chapter bands.
+  const level = options.level === "C2" ? "C1" : options.level;
   return buildUniversalPrompt({
-    level: options.level,
+    level,
     interfaceLanguage: options.interfaceLanguage ?? "ru",
     userName: options.userName,
     retrievedContext: options.retrievedContext,

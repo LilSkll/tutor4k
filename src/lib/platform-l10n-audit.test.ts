@@ -43,7 +43,7 @@ describe("platform localization × translation × vocabulary audit", () => {
   it("Russian course × all UI locales: TR L1 never equals Russian answer; instructions match UI", async () => {
     const course = await getCourse("russian");
     const chapters = course.getChapters();
-    expect(chapters).toHaveLength(36);
+    expect(chapters).toHaveLength(45);
 
     for (const lang of UI) {
       let usableTr = 0;

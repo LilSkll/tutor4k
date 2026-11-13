@@ -2,8 +2,8 @@ import type {
   AIGenerateOptions,
   AIResponse,
   AIMessage,
+  GrammarLevel,
   InterfaceLanguage,
-  Level,
 } from "@/types";
 import {
   FatalAIError,
@@ -89,7 +89,7 @@ async function callWithRetry(
 async function buildSystemPromptForCourse(
   courseId: string,
   options: {
-    level?: Level | null;
+    level?: GrammarLevel | null;
     interfaceLanguage?: InterfaceLanguage;
     userName?: string | null;
     retrievedContext?: string | null;
@@ -383,7 +383,7 @@ export async function generateWithSystemPrompt(options: {
 export async function generateStructuredJSON<T>(
   messages: AIMessage[],
   opts?: {
-    level?: Level | null;
+    level?: GrammarLevel | null;
     temperature?: number;
     interfaceLanguage?: InterfaceLanguage;
     /** @deprecated Use interfaceLanguage. */

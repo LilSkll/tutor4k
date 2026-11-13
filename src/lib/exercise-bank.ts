@@ -17,6 +17,8 @@ export const ENGLISH_C2_THICK_CHAPTERS = new Set([
   "eng-ch23-spotlight",
   "eng-ch24-unspoken",
   "eng-ch25-between-lines",
+  "eng-ch44-figurative-precision",
+  "eng-ch45-discourse-mastery",
 ]);
 
 /** Thicker pool for Spanish C2 chapters on /exercises. */

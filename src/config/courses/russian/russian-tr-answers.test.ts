@@ -25,11 +25,11 @@ function russianTranslationSnapshot() {
 describe("Russian translation acceptableAnswers + TR L1 cache", () => {
   it("matches every English TR stem to RUSSIAN_TR_L1 and keeps pool size stable", () => {
     const { total, stems } = russianTranslationSnapshot();
-    expect(total).toBe(360);
-    expect(stems.size).toBe(357);
+    expect(total).toBe(396);
+    expect(stems.size).toBe(393);
 
     const cacheKeys = new Set(Object.keys(RUSSIAN_TR_L1));
-    expect(cacheKeys.size).toBe(357);
+    expect(cacheKeys.size).toBe(393);
 
     for (const stem of stems) {
       expect(RUSSIAN_TR_L1[stem], `missing L1 for: ${stem}`).toBeTruthy();
@@ -78,6 +78,15 @@ describe("Russian translation acceptableAnswers + TR L1 cache", () => {
       "ru-ch34-literary-culture": 8,
       "ru-ch35-professional-academic": 8,
       "ru-ch36-pragmatic-mastery": 8,
+      "ru-ch37-classroom-survival": 4,
+      "ru-ch38-services-invitations": 4,
+      "ru-ch39-government-verbs": 4,
+      "ru-ch40-participle-preview": 4,
+      "ru-ch41-opinion-structures": 4,
+      "ru-ch42-syntax-complexity": 4,
+      "ru-ch43-written-discourse": 4,
+      "ru-ch44-critique-review": 4,
+      "ru-ch45-academic-writing": 4,
     };
     expect(perChapter).toEqual(expected);
   });

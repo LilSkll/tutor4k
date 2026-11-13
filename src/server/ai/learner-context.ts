@@ -25,7 +25,7 @@ import type {
   ExerciseHistory,
   ExerciseType,
   InterfaceLanguage,
-  Level,
+  GrammarLevel,
 } from "@/types";
 import type { StudentCourseProfile } from "@/types/learning-profile";
 
@@ -37,7 +37,7 @@ export type TeacherContext = {
   activeCourse: string;
   targetLanguage: string;
   interfaceLanguage: InterfaceLanguage;
-  currentLevel: Level | null;
+  currentLevel: GrammarLevel | null;
   currentChapter: string | null;
   currentChapterSlug: string | null;
   completedChapters: number;
@@ -93,7 +93,7 @@ function grammarLabel(
 function resolveCurrentChapter(
   chapters: Chapter[],
   completed: Set<string>,
-  level: Level | null,
+  level: GrammarLevel | null,
 ): Chapter | null {
   if (chapters.length === 0) return null;
 
@@ -558,7 +558,7 @@ function formatTeacherPromptBlock(ctx: {
   activeCourse: string;
   targetLanguage: string;
   interfaceLanguage: InterfaceLanguage;
-  currentLevel: Level | null;
+  currentLevel: GrammarLevel | null;
   currentChapter: string | null;
   completedChapters: number;
   totalChapters: number;
@@ -699,7 +699,7 @@ function buildExerciseTopicHint(ctx: {
 export async function buildTeacherContext(input: {
   courseId: string;
   interfaceLanguage: InterfaceLanguage;
-  level: Level | null;
+  level: GrammarLevel | null;
 }): Promise<TeacherContext> {
   const course = await getCourse(input.courseId);
   const chapters = course.getChapters();
@@ -895,7 +895,7 @@ export async function buildTeacherContext(input: {
 export async function buildLearnerContext(input: {
   courseId: string;
   interfaceLanguage: InterfaceLanguage;
-  level: Level | null;
+  level: GrammarLevel | null;
 }): Promise<TeacherContext> {
   return buildTeacherContext(input);
 }

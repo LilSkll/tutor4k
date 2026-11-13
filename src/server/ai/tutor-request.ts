@@ -6,7 +6,13 @@ export function asInterfaceLanguage(raw: unknown): InterfaceLanguage | null {
 }
 
 export function asCourseId(raw: unknown): string | null {
-  if (raw === "spanish" || raw === "english" || raw === "russian") return raw;
+  if (
+    raw === "spanish" ||
+    raw === "english" ||
+    raw === "russian" ||
+    raw === "german"
+  )
+    return raw;
   return null;
 }
 

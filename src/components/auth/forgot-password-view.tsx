@@ -5,6 +5,7 @@ import { ArrowLeft, KeyRound } from "lucide-react";
 import { ForgotPasswordForm } from "@/components/auth/forgot-password-form";
 import { BrandIcon } from "@/components/shared/brand-icon";
 import { translate } from "@/lib/i18n/auth";
+import { resolveAuthErrorMessage } from "@/lib/resolve-auth-error";
 import { useInterfaceLanguage } from "@/hooks/use-interface-language";
 
 export function ForgotPasswordView({
@@ -43,7 +44,7 @@ export function ForgotPasswordView({
 
           {error && (
             <div className="mb-4 rounded-lg border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive">
-              {error}
+              {resolveAuthErrorMessage(error, language) ?? error}
             </div>
           )}
           {notice === "sent" && (

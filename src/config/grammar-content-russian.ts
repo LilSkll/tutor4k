@@ -1,4 +1,5 @@
 import type { InterfaceLanguage } from "@/types";
+import { RUSSIAN_GRAMMAR_CONTENT_EXPANSION } from "@/config/grammar-content-russian-expansion";
 
 /**
  * EN / ES / DE pedagogical notes for Russian A1–C2 grammar.
@@ -8516,4 +8517,5 @@ Deutsch legt diese Arbeit oft auf *doch* und auf die Betonung: *Ich habe den Ant
 
 > **Же** kontrastiert. **Ведь** gibt einen gemeinsamen Grund. **-то** hebt das Thema. **Разве** erwartet «nein»; **неужели** ist Überraschung. **Именно** identifiziert; **только** schließt aus. In einem ruhigen Satz steht das Neue näher am Ende.`,
   },
+  ...RUSSIAN_GRAMMAR_CONTENT_EXPANSION,
 };

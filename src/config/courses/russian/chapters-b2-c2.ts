@@ -9,14 +9,14 @@ const TYPES = [
 ] as const;
 
 /**
- * Russian B2–C2 journey (chapters 23–36).
+ * Russian B2–C2 journey (chapters 28–45 after the A1–B1 inserts).
  * Continues Altair’s arc after Pskov toward autonomy and near-native control.
  */
 export const RUSSIAN_B2_C2_CHAPTERS: Chapter[] = [
   // ===== B2 ============================================================
   {
     slug: "ru-ch23-participles",
-    number: 23,
+    number: 28,
     title: "Причастия",
     titleEs: "Participles",
     level: "B2",
@@ -26,12 +26,12 @@ export const RUSSIAN_B2_C2_CHAPTERS: Chapter[] = [
     grammarTopic: "ru-b2-participles",
     vocabTopic: "ru-b2-participle-frames",
     exerciseTypes: [...TYPES],
-    prereqChapter: "ru-ch22-academic-social",
+    prereqChapter: "ru-ch41-opinion-structures",
     estimatedMinutes: 24,
   },
   {
     slug: "ru-ch24-gerunds",
-    number: 24,
+    number: 29,
     title: "Деепричастия",
     titleEs: "Gerunds",
     level: "B2",
@@ -46,7 +46,7 @@ export const RUSSIAN_B2_C2_CHAPTERS: Chapter[] = [
   },
   {
     slug: "ru-ch25-passive",
-    number: 25,
+    number: 30,
     title: "Страдательный залог",
     titleEs: "Passive voice",
     level: "B2",
@@ -61,7 +61,7 @@ export const RUSSIAN_B2_C2_CHAPTERS: Chapter[] = [
   },
   {
     slug: "ru-ch26-reported-speech",
-    number: 26,
+    number: 31,
     title: "Косвенная речь",
     titleEs: "Reported speech",
     level: "B2",
@@ -76,7 +76,7 @@ export const RUSSIAN_B2_C2_CHAPTERS: Chapter[] = [
   },
   {
     slug: "ru-ch27-conditionals",
-    number: 27,
+    number: 32,
     title: "Условные конструкции",
     titleEs: "Conditionals",
     level: "B2",
@@ -91,7 +91,7 @@ export const RUSSIAN_B2_C2_CHAPTERS: Chapter[] = [
   },
   {
     slug: "ru-ch28-formal-register",
-    number: 28,
+    number: 33,
     title: "Официальный стиль",
     titleEs: "Formal register",
     level: "B2",
@@ -104,11 +104,43 @@ export const RUSSIAN_B2_C2_CHAPTERS: Chapter[] = [
     prereqChapter: "ru-ch27-conditionals",
     estimatedMinutes: 24,
   },
+  {
+    slug: "ru-ch42-syntax-complexity",
+    number: 34,
+    title: "Несколько придаточных",
+    titleEs: "Stacked subordinate clauses",
+    level: "B2",
+    location: "Владимир",
+    icon: "🧩",
+    summary:
+      "Сложноподчинённое с двумя придаточными: причина, цель и условие в одной фразе.",
+    grammarTopic: "ru-b2-syntax-complexity",
+    vocabTopic: "ru-b2-syntax-lexis",
+    exerciseTypes: [...TYPES],
+    prereqChapter: "ru-ch28-formal-register",
+    estimatedMinutes: 24,
+  },
+  {
+    slug: "ru-ch43-written-discourse",
+    number: 35,
+    title: "Абзац и связность",
+    titleEs: "Paragraph cohesion",
+    level: "B2",
+    location: "Владимир",
+    icon: "📄",
+    summary:
+      "Абзац письменной речи: микротема, связка и без лишнего повтора.",
+    grammarTopic: "ru-b2-written-discourse",
+    vocabTopic: "ru-b2-written-lexis",
+    exerciseTypes: [...TYPES],
+    prereqChapter: "ru-ch42-syntax-complexity",
+    estimatedMinutes: 24,
+  },
 
   // ===== C1 ============================================================
   {
     slug: "ru-ch29-aspect-nuance",
-    number: 29,
+    number: 36,
     title: "Нюансы вида",
     titleEs: "Aspect nuance",
     level: "C1",
@@ -118,12 +150,12 @@ export const RUSSIAN_B2_C2_CHAPTERS: Chapter[] = [
     grammarTopic: "ru-c1-aspect-nuance",
     vocabTopic: "ru-c1-modal-lexis",
     exerciseTypes: [...TYPES],
-    prereqChapter: "ru-ch28-formal-register",
+    prereqChapter: "ru-ch43-written-discourse",
     estimatedMinutes: 26,
   },
   {
     slug: "ru-ch30-idioms",
-    number: 30,
+    number: 37,
     title: "Устойчивые выражения",
     titleEs: "Idioms",
     level: "C1",
@@ -138,7 +170,7 @@ export const RUSSIAN_B2_C2_CHAPTERS: Chapter[] = [
   },
   {
     slug: "ru-ch31-advanced-argumentation",
-    number: 31,
+    number: 38,
     title: "Развёрнутая аргументация",
     titleEs: "Advanced argumentation",
     level: "C1",
@@ -153,7 +185,7 @@ export const RUSSIAN_B2_C2_CHAPTERS: Chapter[] = [
   },
   {
     slug: "ru-ch32-media-discourse",
-    number: 32,
+    number: 39,
     title: "Язык СМИ",
     titleEs: "Media discourse",
     level: "C1",
@@ -166,11 +198,43 @@ export const RUSSIAN_B2_C2_CHAPTERS: Chapter[] = [
     prereqChapter: "ru-ch31-advanced-argumentation",
     estimatedMinutes: 26,
   },
+  {
+    slug: "ru-ch44-critique-review",
+    number: 40,
+    title: "Рецензия и уступка",
+    titleEs: "Review and concession",
+    level: "C1",
+    location: "Санкт-Петербург",
+    icon: "⚖️",
+    summary:
+      "Рецензия: сильная сторона, уступка и оценка с ограничением.",
+    grammarTopic: "ru-c1-critique-review",
+    vocabTopic: "ru-c1-critique-lexis",
+    exerciseTypes: [...TYPES],
+    prereqChapter: "ru-ch32-media-discourse",
+    estimatedMinutes: 26,
+  },
+  {
+    slug: "ru-ch45-academic-writing",
+    number: 41,
+    title: "Академическое письмо",
+    titleEs: "Academic writing",
+    level: "C1",
+    location: "Санкт-Петербург",
+    icon: "✒️",
+    summary:
+      "Клише доклада и эссе: актуальность, цель, методы, вывод.",
+    grammarTopic: "ru-c1-academic-writing",
+    vocabTopic: "ru-c1-academic-writing-lexis",
+    exerciseTypes: [...TYPES],
+    prereqChapter: "ru-ch44-critique-review",
+    estimatedMinutes: 26,
+  },
 
   // ===== C2 ============================================================
   {
     slug: "ru-ch33-registers",
-    number: 33,
+    number: 42,
     title: "Стилистические регистры",
     titleEs: "Stylistic registers",
     level: "C2",
@@ -180,12 +244,12 @@ export const RUSSIAN_B2_C2_CHAPTERS: Chapter[] = [
     grammarTopic: "ru-c2-registers",
     vocabTopic: "ru-c2-register-lexis",
     exerciseTypes: [...TYPES],
-    prereqChapter: "ru-ch32-media-discourse",
+    prereqChapter: "ru-ch45-academic-writing",
     estimatedMinutes: 28,
   },
   {
     slug: "ru-ch34-literary-culture",
-    number: 34,
+    number: 43,
     title: "Художественный текст",
     titleEs: "Literary culture",
     level: "C2",
@@ -200,7 +264,7 @@ export const RUSSIAN_B2_C2_CHAPTERS: Chapter[] = [
   },
   {
     slug: "ru-ch35-professional-academic",
-    number: 35,
+    number: 44,
     title: "Профессиональная речь",
     titleEs: "Professional academic talk",
     level: "C2",
@@ -215,7 +279,7 @@ export const RUSSIAN_B2_C2_CHAPTERS: Chapter[] = [
   },
   {
     slug: "ru-ch36-pragmatic-mastery",
-    number: 36,
+    number: 45,
     title: "Прагматика и нюанс",
     titleEs: "Pragmatic mastery",
     level: "C2",

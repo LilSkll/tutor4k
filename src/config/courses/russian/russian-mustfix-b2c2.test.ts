@@ -207,12 +207,27 @@ describe("RKI B2–C2 MUST-FIX regressions (M1–M3)", () => {
 
   it("stability: A1–B1 banks untouched in size; B2–C2 chapter counts stay 40", async () => {
     const course = await getCourse("russian");
-    expect(course.getChapters()).toHaveLength(36);
-    expect(course.getGrammar()).toHaveLength(34);
+    expect(course.getChapters()).toHaveLength(45);
+    expect(course.getGrammar()).toHaveLength(43);
 
-    for (const ch of course.getChapters()) {
-      if (ch.number <= 22) continue;
-      expect(course.getExercises(ch.slug).length, ch.slug).toBe(40);
+    const frozenForty = [
+      "ru-ch23-participles",
+      "ru-ch24-gerunds",
+      "ru-ch25-passive",
+      "ru-ch26-reported-speech",
+      "ru-ch27-conditionals",
+      "ru-ch28-formal-register",
+      "ru-ch29-aspect-nuance",
+      "ru-ch30-idioms",
+      "ru-ch31-advanced-argumentation",
+      "ru-ch32-media-discourse",
+      "ru-ch33-registers",
+      "ru-ch34-literary-culture",
+      "ru-ch35-professional-academic",
+      "ru-ch36-pragmatic-mastery",
+    ];
+    for (const slug of frozenForty) {
+      expect(course.getExercises(slug).length, slug).toBe(40);
     }
 
     // Spot-check A1/B1 totals still present (architecture freeze).

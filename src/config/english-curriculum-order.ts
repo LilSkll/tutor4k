@@ -55,6 +55,8 @@ export const ENGLISH_GRAMMAR_CURRICULUM_ORDER = [
   "eng-c2-cleft-emphasis",
   "eng-c2-ellipsis-substitution",
   "eng-c2-hedging-nuance",
+  "eng-c2-figurative-precision",
+  "eng-c2-discourse-mastery",
 ] as const;
 
 export const ENGLISH_CHAPTER_GRAMMAR_ORDER = [
@@ -101,4 +103,6 @@ export const ENGLISH_CHAPTER_GRAMMAR_ORDER = [
   "eng-c2-cleft-emphasis",
   "eng-c2-ellipsis-substitution",
   "eng-c2-hedging-nuance",
+  "eng-c2-figurative-precision",
+  "eng-c2-discourse-mastery",
 ] as const;

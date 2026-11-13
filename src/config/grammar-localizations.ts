@@ -1107,4 +1107,49 @@ export const GRAMMAR_TOPIC: Record<
     "es": { "title": "Matiz pragmático", "summary": "Partículas же, ведь, -то, разве, неужели y el foco al final." },
     "de": { "title": "Pragmatische Nuance", "summary": "Partikeln же, ведь, -то, разве, неужели und Fokus am Ende." }
   },
+  "ru-a1-classroom-survival": {
+    "en": { "title": "Classroom phrases", "summary": "Можно / нельзя and polite requests to a lecturer." },
+    "es": { "title": "Frases de aula", "summary": "Можно / нельзя y peticiones corteses al profesor." },
+    "de": { "title": "Sätze für den Hörsaal", "summary": "Можно / нельзя und höfliche Bitten an die Lehrperson." }
+  },
+  "ru-a2-services-invitations": {
+    "en": { "title": "Services and invitations", "summary": "Booking, a moved meeting, and a polite refusal." },
+    "es": { "title": "Servicios e invitaciones", "summary": "Cita, reunión aplazada y rechazo cortés." },
+    "de": { "title": "Dienste und Einladungen", "summary": "Termin, verschobenes Treffen und höfliche Absage." }
+  },
+  "ru-b1-government-verbs": {
+    "en": { "title": "Verb government", "summary": "The case that belongs to the verb." },
+    "es": { "title": "Régimen verbal", "summary": "El caso que pertenece al verbo." },
+    "de": { "title": "Rektion", "summary": "Der Kasus, der zum Verb gehört." }
+  },
+  "ru-b1-participle-preview": {
+    "en": { "title": "Который and a short participle", "summary": "A B1 bridge: который stays safe; a short participle replaces a simple relative." },
+    "es": { "title": "Который y un participio corto", "summary": "Puente de B1: который sigue siendo seguro." },
+    "de": { "title": "Который und ein kurzes Partizip", "summary": "B1-Brücke: который bleibt sicher." }
+  },
+  "ru-b1-opinion-structures": {
+    "en": { "title": "Opinion and agreement", "summary": "A frame, agreement, and a refusal with a reason." },
+    "es": { "title": "Opinión y acuerdo", "summary": "Un marco, el acuerdo y un rechazo con motivo." },
+    "de": { "title": "Meinung und Zustimmung", "summary": "Ein Rahmen, Zustimmung und Widerspruch mit Grund." }
+  },
+  "ru-b2-syntax-complexity": {
+    "en": { "title": "Several subordinate clauses", "summary": "One main clause and two subordinates with their own commas." },
+    "es": { "title": "Varias subordinadas", "summary": "Una principal y dos subordinadas, cada una con su coma." },
+    "de": { "title": "Mehrere Nebensätze", "summary": "Ein Hauptsatz und zwei Nebensätze mit eigenem Komma." }
+  },
+  "ru-b2-written-discourse": {
+    "en": { "title": "Paragraph cohesion", "summary": "One microtheme, one linker, and a pronoun instead of a third repetition." },
+    "es": { "title": "Cohesión del párrafo", "summary": "Una microtema, un nexo y un pronombre en vez de la tercera repetición." },
+    "de": { "title": "Absatzkohäsion", "summary": "Ein Mikrothema, ein Verknüpfungswort und ein Pronomen statt der dritten Wiederholung." }
+  },
+  "ru-c1-critique-review": {
+    "en": { "title": "Review and concession", "summary": "A strength, a limit, and a concession that does not erase the judgment." },
+    "es": { "title": "Reseña y concesión", "summary": "Un punto fuerte, un límite y una concesión que no borra el juicio." },
+    "de": { "title": "Rezension und Einräumung", "summary": "Eine Stärke, eine Grenze und eine Einräumung, die das Urteil nicht löscht." }
+  },
+  "ru-c1-academic-writing": {
+    "en": { "title": "Academic frames", "summary": "Aim, method, border, and a conclusion that only closes what was shown." },
+    "es": { "title": "Marcos académicos", "summary": "Objetivo, método, límite y un cierre que solo cierra lo ya mostrado." },
+    "de": { "title": "Akademische Rahmen", "summary": "Ziel, Methode, Grenze und ein Schluss, der nur schließt, was schon gezeigt ist." }
+  },
 };

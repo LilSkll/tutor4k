@@ -93,7 +93,7 @@ export interface VocabularyWord {
   example: string;
   level: Level;
   created_at: string;
-  /** Owning course (spanish | english | russian). */
+  /** Owning course (spanish | english | russian | german). */
   course_id?: string | null;
   /** Optional free-form notes (gender, aspect, government, etc.). */
   notes?: string | null;
@@ -182,7 +182,8 @@ export interface AIMessage {
 /** Options passed to generateAIResponse(). */
 export interface AIGenerateOptions {
   messages: AIMessage[];
-  level?: Level | null;
+  /** Learner or chapter band. C2 is valid for chapter-grounded turns. */
+  level?: GrammarLevel | null;
   temperature?: number;
   maxTokens?: number;
   /** Skip the domain guard (used internally for structured output). */
@@ -322,6 +323,16 @@ export interface CourseConfig {
   examName?: string;
   /** Soft launch flag — show “Beta” on the course card (not Coming soon). */
   beta?: boolean;
+  /**
+   * Pedagogical readiness — independent of selectability / chapter count.
+   * Availability (`getChapters().length > 0`) ≠ teacher approval.
+   * - approved: reviewed for advertised bands
+   * - beta: open soft launch; usable, still settling
+   * - watch: selectable, but one or more bands need teacher Watch
+   */
+  pedagogyStatus?: "approved" | "beta" | "watch";
+  /** CEFR bands under methodological Watch (not fully approved). */
+  pedagogyWatchBands?: GrammarLevel[];
 
   // Content getters (lazy-loaded)
   getChapters: () => Chapter[];
@@ -334,7 +345,7 @@ export interface CourseConfig {
 
   // Prompt builder
   buildPrompt: (options: {
-    level?: Level | null;
+    level?: GrammarLevel | null;
     interfaceLanguage?: InterfaceLanguage;
     userName?: string | null;
     retrievedContext?: string | null;

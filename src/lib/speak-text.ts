@@ -90,6 +90,7 @@ export function interfaceSpeechLang(lang: string): string {
 export function courseSpeechLang(courseId: string): string {
   if (courseId === "english") return "en-US";
   if (courseId === "russian") return "ru-RU";
+  if (courseId === "german") return "de-DE";
   return "es-ES";
 }
 

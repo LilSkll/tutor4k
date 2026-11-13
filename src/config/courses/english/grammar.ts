@@ -781,6 +781,95 @@ C2 — это умение **смягчать**, **дистанцировать�
 
 > 💡 Носитель C2 слышит разницу между \`It's not bad\` и \`It's not **bad**!\` — интонация меняет полюс оценки.`,
   },
+  {
+    slug: "eng-c2-figurative-precision",
+    title: "Образность и точность метафоры",
+    titleEs: "Figurative Precision",
+    level: "C2",
+    category: "Стилистика",
+    summary: "Метафора, точность идиом и как не смешивать образы в аккуратной прозе.",
+    content: `> **Перед этой темой:** вы умеете **хеджировать**. **В этой теме:** **figurative precision** — одна метафора, целая идиома, без смеси образов.
+
+## Figurative precision — один образ за раз
+
+C2 отличает не количество метафор, а **точность**: образ либо держит фразу, либо ломает её.
+
+### Metaphor и simile
+| Тип | Форма | Пример |
+|---|---|---|
+| **Metaphor** | A is B, без like/as | \`Her voice was silk.\` |
+| **Simile** | like / as | \`Her voice was like silk.\` |
+| **Literal** | прямое значение | \`Her voice was quiet.\` |
+
+**Denotation** — словарное значение. **Connotation** — окраска: \`home\` значит «жилище», но ощущается как тепло.
+
+### Смешанная метафора
+Два несовместимых образа в одной фразе — **mixed metaphor**.
+
+- Слабо: \`The novel is a tight ship that opens a can of worms.\`
+- Точнее: \`The novel is a tight ship: every chapter is under control.\`
+
+Правило: **один vehicle на одну мысль**. Новый образ — новое предложение.
+
+### Идиома не режется
+Идиома работает целиком. Замена одного слова убивает смысл.
+
+| Неточно | Точно |
+|---|---|
+| \`hit the nail on the finger\` | \`hit the nail on the head\` |
+| \`a blessing in hiding\` | \`a blessing in disguise\` |
+
+### Когда образ уместен
+- **Apt** — образ попадает в чувство: \`an apt metaphor\`.
+- **Evocative** — вызывает сцену, а не украшает её.
+- **Hyperbole** — сознательное преувеличение (\`a million times\`).
+- **Euphemism** — смягчение (\`passed away\`).
+- **Allusion** — намёк на общий текст, без пересказа.
+- **Cliché** — образ уже ничего не показывает. В аккуратной прозе его заменяют.
+
+> 💡 На CPE и в эссе метафора — аргумент, а не украшение. Если образ не уточняет мысль, пишите буквально.`,
+  },
+  {
+    slug: "eng-c2-discourse-mastery",
+    title: "Мастерство дискурса",
+    titleEs: "Discourse Mastery",
+    level: "C2",
+    category: "Связность текста",
+    summary: "Средства связности, позиция говорящего и длинный аргументативный ход.",
+    content: `> **Перед этой темой:** вы держите **один точный образ**. **В этой теме:** **discourse mastery** — связность, stance и длинный аргумент.
+
+## Discourse mastery — длинный ход, а не набор связок
+
+На IELTS Speaking Part 3 и в академической речи связки не украшают ответ. Они **показывают роль** следующей фразы.
+
+### Каркас длинной реплики
+1. **Claim** — позиция в первом предложении.
+2. **Concession** — \`That said…\` / \`Having said that…\` / \`Be that as it may…\`
+3. **Limit** — \`insofar as…\` / \`Notwithstanding…\`
+4. **Consequence** — \`It follows that…\`
+5. **Close** — \`On balance…\` / \`All things considered…\` / \`In the final analysis…\`
+
+### Stance — не путать роль маркера
+| Маркер | Роль |
+|---|---|
+| \`Notwithstanding the cost, …\` | уступка: несмотря на |
+| \`That said, …\` | граница после плюса |
+| \`By the same token, …\` | тот же довод в параллель |
+| \`To that end, …\` | цель, а не контраст |
+| \`It follows that …\` | следствие, не повтор |
+| \`Strictly speaking, …\` | сужение значения |
+| \`What is more, …\` | добавление, не уступка |
+
+### Типичный сбой
+- \`The results are weak. It follows that the results are weak.\` — следствие не повторяет тезис.
+- \`On balance it failed, so to that end it succeeded.\` — \`to that end\` не отменяет вывод.
+- \`Notwithstanding the evidence supports the claim.\` — после notwithstanding нужен **объект уступки**, затем главная мысль.
+
+### Образец хода
+\`The reform is costly. That said, the current system is failing. Notwithstanding the expense, a delay would cost more. It follows that the change should start this year. All things considered, I would support it.\`
+
+> 💡 Один маркер — одна работа. Если связку можно вынуть и смысл не сдвинется, она не держит дискурс.`,
+  },
 ];
 
 export const ENGLISH_GRAMMAR: GrammarTopic[] = [

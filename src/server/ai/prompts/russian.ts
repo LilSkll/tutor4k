@@ -1,4 +1,4 @@
-import type { Level } from "@/types";
+import type { GrammarLevel, Level } from "@/types";
 import type { PromptBuilderOptions } from "./registry";
 import {
   buildLanguageDirectives,
@@ -10,12 +10,13 @@ import {
   buildTeacherPedagogyBlock,
 } from "./teacher";
 
-const RUSSIAN_LEVEL_GUIDE: Record<Level, string> = {
+const RUSSIAN_LEVEL_GUIDE: Record<Level, string> & { C2: string } = {
   A1: "A1: кириллица и фонетика; приветствия ты/вы; это/кто/что; род существительных; настоящее время; вин. и предл. падежи (база); числа и время; учёба/аудитория.",
   A2: "A2: прошедшее и будущее; род./дат./твор. падежи; введение вида; базовые глаголы движения (идти/ходить, ехать/ездить); быт, общежитие, магазины, услуги.",
   B1: "B1: система шести падежей в контрасте; видо-временные отношения; приставочные глаголы движения; сложные предложения; связный рассказ; аргументация и учебная речь; ориентир ТРКИ-1 / B1.",
-  B2: "B2: (курс пока до B1) причастия, деепричастия, стилистика — только если TEACHER CONTEXT явно позволяет лёгкий выход за B1.",
-  C1: "C1: (курс пока до B1) идиомы, литературный и академический регистр — не открывать без явного запроса уровня.",
+  B2: "B2: действительные и страдательные причастия, деепричастия, страдательный залог, косвенная речь, если / если бы / чтобы, официально-деловой стиль, сложный синтаксис и письменный абзац.",
+  C1: "C1: нюансы вида, фразеология, развёрнутая аргументация, язык СМИ, рецензия и академический комментарий.",
+  C2: "C2: один факт в разговорном, нейтральном и книжном регистре; комментарий художественного фрагмента; доклад, рецензия и этикет дискуссии; частицы и порядок слов; академическое письмо (цель, граница, опора, вывод).",
 };
 
 const TARGET = "Russian";
@@ -33,7 +34,8 @@ export function buildRussianPrompt(options: PromptBuilderOptions): string {
     learnerContext,
   } = options;
 
-  const levelText = level ? RUSSIAN_LEVEL_GUIDE[level] : RUSSIAN_LEVEL_GUIDE.A1;
+  const band = (level ?? "A1") as GrammarLevel;
+  const levelText = RUSSIAN_LEVEL_GUIDE[band] ?? RUSSIAN_LEVEL_GUIDE.A1;
   const greeting = getGreeting(interfaceLanguage);
   const nameLine = userName ? ` ${greeting}, ${userName}!` : "";
   const ifaceName = getInterfaceLanguageName(interfaceLanguage);
@@ -44,7 +46,7 @@ export function buildRussianPrompt(options: PromptBuilderOptions): string {
   return `You are a professional teacher of Russian as a Foreign Language (RKI / РКИ).${nameLine}
 
 # YOUR ROLE
-Guide this student through the Russian A1–B1 course like a private university-prep tutor who remembers them — teach, check understanding, and lead the next step. Do not behave like a generic chatbot.
+Guide this student through the Russian A1–C2 course like a private university-prep tutor who remembers them — teach, check understanding, and lead the next step. Do not behave like a generic chatbot.
 
 # TOPIC RESTRICTION — RUSSIAN ONLY
 Answer EXCLUSIVELY about:
@@ -62,7 +64,7 @@ ${languageDirectives}
 
 All example sentences, paradigms, and dialogues MUST be in Russian (Cyrillic) — never switch the target language mid-example. Glosses and rule explanations follow ${ifaceName}.
 
-# RKI GRAMMAR FOCUS (A1–B1)
+# RKI GRAMMAR FOCUS (A1–C2)
 Prefer course grammar slugs and CEFR order. Core phenomena:
 - Phonetics / alphabet; stress; ты vs вы
 - Noun gender; agreement (мой/моя/моё; этот/эта/это)
@@ -74,6 +76,9 @@ Prefer course grammar slugs and CEFR order. Core phenomena:
 - Prepositions tied to cases (в/на + prep/acc; с + instr; к + dat; у/нет + gen)
 - Complex sentences: потому что, чтобы, если, который; cohesion markers (сначала, потом, в итоге)
 - Academic/social formulas: можно задать вопрос?, объясните ещё раз, по-моему
+- B2: participles and gerunds, passive, reported speech, purpose/condition chains
+- C1: aspect nuance, media discourse, a review that separates a strength from a limit
+- C2 only, and only when the chapter is C2: colloquial vs neutral vs bookish wording of one fact; literary commentary; particles and word order; academic frame (цель, граница, на основании, вывод)
 
 When conjugating, use: я, ты, он/она/оно, мы, вы, они. Always label aspect when both НСВ and СВ are plausible.
 

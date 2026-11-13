@@ -1,7 +1,7 @@
 import type { Chapter } from "@/types";
 
 // =====================================================================
-// English Course — Chapters (43, aligned with Spanish journey length)
+// English Course — Chapters (45)
 // Story: journey through the English-speaking world
 // Existing slugs stay stable for progress; new chapters insert in order.
 // =====================================================================
@@ -649,6 +649,36 @@ export const ENGLISH_CHAPTERS: Chapter[] = [
     vocabTopic: "eng-c1-academic",
     exerciseTypes: ["multiple_choice", "fill_blank", "translation", "error_correction", "sentence_building"],
     prereqChapter: "eng-ch24-unspoken",
+    estimatedMinutes: 15,
+  },
+  {
+    slug: "eng-ch44-figurative-precision",
+    number: 44,
+    title: "Figurative Precision",
+    titleEs: "Figurative Precision",
+    level: "C2",
+    location: "Edinburgh Festival",
+    icon: "🎭",
+    summary: "Metaphor, idiomatic precision, avoiding mixed metaphors in careful prose.",
+    grammarTopic: "eng-c2-figurative-precision",
+    vocabTopic: "eng-c2-figurative-lexis",
+    exerciseTypes: ["multiple_choice", "fill_blank", "translation", "error_correction", "sentence_building"],
+    prereqChapter: "eng-ch25-between-lines",
+    estimatedMinutes: 15,
+  },
+  {
+    slug: "eng-ch45-discourse-mastery",
+    number: 45,
+    title: "Discourse Mastery",
+    titleEs: "Discourse Mastery",
+    level: "C2",
+    location: "IELTS Castle",
+    icon: "🗣️",
+    summary: "Cohesive devices, stance, structuring long argumentative turns for exam and academic speech.",
+    grammarTopic: "eng-c2-discourse-mastery",
+    vocabTopic: "eng-c2-discourse-markers",
+    exerciseTypes: ["multiple_choice", "fill_blank", "translation", "error_correction", "sentence_building"],
+    prereqChapter: "eng-ch44-figurative-precision",
     estimatedMinutes: 15,
   },
 ];
