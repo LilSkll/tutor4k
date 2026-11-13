@@ -12,7 +12,7 @@ import {
   type RankedBankItem,
 } from "@/server/learning/adaptive-exercise";
 import type { StudentCourseProfile } from "@/types/learning-profile";
-import type { ExerciseProgress, StaticExercise } from "@/types";
+import type { ExerciseProgress } from "@/types";
 
 function emptyProfile(): StudentCourseProfile {
   return {
@@ -45,6 +45,7 @@ function ex(
     id: partial.id,
     type: partial.type ?? "fill_blank",
     question: partial.question ?? "Q",
+    instruction: partial.instruction ?? "Fill",
     answer: partial.answer ?? "A",
     explanation: partial.explanation ?? "",
     topic: partial.topic ?? "topic",
@@ -52,7 +53,7 @@ function ex(
     courseId: partial.courseId ?? "german",
     chapterSlug: partial.chapterSlug ?? "de-ch5-akkusativ",
     grammarTopic: partial.grammarTopic ?? "de-a1-akkusativ",
-    vocabTopic: partial.vocabTopic,
+    ...(partial.vocabTopic ? { vocabTopic: partial.vocabTopic } : {}),
   };
 }
 

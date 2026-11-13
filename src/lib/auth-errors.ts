@@ -31,7 +31,8 @@ export function isAuthErrorCode(value: string | undefined | null): value is Auth
   return Boolean(value && CODE_SET.has(value));
 }
 
-function extractAuthErrorMessage(error: unknown): string {
+/** Raw Supabase/network message for logs — not shown to users. */
+export function extractAuthErrorMessage(error: unknown): string {
   if (!error) return "";
   if (typeof error === "string") return error;
 

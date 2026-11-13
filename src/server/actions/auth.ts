@@ -7,7 +7,10 @@ import { getFirstChapterSlugForLevel } from "@/config/chapters";
 import { resolvePostLoginPath } from "@/lib/roles";
 import { sessionNeedsMfa } from "@/lib/auth-mfa";
 import { resolveAuthOrigin } from "@/lib/auth-origin";
-import { friendlyAuthErrorCode } from "@/lib/auth-errors";
+import {
+  extractAuthErrorMessage,
+  friendlyAuthErrorCode,
+} from "@/lib/auth-errors";
 import { ensureProfileRoleMatchesMetadata } from "@/server/auth/signup-role";
 import type { Goal, InterfaceLanguage, Level, UserRole } from "@/types";
 
