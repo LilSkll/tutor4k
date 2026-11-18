@@ -74,7 +74,7 @@ describe("RKI product clarity (chapters + revision source banks)", () => {
     for (const ch of course.getChapters()) {
       const bank = course.getExercises(ch.slug);
       // Reading passages may pad; curated practice should stay substantial.
-      const practice = bank.filter((e) => e.type !== "reading");
+      const practice = bank.filter((e) => !e.passage);
       if (practice.length < 20) {
         thin.push(`${ch.slug}: ${practice.length}`);
       }

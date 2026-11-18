@@ -1,5 +1,11 @@
 import { isGrammarCategoryInstruction } from "@/lib/exercise-quality";
-import type { StaticExercise } from "@/types";
+
+/** Draft or static — only instruction fields are required for normalize. */
+type InstructionNormalizable = {
+  type?: string;
+  instruction?: string;
+  answer?: string;
+};
 
 const BY_TYPE: Record<string, string> = {
   multiple_choice: "Выберите правильный вариант",
@@ -51,7 +57,7 @@ export function normalizeLearnerInstruction(
   return instruction;
 }
 
-export function withNormalizedInstructions<T extends StaticExercise>(
+export function withNormalizedInstructions<T extends InstructionNormalizable>(
   exercises: T[],
 ): T[] {
   return exercises.map((ex) => {

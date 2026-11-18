@@ -10,7 +10,7 @@ describe("EN / ES / DE product clarity (chapters + revision banks)", () => {
       const bad: string[] = [];
       for (const ch of course.getChapters()) {
         for (const ex of course.getExercises(ch.slug)) {
-          if (ex.type === "reading") continue;
+          if (ex.passage) continue;
           const inst = (ex.instruction ?? "").trim();
           if (inst && isGrammarCategoryInstruction(inst)) {
             bad.push(`${ch.slug}: «${inst}»`);
