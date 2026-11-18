@@ -290,7 +290,7 @@ export const GERMAN_A1_EXERCISES: Record<string, Draft[]> = {
       },
     ),
     mc(
-      "Sie ___ müde. (она) Какая форма sein?",
+      "Sie ___ müde. (3. Sg. sie) Какая форма sein?",
       ["bin", "bist", "ist", "sind"],
       "ist",
       "sie (она) → ist.",
@@ -326,7 +326,7 @@ export const GERMAN_A1_EXERCISES: Record<string, Draft[]> = {
       en: "You (plural): Ihr … aus Wien.",
       es: "Vosotros: Ihr … aus Wien.",
     }),
-    fb("Sie ___ Zeit. (они)", "haben", "sie (они) → haben.", {
+    fb("Sie ___ Zeit. (Plural sie)", "haben", "sie (они) → haben.", {
       ru: "Они: Sie … Zeit.",
       en: "They: Sie … Zeit.",
       es: "Ellos: Sie … Zeit.",
@@ -510,17 +510,17 @@ export const GERMAN_A1_EXERCISES: Record<string, Draft[]> = {
       },
     ),
     mc(
-      "Wir ___ jeden Tag. (arbeiten) Какая форма?",
+      "Er ___ jeden Tag. (arbeiten) Какая форма?",
       ["arbeitet", "arbeite", "arbeiten", "arbeitest"],
-      "arbeiten",
-      "wir → форма как инфинитив.",
+      "arbeitet",
+      "er → arbeitet (основа + t).",
       {
-        en: "Wir ___ jeden Tag. (arbeiten) Which form?",
-        es: "Wir ___ jeden Tag. (arbeiten) ¿Qué forma?",
-        de: "Wir ___ jeden Tag. (arbeiten) Welche Form?",
+        en: "Er ___ jeden Tag. (arbeiten) Which form?",
+        es: "Er ___ jeden Tag. (arbeiten) ¿Qué forma?",
+        de: "Er ___ jeden Tag. (arbeiten) Welche Form?",
       },
     ),
-    fb("Sie ___ in München. (wohnen, она)", "wohnt", "sie wohnt: основа + t.", {
+    fb("Sie ___ in München. (wohnen, sie)", "wohnt", "sie wohnt: основа + t.", {
       ru: "Она живёт: Sie … in München.",
       en: "She lives: Sie … in München.",
       es: "Ella vive: Sie … in München.",
@@ -727,7 +727,7 @@ export const GERMAN_A1_EXERCISES: Record<string, Draft[]> = {
         de: "___ heißt du? Wie fragt man nach dem Namen?",
       },
     ),
-    fb("___ kommst du? (откуда)", "Woher", "Woher = откуда.", {
+    fb("___ kommst du? (Woher?)", "Woher", "Woher = откуда.", {
       ru: "Откуда ты?: … kommst du?",
       en: "Where from?: … kommst du?",
       es: "¿De dónde?: … kommst du?",
@@ -742,7 +742,7 @@ export const GERMAN_A1_EXERCISES: Record<string, Draft[]> = {
       en: "Tomorrow we go to Vienna: Morgen … wir nach Wien.",
       es: "Mañana vamos a Viena: Morgen … wir nach Wien.",
     }),
-    fb("___ du Spanisch? (вопрос, sprechen)", "Sprichst", "Общий вопрос начинается с глагола.", {
+    fb("___ du Spanisch? (sprechen, Frage)", "Sprichst", "Общий вопрос начинается с глагола.", {
       ru: "Ты говоришь по-испански?: … du Spanisch?",
       en: "Do you speak Spanish?: … du Spanisch?",
       es: "¿Hablas español?: … du Spanisch?",
@@ -835,22 +835,22 @@ export const GERMAN_A1_EXERCISES: Record<string, Draft[]> = {
         de: "___ Eltern sind nett. (unser)",
       },
     ),
-    fb("Das ist ___ Auto. (его)", "sein", "das Auto — средний род: sein Auto.", {
+    fb("Das ist ___ Auto. (sein / ihr?)", "sein", "das Auto — средний род: sein Auto.", {
       ru: "Это его машина: Das ist … Auto.",
       en: "This is his car: Das ist … Auto.",
       es: "Este es su coche: Das ist … Auto.",
     }),
-    fb("___ Kinder spielen. (её)", "Ihre", "die Kinder: ihre Kinder.", {
+    fb("___ Kinder spielen. (ihr / sein?)", "Ihre", "die Kinder: ihre Kinder.", {
       ru: "Её дети играют: … Kinder spielen.",
       en: "Her children play: … Kinder spielen.",
       es: "Sus hijos juegan: … Kinder spielen.",
     }),
-    fb("Die ___ sind neu. (лампа, мн. ч.)", "Lampen", "die Lampe → die Lampen.", {
+    fb("Die ___ sind neu. (Lampe, Plural)", "Lampen", "die Lampe → die Lampen.", {
       ru: "Лампы новые: Die … sind neu.",
       en: "The lamps are new: Die … sind neu.",
       es: "Las lámparas son nuevas: Die … sind neu.",
     }),
-    fb("___ Tasche ist rot. (моя)", "Meine", "die Tasche: meine Tasche.", {
+    fb("___ Tasche ist rot. (Possessiv: ich)", "Meine", "die Tasche: meine Tasche.", {
       ru: "Моя сумка красная: … Tasche ist rot.",
       en: "My bag is red: … Tasche ist rot.",
       es: "Mi bolso es rojo: … Tasche ist rot.",
@@ -930,7 +930,7 @@ export const GERMAN_A1_EXERCISES: Record<string, Draft[]> = {
         de: "Er ___ Musik. (mögen)",
       },
     ),
-    fb("Sie ___ gut kochen. (она)", "kann", "sie kann.", {
+    fb("Sie ___ gut kochen. (Modal, 3. Sg.)", "kann", "sie kann.", {
       ru: "Она умеет хорошо готовить: Sie … gut kochen.",
       en: "She can cook well: Sie … gut kochen.",
       es: "Ella sabe cocinar bien: Sie … gut kochen.",

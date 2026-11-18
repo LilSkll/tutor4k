@@ -7,6 +7,7 @@ import { ENGLISH_CURATED_SUPPLEMENTS } from "@/config/exercise-seeds/english-cur
 import { getEngChapter } from "./chapters";
 import { getReadingPassagesForChapter } from "@/config/reading-passages";
 import { applyEnglishPracticeL1 } from "./l1-prompts";
+import { withNormalizedInstructions } from "@/lib/exercise-instruction-normalize";
 
 // =====================================================================
 // English Course — Permanent adaptive exercise bank (curated seed)
@@ -32,17 +33,17 @@ export const ENGLISH_EXERCISES: Record<string, Draft[]> = {
   ],
   "eng-ch17-questions": [
     { type: "multiple_choice", question: "___ is your name?", instruction: "Choose the question word", options: ["What", "Where", "When", "Why"], answer: "What", explanation: "What asks for a thing or information." },
-    { type: "fill_blank", question: "___ do you live?", instruction: "Where / When / Who?", answer: "Where", acceptableAnswers: ["where"], explanation: "Where = place." },
+    { type: "fill_blank", question: "___ do you live?", instruction: "Заполните пропуск", answer: "Where", acceptableAnswers: ["where"], explanation: "Where = place." },
     { type: "translation", question: "Сколько тебе лет?", instruction: "Translate to English", answer: "How old are you?", acceptableAnswers: ["how old are you"], explanation: "How old + be." },
-    { type: "fill_blank", question: "___ are you late?", instruction: "Why / What / Who?", answer: "Why", acceptableAnswers: ["why"], explanation: "Why = reason." },
+    { type: "fill_blank", question: "___ are you late?", instruction: "Заполните пропуск", answer: "Why", acceptableAnswers: ["why"], explanation: "Why = reason." },
     { type: "multiple_choice", question: "___ is she?", instruction: "Ask about a person", options: ["Who", "What", "Where", "When"], answer: "Who", explanation: "Who asks about people." },
   ],
   "eng-ch3-around-town": [
     { type: "multiple_choice", question: "There ___ a bank near here.", instruction: "Choose singular/plural", options: ["is", "are", "be", "am"], answer: "is", explanation: "a bank (singular) → there is." },
     { type: "fill_blank", question: "There ___ three books on the table.", instruction: "Fill in there is/are", answer: "are", acceptableAnswers: ["Are"], explanation: "three books (plural) → there are." },
-    { type: "multiple_choice", question: "There aren't ___ apples.", instruction: "some or any?", options: ["some", "any", "a", "the"], answer: "any", explanation: "Negative → any." },
+    { type: "multiple_choice", question: "There aren't ___ apples.", instruction: "Выберите правильный вариант", options: ["some", "any", "a", "the"], answer: "any", explanation: "Negative → any." },
     { type: "translation", question: "Есть ли здесь аптека?", instruction: "Translate into English", answer: "Is there a pharmacy here?", acceptableAnswers: ["Is there a pharmacy", "is there a pharmacy here"], explanation: "Is there + singular noun." },
-    { type: "fill_blank", question: "There ___ some people in the park.", instruction: "is or are?", answer: "are", acceptableAnswers: ["Are"], explanation: "people (plural) → there are." },
+    { type: "fill_blank", question: "There ___ some people in the park.", instruction: "Заполните пропуск", answer: "are", acceptableAnswers: ["Are"], explanation: "people (plural) → there are." },
   ],
   "eng-ch18-can": [
     { type: "multiple_choice", question: "Can you ___ me?", instruction: "Choose the verb after can", options: ["helps", "help", "helping", "helped"], answer: "help", explanation: "Can + base verb (no -s)." },
@@ -53,9 +54,9 @@ export const ENGLISH_EXERCISES: Record<string, Draft[]> = {
   ],
   "eng-ch19-prepositions": [
     { type: "multiple_choice", question: "The book is ___ the table.", instruction: "Preposition of place", options: ["on", "in", "at", "under"], answer: "on", explanation: "on = on a surface." },
-    { type: "fill_blank", question: "She is ___ home.", instruction: "in / on / at?", answer: "at", acceptableAnswers: ["At"], explanation: "at home — fixed phrase." },
+    { type: "fill_blank", question: "She is ___ home.", instruction: "Заполните пропуск", answer: "at", acceptableAnswers: ["At"], explanation: "at home — fixed phrase." },
     { type: "translation", question: "Кот под кроватью.", instruction: "Translate into English", answer: "The cat is under the bed", acceptableAnswers: ["the cat is under the bed"], explanation: "under = below." },
-    { type: "fill_blank", question: "We live ___ London.", instruction: "in / on / at?", answer: "in", acceptableAnswers: ["In"], explanation: "in + city." },
+    { type: "fill_blank", question: "We live ___ London.", instruction: "Заполните пропуск", answer: "in", acceptableAnswers: ["In"], explanation: "in + city." },
     { type: "sentence_building", question: "next / the / bank / to / is / café / The", instruction: "Build the sentence", options: ["The", "café", "is", "next", "to", "the", "bank"], answer: "The café is next to the bank", acceptableAnswers: ["The cafe is next to the bank"], explanation: "next to = beside." },
   ],
   "eng-ch4-past-stories": [
@@ -87,10 +88,10 @@ export const ENGLISH_EXERCISES: Record<string, Draft[]> = {
     { type: "multiple_choice", question: "They ___ already finished.", instruction: "Выберите правильную форму", options: ["have", "has", "had", "having"], answer: "have", explanation: "They → have + V3." },
   ],
   "eng-ch21-quantifiers": [
-    { type: "multiple_choice", question: "I don't have ___ milk.", instruction: "some or any?", options: ["some", "any", "many", "much"], answer: "any", explanation: "Negative → any." },
-    { type: "fill_blank", question: "How ___ books do you have?", instruction: "much or many?", answer: "many", acceptableAnswers: ["Many"], explanation: "books = countable → many." },
+    { type: "multiple_choice", question: "I don't have ___ milk.", instruction: "Выберите правильный вариант", options: ["some", "any", "many", "much"], answer: "any", explanation: "Negative → any." },
+    { type: "fill_blank", question: "How ___ books do you have?", instruction: "Заполните пропуск", answer: "many", acceptableAnswers: ["Many"], explanation: "books = countable → many." },
     { type: "translation", question: "У меня есть немного времени.", instruction: "Translate into English", answer: "I have some time", acceptableAnswers: ["I've got some time", "i have some time"], explanation: "some in affirmative." },
-    { type: "fill_blank", question: "There isn't ___ sugar left.", instruction: "much / many / any", answer: "any", acceptableAnswers: ["much", "Any"], explanation: "Negative uncountable → any (or much)." },
+    { type: "fill_blank", question: "There isn't ___ sugar left.", instruction: "Заполните пропуск", answer: "any", acceptableAnswers: ["much", "Any"], explanation: "Negative uncountable → any (or much)." },
     { type: "error_correction", question: "I have much friends.", instruction: "Fix the quantifier", answer: "I have many friends", acceptableAnswers: ["I have a lot of friends"], explanation: "friends = countable → many / a lot of." },
   ],
   "eng-ch7-future-plans": [
@@ -310,7 +311,9 @@ export function getEnglishExercises(chapterSlug: string): StaticExercise[] {
     ...filtered,
     ...getReadingPassagesForChapter("english", chapterSlug),
   ].map(applyEnglishPracticeL1);
-  const withIds = withExerciseIds("english", chapterSlug, withReading);
+  // Grammar-tag / slash instructions → clear learner tasks (revision uses same bank).
+  const normalized = withNormalizedInstructions(withReading);
+  const withIds = withExerciseIds("english", chapterSlug, normalized);
   englishExerciseCache.set(chapterSlug, withIds);
   return withIds;
 }

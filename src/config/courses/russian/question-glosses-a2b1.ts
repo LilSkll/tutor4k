@@ -31,6 +31,11 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "Ayer el estudiante Pável ___ un texto nuevo. Pasado de читать (leer), en masculino singular. «читал», «читала» y «читали» son pasado; «читаю» es presente: yo leo.",
     de: "Gestern ___ der Student Pavel einen neuen Text. Vergangenheit von читать (lesen), maskulin Singular. «читал», «читала» und «читали» sind Vergangenheit; «читаю» ist Präsens: ich lese.",
   },
+  "Студент Павел вчера ___ (читать) новый текст.": {
+    en: "Yesterday the student Pavel ___ a new text. Put читать (to read) in the past; match the masculine singular name.",
+    es: "Ayer el estudiante Pável ___ un texto nuevo. Pon читать (leer) en pasado; concuerda con el nombre masculino singular.",
+    de: "Gestern ___ der Student Pavel einen neuen Text. Setze читать (lesen) in die Vergangenheit; passe zum maskulinen Singularnamen.",
+  },
   "Сосед по комнате вчера ___ дома.": {
     en: "Yesterday the roommate ___ at home. «сосед по комнате» is one male roommate. Past of быть (to be): «был», «была», «было», «были» change with gender and number.",
     es: "Ayer el compañero de habitación ___ en casa. «сосед по комнате» es un compañero, masculino singular. Pasado de быть: «был», «была», «было», «были» cambian con el género y el número.",
@@ -41,15 +46,25 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "Ayer los estudiantes ___ el examen (lo entregaron). Pasado de сдать (entregar), en plural. «сдал», «сдала» y «сдали» son pasado; «сдают» es presente: ellos entregan.",
     de: "Gestern ___ die Studierenden den Test ab. Vergangenheit von сдать (abgeben), Plural. «сдал», «сдала» und «сдали» sind Vergangenheit; «сдают» ist Präsens: sie geben ab.",
   },
+  "Вчера студенты ___ (сдать) тест.": {
+    en: "Yesterday the students ___ the test. Put сдать (to hand in) in the past, plural.",
+    es: "Ayer los estudiantes ___ el examen. Pon сдать (entregar) en pasado, plural.",
+    de: "Gestern ___ die Studierenden den Test ab. Setze сдать (abgeben) in die Vergangenheit, Plural.",
+  },
   "Вчера они ___ упражнения в аудитории.": {
     en: "Yesterday they ___ the exercises in the classroom. Past of писать (to write), matching они (they). «писал», «писала», «писали» are past; «пишут» is present, “they write”.",
     es: "Ayer ellos ___ los ejercicios en el aula. Pasado de писать (escribir), con они (ellos). «писал», «писала» y «писали» son pasado; «пишут» es presente: ellos escriben.",
     de: "Gestern ___ sie die Übungen im Hörsaal. Vergangenheit von писать (schreiben), passend zu они (sie). «писал», «писала», «писали» sind Vergangenheit; «пишут» ist Präsens: sie schreiben.",
   },
-  "Мария вчера ___ задание в комнате.": {
-    en: "Yesterday Maria ___ the assignment in the room. Past of делать (to do), matching a feminine singular name. «делал», «делала», «делали» are past; «делает» is present, “does”.",
-    es: "Ayer María ___ la tarea en la habitación. Pasado de делать (hacer), femenino singular. «делал», «делала» y «делали» son pasado; «делает» es presente: hace.",
-    de: "Gestern ___ Maria die Aufgabe im Zimmer. Vergangenheit von делать (machen), feminin Singular. «делал», «делала», «делали» sind Vergangenheit; «делает» ist Präsens: macht.",
+  "Вчера они ___ (писать) упражнения в аудитории.": {
+    en: "Yesterday they ___ the exercises in the classroom. Put писать (to write) in the past for они (they).",
+    es: "Ayer ellos ___ los ejercicios en el aula. Pon писать (escribir) en pasado con они (ellos).",
+    de: "Gestern ___ sie die Übungen im Hörsaal. Setze писать (schreiben) in die Vergangenheit zu они (sie).",
+  },
+  "Мария вчера ___ (делать) задание в комнате.": {
+    en: "Yesterday Maria ___ the assignment in her room. Put делать (to do) in the past; match the feminine singular name.",
+    es: "Ayer María ___ la tarea en su habitación. Pon делать (hacer) en pasado; concuerda con el nombre femenino singular.",
+    de: "Gestern ___ Maria die Aufgabe im Zimmer. Setze делать (machen) in die Vergangenheit; passe zum femininen Singularnamen.",
   },
   "Вчера он ___ дома.": {
     en: "Yesterday he ___ at home. Past of быть (to be), matching он (he).",
@@ -71,7 +86,7 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "La tarea nueva ___ sobre la mesa. «задание» (tarea) es neutro. Pasado de быть (ser o estar).",
     de: "Die neue Aufgabe ___ auf dem Tisch. «задание» (Aufgabe) ist Neutrum. Vergangenheit von быть (sein).",
   },
-  "Я ___ (читать) этот текст час.": {
+  "Вчера он ___ (быть) дома.": {
     en: "I ___ (читать, to read) this text for an hour. Past tense; the ending shows whether the speaker is male or female.",
     es: "Yo ___ (читать, leer) este texto durante una hora. Pasado; la terminación indica si habla un hombre o una mujer.",
     de: "Ich ___ (читать, lesen) diesen Text eine Stunde lang. Vergangenheit; die Endung zeigt, ob die sprechende Person männlich oder weiblich ist.",
@@ -86,7 +101,7 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "Ayer los estudiantes ___ el texto. Pasado de читать (leer), en plural.",
     de: "Gestern ___ die Studierenden den Text. Vergangenheit von читать (lesen), Plural.",
   },
-  "Омар вчера ___ на лекцию.": {
+  "Омар вчера ___ (опоздать) на лекцию.": {
     en: "Yesterday Omar ___ for the lecture. Past of опоздать (to be late), masculine singular.",
     es: "Ayer Omar ___ a la clase. Pasado de опоздать (llegar tarde), masculino singular.",
     de: "Gestern ___ Omar zur Vorlesung. Vergangenheit von опоздать (zu spät kommen), maskulin Singular.",
@@ -208,11 +223,6 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "Mañana nosotros ___ el ejercicio hasta el final. «будем делать» lo estaremos haciendo / «сделаем» lo terminaremos / «делали» lo hacíamos / «делаем» lo hacemos.",
     de: "Morgen ___ wir die Übung bis zum Ende. «будем делать» wir werden sie gerade machen / «сделаем» wir werden sie fertig machen / «делали» wir haben sie gemacht / «делаем» wir machen sie.",
   },
-  "По плану завтра я ___ в музее.": {
-    en: "According to the plan, tomorrow I ___ at the museum. Future of быть (to be) alone, with no second verb. «буду» I will / «будешь» you will (ты) / «будет» he or she will / «будут» they will.",
-    es: "Según el plan, mañana yo ___ en el museo. Futuro de быть (ser o estar) solo, sin otro verbo. «буду» yo / «будешь» tú / «будет» él o ella / «будут» ellos.",
-    de: "Nach dem Plan ___ ich morgen im Museum. Zukunft von быть (sein) allein, ohne zweites Verb. «буду» ich werde / «будешь» du wirst / «будет» er oder sie wird / «будут» sie werden.",
-  },
   "Мы ___ жить в общежитии.": {
     en: "We ___ live in the dorm. Future of быть (to be) that matches мы (we), plus the infinitive.",
     es: "Nosotros ___ vivir en la residencia. Futuro de быть (ser o estar) que concuerde con мы (nosotros), más el infinitivo.",
@@ -247,11 +257,6 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     en: "After class I ___ to the library. One departure on foot: пойти (to set off).",
     es: "Después de la clase yo ___ a la biblioteca. Una sola salida a pie: пойти (ponerse en camino).",
     de: "Nach der Stunde ___ ich in die Bibliothek. Ein einmaliges Aufbrechen zu Fuß: пойти (losgehen).",
-  },
-  "Они ___ билет завтра.": {
-    en: "Tomorrow they ___ a ticket. A finished result of купить (to buy), plural.",
-    es: "Mañana ellos ___ un billete. Un resultado cerrado de купить (comprar), en plural.",
-    de: "Morgen ___ sie eine Fahrkarte. Ein abgeschlossenes Ergebnis von купить (kaufen), Plural.",
   },
   "Я будет готовиться вечером.": {
     en: "Person: this future of быть (to be) does not match я (I). In the evening, getting ready.",
@@ -380,7 +385,7 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "En la clase hay muchas ___. Tras много, «вопрос» (pregunta) lleva la terminación de genitivo plural.",
     de: "In der Vorlesung gibt es viele ___. Nach много steht «вопрос» (Frage) in der Endung des Genitivs Plural.",
   },
-  "У меня нет ___.": {
+  "У меня нет ___ (ручка).": {
     en: "I don’t have a ___. After нет the missing thing is genitive, so the ending changes. In the multiple-choice item the choices «ключ», «ключа», «ключу», and «ключом» are case forms of «ключ» (key); the fill-in uses the same pattern with another noun.",
     es: "No tengo ___. Tras нет lo que falta va en genitivo y cambia la terminación. En la opción múltiple, «ключ», «ключа», «ключу» y «ключом» son casos de «ключ» (llave); el hueco usa el mismo esquema con otro sustantivo.",
     de: "Ich habe kein ___. Nach нет steht das Fehlende im Genitiv, die Endung wechselt. In der Auswahl sind «ключ», «ключа», «ключу» und «ключом» Kasusformen von «ключ» (Schlüssel); die Lücke folgt demselben Muster mit einem anderen Nomen.",
@@ -400,7 +405,7 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "Este es el cuaderno de ___. El poseedor, «студент» (estudiante), va en genitivo.",
     de: "Das ist das Heft von ___. Der Besitzer, «студент» (Student), steht im Genitiv.",
   },
-  "Завтра нет ___.": {
+  "В комнате нет ___ (окно).": {
     en: "Tomorrow there is no ___. After нет, use «занятие» (class) in the genitive.",
     es: "Mañana no hay ___. Tras нет, «занятие» (clase) va en genitivo.",
     de: "Morgen gibt es kein ___. Nach нет steht «занятие» (Unterricht) im Genitiv.",
@@ -410,7 +415,7 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "En el grupo hay muchos ___. Tras много, «студент» (estudiante) va en genitivo plural.",
     de: "In der Gruppe sind viele ___. Nach много steht «студент» (Student) im Genitiv Plural.",
   },
-  "В стакане мало ___.": {
+  "В стакане мало ___ (вода).": {
     en: "There is little ___ in the glass. After мало, use «вода» (water) in the genitive.",
     es: "En el vaso hay poca ___. Tras мало, «вода» (agua) va en genitivo.",
     de: "Im Glas ist wenig ___. Nach мало steht «вода» (Wasser) im Genitiv.",
@@ -532,11 +537,6 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "La residencia nueva no le gusta a ___. La persona va en dativo. «Они» ellos / «Их» los, su / «Им» a ellos / «Ими» por ellos.",
     de: "Das neue Wohnheim gefällt ___ nicht. Die Person steht im Dativ. «Они» sie / «Их» sie, ihre / «Им» ihnen / «Ими» mit ihnen.",
   },
-  "Дайте, пожалуйста, словарь ___.": {
-    en: "Please give the dictionary to ___. The recipient is dative. Forms of «студент» (student): «студент», «студента», «студенту», «студентом».",
-    es: "Dé, por favor, el diccionario a ___. Quien lo recibe va en dativo. Formas de «студент» (estudiante): «студент», «студента», «студенту», «студентом».",
-    de: "Geben Sie das Wörterbuch bitte ___. Der Empfänger steht im Dativ. Formen von «студент» (Student): «студент», «студента», «студенту», «студентом».",
-  },
   "Мария звонит ___ каждый вечер.": {
     en: "Maria calls ___ every evening. Dative of «мама» (mom).",
     es: "María llama a ___ cada noche. Dativo de «мама» (mamá).",
@@ -572,7 +572,7 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "Explique, por favor, esta palabra a ___. Dativo de мы (nosotros).",
     de: "Erklären Sie ___ bitte dieses Wort. Dativ von мы (wir).",
   },
-  "___ нравится новая столовая.": {
+  "Мария звонит ___ (мама) каждый вечер.": {
     en: "The new cafeteria is pleasing to ___. Dative of the name Анна.",
     es: "El comedor nuevo le gusta a ___. Dativo del nombre Анна.",
     de: "Die neue Mensa gefällt ___. Dativ des Namens Анна.",
@@ -694,11 +694,6 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "El vecino escribe con ___, no con bolígrafo. «ручкой» ya significa «con un bolígrafo». Formas de «карандаш» (lápiz): «карандаш», «карандаша», «карандашу», «карандашом».",
     de: "Der Nachbar schreibt mit ___, nicht mit dem Stift. «ручкой» heißt schon „mit dem Stift“. Formen von «карандаш» (Bleistift): «карандаш», «карандаша», «карандашу», «карандашом».",
   },
-  "В общежитии я живу ___.": {
-    en: "In the dorm I live ___. “Together with” is «с» plus instrumental. Every option already has «с» and a form of «друг» (friend): «с друг», «с друга», «с другу», «с другом».",
-    es: "En la residencia vivo ___. «Junto con» es «с» más instrumental. Cada opción ya lleva «с» y una forma de «друг» (amigo): «с друг», «с друга», «с другу», «с другом».",
-    de: "Im Wohnheim wohne ich ___. „Zusammen mit“ ist «с» plus Instrumental. Jede Option hat schon «с» und eine Form von «друг» (Freund): «с друг», «с друга», «с другу», «с другом».",
-  },
   "Я пишу ___.": {
     en: "I write with a ___. Instrumental of «ручка» (pen).",
     es: "Escribo con ___. Instrumental de «ручка» (bolígrafo).",
@@ -734,7 +729,7 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "Vivo en una habitación con ___. Tras «с», instrumental de «друг» (amigo).",
     de: "Ich wohne in einem Zimmer mit ___. Nach «с» der Instrumental von «друг» (Freund).",
   },
-  "Мама давно работает ___.": {
+  "Я пишу ___ (ручка).": {
     en: "Mom has worked as a ___ for a long time. Instrumental of «врач» (doctor).",
     es: "Mamá lleva mucho tiempo trabajando de ___. Instrumental de «врач» (médico).",
     de: "Mama arbeitet schon lange als ___. Instrumental von «врач» (Ärztin).",
@@ -831,11 +826,6 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "¿Cuál es la pareja de aspecto de «писать» (escribir, proceso)? «пишу» yo escribo / «написать» escribir hasta el final / «писал» escribía / «письмо» una carta, el sustantivo.",
     de: "Was ist der Aspektpartner von «писать» (schreiben, Verlauf)? «пишу» ich schreibe / «написать» zu Ende schreiben / «писал» schrieb / «письмо» ein Brief, das Nomen.",
   },
-  "Упражнение уже готово. Я его ___. (м.)": {
-    en: "The exercise is already finished. I ___ it (masculine). That is a result. «делал» was doing / «сделал» finished it / «делаю» I do / «буду делать» I will be doing.",
-    es: "El ejercicio ya está listo. Yo lo ___ (masculino). Es un resultado. «делал» lo hacía / «сделал» lo terminé / «делаю» lo hago / «буду делать» lo estaré haciendo.",
-    de: "Die Übung ist schon fertig. Ich habe sie ___ (maskulin). Das ist ein Ergebnis. «делал» habe sie gemacht / «сделал» habe sie fertig gemacht / «делаю» ich mache / «буду делать» ich werde sie machen.",
-  },
   "Она два часа ___ сочинение и не закончила.": {
     en: "She ___ the essay for two hours and did not finish: a process with no result. «написала» wrote it (finished) / «писала» was writing / «напишет» will write it / «пишет» writes.",
     es: "Ella ___ la redacción dos horas y no la terminó: un proceso sin resultado. «написала» la escribió (acabada) / «писала» la escribía / «напишет» la escribirá / «пишет» la escribe.",
@@ -856,11 +846,6 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "Cada día yo ___ los deberes: un hábito. «сделаю» lo haré una vez / «сделал» lo hice (resultado) / «делаю» lo hago con regularidad / «сделала» ella lo hizo.",
     de: "Jeden Tag ___ ich die Hausaufgabe: eine Gewohnheit. «сделаю» ich werde sie einmal machen / «сделал» ich habe sie fertig gemacht / «делаю» ich mache sie regelmäßig / «сделала» sie hat sie gemacht.",
   },
-  "Пара к глаголу «читать» — ?": {
-    en: "What is the aspect partner of «читать» (to read, process)? «читал» was reading / «прочитать» to read through / «читаю» I read / «чтение» reading, the noun.",
-    es: "¿Cuál es la pareja de aspecto de «читать» (leer, proceso)? «читал» leía / «прочитать» leer hasta el final / «читаю» yo leo / «чтение» la lectura, el sustantivo.",
-    de: "Was ist der Aspektpartner von «читать» (lesen, Verlauf)? «читал» las / «прочитать» zu Ende lesen / «читаю» ich lese / «чтение» das Lesen, das Nomen.",
-  },
   "Анна уже ___ упражнение.": {
     en: "Anna has already ___ the exercise. A finished result of сделать (to complete), feminine singular.",
     es: "Anna ya ___ el ejercicio. Un resultado cerrado de сделать (completar), femenino singular.",
@@ -876,11 +861,6 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "Nosotros ya ___ la redacción. Un resultado cerrado de написать (escribir hasta el final), plural.",
     de: "Wir haben den Aufsatz schon ___. Ein abgeschlossenes Ergebnis von написать (zu Ende schreiben), Plural.",
   },
-  "Каждый вечер Омар ___ упражнения.": {
-    en: "Every evening Omar ___ exercises. A habit: present of делать (to do).",
-    es: "Cada noche Omar ___ ejercicios. Un hábito: presente de делать (hacer).",
-    de: "Jeden Abend ___ Omar Übungen. Eine Gewohnheit: Präsens von делать (machen).",
-  },
   "Мария ещё не ___ письмо.": {
     en: "Maria has not ___ the letter yet. The result is still missing: perfective of написать (to write to completion), feminine.",
     es: "María todavía no ___ la carta. El resultado aún no existe: perfectivo de написать (escribir hasta el final), femenino.",
@@ -890,11 +870,6 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     en: "Yesterday they ___ the test through to the end. A result of сделать (to complete), plural.",
     es: "Ayer ellos ___ el examen hasta el final. Un resultado de сделать (completar), plural.",
     de: "Gestern haben sie den Test bis zum Ende ___. Ein Ergebnis von сделать (fertig machen), Plural.",
-  },
-  "Павел уже ___ книгу.": {
-    en: "Pavel has already ___ the book. A result of прочитать (to read through), masculine.",
-    es: "Pável ya ___ el libro. Un resultado de прочитать (leer hasta el final), masculino.",
-    de: "Pavel hat das Buch schon ___. Ein Ergebnis von прочитать (zu Ende lesen), maskulin.",
   },
   "Сейчас Лиза ___ письмо в комнате.": {
     en: "Right now Liza ___ a letter in the room. A present process of писать (to write).",
@@ -1018,11 +993,6 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "Los fines de semana nosotros ___ al parque a pie: un hábito. «идём» vamos a pie ahora / «ходим» vamos a pie con frecuencia / «едем» vamos en transporte ahora / «ездим» vamos en transporte con frecuencia.",
     de: "Am Wochenende ___ wir zu Fuß in den Park: eine Gewohnheit. «идём» wir gehen jetzt / «ходим» wir gehen regelmäßig / «едем» wir fahren jetzt / «ездим» wir fahren regelmäßig.",
   },
-  "Смотри: автобус сейчас ___ в университет.": {
-    en: "Look: the bus ___ to the university right now. «едет» goes by transport now / «ездит» goes by transport regularly / «идёт» goes on foot now / «ходит» goes on foot regularly.",
-    es: "Mira: el autobús ___ ahora mismo a la universidad. «едет» va en transporte ahora / «ездит» va en transporte con frecuencia / «идёт» va a pie ahora / «ходит» va a pie con frecuencia.",
-    de: "Schau: der Bus ___ gerade zur Universität. «едет» fährt jetzt / «ездит» fährt regelmäßig / «идёт» geht jetzt / «ходит» geht regelmäßig.",
-  },
   "Я каждый день ___ в университет.": {
     en: "I ___ to the university every day. A habit on foot: ходить, matching я (I).",
     es: "Yo ___ a la universidad cada día. Un hábito a pie: ходить, de acuerdo con я (yo).",
@@ -1057,11 +1027,6 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     en: "Every evening the neighbour ___ home on foot. A habit: ходить.",
     es: "Cada noche el vecino ___ a casa a pie. Un hábito: ходить.",
     de: "Jeden Abend ___ der Nachbar zu Fuß nach Hause. Eine Gewohnheit: ходить.",
-  },
-  "Сейчас я ___ на метро, не пешком.": {
-    en: "Right now I ___ by metro, not on foot. One direction, by transport, now: ехать.",
-    es: "Ahora mismo yo ___ en metro, no a pie. Una dirección, en transporte, ahora: ехать.",
-    de: "Gerade ___ ich mit der U-Bahn, nicht zu Fuß. Eine Richtung, mit einem Fahrzeug, jetzt: ехать.",
   },
   "Сейчас я хожу в магазин.": {
     en: "Verb of motion: «сейчас» (right now) is one direction, not a habit. Going to the shop.",
@@ -1205,7 +1170,7 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "En la tienda hay poco ___. Tras мало, genitivo de «хлеб» (pan).",
     de: "Im Geschäft gibt es wenig ___. Nach мало der Genitiv von «хлеб» (Brot).",
   },
-  "Около дома нет ___.": {
+  "У соседа нет ___ (ключ) от комнаты.": {
     en: "There is no ___ near the building. After нет, genitive of «магазин» (shop).",
     es: "Cerca de la casa no hay ___. Tras нет, genitivo de «магазин» (tienda).",
     de: "Beim Haus gibt es kein ___. Nach нет der Genitiv von «магазин» (Geschäft).",
@@ -1215,7 +1180,7 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "En nuestra calle hay muchos ___. Tras много, genitivo plural de «банк» (banco).",
     de: "In unserer Straße gibt es viele ___. Nach много der Genitiv Plural von «банк» (Bank).",
   },
-  "У нас мало ___ на билет.": {
+  "У нас мало ___ (деньги) на билет.": {
     en: "We have little ___ for a ticket. After мало, genitive of «деньги» (money).",
     es: "Tenemos poco ___ para el billete. Tras мало, genitivo de «деньги» (dinero).",
     de: "Wir haben wenig ___ für die Fahrkarte. Nach мало der Genitiv von «деньги» (Geld).",
@@ -1362,11 +1327,6 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "El bibliotecario ayuda a un ___ a encontrar la revista del año pasado. Dativo de «аспирант» (doctorando).",
     de: "Der Bibliothekar hilft einem ___ , die Zeitschrift vom vorigen Jahr zu finden. Dativ von «аспирант» (Doktorand).",
   },
-  "В медпункте нет ___ от давления.": {
-    en: "At the first-aid post there is no ___ for blood pressure. «от давления» means “for blood pressure”. Genitive of «лекарство» (medicine).",
-    es: "En el botiquín no hay ___ para la tensión. «от давления» significa «para la tensión». Genitivo de «лекарство» (medicamento).",
-    de: "In der Sanitätsstelle gibt es kein ___ gegen den Blutdruck. «от давления» heißt „gegen den Blutdruck“. Genitiv von «лекарство» (Medikament).",
-  },
   "Летом она работала ___ в языковом лагере.": {
     en: "In the summer she worked as a ___ at a language camp. Feminine instrumental of «вожатый» (camp leader).",
     es: "En verano trabajó de ___ en un campamento de idiomas. Instrumental femenino de «вожатый» (monitor de campamento).",
@@ -1376,11 +1336,6 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     en: "The tutor explained in detail ___ of receiving the scholarship. «о» (about) plus the prepositional of «порядок» (the procedure).",
     es: "El tutor explicó con detalle ___ de obtener la beca. «о» (sobre) más el preposicional de «порядок» (el procedimiento).",
     de: "Der Betreuer erklärte ausführlich ___ des Stipendiums. «о» (über) plus der Präpositional von «порядок» (das Verfahren).",
-  },
-  "У старосты нет ___ присутствующих на завтрашний семинар.": {
-    en: "The group monitor doesn’t have the ___ of people coming to tomorrow’s seminar. Genitive of «список» (list).",
-    es: "El delegado no tiene la ___ de quienes asistirán al seminario de mañana. Genitivo de «список» (lista).",
-    de: "Der Gruppensprecher hat keine ___ der Leute, die morgen zum Seminar kommen. Genitiv von «список» (Liste).",
   },
   "На стажировке она интересуется техника реставрации.": {
     en: "Case: after интересоваться (to be interested in), «техника» (technique) is not instrumental. Her internship, restoration technique.",
@@ -1539,7 +1494,7 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "Para la noche él ___ para la entrevista y por fin se calmó. Un resultado: perfectivo de подготовиться (prepararse), masculino.",
     de: "Bis zum Abend ___ er sich auf das Gespräch vor und beruhigte sich endlich. Ein Ergebnis: perfektiv von подготовиться (sich vorbereiten), maskulin.",
   },
-  "Прошлой зимой такое ___ каждую неделю: общежитие оставалось без горячей воды.": {
+  "Пока мы ___ (искать) билеты, на табло появилась задержка.": {
     en: "Last winter that ___ every week: the dorm was left without hot water. A repeated past: imperfective of случаться (to happen).",
     es: "El invierno pasado eso ___ cada semana: la residencia se quedaba sin agua caliente. Un pasado que se repite: imperfectivo de случаться (ocurrir).",
     de: "Letzten Winter ___ das jede Woche: das Wohnheim blieb ohne warmes Wasser. Eine wiederholte Vergangenheit: imperfektiv von случаться (geschehen).",
@@ -1636,11 +1591,6 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "Los invitados ya ___ y están junto al panel. Están aquí. «приехали» llegaron en transporte / «уехали» se fueron / «ездили» fueron y volvieron / «ходят» van a pie con frecuencia.",
     de: "Die Gäste sind schon ___ und stehen an der Anzeigetafel. Sie sind da. «приехали» sie sind mit einem Fahrzeug angekommen / «уехали» sie sind abgefahren / «ездили» sie sind hingefahren und zurück / «ходят» sie gehen regelmäßig.",
   },
-  "Преподаватель ___ с консультации раньше, его ещё нет в ректорате.": {
-    en: "The teacher ___ the consultation early; he is not at the rector’s office yet. He has left that place. «ушёл» he left / «пришёл» he arrived / «вошёл» he went in / «приехал» he arrived by transport.",
-    es: "El profesor ___ de la tutoría antes de tiempo; todavía no está en el rectorado. Se fue de allí. «ушёл» se fue / «пришёл» llegó / «вошёл» entró / «приехал» llegó en transporte.",
-    de: "Die Lehrkraft ___ früher von der Sprechstunde; sie ist noch nicht im Rektorat. Sie hat den Ort verlassen. «ушёл» ging weg / «пришёл» kam an / «вошёл» ging hinein / «приехал» kam mit einem Fahrzeug an.",
-  },
   "Опоздавший стоит в коридоре. Преподаватель говорит: «___».": {
     en: "The late student is standing in the corridor. The teacher says: “___”. He is outside the room. «Войдите» come in / «Выйдите» go out / «Уйдите» go away / «Приезжайте» come, by transport.",
     es: "Quien llegó tarde está en el pasillo. El profesor dice: «___». Está fuera del aula. «Войдите» entre / «Выйдите» salga / «Уйдите» váyase / «Приезжайте» venga, en transporte.",
@@ -1701,7 +1651,7 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "Yo ___ en el decanato cinco minutos y volví a clase. Una visita breve: perfectivo de зайти (entrar un momento), masculino.",
     de: "Ich ___ für fünf Minuten ins Dekanat und ging zurück in die Stunde. Ein kurzer Abstecher: perfektiv von зайти (kurz hineingehen), maskulin.",
   },
-  "___ от края платформы: поезд подходит.": {
+  "Завтра в восемь я ___ (пойти) на экскурсию пешком от корпуса.": {
     en: "___ from the edge of the platform: the train is coming in. Imperative, вы-form, perfective of отойти (to step away).",
     es: "___ del borde del andén: llega el tren. Imperativo de вы, perfectivo de отойти (apartarse).",
     de: "___ vom Rand des Bahnsteigs: der Zug kommt. Imperativ der Sie-Form, perfektiv von отойти (wegtreten).",
@@ -1853,17 +1803,12 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "Devolvieron el formulario, ___ hoy lo vuelvo a escribir. La conjunción de consecuencia.",
     de: "Das Formular kam zurück, ___ ich es heute neu schreibe. Die Konjunktion der Folge.",
   },
-  "Общежитие, ___ мы живём, стоит у парка.": {
-    en: "The dorm ___ we live stands by the park. «в» plus the prepositional of «который».",
-    es: "La residencia ___ vivimos está junto al parque. «в» más el preposicional de «который».",
-    de: "Das Wohnheim, ___ wir wohnen, steht am Park. «в» plus der Präpositional von «который».",
-  },
   "Вот правило, ___ мы вчера разобрали без примеров.": {
     en: "Here is the rule ___ we went through yesterday without examples. Neuter «который», because «правило» (rule) is neuter.",
     es: "Aquí está la regla ___ ayer vimos sin ejemplos. «который» en neutro, porque «правило» (regla) es neutro.",
     de: "Hier ist die Regel, ___ wir gestern ohne Beispiele durchgenommen haben. Neutrum von «который», weil «правило» (Regel) Neutrum ist.",
   },
-  "Сосед, ___ я отдал конспект, уехал на практику.": {
+  "Сосед, ___ (который) я отдал конспект, уехал на практику.": {
     en: "The neighbour ___ I gave the notes has left for the placement. Dative of «который»: the person you give something to.",
     es: "El vecino ___ le di los apuntes se fue a las prácticas. Dativo de «который»: la persona a quien das algo.",
     de: "Der Nachbar, ___ ich die Mitschrift gegeben habe, ist zum Praktikum gefahren. Dativ von «который»: die Person, der man etwas gibt.",
@@ -2167,7 +2112,7 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "___, por favor, cuándo es la tutoría de segundo. Una petición cortés de información.",
     de: "___, bitte, wann die Sprechstunde des zweiten Studienjahrs ist. Eine höfliche Bitte um Auskunft.",
   },
-  "Шаг номер три непонятен. ___, пожалуйста, его ещё раз.": {
+  "Шаг номер три непонятен. ___ (объяснить), пожалуйста, его ещё раз.": {
     en: "Step three is unclear. ___, please, once more. The polite вы-imperative of объяснить (to explain).",
     es: "El paso tres no se entiende. ___, por favor, una vez más. El imperativo cortés de вы de объяснить (explicar).",
     de: "Schritt drei ist unklar. ___, bitte, noch einmal. Der höfliche вы-Imperativ von объяснить (erklären).",
@@ -2177,7 +2122,7 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "¿Se puede ___ una pregunta no de la clase, sino de la tarea del viernes? Un infinitivo tras можно.",
     de: "Darf man eine Frage nicht zur Vorlesung, sondern zur Aufgabe für Freitag ___? Ein Infinitiv nach можно.",
   },
-  "Мне ___, что в таблице перепутаны столбцы.": {
+  "Мне ___ (казаться), что в таблице перепутаны столбцы.": {
     en: "It ___ to me that the columns in the table are swapped. The impersonal form of казаться (to seem).",
     es: "Me ___ que en la tabla están cambiadas las columnas. La forma impersonal de казаться (parecer).",
     de: "Mir ___, dass in der Tabelle die Spalten vertauscht sind. Die unpersönliche Form von казаться (scheinen).",
@@ -2294,7 +2239,7 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "Anna acepta la invitación. ¿Qué responde? Elige un acuerdo. Una frase que empieza con «por desgracia» o «no podré» es un rechazo, aunque lleve una palabra de alegría.",
     de: "Anna nimmt die Einladung an. Was antwortet sie? Wähle eine Zusage. Ein Satz mit «leider» oder «ich kann nicht» ist eine Absage, auch wenn ein frohes Wort daran hängt.",
   },
-  "Я хотела бы ___ на консультацию в четверг.": {
+  "Я хотела бы ___ (записаться) на консультацию в четверг.": {
     en: "I would like to ___ for a consultation on Thursday. The speaker is feminine. The blank is the perfective infinitive «to book / to sign up», not a finite verb.",
     es: "Quisiera ___ a una consulta el jueves. Habla una mujer. El hueco es el infinitivo perfectivo de «apuntarse», no un verbo conjugado.",
     de: "Ich würde gern ___ zu einer Sprechstunde am Donnerstag. Die Sprecherin ist feminin. Die Lücke ist der perfektive Infinitiv «sich anmelden», kein finites Verb.",
@@ -2309,7 +2254,7 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "Por la mañana me es ___: la clase empieza a las ocho. Un predicativo breve de «no me viene bien», con мне (a mí) y una hora.",
     de: "Morgens ist es mir ___: die Stunde beginnt um acht. Ein kurzes Prädikativ «unbequem», mit мне (mir) und einer Uhrzeit.",
   },
-  "___, пожалуйста, после двух: сейчас я на паре.": {
+  "___ (перезвонить), пожалуйста, после двух: сейчас я на паре.": {
     en: "___, please, after two: I am in class now. A polite request to вы: formal imperative of the verb «to call back».",
     es: "___, por favor, después de las dos: ahora estoy en clase. Petición cortés de вы: imperativo formal del verbo «volver a llamar».",
     de: "___, bitte, nach zwei: ich bin jetzt in der Stunde. Höfliche Bitte an вы: formeller Imperativ des Verbs «zurückrufen».",
@@ -2351,7 +2296,7 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "El ruido del pasillo impide ___ leer. Dativo singular del sustantivo «vecino» (un vecino), tras el verbo «estorbar a alguien».",
     de: "Lärm im Flur hindert ___ am Lesen. Dativ Singular des Substantivs «Nachbar» (ein Nachbar), nach dem Verb «jemanden stören».",
   },
-  "Мы отказались ___ , потому что источников мало.": {
+  "Она добилась ___ (успех) только после второй попытки.": {
     en: "We refused ___ , because there are few sources. The verb «to refuse / to give up» needs its preposition plus the genitive of the noun «topic».",
     es: "Renunciamos ___ , porque hay pocas fuentes. El verbo «renunciar» pide su preposición y el genitivo del sustantivo «tema».",
     de: "Wir haben ___ abgelehnt, weil es wenige Quellen gibt. Das Verb «verzichten» braucht seine Präposition und den Genitiv des Substantivs «Thema».",
@@ -2393,7 +2338,7 @@ export const RUSSIAN_A2B1_QUESTION_GLOSSES: Record<
     es: "El caso ___ en el informe ya no se repitió. Alguien describió el caso. Participio pasivo de pasado de «describir», masculino singular.",
     de: "Den Fall, ___ im Bericht, hat man nicht wieder wiederholt. Jemand hat den Fall beschrieben. Passives Partizip Präteritum von «beschreiben», maskulin Singular.",
   },
-  "Статья, ___ мы прочитали вчера, лежит на столе.": {
+  "Текст, ___ (который) написали вчера, уже в папке.": {
     en: "The article ___ we read yesterday is on the table. The relative is the object. The noun is feminine, so use the feminine accusative of the relative pronoun.",
     es: "El artículo ___ leímos ayer está en la mesa. El relativo es el objeto. El sustantivo es femenino: acusativo femenino del relativo.",
     de: "Der Artikel, ___ wir gestern lasen, liegt auf dem Tisch. Das Relativ ist das Objekt. Das Substantiv ist feminin: femininer Akkusativ des Relativpronomens.",

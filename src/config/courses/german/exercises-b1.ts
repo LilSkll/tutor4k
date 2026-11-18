@@ -705,7 +705,7 @@ export const GERMAN_B1_EXERCISES: Record<string, Draft[]> = {
       {
         en: "Ich gehe spazieren, ___ es regnet. Which conjunction? (although)",
         es: "Ich gehe spazieren, ___ es regnet. ¿Qué conjunción? (aunque)",
-        de: "Ich gehe spazieren, ___ es regnet. Welche Konjunktion? (obwohl)",
+        de: "Ich gehe spazieren, ___ es regnet. Welche Konjunktion? (Kontrast)",
       },
     ),
     mc(
@@ -716,7 +716,7 @@ export const GERMAN_B1_EXERCISES: Record<string, Draft[]> = {
       {
         en: "Sie lernt viel, ___ sie die Prüfung besteht. Which conjunction? (so that)",
         es: "Sie lernt viel, ___ sie die Prüfung besteht. ¿Qué conjunción? (para que)",
-        de: "Sie lernt viel, ___ sie die Prüfung besteht. Welche Konjunktion? (damit)",
+        de: "Sie lernt viel, ___ sie die Prüfung besteht. Welche Konjunktion? (Zweck)",
       },
     ),
     mc(
@@ -727,7 +727,7 @@ export const GERMAN_B1_EXERCISES: Record<string, Draft[]> = {
       {
         en: "___ ich koche, hört er Musik. Which word? (while)",
         es: "___ ich koche, hört er Musik. ¿Qué palabra? (mientras)",
-        de: "___ ich koche, hört er Musik. Welches Wort? (während)",
+        de: "___ ich koche, hört er Musik. Welches Wort? (Zeit)",
       },
     ),
     mc(
@@ -738,7 +738,7 @@ export const GERMAN_B1_EXERCISES: Record<string, Draft[]> = {
       {
         en: "Ruf mich an, ___ du kommst. Which conjunction? (before)",
         es: "Ruf mich an, ___ du kommst. ¿Qué conjunción? (antes de que)",
-        de: "Ruf mich an, ___ du kommst. Welche Konjunktion? (bevor)",
+        de: "Ruf mich an, ___ du kommst. Welche Konjunktion? (vorher)",
       },
     ),
     fb("Er kommt nicht, ___ er Zeit hat.", "obwohl", "Вопреки ожиданию: obwohl.", {
@@ -822,7 +822,7 @@ export const GERMAN_B1_EXERCISES: Record<string, Draft[]> = {
       {
         en: "Ich weiß nicht, ___ er kommt. Which word? (whether)",
         es: "Ich weiß nicht, ___ er kommt. ¿Qué palabra? (si)",
-        de: "Ich weiß nicht, ___ er kommt. Welches Wort? (ob)",
+        de: "Ich weiß nicht, ___ er kommt. Welches Wort? (indirekte Frage)",
       },
     ),
     mc(

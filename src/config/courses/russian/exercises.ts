@@ -10,6 +10,7 @@ import { RUSSIAN_C1_EXERCISES } from "./exercises-c1";
 import { RUSSIAN_C2_EXERCISES } from "./exercises-c2";
 import { RUSSIAN_EXPANSION_EXERCISES } from "./exercises-expansion";
 import { RUSSIAN_TR_L1 } from "./translation-l1";
+import { isRussianExerciseClear } from "./exercise-clarity";
 import { getReadingPassagesForChapter } from "@/config/reading-passages";
 
 type Draft = Omit<StaticExercise, "id"> & { id?: string };
@@ -50,7 +51,9 @@ export function getRussianExercises(chapterSlug: string): StaticExercise[] {
   const filtered = chapter?.exerciseTypes?.length
     ? drafts.filter((d) => chapter.exerciseTypes.includes(d.type))
     : drafts;
-  const stamped = filtered.map((d) => {
+  // Drop unclear / spoiler items so chapters and revision never surface them.
+  const clear = filtered.filter((d) => isRussianExerciseClear(d));
+  const stamped = clear.map((d) => {
     const withL1 = withRussianTrL1(d);
     return {
       ...withL1,

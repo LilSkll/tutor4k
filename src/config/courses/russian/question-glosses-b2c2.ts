@@ -70,11 +70,6 @@ export const RUSSIAN_QUESTION_GLOSSES_B2C2: Record<
     "es": "Para la mañana el editor ___ la tesis: es demasiado amplia para la página. Un resultado futuro. Futuro perfectivo de сузить. El editor es masculino.",
     "de": "Bis zum Morgen ___ der Redakteur die These: sie ist zu breit für die Seite. Ein künftiges Ergebnis. Perfektives Futur von сузить. Der Redakteur ist maskulin."
   },
-  "С третьей попытки Омару ___ сформулировать тезис.": {
-    "en": "On the third try Omar ___ formulate the thesis. One success, past of удаться.",
-    "es": "Al tercer intento Omar ___ formular la tesis. Un éxito, pasado de удаться.",
-    "de": "Beim dritten Versuch ___ es Omar, die These zu formulieren. Ein Erfolg, Vergangenheit von удаться."
-  },
   "Ему следовало бы ___ извинение, а не оправдываться.": {
     "en": "He should have ___ an apology instead of making excuses. Perfective infinitive in the set phrase with извинение.",
     "es": "Debería haber ___ una disculpa en lugar de justificarse. Infinitivo perfectivo en la fórmula con извинение.",
@@ -85,7 +80,7 @@ export const RUSSIAN_QUESTION_GLOSSES_B2C2: Record<
     "es": "Mientras la redacción no ___ las cifras, el material no entra en el número. Futuro perfectivo tras пока не, de сверить.",
     "de": "Solange die Redaktion die Zahlen nicht ___, kommt der Beitrag nicht in die Ausgabe. Perfektives Futur nach пока не, von сверить."
   },
-  "Едва Анна ___ первый абзац, как редактор попросил сменить тон.": {
+  "Пока редакция не ___ (сверить) цифры, материал в номер не пойдёт.": {
     "en": "Anna had barely ___ the first paragraph when the editor asked to change the tone. Perfective after едва. Anna is feminine.",
     "es": "Apenas Anna ___ el primer párrafo, el editor pidió cambiar el tono. Perfectivo tras едва. Anna es femenino.",
     "de": "Kaum hatte Anna den ersten Absatz ___, bat der Redakteur, den Ton zu ändern. Perfektiv nach едва. Anna ist feminin."
@@ -390,7 +385,7 @@ export const RUSSIAN_QUESTION_GLOSSES_B2C2: Record<
     "es": "El autor escribe sobre la presión de la ciudad. ___, no se trata de la trama, sino del ambiente. Marcador de reformulación.",
     "de": "Der Autor schreibt über den Druck der Stadt. ___, es geht nicht um die Handlung, sondern um das Milieu. Ein Umformulierungsmarker."
   },
-  "___, что узкий тезис здесь честнее широкого.": {
+  "___ (представляться), что узкий тезис здесь честнее широкого.": {
     "en": "___, that a narrow thesis is more honest here than a broad one. Third person of представляться, the impersonal academic frame.",
     "es": "___, que una tesis estrecha es aquí más honesta que una amplia. Tercera persona de представляться, el marco académico impersonal.",
     "de": "___, dass eine enge These hier ehrlicher ist als eine weite. 3. Person von представляться, der unpersönliche akademische Rahmen."
@@ -535,7 +530,7 @@ export const RUSSIAN_QUESTION_GLOSSES_B2C2: Record<
     "es": "El representante oficial ___ el rumor del cierre del programa. Pasado, masculino, de опровергнуть.",
     "de": "Der offizielle Vertreter ___ das Gerücht über die Einstellung der Sendung. Vergangenheit, maskulin, von опровергнуть."
   },
-  "Факт в сюжете назван ___: подтверждения нет.": {
+  "Официальный представитель ___ (опровергнуть) слух о закрытии программы.": {
     "en": "In the report the fact is called ___: there is no confirmation. Instrumental of неподтверждённый.",
     "es": "En la nota el hecho es llamado ___: no hay confirmación. Instrumental de неподтверждённый.",
     "de": "Im Beitrag wird der Fakt ___ genannt: eine Bestätigung fehlt. Instrumental von неподтверждённый."
@@ -555,7 +550,7 @@ export const RUSSIAN_QUESTION_GLOSSES_B2C2: Record<
     "es": "Los detalles aún se desconocen: los datos ___. Presente, imperfectivo, plural de уточняться.",
     "de": "Die Einzelheiten sind noch unbekannt: die Angaben ___. Präsens, imperfektiv, Plural von уточняться."
   },
-  "Представитель ___, что срок сдачи сдвинут на неделю.": {
+  "Детали пока неизвестны: данные ___ (уточняться).": {
     "en": "The representative ___, that the submission deadline had moved by a week. Past, masculine, of заявить.",
     "es": "El representante ___, que el plazo de entrega se corrió una semana. Pasado, masculino, de заявить.",
     "de": "Der Vertreter ___, die Abgabefrist sei um eine Woche verschoben. Vergangenheit, maskulin, von заявить."
@@ -565,7 +560,7 @@ export const RUSSIAN_QUESTION_GLOSSES_B2C2: Record<
     "es": "El titular promete un escándalo sin un hecho. El editor pide quitar de él ___. Acusativo: la palabra valorativa que sobra.",
     "de": "Die Überschrift verspricht einen Skandal ohne Fakt. Der Redakteur bittet, daraus ___ zu streichen. Akkusativ: das wertende Wort, das nicht hingehört."
   },
-  "Автор не даёт своего комментария, а ___ чужой сюжет.": {
+  "Автор не даёт своего комментария, а ___ (пересказывать) чужой сюжет.": {
     "en": "The author does not give his own comment, but ___ someone else's story. Present imperfective of пересказывать.",
     "es": "El autor no da su propio comentario, sino que ___ una historia ajena. Presente imperfectivo de пересказывать.",
     "de": "Der Autor gibt keinen eigenen Kommentar, sondern ___ eine fremde Geschichte. Präsens Imperfektiv von пересказывать."
@@ -945,7 +940,7 @@ export const RUSSIAN_QUESTION_GLOSSES_B2C2: Record<
     "es": "Ordena las palabras. Cita el parecido del fragmento y nombra el recurso.",
     "de": "Bringe die Wörter in Ordnung. Zitiere das Gleichnis des Fragments und nenne das Mittel."
   },
-  "эпитет / это / коридор / усталый / Тихий": {
+  "выпускников / сменил / коридор / аудиторию / Тихий / усталый / после": {
     "en": "Put the words in order. The quiet tired corridor is an evaluative device.",
     "es": "Ordena las palabras. El pasillo quieto y cansado es un recurso valorativo.",
     "de": "Bringe die Wörter in Ordnung. Der stille müde Flur ist ein wertendes Mittel."
@@ -1155,7 +1150,7 @@ export const RUSSIAN_QUESTION_GLOSSES_B2C2: Record<
     "es": "«Permítame ___: la muestra no cubre el segundo curso.» Elige el infinitivo de una objeción cortés.",
     "de": "«Gestatten Sie zu ___: die Stichprobe erfasst das zweite Studienjahr nicht.» Wähle den Infinitiv eines höflichen Einwands."
   },
-  "Связь двух рядов цифр без претензии на причину называют ___.": {
+  "В таблице связан рост посещаемости и оценок, но причина не доказана. Связь таких рядов без претензии на причину называют ___.": {
     "en": "A link between two series of figures with no claim of cause is called ___. Choose the statistics term, instrumental.",
     "es": "Una relación entre dos series de cifras sin pretensión de causa se llama ___. Elige el término de estadística, en instrumental.",
     "de": "Einen Zusammenhang zweier Zahlenreihen ohne Kausalanspruch nennt man ___. Wähle den Statistikterminus, im Instrumental."
@@ -1185,7 +1180,7 @@ export const RUSSIAN_QUESTION_GLOSSES_B2C2: Record<
     "es": "Los datos ___ la conclusión, y conviene decirlo con cortesía. Presente plural de расходиться.",
     "de": "Die Daten ___ von der Schlussfolgerung, und das sollte man höflich sagen. Präsens Plural von расходиться."
   },
-  "Метод можно повторить. В отзыве отмечена ___ метода.": {
+  "Вывод ___ (требовать) уточнения: второй шаг не описан.": {
     "en": "The method can be repeated. The review notes the ___ of the method. Nominative of the term for repeatability.",
     "es": "El método se puede repetir. La reseña señala la ___ del método. Nominativo del término de repetibilidad.",
     "de": "Die Methode lässt sich wiederholen. Das Gutachten vermerkt die ___ der Methode. Nominativ des Terminus der Wiederholbarkeit."
@@ -1195,7 +1190,7 @@ export const RUSSIAN_QUESTION_GLOSSES_B2C2: Record<
     "es": "Permítame ___: la muestra no cubre el segundo curso. Infinitivo de una objeción cortés tras позвольте.",
     "de": "Gestatten Sie zu ___: die Stichprobe erfasst das zweite Studienjahr nicht. Infinitiv eines höflichen Einwands nach позвольте."
   },
-  "Связь двух рядов без претензии на причину — это ___.": {
+  "Два ряда цифр в отчёте движутся вместе, но причину автор не доказывает. Такая связь — это ___.": {
     "en": "A link between two series with no claim of cause is ___. Nominative of the statistics term.",
     "es": "Una relación entre dos series sin pretensión de causa es ___. Nominativo del término de estadística.",
     "de": "Ein Zusammenhang zweier Reihen ohne Kausalanspruch ist ___. Nominativ des Statistikterminus."
@@ -1235,7 +1230,7 @@ export const RUSSIAN_QUESTION_GLOSSES_B2C2: Record<
     "es": "Tras позвольте el infinitivo es un ataque grosero. Cámbialo por una objeción cortés.",
     "de": "Nach позвольте ist der Infinitiv ein derber Angriff. Ändere ihn in einen höflichen Einwand."
   },
-  "Связь двух рядов без претензии на причину — это кульминация.": {
+  "В отчёте два ряда цифр связаны, причина не доказана, но в тексте написано: «это кульминация».": {
     "en": "A link with no claim of cause is given a plot term. Fix the term: this is statistics.",
     "es": "A una relación sin pretensión de causa se le da un término de trama. Corrige el término: esto es estadística.",
     "de": "Ein Zusammenhang ohne Kausalanspruch erhält einen Handlungsterminus. Korrigiere den Terminus: das ist Statistik."
@@ -1522,7 +1517,7 @@ export const RUSSIAN_QUESTION_GLOSSES_B2C2: Record<
     "es": "El trabajo ___ en la facultad preparatoria entró en la recopilación. Alguien escribió el trabajo. Participio pasivo de pasado de «escribir», femenino, forma plena.",
     "de": "Die Arbeit, ___ am Vorbereitungskurs, kam in den Sammelband. Jemand hat die Arbeit geschrieben. Passives Partizip Präteritum von «schreiben», feminin, Langform.",
   },
-  "Студенты, ___ на конференцию утром, зарегистрировались у стойки.": {
+  "Студентка, ___ (прочитать) статью, отметила спорный тезис.": {
     "en": "The students who ___ at the conference in the morning registered at the desk. Several people completed the trip. Past active participle of «to arrive», plural.",
     "es": "Los estudiantes que ___ al congreso por la mañana se registraron en el mostrador. Varias personas terminaron el viaje. Participio activo de pasado de «llegar», plural.",
     "de": "Die Studierenden, die morgens zur Konferenz ___, meldeten sich am Tresen an. Mehrere Personen haben die Fahrt abgeschlossen. Aktives Partizip Präteritum von «ankommen», Plural.",
@@ -1604,7 +1599,7 @@ export const RUSSIAN_QUESTION_GLOSSES_B2C2: Record<
     "es": "___ los errores, el becario envió el texto otra vez. La corrección terminó antes del segundo envío. Gerundio perfectivo de «corregir».",
     "de": "___ die Fehler, schickte der Praktikant den Text noch einmal. Die Korrektur war vor dem zweiten Senden fertig. Perfektives Adverbialpartizip von «korrigieren».",
   },
-  "___ пароля от архива, мы так и не открыли его.": {
+  "___ (слушать) лекцию, Анна записывала примеры в тетрадь.": {
     "en": "___ the archive password, we never opened it. The attempt did not reach a result. Perfective gerund of «to find out», with negation.",
     "es": "___ la contraseña del archivo, no llegamos a abrirlo. El intento no llegó a un resultado. Gerundio perfectivo de «enterarse», con negación.",
     "de": "___ das Passwort zum Archiv, haben wir es nie geöffnet. Der Versuch kam zu keinem Ergebnis. Perfektives Adverbialpartizip von «erfahren», mit Verneinung.",
@@ -1686,7 +1681,7 @@ export const RUSSIAN_QUESTION_GLOSSES_B2C2: Record<
     "es": "La decisión ___ por la comisión solo mañana. Un resultado aún futuro. Pasiva de futuro: futuro de «ser» más el participio breve de «adoptar», neutro. El agente es la comisión.",
     "de": "Der Beschluss ___ von der Kommission erst morgen. Ein Ergebnis noch in der Zukunft. Futur des Passivs: Futur von «sein» plus kurzes Partizip von «fassen», Neutrum. Der Agens ist die Kommission.",
   },
-  "Вчера доклад ___ больше часа.": {
+  "Текст сейчас ___ (переводить) стажёром, не отвлекайте его.": {
     "en": "Yesterday the paper ___ for more than an hour. A long process yesterday, not a finished result. Past, imperfective, passive of «to discuss», masculine.",
     "es": "Ayer el informe ___ más de una hora. Un proceso largo ayer, no un resultado cerrado. Pasado, imperfectivo, pasiva de «debatir», masculino.",
     "de": "Gestern ___ das Referat länger als eine Stunde. Ein langer Verlauf gestern, kein abgeschlossenes Ergebnis. Präteritum, imperfektiv, Passiv von «besprechen», maskulin.",
@@ -1825,7 +1820,7 @@ export const RUSSIAN_QUESTION_GLOSSES_B2C2: Record<
     "es": "Si Anna ___ la contraseña, habría abierto el archivo. Condición irreal. Pasado de «saber», y sin segunda partícula de hipótesis: ya está en «si».",
     "de": "Wenn Anna das Passwort ___, hätte sie das Archiv geöffnet. Eine irreale Bedingung. Präteritum von «wissen», und keine zweite Hypothesenpartikel: sie steht schon bei «wenn».",
   },
-  "Омар ___ допуск, если бы сдал работу в срок.": {
+  "Если Омар ___ (сдать) зачёт, он останется в общежитии на каникулы.": {
     "en": "Omar ___ admission if he had handed the paper in on time. An unreal result. Past of «to receive» plus the hypothesis particle. The particle may stand before the verb.",
     "es": "Omar ___ la admisión si hubiera entregado el trabajo a tiempo. Resultado irreal. Pasado de «recibir» más la partícula de hipótesis. La partícula puede ir antes del verbo.",
     "de": "Omar ___ die Zulassung, wenn er die Arbeit fristgerecht abgegeben hätte. Ein irreales Ergebnis. Präteritum von «erhalten» plus die Hypothesenpartikel. Die Partikel kann vor dem Verb stehen.",
@@ -1845,7 +1840,7 @@ export const RUSSIAN_QUESTION_GLOSSES_B2C2: Record<
     "es": "Si ___ el aviso, no habríamos llegado tarde a clase. Condición irreal. Pasado de «ver», y sin segunda partícula de hipótesis.",
     "de": "Wenn wir die Ankündigung ___, wären wir nicht zu spät zur Stunde gekommen. Eine irreale Bedingung. Präteritum von «sehen», und keine zweite Hypothesenpartikel.",
   },
-  "Анна ___ раньше, если бы знала про отмену пары.": {
+  "Если куратор ___ (прислать) файл сегодня, разбор будет завтра.": {
     "en": "Anna ___ earlier if she had known the class was cancelled. She did not leave, but she would have. An unreal result: past of «to leave / to go out» plus the hypothesis particle.",
     "es": "Anna ___ antes si hubiera sabido que cancelaron la clase. No salió, pero habría salido. Resultado irreal: pasado de «salir» más la partícula de hipótesis.",
     "de": "Anna ___ früher, wenn sie von der Absage der Stunde gewusst hätte. Sie ging nicht, hätte aber gehen können. Ein irreales Ergebnis: Präteritum von «hinausgehen» plus die Hypothesenpartikel.",
@@ -1922,7 +1917,7 @@ export const RUSSIAN_QUESTION_GLOSSES_B2C2: Record<
     "es": "___ la mudanza del departamento pido aplazar la consulta. Nexo oficial de causa que va antes de la preposición «con», que ya está escrita.",
     "de": "___ mit dem Umzug des Lehrstuhls bitte ich, die Sprechstunde zu verschieben. Offizielle Kausalverbindung, die vor der Präposition «mit» steht; «mit» ist schon geschrieben.",
   },
-  "___ Вас в известность о смене аудитории.": {
+  "___ (ставить) Вас в известность о смене аудитории.": {
     "en": "___ you informed of the room change. The official formula of a notice, 1st person of the verb «to put / to set».",
     "es": "___ a usted al tanto del cambio de aula. La fórmula oficial de un aviso, 1.ª persona del verbo «poner».",
     "de": "___ Sie vom Raumwechsel in Kenntnis. Die offizielle Formel einer Mitteilung, 1. Person des Verbs «setzen».",
@@ -2058,7 +2053,7 @@ export const RUSSIAN_QUESTION_GLOSSES_B2C2: Record<
     "es": "___ señalar la tabla lograda de la segunda sección. Un marco impersonal de dos palabras. El hueco es solo la primera, un impersonal de «conviene».",
     "de": "___ die gelungene Tabelle im zweiten Abschnitt hervorheben. Ein unpersönlicher Rahmen aus zwei Wörtern. Die Lücke ist nur das erste Wort, ein unpersönliches «man soll».",
   },
-  "Работа заслуживает ___, но рекомендация должна быть конкретной.": {
+  "Работа заслуживает ___ (внимание), но рекомендация должна быть конкретной.": {
     "en": "The paper deserves ___, but the recommendation must be concrete. Genitive of the noun «attention», after the verb «to deserve».",
     "es": "El trabajo merece ___, pero la recomendación debe ser concreta. Genitivo del sustantivo «atención», tras el verbo «merecer».",
     "de": "Die Arbeit verdient ___, die Empfehlung muss aber konkret sein. Genitiv des Substantivs «Aufmerksamkeit», nach dem Verb «verdienen».",

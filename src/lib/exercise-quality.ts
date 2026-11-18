@@ -87,7 +87,7 @@ export function isGrammarCategoryInstruction(instruction: string): boolean {
   if (!inst) return false;
   // Real learner prompts — keep them.
   if (
-    /^(Выберите|Заполните|Вставьте|Переведите|Исправьте|Найдите|Составьте|Choose|Fill|Complete|Translate|Rewrite|Find|Build|Elige|Completa|Traduce|Reescribe|Ordena|Wähle|Fülle|Übersetze|Finde|Bilde)\b/i.test(
+    /^(Выберите|Заполните|Вставьте|Переведите|Исправьте|Найдите|Составьте|Соберите|Поставьте|Согласуйте|Choose|Fill|Complete|Translate|Rewrite|Find|Build|Elige|Completa|Traduce|Reescribe|Ordena|Wähle|Fülle|Übersetze|Finde|Bilde)\b/i.test(
       inst,
     )
   ) {

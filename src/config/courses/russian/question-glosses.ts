@@ -35,7 +35,13 @@ export function lookupRussianQuestionGloss(
   lang: InterfaceLanguage,
 ): string | null {
   if (lang === "ru") return null;
-  const row = RUSSIAN_QUESTION_GLOSSES[question];
-  if (!row) return null;
-  return row[lang]?.trim() || null;
+  const exact = RUSSIAN_QUESTION_GLOSSES[question];
+  if (exact?.[lang]?.trim()) return exact[lang]!.trim();
+  // Stems often gain `(lemma)` cues; fall back to the same stem without them.
+  const stripped = question.replace(/\s*\([^)]*\)/g, "").replace(/\s+/g, " ").trim();
+  if (stripped && stripped !== question) {
+    const row = RUSSIAN_QUESTION_GLOSSES[stripped];
+    if (row?.[lang]?.trim()) return row[lang]!.trim();
+  }
+  return exact?.[lang]?.trim() || null;
 }

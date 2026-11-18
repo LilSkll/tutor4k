@@ -228,12 +228,12 @@ export const RUSSIAN_A1_REST_GLOSSES: Record<
     es: "___ Anna.",
     de: "___ Anna.",
   },
-  "Я ___.": {
+  "Петр говорит о себе: Я ___.": {
     en: "I ___.",
     es: "Yo ___.",
     de: "Ich ___.",
   },
-  "Она ___.": {
+  "Мария говорит о себе: Она ___.": {
     en: "She ___.",
     es: "Ella ___.",
     de: "Sie ___.",
@@ -405,7 +405,7 @@ export const RUSSIAN_A1_REST_GLOSSES: Record<
     es: "Mire ___.",
     de: "Schauen Sie auf ___.",
   },
-  "Это ___.": {
+  "Преподаватель указывает на доску: Это ___.": {
     en: "This is a ___. (classroom board)",
     es: "Esto es ___. (pizarra del aula)",
     de: "Das ist ___. (Tafel im Klassenzimmer)",
@@ -421,9 +421,14 @@ export const RUSSIAN_A1_REST_GLOSSES: Record<
     de: "Das ist ___ Stuhl.",
   },
   "Мы в ___ 12.": {
-    en: "We are in ___ 12.",
-    es: "Estamos en ___ 12.",
-    de: "Wir sind in ___ 12.",
+    en: "We are in classroom ___ 12.",
+    es: "Estamos en el aula ___ 12.",
+    de: "Wir sind in Hörsaal ___ 12.",
+  },
+  "Мы в ___ 12. (аудитория)": {
+    en: "We are in classroom ___ 12. The cue in parentheses is «аудитория» (lecture room); put the form that fits after «в» (in).",
+    es: "Estamos en el aula ___ 12. La pista entre paréntesis es «аудитория» (aula); escribe la forma que va tras «в».",
+    de: "Wir sind in Hörsaal ___ 12. Der Hinweis in Klammern ist «аудитория» (Hörsaal); setze die Form nach «в».",
   },
   "___ словарь на столе.": {
     en: "___ dictionary is on the table.",
@@ -562,102 +567,102 @@ export const RUSSIAN_A1_REST_GLOSSES: Record<
   },
 
   // Ch. 4 — Present tense
-  "Он ___ текст.": {
+  "Он ___ текст (читать).": {
     en: "He ___ the text.",
     es: "Él ___ el texto.",
     de: "Er ___ den Text.",
   },
-  "Она ___ упражнение.": {
+  "Она ___ упражнение (писать).": {
     en: "She ___ the exercise.",
     es: "Ella ___ el ejercicio.",
     de: "Sie ___ die Übung.",
   },
-  "Мы ___ по-русски.": {
+  "Мы ___ по-русски (говорить).": {
     en: "We ___ in Russian.",
     es: "Nosotros ___ en ruso.",
     de: "Wir ___ auf Russisch.",
   },
-  "Вы ___ вопрос.": {
+  "Вы ___ вопрос (понимать).": {
     en: "You ___ the question.",
     es: "Usted ___ la pregunta.",
     de: "Sie ___ die Frage.",
   },
-  "Они ___ слова.": {
+  "Они ___ слова (учить).": {
     en: "They ___ the words.",
     es: "Ellos ___ las palabras.",
     de: "Sie ___ die Wörter.",
   },
-  "Я ___ в библиотеке.": {
+  "Я ___ в библиотеке (работать).": {
     en: "I ___ in the library.",
     es: "Yo ___ en la biblioteca.",
     de: "Ich ___ in der Bibliothek.",
   },
-  "Ты ___ лекцию.": {
+  "Ты ___ лекцию (слушать).": {
     en: "You ___ the lecture.",
     es: "Tú ___ la clase.",
     de: "Du ___ die Vorlesung.",
   },
-  "Он ___ на доску.": {
+  "Он ___ на доску (смотреть).": {
     en: "He ___ at the board.",
     es: "Él ___ hacia la pizarra.",
     de: "Er ___ zur Tafel.",
   },
-  "Она ___ домашнее задание.": {
+  "Она ___ домашнее задание (делать).": {
     en: "She ___ the homework.",
     es: "Ella ___ los deberes.",
     de: "Sie ___ die Hausaufgabe.",
   },
-  "Мы ___ правило.": {
+  "Мы ___ правило (знать).": {
     en: "We ___ the rule.",
     es: "Nosotros ___ la regla.",
     de: "Wir ___ die Regel.",
   },
-  "Вы ___ кофе.": {
+  "Вы ___ кофе (готовить).": {
     en: "You ___ coffee.",
     es: "Usted ___ café.",
     de: "Sie ___ Kaffee.",
   },
-  "Они ___ после пары.": {
+  "Они ___ после пары (отдыхать).": {
     en: "They ___ after class.",
     es: "Ellos ___ después de la clase.",
     de: "Sie ___ nach dem Kurs.",
   },
-  "Я ___ в семь.": {
+  "Я ___ в семь (вставать).": {
     en: "I ___ at seven.",
     es: "Yo ___ a las siete.",
     de: "Ich ___ um sieben.",
   },
-  "Ты ___ текст.": {
+  "Ты ___ текст (повторять).": {
     en: "You ___ the text.",
     es: "Tú ___ el texto.",
     de: "Du ___ den Text.",
   },
-  "Он ___ учебник.": {
+  "Он ___ учебник (открывать).": {
     en: "He ___ the textbook.",
     es: "Él ___ el libro de texto.",
     de: "Er ___ das Lehrbuch.",
   },
-  "Она ___ автобус.": {
+  "Она ___ автобус (ждать).": {
     en: "She ___ the bus.",
     es: "Ella ___ el autobús.",
     de: "Sie ___ den Bus.",
   },
-  "Мы ___ чай.": {
+  "Мы ___ чай (пить).": {
     en: "We ___ tea.",
     es: "Nosotros ___ té.",
     de: "Wir ___ Tee.",
   },
-  "Вы ___ обед.": {
+  "Вы ___ обед (есть).": {
     en: "You ___ lunch.",
     es: "Usted ___ el almuerzo.",
     de: "Sie ___ das Mittagessen.",
   },
-  "Они ___ мало.": {
+  "Они ___ мало (спать).": {
     en: "They ___ little.",
     es: "Ellos ___ poco.",
     de: "Sie ___ wenig.",
   },
-  "Я ___ в общежитии.": {
+  "Я ___ в общежитии (жить).": {
     en: "I ___ in the dorm.",
     es: "Yo ___ en la residencia.",
     de: "Ich ___ im Wohnheim.",
@@ -1256,92 +1261,92 @@ export const RUSSIAN_A1_REST_GLOSSES: Record<
   },
 
   // Ch. 6 — A day at university
-  "___ начинается в девять.": {
+  "Утреннее ___ начинается в девять.": {
     en: "___ starts at nine.",
     es: "___ empieza a las nueve.",
     de: "___ beginnt um neun.",
   },
-  "Преподаватель ___ правило.": {
+  "Преподаватель ___ правило. (объяснять)": {
     en: "The teacher ___ the rule.",
     es: "El profesor ___ la regla.",
     de: "Die Lehrkraft ___ die Regel.",
   },
-  "Мы ___ в университете.": {
+  "Мы ___ в университете. (учиться)": {
     en: "We ___ at the university.",
     es: "Nosotros ___ en la universidad.",
     de: "Wir ___ an der Universität.",
   },
-  "Сейчас ___.": {
+  "Звонок. Урок закончился. Сейчас ___.": {
     en: "Right now it is ___.",
     es: "Ahora es ___.",
     de: "Jetzt ist ___.",
   },
-  "Студент ___ домашнее задание.": {
+  "Студент ___ домашнее задание. (делать)": {
     en: "The student ___ the homework.",
     es: "El estudiante ___ los deberes.",
     de: "Der Student ___ die Hausaufgabe.",
   },
-  "Я ___ ответ на доске.": {
+  "Я ___ ответ на доске. (писать)": {
     en: "I ___ the answer on the board.",
     es: "Yo ___ la respuesta en la pizarra.",
     de: "Ich ___ die Antwort an der Tafel.",
   },
-  "Они ___ лекцию.": {
+  "Они ___ лекцию. (слушать)": {
     en: "They ___ the lecture.",
     es: "Ellos ___ la clase.",
     de: "Sie ___ die Vorlesung.",
   },
-  "Вы ___ расписание?": {
+  "Вы ___ расписание? (смотреть)": {
     en: "Do you ___ the timetable?",
     es: "¿Usted ___ el horario?",
     de: "Sie ___ den Stundenplan?",
   },
-  "Где ___?": {
+  "Где висит ___?": {
     en: "Where is ___?",
     es: "¿Dónde está ___?",
     de: "Wo ist ___?",
   },
-  "Извините, можно ___?": {
+  "На паре. Извините, можно ___?": {
     en: "Excuse me, may I have a ___?",
     es: "Disculpe, ¿se puede ___?",
     de: "Entschuldigung, geht ___?",
   },
-  "Мы в ___ 305.": {
+  "Мы в ___ 305. (аудитория)": {
     en: "We are in ___ 305.",
     es: "Estamos en ___ 305.",
     de: "Wir sind in ___ 305.",
   },
-  "Пара ___ в два.": {
+  "Пара ___ в два. (начинаться)": {
     en: "The class ___ at two.",
     es: "La clase ___ a las dos.",
     de: "Der Kurs ___ um zwei.",
   },
-  "Студенты ___ в библиотеке.": {
+  "Студенты ___ в библиотеке. (работать)": {
     en: "The students ___ in the library.",
     es: "Los estudiantes ___ en la biblioteca.",
     de: "Die Studierenden ___ in der Bibliothek.",
   },
-  "Я ___ текст вслух.": {
+  "Я ___ текст вслух. (читать)": {
     en: "I ___ the text aloud.",
     es: "Yo ___ el texto en voz alta.",
     de: "Ich ___ den Text laut.",
   },
-  "Преподаватель ___ слова.": {
+  "Преподаватель ___ слова. (повторять)": {
     en: "The teacher ___ the words.",
     es: "El profesor ___ las palabras.",
     de: "Die Lehrkraft ___ die Wörter.",
   },
-  "Мы ___ группу после занятия.": {
+  "Мы ___ группу после занятия. (встречать)": {
     en: "We ___ the group after class.",
     es: "Nosotros ___ al grupo después de la clase.",
     de: "Wir ___ die Gruppe nach dem Unterricht.",
   },
-  "Он ___ в деканат.": {
+  "Он ___ в деканат. (идти)": {
     en: "He ___ to the dean’s office.",
     es: "Él ___ al decanato.",
     de: "Er ___ ins Dekanat.",
   },
-  "На семинаре мы ___ упражнение.": {
+  "На семинаре мы ___ упражнение. (делать)": {
     en: "In the seminar we ___ an exercise.",
     es: "En el seminario nosotros ___ un ejercicio.",
     de: "Im Seminar ___ wir eine Übung.",

@@ -26,10 +26,10 @@ describe("Russian translation acceptableAnswers + TR L1 cache", () => {
   it("matches every English TR stem to RUSSIAN_TR_L1 and keeps pool size stable", () => {
     const { total, stems } = russianTranslationSnapshot();
     expect(total).toBe(396);
-    expect(stems.size).toBe(393);
+    expect(stems.size).toBe(394);
 
     const cacheKeys = new Set(Object.keys(RUSSIAN_TR_L1));
-    expect(cacheKeys.size).toBe(393);
+    expect(cacheKeys.size).toBe(394);
 
     for (const stem of stems) {
       expect(RUSSIAN_TR_L1[stem], `missing L1 for: ${stem}`).toBeTruthy();
@@ -103,10 +103,10 @@ describe("Russian translation acceptableAnswers + TR L1 cache", () => {
       throw new Error(`TR not found: ${stem}`);
     };
 
-    const goodbye = findTr("Goodbye");
+    const goodbye = findTr("Goodbye (formal)");
     const altsG = [goodbye.answer, ...(goodbye.acceptableAnswers ?? [])];
     expect(answersMatchFlexible("до свидания", altsG)).toBe(true);
-    expect(answersMatchFlexible("Пока", altsG)).toBe(true);
+    expect(answersMatchFlexible("Пока", altsG)).toBe(false);
 
     const friend = findTr("Bye (to a friend)");
     const altsF = [friend.answer, ...(friend.acceptableAnswers ?? [])];
@@ -133,9 +133,15 @@ describe("Russian translation acceptableAnswers + TR L1 cache", () => {
     const course = await getCourse("russian");
     const goodbye = course
       .getExercises("ru-ch1-alphabet-greetings")
-      .find((e) => e.type === "translation" && e.question === "Goodbye")!;
+      .find(
+        (e) =>
+          e.type === "translation" &&
+          (e.question === "Goodbye (formal)" || e.question === "Goodbye"),
+      )!;
+    expect(goodbye).toBeTruthy();
     const alts = [goodbye.answer, ...(goodbye.acceptableAnswers ?? [])];
     expect(answersMatchFlexible("здравствуйте", alts)).toBe(false);
+    expect(answersMatchFlexible("пока", alts)).toBe(false);
 
     const kuda = course
       .getExercises("ru-ch15-motion-basic")

@@ -822,7 +822,7 @@ export const GERMAN_A2_EXERCISES: Record<string, Draft[]> = {
       {
         en: "___ es regnet, nehme ich den Bus. Which word? (if)",
         es: "___ es regnet, nehme ich den Bus. ¿Qué palabra? (si)",
-        de: "___ es regnet, nehme ich den Bus. Welches Wort? (wenn)",
+        de: "___ es regnet, nehme ich den Bus. Welches Wort? (Bedingung)",
       },
     ),
     mc(

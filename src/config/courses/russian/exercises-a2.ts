@@ -23,24 +23,24 @@ const v16 = "ru-a2-services";
 export const RUSSIAN_A2_EXERCISES: Record<string, Draft[]> = {
   "ru-ch9-past-tense": [
     // --- multiple_choice ---
-    { type: "multiple_choice", question: "Она ___ в библиотеке.", instruction: "Прошедшее время", options: ["был", "была", "было", "были"], answer: "была", explanation: "Она — женский род: была.", grammarTopic: g9, vocabTopic: v9 },
-    { type: "multiple_choice", question: "Вчера вечером мы ___ в кафе.", instruction: "Прошедшее время", options: ["был", "была", "было", "были"], answer: "были", explanation: "Мы — множественное число: были.", grammarTopic: g9, vocabTopic: v9 },
-    { type: "multiple_choice", question: "Утром окно ___ закрыто.", instruction: "Прошедшее время", options: ["был", "была", "было", "были"], answer: "было", explanation: "Окно — средний род: было.", grammarTopic: g9, vocabTopic: v9 },
-    { type: "multiple_choice", question: "Студент Павел вчера ___ новый текст.", instruction: "Читать, прошедшее", options: ["читал", "читала", "читали", "читаю"], answer: "читал", explanation: "Павел — мужской род: читал.", grammarTopic: g9, vocabTopic: v9 },
-    { type: "multiple_choice", question: "Сосед по комнате вчера ___ дома.", instruction: "Быть, прошедшее", options: ["был", "была", "было", "были"], answer: "был", explanation: "Сосед — мужской род: был.", grammarTopic: g9, vocabTopic: v9 },
-    { type: "multiple_choice", question: "Вчера студенты ___ тест.", instruction: "Сдать, прошедшее", options: ["сдал", "сдала", "сдали", "сдают"], answer: "сдали", explanation: "Студенты — множественное число: сдали.", grammarTopic: g9, vocabTopic: v9 },
-    { type: "multiple_choice", question: "Вчера они ___ упражнения в аудитории.", instruction: "Писать, прошедшее", options: ["писал", "писала", "писали", "пишут"], answer: "писали", explanation: "Они — множественное число: писали.", grammarTopic: g9, vocabTopic: v9 },
-    { type: "multiple_choice", question: "Мария вчера ___ задание в комнате.", instruction: "Делать, прошедшее", options: ["делал", "делала", "делали", "делает"], answer: "делала", explanation: "Мария — женский род: делала.", grammarTopic: g9, vocabTopic: v9 },
+    { type: "multiple_choice", question: "Она ___ в библиотеке.", instruction: "Выберите форму прошедшего времени", options: ["был", "была", "было", "были"], answer: "была", explanation: "Она — женский род: была.", grammarTopic: g9, vocabTopic: v9 },
+    { type: "multiple_choice", question: "Вчера вечером мы ___ в кафе.", instruction: "Выберите форму прошедшего времени", options: ["был", "была", "было", "были"], answer: "были", explanation: "Мы — множественное число: были.", grammarTopic: g9, vocabTopic: v9 },
+    { type: "multiple_choice", question: "Утром окно ___ закрыто.", instruction: "Выберите форму прошедшего времени", options: ["был", "была", "было", "были"], answer: "было", explanation: "Окно — средний род: было.", grammarTopic: g9, vocabTopic: v9 },
+    { type: "multiple_choice", question: "Студент Павел вчера ___ (читать) новый текст.", instruction: "Выберите форму прошедшего времени", options: ["читал", "читала", "читали", "читаю"], answer: "читал", explanation: "Павел — мужской род: читал.", grammarTopic: g9, vocabTopic: v9 },
+    { type: "multiple_choice", question: "Сосед по комнате вчера ___ дома.", instruction: "Выберите форму прошедшего времени", options: ["был", "была", "было", "были"], answer: "был", explanation: "Сосед — мужской род: был.", grammarTopic: g9, vocabTopic: v9 },
+    { type: "multiple_choice", question: "Вчера студенты ___ (сдать) тест.", instruction: "Выберите форму прошедшего времени", options: ["сдал", "сдала", "сдали", "сдают"], answer: "сдали", explanation: "Студенты — множественное число: сдали.", grammarTopic: g9, vocabTopic: v9 },
+    { type: "multiple_choice", question: "Вчера они ___ (писать) упражнения в аудитории.", instruction: "Выберите форму прошедшего времени", options: ["писал", "писала", "писали", "пишут"], answer: "писали", explanation: "Они — множественное число: писали.", grammarTopic: g9, vocabTopic: v9 },
+    { type: "multiple_choice", question: "Мария вчера ___ (делать) задание в комнате.", instruction: "Выберите форму прошедшего времени", options: ["делал", "делала", "делали", "делает"], answer: "делала", explanation: "Мария — женский род: делала.", grammarTopic: g9, vocabTopic: v9 },
 
     // --- fill_blank ---
-    { type: "fill_blank", question: "Вчера он ___ дома.", instruction: "Быть, мужской род", answer: "был", explanation: "Он → был.", grammarTopic: g9, vocabTopic: v9 },
-    { type: "fill_blank", question: "Вчера Мария ___ в музее.", instruction: "Быть, женский род", answer: "была", explanation: "Мария → была.", grammarTopic: g9, vocabTopic: v9 },
-    { type: "fill_blank", question: "Мы ___ в кафе после занятия.", instruction: "Быть, множественное число", answer: "были", explanation: "Мы → были.", grammarTopic: g9, vocabTopic: v9 },
-    { type: "fill_blank", question: "Новое задание ___ на столе.", instruction: "Быть, средний род", answer: "было", explanation: "Задание → было.", grammarTopic: g9, vocabTopic: v9 },
-    { type: "fill_blank", question: "Я ___ (читать) этот текст час.", instruction: "Прошедшее; род говорящего", answer: "читал", acceptableAnswers: ["читала"], explanation: "Я → читал или читала.", grammarTopic: g9, vocabTopic: v9 },
+    { type: "fill_blank", question: "Вчера он ___ (быть) дома.", instruction: "Поставьте глагол в прошедшее время", answer: "был", explanation: "Он → был.", grammarTopic: g9, vocabTopic: v9 },
+    { type: "fill_blank", question: "Вчера Мария ___ в музее.", instruction: "Поставьте глагол в прошедшее время", answer: "была", explanation: "Мария → была.", grammarTopic: g9, vocabTopic: v9 },
+    { type: "fill_blank", question: "Мы ___ в кафе после занятия.", instruction: "Поставьте глагол в прошедшее время", answer: "были", explanation: "Мы → были.", grammarTopic: g9, vocabTopic: v9 },
+    { type: "fill_blank", question: "Новое задание ___ на столе.", instruction: "Поставьте глагол в прошедшее время", answer: "было", explanation: "Задание → было.", grammarTopic: g9, vocabTopic: v9 },
+    { type: "fill_blank", question: "Я ___ (читать) этот текст час.", instruction: "Поставьте глагол в прошедшее время; согласуйте с «я»", answer: "читал", acceptableAnswers: ["читала"], explanation: "Я → читал или читала.", grammarTopic: g9, vocabTopic: v9 },
     { type: "fill_blank", question: "Они не ___ вопрос на лекции.", instruction: "Понять, множественное число", answer: "поняли", explanation: "Они → поняли.", grammarTopic: g9, vocabTopic: v9 },
     { type: "fill_blank", question: "Вчера студенты ___ текст.", instruction: "Читать, множественное число", answer: "читали", explanation: "Студенты читали текст.", grammarTopic: g9, vocabTopic: v9 },
-    { type: "fill_blank", question: "Омар вчера ___ на лекцию.", instruction: "Опоздать, мужской род", answer: "опоздал", explanation: "Омар → опоздал.", grammarTopic: g9, vocabTopic: v9 },
+    { type: "fill_blank", question: "Омар вчера ___ (опоздать) на лекцию.", instruction: "Поставьте глагол в прошедшее время", answer: "опоздал", explanation: "Омар → опоздал.", grammarTopic: g9, vocabTopic: v9 },
 
     // --- translation ---
     { type: "translation", question: "We were at the café.", instruction: "Переведите на русский", answer: "Мы были в кафе", acceptableAnswers: ["В кафе мы были"], explanation: "Мы → были.", grammarTopic: g9, vocabTopic: v9 },
@@ -75,24 +75,24 @@ export const RUSSIAN_A2_EXERCISES: Record<string, Draft[]> = {
 
   "ru-ch10-future": [
     // --- multiple_choice ---
-    { type: "multiple_choice", question: "Я ___ читать вечером.", instruction: "Составное будущее", options: ["буду", "будешь", "будет", "будут"], answer: "буду", explanation: "Я буду + инфинитив.", grammarTopic: g10, vocabTopic: v10 },
-    { type: "multiple_choice", question: "Завтра она ___ текст до конца.", instruction: "Результат, один раз", options: ["будет читать", "прочитает", "читала", "читает"], answer: "прочитает", explanation: "Результат завтра → прочитает.", grammarTopic: g10, vocabTopic: v10 },
-    { type: "multiple_choice", question: "В следующем году мы ___ жить в общежитии.", instruction: "Составное будущее", options: ["буду", "будешь", "будем", "будут"], answer: "будем", explanation: "Мы → будем.", grammarTopic: g10, vocabTopic: v10 },
-    { type: "multiple_choice", question: "Ты ___ читать этот текст вечером?", instruction: "Составное будущее", options: ["буду", "будешь", "будет", "будете"], answer: "будешь", explanation: "Ты → будешь.", grammarTopic: g10, vocabTopic: v10 },
-    { type: "multiple_choice", question: "Они ___ работать завтра.", instruction: "Составное будущее", options: ["будет", "будем", "будете", "будут"], answer: "будут", explanation: "Они → будут.", grammarTopic: g10, vocabTopic: v10 },
-    { type: "multiple_choice", question: "Завтра брат точно ___ из другого города.", instruction: "Результат: прибытие", options: ["будет ехать", "приедет", "ехал", "ездит"], answer: "приедет", explanation: "Завтра, одно прибытие: приедет. «Ездит» — привычка, «будет ехать» — процесс, «ехал» — прошлое.", grammarTopic: g10, vocabTopic: v10 },
-    { type: "multiple_choice", question: "Завтра мы ___ упражнение до конца.", instruction: "Результат, один раз", options: ["будем делать", "сделаем", "делали", "делаем"], answer: "сделаем", explanation: "Результат → сделаем.", grammarTopic: g10, vocabTopic: v10 },
-    { type: "multiple_choice", question: "По плану завтра я ___ в музее.", instruction: "Будущее глагола «быть»", options: ["буду", "будешь", "будет", "будут"], answer: "буду", explanation: "Я буду в музее.", grammarTopic: g10, vocabTopic: v10 },
+    { type: "multiple_choice", question: "Я ___ читать вечером.", instruction: "Выберите форму вспомогательного глагола", options: ["буду", "будешь", "будет", "будут"], answer: "буду", explanation: "Я буду + инфинитив.", grammarTopic: g10, vocabTopic: v10 },
+    { type: "multiple_choice", question: "Завтра она ___ текст до конца.", instruction: "Выберите форму будущего времени с результатом", options: ["будет читать", "прочитает", "читала", "читает"], answer: "прочитает", explanation: "Результат завтра → прочитает.", grammarTopic: g10, vocabTopic: v10 },
+    { type: "multiple_choice", question: "В следующем году мы ___ жить в общежитии.", instruction: "Выберите форму вспомогательного глагола", options: ["буду", "будешь", "будем", "будут"], answer: "будем", explanation: "Мы → будем.", grammarTopic: g10, vocabTopic: v10 },
+    { type: "multiple_choice", question: "Ты ___ читать этот текст вечером?", instruction: "Выберите форму вспомогательного глагола", options: ["буду", "будешь", "будет", "будете"], answer: "будешь", explanation: "Ты → будешь.", grammarTopic: g10, vocabTopic: v10 },
+    { type: "multiple_choice", question: "Они ___ работать завтра.", instruction: "Выберите форму вспомогательного глагола", options: ["будет", "будем", "будете", "будут"], answer: "будут", explanation: "Они → будут.", grammarTopic: g10, vocabTopic: v10 },
+    { type: "multiple_choice", question: "Завтра брат точно ___ из другого города.", instruction: "Выберите форму будущего времени с результатом", options: ["будет ехать", "приедет", "ехал", "ездит"], answer: "приедет", explanation: "Завтра, одно прибытие: приедет. «Ездит» — привычка, «будет ехать» — процесс, «ехал» — прошлое.", grammarTopic: g10, vocabTopic: v10 },
+    { type: "multiple_choice", question: "Завтра мы ___ упражнение до конца.", instruction: "Выберите форму будущего времени с результатом", options: ["будем делать", "сделаем", "делали", "делаем"], answer: "сделаем", explanation: "Результат → сделаем.", grammarTopic: g10, vocabTopic: v10 },
+    { type: "multiple_choice", question: "По плану завтра я ___ в музее.", instruction: "Выберите форму вспомогательного глагола", options: ["буду", "будешь", "будет", "будут"], answer: "буду", explanation: "Я буду в музее.", grammarTopic: g10, vocabTopic: v10 },
 
     // --- fill_blank ---
-    { type: "fill_blank", question: "Мы ___ жить в общежитии.", instruction: "Быть, мы", answer: "будем", explanation: "Мы → будем.", grammarTopic: g10, vocabTopic: v10 },
-    { type: "fill_blank", question: "Завтра он ___ к нам в город.", instruction: "Приехать, один приезд", answer: "приедет", explanation: "Завтра, один приезд: приедет.", grammarTopic: g10, vocabTopic: v10 },
-    { type: "fill_blank", question: "Я ___ готовиться к тесту вечером.", instruction: "Быть, я + инфинитив", answer: "буду", explanation: "Я буду готовиться.", grammarTopic: g10, vocabTopic: v10 },
-    { type: "fill_blank", question: "Завтра я ___ письмо.", instruction: "Написать, результат", answer: "напишу", explanation: "Результат → напишу.", grammarTopic: g10, vocabTopic: v10 },
-    { type: "fill_blank", question: "Вы ___ писать тест завтра утром?", instruction: "Быть, вы", answer: "будете", explanation: "Вы → будете.", grammarTopic: g10, vocabTopic: v10 },
-    { type: "fill_blank", question: "Скоро ___ каникулы.", instruction: "Быть, множественное число", answer: "будут", explanation: "Каникулы → будут.", grammarTopic: g10, vocabTopic: v10 },
-    { type: "fill_blank", question: "После пары я ___ в библиотеку.", instruction: "Пойти, один раз", answer: "пойду", acceptableAnswers: ["пойду"], explanation: "Один раз → пойду.", grammarTopic: g10, vocabTopic: v10 },
-    { type: "fill_blank", question: "Они ___ билет завтра.", instruction: "Купить, результат", answer: "купят", explanation: "Они купят билет.", grammarTopic: g10, vocabTopic: v10 },
+    { type: "fill_blank", question: "Мы ___ жить в общежитии.", instruction: "Выберите форму вспомогательного глагола", answer: "будем", explanation: "Мы → будем.", grammarTopic: g10, vocabTopic: v10 },
+    { type: "fill_blank", question: "Завтра он ___ к нам в город.", instruction: "Выберите форму будущего времени с результатом", answer: "приедет", explanation: "Завтра, один приезд: приедет.", grammarTopic: g10, vocabTopic: v10 },
+    { type: "fill_blank", question: "Я ___ готовиться к тесту вечером.", instruction: "Выберите форму вспомогательного глагола", answer: "буду", explanation: "Я буду готовиться.", grammarTopic: g10, vocabTopic: v10 },
+    { type: "fill_blank", question: "Завтра я ___ письмо.", instruction: "Выберите форму будущего времени с результатом", answer: "напишу", explanation: "Результат → напишу.", grammarTopic: g10, vocabTopic: v10 },
+    { type: "fill_blank", question: "Вы ___ писать тест завтра утром?", instruction: "Выберите форму вспомогательного глагола", answer: "будете", explanation: "Вы → будете.", grammarTopic: g10, vocabTopic: v10 },
+    { type: "fill_blank", question: "Скоро ___ каникулы.", instruction: "Поставьте глагол в прошедшее время", answer: "будут", explanation: "Каникулы → будут.", grammarTopic: g10, vocabTopic: v10 },
+    { type: "fill_blank", question: "После пары я ___ в библиотеку.", instruction: "Выберите форму будущего времени с результатом", answer: "пойду", acceptableAnswers: ["пойду"], explanation: "Один раз → пойду.", grammarTopic: g10, vocabTopic: v10 },
+    { type: "fill_blank", question: "Они ___ билет завтра.", instruction: "Выберите форму будущего времени с результатом", answer: "купят", explanation: "Они купят билет.", grammarTopic: g10, vocabTopic: v10 },
 
     // --- translation ---
     { type: "translation", question: "They will work tomorrow.", instruction: "Переведите на русский", answer: "Они будут работать завтра", acceptableAnswers: ["Завтра они будут работать"], explanation: "Они будут + инфинитив.", grammarTopic: g10, vocabTopic: v10 },
@@ -127,24 +127,24 @@ export const RUSSIAN_A2_EXERCISES: Record<string, Draft[]> = {
 
   "ru-ch11-genitive": [
     // --- multiple_choice ---
-    { type: "multiple_choice", question: "Перед тестом нет ___.", instruction: "Родительный падеж", options: ["время", "времени", "временем", "времена"], answer: "времени", explanation: "Нет + родительный: времени.", grammarTopic: g11, vocabTopic: v11 },
+    { type: "multiple_choice", question: "Перед тестом нет ___.", instruction: "Поставьте форму родительного падежа", options: ["время", "времени", "временем", "времена"], answer: "времени", explanation: "Нет + родительный: времени.", grammarTopic: g11, vocabTopic: v11 },
     { type: "multiple_choice", question: "В сумке много ___.", instruction: "Много + родительный", options: ["книг", "книги", "книгам", "книгами"], answer: "книг", explanation: "Много книг.", grammarTopic: g11, vocabTopic: v11 },
-    { type: "multiple_choice", question: "Это сумка ___.", instruction: "Чья? Принадлежность", options: ["друг", "друга", "другу", "другом"], answer: "друга", explanation: "Сумка друга — родительный.", grammarTopic: g11, vocabTopic: v11 },
+    { type: "multiple_choice", question: "Это сумка ___.", instruction: "Выберите форму родительного падежа", options: ["друг", "друга", "другу", "другом"], answer: "друга", explanation: "Сумка друга — родительный.", grammarTopic: g11, vocabTopic: v11 },
     { type: "multiple_choice", question: "У студента мало ___.", instruction: "Мало + родительный", options: ["деньги", "денег", "деньгам", "деньгами"], answer: "денег", explanation: "Мало денег.", grammarTopic: g11, vocabTopic: v11 },
     { type: "multiple_choice", question: "На столе нет ___.", instruction: "Нет + родительный", options: ["словаря", "словарь", "словарю", "словарём"], answer: "словаря", explanation: "Нет словаря.", grammarTopic: g11, vocabTopic: v11 },
-    { type: "multiple_choice", question: "Это аудитория ___.", instruction: "Чья? Принадлежность", options: ["преподаватель", "преподавателя", "преподавателю", "преподавателем"], answer: "преподавателя", explanation: "Аудитория преподавателя.", grammarTopic: g11, vocabTopic: v11 },
+    { type: "multiple_choice", question: "Это аудитория ___.", instruction: "Выберите форму родительного падежа", options: ["преподаватель", "преподавателя", "преподавателю", "преподавателем"], answer: "преподавателя", explanation: "Аудитория преподавателя.", grammarTopic: g11, vocabTopic: v11 },
     { type: "multiple_choice", question: "Сколько ___ в этом тексте?", instruction: "Сколько + родительный", options: ["слов", "слова", "словам", "словами"], answer: "слов", explanation: "Сколько слов.", grammarTopic: g11, vocabTopic: v11 },
     { type: "multiple_choice", question: "Принесите, пожалуйста, стакан ___.", instruction: "Мера + родительный", options: ["воды", "вода", "воде", "водой"], answer: "воды", explanation: "Стакан воды.", grammarTopic: g11, vocabTopic: v11 },
 
     // --- fill_blank ---
     { type: "fill_blank", question: "На лекции много ___.", instruction: "Вопрос, родительный мн. ч.", answer: "вопросов", explanation: "Много вопросов.", grammarTopic: g11, vocabTopic: v11 },
-    { type: "fill_blank", question: "У меня нет ___.", instruction: "Ручка, родительный", answer: "ручки", explanation: "Нет ручки.", grammarTopic: g11, vocabTopic: v11 },
+    { type: "fill_blank", question: "У меня нет ___ (ручка).", instruction: "Поставьте форму родительного падежа", answer: "ручки", explanation: "Нет ручки.", grammarTopic: g11, vocabTopic: v11 },
     { type: "fill_blank", question: "До экзамена мало ___.", instruction: "День, родительный мн. ч.", answer: "дней", explanation: "Мало дней.", grammarTopic: g11, vocabTopic: v11 },
-    { type: "fill_blank", question: "В комнате нет ___.", instruction: "Окно, родительный", answer: "окна", explanation: "Нет окна.", grammarTopic: g11, vocabTopic: v11 },
-    { type: "fill_blank", question: "Это тетрадь ___.", instruction: "Студент, принадлежность", answer: "студента", explanation: "Тетрадь студента.", grammarTopic: g11, vocabTopic: v11 },
-    { type: "fill_blank", question: "Завтра нет ___.", instruction: "Занятие, родительный", answer: "занятия", explanation: "Нет занятия.", grammarTopic: g11, vocabTopic: v11 },
+    { type: "fill_blank", question: "В комнате нет ___ (окно).", instruction: "Поставьте форму родительного падежа", answer: "окна", explanation: "Нет окна.", grammarTopic: g11, vocabTopic: v11 },
+    { type: "fill_blank", question: "Это тетрадь ___ (студент).", instruction: "Поставьте форму родительного падежа", answer: "студента", explanation: "Тетрадь студента.", grammarTopic: g11, vocabTopic: v11 },
+    { type: "fill_blank", question: "Завтра нет ___ (занятие).", instruction: "Поставьте форму родительного падежа", answer: "занятия", explanation: "Нет занятия.", grammarTopic: g11, vocabTopic: v11 },
     { type: "fill_blank", question: "В группе много ___.", instruction: "Студент, родительный мн. ч.", answer: "студентов", explanation: "Много студентов.", grammarTopic: g11, vocabTopic: v11 },
-    { type: "fill_blank", question: "В стакане мало ___.", instruction: "Вода, родительный", answer: "воды", explanation: "Мало воды.", grammarTopic: g11, vocabTopic: v11 },
+    { type: "fill_blank", question: "В стакане мало ___ (вода).", instruction: "Поставьте форму родительного падежа", answer: "воды", explanation: "Мало воды.", grammarTopic: g11, vocabTopic: v11 },
 
     // --- translation ---
     { type: "translation", question: "There is no ticket.", instruction: "Переведите на русский", answer: "Нет билета", explanation: "Нет + родительный: билета.", grammarTopic: g11, vocabTopic: v11 },
@@ -179,24 +179,24 @@ export const RUSSIAN_A2_EXERCISES: Record<string, Draft[]> = {
 
   "ru-ch12-dative": [
     // --- multiple_choice ---
-    { type: "multiple_choice", question: "___ нравится русский язык.", instruction: "Дательный падеж", options: ["Я", "Мне", "Меня", "Мной"], answer: "Мне", explanation: "Мне нравится.", grammarTopic: g12, vocabTopic: v12 },
-    { type: "multiple_choice", question: "Преподаватель объясняет правило ___.", instruction: "Кому?", options: ["студенты", "студентов", "студентам", "студентами"], answer: "студентам", explanation: "Объяснять кому? → студентам.", grammarTopic: g12, vocabTopic: v12 },
-    { type: "multiple_choice", question: "Вечером я звоню ___ из общежития.", instruction: "Звонить кому?", options: ["друг", "друга", "другу", "другом"], answer: "другу", explanation: "Звонить другу.", grammarTopic: g12, vocabTopic: v12 },
-    { type: "multiple_choice", question: "___ нравятся новые курсы.", instruction: "Дательный падеж", options: ["Она", "Её", "Ей", "Ею"], answer: "Ей", explanation: "Ей нравятся курсы.", grammarTopic: g12, vocabTopic: v12 },
-    { type: "multiple_choice", question: "Помогите ___, пожалуйста, с текстом.", instruction: "Помогать кому?", options: ["я", "меня", "мне", "мной"], answer: "мне", explanation: "Помогите мне.", grammarTopic: g12, vocabTopic: v12 },
-    { type: "multiple_choice", question: "Анна пишет письмо ___.", instruction: "Писать кому?", options: ["сестра", "сестру", "сестре", "сестрой"], answer: "сестре", explanation: "Писать сестре.", grammarTopic: g12, vocabTopic: v12 },
-    { type: "multiple_choice", question: "___ не нравится новое общежитие.", instruction: "Дательный падеж", options: ["Они", "Их", "Им", "Ими"], answer: "Им", explanation: "Им не нравится.", grammarTopic: g12, vocabTopic: v12 },
-    { type: "multiple_choice", question: "Дайте, пожалуйста, словарь ___.", instruction: "Дать кому?", options: ["студент", "студента", "студенту", "студентом"], answer: "студенту", explanation: "Дайте студенту.", grammarTopic: g12, vocabTopic: v12 },
+    { type: "multiple_choice", question: "___ нравится русский язык.", instruction: "Поставьте форму дательного падежа", options: ["Я", "Мне", "Меня", "Мной"], answer: "Мне", explanation: "Мне нравится.", grammarTopic: g12, vocabTopic: v12 },
+    { type: "multiple_choice", question: "Преподаватель объясняет правило ___.", instruction: "Выберите форму дательного падежа", options: ["студенты", "студентов", "студентам", "студентами"], answer: "студентам", explanation: "Объяснять кому? → студентам.", grammarTopic: g12, vocabTopic: v12 },
+    { type: "multiple_choice", question: "Вечером я звоню ___ из общежития.", instruction: "Выберите форму дательного падежа", options: ["друг", "друга", "другу", "другом"], answer: "другу", explanation: "Звонить другу.", grammarTopic: g12, vocabTopic: v12 },
+    { type: "multiple_choice", question: "___ нравятся новые курсы.", instruction: "Поставьте форму дательного падежа", options: ["Она", "Её", "Ей", "Ею"], answer: "Ей", explanation: "Ей нравятся курсы.", grammarTopic: g12, vocabTopic: v12 },
+    { type: "multiple_choice", question: "Помогите ___, пожалуйста, с текстом.", instruction: "Выберите форму дательного падежа", options: ["я", "меня", "мне", "мной"], answer: "мне", explanation: "Помогите мне.", grammarTopic: g12, vocabTopic: v12 },
+    { type: "multiple_choice", question: "Анна пишет письмо ___.", instruction: "Выберите форму дательного падежа", options: ["сестра", "сестру", "сестре", "сестрой"], answer: "сестре", explanation: "Писать сестре.", grammarTopic: g12, vocabTopic: v12 },
+    { type: "multiple_choice", question: "___ не нравится новое общежитие.", instruction: "Поставьте форму дательного падежа", options: ["Они", "Их", "Им", "Ими"], answer: "Им", explanation: "Им не нравится.", grammarTopic: g12, vocabTopic: v12 },
+    { type: "multiple_choice", question: "Дайте, пожалуйста, словарь ___.", instruction: "Выберите форму дательного падежа", options: ["студент", "студента", "студенту", "студентом"], answer: "студенту", explanation: "Дайте студенту.", grammarTopic: g12, vocabTopic: v12 },
 
     // --- fill_blank ---
-    { type: "fill_blank", question: "Мария звонит ___ каждый вечер.", instruction: "Мама, дательный", answer: "маме", explanation: "Звонить маме.", grammarTopic: g12, vocabTopic: v12 },
-    { type: "fill_blank", question: "___ нравится наша группа.", instruction: "Он, дательный", answer: "Ему", acceptableAnswers: ["ему"], explanation: "Ему нравится.", grammarTopic: g12, vocabTopic: v12 },
-    { type: "fill_blank", question: "Преподаватель даёт ___ новое задание.", instruction: "Мы, дательный", answer: "нам", explanation: "Даёт нам.", grammarTopic: g12, vocabTopic: v12 },
-    { type: "fill_blank", question: "Сегодня я пишу ___.", instruction: "Преподаватель, дательный", answer: "преподавателю", explanation: "Писать преподавателю.", grammarTopic: g12, vocabTopic: v12 },
-    { type: "fill_blank", question: "Я часто помогаю ___.", instruction: "Сестра, дательный", answer: "сестре", explanation: "Помогать сестре.", grammarTopic: g12, vocabTopic: v12 },
-    { type: "fill_blank", question: "Мы пишем ___ из общежития.", instruction: "Подруга, дательный", answer: "подруге", explanation: "Писать подруге.", grammarTopic: g12, vocabTopic: v12 },
-    { type: "fill_blank", question: "Объясните ___, пожалуйста, это слово.", instruction: "Мы, дательный", answer: "нам", explanation: "Объясните нам.", grammarTopic: g12, vocabTopic: v12 },
-    { type: "fill_blank", question: "___ нравится новая столовая.", instruction: "Анна, дательный", answer: "Анне", explanation: "Анне нравится.", grammarTopic: g12, vocabTopic: v12 },
+    { type: "fill_blank", question: "Мария звонит ___ (мама) каждый вечер.", instruction: "Поставьте форму дательного падежа", answer: "маме", explanation: "Звонить маме.", grammarTopic: g12, vocabTopic: v12 },
+    { type: "fill_blank", question: "___ (он) нравится наша группа.", instruction: "Поставьте форму дательного падежа", answer: "Ему", acceptableAnswers: ["ему"], explanation: "Ему нравится.", grammarTopic: g12, vocabTopic: v12 },
+    { type: "fill_blank", question: "Преподаватель даёт ___ (мы) новое задание.", instruction: "Поставьте форму дательного падежа", answer: "нам", explanation: "Даёт нам.", grammarTopic: g12, vocabTopic: v12 },
+    { type: "fill_blank", question: "Сегодня я пишу ___ (преподаватель).", instruction: "Поставьте форму дательного падежа", answer: "преподавателю", explanation: "Писать преподавателю.", grammarTopic: g12, vocabTopic: v12 },
+    { type: "fill_blank", question: "Я часто помогаю ___ (сестра).", instruction: "Поставьте форму дательного падежа", answer: "сестре", explanation: "Помогать сестре.", grammarTopic: g12, vocabTopic: v12 },
+    { type: "fill_blank", question: "Мы пишем ___ (подруга) из общежития.", instruction: "Поставьте форму дательного падежа", answer: "подруге", explanation: "Писать подруге.", grammarTopic: g12, vocabTopic: v12 },
+    { type: "fill_blank", question: "Объясните ___ (мы), пожалуйста, это слово.", instruction: "Поставьте форму дательного падежа", answer: "нам", explanation: "Объясните нам.", grammarTopic: g12, vocabTopic: v12 },
+    { type: "fill_blank", question: "___ (Анна) нравится новая столовая.", instruction: "Поставьте форму дательного падежа", answer: "Анне", explanation: "Анне нравится.", grammarTopic: g12, vocabTopic: v12 },
 
     // --- translation ---
     { type: "translation", question: "Help me, please.", instruction: "Переведите на русский", answer: "Помогите мне, пожалуйста", acceptableAnswers: ["Помогите мне пожалуйста"], explanation: "Помогать мне.", grammarTopic: g12, vocabTopic: v12 },
@@ -231,24 +231,24 @@ export const RUSSIAN_A2_EXERCISES: Record<string, Draft[]> = {
 
   "ru-ch13-instrumental": [
     // --- multiple_choice ---
-    { type: "multiple_choice", question: "В городе он работает ___.", instruction: "Кем?", options: ["врач", "врача", "врачу", "врачом"], answer: "врачом", explanation: "Работать кем? → врачом.", grammarTopic: g13, vocabTopic: v13 },
-    { type: "multiple_choice", question: "Предлог «с» в значении «вместе» обычно требует падеж:", instruction: "Выберите падеж", options: ["родительный", "дательный", "творительный", "винительный"], answer: "творительный", explanation: "С кем? с чем? — творительный.", grammarTopic: g13, vocabTopic: v13 },
-    { type: "multiple_choice", question: "Преподаватель пишет на доске ___.", instruction: "Чем?", options: ["ручка", "ручку", "ручке", "ручкой"], answer: "ручкой", explanation: "Писать чем? → ручкой.", grammarTopic: g13, vocabTopic: v13 },
-    { type: "multiple_choice", question: "Сестра хочет стать ___.", instruction: "Кем?", options: ["инженер", "инженера", "инженеру", "инженером"], answer: "инженером", explanation: "Стать кем? → инженером.", grammarTopic: g13, vocabTopic: v13 },
-    { type: "multiple_choice", question: "Мы говорим ___ преподавателем.", instruction: "Предлог совместности", options: ["в", "на", "к", "с"], answer: "с", explanation: "Говорить с преподавателем.", grammarTopic: g13, vocabTopic: v13 },
-    { type: "multiple_choice", question: "В школе мой отец работает ___.", instruction: "Кем?", options: ["учитель", "учителя", "учителю", "учителем"], answer: "учителем", explanation: "Работать учителем.", grammarTopic: g13, vocabTopic: v13 },
-    { type: "multiple_choice", question: "Сосед пишет ___, не ручкой.", instruction: "Чем?", options: ["карандаш", "карандаша", "карандашу", "карандашом"], answer: "карандашом", explanation: "Писать карандашом.", grammarTopic: g13, vocabTopic: v13 },
-    { type: "multiple_choice", question: "В общежитии я живу ___.", instruction: "С кем?", options: ["с друг", "с друга", "с другу", "с другом"], answer: "с другом", explanation: "Жить с другом.", grammarTopic: g13, vocabTopic: v13 },
+    { type: "multiple_choice", question: "В городе он работает ___.", instruction: "Выберите форму творительного падежа", options: ["врач", "врача", "врачу", "врачом"], answer: "врачом", explanation: "Работать кем? → врачом.", grammarTopic: g13, vocabTopic: v13 },
+    { type: "multiple_choice", question: "Предлог «с» в значении «вместе» обычно требует падеж:", instruction: "Выберите нужную форму", options: ["родительный", "дательный", "творительный", "винительный"], answer: "творительный", explanation: "С кем? с чем? — творительный.", grammarTopic: g13, vocabTopic: v13 },
+    { type: "multiple_choice", question: "Преподаватель пишет на доске ___.", instruction: "Выберите форму творительного падежа", options: ["ручка", "ручку", "ручке", "ручкой"], answer: "ручкой", explanation: "Писать чем? → ручкой.", grammarTopic: g13, vocabTopic: v13 },
+    { type: "multiple_choice", question: "Сестра хочет стать ___.", instruction: "Выберите форму творительного падежа", options: ["инженер", "инженера", "инженеру", "инженером"], answer: "инженером", explanation: "Стать кем? → инженером.", grammarTopic: g13, vocabTopic: v13 },
+    { type: "multiple_choice", question: "Мы говорим ___ преподавателем.", instruction: "Выберите предлог с творительным падежом", options: ["в", "на", "к", "с"], answer: "с", explanation: "Говорить с преподавателем.", grammarTopic: g13, vocabTopic: v13 },
+    { type: "multiple_choice", question: "В школе мой отец работает ___.", instruction: "Выберите форму творительного падежа", options: ["учитель", "учителя", "учителю", "учителем"], answer: "учителем", explanation: "Работать учителем.", grammarTopic: g13, vocabTopic: v13 },
+    { type: "multiple_choice", question: "Сосед пишет ___, не ручкой.", instruction: "Выберите форму творительного падежа", options: ["карандаш", "карандаша", "карандашу", "карандашом"], answer: "карандашом", explanation: "Писать карандашом.", grammarTopic: g13, vocabTopic: v13 },
+    { type: "multiple_choice", question: "В общежитии я живу ___.", instruction: "Выберите предлог с творительным падежом", options: ["с друг", "с друга", "с другу", "с другом"], answer: "с другом", explanation: "Жить с другом.", grammarTopic: g13, vocabTopic: v13 },
 
     // --- fill_blank ---
-    { type: "fill_blank", question: "Я пишу ___.", instruction: "Ручка, творительный", answer: "ручкой", explanation: "Писать ручкой.", grammarTopic: g13, vocabTopic: v13 },
-    { type: "fill_blank", question: "Брат работает ___.", instruction: "Инженер, творительный", answer: "инженером", explanation: "Работать инженером.", grammarTopic: g13, vocabTopic: v13 },
-    { type: "fill_blank", question: "Вечером Анна говорит с ___.", instruction: "Сосед, творительный", answer: "соседом", explanation: "Говорить с соседом.", grammarTopic: g13, vocabTopic: v13 },
-    { type: "fill_blank", question: "Мария стала ___.", instruction: "Врач, творительный", answer: "врачом", explanation: "Стать врачом.", grammarTopic: g13, vocabTopic: v13 },
-    { type: "fill_blank", question: "Брат хочет работать ___ в школе.", instruction: "Учитель, творительный", answer: "учителем", explanation: "Работать учителем.", grammarTopic: g13, vocabTopic: v13 },
-    { type: "fill_blank", question: "На контрольной я пишу ___.", instruction: "Карандаш, творительный", answer: "карандашом", explanation: "Писать карандашом.", grammarTopic: g13, vocabTopic: v13 },
-    { type: "fill_blank", question: "Я живу в комнате с ___.", instruction: "Друг, творительный", answer: "другом", explanation: "С другом.", grammarTopic: g13, vocabTopic: v13 },
-    { type: "fill_blank", question: "Мама давно работает ___.", instruction: "Врач, творительный", answer: "врачом", explanation: "Работать врачом.", grammarTopic: g13, vocabTopic: v13 },
+    { type: "fill_blank", question: "Я пишу ___ (ручка).", instruction: "Поставьте форму творительного падежа", answer: "ручкой", explanation: "Писать ручкой.", grammarTopic: g13, vocabTopic: v13 },
+    { type: "fill_blank", question: "Брат работает ___ (инженер).", instruction: "Поставьте форму творительного падежа", answer: "инженером", explanation: "Работать инженером.", grammarTopic: g13, vocabTopic: v13 },
+    { type: "fill_blank", question: "Вечером Анна говорит с ___ (сосед).", instruction: "Поставьте форму творительного падежа", answer: "соседом", explanation: "Говорить с соседом.", grammarTopic: g13, vocabTopic: v13 },
+    { type: "fill_blank", question: "Мария стала ___ (врач).", instruction: "Поставьте форму творительного падежа", answer: "врачом", explanation: "Стать врачом.", grammarTopic: g13, vocabTopic: v13 },
+    { type: "fill_blank", question: "Брат хочет работать ___ (учитель) в школе.", instruction: "Поставьте форму творительного падежа", answer: "учителем", explanation: "Работать учителем.", grammarTopic: g13, vocabTopic: v13 },
+    { type: "fill_blank", question: "На контрольной я пишу ___ (карандаш).", instruction: "Поставьте форму творительного падежа", answer: "карандашом", explanation: "Писать карандашом.", grammarTopic: g13, vocabTopic: v13 },
+    { type: "fill_blank", question: "Я живу в комнате с ___ (друг).", instruction: "Поставьте форму творительного падежа", answer: "другом", explanation: "С другом.", grammarTopic: g13, vocabTopic: v13 },
+    { type: "fill_blank", question: "Мама давно работает ___ (врач).", instruction: "Поставьте форму творительного падежа", answer: "врачом", explanation: "Работать врачом.", grammarTopic: g13, vocabTopic: v13 },
 
     // --- translation ---
     { type: "translation", question: "I live with a friend.", instruction: "Переведите на русский", answer: "Я живу с другом", explanation: "С другом.", grammarTopic: g13, vocabTopic: v13 },
@@ -283,23 +283,23 @@ export const RUSSIAN_A2_EXERCISES: Record<string, Draft[]> = {
 
   "ru-ch14-aspect-intro": [
     // --- multiple_choice ---
-    { type: "multiple_choice", question: "Вчера я долго ___ книгу в библиотеке. (о себе, м.)", instruction: "Процесс", options: ["прочитал", "читал", "прочитаю", "читаю"], answer: "читал", explanation: "Долго, процесс → читал.", grammarTopic: g14, vocabTopic: v14 },
-    { type: "multiple_choice", question: "Пара к глаголу «писать» — ?", instruction: "Совершенный вид", options: ["пишу", "написать", "писал", "письмо"], answer: "написать", explanation: "Писать — написать.", grammarTopic: g14, vocabTopic: v14 },
-    { type: "multiple_choice", question: "Упражнение уже готово. Я его ___. (м.)", instruction: "Результат", options: ["делал", "сделал", "делаю", "буду делать"], answer: "сделал", explanation: "Результат есть → сделал.", grammarTopic: g14, vocabTopic: v14 },
+    { type: "multiple_choice", question: "Вчера я долго ___ книгу в библиотеке. (о себе, м.)", instruction: "Выберите вид глагола", options: ["прочитал", "читал", "прочитаю", "читаю"], answer: "читал", explanation: "Долго, процесс → читал.", grammarTopic: g14, vocabTopic: v14 },
+    { type: "multiple_choice", question: "Пара к глаголу «писать» — ?", instruction: "Выберите вид глагола", options: ["пишу", "написать", "писал", "письмо"], answer: "написать", explanation: "Писать — написать.", grammarTopic: g14, vocabTopic: v14 },
+    { type: "multiple_choice", question: "Упражнение уже готово. Я его ___. (м.)", instruction: "Выберите форму с результатом", options: ["делал", "сделал", "делаю", "буду делать"], answer: "сделал", explanation: "Результат есть → сделал.", grammarTopic: g14, vocabTopic: v14 },
     { type: "multiple_choice", question: "Она два часа ___ сочинение и не закончила.", instruction: "Процесс без результата", options: ["написала", "писала", "напишет", "пишет"], answer: "писала", explanation: "Не закончила → писала.", grammarTopic: g14, vocabTopic: v14 },
-    { type: "multiple_choice", question: "Пара к глаголу «делать» — ?", instruction: "Совершенный вид", options: ["делал", "сделать", "делаю", "дело"], answer: "сделать", explanation: "Делать — сделать.", grammarTopic: g14, vocabTopic: v14 },
-    { type: "multiple_choice", question: "Вчера вечером она ___ письмо до конца.", instruction: "Результат", options: ["писала", "написала", "пишет", "будет писать"], answer: "написала", explanation: "До конца → написала.", grammarTopic: g14, vocabTopic: v14 },
-    { type: "multiple_choice", question: "Каждый день я ___ домашнее задание.", instruction: "Привычка", options: ["сделаю", "сделал", "делаю", "сделала"], answer: "делаю", explanation: "Каждый день → делаю.", grammarTopic: g14, vocabTopic: v14 },
-    { type: "multiple_choice", question: "Пара к глаголу «читать» — ?", instruction: "Совершенный вид", options: ["читал", "прочитать", "читаю", "чтение"], answer: "прочитать", explanation: "Читать — прочитать.", grammarTopic: g14, vocabTopic: v14 },
+    { type: "multiple_choice", question: "Пара к глаголу «делать» — ?", instruction: "Выберите вид глагола", options: ["делал", "сделать", "делаю", "дело"], answer: "сделать", explanation: "Делать — сделать.", grammarTopic: g14, vocabTopic: v14 },
+    { type: "multiple_choice", question: "Вчера вечером она ___ письмо до конца.", instruction: "Выберите форму с результатом", options: ["писала", "написала", "пишет", "будет писать"], answer: "написала", explanation: "До конца → написала.", grammarTopic: g14, vocabTopic: v14 },
+    { type: "multiple_choice", question: "Каждый день я ___ домашнее задание.", instruction: "Выберите вид глагола", options: ["сделаю", "сделал", "делаю", "сделала"], answer: "делаю", explanation: "Каждый день → делаю.", grammarTopic: g14, vocabTopic: v14 },
+    { type: "multiple_choice", question: "Пара к глаголу «читать» — ?", instruction: "Выберите вид глагола", options: ["читал", "прочитать", "читаю", "чтение"], answer: "прочитать", explanation: "Читать — прочитать.", grammarTopic: g14, vocabTopic: v14 },
 
     // --- fill_blank ---
     { type: "fill_blank", question: "Анна уже ___ упражнение.", instruction: "Сделать, результат, ж. р.", answer: "сделала", explanation: "Уже, результат → сделала.", grammarTopic: g14, vocabTopic: v14 },
-    { type: "fill_blank", question: "Вчера он долго ___ книгу в библиотеке.", instruction: "Читать, процесс", answer: "читал", explanation: "Долго → читал.", grammarTopic: g14, vocabTopic: v14 },
-    { type: "fill_blank", question: "Мы уже ___ сочинение.", instruction: "Написать, результат", answer: "написали", explanation: "Уже → написали.", grammarTopic: g14, vocabTopic: v14 },
-    { type: "fill_blank", question: "Каждый вечер Омар ___ упражнения.", instruction: "Делать, привычка", answer: "делает", explanation: "Каждый вечер → делает.", grammarTopic: g14, vocabTopic: v14 },
+    { type: "fill_blank", question: "Вчера он долго ___ книгу в библиотеке.", instruction: "Выберите вид глагола", answer: "читал", explanation: "Долго → читал.", grammarTopic: g14, vocabTopic: v14 },
+    { type: "fill_blank", question: "Мы уже ___ сочинение.", instruction: "Выберите форму будущего времени с результатом", answer: "написали", explanation: "Уже → написали.", grammarTopic: g14, vocabTopic: v14 },
+    { type: "fill_blank", question: "Каждый вечер Омар ___ упражнения.", instruction: "Выберите вид глагола", answer: "делает", explanation: "Каждый вечер → делает.", grammarTopic: g14, vocabTopic: v14 },
     { type: "fill_blank", question: "Мария ещё не ___ письмо.", instruction: "Написать, результата нет", answer: "написала", acceptableAnswers: ["написала"], explanation: "Ещё не написала.", grammarTopic: g14, vocabTopic: v14 },
-    { type: "fill_blank", question: "Вчера они ___ тест до конца.", instruction: "Сделать, результат", answer: "сделали", explanation: "До конца → сделали.", grammarTopic: g14, vocabTopic: v14 },
-    { type: "fill_blank", question: "Павел уже ___ книгу.", instruction: "Прочитать, результат", answer: "прочитал", acceptableAnswers: ["прочёл", "прочел", "Прочёл", "Прочел"], explanation: "Уже → прочитал или прочёл.", grammarTopic: g14, vocabTopic: v14 },
+    { type: "fill_blank", question: "Вчера они ___ тест до конца.", instruction: "Выберите вид глагола", answer: "сделали", explanation: "До конца → сделали.", grammarTopic: g14, vocabTopic: v14 },
+    { type: "fill_blank", question: "Павел уже ___ книгу.", instruction: "Выберите вид глагола", answer: "прочитал", acceptableAnswers: ["прочёл", "прочел", "Прочёл", "Прочел"], explanation: "Уже → прочитал или прочёл.", grammarTopic: g14, vocabTopic: v14 },
     { type: "fill_blank", question: "Сейчас Лиза ___ письмо в комнате.", instruction: "Писать, процесс сейчас", answer: "пишет", explanation: "Сейчас, процесс → пишет.", grammarTopic: g14, vocabTopic: v14 },
 
     // --- translation ---
@@ -336,23 +336,23 @@ export const RUSSIAN_A2_EXERCISES: Record<string, Draft[]> = {
   "ru-ch15-motion-basic": [
     // --- multiple_choice ---
     { type: "multiple_choice", question: "Сейчас я ___ в университет пешком.", instruction: "Одно направление, пешком", options: ["иду", "хожу", "еду", "езжу"], answer: "иду", explanation: "Сейчас пешком → иду.", grammarTopic: g15, vocabTopic: v15 },
-    { type: "multiple_choice", question: "Они часто ___ в центр на метро.", instruction: "Регулярно, транспорт", options: ["едут", "ездят", "идут", "ходят"], answer: "ездят", explanation: "Часто на метро → ездят.", grammarTopic: g15, vocabTopic: v15 },
-    { type: "multiple_choice", question: "Каждый день Анна ___ пешком в библиотеку.", instruction: "Регулярно, пешком", options: ["идёт", "ходит", "едет", "ездит"], answer: "ходит", explanation: "Каждый день пешком → ходит.", grammarTopic: g15, vocabTopic: v15 },
-    { type: "multiple_choice", question: "Сейчас мы ___ на автобусе в центр.", instruction: "Сейчас, транспорт", options: ["едем", "ездим", "идём", "ходим"], answer: "едем", explanation: "Сейчас на автобусе → едем.", grammarTopic: g15, vocabTopic: v15 },
-    { type: "multiple_choice", question: "Куда ты ___ пешком прямо сейчас?", instruction: "Сейчас, пешком", options: ["идёшь", "ходишь", "едешь", "ездишь"], answer: "идёшь", explanation: "Сейчас пешком → идёшь.", grammarTopic: g15, vocabTopic: v15 },
-    { type: "multiple_choice", question: "Каждое утро брат ___ на работу на автобусе.", instruction: "Регулярно, транспорт", options: ["едет", "ездит", "идёт", "ходит"], answer: "ездит", explanation: "Каждое утро на автобусе → ездит.", grammarTopic: g15, vocabTopic: v15 },
-    { type: "multiple_choice", question: "По выходным мы ___ в парк пешком.", instruction: "Регулярно, пешком", options: ["идём", "ходим", "едем", "ездим"], answer: "ходим", explanation: "По выходным пешком → ходим.", grammarTopic: g15, vocabTopic: v15 },
-    { type: "multiple_choice", question: "Смотри: автобус сейчас ___ в университет.", instruction: "Сейчас, транспорт", options: ["едет", "ездит", "идёт", "ходит"], answer: "едет", explanation: "Сейчас → едет.", grammarTopic: g15, vocabTopic: v15 },
+    { type: "multiple_choice", question: "Они часто ___ в центр на метро.", instruction: "Выберите форму глагола движения", options: ["едут", "ездят", "идут", "ходят"], answer: "ездят", explanation: "Часто на метро → ездят.", grammarTopic: g15, vocabTopic: v15 },
+    { type: "multiple_choice", question: "Каждый день Анна ___ пешком в библиотеку.", instruction: "Выберите форму глагола движения", options: ["идёт", "ходит", "едет", "ездит"], answer: "ходит", explanation: "Каждый день пешком → ходит.", grammarTopic: g15, vocabTopic: v15 },
+    { type: "multiple_choice", question: "Сейчас мы ___ на автобусе в центр.", instruction: "Выберите форму глагола движения", options: ["едем", "ездим", "идём", "ходим"], answer: "едем", explanation: "Сейчас на автобусе → едем.", grammarTopic: g15, vocabTopic: v15 },
+    { type: "multiple_choice", question: "Куда ты ___ пешком прямо сейчас?", instruction: "Выберите форму глагола движения", options: ["идёшь", "ходишь", "едешь", "ездишь"], answer: "идёшь", explanation: "Сейчас пешком → идёшь.", grammarTopic: g15, vocabTopic: v15 },
+    { type: "multiple_choice", question: "Каждое утро брат ___ на работу на автобусе.", instruction: "Выберите форму глагола движения", options: ["едет", "ездит", "идёт", "ходит"], answer: "ездит", explanation: "Каждое утро на автобусе → ездит.", grammarTopic: g15, vocabTopic: v15 },
+    { type: "multiple_choice", question: "По выходным мы ___ в парк пешком.", instruction: "Выберите форму глагола движения", options: ["идём", "ходим", "едем", "ездим"], answer: "ходим", explanation: "По выходным пешком → ходим.", grammarTopic: g15, vocabTopic: v15 },
+    { type: "multiple_choice", question: "Смотри: автобус сейчас ___ в университет.", instruction: "Выберите форму глагола движения", options: ["едет", "ездит", "идёт", "ходит"], answer: "едет", explanation: "Сейчас → едет.", grammarTopic: g15, vocabTopic: v15 },
 
     // --- fill_blank ---
-    { type: "fill_blank", question: "Я каждый день ___ в университет.", instruction: "Ходить, регулярно", answer: "хожу", explanation: "Каждый день → хожу.", grammarTopic: g15, vocabTopic: v15 },
-    { type: "fill_blank", question: "Сейчас она ___ в магазин.", instruction: "Идти, сейчас", answer: "идёт", acceptableAnswers: ["идет"], explanation: "Сейчас → идёт.", grammarTopic: g15, vocabTopic: v15 },
-    { type: "fill_blank", question: "Мы часто ___ на метро в центр.", instruction: "Ездить, регулярно", answer: "ездим", explanation: "Часто на метро → ездим.", grammarTopic: g15, vocabTopic: v15 },
-    { type: "fill_blank", question: "Куда вы сейчас ___ на автобусе?", instruction: "Ехать, сейчас", answer: "едете", explanation: "Сейчас на автобусе → едете.", grammarTopic: g15, vocabTopic: v15 },
-    { type: "fill_blank", question: "Я каждый день ___ на метро.", instruction: "Ездить, регулярно", answer: "езжу", explanation: "Каждый день на метро → езжу.", grammarTopic: g15, vocabTopic: v15 },
-    { type: "fill_blank", question: "Сейчас студенты ___ пешком в аудиторию.", instruction: "Идти, сейчас", answer: "идут", explanation: "Сейчас пешком → идут.", grammarTopic: g15, vocabTopic: v15 },
-    { type: "fill_blank", question: "Сосед каждый вечер ___ пешком домой.", instruction: "Ходить, регулярно", answer: "ходит", explanation: "Каждый вечер → ходит.", grammarTopic: g15, vocabTopic: v15 },
-    { type: "fill_blank", question: "Сейчас я ___ на метро, не пешком.", instruction: "Ехать, сейчас", answer: "еду", explanation: "Сейчас на метро → еду.", grammarTopic: g15, vocabTopic: v15 },
+    { type: "fill_blank", question: "Я каждый день ___ в университет.", instruction: "Выберите форму глагола движения", answer: "хожу", explanation: "Каждый день → хожу.", grammarTopic: g15, vocabTopic: v15 },
+    { type: "fill_blank", question: "Сейчас она ___ в магазин.", instruction: "Выберите форму глагола движения", answer: "идёт", acceptableAnswers: ["идет"], explanation: "Сейчас → идёт.", grammarTopic: g15, vocabTopic: v15 },
+    { type: "fill_blank", question: "Мы часто ___ на метро в центр.", instruction: "Выберите форму глагола движения", answer: "ездим", explanation: "Часто на метро → ездим.", grammarTopic: g15, vocabTopic: v15 },
+    { type: "fill_blank", question: "Куда вы сейчас ___ на автобусе?", instruction: "Выберите форму глагола движения", answer: "едете", explanation: "Сейчас на автобусе → едете.", grammarTopic: g15, vocabTopic: v15 },
+    { type: "fill_blank", question: "Я каждый день ___ на метро.", instruction: "Выберите форму глагола движения", answer: "езжу", explanation: "Каждый день на метро → езжу.", grammarTopic: g15, vocabTopic: v15 },
+    { type: "fill_blank", question: "Сейчас студенты ___ пешком в аудиторию.", instruction: "Выберите форму глагола движения", answer: "идут", explanation: "Сейчас пешком → идут.", grammarTopic: g15, vocabTopic: v15 },
+    { type: "fill_blank", question: "Сосед каждый вечер ___ пешком домой.", instruction: "Выберите форму глагола движения", answer: "ходит", explanation: "Каждый вечер → ходит.", grammarTopic: g15, vocabTopic: v15 },
+    { type: "fill_blank", question: "Сейчас я ___ на метро, не пешком.", instruction: "Выберите форму глагола движения", answer: "еду", explanation: "Сейчас на метро → еду.", grammarTopic: g15, vocabTopic: v15 },
 
     // --- translation ---
     { type: "translation", question: "We are going by bus. (now)", instruction: "Переведите на русский", answer: "Мы едем на автобусе", acceptableAnswers: ["Сейчас мы едем на автобусе"], explanation: "Сейчас на автобусе → едем.", grammarTopic: g15, vocabTopic: v15 },
@@ -392,19 +392,19 @@ export const RUSSIAN_A2_EXERCISES: Record<string, Draft[]> = {
     { type: "multiple_choice", question: "Где ключ от ___?", instruction: "От + родительный", options: ["комната", "комнаты", "комнату", "комнатой"], answer: "комнаты", explanation: "Ключ от комнаты.", grammarTopic: g16, vocabTopic: v16 },
     { type: "multiple_choice", question: "В центре много ___.", instruction: "Много + родительный", options: ["магазины", "магазинов", "магазинам", "магазинами"], answer: "магазинов", explanation: "Много магазинов.", grammarTopic: g16, vocabTopic: v16 },
     { type: "multiple_choice", question: "У соседа нет ___.", instruction: "Нет + родительный", options: ["деньги", "денег", "деньгам", "деньгами"], answer: "денег", explanation: "Нет денег.", grammarTopic: g16, vocabTopic: v16 },
-    { type: "multiple_choice", question: "Это комната ___.", instruction: "Чья?", options: ["сосед", "соседа", "соседу", "соседом"], answer: "соседа", explanation: "Комната соседа.", grammarTopic: g16, vocabTopic: v16 },
+    { type: "multiple_choice", question: "Это комната ___.", instruction: "Выберите форму родительного падежа", options: ["сосед", "соседа", "соседу", "соседом"], answer: "соседа", explanation: "Комната соседа.", grammarTopic: g16, vocabTopic: v16 },
     { type: "multiple_choice", question: "В магазине нет ___.", instruction: "Нет + родительный", options: ["хлеб", "хлеба", "хлебу", "хлебом"], answer: "хлеба", explanation: "Нет хлеба.", grammarTopic: g16, vocabTopic: v16 },
     { type: "multiple_choice", question: "Сколько ___ на столе?", instruction: "Ключ, родительный мн. ч.", options: ["ключи", "ключа", "ключей", "ключом"], answer: "ключей", explanation: "Сколько ключей.", grammarTopic: g16, vocabTopic: v16 },
 
     // --- fill_blank ---
-    { type: "fill_blank", question: "У соседа нет ___ от комнаты.", instruction: "Ключ, родительный", answer: "ключа", explanation: "Нет ключа.", grammarTopic: g16, vocabTopic: v16 },
-    { type: "fill_blank", question: "На этой улице нет ___.", instruction: "Аптека, родительный", answer: "аптеки", explanation: "Нет аптеки.", grammarTopic: g16, vocabTopic: v16 },
-    { type: "fill_blank", question: "Около метро нет ___.", instruction: "Банк, родительный", answer: "банка", explanation: "Нет банка.", grammarTopic: g16, vocabTopic: v16 },
-    { type: "fill_blank", question: "Вот ключ от ___ 12.", instruction: "Комната, родительный", answer: "комнаты", explanation: "Ключ от комнаты.", grammarTopic: g16, vocabTopic: v16 },
-    { type: "fill_blank", question: "В магазине мало ___.", instruction: "Хлеб, родительный", answer: "хлеба", explanation: "Мало хлеба.", grammarTopic: g16, vocabTopic: v16 },
-    { type: "fill_blank", question: "Около дома нет ___.", instruction: "Магазин, родительный", answer: "магазина", explanation: "Нет магазина.", grammarTopic: g16, vocabTopic: v16 },
+    { type: "fill_blank", question: "У соседа нет ___ (ключ) от комнаты.", instruction: "Поставьте форму родительного падежа", answer: "ключа", explanation: "Нет ключа.", grammarTopic: g16, vocabTopic: v16 },
+    { type: "fill_blank", question: "На этой улице нет ___ (аптека).", instruction: "Поставьте форму родительного падежа", answer: "аптеки", explanation: "Нет аптеки.", grammarTopic: g16, vocabTopic: v16 },
+    { type: "fill_blank", question: "Около метро нет ___ (банк).", instruction: "Поставьте форму родительного падежа", answer: "банка", explanation: "Нет банка.", grammarTopic: g16, vocabTopic: v16 },
+    { type: "fill_blank", question: "Вот ключ от ___ (комната) 12.", instruction: "Поставьте форму родительного падежа", answer: "комнаты", explanation: "Ключ от комнаты.", grammarTopic: g16, vocabTopic: v16 },
+    { type: "fill_blank", question: "В магазине мало ___ (хлеб).", instruction: "Поставьте форму родительного падежа", answer: "хлеба", explanation: "Мало хлеба.", grammarTopic: g16, vocabTopic: v16 },
+    { type: "fill_blank", question: "Около дома нет ___ (магазин).", instruction: "Поставьте форму родительного падежа", answer: "магазина", explanation: "Нет магазина.", grammarTopic: g16, vocabTopic: v16 },
     { type: "fill_blank", question: "На нашей улице много ___.", instruction: "Банк, родительный мн. ч.", answer: "банков", explanation: "Много банков.", grammarTopic: g16, vocabTopic: v16 },
-    { type: "fill_blank", question: "У нас мало ___ на билет.", instruction: "Деньги, родительный", answer: "денег", explanation: "Мало денег.", grammarTopic: g16, vocabTopic: v16 },
+    { type: "fill_blank", question: "У нас мало ___ (деньги) на билет.", instruction: "Поставьте форму родительного падежа", answer: "денег", explanation: "Мало денег.", grammarTopic: g16, vocabTopic: v16 },
 
     // --- translation ---
     { type: "translation", question: "There is no pharmacy near the dorm.", instruction: "Переведите на русский", answer: "Около общежития нет аптеки", acceptableAnswers: ["Возле общежития нет аптеки", "Рядом с общежитием нет аптеки"], explanation: "Около + родительный: общежития. Нет аптеки.", grammarTopic: g16, vocabTopic: v16 },

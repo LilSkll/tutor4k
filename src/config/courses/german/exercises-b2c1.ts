@@ -811,7 +811,7 @@ export const GERMAN_B2C1_EXERCISES: Record<string, Draft[]> = {
       {
         en: "Kommt er nicht? — ___! Which word? (he actually will come)",
         es: "Kommt er nicht? — ___! ¿Qué palabra? (en realidad sí viene)",
-        de: "Kommt er nicht? — ___! Welches Wort? (er kommt doch)",
+        de: "Kommt er nicht? — ___! Welches Wort? (Bestätigung)",
       },
     ),
     mc(

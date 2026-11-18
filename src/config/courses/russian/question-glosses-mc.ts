@@ -98,7 +98,7 @@ export const RUSSIAN_A1_MC_GLOSSES: Record<
     es: "Yo ___ Egipto. Opciones: «в» en / «из» de, desde / «на» en, sobre / «с» con.",
     de: "Ich ___ Ägypten. Optionen: «в» in / «из» aus / «на» auf / «с» mit.",
   },
-  "Она ___.": {
+  "Анна говорит о себе: Она ___.": {
     en: "She ___. Choose the form of «студент» (student) that fits «она» (she). The options are студент, студентка, студенты, and студентом.",
     es: "Ella ___. Elige la forma de «студент» (estudiante) que concuerda con «она» (ella). Las variantes son студент, студентка, студенты y студентом.",
     de: "Sie ___. Wähle die Form von «студент» (Student), die zu «она» (sie) passt. Zur Wahl: студент, студентка, студенты und студентом.",
@@ -416,7 +416,7 @@ export const RUSSIAN_A1_MC_GLOSSES: Record<
     es: "Nosotros ___ en la universidad. Elige el presente de «учиться» (estudiar, como alumno) para «мы».",
     de: "Wir ___ an der Universität. Setze «учиться» (studieren) ins Präsens für «мы» (wir).",
   },
-  "Сейчас ___.": {
+  "Звонок. Урок закончился. Сейчас ___.": {
     en: "Right now it is ___. Options: «перемена» a break between classes / «лекция» a lecture / «экзамен» an exam / «деканат» the dean’s office.",
     es: "Ahora mismo hay ___. Opciones: «перемена» un descanso / «лекция» una clase magistral / «экзамен» un examen / «деканат» el decanato.",
     de: "Jetzt ist ___. Optionen: «перемена» eine Pause / «лекция» eine Vorlesung / «экзамен» eine Prüfung / «деканат» das Dekanat.",
@@ -431,7 +431,7 @@ export const RUSSIAN_A1_MC_GLOSSES: Record<
     es: "El estudiante ___ los deberes. El presente de «делать» (hacer) debe concordar con «студент». Una opción es el infinitivo.",
     de: "Der Student ___ die Hausaufgabe. Welche Präsensform von «делать» (machen) passt zu «студент»? Eine Option ist der Infinitiv.",
   },
-  "___ начинается в девять.": {
+  "Что начинается в девять? Выберите форму: ___ начинается в девять.": {
     en: "___ starts at nine. Choose the form of «занятие» (class) that can be the subject of «начинается» (begins). Options: занятие, занятию, занятия, занятием.",
     es: "___ empieza a las nueve. Elige la forma de «занятие» (clase) que puede ser el sujeto de «начинается» (empieza). Variantes: занятие, занятию, занятия, занятием.",
     de: "___ beginnt um neun. Welche Form von «занятие» (Unterricht) kann Subjekt von «начинается» (beginnt) sein? Optionen: занятие, занятию, занятия, занятием.",
@@ -456,10 +456,10 @@ export const RUSSIAN_A1_MC_GLOSSES: Record<
     es: "Yo ___ la respuesta en la pizarra. El presente de «писать» (escribir) debe ir con «я». «на доске» es «en la pizarra».",
     de: "Ich ___ die Antwort an die Tafel. Welche Präsensform von «писать» (schreiben) passt zu «я»? «на доске» heißt „an der Tafel“.",
   },
-  "Мы ___ семинар в четверг.": {
-    en: "We ___ a seminar on Thursday. Choose the present of «иметь» (to have) that fits «мы» (we). «в четверг» is “on Thursday”.",
-    es: "Nosotros ___ seminario el jueves. Elige el presente de «иметь» (tener) para «мы». «в четверг» es «el jueves».",
-    de: "Wir ___ am Donnerstag ein Seminar. Setze «иметь» (haben) ins Präsens für «мы». «в четверг» heißt „am Donnerstag“.",
+  "В четверг у нас ___ .": {
+    en: "On Thursday we have ___ . Choose the word that fills “В четверг у нас …”. Options: «семинар» seminar (nominative) / «семинара» genitive / «семинару» dative / «семинаром» instrumental.",
+    es: "El jueves tenemos ___ . Elige la palabra para «В четверг у нас …». Opciones: «семинар» seminario (nominativo) / «семинара» genitivo / «семинару» dativo / «семинаром» instrumental.",
+    de: "Am Donnerstag haben wir ___ . Wähle das Wort für «В четверг у нас …». Optionen: «семинар» Seminar (Nominativ) / «семинара» Genitiv / «семинару» Dativ / «семинаром» Instrumental.",
   },
   "Куда идут студенты на перемене?": {
     en: "Where do students go during the break? Options: «в кафе» to the café / «в библиотеку» to the library / «на кафе» on the café / «к кафе» toward the café.",
@@ -515,7 +515,7 @@ export const RUSSIAN_A1_MC_GLOSSES: Record<
   },
   "Мы в ___ 12.": {
     en: "We are in ___ 12. Choose the prepositional form of «аудитория» (lecture room) after «в».",
-    es: "Estamos en ___ 12. El caso preposicional que toca es el de «аудитория» (aula) tras «в».",
+    es: "Estamos en ___ 12. Elige el caso preposicional de «аудитория» (aula) tras «в».",
     de: "Wir sind in ___ 12. Welche Präpositivform von «аудитория» (Hörsaal) passt nach «в»?",
   },
   "Встретимся в ___.": {

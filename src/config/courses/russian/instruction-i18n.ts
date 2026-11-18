@@ -4525,10 +4525,310 @@ export const RUSSIAN_INSTRUCTION_I18N: Record<
     es: "Forma el apoyo",
     de: "Bilde die Stütze",
   },
+  "Впишите термин": {
+    en: "Write the term",
+    es: "Escribe el término",
+    de: "Trage den Fachbegriff ein",
+  },
+  "Выберите вид глагола": {
+    en: "Choose aspect / verb form",
+    es: "Elige el aspecto o la forma del verbo",
+    de: "Wähle Aspekt / Verbform",
+  },
+  "Выберите нужную форму": {
+    en: "Choose the required form",
+    es: "Elige la forma requerida",
+    de: "Wähle die passende Form",
+  },
+  "Выберите предлог с творительным падежом": {
+    en: "Choose preposition + instrumental",
+    es: "Elige preposición + instrumental",
+    de: "Wähle Präposition + Instrumental",
+  },
+  "Выберите слово запрета": {
+    en: "Choose the prohibition word",
+    es: "Elige la palabra de prohibición",
+    de: "Wähle das Verbotswort",
+  },
+  "Выберите слово запрета или разрешения": {
+    en: "Choose prohibition or permission",
+    es: "Elige prohibición o permiso",
+    de: "Wähle Verbot oder Erlaubnis",
+  },
+  "Выберите форму будущего времени с результатом": {
+    en: "Choose a future form with a result",
+    es: "Elige el futuro con resultado",
+    de: "Wähle die Zukunftsform mit Ergebnis",
+  },
+  "Выберите форму вспомогательного глагола": {
+    en: "Choose the auxiliary «быть» form",
+    es: "Elige la forma del auxiliar «быть»",
+    de: "Wähle die Form von «быть»",
+  },
+  "Выберите форму глагола движения": {
+    en: "Choose the motion-verb form",
+    es: "Elige la forma del verbo de movimiento",
+    de: "Wähle die Bewegungsverbform",
+  },
+  "Выберите форму дательного падежа": {
+    en: "Choose the dative form",
+    es: "Elige la forma del dativo",
+    de: "Wähle die Dativform",
+  },
+  "Выберите форму для одного события": {
+    en: "Choose the form for one event",
+    es: "Elige la forma de un solo hecho",
+    de: "Wähle die Form für ein Ereignis",
+  },
+  "Выберите форму прибытия": {
+    en: "Choose arrival form",
+    es: "Elige forma de llegada",
+    de: "Wähle Ankunftsform",
+  },
+  "Выберите форму прошедшего времени": {
+    en: "Choose the past-tense form",
+    es: "Elige la forma del pasado",
+    de: "Wähle die Vergangenheitsform",
+  },
+  "Выберите форму родительного падежа": {
+    en: "Choose the genitive form",
+    es: "Elige la forma del genitivo",
+    de: "Wähle die Genitivform",
+  },
+  "Выберите форму с результатом": {
+    en: "Choose a form with a result",
+    es: "Elige una forma con resultado",
+    de: "Wähle eine Form mit Ergebnis",
+  },
+  "Выберите форму творительного падежа": {
+    en: "Choose the instrumental form",
+    es: "Elige la forma del instrumental",
+    de: "Wähle die Instrumentalform",
+  },
+  "Выберите форму ухода": {
+    en: "Choose departure form",
+    es: "Elige forma de salida",
+    de: "Wähle Abgangsform",
+  },
+  "Исправьте регистр: разговор на кухне, не язык сметы": {
+    en: "Fix register: informal talk, not budget memo",
+    es: "Corrige el registro: charla, no memoria de presupuesto",
+    de: "Korrigiere das Register: Umgangssprache, nicht Haushaltsmemo",
+  },
+  "Поставьте безличную форму": {
+    en: "Put impersonal form",
+    es: "Pon la forma impersonal",
+    de: "Setze unpersönliche Form",
+  },
+  "Поставьте вежливую команду на «вы»": {
+    en: "Polite imperative on «вы»",
+    es: "Imperativo cortés en «вы»",
+    de: "Höflicher Imperativ (Вы)",
+  },
+  "Поставьте вежливую форму на «вы»": {
+    en: "Polite «вы» form",
+    es: "Forma cortés de «вы»",
+    de: "Höfliche «Вы»-Form",
+  },
+  "Поставьте глагол в будущее время": {
+    en: "Put the verb in the future tense",
+    es: "Pon el verbo en futuro",
+    de: "Setze das Verb ins Futur",
+  },
+  "Поставьте глагол в будущее время, средний род": {
+    en: "Future tense, neuter",
+    es: "Futuro, neutro",
+    de: "Futur, Neutrum",
+  },
+  "Поставьте глагол в настоящее время": {
+    en: "Put the verb in the present tense",
+    es: "Pon el verbo en presente",
+    de: "Setze das Verb ins Präsens",
+  },
+  "Поставьте глагол в настоящее время, множественное число": {
+    en: "Present tense, plural",
+    es: "Presente, plural",
+    de: "Präsens, Plural",
+  },
+  "Поставьте глагол в прошедшее время": {
+    en: "Put the verb in the past tense",
+    es: "Pon el verbo en pasado",
+    de: "Setze das Verb ins Präteritum",
+  },
+  "Поставьте глагол в прошедшее время, мужской род": {
+    en: "Past tense, masculine",
+    es: "Pasado, masculino",
+    de: "Vergangenheit, maskulin",
+  },
+  "Поставьте глагол в прошедшее время; согласуйте с «я»": {
+    en: "Past tense; agree with «я»",
+    es: "Pasado; concuerda con «я»",
+    de: "Vergangenheit; Kongruenz mit «я»",
+  },
+  "Поставьте деепричастие несовершенного вида": {
+    en: "Put imperfective adverbial participle",
+    es: "Pon el gerundio imperfectivo",
+    de: "Setze imperfektives Adverbialpartizip",
+  },
+  "Поставьте деепричастие совершенного вида": {
+    en: "Put perfective adverbial participle",
+    es: "Pon el gerundio perfectivo",
+    de: "Setze perfektives Adverbialpartizip",
+  },
+  "Поставьте деепричастие совершенного вида, с отрицанием": {
+    en: "Perfective adverbial participle with negation",
+    es: "Gerundio perfectivo negado",
+    de: "Perfektives Adverbialpartizip mit Negation",
+  },
+  "Поставьте действительное причастие": {
+    en: "Put active participle",
+    es: "Pon el participio activo",
+    de: "Setze aktives Partizip",
+  },
+  "Поставьте действительное причастие прошедшего времени, женский род": {
+    en: "Active past participle, feminine",
+    es: "Participio activo pasado, femenino",
+    de: "Aktives Partizip Vergangenheit, feminin",
+  },
+  "Поставьте действительное причастие прошедшего времени, множественное число": {
+    en: "Active past participle, plural",
+    es: "Participio activo pasado, plural",
+    de: "Aktives Partizip Vergangenheit, Plural",
+  },
+  "Поставьте действительное причастие прошедшего времени, мужской род": {
+    en: "Active past participle, masculine",
+    es: "Participio activo pasado, masculino",
+    de: "Aktives Partizip Vergangenheit, maskulin",
+  },
+  "Поставьте инфинитив": {
+    en: "Put the infinitive",
+    es: "Pon el infinitivo",
+    de: "Setze den Infinitiv",
+  },
+  "Поставьте краткую форму страдательного причастия, женский род": {
+    en: "Short passive participle, feminine",
+    es: "Participio pasivo corto, femenino",
+    de: "Kurzform Partizip Passiv, feminin",
+  },
+  "Поставьте краткую форму страдательного причастия, множественное число": {
+    en: "Short passive participle, plural",
+    es: "Participio pasivo corto, plural",
+    de: "Kurzform Partizip Passiv, Plural",
+  },
+  "Поставьте краткую форму страдательного причастия, мужской род": {
+    en: "Short passive participle, masculine",
+    es: "Participio pasivo corto, masculino",
+    de: "Kurzform Partizip Passiv, maskulin",
+  },
+  "Поставьте краткую форму страдательного причастия, средний род": {
+    en: "Short passive participle, neuter",
+    es: "Participio pasivo corto, neutro",
+    de: "Kurzform Partizip Passiv, Neutrum",
+  },
+  "Поставьте нужную форму": {
+    en: "Put the required form",
+    es: "Pon la forma requerida",
+    de: "Setze die passende Form",
+  },
+  "Поставьте предлог и форму предложного падежа": {
+    en: "Preposition + prepositional form",
+    es: "Preposición + prepositivo",
+    de: "Präposition + Präpositional",
+  },
+  "Поставьте предлог и форму родительного падежа": {
+    en: "Preposition + genitive form",
+    es: "Preposición + genitivo",
+    de: "Präposition + Genitiv",
+  },
+  "Поставьте страдательное причастие": {
+    en: "Put passive participle",
+    es: "Pon el participio pasivo",
+    de: "Setze passives Partizip",
+  },
+  "Поставьте страдательное причастие настоящего времени, женский род": {
+    en: "Passive present participle, feminine",
+    es: "Participio pasivo presente, femenino",
+    de: "Passives Partizip Präsens, feminin",
+  },
+  "Поставьте страдательное причастие прошедшего времени, женский род, полная форма": {
+    en: "Passive past participle, feminine, full",
+    es: "Participio pasivo pasado, femenino, forma completa",
+    de: "Passives Partizip Vergangenheit, feminin, Vollform",
+  },
+  "Поставьте страдательное причастие прошедшего времени, мужской род, полная форма": {
+    en: "Passive past participle, masculine, full",
+    es: "Participio pasivo pasado, masculino, forma completa",
+    de: "Passives Partizip Vergangenheit, maskulin, Vollform",
+  },
+  "Поставьте страдательное причастие прошедшего времени, мужской род, предложный падеж": {
+    en: "Passive past participle, masculine, prepositional",
+    es: "Participio pasivo pasado, masculino, prepositivo",
+    de: "Passives Partizip, maskulin, Präpositional",
+  },
+  "Поставьте форму винительного падежа": {
+    en: "Put the accusative form",
+    es: "Pon la forma del acusativo",
+    de: "Setze die Akkusativform",
+  },
+  "Поставьте форму дательного падежа": {
+    en: "Put the dative form",
+    es: "Pon la forma del dativo",
+    de: "Setze die Dativform",
+  },
+  "Поставьте форму нереального следствия": {
+    en: "Unreal consequence form",
+    es: "Forma de consecuencia irreal",
+    de: "Form der irrealen Folge",
+  },
+  "Поставьте форму нереального условия": {
+    en: "Unreal conditional form",
+    es: "Forma de condición irreal",
+    de: "Form der irrealen Bedingung",
+  },
+  "Поставьте форму предложного падежа": {
+    en: "Put the prepositional form",
+    es: "Pon la forma del prepositivo",
+    de: "Setze die Präpositionalform",
+  },
+  "Поставьте форму реального условия": {
+    en: "Real conditional form",
+    es: "Forma de condición real",
+    de: "Form der realen Bedingung",
+  },
+  "Поставьте форму родительного падежа": {
+    en: "Put the genitive form",
+    es: "Pon la forma del genitivo",
+    de: "Setze die Genitivform",
+  },
+  "Поставьте форму страдательного залога": {
+    en: "Put passive voice form",
+    es: "Pon la forma de voz pasiva",
+    de: "Setze Passivform",
+  },
+  "Поставьте форму страдательного залога, мужской род": {
+    en: "Passive voice, masculine",
+    es: "Voz pasiva, masculino",
+    de: "Passiv, maskulin",
+  },
+  "Поставьте форму творительного падежа": {
+    en: "Put the instrumental form",
+    es: "Pon la forma del instrumental",
+    de: "Setze die Instrumentalform",
+  },
   "Соберите вывод": {
     en: "Build the conclusion",
     es: "Forma la conclusión",
     de: "Bilde die Folgerung",
+  },
+  "Согласуйте притяжательное": {
+    en: "Make the possessive agree",
+    es: "Concuerda el posesivo",
+    de: "Passe das Possessivpronomen an",
+  },
+  "Вставьте безличное слово рекомендации": {
+    en: "Insert the impersonal recommendation word",
+    es: "Inserta la palabra impersonal de recomendación",
+    de: "Setze das unpersönliche Empfehlungswort ein",
   },
 };
 
