@@ -596,7 +596,7 @@
         "acceptableAnswers": [
           "are you a teacher"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "Are you…? Образец: Are you a teacher?.",
         "grammarTopic": "eng-a1-be",
         "questionTranslations": {
@@ -661,7 +661,7 @@
           "is she at home",
           "Is she home?"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "Is she…? Образец: Is she at home?.",
         "grammarTopic": "eng-a1-be",
         "questionTranslations": {
@@ -707,7 +707,7 @@
         "acceptableAnswers": [
           "are you ready"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "Are you…? Образец: Are you ready?.",
         "grammarTopic": "eng-a1-be",
         "questionTranslations": {
@@ -1120,11 +1120,12 @@
           "a",
           "student"
         ],
-        "answer": "Are you a student",
+        "answer": "Are you a student?",
         "acceptableAnswers": [
-          "Are you a student?"
+          "Are you a student?",
+          "Are you a student"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "Question: Are + subject…",
         "grammarTopic": "eng-a1-be"
       },
@@ -1213,11 +1214,12 @@
           "from",
           "Spain"
         ],
-        "answer": "Is she from Spain",
+        "answer": "Is she from Spain?",
         "acceptableAnswers": [
-          "Is she from Spain?"
+          "Is she from Spain?",
+          "Is she from Spain"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "Is + she… Ответ: Is she from Spain.",
         "grammarTopic": "eng-a1-be"
       },
@@ -1276,11 +1278,12 @@
           "they",
           "ready"
         ],
-        "answer": "Are they ready",
+        "answer": "Are they ready?",
         "acceptableAnswers": [
-          "Are they ready?"
+          "Are they ready?",
+          "Are they ready"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "Are + they… Ответ: Are they ready.",
         "grammarTopic": "eng-a1-be"
       },
@@ -1321,11 +1324,12 @@
           "I",
           "next"
         ],
-        "answer": "Am I next",
+        "answer": "Am I next?",
         "acceptableAnswers": [
-          "Am I next?"
+          "Am I next?",
+          "Am I next"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "Am + I… Ответ: Am I next.",
         "grammarTopic": "eng-a1-be"
       },
@@ -1963,7 +1967,7 @@
           "do you play tennis?",
           "Do you play tennis"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "You → Do you…?",
         "grammarTopic": "eng-a1-present-simple",
         "questionTranslations": {
@@ -2031,7 +2035,7 @@
           "does she work here?",
           "Does she work here"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "She → Does she…?",
         "grammarTopic": "eng-a1-present-simple",
         "questionTranslations": {
@@ -2135,7 +2139,7 @@
           "do they live in london?",
           "Do they live in London"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "They → Do they…?",
         "grammarTopic": "eng-a1-present-simple",
         "questionTranslations": {
@@ -2220,7 +2224,7 @@
           "does it snow in winter?",
           "Does it snow in winter"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "It → Does it…?",
         "grammarTopic": "eng-a1-present-simple",
         "questionTranslations": {
@@ -2552,11 +2556,13 @@
           "play",
           "tennis"
         ],
-        "answer": "Do you play tennis",
+        "answer": "Do you play tennis?",
         "acceptableAnswers": [
-          "do you play tennis"
+          "do you play tennis",
+          "Do you play tennis",
+          "Do you play tennis?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "present simple: word order.",
         "grammarTopic": "eng-a1-present-simple"
       },
@@ -2625,11 +2631,13 @@
           "work",
           "here"
         ],
-        "answer": "Does she work here",
+        "answer": "Does she work here?",
         "acceptableAnswers": [
-          "does she work here"
+          "does she work here",
+          "Does she work here",
+          "Does she work here?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "present simple: word order.",
         "grammarTopic": "eng-a1-present-simple"
       },
@@ -2734,11 +2742,13 @@
           "in",
           "London"
         ],
-        "answer": "Do they live in London",
+        "answer": "Do they live in London?",
         "acceptableAnswers": [
-          "do they live in london"
+          "do they live in london",
+          "Do they live in London",
+          "Do they live in London?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "present simple: word order.",
         "grammarTopic": "eng-a1-present-simple"
       },
@@ -2825,11 +2835,13 @@
           "in",
           "winter"
         ],
-        "answer": "Does it snow in winter",
+        "answer": "Does it snow in winter?",
         "acceptableAnswers": [
-          "does it snow in winter"
+          "does it snow in winter",
+          "Does it snow in winter",
+          "Does it snow in winter?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "present simple: word order.",
         "grammarTopic": "eng-a1-present-simple"
       },
@@ -3388,7 +3400,7 @@
           "what is your name?",
           "What is your name"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "What asks for information.",
         "grammarTopic": "eng-a1-questions",
         "questionTranslations": {
@@ -3405,7 +3417,7 @@
           "where do you live?",
           "Where do you live"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "Where = place.",
         "grammarTopic": "eng-a1-questions",
         "questionTranslations": {
@@ -3422,7 +3434,7 @@
           "why are you late?",
           "Why are you late"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "Why = reason.",
         "grammarTopic": "eng-a1-questions",
         "questionTranslations": {
@@ -3439,7 +3451,7 @@
           "who is she?",
           "Who is she"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "Who = people.",
         "grammarTopic": "eng-a1-questions",
         "questionTranslations": {
@@ -3456,7 +3468,7 @@
           "how old are you?",
           "How old are you"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "How old…? Образец: How old are you?.",
         "grammarTopic": "eng-a1-questions",
         "questionTranslations": {
@@ -3473,7 +3485,7 @@
           "when is the class?",
           "When is the class"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "When = time.",
         "grammarTopic": "eng-a1-questions",
         "questionTranslations": {
@@ -3490,7 +3502,7 @@
           "how many books do you have?",
           "How many books do you have"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "How many + countable.",
         "grammarTopic": "eng-a1-questions",
         "questionTranslations": {
@@ -3507,7 +3519,7 @@
           "where do you work?",
           "Where do you work"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "Where do you…?",
         "grammarTopic": "eng-a1-questions",
         "questionTranslations": {
@@ -3524,7 +3536,7 @@
           "what is your favourite colour?",
           "What is your favourite colour"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "What is…? Образец: What is your favourite colour?.",
         "grammarTopic": "eng-a1-questions",
         "questionTranslations": {
@@ -3541,7 +3553,7 @@
           "who called you?",
           "Who called you"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "Who as subject.",
         "grammarTopic": "eng-a1-questions",
         "questionTranslations": {
@@ -3558,7 +3570,7 @@
           "where are you from?",
           "Where are you from"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "Match the model translation — small wording differences are OK.",
         "grammarTopic": "eng-a1-questions",
         "questionTranslations": {
@@ -3575,7 +3587,7 @@
           "when is your birthday?",
           "When is your birthday"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "When = date/time.",
         "grammarTopic": "eng-a1-questions",
         "questionTranslations": {
@@ -3592,7 +3604,7 @@
           "why do you study english?",
           "Why do you study English"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "Why do you…?",
         "grammarTopic": "eng-a1-questions",
         "questionTranslations": {
@@ -3609,7 +3621,7 @@
           "how much is this?",
           "How much is this"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "How much = price.",
         "grammarTopic": "eng-a1-questions",
         "questionTranslations": {
@@ -3626,7 +3638,7 @@
           "what time is it?",
           "What time is it"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "What time…? Образец: What time is it?.",
         "grammarTopic": "eng-a1-questions",
         "questionTranslations": {
@@ -3643,7 +3655,7 @@
           "where is the nearest station?",
           "Where is the nearest station"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "Where is…? Образец: Where is the nearest station?.",
         "grammarTopic": "eng-a1-questions",
         "questionTranslations": {
@@ -3660,7 +3672,7 @@
           "how do you get to work?",
           "How do you get to work"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "How = manner.",
         "grammarTopic": "eng-a1-questions",
         "questionTranslations": {
@@ -3677,7 +3689,7 @@
           "who wrote this book?",
           "Who wrote this book"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "Who = author.",
         "grammarTopic": "eng-a1-questions",
         "questionTranslations": {
@@ -3694,7 +3706,7 @@
           "when does the film start?",
           "When does the film start"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "When does…? Образец: When does the film start?.",
         "grammarTopic": "eng-a1-questions",
         "questionTranslations": {
@@ -3711,7 +3723,7 @@
           "what is the weather like?",
           "What is the weather like"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "What … like?",
         "grammarTopic": "eng-a1-questions",
         "questionTranslations": {
@@ -3989,11 +4001,13 @@
           "you",
           "live"
         ],
-        "answer": "Where do you live",
+        "answer": "Where do you live?",
         "acceptableAnswers": [
-          "where do you live"
+          "where do you live",
+          "Where do you live",
+          "Where do you live?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "wh- questions: word order.",
         "grammarTopic": "eng-a1-questions"
       },
@@ -4006,11 +4020,13 @@
           "you",
           "late"
         ],
-        "answer": "Why are you late",
+        "answer": "Why are you late?",
         "acceptableAnswers": [
-          "why are you late"
+          "why are you late",
+          "Why are you late",
+          "Why are you late?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "wh- questions: word order.",
         "grammarTopic": "eng-a1-questions"
       },
@@ -4022,11 +4038,13 @@
           "is",
           "she"
         ],
-        "answer": "Who is she",
+        "answer": "Who is she?",
         "acceptableAnswers": [
-          "who is she"
+          "who is she",
+          "Who is she",
+          "Who is she?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "wh- questions: word order.",
         "grammarTopic": "eng-a1-questions"
       },
@@ -4039,11 +4057,13 @@
           "are",
           "you"
         ],
-        "answer": "How old are you",
+        "answer": "How old are you?",
         "acceptableAnswers": [
-          "how old are you"
+          "how old are you",
+          "How old are you",
+          "How old are you?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "wh- questions: word order.",
         "grammarTopic": "eng-a1-questions"
       },
@@ -4056,11 +4076,13 @@
           "the",
           "class"
         ],
-        "answer": "When is the class",
+        "answer": "When is the class?",
         "acceptableAnswers": [
-          "when is the class"
+          "when is the class",
+          "When is the class",
+          "When is the class?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "wh- questions: word order.",
         "grammarTopic": "eng-a1-questions"
       },
@@ -4075,11 +4097,13 @@
           "you",
           "have"
         ],
-        "answer": "How many books do you have",
+        "answer": "How many books do you have?",
         "acceptableAnswers": [
-          "how many books do you have"
+          "how many books do you have",
+          "How many books do you have",
+          "How many books do you have?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "wh- questions: word order.",
         "grammarTopic": "eng-a1-questions"
       },
@@ -4092,11 +4116,13 @@
           "you",
           "work"
         ],
-        "answer": "Where do you work",
+        "answer": "Where do you work?",
         "acceptableAnswers": [
-          "where do you work"
+          "where do you work",
+          "Where do you work",
+          "Where do you work?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "wh- questions: word order.",
         "grammarTopic": "eng-a1-questions"
       },
@@ -4126,11 +4152,13 @@
           "called",
           "you"
         ],
-        "answer": "Who called you",
+        "answer": "Who called you?",
         "acceptableAnswers": [
-          "who called you"
+          "who called you",
+          "Who called you",
+          "Who called you?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "wh- questions: word order.",
         "grammarTopic": "eng-a1-questions"
       },
@@ -4143,11 +4171,13 @@
           "you",
           "from"
         ],
-        "answer": "Where are you from",
+        "answer": "Where are you from?",
         "acceptableAnswers": [
-          "where are you from"
+          "where are you from",
+          "Where are you from",
+          "Where are you from?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "wh- questions: word order.",
         "grammarTopic": "eng-a1-questions"
       },
@@ -4160,11 +4190,13 @@
           "your",
           "birthday"
         ],
-        "answer": "When is your birthday",
+        "answer": "When is your birthday?",
         "acceptableAnswers": [
-          "when is your birthday"
+          "when is your birthday",
+          "When is your birthday",
+          "When is your birthday?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "wh- questions: word order.",
         "grammarTopic": "eng-a1-questions"
       },
@@ -4178,11 +4210,13 @@
           "study",
           "English"
         ],
-        "answer": "Why do you study English",
+        "answer": "Why do you study English?",
         "acceptableAnswers": [
-          "why do you study english"
+          "why do you study english",
+          "Why do you study English",
+          "Why do you study English?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "wh- questions: word order.",
         "grammarTopic": "eng-a1-questions"
       },
@@ -4195,11 +4229,13 @@
           "is",
           "this"
         ],
-        "answer": "How much is this",
+        "answer": "How much is this?",
         "acceptableAnswers": [
-          "how much is this"
+          "how much is this",
+          "How much is this",
+          "How much is this?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "wh- questions: word order.",
         "grammarTopic": "eng-a1-questions"
       },
@@ -4230,11 +4266,13 @@
           "nearest",
           "station"
         ],
-        "answer": "Where is the nearest station",
+        "answer": "Where is the nearest station?",
         "acceptableAnswers": [
-          "where is the nearest station"
+          "where is the nearest station",
+          "Where is the nearest station",
+          "Where is the nearest station?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "wh- questions: word order.",
         "grammarTopic": "eng-a1-questions"
       },
@@ -4249,11 +4287,13 @@
           "to",
           "work"
         ],
-        "answer": "How do you get to work",
+        "answer": "How do you get to work?",
         "acceptableAnswers": [
-          "how do you get to work"
+          "how do you get to work",
+          "How do you get to work",
+          "How do you get to work?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "wh- questions: word order.",
         "grammarTopic": "eng-a1-questions"
       },
@@ -4266,11 +4306,13 @@
           "this",
           "book"
         ],
-        "answer": "Who wrote this book",
+        "answer": "Who wrote this book?",
         "acceptableAnswers": [
-          "who wrote this book"
+          "who wrote this book",
+          "Who wrote this book",
+          "Who wrote this book?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "wh- questions: word order.",
         "grammarTopic": "eng-a1-questions"
       },
@@ -4284,11 +4326,13 @@
           "film",
           "start"
         ],
-        "answer": "When does the film start",
+        "answer": "When does the film start?",
         "acceptableAnswers": [
-          "when does the film start"
+          "when does the film start",
+          "When does the film start",
+          "When does the film start?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "wh- questions: word order.",
         "grammarTopic": "eng-a1-questions"
       },
@@ -4898,7 +4942,7 @@
           "is there a pharmacy here?",
           "Is there a pharmacy here"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "Singular countable → a.",
         "grammarTopic": "eng-a1-there-is-are",
         "questionTranslations": {
@@ -4932,7 +4976,7 @@
           "is there a café on this street?",
           "Is there a café on this street"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "Singular → Is there…?",
         "grammarTopic": "eng-a1-there-is-are",
         "questionTranslations": {
@@ -4966,7 +5010,7 @@
           "are there any chairs?",
           "Are there any chairs"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "Questions often use any.",
         "grammarTopic": "eng-a1-there-is-are",
         "questionTranslations": {
@@ -5017,7 +5061,7 @@
           "are there any messages for me?",
           "Are there any messages for me"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "Plural → Are there…?",
         "grammarTopic": "eng-a1-there-is-are",
         "questionTranslations": {
@@ -5068,7 +5112,7 @@
           "is there a university nearby?",
           "Is there a university nearby"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "University starts with /j/ → a.",
         "grammarTopic": "eng-a1-there-is-are",
         "questionTranslations": {
@@ -5119,7 +5163,7 @@
           "is there a supermarket here?",
           "Is there a supermarket here"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "Is there + singular.",
         "grammarTopic": "eng-a1-there-is-are",
         "questionTranslations": {
@@ -5170,7 +5214,7 @@
           "are there any shops open now?",
           "Are there any shops open now"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "Question → any.",
         "grammarTopic": "eng-a1-there-is-are",
         "questionTranslations": {
@@ -5488,11 +5532,13 @@
           "pharmacy",
           "here"
         ],
-        "answer": "Is there a pharmacy here",
+        "answer": "Is there a pharmacy here?",
         "acceptableAnswers": [
-          "is there a pharmacy here"
+          "is there a pharmacy here",
+          "Is there a pharmacy here",
+          "Is there a pharmacy here?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "there is/are: word order.",
         "grammarTopic": "eng-a1-there-is-are"
       },
@@ -5528,11 +5574,13 @@
           "this",
           "street"
         ],
-        "answer": "Is there a café on this street",
+        "answer": "Is there a café on this street?",
         "acceptableAnswers": [
-          "is there a café on this street"
+          "is there a café on this street",
+          "Is there a café on this street",
+          "Is there a café on this street?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "there is/are: word order.",
         "grammarTopic": "eng-a1-there-is-are"
       },
@@ -5565,11 +5613,13 @@
           "any",
           "chairs"
         ],
-        "answer": "Are there any chairs",
+        "answer": "Are there any chairs?",
         "acceptableAnswers": [
-          "are there any chairs"
+          "are there any chairs",
+          "Are there any chairs",
+          "Are there any chairs?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "there is/are: word order.",
         "grammarTopic": "eng-a1-there-is-are"
       },
@@ -5621,11 +5671,13 @@
           "for",
           "me"
         ],
-        "answer": "Are there any messages for me",
+        "answer": "Are there any messages for me?",
         "acceptableAnswers": [
-          "are there any messages for me"
+          "are there any messages for me",
+          "Are there any messages for me",
+          "Are there any messages for me?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "there is/are: word order.",
         "grammarTopic": "eng-a1-there-is-are"
       },
@@ -5676,11 +5728,13 @@
           "university",
           "nearby"
         ],
-        "answer": "Is there a university nearby",
+        "answer": "Is there a university nearby?",
         "acceptableAnswers": [
-          "is there a university nearby"
+          "is there a university nearby",
+          "Is there a university nearby",
+          "Is there a university nearby?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "there is/are: word order.",
         "grammarTopic": "eng-a1-there-is-are"
       },
@@ -5734,11 +5788,13 @@
           "supermarket",
           "here"
         ],
-        "answer": "Is there a supermarket here",
+        "answer": "Is there a supermarket here?",
         "acceptableAnswers": [
-          "is there a supermarket here"
+          "is there a supermarket here",
+          "Is there a supermarket here",
+          "Is there a supermarket here?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "there is/are: word order.",
         "grammarTopic": "eng-a1-there-is-are"
       },
@@ -5793,11 +5849,13 @@
           "open",
           "now"
         ],
-        "answer": "Are there any shops open now",
+        "answer": "Are there any shops open now?",
         "acceptableAnswers": [
-          "are there any shops open now"
+          "are there any shops open now",
+          "Are there any shops open now",
+          "Are there any shops open now?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "there is/are: word order.",
         "grammarTopic": "eng-a1-there-is-are"
       }
@@ -6338,7 +6396,7 @@
           "can you help me?",
           "Can you help me"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "can + base verb.",
         "grammarTopic": "eng-a1-can",
         "questionTranslations": {
@@ -6389,7 +6447,7 @@
           "can he speak french?",
           "Can he speak French"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "Can + subject…?",
         "grammarTopic": "eng-a1-can",
         "questionTranslations": {
@@ -6457,7 +6515,7 @@
           "can i open the window?",
           "Can I open the window"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "request: Can I…?",
         "grammarTopic": "eng-a1-can",
         "questionTranslations": {
@@ -6525,7 +6583,7 @@
           "can you cook?",
           "Can you cook"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "Can you…? Образец: Can you cook?.",
         "grammarTopic": "eng-a1-can",
         "questionTranslations": {
@@ -6593,7 +6651,7 @@
           "can we help?",
           "Can we help"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "Can we…? Образец: Can we help?.",
         "grammarTopic": "eng-a1-can",
         "questionTranslations": {
@@ -6661,7 +6719,7 @@
           "can she ride a bike?",
           "Can she ride a bike"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "Can she…? Образец: Can she ride a bike?.",
         "grammarTopic": "eng-a1-can",
         "questionTranslations": {
@@ -6922,11 +6980,13 @@
           "help",
           "me"
         ],
-        "answer": "Can you help me",
+        "answer": "Can you help me?",
         "acceptableAnswers": [
-          "can you help me"
+          "can you help me",
+          "Can you help me",
+          "Can you help me?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "can/can't: word order.",
         "grammarTopic": "eng-a1-can"
       },
@@ -6971,11 +7031,13 @@
           "speak",
           "French"
         ],
-        "answer": "Can he speak French",
+        "answer": "Can he speak French?",
         "acceptableAnswers": [
-          "can he speak french"
+          "can he speak french",
+          "Can he speak French",
+          "Can he speak French?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "can/can't: word order.",
         "grammarTopic": "eng-a1-can"
       },
@@ -7040,11 +7102,13 @@
           "the",
           "window"
         ],
-        "answer": "Can I open the window",
+        "answer": "Can I open the window?",
         "acceptableAnswers": [
-          "can i open the window"
+          "can i open the window",
+          "Can I open the window",
+          "Can I open the window?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "can/can't: word order.",
         "grammarTopic": "eng-a1-can"
       },
@@ -7107,11 +7171,13 @@
           "you",
           "cook"
         ],
-        "answer": "Can you cook",
+        "answer": "Can you cook?",
         "acceptableAnswers": [
-          "can you cook"
+          "can you cook",
+          "Can you cook",
+          "Can you cook?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "can/can't: word order.",
         "grammarTopic": "eng-a1-can"
       },
@@ -7175,11 +7241,13 @@
           "we",
           "help"
         ],
-        "answer": "Can we help",
+        "answer": "Can we help?",
         "acceptableAnswers": [
-          "can we help"
+          "can we help",
+          "Can we help",
+          "Can we help?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "can/can't: word order.",
         "grammarTopic": "eng-a1-can"
       },
@@ -7248,11 +7316,13 @@
           "a",
           "bike"
         ],
-        "answer": "Can she ride a bike",
+        "answer": "Can she ride a bike?",
         "acceptableAnswers": [
-          "can she ride a bike"
+          "can she ride a bike",
+          "Can she ride a bike",
+          "Can she ride a bike?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "can/can't: word order.",
         "grammarTopic": "eng-a1-can"
       }
@@ -9353,7 +9423,7 @@
           "Have you ever been to Paris?",
           "Have you ever visited Paris?"
         ],
-        "instruction": "Переведите на английский",
+        "instruction": "Переведите вопрос",
         "explanation": "Did you ever + base verb?",
         "grammarTopic": "eng-a2-past-simple",
         "questionTranslations": {
@@ -9842,11 +9912,14 @@
           "visit",
           "Paris"
         ],
-        "answer": "Did you ever visit Paris",
-        "instruction": "Соберите предложение",
+        "answer": "Did you ever visit Paris?",
+        "instruction": "Соберите вопрос",
         "explanation": "Did you ever visit…?",
         "grammarTopic": "eng-a2-past-simple",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Did you ever visit Paris",
+          "Did you ever visit Paris?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -9998,11 +10071,14 @@
           "the",
           "project"
         ],
-        "answer": "Did they finish the project",
-        "instruction": "Соберите предложение",
+        "answer": "Did they finish the project?",
+        "instruction": "Соберите вопрос",
         "explanation": "Did + subject + base verb.",
         "grammarTopic": "eng-a2-past-simple",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Did they finish the project",
+          "Did they finish the project?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -12054,7 +12130,7 @@
         "type": "translation",
         "question": "Ты собираешься прийти?",
         "answer": "Are you going to come?",
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "Are you going to…?",
         "grammarTopic": "eng-a2-going-to",
         "acceptableAnswers": [],
@@ -12132,7 +12208,7 @@
         "type": "translation",
         "question": "Ты собираешься рано ложиться?",
         "answer": "Are you going to go to bed early?",
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "Are you going to go to bed…?",
         "grammarTopic": "eng-a2-going-to",
         "acceptableAnswers": [],
@@ -12240,13 +12316,14 @@
       },
       {
         "type": "translation",
-        "question": "Ты будешь смотреть матч?.",
-        "answer": "Are you going to watch the match",
+        "question": "Ты будешь смотреть матч?",
+        "answer": "Are you going to watch the match?",
         "acceptableAnswers": [
           "Are you going to watch the match",
-          "are you going to watch the match"
+          "are you going to watch the match",
+          "Are you going to watch the match?"
         ],
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "Translate the Russian prompt into English.",
         "questionTranslations": {
           "es": "¿Verás el partido?",
@@ -12540,11 +12617,14 @@
           "to",
           "come"
         ],
-        "answer": "Are you going to come",
-        "instruction": "Build the sentence from the words",
+        "answer": "Are you going to come?",
+        "instruction": "Соберите вопрос",
         "explanation": "Put the words in natural English word order.",
         "grammarTopic": "eng-a2-going-to",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Are you going to come",
+          "Are you going to come?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -12648,11 +12728,14 @@
           "bed",
           "early"
         ],
-        "answer": "Are you going to go to bed early",
-        "instruction": "Build the sentence from the words",
+        "answer": "Are you going to go to bed early?",
+        "instruction": "Соберите вопрос",
         "explanation": "going to go to bed early?",
         "grammarTopic": "eng-a2-going-to",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Are you going to go to bed early",
+          "Are you going to go to bed early?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -12754,11 +12837,14 @@
           "the",
           "match"
         ],
-        "answer": "Are you going to watch the match",
-        "instruction": "Build the sentence from the words",
+        "answer": "Are you going to watch the match?",
+        "instruction": "Соберите вопрос",
         "explanation": "Are you going to watch…?",
         "grammarTopic": "eng-a2-going-to",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Are you going to watch the match",
+          "Are you going to watch the match?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -13416,7 +13502,7 @@
         "type": "translation",
         "question": "Ты когда-нибудь пробовал суши?",
         "answer": "Have you ever tried sushi?",
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "Have you ever + V3?",
         "grammarTopic": "eng-a2-present-perfect",
         "acceptableAnswers": [],
@@ -13507,7 +13593,7 @@
         "type": "translation",
         "question": "Ты когда-нибудь летал на воздушном шаре?",
         "answer": "Have you ever flown in a hot air balloon?",
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "Have you ever flown…?",
         "grammarTopic": "eng-a2-present-perfect",
         "acceptableAnswers": [],
@@ -13587,13 +13673,14 @@
       },
       {
         "type": "translation",
-        "question": "Он когда-нибудь ел индийскую еду?.",
-        "answer": "Has he ever eaten Indian food",
+        "question": "Он когда-нибудь ел индийскую еду?",
+        "answer": "Has he ever eaten Indian food?",
         "acceptableAnswers": [
           "Has he ever eaten Indian food",
-          "has he ever eaten indian food"
+          "has he ever eaten indian food",
+          "Has he ever eaten Indian food?"
         ],
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "Translate the Russian prompt into English.",
         "questionTranslations": {
           "es": "¿Ha comido alguna vez comida india?",
@@ -13899,11 +13986,14 @@
           "tried",
           "sushi"
         ],
-        "answer": "Have you ever tried sushi",
-        "instruction": "Build the sentence from the words",
+        "answer": "Have you ever tried sushi?",
+        "instruction": "Соберите вопрос",
         "explanation": "Have you ever tried…?",
         "grammarTopic": "eng-a2-present-perfect",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Have you ever tried sushi",
+          "Have you ever tried sushi?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -14019,11 +14109,14 @@
           "air",
           "balloon"
         ],
-        "answer": "Have you ever flown in a hot air balloon",
-        "instruction": "Build the sentence from the words",
+        "answer": "Have you ever flown in a hot air balloon?",
+        "instruction": "Соберите вопрос",
         "explanation": "Have you ever flown…?",
         "grammarTopic": "eng-a2-present-perfect",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Have you ever flown in a hot air balloon",
+          "Have you ever flown in a hot air balloon?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -14086,11 +14179,14 @@
           "Indian",
           "food"
         ],
-        "answer": "Has he ever eaten Indian food",
-        "instruction": "Build the sentence from the words",
+        "answer": "Has he ever eaten Indian food?",
+        "instruction": "Соберите вопрос",
         "explanation": "Has he ever + V3?",
         "grammarTopic": "eng-a2-present-perfect",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Has he ever eaten Indian food",
+          "Has he ever eaten Indian food?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -14798,7 +14894,7 @@
         "type": "translation",
         "question": "Сколько яблок ты хочешь?",
         "answer": "How many apples do you want?",
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "apples = countable → how many.",
         "grammarTopic": "eng-a2-quantifiers",
         "acceptableAnswers": [],
@@ -14915,7 +15011,7 @@
       },
       {
         "type": "translation",
-        "question": "у меня нет вопросов.",
+        "question": "У меня нет вопросов.",
         "answer": "I don't have any questions",
         "acceptableAnswers": [
           "I don't have any questions",
@@ -15291,11 +15387,14 @@
           "you",
           "want"
         ],
-        "answer": "How many apples do you want",
-        "instruction": "Build the sentence from the words",
+        "answer": "How many apples do you want?",
+        "instruction": "Соберите вопрос",
         "explanation": "How many apples…?",
         "grammarTopic": "eng-a2-quantifiers",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "How many apples do you want",
+          "How many apples do you want?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -16124,7 +16223,7 @@
         "type": "translation",
         "question": "Ты успеешь?",
         "answer": "Will you make it in time?",
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "Will you make it…?",
         "grammarTopic": "eng-b1-future-conditional",
         "acceptableAnswers": [],
@@ -16239,13 +16338,13 @@
       },
       {
         "type": "translation",
-        "question": "Примет ли она предложение.",
-        "answer": "Will she accept the offer",
+        "question": "Примет ли она предложение?",
+        "answer": "Will she accept the offer?",
         "acceptableAnswers": [
-          "Will she accept the offer",
-          "will she accept the offer"
+          "Will she accept the offer?",
+          "Will she accept the offer"
         ],
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "Translate the Russian prompt into English.",
         "questionTranslations": {
           "es": "¿Aceptará la oferta?",
@@ -16630,11 +16729,14 @@
           "in",
           "time"
         ],
-        "answer": "Will you make it in time",
-        "instruction": "Build the sentence from the words",
+        "answer": "Will you make it in time?",
+        "instruction": "Соберите вопрос",
         "explanation": "Put the words in natural English word order.",
         "grammarTopic": "eng-b1-future-conditional",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Will you make it in time",
+          "Will you make it in time?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -16776,11 +16878,14 @@
           "the",
           "offer"
         ],
-        "answer": "Will she accept the offer",
-        "instruction": "Build the sentence from the words",
+        "answer": "Will she accept the offer?",
+        "instruction": "Соберите вопрос",
         "explanation": "Will she accept…?",
         "grammarTopic": "eng-b1-future-conditional",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Will she accept the offer",
+          "Will she accept the offer?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -17449,7 +17554,7 @@
         "type": "translation",
         "question": "Ты можешь помочь мне?",
         "answer": "Can you help me?",
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "Match the model translation — small wording differences are OK.",
         "grammarTopic": "eng-b1-modals",
         "acceptableAnswers": [],
@@ -17475,7 +17580,7 @@
         "type": "translation",
         "question": "Можно мне войти?",
         "answer": "May I come in?",
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "Match the model translation — small wording differences are OK.",
         "grammarTopic": "eng-b1-modals",
         "acceptableAnswers": [],
@@ -17488,7 +17593,7 @@
         "type": "translation",
         "question": "Ты мог бы закрыть окно?",
         "answer": "Could you close the window?",
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "Could you…? — polite.",
         "grammarTopic": "eng-b1-modals",
         "acceptableAnswers": [],
@@ -17949,11 +18054,14 @@
           "help",
           "me"
         ],
-        "answer": "Can you help me",
-        "instruction": "Build the sentence from the words",
+        "answer": "Can you help me?",
+        "instruction": "Соберите вопрос",
         "explanation": "Put the words in natural English word order.",
         "grammarTopic": "eng-b1-modals",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Can you help me",
+          "Can you help me?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -17980,11 +18088,14 @@
           "come",
           "in"
         ],
-        "answer": "May I come in",
-        "instruction": "Build the sentence from the words",
+        "answer": "May I come in?",
+        "instruction": "Соберите вопрос",
         "explanation": "Put the words in natural English word order.",
         "grammarTopic": "eng-b1-modals",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "May I come in",
+          "May I come in?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -17996,11 +18107,14 @@
           "the",
           "window"
         ],
-        "answer": "Could you close the window",
-        "instruction": "Build the sentence from the words",
+        "answer": "Could you close the window?",
+        "instruction": "Соберите вопрос",
         "explanation": "Put the words in natural English word order.",
         "grammarTopic": "eng-b1-modals",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Could you close the window",
+          "Could you close the window?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -19218,11 +19332,14 @@
           "already",
           "left"
         ],
-        "answer": "When I arrived the train had already left",
-        "instruction": "Build the sentence from the words",
+        "answer": "When I arrived the train had already left?",
+        "instruction": "Соберите вопрос",
         "explanation": "had already left.",
         "grammarTopic": "eng-b1-narrative",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "When I arrived the train had already left",
+          "When I arrived the train had already left?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -19448,11 +19565,14 @@
           "was",
           "raining"
         ],
-        "answer": "When I woke up it was raining",
-        "instruction": "Build the sentence from the words",
+        "answer": "When I woke up it was raining?",
+        "instruction": "Соберите вопрос",
         "explanation": "was raining — фоновое действие.",
         "grammarTopic": "eng-b1-narrative",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "When I woke up it was raining",
+          "When I woke up it was raining?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -20073,7 +20193,7 @@
         "type": "translation",
         "question": "Сколько времени ты ждёшь?",
         "answer": "How long have you been waiting?",
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "How long have you been + V-ing?",
         "grammarTopic": "eng-b1-perfect-continuous",
         "acceptableAnswers": [],
@@ -20164,7 +20284,7 @@
         "type": "translation",
         "question": "Сколько времени ты изучаешь английский?",
         "answer": "How long have you been learning English?",
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "How long have you been learning…?",
         "grammarTopic": "eng-b1-perfect-continuous",
         "acceptableAnswers": [],
@@ -20203,7 +20323,7 @@
         "type": "translation",
         "question": "Ты давно здесь?",
         "answer": "Have you been here long?",
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "Match the model translation — small wording differences are OK.",
         "grammarTopic": "eng-b1-perfect-continuous",
         "acceptableAnswers": [],
@@ -20578,11 +20698,14 @@
           "been",
           "waiting"
         ],
-        "answer": "How long have you been waiting",
-        "instruction": "Build the sentence from the words",
+        "answer": "How long have you been waiting?",
+        "instruction": "Соберите вопрос",
         "explanation": "Put the words in natural English word order.",
         "grammarTopic": "eng-b1-perfect-continuous",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "How long have you been waiting",
+          "How long have you been waiting?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -20705,11 +20828,14 @@
           "learning",
           "English"
         ],
-        "answer": "How long have you been learning English",
-        "instruction": "Build the sentence from the words",
+        "answer": "How long have you been learning English?",
+        "instruction": "Соберите вопрос",
         "explanation": "Put the words in natural English word order.",
         "grammarTopic": "eng-b1-perfect-continuous",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "How long have you been learning English",
+          "How long have you been learning English?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -20761,11 +20887,14 @@
           "here",
           "long"
         ],
-        "answer": "Have you been here long",
-        "instruction": "Build the sentence from the words",
+        "answer": "Have you been here long?",
+        "instruction": "Соберите вопрос",
         "explanation": "Put the words in natural English word order.",
         "grammarTopic": "eng-b1-perfect-continuous",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Have you been here long",
+          "Have you been here long?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -20887,12 +21016,13 @@
           "been",
           "waiting"
         ],
-        "answer": "How long have you been waiting",
+        "answer": "How long have you been waiting?",
         "acceptableAnswers": [
           "How long have you been waiting",
-          "How long have you been waiting."
+          "How long have you been waiting.",
+          "How long have you been waiting?"
         ],
-        "instruction": "Arrange the words",
+        "instruction": "Соберите вопрос",
         "explanation": "How long have you been + V-ing?",
         "grammarTopic": "eng-b1-perfect-continuous"
       }
@@ -26954,7 +27084,7 @@
         "type": "translation",
         "question": "Очень красиво, не правда ли?",
         "answer": "Beautiful, isn't it?",
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "Прилагательное в начале + tag question.",
         "grammarTopic": "eng-c1-discourse",
         "acceptableAnswers": [],
@@ -28390,11 +28520,14 @@
       {
         "type": "translation",
         "question": "Если бы не её помощь, мы бы провалились.",
-        "answer": "Were it not for her help, we would have failed",
-        "instruction": "Translate into English",
+        "answer": "Were it not for her help, we would have failed?",
+        "instruction": "Переведите вопрос",
         "explanation": "Were it not for — формальная альтернатива if it weren't.",
         "grammarTopic": "eng-c1-mixed-conditionals",
-        "acceptableAnswers": [],
+        "acceptableAnswers": [
+          "Were it not for her help, we would have failed",
+          "Were it not for her help, we would have failed?"
+        ],
         "questionTranslations": {
           "es": "Si no fuera por su ayuda, habríamos fracasado.",
           "de": "Ohne ihre Hilfe wären wir gescheitert."
@@ -28442,11 +28575,14 @@
       {
         "type": "translation",
         "question": "Если бы я знал, я бы пришёл.",
-        "answer": "Had I known, I would have come",
-        "instruction": "Translate into English",
+        "answer": "Had I known, I would have come?",
+        "instruction": "Переведите вопрос",
         "explanation": "Had I known — без if, C1.",
         "grammarTopic": "eng-c1-mixed-conditionals",
-        "acceptableAnswers": [],
+        "acceptableAnswers": [
+          "Had I known, I would have come",
+          "Had I known, I would have come?"
+        ],
         "questionTranslations": {
           "es": "Si lo hubiera sabido, habría venido.",
           "de": "Wenn ich es gewusst hätte, wäre ich gekommen."
@@ -28500,12 +28636,13 @@
       {
         "type": "translation",
         "question": "Если бы меня предупредили, я бы никогда не подписал.",
-        "answer": "Had I been warned I would never have signed",
+        "answer": "Had I been warned I would never have signed?",
         "acceptableAnswers": [
           "Had I been warned I would never have signed",
-          "had i been warned i would never have signed"
+          "had i been warned i would never have signed",
+          "Had I been warned I would never have signed?"
         ],
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "Translate the Russian prompt into English.",
         "questionTranslations": {
           "es": "Si me hubieran avisado nunca hubiera firmado.",
@@ -28560,12 +28697,13 @@
       {
         "type": "translation",
         "question": "Если бы не ее помощь, мы бы потерпели неудачу.",
-        "answer": "Were it not for her help we would have failed",
+        "answer": "Were it not for her help we would have failed?",
         "acceptableAnswers": [
           "Were it not for her help we would have failed",
-          "were it not for her help we would have failed"
+          "were it not for her help we would have failed",
+          "Were it not for her help we would have failed?"
         ],
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "Translate the Russian prompt into English.",
         "questionTranslations": {
           "es": "Si no fuera por su ayuda, habríamos fracasado.",
@@ -32625,7 +32763,7 @@
         "acceptableAnswers": [
           "Is that your bag?"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "your + noun.",
         "grammarTopic": "eng-a2-possessives",
         "questionTranslations": {
@@ -32718,7 +32856,7 @@
           "Whose idea is it? Ours",
           "Whose idea is this? Ours"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "ours.",
         "grammarTopic": "eng-a2-possessives",
         "questionTranslations": {
@@ -32733,7 +32871,7 @@
         "acceptableAnswers": [
           "Is this pen yours or mine?"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "yours / mine.",
         "grammarTopic": "eng-a2-possessives",
         "questionTranslations": {
@@ -32808,7 +32946,7 @@
         "acceptableAnswers": [
           "Is that decision yours?"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "yours.",
         "grammarTopic": "eng-a2-possessives",
         "questionTranslations": {
@@ -32855,7 +32993,7 @@
           "What's your name?",
           "What is your name?"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "your name.",
         "grammarTopic": "eng-a2-possessives",
         "questionTranslations": {
@@ -33134,11 +33272,14 @@
           "your",
           "phone"
         ],
-        "answer": "Is this your phone",
-        "instruction": "Build the sentence from the words",
+        "answer": "Is this your phone?",
+        "instruction": "Соберите вопрос",
         "explanation": "Your перед существительным.",
         "grammarTopic": "eng-a1-possessives",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Is this your phone",
+          "Is this your phone?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -33198,11 +33339,14 @@
           "are",
           "these"
         ],
-        "answer": "Whose keys are these",
-        "instruction": "Build the sentence from the words",
+        "answer": "Whose keys are these?",
+        "instruction": "Соберите вопрос",
         "explanation": "Whose keys — вопрос о принадлежности.",
         "grammarTopic": "eng-a1-possessives",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Whose keys are these",
+          "Whose keys are these?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -33228,11 +33372,14 @@
           "gloves",
           "yours"
         ],
-        "answer": "Are these gloves yours",
-        "instruction": "Build the sentence from the words",
+        "answer": "Are these gloves yours?",
+        "instruction": "Соберите вопрос",
         "explanation": "Yours = your gloves.",
         "grammarTopic": "eng-a1-possessives",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Are these gloves yours",
+          "Are these gloves yours?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -33342,11 +33489,14 @@
           "coat",
           "hers"
         ],
-        "answer": "Is that coat hers",
-        "instruction": "Build the sentence from the words",
+        "answer": "Is that coat hers?",
+        "instruction": "Соберите вопрос",
         "explanation": "Hers = her coat.",
         "grammarTopic": "eng-a1-possessives",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Is that coat hers",
+          "Is that coat hers?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -33357,11 +33507,14 @@
           "his",
           "pen"
         ],
-        "answer": "Is this his pen",
-        "instruction": "Build the sentence from the words",
+        "answer": "Is this his pen?",
+        "instruction": "Соберите вопрос",
         "explanation": "his + pen. Ответ: Is this his pen?.",
         "grammarTopic": "eng-a1-possessives",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Is this his pen",
+          "Is this his pen?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -33404,11 +33557,14 @@
           "is",
           "it"
         ],
-        "answer": "Whose turn is it",
-        "instruction": "Build the sentence from the words",
+        "answer": "Whose turn is it?",
+        "instruction": "Соберите вопрос",
         "explanation": "Whose turn is it? — чья очередь?",
         "grammarTopic": "eng-a1-possessives",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Whose turn is it",
+          "Whose turn is it?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -33979,7 +34135,7 @@
         "acceptableAnswers": [
           "How many books have you got?"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "countable → many.",
         "grammarTopic": "eng-a2-countable-uncountable",
         "questionTranslations": {
@@ -33994,7 +34150,7 @@
         "acceptableAnswers": [
           "How much money do you need?"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "uncountable → much.",
         "grammarTopic": "eng-a2-countable-uncountable",
         "questionTranslations": {
@@ -34191,7 +34347,7 @@
         "acceptableAnswers": [
           "Could I have a little water, please?"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "a little + water.",
         "grammarTopic": "eng-a2-countable-uncountable",
         "questionTranslations": {
@@ -34494,11 +34650,13 @@
           "you",
           "need"
         ],
-        "answer": "How many apples do you need",
+        "answer": "How many apples do you need?",
         "acceptableAnswers": [
-          "how many apples do you need"
+          "how many apples do you need",
+          "How many apples do you need",
+          "How many apples do you need?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "Apples — countable → many.",
         "grammarTopic": "eng-a2-countable"
       },
@@ -34549,11 +34707,12 @@
           "you",
           "have"
         ],
-        "answer": "How many books do you have",
+        "answer": "How many books do you have?",
         "acceptableAnswers": [
-          "How many books do you have?"
+          "How many books do you have?",
+          "How many books do you have"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "many + countable.",
         "grammarTopic": "eng-a2-countable-uncountable"
       },
@@ -34568,11 +34727,12 @@
           "you",
           "need"
         ],
-        "answer": "How much money do you need",
+        "answer": "How much money do you need?",
         "acceptableAnswers": [
-          "How much money do you need?"
+          "How much money do you need?",
+          "How much money do you need"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "much + uncountable.",
         "grammarTopic": "eng-a2-countable-uncountable"
       },
@@ -34762,11 +34922,12 @@
           "little",
           "water"
         ],
-        "answer": "Can I have a little water",
+        "answer": "Can I have a little water?",
         "acceptableAnswers": [
-          "Can I have a little water?"
+          "Can I have a little water?",
+          "Can I have a little water"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "a little + water.",
         "grammarTopic": "eng-a2-countable-uncountable"
       },
@@ -35367,7 +35528,7 @@
         "acceptableAnswers": [
           "Have you ever been to Spain?"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "ever in questions.",
         "grammarTopic": "eng-b1-present-perfect-intro",
         "questionTranslations": {
@@ -35413,7 +35574,7 @@
         "acceptableAnswers": [
           "Have they arrived yet?"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "yet in questions.",
         "grammarTopic": "eng-b1-present-perfect-intro",
         "questionTranslations": {
@@ -35475,7 +35636,7 @@
         "acceptableAnswers": [
           "Has she ever tried sushi?"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "ever. Образец: Has she ever tried sushi?.",
         "grammarTopic": "eng-b1-present-perfect-intro",
         "questionTranslations": {
@@ -35522,7 +35683,7 @@
         "acceptableAnswers": [
           "Have you finished your project yet?"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "yet. Образец: Have you finished your project yet?.",
         "grammarTopic": "eng-b1-present-perfect-intro",
         "questionTranslations": {
@@ -35568,7 +35729,7 @@
         "acceptableAnswers": [
           "Have you ever ridden a horse?"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "ever. Образец: Have you ever ridden a horse?.",
         "grammarTopic": "eng-b1-present-perfect-intro",
         "questionTranslations": {
@@ -35628,7 +35789,7 @@
         "acceptableAnswers": [
           "Has the train left yet?"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "yet. Образец: Has the train left yet?.",
         "grammarTopic": "eng-b1-present-perfect-intro",
         "questionTranslations": {
@@ -35932,11 +36093,13 @@
           "tried",
           "haggis"
         ],
-        "answer": "Have you ever tried haggis",
+        "answer": "Have you ever tried haggis?",
         "acceptableAnswers": [
-          "have you ever tried haggis"
+          "have you ever tried haggis",
+          "Have you ever tried haggis",
+          "Have you ever tried haggis?"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "Have you ever…? — вопрос об опыте.",
         "grammarTopic": "eng-a2-present-perfect-intro"
       },
@@ -35968,11 +36131,12 @@
           "to",
           "Spain"
         ],
-        "answer": "Have you ever been to Spain",
+        "answer": "Have you ever been to Spain?",
         "acceptableAnswers": [
-          "Have you ever been to Spain?"
+          "Have you ever been to Spain?",
+          "Have you ever been to Spain"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "ever in questions.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
@@ -36019,11 +36183,12 @@
           "arrived",
           "yet"
         ],
-        "answer": "Have they arrived yet",
+        "answer": "Have they arrived yet?",
         "acceptableAnswers": [
-          "Have they arrived yet?"
+          "Have they arrived yet?",
+          "Have they arrived yet"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "yet. Ответ: Have they arrived yet.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
@@ -36085,11 +36250,12 @@
           "tried",
           "sushi"
         ],
-        "answer": "Has she ever tried sushi",
+        "answer": "Has she ever tried sushi?",
         "acceptableAnswers": [
-          "Has she ever tried sushi?"
+          "Has she ever tried sushi?",
+          "Has she ever tried sushi"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "ever. Ответ: Has she ever tried sushi.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
@@ -36134,11 +36300,12 @@
           "finished",
           "yet"
         ],
-        "answer": "Have you finished yet",
+        "answer": "Have you finished yet?",
         "acceptableAnswers": [
-          "Have you finished yet?"
+          "Have you finished yet?",
+          "Have you finished yet"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "yet. Ответ: Have you finished yet.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
@@ -36184,11 +36351,12 @@
           "a",
           "horse"
         ],
-        "answer": "Have you ever ridden a horse",
+        "answer": "Have you ever ridden a horse?",
         "acceptableAnswers": [
-          "Have you ever ridden a horse?"
+          "Have you ever ridden a horse?",
+          "Have you ever ridden a horse"
         ],
-        "instruction": "Build the sentence",
+        "instruction": "Соберите вопрос",
         "explanation": "ever. Ответ: Have you ever ridden a horse.",
         "grammarTopic": "eng-b1-present-perfect-intro"
       },
@@ -39771,7 +39939,7 @@
           "Is this the house which your parents built?",
           "Is this the house your parents built?"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "that/which. Образец: Is this the house that your parents built?.",
         "grammarTopic": "eng-b1-relative-clauses",
         "questionTranslations": {
@@ -39786,7 +39954,7 @@
         "acceptableAnswers": [
           "Do you remember the day we first met?"
         ],
-        "instruction": "Translate to English",
+        "instruction": "Переведите вопрос",
         "explanation": "when. Образец: Do you remember the day when we first met?.",
         "grammarTopic": "eng-b1-relative-clauses",
         "questionTranslations": {
@@ -43885,7 +44053,7 @@
         "type": "translation",
         "question": "Привет! Как дела?",
         "answer": "Hi! How are you doing?",
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "Hi + How are you doing? — IELTS GT.",
         "grammarTopic": "eng-ielts-letter-informal",
         "acceptableAnswers": [],
@@ -43937,7 +44105,7 @@
         "type": "translation",
         "question": "Кстати, как твоя новая работа?",
         "answer": "By the way, how's your new job?",
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "By the way — дополнительный вопрос.",
         "grammarTopic": "eng-ielts-letter-informal",
         "acceptableAnswers": [],
@@ -44118,7 +44286,7 @@
       },
       {
         "type": "translation",
-        "question": "Привет, Сара. Как дела?.",
+        "question": "Привет, Сара. Как дела?",
         "answer": "Hi Sarah, How are you doing",
         "acceptableAnswers": [
           "Hi Sarah, How are you doing",
@@ -44133,7 +44301,7 @@
       },
       {
         "type": "translation",
-        "question": "прости, что не писал целую вечность.",
+        "question": "Прости, что не писал целую вечность.",
         "answer": "I'm sorry I haven't written for ages",
         "acceptableAnswers": [
           "I'm sorry I haven't written for ages",
@@ -44384,11 +44552,14 @@
           "you",
           "doing"
         ],
-        "answer": "How are you doing",
+        "answer": "How are you doing?",
         "instruction": "Неформальный вопрос",
         "explanation": "How are you doing? — разговорный вариант.",
         "grammarTopic": "eng-ielts-letter-informal",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "How are you doing",
+          "How are you doing?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -44704,12 +44875,13 @@
           "and",
           "visit"
         ],
-        "answer": "Why don't you come and visit",
+        "answer": "Why don't you come and visit?",
         "acceptableAnswers": [
           "Why don't you come and visit",
-          "Why don't you come and visit."
+          "Why don't you come and visit.",
+          "Why don't you come and visit?"
         ],
-        "instruction": "Arrange the words",
+        "instruction": "Соберите вопрос",
         "explanation": "Why don't you…? — дружеское приглашение.",
         "grammarTopic": "ielts-letter-informal"
       },
@@ -46761,7 +46933,7 @@
         "type": "translation",
         "question": "Не могли бы вы сообщить о стоимости?",
         "answer": "Could you please let me know the cost?",
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "Could you please let me know — вежливый вопрос.",
         "grammarTopic": "eng-cambridge-letter-email",
         "acceptableAnswers": [],
@@ -47429,11 +47601,14 @@
           "meeting",
           "time"
         ],
-        "answer": "Could you please confirm the meeting time",
+        "answer": "Could you please confirm the meeting time?",
         "instruction": "Вежливый вопрос",
         "explanation": "Could you please confirm…",
         "grammarTopic": "eng-cambridge-letter-email",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Could you please confirm the meeting time",
+          "Could you please confirm the meeting time?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -52464,13 +52639,14 @@
       },
       {
         "type": "translation",
-        "question": "Вы когда-нибудь задумывались, почему путешествия так важны?.",
-        "answer": "Have you ever wondered why travel matters",
+        "question": "Вы когда-нибудь задумывались, почему путешествия так важны?",
+        "answer": "Have you ever wondered why travel matters?",
         "acceptableAnswers": [
           "Have you ever wondered why travel matters",
-          "have you ever wondered why travel matters"
+          "have you ever wondered why travel matters",
+          "Have you ever wondered why travel matters?"
         ],
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "Translate the Russian prompt into English.",
         "questionTranslations": {
           "es": "¿Alguna vez te has preguntado por qué es tan importante viajar?",
@@ -52822,11 +52998,14 @@
           "travel",
           "matters"
         ],
-        "answer": "Have you ever wondered why travel matters",
-        "instruction": "Build the article hook",
+        "answer": "Have you ever wondered why travel matters?",
+        "instruction": "Соберите вопрос",
         "explanation": "Have you ever wondered… — engaging article opening.",
         "grammarTopic": "cambridge-essay-article",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Have you ever wondered why travel matters",
+          "Have you ever wondered why travel matters?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -55157,7 +55336,7 @@
           "Could you please return my call?",
           "I would appreciate it if you could call me back."
         ],
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "Would you be able to… / Could you please…",
         "grammarTopic": "register-shift",
         "questionTranslations": {
@@ -55169,7 +55348,7 @@
         "type": "translation",
         "question": "Не могли бы вы мне помочь?",
         "answer": "Could you help me, please?",
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "Could you — вежливая формальная просьба.",
         "grammarTopic": "eng-cbe-register-shift",
         "acceptableAnswers": [],
@@ -55286,7 +55465,7 @@
         "type": "translation",
         "question": "Что нового?",
         "answer": "What's new?",
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "What's new? — разговорное приветствие.",
         "grammarTopic": "eng-cbe-register-shift",
         "acceptableAnswers": [],
@@ -55357,13 +55536,14 @@
       },
       {
         "type": "translation",
-        "question": "Можешь мне помочь с этим?.",
-        "answer": "Can you give me a hand with this",
+        "question": "Можешь мне помочь с этим?",
+        "answer": "Can you give me a hand with this?",
         "acceptableAnswers": [
           "Can you give me a hand with this",
-          "can you give me a hand with this"
+          "can you give me a hand with this",
+          "Can you give me a hand with this?"
         ],
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "Translate the Russian prompt into English.",
         "questionTranslations": {
           "es": "¿Puedes ayudarme con esto?.",
@@ -55678,11 +55858,14 @@
           "me",
           "back"
         ],
-        "answer": "Would you be able to call me back",
+        "answer": "Would you be able to call me back?",
         "instruction": "Build the formal question",
         "explanation": "Would you be able to… — polite formal request.",
         "grammarTopic": "register-shift",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Would you be able to call me back",
+          "Would you be able to call me back?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -55771,11 +55954,14 @@
           "with",
           "this"
         ],
-        "answer": "Can you give me a hand with this",
-        "instruction": "Неформальный регистр",
+        "answer": "Can you give me a hand with this?",
+        "instruction": "Соберите вопрос",
         "explanation": "Give me a hand — разговорное.",
         "grammarTopic": "eng-cbe-register-shift",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Can you give me a hand with this",
+          "Can you give me a hand with this?"
+        ]
       },
       {
         "type": "sentence_building",
@@ -56017,11 +56203,14 @@
           "contact",
           "us"
         ],
-        "answer": "Should you require further information please contact us",
-        "instruction": "Формальное предложение",
+        "answer": "Should you require further information please contact us?",
+        "instruction": "Соберите вопрос",
         "explanation": "Should you require — инверсия, формально.",
         "grammarTopic": "eng-cbe-register-shift",
-        "acceptableAnswers": []
+        "acceptableAnswers": [
+          "Should you require further information please contact us",
+          "Should you require further information please contact us?"
+        ]
       }
     ]
   },
@@ -58300,7 +58489,7 @@
           "Would you like tea? I'd love some",
           "would you like tea? i'd love some"
         ],
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "Translate the Russian prompt into English.",
         "questionTranslations": {
           "es": "¿Quieres un poco de té? Me gustaría algunos.",
@@ -58315,7 +58504,7 @@
           "Did anyone call? Yes, someone did",
           "did anyone call? yes, someone did"
         ],
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "Translate the Russian prompt into English.",
         "questionTranslations": {
           "es": "¿Alguien llamó? Sí, alguien lo hizo.",
@@ -58330,7 +58519,7 @@
           "Which wine? The red one",
           "which wine? the red one"
         ],
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "Translate the Russian prompt into English.",
         "questionTranslations": {
           "es": "¿Qué vino? Rojo.",
@@ -58345,7 +58534,7 @@
           "Have you finished? Not yet",
           "have you finished? not yet"
         ],
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "Translate the Russian prompt into English.",
         "questionTranslations": {
           "es": "¿Terminaste? Aún no.",
@@ -58360,7 +58549,7 @@
           "Do you want coffee? I do",
           "do you want coffee? i do"
         ],
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "Translate the Russian prompt into English.",
         "questionTranslations": {
           "es": "¿Quieres un poco de café? Sí.",
@@ -58375,7 +58564,7 @@
           "Will it work? I expect so",
           "will it work? i expect so"
         ],
-        "instruction": "Translate into English",
+        "instruction": "Переведите вопрос",
         "explanation": "Translate the Russian prompt into English.",
         "questionTranslations": {
           "es": "¿Funcionará esto? Eso espero.",
@@ -58862,7 +59051,7 @@
           "Would you like tea? I'd love some",
           "Would you like tea? I'd love some."
         ],
-        "instruction": "Arrange the words",
+        "instruction": "Соберите вопрос",
         "explanation": "I'd love some = some tea.",
         "grammarTopic": "eng-c2-ellipsis-substitution"
       },
@@ -58882,7 +59071,7 @@
           "Did anyone call? Yes, someone did",
           "Did anyone call? Yes, someone did."
         ],
-        "instruction": "Arrange the words",
+        "instruction": "Соберите вопрос",
         "explanation": "someone did — not called.",
         "grammarTopic": "eng-c2-ellipsis-substitution"
       },
@@ -58901,7 +59090,7 @@
           "Which wine? The red one",
           "Which wine? The red one."
         ],
-        "instruction": "Arrange the words",
+        "instruction": "Соберите вопрос",
         "explanation": "The red one.",
         "grammarTopic": "eng-c2-ellipsis-substitution"
       },
@@ -58920,7 +59109,7 @@
           "Have you finished? Not yet",
           "Have you finished? Not yet."
         ],
-        "instruction": "Arrange the words",
+        "instruction": "Соберите вопрос",
         "explanation": "Not yet. Исправьте на: Have you finished? Not yet..",
         "grammarTopic": "eng-c2-ellipsis-substitution"
       },
@@ -58940,7 +59129,7 @@
           "Do you want coffee? I do",
           "Do you want coffee? I do."
         ],
-        "instruction": "Arrange the words",
+        "instruction": "Соберите вопрос",
         "explanation": "I do = I want coffee.",
         "grammarTopic": "eng-c2-ellipsis-substitution"
       },
@@ -58960,7 +59149,7 @@
           "Will it work? I expect so",
           "Will it work? I expect so."
         ],
-        "instruction": "Arrange the words",
+        "instruction": "Соберите вопрос",
         "explanation": "I expect so — not yes.",
         "grammarTopic": "eng-c2-ellipsis-substitution"
       }

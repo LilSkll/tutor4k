@@ -30,12 +30,12 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Vivir (-ir): ella → vive."
     },
     {
-      "type": "translation",
-      "question": "Ты готовишь ужин сегодня?",
-      "answer": "¿Cocinas la cena hoy?",
-      "instruction": "Переведите предложение",
-      "explanation": "¿Cocinas…? — готовишь ли ты."
-    },
+  "type": "translation",
+  "question": "Ты готовишь ужин сегодня?",
+  "answer": "¿Cocinas la cena hoy?",
+  "instruction": "Переведите вопрос",
+  "explanation": "¿Cocinas…? — готовишь ли ты."
+},
     {
       "type": "translation",
       "question": "Мы едим хлеб.",
@@ -58,12 +58,12 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Cenamos a las ocho = ужинаем в восемь."
     },
     {
-      "type": "translation",
-      "question": "Ты пишешь письмо?",
-      "answer": "¿Escribes una carta?",
-      "instruction": "Переведите предложение",
-      "explanation": "Escribir (-ir): tú → escribes."
-    },
+  "type": "translation",
+  "question": "Ты пишешь письмо?",
+  "answer": "¿Escribes una carta?",
+  "instruction": "Переведите вопрос",
+  "explanation": "Escribir (-ir): tú → escribes."
+},
     {
       "type": "translation",
       "question": "Они пьют воду.",
@@ -127,19 +127,19 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Estudio español todos los días."
     },
     {
-      "type": "sentence_building",
-      "question": "¿Cocinas / la / cena / esta / noche?",
-      "options": [
-        "¿Cocinas",
-        "la",
-        "cena",
-        "esta",
-        "noche?"
-      ],
-      "answer": "¿Cocinas la cena esta noche?",
-      "instruction": "Соберите предложение",
-      "explanation": "¿Cocinas…? — tú."
-    },
+  "type": "sentence_building",
+  "question": "¿Cocinas / la / cena / esta / noche?",
+  "options": [
+    "¿Cocinas",
+    "la",
+    "cena",
+    "esta",
+    "noche?"
+  ],
+  "answer": "¿Cocinas la cena esta noche?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Cocinas…? — tú."
+},
     {
       "type": "sentence_building",
       "question": "Nosotros / comemos / pan",
@@ -273,18 +273,18 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Trabajo ocho horas…"
     },
     {
-      "type": "sentence_building",
-      "question": "¿A / qué / hora / cenáis?",
-      "options": [
-        "¿A",
-        "qué",
-        "hora",
-        "cenáis?"
-      ],
-      "answer": "¿A qué hora cenáis?",
-      "instruction": "Соберите предложение",
-      "explanation": "¿A qué hora cenáis? — vosotros."
-    },
+  "type": "sentence_building",
+  "question": "¿A / qué / hora / cenáis?",
+  "options": [
+    "¿A",
+    "qué",
+    "hora",
+    "cenáis?"
+  ],
+  "answer": "¿A qué hora cenáis?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿A qué hora cenáis? — vosotros."
+},
     {
       "type": "sentence_building",
       "question": "Siempre / estudio / después / de / cenar",
@@ -328,20 +328,20 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Los domingos dormimos…"
     },
     {
-      "type": "sentence_building",
-      "question": "¿Qué / haces / los / fines / de / semana?",
-      "options": [
-        "¿Qué",
-        "haces",
-        "los",
-        "fines",
-        "de",
-        "semana?"
-      ],
-      "answer": "¿Qué haces los fines de semana?",
-      "instruction": "Соберите предложение",
-      "explanation": "¿Qué haces…?"
-    },
+  "type": "sentence_building",
+  "question": "¿Qué / haces / los / fines / de / semana?",
+  "options": [
+    "¿Qué",
+    "haces",
+    "los",
+    "fines",
+    "de",
+    "semana?"
+  ],
+  "answer": "¿Qué haces los fines de semana?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Qué haces…?"
+},
     {
       "type": "sentence_building",
       "question": "Voy / al / gimnasio / tres / veces / por / semana",
@@ -393,12 +393,12 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Hay un libro en la biblioteca."
     },
     {
-      "type": "translation",
-      "question": "Где книга?",
-      "answer": "¿Dónde está el libro?",
-      "instruction": "Переведите предложение",
-      "explanation": "El libro — определённый артикль."
-    },
+  "type": "translation",
+  "question": "Где книга?",
+  "answer": "¿Dónde está el libro?",
+  "instruction": "Переведите вопрос",
+  "explanation": "El libro — определённый артикль."
+},
     {
       "type": "translation",
       "question": "Мне нужна ручка.",
@@ -435,19 +435,19 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Busco un diccionario."
     },
     {
-      "type": "translation",
-      "question": "Где туалет?",
-      "answer": "¿Dónde está el baño?",
-      "instruction": "Переведите предложение",
-      "explanation": "¿Dónde está el baño?"
-    },
+  "type": "translation",
+  "question": "Где туалет?",
+  "answer": "¿Dónde está el baño?",
+  "instruction": "Переведите вопрос",
+  "explanation": "¿Dónde está el baño?"
+},
     {
-      "type": "translation",
-      "question": "Есть ли здесь Wi-Fi?",
-      "answer": "¿Hay Wi-Fi aquí?",
-      "instruction": "Переведите предложение",
-      "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки."
-    },
+  "type": "translation",
+  "question": "Есть ли здесь Wi-Fi?",
+  "answer": "¿Hay Wi-Fi aquí?",
+  "instruction": "Переведите вопрос",
+  "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки."
+},
     {
       "type": "sentence_building",
       "question": "Hay / un / libro / en / la / biblioteca",
@@ -464,18 +464,18 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Hay un libro…"
     },
     {
-      "type": "sentence_building",
-      "question": "¿Dónde / está / el / libro?",
-      "options": [
-        "¿Dónde",
-        "está",
-        "el",
-        "libro?"
-      ],
-      "answer": "¿Dónde está el libro?",
-      "instruction": "Соберите предложение",
-      "explanation": "El libro."
-    },
+  "type": "sentence_building",
+  "question": "¿Dónde / está / el / libro?",
+  "options": [
+    "¿Dónde",
+    "está",
+    "el",
+    "libro?"
+  ],
+  "answer": "¿Dónde está el libro?",
+  "instruction": "Соберите вопрос",
+  "explanation": "El libro."
+},
     {
       "type": "sentence_building",
       "question": "Necesito / un / bolígrafo",
@@ -544,30 +544,30 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Busco un diccionario."
     },
     {
-      "type": "sentence_building",
-      "question": "¿Dónde / está / el / baño?",
-      "options": [
-        "¿Dónde",
-        "está",
-        "el",
-        "baño?"
-      ],
-      "answer": "¿Dónde está el baño?",
-      "instruction": "Соберите предложение",
-      "explanation": "El baño — мужской род."
-    },
+  "type": "sentence_building",
+  "question": "¿Dónde / está / el / baño?",
+  "options": [
+    "¿Dónde",
+    "está",
+    "el",
+    "baño?"
+  ],
+  "answer": "¿Dónde está el baño?",
+  "instruction": "Соберите вопрос",
+  "explanation": "El baño — мужской род."
+},
     {
-      "type": "sentence_building",
-      "question": "¿Hay / Wi-Fi / aquí?",
-      "options": [
-        "¿Hay",
-        "Wi-Fi",
-        "aquí?"
-      ],
-      "answer": "¿Hay Wi-Fi aquí?",
-      "instruction": "Соберите предложение",
-      "explanation": "¿Hay… aquí?"
-    },
+  "type": "sentence_building",
+  "question": "¿Hay / Wi-Fi / aquí?",
+  "options": [
+    "¿Hay",
+    "Wi-Fi",
+    "aquí?"
+  ],
+  "answer": "¿Hay Wi-Fi aquí?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Hay… aquí?"
+},
     {
       "type": "error_correction",
       "question": "Hay un libro en la biblioteca el.",
@@ -658,17 +658,17 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Busco una silla…"
     },
     {
-      "type": "sentence_building",
-      "question": "¿Tienes / un / bolígrafo?",
-      "options": [
-        "¿Tienes",
-        "un",
-        "bolígrafo?"
-      ],
-      "answer": "¿Tienes un bolígrafo?",
-      "instruction": "Соберите предложение",
-      "explanation": "¿Tienes un bolígrafo?"
-    },
+  "type": "sentence_building",
+  "question": "¿Tienes / un / bolígrafo?",
+  "options": [
+    "¿Tienes",
+    "un",
+    "bolígrafo?"
+  ],
+  "answer": "¿Tienes un bolígrafo?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Tienes un bolígrafo?"
+},
     {
       "type": "sentence_building",
       "question": "El / estudiante / lee / un / libro",
@@ -710,17 +710,17 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Necesito una mesa…"
     },
     {
-      "type": "sentence_building",
-      "question": "¿Hay / algún / diccionario?",
-      "options": [
-        "¿Hay",
-        "algún",
-        "diccionario?"
-      ],
-      "answer": "¿Hay algún diccionario?",
-      "instruction": "Соберите предложение",
-      "explanation": "¿Hay algún diccionario?"
-    },
+  "type": "sentence_building",
+  "question": "¿Hay / algún / diccionario?",
+  "options": [
+    "¿Hay",
+    "algún",
+    "diccionario?"
+  ],
+  "answer": "¿Hay algún diccionario?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Hay algún diccionario?"
+},
     {
       "type": "sentence_building",
       "question": "La / profesora / explica / la / lección",
@@ -1326,20 +1326,20 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "No tengo coche."
     },
     {
-      "type": "sentence_building",
-      "question": "¿Cuánto / cuesta? / No / tengo / suficiente / dinero",
-      "options": [
-        "¿Cuánto",
-        "cuesta?",
-        "No",
-        "tengo",
-        "suficiente",
-        "dinero"
-      ],
-      "answer": "¿Cuánto cuesta? No tengo suficiente dinero",
-      "instruction": "Соберите на рынке",
-      "explanation": "No tengo suficiente dinero."
-    },
+  "type": "sentence_building",
+  "question": "¿Cuánto / cuesta? / No / tengo / suficiente / dinero",
+  "options": [
+    "¿Cuánto",
+    "cuesta?",
+    "No",
+    "tengo",
+    "suficiente",
+    "dinero"
+  ],
+  "answer": "¿Cuánto cuesta? No tengo suficiente dinero",
+  "instruction": "Соберите вопрос",
+  "explanation": "No tengo suficiente dinero."
+},
     {
       "type": "error_correction",
       "question": "Yo tengo dos manzana en la bolsa.",
@@ -1418,18 +1418,18 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Compro fruta…"
     },
     {
-      "type": "sentence_building",
-      "question": "¿Cuánto / cuestan / las / naranjas?",
-      "options": [
-        "¿Cuánto",
-        "cuestan",
-        "las",
-        "naranjas?"
-      ],
-      "answer": "¿Cuánto cuestan las naranjas?",
-      "instruction": "Precio plural",
-      "explanation": "¿Cuánto cuestan…?"
-    },
+  "type": "sentence_building",
+  "question": "¿Cuánto / cuestan / las / naranjas?",
+  "options": [
+    "¿Cuánto",
+    "cuestan",
+    "las",
+    "naranjas?"
+  ],
+  "answer": "¿Cuánto cuestan las naranjas?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Cuánto cuestan…?"
+},
     {
       "type": "sentence_building",
       "question": "Necesito / medio / kilo / de / queso",
@@ -1716,19 +1716,19 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Levantarnos — infinitivo reflexivo."
     },
     {
-      "type": "sentence_building",
-      "question": "¿Te / gusta / tu / trabajo / nuevo?",
-      "options": [
-        "¿Te",
-        "gusta",
-        "tu",
-        "trabajo",
-        "nuevo?"
-      ],
-      "answer": "¿Te gusta tu trabajo nuevo?",
-      "instruction": "Соберите trabajo",
-      "explanation": "¿Te gusta tu trabajo?"
-    },
+  "type": "sentence_building",
+  "question": "¿Te / gusta / tu / trabajo / nuevo?",
+  "options": [
+    "¿Te",
+    "gusta",
+    "tu",
+    "trabajo",
+    "nuevo?"
+  ],
+  "answer": "¿Te gusta tu trabajo nuevo?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Te gusta tu trabajo?"
+},
     {
       "type": "error_correction",
       "question": "Me gusta nadar en verano en invierno.",
@@ -1811,20 +1811,20 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Me gusta el café."
     },
     {
-      "type": "sentence_building",
-      "question": "¿Te / gustan / las / películas / de / acción?",
-      "options": [
-        "¿Te",
-        "gustan",
-        "las",
-        "películas",
-        "de",
-        "acción?"
-      ],
-      "answer": "¿Te gustan las películas de acción?",
-      "instruction": "Gustar plural",
-      "explanation": "¿Te gustan las películas…?"
-    },
+  "type": "sentence_building",
+  "question": "¿Te / gustan / las / películas / de / acción?",
+  "options": [
+    "¿Te",
+    "gustan",
+    "las",
+    "películas",
+    "de",
+    "acción?"
+  ],
+  "answer": "¿Te gustan las películas de acción?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Te gustan las películas…?"
+},
     {
       "type": "sentence_building",
       "question": "No / nos / gusta / el / frío",
@@ -1866,17 +1866,17 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Me interesa la historia."
     },
     {
-      "type": "sentence_building",
-      "question": "¿Os / gusta / viajar?",
-      "options": [
-        "¿Os",
-        "gusta",
-        "viajar?"
-      ],
-      "answer": "¿Os gusta viajar?",
-      "instruction": "Gustar vosotros",
-      "explanation": "Соберите слова в естественном порядке испанского предложения."
-    },
+  "type": "sentence_building",
+  "question": "¿Os / gusta / viajar?",
+  "options": [
+    "¿Os",
+    "gusta",
+    "viajar?"
+  ],
+  "answer": "¿Os gusta viajar?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Соберите слова в естественном порядке испанского предложения."
+},
     {
       "type": "sentence_building",
       "question": "A / ella / le / gusta / nadar",
@@ -1959,12 +1959,12 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Acabamos de llegar."
     },
     {
-      "type": "translation",
-      "question": "Ты когда-нибудь пробовал паэлью?",
-      "answer": "¿Has probado alguna vez la paella?",
-      "instruction": "Переведите предложение",
-      "explanation": "¿Has probado alguna vez…?"
-    },
+  "type": "translation",
+  "question": "Ты когда-нибудь пробовал паэлью?",
+  "answer": "¿Has probado alguna vez la paella?",
+  "instruction": "Переведите вопрос",
+  "explanation": "¿Has probado alguna vez…?"
+},
     {
       "type": "translation",
       "question": "Они ещё не закончили.",
@@ -2046,18 +2046,18 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Nunca he estado…"
     },
     {
-      "type": "sentence_building",
-      "question": "¿Has / probado / la / paella?",
-      "options": [
-        "¿Has",
-        "probado",
-        "la",
-        "paella?"
-      ],
-      "answer": "¿Has probado la paella?",
-      "instruction": "Составьте предложение из слов",
-      "explanation": "¿Has probado…?"
-    },
+  "type": "sentence_building",
+  "question": "¿Has / probado / la / paella?",
+  "options": [
+    "¿Has",
+    "probado",
+    "la",
+    "paella?"
+  ],
+  "answer": "¿Has probado la paella?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Has probado…?"
+},
     {
       "type": "sentence_building",
       "question": "Hemos / vivido / aquí / cinco / años",
@@ -2126,18 +2126,18 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "He visto… tres veces."
     },
     {
-      "type": "sentence_building",
-      "question": "¿Has / hecho / los / deberes?",
-      "options": [
-        "¿Has",
-        "hecho",
-        "los",
-        "deberes?"
-      ],
-      "answer": "¿Has hecho los deberes?",
-      "instruction": "Составьте предложение из слов",
-      "explanation": "Соберите слова в естественном порядке испанского предложения."
-    },
+  "type": "sentence_building",
+  "question": "¿Has / hecho / los / deberes?",
+  "options": [
+    "¿Has",
+    "hecho",
+    "los",
+    "deberes?"
+  ],
+  "answer": "¿Has hecho los deberes?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Соберите слова в естественном порядке испанского предложения."
+},
     {
       "type": "sentence_building",
       "question": "No / he / dormido / bien",
@@ -2177,18 +2177,18 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "He comido demasiado."
     },
     {
-      "type": "sentence_building",
-      "question": "¿Has / visitado / el / museo?",
-      "options": [
-        "¿Has",
-        "visitado",
-        "el",
-        "museo?"
-      ],
-      "answer": "¿Has visitado el museo?",
-      "instruction": "Составьте предложение из слов",
-      "explanation": "Соберите слова в естественном порядке испанского предложения."
-    },
+  "type": "sentence_building",
+  "question": "¿Has / visitado / el / museo?",
+  "options": [
+    "¿Has",
+    "visitado",
+    "el",
+    "museo?"
+  ],
+  "answer": "¿Has visitado el museo?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Соберите слова в естественном порядке испанского предложения."
+},
     {
       "type": "sentence_building",
       "question": "Esta / semana / he / leído / dos / novelas",
@@ -2205,20 +2205,20 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Esta semana he leído — на этой неделе прочитал."
     },
     {
-      "type": "sentence_building",
-      "question": "¿Has / oído / las / noticias / de / hoy?",
-      "options": [
-        "¿Has",
-        "oído",
-        "las",
-        "noticias",
-        "de",
-        "hoy?"
-      ],
-      "answer": "¿Has oído las noticias de hoy?",
-      "instruction": "Составьте предложение из слов",
-      "explanation": "¿Has oído? — ты слышал?"
-    },
+  "type": "sentence_building",
+  "question": "¿Has / oído / las / noticias / de / hoy?",
+  "options": [
+    "¿Has",
+    "oído",
+    "las",
+    "noticias",
+    "de",
+    "hoy?"
+  ],
+  "answer": "¿Has oído las noticias de hoy?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Has oído? — ты слышал?"
+},
     {
       "type": "sentence_building",
       "question": "Nunca / he / probado / el / ceviche",
@@ -2262,19 +2262,19 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Ha empezado a llover — недавно начался дождь."
     },
     {
-      "type": "sentence_building",
-      "question": "¿Han / resuelto / ya / el / problema?",
-      "options": [
-        "¿Han",
-        "resuelto",
-        "ya",
-        "el",
-        "problema?"
-      ],
-      "answer": "¿Han resuelto ya el problema?",
-      "instruction": "Составьте предложение из слов",
-      "explanation": "¿Han resuelto ya? — они уже решили?"
-    }
+  "type": "sentence_building",
+  "question": "¿Han / resuelto / ya / el / problema?",
+  "options": [
+    "¿Han",
+    "resuelto",
+    "ya",
+    "el",
+    "problema?"
+  ],
+  "answer": "¿Han resuelto ya el problema?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Han resuelto ya? — они уже решили?"
+}
   ],
   "chapter-8-pasado-indefinido": [
     {
@@ -2560,18 +2560,18 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Escribió — pretérito de escribir."
     },
     {
-      "type": "sentence_building",
-      "question": "¿Viste / la / película / anoche?",
-      "options": [
-        "¿Viste",
-        "la",
-        "película",
-        "anoche?"
-      ],
-      "answer": "¿Viste la película anoche?",
-      "instruction": "Pretérito indefinido — tú",
-      "explanation": "¿Viste…? — pretérito de ver (tú)."
-    },
+  "type": "sentence_building",
+  "question": "¿Viste / la / película / anoche?",
+  "options": [
+    "¿Viste",
+    "la",
+    "película",
+    "anoche?"
+  ],
+  "answer": "¿Viste la película anoche?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Viste…? — pretérito de ver (tú)."
+},
     {
       "type": "sentence_building",
       "question": "Nosotros / viajamos / a / Madrid / el / año / pasado",
@@ -2603,20 +2603,20 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "No llegó — pretérito de llegar."
     },
     {
-      "type": "sentence_building",
-      "question": "¿Qué / hiciste / el / fin / de / semana?",
-      "options": [
-        "¿Qué",
-        "hiciste",
-        "el",
-        "fin",
-        "de",
-        "semana?"
-      ],
-      "answer": "¿Qué hiciste el fin de semana?",
-      "instruction": "Pretérito indefinido — hacer",
-      "explanation": "Hiciste — pretérito irregular de hacer."
-    },
+  "type": "sentence_building",
+  "question": "¿Qué / hiciste / el / fin / de / semana?",
+  "options": [
+    "¿Qué",
+    "hiciste",
+    "el",
+    "fin",
+    "de",
+    "semana?"
+  ],
+  "answer": "¿Qué hiciste el fin de semana?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Hiciste — pretérito irregular de hacer."
+},
     {
       "type": "sentence_building",
       "question": "Ellos / compraron / regalos / para / Navidad",
@@ -4069,12 +4069,12 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Viajaría a España."
     },
     {
-      "type": "translation",
-      "question": "Что бы ты сделал на моём месте?",
-      "answer": "¿Qué harías en mi lugar?",
-      "instruction": "Переведите предложение",
-      "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки."
-    },
+  "type": "translation",
+  "question": "Что бы ты сделал на моём месте?",
+  "answer": "¿Qué harías en mi lugar?",
+  "instruction": "Переведите вопрос",
+  "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки."
+},
     {
       "type": "translation",
       "question": "Она хотела бы жить у моря.",
@@ -4164,19 +4164,19 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Viajaría a España…"
     },
     {
-      "type": "sentence_building",
-      "question": "¿Qué / harías / en / mi / lugar?",
-      "options": [
-        "¿Qué",
-        "harías",
-        "en",
-        "mi",
-        "lugar?"
-      ],
-      "answer": "¿Qué harías en mi lugar?",
-      "instruction": "Составьте предложение из слов",
-      "explanation": "¿Qué harías…?"
-    },
+  "type": "sentence_building",
+  "question": "¿Qué / harías / en / mi / lugar?",
+  "options": [
+    "¿Qué",
+    "harías",
+    "en",
+    "mi",
+    "lugar?"
+  ],
+  "answer": "¿Qué harías en mi lugar?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Qué harías…?"
+},
     {
       "type": "sentence_building",
       "question": "Le / gustaría / vivir / junto / al / mar",
@@ -4273,18 +4273,18 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Me gustaría un café…"
     },
     {
-      "type": "sentence_building",
-      "question": "¿Podrías / ayudarme / un / momento?",
-      "options": [
-        "¿Podrías",
-        "ayudarme",
-        "un",
-        "momento?"
-      ],
-      "answer": "¿Podrías ayudarme un momento?",
-      "instruction": "Составьте предложение из слов",
-      "explanation": "¿Podrías ayudarme…?"
-    },
+  "type": "sentence_building",
+  "question": "¿Podrías / ayudarme / un / momento?",
+  "options": [
+    "¿Podrías",
+    "ayudarme",
+    "un",
+    "momento?"
+  ],
+  "answer": "¿Podrías ayudarme un momento?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Podrías ayudarme…?"
+},
     {
       "type": "sentence_building",
       "question": "Deberías / descansar / más",
@@ -4352,19 +4352,19 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Terminaría — condicional simple."
     },
     {
-      "type": "sentence_building",
-      "question": "¿Te / importaría / abrir / la / ventana?",
-      "options": [
-        "¿Te",
-        "importaría",
-        "abrir",
-        "la",
-        "ventana?"
-      ],
-      "answer": "¿Te importaría abrir la ventana?",
-      "instruction": "Составьте предложение из слов",
-      "explanation": "¿Te importaría? — вежливая просьба."
-    },
+  "type": "sentence_building",
+  "question": "¿Te / importaría / abrir / la / ventana?",
+  "options": [
+    "¿Te",
+    "importaría",
+    "abrir",
+    "la",
+    "ventana?"
+  ],
+  "answer": "¿Te importaría abrir la ventana?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Te importaría? — вежливая просьба."
+},
     {
       "type": "sentence_building",
       "question": "Preferiría / quedarme / en / casa",
@@ -5785,97 +5785,97 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Соберите слова в естественном порядке испанского предложения."
     },
     {
-      "type": "sentence_building",
-      "question": "¿Cuántos / años / tienes?",
-      "options": [
-        "¿Cuántos",
-        "años",
-        "tienes?"
-      ],
-      "answer": "¿Cuántos años tienes?",
-      "instruction": "Соберите edad",
-      "explanation": "Соберите слова в естественном порядке испанского предложения."
-    },
+  "type": "sentence_building",
+  "question": "¿Cuántos / años / tienes?",
+  "options": [
+    "¿Cuántos",
+    "años",
+    "tienes?"
+  ],
+  "answer": "¿Cuántos años tienes?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Соберите слова в естественном порядке испанского предложения."
+},
     {
-      "type": "sentence_building",
-      "question": "¿De / dónde / eres?",
-      "options": [
-        "¿De",
-        "dónde",
-        "eres?"
-      ],
-      "answer": "¿De dónde eres?",
-      "instruction": "Соберите origen",
-      "explanation": "Соберите слова в естественном порядке испанского предложения."
-    },
+  "type": "sentence_building",
+  "question": "¿De / dónde / eres?",
+  "options": [
+    "¿De",
+    "dónde",
+    "eres?"
+  ],
+  "answer": "¿De dónde eres?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Соберите слова в естественном порядке испанского предложения."
+},
     {
-      "type": "sentence_building",
-      "question": "¿Qué / haces / este / fin / de / semana?",
-      "options": [
-        "¿Qué",
-        "haces",
-        "este",
-        "fin",
-        "de",
-        "semana?"
-      ],
-      "answer": "¿Qué haces este fin de semana?",
-      "instruction": "Соберите actividad",
-      "explanation": "¿Qué haces…?"
-    },
+  "type": "sentence_building",
+  "question": "¿Qué / haces / este / fin / de / semana?",
+  "options": [
+    "¿Qué",
+    "haces",
+    "este",
+    "fin",
+    "de",
+    "semana?"
+  ],
+  "answer": "¿Qué haces este fin de semana?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Qué haces…?"
+},
     {
-      "type": "sentence_building",
-      "question": "¿Por / qué / llegaste / tarde?",
-      "options": [
-        "¿Por",
-        "qué",
-        "llegaste",
-        "tarde?"
-      ],
-      "answer": "¿Por qué llegaste tarde?",
-      "instruction": "Соберите por qué",
-      "explanation": "¿Por qué…?"
-    },
+  "type": "sentence_building",
+  "question": "¿Por / qué / llegaste / tarde?",
+  "options": [
+    "¿Por",
+    "qué",
+    "llegaste",
+    "tarde?"
+  ],
+  "answer": "¿Por qué llegaste tarde?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Por qué…?"
+},
     {
-      "type": "sentence_building",
-      "question": "¿Cuándo / empieza / la / película?",
-      "options": [
-        "¿Cuándo",
-        "empieza",
-        "la",
-        "película?"
-      ],
-      "answer": "¿Cuándo empieza la película?",
-      "instruction": "Соберите cuándo",
-      "explanation": "¿Cuándo empieza…?"
-    },
+  "type": "sentence_building",
+  "question": "¿Cuándo / empieza / la / película?",
+  "options": [
+    "¿Cuándo",
+    "empieza",
+    "la",
+    "película?"
+  ],
+  "answer": "¿Cuándo empieza la película?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Cuándo empieza…?"
+},
     {
-      "type": "sentence_building",
-      "question": "¿Con / quién / vas / al / cine?",
-      "options": [
-        "¿Con",
-        "quién",
-        "vas",
-        "al",
-        "cine?"
-      ],
-      "answer": "¿Con quién vas al cine?",
-      "instruction": "Соберите con quién",
-      "explanation": "¿Con quién vas…?"
-    },
+  "type": "sentence_building",
+  "question": "¿Con / quién / vas / al / cine?",
+  "options": [
+    "¿Con",
+    "quién",
+    "vas",
+    "al",
+    "cine?"
+  ],
+  "answer": "¿Con quién vas al cine?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Con quién vas…?"
+},
     {
-      "type": "sentence_building",
-      "question": "¿Cuánto / cuesta / este / bolso?",
-      "options": [
-        "¿Cuánto",
-        "cuesta",
-        "este",
-        "bolso?"
-      ],
-      "answer": "¿Cuánto cuesta este bolso?",
-      "instruction": "Соберите precio",
-      "explanation": "¿Cuánto cuesta?"
-    },
+  "type": "sentence_building",
+  "question": "¿Cuánto / cuesta / este / bolso?",
+  "options": [
+    "¿Cuánto",
+    "cuesta",
+    "este",
+    "bolso?"
+  ],
+  "answer": "¿Cuánto cuesta este bolso?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Cuánto cuesta?"
+},
     {
       "type": "error_correction",
       "question": "¿Cómo te llamas tú yo?",
@@ -5954,138 +5954,138 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки."
     },
     {
-      "type": "sentence_building",
-      "question": "¿De / dónde / viene / tu / familia?",
-      "options": [
-        "¿De",
-        "dónde",
-        "viene",
-        "tu",
-        "familia?"
-      ],
-      "answer": "¿De dónde viene tu familia?",
-      "instruction": "Origen",
-      "explanation": "¿De dónde viene…?"
-    },
+  "type": "sentence_building",
+  "question": "¿De / dónde / viene / tu / familia?",
+  "options": [
+    "¿De",
+    "dónde",
+    "viene",
+    "tu",
+    "familia?"
+  ],
+  "answer": "¿De dónde viene tu familia?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿De dónde viene…?"
+},
     {
-      "type": "sentence_building",
-      "question": "¿A / qué / te / dedicas?",
-      "options": [
-        "¿A",
-        "qué",
-        "te",
-        "dedicas?"
-      ],
-      "answer": "¿A qué te dedicas?",
-      "instruction": "Profesión",
-      "explanation": "Соберите слова в естественном порядке испанского предложения."
-    },
+  "type": "sentence_building",
+  "question": "¿A / qué / te / dedicas?",
+  "options": [
+    "¿A",
+    "qué",
+    "te",
+    "dedicas?"
+  ],
+  "answer": "¿A qué te dedicas?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Соберите слова в естественном порядке испанского предложения."
+},
     {
-      "type": "sentence_building",
-      "question": "¿Cuántos / hermanos / tienes?",
-      "options": [
-        "¿Cuántos",
-        "hermanos",
-        "tienes?"
-      ],
-      "answer": "¿Cuántos hermanos tienes?",
-      "instruction": "Familia",
-      "explanation": "¿Cuántos hermanos…?"
-    },
+  "type": "sentence_building",
+  "question": "¿Cuántos / hermanos / tienes?",
+  "options": [
+    "¿Cuántos",
+    "hermanos",
+    "tienes?"
+  ],
+  "answer": "¿Cuántos hermanos tienes?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Cuántos hermanos…?"
+},
     {
-      "type": "sentence_building",
-      "question": "¿Qué / hora / es / ahora?",
-      "options": [
-        "¿Qué",
-        "hora",
-        "es",
-        "ahora?"
-      ],
-      "answer": "¿Qué hora es ahora?",
-      "instruction": "Hora",
-      "explanation": "¿Qué hora es…?"
-    },
+  "type": "sentence_building",
+  "question": "¿Qué / hora / es / ahora?",
+  "options": [
+    "¿Qué",
+    "hora",
+    "es",
+    "ahora?"
+  ],
+  "answer": "¿Qué hora es ahora?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Qué hora es…?"
+},
     {
-      "type": "sentence_building",
-      "question": "¿Por / qué / estudias / español?",
-      "options": [
-        "¿Por",
-        "qué",
-        "estudias",
-        "español?"
-      ],
-      "answer": "¿Por qué estudias español?",
-      "instruction": "Razón",
-      "explanation": "¿Por qué estudias…?"
-    },
+  "type": "sentence_building",
+  "question": "¿Por / qué / estudias / español?",
+  "options": [
+    "¿Por",
+    "qué",
+    "estudias",
+    "español?"
+  ],
+  "answer": "¿Por qué estudias español?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Por qué estudias…?"
+},
     {
-      "type": "sentence_building",
-      "question": "¿Con / quién / vives?",
-      "options": [
-        "¿Con",
-        "quién",
-        "vives?"
-      ],
-      "answer": "¿Con quién vives?",
-      "instruction": "Compañía",
-      "explanation": "Соберите слова в естественном порядке испанского предложения."
-    },
+  "type": "sentence_building",
+  "question": "¿Con / quién / vives?",
+  "options": [
+    "¿Con",
+    "quién",
+    "vives?"
+  ],
+  "answer": "¿Con quién vives?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Соберите слова в естественном порядке испанского предложения."
+},
     {
-      "type": "sentence_building",
-      "question": "¿Cuál / es / tu / color / favorito?",
-      "options": [
-        "¿Cuál",
-        "es",
-        "tu",
-        "color",
-        "favorito?"
-      ],
-      "answer": "¿Cuál es tu color favorito?",
-      "instruction": "Cuál",
-      "explanation": "¿Cuál es tu color…?"
-    },
+  "type": "sentence_building",
+  "question": "¿Cuál / es / tu / color / favorito?",
+  "options": [
+    "¿Cuál",
+    "es",
+    "tu",
+    "color",
+    "favorito?"
+  ],
+  "answer": "¿Cuál es tu color favorito?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Cuál es tu color…?"
+},
     {
-      "type": "sentence_building",
-      "question": "¿Cuánto / tiempo / llevas / aquí?",
-      "options": [
-        "¿Cuánto",
-        "tiempo",
-        "llevas",
-        "aquí?"
-      ],
-      "answer": "¿Cuánto tiempo llevas aquí?",
-      "instruction": "Duración",
-      "explanation": "¿Cuánto tiempo llevas…?"
-    },
+  "type": "sentence_building",
+  "question": "¿Cuánto / tiempo / llevas / aquí?",
+  "options": [
+    "¿Cuánto",
+    "tiempo",
+    "llevas",
+    "aquí?"
+  ],
+  "answer": "¿Cuánto tiempo llevas aquí?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Cuánto tiempo llevas…?"
+},
     {
-      "type": "sentence_building",
-      "question": "¿Qué / tipo / de / música / prefieres?",
-      "options": [
-        "¿Qué",
-        "tipo",
-        "de",
-        "música",
-        "prefieres?"
-      ],
-      "answer": "¿Qué tipo de música prefieres?",
-      "instruction": "Preferencia",
-      "explanation": "¿Qué tipo de música…?"
-    },
+  "type": "sentence_building",
+  "question": "¿Qué / tipo / de / música / prefieres?",
+  "options": [
+    "¿Qué",
+    "tipo",
+    "de",
+    "música",
+    "prefieres?"
+  ],
+  "answer": "¿Qué tipo de música prefieres?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Qué tipo de música…?"
+},
     {
-      "type": "sentence_building",
-      "question": "¿Adónde / vamos / este / fin / de / semana?",
-      "options": [
-        "¿Adónde",
-        "vamos",
-        "este",
-        "fin",
-        "de",
-        "semana?"
-      ],
-      "answer": "¿Adónde vamos este fin de semana?",
-      "instruction": "Adónde",
-      "explanation": "¿Adónde vamos…?"
-    }
+  "type": "sentence_building",
+  "question": "¿Adónde / vamos / este / fin / de / semana?",
+  "options": [
+    "¿Adónde",
+    "vamos",
+    "este",
+    "fin",
+    "de",
+    "semana?"
+  ],
+  "answer": "¿Adónde vamos este fin de semana?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Adónde vamos…?"
+}
   ],
   "chapter-21-comparativos": [
     {
@@ -6501,12 +6501,12 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "No vendrán. venir → vendrán."
     },
     {
-      "type": "translation",
-      "question": "Ты успеешь?",
-      "answer": "¿Llegarás a tiempo?",
-      "instruction": "Переведите предложение",
-      "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки."
-    },
+  "type": "translation",
+  "question": "Ты успеешь?",
+  "answer": "¿Llegarás a tiempo?",
+  "instruction": "Переведите вопрос",
+  "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки."
+},
     {
       "type": "translation",
       "question": "Я думаю, что будет дождь.",
@@ -6620,17 +6620,17 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "No vendrán…"
     },
     {
-      "type": "sentence_building",
-      "question": "¿Llegarás / a / tiempo?",
-      "options": [
-        "¿Llegarás",
-        "a",
-        "tiempo?"
-      ],
-      "answer": "¿Llegarás a tiempo?",
-      "instruction": "Составьте предложение из слов",
-      "explanation": "Соберите слова в естественном порядке испанского предложения."
-    },
+  "type": "sentence_building",
+  "question": "¿Llegarás / a / tiempo?",
+  "options": [
+    "¿Llegarás",
+    "a",
+    "tiempo?"
+  ],
+  "answer": "¿Llegarás a tiempo?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Соберите слова в естественном порядке испанского предложения."
+},
     {
       "type": "sentence_building",
       "question": "Creo / que / lloverá / esta / tarde",
@@ -6744,19 +6744,19 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Estaré en casa — буду дома."
     },
     {
-      "type": "sentence_building",
-      "question": "¿Qué / harás / el / próximo / verano?",
-      "options": [
-        "¿Qué",
-        "harás",
-        "el",
-        "próximo",
-        "verano?"
-      ],
-      "answer": "¿Qué harás el próximo verano?",
-      "instruction": "Составьте предложение из слов",
-      "explanation": "¿Qué harás? — что будешь делать?"
-    },
+  "type": "sentence_building",
+  "question": "¿Qué / harás / el / próximo / verano?",
+  "options": [
+    "¿Qué",
+    "harás",
+    "el",
+    "próximo",
+    "verano?"
+  ],
+  "answer": "¿Qué harás el próximo verano?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Qué harás? — что будешь делать?"
+},
     {
       "type": "sentence_building",
       "question": "Probablemente / lloverá / mañana / por / la / tarde",
@@ -7020,18 +7020,18 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Debes descansar más."
     },
     {
-      "type": "sentence_building",
-      "question": "¿Puedo / entrar / un / momento?",
-      "options": [
-        "¿Puedo",
-        "entrar",
-        "un",
-        "momento?"
-      ],
-      "answer": "¿Puedo entrar un momento?",
-      "instruction": "Соберите poder",
-      "explanation": "¿Puedo entrar…?"
-    },
+  "type": "sentence_building",
+  "question": "¿Puedo / entrar / un / momento?",
+  "options": [
+    "¿Puedo",
+    "entrar",
+    "un",
+    "momento?"
+  ],
+  "answer": "¿Puedo entrar un momento?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Puedo entrar…?"
+},
     {
       "type": "sentence_building",
       "question": "Ella / sabe / la / respuesta",
@@ -9153,21 +9153,21 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Por extraño que parezca…"
     },
     {
-      "type": "sentence_building",
-      "question": "¿Sería / tan / amable / de / pasarme / la / sal?",
-      "options": [
-        "¿Sería",
-        "tan",
-        "amable",
-        "de",
-        "pasarme",
-        "la",
-        "sal?"
-      ],
-      "answer": "¿Sería tan amable de pasarme la sal?",
-      "instruction": "Registro formal",
-      "explanation": "Condicional cortés."
-    },
+  "type": "sentence_building",
+  "question": "¿Sería / tan / amable / de / pasarme / la / sal?",
+  "options": [
+    "¿Sería",
+    "tan",
+    "amable",
+    "de",
+    "pasarme",
+    "la",
+    "sal?"
+  ],
+  "answer": "¿Sería tan amable de pasarme la sal?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Condicional cortés."
+},
     {
       "type": "sentence_building",
       "question": "Por / difícil / que / sea / lo / lograremos",
@@ -9307,20 +9307,20 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Vos — regionalismo."
     },
     {
-      "type": "sentence_building",
-      "question": "¿Sería / posible / que / me / diera / agua?",
-      "options": [
-        "¿Sería",
-        "posible",
-        "que",
-        "me",
-        "diera",
-        "agua?"
-      ],
-      "answer": "¿Sería posible que me diera agua?",
-      "instruction": "Cortesía formal",
-      "explanation": "Condicional + subjuntivo."
-    },
+  "type": "sentence_building",
+  "question": "¿Sería / posible / que / me / diera / agua?",
+  "options": [
+    "¿Sería",
+    "posible",
+    "que",
+    "me",
+    "diera",
+    "agua?"
+  ],
+  "answer": "¿Sería posible que me diera agua?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Condicional + subjuntivo."
+},
     {
       "type": "sentence_building",
       "question": "Por / extraño / que / parezca / se / negó",
@@ -10930,11 +10930,11 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
   "chapter-44-pronombres-avanzado": [
     {
       "type": "sentence_building",
-      "question": "Se / lo / dí / a / María / ayer",
+      "question": "Se / lo / di / a / María / ayer",
       "options": [
         "Se",
         "lo",
-        "dí",
+        "di",
         "a",
         "María",
         "ayer"
@@ -11103,19 +11103,19 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Se la dedico."
     },
     {
-      "type": "sentence_building",
-      "question": "¿Os / lo / explico / otra / vez?",
-      "options": [
-        "¿Os",
-        "lo",
-        "explico",
-        "otra",
-        "vez?"
-      ],
-      "answer": "¿Os lo explico otra vez?",
-      "instruction": "Voseo plural",
-      "explanation": "Os lo explico."
-    },
+  "type": "sentence_building",
+  "question": "¿Os / lo / explico / otra / vez?",
+  "options": [
+    "¿Os",
+    "lo",
+    "explico",
+    "otra",
+    "vez?"
+  ],
+  "answer": "¿Os lo explico otra vez?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Os lo explico."
+},
     {
       "type": "sentence_building",
       "question": "Me / lo / imaginaba / desde / el / principio",
@@ -11406,10 +11406,10 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
     },
     {
       "type": "sentence_building",
-      "question": "Es / palido / de / natural / está / pálido / hoy",
+      "question": "Es / pálido / de / natural / está / pálido / hoy",
       "options": [
         "Es",
-        "palido",
+        "pálido",
         "de",
         "natural",
         "está",
@@ -11821,17 +11821,17 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Son amigos…"
     },
     {
-      "type": "sentence_building",
-      "question": "¿Cómo / estás / hoy?",
-      "options": [
-        "¿Cómo",
-        "estás",
-        "hoy?"
-      ],
-      "answer": "¿Cómo estás hoy?",
-      "instruction": "Составьте предложение из слов",
-      "explanation": "¿Cómo estás?"
-    },
+  "type": "sentence_building",
+  "question": "¿Cómo / estás / hoy?",
+  "options": [
+    "¿Cómo",
+    "estás",
+    "hoy?"
+  ],
+  "answer": "¿Cómo estás hoy?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Cómo estás?"
+},
     {
       "type": "sentence_building",
       "question": "No / estoy / de / acuerdo",
@@ -11922,17 +11922,17 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Estoy contento."
     },
     {
-      "type": "sentence_building",
-      "question": "¿Eres / de / España?",
-      "options": [
-        "¿Eres",
-        "de",
-        "España?"
-      ],
-      "answer": "¿Eres de España?",
-      "instruction": "Составьте предложение из слов",
-      "explanation": "Соберите слова в естественном порядке испанского предложения."
-    },
+  "type": "sentence_building",
+  "question": "¿Eres / de / España?",
+  "options": [
+    "¿Eres",
+    "de",
+    "España?"
+  ],
+  "answer": "¿Eres de España?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Соберите слова в естественном порядке испанского предложения."
+},
     {
       "type": "sentence_building",
       "question": "Mi / hermana / es / médica",
@@ -12045,20 +12045,20 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Se dice que…"
     },
     {
-      "type": "sentence_building",
-      "question": "¿Cómo / se / dice / esto / en / español?",
-      "options": [
-        "¿Cómo",
-        "se",
-        "dice",
-        "esto",
-        "en",
-        "español?"
-      ],
-      "answer": "¿Cómo se dice esto en español?",
-      "instruction": "Составьте предложение из слов",
-      "explanation": "¿Cómo se dice…?"
-    },
+  "type": "sentence_building",
+  "question": "¿Cómo / se / dice / esto / en / español?",
+  "options": [
+    "¿Cómo",
+    "se",
+    "dice",
+    "esto",
+    "en",
+    "español?"
+  ],
+  "answer": "¿Cómo se dice esto en español?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Cómo se dice…?"
+},
     {
       "type": "sentence_building",
       "question": "Se / construyeron / muchas / casas",
@@ -12434,20 +12434,20 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Había salido antes…"
     },
     {
-      "type": "sentence_building",
-      "question": "¿Habías / estado / alguna / vez / en / Perú?",
-      "options": [
-        "¿Habías",
-        "estado",
-        "alguna",
-        "vez",
-        "en",
-        "Perú?"
-      ],
-      "answer": "¿Habías estado alguna vez en Perú?",
-      "instruction": "Составьте предложение из слов",
-      "explanation": "¿Habías estado…?"
-    },
+  "type": "sentence_building",
+  "question": "¿Habías / estado / alguna / vez / en / Perú?",
+  "options": [
+    "¿Habías",
+    "estado",
+    "alguna",
+    "vez",
+    "en",
+    "Perú?"
+  ],
+  "answer": "¿Habías estado alguna vez en Perú?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Habías estado…?"
+},
     {
       "type": "sentence_building",
       "question": "Había / olvidado / las / llaves / en / casa",
@@ -12583,18 +12583,18 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Habían terminado — они закончили."
     },
     {
-      "type": "sentence_building",
-      "question": "¿Habías / visitado / Roma / antes?",
-      "options": [
-        "¿Habías",
-        "visitado",
-        "Roma",
-        "antes?"
-      ],
-      "answer": "¿Habías visitado Roma antes?",
-      "instruction": "Составьте предложение из слов",
-      "explanation": "¿Habías visitado? — ты бывал?"
-    },
+  "type": "sentence_building",
+  "question": "¿Habías / visitado / Roma / antes?",
+  "options": [
+    "¿Habías",
+    "visitado",
+    "Roma",
+    "antes?"
+  ],
+  "answer": "¿Habías visitado Roma antes?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Habías visitado? — ты бывал?"
+},
     {
       "type": "sentence_building",
       "question": "Me / dijo / que / ya / había / pagado",
@@ -12930,19 +12930,19 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "No me lo creo."
     },
     {
-      "type": "sentence_building",
-      "question": "¿Te / lo / han / contado / ya?",
-      "options": [
-        "¿Te",
-        "lo",
-        "han",
-        "contado",
-        "ya?"
-      ],
-      "answer": "¿Te lo han contado ya?",
-      "instruction": "Te lo",
-      "explanation": "¿Te lo han contado?"
-    },
+  "type": "sentence_building",
+  "question": "¿Te / lo / han / contado / ya?",
+  "options": [
+    "¿Te",
+    "lo",
+    "han",
+    "contado",
+    "ya?"
+  ],
+  "answer": "¿Te lo han contado ya?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Te lo han contado?"
+},
     {
       "type": "sentence_building",
       "question": "Se / las / envié / por / correo",
@@ -13164,20 +13164,20 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "Se las compré — купил их ей/им."
     },
     {
-      "type": "sentence_building",
-      "question": "¿Me / la / puedes / prestar / un / rato?",
-      "options": [
-        "¿Me",
-        "la",
-        "puedes",
-        "prestar",
-        "un",
-        "rato?"
-      ],
-      "answer": "¿Me la puedes prestar un rato?",
-      "instruction": "Pronombres — me la",
-      "explanation": "¿Me la puedes prestar? — можешь одолжить мне её?"
-    }
+  "type": "sentence_building",
+  "question": "¿Me / la / puedes / prestar / un / rato?",
+  "options": [
+    "¿Me",
+    "la",
+    "puedes",
+    "prestar",
+    "un",
+    "rato?"
+  ],
+  "answer": "¿Me la puedes prestar un rato?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Me la puedes prestar? — можешь одолжить мне её?"
+}
   ],
   "chapter-37-adverbios": [
     {
@@ -13656,19 +13656,19 @@ export const SPANISH_CURATED_SUPPLEMENTS = {
       "explanation": "La semana pasada → compré."
     },
     {
-      "type": "sentence_building",
-      "question": "¿Has / visto / la / película / nueva?",
-      "options": [
-        "¿Has",
-        "visto",
-        "la",
-        "película",
-        "nueva?"
-      ],
-      "answer": "¿Has visto la película nueva?",
-      "instruction": "Составьте предложение из слов",
-      "explanation": "¿Has visto…?"
-    },
+  "type": "sentence_building",
+  "question": "¿Has / visto / la / película / nueva?",
+  "options": [
+    "¿Has",
+    "visto",
+    "la",
+    "película",
+    "nueva?"
+  ],
+  "answer": "¿Has visto la película nueva?",
+  "instruction": "Соберите вопрос",
+  "explanation": "¿Has visto…?"
+},
     {
       "type": "sentence_building",
       "question": "Cuando / llegué / ya / habían / salido",

@@ -307,16 +307,16 @@ const INSTRUCTION_BY_KEY: Record<
     de: "Übersetze ins Spanische",
   },
   translate_to_en: {
-    ru: "Переведите на английский",
-    en: "Translate into English",
-    es: "Traduce al inglés",
-    de: "Übersetze ins Englische",
+    ru: "Переведите на английский и введите ответ в поле ниже",
+    en: "Translate into English in the box below",
+    es: "Traduce al inglés en el campo de abajo",
+    de: "Übersetze ins Englische in das Feld unten",
   },
   translate: {
-    ru: "Переведите предложение",
-    en: "Translate the sentence",
-    es: "Traduce la frase",
-    de: "Übersetze den Satz",
+    ru: "Переведите предложение в поле ввода ниже",
+    en: "Translate the sentence in the input below",
+    es: "Traduce la frase en el campo de abajo",
+    de: "Übersetze den Satz in das Feld unten",
   },
   reading_comprehension: {
     ru: "Прочитайте текст и выберите ответ",
@@ -403,7 +403,7 @@ const GENERIC_INSTRUCTION: Record<
   ru: {
     multiple_choice: "Выберите один правильный вариант из списка",
     fill_blank: "Впишите одно пропущенное слово или форму глагола",
-    translation: "Переведите фразу на целевой язык в поле ввода",
+    translation: "Переведите фразу на язык курса и введите ответ в поле ниже",
     error_correction: "Найдите ошибку и напишите исправленное предложение целиком",
     sentence_building:
       "Соберите фразу, нажимая слова ниже по порядку — не переводите и не печатайте",

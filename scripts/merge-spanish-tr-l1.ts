@@ -325,7 +325,7 @@ const ADDITIONS: Record<
     de: "Ich glaube das nicht.",
     es: "I do not believe it.",
   },
-  "Они уже сказали вам.": {
+  "Они уже сказали вам?": {
     en: "Have they already told you?",
     de: "Haben sie es dir schon erzählt?",
     es: "Have they already told you?",

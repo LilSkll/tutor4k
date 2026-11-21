@@ -30,16 +30,16 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "lose → lost."
     },
     {
-      "type": "translation",
-      "question": "Ты когда-нибудь был в Париже?",
-      "answer": "Did you ever visit Paris?",
-      "instruction": "Переведите на английский",
-      "explanation": "Did you ever + base verb?",
-      "acceptableAnswers": [
-        "Have you ever been to Paris?",
-        "Have you ever visited Paris?"
-      ]
-    },
+  "type": "translation",
+  "question": "Ты когда-нибудь был в Париже?",
+  "answer": "Did you ever visit Paris?",
+  "instruction": "Переведите вопрос",
+  "explanation": "Did you ever + base verb?",
+  "acceptableAnswers": [
+    "Have you ever been to Paris?",
+    "Have you ever visited Paris?"
+  ]
+},
     {
       "type": "translation",
       "question": "Они приехали поздно.",
@@ -249,19 +249,19 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "lose → lost."
     },
     {
-      "type": "sentence_building",
-      "question": "Did / you / ever / visit / Paris?",
-      "options": [
-        "Did",
-        "you",
-        "ever",
-        "visit",
-        "Paris?"
-      ],
-      "answer": "Did you ever visit Paris?",
-      "instruction": "Соберите предложение",
-      "explanation": "Did you ever visit…?"
-    },
+  "type": "sentence_building",
+  "question": "Did / you / ever / visit / Paris?",
+  "options": [
+    "Did",
+    "you",
+    "ever",
+    "visit",
+    "Paris?"
+  ],
+  "answer": "Did you ever visit Paris?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Did you ever visit…?"
+},
     {
       "type": "sentence_building",
       "question": "They / arrived / late / at / the / station",
@@ -387,19 +387,19 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "buy → bought (irregular)."
     },
     {
-      "type": "sentence_building",
-      "question": "Did / they / finish / the / project?",
-      "options": [
-        "Did",
-        "they",
-        "finish",
-        "the",
-        "project?"
-      ],
-      "answer": "Did they finish the project?",
-      "instruction": "Соберите предложение",
-      "explanation": "Did + subject + base verb."
-    },
+  "type": "sentence_building",
+  "question": "Did / they / finish / the / project?",
+  "options": [
+    "Did",
+    "they",
+    "finish",
+    "the",
+    "project?"
+  ],
+  "answer": "Did they finish the project?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Did + subject + base verb."
+},
     {
       "type": "sentence_building",
       "question": "She / sang / at / the / concert / on / Saturday",
@@ -1041,12 +1041,12 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "have just + V3."
     },
     {
-      "type": "translation",
-      "question": "Ты когда-нибудь пробовал суши?",
-      "answer": "Have you ever tried sushi?",
-      "instruction": "Переведите на английский",
-      "explanation": "Have you ever + V3?"
-    },
+  "type": "translation",
+  "question": "Ты когда-нибудь пробовал суши?",
+  "answer": "Have you ever tried sushi?",
+  "instruction": "Переведите вопрос",
+  "explanation": "Have you ever + V3?"
+},
     {
       "type": "translation",
       "question": "Он потерял паспорт.",
@@ -1090,12 +1090,12 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "has written two books."
     },
     {
-      "type": "translation",
-      "question": "Ты когда-нибудь летал на воздушном шаре?",
-      "answer": "Have you ever flown in a hot air balloon?",
-      "instruction": "Переведите на английский",
-      "explanation": "Have you ever flown…?"
-    },
+  "type": "translation",
+  "question": "Ты когда-нибудь летал на воздушном шаре?",
+  "answer": "Have you ever flown in a hot air balloon?",
+  "instruction": "Переведите вопрос",
+  "explanation": "Have you ever flown…?"
+},
     {
       "type": "translation",
       "question": "Я ещё не ел сегодня.",
@@ -1245,19 +1245,19 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "have just arrived."
     },
     {
-      "type": "sentence_building",
-      "question": "Have / you / ever / tried / sushi?",
-      "options": [
-        "Have",
-        "you",
-        "ever",
-        "tried",
-        "sushi?"
-      ],
-      "answer": "Have you ever tried sushi?",
-      "instruction": "Соберите предложение",
-      "explanation": "Have you ever tried…?"
-    },
+  "type": "sentence_building",
+  "question": "Have / you / ever / tried / sushi?",
+  "options": [
+    "Have",
+    "you",
+    "ever",
+    "tried",
+    "sushi?"
+  ],
+  "answer": "Have you ever tried sushi?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Have you ever tried…?"
+},
     {
       "type": "sentence_building",
       "question": "He / has / lost / his / passport",
@@ -1347,23 +1347,23 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "has written two books."
     },
     {
-      "type": "sentence_building",
-      "question": "Have / you / ever / flown / in / a / hot / air / balloon?",
-      "options": [
-        "Have",
-        "you",
-        "ever",
-        "flown",
-        "in",
-        "a",
-        "hot",
-        "air",
-        "balloon?"
-      ],
-      "answer": "Have you ever flown in a hot air balloon?",
-      "instruction": "Соберите предложение",
-      "explanation": "Have you ever flown…?"
-    },
+  "type": "sentence_building",
+  "question": "Have / you / ever / flown / in / a / hot / air / balloon?",
+  "options": [
+    "Have",
+    "you",
+    "ever",
+    "flown",
+    "in",
+    "a",
+    "hot",
+    "air",
+    "balloon?"
+  ],
+  "answer": "Have you ever flown in a hot air balloon?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Have you ever flown…?"
+},
     {
       "type": "sentence_building",
       "question": "I / haven't / eaten / today",
@@ -1409,20 +1409,20 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "have known… for years."
     },
     {
-      "type": "sentence_building",
-      "question": "Has / he / ever / eaten / Indian / food?",
-      "options": [
-        "Has",
-        "he",
-        "ever",
-        "eaten",
-        "Indian",
-        "food?"
-      ],
-      "answer": "Has he ever eaten Indian food?",
-      "instruction": "Соберите предложение",
-      "explanation": "Has he ever + V3?"
-    },
+  "type": "sentence_building",
+  "question": "Has / he / ever / eaten / Indian / food?",
+  "options": [
+    "Has",
+    "he",
+    "ever",
+    "eaten",
+    "Indian",
+    "food?"
+  ],
+  "answer": "Has he ever eaten Indian food?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Has he ever + V3?"
+},
     {
       "type": "sentence_building",
       "question": "They / have / never / visited / Scotland",
@@ -1538,12 +1538,12 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "probably won't come."
     },
     {
-      "type": "translation",
-      "question": "Ты успеешь?",
-      "answer": "Will you make it in time?",
-      "instruction": "Переведите на английский",
-      "explanation": "Will you make it…?"
-    },
+  "type": "translation",
+  "question": "Ты успеешь?",
+  "answer": "Will you make it in time?",
+  "instruction": "Переведите вопрос",
+  "explanation": "Will you make it…?"
+},
     {
       "type": "translation",
       "question": "Это будет сложно.",
@@ -1770,20 +1770,20 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "probably won't come."
     },
     {
-      "type": "sentence_building",
-      "question": "Will / you / make / it / in / time?",
-      "options": [
-        "Will",
-        "you",
-        "make",
-        "it",
-        "in",
-        "time?"
-      ],
-      "answer": "Will you make it in time?",
-      "instruction": "Соберите предложение",
-      "explanation": "Will you make it in time?"
-    },
+  "type": "sentence_building",
+  "question": "Will / you / make / it / in / time?",
+  "options": [
+    "Will",
+    "you",
+    "make",
+    "it",
+    "in",
+    "time?"
+  ],
+  "answer": "Will you make it in time?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Will you make it in time?"
+},
     {
       "type": "sentence_building",
       "question": "It / will / be / difficult",
@@ -1899,19 +1899,19 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "will change everything."
     },
     {
-      "type": "sentence_building",
-      "question": "Will / she / accept / the / offer?",
-      "options": [
-        "Will",
-        "she",
-        "accept",
-        "the",
-        "offer?"
-      ],
-      "answer": "Will she accept the offer?",
-      "instruction": "Соберите предложение",
-      "explanation": "Will she accept…?"
-    },
+  "type": "sentence_building",
+  "question": "Will / she / accept / the / offer?",
+  "options": [
+    "Will",
+    "she",
+    "accept",
+    "the",
+    "offer?"
+  ],
+  "answer": "Will she accept the offer?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Will she accept…?"
+},
     {
       "type": "sentence_building",
       "question": "They / will / not / be / ready / in / time",
@@ -2206,22 +2206,26 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "were watching TV."
     },
     {
-      "type": "sentence_building",
-      "question": "When / I / arrived / the / train / had / already / left",
-      "options": [
-        "When",
-        "I",
-        "arrived",
-        "the",
-        "train",
-        "had",
-        "already",
-        "left"
-      ],
-      "answer": "When I arrived the train had already left",
-      "instruction": "Соберите предложение",
-      "explanation": "had already left."
-    },
+  "type": "sentence_building",
+  "question": "When / I / arrived / the / train / had / already / left",
+  "options": [
+    "When",
+    "I",
+    "arrived",
+    "the",
+    "train",
+    "had",
+    "already",
+    "left"
+  ],
+  "answer": "When I arrived the train had already left?",
+  "instruction": "Соберите вопрос",
+  "explanation": "had already left.",
+  "acceptableAnswers": [
+    "When I arrived the train had already left",
+    "When I arrived the train had already left?"
+  ]
+},
     {
       "type": "sentence_building",
       "question": "I / used / to / play / tennis",
@@ -2411,21 +2415,25 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "was working when I saw him."
     },
     {
-      "type": "sentence_building",
-      "question": "When / I / woke / up / it / was / raining",
-      "options": [
-        "When",
-        "I",
-        "woke",
-        "up",
-        "it",
-        "was",
-        "raining"
-      ],
-      "answer": "When I woke up it was raining",
-      "instruction": "Соберите предложение",
-      "explanation": "was raining — фоновое действие."
-    },
+  "type": "sentence_building",
+  "question": "When / I / woke / up / it / was / raining",
+  "options": [
+    "When",
+    "I",
+    "woke",
+    "up",
+    "it",
+    "was",
+    "raining"
+  ],
+  "answer": "When I woke up it was raining?",
+  "instruction": "Соберите вопрос",
+  "explanation": "was raining — фоновое действие.",
+  "acceptableAnswers": [
+    "When I woke up it was raining",
+    "When I woke up it was raining?"
+  ]
+},
     {
       "type": "sentence_building",
       "question": "They / were / talking / while / I / was / cooking",
@@ -2509,12 +2517,12 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "has been working since 2020."
     },
     {
-      "type": "translation",
-      "question": "Сколько времени ты ждёшь?",
-      "answer": "How long have you been waiting?",
-      "instruction": "Переведите на английский",
-      "explanation": "How long have you been + V-ing?"
-    },
+  "type": "translation",
+  "question": "Сколько времени ты ждёшь?",
+  "answer": "How long have you been waiting?",
+  "instruction": "Переведите вопрос",
+  "explanation": "How long have you been + V-ing?"
+},
     {
       "type": "translation",
       "question": "Они учат испанский два года.",
@@ -2558,12 +2566,12 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "has been playing… all evening."
     },
     {
-      "type": "translation",
-      "question": "Сколько времени ты изучаешь английский?",
-      "answer": "How long have you been learning English?",
-      "instruction": "Переведите на английский",
-      "explanation": "How long have you been learning…?"
-    },
+  "type": "translation",
+  "question": "Сколько времени ты изучаешь английский?",
+  "answer": "How long have you been learning English?",
+  "instruction": "Переведите вопрос",
+  "explanation": "How long have you been learning…?"
+},
     {
       "type": "translation",
       "question": "Я давно хочу посетить Японию.",
@@ -2579,12 +2587,12 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "have been renovating… for three months."
     },
     {
-      "type": "translation",
-      "question": "Ты давно здесь?",
-      "answer": "Have you been here long?",
-      "instruction": "Переведите на английский",
-      "explanation": "Have you been here long?"
-    },
+  "type": "translation",
+  "question": "Ты давно здесь?",
+  "answer": "Have you been here long?",
+  "instruction": "Переведите вопрос",
+  "explanation": "Have you been here long?"
+},
     {
       "type": "translation",
       "question": "Она весь день говорит по телефону.",
@@ -2707,20 +2715,20 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "has been working since 2020."
     },
     {
-      "type": "sentence_building",
-      "question": "How / long / have / you / been / waiting?",
-      "options": [
-        "How",
-        "long",
-        "have",
-        "you",
-        "been",
-        "waiting?"
-      ],
-      "answer": "How long have you been waiting?",
-      "instruction": "Соберите предложение",
-      "explanation": "How long have you been waiting?"
-    },
+  "type": "sentence_building",
+  "question": "How / long / have / you / been / waiting?",
+  "options": [
+    "How",
+    "long",
+    "have",
+    "you",
+    "been",
+    "waiting?"
+  ],
+  "answer": "How long have you been waiting?",
+  "instruction": "Соберите вопрос",
+  "explanation": "How long have you been waiting?"
+},
     {
       "type": "sentence_building",
       "question": "They / have / been / studying / Spanish / for / two / years",
@@ -2819,21 +2827,21 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "has been playing all evening."
     },
     {
-      "type": "sentence_building",
-      "question": "How / long / have / you / been / learning / English?",
-      "options": [
-        "How",
-        "long",
-        "have",
-        "you",
-        "been",
-        "learning",
-        "English?"
-      ],
-      "answer": "How long have you been learning English?",
-      "instruction": "Соберите предложение",
-      "explanation": "How long have you been learning English?"
-    },
+  "type": "sentence_building",
+  "question": "How / long / have / you / been / learning / English?",
+  "options": [
+    "How",
+    "long",
+    "have",
+    "you",
+    "been",
+    "learning",
+    "English?"
+  ],
+  "answer": "How long have you been learning English?",
+  "instruction": "Соберите вопрос",
+  "explanation": "How long have you been learning English?"
+},
     {
       "type": "sentence_building",
       "question": "I / have / been / wanting / to / visit / Japan / for / ages",
@@ -2871,19 +2879,19 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "have been renovating for three months."
     },
     {
-      "type": "sentence_building",
-      "question": "Have / you / been / here / long?",
-      "options": [
-        "Have",
-        "you",
-        "been",
-        "here",
-        "long?"
-      ],
-      "answer": "Have you been here long?",
-      "instruction": "Соберите предложение",
-      "explanation": "Have you been here long?"
-    },
+  "type": "sentence_building",
+  "question": "Have / you / been / here / long?",
+  "options": [
+    "Have",
+    "you",
+    "been",
+    "here",
+    "long?"
+  ],
+  "answer": "Have you been here long?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Have you been here long?"
+},
     {
       "type": "sentence_building",
       "question": "She / has / been / on / the / phone / all / day",
@@ -2902,20 +2910,20 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "has been on the phone all day."
     },
     {
-      "type": "sentence_building",
-      "question": "How / long / have / you / been / waiting?",
-      "options": [
-        "How",
-        "long",
-        "have",
-        "you",
-        "been",
-        "waiting?"
-      ],
-      "answer": "How long have you been waiting?",
-      "instruction": "Соберите предложение",
-      "explanation": "How long have you been waiting?"
-    },
+  "type": "sentence_building",
+  "question": "How / long / have / you / been / waiting?",
+  "options": [
+    "How",
+    "long",
+    "have",
+    "you",
+    "been",
+    "waiting?"
+  ],
+  "answer": "How long have you been waiting?",
+  "instruction": "Соберите вопрос",
+  "explanation": "How long have you been waiting?"
+},
     {
       "type": "sentence_building",
       "question": "They / have / been / arguing / all / morning",
@@ -6447,18 +6455,18 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "don't have to come."
     },
     {
-      "type": "sentence_building",
-      "question": "Can / you / help / me?",
-      "options": [
-        "Can",
-        "you",
-        "help",
-        "me?"
-      ],
-      "answer": "Can you help me?",
-      "instruction": "Can — request",
-      "explanation": "Can you help me?"
-    },
+  "type": "sentence_building",
+  "question": "Can / you / help / me?",
+  "options": [
+    "Can",
+    "you",
+    "help",
+    "me?"
+  ],
+  "answer": "Can you help me?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Can you help me?"
+},
     {
       "type": "sentence_building",
       "question": "She / can / play / the / piano",
@@ -6474,32 +6482,32 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "can play the piano."
     },
     {
-      "type": "sentence_building",
-      "question": "May / I / come / in?",
-      "options": [
-        "May",
-        "I",
-        "come",
-        "in?"
-      ],
-      "answer": "May I come in?",
-      "instruction": "May — permission",
-      "explanation": "May I come in?"
-    },
+  "type": "sentence_building",
+  "question": "May / I / come / in?",
+  "options": [
+    "May",
+    "I",
+    "come",
+    "in?"
+  ],
+  "answer": "May I come in?",
+  "instruction": "Соберите вопрос",
+  "explanation": "May I come in?"
+},
     {
-      "type": "sentence_building",
-      "question": "Could / you / close / the / window?",
-      "options": [
-        "Could",
-        "you",
-        "close",
-        "the",
-        "window?"
-      ],
-      "answer": "Could you close the window?",
-      "instruction": "Could — polite request",
-      "explanation": "Could you close the window?"
-    },
+  "type": "sentence_building",
+  "question": "Could / you / close / the / window?",
+  "options": [
+    "Could",
+    "you",
+    "close",
+    "the",
+    "window?"
+  ],
+  "answer": "Could you close the window?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Could you close the window?"
+},
     {
       "type": "sentence_building",
       "question": "He / must / be / lost",
@@ -7518,37 +7526,41 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "Of course = of course I can."
     },
     {
-      "type": "sentence_building",
-      "question": "A / Would / you / like / tea? / B / I'd / love / some",
-      "options": [
-        "A",
-        "Would",
-        "you",
-        "like",
-        "tea?",
-        "B",
-        "I'd",
-        "love",
-        "some"
-      ],
-      "answer": "A: Would you like tea? B: I'd love some",
-      "instruction": "Ellipsis some",
-      "explanation": "I'd love some = some tea"
-    },
+  "type": "sentence_building",
+  "question": "A / Would / you / like / tea? / B / I'd / love / some",
+  "options": [
+    "A",
+    "Would",
+    "you",
+    "like",
+    "tea?",
+    "B",
+    "I'd",
+    "love",
+    "some"
+  ],
+  "answer": "A Would you like tea? B I'd love some",
+  "acceptableAnswers": [
+    "A: Would you like tea? B: I'd love some",
+    "A Would you like tea? B I'd love some"
+  ],
+  "instruction": "Соберите вопрос",
+  "explanation": "I'd love some = some tea"
+},
     {
-      "type": "sentence_building",
-      "question": "I / can / swim / Can / you?",
-      "options": [
-        "I",
-        "can",
-        "swim",
-        "Can",
-        "you?"
-      ],
-      "answer": "I can swim. Can you?",
-      "instruction": "Modal ellipsis",
-      "explanation": "Can you? = Can you swim?"
-    },
+  "type": "sentence_building",
+  "question": "I / can / swim / Can / you?",
+  "options": [
+    "I",
+    "can",
+    "swim",
+    "Can",
+    "you?"
+  ],
+  "answer": "I can swim. Can you?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Can you? = Can you swim?"
+},
     {
       "type": "sentence_building",
       "question": "She / works / harder / than / he / does",
@@ -7565,35 +7577,35 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "he does = he works"
     },
     {
-      "type": "sentence_building",
-      "question": "Will / it / work? / I / hope / so",
-      "options": [
-        "Will",
-        "it",
-        "work?",
-        "I",
-        "hope",
-        "so"
-      ],
-      "answer": "Will it work? I hope so",
-      "instruction": "Hope so",
-      "explanation": "I hope so"
-    },
+  "type": "sentence_building",
+  "question": "Will / it / work? / I / hope / so",
+  "options": [
+    "Will",
+    "it",
+    "work?",
+    "I",
+    "hope",
+    "so"
+  ],
+  "answer": "Will it work? I hope so",
+  "instruction": "Соберите вопрос",
+  "explanation": "I hope so"
+},
     {
-      "type": "sentence_building",
-      "question": "Are / you / coming? / I'm / afraid / not",
-      "options": [
-        "Are",
-        "you",
-        "coming?",
-        "I'm",
-        "afraid",
-        "not"
-      ],
-      "answer": "Are you coming? I'm afraid not",
-      "instruction": "Afraid not",
-      "explanation": "I'm afraid not"
-    },
+  "type": "sentence_building",
+  "question": "Are / you / coming? / I'm / afraid / not",
+  "options": [
+    "Are",
+    "you",
+    "coming?",
+    "I'm",
+    "afraid",
+    "not"
+  ],
+  "answer": "Are you coming? I'm afraid not",
+  "instruction": "Соберите вопрос",
+  "explanation": "I'm afraid not"
+},
     {
       "type": "sentence_building",
       "question": "I / don't / like / it / Neither / do / I",
@@ -7611,19 +7623,19 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "Neither do I"
     },
     {
-      "type": "sentence_building",
-      "question": "Who / wants / coffee? / I / do",
-      "options": [
-        "Who",
-        "wants",
-        "coffee?",
-        "I",
-        "do"
-      ],
-      "answer": "Who wants coffee? I do",
-      "instruction": "I do substitution",
-      "explanation": "I do = I want coffee"
-    },
+  "type": "sentence_building",
+  "question": "Who / wants / coffee? / I / do",
+  "options": [
+    "Who",
+    "wants",
+    "coffee?",
+    "I",
+    "do"
+  ],
+  "answer": "Who wants coffee? I do",
+  "instruction": "Соберите вопрос",
+  "explanation": "I do = I want coffee"
+},
     {
       "type": "sentence_building",
       "question": "Take / the / blue / one / not / the / red",
@@ -7673,50 +7685,50 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "I'd rather not"
     },
     {
-      "type": "sentence_building",
-      "question": "Have / you / finished? / Not / yet",
-      "options": [
-        "Have",
-        "you",
-        "finished?",
-        "Not",
-        "yet"
-      ],
-      "answer": "Have you finished? Not yet",
-      "instruction": "Not yet",
-      "explanation": "Not yet"
-    },
+  "type": "sentence_building",
+  "question": "Have / you / finished? / Not / yet",
+  "options": [
+    "Have",
+    "you",
+    "finished?",
+    "Not",
+    "yet"
+  ],
+  "answer": "Have you finished? Not yet",
+  "instruction": "Соберите вопрос",
+  "explanation": "Not yet"
+},
     {
-      "type": "sentence_building",
-      "question": "Can / you / help? / I'd / be / glad / to",
-      "options": [
-        "Can",
-        "you",
-        "help?",
-        "I'd",
-        "be",
-        "glad",
-        "to"
-      ],
-      "answer": "Can you help? I'd be glad to",
-      "instruction": "Glad to",
-      "explanation": "I'd be glad to help"
-    },
+  "type": "sentence_building",
+  "question": "Can / you / help? / I'd / be / glad / to",
+  "options": [
+    "Can",
+    "you",
+    "help?",
+    "I'd",
+    "be",
+    "glad",
+    "to"
+  ],
+  "answer": "Can you help? I'd be glad to",
+  "instruction": "Соберите вопрос",
+  "explanation": "I'd be glad to help"
+},
     {
-      "type": "sentence_building",
-      "question": "Will / she / agree? / I / expect / so",
-      "options": [
-        "Will",
-        "she",
-        "agree?",
-        "I",
-        "expect",
-        "so"
-      ],
-      "answer": "Will she agree? I expect so",
-      "instruction": "Expect so",
-      "explanation": "I expect so"
-    },
+  "type": "sentence_building",
+  "question": "Will / she / agree? / I / expect / so",
+  "options": [
+    "Will",
+    "she",
+    "agree?",
+    "I",
+    "expect",
+    "so"
+  ],
+  "answer": "Will she agree? I expect so",
+  "instruction": "Соберите вопрос",
+  "explanation": "I expect so"
+},
     {
       "type": "sentence_building",
       "question": "He / runs / fast / So / do / I",
@@ -8607,18 +8619,18 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "My + существительное без артикля."
     },
     {
-      "type": "sentence_building",
-      "question": "Is / this / your / phone?",
-      "options": [
-        "Is",
-        "this",
-        "your",
-        "phone?"
-      ],
-      "answer": "Is this your phone?",
-      "instruction": "Притяжательные — your",
-      "explanation": "Your перед существительным."
-    },
+  "type": "sentence_building",
+  "question": "Is / this / your / phone?",
+  "options": [
+    "Is",
+    "this",
+    "your",
+    "phone?"
+  ],
+  "answer": "Is this your phone?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Your перед существительным."
+},
     {
       "type": "sentence_building",
       "question": "Their / house / is / very / big",
@@ -8663,18 +8675,18 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "Children's — множественное число + 's."
     },
     {
-      "type": "sentence_building",
-      "question": "Whose / keys / are / these?",
-      "options": [
-        "Whose",
-        "keys",
-        "are",
-        "these?"
-      ],
-      "answer": "Whose keys are these?",
-      "instruction": "Whose — чей?",
-      "explanation": "Whose keys — вопрос о принадлежности."
-    },
+  "type": "sentence_building",
+  "question": "Whose / keys / are / these?",
+  "options": [
+    "Whose",
+    "keys",
+    "are",
+    "these?"
+  ],
+  "answer": "Whose keys are these?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Whose keys — вопрос о принадлежности."
+},
     {
       "type": "sentence_building",
       "question": "That / laptop / is / mine",
@@ -8689,18 +8701,18 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "Mine — без существительного после."
     },
     {
-      "type": "sentence_building",
-      "question": "Are / these / gloves / yours?",
-      "options": [
-        "Are",
-        "these",
-        "gloves",
-        "yours?"
-      ],
-      "answer": "Are these gloves yours?",
-      "instruction": "Yours — твои",
-      "explanation": "Yours = your gloves."
-    },
+  "type": "sentence_building",
+  "question": "Are / these / gloves / yours?",
+  "options": [
+    "Are",
+    "these",
+    "gloves",
+    "yours?"
+  ],
+  "answer": "Are these gloves yours?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Yours = your gloves."
+},
     {
       "type": "sentence_building",
       "question": "Our / teacher / is / from / Scotland",
@@ -8789,31 +8801,31 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "My umbrella at your place."
     },
     {
-      "type": "sentence_building",
-      "question": "Is / that / coat / hers?",
-      "options": [
-        "Is",
-        "that",
-        "coat",
-        "hers?"
-      ],
-      "answer": "Is that coat hers?",
-      "instruction": "Hers — её",
-      "explanation": "Hers = her coat."
-    },
+  "type": "sentence_building",
+  "question": "Is / that / coat / hers?",
+  "options": [
+    "Is",
+    "that",
+    "coat",
+    "hers?"
+  ],
+  "answer": "Is that coat hers?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Hers = her coat."
+},
     {
-      "type": "sentence_building",
-      "question": "Is / this / his / pen?",
-      "options": [
-        "Is",
-        "this",
-        "his",
-        "pen?"
-      ],
-      "answer": "Is this his pen?",
-      "instruction": "Притяжательные — his",
-      "explanation": "his + pen."
-    },
+  "type": "sentence_building",
+  "question": "Is / this / his / pen?",
+  "options": [
+    "Is",
+    "this",
+    "his",
+    "pen?"
+  ],
+  "answer": "Is this his pen?",
+  "instruction": "Соберите вопрос",
+  "explanation": "his + pen."
+},
     {
       "type": "sentence_building",
       "question": "Our / neighbours / are / very / friendly",
@@ -8843,18 +8855,18 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "its — для животных и вещей."
     },
     {
-      "type": "sentence_building",
-      "question": "Whose / turn / is / it?",
-      "options": [
-        "Whose",
-        "turn",
-        "is",
-        "it?"
-      ],
-      "answer": "Whose turn is it?",
-      "instruction": "Whose — чей?",
-      "explanation": "Whose turn is it? — чья очередь?"
-    }
+  "type": "sentence_building",
+  "question": "Whose / turn / is / it?",
+  "options": [
+    "Whose",
+    "turn",
+    "is",
+    "it?"
+  ],
+  "answer": "Whose turn is it?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Whose turn is it? — чья очередь?"
+}
   ],
   "eng-ch32-relative-clauses": [
     {
@@ -9272,22 +9284,22 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "Let you know — сообщить."
     },
     {
-      "type": "sentence_building",
-      "question": "By / the / way / how / is / your / new / job?",
-      "options": [
-        "By",
-        "the",
-        "way",
-        "how",
-        "is",
-        "your",
-        "new",
-        "job?"
-      ],
-      "answer": "By the way how is your new job?",
-      "instruction": "Кстати",
-      "explanation": "By the way — дополнительный вопрос."
-    },
+  "type": "sentence_building",
+  "question": "By / the / way / how / is / your / new / job?",
+  "options": [
+    "By",
+    "the",
+    "way",
+    "how",
+    "is",
+    "your",
+    "new",
+    "job?"
+  ],
+  "answer": "By the way how is your new job?",
+  "instruction": "Соберите вопрос",
+  "explanation": "By the way — дополнительный вопрос."
+},
     {
       "type": "sentence_building",
       "question": "Give / my / love / to / your / family",
@@ -11686,22 +11698,22 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "Would be obliged — вместо please help."
     },
     {
-      "type": "sentence_building",
-      "question": "Can / you / give / me / a / hand / with / this?",
-      "options": [
-        "Can",
-        "you",
-        "give",
-        "me",
-        "a",
-        "hand",
-        "with",
-        "this?"
-      ],
-      "answer": "Can you give me a hand with this?",
-      "instruction": "Неформальный регистр",
-      "explanation": "Give me a hand — разговорное."
-    },
+  "type": "sentence_building",
+  "question": "Can / you / give / me / a / hand / with / this?",
+  "options": [
+    "Can",
+    "you",
+    "give",
+    "me",
+    "a",
+    "hand",
+    "with",
+    "this?"
+  ],
+  "answer": "Can you give me a hand with this?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Give me a hand — разговорное."
+},
     {
       "type": "sentence_building",
       "question": "We / regret / to / inform / you / that / your / application / was / unsuccessful",
@@ -11906,22 +11918,26 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "You guys — неформальное обращение."
     },
     {
-      "type": "sentence_building",
-      "question": "Should / you / require / further / information / please / contact / us",
-      "options": [
-        "Should",
-        "you",
-        "require",
-        "further",
-        "information",
-        "please",
-        "contact",
-        "us"
-      ],
-      "answer": "Should you require further information please contact us",
-      "instruction": "Формальное предложение",
-      "explanation": "Should you require — инверсия, формально."
-    },
+  "type": "sentence_building",
+  "question": "Should / you / require / further / information / please / contact / us",
+  "options": [
+    "Should",
+    "you",
+    "require",
+    "further",
+    "information",
+    "please",
+    "contact",
+    "us"
+  ],
+  "answer": "Should you require further information please contact us?",
+  "instruction": "Соберите вопрос",
+  "explanation": "Should you require — инверсия, формально.",
+  "acceptableAnswers": [
+    "Should you require further information please contact us",
+    "Should you require further information please contact us?"
+  ]
+},
     {
       "type": "translation",
       "question": "Не могли бы вы мне помочь?",
@@ -12727,12 +12743,12 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "so заменяет целое предложение."
     },
     {
-      "type": "translation",
-      "question": "Ты придёшь? — Надеюсь.",
-      "answer": "Will you come? — I hope so",
-      "instruction": "Переведите на английский",
-      "explanation": "I hope so — so = that you will come."
-    },
+  "type": "translation",
+  "question": "Ты придёшь? — Надеюсь.",
+  "answer": "Will you come? — I hope so",
+  "instruction": "Переведите вопрос",
+  "explanation": "I hope so — so = that you will come."
+},
     {
       "type": "translation",
       "question": "Она устала, а он — нет.",
@@ -12741,12 +12757,12 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "wasn't = wasn't tired — эллипсис глагола."
     },
     {
-      "type": "translation",
-      "question": "Очень красиво, не правда ли?",
-      "answer": "Beautiful, isn't it?",
-      "instruction": "Переведите на английский",
-      "explanation": "Прилагательное в начале + tag question."
-    },
+  "type": "translation",
+  "question": "Очень красиво, не правда ли?",
+  "answer": "Beautiful, isn't it?",
+  "instruction": "Переведите вопрос",
+  "explanation": "Прилагательное в начале + tag question."
+},
     {
       "type": "translation",
       "question": "Такова была её реакция.",
@@ -13136,12 +13152,16 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "should have called — упущенное в прошлом."
     },
     {
-      "type": "translation",
-      "question": "Если бы не её помощь, мы бы провалились.",
-      "answer": "Were it not for her help, we would have failed",
-      "instruction": "Were it not for",
-      "explanation": "Were it not for — формальная альтернатива if it weren't."
-    },
+  "type": "translation",
+  "question": "Если бы не её помощь, мы бы провалились.",
+  "answer": "Were it not for her help, we would have failed?",
+  "instruction": "Were it not for",
+  "explanation": "Were it not for — формальная альтернатива if it weren't.",
+  "acceptableAnswers": [
+    "Were it not for her help, we would have failed",
+    "Were it not for her help, we would have failed?"
+  ]
+},
     {
       "type": "translation",
       "question": "Документ, по-видимому, был подделан.",
@@ -13164,12 +13184,16 @@ export const ENGLISH_CURATED_SUPPLEMENTS = {
       "explanation": "shouldn't have spoken — критика прошлого."
     },
     {
-      "type": "translation",
-      "question": "Если бы я знал, я бы пришёл.",
-      "answer": "Had I known, I would have come",
-      "instruction": "Переведите на английский",
-      "explanation": "Had I known — без if, C1."
-    },
+  "type": "translation",
+  "question": "Если бы я знал, я бы пришёл.",
+  "answer": "Had I known, I would have come?",
+  "instruction": "Переведите вопрос",
+  "explanation": "Had I known — без if, C1.",
+  "acceptableAnswers": [
+    "Had I known, I would have come",
+    "Had I known, I would have come?"
+  ]
+},
     {
       "type": "error_correction",
       "question": "If I had studied medicine, I would have been a doctor now.",

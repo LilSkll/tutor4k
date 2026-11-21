@@ -780,7 +780,7 @@
       },
       {
         "type": "translation",
-        "question": "мы дома.",
+        "question": "Мы дома.",
         "answer": "Estamos en casa",
         "acceptableAnswers": [
           "Estamos en casa",
@@ -827,7 +827,7 @@
           "¿Cómo te llamas",
           "¿cómo te llamas"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       },
       {
@@ -1289,7 +1289,7 @@
           "hoy"
         ],
         "answer": "¿Cómo estás hoy",
-        "instruction": "Составьте предложение из слов",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Cómo estás?",
         "grammarTopic": "a1-ser-estar",
         "acceptableAnswers": []
@@ -1406,7 +1406,7 @@
           "España"
         ],
         "answer": "¿Eres de España",
-        "instruction": "Составьте предложение из слов",
+        "instruction": "Соберите вопрос",
         "explanation": "Проверьте выбор ser/estar и согласование лица.",
         "grammarTopic": "a1-ser-estar",
         "acceptableAnswers": []
@@ -2160,7 +2160,7 @@
         "type": "translation",
         "question": "Ты готовишь ужин сегодня?",
         "answer": "¿Cocinas la cena hoy?",
-        "instruction": "Переведите предложение",
+        "instruction": "Переведите вопрос",
         "explanation": "¿Cocinas…? — готовишь ли ты.",
         "grammarTopic": "a1-presente",
         "acceptableAnswers": []
@@ -2223,13 +2223,13 @@
       },
       {
         "type": "translation",
-        "question": "Что ты делаешь по выходным?.",
+        "question": "Что ты делаешь по выходным?",
         "answer": "¿Qué haces los fines de semana",
         "acceptableAnswers": [
           "¿Qué haces los fines de semana",
           "¿qué haces los fines de semana"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       },
       {
@@ -2245,13 +2245,13 @@
       },
       {
         "type": "translation",
-        "question": "Ты готовишь ужин сегодня вечером?.",
+        "question": "Ты готовишь ужин сегодня вечером?",
         "answer": "¿Cocinas la cena esta noche",
         "acceptableAnswers": [
           "¿Cocinas la cena esta noche",
           "¿cocinas la cena esta noche"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       },
       {
@@ -2268,7 +2268,7 @@
       {
         "question": "Ты пишешь письмо?",
         "answer": "¿Escribes una carta?",
-        "instruction": "Переведите предложение",
+        "instruction": "Переведите вопрос",
         "explanation": "escribes — tú.",
         "type": "translation"
       },
@@ -2285,13 +2285,14 @@
       },
       {
         "type": "translation",
-        "question": "Во сколько ты ужинаешь.",
-        "answer": "¿A qué hora cenáis",
+        "question": "Во сколько ты ужинаешь?",
+        "answer": "¿A qué hora cenas?",
         "acceptableAnswers": [
-          "¿A qué hora cenáis",
-          "¿a qué hora cenáis"
+          "¿A qué hora cenas?",
+          "¿A qué hora cenas",
+          "A qué hora cenas?"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       },
       {
@@ -2688,7 +2689,7 @@
           "libro?"
         ],
         "answer": "¿Dónde está el libro?",
-        "instruction": "Соберите предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Dónde está el libro?",
         "type": "sentence_building"
       },
@@ -2718,7 +2719,7 @@
           "cenáis"
         ],
         "answer": "¿A qué hora cenáis",
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "Поставьте глагол в presente de indicativo.",
         "grammarTopic": "a1-presente",
         "acceptableAnswers": []
@@ -3610,7 +3611,7 @@
         "type": "translation",
         "question": "Где находится туалет?",
         "answer": "¿Dónde está el baño?",
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Проверьте артикль и род/число существительного.",
         "grammarTopic": "a1-articulos",
         "acceptableAnswers": []
@@ -3619,7 +3620,7 @@
         "type": "translation",
         "question": "Есть ли здесь Wi-Fi?",
         "answer": "¿Hay Wi-Fi aquí?",
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Проверьте артикль и род/число существительного.",
         "grammarTopic": "a1-articulos",
         "acceptableAnswers": []
@@ -3684,13 +3685,14 @@
       },
       {
         "type": "translation",
-        "question": "у тебя есть ручка?.",
-        "answer": "¿Tienes un bolígrafo",
+        "question": "У тебя есть ручка?",
+        "answer": "¿Tienes un bolígrafo?",
         "acceptableAnswers": [
+          "¿Tienes un bolígrafo?",
           "¿Tienes un bolígrafo",
-          "¿tienes un bolígrafo"
+          "¿tienes un bolígrafo?"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       },
       {
@@ -3717,7 +3719,7 @@
       },
       {
         "type": "translation",
-        "question": "мне нужен большой стол.",
+        "question": "Мне нужен большой стол.",
         "answer": "Necesito una mesa grande",
         "acceptableAnswers": [
           "Necesito una mesa grande",
@@ -3734,7 +3736,7 @@
           "¿Hay algún diccionario",
           "¿hay algún diccionario"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       }
     ],
@@ -4111,7 +4113,7 @@
           "baño"
         ],
         "answer": "¿Dónde está el baño",
-        "instruction": "Соберите el baño",
+        "instruction": "Соберите вопрос",
         "explanation": "El baño — мужской род.",
         "grammarTopic": "a1-articulos",
         "acceptableAnswers": []
@@ -4169,7 +4171,7 @@
           "bolígrafo"
         ],
         "answer": "¿Tienes un bolígrafo",
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "Проверьте артикль и род/число существительного.",
         "grammarTopic": "a1-articulos",
         "acceptableAnswers": []
@@ -4229,7 +4231,7 @@
           "diccionario"
         ],
         "answer": "¿Hay algún diccionario",
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "Проверьте артикль и род/число существительного.",
         "grammarTopic": "a1-articulos",
         "acceptableAnswers": []
@@ -5019,7 +5021,7 @@
         "type": "translation",
         "question": "Какой сегодня день?",
         "answer": "¿Qué día es hoy?",
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки.",
         "grammarTopic": "a1-numeros-1-100",
         "acceptableAnswers": []
@@ -5160,7 +5162,7 @@
           "¿Qué hora es",
           "¿qué hora es"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       },
       {
@@ -6461,7 +6463,7 @@
         "type": "translation",
         "question": "У тебя есть время?",
         "answer": "¿Tienes tiempo?",
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки.",
         "grammarTopic": "a1-tener-expressions",
         "acceptableAnswers": []
@@ -6570,13 +6572,13 @@
       },
       {
         "type": "translation",
-        "question": "У тебя есть время помочь мне?.",
+        "question": "У тебя есть время помочь мне?",
         "answer": "¿Tienes tiempo para ayudarme",
         "acceptableAnswers": [
           "¿Tienes tiempo para ayudarme",
           "¿tienes tiempo para ayudarme"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       },
       {
@@ -7012,7 +7014,7 @@
           "naranjas"
         ],
         "answer": "¿Cuánto cuestan las naranjas",
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Cuánto cuestan…?",
         "grammarTopic": "a1-tener-expressions",
         "acceptableAnswers": []
@@ -7105,7 +7107,7 @@
           "integral"
         ],
         "answer": "¿Vende pan integral",
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "Соберите слова в естественном порядке испанского предложения.",
         "grammarTopic": "a1-tener-expressions",
         "acceptableAnswers": []
@@ -7866,7 +7868,7 @@
         "type": "translation",
         "question": "Тебе нравится этот фильм?",
         "answer": "¿Te gusta esta película?",
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "¿Te gusta…?",
         "grammarTopic": "a1-gustar",
         "acceptableAnswers": []
@@ -7911,7 +7913,7 @@
         "type": "translation",
         "question": "Тебе нравится твоя работа?",
         "answer": "¿Te gusta tu trabajo?",
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Помните: gustar согласуется с тем, что нравится.",
         "grammarTopic": "a1-gustar",
         "acceptableAnswers": []
@@ -7985,18 +7987,18 @@
       },
       {
         "type": "translation",
-        "question": "Тебе нравится твоя новая работа?.",
+        "question": "Тебе нравится твоя новая работа?",
         "answer": "¿Te gusta tu trabajo nuevo",
         "acceptableAnswers": [
           "¿Te gusta tu trabajo nuevo",
           "¿te gusta tu trabajo nuevo"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       },
       {
         "type": "translation",
-        "question": "мне нравится кофе.",
+        "question": "Мне нравится кофе.",
         "answer": "A mí me gusta el café",
         "acceptableAnswers": [
           "A mí me gusta el café",
@@ -8007,13 +8009,13 @@
       },
       {
         "type": "translation",
-        "question": "Тебе нравятся боевики?.",
+        "question": "Тебе нравятся боевики?",
         "answer": "¿Te gustan las películas de acción",
         "acceptableAnswers": [
           "¿Te gustan las películas de acción",
           "¿te gustan las películas de acción"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       },
       {
@@ -8410,7 +8412,7 @@
           "nuevo"
         ],
         "answer": "¿Te gusta tu trabajo nuevo",
-        "instruction": "Соберите trabajo",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Te gusta tu trabajo?",
         "grammarTopic": "a1-gustar",
         "acceptableAnswers": []
@@ -8444,7 +8446,7 @@
           "acción"
         ],
         "answer": "¿Te gustan las películas de acción",
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Te gustan las películas…?",
         "grammarTopic": "a1-gustar",
         "acceptableAnswers": []
@@ -8504,7 +8506,7 @@
           "viajar"
         ],
         "answer": "¿Os gusta viajar",
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "Помните: gustar согласуется с тем, что нравится.",
         "grammarTopic": "a1-gustar",
         "acceptableAnswers": []
@@ -8551,7 +8553,7 @@
           "hacer"
         ],
         "answer": "¿Qué te gusta hacer",
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "Помните: gustar согласуется с тем, что нравится.",
         "grammarTopic": "a1-gustar",
         "acceptableAnswers": []
@@ -9305,7 +9307,7 @@
         "type": "translation",
         "question": "Ты когда-нибудь пробовал паэлью?",
         "answer": "¿Has probado alguna vez la paella?",
-        "instruction": "Переведите предложение",
+        "instruction": "Переведите вопрос",
         "explanation": "¿Has probado alguna vez…?",
         "grammarTopic": "a2-preterito-perfecto",
         "acceptableAnswers": []
@@ -9392,7 +9394,7 @@
       },
       {
         "type": "translation",
-        "question": "я уже закончил работу.",
+        "question": "Я уже закончил работу.",
         "answer": "Ya he terminado el trabajo",
         "acceptableAnswers": [
           "Ya he terminado el trabajo",
@@ -9414,13 +9416,15 @@
       },
       {
         "type": "translation",
-        "question": "Вы пробовали паэлью.",
-        "answer": "¿Has probado la paella",
+        "question": "Вы пробовали паэлью?",
+        "answer": "¿Ha probado la paella?",
         "acceptableAnswers": [
-          "¿Has probado la paella",
-          "¿has probado la paella"
+          "¿Ha probado la paella?",
+          "¿Ha probado la paella",
+          "¿Has probado la paella?",
+          "¿Habéis probado la paella?"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       },
       {
@@ -9447,13 +9451,13 @@
       },
       {
         "type": "translation",
-        "question": "Ты сделал домашнее задание?.",
+        "question": "Ты сделал домашнее задание?",
         "answer": "¿Has hecho los deberes",
         "acceptableAnswers": [
           "¿Has hecho los deberes",
           "¿has hecho los deberes"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       },
       {
@@ -9766,7 +9770,7 @@
           "paella"
         ],
         "answer": "¿Has probado la paella",
-        "instruction": "Составьте предложение из слов",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Has probado…?",
         "grammarTopic": "a2-preterito-perfecto",
         "acceptableAnswers": []
@@ -9858,7 +9862,7 @@
           "deberes"
         ],
         "answer": "¿Has hecho los deberes",
-        "instruction": "Составьте предложение из слов",
+        "instruction": "Соберите вопрос",
         "explanation": "Связь с настоящим → pretérito perfecto (haber + participio).",
         "grammarTopic": "a2-preterito-perfecto",
         "acceptableAnswers": []
@@ -9917,7 +9921,7 @@
           "museo"
         ],
         "answer": "¿Has visitado el museo",
-        "instruction": "Составьте предложение из слов",
+        "instruction": "Соберите вопрос",
         "explanation": "Связь с настоящим → pretérito perfecto (haber + participio).",
         "grammarTopic": "a2-preterito-perfecto",
         "acceptableAnswers": []
@@ -9951,7 +9955,7 @@
           "hoy"
         ],
         "answer": "¿Has oído las noticias de hoy",
-        "instruction": "Составьте предложение из слов",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Has oído? — ты слышал?",
         "grammarTopic": "a2-preterito-perfecto",
         "acceptableAnswers": []
@@ -10015,7 +10019,7 @@
           "problema"
         ],
         "answer": "¿Han resuelto ya el problema",
-        "instruction": "Составьте предложение из слов",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Han resuelto ya? — они уже решили?",
         "grammarTopic": "a2-preterito-perfecto",
         "acceptableAnswers": []
@@ -10786,7 +10790,7 @@
         "type": "translation",
         "question": "Ты видел это?",
         "answer": "¿Viste eso?",
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "¿Viste eso? ver → viste.",
         "grammarTopic": "a2-preterito-indefinido",
         "acceptableAnswers": []
@@ -10847,7 +10851,7 @@
           "Fuiste al partido ayer",
           "¿Fuiste al partido ayer?"
         ],
-        "instruction": "Переведите на испанский (indefinido)",
+        "instruction": "Переведите вопрос",
         "explanation": "Ir → fuiste (tú, indefinido).",
         "grammarTopic": "a2-preterito-indefinido"
       },
@@ -10897,13 +10901,16 @@
       },
       {
         "type": "translation",
-        "question": "Вы видели этот фильм.",
-        "answer": "¿Viste esa película",
+        "question": "Вы видели этот фильм?",
+        "answer": "¿Ha visto esa película?",
         "acceptableAnswers": [
-          "¿Viste esa película",
-          "¿viste esa película"
+          "¿Ha visto esa película?",
+          "¿Ha visto esa película",
+          "¿Vio esa película?",
+          "¿Habéis visto esa película?",
+          "¿Han visto esa película?"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       },
       {
@@ -11336,7 +11343,7 @@
           "anoche"
         ],
         "answer": "¿Viste la película anoche",
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Viste…? — pretérito de ver (tú).",
         "grammarTopic": "a2-preterito-indefinido",
         "acceptableAnswers": []
@@ -11387,7 +11394,7 @@
           "semana"
         ],
         "answer": "¿Qué hiciste el fin de semana",
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "Hiciste — pretérito irregular de hacer.",
         "grammarTopic": "a2-preterito-indefinido",
         "acceptableAnswers": []
@@ -12357,7 +12364,7 @@
       },
       {
         "type": "translation",
-        "question": "мне тогда было пятнадцать лет.",
+        "question": "Мне тогда было пятнадцать лет.",
         "answer": "Tenía quince años entonces",
         "acceptableAnswers": [
           "Tenía quince años entonces",
@@ -15367,7 +15374,7 @@
       },
       {
         "type": "translation",
-        "question": "надеюсь тебе повезет.",
+        "question": "Надеюсь тебе повезет.",
         "answer": "Ojalá tengas suerte",
         "acceptableAnswers": [
           "Ojalá tengas suerte",
@@ -16797,7 +16804,7 @@
       },
       {
         "type": "translation",
-        "question": "не курить здесь.",
+        "question": "Не курить здесь.",
         "answer": "No fume usted aquí",
         "acceptableAnswers": [
           "No fume usted aquí",
@@ -18140,7 +18147,7 @@
         "type": "translation",
         "question": "Что бы ты сделал на моём месте?",
         "answer": "¿Qué harías en mi lugar?",
-        "instruction": "Переведите предложение",
+        "instruction": "Переведите вопрос",
         "explanation": "Вежливая просьба или гипотеза → condicional.",
         "grammarTopic": "b1-condicional",
         "acceptableAnswers": []
@@ -18227,7 +18234,7 @@
           "Podría ayudarme",
           "¿Podría usted ayudarme?"
         ],
-        "instruction": "Переведите на испанский (condicional)",
+        "instruction": "Переведите вопрос",
         "explanation": "Podría + infinitivo — вежливая просьба.",
         "grammarTopic": "b1-condicional"
       },
@@ -18267,18 +18274,18 @@
       },
       {
         "type": "translation",
-        "question": "Не могли бы вы помочь мне на минутку?.",
-        "answer": "¿Podrías ayudarme un momento",
+        "question": "Не могли бы вы помочь мне на минутку?",
+        "answer": "¿Podría ayudarme un momento?",
         "acceptableAnswers": [
-          "¿Podrías ayudarme un momento",
-          "¿podrías ayudarme un momento"
+          "¿Podría ayudarme un momento?",
+          "¿Podrías ayudarme un momento?"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       },
       {
         "type": "translation",
-        "question": "тебе следует больше отдыхать.",
+        "question": "Тебе следует больше отдыхать.",
         "answer": "Deberías descansar más",
         "acceptableAnswers": [
           "Deberías descansar más",
@@ -18300,7 +18307,7 @@
       },
       {
         "type": "translation",
-        "question": "у меня было бы больше свободного времени.",
+        "question": "У меня было бы больше свободного времени.",
         "answer": "Tendría más tiempo libre",
         "acceptableAnswers": [
           "Tendría más tiempo libre",
@@ -18311,7 +18318,7 @@
       },
       {
         "type": "translation",
-        "question": "я бы никогда этого не сделал.",
+        "question": "Я бы никогда этого не сделал.",
         "answer": "No lo haría nunca",
         "acceptableAnswers": [
           "No lo haría nunca",
@@ -18574,7 +18581,7 @@
           "lugar"
         ],
         "answer": "¿Qué harías en mi lugar",
-        "instruction": "Составьте предложение из слов",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Qué harías…?",
         "grammarTopic": "b1-condicional",
         "acceptableAnswers": []
@@ -18681,7 +18688,7 @@
           "momento"
         ],
         "answer": "¿Podrías ayudarme un momento",
-        "instruction": "Составьте предложение из слов",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Podrías ayudarme…?",
         "grammarTopic": "b1-condicional",
         "acceptableAnswers": []
@@ -18773,7 +18780,7 @@
           "ventana"
         ],
         "answer": "¿Te importaría abrir la ventana",
-        "instruction": "Составьте предложение из слов",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Te importaría? — вежливая просьба.",
         "grammarTopic": "b1-condicional",
         "acceptableAnswers": []
@@ -21157,7 +21164,7 @@
       },
       {
         "type": "translation",
-        "question": "здесь говорят по-испански.",
+        "question": "Здесь говорят по-испански.",
         "answer": "Se habla español aquí",
         "acceptableAnswers": [
           "Se habla español aquí",
@@ -22651,7 +22658,7 @@
       },
       {
         "type": "translation",
-        "question": "сейчас начну читать.",
+        "question": "Сейчас начну читать.",
         "answer": "Voy a empezar a leer ahora",
         "acceptableAnswers": [
           "Voy a empezar a leer ahora",
@@ -24010,7 +24017,7 @@
         "type": "translation",
         "question": "Не могли бы вы уточнить сроки выполнения?",
         "answer": "¿Sería tan amable de concretar los plazos de ejecución?",
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "¿Sería tan amable de…? — usted cortés.",
         "grammarTopic": "c1-matices-estilisticos",
         "acceptableAnswers": []
@@ -24098,13 +24105,13 @@
       },
       {
         "type": "translation",
-        "question": "Не могли бы вы сказать мне, где находится комната?.",
+        "question": "Не могли бы вы сказать мне, где находится комната?",
         "answer": "¿Podría indicarme dónde está la sala",
         "acceptableAnswers": [
           "¿Podría indicarme dónde está la sala",
           "¿podría indicarme dónde está la sala"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       },
       {
@@ -27714,7 +27721,7 @@
         "type": "translation",
         "question": "Как тебя зовут?",
         "answer": "¿Cómo te llamas?",
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки.",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
@@ -27723,7 +27730,7 @@
         "type": "translation",
         "question": "Сколько тебе лет?",
         "answer": "¿Cuántos años tienes?",
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки.",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
@@ -27732,7 +27739,7 @@
         "type": "translation",
         "question": "Откуда ты?",
         "answer": "¿De dónde eres?",
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки.",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
@@ -27741,7 +27748,7 @@
         "type": "translation",
         "question": "Что ты делаешь?",
         "answer": "¿Qué haces?",
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки.",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
@@ -27750,7 +27757,7 @@
         "type": "translation",
         "question": "Почему ты опоздал?",
         "answer": "¿Por qué llegaste tarde?",
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки.",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
@@ -27759,7 +27766,7 @@
         "type": "translation",
         "question": "Когда начинается фильм?",
         "answer": "¿Cuándo empieza la película?",
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки.",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
@@ -27768,7 +27775,7 @@
         "type": "translation",
         "question": "С кем ты идёшь?",
         "answer": "¿Con quién vas?",
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки.",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
@@ -27777,7 +27784,7 @@
         "type": "translation",
         "question": "Какой это цвет?",
         "answer": "¿De qué color es?",
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки.",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
@@ -27786,7 +27793,7 @@
         "type": "translation",
         "question": "Сколько это стоит?",
         "answer": "¿Cuánto cuesta?",
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки.",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
@@ -27795,7 +27802,7 @@
         "type": "translation",
         "question": "Зачем ты здесь?",
         "answer": "¿Para qué estás aquí?",
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки.",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
@@ -27820,29 +27827,29 @@
           "¿Dónde vives tú",
           "¿dónde vives tú"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       },
       {
         "type": "translation",
-        "question": "Что ты делаешь в эти выходные?.",
+        "question": "Что ты делаешь в эти выходные?",
         "answer": "¿Qué haces este fin de semana",
         "acceptableAnswers": [
           "¿Qué haces este fin de semana",
           "¿qué haces este fin de semana"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       },
       {
         "type": "translation",
-        "question": "С кем ты ходишь в кино?.",
+        "question": "С кем ты ходишь в кино?",
         "answer": "¿Con quién vas al cine",
         "acceptableAnswers": [
           "¿Con quién vas al cine",
           "¿con quién vas al cine"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       },
       {
@@ -27853,18 +27860,19 @@
           "¿Cuánto cuesta este bolso",
           "¿cuánto cuesta este bolso"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       },
       {
         "type": "translation",
-        "question": "Откуда ваша семья?.",
-        "answer": "¿De dónde viene tu familia",
+        "question": "Откуда ваша семья?",
+        "answer": "¿De dónde es su familia?",
         "acceptableAnswers": [
-          "¿De dónde viene tu familia",
-          "¿de dónde viene tu familia"
+          "¿De dónde es su familia?",
+          "¿De dónde viene su familia?",
+          "¿De dónde viene tu familia?"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       },
       {
@@ -27875,18 +27883,18 @@
           "¿A qué te dedicas",
           "¿a qué te dedicas"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       },
       {
         "type": "translation",
-        "question": "Сколько у тебя братьев?.",
+        "question": "Сколько у тебя братьев?",
         "answer": "¿Cuántos hermanos tienes",
         "acceptableAnswers": [
           "¿Cuántos hermanos tienes",
           "¿cuántos hermanos tienes"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       },
       {
@@ -27897,7 +27905,7 @@
           "¿Qué hora es ahora",
           "¿qué hora es ahora"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       }
     ],
@@ -28156,7 +28164,7 @@
           "eres"
         ],
         "answer": "¿De dónde eres",
-        "instruction": "Соберите origen",
+        "instruction": "Соберите вопрос",
         "explanation": "Соберите слова в естественном порядке испанского предложения.",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
@@ -28173,7 +28181,7 @@
           "semana"
         ],
         "answer": "¿Qué haces este fin de semana",
-        "instruction": "Соберите actividad",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Qué haces…?",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
@@ -28188,7 +28196,7 @@
           "tarde"
         ],
         "answer": "¿Por qué llegaste tarde",
-        "instruction": "Соберите por qué",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Por qué…?",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
@@ -28203,7 +28211,7 @@
           "película"
         ],
         "answer": "¿Cuándo empieza la película",
-        "instruction": "Соберите cuándo",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Cuándo empieza…?",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
@@ -28219,7 +28227,7 @@
           "cine"
         ],
         "answer": "¿Con quién vas al cine",
-        "instruction": "Соберите con quién",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Con quién vas…?",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
@@ -28234,7 +28242,7 @@
           "bolso"
         ],
         "answer": "¿Cuánto cuesta este bolso",
-        "instruction": "Соберите precio",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Cuánto cuesta?",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
@@ -28250,7 +28258,7 @@
           "familia"
         ],
         "answer": "¿De dónde viene tu familia",
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "¿De dónde viene…?",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
@@ -28265,7 +28273,7 @@
           "dedicas"
         ],
         "answer": "¿A qué te dedicas",
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "Соберите слова в естественном порядке испанского предложения.",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
@@ -28279,7 +28287,7 @@
           "tienes"
         ],
         "answer": "¿Cuántos hermanos tienes",
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Cuántos hermanos…?",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
@@ -28294,7 +28302,7 @@
           "ahora"
         ],
         "answer": "¿Qué hora es ahora",
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Qué hora es…?",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
@@ -28309,7 +28317,7 @@
           "español"
         ],
         "answer": "¿Por qué estudias español",
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Por qué estudias…?",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
@@ -28323,7 +28331,7 @@
           "vives"
         ],
         "answer": "¿Con quién vives",
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "Соберите слова в естественном порядке испанского предложения.",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
@@ -28339,7 +28347,7 @@
           "favorito"
         ],
         "answer": "¿Cuál es tu color favorito",
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Cuál es tu color…?",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
@@ -28354,7 +28362,7 @@
           "aquí"
         ],
         "answer": "¿Cuánto tiempo llevas aquí",
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Cuánto tiempo llevas…?",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
@@ -28370,7 +28378,7 @@
           "prefieres"
         ],
         "answer": "¿Qué tipo de música prefieres",
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Qué tipo de música…?",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
@@ -28387,7 +28395,7 @@
           "semana"
         ],
         "answer": "¿Adónde vamos este fin de semana",
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Adónde vamos…?",
         "grammarTopic": "a1-preguntas",
         "acceptableAnswers": []
@@ -28406,7 +28414,7 @@
           "¿Por qué estudias español",
           "¿Por qué estudias español."
         ],
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Por qué? = почему?",
         "grammarTopic": "a1-preguntas"
       }
@@ -30604,7 +30612,7 @@
         "type": "translation",
         "question": "Ты успеешь?",
         "answer": "¿Llegarás a tiempo?",
-        "instruction": "Переведите предложение",
+        "instruction": "Переведите вопрос",
         "explanation": "Будущее действие → futuro simple.",
         "grammarTopic": "a2-futuro-simple",
         "acceptableAnswers": []
@@ -31074,7 +31082,7 @@
           "tiempo"
         ],
         "answer": "¿Llegarás a tiempo",
-        "instruction": "Составьте предложение из слов",
+        "instruction": "Соберите вопрос",
         "explanation": "Будущее действие → futuro simple.",
         "grammarTopic": "a2-futuro-simple",
         "acceptableAnswers": []
@@ -31218,7 +31226,7 @@
           "verano"
         ],
         "answer": "¿Qué harás el próximo verano",
-        "instruction": "Составьте предложение из слов",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Qué harás? — что будешь делать?",
         "grammarTopic": "a2-futuro-simple",
         "acceptableAnswers": []
@@ -32101,7 +32109,7 @@
         "type": "translation",
         "question": "Можно войти?",
         "answer": "¿Puedo entrar?",
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки.",
         "grammarTopic": "a1-verbos-frecuentes",
         "acceptableAnswers": []
@@ -32177,7 +32185,7 @@
       },
       {
         "type": "translation",
-        "question": "сейчас я должен идти.",
+        "question": "Сейчас я должен идти.",
         "answer": "Tengo que irme ya",
         "acceptableAnswers": [
           "Tengo que irme ya",
@@ -32199,13 +32207,13 @@
       },
       {
         "type": "translation",
-        "question": "Могу ли я зайти на минутку?.",
+        "question": "Могу ли я зайти на минутку?",
         "answer": "¿Puedo entrar un momento",
         "acceptableAnswers": [
           "¿Puedo entrar un momento",
           "¿puedo entrar un momento"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       },
       {
@@ -32561,7 +32569,7 @@
           "momento"
         ],
         "answer": "¿Puedo entrar un momento",
-        "instruction": "Соберите poder",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Puedo entrar…?",
         "grammarTopic": "a1-verbos-frecuentes",
         "acceptableAnswers": []
@@ -33639,7 +33647,7 @@
       },
       {
         "type": "translation",
-        "question": "здесь говорят по-испански.",
+        "question": "Здесь говорят по-испански.",
         "answer": "Se habla español aquí",
         "acceptableAnswers": [
           "Se habla español aquí",
@@ -33696,7 +33704,7 @@
         "question": "Как тебя зовут?",
         "answer": "¿Cómo te llamas?",
         "acceptableAnswers": [],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Сверьте перевод с моделью — допустимы мелкие варианты формулировки.",
         "grammarTopic": "b1-pronombre-se"
       },
@@ -33731,13 +33739,13 @@
       },
       {
         "type": "translation",
-        "question": "Как сказать это на испанском?.",
+        "question": "Как сказать это на испанском?",
         "answer": "¿Cómo se dice esto en español",
         "acceptableAnswers": [
           "¿Cómo se dice esto en español",
           "¿cómo se dice esto en español"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       },
       {
@@ -34144,7 +34152,7 @@
           "español"
         ],
         "answer": "¿Cómo se dice esto en español",
-        "instruction": "Составьте предложение из слов",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Cómo se dice…?",
         "grammarTopic": "b1-pronombre-se",
         "acceptableAnswers": []
@@ -36745,13 +36753,15 @@
       },
       {
         "type": "translation",
-        "question": "Вы когда-нибудь были в Перу?.",
-        "answer": "¿Habías estado alguna vez en Perú",
+        "question": "Вы когда-нибудь были в Перу?",
+        "answer": "¿Ha estado alguna vez en Perú?",
         "acceptableAnswers": [
-          "¿Habías estado alguna vez en Perú",
-          "¿habías estado alguna vez en perú"
+          "¿Ha estado alguna vez en Perú?",
+          "¿Habéis estado alguna vez en Perú?",
+          "¿Habías estado alguna vez en Perú?",
+          "¿Has estado alguna vez en Perú?"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       }
     ],
@@ -37143,7 +37153,7 @@
           "Perú"
         ],
         "answer": "¿Habías estado alguna vez en Perú",
-        "instruction": "Составьте предложение из слов",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Habías estado…?",
         "grammarTopic": "b1-pluscuamperfecto",
         "acceptableAnswers": []
@@ -37310,7 +37320,7 @@
           "antes"
         ],
         "answer": "¿Habías visitado Roma antes",
-        "instruction": "Составьте предложение из слов",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Habías visitado? — ты бывал?",
         "grammarTopic": "b1-pluscuamperfecto",
         "acceptableAnswers": []
@@ -39626,7 +39636,7 @@
           "¿Ves el libro? — Sí, lo veo",
           "¿ves el libro? — sí, lo veo"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Нужно «lo», не «le».",
         "grammarTopic": "b1-pronombres-objetos"
       },
@@ -39656,7 +39666,7 @@
       },
       {
         "type": "translation",
-        "question": "я не верю в это.",
+        "question": "Я не верю в это.",
         "answer": "No me lo creo",
         "acceptableAnswers": [
           "No me lo creo",
@@ -39668,13 +39678,15 @@
       },
       {
         "type": "translation",
-        "question": "Они уже сказали вам.",
-        "answer": "¿Te lo han contado ya",
+        "question": "Они уже сказали вам?",
+        "answer": "¿Ya se lo han contado a usted?",
         "acceptableAnswers": [
-          "¿Te lo han contado ya",
-          "¿te lo han contado ya"
+          "¿Ya se lo han contado a usted?",
+          "¿Ya se lo han contado?",
+          "¿Ya os lo han contado?",
+          "¿Te lo han contado ya?"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "¿Te lo han contado?",
         "grammarTopic": "b1-pronombres-objetos"
       },
@@ -39689,7 +39701,7 @@
       },
       {
         "type": "translation",
-        "question": "я отправила их по почте.",
+        "question": "Я отправила их по почте.",
         "answer": "Se las envié por correo",
         "acceptableAnswers": [
           "Se las envié por correo",
@@ -39711,13 +39723,14 @@
       },
       {
         "type": "translation",
-        "question": "Можете ли вы одолжить его мне на минутку?.",
-        "answer": "¿Me lo prestas un momento",
+        "question": "Можете ли вы одолжить его мне на минутку?",
+        "answer": "¿Me lo puede prestar un momento?",
         "acceptableAnswers": [
-          "¿Me lo prestas un momento",
-          "¿me lo prestas un momento"
+          "¿Me lo puede prestar un momento?",
+          "¿Me lo podrías prestar un momento?",
+          "¿Me lo prestas un momento?"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       },
       {
@@ -40085,7 +40098,7 @@
           "ya"
         ],
         "answer": "¿Te lo han contado ya",
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Te lo han contado?",
         "grammarTopic": "b1-pronombres-objetos",
         "acceptableAnswers": []
@@ -40134,7 +40147,7 @@
           "momento"
         ],
         "answer": "¿Me lo prestas un momento",
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Me lo prestas…?",
         "grammarTopic": "b1-pronombres-objetos",
         "acceptableAnswers": []
@@ -40354,7 +40367,7 @@
           "rato"
         ],
         "answer": "¿Me la puedes prestar un rato",
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Me la puedes prestar? — можешь одолжить мне её?",
         "grammarTopic": "b1-pronombres-objetos",
         "acceptableAnswers": []
@@ -41239,11 +41252,12 @@
       },
       {
         "type": "translation",
-        "question": "очень хорошо поет.",
+        "question": "Он очень хорошо поёт.",
         "answer": "Canta muy bien",
         "acceptableAnswers": [
           "Canta muy bien",
-          "canta muy bien"
+          "canta muy bien",
+          "Él canta muy bien"
         ],
         "instruction": "Переведите на испанский",
         "explanation": "Переведите русскую фразу на испанский."
@@ -42744,13 +42758,15 @@
       },
       {
         "type": "translation",
-        "question": "Вы видели новый фильм.",
-        "answer": "¿Has visto la película nueva",
+        "question": "Вы видели новый фильм?",
+        "answer": "¿Ha visto la película nueva?",
         "acceptableAnswers": [
-          "¿Has visto la película nueva",
-          "¿has visto la película nueva"
+          "¿Ha visto la película nueva?",
+          "¿Ha visto la película nueva",
+          "¿Has visto la película nueva?",
+          "¿Habéis visto la película nueva?"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       }
     ],
@@ -43214,7 +43230,7 @@
           "nueva"
         ],
         "answer": "¿Has visto la película nueva",
-        "instruction": "Составьте предложение из слов",
+        "instruction": "Соберите вопрос",
         "explanation": "¿Has visto…?",
         "grammarTopic": "dele-contraste-pasados",
         "acceptableAnswers": []
@@ -45713,7 +45729,7 @@
       },
       {
         "type": "translation",
-        "question": "возможно я опоздал.",
+        "question": "Возможно я опоздал.",
         "answer": "Es posible que haya llegado tarde",
         "acceptableAnswers": [
           "Es posible que haya llegado tarde",
@@ -45779,7 +45795,7 @@
       },
       {
         "type": "translation",
-        "question": "сомневаюсь, что они еще закончили.",
+        "question": "Сомневаюсь, что они еще закончили.",
         "answer": "Dudo que hayan terminado ya",
         "acceptableAnswers": [
           "Dudo que hayan terminado ya",
@@ -57711,7 +57727,7 @@
         "type": "translation",
         "question": "Рассказали ли тебе уже?",
         "answer": "¿Te lo han contado ya?",
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Te lo han contado — orden CI+CD.",
         "grammarTopic": "c1-pronombres-avanzado",
         "acceptableAnswers": []
@@ -57827,7 +57843,7 @@
       },
       {
         "type": "translation",
-        "question": "я вообще в это не верю.",
+        "question": "Я вообще в это не верю.",
         "answer": "No me lo creo para nada",
         "acceptableAnswers": [
           "No me lo creo para nada",
@@ -57860,13 +57876,14 @@
       },
       {
         "type": "translation",
-        "question": "Можете ли вы одолжить его мне на минутку?.",
-        "answer": "¿Me lo prestas un momento",
+        "question": "Можете ли вы одолжить его мне на минутку?",
+        "answer": "¿Me lo puede prestar un momento?",
         "acceptableAnswers": [
-          "¿Me lo prestas un momento",
-          "¿me lo prestas un momento"
+          "¿Me lo puede prestar un momento?",
+          "¿Me lo podrías prestar un momento?",
+          "¿Me lo prestas un momento?"
         ],
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Переведите русскую фразу на испанский."
       }
     ],
@@ -58201,7 +58218,7 @@
           "ya"
         ],
         "answer": "¿Te lo han contado ya",
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "Te lo han contado.",
         "grammarTopic": "c1-pronombres-avanzado",
         "acceptableAnswers": []
@@ -58284,7 +58301,7 @@
           "momento"
         ],
         "answer": "¿Me lo prestas un momento",
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "Me lo prestas.",
         "grammarTopic": "c1-pronombres-avanzado",
         "acceptableAnswers": []
@@ -58365,7 +58382,7 @@
           "vez"
         ],
         "answer": "¿Os lo explico otra vez",
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "Os lo explico.",
         "grammarTopic": "c1-pronombres-avanzado",
         "acceptableAnswers": []
@@ -65084,7 +65101,7 @@
         "type": "translation",
         "question": "Не могли бы вы передать соль?",
         "answer": "¿Sería tan amable de pasarme la sal?",
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Sería tan amable de…",
         "grammarTopic": "c2-ironia-registry",
         "acceptableAnswers": []
@@ -65120,7 +65137,7 @@
         "type": "translation",
         "question": "Дай воды, пожалуйста (формально).",
         "answer": "¿Sería posible que me diera un poco de agua?",
-        "instruction": "Переведите на испанский",
+        "instruction": "Переведите вопрос",
         "explanation": "Condicional cortesía.",
         "grammarTopic": "c2-ironia-registry",
         "acceptableAnswers": []
@@ -65614,7 +65631,7 @@
           "sal"
         ],
         "answer": "¿Sería tan amable de pasarme la sal",
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "Condicional cortés.",
         "grammarTopic": "c2-ironia-registry",
         "acceptableAnswers": []
@@ -65709,7 +65726,7 @@
           "agua"
         ],
         "answer": "¿Sería posible que me diera agua",
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "Condicional + subjuntivo.",
         "grammarTopic": "c2-ironia-registry",
         "acceptableAnswers": []
@@ -65820,7 +65837,7 @@
           "¿Sería tan amable de pasarme la sal",
           "¿Sería tan amable de pasarme la sal."
         ],
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "Sería tan amable de…",
         "grammarTopic": "c2-ironia-registry"
       },
@@ -65860,7 +65877,7 @@
           "¿Sería posible que me diera un poco de agua",
           "¿Sería posible que me diera un poco de agua."
         ],
-        "instruction": "Составьте предложение",
+        "instruction": "Соберите вопрос",
         "explanation": "Condicional cortesía.",
         "grammarTopic": "c2-ironia-registry"
       },

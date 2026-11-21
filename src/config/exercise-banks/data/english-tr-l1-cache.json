@@ -2903,10 +2903,6 @@
     "es": "Voy a visitar a mis abuelos.",
     "de": "Ich werde meine Großeltern besuchen."
   },
-  "Ты будешь смотреть матч?.": {
-    "es": "¿Verás el partido?",
-    "de": "Wirst du dir das Spiel ansehen?"
-  },
   "Она собирается изучать медицину.": {
     "es": "Ella planea estudiar medicina.",
     "de": "Sie plant, Medizin zu studieren."
@@ -2922,10 +2918,6 @@
   "Мы знаем друг друга много лет.": {
     "es": "Nos conocemos desde hace muchos años.",
     "de": "Wir kennen uns schon seit vielen Jahren."
-  },
-  "Он когда-нибудь ел индийскую еду?.": {
-    "es": "¿Ha comido alguna vez comida india?",
-    "de": "Hat er jemals indisches Essen gegessen?"
   },
   "Они никогда не были в Шотландии.": {
     "es": "Nunca han estado en Escocia.",
@@ -2954,10 +2946,6 @@
   "Билетов осталось не так много.": {
     "es": "No quedan muchas entradas.",
     "de": "Es sind nicht mehr viele Tickets übrig."
-  },
-  "Примет ли она предложение.": {
-    "es": "¿Aceptará la oferta?",
-    "de": "Wird sie das Angebot annehmen?"
   },
   "Они не будут готовы вовремя.": {
     "es": "No estarán listos a tiempo.",
@@ -3142,10 +3130,6 @@
   "Дайте мне знать, что вы думаете.": {
     "es": "Déjame saber lo que piensas.",
     "de": "Teilen Sie mir Ihre Meinung mit."
-  },
-  "Привет, Сара. Как дела?.": {
-    "es": "Hola Sara. ¿Cómo estás?.",
-    "de": "Hallo Sarah. Wie geht es dir?."
   },
   "прости, что не писал целую вечность.": {
     "es": "Lo siento, hace mucho que no escribo.",
@@ -3339,10 +3323,6 @@
     "es": "Esta tendencia ha continuado e incluso acelerado.",
     "de": "Dieser Trend hat sich fortgesetzt und sogar beschleunigt."
   },
-  "Вы когда-нибудь задумывались, почему путешествия так важны?.": {
-    "es": "¿Alguna vez te has preguntado por qué es tan importante viajar?",
-    "de": "Haben Sie sich jemals gefragt, warum Reisen so wichtig ist?"
-  },
   "В этой статье будут рассмотрены три ключевых момента.": {
     "es": "Este artículo cubrirá tres puntos clave.",
     "de": "In diesem Artikel werden drei wichtige Punkte behandelt."
@@ -3426,10 +3406,6 @@
   "Я был бы признателен, если бы вы могли мне помочь.": {
     "es": "Te agradecería si pudieras ayudarme.",
     "de": "Ich würde mich freuen, wenn Sie mir helfen könnten."
-  },
-  "Можешь мне помочь с этим?.": {
-    "es": "¿Puedes ayudarme con esto?.",
-    "de": "Können Sie mir dabei helfen?"
   },
   "С сожалением сообщаем Вам, что Ваша заявка была отклонена.": {
     "es": "Lamentamos informarle que su solicitud ha sido rechazada.",
@@ -3626,5 +3602,29 @@
   "Будет ли это работать? я так ожидаю.": {
     "es": "¿Funcionará esto? Eso espero.",
     "de": "Wird das funktionieren? Das erwarte ich."
+  },
+  "Примет ли она предложение?": {
+    "es": "¿Aceptará la oferta?",
+    "de": "Wird sie das Angebot annehmen?"
+  },
+  "Ты будешь смотреть матч?": {
+    "es": "¿Verás el partido?",
+    "de": "Wirst du dir das Spiel ansehen?"
+  },
+  "Он когда-нибудь ел индийскую еду?": {
+    "es": "¿Ha comido alguna vez comida india?",
+    "de": "Hat er jemals indisches Essen gegessen?"
+  },
+  "Привет, Сара. Как дела?": {
+    "es": "Hola Sara. ¿Cómo estás?.",
+    "de": "Hallo Sarah. Wie geht es dir?."
+  },
+  "Вы когда-нибудь задумывались, почему путешествия так важны?": {
+    "es": "¿Alguna vez te has preguntado por qué es tan importante viajar?",
+    "de": "Haben Sie sich jemals gefragt, warum Reisen so wichtig ist?"
+  },
+  "Можешь мне помочь с этим?": {
+    "es": "¿Puedes ayudarme con esto?.",
+    "de": "Können Sie mir dabei helfen?"
   }
 }

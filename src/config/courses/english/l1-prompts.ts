@@ -221,23 +221,17 @@ const AUX: Cue = {
   es: "¿Qué auxiliar?",
   de: "Welches Hilfsverb?",
 };
-const V3: Cue = {
-  ru: "Какая форма V3?",
-  en: "Which past participle?",
-  es: "¿Qué participio?",
-  de: "Welches Partizip?",
-};
 const FALLBACK: Cue = {
-  ru: "Какой вариант верен?",
-  en: "Which option is correct?",
-  es: "¿Qué opción es correcta?",
-  de: "Welche Variante ist richtig?",
+  ru: "Выберите правильный вариант",
+  en: "Choose the correct option",
+  es: "Elige la opción correcta",
+  de: "Wähle die richtige Option",
 };
 const FILL: Cue = {
-  ru: "Вставьте пропуск.",
-  en: "Fill in the gap.",
-  es: "Completa el hueco.",
-  de: "Setze die Lücke ein.",
+  ru: "Заполните пропуск",
+  en: "Fill in the blank",
+  es: "Completa el hueco",
+  de: "Setze die Lücke ein",
 };
 
 const TOPIC: Record<string, Cue> = {
@@ -338,6 +332,10 @@ const INSTRUCTION_RULES: Array<{ re: RegExp; cue: Cue }> = [
   { re: /task 1|overview|trend|thesis|article|letter|essay/i, cue: WRITE },
 ];
 
+/** Grammar-only cues previously appended to the English stem. */
+const TRAILING_RU_CUE =
+  /\s+(Какая|Какой|Какое|Какие|Вставьте|Выберите|Единственное|Исчисляемое|Как строится|for или)\b.*$/u;
+
 function topicKey(raw: string | undefined): string {
   return (raw ?? "")
     .trim()
@@ -362,95 +360,89 @@ function resolveCue(ex: Practice, kind: "mc" | "fb"): Cue {
   );
 }
 
-function latinPrefix(question: string): string {
-  const idx = question.search(CYR);
-  if (idx < 0) return question.trim();
-  return question
+/** English drill stem without a trailing Russian grammar cue. */
+export function englishPracticeStem(question: string): string {
+  const q = question.trim();
+  if (!q) return q;
+  if (!CYR.test(q)) return q;
+  const stripped = q.replace(TRAILING_RU_CUE, "").trim();
+  if (stripped && !CYR.test(stripped)) return stripped;
+  const idx = q.search(CYR);
+  if (idx <= 0) return q;
+  return q
     .slice(0, idx)
     .replace(/[\s(]+$/g, "")
     .trim();
 }
 
-function mapMissing(
-  qt: Partial<Record<InterfaceLanguage, string>>,
-  lang: "en" | "es" | "de",
-  value: string,
-): void {
-  const current = qt[lang]?.trim() ?? "";
-  if (!current || CYR.test(current)) qt[lang] = value;
+function isGrammarOnlyRuGloss(text: string): boolean {
+  const t = text.trim();
+  if (!t || !CYR.test(t)) return true;
+  // Meaning glosses usually contain a blank or look like a sentence.
+  if (/___|…|\.\.\./.test(t)) return false;
+  if (/[.«»]/.test(t) && t.split(/\s+/).length >= 3) return false;
+  return /^(Какая|Какой|Какое|Какие|Вставьте|Выберите|Единственное|Исчисляемое|Как строится|for или)\b/u.test(
+    t,
+  );
 }
 
-function joinStem(stem: string, cue: string): string {
-  const s = stem.trim();
-  if (!s) return cue;
-  if (s.includes(cue)) return s;
-  return `${s} ${cue}`;
+function shouldReplaceInstruction(instruction: string | undefined): boolean {
+  const inst = (instruction ?? "").trim();
+  if (!inst) return true;
+  // Already a clear Russian/English learner task
+  if (
+    /^(Выберите|Заполните|Вставьте|Какая|Какой|Какое|Какие|Единственное|Исчисляемое|Как строится|for или|Choose|Fill|Complete|Which|Singular|Countable)\b/i.test(
+      inst,
+    )
+  ) {
+    return false;
+  }
+  // Grammar-tag leftovers / English pack labels
+  if (inst.length <= 56 && !/[.?!]/.test(inst) && /[\/—–]|^(Past|Present|Zero|Modal|Article)/i.test(inst)) {
+    return true;
+  }
+  if (/^(Build|Arrange|Translate into|Translate to)\b/i.test(inst)) return true;
+  return /^(Forma|Género|Ironía|Subj\.|Cond\.)/i.test(inst);
 }
 
 /**
- * RU UI can read the task without already knowing English.
- * MC: English stem (the drill) plus a Russian question; EN/ES/DE maps swap
- * the cue so other UIs never see Cyrillic.
- * FB: English stem stays (quality gate rejects Cyrillic blanks); ru gloss
- * states the task.
- * Applied after bank expand so adaptive ids stay on the same items.
+ * Keep the English stem as the drill. Put the task cue in `instruction`.
+ * Preserve a Russian *meaning* gloss in `questionTranslations.ru` so the UI
+ * can show «I ___ a teacher.» (Я ___ учитель.) — not only a grammar meta-cue.
+ *
+ * Previously the cue was appended to `question`, which broke curated gloss
+ * lookup and left beginners reading English they did not understand.
  */
 export function applyEnglishPracticeL1<T extends Practice>(ex: T): T {
   if (ex.type !== "multiple_choice" && ex.type !== "fill_blank") return ex;
 
-  const q = ex.question?.trim() ?? "";
-  if (!q) return ex;
+  const raw = ex.question?.trim() ?? "";
+  if (!raw) return ex;
+
+  const stem = englishPracticeStem(raw) || raw;
+  const kind = ex.type === "fill_blank" ? "fb" : "mc";
+  const cue = resolveCue({ ...ex, question: stem }, kind);
   const qt: Partial<Record<InterfaceLanguage, string>> = {
     ...(ex.questionTranslations ?? {}),
   };
 
-  if (ex.type === "fill_blank") {
-    if (qt.ru?.trim() && CYR.test(qt.ru)) return ex;
-    const cue = resolveCue(ex, "fb");
-    const label = cue.ru.replace(/[?？]\s*$/u, "");
-    return {
-      ...ex,
-      questionTranslations: { ...qt, ru: `${label}: ${q}` },
-    };
-  }
-
-  if (CYR.test(q)) {
-    const stem = latinPrefix(q);
-    const cue = resolveCue(ex, "mc");
-    mapMissing(qt, "en", stem ? joinStem(stem, cue.en) : cue.en);
-    mapMissing(qt, "es", stem ? joinStem(stem, cue.es) : cue.es);
-    mapMissing(qt, "de", stem ? joinStem(stem, cue.de) : cue.de);
-    return { ...ex, questionTranslations: qt };
-  }
-
-  const ruGloss = qt.ru?.trim() ?? "";
-  const answer = ex.answer?.trim() ?? "";
-  const glossSpoils =
-    Boolean(answer) &&
-    answer.length > 2 &&
-    ruGloss.toLowerCase().includes(answer.toLowerCase());
-  if (
-    !q.includes("___") &&
-    ruGloss &&
-    CYR.test(ruGloss) &&
-    !ruGloss.includes("___") &&
-    !glossSpoils
-  ) {
-    mapMissing(qt, "en", q);
-    const cue = resolveCue(ex, "mc");
-    mapMissing(qt, "es", joinStem(q, cue.es));
-    mapMissing(qt, "de", joinStem(q, cue.de));
+  // Drop grammar-only RU glosses so curated meaning glosses can attach later.
+  if (qt.ru && isGrammarOnlyRuGloss(qt.ru)) {
     delete qt.ru;
-    return { ...ex, question: ruGloss, questionTranslations: qt };
+  }
+  // Never store "Вставьте пропуск: <English>" as if it were a translation.
+  if (qt.ru && /^(Вставьте|Заполните|Какая|Какой)\b/u.test(qt.ru) && /[A-Za-z]/.test(qt.ru)) {
+    delete qt.ru;
   }
 
-  const cue = resolveCue(ex, "mc");
-  mapMissing(qt, "en", joinStem(q, cue.en));
-  mapMissing(qt, "es", joinStem(q, cue.es));
-  mapMissing(qt, "de", joinStem(q, cue.de));
+  const nextInstruction = shouldReplaceInstruction(ex.instruction)
+    ? cue.ru
+    : ex.instruction;
+
   return {
     ...ex,
-    question: joinStem(q, cue.ru),
+    question: stem,
+    instruction: nextInstruction,
     questionTranslations: qt,
   };
 }

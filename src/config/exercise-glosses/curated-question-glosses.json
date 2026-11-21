@@ -911,12 +911,6 @@
     "es": "¿___ de Rusia?",
     "de": "___ du aus Russland?"
   },
-  "He ___ (work) in a bank.": {
-    "ru": "Он ___ (work / работать) в банке.",
-    "en": "He ___ (work) in a bank.",
-    "es": "Él ___ (work / trabajar) en un banco.",
-    "de": "Er ___ (work / arbeiten) in einer Bank."
-  },
   "I ___ like coffee.": {
     "ru": "Я ___ люблю кофе. (отрицание)",
     "en": "I ___ like coffee.",
@@ -1097,12 +1091,6 @@
     "es": "Un elefante es ___ un gato.",
     "de": "Ein Elefant ist ___ eine Katze."
   },
-  "She is the ___ (good) student.": {
-    "ru": "Она ___ (good / хороший) ученица.",
-    "en": "She is the ___ (good) student.",
-    "es": "Ella es la ___ (good / buena) estudiante.",
-    "de": "Sie ist die ___ (good / gut) Schülerin."
-  },
   "Это самое высокое здание.": {
     "ru": "Это самое высокое здание.",
     "en": "This is the tallest building.",
@@ -1114,12 +1102,6 @@
     "en": "I am older ___ my sister.",
     "es": "Soy mayor ___ mi hermana.",
     "de": "Ich bin älter ___ meine Schwester."
-  },
-  "This exercise is ___ (difficult) than the last one.": {
-    "ru": "Это упражнение ___ (difficult / сложный), чем прошлое.",
-    "en": "This exercise is ___ (difficult) than the last one.",
-    "es": "Este ejercicio es ___ (difficult / difícil) que el anterior.",
-    "de": "Diese Übung ist ___ (difficult / schwierig) als die letzte."
   },
   "I am going to ___ a book.": {
     "ru": "Я собираюсь ___ книгу.",
@@ -1150,12 +1132,6 @@
     "en": "Look at the clouds — it ___ rain.",
     "es": "Mira las nubes — ___ llover.",
     "de": "Sieh dir die Wolken an — es ___ regnen."
-  },
-  "I have ___ (visit) Paris.": {
-    "ru": "Я ___ (visit / посещать) Париж.",
-    "en": "I have ___ (visit) Paris.",
-    "es": "He ___ (visit / visitar) París.",
-    "de": "Ich habe Paris ___ (visit / besuchen)."
   },
   "She has ___ her keys.": {
     "ru": "Она ___ свои ключи.",
@@ -1271,23 +1247,11 @@
     "es": "No ___ venir si estás ocupado.",
     "de": "Du ___ nicht kommen, wenn du beschäftigt bist."
   },
-  "I ___ (read) when she called.": {
-    "ru": "Я ___ (read / читать), когда она позвонила.",
-    "en": "I ___ (read) when she called.",
-    "es": "Yo ___ (read / leer) cuando ella llamó.",
-    "de": "Ich ___ (read / lesen), als sie anrief."
-  },
   "I used to ___ tennis every weekend.": {
     "ru": "Раньше я ___ в теннис каждые выходные.",
     "en": "I used to ___ tennis every weekend.",
     "es": "Antes ___ al tenis todos los fines de semana.",
     "de": "Früher ___ ich jedes Wochenende Tennis."
-  },
-  "When I arrived, the train ___ (leave).": {
-    "ru": "Когда я приехал, поезд уже ___ (leave / уходить).",
-    "en": "When I arrived, the train ___ (leave).",
-    "es": "Cuando llegué, el tren ___ (leave / salir).",
-    "de": "Als ich ankam, ___ der Zug schon (leave / abfahren)."
   },
   "Я читал книгу, когда позвонил телефон.": {
     "ru": "Я читал книгу, когда позвонил телефон.",
@@ -1331,41 +1295,17 @@
     "es": "Él ___ viviendo en Berlín desde hace dos años.",
     "de": "Er ___ seit zwei Jahren in Berlin."
   },
-  "If I ___ (have) more money, I would travel.": {
-    "ru": "Если бы у меня ___ (have / иметь) больше денег, я бы путешествовал.",
-    "en": "If I ___ (have) more money, I would travel.",
-    "es": "Si ___ (have / tener) más dinero, viajaría.",
-    "de": "Wenn ich mehr Geld ___ (have / haben), würde ich reisen."
-  },
-  "If she had studied, she ___ (pass).": {
-    "ru": "Если бы она училась, она ___ (pass / сдать).",
-    "en": "If she had studied, she ___ (pass).",
-    "es": "Si hubiera estudiado, ___ (pass / aprobar).",
-    "de": "Wenn sie gelernt hätte, ___ (pass / bestehen) sie."
-  },
   "Хотел бы я знать ответ.": {
     "ru": "Хотел бы я знать ответ.",
     "en": "I wish I knew the answer.",
     "es": "Ojalá supiera la respuesta. / Desearía saber la respuesta.",
     "de": "Ich wünschte, ich wüsste die Antwort."
   },
-  "I wish I ___ (not / eat) so much yesterday.": {
-    "ru": "Жаль, что я вчера так много ___ (not / eat).",
-    "en": "I wish I ___ (not / eat) so much yesterday.",
-    "es": "Ojalá no ___ (not / eat) tanto ayer.",
-    "de": "Ich wünschte, ich hätte gestern nicht so viel ___ (not / eat)."
-  },
   "If I were you, I ___ accept the offer.": {
     "ru": "На твоём месте я бы ___ принял предложение.",
     "en": "If I were you, I ___ accept the offer.",
     "es": "Si yo fuera tú, ___ aceptaría la oferta.",
     "de": "An deiner Stelle ___ ich das Angebot annehmen."
-  },
-  "The house ___ (build) in 1990.": {
-    "ru": "Дом ___ (build / построить) в 1990.",
-    "en": "The house ___ (build) in 1990.",
-    "es": "La casa ___ (build / construir) en 1990.",
-    "de": "Das Haus ___ (build / bauen) 1990."
   },
   "English ___ in many countries.": {
     "ru": "Английский ___ во многих странах.",
@@ -1378,12 +1318,6 @@
     "en": "The Mona Lisa was painted by Leonardo da Vinci.",
     "es": "La Mona Lisa fue pintada por Leonardo da Vinci.",
     "de": "Die Mona Lisa wurde von Leonardo da Vinci gemalt."
-  },
-  "I had my car ___ (repair) yesterday.": {
-    "ru": "Вчера мне ___ (repair / починить) машину.",
-    "en": "I had my car ___ (repair) yesterday.",
-    "es": "Ayer me ___ (repair / reparar) el coche.",
-    "de": "Ich ließ mein Auto gestern ___ (repair / reparieren)."
   },
   "The report has ___ finished.": {
     "ru": "Отчёт ___ закончен.",
@@ -1583,12 +1517,6 @@
     "es": "Me encanta el jazz. — So ___ I. / Yo también.",
     "de": "Ich liebe Jazz. — So ___ I. / Ich auch."
   },
-  "I can't swim. — ___ can I.": {
-    "ru": "Я не умею плавать. — ___ can I.",
-    "en": "I can't swim. — ___ can I.",
-    "es": "No sé nadar. — ___ can I. / Yo tampoco.",
-    "de": "Ich kann nicht schwimmen. — ___ can I. / Ich auch nicht."
-  },
   "She runs faster than I ___.": {
     "ru": "Она бегает быстрее, чем я ___.",
     "en": "She runs faster than I ___.",
@@ -1618,12 +1546,6 @@
     "en": "The results ___ to suggest a link.",
     "es": "Los resultados ___ sugerir un vínculo.",
     "de": "Die Ergebnisse ___ einen Zusammenhang nahezulegen."
-  },
-  "A British speaker says «Not bad» about your work. They probably mean…": {
-    "ru": "Британец говорит «Not bad» о твоей работе. Вероятно, он имеет в виду…",
-    "en": "A British speaker says «Not bad» about your work. They probably mean…",
-    "es": "Un británico dice «Not bad» sobre tu trabajo. Probablemente quiere decir…",
-    "de": "Ein Brite sagt «Not bad» zu deiner Arbeit. Er meint wahrscheinlich…"
   },
   "I ___ wondering if you could help me.": {
     "ru": "Я ___ подумать, не могли бы вы мне помочь.",
@@ -1685,10 +1607,1804 @@
     "es": "¡___ los deberes! — hacer, tú, imperativo",
     "de": "Mach ___ die Hausaufgaben! — hacer, tú, imperativo"
   },
-  "Mañana yo ___ (hablar) con ella.": {
-    "ru": "Завтра ___ (hablar / говорить) с ней. (я)",
-    "en": "Mañana yo ___ (hablar) con ella.",
-    "es": "Mañana yo ___ (hablar) con ella.",
-    "de": "Morgen ___ (hablar / sprechen) ich mit ihr. (yo)"
+  "___ you a student?": {
+    "ru": "___ ты студент?",
+    "en": "___ you a student?"
+  },
+  "He ___ my brother.": {
+    "ru": "Он ___ мой брат.",
+    "en": "He ___ my brother."
+  },
+  "We ___ in the park.": {
+    "ru": "Мы ___ в парковать/парк.",
+    "en": "We ___ in the park."
+  },
+  "It ___ cold today.": {
+    "ru": "Это ___ холодно сегодня.",
+    "en": "It ___ cold today."
+  },
+  "You ___ very kind.": {
+    "ru": "Ты ___ очень добрый.",
+    "en": "You ___ very kind."
+  },
+  "My name ___ Pavel.": {
+    "ru": "Мой имя ___ Павел.",
+    "en": "My name ___ Pavel."
+  },
+  "___ she from Spain?": {
+    "ru": "___ она из Испании?",
+    "en": "___ she from Spain?"
+  },
+  "I ___ not hungry.": {
+    "ru": "Я ___ не голоден.",
+    "en": "I ___ not hungry."
+  },
+  "The books ___ on the table.": {
+    "ru": "Книги ___ на стол.",
+    "en": "The books ___ on the table."
+  },
+  "This ___ my bag.": {
+    "ru": "Это ___ мой сумка.",
+    "en": "This ___ my bag."
+  },
+  "___ they ready?": {
+    "ru": "___ они готовы?",
+    "en": "___ they ready?"
+  },
+  "We ___ friends.": {
+    "ru": "Мы ___ друзья.",
+    "en": "We ___ friends."
+  },
+  "The weather ___ nice.": {
+    "ru": "Погода ___ хорошая.",
+    "en": "The weather ___ nice."
+  },
+  "You and I ___ late.": {
+    "ru": "Ты и я ___ поздно.",
+    "en": "You and I ___ late."
+  },
+  "___ I next?": {
+    "ru": "___ я следующий?",
+    "en": "___ I next?"
+  },
+  "Her parents ___ doctors.": {
+    "ru": "Её родители ___ врачи.",
+    "en": "Her parents ___ doctors."
+  },
+  "I ___ (be) a student.": {
+    "ru": "Я ___ be студент.",
+    "en": "I ___ (be) a student."
+  },
+  "He ___ (be) a doctor.": {
+    "ru": "Он ___ be врач.",
+    "en": "He ___ (be) a doctor."
+  },
+  "It ___ (be) a book.": {
+    "ru": "Это ___ be книга.",
+    "en": "It ___ (be) a book."
+  },
+  "You ___ (be) my friend.": {
+    "ru": "Ты ___ be мой друг.",
+    "en": "You ___ (be) my friend."
+  },
+  "My sister ___ (be) 20.": {
+    "ru": "Мой сестра ___ be.",
+    "en": "My sister ___ (be) 20."
+  },
+  "I ___ (be) from Russia.": {
+    "ru": "Я ___ be из России.",
+    "en": "I ___ (be) from Russia."
+  },
+  "I am ___ student.": {
+    "ru": "Я ___ ___ студент.",
+    "en": "I am ___ student."
+  },
+  "___ you a teacher.": {
+    "ru": "___ ты учитель.",
+    "en": "___ you a teacher."
+  },
+  "She is ___ doctor.": {
+    "ru": "Она ___ ___ врач.",
+    "en": "She is ___ doctor."
+  },
+  "She ___ a doctor.": {
+    "ru": "Она ___ врач.",
+    "en": "She ___ a doctor."
+  },
+  "She is ___ teacher.": {
+    "ru": "Она ___ ___ учитель.",
+    "en": "She is ___ teacher."
+  },
+  "This is ___ book.": {
+    "ru": "Это ___ ___ книга.",
+    "en": "This is ___ book."
+  },
+  "This book is ___.": {
+    "ru": "Это книга ___ ___.",
+    "en": "This book is ___."
+  },
+  "Is this ___ bag?": {
+    "ru": "___ это ___ сумка?",
+    "en": "Is this ___ bag?"
+  },
+  "That car is ___.": {
+    "ru": "То машина ___ ___.",
+    "en": "That car is ___."
+  },
+  "The house is ___.": {
+    "ru": "Дом ___ ___.",
+    "en": "The house is ___."
+  },
+  "He ___ in a bank.": {
+    "ru": "Он ___ в банк.",
+    "en": "He ___ in a bank."
+  },
+  "___ she work here?": {
+    "ru": "___ она работает здесь?",
+    "en": "___ she work here?"
+  },
+  "___ they live in London?": {
+    "ru": "___ они живут в Лондона?",
+    "en": "___ they live in London?"
+  },
+  "___ it snow in winter?": {
+    "ru": "___ это снег в зимой?",
+    "en": "___ it snow in winter?"
+  },
+  "___ do you work?": {
+    "ru": "___ ___ ты работает?",
+    "en": "___ do you work?"
+  },
+  "___ are you from?": {
+    "ru": "___ ___ ты из?",
+    "en": "___ are you from?"
+  },
+  "Is there ___ pharmacy here?": {
+    "ru": "___ там ___ аптека здесь?",
+    "en": "Is there ___ pharmacy here?"
+  },
+  "___ there a café on this street?": {
+    "ru": "___ там кафе на это улице?",
+    "en": "___ there a café on this street?"
+  },
+  "There ___ no milk in the fridge.": {
+    "ru": "Там ___ no молоко в холодильник.",
+    "en": "There ___ no milk in the fridge."
+  },
+  "Are there ___ chairs?": {
+    "ru": "___ там ___ стулья?",
+    "en": "Are there ___ chairs?"
+  },
+  "Is there ___ university nearby?": {
+    "ru": "___ там ___ университет рядом?",
+    "en": "Is there ___ university nearby?"
+  },
+  "___ there a supermarket here?": {
+    "ru": "___ там супермаркет здесь?",
+    "en": "___ there a supermarket here?"
+  },
+  "Are there ___ shops open now?": {
+    "ru": "___ там ___ магазины открыты сейчас?",
+    "en": "Are there ___ shops open now?"
+  },
+  "___ he speak French?": {
+    "ru": "___ он говорить по-французски?",
+    "en": "___ he speak French?"
+  },
+  "They can ___ English.": {
+    "ru": "Они могу/может ___ английский.",
+    "en": "They can ___ English."
+  },
+  "You ___ go now.": {
+    "ru": "Ты ___ go сейчас.",
+    "en": "You ___ go now."
+  },
+  "___ I open the window?": {
+    "ru": "___ я открыты окно?",
+    "en": "___ I open the window?"
+  },
+  "He can ___ the piano.": {
+    "ru": "Он могу/может ___ пианино.",
+    "en": "He can ___ the piano."
+  },
+  "Birds ___ fly.": {
+    "ru": "Птицы ___ летать.",
+    "en": "Birds ___ fly."
+  },
+  "I ___ hear you.": {
+    "ru": "Я ___ слышать ты.",
+    "en": "I ___ hear you."
+  },
+  "___ you cook?": {
+    "ru": "___ ты готовить?",
+    "en": "___ you cook?"
+  },
+  "She can ___ very well.": {
+    "ru": "Она могу/может ___ очень хорошо.",
+    "en": "She can ___ very well."
+  },
+  "Children ___ swim here.": {
+    "ru": "Дети ___ плавать здесь.",
+    "en": "Children ___ swim here."
+  },
+  "He ___ come today.": {
+    "ru": "Он ___ прийти сегодня.",
+    "en": "He ___ come today."
+  },
+  "___ we help?": {
+    "ru": "___ мы помочь?",
+    "en": "___ we help?"
+  },
+  "My dog can ___ a ball.": {
+    "ru": "Мой собака могу/может ___ мяч.",
+    "en": "My dog can ___ a ball."
+  },
+  "You ___ park here.": {
+    "ru": "Ты ___ парковать/парк здесь.",
+    "en": "You ___ park here."
+  },
+  "I can ___ Spanish a little.": {
+    "ru": "Я могу/может ___ по-испански немного.",
+    "en": "I can ___ Spanish a little."
+  },
+  "___ she ride a bike?": {
+    "ru": "___ она ездить велосипед?",
+    "en": "___ she ride a bike?"
+  },
+  "The café is ___ to the bank.": {
+    "ru": "Кафе ___ ___ в/к банк.",
+    "en": "The café is ___ to the bank."
+  },
+  "There is a picture ___ the wall.": {
+    "ru": "Там ___ картина ___ стене.",
+    "en": "There is a picture ___ the wall."
+  },
+  "The keys are ___ my bag.": {
+    "ru": "Ключи ___ ___ мой сумка.",
+    "en": "The keys are ___ my bag."
+  },
+  "The car is ___ the house.": {
+    "ru": "Машина ___ ___ дом.",
+    "en": "The car is ___ the house."
+  },
+  "They live ___ Oxford Street.": {
+    "ru": "Они живут ___ Оксфорд улице.",
+    "en": "They live ___ Oxford Street."
+  },
+  "The dog is ___ the sofa.": {
+    "ru": "Собака ___ ___ диване.",
+    "en": "The dog is ___ the sofa."
+  },
+  "He is waiting ___ the bus stop.": {
+    "ru": "Он ___ ждёт ___ автобусной остановке.",
+    "en": "He is waiting ___ the bus stop."
+  },
+  "The garden is ___ the house.": {
+    "ru": "Сад ___ ___ дом.",
+    "en": "The garden is ___ the house."
+  },
+  "My office is ___ the second floor.": {
+    "ru": "Мой офис ___ ___ втором этаже.",
+    "en": "My office is ___ the second floor."
+  },
+  "There is a park ___ the school.": {
+    "ru": "Там ___ парковать/парк ___ школой.",
+    "en": "There is a park ___ the school."
+  },
+  "She studies ___ the library.": {
+    "ru": "Она учится ___ библиотеке.",
+    "en": "She studies ___ the library."
+  },
+  "___ book is on the table.": {
+    "ru": "___ книга ___ на стол.",
+    "en": "___ book is on the table."
+  },
+  "The book ___ on the table.": {
+    "ru": "Книга ___ на стол.",
+    "en": "The book ___ on the table."
+  },
+  "There is ___ milk in the fridge.": {
+    "ru": "Там ___ ___ молоко в холодильник.",
+    "en": "There is ___ milk in the fridge."
+  },
+  "How ___ chairs are there?": {
+    "ru": "Как ___ стулья ___ там?",
+    "en": "How ___ chairs are there?"
+  },
+  "There ___ a little milk in the fridge.": {
+    "ru": "Там ___ немного молоко в холодильник.",
+    "en": "There ___ a little milk in the fridge."
+  },
+  "Are you ___ to come.": {
+    "ru": "___ ты ___ в/к прийти.",
+    "en": "Are you ___ to come."
+  },
+  "I need ___ umbrella.": {
+    "ru": "Мне нужен зонт.",
+    "en": "I need ___ umbrella."
+  },
+  "There is ___ university in this town.": {
+    "ru": "В этом городе есть университет.",
+    "en": "There is ___ university in this town."
+  },
+  "She wants to be ___ engineer.": {
+    "ru": "Она хочет стать инженером.",
+    "en": "She wants to be ___ engineer."
+  },
+  "The sun rises ___ the east.": {
+    "ru": "Солнце встаёт на востоке.",
+    "en": "The sun rises ___ the east."
+  },
+  "He bought ___ apple.": {
+    "ru": "Он купил яблоко.",
+    "en": "He bought ___ apple."
+  },
+  "___ sun rises in the east.": {
+    "ru": "Солнце встаёт на востоке.",
+    "en": "___ sun rises in the east."
+  },
+  "Close ___ door, please.": {
+    "ru": "Закрой дверь, пожалуйста.",
+    "en": "Close ___ door, please."
+  },
+  "She ___ an honest person.": {
+    "ru": "Она честный человек.",
+    "en": "She ___ an honest person."
+  },
+  "The sun rises in ___ east.": {
+    "ru": "Солнце встаёт на востоке.",
+    "en": "The sun rises in ___ east."
+  },
+  "Cats ___ independent animals.": {
+    "ru": "Кошки — независимые животные.",
+    "en": "Cats ___ independent animals."
+  },
+  "She is ___ honest person.": {
+    "ru": "Она честный человек.",
+    "en": "She is ___ honest person."
+  },
+  "The dog wagged ___ tail.": {
+    "ru": "Собака виляла хвостом.",
+    "en": "The dog wagged ___ tail."
+  },
+  "They lost ___ keys.": {
+    "ru": "Они потеряли свои ключи.",
+    "en": "They lost ___ keys."
+  },
+  "He forgot ___ wallet.": {
+    "ru": "Он забыл свой кошелёк.",
+    "en": "He forgot ___ wallet."
+  },
+  "Is this pen ___ or mine?": {
+    "ru": "Это твоя ручка или моя?",
+    "en": "Is this pen ___ or mine?"
+  },
+  "She showed me ___ photos.": {
+    "ru": "Она показала мне свои фотографии.",
+    "en": "She showed me ___ photos."
+  },
+  "These seats are ___.": {
+    "ru": "Эти места их.",
+    "en": "These seats are ___."
+  },
+  "I like ___ new apartment.": {
+    "ru": "Мне нравится их новая квартира.",
+    "en": "I like ___ new apartment."
+  },
+  "Is the decision ___?": {
+    "ru": "Это решение твоё?",
+    "en": "Is the decision ___?"
+  },
+  "The cat cleaned ___ paws.": {
+    "ru": "Кот вылизал лапы.",
+    "en": "The cat cleaned ___ paws."
+  },
+  "What's ___ name?": {
+    "ru": "Как тебя зовут?",
+    "en": "What's ___ name?"
+  },
+  "They ___ English every day.": {
+    "ru": "Они учат английский каждый день.",
+    "en": "They ___ English every day."
+  },
+  "My brother ___ TV in the evening.": {
+    "ru": "Мой брат смотрит телевизор вечером.",
+    "en": "My brother ___ TV in the evening."
+  },
+  "We ___ dinner at 7.": {
+    "ru": "Мы ужинаем в 7.",
+    "en": "We ___ dinner at 7."
+  },
+  "It ___ a lot in autumn.": {
+    "ru": "Осенью часто идёт дождь.",
+    "en": "It ___ a lot in autumn."
+  },
+  "You ___ very fast.": {
+    "ru": "Ты ходишь очень быстро.",
+    "en": "You ___ very fast."
+  },
+  "The shop ___ at 9.": {
+    "ru": "Магазин открывается в 9.",
+    "en": "The shop ___ at 9."
+  },
+  "I ___ to music every morning.": {
+    "ru": "Я слушаю музыку каждое утро.",
+    "en": "I ___ to music every morning."
+  },
+  "She ___ not eat meat.": {
+    "ru": "Она не ест мясо.",
+    "en": "She ___ not eat meat."
+  },
+  "He ___ breakfast at home.": {
+    "ru": "Он завтракает дома.",
+    "en": "He ___ breakfast at home."
+  },
+  "Cats ___ milk.": {
+    "ru": "Кошки любят молоко.",
+    "en": "Cats ___ milk."
+  },
+  "The sun ___ in the east.": {
+    "ru": "Солнце встаёт на востоке.",
+    "en": "The sun ___ in the east."
+  },
+  "We ___ to the gym on Mondays.": {
+    "ru": "Мы ходим в зал по понедельникам.",
+    "en": "We ___ to the gym on Mondays."
+  },
+  "___ old are you?": {
+    "ru": "Сколько тебе лет?",
+    "en": "___ old are you?"
+  },
+  "___ is the class?": {
+    "ru": "Когда занятие?",
+    "en": "___ is the class?"
+  },
+  "___ many books do you have?": {
+    "ru": "Сколько у тебя книг?",
+    "en": "___ many books do you have?"
+  },
+  "___ is your favourite colour?": {
+    "ru": "Какой твой любимый цвет?",
+    "en": "___ is your favourite colour?"
+  },
+  "___ called you?": {
+    "ru": "Кто тебе звонил?",
+    "en": "___ called you?"
+  },
+  "___ is your birthday?": {
+    "ru": "Когда у тебя день рождения?",
+    "en": "___ is your birthday?"
+  },
+  "___ do you study English?": {
+    "ru": "Почему ты учишь английский?",
+    "en": "___ do you study English?"
+  },
+  "___ much is this?": {
+    "ru": "Сколько это стоит?",
+    "en": "___ much is this?"
+  },
+  "___ time is it?": {
+    "ru": "Который час?",
+    "en": "___ time is it?"
+  },
+  "___ is the nearest station?": {
+    "ru": "Где ближайшая станция?",
+    "en": "___ is the nearest station?"
+  },
+  "___ do you get to work?": {
+    "ru": "Как ты добираешься на работу?",
+    "en": "___ do you get to work?"
+  },
+  "___ wrote this book?": {
+    "ru": "Кто написал эту книгу?",
+    "en": "___ wrote this book?"
+  },
+  "___ does the film start?": {
+    "ru": "Когда начинается фильм?",
+    "en": "___ does the film start?"
+  },
+  "___ is the weather like?": {
+    "ru": "Какая погода?",
+    "en": "___ is the weather like?"
+  },
+  "There are ___ people in the park.": {
+    "ru": "В парке есть люди.",
+    "en": "There are ___ people in the park."
+  },
+  "There ___ two windows in the room.": {
+    "ru": "В комнате два окна.",
+    "en": "There ___ two windows in the room."
+  },
+  "There ___ a problem.": {
+    "ru": "Есть проблема.",
+    "en": "There ___ a problem."
+  },
+  "___ there any messages for me?": {
+    "ru": "Есть для меня сообщения?",
+    "en": "___ there any messages for me?"
+  },
+  "There ___ many tourists in summer.": {
+    "ru": "Летом много туристов.",
+    "en": "There ___ many tourists in summer."
+  },
+  "There ___ an old church in the centre.": {
+    "ru": "В центре есть старая церковь.",
+    "en": "There ___ an old church in the centre."
+  },
+  "There aren't ___ buses after midnight.": {
+    "ru": "После полуночи автобусов нет.",
+    "en": "There aren't ___ buses after midnight."
+  },
+  "There ___ five people in the queue.": {
+    "ru": "В очереди пять человек.",
+    "en": "There ___ five people in the queue."
+  },
+  "There is ___ orange on the plate.": {
+    "ru": "На тарелке апельсин.",
+    "en": "There is ___ orange on the plate."
+  },
+  "She ___ drive.": {
+    "ru": "Она не умеет водить.",
+    "en": "She ___ drive."
+  },
+  "We ___ come tomorrow.": {
+    "ru": "Мы не можем прийти завтра.",
+    "en": "We ___ come tomorrow."
+  },
+  "The cat is ___ the bed.": {
+    "ru": "Кот под кроватью.",
+    "en": "The cat is ___ the bed."
+  },
+  "He works ___ the hospital.": {
+    "ru": "Он работает в больнице.",
+    "en": "He works ___ the hospital."
+  },
+  "Meet me ___ the station.": {
+    "ru": "Встретимся на станции.",
+    "en": "Meet me ___ the station."
+  },
+  "The shop is ___ the cinema and the park.": {
+    "ru": "Магазин между кино и парком.",
+    "en": "The shop is ___ the cinema and the park."
+  },
+  "She stands ___ the door.": {
+    "ru": "Она стоит у двери.",
+    "en": "She stands ___ the door."
+  },
+  "Put the milk ___ the fridge.": {
+    "ru": "Поставь молоко в холодильник.",
+    "en": "Put the milk ___ the fridge."
+  },
+  "We went ___ the airport.": {
+    "ru": "Мы поехали в аэропорт.",
+    "en": "We went ___ the airport."
+  },
+  "I went ___ the museum yesterday.": {
+    "ru": "Вчера я ходил в музей.",
+    "en": "I went ___ the museum yesterday."
+  },
+  "She ___ come to the meeting.": {
+    "ru": "Она не пришла на встречу.",
+    "en": "She ___ come to the meeting."
+  },
+  "We watched ___ film last night.": {
+    "ru": "Мы смотрели фильм вчера вечером.",
+    "en": "We watched ___ film last night."
+  },
+  "___ you ever visit Paris.": {
+    "ru": "Ты когда-нибудь был в Париже?",
+    "en": "___ you ever visit Paris."
+  },
+  "I ___ understand the question.": {
+    "ru": "Я не понял вопрос.",
+    "en": "I ___ understand the question."
+  },
+  "She wrote ___ long letter.": {
+    "ru": "Она написала длинное письмо.",
+    "en": "She wrote ___ long letter."
+  },
+  "He ___ answer the call.": {
+    "ru": "Он не ответил на звонок.",
+    "en": "He ___ answer the call."
+  },
+  "I tried sushi ___ the first time.": {
+    "ru": "Я ел суши впервые.",
+    "en": "I tried sushi ___ the first time."
+  },
+  "We ___ a great weekend.": {
+    "ru": "Мы провели отличные выходные.",
+    "en": "We ___ a great weekend."
+  },
+  "She ___ born in London.": {
+    "ru": "Она родилась в Лондоне.",
+    "en": "She ___ born in London."
+  },
+  "They ___ know the truth.": {
+    "ru": "Они не знали правду.",
+    "en": "They ___ know the truth."
+  },
+  "He lost his keys ___ the bus.": {
+    "ru": "Он потерял ключи в автобусе.",
+    "en": "He lost his keys ___ the bus."
+  },
+  "They arrived late ___ the station.": {
+    "ru": "Они опоздали на станцию.",
+    "en": "They arrived late ___ the station."
+  },
+  "We met our old friends ___ York.": {
+    "ru": "Мы встретили наших старых друзей в Йорке.",
+    "en": "We met our old friends ___ York."
+  },
+  "We went to ___ airport.": {
+    "ru": "Мы поехали в аэропорт.",
+    "en": "We went to ___ airport."
+  },
+  "She didn't come ___ the meeting.": {
+    "ru": "Она не пришла на встречу.",
+    "en": "She didn't come ___ the meeting."
+  },
+  "I didn't understand ___ question.": {
+    "ru": "Я не понял вопрос.",
+    "en": "I didn't understand ___ question."
+  },
+  "I went to ___ museum yesterday.": {
+    "ru": "Вчера я ходил в музей.",
+    "en": "I went to ___ museum yesterday."
+  },
+  "She didn't come to ___ meeting.": {
+    "ru": "Она не пришла на встречу.",
+    "en": "She didn't come to ___ meeting."
+  },
+  "This ___ the tallest building.": {
+    "ru": "Это самое высокое здание.",
+    "en": "This ___ the tallest building."
+  },
+  "This book ___ more interesting than that one.": {
+    "ru": "Эта книга интереснее той.",
+    "en": "This book ___ more interesting than that one."
+  },
+  "She ___ the best student in the class.": {
+    "ru": "Она лучший студент в классе.",
+    "en": "She ___ the best student in the class."
+  },
+  "He runs faster ___ I do.": {
+    "ru": "Он бегает быстрее меня.",
+    "en": "He runs faster ___ I do."
+  },
+  "My car ___ as fast as yours.": {
+    "ru": "Моя машина такая же быстрая, как твоя.",
+    "en": "My car ___ as fast as yours."
+  },
+  "This ___ the most difficult exercise today.": {
+    "ru": "Это самое сложное упражнение сегодня.",
+    "en": "This ___ the most difficult exercise today."
+  },
+  "London ___ bigger than Oxford.": {
+    "ru": "Лондон больше Оксфорда.",
+    "en": "London ___ bigger than Oxford."
+  },
+  "She speaks English better ___ her brother.": {
+    "ru": "Она говорит по-английски лучше своего брата.",
+    "en": "She speaks English better ___ her brother."
+  },
+  "It ___ the worst film I've ever seen.": {
+    "ru": "Это был худший фильм, который я когда-либо видел.",
+    "en": "It ___ the worst film I've ever seen."
+  },
+  "This restaurant ___ less expensive than that one.": {
+    "ru": "Этот ресторан дешевле того.",
+    "en": "This restaurant ___ less expensive than that one."
+  },
+  "He ___ taller than his father.": {
+    "ru": "Он выше своего отца.",
+    "en": "He ___ taller than his father."
+  },
+  "This route ___ shorter than the other.": {
+    "ru": "Этот маршрут короче другого.",
+    "en": "This route ___ shorter than the other."
+  },
+  "She ___ not as tall as her sister.": {
+    "ru": "Она не такая высокая, как её сестра.",
+    "en": "She ___ not as tall as her sister."
+  },
+  "The ___ you practice the better you get.": {
+    "ru": "Чем больше ты практикуешься, тем лучше получается.",
+    "en": "The ___ you practice the better you get."
+  },
+  "This phone ___ cheaper than mine.": {
+    "ru": "Этот телефон дешевле моего.",
+    "en": "This phone ___ cheaper than mine."
+  },
+  "This is ___ tallest building.": {
+    "ru": "Это самое высокое здание.",
+    "en": "This is ___ tallest building."
+  },
+  "This book is more interesting ___ that one.": {
+    "ru": "Эта книга интереснее той.",
+    "en": "This book is more interesting ___ that one."
+  },
+  "This book is ___ interesting than that one.": {
+    "ru": "Эта книга интереснее той.",
+    "en": "This book is ___ interesting than that one."
+  },
+  "This book is more interesting than ___ one.": {
+    "ru": "Эта книга интереснее той.",
+    "en": "This book is more interesting than ___ one."
+  },
+  "How ___ money do you need?": {
+    "ru": "Сколько тебе нужно денег?",
+    "en": "How ___ money do you need?"
+  },
+  "There are only ___ apples left.": {
+    "ru": "Осталось всего несколько яблок.",
+    "en": "There are only ___ apples left."
+  },
+  "I don't have ___ time today.": {
+    "ru": "У меня сегодня мало времени.",
+    "en": "I don't have ___ time today."
+  },
+  "Very ___ people came to the meeting.": {
+    "ru": "На встречу пришло мало людей.",
+    "en": "Very ___ people came to the meeting."
+  },
+  "There is ___ hope left.": {
+    "ru": "Осталось мало надежды.",
+    "en": "There is ___ hope left."
+  },
+  "She has ___ friends in London.": {
+    "ru": "У неё много друзей в Лондоне.",
+    "en": "She has ___ friends in London."
+  },
+  "We need ___ more information.": {
+    "ru": "Нам нужно немного информации.",
+    "en": "We need ___ more information."
+  },
+  "There aren't ___ chairs in the room.": {
+    "ru": "В комнате мало стульев.",
+    "en": "There aren't ___ chairs in the room."
+  },
+  "He drinks ___ coffee.": {
+    "ru": "Он пьёт слишком много кофе.",
+    "en": "He drinks ___ coffee."
+  },
+  "___ students passed the exam.": {
+    "ru": "Многие студенты сдали экзамен.",
+    "en": "___ students passed the exam."
+  },
+  "There were ___ cars on the road.": {
+    "ru": "На дороге было мало машин.",
+    "en": "There were ___ cars on the road."
+  },
+  "Can I have ___ water, please?": {
+    "ru": "Можно немного воды?",
+    "en": "Can I have ___ water, please?"
+  },
+  "She made ___ mistakes.": {
+    "ru": "Она сделала много ошибок.",
+    "en": "She made ___ mistakes."
+  },
+  "There isn't ___ rice left.": {
+    "ru": "Риса почти не осталось.",
+    "en": "There isn't ___ rice left."
+  },
+  "Only ___ tickets are still available.": {
+    "ru": "Доступно только несколько билетов.",
+    "en": "Only ___ tickets are still available."
+  },
+  "I ___ a little time.": {
+    "ru": "У меня мало времени.",
+    "en": "I ___ a little time."
+  },
+  "How ___ books do you have.": {
+    "ru": "Сколько у тебя книг?",
+    "en": "How ___ books do you have."
+  },
+  "How ___ money do you need.": {
+    "ru": "Сколько тебе нужно денег?",
+    "en": "How ___ money do you need."
+  },
+  "There ___ only a few apples left.": {
+    "ru": "Осталось всего несколько яблок.",
+    "en": "There ___ only a few apples left."
+  },
+  "I ___ have much time today.": {
+    "ru": "У меня сегодня мало времени.",
+    "en": "I ___ have much time today."
+  },
+  "I have ___ little time.": {
+    "ru": "У меня мало времени.",
+    "en": "I have ___ little time."
+  },
+  "How many books ___ you have.": {
+    "ru": "Сколько у тебя книг?",
+    "en": "How many books ___ you have."
+  },
+  "How many books do you ___.": {
+    "ru": "Сколько у тебя книг?",
+    "en": "How many books do you ___."
+  },
+  "How much money ___ you need.": {
+    "ru": "Сколько тебе нужно денег?",
+    "en": "How much money ___ you need."
+  },
+  "Have you ___ been to Spain?": {
+    "ru": "Ты когда-нибудь был в Испании?",
+    "en": "Have you ___ been to Spain?"
+  },
+  "I have ___ seen that film.": {
+    "ru": "Я никогда не видел этот фильм.",
+    "en": "I have ___ seen that film."
+  },
+  "She has ___ finished her homework.": {
+    "ru": "Она только что закончила домашнюю работу.",
+    "en": "She has ___ finished her homework."
+  },
+  "Have they arrived ___?": {
+    "ru": "Они уже приехали?",
+    "en": "Have they arrived ___?"
+  },
+  "I have ___ eaten lunch.": {
+    "ru": "Я уже пообедал.",
+    "en": "I have ___ eaten lunch."
+  },
+  "He hasn't called me ___.": {
+    "ru": "Он ещё не позвонил мне.",
+    "en": "He hasn't called me ___."
+  },
+  "We have ___ met before.": {
+    "ru": "Мы никогда не встречались раньше.",
+    "en": "We have ___ met before."
+  },
+  "Has she ___ tried sushi?": {
+    "ru": "Она когда-нибудь пробовала суши?",
+    "en": "Has she ___ tried sushi?"
+  },
+  "They have ___ left the building.": {
+    "ru": "Они только что ушли.",
+    "en": "They have ___ left the building."
+  },
+  "Have you finished your project ___?": {
+    "ru": "Ты уже закончил проект?",
+    "en": "Have you finished your project ___?"
+  },
+  "I have ___ visited Japan.": {
+    "ru": "Я никогда не был в Японии.",
+    "en": "I have ___ visited Japan."
+  },
+  "She has ___ returned from work.": {
+    "ru": "Она только что вернулась с работы.",
+    "en": "She has ___ returned from work."
+  },
+  "Have you ___ ridden a horse?": {
+    "ru": "Ты когда-нибудь ездил верхом?",
+    "en": "Have you ___ ridden a horse?"
+  },
+  "We've ___ seen this episode.": {
+    "ru": "Мы уже видели эту серию.",
+    "en": "We've ___ seen this episode."
+  },
+  "He hasn't paid the bill ___.": {
+    "ru": "Он ещё не оплатил счёт.",
+    "en": "He hasn't paid the bill ___."
+  },
+  "I have ___ been so happy.": {
+    "ru": "Я никогда не был так счастлив.",
+    "en": "I have ___ been so happy."
+  },
+  "Has the train left ___?": {
+    "ru": "Поезд уже ушёл?",
+    "en": "Has the train left ___?"
+  },
+  "We ___ going to travel.": {
+    "ru": "Мы собираемся путешествовать.",
+    "en": "We ___ going to travel."
+  },
+  "We ___ going to travel in the summer.": {
+    "ru": "Мы собираемся путешествовать летом.",
+    "en": "We ___ going to travel in the summer."
+  },
+  "She ___ going to move to London.": {
+    "ru": "Она собирается переехать в Лондон.",
+    "en": "She ___ going to move to London."
+  },
+  "They aren't ___ to buy a car.": {
+    "ru": "Они не собираются покупать машину.",
+    "en": "They aren't ___ to buy a car."
+  },
+  "I'm ___ to learn Spanish.": {
+    "ru": "Я собираюсь выучить испанский.",
+    "en": "I'm ___ to learn Spanish."
+  },
+  "He ___ going to call you.": {
+    "ru": "Он собирается позвонить тебе.",
+    "en": "He ___ going to call you."
+  },
+  "We ___ going to have dinner at a restaurant.": {
+    "ru": "Мы собираемся ужинать в ресторане.",
+    "en": "We ___ going to have dinner at a restaurant."
+  },
+  "She ___ going to take the exam.": {
+    "ru": "Она собирается сдать экзамен.",
+    "en": "She ___ going to take the exam."
+  },
+  "Are you ___ to go to bed early.": {
+    "ru": "Ты собираешься рано ложиться?",
+    "en": "Are you ___ to go to bed early."
+  },
+  "They ___ going to get married.": {
+    "ru": "Они собираются жениться.",
+    "en": "They ___ going to get married."
+  },
+  "I'm ___ to start a new job.": {
+    "ru": "Я собираюсь начать новую работу.",
+    "en": "I'm ___ to start a new job."
+  },
+  "We aren't ___ to give up.": {
+    "ru": "Мы не собираемся сдаваться.",
+    "en": "We aren't ___ to give up."
+  },
+  "They ___ going to move.": {
+    "ru": "Они собираются переехать.",
+    "en": "They ___ going to move."
+  },
+  "Look ___ the clouds it's going to rain.": {
+    "ru": "Посмотри на облака, будет дождь.",
+    "en": "Look ___ the clouds it's going to rain."
+  },
+  "We are ___ to travel.": {
+    "ru": "Мы собираемся путешествовать.",
+    "en": "We are ___ to travel."
+  },
+  "We are ___ to travel in the summer.": {
+    "ru": "Мы собираемся путешествовать летом.",
+    "en": "We are ___ to travel in the summer."
+  },
+  "We are going to travel ___ the summer.": {
+    "ru": "Мы собираемся путешествовать летом.",
+    "en": "We are going to travel ___ the summer."
+  },
+  "We are going ___ travel.": {
+    "ru": "Мы собираемся путешествовать.",
+    "en": "We are going ___ travel."
+  },
+  "We are going ___ travel in the summer.": {
+    "ru": "Мы собираемся путешествовать летом.",
+    "en": "We are going ___ travel in the summer."
+  },
+  "We are going to travel in ___ summer.": {
+    "ru": "Мы собираемся путешествовать летом.",
+    "en": "We are going to travel in ___ summer."
+  },
+  "I ___ never been to London.": {
+    "ru": "Я никогда не был в Лондоне.",
+    "en": "I ___ never been to London."
+  },
+  "I ___ never been to Japan.": {
+    "ru": "Я никогда не был в Японии.",
+    "en": "I ___ never been to Japan."
+  },
+  "She ___ already finished her homework.": {
+    "ru": "Она уже закончила домашнее задание.",
+    "en": "She ___ already finished her homework."
+  },
+  "We ___ just arrived.": {
+    "ru": "Мы только что приехали.",
+    "en": "We ___ just arrived."
+  },
+  "___ you ever tried sushi.": {
+    "ru": "Ты когда-нибудь пробовал суши?",
+    "en": "___ you ever tried sushi."
+  },
+  "He ___ lost his passport.": {
+    "ru": "Он потерял паспорт.",
+    "en": "He ___ lost his passport."
+  },
+  "I ___ seen this film three times.": {
+    "ru": "Я видел этот фильм три раза.",
+    "en": "I ___ seen this film three times."
+  },
+  "She ___ lived in Berlin for five years.": {
+    "ru": "Она жила в Берлине пять лет.",
+    "en": "She ___ lived in Berlin for five years."
+  },
+  "We haven't met ___ ages.": {
+    "ru": "Мы не встречались давно.",
+    "en": "We haven't met ___ ages."
+  },
+  "He ___ written two books.": {
+    "ru": "Он написал две книги.",
+    "en": "He ___ written two books."
+  },
+  "Have you ever flown ___ a hot air balloon.": {
+    "ru": "Ты когда-нибудь летал на воздушном шаре?",
+    "en": "Have you ever flown ___ a hot air balloon."
+  },
+  "She ___ gone on a business trip.": {
+    "ru": "Она уехала в командировку.",
+    "en": "She ___ gone on a business trip."
+  },
+  "We ___ known each other since childhood.": {
+    "ru": "Мы знаем друг друга с детства.",
+    "en": "We ___ known each other since childhood."
+  },
+  "I have never ___ to London.": {
+    "ru": "Я никогда не был в Лондоне.",
+    "en": "I have never ___ to London."
+  },
+  "I have never ___ to Japan.": {
+    "ru": "Я никогда не был в Японии.",
+    "en": "I have never ___ to Japan."
+  },
+  "She has lived ___ Berlin for five years.": {
+    "ru": "Она жила в Берлине пять лет.",
+    "en": "She has lived ___ Berlin for five years."
+  },
+  "___ you ever flown in a hot air balloon.": {
+    "ru": "Ты когда-нибудь летал на воздушном шаре?",
+    "en": "___ you ever flown in a hot air balloon."
+  },
+  "I have never been ___ London.": {
+    "ru": "Я никогда не был в Лондоне.",
+    "en": "I have never been ___ London."
+  },
+  "I have never been ___ Japan.": {
+    "ru": "Я никогда не был в Японии.",
+    "en": "I have never been ___ Japan."
+  },
+  "She has lived in Berlin ___ five years.": {
+    "ru": "Она жила в Берлине пять лет.",
+    "en": "She has lived in Berlin ___ five years."
+  },
+  "I ___ some time.": {
+    "ru": "У меня есть немного времени.",
+    "en": "I ___ some time."
+  },
+  "I ___ many friends.": {
+    "ru": "У меня много друзей.",
+    "en": "I ___ many friends."
+  },
+  "There ___ much water in the bottle.": {
+    "ru": "В бутылке много воды.",
+    "en": "There ___ much water in the bottle."
+  },
+  "I ___ a little money.": {
+    "ru": "У меня немного денег.",
+    "en": "I ___ a little money."
+  },
+  "She ___ fewer books than me.": {
+    "ru": "У неё меньше книг, чем у меня.",
+    "en": "She ___ fewer books than me."
+  },
+  "There ___ many people here.": {
+    "ru": "Здесь много людей.",
+    "en": "There ___ many people here."
+  },
+  "I need ___ little information.": {
+    "ru": "Мне нужна небольшая информация.",
+    "en": "I need ___ little information."
+  },
+  "How ___ apples do you want.": {
+    "ru": "Сколько яблок ты хочешь?",
+    "en": "How ___ apples do you want."
+  },
+  "We ___ a lot of homework.": {
+    "ru": "У нас много домашней работы.",
+    "en": "We ___ a lot of homework."
+  },
+  "He drank too ___ cups of coffee.": {
+    "ru": "Он выпил слишком много чашек кофе.",
+    "en": "He drank too ___ cups of coffee."
+  },
+  "I ___ less time than you.": {
+    "ru": "У меня меньше времени, чем у тебя.",
+    "en": "I ___ less time than you."
+  },
+  "There ___ a little water in the glass.": {
+    "ru": "В стакане немного воды.",
+    "en": "There ___ a little water in the glass."
+  },
+  "We ___ enough space.": {
+    "ru": "У нас достаточно места.",
+    "en": "We ___ enough space."
+  },
+  "A few students ___ late.": {
+    "ru": "Несколько студентов опоздали.",
+    "en": "A few students ___ late."
+  },
+  "I have ___ time.": {
+    "ru": "У меня есть немного времени.",
+    "en": "I have ___ time."
+  },
+  "There is ___ water in the bottle.": {
+    "ru": "В бутылке много воды.",
+    "en": "There is ___ water in the bottle."
+  },
+  "There is much water in ___ bottle.": {
+    "ru": "В бутылке много воды.",
+    "en": "There is much water in ___ bottle."
+  },
+  "She has fewer books ___ me.": {
+    "ru": "У неё меньше книг, чем у меня.",
+    "en": "She has fewer books ___ me."
+  },
+  "I have ___ friends.": {
+    "ru": "У меня много друзей.",
+    "en": "I have ___ friends."
+  },
+  "There is much water ___ the bottle.": {
+    "ru": "В бутылке много воды.",
+    "en": "There is much water ___ the bottle."
+  },
+  "I have ___ little money.": {
+    "ru": "У меня немного денег.",
+    "en": "I have ___ little money."
+  },
+  "There are ___ people here.": {
+    "ru": "Здесь много людей.",
+    "en": "There are ___ people here."
+  },
+  "I ___ call you tomorrow.": {
+    "ru": "Я позвоню тебе завтра.",
+    "en": "I ___ call you tomorrow."
+  },
+  "She ___ arrive on Friday.": {
+    "ru": "Она приедет в пятницу.",
+    "en": "She ___ arrive on Friday."
+  },
+  "I ___ help you with this.": {
+    "ru": "Я помогу тебе с этим.",
+    "en": "I ___ help you with this."
+  },
+  "Will you make it ___ time.": {
+    "ru": "Ты успеешь?",
+    "en": "Will you make it ___ time."
+  },
+  "It ___ be difficult.": {
+    "ru": "Это будет сложно.",
+    "en": "It ___ be difficult."
+  },
+  "I think he ___ agree.": {
+    "ru": "Я думаю, что он согласится.",
+    "en": "I think he ___ agree."
+  },
+  "We ___ spend our holiday in Italy.": {
+    "ru": "Мы проведём отпуск в Италии.",
+    "en": "We ___ spend our holiday in Italy."
+  },
+  "In a year I ___ speak English fluently.": {
+    "ru": "Через год я буду говорить по-английски свободно.",
+    "en": "In a year I ___ speak English fluently."
+  },
+  "He ___ do his best.": {
+    "ru": "Он сделает всё возможное.",
+    "en": "He ___ do his best."
+  },
+  "We ___ see each other soon.": {
+    "ru": "Мы увидимся скоро.",
+    "en": "We ___ see each other soon."
+  },
+  "It ___ change everything.": {
+    "ru": "Это изменит всё.",
+    "en": "It ___ change everything."
+  },
+  "Will she accept ___ offer.": {
+    "ru": "Примет ли она предложение?",
+    "en": "Will she accept ___ offer."
+  },
+  "They ___ not be ready in time.": {
+    "ru": "Они не будут готовы вовремя.",
+    "en": "They ___ not be ready in time."
+  },
+  "I ___ send you the details.": {
+    "ru": "Я пришлю вам подробности.",
+    "en": "I ___ send you the details."
+  },
+  "She will arrive ___ Friday.": {
+    "ru": "Она приедет в пятницу.",
+    "en": "She will arrive ___ Friday."
+  },
+  "I will help you ___ this.": {
+    "ru": "Я помогу тебе с этим.",
+    "en": "I will help you ___ this."
+  },
+  "We will spend our holiday ___ Italy.": {
+    "ru": "Мы проведём отпуск в Италии.",
+    "en": "We will spend our holiday ___ Italy."
+  },
+  "___ it rains, I will stay home.": {
+    "ru": "Если пойдёт дождь, я останусь дома.",
+    "en": "___ it rains, I will stay home."
+  },
+  "___ you make it in time.": {
+    "ru": "Ты успеешь?",
+    "en": "___ you make it in time."
+  },
+  "___ a year I will speak English fluently.": {
+    "ru": "Через год я буду говорить по-английски свободно.",
+    "en": "___ a year I will speak English fluently."
+  },
+  "He will ___ his best.": {
+    "ru": "Он сделает всё возможное.",
+    "en": "He will ___ his best."
+  },
+  "If you heat water to 100°C, it ___.": {
+    "ru": "Если нагреть воду до 100°C, она закипает.",
+    "en": "If you heat water to 100°C, it ___."
+  },
+  "If I ___ rich, I would travel.": {
+    "ru": "Если бы я был богат, я бы путешествовал.",
+    "en": "If I ___ rich, I would travel."
+  },
+  "If it rains tomorrow, we ___ at home.": {
+    "ru": "Если завтра будет дождь, мы останемся дома.",
+    "en": "If it rains tomorrow, we ___ at home."
+  },
+  "If I ___ more time, I would travel more.": {
+    "ru": "Если бы у меня было больше времени, я бы больше путешествовал.",
+    "en": "If I ___ more time, I would travel more."
+  },
+  "If she studied harder, she ___ the exam.": {
+    "ru": "Если бы она усерднее училась, она бы сдала экзамен.",
+    "en": "If she studied harder, she ___ the exam."
+  },
+  "If you mix blue and yellow, you ___ green.": {
+    "ru": "Если смешать синий и жёлтый, получится зелёный.",
+    "en": "If you mix blue and yellow, you ___ green."
+  },
+  "If I see Tom, I ___ him the news.": {
+    "ru": "Если я увижу Тома, я расскажу ему новости.",
+    "en": "If I see Tom, I ___ him the news."
+  },
+  "If I ___ you, I would apologise.": {
+    "ru": "На твоём месте я бы извинился.",
+    "en": "If I ___ you, I would apologise."
+  },
+  "Ice melts if you ___ it.": {
+    "ru": "Лёд тает, если его нагреть.",
+    "en": "Ice melts if you ___ it."
+  },
+  "If they invite us, we ___ go.": {
+    "ru": "Если они нас пригласят, мы пойдём.",
+    "en": "If they invite us, we ___ go."
+  },
+  "If she ___ rich, she would buy a villa.": {
+    "ru": "Если бы она была богатой, она купила бы виллу.",
+    "en": "If she ___ rich, she would buy a villa."
+  },
+  "Plants die if they ___ enough water.": {
+    "ru": "Растения погибают, если не получают достаточно воды.",
+    "en": "Plants die if they ___ enough water."
+  },
+  "If you hurry, you ___ the bus.": {
+    "ru": "Если поторопишься, успеешь на автобус.",
+    "en": "If you hurry, you ___ the bus."
+  },
+  "If I knew her number, I ___ her.": {
+    "ru": "Если бы я знал её номер, я бы ей позвонил.",
+    "en": "If I knew her number, I ___ her."
+  },
+  "If the sun shines, snow ___.": {
+    "ru": "Если светит солнце, снег тает.",
+    "en": "If the sun shines, snow ___."
+  },
+  "If he doesn't apologise, I ___ speak to him.": {
+    "ru": "Если он не извинится, я не буду с ним разговаривать.",
+    "en": "If he doesn't apologise, I ___ speak to him."
+  },
+  "If we ___ a car, we would drive to the coast.": {
+    "ru": "Если бы у нас была машина, мы поехали бы на побережье.",
+    "en": "If we ___ a car, we would drive to the coast."
+  },
+  "Water freezes when it ___ 0°C.": {
+    "ru": "Вода замерзает, когда достигает 0°C.",
+    "en": "Water freezes when it ___ 0°C."
+  },
+  "If you help me, I ___ grateful.": {
+    "ru": "Если ты мне поможешь, я буду благодарен.",
+    "en": "If you help me, I ___ grateful."
+  },
+  "If I lived nearer, I ___ visit more often.": {
+    "ru": "Если бы я жил ближе, я бы навещал чаще.",
+    "en": "If I lived nearer, I ___ visit more often."
+  },
+  "If you heat ice, it ___.": {
+    "ru": "Если нагреть лёд, он тает.",
+    "en": "If you heat ice, it ___."
+  },
+  "If you call, I ___ come.": {
+    "ru": "Если ты позвонишь, я приду.",
+    "en": "If you call, I ___ come."
+  },
+  "If you heat water ___ 100°C, it boils.": {
+    "ru": "Если нагреть воду до 100°C, она закипает.",
+    "en": "If you heat water ___ 100°C, it boils."
+  },
+  "If it rains tomorrow, we ___ stay at home.": {
+    "ru": "Если завтра будет дождь, мы останемся дома.",
+    "en": "If it rains tomorrow, we ___ stay at home."
+  },
+  "___ you call, I will come.": {
+    "ru": "Если ты позвонишь, я приду.",
+    "en": "___ you call, I will come."
+  },
+  "___ you heat water to 100°C, it boils.": {
+    "ru": "Если нагреть воду до 100°C, она закипает.",
+    "en": "___ you heat water to 100°C, it boils."
+  },
+  "___ it rains tomorrow, we will stay at home.": {
+    "ru": "Если завтра будет дождь, мы останемся дома.",
+    "en": "___ it rains tomorrow, we will stay at home."
+  },
+  "___ I had more time, I would travel more.": {
+    "ru": "Если бы у меня было больше времени, я бы больше путешествовал.",
+    "en": "___ I had more time, I would travel more."
+  },
+  "You ___ rest.": {
+    "ru": "Тебе следует отдохнуть.",
+    "en": "You ___ rest."
+  },
+  "You ___ wear a helmet.": {
+    "ru": "Ты должен носить шлем.",
+    "en": "You ___ wear a helmet."
+  },
+  "You ___ have to come.": {
+    "ru": "Тебе не обязательно приходить.",
+    "en": "You ___ have to come."
+  },
+  "___ you help me.": {
+    "ru": "Можешь мне помочь?",
+    "en": "___ you help me."
+  },
+  "She ___ play the piano.": {
+    "ru": "Она умеет играть на пианино.",
+    "en": "She ___ play the piano."
+  },
+  "May I come ___.": {
+    "ru": "Можно мне войти?",
+    "en": "May I come ___."
+  },
+  "Could you close ___ window.": {
+    "ru": "Ты мог бы закрыть окно?",
+    "en": "Could you close ___ window."
+  },
+  "He ___ be lost.": {
+    "ru": "Он, должно быть, заблудился.",
+    "en": "He ___ be lost."
+  },
+  "You ___ have called.": {
+    "ru": "Тебе следовало позвонить.",
+    "en": "You ___ have called."
+  },
+  "He ___ have helped but he didn't.": {
+    "ru": "Он мог бы помочь, но не помог.",
+    "en": "He ___ have helped but he didn't."
+  },
+  "You shouldn't ___ said that.": {
+    "ru": "Ты не должен был так говорить.",
+    "en": "You shouldn't ___ said that."
+  },
+  "I ___ to leave earlier.": {
+    "ru": "Мне нужно было раньше уйти.",
+    "en": "I ___ to leave earlier."
+  },
+  "He can't ___ been at home.": {
+    "ru": "Он не мог быть дома.",
+    "en": "He can't ___ been at home."
+  },
+  "She can't be ___ home.": {
+    "ru": "Она не может быть дома.",
+    "en": "She can't be ___ home."
+  },
+  "You ___ be right.": {
+    "ru": "Возможно, ты прав.",
+    "en": "You ___ be right."
+  },
+  "You must wear ___ helmet.": {
+    "ru": "Ты должен носить шлем.",
+    "en": "You must wear ___ helmet."
+  },
+  "You don't ___ to come.": {
+    "ru": "Тебе не обязательно приходить.",
+    "en": "You don't ___ to come."
+  },
+  "She can play ___ piano.": {
+    "ru": "Она умеет играть на пианино.",
+    "en": "She can play ___ piano."
+  },
+  "___ you close the window.": {
+    "ru": "Ты мог бы закрыть окно?",
+    "en": "___ you close the window."
+  },
+  "I have ___ work tomorrow.": {
+    "ru": "Мне нужно работать завтра.",
+    "en": "I have ___ work tomorrow."
+  },
+  "You don't have ___ come.": {
+    "ru": "Тебе не обязательно приходить.",
+    "en": "You don't have ___ come."
+  },
+  "___ I come in.": {
+    "ru": "Можно мне войти?",
+    "en": "___ I come in."
+  },
+  "You should ___ called.": {
+    "ru": "Тебе следовало позвонить.",
+    "en": "You should ___ called."
+  },
+  "I ___ reading a book when the phone rang.": {
+    "ru": "Я читал книгу, когда позвонил телефон.",
+    "en": "I ___ reading a book when the phone rang."
+  },
+  "I ___ reading when she called.": {
+    "ru": "Я читал, когда она позвонила.",
+    "en": "I ___ reading when she called."
+  },
+  "They ___ watching TV.": {
+    "ru": "Они смотрели телевизор.",
+    "en": "They ___ watching TV."
+  },
+  "When I arrived the train ___ already left.": {
+    "ru": "Когда я пришёл, поезд уже уехал.",
+    "en": "When I arrived the train ___ already left."
+  },
+  "I used ___ play tennis.": {
+    "ru": "Раньше я играл в теннис.",
+    "en": "I used ___ play tennis."
+  },
+  "She ___ cooking when I came.": {
+    "ru": "Она готовила, когда я пришёл.",
+    "en": "She ___ cooking when I came."
+  },
+  "While we ___ walking it started to rain.": {
+    "ru": "Пока мы шли, начался дождь.",
+    "en": "While we ___ walking it started to rain."
+  },
+  "He ___ finished before I arrived.": {
+    "ru": "Он уже закончил, когда я пришёл.",
+    "en": "He ___ finished before I arrived."
+  },
+  "I ___ studying all night.": {
+    "ru": "Я учился всю ночь.",
+    "en": "I ___ studying all night."
+  },
+  "They ___ gone home before midnight.": {
+    "ru": "Они ушли домой до полуночи.",
+    "en": "They ___ gone home before midnight."
+  },
+  "She used ___ live in Paris.": {
+    "ru": "Раньше она жила в Париже.",
+    "en": "She used ___ live in Paris."
+  },
+  "We ___ having dinner at eight.": {
+    "ru": "Мы ужинали в восемь.",
+    "en": "We ___ having dinner at eight."
+  },
+  "By the time I got there they ___ left.": {
+    "ru": "К тому времени, как я пришёл, они уже ушли.",
+    "en": "By the time I got there they ___ left."
+  },
+  "He ___ working when I saw him.": {
+    "ru": "Он работал, когда я его увидел.",
+    "en": "He ___ working when I saw him."
+  },
+  "I was reading ___ book when the phone rang.": {
+    "ru": "Я читал книгу, когда позвонил телефон.",
+    "en": "I was reading ___ book when the phone rang."
+  },
+  "I was reading a book when ___ phone rang.": {
+    "ru": "Я читал книгу, когда позвонил телефон.",
+    "en": "I was reading a book when ___ phone rang."
+  },
+  "___ I arrived the train had already left.": {
+    "ru": "Когда я пришёл, поезд уже уехал.",
+    "en": "___ I arrived the train had already left."
+  },
+  "She was cooking ___ I came.": {
+    "ru": "Она готовила, когда я пришёл.",
+    "en": "She was cooking ___ I came."
+  },
+  "I was reading a book ___ the phone rang.": {
+    "ru": "Я читал книгу, когда позвонил телефон.",
+    "en": "I was reading a book ___ the phone rang."
+  },
+  "I was reading ___ she called.": {
+    "ru": "Я читал, когда она позвонила.",
+    "en": "I was reading ___ she called."
+  },
+  "She ___ been working here since 2020.": {
+    "ru": "Она работает здесь с 2020 года.",
+    "en": "She ___ been working here since 2020."
+  },
+  "How long ___ you been waiting.": {
+    "ru": "Сколько времени ты ждёшь?",
+    "en": "How long ___ you been waiting."
+  },
+  "They ___ been studying Spanish for two years.": {
+    "ru": "Они учат испанский два года.",
+    "en": "They ___ been studying Spanish for two years."
+  },
+  "It ___ been raining since morning.": {
+    "ru": "Дождь идёт с утра.",
+    "en": "It ___ been raining since morning."
+  },
+  "I haven't seen him ___ a long time.": {
+    "ru": "Я давно не видел его.",
+    "en": "I haven't seen him ___ a long time."
+  },
+  "She ___ been cooking all day.": {
+    "ru": "Она весь день готовит.",
+    "en": "She ___ been cooking all day."
+  },
+  "We ___ been living here since last year.": {
+    "ru": "Мы живём здесь с прошлого года.",
+    "en": "We ___ been living here since last year."
+  },
+  "He ___ been playing football all evening.": {
+    "ru": "Он весь вечер играл в футбол.",
+    "en": "He ___ been playing football all evening."
+  },
+  "How long ___ you been learning English.": {
+    "ru": "Сколько времени ты изучаешь английский?",
+    "en": "How long ___ you been learning English."
+  },
+  "I ___ been wanting to visit Japan for ages.": {
+    "ru": "Я давно хочу посетить Японию.",
+    "en": "I ___ been wanting to visit Japan for ages."
+  },
+  "They ___ been renovating the house for three months.": {
+    "ru": "Они ремонтируют дом уже три месяца.",
+    "en": "They ___ been renovating the house for three months."
+  },
+  "Have you ___ here long.": {
+    "ru": "Ты давно здесь?",
+    "en": "Have you ___ here long."
+  },
+  "She ___ been on the phone all day.": {
+    "ru": "Она весь день говорит по телефону.",
+    "en": "She ___ been on the phone all day."
+  },
+  "I'm tired I've ___ running.": {
+    "ru": "Я устал, я бежал.",
+    "en": "I'm tired I've ___ running."
+  },
+  "She has ___ working here since 2020.": {
+    "ru": "Она работает здесь с 2020 года.",
+    "en": "She has ___ working here since 2020."
+  },
+  "They have ___ studying Spanish for two years.": {
+    "ru": "Они учат испанский два года.",
+    "en": "They have ___ studying Spanish for two years."
+  },
+  "It has ___ raining since morning.": {
+    "ru": "Дождь идёт с утра.",
+    "en": "It has ___ raining since morning."
+  },
+  "I haven't seen him for ___ long time.": {
+    "ru": "Я давно не видел его.",
+    "en": "I haven't seen him for ___ long time."
+  },
+  "How long have you ___ waiting.": {
+    "ru": "Сколько времени ты ждёшь?",
+    "en": "How long have you ___ waiting."
+  },
+  "They have been studying Spanish ___ two years.": {
+    "ru": "Они учат испанский два года.",
+    "en": "They have been studying Spanish ___ two years."
+  },
+  "It has been raining ___ morning.": {
+    "ru": "Дождь идёт с утра.",
+    "en": "It has been raining ___ morning."
+  },
+  "She has ___ cooking all day.": {
+    "ru": "Она весь день готовит.",
+    "en": "She has ___ cooking all day."
+  },
+  "She asked where I ___.": {
+    "ru": "Она спросила, где я живу.",
+    "en": "She asked where I ___."
+  },
+  "They told us ___ be quiet.": {
+    "ru": "Они сказали нам быть тише.",
+    "en": "They told us ___ be quiet."
+  },
+  "He asked if I ___ ready.": {
+    "ru": "Он спросил, готов ли я.",
+    "en": "He asked if I ___ ready."
+  },
+  "Mum told me ___ tidy my room.": {
+    "ru": "Мама сказала мне убрать комнату.",
+    "en": "Mum told me ___ tidy my room."
+  },
+  "He said he ___ already eaten.": {
+    "ru": "Он сказал, что уже поел.",
+    "en": "He said he ___ already eaten."
+  },
+  "She said she ___ go to Paris the next day.": {
+    "ru": "Она сказала, что на следующий день поедет в Париж.",
+    "en": "She said she ___ go to Paris the next day."
+  },
+  "They asked us where we ___.": {
+    "ru": "Они спросили нас, где мы живём.",
+    "en": "They asked us where we ___."
+  },
+  "He said he ___ tired.": {
+    "ru": "Он сказал, что устал.",
+    "en": "He said he ___ tired."
+  },
+  "He told her not ___ worry.": {
+    "ru": "Он велел ей не волноваться.",
+    "en": "He told her not ___ worry."
+  },
+  "She said she ___ to leave.": {
+    "ru": "Она сказала, что должна уйти.",
+    "en": "She said she ___ to leave."
+  },
+  "He said his name ___ Paul.": {
+    "ru": "Он сказал, что его зовут Пол.",
+    "en": "He said his name ___ Paul."
+  },
+  "This is the book ___ I bought yesterday.": {
+    "ru": "Это книга, которую я купил вчера.",
+    "en": "This is the book ___ I bought yesterday."
+  },
+  "She's the teacher ___ helped me.": {
+    "ru": "Она учительница, которая мне помогла.",
+    "en": "She's the teacher ___ helped me."
+  },
+  "That's the café ___ we met.": {
+    "ru": "Вот кафе, где мы встретились.",
+    "en": "That's the café ___ we met."
+  },
+  "I know a man ___ car is red.": {
+    "ru": "Я знаю мужчину, чья машина красная.",
+    "en": "I know a man ___ car is red."
+  },
+  "The film ___ we watched was long.": {
+    "ru": "Фильм, который мы смотрели, был длинным.",
+    "en": "The film ___ we watched was long."
+  },
+  "People ___ live here are friendly.": {
+    "ru": "Люди, которые здесь живут, дружелюбны.",
+    "en": "People ___ live here are friendly."
+  },
+  "Is this the house ___ your parents built?": {
+    "ru": "Это дом, который построили твои родители?",
+    "en": "Is this the house ___ your parents built?"
+  },
+  "Do you remember the day ___ we first met?": {
+    "ru": "Помнишь день, когда мы впервые встретились?",
+    "en": "Do you remember the day ___ we first met?"
+  },
+  "She's the artist ___ paintings I love.": {
+    "ru": "Она художница, чьи картины я люблю.",
+    "en": "She's the artist ___ paintings I love."
+  },
+  "The laptop ___ is on the desk is mine.": {
+    "ru": "Ноутбук, который на столе, мой.",
+    "en": "The laptop ___ is on the desk is mine."
+  },
+  "He's the colleague ___ I told you about.": {
+    "ru": "Он коллега, о котором я тебе рассказывал.",
+    "en": "He's the colleague ___ I told you about."
+  },
+  "This is the town ___ I grew up.": {
+    "ru": "Это город, где я вырос.",
+    "en": "This is the town ___ I grew up."
+  },
+  "Students ___ homework is late must stay.": {
+    "ru": "Студенты, чьи домашние задания опоздали, должны остаться.",
+    "en": "Students ___ homework is late must stay."
+  },
+  "The reason ___ I'm calling is simple.": {
+    "ru": "Причина, по которой я звоню, проста.",
+    "en": "The reason ___ I'm calling is simple."
+  },
+  "I met a woman ___ speaks five languages.": {
+    "ru": "Я встретил женщину, которая говорит на пяти языках.",
+    "en": "I met a woman ___ speaks five languages."
+  },
+  "The keys ___ you lost are here.": {
+    "ru": "Ключи, которые ты потерял, здесь.",
+    "en": "The keys ___ you lost are here."
+  },
+  "Hi! How ___ you doing.": {
+    "ru": "Привет! Как дела?",
+    "en": "Hi! How ___ you doing."
+  },
+  "It ___ great to hear from you.": {
+    "ru": "Было здорово получить твоё письмо.",
+    "en": "It ___ great to hear from you."
+  },
+  "Sorry I haven't written ___ ages.": {
+    "ru": "Извини, что давно не писал.",
+    "en": "Sorry I haven't written ___ ages."
+  },
+  "By ___ way, how's your new job.": {
+    "ru": "Кстати, как твоя новая работа?",
+    "en": "By ___ way, how's your new job."
+  },
+  "Give my love ___ your family.": {
+    "ru": "Передай привет своей семье.",
+    "en": "Give my love ___ your family."
+  },
+  "I can't wait ___ see you again.": {
+    "ru": "Не могу дождаться нашей встречи.",
+    "en": "I can't wait ___ see you again."
+  },
+  "Drop me a line ___ you get a chance.": {
+    "ru": "Напиши, когда будет время.",
+    "en": "Drop me a line ___ you get a chance."
+  },
+  "Take care ___ talk soon.": {
+    "ru": "Береги себя и скоро поговорим.",
+    "en": "Take care ___ talk soon."
+  },
+  "Hi Sarah, How ___ you doing.": {
+    "ru": "Привет, Сара. Как дела?",
+    "en": "Hi Sarah, How ___ you doing."
+  },
+  "I'm sorry I haven't written ___ ages.": {
+    "ru": "Прости, что не писал целую вечность.",
+    "en": "I'm sorry I haven't written ___ ages."
+  },
+  "Why ___ you come and visit.": {
+    "ru": "Почему бы тебе не прийти в гости.",
+    "en": "Why ___ you come and visit."
+  },
+  "How ___ you doing.": {
+    "ru": "Как дела.",
+    "en": "How ___ you doing."
+  },
+  "I'm writing ___ let you know the news.": {
+    "ru": "Я пишу, чтобы сообщить вам новости.",
+    "en": "I'm writing ___ let you know the news."
+  },
+  "That's all ___ now.": {
+    "ru": "Это все на данный момент.",
+    "en": "That's all ___ now."
+  },
+  "Hope ___ hear from you soon.": {
+    "ru": "Надеюсь услышать от вас скоро.",
+    "en": "Hope ___ hear from you soon."
+  },
+  "Thanks ___ your last letter.": {
+    "ru": "Спасибо за твое последнее письмо.",
+    "en": "Thanks ___ your last letter."
+  },
+  "It was great ___ hear from you.": {
+    "ru": "Было здорово получить твоё письмо.",
+    "en": "It was great ___ hear from you."
+  },
+  "Drop me ___ line when you get a chance.": {
+    "ru": "Напиши, когда будет время.",
+    "en": "Drop me ___ line when you get a chance."
+  },
+  "Why don't you come ___ visit.": {
+    "ru": "Почему бы тебе не прийти в гости.",
+    "en": "Why don't you come ___ visit."
+  },
+  "___ the way, how's your new job.": {
+    "ru": "Кстати, как твоя новая работа?",
+    "en": "___ the way, how's your new job."
+  },
+  "Drop me a line when you get ___ chance.": {
+    "ru": "Напиши, когда будет время.",
+    "en": "Drop me a line when you get ___ chance."
+  },
+  "I'm writing to let you know ___ news.": {
+    "ru": "Я пишу, чтобы сообщить вам новости.",
+    "en": "I'm writing to let you know ___ news."
+  },
+  "Are they ready?": {
+    "ru": "Они готовы?",
+    "en": "Are they ready?"
+  },
+  "Am I next?": {
+    "ru": "Я следующий?",
+    "en": "Am I next?"
+  },
+  "My parents ___ in Moscow.": {
+    "ru": "Мои родители ___ в Москве.",
+    "en": "My parents ___ in Moscow."
   }
 }

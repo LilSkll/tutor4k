@@ -6,6 +6,7 @@ import { ENGLISH_CURRICULUM_CHAPTER_EXERCISES } from "./chapter-exercises-curric
 import { ENGLISH_CURATED_SUPPLEMENTS } from "@/config/exercise-seeds/english-curated-supplements";
 import { getEngChapter } from "./chapters";
 import { getReadingPassagesForChapter } from "@/config/reading-passages";
+import { attachQuestionGlosses } from "@/lib/exercise-gloss-attach";
 import { applyEnglishPracticeL1 } from "./l1-prompts";
 import { withNormalizedInstructions } from "@/lib/exercise-instruction-normalize";
 
@@ -209,7 +210,7 @@ export const ENGLISH_EXERCISES: Record<string, Draft[]> = {
     { type: "sentence_building", question: "I / hope / not", instruction: "Build the negative substitution", options: ["I", "hope", "not"], answer: "I hope not", acceptableAnswers: ["I hope not."], explanation: "I hope not — negative substitution for I hope it won't rain." },
     { type: "sentence_building", question: "Neither / can / I / swim / very / well", instruction: "Build the negative agreement", options: ["Neither", "can", "I", "swim", "very", "well"], answer: "Neither can I swim very well", explanation: "Neither + auxiliary + subject — negative agreement." },
     { type: "sentence_building", question: "She / runs / faster / than / I / do", instruction: "Build the verb substitution sentence", options: ["She", "runs", "faster", "than", "I", "do"], answer: "She runs faster than I do", explanation: "do replaces the repeated verb phrase." },
-    { type: "sentence_building", question: "The / chocolate / one / please / not / the / vanilla", instruction: "Build the one substitution sentence", options: ["The", "chocolate", "one", "please", "not", "the", "vanilla"], answer: "The chocolate one, please — not the vanilla", explanation: "one replaces a countable noun." },
+    { type: "sentence_building", question: "The / chocolate / one / please / not / the / vanilla", instruction: "Build the one substitution sentence", options: ["The", "chocolate", "one", "please", "not", "the", "vanilla"], answer: "The chocolate one please not the vanilla", acceptableAnswers: ["The chocolate one, please — not the vanilla", "The chocolate one, please, not the vanilla"], explanation: "one replaces a countable noun." },
   ],
 
   // ===== C2: hedging & understatement ==================================
@@ -304,15 +305,17 @@ export function getEnglishExercises(chapterSlug: string): StaticExercise[] {
       ? expanded.filter((ex) => allowed.includes(ex.type))
       : expanded;
   // Append reading passages after the bank so existing adaptive IDs stay stable.
-  // L1 cues are applied after expand: MC keeps its English stem plus a Russian
-  // task question (en/es/de maps for other UIs); FB keeps the English stem and
-  // gains a ru gloss. Doing this before dedupe would split pack duplicates.
+  // 1) Strip cue-from-stem hacks so English stays the drill.
+  // 2) Attach curated RU meaning glosses (Я ___ учитель.) while the stem is clean.
+  // 3) Put grammar cues in instruction (Какая форма be?), not inside the stem.
   const withReading = [
     ...filtered,
     ...getReadingPassagesForChapter("english", chapterSlug),
-  ].map(applyEnglishPracticeL1);
-  // Grammar-tag / slash instructions → clear learner tasks (revision uses same bank).
-  const normalized = withNormalizedInstructions(withReading);
+  ];
+  // Clear pack grammar-tags first, then set Russian task cues, then meaning glosses.
+  const normalized = withNormalizedInstructions(withReading)
+    .map(applyEnglishPracticeL1)
+    .map((ex) => attachQuestionGlosses(ex as Draft & { id?: string }) as Draft);
   const withIds = withExerciseIds("english", chapterSlug, normalized);
   englishExerciseCache.set(chapterSlug, withIds);
   return withIds;

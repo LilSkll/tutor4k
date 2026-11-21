@@ -1,6 +1,7 @@
 import type { StaticExercise } from "@/types";
 import { withExerciseIds } from "@/lib/exercise-bank";
 import { getReadingPassagesForChapter } from "@/config/reading-passages";
+import { withNormalizedInstructions } from "@/lib/exercise-instruction-normalize";
 import { getDeChapter } from "./chapters";
 import { GERMAN_A1_EXERCISES } from "./exercises-a1";
 import { GERMAN_A2_EXERCISES } from "./exercises-a2";
@@ -43,5 +44,6 @@ export function getGermanExercises(slug: string): StaticExercise[] {
       vocabTopic: d.vocabTopic ?? chapter?.vocabTopic,
     })),
   ];
-  return withExerciseIds("german", slug, attachGermanTrL1(withReading));
+  const normalized = withNormalizedInstructions(attachGermanTrL1(withReading));
+  return withExerciseIds("german", slug, normalized);
 }

@@ -12,6 +12,7 @@ import { RUSSIAN_EXPANSION_EXERCISES } from "./exercises-expansion";
 import { RUSSIAN_TR_L1 } from "./translation-l1";
 import { isRussianExerciseClear } from "./exercise-clarity";
 import { getReadingPassagesForChapter } from "@/config/reading-passages";
+import { withNormalizedInstructions } from "@/lib/exercise-instruction-normalize";
 
 type Draft = Omit<StaticExercise, "id"> & { id?: string };
 
@@ -70,5 +71,6 @@ export function getRussianExercises(chapterSlug: string): StaticExercise[] {
       vocabTopic: d.vocabTopic ?? chapter?.vocabTopic,
     })),
   ];
-  return withExerciseIds("russian", chapterSlug, withReading);
+  const normalized = withNormalizedInstructions(withReading);
+  return withExerciseIds("russian", chapterSlug, normalized);
 }

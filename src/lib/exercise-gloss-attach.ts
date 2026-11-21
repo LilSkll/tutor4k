@@ -3,6 +3,7 @@ import { lookupCuratedQuestionGloss } from "@/config/exercise-glosses";
 import { lookupRussianQuestionGloss } from "@/config/courses/russian/question-glosses";
 import { attachEnglishTrL1 } from "@/config/exercise-translation-prompts";
 import { inferQuestionGloss } from "@/lib/exercise-gloss-infer";
+import { inferEnglishQuestionGloss } from "@/lib/exercise-gloss-infer-english";
 import { hasCyrillicText } from "@/lib/exercise-localize";
 
 const GLOSS_LANGS: InterfaceLanguage[] = ["ru", "en", "es", "de"];
@@ -40,6 +41,11 @@ export function attachQuestionGlosses<T extends StaticExercise>(
   if (q && !hasCyrillicText(q)) {
     for (const lang of GLOSS_LANGS) {
       if (questionTranslations[lang]?.trim()) continue;
+      const inferredEn = inferEnglishQuestionGloss(exercise, lang);
+      if (inferredEn) {
+        questionTranslations[lang] = inferredEn;
+        continue;
+      }
       const inferred = inferQuestionGloss(exercise, lang);
       if (inferred) questionTranslations[lang] = inferred;
     }

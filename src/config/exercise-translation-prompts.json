@@ -4014,11 +4014,6 @@
     "de": "Ich glaube das nicht.",
     "es": "I do not believe it."
   },
-  "Они уже сказали вам.": {
-    "en": "Have they already told you?",
-    "de": "Haben sie es dir schon erzählt?",
-    "es": "Have they already told you?"
-  },
   "Он говорит очень медленно.": {
     "en": "He speaks very slowly.",
     "de": "Er spricht sehr langsam.",
@@ -4273,5 +4268,10 @@
     "en": "They must be about thirty.",
     "de": "Sie dürften etwa dreißig sein.",
     "es": "They must be about thirty."
+  },
+  "Они уже сказали вам?": {
+    "en": "Have they already told you?",
+    "de": "Haben sie es dir schon erzählt?",
+    "es": "Have they already told you?"
   }
 }

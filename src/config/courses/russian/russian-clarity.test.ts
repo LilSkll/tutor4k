@@ -73,8 +73,9 @@ describe("RKI product clarity (chapters + revision source banks)", () => {
     const thin: string[] = [];
     for (const ch of course.getChapters()) {
       const bank = course.getExercises(ch.slug);
-      // Reading passages may pad; curated practice should stay substantial.
-      const practice = bank.filter((e) => !e.passage);
+      // Passage-backed drills (e.g. literary fragment + MC) still count as
+      // practice. Skip only empty shells with no learner prompt.
+      const practice = bank.filter((e) => (e.question ?? "").trim().length > 0);
       if (practice.length < 20) {
         thin.push(`${ch.slug}: ${practice.length}`);
       }
