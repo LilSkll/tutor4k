@@ -8,11 +8,14 @@ import { hasCyrillicText } from "@/lib/exercise-localize";
 
 const GLOSS_LANGS: InterfaceLanguage[] = ["ru", "en", "es", "de"];
 
+/** Draft or static — gloss attach runs before stable ids are assigned. */
+type GlossAttachable = Omit<StaticExercise, "id"> & { id?: string };
+
 /**
  * Server-only: embed curated question glosses into exercise payloads so the
  * client does not need the ~72KB gloss JSON map.
  */
-export function attachQuestionGlosses<T extends StaticExercise>(
+export function attachQuestionGlosses<T extends GlossAttachable>(
   exercise: T,
 ): T {
   let questionTranslations: Partial<Record<InterfaceLanguage, string>> = {
@@ -61,7 +64,7 @@ export function attachQuestionGlosses<T extends StaticExercise>(
   return { ...exercise, questionTranslations };
 }
 
-export function attachQuestionGlossesToMany<T extends StaticExercise>(
+export function attachQuestionGlossesToMany<T extends GlossAttachable>(
   exercises: T[],
 ): T[] {
   return exercises.map(attachQuestionGlosses);

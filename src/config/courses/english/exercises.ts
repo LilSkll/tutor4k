@@ -315,7 +315,7 @@ export function getEnglishExercises(chapterSlug: string): StaticExercise[] {
   // Clear pack grammar-tags first, then set Russian task cues, then meaning glosses.
   const normalized = withNormalizedInstructions(withReading)
     .map(applyEnglishPracticeL1)
-    .map((ex) => attachQuestionGlosses(ex as Draft & { id?: string }) as Draft);
+    .map(attachQuestionGlosses);
   const withIds = withExerciseIds("english", chapterSlug, normalized);
   englishExerciseCache.set(chapterSlug, withIds);
   return withIds;
