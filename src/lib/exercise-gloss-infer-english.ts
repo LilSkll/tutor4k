@@ -74,7 +74,7 @@ function glossSubject(raw: string): string | null {
 }
 
 function glossTail(raw: string): string | null {
-  let t = raw.trim().replace(/[.?!]+$/u, "");
+  const t = raw.trim().replace(/[.?!]+$/u, "");
   const pairs: Array<[RegExp, string]> = [
     [/^from moscow$/i, "из Москвы"],
     [/^from london$/i, "из Лондона"],
